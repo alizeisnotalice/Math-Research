@@ -1,0 +1,137 @@
+{
+  "paper_id": "P-8cdc5c07bc1a147e",
+  "observed_title": "From Brunn-Minkowski to Prékopa-Leindler and Borell-Brascamp-Lieb: discrete inequalities",
+  "authors": [
+    "Peter van Hintum"
+  ],
+  "version": "arXiv:2511.04806v2; PDF 11 pages",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 726,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "N02",
+    "decision": "direct",
+    "basis": "全文给出由集合 Brunn–Minkowski 不等式经层集与单调输运导出函数型 Borell–Brascamp–Lieb/Prékopa–Leindler 的一般论证，并完整证明 Z^d 上带非退化层条件的离散版本。它直接关联 PL/BBL 与层集边际方法，但欧氏一般命题与离散格点定理的假设不同，不能互换常数或省掉离散非退化条件。"
+  },
+  "definitions": [
+    "λ 加权幂平均 M_{p,λ}(a,b)=(λa^p+(1−λ)b^p)^(1/p)，p=0 时取加权几何平均；p<0 且有零输入时定义为 0。",
+    "集合级假设是一个可测集合运算 S 及三个测度满足 μ₃(S(A,B))^p≥λμ₁(A)^p+(1−λ)μ₂(B)^p。",
+    "离散定理的层集是 F_t={x:f(x)>t}、G_t={x:g(x)>t}、H_t={x:h(x)>t}；离散 BM 只对不被少量平行超平面覆盖的集合给近似增长。",
+    "离散非退化条件限制任意 n 个平行超平面上 f 的总质量，使 f 不能几乎集中在低维层中。"
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "可测域 Ω₁、Ω₂、Ω₃ 配有可测二元运算 S；对非空可测 A⊂Ω₁、B⊂Ω₂，S(A,B) 可测。",
+        "存在 p>0、λ∈(0,1)，集合增长满足 μ₃(S(A,B))^p≥λμ₁(A)^p+(1−λ)μ₂(B)^p。",
+        "f,g,h 非负且分别可积，∫f dμ₁=∫g dμ₂；逐点满足 h(S(x,y))≥M_{−p,λ}(f(x),g(y))。"
+      ],
+      "statement": "则 ∫_{Ω₃} h dμ₃≥∫_{Ω₁} f dμ₁。若集合不等式取 p→0 的乘积型几何平均边界，则在相应逐点条件下得到 Prékopa–Leindler 型结论。",
+      "start_line": 159,
+      "end_line": 161,
+      "pdf_pages": [
+        3
+      ],
+      "proof_start_line": 163,
+      "proof_end_line": 192,
+      "proof_pages": [
+        3
+      ],
+      "proof_steps": [
+        "对 f,g,h 取超水平集 F_t,G_t,H_t，使用 layer-cake 恒等式表达积分。",
+        "逐点幂平均下界给出 H_{M_{−p,λ}(a,b)} 包含 S(F_a,G_b)，再以集合 BM 假设下界其测度。",
+        "选取单调输运 T，使层集测度密度 t↦μ₁(F_t) 推送到 s↦μ₂(G_s)，故累积层质量匹配。",
+        "沿曲线 (t,T(t)) 对输出层参数换元；对负幂平均的导数作下界，和集合 BM 项相消，余下的正好积分 ∫μ₁(F_t)dt=∫f。"
+      ],
+      "gaps": [
+        "文中将一维单调输运、导数与换元按形式计算；对任意测度空间下的绝对连续性、广义逆和零密度层的处理未展开证明。",
+        "式 (2) 的幂平均导数计算引用外部引理，本文只称简单计算，未独立重证所有边界情形。",
+        "集合运算的可测性、集合增长指数 p 和积分质量相等是必要前提；不同几何域要先验证这些条件。",
+        "当集合级假设只在特殊集合族（如对称凸集）成立时，层集也必须落在该族中，通常需要对函数施加偶性/拟凹性等额外限制。"
+      ],
+      "author_claim": "Proposition 1.4 从一般集合级 Brunn–Minkowski 不等式推出函数型 BBL；Remark 1.5 说明几何均值极限给 PL 型结论。",
+      "checked_derivation": "已逐步检查层集包含关系、layer-cake、输运累积质量匹配，以及式 (2) 如何抵消幂平均项。PDF 第 3 页视觉核对了命题假设、输运公式和关键导数不等式。"
+    },
+    {
+      "assumptions": [
+        "d 为正整数，0<p<1/d，f,g,h:Z^d→R_{≥0} 且 Σf=Σg。",
+        "对所有 x,y∈Z^d，h(x+y)≥M_{−p,1/2}(f(x),g(y))。",
+        "存在 n=n_{d,ε,p}，使任意 n 个平行超平面 H₁,…,H_n 都满足 Σ_{Z^d∩(∪ᵢHᵢ)} f ≤ (1−2^{d−1/p})Σf。"
+      ],
+      "statement": "在这些条件下，Σ_{z∈Z^d}h(z)≥(2^d−ε)Σf。p→0 给出作者的离散 Prékopa–Leindler 推论：若 h(x+y)≥√(f(x)g(y)) 且任意 n=n_{d,ε,α} 个平行超平面承载的 f 质量至多为 (1−α)Σf，则同样有 Σh≥(2^d−ε)Σf。",
+      "start_line": 96,
+      "end_line": 108,
+      "pdf_pages": [
+        2
+      ],
+      "proof_start_line": 472,
+      "proof_end_line": 543,
+      "proof_pages": [
+        7,
+        8
+      ],
+      "proof_steps": [
+        "用外部离散 Brunn–Minkowski 定理：只要集合 B 不被 m 个平行超平面覆盖，就有近似 |A+B|^(1/d)≥|A|^(1/d)+(1−η)|B|^(1/d)。",
+        "层集与单调输运配对：对未被 m 个超平面覆盖的 G_t，将 F_{T(t)}+G_t 放入 h 的适当幂平均超水平集，积分增长得到约 (1−dη)2^d 的输出质量。",
+        "若上述非退化层已携带大部分 g 质量，第一支完成；否则临界层 G_{t_m} 被 m 个超平面覆盖，故其中一条超平面 H 上 g 质量至少 ηΣg/m。",
+        "把 f 按与 H 平行的格点超平面 H_i 切片并按质量排序；f 的非退化条件保证前若干切片不能吞掉太多总质量。",
+        "在每个和超平面 H+H_i 上用辅助 Lemma 2.1 做低维幂平均卷积下界，再以 Lemma 2.2 汇总切片尾部；令 n 足够大并用 M_{−p,1/2}(L,1)→2^(1/p) 得出 (2^d−ε) 下界。"
+      ],
+      "gaps": [
+        "n 依赖 d、ε、p（离散 PL 推论另依赖 α）；输入非退化阈值和结论常数不可脱离这类依赖单独使用。",
+        "证明直接调用外部离散 Brunn–Minkowski 定理及其超平面覆盖阈值，本文未重证该集合定理。",
+        "非退化条件针对 f 的所有 n 个平行切片；若去掉它，文章给出近似尖锐的集中反例。",
+        "这是 Z^d 上的求和不等式，输出因子 2^d 与格点加法结构相关，不是欧氏 PL/BBL 常数，也不能直接套用至 Lebesgue 边际。"
+      ],
+      "author_claim": "Theorem 1.2 及 Corollary 1.3 是离散 BBL 与 PL 版本；第 2 节证明使用层集、输运和切片补偿退化层。",
+      "checked_derivation": "PDF 第 2 页视觉核对平均指数、所有 n 个平行超平面的非退化门槛与输出常数；PDF 第 8 页核对输运层集支路及另一支的超平面切片求和公式。已确认非退化条件不是可删的技术装饰，作者在第 2 页给出近尖锐集中例。"
+    }
+  ],
+  "constant_dependence": "连续/集合级命题沿用输入 Brunn–Minkowski 指数 p、λ，不产生额外维数常数。离散结论给 2^d−ε；证明的 m 与 n 分别依赖 d,η 及 d,p,ε,α,η,m，且 η 先依赖 d,α,ε。不得把有限 n 说成与维数/精度无关。",
+  "endpoint_limits": [
+    "离散 BBL 只在 0<p<1/d；PL 推论是 p→0 的几何平均极限。",
+    "格点证明必须有防集中条件；输入质量集中在单个点/少量平行超平面时可破坏预期的大 doubling 下界。",
+    "一般 BBL 需要原测度下等质量和点态耦合条件；不等质量、非可测 S(A,B) 或不受集合 BM 控制的层集不能直接代入。",
+    "Gaussian或无条件测度例需要层集凸、偶或无条件等结构，使集合级不等式适用于所有相关超水平集；一般 log-concavity 单独不总够。"
+  ],
+  "reusable_methods": [
+    "由集合增长推函数积分不等式：先核验集合运算/测度 BM，再对函数做层集分解和单调输运配对。",
+    "用 indicator 函数反向检验函数型推广：它必须还原原集合不等式及同一个指数 p。",
+    "遇到离散结构定理附加非退化条件时，按层集分解成扩张可控部分和集中在低维片的部分，再对后者逐片使用低维卷积引理。",
+    "精确标注空间与端点：欧氏测度、格点求和、Gaussian measure、无条件产品测度的论证和常数不得混写。"
+  ],
+  "unchecked": [
+    "Proposition 1.4 中被引用的幂平均导数不等式以及一般单调输运正规化未独立证明。",
+    "离散证明依赖 vHKT25 的 approximate Brunn–Minkowski 定理；其证明未纳入本文且未独立审计。",
+    "PDF 第 2、3、8 页重要陈述和证明公式已视觉核对；其余部分按全文页结构文本阅读，没有逐页截图复核。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 722,
+    "source_lines": 726,
+    "required_content_lines": 486,
+    "covered_content_lines": 486,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-8cdc5c07bc1a147e/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/P-8cdc5c07bc1a147e.json",
+  "review_input_sha256": "ab5e6d028269f7e03d16249aabee9a13e9ed4480d181cfd42313f5643bc8b77b"
+}

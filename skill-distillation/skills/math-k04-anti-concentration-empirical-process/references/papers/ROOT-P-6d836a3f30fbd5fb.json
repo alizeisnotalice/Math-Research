@@ -1,0 +1,178 @@
+{
+  "paper_id": "P-6d836a3f30fbd5fb",
+  "observed_title": "An elementary proof of anti-concentration for degree two non-negative Gaussian polynomials",
+  "authors": [
+    "Stephen Tu",
+    "Ross Boczar"
+  ],
+  "version": "arXiv:2301.05992v1, watermark15Jan2023; titledate18Jan2023;6pages",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 232,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "scope": "全文含全部Lemma2.1–2.4证明、reference；p3/4/5视觉核验。"
+    }
+  ],
+  "read_status": "full_read",
+  "proof_verified": false,
+  "topic_relevance": [
+    {
+      "code": "K04",
+      "decision": "direct",
+      "reason": "QuadraticGaussian nonnegative mean-relative lower-tail bound"
+    },
+    {
+      "code": "C03",
+      "decision": "adjacent",
+      "reason": "Degree2 homogeneousPSD nonnegativitycertificate; notgeneralSOS"
+    }
+  ],
+  "definitions": [
+    "f nonzero,globallynonnegative degree≤2;Q augmentedPSD;Ef=trQ>0.",
+    "ThresholdεEf origin-relative lower-tail, notsup_tP(|f−t|≤εEf)."
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem1.1 externalgeneral theorem; Theorem1.2 restricted elementary theorem",
+      "start_line": 19,
+      "end_line": 47,
+      "pdf_pages": [
+        1,
+        2
+      ],
+      "assumptions": [
+        "X~N(0,I_n); f nonnegative degree2 polynomial, notidenticallyzero.",
+        "Transferable repaired PSD formulation requires Q≥0,Q≠0, trQ=Ef>0."
+      ],
+      "statement": "P(f(X)≤εEf)≤sqrt(2eε) for everyε>0; maycap boundat1. No explicitn dependence.",
+      "proof_steps": [
+        "Quadratic polynomialf=[1;x]ᵀQ[1;x],nonnegative globally⇔Q≥0: homogenize t²f(x/t)≥0 fort≠0,continuity t=0.",
+        "Ef=q11+trQ22=trQ."
+      ],
+      "gaps": [
+        "General degree d logconcave Carbery–Wright[1] quoted, notprovedhere.",
+        "Thm1.2 literaldegree2 excludeszero polynomial; laterallPSD lemmas omitQ≠0. Q=0 givesP(0≤0)=1>sqrt(2eε) forε<1/(2e), so repairedscopemuststatenonzero."
+      ]
+    },
+    {
+      "label": "Lemma2.1 Gaussianquadratic Laplace bound",
+      "start_line": 53,
+      "end_line": 78,
+      "pdf_pages": [
+        2
+      ],
+      "assumptions": [
+        "Q≥0, λ>0, Gaussian standardX; no invertibilityQ22needed."
+      ],
+      "statement": "Eexp(−λf(X))=det(I+2λQ22)^(-1/2) exp(−λ[q11−q12ᵀ(Q22+(2λ)^-1I)^-1q12])≤det(I+2λQ22)^(-1/2).",
+      "proof_steps": [
+        "Complete Gaussian square using strictlypositive Q22+(2λ)^-1I.",
+        "Schurcomplement nonnegative after addingbottom diagonalregularizer; determinantGaussianintegral."
+      ],
+      "gaps": []
+    },
+    {
+      "label": "Lemma2.2 tracebranch",
+      "start_line": 90,
+      "end_line": 110,
+      "pdf_pages": [
+        3
+      ],
+      "assumptions": [
+        "Q≥0,Q≠0. IftrQ22>0, optimizeonly0<ε<1; ε≥1 givestrivial bound.",
+        "IftrQ22=0, PSDforcesq12=0; nonzeroQ thenq11>0 eventf≤0isempty."
+      ],
+      "statement": "P(f≤ε trQ22)≤sqrt(eε); optimizedsmallε bound sqrt(e^(1−ε)ε).",
+      "proof_steps": [
+        "det(I+2ηQ22)=∏(1+2ηλi)≥1+2ηtrQ22.",
+        "Chernoff withη=(1−ε)/(2ε trQ22)>0."
+      ],
+      "gaps": [
+        "Printed Lemma2.2 includesQ0 counterexample andchoosesnegativeη ifε>1; splittr=0 andε≥1 explicitly."
+      ]
+    },
+    {
+      "label": "Lemma2.3 scalar shiftedGaussian",
+      "start_line": 113,
+      "end_line": 157,
+      "pdf_pages": [
+        3,
+        4
+      ],
+      "assumptions": [
+        "Y~N(µ,σ²),σ>0; ε∈(0,1)."
+      ],
+      "statement": "P(|Y|≤ε|µ|)≤ε/2. µ0 giveszeroeventmass sinceσ>0.",
+      "proof_steps": [
+        "Forr=|µ|>0, probabilityΦ((1+ε)r/σ)−Φ((1−ε)r/σ).",
+        "Maximizer r*=σsqrt(log((1+ε)/(1−ε))/(2ε)); derivativepositivebefore andnegativeafter.",
+        "Optimizedζ hasζ(0+)=0,ζ(1−)=1/2; displayedζ″positive denominator times square((ε²−1)logratio+2ε)². Nonzero square follows logratio=2∫0^ε(1−t²)^-1dt<2ε/(1−ε²). Convexity⇒ζ≤ε/2."
+      ],
+      "gaps": [
+        "Formulaζ″ visuallycheckedp4; no claimentirepaper independentlymachineformallyverified."
+      ]
+    },
+    {
+      "label": "Lemma2.4 branchcombination andchecked simplerrepair",
+      "start_line": 159,
+      "end_line": 208,
+      "pdf_pages": [
+        4,
+        5
+      ],
+      "assumptions": [
+        "Q≥0,Q≠0,ε>0; ε≥1/(2e) trivial. Forremainingε∈(0,1/(2e))."
+      ],
+      "statement": "Ifq11≤trQ22, totalmean≤2trQ22,applyLemma2.2 at2ε. Ifq11>trQ22, q11>0, directSchurcompletion f≥(sqrt(q11)+q12ᵀX/sqrt(q11))²; eventf≤2εq11 boundedbysqrt(2ε)/2, hence≤sqrt(2eε).",
+      "proof_steps": [
+        "Checked derivation: directlydivideq11>0, SchurQ22−q12q12ᵀ/q11≥0. No γlimitneeded.",
+        "q12≠0 scalarGaussianhaspositivevariance; applyLemma2.3 withεscalar=sqrt(2ε)<1. q12=0 scalarconstant=sqrtq11, eventimpossible since2ε<1.",
+        "NonzeroQ guaranteesEf>0 andcoversconstantpositive aswellasactualdegree2."
+      ],
+      "gaps": [
+        "Originalγk eventsunion={f<2εq11}, not≤; printedcontinuityfrombelow identifiesbothwithoutcheckingnoatom. Repaired directSchurargument bypasseslimitentirely.",
+        "Nonconstants Gaussianpolynomial levelsets havezeroLebesgue/Gaussianmeasure, butthisfactnotneeded in directrepair.",
+        "OriginalusesLemma2.3 σ>0 whenq12=0; splitdeterministiccase."
+      ]
+    }
+  ],
+  "unchecked": [
+    "GeneralCarberyWrightdegree/logconcave theoremexternal[1] notproofaudited.",
+    "Lemma2.3 derivativeclosedform checkedvisually andsignargument; noformalalgebracertificate."
+  ],
+  "cube_interface": [
+    "原文结论：standardGaussian输入非负二次多项式meanrelativeanti-concentration，无n显式因子。",
+    "已检查推导：Q≠0补条件；直接Schur补替代γ极限，单独处理q12=0。",
+    "迁移推断：仅当cube课题变量可确证为这种Gaussianquadratic并有PSD和正均值，可使用。",
+    "待验证：GP-BRANCH/TC-A4/HS未定义模型映射；不支持任意偏置区间、任意sign polynomial或非Gaussian输入。"
+  ],
+  "gaps": [
+    "零多项式不可用，负项或局部nonneg不能给全局PSD。",
+    "Gaussian协方差一般化须先线性变换并证明nonzero均值在支持上；退化Gaussian可把非zero多项式压为0。"
+  ],
+  "visual_checks": [
+    "reviews/ROOT/visual/tu-boczar/p3.png",
+    "reviews/ROOT/visual/tu-boczar/p4.png",
+    "reviews/ROOT/visual/tu-boczar/p5.png"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 228,
+    "source_lines": 232,
+    "required_content_lines": 153,
+    "covered_content_lines": 153,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-6d836a3f30fbd5fb/paper.md"
+  },
+  "review_source": "reviews/ROOT/evidence/P-6d836a3f30fbd5fb.json",
+  "review_input_sha256": "695b3fdd56f360ac7f9fd894a63de8a31037827c6b08c480e2a84b410426f0ee"
+}

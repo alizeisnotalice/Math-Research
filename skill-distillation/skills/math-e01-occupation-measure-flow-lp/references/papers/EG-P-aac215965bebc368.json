@@ -1,0 +1,125 @@
+{
+  "paper_id": "P-aac215965bebc368",
+  "observed_title": "Controller Synthesis for Discrete-Time Polynomial Systems via Occupation Measures",
+  "authors": [
+    "Weiqiao Han",
+    "Russ Tedrake"
+  ],
+  "version": "arXiv:1803.09022v2；首页标注 2018。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 553,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "E01": "direct"
+  },
+  "definitions": [
+    {
+      "term": "离散时间受控 Liouville 方程",
+      "definition": "μ+π*ν=φ*ν+μ₀，其中 ν 为 X×U 上控制占用测度，π、φ 分别为状态投影和动力学映射。",
+      "source_ranges": [
+        {
+          "start_line": 125,
+          "end_line": 147,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "控制器综合原始 LP",
+      "definition": "最大化初始测度 μ₀ 的总质量；约束 μ₀+μ̂₀=λ_X、终端测度 μ 支持于目标集 Z，且 μ₀、μ̂₀、μ、ν 非负。",
+      "source_ranges": [
+        {
+          "start_line": 169,
+          "end_line": 195,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "多项式矩/SOS 层级",
+      "definition": "将测度截断矩组成矩阵和局部化矩阵，形成原始 SDP；其对偶用二次模中的 SOS 多项式替代连续非负函数。",
+      "source_ranges": [
+        {
+          "start_line": 196,
+          "end_line": 260,
+          "pdf_pages": [
+            4
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Proposition 1：自主离散系统后向可达集占用 LP",
+      "assumptions": [
+        "X 为文中紧致半代数状态集，映射 f 与目标集 Z 如问题定义。",
+        "存在 M>0，使 LP (6) 每个可行解的占用测度 ν 总质量均小于 M。",
+        "第 (a) 部分另假设 f(X)⊆X。"
+      ],
+      "statement": "(a) LP (6) 有最优解，最优初始测度为 Lebesgue 测度限制在有限时后向可达集合 X⁰∞ 上，最优值为其体积。(b) 原始 LP 与连续函数对偶 LP (7) 无对偶间隙。对于 SOS 层级，附加多项式序列条件 (i) uk>1_{cl X⁰∞}、(ii) uk→1_{cl X⁰∞} 于 L¹、(iii) uk(x)−uk(f(x))>0，可推出层级外逼近误差消失；文中说明 (iii) 是实质性额外条件。",
+      "start_line": 288,
+      "end_line": 316,
+      "pdf_pages": [
+        5
+      ],
+      "proof_steps": [
+        "作者先借助对所有可行占用测度的一致质量界取得测度变量的弱星紧性，再说明初始测度可覆盖所有最终到达 Z 的初值，从而得到体积最优值。",
+        "连续函数对偶的无间隙结论归入标准无限维 LP 强对偶论证。",
+        "层级收敛证明先用连续函数逼近闭可达集指示函数，再以 Stone–Weierstrass 作多项式一致逼近，并要求 uk−uk∘f 严格为正以便使用 Putinar 型证书。",
+        "以上为对作者论证结构的阅读摘要；未独立逐行复核弱星紧性/强对偶定理所需的拓扑细节及 SOS 表示细节。"
+      ],
+      "gaps": [
+        "占用测度质量一致有界是额外假设；一般离散系统未必满足。",
+        "近似误差消失的第三个多项式条件不由前两项自动推出，且作者指出实践中通常未知。",
+        "有限 SDP 的提取控制器是启发式的；稳定性和可控域需事后验证。"
+      ]
+    }
+  ],
+  "constant_dependence": "控制器综合层级由截断次数 r 与动力学次数 d 决定；文中未给中心立方体极大问题可直接使用的统一常数。数值可行性受 SDP 求解器精度影响。",
+  "endpoint_limits": [
+    "结果针对离散时间多项式动力学、紧半代数约束集及指定目标集。",
+    "外逼近收敛在额外单调多项式条件下成立；没有给出有限阶收敛速率。",
+    "闭环控制器的稳定性不由该程序保证；作者明确将方法称为 heuristic。"
+  ],
+  "reusable_methods": [
+    "用推前测度平衡式表达轨迹流：初始质量+终端占用=动力学推前占用+初始占用。",
+    "用矩阵半正定与局部化矩阵构造测度非负性的 SDP 外松弛。",
+    "区分值/可达集的凸松弛界与从矩恢复出的真实控制律，并在原动力学中后验核验。"
+  ],
+  "unchecked": [
+    "未独立证明 Proposition 1 的无限维强对偶细节。",
+    "未独立重做 moment/SOS 层级的 Putinar 证书推导。",
+    "中心立方体极大函数对应何种受控状态/目标测度，论文没有提供；迁移是待证猜想。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 549,
+    "source_lines": 553,
+    "required_content_lines": 503,
+    "covered_content_lines": 503,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-aac215965bebc368/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-aac215965bebc368.json",
+  "review_input_sha256": "938b0b9dca0a3abd7e8d8265075df5419436ba7bbca75114850285c0c873fefe"
+}

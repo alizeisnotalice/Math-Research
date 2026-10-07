@@ -1,0 +1,209 @@
+{
+  "paper_id": "S-0c1c25fd019e7c3c",
+  "observed_title": "The John Ellipsoid Theorem",
+  "authors": [
+    "Ralph Howard"
+  ],
+  "version": "Lecture notes dated November 1997; local supplementary PDF, 10 pages",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 57,
+      "pdf_pages": [
+        1
+      ]
+    },
+    {
+      "start_line": 58,
+      "end_line": 108,
+      "pdf_pages": [
+        2
+      ]
+    },
+    {
+      "start_line": 109,
+      "end_line": 152,
+      "pdf_pages": [
+        3
+      ]
+    },
+    {
+      "start_line": 153,
+      "end_line": 207,
+      "pdf_pages": [
+        4
+      ]
+    },
+    {
+      "start_line": 208,
+      "end_line": 257,
+      "pdf_pages": [
+        5
+      ]
+    },
+    {
+      "start_line": 258,
+      "end_line": 304,
+      "pdf_pages": [
+        6
+      ]
+    },
+    {
+      "start_line": 305,
+      "end_line": 355,
+      "pdf_pages": [
+        7
+      ]
+    },
+    {
+      "start_line": 356,
+      "end_line": 407,
+      "pdf_pages": [
+        8
+      ]
+    },
+    {
+      "start_line": 408,
+      "end_line": 453,
+      "pdf_pages": [
+        9
+      ]
+    },
+    {
+      "start_line": 454,
+      "end_line": 506,
+      "pdf_pages": [
+        10
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "N01",
+    "decision": "direct",
+    "basis": "The supplementary lecture notes prove the maximum-volume inscribed ellipsoid theorem, its symmetric improvement, sharpness, and uniqueness."
+  },
+  "definitions": [
+    "A convex body is a compact convex subset of R^n with nonempty interior.",
+    "The John ellipsoid is a maximum-volume ellipsoid contained in the convex body.",
+    "For a centrally symmetric body, the center may be taken at the origin."
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "K is a convex body in R^n."
+      ],
+      "statement": "There is an ellipsoid E with center c such that E subset K subset c+n(E-c). The dilation factor n is sharp.",
+      "start_line": 44,
+      "end_line": 52,
+      "pdf_pages": [
+        1
+      ],
+      "proof_start_line": 70,
+      "proof_end_line": 264,
+      "proof_pages": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "proof_steps": [
+        "Parameterize ellipsoids as AB^n+b; the feasible parameter set is compact and |det A| is continuous, so a maximum-volume ellipsoid exists.",
+        "Use an affine change of variables so the maximizing ellipsoid is B^n and its center is 0.",
+        "For a point p in K with |p|=a>n, let C_a=conv(B^n,p) and define the affine flow Psi_t(x,y)=(−1+e^t(x+1),e^(−lambda t)y). In two dimensions the moving circle stays in the tangent wedge for small t when lambda>1/(a−1); symmetry gives containment in higher dimensions.",
+        "The volume is multiplied by e^((1−(n−1)lambda)t). Since a>n, choose 1/(a−1)<lambda<1/(n−1); this strictly increases volume while staying inside K, contradicting maximality.",
+        "A simplex example shows n cannot be reduced."
+      ],
+      "author_claim": "The theorem and sharpness are stated by the author.",
+      "checked_derivation": "I read all ten pages. I rendered PDF pages 5 and 7 and verified the OCR-sensitive thresholds lambda>1/(a−1) and, in the symmetric proof, lambda>1/(a^2−1). The determinant factor e^((1−(n−1)lambda)t) and interval choices then give the stated contradictions.",
+      "transfer_inference": "The factor n is valid without symmetry; it cannot be replaced by sqrt(n) unless the body is centrally symmetric."
+    },
+    {
+      "assumptions": [
+        "K is a convex body in R^n symmetric about the origin."
+      ],
+      "statement": "There is a centrally symmetric maximum-volume inscribed ellipsoid E such that E subset K subset sqrt(n) E; the factor sqrt(n) is sharp for the cube.",
+      "start_line": 273,
+      "end_line": 276,
+      "pdf_pages": [
+        6
+      ],
+      "proof_start_line": 290,
+      "proof_end_line": 347,
+      "proof_pages": [
+        6,
+        7
+      ],
+      "proof_steps": [
+        "Normalize the maximal ellipsoid to B^n and take p=(a,0,...,0), together with -p.",
+        "Use the symmetric linear flow (e^t x,e^(−lambda t)y); the contact-point slope condition is lambda>1/(a^2−1).",
+        "The determinant gain remains e^((1−(n−1)lambda)t); if a>sqrt(n), choose 1/(a^2−1)<lambda<1/(n−1), contradicting maximality.",
+        "For [-1,1]^n, B_2^n is the John ellipsoid and the vertex has Euclidean norm sqrt(n), proving sharpness."
+      ],
+      "author_claim": "The symmetric John ellipsoid inclusion and cube sharpness are stated by the author.",
+      "checked_derivation": "I visually checked the extracted theorem and the flow threshold on page 7. The inequality a^2>n is precisely what makes the interval for lambda nonempty.",
+      "transfer_inference": "Use this normalization only after central symmetry is established; an arbitrary convex body gets factor n instead."
+    },
+    {
+      "assumptions": [
+        "K is a convex body in R^n: compact, convex, and with nonempty interior. The proof uses convexity of the feasible affine images AB^n+b."
+      ],
+      "statement": "The maximum-volume inscribed ellipsoid of K is unique.",
+      "start_line": 350,
+      "end_line": 351,
+      "pdf_pages": [
+        7
+      ],
+      "proof_start_line": 352,
+      "proof_end_line": 476,
+      "proof_pages": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "proof_steps": [
+        "Represent each ellipsoid as AB^n+b with A positive definite by polar decomposition.",
+        "The feasible set of pairs (A,b) is convex. The determinant inequality det(A+B)^(1/n)>=det(A)^(1/n)+det(B)^(1/n), with equality only for proportional positive-definite matrices, forces two maximizing ellipsoids to have the same matrix.",
+        "If their centers differ, their convex hull contains a translate-centered ellipsoid with strictly larger volume, contradicting maximality.",
+        "For distinct centers, affine-normalize the common maximizing shape to B and the centers to ±a e1 (a>0). Then conv((B−a e1)∪(B+a e1))=B+[-a,a]e1 contains the centered ellipsoid with semi-axes sqrt(1+a^2),1,…,1. For a point (x,y) on this ellipsoid with x>=a, the squared distance to the segment [-a,a]e1 is at most (x−a)^2+1−x^2/(1+a^2), whose maximum on [a,sqrt(1+a^2)] is at an endpoint and is <=1; for |x|<=a the distance is ||y||<=1, and the x<=−a case is symmetric. The ellipsoid therefore lies in the convex hull and has strictly larger volume, a contradiction."
+      ],
+      "author_claim": "Theorem 3 states uniqueness; the determinant inequality and center argument are proved in the notes.",
+      "checked_derivation": "The determinant/Minkowski inequality step was checked. The center contradiction is also checked by normalizing the equal-shape ellipsoids to unit balls at ±a e1 and verifying that the ellipsoid with first semiaxis sqrt(1+a^2) and remaining semiaxes 1 lies in their convex hull; its volume ratio is sqrt(1+a^2)>1. The original displayed proof gives this containment geometrically in Figure 7 but not the distance calculation.",
+      "transfer_inference": "A claimed canonical John ellipsoid is unambiguous for each convex body, though an algorithm still needs to compute it.",
+      "gaps": [
+        "Theorem 3 is stated using “compact body”; its proof explicitly requires K to be convex. Read the claim with the convex-body hypothesis from the lecture notes. A merely compact nonconvex set, such as two disjoint unit balls, can have two distinct maximum-volume inscribed ellipsoids.",
+        "The source has an apparent typographical slip in the proof of Proposition 4.2 where P^{-1}AP^{-1} appears in the determinant expansion; the surrounding definition and subsequent substitution use C=P^{-1}BP^{-1}. The evidence card follows the corrected algebraic identity."
+      ]
+    }
+  ],
+  "constant_dependence": "The nonsymmetric dilation is exactly n; the centrally symmetric dilation is exactly sqrt(n). Both are sharp. The affine-flow proof's positive determinant exponent requires lambda<1/(n−1), while containment imposes the lower threshold stated above.",
+  "endpoint_limits": [
+    "K must be full-dimensional, compact, and convex; the argument is for convex bodies in finite-dimensional Euclidean space.",
+    "The sqrt(n) conclusion requires central symmetry about the chosen origin.",
+    "The result concerns a maximum-volume inscribed ellipsoid. A Löwner ellipsoid is the minimum-volume circumscribed ellipsoid and requires a separate polarity or dual-body argument.",
+    "This is distinct from John domains, John--Nirenberg inequalities, and Loewner differential equations."
+  ],
+  "reusable_methods": [
+    "Affine-normalize an extremizer before estimating the containing body.",
+    "Prove sharp dimension constants by a local volume-improving deformation and the exact containment threshold.",
+    "Separate existence, inclusion, sharpness, and uniqueness into distinct proof obligations.",
+    "Check OCR-sensitive formulas against rendered PDF pages when a constant controls whether the parameter interval is nonempty."
+  ],
+  "unchecked": [
+    "The notes cite John's original result and prior expositions but the arguments recorded here are the self-contained proofs presented in the ten-page lecture note."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 502,
+    "source_lines": 506,
+    "required_content_lines": 366,
+    "covered_content_lines": 366,
+    "reported_status": "full_read",
+    "source": "supplementary/S-0c1c25fd019e7c3c/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/S-0c1c25fd019e7c3c.json",
+  "review_input_sha256": "43e0fa56e84dd9e60b43ee484f748274b6aab8176714d12f48057b246aaf7f96"
+}

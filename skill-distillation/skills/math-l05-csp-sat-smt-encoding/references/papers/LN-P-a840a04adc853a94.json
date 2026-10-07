@@ -1,0 +1,194 @@
+{
+  "paper_id": "P-a840a04adc853a94",
+  "observed_title": "On Continuous Local BDD-Based Search for Hybrid SAT Solving",
+  "authors": [
+    "Anastasios Kyrillidis",
+    "Moshe Y. Vardi",
+    "Zhiwei Zhang"
+  ],
+  "version": "arXiv:2012.07983v2，正文署名日期 2021-06-15；本地 PDF 共 21 页。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 1303,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "L05",
+    "decision": "direct",
+    "basis": "文章把 hybrid SAT 的约束存为多根 BDD，利用独立随机舍入将连续目标解释为离散满足约束数的期望，并给出线性于共享 BDD 大小的目标值与梯度计算流程。它可直接支撑有限布尔约束的表示、优化与回代检查；作者明确将 GradSAT 定义为不完备连续局部搜索器，不能替代可证明 UNSAT 的完备 SAT 求解器。"
+  },
+  "definitions": [
+    "变量赋值 b_i∈{−1,+1} 中 −1 表示 True、+1 表示 False；约束函数在 Boolean 点上为 1 表示满足、0 表示违反。其 Walsh–Fourier 展开 WFE_c 在实盒 [−1,1]^n 上是多线性插值。",
+    "实点 a 的随机舍入独立逐坐标进行：P(R(a)_i=−1)=(1−a_i)/2，P(R(a)_i=+1)=(1+a_i)/2。",
+    "目标 F_{f,w}(a)=Σ_c w(c)WFE_c(a)；在 Boolean 点它是满足约束的权重和，推广到实点后等于舍入后权重分数的期望。",
+    "MRBDD 是多个约束 BDD 共用节点后的有向无环图；S(B)=|B.V|+|B.E|。Theorem 5–7 的 O(S(B)) 复杂度以该共享 BDD 已构造、且大小可承受为条件。"
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "公式 f 是有限个布尔约束的合取；每个 WFE_c 在 Boolean 顶点上等于满足指示函数，并按多线性展开延拓到实盒。",
+        "随机舍入的坐标独立，且各约束权重严格为正；若采用 R+ 表示非负，则 Theorem 3 的 iff 还须排除零权重约束。"
+      ],
+      "statement": "作者 Theorem 3：SAT 可满足，当且仅当 max_{a∈[−1,1]^n} F_{f,w}(a)=Σ_c w(c)。Theorem 4：对任意盒内点 a，F_{f,w}(a)=E_{b∼S_a}[F_{f,w}(b)]，因此它是随机舍入后满足约束总权重的期望。由此可从连续全局最大值的满分识别可满足性，但局部搜索返回非满分只是不成功的搜索结果，不能证明不可满足。",
+      "start_line": 237,
+      "end_line": 364,
+      "pdf_pages": [
+        4,
+        5,
+        6
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 889,
+          "end_line": 921,
+          "pdf_pages": [
+            15
+          ]
+        }
+      ],
+      "proof_steps": [
+        "按定义，WFE_c(b) 在每个布尔顶点上等于 0/1 满足指示量；在 a∈[−1,1]^n 处，独立随机舍入赋值的概率质量是各坐标伯努利概率的乘积。",
+        "多线性插值恒等于对顶点函数按该乘积概率取期望，逐个约束乘以 w(c) 后求和，得到 Theorem 4。",
+        "由期望不超过最大顶点评分，实盒上的目标不超过 Σw；满足赋值达到 Σw。反过来若达到满分，因各 w(c)>0 且每个 WFE_c(a)∈[0,1]，则每项都必须为 1，随机舍入几乎必然满足全部约束，从而存在满足顶点。"
+      ],
+      "gaps": [
+        "Theorem 2、3 是对全局最优值的等价，不说明非凸局部优化会找到它，也不提供有限迭代复杂度或 UNSAT 证明。",
+        "Theorem 3 反向证明需要约束权重严格正；若 w(c)=0，对应约束可在所有顶点被违反仍达到权重总和。文中证明称 w 为 positive function，但 R+ 记号需按严格正解释。",
+        "Theorem 4 的期望解释依赖坐标独立的随机舍入及 WFE 的 Boolean 顶点指示函数语义；不得把它误换成 P803 SAT 文章里 FE=0 表示满足的另一种符号约定。"
+      ],
+      "author_claim": "第 3 节回顾 FourierSAT，并给出带权最大分数命题；附录 p15 证明随机舍入期望关系以及带权 SAT 全局最大值判别。",
+      "checked_derivation": "已按有限 Boolean 顶点多线性插值直接核对期望恒等式和加权满分条件。Theorem 3 的权重零值边界由单个约束权重设为 0 即可构成反例；故卡片把正权重写成显式假设。PDF 第 5 页已图像核对带权命题与舍入概率。"
+    },
+    {
+      "assumptions": [
+        "每个 Boolean 约束有可构造的 BDD；算法输入的是多个约束节点共享后的 MRBDD B 与 a∈[−1,1]^n。",
+        "图按变量次序或可用拓扑次序处理，节点子函数和变量索引一致；权重只依赖约束。"
+      ],
+      "statement": "作者 Theorems 5、6 声称通过 MRBDD 的 top-down 或 bottom-up 消息传递，能在 O(S(B)) 时间精确计算 F_{f,w}(a)。Theorem 7 声称同样 O(S(B)) 计算其梯度，Algorithm 5 对每个非终端节点 v 将 MT_D[v]·(MB_U[v.F]−MB_U[v.T]) 累加到节点变量的梯度坐标。",
+      "start_line": 366,
+      "end_line": 458,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 937,
+          "end_line": 1110,
+          "pdf_pages": [
+            15,
+            16,
+            17,
+            18
+          ]
+        },
+        {
+          "start_line": 1111,
+          "end_line": 1241,
+          "pdf_pages": [
+            18,
+            19,
+            20
+          ]
+        }
+      ],
+      "proof_steps": [
+        "top-down 消息 MT_D[v] 累计进入节点 v 的舍入概率与约束权重；bottom-up 消息 MB_U[v] 是该节点根子函数的 circuit-output probability。共享等价子图让多个约束复用这些消息。",
+        "目标值可由终端 one 的 top-down 总消息，或各约束入口的 bottom-up 概率乘权重求和得到；用每个节点只处理一次，线性于共享图大小。",
+        "梯度推导先把坐标 i 固定在 −1 与 +1 两种情况下的约束输出概率作差，再按到达标号 i 节点的概率和两个子函数输出概率分解，合并为每个节点的 top-down×bottom-up 子差。",
+        "独立核验原式的比例：P(R(a)_i=−1)=(1−a_i)/2，所以局部概率插值对 a_i 求导产生 1/2。取单变量约束 c(x)=1[x=−1]、权重 1，其 WFE 为 (1−a)/2，真实导数为 −1/2；论文 Algorithm 5 在根节点得到 1·(0−1)=−1。因此文中所称的精确梯度缺少因子 1/2。"
+      ],
+      "gaps": [
+        "本卡的直接代入显示 Theorem 7 / Algorithm 5 按原文公式算出的梯度整体比数学导数大 2 倍。该因子不改变单纯梯度方向，但对自适应或绝对步长优化器可能改变迭代轨迹；不能照抄为精确梯度接口。",
+        "来源 PDF 第 7 页 Algorithm 5 和附录第 18–20 页 Theorem 7 推导已图像核验；缺少的 1/2 不是文本抽取遗漏。",
+        "O(S(B)) 只约束既成 MRBDD 上的消息传播；任意布尔函数的 BDD 可能指数大，变量排序影响尺寸，而构造成本不由该结论消除。",
+        "Theorem 5–7 的证明在附录展开结构归纳，但共享节点、多入口与终端处理仍需正确实现；本审阅未运行作者代码。"
+      ],
+      "author_claim": "第 3 节 Theorem 5–7 和 Algorithms 3–5 给出 MRBDD 目标值、梯度递推及线性图大小复杂度；附录证明节点消息概率解释和梯度公式。",
+      "checked_derivation": "PDF 第 7、18、19、20 页已视觉核对消息递推、Algorithm 5 及附录偏导式。用一变量 BDD 手算发现全局 2 倍因子；该推导已给出完整反例，故未把作者的精确梯度主张当成经核验事实。"
+    },
+    {
+      "assumptions": [
+        "约束属于可被大小适度 BDD 表示的类别；变量次序固定并能生成共享 MRBDD。",
+        "文中数值实验限定于指定随机/工业/MaxSAT 数据集、优化器组合、硬件与时限。"
+      ],
+      "statement": "作者引用既有结果称，对 n 个变量的对称布尔约束可用 O(n²) 个 BDD 节点表示；系数绝对值受 M 限制的伪布尔约束可用 O(nM) 节点表示。实验中 GradSAT 可作为不完备 SAT/MaxSAT solver portfolio 的补充；作者报告它在 CARD/PB 随机实例和小型 MaxSAT 有竞争力，在 XOR 富集、较大工业实例上较弱。",
+      "start_line": 463,
+      "end_line": 715,
+      "pdf_pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "proof_steps": [
+        "将每项约束构造成单根 BDD，再以相同变量序合并等价子图成 MRBDD；节点共享程度由约束结构和变量序共同决定。",
+        "局部连续优化使用随机重启、对未满足约束自适应增权，并组合 SLSQP、MMA、CG、BFGS 多优化器。",
+        "作者使用多类随机 hybrid SAT、MaxSAT 与工业基准；以限时解数、评分和 BDD 节点数比较，不是数学完备性或最优性证明。"
+      ],
+      "gaps": [
+        "对称/PB 的 BDD 尺寸界是引用文献结果；一般变量重排后是否仍保持所需尺寸，不能从这里推出。",
+        "实验包含饱和超时和失败实例；作者称该工具为 incomplete solver，不能用于证明 UNSAT。",
+        "作者报告工业 partial MaxSAT 约三分之二实例未答复，并将改进权重和规模处理列为未来工作。"
+      ],
+      "author_claim": "第 4 节列出 GradSAT 的动态权重与优化器组合，第 5 节报告指定 benchmark 的实测结果和局限。",
+      "checked_derivation": "通读全部实验与 benchmark 附录说明；未重跑数据或核对公开代码。复杂度只按作者引用与图算法描述记录。"
+    }
+  ],
+  "constant_dependence": "目标求值及文中声明的梯度成本是 O(S(B))，依赖 MRBDD 实际节点/边规模；对称约束尺寸为 O(n²)，小整数系数伪布尔约束为 O(nM)，这些结构尺寸界不能保证任意表示小。每个优化器的运行次数、重启次数、变量序与线程配置也影响总成本。",
+  "endpoint_limits": [
+    "连续目标全局满分与 SAT 可满足等价；局部最大值、停止时 best-found assignment 或非满分值不能证明 UNSAT。",
+    "Theorem 7 的 Algorithm 5 依原文公式缺少 1/2，作为严格梯度实现需补因子或明确输出为两倍梯度。",
+    "梯度更新在盒内进行；作者未证明其收敛到全局最大值，也未给定可满足实例的一般有限时长保证。",
+    "BDD 的运行时间虽对 S(B) 线性，但 S(B) 可随函数、变量顺序指数增长；节点共享在其混合非 CNF 基准上常很有限。",
+    "MaxSAT 只返回当前最好赋值，是不完备启发式，不是精确最优证书；规模大的工业 partial MaxSAT 结果尤其受限。"
+  ],
+  "reusable_methods": [
+    "先用 BDD 表示约束并定义满足指示函数，再以随机舍入期望建立实域目标与离散加权分数间的精确接口。",
+    "在共享 DAG 上同时保留 top-down 到达质量和 bottom-up 子函数值，可复用求值与反向敏感度传播；实现时用有限差分核对梯度比例和符号。",
+    "比较求解器应分开记录可行赋值验证、优化器状态、超时/未解比例、模型大小与变量顺序；启发式 best score 不能替代 SAT 证明轨迹。",
+    "对有限变量约束可用 ROBDD / SAT / CP 形成候选搜索；把“模型表示可扩展”与“完整性/最优性可认证”拆成不同验收项。"
+  ],
+  "unchecked": [
+    "本次未复现 GradSAT 源代码、外部求解器或实验数据；所有运行表现均明确作为作者实验报告。",
+    "关于对称约束与伪布尔约束 BDD size 的界引用 [47]、[48]，本审阅未回查原文。",
+    "PDF 第 5、7、16、18、19、20 页作公式图像核验，其他页面依全文分页文本阅读，未逐页图像比对。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1299,
+    "source_lines": 1303,
+    "required_content_lines": 921,
+    "covered_content_lines": 921,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-a840a04adc853a94/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/P-a840a04adc853a94.json",
+  "review_input_sha256": "23ea6fdd31920c54292b618758d21055a4ab346595f37bdb67f6dd089fd14fc1"
+}

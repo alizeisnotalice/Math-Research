@@ -1,0 +1,222 @@
+{
+  "paper_id": "P-42888155391c88e9",
+  "observed_title": "Robust Fractional Programming",
+  "authors": [
+    "Bram L. Gorissen"
+  ],
+  "version": "arXiv:1508.04805v1; author-created version of JOTA article, 21 PDF pages",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1049,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "scope": "entire paper including all robust reformulations, examples, conclusion and appendices A–B"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "A01": "direct/adjacent: extends fractional programming to uncertain numerator, denominator and constraints; supplies CCT exact cases and a parametric residual method for the general robust case."
+  },
+  "definitions": [
+    {
+      "name": "nonrobust fractional program",
+      "statement": "min f(x)/g(x), subject to h_i(x)≤0, with convex nonnegative f and concave positive g over feasible X.",
+      "source_lines": [
+        107,
+        145
+      ],
+      "pdf_pages": [
+        3
+      ]
+    },
+    {
+      "name": "Schaible/CCT perspective form",
+      "statement": "Set y=x/g(x), t=1/g(x), then minimize t f(y/t) with t g(y/t)≥1 and t h_i(y/t)≤0. With f≥0, replacing equality by ≥1 preserves the optimal value.",
+      "source_lines": [
+        93,
+        118
+      ],
+      "pdf_pages": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "robust fractional program (R-FP)",
+      "statement": "Minimize α subject to f(a₀,x)/g(a₀,x)≤α for every a₀∈U₀ and h_i(a_i,x)≤0 for every a_i∈U_i; g>0 on all feasible x and uncertainty realizations.",
+      "source_lines": [
+        244,
+        259
+      ],
+      "pdf_pages": [
+        5
+      ]
+    },
+    {
+      "name": "parametric residual F(α)",
+      "statement": "F(α)=min_{x,w} w subject to f(a₀,x)−αg(a₀,x)≤w for every a₀ and robust feasibility constraints. Under the stated assumptions it is convexly representable and nonincreasing; its zero identifies the robust ratio value.",
+      "source_lines": [
+        381,
+        407
+      ],
+      "pdf_pages": [
+        8
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 2.1 (Schaible–Dinkelbach duality)",
+      "assumptions": [
+        "f convex and nonnegative on X",
+        "g concave on X",
+        "X closed and convex",
+        "the FP optimum is attained"
+      ],
+      "statement": "The Schaible perspective program and the Dinkelbach parameter program are dual, with strong duality.",
+      "start_line": 145,
+      "end_line": 178,
+      "pdf_pages": [
+        3,
+        4
+      ],
+      "proof_steps": [
+        "Rewrite the Dinkelbach program as the largest α whose residual f(x)−αg(x) is nonnegative for every x.",
+        "Apply the “primal worst equals dual best” duality result after restricting to a compact box containing an attained optimizer.",
+        "For fixed x, dualize the scalar robust constraint; the optimistic counterpart is exactly the Schaible perspective formulation.",
+        "A sufficiently large t gives Slater feasibility and strong duality."
+      ],
+      "gaps": [
+        "The proof relies on the cited robust minimax duality result; its compactness reduction uses attainment."
+      ]
+    },
+    {
+      "label": "Robust special case S1 (independent numerator and denominator uncertainty)",
+      "assumptions": [
+        "The numerator and denominator uncertainty sets are separable/independent",
+        "Positive denominator and stated robust convexity assumptions",
+        "Nonnegative numerator, unless the denominator is certain and the normalization equality variant applies"
+      ],
+      "statement": "The robust problem is exactly equivalent to the robust counterpart of the Schaible transformation; under generic conjugate duality, it has a tractable formulation for convex uncertainty sets.",
+      "start_line": 300,
+      "end_line": 349,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "proof_steps": [
+        "Introduce y=x/t and t>0 with separate uncertain numerator and denominator constraints.",
+        "The inverse map x=y/t maps feasible solutions both ways.",
+        "For the conjugate-based robust counterpart, apply perspective conjugates to each uncertainty-wise constraint."
+      ],
+      "gaps": [
+        "Separability of uncertainty is essential for this exact transformation; one cannot replace correlated numerator/denominator uncertainty with independent choices without changing the model."
+      ]
+    },
+    {
+      "label": "Robust special case S2 (denominator independent of x)",
+      "assumptions": [
+        "g(a₀) contains no optimization variable x",
+        "Convex uncertainty sets and robust conjugate assumptions"
+      ],
+      "statement": "The robust ratio problem is equivalent to the robust inequality f(a₀,x)−αg(a₀)≤0 and can be reformulated as a convex optimization problem.",
+      "start_line": 350,
+      "end_line": 375,
+      "pdf_pages": [
+        7,
+        8
+      ],
+      "proof_steps": [
+        "Since g does not depend on x, multiply by the positive denominator without introducing x-dependent products.",
+        "Use the robust conjugate representation for the resulting inequalities."
+      ],
+      "gaps": [
+        "This case is narrow and does not handle a decision-dependent denominator."
+      ]
+    },
+    {
+      "label": "General robust-root method",
+      "assumptions": [
+        "Compact robust feasible set in x",
+        "Assumptions (a)–(g): compact convex uncertainty sets; convexity/concavity in x and uncertain parameters as stated; positive denominator; numerator nonnegative for some numerator realization (unless biaffine exceptions apply)"
+      ],
+      "statement": "Solve the monotone residual F(α)=0 by bisection or a Dinkelbach-type method, where each residual evaluation is a convex robust optimization problem; exact roots give an exact robust optimum, and convergent root sequences yield optimal solutions under cited compactness results.",
+      "start_line": 381,
+      "end_line": 449,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "proof_steps": [
+        "At fixed α≥0 the robust residual constraints are convex under the parameter-curvature assumptions.",
+        "Positive g makes F nonincreasing in α; sign bounds bracket the unique threshold α*.",
+        "Bisection halves the bracket per residual sign evaluation.",
+        "The authors summarize Dinkelbach-type alternatives and the condition under which convergent primal subsequences recover an optimizer."
+      ],
+      "gaps": [
+        "No universal finite iteration count or root-finding rate is asserted for the general method; compactness and robust-convexity assumptions cannot be omitted."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "Bisection gives interval-width reduction by 1/2 per iteration. For root accuracy δ from initial width W, this yields ⌈log₂(W/δ)⌉ residual solves. The residual subproblem dimension and tractability depend on uncertainty-set conjugates and number of robust constraints.",
+    "dependence": "The paper reports example timings (e.g. 37 bisection iterations in its mean-variance example) but does not give a general computational bound for conic representation size."
+  },
+  "endpoint_limits": {
+    "denominator": "Strict positivity for every feasible x and every allowed numerator/denominator realization is required before ratio inequalities can be multiplied through.",
+    "uncertainty": "Convex compact uncertainty regions are required by the generic RO method; the paper notes convexity can be dropped in special finite-scenario/S-lemma/SOS cases.",
+    "sign": "Nonnegative numerator supports α≥0 and convex parametric residual; biaffine denominators give specified exceptions.",
+    "exchange": "The paper only exchanges max/min in an Sion setting with quasi-convex/quasi-concave continuity, convex feasible X and compact convex uncertainty set; uncertainty in constraints changes feasible X and breaks that conclusion."
+  },
+  "reusable_methods": [
+    {
+      "method": "Normalize a positive fractional objective using the perspective lift",
+      "transfer": "Preserve a single shared input and exact inverse map. For a maximal-cube application with multiple uncertain or jointly chosen cubes, add common-selection constraints; the paper’s separable robust special case does not license independent cube choices."
+    },
+    {
+      "method": "Convert a ratio threshold into a parametric residual sign test",
+      "transfer": "At fixed α, certify f−αg≤0 over the full feasible domain; use bisection with validated lower/upper brackets. This is useful when the robust ratio model is convex but no one-shot CCT is available."
+    },
+    {
+      "method": "Use conjugate-based robust counterparts",
+      "transfer": "Transform uncertainty constraints only after verifying convexity/concavity in both decision variables and uncertain parameters, uncertainty compactness, and conjugate domains."
+    }
+  ],
+  "unchecked": [
+    "Full paper and both appendices were read. I independently checked the denominator sign requirement, inverse substitution x=y/t, residual monotonicity direction, and bisection bracket logic. Theorem 2.1 and generic robust counterparts rely on cited minimax/conjugacy results that I did not reprove; numerical examples were not rerun. The appendix’s counterexamples and computational claims remain author-reported."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1049,
+    "source_lines": 1049,
+    "required_content_lines": 773,
+    "covered_content_lines": 773,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-42888155391c88e9/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-42888155391c88e9.json",
+  "review_input_sha256": "59792faa3ba0f410824ac88d7e7d23462bc9a8d2fe9c894565d318bbb532454c"
+}

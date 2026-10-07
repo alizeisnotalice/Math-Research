@@ -1,0 +1,292 @@
+{
+  "paper_id": "P-34015312e4b564e0",
+  "observed_title": "Uniform estimates for oscillatory integrals with parameter-dependent phases",
+  "authors": [
+    "Zihua Guo"
+  ],
+  "version": "arXiv:2402.08391v1; 2024-02-13; local 15-page PDF",
+  "source_sha256": {
+    "pdf": "34015312e4b564e013dfc5f2a4ffc6df46f2777a5d9b44a9e53b9322aa7fe167",
+    "paper_md": "9cd9174bace979c9c8207b4e445e0d7b795ca0d9e115d44e2344655a81a3bda3"
+  },
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 683,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  ],
+  "reading_log": {
+    "method": "complete local converted text read in sequential line chunks; key formulas checked in original PDF images",
+    "appendices": "all pages including references read; no separate appendix in source",
+    "no_character_truncation": true,
+    "visual_pages": [
+      3,
+      5,
+      6,
+      9,
+      10,
+      14
+    ]
+  },
+  "topic_relevance": {
+    "code": "N03",
+    "decision": "direct",
+    "basis": "Full source supplies the explicitly scoped methods below; private mathematical interfaces have no established identification."
+  },
+  "definitions": [
+    "S_k(f)=Σ_|α|=k sup_B1|∂^α f|; S[k,j]=Σ_k≤l≤j S_l.",
+    "Fourier transform uses (2π)^(-d/2) integral exp(−ix·ξ)."
+  ],
+  "theorem_cards": [
+    {
+      "claim_id": "N03-GUO-1D",
+      "label": "Theorem 2.1",
+      "start_line": 122,
+      "end_line": 140,
+      "pdf_pages": [
+        3
+      ],
+      "source_locator": {
+        "file": "corpus/papers/P-34015312e4b564e0/paper.md",
+        "start_line": 122,
+        "end_line": 140,
+        "pdf_pages": [
+          3
+        ]
+      },
+      "assumptions": [
+        "d=1; I(λ)=∫exp(iλφ(x))ψ(x)dx, λ>0; smooth compactly supported amplitude suppψ⊂B1.",
+        "φ(0)=φ′(0)=0; 1/10≤φ″(x)≤10 for every |x|≤1.",
+        "Part (1): p∈[1,∞), φ‴∈Lp(B1), ψ and ψ′ bounded; constants independent of φ,ψ,λ in this normalized class.",
+        "Part (2): derivatives through φ order4 and ψ order2 bounded via the displayed S norms."
+      ],
+      "statement": "I(λ)=(2π)^(1/2)λ^(−1/2)e^(iπ/4)ψ(0)/sqrt(φ″(0))+R(λ). For every p∈[1,∞), |R|≤C λ^(−1+1/(2p))(||φ‴||p||ψ||∞+||ψ′||∞). With additional stated derivatives, |R|≲λ^(−3/2)C(S[2,4](φ),S[0,2](ψ)).",
+      "proof_source_ranges": [
+        {
+          "file": "corpus/papers/P-34015312e4b564e0/paper.md",
+          "start_line": 141,
+          "end_line": 209,
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "proof_steps": [
+        "Use y=sgn(x)sqrt(2φ(x)); retain u(y)=ψ(x(y))x_y(y) and u(0)=ψ(0)/sqrt(φ″(0)).",
+        "Fourier convention (2π)^(-1/2), Parseval and the quadratic oscillatory Fourier kernel isolate u(0).",
+        "Bound the remainder kernel in the dual Lp′ norm, or its second derivative version for λ^(-3/2)."
+      ],
+      "author_claim": "I(λ)=(2π)^(1/2)λ^(−1/2)e^(iπ/4)ψ(0)/sqrt(φ″(0))+R(λ). For every p∈[1,∞), |R|≤C λ^(−1+1/(2p))(||φ‴||p||ψ||∞+||ψ′||∞). With additional stated derivatives, |R|≲λ^(−3/2)C(S[2,4](φ),S[0,2](ψ)).",
+      "checked_derivation": "PDF p3/p5 statement and normalization visually checked. The change-of-variable factor at 0 and remainder-power arithmetic were independently checked; external Fourier/oscillatory integral identities remain inputs.",
+      "gaps": [
+        "Global fixed derivative bounds and support are indispensable to uniformity; this is a normalized class, not a constant uniform over arbitrary phases.",
+        "p=∞ is discussed in a remark but excluded from the stated p∈[1,∞); do not silently append that endpoint."
+      ],
+      "disposition": "conditional_source_statement",
+      "independent_proof_certificate": false
+    },
+    {
+      "claim_id": "N03-GUO-DEGENERATE",
+      "label": "Theorem 2.2 decay only",
+      "start_line": 231,
+      "end_line": 238,
+      "pdf_pages": [
+        5
+      ],
+      "source_locator": {
+        "file": "corpus/papers/P-34015312e4b564e0/paper.md",
+        "start_line": 231,
+        "end_line": 238,
+        "pdf_pages": [
+          5
+        ]
+      },
+      "assumptions": [
+        "k≥2 integer; d=1; suppψ⊂B1; φ(0)=φ′(0)=…=φ^(k)(0)=0.",
+        "1/10≤φ^(k+1)(x)≤10 for all |x|≤1.",
+        "p∈(1,2], 1/p+1/p′=1; φ^(k+2)∈Lp and ψ,ψ′ bounded."
+      ],
+      "statement": "Author remainder bound: |R(λ)|≲λ^(−1/(k+1)−1/((k+1)p′))(||φ^(k+2)||p||ψ||∞+||ψ′||∞). The Airy-type leading constant is not enabled as an exact callable formula in this card.",
+      "proof_source_ranges": [
+        {
+          "file": "corpus/papers/P-34015312e4b564e0/paper.md",
+          "start_line": 245,
+          "end_line": 310,
+          "pdf_pages": [
+            6,
+            7
+          ]
+        }
+      ],
+      "proof_steps": [
+        "Normalize the phase to y^(k+1) by y=α_k(x)^(1/(k+1))x; track c_k=α_k(0)^(-1/(k+1))φ^(k+1)(0)^(1/(k+1)).",
+        "Use the inverse Fourier kernel Ai_k and its increment estimate to control the remainder by Hölder."
+      ],
+      "author_claim": "Author remainder bound: |R(λ)|≲λ^(−1/(k+1)−1/((k+1)p′))(||φ^(k+2)||p||ψ||∞+||ψ′||∞). The Airy-type leading constant is not enabled as an exact callable formula in this card.",
+      "checked_derivation": "PDF p5 and p6 original images checked. Exact remainder powers and normalized hypotheses retained as author claim; monomial Jacobian and Fourier factor discrepancy independently computed, leading formula quarantined.",
+      "gaps": [
+        "PDF p5 theorem main term omits sqrt(2π) present in p6 proof. Eq(2.11) printed c_k also disagrees with monomial Jacobian: Pk=(1−t)^k/k!, so actual x_y(0)=((k+1)!)^(1/(k+1))/φ^(k+1)(0)^(1/(k+1)); printed c_k=(k+1)(k!)^(1/(k+1)). Both exact leading formulas are quarantined pending independent review.",
+        "Cannot use p=1 or p>2 through this theorem.",
+        "For x<0 and k+1 even, PDF p6 Eq(2.10) lacks the sign in the signed inverse derivative; the absolute-value comparability can survive. Use y=alpha_k(x)^(1/(k+1))x with its explicit branch; do not read an unsigned power of phi as the signed inverse derivative."
+      ],
+      "disposition": "conditional_source_statement",
+      "independent_proof_certificate": false
+    },
+    {
+      "claim_id": "N03-GUO-HIGH-D-QUARANTINE",
+      "label": "Theorem 2.6 printed main term",
+      "start_line": 411,
+      "end_line": 420,
+      "pdf_pages": [
+        9
+      ],
+      "source_locator": {
+        "file": "corpus/papers/P-34015312e4b564e0/paper.md",
+        "start_line": 411,
+        "end_line": 420,
+        "pdf_pages": [
+          9
+        ]
+      },
+      "assumptions": [
+        "d≥2; ψ supported in B_(1/1000); φ defined on B1 with φ(0)=0 and ∇φ(0)=0; A=Hφ(0).",
+        "Nondegenerate Hessian; S2(φ)≤C2 and |det Hφ|/S3(φ)≥C3>0 on stated domain.",
+        "S_k(φ)≤C4 for k≤floor(d/2)+4; λ>0."
+      ],
+      "statement": "The complete printed Th2.6 asymptotic (its main term together with the lower-order remainder R defined by that main term) is quarantined. The missing 2^(d/2) produces a leading-order residual, so the printed low-order R bound cannot be retained independently.",
+      "proof_source_ranges": [
+        {
+          "file": "corpus/papers/P-34015312e4b564e0/paper.md",
+          "start_line": 426,
+          "end_line": 447,
+          "pdf_pages": [
+            10
+          ]
+        }
+      ],
+      "proof_steps": [
+        "Quantitative Morse change φ(γ(y))=yᵀAy is asserted; transform amplitude to u(y)=ψ(γ(y))|det Dγ(y)|.",
+        "At y=0, the chain rule forces Dγ(0)ᵀ A Dγ(0)=2A, hence |det Dγ(0)|=2^(d/2).",
+        "The proof then substitutes ψ(0) for u(0), losing 2^(d/2). For φ(x)=|x|²/2, A=I and γ(y)=sqrt(2)y exhibit the discrepancy directly."
+      ],
+      "author_claim": "Printed main term has π^(d/2)λ^(−d/2)|det A|^(−1/2)ψ(0) times the displayed oscillatory phase. This printed exact normalization is quarantined and must not be cited as an accepted formula.",
+      "checked_derivation": "Independent determinant recomputation and a finite-S3 d=2 product model establish the missing factor within the source dimension domain d≥2. PDF p9–p10 confirm the print; each true 1D factor uses the separately checked Th2.1. The earlier d=1 illustration has been withdrawn as outside Th2.6; it is not a source-domain counterexample.",
+      "gaps": [
+        "The exact main term omits the Morse Jacobian factor 2^(d/2).",
+        "Full quantitative Morse lemma and all remainder constants have not been independently proved; no repaired general remainder certificate is claimed.",
+        "A within-theorem d=2 model is φ(x1,x2)=(x1²+x2²)/2+x1³/100 and ψ(x1,x2)=η(x1)η(x2), where η is smooth, equals 1 near0, and is supported in (−1/2000,1/2000), so suppψ⊂B_(1/1000). On B1, Hφ=diag(1+0.06x1,1), Hφ(0)=I, S3=0.06, S2≤1.06, |detHφ(0)|/S3=50/3>0, and every displayed Sk bound through k=5 is finite uniformly in this fixed model. The oscillatory integral factors into two one-dimensional integrals to which the separately correct Th2.1 applies (e.g. p=2), giving 2π i λ^(−1)+O(λ^(−5/4)); the printed Th2.6 main term is π i λ^(−1) and its d=2 remainder bound is O(λ^(−3/2)). Thus the printed R=I−printed_main has nonzero λ^(−1) leading residual and cannot obey that lower-order bound. This uses Th2.1 separately in each coordinate and never uses Th2.6 to prove its own contradiction. No repaired general remainder certificate is claimed."
+      ],
+      "disposition": "quarantined_complete_printed_asymptotic_and_its_remainder",
+      "independent_proof_certificate": false
+    },
+    {
+      "claim_id": "N03-GUO-ANNULUS",
+      "label": "Section 3 dispersive split",
+      "start_line": 611,
+      "end_line": 644,
+      "pdf_pages": [
+        14
+      ],
+      "source_locator": {
+        "file": "corpus/papers/P-34015312e4b564e0/paper.md",
+        "start_line": 611,
+        "end_line": 644,
+        "pdf_pages": [
+          14
+        ]
+      },
+      "assumptions": [
+        "The displayed source Example1 uses h(r)=sqrt(r+r³), r>0, with simple radial h″ zero r0=sqrt(2/sqrt(3)−1).",
+        "d≥2 for the stated polar/Bessel route; radial smooth cutoff on a fixed compact annulus away from r=0; derivatives and tangential factor h′(r)/r remain bounded and nonzero there.",
+        "|t| sufficiently large, |x|≥c|t| for a fixed c>0 as assumed in source p14; other spacetime region requires its own nonstationary argument.",
+        "Split |r−r0|≤δ and its complement, 0<δ small. On each far interval |h″|≥cδ; use normalized one-dimensional derivative estimates and imported Bessel expansion/decay."
+      ],
+      "statement": "Conditional source-model method: |I|≲|t|^(−d/2)δ^(−1/2), |II|≲δ |t|^(−(d−1)/2); balancing δ=|t|^(−1/3) gives |t|^(−(d−1)/2−1/3) in the explicitly stated radial/spacetime regime.",
+      "proof_source_ranges": [
+        {
+          "file": "corpus/papers/P-34015312e4b564e0/paper.md",
+          "start_line": 611,
+          "end_line": 644,
+          "pdf_pages": [
+            14
+          ]
+        }
+      ],
+      "proof_steps": [
+        "Split the support near and away from the radial Hessian zero.",
+        "Use nondegenerate estimate outside and the annulus thickness times tangential decay inside.",
+        "Balance the two displayed powers; do not use a zero derivative lower bound across the full support."
+      ],
+      "author_claim": "Method example: far contribution ≲t^(−d/2)δ^(−1/2), near contribution ≲δ t^(−(d−1)/2); balancing δ=t^(−1/3) gives t^(−(d−1)/2−1/3).",
+      "checked_derivation": "Original PDF p14 viewed. Powers balance exactly; required |x|≥c|t| and imported Bessel/one-dimensional estimates are retained. Radial Hessian eigenvalues independently recomputed. No arbitrary-phase or complete dispersive estimate is independently certified.",
+      "gaps": [
+        "This is the source radial model; no arbitrary-phase or private half-density theorem follows.",
+        "The high-dimensional exact leading term is quarantined separately; only the split mechanism and power balancing are used.",
+        "Source p14 exact determinant display after(3.11) drops the tangential factor: radial Hessian eigenvalues are h″ and h′/r with multiplicity d−1, so detHω=h″(h′/r)^(d−1). Only comparability on an annulus with nonzero bounded tangential factor is available; the printed exact determinant is not used."
+      ],
+      "disposition": "conditional_source_statement",
+      "independent_proof_certificate": false
+    }
+  ],
+  "reusable_methods": [
+    "Normalize support and finite derivative bounds before claiming a parameter-uniform constant.",
+    "Split stationary/degenerate regions before applying derivative bounds; retain the full Jacobian.",
+    "Balance geometric thickness and oscillatory decay only after both regions have valid estimates."
+  ],
+  "constant_dependence": "Normalized 1D constants do not depend on φ,ψ,λ within stated hypotheses; high-dimensional constants depend on d,C2,C3,C4 and derivative norms. Exact high-dimensional main-term normalization is quarantined. The annulus example constants also depend on d, fixed cutoff/annulus, spacetime comparison c, phase derivative and Bessel bounds; its printed exact determinant has a separate missing tangential factor.",
+  "endpoint_limits": [
+    "Derivative bounds hold on the whole active interval/region; p and k endpoints are stated separately.",
+    "No publicly defined half-density/Kaufman private interface is supplied."
+  ],
+  "unchecked": [
+    "External Fourier identities and Morse geometry remain inputs; no complete independent theorem certificate.",
+    "Bessel and PDE applications, bibliography, and all pages were read; only scoped claims above are used."
+  ],
+  "overall_proof_verification": "not_independently_certified",
+  "two_round_review": "pending",
+  "review_history": [
+    {
+      "event": "dimension_domain_correction",
+      "reason": "AUDIT_LM final rebind independently found Th2.6 requires d≥2. Replaced earlier d=1 illustration by explicit d=2 product model, preserving the quarantine with valid hypotheses.",
+      "source_pdf_pages": [
+        9,
+        10
+      ],
+      "first_auditor": "audit_n_16",
+      "second_auditor": "audit_lm_16",
+      "status": "final_sha_rebind_requested"
+    }
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 683,
+    "source_lines": 683,
+    "required_content_lines": 555,
+    "covered_content_lines": 555,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-34015312e4b564e0/paper.md"
+  },
+  "review_source": "reviews/TEAM_N/evidence/P-34015312e4b564e0.json",
+  "review_input_sha256": "3f780ceaf650b1edfd9c60c562fd1146183d8955885f2b146dc0866a1d7a2acb"
+}

@@ -1,0 +1,217 @@
+{
+  "paper_id": "P-d69f9d48286d2a25",
+  "observed_title": "Explicit Predictable Compensators for Single Jump Processes with Initial Information",
+  "authors": [
+    "Assylliya K. Zhunussova"
+  ],
+  "version": "arXiv:2606.20925v1; 16 PDF pages. The source PDF/text are local; publication status was not checked externally.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 794,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "scope": "完整 16 页全文：单跳过滤与初始信息、鞅/局部鞅判别、路径变差与半鞅、显式可预测补偿子推导、σ-鞅局部化及 Cauchy 跳例、结论和参考文献。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "I02": "direct：直接计算带非平凡初始 σ-代数的单跳过滤中有限变差过程的可预测补偿子，并给出重尾时正可预测乘子局部化的 σ-鞅条件。范围仅限文中规定的单跳过滤；没有一般可选/可预测投影理论。",
+    "J04": "adjacent：用条件跳时分布和条件跳跃期望写出补偿子，能提供单跳补偿组件；未讨论随机 Fubini、一般整数值随机测度补偿或退出财富结算。"
+  },
+  "definitions": [
+    {
+      "name": "带初始信息的单跳过滤与规范表示",
+      "statement": "给定 H⊂F、P(γ>0)=1 的跳时 γ。有限时刻 t 的过滤满足 A∈F_t 当且仅当存在 C∈H 使 A∩{t<γ}=C∩{t<γ}；文中适应、右连续过程写作 X_t=F(t)1_{t<γ}+L1_{t≥γ}，F 为 H-可测前跳过程，L 为终端随机变量。",
+      "source_lines": [
+        49,
+        99
+      ],
+      "pdf_pages": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "条件分布与生存函数",
+      "statement": "G_H(t)=P(γ≤t|H)，\bar G_H(t)=P(γ>t|H)。在随机区间 t≤γ 上，文中引用/证明 \bar G_H(t−)>0 a.s.，用于补偿积分分母。",
+      "source_lines": [
+        60,
+        73,
+        124,
+        150
+      ],
+      "pdf_pages": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "name": "单跳预测补偿子形式",
+      "statement": "在本文过滤和可预测性刻画下，补偿子表示为 A_t=C(t∧γ)，C 是 H-可测的有限变差过程。",
+      "source_lines": [
+        297,
+        313
+      ],
+      "pdf_pages": [
+        7
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 1.1 and Lemma 1.1: martingale criteria and survival positivity",
+      "assumptions": [
+        "P(γ>0)=1；F 为 H-可测 cadlag 过程，L 为终端随机变量；使用文中构造并满足 usual conditions 的单跳过滤。",
+        "局部鞅判据另要求 E sup_{t<t_G}|F(t)|<∞ 与 E|L|<∞。"
+      ],
+      "statement": "定理1.1称 M_t=F(t)1_{t<γ}+L1_{t≥γ} 在 T={t:P(γ≥t)>0} 上是鞅，当且仅当各时刻可积且 E[M_t−M_0|H]=0；在附加可积性下，M 在全时域为局部鞅当且仅当该鞅条件及文中终端原子边界条件成立。Lemma 1.1 给出 \bar G_H(t−)>0 a.s. 于 t≤γ。",
+      "start_line": 103,
+      "end_line": 150,
+      "pdf_pages": [
+        3,
+        4
+      ],
+      "proof_steps": [
+        "Lemma 1.1 定义首次达到零的 R=inf{t: \bar G_H(t−)=0}，利用其可预测性及条件生存概率定义推出 {R<∞} 上 γ<R；故在 t≤γ 时左极限仍正。",
+        "定理1.1 的判据在本文后续作为计算补偿子时的基础被引用；其一般背景结果并未在此全文证明。"
+      ],
+      "gaps": [
+        "终端边界条件的量词在 extracted text 与公式排版并不十分清楚；使用前须回看定义及精确事件限制。",
+        "Jeulin/Azéma 等被引一般结论未在本文之外核验。"
+      ]
+    },
+    {
+      "label": "Theorem 3.1: explicit predictable compensator",
+      "assumptions": [
+        "X_t=F(t)1_{t<γ}+L1_{t≥γ} 为右连续适应有限变差过程；F 前跳路径有界变差。",
+        "E|L|<∞ 且 E sup_{t∈[0,t_G)}|F(t)|<∞，因此本文把 X 置于 special semimartingale 情形。",
+        "H(s)=E[L|H,γ=s] 按文中选取的条件期望版本；分母为条件生存函数的左极限。"
+      ],
+      "statement": "作者给出 A_t=C(t∧γ)。对 t<t_G，C(t)=∫_(0,t] {d[F(s)\bar G_H(s)]+H(s)dG_H(s)}/\bar G_H(s−)；若 t_G 有原子，则 ΔC(t_G)=H(t_G)−F(t_G−)。该公式是针对单跳初始信息过滤的显式补偿子。",
+      "start_line": 297,
+      "end_line": 517,
+      "pdf_pages": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "proof_steps": [
+        "用 M=X−A 的单跳表示，将 E[M_t|H]=E[M_0|H] 改写成条件生存权重下的平衡方程。",
+        "对平衡式作有限变差积分分部并收集含 C 的项；使用 d\bar G_H=−dG_H 和跳项乘积法则，得到 \bar G_H(s−)dC(s)=d[F(s)\bar G_H(s)]+H(s)dG_H(s)。",
+        "在 t≤γ 上用 \bar G_H(s−)>0 除法并积分得到连续/非终端部分。",
+        "对 t_G 的原子单独用 E[ΔM_{t_G}|H]=0；证明该原子的条件概率正后相除，得到 ΔC(t_G)=H(t_G)−F(t_G−)。",
+        "作者最后以其单跳过滤的可预测性刻画说明 A 可预测。"
+      ],
+      "gaps": [
+        "H(s)=E[L|H,γ=s] 对连续跳时分布中的单点条件事件需要正则条件分布/版本约定；本文没有在陈述处详述这个版本的逐点选择。",
+        "补偿子公式的 PDF p.7 和 p.9 已视觉核对。一般 Doob–Meyer、可预测投影与单跳过滤结果以引用为主，未独立证明。",
+        "公式只适用于本单跳结构，不提供一般随机测度的 compensator kernel，也未给随机 Fubini 或退出收益账本。"
+      ]
+    },
+    {
+      "label": "Theorem 4.1: σ-martingale criterion for heavy-tailed jump sizes",
+      "assumptions": [
+        "X 为上述规范表示的适应、右连续、有限变差过程。",
+        "存在严格正可预测乘子 φ(t)，在 t≤γ 上由 H-可测函数表示，并满足 E[φ(γ)|L−F(γ−)|]<∞。",
+        "终端原子条件为 H(t_G)=F(t_G−)；正文另要求前跳部分的相应可积性以应用 Theorem 3.1。"
+      ],
+      "statement": "原文声称 X 为 σ-鞅当且仅当可选取满足局部化跳跃可积性的严格正可预测 φ，且满足其式(4.2)漂移平衡以及终端原子式(4.3)。式(4.2)按原文印刷为 \bar G_H(s−)dF(s)+F(s)dG_H(s)+H(s)dG_H(s)=0。",
+      "start_line": 538,
+      "end_line": 637,
+      "pdf_pages": [
+        11,
+        12,
+        13
+      ],
+      "proof_steps": [
+        "按 σ-鞅定义选 φ 使 Y=φ·X 为局部鞅，并把 Y 写成单跳表示。",
+        "对 Y 应用 Theorem 3.1；若其补偿子恒为零，作者把得到的分子为零解释为未局部化 X 的漂移平衡。",
+        "充分性部分反向构造 Y，声称式(4.2)消去 Y 的补偿子，并用终端条件消去终端补偿跳。"
+      ],
+      "gaps": [
+        "来源内部符号不一致：第2页将 G_H 定义为 CDF、\bar G_H 为生存函数；Theorem 3.1 的分子是 d(F\bar G_H)+H dG_H。按有限变差乘积法则展开为 \bar G_H(s−)dF(s)+(H(s)−F(s))dG_H(s)，但式(4.2)及 p.13 复述为 \bar G_H(s−)dF(s)+F(s)dG_H(s)+H(s)dG_H(s)。因此所印判别式与其引用推导不一致，不能直接将 Theorem 4.1 当作已核准公式迁移。",
+        "正文称仅需局部化跳跃条件即可推出 Y 终值可积；完整控制 F^Y 的全路径可积性和所需有限变差条件需另核。"
+      ]
+    },
+    {
+      "label": "Section 4.3: Cauchy jump localization example",
+      "assumptions": [
+        "γ∼Exp(λ)，λ>0，且独立于 H=σ(L)；L 为 Cauchy，F(t)=ct。",
+        "作者选择 φ=1/(1+|L|)>0 以使局部化跳跃可积。"
+      ],
+      "statement": "作者给出重尾终值下以正乘子局部化，再将局部化过程代入 Theorem 3.1 计算显式补偿子的例子。",
+      "start_line": 674,
+      "end_line": 735,
+      "pdf_pages": [
+        14,
+        15
+      ],
+      "proof_steps": [
+        "由独立性得到条件生存函数 e^(−λs) 和条件分布密度 λe^(−λs)。",
+        "计算局部化前跳积分和终端变量，利用 |L^Y|<1 检验可积性。",
+        "代入补偿子公式并逐项积分得到作者报告的 A^Y_t。"
+      ],
+      "gaps": [
+        "PDF p.15 视觉显示但 OCR 数学排列错位；文章第4.1的符号缺口会传递到示例的补偿子推导。这里仅记录作者例子，不把计算视作独立核验。"
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "未给浓度或通用常数。补偿子是精确 Lebesgue–Stieltjes 积分，依赖 F、H(s)=E[L|H,γ=s]、条件分布 G_H 和正的条件生存分母；重尾情形的局部化依赖所选严格正 φ。",
+    "dependence": "所有结构均相对于指定单跳过滤及初始 σ-代数 H；不能不经额外条件推广到任意跳过程或多跳点过程。"
+  },
+  "endpoint_limits": {
+    "initial_time": "站立假设 P(γ>0)=1 排除 t=0 即刻跳跃。",
+    "terminal_atom": "t_G 处若有原子，公式另加 ΔC(t_G)=H(t_G)−F(t_G−)；非终端积分陈述为 t<t_G。",
+    "survival": "除法只在 t≤γ 的随机区间上由 \bar G_H(t−)>0 支持；不能跨过生存概率为零的区间使用公式。",
+    "heavy_tails": "E|L|=∞ 时原过程不直接满足经典可积分解要求；作者以严格正可预测 φ 局部化。其 Theorem 4.1 印刷符号问题尚待澄清。"
+  },
+  "reusable_methods": [
+    {
+      "method": "由单跳条件鞅平衡推导显式可预测补偿子",
+      "transfer": "只对具有 X=F1_{t<γ}+L1_{t≥γ} 规范表示、适用可积性且 conditional survival 左极限严格正的目标直接迁移；要重新验证过滤、跳时版本及终端原子，不推及多跳随机测度。"
+    },
+    {
+      "method": "对不可积跳跃选严格正可预测乘子 φ",
+      "transfer": "先证明 φ(γ)|L−F(γ−)| 可积、局部化过程结构满足特殊半鞅要求，再单独核对漂移平衡；本篇 Theorem4.1 的印刷式有符号缺口，需先澄清。"
+    }
+  ],
+  "unchecked": [
+    "全文 1–794 行、PDF 1–16 页已阅读；Theorem 3.1 关键式在 reviews/HK/P-d69f9d48286d2a25_page_7.png 与 _page_9.png 视觉检查；Theorem 4.1 p.12 也视觉检查。",
+    "全读不等于证明核验：未独立证明单跳过滤构造、Doob–Meyer、Jeulin/Azéma 或可预测性判据。",
+    "已检查 Theorem 4.1 关键等式的有限变差展开，发现其与印刷式不一致；此处将其保留为来源缺口，而非修补后声称作者结论成立。",
+    "PDF p.15 的 Cauchy 示例 OCR 公式排版存在错位；未独立重算示例终值补偿子。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 794,
+    "source_lines": 794,
+    "required_content_lines": 584,
+    "covered_content_lines": 584,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-d69f9d48286d2a25/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-d69f9d48286d2a25.json",
+  "review_input_sha256": "4f6e17c84f3a6f4cc2002c54ca18b66de35880d72256ca3e0191718b3fe59483"
+}

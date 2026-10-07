@@ -1,0 +1,277 @@
+{
+  "paper_id": "P-8c541dc0bb435647",
+  "observed_title": "Poisson Stochastic Integration in Banach Spaces",
+  "authors": [
+    "Sjoerd Dirksen",
+    "Jan Maas",
+    "Jan van Neerven"
+  ],
+  "version": "arXiv:1307.7901v1, dated 2013-07-30; 26 PDF pages.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1540,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "scope": "全文逐行阅读：martingale type/cotype estimates, stochastic convolutions, UMD Poisson norm, vector-valued Poisson Malliavin derivative and Skorohod extension, Clark–Ocone projection/formula, all proofs and references."
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "K03": "adjacent method source only. The paper gives Banach-valued Poisson integral moment/maximal estimates and a stochastic Poisson p-norm; its martingale/Rosenthal estimates can help supply finite-increment controls, but it has no generic chaining, local measure functional, or simultaneous all-index pointwise majorization.",
+    "J04": "adjacent integral-calculus source. It rigorously treats compensated Poisson integration, UMD/type-cotype hypotheses, conditional-expectation projections, and a Clark–Ocone representation under a natural Poisson filtration. Its intensity is deterministic and its target is a compensated Poisson random measure, so it does not itself define a nonhomogeneous state-dependent compensator or the exit-settlement interface."
+  },
+  "definitions": [
+    {
+      "name": "martingale type and cotype",
+      "statement": "X has martingale type s∈(1,2] when Ls-moments of any finite X-valued martingale-difference sum are bounded by the ℓs sum of the differences; finite martingale cotype r≥2 gives the reverse square-sum-type control. These geometric assumptions yield one-sided Bichteler–Jacod upper and lower bounds.",
+      "source_lines": [
+        207,
+        231
+      ],
+      "pdf_pages": [
+        4
+      ]
+    },
+    {
+      "name": "Poisson p-norm",
+      "statement": "For a simple X-valued f=Σ_j1_{B_j}x_j on disjoint finite-intensity sets, ||f||_{ν_p(E;X)}=(E||Σ_j N~(B_j)x_j||_X^p)^(1/p); the completion is the integrand space for an abstract UMD Poisson Itô isomorphism. This norm is generally stochastic rather than an explicit deterministic function-space norm.",
+      "source_lines": [
+        854,
+        878
+      ],
+      "pdf_pages": [
+        15
+      ]
+    },
+    {
+      "name": "Poisson Malliavin derivative and adapted projection",
+      "statement": "For cylindrical F=f(N(B_1),…,N(B_M)) on disjoint finite-intensity sets, D is the finite add-one difference Σ_m[f(N+e_m)−f(N)]1_{B_m}; the predictable projection P_F is the strong operator limit of partitionwise conditional expectation maps in the Poisson p-norm.",
+      "source_lines": [
+        1045,
+        1079
+      ],
+      "pdf_pages": [
+        18,
+        19
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 2.11 and Theorem 2.13 (martingale type upper / cotype lower bounds)",
+      "assumptions": [
+        "X has martingale type s∈(1,2] for Theorem 2.11, or finite martingale cotype s∈[2,∞) for Theorem 2.13.",
+        "N is a compensated Poisson random measure with deterministic intensity dt×ν; φ is a simple adapted X-valued process and B is a measurable mark set."
+      ],
+      "statement": "If X has martingale type s and s≤p<∞, the maximal Lp norm of ∫φdN~ is bounded by ||φ1_B||_{D_{s,X}^p∩D_{p,X}^p}; if 1<p≤s the bound uses D_{s,X}^p+D_{p,X}^p. If X has martingale cotype s and s≤p, the matching intersection integrand norm is bounded by the terminal integral Lp norm; when 1<p<s, the corresponding sum norm is bounded.",
+      "start_line": 444,
+      "end_line": 686,
+      "pdf_pages": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "proof_steps": [
+        "Apply Doob to reduce the maximal upper estimate. Refine the elementary time/mark partition until each cell has intensity λ≤1, and order the cells lexicographically to create a filtration. The centered cell counts multiplied by adapted coefficients form a martingale difference sequence.",
+        "For type s, combine extrapolation of the martingale type inequality with Lemma 2.6 and the Poisson moment estimate E|N−λ|^r≈_r λ for λ≤1. In the p<s regime, decompose the integrand into the Lp-size and Ls-size components, project onto the partition algebra, and use reverse dual Doob.",
+        "For cotype, prove the high-p lower estimate using the cotype extrapolation and small-cell Poisson moment comparison; derive the low-p case by duality. Proofs appear at lines 454–565 and 619–686, pp.8–12."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 454,
+          "end_line": 565,
+          "pdf_pages": [
+            8,
+            9,
+            10
+          ],
+          "scope": "Theorem 2.11 complete proof."
+        },
+        {
+          "start_line": 619,
+          "end_line": 686,
+          "pdf_pages": [
+            11,
+            12
+          ],
+          "scope": "Theorem 2.13 proof, including duality reduction."
+        }
+      ],
+      "gaps": [
+        "These are one-sided results in general Banach spaces and do not characterize the exact integrability norm except in special cases (notably Hilbert spaces).",
+        "The Poisson increment moments rely on deterministic-intensity cells and adaptation; no random/state-dependent intensity kernel is addressed."
+      ]
+    },
+    {
+      "label": "Theorem 3.3 (maximal inequality for stochastic convolutions)",
+      "assumptions": [
+        "1<s≤2; X has martingale type s; S is a bounded C0-semigroup with an isometric dilation on a martingale-type-s space Y.",
+        "φ is a simple adapted process, B is a mark set; p is in the type-dependent ranges s≤p or 1≤p<s as stated."
+      ],
+      "statement": "The maximal Lp norm of the Poisson stochastic convolution ∫_(0,t]S(t−u)φ(u)dN~ is bounded by D_{s,X}^p∩D_{p,X}^p for s≤p, and by D_{s,X}^p+D_{p,X}^p in the low-p range.",
+      "start_line": 775,
+      "end_line": 818,
+      "pdf_pages": [
+        14
+      ],
+      "proof_steps": [
+        "Use the isometric dilation QS(t−u)=PU(t−u)Q, transfer the supremum to the group U, and commute U(−u) into the integrand. Apply Theorem 2.11 in Y and boundedness of Q/P to return to X. The low-p case follows by decomposing the integrand into two simple adapted parts."
+      ],
+      "gaps": [
+        "Requires a semigroup isometric dilation on another martingale-type space; such a dilation is not automatic for every bounded semigroup.",
+        "The proof relies on stochastic-integral extension/density from Lemma 3.2 and the type estimate."
+      ]
+    },
+    {
+      "label": "Theorem 4.5 (UMD abstract Poisson Itô isomorphism)",
+      "assumptions": [
+        "X is UMD; 1<p<∞; φ is simple adapted and N is a Poisson random measure with σ-finite deterministic intensity."
+      ],
+      "statement": "The maximal integral norm (E sup_{t>0}||∫_(0,t] φ dN~||_X^p)^(1/p) is equivalent, with constants depending on p and X, to ||φ||_{L_F^p(Ω;ν_p(R_+×J;X))}; L_F^p is the closure of simple adapted processes in the stochastic Poisson-p norm.",
+      "start_line": 899,
+      "end_line": 917,
+      "pdf_pages": [
+        16
+      ],
+      "proof_steps": [
+        "The statement is reduced to the UMD decoupling inequality and Doob maximal inequality; Section 4 identifies explicit deterministic descriptions of ν_p for Hilbert and Lq spaces, while noting the general norm remains stochastic."
+      ],
+      "gaps": [
+        "This is an abstract integrability norm, not a deterministic closed-form criterion for general X.",
+        "The theorem does not itself identify the compensator of an arbitrary jump process; it assumes a Poisson random measure."
+      ]
+    },
+    {
+      "label": "Theorem 5.10 (Poisson Skorohod divergence extends adapted Itô integral)",
+      "assumptions": [
+        "X is UMD and 1<p<∞. The filtration is the natural filtration generated by the compensated Poisson random measure."
+      ],
+      "statement": "Every adapted integrand in L_F^p(Ω;ν_p(R_+×J;X)) belongs to the divergence operator domain and δ(φ)=I(φ); hence the adjoint of the Poisson Malliavin derivative extends the Itô integral on adapted inputs.",
+      "start_line": 1240,
+      "end_line": 1257,
+      "pdf_pages": [
+        21,
+        22
+      ],
+      "proof_steps": [
+        "For cylindrical elementary adapted integrands use the integration-by-parts identity to show δ(F·1_(a,b]·1_A·x)=F N~((a,b]×A)x=I of that term. Use density of cylindrical F_t-measurable variables, closedness of δ, and closure of simple adapted processes in the ν_p norm."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1240,
+          "end_line": 1257,
+          "pdf_pages": [
+            21,
+            22
+          ],
+          "scope": "Theorem 5.10 statement, proof and natural-filtration caveat."
+        }
+      ],
+      "gaps": [
+        "The natural-filtration condition is explicitly used for density of cylindrical F_s variables; the theorem is not stated for arbitrary larger filtrations."
+      ]
+    },
+    {
+      "label": "Theorem 6.6 (Clark–Ocone representation)",
+      "assumptions": [
+        "X is UMD and 1<p<∞; F is G-measurable and in D^{1,p}(Ω;X), where G is generated by the Poisson random measure."
+      ],
+      "statement": "F=E(F)+I(P_F(DF)); P_F(DF) is the unique adapted Y∈L_F^p(Ω;ν_p(R_+×J;X)) that represents F−E(F) through the Itô integral.",
+      "start_line": 1395,
+      "end_line": 1426,
+      "pdf_pages": [
+        24,
+        25
+      ],
+      "proof_steps": [
+        "Construct P_F as the strong operator limit of partitionwise conditional expectations; uniform boundedness follows from ν_p-boundedness of conditional expectations, obtained from R-boundedness.",
+        "Use adjointness of D and δ, Theorem 5.10 identifying δ with the adapted Itô integral, and the duality identity for adapted integrals to prove φ=P_F(DF) whenever F=I(φ). Reduce general centered F by density to scalar cylindrical cases and use the scalar Poisson Clark–Ocone theorem; uniqueness follows from injectivity of I."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1265,
+          "end_line": 1426,
+          "pdf_pages": [
+            22,
+            23,
+            24,
+            25
+          ],
+          "scope": "Projection construction, Lemma 6.5, and full proof of Theorem 6.6."
+        }
+      ],
+      "gaps": [
+        "The proof invokes the scalar Clark–Ocone formula as an external cited result.",
+        "The representation applies to the stated Poisson Sobolev domain and natural Poisson σ-algebra, not arbitrary semimartingale decompositions."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "Type/cotype integral estimates depend on p,s and the martingale type/cotype constant of X. The UMD Itô equivalence depends on p and the UMD geometry of X. The convolution inequality additionally depends on the semigroup dilation bounds. The ν_p-bounded projection constants depend on p,X through UMD/R-boundedness. No dimension-free arbitrary-Banach constants are claimed."
+  },
+  "endpoint_limits": {
+    "exponents": "Most type/cotype and UMD statements require p>1; Theorem 2.11 has a low range 1<p≤s (while Theorem 3.3’s printed low range includes p=1). UMD results require 1<p<∞.",
+    "intensity": "All results use compensated Poisson random measures with deterministic σ-finite intensity. Small-cell moment comparison requires cell intensity ≤1, achieved by refining the simple-process partition.",
+    "filtration": "The Clark–Ocone/Itô-divergence identification uses the natural Poisson filtration; the authors emphasize this in Remark 5.11.",
+    "space": "Type/cotype inequalities are one-sided for general Banach X; UMD abstract isomorphism uses stochastic ν_p norm; explicit deterministic descriptions are provided only for particular spaces."
+  },
+  "reusable_methods": [
+    {
+      "method": "Lexicographically order small-intensity Poisson cells so compensated cell increments times adapted coefficients become martingale differences; combine type/cotype with Poisson moment comparison.",
+      "transfer": "A candidate route for finite-increment moment/tail estimates when the target has deterministic-intensity Poisson cells and appropriate martingale geometry. It does not establish a compensator for a state-dependent jump process."
+    },
+    {
+      "method": "Use UMD decoupling and a stochastic ν_p integrand norm to identify the closed Poisson Itô map; use conditional expectations to project onto adapted integrands.",
+      "transfer": "Can clarify the exact natural-filtration and domain conditions for jump-integral interfaces, but does not provide the J04-specific nonhomogeneous intensity or exit-settlement semantics."
+    },
+    {
+      "method": "For stochastic convolutions, transfer a maximal integral bound through an isometric semigroup dilation.",
+      "transfer": "Applicable only after a valid dilation on a suitable type-s space has been supplied."
+    }
+  ],
+  "unchecked": [
+    "All 26 extracted PDF pages were read, including the full proof of the Clark–Ocone theorem and references. Theorem 2.11, Theorem 3.3, Theorem 4.5, and Theorem 6.6 formulas were visually checked on PDF pp.8,14,16,24 respectively; the divergence identity in Theorem 5.10 was visually inspected on pp.21–22.",
+    "This is full reading, not independent proof certification. External UMD decoupling, R-boundedness/Stein inequalities, scalar Clark–Ocone, and cited geometric Banach-space results were not reproved independently."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1540,
+    "source_lines": 1540,
+    "required_content_lines": 1261,
+    "covered_content_lines": 1261,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-8c541dc0bb435647/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-8c541dc0bb435647.json",
+  "review_input_sha256": "2172ae6cfa11410ea3d956096f1937bbff3b47237fd96ebaa6d68c721f77eb88"
+}

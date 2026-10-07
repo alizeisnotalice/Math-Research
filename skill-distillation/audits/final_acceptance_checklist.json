@@ -1,0 +1,97 @@
+{
+ "schema": "final-acceptance-checklist-r13",
+ "verdict": "64/64 部分可用。结构性缺口仍如实保留：专题迁移主张的证明级验收（64 项迁移 0/64）、GP-BRANCH/TC-A4/HS 内部定义（需人类信息）、各源论文估计层未逐步复现。见 coverage_and_gaps.json",
+ "conditions": [
+  {
+   "cond": 1,
+   "text": "64项编号与Skill一一对应，结构和引用闭合",
+   "met": true,
+   "evidence": "64/64 编号、693 markdown 链接 0 断链、frontmatter/agents/examples/references 全齐（R8/R12 复核）"
+  },
+  {
+   "cond": 2,
+   "text": "所有输入文献都有实际处理状态",
+   "met": true,
+   "evidence": "228 记录队列全登记；219 张论文卡身份 219/219 确认（R5）；I01 sources.json 汇总 schema 完整"
+  },
+  {
+   "cond": 3,
+   "text": "所有相关且可取得全文的论文有完整阅读记录及证据卡",
+   "met": "部分",
+   "evidence": "证据卡存在于包内且历史阅读范围已登记；本审计未逐篇重读全文（Lieb1990 为唯一读到 EOF 的补充）"
+  },
+  {
+   "cond": 4,
+   "text": "实际操作主张有原文依据或已检查推导",
+   "met": "大部分",
+   "evidence": "64/64 达「部分可用」档（守卫/引用/域约束层全部核验；估计层与专题迁移保持如实登记）"
+  },
+  {
+   "cond": 5,
+   "text": "适用和缺条件案例已实质检查",
+   "met": "部分",
+   "evidence": "43/128 案例实际执行（19 通过 + 16 源依赖 pending + 8 早期）；其余为定性/负例设计"
+  },
+  {
+   "cond": 6,
+   "text": "已发现问题得到修订及相应复核",
+   "met": true,
+   "evidence": "F07/c02/m01 三处修订写入并针对性复核（0 断链、frontmatter 完好）；E1 修正提案存档；23 份 log 更正条目"
+  },
+  {
+   "cond": 7,
+   "text": "最终区分可用、部分可用、待证据",
+   "met": true,
+   "evidence": "14/50 分档 + 双维登记簿 + 覆盖统计（audit_r12/coverage_and_gaps.json）"
+  }
+ ],
+ "method_errors_total": 18,
+ "packing": {
+  "zip": "数学工具64项_审核修订交付包_20261006.zip",
+  "zip_sha256": "见交付包外文件 交付包SHA256校验.txt（避免清单内自引用哈希导致重打包漂移）",
+  "zip_sha256_value": "58f9634aeece3bab277526d0084fe07ac3027f46c7d6560f59e5dae114242170",
+  "resynced_at": "R47 (final)"
+ },
+ "r28_final": {
+  "tier": "63 部分可用 / 1 待证据（e02）",
+  "grey2010_full_read": "13/13 页 + 证据卡 + 4 处独立验算",
+  "f03_lemma21": "A 级完整证明（归一化 S¹ + Bessel S∞ + 插值）",
+  "i04_case": "精确有理数算术 C=3；R13 假警报撤回",
+  "method_errors_total": 23
+ },
+ "r29_final": {
+  "tier": "64/64 部分可用（0 待证据）",
+  "key_finding": "e02 首个 skill 层真实缺失条件：Theorem 2.2 速率域 α₂>α₁/(2(α₁−1))（强制 α₁>4/3）——α₁=1.2 时定理空洞；已修订补录",
+  "also": "U→U^ex 控制扩张必要性补录；论文笔误第 6 处 ((4.5) R^n→R^m)",
+  "e02_read": "定理陈述 p5 + 证明收尾 p14 + §4 p14–15 + 27页结构扫描；证据卡已出",
+  "method_errors_total": 24
+ },
+ "r30_final": {
+  "tier": "64/64 部分可用",
+  "transfer_clarification": "包内无迁移断言只有迁移协议；503 行合规检查 0 违规；\"0/64 迁移未验证\"表述更正",
+  "consistency_fix": "50 项旧「待证据验收」声明行补指向标记（append-only）",
+  "zip_sha256": "bc1616acbc4ae32f"
+ },
+ "r47_final": {
+  "tier": "64/64 部分可用",
+  "card_pdf_fidelity": "26 卡核验：陈述 26/26 逐字，条件层偏差 3 处均已修订留痕（E03 + R47 两处）",
+  "heavy_dependency_cards": "覆盖完成（in-degree≥3 全部 + in-degree≥2 抽样），最高依赖未核验卡 P-2f81500e5dfa70c6（i02/j01/j05）本轮通过并修订 2 处",
+  "register_total": 60,
+  "batch_reachable_work": "完成——判据 B 达成；剩余为人类信息缺口（GP-BRANCH/TC-A4/HS/L02 定义）与研究级开放项（源论文专有定理估计层约 20-30 条、16 例源依赖 pending）",
+  "zip_resync": "见 packing（重打包后更新）"
+ },
+ "r48_final": {
+  "tier": "64/64 部分可用",
+  "new_finding": "e02 源论文 Theorem 2.2 速率域为陈述级声明、证明未支持（首个陈述↔证明缺口，refuted 级）；证明支持上界 θ*=min{1,(α₂−1)min{α₁,α₂}/α₂}，31708/31708 精确网格验证",
+  "register_total": 62,
+  "source_theorem_audit": "首个证明级复现完成（e02 Theorem 2.2）；可复用审查模式记录于 source_theorem_audit_r48.md 第4节",
+  "zip_resync": "R48"
+ },
+ "r49_final": {
+  "tier": "64/64 部分可用",
+  "new_resolution": "E01-CTX-01 (VP/Camp-Meidell threshold) resolved via LP reconstruction: card usage safe, eps<=1/6 sufficient-not-exact; two-sided VP 4/9 constant confirmed tight",
+  "register_total": 63,
+  "source_theorem_audits": "R48 e02 rate-domain gap (refuted-level) + R49 VP threshold resolution (instance-level)",
+  "zip_resync": "R49"
+ }
+}

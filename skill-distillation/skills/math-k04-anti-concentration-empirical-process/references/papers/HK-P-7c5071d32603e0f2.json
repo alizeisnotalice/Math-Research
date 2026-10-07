@@ -1,0 +1,243 @@
+{
+  "paper_id": "P-7c5071d32603e0f2",
+  "observed_title": "Anti-concentration of Suprema of Gaussian Processes and Gaussian Order Statistics",
+  "authors": [
+    "Alexander Giessing"
+  ],
+  "version": "arXiv:2310.12119v1; 19 October 2023; 26 PDF pages",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1304,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "scope": "全文逐页阅读：有限 Gaussian 场 order-statistic 与无限可分 Gaussian process 反集中主结果、方差上下界、order-statistic 密度与 s-concavity、全部证明和参考文献"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "K04": "direct（高斯反集中核心）：给出任意可分中心高斯过程 supremum 的两侧 concentration-function 界，常数因子匹配；还处理 Gaussian 场 order statistics 并给 supremum 方差上下界。只覆盖 Gaussian/其 order-statistic 机制，不提供一般经验过程的 Gaussian 近似误差。"
+  },
+  "definitions": [
+    {
+      "name": "concentration function",
+      "statement": "Q(Z,ε)=sup_{t∈R}P(t≤Z≤t+ε), ε>0。",
+      "source_lines": [
+        31,
+        38
+      ],
+      "pdf_pages": [
+        1
+      ]
+    },
+    {
+      "name": "separable centered Gaussian process",
+      "statement": "X={X_u:u∈U} 的有限维边缘为零均值多元高斯；存在可数 U₀ 与概率一集合，使任意索引点附近的过程值可由 U₀ 的值逼近，因此 sup 可写为可数上确界并可测。",
+      "source_lines": [
+        153,
+        174
+      ],
+      "pdf_pages": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "absolute supremum",
+      "statement": "对可分中心 Gaussian process，令 Z̃=sup_{u∈U}|X_u|，要求 Z̃<∞ a.s.; Theorem2 的方差是 Var(Z̃)，不是 sup_u Var(X_u)。",
+      "source_lines": [
+        174,
+        182
+      ],
+      "pdf_pages": [
+        4
+      ]
+    },
+    {
+      "name": "order statistic density",
+      "statement": "在 Var(X_i)>0 且 Corr(X_i,X_j)<1(i≠j) 的有限 Gaussian field 中，第 k 个次序统计量 X_(k) 有密度 f_{k,n}(z)，由选择恰有 n−k 个坐标高于 z 的条件正态密度求和表示。",
+      "source_lines": [
+        704,
+        723
+      ],
+      "pdf_pages": [
+        14
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 1 / Corollary 1 (有限 Gaussian 场 order statistic 与绝对最大值)",
+      "assumptions": [
+        "有限 Gaussian random field X={X_i:i≤n}，Var(X_i)>0 且任意 i≠j 有 Corr(X_i,X_j)<1。",
+        "任意 ε>0 与 1≤k≤n；order statistic 也可换为 |X_i| 的 k-th order statistic。",
+        "Corollary1 对 max_i|X_i| 可移除边缘/两两相关非退化假设，允许删除零方差或完全相同的冗余坐标。"
+      ],
+      "statement": "ε/[√12·√(Var(X_(k))+ε²/12)] ≤ Q(X_(k),ε) ≤ ε√12/√(Var(X_(k))+ε²/12)。对 max_i|X_i| 的 Corollary1 有同形式界且不需上述非退化限制。",
+      "start_line": 134,
+      "end_line": 168,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "先证明 Gaussian order statistic 具有密度，得到 Q(X_(k),ε)=ε M(X_(k)+εU)，U 独立均匀(0,1)。",
+        "证明 order statistic 的分布与加独立均匀变量后仍具有任意 s<0 的 s-concavity。",
+        "对 s-concave 实分布控制位置尺度不变积 Var(Z)M²(Z)，下界为 1/12，上界为 4(1+s)³/[(1+3s)(1+2s)²]。",
+        "取 s=−1/6，得上界 √12，合并成定理界；Corollary1 用 ±X_i 展开 max|X_i|，删除退化/完全相关重复坐标再应用定理。"
+      ],
+      "gaps": [
+        "上界常数不是最优；论文说明依赖 s=−1/6 的统一选取。",
+        "Corollary1 若所有坐标都退化为0，则 Q=1 且上界直接成立，原文单独指出左界取等。"
+      ],
+      "proof_verification": "full_text_read; statement visually checked on PDF p.3; full proof and s-concavity chain on pp.14–21 read, key bound visually checked p.19 and conclusion p.21."
+    },
+    {
+      "label": "Theorem 2 (任意可分中心 Gaussian supremum 反集中)",
+      "assumptions": [
+        "X={X_u:u∈U} 是可分中心 Gaussian process。",
+        "Z̃=sup_u|X_u|<∞ a.s.; ε>0。",
+        "不要求有限维边缘非退化；若 Var(Z̃)=0 则按原文直接处理。"
+      ],
+      "statement": "ε/[√12·√(Var(Z̃)+ε²/12)] ≤ Q(Z̃,ε) ≤ ε√12/√(Var(Z̃)+ε²/12)。Remark2 允许 Z=sup_u X_u 的非中心情形，只需 inf_u Var(X_u)>0。",
+      "start_line": 169,
+      "end_line": 202,
+      "pdf_pages": [
+        4
+      ],
+      "proof_steps": [
+        "下界由 Remark1 的任意随机变量通用下界直接得出。",
+        "对上界，用可分性选嵌套有限子集 U_n，使 Z̃_n=max_{u∈U_n}|X_u|→Z̃ a.s.",
+        "应用 Corollary1 控制 Q(Z̃_n,ε)，再以连续分布函数的反三角不等式和高斯 supremum 的反向 Lyapunov/支配收敛得到 Q 与 Var 的极限，令 n→∞。"
+      ],
+      "gaps": [
+        "界按 Var(sup|X|) 表达；仅有 marginal 最大方差或一个粗 Gaussian comparison 不足以替代该方差。",
+        "Z=sup X_u 的非中心推广要求所有一维方差有正统一下界。"
+      ],
+      "proof_verification": "full_text_read; assumptions and constants visually checked on PDF p.4; finite-net limit proof read."
+    },
+    {
+      "label": "Proposition 1–2 (supremum 方差的下界和相关性上界)",
+      "assumptions": [
+        "Proposition1: 可分中心 Gaussian process, inf_u Var(X_u)≥σ²>0, Z=sup X_u<∞ a.s.；亦适用于 sup|X_u|。",
+        "Proposition2: sup_u Var(X_u)≤\barσ² 且 |Cor(X_u,X_v)|≤ρ 对所有 u,v；Z 有限 a.s.；亦适用于 sup|X_u|。"
+      ],
+      "statement": "Prop.1: Var(Z)≥(1/15²)[σ/(1+E[Z/σ])]²。Prop.2: Var(Z)≤2²\barσ² ∧ {11²\barσ²ρ+60²[\barσ/((E[Z/\barσ]−3√log2)_+)]²}。",
+      "start_line": 413,
+      "end_line": 652,
+      "pdf_pages": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "proof_steps": [
+        "Prop.1 对 E[Z/σ]≤1/2 用 Chebyshev 与 Gaussian Mills 下界；大均值时用 independent copy、Ding–Eldan–Zhai 技术引理、Cantelli 界得到 Var(Z/σ)(1+E[Z/σ])²≥常数，再取保守常数 1/15²。",
+        "Prop.2 建立有限维 Gaussian 向量的技术引理：按协方差阈值 r₀ 覆盖高相关坐标块，控制 argmax 落入块的最大概率，利用 Gaussian covariance identity 与超收缩得尾界。",
+        "由各坐标取值概率受大均值 Gaussian 尾控制，代入技术引理；有限网格逼近可分 sup，并积分尾界得到所列方差上界。"
+      ],
+      "gaps": [
+        "Lemma2 的技术证明作者明确说仅 sketch，引用 Tanguy (2015) 作关键超收缩/协方差估计；正文未逐行证明。",
+        "Prop.2 的相关系数上界需要全索引集统一相关控制；ρ大时该上界可能不比 4\barσ² 简单界更强。"
+      ],
+      "proof_verification": "full_text_read; Prop.1 bound visually checked p.8 and derivation conclusion p.10; Prop.2 statement visually checked p.10; proof read, but its central technical lemma is explicitly sketched rather than fully derived."
+    },
+    {
+      "label": "Propositions 3–5 (order-statistic density, s-concavity and variance–mode bridge)",
+      "assumptions": [
+        "Prop.3 finite Gaussian field with positive marginal variances and pairwise Corr<1.",
+        "Prop.4 additionally U is an independent uniform variable on any interval; X_(k) and X_(k)+U retain s-concave laws/densities for every s<0.",
+        "Prop.5 Z has s-concave distribution for s∈(−1/3,0]."
+      ],
+      "statement": "Prop.3 gives the explicit order-statistic density. Prop.4 proves s-concavity preservation under independent uniform convolution. Prop.5: 1/12≤Var(Z)M²(Z)≤4(1+s)³/[(1+3s)(1+2s)²]; the lower bound is universal and tight for the uniform distribution.",
+      "start_line": 704,
+      "end_line": 1038,
+      "pdf_pages": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "proof_steps": [
+        "Partition the infinitesimal event z<X_(k)≤z+ε according to the unique coordinate crossing and the indices above z; condition on the crossing coordinate to derive the density.",
+        "Represent the density terms using Gaussian residuals independent of the crossing coordinate; apply Borell s-concavity and preservation under products/convolution.",
+        "For Prop.5 rescale the density mode to 1. A universal interval-mass argument gives Var≥1/12. For the upper bound write variance as a quantile double integral, use the concavity of a power of density-at-quantile to lower bound that density and integrate."
+      ],
+      "gaps": [
+        "The s-concavity machinery is specialized to one-dimensional order statistics and convolution with a uniform variable.",
+        "Prop.5 upper constant is explicitly noted as loose; only lower 1/12 is tight."
+      ],
+      "proof_verification": "full_text_read; density formula visually checked p.14, variance-mode inequality p.19, quantile proof conclusion p.21."
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "Theorem1/Theorem2 have universal multiplicative constants 1/√12 and √12; they depend on Z only through Var(Z)+ε²/12. Prop.1 and Prop.2 give explicit universal numerical factors 15², 2², 11², and 60².",
+    "dependence": "Variance lower bound depends on the marginal variance floor and E[sup]/σ; the sharpened upper bound depends on uniform pairwise correlation bound ρ and normalized expected supremum."
+  },
+  "endpoint_limits": {
+    "finite_field": "Theorem1 for order stats requires positive marginal variances and excludes pairwise perfect positive correlation; the absolute maximum Corollary removes this by eliminating duplicate/zero coordinates.",
+    "process": "Theorem2 applies to separable centered Gaussian processes with finite absolute supremum a.s., without requiring nondegenerate finite-dimensional marginals. Noncentered one-sided supremum needs inf marginal variance>0.",
+    "approximation": "The article gives anti-concentration for Gaussian laws; it does not itself prove a non-Gaussian empirical-process-to-Gaussian approximation or bootstrap error bound.",
+    "scale": "If Var(sup|X|) collapses with dimension/entropy, the two-sided bound remains meaningful only with that actual variance scale; replacing it by sup marginal variance can lose correlation gains."
+  },
+  "reusable_methods": [
+    {
+      "method": "Variance-controlled anti-concentration for Gaussian suprema",
+      "transfer": "First establish the target statistic is a measurable separable Gaussian supremum and control Var(Z) at the needed dimension/entropy. Then substitute its variance and ε into the two-sided Q bound; if the target is non-Gaussian, add a separate approximation error.",
+      "limit": "Variance is that of the supremum itself, which may be much smaller than the maximum coordinate variance."
+    },
+    {
+      "method": "Smoothing connects density mode and concentration probability",
+      "transfer": "For a statistic with density, use Q(Z,ε)=εM(Z+εU) and control Var(Z+εU)M²(Z+εU) over the class generated by uniform convolution.",
+      "limit": "The s-concavity preservation proof here is specific to Gaussian order statistics; it is not automatically valid for arbitrary statistics."
+    }
+  ],
+  "unchecked": [
+    "全文26页，包含 Sections 1–5 全部原文证明、致谢和参考文献已读；无附录。",
+    "Theorem1、Theorem2、Proposition1/2、Proposition5 关键结论/公式在 PDF pp.3–5、8、10、19–21视觉核对。",
+    "Lemma2 的核心技术证明为原文明确标注的 sketch 并借助 Tanguy (2015)；我没有补证被引用文献中的论证或独立重证本文所有不等式。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1304,
+    "source_lines": 1304,
+    "required_content_lines": 775,
+    "covered_content_lines": 775,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-7c5071d32603e0f2/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-7c5071d32603e0f2.json",
+  "review_input_sha256": "bc72bf88505ee356f0a42d755de1ac3faa95ce419dfcfab4a265cfcb990f8bed"
+}

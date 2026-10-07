@@ -1,0 +1,352 @@
+{
+  "paper_id": "P-6c8f421db0f3d713",
+  "observed_title": "Semimartingale Optimal Transport with Jumps: A General Framework and Equivalent Formulations",
+  "authors": [
+    "Boyi Hou",
+    "Zhenxin Liu"
+  ],
+  "version": "arXiv:2606.27078v1；首页正文标记版本与日期 2026-06-26。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 1410,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "D01": "direct"
+  },
+  "definitions": [
+    {
+      "term": "半鞅输运可行集与微分特征",
+      "definition": "路径空间为 Ω=D([0,1],R^d)，取 càdlàg 坐标过程 X。对半鞅律 P，若特征对时间绝对连续，则 (dB^P,dC^P,dν^P)=(b^P_tdt,c^P_tdt,F^P_t(dz)dt)；给定闭凸 Θ⊂R^d×S_d^+×L，P_Θ 是特征 P×dt-a.s. 落在 Θ 的半鞅律，P_Θ(μ₀,μ₁) 再固定 X₀、X₁ 边缘。",
+      "source_ranges": [
+        {
+          "start_line": 177,
+          "end_line": 248,
+          "pdf_pages": [
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "term": "特征成本与受控传输值",
+      "definition": "J(P)=E^P∫₀¹L(t,X,b^P_t,c^P_t,F^P_t)dt；V(μ₀,μ₁)=inf_{P∈P_Θ(μ₀,μ₁)}J(P)，空集约定为 +∞。一般定理要求 L 非负、联合可测、在 (ω,θ) 联合下半连续并对 θ=(b,c,F) 凸。",
+      "source_ranges": [
+        {
+          "start_line": 229,
+          "end_line": 273,
+          "pdf_pages": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "term": "有界特征及小跳一致可积条件",
+      "definition": "Assumption 2.1 要求 sup_{(b,c,F)∈Θ}(|b|+|c|+∫(|z|²∧|z|)F(dz))<∞；Assumption 2.2 要求 δ↓0 时 sup_Θ∫_{|z|≤δ}|z|²F(dz)→0。这两项与 Θ 闭凸一起用于半鞅律紧性/可行集紧性。",
+      "source_ranges": [
+        {
+          "start_line": 249,
+          "end_line": 265,
+          "pdf_pages": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "term": "HJB Hamiltonian 与非局部生成元",
+      "definition": "在 Markov 成本 ℓ(t,x,b,c,F) 下，H(t,x,p,Γ,f)=inf_{(b,c,F)∈Θ}{b·p+½c·Γ+∫[f(z)−f(0)−Df(0)·h(z)]F(dz)+ℓ(t,x,b,c,F)}；相应算子在状态 x 处用 f(x+z)−f(x)−Df(x)·h(z) 补偿跳项。",
+      "source_ranges": [
+        {
+          "start_line": 820,
+          "end_line": 861,
+          "pdf_pages": [
+            16,
+            17
+          ]
+        },
+        {
+          "start_line": 947,
+          "end_line": 982,
+          "pdf_pages": [
+            18,
+            19
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Markovian投影与弱非局部FPK解",
+      "definition": "投影将路径相关特征替换为给定 X_{t−} 条件下的条件期望特征 (b̂,ĉ,F̂)，保持所有时刻的一维边缘分布并使状态过程解相应 martingale problem。FPK弱解是连续曲线 ρ_t∈P(R^d)，满足对每个 f∈C_c²，∫f dρ_t=∫f dρ₀+∫₀ᵗ∫L_s^θf(x)ρ_s(dx)ds。",
+      "source_ranges": [
+        {
+          "start_line": 941,
+          "end_line": 988,
+          "pdf_pages": [
+            18,
+            19
+          ]
+        },
+        {
+          "start_line": 1063,
+          "end_line": 1087,
+          "pdf_pages": [
+            21
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem 2.5 / enlarged-space Theorem 3.3：原始值函数下半连续与凸性",
+      "assumptions": [
+        "Θ⊂R^d×S_d^+×L 闭、凸，并满足有界特征 Assumptions 2.1 与小跳一致可积 Assumption 2.2。",
+        "L≥0、联合可测、联合下半连续于 (ω,θ) 且关于 θ 凸 (Assumption 2.4)。"
+      ],
+      "statement": "V:P(R^d)×P(R^d)→[0,+∞] 关于两边缘弱收敛下半连续且凸；辅助的积分泛函 J 在扩大空间特征坐标中同样弱下半连续且凸。",
+      "start_line": 267,
+      "end_line": 282,
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "proof_steps": [
+        "作者将跳跃特征通过可数决定 Lévy 测度的函数族编码为路径坐标 V^i，使 b,c 与跳跃积分矩变成路径可测坐标导数；原问题与扩大空间间建立保成本/降成本对应。",
+        "对弱收敛半鞅律用 Skorokhod 表示、统一可积性与 Dunford–Pettis 抽取特征导数弱 L¹ 子列；识别极限后使用 Balder 积分泛函下半连续定理得到 J 下半连续。",
+        "再用半鞅律紧性、边缘弱收敛与扩大空间投影，推出 V 下半连续；凸性按引用的随机控制凸性论证。",
+        "已读逐步检查特征坐标、弱收敛/可积性及 Balder 定理的论证衔接；未独立证明引用的半鞅紧性定理及全部拓扑向量值积分定理。"
+      ],
+      "gaps": [
+        "此处的有限维/跳跃特征紧性关键依赖 Assumptions 2.1–2.2；并未证明无这些条件也有紧性。Balder 与半鞅紧性作为已发表外部结果引用。"
+      ]
+    },
+    {
+      "name": "Theorem 2.6：Kantorovich型对偶及原始最优律存在",
+      "assumptions": [
+        "Θ 条件同 Theorem 2.5；代价满足 Assumption 2.4。",
+        "结论中最优律存在要求 V(μ₀,μ₁)<∞。"
+      ],
+      "statement": "V(μ₀,μ₁)=sup_{λ₁∈C_b}{∫λ₀^{λ₁}dμ₀−∫λ₁dμ₁}，其中 λ₀^{λ₁}(x)=inf_{P∈P_Θ(δ_x)}E^P[∫Ldt+λ₁(X₁)]；若值有限，则原始问题存在最优 P*。",
+      "start_line": 284,
+      "end_line": 344,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "proof_steps": [
+        "最优存在先由可行律紧性与目标下半连续性得到。",
+        "固定 μ₀，把 V(μ₀,·) 延拓到有限有符号测度空间，在非概率测度外取 +∞；下半连续凸泛函由双共轭表示。",
+        "计算 Legendre 变换 g(−λ₁)，依次用 (2.6) 及对所有末端边缘取下确界，将其化为 −∫λ₀^{λ₁}dμ₀，代回 bidual 得所示对偶。",
+        "独立核验符号：对偶采用 +λ₀^{λ₁}dμ₀−λ₁dμ₁；此符号与将终端势换成 −λ₁ 的 Fenchel 约定一致。"
+      ],
+      "gaps": [
+        "要求 Θ 闭凸与两个紧性假设以及积分成本结构；并非对任意路径成本的无条件 Kantorovich 对偶。"
+      ]
+    },
+    {
+      "name": "Theorem 4.1：任意停时上的动态规划原理",
+      "assumptions": [
+        "Θ 闭凸并满足 Assumptions 2.1–2.2；Markov 成本 ℓ 满足 Assumption 2.4。",
+        "τ 是取值于 [t,1] 的过滤停时；值函数的初始增广状态 (b,c,v) 与论文扩张空间定义一致。"
+      ],
+      "statement": "λ(t,x)=inf_{P∈P_Θ^{t,x,b,c,v}}E^P[∫_t^τℓ(s,X_s,b_s,c_s,v_s)ds+λ(τ,X_τ)]。",
+      "start_line": 724,
+      "end_line": 821,
+      "pdf_pages": [
+        14,
+        15,
+        16
+      ],
+      "proof_steps": [
+        "条件化任意可行律到 F_τ，利用可行类条件稳定性与塔式性质给出“≥”。",
+        "用可测选择定理选取每个停时状态 ε-最优的续接控制，再用停时拼接稳定性得到“≤+ε”；令 ε↓0。",
+        "证明所需闭合条件是条件律/拼接律仍满足特征约束；作者引用稳定性事实并在引理中给出构造。"
+      ],
+      "gaps": [
+        "测度值可测选择是完成拼接的实质假设技术；本文援引标准分析定理，其完整可测图验证仅按所列 Borel 集分解追踪，未在本次独立重建一般可测选择理论。"
+      ]
+    },
+    {
+      "name": "Theorem 4.7：HJB唯一有界连续值解的黏性刻画",
+      "assumptions": [
+        "Θ 闭凸且满足 Assumptions 2.1–2.2。",
+        "ℓ 非负，联合连续、在 (t,x) 对 θ 一致连续，并关于 θ 凸 (Assumption 4.5)。",
+        "终值 λ₁∈C_b(R^d)，结论的唯一性依赖文中验证的非局部比较条件。"
+      ],
+      "statement": "值函数 λ 是 −∂_tλ−H(t,x,Dλ,D²λ,λ(t,x+·))=0、λ(1,·)=λ₁ 的唯一 viscosity solution。",
+      "start_line": 844,
+      "end_line": 909,
+      "pdf_pages": [
+        16,
+        17
+      ],
+      "proof_steps": [
+        "次解/上解方向分别将光滑测试函数接触值函数，在小邻域选取实现 Hamiltonian 的特征；用半鞅 Itô 公式和停时DPP导出矛盾。",
+        "唯一性将跳积分在 |z|≤κ 和 |z|>κ 分拆，说明 H_κ 满足 Neufeld–Nutz 引用的比较条件，再调用比较原理。",
+        "已检查局部 Itô 项与 Hamiltonian 符号及终值条件的一致性；比较原理条件 (C1)–(C9) 未逐条从外部文献重新证明。"
+      ],
+      "gaps": [
+        "需要 Assumption 4.5 的时间状态连续性，不能与基础 Kantorovich 对偶的“成本对时间无需连续”混为一谈；HJB唯一性依赖作者引用的非局部比较原理。"
+      ]
+    },
+    {
+      "name": "Lemma 5.1 / Theorem 5.6：Markovian投影保边缘且不增凸成本",
+      "assumptions": [
+        "Θ 闭凸且满足 Assumption 2.1；值相等 Theorem 5.6 另要求 Assumption 2.2 与 Markov 成本 ℓ 满足 Assumption 2.4。",
+        "条件特征以 X_{t−} 为条件，并使用论文所选连续截断函数 h。"
+      ],
+      "statement": "给任意 P∈P_Θ(μ₀)，可构造 Markovian 投影 P̂∈P_Θ(μ₀)，使 P̂ 下 X 的全部一维边缘与 P 相同，且解由 (b̂,ĉ,F̂) 定义的 martingale problem；对两端边缘固定的问题 V(μ₀,μ₁)=V̂(μ₀,μ₁)，有限值时存在 Markovian 最优律。",
+      "start_line": 941,
+      "end_line": 1052,
+      "pdf_pages": [
+        18,
+        19,
+        20
+      ],
+      "proof_steps": [
+        "条件化漂移、协方差及跳跃测度并用凸性/Jensen 保持特征约束；Lemma 5.1 依据 Larsson–Long mimicking/projection 结果得出相同的一维边缘。",
+        "任意 P 对其条件期望特征使用 Jensen 及成本凸性，得到 J(P)≥J(P̂)；P 与 P̂ 的 X_t 边缘相同且新成本只依赖 (t,X_t)，故投影成本不高于原成本。",
+        "两个可行集包含关系给 V≤V̂；上述降成本给 V̂≤V；再用原始最优存在性获得 Markovian 最优解。",
+        "独立检查 Jensen 使用的特征是 X_{t−} 条件分布的均值；用无固定跳时将 X_{t−} 替为成本中的 X_t。"
+      ],
+      "gaps": [
+        "投影定理及 martingale problem 存在由 [35] 外部结果提供；不是论文从头证明 SDE 强解或唯一性。投影保持一维边缘，不表示保持联合时序分布或路径律。"
+      ]
+    },
+    {
+      "name": "Theorem 5.9：非局部FPK弱解与半鞅值等价",
+      "assumptions": [
+        "Θ 条件同 Theorem 5.6；ℓ 为 Markov 成本并满足 Assumption 2.4。",
+        "FPK 可行对须满足论文 Definition 5.8 的连续概率测度曲线、弱积分方程及 Θ 取值可测特征条件。"
+      ],
+      "statement": "V(μ₀,μ₁)=PDE(μ₀,μ₁)，其中 PDE 最小化 ∫₀¹∫ℓ(t,x,θ(t,x))ρ_t(dx)dt，约束 ρ₀=μ₀、ρ₁=μ₁ 且 ∂_tρ_t=L_t^{θ*}ρ_t 的测试函数弱形式成立。",
+      "start_line": 1063,
+      "end_line": 1120,
+      "pdf_pages": [
+        21,
+        22
+      ],
+      "proof_steps": [
+        "取 Markovian 最优半鞅律，由 martingale problem/非局部 FPK 等价结果得到边缘曲线和可行 θ，从而 PDE≤V。",
+        "反向对任意有限成本弱 FPK 可行对用 superposition principle 构造半鞅律，保持全部时间边缘并具有条件特征 θ(t,X_{t−})；故 V≤PDE。",
+        "把 Markov 成本按分布积分与半鞅期望成本互换，得两值相等。"
+      ],
+      "gaps": [
+        "FPK–martingale 与 superposition principle 均依赖 [42] 对算子系数/解的技术假设；只在本文陈述的 Θ 条件加该引理适用范围内成立。"
+      ]
+    },
+    {
+      "name": "Theorem 6.1 与 Theorem 6.4：经典OT及连续鞅OT的两个应用",
+      "assumptions": [
+        "Theorem 6.1：μ₀,μ₁ 有有限二阶矩，二次代价；其证明使用扩展连续半鞅的 coercive-cost 结论。",
+        "Theorem 6.4：同样有限二阶矩，协方差成本满足 Assumptions 2.4 与 2.7（连续情形）。"
+      ],
+      "statement": "(i) Benamou–Brenier action BB₂ 等于对有界连续终端势 φ 的 Kantorovich 对偶 sup{∫φ^c dμ₀−∫φdμ₁}，且有限值时原始 action 达到；(ii) 连续鞅 Benamou–Brenier 值 MBB 等于相应扩散系数控制的弱 FPK 值 MPDE，且有限值时 MBB 达到。",
+      "start_line": 1150,
+      "end_line": 1252,
+      "pdf_pages": [
+        22,
+        23,
+        24
+      ],
+      "proof_steps": [
+        "BB₂ 一侧代入 Θ=R^d×{0}×{0} 与 L=|b|²，使用 coercive continuous-semimartingale 对偶；对固定端点 x,y，Cauchy–Schwarz 得 ∫|b|²≥|y−x|²，常漂移达成，于是 λ₀^{λ₁}≤(λ₁)^c。反向用 (λ₁)^c(x)−λ₁(y)≤|x−y|² 与 Jensen。",
+        "MBB–MPDE 作为一般 FPK 等价结论在 Θ={0}×S_d^+×{0} 下的特化；去掉先前方法中的 p-growth 代价限制依赖 coercivity 条件，而不是单靠二阶矩。",
+        "已独立复核 BB₂ 常漂移测试与反向 Jensen 不等式。"
+      ],
+      "gaps": [
+        "不是对任意非局部跳跃成本的经典静态输运公式；BB₂ 的下确界取得性由 coercive 连续情形定理保证。"
+      ]
+    },
+    {
+      "name": "Proposition 6.7 / Corollary 6.8：特征条件推出真鞅与跳跃MOT对偶",
+      "assumptions": [
+        "μ₀ 有有限一阶矩；Θ 满足 Assumptions 2.1 与 6.5，其中 b+∫(z−h(z))F(dz)=0 对所有 (b,c,F)∈Θ。",
+        "Corollary 6.8 还要求 Θ 闭凸且满足 Assumption 2.2，成本满足 Assumption 2.4，两个边缘有限一阶矩。"
+      ],
+      "statement": "在这些条件下带特征约束的半鞅律全为真鞅，P^M_Θ(μ₀,μ₁)=P_Θ(μ₀,μ₁)；因此 Skorokhod J1 路径空间上带跳跃 martingale OT 的原始值与其 λ₁∈C_b 的 Kantorovich 型对偶值相等。",
+      "start_line": 1260,
+      "end_line": 1309,
+      "pdf_pages": [
+        24,
+        25
+      ],
+      "proof_steps": [
+        "作者援引半鞅真鞅特征刻画：该积分漂移补偿条件加有限初始一阶矩和一阶增长控制使局部鞅成为真鞅。",
+        "在此集合相等后，直接将 Theorem 2.6 的一般半鞅对偶用于受 martingale 约束的问题。",
+        "已核查逻辑是“先证可行类相等再继承对偶”，而不是另外构造路径空间对偶势。"
+      ],
+      "gaps": [
+        "有限一阶矩及 Assumption 6.5 不可省略；此处对偶是初末端状态势和随机控制值函数形式。Corollary 6.9 的 lower-semicontinuous path payoff 另有固定初始点 δ₁ 的专门情形，不应泛化。"
+      ]
+    }
+  ],
+  "constant_dependence": "本文主要是紧性、对偶及等价刻画，无显式统一数值常数。Assumption 2.1 的特征上界与 Assumption 2.2 的小跳消失模量控制紧性；离开这些条件不宣称一致紧性。HJB唯一性无定量稳定常数。Benamou–Brenier 二次作用中常数为1，Cauchy–Schwarz/Jensen 为精确常数。",
+  "endpoint_limits": [
+    "一般跳跃特征SOT需要 Θ 闭凸、有界及小跳一致可积；初末边缘弱收敛下的值函数定理基于这些假设。",
+    "基础 Kantorovich型对偶只要求对路径与特征联合下半连续/可测及特征凸；不要求时间连续。HJB路线是更窄的 Markov成本，并另要求时间状态一致连续。",
+    "Markovian投影保一维边缘分布，而不保路径联合律；成本必须依赖当前状态且对特征凸，才能推出不增成本。",
+    "FPK表示基于弱解和 superposition principle 的适用条件；对任意分布曲线不自动存在相应过程。",
+    "真鞅MOT对偶需要有限一阶矩及漂移跳跃补偿约束。二次BB应用用有限二阶矩及相应成本设定。",
+    "完整读取本地全文 27 页：第1–6节、所有命名结果、证明、应用、参考文献与末页作者信息均已顺序通读。公式抽取可读；本次未额外做页面渲染核验。"
+  ],
+  "reusable_methods": [
+    "对半鞅特征成本的SOT，可以先用扩大空间将漂移、连续协方差和可数跳跃积分坐标化为路径导数，再用凸积分泛函下半连续工具处理成本。",
+    "以末端有界连续势参数化的受控随机控制值 λ₀^{λ₁} 可作为 Kantorovich型对偶的一侧；Fenchel双共轭精确决定初末端势符号。",
+    "对当前状态成本，先条件平均漂移/协方差/跳跃特征，再用凸性Jensen降低成本；结合 mimicking theorem 将一般过程转成保持一维边缘的Markovian martingale-problem解。",
+    "通过非局部生成元的测试函数弱式把 martingale problem 与 FPK 曲线联系；superposition principle 提供从PDE可行对返回过程律的方向。",
+    "以 Θ 的漂移加跳跃补偿恒等式和初始一阶矩建立局部鞅到真鞅的桥梁，再将一般SOT对偶继承给跳跃MOT。"
+  ],
+  "unchecked": [
+    "已顺序通读完整本地 27 页文本（lines 5–1410），包括 Sections 1–6、所有定理与证明、参考文献和末页信息；此“full_read”表示文本覆盖完整，不表示所有证明独立重证。",
+    "独立核过双对偶的符号结构、Markov投影处的 Jensen/边缘论证，以及 BB₂ 常漂移/Jensen 关键不等式；其余复杂概率紧性、HJB比较和superposition使用作者陈述/引用定理，未独立重证。",
+    "Theorem 4.7 的非局部 viscosity comparison 条件、半鞅紧性/平稳选择、Markovian projection 存在定理及 FPK superposition 定理依赖文中引用结果。",
+    "未渲染 PDF 做逐公式视觉对照，也未核对 arXiv 后续版本、外部勘误或代码；引用版本限于本地 arXiv:2606.27078v1。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1406,
+    "source_lines": 1410,
+    "required_content_lines": 1189,
+    "covered_content_lines": 1189,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-6c8f421db0f3d713/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-6c8f421db0f3d713.json",
+  "review_input_sha256": "2c7d767bf478fd3f027e8d0c1033a6a3844d99ec970329fc7fcfcafa0454e91c"
+}

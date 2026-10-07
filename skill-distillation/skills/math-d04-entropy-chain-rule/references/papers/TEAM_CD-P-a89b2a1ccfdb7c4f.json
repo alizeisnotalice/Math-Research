@@ -1,0 +1,289 @@
+{
+  "paper_id": "P-a89b2a1ccfdb7c4f",
+  "observed_title": "On the entropy of rectifiable and stratified measures",
+  "authors": [
+    "Juan Pablo Vigneaux"
+  ],
+  "version": "arXiv:2306.00305v1, 1 June 2023; 9 PDF pages. Identity read from supplied PDF; publisher/version linkage not independently verified.",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 405,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "scope": "全9页405行，包括摘要、AEP、Hausdorff/area/coarea、Remark1 disintegration、rectifiable/stratified chain规则、Theorem1、全部13条参考文献。不存在附录。公式PDF p3–9已渲染逐页核对；没有固定字符截断当全文。"
+    }
+  ],
+  "topic_relevance": {
+    "D04": "direct：式11为有给定测度分解时的entropy chain rule；以ν=Q、ξ=T#Q可对应KL方向。式14给不相交分层的标签+条件熵。几何coarea应用存在已定位缺假设。"
+  },
+  "definitions": [
+    {
+      "name": "reference-measure entropy",
+      "statement": "H_μ(ρ)=−∫ln(dρ/dμ)dρ；μ为σ有限且ρ≪μ。μ为概率时H_μ=−D(ρ||μ)，自然对数nats。负号和一般μ下熵可能负或无定义均保留。",
+      "source_lines": [
+        39,
+        60
+      ],
+      "pdf_pages": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "(T,ξ)-disintegration",
+      "statement": "ν_t为σ有限fiber测度，ξ-a.e.支撑于T=t；对非负可测h，t↦∫h dν_t可测且∫h dν=∫∫h dν_t dξ。不是仅给一个形式条件密度即存在。",
+      "source_lines": [
+        194,
+        204
+      ],
+      "pdf_pages": [
+        5
+      ]
+    },
+    {
+      "name": "k-stratified probability",
+      "statement": "ρ=Σ_{i=1}^k q_iρ_i，q_i>0且Σq_i=1；ρ_i为m_i-rectifiable概率，0≤m1<⋯<mk≤d，可选pairwise disjoint carrier E_i，μ_i=H^{m_i}|E_i、μ=Σμ_i。Y=π(X)记录唯一stratum，D=m_Y，E D=Σq_i m_i。",
+      "source_lines": [
+        285,
+        311
+      ],
+      "pdf_pages": [
+        7
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Proposition 1: measure-relative AEP",
+      "assumptions": [
+        "μ σ有限、ρ概率且ρ≪μ；Hμ(ρ)为有限实数，故log density可积。",
+        "样本为ρ的独立同分布n乘积；δ>0、ε>0固定。"
+      ],
+      "statement": "存在n0，使全部n≥n0有ρ^n(Wδ^n)>1−ε，且(1−ε)e^{n(Hμ−δ)}≤μ^n(Wδ^n)≤e^{n(Hμ+δ)}。",
+      "start_line": 39,
+      "end_line": 62,
+      "pdf_pages": [
+        1,
+        2
+      ],
+      "proof_steps": [
+        "作者证明引用weak law对−log density；独立同分布和可积性是核心。",
+        "在typical set上density product介于e^{−n(Hμ+δ)}与e^{−n(Hμ−δ)}，积分与概率界给volume界。"
+      ],
+      "gaps": [
+        "仅定性n0，不给统一速率、有限n误差常数；不是任意相关process的AEP。"
+      ]
+    },
+    {
+      "label": "Remark 1 Eq(11): chain rule with an existing disintegration",
+      "assumptions": [
+        "T可测；ν、ξ σ有限且给定(T,ξ)-disintegration ν_t。",
+        "ρ=rν为概率。设M(t)=∫r dν_t，T#ρ=Mξ，M>0的有效纤维上ρ_t=(r/M)ν_t；零T#ρ质量纤维任取条件概率。",
+        "TEAM有限值修复：log r与log M(Tx)在ρ下绝对可积（或另有避免∞−∞的扩展值定理）。"
+      ],
+      "statement": "Hν(ρ)=Hξ(T#ρ)+∫Hν_t(ρ_t)d(T#ρ)(t)。取ν=Q、ξ=T#Q且ν_t=Q_t为条件概率时，乘负号即D(P||Q)=D(P_T||Q_T)+E_{P_T}D(P_t||Q_t)。",
+      "start_line": 194,
+      "end_line": 204,
+      "pdf_pages": [
+        5
+      ],
+      "proof_steps": [
+        "作者结论引用[12, Prop3]，本篇不重证存在性/所有积分域。",
+        "TEAM有限值基础核：log r=log M(Tx)+log(r/M(Tx))；在ρ权下积分并用disintegration换序。",
+        "与现有D04对照：条件项必须使用P_T权及Q_t参考。"
+      ],
+      "gaps": [
+        "[12] Entropy under disintegrations (GSI2021)全文未取得；此卡不称已独立认证其一般扩展值版本。",
+        "σ有限本身不保证给定ξ的分解存在；一般有符号entropy可出现∞−∞。"
+      ]
+    },
+    {
+      "label": "Eq(12) area entropy change of variables: corrected operating domain",
+      "assumptions": [
+        "A⊂R^k有界Borel，ρ≪L^k|A，f injective Lipschitz。",
+        "TEAM追加：J_k f>0 ρ-a.e.，以及log density和log J在ρ下绝对可积；此正Jacobian并未由injective Lipschitz自动保证。"
+      ],
+      "statement": "在追加条件及可用area公式下H_{H^k|f(A)}(f#ρ)=H_{L^k}(ρ)+Eρ log J_k f，push density为(r/J)∘f^{-1}。",
+      "start_line": 247,
+      "end_line": 253,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "应用area formula于r/J，不可在J=0且ρ有正质量处使用。",
+        "原文p6未列J>0，却直接除J；修复只在正Jacobian有效域调用。"
+      ],
+      "gaps": [
+        "未从本篇证明injective Lipschitz足以正Jacobian；退化区域必须另分。"
+      ]
+    },
+    {
+      "label": "Eq(13) coarea entropy chain: corrected operating domain",
+      "assumptions": [
+        "E countably (H^m,m)-rectifiable，m≥d；f须满足coarea所需Lipschitz条件，而非仅Borel。",
+        "TEAM追加：F=C_d(d^E f)>0 H^m|E-a.e.（至少在待分解的参考/概率有效部分）以定义F^{-1}纤维参考。",
+        "必要disintegration和log可积性另外验证。"
+      ],
+      "statement": "可用ν_t=F^{-1}H^{m−d}|E∩f^{-1}(t)、ξ=L^d时，H_{H^m|E}(ρ)=H_{L^d}(f#ρ)+∫H_{ν_t}(ρ_t)d(f#ρ)(t)。改用未加权Hausdorff纤维时必须再减Eρ log F。",
+      "start_line": 257,
+      "end_line": 265,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "作者式13依赖p5 coarea分解与Remark1；PDF确认p6仅写Borel f。",
+        "TEAM反例：f≡0,E=[0,1],ρ=uniform；F=0、f#ρ=δ0不≪L1。因此来源字面无条件结论不可调用。"
+      ],
+      "gaps": [
+        "作者p5 L191称F>0 a.e.不由coarea一般前提推出。",
+        "原文纤维索引R^k/R^d及C_k/C_d存在记号笔误；按实际target维数d核，不把笔误作为定理。"
+      ],
+      "context_source_ranges": [
+        {
+          "start_line": 184,
+          "end_line": 193,
+          "pdf_pages": [
+            5
+          ],
+          "scope": "coarea foundation; positivity gap retained"
+        },
+        {
+          "start_line": 194,
+          "end_line": 204,
+          "pdf_pages": [
+            5
+          ],
+          "scope": "disintegration foundation"
+        }
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 272,
+          "end_line": 280,
+          "pdf_pages": [
+            7
+          ],
+          "scope": "change from weighted fiber reference to Hausdorff reference"
+        }
+      ]
+    },
+    {
+      "label": "Eq(14): disjoint stratified mixture entropy",
+      "assumptions": [
+        "有限k且q_i>0、disjoint carriers E_i；ρ_i≪μ_i=H^{m_i}|E_i，μ=Σμ_i。",
+        "各层entropy为有限实数以直接相加；零q_i层删去或按0log0处理。"
+      ],
+      "statement": "Hμ(Σq_iρ_i)=−Σq_i log q_i+Σq_iHμ_i(ρ_i)。同一真实样本决定标签Y，不能将重叠有限混合也默认有可观察唯一标签。",
+      "start_line": 295,
+      "end_line": 315,
+      "pdf_pages": [
+        7,
+        8
+      ],
+      "proof_steps": [
+        "在E_i上dρ/dμ=q_i dρ_i/dμ_i，log展开并按ρ权积分；为TEAM已检查有限值代数。",
+        "原文引用[13,Lem3–4]并说可由disintegration得到；原PDF q_n应按k个层理解。"
+      ],
+      "gaps": [
+        "重叠P_i混合只有联合标签模型；样本marginal entropy一般还减H(Y|X)。"
+      ]
+    },
+    {
+      "label": "Theorem 1: reported stratified AEP; literal dimension window not accepted",
+      "assumptions": [
+        "沿用finite stratification、有限entropy及ρ独立乘积。",
+        "η_n=n^{−1/2+ξ}的high probability且η→0使用0<ξ<1/2；来源此处未写该区间。",
+        "strong typical要求逐字母|P(a)−q_a|<η_n，弱typical取δ>0。"
+      ],
+      "statement": "作者声称restricted subprobability ρ^(n)=ρ^n|T距离ρ^n趋0，且所保strata维数均在nED±n^{1/2+ξ}；又报conditional entropy的fiber volume上界和两次limsup下的典型label cardinality指数H(Y)。此卡保留作者陈述但不认证原维数窗系数1。",
+      "start_line": 333,
+      "end_line": 367,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "proof_steps": [
+        "union bound+Hoeffding给失质量≤2k e^{−2nη_n²}加weak AEP失质量。",
+        "由strong typical仅直接得到|m(y)−nED|≤nη_n Σ_i m_i（更锐常数可中心化m_i）；不能删维数依赖。",
+        "TEAM explicit counterexample q=(1/2,1/2),m=(0,10)，disjoint point+unit10cube，各ρ_i为归一化体积。ρ相对μ恒1/2，weak typical全样本；count2/n=1/2+0.9η在strong typical内而维数偏移≈9nη，超来源±nη。"
+      ],
+      "gaps": [
+        "一般AEP及修正常数后的窗口可能成立；这里只反驳该来源指定T的字面系数1窗口，非反驳全部stratified AEP。",
+        "[13] arXiv:2212.10809未独立全文阅读；fiber lower-cardinality limsup、information dimension连接仍按作者报告。",
+        "ρ^(n)为restriction subprobability，不可默认为重新归一化probability；总变差约定影响缺失质量系数。"
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "statement": "AEP n0依赖ρ、μ、δ、ε；strong typical失质量≤2k exp(−2nη²)，dimension window必须含stratum dimensions常数；fiber volume指数误差δ+δ′_n，δ′_n=−kη_n lnη_n。无统一速率或任意process结论。",
+    "source_lines": [
+      39,
+      62,
+      333,
+      367
+    ],
+    "pdf_pages": [
+      1,
+      2,
+      8,
+      9
+    ]
+  },
+  "endpoint_limits": [
+    "零M(t)纤维对P_T积分无影响；μ=一般σ有限时Hμ有符号，避免∞−∞。",
+    "q_i=0先删层；本文definition需q_i>0。",
+    "J或F=0区域不能除以Jacobian，常值projection使pushforward为原子。",
+    "η_n→0且nη_n²→∞使用0<ξ<1/2。",
+    "不相交层是Eq14中样本决定标签的必要结构；重叠混合必须扣条件标签entropy。",
+    "C1 curve Eq7若有重遍历，积分是带multiplicity长度；image H1需额外injectivity/a.e. multiplicity1。"
+  ],
+  "reusable_methods": [
+    "用给定disintegration先构造M和normalized fiber law，再在同一ρ权下展开log density。",
+    "一般参考entropy与KL使用H_Q=−D转换，并固定nats。",
+    "不相交rectifiable strata用标签entropy+平均层entropy记账，保共同样本和参考measure。",
+    "area/coarea变换中把Jacobian项独立入预算并审计退化fibers。"
+  ],
+  "unchecked": [
+    "GSI2021 entropy-under-disintegrations及arXiv2212.10809外引结果未独立全文读取。",
+    "GMT基础定理引自Ambrosio/Federer/Koliander，未独立证明全部。",
+    "公式PDF p3–9均已读，全文9页无附录；full_read只指阅读，不意味着每项来源结论成立。"
+  ],
+  "source_errors": [
+    {
+      "location": "PDF p4 Eq7 / md L159–162",
+      "finding": "C1 curve without injectivity equates image H1 and parametric length; double traversal of unit circle gives2π vs4π."
+    },
+    {
+      "location": "PDF p5 after Eq10 / md L189–193; p6 Eq13 L259–265",
+      "finding": "unjustified positive coarea factor and only-Borel formulation; constant map counterexample."
+    },
+    {
+      "location": "PDF p8 Theorem1 / md L333–353",
+      "finding": "dimension window coefficient1 incompatible with specified strong typical T; explicit m=(0,10) mixture construction."
+    }
+  ],
+  "proof_verification": "selected_finite_domain_algebra_and_counterexamples_checked; external_general_theorems_not_independently_certified",
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 405,
+    "source_lines": 405,
+    "required_content_lines": 313,
+    "covered_content_lines": 313,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-a89b2a1ccfdb7c4f/paper.md"
+  },
+  "review_source": "evidence/reviews/TEAM_CD/evidence/P-a89b2a1ccfdb7c4f.json",
+  "review_input_sha256": "94d0a48ce56e9d5b946a6c279c29e5227504944458fbd8075abd4272fa9c4bbf"
+}

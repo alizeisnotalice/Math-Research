@@ -1,0 +1,171 @@
+{
+  "paper_id": "P-473597b9e3586cd7",
+  "observed_title": "A Computational Status Update for Exact Rational Mixed Integer Programming",
+  "authors": [
+    "Leon Eifler",
+    "Ambros Gleixner"
+  ],
+  "version": "arXiv:2101.09141v1; ZIB-Report 21-04 (January 2021); accepted to IPCO 2021; PDF 17 pages",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 812,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "L03",
+    "decision": "direct",
+    "basis": "论文专门描述精确有理 MIP 分支定界：近似 LP 解经安全对偶界后处理、浮点候选解经精确修复、精确预处理及 VIPR 独立检查器。它直接提供“数值候选与有理证书分离”的实现模式；但报告的速度指标是特定求解器版本和测试集上的实验，不是普遍复杂度定理。"
+  },
+  "definitions": [
+    "精确 MIP 维护输入有理矩阵 A,b,c 及其最近浮点近似；整数坐标集合为 I，主问题为 min{cᵀx:Ax≥b, x∈Qⁿ, xᵢ∈Z (i∈I)}。",
+    "安全对偶界是在浮点 LP 候选的基础上，经 directed-rounding interval bound-shift、exact-project-and-shift 或精确 LP 求解，得到不会高估 LP 最优值的下界。",
+    "精确修复先固定启发式产生的整数变量，再精确求剩余连续 LP；仅当修复 LP 可行时，才接受原 MIP 的精确可行解。",
+    "VIPR 证书将分支定界节点及对应对偶乘子/不可行信息编码成可独立检查的搜索证书；求解器证书不等同于自行验证求解器实现。"
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "MIP 输入系数是精确有理数，浮点副本仅用于生成候选 LP 解。",
+        "每个被用于剪枝的对偶界都由有效的安全界方法产生；剪枝/整数变量处理遵循精确分支定界逻辑。",
+        "如需独立核验最优性，证书记录完整节点覆盖与各节点可验证的界或不可行信息，且由独立 VIPR checker 接受。"
+      ],
+      "statement": "作者描述的混合精度分支定界以浮点 LP 求解提供候选，再使用 bound-shift、project-and-shift 或精确 LP 对每个松弛产生有效安全下界；原始候选经精确有理算术检查后才能接受。VIPR 形式可把节点界/不可行论证导出为外部可检查证书。",
+      "start_line": 191,
+      "end_line": 235,
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "proof_steps": [
+        "用精确有理数保存原模型，同时建立最近可表示浮点系数近似，分开处理搜索速度和正确性。",
+        "浮点 LP 解只作为近似候选；剪枝前由 directed rounding 的 bound-shift、先精确求辅助 LP 的 project-and-shift 或 exact LP 得出有效对偶界。",
+        "原始可行点在 exact arithmetic 下检查；整数分支通过精确模型保持覆盖。",
+        "将搜索节点覆盖及每个节点的对偶乘子/不可行证据输出，交由独立 checker 检查，避免把求解器自身状态当成证书。"
+      ],
+      "gaps": [
+        "本文回顾安全 bound-shift/project-and-shift 的核心算法，但其具体误差界证明依赖所引外部文献，本文没有重证。",
+        "VIPR 的独立检查可检出输出证书不成立，但作者明确说证书本身不验证求解器实现的完整正确性。",
+        "LP exact solver、证书格式与 checker 的版本或运行环境必须匹配；本文报告并非对现今实现的复验。"
+      ],
+      "author_claim": "第 2 节描述 exact rational MIP 的混合精度框架，并说明安全对偶界、精确原始解验证及 tree-less VIPR 证书。",
+      "checked_derivation": "核对了最小化 LP 松弛下界的方向：安全下界只在仍不优于 incumbent 时可用于剪枝；也核对了作者明确区分浮点候选、精确可行验证与独立证书检查。PDF 第 6 页视觉复核模型、浮点近似和证书描述。"
+    },
+    {
+      "assumptions": [
+        "输入有理 MIP 模型及整数变量索引正确；PaPILO 变换对有理系数执行并保留可逆/后处理信息。",
+        "浮点启发式不得通过未认证模型修改（例如无效 no-good 切割）破坏精确分支定界。",
+        "精确修复中固定的整数赋值正确取整；剩余连续子问题由精确 LP 解算。",
+        "行可行检查给出带严格意义的误差包络；若浮点测试不能排除临界情况，应回退有理精确计算。"
+      ],
+      "statement": "精确有理 PaPILO 预求解通过可还原的变量固定、聚合、界改变和约束强化/删除压缩模型。启发式找到近似 MIP 点后，固定整数坐标并精确解连续 LP，只有 feasible 时得到精确可行解。其行可行预筛计算浮点活动值 s 和误差界 μ；作者称若 s−μ≥b 则确认满足 Ax≥b，若上端侧测试通过则确认违反，否则精确重算。",
+      "start_line": 246,
+      "end_line": 339,
+      "pdf_pages": [
+        6,
+        7,
+        8
+      ],
+      "proof_steps": [
+        "有理算术运行预求解循环，直到不再发现足够大的缩减，再将后处理信息传回主求解器。",
+        "对启发式结果固定整数变量，以 nearest integer 修正轻微分数误差；精确求解连续残余 LP，可行则获得原有理 MIP 的可行点。",
+        "用误差传播同时覆盖有理系数/点到浮点近似的输入误差与运算舍入误差；当区间判定不确定时，切换到精确算术。",
+        "按论文设置限制 exact repair 的调用频率，并在连续变量比例超过 80% 时禁用，以控制实测成本。"
+      ],
+      "gaps": [
+        "论文写出的行检验为 s+μ≤b 时安全判为 Ax≥b 违反；若误差区间可取到端点 b，则活动值恰等于 b 仍满足非严格约束 Ax≥b。要使结论严格安全，需证明其误差界在该边界严格、改用 s+μ<b，或对等号情况回退精确检查。正文没有在这里说明这种严格端点机制，本卡将此列为待核验的边界条件，而不将其判作已证正确。",
+        "误差上界依赖被引用的 running error analysis；本文未展开其浮点模型、溢出/下溢、FMA 或特殊值假设，也未独立复算 μ 的公式。",
+        "对浮点启发式调用的安全性取决于禁止改变精确搜索模型的实现约束；代码未在本文中逐行审计。"
+      ],
+      "author_claim": "第 3 节描述有理预求解、浮点启发式加精确修复、exact LP iterative refinement，以及基于 running error analysis 的浮点快速可行性预筛。",
+      "checked_derivation": "从 Ax≥b 和误差包络 [s−μ,s+μ] 直接核对：左端≥b 足以证明满足；证明违反则应保证真实活动严格小于 b。原文使用非严格 ≤ 的右端判据，但没有在此说明误差边界是否严格，故保留未闭合端点而不照抄为证明。PDF 第 7、8 页视觉核对修复步骤与 s±μ 判据。"
+    },
+    {
+      "assumptions": [
+        "实验只对作者列明的 fpeasy、numdiff 与 MIPLIB 2017 测试集、当时的 SCIP/SoPlex/CPLEX/GMP 版本和指定集群设置有效。",
+        "统计汇总的样本过滤、随机 seed 数、求解时限与几何均值 shift 按文中定义解释。"
+      ],
+      "statement": "作者报告更新后的框架相较原框架在给定测试集中解出更多实例且平均更快；有理预求解减少搜索节点，精确修复更快找到首个可行解，证书生成带来显著但有限的时间开销。MIPLIB 2017 上新框架解出 47/240，原框架 17/240；该结论是受配置限制的实测比较，不是所有问题上的性能保证。",
+      "start_line": 342,
+      "end_line": 411,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "proof_start_line": 497,
+      "proof_end_line": 683,
+      "proof_pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "proof_steps": [
+        "固定软硬件、求解器版本、测试集、随机种子与 7200 秒时限，分别比较求解数量、用时、节点数、safe-bound 时间和 primal integral。",
+        "按组件消融分析 exact presolve、primal repair 与 certificate；精确预处理提高部分测试集的求解数，但效果仍依赖数据集。",
+        "作者记录证书产出/检查的运行开销，同时指出启用 presolve 时 PaPILO 尚不支持生成证书。",
+        "在 MIPLIB 结果上报告最终对比，并明确安全割平面等技术尚未覆盖。"
+      ],
+      "gaps": [
+        "这是 2021 年特定实现与硬件的实证；无法外推为现代求解器、其他实例分布或最坏情况复杂度界。",
+        "论文没有复现实验数据、重新运行软件或对 benchmark 逐实例核对；摘要中的平均 speedup 不单独证明某个实例的最优性。",
+        "安全割生成、通用性能差距仍是作者列出的限制。"
+      ],
+      "author_claim": "第 4 节给出两组精选测试、MIPLIB 对比、exact presolve/primal heuristic/certificate 消融统计。",
+      "checked_derivation": "视觉核对了 PDF 第 9、10、13、14 页中测试表及证书开销表，确认统计结论只绑定相应数据集与配置；未复算原始日志。"
+    }
+  ],
+  "constant_dependence": "没有数学常数型界。第 4 节中的 6.6x、2.8x、39.4%、72.9%、MIPLIB solve counts 等均依赖所选测试集、历史软件版本、阈值与计时设置；不能作为新输入问题的性能界。",
+  "endpoint_limits": [
+    "安全对偶界只需保证正确方向；浮点 LP optimal 状态自身不足以剪枝。 bound-shift 要求全变量上下界；project-and-shift 要精确求辅助 LP。",
+    "exact primal acceptance 与 exact dual bounds 是独立方向；有精确可行点不代表最优，安全下界也不代表已找到可行点。",
+    "VIPR 独立检查搜索证书，但不形式化验证生产证书的求解器本体。",
+    "running error precheck 的违反端点 s+μ=b 未解释是否严格，按非严格线性不等式需要特殊处理；疑点已列入 gaps 和 unchecked。",
+    "实验中启用证书需额外记录乘子并有安全界后处理，且 PaPILO exact presolve 尚不支持证书生成。"
+  ],
+  "reusable_methods": [
+    "保留精确有理模型；把浮点优化只用于候选搜索，把剪枝所需对偶界和可行点验收分别转成精确/安全证据。",
+    "用 bound-shift 作为依赖界的快速安全界，变量无界或效果不足时选 project-and-shift / exact LP；精确辅助 LP 的一次性成本须纳入流程。",
+    "让浮点启发式提供整数模式候选，再对固定整数模式解精确连续 LP；失败时拒绝候选，不削弱主模型。",
+    "对能由舍入误差区间明确判定的行快速接受/拒绝，其余临界行回退有理精确算术；严格核对开闭端点。",
+    "用独立证书 checker 区分“求解器报告最优”与“搜索树上每个节点都有可复核界”。"
+  ],
+  "unchecked": [
+    "未安装或运行 exact-SCIP、SoPlex、PaPILO、VIPR；未复现实验或逐实例检查 MIPLIB 日志。",
+    "bound-shift、project-and-shift、LP iterative refinement 与 VIPR 理论细节主要引自其他论文，本审阅未重新证明。",
+    " running error analysis 的精确误差模型和等号端点处理未从 [27] 原文补查；浮点严格性疑点需对源算法或代码再核。",
+    "PDF 第 6、7、8、9、10、13、14 页的主要公式与实验表已视觉复核；所有 17 页（含参考文献）按分页文本通读。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 808,
+    "source_lines": 812,
+    "required_content_lines": 638,
+    "covered_content_lines": 638,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-473597b9e3586cd7/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/P-473597b9e3586cd7.json",
+  "review_input_sha256": "b4c3e8c105f1add5cb10f26c5437f7db13787ef93af89a77e5adbf082a83d068"
+}

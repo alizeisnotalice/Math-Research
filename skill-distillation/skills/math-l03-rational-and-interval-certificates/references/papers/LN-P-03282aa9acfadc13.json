@@ -1,0 +1,187 @@
+{
+  "paper_id": "P-03282aa9acfadc13",
+  "observed_title": "A Toolbox for Fast Interval Arithmetic in numpy with an Application to Formal Verification of Neural Network Controlled Systems",
+  "authors": [
+    "Akash Harapanahalli",
+    "Saber Jafarpour",
+    "Samuel Coogan"
+  ],
+  "version": "arXiv:2306.15340v1; 2nd Workshop on Formal Verification of Machine Learning, 2023; PDF 8 pages",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 472,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "L03",
+    "decision": "adjacent",
+    "basis": "全文给出区间包含函数、自然包含函数复合、区间嵌入及神经网络闭环可达集的构造与证明，适合迁移为“把函数输出包入区间并传播”的方法。但作者明确说明 npinterval 后续才会计入浮点误差；现有双精度实现不是经向外舍入认证的数值证书，故只列邻近方法，不视为可直接认证的实现。"
+  },
+  "definitions": [
+    "包含函数 [f] 将每个输入区间 [x] 映至一个区间并满足 f([x])⊆[f]([x])；单调性指 [x]⊆[y] 时 [f]([x])⊆[f]([y])，紧包含函数是包含像集的最小坐标区间。",
+    "自然包含函数把复合表达式 f=eℓ∘…∘e1 中每个部件替换为已知单调包含函数 [ej]；其正确性不保证紧致，不同代数分解会产生不同宽度。",
+    "东南序把区间下端坐标向小、上端坐标向大排序，用于把混合单调向量场的二维状态嵌入与原轨迹比较。",
+    "神经网络局部包含函数 [N][y] 在基准区间 [y] 上使用 CROWN 仿射上下界，并可在坐标固定的子区间上改进闭环包围。"
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "f:[x]上的各坐标值均有有限 infimum 与 supremum，使包围像集的闭区间存在。",
+        "区间的偏序为集合包含；函数像按逐点值定义。"
+      ],
+      "statement": "对每个坐标逐点取 inf_{x∈[x]} f_i(x) 与 sup_{x∈[x]} f_i(x)，得到唯一最小的坐标区间 [f]([x]) 包含 f([x])；输入区间扩大时，该最小包围区间单调扩大。",
+      "start_line": 102,
+      "end_line": 111,
+      "pdf_pages": [
+        2
+      ],
+      "proof_start_line": 374,
+      "proof_end_line": 387,
+      "proof_pages": [
+        7
+      ],
+      "proof_steps": [
+        "逐一固定输出坐标。若任何包含像集的区间下端高于坐标 infimum，则由下确界定义可找到更小的像值，与包围矛盾。",
+        "对上端的 supremum 作对偶论证，故最小端点恰为坐标 infimum/supremum。",
+        "若输入区间包含关系成立，则像集包含关系成立，取各坐标 infimum/supremum 即得单调性。"
+      ],
+      "gaps": [
+        "正文定理没有把 finiteness/attainment 条件写进假设；闭区间值只能在坐标上下确界有限时直接成立，达到极值还需额外连续性与紧性。",
+        "证明文本把输出坐标指标写作 i=1,…,n，而 f:R^n→R^m 时应为 i=1,…,m；坐标论证本身可直接改正该记号。"
+      ],
+      "author_claim": "Theorem 2.2 声称最紧包含函数等于逐坐标像集的 inf/sup，并且唯一、单调。",
+      "checked_derivation": "核对了每坐标最小端点的下确界反证和上确界对称论证，以及区间嵌套导致像集嵌套。PDF 第 2、7 页视觉核对公式与证明。"
+    },
+    {
+      "assumptions": [
+        "f=eℓ∘…∘e1 是有限复合。",
+        "每个部件 ej 已有单调包含函数 [ej]。"
+      ],
+      "statement": "[f]=[eℓ]∘…∘[e1] 是 f 的包含函数；若每个 [ej] 单调，则复合后的包含函数也单调。不同分解可能导致不同宽度，故一般不紧。",
+      "start_line": 72,
+      "end_line": 81,
+      "pdf_pages": [
+        2
+      ],
+      "proof_start_line": 389,
+      "proof_end_line": 406,
+      "proof_pages": [
+        7
+      ],
+      "proof_steps": [
+        "单部件时结论由包含函数定义与已知单调性成立。",
+        "归纳假设前 m−1 个区间映射包含复合函数的真实像；用 em 的单调性把真实中间像包含到扩大的输入区间，再由 [em] 的包含性包住最终像。",
+        "对 [x]⊆[y]，先由归纳复合的单调性传递包含，再由 [em] 的单调性传递包含，得到整个复合单调。"
+      ],
+      "gaps": [
+        "这是抽象集合包含论证；每个部件映射定义域、向量区间形状及复合输入类型须匹配。",
+        "自然包含函数可能因依赖关系产生宽松包围；作者以 (x+1)^2 在 [-1,1] 上给出不同表达式得到 [0,4] 与 [-1,4] 的示例。"
+      ],
+      "author_claim": "Theorem 2.3 通过复合已知单调包含函数自动构造自然包含函数，并证明其包含性及单调性。",
+      "checked_derivation": "已沿归纳证明逐行核对两层包含关系与单调性传递；PDF 第 2、7 页视觉复核。"
+    },
+    {
+      "assumptions": [
+        "系统 ẋ=f(x,u,w)，扰动取自紧集 W；初始状态 x0∈[x0,x̄0]。",
+        "存在 f 对状态、控制与扰动的已知单调包含函数 [f]，并据此按坐标固定构造开环嵌入函数 F。",
+        "实际输入满足 u(t)∈[u](t)、w(t)∈[w](t)，嵌入系统在所讨论时间区间的轨迹存在。"
+      ],
+      "statement": "由开环二维嵌入系统 (ẋ,x̄̇)=(F([x,x̄],[u],[w]),F([x̄,x],[u],[w])) 生成的区间 [x(t),x̄(t)] 包含对应真实解 x(t)，对所有 t≥t0 成立。",
+      "start_line": 158,
+      "end_line": 188,
+      "pdf_pages": [
+        3
+      ],
+      "proof_start_line": 408,
+      "proof_end_line": 439,
+      "proof_pages": [
+        7,
+        8
+      ],
+      "proof_steps": [
+        "按坐标固定状态端点，分别在相应状态盒与输入/扰动盒上取向下/向上极值，构造分量 d_i 与 2n 维嵌入 ODE。",
+        "由该构造和紧包含函数下界，证明 F([x,x̄],[u],[w]) 被嵌入向量场端点夹住，形成东南序比较。",
+        "援引外部混合单调嵌入定理，实际解先落在辅助嵌入产生的区间内；再用引用的比较定理把辅助包络包含进目标 embedding 包络，合并得到实际解属于 [x(t),x̄(t)]。"
+      ],
+      "gaps": [
+        "证明依赖 Abate et al. 的混合单调系统嵌入定理以及 Michel et al. 的序比较定理；本文未重证这些外部结果。",
+        "对 f 的正则性、嵌入向量场的解存在唯一性及映射输入的可测/分段连续条件，定理仅以轨迹存在的方式隐含使用。",
+        "实际可达集宽度会受自然包含松弛与区间依赖影响；“tight over-approximation”是设计目标，不是普遍宽度最优性。"
+      ],
+      "author_claim": "Theorem 3.2 声称当存在单调包含函数时，开环嵌入轨迹逐时刻包住所有相容输入的系统轨迹。",
+      "checked_derivation": "检查了固定坐标取 min/max 所给出的东南序夹逼步骤，并追踪到外部比较定理的调用；没有独立证明引用定理。PDF 第 3、7、8 页视觉复核嵌入方程、(15)–(17) 与末端包含关系。"
+    },
+    {
+      "assumptions": [
+        "开环系统及扰动假设如 Theorem 3.2，并存在神经网络 N 的已知单调包含函数 [N]。",
+        "在当前状态盒 [x,x̄] 上，局部包含函数 [N][x,x̄] 有效，并用于坐标固定的状态子盒。",
+        "CROWN 等方法给出的仿射上下界确实对所有 x∈[x,x̄] 成立；相容轨迹与嵌入解存在。"
+      ],
+      "statement": "将 [N][x,x̄] 与开环嵌入按坐标交织，生成闭环嵌入 ODE；若初态及扰动落在给定区间内，则真实闭环轨迹始终落在闭环嵌入给出的区间 [xc(t),x̄c(t)] 内。",
+      "start_line": 202,
+      "end_line": 240,
+      "pdf_pages": [
+        4
+      ],
+      "proof_start_line": 441,
+      "proof_end_line": 471,
+      "proof_pages": [
+        8
+      ],
+      "proof_steps": [
+        "按坐标固定状态端点，并将相应子盒送入已知单调的局部 [N][x,x̄]，得到真实 N(z) 的上下界。",
+        "用真实向量场在各坐标子盒、扰动盒和网络输出界上的 min/max 构造 d_i^c，并由紧包含函数性质推出嵌入分量东南夹逼。",
+        "援引外部混合单调嵌入与序比较定理，将真实轨迹夹在闭环嵌入上下端轨迹之间。"
+      ],
+      "gaps": [
+        "依赖与 Theorem 3.2 相同的外部ODE比较结果；[N] 的正确性取决于外部神经网络验证器给出的线性界。",
+        "第 3.4 节数值图通过步长 0.05 的 Euler 积分产生；论文没有把离散积分截断误差认证进连续时间包络，因此图示实验不能单独作为严格数值证书。",
+        "真实浮点计算误差未计入：结论是实数区间运算模型下的数学包含关系，并不认证当前 double 实现。"
+      ],
+      "author_claim": "Theorem 3.4 声称交织局部神经网络包含界后的闭环嵌入包住真实闭环轨迹。",
+      "checked_derivation": "核对了式 (20) 对坐标固定状态的网络界与式 (21) 向量场夹逼，再核对末尾比较定理步骤。PDF 第 4、8 页视觉复核闭环构造与证明；没有独立审计 CROWN。"
+    }
+  ],
+  "constant_dependence": "没有维数一致的误差常数、网格收敛阶或可达集宽度上界。Theorem 2.2–2.3 是区间包含代数结论；可达集包络取决于给定的 [f]、[N]、状态区间、输入/扰动区间与时间积分方法。数值示例使用 0.05 Euler 步长但未给连续时间误差证书。",
+  "endpoint_limits": [
+    "区间操作表给出实数区间上的包含公式；当前软件区间由两个 double 表示，作者明确写明未来才加入 floating point error 处理，因此不能把 ordinary double 运算结果当成向外舍入认证。",
+    "自然包含函数存在依赖膨胀；仅把同一变量重复出现的公式改写，区间端点即可变宽。",
+    "开环结论要求已知单调 [f]；闭环结论还要求在对应状态盒有效的神经网络局部 [N]。",
+    "形式可达集定理与用有限步长 Euler 运行的图示结果不是同一种证明对象。"
+  ],
+  "reusable_methods": [
+    "按元素构造紧包含函数；复合表达式逐层替换为已证明的单调包含函数，保留表达式依赖造成的宽度信息。",
+    "对连续时间系统按坐标固定端点构造混合单调 embedding，再用序比较证明包络包含所有解。",
+    "对闭环系统以外部神经网络验证器提供的局部仿射界收紧输入区间，交织到状态 embedding 中。",
+    "把区间公式和实现层的 outward-rounding 保证分开审计；在没有舍入保证时只记录为实数模型分析方法。"
+  ],
+  "unchecked": [
+    "未检视 npinterval 源码或构建版本，未验证每一项 double 端点实现是否外向舍入；文章结尾明言尚未处理浮点误差。",
+    "Abate et al. 混合单调 embedding 定理、Michel et al. 序比较定理及 CROWN/autoLiRPA 界均未在本文外独立审计。",
+    "没有复现实验或逐项测试三角函数分段边界。已视觉复核 PDF 第 2、3、4、6、7、8 页的定义/主公式/证明；其余页面按全文文本阅读。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 468,
+    "source_lines": 472,
+    "required_content_lines": 384,
+    "covered_content_lines": 384,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-03282aa9acfadc13/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/P-03282aa9acfadc13.json",
+  "review_input_sha256": "fd61ae258b10ee16a03ac2a136e51d4df56cbb4039e0f18682d5ddac0be7af0c"
+}

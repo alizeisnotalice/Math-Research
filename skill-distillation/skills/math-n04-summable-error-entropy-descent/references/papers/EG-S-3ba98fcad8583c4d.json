@@ -1,0 +1,171 @@
+{
+  "paper_id": "S-3ba98fcad8583c4d",
+  "observed_title": "On the Hardy-Littlewood Maximal Function for the Cube",
+  "authors": [
+    "Jean Bourgain"
+  ],
+  "version": "arXiv:1212.2661v1（2012）。本地补充开放全文 20 页。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 841,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "F04": "adjacent"
+  },
+  "definitions": [
+    {
+      "term": "凸对称体相关 Hardy–Littlewood 极大算子",
+      "definition": "对中心对称凸体 B⊂R^n，M_B f(x)=sup_{t>0}|B|^{-1}∫_B|f(x+ty)|dy；C_p(B) 是 L^p 有界性的最佳常数。论文主对象是单位立方体 B_∞^n。",
+      "source_ranges": [
+        {
+          "start_line": 23,
+          "end_line": 41,
+          "pdf_pages": [
+            1
+          ]
+        },
+        {
+          "start_line": 88,
+          "end_line": 97,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "高斯热平滑尺度分解",
+      "definition": "记 H 为 Fourier 变换 e^{−|ξ|²} 的高斯核，H_s 为相应尺度化。作者将 1_B 写成 1_B*H 加上相邻二进高斯平滑尺度的差 Ω^(s)，并逐项估计这些核对应的极大算子。",
+      "source_ranges": [
+        {
+          "start_line": 137,
+          "end_line": 164,
+          "pdf_pages": [
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "term": "频带 L² 极大估计量",
+      "definition": "对 K∈L¹，令 α_j=sup_{|ξ|∼2^j}|K̂(ξ)|、β_j=sup_{|ξ|∼2^j}|⟨∇K̂(ξ),ξ⟩|，Γ(K)=Σ_j α_j^{1/2}(α_j+β_j)^{1/2}，用于控制尺度化卷积的 L² 极大函数。",
+      "source_ranges": [
+        {
+          "start_line": 146,
+          "end_line": 158,
+          "pdf_pages": [
+            4
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Bourgain 主定理：立方体极大算子的维数无关 Lp 界",
+      "assumptions": [
+        "B=B_∞^n 为 R^n 中中心对称立方体。",
+        "1<p<∞；维数 n 任意。"
+      ],
+      "statement": "存在仅依赖 p 的常数 C_p，使 ||M_{B_∞^n}f||_p≤C_p||f||_p 对所有维数 n 成立；论文不主张维数无关的弱 (1,1) 界。",
+      "start_line": 88,
+      "end_line": 97,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "把立方体指标函数按高斯热平滑相邻尺度分解，先将总体极大估计分解为平滑项与各尺度增量项。",
+        "用频带 L² 极大估计得到每个增量 Ω^(s) 的 L² 极大范数衰减约 2^{−s/2}。",
+        "对 1<p<2，将此 L² 界与平滑项 L^p 界插值；为得到适用于所有尺度的平滑项估计，使用 Riesz 变换向量值平方函数及对梯度乘子的控制。",
+        "困难的向量估计被约化成导数卷积族 µ_i=∂_i(1_B*H_{R^{-1}}) 的 ℓ² 向量值 L^p 界；作者以乘积卷积算子局部化傅里叶坐标，使用独立 Bernoulli 选择做维数解耦，再以近似平移稳定的卷积 L_j 和显式迭代界完成归纳/吸收。",
+        "关键递推为 A_p(R)≲R^{8ε}+A_p(R)R^{−2ε}（常数依赖 p,ε），吸收后得到所需的任意小幂 R^{8ε} 增长，配合尺度分解和插值完成结果。"
+      ],
+      "gaps": [
+        "证明的全局组织和主要不等式已逐页读完；有些抽取公式的幂次/排版受文本转换影响，本次未逐式渲染原 PDF 独立复核。",
+        "高斯平滑增量中的平方函数是坐标导数向量值估计，不是 Poisson–Gamma 次序积分或 Abel 正则平方函数。"
+      ]
+    },
+    {
+      "name": "Lemma 1–3：增量 L² 界与向量值平方估计",
+      "assumptions": [
+        "Lemma 1 对 K∈L¹，采用二进频带上的 K̂ 衰减和径向导数控制。",
+        "Lemma 2 假设乘子 |ξ|m(ξ)e^{−4^{−s}|ξ|²} 在 L^p 的算子范数不超过 A(p,s)。",
+        "Lemma 3 取 R>1、µ_i=∂_i(1_{B_∞}*H_{R^{-1}})，2≤p<∞，ε>0。"
+      ],
+      "statement": "Lemma 1 给 ||sup_{t>0}|f*K_t|||_2≤CΓ(K)||f||_2；对高斯尺度增量得 L² 极大范数 ≲2^{−s/2}。Lemma 2 将指定乘子界传递为平滑核极大估计。Lemma 3 的目标是 ||(Σ_i|f*µ_i|²)^{1/2}||_p≤C_p(ε)R^ε||f||_p。",
+      "start_line": 137,
+      "end_line": 271,
+      "pdf_pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "proof_steps": [
+        "对热尺度增量代入 Lemma 1 的 α_j、β_j 估计，得到 2^{−s/2}。",
+        "把平滑立方体 Fourier 乘子拆成坐标 Riesz 变换与 ∂_i(1_B*H)；Riesz 变换使用维数无关的向量值 L^p 界。",
+        "Lemma 3 通过乘积条件期望/三角帽卷积算子把频率拆成有限阶坐标增量；先用 Parseval 控制高阶尾项，再用独立 Bernoulli 随机化选择未平滑坐标，将向量估计降到与维度选择集相对应的低阶式。",
+        "借助 Lemma 7–9 对近似恒等卷积 L_j 的向量不等式，以及小平移稳定核 φ，控制平滑/差分两部分。最终将 A_p(R) 递推式中的小因子吸收。"
+      ],
+      "gaps": [
+        "随机变量用于证明按坐标的平方函数/解耦，不是对正交级数部分和取最大值的 Rademacher–Menshov 定理。",
+        "ε 的可选性依赖先选参数再吸收递推；其常数 C_p(ε) 不显式优化。"
+      ]
+    }
+  ],
+  "constant_dependence": "立方体极大主定理常数对维数 n 一致，但依赖 p；涉及 ε 的分解常数 C_p(ε) 依赖 p 与 ε，最终取 ε 足够小以使尺度级数收敛。没有给最优常数。",
+  "endpoint_limits": [
+    "完整阅读 20 页正文及参考文献；主要目标是 1<p<∞，并未建立维数无关的弱 (1,1) 端点。",
+    "本论文使用高斯/热核 H 与 L² 极大、坐标导数平方函数；没有 Poisson 半群 P_t=e^{−t√L}、Gamma 次序积分或 Abel 极限的公式及证明。故对 F04 只作为尺度平滑与平方估计的邻近方法，不作为目标接口证据。",
+    "Bernoulli 随机化仅在证明中解耦坐标；不支持将论文记为 Rademacher–Menshov 最大部分和来源。",
+    "部分扫描公式的 OCR 乱码可能影响逐字常数；核心主定理和关键衰减/递推已对上下文核读，未逐公式视觉校对 PDF。"
+  ],
+  "reusable_methods": [
+    "对核作相邻热尺度差分，并分别控制每个增量的 L² 极大范数，可形成适于插值的尺度分解。",
+    "用傅里叶坐标积结构和随机稀疏坐标选择，将高维向量值估计约化到子集变量上的统一不等式。",
+    "对差分平方函数先剥离光滑低频部分，再由频率乘子的小量获得 L² 衰减，插值到目标 L^p。",
+    "递推界中保留一个小于 1 的尺度因子，最后才做吸收；明示参数先后顺序可避免把隐含常数误用为绝对常数。"
+  ],
+  "unchecked": [
+    "未独立证明引用的 Pisier 半群、Riesz 变换维数无关向量界、Bourgain 先前引理等外部结果。",
+    "未按 PDF 图像逐条校验 OCR 中所有尺度指数和多重求和排版。",
+    "仅支持 F04 的热平滑/平方函数邻近方向，不能据此定义或证明项目 Poisson–Gamma–Abel 接口。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 837,
+    "source_lines": 842,
+    "required_content_lines": 578,
+    "covered_content_lines": 578,
+    "reported_status": "full_read",
+    "source": "supplementary/S-3ba98fcad8583c4d/paper.md"
+  },
+  "review_source": "reviews/EG/evidence/S-3ba98fcad8583c4d.json",
+  "review_input_sha256": "25f1d3f135c52be0d78f8d8db4a4e0c452316898373ddb8f3730f80b811cb6d2"
+}

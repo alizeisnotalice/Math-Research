@@ -1,0 +1,313 @@
+{
+  "paper_id": "P-0df62e2eed197408",
+  "observed_title": "Subdifferential of the supremum function: Moving back and forth between continuous and non-continuous settings",
+  "authors": [
+    "R. Correa",
+    "A. Hantoute",
+    "M. A. López"
+  ],
+  "version": "arXiv2004.01173v1,2Apr2020 PDF firstpage side; no newer version substituted. 25pages.",
+  "source_binding": {
+    "pdf_path": "corpus/papers/P-0df62e2eed197408/paper.pdf",
+    "pdf_sha256": "0df62e2eed1974087a76d7eb839fb613076f00dec581daa7d531ccda98b3000f"
+  },
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1368,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "scope": "All sections1–8, definitions, preliminary cited results, compactification/limsup and diagonal-net proofs, Lemmas9/10, Theorem11 three-step proof, duality/relaxation/bidual/semi-infinite optimization applications and references. All nonempty text read, important formula pixels rechecked."
+    }
+  ],
+  "topic_relevance": {
+    "code": "M04",
+    "decision": "adjacent",
+    "basis": "Convex supremum subdifferential and compactification/approximate-active methods. Does not establish measurable value functions or selectors on original indices."
+  },
+  "definitions": [
+    {
+      "name": "Locally convex dual topology and approximate active indices",
+      "statement": "X real separated locally convex, X* carries weak-star σ(X*,X); cl default weak-star on dual. F(x) finite-dimensional linear subspaces containing x; Tε(x)={t:ft(x)≥f(x)−ε}, f=sup_tft. ∂ε is global Fenchel ε-subgradient, empty when f(x) not finite. cl^s uses strong dual topology β(X*,X), not an unspecified norm topology.",
+      "start_line": 136,
+      "end_line": 191,
+      "pdf_pages": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "Compactified upper-regularized functions",
+      "statement": "For any topology on T, use closure of evaluation maps γ_t in[0,1]^C(T,[0,1]), with discrete topology giving Stone–Čech compactification. fγ(z)=limsup_(γ_t→γ)ft(z); restricted tilde fγ additionally uses ft(x)→f(x). Enlarged active points need not be original t.",
+      "start_line": 357,
+      "end_line": 419,
+      "pdf_pages": [
+        7,
+        8
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem4 and Theorem6 compactified formulas",
+      "evidence_class": "source_theorem_method_external_dependencies_retained",
+      "assumptions": [
+        "Convex extended-real ft on real separated locally convex X, nonempty T",
+        "f(x) finite for nonempty subgradient/active-set use; arbitrary topology uses the evaluation-image compactification, not necessarily injective original embedding"
+      ],
+      "statement": "∂f(x)=∩_(L∈F(x)) cl_w*co[∪_(γ∈hatT(x))∂(fγ+I_(L∩domf))(x)], with fγ replaceable by the active-net tilde fγ.",
+      "start_line": 430,
+      "end_line": 558,
+      "pdf_pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "proof_steps": [
+        "Discrete compactification yields compact Hausdorff active set and usc pointwise family through diagonal nets",
+        "Apply preliminary compact-continuous subgradient formula with finite-dimensional domain restriction",
+        "Coarser topology produces larger regularized functions active at same x, yielding inclusions",
+        "For Theorem6 truncate ft below−1 locally, compactified convergence of all bounded evaluation functions identifies active nets"
+      ],
+      "proof_ranges": [
+        {
+          "start_line": 434,
+          "end_line": 648,
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        }
+      ],
+      "gaps": [
+        "Preliminary Proposition1 is cited from[8] and not fully reproved here; no independent proof of all external compact-continuous subgradient calculus.",
+        "No sigma-algebras or measurable compactified selector are constructed; compactified maximizer is not an original-index argmax.",
+        "Finite-dimensional intersection disappears in finite-dimensional X; default weak-star closed convex hull cannot generally be replaced by raw hull."
+      ]
+    },
+    {
+      "label": "Theorem11 (original-data epsilon formula)",
+      "evidence_class": "source_theorem_with_formula_order_visually_checked",
+      "assumptions": [
+        "Convex ft on same locally convex X; f=supft",
+        "For second formula require cl f=sup_t cl ft",
+        "Domain restriction ft+I_(L∩domf) required without closure-compatibility hypothesis"
+      ],
+      "statement": "Eq55: ∂f(x)=∩_L cl_w*co{∩_(ε>0) cl^s[∪_(t∈Tε(x))∂ε(ft+I_(L∩domf))(x)]}. Eq57 under cl f=sup cl ft replaces the bracket by cl_w*[∪_t∂εft(x)+N_(L∩domf)(x)]. Intersect ε before taking outer closed convex hull as printed.",
+      "start_line": 904,
+      "end_line": 921,
+      "pdf_pages": [
+        17
+      ],
+      "proof_steps": [
+        "Lemma9: relative-interior continuity, near conjugate equality and lower bounded evaluations give bounded polar restrictions, Alaoglu subnet and Hahn–Banach extension",
+        "Lemma10: discrete dual compactification and truncation make limiting affine evaluations controlled by one weak-star subgradient plus normal cone",
+        "Step1 handles properlsc data in finite-dimensional restrictions via Fenchel biconjugacy",
+        "Step2 uses lsc hull compatibility and ε→2ε approximation with0<ε<1",
+        "Step3 adds finite-dimensional/domain indicators to recover general case"
+      ],
+      "proof_ranges": [
+        {
+          "start_line": 730,
+          "end_line": 1066,
+          "pdf_pages": [
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        }
+      ],
+      "gaps": [
+        "Important: ε intersections, union, closure, convex hull and domain-normal cones occur in specific order; no arbitrary exchange certified.",
+        "Strong closure means β(X*,X); in finite-dimensional restrictions source derives stronger closure statements, not a universal infinite-dimensional norm result.",
+        "The ε-active set may be nonempty for every ε while exact active T(x) is empty. No original maximizer/exact active-index existence follows.",
+        "Proof uses cited external subgradient convolution/domain-restriction lemmas; no source-wide independent calculus certificate."
+      ]
+    },
+    {
+      "label": "Corollary12 (continuity simplification)",
+      "evidence_class": "source_corollary_with_topology_and_domain_conditions",
+      "assumptions": [
+        "Convex ft,f=supft finite and continuous at some point of X",
+        "x∈domf with f(x) finite for usable nonempty subgradient"
+      ],
+      "statement": "∂f(x)=N_domf(x)+cl_w*co{∩_(ε>0)cl_w*[∪_(t∈Tε(x))∂εft(x)]}; in R^n the outer convex hull closure is removable as printed, not the inner closures.",
+      "start_line": 1072,
+      "end_line": 1079,
+      "pdf_pages": [
+        20
+      ],
+      "proof_steps": [
+        "Use Corollary7 continuity and Moreau–Rockafellar to separate normal cone; repeat Theorem11 limiting argument"
+      ],
+      "gaps": [
+        "Continuity somewhere does not mean domain normal cone vanishes at every boundary x. Vanishing normal cone needs appropriate interior condition at reference x.",
+        "Finite-dimensional hull simplification is not transferred to arbitrary locally convex/bidual settings."
+      ]
+    },
+    {
+      "label": "Propositions14–16 Fenchel duality / convex relaxation",
+      "evidence_class": "source_application_with_bidual_definition_typo",
+      "assumptions": [
+        "g:X→R∪{+∞},f=g* proper; specified paired dual topologies",
+        "Extra continuity of f needed for exact nonconvex/relaxation simplification",
+        "Proposition14 on weak-star X* describes only embedded X-part of subgradient; Proposition16 uses normed X and norm topology on X* for full bidual"
+      ],
+      "statement": "Author relates ∂g* and Argmin(closedconvexg) to weak closures of ε-subgradient-inverse/ε-argmin sets plus domain normals; under extra continuity exact weak-lsc-hull minimizers can replace epsilon limits.",
+      "start_line": 1133,
+      "end_line": 1214,
+      "pdf_pages": [
+        21,
+        22,
+        23
+      ],
+      "proof_steps": [
+        "Write g* as supremum of affine weak-star-continuous functions indexed by x∈domg",
+        "Apply Eq57/Cor12 and identify Tε with inverse ε-subgradient relation",
+        "Change dual pair to(X**,weak**) vs(X*,dualnorm) to describe full bidual"
+      ],
+      "gaps": [
+        "p23 defines hatg(y)=g(y) if y∈X**; but g is defined only on X. Must extend g via canonical embedded X with +∞outside X; printed membership condition is wrong for nonreflexive X. This is a local definition repair, not a counterexample to Proposition16.",
+        "Weak/weakstar/norm topologies and primal/bidual subgradient parts must not be mixed. External[6] inverse-subgradient limit lemma not full read here."
+      ]
+    },
+    {
+      "label": "Proposition17 Fritz–John and KKT semi-infinite necessary conditions",
+      "evidence_class": "source_necessary_optimality_conditions_not_sufficiency_or_algorithm",
+      "assumptions": [
+        "X=R^n; proper convex objective f0 and constraints ft,0notinT",
+        "xbar optimal, f(xbar)=supft(xbar)=0",
+        "KKT version requires uniform Slater f(x0)<0 at some x0∈domf0",
+        "SimplifiedEq74 additionally f continuous at point in domf0∩domf"
+      ],
+      "statement": "Eq72 necessary0∈co[∂(f0+I_domf)(xbar) ∪ ∩_(ε>0)cl(∪_(t∈Tε)∂ε(ft+I_(domf∩domf0))(xbar))]. Slater yields Eq73 with objective subgradient plus cone of that ε-limit set; additional continuity yields original constraint subgradients plus N_domf.",
+      "start_line": 1217,
+      "end_line": 1278,
+      "pdf_pages": [
+        23,
+        24
+      ],
+      "proof_steps": [
+        "Define g=max(f0−f0(xbar),supft) so xbar globally minimizes g",
+        "Apply finite max subgradient rule and Theorem11 to constraint supremum",
+        "Uniform Slater prevents zero in constraint-only subgradient set, giving normalized objective multiplier",
+        "Moreau–Rockafellar plus continuity separates objective and domain normal cones"
+      ],
+      "gaps": [
+        "Not every constraint ft(x0)<0 implies supft(x0)<0; retain uniform negative gap for semi-infinite Slater.",
+        "Necessary stationarity is not an algorithmic feasibility/optimality certificate without actual original constraints and appropriate convex sufficiency conditions.",
+        "No finite active-index selection or measurable multiplier theorem established."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "scope": "Qualitative topological subdifferential formulas; no stability modulus or numerical error rate. Approximation uses arbitrary ε>0, sometimes2ε and0<ε<1 after truncation.",
+    "closures": "Default cl/co-bar in X* are weakstar closure. cl^s is strong dual topology; convex hull and closure simplifications depend on finite-dimensional/continuity assumptions."
+  },
+  "endpoint_limits": {
+    "scope": "finite reference value, exact/approximate active distinction, nonempty indexset, correct extended-real convention, and original-domain normal cones",
+    "not_established": "measurable index maximizer, analytic projection, joint parameter measurability, exchanges of all quantifiers/closures, or private maximalcube argmax."
+  },
+  "reusable_methods": [
+    {
+      "method": "Use approximate active indices when exact active set is empty",
+      "transfer": "Preserve ε-dependent sets and global ε-subgradient inequalities; compactified active points need not belong to original T."
+    },
+    {
+      "method": "Finite-dimensional domain sections plus limiting subgradients",
+      "transfer": "Retain L and domain indicators until a theorem actually removes them; choose correct dual closure topology."
+    },
+    {
+      "method": "Turn semi-infinite feasibility into convex supremum function",
+      "transfer": "UniformSlater and continuity conditions must be checked over all indices, not separately per t."
+    }
+  ],
+  "checked_derivation": [
+    {
+      "class": "exact_active_empty_example",
+      "statement": "X=R,T=N,fn(x)=x−1/n gives f(x)=x. At0, T(0)=∅ though ∂f(0)={1}; Tε(0) includes alln≥1/ε, all slopes1. One-point compactification suppliesf∞=x as active added function, not any original maximizer."
+    },
+    {
+      "class": "uniform_Slater_counterexample",
+      "statement": "ft(x)≡−1/t,t∈N: every individual constraint is strictly negative at everyx, butf=supft=0. Thus componentwise strict feasibility is not source uniformSlaterf(x0)<0."
+    },
+    {
+      "class": "local_bidual_definition_repair",
+      "statement": "For normed X, define hatg onX** byhatg(Jx)=g(x) oncanonicalX and+∞outsideJX. Source p23 conditiony∈X** makesg(y)undefined fornonreflexive outsideX."
+    }
+  ],
+  "visual_checks": [
+    {
+      "pdf_pages": [
+        8,
+        17,
+        20,
+        23
+      ],
+      "images": [
+        "reviews/TEAM_LM/visual/P-0df62e2eed197408-p8.png",
+        "reviews/TEAM_LM/visual/P-0df62e2eed197408-p17.png",
+        "reviews/TEAM_LM/visual/P-0df62e2eed197408-p20.png",
+        "reviews/TEAM_LM/visual/P-0df62e2eed197408-p23.png"
+      ],
+      "findings": "Theorem4 closedco, Th11 inner epsilon intersection before outer closedco and strong vs weakstarclosures, Cor12 Rnouterco distinction, Prop16 extension membership typo, Prop17 domain/Slater conditions."
+    }
+  ],
+  "review_status": {
+    "first_review": "audit_lm_16_independently_confirmed_scoped_formulas_topologies_and_local_bidual_definition_typo",
+    "second_review": "audit_n_16_requested_pending",
+    "first_review_path": "reviews/AUDIT_LM/P-0df62e2eed197408-review.md",
+    "reviewed_card_sha256": "f32ab97926b127a5177c33f7a38944bc1d605f103150c7751755645194c355b6",
+    "first_review_scope": "OriginalPDFpp8–11,17,20,23 formula closure/epsilon/finite-L/domainorder; cl f compatibility; Cor12Rnouterhullonly; Prop16canonicalXextensiontypo; uniformSlater. Not blanketexternalproofcertificate."
+  },
+  "unchecked": [
+    "All25pages read; external cited convex-analysis/compactification primary results not independently fully read here.",
+    "No source-wide proof certificate or original measurable argmax application; scoped methods only."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1368,
+    "source_lines": 1368,
+    "required_content_lines": 906,
+    "covered_content_lines": 906,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-0df62e2eed197408/paper.md"
+  },
+  "review_source": "reviews/TEAM_LM/evidence/P-0df62e2eed197408.json",
+  "review_input_sha256": "f3e37507d25fb86b21745991757ec3916b54b3983f2ec8e060188eb81cd8c4c9"
+}

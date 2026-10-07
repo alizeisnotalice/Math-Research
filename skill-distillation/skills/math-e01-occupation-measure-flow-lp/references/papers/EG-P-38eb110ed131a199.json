@@ -1,0 +1,171 @@
+{
+  "paper_id": "P-38eb110ed131a199",
+  "observed_title": "Safety Verification of Nonlinear Autonomous System via Occupation Measures",
+  "authors": [
+    "Ximing Chen",
+    "Shaoru Chen",
+    "Victor M. Preciado"
+  ],
+  "version": "arXiv:1903.05311v2；首页标注 2019。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 526,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "E01": "direct"
+  },
+  "definitions": [
+    {
+      "term": "轨迹占用测度",
+      "definition": "给定初始点 x₀，µ(A×B|x₀)=∫_{[0,T]∩A}1_B(x(t|x₀))dt；对初始分布 µ₀ 积分得到平均占用测度 µ。",
+      "source_ranges": [
+        {
+          "start_line": 124,
+          "end_line": 180,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "流守恒（Liouville 弱式）",
+      "definition": "δ_T⊗µ_T=δ₀⊗µ₀+L*µ，其中 Lv=∂ₜv+∇v·f；等价于对每个 C¹ 测试函数的终端-初始积分恒等式。",
+      "source_ranges": [
+        {
+          "start_line": 139,
+          "end_line": 180,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "危险区受限测度",
+      "definition": "µ̃* 是平均占用测度 µ 限制到 [0,T]×X_u 的测度；目标 ∫g dµ̃ 衡量危险区内的加权停留时间。",
+      "source_ranges": [
+        {
+          "start_line": 183,
+          "end_line": 205,
+          "pdf_pages": [
+            4
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem 1：危险区暴露量的精确 LP 表示",
+      "assumptions": [
+        "X 为紧致半代数状态集，X_u⊂X 为紧致半代数危险区，过程为文中给定有限时域自治系统且初始分布固定。",
+        "令 µ₀、µ、µ_T 满足流方程；0≤µ̃≤µ，且 supp(µ̃)⊂[0,T]×X_u。",
+        "g 是在 [0,T]×X_u 上严格为正的多项式/连续目标。"
+      ],
+      "statement": "最优解的 µ̃* 等于 µ 在危险区的限制；sup P=max P=∫_{[0,T]×X_u}g dµ。取 g≡1 时，最优值正好是系统期望在危险区停留的时间。",
+      "start_line": 183,
+      "end_line": 210,
+      "pdf_pages": [
+        4
+      ],
+      "proof_steps": [
+        "对固定初始分布，流方程解对应平均轨迹占用测度；反向可由文中引用的连续性方程结果解释。",
+        "由 µ̃≤µ 与支撑在危险区，正权重 g 的积分逐点不超过把 µ 在危险区上的全部质量取入；选择 µ̃* 为该限制测度达到上界。",
+        "g=1 时按占用测度定义把目标还原为 E∫₀ᵀ1_{X_u}(x_t)dt。",
+        "作者引用已发表的测度解/连续性方程结果；我通读了附录证明框架，未独立证明所引存在唯一性引理。"
+      ],
+      "gaps": [
+        "目标量是给定动力学、给定初始分布下的期望停留时间，不是 Lebesgue 体积或中心立方体极大函数。"
+      ]
+    },
+    {
+      "name": "Theorem 2：无限维原始-对偶 LP 强对偶",
+      "assumptions": [
+        "P 与 D 如式 (19)、(21)，占用测度非负且支撑在紧空间上，流方程和目标有限。"
+      ],
+      "statement": "原始最优值 p* 与对偶最优值 d* 相等，即无限维 LP 无对偶间隙。",
+      "start_line": 210,
+      "end_line": 223,
+      "pdf_pages": [
+        4
+      ],
+      "proof_steps": [
+        "把变量打包为正测度锥 K′，用 Riesz 表示把连续函数空间与测度对偶起来。",
+        "证明弱星闭性时，测试函数 (T−t,0) 控制平均占用测度总质量，另一个测试控制其余测度；Alaoglu 提取收敛子网，并利用伴随算子弱星连续得到闭像。",
+        "再应用文中引用的无限维 LP 强对偶定理。",
+        "作者给出附录的闭性论证；外部 Anderson–Nash 对偶定理未在本文重证。"
+      ],
+      "gaps": [
+        "闭性证明依赖非负性、紧支撑与有限目标值，不能直接移植到非紧尺度空间。"
+      ]
+    },
+    {
+      "name": "Theorem 4：有限阶 SDP 强对偶及层级收敛",
+      "assumptions": [
+        "P/D 的矩松弛 Pr、Dr；X 与 X_u 紧致半代数且有非空内点；缩放后矩可行域紧。",
+        "矩/局部化矩阵使用对应 Putinar 紧性条件。"
+      ],
+      "statement": "每个 r 有 p*_r=d*_r；而 d*_r=p*_r 随 r 单调下降并收敛到无限维最优值 p*=d*，即真实期望停留时间。",
+      "start_line": 292,
+      "end_line": 344,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "最优测度的截断矩给 Pr 可行点；X 与 X_u 均有内点时作者断言该点实现严格可行，于是由 Slater 得每阶 SDP 无间隙。",
+        "层级收敛引用 Lasserre 等的矩松弛定理；附录用紧性、逐坐标收敛子列和 Putinar 定理构造代表测度，再将极限测度映回 P 的可行解。",
+        "附录链条中调用外部 Putinar 与 occupation-measure 层级定理；未独立重新证明。"
+      ],
+      "gaps": [
+        "两个集合均需有非空内点；空内点危险区可能破坏文中所用 Slater 论证。",
+        "没有有限阶误差率；只给单调渐近上界。",
+        "半代数/紧性及矩表示假设是可计算 SDP 的必要结构。"
+      ]
+    }
+  ],
+  "constant_dependence": "SDP/SOS 阶数 r 控制单调上界序列，但论文未给有限阶显式误差常数。示例数值模拟暴露时间约 0.9446 秒；这是仿真参考，不是认证真值。",
+  "endpoint_limits": [
+    "有限时间 T、紧状态空间、确定性 ODE 和初始分布固定。",
+    "结果推广到文中点质量 µ₀=δx₀，但不同初始分布对应不同期望。",
+    "危险区 X_u 必须有非空内部才能直接调用 Theorem 4 的强对偶证明条件。",
+    "论文把一些数学变量转换为格式错乱的矩阵表达；证明文字和定理可读，但若要实现须回看公式版 PDF 核对矩阵索引。"
+  ],
+  "reusable_methods": [
+    "用平均轨迹占用测度写连续时间流守恒，再以受限子测度直接表示区域停留量。",
+    "用测试函数锥对偶得到非负函数证书，把原始停留量转为对偶上界。",
+    "将多项式动力学的流约束按单项式逐项匹配，得到矩阵半正定与 SOS 松弛；注意松弛最优值的上下界方向。",
+    "作者附录给出无限维强对偶闭性和层级极限的证明路线，可作证据核对模板。"
+  ],
+  "unchecked": [
+    "未用 PDF 图像复核 p5–6 矩阵符号中 OCR 转换错位；如实施 SDP 需核验公式。",
+    "外部标准定理（Riesz/Alaoglu/Putinar/无限维 LP 强对偶）未独立证明。",
+    "从中心立方体选赢家或对方向树编码共享输入，不在本文范围内；迁移需重新定义几何。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 522,
+    "source_lines": 526,
+    "required_content_lines": 487,
+    "covered_content_lines": 487,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-38eb110ed131a199/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-38eb110ed131a199.json",
+  "review_input_sha256": "b859419c8472a09e617817c477518607b1bb74e395093de081c767f3eb7ebf0e"
+}

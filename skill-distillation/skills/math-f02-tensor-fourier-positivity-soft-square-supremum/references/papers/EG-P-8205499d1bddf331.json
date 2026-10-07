@@ -1,0 +1,152 @@
+{
+  "paper_id": "P-8205499d1bddf331",
+  "observed_title": "Strictly Positive Definite Kernels on a Product of Circles",
+  "authors": [
+    "J. C. Guella",
+    "V. A. Menegatto",
+    "A. P. Peron"
+  ],
+  "version": "arXiv:1505.01169v1；首页标注 2015。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 735,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "F02": "direct"
+  },
+  "definitions": [
+    {
+      "term": "实各向同性乘积圆核的正系数展开",
+      "definition": "K((x,z),(y,w))=K_r(x·y,z·w)，(x,z),(y,w)∈S¹×S¹。连续实各向同性正定核的径向部分有双级数 K_r(t,s)=Σ_{k,l≥0}a_{k,l}P_k(t)P_l(s)，a_{k,l}≥0，且 Σa_{k,l}P_k(1)P_l(1)<∞。正频率支集 J_K={(k,l)∈Z_+²:a_{k,l}>0} 控制严格正定性。",
+      "source_ranges": [
+        {
+          "start_line": 24,
+          "end_line": 87,
+          "pdf_pages": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "term": "圆乘积上严格正定",
+      "definition": "对任意互异有限点集，核矩阵的实二次型在非零实向量上严格正；等价于其支集频率不能同时消去任意非零系数向量的所有 Fourier 矩。",
+      "source_ranges": [
+        {
+          "start_line": 115,
+          "end_line": 153,
+          "pdf_pages": [
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "term": "矩形子格穿透条件",
+      "definition": "频谱正系数集 {(k,l):(|k|,|l|)∈J_K} 与 Z² 中每个矩形子格的每个平移都相交；对本文条件等价于与每个子群格的平移相交。",
+      "source_ranges": [
+        {
+          "start_line": 88,
+          "end_line": 103,
+          "pdf_pages": [
+            3
+          ]
+        },
+        {
+          "start_line": 407,
+          "end_line": 486,
+          "pdf_pages": [
+            9,
+            10
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorems 1.1, 3.5：S¹×S¹ 各向同性核严格正定的频谱支集刻画",
+      "assumptions": [
+        "K 为 S¹×S¹ 上实、连续、各向同性且正定核；径向 Fourier–Schoenberg 系数 a_{k,l}≥0，满足级数连续收敛条件。",
+        "支集 J_K 由严格正系数定义；频率按 |k|、|l| 对称化。",
+        "Theorem 1.1/3.5 的格条件是离散频谱支集的代数结构条件，而非一般核的点态 Fourier 非负条件。"
+      ],
+      "statement": "K 严格正定，当且仅当其频谱支集 {(k,l):(|k|,|l|)∈J_K} 与 Z² 所有平移后的每个矩形格子相交；文中进一步证明其等价于与所有平移后的子群格相交，且等价为每次相交均无限。",
+      "start_line": 88,
+      "end_line": 536,
+      "pdf_pages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "proof_steps": [
+        "先由 Schoenberg 型展开将核二次型写成频谱上非负系数加权的 Fourier 矩平方和；命题 2.1 说明二次型为零恰好等价于每个正频率处两组符号 Fourier 矩均为零。",
+        "必要性先用有限单位根网格构造非零系数向量：若正频率支集漏掉某矩形格平移，离散 Fourier 正交使所有支集矩均消失，与严格正性冲突；通过子格分解推广到一般子群格。",
+        "充分性令 b_{k,l}=Σ c_μe^{i(kθ_μ+lφ_μ)}。Laurent 的二维 Skolem–Mahler–Lech 定理说明其零集是有限个子群平移并集；若所有支集频率均消失，矩形子格避空引理会找到一个平移矩形格完全避开零集，与支集穿透条件矛盾。",
+        "Theorem 3.7 再证每个交集必无限。附录给 Theorem 2.5 的自成一体必要性证明；复圆乘积扩展为第5节略述。",
+        "以上为作者全文论证的结构摘要；不独立证明 Schoenberg 展开、Laurent 定理及所有格论引理。"
+      ],
+      "gaps": [
+        "底空间是两个单位圆的笛卡尔积、核实且各向同性；不是欧氏中心立方体卷积核，也不是一般 Fourier multiplier。",
+        "该定理刻画严格正定性；F02 的 softmax / squared supremum 估计没有出现。",
+        "系数非负及对称频谱的双变量离散结构不可只凭各一维核正定就推广到含任意交叉耦合项的核。"
+      ]
+    }
+  ],
+  "constant_dependence": "无算子 norm 常数结论；定理是频谱系数支集与格穿透之间的定性等价。连续展开需 Σa_{k,l}P_k(1)P_l(1)<∞。",
+  "endpoint_limits": [
+    "全文 15 页，包括单圆 Schoenberg 前提、乘积圆必要性与充分性、无限交集引理、附录直接证明及复值版本说明，均已读。",
+    "严格正定性按有限互异样本点、非零实系数向量定义；复值扩展的证明只概述。",
+    "Lemma 3.2、Laurent 零集定理是关键外引结果，本文引用或归纳使用而未独立证明其一般形式。",
+    "行文本提取有大量公式排版错位；已据相邻定义和计算读取结构，但未逐式图像核验符号。"
+  ],
+  "reusable_methods": [
+    "把核正定性写成非负频谱的 Fourier 矩平方和，辨析正定与严格正定需要分别检查什么。",
+    "对乘积结构频谱的严格性，用有限群 Fourier 网格构造缺频反例；充分性则把消失频率集合建模成指数多项式零集。",
+    "逐项记录张量两因子的群结构、频谱支集以及耦合条件，避免把一维 Bochner 结论过度推广至非张量耦合核。"
+  ],
+  "unchecked": [
+    "未独立重证 Schoenberg 系数刻画、二维 Laurent 零集定理及所有群子格计数。",
+    "没有推出任意 tensor kernel Fourier transform 的正性或 F02 的软最大上界。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 731,
+    "source_lines": 735,
+    "required_content_lines": 478,
+    "covered_content_lines": 478,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-8205499d1bddf331/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-8205499d1bddf331.json",
+  "review_input_sha256": "4947d2011f15644c223e5ce84b501044b192f09685844369037ca70c7a61e86c"
+}

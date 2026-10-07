@@ -1,0 +1,98 @@
+{
+  "paper_id": "P-14bb456bd53bdaeb",
+  "observed_title": "Improved Hoeffding’s Lemma and Hoeffding’s Tail Bounds",
+  "authors": [
+    "David Hertz"
+  ],
+  "version": "arXiv:2012.03535v1,7 December2020 visible watermark; IEEE template publication fields unknown;3pages",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "file": "corpus/papers/P-14bb456bd53bdaeb/paper.md",
+      "start_line": 1,
+      "end_line": 160,
+      "pdf_pages": [
+        1,
+        2,
+        3
+      ],
+      "scope": "Whole paper: theorem/lemma, proof, remarks and complete references"
+    }
+  ],
+  "topic_relevance": {
+    "H05": "direct"
+  },
+  "theorem_cards": [
+    {
+      "label": "One-sided asymmetric Hoeffding lemma Eq(17)",
+      "assumptions": [
+        "EX=0, a<0<b, a≤X≤b a.s.; real s>0."
+      ],
+      "statement": "Eexp(sX)≤exp(s²v/2), v=|a|b if |a|≥b, and v=(b−a)²/4 if |a|≤b. The geometric coefficient is one-sided and swaps for−X.",
+      "proof_steps": [
+        "Convex exponential chord yields logmgf≤ψ(u)=−λu+log(1−λ+λe^u),λ=|a|/(b−a),u=s(b−a).",
+        "ψ(0)=ψ′(0)=0,ψ″=τ(1−τ),τ=λ/[(1−λ)e^(−u)+λ]. Foru≥0,τ≥λ. Ifλ≥1/2 thenτ(1−τ)≤λ(1−λ), giving|a|b; else≤1/4 gives arithmetic mean squared."
+      ],
+      "source_ranges": [
+        {
+          "start_line": 7,
+          "end_line": 94,
+          "pdf_pages": [
+            1,
+            2
+          ]
+        }
+      ],
+      "start_line": 7,
+      "end_line": 94,
+      "pdf_pages": [
+        1,
+        2
+      ]
+    },
+    {
+      "label": "Safe sum bound Eq(23), source normalization errors",
+      "assumptions": [
+        "Independent centered Xi∈[ai,bi] withai<0<bi; t>0; Mi² as precedingone-sided coefficient; Vplus=ΣMi²>0."
+      ],
+      "statement": "Eq(23) correctly givesP(Sn≥t)≤exp(−t²/(2Vplus)). For−Sn independently use Vminus=Σcoefficient(−bi,−ai), soP(|Sn|≥t)≤min(1,e^(−t²/(2Vplus))+e^(−t²/(2Vminus))). If Mbar²=Vplus/n, the exponent is−t²/(2nMbar²), not−n t²/(2Mbar²).",
+      "proof_steps": [
+        "Factor independentmgf and choose s=t/Vplus.",
+        "SourceEq(28)–(36) multiply byn after definingMbar²=Vplus/n: this reverses the normalization and cannot be used forSn=ΣXi. Counterexample n=2,iid±1,t=2: actualP(Sn≥2)=1/4, printedEq(31) yields exp(−4)<1/4; correctEq(23) gives exp(−1).",
+        "Two-sided source proof also prints event−Sn≤t in its union, which should be−Sn≥t."
+      ],
+      "source_ranges": [
+        {
+          "start_line": 72,
+          "end_line": 125,
+          "pdf_pages": [
+            2
+          ]
+        }
+      ],
+      "gaps": [
+        "Retain repaired formula as checked derivation, separate from literal source statement. Do not say all printed improved tail bounds are valid."
+      ],
+      "start_line": 72,
+      "end_line": 125,
+      "pdf_pages": [
+        2
+      ]
+    }
+  ],
+  "transfer_boundary": "Valid mgf lemma and Eq23 may be used after hypotheses; source normalizedEq28–36 are false for sumSn. Direction-specific coefficients cannot be used for both tails without swapping intervals. PDFp2 visually checked.",
+  "proof_verification": "local derivations and literal errors checked; cited external results not independently certified",
+  "identity_status": "title_authors_visible_version_observed_not_bibliographic_dedup_certified",
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 160,
+    "source_lines": 160,
+    "required_content_lines": 132,
+    "covered_content_lines": 132,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-14bb456bd53bdaeb/paper.md"
+  },
+  "review_source": "reviews/TEAM_HI/evidence/P-14bb456bd53bdaeb.json",
+  "review_input_sha256": "84e1a9a900130e0def9438c3138e4e7d52888db2d443d52ce043f13a0a264b7e"
+}

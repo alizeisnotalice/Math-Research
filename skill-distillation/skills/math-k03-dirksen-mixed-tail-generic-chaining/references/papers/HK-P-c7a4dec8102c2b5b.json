@@ -1,0 +1,257 @@
+{
+  "paper_id": "P-c7a4dec8102c2b5b",
+  "observed_title": "Itô Isomorphisms for Lp-Valued Poisson Stochastic Integrals",
+  "authors": [
+    "Sjoerd Dirksen"
+  ],
+  "version": "arXiv:1208.3885v3; published in The Annals of Probability 42(6) (2014), 2595–2643, DOI 10.1214/13-AOP906; electronic reprint, 51 PDF pages.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 2181,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "scope": "全文逐行阅读：Theorems 1.1/1.2，classical Lq proof、all six p/q cases in Appendix B、noncommutative Lq extension and random-matrix intermezzo, decoupling appendix, acknowledgements and references."
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "K03": "adjacent method source only. It develops moment-norm decompositions and maximal estimates for compensated Poisson stochastic integrals in Lq-valued and noncommutative Lq settings; these can inform construction/checking of increment bounds for a Poisson-indexed process. It contains no pointwise majorizing-measure functional, admissible chaining, or simultaneous all-index envelope.",
+    "J04": "adjacent integral-calculus source. It supplies Itô isomorphisms and compensated-Poisson integration estimates under deterministic σ-finite intensity, with an explicit distinction between integrand norms and integral maxima. It does not construct a state-dependent/nonhomogeneous compensator or an exit-settlement/Fubini procedure."
+  },
+  "definitions": [
+    {
+      "name": "simple adapted Poisson integrand and compensated integral",
+      "statement": "For a σ-finite mark space (J,ν), the compensated Poisson random measure has deterministic intensity dt×ν. A simple adapted Lq(S)-valued F is constant on finitely many time/mark rectangles with coefficients measurable at the left endpoint. Its integral is the corresponding finite sum against compensated Poisson increments.",
+      "source_lines": [
+        28,
+        57
+      ],
+      "pdf_pages": [
+        1
+      ]
+    },
+    {
+      "name": "Itô-isomorphism integrand norm",
+      "statement": "The space I_{p,q} is a piecewise intersection/sum of the square-function space S_q^p and the two Poisson magnitude spaces D_{q,q}^p,D_{p,q}^p. Which intersections and sums occur depends on the relative positions of p and q with respect to 2; the article states six cases.",
+      "source_lines": [
+        103,
+        146
+      ],
+      "pdf_pages": [
+        3
+      ]
+    },
+    {
+      "name": "vector-valued Rosenthal norm",
+      "statement": "For independent mean-zero Lq(S)-valued ξ_i, Theorem 1.2 compares (E||Σ_i ξ_i||_{Lq}^p)^(1/p) with a six-case norm built from S_q,D_{q,q},D_{p,q}; the upper estimate extends to p=1 or q=1 (or both), while the two-sided theorem is for 1<p,q<∞.",
+      "source_lines": [
+        232,
+        246
+      ],
+      "pdf_pages": [
+        6
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 1.1 (classical Lq-valued Poisson Itô isomorphism)",
+      "assumptions": [
+        "1<p,q<∞; (S,Σ,σ) is a measure space and (J,J,ν) is σ-finite.",
+        "N is a Poisson random measure with deterministic intensity dt×ν and F is a simple adapted Lq(S)-valued process; t>0 and B∈J."
+      ],
+      "statement": "(E sup_{0<s≤t} ||∫_(0,s]×B F dN~||_{Lq(S)}^p)^(1/p) ≃_{p,q} ||F·1_(0,t]×B||_{I_{p,q}}, with I_{p,q} given by six explicit p/q-position cases formed from S_q^p, D_{q,q}^p and D_{p,q}^p. The upper estimate ≲_{p,q} remains valid when q=1; the two-sided equivalence is asserted for 1<p,q<∞.",
+      "start_line": 125,
+      "end_line": 146,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "Apply Doob’s maximal inequality to reduce the maximal integral to the terminal integral; for 1<q<∞ use UMD decoupling to replace the adapted integral by the conditionally independent decoupled sum.",
+        "For 2≤q≤p, condition on the original environment and apply Theorem 1.2 to the independent mean-zero Poisson increments. Lemma 3.4 controls moments of compensated Poisson variables when rectangle intensity λ≤1; refine the time/mark partition to enforce that condition.",
+        "For 1<p≤q≤2, decompose the integrand into three dense elementary pieces corresponding to S_q^p,D_{p,q}^p,D_{q,q}^p, apply conditional expectation onto the partition algebra, bound each decoupled term, and recover the reverse inequality by duality. Appendix B gives the remaining p/q cases. Full proof spans source lines 797–998 and 1931–2088; all regions were read."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 797,
+          "end_line": 998,
+          "pdf_pages": [
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "scope": "Main proof of Theorem 1.1 in the representative exponent regions."
+        },
+        {
+          "start_line": 1931,
+          "end_line": 2088,
+          "pdf_pages": [
+            46,
+            47,
+            48,
+            49
+          ],
+          "scope": "Appendix B: remaining exponent regions and completion of the upper-bound proof; PDF page list stored per line range."
+        }
+      ],
+      "gaps": [
+        "Constants depend on p and q; no p/q-uniform constants are claimed.",
+        "The theorem is for classical Lq(S) and, separately, noncommutative Lq(M); it is not a general theorem for arbitrary Banach-valued integrands.",
+        "The stochastic integral extends from simple adapted integrands by closure in I_{p,q}; no mixed-tail generic-chaining conclusion follows directly."
+      ]
+    },
+    {
+      "label": "Theorem 1.2 (Lq-valued Rosenthal inequalities for independent summands)",
+      "assumptions": [
+        "1<p,q<∞ for the two-sided statement; (ξ_i) is a finite independent mean-zero sequence in Lq(S)."
+      ],
+      "statement": "The Lp(Ω;Lq(S))-norm of Σ_i ξ_i is equivalent, with constants depending only on p,q, to a six-case combination of S_q,D_{q,q},D_{p,q}. The one-sided upper estimate remains valid for p=1 or q=1, including both equal to 1.",
+      "start_line": 232,
+      "end_line": 246,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "Prove the core 2≤p,q case from symmetrization, Khintchine, and a Rosenthal-type maximum of square-function and q-moment terms.",
+        "Use duality of intersection/sum spaces for the lower bound and a case-by-case decomposition with conditional expectations for other positions of p,q relative to 2. The full proof is source lines 500–665, PDF pp.12–16."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 500,
+          "end_line": 665,
+          "pdf_pages": [
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "scope": "Complete proof of Theorem 1.2 in the classical Lq setting."
+        }
+      ],
+      "gaps": [
+        "The proof invokes standard Khintchine, symmetrization, Hoffmann–Jørgensen and scalar Rosenthal inequalities; this reading checked their use in the displayed reductions but did not independently reprove these external inputs."
+      ]
+    },
+    {
+      "label": "Theorem 7.1 (noncommutative Lq-valued Poisson Itô isomorphism)",
+      "assumptions": [
+        "1<p,q<∞; M is a semifinite von Neumann algebra with normal semifinite faithful trace; N has deterministic σ-finite intensity; F is a simple adapted Lq(M)-valued process."
+      ],
+      "statement": "The maximal Poisson integral Lp norm is equivalent, with constants depending on p,q, to I_{p,q} built from row and column square-function spaces plus the D_{q,q}^p,D_{p,q}^p magnitude spaces in six p/q cases.",
+      "start_line": 1694,
+      "end_line": 1709,
+      "pdf_pages": [
+        41
+      ],
+      "proof_steps": [
+        "Use UMD decoupling and Doob maximal inequality. For 2≤q≤p apply the noncommutative Lq Rosenthal inequality pointwise to independent compensated increments; for the opposite low-exponent case decompose into four pieces (column, row, D_{p,q}, D_{q,q}) and use duality. The paper explicitly sketches these representative cases and omits straightforward modifications for others."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1710,
+          "end_line": 1793,
+          "pdf_pages": [
+            41,
+            42,
+            43
+          ],
+          "scope": "Proof sketch of Theorem 7.1, including the representative exponent regimes and duality."
+        }
+      ],
+      "gaps": [
+        "Several exponent-regime modifications are referred to as straightforward rather than written out.",
+        "The result still assumes a Poisson random measure with deterministic intensity and Lq(M) geometry; it does not cover arbitrary Banach spaces."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "The equivalence constants in Theorems 1.1, 1.2 and 7.1 depend only on p,q. Proof constants also pass through the UMD/decoupling and Doob constants; none is claimed uniform over p or q. The finite-n Poisson moment comparison uses constants depending on the moment order when each rectangle intensity is at most one."
+  },
+  "endpoint_limits": {
+    "exponents": "Two-sided isomorphisms require 1<p,q<∞. Theorem 1.1 explicitly retains only its upper estimate at q=1; Theorem 1.2 retains its upper estimate at p=1 and/or q=1. No endpoint p=∞ or q=∞ is stated.",
+    "integrands": "Main statements start with simple adapted integrands and extend to the indicated norm closures.",
+    "intensity": "The measure is deterministic and σ-finite; small-rectangle arguments use λ≤1 after refining the partition."
+  },
+  "reusable_methods": [
+    {
+      "method": "Decouple the Poisson integral into conditionally independent centered increments and apply a vector-valued Rosenthal inequality.",
+      "transfer": "Can support finite-increment moment estimates in Lq-valued jump processes after verifying adaptation, UMD/decoupling, and deterministic-intensity assumptions; it supplies no chaining step or all-index theorem."
+    },
+    {
+      "method": "Represent integrand complexity by the square-function part plus p- and q-moment Poisson magnitude norms, with intersections/sums depending on exponents.",
+      "transfer": "Useful for candidate Banach/Poisson increment scale bookkeeping only when the target spaces and p,q regime match; do not infer these six Lq formulas for arbitrary Banach spaces."
+    }
+  ],
+  "unchecked": [
+    "All 51 extracted PDF pages were read, including Appendix A decoupling, Appendix B remaining exponent cases and references. Theorem 1.1/1.2 formulas were visually checked on PDF pp.3 and 6; the noncommutative theorem on p.41.",
+    "This is full reading, not independent proof certification: cited UMD decoupling, standard Banach-space inequalities, and external results are not reproved here."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 2181,
+    "source_lines": 2181,
+    "required_content_lines": 1753,
+    "covered_content_lines": 1753,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-c7a4dec8102c2b5b/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-c7a4dec8102c2b5b.json",
+  "review_input_sha256": "9d9ec1d8ab47585c6ee9bdaf167be26359d6345fc9614908de5b40162c336a1b"
+}

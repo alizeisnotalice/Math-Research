@@ -1,0 +1,117 @@
+{
+  "paper_id": "P-2ebc46987d4f4c81",
+  "observed_title": "On the Positivity of Fourier Transform of the Stretched Gaussian Function",
+  "authors": [
+    "Hanwen Liu"
+  ],
+  "version": "arXiv:2403.12843v1；首页标注 2024。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 175,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "F02": "adjacent"
+  },
+  "definitions": [
+    {
+      "term": "完全单调函数",
+      "definition": "连续 φ:[0,∞)→R 在 (0,∞) 光滑，且对所有 n≥0 有 (−1)^nφ⁽ⁿ⁾(x)≥0。Bernstein 表示给出 φ(x)=∫₀∞e^(−xt)dg(t)，其中 g 有界单调。",
+      "source_ranges": [
+        {
+          "start_line": 34,
+          "end_line": 104,
+          "pdf_pages": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "term": "拉伸 Gaussian 核",
+      "definition": "f(x)=exp(−‖x‖^s)，定义于 R^d；当 0<s≤2 时，φ(u)=exp(−u^(s/2)) 完全单调，故 f(x)=φ(‖x‖²) 是 Gaussian 核的正混合。",
+      "source_ranges": [
+        {
+          "start_line": 14,
+          "end_line": 50,
+          "pdf_pages": [
+            1
+          ]
+        },
+        {
+          "start_line": 76,
+          "end_line": 161,
+          "pdf_pages": [
+            2,
+            3
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Corollary 5：所有维数中拉伸 Gaussian 的 Fourier 变换严格正",
+      "assumptions": [
+        "d 为正整数，0<s≤2，f(x)=e^(−‖x‖^s) 取 Lebesgue 测度。",
+        "Fourier 变换按 e^(−2πi⟨x,ξ⟩) 约定；正负号对本偶径向实函数给相同值。",
+        "证明调用 Bernstein 完全单调函数表示定理；该被引基础定理未由本文证明。"
+      ],
+      "statement": "f∈L¹(R^d)，并且对每个 ξ∈R^d，有 f̂(ξ)>0。证明不只是正定给非负，还通过排除混合测度仅集中于 t=0 而得严格正值。",
+      "start_line": 76,
+      "end_line": 161,
+      "pdf_pages": [
+        2,
+        3
+      ],
+      "proof_steps": [
+        "令 φ(u)=e^(−u^(s/2))。先用 Faà di Bruno 完全 Bell 多项式展开并归纳证明 0<s/2≤1 时 φ 完全单调。",
+        "由 Bernstein 表示，φ(u)=∫ e^(−tu)dg(t)，因此 e^(−‖x‖^s)=∫e^(−t‖x‖²)dg(t)。",
+        "以径向积分/co-area 公式验证 f 可积，再由 Tonelli/Fubini 交换混合积分与 Fourier 积分。",
+        "Gaussian Fourier 核为 (π/t)^(d/2)e^(−π²‖ξ‖²/t)>0；故混合 Fourier 值非负。",
+        "若某固定 ξ 的 Fourier 值为零，则对任意 0<a<b，正 Gaussian 核在 [a,b] 上有正下界，迫使 g(b)=g(a)，从而 g 在 t>0 恒定；这与 φ 的非恒定形式矛盾，推出严格正。",
+        "以上复述原文第1–3页证明；未独立验证 Bernstein 定理及所有 Fubini 可积细节。"
+      ],
+      "gaps": [
+        "结论限于径向拉伸 Gaussian 和标量 Fourier 变换；论文没有讨论张量积群、任意正定核的 Fourier 特征或软最大。",
+        "正混合处理的是单个径向函数，不能由此推出带耦合交叉项的核仍正定。",
+        "该结果为 F02 正 Fourier 核构件提供邻近依据，但不覆盖项目的张量核定义或软度平方上确界。"
+      ]
+    }
+  ],
+  "constant_dependence": "未给 F02 软最大函数界或算子范数常数。Gaussian Fourier 正值公式依赖选定 Fourier 归一化和维数 d。",
+  "endpoint_limits": [
+    "全文 4 页均已读至参考文献。",
+    "端点 s=2 包含普通 Gaussian；s=0 不包含。",
+    "文中抽取有 Fourier 指数正负号切换、积分排版损坏；因 f 为实偶径向函数，两号相同。关键公式抽取未做 PDF 像素级核验。"
+  ],
+  "reusable_methods": [
+    "把径向函数写为 φ(‖x‖²)，若 φ 完全单调则用 Bernstein 表示转成 Gaussian 正核的非负混合。",
+    "要得到严格正 Fourier 值，除了各混合成分非负，还要排除混合测度退化为零频率点质量。"
+  ],
+  "unchecked": [
+    "未重新证明完全单调/ Bernstein 表示的引用定理。",
+    "未为张量产品、尺度上确界或 softmax 建立任何结论。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 171,
+    "source_lines": 175,
+    "required_content_lines": 133,
+    "covered_content_lines": 133,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-2ebc46987d4f4c81/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-2ebc46987d4f4c81.json",
+  "review_input_sha256": "15e2e49b35bfe3dabca9c7ae61c4d9a9b51a4b6c89850c43bb3d68da3cffd9eb"
+}

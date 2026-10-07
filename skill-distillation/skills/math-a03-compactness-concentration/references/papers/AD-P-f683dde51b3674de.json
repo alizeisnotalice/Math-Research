@@ -1,0 +1,219 @@
+{
+  "paper_id": "P-f683dde51b3674de",
+  "observed_title": "Distribution functions, extremal limits and optimal transport",
+  "authors": [
+    "M. R. Iacò",
+    "R. F. Tichy",
+    "S. Thonhauser"
+  ],
+  "version": "arXiv:1502.06839v1; 18 PDF pages.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1262,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "scope": "Read the complete extracted text from title/abstract through references, including all sections and theorem proofs. Rendered original PDF pages 8, 9, and 14 with PyMuPDF to verify the transport duality/cycle formulas and the dyadic approximation theorem; page 14 rendering confirmed the grid denominator is 2^n."
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "A03": "direct, narrow: proves optimizer existence/stability for probability couplings, including subsequential convergence of optimizers for compact uniform-marginal problems and weakly converging marginals. It does not treat concentration-compactness or mass escape on noncompact domains; transfer is limited to tight families and continuous costs."
+  },
+  "definitions": [
+    {
+      "name": "Copula as a probability measure with uniform marginals",
+      "statement": "In the paper’s two-dimensional setting, a copula corresponds to a Borel probability measure on [0,1]^2 whose two marginals are uniform; the fixed-marginal transport problem is therefore an optimization over such couplings.",
+      "source_lines": [
+        155,
+        190
+      ],
+      "pdf_pages": [
+        3
+      ]
+    },
+    {
+      "name": "Kantorovich admissible plans",
+      "statement": "ADM(μ,ν) is the set of Borel probability measures γ on X×Y whose marginals are μ and ν; the relaxed transport objective is ∫c(x,y) dγ.",
+      "source_lines": [
+        395,
+        406
+      ],
+      "pdf_pages": [
+        7
+      ]
+    },
+    {
+      "name": "c-cyclic monotonicity",
+      "statement": "A set Γ⊂X×Y is c-cyclically monotone when every finite cycle in Γ satisfies Σ c(x_n,y_n) ≤ Σ c(x_{n+1},y_n), with x_{N+1}=x_1.",
+      "source_lines": [
+        421,
+        428
+      ],
+      "pdf_pages": [
+        7
+      ]
+    },
+    {
+      "name": "Dyadic cellwise cost envelopes",
+      "statement": "For a continuous c on [0,1]^2, divide the square into 2^n-by-2^n cells and define lower/upper step costs by the cellwise minimum and maximum of c. The corresponding maximizing couplings approximate the continuous problem’s value.",
+      "source_lines": [
+        841,
+        864
+      ],
+      "pdf_pages": [
+        14
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 3.1 (existence of a Kantorovich optimizer; cited result)",
+      "assumptions": [
+        "X,Y are Polish spaces as in the transport setup.",
+        "The cost c is lower semicontinuous."
+      ],
+      "statement": "The paper states that problem (8), minimizing ∫c dγ over ADM(μ,ν), has a minimizer.",
+      "start_line": 414,
+      "end_line": 415,
+      "pdf_pages": [
+        7
+      ],
+      "proof_steps": [
+        "作者陈述：this is quoted as Theorem 1.5 from Ambrosio–Gigli; no proof is supplied in this paper.",
+        "核验基础推导：not independently proved here; on the compact uniform-marginal application below, the admissible couplings are weakly compact and continuous costs are bounded, so attainment is consistent with the standard compactness argument."
+      ],
+      "gaps": [
+        "The article prints only lower semicontinuity at this point and imports the theorem. Do not export this terse formulation beyond the cited theorem’s full hypotheses without checking the cited source."
+      ]
+    },
+    {
+      "label": "Theorem 3.4 (optimality characterization by c-cyclic monotonicity; cited result)",
+      "assumptions": [
+        "X,Y are Polish; μ,ν are Borel probability measures.",
+        "c is lower semicontinuous and satisfies c(x,y)≥a(x)+b(y), with upper-semicontinuous real-valued a∈L¹(μ), b∈L¹(ν).",
+        "The transport value is finite."
+      ],
+      "statement": "There is a measurable c-cyclically monotone set Γ such that, for any admissible γ, optimality is equivalent to concentration on a c-cyclically monotone set, equality with a c-convex potential almost surely, or concentration on Γ.",
+      "start_line": 458,
+      "end_line": 471,
+      "pdf_pages": [
+        8
+      ],
+      "proof_steps": [
+        "作者陈述：quoted from Villani, Theorem 5.10(ii); this paper does not reprove the equivalence.",
+        "核验基础推导：the finite-cycle condition is transcribed and used in the paper’s later proofs; the full equivalence remains a cited theorem."
+      ],
+      "gaps": [
+        "The maximization variant changes the sign/convention of c-convexity and is stated separately; do not copy the minimization formula unchanged."
+      ]
+    },
+    {
+      "label": "Theorem 4.1 (stability under weakly convergent marginals; cited result)",
+      "assumptions": [
+        "X,Y are Polish spaces.",
+        "c:X×Y→R_{≥0} is finite-valued and continuous.",
+        "μ_n⇒μ and ν_n⇒ν; π_n is an optimizer for transport with marginals μ_n,ν_n."
+      ],
+      "statement": "There is a subsequence of π_n converging weakly to a transport plan π that optimizes the limiting problem; every convergent subsequence has an optimal limit, so the nonempty cluster-point set consists of optimizers.",
+      "start_line": 822,
+      "end_line": 835,
+      "pdf_pages": [
+        13,
+        14
+      ],
+      "proof_steps": [
+        "作者陈述：quoted as Theorem 3 from Schachermayer–Teichmann; the present paper supplies no proof.",
+        "核验基础推导：weak convergence of marginals makes each marginal sequence tight; the fixed-marginal coupling family is tight by the two-coordinate tail bound, and any weak limit retains its marginals. This verifies the compactness mechanism only, not the full optimality conclusion."
+      ],
+      "gaps": [
+        "The cost is required to be nonnegative, continuous, and finite-valued in the quoted statement. The article does not independently establish this theorem or its optimal-value passage."
+      ]
+    },
+    {
+      "label": "Theorem 4.2 (dyadic cost approximation and subsequential optimizer convergence)",
+      "assumptions": [
+        "c is continuous on [0,1]^2.",
+        "The grid consists of 2^n-by-2^n cells; each cell receives the lower or upper envelope of c.",
+        "γ_n are maximizing measures for the respective step costs; their marginals remain uniform."
+      ],
+      "statement": "The lower- and upper-envelope optimum values converge to the supremum for c over copulas, and the corresponding sequence of maximizers has a subsequence converging to a maximizer of the original continuous-cost problem.",
+      "start_line": 841,
+      "end_line": 901,
+      "pdf_pages": [
+        14,
+        15
+      ],
+      "proof_steps": [
+        "作者陈述：the convergence of values is attributed to Hofer–Iacò [25]; this paper proves the subsequential-optimum claim and explicitly sketches the lower-envelope case.",
+        "作者证明：uniform marginals on compact [0,1] make {γ_n} tight, so choose γ_{n_j}⇒γ*. The limit still has uniform marginals.",
+        "作者证明：optimality for each step cost gives cyclic inequalities; uniform continuity of c makes them ε-cyclic inequalities for c on sufficiently fine grids. The closed ε-cycle sets and weak convergence of finite product measures pass these inequalities to γ*; letting ε↓0 gives c-cyclical monotonicity.",
+        "作者援引：Theorem 3.4 and boundedness of c on [0,1]^2 conclude γ* is optimal.",
+        "核验基础推导：the cell width tends to zero and c is uniformly continuous on the compact square; coordinate pushforwards are continuous under weak convergence, so γ* retains both uniform marginals. Rendered PDF p.14 confirms the dyadic grid and envelope definitions."
+      ],
+      "gaps": [
+        "The printed proof details the lower-envelope sequence and says the upper case is analogous; the preceding value-convergence claim is imported from [25].",
+        "The transfer uses compact support and fixed tight marginals. This does not prove sequential compactness for arbitrary probability measures on a noncompact space."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "No quantitative concentration or convergence rate is given. In Theorem 4.2, cell diameters shrink as 2^{-n}; uniform continuity of c controls the envelope error, while compactness of [0,1]^2 and fixed uniform marginals supply subsequential compactness. In Theorem 4.1 the relevant assumptions are Polish spaces, nonnegative finite continuous cost, and weak convergence of both marginals.",
+    "dependence": "The optimizer-existence/stability conclusion rests on tightness and cost lower-semicontinuity/continuity, not a numerical constant. The compact uniform-marginal setting prevents mass escape; outside it one needs tightness or other coercive/integrability hypotheses."
+  },
+  "endpoint_limits": {
+    "compact_case": "For copulas on [0,1]^2 with fixed uniform marginals, every sequence is tight and has weakly convergent subsequences, and Theorem 4.2 identifies the limit of its step-cost optimizers as an optimizer.",
+    "noncompact_case": "The paper does not analyze mass escaping to infinity, concentration profiles, or loss of moment constraints. Theorem 4.1 assumes marginal weak convergence and nonnegative finite continuous cost; it is not a substitute for proving tightness of a free sequence.",
+    "boundary_and_cost": "Theorem 4.2 uses continuous c on the compact square, hence bounded and uniformly continuous. These endpoint protections disappear for discontinuous or unbounded costs."
+  },
+  "reusable_methods": [
+    {
+      "method": "For a sequence of optimal couplings with convergent marginals, establish tightness from the marginal tails and pass to a weak limit before studying optimality.",
+      "transfer": "Then separately verify that the limiting marginals are correct and that the cost functional is lower-semicontinuous or continuous under the selected topology."
+    },
+    {
+      "method": "Approximate a continuous compact-domain cost by cellwise lower/upper envelopes, solve the discrete coupling problems, and use weak compactness plus approximate cyclic monotonicity to identify a limit optimizer.",
+      "transfer": "The scheme relies on uniform continuity and compactness; it provides no mass-escape control on noncompact domains."
+    },
+    {
+      "method": "Use c-cyclic monotonicity as an optimality certificate for candidate coupling supports.",
+      "transfer": "Check the correct sign convention for maximization versus minimization and the theorem’s integrability and finite-value assumptions."
+    }
+  ],
+  "unchecked": [
+    "All 18 extracted PDF pages, including references and application sections, were read. Formula-heavy PDF pages 8, 9, and 14 were rendered and visually inspected.",
+    "Theorem 3.1 and Theorem 4.1 are cited rather than proved in this article; their source references were not independently opened or proved.",
+    "The value-convergence result in Theorem 4.2 is attributed to [25]; the paper’s own lower-envelope subsequence argument was checked at the level of weak compactness, closed-cycle passage, and the cited cyclic-monotonicity criterion.",
+    "Numerical assignment/coupling examples and the financial illustration were not independently rerun."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1262,
+    "source_lines": 1262,
+    "required_content_lines": 795,
+    "covered_content_lines": 795,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-f683dde51b3674de/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-f683dde51b3674de.json",
+  "review_input_sha256": "16fdf9cf6304300971858cdb5aed56cf50da87ad38714e8a4518e03988f5cc62"
+}

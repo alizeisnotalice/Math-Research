@@ -1,0 +1,164 @@
+{
+  "paper_id": "P-787a427d3f582b5c",
+  "observed_title": "On the Fourth Moment Condition for Rademacher Chaos",
+  "authors": [
+    "Christian Döbler",
+    "Kai Krokowski"
+  ],
+  "version": "arXiv:1706.00751v3 (2017), 40 PDF pages.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1769,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "scope": "逐页通读正文、证明、替代证明及参考文献（PDF pp.1–40）；已分段阅读paper.md，附录无。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "I03": "adjacent：给固定阶 Rademacher chaos 的终端第四矩/最大影响定量正态逼近及反例；不建立后缀最大值与末端矩比较，也不证明 Doob 型最大不等式。可迁移的仅是某些具体 chaos 模型中的终端矩和 influence 控制，不能替代目标工具的最大化步骤。"
+  },
+  "definitions": [
+    {
+      "name": "非对称非齐次 Rademacher chaos",
+      "statement": "独立 X_k∈{-1,+1}，P(X_k=+1)=p_k∈(0,1)，标准化 Y_k=(X_k+q_k−p_k)/(2√(p_kq_k))；F=J_m(f) 为对角线上消失的对称 m 阶核的离散多重积分。"
+    },
+    {
+      "name": "核影响度",
+      "statement": "Inf_k(f)=Σ_{i_2<…<i_m, i_r≠k} f(k,i_2,…,i_m)^2；本文的小影响量是 sup_k Inf_k(f)。"
+    },
+    {
+      "name": "主要距离",
+      "statement": "d_W 为对 1-Lipschitz 测试函数差的上确界；d_K 为分布函数距离。"
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 1.1 and Corollary 1.2: fourth-moment–influence bounds and CLT criterion",
+      "assumptions": [
+        "F=J_m(f), fixed m≥1, symmetric square-summable off-diagonal kernel, E F²=m!||f||²=1.",
+        "The theorem concerns normal approximation for this specific discrete Rademacher chaos; constants depend on m.",
+        "For the asymptotic corollary, each F_n is normalized, E F_n^4→3 and sup_k Inf_k(f_n)→0."
+      ],
+      "statement": "Theorem 1.1 bounds d_W(F,N) by C1(m)√(E F⁴−3)+C2(m)√(sup_k Inf_k(f)); it also gives a Kolmogorov bound involving |E F⁴−3|, the fourth-moment factor, and the maximal influence. Corollary 1.2 states that normalized fixed-order chaos converges in distribution to N(0,1) if its fourth moment tends to 3 and maximal influence tends to zero.",
+      "start_line": 168,
+      "end_line": 209,
+      "pdf_pages": [
+        4,
+        5
+      ],
+      "proof_steps": [
+        "The proof first obtains Wasserstein and Kolmogorov estimates via discrete Malliavin–Stein integration by parts (Propositions 4.1 and 4.2, paper lines 1208–1549, PDF pp.27–35).",
+        "Chaos decomposition of F² isolates the lower-order components; Lemmas 3.3–3.5 bound their variance by the fourth-moment excess plus a combinatorial constant times maximal influence (lines 821–970, pp.19–22).",
+        "Lemma 3.6 controls the normalized fourth powers of discrete derivatives using the fourth-moment excess and influence (lines 971–1078, pp.22–24).",
+        "Lemma 3.7 bounds the threshold-crossing/indicator term needed for Kolmogorov distance, again by fourth-moment and influence quantities (lines 1081–1203, pp.25–27).",
+        "The corollary follows by applying the Wasserstein estimate to the sequence and using convergence of both error terms to zero. An alternative Wasserstein proof via quantitative de Jong CLT appears at lines 1556–1651 (pp.35–37)."
+      ],
+      "gaps": [
+        "Several discrete Malliavin identities and quantitative de Jong bounds are cited or stated from earlier sources; this paper does not reprove all background calculus.",
+        "This is a terminal distributional approximation theorem, not a maximal inequality for a martingale or arbitrary process."
+      ]
+    },
+    {
+      "label": "Theorem 1.6: failure of an exact fourth-moment criterion for symmetric chaos of order m≥2",
+      "assumptions": [
+        "The sequence X is symmetric Rademacher; m≥2."
+      ],
+      "statement": "For each m≥2 there exists an order-m discrete multiple integral with variance one and fourth moment three which is not normally distributed. Thus fourth-moment convergence alone does not imply a CLT in general for symmetric Rademacher chaos of order at least two.",
+      "start_line": 305,
+      "end_line": 392,
+      "pdf_pages": [
+        7,
+        8,
+        9
+      ],
+      "proof_steps": [
+        "For m=2, express F as a finite sum over 2-subsets with coefficient vector on a connected sphere; the fourth moment is a continuous function of those coefficients.",
+        "The equal-coefficient choice has fourth moment greater than 3 for n≥4, while a star-shaped choice gives 3−2/(n−1)<3.",
+        "The intermediate value theorem supplies a finite-support coefficient vector with fourth moment exactly 3; the resulting F has finite support and hence is not Gaussian.",
+        "For m>2, multiply the m=2 example by m−2 additional independent Rademacher signs, preserving the variance, fourth moment, and non-Gaussian finite support."
+      ],
+      "gaps": [
+        "The result is an existence counterexample; it does not furnish a bound or maximal comparison."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "C1(m), C2(m), K1(m)–K4(m), and γ_m depend only on fixed chaos order m; the maximal-influence term is multiplied by such order-dependent constants. No maximal-process constant is asserted."
+  },
+  "endpoint_limits": {
+    "scope": "The results are for fixed-order discrete multiple integrals of independent Rademacher variables. The fourth moment alone is insufficient for m≥2; the maximal kernel influence is an additional hypothesis/term.",
+    "not_established": "No theorem compares E max_{k≥n}|M_k|^4 or a suffix supremum with an endpoint fourth moment; no martingale maximal principle for general filtered processes is given."
+  },
+  "reusable_methods": [
+    {
+      "method": "Separate terminal fourth-moment defect from maximal coordinate influence in a fixed-order chaos estimate.",
+      "transfer": "Only if the target random variable can be represented as this type of chaos and the kernel influence is defined and controlled; this does not control a process supremum."
+    },
+    {
+      "method": "Use chaos decomposition of F² and off-diagonal contraction counting to bound lower-order components.",
+      "transfer": "The symmetric-kernel/independence structure and fixed chaos order are essential; no direct transfer to arbitrary suffix maxima."
+    },
+    {
+      "method": "Construct finite-support fourth-moment counterexamples by continuity/intermediate value on coefficient spheres.",
+      "transfer": "Useful to test claims that a terminal moment condition alone characterizes a distribution; not a counterexample to a maximal inequality unless the target process is separately constructed."
+    }
+  ],
+  "unchecked": [
+    "The entire 40-page source was read; reading does not independently verify every background result cited by the authors.",
+    "The paper’s results were classified adjacent to I03 only; no transfer theorem from chaos to the I03 target has been established."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1769,
+    "source_lines": 1769,
+    "required_content_lines": 1420,
+    "covered_content_lines": 1420,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-787a427d3f582b5c/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-787a427d3f582b5c.json",
+  "review_input_sha256": "bedebecb54e1911b6be99bf6bdf0a46c4af6d9a7d6f8fe8fce4baf79376384df"
+}

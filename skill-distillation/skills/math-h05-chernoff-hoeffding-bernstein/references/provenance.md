@@ -1,0 +1,68 @@
+# H05 来源与实际处理状态
+
+附件归属 47 条；本专题关联不同PDF 47 份。
+题名按附件文件名原样保留，未自动认定身份。下表的人工判定与读取范围来源于真实审读记录；pending不能当作无关。
+
+|条目|文件名|SHA-256 / 论文ID|人工判定|理由|
+|---|---|---|---|---|
+|E2743|03_Drago_2025_Chernoff solutions of the heat and the Schrödinger equation.pdf|P-9fbac909f66cc486|pending|Chernoff为半群乘积逼近；研究Heisenberg heat/Schrödinger解和Brownian路径积分，不是概率Chernoff尾不等式。J03半群/Feynman–Kac邻近背景待跨组读。|
+|E2744|04_Chang_2021_Tensor Expander Chernoff Bounds.pdf|P-37fba065f718da97|direct|首页摘要给tensor expander Chernoff尾界，使用log-majorization/Ky Fan范数；矩阵/张量与图walk条件需全文核。|
+|E2745|40_景中_1989_高维单形上Bernstein多项式的凸性定理的逆定理.pdf|P-c14ed6e97633bf16|irrelevant|摘要研究高维单形Bernstein多项式凸性逆定理，Bernstein是多项式，非矩或指数尾界；OCR难读，未审精确公式。|
+|E2746|04_Chang_2024_Chernoff Bounds for Tensor Expanders on Riemannian Manifolds.pdf|P-b503955bf299d556|direct|摘要将tensor Chernoff用于流形随机walk和图谱近似，具体谱误差和tensor范数条件待全文。|
+|E2747|19_Balsubramani_2026_Information from coincidences.pdf|P-b5713a69bc2b9d7d|adjacent|摘要为mixed coincidence/指数族normalizer、Sanov、Chernoff信息与换测度变分，邻近熵/偏差接口；78页全文未读，不能将摘要的统一性当定理。|
+|E2748|10_Har-Peled_2025_An Easy Proof of a Weak Version of Chernoff inequality.pdf|P-c918dd6c7cd3df44|direct|Only this fair-coin threshold is directly supplied; a general biased/martingale inequality needs its own mgf/conditional contraction. Correlated fair marginals do not meet the conditional expectation. PDFp1 visual check retained.|
+|E2749|11_Han_2019_Berry-Esseen bounds for Chernoff-type non-standard asymptoti.pdf|P-487307f644c676da|pending|Chernoff-type在此是isotonic估计非正态极限；摘要另给Brownian Lipschitz drift上确界反集中，可迁移K04，非H05Chernoff mgf尾界。|
+|E2750|17_Forré_2026_The Type-II Error of Test Supermartingales_ e-Power versus t.pdf|P-1de97d7700ddbf8c|adjacent|摘要讨论test supermartingale typeII错和Chernoff–Stein指数，明确e-power不提供有限时保证；filtered空间的条件Holder可能迁移，细假设待全文。|
+|E2751|03_Gumenyuk_2022_Loewner Theory for Bernstein functions I_ evolution families.pdf|P-c1569223e824703d|pending|Bernstein指Laplace exponent的复分析函数类，连续状态branching的inhomogeneous evolution family，不是条件Bernstein矩；J01/生成元邻近背景待核。|
+|E2752|08_Ramdas_2023_Randomized and Exchangeable Improvements of Markov's, Chebys.pdf|P-0376f439df092e85|direct|摘要和首页Theorem1.1给randomized/exchangeable Markov并用于Chebyshev/Chernoff改进，相关；随机化独立性/交换性和timeuniform口径待全文。|
+|E2753|16_Mosina_2009_Strong law of large numbers on graphs and groups.pdf|P-cda8c2ae068f1423|adjacent|摘要提供graph/group mean-set的Chebyshev及Chernoff-like渐近界，可作非实值集中邻近源；定义和指数矩条件待全文。|
+|E2754|06_Magen_2010_Low Rank Matrix-Valued Chernoff Bounds and Approximate Matri.pdf|P-edad0c0d544db861|direct|摘要提出low-rank matrix Chernoff与stable-rank采样矩阵乘法误差；相关矩阵版，非标量默认独立mgf，全文未读。|
+|E2755|06_Fan_2021_New-Type Hoeffding's Inequalities and Application in Tail Bo.pdf|P-d5e07f3bb221a1c6|direct|核心定理为有界中心随机变量的高阶矩型 Hoeffding mgf 改进，并应用 Chernoff 法给出独立和单双侧尾界及整数参数选择。8 页全文已读。|
+|E2756|17_Idrissi_2023_Hoeffding decomposition of black-box models with dependent i.pdf|P-eec22ab317e1410a|pending|Hoeffding是dependence additive decomposition/oblique projection，不是tail inequality。B02条件期望/投影或方差分解邻近背景待核，全文未读。|
+|E2757|02_Berger_2025_Bernstein Fractional Derivatives_ Censoring and Stochastic P.pdf|P-04825d25bdc57e7d|pending|Bernstein是fractional derivative/subordinator Laplace exponent，研究censored跳过程及lifetime；可迁移J01/J03退出/生成元，非H05tail界。|
+|E2758|18_Wang_2024_Probabilistic degenerate Bernstein polynomials.pdf|P-22d36fdc4eb4b97b|irrelevant|摘要研究probabilistic degenerate Bernstein多项式显式生成式/恒等式，非Bernstein tail不等式，mgf邻域仅定义背景。|
+|E2759|18_Blessing_2023_Convergence rates for Chernoff-type approximations of convex.pdf|P-d22fe6bc886c799b|pending|Chernoff指convex monotone semigroup乘积逼近与Hamilton–Jacobi–Bellman数值误差，不是probabilitytail。J01/J03生成元半群邻近待核。|
+|E2760|12_Kyng_2018_A Matrix Chernoff Bound for Strongly Rayleigh Distributions.pdf|P-31bca8ae43993930|direct|摘要为StronglyRayleigh负依赖分布的matrixChernoff及randomspanningtree谱稀疏，相关；强Rayleigh条件、矩阵范数与常数需全文。|
+|E2761|10_Linial_2014_Chernoff's Inequality - A very elementary proof.pdf|P-64dfefc5434002d4|direct|Can replace iid by verified fixed-size joint-success control; not by pairwise covariance alone. No conditional Bernstein or time-uniform conclusion. Both pages visually checked.|
+|E2762|05_Chang_2021_T-product Tensor Expander Chernoff Bound.pdf|P-d4372618f5671505|direct|摘要为dependentT-producttensor expanderChernoff，相关；tensorproduct、图walk和majorization条件全文待核。|
+|E2763|15_Mazzucchi_2020_Chernoff approximations of Feller semigroups in Riemannian m.pdf|P-54c7e5bae5380a79|pending|Chernoff是Feller半群与Riemannian boundedgeometry扩散乘积逼近，非probabilitytail。J01/J03邻近生成元/Feynman–Kac背景待跨组深读。|
+|E2764|14_Nendel_2025_Chernoff-Mehler Approximation for Lévy Processes with Drift.pdf|P-5872e6a85e1867b9|pending|Chernoff–Mehler指Levywithdrift/convolutionsemigroup近似及generator，不是tail界。J01/J03邻近待核。|
+|E2765|02_Chrétien_2011_Invertibility of random submatrices via tail decoupling and.pdf|P-7516b738a413305e|direct|摘要taildecoupling+noncommutativeChernoff给randomsubmatrix quasiisometry/coherence概率界，相关；采样与范数常数全文待核。|
+|E2766|07_Kachaiev_2026_A short operator proof of Hoeffding inequalities for Markov.pdf|P-728e0a8fa8c27bff|direct|摘要给generalstateMarkov链L²πspectralgap的scalar/matrixHoeffding算子证明，相关，初始分布/谱与boundedranges待全文。|
+|E2767|05_Shamarova_2007_Chernoff's theorem for evolution families.pdf|P-8f1a35297447a526|pending|Chernoff是timeinhomogeneousevolutionfamilies乘积逼近和manifolddiffusion，非exponentialtail。J01/J03生成元邻近待核。|
+|E2768|23_Butko_2019_The method of Chernoff approximation.pdf|P-d80c6fa101bd4bd5|pending|Chernoffapproximation综述，包含Feller,subordination,boundary与Feynman–Kac，非tailinequality。J01/J03跨专题候选待全文。|
+|E2769|21_Moulos_2019_Optimal Chernoff and Hoeffding Bounds for Finite State Marko.pdf|P-1498d02c63956b87|direct|摘要optimalfinite-stateMarkovChernoff/Hoeffding，任意initialdistribution但需irreducible及f有关positivitypattern，相关，不能默认一般链。|
+|E2770|14_Kelbert_2026_Weighted Chernoff information and optimal loss exponent in c.pdf|P-d71c2862a1947b0b|adjacent|摘要weightedChernoff信息/tiltedlikelihoodconcentration，必须跨observationsfactorizedweight；偏差/tilt邻近H04/H02，全文未读。|
+|E2771|25_Kraus_2021_A sharp Bernstein-type inequality and application to the Car.pdf|P-ab0dfeab300abaff|adjacent|全文已读；正多项式 Bernstein n² 与 I04 矩阵 Carleson 改进相关，TheoremA(ii) 原打印范数缺口待原CT定义核。|
+|E2772|19_Sen_2025_Matrix Chernoff concentration bounds for multipartite soft c.pdf|P-aa59c110650c143f|direct|摘要为multipartite quantumsoftcovering和expanderwalk的matrixChernoff/Schatten1集中，相关但metric、Renyi假设与dimfactor需全文。|
+|E2773|11_Lee_2026_A Sharper Hoeffding Bound for Weighted Sums of Exchangeable.pdf|P-9ca8ad3fe6cf70f7|direct|摘要为finiteexchangeable有界weighted和，围绕finitepopulation平均而非无条件均值；inflation1/N与显式常数待全文，不能扩给 arbitrarydependence。|
+|E2774|13_Keller_2017_Biased halfspaces, noise sensitivity, and local Chernoff ine.pdf|P-8fc26caa6748db6a|direct|摘要用局部Chernoff研究Rademacherhalfspace Fourierweight/influence，相关；摘要printedδ≤c/sqrt(log1/ε)方向疑点待全文，不认证。|
+|E2775|08_Gottschling_2026_Hoeffding-Type Concentration Bounds for Exchangeable Random.pdf|P-76583b1b5869ea28|direct|摘要为infinitelyexchangeable经验均值绕deFinetti随机limit/组件均值集合Hoeffding集中，相关；不能把随机中心换无条件均值。|
+|E2776|16_Zhang_2026_Chernoff's Density Is Strongly Log-Concave.pdf|P-0e19d2bf7ed3c6ab|adjacent|摘要研究Brownianparabolicargmax的Chernoffdensitystronglogconcavity，Chernoff非mgf尾界；该分布concentration/logconcavity邻近K04，原文声明GPT5.6proof仅作来源元数据，需逐步核。|
+|E2777|09_Shamarova_2010_Chernoff's theorem for backward propagators and applications.pdf|P-cc5c73a35736c57a|pending|Chernoff为backwardpropagator/diﬀusionmanifold乘积逼近，不是tail界；J01/J03邻近生成元半群待核。|
+|E2778|15_Fang_2016_Random Continued fractions_ Lévy constant and Chernoff-type.pdf|P-652c856e200cb3e4|adjacent|摘要给randomcontinuedfraction的ψmixing+all0<t<1power moment下Chernoff-type estimate，邻近依赖指数界；对象不是默认scalarindependentsum。|
+|E2779|09_Qiu_2020_A Matrix Chernoff Bound for Markov Chains and Its Applicatio.pdf|P-6ea1e6076d411c66|direct|摘要regularfiniteMarkovchainsampleHermitianmatrix extremesChernoff，相关；aperiodic/irreducible及mixing/norm条件与初始分布待全文。|
+|E2780|20_Egger_2025_A New Application of Hoeffding's Inequality Can Give Traders.pdf|P-2c071834af4b4655|direct|已读封面及PDFp2全部引言，金融regime应用Hoeffding相关；p2声称serialcorrelation也无条件满足iidHoeffding是错误警讯，相关不能算可用定理，未阅读全文。|
+|E2781|24_Howard_2018_Time-uniform Chernoff bounds via nonnegative supermartingale.pdf|P-7d0a6788b11fe9bb|direct|首页题名/作者与下一段摘要为nonnegativesupermartingale的timeuniformChernoff/linearcrossing统一框架，相关；未全文，ψdomination/filtration/varianceprocess必须核。|
+|E2782|25_Huber_2018_Halving the bounds for the Markov, Chebyshev, and Chernoff I.pdf|P-ee31e8b6f2ddf22a|direct|摘要auxiliaryrandomnesssmoothing可将Markov/Chebyshev/Chernoff界减半，相关；随机化独立性、threshold和不随机版本额外条件全文待核。|
+|E2783|12_Hertz_2020_Improved Hoeffding's Lemma and Hoeffding's Tail Bounds.pdf|P-14bb456bd53bdaeb|direct|Valid mgf lemma and Eq23 may be used after hypotheses; source normalizedEq28–36 are false for sumSn. Direction-specific coefficients cannot be used for both tails without swapping intervals. PDFp2 visually checked.|
+|E2784|07_Kontorovich_2012_Uniform Chernoff and Dvoretzky-Kiefer-Wolfowitz-type inequal.pdf|P-89977bf85e2353ed|direct|摘要geomergodicity+Markovcontraction给countablechain/HMM的dimensionfree uniformChernoff/DKW，相关；uniformergodicconstants等全文待核。|
+|E2785|01_Anshelevich_2012_Limit theorems for monotonic convolution and the Chernoff pr.pdf|P-f9cf12fe1974c2c6|irrelevant|摘要的Chernoff是analyticsemigroup产品式，用于monotone/noncommutative卷积极限定理，不是Chernoff exponentialtail界；未见本HI接口。|
+|E2786|22_Freedman_2019_Operational Interpretations of the Chernoff Inequality.pdf|P-2abafab110592d81|direct|摘要以operationalcalculusgeneralizeChernoff并连momentbound/absolute monotonicfunctions，相关；正算子/函数类精确条件待全文，作者RoyFreedman不是Freedman鞅界自动来源。|
+|E2787|20_Bläsius_2019_The Minimization of Random Hypergraphs.pdf|P-98cbf559ff525395|direct|摘要randomhypergraphminimization用improvedbinomialChernoff-Hoeffding达到constantfactor，上尾/下尾口径、endpoint和prefactor待全文。|
+|E2788|01_Barber_2024_Hoeffding and Bernstein inequalities for weighted sums of ex.pdf|P-a5bd3fb7ca76dca7|direct|摘要finiteexchangeableweighted和Hoeffding/Bernstein，n≤N与中心化完整条件待全文，不能当iid任意weights省修正。|
+|E2789|13_Polaczyk_2023_Concentration bounds for sampling without replacement and Ho.pdf|P-f5c10b75dd7310bb|direct|摘要给samplingwithoutreplacement empiricalsup及generalHoeffdingstatistics的Bennett集中，相关；permutationlaw、variance proxy与statistic矩阵条件待全文。|
+
+## 实际阅读卡
+
+- [P-14bb456bd53bdaeb：full_read](papers/TEAM_HI-P-14bb456bd53bdaeb.json)
+- [P-64dfefc5434002d4：full_read](papers/TEAM_HI-P-64dfefc5434002d4.json)
+- [P-ab0dfeab300abaff：full_read](papers/TEAM_HI-P-ab0dfeab300abaff.json)
+- [P-c918dd6c7cd3df44：full_read](papers/TEAM_HI-P-c918dd6c7cd3df44.json)
+- [P-d5e07f3bb221a1c6：full_read](papers/HK-P-d5e07f3bb221a1c6.json)
+
+## 本地原文定位
+
+原附件PDF：工作包根目录的 `corpus/papers/<paper_id>/paper.pdf`；全文 `paper.md`；页码映射 `pages.json`。
+补充PDF：`supplementary/<paper_id>/`。完整原文不放入轻量Skill ZIP；可用SHA-256与附件成员名定位原文件。
+逐篇完整处理状态见工作包 `catalog/entries-reviewed.json`、`catalog/reading-queue.json`。

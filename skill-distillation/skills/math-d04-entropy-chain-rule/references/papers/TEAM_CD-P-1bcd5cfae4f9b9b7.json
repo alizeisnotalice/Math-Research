@@ -1,0 +1,228 @@
+{
+  "paper_id": "P-1bcd5cfae4f9b9b7",
+  "observed_title": "Entropy Rate for Hidden Markov Chains with Rare Transitions",
+  "authors": [
+    "Yuval Peres",
+    "Anthony Quas"
+  ],
+  "version": "所给PDF水印arXiv:1012.2086v1 (9 Dec 2010)，内页Date为September25,2018；保留版本/日期冲突，未将文件名年份冒充发表年份。全文6页。",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 287,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "scope": "全6页287行，包括Theorem1两个部分完整证明、binary例、条件熵定义、全部5条参考及作者信息；无附录。PDFp1,2,4,5,6重要数学公式视觉核对，p3基础链式公式来自全文文本。"
+    }
+  ],
+  "topic_relevance": {
+    "D04": "adjacent：stationary HMM的条件Shannon熵率链式与稀转移信息损失；作者称relative entropy的量是H(Y|X)，并非KL(P||Q)。本新卡只增加证据，不新增无条件可操作定理。"
+  },
+  "definitions": [
+    {
+      "name": "stationary rare-transition HMM",
+      "statement": "有限输入状态集S，P(p)=I+pA，A对角严格负、非对角非负、行和0；足够小p>0时P不可约。取与p无关的stationaryπ；Y经固定memoryless channel Q生成。Q各行distinct称statistically distinguishing。TEAM安全接口限制有限输出T或另外给出有限entropy条件；固定共同log底数。",
+      "source_lines": [
+        18,
+        38
+      ],
+      "pdf_pages": [
+        1
+      ]
+    },
+    {
+      "name": "source relative entropy terminology",
+      "statement": "H(Q|P)=H(P∨Q)−H(P)是partition条件Shannon熵；stationary process相应h(Y|X)=h(X,Y)−h(X)。这不是KL散度，不能自动作为P/Q相对熵链式来源。",
+      "source_lines": [
+        111,
+        132
+      ],
+      "pdf_pages": [
+        3
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem1: main entropy-rate approximation",
+      "start_line": 38,
+      "end_line": 47,
+      "pdf_pages": [
+        1
+      ],
+      "assumptions": [
+        "双向stationary finite-S Markov输入；固定A且所有足够小p>0的I+pA不可约。",
+        "固定memoryless Q，各行distinct；TEAM直接有限值接口取finite T及有限channel entropy；更广域另证。",
+        "固定共同log底数，0log0=0。"
+      ],
+      "statement": "作者报告（TEAM尚未独立认证整个rate定理）：存在C=C(A,Q,S,T)>0和p0>0，使所有0<p<p0有h(P)+Σπ_iH(Q_i)−Cp≤h(Y)≤h(P)+Σπ_iH(Q_i)。等价0≤h(X|Y)≤Cp。",
+      "proof_steps": [
+        "joint Markov链转移为P_{ii′}Q_{i′j′}，stationary为π_iQ_ij；其熵率为h(P)+Σπ_iH(Q_i)，减h(X|Y)给output。",
+        "取整数舍入L≈|logp|^4、K≈|logp|²；按多次转移、一次转移靠近边界、好事件分区。多次概率O(p²L²)，熵≤Llog|S|；边界概率O(pK)，熵O(logK)。",
+        "好块在最多一次转移的候选集上做ML，比较尾≤Cη^δ；坏重构概率≤|S|²LCη^K=o(p)。",
+        "好块转移位置差N有指数尾，条件熵O(1)，有转移好块概率O(pL)。分区熵O(pK|log(pK)|)=o(pL)。逐事件加权后H(X_block|Y_block)=O(pL)，除L得rate O(p)。"
+      ],
+      "gaps": [
+        "来源p4 Hoeffding步骤未验证log-likelihood ratio有界，Q有零项或可数输出时不能直接用；下条affinity修复避免该问题。",
+        "本文未给显式C/p0，也不提供Q行接近重合时的统一常数。",
+        "stationary entropy-rate存在/条件熵极限基础未在本TEAM独立重证全部。",
+        "来源只称T为output set，未写finite T或max_i H(Q_i)<∞；可数输出且无限channel entropy时，joint entropy差可能∞−∞。安全操作取finite T或另外证明有限entropy/rate存在；affinity修复不自行解决这些问题。"
+      ]
+    },
+    {
+      "label": "Theorem1 strict loss: distinct-state correction",
+      "start_line": 58,
+      "end_line": 63,
+      "pdf_pages": [
+        2
+      ],
+      "assumptions": [
+        "沿用main条件。",
+        "补充必要条件：存在不同状态i≠i′，A_{ii′}>0，且共享output j满足Q_ij>0,Q_i′j>0。来源只写P_{ii′}>0，漏i≠i′。"
+      ],
+      "statement": "在修正域有c>0使h(X|Y)≥cp，故h(Y)≤joint−cp、loss=Θ(p)。来源字面同状态也允许的条件不成立。",
+      "proof_steps": [
+        "A_event={X_−1=i,X_1=i′,Y_0=j}在不同且offdiagonal正的状态下概率Ω(p)。",
+        "给定Y及除X0外的全部X，X0=i/i′的条件概率趋Q_ij/(Q_ij+Q_i′j)、Q_i′j/(sum)，条件熵趋正常数。事件权重给cp。",
+        "原文反例：两态rare chain P=[[1−p,p],[p,1−p]]，identity Q=I。取i=i′=j=0满足原字面三个正性条件，但Y=X且loss0，不能有任何正c。"
+      ],
+      "gaps": [
+        "源证明实际需要不同状态；不能仅因同一个i的对角P_ii>0就调用strict loss。",
+        "p6末行写joint+Θ(p)，必须按前述方向记作joint−Θ(p)的正loss；一般O(p)项不带统一正号。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 240,
+          "end_line": 253,
+          "pdf_pages": [
+            5
+          ]
+        },
+        {
+          "start_line": 258,
+          "end_line": 265,
+          "pdf_pages": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "label": "TEAM affinity Chernoff repair of likelihood comparison",
+      "start_line": 168,
+      "end_line": 194,
+      "pdf_pages": [
+        4
+      ],
+      "assumptions": [
+        "给定真输入word u，memoryless输出独立。",
+        "有限S、固定distinct probability rows Q_i，输出为finite/countable T；求和按非负项。",
+        "真likelihood分母为0的输出在真law下零概率；错误likelihood零项比值取0。"
+      ],
+      "statement": "对mismatch Δ={k:u_k≠v_k}，P_u(L_v≥L_u)≤∏_{k∈Δ}Σ_j√(Q_{u_k j}Q_{v_k j})≤η^{|Δ|}；可取η=(1+max_{a≠b}affinity(Q_a,Q_b))/2∈(0,1)。无需log ratio有界或所有Q_ij>0。",
+      "proof_steps": [
+        "对sqrt likelihood ratio用Markov不等式；事件product ratio≥1给P≤E sqrt ratio。",
+        "条件独立把期望写成各位置Hellinger affinity的乘积。",
+        "Cauchy–Schwarz使每项≤1，等号仅normalized行相同；有限行对且distinct给最大值<1。取稍大的η处理最大值0端点。"
+      ],
+      "gaps": [
+        "此修复独立核验的是比较引理；不因此认证任意可数输出的entropy有限或所有rate极限。",
+        "η依赖具体Q，行分离趋0时η→1。"
+      ]
+    },
+    {
+      "label": "Event conditioning and finite/rate entropy chain",
+      "start_line": 124,
+      "end_line": 147,
+      "pdf_pages": [
+        3
+      ],
+      "assumptions": [
+        "finite partition Q、σ代数F，事件分区A_j都F可测；零概率事件从求和去掉。",
+        "同一stationary joint law生成X、Y、事件与ML重构；有限熵使差值合法。"
+      ],
+      "statement": "H(Q|F)=ΣP(A_j)H(Q|F|A_j)；H(X_block|Y)≤H(X_block|Y,partition)+H(partition)。rate链hX+hY|X=hXY=hY+hX|Y。",
+      "proof_steps": [
+        "按conditional probability积分定义，并用P_A条件measure对F可测分区分解。",
+        "有限联合熵chain及conditioning降低entropy给预算式；rate版本另以stationary极限。"
+      ],
+      "gaps": [
+        "这是Shannon链式，不能改名为一般KL链式。",
+        "本文ML可用past和future；不能移植成causal过滤误差O(p)。"
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "statement": "C,c,p0依赖A、Q、S/T与行分离η；π对p固定。L≈|logp|4、K≈|logp|2需取整数。strict loss正c需offdiagonal共享output；没有dimension/row-separation一致常数。",
+    "source_lines": [
+      143,
+      159,
+      184,
+      194,
+      240,
+      265
+    ],
+    "pdf_pages": [
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "endpoint_limits": [
+    "p=0不属不可约小正p域，static/reducible极限单列。",
+    "Q行不distinct时ML separation失效，不报同一Cp结论。",
+    "identity Q虽distinct，却无不同状态共享output；strict cp loss不能用。",
+    "Q有零项使log ratio可能−∞，用affinity/RN零项约定。",
+    "future smoothing与past-only filtering分开。",
+    "相对Shannon entropy与KL定义分开；source full_read不认证D04任意接口。"
+  ],
+  "reusable_methods": [
+    "用同一joint law的chain分离已知joint entropy和隐藏conditional defect。",
+    "按exceptional/boundary/good事件拆预算，显式付partition entropy。",
+    "固定distinct channel的affinity界控制ML位置误差指数尾。"
+  ],
+  "unchecked": [
+    "stationary熵率极限和外引Hoeffding/过滤文献未逐篇全文独立阅读。",
+    "未使用数值HMM熵率估计冒充global theorem。",
+    "有限接口依赖及条件化归一化需保留，不扩张到无定义∞−∞。"
+  ],
+  "source_errors": [
+    {
+      "location": "PDFp2 L58–63",
+      "finding": "strict loss遗漏i≠i′；identity channel反例",
+      "independent_review": "audit_cd_16 independently checked originalPDF and counterexample"
+    },
+    {
+      "location": "PDFp4 L180–190",
+      "finding": "log LR未有界，Hoeffding不能无条件用；affinity Chernoff修复",
+      "independent_review": "audit_cd_16 independently checked and rederived repair"
+    },
+    {
+      "location": "PDFp6 L264–266",
+      "finding": "正loss应从joint减去；保前面双侧方向",
+      "independent_review": "derived from already checked inequalities"
+    }
+  ],
+  "proof_verification": "finite chain bookkeeping / identity counterexample / affinity lemma checked; generic rate theory dependencies remain scoped",
+  "integration_status": "next batch evidence only; no new unconditional operating step adopted",
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 287,
+    "source_lines": 287,
+    "required_content_lines": 231,
+    "covered_content_lines": 231,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-1bcd5cfae4f9b9b7/paper.md"
+  },
+  "review_source": "evidence/reviews/TEAM_CD/evidence/P-1bcd5cfae4f9b9b7.json",
+  "review_input_sha256": "ac06f38636805e81d89564e5fcf4cb3181a6d9cbc795785ab7523e88e1ca79bc"
+}

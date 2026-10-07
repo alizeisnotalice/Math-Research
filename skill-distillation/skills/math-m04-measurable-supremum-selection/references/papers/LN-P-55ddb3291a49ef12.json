@@ -1,0 +1,165 @@
+{
+  "paper_id": "P-55ddb3291a49ef12",
+  "observed_title": "Borel selection of dominating hyperplanes",
+  "authors": [
+    "Eugenio Clerico"
+  ],
+  "version": "arXiv:2603.19973v2; PDF 13 pages",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 710,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "M04",
+    "decision": "direct",
+    "basis": "论文在上半解析输入下构造 Borel 可测的仿射主控超平面，且从中导出有限维凸函数的 Borel 次梯度选择器；证明显式使用半解析上确界、解析集投影、Lusin 分离和解析夹逼。其假设界定了何时可以合法选择，且不是由连续/光滑依赖自动推出的选择结论。"
+  },
+  "definitions": [
+    "X 为标准 Borel 空间；f:X×Y→R 上半解析 (usa) 表示每个严格上水平集 {(x,y):f(x,y)>γ} 为解析集。",
+    "仿射主控集合 S(x)={(b,c): f(x,y)≤b·y+c 对所有 y∈Y}；条件是 S(x) 每个 x 非空，函数 f usa，Y⊂R^n Borel。",
+    "解析夹逼引理：u:X→R 上半解析、l:X→R 下半解析且 u≤l 时，存在 Borel 实函数 q 使 u≤q≤l。",
+    "可测次梯度选择要求每个参数截面凸、下半解析，并且对应次微分非空；在原点归一化 g(x,0)=0 后可将支撑次梯度问题改写为线性主控选择。"
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "X 为标准 Borel 空间，Y⊂R^n 为 Borel 集。",
+        "f:X×Y→R 上半解析。",
+        "存在逐点仿射主控：对每个 x,y，有 f(x,y)≤b(x)·y+c(x)；原定理不要求给出的 b,c 已可测。"
+      ],
+      "statement": "存在 Borel 映射 B:X→R^n、C:X→R，使 f(x,y)≤B(x)·y+C(x) 对所有 x,y 成立。等价地，非空值多值映射 S(x) 的图虽因全称量词一般只有共解析复杂度，仍存在 Borel 选择器。",
+      "start_line": 254,
+      "end_line": 258,
+      "pdf_pages": [
+        5
+      ],
+      "proof_start_line": 260,
+      "proof_end_line": 359,
+      "proof_pages": [
+        5,
+        6,
+        7
+      ],
+      "proof_steps": [
+        "先将 Borel 子域 Y 延拓到 R^n：在 Y 外令函数为 −||y||²，并用 −||y||²≤b(x)·y+||b(x)||²/4 保留逐点仿射上界。",
+        "按维数归纳。把最后坐标正半空间、负半空间与零超平面分开，用一对正负点的连线在零超平面产生交点 ~y，构造上半解析函数 g 与其上确界 h。",
+        "将 h 与超平面上的原函数取最大得到更低维的 usa 函数 F，再用归纳法选出前 n−1 个 Borel 系数和截距 C。",
+        "利用正负半空间交叉不等式，把剩余第 n 个系数的允许范围写成上界 U(x) 与下界 L(x)，证明 U 是 usa、L 是 lsa 且 U≤L。",
+        "用解析夹逼引理选择 Borel 的 B_n 满足 U≤B_n≤L；由此同时控制正负两侧点和超平面点，完成整个仿射主控。"
+      ],
+      "gaps": [
+        "函数值域要求为实数；延拓和半解析投影的拓扑假设不可省略。",
+        "定理选的是某个可测主控上界，不保证主控超平面是最紧的、唯一的，或等于逐点最优斜率。",
+        "结论本质依赖有限维 R^n 归纳；作者明确指出不能直接扩展到无限维/可数代数维。",
+        "所需逐点上界只要求存在，不给数值构造或主控系数的定量界。"
+      ],
+      "author_claim": "Theorem 1 给出 Borel 主控超平面；作者用有限维归纳与解析夹逼而不是对共解析图套用标准选择定理。",
+      "checked_derivation": "已检查主控在 Y 外的二次延拓不等式、正负半空间消元关系、U≤L 后使用夹逼引理的方向和最后拼回 B_n 的不等式。PDF 第 2、6、7 页视觉核对了主定理及消元/拼接关键公式。"
+    },
+    {
+      "assumptions": [
+        "X 为标准 Borel 空间；g:X×R^n→R 下半解析。",
+        "每个截面 y↦g(x,y) 凸，g(x,0)=0。",
+        "每个 x 处 ∂_y g(x,0) 非空。"
+      ],
+      "statement": "存在 Borel 映射 p:X→R^n，使 p(x)∈∂_y g(x,0) 对所有 x 成立。若评估点 y₀(x) 是 Borel 且 x↦g(x,y₀(x)) Borel，可通过平移扩展到 y₀(x) 处的次梯度选择。",
+      "start_line": 547,
+      "end_line": 552,
+      "pdf_pages": [
+        10
+      ],
+      "proof_start_line": 554,
+      "proof_end_line": 564,
+      "proof_pages": [
+        10
+      ],
+      "proof_steps": [
+        "由 ∂g(x,0) 非空，对每个 x 存在某个可能非可测的 p_x，使 g(x,y)≥p_x·y；这给出 −g(x,y)≤(−p_x)·y 的逐点线性主控。",
+        "把 −g 代入齐次主控选择 Corollary 2，得到 Borel A(x)，满足 −g(x,y)≤A(x)·y。",
+        "由凸函数次梯度不等式取 p(x)=−A(x)，得到 Borel 次梯度。对移动评估点使用函数平移与减去截距。"
+      ],
+      "gaps": [
+        "定理要求每个截面在目标点有非空次微分；对边界点或非凸截面不保证存在。",
+        "这是有限维次梯度的 Borel 选择，不推出 Banach 空间或一般多值映射存在 Borel 选择器。",
+        "Borel 条件是对参数函数的半解析正则性与移动点数据的明示假设；平滑性本身不自动替代这些假设。"
+      ],
+      "author_claim": "Corollary 4 以齐次仿射主控选择导出 Borel 次梯度，Remark 延伸到可测移动点。",
+      "checked_derivation": "已核对次梯度下界 g(x,y)≥p_x·y 与把 f=−g 代入齐次 Corollary 2 的符号，确认 p=−A。PDF 第 10 页视觉核对假设、结论和证明中的符号。"
+    },
+    {
+      "assumptions": [
+        "X 为标准 Borel 空间，Y⊂R^n 为 Borel 集。",
+        "f:X×Y→R 上半解析且对每个 x,y 满足 f(x,y)≤a(x)·y，其中 a 可不具可测性。"
+      ],
+      "statement": "存在 Borel A:X→R^n 使 f(x,y)≤A(x)·y 对所有 x,y 成立；也就是可在保持齐次线性主控的情况下选取可测系数，而不增加截距。",
+      "start_line": 399,
+      "end_line": 402,
+      "pdf_pages": [
+        8
+      ],
+      "proof_start_line": 404,
+      "proof_end_line": 457,
+      "proof_pages": [
+        8
+      ],
+      "proof_steps": [
+        "沿锥化关系 z=ty (t>0) 构造 usa 函数并对 (y,t) 取上确界，得到解析锥上的正齐次函数 h。",
+        "先对 h 应用仿射主控定理得到 Borel B,C。由正齐次性 h(x,λy)=λh(x,y)，对任意 λ>0 有 h(x,y)≤B(x)·y+C(x)/λ。",
+        "令 λ→∞消去截距 C/λ，得到 h(x,y)≤B(x)·y，再令 A=B。"
+      ],
+      "gaps": [
+        "锥化使用 t>0，结论适用于生成方向；不能仅凭这一推导处理非齐次项而不保留截距。",
+        "该齐次主控结果依赖同一半解析及逐点线性上界前提。"
+      ],
+      "author_claim": "Corollary 2 证明线性主控系数可取 Borel，并指出域可在扩展 usa 意义下放宽到解析集。",
+      "checked_derivation": "检查了正齐次缩放和 λ→∞去掉截距的推理；PDF 第 8 页已视觉核对系数缩放、正齐次式与结论。"
+    }
+  ],
+  "constant_dependence": "结果为纯存在性，不给主控斜率/截距大小上界、选择器连续模或稳定常数。消元和归纳步骤次数依赖有限维 n；作者不声称无限维类比。",
+  "endpoint_limits": [
+    "此定理选取 dominating affine function，不选择 f(x,·) 的最大点或最大值；可测上确界仍只保持 usa，不代表上确界被某点取得。",
+    "所有主结论是 Borel 可测性，需要 X 标准 Borel、函数 usa、定义域 Borel/扩展解析以及逐点有限仿射上界。",
+    "只有次微分非空时 Corollary 4 才适用；可测选择器的存在不从光滑性单独推出。",
+    "作者将方法限制在有限维系数空间；在 countable-dimensional 或一般无穷维空间中结果是否仍成立被留作开放问题。"
+  ],
+  "reusable_methods": [
+    "当多值图因全称约束只有共解析复杂度时，先找目标对象的有限维线性结构；本例通过逐坐标消元，将一个仿射选择问题降成一维解析夹逼。",
+    "对上确界保持上半解析、对下确界保持下半解析，再证明上下包络有序，之后才调用 Lusin 分离得到 Borel 中间函数。",
+    "若需要次梯度，先把非空次微分转成逐点支撑不等式，再用齐次主控选择，而不是假定次微分多值图已有可测性。",
+    "区分“选择一个可行主控”与“选择最优/紧主控”以及“选择取得 sup 的输入”；定理只保证前者。"
+  ],
+  "unchecked": [
+    "Lusin、Novikov、半解析投影和标准选择理论均作引用使用，未独立重证基础描述集合论结果。",
+    "PDF 第 2、6、7、8、10 页的主定理、维度消元和次梯度关键公式已视觉核对；其他页面按页文本全文阅读，未逐页图像比较。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 706,
+    "source_lines": 710,
+    "required_content_lines": 530,
+    "covered_content_lines": 530,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-55ddb3291a49ef12/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/P-55ddb3291a49ef12.json",
+  "review_input_sha256": "51f145930e459f7e09ad7436ef7f2614d2b37bb0adc07ebdb3ffd92d8ee6e907"
+}

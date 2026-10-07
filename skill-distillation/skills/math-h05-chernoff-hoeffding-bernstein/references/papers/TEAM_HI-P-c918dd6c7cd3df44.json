@@ -1,0 +1,70 @@
+{
+  "paper_id": "P-c918dd6c7cd3df44",
+  "observed_title": "An Easy Proof of a Weak Version of Chernoff Inequality",
+  "authors": [
+    "Sariel Har-Peled"
+  ],
+  "version": "arXiv:2507.02759v2; watermark4 July2025, title date8 July2025; 2 pages",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "file": "corpus/papers/P-c918dd6c7cd3df44/paper.md",
+      "start_line": 1,
+      "end_line": 75,
+      "pdf_pages": [
+        1,
+        2
+      ],
+      "scope": "Whole paper: theorem/lemma, proof, remarks and complete references"
+    }
+  ],
+  "topic_relevance": {
+    "H05": "direct"
+  },
+  "theorem_cards": [
+    {
+      "label": "Weak fair-coin lower tail",
+      "assumptions": [
+        "M is a positive integer; 6M independent fair coin indicators Ci."
+      ],
+      "statement": "P(Σ_{i=1}^{6M}Ci≤M)≤2^(−M).",
+      "proof_steps": [
+        "Y_i=2^(M−Σ_{j≤i}C_j), E(Y_i|past)=(3/4)Y_{i−1}; E Y_{6M}=2^M(3/4)^(6M).",
+        "ΣCi≤M iff Y_{6M}≥1; apply Markov and (3/4)^3≤1/2. This is a multiplicative exponential test, not a sharp optimized Chernoff coefficient."
+      ],
+      "source_ranges": [
+        {
+          "start_line": 17,
+          "end_line": 49,
+          "pdf_pages": [
+            1
+          ]
+        }
+      ],
+      "gaps": [
+        "Main proof is self-contained. The QuickSort remark claims an unprinted careful3/4 conditional contraction, while its footnote gives only7/8; do not present the remark as a verified universal quicksort theorem.",
+        "Y_i may be fractional after more than M heads, despite the informal integer balls language; interpret it as positive mass."
+      ],
+      "start_line": 17,
+      "end_line": 49,
+      "pdf_pages": [
+        1
+      ]
+    }
+  ],
+  "transfer_boundary": "Only this fair-coin threshold is directly supplied; a general biased/martingale inequality needs its own mgf/conditional contraction. Correlated fair marginals do not meet the conditional expectation. PDFp1 visual check retained.",
+  "proof_verification": "local derivations and literal errors checked; cited external results not independently certified",
+  "identity_status": "title_authors_visible_version_observed_not_bibliographic_dedup_certified",
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 75,
+    "source_lines": 75,
+    "required_content_lines": 42,
+    "covered_content_lines": 42,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-c918dd6c7cd3df44/paper.md"
+  },
+  "review_source": "reviews/TEAM_HI/evidence/P-c918dd6c7cd3df44.json",
+  "review_input_sha256": "4ecbbc6b8db91660052e04342ff7a71b93dc99738ec4b49eef77258fde3ab3e7"
+}

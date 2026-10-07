@@ -1,0 +1,243 @@
+{
+  "paper_id": "P-e18a11290a5b731f",
+  "observed_title": "Borell–Brascamp–Lieb inequality with finitely many output functions",
+  "authors": [
+    "Takashi Satomi"
+  ],
+  "version": "arXiv:2608.23963v1; 2026-08-26 on local PDF;30pages",
+  "source_sha256": {
+    "pdf": "e18a11290a5b731f125e1b0ace88b80cc609286e1195583f0f6415027cfd1148",
+    "paper_md": "4c9aa7dbcdcc5b7758c437c5a1467241a35c9a18fd6c8c8eb11d06ab5eac60b6"
+  },
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1735,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    }
+  ],
+  "reading_log": {
+    "method": "complete local converted text read in sequential line chunks; key formulas checked in original PDF images",
+    "appendices": "all pages including references read; no separate appendix in source",
+    "no_character_truncation": true,
+    "visual_pages": [
+      2,
+      3,
+      19,
+      20,
+      21,
+      28
+    ]
+  },
+  "topic_relevance": {
+    "code": "N02",
+    "decision": "direct",
+    "basis": "Full source supplies the explicitly scoped methods below; private mathematical interfaces have no established identification."
+  },
+  "definitions": [
+    "M_p^λ uses geometric mean at0,min at−∞,max at∞, and continuous zero conventions; all ratios are restricted to positive input supports.",
+    "The source p is the negative of the classical BBL interpolation exponent α; Q_d uses a minus sign denominator."
+  ],
+  "theorem_cards": [
+    {
+      "claim_id": "N02-SATOMI-BBL",
+      "label": "Theorems1.2–1.3",
+      "start_line": 58,
+      "end_line": 167,
+      "pdf_pages": [
+        2,
+        3
+      ],
+      "source_locator": {
+        "file": "corpus/papers/P-e18a11290a5b731f/paper.md",
+        "start_line": 58,
+        "end_line": 167,
+        "pdf_pages": [
+          2,
+          3
+        ]
+      },
+      "assumptions": [
+        "d≥1 integer; finitely many inputs m≥1; λ_i>0 and Σλ_i=1.",
+        "All f_i,g_i:R^d→R≥0 are Lebesgue measurable and integrable; 0<||f_i||1<∞.",
+        "S=∏{f_i>0}; evaluate ratios only on S, using Lebesgue essential infimum there.",
+        "p∈[−∞,1/d]; weighted power means follow Definition1.1 including zero and infinite-power conventions."
+      ],
+      "statement": "For K=essinf_(x∈S) M_p^λ(g_i(Σλ_jx_j)/f_i(x_i)), K≤M_(Q_d(p))^λ(||g_i||1/||f_i||1). Q_d(p)=p/(1−dp), Q_d(−∞)=−1/d, Q_d(1/d)=+∞. Common output gives classical BBL with α=−p≥−1/d and output exponent α/(1+dα), including −∞ at α=−1/d and 1/d at α=∞.",
+      "proof_source_ranges": [
+        {
+          "file": "corpus/papers/P-e18a11290a5b731f/paper.md",
+          "start_line": 926,
+          "end_line": 1204,
+          "pdf_pages": [
+            17,
+            18,
+            19,
+            20,
+            21
+          ]
+        }
+      ],
+      "proof_steps": [
+        "One-dimensional minimum inequality is built by merging two functions with normalized weights; preserve equal essential L∞ heights and propagate a.e. inequalities using an invertible linear map and Fubini.",
+        "Normalize bounded inputs to equal L∞ heights, compare min inputs to a weighted-power output, then apply reverse Minkowski for power≤1 and weighted Hölder.",
+        "Apply lower-dimensional results to slices, exclude null sets by Fubini and surjectivity of the output linear map, and combine Q_e(Q_d(p))=Q_(d+e)(p).",
+        "Extend unbounded inputs through truncation and monotone convergence; handle zero K separately."
+      ],
+      "author_claim": "For K=essinf_(x∈S) M_p^λ(g_i(Σλ_jx_j)/f_i(x_i)), K≤M_(Q_d(p))^λ(||g_i||1/||f_i||1). Q_d(p)=p/(1−dp), Q_d(−∞)=−1/d, Q_d(1/d)=+∞. Common output gives classical BBL with α=−p≥−1/d and output exponent α/(1+dα), including −∞ at α=−1/d and 1/d at α=∞.",
+      "checked_derivation": "All30 pages read. Original PDF p2/3/19/20/21 formulas visually checked; core a.e. null-set/slice passage and exact Q composition algebra independently checked. Fact4.1 and HLP base results remain external.",
+      "gaps": [
+        "Fact4.1 two-function Brascamp–Lieb minimum inequality is an external input [BL76a], not independently read/reproved here.",
+        "General HLP power-mean/Hölder/Minkowski facts are externally cited.",
+        "No complete equality classification or stability theorem follows from the source equality examples."
+      ],
+      "disposition": "conditional_source_statement_external_base_unverified",
+      "independent_proof_certificate": false
+    },
+    {
+      "claim_id": "N02-SATOMI-RANGE",
+      "label": "Remark2.10 and low-power proof limit",
+      "start_line": 463,
+      "end_line": 506,
+      "pdf_pages": [
+        9
+      ],
+      "source_locator": {
+        "file": "corpus/papers/P-e18a11290a5b731f/paper.md",
+        "start_line": 463,
+        "end_line": 506,
+        "pdf_pages": [
+          9
+        ]
+      },
+      "assumptions": [
+        "m≥2; λ_i>0 summing1; measurable nonnegative integrable h_i.",
+        "Reverse Minkowski applies only to weighted power p≤1."
+      ],
+      "statement": "∫M_p^λ(h_1,…,h_m)≤M_p^λ(∫h_1,…,∫h_m) for p≤1; it fails for p>1. Accordingly, derivation of multi-output BBL from classical BBL by this route is limited to p≤1/(d+1), although the new theorem itself extends to p≤1/d.",
+      "proof_source_ranges": [
+        {
+          "file": "corpus/papers/P-e18a11290a5b731f/paper.md",
+          "start_line": 630,
+          "end_line": 679,
+          "pdf_pages": [
+            12
+          ]
+        }
+      ],
+      "proof_steps": [
+        "For pairwise disjoint E_i each of measure1, set h_i=1_Ei. For1<p<∞ left=Σλ_i^(1/p)>1=right; at p=∞ left=m.",
+        "Q_d(p)≤1 iff p≤1/(d+1); do not apply reverse Minkowski past this condition."
+      ],
+      "author_claim": "∫M_p^λ(h_1,…,h_m)≤M_p^λ(∫h_1,…,∫h_m) for p≤1; it fails for p>1. Accordingly, derivation of multi-output BBL from classical BBL by this route is limited to p≤1/(d+1), although the new theorem itself extends to p≤1/d.",
+      "checked_derivation": "Disjoint-support counterexample and threshold algebra independently computed; full theorem beyond threshold uses a separate proof.",
+      "gaps": [],
+      "disposition": "conditional_source_statement",
+      "independent_proof_certificate": false
+    },
+    {
+      "claim_id": "N02-SATOMI-LINEAR",
+      "label": "Corollary7.1",
+      "start_line": 1556,
+      "end_line": 1587,
+      "pdf_pages": [
+        27
+      ],
+      "source_locator": {
+        "file": "corpus/papers/P-e18a11290a5b731f/paper.md",
+        "start_line": 1556,
+        "end_line": 1587,
+        "pdf_pages": [
+          27
+        ]
+      },
+      "assumptions": [
+        "All Theorem1.3 hypotheses; real β_i≠0, without positivity or sum1 requirement.",
+        "Keep original λ as the weight in the power mean."
+      ],
+      "statement": "With output argument Σβ_i x_i, K_β≤M_(Q_d(p))^λ((λ_i/|β_i|)^d ||g_i||1/||f_i||1).",
+      "proof_source_ranges": [
+        {
+          "file": "corpus/papers/P-e18a11290a5b731f/paper.md",
+          "start_line": 1593,
+          "end_line": 1612,
+          "pdf_pages": [
+            28
+          ]
+        }
+      ],
+      "proof_steps": [
+        "Set f_i♯(x)=f_i(λ_i x/β_i), whose integral is (|β_i|/λ_i)^d ||f_i||1.",
+        "The invertible input map preserves essential-infimum null sets and turns the output sum into the λ-weighted sum."
+      ],
+      "author_claim": "With output argument Σβ_i x_i, K_β≤M_(Q_d(p))^λ((λ_i/|β_i|)^d ||g_i||1/||f_i||1).",
+      "checked_derivation": "Jacobian magnitude and resulting reciprocal factor independently checked; theorem inherits the external base dependencies.",
+      "gaps": [
+        "β_i=0 is excluded; absolute values in the Jacobian cannot be omitted when β_i<0."
+      ],
+      "disposition": "conditional_source_statement",
+      "independent_proof_certificate": false
+    }
+  ],
+  "reusable_methods": [
+    "Record the exact power convention and dimension transformation before passing to a marginal or slice.",
+    "Preserve a.e. quantifiers through invertible maps and Fubini; ordinary infimum and essential infimum are different.",
+    "Use slice induction with exact exponent composition, retaining finite positive input masses and output integrability."
+  ],
+  "constant_dependence": "Multiplicative source constant1 is sharp within the specified class. Dimension enters Q_d; equality examples do not classify all equality cases.",
+  "endpoint_limits": [
+    "The common-output α-range is α≥−1/d.",
+    "Pointwise Cordero-Erausquin–Maurey input cannot automatically replace the a.e. multi-output theorem.",
+    "Discrete PL/BBL from Hintum needs its own lattice-expansion conventions."
+  ],
+  "unchecked": [
+    "All30pages including references read; cited foundational sources are not thereby full-read.",
+    "No source proves private entropy/half-density/cube transfer automatically."
+  ],
+  "overall_proof_verification": "not_independently_certified",
+  "two_round_review": "pending",
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1735,
+    "source_lines": 1735,
+    "required_content_lines": 1122,
+    "covered_content_lines": 1122,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-e18a11290a5b731f/paper.md"
+  },
+  "review_source": "reviews/TEAM_N/evidence/P-e18a11290a5b731f.json",
+  "review_input_sha256": "394a48624c68233a68b7bda9acc616aa79eb4334b28297983049832127641e9c"
+}

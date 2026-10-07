@@ -1,0 +1,196 @@
+{
+  "paper_id": "P-5f8081d7cee04454",
+  "observed_title": "Cramér transform of Rademacher series",
+  "authors": [
+    "Krzysztof Zajkowski"
+  ],
+  "version": "arXiv:1408.2754v2, 2014-11-14 visible watermark; no external version identity audit",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 363,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  ],
+  "topic_relevance": {
+    "H01": "adjacent",
+    "C01": "adjacent",
+    "D03": "adjacent"
+  },
+  "theorem_cards": [
+    {
+      "label": "Rademacher cumulant and topology",
+      "start_line": 56,
+      "end_line": 81,
+      "pdf_pages": [
+        2
+      ],
+      "assumptions": [
+        "Countable I; independent symmetric ±1 signs; t∈ℓ¹ for this theorem. ℓ² a.s. convergence alone does not imply bounded Xt."
+      ],
+      "statement": "S=||t||1; |Xt|≤S; ψt(s)=Σ log cosh(sti), ψt′(s)=Σ ti tanh(sti).",
+      "proof_steps": [
+        "Absolute uniform bound allows expectation/product truncation by dominated convergence. Derivative dominated by |ti|; ψ″ sum dominated by ti² on finite s.",
+        "t≠0: ψ′ strictly increasing and tends ±S by dominated convergence."
+      ],
+      "gaps": [
+        "The source says evident inverse unavailable, not that no numerical monotone root solve exists."
+      ]
+    },
+    {
+      "label": "Theorem1.1 literal endpoint error and repaired variational formula",
+      "start_line": 83,
+      "end_line": 99,
+      "pdf_pages": [
+        2,
+        3
+      ],
+      "assumptions": [
+        "t∈ℓ¹; |bi|≤1; h(b)=((1+b)log(1+b)+(1-b)log(1-b))/2 with 0log0=0; H(b)=Σ h(bi)."
+      ],
+      "statement": "Literal source states ψt*(α)=min_{<t,b>=α}H(b) in (−S,S), +∞ otherwise. This is false at finite-support endpoints and t=0. Repaired J defined on every real α by inf over unit box (empty inf∞) equals ψt*; finite inf attained. Interior nonzero t formula is valid.",
+      "proof_steps": [
+        "Checked t=(1): sup_s[s−logcosh s]=log2, finite at α=1; t0 ψ*=0 atα0,∞otherwise.",
+        "For finite m nonzero coordinates endpoint ±S forces bi=±sign(ti) there, contributes mlog2; choose zero unused bi. Infinite nonzero support gives endpoint∞. Outside[-S,S]∞."
+      ],
+      "gaps": [
+        "Do not inherit printed +∞otherwise or derivative-image=effective-domain assertion."
+      ],
+      "proof_source_ranges": [
+        {
+          "file": "corpus/papers/P-5f8081d7cee04454/paper.md",
+          "start_line": 230,
+          "end_line": 316,
+          "pdf_pages": [
+            6,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Entropy conjugate and source infinite optimizer gap",
+      "start_line": 132,
+      "end_line": 195,
+      "pdf_pages": [
+        3,
+        4,
+        5
+      ],
+      "assumptions": [
+        "s≠0; a∈ℓ∞; b=a/s; H on closed unit box. s0 conjugate indicator a0."
+      ],
+      "statement": "ψs*(a)=H(a/s), including endpoints; D(ψs*)={|ai|≤|s|}∩ℓ². Source states subset; equality here is checked by entropy series estimates.",
+      "proof_steps": [
+        "Coordinate supremum of at−logcosh(st) is h(a/s). Finite-support t gives partial entropy sums as sup approximations; termwise bound gives reverse inequality.",
+        "h(x)=Σ_{k≥1}x^(2k)/[2k(2k−1)], so x²/2≤h(x)≤(log2)x² for |x|≤1, including endpoint by monotone convergence.",
+        "Printed substitution ti=artanh(ai/s)/s may not belong ℓ¹; e.g b_i=1/(i+1)∈ℓ² but artanh(b_i) notℓ¹. Full conjugate equality needs finite-support sup, not infinite optimizer."
+      ],
+      "gaps": [
+        "External biconjugate theorem is quoted; this card supplies finite-truncation repair, not a complete monograph audit."
+      ]
+    },
+    {
+      "label": "Compact sublevels and attainment without endpoint deletion",
+      "start_line": 237,
+      "end_line": 316,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "assumptions": [
+        "σ(ℓ∞,ℓ¹) weak* topology; t∈ℓ¹ ensures <t,b> weak* continuous; H is extended∞ outsideunitbox."
+      ],
+      "statement": "H nonnegative weak* lsc, sublevels weak* compact. Jt(α)=inf_{<t,b>=α}H(b) has finite minimum whenever finite, convex and lsc on all ℝ.",
+      "proof_steps": [
+        "H is supremum of finite-coordinate continuous entropy sums (closed unitbox), hence lsc; compact by Banach–Alaoglu.",
+        "Finite J: sequence in common compact sublevel, weak* convergent subnet gives matched α and H≤liminf. Project compact sublevels by <t,b>; {J≤c} compact interval, provinglsc.",
+        "J* =sup_b[s<t,b>−H(b)]=Σlogcosh(sti); b_i=tanh(sti) gives equality and finite entropy since tℓ², and termwise Fenchel bound gives other direction. Biconjugacy yields J=ψ*.",
+        "Interior nonzero t admits unique sα root ψ′=α, b=tanh(sαt); identity H(b)=sαα−ψt(sα) gives direct interior optimality via Fenchel."
+      ],
+      "gaps": [
+        "Source restrictedφ to openinterval then claimed closed sublevels; finite-support endpoints invalidate that argument. Repair uses allαJ.",
+        "No probability law on parameterℓ¹ is introduced; not automatic contraction of an LDP nor uniform Cramér tail ratio."
+      ],
+      "proof_source_ranges": [
+        {
+          "file": "corpus/papers/P-5f8081d7cee04454/paper.md",
+          "start_line": 248,
+          "end_line": 316,
+          "pdf_pages": [
+            6,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Checked scalar and two-sign cases",
+      "start_line": 322,
+      "end_line": 329,
+      "pdf_pages": [
+        8
+      ],
+      "assumptions": [
+        "Independent fair signs and coefficients explicitlyfixed; natural logarithms."
+      ],
+      "statement": "t=(1):ψ*(α)=h(α) on[-1,1]; t=(1,1),α1 has b=(1/2,1/2) and value2h(1/2).",
+      "proof_steps": [
+        "t=(1,1), ψ′=2tanh s; α1 =>s=artanh(.5);2h(.5)=s−2logcosh s.",
+        "At α2 endpoint value2log2 (atomprob1/4), not∞; scalarα1 log2; t0α0 0."
+      ],
+      "gaps": [
+        "Finite checks support explicit cases, not arbitrary course-private variable mapping."
+      ]
+    }
+  ],
+  "constant_dependence": "Entropy uses natural logs; finite-support endpoint m log2 depends number of nonzero coefficients, not magnitude. Compactness requires ℓ1 predual continuity; no uniform-in-dimension tail error stated.",
+  "endpoint_limits": [
+    "Literal +∞ outside open interval is false for finite support and zero t.",
+    "Infinite nonzero support has endpoint entropy∞; nonzero t interior root finite.",
+    "s=0 treated separately; inverse artanh point may fail ℓ1."
+  ],
+  "reusable_methods": [
+    "Use finite-support supremum to compute infinite-coordinate conjugate.",
+    "Project weak* compact entropy sublevels to get constrained value lsc/attainment.",
+    "Retain endpoint atoms when taking Legendre transform; image of derivative may differ effective domain."
+  ],
+  "unchecked": [
+    "External Fenchel–Moreau/Banach–Alaoglu original proofs not separately read.",
+    "No arbitrary triangular array or centered cube operator connection certified."
+  ],
+  "cube_interface": [
+    "原文结论：Rademacher ℓ1级数的共轭变分方法（字面端点必须修正）。",
+    "已检查推导：有限支撑端点反例、全α约束熵函数的紧子水平集/共轭修复及标量算例。",
+    "迁移推断：若课题参数确为独立对称符号ℓ1加权级数，可使用此熵投影构件。",
+    "待验证：GP-BRANCH/TC-A4/HS变量与独立性、ℓ1及尾比任务的对应。"
+  ],
+  "visual_checks": [
+    "reviews/ROOT/visual/rademacher/p3.png",
+    "reviews/ROOT/visual/rademacher/p5.png",
+    "reviews/ROOT/visual/rademacher/p6.png",
+    "reviews/ROOT/visual/rademacher/p7.png"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 359,
+    "source_lines": 363,
+    "required_content_lines": 259,
+    "covered_content_lines": 259,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-5f8081d7cee04454/paper.md"
+  },
+  "review_source": "reviews/ROOT/evidence/P-5f8081d7cee04454.json",
+  "review_input_sha256": "3824c2bb86ca1ce872306e36a1e11a3829e6e144b5ff77c6638eeeaef1d1932e"
+}

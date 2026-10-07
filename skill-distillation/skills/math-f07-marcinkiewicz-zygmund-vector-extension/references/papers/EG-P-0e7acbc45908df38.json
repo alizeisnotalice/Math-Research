@@ -1,0 +1,125 @@
+{
+  "paper_id": "P-0e7acbc45908df38",
+  "observed_title": "Marcinkiewicz-Zygmund Type Inequality on Arcs of the Circle for Generalized Polynomial",
+  "authors": [
+    "K Kobindarajah（首页署名；作者邮件显示 kiddnan.kobindarajah@algomau.ca）"
+  ],
+  "version": "PDF 首页标作 International Journal of Science and Research, Volume 10 Issue 1, January 2021, Paper ID SR21104231232, DOI 10.21275/SR21104231232；本卡只记录所见版本，未独立核对题录。",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 307,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "F07": "adjacent"
+  },
+  "definitions": [
+    {
+      "term": "广义非负代数多项式与广义次数",
+      "definition": "文中用 P(z)=ω∏(z−z_j)^{r_j}，其中 r_j≥1 可为实数、ω∈C，并把 N=Σr_j 称为广义次数；作者称多项式非负。",
+      "source_ranges": [
+        {
+          "start_line": 123,
+          "end_line": 130,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "局部尺度 ε_N 与节点网格条件",
+      "definition": "ε_N(z) 由端点因子 (z−e^{iα})(z−e^{iβ})、弧长尺度 β−α、N 以及分母 |z+e^{i(α+β)/2}|²+N^{-2} 构成。Theorem 2 假设每个区间 [t_j,t_{j+1}] 的网格宽度不超过 K ε_N(t)，并排除多项式零点落入其定义的禁区 γ。",
+      "source_ranges": [
+        {
+          "start_line": 98,
+          "end_line": 133,
+          "pdf_pages": [
+            2,
+            3
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem 2：圆弧上的广义多项式单侧采样估计",
+      "assumptions": [
+        "p>1，0≤α<β≤2π，分割 α=t_0<t_1<…<t_N=β。",
+        "所有子区间满足 t_{j+1}−t_j≤K ε_N(t)，其中 K 不依赖 j、N、t。",
+        "广义非负代数多项式 P 的广义次数为 N，且其零点满足文中 γ 禁区条件。"
+      ],
+      "statement": "作者声称 Σ_{j=1}^N |P(e^{it_j})|^p (t_j−t_{j−1}) ≤ C∫_α^β |P(e^{it})|^p dt，其中 C 对 α、β、N、P 一致。这个陈述只是一侧离散采样由连续积分控制，不是双侧等价，也不是任意算子的向量值或 ℓ² 扩张。",
+      "start_line": 98,
+      "end_line": 137,
+      "pdf_pages": [
+        2,
+        3
+      ],
+      "proof_steps": [
+        "作者先在每个小区间选取 s，使 |P(s)|^p 达到区间最小值；由微积分基本定理把端点 |P(t_j)|^p 控制为该最小值加 p∫|P|^{p−1}|P′|。乘以区间长度后，用最小值项吸收到区间积分。",
+        "对区间求和并以网格假设把长度因子替换为 K ε_N；再用 Hölder 将误差项控制为 (∫|P|^p)^{(p−1)/p}(∫|P′ ε_N|^p)^{1/p}。",
+        "最后引用作者此前论文中的 Theorem 3（本篇第3页重述）给出的加权 Markov–Bernstein 型估计 ∫|P′ ε_N|^p≤C∫|P|^p，得目标上界。此处只复述并检查本篇所写推理，未独立重证被引用的 Theorem 3。"
+      ],
+      "gaps": [
+        "关键 Theorem 3 明确引用作者 2003 年论文 [6]，本篇不证明其零点避让条件下的 Markov–Bernstein 估计；本卡没有核验该外部引理。",
+        "正文证明的求和下标、分割点下标以及加权长度在若干行间不一致，疑似排印/转换错误；这里只按作者意图概括分区求和，不把错位公式当成已修复证明。",
+        "Theorem 2 对非负广义多项式和特定零点排除区域成立；没有一般线性算子 MZ 结论，也没有任意树/中心立方体结论。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 140,
+          "end_line": 160,
+          "pdf_pages": [
+            3
+          ]
+        },
+        {
+          "start_line": 164,
+          "end_line": 242,
+          "pdf_pages": [
+            3,
+            4
+          ]
+        }
+      ]
+    }
+  ],
+  "constant_dependence": "作者声称采样常数不依赖 α、β、N、P；依赖性经网格常数 K、p 及未在本文证明的 Theorem 3 常数传递。没有给出显式最优依赖式。",
+  "endpoint_limits": [
+    "Theorem 2 要求 p>1，没有 p=1 端点结论。",
+    "对象为圆弧上的特定广义非负代数多项式，且节点网格和零点禁区都受 ε_N 约束。",
+    "结论是采样和由积分控制的单向估计，不提供反向估计或对任意算子的向量值推广。"
+  ],
+  "reusable_methods": [
+    "对每个分割区间取函数模的最小点，再用微积分基本定理和 Hölder 把节点采样化成连续积分与导数误差。",
+    "将网格宽度与局部尺度 ε_N 配对，并以带权 Markov–Bernstein 估计吸收导数项；迁移前必须另证相应零点/边界假设下的导数估计。"
+  ],
+  "unchecked": [
+    "未核验引用文献 [6] 中 Theorem 3 的完整证明及常数依赖。",
+    "未独立消除本篇证明中的下标和排版不一致。",
+    "本文只支持圆弧多项式采样这一邻近构件，不能凭此认定 F07 的私有算子扩张成立。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 301,
+    "source_lines": 307,
+    "required_content_lines": 183,
+    "covered_content_lines": 183,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-0e7acbc45908df38/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-0e7acbc45908df38.json",
+  "review_input_sha256": "ee96c4aa8a038ff920d8382fa5f65a343cb7f52d7cec2cf065478612ebac1551"
+}

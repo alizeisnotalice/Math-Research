@@ -1,0 +1,138 @@
+{
+  "paper_id": "S-d8fd0d0df5e32b05",
+  "observed_title": "The affine subspace concentration inequality for centered convex bodies",
+  "authors": [
+    "K. Eller",
+    "A. Freyer"
+  ],
+  "version": "Acta Mathematica Hungarica 175 (2025), issue 1, pp. 26–36; DOI 10.1007/s10474-025-01508-4; 11 PDF pages. Supplementary downloaded version; bibliographic identity has not been independently checked beyond PDF first page and catalog Crossref record.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 563,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "scope": "entire article: cone-volume preliminaries, all lifting lemmas, affine subspace concentration proof, equality cases, proof details and references"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "K05": "irrelevant to Talagrand convex concentration: the paper proves a convex-geometric inequality for cone-volume measures and affine subspaces of centered convex bodies; it is not a probabilistic concentration inequality for Lipschitz functions under Gaussian or product measure."
+  },
+  "definitions": [
+    {
+      "name": "cone-volume measure",
+      "statement": "For K containing the origin in its interior, VK(ω)=n^(−1)∫_ω hK(u)dSK(u); equivalently it is the volume of the star pyramid over the regular boundary portion whose outer normals lie in ω.",
+      "source_lines": [
+        74,
+        83
+      ],
+      "pdf_pages": [
+        2
+      ]
+    },
+    {
+      "name": "centered convex body",
+      "statement": "A convex body K⊂R^n is centered when its centroid is at the origin; the result also assumes 0 is in its interior so the polar K⋆ and cone-volume measure are defined.",
+      "source_lines": [
+        39,
+        53
+      ],
+      "pdf_pages": [
+        1
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 1.2 (affine subspace concentration for centered convex bodies)",
+      "assumptions": [
+        "K⊂R^n is a centered convex body with the origin in its interior.",
+        "A⊂R^n is any affine subspace."
+      ],
+      "statement": "VK(π(bd(K⋆)∩A)) ≤ ((dim(A)+1)/(n+1)) VK(S^(n−1)). This is a geometric cone-volume inequality, not a tail probability.",
+      "start_line": 175,
+      "end_line": 436,
+      "pdf_pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "proof_steps": [
+        "Lift K successively to centered pyramids K^(j), preserving the relevant cone volume attached to A.",
+        "Map the affine subspace A to linear spaces L^(j) of dimension dim(A)+1 and map polar boundary normals into the corresponding lifted polar boundary.",
+        "Apply the linear subspace concentration inequality in dimension n+j, obtaining factor (dim(A)+1)/(n+j) times vol(K^(j)).",
+        "Use the pyramid volume ratio vol(K^(j))/vol(K)=(n+j+1)/(n+1), and let j→∞ to get the coefficient (dim(A)+1)/(n+1)."
+      ],
+      "gaps": [
+        "It concerns cone-volume measure, polarity, and centered convex geometry; no probability law, Lipschitz function, median, or product-space random vector appears."
+      ]
+    },
+    {
+      "label": "Theorem 4.1 (two equality cases)",
+      "assumptions": [
+        "K is a centered convex body.",
+        "Either A is a singleton, or A is a supporting hyperplane of K⋆ spanned by boundary points of K⋆."
+      ],
+      "statement": "Equality in the corresponding cone-volume concentration inequality is characterized by K being a pyramid with the stated base or apex.",
+      "start_line": 444,
+      "end_line": 505,
+      "pdf_pages": [
+        9,
+        10
+      ],
+      "proof_steps": [
+        "For the singleton case, use concavity of the section function.",
+        "For the supporting-hyperplane case, express the cone-volume fraction as an affine function on K.",
+        "Apply sublevel-volume comparison to the affine function under the uniform distribution on K; equality forces the pyramid structure."
+      ],
+      "gaps": [
+        "Only these two special equality configurations are characterized in the article."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "The coefficient (dim(A)+1)/(n+1) depends on affine-subspace dimension and ambient dimension; no probability-tail constant is present.",
+    "dependence": "The proof obtains the affine factor by a high-dimensional lifting limit of the linear cone-volume inequality."
+  },
+  "endpoint_limits": {
+    "scope": "A result for centered convex bodies with 0 in the interior and polar boundary data; it is not a Talagrand concentration or isoperimetric tail statement.",
+    "equality": "Equality is characterized only in the two special cases in Theorem 4.1."
+  },
+  "reusable_methods": [
+    {
+      "method": "Pyramid lifting reduces an affine-subspace geometric statement to a linear-subspace statement in higher dimension.",
+      "transfer": "Only a geometric proof technique; there is no justified transfer to Gaussian/product concentration without a separate probabilistic formulation."
+    }
+  ],
+  "unchecked": [
+    "All 11 extracted pages were read. Theorem 1.2 on PDF page 4 and the lifted-dimension coefficient limit on PDF page 9 were visually checked against PyMuPDF renders in reviews/HK.",
+    "The geometric proof was followed as written; cited prior linear cone-volume concentration results were not independently re-proved. This paper is preserved as an exclusion record and is not evidence for K05 Talagrand concentration."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 563,
+    "source_lines": 563,
+    "required_content_lines": 395,
+    "covered_content_lines": 395,
+    "reported_status": "full_read",
+    "source": "supplementary/S-d8fd0d0df5e32b05/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/S-d8fd0d0df5e32b05.json",
+  "review_input_sha256": "64cb3c83d335033ba59b9bb8e935268eec27aa4af453f9f5d4c9952e535d29f8"
+}

@@ -1,0 +1,270 @@
+{
+  "paper_id": "P-6c5bcc98b64321b6",
+  "observed_title": "Remarks on Pickands theorem",
+  "authors": [
+    "Zbigniew Michna"
+  ],
+  "version": "arXiv:0904.3832v3, 15 March 2017; 17 physical pages; no separate appendix",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 720,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "scope": "全文，包括全部引理证明、主证明与参考文献；第3/6/7/11/13/16页公式回看PDF。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": [
+    {
+      "code": "K02",
+      "decision": "direct",
+      "reason": "Pickands stationary Gaussian supremum theorem and full double-sum proof"
+    },
+    {
+      "code": "K01",
+      "decision": "adjacent",
+      "reason": "Local excursion/clump separation proof template; not Chan–Lai general non-Gaussian field theorem"
+    }
+  ],
+  "definitions": [
+    "Psi(u)=1−Phi(u)，真实标准正态尾，不是单独leading term。",
+    "0<alpha≤2，chi(t)=sqrt(2)B_(alpha/2)(t)−|t|^alpha，B standard variance at1=1；文中BH采用variance at1=2。",
+    "H(T)=E exp(sup_[0,T] chi)，H_alpha=lim_T H(T)/T。",
+    "固定p>0，block length=u^(−2/alpha)T，N_p=floor(pu^(2/alpha)/T)。"
+  ],
+  "theorem_cards": [
+    {
+      "label": "Gaussian regression; Bonferroni; Theorem1 constant lower bound",
+      "start_line": 72,
+      "end_line": 117,
+      "pdf_pages": [
+        2,
+        3
+      ],
+      "assumptions": [
+        "Regression σ1²>0；σ1=0必须独立处理，不作除零。",
+        "Bonferroni任意有限事件n≥2。",
+        "Lower bound: 0<alpha≤2 and standard Pickands normalization."
+      ],
+      "statement": "X2=(Cov/Var X1)X1+Z，Z independent Gaussian；P(union A_i)≥sum P(A_i)−sum_(i<j)P(A_i∩A_j)。作者给H_alpha≥alpha/[2^(2+2/alpha)Gamma(1/alpha)]。",
+      "proof_steps": [
+        "Regression按Gaussian residual covariance为0推独立。",
+        "Bonferroni归纳分解union，再用union bound交集；有限事件证书可直接核。",
+        "Theorem1无本文展开证明，仅说与[2]相同并改进2倍；已PDF p3核公式。"
+      ],
+      "gaps": [
+        "常数下界证明依赖[2]Debicki/Michna/Rolski2003全文待取；不能称本文已独立证明或最优。"
+      ]
+    },
+    {
+      "label": "Slepian and Borell tools",
+      "start_line": 120,
+      "end_line": 143,
+      "pdf_pages": [
+        3,
+        4
+      ],
+      "assumptions": [
+        "Slepian两Gaussian fields separable，同均值同点方差且rX≤rY。",
+        "Borell中心Gaussian，a.s. bounded，sup可测；σ²>0的公式分支。"
+      ],
+      "statement": "Slepian P(sup X<u)≤P(sup Y<u)；Borell m=E sup X finite，P(sup X>w)≤exp(−(w−m)²/(2σ²)) for w≥m。",
+      "proof_steps": [
+        "Covariance增大降低sup极端尾；应用须先标准化点方差。",
+        "Borell用于固定紧域远距离双和或局部Gaussian残差domination。"
+      ],
+      "gaps": [
+        "标准定理本文不重证，引用Adler–Taylor2007。常数m、σ必须保留参数域/协方差依赖，不仅alpha。"
+      ]
+    },
+    {
+      "label": "Lemma3 local field excursion / conditional tangent process",
+      "start_line": 147,
+      "end_line": 244,
+      "pdf_pages": [
+        4,
+        5,
+        6
+      ],
+      "assumptions": [
+        "连续同质中心二维Gaussian，r(t)=1−|t1|^alpha−|t2|^alpha+o(|t1|^alpha+|t2|^alpha)。",
+        "固定compact T；不能让T随u增长而默认uniform。"
+      ],
+      "statement": "P(sup_(u^−2/alpha T)X>u)~Psi(u) E exp(sup_T chi)。",
+      "proof_steps": [
+        "条件X0=u−w/u，Gaussian regression给mean=−u²(1−r)+w(1−r)、variance=u²(1−r²)。",
+        "增量方差≤3sum|ti−si|^alpha，对固定T支持tightness与tangent fidi convergence。",
+        "积分ew−w²/(2u²) P(sup chi_u>w|X0=...)，需w的可积uniform domination才能交换极限。"
+      ],
+      "gaps": [
+        "原p6称m、σ仅依赖alpha并直接dominated convergence，遗漏固定T依赖和w/uniform控制；不能照抄。",
+        "可修路线：固定T且u大令a=1−r≤1/2；w≥0 mean≤w/2，Gaussian centered residual law不依赖w，增量界提供uniform entropy期望M(T)、variance V(T)；Borell对w/2−M(T)给可积ew tail。负w用概率≤1。此补证仍依赖entropy/Borell一般定理。",
+        "Sup law弱收敛只需在continuity points，积分中a.e. w即可；不能泛称每个w。",
+        "Cor1如允许degenerate rectangle，ceil(0)=0给H({0})≤0但H({0})=1；必须正边长或每个因子max(1,ceil length)。"
+      ]
+    },
+    {
+      "label": "Lemma4 local interval and Lemma5 pair separation",
+      "start_line": 252,
+      "end_line": 291,
+      "pdf_pages": [
+        7
+      ],
+      "assumptions": [
+        "0<alpha≤2，continuous stationary centered unit variance with local covariance expansion。",
+        "Lemma5选择epsilon∈(0,1/2),epsilon^alpha<1/2；在[0,epsilon]两侧covariance bounds；固定T>0,t0>T，u sufficiently large。"
+      ],
+      "statement": "Local P(sup_[0,u^−2/alpha T] X>u)~Psi(u)H(T)；pair probability ≤4ceil(DT)ceil(D(t0+T))exp(−(t0−T)^alpha/8)H([0,1]²)Psi(u)，D=(2sqrt2/sqrt7)^(2/alpha)16^(1/alpha)。",
+      "proof_steps": [
+        "一维由Lemma3降维；H(T)≤ceil(T)H(1) for T>0。",
+        "pair事件包含sum field X(t)+X(s)>2u。"
+      ],
+      "gaps": [
+        "Lemma5的u阈值依赖t0,T和local covariance domain；不是已给出对随u增长t0一致的界。",
+        "不得省掉ceil(D(t0+T))多项式前因子。PDF p7核D和1/8指数。"
+      ]
+    },
+    {
+      "label": "Lemma5 variance normalization and comparison proof",
+      "start_line": 301,
+      "end_line": 452,
+      "pdf_pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "assumptions": [
+        "物理distance≤epsilon；sum variance≥2，t0>T。"
+      ],
+      "statement": "标准化Y*=Y/σ后增量方差≤16(|t−t1|^alpha+|s−s1|^alpha)，用独立exp(−32|Δ|^alpha)过程组成Z进行Slepian比较。",
+      "proof_steps": [
+        "sum variance≤4−u^−2(t0−T)^alpha；提高threshold u*=2u/sqrt(4−u^−2(t0−T)^alpha)。",
+        "Schwarz控制standardization variance changes；comparison covariance Z≤Y*需physical mesh小。",
+        "scale by16^(1/alpha)，local field lemma与rectangle tiling，Gaussian Mills ratio给exp(−gap^alpha/8)。"
+      ],
+      "gaps": [
+        "p10 u0只写(t0−T)/epsilon的阈值，不足以单独保证最大distance u^−2/alpha(t0+T)≤epsilon；应用需更强u threshold。",
+        "fixed t0 local lemma o(1)不能自动给growing t0的uniform o(1)。"
+      ]
+    },
+    {
+      "label": "Theorem4 statement and partition upper bound",
+      "start_line": 458,
+      "end_line": 485,
+      "pdf_pages": [
+        11,
+        12
+      ],
+      "assumptions": [
+        "固定p>0，continuous stationary centered unit variance。",
+        "r(t)=1−|t|^alpha+o(|t|^alpha)，0<alpha≤2；r(t)<1 for all positive t needed at least in fixed interval。"
+      ],
+      "statement": "作者Theorem4: P(sup_[0,p]X>u)~pH_alpha u^(2/alpha)Psi(u)，H_alpha∈(0,∞)。",
+      "proof_steps": [
+        "覆盖[N_p+1]blocks union bound+stationarity+local lemma，limsup ratio≤pH(T)/T for fixedT。",
+        "后续double-sum给liminf，再T→∞，极限顺序是先u再T。"
+      ],
+      "gaps": [
+        "定性o(1)，无统一u error rate、无alpha/dimension/n依赖速率；不可令p/T随u任意变化。"
+      ]
+    },
+    {
+      "label": "Bonferroni lower bound: adjacent/middle/far blocks",
+      "start_line": 486,
+      "end_line": 651,
+      "pdf_pages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "assumptions": [
+        "同Theorem4；先固定T≥p再u→∞；local epsilon与covariance bounds。"
+      ],
+      "statement": "双和分A1相邻、A2中距、A3远距；A1用sqrt(T) boundary strip +gap estimate，A2多项式前因子被exp(−T^alpha/8)吸收，A3固定相关间隙Borell指数压过Np²。",
+      "proof_steps": [
+        "A1/NpPsi≤ceil sqrt(T)H1+polynomial(T)exp(−T^(alpha/2)/8)，再除T消失。",
+        "A2/NpPsi≤C(alpha)ceil(T)²exp(−T^alpha/8)(1+O(T^−alpha))。",
+        "A3方差4−δ、fixed compact supremum mean m(p) finite，ratio→0。"
+      ],
+      "gaps": [
+        "p13 δ=2inf_(s≥epsilon/4)(1−r(s))>0 不由r(s)<1逐点推出；固定p修成2min_(epsilon/4≤s≤p)(1−r(s))>0，continuous on compact。此为已检查修补，非作者原公式。",
+        "反例global gap：r(t)=[cos(2t/sqrt3)+cos(2sqrt2 t/sqrt3)]/2 是finite Gaussian continuous stationary covariance，local1−t²+O(t⁴)，t>0从不等1，但simultaneous rational approximation让r(t)→1于无穷子列。",
+        "A2把Lemma5用于k≤N_epsilon/4(u)增长；原fixed-t0 sufficiently-large-u量词不够，须另给uniform pair estimate/分块比较，尚未完成此一致性补证。"
+      ]
+    },
+    {
+      "label": "Positive finite Pickands constant; fixed-order limit sandwich",
+      "start_line": 657,
+      "end_line": 713,
+      "pdf_pages": [
+        16,
+        17
+      ],
+      "assumptions": [
+        "前面upper/lower bounds及A1/A2/A3 uniform应用有效；fixed T,S再u→∞。"
+      ],
+      "statement": "作者通过limsup/liminf sandwich证明H(T)/T极限有限，跳过邻块的even-block选取证明正性。",
+      "proof_steps": [
+        "上界给H(T)/T控制same normalized excursion limsup。",
+        "下界f(S)=H(S)/S−errors(S)，S→∞ errors消失，夹逼liminf≥limsup。",
+        "even blocks消去A1，H(S)≥H(0)=1且polynomial exp error→0，固定大S使limsup H(T)/T positive。"
+      ],
+      "gaps": [
+        "依赖中距pair uniform问题，本文未独立完成全部证明认证。",
+        "References[1]Borell/Slepian/entropy、[2]lower bound、[6]Piterbarg monograph仍需关键依赖回查。"
+      ]
+    }
+  ],
+  "constant_dependence": "常数至少依赖alpha、固定compact域T或p、local covariance余项/epsilon；无dimension-free statement，无u显式速率。H_alpha取alpha，point variance normalized1。",
+  "endpoint_limits": [
+    "alpha=2在原定理内；alpha0不在范围。",
+    "p固定，u→∞后T→∞，不自动推n→∞或cube family阈值joint regime。",
+    "stationary continuous Gaussian无一般martingale/non-Gaussian replacement。"
+  ],
+  "reusable_methods": [
+    "conditioning at anchor + tangent Gaussian local excursion",
+    "标准化sum field与Slepian分离两个远块",
+    "Bonferroni双和按相邻/中距/远距分预算",
+    "fixed-scale ratio sandwich与skip-neighbor positivity"
+  ],
+  "unchecked": [
+    "中距growing-t0 uniform lemma尚待补证；local domination补路线需一般entropy理论。",
+    "没有证明 centered cube maximal weak(1,1) 常数或GP-BRANCH内部接口。"
+  ],
+  "visual_checks": [
+    "PDF pp3,6,7,11,13,16:下界、domination写法、pair常数、主定理、global inf域、positivity sandwich。"
+  ],
+  "proof_verified": false,
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 716,
+    "source_lines": 720,
+    "required_content_lines": 531,
+    "covered_content_lines": 531,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-6c5bcc98b64321b6/paper.md"
+  },
+  "review_source": "reviews/ROOT/evidence/P-6c5bcc98b64321b6.json",
+  "review_input_sha256": "55e4cdc999085701b9909b0635a799209b93511619ddff572bc081783a2fa9fd"
+}

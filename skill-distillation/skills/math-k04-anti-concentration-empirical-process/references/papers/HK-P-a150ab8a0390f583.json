@@ -1,0 +1,532 @@
+{
+  "paper_id": "P-a150ab8a0390f583",
+  "observed_title": "Empirical Process Sampled Along a Stationary Process",
+  "authors": [
+    "Guy Cohen",
+    "Jean-Pierre Conze"
+  ],
+  "version": "arXiv:2301.11576v1, dated 2023-01-30; 42 PDF pages.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1855,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "scope": "Full article read: title/abstract, Sections 1–4, every displayed proof and example, and references (42 PDF pages). Key formulas and theorem statements visually checked on pp.7–15, 17–21, 24–27, 29–36, 38 and 40."
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "K04": "adjacent. The paper studies empirical CDF/processes sampled along deterministic sequences and ergodic cocycles, proving qualitative Glivenko–Cantelli and weak FCLT results under local-time/self-intersection conditions. It supplies a useful condition-checking and limit-process component, but has no anti-concentration inequality for a supremum and no quantitative Gaussian coupling error. Weak convergence alone does not imply a high-threshold tail approximation or a small-interval probability bound."
+  },
+  "definitions": [
+    {
+      "name": "Sampled empirical process and occupation counts",
+      "statement": "For a sequence z_0,…,z_{n−1} in Z^d, N_n(ℓ)=#{0≤k<n:z_k=ℓ}, M_n=max_ℓ N_n(ℓ), and V_n=Σ_ℓN_n(ℓ)^2=#{(j,k):z_j=z_k}. For a random field X_ℓ with common cdf F, W_n(s)=Σ_{k<n}(1{X_{z_k}≤s}−F(s)). Thus V_n measures self-intersections and M_n the largest multiplicity.",
+      "source_ranges": [
+        {
+          "start_line": 59,
+          "end_line": 150,
+          "pdf_pages": [
+            2,
+            3
+          ],
+          "scope": "PDF pp.2–3: empirical-process setup, N_n, M_n, V_n and identities."
+        }
+      ]
+    },
+    {
+      "name": "Cocycle and cylinder map",
+      "statement": "For ergodic (X,B,µ,T) and f:X→Z^d, f_k(x)=Σ_{j<k}f(T^jx). The occupation N_n(x,ℓ), M_n(x), V_n(x) are defined from the first n cocycle positions. The cylinder map is T̃_f(x,ℓ)=(Tx,ℓ+f(x)); its orbit sums of 1_{X×{0}} recover N_n(x,ℓ).",
+      "source_ranges": [
+        {
+          "start_line": 668,
+          "end_line": 707,
+          "pdf_pages": [
+            16
+          ],
+          "scope": "PDF p.16: definitions and occupation-count interpretation."
+        }
+      ]
+    },
+    {
+      "name": "Empirical-process variance kernel",
+      "statement": "K_n(t)=|Σ_{k<n}e^{2πi⟨z_k,t⟩}|²=|Σ_ℓN_n(ℓ)e^{2πi⟨ℓ,t⟩}|². For stationary centered fields with absolutely summable correlations and spectral density ρ, E|Σ_{k<n}X_{z_k}|²=∫_{T^d}K_n(t)ρ(t)dt≤||ρ||_∞V_n.",
+      "source_ranges": [
+        {
+          "start_line": 535,
+          "end_line": 566,
+          "pdf_pages": [
+            13
+          ],
+          "scope": "PDF p.13, equation (17) and covariance-kernel bound."
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Propositions 1.2 and 1.4 (pointwise bounds for sampled sums)",
+      "assumptions": [
+        "For Proposition 1.2, the field U_ℓ is centered and uniformly bounded; V_n≤C_1 n²/(log n)^β.",
+        "For Proposition 1.2, either the uniform absolute covariance sum is finite and β>1, or the field is stationary, Σ_ℓ|⟨U_ℓ,U_0⟩|^ζ<∞ for ζ∈[1,2], and β>ζ.",
+        "For Proposition 1.4(1), U_ℓ are iid, centered, uniformly bounded by K, with E|U_0|²=1; for (2), they are stationary centered associated variables; the sharper second part assumes summable correlations."
+      ],
+      "statement": "Proposition 1.2 gives S_n/n→0 almost surely under either covariance/local-time regime. Proposition 1.4(1) gives limsup_n |S_n|/[√(V_n·2loglog n)]≤K a.s., hence S_n/n→0 if V_n=o(n²/loglog n). In the associated case, with σ_n²=E|S_n|², limsup |S_n|/[σ_n(logσ_n)^(1/2+ε)]≤1; if correlations are summable then |S_n|=O(√V_n(log n)^(1/2+ε)) a.s.",
+      "start_line": 218,
+      "end_line": 319,
+      "pdf_pages": [
+        5,
+        6,
+        7
+      ],
+      "proof_steps": [
+        "For Proposition 1.2, bound the second moment by V_n times the covariance sum, use a geometric subsequence and Borel–Cantelli, then fill gaps using bounded increments. In the stationary ζ<2 branch, split the spectral density at a cutoff M_n and balance the two terms.",
+        "For iid variables, apply Hoeffding to the independent weighted variables N_n(ℓ)U_ℓ; for associated variables, use Newman–Wright’s maximal inequality and a subsequence in σ_n."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 235,
+          "end_line": 302,
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "scope": "Proof of Proposition 1.2, including the spectral split and subsequence step."
+        },
+        {
+          "start_line": 320,
+          "end_line": 417,
+          "pdf_pages": [
+            8,
+            9,
+            10
+          ],
+          "scope": "Proof of Proposition 1.4: associated maximal inequality and iid Hoeffding/Borel–Cantelli branches."
+        }
+      ],
+      "gaps": [
+        "The Newman–Wright maximal inequality and Hoeffding inputs are cited, not proved here. The constant K in the iid LIL-type bound is the uniform envelope and is not dimension/entropy information for a supremum over functions."
+      ]
+    },
+    {
+      "label": "Theorems 1.5–1.8 (Glivenko–Cantelli along a sampled sequence)",
+      "assumptions": [
+        "Let V_n≤C_1 n²/(log n)^β. The stationary field mixing coefficient is γ(ℓ) as defined in (14).",
+        "For Theorem 1.6(a), the field is iid and V_n=o(n²/loglog n). For (b), it is strictly stationary and associated, has summable covariances, and V_n=O(n²(log n)^(−1−η)) for some η>0.",
+        "For Proposition 1.7/Theorem 1.8, the field is centered, strictly stationary, and pairwise-PQD with summable covariance; sampling has maximal local time M_n and satisfies Σ_n M_n/n²<∞."
+      ],
+      "statement": "Theorem 1.5 yields a sampled Glivenko–Cantelli theorem if Σ_ℓγ(ℓ)<∞ and β>1, or if the field is stationary, Σ_ℓγ(ℓ)^ζ<∞ for ζ∈[1,2], and β>ζ. Theorem 1.6 gives the iid and associated sufficient conditions above. Under the stated PQD conditions, Proposition 1.7 gives a.s. convergence of centered sums/n; Theorem 1.8 gives pointwise empirical-cdf convergence at continuity points, uniform in s if F is continuous.",
+      "start_line": 438,
+      "end_line": 532,
+      "pdf_pages": [
+        10,
+        11,
+        12
+      ],
+      "proof_steps": [
+        "The mixing branch bounds indicator covariances by γ(ℓ) and invokes Proposition 1.2. The iid branch uses Proposition 1.4 and a countable dense set of continuity points plus jump control. For associated fields, smoothed step functions and Hoeffding’s covariance identity transfer the pointwise bound to indicators. The PQD branch uses a cited strong law and the local-time summability condition.",
+        "The dense-set argument is converted to uniform convergence using Lemma 1.1; continuity of F is required for the stated uniform-in-s conclusion in the associated/PQD cases."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 435,
+          "end_line": 488,
+          "pdf_pages": [
+            10,
+            11
+          ],
+          "scope": "Theorem 1.5–1.6 statements and proof of Theorem 1.6(a,b), PDF pp.10–11."
+        },
+        {
+          "start_line": 491,
+          "end_line": 532,
+          "pdf_pages": [
+            12
+          ],
+          "scope": "Proposition 1.7, Theorem 1.8, and associated/PQD smoothing arguments, PDF p.12."
+        }
+      ],
+      "gaps": [
+        "The proof imports Lemma 1.1, Hoeffding’s covariance identity, and a PQD strong law from cited sources. These are not quantitative rates for the empirical cdf."
+      ]
+    },
+    {
+      "label": "Theorem 1.9 (iid sampled empirical-process FCLT)",
+      "assumptions": [
+        "The field (X_ℓ)_{ℓ∈Z^d} is iid with common cdf F supported on [0,1]; z_k is a deterministic sequence with occupation counts N_n and self-intersection count V_n.",
+        "The maximal multiplicity condition is M_n²/V_n→0."
+      ],
+      "statement": "With Y_n(s)=V_n^(−1/2)Σ_{k<n}(1{X_{z_k}≤s}−F(s))=V_n^(−1/2)Σ_ℓN_n(ℓ)(1{X_ℓ≤s}−F(s)), one has Y_n⇒W^0∘F in D[0,1], where W^0 is a standard Brownian bridge.",
+      "start_line": 567,
+      "end_line": 576,
+      "pdf_pages": [
+        13
+      ],
+      "proof_steps": [
+        "Use Cramér–Wold and Lindeberg for finite-dimensional convergence; the maximal-weight condition is max_ℓN_n(ℓ)/√V_n→0. Covariances match F(s∧t)−F(s)F(t).",
+        "For continuous F, prove tightness via a uniform fourth-moment bound on two adjacent increments, expanding into same-site and distinct-site terms and bounding each by the squared F-mass of the combined interval.",
+        "For general F, pass through a generalized inverse from the uniform empirical process; no quantitative rate is obtained."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 577,
+          "end_line": 619,
+          "pdf_pages": [
+            14
+          ],
+          "scope": "Finite-dimensional Lindeberg proof and covariance calculation, PDF p.14."
+        },
+        {
+          "start_line": 622,
+          "end_line": 665,
+          "pdf_pages": [
+            15
+          ],
+          "scope": "Tightness and generalized-inverse argument, PDF p.15."
+        }
+      ],
+      "gaps": [
+        "The conclusion is weak convergence only; it supplies neither a Gaussian approximation error nor an anti-concentration bound for sup_s Y_n(s). Tightness cites Billingsley."
+      ]
+    },
+    {
+      "label": "Lemmas 2.2–2.3 (range, multiplicity and self-intersection identities)",
+      "assumptions": [
+        "z_k is any sequence in Z^d; in the cocycle specialization, f_k(x)=Σ_{j<k}f(T^jx)."
+      ],
+      "statement": "For nonempty A⊂Z^d, V_n≥(Σ_{k<n}1_{z_k∈A})²/|A|, hence for a cocycle V_n(x)≥n²/|R_n(x)|. The cocycle identities give V_n=n+2Σ_{k=1}^{n−1}Σ_{j=0}^{n−k−1}1_{f_k(T^jx)=0} and M_n(x)≤1+max_{0≤k<n}N_n(T^kx,0), plus one-step recursions for V_n and M_n.",
+      "start_line": 729,
+      "end_line": 788,
+      "pdf_pages": [
+        17,
+        18
+      ],
+      "proof_steps": [
+        "Apply Cauchy–Schwarz to the number of visits in A and the counts at each site.",
+        "Use the cocycle identity f_k(x)=f(x)+f_{k−1}(Tx) to derive the occupation recursion; sum squared counts for V_n and start at a maximally visited site for the bound on M_n."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 729,
+          "end_line": 788,
+          "pdf_pages": [
+            17,
+            18
+          ],
+          "scope": "Statements and full proofs of Lemmas 2.2–2.3, PDF pp.17–18."
+        }
+      ],
+      "gaps": [
+        "These are deterministic/cocycle occupancy facts; no empirical-process tail estimate follows without additional assumptions."
+      ]
+    },
+    {
+      "label": "Propositions 2.6–2.7 (coboundary dichotomy for V_n/n²)",
+      "assumptions": [
+        "T is ergodic and f:X→Z^d is an integrable cocycle."
+      ],
+      "statement": "If f is a coboundary, then lim_n V_n(x)/n²=β>0 a.e. and liminf M_n(x)/n>0. In general a constant β≥0 exists with V_n(x)/n²→β a.e.; β>0 if and only if (T,f) is a coboundary. Thus a non-coboundary cocycle has V_n/n²→0 a.e.",
+      "start_line": 820,
+      "end_line": 910,
+      "pdf_pages": [
+        19,
+        20,
+        21
+      ],
+      "proof_steps": [
+        "In the coboundary case f=TΦ−Φ, reduce occupation counts to Birkhoff averages of level sets Φ=ℓ and exhaust Z^d by finite balls.",
+        "In the non-coboundary case, express V_n/n² through return counts to zero for the cylinder map; use the infinite-measure ergodic theorem, tail maximal functions and the classical maximal inequality to show the normalized collision term vanishes. Lemma 2.5 and ergodicity yield an a.s. constant limit."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 827,
+          "end_line": 865,
+          "pdf_pages": [
+            20
+          ],
+          "scope": "Proof of Proposition 2.6, PDF p.20."
+        },
+        {
+          "start_line": 868,
+          "end_line": 910,
+          "pdf_pages": [
+            21
+          ],
+          "scope": "Proof of Proposition 2.7, PDF p.21."
+        }
+      ],
+      "gaps": [
+        "The identification that the invariant cylinder-map density is zero for a non-coboundary cocycle cites Conze [12], not reproved in this paper."
+      ]
+    },
+    {
+      "label": "Proposition 3.2 (positive asymptotic variance profile for transient walks)",
+      "assumptions": [
+        "Z is a transient, aperiodic, non-deterministic random walk on Z^d. For the variance conclusion, ρ is a nonzero continuous nonnegative spectral density of a stationary centered random field with absolutely summable correlations."
+      ],
+      "statement": "With Ψ(t)=E exp(2πi⟨ζ_0,t⟩) and Φ(t)=(1−|Ψ(t)|²)/|1−Ψ(t)|² away from 0 (Φ(0)=0), there is M≥0 such that the Fourier coefficients of n^(−1)K_n converge to those of Φ+Mδ_0. Consequently, the normalized variance ∫_{T^d}n^(−1)K_n(t)ρ(t)dt has a strictly positive limit.",
+      "start_line": 1267,
+      "end_line": 1274,
+      "pdf_pages": [
+        29
+      ],
+      "proof_steps": [
+        "For each lattice point ℓ, transience gives a finite Green-function sum I(ℓ)=1_{ℓ=0}+Σ_{k≥1}[P(Z_k=ℓ)+P(Z_k=−ℓ)]. The ergodic averaging lemma identifies these as limits of the Fourier coefficients of n^(−1)K_n.",
+        "Introduce the Abel-regularized profile Φ_λ=(1−λ²|Ψ|²)/|1−λΨ|². Let λ↑1; Fatou at ℓ=0 gives Φ∈L¹ and a possible nonnegative residual mass M at the origin. Aperiodicity bounds Φ_λ off a neighborhood of 0; near 0, positivity and cos(2π⟨ℓ,t⟩)≈1 identify the same residual mass for each Fourier coefficient.",
+        "The nonnegative kernels have bounded L¹ norm, so coefficient convergence yields convergence against continuous ρ and the limit ∫Φρ+Mρ(0)>0. The paper notes that M=0 for d>1 as an external result from Spitzer, not as part of this proof."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1275,
+          "end_line": 1311,
+          "pdf_pages": [
+            30
+          ],
+          "scope": "Proof setup: Green-function coefficients and Abel-regularized identity, PDF p.29–30."
+        },
+        {
+          "start_line": 1314,
+          "end_line": 1333,
+          "pdf_pages": [
+            31
+          ],
+          "scope": "Control near t=0 and positive limiting variance profile, PDF p.31."
+        }
+      ],
+      "gaps": [
+        "The statement is a variance/covariance result for transient random-walk sampling, not a supremum anti-concentration result. The claim M=0 for d>1 is cited from [28] and not proved in this article."
+      ]
+    },
+    {
+      "label": "Lemma 3.3 and Lemma 3.4 (local-time bounds from LLT / finite-coordinate dependence)",
+      "assumptions": [
+        "Lemma 3.3 assumes a local limit theorem for a two-dimensional cocycle.",
+        "Lemma 3.4 assumes a Bernoulli scheme over a finite alphabet and a centered Z^d-valued function depending on finitely many coordinates."
+      ],
+      "statement": "Under the d=2 LLT, for every ε>0 there is integrable C(x) with N_n(x,0)≤C(x)(log n)^(2+ε) and V_n(x)≤C(x)n(log n)^(2+ε). In the finite-coordinate Bernoulli setting, the integrated mth local-time moments satisfy ∫N_n(·,ℓ)^m dµ≤C_m n^(m/2) for d=1 and ≤C′_m(log n)^m for d=2, with constants independent of ℓ.",
+      "start_line": 1390,
+      "end_line": 1488,
+      "pdf_pages": [
+        32,
+        33,
+        34
+      ],
+      "proof_steps": [
+        "For Lemma 3.3, sum the LLT return-probability bounds to obtain an integrable weighted square series, then use dyadic interpolation for N_n and the occupation identity for V_n.",
+        "For Lemma 3.4, expand the mth moment over ordered visit times; finite coordinate dependence leaves separated blocks independent. Bound the resulting convolution by powers of the maximal point probability and invoke the random-walk LLT estimates."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1405,
+          "end_line": 1447,
+          "pdf_pages": [
+            33
+          ],
+          "scope": "Proof of Lemma 3.3, PDF p.33."
+        },
+        {
+          "start_line": 1450,
+          "end_line": 1488,
+          "pdf_pages": [
+            34
+          ],
+          "scope": "Proof of Lemma 3.4, PDF p.34."
+        }
+      ],
+      "gaps": [
+        "The LLT premise and the convolution/point-probability estimates are imported from cited random-walk or dynamical-system literature; the article does not establish a general LLT."
+      ]
+    },
+    {
+      "label": "Lemma 3.5 and Example 3.6 (a rotation sequence satisfying the FCLT criterion)",
+      "assumptions": [
+        "For Lemma 3.5, z_1,…,z_n are real-valued and σ_n²=n^(−1)Σ_k(z_k−m_n)² with m_n=n^(−1)Σ_k z_k.",
+        "Example 3.6 assumes an irrational rotation α with bounded partial quotients and f=1_[0,1/2)−1_[1/2,1), with the cited occupation estimate (50)."
+      ],
+      "statement": "If σ_n>1, V_n≥9n²/(80σ_n). For the stated bounded-variation rotation cocycle, an external cited estimate gives sup_x N_n(x,0)≲n/√log n; the paper then derives M_n(x)≲n/√log n and V_n(x)≲n²/√log n, while the variance-based lower bound gives matching orders up to constants. Consequently M_n²/V_n≲1/√log n→0, so Theorem 1.9 applies; Theorem 1.6(a) also gives sampled Glivenko–Cantelli for iid field values.",
+      "start_line": 1520,
+      "end_line": 1591,
+      "pdf_pages": [
+        35,
+        36
+      ],
+      "proof_steps": [
+        "For Lemma 3.5, Chebyshev’s inequality shows at least a fixed fraction of z_k lies in an interval of length O(σ_n); apply the range/occupation Cauchy–Schwarz bound.",
+        "In Example 3.6, combine the rotation local-time estimate with M_n≤1+max_kN_n(T^kx,0), V_n≤nM_n, and the variance lower bound to verify the strict ratio condition."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1520,
+          "end_line": 1541,
+          "pdf_pages": [
+            35
+          ],
+          "scope": "Statement/proof of Lemma 3.5, PDF p.35."
+        },
+        {
+          "start_line": 1544,
+          "end_line": 1591,
+          "pdf_pages": [
+            36
+          ],
+          "scope": "The rotation estimates and Example 3.6 conclusion, PDF p.36."
+        }
+      ],
+      "gaps": [
+        "The key upper bound (50) is attributed to Aaronson–Bromberg–Nakada [1]; this paper only explains how to upgrade essential-supremum to uniform supremum. The criterion is for this special rotation/cocycle, not arbitrary sampling paths."
+      ]
+    },
+    {
+      "label": "Proposition 4.1 and Lemma 4.2 (ergodic skew-product route to sampled GC)",
+      "assumptions": [
+        "T is an ergodic probability-preserving map, f:X→Z^d a cocycle, and θ a measure-preserving Z^d-action on (Ω,P); ϕ∈L¹(µ×P).",
+        "For the ordinary-distribution centering, additionally require the skew product T_{θ,f} to be ergodic. The sufficient criterion in Lemma 4.2 assumes the cocycle is recurrent, the cylinder map is ergodic, and the θ-action is ergodic."
+      ],
+      "statement": "The ergodic theorem for T_{θ,f}(x,ω)=(Tx,θ_{f(x)}ω), followed by the cited Tucker uniformization and Fubini, gives for µ-a.e. x a P-a.s. Glivenko–Cantelli convergence to the conditional expectation over T_{θ,f}-invariant sets. If T_{θ,f} is ergodic, the centering reduces to F(s)=µ×P{ϕ≤s}. Under Lemma 4.2’s conditions, T_{θ,f} is ergodic.",
+      "start_line": 1658,
+      "end_line": 1728,
+      "pdf_pages": [
+        38,
+        39
+      ],
+      "proof_steps": [
+        "Apply the pointwise ergodic theorem for each half-line indicator; invoke Tucker’s result to make convergence uniform in s, then use Fubini to obtain the sampled statement for almost every x.",
+        "For Lemma 4.2, lift a T_{θ,f}-invariant function to X×Z^d along the θ-action; cylinder-map ergodicity makes it constant in (x,ℓ), and θ-ergodicity forces the remaining function to be constant."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1641,
+          "end_line": 1681,
+          "pdf_pages": [
+            38
+          ],
+          "scope": "Skew-product ergodic theorem, Proposition 4.1 and statement, PDF p.38."
+        },
+        {
+          "start_line": 1684,
+          "end_line": 1728,
+          "pdf_pages": [
+            39
+          ],
+          "scope": "Proof of Lemma 4.2, PDF p.39."
+        }
+      ],
+      "gaps": [
+        "Uniformization is cited to Tucker [29]. The route is qualitative and requires ergodicity of the specific skew product for ordinary centering; it is not a coupling or anti-concentration argument."
+      ]
+    },
+    {
+      "label": "Proposition 4.3 (bounded-growth universal averaging for Lebesgue spectrum)",
+      "assumptions": [
+        "z_k is a strictly increasing sequence of positive integers satisfying z_k≤Ck, and the dynamical system has Lebesgue spectrum."
+      ],
+      "statement": "Then z_k is pointwise good for the class of Lebesgue-spectrum systems: for every ϕ∈L¹(P), n^(−1)Σ_{k<n}ϕ∘θ_{z_k} converges almost surely.",
+      "start_line": 1747,
+      "end_line": 1773,
+      "pdf_pages": [
+        40
+      ],
+      "proof_steps": [
+        "Use the SLLN for orthogonal variables on a dense subspace of L², then density in L¹ and closure of the convergence class under the ergodic maximal lemma using z_k≤Ck."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1747,
+          "end_line": 1773,
+          "pdf_pages": [
+            40
+          ],
+          "scope": "Statement and proof of Proposition 4.3, PDF p.40."
+        }
+      ],
+      "gaps": [
+        "This is a class-specific universal averaging statement, not a result about anti-concentration or a Gaussian empirical-process supremum."
+      ]
+    }
+  ],
+  "constant_dependence": [
+    "Proposition 1.2 constants depend on the uniform covariance-sum/spectral-density bounds and sequence constant C_1; the cutoff and logarithmic exponent depend on ζ,β.",
+    "Proposition 1.4 constants depend on the uniform bound K, variance normalization, covariance sum, and ε; these are pointwise sum bounds, not entropy constants.",
+    "Theorem 1.9 states convergence under M_n²/V_n→0 and supplies no rate or coupling constant.",
+    "Theorem 1.5–1.8 conditions retain their displayed C_1, β, ζ, η and covariance/mixing sums; they do not give an anti-concentration constant.",
+    "Lemma 3.3 constants depend on ε and are integrable random variables; Lemma 3.4 constants depend on m and finite-coordinate support; rotation constants depend on α and f."
+  ],
+  "endpoint_limits": [
+    "Theorem 1.9 is iid in the spatial field and uses the strict asymptotic condition M_n²/V_n→0; no rate is asserted. General F is handled by a generalized inverse, and the limit is W⁰∘F.",
+    "Uniform-in-s GC is stated when F is continuous; for discontinuous cdf, the theorem provides convergence at continuity points and explicitly handles the countable jump set.",
+    "Association and pairwise-PQD are distinct dependence assumptions: the PQD route has the stronger local-time summability Σ M_n/n²<∞.",
+    "For cocycles, V_n/n² has positive limit exactly in the coboundary case. A non-coboundary cocycle only forces that ratio to zero, not the stronger M_n²/V_n→0 FCLT condition.",
+    "Rotation example 3.6 is a special bounded-partial-quotient, bounded-variation construction; its local-time upper bound does not apply to general centered cocycles or arbitrary stationary fields.",
+    "The paper explicitly constructs transient and recurrent cocycle counterexamples to show M_n²/V_n→0 need not hold automatically."
+  ],
+  "reusable_methods": [
+    "Reduce a sampled empirical process to weighted iid summands with weights N_n(ℓ); the exact variance is V_n times the Brownian-bridge covariance, and max-weight/√V_n controls Lindeberg.",
+    "Use the occupation triple (N_n,M_n,V_n) to separate maximal multiplicity from total self-intersection; apply V_n≥n²/|range| and M_n≤1+max shifted return count.",
+    "For dependence classes, smooth half-line indicators, use covariance identities to transfer pointwise sum bounds, and then pass from a countable dense set plus jumps to uniform cdf convergence.",
+    "Use the Fourier kernel K_n and spectral density to calculate variances for stationary fields; in transient random walks, the Abel-regularized characteristic-function kernel identifies a limiting nonnegative spectral profile.",
+    "Use induced maps and roof functions over rotations to construct examples where local-time ratios fail or hold, illustrating that transience/recurrence alone does not settle the FCLT criterion.",
+    "Use skew products to turn a pointwise ergodic theorem into a sampled Glivenko–Cantelli statement, while retaining conditional centering unless the skew product is ergodic."
+  ],
+  "unchecked": [
+    "External inputs were not independently read/proved here: Newman–Wright maximal inequality [27], Hoeffding covariance identity [2], Birkel PQD strong law [4], Chung uniformization Lemma 1.1 [7], Billingsley tightness/inverse arguments [3], Tucker uniform GC theorem [29], and general range/cylinder-map results [14],[12].",
+    "The local-limit bounds for Bernoulli/Markov cocycles and the occupation estimates cited in Section 3 ([18],[19],[11]) are not independently verified.",
+    "The bounded-variation rotation estimate (50) is imported from Aaronson–Bromberg–Nakada [1]; only the stated upgrade from essential to uniform supremum is shown here.",
+    "Random-walk maximum/local-time asymptotics cited from Erdős–Taylor, Kesten, and Dembo–Peres–Rosen–Zeitouni [15],[16],[22] are survey inputs and are not proved in this article.",
+    "The source is fully read, but reading is not an independent proof audit; no result here yields the K04 anti-concentration or quantitative Gaussian-coupling step."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1855,
+    "source_lines": 1855,
+    "required_content_lines": 1372,
+    "covered_content_lines": 1372,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-a150ab8a0390f583/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-a150ab8a0390f583.json",
+  "review_input_sha256": "6d83b494d8411a55393373cc0c73274256f09bb226530dedfe746d9d2c6466d8"
+}

@@ -1,0 +1,139 @@
+{
+  "paper_id": "P-98c6f7a595622878",
+  "observed_title": "Fractional harmonic measure in minimum Riesz energy problems with external fields",
+  "authors": [
+    "Natalia Zorii"
+  ],
+  "version": "Local 24-page manuscript; source text states the Riesz variational problem and theorems, publication metadata not independently checked.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1302,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "scope": "逐页阅读全文及参考文献，PDF p.1–24 / paper.md L1–1302；证明链、附录（若有）均纳入阅读。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "legacy-iterated-compensating-measure": "direct only for the article’s own Riesz external-field minimization and threshold; adjacent as a warning that existence is conditional, with no interface matching the private iterated-compensator notation."
+  },
+  "definitions": [
+    {
+      "name": "Inner α-harmonic sweep",
+      "statement": "ε_z^A=(ε_z)_A is the inner α-Riesz sweep; H_z:=1/ε_z^A(R^n)≥1. Depending on thinness at infinity, H_z=1 or 1/U_{γ_A}(z) in the extended equilibrium-measure sense."
+    },
+    {
+      "name": "External field",
+      "statement": "f_{q,z}(y)=−q|y−z|^(α−n); the admissible class consists of probability measures on A with finite energy under the paper’s assumptions."
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 2.1: existence threshold for the Gauss minimizer",
+      "assumptions": [
+        "Riesz kernel κα(x,y)=|x−y|^(α−n), n≥2, 0<α≤2, α<n; the paper’s standing Q and energy setup.",
+        "Closedness condition (P) on the cone of positive finite-energy measures on A; z∈A_u∪A^c; external field f_{q,z}=−q|·−z|^(α−n)."
+      ],
+      "statement": "The minimizer λ_{A,f_{q,z}} exists iff c*(A)<∞ or q≥H_z, where H_z=1/ε_z^A(R^n) from the inner α-harmonic sweep. If c*(A)=∞, the solvable q set is [H_z,∞); if finite, it is all positive q.",
+      "start_line": 188,
+      "end_line": 203,
+      "pdf_pages": [
+        4
+      ],
+      "proof_steps": [
+        "For finite outer capacity, strong completeness of the admissible cone ensures the extremal measure has unit mass, so it is the minimizer.",
+        "At q=H_z, H_z ε_z^A has unit mass and attains the infimum.",
+        "For q>H_z, compare the extremal potential with qU_{ε_z^A}; positivity of mass rules out a nonnegative weighted constant, forcing extremal mass 1.",
+        "For c*(A)=∞ and q<H_z, choose small-energy measures escaping to infinity, perturb qε_z^A by them to construct a minimizing net whose vague limit has mass q/H_z<1; hence the extremal measure is not a probability minimizer."
+      ],
+      "gaps": [
+        "Uses prior potential-theoretic results: strong completeness, positivity of mass, balayage identities, and extremal-measure lemmas are cited from the paper’s reference framework.",
+        "The theorem is not a general theorem about “compensating measures”; its conclusion belongs to this Riesz variational problem."
+      ]
+    },
+    {
+      "label": "Theorem 2.10: alternative representations and support behavior of the minimizer",
+      "assumptions": [
+        "Theorem 2.10 standing hypotheses, including (P), z∈A_u∪A^c, α-Riesz energy setup, and a regime in which Theorem 2.1 gives existence.",
+        "For subthreshold q<H_z the finite-capacity branch c*(A)<∞ is necessary."
+      ],
+      "statement": "At q=H_z the minimizer is H_z ε_z^A. At q<H_z with finite capacity, it is qε_z^A + ((H_z−q)/(H_z c*(A)))γ_A, with the paper’s inner equilibrium measure γ_A. The proof obtains the representation via weighted equilibrium and balayage identities; support conclusions are stated separately in Theorem 2.12.",
+      "start_line": 278,
+      "end_line": 345,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "proof_steps": [
+        "At threshold, invoke Theorem 2.1’s formula and the weighted equilibrium characterization to identify the unique minimizer.",
+        "Below threshold with finite capacity, define δ=qε_z^A+Lγ_A, L=(H_z−q)/(H_zc*(A)); its mass is one and potential is constant on A quasi-everywhere.",
+        "Compare with the variational characterization to identify δ as λ and its weighted constant.",
+        "Represent λ as a sweep of qε_z+cγ_A using idempotence/linearity properties of sweep.",
+        "The no-compensation observation in Remark 2.2 follows only for closed A, z∈A_u, and solvable q; it says the variational infimum is attained, not that the added measure is useless."
+      ],
+      "gaps": [
+        "Potential identities and uniqueness are supported by cited Theorem 3.3/3.6 and balayage results; the article invokes these rather than reproving all foundations.",
+        "Support compactness/noncompactness is in Theorem 2.12, not a consequence of the mass-threshold statement alone."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "The threshold is H_z=1/ε_z^A(R^n); subthreshold representation uses L=(H_z−q)/(H_z c*(A)). No concentration inequality is asserted."
+  },
+  "endpoint_limits": {
+    "existence": "Theorem 2.1 requires (P) and z∈A_u∪A^c; finite capacity makes every q>0 solvable, infinite capacity yields q≥H_z.",
+    "compensation": "No-compensation remark is restricted to closed A and z∈A_u in the solvable regime; it is not a general claim for signed measures.",
+    "capacity": "If q<H_z and c*(A)=∞, the solution does not exist."
+  },
+  "reusable_methods": [
+    {
+      "method": "Threshold a variational existence question by the mass of an inner sweep",
+      "transfer": "Requires the same Riesz kernel, conductor-supported energy class, and sweep/potential theory; it cannot be transferred to arbitrary jump compensation."
+    },
+    {
+      "method": "Use escaping finite-energy perturbations to test whether a minimizing net has unit mass",
+      "transfer": "Requires an escape-to-infinity sequence with vanishing energy and control of vague limits."
+    }
+  ],
+  "unchecked": [
+    "Complete 24-page paper read; theorem statements and key proof pages 4, 17–21 visually checked.",
+    "Classical balayage, equilibrium and positivity-of-mass inputs are cited and not independently re-proved."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1302,
+    "source_lines": 1302,
+    "required_content_lines": 979,
+    "covered_content_lines": 979,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-98c6f7a595622878/paper.md"
+  },
+  "review_source": "evidence/reviews/HK/evidence/P-98c6f7a595622878.json",
+  "review_input_sha256": "3a531ee958fe8be15bc6e442093b9d373f3e4a55fa5d1d9994c7ce08dc0741d7"
+}

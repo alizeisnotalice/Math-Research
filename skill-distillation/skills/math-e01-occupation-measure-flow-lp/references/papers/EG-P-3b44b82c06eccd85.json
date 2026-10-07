@@ -1,0 +1,322 @@
+{
+  "paper_id": "P-3b44b82c06eccd85",
+  "observed_title": "Stochastic Optimal Control via Local Occupation Measures",
+  "authors": [
+    "Flemming Holtorf",
+    "Alan Edelman",
+    "Christopher Rackauckas"
+  ],
+  "version": "PDF 首页视觉核对为 arXiv:2211.15652v3；文内日期 January 20, 2025。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 1381,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "E01": "direct"
+  },
+  "definitions": [
+    {
+      "term": "扩散控制的终端测度与期望状态—控制占用测度",
+      "definition": "对轨迹过程，ν(B)=P(x_T∈B) 是终端状态概率测度；ξ(B_T×B_X×B_U)=E∫_0^T 1_{B_T∩[0,T]}(t)1_{B_X×B_U}(x_t,u_t)dt，质量分别为1与T。Dynkin 式对所有 w∈C^{1,2} 写成 ⟨w,ν⟩=⟨w,ν₀⟩+⟨Aw,ξ⟩，A=∂_t+f·∇+(1/2)tr(ggᵀ∇²)。",
+      "source_ranges": [
+        {
+          "start_line": 180,
+          "end_line": 227,
+          "pdf_pages": [
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "term": "传统弱占用测度 OCP 与其 HJB 次解对偶",
+      "definition": "非负 (ν,ξ) 满足弱 Dynkin 等式、目标为 ⟨ℓ,ξ⟩+⟨ϕ,ν⟩ 时构成无限维 LP。其对偶以 w 满足 Aw+ℓ≥0、w(T,·)≤ϕ；Dynkin 公式推出 w(t,z)≤V(t,z)。作者明确弱 OCP 一般只是原轨迹控制问题的松弛，可能有 gap。",
+      "source_ranges": [
+        {
+          "start_line": 230,
+          "end_line": 288,
+          "pdf_pages": [
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "term": "时空分割与分片 HJB 下界约束",
+      "definition": "将时间切成 [t_{i−1},t_i]，状态划成互斥 X_k，且各闭包/界面有基本闭半代数表示；每片 w_{i,k} 满足 Aw+ℓ≥0，时间界面反向单调条件 w_{i,k}(t_{i−1},·)≥w_{i−1,k}(t_{i−1},·)，扩散情形空间界面连续，终端不超过 ϕ。",
+      "source_ranges": [
+        {
+          "start_line": 351,
+          "end_line": 405,
+          "pdf_pages": [
+            6,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "term": "局部占用测度与跨片通量松弛",
+      "definition": "ξ_{i,k} 是全局 state-action occupation ξ 在 [t_{i−1},t_i]×X_k×U 上的限制；ν_{i,k} 是 t_i 时刻分布在 X_k 上的限制。反对称有符号界面测度 π_{i,j,k}=−π_{i,k,j} 记录在片 X_j 与 X_k 间的随机进出通量，使各片弱 Dynkin 关系平衡。",
+      "source_ranges": [
+        {
+          "start_line": 420,
+          "end_line": 480,
+          "pdf_pages": [
+            7,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "term": "MSOS 紧化/分割尺度",
+      "definition": "对多项式数据，生成元把多项式映到多项式；MSOS 以有限阶矩和 SOS 约束得到 SDP。作者表格报告提高层级 d 时矩维度组合增长，而细分 n_T、n_X 时变量和 LMI 数按线性增长且 LMI 维度保持 O(1)；这是文中复杂度表述，非此处独立复算所有基数。",
+      "source_ranges": [
+        {
+          "start_line": 250,
+          "end_line": 276,
+          "pdf_pages": [
+            5
+          ]
+        },
+        {
+          "start_line": 507,
+          "end_line": 540,
+          "pdf_pages": [
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "term": "跳过程生成元与跳转邻域",
+      "definition": "对跳映射 h_i 与强度 a_i，A w=∂_t w+Σ_i a_i(x,u)[w(t,h_i(x,u))−w(t,x)]。局部分片的界面邻域 N_{X_k}(X_j) 收集存在控制和正强度跳转可进入 X_k 的 X_j 状态，故跳过程接口约束需在该邻域比较函数值。",
+      "source_ranges": [
+        {
+          "start_line": 802,
+          "end_line": 849,
+          "pdf_pages": [
+            14
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "定理1：紧半代数状态/控制域上 MSOS 界收敛",
+      "assumptions": [
+        "扩散 OCP 数据满足 Assumption 1 的联合多项式条件；X,U 可分别表示为多项式不等式集并含足够大的球约束 R_X−‖x‖²≥0、R_U−‖u‖²≥0。",
+        "有限多项式矩/SOS 层级按作者给定的 MSOS 松弛/限制构造。"
+      ],
+      "statement": "第 d 阶 SOS 次 HJB 及对应矩松弛值 J_d 单调趋于原弱 OCP 值 J*；因此极限上弱对偶无 gap。定理不称每个有限阶已精确。",
+      "start_line": 318,
+      "end_line": 333,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "作者先由球约束得 [0,T]×X×U 紧；以测试函数稠密性将弱约束从所有光滑函数缩至多项式函数。",
+        "对测试函数 w≡1 与 w(t,x)=t，弱等式分别固定 ν 的质量为 1、ξ 的质量为 T。",
+        "最后引用 Tacchi 2022, Corollary 8 得层级收敛；我核对了质量约束推导与作者引用位置，但没有独立证明外部一般收敛定理。"
+      ],
+      "gaps": [
+        "作者特别指出无界 X/U 时界仍有效，但本收敛无 gap 结论需要紧致假设；引用 LPZ06 的无界状态反例说明可能保留严格 gap。",
+        "基础多项式与 SOS 证书层级的完备性来自外部结果，并未在本文重证。"
+      ]
+    },
+    {
+      "name": "推论1：全局 HJB 次解由 Dynkin 公式给值函数下界",
+      "assumptions": [
+        "w∈C^{1,2}([0,T]×X)，Aw+ℓ≥0 且 w(T,·)≤ϕ；任意 admissible control 下随机过程满足文中有限矩/积分可积条件。"
+      ],
+      "statement": "对任意 (t,z)，w(t,z)≤V(t,z)。",
+      "start_line": 280,
+      "end_line": 290,
+      "pdf_pages": [
+        5
+      ],
+      "proof_steps": [
+        "沿任意 admissible policy 用生成元与 Dynkin 公式，将 w(t,z) 写成终端期望减去 ∫Aw。",
+        "用 Aw+ℓ≥0 及终端 w≤ϕ 得 w 不超过该 policy 的期望总成本。",
+        "对 admissible policies 取下确界。本文给出此短证；对随机积分的可积性依赖假设/通常 Ito 理论。"
+      ],
+      "gaps": [
+        "只给可行次解的下界；不给达到 value function 的次解存在性或最优控制构造。"
+      ]
+    },
+    {
+      "name": "推论2：跨时间/状态分区的分片 HJB 函数仍为价值下界",
+      "assumptions": [
+        "分区满足 Assumption 3：覆盖且互斥；闭包和空间公共边界为基本闭半代数集。",
+        "每片 w_{i,k} 足够光滑，片内满足 Awi,k+ℓ≥0；时间界面条件 (7)、随机扩散的空间界面连续性 (8)、终端下界条件 (9) 均成立。"
+      ],
+      "statement": "按所在时间区间和状态片拼成 w(t,x)=w_{i,k}(t,x) 后，对任意 (t,x) 它不超过价值函数 V(t,x)。随机扩散可能双向穿越空间界面，因此要求连续；当 g≡0 时，作者引述已有工作指出可用沿漂移法向的单向界面条件放宽。",
+      "start_line": 391,
+      "end_line": 418,
+      "pdf_pages": [
+        7
+      ],
+      "proof_steps": [
+        "把受控路径分解成停时区间，在每一时段/状态片内应用推论1的 Ito/Dynkin 论证。",
+        "时间条件保证倒推经过时间节点时次解不向上跳破坏下界；空间连续保证随机路径跨片时拼接值相同。",
+        "Appendix A 对空间切片的进入/退出停时逐段求和并令 N→∞；我阅读了附录逐步论证，未独立核验所有停时可积性。"
+      ],
+      "gaps": [
+        "确定性单向界面放宽只在 g≡0 且动力方向确有单向跨界时可用，不能移植给含扩散的双向穿越。"
+      ]
+    },
+    {
+      "name": "局部 primal transport：分片弱问题由通量项平衡，连续层级比较需严格表示条件",
+      "assumptions": [
+        "时间/状态分区满足前述适配条件；分片 ξ_{i,k} 为非负占用测度，ν_{i,k} 为节点测度，π_{i,j,k} 为反对称界面有符号测度。",
+        "比较 SOS 松弛紧度时，每个闭片 X̄_k 的表示使用的多项式不等式需严格多于全局 X 的表示。"
+      ],
+      "statement": "按分片弱 Dynkin 等式和 π 界面通量构造的任何可行点可聚合为全局弱 OCP 可行点且目标相同；将全局光滑 HJB 次解限制到各片也保可行。进一步的有限阶 MSOS bound 在上述严格表示条件下至少与传统分片前方法一样紧，常可更紧。无该表示条件时，不能直接援引文中的有限阶 tightness 比较。",
+      "start_line": 441,
+      "end_line": 503,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "proof_steps": [
+        "作者用停止时刻之间的 Dynkin 公式解释局部弱等式；离开/进入状态子域产生带符号的 π 通量。",
+        "把全部 ξ_{i,k} 求和、终端 ν_{n_T,k} 求和后，内部片界面通量反对称抵消，得全局弱可行关系且成本保持。",
+        "全局 HJB 次解限制后片内可行；作者据更丰富的每片约束推出 SOS 证书包含关系。Appendix B 具体推导了二片且不分时间的通量公式；我已读全文及视觉核验第22页。",
+        "按原文条件记录其 tightness 断言；没有独立证明一般 SOS 模块的表示层级嵌套。"
+      ],
+      "gaps": [
+        "作者只在适配分割以及闭片严格多一组表示多项式的条件下作有限阶松弛比较。",
+        "Appendix B 详细算例只展示二分片/不分时间，复杂分区推广被称 straightforward，本文未逐种拓扑展开。"
+      ]
+    },
+    {
+      "name": "跳过程推广：分片次 HJB 可构造，但无限状态的多项式 SDP 有额外过近似",
+      "assumptions": [
+        "Assumption 4：状态为离散可数集，跳映射/强度、成本关于 (x,u) 联合多项式，控制集合基本闭半代数。",
+        "跳生成元多项式封闭，以便对多项式测试函数应用 MSOS。"
+      ],
+      "statement": "使用跳生成元 Aw=∂_t w+Σ_i a_i(w∘h_i−w) 以及按可跳入邻域定义的接口条件，可形式化对应分片下界。作者指出闭基本半代数集若要恰好等于跳过程离散 X，只在 X 有限时成立；无限或很大的 X 为得到 tractable MSOS 松弛需过近似，而局部化能减轻、不能消除由过近似带来的保守性。",
+      "start_line": 802,
+      "end_line": 870,
+      "pdf_pages": [
+        14,
+        15
+      ],
+      "proof_steps": [
+        "从跳过程 generator 直接写出成本次解不等式和局部入邻域匹配。",
+        "将有限集合与无限离散集合的半代数表示约束分开，说明无限状态时需对每个片区闭包以半代数集过近似。",
+        "我逐段读了第7节；作者给出的是框架推广和可表示性限制，不是一条新的普适跳控制收敛定理。"
+      ],
+      "gaps": [
+        "无限跳状态空间中的 tractability 依赖近似几何及多项式证书，未给统一误差界。",
+        "数值基因调控案例是有限实验，不代表无限状态控制的全局认证。"
+      ]
+    },
+    {
+      "name": "数值验证：扩散与跳系统的分割收益是实验观察",
+      "assumptions": [
+        "多项式随机 Lotka–Volterra 扩散模型与受控基因调控跳模型按论文设置；作者比较层级、时间/状态分区与计算成本。"
+      ],
+      "statement": "图表显示分区可在相同近似阶下改善作者估计的 bound quality / computation trade-off，并缓解高阶矩病态问题；这是有限组数值例和图示报告，不是误差率或每个模型保证。",
+      "start_line": 543,
+      "end_line": 653,
+      "pdf_pages": [
+        10,
+        11
+      ],
+      "proof_steps": [
+        "读完两节模型、代价、分割与结果描述；并逐页视觉检查相关排版图表所在页。",
+        "记录报告的对比结论，不将作者估计的 relative optimality gap 当作具备独立误差证书的统一定理。"
+      ],
+      "gaps": [
+        "实验求解器及耗时受硬件/实现影响；未重跑。",
+        "状态集合、初始分布和格点/控制近似的图示不能外推到一般系统。"
+      ]
+    },
+    {
+      "name": "附录 A–B：停时拼接证明与局部 transport 公式",
+      "assumptions": [
+        "扩散过程满足文中 finite moments/非爆炸性假设；片内函数足够光滑；停时定义适用于被考察的分割。"
+      ],
+      "statement": "Appendix A 将一条过程路径按穿越子域的进入/退出停时分段，对每段使用 Ito 公式，求和后利用边界连续及非负漂移项得到 value-underestimator；Appendix B 对二分割构造进入/退出 measure，分解为边界通量及初末端 measure，并由停时 Dynkin 关系得到片内 transport 等式。",
+      "start_line": 1254,
+      "end_line": 1381,
+      "pdf_pages": [
+        21,
+        22
+      ],
+      "proof_steps": [
+        "Appendix A 对停时之间的 Itô 公式取期望，鞅积分项用平方可积性取零，再以空间连续、时间单调界面条件拼接；对 N→∞ 并到 T。",
+        "Appendix B 将跨边界 entry/exit measure 分解为 π 与 ν，利用反对称通量抵消并以非爆炸性识别终端局部 measure。",
+        "视觉复核 PDF p21–22；Appendix B 原文只详细推导二片情况。"
+      ],
+      "gaps": [
+        "停时鞅项的平方可积性和非爆炸条件依赖 Assumption 2 与过程正则性；通用过程理论未独立重证。",
+        "转换文本有公式排版错位，关键停时关系已通过视觉查看原 PDF p22 核对。"
+      ]
+    }
+  ],
+  "constant_dependence": "本文没有给新的显式 sharp 常数。MSOS 层级收敛是渐近结论而非有限阶误差公式；论文的结构表报告变量和 LMI 数关于分区数 n_T、n_X 的 O(n_T)、O(n_X) 线性尺度且 LMI 维度 O(1)，阶数 d 对 moment/SOS 规模带来组合增长。统计/实验耗时不是统一复杂度界。",
+  "endpoint_limits": "扩散 value-underestimator 需要片内 C^{1,2} 与可积 Dynkin/Ito 条件；传统 MSOS 渐近无 gap 需紧状态/控制集合的球约束表示，弱测度 LP 本身可能严格松弛原轨迹控制问题。随机扩散跨空间界面要求连续性；仅确定性 g≡0 可讨论单向法向条件。有限阶局部/全局 MSOS 紧度比较附带“闭片表示多于全局表示”的条件。跳过程无限离散态需半代数过近似，额外保守性无法由文章普遍消除。",
+  "reusable_methods": [
+    "对扩散随机控制以终端与运行占用测度表示轨迹目标，把 Dynkin 式视为线性 transport constraint，得到无限维 measure LP。",
+    "以时间×状态区域局部分解 occupation measures，并添加反对称 signed boundary flux，恢复每个 cell 的 weak generator balance。",
+    "dual 侧构造 piecewise-polynomial HJB 次解；时间界面沿因果方向单调、含扩散的状态边界连续，产生全局价值下界。",
+    "通过细化 time/state partition 而不是只抬升 SOS 阶数加强 moments/SOS 界，并利用局部相邻耦合结构实现稀疏或分布式求解。",
+    "对 jump generator 依据“是否可跳入目标 cell”定义 interface neighborhood；遇无限离散态需明确半代数外包及其额外保守性。"
+  ],
+  "verification_notes": [
+    "通读转换全文 lines 5–1381，覆盖 PDF 22 页：模型、假设、主定理、扩散/跳过程、两个数值案例、结论、参考文献、附录 A 与 B。",
+    "视觉核对 PDF pp.1,6–9,22：题名/版本；定理1及其紧致性假设、piecewise HJB条件、局部 primal transport 等式、Appendix B 停时通量公式。",
+    "直接检查了 occupation mass 1/T、Theorem1 proof 中 w=1,t 固定质量、π 反对称抵消逻辑和定理比较所需“严格更丰富多项式表示”条件；外部 Tacchi hierarchy 收敛、Dynkin/Itô 停时一般定理未独立重证。",
+    "筛选 direct：E01 研究随机最优控制 occupation measures、弱 Dynkin transport、分片局部化及其 moment-SOS bounds，均为本文中心主题。"
+  ],
+  "unchecked": [
+    "未独立重证引用的 Dynkin/Itô 停时公式、Tacchi 的一般 Lasserre 收敛定理及相关 SOS 表示定理。",
+    "未复现实验图表、SDP 求解器规模/耗时或控制器性能。",
+    "未从作者声明的理论比较推出无条件有限阶界支配；其适用需保留片区 closure 使用严格较全局更多表示多项式的前提。",
+    "未进一步核实文章中对 finite-moment、非爆炸性及局部片区边界正则假设能否在特殊非紧跳模型里同时满足。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1377,
+    "source_lines": 1381,
+    "required_content_lines": 910,
+    "covered_content_lines": 910,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-3b44b82c06eccd85/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-3b44b82c06eccd85.json",
+  "review_input_sha256": "71ea62a266b6c73790b91d912fd4ca2b0f794d8496c6748e39dc7df083d2c293"
+}

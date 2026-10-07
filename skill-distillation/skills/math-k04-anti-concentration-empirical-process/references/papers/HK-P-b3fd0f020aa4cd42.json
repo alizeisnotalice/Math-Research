@@ -1,0 +1,577 @@
+{
+  "paper_id": "P-b3fd0f020aa4cd42",
+  "observed_title": "Anti-Concentration Inequalities for the Difference of Maxima of Gaussian Random Vectors",
+  "authors": [
+    "Alexandre Belloni",
+    "Ethan X. Fang",
+    "Shuting Shen"
+  ],
+  "version": "arXiv:2408.13348v1 (source PDF, 61 pages; title/authors/version label checked on PDF p.1)",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 3151,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61
+      ],
+      "scope": "Full read of all 61 PDF pages: title/abstract, Sections 1–6, every theorem and proof, Appendices A–D, simulations and references. Formula/layout checks rendered and viewed on PDF pp.1,4–13,18,21,23–27,30–35,38,45–46,53,58."
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "K04": "direct. The paper proves anti-concentration for Gaussian differences of partition maxima and applies it to Gaussian approximation and multiplier approximation of discrete empirical-process maximizer events. It directly supplies both the threshold-band bound and the CDF comparison step, with explicit conditions, dimension dependence and degenerate-covariance handling."
+  },
+  "definitions": [
+    {
+      "name": "Levy concentration function of a scalar statistic",
+      "statement": "L(W,ε)=sup_{t∈R}P(|W−t|≤ε), ε>0. Main statistic W=M_B−M_A for a nontrivial partition of a Gaussian vector.",
+      "source_ranges": [
+        {
+          "start_line": 45,
+          "end_line": 71,
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "scope": "PDF pp.1–2: definition (1.1) and maximum-difference setup."
+        }
+      ]
+    },
+    {
+      "name": "Cross-partition correlation and equal-variance scale",
+      "statement": "ρ̄=max_{i∈A,j∈B}Corr(X_i,X_j); σ is the common marginal standard deviation in Theorem 2.1.",
+      "source_ranges": [
+        {
+          "start_line": 208,
+          "end_line": 227,
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "scope": "PDF pp.4–5: Theorem 2.1 definitions."
+        }
+      ]
+    },
+    {
+      "name": "Heterogeneous covariance gap C_{A,B}",
+      "statement": "Under covariance branch A, C_{A,B}=min_{j∈B,i∈A}(σ_j−σ_j^{-1}σ_{ij}); branch B uses min_{i∈A,j∈B}(σ_i−σ_i^{-1}σ_{ij}). It is required to be positive.",
+      "source_ranges": [
+        {
+          "start_line": 302,
+          "end_line": 316,
+          "pdf_pages": [
+            6
+          ],
+          "scope": "PDF p.6: Theorem 2.4."
+        }
+      ]
+    },
+    {
+      "name": "Partition covariance condition",
+      "statement": "Condition 3.1 restates the two one-sided standardized covariance conditions for the averaged covariance Σ*, adds a cross-correlation nondegeneracy clause when marginal variances differ, and provides the C_{A,B} denominator for the empirical-process theorem.",
+      "source_ranges": [
+        {
+          "start_line": 643,
+          "end_line": 648,
+          "pdf_pages": [
+            12
+          ],
+          "scope": "PDF p.12: Condition 3.1."
+        }
+      ]
+    },
+    {
+      "name": "Near-perfect positive-correlation set and residual",
+      "statement": "N_δ={i∈A: some j∈B has Corr(X_i,X_j)≥1−δ}; ω_δ measures a Gaussian concentration-tail residual for the event that N_δ wins inside A.",
+      "source_ranges": [
+        {
+          "start_line": 228,
+          "end_line": 244,
+          "pdf_pages": [
+            5
+          ],
+          "scope": "PDF p.5: definitions (2.2)–(2.3)."
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 2.1 (齐方差下两个高斯子向量最大值之差的反集中)",
+      "assumptions": [
+        "X 为有限维高斯向量，所有分量方差相同且等于 σ²>0；{A,B} 是 [p] 的非平凡划分。",
+        "令 ρ̄=max_{i∈A,j∈B} Corr(X_i,X_j)。ρ̄<1 时右端给有限反集中界；若 ρ̄=1，(2.1) 的分母为零，作者将该情形交给 Corollary 2.2 讨论。"
+      ],
+      "statement": "对 M_A=max_{i∈A}X_i、M_B=max_{j∈B}X_j 及任意 ε>0，L(M_B−M_A,ε) ≤ [7ε/((1−ρ̄)σ)]·min{E max_{i∈A}|X_i−μ_i|/σ, E max_{j∈B}|X_j−μ_j|/σ}。允许协方差矩阵退化；不要求分区内协方差正定。",
+      "start_line": 208,
+      "end_line": 227,
+      "pdf_pages": [
+        4,
+        5
+      ],
+      "proof_steps": [
+        "先取 ρ̄<1。分区内完全正相关的同方差分量相差常数，可删除不改变相应最大值的重复坐标。",
+        "将分区间完全负相关的坐标分别记为 N_A,N_B；Lemma B.3 说明它们一一配对，且每对满足 X_j=−X_i+c_i。",
+        "按分区最大值落在 N_A/N_B 还是其补集拆成三项。非配对项应用异方差 Theorem 2.4；配对项用 Lemma B.2。三项常数 2+2+3 合为 7。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 922,
+          "end_line": 1048,
+          "pdf_pages": [
+            18,
+            19,
+            20,
+            21
+          ],
+          "scope": "Section 5.1 完整证明；含删除坐标、最大值事件分拆及常数合并。"
+        },
+        {
+          "start_line": 1965,
+          "end_line": 2407,
+          "pdf_pages": [
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47
+          ],
+          "scope": "Appendix B Lemmas B.1–B.3 与全部证明；处理完美负相关导致的二维密度奇异线。"
+        }
+      ],
+      "gaps": [
+        "作者在证明开始明确：ρ̄=1 时定理右端发散，不由此定理给有限界。跨分区完美正相关的有意义界依赖 Corollary 2.2 的剩余概率。",
+        "本文读取了所有给出的推导，但未独立重做 Appendix B 中每个条件高斯密度极限。"
+      ]
+    },
+    {
+      "label": "Corollary 2.2 (跨分区近完美正相关的残余概率分解)",
+      "assumptions": [
+        "沿用 Theorem 2.1 的同方差高斯设定。取 δ∈(0,1)，N_δ={i∈A:存在 j∈B 使 Corr(X_i,X_j)≥1−δ}。",
+        "至少存在一个 δ 使 N_δ≠A；若 N_δ 非空，ω_δ=exp(−(E max_{A\\Nδ}X_i−E max_{Nδ}X_j)_+²/(8σ²))，若 N_δ 为空则 ω_δ=0。"
+      ],
+      "statement": "对任意 ε>0，L(M_B−M_A,ε) ≤ inf_{δ:N_δ≠A}{ [7ε/(δσ)]·min(E max_{i∈A\\Nδ}|X_i−μ_i|/σ, E max_{j∈B}|X_j−μ_j|/σ)+2ω_δ }。交换 A、B 后结论仍成立。",
+      "start_line": 228,
+      "end_line": 260,
+      "pdf_pages": [
+        5
+      ],
+      "proof_steps": [
+        "N_δ=∅ 时，所有跨分区相关系数都小于 1−δ，直接以 Theorem 2.1 得到第一项。",
+        "N_δ 非空时，比较两组最大值的期望差 D_δ。D_δ≤0 时右端残余项至少覆盖概率 1；D_δ>0 时用 Gaussian log-Sobolev 集中控制事件“近完全相关组夺得 A 内最大值”的概率。",
+        "在其补事件上，M_A 等于 A\\N_δ 上的最大值，跨分区相关系数 gap 至少 δ，再用 Theorem 2.1，最后对允许的 δ 取下确界。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1049,
+          "end_line": 1109,
+          "pdf_pages": [
+            21,
+            22
+          ],
+          "scope": "Section 5.2 完整证明；按 Nδ 为空、期望差非正/为正分情况。"
+        }
+      ],
+      "gaps": [
+        "ω_δ 是残余事件的上界，不是独立于分布的误差常数；δ 的选取体现第一项与残余项的权衡。",
+        "Gaussian log-Sobolev 基础引理在 Appendix C.6 仅作自包含性陈述并引用外部文献 [3]，未在本文证明。"
+      ]
+    },
+    {
+      "label": "Proposition 2.3 (exchangeability 下重叠最大值的反集中下界)",
+      "assumptions": [
+        "1≤k<m，p=2m−k；有限维高斯向量分量同均值 μ₀、同方差 σ²，并对坐标置换 exchangeable。",
+        "令 A=[m]，B=[p]\\[m−k]，于是 A∩B 含 k 个共有坐标；最大跨分区相关 ρ̄<1。"
+      ],
+      "statement": "对任意 ε>0，k/p ≤ L(M_B−M_A,ε) ≤ min{E max_{i∈A\\N}|X_i−μ₀|/σ,E max_{j∈B\\N}|X_j−μ₀|/σ}·7ε/((1−ρ̄)σ)+4k/(p+k)，其中 N=A∩B。并且对 |t|>ε，sup_{|t|>ε}P(|M_B−M_A−t|≤ε) ≤ min{E max_{i∈A}|X_i−μ₀|/σ,E max_{j∈B}|X_j−μ₀|/σ}·14ε/((1−ρ̄)σ)。",
+      "start_line": 261,
+      "end_line": 301,
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "proof_steps": [
+        "因 ρ̄<1，有限子集上的最大值唯一几乎处处；exchangeability 使整体最大值落在 N 的概率恰为 k/p。此事件上 M_A=M_B，故 t=0 的集中函数至少 k/p。",
+        "分别对 A、B 内的最大坐标作同样的置换对称计算，P(E₁)=P(E₂)=k/m=2k/(p+k)。排除这些事件后，两侧最大值分别由不重叠部分取得，对差值应用 Theorem 2.1，得到 7ε 项加 2k/m=4k/(p+k)。",
+        "若 |t|>ε，共有坐标同时决定两侧最大值时差为 0，不会落入目标小区间；对其余两个事件分别应用 Theorem 2.1，合并得到因子 14。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1110,
+          "end_line": 1170,
+          "pdf_pages": [
+            22,
+            23
+          ],
+          "scope": "Section 5.3 完整证明；包括低界、一般集中函数上界及远离 0 的改进界。"
+        }
+      ],
+      "gaps": [
+        "结果依赖 exchangeability 和特定重叠构造；下界不是一般高斯最大差的通用性质。",
+        "远离 0 的结论排除了公共最大值造成的零点原子，仍只在 |t|>ε 的阈值范围内成立。"
+      ]
+    },
+    {
+      "label": "Theorem 2.4 与 Lemmas 2.5–2.6 (异方差反集中及条件密度导数工具)",
+      "assumptions": [
+        "分量 X_i 为有限维高斯，均值 μ_i、边际标准差 σ_i>0；A,B 非空且不交。跨分区 |Corr(X_i,X_j)|<1。",
+        "满足 (A) max_{j,j′∈B} σ_j^{-2}σ_{jj′}≤1 且 C_{A,B}=min_{j∈B,i∈A}(σ_j−σ_j^{-1}σ_{ij})>0；或满足交换对称条件 (B) max_{i,i′∈A}σ_i^{-2}σ_{ii′}≤1 且 C_{A,B}=min_{i∈A,j∈B}(σ_i−σ_i^{-1}σ_{ij})>0。"
+      ],
+      "statement": "令 S=B（条件 A）或 S=A（条件 B）。则对任意 ε>0，L(M_B−M_A,ε) ≤ 2E max_{ℓ∈S}|X_ℓ−μ_ℓ|/σ_ℓ · ε/C_{A,B}。Lemma 2.5 将 (M_A,M_B) 的二维密度写成按两侧获胜坐标求和的条件概率×二元密度；Lemma 2.6 令 g_{u,j},H_{u,j} 为相应条件密度/条件概率后，给出低于 x_j(u) 时 g=0、高于阈值时 g≤[1−max_{i∈A}σ_j^{-2}σ_{ij}]^{-1}H′，对 a.e. u 成立。",
+      "start_line": 302,
+      "end_line": 403,
+      "pdf_pages": [
+        6,
+        7,
+        8
+      ],
+      "proof_steps": [
+        "用 Lemma 2.5 对两侧最大值获胜指标求和表达联合密度，并作坐标替换 u=y−x，使目标带状事件对应 u∈[t−ε,t+ε]。",
+        "条件在 X_j=x+u 上，将其余高斯变量拆成对 X_j 的正交残差及退化项。Lemma 2.6 排除低于 x_j(u) 的条件边界，并把 g_{u,j} 控制到 H′。",
+        "对 H 进行 Stieltjes 分部积分。协方差条件保证斜率分母下界 C_{A,B}；删去其它分区的限制、延伸积分区间，再用最大坐标唯一几乎处处和 Cauchy–Schwarz 将和式压到 E max |X_j−μ_j|/σ_j。积分 u 长度给出 2ε，随后对称得到条件 B。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 405,
+          "end_line": 486,
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "scope": "Section 2.2 中 Theorem 2.4 主证明；含 (x,u) 变量变换、分部积分与两种条件的对称化。"
+        },
+        {
+          "start_line": 1439,
+          "end_line": 1522,
+          "pdf_pages": [
+            28,
+            29
+          ],
+          "scope": "Appendix A.1 完整证明 Lemma 2.5 的 joint density 与单侧偏导公式。"
+        },
+        {
+          "start_line": 1523,
+          "end_line": 1682,
+          "pdf_pages": [
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          "scope": "Appendix A.2 完整证明 Lemma 2.6；包含退化坐标集合、阈值 x_j(u) 和导数控制。"
+        }
+      ],
+      "gaps": [
+        "异方差式的分母依赖方向性结构条件；不适用于任意异方差协方差矩阵。",
+        "Lemma 2.5 的二维密度式明确需要跨组二元边缘非退化；该条件来自 |Corr|<1。分组内部完全相同的坐标须先去重或用命题给出的差异/均值条件处理。",
+        "作者的条件导数证明是本定理关键环节；H_{u,j} 的 x 同时出现在被限制的最大值和条件化值中，因此它并非普通条件 CDF，需保留该证明结构，不能把 H′ 简写为常规密度。"
+      ]
+    },
+    {
+      "label": "Corollary 2.7 / Proposition 2.8 (单个最大值与条件残差的备选界)",
+      "assumptions": [
+        "Corollary 2.7：高斯向量每个 σ_j²>0，σ=min_j σ_j。",
+        "Proposition 2.8：对 A、B 两个高斯块分别对另一个块作线性条件回归；两组残差为高斯，且最小残差标准差 min_j \tildeσ_j>0。"
+      ],
+      "statement": "单一高斯最大值满足 L(max_j X_j,ε)≤2E max_j|X_j−μ_j|/σ_j · ε/σ。两块最大差另有条件残差界：≤2(min_j\tildeσ_j)^{-1}·min{E max_{i∈A}|\tilde X_i|/\tildeσ_i,E max_{j∈B}|\tilde X_j|/\tildeσ_j}·ε，其中两个残差协方差分别为 Σ_A−Σ_ABΣ_B^{-1}Σ_BA 和 Σ_B−Σ_BAΣ_A^{-1}Σ_AB。",
+      "start_line": 513,
+      "end_line": 531,
+      "pdf_pages": [
+        10
+      ],
+      "proof_steps": [
+        "先由 Theorem 2.4 令 B 为空并用 σ_min 得 Corollary 2.7。",
+        "对最大差条件在 X_A 上，最大值 M_A 变为常数，故以条件分布下的单个最大值界控制；残差块 \tilde X_B 与 X_A 独立。交换条件方向再重复，取两个界的较小值。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 533,
+          "end_line": 556,
+          "pdf_pages": [
+            10
+          ],
+          "scope": "Proposition 2.8 主证明：高斯条件分布、Schur 补协方差及条件独立性。"
+        },
+        {
+          "start_line": 1683,
+          "end_line": 1721,
+          "pdf_pages": [
+            33
+          ],
+          "scope": "Appendix A.3 Corollary 2.7 的证明。"
+        }
+      ],
+      "gaps": [
+        "Proposition 2.8 需 Σ_A、Σ_B 可逆以使用原文中的矩阵逆，且残差各坐标方差严格为正；不覆盖退化的条件残差。",
+        "两种界的依赖结构不同：Theorem 2.4 用跨块协方差方向间隙；Proposition 2.8 用条件残差方差下界，不能混成一个无条件通用假设。"
+      ]
+    },
+    {
+      "label": "Theorem 3.1 (离散经验过程最大化事件的 Gaussian CDF 与乘子近似)",
+      "assumptions": [
+        "ξ_1,…,ξ_n 独立、共同均值 μ，协方差矩阵可异质；η_i 独立高斯且 η_i∼N(μ,Σ_i)。令 X=n^{-1/2}Σ_i(η_i−μ+a)，Y=n^{-1/2}Σ_i(ξ_i−μ+a)，Σ*=n^{-1}Σ_iΣ_i。",
+        "Σ* 对非平凡划分 A,B 满足 Condition 3.1；存在 B_n≥1,b₀ 使 E exp(|ξ_{ij}|/B_n)≤2 且 n^{-1}Σ_i Eξ_{ij}⁴≤B_n²b₀²，对所有坐标成立，并 B_n²log⁵(pn)≤c n（c 足够小）。",
+        "S_p=B（条件 A）或 A（条件 B）；σ_ℓ,C_{A,B} 按 Condition 3.1 定义。"
+      ],
+      "statement": "存在仅依赖 b₀ 的常数 C，使 sup_s |P(M_A(Y)−M_B(Y)≤s)−P(M_A(X)−M_B(X)≤s)| ≤ C·[E max_{ℓ∈S_p}|X_ℓ−E X_ℓ|/σ_ℓ]/C_{A,B}·(B_n²log³(pn)/n)^{1/4}。正文 (3.2) 的 Gaussian multiplier \\hat X=n^{-1/2}Σ_i[e_i(ξ_i−\bar ξ)+a] 满足同阶条件分布近似；以概率至少 1−1/(2n⁴)−1/n−3(B_n²log³(pn)/n)^{1/2}。",
+      "start_line": 653,
+      "end_line": 685,
+      "pdf_pages": [
+        12,
+        13
+      ],
+      "proof_steps": [
+        "将最大化事件等价地写为 P(M_A−M_B>0)，因此需要差值的整个 CDF 上确界。",
+        "用光滑 log-sum-exp 近似两块最大值差，并将误差拆成反集中小区间项和函数期望差项。",
+        "对乘子证明，构造事件 A_n 控制样本截断、四阶矩及协方差/三阶矩误差。Proof 中先引入标准化 Beta(1/2,3/2) 辅助乘子 X*；Claim 5.1 用 Stein 核比较 X* 与高斯 X，Claim 5.2 用迭代随机 Lindeberg 比较 X* 与 Y，Claim 5.3 再比较高斯 X 与正文的标准正态乘子 \\hat X。三角不等式给出条件分布近似。",
+        "随机 Lindeberg 辅助 Lemma 5.2 对测试统计同时取任意 shift v 与阈值 s 的 supremum，显式使用协方差、三阶矩匹配、尾部、八阶矩及 anti-concentration 条件。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1267,
+          "end_line": 1413,
+          "pdf_pages": [
+            25,
+            26,
+            27
+          ],
+          "scope": "Section 5.4 Theorem 3.1 证明与 Claims 5.1–5.3；包括事件 A_n、Beta 辅助乘子及桥接回 Gaussian multiplier。"
+        },
+        {
+          "start_line": 1722,
+          "end_line": 1789,
+          "pdf_pages": [
+            33,
+            34,
+            35
+          ],
+          "scope": "Appendix A.4 Lemma 5.1 Stein-kernel 插值证明；以 Gaussian anti-concentration 控制平滑误差。"
+        },
+        {
+          "start_line": 1790,
+          "end_line": 1955,
+          "pdf_pages": [
+            35,
+            36,
+            37,
+            38
+          ],
+          "scope": "Appendix A.5 Lemma 5.2 的随机 Lindeberg 递推、对数和指数平滑及迭代收敛。"
+        }
+      ],
+      "gaps": [
+        "这是离散有限索引最大化事件的 CDF 近似，不是无限类过程的 sup-norm 强耦合。",
+        "正文 line 1330 文字称组合 (5.15),(5.15),(5.17)，应是交叉引用笔误：通往 (3.7) 的三角链还需要 Claim 5.2 的 (5.16)（X* 与 Y），该 Claim 在 preceding proof 已给出。",
+        "Lemma 5.1 所需 Stein-kernel identity 是假设；实际 multiplier 的 Stein-kernel sup 界援引外部 [26] Lemma 4.6。事件 A_n 高概率使用外部 [12] Lemma 4.1–4.2。",
+        "Appendix A.5 明确沿用 [12] 的迭代论证并给了适配后的推导；被引用原论文的所有辅助引理并未独立重证。"
+      ]
+    },
+    {
+      "label": "Lemmas 5.1–5.2 (Stein 核 Gaussian 比较与匹配矩随机 Lindeberg)",
+      "assumptions": [
+        "Lemma 5.1 要求中心随机向量 V 存在可测 Stein 核 τ，使对所有 C_b² 测试函数成立多元 Stein 恒等式；比较的中心 Gaussian Z 满足 Condition 3.1。",
+        "Lemma 5.2 要求 V_i,Z_i 独立中心向量，满足 Conditions 5.1–5.4，且聚合二阶矩/三阶矩差分别不超过 C₀B_n√log(pn) 与 C₀B_n²√log³(pn)（按每项坐标最大值、n^{-1/2}归一化）；B_n²log⁵(pn)≤c₀n。"
+      ],
+      "statement": "Lemma 5.1 的 CDF 距离上界为 K[E max_{ℓ∈S_p}|Z_ℓ|/σ_ℓ]/C_{A,B}·√(pΔ log p)，Δ=E max_{j,k}|τ_{jk}(V)−Σ_{jk}|。Lemma 5.2 对 SV_n=n^{-1/2}Σ_iV_i 与 SZ_n=n^{-1/2}Σ_iZ_i 给 sup_{v,s}|P(M_A^v(SV_n)−M_B^v(SV_n)≤s)−P(M_A^v(SZ_n)−M_B^v(SZ_n)≤s)| ≤ C₁{r_n(B_n²log³(pn)/n)^{1/4}+ε_n}。",
+      "start_line": 1177,
+      "end_line": 1265,
+      "pdf_pages": [
+        23,
+        24,
+        25
+      ],
+      "proof_steps": [
+        "Lemma 5.1 的证明以 √t V+√(1−t)Z 做 Stein 插值，二阶导由 log-sum-exp smoothing 控制，再由 Theorems 2.1/2.4 提供差值 anti-concentration，取 δ=√(Δ log p)。",
+        "Lemma 5.2 将 V/Z 向量逐项替换，控制条件方差和三阶矩误差，建立迭代递推；平滑指标差采用五阶导数界，条件 anti-concentration 给出 rnδ+εn 项，最后归纳取得 1/4 次幂率。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1722,
+          "end_line": 1789,
+          "pdf_pages": [
+            33,
+            34,
+            35
+          ],
+          "scope": "Appendix A.4 Lemma 5.1 完整证明。"
+        },
+        {
+          "start_line": 1790,
+          "end_line": 1955,
+          "pdf_pages": [
+            35,
+            36,
+            37,
+            38
+          ],
+          "scope": "Appendix A.5 Lemma 5.2 证明；含递推、平滑及迭代步骤。"
+        }
+      ],
+      "gaps": [
+        "这是作者改写/适配 [12] 的证明，若后续实现必须逐项核对 [12] 中被引用但本文略过的基础不等式。",
+        "Lemma 5.1 的 test-function Stein identity 中“τ 为 Stein kernel”的定义由恒等式给出；定理不自动推出任意 V 都具有可用 τ。"
+      ]
+    },
+    {
+      "label": "Appendix B Lemmas B.1–B.3 (完全负相关配对的奇异线与反集中)",
+      "assumptions": [
+        "Z_1,…,Z_d 为有限维高斯向量、方差齐为 σ²>0，且任意不同坐标 Corr(Z_i,Z_j) 非 ±1。令 M_A=max_iZ_i，M_B=max_i(−Z_i+c_i)。",
+        "在将 Theorem 2.1 的完全负相关跨块配对提取出来后，Lemma B.3 给出双射配对和常数 c_i。"
+      ],
+      "statement": "Lemma B.1：联合分布在直线 y=−x+max_i c_i 之外有二维密度；该直线上的一维密度仅当最大 c_i 唯一时可能非零。Lemma B.2：若 ρ=min_{i≠j}Corr(Z_i,Z_j)，则 L(M_B−M_A,ε)≤[3ε/((1+ρ)σ)]E max_i|Z_i−μ_i|/σ。Lemma B.3：跨块完全负相关坐标互为一一配对，X_j=−X_i+c_i。",
+      "start_line": 1965,
+      "end_line": 2040,
+      "pdf_pages": [
+        38,
+        39
+      ],
+      "proof_steps": [
+        "对最大坐标配对逐对写出联合密度；当两边获胜指标相同会落到仿射直线，其余部分用非退化二维高斯密度，分别证明对二维 Lebesgue 测度/线上的一维测度绝对连续。",
+        "对窄带事件 |M_B−M_A−t|≤ε，分成直线外二维积分 I₁ 与奇异线质量 I₂。将 u=y−x 后复用条件导数分部积分；直线质量按 max c_i 是否唯一处理。两项系数分别 2 与 1，合为 3。",
+        "若一坐标与多个对侧坐标完全负相关，将导致同侧坐标完全正相关，与去重条件矛盾，故配对是一一对应。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 2042,
+          "end_line": 2271,
+          "pdf_pages": [
+            40,
+            41,
+            42,
+            43,
+            44
+          ],
+          "scope": "Appendix B.1 Lemma B.1 密度分解与奇异线质量的完整证明。"
+        },
+        {
+          "start_line": 2272,
+          "end_line": 2386,
+          "pdf_pages": [
+            44,
+            45,
+            46
+          ],
+          "scope": "Appendix B.2 Lemma B.2 的两个积分部分及常数 3 的完整估计。"
+        },
+        {
+          "start_line": 2387,
+          "end_line": 2407,
+          "pdf_pages": [
+            46,
+            47
+          ],
+          "scope": "Appendix B.3 完全负相关配对的一一性证明。"
+        }
+      ],
+      "gaps": [
+        "ρ>−1 由作者假设保证，以使 1+ρ 为正。完美正相关同侧重复坐标须事先清理。",
+        "B.1 密度证明依赖对退化高斯残差的零集/超平面分析；此处记录源文证明路径与条件，未逐个重推所有条件密度极限。"
+      ]
+    }
+  ],
+  "constant_dependence": [
+    "Theorem 2.1 has explicit factor 7 and scales linearly in ε and as ((1−ρ̄)σ)^{-1}; the dimension enters through the smaller expected normalized absolute maximum.",
+    "Corollary 2.2 replaces the singular ρ̄=1 case by a δ-dependent concentration term plus 2ω_δ; the residual depends on the squared positive gap between subset expected maxima over 8σ².",
+    "Theorem 2.4 has factor 2ε/C_{A,B}; C_{A,B} is a directional covariance/scale gap, not a minimum eigenvalue.",
+    "Proposition 2.8 instead pays for the minimum conditional-residual standard deviation and the smaller expected standardized residual maximum.",
+    "Theorem 3.1 rate is C(b₀)·[E max_{ℓ∈S_p}|X_ℓ−EX_ℓ|/σ_ℓ]/C_{A,B}·(B_n²log³(pn)/n)^{1/4}; multiplier failure probability is explicitly 1/(2n⁴)+1/n+3(B_n²log³(pn)/n)^{1/2}.",
+    "Simulation claims are empirical only: Appendix D samples the Levy concentration function at ε=0.05 over 500 repetitions; they do not extend theorem assumptions."
+  ],
+  "endpoint_limits": [
+    "Theorem 2.1 is informative for ρ̄<1. If cross-partition perfect positive duplicates exist, Corollary 2.2 requires at least one δ with N_δ≠A; if all A coordinates are duplicated across B, this corollary does not give a finite conclusion.",
+    "Theorem 2.4 requires one of the two stated covariance branches with C_{A,B}>0. It is not a general unequal-variance theorem.",
+    "The Gaussian maximum Corollary 2.7 uses σ_min>0. Proposition 2.8 also requires invertible within-block covariance matrices and strictly positive conditional residual variances.",
+    "Theorem 3.1 concerns finite p, discrete maximizer events and CDF distance over thresholds; its sample size constraint B_n²log⁵(pn)≤c n is part of the stated rate regime.",
+    "The exchangeable lower bound k/p is special to the overlap construction in Proposition 2.3; it is not an atom lower bound for arbitrary partitions."
+  ],
+  "reusable_methods": [
+    "Rewrite a maximizer-in-subset event as positivity of a difference of two partition maxima, so the target becomes one CDF threshold for a scalar difference.",
+    "Express joint maxima density as a sum over which coordinate wins in each block; after u=y−x, compare a conditional density g_{u,j} with the derivative of a conditional probability H_{u,j}.",
+    "For exact cross-block correlations ±1, separate duplicate coordinates and singular affine support lines before applying density-based arguments.",
+    "Use two distinct anti-concentration routes: covariance-gap derivative control (Theorem 2.4) or conditioning plus Schur-complement residual variance (Proposition 2.8).",
+    "Combine a smooth log-sum-exp approximation with anti-concentration and iterative randomized Lindeberg replacement to transfer CDFs of maximum differences; Stein-kernel interpolation handles the multiplier-to-Gaussian leg."
+  ],
+  "unchecked": [
+    "Referenced results not independently sourced here: [12] Gaussian approximation and moment-event lemmas used in Theorem 3.1, [26] Lemma 4.6 for the multiplier Stein-kernel bound, [21] comparison inequality, and [3] Gaussian log-Sobolev theorem. This review records where each enters rather than certifying those external proofs.",
+    "Theorem 3.1 proof has an apparent cross-reference typo at paper.md line 1330: it says combine (5.15),(5.15),(5.17); the chain to (3.7) requires the separately proved (5.16) comparison of X* with Y. The needed comparison is present immediately above, but the printed sentence is inconsistent.",
+    "The source PDF was visually checked for theorem statements and high-risk formulas on the pages listed in read_ranges; no independent proof certification or numerical reproduction is claimed."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 3151,
+    "source_lines": 3151,
+    "required_content_lines": 2351,
+    "covered_content_lines": 2351,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-b3fd0f020aa4cd42/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-b3fd0f020aa4cd42.json",
+  "review_input_sha256": "2f9125e4d1878777452b13997177de7d956c98ccffe46505c02e15c3782fd0f3"
+}

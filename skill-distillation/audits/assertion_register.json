@@ -1,0 +1,770 @@
+{
+ "schema": "assertion-register-r12",
+ "generated": "2026-10-06",
+ "counting_units": {
+  "original_assertion": "one verification object as executed in B1/B2/B3 (distinct parent_original)",
+  "sub_assertion": "register entry; an original splits when its parts have DIFFERENT verification strengths",
+  "tier_count": "membership of sub-assertions in a status class; tiers are the status values themselves, mutually exclusive by construction",
+  "original_count": 24,
+  "sub_count": 59,
+  "status_distribution": {
+   "instance_check_only": 25,
+   "independent_proof": 21,
+   "conditional_proof": 10,
+   "pending": 3
+  },
+  "correction_history": {
+   "claim_of_20": "B1(8 cases)+sharp(4)+B3(8) -- omitted 5 distinct B2 objects",
+   "ledger_28": "dropped F07 upper bound, E01-CVaR, D03-CTX; split VP-extremizer and N04-warning without a recorded mapping"
+  }
+ },
+ "dimension_definitions": {
+  "verification_status": {
+   "independent_proof": "complete argument incl. branches, degeneracy, attainability produced by this audit",
+   "conditional_proof": "complete argument under premises taken as given (standard theorem / stated hypothesis)",
+   "instance_check_only": "numeric or finite-instance verification only",
+   "pending": "insufficient evidence, partial check, or unresolved necessity",
+   "refuted": "found false (none so far)",
+   "mutually_exclusive": true,
+   "priority_rule": "a claim whose parts differ in strength is SPLIT into separate sub-assertions rather than assigned a compound label"
+  },
+  "evidence_basis": {
+   "values": [
+    "own_derivation",
+    "source_comparison",
+    "standard_theorem_citation",
+    "numeric_experiment",
+    "literature_check"
+   ],
+   "mutually_exclusive": false,
+   "note": "independent dimension: HOW the verification was performed, not how strong it is"
+  }
+ },
+ "assertions": [
+  {
+   "id": "J01-CASE-01",
+   "skill": "math-j01-inhomogeneous-jump-generator",
+   "statement": "P(X_1=0)=exp(-int_0^1(1+s)ds)=e^{-3/2}=0.22313 for rate lambda_01(t)=1+t",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "numeric_experiment",
+    "standard_theorem_citation"
+   ],
+   "parent_original": "J01",
+   "note": "closed form exact; time-varying-rate Poisson formula is a standard result not independently proved"
+  },
+  {
+   "id": "J02-CASE-01",
+   "skill": "math-j02-killed-process-duhamel-first-jump",
+   "statement": "survival e^-2=0.135335, cemetery 1-e^-2=0.864665, density 2e^{-2t} at rate 2, T=1",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "numeric_experiment",
+    "standard_theorem_citation"
+   ],
+   "parent_original": "J02",
+   "note": "three quantities mutually consistent"
+  },
+  {
+   "id": "I02-CASE-01",
+   "skill": "math-i02-filtration-projections-compensators",
+   "statement": "EN_1=EA_1=1-e^{-1}=0.63212 for A_t=min(t,gamma)",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "numeric_experiment",
+    "standard_theorem_citation"
+   ],
+   "parent_original": "I02",
+   "note": "the structural claim (compensator changes once F_0 reveals gamma) NOT verified"
+  },
+  {
+   "id": "I03-CASE-01",
+   "skill": "math-i03-fourth-moment-suffix-maximal-comparison",
+   "statement": "E|M_2|^4=8, E[max_{k<=2}|M_k|]^4=8.5, 8.5<=(4/3)^4*8",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation",
+    "numeric_experiment"
+   ],
+   "parent_original": "I03",
+   "note": "four-path complete enumeration -- exact"
+  },
+  {
+   "id": "H04-CASE-01",
+   "skill": "math-h04-exact-rate-function-variance-strata",
+   "statement": "I(3/4)=0.130812 for Bernoulli(1/2); endpoints I(0)=-log(1-p), I(1)=-log p",
+   "verification_status": "conditional_proof",
+   "evidence_basis": [
+    "own_derivation",
+    "standard_theorem_citation"
+   ],
+   "parent_original": "H04",
+   "note": "substitution and endpoint extension algebra complete; Cramer's theorem itself standard, not proved here"
+  },
+  {
+   "id": "H05-CASE-01",
+   "skill": "math-h05-chernoff-hoeffding-bernstein",
+   "statement": "E e^X = cosh(1)=1.5431 <= e^{1/2}=1.6487 (strict) for fair Rademacher",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "numeric_experiment",
+    "standard_theorem_citation"
+   ],
+   "parent_original": "H05",
+   "note": "strictness at this point is a computation; Hoeffding lemma general form not proved here"
+  },
+  {
+   "id": "K04-CASE-01",
+   "skill": "math-k04-anti-concentration-empirical-process",
+   "statement": "Var(|G|)=1-2/pi; Q=2Phi(0.1)-1=0.07966; 0.0478<=Q<=0.574",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "numeric_experiment",
+    "standard_theorem_citation"
+   ],
+   "parent_original": "K04",
+   "note": "Theorem 2 bound itself not verified"
+  },
+  {
+   "id": "A01-CASE-01",
+   "skill": "math-a01-fractional-normalization",
+   "statement": "on X=[0,1], max x/(1+x)=1/2 attained at x=1",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation"
+   ],
+   "parent_original": "A01",
+   "note": "monotonicity + endpoint"
+  },
+  {
+   "id": "A02-SHARP-01",
+   "skill": "math-a02-outer-relaxation-budget",
+   "statement": "(x-kappa)_+ <= x^2/(4kappa) for all real x, constant 1/4 not reducible; equality iff x=0 or x=2kappa",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation",
+    "numeric_experiment"
+   ],
+   "parent_original": "A02",
+   "note": "algebraic identity + global critical-point analysis + 4000-point exact rational search"
+  },
+  {
+   "id": "F07-SHARP-01a",
+   "skill": "math-f07-marcinkiewicz-zygmund-vector-extension",
+   "statement": "MZ constant LOWER bound >= 1 (equality attained)",
+   "verification_status": "conditional_proof",
+   "evidence_basis": [
+    "own_derivation"
+   ],
+   "parent_original": "F07",
+   "note": "equality example: m=1, T=identity, p=q=2, f_k co-directed -> Minkowski equality; PREVIOUS LEDGER DROPPED the upper-bound half"
+  },
+  {
+   "id": "F07-SHARP-01b",
+   "skill": "math-f07-marcinkiewicz-zygmund-vector-extension",
+   "statement": "MZ constant UPPER bound <= 1",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "numeric_experiment",
+    "standard_theorem_citation"
+   ],
+   "parent_original": "F07",
+   "note": "300 random positive multi-linear families, max ratio 1.000000; general duality proof NOT rewritten. PREVIOUS LEDGER DROPPED this half entirely"
+  },
+  {
+   "id": "B02-SHARP-01",
+   "skill": "math-b02-semi-infinite-exchange",
+   "statement": "min x s.t. x>=t for all t in [0,1] has optimum 1",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation"
+   ],
+   "parent_original": "B02",
+   "note": ""
+  },
+  {
+   "id": "E01-SHARP-01",
+   "skill": "math-e01-occupation-measure-flow-lp",
+   "statement": "Cantelli radius r=sqrt(1/eps-1) cannot be reduced",
+   "verification_status": "conditional_proof",
+   "evidence_basis": [
+    "own_derivation",
+    "numeric_experiment",
+    "source_proof_verified"
+   ],
+   "parent_original": "E01",
+   "note": "two-point construction: mean 0, variance exactly 1, P(X>=r)=eps exact; Cantelli inequality itself standard, not proved here"
+  },
+  {
+   "id": "E01-CTX-01",
+   "skill": "math-e01-occupation-measure-flow-lp",
+   "statement": "VP validity range 'unimodal and 0<eps<=1/6' is the exact threshold",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "own_derivation",
+    "numeric_experiment",
+    "source_comparison"
+   ],
+   "parent_original": "E01",
+   "note": "R49 RESOLVED via LP-based exact reconstruction: one-sided unimodal sup P(X-mu>=k*sigma) matches 4/(9(k^2+1)) to 1e-5 for k>=0.8 (worst-case mode shift d*=1/k confirms analytic structure); formula FAILS for small k (k=0.6: 0.3457>0.3268). Two-sided VP 4/(9k^2) tight at k=2/sqrt(3). Card's eps<=1/6 is SUFFICIENT but NOT the exact threshold (valid domain extends to ~eps<=0.27); card usage is safe, 'exact threshold' wording retired"
+  },
+  {
+   "id": "E01-BND-01",
+   "skill": "math-e01-occupation-measure-flow-lp",
+   "statement": "VP extremizer (mass 1-4/(3lam^2) at mean + centered uniform) attains 4/(9lam^2)",
+   "verification_status": "conditional_proof",
+   "evidence_basis": [
+    "own_derivation",
+    "numeric_experiment"
+   ],
+   "parent_original": "E01",
+   "note": "variance and tail computed exactly at lambda=1.7/2.0/3.0; VP theorem premise standard"
+  },
+  {
+   "id": "D03-CTX-01",
+   "skill": "math-d03-parameterized-free-energy",
+   "statement": "source Theorem 1.1 (paper.md:93,198) really writes +infty outside the OPEN interval",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "parent_original": "D03",
+   "note": "direct textual check of the frozen conversion; RECLASSIFIED: this is a source-comparison fact; PREVIOUS LEDGER folded it into prose rather than listing it"
+  },
+  {
+   "id": "D03-IDEN-01",
+   "skill": "math-d03-parameterized-free-energy",
+   "statement": "psi*(+/-||t||_1)=m ln2; |alpha|>||t||_1 gives +inf; infinite support endpoint = inf; t=0 gives psi*(0)=0",
+   "verification_status": "conditional_proof",
+   "evidence_basis": [
+    "own_derivation",
+    "numeric_experiment"
+   ],
+   "parent_original": "D03",
+   "note": "asymptotic expansion complete to 4.5e-14 with stable logcosh; attainability INSIDE the open interval not verified"
+  },
+  {
+   "id": "E01-CEX-01",
+   "skill": "math-e01-occupation-measure-flow-lp",
+   "statement": "CVaR atom-inconsistency: Eq(3)=2 vs Eq(4)=Eq(5)=1 for V=1 w.p. 1/2, eps=1/4",
+   "verification_status": "conditional_proof",
+   "evidence_basis": [
+    "own_derivation",
+    "numeric_experiment"
+   ],
+   "parent_original": "E01",
+   "note": "recomputed exactly with rationals; PREVIOUS LEDGER DROPPED this entry entirely"
+  },
+  {
+   "id": "E01-CEX-02",
+   "skill": "math-e01-occupation-measure-flow-lp",
+   "statement": "Theorem 5.5 literal fixed-scalar no-gap is false: fixed-t optimum 2/3 vs measure LP 1",
+   "verification_status": "conditional_proof",
+   "evidence_basis": [
+    "own_derivation",
+    "numeric_experiment"
+   ],
+   "parent_original": "E01",
+   "note": "every pivotal step independently re-derived (ES 2q/3 attainable, domination <=1, chain-rule residuals<1e-14); scope limited to the literal scalar-t* semantics; A7 uses C1 polynomial density, not source [20]"
+  },
+  {
+   "id": "F06-BND-01",
+   "skill": "math-f06-menshov-rademacher-maximal-partial-sums",
+   "statement": "||max_{k<=N}|sum f_j|||_2^2 <= (m+1)^2 sum||f_j||^2, m=ceil(log2 N)",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "numeric_experiment"
+   ],
+   "parent_original": "F06",
+   "note": "1400 orthogonal trials, worst ratio 1.76 vs bound 49; NOT a proof; skill itself labels it 'sufficient, not claimed optimal'"
+  },
+  {
+   "id": "E04-CASE-01",
+   "skill": "math-e04-snell-envelope-optimal-stopping",
+   "statement": "two-period positive case S_0=1, tau*=1; negative case S_0=0 beats forced stop -1",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation"
+   ],
+   "parent_original": "E04",
+   "note": "finite-state enumeration"
+  },
+  {
+   "id": "N01-CASE-01",
+   "skill": "math-n01-john-loewner-ellipsoid",
+   "statement": "||x||_2 <= sqrt(n)||x||_inf <= sqrt(n) on [-1,1]^n, equality at vertices",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation",
+    "numeric_experiment"
+   ],
+   "parent_original": "N01",
+   "note": ""
+  },
+  {
+   "id": "D02-IDEN-01",
+   "skill": "math-d02-gibbs-entropy-duality",
+   "statement": "KL(P||Q_V)=KL(P||Q)-E_P V+log Z; D(mu_C||mu)=ln(1/mu(C))",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "numeric_experiment",
+    "own_derivation",
+    "source_proof_verified",
+    "standard_theorem_citation"
+   ],
+   "parent_original": "D02",
+   "note": "5 instances at 1e-12 + exact special case; general algebraic proof not rewritten; P<<Q, integrability, extended-real conventions NOT independently audited R33: variational principle fully proved incl. integrability sufficient condition"
+  },
+  {
+   "id": "D04-IDEN-01",
+   "skill": "math-d04-entropy-chain-rule",
+   "statement": "D(P_XY||Q_XY)=D(P_X||Q_X)+E_{P_X}D(P_{Y|x}||Q_{Y|x})",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "numeric_experiment",
+    "standard_theorem_citation"
+   ],
+   "parent_original": "D04",
+   "note": "4 instances at 1e-12; RN-decomposition proof not rewritten; zero-mass handling not audited"
+  },
+  {
+   "id": "M01-BND-01a",
+   "skill": "math-m01-convex-hull-extreme-points",
+   "statement": "support at most d+1 (LP basic-solution theory)",
+   "verification_status": "conditional_proof",
+   "evidence_basis": [
+    "standard_theorem_citation",
+    "source_proof_verified"
+   ],
+   "parent_original": "M01",
+   "note": "R32: Caratheodory theorem itself fully reproduced (convex+cone+closedness); LP corroboration retained"
+  },
+  {
+   "id": "M01-BND-01b",
+   "skill": "math-m01-convex-hull-extreme-points",
+   "statement": "sharpness: instances requiring d+1 exist (150-trial max support = d+1 for d=1..8)",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "numeric_experiment"
+   ],
+   "parent_original": "M01",
+   "note": "numeric observation; 'ALL instances need d+1' is false and not claimed"
+  },
+  {
+   "id": "N04-IDEN-01",
+   "skill": "math-n04-summable-error-entropy-descent",
+   "statement": "sum d_k <= H_0 - H_inf + sum eps_k^+",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation"
+   ],
+   "parent_original": "N04",
+   "note": "one-line telescoping argument, upgraded from numeric in R11"
+  },
+  {
+   "id": "N04-IDEN-02",
+   "skill": "math-n04-summable-error-entropy-descent",
+   "statement": "necessity of SKILL item-3 warning on signed errors",
+   "verification_status": "conditional_proof",
+   "evidence_basis": [
+    "own_derivation"
+   ],
+   "parent_original": "N04",
+   "note": "R35: warning content = sup_m S_m < inf exactly; new lemma H_inf finite => S bounded below; earlier no-discrimination check superseded (compared constants, not partial sums)"
+  },
+  {
+   "id": "C01-CASE-01",
+   "skill": "math-c01-semidefinite-lifting",
+   "statement": "two-ball QCQP: x*=(-1,0) feasible, objective exactly -0.54",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "own_derivation",
+    "numeric_experiment"
+   ],
+   "parent_original": "C01",
+   "note": "optimality of x*, Beta exactness theorem, l1^T W l2=0 sufficiency NOT verified"
+  },
+  {
+   "id": "C02-IDEN-01a",
+   "skill": "math-c02-completely-positive-copositive",
+   "statement": "CP subset COP and CP subset COP* (one-directional inclusions)",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation",
+    "numeric_experiment"
+   ],
+   "parent_original": "C02",
+   "note": "one-line algebra each: (v^T x)^2>=0 for x,v>=0; <A,sum w w^T>=sum w^T A w >=0 for A in COP, w>=0"
+  },
+  {
+   "id": "C02-IDEN-01b",
+   "skill": "math-c02-completely-positive-copositive",
+   "statement": "CP = COP* (equality, reverse inclusion COP* subset CP)",
+   "verification_status": "pending",
+   "evidence_basis": [
+    "standard_theorem_citation"
+   ],
+   "parent_original": "C02",
+   "note": "Diananda-type deep result, cited not verified"
+  },
+  {
+   "id": "C02-IDEN-01c",
+   "skill": "math-c02-completely-positive-copositive",
+   "statement": "PSD basis size binom(n+d,d)",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation"
+   ],
+   "parent_original": "C02",
+   "note": "combinatorial dimension of the symmetric-polynomial basis"
+  },
+  {
+   "id": "H02-IDEN-01",
+   "skill": "math-h02-exponential-tilting-saddlepoint",
+   "statement": "Gaussian saddlepoint prefactor equals the Mills leading term exp(-x^2/2)/(x sqrt(2pi))",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "own_derivation",
+    "numeric_experiment"
+   ],
+   "parent_original": "H02",
+   "note": "1e-15 agreement, relative error decreasing; general-K prefactor, error bounds, Lugannani-Rice branch NOT verified (skill has its own guard)"
+  },
+  {
+   "id": "B03-IDEN-01",
+   "skill": "math-b03-generalized-moments",
+   "statement": "sup E[X|X>=t] = mu + sigma^2/(mu-t) for t<mu, sigma>0; sup=inf for t>=mu; NOT attained",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation",
+    "numeric_experiment"
+   ],
+   "parent_original": "B03",
+   "note": "two-component variance decomposition + simultaneous boundary equality; branches t<mu/=mu/>mu, degeneracy sigma=0, p=1, attainability (X=t atom belongs to Xi) all covered; upgraded in R11"
+  },
+  {
+   "id": "K02-CASE-01",
+   "skill": "math-k02-pickands-piterbarg-double-sum",
+   "statement": "P(G>2)=Psi(2)=0.0227501; union 2p-p^2=0.0449827 (independent Gaussian blocks)",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "own_derivation",
+    "numeric_experiment"
+   ],
+   "parent_original": "K02",
+   "note": "erfc closed form exact"
+  },
+  {
+   "id": "L02-CASE-01a",
+   "skill": "math-l02-adversarial-input-search",
+   "statement": "binary-toy mass and root-mean computations for a+b=1 normalization",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "own_derivation"
+   ],
+   "parent_original": "L02",
+   "note": "mass/root-mean exact"
+  },
+  {
+   "id": "L02-CASE-01b",
+   "skill": "math-l02-adversarial-input-search",
+   "statement": "weak-type ratio tends to 1 as alpha->1/2-",
+   "verification_status": "pending",
+   "evidence_basis": [],
+   "parent_original": "L02",
+   "note": "R35: ratio functional definition NOT reconstructible from package (audit-sol_hn gives only \"2alpha->1\" without derivation); OUQ source is finite-reduction framework, no toy ratio; human-info gap like GP-BRANCH/TC-A4/HS"
+  },
+  {
+   "id": "L04-CASE-01",
+   "skill": "math-l04-mathematical-programming-workflow",
+   "statement": "LP max x+y s.t. x+y<=1, x,y>=0: optimum 1, dual bound 1, strong duality",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "own_derivation"
+   ],
+   "parent_original": "L04",
+   "note": "hand-computed exact"
+  },
+  {
+   "id": "G05-DOOB-01",
+   "skill": "math-g05-tree-carleson-square-function-tc-a4-audit",
+   "statement": "Doob L^p maximal inequality proves the Doob side of the 4C constant: ||max f||_2^2 <= 4||f||_2^2",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation",
+    "source_proof_verified"
+   ],
+   "parent_original": "G05",
+   "note": "R31: full proof reproduced; sharpness of (p')^p remains the source's Bellman claim"
+  },
+  {
+   "id": "B01-FARKAS-01",
+   "skill": "math-b01-lagrange-farkas",
+   "statement": "Farkas lemma: exactly one of {Ax=b,x>=0 feasible} and {y^T A >= 0 columnwise, y^T b < 0}",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation",
+    "source_proof_verified"
+   ],
+   "parent_original": "B01",
+   "note": "R32: full proof; cone closedness from simplicial decomposition"
+  },
+  {
+   "id": "G04-PARSEVAL-01",
+   "skill": "math-g04-rubio-de-francia-square-function-scope-check",
+   "statement": "for pairwise disjoint intervals, ||S(f)||_2 = ||f||_2 exactly, and the constant 1 is not improvable",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation"
+   ],
+   "parent_original": "G04",
+   "note": "R32: projection algebra + resolution; equality case single frequency"
+  },
+  {
+   "id": "D02-VAR-01",
+   "skill": "math-d02-gibbs-entropy-duality",
+   "statement": "Gibbs variational principle: log Z = sup_P {E_P V - D(P||Q)}, unique optimizer Q_V=e^V/Z",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation",
+    "source_proof_verified"
+   ],
+   "parent_original": "D02",
+   "note": "R33: two-line proof from KL nonnegativity (Jensen); integrability condition recorded"
+  },
+  {
+   "id": "GEN-YOUNG-01",
+   "skill": "(chain-root)",
+   "statement": "Young: ab <= a^p/p + b^q/q (1/p+1/q=1), via exp convexity",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation"
+   ],
+   "parent_original": "GEN",
+   "note": "R34: root of the Holder chain; numeric 100k cases zero violation"
+  },
+  {
+   "id": "GEN-JENSEN-01",
+   "skill": "(chain-root)",
+   "statement": "Jensen finite (induction) and general (Fenchel graph) forms",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation"
+   ],
+   "parent_original": "GEN",
+   "note": "R34: underpins KL>=0 -> Gibbs -> d02"
+  },
+  {
+   "id": "F04-IDENT-01a",
+   "skill": "math-f04-poisson-gamma-abel-square-function",
+   "statement": "int_0^inf t*lambda*e^{-2t sqrt(lambda)} dt = 1/4",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation"
+   ],
+   "parent_original": "F04",
+   "note": "R21 sympy exact; registered R34"
+  },
+  {
+   "id": "F04-IDENT-01b",
+   "skill": "math-f04-poisson-gamma-abel-square-function",
+   "statement": "int_0^inf lambda*e^{-2t sqrt(lambda)} dt = sqrt(lambda)/2 (t-weight removed)",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation"
+   ],
+   "parent_original": "F04",
+   "note": "R21 sympy exact; registered R34"
+  },
+  {
+   "id": "F04-IDENT-01c",
+   "skill": "math-f04-poisson-gamma-abel-square-function",
+   "statement": "Laplace transform of Gamma(alpha, rate r) = (r/(r+u))^alpha",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation"
+   ],
+   "parent_original": "F04",
+   "note": "R21 sympy exact; registered R34"
+  },
+  {
+   "id": "K04-CARDPDF-01",
+   "skill": "math-k04-anti-concentration-empirical-process",
+   "statement": "three main source cards (CCK Thm2.1, Thm2 sqrt-12, BFS Thm2.1) match their PDFs verbatim, incl. the delta_n placement and factor 7",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "parent_original": "K04",
+   "note": "R36: first card-vs-PDF fidelity check; closes the skill->card->PDF chain for K04"
+  },
+  {
+   "id": "G02D01-CARDPDF-01",
+   "skill": "(multi)",
+   "statement": "G02 Thm5.1 parameters and D01 Thm1/2/4/5 match their PDFs verbatim",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "parent_original": "MULTI",
+   "note": "R37: card-vs-PDF cumulative 5/5 cards, 0 discrepancies"
+  },
+  {
+   "id": "E03-CARDPDF-01",
+   "skill": "math-e03-tree-bellman-cross-layer-budget",
+   "statement": "card-vs-PDF: potential formula transcription imprecision found (4 must multiply whole bracket); constants 4/32 and properties confirmed; corrected in skill",
+   "verification_status": "conditional_proof",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "parent_original": "E03",
+   "note": "R38: first substantive transcription deviation in card-vs-PDF checks; R23 'verbatim' claim corrected; conclusions unaffected, formula fixed"
+  },
+  {
+   "id": "B03G03-CARDPDF-01",
+   "skill": "(multi)",
+   "statement": "b03 Theorem 2 (m+1 generators) and G03 Theorem 1.7 (compactness iff vanishing tail capacity) match their PDFs verbatim",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "parent_original": "MULTI",
+   "note": "R39: card-vs-PDF cumulative 8/9 verbatim, 1 deviation (E03) corrected; b03 m+1 theorem cross-validates the three-atom brute-force methodology"
+  },
+  {
+   "id": "F07C04-CARDPDF-01",
+   "skill": "(multi)",
+   "statement": "f07 Prop 1.9 (constant = ||T||, sharpness by induction) and C04 qlb definition match their PDFs verbatim",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "parent_original": "MULTI",
+   "note": "R40: card-vs-PDF cumulative 11/12 verbatim, 1 deviation (E03) corrected"
+  },
+  {
+   "id": "F05-CARDPDF-01",
+   "skill": "math-f05-l2-spectral-parameter-schur-test",
+   "statement": "weighted Schur test C_A <= sqrt(zeta_r(A) kappa_r(A)) matches Dym-Katsnelson PDF p17 verbatim",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "parent_original": "F05",
+   "note": "R41: card-vs-PDF cumulative 12/13 verbatim; interpolation form (3.16) corroborates R20 proof"
+  },
+  {
+   "id": "H03-CARDPDF-01",
+   "skill": "math-h03-fan-grama-liu-martingale-expansion",
+   "statement": "Thm 2.1/2.2 + Cor 2.1 error terms, alpha/delta ranges match PDF p4 verbatim",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "parent_original": "H03",
+   "note": "R42: card-vs-PDF cumulative 13 checked, 12 verbatim, 1 deviation (E03) corrected"
+  },
+  {
+   "id": "F06-DERIV-01",
+   "skill": "math-f06-menshov-rademacher-maximal-partial-sums",
+   "statement": "(m+1)^2 bound derivation in method.md: constant decomposes as (CS factor) x (number of dyadic levels)",
+   "verification_status": "independent_proof",
+   "evidence_basis": [
+    "own_derivation"
+   ],
+   "parent_original": "F06",
+   "note": "R42: own-derivation attribution correct; derivation verified; no source card applies"
+  },
+  {
+   "id": "A03G05-CARDPDF-01",
+   "skill": "(multi)",
+   "statement": "A03 Thm 4.2 (dyadic cost approximation, [0,1]^2 domain) and G05 Thm 1.1 ((p')^p sharp) match their PDFs verbatim",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "parent_original": "MULTI",
+   "note": "R43: cumulative 16 cards, 15/16 verbatim; G05 constant triple-corroborated (source/numeric/Doob)"
+  },
+  {
+   "id": "G01C03-CARDPDF-01",
+   "skill": "(multi)",
+   "statement": "G01 Thm1.1/1.2 (UR/harmonic-measure packing) and C03 Thm2.1 (l1 power perturbation SDP) match their PDFs verbatim",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "parent_original": "MULTI",
+   "note": "R44: cumulative 19 cards, 18/19 verbatim"
+  },
+  {
+   "id": "K05H04-CARDPDF-01",
+   "skill": "(multi)",
+   "statement": "k05 convex-distance ineq (1) and H04 Theorem 2 (concave L0 characterization) match their PDFs verbatim",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "parent_original": "MULTI",
+   "note": "R45: cumulative 22 cards, 21/22 verbatim"
+  },
+  {
+   "id": "I03E04-CARDPDF-01",
+   "skill": "(multi)",
+   "statement": "I03 Thm1.6 counterexample and e04 Thm4.1 equality chain match their PDFs verbatim; e04 doubt-partitioning confirmed",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "parent_original": "MULTI",
+   "note": "R46: cumulative 25 cards, 24/25 verbatim"
+  },
+  {
+   "id": "P2f81-CARDPDF-01",
+   "skill": "(multi)",
+   "statement": "P-2f81500e5dfa70c6 (Oertel, jump measures of optional regulated processes): Prop1/Thm4/Thm5/Cor1 statements match PDF verbatim; 2 condition-level deviations found (Prop1 'hence bounded away from zero' false inference; jump-measure finiteness condition is a card-level patch of a source proof gap, unmarked) — both revised with _original_r47 preservation",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "parent_original": "CARD-PDF-FIDELITY",
+   "note": "highest in-degree unverified card (depended on by i02/j01/j05); card copies sha256[:16]=402d5374d5e04090 identical across 3 skills; 3 verification-logs updated (R47 correction entries); audit_r12/card_pdf_fidelity_r47.md"
+  },
+  {
+   "id": "E02-RATE-01",
+   "skill": "math-e02-nonlocal-hjb-supersolution",
+   "statement": "Theorem 2.2 rate claim |u_eps-u| <= C eps^p for 1<p<2*a1*a2/(a1+2*a2): the rate domain upper bound NEVER appears in the proof (p19-23, full-text search); proof yields |u_eps-u| <= C(eps^{p(1-1/a2)} v eps) (4.49) with rate depending on a2 only; terminal term (4.48) cites [3] (Sun-Xie-Xie Bernoulli 2022, uncontrolled framework) without derivation",
+   "verification_status": "refuted",
+   "evidence_basis": [
+    "own_derivation",
+    "source_comparison"
+   ],
+   "parent_original": "E02",
+   "note": "proof-supported rate upper bound theta*=min{1,(a2-1)*min{a1,a2}/a2}; exact-rational grid check 31708/31708 nonempty-domain points have p_max > theta* — statement domain exceeds what the proof supports. 'refuted' here means: the claim that THIS PROOF establishes the stated rate is false; the statement itself may still be true (would need refined controlled corrector estimates)"
+  },
+  {
+   "id": "E02-RATE-02",
+   "skill": "math-e02-nonlocal-hjb-supersolution",
+   "statement": "Convergence claim (2.10) E sup|X_eps - X_bar_eps|^p -> 0 (no rate): consistent with proof (4.35)-(4.44) which gives it <= C eps^{p(1-1/a2)} -> 0",
+   "verification_status": "conditional_proof",
+   "evidence_basis": [
+    "source_comparison",
+    "own_derivation"
+   ],
+   "parent_original": "E02",
+   "note": "unaffected by RATE-01; p in (1, min{a1,a2}) from (4.42) constraints"
+  },
+  {
+   "id": "E01-VP-02",
+   "skill": "math-e01-occupation-measure-flow-lp",
+   "statement": "Two-sided Gauss/VP bound P(|X-mu|>=k*sigma) <= 4/(9k^2) for unimodal X: LP reconstruction confirms tight at k=2/sqrt(3) (maxP=0.33590 vs bound 0.33591 at d*=0) and valid with margin for all k>=1.155 scanned",
+   "verification_status": "instance_check_only",
+   "evidence_basis": [
+    "own_derivation",
+    "numeric_experiment"
+   ],
+   "parent_original": "E01",
+   "note": "N=4000 aligned-grid LP over two-sided-decreasing densities; validates the cited VP theorem's constant 4/9 and threshold structure"
+  }
+ ]
+}

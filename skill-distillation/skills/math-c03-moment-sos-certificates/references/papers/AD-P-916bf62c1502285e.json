@@ -1,0 +1,111 @@
+{
+  "paper_id": "P-916bf62c1502285e",
+  "observed_title": "Best ℓ1-Approximation of Nonnegative Polynomials by Sums of Squares",
+  "authors": [
+    "Jean B. Lasserre"
+  ],
+  "version": "arXiv:1012.3271v1; 4 PDF pages; 2010",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 217,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "scope": "完整阅读首页/摘要、定义与Gram及矩阵表示、Theorem 2.1证明、矩对偶与Slater论证、Motzkin型例子、脚注和全部参考文献；渲染并核对原PDF第3、4页的定理公式、对偶问题、证明和表格。PDF第1、2页文本可读且未发现低文本或未覆盖页。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "C03": "direct：给出任意有限次数实多项式在系数ℓ1范数下到受限次数SOS锥的最佳逼近，证明其可由非负常数项与逐变量最高偶次幂扰动实现，并把最优扰动系数写成半正定规划；证明通过矩阵/截断矩序列对偶和Slater条件。这是SOS证书与矩对偶的直接方法来源。"
+  },
+  "definitions": [
+    {
+      "name": "受次数限制的SOS锥",
+      "statement": "Σ[x]_d表示次数不超过2d的SOS多项式集合；若v_d是次数不超过d的单项式向量，则g∈Σ[x]_d当且仅当存在X⪰0使g的系数满足g_α=⟨X,B_α⟩，其中v_dv_d^T=∑_{|α|≤2d}x^αB_α。",
+      "source_lines": [
+        67,
+        75
+      ],
+      "pdf_pages": [
+        2
+      ]
+    },
+    {
+      "name": "截断矩阵与矩线性泛函",
+      "statement": "对序列y=(y_α)，定义L_y(∑f_αx^α)=∑f_αy_α；d阶矩阵M_d(y)的(α,β)项为y_{α+β}。于是M_d(y)⪰0等价于L_y(q²)≥0对所有次数不超过d的q成立。",
+      "source_lines": [
+        76,
+        85
+      ],
+      "pdf_pages": [
+        2
+      ]
+    },
+    {
+      "name": "系数ℓ1最优SOS逼近",
+      "statement": "ρ_d=min{||f−g||_1:g∈Σ[x]_d}，其中系数ℓ1范数按标准单项式系数向量定义；本定理只要求2d≥deg f，并不要求f本身非负。",
+      "source_lines": [
+        96,
+        99
+      ],
+      "pdf_pages": [
+        2
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 2.1 (系数ℓ1最佳逼近的显式幂次扰动)",
+      "assumptions": [
+        "f∈R[x]，且整数d满足2d≥deg f。",
+        "系数距离是在全体次数≤2d的标准单项式基下计算；优化目标是Σ[x]_d中的SOS多项式。",
+        "非负性f≥0不是定理的必要假设，只是论文动机与应用背景。"
+      ],
+      "statement": "存在λ*=(λ*_0,…,λ*_n)∈R^{n+1}_+，使最佳逼近可取g*(x)=f(x)+λ*_0+∑_{i=1}^n λ*_i x_i^{2d}，且ρ_d=∑_{i=0}^nλ*_i。该λ*是SDP min_{λ≥0}{∑_{i=0}^nλ_i:f+λ_0+∑_{i=1}^nλ_ix_i^{2d}∈Σ[x]_d}的最优解。",
+      "start_line": 110,
+      "end_line": 122,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "作者结论：Theorem 2.1及式(2.4)–(2.5)，PDF第3页。",
+        "作者证明：把系数绝对误差的ℓ1最小化写成带SOS Gram矩阵X⪰0的SDP (2.6)；其对偶可等价写为最大化−L_y(f)，约束M_d(y)⪰0和|y_α|≤1 (2.7)–(2.8)。以缩放的高斯测度矩序列构造严格可行点，应用Slater强对偶并取得原问题最优解；再用引用文献[6, Lemma 1]所给矩系数界改写对偶约束为L_y(1)≤1、L_y(x_i^{2d})≤1，所得对偶恰为扰动系数问题(2.5) (lines 123–174; PDF pages 3–4)。",
+        "核验基础推导：逐项检查PDF第3页的SOS系数方程g_α=⟨X,B_α⟩及误差上下界确实编码∑_α|f_α−g_α|；PDF第4页把常数与各单变量x_i^{2d}的对偶约束分别配对到非负λ_i，得到式(2.5)目标∑λ_i。因2d≥deg f，这些修正项落在所允许的次数范围内；正号λ≥0使所构造的多项式与f的系数距离恰为这些互不相同系数的和。",
+        "迁移推断：在中心立方体问题中可把该结果用作SOS扰动/矩对偶的局部工具；它不推出任意盒上多项式正性、任意域上的Putinar表示、或全局极大算子的等价证书，须另行加入相应乘子或约束。"
+      ],
+      "gaps": [
+        "关键系数矩界被归于参考文献[6, Lemma 1]，本文未重证该引理。",
+        "强对偶依据Slater条件；论文给出严格可行构造，但一般SDP对偶对应关系仍按标准结果引用。",
+        "表1数值由GloptiPoly计算，未独立复算；表格不是定理证明的一部分。"
+      ]
+    }
+  ],
+  "constant_dependence": "定理的最优值和修正向量依赖f、变量数n和截断次数d；没有给出显式数值常数或逼近误差随d增长的统一速率。",
+  "endpoint_limits": "要求2d≥deg f，允许等号；证书只约束到次数2d。此结果对全空间上的系数ℓ1距离成立，不含紧集/盒约束。对非负f的渐近逼近性引用既有高次扰动理论，本文只展示有限d实例，不证明本文定义的ρ_d的一般渐近率。",
+  "reusable_methods": [
+    "以单项式向量和正半定Gram矩阵表达SOS系数约束。",
+    "用截断矩阵描述SOS对偶并构造严格可行矩序列以调用Slater强对偶。",
+    "把系数ℓ1逼近化为有限个非负的最高偶次单项式扰动的SDP。"
+  ],
+  "unchecked": [
+    "参考文献[6]中用于矩系数界的Lemma 1未在本卡中单独查证。",
+    "Motzkin型例子的表1数值未重算。",
+    "该系数范数扰动向带域约束、中心立方体极大算子或多项式矩层级的扩展属于迁移推断，不是本文定理。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 217,
+    "source_lines": 217,
+    "required_content_lines": 163,
+    "covered_content_lines": 163,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-916bf62c1502285e/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-916bf62c1502285e.json",
+  "review_input_sha256": "03ad7c97f528c7ae04798ba11b1a37863428f2d27e10c2c5436386427bb45d9f"
+}

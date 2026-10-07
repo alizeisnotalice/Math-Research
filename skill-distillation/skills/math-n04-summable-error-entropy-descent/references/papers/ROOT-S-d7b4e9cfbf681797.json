@@ -1,0 +1,201 @@
+{
+  "paper_id": "S-d7b4e9cfbf681797",
+  "observed_title": "Lower bounds for the weak type (1, 1) estimate for the maximal function associated to cubes in high dimensions",
+  "authors": [
+    "A. S. Iakovlev",
+    "J.-O. Strömberg"
+  ],
+  "version": "Math. Res. Lett.20(2013),no.5,907–918；Received November5 2012；出版社12页含Appendices A/B",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 691,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "scope": "全文、附录A/B与参考文献；PDF水印文本只作数据忽略"
+    }
+  ],
+  "topic_relevance": [
+    {
+      "code": "K01",
+      "decision": "direct",
+      "reason": "多层交叠加权二阶矩与维数统一渐近"
+    },
+    {
+      "code": "L01",
+      "decision": "direct",
+      "reason": "中心立方体周期格点下界构造及有限见证"
+    },
+    {
+      "code": "N04",
+      "decision": "direct",
+      "reason": "尺度整数化、缓冲比率及维数误差"
+    }
+  ],
+  "definitions": [
+    "本源u为非中心半带宽，非中心概率2u；与Aldaz源的非中心概率u约定不同，不能混写。",
+    "s0实数只用于辅助优化，实际格点平均仍需整数尺度。"
+  ],
+  "theorem_cards": [
+    {
+      "label": "主定理与单位胞命题",
+      "start_line": 73,
+      "end_line": 121,
+      "pdf_pages": [
+        2
+      ],
+      "assumptions": [
+        "Lebesgue中心轴平行立方体，Ad为弱型最佳常数；d足够大后吸收有限小维数。"
+      ],
+      "statement": "原文主张Ad≥c d^(1/4)，c>0与d无关；全局证明经单位胞周期格点构造、截断、mollification。",
+      "proof_steps": [
+        "核心命题α0|{x∈[0,1]^d:Mμ_d>α0}|>c0d^(1/4)。",
+        "格点平均的测试半边长约d^(1/4)，再用边长R≫d^(5/4)的有限截断保留大量好单位胞。"
+      ],
+      "gaps": [
+        "这是原文主张，不是本次独立认证的完整下界；后述统一渐近、参数构造及附录细节需补核。"
+      ]
+    },
+    {
+      "label": "格点层计数、尺度最优及Stirling抵消",
+      "start_line": 129,
+      "end_line": 353,
+      "pdf_pages": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "assumptions": [
+        "u∈(0,1/2)，k个非中心坐标，ζd≤k≤ξd，0<ζ<ξ<1；整数尺度s≥1。",
+        "实尺度最优须k<2ud并使s0≥1。"
+      ],
+      "statement": "|E_(u,k)|=binom(d,k)(2u)^k(1−2u)^(d−k)；整数尺度测试密度M=(2s−1)^k(2s)^(d−k)/(2^d(s−u)^d)；实最优s0=(d−k)u/(2ud−k)。",
+      "proof_steps": [
+        "在s整数时逐坐标精确计数；实s只是辅助函数，不能当作原格点计数。",
+        "实最优M= k^k(d−k)^(d−k)/(d^d(2u)^k(1−2u)^(d−k))；与层概率相乘后仅留下Stirling平方根。",
+        "在k/d∈[ζ,ξ]下Stirling相对误差O(1/d)可统一；加权单层和约√d I(ζ,ξ)。",
+        "两层u(k)>u(j)交叠按条件二项概率分解，重用最优密度的逆。"
+      ],
+      "gaps": [
+        "必须给出全区间u(k)的存在、单调、u范围及共同等值条件；本文用隐函数和后续渐近讨论，未显式提供一个统一构造证书。",
+        "不能把实尺度s0的密度直接声称是实际离散平均，需整数损失。"
+      ]
+    },
+    {
+      "label": "加权二阶矩下界",
+      "start_line": 193,
+      "end_line": 237,
+      "pdf_pages": [
+        4
+      ],
+      "assumptions": [
+        "有限可测集合Ek及并集Q，0<M0≤mk≤M1，所有测度有限。"
+      ],
+      "statement": "原文(4.5)给|Q|≥(Σ|Ek|)^2/(Σ|Ek|+2Σ_(k>j)|Ek∩Ej|)；(4.7)为保守加权版本。",
+      "proof_steps": [
+        "取Y=Σ1_Ek，Cauchy–Schwarz给(∫Y)^2≤|Q|∫Y²，展开对角及交叠。",
+        "本次独立检查：加权Y=Σmk1_Ek时∫Y²≤M1(Σmk|Ek|+2Σ_(k>j)mk|Ek∩Ej|)。",
+        "因此M0|Q|≥(M0/M1)A²/B，原文更小系数(M0/M1)^2仍有效。"
+      ],
+      "gaps": [
+        "数学上不需要称该改写为更强估计；当权重起伏大，M0/M1会造成损失。",
+        "此通用证书仅从给定权重/交叠量推并集界，不证明论文的d^(1/4)交叠估计。"
+      ]
+    },
+    {
+      "label": "等值曲线、整数损失及双重和渐近",
+      "start_line": 358,
+      "end_line": 593,
+      "pdf_pages": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "assumptions": [
+        "沿L(d,u(k),k)=L0曲线，k/d位于固定内区间；需要h=2ud−k上下均约d^(3/4)。",
+        "M(real optimum)/M(integer optimum)需有维数统一常数，例如e。"
+      ],
+      "statement": "原文以双重和O(d^(3/4))、单层和Θ(√d)及二阶矩得到单位胞弱比值Ω(d^(1/4))。",
+      "proof_steps": [
+        "对条件二项log逆密度L作二阶展开，二阶导数k/(j(k−j))，其最小点j0=ku(j)/u(k)。",
+        "隐函数微分给d(k/u(k))/dk的精确式(4.20)，在h/d小的时候消去一次常数项得到leading h/(4u²d(1−2u))。",
+        "整数尺度离连续最优不到1；导数误差以h/s0³控制，选h≤c d^(3/4)取得统一整数损失。",
+        "另需h≥c′d^(3/4)；导出交叠指数至少常数乘(k−j)/√d，以奇异核求和得到内层O(d^(1/4))、外层O(√d)。"
+      ],
+      "gaps": [
+        "(4.18)、(4.21)的O项省略参数缩放，不能把O((j0−j)^3)或O((k−2ud)^2)直接当作d增长时可忽略。",
+        "从渐近等号到(4.16)、指数下界及Riemann积分，需要对j≈k的奇异边界和整个k区间统一控制；本次未补全。",
+        "(4.26)只给h上界，不能自行推出s0约d^(1/4)；下界需另外构造并与等值曲线相容。"
+      ]
+    },
+    {
+      "label": "Appendices A/B：截断与原子平滑",
+      "start_line": 610,
+      "end_line": 671,
+      "pdf_pages": [
+        11,
+        12
+      ],
+      "assumptions": [
+        "有限质量必须包含好胞测试立方体所需全部原子；阈值应保留严格裕量。"
+      ],
+      "statement": "原文附录给缓冲截断和mollification，但以下印刷/推理细节需要修正后使用。",
+      "proof_steps": [
+        "若测试半径≤r0，边长R核心至少缩到R−2r0；取整数胞边界后质量比下界((R−2r0−O(1))/(R+1))^d。",
+        "r0=O(d^(1/4))、R≥θ d^(5/4+ε)仍使该比趋1，故修正缓冲不改变阶。",
+        "本目录L01独立审计给严格超水平集的保质量mollification，用Q(x,r+h)而不要求统一测试边长下界。"
+      ],
+      "gaps": [
+        "PDF第11页把半径r0的缓冲缩成总边长r0；精确几何须两侧r0。且所写N=(R−r0)^d时N/(R+1)^d对应r0+1而非正文r0−1。",
+        "PDF第12页从Mμ≥α选取平均严格>α不自动成立：例如单原子在恰使最佳平均等于α的x。",
+        "每个测试胞含原子只保证计数≥1，不能据此推平均>α且边长≥α^(−1/d)同时成立；改用严格阈值/稍降低α。",
+        "本卡只修复有限化与严格阈值下界方向，不认证整个论文的等价离散化。"
+      ]
+    }
+  ],
+  "constant_dependence": "原文主张c0及整数损失均与d无关；本次仅核验通用二阶矩、精确计数/最优公式、Stirling内区间和修正缓冲，完整d统一常数尚未独立建证。",
+  "endpoint_limits": [
+    "主定理为cube弱(1,1)下界；不是Euclidean ball结论。",
+    "不能从本源未量化O项推出任意层参数的新指数。"
+  ],
+  "reusable_methods": [
+    "将每层密度与其概率匹配，Stirling抵消指数项。",
+    "加权二阶矩将总单层贡献平方除以交叠贡献。",
+    "实尺度优化后显式登记整数化损失，避免虚构格点平均。"
+  ],
+  "unchecked": [
+    "等值曲线全区间构造、h上下界、Taylor余项、奇异积分求和的统一常数未独立补全。",
+    "附录几何/阈值疑点已记录局部修正，但不声称因此独立重证d^(1/4)主定理。"
+  ],
+  "visual_checks": [
+    "PDF第4页权重因子与二阶矩；第7–9页O项、隐函数、整数尺度门槛；第11页缓冲计数和符号；第12页≥阈值到严格>平均的选择及边长下界。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 687,
+    "source_lines": 691,
+    "required_content_lines": 521,
+    "covered_content_lines": 521,
+    "reported_status": "full_read",
+    "source": "supplementary/S-d7b4e9cfbf681797/paper.md"
+  },
+  "review_source": "reviews/ROOT/evidence/S-d7b4e9cfbf681797.json",
+  "review_input_sha256": "f199bd01365aff88e1aff5a1fee464b493c09af003d5e753218eee09b466b4bd"
+}

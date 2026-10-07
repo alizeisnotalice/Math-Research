@@ -1,0 +1,174 @@
+{
+  "paper_id": "P-f82cd246eadb82eb",
+  "observed_title": "On Marcinkiewicz-Zygmund inequalities and A_p-weights for L-shape arcs",
+  "authors": [
+    "Charles K. Chui",
+    "Lefan Zhong"
+  ],
+  "version": "arXiv:2209.04550v1（按 PDF 首页）。",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 760,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "F07": "adjacent"
+  },
+  "definitions": [
+    {
+      "term": "曲线上的 Marcinkiewicz–Zygmund 采样族",
+      "definition": "给定 n+1 个节点 z_{n,k}∈Γ，称其为 M-Z family 是指对每个次数≤n 的多项式 P_n，连续弧长积分 ∫_Γ|P_n(z)|^p|dz| 与离散量 Σ_{k=0}^n|P_n(z_{n,k})|^p dist(z_{n,k},Γ_n) 双向等价；Γ_n 是外共形映射的相邻 level curve。",
+      "source_ranges": [
+        {
+          "start_line": 86,
+          "end_line": 97,
+          "pdf_pages": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "term": "M-A_p 权重常数与 c₀ 分离",
+      "definition": "令 ω_n(z)=∏_{k=0}^n(z−z_{n,k})，1/p+1/q=1。M-A_p 条件要求 level curve Γ_n 上的常数 M_n=sup_{I⊂Γ_n}(avg_I|ω_n|^p)^{1/p}(avg_I|ω_n|^{−q})^{1/q} 对 n 一致有界。c₀ 分离要求任意不同节点 z_{n,j},z_{n,k} 的距离至少是 c₀ 乘以二者到 Γ_n 距离的较小者。",
+      "source_ranges": [
+        {
+          "start_line": 98,
+          "end_line": 113,
+          "pdf_pages": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "term": "带权 Cauchy 奇异积分框架",
+      "definition": "文章在 level curve Γ_n 上使用 Cauchy 奇异积分 S，并通过插值节点多项式与解析函数的表示 f−P_n=ω_n S(f/ω_n)，把采样不等式与 L^p(Γ_n,|ω_n|^p) 中的 S 有界性联系起来。",
+      "source_ranges": [
+        {
+          "start_line": 274,
+          "end_line": 297,
+          "pdf_pages": [
+            5
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem 1：L 形弧上的 M-Z 采样族与 M-A_p 加分离条件等价",
+      "assumptions": [
+        "Γ 是由两条线段以非 π 角相接成的 L 形开弧；1<p<∞。",
+        "对每个 n，节点族 {z_{n,k}}_{k=0}^n⊂Γ；M-A_p 常数按 ω_n(z)=∏_{k=0}^n(z−z_{n,k}) 在 level curve Γ_n 上定义。"
+      ],
+      "statement": "作者证明：对 L 形弧 Γ，{z_{n,k}} 是所有次数≤n 多项式都满足离散采样量与 Γ 上 L^p 弧长积分双边等价的 M-Z family，当且仅当 M_n 的 M-A_p 权重常数对 n 一致有界，且节点满足 c₀ separation。相应 M-Z 比较常数不依赖 n。",
+      "start_line": 171,
+      "end_line": 197,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "分离⇒采样上界的准备：围绕每个节点取半径与到 Γ_n 距离成比例的小圆；分离使小圆不交。次调和性与这些圆弧长度满足 Carleson 测度控制，得到解析函数在节点处的加权采样量由 Γ_n 上积分控制（Lemma 2.2，行216–237）。",
+        "分离还给插值构造：对任意节点数据，Carleson 插值定理给出 H^p(D_n) 插值函数，其边界 L^p 范数被加权样本和控制（Lemma 2.3，行239–254）。结合多项式与 level curve 积分等价、Cauchy 积分公式及 M-A_p 权下 Cauchy 奇异积分有界，推出 M-Z 上界；采样下界来自 Lemma 2.2。",
+        "反向由 M-Z 推出分离：用只有一个节点取值非零的 Lagrange 基多项式，经共形映射、Koebe distortion 与 Blaschke 乘积估计得到节点间距下界（行298–328）。",
+        "反向推出 M-A_p：分离先给解析函数加权采样不等式（行329–366）；再对任意边界函数构造 Cauchy 投影插值多项式，由 M-Z 双边界和非加权 Cauchy 奇异积分有界，推出 S 在 L^p(Γ_n,|ω_n|^p) 上一致有界，最后调用曲线权重定理得 M-A_p（行367–411）。我读过作者证明，但没有独立重证引用的 Carleson 插值定理、Koebe 估计或曲线上的权重判别定理。"
+      ],
+      "gaps": [
+        "这里的 M-Z 是多项式节点采样积分不等式；不是从一般线性算子的标量 L^p 有界性推出向量值 ℓ²/MZ 延拓。",
+        "结果只对 L 形弧作证明。作者认为可扩展至有限角点分段光滑开弧，但明确把该证明留待未来工作。",
+        "定理假设 p 在 1<p<∞，没有 p=1 或 p=∞ 端点。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 208,
+          "end_line": 411,
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "name": "数值探索：典型 L 形弧上的 Fejér 点与插值常数趋势（非定理）",
+      "assumptions": [
+        "选用一条具体 L 形弧及其外共形映射；节点来自 Fejér 点及满足分离条件的调整；计算为有限 n 数值实验。"
+      ],
+      "statement": "作者报告有限范围内 M-A_p 常数、Lebesgue 常数和规范 Lagrange 基多项式比值的数值趋势：Fejér 点的 M-A_p 常数及插值相关量随 n 增长；对 p=1.5、2 的基多项式样本作幂律拟合时 β 约为 0.68、0.65。作者据有限数据猜测部分常数可能发散，且 Lebesgue 常数可能呈 log² 级；这些不是定理或渐近证明。",
+      "start_line": 416,
+      "end_line": 710,
+      "pdf_pages": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "proof_steps": [
+        "M-A_p 数值在表格中取 p=2,4,…,128、n=16,…,4096；p=2 栏由 n=16 时 1.59 到 n=4096 时 10.05，存在非单调点，作者描述整体发散趋势。",
+        "Lebesgue 常数对 n=16,…,2,097,152 计算；作者注意到在较大 n 时 L_n/log n 增长，并用线性拟合提出 log² 级猜测。",
+        "规范插值基多项式比值 R_n 的幂律拟合只用有限 n 数据；PDF 第9页图像已视觉核验，趋势本身不构成证明。"
+      ],
+      "gaps": [
+        "有限 n 计算、拟合或图表均不足以证明 Fejér 点不是 M-Z family，也不足以建立 log² 或幂律渐近。",
+        "文中典型曲线与节点参数特殊；不能将数值趋势推广为所有 L 形弧、所有 p 或任意节点族。"
+      ]
+    }
+  ],
+  "constant_dependence": "Theorem 1 使用“当且仅当”将 M-Z 常数的统一有界与 M-A_p 常数上界 M、分离常数 c₀ 联系起来；proof 中还依赖 p 与弧 Γ / level-curve 的几何常数及所引 Cauchy、Carleson 插值常数。没有给出显式最优依赖式。",
+  "endpoint_limits": [
+    "M-Z 等价仅对 1<p<∞ 证明。",
+    "应用范围是 L 形开弧上的多项式采样与插值；非 M-Z 的一般算子向量值扩张。",
+    "典型 Fejér 点的潜在失效、Lebesgue 常数增长和幂律拟合都是数值证据，不是严格渐近定理。",
+    "全文16页已读到参考文献；转换标记 PDF 第9页为 low-text 图页，已直接渲染检查该图。"
+  ],
+  "reusable_methods": [
+    "利用 c₀ 分离把节点附近的小圆作成不交族，再用次调和性与 Carleson 测度控制解析函数节点采样。",
+    "用 Cauchy 奇异积分表示 f−P=ω_n S(f/ω_n)，把 M-Z 积分比较与 M-A_p 权重上的奇异积分有界相互转化。",
+    "用单点 Lagrange 基多项式测试节点分离，并经共形映射把节点距离换成单位圆盘内的 Blaschke 乘积界。"
+  ],
+  "unchecked": [
+    "没有重新实现或误差分析作者的数值求积/拟合实验。",
+    "未独立核验引用的 Carleson 插值、曲线 A_p 判别、Koebe distortion 外部定理。",
+    "未把多项式节点采样结论迁移为任意线性算子的 ℓ² 向量值不等式。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 754,
+    "source_lines": 760,
+    "required_content_lines": 492,
+    "covered_content_lines": 492,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-f82cd246eadb82eb/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-f82cd246eadb82eb.json",
+  "review_input_sha256": "0e1a18bd18ed0bff6aca9b15480b1da1399bd1573f2de2786a430a797899e058"
+}

@@ -1,0 +1,147 @@
+{
+  "paper_id": "P-b1a1dc66a1923470",
+  "observed_title": "An Effective van der Corput-Type Method in Higher Dimensions",
+  "authors": [
+    "Shaozhen Xu"
+  ],
+  "version": "arXiv:2511.19922v2; PDF 14 pages",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 757,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "N03",
+    "decision": "direct",
+    "basis": "文章明确构造高维 van der Corput 型衰减估计，用单项式化、Newton 多面体和 toric resolution 把相位的振荡转成局部一维 van der Corput 估计，并给出对数余项的精确分支。这直接对应 N03 中振荡抵消/几何衰减的一部分；与私有 half-density 接口无定理映射关系，不能拿本文替代或声称证明该接口。"
+  },
+  "definitions": [
+    "振荡积分 I(λ)=∫_{R^n}e^{iλf(x)}φ(x)dx；支持紧的 φ 是局部截断函数。",
+    "Newton 多面体 N_f=conv{α+R_+^n:a_α≠0}；Newton 距离 d_f=inf{t:(t,…,t)∈N_f}；包含对角接触点的最小维数面为 principal face，其余维记作 k。",
+    "实非退化 (R-nondegenerate) 指每个紧面多项式 f_γ 的梯度在 (R\\{0})^n 上不为零。",
+    "单项式阻尼相位模型的有效指数 d=max_j α_j/(β_j+1)，并列最大值数 M 决定 sublevel estimate 中 log λ 的幂次。"
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "f 在原点附近实解析，且在原点附近对 Newton 多面体实非退化。",
+        "f(0)=0、∇f(0)=0。",
+        "φ 支持在原点足够小的邻域内；估计讨论 λ→∞。",
+        "记 d_f 为 Newton 距离，principal face 余维为 k。"
+      ],
+      "statement": "若 1/d_f 不是整数，则 |I(λ)|≤C_φ λ^(−1/d_f)(log λ)^(k−1)；若 1/d_f 为整数，则作者得到 |I(λ)|≤C_φ λ^(−1/d_f)(log λ)^k。整数共振分支多出一阶对数。作者指出 d_f=1 时此 log 幂可能比 Varchenko 在额外条件下的最优 log^(k−1) 稍弱。",
+      "start_line": 423,
+      "end_line": 441,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "proof_start_line": 553,
+      "proof_end_line": 691,
+      "proof_pages": [
+        11,
+        12,
+        13
+      ],
+      "proof_steps": [
+        "取由 Newton 多面体法向向量生成的扇，再作简单细分得到光滑 toric variety；proper 单项式映射把紧支撑积分拉回有限个坐标图。",
+        "在每个坐标图写 f∘π(y)=y_1^{l(α¹)}⋯y_n^{l(αⁿ)} f_σ(y)，Jacobian 是相应坐标幂乘积；根据例外坐标超平面定位潜在主导面。",
+        "用分割单位分开 f_σ 不为零的区域与其零集附近。前者把 f_σ 吸收到某一非例外坐标，再套用阻尼单项式 Lemma 2.3；由面法向比值 l(αʲ)/|αʲ|≤d_f 得到所需 λ 衰减。",
+        "零集附近用 R-非退化性确保沿一个非例外坐标存在非零偏导，令 u_{s+1}=y_{s+1}^{l(α^{s+1})}f_σ(y)，再次得到单项式相位。",
+        "当 d_f>1 时直接套单项式引理；当 d_f≤1 时沿该横向变量分部积分 N 次，使振荡指数与振幅指数重新进入引理适用区间；额外横向积分解释整幂共振时增加的 log 次数。有限分片求和结束证明。"
+      ],
+      "gaps": [
+        "Newton 多面体、toric resolution 的 properness/光滑坐标图及面非退化到局部次浸没的几何事实多按标准结果或引文使用，没有在文中全面证明。",
+        "Lemma 2.3 的小次水平集估计引用 Greenblatt 的引理；本文未独立证明一般 sublevel 体积估计。",
+        "常数 C_φ 没有给出对相位系数、支撑半径或有限坐标图的统一显式控制；结果是对固定局部相位和 cutoff 的估计。",
+        "整数/非整数对数幂分支是上界；论文不宣称系数非零、渐近等价或下界。"
+      ],
+      "author_claim": "Theorem 3.1 声称 Newton 距离控制衰减幂、principal face 余维控制 log 次数，并用 toric monomialization 与局部 van der Corput 证明。",
+      "checked_derivation": "视觉复核 PDF 第 9 页定理的两种 log 分支与第 11–13 页换元、例外坐标、分部积分步骤。已核查整幂时额外 log 来自横向零点邻域分支，但没有独立证明 toric 几何输入。"
+    },
+    {
+      "assumptions": [
+        "α,β∈Z_+^n、supp φ⊂[−1,1]^n。",
+        "振荡相位是单项式 x_1^{α_1}⋯x_n^{α_n}，振幅含 x_1^{β_1}⋯x_n^{β_n}φ(x)。",
+        "设 d=max_j α_j/(β_j+1)，M=#{j:α_j/(β_j+1)=d}。"
+      ],
+      "statement": "阻尼单项式模型满足 |I(λ)|≤C_φ λ^(−1/d)(log λ)^(M−1)，对高阶坐标指数并列最大值产生的 log 损失只有 M−1 次。",
+      "start_line": 273,
+      "end_line": 290,
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "proof_start_line": 291,
+      "proof_end_line": 395,
+      "proof_pages": [
+        6,
+        7,
+        8
+      ],
+      "proof_steps": [
+        "先在各正交象限估计并分成相位积小于 1/λ 的次水平区域与其补集。",
+        "在次水平区域用坐标变换 y_j=x_j^(β_j+1)，并调用 Greenblatt 的对数次水平体积估计，得到 λ^(−1/d)(log λ)^(M−1)。",
+        "在振荡区域选择达到最大比值 α_j/(β_j+1)=d 的坐标，固定其他变量，沿该坐标用一维 van der Corput / 分部积分估计内积分，再积掉其余坐标。",
+        "若 d<1，则利用振幅在边界的高阶消失沿选定坐标重复分部积分，选 K 使边界幂仍非负且下一次会变负；调整后的最大有效比值至少为 1，再应用 d≥1 情形。"
+      ],
+      "gaps": [
+        "次水平估计引用 Greenblatt [Gre10a, Lemma 3.1]，非本文自证。",
+        "C_φ 可能依赖有限阶导数、指数与坐标选择；未给出完全量化依赖。",
+        "这是特殊单项式相位的局部模型，不代表一般高维振荡积分有同样统一的指数/对数界。"
+      ],
+      "author_claim": "Lemma 2.3 给出带单项式振幅权的高维 van der Corput 衰减；其 d<1 情形通过重复分部积分约化。",
+      "checked_derivation": "检查了区域分割、达到最大 α/(β+1) 的坐标选择、一次 IBP+1D van der Corput 以及 d<1 重复分部积分的边界指数条件。PDF 第 6–8 页中第 8 页末尾的 K 选择条件已目视核验。"
+    }
+  ],
+  "constant_dependence": "指数 1/d_f 或 1/d 来自 Newton 距离/阻尼相位比值；对数幂取决于 principal face 余维 k 或并列最大坐标数 M。C_φ 为局部 cutoff 相关常数；不提供一致的相位系数界或 cutoff 支持半径量化。整幂共振分支是 log^k，上界较非整幂分支 log^(k−1) 多一阶。",
+  "endpoint_limits": [
+    "Theorem 3.1 需要原点附近实解析、R-nondegenerate、临界点条件和足够小支撑；退化面或非解析相位不在定理范围。",
+    "若 1/d_f 为整数，估计的对数次数增加；d_f=1 时作者明确提示估计可能较先前结果弱一阶 log。",
+    "定理只给上界；无下界、主项非消失或最优常数结论。",
+    "单项式化靠局部 toric 坐标与有限图覆盖；无全局统一衰减常数。",
+    "与 N03 私有 half-density 接口没有已证同构或直接映射；本卡只支持 van der Corput/几何消振机制。"
+  ],
+  "reusable_methods": [
+    "对高维强振荡项，先用几何/解析分解将相位变成单项式，再将估计降至一维 van der Corput 方向并在外层变量积分。",
+    "把有效振荡区域与小相位次水平集分开：前者使用抵消，后者使用子水平体积；分别量化后再求和。",
+    "用对数对角到 Newton 多面体的接触点估算衰减指数，用主面余维/并列最坏坐标数估算 log 损失。",
+    "当自然衰减指数低于一次振荡阈值时，检查振幅边界消失阶，重复分部积分直到指数可归约，再应用同一模型估计。",
+    "对接口迁移先保留原始函数空间、变量和端点假设；不能把局部振荡抵消界改称任意几何余项或半密度公开定理。"
+  ],
+  "unchecked": [
+    "Toric variety 的 properness、Newton 扇细分和非退化面引理作为标准几何结果/引文输入，未独立证明。",
+    "Greenblatt 次水平体积引理未重证；全文其他参考文献条目不代表已经阅读其来源论文。",
+    "PDF 第 4、5、8、9、11、12、13 页关键模型与主证明公式已视觉核对；其他页按全文结构文本阅读，未逐页图像复核。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 753,
+    "source_lines": 757,
+    "required_content_lines": 601,
+    "covered_content_lines": 601,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-b1a1dc66a1923470/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/P-b1a1dc66a1923470.json",
+  "review_input_sha256": "37b51488da96745e09db98c052a262be238091bec6fcdeafd593d70309a5967b"
+}

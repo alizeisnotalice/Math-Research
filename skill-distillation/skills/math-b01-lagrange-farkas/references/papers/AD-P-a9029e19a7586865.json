@@ -1,0 +1,128 @@
+{
+  "paper_id": "P-a9029e19a7586865",
+  "observed_title": "A Short Simple Proof of Closedness of Convex Cones and Farkas’ Lemma",
+  "authors": [
+    "Wouter Kager"
+  ],
+  "version": "arXiv:2208.11678v2; June 2023 copy; 2 PDF pages",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 111,
+      "pdf_pages": [
+        1,
+        2
+      ],
+      "scope": "entire note: cone representation, closure lemma and proof, Farkas alternative and proof, remarks, acknowledgements and references"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "B01": "direct: proves a finite-dimensional Farkas alternative by first establishing closedness of a finitely generated cone; the witness is an explicit linear infeasibility certificate. It is not a general strong-duality theorem for arbitrary convex programs."
+  },
+  "definitions": [
+    {
+      "name": "finitely generated cone",
+      "statement": "For A=[a₁,…,aₙ]∈R^{m×n}, K={Ax:x∈Rⁿ_+}; columns can be permuted so a₁≠0 when A≠0.",
+      "source_lines": [
+        14,
+        19
+      ],
+      "pdf_pages": [
+        1
+      ]
+    },
+    {
+      "name": "optimal normalized representation vector",
+      "statement": "u∈[0,1]^n with ||u||=1 is optimal if no z∈Rⁿ_+ satisfies Az=Au with fewer nonzero coordinates; every v∈K is λAu for such u and λ≥0.",
+      "source_lines": [
+        33,
+        39
+      ],
+      "pdf_pages": [
+        1
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Lemma (closedness of K)",
+      "assumptions": [
+        "A is a nonzero finite real m×n matrix; after column permutation its first column is nonzero",
+        "K=A Rⁿ_+ is finitely generated"
+      ],
+      "statement": "If v_k∈K and v_k→v in R^m, then v∈K; hence K is closed.",
+      "start_line": 41,
+      "end_line": 50,
+      "pdf_pages": [
+        1
+      ],
+      "proof_steps": [
+        "Represent v_k=λ_k A u_k using optimal normalized vectors u_k∈[0,1]^n with ||u_k||=1.",
+        "By compactness, pass to a subsequence u_{k_j}→u; let I={i:u_i>0} and choose one large index k for which u_{ik}>0 for every i∈I.",
+        "Set μ=min_{i∈I}(u_{ik}/u_i)>0 and z=u_k−μu. Then z≥0 and at least one coordinate in I vanishes; if Az=Au_k, z would contradict the minimal-support definition of u_k. Thus Au≠0.",
+        "Continuity gives ||A u_{k_j}||→||Au||>0. Since λ_{k_j}||Au_{k_j}||=||v_{k_j}||→||v||, the scale factors converge and v=λAu∈K."
+      ],
+      "gaps": [
+        "The proof uses finite-dimensional compactness of the normalized vectors and finite generation; this argument does not establish closedness for arbitrary infinite-dimensional cones or arbitrary linear images."
+      ]
+    },
+    {
+      "label": "Farkas alternative (proved from cone closedness)",
+      "assumptions": [
+        "A∈R^{m×n} is nonzero and K=A Rⁿ_+ is the associated closed cone",
+        "b∈R^m"
+      ],
+      "statement": "Exactly one holds: (i) b=Ax for some x≥0; or (ii) there is y∈R^m with a_iᵀy≥0 for all columns and bᵀy<0. In case (ii), the construction gives −bᵀy≥δ², where δ=dist(b,K)>0.",
+      "start_line": 66,
+      "end_line": 77,
+      "pdf_pages": [
+        2
+      ],
+      "proof_steps": [
+        "When b∉K, take a nearest v∈K: a minimizing sequence is bounded and closedness supplies a convergent subsequence; set δ=||v−b||>0 and y=v−b.",
+        "For w=a_i or w=−v, v+λw∈K for sufficiently small λ>0. Minimality of v and the right derivative of ||y+λw||² at zero imply wᵀy≥0.",
+        "Thus a_iᵀy≥0 and −bᵀy=(−v)ᵀy+||y||²≥δ²>0.",
+        "Conversely, if b=Ax with x≥0 and every a_iᵀy≥0, then bᵀy=Σx_i(a_iᵀy)≥0; the strict inequality in (ii) is impossible."
+      ],
+      "gaps": [
+        "This is an exact alternative/infeasibility witness for a finite real linear system. It does not by itself imply attainment or zero gap for a general nonlinear/conic Lagrangian dual."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "The witness margin is −bᵀy≥δ², with δ=dist(b,K).",
+    "dependence": "The note gives no quantitative lower bound for δ in terms of A,b or a condition number; certificate conditioning can deteriorate as b approaches K."
+  },
+  "endpoint_limits": {
+    "scope": "Finite-dimensional real matrices and the finitely generated cone A Rⁿ_+.",
+    "strictness": "The column inequalities are non-strict (a_iᵀy≥0), while separation of b outside K is strict (bᵀy<0).",
+    "closedness": "The nearest-point proof depends on the cone-closedness lemma. It must not be transferred to a nonclosed or infinite-dimensional cone without a separate closure/separation argument."
+  },
+  "reusable_methods": [
+    {
+      "method": "Turn linear infeasibility into a separating vector by minimizing distance to the closed finitely generated feasible cone.",
+      "transfer": "A proof template for finite LP/Farkas certificates; retain matrix orientation and multiplier signs explicitly."
+    },
+    {
+      "method": "Record a strict margin from the distance-to-cone construction rather than reporting only a sign pattern.",
+      "transfer": "The source derives a margin δ², but numerical use still needs a certified positive lower bound on δ."
+    }
+  ],
+  "unchecked": [
+    "I read the full two-page note and checked the separation signs and δ² margin from the squared-distance derivative. I did not independently rederive the background projection theorem; existence of the nearest point follows here from the paper’s closedness lemma and finite-dimensional bounded-subsequence argument.",
+    "The note contains no appendix. Its only additional material is two remarks, acknowledgements and references, all read."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 111,
+    "source_lines": 111,
+    "required_content_lines": 86,
+    "covered_content_lines": 86,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-a9029e19a7586865/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-a9029e19a7586865.json",
+  "review_input_sha256": "051e0bf044d442f1bc682c1774968eb0f10ac08d3dfcbb1e119ae12e39d1b9af"
+}

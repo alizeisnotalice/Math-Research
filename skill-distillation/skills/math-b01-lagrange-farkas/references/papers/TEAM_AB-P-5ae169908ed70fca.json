@@ -1,0 +1,445 @@
+{
+  "paper_id": "P-5ae169908ed70fca",
+  "observed_title": "Generalisation of Farkas’ lemma beyond closedness: a constructive approach via Fenchel-Rockafellar duality",
+  "authors": [
+    "Camille Pouchol",
+    "Emmanuel Trélat",
+    "Christophe Zhang"
+  ],
+  "version": "arXiv:2603.11859v1, March12,2026; local29-page PDF.",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1486,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "scope": "Sequential complete reading1–370,371–740,741–1110,1111–1486, including all introductory statements, Sections2–4, infinite-dimensional and finite-dimensional counterexamples, AppendixA LemmasA.1–A.4 proofs on pages25–27, and all references to final page29. Rendered original PDF pages5,6,7,10,12,16,21,22,24,26,27: distinguish image closures and closed convex hull overbars, inspect gauge/support identities, ball-normal uniqueness, shared-normal reconstruction, cone counterexample and appendix formulas."
+    }
+  ],
+  "topic_relevance": {
+    "B01": "direct: separates closure membership/approximate solvability from exact cone-constrained linear solvability using a common finite constant and constructive dual variables.",
+    "B04": "direct: primal attainment, dual attainment, shared normals, closed adjoint range and extra positivity; does not supply a general minimax exchange.",
+    "A03": "adjacent: Hilbert weak compactness and escaping/gauge-unbounded approximations; does not give center-cube compactness."
+  },
+  "definitions": [
+    {
+      "name": "Hilbert model and cone generator",
+      "statement": "X,Y are real Hilbert spaces and A∈L(X,Y) is bounded linear, with Hilbert adjoint A*. K_r is bounded, norm-closed, convex and contains0; P_r=cone(K_r) may be nonclosed. A cone contains0 and is stable under nonnegative scaling.",
+      "source_lines": [
+        86,
+        101,
+        201,
+        205,
+        253,
+        258,
+        280,
+        286
+      ],
+      "pdf_pages": [
+        2,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "name": "Approximate versus exact solvability",
+      "statement": "Approximate means ∀ε>0 ∃x_ε∈P_r with||Ax_ε−b||≤ε, equivalently b∈cl A(P_r); exact means ∃x∈P_r withAx=b, equivalently b∈A(P_r). Extracted text loses overbars; original PDF5–6 confirms closure in Theorems1.2(i),1.3(i).",
+      "source_lines": [
+        94,
+        101,
+        218,
+        221,
+        282,
+        286
+      ],
+      "pdf_pages": [
+        2,
+        5,
+        6
+      ]
+    },
+    {
+      "name": "Polar, gauge and support",
+      "statement": "P_r^∘={z:⟨z,x⟩≤0 ∀x∈P_r}. j_K(x)=inf{α>0:x∈αK}; σ_K(z)=sup_{v∈K}⟨z,v⟩≥0. Boundedness gives a finite Lipschitz support with constantR_K=sup_K||v||. Gauge domain=coneK and gauge zero only at0.",
+      "source_lines": [
+        279,
+        300,
+        588,
+        614,
+        1293,
+        1316
+      ],
+      "pdf_pages": [
+        6,
+        12,
+        25,
+        26
+      ]
+    },
+    {
+      "name": "Auxiliary primal and dual",
+      "statement": "P_ε minimizesF_ε(x)=1/2 j_K(x)^2+δ_{B(b,ε)}(Ax). D_ε minimizesJ_ε(y)=1/2 σ_K(A*y)^2−⟨b,y⟩+ε||y||. Value relation isπ_ε=−infJ_ε. Both are minimizations with opposite values; D_ε is not the original primal’s linear objective.",
+      "source_lines": [
+        297,
+        325,
+        620,
+        634
+      ],
+      "pdf_pages": [
+        6,
+        7,
+        12
+      ]
+    },
+    {
+      "name": "Single-valued and extremal recovery conditions",
+      "statement": "H: Ran(A*)⊆P_r^∘∪sing(K_r)^c, where sing means the support maximizer face is not a singleton. For nonconvex coneP=coneK, useK_r=cl convK andE:ext(K_r)⊆K. These are additional assumptions. H may be checked at the actual dual minimizer instead of globally when only that recovery is claimed.",
+      "source_lines": [
+        402,
+        423,
+        438,
+        466,
+        953,
+        964
+      ],
+      "pdf_pages": [
+        8,
+        9,
+        19
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorems1.2–1.3 / Propositions3.1,3.3: two different quantifier criteria",
+      "assumptions": [
+        "Real Hilbert X,Y; bounded linearA.",
+        "For1.3:K_r bounded closed convex containing0 andP_r=coneK_r.",
+        "For1.2:P closed convex andK=P∩closed unit ball."
+      ],
+      "statement": "b∈cl A(P_r) iff ∀y,σ_K(A*y)=0⇒⟨b,y⟩≤0, equivalentlyA*y∈P_r^∘⇒⟨b,y⟩≤0. Exact b∈A(P_r) iff ∃C>0 ∀y,⟨b,y⟩≤Cσ_K(A*y). For a closed cone replaceσ_K(A*y) by||(A*y)_+||. The same common C must work for all y; permittingC_y would lose the exact criterion.",
+      "start_line": 211,
+      "end_line": 286,
+      "pdf_pages": [
+        4,
+        5,
+        6
+      ],
+      "proof_steps": [
+        "作者证明：σ_K(A*y)=0 iffA*y polar, sinceK contains0 and generatesP_r (Lemma3.1,lines728–730). Closure membership gives the zero-support inequality by continuity; converse uses coerciveJ_ε, strong duality and finite primal for allε>0 (lines735–789).",
+        "作者证明：exactx=j_K(x)v,v∈K gives⟨b,y⟩≤j_K(x)σ_K(A*y); conversely uniformC boundsJ_0 below by1/2s²−Cs≥−C²/2 and strong duality gives exact feasible minimizer (lines851–879).",
+        "本次核验：best constant isinf{j_K(x):Ax=b}=sqrt(2π_0), achieved as gauge minimum when feasible. Atb=0 the best infimum is0; theorem usesC>0, so0 is an infimum of admissible positive constants."
+      ],
+      "gaps": [
+        "Without a common finiteC, closure membership does not imply exact membership.",
+        "All y and all ε quantifiers are genuine; numerical sampling does not certify the support implication or a commonC.",
+        "The general Hilbert proof depends on Fenchel-Rockafellar and weak compactness; the suggested Banach extensions inSection1.5 are prospects, not proved results."
+      ]
+    },
+    {
+      "label": "Proposition2.1 / AppendixA.1–A.2: auxiliary strong duality and primal attainment",
+      "assumptions": [
+        "K bounded closed convex containing0 in a Hilbert space.",
+        "A bounded linear andε≥0; infeasible primal is allowed as extendedπ_ε=∞."
+      ],
+      "statement": "π_ε=−infJ_ε for everyε≥0; ifπ_ε is finite, the primal minimum is attained. j_K and1/2j_K² are proper convex lsc; conjugate(1/2j_K²)*=1/2σ_K² is finite continuous everywhere. This proves primal attainment, not automatic exact-dual attainment.",
+      "start_line": 628,
+      "end_line": 652,
+      "pdf_pages": [
+        12,
+        13
+      ],
+      "proof_steps": [
+        "作者证明：AppendixA.1 uses boundedness/closedness for attained radial gauge; AppendixA.2 proves lsc using weak compactness ofK and squared-gauge/support conjugacy through a scalar composition formula (lines1293–1350).",
+        "作者证明：F*=1/2σ_K² continuous everywhere andG*=⟨b,·⟩+ε||·|| finite everywhere satisfy dual-side Fenchel-Rockafellar qualification, giving equal values and finite primal attainment (lines645–652).",
+        "本次核验：ifR_K>0,||x||≤R_K j_K(x); gauge sublevel sets lie inαK and are weakly compact, supporting finite-primal attainment. K={0} is a separate degenerate feasible caseb near0 and is not handled by dividing byR_K."
+      ],
+      "gaps": [
+        "Appendix conjugate composition and Fenchel-Rockafellar are cited dependencies, not independently proved in full here.",
+        "The printed AppendixA.2 lsc proof writesj_K(x)=λ afterx=λv,v∈K; onlyj_K(x)≤λ is needed and generally follows. This local inequality correction preserves lsc."
+      ]
+    },
+    {
+      "label": "Theorems1.4–1.5 / Proposition3.2 / Lemma3.5: approximate uniqueness and exact reconstruction",
+      "assumptions": [
+        "Same Hilbert/generator assumptions.",
+        "Approximate branch:b∈cl A(P_r) andε>0.",
+        "Exact branch:b∈A(P_r),ε=0; recovery fromy* additionally requires an attainedD_0 minimizer.",
+        "Closed-cone case usesK=P∩unit ball."
+      ],
+      "statement": "Forε>0, primal minimizers exist and the dual minimizer is unique. General gauge primal minimizers need not be unique, but all have the same imageAx*. For a closed cone, norm² primal is uniquely minimized andx*=(A*y*)_+. Atε=0, primal still attains; D_0 may be nonunique or fail to attain. With an attained dual, x*∈σ_K(A*y*)∂σ_K(A*y*).",
+      "start_line": 347,
+      "end_line": 388,
+      "pdf_pages": [
+        7,
+        8
+      ],
+      "proof_steps": [
+        "作者证明：J_ε coercivity uses normalized unbounded minimizing candidates, weak subsequence and the zero-support implication (lines735–762).",
+        "作者证明：if||b||≤ε, primalx*=0 and dualy*=0; if||b||>ε, all optimalimages lie on theε-sphere and convexity forces the image to a singleton. Normal cone forces ally* onto one ray; the quadratic along that ray has a unique minimizer (lines806–838).",
+        "本次核验补足：at||b||=ε>0,σ_K(A*b)>0 follows from approximate-solvability implication: support0 would give||b||²≤0. Thus the ray quadratic has strictly positive quadratic coefficient, justifying the printed “clear” uniqueness step.",
+        "作者证明：forclosedP,Moreau givesσ_K(z)=||z_+|| andσ_K(z)∂σ_K(z)={z_+}; strictnorm² gives unique primal (lines892–920)."
+      ],
+      "gaps": [
+        "General inclusion is necessary for an optimal pair, but selecting an arbitrary member of a nonsingleton support face need not preserveAx=b or residual≤ε. Full saddle system includesy*∈−N_{B(b,ε)}(Ax*).",
+        "ε→0 does not imply dual attainment or bounded primal/dual candidates.",
+        "No rate for optimization ofJ_ε, discretization error or iteration complexity is proved."
+      ]
+    },
+    {
+      "label": "Proposition1.1 / Theorem1.6 / Corollary1.1: recovery to the original nonconvex cone",
+      "assumptions": [
+        "P anycone generated by boundedK containing0;K_r=closed convex hullK,P_r=coneK_r.",
+        "H ensures support product singleton; E says extreme points ofK_r belong toK.",
+        "Approximate: b∈cl A(P_r),ε>0; exact: b∈A(P_r) plus attainedD_0."
+      ],
+      "statement": "UnderH the support product uniquely identifies the optimalprimal. UnderH–E it belongs to the originalP, so approximate solutions recover inP and exact solutions recover inP whenD_0 attains. Corollary1.1 statescl A(P_r)=cl A(P), with overbars onbothsides; it does not assert unconditional exact-image equality.",
+      "start_line": 416,
+      "end_line": 488,
+      "pdf_pages": [
+        9,
+        10
+      ],
+      "proof_steps": [
+        "作者证明：support maximizers form a nonempty exposed face by weakcompactness; H makes it singleton unlesssupport0,whose scaled product is{0}. Unique maximizer isextreme;Eplacesit inK, andmultiplication staysinconeK (lines933–964).",
+        "本次核验：PDF10 confirms closures inCorollary1.1. Exactpart requires dualattainment before usingthe reconstructedvariable."
+      ],
+      "gaps": [
+        "No automatic recovery follows from convexification alone.",
+        "H–E are structural assumptions, not numerical single-maximizer observations at finitelymany directions.",
+        "Finite-dimensionalstrongcompactK_r and closedK, or weaklyclosedK, are stated sufficient routes forE viaMilman; that theorem is external."
+      ]
+    },
+    {
+      "label": "Remark1.7: minimal-gauge constant semicontinuity corrected",
+      "assumptions": [
+        "SameHilbert/generator setup andb∈A(P_r).",
+        "C(b)=minimum gauge among exactfeasible x,extended∞outsideA(P_r)."
+      ],
+      "statement": "TheauthorstatesC(b)isuppersemicontinuousinRemark1.7. Thisdoesnotfollowfromthe displayeddualformula andisfalseingeneral. Correct weakconclusion:1/2C(b)²=sup_y[⟨b,y⟩−1/2σ_K(A*y)²] islowersemicontinuous as a supremumofcontinuousaffinefunctions, soC islowersemicontinuous.",
+      "start_line": 329,
+      "end_line": 335,
+      "pdf_pages": [
+        7
+      ],
+      "proof_steps": [
+        "原文错误：theformulahasminusinfJ_0, butthetextreasonsasifitisaninfimumofcontinuousfunctions andclaimsuppersemicontinuity; PDF7 visuallyconfirms.",
+        "本次反例：X=Y=ℓ²,P=X,K=unitball,A=diag(1/n),b_n=e_n/n∈RanA. Theuniqueexactsolutionis e_n,soC(b_n)=1 whileb_n→0 andC(0)=0. ThuslimsupC(b_n)=1>C(0); no uppersemicontinuityat0.",
+        "本次修复：retain lscandpositivehomogeneity; continuityneedsseparateconditions suchasappropriatelybounded inverseonclosedrange."
+      ],
+      "gaps": [
+        "Do notclaimuniformprimalnormboundsfromb_n→b orfromclosuremembership.",
+        "Thiscounterexampleaddressesauthorsemicontinuityclaim;itdoesnotrefutetheexactsolvabilitycriteria."
+      ]
+    },
+    {
+      "label": "Lemma4.1–4.2 / Proposition4.1: exact dual attainment via regular shared normals",
+      "assumptions": [
+        "K boundedclosedconvex contains0,P=coneK,b≠0, andx* is anexactprimalminimizer.",
+        "Useλ*=j_K(x*)>0, soπ_0=1/2(λ*)². OriginalAssumption4.1’sdefinitionofλ* prints1/2λ* oncebuttheproofof4.1uses1/2(λ*)²; thegaugeinterpretationisusedconsistentlyhere.",
+        "Sharednormalv liesinN_{λ*K}(x*)∩N_{A^{-1}b}(x*) andsatisfies⟨v,x*⟩=σ_{λ*K}(v)>0.",
+        "Converse from sharednormaltodualattainment additionallyneeds Ran(A*)closed."
+      ],
+      "statement": "Attained exactdual implies a nonzero sharednormal with strictlypositivepairing. IfRan(A*)closed, thisregular sharednormal isalso sufficient. Withoutpositivepairing, commonnonzeronormal aloneis insufficient. Lemma4.2 gives sufficientP⊆Ran(A*) forclosedP/unitballgenerator, appliedtotheminimum-normx*.",
+      "start_line": 1024,
+      "end_line": 1128,
+      "pdf_pages": [
+        20,
+        21,
+        22
+      ],
+      "proof_steps": [
+        "作者必要方向：saddleidentityandstrongdualitygiveσ_K(A*y*)=λ*>0; A*y* supportsλ*K atx* andisorthogonaltoKerA (lines1087–1106).",
+        "作者逆方向：closedRan(A*) lifts sharednormalv=A*y. Sincex*/λ* maximizesσ_K(A*y), rescaley to obtain thecorrectσ-valueandstationarity.",
+        "本次局部修复：PDF22prints y*=sqrt(λ*/σ_K(A*y))y, butσ_Kis1-positivehomogeneous; correctscaleis y*=(λ*/σ_K(A*y))y. Thenσ_K(A*y*)=λ* and∂σ_K(A*y*)=∂σ_K(A*y),sox*∈σ_K(A*y*)∂σ_K(A*y*).",
+        "本次反例校验：X=Y=R,A=Id,K=[−1,1],b=x*=2,λ*=2,sharednormalv=y=3. Printedscaleproducesy*=sqrt6 andsupportreconstruction sqrt6≠2; repairedratio producesy*=2, theunique minimizerofJ_0(y)=y²/2−2y."
+      ],
+      "gaps": [
+        "Theprintedrescalingalgebraiswrong; propositionequivalencecanbe locallyrepairedbypositivehomogeneity ratherthan copiedliterally.",
+        "A^{-1}bnormalspaceisclRan(A*), notnecessarilyRan(A*); closedrangeassumption cannotbedropped forliftingv.",
+        "Atb=0,thegeometricpositivitystatement isoutsideAssumption4.1; solve thedegeneratecaseseparately."
+      ]
+    },
+    {
+      "label": "Section4.3–4.4: counterexamples and positive qualification",
+      "assumptions": [
+        "Infiniteexample:ℓ²,K={0≤x_n≤4^{-n}+2^{-n}},x*=Σ2^{-n}e_n and finite-dimensionalkernel spannedbyfinitelymanycoordinates.",
+        "Finiteexample:α>0,P={(x1,x2,x3):x3≥0,x1²+x2²≤α²x3²},A=[[1,0,−α],[α,1+α²,1]],b=(0,1).",
+        "Proposition4.2 adds closedP,K=P∩unitball,closedRan(A*) and∀x∈P:Span{x}+Pclosed."
+      ],
+      "statement": "Infiniteexample exactprimalattainswhileN_K(x*)={0},so dualdoesnotattain. Finite-dimensionalLemma4.3 guaranteesanonzerosharednormal butnotpositivepairing. The3Dclosed-coneexample hasuniquefeasiblex*=(α/(1+α²),0,1/(1+α²)),allsharednormalsorthogonaltox*, hence dualnotattaineddespiteclosedRan(A*). Proposition4.2’s extraSpan{x}+Pclosedness forcespositivepairinganddualattainment.",
+      "start_line": 1130,
+      "end_line": 1283,
+      "pdf_pages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "proof_steps": [
+        "作者证明：denseconeofasymmetriccoordinateboxforceszeronormalatx* inℓ². Finite-dimensionalsharednormalexistence follows fromdenseconvexcone=whole-space and a gauge-loweringcontradiction (lines1136–1202).",
+        "作者证明：in3D,substitutingaffinefiberx*+s(−α,1,−1)intoconeinequalityforces s=0. Normalintersectioniscone{(1,0,−α)} andhaszeropairing (lines1214–1241).",
+        "作者充分条件证明：strictlyseparateclosedRan(A*) fromweaklycompacttranslatedpolar-slice,obtainh∈KerA withnegativepairing. Span{x*}+Pclosedness permitsafeasiblelocalmovementx*+sh thatreducesnorm,contradictingminimum (lines1257–1283)."
+      ],
+      "gaps": [
+        "Finite-dimensionalnonzeronormalandclosedconealone donotgiveexactdualattainment.",
+        "TheextraSpan{x}+Pclosedness isfor allx∈P; do notreplaceitwith Pclosed.",
+        "Lemma4.3 proofline1200 usesgauge equalityofaconstructedscaledpoint; only≤thatstrictlysmaller boundisneeded, whichpreservesthecontradiction."
+      ]
+    },
+    {
+      "label": "AppendixA.3–A.4: generator interior and normal-cone formula",
+      "assumptions": [
+        "A.3:K boundedclosedconvex contains0 and∃δ>0,coneK∩closedB(0,δ)⊆K.",
+        "A.4:closedconvexP,K=P∩closedunitball,λ>0,x∈λK."
+      ],
+      "statement": "A.3 guaranteesconeKclosed. A.4:if||x||=λ, N_{λK}(x)=cone{x}+P^∘∩x^⊥; if||x||<λ, N_{λK}(x)=P^∘∩x^⊥.",
+      "start_line": 1352,
+      "end_line": 1387,
+      "pdf_pages": [
+        27
+      ],
+      "proof_steps": [
+        "作者A.3：representp_n=j_K(p_n)c_n;unboundedgauge makes scaledw_n→0 butj_K(w_n)→∞,contradictingrelativeinteriorinclusion.",
+        "作者A.4：Moreaudecomposition,Cauchy–Schwarzandpolarorthogonalitygivev_-⊥x andpositivepartalignedwithx atboundary.",
+        "本次局部修复：A.4lastlineprints v=ρx fromalignment,butonlyv_+=ρx follows;thefullv=v_++v_- alsohaspolarorthogonalcomponent. The statednormalformulaalreadyretainsit,sofixthisproofline ratherthan removeit."
+      ],
+      "gaps": [
+        "Relativeinteriorconditioniscone-relativeballcontainment, notambientinterior0∈K.",
+        "λ=0 notinA.4; ifneedednormalof{0}iswholeHilbertspace."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "R_K=sup_K||v|| controls support Lipschitzness and||x||≤R_K j_K(x). Exact common C_best(b)=sqrt(2π_0)=min_{Ax=b}j_K(x), and J_0≥−C²/2. Forε>0 dualcoercivityisqualitative; no explicit rate or global numerical complexity. All recovery/scaling constants depend onA,K,b andchosenε.",
+    "dependence": "Gauge and exactsolvabilityconstant depend onthegeneratorK. Approximatefeasibility alone providesno uniformC,normbounds or exactlimit. The adjoint closedrange and positivepairingconditions controldualattainment,not justprimalfeasibility."
+  },
+  "endpoint_limits": [
+    "ε>0unique dual cannotbe extendedtoε=0; exactdualmaybenonuniqueorunattained.",
+    "ApproximateclA(P) vs exactA(P),polar≤0 vs positive dualcone≥0, and closedconvexhull vs ordinaryhull remain distinct.",
+    "General nonsingleton face recovery needsresidual/normalcondition inadditiontoinclusion.",
+    "Theclosedconeandfinite-dimensionalcounterexample showsdualattainmentfails evenwhen primalisunique."
+  ],
+  "local_repairs": [
+    {
+      "classification": "author semicontinuity error",
+      "source_lines": [
+        329,
+        335
+      ],
+      "pdf_pages": [
+        7
+      ],
+      "repair": "C is lsc via sup affine dualformula; diagonaloperatorcounterexample refutesusc."
+    },
+    {
+      "classification": "author proof rescaling error",
+      "source_lines": [
+        1111,
+        1128
+      ],
+      "pdf_pages": [
+        22
+      ],
+      "repair": "Useλ*/σ_K(A*y), notsquare root; simple1Dcounterexample andpositivehomogeneitycheck."
+    },
+    {
+      "classification": "author local notation/proof slips",
+      "source_lines": [
+        1061,
+        1063,
+        1325,
+        1328,
+        1196,
+        1202,
+        1385,
+        1387
+      ],
+      "pdf_pages": [
+        21,
+        23,
+        26,
+        27
+      ],
+      "repair": "λ*=j_K(x*),costhalfλ²;gauge≤λ inlsc/scaledpointproofs;v_+=ρx intheboundarynormalproof."
+    },
+    {
+      "classification": "text extraction loses overbars",
+      "source_lines": [
+        218,
+        221,
+        282,
+        286,
+        438,
+        488,
+        607,
+        1065,
+        1066
+      ],
+      "pdf_pages": [
+        5,
+        6,
+        10,
+        12,
+        21
+      ],
+      "repair": "Retainclosurememberships,closedconvexhull,polar-sumclosuresandclRan(A*); no claimedauthormatherror forlostbars."
+    }
+  ],
+  "reusable_methods": [
+    "Testallzero-supportdirections forclosuremembership; testasingleuniformfiniteCfor exactmembership.",
+    "Use squaredgauge/support Fenchelpair toselectminimum-gaugefeasiblesolutions.",
+    "Recoverclosedcone solutionby projection; generalgenerator requires a support-face choice plus full residual/normalcondition.",
+    "Separateprimalattainment,ε>0 dualuniqueness,ε=0dualattainment andoriginal nonconvex recovery.",
+    "Normalize sharednormalby the ratio dictated by support positivehomogeneity and verify stationarity algebraically."
+  ],
+  "unchecked": [
+    "Fullreading includesallAppendixA andallreferences; externalFenchel–Rockafellar,Moreau,Milman,compositionandseparationtheorems are not independently certifiedhere.",
+    "Author-proposedBanachgeneralizationandnumerical algorithmsareprospects; noimplementation or rateverificationperformed.",
+    "Privatecentered-cubecommon-input,GP-BRANCH orotherunprovidedinterfaces are outside thisHilbert solvability theorem.",
+    "Newsource-specificoperationclaims await twoindependent reviewrounds; fullread isnot fullmathematicalacceptance."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1486,
+    "source_lines": 1486,
+    "required_content_lines": 1062,
+    "covered_content_lines": 1062,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-5ae169908ed70fca/paper.md"
+  },
+  "review_source": "evidence/reviews/TEAM_AB/evidence/P-5ae169908ed70fca.json",
+  "review_input_sha256": "12f2eaef2674b7f0587eadb5cbab391b2417b585702e5d46d99927271f23169c"
+}

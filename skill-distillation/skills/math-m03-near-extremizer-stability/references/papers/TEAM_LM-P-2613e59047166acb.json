@@ -1,0 +1,277 @@
+{
+  "paper_id": "P-2613e59047166acb",
+  "observed_title": "Stability for the Logarithmic Hardy-Littlewood-Sobolev Inequality with Application to the Keller-Segel Equation",
+  "authors": [
+    "Eric A. Carlen"
+  ],
+  "version": "arXiv:2312.00614v3, side2July2024, manuscript3July2024;20PDFpages",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1171,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "scope": "正文1–7、dual/entropy/Onofri/spherical/planar/1D证明、KellerSegel应用及references完整顺序阅读；去空行仅压缩排版，保留全部内容"
+    }
+  ],
+  "topic_relevance": {
+    "code": "M03",
+    "decision": "direct",
+    "basis": "作者报告logHLS亏损控制到模平移伸缩极值流形的L1距离，给出strongYoung+conformalnormalization+duality方法；正文若干证明排印/量词缺口不能当无gap认证。"
+  },
+  "definitions": [
+    {
+      "name": "Euclidean logHLS deficit and optimizer manifold",
+      "statement": "Forρ≥0 onR² with∫ρ=1 and logarithmicmomentfinite, H(ρ)=∫ρlogρ+2∫∫ρ(x)log|x−y|ρ(y)+1+logπ. M={s^-2 h(x/s−x0):s>0,x0∈R²}, h(x)=1/[π(1+|x|²)²].",
+      "start_line": 98,
+      "end_line": 144,
+      "pdf_pages": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "Entropy dualpair",
+      "statement": "On probabilityspace H(ρ)=∫ρlogρ forρ≥0,mass1; H*(φ)=log∫expφ, ∇H*(φ)=expφ/∫expφ; quotientconstants when needed.",
+      "start_line": 471,
+      "end_line": 550,
+      "pdf_pages": [
+        8,
+        9,
+        10
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem1.3 (reported logHLS stability)",
+      "evidence_class": "source_theorem_statement_proof_gaps_preserved",
+      "assumptions": [
+        "ρ≥0,∫_R²ρ=1,∫ρlog(e+|x|²)<∞",
+        "Deficit interpreted in authors domain; usefulquantitative conclusion requiresfiniteH",
+        "DistanceisinfL1overallpositive scalesandtranslations"
+      ],
+      "statement": "AuthorstatesH(ρ)≥(1/8)inf_{g∈M}||ρ−g||_1².",
+      "start_line": 134,
+      "end_line": 149,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "Conformalnormalization of sphericaldensity; applycitedGuiMoradifam constrainedOnofri estimate",
+        "UsePinsker/strongYoung with1/2 and normalizedOnofristabilitywith1/4, then squaredtrianglewith1/8",
+        "StereographicdensityisometrytransferssphericalL1distance andfreeenergytoplane"
+      ],
+      "proof_ranges": [
+        {
+          "start_line": 696,
+          "end_line": 807,
+          "pdf_pages": [
+            12,
+            13,
+            14
+          ]
+        },
+        {
+          "start_line": 903,
+          "end_line": 974,
+          "pdf_pages": [
+            16,
+            17
+          ]
+        }
+      ],
+      "gaps": [
+        "p17 claimeddualdeficit≥residualforarbitraryu doesnotfollowfromF*(f)≥<u,f>−F(u); needschoosing dual-maximizerorapproximation, withdomain/convergencechecks. Mainstatementnotdeclaredfalse; globalproofnotcertified.",
+        "p11printedS^-1lacksfactor2infirsttwocoordinates andEq40ratioisinverted; correctedmapsmustbecheckedbeforetransfer.",
+        "ExternalconstrainedOnofritheorem[22]andcompeting-symmetryoptimizerclassificationnotindependentlyproved.",
+        "Lemma3.1 p9 entropy Young application has wrong function/negative sign and missing additive term; precise local repair below, not original proof certification."
+      ]
+    },
+    {
+      "label": "Theorem3.2 (strong entropy Young inequality)",
+      "evidence_class": "source_theorem_with_checked_identity",
+      "assumptions": [
+        "ν(X)=1; probabilitydensityρ;φ∈L∞"
+      ],
+      "statement": "H(ρ)+log∫e^φ−∫φρ≥(1/2)||ρ−e^φ/∫e^φ||_1².",
+      "start_line": 510,
+      "end_line": 550,
+      "pdf_pages": [
+        9,
+        10
+      ],
+      "proof_steps": [
+        "DifferenceequalsrelativeentropyH(ρ|gφ), gφ=eφ/∫eφ, soPinskerwithcoefficient1/2 yieldsstatedbounddirectly."
+      ],
+      "gaps": [
+        "Noarbitraryunboundedφextensioncertifiedhere;sourcep16swaps∂E and∂E*formulas andrequirescorrectdualpairs."
+      ]
+    },
+    {
+      "label": "Theorem2.4 (generic stability duality)",
+      "evidence_class": "source_statement_with_invalid_arbitrary_x_proof_step",
+      "assumptions": [
+        "ProperlscconvexE,F, E≤F, nonemptyfiniteequalityset",
+        "PrimalstabilityconstantC>0;E*λ-strongconvexinchosen norms,subgradient/domainconditions"
+      ],
+      "statement": "Sourceassertsdualstabilityconstant λmin(4Cλ,1)/2.",
+      "start_line": 375,
+      "end_line": 414,
+      "pdf_pages": [
+        7
+      ],
+      "proof_steps": [
+        "StrongYoungandprimalstabilityapplytotheFenchelresidual E*(y)−<x,y>+F(x)",
+        "Sourceconflates this residual withE*(y)−F*(y),which isits infimumoverx."
+      ],
+      "gaps": [
+        "Sourceproofinequalityforallxisfalse; smoothattainmentallowscorrectedchoice x=∇F*(y), butglobaldomain/attainmentandapproximationremainunchecked."
+      ]
+    },
+    {
+      "label": "Corollary7.1 / one-dimensional extension",
+      "evidence_class": "source_reported_extension_not_independent_full_proof",
+      "assumptions": [
+        "u∈H^1/2(S1),∫e^u dσ=1; normalizedHaarprobability",
+        "Citedconstraint∫e^uω·n=0 forimprovedLebedevMilininequality"
+      ],
+      "statement": "SourcewritesLebedevMilindeficit≥1/4inf||e^u−e^v||_1² andreportscorresponding1DlogHLSconstant1/4.",
+      "start_line": 979,
+      "end_line": 1046,
+      "pdf_pages": [
+        18,
+        19
+      ],
+      "proof_steps": [
+        "Adapttheconformalnormalizationanddualityargument;proofomitsfull1Drepetition."
+      ],
+      "gaps": [
+        "1DlogHLSexactdomain/deficitformula mustbefoundincitedsourcebeforegeneralreuse."
+      ]
+    },
+    {
+      "label": "Lemma3.1 (entropy uniform absolute continuity)",
+      "evidence_class": "source_lemma_statement_with_multiple_proof_errors_local_repair",
+      "assumptions": [
+        "Probability densities ρ0,ρ1; relative entropy H(ρ1|ρ0) finite",
+        "Absolute continuity when H finite; handle H=0 separately"
+      ],
+      "statement": "Author asserts: for each ε>0 there exists δ depending on ε,H such that P0(A)≤δ implies P1(A)≤ε.",
+      "start_line": 471,
+      "end_line": 509,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "proof_steps": [
+        "Original proof uses f=a1_A with printed a<0 and g=ρ1/ρ0, then prints f log f instead of g log g",
+        "Original cited Young st≤slog s+exp(t−1) leaves an additional e^-1 P0(A^c), so its next no-additive-term line is not justified",
+        "Checked repair: use st≤slog s−s+exp t with s=g≥0,t=a1_A,a>0. Integrating gives aP1(A)≤H+(exp a−1)P0(A)",
+        "If H=0, densities agree a.e. and δ=ε suffices. If H>0 and 0<ε≤1 choose a=2H/ε and δ=aε/[2(exp a−1)]; ε>1 is trivial"
+      ],
+      "gaps": [
+        "Source lemma conclusion is not refuted by these proof defects; the local entropy repair is a distinct derivation."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "MainR²coefficient1/8, squareL1distance; Onofri1/8gradientdistance²,1/2reverseentropy,1/4L1distance²; no proof coefficient1/8numericallyoptimal.",
+    "application": "SourceKellerSegelassumesmass8πand priorinitialdata-dependentHdecayCt^-1/8; thennormdecayCt^-1/16. ExternalPDEhypotheses/decaynotchecked, donottransferasnewPDEtheorem."
+  },
+  "endpoint_limits": {
+    "scope": "Massnormalization,logmoment,conformalsymmetries andchosenL1metric areessential;directions ofrelativeentropycannotbeswapped",
+    "not_established": "DimensionuniformgeneralHLSstability,arbitrarydualitywithoutattainmentorstrongconvexity, ormaximalcubeinputstability."
+  },
+  "reusable_methods": [
+    {
+      "method": "Fixconformalrepresentativebeforequantifyingdistance",
+      "transfer": "Requiresfullsymmetryaction/Jacobian andactualcompactness/centeringproof."
+    },
+    {
+      "method": "EntropyFenchelresidual is KL, thenPinsker",
+      "transfer": "Boundedφandnormalizeddensity suffice;sourcekernel/dualityerrorscannotbesilentlycopied."
+    },
+    {
+      "method": "Chooseactualdualmaximizerorcontrolledmaximizingsequence",
+      "transfer": "AttainmentorvanishingFenchelgapmustbeproved;forallxclaimisnotvalid."
+    }
+  ],
+  "checked_derivation": [
+    {
+      "class": "exact_counterexample_to_proof_step_not_theorem",
+      "statement": "E(x)=x²/2,F(x)=x²,C=λ=1/2,E0{0}. aty0,x1,dualdeficitE*(0)−F*(0)=0,butCdist(x,E0)²+λ|y−Eprime(x)|²=1. Thussourcep7forallxresiduallowerboundfails. Atdualmaximizerx0correctresidual0."
+    },
+    {
+      "class": "checked_coordinate_repair",
+      "statement": "CorrectinverseS^-1(x)=(2x1,2x2,1−|x|²)/(1+|x|²); |x|²=(1−ω3)/(1+ω3). Printedx=(1,0)inverse(.5,0,0)hasnorm.5 andisnotonS²."
+    },
+    {
+      "class": "conditional_local_proof_repair",
+      "statement": "IfF*attainsatadmissiblexwithF*(y)=<x,y>−F(x),primalstability+strongYoungyielddualresiduallowerboundatthatx; triangle/Lipschitzargumentthenhasstatedconstant. Nofullglobalregularizationcertified."
+    },
+    {
+      "class": "checked_local_entropy_repair",
+      "statement": "For finite H>0 and ε∈(0,1], a=2H/ε, δ=aε/[2(exp(a)−1)]>0: aP1(A)≤H+(exp(a)−1)P0(A)≤aε. H=0 implies equal probability densities a.e. and δ=ε works. Uses corrected Young st≤slog s−s+exp(t), not the source printed argument."
+    }
+  ],
+  "visual_checks": [
+    {
+      "pdf_pages": [
+        7,
+        9,
+        11,
+        17
+      ],
+      "images": [
+        "reviews/TEAM_LM/visual/P-2613e59047166acb-p7.png",
+        "reviews/TEAM_LM/visual/P-2613e59047166acb-p9.png",
+        "reviews/TEAM_LM/visual/P-2613e59047166acb-p11.png",
+        "reviews/TEAM_LM/visual/P-2613e59047166acb-p17.png"
+      ],
+      "findings": "p7andp17supremumdirectiongap; p11coordinateerrors; p9Lemma3.1prints a<0thenchoosespositivea, andflogfwithnegativef: proofmustrepairviaentropyYoungwitha>0, notcopiedliterally."
+    }
+  ],
+  "unchecked": [
+    "All20pagesread;source-levelproofgapsretained, primaryexternalproofsnotfullreadhere.",
+    "NoKellerSegelsimulationorindependentglobalstabilityproofcertification."
+  ],
+  "review_status": {
+    "first_review": "audit_lm_16_independent_PDF_checks_confirmed_source_gaps",
+    "scope": "pp7,9,11,16,17 proof/print defects only; not a general theorem falsity or certification",
+    "second_review": "audit_n_16_requested_pending"
+  },
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1171,
+    "source_lines": 1171,
+    "required_content_lines": 849,
+    "covered_content_lines": 849,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-2613e59047166acb/paper.md"
+  },
+  "review_source": "reviews/TEAM_LM/evidence/P-2613e59047166acb.json",
+  "review_input_sha256": "7f00255e0e4ceadb1794f3a0f675a7d92b6c4494dff6ee9e2c55aacda8601896"
+}

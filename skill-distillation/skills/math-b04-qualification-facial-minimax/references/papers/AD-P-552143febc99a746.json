@@ -1,0 +1,295 @@
+{
+  "paper_id": "P-552143febc99a746",
+  "observed_title": "Facial Reduction and Partial Polyhedrality",
+  "authors": [
+    "Bruno F. Lourenço",
+    "Masakazu Muramatsu",
+    "Takashi Tsuchiya"
+  ],
+  "version": "arXiv:1512.02549v4; November 2015, revised October 2016, April 2017, April 2018; 21 PDF pages.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1229,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "scope": "逐行读完 paper.md：摘要、正文 Sections 1–6、全部定义/引理/命题/定理及证明、Appendix A 与 B、致谢和参考文献。原 PDF 第3–21页均做过公式视觉核查；本轮另渲染并检查 p18 References（版面清晰、非空/非扫描低文本页）。本地 pages.json 的21页均 low_text=false。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "B04": "direct：论文直接研究锥线性规划的约束资格/强对偶缺失、面约化证书与迭代复杂度，提出 partial-polyhedral Gordan–Stiemke 与 separation theorem，并给出FRA-Poly及singularity-degree界。它没有给出一般极小极大交换定理；迁移到其他极小极大模型只能作为面约化/相对内点正则化工具的类比，须另证模型适配。"
+  },
+  "definitions": [
+    {
+      "name": "Partial Polyhedral Slater (PPS)",
+      "statement": "令 K=K1×K2，其中 K1、K2 闭凸锥且 K2 多面。对 (D)，PPS 要求存在可行 slack (s1,s2)=c−A*y 且 s1∈ri K1、s2∈K2；对 (P)，要求存在原始可行 x=(x1,x2) 且 x1∈ri(K1*)。",
+      "source_lines": [
+        140,
+        143
+      ],
+      "pdf_pages": [
+        3
+      ]
+    },
+    {
+      "name": "distance to polyhedrality ℓpoly(K)",
+      "statement": "所有非空面严格递增链中，首面多面、其后各面非多面的最长链长度减一。它计数达到多面面之前可进行的最大面约化步数。",
+      "source_lines": [
+        385,
+        394
+      ],
+      "pdf_pages": [
+        7
+      ]
+    },
+    {
+      "name": "singularity degree d(D)",
+      "statement": "论文在一般面约化算法中定义把可行 slack 集包含到最小面的最少约化步数；作者之后证明每步选取ri(F*i∩ker A∩{c}⊥)中的方向时恰好取得该最小数。",
+      "source_lines": [
+        642,
+        680
+      ],
+      "pdf_pages": [
+        12
+      ]
+    },
+    {
+      "name": "distance to strong duality dstr(D)",
+      "statement": "使约化后锥上的替代问题恢复强对偶所需的最少面约化步数；若最优值有限，还要求对应一侧最优值可达到。",
+      "source_lines": [
+        731,
+        740
+      ],
+      "pdf_pages": [
+        13
+      ]
+    },
+    {
+      "name": "doubly nonnegative cone Dn",
+      "statement": "Dn=Sn+∩Nn，即半正定锥与逐项非负锥的交；用作交锥/重复变量分析示例。",
+      "source_lines": [
+        931,
+        939
+      ],
+      "pdf_pages": [
+        16,
+        17
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Proposition 2 (PPS-Strong Duality)",
+      "assumptions": [
+        "K=K1×K2，K1、K2为闭凸锥且K2多面。",
+        "原始（分别对偶）最优值有限，且原始（分别对偶）问题满足文中对应的PPS。"
+      ],
+      "statement": "若原始值有限且(P)满足PPS，则θP=θD且对偶最优值达到；若对偶值有限且(D)满足PPS，则θP=θD且原始最优值达到。",
+      "start_line": 148,
+      "end_line": 154,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "作者结论：Proposition 2，PDF p.3。",
+        "作者证明：Appendix A 将目标/可行集写成 proper convex 函数和指标函数之和，套用 Rockafellar 共轭和定理（文中 Theorem 22）；PPS 提供相对内点交，推出共轭公式及有限情形的达到（Proposition 23，lines 1113–1150，PDF pp.19–20）。",
+        "基础推导核验：我核对了指标函数的定义域、PPS 对应的相对内点交及共轭表达式如何导出零间隙与对偶达到；未独立重写(ii)的对称计算。"
+      ],
+      "gaps": [
+        "假设限定有限维锥线性规划及一个多面锥块；不能据此推广到任意Banach空间、函数测度锥或非凸分式问题。"
+      ]
+    },
+    {
+      "label": "Theorem 4 and Corollary 5 (partial-polyhedral separation / Gordan–Stiemke)",
+      "assumptions": [
+        "K=K1×K2 为闭凸锥直积，K2 多面；L为线性子空间，c∈Rn。"
+      ],
+      "statement": "(L+c)∩((ri K1)×K2)=∅ 当且仅当存在 x∈K*∩L⊥ 满足<c,x><0，或存在 x=(x1,x2)∈K*∩L⊥∩c⊥ 且x1∉(K1)⊥。取c=0得文中 partial-polyhedral Gordan–Stiemke 等价式。",
+      "start_line": 307,
+      "end_line": 335,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "作者结论：Theorem 4（lines 307–316）和 Corollary 5（lines 330–335），均在PDF p.6。",
+        "作者证明：Theorem 4 将仿射交集条件改写成(D)不满足PPS，再由Lemma 3的二择一证书推出；Corollary 5 代入c=0并用lin((K1)*)=(K1)⊥。",
+        "基础推导核验：充分性方向可直接验证两类证书分别与ri(K1)×K2可行点的内积/零内积矛盾；必要性由作者援引Lemma 3，而非本文在定理处展开的独立证明。"
+      ],
+      "gaps": [
+        "严格分离/相对内部条件是关键；结果只处理有限维闭凸锥直积和其中一个多面块。"
+      ]
+    },
+    {
+      "label": "Proposition 8, Proposition 9 and Theorem 10 (FRA-Poly finite reduction bound)",
+      "assumptions": [
+        "锥线性对偶问题(D)的锥K=K1×…×Kr为有限个闭凸锥直积块。",
+        "Phase 1 使用Lemma 3的可行性/不可行证书；Phase 2 使用多面辅助问题及其最优解。"
+      ],
+      "statement": "FRA-Poly可先在至多Σiℓpoly(Ki)步内得到满足PPS的面（若(D)不可行，至多再加一方向检测）；对可行(D)，Phase 2至多再用一方向到达包含可行 slack 集的最小面。因此最小面总步数≤1+Σiℓpoly(Ki)。",
+      "start_line": 469,
+      "end_line": 577,
+      "pdf_pages": [
+        8,
+        9,
+        10
+      ],
+      "proof_steps": [
+        "作者结论：Proposition 8（lines 469–500）界定Phase 1；Proposition 9（lines 547–570）证明Phase 2所得为最小面；Theorem 10（lines 574–577）合并得到总界。",
+        "作者证明：Phase 1每个方向使至少一个非多面块严格下降，且ℓpoly计数此类下降；Phase 2把残余候选方向限制在多面辅助锥内，借互补松弛和严格互补构造最小面。",
+        "基础推导核验：从命题8的逐步严格面包含和命题9“Phase 2 face=FDmin”可推出Theorem 10相加的上界；算法步骤与两项界的逻辑已逐行核对。",
+        "迁移推断：可把“先恢复部分Slater、再压至最小面”的结构作为其他锥优化模型的设计线索，尚需在目标模型中重新建立证书与步数度量。"
+      ],
+      "gaps": [
+        "界是最坏情况面约化次数，并非运行时间或数值稳定性界；需要可获得所需面的相对内点及精确辅助问题解。",
+        "对含无限维约束、一般minimax交换或任意分式目标，本文没有现成结论。"
+      ]
+    },
+    {
+      "label": "Proposition 13 (relative-interior choice minimizes reduction count)",
+      "assumptions": [
+        "(D)可行；一般面约化算法每步在ri(F*i∩ker A∩{c}⊥)选择方向。"
+      ],
+      "statement": "依次选取上述相对内部方向时，算法恰好输出d(D)个方向。",
+      "start_line": 658,
+      "end_line": 680,
+      "pdf_pages": [
+        12
+      ],
+      "proof_steps": [
+        "作者结论：Proposition 13 statements lines 658–661。",
+        "作者证明：作者比较任意最短约化链的首方向与相对内点方向；以凸锥内积非负性证明相对内点产生的面包含于任意首步约化面，再对后续步骤归纳，lines 663–680。",
+        "基础推导核验：关键包含 K∩{d*1}⊥⊆K∩{d1}⊥ 来自对所有x∈该左侧面有<x,d*1>=0及d*1的相对内点性质；证明结构可逐步复核。"
+      ],
+      "gaps": [
+        "该结果是几何最优选择的存在/刻画，不说明在一般求解器中能有效计算相对内点方向。"
+      ]
+    },
+    {
+      "label": "Theorem 19 and Corollary 20 (intersection cones / DNN example)",
+      "assumptions": [
+        "K=K1∩K2为两个闭凸锥之交；通过duplicated product formulation关联约化方向。",
+        "Dn=Sn+∩Nn，且使用ℓpoly(Sn+)=n−1、ℓpoly(Nn)=0。"
+      ],
+      "statement": "交锥问题的奇异度与强对偶距离分别受duplicated问题控制，且d(D)≤d(Ddup)≤1+ℓpoly(K1)+ℓpoly(K2)，dstr(D)≤dstr(Ddup)≤ℓpoly(K1)+ℓpoly(K2)。对Dn，得到d(D)≤n、dstr(D)≤n−1。",
+      "start_line": 863,
+      "end_line": 939,
+      "pdf_pages": [
+        15,
+        16,
+        17
+      ],
+      "proof_steps": [
+        "作者结论：Theorem 19 lines 863–870；Corollary 20 lines 937–939。",
+        "作者证明：定理19(i)用最小面交表示（Proposition 18）；(ii)将duplicated锥内的方向分块相加并归纳保持面交恒等式（lines 881–930），然后套用Propositions 8–9上界；Dn代入两个ℓpoly值。",
+        "基础推导核验：从product faces的分块正交交等式和<K1*,K2*>方向和关系可检查逐步归纳；Corollary 20的线性界由n−1与0代入给出。"
+      ],
+      "gaps": [
+        "Dn例子是特定锥交；对一般交锥或非锥约束必须先验证duplicated formulation、闭性和相对内部几何。"
+      ]
+    },
+    {
+      "label": "Proposition 21 (longest DNN face-chain example)",
+      "assumptions": [
+        "Dn=Sn+∩Nn，n为正整数。"
+      ],
+      "statement": "Dn非空面最长严格链长度为n(n+1)/2+1；证明构造逐步加入对角项和非对角项的面链。",
+      "start_line": 943,
+      "end_line": 976,
+      "pdf_pages": [
+        17
+      ],
+      "proof_steps": [
+        "作者结论：Proposition 21 statement及构造证明在PDF p.17。",
+        "基础推导核验：上界来自Sn维数n(n+1)/2；下界通过Nn中允许非零矩阵元素集合逐次扩张，加入对角及一个非对角项产生严格嵌套面。"
+      ],
+      "gaps": [
+        "该长链长度解释经典最坏面约化步数，不与FRA-Poly线性上界矛盾；此例不单独证明每个实例实际需要该步数。"
+      ]
+    },
+    {
+      "label": "Proposition 24 (Appendix B tightness witness)",
+      "assumptions": [
+        "附录所构造的Lorentz/半正定锥直积及线性子空间L⊥满足文中指定生成结构；c=0。"
+      ],
+      "statement": "作者构造的实例满足d(D)=r1+Σj(nj−1)，给出FRA-Poly界在指定族中的近乎紧/紧性见证。",
+      "start_line": 1197,
+      "end_line": 1229,
+      "pdf_pages": [
+        20,
+        21
+      ],
+      "proof_steps": [
+        "作者结论：Proposition 24在lines1197–1201给出。",
+        "作者证明：Appendix B逐步说明首个可行约化方向被结构限制，随后只能逐Lorentz block、逐矩阵行选取指定方向，最终计数为r1+Σ(nj−1)，lines1204–1229。",
+        "基础推导核验：逐步方向被迫选择的论证与各面交更新已阅读；复杂索引系数没有独立符号化重算。"
+      ],
+      "gaps": [
+        "这是刻意构造的锥线性实例，不是通用下界；PDF p.21证明最后一页至末行，未发现隐藏后续附录。"
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "statement": "本文的核心复杂度量ℓpoly(K)是面链计数，不是误差界中的数值常数。理论步数为1+Σiℓpoly(Ki)；DNN例子给出d≤n、dstr≤n−1。没有涉及应用模型中的概率、分母或端点常数。",
+    "source_lines": [
+      574,
+      577
+    ],
+    "pdf_pages": [
+      10
+    ]
+  },
+  "endpoint_limits": [
+    "结论适用于有限维闭凸锥线性规划及显式假设的K1×K2、K2多面分解。",
+    "PPS强对偶需要一侧最优值有限并且另一侧满足相应相对内点条件；单独可行不够。",
+    "定理10上界是理论 reduction-step 数，不能直接当作数值算法时间/收敛率。",
+    "文章不提供极小极大交换、条件概率比值、一般测度空间对偶等结论。",
+    "文中的定理4、Corollary 5、FRA-Poly机制可作相邻模型迁移候选，但需重新验证闭凸锥、分块多面性、分离证书与可计算性。"
+  ],
+  "reusable_methods": [
+    "把整体相对内部Slater拆成非多面块上的ri条件和多面块上的普通可行性(PPS)，降低资格条件要求。",
+    "当锥面结构可分解时，先用partial-polyhedral分离证书恢复PPS，再在多面剩余锥上一次跳到最小面。",
+    "用ℓpoly替代完整面链长度衡量算法可能的面约化次数。",
+    "对于锥交K1∩K2，构造duplicated product problem，将块内方向相加，并利用product face交恒等式传递步数界。",
+    "R.I.选取可构造奇异度最优方向，但数值实现需要额外算法。"
+  ],
+  "unchecked": [
+    "Theorem 4的必要性依赖正文Lemma 3的对偶分类；此卡已核对引用链和陈述，未从分离公理独立重证Lemma 3。",
+    "Proposition 2(i),(ii)的Appendix A计算已查公式及资格条件；未将所有凸共轭拓扑前提推广到非有限维情形。",
+    "全文公式行由paper.md读完，关键强对偶和附录页面视觉检查；PDF p18 References已视觉检查，p1–p21均非low-text。",
+    "PDF页码一律由paper.md对应的pages.json content_start_line/end_line相交计算，未人工推测。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1229,
+    "source_lines": 1229,
+    "required_content_lines": 866,
+    "covered_content_lines": 866,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-552143febc99a746/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-552143febc99a746.json",
+  "review_input_sha256": "1a9105ff90dac6c8d0bded092c27c6a007470ac5e599b11ac0aada475fd5c723"
+}

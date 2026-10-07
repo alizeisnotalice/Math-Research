@@ -1,0 +1,325 @@
+{
+  "paper_id": "P-5612110893d746ee",
+  "observed_title": "Bahadur–Kiefer Representations for Time Dependent Quantile Processes",
+  "authors": [
+    "Péter Kevei",
+    "David M. Mason"
+  ],
+  "version": "arXiv:1606.06045v1 [math.PR], 20 June 2016; 20 PDF pages.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 907,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "scope": "逐行阅读全文：时间依赖经验过程定义、引用的强逼近结果、LIL/量化过程结果、Theorem 3 与 Corollary 1 全部证明、Talagrand/Landau–Shepp 辅助不等式及参考文献。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "K04": "direct, empirical-process branch. The paper proves a uniform time-dependent Bahadur–Kiefer representation for empirical quantiles built from iid fractional Brownian paths, then obtains weighted strong approximation/LIL consequences. It is not a Gaussian-max anti-concentration result. The two strong empirical-process couplings restated as Theorems 1–2 are explicitly attributed to Kevei–Mason [5] and are not proved in this paper."
+  },
+  "definitions": [
+    {
+      "name": "fractional-Brownian time-dependent empirical process",
+      "statement": "B^(H), B_1^(H),… are iid sample-continuous fractional Brownian motions with fixed H∈(0,1), covariance (s^(2H)+t^(2H)−|s−t|^(2H))/2. For t≥0, F(t,x)=P{B^(H)(t)≤x}=Φ(x/t^H); F_n(t,x)=n^(−1)Σ_{j≤n}1{B_j^(H)(t)≤x}; v_n(t,x)=√n(F_n(t,x)−F(t,x)). The empirical process has the stated uniformly continuous Gaussian weak limit on [γ,T]×R only for γ>0; the article says this bounded uniformly-continuous limit description fails on [0,T]×R.",
+      "source_ranges": [
+        {
+          "start_line": 131,
+          "end_line": 171,
+          "pdf_pages": [
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "name": "time-dependent empirical and quantile functions",
+      "statement": "For α∈(0,1), τ_α(t)=inf{x:F(t,x)≥α}=t^H z_α, where Φ(z_α)=α; the empirical quantile is τ^n_α(t)=inf{x:F_n(t,x)≥α}, and u_n(t,α)=√n(τ^n_α(t)−τ_α(t)). The density at the quantile is f(t,τ_α(t))=t^(−H)φ(z_α). The article also represents v_n as an indexed empirical process α_n(h_{t,x}) for path-indicator functions h_{t,x}(g)=1{g(t)≤x} on a full-probability Hölder-modulus path set.",
+      "source_ranges": [
+        {
+          "start_line": 189,
+          "end_line": 218,
+          "pdf_pages": [
+            5
+          ]
+        },
+        {
+          "start_line": 296,
+          "end_line": 310,
+          "pdf_pages": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "name": "small-time parameter and weighted index class",
+      "statement": "For the full time interval [0,T], use G^(κ)={t^κh_{t,x}:(t,x)∈[0,T]×R}; Theorem 2 is stated for every κ>0. Theorem 3 instead works over t∈[γ_n,T], with 0<γ_n≤1 and (−log γ_n)/log n→η<1/(2H), so its lower time endpoint cannot approach zero at or faster than the excluded exponent. The corollary uses the specific weight t^H.",
+      "source_ranges": [
+        {
+          "start_line": 237,
+          "end_line": 259,
+          "pdf_pages": [
+            6
+          ]
+        },
+        {
+          "start_line": 317,
+          "end_line": 331,
+          "pdf_pages": [
+            7,
+            8
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorems 1–2 (strong couplings imported from Kevei–Mason [5])",
+      "assumptions": [
+        "The base observations are iid fractional Brownian paths with fixed H∈(0,1); the theorem setup fixes T>1.",
+        "For Theorem 1, 0<γ≤1, ξ>1, and the exponent parameter a satisfies 1/(2τ_1(0))<a<1/τ_1(0), where ν_0=2+2/H, τ_1(0)=1/(2+5ν_0), and τ_2=(19H+25)/(24H+20).",
+        "For Theorem 2, κ>0, ξ>1 and 1/(2τ'_1(κ))<a<1/τ'_1(κ), with τ'_1(κ)=κ/(5H_0+κ(2+5ν_0)), H_0=1+H."
+      ],
+      "statement": "As quoted from [5], on a common probability space one can couple the fBM sample with iid copies of the corresponding centered Gaussian empirical-process limit so that max_{m≤n}||√m α_m−Σ_{i≤m}G^(i)||_{F_(γ,T)}=O(n^(1/2−τ(a))(log n)^τ_2) a.s., where τ(a)=(aτ_1(0)−1/2)/(1+a)>0. A second quoted coupling gives the analogous max over m≤n in the t^κ-weighted class G^(κ) on [0,T], with rate O(n^(1/2−τ'(a))(log n)^τ_2) a.s. These are verbatim-reported prior results, not the new theorem or proofs of this article.",
+      "start_line": 212,
+      "end_line": 259,
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "proof_steps": [
+        "This article records both statements for later use and explicitly attributes them to Kevei and Mason [5]; no proof is supplied here.",
+        "The article later combines these couplings with its own Theorem 3/Corollary 1 to state strong approximation consequences for quantile processes, on [γ,T] for fixed γ>0 and on [0,T] after t^H weighting, respectively."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 352,
+          "end_line": 358,
+          "pdf_pages": [
+            8
+          ]
+        },
+        {
+          "start_line": 377,
+          "end_line": 384,
+          "pdf_pages": [
+            9
+          ]
+        }
+      ],
+      "gaps": [
+        "The substantive empirical-process strong coupling is an external input; the complete proof and exact source version of [5] were not part of this paper and were not independently read as part of this card.",
+        "The exponent parameter a in the coupling and the quantile level α are different roles although the article uses the same Greek letter in separate sections; do not conflate their ranges."
+      ]
+    },
+    {
+      "label": "Theorem 3 (uniform time-dependent Bahadur–Kiefer representation)",
+      "assumptions": [
+        "H∈(0,1), and the observations are n iid sample-continuous fractional Brownian motions with that Hurst index.",
+        "0<γ_n≤1 and (−log γ_n)/log n→η for some 0≤η<1/(2H).",
+        "The quantile level stays in [ρ,1−ρ] for fixed 0<ρ<1/2, and T>1."
+      ],
+      "statement": "Almost surely, sup_{(t,α)∈[γ_n,T]×[ρ,1−ρ]}|v_n(t,τ_α(t))+f(t,τ_α(t))u_n(t,α)|=O(n^(−1/4)γ_n^(−H/2)(log log n)^(1/4)(log n)^(1/2)). For fixed γ_n=γ>0 this recovers the classical uniform Bahadur–Kiefer scale. The restriction η<1/(2H) is essential to prevent the displayed rate from diverging at the boundary.",
+      "start_line": 326,
+      "end_line": 341,
+      "pdf_pages": [
+        8
+      ],
+      "proof_steps": [
+        "Proposition 1 controls the empirical CDF jump at its empirical quantile by m/n uniformly in t, n and trimmed quantile levels, where m=2(ceil(2/H)+1). Its proof orders the n path values at fixed t and uses that m distinct iid fBM paths almost surely never meet at a positive time; the latter follows from the cited Xiao nonintersection theorem for two independent vector fBMs in dimension k>2/H.",
+        "Proposition 2 turns the uniform empirical CDF LIL bound into a quantile deviation bound on t>a_n(δ), using the positive minimum of the Gaussian density on a compact standardized quantile interval. It yields |τ^n_α(t)−τ_α(t)|≤D_0t^(H−δ)√(log log n/n), with a_n=C((log log n)/n)^(1/(2δ)).",
+        "A Taylor expansion around τ_α(t) decomposes v_n(t,τ_α(t)) into −f(t,τ_α(t))u_n(t,α), a quadratic density-derivative remainder, and the bounded empirical-quantile jump term. Proposition 2 controls the quadratic term uniformly for t≥γ_n.",
+        "To control the remaining empirical-process increment from τ_α(t) to τ^n_α(t), the authors truncate to fBM paths with modulus at most √(c log n)f_H, form the indicator-difference class, bound its Rademacher complexity using an inequality imported from [5], and apply Talagrand's inequality. The choice ε_n=c_1γ_n^(−H/2)(log log n/n)^(1/4), together with the condition on γ_n, gives the target increment scale.",
+        "A Landau–Shepp tail bound for the fBM modulus and Borel–Cantelli remove paths outside the truncated class. The local increment bound plus Proposition 2 then controls v_n(t,τ_α(t))−v_n(t,τ^n_α(t)); combining with the Taylor decomposition proves the result."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 415,
+          "end_line": 530,
+          "pdf_pages": [
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "start_line": 532,
+          "end_line": 717,
+          "pdf_pages": [
+            12,
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      ],
+      "gaps": [
+        "The nonintersection input is cited from Xiao [18] and not proved here; its dimension condition is essential to the uniform no-large-tie argument.",
+        "The Rademacher-complexity estimate is cited as equation (57) of [5], and Talagrand concentration is quoted in Appendix 5.1; those external proofs are not reproduced here.",
+        "The conclusion is a Bahadur–Kiefer representation for iid fBM paths, trimmed α, finite T, and the stated lower-time regime. It is not automatically a theorem for dependent fBM samples, arbitrary self-similar processes, untrimmed α, or unrestricted γ_n."
+      ]
+    },
+    {
+      "label": "Corollary 1 (weighted representation through t=0)",
+      "assumptions": [
+        "Same iid fBM setup with H∈(0,1), fixed 0<ρ<1/2 and T>1.",
+        "For every fixed δ>0; the asymptotic rate is stated with an arbitrarily small positive exponent loss."
+      ],
+      "statement": "Almost surely, sup_{(t,α)∈[0,T]×[ρ,1−ρ]}|t^H v_n(t,τ_α(t))+(exp(−z_α²/2)/√(2π))u_n(t,α)|=O(n^(−1/6+δ)). This weighted formulation includes t=0; it does not claim the unweighted empirical process has a uniformly continuous Gaussian limit there.",
+      "start_line": 360,
+      "end_line": 364,
+      "pdf_pages": [
+        8
+      ],
+      "proof_steps": [
+        "Set γ_n=n^(−η). On t≥γ_n apply Theorem 3; the error rate has leading power n^(−1/4+ηH/2) up to logarithms.",
+        "On [0,γ_n], control the weighted empirical process using the maximal inequality quoted from [5], equation (47), at rate O(n^(−ηH)√log n). On (a_n,γ_n], Proposition 2 bounds the quantile process by O(n^(−η(H−δ_0))) for any 0<δ_0<H.",
+        "Balance these powers at η=1/(6H). For t<a_n, use self-similarity of fBM, a Landau–Shepp supremum tail and Borel–Cantelli to bound the empirical quantile by the largest path supremum; combine with |τ_α(t)|≤a_n^H|z_{1−ρ}|. The resulting small-time contribution is O(n^(−1/6)) a.s., yielding the claimed n^(−1/6+δ) bound."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 719,
+          "end_line": 791,
+          "pdf_pages": [
+            16,
+            17,
+            18
+          ]
+        }
+      ],
+      "gaps": [
+        "The small-time maximal inequality is imported from [5], and the Gaussian supremum tail uses the cited Landau–Shepp theorem; neither is independently reproved here.",
+        "The rate has an arbitrary δ>0 loss; the argument does not state an exact O(n^(−1/6)) bound for the whole interval."
+      ]
+    },
+    {
+      "label": "Propositions 1–2 (empirical quantile jump and inversion controls)",
+      "assumptions": [
+        "Independent fractional Brownian paths with H∈(0,1); empirical quantile levels α are trimmed to [ρ,1−ρ].",
+        "For Proposition 2, 0<δ≤H, fixed ρ∈(0,1/2), finite T, and t>a_n(δ)."
+      ],
+      "statement": "Proposition 1: almost surely, uniformly over t>0, n≥1 and ρ≤α≤1−ρ, 0≤F_n(t,τ^n_α(t))−α≤m/n with m=2(ceil(2/H)+1). Proposition 2: for all sufficiently large n, uniformly over (α,t)∈[ρ,1−ρ]×(a_n(δ),T], |τ^n_α(t)−τ_α(t)|≤D_0t^(H−δ)√(log log n/n); a_n(δ)=C((log log n)/n)^(1/(2δ)), with D_0 depending on ρ,T and C on δ,ρ,T as stated by the authors.",
+      "start_line": 425,
+      "end_line": 481,
+      "pdf_pages": [
+        10,
+        11
+      ],
+      "proof_steps": [
+        "At each fixed t, τ^n_α(t) is the ceil(αn)-th order statistic. The no-multiple-intersection event bounds the number of tied samples at that order statistic, giving the empirical CDF jump bound m/n simultaneously in t.",
+        "The empirical LIL gives a uniform bound on t^δ|F_n(t,τ^n_α(t))−F(t,τ^n_α(t))|. Together with the jump bound and F(t,τ_α(t))=α, this controls |F(t,τ_α(t))−F(t,τ^n_α(t))|.",
+        "Choose a_n so the CDF gap forces the standardized quantile gap below 1/8; on the resulting compact normal-quantile interval the density has a positive lower bound d_2. The mean value theorem then gives the stated quantile error."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 425,
+          "end_line": 469,
+          "pdf_pages": [
+            10,
+            11
+          ]
+        },
+        {
+          "start_line": 470,
+          "end_line": 530,
+          "pdf_pages": [
+            11,
+            12
+          ]
+        }
+      ],
+      "gaps": [
+        "Uniformity over all t depends on the path nonintersection result; pointwise continuity or absence of ties at a single deterministic t would not suffice.",
+        "The density inversion needs quantile trimming away from α=0,1 and a positive lower-time cutoff a_n; constants are not uniform as ρ approaches an endpoint."
+      ]
+    }
+  ],
+  "constant_dependence": "Theorem 3 hides constants in O(·) and does not state their full dependence; its rate explicitly depends on H through γ_n^(−H/2), on the limiting lower-time exponent η, and implicitly on the fixed trimmed interval [ρ,1−ρ] and T. Proposition 2 explicitly states D_0=D_0(ρ,T) and C=C(δ,ρ,T). The imported strong-coupling rates depend on the exponent parameter a, ξ through existence of a positive rate gap ρ(a,ξ), and H through ν_0, H_0, τ_1, τ_2. Corollary 1 has arbitrary exponent loss δ>0.",
+  "endpoint_limits": [
+    "H is fixed in (0,1); no H=0 or H=1 endpoint is included.",
+    "Theorem 3 trims quantile levels to [ρ,1−ρ] with ρ>0 and uses T>1. It excludes η=1/(2H); the border γ_n=n^(−1/(2H)) makes the displayed rate diverge.",
+    "The empirical process weak Gaussian limit is stated only on [γ,T]×R for γ>0. At t=0 the unweighted process does not have the stated bounded uniformly-continuous Gaussian limit; Corollary 1 controls only the t^H-weighted combination.",
+    "Theorem 1/2 coupling exponent a is strictly between the displayed thresholds, and ξ>1; those are imported coupling hypotheses, not free tuning endpoints.",
+    "The corollary only promises O(n^(−1/6+δ)) for every δ>0, not the endpoint δ=0."
+  ],
+  "reusable_methods": [
+    "For empirical quantiles with continuous marginal CDF, separate the empirical jump at the sample quantile from the smooth population-CDF inversion; the jump term and a local density lower bound yield a robust quantile-error estimate.",
+    "To prove a uniform quantile representation near a degenerating time endpoint, split the time domain into a positive-time window and a shrinking initial interval; apply local empirical-process control on the former and self-similarity/supremum tails on the latter.",
+    "Use a path-modulus truncation to make an indicator class manageable, bound its small-L2 increments by Rademacher complexity plus Talagrand concentration, then remove the truncation with a Gaussian modulus tail and Borel–Cantelli.",
+    "When combining a path-level strong empirical-process coupling with a quantile expansion, track whether the coupling is on an enlarged probability space and whether the process is weighted at t=0; these are distinct conclusions."
+  ],
+  "unchecked": [
+    "Theorem 1 and Theorem 2 are quoted from Kevei–Mason [5]; that original paper and its proof were not independently read here.",
+    "Xiao nonintersection theorem, Kuelbs–Kurtz–Zinn empirical-process LIL inputs, Talagrand's inequality, Landau–Shepp Gaussian supremum tails, Lévy modulus theorem, and the cited maximal inequality (47) are used as external results and not independently verified from their original sources.",
+    "No numerical experiment or implementation was run; this is a source-evidence card, not an algorithm behavior test."
+  ],
+  "visual_checks": [
+    {
+      "pdf_pages": [
+        1,
+        5,
+        6
+      ],
+      "items": "Title/authors/version and imported Theorem 1/2 coupling domains, exponent ranges and ν_0=2+2/H."
+    },
+    {
+      "pdf_pages": [
+        8
+      ],
+      "items": "Theorem 3 exact rate and domain; Corollary 1 coefficient exp(−z_α²/2)/sqrt(2π) and exponent-loss rate."
+    },
+    {
+      "pdf_pages": [
+        10,
+        11,
+        12
+      ],
+      "items": "Proposition 1 tie count m=2(ceil(2/H)+1), Proposition 2 cutoff/density inversion, and empirical jump decomposition."
+    },
+    {
+      "pdf_pages": [
+        16,
+        18,
+        19
+      ],
+      "items": "Theorem 3 final increment control, Corollary 1 small-time endpoint split, and the quoted Talagrand/Landau–Shepp/maximal tail inequalities."
+    }
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 907,
+    "source_lines": 907,
+    "required_content_lines": 637,
+    "covered_content_lines": 637,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-5612110893d746ee/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-5612110893d746ee.json",
+  "review_input_sha256": "7f33eb938392d0689a904e21ca4a47080ee2306f3917edb2756ced02df22fc5c"
+}

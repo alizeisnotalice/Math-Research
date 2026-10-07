@@ -1,0 +1,213 @@
+{
+  "paper_id": "P-b7ea4e1f39a3af1b",
+  "observed_title": "Four Talagrand inequalities under the same umbrella",
+  "authors": [
+    "Michel Ledoux"
+  ],
+  "version": "arXiv:1909.00363v1, 2019-09-01, 35 PDF pages; note/review version, not the original source of the four inequalities.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1609,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "entire note: original inequality statements, entropy duality/tensorization, log-Sobolev and hypercontractivity proofs, Gaussian Herbst argument, product-space convex-distance proof, L1-L2 variance proof, quadratic transport proof, empirical-process proof with truncation, discussion and complete references"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "K05": "direct overview/source map. It explicitly separates (i) standard-Gaussian Lipschitz concentration, (ii) Talagrand convex-distance concentration on arbitrary product probability spaces, (iii) the discrete-cube L1–L2 variance inequality, (iv) Gaussian quadratic transport-entropy, and (v) empirical-process supremum bounds. The review is a proof-bearing secondary source; it is not the original publication of those inequalities."
+  },
+  "definitions": [
+    {
+      "name": "standard Gaussian concentration (equation (5))",
+      "statement": "For standard Gaussian γ on R^n and Euclidean L-Lipschitz F, γ{F≥∫F dγ+r}≤exp(−r²/(2L²)) for r≥0. Applying the one-sided result to −F and taking a union bound gives γ{|F−∫F dγ|≥r}≤2exp(−r²/(2L²)).",
+      "source_lines": [
+        138,
+        144,
+        595,
+        597
+      ],
+      "pdf_pages": [
+        4,
+        14
+      ]
+    },
+    {
+      "name": "product-space convex distance",
+      "statement": "For P=⊗_i μ_i, the convex distance d_A(x) is Euclidean distance of 0 from the convex hull of mismatch-indicator vectors to A. The original inequality is represented as P(A) E_P exp(d_A(X)^2/4)≤1; the paper also derives a weaker-constant entropy-method proof and Lipschitz/convex corollaries.",
+      "source_lines": [
+        31,
+        44,
+        637,
+        645,
+        757,
+        795
+      ],
+      "pdf_pages": [
+        1,
+        2,
+        15,
+        18,
+        19
+      ]
+    },
+    {
+      "name": "four non-equivalent Talagrand inequalities",
+      "statement": "The note separately states product convex-distance, discrete-cube L1–L2 variance, Gaussian quadratic transport-entropy, and empirical-process supremum inequalities; the shared entropy/log-Sobolev/hypercontractive proof principle does not make their hypotheses or outputs interchangeable.",
+      "source_lines": [
+        31,
+        76
+      ],
+      "pdf_pages": [
+        1,
+        2
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Equation (5) / Gaussian concentration from the Gross log-Sobolev inequality",
+      "assumptions": [
+        "X has standard Gaussian law γ on R^n.",
+        "F:R^n→R is Euclidean L-Lipschitz; the theorem is around its Gaussian mean."
+      ],
+      "statement": "For r≥0, P(F(X)−E F(X)≥r)≤exp(−r²/(2L²)); hence P(|F(X)−EF(X)|≥r)≤2exp(−r²/(2L²)).",
+      "start_line": 138,
+      "end_line": 144,
+      "pdf_pages": [
+        4
+      ],
+      "proof_steps": [
+        "Prove the Gaussian logarithmic Sobolev inequality Entγ(f²)≤2∫|∇f|²dγ, with sharp constant 2.",
+        "Apply it to f=e^(λF/2) for smooth bounded 1-Lipschitz F to obtain E e^(λF)≤exp(λEF+λ²/2).",
+        "Approximate general Lipschitz F by Ornstein–Uhlenbeck smoothing and truncation.",
+        "Use Chernoff optimization λ=r/L² for the one-sided tail; apply the same to −F and union-bound for the two-sided form."
+      ],
+      "gaps": [
+        "The result uses standard Gaussian measure and the Euclidean Lipschitz norm. It is not an inequality for arbitrary dependent laws or arbitrary convex functions without a concentration property of the input measure.",
+        "No claim of sharp numerical constants is made for the other three Talagrand inequalities in this review."
+      ]
+    },
+    {
+      "label": "Talagrand convex-distance inequality for product measures (original form summarized in Section 1)",
+      "assumptions": [
+        "P=⊗_i μ_i is a product probability measure on a product measurable space.",
+        "A is measurable and nonempty; d_A is the convex distance defined from coordinate mismatch indicators."
+      ],
+      "statement": "P(A) E_P[exp(d_A(X)^2/4)]≤1 (equivalently E exp(d_A²/4)≤1/P(A)); the review’s entropy proof obtains an explicitly weaker numerical version and notes sharper constants/source formulations separately.",
+      "start_line": 31,
+      "end_line": 44,
+      "pdf_pages": [
+        1
+      ],
+      "proof_steps": [
+        "Show d_A equals sup over nonnegative unit ℓ² weights a of the weighted Hamming distance to A.",
+        "Use entropy tensorization and coordinate sensitivity to bound Ent_P(e^(λd_A²)).",
+        "Integrate the resulting Herbst differential inequality for positive and negative λ, using the single-coordinate squared-distance change bound.",
+        "Convert the Laplace transform estimate into the convex-distance tail/moment inequality."
+      ],
+      "gaps": [
+        "The review explicitly makes no attempt to recover the sharp constant in the original inequality using its presented entropy proof; its original-form statement and its proof constants must not be conflated."
+      ]
+    },
+    {
+      "label": "Talagrand quadratic transportation-cost inequality (Gaussian case)",
+      "assumptions": [
+        "γ is standard Gaussian on R^n.",
+        "μ=fγ is a probability measure with finite relative entropy and finite second moment."
+      ],
+      "statement": "W₂(μ,γ)²≤2∫f log f dγ.",
+      "start_line": 958,
+      "end_line": 1015,
+      "pdf_pages": [
+        22,
+        23
+      ],
+      "proof_steps": [
+        "Use Kantorovich duality with Hopf–Lax infimal convolution Q_sφ.",
+        "Apply the entropy variational inequality and Gaussian log-Sobolev inequality to e^(sQ_sφ).",
+        "Use ∂sQ_sφ=−|∇Q_sφ|²/2 to show ∫e^(Q_1φ)dγ≤e^(∫φdγ).",
+        "Take the supremum in the dual formula."
+      ],
+      "gaps": [
+        "This is transport-entropy for Gaussian measure, not the product convex-distance inequality or a generic Lipschitz-tail bound."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "Gaussian one-sided exponent is r²/(2L²); two-sided adds factor 2. For the Gaussian transport inequality the sharp coefficient is 2. The original product convex-distance statement has exponent coefficient 1/4 in exp(d_A²/4) and reciprocal P(A); the secondary proof’s constants are weaker. The empirical-process bound has dimension-free numerical constants and mixed Gaussian/Poisson regimes.",
+    "dependence": "Gaussian concentration depends only on Euclidean Lipschitz constant, not n. The product convex distance depends on product structure and its mismatch geometry. The four classes have distinct inputs/outputs and are not interchangeable."
+  },
+  "endpoint_limits": {
+    "measure": "Gaussian concentration applies to standard Gaussian law; extensions require a separately established log-Sobolev/concentration property.",
+    "center": "Source theorem is centered at the mean; a median-centered two-sided inequality follows only with additional conversion/constants, not by silently replacing mean with median.",
+    "product": "Talagrand convex distance requires a product probability measure and the specified convex distance.",
+    "constants": "The note says it does not optimize constants except the Gaussian transport coefficient; its proof-derived constants must not be attributed as sharp original constants."
+  },
+  "reusable_methods": [
+    {
+      "method": "Gaussian log-Sobolev → Herbst Laplace transform → Chernoff tail",
+      "transfer": "For a candidate random statistic F(X), first prove X is standard Gaussian (or prove an appropriate LSI for its actual law) and establish Euclidean Lipschitz constant L; then the displayed Gaussian exponent applies. This is not an automatic statement for the center-cube maximal operator under dependent data."
+    },
+    {
+      "method": "Product entropy tensorization and coordinate sensitivity",
+      "transfer": "Could be adapted only if input coordinates are independent under a product measure and the statistic has the required coordinate sensitivity/mismatch geometry; overlapping cube statistics do not themselves imply independence."
+    },
+    {
+      "method": "Separate Talagrand variants by measure and output",
+      "transfer": "Choose Gaussian tails, product convex-distance, L1–L2 variance, transport-entropy or empirical-supremum inequality based on its own assumptions; do not transfer by surname or shared historical name."
+    }
+  ],
+  "unchecked": [
+    "All 35 extracted pages, including proofs of the Gaussian concentration implication, product convex-distance, discrete-cube L1–L2, Gaussian transportation, and empirical-process inequality, were read. Equation (5) on PDF page 4 was visually checked in a PyMuPDF render.",
+    "I did not independently reprove the referenced original Talagrand theorems; the exact source here is the 2019 proof-bearing review by Michel Ledoux (P-b7ea4e1f39a3af1b, arXiv:1909.00363v1). Original references are explicitly listed in its References section."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1609,
+    "source_lines": 1609,
+    "required_content_lines": 1128,
+    "covered_content_lines": 1128,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-b7ea4e1f39a3af1b/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-b7ea4e1f39a3af1b.json",
+  "review_input_sha256": "7a0e6bf3019e4e5b6179164bd26a16231ce5d529f3452a6bc6730aa6303469c9"
+}

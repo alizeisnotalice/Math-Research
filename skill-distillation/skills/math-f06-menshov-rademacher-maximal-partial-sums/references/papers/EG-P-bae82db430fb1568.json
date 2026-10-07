@@ -1,0 +1,187 @@
+{
+  "paper_id": "P-bae82db430fb1568",
+  "observed_title": "Generalizations of Menchov-Rademacher Theorem and Existence of Wave Operators in Schrödinger Evolution",
+  "authors": [
+    "Sergey Denisov",
+    "Liban Mohamed"
+  ],
+  "version": "arXiv:1905.00483v1，2019-05-01。",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 713,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "F06": "direct"
+  },
+  "definitions": [
+    {
+      "term": "连续正交系统 (P,σ)",
+      "definition": "P(r,k) 定义于 r≥0、k∈R，且对每个 a>0 及 f∈L²(R₊)，满足 ∫_R |∫₀ᵃ f(r)P(r,k)dr|²dσ(k)=∫₀ᵃ|f(r)|²dr。即截断积分变换保持 L² 范数。",
+      "source_ranges": [
+        {
+          "start_line": 37,
+          "end_line": 50,
+          "pdf_pages": [
+            1
+          ]
+        },
+        {
+          "start_line": 60,
+          "end_line": 66,
+          "pdf_pages": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "term": "归一化连续系统",
+      "definition": "存在正连续函数 κ(k)，使 κ⁻¹∈L∞(R)，且 K=sup_{r≥0}∫_R |P(r,k)|²/κ(k)dσ(k)<∞。",
+      "source_ranges": [
+        {
+          "start_line": 67,
+          "end_line": 75,
+          "pdf_pages": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Krein 系统的 Stummel 条件",
+      "definition": "系数 A 满足 ||A||_{St}=sup_{r≥0}(∫_r^{r+1}|A(ρ)|²dρ)^{1/2}<∞。作者证明由此得到归一化函数 κ(k)=1+k² 及 K≲1+||A||_{St}²。",
+      "source_ranges": [
+        {
+          "start_line": 99,
+          "end_line": 105,
+          "pdf_pages": [
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "定理 1.2：连续正交系统的 Menshov–Rademacher 最大不等式",
+      "assumptions": [
+        "(P,σ) 为上定义的连续正交系统。",
+        "L=∫₀∞|f(r)|²log²(2+r)dr<∞。"
+      ],
+      "statement": "序列 ∫₀ⁿf(r)P(r,k)dr 对 σ-几乎处处 k 收敛。对 M(k)=sup_{n∈N}|∫₀ⁿf(r)P(r,k)dr|，有 ||M||_{L²(σ)}≤C L^{1/2}，C 为绝对常数。",
+      "start_line": 47,
+      "end_line": 66,
+      "pdf_pages": [
+        1,
+        2
+      ],
+      "proof_steps": [
+        "把积分分成 dyadic 壳 [2^{j−1},2^j]，记壳积分为 P_j(k)。由系统的等距恒等式，||P_j||²_{L²(σ)}=∫_{壳}|f|²；因此 Σj²||P_j||² 与 L 同阶。",
+        "由 Cauchy–Schwarz，dyadic 端点部分和的 L² 最大量由 (Σj²||P_j||²)(Σj^{-2}) 控制；局部有限测度区间上再用相同求和得到 a.e. 收敛。",
+        "对每个 dyadic 壳内部的整数 n 作二进制分解，最多 j 个 dyadic 子区间；Cauchy–Schwarz 得壳内极大平方积分由 j²∫_{壳}|f|² 控制。",
+        "将端点最大和壳内误差合并，得到完整整数部分和最大函数的 L² 界；壳误差平方可和同时给出逐点收敛。"
+      ],
+      "gaps": [
+        "文章将此证明称为经典离散 Menshov–Rademacher 证明的直接改写；本次检查了其连续系统版的 dyadic 结构，但未独立证明抽象等距变换对所有可测代表元的技术细节。",
+        "这是单连续参数截断积分，不是任意树或二维多参数部分和结论。"
+      ]
+    },
+    {
+      "name": "定理 1.3：归一化系统的连续截断最大估计",
+      "assumptions": [
+        "(P,σ,κ) 为归一化连续正交系统，K=sup_r∫|P(r,k)|²/κ(k)dσ(k)<∞，κ⁻¹∈L∞。",
+        "f(r)log(2+r)∈L²(R₊)。"
+      ],
+      "statement": "∫_R sup_{t>0}|∫₀ᵗf(r)P(r,k)dr|²/κ(k)dσ(k) ≲ (||κ⁻¹||_{L∞}+K)∫₀∞|f(r)|²log²(2+r)dr；并且当 R→∞，截断积分趋于全积分，对 σ-几乎处处 k 成立。",
+      "start_line": 67,
+      "end_line": 79,
+      "pdf_pages": [
+        2
+      ],
+      "proof_steps": [
+        "将任意 t 的整数部分项用定理1.2控制。",
+        "把不足一个单位长度的尾项按单位区间切分；Cauchy–Schwarz 后用 κ 加权的点态核能量 K 与 κ⁻¹ 的一致界，对区间内积分求和。",
+        "对单位区间误差的平方积分求和，并用加权对数平方可积性控制；尾部收敛给出所有实数截断的 a.e. 极限。"
+      ],
+      "gaps": [
+        "加权端点假设是额外归一化条件；不应将结论外推到 κ 不存在或点态能量 K 无界的系统。",
+        "对数平方权的最优性未在本文证明。"
+      ]
+    },
+    {
+      "name": "定理 1.6：由 Krein 系统方法得到的一维 Schrödinger 波算子存在性",
+      "assumptions": [
+        "半轴 R₊ 上 v=a′+q，q∈L¹(R₊)；a 绝对连续，a′∈L∞，a(r)log(2+r)∈L²(R₊)。",
+        "H=−∂ₓₓ+v 与 H₀=−∂ₓₓ 均取原点 Dirichlet 边界条件。"
+      ],
+      "statement": "强极限 W±(H,H₀)=s−lim_{t→±∞}e^{itH}e^{−itH₀} 在 L²(R₊) 中存在。",
+      "start_line": 121,
+      "end_line": 140,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "把半轴 Schrödinger 问题联系到 Krein 系统和相应 Dirac 算子；平方 Dirac 算子分解出带目标势的 Schrödinger 算子。",
+        "用连续正交系统估计控制 Krein 解 P* 的积分增量，并得到其谱表示的极限。",
+        "将自由演化的长时渐近写入 Dirac 谱表示，把误差拆为端点渐近项与含 A·P 的校正项。",
+        "校正项在每个有限谱区间的 L²(σ) 范数趋零，之后用紧集穷竭引理与总范数极限推出全谱收敛；相对迹类扰动不影响波算子存在性。"
+      ],
+      "gaps": [
+        "该散射结论需要本文具体 Krein/Dirac/Shrödinger 结构及 (3.5) 型额外最大振荡条件；不是对一般部分和极大的新界。",
+        "证明用到 Krein 系统谱表示、Birman–Kuroda 定理及振荡积分引理；本次完整阅读作者推导，但未独立重证全部外部谱论工具。"
+      ]
+    }
+  ],
+  "constant_dependence": "定理1.2的 C 为绝对常数。定理1.3常数显式依赖 ||κ⁻¹||∞ 与 K。Stummel 系统示例取 κ(k)=1+k²，K≲1+||A||_{St}²。作者未给对数权或常数的最优性结论。",
+  "endpoint_limits": [
+    "主假设为 log²(2+r) 加权 L² 可积；文中未证明该对数权在连续系统类别内最优。",
+    "归一化版本需 κ⁻¹∈L∞ 与点态能量上界 K<∞。",
+    "该推广把经典单参数离散部分和扩展到连续截断积分，不能直接作为二维/树形索引集合的极大定理。",
+    "全文另有针对 Krein 系统与半轴散射的一维应用，须保留其额外微分、可积性及边界假设。"
+  ],
+  "reusable_methods": [
+    "将连续积分按 dyadic 壳切分，再将壳内部任意截断用二进制区间分解控制；对每个壳支付对数因子，平方求和正好产生 log² 权。",
+    "先证明未加权整数截断最大界，再用点态核能量归一化和 κ⁻¹ 一致界处理单位尺度内的连续尾项。",
+    "对变换型正交系统应用此法前，应明确其 L² 等距恒等式、核的 pointwise 能量范围及测度，而不能只凭形式上的“连续正交”名称套用。",
+    "证明散射极限时可将谱空间先限于紧区间控制误差，再以质量/总范数守恒和穷竭论证全局收敛。"
+  ],
+  "unchecked": [
+    "完整阅读17页正文、定理证明、应用章节、附录证明及参考文献；定理1.2与1.3陈述另对照渲染 PDF 第1、2页核验。",
+    "没有独立重证 Krein 系统构造、连续 Plancherel 关系、外部散射定理或所有谱测度细节。",
+    "本文对 F06 是直接相关的连续单参数 MR 最大不等式证据；不支持项目中未给定义的任意多参数树接口。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 707,
+    "source_lines": 713,
+    "required_content_lines": 569,
+    "covered_content_lines": 569,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-bae82db430fb1568/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-bae82db430fb1568.json",
+  "review_input_sha256": "97fd407d4f61503513ca512ca4952d68b560627d0513f4f98b2437b3da4c687b"
+}

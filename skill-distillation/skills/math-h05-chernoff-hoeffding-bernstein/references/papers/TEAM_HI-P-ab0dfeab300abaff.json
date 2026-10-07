@@ -1,0 +1,169 @@
+{
+  "paper_id": "P-ab0dfeab300abaff",
+  "observed_title": "A sharp Bernstein–type inequality and application to the Carleson embedding theorem with matrix weights",
+  "authors": [
+    "Daniel Kraus",
+    "Annika Moucha",
+    "Oliver Roth"
+  ],
+  "version": "Observed arXiv:2110.10730v1, 20 October 2021 watermark; source title page dated October 22, 2021; five PDF pages.",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "file": "corpus/papers/P-ab0dfeab300abaff/paper.md",
+      "scope": "All five PDF pages, both polynomial proofs, matrix application and complete references.",
+      "start_line": 1,
+      "end_line": 224,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "topic_relevance": {
+    "H05": "adjacent",
+    "I04": "direct"
+  },
+  "theorem_cards": [
+    {
+      "label": "Lemma 1.1: sharp positive polynomial Bernstein bound",
+      "assumptions": [
+        "Positive integer n; p is a complex polynomial, p(s)≥0 for all real s≥0.",
+        "|p(s)|≤s^(−1)(1+s)^n for every real s>0. This forces degree p≤n−1."
+      ],
+      "statement": "|p(0)|≤n². It is sharp, attained by p_n(s)=(1/2)(1+s)^n[1−T_n((1−s)/(1+s))]/s with the removable value at s=0, where T_n is the Chebyshev polynomial.",
+      "proof_steps": [
+        "Set q(z)=zp(z), then deg(q)≤n, q(0)=0, p(0)=q′(0). The Laurent polynomial f(z)=(1+z)^(2n)/(4z)^n q(−((1−z)/(1+z))²) is nonnegative and ≤1 on |z|=1.",
+        "By cited Fejér–Riesz factorization f(z)=P(z) overline(P(1/overline(z))) with deg(P)≤n, P zero-free in |z|<1 and |P|≤1 on the circle. Since P(1)=0, |p(0)|=2|f″(1)|=4|P′(1)|².",
+        "Cited Lax inequality max|P′|≤n/2 yields n²; P_n(z)=(z^n−1)/2 supplies the witness. Original PDF p3 bars in the reflected conjugate were visually checked; OCR alone loses them."
+      ],
+      "source_ranges": [
+        {
+          "start_line": 7,
+          "end_line": 146,
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "start_line": 7,
+      "end_line": 146,
+      "pdf_pages": [
+        1,
+        2,
+        3
+      ],
+      "gaps": [
+        "Fejér–Riesz factorization and the sharp Lax derivative inequality are external dependencies, not independently proved by this five-page source."
+      ]
+    },
+    {
+      "label": "Remark 1: bound without positivity",
+      "assumptions": [
+        "Positive integer n; complex polynomial p with |p(s)|≤s^(−1)(1+s)^n for every s>0; p need not be nonnegative on positive axis."
+      ],
+      "statement": "The source obtains |p(0)|≤2n²−n and states it is presumably not best possible.",
+      "proof_steps": [
+        "Use g(z)=(1+z)^(2n)/4^n q(−((1−z)/(1+z))²), deg(g)≤2n, |g|≤1 on |z|=1, g′(1)=0 and p(0)=−2g″(1).",
+        "The reduction to g zero-free in the disk is referred to [1]. Lax bounds ||g′||≤n. Cited Rahman–Schmeisser Cor14.2.8 applied to g′ at z=1 yields 2|g″(1)|≤n(2n−1)."
+      ],
+      "source_ranges": [
+        {
+          "start_line": 78,
+          "end_line": 193,
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ]
+        }
+      ],
+      "start_line": 78,
+      "end_line": 193,
+      "pdf_pages": [
+        2,
+        3,
+        4
+      ],
+      "gaps": [
+        "The zero-free reduction and strengthened Bernstein inequality are external dependencies. No claim of sharpness is made."
+      ]
+    },
+    {
+      "label": "Theorem A and the claimed 4d² matrix application: literal norm gap",
+      "assumptions": [
+        "W is a d×d matrix-valued measure; A_I positive semidefinite matrices for dyadic intervals I∈D; source refers terminology to Culiuc–Treil [1].",
+        "(i) uses Σ_I ||A_I^(1/2)〈W^(1/2)f〉_I||²|I|≤A||f||²_L².",
+        "(ii), as printed in this v1 PDF p2, uses Σ_I ||A_I^(1/2)〈Wf〉_I||²|I|≤A||f||²_L², with no W in the RHS norm.",
+        "(iii) uses |I_0|^(−1)Σ_{I⊆I_0}〈W〉_I A_I〈W〉_I |I|≤B〈W〉_{I_0} for every dyadic I_0. A and B denote the best embedding and testing constants, not individual matrices."
+      ],
+      "statement": "The source states equivalence and B≤A≤C(d)B, then improves old C(d)=4e²d² to 4d² via positive-polynomial Lemma1.1 with n=2d. In this local v1 PDF, clause(ii) prints the unweighted L² norm. The literal clause is inconsistent with the claimed equivalent bound, as the scalar check shows. Inferring that the authors intended L²(W) is a reader inference from the cited CT theorem, not an enumerated publisher correction. The official cited Culiuc–Treil Theorem1.2(ii) uses L²(W), with ||f||²_{L²(W)}=∫〈W(dx)f,f〉. Patch/caveat clause(ii) to that weighted norm; retain (i)/(iii) and the matrix method. Under the literal unweighted printing, scalar W=w on [0,1], A_root=1, others0 gives B=w, best (i) A=w, but (ii) A=w²; w=10 yields100>4B40.",
+      "proof_steps": [
+        "Application says only nonnegative polynomials of parameter n=2d are required in [1]; it does not reproduce the matrix embedding proof or define all measure/function notation.",
+        "Counterexample binds the exact printed unweighted norm interpretation and v1 page2, visually reread. It restricts that printed clause; it does not invalidate (i)/(iii), the polynomial lemma, or a correctly defined weighted matrix theorem."
+      ],
+      "source_ranges": [
+        {
+          "start_line": 35,
+          "end_line": 76,
+          "pdf_pages": [
+            1,
+            2
+          ]
+        }
+      ],
+      "start_line": 35,
+      "end_line": 76,
+      "pdf_pages": [
+        1,
+        2
+      ],
+      "gaps": [
+        "Literal printed clause(ii) remains excluded. The missing-weight interpretation is a reader inference; this card supplies an explicit editorial caveat rather than claiming an official corrected KMR theorem. A weighted 4d² transfer still requires the original CT/KMR hypotheses and external proof dependencies; private HS/cube transfer not certified.",
+        "The best embedding constant A and individual matrices A_I are distinct. The CT arXivv2 original open PDF is now downloaded locally and fully read; its separate evidence card is being prepared."
+      ]
+    }
+  ],
+  "transfer_boundary": "The Bernstein polynomial result is adjacent to H05, not a Chernoff mgf bound. Its matrix Carleson application is I04-related with dimension factor 4d², contingent on the original definition and weighted norm contract. It supplies no private cube transfer.",
+  "proof_verification": "All printed proofs read; conjugation visually checked. External Fejér–Riesz/Lax/Rahman–Schmeisser and Culiuc–Treil dependencies remain unverified; literal TheoremA(ii) norm gap has an explicit scalar check.",
+  "identity_status": "title_authors_visible_version_observed_not_bibliographic_dedup_certified",
+  "used_claim_status": "corrected_weighted_source_theorem_pending_separate_CT_card_and_reviewed_transfer; printed_unweighted_clause_excluded",
+  "original_dependency_crosscheck": {
+    "source_title": "The Carleson Embedding Theorem with Matrix Weights",
+    "authors": [
+      "Amalia Culiuc",
+      "Sergei Treil"
+    ],
+    "official_url": "https://academic.oup.com/imrn/article/2019/11/3301/4161646",
+    "doi": "10.1093/imrn/rnx222",
+    "official_version": "IMRN 2019(11),3301–3312; published online18 September2017",
+    "official_locator": "§1.1.2 weighted space definition; Theorem1.2(ii); §2.1 variable change with Moore–Penrose inverse",
+    "corrected_norm": "||f||²_{L²(W)}=∫〈W(dx)f,f〉",
+    "second_review": {
+      "reviewer": "audit_jk_16",
+      "status": "official_definition_and_local_pdf_norm_gap_verified",
+      "scope": "Independent official CT definition, local KMR PDF norm and scalar witness checked; intended correction is an inference, not a publisher erratum or whole matrix proof certificate."
+    },
+    "open_preprint_version": "arXiv:1508.01716v2,24August2017,9PDFpages; not conflated with official12-page edition",
+    "local_preprint_path": "reviews/TEAM_HI/evidence/sources/P-e6b284f6f82144d9/paper.pdf",
+    "local_preprint_sha256": "e6b284f6f82144d99f6f1c59256886da72d7134cbba066ef279e326eaae30811",
+    "intent_inference": "A missing weighted-norm subscript is a reader inference from the explicit CT citation and its actual weighted theorem. Neither a general2022 correction notice nor current publisher PDF/HTML establishes an official correction of KMR clause(ii)."
+  },
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 224,
+    "source_lines": 224,
+    "required_content_lines": 150,
+    "covered_content_lines": 150,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-ab0dfeab300abaff/paper.md"
+  },
+  "review_source": "reviews/TEAM_HI/evidence/P-ab0dfeab300abaff.json",
+  "review_input_sha256": "8cc4df11408ffb1111be484728c27c379ff2b40f0ca6e45dbe8f06cb6fedbdb3"
+}

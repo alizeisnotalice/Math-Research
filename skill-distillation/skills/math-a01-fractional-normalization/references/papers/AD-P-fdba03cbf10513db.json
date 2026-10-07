@@ -1,0 +1,196 @@
+{
+  "paper_id": "P-fdba03cbf10513db",
+  "observed_title": "Chance Constrained Nonlinear Fractional Programming with Random Benchmark",
+  "authors": [
+    "Tian Xia",
+    "Jia Liu"
+  ],
+  "version": "arXiv:2312.15315v1 (2023-12-23); extracted text contains 16 PDF page markers including trailing blank/figure pages",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 682,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "scope": "entire extracted document including all sections, numerical table, conclusion and references; rendered original PDF pages 4–9 to inspect the main reformulation/convexity equations"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "A01": "direct: reformulates a chance-constrained nonlinear fractional constraint using Gaussian and discrete uncertainty; relevant to probabilistic extensions, not to deterministic normalization alone."
+  },
+  "definitions": [
+    {
+      "name": "CCFP model",
+      "statement": "Maximize expected objective μ₀ᵀc₀(x) over x∈X subject to a chance constraint on (a₁ᵀc(x)+b₁)/(a₂ᵀc(x)+b₂) relative to random benchmark γ. a₁,b₁ are jointly Gaussian; a₂,b₂,γ have J joint discrete outcomes and are independent of the Gaussian block.",
+      "source_lines": [
+        117,
+        166
+      ],
+      "pdf_pages": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "scenario probability auxiliaries",
+      "statement": "For scenario j with probability p_j, introduce z_j∈[0,1] as a lower bound on the conditional Gaussian satisfaction probability; impose Σ_j p_j z_j≥1−ε.",
+      "source_lines": [
+        167,
+        210
+      ],
+      "pdf_pages": [
+        4,
+        5
+      ]
+    },
+    {
+      "name": "log-convexity condition",
+      "statement": "For a positive-valued function c_i, log-convexity means log c_i(x) is convex; it supports convexity of products with the Gaussian quantile in the lifted reformulation.",
+      "source_lines": [
+        250,
+        267
+      ],
+      "pdf_pages": [
+        6
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 1 (exact deterministic reformulation)",
+      "assumptions": [
+        "a₁,b₁ jointly Gaussian",
+        "a₂,b₂,γ jointly discrete with J outcomes and independent of (a₁,b₁)",
+        "scenario denominator coefficients a₂^j≥0, b₂^j>0",
+        "c(x)≥0 on X",
+        "ε∈(0,1)"
+      ],
+      "statement": "The original random fractional chance constraint is equivalent to deterministic scenario inequalities involving Φ⁻¹(z_j) times the standard deviation of the Gaussian affine numerator-minus-benchmark expression, with Σ p_j z_j≥1−ε and 0≤z_j≤1. The objective and x∈X are unchanged.",
+      "start_line": 167,
+      "end_line": 229,
+      "pdf_pages": [
+        4,
+        5
+      ],
+      "proof_steps": [
+        "Condition on each discrete scenario j and use independence to express the joint chance probability as a p_j-weighted sum.",
+        "Introduce z_j to lower-bound each scenario’s conditional success probability.",
+        "Because the scenario denominator is positive (a₂^j≥0,c≥0,b₂^j>0), multiply through without reversing the inequality.",
+        "The remaining random scalar is Gaussian; convert its chance constraint to mean plus Φ⁻¹(z_j) times standard deviation ≤0."
+      ],
+      "gaps": [
+        "The OCR source mangles the formulas; I checked the exact structure against rendered PDF pages 4–5. I did not independently validate every covariance expansion entry."
+      ]
+    },
+    {
+      "label": "Theorem 2 (claimed convex reformulation)",
+      "assumptions": [
+        "Assumption 1 above",
+        "μ₁−r_j a₂^j componentwise nonnegative",
+        "ε≤min_j p_j(1−Φ(1))",
+        "c₀(x) is stated to be convex in the PDF",
+        "c_i(x)≥0 and log-convex for i=1,…,n"
+      ],
+      "statement": "The authors claim a convex optimization reformulation using auxiliary Y variables and exponential-cone/norm-style inequalities for the covariance terms. Lemma 2 bounds each z_j below by Φ(1), so log Φ⁻¹(z_j) is defined and convex on the working interval.",
+      "start_line": 261,
+      "end_line": 343,
+      "pdf_pages": [
+        6,
+        7,
+        8
+      ],
+      "proof_steps": [
+        "The probability budget plus the epsilon restriction implies z_j≥Φ(1)>0.",
+        "The cited quantile lemma gives convexity of log Φ⁻¹ on this interval.",
+        "Nonnegative log-convex c_i and the covariance-factor constraints provide convex lifted inequalities.",
+        "The proof substitutes the lifted Y representation into the deterministic reformulation."
+      ],
+      "gaps": [
+        "Material issue: as printed, the maximized objective is μ₀ᵀc₀(x), while Assumption 2 says c₀(x) is convex. Standard convex maximization requires a concave objective; the proof addresses constraint convexity but does not resolve this curvature mismatch. It may be a typo or omitted sign assumption, but the stated theorem is not established as written."
+      ]
+    },
+    {
+      "label": "Theorem 3 (piecewise chord quantile approximation; printed bound direction corrected)",
+      "assumptions": [
+        "Assumptions 1–2",
+        "piecewise linear interpolation of log Φ⁻¹ on nodes ξ₁=Φ(1)<…<ξ_{K+1}<1"
+      ],
+      "statement": "作者印刷结论称(11)给max问题(8)的upper bound并随最大节点间距趋零而收敛。已核验局部修复：在所有z_j被限制到完整节点覆盖区间[Φ(1),ξ_{K+1}]⊂[Φ(1),1)、表达式有定义且F=max_k(u_k z+t_k)为logΦ^{-1}上包络时，(11)的可行集包含于(8)，故最大化最优值为lower bound。原文仍允许z_j>ξ_{K+1}或z_j=1，没有全域包络/端点认证，不能为印刷的原全域模型确认任一界方向或值收敛。",
+      "start_line": 345,
+      "end_line": 396,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "proof_steps": [
+        "作者原文：凸性使相邻节点间的弦高于logΦ^{-1}，式(12)继而把不等式写到[Φ(1),1]；最后节点仅称close enough to1，未证尾区间（PDF8,lines362–370）。",
+        "作者原文：式(13)实际写出(11)约束可行集⊆(8)约束可行集，却在其后称upper bound（PDF9,lines380–389）；这是原文方向错误，旧AD卡proof_steps此前也复述了错误。",
+        "本次核验/局部修复：在被所有节点覆盖的[Φ(1),ξ_{K+1}]内，凸性给F≥logΦ^{-1}；指数函数单调，替换后各下限约束更强，其余目标与约束相同。最大化缩小可行集只能降低上确界，所以是lower bound，不是upper bound。",
+        "本次核验：Section3.2切线包络满足F≤logΦ^{-1}（PDF9,lines398–407），在其有效且表达式有定义的域内使约束放松，最大化给upper bound；原文将其称lower同样方向反转。",
+        "作者原文只用节点间距趋零及笼统set-distance断言值收敛（PDF9,lines390–395）；本次不把该断言认作已证明收敛，需要尾域控制、值稳定性/可行恢复等额外条件。"
+      ],
+      "gaps": [
+        "原文max的弦upper/tangentlower标签与其可行集包含关系冲突。已局部修正方向，不能据原标签调用。",
+        "最后节点ξ_{K+1}<1仅称close enough to1，但模型保留z_j≤1。凸弦外推在最后节点之外不一般高于函数，而logΦ^{-1}(z)随z↑1发散；需要显式z_j≤ξ_{K+1}的域限制或认证尾处理。",
+        "max目标的曲率、Theorem1从min到max方向及零值log/端点有定义问题另见该卡其他项；本修复只是集合包含推出界方向，不补强凸性或等价性。",
+        "节点mesh→0本身不保证全域一致逼近或最优值收敛，原文未提供必要的尾控制/可行集稳定性证明。"
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "Theorem 2 uses ε≤min_j p_j(1−Φ(1)); this is what ensures z_j≥Φ(1). Piecewise approximation error depends on max_k|ξ_{k+1}−ξ_k|. The paper gives a six-row experiment K=3…6 with observed upper/lower gaps 0.2066, 0.1263, 0.0782 and 0.0497.",
+    "dependence": "No general rate is proved. The convex-lift dimension grows with the number n of random numerator coefficients and J discrete scenarios; the reported CPU results are for n=5 and J=2."
+  },
+  "endpoint_limits": {
+    "denominator": "Each scenario denominator must remain positive; theorem assumptions ensure it by a₂^j≥0,c(x)≥0,b₂^j>0. A denominator that can vanish cannot be multiplied through this way.",
+    "quantile": "Finite interpolation nodes cannot include z=1 because Φ⁻¹(1)=+∞; the upper approximation must explicitly handle the tail above the final node.",
+    "curvature": "The objective curvature condition is inconsistent as printed for a maximization model.",
+    "probability": "Gaussian/discrete independence structure and finite scenario support are essential to the exact conditioning argument."
+  },
+  "reusable_methods": [
+    {
+      "method": "Condition on finite random denominator/benchmark scenarios, then allocate probability mass through z_j",
+      "transfer": "A finite scenario extension for ratio constraints only when the stochastic numerator is Gaussian and scenario independence/denominator positivity hold; retain the same decision x across all scenarios."
+    },
+    {
+      "method": "Represent Gaussian affine chance constraints by mean plus quantile times standard deviation",
+      "transfer": "Can provide deterministic constraints after a valid distributional reduction; check covariance expansion and quantile endpoints."
+    },
+    {
+      "method": "Piecewise secant/tangent approximations for convex log-quantile",
+      "transfer": "Secants can give conservative upper bounds and tangents lower bounds on covered intervals. Add explicit domain coverage and endpoint control before claiming certified bounds."
+    }
+  ],
+  "unchecked": [
+    "Full paper read and pages 4–9 checked in the original rendered PDF. I independently checked the conditioning logic, denominator sign requirement, and the direction of subset-feasible upper bounds on covered intervals. The paper’s convexity theorem has the stated objective-curvature gap; the asymptotic approximation convergence proof is not fully established in the text. I did not reproduce the numerical experiments or verify the cited Gaussian chance-constraint and log-convexity lemmas independently."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 682,
+    "source_lines": 682,
+    "required_content_lines": 357,
+    "covered_content_lines": 357,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-fdba03cbf10513db/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-fdba03cbf10513db.json",
+  "review_input_sha256": "a801d2407c97c0ba4cad72a6976ae356d7e02e5be81b3e1408477e0da686cdff"
+}

@@ -1,0 +1,249 @@
+{
+  "paper_id": "P-5ed5e46e2f4a6cd3",
+  "observed_title": "Some applications of the Menshov–Rademacher theorem",
+  "authors": [
+    "Safari Mukeru"
+  ],
+  "version": "arXiv:2103.09594v1, 17 March 2021; local PDF 10 pages",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 557,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    }
+  ],
+  "reading_provenance": "TEAM_FG完整通读Sections1–6及References（lines7–557）；正文无附录。全文阅读不等于全部印刷主张已证明。",
+  "pdf_visual_checks": [
+    {
+      "pdf_page": 2,
+      "image": "P-5ed5e46e2f4a6cd3-pdfp2.png",
+      "checked": "实际查看原PDF；p2 Hermitian moment与8L，p5–6证明缺口，p7 absolute moment/covariance与衰减条件，p8 Fourier指数和Gaussian目标"
+    },
+    {
+      "pdf_page": 5,
+      "image": "P-5ed5e46e2f4a6cd3-pdfp5.png",
+      "checked": "实际查看原PDF；p2 Hermitian moment与8L，p5–6证明缺口，p7 absolute moment/covariance与衰减条件，p8 Fourier指数和Gaussian目标"
+    },
+    {
+      "pdf_page": 6,
+      "image": "P-5ed5e46e2f4a6cd3-pdfp6.png",
+      "checked": "实际查看原PDF；p2 Hermitian moment与8L，p5–6证明缺口，p7 absolute moment/covariance与衰减条件，p8 Fourier指数和Gaussian目标"
+    },
+    {
+      "pdf_page": 7,
+      "image": "P-5ed5e46e2f4a6cd3-pdfp7.png",
+      "checked": "实际查看原PDF；p2 Hermitian moment与8L，p5–6证明缺口，p7 absolute moment/covariance与衰减条件，p8 Fourier指数和Gaussian目标"
+    },
+    {
+      "pdf_page": 8,
+      "image": "P-5ed5e46e2f4a6cd3-pdfp8.png",
+      "checked": "实际查看原PDF；p2 Hermitian moment与8L，p5–6证明缺口，p7 absolute moment/covariance与衰减条件，p8 Fourier指数和Gaussian目标"
+    }
+  ],
+  "proof_verification": "checked_dyadic_finite_lemma_and_conservative_16L_repair; source_8L_and_later_corollaries_not_certified",
+  "topic_relevance": {
+    "F06": "direct",
+    "F05": "adjacent"
+  },
+  "definitions": [
+    {
+      "term": "uncentred Hermitian second moment",
+      "definition": "γ(n,m)=E[X_n conjugate(X_m)]；复数情形共轭不可删，若写 centred covariance 则需同时 E X_n=0。",
+      "source_ranges": [
+        {
+          "start_line": 90,
+          "end_line": 112,
+          "pdf_pages": [
+            2
+          ]
+        }
+      ],
+      "claim_class": "source_claim"
+    },
+    {
+      "term": "absolute moment log energy",
+      "definition": "L=Σ_n,m≥1 |a_n||a_m||γ(n,m)| log₂(n+1) log₂(m+1)。这是绝对矩阵的二次型，不能自动从 signed Gram operator bound 推出同一二次型控制。",
+      "source_ranges": [
+        {
+          "start_line": 104,
+          "end_line": 112,
+          "pdf_pages": [
+            2
+          ]
+        }
+      ],
+      "claim_class": "source_claim"
+    }
+  ],
+  "theorems": [
+    {
+      "name": "Lemma 1, finite maximum",
+      "statement": "E max_1≤j≤N |Σ_n≤j a_nX_n|² ≤(2+log₂N)² Σ_n,m≤N |a_n||a_m||γ(n,m)|。N=2^r时可取(r+1)²；general N zero-pad gives(ceil(log₂N)+1)²，printed(2+log₂N)²是较松界。",
+      "assumptions": "概率空间；实或复X_n∈L²，二阶矩单位化沿用Theorem1；系数实或复；保持给定索引顺序。实质finite lemma不需要independence或orthogonality。",
+      "constants_endpoints": "N≥1；对角orthogonal γ=δ时右端退化为log²因子×ℓ²energy；一般absolute correlations不得删。",
+      "source_ranges": [
+        {
+          "start_line": 122,
+          "end_line": 215,
+          "pdf_pages": [
+            3,
+            4
+          ]
+        }
+      ],
+      "claim_class": "checked_derivation",
+      "checked_derivation": "zero-pad to2^r；任一prefix分解至多r+1个互不交dyadic blocks；pointwise Cauchy–Schwarz；取期望展开Hermitian moments；每level pairs只以absolute value界，level共r+1，得(r+1)²Q。"
+    },
+    {
+      "name": "Theorem1, source 8L claim",
+      "statement": "E|X_n|²=1且L<∞⇒Σ a_nX_n a.s.收敛，原文并声称E sup_n |Σ_j≤n a_jX_j|²≤8L。",
+      "source_ranges": [
+        {
+          "start_line": 104,
+          "end_line": 315,
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      ],
+      "claim_class": "source_claim",
+      "proof_status": "a.s. convergence can be repaired locally; printed proof does not justify8L, leave8L open"
+    },
+    {
+      "name": "Checked conservative repair",
+      "statement": "同一完整假设下a.s.收敛，且E sup_n |Σ_j≤n a_jX_j|²≤16L。这里只认证16，不声称8为假或sharp。",
+      "source_ranges": [
+        {
+          "start_line": 217,
+          "end_line": 315,
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ]
+        }
+      ],
+      "claim_class": "checked_derivation",
+      "proof": "I_k=[2^k,2^(k+1)−1],χ_k=Σ_I_k a_nX_n,Q_k=Σ_I_k×I_k |a_n||a_m||γ_nm|。Σ(k+1)²Q_k≤2L。Minkowski及Σ(k+1)^−2<2给A=Σ|χ_k|的||A||₂≤Σ√Q_k≤2√L。dyadic finite lemma给B_k=max_2^k≤j<2^(k+1)|Σ_2^k≤n≤j a_nX_n|满足E B_k²≤(k+2)²Q_k，ΣE B_k²≤4L，因为k+2≤2log₂(n+1)。B=sup B_k满足EB²≤4L；max|S_n|≤A+B，平方≤2A²+2B²，得16L。ΣE|χ_k|<∞和ΣEB_k²<∞推出Σ|χ_k|<∞、B_k→0 a.s.，block endpoints convergent⇒全序列收敛。"
+    },
+    {
+      "name": "Corollary2 guarded usable branch",
+      "statement": "b≥0；absolute matrix β_nm=|E[X_n conjugateX_m]| n^−b m^−b在ℓ²有界，||β||≤K；Σ|a_n|²n^(2b)log₂²(n+1)<∞⇒L≤K weighted energy，遂用checked16L/a.s.。",
+      "source_ranges": [
+        {
+          "start_line": 353,
+          "end_line": 385,
+          "pdf_pages": [
+            7
+          ]
+        }
+      ],
+      "claim_class": "checked_derivation",
+      "conditions": "此处γ为uncentred moment或X_n centred。不能把文后简写的signed covariance bounded当作本文Theorem1的absolute hypothesis；signed Gram可走独立Bessel-RM证明而非这个absolute一步。"
+    }
+  ],
+  "source_defects": [
+    {
+      "id": "F06-MUKERU-8L-PROOF-GAP",
+      "finding": "p5印E(S*)²≤ΣE|χ_k|²，cross terms一般存在；p6印max|S|²≤(S*)²+(S°)²未给一般factor2，且max表达第一项印a_nX1。用Minkowski及2A²+2B²可保守修成16L。未证明source8L为假。",
+      "source_ranges": [
+        {
+          "start_line": 270,
+          "end_line": 315,
+          "pdf_pages": [
+            5,
+            6
+          ]
+        }
+      ],
+      "claim_class": "checked_derivation"
+    },
+    {
+      "id": "F06-MUKERU-COVARIANCE-AMBIGUITY",
+      "finding": "p7称covariance但proof使用uncentred E[X_n conjugateX_m]，末段b0又省略absolute matrix条件。若把centred covariance无零均值解释，Xi≡1,a_n=1/n使covariance0与log²energy有限但harmonic series发散。",
+      "source_ranges": [
+        {
+          "start_line": 353,
+          "end_line": 385,
+          "pdf_pages": [
+            7
+          ]
+        }
+      ],
+      "claim_class": "checked_derivation"
+    },
+    {
+      "id": "F06-MUKERU-NEGATIVE-B",
+      "finding": "Cor3未写b≥0，a>1允许negative b；offdiagonal decay不足控制weighted diagonal。例independent centred variance1 real Gaussians，γ=δ，a=2,b=−1/4,a_n=n^−1/3，b>(1−a)/2且Σn^−7/6log₂²(n+1)<∞，但Σa_n²=∞，Gaussian partial sums非Cauchy in probability。把corollary安全入口限制b≥0，本文未独立完成所有Schur decay proof。",
+      "source_ranges": [
+        {
+          "start_line": 387,
+          "end_line": 395,
+          "pdf_pages": [
+            7
+          ]
+        }
+      ],
+      "claim_class": "checked_derivation"
+    },
+    {
+      "id": "F06-MUKERU-GAUSSIAN-TARGET",
+      "finding": "Theorem2 p8条件含a_n，p9结论却写ΣX_n；a_n=0、Xi独立standardnormal即反例于字面结论。预期加权Σa_nX_n入口仍待独立Sudakov–Fernique/sign-index与tail proof；不据此卡认证。",
+      "source_ranges": [
+        {
+          "start_line": 440,
+          "end_line": 503,
+          "pdf_pages": [
+            8,
+            9
+          ]
+        }
+      ],
+      "claim_class": "checked_derivation"
+    }
+  ],
+  "method_steps": [
+    "先核对order和Hermitian Gram/moment；不把Khintchine随机和与prefix maximum混同。",
+    "独立性缺失时保留absolute moment matrix Q，或真正Bessel sequence的每dyadic block L²energy bound；随后prefix dyadic decomposition。",
+    "infinite a.s. convergence须通过dyadic block endpoints与intrablock maxima，不从任一finite例直接认证。",
+    "Schur test若用于β必须双侧weights并保diagonal、b端点及normK。"
+  ],
+  "migration_limits": [
+    "TC-A5原私有接口尚无真实positive embedding；一般positive Gram/Cauchy–Schwarz不能直接给uniform private resolution constant。",
+    "只读到本文所引theorem statements与proof logic，不宣称已通读Kashin–Saakyan、Mikhailets–Murach、Sudakov–Fernique原证明。"
+  ],
+  "unchecked": [
+    "source8L常数尚未独立证明；本卡只给16L的完整local derivation。",
+    "Corollary3/4所有a,b范围与Fourier dimension因子2关系、two-sided enumeration及zero-frequency需额外复核；未作为可用步骤。",
+    "Gaussian修正版wholeproof未复核；source目标印刷缺陷不自动提供全修复。",
+    "未重新取得journal或后续修订版本；所有定位仅本地v1。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 551,
+    "source_lines": 557,
+    "required_content_lines": 424,
+    "covered_content_lines": 424,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-5ed5e46e2f4a6cd3/paper.md"
+  },
+  "review_source": "evidence/reviews/TEAM_FG/evidence/P-5ed5e46e2f4a6cd3.json",
+  "review_input_sha256": "8cf47023f3e2e7bde580b0474a33f30f8bf0c7204ae03a5b5a89bad5dc9ce682"
+}

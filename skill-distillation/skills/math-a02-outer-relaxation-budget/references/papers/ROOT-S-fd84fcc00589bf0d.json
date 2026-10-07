@@ -1,0 +1,187 @@
+{
+  "paper_id": "S-fd84fcc00589bf0d",
+  "observed_title": "On refined Young inequalities and reverse inequalities",
+  "authors": [
+    "Shigeru Furuichi"
+  ],
+  "version": "arXiv:1001.0535v4,23April2011；11页含结论和参考文献，无附录",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 532,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "scope": "全文所有算子/标量证明及参考文献"
+    }
+  ],
+  "topic_relevance": [
+    {
+      "code": "A02",
+      "decision": "adjacent",
+      "reason": "余项支付与必须完整保留的谱/逆/等号条件"
+    },
+    {
+      "code": "F01",
+      "decision": "adjacent",
+      "reason": "算术/几何均值的正修正项；不是课题GP-BRANCH"
+    }
+  ],
+  "definitions": [
+    "幂几何均值为合同下的T^ν；不能把它换成不交换算子的逐项乘积A^(1−ν)B^ν。"
+  ],
+  "theorem_cards": [
+    {
+      "label": "Proposition1.1与Theorem2.1：正算子精化Young",
+      "start_line": 24,
+      "end_line": 148,
+      "pdf_pages": [
+        1,
+        2,
+        3
+      ],
+      "assumptions": [
+        "0≤ν≤1，r=min(ν,1−ν)；本卡直接使用可逆有界正算子A,B。",
+        "A#νB=A^(1/2)(A^(−1/2)BA^(−1/2))^νA^(1/2)。"
+      ],
+      "statement": "算术均值≥几何均值+r(A+B−2A#_(1/2)B)≥几何均值≥{A^−1#νB^−1+r(A^−1+B^−1−2A^−1#_(1/2)B^−1)}^−1≥加权调和均值。",
+      "proof_steps": [
+        "标量精化Young经同一个T的连续函数演算给νT+1−ν≥T^ν+r(T−2√T+1)。",
+        "取T=A^−1/2 B A^−1/2，再合同乘A^1/2；无须A,B可交换。",
+        "对A^−1,B^−1重复并使用逆序性；正修正项加入逆内会降低逆，得到中间关系。",
+        "Lemma2.2的逆恒等式可核，但修正项为0时其额外逆未定义，应直接用逆序或先加εI。"
+      ],
+      "gaps": [
+        "原文提A+εI连续推广非可逆情形；逆表达式需作为相应极限定义，本卡不把A^−1当作非可逆算子的普通有界逆。",
+        "标量Prop1.1引用早期论文，本文未重证；本卡不继承旧包等号刻画。"
+      ]
+    },
+    {
+      "label": "Corollary2.3：归一化向量期望余项",
+      "start_line": 152,
+      "end_line": 172,
+      "pdf_pages": [
+        3,
+        4
+      ],
+      "assumptions": [
+        "单位向量x，正算子A，a=<Ax,x>>0，ν∈[0,1]。"
+      ],
+      "statement": "1−a^(−ν)<A^νx,x>≥r(1−a^(−1/2)<A^(1/2)x,x>)²。",
+      "proof_steps": [
+        "将标量算子精化用于T=A/a，再取向量期望。",
+        "期望平方≥平方期望由Cauchy–Schwarz给出，补足从算子平方到平方标量的步骤。"
+      ],
+      "gaps": [
+        "a=0不可代入归一化；正算子条件不能改成任意自伴算子。"
+      ]
+    },
+    {
+      "label": "Lemma3.1/Theorem3.3：Specht比率反向界",
+      "start_line": 175,
+      "end_line": 291,
+      "pdf_pages": [
+        4,
+        5,
+        6
+      ],
+      "assumptions": [
+        "a,b>0，ν∈[0,1]；算子版0<mI≤A,B≤MI，h=M/m>1。",
+        "S(t)=t^(1/(t−1))/(e log(t^(1/(t−1))))，S(1)=1。"
+      ],
+      "statement": "S(√(b/a))a^(1−ν)b^ν≥(1−ν)a+νb−r(√a−√b)²；算子版以S(√h)A#νB替左。",
+      "proof_steps": [
+        "ν≤1/2和ν≥1/2分别优化归一化余项比率；临界点处得到Specht比率。",
+        "对T=A^−1/2BA^−1/2的谱位于[1/h,h]，用S对称性/单调性取S(√h)，再合同。"
+      ],
+      "gaps": [
+        "常数依赖谱夹比h，h→∞不能当作统一常数。",
+        "Remark3.2明确该反向精化与旧逆界没有统一优劣，不能仅凭“精化”声称两边都更紧。"
+      ]
+    },
+    {
+      "label": "Lemma4.1/Theorem4.3：反向差值界",
+      "start_line": 303,
+      "end_line": 430,
+      "pdf_pages": [
+        7,
+        8,
+        9
+      ],
+      "assumptions": [
+        "正标量a,b或0<mI≤A,B≤MI；ν∈[0,1]。",
+        "L(a,b)为对数均值，L(a,a)=a；ω=max(√a,√b)。"
+      ],
+      "statement": "标量余项≤ω L(√a,√b) log S(√(b/a))；算子余项≤h√M L(√M,√m)log S(√h) I。",
+      "proof_steps": [
+        "按ν两半区间最大化加法余项，临界值给对数均值乘Specht对数。",
+        "谱上逐点估计后用h端点控制，合同乘A^1/2，再用A≤MI取标量上界。"
+      ],
+      "gaps": [
+        "常数是乘单位算子；没有给无谱下界的反向差值统一估计。",
+        "§4数值比较和未排序描述不能替代最优性证明。"
+      ]
+    },
+    {
+      "label": "Proposition5.1：n变量精化及零输入等号缺口",
+      "start_line": 442,
+      "end_line": 485,
+      "pdf_pages": [
+        10
+      ],
+      "assumptions": [
+        "p_i>0、Σp_i=1，λ=min p_i；不等式允许a_i≥0。",
+        "原文的等号唯一性附加最小权重唯一；本卡将iff等号刻画进一步限制为所有a_i>0。"
+      ],
+      "statement": "Σp_i a_i−∏a_i^p_i≥nλ((Σa_i)/n−∏a_i^(1/n))。",
+      "proof_steps": [
+        "令pj=λ，把左减右写为nλ G+Σ_(i≠j)(p_i−λ)a_i，其中G=∏a_i^(1/n)。",
+        "对权重nλ及p_i−λ应用加权AMGM得到∏a_i^p_i；最小权重唯一且所有输入正时，等号强制G及其余a_i相等，再得a_j相等。"
+      ],
+      "gaps": [
+        "原文a_i≥0时iff全部相等不正确：n=2,p=(1/4,3/4),a=(1,0)，两边均1/4，最小权重唯一而输入不同。",
+        "当所有p_i=1/n，公式对任意输入恒等；不可再用唯一等号。"
+      ]
+    }
+  ],
+  "constant_dependence": "正向界仅依赖ν；反向界依赖谱比M/m及m,M。标量端点有额外等号，不沿用旧包iff。",
+  "endpoint_limits": [
+    "ν=1/2时两变量正向精化对任意a,b都是恒等，旧包只列a=b或r=0漏项。",
+    "非负零输入还产生额外等号；Proposition5.1原文等号疑点单列。"
+  ],
+  "reusable_methods": [
+    "标量正函数经同谱函数演算再合同，得到非交换正算子界。",
+    "在谱夹区间上最大化反向余项，将参数依赖显式登记。",
+    "用权重余量重写多变量均值，再一次AMGM。"
+  ],
+  "unchecked": [
+    "Specht对称性/单调性和引用Prop1.1的完整早期来源未补读；标准谱函数演算未形式化重建。",
+    "本文数值排序/零输入等号与非可逆推广细节不能全部视为已认证。"
+  ],
+  "visual_checks": [
+    "PDF第2–3页逆链和修正项、第6页谱比界、第9页反差值标量常数、第10页Prop5.1非负输入及等号声明。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 528,
+    "source_lines": 532,
+    "required_content_lines": 358,
+    "covered_content_lines": 358,
+    "reported_status": "full_read",
+    "source": "evidence/supplementary/S-fd84fcc00589bf0d/paper.md"
+  },
+  "review_source": "evidence/reviews/ROOT/evidence/S-fd84fcc00589bf0d.json",
+  "review_input_sha256": "41e5cf1239afc42b4b7bbcba7f34bdabd4308fba0427f0fa0c758ea75593c9ab"
+}

@@ -1,0 +1,269 @@
+{
+  "paper_id": "P-a4aec16a8c1051a4",
+  "observed_title": "On extrapolation of Carleson measures",
+  "authors": [
+    "John Garnett"
+  ],
+  "version": "arXiv:2204.10915v1,22April2022; local8-page PDF",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 360,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  ],
+  "reading_provenance": "TEAM_FG完整读Sections1–3和References；无附录。原文称recastexternalproof，具体sourceconstants/thirdproof缺口保留，不认证wholeprivate迁移。",
+  "pdf_visual_checks": [
+    {
+      "pdf_page": 2,
+      "image": "P-a4aec16a8c1051a4-pdfp2.png",
+      "checked": "实际查看1.5完整括号及δ、root omissionproof、generalconditions、Thm3及Lipschitz construction"
+    },
+    {
+      "pdf_page": 4,
+      "image": "P-a4aec16a8c1051a4-pdfp4.png",
+      "checked": "实际查看1.5完整括号及δ、root omissionproof、generalconditions、Thm3及Lipschitz construction"
+    },
+    {
+      "pdf_page": 6,
+      "image": "P-a4aec16a8c1051a4-pdfp6.png",
+      "checked": "实际查看1.5完整括号及δ、root omissionproof、generalconditions、Thm3及Lipschitz construction"
+    },
+    {
+      "pdf_page": 7,
+      "image": "P-a4aec16a8c1051a4-pdfp7.png",
+      "checked": "实际查看1.5完整括号及δ、root omissionproof、generalconditions、Thm3及Lipschitz construction"
+    }
+  ],
+  "topic_relevance": {
+    "G01": "direct",
+    "G05": "adjacent"
+  },
+  "proof_verification": "root_constant_counterexample_and_thirdproof_Lipschitz_failure_checked; general_extrapolation_sourceclaim_only",
+  "definitions": [
+    {
+      "term": "dyadic boxes and tile test",
+      "definition": "Q0=[0,1]^d，dyadicQ⊂Q0，Q*=Q×(0,ellQ]，T(Q)=Q×(ellQ/2,ellQ]。C1(µ)=sup_Q µ(Q*)/|Q|，C2(ν)=sup_Qν(T(Q))/|Q|；tilebound必要但不同于Carlesonboxbound。",
+      "source_ranges": [
+        {
+          "start_line": 21,
+          "end_line": 43,
+          "pdf_pages": [
+            1
+          ]
+        }
+      ],
+      "claim_class": "source_claim"
+    },
+    {
+      "term": "sawtooth implication with complete quantifiers",
+      "definition": "存在δ>0,C<∞，对每Q与每disjoint-interior familyF⊂D(Q)，若sup_Q′∈D(Q) µ(Q′*\\union_Q′′∈F Q′′*)/|Q′|≤δ，则ν(Q*\\union_F Q′*)≤C|Q|。source未限制F finite；generalcountablefamily/measureboundaries需真的定义。",
+      "source_ranges": [
+        {
+          "start_line": 43,
+          "end_line": 68,
+          "pdf_pages": [
+            1,
+            2
+          ]
+        }
+      ],
+      "claim_class": "source_claim"
+    }
+  ],
+  "theorems": [
+    {
+      "name": "Theorem1.1 dyadic extrapolation, source bound",
+      "statement": "µ,νpositiveBorel onQ0*，C1µ,C2νfinite及上述统一sawtooth implication，则νCarleson。sourceexact1.5印C1ν≤(C2ν+2^d C/(2^d−1))*C1µ/δ。",
+      "source_ranges": [
+        {
+          "start_line": 43,
+          "end_line": 68,
+          "pdf_pages": [
+            1,
+            2
+          ]
+        },
+        {
+          "start_line": 132,
+          "end_line": 160,
+          "pdf_pages": [
+            3,
+            4
+          ]
+        }
+      ],
+      "claim_class": "source_claim_with_checked_constant_defect",
+      "scope": "qualitativeextrapolation仍sourceclaim；printedexactbound不能用（rootcounterexamplebelow）；没有把常数缺陷夸成qualitative theorem假。"
+    },
+    {
+      "name": "Root-term counterexample to exact1.5",
+      "statement": "d1,Q0[0,1],z=(1/3,3/4),ν=δz,µ=εν,ε=.1,δ1,C1。所有properdescendantboxesheight≤.5，不含z；C1ν=C2ν=1,C1µ=.1。所有Q,F的smallness与conclusion成立，但source1.5right=(1+2)*.1=.3<1。",
+      "source_ranges": [
+        {
+          "start_line": 43,
+          "end_line": 68,
+          "pdf_pages": [
+            1,
+            2
+          ]
+        },
+        {
+          "start_line": 143,
+          "end_line": 160,
+          "pdf_pages": [
+            4
+          ]
+        }
+      ],
+      "claim_class": "checked_derivation",
+      "complete_assumptions": "µ nonzero positiveBorel,νnonzero,finite; supportz避开dyadicboundary；δ1>C1µ；allQ/F包括Fempty和root。",
+      "scope": "合法positive measures反证exactbound，无需退化zeroµ。"
+    },
+    {
+      "name": "Root bookkeeping conditional algebra repair",
+      "statement": "若source所用stoppingdecomposition、Bpart(1.9)和non-B descendant(1.14)实际成立，root∈non-B时另加ν(U(Q))≤C|Q|，故保守C1ν≤C+(C2ν+2^d C/(2^d−1))*C1µ/δ。这是对已有estimates的localalgebra repair，未独立完成全construction/边界推移。",
+      "source_ranges": [
+        {
+          "start_line": 76,
+          "end_line": 99,
+          "pdf_pages": [
+            2,
+            3
+          ]
+        },
+        {
+          "start_line": 143,
+          "end_line": 160,
+          "pdf_pages": [
+            4
+          ]
+        }
+      ],
+      "claim_class": "checked_derivation_conditional_on_stopping_estimates"
+    },
+    {
+      "name": "Theorem2.1 general discrete case",
+      "statement": "compactmetricX，d-Ahlforsσ,σ(X)=1；Christdyadicgrid满足partition/nested/disjoint/diameter/internalball/massσ(Q)≈ellQ^d，comparisonc2；µ(Q*)≤C1µσQ，βQ≤C2νσQ；统一sawtooth µsmall⇒νresidual≤CσQ，则νCarlesonconstantdependsonc2,C,δ,C1µ,C2ν。",
+      "source_ranges": [
+        {
+          "start_line": 163,
+          "end_line": 247,
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ]
+        }
+      ],
+      "claim_class": "source_claim",
+      "scope": "source省略proof，不能说已独立认证任意weightedtree；uniformchildmassratio来源于grid/ADR，realPDE应用还需actualαQ/βQ construction。"
+    },
+    {
+      "name": "Theorem3.1 Lipschitzgraph variant",
+      "statement": "全EuclideancubesQ上的µCarleson、νtilebound，ψ≥0 onQ且||∇ψ||∞≤1，Ωψ={(x,t):t≥ψ(x)}，若sup_dyadicQ′⊂Q µ(T_Q′∩Ωψ)/|Q′|≤δ则ν(Q*∩Ωψ)≤C|Q|，source称νCarleson。T_Q={x∈Q,0≤t≤dist(x,R^d\\Q)}。",
+      "source_ranges": [
+        {
+          "start_line": 250,
+          "end_line": 289,
+          "pdf_pages": [
+            6,
+            7
+          ]
+        }
+      ],
+      "claim_class": "source_claim",
+      "scope": "完整quantifier每Q/每ψ；第三证明有下面Lipschitz违例和µ/νvariable/boundary处理缺口，不做operativewholeproof。"
+    }
+  ],
+  "source_defects": [
+    {
+      "id": "G01-GARNETT-ROOT-CONSTANT",
+      "finding": "source1.7 decomposition从n0包含root，而1.14只从n1非B descendants求和；1.5遗漏rootnon-B residualC|Q|。explicitatompositiveµexample确证exactconstantfalse；只加C的conditionalrepair不认证所有stoppingsteps。",
+      "source_ranges": [
+        {
+          "start_line": 76,
+          "end_line": 90,
+          "pdf_pages": [
+            2
+          ]
+        },
+        {
+          "start_line": 143,
+          "end_line": 160,
+          "pdf_pages": [
+            4
+          ]
+        }
+      ],
+      "claim_class": "checked_derivation"
+    },
+    {
+      "id": "G01-GARNETT-LIPSCHITZ",
+      "finding": "p7proof印ψ_F=Σ_F [2/ell(Qj)]1_Qj dist(x,∂Qj)，oneintervalQjlengthh内斜率2/h；h=.5给4，违反Thm3hyp≤1。desiredidentity对应unscaleddistance，但删prefactor是否修好wholeproof仍需完整核验。",
+      "source_ranges": [
+        {
+          "start_line": 300,
+          "end_line": 324,
+          "pdf_pages": [
+            7
+          ]
+        }
+      ],
+      "claim_class": "checked_derivation"
+    },
+    {
+      "id": "G01-GARNETT-THIRD-PROOF-OTHER",
+      "finding": "p7proof说F满足1.4 with tildeν，实际1.4需tildeµ；并写可假设ν(∂TQ′ union T(Q′))=0，其中T(Q′)是整个tile，不只是boundary。按字面所有tilezero无法保一般ν；boundarymasspushing也未给可复核argument。",
+      "source_ranges": [
+        {
+          "start_line": 291,
+          "end_line": 324,
+          "pdf_pages": [
+            7
+          ]
+        }
+      ],
+      "claim_class": "source_proof_gap_not_full_counterexample"
+    }
+  ],
+  "method_steps": [
+    "先分别核C1µboxpacking和C2νtilemass；后者不能替代ν的allsubtreeCarleson。",
+    "准备对所有sawtooths的同一µ/ν与统一δ,C；只给某一次selectedfamily不满足extrapolationquantifiers。",
+    "stopping-generationmasssum必须包含n0root；任何bound若随C1µ→0而强迫ν→0，应检Femptytop-tileexample。",
+    "abstracttree版本要有actualmasscomparison/childpartition；sourceremark明确真实难题在构造αQ,βQ。",
+    "Lipschitzgraph转sawtooth核actualslope与区域identity，不依据名称graph/帐篷就认迁移。"
+  ],
+  "migration_limits": [
+    "没有构造中心立方体上的sourceµ/ν或证明所有sawtooth条件；不能由extrapolation名称给全尺度maximalbound。",
+    "本文Thm2sourceproof省略与privatecapturedefinition仍open。"
+  ],
+  "unchecked": [
+    "dyadicstoppingminimality全部cases/无穷代decomposition与boundarymasspushing未独立认证。",
+    "Theorem3generalproof修复与C2+d auxiliarybound未独立认证。",
+    "外引Christgrid、HM/HMM/AHLT原proof全文未复核。",
+    "qualitativeextrapolation和correctedfullconstant不因sourceexactconstantcounterexample而自动获得证书。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 354,
+    "source_lines": 360,
+    "required_content_lines": 231,
+    "covered_content_lines": 231,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-a4aec16a8c1051a4/paper.md"
+  },
+  "review_source": "evidence/reviews/TEAM_FG/evidence/P-a4aec16a8c1051a4.json",
+  "review_input_sha256": "db412aa641be6243753df0e768e26d2b840bf59a4395b111bdc64d7bf89df585"
+}

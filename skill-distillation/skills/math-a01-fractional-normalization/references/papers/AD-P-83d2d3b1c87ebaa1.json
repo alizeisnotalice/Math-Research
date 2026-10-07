@@ -1,0 +1,118 @@
+{
+  "paper_id": "P-83d2d3b1c87ebaa1",
+  "observed_title": "An Interactive Fuzzy Goal Programming Algorithm to Solve Decentralized Bi-Level Multiobjective Fractional Programming Problem",
+  "authors": [
+    "Hasan Dalman"
+  ],
+  "version": "arXiv:1606.00927v1 (2016), 12 PDF pages",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 655,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "scope": "entire extracted article: problem definition, membership functions, Taylor linearization, goal models, all algorithm steps, numerical example, conclusion and all references"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "A01": "adjacent: optimizes affine-ratio objectives in a bounded multi-level model and offers a local Taylor approximation of ratio-derived membership functions; it does not develop homogeneous normalization, a Charnes–Cooper map, Dinkelbach residuals, or the center-cube maximal-operator interface."
+  },
+  "definitions": [
+    {
+      "name": "decentralized bi-level multiobjective fractional model",
+      "statement": "Each decision maker has multiple affine-over-affine objectives fij(x); the feasible set S is declared nonempty, convex and compact, and each denominator is declared strictly positive on S.",
+      "source_lines": [
+        95,
+        134
+      ],
+      "pdf_pages": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "fractional membership goals",
+      "statement": "For minimization, the membership is one below the ideal target, affine in the ratio value between ideal and tolerance, and zero beyond tolerance; the paper also gives the reversed orientation for maximization goals.",
+      "source_lines": [
+        151,
+        178
+      ],
+      "pdf_pages": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "first-order membership approximation",
+      "statement": "At a point x* that maximizes the corresponding membership, the article replaces the differentiable membership by its first-order Taylor polynomial; it explicitly describes this as local to x*, not an approximation over the full feasible set.",
+      "source_lines": [
+        195,
+        211
+      ],
+      "pdf_pages": [
+        4
+      ]
+    },
+    {
+      "name": "interactive fuzzy goal model",
+      "statement": "The method maximizes a common satisfaction level subject to weighted approximated memberships, deviation-goal equations, linear shared constraints, and previously fixed upper-level decisions for the follower stage.",
+      "source_lines": [
+        282,
+        313
+      ],
+      "pdf_pages": [
+        6
+      ]
+    }
+  ],
+  "theorem_cards": [],
+  "constant_dependence": {
+    "explicit": "There is no analytic rate or error bound for the Taylor approximation. The reported result depends on the selected ideal/tolerance values, the relative importance weights, and the local linearization points determined by single-objective solves.",
+    "dependence": "The transformation to the LP goal models relies on positive denominators over S and differentiability at the expansion points; approximation fidelity outside a neighborhood is unquantified. Numerical optimization is reported via Maple 18.02."
+  },
+  "endpoint_limits": {
+    "denominator": "Strict positivity on S is assumed in the model statement. The article gives no treatment of zero or sign-changing denominators.",
+    "approximation": "The first-order Taylor replacement is local around each individual membership maximizer; the authors expressly warn that it need not approximate well over the whole domain.",
+    "decision_structure": "The workflow is specific to a decentralized leader/follower model with a single upper-level decision maker and multiple lower-level decision makers; it does not directly yield a ratio-maximal inequality."
+  },
+  "reusable_methods": [
+    {
+      "method": "Differentiate a ratio-derived goal or membership at a selected feasible reference point and use the first-order affine model inside a subsequent LP stage.",
+      "transfer": "A heuristic/local surrogate for optimization workflows involving ratios. It requires a separate error or trust-region safeguard before being used as a certified global replacement. The paper supplies no such guarantee."
+    },
+    {
+      "method": "Separate numerator/denominator validity from later preference aggregation: state strict denominator positivity, then expose ideal values, tolerance values and weights as explicit user/model inputs.",
+      "transfer": "Useful specification hygiene for ratio optimization; the preference choices remain modeling inputs and do not follow from the mathematical ratio itself."
+    }
+  ],
+  "unchecked": [
+    "The source contains no formal theorem or proof of global optimality for the proposed procedure. The claimed satisfactory/optimal status is based on the interactive acceptance step and a numerical comparison, not a general certificate.",
+    "I checked the algebraic shape of the membership formulas and rendered original PDF pages 3–7 to verify equations (3)–(14), including that the Taylor step is explicitly local. I did not independently reproduce the Maple solution or audit every numerical table entry.",
+    "The file has 12 pages; pages 10–12 are references, with the final page containing the last reference and otherwise whitespace. No supplementary appendix is present."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 655,
+    "source_lines": 655,
+    "required_content_lines": 462,
+    "covered_content_lines": 462,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-83d2d3b1c87ebaa1/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-83d2d3b1c87ebaa1.json",
+  "review_input_sha256": "f5b168227e180faca625b4afb44c73a6372a00e3f89349f6c507ad568a876c6b"
+}

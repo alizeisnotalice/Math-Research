@@ -1,0 +1,194 @@
+{
+  "paper_id": "P-d5e07f3bb221a1c6",
+  "observed_title": "New-Type Hoeffding’s Inequalities and Application in Tail Bounds",
+  "authors": [
+    "Pingyi Fan"
+  ],
+  "version": "arXiv:2101.00360v1; dated January 2021; 8 PDF pages",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 513,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "scope": "全文逐页阅读：摘要、引理、主定理、推论证明、独立和 Chernoff 尾界、整数参数选择、算例、讨论和参考文献"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "H05": "direct：文章的核心结果就是有界中心变量的高阶矩型 Hoeffding mgf 上界，并通过 Chernoff 法组合独立变量尾界；给出参数 k 的选择问题。"
+  },
+  "definitions": [
+    {
+      "name": "asymmetric bounded centered variable",
+      "statement": "实随机变量 X 满足 E X=0 且 P(X∈[a,b])=1，其中 a<0<b。",
+      "source_lines": [
+        53,
+        63
+      ],
+      "pdf_pages": [
+        1
+      ]
+    },
+    {
+      "name": "asymmetric scale Φ(a,b)",
+      "statement": "Φ(a,b)=(|a|+b)/2（b>|a|），否则 Φ(a,b)=√(|a|b)。",
+      "source_lines": [
+        60,
+        66
+      ],
+      "pdf_pages": [
+        1
+      ]
+    },
+    {
+      "name": "higher-moment multiplier Υ_k",
+      "statement": "Υ_k(a,b)=[1+max{|a|,b}/|a|]^k−k max{|a|,b}/|a|。k=1 时 Υ_1=1。",
+      "source_lines": [
+        57,
+        64
+      ],
+      "pdf_pages": [
+        1
+      ]
+    },
+    {
+      "name": "independent-sum tail inputs",
+      "statement": "对独立中心 Xi∈[a_i,b_i]，分别选整数 k_i≥1，并写 A_{k_i},Φ_i 为单项 mgf 界参数；相乘后以 Chernoff-Markov 不等式优化 s。",
+      "source_lines": [
+        274,
+        302
+      ],
+      "pdf_pages": [
+        5
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 1 (高阶矩改进 Hoeffding mgf 界)",
+      "assumptions": [
+        "E X=0，X∈[a,b] a.s.，a<0<b。",
+        "s>0，整数 k≥1。"
+      ],
+      "statement": "E[e^{sX}]≤Υ_k(a,b) exp{s²Φ²(a,b)/(2k)}。k=1 退化为作者引用的 Hertz 改进 Hoeffding 界；k≥2 引入更小的二次指数系数并支付乘法因子 Υ_k。",
+      "start_line": 53,
+      "end_line": 66,
+      "pdf_pages": [
+        1
+      ],
+      "proof_steps": [
+        "用区间端点上的凸弦界上界 e^{αx}，并将其 k 次幂展开；利用 EX=0 将一阶线性部分分离。",
+        "令 λ=−a/(b−a)、u=(s/k)(b−a)，将边界插值项写为 exp{ψ(u)}，用一个导数为零的二阶展开控制 ψ(u)≤Φ²u²/(2(b−a)²) 的对应形式。",
+        "用 |X|≤max{|a|,b} 的支持界控制展开中 i≥2 的余项，再按 |a|≥b 与 |a|<b 两种尺度分别整理为 Υ_k。"
+      ],
+      "gaps": [
+        "该卡忠实转述作者证明结构，没有独立重做插值代数或检查所有中间不等式。",
+        "k 的指数系数收益与 Υ_k 乘法损失需对给定尾阈值逐案比较；k 越大不保证界越紧。",
+        "作者未给出对一般矩信息（而不只是取支持区间与均值）的完整最优常数论证。"
+      ],
+      "proof_verification": "full_text_read; theorem statement and derivation visually checked against PDF pp.1 and 4; not an independent proof verification."
+    },
+    {
+      "label": "Corollaries 1–3 (二阶/四阶矩特例)",
+      "assumptions": [
+        "Corollary 1 在 Theorem 1 条件下并使用 m₂=E X²，给出 k=2 的进一步界。",
+        "Corollary 2 额外假设 E X³=0 并指定 m₂,m₄。",
+        "Corollary 3 对对称支持区间 [−a,a]，a>0，且 E X³=0。"
+      ],
+      "statement": "Cor.1 给出显式含 m₂ 的 k=2 界；Cor.2 给出 E e^{sX}≤[1+6m₂/a²+m₄/a⁴] exp{s²Φ²(a,b)/8}；Cor.3 给出对称区间时 E e^{sX}≤8 exp(a²s²/8)。",
+      "start_line": 81,
+      "end_line": 322,
+      "pdf_pages": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "proof_steps": [
+        "用凸函数的端点插值给 e^{sX} 及其幂次建立期望上界。",
+        "由 EX=0 与支持区间得到 E X²≤|a|b、E X⁴≤|a|b(a²+ab+b²)。",
+        "对 E X³=0 的情形保留偶数阶矩项并代入上述界，化为所列闭式结果。"
+      ],
+      "gaps": [
+        "Cor.2 的 a 依照原文仍为负端点符号；数值使用前须保留原参数约定。",
+        "粗界的常数较松，原文没有声称最优。"
+      ],
+      "proof_verification": "full_text_read; Corollary 2 statement visually checked on PDF p.4; its application and adjacent mgf formulas checked on p.5."
+    },
+    {
+      "label": "独立和的单侧/双侧 Chernoff 界及参数选择",
+      "assumptions": [
+        "X_i 相互独立、中心化、支持于 [a_i,b_i] 且 a_i<0<b_i。",
+        "对每项选 k_i≥1，并用相应单变量 mgf 界。"
+      ],
+      "statement": "将单项界相乘并对 s 优化得到 P(S_n≥t)≤(∏A_{k_i}) exp{−t²/[2Σ_i(Φ_i²/k_i)]}；论文给出反向尾的对应 A/B 因子及双侧和，并以 Problem 1/2 表述有限整数参数选择。",
+      "start_line": 274,
+      "end_line": 382,
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "proof_steps": [
+        "由 Markov 指数不等式与独立性将总 mgf 分解为各单项 mgf 乘积。",
+        "代入单项 (A_{k_i},Φ_i) 界并对 s 取使二次型最小的最优值。",
+        "下尾交换端点；双侧用 union bound 相加。",
+        "用两参数值边界比较推导单项 k 选择阈值，再将多变量组合参数优化写成离散搜索问题；连续松弛仅作启发。"
+      ],
+      "gaps": [
+        "独立性是关键，不能对相关样本直接相乘 mgf。",
+        "参数 k_i 的具体最优组合依赖 t 与每项区间；正文给出个案阈值，不给一般多项式时间求解保证。",
+        "图中的数值算例仅作为论文内部演示，未由我重新绘图/重算全图数据。"
+      ],
+      "proof_verification": "full_text_read; principal sum bound visually checked on PDF p.5 and k-selection examples on p.6."
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "Theorem 1 的前因子 Υ_k 与区间端点及 k 有关；指数尺度 Φ²/(2k) 随 k 缩小。独立和界的 prefactor 是各单项 A_{k_i} 的乘积。",
+    "dependence": "区间不对称由 Φ(a,b) 的分段定义体现；参数 k 增大时指数更紧但乘法因子通常增大。"
+  },
+  "endpoint_limits": {
+    "support": "需要已知确定支持区间 [a,b] 且均值为 0；不适用于只有有限方差或 mgf 未证存在的无界变量。",
+    "independence": "论文第 III 节的求和结论要求 X_i 独立；单变量界无需独立性。",
+    "parameter": "k 为正整数，作者只建议按应用阈值优化，未声称同一 k 在两个尾方向都最优。",
+    "tails": "陈述面向 s>0 与上尾；下尾通过反转支持端点处理，双侧界再合并两侧。"
+  },
+  "reusable_methods": [
+    {
+      "method": "以区间几何与高阶矩成本换取更小 mgf 二次系数",
+      "transfer": "目标变量若中心且具有紧支持，先按端点不对称选择 Φ，再比较不同整数 k 对指数项和前因子造成的总变化。若有更强已知矩信息，应证明其可替换相应插值步骤，而不是直接套原 Υ_k。",
+      "limit": "原文构造仍仅由支持区间和中心化保证；应用实际矩信息的强化要另行证明。"
+    },
+    {
+      "method": "按独立求和结构逐项优化 Chernoff 界",
+      "transfer": "对各变量保存不同的区间、Φ_i、k_i 与两侧 prefactor，再最小化合成指数；只有完成依赖/条件 mgf 论证后才可用于非独立情形。",
+      "limit": "不直接覆盖任意鞅差序列或重叠中心立方体统计量。"
+    }
+  ],
+  "unchecked": [
+    "8 页全文（含全部引理、主定理及推论证明、应用部分、参数选择、算例和参考文献）已读；未独立重证每个代数步骤。",
+    "定理陈述 PDF p.1、主证明 p.4、和式尾界 p.5、参数选择示例 p.6 做了视觉核对。",
+    "没有重算文中全部示例曲线或评估相对现代最优界的性能。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 513,
+    "source_lines": 513,
+    "required_content_lines": 457,
+    "covered_content_lines": 457,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-d5e07f3bb221a1c6/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-d5e07f3bb221a1c6.json",
+  "review_input_sha256": "9cde8709c7e10b77932af291875459237bf39c1a65e0e69a27e0c7af7ce26485"
+}

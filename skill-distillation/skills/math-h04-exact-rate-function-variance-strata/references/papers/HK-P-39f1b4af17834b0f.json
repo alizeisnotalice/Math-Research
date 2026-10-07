@@ -1,0 +1,122 @@
+{
+  "paper_id": "P-39f1b4af17834b0f",
+  "observed_title": "Asymptotics of the rate function in the large deviation principle for sums of independent identically distributed random variables",
+  "authors": [
+    "Iosif Pinelis"
+  ],
+  "version": "Electronic Communications in Probability 29 (2024), article 12, pp.1–6; DOI 10.1214/24-ECP584",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 369,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "scope": "全文：LDP/rate-function preliminaries、Proposition 1、Theorem 2 完整证明、Remarks 3–4、全部参考文献。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "H04": "direct for the exact large-deviation rate-function component: establishes when the iid Cramér rate function asymptotically matches the log one-step tail. It does not provide a variance-stratified theorem or a finite-n exact tail approximation."
+  },
+  "definitions": [
+    {
+      "name": "Cramér rate function and LDP tail exponent",
+      "statement": "For iid X_i with Λ(t)=ln E e^{tX}, Λ*(y)=sup_{t∈R}{ty−Λ(t)}; the LDP exponent for P(S_n≥nx) is ℓ(x)=−inf_{y≥x}Λ*(y). In the nontrivial positive-mgf case, Λ* grows at infinity and eventually ℓ(x)=−Λ*(x).",
+      "source_lines": [
+        40,
+        52,
+        65,
+        116
+      ],
+      "pdf_pages": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "one-step log-tail",
+      "statement": "q(x)=P(X≥x), L(x)=ln q(x), with ln0=−∞. The relation L(x)∼L0(x) is asymptotic ratio equivalence for an eventually finite, nonzero log-tail and a real-valued concave L0.",
+      "source_lines": [
+        136,
+        142,
+        152,
+        156
+      ],
+      "pdf_pages": [
+        3
+      ]
+    },
+    {
+      "name": "Bernstein–Chernoff bound objective",
+      "statement": "Q(x,t)=e^{−tx}M(t), M(t)=E e^{tX}; for t≥0, q(x)≤Q(x,t). A carefully selected quasi-minimizer of Q yields the upper asymptotic needed in the sufficiency argument.",
+      "source_lines": [
+        179,
+        182,
+        192,
+        197
+      ],
+      "pdf_pages": [
+        3
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 2 (characterization of rate-function/tail equivalence)",
+      "assumptions": [
+        "X,X_1,X_2,… are iid; define Λ and Λ* as in (2).",
+        "The nontrivial case: Λ(t_1)<∞ for some t_1>0; otherwise Proposition 1 yields Λ*(y)→0 and ℓ(x)=0 for x≥0.",
+        "Set q(x)=P(X≥x), L(x)=ln q(x)."
+      ],
+      "statement": "The asymptotic relation −Λ*(x)∼L(x) as x→∞ holds if and only if L(x)∼L_0(x) for some real-valued concave function L_0 (equivalently Λ*(x)∼−ln P(X≥x)).",
+      "start_line": 146,
+      "end_line": 155,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "Necessity: choose L_0=−Λ* eventually; Λ* is convex, hence −Λ* is concave.",
+        "Sufficiency: let g=−L and g_0=−L_0. Concavity of L_0 makes g_0 convex/increasing eventually; define A(x)=c g_0(x)/g_0'(x), k(x)=inf_{v≥x−A} g(v)/g_0(v)→1, and t_x=(c k(x)g_0(x)−1)/A(x), with c∈(0,1).",
+        "Use integration by parts to write M(t)=t∫e^{tv}q(v)dv and split at x−A into I_1+I_2. Convexity gives g_0(v)≥g_0(x)+g_0'(x)(v−x); this bounds e^{−t_x x}I_2 by q(x)^{1+o(1)} and e^{−t_x x}I_1 by q(x)^{c+o(1)}, then let c approach 1 to get the matching upper log bound.",
+        "The Bernstein–Chernoff inequality gives the reverse bound ℓ(x)≥L(x), completing equivalence."
+      ],
+      "gaps": [
+        "The conclusion is an asymptotic equivalence for an LDP rate function versus the one-step log-tail; it is not a finite-sample relative approximation or a Gaussian/moderate-deviation theorem.",
+        "No variance stratification is present; the H04 direct assignment covers the exact rate-function component only.",
+        "The argument uses the standard iid LDP formulation and does not independently establish a general LDP for dependent or triangular-array inputs."
+      ]
+    }
+  ],
+  "constant_dependence": "Asymptotic statement only; no explicit finite-n numerical constant. The proof’s c∈(0,1) is an auxiliary asymptotic parameter tending to 1, not a universal error constant.",
+  "endpoint_limits": [
+    "Asymptotics are x→∞.",
+    "A positive mgf exists at at least one t_1>0 in the nontrivial case.",
+    "The concave equivalent L_0 must be real-valued eventually; the theorem does not cover a tail with log-probability remaining −∞."
+  ],
+  "reusable_methods": [
+    "A convex conjugate rate function can be compared to the original one-step tail through a controlled near-minimizer of the Chernoff objective.",
+    "For a target model, first verify the iid LDP and concave-equivalent log-tail hypotheses; do not infer finite-n or variance-layer precision from this asymptotic characterization."
+  ],
+  "unchecked": [
+    "The note is six pages and was fully read; this is not an independent proof audit of the cited general LDP theorem.",
+    "No transfer to variance-stratified dependent fields has been proved."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 369,
+    "source_lines": 369,
+    "required_content_lines": 238,
+    "covered_content_lines": 238,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-39f1b4af17834b0f/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-39f1b4af17834b0f.json",
+  "review_input_sha256": "7675a9b56ee11925df72e48c0c42f83fc7a38f9dd11ba6c543f84f2a9639ce99"
+}

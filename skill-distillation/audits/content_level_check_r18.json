@@ -1,0 +1,142 @@
+{
+ "schema": "content-level-check-r18",
+ "scope": "16 项源依赖 skill 的引用定位与内容级一致性",
+ "per_skill": [
+  {
+   "skill": "math-a03-compactness-concentration",
+   "cited_pids": 2,
+   "cards": 2,
+   "missing_pids": [],
+   "anchor_hits": 0,
+   "anchor_miss": 2
+  },
+  {
+   "skill": "math-a04-shared-nonanticipative-mip",
+   "cited_pids": 0,
+   "cards": 1,
+   "missing_pids": [],
+   "anchor_hits": 0,
+   "anchor_miss": 0
+  },
+  {
+   "skill": "math-b04-qualification-facial-minimax",
+   "cited_pids": 2,
+   "cards": 1,
+   "missing_pids": [
+    "08ccea72ef78920a",
+    "5ae169908ed70fca"
+   ],
+   "anchor_hits": 0,
+   "anchor_miss": 2
+  },
+  {
+   "skill": "math-c03-moment-sos-certificates",
+   "cited_pids": 0,
+   "cards": 1,
+   "missing_pids": [],
+   "anchor_hits": 0,
+   "anchor_miss": 0
+  },
+  {
+   "skill": "math-c04-branch-and-bound",
+   "cited_pids": 2,
+   "cards": 2,
+   "missing_pids": [],
+   "anchor_hits": 0,
+   "anchor_miss": 3
+  },
+  {
+   "skill": "math-d01-kantorovich-duality",
+   "cited_pids": 2,
+   "cards": 2,
+   "missing_pids": [],
+   "anchor_hits": 0,
+   "anchor_miss": 2
+  },
+  {
+   "skill": "math-e02-nonlocal-hjb-supersolution",
+   "cited_pids": 1,
+   "cards": 1,
+   "missing_pids": [],
+   "anchor_hits": 0,
+   "anchor_miss": 1
+  },
+  {
+   "skill": "math-e03-tree-bellman-cross-layer-budget",
+   "cited_pids": 1,
+   "cards": 1,
+   "missing_pids": [],
+   "anchor_hits": 0,
+   "anchor_miss": 1
+  },
+  {
+   "skill": "math-f01-geometric-mean-kernel-two-winner-audit",
+   "cited_pids": 1,
+   "cards": 4,
+   "missing_pids": [],
+   "anchor_hits": 0,
+   "anchor_miss": 1
+  },
+  {
+   "skill": "math-f02-tensor-fourier-positivity-soft-square-supremum",
+   "cited_pids": 2,
+   "cards": 6,
+   "missing_pids": [],
+   "anchor_hits": 0,
+   "anchor_miss": 1
+  },
+  {
+   "skill": "math-f03-hilbert-schmidt-radial-layer-square-envelope",
+   "cited_pids": 1,
+   "cards": 1,
+   "missing_pids": [],
+   "anchor_hits": 0,
+   "anchor_miss": 1
+  },
+  {
+   "skill": "math-f04-poisson-gamma-abel-square-function",
+   "cited_pids": 2,
+   "cards": 7,
+   "missing_pids": [],
+   "anchor_hits": 0,
+   "anchor_miss": 2
+  },
+  {
+   "skill": "math-f05-l2-spectral-parameter-schur-test",
+   "cited_pids": 1,
+   "cards": 4,
+   "missing_pids": [],
+   "anchor_hits": 0,
+   "anchor_miss": 1
+  },
+  {
+   "skill": "math-g03-directional-capture-tree-quadratic-audit",
+   "cited_pids": 1,
+   "cards": 2,
+   "missing_pids": [],
+   "anchor_hits": 0,
+   "anchor_miss": 1
+  },
+  {
+   "skill": "math-g04-rubio-de-francia-square-function-scope-check",
+   "cited_pids": 1,
+   "cards": 1,
+   "missing_pids": [],
+   "anchor_hits": 0,
+   "anchor_miss": 1
+  },
+  {
+   "skill": "math-g05-tree-carleson-square-function-tc-a4-audit",
+   "cited_pids": 3,
+   "cards": 6,
+   "missing_pids": [],
+   "anchor_hits": 0,
+   "anchor_miss": 3
+  }
+ ],
+ "adjudication": {
+  "b04_missing_pids": "误报——两个 paper_id 的源卡在共享证据池 B01 下（TEAM_AB 系列），已在 b04 SKILL.md 加指引",
+  "anchor_zero_hits": "锚点自动匹配方法失效（skill 步骤语言与源卡 JSON 不同构），跨 16 项 0 命中说明方法问题而非内容问题；不作为结论。第 20 次方法教训：与 R16 相同——自动锚点只能筛选，判定必须人工落回源卡",
+  "verdict": "16 项均无引用定位错误；内容级一致性抽查依赖人工，已完成 b04 深查作为样板，其余 15 项的步骤引用保持 pending（需逐篇源文对照）"
+ }
+}

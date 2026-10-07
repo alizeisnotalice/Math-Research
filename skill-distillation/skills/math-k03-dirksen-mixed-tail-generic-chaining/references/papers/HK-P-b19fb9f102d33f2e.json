@@ -1,0 +1,303 @@
+{
+  "paper_id": "P-b19fb9f102d33f2e",
+  "observed_title": "Simultaneous Pointwise Majorization for Mixed Tail Processes with Applications in Gaussian Chaos and Ergodic Diffusions",
+  "authors": [
+    "Haichen Hu",
+    "David Simchi-Levi"
+  ],
+  "version": "arXiv:2609.01576v2, 46 PDF pages (version/date details not independently checked beyond the first-page arXiv identifier).",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 2688,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "scope": "全文逐行阅读：引言、mixed-tail setup、Theorems 2.1/3.1、diffusion and Gaussian-chaos applications、Appendices A–E including the complete theorem/application proofs, discussion and references。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "K03": "direct. Theorem 3.1 proves simultaneous all-index pointwise majorization for a separable Banach-valued process with finitely many genuinely mixed-tail increment geometries. The proof uses measure-generated admissible chains, a nested common refinement across metrics, and a countable dense-set passage to a single all-t event. The article also derives decoupled Gaussian-chaos and stationary-diffusion applications. It does not claim constants uniform in the number of regimes."
+  },
+  "definitions": [
+    {
+      "name": "finite-regime mixed-tail process",
+      "statement": "A separable Banach space B and standard Borel index space (T,A); finite-valued jointly measurable pseudometrics d_j, orders α_j>0, and separable ρ=Σ_j d_j. A jointly measurable process has a modification whose paths are ρ-continuous and which is anchored at t0. For every s,t and common u≥0, P{||Z_t−Z_s||>Σ_j u^(1/α_j)d_j(s,t)}≤2e^(−u). This is one joint mixed-tail inequality; it is not m separately assumed single-metric inequalities, and no process decomposition is assumed.",
+      "source_lines": [
+        358,
+        394
+      ],
+      "pdf_pages": [
+        7
+      ]
+    },
+    {
+      "name": "pointwise Fernique–Talagrand profile",
+      "statement": "For fixed Borel probability measures µ_j selected before observing the process, v_j(t)=d_j(t,t0), Φ_j(t)=∫_0^{4v_j(t)}[log(1/µ_j(B_{d_j}(t,r)))]^(1/α_j)dr, with closed balls and the integral interpreted in the extended-real sense (log(1/0)=∞).",
+      "source_lines": [
+        410,
+        426
+      ],
+      "pdf_pages": [
+        8
+      ]
+    },
+    {
+      "name": "partition norms for decoupled Gaussian chaos",
+      "statement": "For a q-tensor A and partition P of [q], ||A||_P is the supremum of the multilinear contraction over one unit-Euclidean-norm test array per block. The one-block norm is Frobenius; the q-singleton norm is the injective norm. The application scales d_P(s,t)=K_q||A_s−A_t||_P and uses order α_P=2/|P|.",
+      "source_lines": [
+        660,
+        705
+      ],
+      "pdf_pages": [
+        12,
+        13
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 3.1 (multi-regime pointwise majorization)",
+      "assumptions": [
+        "B is a separable Banach space; (T,A) is standard Borel; the finite-valued jointly measurable pseudometrics d_j have separable sum ρ and orders α_j>0.",
+        "The process is jointly measurable and has a modification whose ρ-paths are continuous and which is anchored at t0 almost surely.",
+        "For all s,t and all u≥0, the common-parameter mixed-tail inequality P{||Z_t−Z_s||>Σ_j u^(1/α_j)d_j(s,t)}≤2e^(−u) holds.",
+        "Each ambient Borel probability µ_j is fixed before observing the process."
+      ],
+      "statement": "There is a finite C_{m,α}, depending only on m and the orders α, such that for each δ∈(0,1), with probability at least 1−δ, simultaneously for every t∈T, ||Z_t||≤C_{m,α} Σ_{j=1}^m [Φ_j(t)+v_j(t)(log(e/δ))^(1/α_j)]. If a Φ_j(t) is infinite, the bound there is vacuous.",
+      "start_line": 427,
+      "end_line": 475,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "proof_steps": [
+        "Finite K: Lemma C.3 builds, for each regime j, an admissible chain T_{j,k} whose pointwise weighted chain cost is at most C^(1)_{α_j}(Φ_j(t)+v_j(t)); the construction uses greedy mass-radius nets and summation by parts. Source lines 1750–1862, PDF pp.30–32.",
+        "Synchronize the chains by recording all nearest-net labels through level n−b_m, where b_m=1+ceil(log_2 m); the nested refinement has at most 2^(2^n) cells. Choose one representative per cell minimizing the combined weighted approximation cost, telescope common parent-child edges, union-bound their mixed-tail increments, and retain explicit constants depending on m and α. Lemma C.4, source lines 1863–2106, PDF pp.32–36.",
+        "Substitute the measure-chain costs in the finite-set estimate to obtain Lemma C.5, probability at least 1−e^(−u) simultaneously on each finite K. Source lines 2107–2147, PDF pp.36–37.",
+        "For full T, use Borel rational upper-level sets H_{q,s}={Φ_j≤q_j,v_j≤s_j}, select countable ρ-dense subsets, intersect the decreasing finite-set events, extend via path continuity, and let rational q_j,s_j decrease to Φ_j(t),v_j(t). The common event is independent of t. Source lines 2148–2220, PDF pp.37–39."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1750,
+          "end_line": 1862,
+          "pdf_pages": [
+            30,
+            31,
+            32
+          ],
+          "scope": "Appendix C.3: deterministic mass-chain estimate."
+        },
+        {
+          "start_line": 1863,
+          "end_line": 2106,
+          "pdf_pages": [
+            32,
+            33,
+            34,
+            35,
+            36
+          ],
+          "scope": "Appendix C.4: nested common refinement and finite-set mixed-tail telescope."
+        },
+        {
+          "start_line": 2107,
+          "end_line": 2220,
+          "pdf_pages": [
+            36,
+            37,
+            38
+          ],
+          "scope": "Appendix C.5 and proof of Theorem 3.1: finite-to-full separable index space passage."
+        }
+      ],
+      "gaps": [
+        "The article states a finite constant and supplies explicit proof dependence on m and α, but does not claim or establish a bound uniform in m.",
+        "Prior measures are fixed before process observation. Reusing the result with data-selected priors, metrics or anchors needs a separate conditioning/sample-splitting argument.",
+        "The all-t extension applies to the stipulated continuous modification and the stated separability/Borel hypotheses; it is not a measurability-free supremum assertion."
+      ]
+    },
+    {
+      "label": "Lemma C.4–C.5 (finite common-refinement estimate)",
+      "assumptions": [
+        "K is finite and contains t0; each regime has an admissible sequence anchored at {t0} and eventually equal to K.",
+        "The process satisfies the same m-regime mixed-tail increment condition."
+      ],
+      "statement": "For every u≥1, with probability at least 1−e^(−u), simultaneously for t∈K, ||Z_t||≤B_{m,α}Σ_j[Φ_j(t)+u^(1/α_j)v_j(t)] after choosing the measure-generated chains from Lemma C.3. Lemma C.4 first bounds the process by the chain costs G_j(t)=Σ_k2^(k/α_j)d_j(t,T_{j,k}) plus the anchor confidence costs.",
+      "start_line": 1863,
+      "end_line": 2147,
+      "pdf_pages": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "proof_steps": [
+        "Define equivalence classes from the joint labels p_{j,k}(t) at all j and levels k≤n−b_m. By |T_{j,k}|≤2^(2^k), the cell count satisfies ∏_{j=1}^m∏_{k=0}^{n−b_m}|T_{j,k}|≤∏_{j=1}^m∏_{k=0}^{n−b_m}2^(2^k)=2^(m(2^(n−b_m+1)−1))≤2^(2^n), using m≤2^(b_m−1) (PDF p.33, (C.10)).",
+        "Choose the representative minimizing R_n(t)=Σ_j2^(n/α_j)d_j(t,T_{j,n−b_m}); common labels and triangle inequalities bound parent-child edge lengths by R_n and R_{n−1}.",
+        "Union-bound coarse edges at level floor(log_2 u) and finer edges at levels n with deviation parameters 16u and 16·2^n. Sum the resulting exponential tails to at most e^(−u), then telescope until the finite chains reach t.",
+        "Apply the deterministic mass-chain estimate and absorb v_j into u^(1/α_j)v_j since u≥1."
+      ],
+      "gaps": [
+        "This finite chaining proof presumes the supplied measure-generated admissible chains and finite index set. The extension to arbitrary T is a separate countable-density/continuity argument in Theorem 3.1."
+      ]
+    },
+    {
+      "label": "Proposition 5.2 and Theorem 5.3 (decoupled Gaussian chaos application)",
+      "assumptions": [
+        "q≥2; g^(1),…,g^(q) are independent standard Gaussian vectors; T is standard Borel; t↦A_t is a Borel map into a finite-dimensional tensor space and A_{t0}=0.",
+        "For each partition P of [q], d_P(s,t)=K_q||A_s−A_t||_P and α_P=2/|P|, where K_q=e^(2qL_q) and L_q is the constant in cited Lemma A.5."
+      ],
+      "statement": "Proposition 5.2 verifies finite jointly Borel pseudometrics, separability, joint measurability and almost-sure ρ-continuity, and proves the common mixed-tail increment condition. Theorem 5.3 then yields, with probability at least 1−δ simultaneously for all t, |C_t^(q)|≤C_q Σ_{P∈P_q}[Φ_P(t)+v_P(t)(log(e/δ))^(|P|/2)], where C_q depends only on q. For fixed q, the authors state an analogous envelope for diagonal-free coupled chaos via a cited decoupling inequality, with q-dependent factors.",
+      "start_line": 692,
+      "end_line": 737,
+      "pdf_pages": [
+        12,
+        13
+      ],
+      "proof_steps": [
+        "For u>log 2, take p=max(2,u), so p≤4u; apply the cited Latala partition-norm moment inequality to the increment tensor, absorb powers into K_q, and use Markov at e times the Lp norm to get the common mixed-tail event. For u≤log 2 the right side of the tail bound is at least one.",
+        "Use ||A||_P≤||A||_F and the one-block Frobenius norm to show ρ is equivalent to the finite-dimensional Frobenius metric on the image {A_t}, hence separable; the finite-sum chaos representation yields joint measurability and a.s. ρ-Lipschitz paths.",
+        "Apply Theorem 3.1 to the B_q regimes. The printed theorem statement and its absolute-value sign were checked visually on PDF p.13; the increment inequality and moment-to-tail calculation were checked visually on PDF p.42, and the norm/separability argument on pp.43–44."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 2413,
+          "end_line": 2520,
+          "pdf_pages": [
+            42,
+            43,
+            44
+          ],
+          "scope": "Appendix E: complete proof of Proposition 5.2, Theorem 5.3 and Corollary 5.4."
+        }
+      ],
+      "gaps": [
+        "The Latala moment inequality (Lemma A.5) and the diagonal-free decoupling result are cited inputs; this reading checked the paper’s stated application/reduction but did not independently prove those external results.",
+        "The constant depends on q through the moment constant, K_q and Theorem 3.1’s regime count; the source does not give a q-uniform bound."
+      ]
+    },
+    {
+      "label": "Proposition 4.3 and Corollary 4.4 (stationary diffusion occupation process)",
+      "assumptions": [
+        "Assumptions 4.1–4.2: a stationary one-dimensional diffusion with globally Lipschitz coefficients and a dissipative tail condition as specified in the article; F is standard Borel, consists of bounded Borel functions, contains 0, has jointly Borel evaluation, jointly Borel d1,d2, and is separable under d1.",
+        "The trajectory is started from the invariant distribution π; τ>0; ambient priors µ1,µ2 are fixed before observing the trajectory."
+      ],
+      "statement": "The occupation process is an anchored two-metric mixed-tail process of orders (1,2), with d1(f,h)=sqrt(C_P/τ)|| (f−h)−π(f−h)||∞ and d2(f,h)=sqrt(2)V_π(f−h), where V_π is the long-run variance seminorm defined in the article. Theorem 2.1 yields one event of probability at least 1−δ on which the pointwise occupation bound holds simultaneously for every f, with local profiles Φ1,Φ2 and radius penalties v1 log(e/δ), v2 sqrt(log(e/δ)).",
+      "start_line": 572,
+      "end_line": 621,
+      "pdf_pages": [
+        10,
+        11
+      ],
+      "proof_steps": [
+        "Appendix D establishes finiteness/seminorm properties of V_π, identifies it with the asymptotic variance by a CLT plus uniform integrability, and uses the Poincaré inequality to obtain the mixed-tail increment inequality.",
+        "Joint Borel evaluation and parametrized integration give joint measurability; a uniform-norm increment estimate gives sample-path continuity. Proposition 4.3 verifies the hypotheses of Theorem 2.1, after which the pointwise profile and confidence terms substitute directly."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 2368,
+          "end_line": 2412,
+          "pdf_pages": [
+            41,
+            42
+          ],
+          "scope": "Appendix D proofs of Proposition 4.3 and Corollary 4.4; PDF pp.41–42."
+        }
+      ],
+      "gaps": [
+        "The Poincaré, diffusion concentration and CLT inputs are reduced to cited results/lemmas; this card records the article’s derivation, not independent validation of those external theorems.",
+        "This is an application for the stated stationary scalar diffusion/function-class assumptions, not a general Markov-process concentration theorem."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "Theorem 3.1 gives C_{m,α} depending only on m and the orders α_j. In the proof b_m=1+ceil(log_2 m), the finite-set common-refinement factor includes max_j 2^(b_m/α_j), and the remaining factors depend on α; C_{m,α} is not asserted uniform in m. The chaos application adds q-dependence through L_q, K_q and the Bell number B_q of regimes.",
+    "applications": "Diffusion uses the universal two-regime constant C_{1,2}; its increment metrics contain the Poincaré constant C_P and time τ. No new independent numerical estimate for C_{1,2} is supplied."
+  },
+  "endpoint_limits": {
+    "confidence": "δ∈(0,1); proof sets u=log(e/δ)≥1.",
+    "complexity": "Profiles are extended-real; any infinite Φ_j makes the indexwise bound vacuous.",
+    "localization": "The integral ends at 4v_j(t), so only anchor-comparable scales enter. If v_j(t)=0, the corresponding profile is zero.",
+    "priors": "Each µ_j must be fixed before observing the process; data-adaptive priors are not directly covered.",
+    "regime_count": "Finite m only; constant grows through an explicit but not claimed sharp dependence on m and α."
+  },
+  "reusable_methods": [
+    {
+      "method": "Synchronize finitely many metric-specific mass chains by a nested refinement that records all regime labels through shifted levels.",
+      "transfer": "For another process with one common mixed-tail increment inequality and finitely many metrics, reproduce the level-count and parent-child edge argument; verify tail calibration and whether all priors can be fixed independently."
+    },
+    {
+      "method": "Pass from finite subsets to a common all-index event via rational upper-level sets of deterministic envelopes, countable dense subsets, decreasing finite-set events and sample continuity.",
+      "transfer": "Transfer requires Borel profiles, separability of the relevant pseudometric quotient, and a continuous modification; these are substantive hypotheses, not automatic from separable terminology."
+    },
+    {
+      "method": "Convert a finite-dimensional tensor-chaos moment estimate into a mixed-tail increment condition by choosing p=max(2,u), comparing p with u, and Markov at e times the Lp scale.",
+      "transfer": "The moment estimate and all constants must be verified for the target chaos; this application uses decoupled Gaussian inputs and Latala partition norms."
+    }
+  ],
+  "unchecked": [
+    "Entire extracted 46-page article was read (paper.md lines 1–2688). Major formulas in the main theorem (PDF p.8), common-refinement proof (pp.33–40), chaos application (p.13) and its proofs (pp.42–44) were visually checked using PyMuPDF renders.",
+    "Full reading is not an independent proof certification. In particular the article relies on cited generic chaining/majorizing measure, Poincaré, diffusion concentration, CLT, Latala moment and decoupling results; their external proofs were not independently rechecked."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 2688,
+    "source_lines": 2688,
+    "required_content_lines": 1647,
+    "covered_content_lines": 1647,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-b19fb9f102d33f2e/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-b19fb9f102d33f2e.json",
+  "review_input_sha256": "996baa990c094dcde702cef69f57a38b9977106264fa66321f2ad9218bfa1982"
+}

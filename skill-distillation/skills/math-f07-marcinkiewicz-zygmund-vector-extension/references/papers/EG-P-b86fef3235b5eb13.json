@@ -1,0 +1,204 @@
+{
+  "paper_id": "P-b86fef3235b5eb13",
+  "observed_title": "Marcinkiewicz–Zygmund inequalities in quasi-Banach function spaces",
+  "authors": [
+    "Yurii Kolomoitsev",
+    "Sergey Tikhonov"
+  ],
+  "version": "arXiv:2411.04119v1；首页标注 2024 年 11 月。",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 1758,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "F07": "adjacent"
+  },
+  "definitions": [
+    {
+      "term": "函数格中的采样型 MZ 不等式",
+      "definition": "对函数子空间 F_n⊂X∩C(R^d)、采样点 x_k 和分区/权函数 χ_{Ω_k}，比较 ||F_n||_X 与有限或可数采样量 ||Σ_k |F_n(x_k)|χ_{Ω_k}||_X。这里 MZ 指积分范数的采样离散化，不是标量算子的随机化向量值不等式。",
+      "source_ranges": [
+        {
+          "start_line": 54,
+          "end_line": 100,
+          "pdf_pages": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "term": "准 Banach 函数格与 Bernstein 条件",
+      "definition": "X=X(Ω,μ;q), 0<q≤1，满足 q-准三角不等式及格单调性。函数族 F_n 由加权导数估计控制；非周期凸域中允许权重 ϕ_n 表达边界尺度。",
+      "source_ranges": [
+        {
+          "start_line": 101,
+          "end_line": 249,
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "term": "覆盖和局部邻域条件",
+      "definition": "取 Ω_k、Ω*_k 覆盖目标域且重叠度至多 c_d；每个局部邻域 Ω*_k 落在以 x∈Ω_k 为中心、半径约 Aϕ_n(x)/n^β 的立方体内。局部震荡由 Bernstein 导数界控制。",
+      "source_ranges": [
+        {
+          "start_line": 356,
+          "end_line": 394,
+          "pdf_pages": [
+            8
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem 2.6：准 Banach 函数格中的局部 max/min 估计",
+      "assumptions": [
+        "X=X(Ω,μ;q) 是 0<q≤1 的准 Banach 格；F_n 中函数具有所需的多阶导数。",
+        "对所有多重指标 α，||ϕ_n^{|α|}D^αF_n||_X≤B_α n^{β|α|}||F_n||_X。",
+        "选择 A>0，使 η=Σ_{α≠0}(A^{|α|}B_α/α!)^q<1。"
+      ],
+      "statement": "令 Q(x,Aϕ_n(x)/n^β) 为文章定义的中心邻域，则 (1+η)^{-1/q}||max_{t∈Q}|F_n(t)| ||_X ≤ ||F_n||_X ≤ (1−η)^{-1/q}||min_{t∈Q}|F_n(t)| ||_X。文章还说明左侧界可在任意 A>0 下成立，无须 η<1。",
+      "start_line": 211,
+      "end_line": 249,
+      "pdf_pages": [
+        5
+      ],
+      "proof_steps": [
+        "设局部尺度 δ=A/n^β，对 F_n(x+ϕ_n(x)t) 作多元 Taylor 展开，常数项消去后按 α 累加。",
+        "以 Bernstein 条件控制每项导数，求和正好给 q-范数振荡上界 η||F_n||_X^q。",
+        "用准三角不等式分别比较局部最大值与全局范数、全局范数与局部最小值；η<1 时移项得到双边式。",
+        "我对照第 5–6 页原文公式视觉核对了 η 与局部尺度；已读作者证明，未独立检查所有准范数积分交换细节。"
+      ],
+      "gaps": [
+        "需所有多阶导数满足加权 Bernstein 假设；并非任意准 Banach 函数空间自动成立。",
+        "局部下界需要 η<1；上下界常数依赖 q、A 和 B_α。"
+      ]
+    },
+    {
+      "name": "Theorem 2.10：由局部估计和有界重叠推出全局采样 MZ 等价",
+      "assumptions": [
+        "X 为准 Banach 函数格；F_n 满足 Theorem 2.6 的加权导数界。",
+        "集合 Ω_k 覆盖 Ω 且 Σ_kχ_{Ω_k}≤c_d；扩张集 Ω*_k 满足局部邻域包含。",
+        "η<1，且函数族与格上的采样值/示性函数属于 X。"
+      ],
+      "statement": "文章给出 ||F_n||_X 与 Σ_k max_{y∈Ω*_k}|F_n(y)|χ_{Ω_k}、以及对应 min 采样量的双边比较，常数由 c_d、η、q 控制。平移不变 Banach 格 Theorem 2.9 是特例；N 可取无穷。",
+      "start_line": 370,
+      "end_line": 394,
+      "pdf_pages": [
+        8
+      ],
+      "proof_steps": [
+        "逐个 k 在 Ω*_k 上应用局部 max/min 定理。",
+        "上界侧使用 Ω_k 覆盖和函数格的准三角不等式；下界侧用重叠至多 c_d 控制重复积分。",
+        "由任意 A>0 的左侧局部不等式处理一侧，再由 η<1 的右侧不等式处理另一侧。",
+        "这个结论是采样离散化；没有从一般标量算子 Lp 有界性推出向量值范数界。"
+      ],
+      "gaps": [
+        "全局结论要求 Ω_k 覆盖、扩张邻域和重叠度条件；这些几何信息必须单独证明。",
+        "局部最大/最小采样运算符与 ℓ² 函数值算子不是同一对象。"
+      ]
+    },
+    {
+      "name": "Theorem 3.1：由精确求积公式得到最少节点数的 MZ 估计",
+      "assumptions": [
+        "X 是 Banach 格，Ψ_n 有有限维正交结构。",
+        "存在节点 x_k、非负权 μ_k，使 Ψ_n 上的内积由求积公式精确计算；对应分区 Ω_k 有控制常数 c_1,c_2。",
+        "部分和投影 S_n 在 X 上一致有界；X 与 associate space X′ 上函数满足加权 Bernstein 条件和邻域包含条件。"
+      ],
+      "statement": "作者证明 ||P_n||_X 与 Σ_{k=1}^N |P_n(x_k)|χ_{Ω_k} 的 X 范数等价；常数依赖求积/分区常数、投影界和 Bernstein 参数。证明包含 Proposition 3.2 的对偶下界与 Theorem 2.10 给出的采样上界。",
+      "start_line": 423,
+      "end_line": 479,
+      "pdf_pages": [
+        9,
+        10
+      ],
+      "proof_steps": [
+        "由精确求积、正交性及分区条件把 ||P_n||_X 写成对偶上确界的离散节点和。",
+        "用节点采样 X′ 界和 S_n 有界性推出下界。",
+        "将 Theorem 2.10(B) 用于 X′ 与单点邻域得到另一侧采样界。",
+        "作者之后以三角多项式 Fejér 核、代数多项式高斯求积等验证具体实例。"
+      ],
+      "gaps": [
+        "求积公式节点数和 X、X′ 两侧的假设不可省略。",
+        "该对偶证法适用于线性函数空间的离散化；不是向量值 MZ 算子定理。"
+      ]
+    }
+  ],
+  "constant_dependence": "Theorem 2.6 的 η 显式依赖 q、A 与多重指标 Bernstein 常数 B_α；Theorem 2.10 另依赖覆盖重叠度 c_d。Theorem 3.1 还依赖精确求积权、分区常数 c_1,c_2、投影范数 C_1 和 X/X′ 上的 Bernstein 常数。文章应用部分给出相应的节点间距和 n、频带宽度、次数等定量尺度。",
+  "endpoint_limits": [
+    "本文核心是准 Banach 函数格中对有限/无限维函数类的采样积分范数等价；不是 F07 所需的 MZ 随机化定理。",
+    "Theorem 2.6 需无限可微及高阶加权 Bernstein 界；样条因正则度有限而以一阶 Markov/Bernstein 单独处理。",
+    "Band-limited 例子允许无限采样集；三角多项式、代数多项式、Jacobi 零点等各自依赖不同函数类条件。",
+    "36页全文已读至附录与参考文献；没有独立附录之外遗漏。"
+  ],
+  "reusable_methods": [
+    "以导数 Bernstein 界通过 Taylor 展开控制局部振荡，再从函数范数推出局部 max/min 样本估计。",
+    "把局部邻域与全局有限重叠覆盖拼接成采样离散化，并明确常数对节点网格的依赖。",
+    "最少节点结论可由精确求积、对偶性、投影有界性和两侧 Bernstein 估计组合。",
+    "迁移到项目 F07 时，先区分函数值采样 MZ 与算子向量值 MZ，不能由术语相同替代所需假设。"
+  ],
+  "unchecked": [
+    "未独立重做 Theorem 2.6 所有准范数 Taylor 积分估计及 Appendix 中分析引理。",
+    "没有从采样 MZ 结论推出标量算子的 ℓ² 函数族扩张；文章没有声称该结论。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1752,
+    "source_lines": 1758,
+    "required_content_lines": 1368,
+    "covered_content_lines": 1368,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-b86fef3235b5eb13/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-b86fef3235b5eb13.json",
+  "review_input_sha256": "181ed72786602d17642d9569560693bc810cfd1514be72f5a672c8d6649ba5b8"
+}

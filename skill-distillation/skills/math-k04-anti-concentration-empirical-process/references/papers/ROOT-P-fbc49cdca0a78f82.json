@@ -1,0 +1,288 @@
+{
+  "paper_id": "P-fbc49cdca0a78f82",
+  "observed_title": "Comparison and anti-concentration bounds for maxima of Gaussian random vectors",
+  "authors": [
+    "Victor Chernozhukov",
+    "Denis Chetverikov",
+    "Kengo Kato"
+  ],
+  "version": "arXiv:1301.4807v4, watermark13April2014; statedversion15April2014;22 physical pages",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 937,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "scope": "全文22页，含Section4/5全部证明、AppendixA、参考文献；PDFp4/7/8/9/16/17视觉核对。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": [
+    {
+      "code": "K04",
+      "decision": "direct",
+      "reason": "Gaussian maximum anti-concentration and comparison/conditional multiplier CLT"
+    },
+    {
+      "code": "H01",
+      "decision": "adjacent",
+      "reason": "Soft-max Gaussian interpolation comparator without covarianceordering"
+    },
+    {
+      "code": "K01",
+      "decision": "adjacent",
+      "reason": "Maximum threshold continuity tool; notgeneralexcursion asymptotics"
+    }
+  ],
+  "definitions": [
+    "L(ξ,ε)=sup_xP(|ξ−x|≤ε),ε>0.",
+    "σ_j is marginalSD inThm3; covariance diagonalσY_jj inThm2 printednormalization inconsistency separatelyflagged.",
+    "Δ entrywise maximum covarianceerror, notoperatornorm."
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem1 smooth comparison; soft maximum",
+      "start_line": 135,
+      "end_line": 179,
+      "pdf_pages": [
+        3,
+        4
+      ],
+      "assumptions": [
+        "Centered Gaussian X,Y in R^p, arbitrary PSD covariance; same means zero.",
+        "g∈C², bounded g′,g″; β>0; Δ=max_jk|ΣX−ΣY|."
+      ],
+      "statement": "Fβ=β^-1 logΣexp(βzj), 0≤Fβ−max≤log(p)/β. |Eg(FβX)−Eg(FβY)|≤Δ(||g″||∞/2+β||g′||∞); max version adds2||g′||∞log(p)/β. Optimized extra2||g′||∞sqrt(2Δlogp).",
+      "proof_steps": [
+        "log-sum-exp deterministic bracket; derivatives πj and β(diagπ−ππᵀ).",
+        "Σπj=1,Σjk|wjk|=2(1−Σπj²)≤2. Gaussian interpolation/Stein gives Δ/2 times Hessian entrywise l1."
+      ],
+      "gaps": [
+        "Indicator g is not C²: cannot directly apply to Kolmogorov distance."
+      ]
+    },
+    {
+      "label": "Theorem2 Kolmogorov comparison",
+      "start_line": 180,
+      "end_line": 223,
+      "pdf_pages": [
+        4,
+        5
+      ],
+      "assumptions": [
+        "p≥2; Y marginal variances strictly positive; X may be singular/zero variance.",
+        "C depends on min/max Y marginal variance, not universal under variance collapse."
+      ],
+      "statement": "sup_x|P(maxX≤x)−P(maxY≤x)|≤CΔ^(1/3){1∨a_p²∨log(1/Δ)}^(1/3)(logp)^(1/3), Δ=0 interpreted0; worst-case≤C′Δ^(1/3){1∨log(p/Δ)}^(2/3).",
+      "proof_steps": [
+        "Smooth indicator widthδ plus Fβ bracket yields C(δ^-2+βδ^-1)Δ plus Lévy concentration at logp/β+δ.",
+        "Choose β=δ^-1 logp, δ=Δ^(1/3)(1∨a)^(-1/3)(2logp)^(1/3), a=a_p∨sqrt(log1/Δ), 0<Δ<1; remaining Δ≥1 use trivial bound."
+      ],
+      "gaps": [
+        "Original pp3–4 prints a_p=Emax(Yj/σY_jj) with σY_jj covariance diagonal, not square root; p5 then claims a_p≤sqrt(2logp) as if standard-normalized. PDF confirms literal notation inconsistency. Use explicitly defined b_p=Emax(Yj/sqrt(σY_jj)) in transferable version and absorb fixed variance bounds into C; do not silently quote printed a_p as standardization."
+      ]
+    },
+    {
+      "label": "Proposition1, Lemma1 and Example1 multiplier bootstrap",
+      "start_line": 254,
+      "end_line": 347,
+      "pdf_pages": [
+        6,
+        7,
+        8
+      ],
+      "assumptions": [
+        "Independent centered vectors Zi, finite covariance; p may grow withn.",
+        "0<c1≤n^-1ΣE Zij²≤C1 fixeduniform; Gaussian ηi iid and independent of data.",
+        "Δhat=maxjk|n^-1Σ(ZijZik−E ZijZik)|."
+      ],
+      "statement": "Conditional Gaussian Sη=n^-1/2ΣηiZi compares to Tn~N(0,n^-1ΣEZiZiᵀ), if Δhat(EmaxTn)²logp=oP(1) and Δhat logp(1∨loglogp)=oP(1). EΔhat≤C[maxj(n^-1ΣE Zij⁴)^(1/2)sqrt(logp/n)+(E maxij Zij⁴)^(1/2)logp/n].",
+      "proof_steps": [
+        "Apply Gaussian comparison conditional ondata.",
+        "Appendix bound covariance entries as p²-vector sums of products; Hölder controls product fourth moments.",
+        "Subexponential uniform bound gives logp=o(n^1/5) for conditional statement; separate nongGaussian Sn→Tn approximation quoted externally at logp=o(n^1/7).",
+        "Regression case Zi_j=εixij, E|εi|^(4q) uniformlyO(1), columnnormalize, |xij|≤Bn: max{Bn²(logp)^5, Bn^(4q/(2q−1))(logp)^(6q/(2q−1))}=o(n)."
+      ],
+      "gaps": [
+        "Bootstrap comparison to Gaussian Tn does not by itself prove Sn Gaussian approximation; external[9] remains dependency.",
+        "Raw ZijZi_k covariance used because populationcentered; sample recentering requires additional check."
+      ]
+    },
+    {
+      "label": "Theorem3 Gaussian maximum anti-concentration",
+      "start_line": 350,
+      "end_line": 406,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "assumptions": [
+        "Centered finite Gaussian vector; σj²=EXj²>0, σmin>0, σmax finite; singular covariance permitted.",
+        "a_p=Emax_j(Xj/σj), standard-deviation normalization here explicitly stated; ε>0."
+      ],
+      "statement": "L(maxX,ε)=sup_xP(|maxX−x|≤ε). Equal variances:≤4ε(a_p+1)/σ. Unequal:≤Cε{a_p+sqrt(1∨log(σmin/ε))}, C depends onlyσmin,σmax. Corollary≤Cεsqrt(1∨log(p/ε)); equal replaces inner log(p/ε) bylogp.",
+      "proof_steps": [
+        "Standardnormal Gaussian maximum expectation≤sqrt(2logp).",
+        "For max|Xj| use2p vector(X,−X), whose marginalvariances remainpositive despite degeneracy."
+      ],
+      "gaps": [
+        "Comment5 p9 literal formula4(a′p+1)/σ is missingε. Checked corrected version4ε(a′p+1)/σ follows directlyTheorem3 via doubling.",
+        "Not uniform over σmin→0; X=0 has Lévy concentration1.",
+        "Dimension-free means only through a_p; iid standardnormal a_p~sqrt(2logp), not universally bounded.",
+        "Lévy interval anti-concentration differs from origin smallball P(max|X|≤x)."
+      ]
+    },
+    {
+      "label": "Example2 iid sharpness and Gumbel scaling",
+      "start_line": 444,
+      "end_line": 490,
+      "pdf_pages": [
+        10,
+        11
+      ],
+      "assumptions": [
+        "iid standardGaussian; p→∞; fixedK orK′; ε≤K′/a_p."
+      ],
+      "statement": "b_p=sqrt(2logp),d_p=b_p−(loglogp+log4π)/(2b_p); density of b_p(maxX−d_p)→e^-x exp(−e^-x) locally uniformly. L(maxX,ε)≥c′εa_p for sufficientlylargep and0≤ε≤K′/a_p.",
+      "proof_steps": [
+        "Explicit iid maxdensity pφΦ^(p−1), expand log of pφ(dp+x/bp)/bp.",
+        "Uniform positivity oncompact scaling window ⇒density≥c bp ⇒interval probability≥2c εbp."
+      ],
+      "gaps": [
+        "Gumbel weaklimit and Emax lowerbound invoke external[14],[11]; not independently rederived inthis card."
+      ]
+    },
+    {
+      "label": "Theorem1/2 full proof",
+      "start_line": 495,
+      "end_line": 630,
+      "pdf_pages": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "assumptions": [
+        "Stein identity with integrable derivatives; g derivatives bounded; endpoint interpolation singular factors integrable.",
+        "For optimized comparison Δ∈(0,1), p≥2."
+      ],
+      "statement": "Interpolation Z(t)=sqrt(t)X+sqrt(1−t)Y leads derivative(1/2)Σ(ΣX−ΣY)jk E∂jk(g◦Fβ). Smooth indicator bracket and Theorem3 yield both CDFdirections.",
+      "proof_steps": [
+        "Couple X,Y independently without changing marginalexpectations.",
+        "π≥0,Σπ=1 andwjk l1≤2 give boundedHessian and differentiationcontrol.",
+        "Use C² g0(t)=30∫_t^1s²(1−s)² ds on(0,1),constant outside; forward/backwardCDFbrackets."
+      ],
+      "gaps": [
+        "Stein identity Lemma2 is cited[27]/[8]/[25], not independently proved here."
+      ]
+    },
+    {
+      "label": "Theorem3 density proof and checked repairs",
+      "start_line": 633,
+      "end_line": 798,
+      "pdf_pages": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "assumptions": [
+        "Wj unitvariance Gaussian, possiblynonzero means; remove perfectlycorr1 duplicate residuals keepinglargestmean.",
+        "Densityfactor monotonicity needs nonnegative means; for negative threshold choose alternative commonshift."
+      ],
+      "statement": "Density f(z)=φ(z)Σe^(µjz−µj²/2)P(Wk≤z∀k≠j|Wj=z). Eachfactor monotone forµj≥0; Gaussianupperdeviation+Mills bound givesdensity≤2(z∨1)exp(−(z−zbar−ap)_+²/2).",
+      "proof_steps": [
+        "Gaussian regression residualsindependent of conditionedcoordinate;thresholds affinewithslopes1−corr≥0 ⇒monotonicity.",
+        "Lemma5 onecoordinate thininterval + ≥2 thinintervals O(ε²) exceptcorr−1 wherefixedpoint intervalmass0 forsmallε; yieldsdensitya.e.",
+        "x≥0 Wj=(Xj−x)/σj+x/σmin ⇒0≤µj≤x(1/σmin−1/σmax). x<0 choosecommonshift x/σmax ⇒µj=x(1/σmax−1/σj)≥0 andmaxmean≤|x|(1/σmin−1/σmax).",
+        "Integrate maxdensity to bound4ε{(1/σmin−1/σmax)|x|+ap+1}/σmin.",
+        "Checked repair p17(18): EmaxX≤σmax ap is not automatic; X=(Z,2Z) hasap=0 butEmaxX=1/sqrt(2π)>0. Useevent{maxX≥a}⊂{max(Xj/σj)≥a/σmax} for a≥0 andBorell on standardizedmaximum instead. Negativex lefttail by symmetry {maxX≤−a} probability={minX≥a}≤P(maxX≥a). Then at a≥σmax(ap+sqrt(2log(σmin/ε))) obtain≤ε/σmin."
+      ],
+      "gaps": [
+        "Original p17 intermediate inequality using EmaxX requires repair; corrected standardized event argument preserves theorem, not a counterexample to conclusion.",
+        "Gaussian deviation/Borell Lemma7 is externally citedLedoux; not independently re-proved.",
+        "External separableGaussianprocessextension[10] notcontained in finite-vector proof; require measurability,separability andfiniteexpectedmax plus uniformvariance bounds."
+      ]
+    },
+    {
+      "label": "Appendix A, Lemmas8–9",
+      "start_line": 800,
+      "end_line": 834,
+      "pdf_pages": [
+        19,
+        20
+      ],
+      "assumptions": [
+        "Independent finite vectors p≥2; nonnegativeV forLemma9; finite statedmoments."
+      ],
+      "statement": "Lemma8 Emax_j|Σ(Zij−EZij)|≲σsqrt(logp)+sqrt(E M²)logp, σ²=maxjΣEZij²,M=maxij|Zij|. Lemma9 EmaxjΣVij≲maxjΣEVij+EmaxijVij logp.",
+      "proof_steps": [
+        "Symmetrize with independentRademachers, conditionalmax bound via variance ofRademacher sums.",
+        "For V≥0,ΣV²≤BΣV; CauchySchwarz leads I≲a+b sqrt(I), solve I≲a+b².",
+        "ApplyLemma9 toV=Z² and Jensen to proveLemma8; products/Hölder yield Lemma1."
+      ],
+      "gaps": [
+        "Symmetrization and conditionalRademachermaximum lemmas citedvan derVaartWellner[28]; externalbook dependency notfully re-proved."
+      ]
+    }
+  ],
+  "proof_verified": false,
+  "unchecked": [
+    "Borell/Stein/symmetrization externalinputs notindependently fullyreproved.",
+    "GeneralnonGaussian CLT[9] andseparableprocess[10] stillrequireexternalfulltext."
+  ],
+  "cube_interface": [
+    "原文结论：有限中心Gaussianvector之max intervalbound及covariancecomparison。",
+    "已检查推导：绝对值max双倍索引保留ε；不等方差远尾以standardizedevent修补；负threshold均值shift。",
+    "迁移推断：cube模型若先获得Gaussianapproximation及pointwisevariancebounds，可控制thresholdperturbation误差；尚无cube Gaussianapproximation证书。",
+    "待验证：GP-BRANCH/TC-A4/HS具体变量映射与维数uniformσmin/ap界未给，不能得dimensionfree weak(1,1)。"
+  ],
+  "gaps": [
+    "本文有限Gaussian结论不能替代经验过程tightness/耦合误差。",
+    "模型Gaussian性、中心化、方差、协方差误差及指数增长范围均须用户实例提供。"
+  ],
+  "visual_checks": [
+    "reviews/ROOT/visual/cck/p4.png",
+    "reviews/ROOT/visual/cck/p7.png",
+    "reviews/ROOT/visual/cck/p8.png",
+    "reviews/ROOT/visual/cck/p9.png",
+    "reviews/ROOT/visual/cck/p16.png",
+    "reviews/ROOT/visual/cck/p17.png"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 933,
+    "source_lines": 937,
+    "required_content_lines": 754,
+    "covered_content_lines": 754,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-fbc49cdca0a78f82/paper.md"
+  },
+  "review_source": "reviews/ROOT/evidence/P-fbc49cdca0a78f82.json",
+  "review_input_sha256": "e92255d9ab12c13efa822430c47bf4d533fa39cf2629d8e699eb589e72f1dda5"
+}

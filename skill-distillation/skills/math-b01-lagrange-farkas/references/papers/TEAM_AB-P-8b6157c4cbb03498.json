@@ -1,0 +1,171 @@
+{
+  "paper_id": "P-8b6157c4cbb03498",
+  "observed_title": "On version of Farkas lemma of alternative",
+  "authors": [
+    "A. I. Golikov"
+  ],
+  "version": "Local arXiv:1512.04032v1, December13,2015; no separate internal version date observed.",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 259,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "scope": "Complete six-page note including all references; no appendix. Original PDF pp2–4 viewed for residual quadratic duals, normalized solutions, full-row-rank hypothesis and nullspace maps; p5 rendered."
+    }
+  ],
+  "topic_relevance": {
+    "B01": "direct: finite Farkas alternative, least-residual reconstruction and nullspace dimension reduction."
+  },
+  "definitions": [
+    {
+      "name": "Alternative systems",
+      "statement": "A∈R^{m×n}, b∈R^m with ||b||≠0; one fixed ρ>0. X={x≥0:Ax=b}, U={u:Aᵀu≤0,bᵀu=ρ}. Exactly one is nonempty.",
+      "source_lines": [
+        17,
+        26
+      ],
+      "pdf_pages": [
+        1
+      ]
+    },
+    {
+      "name": "Residual primal and normalized alternative residual",
+      "statement": "(1) min_{x≥0} 1/2||b−Ax||², dual(3) max_{Aᵀz≤0} bᵀz−1/2||z||². (2) min_u 1/2(||(Aᵀu)+||²+(ρ−bᵀu)²), dual(4) max_{w1≥0,Aw1=bw2} ρw2−1/2||w1||²−1/2w2².",
+      "source_lines": [
+        60,
+        89
+      ],
+      "pdf_pages": [
+        2
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Equations(1)–(6): reconstruct the minimum-norm solution of the consistent alternative",
+      "assumptions": [
+        "Finite real A,b; ρ>0 fixed; exact global minimizers x* of(1) and u* of(2).",
+        "No rank assumption on A in this part; b≠0 is printed background."
+      ],
+      "statement": "With z*=b−Ax*, Aᵀz*≤0 and bᵀz*=||z*||². If X is empty, z*≠0 and ρz*/||z*||² is the minimum-Euclidean-norm point of U. With w1*=(Aᵀu*)+, w2*=ρ−bᵀu*, Aw1*=bw2* and ||w1*||²+w2*²=ρw2*. If X is nonempty then w2*>0 and w1*/w2* is the minimum-Euclidean-norm point of X.",
+      "start_line": 60,
+      "end_line": 108,
+      "pdf_pages": [
+        2,
+        3
+      ],
+      "proof_steps": [
+        "作者使用二次强对偶与驻点关系；原文列出残差恒等式和重构公式，但未展开所有最小范数证明。",
+        "本次局部推导：orthant KKT for(1) gives Aᵀz≤0, xᵀAᵀz=0, hence bᵀz=||z||². Projection onto the finitely generated closed cone A(R_+^n) gives, for every u∈U, ρ=bᵀu≤zᵀu≤||z||||u||; scaled z attains the bound.",
+        "本次局部推导：(2) is differentiable convex with gradient A(Aᵀu)+−b(ρ−bᵀu). Its stationary point gives Aw1=bw2. Inner product with u yields ||w1||²+w2²=ρw2, thus w2≥0. If X is feasible, w2=0 would give w1=0 and an impossible certificate u∈U; therefore w2>0.",
+        "本次局部推导：on each feasible ray (w1,w2)=(tx,t), x∈X, dual(4) has maximumρ²/[2(1+||x||²)] at t=ρ/(1+||x||²)>0. The unique strictly concave dual maximizer therefore selects the minimum-norm x, justifying(5)."
+      ],
+      "gaps": [
+        "Exact residual zero tests and division by nonzero residual/positive w2 are mathematical formulas, not certified floating-point stopping criteria.",
+        "Finite polyhedral-image closure ensures minimizers exist; no analogous nonclosed infinite-dimensional image claim follows.",
+        "The note cites earlier methods for computational advantage; it does not prove a rate, complexity bound, or conditioning guarantee."
+      ]
+    },
+    {
+      "label": "Equations(7)–(12): equivalent nullspace system and alternate matrix",
+      "assumptions": [
+        "Rank(A)=m≤n, ν=n−m; choose any particular xbar with Axbar=b.",
+        "K∈R^{ν×n} has independent rows forming a basis of ker A, hence AKᵀ=0.",
+        "ρ>0; b≠0 is paper background."
+      ],
+      "statement": "X is in affine bijection with Y={y:Kᵀy≤xbar}, through x=xbar−Kᵀy and y=(KKᵀ)^{-1}K(xbar−x). The alternative system is V={v≥0:Kv=0,−xbarᵀv=ρ}. X and Y are simultaneously feasible/infeasible; V is alternative to both. U and V are in bijection v=−Aᵀu, u=−(AAᵀ)^{-1}Av.",
+      "start_line": 110,
+      "end_line": 196,
+      "pdf_pages": [
+        3,
+        4,
+        5
+      ],
+      "proof_steps": [
+        "作者证明：rankm yields all affine solutions x=xbar−Kᵀy; full column rank Kᵀ makes the inverse pseudoinverse formula valid for x in that affine fiber.",
+        "作者借用Gale alternative for Kᵀy≤xbar.",
+        "本次可自含核验：ker K=range Aᵀ under the full-row-rank hypothesis. For v=−Aᵀu, Kv=0, v≥0 iff Aᵀu≤0, and −xbarᵀv=bᵀu. Conversely full row rank makes Aᵀ injective, so the inverse is unique. This reduces the new alternative to the ordinary finite Farkas alternative already mapped in B01."
+      ],
+      "gaps": [
+        "The sentence “if m≤n, Ax=b is always solvable” inherits the preceding rank(A)=m hypothesis; dimension inequality alone is insufficient.",
+        "When m=n, ν=0 there is no free y. Interpret Y as the singleton zero-dimensional coordinate if xbar≥0, otherwise empty; do not require an ordinary positive-dimensional KKᵀ inverse.",
+        "When rank(A)<m these displayed bijections/inverses fail as written; one must first reduce independent equations and check consistency.",
+        "Lower variable count ν or m is not a runtime theorem; changing the basis K can worsen conditioning."
+      ]
+    },
+    {
+      "label": "Primal zero-objective LP interpretation",
+      "assumptions": [
+        "Finite LP P:min0ᵀx subject Ax=b,x≥0; D:max bᵀu subject Aᵀu≤0.",
+        "Use the finite LP feasibility/unboundedness duality theorem as an external foundation."
+      ],
+      "statement": "Since D containsu=0, either P is feasible with optimalvalue0 and all dual values≤0, or P is infeasible and D is unbounded above. Scaling a positive dual ray normalizes bᵀu to any prescribedρ>0, yielding the Farkas alternative.",
+      "start_line": 196,
+      "end_line": 235,
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "proof_steps": [
+        "作者证明：exclude cases with dual infeasibility; use weak duality for the feasible branch and the finite LP duality classification for the infeasible branch."
+      ],
+      "gaps": [
+        "This is a reduction to finite LP duality, not a proof independent of every theorem of alternatives.",
+        "The general four-case LP classification is cited as common knowledge; the card treats it as a foundation dependency rather than claiming a new general duality proof."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "ρ>0 freely normalizes the alternative certificate. Recovered ||u_normal||=ρ/||z*||. In the feasible branch w2*=ρ/(1+||x_normal||²). Nullspace inverse depends on KKᵀ and AAᵀ.",
+    "dependence": "Small inconsistency residual or large feasible normal norm creates division sensitivity; no finite precision or iteration guarantee is supplied."
+  },
+  "endpoint_limits": [
+    "b=0, excluded in the text, is directly feasible viax=0 and cannot have bᵀu=ρ>0.",
+    "ρ=0 would destroy exclusive alternatives becauseu=0 is always feasible; positive normalization is essential.",
+    "Only the dimension-reduction part requires full row rank.",
+    "No nonclosed conic image, arbitrary Hilbert space or center-cube theorem follows."
+  ],
+  "reusable_methods": [
+    "Separate exact finite feasibility certificates from numerical residual size.",
+    "Use projection/KKT residual identities to reconstruct a normalized certificate.",
+    "Reduce a consistent affine fiber by an explicit nullspace basis while recording inverse conditioning and rank prerequisites."
+  ],
+  "unchecked": [
+    "Full local text and references read. External numerical methods [2],[3], solver convergence and computational advantage are not independently certified.",
+    "The minimum-norm derivations above are local mathematical supplements, separately labeled from printed statements."
+  ],
+  "local_repairs": [
+    {
+      "classification": "contextual hypothesis made explicit",
+      "location": "PDF p3, before and after equation(7)",
+      "repair": "Keep rank(A)=m together with m≤n; m≤n alone does not ensure Ax=b solvable.",
+      "theorem_conclusion_preserved": true
+    },
+    {
+      "classification": "omitted derivation supplied locally",
+      "location": "PDF pp2–3 equations(5),(6)",
+      "repair": "Projection inequality and feasible dual-ray maximization establish minimum-norm reconstruction; not a new source quotation.",
+      "theorem_conclusion_preserved": true
+    }
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 259,
+    "source_lines": 259,
+    "required_content_lines": 180,
+    "covered_content_lines": 180,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-8b6157c4cbb03498/paper.md"
+  },
+  "review_source": "evidence/reviews/TEAM_AB/evidence/P-8b6157c4cbb03498.json",
+  "review_input_sha256": "d78e71f98874290b512cab808a83ed1b9fc975a9f989ad4d61e584055b2e959e"
+}

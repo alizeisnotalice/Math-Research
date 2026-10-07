@@ -1,0 +1,260 @@
+{
+  "paper_id": "P-b89fe2cfbd421aa7",
+  "observed_title": "Norm-induced Cuts: Outer Approximation for Lipschitzian Constraint Functions",
+  "authors": [
+    "Adrian Göß",
+    "Alexander Martin",
+    "Sebastian Pokutta",
+    "Kartikey Sharma"
+  ],
+  "version": "arXiv:2403.11546v3; 29 PDF pages.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1637,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "scope": "Entire 29-page text, including all definitions, proofs, computational examples, references, and Appendices A/B. Original PDF pages 5, 11, 12, 13, 17, 27, 28, and 29 were rendered to inspect cut, convergence, complexity, big-M, and packing formulas."
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "A02": "direct: the paper constructs an outer relaxation from global Lipschitz bounds and norm-induced distance cuts; proves set inclusion, feasibility and optimality limits, gives packing/covering termination bounds and error-dependent oracle complexity. The framework assumes a global optimizer oracle for each relaxed subproblem and does not provide a closed-form subproblem solver."
+  },
+  "definitions": [
+    {
+      "name": "Problem model and Lipschitz data",
+      "statement": "Minimize a continuous f over a nonempty compact domain Ω⊂Fⁿ subject to componentwise r(x)≤0, where r:Ω→Rᵐ is globally Lipschitz with known constant L>0 under the chosen domain/output norms; the output norm must be monotonous.",
+      "source_lines": [
+        26,
+        42
+      ],
+      "pdf_pages": [
+        1
+      ]
+    },
+    {
+      "name": "Norm-induced cut",
+      "statement": "For an infeasible y∈Ω, the cut is ||r(y)₊||/L ≤ ||x−y||. It removes a norm ball around y; validity uses the global Lipschitz bound and monotonicity of the output norm.",
+      "source_lines": [
+        217,
+        247
+      ],
+      "pdf_pages": [
+        4,
+        5
+      ]
+    },
+    {
+      "name": "Relaxed outer set Q_k",
+      "statement": "Starting from Q₀=Ω, Q_k is Ω intersected with the k norm-induced cuts centered at previous infeasible oracle solutions. The paper’s key invariant is Q⊆Q_k.",
+      "source_lines": [
+        248,
+        265
+      ],
+      "pdf_pages": [
+        5
+      ]
+    },
+    {
+      "name": "ε-approximate feasibility and geometric constants",
+      "statement": "The paper defines ε-approximation by every residual component r_q(x)≤ε, without an objective-gap requirement. It defines domain radius ρ(Ω) and asphericity α(Ω) for oracle-complexity bounds.",
+      "source_lines": [
+        927,
+        959
+      ],
+      "pdf_pages": [
+        16,
+        17
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Lemma 3.3 (outer-relaxation inclusion)",
+      "assumptions": [
+        "Every prior center x_i is infeasible and lies in Ω.",
+        "r has a valid global Lipschitz constant L; the output norm on Rᵐ is monotonous."
+      ],
+      "statement": "For every k, the true feasible set Q={x∈Ω:r(x)≤0} is contained in Q_k. Therefore infeasibility of a relaxed problem certifies infeasibility of the original problem, and a relaxed optimum is a lower bound on the original minimum.",
+      "start_line": 611,
+      "end_line": 640,
+      "pdf_pages": [
+        11
+      ],
+      "proof_steps": [
+        "作者证明：for feasible x̄ and infeasible center x_i, restrict to indices where r_p(x_i)≥0; since r_p(x̄)≤0, the componentwise magnitude of r(x̄)−r(x_i) dominates r(x_i)₊.",
+        "核验基础推导：monotonicity gives ||r(x_i)₊||≤||r(x̄)−r(x_i)||≤L||x̄−x_i||, which is exactly the cut; doing this for every center yields Q⊆Q_k."
+      ],
+      "gaps": [
+        "This direction fails if L is underestimated or the output norm lacks the required monotonicity."
+      ]
+    },
+    {
+      "label": "Theorem 3.4 (feasibility and accumulation points)",
+      "assumptions": [
+        "Q is nonempty; Ω is compact.",
+        "Each relaxed problem is solved exactly enough to return a point in Q_k; cuts use the valid global Lipschitz constant."
+      ],
+      "statement": "NIC either returns an actually feasible point in finite time, or produces a sequence with a convergent subsequence and every accumulation point is feasible for the original problem. No objective optimality is asserted by this theorem.",
+      "start_line": 643,
+      "end_line": 690,
+      "pdf_pages": [
+        11,
+        12
+      ],
+      "proof_steps": [
+        "作者证明：if the method stops, its explicit residual check r(x_k)≤0 gives feasibility.",
+        "If it runs indefinitely, compact Ω supplies convergent subsequences. Assuming a limit x* is infeasible, continuity gives a strictly positive violation norm near the subsequence tail.",
+        "Each later iterate must lie outside the cut ball centered at an earlier iterate, so tail points are separated by more than a fixed positive radius; this contradicts convergence of the subsequence.",
+        "核验基础推导：the contradiction uses both the cut lower bound ||r(x_i)₊||/L≤||x_j−x_i|| and the Cauchy property of a convergent subsequence."
+      ],
+      "gaps": [
+        "An infinite run is allowed. Feasibility is only shown for accumulation points, not for every finite iterate."
+      ]
+    },
+    {
+      "label": "Theorem 3.6 (optimality of limits with global master solves)",
+      "assumptions": [
+        "Q is nonempty.",
+        "Every relaxed master problem P_k is solved to a global optimum.",
+        "The continuity/compactness conditions of Theorem 3.4 hold."
+      ],
+      "statement": "If the method terminates with a feasible point, it is globally optimal. If it runs infinitely, every accumulation point of its exact global-master solution sequence is globally optimal.",
+      "start_line": 726,
+      "end_line": 769,
+      "pdf_pages": [
+        13,
+        14
+      ],
+      "proof_steps": [
+        "作者证明：Q⊆Q_k implies the restricted-master optimum is a lower bound on the true minimum.",
+        "At finite stopping the point is also feasible for Q, so the lower bound and feasible objective coincide.",
+        "For a convergent subsequence, feasibility follows from Theorem 3.4; continuity of f passes the restricted optimum values to the limit, while each remains below the true optimum.",
+        "核验基础推导：a feasible limit has value at least the true minimum, while the limit of global relaxed values is at most that minimum; equality follows."
+      ],
+      "gaps": [
+        "If masters are only locally solved, this global-optimality conclusion is unavailable; the paper’s Example 5.2 exhibits convergence to a poor feasible limit."
+      ]
+    },
+    {
+      "label": "Theorem 3.9 (locality under local master solutions)",
+      "assumptions": [
+        "Q is nonempty.",
+        "Each P_k returns a local optimum.",
+        "The algorithm stops at a point that passes the exact original feasibility check."
+      ],
+      "statement": "The returned feasible point is locally optimal for the original problem. If the method runs indefinitely, accumulation points need not be locally optimal.",
+      "start_line": 828,
+      "end_line": 846,
+      "pdf_pages": [
+        15
+      ],
+      "proof_steps": [
+        "作者证明：a neighborhood where x_k minimizes over Q_k also contains the smaller local feasible set Q∩Bε(x_k), since Q⊆Q_k.",
+        "核验基础推导：the local objective minimum over the superset is attained at x_k, and x_k belongs to the original local feasible set; therefore no nearby feasible point has a lower objective."
+      ],
+      "gaps": [
+        "Only finite stopping gives the local-optimality conclusion."
+      ]
+    },
+    {
+      "label": "Theorems 4.5–4.6 (oracle-complexity bounds)",
+      "assumptions": [
+        "The exact theorem statements additionally rely on the surrounding complexity setup: f and r Lipschitz, Ω has nonempty interior, and an optimizer lies with the prescribed interior margin.",
+        "The domain is finite-dimensional Rⁿ; ε-approximation means residual feasibility only.",
+        "For the upper bound, ρ(Ω) is the radius of a containing norm ball."
+      ],
+      "statement": "The cited lower bound is T(ε)≥c/[α(Ω)^n ε^n] for some c>0; the paper proves T(ε)≤((2ρ(Ω)+ε)/ε)^n. At fixed n the bounds have the same ε^{-n} order. The upper bound is authors’ result; the lower bound is quoted from reference [45].",
+      "start_line": 927,
+      "end_line": 998,
+      "pdf_pages": [
+        16,
+        17
+      ],
+      "proof_steps": [
+        "作者证明上界：a maximal ε-packing of queried points yields an oracle-count bound by the volume ratio vol(Ω+εB/2)/vol(εB/2).",
+        "Contain Ω in a ball of radius ρ(Ω), compare volumes of the expanded and small balls, and simplify to ((2ρ(Ω)+ε)/ε)^n.",
+        "作者援引 [45] 得到下界；未在本文证明。",
+        "核验基础推导：the volume scaling vol(tB)=t^n vol(B) yields the stated upper bound once the packing/covering lemma applies."
+      ],
+      "gaps": [
+        "The lower-bound constant c and derivation are imported from the cited complexity text. The theorem is a residual-feasibility oracle bound, not an ε-optimal objective-value guarantee."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "Each cut radius is ||r(x_i)₊||/L. For infeasible instances, δ=min_{x∈Ω}||r(x)₊||>0, so distinct oracle points have pairwise distance >δ/L and T is bounded by a packing number. The volume argument gives T≤vol(Ω+(δ/L)B/2)/vol((δ/L)B/2). For ε-feasibility, the paper gives an upper bound ((2ρ(Ω)+ε)/ε)^n and cites a lower bound c/[α(Ω)^n ε^n].",
+    "dependence": "L must be a valid upper Lipschitz constant: larger valid L weakens cuts; underestimating L can exclude feasible points and invalidates Q⊆Q_k. The complexity bounds depend on dimension n, domain geometry (packing/covering, ρ, α), and ε. Component-specific constants may improve or worsen cut radii relative to a vector-valued bound depending on violation and tightness."
+  },
+  "endpoint_limits": {
+    "feasible_case": "A feasible problem may run forever; only all accumulation points are guaranteed feasible, and globally optimal only if each relaxed master is solved globally.",
+    "infeasible_case": "Compactness and continuity make minimum violation δ>0; the algorithm cannot revisit a point and finite packing/covering bounds imply termination, though the bound is geometric and can be large.",
+    "approximation": "ε in the complexity analysis controls each constraint residual r_q(x)≤ε. It is not by itself a bound on |f(x)−f*|.",
+    "oracle_and_norm": "The approach assumes an oracle can solve each nonconvex relaxed problem to global optimality for Theorem 3.6. Norm cuts can be reverse-convex; p=1 or ∞ can be reformulated as mixed-integer linear constraints only with valid big-M bounds, and p=2 produces nonconvex quadratic constraints."
+  },
+  "reusable_methods": [
+    {
+      "method": "Retain every prior infeasible incumbent as a norm-induced exclusion cut, with a globally valid Lipschitz constant, and maintain the invariant Q⊆Q_k.",
+      "transfer": "This is a certificate of outer relaxation only if the norm monotonicity and L bound are valid. When using a numerical/approximate Lipschitz bound, inflate it upward rather than risk understating it."
+    },
+    {
+      "method": "Separate feasibility convergence from objective optimality: compactness plus cuts ensure feasible accumulation points; global solution of every relaxed master upgrades them to global optima.",
+      "transfer": "Do not treat a feasible limit from local subproblem solutions as optimal. Exact finite stop, asymptotic limit, and ε-residual stop have different guarantees."
+    },
+    {
+      "method": "Use packing numbers for infeasible termination and volume ratios for finite-dimensional bounds; use ε-coverings when the ambient field supports a finite cover.",
+      "transfer": "The paper’s complexity formulas depend on domain geometry, dimension, and residual scaling; state the oracle model and geometry constants explicitly."
+    },
+    {
+      "method": "For separately known component Lipschitz constants, use the largest violated-component radius at the current point.",
+      "transfer": "The authors show the componentwise method can be better or worse than the vector map; compare radii instead of assuming more constants always accelerate convergence."
+    }
+  ],
+  "unchecked": [
+    "All 29 PDF pages including both appendices were read. Original PDF pages 5, 11–13, 17, and 27–29 were rendered with PyMuPDF; the norm-cut, inclusion/convergence proofs, oracle bounds, and 1/∞-norm MILP encodings were visually inspected.",
+    "The numerical examples were not rerun. The cited lower-complexity theorem (Nemirovski–Yudin) and citations used for Lipschitz constant estimates were not independently reproved.",
+    "Independent derivation checks cover the set-inclusion inequality, the accumulation-point contradiction, the global-optimality squeeze, and the volume-ratio upper bound; broader oracle-complexity lower-bound conditions remain sourced rather than independently verified."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1637,
+    "source_lines": 1637,
+    "required_content_lines": 1369,
+    "covered_content_lines": 1369,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-b89fe2cfbd421aa7/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-b89fe2cfbd421aa7.json",
+  "review_input_sha256": "c9ab9bf167fbbb6181c03736f421b745fd9ffbe3cd0bbcfbba2194b2cf81a707"
+}

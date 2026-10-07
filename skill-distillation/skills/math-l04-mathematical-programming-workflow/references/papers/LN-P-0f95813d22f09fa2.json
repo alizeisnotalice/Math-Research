@@ -1,0 +1,128 @@
+{
+  "paper_id": "P-0f95813d22f09fa2",
+  "observed_title": "ZERO: Playing Mathematical Programming Games",
+  "authors": [
+    "Gabriele Dragotto",
+    "Sriram Sankaranarayanan",
+    "Margarida Carvalho",
+    "Andrea Lodi"
+  ],
+  "version": "arXiv:2111.07932v2; 2021 manuscript; PDF 12 pages",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 645,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "L04",
+    "decision": "adjacent",
+    "basis": "全文介绍ZERO对 reciprocal-bilinear games 的建模抽象、C++模块/API接口以及Cut-and-Play Knapsack Game示例，具体展示如何把每个玩家的混合整数规划联结为Nash均衡模型。可迁移的是“逐玩家参数化目标—接口装配—小实例验证”的建模流程；文章不是一般数学规划求解或证书论文，也未证明求解器的完备性，因此列为方法邻近。"
+  },
+  "definitions": [
+    "Mathematical Programming Game (MPG) 是同时博弈：玩家各解一个数学规划，目标可依赖其他玩家变量，但该玩家可行域不含他人变量。",
+    "Reciprocally-bilinear game (RBG) 中玩家 i 最小化 (cᵢ)ᵀxᵢ+(x⁻ⁱ)ᵀCᵢxᵢ，并满足 xᵢ∈Xᵢ；若 cl conv(Xᵢ) 为多面体且可在线性目标下优化，作者称其 polyhedrally representable。",
+    "纯策略 Nash equilibrium 是各玩家对固定他人策略的最优回应：对任意替代策略 x̃ᵢ∈Xᵢ，fᵢ(xᵢ,x⁻ⁱ)≤fᵢ(x̃ᵢ,x⁻ⁱ)。",
+    "ZERO通过 MathOpt/Games/Algorithms/Models/Utils 命名空间衔接 Gurobi、PATH、Cgl、Armadillo 等外部工具，提供高级 JSON 实例接口和低层模块。"
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "两位玩家各有两件物品，变量为 0/1，knapsack 容量约束分别为 3x₁₁+4x₁₂≤5 与 2x₂₁+5x₂₂≤5。",
+        "两人收益采用论文所列线性项加双线性交互项；虽然RBG定义写为最小化，示例目标改用最大化收益。"
+      ],
+      "statement": "作者报告该 Knapsack Game 有两个纯策略 Nash 均衡 (x₁₁,x₁₂,x₂₁,x₂₂)=(0,1,1,0)、(1,0,0,1)，以及混合均衡 (2/9,7/9,2/5,3/5)。我枚举每个玩家的三个可行纯策略 {00,10,01}，核实两个纯策略互为最佳回应，并由支持策略无差异方程核实混合策略的最佳回应条件。",
+      "start_line": 323,
+      "end_line": 350,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "proof_steps": [
+        "由 knapsack 约束列出各玩家可行纯策略 00、10、01。",
+        "固定玩家2选 10 时，玩家1三种收益依次为 0、−1、2，故 01 是唯一最佳回应；固定玩家1选 01 时，玩家2收益为 0、3、1，故 10 最优，得到 (01,10)。",
+        "固定玩家2选 01 时，玩家1收益为 0、1、−1，故 10 最优；固定玩家1选 10 时，玩家2收益为 0、−2、5，故 01 最优，得到 (10,01)。",
+        "若玩家1在 10 与 01 间混合、玩家2在 10 与 01 间混合，令第二玩家选 10 概率 r，则玩家1无差异条件 1−2r=−1+3r 得 r=2/5；令第一玩家选10概率 q，则玩家2无差异 3−5q=1+4q 得 q=2/9。两名玩家的未支持策略 00 收益为0，低于支持策略期望收益，故该混合策略满足最佳回应。"
+      ],
+      "gaps": [
+        "文章报告“三个”均衡，但没有证明不存在其他混合均衡；上面只独立核验给出的均衡点与支持条件。",
+        "Cut-and-Play 的正确性与终止性引用 Carvalho et al. (2021)，本文没有重证或独立运行它。",
+        "示例使用具有整数非凸性的特定游戏，不能把均衡性质外推到任意RBG/MPG或普通单目标规划。"
+      ],
+      "author_claim": "第4节报告该实例的两种纯均衡和一种混合均衡，并示范ZERO的高层 Knapsack Game 求解流程。",
+      "checked_derivation": "从两组容量约束独立枚举可行策略，并逐个核算纯策略最佳回应；用收益等式验证混合概率 2/9 与 2/5。PDF第3、7页关键定义、收益式与均衡坐标视觉复核。"
+    },
+    {
+      "assumptions": [
+        "需建模的问题属于作者所支持的polyhedrally representable RBG、IPG或NASP特例。",
+        "所有玩家约束、变量类型、交互收益参数均正确写入各自的参数化程序；优化方向与收益/成本符号一致。",
+        "部署依赖相应外部后端（例中为Gurobi），并按用户给定的容差、线程数、时限运行。"
+      ],
+      "statement": "ZERO工作流把每个玩家的参数化数学规划封装为MathOpt模块，再由Games模型组织均衡结构，Algorithms选择Cut-and-Play等方法，最终通过Models高层API或标准化JSON输入调用。示例代码使用Gurobi并设 deviationTolerance=3e−4、threads=4、timeLimit=5s；返回结果是该数值设置下的均衡候选。",
+      "start_line": 226,
+      "end_line": 317,
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "proof_steps": [
+        "按玩家分别声明目标线性项、他人变量的双线性系数矩阵、线性约束和变量整数索引。",
+        "利用 MathOpt::IP_Param 表示参数化玩家模型，将所有玩家程序装入 IPG instance。",
+        "选 Games::IPG 表示博弈，再通过 Algorithms::IPG::CutAndPlay 及外部 Gurobi 完成算法调用。",
+        "保存标准 JSON 实例并检查退出状态、数值容差和求得策略；复杂模型还需外部检验每个玩家是否为对方策略下的最优回应。"
+      ],
+      "gaps": [
+        "本文是软件架构与接口概述，不给一般NE求解算法的完整推导、精确性证明、全局收敛或有限终止保证。",
+        "外部求解器使用浮点数及容差；库返回成功状态不能单独证明精确的最佳回应条件。",
+        "作者说明当时只支持有限个数学规划后端及有限类游戏；未来扩展取决于相应数学算法。"
+      ],
+      "author_claim": "第3节和第4节介绍模块命名空间、依赖后端、示例模型序列及对外高层接口。",
+      "checked_derivation": "核对了示例的目标交互项、变量索引和容量可行策略，并与API说明中的参数矩阵/变量列表相对应；没有编译代码或运行ZERO。"
+    }
+  ],
+  "constant_dependence": "没有通用精度或复杂度界。单个示例给定数值 deviation tolerance 3×10⁻⁴、四线程与5秒时限；均衡数和实际运行时间依赖特定游戏实例与外部求解器。",
+  "endpoint_limits": [
+    "RBG的均衡概念要求逐玩家最佳回应；可行策略不等于Nash均衡。",
+    "RBG游戏解存在性、均衡集合结构及Cut-and-Play收敛/完整性依赖其他理论来源，本文只引用不证明。",
+    "软件案例是整数knapsack特例，不代表连续非凸、任意互补或多层模型均受支持。",
+    "本论文用有限精度参数运行示例；即便作者列出均衡策略，仍应独立核查可行性与每个玩家的最佳回应。"
+  ],
+  "reusable_methods": [
+    "按玩家拆分决策变量与约束，把互动影响集中写入参数化目标项，明确 minimization/maximization 符号。",
+    "用可行策略小枚举手算检查各均衡候选的单边偏离，并对混合均衡写出支持策略收益无差异方程。",
+    "区分数学游戏模型、求解算法与软件API三层：接口能编码模型并调用后端，不等于给出算法正确性证明。",
+    "在高层 JSON 工作流之外保留变量类型、求解容差、后端版本与玩家最优回应复核。"
+  ],
+  "unchecked": [
+    "没有安装、编译或运行ZERO/C++依赖；没有用作者程序独立复现列出的三个均衡。",
+    "Cut-and-Play的一般理论完整性、有限终止与外部Gurobi对内层MIP的最优性均未独立审核。",
+    "全文12页通读；PDF第3、7页定义/数值游戏式视觉复核，未对其余页面逐页截图。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 641,
+    "source_lines": 645,
+    "required_content_lines": 483,
+    "covered_content_lines": 483,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-0f95813d22f09fa2/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/P-0f95813d22f09fa2.json",
+  "review_input_sha256": "554d195c800711aaa211141003fff22d23e1c300bed28a95c6fdc98ac39dfcfa"
+}

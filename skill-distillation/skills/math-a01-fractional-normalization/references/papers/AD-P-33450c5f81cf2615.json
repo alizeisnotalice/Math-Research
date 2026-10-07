@@ -1,0 +1,291 @@
+{
+  "paper_id": "P-33450c5f81cf2615",
+  "observed_title": "The Charnes–Cooper Transformation and Fractional Programs with Convex Polynomials",
+  "authors": [
+    "Chengmiao Yang",
+    "Liguo Jiao",
+    "Jae Hyoung Lee"
+  ],
+  "version": "arXiv:2510.16400v3; manuscript dated 2026-08-11; 26 PDF pages",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1493,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "scope": "entire paper including preliminaries, all main results and proofs, example, conclusion and references"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "A01": "direct: studies fractional programming and the Charnes–Cooper transformation; derives attainment, duality and SOS/SDP hierarchy results for convex polynomial data."
+  },
+  "definitions": [
+    {
+      "name": "fractional program (FP)",
+      "statement": "inf_{x∈K} f(x)/g(x), with g>0 on K (in the main polynomial section K={h_i≤0}, f,−g,h_i convex polynomials, and f≥0 on K).",
+      "source_lines": [
+        285,
+        305
+      ],
+      "pdf_pages": [
+        6
+      ]
+    },
+    {
+      "name": "Charnes–Cooper transformation (CCT)",
+      "statement": "s=x/g(x), t=1/g(x); the exact reformulation uses t>0, s/t∈K and t g(s/t)=1, with perspective objective t f(s/t).",
+      "source_lines": [
+        302,
+        333
+      ],
+      "pdf_pages": [
+        6,
+        7
+      ]
+    },
+    {
+      "name": "relaxed perspective feasible set K_≤",
+      "statement": "t>0, s/t∈K, and 1−t g(s/t)≤0; it is a convex relaxation when K is convex and −g is convex. Equal optimal values with the exact transform require f≥0 on K.",
+      "source_lines": [
+        353,
+        485
+      ],
+      "pdf_pages": [
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "name": "SOS-convex polynomial",
+      "statement": "A polynomial f is SOS-convex when its Hessian factors as F(x)F(x)^T for a polynomial matrix F. The paper uses the implication SOS-convex ⇒ convex and moment Jensen inequality.",
+      "source_lines": [
+        246,
+        269
+      ],
+      "pdf_pages": [
+        5,
+        6
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Lemma 3.2 (relaxed CCT equality)",
+      "assumptions": [
+        "g>0 on K",
+        "f≥0 on K"
+      ],
+      "statement": "The exact CCT problem (P0) and the relaxed perspective problem (eP) have the same infimum; every exact-transform optimum is an optimum of the relaxed problem. Their optimizer sets need not be equal.",
+      "start_line": 343,
+      "end_line": 390,
+      "pdf_pages": [
+        7,
+        8
+      ],
+      "proof_steps": [
+        "K_=⊆K_≤ gives inf(P0)≥inf(eP).",
+        "Every relaxed point is a radial scaling τ≥1 of an exact-transform point.",
+        "The perspective objective scales by τ and is nonnegative, so the relaxed point cannot improve the exact optimum.",
+        "The paper supplies a counterexample to equality of optimizer sets when f vanishes."
+      ],
+      "gaps": [
+        "Proof uses g>0 to define the scaling; the conclusion is false without f≥0."
+      ]
+    },
+    {
+      "label": "Theorem 4.1 (attainment and equivalence)",
+      "assumptions": [
+        "K nonempty",
+        "f≥0 and g>0 on K",
+        "f,−g,h_i are convex polynomials",
+        "sup_K g<∞"
+      ],
+      "statement": "The fractional optimum is attained; the convex CCT reformulation also attains its minimum, with t g(s/t)=1 at an optimizer and equal optimal values.",
+      "start_line": 525,
+      "end_line": 573,
+      "pdf_pages": [
+        10,
+        11
+      ],
+      "proof_steps": [
+        "Set r*=inf(FP), and Φ=f−r*g; positivity of g makes Φ≥0 on K.",
+        "A ratio-minimizing sequence and the bound g≤M show inf_K Φ=0.",
+        "The cited minimizer theorem for convex polynomial optimization gives x* attaining Φ=0.",
+        "Map x* to (s*,t*)=(x*/g(x*),1/g(x*)); Lemmas 3.1–3.2 transfer optimality to PCCT."
+      ],
+      "gaps": [
+        "The upper bound on g is essential; Example 4.1 shows nonattainment without it."
+      ]
+    },
+    {
+      "label": "Theorem 4.2 (strong duality)",
+      "assumptions": [
+        "Slater point for the original constraints h_i(x)≤0",
+        "polynomial-section assumptions and positivity conditions for FP"
+      ],
+      "statement": "The CCT primal PCCT and its Lagrange dual LD have equal values, and the dual maximum is attained.",
+      "start_line": 680,
+      "end_line": 780,
+      "pdf_pages": [
+        13,
+        14,
+        15
+      ],
+      "proof_steps": [
+        "Construct strict feasibility in PCCT from a Slater point by choosing t=(1+ε)/g(x̂), s=tx̂.",
+        "Separate the convex primal image set from points below the primal optimum.",
+        "Show the multiplier on the objective coordinate is positive; normalize it to obtain feasible dual multipliers.",
+        "Take t→0+ in the separating inequality to recover a dual value at least the primal value; weak duality gives equality."
+      ],
+      "gaps": [
+        "Requires the finite-dimensional convex separation setup used in the paper; does not justify strong duality outside stated convex/Slater setting."
+      ]
+    },
+    {
+      "label": "Theorem 4.3 (asymptotic SOS hierarchy)",
+      "assumptions": [
+        "A1: K nonempty",
+        "A2: f≥0 and g>0 on K",
+        "A3: K bounded",
+        "convex polynomial data",
+        "Slater condition"
+      ],
+      "statement": "The SOS relaxation values sup(D_r) converge as r→∞ to max(LD)=inf(FP). Each relaxation value is a lower bound on the fractional minimum.",
+      "start_line": 815,
+      "end_line": 881,
+      "pdf_pages": [
+        15,
+        16
+      ],
+      "proof_steps": [
+        "For feasible (λ,γ,η), the SOS polynomial is globally nonnegative; restricting to K and using h_i≤0 gives f/g≥γ−Cη.",
+        "Compactness and g>0 give g_min>0; choose L above the radius of K and C>2/g_min.",
+        "Apply the cited high-degree perturbation result to a nonnegative dual polynomial on the scaled cube; the SOS perturbation ε_r tends to zero.",
+        "Use strong duality from Theorem 4.2 to identify the limiting value."
+      ],
+      "gaps": [
+        "No explicit convergence rate or finite level is given for arbitrary convex polynomial data; numerical SDP output alone is not a proof."
+      ]
+    },
+    {
+      "label": "Theorem 4.4 (moment dual and rank-one extraction)",
+      "assumptions": [
+        "A1–A3",
+        "Slater condition",
+        "optimal Q_r moment solution with ȳ_0≠0",
+        "rank M_r(ȳ)=1"
+      ],
+      "statement": "max(D_r)=inf(Q_r); under the stated rank-one and nonzero-mass conditions, x̄=(L_ȳ(x_i)/ȳ_0)_i is an optimal solution of FP.",
+      "start_line": 906,
+      "end_line": 1055,
+      "pdf_pages": [
+        17,
+        18,
+        19
+      ],
+      "proof_steps": [
+        "Build a strictly feasible moment sequence by pushing forward positive measure from a neighborhood of a strictly feasible CCT point; this gives SDP strong duality.",
+        "Rank one plus the Hankel moment structure gives ȳ_α=ȳ_0 x̄^α.",
+        "The Q_r inequalities imply original feasibility and 1/ȳ_0≥g(x̄).",
+        "Compare primal and dual objective values to force equality and optimality."
+      ],
+      "gaps": [
+        "Rank-one condition is sufficient, not asserted necessary. The example later reports numerical rank one only approximately and separately verifies its candidate analytically."
+      ]
+    },
+    {
+      "label": "Theorem 4.5 (SOS-convex exact first level)",
+      "assumptions": [
+        "f,−g,h_i SOS-convex of degree ≤2d",
+        "A1–A2",
+        "Slater condition",
+        "optimal Q′ solution ȳ with ȳ_0≠0"
+      ],
+      "statement": "inf(FP)=max(D′)=inf(Q′); the first SOS relaxation is exact, and x̄=(L_ȳ(x_i)/ȳ_0)_i is optimal.",
+      "start_line": 1222,
+      "end_line": 1338,
+      "pdf_pages": [
+        22,
+        23,
+        24
+      ],
+      "proof_steps": [
+        "SOS-convexity plus a minimizer of the nonnegative dual polynomial shows that polynomial is SOS, making the Lagrange dual optimizer feasible for D′.",
+        "Strict feasibility of Q′ gives SDP strong duality.",
+        "Normalize ȳ by ȳ_0, apply the SOS-convex moment Jensen inequality to constraints, −g and f, then sandwich objective values."
+      ],
+      "gaps": [
+        "The first-level exactness depends on SOS-convexity, stronger than ordinary convexity."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "Choose L>max_{x∈K}||x|| and C>2/g_min, where g_min=min_K g>0. Set Θ_r(x)=Σ_j(x_j/L)^{2r}; the penalized dual objective is γ−Cη.",
+    "dependence": "The valid penalty constant depends on the positive minimum of denominator g over compact K; scaling L depends on the radius of K. The paper proves perturbation error ε_r→0 but gives no general numerical rate. SDP size grows with the monomial/moment dimension s(n,2r)."
+  },
+  "endpoint_limits": {
+    "denominator": "g must remain strictly positive on K; points with g=0 are outside the transformation and need separate modeling.",
+    "relaxation": "f≥0 on K is used to equate exact and inequality CCT values.",
+    "attainment": "sup_K g<∞ is required for the stated attainment theorem; bounded K is later imposed for the SOS hierarchy.",
+    "convexity": "Ordinary convex polynomial data support asymptotic convergence; finite first-level exactness requires SOS-convexity.",
+    "algorithm": "No claim that every SDP solver output is an exact certificate; numerical rank evidence in the example is approximate."
+  },
+  "reusable_methods": [
+    {
+      "method": "Charnes–Cooper homogenization for a single positive-denominator ratio",
+      "transfer": "Can normalize a ratio objective into lifted (s,t) variables when the transformed feasible constraints/objective meet the paper’s convexity assumptions. For the maximal-cube operator interface, keep the original cube center, scale, and input shared across every transformed constraint; CCT alone does not establish that coupling."
+    },
+    {
+      "method": "Radial relaxation audit",
+      "transfer": "If replacing equality tg(s/t)=1 by ≥1, explicitly prove numerator nonnegativity; otherwise the radial scaling can lower the objective."
+    },
+    {
+      "method": "SOS dual lower certificates and moment recovery",
+      "transfer": "Use SOS feasibility as a verifiable lower-bound certificate and rank-one moments as a sufficient recovery path; report hierarchy limit separately from finite-level exactness."
+    }
+  ],
+  "unchecked": [
+    "Paper text was read in full. I independently checked the algebraic CCT inverse, radial scaling argument, weak-duality direction, and the stated dependence on g_min/L. I did not independently prove the cited external lemmas (convex polynomial minimizer, SOS perturbation theorem, SOS-convex Jensen lemma, SDP Slater theorem), reproduce the SOS hierarchy in a solver, or verify the paper’s numerical example. These are author-reported claims conditional on those cited results."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1493,
+    "source_lines": 1493,
+    "required_content_lines": 974,
+    "covered_content_lines": 974,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-33450c5f81cf2615/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-33450c5f81cf2615.json",
+  "review_input_sha256": "ddf6b9bad5dab454b88859ed8caf4bd0f8fb498b837f8eb89dab87e502f4da0e"
+}

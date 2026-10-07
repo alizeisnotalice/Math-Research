@@ -1,0 +1,218 @@
+{
+  "paper_id": "P-1c2fd847e8d226ab",
+  "observed_title": "Empirical Processes and Schatte Model",
+  "authors": [
+    "Marko Raseta"
+  ],
+  "version": "arXiv:1509.08344v1 [math.PR], 28 September 2015; 8 PDF pages. The source title page prints ‘Schatte Model’; identity has not been changed to ‘Schatten’. ",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 324,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "scope": "逐行阅读全部8页：定理与定义、三个 blocking/variance 引理、定理完整证明、文内外引说明和参考文献。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "K04": "direct (empirical-process/strong-approximation branch). The result is a Gaussian strong approximation for an empirical CDF built from the dependent sequence of fractional parts {xS_k} of an iid-increment random walk. It is highly specialized, is not iid empirical-process theory, and provides no Gaussian-max anti-concentration inequality."
+  },
+  "definitions": [
+    {
+      "name": "random-walk fractional-part empirical process",
+      "statement": "X_i are iid real increments, S_k=X_1+…+X_k, x is a fixed nonzero scalar, and F_n(s)=n^(−1)Σ_{k≤n}1{{xS_k}≤s}, s∈[0,1]. The centered periodic indicator is f_s(u)=1{u≤s}−s on a unit period, extended periodically. The observations {xS_k} are dependent although the increments X_i are iid.",
+      "source_ranges": [
+        {
+          "start_line": 13,
+          "end_line": 29,
+          "pdf_pages": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "long-run covariance kernel",
+      "statement": "For U∼Unif(0,1) independent of the increments, Γ(s,t)=s(1−t)+Σ_{r≥1}E[f_s(U)f_t(U+xS_r)]+Σ_{r≥1}E[f_t(U)f_s(U+xS_r)]. The paper's proof obtains exponential decay of the lag covariance under its bounded-density assumption. This covariance includes both lag directions and generally is not identified with the Brownian-bridge covariance without additional conditions.",
+      "source_ranges": [
+        {
+          "start_line": 19,
+          "end_line": 24,
+          "pdf_pages": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "shifted block-independence lemma (external to this paper's proof)",
+      "statement": "Lemma 1 assumes a bounded, mean-zero, 1-periodic measurable f with L2 translation modulus ||f(·+h)−f||_{L2[0,1]}≤C h^(1/2). For separated index blocks with gaps ℓ, it asserts the existence of small random shifts δ_j, |δ_j|≤Ce^(−λℓ), not depending on f, such that the block sums Σ_{i∈I_1}f(S_i), Σ_{i∈I_2}f(S_i−δ_1), … are independent. The article says this first lemma was proved in an earlier manuscript and supplies no proof here.",
+      "source_ranges": [
+        {
+          "start_line": 44,
+          "end_line": 65,
+          "pdf_pages": [
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Main theorem (Gaussian strong approximation for the dependent empirical CDF)",
+      "assumptions": [
+        "X_1,X_2,… are iid; X_1 is bounded and has a bounded density.",
+        "x≠0 is fixed (the proof states it is enough to prove x=1). No uniformity in x is claimed.",
+        "The probability space may be enlarged to construct the Gaussian approximants."
+      ],
+      "statement": "Let F_n(s)=n^(−1)Σ_{k≤n}1{{xS_k}≤s}. There are mean-zero Gaussian processes K_n(s) on [0,1] with covariance Γ_n(s,t) such that, for every exponent a<1/8, sup_{s,t∈[0,1]}|Γ_n(s,t)−Γ(s,t)|=O(n^(−a)); and for every γ<1/16, sup_{s∈[0,1]}|√n(F_n(s)−s)−K_n(s)|=O(n^(−γ)) almost surely. K_n is n-dependent through its covariance Γ_n; the result does not state a coupling to one fixed limiting Gaussian process.",
+      "start_line": 13,
+      "end_line": 33,
+      "pdf_pages": [
+        1
+      ],
+      "proof_steps": [
+        "By a scaling reduction the proof treats x=1. Partition the walk indices into long blocks I_k of order n^a and short blocks J_k of order n^b, with about n^(1−a) block pairs. Apply Lemma 1 to create shifts Δ_k and Π_k that make the long-block and short-block sums separately independent; show the shift error in the indicator sums is small.",
+        "Lemma 2 computes the long-block variance as asymptotic to nA(f), and the short-block variance as asymptotic to n^(1−b)A(f), where A(f)=||f||_2²+2Σ_{r≥1}E[f(U)f(U+S_rx)]. Lemma 3 gives the increment control A(f_{t−s})≤B(t−s)log((t−s)^(−1)).",
+        "Discretize s on a mesh n^(−ε), form vectors of centered block indicators on all mesh points, and apply the quoted Berthet–Mason independent-vector Gaussian coupling separately to the long and short block sequences. Under 1/2−γ>5ε/2+a, a>b, and a−b>2γ, Borel–Cantelli controls the grid error and removes the rescaled short-block Gaussian term.",
+        "Bernstein's inequality with Lemmas 2–3 controls fluctuations between adjacent mesh points. A mesh covariance estimate plus the modulus bound gives sup|Γ_n−Γ|≤C(log n)n^(−ε), and ε>a transfers this to the stated polynomial covariance rates.",
+        "The proof optimizes the block and mesh exponents and claims every γ<1/16. The final optimization paragraph contains a printed sign mismatch: it writes 1/2−γ>5ε/2−a, but the earlier condition (6) has +a and the next algebraic line γ<1/2−a−5ε/2 uses +a. The stated 1/16 optimization follows from the earlier +a condition, not from the printed minus-sign condition as written."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 32,
+          "end_line": 217,
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "start_line": 219,
+          "end_line": 312,
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ]
+        }
+      ],
+      "gaps": [
+        "Lemma 1 is stated but not proved here; the authors refer to a previous manuscript. Its simultaneous-in-f property is central to the independent-block construction.",
+        "The finite-dimensional strong coupling is imported from Berthet–Mason [1], Lemma 4; the cited lemma is not reproduced or independently verified in this source review.",
+        "The last optimization paragraph has the explicit sign inconsistency recorded above. The proof's earlier displayed parameter condition and later algebra support +a; a literal reading of the later −a condition does not yield its next claimed inequality.",
+        "The assumptions are specialized to bounded iid increments with bounded density and a fixed nonzero frequency x. There is no claim for arbitrary dependent observations, unbounded increments, singular increment laws, or x→0 uniformly.",
+        "This is a strong-approximation result for one empirical-CDF index s and a dependent random-walk orbit; it is not a reusable anti-concentration theorem or a generic whole-class empirical-process result."
+      ]
+    },
+    {
+      "label": "Lemmas 2–3 (long-run variance and increment modulus)",
+      "assumptions": [
+        "The block construction and shift bounds of Lemma 1 are in force; f is a centered periodic indicator or an increment f_{t−s} in the indicated periodic class.",
+        "The uniform phase U is independent of the increments; the bounded-density assumption supplies exponential lag covariance decay."
+      ],
+      "statement": "Lemma 2 states Σ_{k≤ℓ}Var(T_k(f_t))∼A(f_t)n and Σ_{k≤ℓ}Var(T_k^*(f_t))∼A(f_t)n^(1−b). Lemma 3 states A(f_{t−s})≤B(t−s)log((t−s)^(−1)) for a suitable B. These supply the local variance scale used in Bernstein interpolation and covariance control.",
+      "start_line": 94,
+      "end_line": 217,
+      "pdf_pages": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "proof_steps": [
+        "For Lemma 2, expand block variance into diagonal and lagged covariance sums. Replace shifted expectations by unshifted ones using exponentially small shift bounds; replace the distribution of S_j mod 1 by a uniform phase with exponentially small error; sum the lag covariance series into A(f). The short-block calculation is stated to be analogous.",
+        "For Lemma 3, write A(f_h)=h−h²+2Σ_{r≥1}E[f_h(U)f_h(U+S_rx)], bound each covariance by min(h,Ce^(−λr)), split the series at r≈log(1/h), and obtain O(h log(1/h))."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 100,
+          "end_line": 187,
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "start_line": 188,
+          "end_line": 217,
+          "pdf_pages": [
+            5,
+            6
+          ]
+        }
+      ],
+      "gaps": [
+        "The proofs invoke the unproved shift-coupling Lemma 1 and exponential lag-decay facts under the density condition.",
+        "At zero-variance endpoints f_0 and f_1 are identically zero; the asymptotic-equivalence notation in Lemma 2 is not separately discussed for those degenerate indices."
+      ]
+    }
+  ],
+  "constant_dependence": "The theorem uses O(·) constants without a full dependence ledger. They may depend on the increment distribution, its bounded support and density bound, fixed frequency x, and the periodic-function/modulus constants. The covariance kernel depends on the full lag law through the summable series. The proof rate exponents arise from the block sizes, mesh exponent and the Berthet–Mason coupling; the source's parameter-optimization sign inconsistency prevents treating the final 1/16 calculation as fully self-consistent without resolving the typo in favor of the earlier condition.",
+  "endpoint_limits": [
+    "The theorem excludes x=0 and gives no uniformity over nonzero x.",
+    "The increment law must be bounded and have a bounded density; these conditions are used for exponential mixing/lag decay and are not optional in the proof as written.",
+    "The approximating Gaussian process K_n is indexed by n and has covariance Γ_n; Γ_n→Γ does not itself identify all K_n on one common limiting-process coupling.",
+    "The stated rates are strict exponents a<1/8 and γ<1/16, not endpoint O(n^(−1/8)) or O(n^(−1/16)) claims.",
+    "The final printed optimization condition has −a where equation (6) and the subsequent derivation need +a; preserve this source-level ambiguity in any reuse of the optimal exponent."
+  ],
+  "reusable_methods": [
+    "For a dependent empirical CDF indexed by thresholds, a periodic centered indicator can satisfy the L2 translation modulus needed by separated-block coupling; shift blocks to exact independence while quantifying the L2 shift error.",
+    "A covariance kernel for a stationary/mod-1 orbit naturally consists of the one-time Brownian-bridge term plus both directed lag covariance series; use the long-run variance functional A(f) to control increments.",
+    "A finite threshold mesh plus a Gaussian vector coupling, variance-based Bernstein interpolation, and a separate covariance-modulus calculation can turn finite-dimensional couplings into uniform-in-threshold strong approximation, provided every block and mesh exponent condition is checked."
+  ],
+  "unchecked": [
+    "The previous-manuscript proof of Lemma 1 and Berthet–Mason [1], Lemma 4 were not independently read or verified.",
+    "No external numerical calculation or simulation was run; visual checks were used for formulas and the printed optimization sign.",
+    "The proof argument has not been independently reconstructed from first principles; this card records source claims, inspected derivation structure, and its explicit internal sign mismatch."
+  ],
+  "visual_checks": [
+    {
+      "pdf_pages": [
+        1
+      ],
+      "items": "Title, version/date, model definition, bounded-density conditions, covariance series, and two theorem rates."
+    },
+    {
+      "pdf_pages": [
+        2,
+        3
+      ],
+      "items": "Lemma 1 translation condition and shift independence; Lemma 2 block lengths and long-run variance scaling."
+    },
+    {
+      "pdf_pages": [
+        7,
+        8
+      ],
+      "items": "Parameter condition (6) with +a; final paragraph's conflicting −a; following algebra and claimed 1/16 exponent."
+    }
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 324,
+    "source_lines": 324,
+    "required_content_lines": 229,
+    "covered_content_lines": 229,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-1c2fd847e8d226ab/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-1c2fd847e8d226ab.json",
+  "review_input_sha256": "776d63277e9a9c64602b4273efdbde31561e3da2ea210d94990af08f67bba561"
+}

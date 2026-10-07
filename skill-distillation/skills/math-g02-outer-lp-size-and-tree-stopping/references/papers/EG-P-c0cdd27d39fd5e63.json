@@ -1,0 +1,199 @@
+{
+  "paper_id": "P-c0cdd27d39fd5e63",
+  "observed_title": "Lp Theory for Outer Measures and Two Themes of Lennart Carleson",
+  "authors": [
+    "Yen Do",
+    "Christoph Thiele"
+  ],
+  "version": "arXiv:1309.0945v3；首页日期 2014-08-25。",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 2573,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "G02": "direct",
+    "G01": "adjacent"
+  },
+  "definitions": [
+    {
+      "term": "外测度空间与 size",
+      "definition": "由生成集族 E 及覆盖费用 σ 产生外测度 μ；size S 是定义在生成集上的单调、齐次并满足文章规定准次可加性的泛函。外测度一般不对任意集合可加。",
+      "source_ranges": [
+        {
+          "start_line": 252,
+          "end_line": 390,
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "term": "outer essential supremum 与外分布函数",
+      "definition": "对集合 F，outsup_F S(f)=sup_E S(f1_F)(E)；μ(S(f)>λ) 由去掉异常集合后使 outsup_{X\\F}S(f)≤λ 的最小外测度费用定义。outer Lp 再通过外分布函数的层析积分定义，不能一般视作点态 |f| 的普通 Lp。",
+      "source_ranges": [
+        {
+          "start_line": 390,
+          "end_line": 789,
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "term": "upper half-plane tents 与 size",
+      "definition": "X=R×(0,∞) 的 tent T(x,s)={ (y,t):t<s, |y−x|<s−t }，费用为尺度 s；size 可由 tent 上局部积分平均或局部上确界定义。",
+      "source_ranges": [
+        {
+          "start_line": 1089,
+          "end_line": 1140,
+          "pdf_pages": [
+            20,
+            21
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem 4.1：tent outer measure 上 Carleson embedding",
+      "assumptions": [
+        "X=R×(0,∞)，使用本文 upper-half-plane tents 与 size S∞；φ 为满足正文假设的核，F_φ(f) 是其尺度卷积扩张。",
+        "1<p≤∞；均值零条件下使用相应 S₂-size 结论。"
+      ],
+      "statement": "对 1<p≤∞，作者证明 ||F_φ(f)||_{L^p(outer,S∞)}≤C||f||_p；当 φ 具均值零性质时，具有相应的 S₂-size 版本。常数依赖文章规定的核及指数。",
+      "start_line": 1089,
+      "end_line": 1170,
+      "pdf_pages": [
+        20,
+        21
+      ],
+      "proof_steps": [
+        "p=∞ 由核积分直接控制。弱 L¹ 端点先用 Hardy-Littlewood maximal function 找到高值空间区，再用 tent 覆盖估计异常外测度。",
+        "S₂ 版本对 f 作 Calderón-Zygmund 分解；坏块由均值零抵消与核导数积分估计，得到局部 L¹ size 与全局 L∞ 控制。",
+        "用外 log-convexity/插值命题推广至 1<p<∞。",
+        "阅读并复述作者证明步骤；没有独立重算每个核衰减与覆盖常数。"
+      ],
+      "gaps": [
+        "结论依赖特定 tent 几何、size 和 φ 的频率/矩条件，不是任意 outer measure 空间的自动估计。",
+        "平移、倾斜 tent 的后续版本常数显式或隐式依赖几何参数；不要从定理推出对参数一致的界。"
+      ]
+    },
+    {
+      "name": "Theorem 5.1：相位空间广义 Carleson embedding",
+      "assumptions": [
+        "相位空间 X=R×R×(0,∞)，α 满足 0<|α|≤1，|β|≤0.9，截断参数 b≤2^{-8}；φ 的 Fourier 支持满足文中与 b 相容的限制。",
+        "p>2 强 outer Lp；p=2 为弱 outer L²。size 采用 tent 外部区域局部平方积分加局部上确界的组合定义。"
+      ],
+      "statement": "在上述参数条件下，对相位空间 extension F_φ(f)，文章证明 p>2 的强 outer Lp 控制和 p=2 的弱 outer L² 控制。常数依赖 α、β、b、φ、p；文中不宣称这些参数上的统一性。",
+      "start_line": 1559,
+      "end_line": 1655,
+      "pdf_pages": [
+        28,
+        29,
+        30
+      ],
+      "proof_steps": [
+        "p=∞ 端点用频率离中心性质及积分分部获得 decay/几乎正交。",
+        "p=2 弱端点按阈值迭代选择停时 tent：先取点态 size 大的区域，再对 good square-function 区域作局部正交控制；Gram 型估计使选择 tent 总费用为 O(λ^{-2}||f||²)。",
+        "外插值命题连接端点得到 p>2；离散版本再用 Lemma 5.2 比较连续与离散 tents。全文读过 Section 5 端点证明至离散定理。"
+      ],
+      "gaps": [
+        "参数 α、β、b 进入常数；未证明 β→0、α→0 或 b→0 时的一致常数。",
+        "Theorem 5.1 是特定频率定位相位空间几何的 embedding；不能直接当作任意中心立方体或私有方向树的控制定理。"
+      ]
+    }
+  ],
+  "constant_dependence": "outer interpolation 的常数依赖指数；Theorem 4.1 依赖 φ 与 tent size 归一化。Theorem 5.1 作者明确允许依赖 α、β、b、φ、p。本文没有证明一般情形统一常数。",
+  "endpoint_limits": [
+    "outer Lp 层析采用本文外分布函数定义；不可把 outer measure 当可列可加测度。",
+    "Theorem 5.1 的强型起点是 p>2，p=2 仅弱型；双线性 Hilbert transform 的后续应用要求两个输入指数大于2。",
+    "外 Lp 对偶及配对不等于普通 Lp 对偶；应保留原文的 size、cover 和 stopping 结构。",
+    "47页全文读至参考文献，正文全部章节已读。"
+  ],
+  "reusable_methods": [
+    "先写出生成集、覆盖费用和 size，再按定义构造外超水平分布；不要替换成普通点态最大函数。",
+    "停时 tent 选择要同时证明阈值捕获与费用 packing，再用外插值提升指数。",
+    "对相位空间证明，分别处理大尺度/频率偏离 decay 和近区局部正交；明确常数依赖的几何参数。"
+  ],
+  "unchecked": [
+    "我没有独立重做 Section 5 的完整 Gram 矩阵估计及每一项积分分部。",
+    "将标准点计数/立方体外测度推广到其它生成集时，外测度公理与 size 需另证。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 2567,
+    "source_lines": 2573,
+    "required_content_lines": 2071,
+    "covered_content_lines": 2071,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-c0cdd27d39fd5e63/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-c0cdd27d39fd5e63.json",
+  "review_input_sha256": "0aaf75316384cb5a16c6d240dc625187dbae47dbc7a7603f815bc2d223274f2b"
+}

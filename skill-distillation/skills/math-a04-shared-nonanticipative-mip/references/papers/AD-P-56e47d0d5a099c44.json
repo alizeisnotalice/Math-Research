@@ -1,0 +1,206 @@
+{
+  "paper_id": "P-56e47d0d5a099c44",
+  "observed_title": "A Graph Theoretic Approach to Non-Anticipativity Constraint Generation in Multistage Stochastic Programs with Incomplete Scenario Sets",
+  "authors": [
+    "Brianna Christiana",
+    "Alexander Vinel",
+    "Zuo Zheng",
+    "Selen Cremaschi"
+  ],
+  "version": "arXiv:1908.01792v1; preprint submitted August 7, 2019; 19 PDF pages.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 941,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "scope": "Read all 19 PDF pages from abstract through references, including model, all lemmas/theorem and proofs, experiment tables, and Appendices A/B. Rendered PDF pp. 5, 9, 10, 11, 12, 15, and 17 with PyMuPDF: p.5 formulation, pp.9/12/15 figures, pp.10–11 SNAC theorem/proof and complexity, p.17 appendix formulation. Low-text pp.9,12,15 are figures, not blank or uninspected scans."
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "A04": "direct: gives a mixed-integer multistage stochastic programming model with scenario-dependent decisions and non-anticipativity equalities, then constructs a sparse equality-pair set using event-induced information partitions and a scenario graph. Scope is incomplete scenario sets with gradual endogenous/exogenous uncertainty; the general distinguishability function F remains problem-specific."
+  },
+  "definitions": [
+    {
+      "name": "Scenario/event information model",
+      "statement": "A finite set of endogenous uncertain parameters has possible outcomes; event sets c∈C encode the information realized so far. Each c partitions the sampled scenario set into blocks Π(c), where scenarios in a block remain indistinguishable under the observations in c.",
+      "source_lines": [
+        250,
+        268
+      ],
+      "pdf_pages": [
+        5
+      ]
+    },
+    {
+      "name": "Scenario-dependent decisions and non-anticipativity disjunction",
+      "statement": "For period t, scenario s, and realized-event set c, the model indexes decision and recourse variables b_{t,s,c}, y_{t,s,c}. A problem-specific indicator Z_{t}^{rs}=F(t,b,y) determines whether scenarios r and s are distinguishable; if they are not, both scenario decisions must be equal. The authors say the disjunction can be linearized by standard integer-programming techniques, but do not give a universal formulation for F.",
+      "source_lines": [
+        269,
+        287
+      ],
+      "pdf_pages": [
+        5
+      ]
+    },
+    {
+      "name": "Scenario graph and cuts",
+      "statement": "Vertices represent sampled scenarios, and an edge represents enforcing their NAC equalities. Each event set c induces a partition Π(c); its blocks are called cuts. Requiring each cut block to be connected in the induced graph allows equality to propagate along paths.",
+      "source_lines": [
+        390,
+        426
+      ],
+      "pdf_pages": [
+        7,
+        8
+      ]
+    },
+    {
+      "name": "Necessary edge by event degree",
+      "statement": "An edge in a block Π(c) is defined as necessary there when its endpoint pair is not jointly contained in any block of a strictly more-informed event set c′ with |c′|>|c|.",
+      "source_lines": [
+        468,
+        474
+      ],
+      "pdf_pages": [
+        10
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Lemma 1 (information refinement)",
+      "assumptions": [
+        "c,c′∈C with c⊂c′.",
+        "The event sets describe nested progress of uncertainty realization as specified in the model."
+      ],
+      "statement": "The partition Π(c′) refines Π(c): every block at the more-informed state c′ is contained in a block at c.",
+      "start_line": 428,
+      "end_line": 434,
+      "pdf_pages": [
+        8
+      ],
+      "proof_steps": [
+        "作者证明：the later state is reachable by evolving from the earlier state; scenarios indistinguishable after the additional events had to have been indistinguishable before them.",
+        "核验基础推导：adding observations can split an information equivalence class but cannot merge two previously distinguishable histories; this gives the stated refinement under the event-set semantics."
+      ],
+      "gaps": [
+        "This nesting applies only when c⊂c′ and the event system is correctly specified; arbitrary scenario labels do not automatically define such partitions."
+      ]
+    },
+    {
+      "label": "Lemma 2 (graph connectivity characterizes NAC sufficiency)",
+      "assumptions": [
+        "For every permissible information state c, scenario pairs in a block of Π(c) must have equal decisions.",
+        "Edges encode the corresponding pairwise equalities; connectivity is tested in the subgraph induced by each block."
+      ],
+      "statement": "A set of pairwise NACs enforces all required non-anticipativity if and only if every block Sc_j in every Π(c) is connected in its induced subgraph.",
+      "start_line": 458,
+      "end_line": 461,
+      "pdf_pages": [
+        10
+      ],
+      "proof_steps": [
+        "作者陈述：the paper gives only “follows by construction” after explaining transitivity of pairwise equalities.",
+        "核验基础推导（necessity）：if a block’s induced graph is disconnected, choose two components and assign different values to their decision variables; all selected edge equalities hold but indistinguishable scenarios disagree.",
+        "核验基础推导（sufficiency）：when a block is connected, equality along each edge propagates along a path, so all its scenarios share the same decision."
+      ],
+      "gaps": [
+        "The criterion is for all variables that must be equal on the block; actual application still must identify the correct event-dependent blocks and variables."
+      ]
+    },
+    {
+      "label": "Theorem 3 (SNAC minimum scenario-pair count and running-time claim)",
+      "assumptions": [
+        "The scenario set S and permissible event-set family C are finite.",
+        "The information partitions satisfy Lemma 1’s refinement property.",
+        "At each event set c, the algorithm connects every block of Π(c) using a spanning tree over the currently available graph; it scans event sets in decreasing |c|."
+      ],
+      "statement": "The authors claim Algorithm 1 terminates with a minimum-cardinality set of scenario pairs whose NAC equalities suffice, with implementation time O(|C||S|^3). If the number of uncertain parameters/events is fixed, the number of event states is fixed and this is cubic in the scenario count; when C is a powerset of events, |C| can itself be exponential in the number of events.",
+      "start_line": 499,
+      "end_line": 525,
+      "pdf_pages": [
+        10,
+        11
+      ],
+      "proof_steps": [
+        "作者证明：by Lemma 2, connecting each information block ensures NAC sufficiency. The algorithm descends by event-set cardinality, adds spanning-tree edges, and argues each added edge is necessary relative to previously handled more-informed cuts.",
+        "作者证明：for each c there are at most |S| blocks; a straightforward spanning-tree connectivity pass costs O(|S|^2) per block and block generation O(|S|), yielding O(|C||S|^3).",
+        "作者结论：the union is claimed to have minimum cardinality in scenario pairs, not necessarily a minimum number of scalar equalities across heterogeneous variable sets.",
+        "核验基础推导：the connectivity sufficiency and cubic operation-count upper bound follow from the stated implementation model. The optimization/minimality claim is not independently verified."
+      ],
+      "gaps": [
+        "Proof gap: Definition 1 establishes necessity only relative to strictly higher-cardinality event sets. The algorithm handles event sets of the same cardinality “in parallel” (Remark 1, lines 527–530, PDF p.11) and admits that this can create cycles. The text does not explicitly rule out alternate paths formed by edges from another same-level event set, nor prove global indispensability of every edge after taking the union. I therefore record minimum cardinality as the authors’ claim, not as a verified fact.",
+        "|C| may be exponential in the number of uncertainty events; “polynomial in scenarios” is conditional on fixing the event structure.",
+        "The generic indicator function F(t,b,y) is problem-specific; a correct MILP linearization requires model-specific bounds/logic."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "The stated implementation bound is O(|C||S|^3), with S the number of sampled scenarios and C the set of permissible event states. The authors note |C| can be the powerset of uncertainty events, hence exponential in event count. At fixed uncertainty-parameter/event structure, growth in scenario count is cubic.",
+    "dependence": "Scenario-pair count and runtime depend on the information partition family, not only on |S|. In the experiment with 5 products, 4 outcomes, and 1,024 scenarios, the text reports 5,140.6 seconds for SNAC, reducing model generation from 3,454.9 to 229.4 seconds and solver time from 4,331.7 to 43.5 seconds; this is one tested instance family, not a universal speed guarantee."
+  },
+  "endpoint_limits": {
+    "information_extremes": "Before any event, all scenarios are one indistinguishable block and their decisions must agree. As events are observed, blocks refine; at fully separated states, singleton blocks require no edges. Gradual realization is modeled through permissible event sets.",
+    "uncertainty_types": "The authors state the event-set approach can treat endogenous or exogenous uncertainty; exogenous parameters can be represented with a single realization event, while endogenous gradual revelation may require multiple events.",
+    "scope": "The method handles an incomplete subset of a full Cartesian scenario set. It does not itself generate representative scenarios, specify a correct event system, or determine the problem-specific distinguishability function F.",
+    "encoding": "The general disjunction is only described as standard integer linearization. A valid big-M or indicator encoding must be derived for the application; the illustrative appendix uses model-specific binary variables and bounds."
+  },
+  "reusable_methods": [
+    {
+      "method": "Index scenario decisions by observed information, then group scenarios that remain indistinguishable at each permissible event state and impose equality only within those groups.",
+      "transfer": "Define the information states from the actual history available at decision time; uncertainty realization timing can be decision-dependent."
+    },
+    {
+      "method": "Represent pairwise equality constraints as edges and use connectedness of every information block to replace dense all-pairs equalities by a sparse graph.",
+      "transfer": "Connectivity gives a sufficient and necessary condition for equality propagation; minimum edge count across overlapping partitions needs its own proof/check."
+    },
+    {
+      "method": "Use event refinement and process more-informed states before less-informed states so existing paths can satisfy later connectivity requirements.",
+      "transfer": "The event family must satisfy the nesting property, and implementation must account for edges added by all event sets, including equal-cardinality sets."
+    },
+    {
+      "method": "Keep the constraint generator separable from scenario costs and other model coefficients when only the information structure is unchanged.",
+      "transfer": "The paper’s experiments reuse NAC structure across changed economic parameters, but a change in scenario outcomes, revelation timing, or information sets requires rebuilding the graph."
+    }
+  ],
+  "unchecked": [
+    "All 19 extracted pages were read, including Appendices A/B and references. Pages 9, 12, and 15 have very little extractable text because they contain figures; each was rendered and visually inspected, so none is a blank or uninspected scan.",
+    "Rendered PDF pp.5, 10, 11, and 17 to check the NAC disjunction, graph algorithm/theorem, complexity discussion, and illustrative MILP formulation.",
+    "The correctness criterion in Lemma 2 was independently checked by equality propagation and a disconnected-component counterassignment. Theorem 3’s O(|C||S|^3) upper-bound count was checked from the described loops. Its global minimum-cardinality claim remains unverified because the proof does not address same-level cross-cut paths/cycles explicitly.",
+    "The Python implementation and CPLEX experiments were not rerun. The case-study runtime and solution-value claims are reported from the paper only.",
+    "No external reference cited for the appendix model or prior minimum-NAC results was opened; the article’s claim that its result generalizes them remains author-reported."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 941,
+    "source_lines": 941,
+    "required_content_lines": 734,
+    "covered_content_lines": 734,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-56e47d0d5a099c44/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-56e47d0d5a099c44.json",
+  "review_input_sha256": "ef7be976a3cb69b6b29e89e3d9ba206d486c3577391eeb0c0e8714907741b37c"
+}

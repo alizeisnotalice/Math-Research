@@ -1,0 +1,321 @@
+{
+  "paper_id": "P-6f3263203fbe8e51",
+  "observed_title": "Free Energy Subadditivity for Symmetric Random Hamiltonians",
+  "authors": [
+    "Mark Sellke"
+  ],
+  "version": "本地原PDF水印 arXiv:2208.11279v3 [math.PR] 14 Mar 2023；16页950行。作者题名及主要公式回PDF核对。",
+  "read_status": "full_read",
+  "source_sha256": "6f3263203fbe8e51ab67da091daf2b349ed206352c68a9cc00af3d0e9942a49d",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 950,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "scope": "完整16页：§1经典证明、§2五组例、§3量子主定理与SK/SYK详细证明、完整Appendix A p11–12、p13–16全部84参考。没有以固定字符截断冒充全文；重要公式PDFp1,2,4,7,10,12视觉复核；其他页全文文本阅读。"
+    }
+  ],
+  "topic_relevance": {
+    "D03": "direct：固定状态空间和概率参考measure的expected log-partition，在独立Hamiltonian相加且一项对称的条件下次可加；不能推成任意参数的弱自由能公式。",
+    "D02": "adjacent：Gibbs变measure/Jensen；不是一般KL变分定理来源。"
+  },
+  "definitions": [
+    {
+      "name": "expected log-partition convention",
+      "statement": "Σ compact metric、µ Borel probability、H随机continuous实函数。Z(H)=∫exp(H)dµ，F(L)=E log Z(H)。L1+L2定义为H1,H2独立相加的law。F按有限实数域使用，TEAM明确三项log-partition可积，避免扩展值差。本文F并非物理−β⁻¹ logZ；β>0改符号时方向须反转。",
+      "source_lines": [
+        26,
+        40
+      ],
+      "pdf_pages": [
+        1
+      ]
+    },
+    {
+      "name": "homogeneous probability reference",
+      "statement": "compact group G continuous transitive action于Σ；µ是唯一G-invariant Borel概率。L1 invariant指对每固定g,H1(g·)与H1同law；L2无需invariant。",
+      "source_lines": [
+        32,
+        43
+      ],
+      "pdf_pages": [
+        1
+      ]
+    },
+    {
+      "name": "finite quantum convention",
+      "statement": "N×N Hermitian随机M，Z(M)=Tr exp(M)/N、F=ElogZ；M1,M2 independent。compact G⊂U(N)，G-invariant law，e^M1-symmetrizing要求Haar twirl(e^M1)=Tr(e^M1)I/N a.s.。仅M1平均trace0或M1本身twirl0不等同指数symmetrizing。",
+      "source_lines": [
+        318,
+        347
+      ],
+      "pdf_pages": [
+        6,
+        7
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 1.1: classical subadditivity on fixed homogeneous probability space",
+      "start_line": 26,
+      "end_line": 62,
+      "pdf_pages": [
+        1,
+        2
+      ],
+      "assumptions": [
+        "Σ非空compact metric；G compact，continuous transitive action；µ唯一不变概率。",
+        "H1,H2 continuous实随机函数；H1 law G-invariant；H1,H2 independent。",
+        "F(L1),F(L2),F(L1+L2)为有限实数；TEAM可先以E||Hi||∞<∞作充分可积安全域，再用完整可积条件。"
+      ],
+      "statement": "F(L1+L2)≤F(L1)+F(L2)。固定Σ/µ，是law的相加次可加；不是系统size极限存在定理。",
+      "proof_steps": [
+        "µtilde_H1=e^H1µ/Z(H1)为随机概率。law invariance及reference invariance使Eµtilde G-invariant；由唯一性Eµtilde=µ。",
+        "独立性允许给H2条件化：E_H1 log∫e^H2 dµtilde≤log∫e^H2 d(Eµtilde)=log Z(H2)。对H2取期望。",
+        "pathwise logZ(H1+H2)=logZ(H1)+log∫e^H2dµtilde；相加给结论。有限值及条件Jensen/积分交换保留。"
+      ],
+      "gaps": [
+        "来源调用[33] Haar唯一概率定理；本TEAM核对了证明依赖，未阅读全文[33]。在输入直接给定唯一不变概率时主证明自足。",
+        "作者高温tightness依赖各模型外部文献，不由这个不等式本身保证。"
+      ]
+    },
+    {
+      "label": "Corollary 2.1: Gaussian variance and beta-square subadditivity",
+      "start_line": 136,
+      "end_line": 194,
+      "pdf_pages": [
+        3,
+        4
+      ],
+      "assumptions": [
+        "finite P、N，centered independent Gaussian coefficients，each variance c_index≥0；Ising Σ={−1,1}^N，uniform probability。",
+        "两个Hamiltonian的coefficients independent；相加variance逐项相加。",
+        "β1,β2≥0固定；σ→coordinate signs的Z2^N行动给law invariance。"
+      ],
+      "statement": "F_N(c+c′)≤F_N(c)+F_N(c′)；F_{N,sqrt(β1²+β2²)}(c)≤F_{N,β1}(c)+F_{N,β2}(c)。不能把sqrt(β1²+β2²)替成β1+β2。",
+      "proof_steps": [
+        "Gaussian和的variance加法及law covariance；主Thm1.1。",
+        "spherical/multi-species/product spheres需扩大G且coefficient variance按species恒定等足以保证invariance；不能继承任意anisotropic coefficients。"
+      ],
+      "gaps": [
+        "p4 L182–187高温replica-symmetric等式与tightness未独立证实；PDF写limit β²ξ(1)，通常Gaussian annealed值系数1/2，须用本文(2.3)精确variance重新核对，不调用这个印刷等式。",
+        "Ising overlap-constrained pairs若扩大为permutation group，需要coupling law也permutation invariant；任意variance vector不自动保留新group symmetry。"
+      ]
+    },
+    {
+      "label": "Theorem 3.1: quantum bound with explicit exponential twirl hypothesis",
+      "start_line": 318,
+      "end_line": 362,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "assumptions": [
+        "finite N、Hermitian M1/M2 independent及三项F finite；G compact unitary subgroup。",
+        "M1 law invariant under conjugation by each fixedg。",
+        "G a.s. e^M1-symmetrizing；不是只要求M1-symmetrizing。"
+      ],
+      "statement": "F(M1+M2)≤F(M1)+F(M2)。此主定理只用明确假设，不依赖后续Lemma3.5的过强all-linear-map表述。",
+      "proof_steps": [
+        "Golden–Thompson Tr exp(M1+M2)≤Tr(exp(M1)exp(M2))。",
+        "conditional Jensen于M1；invariance允许插入Haar conjugation；twirl(exp(M1))/Tr exp(M1)=I/N给剩余Tr exp(M2)/N。"
+      ],
+      "gaps": [
+        "Golden–Thompson [45,84,42]外部基础未全文重新证；这里只核当前应用及必要假设。",
+        "SK/SYK各model的symmetrizing验证需另外检查，不能因模型名字就套用。"
+      ]
+    },
+    {
+      "label": "Cor3.2 / Cor3.3 / Remark3.7 model-specific report and even-algebra repair",
+      "start_line": 367,
+      "end_line": 544,
+      "pdf_pages": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "assumptions": [
+        "Quantum SK m≥1，independent centered Gaussian couplings与Gaussian transverse field，tensor Pauli Q；parametersβi,hi≥0。",
+        "SYK Clifford Cn左正则representation，q为positive even，coefficients independent centered Gaussian；混合仅even-degree monomials。",
+        "为了用Thm3.1需twirl(e^evenH)=scalarI；不能使用原Lemma3.5任意linear map的错误推广。"
+      ],
+      "statement": "作者报告SK按(β,h)各分量平方和开根次可加；SYK按β平方和开根次可加。TEAM补局部修复：每个非identity even monomial χS经任一χj (j∈S) conjugation变号，group pair cancellation使twirl0；even subalgebra封闭，exp(evenH)亦even，nonid左乘trace0，因此e^evenH满足scalar twirl。这仅是辅助修复，model full应用二审仍pending。",
+      "proof_steps": [
+        "Pauli conjugation使each Gaussian coefficient乘fixed±1，保law；Pauli tensorbasis twirl kill nonidentity。",
+        "Clifford sorted monomials形成有限group±χS；Gaussian sign invariance保law。",
+        "原p10证明末步明确q even，但前两句声称any linear map/allx超出该证明。改为left multiplication even subalgebra后才与实际even-H需求一致。"
+      ],
+      "gaps": [
+        "来源(3.13),(3.16)写χ1…χq而和下标Ji1,…iq，应按model定义χi1…χiq定位；记录印刷下标，不把OCR自动修成不同Hamiltonian。",
+        "本TEAMeven-algebra推导待两审，不把原Lemma3.5原字面认证。"
+      ]
+    },
+    {
+      "label": "Appendix A p11–12 complete reading: alternate Parisi/control approach, isolated gaps",
+      "start_line": 557,
+      "end_line": 670,
+      "pdf_pages": [
+        11,
+        12
+      ],
+      "assumptions": [
+        "mixed p-spin ξ(t)=Σ_{p=2}^P c_p t^p with c_p≥0；ζi∈M[0,1] increasing/rightcontinuous。[5] control representation外部基础。",
+        "正确control construction需standard Brownian filtration、bounded progressively measurableu；参考probability与counting measure需保log2 offset。"
+      ],
+      "statement": "作者另报F(ξ1+ξ2)≤F(ξ1)+F(ξ2)+ln2，以Parisi/control路线推较弱界；当前附录该路线有具体条件/构造缺口，不能作为已检查操作链。经典Thm1.1已给更强概率参考界，不依赖Appendix A。",
+      "proof_steps": [
+        "作者设ζ=(ζ1ξ1″+ζ2ξ2″)/(ξ1″+ξ2″)并声称∈M；需证明/假设membership及零分母约定。",
+        "作者B(t)=sqrt(ξ1(t)/(ξ1+ξ2)(t))B1(t)+sqrt(ξ2(t)/(ξ1+ξ2)(t))B2(t)，称其BM，并用ξ″ stochastic integral identity；时变权通常非BM且identity不成立。",
+        "可局部改dB=√(ξ1″/(ξ1″+ξ2″))dB1+√(ξ2″/(ξ1″+ξ2″))dB2 (零系数另定)，保证quadratic variation t并正确积分组合；但此举不解决ζ monotonicity/选minimizer membership。",
+        "log(2cosh)次可加使多ln2；counting vs uniform reference有精确shift，不能当零常数。"
+      ],
+      "gaps": [
+        "ξ1=t²,ξ2=t⁴,ζ1≡1,ζ2≡0都允许，混合ζ=1/(1+6t²)递减，非M；如PropA.2把ζ∈M读为额外条件，CorA.3从任意两minimizers调用它仍未证该条件。",
+        "以上ξ之B at s=.5,t=1 covariance=.5*1.5/√2.5≈.47434≠.5，非BM。",
+        "p11引文[5]只用Brownian自身filtration；作者称largerfiltration亦可，需独立证明/核source。",
+        "p12选择controlmax时source漏E，Φ是deterministic value、X随机；应Φ=max E[X]而非pathwiseΦ=X。",
+        "零ξ″ denominator及t0端点未处理；这些只隔离Appendix路线，不否定主Thm1.1。"
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "statement": "主不等式无额外误差常数，但depends on exact reference normalization、independence和symmetry。Gaussian temp参数以β²variance合成；高温阈值依model不统一。概率→mass c参考的F_c=F_1+lnc，故F_c(sum)≤F_c(1)+F_c(2)−lnc；有限M counting measure的correction−lnM。Appendix按N归一counting shiftln2。",
+    "source_lines": [
+      26,
+      40,
+      88,
+      96,
+      153,
+      194,
+      574,
+      595,
+      649,
+      659
+    ],
+    "pdf_pages": [
+      1,
+      2,
+      3,
+      4,
+      11,
+      12
+    ]
+  },
+  "endpoint_limits": [
+    "β=0时unscaled F0=0；−Fβ/β形式不可直接定义在0。",
+    "β→∞本文只给max(H1+H2)≤maxH1+maxH2；不保有限β的非平凡tightness。",
+    "hard CSP β∞可Z=0且logZ−∞，原sourcep6明确不允许直接pluggingβ∞。",
+    "noninvariant law、nontransitive action、wrong reference normalization、correlatedsum都不能直接套主定理。",
+    "无限维量子extension作者仅称probably，不作为结论；finite N保留。",
+    "相关Gaussian coefficients需核完整covariance及groupinvariance，不套independent-coefficient corollary。"
+  ],
+  "reusable_methods": [
+    "以law symmetry识别平均Gibbs measure为固定reference，再conditional Jensen。",
+    "将参数吸收入Hamiltonian，独立Gaussian variance合成给β平方和形式。",
+    "分别记概率参考与计数参考的partition normalization常数。",
+    "主定理、模型应用、热力学tightness与附录路线逐层分开依赖。"
+  ],
+  "source_errors": [
+    {
+      "label": "Lemma3.5 all-linear-map/all-x overstated",
+      "source_lines": [
+        501,
+        521
+      ],
+      "pdf_pages": [
+        10
+      ],
+      "counterexample": "n=1左χ1=[[0,1],[1,0]], G={±I,±χ1}; all conjugations fixχ1, trace0 buttwirlχ1=χ1≠0。任意linear map也有右正则commutant，不能由左monomialbasis涵盖End(Cn)。",
+      "scope_repair": "仅left multiplication even subalgebra可用pair-cancellation；Thm3.1仍保显式eM twirl假设。"
+    },
+    {
+      "label": "Appendix monotone mixture not automatic",
+      "source_lines": [
+        617,
+        619,
+        650,
+        653
+      ],
+      "pdf_pages": [
+        12
+      ],
+      "counterexample": "ξ1=t²,ξ2=t⁴,ζ1=1,ζ2=0 ⇒ζ=1/(1+6t²)，从2/5(t1/2)降至1/7(t1)，非increasing。",
+      "scope_repair": "PropA.2可加ζmembership输入条件，CorA.3应用需另证；不能默认weighted average preserves monotonicity。"
+    },
+    {
+      "label": "Appendix B(t) not Brownian",
+      "source_lines": [
+        624,
+        648
+      ],
+      "pdf_pages": [
+        12
+      ],
+      "counterexample": "ξ1=t²,ξ2=t⁴；cov(B(.5),B(1))=3/(4√(5/2))≈.47434而BM需.5。",
+      "scope_repair": "用ξ″权的stochastic integral定义BM可修该局部，但其余证明义务仍保留。"
+    },
+    {
+      "label": "Gaussian high-temperature coefficient suspicious",
+      "source_lines": [
+        182,
+        187
+      ],
+      "pdf_pages": [
+        4
+      ],
+      "counterexample": "按(2.3) mixed covariance VarH=Nξ(1)，uniform probability annealed Eexp(βH)=exp(β²Nξ(1)/2)，normalized annealed F应β²ξ(1)/2。原PDF p4写β²ξ(1)且FN(βξ)记号亦与β²吸收不一致。",
+      "scope_repair": "只调用已核有限N variance-addition bound；高温等式不认证，待审。"
+    }
+  ],
+  "unchecked": [
+    "外部Haar uniqueness [33]、Golden–Thompson、Parisi/control [5]未在本卡声称独立全文读。",
+    "§2各特定模型温度阈值/极限/tightness依赖外部文章，当前只是完整阅读并记用途。",
+    "AppendixA原proof因已列gap隔离；不做“全16页看完所以全部定理已证”推断。"
+  ],
+  "proof_verification": {
+    "classical_main": "TEAM本次独立逐步核derive，等待第一/第二轮独审；safe domain保完整条件",
+    "quantum_main": "source theorem under explicit exponential-twirl hypothesis checked algebra; externalGoldenThompsondependency preserved",
+    "model_quantum_repair": "scoped TEAM derivation, audits pending",
+    "appendix": "full read; explicit counterexamples executed; repaired fullroute not certified"
+  },
+  "integration_status": "batch2 new full-reading evidence; no new unconditional SPECS step yet; stage1spec/118ledger unchanged pendingaudits",
+  "behavior_evidence": {
+    "path": "evidence/reviews/TEAM_CD/behavior/new-source-checks.json",
+    "scope": "six scoped actual counterexamples; no blanket advanced theorem certification"
+  },
+  "review_status": {
+    "audit_cd_16": "pending on this finalcard SHA",
+    "audit_ab_16": "pending on this finalcard SHA"
+  },
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 950,
+    "source_lines": 950,
+    "required_content_lines": 698,
+    "covered_content_lines": 698,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-6f3263203fbe8e51/paper.md"
+  },
+  "review_source": "evidence/reviews/TEAM_CD/evidence/P-6f3263203fbe8e51.json",
+  "review_input_sha256": "8c9553f3a5f19ad0ceb5f5f88404d56aa1152728d100759353da5e6a98bdc376"
+}

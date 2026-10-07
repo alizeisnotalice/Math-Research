@@ -1,0 +1,181 @@
+{
+  "paper_id": "P-ee5e7f1d2f3397ce",
+  "observed_title": "Bellman Function Sitting on a Tree",
+  "authors": [
+    "Nicola Arcozzi",
+    "Irina Holmes",
+    "Pavel Mozolyako",
+    "Alexander Volberg"
+  ],
+  "version": "arXiv:1809.03397v2；首页日期 Dec. 2018。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 652,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "E03": "direct"
+  },
+  "definitions": [
+    {
+      "term": "有限二进树上的 Λ-measure 与归一化平均",
+      "definition": "给每个节点 I 赋非负原子 λ_I，定义 Λ(I)=Σ_{K⊂I}λ_K、(Λ)_I=Λ(I)/|I|；对函数 ϕ 定义 (ϕΛ)_I=|I|⁻¹Σ_{K⊂I}ϕ(K)λ_K。",
+      "source_ranges": [
+        {
+          "start_line": 102,
+          "end_line": 137,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Carleson 条件编码为节点势增量",
+      "definition": "取状态 x_I=(F_I,f_I,A_I,v_I)，其中 F_I 是子树函数平方平均、f_I 是函数与 Λ 的配对平均、A_I=|I|⁻¹Σ_{K⊂I}α_K(Λ)_K²、v_I=(Λ)_I。父子状态按二进平均加上根节点新赋参数 a,b,c 的方式连接；对 A 的新增长 c，Bellman 主不等式产出正费用 cf²/v²。",
+      "source_ranges": [
+        {
+          "start_line": 205,
+          "end_line": 300,
+          "pdf_pages": [
+            5,
+            6
+          ]
+        },
+        {
+          "start_line": 347,
+          "end_line": 453,
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "term": "二进树极大函数的第一次越阈停止区",
+      "definition": "对 H 取最早后代 J 使比值 (ϕΛ)_J/(Λ)_J 达到至少两倍父节点对应比值；这些停止后代之下记 E_H，其余后代与 H 构成 O_H。不同停时节点的 O_H 两两不交。",
+      "source_ranges": [
+        {
+          "start_line": 432,
+          "end_line": 453,
+          "pdf_pages": [
+            9
+          ]
+        },
+        {
+          "start_line": 454,
+          "end_line": 508,
+          "pdf_pages": [
+            10
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem 1.3：dyadic-tree Carleson embedding 的 Bellman 势望远镜界",
+      "assumptions": [
+        "I₀ 上有限或按文中约定截断的标准二进树；每节点给非负 λ_I，形成 Λ，α_I≥0。",
+        "所有 I⊂I₀ 满足 |I|⁻¹ Σ_{K⊂I} α_K (Λ)_K² ≤ (Λ)_I。",
+        "函数 ϕ 的平方平均有限；定理中根状态满足 Bellman 域条件 f²≤Fv、A≤v。"
+      ],
+      "statement": "作者给出 (1/|I₀|)Σ_{I⊂I₀} α_I(ϕ√Λ)_I² ≤ 4(ϕ²)_{I₀}（等价加权写法见正文）。势 B(F,f,A,v)=4F−f²/(v+A)，在 f²≤Fv、0≤A≤v 域上非负、至多 4F，并满足主不等式：当状态按 (1.11) 的均值加新根增量 (b²,ab,c,a²) 连接时，cf²/v² ≤ B(parent)−½B(left)−½B(right)。",
+      "start_line": 83,
+      "end_line": 300,
+      "pdf_pages": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "proof_steps": [
+        "正文先解释普通 dyadic Carleson embedding 的已知 Bellman 上界，再为树上的原子 measure Λ 构造相应 B₂，说明父节点自有质量 λ_I、ϕ(I)、α_I 会造成均值不等式而非纯鞅等式。",
+        "用 B 的凹性切线不等式分别控制 F、A、v 的父子增量，并用 f 的双向增量抵消可能的不利项；关键代数写在 (1.12)–(1.14)。",
+        "对每个 I 定义状态 (F_I,f_I,A_I,v_I)，局部主不等式乘以 |I| 后对树求和，子节点势项消去，得到根 Bellman 上界 ≤4|I₀|F_I₀，推出嵌入。",
+        "以上复述作者所写推导；没有独立重新证明所有 Bellman 域保持、测度归一化和边界叶节点处理。"
+      ],
+      "gaps": [
+        "该版本的 Bellman 常数 4 是其给出的上界；文中不主张对 Theorem 1.3 的一般数据为最佳。",
+        "适用的是标准二进树与指定树 measure/Carleson 条件，不涵盖不同中心立方体交叠形成的非树家族。",
+        "树深有限化的技术性说明虽文中称可把树视作有限但很大，不能直接推出任意无限树的所有极限结论而省略收敛论证。"
+      ]
+    },
+    {
+      "name": "Theorem 2.1：树上 Hardy 型极大函数估计",
+      "assumptions": [
+        "标准 dyadic tree 起于 I₀，Λ 为正树测度。",
+        "对任意 I⊂I₀，|I|⁻¹Σ_{K⊂I}|K|²(Λ)_K²≤(Λ)_I。",
+        "ϕ 有限平方平均；分母 (Λ)_K 对所用比值为正，零质量节点需按原文可定义约定排除或单独处理。"
+      ],
+      "statement": "(1/|I₀|)Σ_{I⊂I₀}|I|²(Λ)_I² sup_{K:I⊂K}((ϕΛ)_K/(Λ)_K)² ≤ 32(ϕ²Λ)_{I₀}。这是树上固定根路径的 Hardy 型平均极大控制，不是一般中心立方体 maximal theorem。",
+      "start_line": 432,
+      "end_line": 508,
+      "pdf_pages": [
+        9,
+        10
+      ],
+      "proof_steps": [
+        "每个停时祖先 H 将树分为 O_H 与越过 2 倍阈值的极大后代；在 O_H 内所有相应比值至多 2 倍根比值。",
+        "假设给 O_H 的内部加权和界，将左端压到常数 4 倍 Σ_H ((ϕΛ)_H/(Λ)_H)²Λ(H)。",
+        "由首次越阈和对子树测度分解得到 Λ(E_H)≤Λ(H)/2，故 Λ(H)≤2Λ(O_H)；设 β_H=Λ(O_H)，不交性使 β 满足树 Carleson 条件。",
+        "令 α_H=β_H/(Λ)_H²，应用 Theorem 1.3，额外常数因子给最终 32。",
+        "以上按全文第9–10页检查作者论证结构；不独立核验所有归一化常数及零分母边界。"
+      ],
+      "gaps": [
+        "阈值 2 与几何是标准 dyadic-tree 子孙序；没有多个父系或相邻但不包含的立方体。",
+        "该定理是树上局部平均极大式，不能自动移植至连续中心、任意中心立方体或接口未定义的 GP-BRANCH。"
+      ]
+    }
+  ],
+  "constant_dependence": "Theorem 1.3 使用显式 Bellman 上界常数 4；Theorem 2.1 的 stopping+embedding 组合给出数值常数 32。这里常数针对标准 dyadic tree、本文归一化及二倍停止阈值；不是一般树模型下已优化的最佳常数。",
+  "endpoint_limits": [
+    "全文 13 页均已读至 references；该文没有独立附录。",
+    "主要 embedding 是平方可积 L² 型；Theorem 2.1 的平均极大估计服从文章所列 packing 条件。",
+    "proof-by-formula 的标题反映作者对 Bellman embedding 推导的表达，不能将原文声称等同于本次独立形式化证明。",
+    "文中对 bi-tree 另有二维条件与定理，且指出仅盒条件可能不足；这不替代所研究的单树条件。"
+  ],
+  "reusable_methods": [
+    "将每个节点状态扩充到足以记录累计预算的有限维向量，用 Bellman 势构造“当前费用≤父势减子势”的逐点不等式。",
+    "将逐点不等式乘以节点长度/到达质量再求和；明确检验根项、叶终端项和节点重量之后才使用 telescoping。",
+    "对树极大比值先按固定阈值生成首次越界停时，再利用停时区互不交与 Carleson embedding 控制平方平均。",
+    "若状态变量只有超/次鞅式不等号，要按 Bellman 各坐标的偏导符号逐项审计缺失的望远镜抵消。"
+  ],
+  "unchecked": [
+    "未独立重做凹性 Hessian 证明和 (1.12)–(1.14) 所有代数项。",
+    "未独立检查有限树到无限树的极限版本。",
+    "中心立方体任意中心交叠结构是否可构造此单树状态与 measure 流，仍是课题迁移问题。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 648,
+    "source_lines": 652,
+    "required_content_lines": 482,
+    "covered_content_lines": 482,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-ee5e7f1d2f3397ce/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-ee5e7f1d2f3397ce.json",
+  "review_input_sha256": "cbcc326876c031b6878e059a441058a8d34b199a933fe71a9b5ba24da5fb42be"
+}

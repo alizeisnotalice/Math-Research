@@ -1,0 +1,300 @@
+{
+  "paper_id": "P-ecb91aed2e290a23",
+  "observed_title": "Semidefinite Relaxations for Semi-Infinite Polynomial Programming",
+  "authors": [
+    "Li Wang",
+    "Feng Guo"
+  ],
+  "version": "arXiv:1306.1875v1; 23 PDF pages. The text front matter identifies the 2013 preprint; publication venue/version was not normalized here.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1190,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "scope": "Entire extracted text: abstract, model, polynomial/SOS and moment relaxations, finite and infinite-index algorithms, proofs, examples, Appendices A and B, references, and author matter. Original PDF pages 3, 7, 8, 13, 14, 15, and 17 were rendered to inspect the core equations and theorem statements."
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "B02": "direct: develops an exchange/constraint-generation algorithm for semi-infinite polynomial programs, with global finite-dimensional SDP subproblems; treats compact index sets and a homogenization extension for noncompact sets. It is a concrete polynomial/SOS method, not a general convex-SIP oracle method."
+  },
+  "definitions": [
+    {
+      "name": "Semi-infinite polynomial program (SIPP)",
+      "statement": "Minimize polynomial f(x) over a compact semialgebraic decision set X, subject to the polynomial inequality g(x,u)≥0 for every u in a (possibly noncompact) infinite semialgebraic index set U.",
+      "source_lines": [
+        26,
+        38
+      ],
+      "pdf_pages": [
+        1
+      ]
+    },
+    {
+      "name": "Archimedean quadratic module",
+      "statement": "Q(F) is Archimedean if some ψ∈Q(F) has a nonnegative set {x:ψ(x)≥0} that is compact. This assumption implies K is compact; compactness of K alone does not imply the given module is Archimedean, though one may add a redundant bounding constraint.",
+      "source_lines": [
+        155,
+        161
+      ],
+      "pdf_pages": [
+        3
+      ]
+    },
+    {
+      "name": "Flat truncation certificate",
+      "statement": "An optimal truncated moment sequence y* has a flat truncation if rank M_{t−d}(y*)=rank M_t(y*) for some t in the specified degree range. The cited result uses this condition to certify finite convergence and extract global minimizers.",
+      "source_lines": [
+        209,
+        225
+      ],
+      "pdf_pages": [
+        4,
+        5
+      ]
+    },
+    {
+      "name": "Exchange subproblems",
+      "statement": "At iteration k, keep a finite index set U_k, solve the restricted global optimization problem P_k, then globally minimize g(x_k,u) over U; if the minimum is negative, add global minimizers of that separation problem to the index set.",
+      "source_lines": [
+        335,
+        378
+      ],
+      "pdf_pages": [
+        7
+      ]
+    },
+    {
+      "name": "Homogenized index sets",
+      "statement": "For polynomial constraints h_i(u)≥0, normalize the homogenized coordinates to the unit sphere and distinguish U_0 with u_0>0, its closure, and the compact relaxation eU with u_0≥0. Boundary points u_0=0 encode limiting directions and can add constraints.",
+      "source_lines": [
+        674,
+        681
+      ],
+      "pdf_pages": [
+        13
+      ]
+    },
+    {
+      "name": "Closed at infinity",
+      "statement": "The paper calls the set closed at infinity when closure(U_0)=eU.",
+      "source_lines": [
+        713,
+        741
+      ],
+      "pdf_pages": [
+        14
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 2.2 (Putinar certificate, cited result)",
+      "assumptions": [
+        "The quadratic module Q(F) satisfies the stated Archimedean condition.",
+        "The polynomial p is strictly positive on the feasible set K."
+      ],
+      "statement": "Then p belongs to Q(F). This yields asymptotic convergence of the Lasserre hierarchy after applying the result to f−f*+ε; it does not itself assert finite convergence.",
+      "start_line": 162,
+      "end_line": 166,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "The authors cite Putinar’s Positivstellensatz; no proof is supplied in this paper.",
+        "Under strict positivity, apply the certificate to f−f*+ε for any ε>0, producing hierarchy values arbitrarily close to the global value when the Archimedean hypothesis holds."
+      ],
+      "gaps": [
+        "This is cited background rather than a theorem proved in the paper. Strict positivity and Archimedean assumptions must be preserved; merely compact K does not imply the original module is Archimedean without a redundant bounding constraint."
+      ]
+    },
+    {
+      "label": "Proposition 3.3 (monotonicity of restricted problem values)",
+      "assumptions": [
+        "Each restricted problem P_k has a global optimum.",
+        "The finite index sets are nested U_1⊆U_2⊆…⊆U."
+      ],
+      "statement": "The restricted minima satisfy f_1^min≤f_2^min≤…≤f*, where f* is the original SIPP optimum.",
+      "start_line": 380,
+      "end_line": 394,
+      "pdf_pages": [
+        7,
+        8
+      ],
+      "proof_steps": [
+        "Adding index constraints shrinks the feasible sets, so the minimum cannot decrease.",
+        "The full feasible set is contained in every restricted feasible set, so each restricted minimum is no larger than f*."
+      ],
+      "gaps": [
+        "The statement concerns exact global minima of the restricted problems; numerical SDP lower bounds are an additional relaxation layer."
+      ]
+    },
+    {
+      "label": "Theorem 3.4 (exchange convergence)",
+      "assumptions": [
+        "X is compact.",
+        "At every iteration the restricted primal problems P_k and separation problems Q_k^i are solved globally.",
+        "The intermediate global minimizer sets S_k and at least one separation-minimizer set T_k^i are nonempty.",
+        "For the limit-point proof, U is compact and g is continuous so v(x)=min_{u∈U}g(x,u) is continuous."
+      ],
+      "statement": "The exchange algorithm either terminates finitely with a global solution of P, or every limit point of any sequence x_k∈S_k is a global solution of P. The implementation’s tolerance test g_k^i≥−ε gives an ε-feasibility certificate, not the theorem’s exact finite-stop conclusion.",
+      "start_line": 398,
+      "end_line": 430,
+      "pdf_pages": [
+        8
+      ],
+      "proof_steps": [
+        "Nested index sets yield nested feasible regions and monotone restricted optimal values bounded above by f*.",
+        "At exact finite stopping, the selected restricted minimizer satisfies every semi-infinite constraint; its restricted value and global feasibility force its objective to equal f*.",
+        "Otherwise, compactness of X gives subsequential limit points. Each previously generated constraint is eventually included, so every limit point satisfies it.",
+        "For a minimizing index u_k at x_k, the violated-cut value v(x_k)=g(x_k,u_k) is compared with g at the limit point; continuity (uniform over compact U) and feasibility of the limit point for the accumulated cuts give v(limit)≥0.",
+        "Feasibility plus the monotone restricted values implies the limit objective equals f*."
+      ],
+      "gaps": [
+        "The theorem statement’s explicit assumptions list compactness of X and exact global solves/nonempty subproblem solutions; the proof also invokes compact U and continuity of v, which is established in the surrounding discussion but should be kept explicit when transferring it.",
+        "No iteration-complexity bound is proved. Numerical termination with ε>0 is approximate."
+      ]
+    },
+    {
+      "label": "Proposition 4.2 (homogenized nonnegativity equivalence)",
+      "assumptions": [
+        "q is a polynomial on U defined by finitely many polynomial inequalities.",
+        "q~ and the defining inequalities are homogenized using their degrees; U_0 is normalized with u_0>0."
+      ],
+      "statement": "q(u)≥0 on U if and only if its homogenization q~ is nonnegative on closure(U_0).",
+      "start_line": 682,
+      "end_line": 704,
+      "pdf_pages": [
+        13,
+        14
+      ],
+      "proof_steps": [
+        "If q is negative at some feasible v, the normalized point (1,v)/sqrt(1+||v||²) lies in U_0 and the homogenized value is a positive scaling of q(v), so nonnegativity fails.",
+        "Conversely, approximate any point in closure(U_0) by normalized points with u_0>0 arising from U; continuity of q~ passes nonnegativity to the limit."
+      ],
+      "gaps": [
+        "This identifies closure(U_0), not automatically the larger compact set eU. Replacing closure(U_0) by eU can strengthen constraints unless U is closed at infinity."
+      ]
+    },
+    {
+      "label": "Theorem 4.6 (value comparison under homogenization)",
+      "assumptions": [
+        "The compact-index relaxation uses eU; the original problem uses U.",
+        "If equality of values is claimed, U must be closed at infinity: closure(U_0)=eU."
+      ],
+      "statement": "The homogenized problem’s optimum is at least the original optimum; the values are equal when U is closed at infinity.",
+      "start_line": 738,
+      "end_line": 750,
+      "pdf_pages": [
+        14,
+        15
+      ],
+      "proof_steps": [
+        "Proposition 4.2 identifies the original feasible set with constraints indexed by closure(U_0).",
+        "Since closure(U_0)⊆eU, the homogenized feasible set is contained in the original one, so its minimum is no smaller.",
+        "If U is closed at infinity, the index sets agree, hence so do feasible sets and values."
+      ],
+      "gaps": [
+        "The source’s Example 4.8 shows equality can fail: eU may contain boundary directions not approximable from U_0 and can eliminate all otherwise feasible decisions."
+      ]
+    },
+    {
+      "label": "Theorem 4.10 (algebraic exceptional conditions for failure at infinity)",
+      "assumptions": [
+        "U is defined by the polynomial inequalities in §4.",
+        "The proof uses the source’s Lemma 4.9 and resultant/discriminant propositions in Appendix B."
+      ],
+      "statement": "If U is not closed at infinity, the indicated leading-form resultants vanish when |J|>p, or the indicated discriminant vanishes when |J|≤p. The authors infer that closedness at infinity is generic for generic defining polynomials.",
+      "start_line": 840,
+      "end_line": 854,
+      "pdf_pages": [
+        17
+      ],
+      "proof_steps": [
+        "A missing boundary direction yields a common zero of the selected highest-degree homogeneous parts and the sphere equation.",
+        "Lemma 4.9 makes the corresponding Jacobian rank deficient in the small-|J| case; Appendix B propositions convert common zeros/rank deficiency into vanishing resultant/discriminant conditions.",
+        "Avoiding these algebraic degeneracies is the basis for the authors’ genericity claim."
+      ],
+      "proof_basis_ranges": [
+        {
+          "start_line": 970,
+          "end_line": 1104,
+          "pdf_pages": [
+            19,
+            20,
+            21
+          ],
+          "scope": "Appendix B definitions/propositions on resultants and discriminants cited by the theorem."
+        }
+      ],
+      "gaps": [
+        "“Generic” is not assigned a precise topology/probability notion in the displayed conclusion; the theorem gives necessary algebraic degeneracy conditions for failure, not a practical closed-at-infinity test for a particular model. I read the complete cited appendix but did not independently establish the measure/algebraic-geometric genericity claim."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "No numerical error bound, iteration complexity, or dimension-dependent constant is established for the exchange sequence. The convergence claim is qualitative under exact global subproblem solves.",
+    "dependence": "The convergence argument depends on compactness of the decision domain X; separation minimizers must exist, and compact index sets plus continuity make the value function continuous. SDP hierarchy convergence further depends on Archimedean/positivity assumptions; flatness is a separate finite extraction certificate."
+  },
+  "endpoint_limits": {
+    "index_boundary": "For noncompact U, homogenization adds boundary points with u_0=0. Those points represent directions at infinity and must be checked: closedness at infinity is the condition under which indexing by eU preserves feasibility/value.",
+    "exact_vs_tolerant": "The theorem is exact, while Algorithm 3.1’s practical stop condition uses tolerance ε; a point whose minimum separation value is at least −ε is only ε-feasible.",
+    "relaxation_order": "Lasserre’s hierarchy converges asymptotically under the stated Archimedean condition; finite convergence and minimizer extraction require flat truncation or the separate Jacobian SDP construction and its assumptions.",
+    "scope": "The method specifically exploits polynomial/SOS structure and exact global optimization subroutines. It is not a generic guarantee for arbitrary convex SIP or inexact separation oracles."
+  },
+  "reusable_methods": [
+    {
+      "method": "Finite exchange loop with a globally solved master problem and global separation subproblem; add all obtained worst-case minimizers, and certify stopping with the minimum constraint residual.",
+      "transfer": "For polynomial models, use moment/SOS or Jacobian SDP hierarchies for global solves. Preserve the exact assumptions behind global solves and nonempty minimizer sets; in approximate implementations, report ε-feasibility separately from exact global optimality."
+    },
+    {
+      "method": "Homogenize a polynomial index set, normalize to a compact sphere, and represent noncompact-index constraints through closure(U_0).",
+      "transfer": "Before replacing closure(U_0) by eU, verify closedness at infinity or report the resulting conservative relaxation. The u_0=0 boundary is essential."
+    },
+    {
+      "method": "Use flat truncation rank equality as a finite-convergence and optimizer-extraction check for moment/SOS relaxations.",
+      "transfer": "Do not infer finite convergence from compactness or a low hierarchy order alone; the flatness condition is checked on a feasible optimal moment sequence."
+    }
+  ],
+  "unchecked": [
+    "All 23 PDF pages and appendices were read. Pages 3, 7, 8, 13, 14, 15, and 17 were rendered with PyMuPDF to visually inspect the SOS/algorithm/homogenization equations.",
+    "The reported numerical experiments were not rerun. I did not independently verify external cited results such as Putinar’s theorem or the algebraic genericity claim beyond checking the paper’s stated derivation and its included appendix.",
+    "The line extraction has visible layout/OCR noise (e.g. date/arXiv text and some stacked equations); theorem statements used here were checked against the rendered PDF pages."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1190,
+    "source_lines": 1190,
+    "required_content_lines": 904,
+    "covered_content_lines": 904,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-ecb91aed2e290a23/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-ecb91aed2e290a23.json",
+  "review_input_sha256": "f4235a28c44c094eca32e1559592e2f7ea43cdc84da1c99e5e77e069e813251e"
+}

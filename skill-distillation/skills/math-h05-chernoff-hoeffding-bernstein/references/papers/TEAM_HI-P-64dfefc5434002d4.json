@@ -1,0 +1,98 @@
+{
+  "paper_id": "P-64dfefc5434002d4",
+  "observed_title": "Chernoff’s Inequality - A very elementary proof",
+  "authors": [
+    "Nathan Linial",
+    "Zur Luria"
+  ],
+  "version": "arXiv:1403.7739v1,30 March2014 visible watermark;2 pages",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "file": "corpus/papers/P-64dfefc5434002d4/paper.md",
+      "start_line": 1,
+      "end_line": 80,
+      "pdf_pages": [
+        1,
+        2
+      ],
+      "scope": "Whole paper: theorem/lemma, proof, remarks and complete references"
+    }
+  ],
+  "topic_relevance": {
+    "H05": "direct"
+  },
+  "theorem_cards": [
+    {
+      "label": "Subset-product bound Eq(1)",
+      "assumptions": [
+        "Indicator Xi, integer k with0<k<βn,0<β<1; no independence required."
+      ],
+      "statement": "P(ΣXi≥βn)≤[binom(βn,k)]^(−1)Σ_{|S|=k}P(∧_{i∈S}Xi=1). For nonintegerβn interpret falling-product binomial only whereβn>k−1; integer threshold gives tight equality iff sum=βn or sum<k a.s.",
+      "proof_steps": [
+        "For the random count Z=ΣXi, binom(Z,k)=Σ_{|S|=k}∏Xi; its nonnegative expectation is the sum of joint probabilities. On Z≥βn it is at leastbinom(βn,k).",
+        "The fixed-success-pattern w_T proof in source is equivalent to Markov for this polynomial."
+      ],
+      "source_ranges": [
+        {
+          "start_line": 20,
+          "end_line": 70,
+          "pdf_pages": [
+            1,
+            2
+          ]
+        }
+      ],
+      "start_line": 20,
+      "end_line": 70,
+      "pdf_pages": [
+        1,
+        2
+      ]
+    },
+    {
+      "label": "KL consequence and integer feasibility",
+      "assumptions": [
+        "0<α<β<1 and k=(β−α)n/(1−α) an admissible integer; everyk-subset all-success probability≤α^k."
+      ],
+      "statement": "Source consequence P(Z≥βn)≤exp(−nD(β||α)),D=βlog(β/α)+(1−β)log((1−β)/(1−α)). It is not enough that each EXi≤α.",
+      "proof_steps": [
+        "Eq(1) gives binom(n,k)α^k/binom(βn,k); source cites standard entropy estimates for the last bound."
+      ],
+      "gaps": [
+        "The article does not print the entropy estimate proof; arbitrary rounding of nonintegerk is not supplied by the text. Keep exact finite combinatorial bound as safe interface unless rounding/optimization is separately derived."
+      ],
+      "source_ranges": [
+        {
+          "start_line": 27,
+          "end_line": 67,
+          "pdf_pages": [
+            1,
+            2
+          ]
+        }
+      ],
+      "start_line": 27,
+      "end_line": 67,
+      "pdf_pages": [
+        1,
+        2
+      ]
+    }
+  ],
+  "transfer_boundary": "Can replace iid by verified fixed-size joint-success control; not by pairwise covariance alone. No conditional Bernstein or time-uniform conclusion. Both pages visually checked.",
+  "proof_verification": "local derivations and literal errors checked; cited external results not independently certified",
+  "identity_status": "title_authors_visible_version_observed_not_bibliographic_dedup_certified",
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 80,
+    "source_lines": 80,
+    "required_content_lines": 51,
+    "covered_content_lines": 51,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-64dfefc5434002d4/paper.md"
+  },
+  "review_source": "reviews/TEAM_HI/evidence/P-64dfefc5434002d4.json",
+  "review_input_sha256": "82e497ddee069057bf7ab17ec38ac6e14f9a45b4ca96ecddd8c243e98df57251"
+}

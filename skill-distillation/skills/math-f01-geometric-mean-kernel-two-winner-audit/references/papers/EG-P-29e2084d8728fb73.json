@@ -1,0 +1,112 @@
+{
+  "paper_id": "P-29e2084d8728fb73",
+  "observed_title": "A New Proof of the Geometric-Arithmetic Mean Inequality by Cauchy’s Integral Formula",
+  "authors": [
+    "Feng Qi",
+    "Xiao-Jing Zhang",
+    "Wen-Hui Li"
+  ],
+  "version": "arXiv:1301.6432v1；首页标注 2013。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 291,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "F01": "adjacent"
+  },
+  "definitions": [
+    {
+      "term": "正数列算术均值与几何均值",
+      "definition": "对 a₁,…,aₙ>0，Aₙ(a)=n⁻¹Σa_k，Gₙ(a)=(Πa_k)^(1/n)，且等号当且仅当全部输入相同。",
+      "source_ranges": [
+        {
+          "start_line": 13,
+          "end_line": 36,
+          "pdf_pages": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "term": "主支几何均值的 Cauchy 核表示",
+      "definition": "在 0<a₁≤…≤aₙ 时，对 z∈C\\(-∞,-a₁]，作者借主支复几何均值与负实轴边界虚部，导出 Gₙ(a+z)=Aₙ(a)+z−π⁻¹Σ_{ℓ=1}^{n−1}∫_{aℓ}^{aℓ₊₁}[Π_k|a_k−t|]^(1/n)sin(ℓπ/n)/(t+z)dt。",
+      "source_ranges": [
+        {
+          "start_line": 160,
+          "end_line": 267,
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem 3.1：几何均值的积分表示及其推得的 GA 不等式",
+      "assumptions": [
+        "输入有限正数组 a₁,…,aₙ，先按次序 0<a₁≤…≤aₙ 排列。",
+        "复参数 z 位于主支定义域 C\\(-∞,−a₁]。",
+        "积分推导利用边界极限、Cauchy 积分公式与作者陈述的极限交换；该交换未在本次审查中独立重证。"
+      ],
+      "statement": "主支 Gₙ(a+z) 等于 Aₙ(a)+z 减去正核积分和。取 z=0 后每个积分项非负，所以 Gₙ(a)≤Aₙ(a)，且等号当且仅当所有 a_k 相等。它只证明有限正标量组的基本几何平均控制。",
+      "start_line": 160,
+      "end_line": 282,
+      "pdf_pages": [
+        3,
+        4,
+        5
+      ],
+      "proof_steps": [
+        "构造 h_n(z)=G_n(a−a₁+z)−z，先证明远处极限为算术平均偏移，并计算负实轴上各根区间的边界虚部。",
+        "在切去负实轴的半圆域应用 Cauchy 积分公式；令小半径趋零、大半径趋无穷，将上下岸差积分化为边界虚部的 Stieltjes 型核积分。",
+        "平移 z 得主支几何均值表示；z=0 后核因 sin(ℓπ/n)≥0、乘积项非负而不超过 A_n。",
+        "以上是原文 5 页证明结构的摘要；没有独立复算边界极限与轮廓积分的技术细节。"
+      ],
+      "gaps": [
+        "仅涵盖正实输入和标量 AM–GM 关系；不涉及空间最大算子、核随位置的几何平均、赢家选择、分支合并或两赢家结构。",
+        "复变量主支与排序假设是积分表示所需；若应用存在零输入、复核值或可变权重，应重新处理连续性与分支。",
+        "不能用此结果声称私有 GP-BRANCH 接口定理已由公开文献证明。"
+      ]
+    }
+  ],
+  "constant_dependence": "基本不等式中的算术平均系数恰为 1/n；积分表示各项权重含 sin(ℓπ/n)/π 和由输入决定的乘积核，不提供 GP-BRANCH 的算子常数。",
+  "endpoint_limits": [
+    "全文 5 页均读完，含两条引理、Cauchy 轮廓证明、GA 推论及参考文献。",
+    "论文直接支撑的只是一条初等正数组平均不等式；与 F01 操作目标有关但不等同，故记 adjacent。",
+    "公式抽取中的少量括号/上下限排版存在转换噪声，已按页内等式上下文复原；未经 PDF 图片逐字符核对。"
+  ],
+  "reusable_methods": [
+    "对乘积型正核先取对数可将几何平均与指数相联；若需要参数表示，可研究 Cauchy/Stieltjes 核。",
+    "在证明非负核导出的上界时，明确保留每个正权项与系数，不能只记结论的均值顺序。"
+  ],
+  "unchecked": [
+    "未独立证明 GA 不等式以外的任何两赢家或最大函数估计。",
+    "公式排版细节未做图像级校对。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 287,
+    "source_lines": 291,
+    "required_content_lines": 217,
+    "covered_content_lines": 217,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-29e2084d8728fb73/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-29e2084d8728fb73.json",
+  "review_input_sha256": "fca9348da5eccf0de0c92b50262cfd980a51f379fbf81b0103bbad3f42684f4d"
+}

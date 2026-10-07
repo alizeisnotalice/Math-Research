@@ -1,0 +1,184 @@
+{
+  "paper_id": "P-783dff58d54a2ee6",
+  "observed_title": "A Slightly Lifted Convex Relaxation for Nonconvex Quadratic Programming with Ball Constraints",
+  "authors": [
+    "Samuel Burer"
+  ],
+  "version": "arXiv:2303.01624v2; February 28, 2023, revised October 31, 2023; 26 PDF pages.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1227,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "scope": "逐行读完标题摘要、Sections 1–6、全部定义与松弛、实验、Theorem 1的完整证明、Theorem 2扩展、声明及参考文献。原文关键公式和证明页12–15、21–24已用PyMuPDF渲染核查，符号与paper.md一致；26页pages.json均low_text=false，无缺读/扫描页。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "C01": "direct：论文明确构造非凸QCQP的SDP lifting：先将原变量同次化，再提升二阶矩阵变量，用Shor/RLT/SOC-RLT切割；新建辅助变量β把多个SOC球约束化为一个SOC与线性约束，并以一个矩阵等式增强。Theorem 1给出m=2精确凸包表示。它支持lift/松弛/秩一恢复工作流，但结果是专用球约束QCQP而非任意非凸问题的通用精确化。"
+  },
+  "definitions": [
+    {
+      "name": "锥提升H与锚定矩阵松弛",
+      "statement": "对min{xᵀQx:x∈K,x₁=1}，定义H=cone{x xᵀ:x∈K}；原问题与min{Q•X:X∈H,X₁₁=1}同值且后者存在秩一最优矩阵。用Shor、RLT、SOC-RLT、Kron等有效约束构造H的凸SDP外松弛。",
+      "source_lines": [
+        184,
+        232
+      ],
+      "pdf_pages": [
+        5
+      ]
+    },
+    {
+      "name": "带球约束QCQP的β提升",
+      "statement": "原问题为min xᵀQx+2qᵀx，满足||x−cᵢ||≤ρᵢ (i=1,…,m)，先令c₁=0、ρ₁=1并将各球平方化为xᵀx≤ρᵢ²−cᵢᵀcᵢ+2cᵢᵀx；加入不进目标的β，要求xᵀx≤β以及β≤每个仿射上界。再对w=(α,x,β)同次化，得到一项SOC和m项线性约束。",
+      "source_lines": [
+        496,
+        555
+      ],
+      "pdf_pages": [
+        11,
+        12
+      ]
+    },
+    {
+      "name": "Beta矩阵松弛R",
+      "statement": "令Pᵀw∈SOC、ℓᵢᵀw≥0定义提升锥K，H=cone{wwᵀ:w∈K}。作者用W⪰0、J•PᵀWP≥0、ℓᵢᵀWℓₖ≥0和PᵀWℓᵢ∈SOC构造Shor∩RLT∩SOCRLT外松弛R；目标min Qhat•W，锚定W₁₁=1。",
+      "source_lines": [
+        548,
+        563
+      ],
+      "pdf_pages": [
+        12
+      ]
+    },
+    {
+      "name": "互补面限制H₀/R₀",
+      "statement": "m=2时在提升锥中加入(ℓ₁ᵀw)(ℓ₂ᵀw)=0；其矩阵提升为ℓ₁ᵀWℓ₂=0。H₀是互补集合的秩一矩阵锥包，R₀={W∈R:ℓ₁ᵀWℓ₂=0}。",
+      "source_lines": [
+        622,
+        636
+      ],
+      "pdf_pages": [
+        14
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 1 (m=2 exactness of Beta with complementarity equation)",
+      "assumptions": [
+        "可行球交非空；考虑论文的有限维非凸二次目标与m=2球约束。",
+        "使用作者定义的辅助变量β提升锥K、矩阵松弛R及额外线性矩阵约束ℓ₁ᵀWℓ₂=0。"
+      ],
+      "statement": "对于原球约束集合(4)，m=2时H₀=R₀。因此在锚定W₁₁=1的Beta SDP中加上ℓ₁ᵀWℓ₂=0即可保持原问题最优值，即存在匹配原最优解的秩一矩阵。",
+      "start_line": 635,
+      "end_line": 636,
+      "pdf_pages": [
+        14
+      ],
+      "proof_steps": [
+        "作者结论：Theorem 1 statement lines 635–636（PDF p.14）。",
+        "作者证明：先以构造得H₀⊆R₀，再证明R₀的每个极射线生成元均为秩一。利用Lemma 2的SOC基本秩一凸包，Lemma 3处理单个线性约束，Lemma 4控制与半空间相交后的极射线；随后分情形讨论vᵢ=Wℓᵢ为零、两SOC像在内部且主锥等式活跃、或二次锥边界/主约束松弛，必要时做W−εvᵢvᵢᵀ秩一扰动，推出秩≤2并排除秩二极端点（lines 996–1085，PDF pp.22–24）。",
+        "基础推导核验：核对了H₀⊆R₀的逐项有效性、极射线证明三分情形和扰动保持PSD/SOC/互补等约束的关键步骤；关键公式页面12–15、21–24经原PDF视觉确认。未独立重证所用Pataki极射线秩界及引用的rank-one perturbation引理。",
+        "迁移推断：可把“变量提升+有效乘积/锥切+互补矩阵面约束→秩一精确性”作为构造候选模式；其它约束数、锥类型和外松弛须重做极射线证明。"
+      ],
+      "gaps": [
+        "Theorem 1仅对m=2及该球交松弛成立；增加到m≥3时，本文没有给一般精确性定理。",
+        "数值求解获得近似秩一/小gap是数值证据，不等于精确代数证书；论文以两项阈值定义实验上的“solved”。",
+        "定理依赖精确的额外条件ℓ₁ᵀWℓ₂=0；基础Beta松弛R本身不直接等于H₀。"
+      ]
+    },
+    {
+      "label": "Theorem 2 (norm bounded by two affine caps)",
+      "assumptions": [
+        "可行集合(5)非空，形式为||x||≤1且||x||≤g+hᵀx；正文对g,h不另加限制。",
+        "使用文中相应同次化锥、互补和矩阵松弛R₀。"
+      ],
+      "statement": "对集合(5)，H₀=R₀，因而此专门类型二次优化也有精确半定表示。",
+      "start_line": 822,
+      "end_line": 824,
+      "pdf_pages": [
+        18
+      ],
+      "proof_steps": [
+        "作者结论：Theorem 2 lines 822–824。",
+        "作者证明：仅写“与Theorem 1同一证明适用”，没有在此重复展开。",
+        "基础推导核验：逐页核对Section 4.1参数化的SOC/线性约束及R₀定义与证明对应结构；没有另行展开完整秩一极射线重证。"
+      ],
+      "gaps": [
+        "这是对两条范数上界的专用拓展；正文将证明细节压缩为Theorem 1的同证，读者需依赖该映射正确。"
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "statement": "无误差常数或概率预算。提升维数从n到n+2；Beta的模型含单个PSD锥、约m²个线性乘积不等式和m个SOC约束（论文称roughly m²线性约束与m SOC）。Theorem 1的精确性在m=2；m≥3只给实验性能及未解问题。",
+    "source_lines": [
+      548,
+      559
+    ],
+    "pdf_pages": [
+      12
+    ]
+  },
+  "endpoint_limits": [
+    "原问题可行假设不可省；同次化借ρᵢ>0保证α的非负约束由锥结构隐含。",
+    "原始Shor矩阵松弛的精确性需要附加结构/假设；不能从X⪰0且X₁₁=1自行推出rank(X)=1。",
+    "作者在Section 2明确Shor在一个PSD约束子空间等条件时可精确；其它场景仅为外松弛。",
+    "m=2 Theorem 1使用额外矩阵等式ℓ₁ᵀWℓ₂=0；若省略该等式不能直接引用精确性。",
+    "m≥3时论文主要报告数值实验，表格与结论段说明部分实例gap未闭合，并明确指出Beta总不弱于Kron尚无形式证明；本文没有一个一般精确性定理覆盖m≥3。",
+    "本文不保证有限精度数值SDP求解器给出精确秩一解；实验“solved”用relative gap<10⁻⁴且eigenvalue ratio>10⁴作可信度标准。"
+  ],
+  "reusable_methods": [
+    "先保留矩阵X=xxᵀ的秩一提升，再以锥凸包外逼近给可验证的目标界；标明外松弛方向。",
+    "从原问题约束推出冗余乘积/RLT约束，例如两线性因子的乘积非负，以及SOC切片的线性像仍在SOC。",
+    "选择一个人工变量把多个非线性约束化成一个锥约束加线性约束；需要时同次化以获得锥可表示形式。",
+    "证明精确性可研究松弛锥的极射线是否秩一；若极射线可能秩二，可通过面约束和扰动排除。",
+    "数值评估同时报告原问题可行值与松弛界，并将小gap、近秩一与精确性证明区分。"
+  ],
+  "unchecked": [
+    "未运行文中MOSEK 10.0.37实验；经验表格只按原文检查，不视为本地复现。",
+    "Theorem 1依赖引用的Pataki秩界与PSD rank-one perturbation结果，卡中未独立重证外部引理。",
+    "没有自行构造/验证m≥3的全局非精确反例；只记录作者实验和开放问题，不将其写成普遍数学定理。",
+    "PDF原文共26页，正文、图表、证明及参考文献均已检查；公式页12–15、21–24视觉确认，pages.json无low_text页。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1227,
+    "source_lines": 1227,
+    "required_content_lines": 793,
+    "covered_content_lines": 793,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-783dff58d54a2ee6/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-783dff58d54a2ee6.json",
+  "review_input_sha256": "b3fba967eae328e41ca218134adeb2afebd74e7ade5f025af1ce00d36578848b"
+}

@@ -1,0 +1,150 @@
+{
+  "paper_id": "P-d1b8290539190ee5",
+  "observed_title": "Exponential Ergodicity for Stochastic Equations of Nonnegative Processes with Jumps",
+  "authors": [
+    "Martin Friesen",
+    "Peng Jin",
+    "Jonas Kremer",
+    "Barbara Rüdiger"
+  ],
+  "version": "arXiv:1902.02833v1 (2019), dated February 11, 2019; 23 PDF pages.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1039,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "scope": "逐页通读文章正文、各主结果证明、附录 Lemmas A.1–A.2 与参考文献，PDF pp.1–23；paper.md 分段阅读，无未读页。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "J04": "adjacent（限方法背景）：文章明确构造补偿 Poisson 随机测度驱动的非负跳 SDE，并在可积性条件下使用跳积分鞅和 Itô 公式；但目标是遍历性/收敛率，未给随机 Fubini 交换定理、退出停时的财富结算，亦未把补偿项结成目标接口。不能作为 J04 目标结论的直接证据。"
+  },
+  "definitions": [
+    {
+      "name": "Compensated Poisson random measure",
+      "statement": "文章记 Ñ0(dt,du)=N0(dt,du)−dt μ0(du)，以之驱动非负 càdlàg 强解中的补偿跳积分；另有未补偿 N1 负责可积的大跳。"
+    },
+    {
+      "name": "Effective drift",
+      "statement": "b̄(x)=b(x)−∫_{U1}g1(x,u)μ1(du)，用于把未补偿跳均值纳入平均漂移的耗散条件。"
+    },
+    {
+      "name": "Wasserstein contraction",
+      "statement": "W1 使用代价 |x−y| 的最优耦合距离；证明基于同噪声耦合和过程次序比较。"
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Proposition 3.1 and Theorem 3.2: order comparison and W1 exponential contraction",
+      "assumptions": [
+        "Nonnegative strong jump SDE (3.1), admissible drift/diffusion/jump coefficients and local Osgood-type conditions (3.a)–(3.c), ensuring existence, uniqueness and pathwise comparison.",
+        "(3.d): the combined compensated Gaussian and compensated-jump stochastic integral M_t is a martingale.",
+        "(3.e): for some A>0, b̄(y)−b̄(x)≤−A(y−x) whenever 0≤x≤y. Initial laws have finite first moment."
+      ],
+      "statement": "Proposition 3.1 gives unique strong nonnegative solutions and order preservation. Under (3.a)–(3.e), Theorem 3.2 gives W1(P_t^*μ,P_t^*ν)≤e^{−At}W1(μ,ν), a unique invariant law π∈P1, and the same exponential contraction toward π.",
+      "start_line": 292,
+      "end_line": 373,
+      "pdf_pages": [
+        7,
+        8,
+        9
+      ],
+      "proof_steps": [
+        "Couple solutions from x≤y using the same noises; pathwise order gives |X_t^y−X_t^x|=X_t^y−X_t^x.",
+        "Taking expectations in the SDE removes the martingale term under (3.d), yielding E|X_t^y−X_t^x|=y−x+∫_0^t E[b̄(X_s^y)−b̄(X_s^x)]ds.",
+        "Apply (3.e) and Gronwall to obtain E|X_t^y−X_t^x|≤|y−x|e^{−At}.",
+        "Use the joint-law coupling for point masses, convexity of W1, and an optimal coupling of arbitrary initial laws to get contraction.",
+        "Iterates under the semigroup are Cauchy in complete P1, giving an invariant law; contraction establishes convergence. Uniqueness among all invariant laws is shown with bounded cost 1∧|x−y| and dominated convergence."
+      ],
+      "gaps": [
+        "Existence/comparison for the SDE is summarized from Dawson–Li [10], not reproved in this article.",
+        "The paper assumes (3.d); it does not give a general stochastic-Fubini theorem establishing it.",
+        "Its stopping/localization arguments in Sections 4–5 serve moment estimates and Lyapunov bounds, not an exit-time account/settlement identity."
+      ]
+    },
+    {
+      "label": "Theorem 5.7: total variation convergence for subcritical CBI processes",
+      "assumptions": [
+        "Admissible CBI parameters with b>0; immigration log-moment condition (1.5); Grey condition (5.a).",
+        "π is the unique invariant distribution; initial law belongs to P_log."
+      ],
+      "statement": "There is C>0 such that transition kernels satisfy ||P_t(x,·)−P_t(y,·)||_TV≤C min{1,e^{−bt}|x−y|}, and ||P_t^*μ−π||_TV≤C min{e^{−bt},W_log(μ,π)}+Ce^{−bt}W_log(μ,π).",
+      "start_line": 642,
+      "end_line": 679,
+      "pdf_pages": [
+        15,
+        16
+      ],
+      "proof_steps": [
+        "Factor each CBI transition law into a no-immigration branching law and an immigration convolution; use translation/convolution contraction and the cited Theorem 5.6 for the branching kernel.",
+        "Integrate the pointwise total-variation estimate over an optimal coupling and apply convexity of Wasserstein distance.",
+        "Convert min{1,e^{−bt}|x−y|} to a logarithmic cost, then use the elementary log inequality from (5.11) and Theorem 5.5."
+      ],
+      "gaps": [
+        "The estimate relies on the prior Li–Ma Theorem 5.6 and affine-process result Theorem 5.5; this theorem is unrelated to the requested jump-settlement interface."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "The Wasserstein contraction rate A is the effective drift dissipation constant from (3.e); CBI rates use b>0 and unspecified finite constants C. Martingale integrability is an assumption, not a derived universal constant."
+  },
+  "endpoint_limits": {
+    "scope": "Nonnegative jump SDEs with pathwise comparison and dissipative effective drift; selected CBI/CNBI/CBIRE examples.",
+    "not_established": "No stochastic Fubini theorem for interchanging time and jump integration, no optional-stopping exit settlement identity, no wealth/claim balance at a stopping boundary."
+  },
+  "reusable_methods": [
+    {
+      "method": "Separate the compensated small-jump martingale from the uncompensated integrable jump drift, and formulate explicitly the required martingale condition.",
+      "transfer": "This can inform an interface audit for compensation bookkeeping; the article does not prove the target random-Fubini or stopping-boundary equality."
+    },
+    {
+      "method": "Use same-noise order-preserving coupling, take expectations after verifying the martingale term, then apply effective-drift dissipativity and Gronwall.",
+      "transfer": "Requires the scalar nonnegative comparison structure and contractive drift; not applicable to arbitrary marked jump systems without those hypotheses."
+    },
+    {
+      "method": "For CBI kernels, factor a transition law into branching and immigration convolution, then exploit convolution contraction.",
+      "transfer": "This is a semigroup decomposition for a specific branching model; not a general exit-time decomposition."
+    }
+  ],
+  "unchecked": [
+    "All 23 PDF pages including the appendix were read; background existence/comparison results and Theorem 5.6 are cited rather than independently reproved.",
+    "The source is recorded as adjacent only for its compensated-jump martingale setup; no target J04 claim is verified by this paper."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1039,
+    "source_lines": 1039,
+    "required_content_lines": 829,
+    "covered_content_lines": 829,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-d1b8290539190ee5/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-d1b8290539190ee5.json",
+  "review_input_sha256": "3f130ddcb1776cd7355bacae40caf6abd21aaf8851809c478c0d8ed8b569642f"
+}

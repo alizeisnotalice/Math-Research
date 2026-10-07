@@ -1,0 +1,210 @@
+{
+  "paper_id": "P-cfd155a09f97776c",
+  "observed_title": "Addendum to Arithmetic exponent pairs of algebraic trace functions and applications",
+  "authors": [
+    "Jie Wu",
+    "Ping Xi"
+  ],
+  "version": "arXiv:2104.14508v1; 2021-04-16;10 pages",
+  "source_sha256": {
+    "pdf": "cfd155a09f97776c165513ed0c8969bf7fc8fbb6f37cfcf01ffc06494456077d",
+    "paper_md": "fde2506e687b19fa31674ddcbc3151ab2af96d5c8c5262632c7b7697b037edc3"
+  },
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 409,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    }
+  ],
+  "reading_log": {
+    "method": "complete local converted text read in sequential line chunks; key formulas checked in original PDF images",
+    "appendices": "all pages including references read; no separate appendix in source",
+    "no_character_truncation": true,
+    "visual_pages": [
+      1,
+      2,
+      3,
+      5,
+      9
+    ]
+  },
+  "topic_relevance": {
+    "code": "N03",
+    "decision": "adjacent",
+    "basis": "Arithmetic q-van der Corput and exponent triples are a method-adjacent source for N03. The addendum details parent(9.14), supplies divisor/gcd bookkeeping, and does not prove Euclidean oscillatory integral or private half-density results."
+  },
+  "definitions": [
+    "This is explicitly a detailed proof of parent inequality(9.14); it does not announce an erratum.",
+    "n♭=∏_(p∥n)p; n♯=∏_(p^ν∥n,ν≥2)p^ν; n‡=∏_(p²∥n)p; Ξ(n)=∏_(p^ν∥n,ν≥3)p^ν."
+  ],
+  "theorem_cards": [
+    {
+      "claim_id": "N03-WUXI-GCD",
+      "label": "Lemma1.2",
+      "start_line": 55,
+      "end_line": 64,
+      "pdf_pages": [
+        2
+      ],
+      "source_locator": {
+        "file": "corpus/papers/P-cfd155a09f97776c/paper.md",
+        "start_line": 55,
+        "end_line": 64,
+        "pdf_pages": [
+          2
+        ]
+      },
+      "assumptions": [
+        "Integer q≥1; real x≥1; τ(q) is the positive divisor count."
+      ],
+      "statement": "Σ_(n≤x) gcd(n,q)≤τ(q)x.",
+      "proof_source_ranges": [
+        {
+          "file": "corpus/papers/P-cfd155a09f97776c/paper.md",
+          "start_line": 55,
+          "end_line": 64,
+          "pdf_pages": [
+            2
+          ]
+        }
+      ],
+      "proof_steps": [
+        "Group n by d=gcd(n,q), count at most floor(x/d) multiples for each d|q, sum d floor(x/d)≤xτ(q)."
+      ],
+      "author_claim": "Σ_(n≤x) gcd(n,q)≤τ(q)x.",
+      "checked_derivation": "Independent divisor partition proves the stated inequality including endpoints.",
+      "gaps": [],
+      "disposition": "checked_local_derivation_pending_independent_reviews",
+      "independent_proof_certificate": false
+    },
+    {
+      "claim_id": "N03-WUXI-SEPARATE",
+      "label": "Lemma1.3",
+      "start_line": 67,
+      "end_line": 78,
+      "pdf_pages": [
+        2
+      ],
+      "source_locator": {
+        "file": "corpus/papers/P-cfd155a09f97776c/paper.md",
+        "start_line": 67,
+        "end_line": 78,
+        "pdf_pages": [
+          2
+        ]
+      },
+      "assumptions": [
+        "m is a positive squarefree integer; s≥1 integer.",
+        "s‡=∏_(p²∥s)p; Ξ(s)=∏_(p^ν∥s,ν≥3)p^ν."
+      ],
+      "statement": "Ξ(ms)≤(s‡)^3 Ξ(s)^(4/3).",
+      "proof_source_ranges": [
+        {
+          "file": "corpus/papers/P-cfd155a09f97776c/paper.md",
+          "start_line": 67,
+          "end_line": 78,
+          "pdf_pages": [
+            2
+          ]
+        }
+      ],
+      "proof_steps": [
+        "Compare each prime valuation. For v_p(s)=0,1 no contribution above exponent2. For v_p(s)=2, a squarefree m can raise exponent to3 and s‡ supplies p³. For v_p(s)≥3, ν+1≤4ν/3. Multiply."
+      ],
+      "author_claim": "Ξ(ms)≤(s‡)^3 Ξ(s)^(4/3).",
+      "checked_derivation": "All prime-valuation cases independently derived; PDF p2 formula visually checked.",
+      "gaps": [],
+      "disposition": "checked_local_derivation_pending_independent_reviews",
+      "independent_proof_certificate": false
+    },
+    {
+      "claim_id": "N03-WUXI-ARITHMETIC",
+      "label": "Section2/5 arithmetic vdc source bound",
+      "start_line": 84,
+      "end_line": 127,
+      "pdf_pages": [
+        3
+      ],
+      "source_locator": {
+        "file": "corpus/papers/P-cfd155a09f97776c/paper.md",
+        "start_line": 84,
+        "end_line": 127,
+        "pdf_pages": [
+          3
+        ]
+      },
+      "assumptions": [
+        "m,n squarefree with gcd(m,n)=1; remaining notation and restrictions inherited from [WX21], not all defined in this addendum.",
+        "Exponent triple (κ,λ,ν) must satisfy parent (Ω),(7.1)/(7.2); Section4 simplifies to ν=κ.",
+        "Final source range uses R≈sqrt(L), λ≥2κ and λ−κ≥1/2.",
+        "Either [R13] (MN²)^(1−2κ)≥L^(λ−1/2) or [R21] (MN²)^(2−2λ)≥L^κ, up to the stated positive constants."
+      ],
+      "statement": "Author concludes B(M,N)≪H³N+X^ε[HLMN+H²L^((λ+1)/2)(MN²)^(κ+1)] under the inherited hypotheses and displayed restrictions. It is retained as a conditional source statement; not available for arbitrary inputs.",
+      "proof_source_ranges": [
+        {
+          "file": "corpus/papers/P-cfd155a09f97776c/paper.md",
+          "start_line": 363,
+          "end_line": 387,
+          "pdf_pages": [
+            9
+          ]
+        }
+      ],
+      "proof_steps": [
+        "Split completion versus q-van der Corput ranges; keep Δ=0 contribution separate.",
+        "Enlarge modulus with controlled factors, preserving the bad squarefree/squarefull gcd weights; handle congruence counts and average them.",
+        "Use ν=κ only when explicitly adopted, then simplify the displayed restrictions."
+      ],
+      "author_claim": "Author concludes B(M,N)≪H³N+X^ε[HLMN+H²L^((λ+1)/2)(MN²)^(κ+1)] under the inherited hypotheses and displayed restrictions. It is retained as a conditional source statement; not available for arbitrary inputs.",
+      "checked_derivation": "Full10-page addendum read; p1/2/3/5/9 formulas viewed. Final condition is λ−κ≥1/2 (not λ≥(1−κ)/2). The parent and source range discrepancy keep the final application quarantined.",
+      "gaps": [
+        "All parent definitions and assumptions in [WX21] are not fully read here; the 64-page parent remains a direct-reading queue item.",
+        "PDF p3 completion case(I) uses R≥threshold, but §3 p5 says R<threshold for B1, which is described as the completion contribution. This source range-label discrepancy remains open; no sign repair is assumed.",
+        "Lemma1.1 proof uses external Perron formula; it is not treated as an independent proof certificate."
+      ],
+      "disposition": "conditional_source_statement_with_open_parent_and_range_gap",
+      "independent_proof_certificate": false
+    }
+  ],
+  "reusable_methods": [
+    "Separate Δ=0 from genuine oscillation before any cancellation estimate.",
+    "Track squarefree and squarefull modulus factors and singular gcd weights through averaging.",
+    "Use exact prime valuations to separate mixed multiplicative weights before summing."
+  ],
+  "constant_dependence": "Implicit constants may depend on ε, fixed exponent parameters and parent trace-function data; no dimension-uniform Euclidean geometric residual constant is supplied.",
+  "endpoint_limits": [
+    "Lemma1.1 stated t≤1/2 for squarefull/reciprocal-squarefree means and t≤3/4 for Ξ mean; not a license to strengthen endpoints from a proof auxiliary holomorphy condition.",
+    "Arithmetic sums and Euclidean oscillatory integrals use distinct hypotheses."
+  ],
+  "unchecked": [
+    "All pages and references read; parent[WX21] not full-read.",
+    "Final arithmetic application remains conditional due to inherited assumptions and B1 range-label discrepancy."
+  ],
+  "overall_proof_verification": "not_independently_certified",
+  "two_round_review": "pending",
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 409,
+    "source_lines": 409,
+    "required_content_lines": 307,
+    "covered_content_lines": 307,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-cfd155a09f97776c/paper.md"
+  },
+  "review_source": "reviews/TEAM_N/evidence/P-cfd155a09f97776c.json",
+  "review_input_sha256": "c0297d21809681f0dea50139672854a6a90aa8809b504b246216f744182d4217"
+}

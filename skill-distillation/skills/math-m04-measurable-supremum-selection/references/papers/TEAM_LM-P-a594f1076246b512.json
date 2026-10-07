@@ -1,0 +1,85 @@
+{
+  "paper_id": "P-a594f1076246b512",
+  "patch_of": "reviews/LN/evidence/P-a594f1076246b512.json",
+  "original_card_sha256": "072cf975ac98665d84dd3554ca366ec9c5c423551de2b1269aab6f210c3dd1a0",
+  "observed_title": "Selections of Integrable Multifunctions in Arbitrary Banach Spaces",
+  "read_status": "scoped_source_recheck",
+  "read_ranges": [
+    {
+      "start_line": 294,
+      "end_line": 398,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "scope": "只重新核PDFp8–9 Theorem4.3及proof，不声称本轮重读全文"
+    }
+  ],
+  "topic_relevance": {
+    "M04": "direct for measurable/scalarly measurable selections from measurable multifunctions and integrability-preserving conditions, including arbitrary (possibly nonseparable) Banach ranges. It does not establish measurable argmax selection, analytic projection measurability, or legality of a selector constrained by an optimization objective; its results are reusable only where the target correspondence meets its scalar-measurability, weak-compactness, and integrability assumptions."
+  },
+  "theorem_cards": [
+    {
+      "label": "Theorem 4.3: HKP integrability and scalar-measurable selections",
+      "assumptions": [
+        "Γ:[0,1]→cwk(X) is scalar measurable, X any Banach space."
+      ],
+      "statement": "原文Theorem 4.3(ii)逐字写 each scalarly measurable selection of Γ is HK-integrable；(i)为Γ的HKP可积。该写法保留为source_statement，不能作为strong-HK-certified结果。PDF p8结论中的选择积分集合有闭包上横线：多值HKP积分等于 HKP选择积分集合的闭包。p9证明的明确结论是g为HKP-integrable，且James论证用于闭包ISΓ(I)。",
+      "start_line": 330,
+      "end_line": 393,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "proof_steps": [
+        "In the forward direction, bound each selected scalar projection between −s(−x*,Γ) and s(x*,Γ); use support-function integrability and the weakly compact integral values to obtain HKP integrability.",
+        "For the reverse direction, for fixed x*, form the exposed face G(t)={x∈Γ(t):<x*,x>=s(x*,Γ(t))}; cited measurable-selection results provide a scalar-measurable selector g of G.",
+        "That selector attains the support-function integral and hence identifies the support function of the closure/convex set of selection integrals; James weak compactness yields the desired cwk(X) value."
+      ],
+      "gaps": [
+        "Proof is explicitly a sketch and invokes prior measurable-selection results and James characterization.",
+        "This uses a fixed linear functional exposed face, not a measurable selector of maximizers over a general parameterized optimization problem.",
+        "原文(ii) HK与proof HKP语义不一致；当前只认证原文/证明差异的存在，不认证一般强HK结论。",
+        "自动文本在p8–9丢失积分选择集合闭包的上横线；已以PDF像素核正。"
+      ],
+      "evidence_class": "source_statement_with_statement_proof_mismatch",
+      "checked_derivation": "已回看PDF p8–9：逐泛函夹逼先得到x*g的标量HK可积，再用cwk(X)积分值得到g的HKP可积；证明并未给出Banach范数Henstock积分的gauge证书。不能把标量HK+弱Pettis积分代表元提升为强HK。"
+    }
+  ],
+  "visual_checks": [
+    {
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "images": [
+        "reviews/TEAM_LM/visual/P-a594f1076246b512-p8.png",
+        "reviews/TEAM_LM/visual/P-a594f1076246b512-p9.png"
+      ],
+      "findings": "p8(ii)明确HK，p9证明明确HKP；结论与James处闭包上横线均可见。"
+    }
+  ],
+  "proof_verification": "source_statement_proof_mismatch_not_strong_HK_certified",
+  "constant_dependence": {
+    "explicit": "No quantitative selector modulus is asserted. Selection existence/integrability is conditional on scalar measurability, cwk(X) values and the corresponding integrability hypotheses; the source does not provide finite-dimensional measurable-selection error bounds."
+  },
+  "endpoint_limits": {
+    "scope": "Complete finite measure spaces; weakly compact convex-valued multifunctions; arbitrary Banach target in the cited scalar-measurability results. Integrability notions vary by section (Pettis/HKP/gauge/variational).",
+    "not_established": "No theorem identifies measurable selectors with optimizers, proves Borel/analytic selector under arbitrary graph assumptions, or handles nonattainment of a pointwise supremum."
+  },
+  "unchecked": [
+    "Original fullread card directly referenced; this file contains only correction/recheck."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": false,
+    "covered_lines": 105,
+    "source_lines": 1009,
+    "required_content_lines": 748,
+    "covered_content_lines": 68,
+    "reported_status": "scoped_source_recheck",
+    "source": "corpus/papers/P-a594f1076246b512/paper.md"
+  },
+  "review_source": "reviews/TEAM_LM/evidence/P-a594f1076246b512.json",
+  "review_input_sha256": "3da1add8292a49e69b498b891e45c457ad8a34a0af73a65f0342282fd3656529"
+}

@@ -1,0 +1,258 @@
+{
+  "paper_id": "P-90d38802ec47287e",
+  "observed_title": "Uniform Cramér moderate deviations and Berry–Esseen bounds for a supercritical branching process in a random environment",
+  "authors": [
+    "Xiequan Fan",
+    "Haijuan Hu",
+    "Quansheng Liu"
+  ],
+  "version": "arXiv:2002.00310v1, 23 PDF pages (2020-02-04 version date shown in PDF)",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 899,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "scope": "逐段阅读全文：模型与站立假设、主定理/推论、Sections 4–8 全部证明、应用、参考文献；共检查 paper.md 的全部 899 基行。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "H01": "direct: Theorem 2.1 gives uniform Cramér moderate-deviation relative-tail bounds for log population growth over all historical starting indices n0 in a supercritical BPRE; its proof separates the iid environment random walk from the martingale-normalized population ratio. It is a model-specific result, not a general triangular-array theorem.",
+    "H03": "adjacent: the proof uses the nonnegative BPRE martingale W_n and the ratio W_{n0+n}/W_{n0}, including a lower-tail harmonic-moment argument. It does not state/prove the Fan–Grama–Liu general martingale Cramér expansion for arbitrary martingale differences; the H03 connection is a proof ingredient only."
+  },
+  "definitions": [
+    {
+      "name": "BPRE normalized population martingale",
+      "statement": "With Π_n=∏_{i=0}^{n−1}m_i, W_n=Z_n/Π_n is a nonnegative martingale under quenched and annealed laws; the paper writes ln Z_n=Σ_{i=1}^n X_i+ln W_n, X_i=ln m_{i−1} iid. For a historical start, W_{n0,n}=W_{n0+n}/W_{n0} is also a nonnegative martingale with mean one.",
+      "source_lines": [
+        153,
+        181,
+        338,
+        345
+      ],
+      "pdf_pages": [
+        4,
+        5,
+        9
+      ]
+    },
+    {
+      "name": "standardized historical log-growth",
+      "statement": "Z_{n0,n}=[ln(Z_{n0+n}/Z_{n0})−nμ]/(σ√n), n0∈N. Here μ=E ln m_0>0, σ²=Var(ln m_0)∈(0,∞).",
+      "source_lines": [
+        187,
+        204
+      ],
+      "pdf_pages": [
+        5
+      ]
+    },
+    {
+      "name": "standing assumptions and A1",
+      "statement": "The paper assumes p_0(ξ_0)=0 a.s., σ²∈(0,∞), and E[(Z_1/m_0)ln^+ Z_1]<∞. A1 adds E exp(λ_0 X)<∞ for X=ln m_0 and some λ_0>0.",
+      "source_lines": [
+        78,
+        82,
+        162,
+        186
+      ],
+      "pdf_pages": [
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "name": "A2 stretched-exponential environment moment",
+      "statement": "There are λ_0>0 and γ∈(0,1/6] such that E exp{λ_0 X^{4γ/(1−2γ)}}<∞; under this, Theorem 2.2 widens the normal-tail equivalence range to x∈[0,o(n^γ)).",
+      "source_lines": [
+        232,
+        239
+      ],
+      "pdf_pages": [
+        6
+      ]
+    },
+    {
+      "name": "A3 finite environment moment",
+      "statement": "There exists ρ∈(0,(√5−1)/2) such that E X^{2+ρ}<∞.",
+      "source_lines": [
+        259,
+        268
+      ],
+      "pdf_pages": [
+        7
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 2.1 (uniform Cramér moderate deviations)",
+      "assumptions": [
+        "Standing BPRE assumptions (1.1) and (2.1): p_0(ξ_0)=0 a.s., σ²∈(0,∞), and E[(Z_1/m_0)ln^+Z_1]<∞.",
+        "A1: E exp(λ_0X)<∞ for some λ_0>0, X=ln m_0.",
+        "Uniformity is over n_0∈N; n≥2."
+      ],
+      "statement": "For 0≤x<√ln n, |ln{P(Z_{n0,n}≥x)/(1−Φ(x))}|≤C(1+x³)ln n/√n. For √ln n≤x=o(√n), |ln{P(Z_{n0,n}≥x)/(1−Φ(x))}|≤Cx³/√n. Both estimates also hold for lower-tail ratio P(−Z_{n0,n}≥x)/Φ(−x).",
+      "start_line": 187,
+      "end_line": 204,
+      "pdf_pages": [
+        5
+      ],
+      "proof_steps": [
+        "Set η_{n,i}=(X_i−μ)/(σ√n) and W_{n0,n}=W_{n0+n}/W_{n0}; decompose Z_{n0,n}=Σ_{i=1}^nη_{n,n0+i}+ln(W_{n0,n})/(σ√n).",
+        "Upper bound: split the event into an iid-sum deviation and a positive log-martingale-ratio deviation. Apply iid Cramér bounds to the sum and Markov plus E W_{n0,n}=1 to the ratio, separately treating x ranges [0,1], (1,√ln n), and [√ln n,o(√n).",
+        "Lower bound: A1 gives a harmonic moment E W^{−a}<∞ for some a>0. Split off a negative log-ratio event; use the iid lower Cramér estimate and conditional Jensen W_n=E[W|F_n] to bound negative moments of W_n.",
+        "Combine the upper and lower relative-tail bounds and repeat the decomposition for −Z."
+      ],
+      "gaps": [
+        "Constants C are unspecified and may change; the paper does not optimize them.",
+        "The range and uniformity are for this BPRE structure; translating them to general arrays requires a new uniform Cramér argument and control of the non-iid remainder.",
+        "This result is a relative logarithmic error bound, not by itself a general Edgeworth expansion with explicit higher-order coefficients."
+      ]
+    },
+    {
+      "label": "Corollary 2.2 (uniform normal-tail equivalence)",
+      "assumptions": [
+        "Theorem 2.1 assumptions, uniformly over n_0∈N."
+      ],
+      "statement": "P(Z_{n0,n}≥x)/(1−Φ(x))=1+o(1) uniformly for x∈[0,o(n^{1/6})); likewise P(−Z_{n0,n}≥x)/Φ(−x)=1+o(1).",
+      "start_line": 224,
+      "end_line": 230,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "Take x=o(n^{1/6}) in the applicable Theorem 2.1 range so the displayed logarithmic relative error tends to zero.",
+        "Convert the vanishing logarithmic error to relative equivalence using |e^y−1|≤e^{|y|}|y|."
+      ],
+      "gaps": [
+        "This is a corollary under A1; it does not extend to a larger range without stronger moment conditions."
+      ]
+    },
+    {
+      "label": "Theorem 2.2 (Linnik-type range under A2)",
+      "assumptions": [
+        "Standing BPRE assumptions (1.1),(2.1).",
+        "A2 with γ∈(0,1/6] and λ_0>0 as stated above.",
+        "Uniformity over n_0∈N."
+      ],
+      "statement": "The two-sided normal-tail equivalence of (2.7) holds uniformly for x∈[0,o(n^γ)).",
+      "start_line": 234,
+      "end_line": 239,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "First prove an exponential moment for the negative log of the martingale limit W on {W≤1}, using φ(t)=E e^{−tW}, an imported deviation bound for Π_n, and a tail-integral argument.",
+        "Use W_n=E[W|F_n] and convexity/Jensen to transfer the negative-log moment to W_n uniformly in n.",
+        "Decompose log-growth into the iid environment sum and log(W_{n0,n}); combine iid moderate deviations with Markov bounds for positive/negative log-ratio terms.",
+        "Treat 0≤x≤1 separately and combine upper/lower estimates; the proof explicitly refers to prior results for the product-mean deviation bound."
+      ],
+      "gaps": [
+        "A2’s exponent and γ range are essential to the stated range; it is not merely a finite-moment condition.",
+        "The argument depends on cited product-mean deviation estimates; it is not self-contained in the sense of reproving every cited lemma."
+      ]
+    },
+    {
+      "label": "Theorem 2.3 (Berry–Esseen bound under A1)",
+      "assumptions": [
+        "Theorem 2.1 standing assumptions and A1.",
+        "n≥2; uniform over n_0∈N."
+      ],
+      "statement": "For each sign, sup_{x∈R}|P(±Z_{n0,n}≤x)−Φ(x)|≤C ln(n)/√n.",
+      "start_line": 248,
+      "end_line": 258,
+      "pdf_pages": [
+        7
+      ],
+      "proof_steps": [
+        "The proof is given for Z; split the real line into four ranges x>n^{1/8}, 0≤x≤n^{1/8}, −n^{1/8}≤x≤0, and x<−n^{1/8}.",
+        "Use Theorem 2.1 and Gaussian tail bounds in the two central ranges; use monotonicity and one endpoint tail estimate in each outer range.",
+        "The negative-sign statement is asserted to follow similarly, with details omitted."
+      ],
+      "gaps": [
+        "The proof for the negative sign is omitted as “similar”.",
+        "The authors state the extra ln n factor relative to the iid random-walk rate and conjecture it may be removed."
+      ]
+    },
+    {
+      "label": "Theorem 2.4 (Berry–Esseen bound under A3)",
+      "assumptions": [
+        "Standing BPRE assumptions (1.1),(2.1).",
+        "A3: E X^{2+ρ}<∞ for some ρ∈(0,(√5−1)/2), uniformly over n_0∈N."
+      ],
+      "statement": "For either sign, sup_{x∈R}|P(±Z_{n0,n}≤x)−Φ(x)|≤C n^{−ρ/2}.",
+      "start_line": 259,
+      "end_line": 271,
+      "pdf_pages": [
+        7
+      ],
+      "proof_steps": [
+        "Lemma 8.1 proves E|ln W|^p<∞ and sup_n E|ln W_n|^p<∞ for p∈(0,1+ρ), via a Nagaev bound on Π_n and a tail integral.",
+        "For the upper CDF deviation, compare with an iid centered environment sum shifted by the negative part of ln W_{n0,n}; use iid Berry–Esseen and Markov with p=ρ/(1−ρ), which satisfies p<1+ρ exactly for ρ<(√5−1)/2.",
+        "For the lower CDF deviation, use the positive part of ln W_{n0,n}; Markov and E W_{n0,n}=1 bound its large tail exponentially, then combine with the iid Berry–Esseen bound.",
+        "Repeat symmetrically for −Z."
+      ],
+      "gaps": [
+        "The statement uses ρ in the rate. However, the proof pages 20–21 print n^{δ/2} in intermediate/final displays (8.5),(8.9),(8.13), although δ is not defined in this paper; read this as an unresolved source notation/typographical inconsistency, not as an independently verified corrected proof.",
+        "The endpoint ρ=(√5−1)/2 is excluded; the proof’s moment choice requires the strict inequality.",
+        "The argument cites Nagaev and prior BPRE results for key tail/martingale estimates; those citations were not independently read here."
+      ]
+    }
+  ],
+  "constant_dependence": "Theorem 2.1 and 2.3 use unspecified C and σ in normalized variables; Theorem 2.4 uses C depending on the BPRE law/moment parameters (not uniform over a class of environments). No explicit numerical constants or optimization are supplied. In the proof of Theorem 2.4, the printed δ/rho inconsistency further prevents treating the derivation as independently checked.",
+  "endpoint_limits": [
+    "Theorem 2.1’s second range is x=o(√n), not x≤c√n.",
+    "Normal-tail equivalence under A1 is x=o(n^{1/6}); under A2 it is x=o(n^γ), γ≤1/6.",
+    "A3 permits only 0<ρ<(√5−1)/2, strict at the upper endpoint.",
+    "Uniformity in n0 is specifically for BPRE historical increments, and relies on the ratio W_{n0+n}/W_{n0}."
+  ],
+  "reusable_methods": [
+    "Separate an iid environmental sum and a martingale-normalized remainder before applying tail asymptotics; this is a model-specific decomposition pattern, not a theorem for arbitrary dependent arrays.",
+    "For a historical start, normalize the population martingale by W_{n0}; use EW_{n0,n}=1 for positive log-ratio tails and harmonic/negative-log moments for the opposite direction.",
+    "A range-split proof can turn relative moderate-deviation estimates into uniform Kolmogorov bounds, but the omitted symmetric details and source δ inconsistency must be retained as caveats.",
+    "H03 migration is limited to recognizing where a martingale component appears; an arbitrary cube-scale filtration must separately establish adaptedness, conditional mean zero, predictable variance, and the actual expansion hypotheses."
+  ],
+  "unchecked": [
+    "Full text read does not constitute independent verification of every argument or cited external result. In particular, the imported iid Cramér, Nagaev, BPRE harmonic-moment, and martingale convergence results were not separately audited against their original sources.",
+    "No independent proof was produced for a general triangular-array moderate-deviation theorem or the Fan–Grama–Liu martingale expansion; those are outside this paper’s proved scope.",
+    "The formula transcription was visually checked on PDF pages 5–7 and 21. Other equations were checked against extracted text, but not individually rendered."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 899,
+    "source_lines": 899,
+    "required_content_lines": 681,
+    "covered_content_lines": 681,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-90d38802ec47287e/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-90d38802ec47287e.json",
+  "review_input_sha256": "387212460c81b5f32ffbb20d8ac45fc4297c4eb56f21666de015c10c3098f8e6"
+}

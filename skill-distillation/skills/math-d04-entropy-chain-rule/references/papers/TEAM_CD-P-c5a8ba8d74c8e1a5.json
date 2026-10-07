@@ -1,0 +1,281 @@
+{
+  "paper_id": "P-c5a8ba8d74c8e1a5",
+  "observed_title": "A chain rule for the quantum relative entropy",
+  "authors": [
+    "Kun Fang",
+    "Omar Fawzi",
+    "Renato Renner",
+    "David Sutter"
+  ],
+  "version": "Supplied PDF arXiv:1909.05826v1, 12 September 2019; 12 pages. Attachment filename year2020 is not silently used as PDF version year.",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 704,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "scope": "全12页704行逐行读：定义、Prop3.1/3.2完整证明、Remark3.3反例、AEP Lem3.4、Thm3.5完整证明、Cor3.7、Remarks3.6/3.8/3.9、adaptive discrimination、致谢与全部26条参考。无附录。PDFp4–9数学页已渲染核对，未固定字符截断。"
+    }
+  ],
+  "topic_relevance": {
+    "D04": "adjacent：量子relative entropy channel chain inequality；经典KL链式等式p1只是外引Cover–Thomas背景。使用regularized channel项，不能写成一般经典条件概率法则的独立文献证明。"
+  },
+  "definitions": [
+    {
+      "name": "state relative entropy",
+      "statement": "D(ρ||σ)=trρ(logρ−logσ)若suppρ⊆suppσ，否则∞；ρ为density，σ允许PSD未归一化。Dmax定义ρ≤2^λσ，因此本篇数值及平滑界使用base2；转nats全部D乘ln2，不能混入自然对数规格不注明。",
+      "source_lines": [
+        27,
+        42,
+        110,
+        117
+      ],
+      "pdf_pages": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "stabilized and non-stabilized channel divergences",
+      "statement": "D(E||F)=max_{φ_RA∈S(A⊗A)}D((I⊗E)φ||(I⊗F)φ)；barD(E||F)=max_{φ_A}D(Eφ||Fφ)。Dreg和barDreg分别取n^{-1}相应tensor n-use divergence极限；不可删bar或当n=1。",
+      "source_lines": [
+        62,
+        82,
+        117,
+        124
+      ],
+      "pdf_pages": [
+        2
+      ]
+    },
+    {
+      "name": "amortized channel entropy",
+      "statement": "DA(E||F)=sup_{all finite R,φ,ω} [D(Eφ||Fω)−D(φ||ω)]。R维数不受本篇界定；TEAM有限值调用只取Dinput finite避免∞−∞。",
+      "source_lines": [
+        127,
+        137
+      ],
+      "pdf_pages": [
+        3
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Proposition3.1: author numerical nonadditivity construction",
+      "start_line": 150,
+      "end_line": 244,
+      "pdf_pages": [
+        3,
+        4,
+        5
+      ],
+      "assumptions": [
+        "E=A_(.3,0), F=A_(.5,.9) generalized amplitude damping qubit channels；Kraus与Choi矩阵p3–4。",
+        "单次通过Pauli-Z covariance外引[15]归约diagonalρR；double-use候选diag(.8,0,0,.2)。"
+      ],
+      "statement": "作者报告D(E⊗E||F⊗F)>2D(E||F)，并由D≤Dreg≤DA得naive single-letter chain inequality失败。",
+      "proof_steps": [
+        "作者single-use使用Matlab fminbnd和图得.9176并断言<.92；double candidate报1.9362。",
+        "TEAM行为数值复现base2：p=.8355064903,D=.9176269832,double candidate1.9361546499,diff.1009006835。"
+      ],
+      "gaps": [
+        "原文及TEAM浮点/grid/local优化未给single-use全局上界的区间/有理认证；不把图像或10001点grid称exact proof。",
+        "Dreg≤DA依赖[25]的operational结果未独立全文重证。"
+      ]
+    },
+    {
+      "label": "Proposition3.2: smooth max chain with partial-trace factorization",
+      "start_line": 270,
+      "end_line": 326,
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "assumptions": [
+        "finite-dimensional A=A1⊗A2、ρstate、σPSD；E TPCP、F CP。",
+        "存在CP R使F=R∘trA1；任意G factorization不能直接取代partial trace。",
+        "TEAM有效域0<ε<1、0<ε′<1，m∈N且δ=mε+sqrt(mε)+ε′<1（source定义smooth ball要求ε<sqrt(trρ)）；源statement包括ε=1，证明在该端点除trace并用−log(1−ε)不具有限操作意义。"
+      ],
+      "statement": "Dmax^δ(E(ρ)^⊗m||F(σ)^⊗m)≤mDmax^ε(ρA2||σA2)+max_ν Dmax^ε′(E(ν)^⊗m||F(ν)^⊗m)−m log2(1−ε)。",
+      "proof_steps": [
+        "选择smooth marginalω，利用purified-distance extension得到ρeps，trρeps≥1−ε，再normalizedνε=ρeps/trρeps。",
+        "F partial trace factorization把marginaloperator bound传给output；CP order monotonicity给τ domination。",
+        "Purified distance三项界ε′、sqrt(mε)、mε合计δ。"
+      ],
+      "gaps": [
+        "purified-distance lifting/monotonicity外引[20,21,23]未独立证全部。",
+        "源ε=1和δ≥1的字面域与其初定义不匹配，TEAM只使用内域。"
+      ]
+    },
+    {
+      "label": "Remark3.3: arbitrary G strengthening fails",
+      "start_line": 327,
+      "end_line": 334,
+      "pdf_pages": [
+        6
+      ],
+      "assumptions": [
+        "E=I,F=a I,ρ=|0><0|,σ=|1><1|，0<a<1。",
+        "G(X)=(1−a)tr(X)|2><2|+aX，R压到span{0,1}，F=R∘G；source写states上的affine形式，channel按trace-linear extension理解。",
+        "平滑预算小到仍无法抹去orthogonal support。"
+      ],
+      "statement": "一般TPCP G虽可factorize F，smooth partial-trace chain不能任意推广；output smoothDmax∞而两个拟议右侧项有限。",
+      "proof_steps": [
+        "相互正交ρ、σ使Eρ和Fσ支持不包含，足够小平滑仍∞；共同erasure部分使G的smooth comparison有限。"
+      ],
+      "gaps": [
+        "需注明a与平滑ε区别；本篇同符号ε承担channel parameter与smoothing，操作时分开。"
+      ]
+    },
+    {
+      "label": "Lemma3.4: finite-dimensional quantum smooth AEP (external)",
+      "start_line": 340,
+      "end_line": 355,
+      "pdf_pages": [
+        6
+      ],
+      "assumptions": [
+        "ρstate、σPSD且有效支持逆幂/有限µ；0<ε<1，n≥2g(ε)，g=log2(2/ε²)。"
+      ],
+      "statement": "n^{-1}Dmax^ε(ρ^⊗n||σ^⊗n)≤D(ρ||σ)+4 log2(µ)sqrt(g(ε))/sqrt(n)，µ=1+trρ^{3/2}σ^{-1/2}+trρ^{1/2}σ^{1/2}。下界极限对ε_n∈(0,1),lim ε_n<1作者报告。",
+      "proof_steps": [
+        "upper引用Tomamichel[20,22,21]；lower引用[24,11]，本篇无重证。"
+      ],
+      "gaps": [
+        "µ和support依赖不可省；不是无维数/状态依赖统一常数。"
+      ]
+    },
+    {
+      "label": "Theorem3.5: regularized quantum channel chain",
+      "start_line": 363,
+      "end_line": 472,
+      "pdf_pages": [
+        7,
+        8
+      ],
+      "assumptions": [
+        "finite-dimensional A,B，ρstate、σPSD；E TPCP、F CP且Dmax(E||F)<∞。",
+        "有限非平凡case suppρ⊆suppσ；否则右侧∞按extended inequality处理。",
+        "strengthened版本A1⊗A2并有CP R使F=R∘trA1。"
+      ],
+      "statement": "D(Eρ||Fσ)≤D(ρ||σ)+barDreg(E||F)；factorized版本可用D(ρA2||σA2)替换input项。",
+      "proof_steps": [
+        "先用Prop3.2于n-fold maps，再对m-fold states调用AEP，reference state项常数µ固定。",
+        "Dmax tensor additivity给logµ′≤nC；C=log2(1+2^{Dmax/2}+tr sqrt(E(I))sqrt(F(I)))有限且不依赖m,n，但依赖maps/dimensions。",
+        "选择m=n,ε_n=1/(9n),ε′=1/9，δ=5/9<1；n≥2g(ε_n)最终成立，误差趋0。",
+        "output为n²个复制，除n²并取AEP下界；rhs取barDreg。"
+      ],
+      "gaps": [
+        "使用外引AEP、channelDmax additivity、matrixoperator monotonicity和regularized limit存在。",
+        "barDreg不可任意用D(E||F)替换。源证明p7将sqrt g放宽成g不影响极限但保持最终公式实际界。"
+      ]
+    },
+    {
+      "label": "Corollary3.7 and source attainment remark",
+      "start_line": 476,
+      "end_line": 503,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "assumptions": [
+        "E TPCP、F CP；sup over全部finite-dimensional R及有效statepair，避∞−∞。",
+        "TEAM主要使用Dmax finite的非平凡域；若Dmax∞的extension需另说明Choi支持不含时divergence∞，本卡不冒用有限proof。"
+      ],
+      "statement": "DA(E||F)=Dreg(E||F)作者报告；它是supremum值等式。源紧接说存在states使chain等号，但无R维数界或sup attainment证明，TEAM不据此返回确切optimizer。",
+      "proof_steps": [
+        "≤由Thm3.5用于I_R⊗maps，barDreg(I_R⊗E||I_R⊗F)≤Dreg(E||F)。",
+        "≥依赖asymmetric channel discrimination operational interpretation[25]，非本篇独立纯代数证明。"
+      ],
+      "gaps": [
+        "unbounded finite R的sup值等式不能单独推出maximum attained；sourcep9 existence claim留缺口。",
+        "源statement未重复Dmax finite；有限证明与extended∞域区别另列。"
+      ]
+    },
+    {
+      "label": "Remarks3.8/3.9 and asymmetric discrimination scope",
+      "start_line": 505,
+      "end_line": 591,
+      "pdf_pages": [
+        9,
+        10
+      ],
+      "assumptions": [
+        "single-letter仅外引证明additive的special classes：classical-quantum、full unitary covariance、F normalized replacer。",
+        "若Belavkin–Staszewski松弛，保support/generalized inverse及新散度定义。",
+        "operational result为asymmetric quantum discrimination，n→∞且type-I error随后ε→0；不是固定finite n或symmetric Chernoff。"
+      ],
+      "statement": "作者给special additive classes Dreg=D；BS散度给更弱single-letter bound；adaptive与parallel在该asymmetric asymptotic regime exponent相等。",
+      "proof_steps": [
+        "external[2,15]支持classes；[9]为当时to-appear未给paperID，外引可计算性未独立确认。",
+        "DA=Dreg与外引[25] exponent interpretations合用得结论。"
+      ],
+      "gaps": [
+        "不移植成所有entropic interfaces的exact conditional chain law；finite-n/symmetric adaptive advantage仍可能。"
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "statement": "所有Dmax smoothing为base2；转nats乘ln2。AEP4 logµ sqrtg/sqrtn依赖states/support；Thm3.5 C依赖maps、Dmax和dimension而非n,m。Smoothingδ=mε+sqrt(mε)+ε′，chosen5/9，−m log(1−ε)必须保留。",
+    "source_lines": [
+      270,
+      294,
+      340,
+      350,
+      427,
+      471
+    ],
+    "pdf_pages": [
+      5,
+      6,
+      8
+    ]
+  },
+  "endpoint_limits": [
+    "σ不必trace1，generalizedD可负；现D04probability接口不可混入未归一化σ却仍用KL非负。",
+    "Dmax finite是Thm3.5主要域；support不含时∞表达避免∞−∞。",
+    "ε=1 normalizedρeps可能零trace，δ≥1超source early smooth definition；只用有效内域。",
+    "R任意finite但无统一维数界，sup不自动达到。",
+    "regularization和stabilization是不同操作；barDreg与Dreg不可乱换。",
+    "base2 source numeric若记为nats须乘ln2。"
+  ],
+  "reusable_methods": [
+    "channel map提升替换经典conditional distribution，但保partial-trace factorization与regularization。",
+    "先证明smoothmax finite-copy inequality，再用AEP及共同误差预算取极限。",
+    "将状态相关AEP常数统一受channelDmax控制，再选m,n,ε_n使每项消失。",
+    "numericalnonadditivity candidate可作压力案例，但upper bound需另作global certification。"
+  ],
+  "unchecked": [
+    "外引purifieddistance/AEP/additivity/operational discrimination未逐篇全文阅读。",
+    "Prop3.1没有独立exact global upper certificate；本地数值复现另见behavior/quantum-numeric.json。",
+    "sup attainment remark未由已读证明支持。",
+    "全12页阅读和p4–9PDF核验不意味着全部外引或数值主张已证。"
+  ],
+  "proof_verification": "finite-scope proof bookkeeping read and formula checked; external dependencies and numerical global certification remain open",
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 704,
+    "source_lines": 704,
+    "required_content_lines": 467,
+    "covered_content_lines": 467,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-c5a8ba8d74c8e1a5/paper.md"
+  },
+  "review_source": "evidence/reviews/TEAM_CD/evidence/P-c5a8ba8d74c8e1a5.json",
+  "review_input_sha256": "d7e7fe5ac697f8f51d5ec2b91d1651b0753674b9e8cb27e1985797ece912d60e"
+}

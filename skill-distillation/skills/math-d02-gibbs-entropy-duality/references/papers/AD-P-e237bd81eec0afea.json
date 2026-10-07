@@ -1,0 +1,223 @@
+{
+  "paper_id": "P-e237bd81eec0afea",
+  "observed_title": "Gibbs variational principles and Boltzmann irreversible theorem",
+  "authors": [
+    "Mário J. de Oliveira",
+    "Silvio R. Salinas"
+  ],
+  "version": "arXiv:2608.04129v1；本地导出首页附有2026年预印本标记。",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 504,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "D02": "direct",
+    "D04": "adjacent"
+  },
+  "definitions": [
+    {
+      "term": "微正则能壳与熵",
+      "definition": "相空间能壳 R={E≤H(q,p)≤E+ΔE} 的相体积 W=∫_R dqdp 假设有限；微正则密度 ρ_m=1/W·1_R。对支持在 R 且归一化的相空间密度，Gibbs 熵 S[ρ]=−k∫ρ lnρ。",
+      "source_ranges": [
+        {
+          "start_line": 91,
+          "end_line": 122,
+          "pdf_pages": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "term": "正则 Gibbs 密度与自由能",
+      "definition": "在温度 T>0、配分函数 Z=∫e^{−H/kT}dqdp 有限时，ρ_c=e^{−H/kT}/Z；对归一化密度 ρ，F[ρ]=∫Hρ+kT∫ρ lnρ，正则自由能 F_c=−kT ln Z。",
+      "source_ranges": [
+        {
+          "start_line": 123,
+          "end_line": 171,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Gibbs–Bogoliubov 试探界",
+      "definition": "取试探 Hamiltonian H₀、配分函数 Z₀ 与密度 ρ₀=Z₀^{-1}e^{−H₀/kT}，则 F[ρ₀]=F₀+E_{ρ₀}(H−H₀)，F₀=−kT lnZ₀。",
+      "source_ranges": [
+        {
+          "start_line": 156,
+          "end_line": 208,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Boltzmann–Kolmogorov 转移率",
+      "definition": "作者提出的连续相空间动力学把 Hamiltonian Poisson 流与跳跃生成元相加。内部速率 w^b(x′,x)≥0 对称且只连等能/同动量状态；热浴速率满足 w^c(x′,x)/w^c(x,x′)=exp(−(H(x′)−H(x))/kT)。",
+      "source_ranges": [
+        {
+          "start_line": 278,
+          "end_line": 413,
+          "pdf_pages": [
+            5,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "term": "相对熵 Lyapunov 函数",
+      "definition": "在热浴模型中 Ψ=F−F_c=kT∫ρ ln(ρ/ρ_c)dx，即相对于 canonical Gibbs 状态的 KL 散度乘 kT。",
+      "source_ranges": [
+        {
+          "start_line": 416,
+          "end_line": 478,
+          "pdf_pages": [
+            7
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Gibbs 第一定分原理（作者式(7)、(10)–(15)）",
+      "assumptions": [
+        "可测能壳 R={E≤H≤E+ΔE} 的相体积 W 满足 0<W<∞。",
+        "ρ 是支持在 R、相对于相空间 Lebesgue 测度的归一化概率密度；相对熵/熵积分存在（零密度可用极限约定）。"
+      ],
+      "statement": "微正则均匀密度 ρ_m=1_R/W 使 Gibbs 熵最大：S_m=k lnW 且 S_m−S[ρ]=kD(ρ||ρ_m)≥0，等号当且仅当 ρ=ρ_m 几乎处处。",
+      "start_line": 91,
+      "end_line": 139,
+      "pdf_pages": [
+        2
+      ],
+      "proof_steps": [
+        "将作者的 W′ 写法改写为 KL 散度：D(ρ||ρ_m)=∫_Rρ ln(Wρ)dqdp。",
+        "由凸函数不等式 a ln a≥a−1 或 KL 非负得该量≥0；直接代入均匀密度得到 S_m=k lnW。",
+        "本次独立重算 S_m−S=k∫ρ ln(ρ/(1/W))，与原文能壳推导相符。"
+      ],
+      "gaps": [
+        "作者通过 ρ=1/W′ 的正密度形式推导；ρ 在正测度集取零时需按 KL 的扩展值/极限解释，原文未逐项讨论。"
+      ]
+    },
+    {
+      "name": "Gibbs 第二变分原理与 Gibbs–Bogoliubov 界（式(21)、(26)）",
+      "assumptions": [
+        "T>0，配分函数 Z=∫e^{−βH} 有限且非零；ρ 是归一化密度并有定义良好的能量与熵。",
+        "试探版本另要求 Z₀ 有限非零，ρ₀=Z₀^{-1}e^{−βH₀} 可作概率密度，并且 E_{ρ₀}|H−H₀| 可积。"
+      ],
+      "statement": "正则密度 ρ_c=Z^{-1}e^{−βH} 最小化 F[ρ]=E_ρH+kT∫ρlnρ，F_c=−kTlnZ；精确差为 F[ρ]−F_c=kT D(ρ||ρ_c)≥0。任意 Gibbs 试探密度 ρ₀ 还给出 F_c≤F₀+E_{ρ₀}(H−H₀)。",
+      "start_line": 123,
+      "end_line": 208,
+      "pdf_pages": [
+        2,
+        3
+      ],
+      "proof_steps": [
+        "作者对密度作归一化约束的 Lagrange 乘子说明正则分布是自由能极小者；对能量固定的微正则约束不需保留，因为乘子温度已吸收约束。",
+        "独立核验精确差：lnρ_c=−βH−lnZ，代入 kT∫ρln(ρ/ρ_c) 即得 F−F_c。",
+        "对 ρ₀=Z₀^{-1}e^{−βH₀}，逐项重写 F[ρ₀]=F₀+E_{ρ₀}(H−H₀)，再用 F_c≤F[ρ₀] 得 Gibbs–Bogoliubov 上界。",
+        "原文另以 Jensen：Z=Z₀ E_{ρ₀}e^{−β(H−H₀)}≥Z₀e^{−βE_{ρ₀}(H−H₀)}，取对数给同一结论。"
+      ],
+      "gaps": [
+        "这是有限分配函数下经典统计力学密度形式的 Gibbs 变分原理，不等同于对任意概率测度/可测函数的 Donsker–Varadhan 变分公式。",
+        "Mean-field ANNNI 部分用试探 Hamiltonian与外引文献讨论相图；本文未重做引用工作中的全部相图推导。"
+      ]
+    },
+    {
+      "name": "第一 Boltzmann 不可逆定理（对称内部跃迁，式(50)–(53)）",
+      "assumptions": [
+        "相空间密度满足作者的 Boltzmann–Kolmogorov 方程：Hamiltonian Poisson 项加内部跳跃积分项。",
+        "内部跳跃核 w^b(x′,x)≥0，w^b(x′,x)=w^b(x,x′)，且跃迁只发生于等能/守恒动量状态；需要积分有限、无边界通量等微分与换序条件。"
+      ],
+      "statement": "Hamiltonian 项对 Gibbs 熵导数贡献为零；内部跃迁使 dS/dt=(k/2)∫∫w^b(x′,x)[ρ(x′)−ρ(x)]ln(ρ(x′)/ρ(x))dxdx′≥0。",
+      "start_line": 280,
+      "end_line": 345,
+      "pdf_pages": [
+        5
+      ],
+      "proof_steps": [
+        "对 S=−k∫ρlnρ 求导；归一化使单独的 ∫∂tρ 项为零。",
+        "Hamiltonian Liouville 项由相空间散度为零/分部积分消失，因此孤立可逆流保持 Gibbs 熵。",
+        "将跃迁项与交换 x↔x′ 的积分取平均，得到二点对称形式。",
+        "利用 (a−b)ln(a/b)≥0 与 w^b≥0 得熵非减。"
+      ],
+      "gaps": [
+        "文章提出其 Boltzmann–Kolmogorov 动力学框架；没有证明生成元在所需函数空间上的适定性。",
+        "对称核可使微正则测度平稳，但仅能量守恒与对称性不能保证该平稳态唯一；需可达性/不可约性等遍历假设。"
+      ]
+    },
+    {
+      "name": "第二 Boltzmann 不可逆定理（热浴下自由能下降，式(54)–(68)）",
+      "assumptions": [
+        "同时允许内部对称等能跃迁 w^b 与热浴跃迁 w^c。",
+        "热浴率满足 detailed-balance 比值 w^c(x′,x)/w^c(x,x′)=e^{−β(H(x′)−H(x))}；能量/熵积分与换序合法。"
+      ],
+      "statement": "canonical 密度 ρ_c 为该方程的平稳解；作者由二点对称化得到 dF/dt≤0，且 Ψ=F−F_c=kT D(ρ||ρ_c)≥0，故 Ψ 是单调非增的相对熵 Lyapunov 量。",
+      "start_line": 346,
+      "end_line": 478,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "proof_steps": [
+        "内部跃迁满足对称等能率，故其对 canonical 密度的跃迁积分消失；Hamiltonian 项亦因 ρ_c 是 H 的函数而消失。",
+        "热浴详细平衡给 w^c(x′,x)ρ_c(x)=w^c(x,x′)ρ_c(x′)，验证 canonical 平稳性。",
+        "计算 dU/dt 与 dS/dt，并相减形成内部率项和热浴详细平衡流量项。",
+        "将各项改写成 −(kT/2)(a−b)ln(a/b) 的双积分，故非正；Ψ 的 KL 恒等式给出下界0。"
+      ],
+      "gaps": [
+        "平稳性和单调 Lyapunov 性本身不证明所有初值收敛到唯一 canonical 密度；作者结论中称长时间到平衡，但未在本文加入不可约性或建立收敛率。",
+        "数值上若密度为零，log 比值需用极限/相对熵扩展处理；需另列可积性假设。"
+      ]
+    }
+  ],
+  "constant_dependence": "核心变分式是精确相对熵恒等式/非负性，不含维数或结构常数。热力学量的标度因子为 k、kT；Jensen/Gibbs–Bogoliubov 界常数为1。",
+  "endpoint_limits": [
+    "Gibbs 第一定分原理在有限体积能壳和相对于相空间体积测度的密度设定中陈述；要求能壳相体积有限。",
+    "Gibbs 第二变分原理要求 T>0 与有限配分函数；试探界是对选定 H₀ 之 Gibbs 密度的 upper bound。",
+    "Boltzmann–Kolmogorov 方程是作者采用的经典相空间动力学：Hamiltonian 流加具有对称/详细平衡性质的跳跃率；没有一般马尔可夫过程存在唯一性定理。",
+    "第4节 ANNNI 均场与pair近似主要是已知统计物理示例，部分相图细节明确指向外文献。",
+    "全文8页，包括 Section II–VIII、均场例子、两类动力学推导及参考文献，均已读；PDF pp.2–3、6–7视觉核验公式。"
+  ],
+  "reusable_methods": [
+    "把 Gibbs 自由能极小性写成相对熵恒等式 F−F_c=kT D(ρ||ρ_c)，同时得到下界与等号刻画。",
+    "用 Gibbs–Bogoliubov 变分界把复杂哈密顿量的真实自由能上界化为试探分布下的平均能量差。",
+    "对满足对称详细平衡的跃迁生成元，将熵/自由能导数与变量交换对称化，化为 (a−b)ln(a/b)≥0 的点态非负性。",
+    "可将 Ψ=F−F_c 用作平衡候选的 Lyapunov 函数；但要声称长期收敛到唯一平衡，仍需遍历/紧性/生成元理论。"
+  ],
+  "unchecked": [
+    "全文8页逐段通读，包括第IV节 ANNNI 均场示例、Liouville、Boltzmann–Kolmogorov 与热浴部分及参考文献。",
+    "已独立重算 Gibbs/KL 恒等式、Gibbs–Bogoliubov 代数和对称跃迁熵增/自由能降的证明结构；未独立建立相空间生成元的存在性、唯一性或遍历收敛。",
+    "未检查该 2026 预印本后续版本、勘误或外部引用；只依据本地 arXiv:2608.04129v1。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 498,
+    "source_lines": 504,
+    "required_content_lines": 437,
+    "covered_content_lines": 437,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-e237bd81eec0afea/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-e237bd81eec0afea.json",
+  "review_input_sha256": "9f4eb1181596ebec794cc3f80c403afb2dce0dd7696963150339290d19facae9"
+}

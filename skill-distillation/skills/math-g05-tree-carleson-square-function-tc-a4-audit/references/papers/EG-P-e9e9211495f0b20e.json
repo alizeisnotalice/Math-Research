@@ -1,0 +1,172 @@
+{
+  "paper_id": "P-e9e9211495f0b20e",
+  "observed_title": "Carleson Measure Estimates and ε-Approximation for Bounded Harmonic Functions, without Ahlfors Regularity Assumptions",
+  "authors": [
+    "John Garnett"
+  ],
+  "version": "arXiv:2006.10682v3；首页日期 2020-07-26。",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 1558,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "G01": "adjacent",
+    "G05": "adjacent"
+  },
+  "definitions": [
+    {
+      "term": "平方函数 Carleson 估计 (a)",
+      "definition": "对所有有界调和函数 u，局部积分 r^{-d}∫_{B(x,r)∩Ω}|∇u(y)|²dist(y,∂Ω)dy ≤ C||u||∞²，中心 x∈∂Ω、尺度 0<r<diam∂Ω。",
+      "source_ranges": [
+        {
+          "start_line": 86,
+          "end_line": 120,
+          "pdf_pages": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "ε-逼近性质 (b)",
+      "definition": "对任意有界调和 u 与 0<ε<1，有连续/可微近似 g，使 ||u−g||∞<ε，且每个边界球内 r^{-d}∫_{B(x,r)∩Ω}|∇g|dy≤Cε。",
+      "source_ranges": [
+        {
+          "start_line": 86,
+          "end_line": 120,
+          "pdf_pages": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "几何假设",
+      "definition": "corkscrew 条件 (1.4)、容量密度条件 CDC (1.7)、Ahlfors 正则及 uniformly rectifiable (UR) 边界分别承担不同定理方向的假设，不能混为一般 Carleson 盒条件。",
+      "source_ranges": [
+        {
+          "start_line": 89,
+          "end_line": 172,
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem 1.1：Carleson/ε-逼近性质与 UR 超域边界的关系",
+      "assumptions": [
+        "Ω⊂R^{d+1}, d≥1。A向只需存在 Ω̃⊂Ω 且 ∂Ω⊂∂Ω̃、∂Ω̃ uniformly rectifiable。",
+        "B向还要求 Ω 满足 corkscrew 条件 (1.4) 与 CDC (1.7)，并假设对所有有界调和函数平方函数估计 (a) 或 ε-逼近性质 (b) 成立。"
+      ],
+      "statement": "A向：若存在上述 UR 边界超域 Ω̃，则 Ω 满足 (a)、(b)。B向：在 corkscrew+CDC 假设下，(a) 或 (b) 任一成立都推出存在这样的 Ω̃。",
+      "start_line": 173,
+      "end_line": 182,
+      "pdf_pages": [
+        4
+      ],
+      "proof_steps": [
+        "A向按 Whitney 立方体分近 UR 边界与远离边界两部分；近区比较距离后调用 HMM2 的 UR 估计，远区用 Harnack 控制梯度并用 Hausdorff 维数控制 Whitney 立方体打包。",
+        "对 ε-逼近，先在靠近 UR 边界处用相应近似，再在远区用调和函数控制并按尺度拼接/平滑。",
+        "B向为更深的 corona 构造：从 (a) 或 (b) 导出调和测度几乎全质量事件的 packing，构造有适当边界的 Christ-David 型集合和 corona 分解，再添加球面片构造 UR 超域。全文读过这些分节；未独立重做容量势论和所有几何构造。"
+      ],
+      "gaps": [
+        "结果是调和函数、边界几何与特定容量/corkscrew 假设下的定理；它不是抽象空间中的任意 Carleson 盒测试。",
+        "常数依赖几何参数及假设中的常数，不能据此宣称维数无关或对所有度量空间一致。"
+      ]
+    },
+    {
+      "name": "Theorem 1.2：高调和测度的互不交边界集 packing",
+      "assumptions": [
+        "Ω 满足 corkscrew 条件 (1.4) 和 CDC (1.7)。",
+        "存在 ε₀>0，依赖这些几何常数；对 0<ε<ε₀，点 p_j∈Ω∩B(x,R)，边界集 E_j 两两不交，且 ω(p_j,E_j,Ω)≥1−ε。"
+      ],
+      "statement": "若 (a) 或 (b) 成立，则 Σ_j dist(p_j,∂Ω)^d ≤ C(ε)R^d。反向：若该高调和测度 packing 对小 ε 成立，则 (a)、(b) 成立。",
+      "start_line": 183,
+      "end_line": 202,
+      "pdf_pages": [
+        4
+      ],
+      "proof_steps": [
+        "由 CDC 将调和测度逃逸概率与容量估计相连，并构造每个事件支持的局部调和测试函数。",
+        "通过高调和测度及 E_j 两两不交，使候选球/尺度在边界附近形成 packing；(a) 时由梯度平方估计控制，(b) 时利用近似函数的梯度一阶积分估计控制。",
+        "反向先由定量 packing 得到边界上端 d-维增长，再构造修改过的 Christ-David cubes、密度代价停止与 corona 分解，得到 (a)、(b)。",
+        "以上为作者证明结构的完整阅读摘要；未独立复核每一步容量比较常数。"
+      ],
+      "gaps": [
+        "常数 C(ε) 可能强烈依赖 ε、corkscrew 与 CDC 参数；定理不声称 ε 无关。",
+        "使用的是边界两两不交集和调和测度近全质量条件，与普通立方体平均的最大函数分布估计不同。"
+      ]
+    }
+  ],
+  "constant_dependence": "定理 1.2 的 ε₀ 依赖 (1.4)、(1.7) 常数；C(ε) 依赖 ε 与相关结构常数。定理 1.1 两向的常数承接 UR/corkscrew/CDC 与维数参数，文中没有给通用数值最优常数。",
+  "endpoint_limits": [
+    "Theorem 1.1 的逆向需要 corkscrew 与 CDC；正向需存在 UR 超域边界。",
+    "边界 Ahlfors 正则未作全篇的基本假设，但仍要容量密度条件和 corkscrew 条件。",
+    "该几何 PDE 论证只可为 Carleson packing/corona 方法提供邻近构件，不等同于一般体积盒条件的必要充分判别。",
+    "31页全文读至参考文献；没有另列附录。"
+  ],
+  "reusable_methods": [
+    "把局部能量 Carleson 估计拆到 Whitney 尺度，再分近边界和远边界处理。",
+    "通过几乎全调和测度的互不交边界事件导出尺度 packing；反向由 packing 构建修改后的边界立方体与 corona 分解。",
+    "使用停止分解时保留每个层级的几何尺寸、事件互不交和容量常数依赖。"
+  ],
+  "unchecked": [
+    "未独立重做各容量势论引理及 UR 超域构造的所有几何细节。",
+    "将此类边界事件 packing 转成项目中任意中心立方体的 testing condition 是迁移猜想，不由本文推出。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1552,
+    "source_lines": 1558,
+    "required_content_lines": 1025,
+    "covered_content_lines": 1025,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-e9e9211495f0b20e/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-e9e9211495f0b20e.json",
+  "review_input_sha256": "674983704e28f1d2af5c4257dc81d3a33ab9d7cb576b9f96b8f9ad1038cfb851"
+}

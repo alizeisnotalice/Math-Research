@@ -1,0 +1,133 @@
+{
+  "paper_id": "P-b270e46ae6c10545",
+  "observed_title": "Distance Stability for the Integral Hardy and Carleman Inequalities",
+  "authors": [
+    "Gangsong Leng"
+  ],
+  "version": "arXiv:2606.15056v1; 2026-06-13; PDF 9 pages",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 546,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "M03",
+    "decision": "direct",
+    "basis": "The paper proves explicit deficit identities and distance stability for sharp Hardy/Carleman inequalities, including a theorem that controls a local weighted distance to a virtual extremizer family when no genuine extremizer exists. This directly matches near-extremizer stability/ridigity methods, while the exact estimates concern these integral inequalities rather than the target problem's own inequality."
+  },
+  "definitions": [
+    "For Hf(x)=x⁻¹∫₀ˣ f(t)dt, the Hardy deficit is Δ_H(f)=(p′)^p∫f^p−∫(Hf)^p, where p′=p/(p−1).",
+    "The Hardy equality equation p′f=Hf has formal solutions c x^(−1/p), not in Lp(0,∞) unless trivial; these are virtual extremizers.",
+    "The Carleman geometric mean is G_f(x)=exp(x⁻¹∫₀ˣlog f(t)dt), with deficit Δ_C(f)=e∫f−∫G_f.",
+    "The local distance D_x(f)^2=inf_{c≥0} x⁻¹∫₀ˣ(√(t f(t))−√c)^2dt is the variance of √(t f(t)) on (0,x), equivalently a weighted Hellinger distance to c/t."
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "p>1 and p′=p/(p−1).",
+        "f≥0 and f∈Lp(0,∞).",
+        "The proof first assumes f is compactly supported and locally bounded to justify endpoint integrations; the statement then extends to general nonnegative Lp functions by truncation, with infinite terms interpreted in the extended sense."
+      ],
+      "statement": "With h=Hf and Φ_p(r)=r^p−1−p(r−1)≥0, the deficit has the identity Δ_H(f)=∫₀∞ h(x)^p Φ_p(p′f(x)/h(x)) dx (the integrand is set to zero where h=0). In particular the sharp Hardy inequality follows. For p=2 this specializes to the exact square identity 4∫f²−∫(Hf)²=∫(2f−Hf)².",
+      "start_line": 141,
+      "end_line": 160,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "Put F(x)=∫₀ˣ f and h=F/x, so h′=(f−h)/x.",
+        "Differentiate x h^p and integrate using the compact-support/local-boundedness endpoint conditions to obtain ∫h^p=p′∫ f h^(p−1).",
+        "Let r=p′f/h. The previous relation gives ∫(r−1)h^p=0; subtracting this zero term from the deficit produces ∫[r^p−1−p(r−1)]h^p.",
+        "Convexity of r↦r^p gives Φ_p≥0; p=2 gives Φ_2=(r−1)^2 and hence the residual square."
+      ],
+      "gaps": [
+        "The endpoint integration proof is first justified for compactly supported, locally bounded f; passage to arbitrary nonnegative Lp data is stated as standard truncation and not detailed in the paper.",
+        "This is an exact deficit identity for this Hardy averaging operator, not a general metric stability theorem for arbitrary sharp inequalities.",
+        "The formal equality family is not contained in Lp(0,∞), so global Lp distance to a nonzero extremizer is not appropriate."
+      ],
+      "proof_start_line": 161,
+      "proof_end_line": 223,
+      "proof_pages": [
+        3,
+        4
+      ],
+      "author_claim": "Theorem 1 identifies the deficit with a nonnegative convexity remainder; Theorem 2 gives the p=2 square identity.",
+      "checked_derivation": "I checked the derivative, endpoint integration, cancellation of ∫(r−1)h^p, and p=2 specialization. PDF page 4 was visually checked for equations (4)–(5) and the exact square; the derivation is separate from the author’s unexpanded truncation argument."
+    },
+    {
+      "assumptions": [
+        "f:(0,∞)→(0,∞) is measurable.",
+        "∫₀∞ f(t)dt<∞.",
+        "log f is integrable on every finite interval."
+      ],
+      "statement": "Define D_x(f)^2=inf_{c≥0} x⁻¹∫₀ˣ(√(t f(t))−√c)^2dt. Then the Carleman deficit obeys Δ_C(f)≥e∫₀∞ D_x(f)^2 dx/x. The distance vanishes on an interval exactly when tf(t) is almost everywhere constant there, i.e. f(t)=c/t there.",
+      "start_line": 307,
+      "end_line": 325,
+      "pdf_pages": [
+        6
+      ],
+      "proof_start_line": 329,
+      "proof_end_line": 361,
+      "proof_pages": [
+        6
+      ],
+      "proof_steps": [
+        "First use the stability form of AM–GM: for u>0, its arithmetic mean A and geometric mean M satisfy A−M≥x⁻¹∫₀ˣ(√u−√M)^2.",
+        "Set u(t)=t f(t); since x⁻¹∫₀ˣlog t=log x−1, its geometric mean is M(x)=xG_f(x)/e.",
+        "Tonelli and the exact tail integral ∫_t^∞ x^(−2)dx=1/t show ∫₀∞ A(x)dx/x=∫₀∞f(t)dt; therefore Δ_C=e∫(A−M)dx/x.",
+        "Apply the AM–GM stability lemma at each x; the comparison value √M(x) is one admissible constant in D_x, so the squared error dominates D_x(f)^2 and integration gives the result.",
+        "Minimizing over constants identifies D_x² as the variance of √(tf) and yields the equality condition stated in the remark."
+      ],
+      "gaps": [
+        "The result uses strict positivity of f and local integrability of log f as well as global L1 integrability; it does not state a version for arbitrary nonnegative f with zeros.",
+        "The proof exchanges nonnegative integrals using Tonelli and uses a specific exact tail identity; the corresponding discrete inequality does not retain the same exact remainder, as the author notes.",
+        "The distance is local in x and integrated with dx/x; it does not imply a single global Lp closeness to a non-integrable extremizer c/t."
+      ],
+      "author_claim": "Theorem 3 proves a global deficit lower bound by the scale-integrated local weighted Hellinger distance to c/t; Remark 3 rewrites that distance as a variance.",
+      "checked_derivation": "PDF pages 6 and 7 were visually inspected. I checked the weighted substitution u=tf, the factor M=xG_f/e, Tonelli’s kernel ∫_t∞x⁻²dx=1/t, the comparison with the infimum D_x, and the variance minimizer α_x=average √(tf)."
+    }
+  ],
+  "constant_dependence": "The Hardy identity is exact for each p>1, with the convex remainder Φ_p; for p=2 the coefficient is exactly one on ∫(2f−Hf)². The Carleman distance inequality has coefficient e and no dimension parameter. The optional local Poincaré estimate in Remark 2 depends quadratically on the chosen logarithmic interval length |I|²/π²; it is not a global coercivity constant.",
+  "endpoint_limits": [
+    "Both inequality sharp constants are not attained by nonzero functions in their natural spaces; the equality profiles are virtual extremizers.",
+    "For p=2, the deficit controls a residual and, after logarithmic change of variables, only a local distance on finite logarithmic intervals; the profile itself is not globally L².",
+    "For Carleman, c/t is not globally integrable; the valid stability metric is the scale-local weighted distance D_x integrated with dx/x.",
+    "The Carleman proof relies on the exact continuous tail identity; the paper says the discrete analogue generally yields only an estimate and less tidy weights."
+  ],
+  "reusable_methods": [
+    "For an inequality without an attained optimizer, solve its equality equation and identify a virtual-extremizer family before defining a stability metric.",
+    "Search for a deficit identity by differentiating a weighted primitive, integrating by parts with explicit endpoint assumptions, and subtracting a zero residual moment to expose a convexity gap.",
+    "For an averaged inequality, compare the deficit integrand to a local distance at each scale, then integrate through Tonelli; verify the exact tail kernel before asserting the global coefficient.",
+    "Use logarithmic coordinates when scaling creates a translation-invariant defect, and restrict Poincaré control to finite intervals when the extremizer is not globally integrable."
+  ],
+  "unchecked": [
+    "The general truncation extension in Theorem 1 is stated but not elaborated; I did not supply a separate proof of the limiting passage.",
+    "The Bianchi–Egnell references and related literature were not independently reviewed; the paper’s own proofs and claims were read in full.",
+    "PDF pages 4, 6, and 7 were visually checked for principal formulas/proofs; other pages were read as page-structured text without image-by-image comparison."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 542,
+    "source_lines": 546,
+    "required_content_lines": 384,
+    "covered_content_lines": 384,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-b270e46ae6c10545/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/P-b270e46ae6c10545.json",
+  "review_input_sha256": "33897e6251ccfd70cb2fc4bad942eba13e1c86a12da26606ee93ec444ee47e74"
+}

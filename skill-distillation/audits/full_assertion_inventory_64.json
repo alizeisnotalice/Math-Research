@@ -1,0 +1,3354 @@
+{
+ "schema": "full-assertion-inventory-r12",
+ "units": {
+  "execution_steps": 405,
+  "case_claims": 128,
+  "boundary_lines": 388,
+  "total": 921,
+  "verified_subassertions_linked": 34
+ },
+ "items": [
+  {
+   "id": "A01",
+   "skill": "math-a01-fractional-normalization",
+   "tier": "部分可用",
+   "n_steps": 8,
+   "steps": [
+    {
+     "n": 1,
+     "head": "先定义实际单比值f/g、可行集K与优化方向；逐可行点检g>0，零分母与趋零面另处理，不由fractional名称推断算法。"
+    },
+    {
+     "n": 2,
+     "head": "精确CCT设s=x/g(x),t=1/g(x)>0，s/t∈K且tg(s/t)=1，目标tf(s/t)，逆映射x=s/t逐约束核对。线性与一般多项式perspective表示不可混用。"
+    },
+    {
+     "n": 3,
+     "head": "全文来源P-33450c5f81cf2615把tg=1松成tg≥1时还要求f≥0，沿射线τ≥1目标按τ缩放才不改善最小值；若f可负，该松弛可能无界。值相等不等于最优点集合相同。"
+    },
+    {
+     "n": 4,
+     "head": "其凸多项式达到定理需要K非空、f≥0、g>0、f/−g/h_i凸且sup_Kg<∞；CCT强对偶另检原约束Slater，不能从正分母或凸性单独推。"
+    },
+    {
+     "n": 5,
+     "head": "其SOS渐近层级还需有界K、Slater及g_min>0，保L>域半径、C>2/g_min的罚常数与每层下界方向；无通用速率。首层精确仅SOS-convex版本，普通凸不够。"
+    },
+    {
+     "n": 6,
+     "head": "矩恢复需来源具体rank-one与非零y₀条件或SOS-convex Jensen；浮点近rank-one不认证可行/最优。固定λ residual f−λg的方向保留，不对鲁棒sup/inf任意交换。"
+    },
+    {
+     "n": 7,
+     "head": "若实际问题是binary多比值、鲁棒比值、proximal迭代、projective凸包或chance constraint，先读[分模型来源与定位](references/frozen-source-locators.md)。保共同bin"
+    },
+    {
+     "n": 8,
+     "head": "齐次归一化先检缩放保全部约束；中心立方体接口固定M_c f(x)=sup_{Q:center(Q)=x}|Q|⁻¹∫_Q|f|，维数、阈值、尺度和同输入耦合保留，CCT不证明其解析界。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "g(x)=x 且 X 含0：不能直接用1/g；若讨论中心立方体子问题，也不能把最大尺度端点或只做局部线性化的解称为全局证书。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "X=[0,1]，最大化 x/(1+x)：正分母下可用 residual 或线性分式 Charnes–Cooper，最优值1/2由x=1达到。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 9,
+   "verified_assertion_ids": [
+    "A01-CASE-01"
+   ],
+   "n_verified": 1,
+   "status_default": "pending"
+  },
+  {
+   "id": "A02",
+   "skill": "math-a02-outer-relaxation-budget",
+   "tier": "部分可用",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "先写全部共同选择约束并证明x∈X⇒T(x)∈Y；对最大化外放松提供上界，最小化提供下界。"
+    },
+    {
+     "n": 2,
+     "head": "若F(x)≤aG(Tx)+ε(x)，列明a≥0、sup_X ε是否有限及各误差预算；仅在逆向构造已证时讨论紧性。"
+    },
+    {
+     "n": 3,
+     "head": "norm-induced cut 对不合格点y取 ||r(y)_+||/L≤||x−y||；由单调范数及全局Lipschitz条件证明每个真实可行x仍保留，L不得低估。"
+    },
+    {
+     "n": 4,
+     "head": "区分作者定理与算法输出：紧Ω及有效cut给可行聚点；每个master均全局求解才升级为最优聚点，局部求解一般不能。"
+    },
+    {
+     "n": 5,
+     "head": "有限步精确可行停止与r_j≤ε的残差停止分开；ε残差不是目标值ε误差。原文oracle复杂度依赖维数及域几何，且不是实际求解时间界。"
+    },
+    {
+     "n": 6,
+     "head": "把模型、离散、截断误差分别加入统一预算，保留n、层数、极限顺序；数值解需回验真实约束。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "把X缩成子集后报告原问题上界：方向错误，要求重新证明集合包含。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "X={0,1}⊂Y=[0,1]，F(x)=x：sup_X F≤sup_Y F=1；方向可直接核对。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 4,
+   "verified_assertion_ids": [
+    "A02-SHARP-01"
+   ],
+   "n_verified": 1,
+   "status_default": "pending"
+  },
+  {
+   "id": "A03",
+   "skill": "math-a03-compactness-concentration",
+   "tier": "待证据",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "固定空间、拓扑及归一化，区分弱、弱星、强收敛；先检验目标在该拓扑的所需半连续性。"
+    },
+    {
+     "n": 2,
+     "head": "自由测度族须证明tightness；L¹密度族须另查一致可积及空间尾部，不由质量1推出强L¹紧性。"
+    },
+    {
+     "n": 3,
+     "head": "对紧域固定边缘耦合，可由边缘尾概率并集界证明耦合tightness；弱极限保留边缘。连续紧域cost由一致连续控制网格包络误差。"
+    },
+    {
+     "n": 4,
+     "head": "P-f683dde51b3674de Theorem4.2仅是[0,1]²上均匀边缘copula、连续cost与dyadic min/max包络的源定理（PDF pp14–15）；任意固定边缘的tightness可另证，但不是该定理原假设。"
+    },
+    {
+     "n": 5,
+     "head": "有限原子归约与序列紧性分开：P-9d82bdd7c870e801需要限制稳定凸锥、极点上确界条件及原子代表仍可行，不能由原子数界推出近极值列收敛。"
+    },
+    {
+     "n": 6,
+     "head": "测试逃逸、集中、分裂及对称性；若需平移/缩放后提子列，重验全部约束。无紧性则输出显式缺陷而不声称极值达到。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "仅给出||f_k||₁=1便要求强L¹收敛：指出缺少一致可积与紧性。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "概率测度δ_{1/k}支撑于紧集[0,1]，故族紧且弱收敛到δ₀、质量保持为1；这不声称其相对Lebesgue测度有L¹密度或发生强L¹收敛。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 2,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "A04",
+   "skill": "math-a04-shared-nonanticipative-mip",
+   "tier": "待证据",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "把对同一真实输入的所有选择写成共享变量，场景特有变量只表示观察后可调整的补救决策。"
+    },
+    {
+     "n": 2,
+     "head": "按时刻和可观测历史划分场景信息集；每个尚不可区分的场景块必须满足相同决策。"
+    },
+    {
+     "n": 3,
+     "head": "可将成对等式表示为情景图边；每个信息块的诱导子图连通，当且仅当等式可沿路径传递到整块。"
+    },
+    {
+     "n": 4,
+     "head": "若用稀疏生成算法，逐一验证所有信息块连通；同阶重叠事件集可能共享边，不能未经证明就宣称边数全局最小。"
+    },
+    {
+     "n": 5,
+     "head": "为区分事件的逻辑变量推导有效big-M界或用指示约束；通用区分函数需按具体模型定义。"
+    },
+    {
+     "n": 6,
+     "head": "记录模型是精确等价、内近似还是外放松；用小场景逐历史穷举验证非前视约束，并把求解器状态、间隙和容差回映原模型。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "时刻0的选择依赖时刻1才揭示的场景标签：指出前视并补非前视约束。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "两场景在时刻0不可区分：令x₀¹=x₀²，分叉后x₁¹与x₁²可不同。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "B01",
+   "skill": "math-b01-lagrange-farkas",
+   "tier": "待证据",
+   "n_steps": 10,
+   "steps": [
+    {
+     "n": 1,
+     "head": "最小化g≤0取λ≥0，L=f+Σλg+Σνh；先证明对每个原可行x及对偶可行乘子q(λ,ν)=inf_x L≤f(x)。"
+    },
+    {
+     "n": 2,
+     "head": "有限实矩阵Farkas形式明确为：b=Ax,x≥0，或存在y使Aᵀy≥0且bᵀy<0，二者恰一成立；零矩阵另直接处理。用精确运算核验方向及严格负margin。"
+    },
+    {
+     "n": 3,
+     "head": "P-a9029e19a7586865用有限生成锥闭性及最近点构造y；证书conditioning依赖dist(b,AR₊ⁿ)，不提供统一正margin。"
+    },
+    {
+     "n": 4,
+     "head": "混合LP来源P-0f4471d96cc82d4f采用A_Ix≥b_I、Aᵀλ=c、λ_I≥0：精确gap=cᵀx−λᵀb=λᵀ(Ax−b)。证书充分性不需rank/Slater；该文顶点与必要乘子证明另需可行、rank(A)=n及目标下有界"
+    },
+    {
+     "n": 5,
+     "head": "有限非负线性系统P-8b6157c4cbb03498：Ax=b,x≥0与Aᵀu≤0,bᵀu=ρ>0恰一可行；最小残差z=b−Ax*给bᵀz=||z||²，非零时ρz/||z||²是归一证书。nullspace参数化x=x̄−Kᵀy的显式双射"
+    },
+    {
+     "n": 6,
+     "head": "锥/非线性/无限指标情形先定义对偶锥、拓扑和乘子空间；弱对偶、零间隙及对偶达到分别验收。"
+    },
+    {
+     "n": 7,
+     "head": "锥LP来源P-08ccea72ef78920a用h_c(b)与h_c**(b)区分原/对偶值：有限值下零gap检h_c在b的下半连续，dual达到另需∂h_c(b)非空。保拓扑、连续A及正对偶锥；PDF的bar h_c proper不能误抄"
+    },
+    {
+     "n": 8,
+     "head": "DC-composite来源P-18e365da3a6d391f的sup_λ inf_μ必须保留一个共同λ。其Theorem3.6印刷∀μ∃λ不足以推出∃λ∀μ，缺量词交换证明时不调用等价。"
+    },
+    {
+     "n": 9,
+     "head": "输出原与对偶可行候选及gap；浮点残差不冒充精确不可行证书。"
+    },
+    {
+     "n": 10,
+     "head": "非闭锥来源P-5ae169908ed70fca限Hilbert与bounded linear A、bounded closed convex generator K∋0：cl A(coneK)的零support方向测试只证明∀ε>0近似可解"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "只见原问题凸便断言强对偶：要求Slater或适用的闭性/资格依据。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "要求x≥1且x≤0：相加得到0≤-1，给出乘子(1,1)的精确不可行证书。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 7,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "B02",
+   "skill": "math-b02-semi-infinite-exchange",
+   "tier": "待证据",
+   "n_steps": 8,
+   "steps": [
+    {
+     "n": 1,
+     "head": "按统一符号定义v(x)=sup_T g(x,t)；先列紧性、连续性及最坏索引是否达到。原文SIPP采用g≥0与min_U g，翻译时两侧一起变号。"
+    },
+    {
+     "n": 2,
+     "head": "以嵌套有限索引T_k求master；最小化的restricted minima单调不降且≤全问题值，SDP下界是额外一层松弛。"
+    },
+    {
+     "n": 3,
+     "head": "每次全局分离找到最坏违约索引并加入T_k；采样或局部分离不能认证所有索引。"
+    },
+    {
+     "n": 4,
+     "head": "P-ecb91aed2e290a23的精确收敛需要紧X、连续g及其证明用到的紧U、非空master/separation最优解和每次全局求解；据此只报有限精确最优或最优聚点。"
+    },
+    {
+     "n": 5,
+     "head": "若分离值≤ε，只能报告残差ε可行；另有目标gap证书时才报告ε最优。moment提取需flat truncation，不由低阶PSD推出。"
+    },
+    {
+     "n": 6,
+     "head": "普通SIP近似分离可用P-3580cf604bdcbfd2 Lemma2：紧X,Y、连续f,g、有限初始索引、每轮全局master及同一α∈(0,1)，要求g(x_k,y_k)≥α sup_Yg(x_k,y)>0，或认证sup≤0；仅每轮找"
+    },
+    {
+     "n": 7,
+     "head": "GSIP先区分g≥0或h̄>0的原问题与g≥0或h̄≥0的闭松弛；f*=f_L需另证。P-646526af87253fe6两反例说明全局GSIP LLP min g subject h̄≤0甚至每轮全局AUX LLP都不足以分离松弛SIP；"
+    },
+    {
+     "n": 8,
+     "head": "非紧U同次化先用closure(U₀)；替换为更大球面集合Ũ须核closed-at-infinity。否则对最小化是更强约束、值可能增大甚至不可行，不是等价变换。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "仅采t=0.5便认证x=0.5：t=1给出反例，拒绝全局可行性声明。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "x≥t对所有t∈[0,1]，最小化x：分离器取t=1，得到最优值1。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 3,
+   "verified_assertion_ids": [
+    "B02-SHARP-01"
+   ],
+   "n_verified": 1,
+   "status_default": "pending"
+  },
+  {
+   "id": "B03",
+   "skill": "math-b03-generalized-moments",
+   "tier": "部分可用",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "P-91433be844e70d18 (4)先把原未知分布P写成指定支撑的概率测度，明确h₀≡1,q₀=1及每个广义矩约束；变换后的Q则是有限非负测度，不能继续要求全域质量1。"
+    },
+    {
+     "n": 2,
+     "head": "P-91433be844e70d18 (5)将无条件事件概率/目标写成测度线性泛函；条件期望保分母P(Ξ)，逐可行P检P(Ξ)>0，单点正值不等于全族统一正下界。"
+    },
+    {
+     "n": 3,
+     "head": "P-91433be844e70d18 (6)条件比值设α=1/P(Ξ)>0,dQ=αdP：Q(Ω)=α且Q(Ξ)=1，Q不是一般概率；逆映射P=Q/α并检矩约束。Theorem1强对偶另需bounded g、uniform inf_P P("
+    },
+    {
+     "n": 4,
+     "head": "P-91433be844e70d18 (7)逐点majorant积分给弱对偶界；紧界须有可行极值分布或极值序列匹配。Prop1的均值方差例仅σ>0,t<μ给sup μ+σ²/(μ−t)，不达到；t≥μ为∞，不得称有限最大值。"
+    },
+    {
+     "n": 5,
+     "head": "P-91433be844e70d18 Theorem2仅对满足A1–A3和mixture-generated convex class的极端生成表示归约至≤m+1生成元（包含mass moment）；其Popescu外引cardinalit"
+    },
+    {
+     "n": 6,
+     "head": "P-91433be844e70d18 Theorem3的contextual DRO要保C1–C4及附加conic representability/Slater，非紧支持或事件概率趋零不可套紧性/正margin。若另用SOS/SDP，须另"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "均值 μ=0、标准差 σ=1、Ξ={X≥0}，却宣称 sup E[X|X≥0] 有限：原文 Proposition 1 的 t≥μ 分支为 +∞，可行尾部质量序列使条件均值发散。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "设均值 μ=2、标准差 σ=1、支持为实线、事件 Ξ={X≥1}。均值—方差广义矩问题给出 sup E[X|X≥1]=2+1/(2−1)=3；可用低原子从 1 下方逼近、另一原子趋于 3 构造可行极值序列，故这是未必达到的上确界。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 2,
+   "verified_assertion_ids": [
+    "B03-IDEN-01"
+   ],
+   "n_verified": 1,
+   "status_default": "pending"
+  },
+  {
+   "id": "B04",
+   "skill": "math-b04-qualification-facial-minimax",
+   "tier": "待证据",
+   "n_steps": 8,
+   "steps": [
+    {
+     "n": 1,
+     "head": "先判断目标问题确属有限维闭凸锥线性规划；若是一般minimax/测度问题，只将本文当作邻近面约化工具，不直接套强对偶结论。"
+    },
+    {
+     "n": 2,
+     "head": "将锥明确拆为K₁×K₂并指出K₂多面；逐侧检查Partial Polyhedral Slater：对偶slack须有s₁∈ri K₁、s₂∈K₂，原始侧则检查对应的ri(K₁*)点。"
+    },
+    {
+     "n": 3,
+     "head": "只有一侧最优值有限且另一侧满足对应PPS时，才按已证 Proposition 2 推零间隙和对侧达到；仅有可行点或弱Slater不能替代这些前提。"
+    },
+    {
+     "n": 4,
+     "head": "若无相对内点，按partial-polyhedral separation寻找x∈K*∩L⊥：区分<c,x><0的不可行证书与<c,x>=0、非正交块外分量的约化方向。每步验证包含原可行slack的face。"
+    },
+    {
+     "n": 5,
+     "head": "需要复杂度界时先计算各块ℓpoly(Kᵢ)，使用FRA-Poly的≤1+Σℓpoly(Kᵢ)步界；需最小奇异度时检查相对内部方向可实现性。"
+    },
+    {
+     "n": 6,
+     "head": "对sup/inf交换另列问题空间、凸凹性、闭性、紧性和适用的minimax定理；本论文的PPS/面约化结果自身不提供交换。"
+    },
+    {
+     "n": 7,
+     "head": "P-08ccea72ef78920a的四类资格条件要按Y0=span(A(P)−Q)及原拓扑逐一选择；Fréchet方案需P,Q,Y0闭且b∈icr像锥，有限维方案需dimY0<∞与icr。仍有−∞分支；仅有限值分支给零gap及dual达到"
+    },
+    {
+     "n": 8,
+     "head": "Hilbert generator来源P-5ae169908ed70fca的exact dual达到以共享normal及⟨v,x*⟩>0认证，逆向另需Ran(A*)闭；有限维非零共享normal或closed P都不充分。Prop4.1采用"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "只给出可行边界slack (s₁,s₂)=((1,1,0),(0,0))，便声称满足PPS或已恢复强对偶：s₁∉ri Q₃，且未证明有限值；应转而找分离证书或验证其他资格条件。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "取K₁=Q₃、K₂=R₊²，候选对偶slack s₁=(2,1,0)∈ri Q₃、s₂=(0,1)∈K₂（落在多面块边界）。若该锥线性问题对偶值有限，则满足文中PPS，可按Proposition 2推强对偶及原始达到。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "C01",
+   "skill": "math-c01-semidefinite-lifting",
+   "tier": "部分可用",
+   "n_steps": 5,
+   "steps": [
+    {
+     "n": 1,
+     "head": "先把原模型写清并验证可行性；对每个二次项用X=xxᵀ（复数用共轭转置）提升，使二次式成为trace线性式。"
+    },
+    {
+     "n": 2,
+     "head": "保留PSD、锚定/归一化、原约束的矩阵化版本与rank-one等价条件；若删去秩约束，明确得到的是外松弛并标注最优值界方向。"
+    },
+    {
+     "n": 3,
+     "head": "仅加入可由原约束逐项推出的Shor、RLT或SOC-RLT等有效约束；写出每条蕴含，不因更紧就声称等价。"
+    },
+    {
+     "n": 4,
+     "head": "需要简化多个锥约束时，可尝试辅助变量与同次化；逐项核实缩放可逆、变量投影不改变原可行目标，并处理可能的互补/边界面。"
+    },
+    {
+     "n": 5,
+     "head": "精确性须来自适用定理条件或极射线/秩一证明；近似求解时分开报告可行原变量值、SDP界、gap和矩阵秩/特征值比。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "一般SDP最优矩阵秩为2却直接设成xxᵀ：秩与PSD可行性不符，必须证明rank-one恢复或仅报告松弛界。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "来源两球实例：min xᵀQx+2qᵀx，n=2,m=2，Q=diag(−0.6,−0.44)，q=(−0.03,0)，c₁=0,ρ₁=1,c₂=(−0.3,−0.3),ρ₂=1。x*=(-1,0)满足两球且目标−0.54；作者exactness须β提升及ℓ₁ᵀWℓ₂=0。TEAM仅精确核此候选及目标，未运行原SDP实",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 2,
+   "verified_assertion_ids": [
+    "C01-CASE-01"
+   ],
+   "n_verified": 1,
+   "status_default": "pending"
+  },
+  {
+   "id": "C02",
+   "skill": "math-c02-completely-positive-copositive",
+   "tier": "部分可用",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "CP定义为有限和vvᵀ,v≥0；COP={A对所有x≥0有xᵀAx≥0}，trace配对下CP=COP*。先验证提升保留非负可实现性。"
+    },
+    {
+     "n": 2,
+     "head": "不把逐项非负PSD(DNN)普遍视为CP；需要可行非负分解或适用的低维定理。"
+    },
+    {
+     "n": 3,
+     "head": "P-8656e750bc1e0cf5以R₊ⁿ上独立均值1指数测度构造y_α=∏α_i!及C_d={A:M_d((xᵀAx)y)⪰0}。"
+    },
+    {
+     "n": 4,
+     "head": "方向为C₀⊇C₁⊇…⊇COP且∩C_d=COP；固定d可行仅是COP必要条件，不能当有限阶共正证书。无限交刻画依赖外引非紧支持矩增长定理。"
+    },
+    {
+     "n": 5,
+     "head": "对偶C_d*是CP的嵌套内逼近，保留PSD矩像的闭包及CP=cl(∪C_d*)；不能删cl或声称任意CP矩阵有限阶可表示。"
+    },
+    {
+     "n": 6,
+     "head": "写明PSD基大小binom(n+d,d)与阶数，不把渐近收敛说成速度或普遍有限终止；核验每个优化界方向与数值证书。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "高维DNN矩阵就称CP：要求CP分解或适用的低维等价依据。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "v=(1,2)≥0，vvᵀ=[[1,2],[2,4]]是CP；逐项检验定义。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [
+    "C02-IDEN-01a",
+    "C02-IDEN-01b",
+    "C02-IDEN-01c"
+   ],
+   "n_verified": 3,
+   "status_default": "pending"
+  },
+  {
+   "id": "C03",
+   "skill": "math-c03-moment-sos-certificates",
+   "tier": "待证据",
+   "n_steps": 7,
+   "steps": [
+    {
+     "n": 1,
+     "head": "先定义实际证书锥和次数截断，并区分多项式非负、SOS、模理想SOS及SOS层级等不同命题。"
+    },
+    {
+     "n": 2,
+     "head": "对于矩方法，写明矩变量y、支持和归一化，形成矩矩阵/局部化矩阵并检查所需次数。"
+    },
+    {
+     "n": 3,
+     "head": "对于SOS方法，使用单项式向量和PSD Gram矩阵；最小化下界检查p−γ的证书，最大化上界检查γ−p的证书。"
+    },
+    {
+     "n": 4,
+     "head": "约束集合需要乘子表示时逐项验证Positivstellensatz类型及其次数；有限阶证书与渐近收敛分开陈述。"
+    },
+    {
+     "n": 5,
+     "head": "调用层级收敛定理前核验紧性/Archimedean等具体假设；原子恢复另查平坦延拓条件。"
+    },
+    {
+     "n": 6,
+     "head": "数值Gram矩阵先视为候选；有理化后精确展开多项式或用区间界确认PSD与系数恒等。"
+    },
+    {
+     "n": 7,
+     "head": "若连接中心立方体极大算子，将算子目标保留为外层接口，并独立定义其空间、中心、尺度与可行立方体族；SOS证书只承担已证明的多项式子问题。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "数值Gram矩阵出现负特征值或仅在容差内半正定，却直接宣称精确SOS：要求精确可行矩阵/区间核验及系数恒等检查。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "p(x)=x²+1：p−1=x²为一项平方，给出全局最小值下界1并由x=0达到；这是纯多项式SOS证书，不依赖紧域假设。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "C04",
+   "skill": "math-c04-branch-and-bound",
+   "tier": "待证据",
+   "n_steps": 7,
+   "steps": [
+    {
+     "n": 1,
+     "head": "先选标准BnB或来源quasi-BnB，固定最小化/最大化方向。标准节点真界对整个子域有效；可行incumbent在最小化给ub、最大化给lb。"
+    },
+    {
+     "n": 2,
+     "head": "每个分支子域覆盖父域且边界不漏，标准最小化仅经认证lb(C)>ub才剪枝；保全局活动界、incumbent与停止间隙。"
+    },
+    {
+     "n": 3,
+     "head": "P-922909d5e8e47a30的qlb只须在含全局最小点的盒上≤f*，不能当任意盒的真下界；qlb(C)>ub排除含最小点，必须以保留至少一个全局最小点的归纳证明支撑剪枝。"
+    },
+    {
+     "n": 4,
+     "head": "qBnB(2)中心公式f(x_C)−L₂r²/2限开邻域无约束极小（梯度零）；盒边界需来源constrained取样规则，大盒可先qlb=−∞。L₂必须有效全局上界。"
+    },
+    {
+     "n": 5,
+     "head": "qBnB(3)限来源的无约束全局极小问题，需C²及有效Hessian-Lipschitz界。先确认闭球 B̄₂ᵣ(x₀)包含于开域；若不包含，来源置qlb(C)=−∞。Newton分支要求r>0、L₃>0；计算λ̄=max{0,5L₃r−λ"
+    },
+    {
+     "n": 6,
+     "head": "来源BFS有限终止需紧立方体、连续f、最长边二分及统一gap模量ψ(r)→0；维数收缩q_d=√((d−3/4)/d)，并无维数多项式复杂度。最终精确另需有限个非退化最小点。"
+    },
+    {
+     "n": 7,
+     "head": "P-deb72842d1067b4f原PDF完整，两栏续文的截断判断已撤回；Lemma3严格要求a≤c<d≤b。完整SOS层/收敛及外引仍待数学审核，见[完整性更正](references/source-completeness-corre"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "最大化节点上界0.3、incumbent0.25，却剪掉节点：不得剪枝。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "最大化x(1-x)，x∈[0,1]：候选x=1/2值1/4；节点界须≥该节点真实上确界。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 2,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "D01",
+   "skill": "math-d01-kantorovich-duality",
+   "tier": "待证据",
+   "n_steps": 7,
+   "steps": [
+    {
+     "n": 1,
+     "head": "先选择实际模型。静态正测度OT检总质量匹配及耦合；P-04672953a3d2f1c1的向量模型是Γ(μ)={π:P₁π−P₂π=μ}，π为向量测度，不能当两个概率边缘的正耦合。"
+    },
+    {
+     "n": 2,
+     "head": "向量KR来源限Polish度量X、有限维欧氏靶、μ(X)=0与一阶矩有限，成本∫d(x,y)d||π||；1-Lipschitz u给∫<u,dμ>≤成本。Theorems1–2以两点差测度、稠密性与Hahn–Banach得等距对偶及达值势"
+    },
+    {
+     "n": 3,
+     "head": "Theorem3的最优计划与势要求局部配对饱和；向量叶质量平衡另需存在两总变差边缘均AC的最优计划。m>1一般失败，不能删其正则性前提。"
+    },
+    {
+     "n": 4,
+     "head": "普通静态OT最小化中φ+ψ≤c给下界，可行耦合给上界；一般c的强对偶/势达到需另列匹配定理，度量向量KR定理不覆盖任意c或熵正则化。"
+    },
+    {
+     "n": 5,
+     "head": "带跳SOT来源P-6c8f421db0f3d713要求Θ闭凸、统一有界特征及sup_Θ∫_{|z|≤δ}|z|²F(dz)→0；L非负、可测、在(ω,θ)下半连续并对θ凸。仅在这些条件下调用值下半连续/凸及有限值最优律存在。"
+    },
+    {
+     "n": 6,
+     "head": "SOT对偶保留sup_{λ₁∈C_b}[∫λ₀^{λ₁}dμ₀−∫λ₁dμ₁]，λ₀^{λ₁}(x)=inf_P E[∫Ldt+λ₁(X₁)]。Markov投影只保一维边缘，不保路径联合律，降成本另需当前状态成本与特征凸性。"
+    },
+    {
+     "n": 7,
+     "head": "HJB另需Markov成本的时间状态一致连续与非局部比较；FPK返回过程律需superposition条件，真鞅另需一阶矩与b+∫(z−h(z))F=0。中心立方体共同捕获/因果约束的对偶与可实现耦合须独立证明。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "任意独立耦合代价当作最小值下界：该耦合只给上界，纠正方向。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "μ=δ₀，ν=δ₁，c=|x-y|：唯一耦合代价1，φ(x)=-x、ψ(y)=y给出对偶值1。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 2,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "D02",
+   "skill": "math-d02-gibbs-entropy-duality",
+   "tier": "部分可用",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "一般概率接口固定自然对数、Q和V，验证0<Z=∫e^VdQ<∞。在避免∞−∞的有效域构造dQ_V/dQ=e^V/Z，逐项核KL(P||Q_V)=KL(P||Q)−E_PV+logZ。"
+    },
+    {
+     "n": 2,
+     "head": "由KL非负得E_PV−KL(P||Q)≤logZ，等号候选Q_V需属于所允许的分布类；约束子类不能默认包含它。此概率代数是已检查构件，不能称来源原文给出任意测度的Donsker–Varadhan公式。"
+    },
+    {
+     "n": 3,
+     "head": "P-e237bd81eec0afea限经典相空间密度：有限非零能壳体积给S_m−S=kD(ρ||ρ_m)，T>0且Z有限给F[ρ]−F_c=kT D(ρ||ρ_c)，F_c=−kTlogZ。对数和能量/熵的积分域必须匹配。"
+    },
+    {
+     "n": 4,
+     "head": "Gibbs–Bogoliubov试探界另检H₀的有限Z₀及E_{ρ₀}|H−H₀|<∞，再写F_c≤F₀+E_{ρ₀}(H−H₀)；该上界方向与正指数收益自由能约定分开。"
+    },
+    {
+     "n": 5,
+     "head": "作者熵增/自由能降证明用对称或详细平衡跃迁、合法换序与无边界通量；Lyapunov单调及平稳性不保证唯一平衡或长时收敛。"
+    },
+    {
+     "n": 6,
+     "head": "带温度或β时从明确的势V=βF或V=−βH重新缩放，保留参考测度与单位；Z无穷、零温或无定义积分只报缺口。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "∫e^VdQ=∞仍将e^V归一化：指出不存在该概率分布。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "Q=(1/2,1/2)，V=(0,log3)：Z=2，Q_V=(1/4,3/4)，变分值log2。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [
+    "D02-IDEN-01"
+   ],
+   "n_verified": 1,
+   "status_default": "pending"
+  },
+  {
+   "id": "D03",
+   "skill": "math-d03-parameterized-free-energy",
+   "tier": "部分可用",
+   "n_steps": 8,
+   "steps": [
+    {
+     "n": 1,
+     "head": "从用户指定定义写出自由能，例如收益式β⁻¹log E_Qe^{βF}；固定β及符号，不因邻近物理来源取β=1就改变任务参数。"
+    },
+    {
+     "n": 2,
+     "head": "β>0且各量有定义时由D02给E_PF≤β⁻¹log E_Qe^{βF}+β⁻¹KL(P||Q)；β<0需重算乘除方向，β=0需有依据的极限。"
+    },
+    {
+     "n": 3,
+     "head": "邻近来源P-f3b651c69acac082是1D最近邻缺陷链，全文温度归一化β=1，ψ与ψ+P的二阶导有正上下界；其O(N⁻¹)热力学误差不是任意自由能弱式。"
+    },
+    {
+     "n": 4,
+     "head": "若实际模型吻合，以W(A)=sup_σ[σA−log∫e^{−ψ(y)+σy}dy]选倾斜σ=W′(A)，先将高维配分函数拆为凸对偶项和中心化独立键和密度比，再用局部极限估计；这些外引概率依赖保留。"
+    },
+    {
+     "n": 5,
+     "head": "粗粒化先在缺陷外求变分能再积分；无外力E∞(A,y)=W′(A)(A−y)，有限误差含(A−y)²/(N−1)。有h∈ℓ¹外力时保留|A||Σ_{i>N}h_i|和Σ_{i>N}|h_i|²，不能报无条件统一N⁻¹。"
+    },
+    {
+     "n": 6,
+     "head": "原文粗粒化证明有未定义Assumption7引用；谐波ψ(y)=αy²、P(y)=β_hy²限定α>0、β_h>0、N≥2（β_h非温度β），精确差的A²系数αβ_h²/[(α+β_h)(N(α+β_h)−β_h)]>0，故常数不能对无界A"
+    },
+    {
+     "n": 7,
+     "head": "邻近[首批冻结ROOT全文卡P-5f8081d7cee04454](references/papers/ROOT-P-5f8081d7cee04454.json)限独立对称符号与t∈ℓ¹，ψ_t(s)=Σlogcosh(st_i)。原The"
+    },
+    {
+     "n": 8,
+     "head": "只有任务允许且所有约束一致时另行优化β；中心立方体跨层预算须独立建立输入分布/指数可积性，不由1D物理降阶得到。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "任务要求β=2，却用β随层数趋零消去费用：要求恢复指定参数。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "β=2，F≡3，P=Q：自由能为3且弱式等号成立。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 3,
+   "verified_assertion_ids": [
+    "D03-CTX-01",
+    "D03-IDEN-01"
+   ],
+   "n_verified": 2,
+   "status_default": "pending"
+  },
+  {
+   "id": "D04",
+   "skill": "math-d04-entropy-chain-rule",
+   "tier": "部分可用",
+   "n_steps": 11,
+   "steps": [
+    {
+     "n": 1,
+     "head": "先选标准Borel等具有正规条件分布的空间，固定联合概率P、Q与KL(P||Q)方向；有限值推导先检P≪Q及必要可积性。"
+    },
+    {
+     "n": 2,
+     "head": "分解联合Radon–Nikodym密度比为P_X/Q_X与条件P_{Y|X}/Q_{Y|X}之积，在P_X权下积分，得D(P_XY||Q_XY)=D(P_X||Q_X)+∫D(P_{Y|x}||Q_{Y|x})P_X(dx)。"
+    },
+    {
+     "n": 3,
+     "head": "非有限值时使用扩展非负KL的链式定理或受控截断，不在分解中写未定义∞−∞；零P_X质量的条件版本无影响，Q零质量与绝对连续关系须处理。"
+    },
+    {
+     "n": 4,
+     "head": "多层重复用真实条件参考Q_{X_j|X_{<j}}及P前史权；Q相关时不能换成Q的独立边缘。无限层需说明一致的过程律、sigma代数和相对熵极限定理，不从形式有限求和推极限。"
+    },
+    {
+     "n": 5,
+     "head": "P-8692a72e4fbe27ed全文仅邻近证据：有限混合M=Σα_iP_i的熵凹性亏损等于Σα_iD(P_i||M)，即标签–样本互信息；不是一般条件链式法则的文献证明。"
+    },
+    {
+     "n": 6,
+     "head": "自然对数nats版本为D(P||Q)=∫₀¹χ²(P||(1−s)P+sQ)ds/s及D(μ_C||μ)=ln(1/μ(C))。来源任意共同log底数公式的log_e指log(e)，nats时为1；调用保留μ(C)>0及有限/扩展值约定，含"
+    },
+    {
+     "n": 7,
+     "head": "新全文P-a89b2a1ccfdb7c4f式11在给定(T,ξ)-disintegration ν_t及ρ=rν下，先设M(t)=∫r dν_t、P_T=Mξ、ρ_t=(r/M)ν_t；有限值推导检log r与log M(Tx)可积，再展开"
+    },
+    {
+     "n": 8,
+     "head": "其式14限有限不相交rectifiable carriers，μ=Σμ_i与ρ=Σq_iρ_i；Hμ(ρ)=H(q)+Σq_iHμ_i(ρ_i)。重叠混合不能默认样本决定唯一标签。area/coarea应用必须另检Lipschitz、pos"
+    },
+    {
+     "n": 9,
+     "head": "该来源p4曲线像长度式漏multiplicity；p8指定strong typical集合的dimension窗口漏stratum维数常数，m=(0,10)混合反驳系数1。修复窗口保nηΣm_i或已证更锐常数、0<ξ<1/2及外引AEP依赖"
+    },
+    {
+     "n": 10,
+     "head": "邻近量子源P-c5a8ba8d74c8e1a5只有finite-dimensional channel链式不等式；Thm3.5需E TPCP、F CP及Dmax(E||F)<∞，加项为non-stabilized barDreg。来源bas"
+    },
+    {
+     "n": 11,
+     "head": "中心立方体捕获来源/层/赢家标签必须由同一联合律产生；返回逐条件熵账和零质量处理，不借邻近混合公式认证私有分布接口。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "Q中X,Y相关，却用Q_Y代替Q_{Y|X}：指出参考条件分布错误。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "非零KL核验例：P=[[1/10,3/10],[1/5,2/5]]，Q=[[1/4,1/4],[1/8,3/8]]；两者均为满支撑2×2联合分布，边缘和条件项均非零，直接核验KL(P||Q)=KL(P_X||Q_X)+Σ_x P_X(x)KL(P_{Y|x}||Q_{Y|x})。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 4,
+   "verified_assertion_ids": [
+    "D04-IDEN-01"
+   ],
+   "n_verified": 1,
+   "status_default": "pending"
+  },
+  {
+   "id": "E01",
+   "skill": "math-e01-occupation-measure-flow-lp",
+   "tier": "待证据",
+   "n_steps": 12,
+   "steps": [
+    {
+     "n": 1,
+     "head": "先选有限γ折扣MDP、定时域确定性控制、扩散/跳控制、停止风险、均场相互作用或变分域模型；时间/折扣/停止occupation的质量及界方向不同，均场二次目标不默认纯LP。"
+    },
+    {
+     "n": 2,
+     "head": "有限MDPγ∈[0,1)、μ₀概率：x(s,a)=EΣγᵗ1_(sₜ,aₜ)≥0，检Σ_ax(s,a)−γΣ_(s′,a)P(s|s′,a)x(s′,a)=μ₀(s)，总质量1/(1−γ)。正占用处恢复π=x/Σx，零占用状态另定。"
+    },
+    {
+     "n": 3,
+     "head": "确定性OCP对C¹测试q保初末Liouville等式。扩散P-3b44b82c06eccd85需C^{1,2}及Dynkin可积性，Aq=∂_tq+f·∇q+(1/2)tr(ggᵀ∇²q)；终端质量1、运行occupation质量T。跳过程"
+    },
+    {
+     "n": 4,
+     "head": "最小成本弱measure LP可能严格低于原轨迹控制最小值；多项式紧域球约束下moment-SOS层级渐近趋该弱LP，不认证任意有限阶或真实控制恢复。"
+    },
+    {
+     "n": 5,
+     "head": "均场来源P-078f65ff156d77ea与P-22e8303b48a27276用同一时刻人口边缘的二次交互；凸性检矩阵核对所有有符号测度PSD及交互权符号。冻结梯度后的LMO线性分离不证明原目标凸；exact LMO、可测经典最优选择、"
+    },
+    {
+     "n": 6,
+     "head": "变分源P-b8164dc1ce4dcf5d的无gap限连通分片C¹域、矩/紧支撑及体内/边界联合凸性或OC1–OC3；一般仅M_aff≤M_r≤M。reachability体积、危险区期望停留时间和最小成本的目标/界方向分开；有限矩匹配不能"
+    },
+    {
+     "n": 7,
+     "head": "局部分片来源按适配分区保反对称signed界面通量并验证聚合抵消；扩散空间界面要连续，确定性单向放宽不适用扩散。作者有限阶更紧比较另需闭片的严格更丰富多项式表示，非爆炸/停时及通量可定义性另核。"
+    },
+    {
+     "n": 8,
+     "head": "P-610d8ca4e35b8a23的peak最大化弱measure/SOC给上界：Cantelli r=√(1/ε−1)，VP另需单峰且0<ε≤1/6；方差c²+a²≤b保统计矩约束。Problem3.1/5.1 的t*明确为确定性标量；"
+    },
+    {
+     "n": 9,
+     "head": "其ES用0<ε≤1及概率ψ=p#μτ，εν+νhat=ψ、ν质量1编码可拆分分位原子的标准CVaR；打印整原子事件公式在V1/0各概率1/2、ε1/4给2而标准式/LP给1，不沿用错误等价。"
+    },
+    {
+     "n": 10,
+     "head": "作者tail-SOC强对偶附录用max p控制|E p|有符号缺口；可由a²≤b≤Π₂将trace粗界修为6(1+2Π₂+Π₂²)，仍保抽象对偶/停止表示/层级外引依赖。"
+    },
+    {
+     "n": 11,
+     "head": "闭环控制、稀疏分区实验、数值重构与论文理论分开；无限离散跳态的半代数外包、所有共同输入和中心立方体流接口另证。"
+    },
+    {
+     "n": 12,
+     "head": "P-0297391ab7ac5c7b finite-mode切换：μ_j为u_j加权投影；逆向以Σμ_j及δ_ej合并，weak LP等价不等于原switching无gap。用v=t检Σ质量T，time-only tests检Σπ_tμ_j"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "同一两态链若删去 μ₀，x₀=x₁=0 就成为可行解；这个零解不能表示从初始状态产生的占用。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "输入 S={0,1}、单动作、转移交换两态、μ₀=δ₀、γ=1/2。平衡方程解为 x₀=4/3、x₁=2/3，总占用质量 2=1/(1−γ)。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 11,
+   "verified_assertion_ids": [
+    "E01-SHARP-01",
+    "E01-CTX-01",
+    "E01-BND-01",
+    "E01-CEX-01",
+    "E01-CEX-02"
+   ],
+   "n_verified": 5,
+   "status_default": "pending"
+  },
+  {
+   "id": "E02",
+   "skill": "math-e02-nonlocal-hjb-supersolution",
+   "tier": "待证据",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "从给定受控过程写生成元，列漂移、扩散、Lévy核、截断及补偿约定；先确定最大化奖励或最小化成本及时间方向。"
+    },
+    {
+     "n": 2,
+     "head": "局部接触的非局部测试将小跳作用于测试函数、大跳作用于候选解；不得只对局部PDE检残差，或任意删补偿项。"
+    },
+    {
+     "n": 3,
+     "head": "光滑候选逐项验证残差、终端及边界支配，再用适用的含跳Itô与停止论证验证界；非光滑候选需完整viscosity定义和比较条件。"
+    },
+    {
+     "n": 4,
+     "head": "P-9873072d1f9301d3限对称加性α-stable噪声、α₁,α₂∈(1,2)、强耗散快漂移及其正则/增长假设；有效Hamiltonian为不变测度平均，终端层也需平均和独立比较。"
+    },
+    {
+     "n": 5,
+     "head": "原文半极限→Liouville→corrector→perturbed test→terminal layer→comparison是作者证明骨架；引用的比较/正则性及附录B启发式DPP不当作本次已检查严格推导。"
+    },
+    {
+     "n": 6,
+     "head": "不外推至α<1、乘性噪声或任意跳核；统一增长、可积性及极限顺序缺失时只报告候选超解。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "若跳核非零却只检验局部扩散 HJB，遗漏的跳跃积分可能改变残差，因此不能据此认证超解。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "输入 dXₜ=aₜdt、a∈[−1,1]、终端 g(x)=x、运行奖励 0。Hamiltonian H(p)=|p|；V(t,x)=x+(1−t) 满足 −Vₜ−H(Vₓ)=1−1=0，且 V(1,x)=g(x)。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "E03",
+   "skill": "math-e03-tree-bellman-cross-layer-budget",
+   "tier": "待证据",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "先定义根树、到达质量m(v)、子概率p(w|v)与终端约定，说明逐路径还是平均预算。"
+    },
+    {
+     "n": 2,
+     "head": "平均预算逐节点检Φ(v)≥c(v)+Σ_wp(w|v)Φ(w)；逐路径预算则用sup_w，二者不互换。"
+    },
+    {
+     "n": 3,
+     "head": "乘以m(v)并有限层求和，逐条用m(w)=m(v)p(w|v)抵消内部边；保留终端势项及其符号。"
+    },
+    {
+     "n": 4,
+     "head": "P-ee5e7f1d2f3397ce的作者Bellman构件B(F,f,A,v)=4F−f²/(v+A)有f²≤Fv、0≤A≤v及指定父子增量；常数4/32仅对应其树测度、归一化和二倍停时。"
+    },
+    {
+     "n": 5,
+     "head": "若复用原文树测度，先重写λ、Λ(I)、α及所有子树Carleson条件，检查零质量分母；bi-tree仅盒条件可能不足，不把它当单树。"
+    },
+    {
+     "n": 6,
+     "head": "令深度趋∞前证明终端项收敛/受控。共享输入和非嵌套中心立方体不能由普通Bellman望远镜自动编码。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "若叶费用也取 1 却把叶势设为 0，则叶节点不满足 Φ≥c，不能据此推出路径费用界。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "深度 2 二叉树，根质量 1、子节点概率各 1/2；仅非叶费用为 1、叶费用为 0。设叶势 0、子节点势 1、根势 2，则每个非叶点满足 Φ=c+平均子势，根预算为 2。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "E04",
+   "skill": "math-e04-snell-envelope-optimal-stopping",
+   "tier": "部分可用",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "离散有限时域且X_t适应可积时，从S_T=X_T逆推S_t=max(X_t,E[S_{t+1}|F_t])；以条件期望检超鞅与支配。"
+    },
+    {
+     "n": 2,
+     "head": "对任意支配X的可积超鞅Y逆推得Y_t≥S_t，证明最小性；τ*=inf{t:S_t=X_t}为停止时，有限停止后的S保持鞅给E X_{τ*}=E S_0。"
+    },
+    {
+     "n": 3,
+     "head": "随机化停止另给H适应右连续非降G、G(0)、终端总质量和未停止收益；质量≤1是subprobability，不能默认与强制τ≤T同一问题。"
+    },
+    {
+     "n": 4,
+     "head": "P-faa1738580ee2154 Theorem3.1按印刷GH仅G(T)≤1。有限T,k≡−1时普通停止值−1而G≡0值0，故全符号收益等价有反例；须修正为总质量1并处理t=0，或显式加入不停止零收益选项后另证。"
+    },
+    {
+     "n": 5,
+     "head": "广义逆α(r)=inf{s:G(s)≥r}的停止事件≤/≥在右连续非降G下有效；打印G(α(r))=r a.a.在jump失败。Stieltjes换元单独由α#Leb_(0,G(T)] =dG证，保初始/终点质量及可积性；该local re"
+    },
+    {
+     "n": 6,
+     "head": "连续时间Snell需右连续、class-D等适用假设；一般信息流论文没有证明经典Snell最小超鞅定理，不能充当该定理来源。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "若 E[X₁|F₀]=−1 且 X₀=0，则 S₀=max(0,−1)=0；声称末端停止最优会漏掉现在停止的收益。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "两时刻确定性奖励 X₀=0、X₁=1。递推得 S₁=1、S₀=max(0,1)=1，首次接触时刻 τ*=1，达到最优值 1。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [
+    "E04-CASE-01"
+   ],
+   "n_verified": 1,
+   "status_default": "pending"
+  },
+  {
+   "id": "F01",
+   "skill": "math-f01-geometric-mean-kernel-two-winner-audit",
+   "tier": "待证据",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "先给核公式、指数、零值约定、权重和两赢家/分支覆盖定义；GP-BRANCH缺项时只报告私有接口未定义，不能从标题恢复规则。"
+    },
+    {
+     "n": 2,
+     "head": "对实际有限候选逐个计算K；取log前处理零值、并列赢家及边界，可选择扩展值但须统一约定。"
+    },
+    {
+     "n": 3,
+     "head": "邻近来源P-29e2084d8728fb73只给有限正数列AM–GM：G_n=(∏a_j)^{1/n}≤n^{-1}Σa_j；积分表示还要求排序与复变量主支。n分母、正性和分支域保留。"
+    },
+    {
+     "n": 4,
+     "head": "该原文证明骨架为负实轴边界值→Cauchy轮廓→正Stieltjes核积分；阅卡记录全文覆盖，但轮廓极限交换未独立复证，也无位置核、赢家或最大函数定理。"
+    },
+    {
+     "n": 5,
+     "head": "复用到非负输入的初等AM–GM可先加ε再取连续极限；可变权、复值或算子几何平均均需对应新假设。"
+    },
+    {
+     "n": 6,
+     "head": "仅在分支规则已定义时枚举两名候选赢家并证明每个分支的不等式方向和完整覆盖；小维穷举只是校验，不能代替中心立方体共同输入与全尺度证明。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "若在 K=0 处直接取 log K，就会遇到未定义值，可能错误排除真实的边界候选。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "输入 K(x,y)=√(xy)，候选点 (0,1)、(1,0)、(1,1) 的值依次为 0、0、1；该有限候选集的最大值为 1。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 4,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "F02",
+   "skill": "math-f02-tensor-fourier-positivity-soft-square-supremum",
+   "tier": "待证据",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "固定群、Haar/底测度及Fourier归一化，核可积或为有限测度；正定与逐点非负核是不同条件。"
+    },
+    {
+     "n": 2,
+     "head": "简单张量k=⊗k_j的Fourier为∏k̂_j；正定因子在匹配Bochner条件下可保正定，任意耦合项需另检。"
+    },
+    {
+     "n": 3,
+     "head": "连续中心立方体指标核：明确采用F(k)(ξ)=∫e^(−ix·ξ)k(x)dx、k=2^(−n)1_([-1,1]^n)，则F(k)(ξ)=∏sin(ξ_j)/ξ_j（ξ_j=0以连续值1定义），可取负值；2π或unitary约定需相应改频"
+    },
+    {
+     "n": 4,
+     "head": "P-8205499d1bddf331刻画实连续各向同性S¹×S¹核严格正定的离散频谱支集；P-2ebc46987d4f4c81限stretched Gaussian。均不定义任意立方体核或softmax。"
+    },
+    {
+     "n": 5,
+     "head": "有限整数m≥1、实q_j及β>0时定义β^{-1}logΣe^{βq_j}，直接检max q≤softmax≤max q+log(m)/β；有m增长时误差不能当统一常数。"
+    },
+    {
+     "n": 6,
+     "head": "无限指标需先建立可测性、截断和尾控制；有限softmax误差式不直接提供全尺度上确界界。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "两个正定因子加入任意交叉项后，所得乘积群核不一定仍正定。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "在 Z/2Z 取计数测度，常核 (1,1) 的 Fourier 变换为 (2,0)≥0。取 q=(1,4)、β=1，则 softmax=log(e+e⁴)，介于 4 和 4+log 2。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 6,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "F03",
+   "skill": "math-f03-hilbert-schmidt-radial-layer-square-envelope",
+   "tier": "待证据",
+   "n_steps": 7,
+   "steps": [
+    {
+     "n": 1,
+     "head": "在实际Hilbert输入/输出空间核验可测核K_j及双积分|K_j|²<∞；这是HS范数平方，不是径向sup的自动控制。"
+    },
+    {
+     "n": 2,
+     "head": "块正交时才将HS范数平方相加；重叠须展开交叉项。径向变量换元保留Jacobian与频率局部化尺度。"
+    },
+    {
+     "n": 3,
+     "head": "全文来源卡P-fe527ed15cfb6ce0为arXiv:2609.30726v1的径向Schrödinger邻近结果：归一化Bessel族的合成T有||T||²=C_B，Γ=TΛT*给||Γ||Sβ≤C_B^{1−1/β}||λ||ℓβ"
+    },
+    {
+     "n": 4,
+     "head": "其Lemma2.1通过Schatten对偶将A_V的Sβ′界与系统平方函数L^p_tL^q_x界互换，限1<p,q<∞、1≤β<∞及可定义的二次型；引用的对偶/插值依赖单列。"
+    },
+    {
+     "n": 5,
+     "head": "Theorem4.1限d≥2、径向频率截断P_N及q*=(2d+1)/(2d−1)：||A^rad_{V,N}||S_(2d+1)≲N^{−2(d−1)/(2d+1)}||V||L^((2d+1)/2)，隐常数可依赖d和截断，不是维数一致H"
+    },
+    {
+     "n": 6,
+     "head": "作者证明骨架为球面平均→Hankel核局部/±振荡拆分→一维Schatten核/循环迹及加权多线性分数积分→尺度恢复；必要β范围和未解决sharpness按卡保留。"
+    },
+    {
+     "n": 7,
+     "head": "项目HS平方包络仍缺具体核、层、size及逐点支配；此径向Strichartz定理不能替代中心立方体全尺度上确界。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "二维取 K₀=K₁=I₂。分层范数平方和为 2+2=4，但 ||K₀+K₁||²_HS=||2I₂||²_HS=8；忽略交叉项会低估一倍。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "输入 K₀=diag(1,0)、K₁=diag(0,2)。两块正交，合并核的 HS 范数平方为 1²+2²=5。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "F04",
+   "skill": "math-f04-poisson-gamma-abel-square-function",
+   "tier": "待证据",
+   "n_steps": 9,
+   "steps": [
+    {
+     "n": 1,
+     "head": "非负自伴L在Hilbert空间上定义P_t=e^{-t√L}；谱参数λ≥0的乘子e^{-t√λ}，欧氏L=−Δ且Fourier约定匹配时为e^{-t|ξ|}。"
+    },
+    {
+     "n": 2,
+     "head": "明确g积分是∫₀∞t||∂_tP_tf||²dt。谱参数λ>0时∫₀∞tλe^{-2t√λ}dt=1/4，λ=0时为0；Tonelli/谱定理得(1/4)||(I−Π_kerL)f||²。"
+    },
+    {
+     "n": 3,
+     "head": "单频plane wave仅是乘子核验，不是L²(Rⁿ)函数；欧氏L²版本零频集合零测，可由Plancherel给(1/4)||f||²。去t权会变成(1/2)||L^{1/4}f||²并要求此量有限。"
+    },
+    {
+     "n": 4,
+     "head": "Gamma密度用shape α>0与rate r>0明确给r^αs^{α−1}e^{-rs}/Γ(α)；对Laplace参数u≥0积分e^{-su}得(r/(r+u))^α。扩展至复u须Re u>−r并声明复幂分支，一般混合按实际参数核验。"
+    },
+    {
+     "n": 5,
+     "head": "有限Fourier/谱和先核Abel极限，再凭适用的支配或强收敛推广；逐谱收敛不自动控制极大值。"
+    },
+    {
+     "n": 6,
+     "head": "新增邻近P-1cd2c10e2d8842c2限半空间、半有限von Neumann代数的列/行BMO–HMO与标准Poisson核，平方范数含完整梯度及球Carleson积分；BMO→HMO方向与部分对偶步骤引Mei且省细节。该表示不含Ga"
+    },
+    {
+     "n": 7,
+     "head": "P-ba2136b0727e6a09为粗糙域zero-boundary −Lu=H−divΞ，corkscrew+n-AR、n≥2、real uniformly elliptic L，H/Ξ紧支撑有界；modifiedPR_p已可解且1<p"
+    },
+    {
+     "n": 8,
+     "head": "ROOT已检查热核正原子→L¹弱型扩展，仅限正连续热核；立方体指标边界、Poisson-Gamma私有接口和与平均尺度族的比较仍需另证。"
+    },
+    {
+     "n": 9,
+     "head": "粗糙域PDE显式迁移入口（P-ba2136，非Gamma/Abel）：输入Ω corkscrew+n-AR、实强椭圆L、已可解modifiedPR_p且1<p≤2；对zero-boundary −Lu=H−divΞ先计算δH/Ξ的T²_q "
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "对同一非零单频 ξ≠0 删去 t 后，∫₀∞|∂ₜPₜf|²dt=|ξ||f|²/2；固定非零 ξ 时有限，但随频率按 |ξ| 增长。ξ=0 时导数和该积分均为0，需单独列出。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "取非零频率 ξ≠0 的单频乘子模式 f(x)=e^{iξx}。因为 ∂ₜPₜf=−|ξ|e^{-t|ξ|}f，故逐模式积分 ∫₀∞t|∂ₜPₜf|²dt=|f|²/4。plane wave 仅用于乘子核验，并非 L²(R) 输入；一般 L²(R) 版本由 Plancherel 成立，非负自伴 L 的谱公式为 (1/4)",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 7,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "F05",
+   "skill": "math-f05-l2-spectral-parameter-schur-test",
+   "tier": "待证据",
+   "n_steps": 8,
+   "steps": [
+    {
+     "n": 1,
+     "head": "在有限支撑稠密子空间定义A(λ)，写明两Hilbert空间、底测度及λ的含义；矩阵行列Schur、逐项Schur乘子和谱分解是不同命题。"
+    },
+    {
+     "n": 2,
+     "head": "取正权p_i,q_j，验证Σ_j|a_ij(λ)|q_j≤R p_i及Σ_i|a_ij(λ)|p_i≤C q_j，两侧同时成立且R,C对所需λ范围统一。"
+    },
+    {
+     "n": 3,
+     "head": "已检查Cauchy–Schwarz构件：把每行Σ_j|a_ij||x_j|拆为√(|a_ij|q_j)与√(|a_ij|/q_j)|x_j|；平方后求i、交换非负和并用列界，得||Ax||²≤RC||x||²。"
+    },
+    {
+     "n": 4,
+     "head": "积分核同理先检可测性、正权、Tonelli与有限支撑估计，再密度延拓；权可依赖λ但界及定义域必须可控。"
+    },
+    {
+     "n": 5,
+     "head": "P-3da1b59567d35c36的Luna全文卡现覆盖99页；第3节行列和界为√(RC)，第4节正PSD逐项乘子另为||H∘A||≤sup h_ii||A||，不能相互替换。全文覆盖不等于全部外引定理独立认证。"
+    },
+    {
+     "n": 6,
+     "head": "若实际问题是逐项乘子且H=LM*，给D_L=sup_iΣ|l_ir|²与D_M=sup_jΣ|m_jr|²，才能用√(D_LD_M)界；Bennett逆向、Peller与Birman–Solomyak双谱积分是作者转述，外部原始证明未另核。"
+    },
+    {
+     "n": 7,
+     "head": "survey双谱积分入口另需正交谱测度E,F和核h(mu,lambda)=∫m(mu,x)l(lambda,x)dx，两因子L2 norm的esssup受控；仅矩阵行列界或有界h都不能替代该因子证书。Birman–Solomyak/Pell"
+    },
+    {
+     "n": 8,
+     "head": "参数端点、极点、零权及正交谱块分别检查；常数1的有限Weyl谱/奇异值幂和比较也不提供具体A(λ)一致界。范数统一界不证明核逐点收敛、Hilbert矩阵最优权或任何私人谱接口。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "仅给出矩阵第一行的加权和、没有列估计时，Schur 检验缺少一半条件，不能推出所需 L² 界。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "取 A=[[1,1/2],[1/2,1]]、p=q=(1,1)，行和列和均为 3/2，故 ||A||₂≤3/2；特征值为 3/2、1/2，达到该界。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 4,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "F06",
+   "skill": "math-f06-menshov-rademacher-maximal-partial-sums",
+   "tier": "部分可用",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "核对两两L²正交及能量Σ_j||f_j||²；定理针对有序正交系，不要求随机Rademacher符号。"
+    },
+    {
+     "n": 2,
+     "head": "N≥1取m=ceil(log₂N)，补零至2^m；每个前缀分成至多m+1个互不交标准二进区间，层为0,…,m。"
+    },
+    {
+     "n": 3,
+     "head": "点态Cauchy–Schwarz给每个前缀平方≤(m+1)乘其块平方和，再以所有二进块平方和支配max；积分时每层块正交且全层总能量相同。"
+    },
+    {
+     "n": 4,
+     "head": "得到已检查上界||max_{k≤N}|Σ_{j≤k}f_j|||²₂≤(m+1)²Σ_j||f_j||²₂；这是明确log₂约定的充分常数，不声称最优。"
+    },
+    {
+     "n": 5,
+     "head": "点态max先于积分；固定次序、前缀max与任意重排max分开。无限级数需独立可和条件及极限，不由每个有限N界自动得到。"
+    },
+    {
+     "n": 6,
+     "head": "调用二维原点直角三角形P-69017c5aad080b2f或连续正交积分P-bae82db430fb1568时，先读[分模型来源与定位](references/frozen-source-locators.md)；前者有N^{ln(2+√3"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "若函数系不正交，仅知各 ||fₙ||₂=1，不能推出 ||Σfₙ||²₂=N，故最大部分和定理的假设缺失。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "四点计数空间取f_j=1_{点j}（j=1,…,4），它们L²正交且各范数1。逐点最大前缀max_{k≤4}|Σ_{j≤k}f_j|≡1，故最大函数L²范数平方为4=Σ||f_j||²；这是点态max后积分，不是先取前缀范数的最大值。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 4,
+   "verified_assertion_ids": [
+    "F06-BND-01"
+   ],
+   "n_verified": 1,
+   "status_default": "pending"
+  },
+  {
+   "id": "F07",
+   "skill": "math-f07-marcinkiewicz-zygmund-vector-extension",
+   "tier": "待证据",
+   "n_steps": 8,
+   "steps": [
+    {
+     "n": 1,
+     "head": "给定同一个线性T:Lp(μ)→Lp(ν)，1≤p<∞及||T||≤A；对有限随机和TΣ ε_jf_j=Σ ε_jTf_j验证线性。"
+    },
+    {
+     "n": 2,
+     "head": "逐点Khintchine并对随机符号积分，用标量T界后再Khintchine得||(Σ|Tf_j|²)^{1/2}||p≤C_p A||(Σ|f_j|²)^{1/2}||p。p=2时Hilbert积分直接求和可取C₂=1。"
+    },
+    {
+     "n": 3,
+     "head": "不同T_j的统一标量范数界不是上述单算子假设；需另给随机化/R-boundedness或适用向量值族定理，不能把同T公式逐项拼接。"
+    },
+    {
+     "n": 4,
+     "head": "不同Tj的缺条件已检查p=4有限循环平移例：f_j=δ_j，Tj各标量Lp范数1并把j移至0，输入Lp(ell2)=N^(1/4)，输出=N^(1/2)，比值N^(1/4)。p=2逐项平方求和仍给统一界，不将家族反例误写到p=2。"
+    },
+    {
+     "n": 5,
+     "head": "原文P-e0ac88eda6c127c6 Theorem1.3限m≥1、1≤q_i≤∞、1≤p<∞且具体r范围；2<p<q=max q_i的中间范围未完整分类，p=∞另论。P-b86fef3235b5eb13为Bernstein导数/覆盖重"
+    },
+    {
+     "n": 6,
+     "head": "离散立方体S-10977fcb18554549是1804.07679v2版本：全尺度max p>3/2，dyadic max p>1；与新2026来源的更强范围分版列示，不能合并成同一原文。"
+    },
+    {
+     "n": 7,
+     "head": "无限函数族由截断与适用单调极限推广；改ℓ²为任意Banach、ℓq、准Banach或加权情形须补其空间几何/权条件。"
+    },
+    {
+     "n": 8,
+     "head": "p=1单算子T:L¹→L¹可先对互不交的简单函数分块用三角式与标量界，扩展到任意Banach值且同范数；不能把它当任意Banach扩展失败的反例。p>1的一致空间常数需另检。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "p=2取两点计数空间上的归一化Hadamard矩阵T=2^{-1/2}[[1,1],[1,−1]]，标量L²范数1。Banach值B=ℓ∞²，输入F(1)=(1,1), F(2)=(1,−1)，输入L²(B)范数√2，输出为(√2,0),(0,√2)，范数2。随N=2^k的Walsh–Hadamard构造给√N增长，不",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "令 T 为 Lp 上乘以 3 的算子。任意有限函数族满足左侧平方函数恰为右侧的 3 倍，因此算子界 A=3 可直接核验。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 7,
+   "verified_assertion_ids": [
+    "F07-SHARP-01a",
+    "F07-SHARP-01b"
+   ],
+   "n_verified": 2,
+   "status_default": "pending"
+  },
+  {
+   "id": "G01",
+   "skill": "math-g01-carleson-measure-box-and-tent-test",
+   "tier": "待证据",
+   "n_steps": 7,
+   "steps": [
+    {
+     "n": 1,
+     "head": "先定义实际T(Q)/S(Q)、底测度、尺度及边界，验证正Borel测度局部有限；写sup_Q μ(T(Q))/σ(Q)，不能只验根盒。"
+    },
+    {
+     "n": 2,
+     "head": "有限过滤树的系数packing检每个J的Σ_{I⊆J}α_I≤Cσ(J)；有互不交子分割与统一mass流时可用已检查4C嵌入构件，树外多参数盒条件须另证。"
+    },
+    {
+     "n": 3,
+     "head": "解析/调和空间的嵌入与反向kernel测试按指定空间定理，先明确核范数归一化；普通盒packing不自动证明所有reproducing-kernel thesis。"
+    },
+    {
+     "n": 4,
+     "head": "邻近P-e9e9211495f0b20e限Ω⊂R^{d+1}有界调和函数局部能量r^{-d}∫_{B(x,r)∩Ω}|∇u|²dist(y,∂Ω)dy≤C||u||∞²；不是任意度量Carleson测试。"
+    },
+    {
+     "n": 5,
+     "head": "其Theorem1.1正向需存在Ω̃⊂Ω、∂Ω⊂∂Ω̃且∂Ω̃为UR；逆向另需corkscrew+CDC。Theorem1.2需两两不交边界E_j及ω(p_j,E_j)≥1−ε，得Σdist(p_j,∂Ω)^d≤C(ε)R^d。"
+    },
+    {
+     "n": 6,
+     "head": "作者Whitney近/远边界拆分→调和事件packing→corona/UR构造的常数依赖d、几何参数及ε；外引容量/UR理论未独立复证，不能称维数无关。"
+    },
+    {
+     "n": 7,
+     "head": "中心立方体迁移须实际树化或帐篷化、共同输入及packing桥梁；区分有界、消失、加权与算子特定Carleson，不从邻近边界PDE定理得全尺度最大界。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "只检查根盒无法控制所有子盒；把系数集中在很小的后代上可使某个 μ(T(Q))/|Q| 任意大。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "有限二进树取根 Q₀=[0,1]、深度 n 的所有叶 Q 取系数 α_Q=|Q|，其它节点系数为 0。每个祖先 I 的叶系数和为 |I|，故逐节点 packing 常数恰为 1。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 7,
+   "n_source_cards": 6,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "G02",
+   "skill": "math-g02-outer-lp-size-and-tree-stopping",
+   "tier": "待证据",
+   "n_steps": 11,
+   "steps": [
+    {
+     "n": 1,
+     "head": "由生成集E、费用σ定义覆盖外测度μ，并完整给size的单调、齐次和准次可加公理。"
+    },
+    {
+     "n": 2,
+     "head": "外分布μ(S(F)>λ)=inf{μ(B):outsup_{X\\B}S(F)≤λ}，不是普通点态超水平集；outer Lp层析正是该分布的定义，无需假称外测度可加。"
+    },
+    {
+     "n": 3,
+     "head": "树/tent停时同时证阈值捕获、异常集费用和packing；覆盖费用相加仅给上界，不等于最优覆盖外测度。"
+    },
+    {
+     "n": 4,
+     "head": "P-c0cdd27d39fd5e63 Theorem4.1在其R×(0,∞) tents与指定核/size下强型1<p≤∞；square size另需均值零等条件。"
+    },
+    {
+     "n": 5,
+     "head": "其Theorem5.1的相位空间strong p>2、p=2仅weak，参数0<|α|≤1、|β|≤0.9、b≤2^{-8}及Fourier支持须匹配；常数允许依赖α,β,b,φ,p。"
+    },
+    {
+     "n": 6,
+     "head": "外对偶、插值和配对依据具体size定理；不套普通Lp对偶，也不从参数依赖界推参数一致性。"
+    },
+    {
+     "n": 7,
+     "head": "新增全文P-eb102a6795f6ce4e的Theorem1.3限σ-finite (X,μ,ω)、μ-null⇒ω-null及标准ellr size：p>a用sup局部La,q刻画，p≤a须sup-inf且B⊂A满足μ(A\\B)≤μ(A"
+    },
+    {
+     "n": 8,
+     "head": "不能把被删部分条件换成μ(B)≥μ(A)/2：已检查有限μ(nonempty)=1、ω计数、f=1、r=2、q∞时，真weaknorm和正确K′均sqrt(m)，错误K″=1；比值无界。"
+    },
+    {
+     "n": 9,
+     "head": "同源Theorem2.1对一般size须p有限且p>a并保分割常数K；p∞推广另需Remark4.3的size–mass不等式。新源原定理为sourceclaim，有限反例是checkedderivation，中心立方体接口仅推断。"
+    },
+    {
+     "n": 10,
+     "head": "新全文P-aaa03e027f21d631的finite outerellr统一对偶限1<p≤∞、1≤r<∞或p=r=1/∞；p1,r>1有树反例非一致。指定R^d半空间box费用、ω=t^−1的对偶范围才完整1≤p,r≤∞，tent等价另"
+    },
+    {
+     "n": 11,
+     "head": "该v1 Thm6.1 weak1q印刷漏t^{d−d/q}（§6.3实际控制尺度加权对象），缩放检验否定未加权字面式。AppendixProp8.6印刷OR仅零集分支有合法非零size反例；须提供局部积分–size兼容，不能照抄该泛化。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "有限X={1,…,m}，ω计数、μ(nonempty)=1。标准ell2 size下f=1的outerweakLp范数sqrt(m)；把μ(A\\B)≤μ(A)/2误换成μ(B)≥μ(A)/2后可只留单点，测试值1。另μ({a}∪{b})=1而覆盖费用1+1只是上界。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "取 X={a,b}、普通计数测度，size(a)=|F(a)|、size(b)=|F(b)|，F(a)=1、F(b)=2。0<λ<1 时外测度为2；1≤λ<2 时为1；λ≥2 时为0。故层析积分给 ||F||pᵖ=1+2ᵖ。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 7,
+   "n_source_cards": 5,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "G03",
+   "skill": "math-g03-directional-capture-tree-quadratic-audit",
+   "tier": "待证据",
+   "n_steps": 7,
+   "steps": [
+    {
+     "n": 1,
+     "head": "先索取树、方向、可行捕获叶、来源到向量或Gram矩阵的映射及共用输入谓词的正式定义；任一缺失时停止捕获适用性判断和课题界的推导，标为 evidencepending。此时仅可执行明确给出的有限 Hermitian 矩阵算术。"
+    },
+    {
+     "n": 2,
+     "head": "有限实例中逐项建立来源向量 x 和矩阵 A，列明对角项及不同来源的交叉项。"
+    },
+    {
+     "n": 3,
+     "head": "计算 Q(x)=x*Ax；声称半正定时用精确主子式或认证特征值界核验 Hermitian 矩阵。"
+    },
+    {
+     "n": 4,
+     "head": "已检查弱反例：N阶全1的PSD Gram矩阵每个对角1，最大特征值N、ones二次型N²；对角界不能控制总交叉项。这里只是一般矩阵反例，未声称它可由真实TC-A14几何实现。"
+    },
+    {
+     "n": 5,
+     "head": "另查树约束、子节点覆盖、来源质量守恒和方向兼容是否由同一输入满足。"
+    },
+    {
+     "n": 6,
+     "head": "在小树上与穷举对比；区分外放松上界与真实可实现的捕获构型。"
+    },
+    {
+     "n": 7,
+     "head": "复用 [P-e8f8 冻结来源合同](references/source-contract-P-e8f8.md) 时，只限单位圆盘、有限正 Borel 测度及原点归零 Bloch 子空间 B˚={f∈B:f(0)=0} 到 L²(μ) 的来"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "若规则至多允许捕获一个叶子，则 x=(1,0,1) 虽给出 Q=2 却不可行；矩阵计算不能替代几何可行性检查。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "三节点树取 A=I₃、x=(1,0,1)，则 Q=xᵀAx=2。这只核验有限 Hermitian 二次型算术，不构成捕获适用的正例。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 7,
+   "n_source_cards": 2,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "G04",
+   "skill": "math-g04-rubio-de-francia-square-function-scope-check",
+   "tier": "待证据",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "固定Fourier投影P_I及S(f)=(Σ_I|P_If|²)^{1/2}，列全频率区间族的两两不交或重叠重数。"
+    },
+    {
+     "n": 2,
+     "head": "经典实线Rubio de Francia适用强型2≤p<∞的两两不交区间；p=2由Parseval常数1，p<2不能对一般任意不交区间族沿用同一uniform bound。"
+    },
+    {
+     "n": 3,
+     "head": "P-03df4e0c85ffb707的粗糙连续Rubio weighted p=2为weak端点，Walsh群或偶径向递减A₁权有各自strong结论；稀疏族依赖f与频率族。精确条件与[来源定位](references/frozen-sou"
+    },
+    {
+     "n": 4,
+     "head": "树版本先定义空间树或频率树，证正交、有限重叠或Carleson packing；名称不提供这些前提。"
+    },
+    {
+     "n": 5,
+     "head": "有限频率分割Parseval核常数，重复区间使平方能量按重数增加；任意重叠次数不能当统一常数。"
+    },
+    {
+     "n": 6,
+     "head": "到空间中心立方体的迁移仍需频率分块与全尺度上确界连接；不交频率投影本身不控制该几何极大值。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "若 I₁=I₂，同一投影被计两次，平方函数成为 √2|P_{I₁}f|；不能继续使用不交区间时的归一化等式。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "取两个不交频率区间 I₁、I₂，f=f₁+f₂ 且 Fourier 支持分别落在两区间。p=2 时 Parseval 给 ||(|P_{I₁}f|²+|P_{I₂}f|²)^{1/2}||₂=||f||₂。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "G05",
+   "skill": "math-g05-tree-carleson-square-function-tc-a4-audit",
+   "tier": "待证据",
+   "n_steps": 8,
+   "steps": [
+    {
+     "n": 1,
+     "head": "TC-A4的系数归一化、树序、测度与平方函数缺正式定义时，只返回缺口及标准模型，不声称私有结论。"
+    },
+    {
+     "n": 2,
+     "head": "标准二进模型α_I≥0且每个J均Σ_{I⊆J}α_I≤C|J|；所有子树都需验证，根packing不足。"
+    },
+    {
+     "n": 3,
+     "head": "P-b7592e844240da1c的作者Theorem1.1：p>1有Σα_I|<f>_I|^p≤(p′)^p C||f||_p^p；p=2给4C，p=1强型不包含。"
+    },
+    {
+     "n": 4,
+     "head": "作者sharp常数与Bellman remodeling源自其具体二进/infinitely-refining过滤模型；本次未独立证明全凹性或锐性，不将任意滤过都称同Bellman。"
+    },
+    {
+     "n": 5,
+     "head": "已检查弱构件：一般测度有限过滤树有互不交孩子、统一mass流及所有子树packing≤Cσ(J)时，极大节点层蛋糕+Doob L²给嵌入≤4C||f||²。此上界不需Lebesgue或小边界；sharpness和私有树适用性另证。"
+    },
+    {
+     "n": 6,
+     "head": "平方函数若定义使积分正好为上述非负嵌入和才用该界；多个算子的交叉项另证正交/几乎正交。"
+    },
+    {
+     "n": 7,
+     "head": "有限深度、零测度节点和无限极限分开；中心立方体选族需先证明真实公共输入、树化和packing，不能直接替代任意中心上确界。"
+    },
+    {
+     "n": 8,
+     "head": "新增复用P-6a781aff4000e334 stochastic常数e限连续平方可积、orthogonal/equal-bracket驱动及generalized CR系统，alpha条件tail mass≤1且其closed marti"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "只核对根节点 packing 会漏掉集中在很小后代上的系数；必须逐个子树检查条件。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "深度1二进树根[0,1]、alpha_root=1、f=1，packing常数C=1、embedding和1=||f||2²。它是基本正例；标准4C上界右侧4，此例不饱和锐常数4。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 7,
+   "n_source_cards": 6,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "H01",
+   "skill": "math-h01-uniform-cramer-moderate-deviations",
+   "tier": "待证据",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "逐行核验独立性、中心化、总方差归一化和统一 Cramér 指数矩条件；对三角阵记录所有界对行号/样本量的一致性。"
+    },
+    {
+     "n": 2,
+     "head": "写出累计对数矩母函数 K_n(θ)，检查定义域、可微性和 K_n''(θ)>0；通过 K_n'(θ)=x 解倾斜参数，并限定目标偏差区间。"
+    },
+    {
+     "n": 3,
+     "head": "按所引用定理的精确误差条件核对 moderate-deviation 范围、Lyapunov/最大单项控制及偏差下界；不可把固定偏差的大偏差结论直接延伸到随 n 变化的偏差。"
+    },
+    {
+     "n": 4,
+     "head": "分别报告指数率、相对误差和一致性范围；若只有指数率，不能写成带精确前因子的等价式。"
+    },
+    {
+     "n": 5,
+     "head": "若引用P-650b110a482de2b2 Theorem1.4，只能在经典±1 Curie–Weiss Gibbs模型β=1,h=0下取W_n=S_n/n^(3/4)，尾事件W_n>x、x∈[0,n^(1/12)]，比较四次指数密度p₁("
+    },
+    {
+     "n": 6,
+     "head": "若用He P-318df19635ebf8e5命中时间Theorem1.4，只在iid、μ>0、σ²>0、全实mgf且sup(−Λ)<∞、某v>1的Eexp(θ|X|^v)<∞下，固定0<r<μ,t>0和sqrt(n)<<a_n<<n，报告"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "令第 n 行只有一个中心化变量 X_{n,1}=n(E_n−1)，E_n∼Exp(1)。每行 mgf 在 θ<1/n 的正邻域有限，但不存在共同 θ_0>0 使所有行的 mgf 有限；故“逐行存在矩母函数”不能推出统一 Cramér 范围（该反例未作方差标准化，正好暴露缺失的统一尺度条件）。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "取每行 n 个独立 N(0,1) 变量，S_n=n^(−1/2)Σ_{i=1}^n X_i，则 S_n 恰为 N(0,1)，对任意 x≥0 有 P(S_n≥x)/(1−Φ(x))=1；这是可逐项核对的 Cramér 基准，不替代非正态三角阵条件。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 5,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "H02",
+   "skill": "math-h02-exponential-tilting-saddlepoint",
+   "tier": "部分可用",
+   "n_steps": 4,
+   "steps": [
+    {
+     "n": 1,
+     "head": "确认 K 在包含0及解 θ̂ 的开区间内有限且至少二阶可微；解 K'(θ̂)=x，并核对 θ̂ 的符号与所求上/下尾一致。"
+    },
+    {
+     "n": 2,
+     "head": "按 dP_{θ̂}/dP=exp(θ̂S−K(θ̂)) 倾斜，把尾事件写回倾斜测度；中心化量的方差为 K''(θ̂)。"
+    },
+    {
+     "n": 3,
+     "head": "先执行简化前因子分支的来源守卫：明确给出支持该 leading u⁻¹（即 θ̂⁻¹K″(θ̂)⁻¹/²）表达式的具体定理、版本和定位，逐项匹配其模型、归一化、上尾方向、参数区间、非格点或格点修正、局部极限及误差假设，并记录结论是界还是渐近"
+    },
+    {
+     "n": 4,
+     "head": "当 θ̂ 接近0时改用对应中心区间展开，不能机械使用 1/θ̂ 前因子；分别核验指数率与相对误差。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "对整数值 Poisson 和不加格点修正套连续密度前因子；当阈值贴近均值时仍套 1/θ̂ 公式。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "令S~N(0,n)，阈值x>0、u=x/√n。K(θ)=nθ²/2，θ̂=x/n、K''(θ̂)=n，指数倾斜后S~N(x,n)，鞍点前因子为φ(u)/u。当u→∞，Mills比值 P(S≥x)/(φ(u)/u)→1；u=5时两值约2.8665e−7和2.9734e−7，比值0.9640。此处是带参数u的渐近，非任意有",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [
+    "H02-IDEN-01"
+   ],
+   "n_verified": 1,
+   "status_default": "pending"
+  },
+  {
+   "id": "H03",
+   "skill": "math-h03-fan-grama-liu-martingale-expansion",
+   "tier": "待证据",
+   "n_steps": 4,
+   "steps": [
+    {
+     "n": 1,
+     "head": "验证 D_k 对 F_k 可测且 E(D_k|F_{k−1})=0；计算可预测平方变差 V_n=ΣE(D_k²|F_{k−1})，辨明它是常数、集中于1，还是随机量。"
+    },
+    {
+     "n": 2,
+     "head": "逐项核对目标论文所用的条件矩、条件指数矩及 V_n 偏差控制；保留每个常数、截断水平和偏差范围。"
+    },
+    {
+     "n": 3,
+     "head": "Fan–Grama–Liu 的本次来源为 P-53739dd293f0de1c：保留 (A1) 条件 Bernstein 参数 ε、(A2) |V_n−1|≤δ²；Theorem 2.1 上界取固定 α∈(0,1)、0≤x≤α/ε，下界需其"
+    },
+    {
+     "n": 4,
+     "head": "用鞅差独立特例核对一阶项；随机方差混合、重尾或条件偏斜未控制时，降级为相应概率界。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "取共同随机环境下条件方差为随机变量的鞅差列，仅知无条件总方差为1便声称同一个正态尾前因子。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "n=4 个独立 Rademacher 变量 ε_k 以增量 ΔM_k=ε_k/2 构成鞅，E⟨M⟩₄=1 且 |ΔM_k|≤1/2；逐项代入条件展开的前提和阈值范围。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 3,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "H04",
+   "skill": "math-h04-exact-rate-function-variance-strata",
+   "tier": "待证据",
+   "n_steps": 5,
+   "steps": [
+    {
+     "n": 1,
+     "head": "从模型推出 Λ(θ)=log E e^{θX} 或归一化极限，并声明速率函数 I(x)=sup_θ{θx−Λ(θ)} 的适用拓扑与收敛速度。"
+    },
+    {
+     "n": 2,
+     "head": "按真实方差、条件方差或协方差结构划分层；逐层检查参数范围、非退化性及层间统一常数。"
+    },
+    {
+     "n": 3,
+     "head": "把概率界分成速率指数与前因子/局部方差修正；若精确率函数只描述指数阶，不把它写成精确尾等价。"
+    },
+    {
+     "n": 4,
+     "head": "比较层间指数后再合并；检查最小率点、边界层和退化方差是否遗漏。"
+    },
+    {
+     "n": 5,
+     "head": "固定端点路径能量使用本项已绑定的 [P318 来源合同](references/source-contract-P318.md) 与 [冻结阅读卡](references/papers/TEAM_HI-P-318df19635ebf8e5."
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "不同层仅有方差界却使用同一精确前因子和高斯尾，忽略稀有层的高阶矩或不同速率函数。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "Bernoulli(p)样本均值取0<p<1、0<q<1，Λ(θ)=log(1−p+p e^θ)，解θ̂=log[q(1−p)/(p(1−q))]，得I(q)=q log(q/p)+(1−q)log((1−q)/(1−p))。p=1/2,q=3/4时θ̂=log3、I≈0.130812；q=0,1按连续端点取I(0)=",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 2,
+   "verified_assertion_ids": [
+    "H04-CASE-01"
+   ],
+   "n_verified": 1,
+   "status_default": "pending"
+  },
+  {
+   "id": "H05",
+   "skill": "math-h05-chernoff-hoeffding-bernstein",
+   "tier": "部分可用",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "明确单侧/双侧事件和依赖结构；先证明相应矩母函数乘积或条件矩母函数上界。"
+    },
+    {
+     "n": 2,
+     "head": "Chernoff：对任意 θ>0 用 P(S≥t)≤e^(−θt)E e^(θS)，再在已证明的定义域中优化 θ。"
+    },
+    {
+     "n": 3,
+     "head": "有界独立变量用 Hoeffding 引理得到范围平方和尺度；中心化且 Bernstein 矩条件成立时用方差和线性尺度得到 Bernstein 界。"
+    },
+    {
+     "n": 4,
+     "head": "将最终阈值、概率水平和常数回代原式；区分独立、条件独立和仅不相关。"
+    },
+    {
+     "n": 5,
+     "head": "Linial–Luria P-64dfefc5434002d4允许依赖indicator，但必须验证所有大小k子集的共同成功概率：P(ΣXi≥βn)≤Σ_{|S|=k}P(全1)/binom(βn,k)，k是0<k<βn的整数。KL后果的k"
+    },
+    {
+     "n": 6,
+     "head": "Hertz P-14bb456bd53bdaeb对EX=0,X∈[a,b],s>0的mgf可取v=|a|b（|a|≥b）或(b−a)²/4（|a|≤b）。独立和Sn正确尾界为exp(−t²/[2Σv_i])；负尾要对−Xi交换区间另取v。原"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "对只具有限方差的重尾变量套 Hoeffding；或对相关但不具条件 mgf 控制的序列直接相乘 mgf。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "单项检验 Fan 2021 Theorem 1：X 为等概率 ±1，则 a=−1,b=1,k=1, Φ=1, Υ₁=1；取 s=1 可直接核验 E e^X=cosh(1)≈1.5431≤e^{1/2}≈1.6487。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 5,
+   "verified_assertion_ids": [
+    "H05-CASE-01"
+   ],
+   "n_verified": 1,
+   "status_default": "pending"
+  },
+  {
+   "id": "I01",
+   "skill": "math-i01-ordered-increment-conditional-bernstein",
+   "tier": "待证据",
+   "n_steps": 4,
+   "steps": [
+    {
+     "n": 1,
+     "head": "验证每个 X_k 对 F_k 可测、条件均值为0，并逐项检查 E(|X_k|^p|F_{k−1})≤(p!/2)v_k c^(p−2) 对 p≥2。"
+    },
+    {
+     "n": 2,
+     "head": "由条件矩级数推出 E(e^(θX_k)|F_{k−1})≤exp(θ²v_k/[2(1−cθ)])，其几何级数定义域为 0<θ<1/c；按顺序乘成非负超鞅。"
+    },
+    {
+     "n": 3,
+     "head": "固定停止/终端索引，验证 Σv_k≤v 是确定上界或被正确停时控制。对t>0,v>0，Chernoff取合法参数 θ=t/(v+ct)<1/c（非声称精确极小解）即得 exp(−t²/[2(v+ct)])；阈值 √(2vx)+2cx 因 t"
+    },
+    {
+     "n": 4,
+     "head": "给出阈值和置信参数可代入复核的形式；若 v_k 随机且总和无界，保留随机方差版本或另加尾界。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "令一行只有 X_{n,1}=n(E_n−1)，E_n∼Exp(1)，mgf=e^(−nθ)/(1−nθ) 仅在 θ<1/n 有限；逐行存在 mgf 邻域不能推出共同 Bernstein 尺度。若除以标准差n，变量变成E_n−1，仍非随n正态化的和，故统一尺度与小单项条件必须分别检查。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "令 X=±1 等概率，c=v=1；其 mgf cosh(θ)≤exp(θ²/[2(1−θ)]) 对 0<θ<1 成立，可直接核对级数界的尺度。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "I02",
+   "skill": "math-i02-filtration-projections-compensators",
+   "tier": "待证据",
+   "n_steps": 4,
+   "steps": [
+    {
+     "n": 1,
+     "head": "声明滤过完备右连续与时间约定；把对象标明为适应、可选、渐进或可预测，不能相互替换。"
+    },
+    {
+     "n": 2,
+     "head": "对可积过程按定理取可选/可预测投影，检查定义所需的可测性并用可预测过程逐点或积分核验。"
+    },
+    {
+     "n": 3,
+     "head": "对计数过程或整数值随机测度，写出补偿子 ν；验证 N−ν 为局部鞅，并记录补偿是对哪一滤过及哪种停时。"
+    },
+    {
+     "n": 4,
+     "head": "应用可选抽样、随机积分或 Doob–Meyer 分解前，核验一致可积、局部化与期望有限条件。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "以放大后的滤过引入未来信息后仍沿用旧补偿 λdt，或对非 UI 鞅任意使用期望版停时定理。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "令γ∼Exp(1)，N_t=1_{γ≤t}为首次跳计数，取N的自然滤过之usual augmentation（完备、右连续）；A_t=t∧γ=∫₀ᵗ1_{s≤γ}ds是该滤过的可预测补偿子。在T=1时EN₁=EA₁=1−e⁻¹≈0.63212。若F₀已揭示γ，γ是可预测停时而N本身是可预测有限变差补偿，不能沿用t∧γ。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 3,
+   "verified_assertion_ids": [
+    "I02-CASE-01"
+   ],
+   "n_verified": 1,
+   "status_default": "pending"
+  },
+  {
+   "id": "I03",
+   "skill": "math-i03-fourth-moment-suffix-maximal-comparison",
+   "tier": "待证据",
+   "n_steps": 5,
+   "steps": [
+    {
+     "n": 1,
+     "head": "验证 M_k 是同一滤过下的鞅，并定义后缀从确定索引 j 起的 M_k−M_j；若索引随机，另核对停时条件。"
+    },
+    {
+     "n": 2,
+     "head": "用 Doob L⁴ 不等式 E max_{j≤k≤n}|M_k−M_j|⁴≤(4/3)^4 E|M_n−M_j|⁴ 将最大值上界转成末端四阶矩。"
+    },
+    {
+     "n": 3,
+     "head": "若问题需要反向比较或条件化后缀，单独证明对应不等式，不能由 Doob 方向反推。"
+    },
+    {
+     "n": 4,
+     "head": "存在多个后缀时逐个列出并用并集界或最大不等式合并，保留依赖关系与常数。"
+    },
+    {
+     "n": 5,
+     "head": "已本地核确定有限终端N的DoobL⁴：对|Mk|次鞅用首次超过λ停时和layercake/Holder，Emax_{k≤N}|Mk|⁴≤(4/3)⁴E|MN|⁴。确定后缀起点j的Mk−Mj可同样处理；随机起点/终端须另核停时可积，数值例不授"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "自然滤过下取 M₀=0、M₁=ε（±1等概率）、M₂=0。末端四阶矩为0，最大值四阶矩为1；E(M₂|F₁)=0≠M₁，故它不是鞅，不能套Doob。这是缺鞅前提的反例。对真正鞅，末端控制最大值正是Doob的正确方向；不能从Doob推出任意sharp反向比较或随机起点版本。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "简单随机游走 M₀=0、M₁=±1、M₂∈{−2,0,2}；E|M₂|⁴=8、E max_{k≤2}|M_k|⁴=8.5，且 8.5≤(4/3)^4·8，可枚举核对 Doob L⁴ 上界。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [
+    "I03-CASE-01"
+   ],
+   "n_verified": 1,
+   "status_default": "pending"
+  },
+  {
+   "id": "I04",
+   "skill": "math-i04-random-carleson-occupancy-llogl",
+   "tier": "待证据",
+   "n_steps": 5,
+   "steps": [
+    {
+     "n": 1,
+     "head": "定义树节点、祖先后代、占用质量与过滤；说明 Carleson 常数是逐样本、条件期望还是整体期望控制。"
+    },
+    {
+     "n": 2,
+     "head": "逐节点核验后代总占用≤C·父节点尺度（或原定理的条件版本），并检查停止线和可选采样不会重复计费。"
+    },
+    {
+     "n": 3,
+     "head": "本次来源 P-6a781aff4000e334 Theorem 2.1 是 L²、常数e的连续鞅嵌入：须核验正交等二次变差的系统、广义 Cauchy–Riemann 结构及总占用质量鞅的表示条件。该文没有 LlogL 端点；端点版本须另给来"
+    },
+    {
+     "n": 4,
+     "head": "把随机 Carleson 范数、期望顺序与截断极限写清；仅有一阶质量有限不能替代 LlogL。"
+    },
+    {
+     "n": 5,
+     "head": "确定有限laminar树的安全分支：0<μ(Q)<∞、αQ≥0，所有节点Σ_{R⊆Q}αR≤Cμ(Q)，可经超阈值包含极大节点不交、layercake和DoobL²得到ΣαQ|avg_Q f|²≤4C||f||²。一般测度可用，但重叠非la"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "只有 Eμ(total)<∞ 却无条件/逐路径打包，仍宣称随机 Carleson 嵌入常数确定。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "深度2二叉树的基准测度满足 μ(R)=1、两子各1/2、四叶各1/4，取序列 a_Q=μ(Q)。打包比值 C=sup_S μ(S)^(-1)Σ_{Q⊆S}a_Q，根/子/叶分别为3/2/1，故C=3；f≡1的平方平均加权和为3而L²质量为1。这仅核验有限树数值，不认证随机嵌入或LlogL。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "J01",
+   "skill": "math-j01-inhomogeneous-jump-generator",
+   "tier": "待证据",
+   "n_steps": 4,
+   "steps": [
+    {
+     "n": 1,
+     "head": "从小时间转移概率定义真实生成元 L_t f(x)=lim_{h↓0}(E[f(X_{t+h})|X_t=x]−f(x))/h；先确认极限及测试函数域。"
+    },
+    {
+     "n": 2,
+     "head": "按模型写漂移/扩散与 ∫[f(x+z)−f(x)−χ(z)∇f(x)·z]ν(t,x,dz)，若有跳出域或杀死，明确其边界/杀死项。"
+    },
+    {
+     "n": 3,
+     "head": "检查 Lévy 可积性、局部有界性与时变强度；空间非齐次是 rate/kernel 依赖 x，时间非齐次是依赖 t，二者分别记录。"
+    },
+    {
+     "n": 4,
+     "head": "用 f≡1 和坐标函数（在合法域内）检查质量守恒与漂移；由生成元推出演化方程时注明时间不齐次算子次序。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "把状态依赖速率 λ(x) 当常数 λ，或在跳出域后仍按边界值结算而无边界规则。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "状态集{0,1}，仅有0→1跳转率 λ₀₁(t)=1+t（0≤t≤1），状态1吸收；L_t f(0)=(1+t)(f(1)−f(0)), L_t f(1)=0。由初值X₀=0，P(X₁=0)=exp(−∫₀¹(1+s)ds)=e⁻¹·⁵≈0.22313，P(X₁=1)=1−e⁻¹·⁵≈0.77687；可直接验算真实时变",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 5,
+   "verified_assertion_ids": [
+    "J01-CASE-01"
+   ],
+   "n_verified": 1,
+   "status_default": "pending"
+  },
+  {
+   "id": "J02",
+   "skill": "math-j02-killed-process-duhamel-first-jump",
+   "tier": "待证据",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "明确杀死是独立指数时钟、状态依赖杀死率还是吸收跳转；写出含墓地状态的生成元与存活半群。"
+    },
+    {
+     "n": 2,
+     "head": "按首次跳时 τ 与落点 y 对 E_x[f(X_t);t<ζ] 条件分解，保留无跳生存因子、跳核与后续转移项。"
+    },
+    {
+     "n": 3,
+     "head": "需要 Duhamel 时从两个演化算子差的积分恒等式推导，并检查算子域、强连续性和积分可积性。"
+    },
+    {
+     "n": 4,
+     "head": "按首次跳跃标签区分不同渠道/时间段，验证标签划分互斥且覆盖；分别检查零跳项与余项。"
+    },
+    {
+     "n": 5,
+     "head": "若引用 P-c580aef7365f8786 Corollary 5.5，仅有每个有限λ的域外占用惩罚表示；λ→∞到首次退出杀死不是本篇已证明的极限。另核验边界正则、路径占用与首次退出事件是否等价，以及所需极限交换。"
+    },
+    {
+     "n": 6,
+     "head": "Miles–Keener P-ee636b8a2c2329ad可辅助首跳hazard分解：h满足∂th=(L−λ)h，事件位置测度p=λ∫hdt、事件时密度∫λh dx。先确认零边界flux、合法积分交换及下一跳a.s.有限，否则p是次概率"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "令跳出域即杀死却继续用完整概率核积分到域内，并不减去墓地质量。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "单个存活状态以独立常数率2杀死、T=1；存活半群质量e^(−2)≈0.135335，墓地质量1−e^(−2)≈0.864665，首次杀死时密度2e^(−2t)。实际核验活状态次概率与墓地账，不认证一般Duhamel/Fubini或硬退出极限。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [
+    "J02-CASE-01"
+   ],
+   "n_verified": 1,
+   "status_default": "pending"
+  },
+  {
+   "id": "J03",
+   "skill": "math-j03-nonlocal-balayage-exit-measure",
+   "tier": "待证据",
+   "n_steps": 4,
+   "steps": [
+    {
+     "n": 1,
+     "head": "定义退出时刻 τ_D=inf{t:X_t∉D}，并保留 X_{τ_D} 的实际外部落点；跳过程退出位置一般在 D^c 而非 ∂D。"
+    },
+    {
+     "n": 2,
+     "head": "用过程的停时分解定义退出测度 ω_D(x,A)=P_x(X_{τ_D}∈A,τ_D<∞)，另记 τ_D=∞ 质量及杀死事件。"
+    },
+    {
+     "n": 3,
+     "head": "对调和/势函数应用 Dynkin 公式或非局部 Dirichlet 问题时核验测试域、可积性和边界数据在整个 D^c 上的定义。"
+    },
+    {
+     "n": 4,
+     "head": "比较 balayage 前确认所用核、边界条件与概率退出测度一致；检查总质量仅在几乎必然退出且不被杀死时为1。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "对跳过程把所有退出质量压到最近边界点，或忽略正概率 τ_D=∞ 的质量。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "有限状态域D={0}，仅向外部2、3跳，速率分别2、1；τ_D~Exp(3)，退出位置质量(2/3,1/3)。外部数据g(2)=2,g(3)=5时E[g(X_τ)]=3，满足3h(0)=2g(2)+g(3)。这是吸收链退出账，不把overshoot压到最近边界点。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "J04",
+   "skill": "math-j04-jump-compensation-fubini-exit-settlement",
+   "tier": "待证据",
+   "n_steps": 5,
+   "steps": [
+    {
+     "n": 1,
+     "head": "把跳跃和写成 ∫H(t,z)N(dt,dz)，标清 H 的可预测性、定义域和退出前/退出时约定。"
+    },
+    {
+     "n": 2,
+     "head": "替换 N=Ñ+ν，验证 E∫|H|ν<∞（或适用的平方可积/局部化条件），再用补偿公式处理期望。"
+    },
+    {
+     "n": 3,
+     "head": "随机 Fubini 交换时空、标签与期望的次序前，逐项检查绝对可积、可测性及有限总强度等充分条件。"
+    },
+    {
+     "n": 4,
+     "head": "按财富账本核算连续流、跳跃收益、超额跳出/杀死结算与终值；用路径级恒等式核对符号，再取期望。"
+    },
+    {
+     "n": 5,
+     "head": "可选的向量积分矩界分支先从 references/provenance.md 与 references/papers/ 取得 P-c7a4dec8102c2b5b/P-8c541dc0bb435647 对应的已核源卡及原文定位；未取得对应证"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "令 H 指示一个依赖当前跳跃是否发生的事件却直接使用可预测补偿公式。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "Poisson过程强度2，T=1，确定H在[0,1/2)为1、[1/2,1]为3。H可预测且绝对强度积分为4；E∫H dN=1·E N_{1/2}+3·E(N_1−N_{1/2})=1+3=4=∫H·2dt。这只演练可积补偿和有限分段交换，不认证一般随机Fubini或退出财富账本。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 2,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "J05",
+   "skill": "math-j05-frozen-coordinate-iterated-compensation-interface",
+   "tier": "待证据",
+   "n_steps": 5,
+   "steps": [
+    {
+     "n": 1,
+     "head": "原样保留项目中的冻结坐标名、坐标顺序和私有搭配；建立逐字段接口表，未提供的类型、映射或更新语义标为“接口定义缺失”，不从同名论文猜测。"
+    },
+    {
+     "n": 2,
+     "head": "在已有契约下，固定本轮允许冻结的坐标，其余坐标按真实时间-状态依赖强度核演化；记录本轮条件滤过、事件标签与核的版本。"
+    },
+    {
+     "n": 3,
+     "head": "对每轮事件只对可预测被积项应用对应随机测度补偿；逐轮核对强度可积性、重复事件排除/包含规则及退出时结算。"
+    },
+    {
+     "n": 4,
+     "head": "迭代前后比较账本质量与剩余误差；收敛、交换极限或坐标冻结近似必须有单独假设和证明，不能由普通跳跃过程文献自动推出。"
+    },
+    {
+     "n": 5,
+     "head": "可复用Miles–Keener的迭代构件T=λ−L、u_i=∫h_i dt、p_i=λu_i及T u_(i+1)=Jp_i；需独立给T逆的存在/正性与可積性。原文式4索引和式5的λ=0除法有缺口，零hazard处保留occupation u"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "因论文作者或标题出现 frozen/coarsening 就把空间坐标、冻结时刻、状态更新规则自动映射到本接口。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "显式单轮玩具契约：状态(ξ,η)，冻结ξ=ξ*，η为确定非齐次率1+t的计数过程，停止T=1、无额外退出扣费。在其自然滤过下ν(dt)=(1+t)dt，Eη_1=3/2；仅核单步补偿，不把此玩具字段冒充原项目私有冻结接口。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 3,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "K01",
+   "skill": "math-k01-chan-lai-asymptotically-gaussian-fields",
+   "tier": "待证据",
+   "n_steps": 4,
+   "steps": [
+    {
+     "n": 1,
+     "head": "先核验 Chan–Lai 论文条件 (C)、(A1)–(A5) 或所用定理对应假设：局部相关尺度 Δ_c、边缘尾近似及条件局部增量场极限须一致。"
+    },
+    {
+     "n": 2,
+     "head": "对单个小块应用 Theorem 2.4 得到局部超越概率；其 H_K(t) 来自条件高位点下的局部场，不从作者姓氏或其他摘要推断。"
+    },
+    {
+     "n": 3,
+     "head": "对大域分块后，按 (A5) 或适用的交叉块估计证明联合超越可忽略，再求和/积分得到全域渐近；核验域 Jordan 可测和块尺度限制。"
+    },
+    {
+     "n": 4,
+     "head": "分开呈现高斯特例、渐近高斯非高斯场和 LIL 边界穿越结果；迁移到目标场时逐条列出对应假设。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "仅知有限维分布收敛到高斯场就报告高阈值最大值渐近，未检查 (A1) 边缘尾与 (A5) 块间控制。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "经验过程定义的可算构件：U~Unif(0,1)、F_1(t)=1_{U≤t}、F(t)=t，则sup_{0≤t≤1}(F_1(t)−t)=1−U，阈值1/2的尾概率恰1/2。另对已定位Chan–Lai Theorem4.1的n_c=ceil(c^12)，可核c=o(n_c^(1/6))并按作者渐近报告主项e^(−2c²",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 6,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "K02",
+   "skill": "math-k02-pickands-piterbarg-double-sum",
+   "tier": "待证据",
+   "n_steps": 4,
+   "steps": [
+    {
+     "n": 1,
+     "head": "验证样本路径可测/连续、方差上界与最大方差点结构；记录局部相关 1−r(t,t+h) 的幂指数 α、慢变项和常数。"
+    },
+    {
+     "n": 2,
+     "head": "按相关长度与阈值选择小块，使用 Pickands/Piterbarg 单块超越渐近并保留对应常数 H_α/Piterbarg 常数。"
+    },
+    {
+     "n": 3,
+     "head": "执行double-sum时先固定block长度参数T并令阈值u→∞，再令T→∞；分别给相邻边带、中距和固定紧域远距交集预算。P-6c5bcc98b64321b6 Lemma5只写固定t₀的sufficiently-large-u，不能直接代"
+    },
+    {
+     "n": 4,
+     "head": "核对域维数、网格稠密度与连续上确界版本；常数、指数项和多重峰贡献分别列出。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "把独立块近似用于强相关连续高斯过程，或在方差峰附近套用常方差 Pickands 常数。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "有限Gaussian双块构件：G1,G2独立标准正态，E_i={G_i>2}，p=Ψ(2)≈0.0227501，交集p²，联合2p−p²≈0.0449827，满足Bonferroni下界与2p上界。改为G2=G1则交集和联合均为p，不能忽略交叉项。此只核双重和方向，不认证连续场Pickands常数或中距一致界。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 2,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "K03",
+   "skill": "math-k03-dirksen-mixed-tail-generic-chaining",
+   "tier": "待证据",
+   "n_steps": 5,
+   "steps": [
+    {
+     "n": 1,
+     "head": "对所有 s,t∈T 验证混合尾条件 P(|X_t−X_s|≥√u d₂(t,s)+u d₁(t,s))≤2e^(−u)，u≥0；检查 d₁,d₂ 半度量和直径有限。"
+    },
+    {
+     "n": 2,
+     "head": "分别构造 d₂ 的次高斯与 d₁ 的次指数可容许划分，计算 γ₂(T,d₂)、γ₁(T,d₁)，并记录基点偏移项。"
+    },
+    {
+     "n": 3,
+     "head": "按 Dirksen Theorem 3.5 对 1≤p<∞ 使用 (E sup_t |X_t−X_t₀|^p)^(1/p)≤C(γ₂+γ₁)+2sup_t(E|X_t−X_t₀|^p)^(1/p)；对 u≥1，尾界阈值为 C(γ₂+γ₁)+"
+    },
+    {
+     "n": 4,
+     "head": "有限 T 先核验；无限 T 用有限子集格上确界，并另外保证样本可分/可测及所需极限成立。分清论文允许的常数 C,c 与最优常数。"
+    },
+    {
+     "n": 5,
+     "head": "若改用 Hu–Simchi-Levi P-b19fb9f102d33f2e Theorem3.1 的逐点同时界，先核验有限m条联合可测半度量、可分ρ=Σd_j、Banach值过程的ρ连续修改、锚点，以及同一个u下的共同混合尾不等式。先于观测"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "只计算 γ₂ 后声称覆盖重尾线性项，或把论文中的一般常数说成 sharp。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "T={0,1}，令 X₀=0、X₁ 为尺度1 Laplace；mixed-tail 核验给 γ₁=diam_{d₁}=1、γ₂=diam_{d₂}=0，定理预言对 u≥1 有 P(|X₁|≥C+c u)≤e^(−u)，由 Laplace 尾 e^(−(C+cu)) 可直接核验常数选择。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 4,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "K04",
+   "skill": "math-k04-anti-concentration-empirical-process",
+   "tier": "待证据",
+   "n_steps": 13,
+   "steps": [
+    {
+     "n": 1,
+     "head": "确定统计量是 max_j X_j、sup_f G_n(f) 、两块最大值差M_B−M_A，还是学生化版本；写出维数/熵、方差下界、依赖结构和中心化。"
+    },
+    {
+     "n": 2,
+     "head": "先选择相符版本：P-7c5071d32603e0f2 Theorem 2 的 Z=sup_u|X_u| 仅要求可分中心高斯且Z<∞ a.s.，其界依赖 Var(Z)并允许退化；非中心的 sup_u X_u 推广才另要求 inf_u Var("
+    },
+    {
+     "n": 3,
+     "head": "经验过程场景中，另核对可测性、包络函数、熵积分及乘子/高斯近似误差；反集中只控制极限分布小区间概率，不替代近似误差。"
+    },
+    {
+     "n": 4,
+     "head": "把最终 CDF 误差拆为近似误差+反集中项，并在用户给定的区间宽度/维数代入。"
+    },
+    {
+     "n": 5,
+     "head": "CCK P-fbc49cdca0a78f82 Theorem3是有限中心高斯max的Lévy区间L(Z,ε)=sup_x P(|Z−x|≤ε)，半宽ε，区别于另一来源的宽ε版本。允许协方差奇异，但每个σ_j²>0；a_p=E max_j(X"
+    },
+    {
+     "n": 6,
+     "head": "若用CCK Theorem2比较分布函数，先平滑indicator再soft-max比较，Δ是逐元素协方差误差。显式定义b_p=E max_j(Y_j/√Var(Y_j))；原文p4的variance/SD记号不一致，不将打印a_p静默当标"
+    },
+    {
+     "n": 7,
+     "head": "若问题是高斯全局非负二次多项式的相对均值小球，Tu–Boczar P-6d836a3f30fbd5fb给P(f(X)≤εEf)≤min(1,√(2eε))，X标准Gaussian，增广Q≥0且Q≠0、Ef=trQ>0。这个origin th"
+    },
+    {
+     "n": 8,
+     "head": "一维对数凹变量版本 P-9dec1113f304933f：连续M是密度的本质上确界，1/12≤M²Var≤1；离散M是整数格点最大概率，M²Var+M≤1，不能混用单位。连续有界密度的半宽ε区间概率≤2εM；离散需数区间内格点。单/双交叉比"
+    },
+    {
+     "n": 9,
+     "head": "若经验过程按确定空间序列重复抽取同一随机场值，Cohen–Conze P-a150ab8a0390f583 Theorem1.9仅在空间iid、F支持[0,1]及最大占用M_n²/V_n→0下给D[0,1]弱FCLT。这里N_n(ℓ)是占用"
+    },
+    {
+     "n": 10,
+     "head": "若用CCK经验sup耦合 P-52fde473d714f0b2 Theorem2.1，核iid、P中心化、逐点可测、包络L^q且q≥3、紧pre-Gaussian、n≥3，以及κ³的经验绝对三阶矩上界。选ε∈(0,1]、γ∈(0,1)，保留"
+    },
+    {
+     "n": 11,
+     "head": "两块Gaussian最大值差按Belloni–Fang–Shen P-b3fd0f020aa4cd42选版本。齐方差σ²>0、非平凡不交分区及跨块最大相关ρ̄<1时，Theorem2.1半宽ε的L(M_B−M_A,ε)≤7ε/[(1−ρ̄)"
+    },
+    {
+     "n": 12,
+     "head": "同源异方差Theorem2.4还须跨块|Corr|<1，并选方向S=B或A：在S内max σ_j^(-2)Cov(X_j,X_j′)≤1，且C_{A,B}=min_{j∈S,i∈另一块}[σ_j−Cov(X_i,X_j)/σ_j]>0；界为"
+    },
+    {
+     "n": 13,
+     "head": "同源Theorem3.1只处理有限p独立共同均值向量、平均协方差Σ*满足Condition3.1、指定指数矩/四阶矩及B_n²log⁵(pn)≤c n的分区max差CDF距离。保留Emax_{S_p}|X_j−EX_j|/σ_j除C_{A,"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "取单索引 X=σG 且σ→0，对固定ε>0有Q(|σG|,ε)=2Φ(ε/σ)−1→1；不能宣称存在与σ无关的C使Q≤Cε。中心绝对上确界Theorem2仍成立但退化时无小区间衰减，不能误称定理不适用。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "单索引 X_u=G~N(0,1)，Z̃=|G|，ε=0.1；Var(Z̃)=1−2/π≈0.36338，精确 Q=2Φ(0.1)−1≈0.07966。Theorem 2 界给 0.1/(√12√(0.36338+0.1²/12))≈0.0478 ≤Q≤0.1√12/√(0.36338+0.1²/12)≈0.574。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 9,
+   "verified_assertion_ids": [
+    "K04-CASE-01"
+   ],
+   "n_verified": 1,
+   "status_default": "pending"
+  },
+  {
+   "id": "K05",
+   "skill": "math-k05-talagrand-convex-concentration",
+   "tier": "待证据",
+   "n_steps": 4,
+   "steps": [
+    {
+     "n": 1,
+     "head": "明确 Talagrand 结果的具体版本：高斯等周、乘积空间凸距离、运输/熵不等式不可混用；写出参考测度与度量。"
+    },
+    {
+     "n": 2,
+     "head": "验证 f 的凸性、欧氏 Lipschitz 常数或所需梯度范数；对非光滑 f 使用合法的凸近似/次梯度框架。"
+    },
+    {
+     "n": 3,
+     "head": "围绕中位数或期望中心化，按对应定理给双侧/单侧尾界并记录常数、维数依赖及积分矩条件。"
+    },
+    {
+     "n": 4,
+     "head": "若模型不是独立乘积或高斯，先证明测度满足同一凸集中性质；集中输出与测度改变/条件化误差分开计算。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "对任意强依赖分布的凸 Lipschitz 函数直接引用高斯/乘积 Talagrand 界。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "来源明确：Michel Ledoux, “Four Talagrand inequalities under the same umbrella” (2019), arXiv:1909.00363v1, Eq. (5), PDF p.4；其证明在 p.14 给双侧形式。取 X=G∼N(0,1)、f(x)=x、L=1（仿",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 2,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "L01",
+   "skill": "math-l01-lower-bound-test-parameters",
+   "tier": "待证据",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "先给出一个真实可行的输入函数 f，按原定义计算范数和所有平均值。"
+    },
+    {
+     "n": 2,
+     "head": "把测试构型写成非负质量与高度参数；优化前加入质量、支撑、单调性和可实现性约束。"
+    },
+    {
+     "n": 3,
+     "head": "精确计算目标比值，并保留严格阈值 {Mf>alpha} 的约定。"
+    },
+    {
+     "n": 4,
+     "head": "把有限参数向量还原成实际函数或二进树，逐个核对父节点平均值等于子节点的加权平均。"
+    },
+    {
+     "n": 5,
+     "head": "若下界见证先在离散立方体上得到，可用边长δ小胞把每个格点质量铺成常值函数：总L1质量精确保持，内胞保留超水平格点；固定d时令δ趋零，或为误差ε选δ≤ε/d。"
+    },
+    {
+     "n": 6,
+     "head": "将得到的常数下界与任何上界证明分开报告；δ→0的定维转移不提供维数一致的收敛速度。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "若某个子区间平均值被指定为 1、父区间平均值却指定为 0，便违反父子平均关系；不能把这组参数当成可实现构型。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "在 [0,1] 上令 f=1_[0,1/2)。此时 ||f||_1=1/2，根区间平均值为 1/2。对 0<alpha<1/2，二进极大函数的超水平集包含整个 [0,1]，所以 alpha·|{M_d f>alpha}|/||f||_1=2alpha；当 alpha 从下方趋于 1/2 时，比值趋于 1。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 3,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "L02",
+   "skill": "math-l02-adversarial-input-search",
+   "tier": "待证据",
+   "n_steps": 5,
+   "steps": [
+    {
+     "n": 1,
+     "head": "从数学定义导出优化目标，并区分真实对抗输入与放松后的参数代理模型。"
+    },
+    {
+     "n": 2,
+     "head": "列出所有可行性和归一化约束；先证明参数化覆盖所选输入族，再开始搜索。"
+    },
+    {
+     "n": 3,
+     "head": "在有限模型中搜索候选值；随后重建获胜输入，并独立重算目标值。"
+    },
+    {
+     "n": 4,
+     "head": "用搜索结果提出猜想或反例；任何界的证明另给解析或有理证书。"
+    },
+    {
+     "n": 5,
+     "head": "记录边界、并列解和离散化敏感性，不要静默删去这些情况。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "若对每个区间分别优化平均值，却不要求所有重叠区间来自同一个 f，优化值只是放松模型的上界，不能称为可达到的对抗输入。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "令二进分割两半上的函数高度分别为 a,b>=0，并约束 a+b=1。此时总质量为 1/2、根平均值为 1/2；取候选 (a,b)=(1,0)，当 alpha 从下方趋于 1/2 时，二进玩具模型的弱型比值趋于 1。这里的归一化固定的是根平均高度之和，不是 L1 质量。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "L03",
+   "skill": "math-l03-rational-and-interval-certificates",
+   "tier": "待证据",
+   "n_steps": 5,
+   "steps": [
+    {
+     "n": 1,
+     "head": "写明需要认证的符号或不等式，并将其改写成方向明确的残差。"
+    },
+    {
+     "n": 2,
+     "head": "对每个舍入运算使用向外取整的有理区间；核验最终区间在所需方向上不含零。"
+    },
+    {
+     "n": 3,
+     "head": "对 LP 或锥规划，同时给出原问题可行见证与对偶可行见证，并精确核对目标间隙。"
+    },
+    {
+     "n": 4,
+     "head": "把启发式搜索和证书核验分开，保存足以复现的位数或有理数据。"
+    },
+    {
+     "n": 5,
+     "head": "若区间跨过零，或求解器状态没有可行见证，就报告尚不能判断，而不是证明成立。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "最大化问题的浮点求解器显示目标值 0.500000 并标记 optimal，但没有原问题可行点或有效上界证书；这不足以证明最优值是 1/2。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "认证 1.414<sqrt(2)<1.415：两端为正，且精确计算 1.414^2=1.999396<2<2.002225=1.415^2。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 5,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "L04",
+   "skill": "math-l04-mathematical-programming-workflow",
+   "tier": "待证据",
+   "n_steps": 5,
+   "steps": [
+    {
+     "n": 1,
+     "head": "将数学问题逐项翻译成变量、目标和约束；记录每个放松及其界的方向。"
+    },
+    {
+     "n": 2,
+     "head": "检查单位、定义域、凸性或整数性，并在手算可验证的小例子上检查可行性。"
+    },
+    {
+     "n": 3,
+     "head": "运行适用的 LP、凸规划、混合整数或非线性求解器，保存状态、容差和见证。"
+    },
+    {
+     "n": 4,
+     "head": "独立计算返回见证的目标值，并按问题类型核验对偶界、整数性或不可行证书。"
+    },
+    {
+     "n": 5,
+     "head": "无法精确验证时，将结果称为数值候选，不要把求解器状态改写成定理。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "非凸模型的求解器返回一个局部值，却在没有全局证书时被报告成全局最优；应将其标成候选值。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "最大化 x+y，约束 x+y<=1、x,y>=0。原问题点 (1,0) 的目标值为 1；对约束 x+y<=1 取对偶乘子 1，也给出上界 1。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 9,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "L05",
+   "skill": "math-l05-csp-sat-smt-encoding",
+   "tier": "待证据",
+   "n_steps": 9,
+   "steps": [
+    {
+     "n": 1,
+     "head": "声明每个变量的确切定义域，并区分硬可行约束和加权偏好/优化代价。"
+    },
+    {
+     "n": 2,
+     "head": "把原约束翻译到目标 CSP、SAT 或 SMT 语言；用可手工枚举的小实例核对真值表和每种变量编码。"
+    },
+    {
+     "n": 3,
+     "head": "若用连续 Fourier 代价，明确布尔编码（本源中 +1=False、−1=True；FE_c 在 Boolean 顶点对满足约束取0、违反约束取1）、变量定义域、零点符号舍入和罚项系数；逐点检查零坐标与舍入阈值等号。"
+    },
+    {
+     "n": 4,
+     "head": "有界公式先严格保留 x∈[−1,1]^n 硬约束。若改用全空间平方形式，须使用 FE_c(x)^2 + αΣ_i(x_i^2−1)^2 且 α>0；不得把仅在布尔顶点表示违约的 FE_c 当作全空间非负违约代价。"
+    },
+    {
+     "n": 5,
+     "head": "只有证明每种约束的实数零点均舍入为真时，才可在全空间平方归约中省去变量盒罚项；数值近零须有残差—违反数界。"
+    },
+    {
+     "n": 6,
+     "head": "用传播、分支或理论求解器搜索，同时保存精确编码和求解配置。"
+    },
+    {
+     "n": 7,
+     "head": "若用连续局部搜索或 BDD 消息传递，先在一到三个变量的小模型上穷举赋值，再用中心差分与解析梯度逐坐标对照。"
+    },
+    {
+     "n": 8,
+     "head": "把满足赋值代回原始约束；若声称不可满足，要求求解器支持证明轨迹或提供可独立核验的证书。"
+    },
+    {
+     "n": 9,
+     "head": "若编码了优化目标，另行核验目标值和最优性界，不能把可行性等同于最优性。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "端点：l=(0,0) 属于变量盒，FE_OR(l)=1/4；按 sgn(0)=+1 舍入为(+1,+1)=(False,False)，违反 OR，所以 |FE_OR|≤ε 的 ε=1/4 闭阈值不够，OR 的0-rounding-friendly结论只允许 FE=0。全空间错误形式：若把未平方 FE_OR 当成本征非负",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "本源的 OR 约束编码为 FE_OR(x)=(1+x1)(1+x2)/4；在 Boolean 顶点，−1=True、+1=False，满足赋值的 FE=0，唯一违反顶点(+1,+1)的 FE=1。受约束形式显式保留 x∈[−1,1]^2，取 l=(−1,+1)，则 FE_OR(l)=0 且 sgn(l) 满足 OR；盒",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 4,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "M01",
+   "skill": "math-m01-convex-hull-extreme-points",
+   "tier": "部分可用",
+   "n_steps": 5,
+   "steps": [
+    {
+     "n": 1,
+     "head": "核对凸性和具体拓扑；区分有限维 Carathéodory 条件与局部凸紧集的 Krein--Milman 条件。"
+    },
+    {
+     "n": 2,
+     "head": "在 R^d 中对 conv(S) 内的点，用仿射相关性将有限凸组合化简到至多 d+1 个点。"
+    },
+    {
+     "n": 3,
+     "head": "对 Hausdorff 局部凸空间中的紧凸集，只在 Krein--Milman 假设下推出它是极点闭凸包。"
+    },
+    {
+     "n": 4,
+     "head": "检查目标究竟需要有限凸组合、闭包还是积分表示。"
+    },
+    {
+     "n": 5,
+     "head": "若文献只是提到 Krein 空间或 Krein 算子，须确认存在真正的凸极点论证。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "[0,1] 上概率测度的弱星紧凸集，其极点是 Dirac 测度。Lebesgue 测度属于这些极点的闭凸包，但不是有限个 Dirac 测度的凸组合。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "三角形 conv{(0,0),(1,0),(0,1)} 中，(1/3,1/3) 是三个顶点以 1/3 权重组成的凸组合；R^2 中 Carathéodory 至多需要 3 个顶点。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [
+    "M01-BND-01a",
+    "M01-BND-01b"
+   ],
+   "n_verified": 2,
+   "status_default": "pending"
+  },
+  {
+   "id": "M02",
+   "skill": "math-m02-separation-support-certificate",
+   "tier": "待证据",
+   "n_steps": 5,
+   "steps": [
+    {
+     "n": 1,
+     "head": "检查集合凸且待分离点在集合之外，并选定满足假设的分离定理版本。"
+    },
+    {
+     "n": 2,
+     "head": "构造连续线性泛函，计算其在整个集合上的上确界，明确要求严格分离还是弱分离。"
+    },
+    {
+     "n": 3,
+     "head": "有限维紧凸集可用支撑函数 h_C(u)=sup_{x in C} u·x 比较候选点。"
+    },
+    {
+     "n": 4,
+     "head": "将严格分离间隙作为显式证书，并对整个集合验证泛函，而非只抽查样本。"
+    },
+    {
+     "n": 5,
+     "head": "若目标在闭包内或集合非凸，说明限制；只有在问题允许时才作凸化。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "若 z=(1,0) 在单位圆盘边界，同一泛函给出 1=1；它支撑圆盘，却没有把 z 与圆盘严格分离。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "令 C 为 R^2 单位圆盘，z=(2,0)，取 u=(1,0)，则 h_C(u)=1<2=u·z，是严格分离证书。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "M03",
+   "skill": "math-m03-near-extremizer-stability",
+   "tier": "待证据",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "先明确优化方向与非负亏损：最大化问题用极值减当前目标值，尖锐不等式按所选方向用有效左端减右端；列出归一化与等号集合。"
+    },
+    {
+     "n": 2,
+     "head": "识别平移、伸缩、符号或相位等对称性；按模这些对称性计算距离。"
+    },
+    {
+     "n": 3,
+     "head": "找到所需范数/距离、对称群及参数域匹配的定量定理；若δ≥c(d)dist^p，逐项保留p、c(d)和各极限的量词次序，再改写dist≤(δ/c(d))^(1/p)。"
+    },
+    {
+     "n": 4,
+     "head": "核对所用原文版本的定义域和修订范围；连续维度提升逐项检查辅助维度条件，谱稳定性逐项检查全部允许对称性的切向核与正交条件。外依赖存在未修证明缺口时，将该来源定理保留为原文主张，不能认证全目标稳定性。"
+    },
+    {
+     "n": 5,
+     "head": "对候选输入分别计算亏损和距离，区分定量稳定性与定性紧性。"
+    },
+    {
+     "n": 6,
+     "head": "没有适用稳定性定理时，只报告近最优，不推断输入接近某个精确极值函数。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "某不等式的尖锐常数为 C，且一列函数的目标值趋于 C；若没有紧性或亏损-距离估计，不能推出它们趋近极值函数。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "F(x)=1-x^2 在 [-1,1] 上的最大值为 1，等号点为 0。若亏损不超过 delta，则 x^2<=delta，故 dist(x,{0})<=sqrt(delta)。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 5,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "M04",
+   "skill": "math-m04-measurable-supremum-selection",
+   "tier": "待证据",
+   "n_steps": 7,
+   "steps": [
+    {
+     "n": 1,
+     "head": "写清各个 sigma-代数，并按所用定理的精确图像或逆像条件核验多值映射可测。"
+    },
+    {
+     "n": 2,
+     "head": "在调用可测最大值定理前，检查值集非空紧，以及目标函数的可测性或 Carathéodory 正则性。"
+    },
+    {
+     "n": 3,
+     "head": "在对应投影/选择定理的假设下，证明上确界或值函数可测。"
+    },
+    {
+     "n": 4,
+     "head": "只有 argmax 多值映射满足定理假设时才构造可测最大化选择器，并逐点验证可行。"
+    },
+    {
+     "n": 5,
+     "head": "将光滑、连续、仿射或逐点选择与可测选择分开；除非对当前结构证明蕴含关系，不得互相替代。"
+    },
+    {
+     "n": 6,
+     "head": "对条件上确界，区分最小可测上包络与由某个索引达到的最大值；增序列可交换的结论不得推广为降序列或任意极限。"
+    },
+    {
+     "n": 7,
+     "head": "引用积分兼容选择定理时逐项区分标量HK、HKP和Banach范数Henstock可积；P-a594 Theorem4.3的HK statement/HKP proof差异与积分选择集合闭包必须显式保留，不认证strongHK。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "取 [0,1] 的非 Lebesgue 可测子集 A，并令 K(t)={0}（t∈A）、K(t)={1}（t∉A）。唯一选择器不可测，说明不能省略多值映射的可测性假设。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "令 T=[0,1]、K(t)={0,1}，并最大化 (t-1/2)u。取 u(t)=0（t<=1/2）、u(t)=1（t>1/2），这是达到最大值的可测选择。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 8,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "N01",
+   "skill": "math-n01-john-loewner-ellipsoid",
+   "tier": "待证据",
+   "n_steps": 5,
+   "steps": [
+    {
+     "n": 1,
+     "head": "区分最大体积内接的 John 椭球与最小体积外接的 Löwner 椭球；只有核对原点和对偶体条件后才用极性联系两者。"
+    },
+    {
+     "n": 2,
+     "head": "将 John 椭球平移到中心，再用可逆仿射映射化为 B^n。"
+    },
+    {
+     "n": 3,
+     "head": "非对称情形用 K⊂nB^n；原点中心对称情形用 K⊂sqrt(n)B^n，并保留精确因子与唯一性条件。"
+    },
+    {
+     "n": 4,
+     "head": "接触点证明需核验加权一阶/二阶矩恒等式；变形证明则分别核验包含关系和行列式增长。"
+    },
+    {
+     "n": 5,
+     "head": "用单纯形或立方体验证尖锐性，并区分椭球问题与 John 域、John--Nirenberg 不等式及 Loewner 微分方程。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "对任意非对称凸体直接套用 K⊂sqrt(n)E；一般 John 包含因子是 n，sqrt(n) 需要中心对称。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "对 K=[-1,1]^n，最大体积内接椭球为 B_2^n，且 K⊂sqrt(n)B_2^n，因为 ||x||_2<=sqrt(n)||x||_infinity<=sqrt(n)。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 1,
+   "verified_assertion_ids": [
+    "N01-CASE-01"
+   ],
+   "n_verified": 1,
+   "status_default": "pending"
+  },
+  {
+   "id": "N02",
+   "skill": "math-n02-log-concave-marginal-inequalities",
+   "tier": "待证据",
+   "n_steps": 5,
+   "steps": [
+    {
+     "n": 1,
+     "head": "连续Prékopa–Leindler：先固定0<λ<1和非负Lebesgue可测可积f,g,h，0<∫f,∫g<∞；核验h((1−λ)x+λy)≥f(x)^(1−λ)g(y)^λ在正支撑乘积上a.e.成立，再得∫h≥(∫f)^(1−λ)(∫"
+    },
+    {
+     "n": 2,
+     "head": "连续BBL采用α≥−1/d约定，输出积分幂为α/(1+dα)；α=−1/d取−∞，α=∞取1/d。Satomi比值均值的p=−α，Q_d(p)=p/(1−dp)，两套记号不可混用。"
+    },
+    {
+     "n": 3,
+     "head": "消去变量前固定两个外变量y0,y1，把联合对数凹条件应用到内部变量的两个切片，再用PL。需切片可积且边际有限；只由a.e.切片结论时，说明代表元与零集，不能暗称每点有限。"
+    },
+    {
+     "n": 4,
+     "head": "多输出比值只在每个输入函数正支撑上定义essential infimum；slice递推保留Fubini零集与Q_e∘Q_d=Q_(d+e)适用范围。逆Minkowski只用均值幂≤1，低幂简化限p≤1/(d+1)。"
+    },
+    {
+     "n": 5,
+     "head": "离散PL/BBL另核膨胀格点/输出函数约定；等号、稳定性和奇异Brascamp–Lieb各自保留源条件与尚未全读的外引。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "取 f=1_[0,1]、g=1_[3,4]、h恒为0、lambda=1/2。令 x=1/2、y=7/2，则中点为2，h(2)=0<1，故 Prékopa--Leindler 前提不成立。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "取 lambda=1/2 且 f=g=h=1_[0,1]。只要 f(x)g(y)>0，就有 (x+y)/2∈[0,1]，从而 h((x+y)/2)>=sqrt(f(x)g(y))；三个积分均为 1。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 2,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "N03",
+   "skill": "math-n03-oscillation-and-geometric-remainder",
+   "tier": "待证据",
+   "n_steps": 6,
+   "steps": [
+    {
+     "n": 1,
+     "head": "先明确I(λ)=∫e^(iλφ)ψ、支撑、λ>0、导数阶数及全支撑下界；经典一维vdC k≥2可用非零k阶导数，k=1还需φ′单调等具体源条件。"
+    },
+    {
+     "n": 2,
+     "head": "在驻点或退化Hessian区域分片，将非退化区估计、局部体积/切向消振与端点项分别列出，再按参数平衡；不能在零导数点套全局下界。"
+    },
+    {
+     "n": 3,
+     "head": "每次换元写真实Jacobian与支撑。Guo Th2.6限d≥2，DγᵀADγ=2A给因子2^(d/2)；完整printed主项与由其定义的低阶R一并隔离。Th2.2的√(2π)及c_k归一化也禁止按printed精确主项调用；正确Th2."
+    },
+    {
+     "n": 4,
+     "head": "算术指数和使用Wu–Xi的squarefree/squarefull、模数、指数三元组与parent范围条件；addendum补证明不等于勘误，B1区间标签矛盾仍隔离，欧氏积分与算术和不混用。"
+    },
+    {
+     "n": 5,
+     "head": "指数对搜索分别记录P与convP、分式分母正性、严格LC、可行incumbent与全部active-node下界；Lelechenko源Step1无可行性过滤的程序隔离。"
+    },
+    {
+     "n": 6,
+     "head": "半密度/Kaufman/GP-BRANCH私有名需原始定义、变量映射及连接证明。缺任一项时仅记gap，不将消振机制改称该私有接口公开定理。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "对相位 phi(x)=x^2 在 [-1,1] 上声称一阶导数法给出 O(lambda^-1)；但 phi'(0)=0，均匀导数下界失效，驻相尺度是 lambda^-1/2。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "对 lambda>0，令 I(lambda)=∫_0^1 exp(i lambda x)dx。相位导数恒为1，且 |I(lambda)|=|e^(i lambda)-1|/lambda<=2/lambda。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 4,
+   "verified_assertion_ids": [],
+   "n_verified": 0,
+   "status_default": "pending"
+  },
+  {
+   "id": "N04",
+   "skill": "math-n04-summable-error-entropy-descent",
+   "tier": "部分可用",
+   "n_steps": 5,
+   "steps": [
+    {
+     "n": 1,
+     "head": "逐项写出 H_(k+1)<=H_k-d_k+epsilon_k，标清符号与下标。"
+    },
+    {
+     "n": 2,
+     "head": "对每个整数m≥0从k=0求和到m：Σ_(k=0)^m d_k≤H_0−H_(m+1)+Σ_(k=0)^m ε_k≤H_0−H_inf+Σ_(k=0)^m ε_k。H_inf须是与m无关的有限实下界。"
+    },
+    {
+     "n": 3,
+     "head": "若ε_k≥0且Σ_(k≥0)ε_k<∞，d_k≥0使其部分和单调有界，再取m→∞。有符号误差需另给上方部分和一致界，不能把任意条件收敛偷换为逐项正误差。"
+    },
+    {
+     "n": 4,
+     "head": "多尺度证明中先确定各尺度权重，再检查常数对尺度和维数是否一致。"
+    },
+    {
+     "n": 5,
+     "head": "在证明总和有限前，将扰动、离散化、截断与选择误差分开管理。"
+    }
+   ],
+   "n_case_claims": 2,
+   "case_claims": [
+    {
+     "file": "negative.md",
+     "claim": "H_0=0，令d_k=1/[2(k+1)]、ε_k=1/(k+1)、H_(k+1)=H_k+d_k。H_k≥0且递推等号成立，但Σd_k=∞；误差未可和时不能得到一致预算。",
+     "has_disclaimer": true
+    },
+    {
+     "file": "positive.md",
+     "claim": "若 H_0=1、H_k>=0 且 H_(k+1)<=H_k-d_k（d_k>=0），逐项求和得任意 m 下 sum_{k=0}^m d_k<=1，因此 sum d_k<=1。",
+     "has_disclaimer": true
+    }
+   ],
+   "n_boundary_lines": 6,
+   "n_source_cards": 7,
+   "verified_assertion_ids": [
+    "N04-IDEN-01",
+    "N04-IDEN-02"
+   ],
+   "n_verified": 2,
+   "status_default": "pending"
+  }
+ ]
+}

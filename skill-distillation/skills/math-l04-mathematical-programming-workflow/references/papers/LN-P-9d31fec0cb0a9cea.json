@@ -1,0 +1,154 @@
+{
+  "paper_id": "P-9d31fec0cb0a9cea",
+  "observed_title": "MPAX: Mathematical Programming in JAX",
+  "authors": [
+    "Haihao Lu",
+    "Zedong Peng",
+    "Jinwen Yang"
+  ],
+  "version": "arXiv:2412.09734v3; PDF 22 pages; manuscript dated January 18, 2026",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 1309,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "L04",
+    "decision": "direct",
+    "basis": "全文描述一个可复现设置的通用LP/凸QP一阶求解器：模型形式、原始—对偶残差、PDHG类更新、预条件/重启/feasibility polishing、GPU批量化与停止阈值均有明确接口。它直接支撑数值数学规划工作流与求解器配置，但作者使用浮点迭代和相对KKT误差，并未提供有理数最优性或严格不可行性证书。"
+  },
+  "definitions": [
+    "求解模型写为 min 1/2 xᵀQx+cᵀx，满足 ℓc≤Ax≤uc 与 ℓv≤x≤uv；Q=0 得 LP，凸QP默认隐含 Q 半正定，展示公式本身未显式列出该约束。",
+    "算法通过集合 X 的投影和对偶变量集合 Y 上的投影，求解带行区间约束的 primal-dual saddle formulation；停止条件综合原始可行残差、对偶可行残差与对偶间隙的 relative KKT error。",
+    "r2HPDHG 是 LP 用的 restarted reflected Halpern PDHG；rAPDHG 是凸QP用的 restarted accelerated PDHG，核心步以梯度、矩阵向量积、盒投影与动量/重启更新组成。",
+    "Feasibility polishing 以零目标的 feasibility-only PDHG 后处理提高可行性，可能牺牲最优性精度。"
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "LP/QP 数据和盒/行界正确编码；QP 的 Q 满足凸性要求。",
+        "算法步长、预条件和重启参数按所引用算法给定；稀疏/稠密矩阵格式与真实数据匹配。",
+        "KKT误差阈值是浮点数数值验收阈值；若需严格证明必须另做精确/认证核验。"
+      ],
+      "statement": "论文实现 LP 的 r2HPDHG 和凸 QP 的 rAPDHG：每步用盒投影、A/Aᵀ矩阵向量乘法和对偶投影，配合反射/加速平均、对角缩放、重启、自适应步长及 KKT 检查；达到指定浮点 relative KKT tolerance 时返回数值候选。此文仅概述迭代，收敛理论主要引用 [27] 和 [28]。",
+      "start_line": 123,
+      "end_line": 300,
+      "pdf_pages": [
+        3,
+        4,
+        5
+      ],
+      "proof_steps": [
+        "把线性约束 ℓc≤Ax≤uc 编入对偶变量集合 Y，将变量上下界编入 X 与投影算子。",
+        "LP 使用 PDHG 梯度步后执行 Halpern reflected average，并由外层 restart 更新锚点。",
+        "凸QP在 primal gradient 中加入 Qx，再使用运行均值和 momentum 系数 β、权重 θ 与重启。",
+        "预条件后按 relative KKT error 检查 primal feasibility、dual feasibility 和间隙；不满足则继续迭代或由时限/预算返回状态。"
+      ],
+      "gaps": [
+        "这是算法摘要而非收敛证明；r2HPDHG/rAPDHG理论依赖所引论文，本文未重证。",
+        "relative KKT tolerance、浮点 precision 与 infeasibility detection 不等同于精确有理可行、最优性或不可行证书。",
+        "公式（1）列出 Q∈Rⁿˣⁿ，但凸性/对称半正定条件未在这一行显式写出；该假设是将方法限定为凸QP所需条件。",
+        "first-order方法对病态、弱可行/退化问题可能缓慢或在迭代预算内未给conclusive status。"
+      ],
+      "author_claim": "第2节给出模型和一阶算法高层更新；第3节列出缩放、停止准则、不可行检测及feasibility polishing。",
+      "checked_derivation": "按最小化模型核对 X 为变量盒，A行界通过对偶变量投影集合表达；检查了固定步PDHG形式的 primal gradient 与 dual feasibility方向。关键公式已按PDF第3–6页视觉复核；完整证明仍以[27]/[28]为外部依赖。"
+    },
+    {
+      "assumptions": [
+        "性能比较只适用于文中所列LP/QP数据集、硬件、库版本、容差、precision和运行时间过滤。",
+        "JIT编译时间从报告中排除；GPU/TPU型号、稠密或稀疏结构与线程配置按作者实验设置。"
+      ],
+      "statement": "作者在特定实验中报告跨硬件加速、相同形状实例的vmap批求解、稠密LP多GPU分片以及Warcraft shortest-path differentiable optimization的训练时间；在单实例benchmark上MPAX对cuPDLPx略慢，对PDQP.jl较快。所有数值为配置绑定的经验性能结果，不能视作收敛率或最优性证据。",
+      "start_line": 357,
+      "end_line": 980,
+      "pdf_pages": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "proof_steps": [
+        "列出硬件与实例结构；固定算法和迭代数对硬件比较，避免将不同算法差别误写为加速收益。",
+        "批求解用同形状第二阶段LP的批大小1至10,000比较GPU一次调用与CPU逐个求解。",
+        "多GPU实验对300,000变量、3,000维knapsack稠密LP分片，记录1至4张H100迭代到66,200次的运行时间。",
+        "Warcraft训练比较MPAX/OSQP/SCS/Gurobi，统一训练集、epoch、batch、学习率及求解容差，报告训练时间、PDHG迭代数及normalized regret。",
+        "LP/QP benchmark报告适用测试集、time limit、KKT tolerances、JIT-excluded time与shifted geometric mean。"
+      ],
+      "gaps": [
+        "硬件加速与benchmark数字随软件栈和设备快速变化；不保证其他矩阵结构或硬件上的结果。",
+        "对GPU浮点非确定性、默认FP32和稀疏多设备sharding存在明确限制；作者建议FP64但仍非认证计算。",
+        "训练过程通过surrogate gradient / iteration unrolling实现；LP最优解映射可不连续，反向梯度可为近似量。",
+        "未复现实验、重跑代码或重新抽查原始日志。"
+      ],
+      "author_claim": "第4节逐项描述accelerator、batch、distributed和differentiable实验与标准LP/QP benchmark；第5节列出适用范围。",
+      "checked_derivation": "检查了作者列示的硬件/批量/多GPU/训练对照条件及表格比较方向；这些都是测量结果，未把solve count或KKT阈值解释成严格数学结论。PDF第10、14、16页结果表及模型页已视觉核对。"
+    }
+  ],
+  "constant_dependence": "没有对求解误差给出本审阅可复用的定理常数。论文列出的 stopping tolerances（LP/QP 10⁻⁴至10⁻⁶等）、time limits、runtime speedup与实例规模均依赖设置；不可从GPU运行时间推出误差界。",
+  "endpoint_limits": [
+    "返回值是浮点一阶迭代的数值候选；满足 configured relative KKT residual 不自动成为有理数证明。",
+    "QP凸性是rAPDHG适用前提；非凸Q不在其所述凸QP保证范围。",
+    "feasibility polishing 可能提高可行性但降低目标精度，必须分别检查 feasibility 与 optimality。",
+    "停止预算、步长、warm-start与预条件影响实际收敛；数值不收敛/限时退出不能改述为不可行。",
+    "加速、batch与distributed收益由矩阵稠密度、形状、硬件、XLA行为和精度共同决定；稀疏多设备支持是已知短板。",
+    "FP32为默认；GPU/XLA nondeterminism可使重跑轨迹和结束迭代略有差异。"
+  ],
+  "reusable_methods": [
+    "先写完整的上下界LP/QP模型及变量域，单独记录Q的凸性、稀疏性与数据类型。",
+    "把相对KKT停止指标拆成primal feasibility、dual feasibility、duality gap三项，防止把单一容差等同严格certificate。",
+    "需要可行性时可单独做feasibility polishing，但之后重新核验目标和对偶界。",
+    "比较solver时报告instance set、hardware、solver/library versions、precision、tolerance、JIT compile time是否计入与time limit。",
+    "差分学习时明示迭代展开或surrogate gradient的来源，并对LP非光滑性保留局限。"
+  ],
+  "unchecked": [
+    "未运行 MPAX/JAX 或独立复现实验；未验证当前设备性能或依赖版本。",
+    "r2HPDHG、rAPDHG收敛率及infeasibility detection保证引用外部文献，本审阅未独立重证。",
+    "未逐实例核对benchmark数据与实验日志；性能表仅按作者文本和截图记录。",
+    "完整通读22页（含随机规划附录）；PDF第3–6、10、14、16页重要模型/算法及表格视觉复核，未逐页截图。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1305,
+    "source_lines": 1309,
+    "required_content_lines": 892,
+    "covered_content_lines": 892,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-9d31fec0cb0a9cea/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/P-9d31fec0cb0a9cea.json",
+  "review_input_sha256": "c8eb2caaaafa2f5d137a453cbbbd4ee6ef4bb79c63c6d1ae2fd310d0f3da1e35"
+}

@@ -1,0 +1,267 @@
+{
+  "paper_id": "P-5f1e990278b02850",
+  "observed_title": "Package RobustArithmetic: Verified Interval Arithmetic with Correctly Rounded Kernels",
+  "authors": [
+    "Jose Mauricio Gomez Julian",
+    "Alexei Sibidanov",
+    "Paul Zimmermann",
+    "Tom Hubrecht",
+    "Cyprien Peignier",
+    "Szabolcs Nagy"
+  ],
+  "version": "CRAN package documentation, RobustArithmetic 0.2.0; Date/Publication 2026-09-16; PDF 75 pages (manual, not a theorem paper)",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 4668,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "L03",
+    "decision": "direct",
+    "basis": "整份软件手册以可追溯区间包围和有理/多精度验证为核心，定义 predecessor/successor outward rounding、MPFR 精度升级、自然/中心形式交集、Hansen–Sengupta 根认证与有预算的 paving，并显式标记 fast-level 的 measured provenance 和 abstention。它能直接支撑“区间结论必须携带舍入保证、证书假设与未决状态”的工作流；但手册不是外部审计报告，CORE-MATH 快速核的正确舍入在包内主要以数值哨兵/采样验证，不能一概改述为本文已证明的定理。"
+  },
+  "definitions": [
+    "区间用 [lo,hi] 端点表示实数集合，infinity 端点只作为界、不属于集合；装饰 decoration 记录区间运算还能够断言的定义域/有界性信息。",
+    "fast-level 基本四则通过 Rump–Zimmermann–Boldo–Melquiond predecessor/successor 公式 outward-round；elementary binary64 核宣称半 ulp 误差界，统一额外扩两个浮点邻点，provenance 标 measured。",
+    "rigorous-level 用 MPFR 多精度正确舍入，并按指定 precision ladder 升精；精度预算耗尽时明确 abstain，不放松调用方判据。",
+    "表达式区间像可由自然扩张、均值定理中心形式 f(c)+f′([x])(x−c)，以及导数不含零时的端点单调性路径分别包围；对有效路径的交集仍为包围。",
+    "一维 Hansen–Sengupta 区间 Newton 用扩展除法保留分母跨零时的两段商；严格内包的 Newton 像及导数不含零给出根存在且唯一的充分证书。",
+    "paving 对窗口分箱，输出 unique、excluded、not_excludable 三种状态；预算限制未决区域必须保留为 abstention，且每项输出带 theorem/measured provenance。"
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "输入端点、运算结果及浮点系统符合 IEEE binary64 round-to-nearest 模型；特殊值按手册定义另行处理。",
+        "对普通四则，运算误差满足半 ulp 模型并使用 predecessor/successor 扩张；对 fast elementary kernels，适用的半 ulp 正确舍入契约须成立。",
+        "若要把 elementary-function 结论升级为 theorem provenance，需走正确舍入的 MPFR rigorous path，或由来源另行证明对应快速核。"
+      ],
+      "statement": "对 round-to-nearest 得到的浮点候选运算值施加 predecessor/successor 构造，可得到包含精确实数运算结果的端点；elementary fast 核统一再外扩两个邻点。手册把核心四则结果及 rigorous MPFR 路径标为 theorem，而把 fast elementary path 标为 measured；包不声称完整符合 IEEE 1788.1-2017。",
+      "start_line": 7,
+      "end_line": 47,
+      "pdf_pages": [
+        1
+      ],
+      "proof_start_line": 988,
+      "proof_end_line": 1051,
+      "proof_pages": [
+        17
+      ],
+      "proof_steps": [
+        "选择 Rump 等人的 successor/predecessor 公式，确保结果严格越过当前浮点数且至少到达相邻浮点数；公式只用 round-to-nearest，不更改全线程舍入状态。",
+        "对已计算浮点值的两端分别应用向外邻点，将半 ulp 误差区间包住精确值；手册指出用于两端点的公式在 subnormal 与边界处需要改进因子 phi 和 eta。",
+        "对 elementary kernels 以 e=0.5 ulp 宣告界，再按 ceil(2e+1)=2 steps 外扩；观测扫点只用于测量，不能调整预先声明的 slack。",
+        "用独立 MPFR sentinels 与运行时首用比较监控快速核；失败后降级并在 backend 可用时升级 rigorous。"
+      ],
+      "gaps": [
+        "区间 predecessor/successor 公式的主要正确性证明引用 Rump et al. (2009) Coq 证明，本文手册未重证。",
+        "手册说明 fast CORE-MATH 核正确舍入的证据主要为存档哨兵、版本契约和抽样误差测量，而不是本文件对每个可能输入的形式证明；provenance 因而标 measured。",
+        "手册明确不声称 IEEE 1788.1-2017 完全符合：基本操作两端多扩一 ulp，22/39 算术操作、7个数值函数及接口覆盖均不完整。"
+      ],
+      "author_claim": "包首页和 ra_succ/ra_pred 说明基于 round-to-nearest 的外扩公式、CORE-MATH 快速核、MPFR 升级层及其保证来源。",
+      "checked_derivation": "核对了正方向的区间包含逻辑：若浮点误差受声明界控制，则 predecessor(flt(z))≤z≤successor(flt(z))；也核对 phi>u、subnormal eta 与两步 elementary slack 的依赖关系。未独立证明 Rump 定理或 CORE-MATH 逐输入正确舍入契约。"
+    },
+    {
+      "assumptions": [
+        "表达式只由 package closed operator table 中许可的符号构成；区间输入均为合法端点。",
+        "自然、中心形式与单调性三条路径各自的数学包含前提成立；stats::D 返回的导数表达式仍可在许可表中区间计算。",
+        "若使用 rigorous level，Rmpfr 已安装且 MPFR 函数的正确舍入约定可用。"
+      ],
+      "statement": "自然区间扩张、均值定理中心形式以及导数区间不含零时的单调端点像各自都是函数值域的外包；包返回适用结果的交集，因而不宽于任一参与的单独外包。重复变量按独立出现处理会放宽结果但不丢失真值。",
+      "start_line": 1368,
+      "end_line": 1494,
+      "pdf_pages": [
+        23,
+        24
+      ],
+      "proof_steps": [
+        "对每个表达式节点使用区间运算和 elementary extension，得到自然包含。",
+        "在中心 c 使用均值定理 f(x)=f(c)+f′(ξ)(x−c)，以 f′([x]) 和 [x]−c 的区间乘积包住所有 ξ，得到 centered form。",
+        "若 f′([x]) 不含零，则导数在区间同号，f 单调；对两个端点分别区间求值取得值域包围。",
+        "每种已建立包含关系的路径都包含真实范围，因此交集仍包含真实范围；未能验证适用条件的路径不参与。"
+      ],
+      "gaps": [
+        "手册将均值定理和符号微分作为实现方法，没有在此给出区间路径的独立形式化证明。",
+        "stats::D 的可微规则、operator table 对微分闭包及 MPFR 支持都依赖具体运行版本；包提供再闭合检查，但本次未运行软件。",
+        "变量重复导致依赖膨胀，区间结果宽不能推出函数真实范围同样宽；区间未排除零也不能推出零一定可达。"
+      ],
+      "author_claim": "ra_enclose_expr 说明三条包围路径及求交规则；ra_eval_natural 说明重复变量导致的单侧 overestimation。",
+      "checked_derivation": "从包含集合关系核实交集保持包含；按一维均值定理和导数不变号核对两条附加包围的适用条件。相关函数定义及其限制已逐页读过，没有代码级审计。"
+    },
+    {
+      "assumptions": [
+        "Phi 在所测闭球上连续；残差上界 rho、Lipschitz 上界 L 和像半径均在同一个用户指定范数中有效。",
+        "用于 contraction route 时，L 是整球上的 Lipschitz 常数而不是只在中心点的导数值。",
+        "对一维自动构造例，表达式落在许可运算表内，其值与导数均通过区间方法包围。"
+      ],
+      "statement": "若直接上界 sup_{x∈B(c,r)}||Phi(x)−c||≤r，则 Phi 把闭球映回自身，从而由 Brouwer 得至少一个不动点。另一条路以 ||Phi(c)−c||≤rho 与整球 Lipschitz 常数 L 得到 Lr+rho≤r，也可证明 confinment；若另有 L<1，则还由 Banach 得唯一性与迭代收敛。confined 与 contraction 是两项分开的 verdict。",
+      "start_line": 666,
+      "end_line": 792,
+      "pdf_pages": [
+        12,
+        13
+      ],
+      "proof_steps": [
+        "统一核对 rho、L、r 的 norm label；实现不验证这些上界确实用同一范数求出。",
+        "confinement route 直接检查上界 image_radius≤radius；Lip route 由三角不等式 ||Phi(x)−c||≤||Phi(x)−Phi(c)||+||Phi(c)−c||≤Lr+rho。",
+        "对最小可认证半径 rho/(1−L)，分子向上舍入、1−L 向下舍入；若分母向下舍入为零则拒绝给证书。",
+        "对 contraction verdict 单独验证 L<1；只 confine 而 L≥1 时不声称唯一或收敛。",
+        "一维 helper 在整个区间上包围表达式、中心残差及导数绝对值，避免把单点导数冒充整球 Lipschitz 界。"
+      ],
+      "gaps": [
+        "连续性及三项输入上界的真实性均由调用方负责；norm 字段只记录而不检查。",
+        "用 confinement 推存在依赖 Brouwer，用 contraction 推唯一依赖 Banach，来源仅列引文，没有在手册里证明这两大定理。",
+        "certificate refusal 不表示不动点不存在；只要充分条件无法证出，结果就是未认证。也没有证书说明球外行为。"
+      ],
+      "author_claim": "ra_ball_certificate / ra_certify_fixed_point 将 confinement existence 与 contraction uniqueness 分开记录，并声明 Lip bound 必须覆盖整球。",
+      "checked_derivation": "独立检查了 Lipschitz route 的三角不等式 Lr+rho≤r，以及“confined不蕴含contractive”的区分；对舍入方向，分子取上界且正分母取下界才能确保计算半径不偏小。PDF第12–14页公式和说明按原文通读，未运行函数。"
+    },
+    {
+      "assumptions": [
+        "e 是一维且由许可的表达式符号组成；[f′](X) 是整个候选盒的导数包含。",
+        "Hansen–Sengupta/Newton image、extended division 和 intersection 均按指定 interval arithmetic guarantee 正确执行。",
+        "唯一根 certificate 使用严格 interior inclusion；手册同时把 derivative enclosure excluding zero 写作可见充分条件。",
+        "paving 用户指定的 over 窗口、min_width、max_boxes、tol 及精度梯级按声明执行。"
+      ],
+      "statement": "区间 Newton 单步返回 Newton 像与原盒的相交部分；空交证明无根。单盒严格内含的 Newton 像且导数界不含零，可作为该盒恰含一个简单根的充分证书。paving 对整个窗口返回 unique、excluded、not_excludable，并在最大分箱数、最小抗拒宽度或精度预算处保留 abstention，而不把未决盒丢弃。",
+      "start_line": 2312,
+      "end_line": 2372,
+      "pdf_pages": [
+        38
+      ],
+      "proof_start_line": 2373,
+      "proof_end_line": 2439,
+      "proof_pages": [
+        39
+      ],
+      "proof_steps": [
+        "先区间求值 e(c) 与 [e′](X)，再由 Hansen–Sengupta 公式通过 extended division 算 Newton 像；分母跨零时保留两片结果并分别与 X 相交。",
+        "若相交为空，则 X 与所有可能根不相交，排除该盒。",
+        "若 Newton 像严格落在 X 内，固定点论证给存在根；导数不含零使 e 单调，从而最多一个根，合成唯一性。",
+        "paving 逐盒先做包含/排除测试，再细分无法判断区域；预算内未决盒标 not_excludable；边界盒按作者所述合并并膨胀后再检验。",
+        "只有所有区域均得 theorem-provenance verdict 时，整体 verified 才为真；fast elementary evaluation 单独使用时仍保留 measured 标签。"
+      ],
+      "gaps": [
+        "Newton/Krawczyk/Hansen–Sengupta 根存在唯一理论来自 Neumaier/Hansen-Walster 外部来源，本手册没有给出完整推导。",
+        "多重根的导数区间含零时这条简单根证书失效；算法不以失败推断根不存在。邻近根若小于 min_width 也可能保留未决。",
+        "无 Rmpfr 时函数内的 elementary fast verdict 保留 measured provenance；没有全局精确证明含三角/指数项的零点。",
+        "边界根的 fusion/inflation 仅为实现说明，本次没有运行大量跨界测试或独立验证完整覆盖逻辑。"
+      ],
+      "author_claim": "ra_newton_step 和 ra_solve 说明扩展除法、根排除/唯一性判定、分箱及预算耗尽策略。",
+      "checked_derivation": "独立检查了根排除和唯一性证明的方向：根属于 Newton image 是必要包含，空交可排除；严格内包含给存在，导数定号给唯一。方法依赖的 interval Newton 引理没有重证。PDF第39、60页相关规则按全文手册阅读。"
+    }
+  ],
+  "constant_dependence": "没有普遍终止步数或根分离常数。ra_solve 的 max_boxes/min_width/tol/precision_ladder 决定输出粒度；局部根间距、导数下界、区间膨胀、表达式复杂度都会影响能否证出。fast elementary slack 固定两步，特定核的实际 error sweep 是经验量；最终决定与性能不能互换。",
+  "endpoint_limits": [
+    "fast-level elementary functions是 measured provenance，不是所有二进制输入上的形式证明；有Rmpfr时严谨路径按升精核验，不可把fast结果无差别改标 theorem。",
+    "区间运算的单侧包含使排除零可证明相应不等式，但包含区间横跨零时只表示未决；natural extension 可能严重依赖膨胀。",
+    "fixed-point 证书要求用户给的 rho/L/image_radius 在同一范数且全球有效；范数名只记录，包不能检测外部错误上界。",
+    "root solver 的 abstention 是正确的未决输出，不表示无根；只有 exact empty Newton intersections 或已核验覆盖能支持absence。",
+    "手册不主张完整 IEEE 1788.1 符合；未实现若干操作、comparison 与 interchange 规则，基本操作比该标准精度目标每端多一 ulp。",
+    "未运行代码，手册里关于内核正确舍入/算法实现的版本自述没有在本审阅独立验证。"
+  ],
+  "reusable_methods": [
+    "让每个返回区间携带来源 provenance，把定理级 arithmetic 和实测快核明确区分。",
+    "将复杂函数值域通过 natural form、中心均值形式、导数单调性分别外包，再对已证有效的区间做交集。",
+    "面对靠近0或判定边界的候选，保持调用者的判据不变，按固定精度阶梯升级；预算耗尽时报告 abstention。",
+    "把根认证分成排除、唯一根认证与未决；用 extended division 在导数跨零时保留两个分支，并将边界根及根聚集作为明示风险。",
+    "固定点证书分开检查 ball confinement 和 contraction；显式记录范数、整球 Lipschitz 上界及舍入方向。",
+    "用频谱界（Gershgorin/Weyl）组装粗区间证书时，逐项保留 outward rounding 与输入对称性假设。"
+  ],
+  "unchecked": [
+    "未安装/运行 RobustArithmetic 0.2.0、Rmpfr、CORE-MATH 包含核或场景测试；没有审计 native code、数据生成哈希或手册与 release tarball 一致性。",
+    "Rump et al. predecessor/successor 正确性、MPFR correctly-rounded contract、Hansen–Sengupta 与 fixed-point theorem 仅据作者引用，本审阅未独立重证。",
+    "文中测量式 fast-level validation/sentinel sweep 不是形式证明；未复核全部预设样本和运行时降级行为。",
+    "完整通读了75页软件手册（含索引），并视觉核对 PDF 第1、12、20、39、60、65页的核心保证与边界说明；未视觉核对全部文档页。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 4664,
+    "source_lines": 4668,
+    "required_content_lines": 2402,
+    "covered_content_lines": 2402,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-5f1e990278b02850/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/P-5f1e990278b02850.json",
+  "review_input_sha256": "ccd95ec8946368a7a661ffaf961b6458dcbe95394b3a7ae699ad8b487152f805"
+}

@@ -1,0 +1,263 @@
+{
+  "paper_id": "P-91433be844e70d18",
+  "observed_title": "A generalized moment approach to sharp bounds for conditional expectations",
+  "authors": [
+    "Wouter J.E.C. van Eekelen"
+  ],
+  "version": "arXiv:2401.00090v1; dated January 2, 2024; 43 PDF pages.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1954,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43
+      ],
+      "scope": "Complete paper.md read from title/abstract through Sections 1–5, Appendix A (all proposition and Lemma 1 proofs), Appendix B (conic/S-lemma reformulations), and all references. Rendered original PDF pages 6, 7, 9, 10, 11, 13, 14, 19, 20, 21, 24, 25, 38, 39, and 43 using PyMuPDF to inspect the fractional-to-measure transformation, dual constraints, Theorems 1–3, extremal two-point construction, numerical figures, contextual DRO, conic LMIs, and final references; no unread low-text pages were identified."
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "B03": "direct: the paper explicitly formulates distribution-free sharp upper bounds over all distributions obeying generalized moment constraints, derives the associated semi-infinite dual, proves conditional-bound duality under explicit regularity assumptions, and treats mean/variance, structural distribution constraints, and moment-based contextual DRO. It is especially useful for event-conditioned bounds, but it is not a substitute for the separate classical Bertsimas–Popescu polynomial majorant framework."
+  },
+  "definitions": [
+    {
+      "name": "Generalized conditional-bound problem",
+      "statement": "Maximize E_P[g(X) | X∈Ξ] over nonnegative measures/probability distributions whose generalized moments E_P[h_j(X)] equal q_j (including normalization h_0≡1,q_0=1); for each admissible P, P(X∈Ξ)>0. The conditional objective equals E_P[g(X)1_Ξ(X)]/E_P[1_Ξ(X)].",
+      "source_lines": [
+        221,
+        254
+      ],
+      "pdf_pages": [
+        6
+      ]
+    },
+    {
+      "name": "Conditional change of measure (generalized Charnes–Cooper transform)",
+      "statement": "Set dQ=α dP with α=1/P(X∈Ξ). Then Q(Ξ)=1 and the moment equations scale to ∫h_j dQ=αq_j, making the objective linear in Q; conversely, a feasible transformed pair with α>0 recovers P=Q/α.",
+      "source_lines": [
+        264,
+        313
+      ],
+      "pdf_pages": [
+        7,
+        8
+      ]
+    },
+    {
+      "name": "Extreme-generator mixture class",
+      "statement": "For structural ambiguity sets P_0, the paper assumes every admissible member is a mixture of a parameterized generating family T of extreme distributions. The dual cone may then be tested only against the generators.",
+      "source_lines": [
+        361,
+        374
+      ],
+      "pdf_pages": [
+        9
+      ]
+    },
+    {
+      "name": "Mean-dispersion ambiguity set",
+      "statement": "P(μ,σ)={P∈P_0(X): E_P[X]=μ, E_P[d(X)]≼_D σ}, where d has a D-convex, conically representable epigraph. Examples include covariance, mean absolute deviation, norms, and Huber loss.",
+      "source_lines": [
+        1003,
+        1019
+      ],
+      "pdf_pages": [
+        23
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Lemma 1 (fractional/parametric equivalence)",
+      "assumptions": [
+        "The generalized conditional ratio problem (4) has a finite optimal value; every distribution in the feasible ambiguity set has P(X∈Ξ)>0 so the ratio is defined."
+      ],
+      "statement": "The supremum of the conditional ratio equals the infimum over τ such that sup_P E_P[(g(X)−τ)1_Ξ(X)]≤0. The paper says the same extremal distribution, or an identical maximizing sequence, serves both formulations.",
+      "start_line": 324,
+      "end_line": 332,
+      "pdf_pages": [
+        8
+      ],
+      "proof_steps": [
+        "作者结论：Lemma 1 statement at lines 324–332.",
+        "作者证明：Appendix A compares maximizing sequences in both formulations, uses ratio optimality to make each candidate τ feasible, then proves the reverse inequality by contradiction (lines 1341–1386; PDF pages 30, 31).",
+        "核验基础推导：for each fixed admissible P, the ratio is at most τ iff E_P[(g−τ)1_Ξ]≤0 because P(Ξ)>0. Taking a supremum gives the parametric feasibility condition; equality of infimum/supremum values follows by the corresponding sign-change argument, subject to finiteness."
+      ],
+      "gaps": [
+        "The statement requires a finite value; it does not itself prove strong duality or attainment. The main theorem later adds a uniform positive event-probability bound and Slater condition."
+      ]
+    },
+    {
+      "label": "Theorem 1 (strong conic duality)",
+      "assumptions": [
+        "A1: g is bounded on support Ω.",
+        "A2: inf_{P in feasible ambiguity set} P(X∈Ξ)≥ε>0.",
+        "A3: moment vector q lies in the interior of the feasible moment cone (Slater-type condition).",
+        "The measure cone and function space are paired as described by the paper; structural ambiguity sets may be restricted to a mixture-generated convex class."
+      ],
+      "statement": "The primal conditional-bound value is finite and equals the conic dual infimum over λ_0,…,λ_{m+1}, with λ·q≤0 and Σ_{j=0}^{m+1}λ_j h_j−g1_Ξ in the dual cone of the measure cone. For all nonnegative measures, this reduces to the semi-infinite LP dual with pointwise majorization.",
+      "start_line": 383,
+      "end_line": 402,
+      "pdf_pages": [
+        9,
+        10
+      ],
+      "proof_steps": [
+        "作者结论：Theorem 1 at lines 383–402.",
+        "作者证明：A1–A2 bound the conditional objective; Lemma 1 converts it to a linear generalized moment problem; standard conic strong duality under A3 gives the dual, and the positive-measure cone recovers pointwise constraints (lines 404–414; PDF page 10).",
+        "核验基础推导：the change-of-measure primal and its Lagrangian semi-infinite dual are displayed as (6)–(7), PDF page 7. The boundedness and positivity conditions make the fractional objective finite and well-defined."
+      ],
+      "gaps": [
+        "The central strong conic-duality step is imported from Shapiro [56] and Popescu [50], not independently reproved in this paper. The theorem’s general cone/function-space formulation should not be exported without checking those cited hypotheses.",
+        "A2 is a uniform lower bound across the entire feasible ambiguity set, not merely positivity for each individual distribution."
+      ]
+    },
+    {
+      "label": "Theorem 2 (finite extreme-generator reduction)",
+      "assumptions": [
+        "Theorem 1 assumptions A1–A3 hold.",
+        "The convex structural class P_0 has the stated mixture representation by an extreme-generator family T.",
+        "There are m+1 moment functions, counting the probability-mass constraint h_0≡1."
+      ],
+      "statement": "The supremum over all feasible distributions equals the supremum over basic distributions in D(q); if an optimum is attained, there is an optimal basic distribution that is a convex combination of at most m+1 generators from T. If the supremum is not attained or is infinite, the paper says a basic-distribution maximizing sequence suffices.",
+      "start_line": 436,
+      "end_line": 448,
+      "pdf_pages": [
+        11
+      ],
+      "proof_steps": [
+        "作者结论：Theorem 2 at lines 436–442.",
+        "作者证明：reduce via Lemma 1 to the linear generalized moment problem and invoke Theorem 6.1 of Popescu [50] (lines 444–448; PDF page 11).",
+        "核验基础推导：the moment vector has m+1 listed coordinates including normalization, which explains the stated generator-count scale; the cited extreme-point reduction itself was not reproved here."
+      ],
+      "gaps": [
+        "The finite-support/generator cardinality result is cited rather than independently derived. It applies to the stated convex mixture class and its extremal generators; it is not a generic claim that every unrelated ambiguity set has an optimizer with ≤m+1 atoms."
+      ]
+    },
+    {
+      "label": "Proposition 1 (sharp conditional-mean bound from mean and variance)",
+      "assumptions": [
+        "X is real-valued with unrestricted support and fixed mean μ and standard deviation σ>0.",
+        "The event is Ξ={X≥t}.",
+        "The conditional expectation is considered only for distributions with positive event probability."
+      ],
+      "statement": "For t<μ, sup E[X|X≥t]=μ+σ²/(μ−t); the supremum is approached but not attained by moving a lower atom to t from below. For t≥μ, the supremum is +∞.",
+      "start_line": 607,
+      "end_line": 611,
+      "pdf_pages": [
+        14
+      ],
+      "proof_steps": [
+        "作者结论：Proposition 1, equation (16), at lines 607–611 (PDF page 14).",
+        "作者证明：the dual quadratic majorant is optimized at x_0=μ+σ²/(μ−t); complementary slackness gives a two-point law on t− and x_0 whose conditional mean approaches x_0 (lines 580–605; PDF page 14). For t≥μ, the displayed sequence has conditional expectation tending to infinity (lines 596–605; PDF page 14).",
+        "核验基础推导：writing d=μ−t>0, the limiting two-point law has locations μ−d and μ+σ²/d and masses σ²/(σ²+d²), d²/(σ²+d²). Its mean is μ and variance is σ², and as the lower atom is placed just below t it falls outside Ξ; the conditional expectation is the upper location μ+σ²/d. This verifies the finite branch and its nonattainment mechanism.",
+        "迁移推断：with only mean/variance information and no support cap, rare-event conditional means can diverge at and beyond t=μ; a finite endpoint needs extra tail/support or uniform event-mass information."
+      ],
+      "gaps": [
+        "The t<μ value is a supremum, not a maximum, due to the closed threshold event and atom t−. The infinite branch is not a finite useful bound."
+      ]
+    },
+    {
+      "label": "Theorem 3 (contextual DRO dual reformulation)",
+      "assumptions": [
+        "C1: Ξ is closed and convex, inf_P P(X∈Ξ)>0; the paper sets the support to R^n for exposition.",
+        "C2: dispersion d has a D-convex, conically representable epigraph.",
+        "C3: f(ν,x)=max_{l∈L}{s_l(ν)^T x+t_l(ν)}, with s_l,t_l affine in the decision ν; the decision set V is closed and convex.",
+        "C4: the ambiguity set satisfies Slater; the paper specifies μ∈int(X) and d(μ)≺_D σ."
+      ],
+      "statement": "The contextual conditional DRO problem with mean-dispersion ambiguity has the same objective value as the displayed semi-infinite LP (28), whose robust constraints are indexed by convex lifted sets C and C built from the event, its complement, and the dispersion epigraph. With extra conic-representability and Slater conditions, (28) has a finite-dimensional conic reformulation.",
+      "start_line": 1049,
+      "end_line": 1066,
+      "pdf_pages": [
+        24
+      ],
+      "proof_steps": [
+        "作者结论：Theorem 3 statement and dual model (28) at lines 1049–1066 (PDF page 24).",
+        "作者证明：the indicator constraint is split over Ξ and its complement, continuity closes the complement, the dispersion epigraph is lifted, and linear robust inequalities may be imposed over the convex hull (lines 1068–1112; PDF pages 24, 25). Appendix B homogenizes the lifted set, invokes conic duality under a strict-feasibility condition, and derives the Chebyshev S-lemma LMI and MAD LP forms (lines 1685–1780; PDF pages 37, 38, 39).",
+        "核验基础推导：the split of 1_Ξ into inside/outside inequalities and the lifting from d(x) to an epigraph variable preserve the stated pointwise inequalities; the convex-hull replacement is valid because the constraints are affine in the lifted uncertain variables. Rendered PDF pages 24–25 and 38 confirm the sets, dual variables, and S-lemma LMIs."
+      ],
+      "gaps": [
+        "Finite-dimensional conic tractability is conditional on extra assumptions after (28), including tractable representations of the lifted sets/cones and strict feasibility; C1–C4 alone establish only the semi-infinite formulation.",
+        "The complement-side robust constraint can remain hard because it optimizes a convex function on a nonconvex complement; the paper recommends polyhedral event sets for tractability (lines 1114–1123).",
+        "The general strong duality premise for the inner conditional expectation is assumed from C4, with no standalone proof beyond cited duality theory."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "The general dual has m+2 multipliers for m+1 moment functions plus the event normalization multiplier; no quantitative approximation rate is supplied. In Proposition 1 the finite bound is μ+σ²/(μ−t), so sensitivity grows like (μ−t)^{-1} as t approaches μ from below; the branch t≥μ is infinite. For conic tractability, complexity depends on the dimension of X, the number of moment/dispersion constraints, the number of affine pieces L, and the sizes of the SDP/LP representations; the paper gives no asymptotic runtime bound.",
+    "dependence": "Finiteness of the conditional objective in Theorem 1 depends on ||g||_∞, the uniform event-probability floor ε, and moment Slater regularity. Theorem 3 additionally needs conic-representable convex lifted event/dispersion sets and strict feasibility."
+  },
+  "endpoint_limits": [
+    "The event probability must stay strictly positive for each candidate P; for strong duality in Theorem 1 it must be uniformly bounded below by ε over the ambiguity set.",
+    "In the mean/variance example, t<μ gives a finite supremum but not an attained maximum; t↑μ makes it diverge, and t≥μ yields +∞.",
+    "As the conditioning event shrinks, the paper reports increasingly uninformative bounds; adding moments or structural restrictions can sharpen them, but the paper does not give a general endpoint-continuity theorem."
+  ],
+  "reusable_methods": [
+    "Convert a conditional ratio of measure integrals into a linear measure problem via Q=αP and Q(Ξ)=1.",
+    "Use the parametric threshold form sup_P E[(g−τ)1_Ξ]≤0 to connect the fractional objective to ordinary generalized-moment duality.",
+    "Derive a pointwise dual majorant with an additional multiplier on the event indicator; exploit weak duality and complementary slackness to construct extremal distributions and certify sharpness.",
+    "For convex structural classes, parameterize their extreme generators and reduce the search to basic finite mixtures, while preserving whether attainment actually holds.",
+    "For contextual DRO with convex piecewise-affine losses, lift a convex dispersion epigraph and replace affine uncertainty constraints by robust counterparts; use S-lemma/LP duality only when the event and lifted set satisfy the needed conic regularity."
+  ],
+  "unchecked": [
+    "The general strong conic duality result is not independently proved; it relies on cited results [50], [56].",
+    "The general extreme-generator cardinality theorem is cited to [50] and was not reconstructed from first principles.",
+    "The complete Chebyshev LMI and MAD LP algebra in Appendix B was read; only the key LMI page was visually inspected and no numerical SDP solver was run.",
+    "The contextual newsvendor numerical plots were inspected as figures but not independently recomputed.",
+    "No transfer claim is made for cases where the event probability can vanish, support is noncompact without tightness, or the objective is unbounded."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1954,
+    "source_lines": 1954,
+    "required_content_lines": 1496,
+    "covered_content_lines": 1496,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-91433be844e70d18/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-91433be844e70d18.json",
+  "review_input_sha256": "15d574e6c68c3467ac7a87fef13940c24b0f10f2444f8ca9613c915bbe15ecf2"
+}

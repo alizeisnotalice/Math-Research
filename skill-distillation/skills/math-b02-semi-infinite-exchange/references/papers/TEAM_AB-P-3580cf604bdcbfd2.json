@@ -1,0 +1,133 @@
+{
+  "paper_id": "P-3580cf604bdcbfd2",
+  "observed_title": "A note on semi-infinite program bounding methods",
+  "authors": [
+    "Stuart M. Harwood",
+    "Dimitri J. Papageorgiou",
+    "Francisco Trespalacios"
+  ],
+  "version": "Local arXiv:1912.01763v1 overlay December 4, 2019; internal title date December 5, 2019. Both observed dates retained.",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 245,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "scope": "All five pages including references; no appendix. Original pp3–4 viewed for Lemma2, geometric counterexample and all proof inequalities; p2 also rendered."
+    }
+  ],
+  "topic_relevance": {
+    "B02": "direct: ordinary SIP lower-bound convergence with approximate separation and a counterexample to arbitrary positive violations."
+  },
+  "definitions": [
+    {
+      "name": "Master and separation sign convention",
+      "statement": "SIP minimizes f(x) over x∈X with g(x,y)≤0 for every y∈Y. g*(x)=sup_y g(x,y). The master keeps a finite nested Y_k and is globally minimized; master minima are lower bounds and nondecreasing.",
+      "source_lines": [
+        32,
+        47,
+        64,
+        79
+      ],
+      "pdf_pages": [
+        1,
+        2
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Counterexample to imported Lemma1: any positive violation does not suffice",
+      "assumptions": [
+        "X=Y=[−1,1], f(x)=−x, g(x,y)=2x−y; empty initial index set.",
+        "At each iteration master is solved globally but chosen separating point is y_k=x_k rather than a fixed-quality worst violation."
+      ],
+      "statement": "True feasible set is [−1,−1/2] and optimum is 1/2. The selected sequence x_k=y_k=2^{1−k} has positive violation g=x_k, while lower bounds −2^{1−k} increase only to 0<1/2.",
+      "start_line": 84,
+      "end_line": 141,
+      "pdf_pages": [
+        2,
+        3
+      ],
+      "proof_steps": [
+        "作者反例：each selected y_k adds x≤y_k/2, giving the next exact master solution x_{k+1}=x_k/2.",
+        "本次核验：g*(x_k)=2x_k+1; the achieved ratio x_k/(2x_k+1) tends to zero. Thus the example has no single positive fractional accuracy valid for every iteration."
+      ],
+      "gaps": [
+        "This refutes the claim quoted from source [4], not every approximate-oracle exchange method."
+      ]
+    },
+    {
+      "label": "Lemma2: fixed fractional separation gives qualitative lower-bound convergence",
+      "assumptions": [
+        "Finite-dimensional compact nonempty host sets X,Y; real-valued continuous f and g on X and X×Y.",
+        "Initial Y_0 is finite, masters are solved globally, and Y_{k+1}=Y_k∪{y_k}.",
+        "One fixed α∈(0,1) works for all iterations: either certify g*(x_k)≤0 or return y_k∈Y with g(x_k,y_k)≥α g*(x_k)>0."
+      ],
+      "statement": "The restricted minima converge to the full SIP optimum. If a finite master is infeasible then the SIP is infeasible; if g*(x_k)≤0 then that master solution is already globally optimal. An infinite run has feasible optimal accumulation points and its entire monotone lower-bound sequence converges.",
+      "start_line": 143,
+      "end_line": 205,
+      "pdf_pages": [
+        3,
+        4
+      ],
+      "proof_steps": [
+        "作者证明：compactness and continuity give global master minimizers; later master points satisfy every older generated cut (pp3–4).",
+        "作者证明：take a convergent subsequence in X; uniform continuity of g on X×Y and old-cut feasibility imply selected violation g(x_k,y_k)→0 along that subsequence. The fixed α then gives g*(x_k)→0.",
+        "本次可自含补足：|sup_y g(x,y)−sup_y g(x′,y)|≤sup_y|g(x,y)−g(x′,y)|. Uniform continuity therefore proves continuity of g* without relying on the cited parametric-optimization theorem.",
+        "作者证明：the limit is feasible; f continuity and master lower-bound inequality make the limit objective equal f*. Monotonicity then transfers subsequence value convergence to the entire lower-bound sequence."
+      ],
+      "gaps": [
+        "No iteration count, convergence rate, objective error bound from residual alone, or floating-point certificate is given.",
+        "Variable α_k→0, mere positivity, sampling and local lower-level solutions do not meet this theorem. Exact separation (α=1) fits the same proof, but α=1 is a local extension outside the printed α∈(0,1).",
+        "The infinite-run proof implicitly uses subsequence indices when writing k,ℓ; it does not assert convergence of all decision iterates to one point.",
+        "For an infeasible compact SIP, compactness gives some finite infeasible subfamily of all constraints, but does not show an adaptive oracle will generate it. Under the complete fixed-α/global-master Lemma2 hypotheses, an infinite nonempty-master run would instead produce a feasible accumulation point by the proof and is impossible. Thus finite infeasibility detection follows from the full lemma argument, with no iteration bound; it is not inferred from nested masters alone."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "One iteration-independent α>0 controls g*≤g/α. Continuity supplies an unspecified modulus on the compact product. No rate or finite tolerance iteration count is supplied.",
+    "dependence": "Any quantitative rate would need additional regularity, geometry and oracle/master accuracy assumptions not present here."
+  },
+  "endpoint_limits": [
+    "Noncompact host sets or discontinuous objective/constraint functions are outside the proof.",
+    "α_k tending to zero is not the fixed-α hypothesis.",
+    "Residual ε feasibility is separate from objective ε optimality."
+  ],
+  "reusable_methods": [
+    "Keep master lower-bound monotonicity separate from convergence.",
+    "Demand an iteration-uniform quality guarantee on the violated constraint oracle.",
+    "Use compactness, old-cut persistence, uniform continuity and the support supremum inequality to close the qualitative proof."
+  ],
+  "unchecked": [
+    "All local pages and references read; no external source [4] independently audited.",
+    "Section4 says the prior upper-bounding procedure still stands, but this is an author assertion about an external algorithm and is not promoted to an audited upper-bound theorem.",
+    "No algorithmic complexity, numerical solver behavior or center-cube transfer asserted."
+  ],
+  "local_repairs": [
+    {
+      "classification": "proof dependency replaced by elementary local inequality",
+      "location": "Lemma2 PDF p4 / paper.md lines197–198",
+      "repair": "Uniform continuity plus |sup a−sup b|≤sup|a−b| proves continuity of g*. The mathematical conclusion is preserved.",
+      "theorem_conclusion_preserved": true
+    }
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 245,
+    "source_lines": 245,
+    "required_content_lines": 154,
+    "covered_content_lines": 154,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-3580cf604bdcbfd2/paper.md"
+  },
+  "review_source": "evidence/reviews/TEAM_AB/evidence/P-3580cf604bdcbfd2.json",
+  "review_input_sha256": "db4aa52c1c0e59871bd102eb2bef239cda400d892828838ace3a69ddacead799"
+}

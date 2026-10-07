@@ -1,0 +1,249 @@
+{
+  "paper_id": "P-1bb76f48d9719898",
+  "observed_title": "Carleson–Buckley measures beyond the scope of A∞ and their applications",
+  "authors": [
+    "F. Nazarov",
+    "A. Reznikov",
+    "S. Treil",
+    "A. Volberg"
+  ],
+  "version": "arXiv:1202.2931v2, 8September2012 local12-page PDF",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 502,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  ],
+  "reading_provenance": "TEAM_FG完整读Sections1–6和References；无附录。全本文阅读保留§5多处外引[7]及本地印刷缺陷，不是fullmathematical certificate。",
+  "pdf_visual_checks": [
+    {
+      "pdf_page": 3,
+      "image": "P-1bb76f48d9719898-pdfp3.png",
+      "checked": "实际查看normalized N/nΨ、pp4–5各theorem有无|I|、p10normalizedCarleson与Thm5.3literal式"
+    },
+    {
+      "pdf_page": 4,
+      "image": "P-1bb76f48d9719898-pdfp4.png",
+      "checked": "实际查看normalized N/nΨ、pp4–5各theorem有无|I|、p10normalizedCarleson与Thm5.3literal式"
+    },
+    {
+      "pdf_page": 5,
+      "image": "P-1bb76f48d9719898-pdfp5.png",
+      "checked": "实际查看normalized N/nΨ、pp4–5各theorem有无|I|、p10normalizedCarleson与Thm5.3literal式"
+    },
+    {
+      "pdf_page": 10,
+      "image": "P-1bb76f48d9719898-pdfp10.png",
+      "checked": "实际查看normalized N/nΨ、pp4–5各theorem有无|I|、p10normalizedCarleson与Thm5.3literal式"
+    }
+  ],
+  "topic_relevance": {
+    "G01": "direct",
+    "G05": "adjacent"
+  },
+  "proof_verification": "two_printed_length_omission_counterexample_families_checked; general_Bellman_embedding_sourceclaim_only",
+  "definitions": [
+    {
+      "term": "dyadic Carleson normalization",
+      "definition": "α_I≥0且对每dyadicJ，Σ_I⊂J α_I|I|≤C_α|J|。此α是density，mass是α_I|I|；移到别的notation须明确absorbedlength，不得一式中混用。",
+      "source_ranges": [
+        {
+          "start_line": 50,
+          "end_line": 66,
+          "pdf_pages": [
+            2
+          ]
+        }
+      ],
+      "claim_class": "source_claim"
+    },
+    {
+      "term": "distribution bump nΨ",
+      "definition": "N_I^w(t)=|I|^-1|{x∈I:w(x)>t}|，nΨ(N)=∫_0∞ N(t)Ψ(N(t))dt；Ψ:(0,1]→R+ decreasing，φ=sΨ(s) increasing，后续embedding需要∫_0^1 ds/φ(s)<∞，nΨ(N_I^w)<∞。w≥0局部integrable，w≡0的I按源跳过。",
+      "source_ranges": [
+        {
+          "start_line": 87,
+          "end_line": 123,
+          "pdf_pages": [
+            2,
+            3
+          ]
+        }
+      ],
+      "claim_class": "source_claim"
+    },
+    {
+      "term": "normalized Orlicz link",
+      "definition": "YoungΦ满足相应large-t comparison Ψ(1/[Φ(t)Φ′(t)])≤CΦ′(t)，则nΨ(N_I^w)≤C||w||normalizedLuxemburgLΦ(I)。后续Ψreciprocalintegrability不是Lemma2.1自身hypothesis。",
+      "source_ranges": [
+        {
+          "start_line": 105,
+          "end_line": 123,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ],
+      "claim_class": "source_claim"
+    }
+  ],
+  "theorems": [
+    {
+      "name": "Theorem2.2/2.3 literal differential formulas",
+      "statement": "原PDF p4 (2.3)印Σ nΨ(N_Iw)^−1(Δ_Iw)²≤Cw(J)，(2.4)印Σ nΨ(N_Iw)^−1(Δ_I(fw))²≤C∫_Jf²w；两个都缺|I|。",
+      "source_ranges": [
+        {
+          "start_line": 140,
+          "end_line": 156,
+          "pdf_pages": [
+            4
+          ]
+        }
+      ],
+      "claim_class": "source_claim_with_checked_defect",
+      "scope": "不作为operativeformula；其字面uniform bound有下述固定boundedpositiveweight反例。"
+    },
+    {
+      "name": "Theorem2.4/2.5 correctly typed mass formulas",
+      "statement": "对上述Ψ与weight，源声称Σ_I⊂J nΨ(N_Iw)^−1< w >_I² α_I|I|≤Cw(J)，且Σ_I⊂J nΨ(N_Iw)^−1<fw>_I²α_I|I|≤C∫_Jf²w。",
+      "source_ranges": [
+        {
+          "start_line": 157,
+          "end_line": 178,
+          "pdf_pages": [
+            4,
+            5
+          ]
+        }
+      ],
+      "claim_class": "source_claim",
+      "conditions_constants": "allsubtreesCarleson，source可令C_α=1，generalC线性依赖C_α；Ψscale与reciprocalintegral进入C，不把C声称universaloverΨ。binaryequalchilddyadicLebesgue设置；zero-weight intervals skip。",
+      "proof_status": "§4Bellmanproof全文已读，尚未独立核完convexity/approximation/degenerate endpoints与§5外引[7]；不认证private tree或allmeasures。"
+    },
+    {
+      "name": "Theorem5.3 literal general formulation",
+      "statement": "φboundedincreasing，φ/sdecreasing，φ≥s，∫ds/φ<∞；normalizedCarleson a_I density，印Σ<fw>_I² a_I/n(N_Iw)≤C||f||²L²(w)，missing|I|。",
+      "source_ranges": [
+        {
+          "start_line": 400,
+          "end_line": 410,
+          "pdf_pages": [
+            10
+          ]
+        }
+      ],
+      "claim_class": "source_claim_with_checked_defect",
+      "scope": "同文Theorem2.5含length；本式按字面有下述single-coefficient growthfamily，不把它直接抄进步骤。"
+    },
+    {
+      "name": "Checked length-omission family for Thm5.3",
+      "statement": "root[0,1), I_m任意depthm dyadic interval，φ(s)=√s,Ψ=s^−1/2,w≡1，a_Im=1其它0，f=1_Im。allsubtreeCarlesonconstant1，n(N_Iw)=1，literalleft1而||f||²=2^−m，ratio2^m→∞。加回|I|后本例left=norm²，不证明generalbumpedembedding。",
+      "source_ranges": [
+        {
+          "start_line": 400,
+          "end_line": 410,
+          "pdf_pages": [
+            10
+          ]
+        },
+        {
+          "start_line": 174,
+          "end_line": 178,
+          "pdf_pages": [
+            5
+          ]
+        }
+      ],
+      "claim_class": "checked_derivation"
+    },
+    {
+      "name": "Checked fixed-weight family for Thm2.2/2.3",
+      "statement": "root[0,1), disjointI_n=[2^−n,2^−(n−1)), n≥1；w=1+Σ_n1_(I_n左半), 1≤w≤2。Ψ=s^−1/2,每I_n上N(t)=1(t<1),1/2(1≤t<2),0(t≥2)，nΨ=1+1/√2，|Δ_I_nw|=1。literalΣ_I_n nΨ^-1Δ²=∞而w(root)=3/2；nΨ每interval≤2均finite。Thm2.3取f1也同样失败。加回|I_n|该子列为(1+1/√2)^−1Σ2^−n<∞，只认证缺length必须修，未证明完整修正版。",
+      "source_ranges": [
+        {
+          "start_line": 140,
+          "end_line": 156,
+          "pdf_pages": [
+            4
+          ]
+        },
+        {
+          "start_line": 187,
+          "end_line": 207,
+          "pdf_pages": [
+            5
+          ]
+        }
+      ],
+      "claim_class": "checked_derivation"
+    }
+  ],
+  "method_steps": [
+    "写αdensity与α|I|mass并在每subtree验证；常数和normalization共用同一来源定义。",
+    "任意positive weight不能直接从unweightedCarleson推Σ<w>α|I|≤Cw(J)；本文的nΨ bump改变denominator且需reciprocalintegrability。",
+    "normalized distribution与weight平均都不含length；Bellman telescoping必须再乘|I|才能变成mass inequality。",
+    "Orlicznorm upperbound nΨ≤Cnorm不能反向推出含1/nΨ的更强界；需真正的nΨBellman步骤。",
+    "§5 shifts/paraproduct应用依赖[7]的finite-differenceinequalities和decomposition，不能把本文sketch当已通读外引wholeproof。"
+  ],
+  "source_defects": [
+    {
+      "id": "G01-NRTV-MISSING-LENGTH",
+      "finding": "视觉p4两个differentialformulas/p10Thm5.3missing|I|；p5proof明列sequence(ΔIw)²/Orlicznorm·|I|，同篇2.4/2.5含|I|。以上合法growthfamily否定literaluniformbound，不只是单位分析。",
+      "source_ranges": [
+        {
+          "start_line": 140,
+          "end_line": 207,
+          "pdf_pages": [
+            4,
+            5
+          ]
+        },
+        {
+          "start_line": 400,
+          "end_line": 410,
+          "pdf_pages": [
+            10
+          ]
+        }
+      ],
+      "claim_class": "checked_derivation"
+    }
+  ],
+  "migration_limits": [
+    "只覆盖equal-childdyadicLebesgueweightmodel与其actualnΨ；任意abstractcapturingtree或TC-A4/中心立方体family需要正式weight/children/mass/Bellman接口。",
+    "nonA∞范围并非免除nΨfinite/reciprocalintegrability；Bump conjecture外引originalproof未在本卡认证。"
+  ],
+  "unchecked": [
+    "本文generalBellmanembeddingwholeproof与sharpconstant未独立完成；printedmissinglength修复仅确认必要及本例consistent。",
+    "[7] arXiv1202.2406全25页外引尚未独占认领/通读；§5.1/5.3/5.6明确调用其中证明。",
+    "Buckley/FeffermanKenigPipher/A∞equivalence/RHI外引wholeproof未读。",
+    "没有因finiteexamples而关闭privategeometricmigration缺口。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 496,
+    "source_lines": 502,
+    "required_content_lines": 398,
+    "covered_content_lines": 398,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-1bb76f48d9719898/paper.md"
+  },
+  "review_source": "evidence/reviews/TEAM_FG/evidence/P-1bb76f48d9719898.json",
+  "review_input_sha256": "10907835b30cd92f631e6f5c18c45acccde2924aa43f6f22a143a3139fd46a44"
+}

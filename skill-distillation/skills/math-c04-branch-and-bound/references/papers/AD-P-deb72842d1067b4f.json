@@ -1,0 +1,267 @@
+{
+  "paper_id": "P-deb72842d1067b4f",
+  "observed_title": "Combining SOS and Moment Relaxations with Branch and Bound to Extract Solutions to Global Polynomial Optimization Problems",
+  "authors": [
+    "Hesameddin Mohammadi",
+    "Matthew M. Peet"
+  ],
+  "version": "arXiv:1609.01019v2; 8 PDF pages; 2017",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 423,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "scope": "继承的8页阅读记录保持；原PDF完整。PDF第8页左栏末句在右栏顶部续接，MD抽取次序造成旧截断误判。本次补正只独立核对附录Lemma3的严格域a≤c<d≤b及所有允许端点；完整SOS层/定理1/外引依赖链仍待数学核验。",
+      "version_status": "本地catalog/retrieval.json没有该文其他全文版本记录；未从网络补取。"
+    }
+  ],
+  "read_status": "scoped_correction_of_inherited_reading",
+  "topic_relevance": {
+    "C04": "direct：核心贡献就是在紧半代数可行集上，以SOS/矩松弛给各盒子下界并结合最长边二分，构造全局多项式优化的分支定界近似解算法。",
+    "C03": "direct：文中明确定义SOS Gram矩阵、Archimedean二次模、截断矩松弛与对偶GLB，并把这些层级接入盒约束。"
+  },
+  "definitions": [
+    {
+      "name": "全局多项式优化(GPO)",
+      "statement": "最小化f(x)，约束g_i(x)≥0及h_j(x)=0；S为其半代数可行集。论文后续将等式h_j=0改写为h_j≥0和−h_j≥0，以便使用纯不等式形式。",
+      "source_lines": [
+        32,
+        50
+      ],
+      "pdf_pages": [
+        1
+      ]
+    },
+    {
+      "name": "SOS Gram表示与二次模",
+      "statement": "SOS多项式可写成z_d(x)^TΩz_d(x)，Ω⪰0。给定不等式g_i≥0，二次模M={σ_0+∑σ_i g_i:σ_i为SOS}；若存在R>0使R²−||x||²∈M，则该表示为Archimedean。次数截断M^(k)限制每项σ_i g_i的次数不超过k。",
+      "source_lines": [
+        121,
+        141
+      ],
+      "pdf_pages": [
+        3
+      ]
+    },
+    {
+      "name": "GLB下界问题",
+      "statement": "对给定可行集S，GLB为sup{λ:f(x)−λ>0对所有x∈S}；其上确界与GPO最优值f*相等。通过限制次数的二次模包含关系得到SOS下界序列p*_k，文中在Archimedean条件下援引Putinar定理说明其收敛。",
+      "source_lines": [
+        130,
+        145
+      ],
+      "pdf_pages": [
+        3
+      ]
+    },
+    {
+      "name": "截断矩对偶",
+      "statement": "以支撑于S的概率测度矩变量替代测度本身，使用归一化y_0=1和对二次模截断对偶锥的非负性条件y^T c≥0，形成矩GLB松弛；在文中指定条件下其界与SOS GLB相配对。",
+      "source_lines": [
+        179,
+        206
+      ],
+      "pdf_pages": [
+        4
+      ]
+    },
+    {
+      "name": "盒子增广局部化模",
+      "statement": "对A=[a,b]定义w_j(x)=(b_j−x_j)(x_j−a_j)并将w_j≥0加入原约束，得到S∩A；对应的次数k二次模以原g_i和这些w_j为生成元，用于对每个活动盒计算局部GLB。",
+      "source_lines": [
+        234,
+        259
+      ],
+      "pdf_pages": [
+        5
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Lemma 2 (盒子缩小时二次模嵌套及GLB单调性)",
+      "assumptions": [
+        "矩形端点按分量满足γ≤α<β≤δ；对应较小盒[α,β]包含于较大盒[γ,δ]。",
+        "截断阶数k≥2；文中比较数值下界时另假设基础多项式约束次数有界并取足够高的k。"
+      ],
+      "statement": "外盒生成的局部二次模M^(k)_{γ,δ}包含于内盒生成的M^(k)_{α,β}；因此对同一目标，内盒上的SOS/矩松弛GLB不低于外盒上的GLB。",
+      "start_line": 269,
+      "end_line": 292,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "作者结论：Lemma 2及其使用的盒子局部化模包含式见lines 269–292, PDF page 6。",
+        "作者证明：对每一坐标，使用附录Lemma 3把外盒的局部化多项式w₂表示成a个非负倍数的内盒局部化多项式w₁与一个平方项之和；将任一外盒模SOS表示代入该恒等式后，所得SOS乘子仍满足截断次数，故包含成立。",
+        "已核的局部代数依赖：Lemma3在a≤c<d≤b成立；外盒证书可用内盒生成元加非负平方替换，方向为M_outer⊂M_inner。固定截断次数的完整Lemma2证明与SOS/矩对偶使用状态另保留，不能由局部引理自动认证整条链。",
+        "迁移推断：这类局部化证书嵌套可为多项式盒搜索提供单调界，但对中心立方体最大算子须先建出同一输入在各中心/尺度上的有效多项式约束，本文未给出该建模。"
+      ],
+      "gaps": [
+        "原附录完整且Lemma3严格域已局部核验；本补正不认证Lemma2以外的SOS/矩层级、Putinar收敛、对偶及定理1完整证明链。"
+      ]
+    },
+    {
+      "label": "Theorem 1 (SOS/矩层级加B&B的近似解保证)",
+      "assumptions": [
+        "GPO的半代数可行集S非空且紧，并被盒C(a,b)包含；S具有文中使用的Archimedean二次模表示（紧集时可加入冗余球约束）。",
+        "令L=max_i(b_i−a_i)，精度0<ε<1；选择η<ε及整数l>n log_2(L√n/η)。",
+        "对足够高但未给显式上界的SOS/矩截断阶数k，使用文中定义的算法E_k及盒子GLB子程序。"
+      ],
+      "statement": "存在k∈N，使算法E_k返回点x，且存在可行点y∈S满足f(y)−f*≤ε及||y−x||<ε。",
+      "start_line": 295,
+      "end_line": 324,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "proof_steps": [
+        "作者结论：Theorem 1原文及证明见lines 295–324, PDF pages 6–7。",
+        "作者证明：先用Lemma 2保证盒子缩小时局部GLB单调；在深度至多l的二分树中，可能出现的盒子有限，因此对每个盒子选择一个足够高的SOS阶数使GLB误差≤η/(l+1)，再取所有所需阶数的最大值k。算法维持近最优活动盒并按最长边二分，最终盒子的对角线由l条件控制在η量级；由末盒GLB精度得到一个近最优可行y，并使返回点x与y相距小于ε。",
+        "核验基础推导：最长边二分每n步至少缩半一次，因此最大边长按L·2^{-⌊l/n⌋}衰减；所列l条件足以令盒直径小于η。只要每个节点的λ通过SOS表示f−λ∈M^(k)验证，则在对应可行子盒上f−λ≥0，故λ是合法下界，剪枝方向为安全的。",
+        "迁移推断：对其他紧盒上的多项式全局最小化，可复用“有效局部下界+覆盖二分+收敛松弛阶数”的框架；若目标是中心立方体极大算子，需另证节点界对所有中心/尺度有效并保留同一个输入对象，本定理不直接给出该界。"
+      ],
+      "gaps": [
+        "定理只断言存在一个足够高的k；未给k相对ε、变量维数或多项式系数的显式复杂度上界。",
+        "作者的每节点Putinar收敛与选择公共k依赖Archimedean条件和有限盒集；没有Archimedean表示时不能直接调用。",
+        "论文所谓多项式复杂度是以给定SOS阶数k为参数、对约束数多项式且对分支轮数l线性；不能据此推出总体关于1/ε的多项式时间。"
+      ]
+    },
+    {
+      "label": "Corollary 1 (返回点的近可行与近最优)",
+      "assumptions": [
+        "S非空紧并包含在C(a,b)中。",
+        "给定δ>0，选择足够小ε并使x满足Theorem 1的近最优/近可行点y条件。",
+        "f与不等式约束g_i在紧盒C(a,b)上为多项式，因此连续且有有限Lipschitz常数。"
+      ],
+      "statement": "存在ε>0，使得算法返回的x满足|f(x)−f*|≤δ及g_i(x)≥−δ（所有i）。",
+      "start_line": 330,
+      "end_line": 340,
+      "pdf_pages": [
+        7
+      ],
+      "proof_steps": [
+        "作者结论：Corollary 1及证明见lines 330–340, PDF page 7。",
+        "作者证明：在紧盒上取f与g_i的共同Lipschitz常数，按ε≤δ/L选精度；利用Theorem 1中的y∈S、f(y)−f*≤ε和||x−y||<ε，将目标差与约束残差从y传递到x。",
+        "核验基础推导：对每个多项式h，|h(x)−h(y)|≤L||x−y||，且g_i(y)≥0，因此g_i(x)≥−Lε；f(y)在[f*,f*+ε]，同一连续性界控制|f(x)−f*|。",
+        "迁移推断：这是返回点残差界而非精确可行性；需要用户容差δ和紧域上的有效Lipschitz常数。"
+      ],
+      "gaps": [
+        "给出的是近可行结论；除非另外做投影/恢复和验证，不应把返回点称为原问题精确可行解。"
+      ]
+    },
+    {
+      "label": "Lemma 3 (嵌套区间局部化恒等式；严格正内宽域已局部独立核验)",
+      "assumptions": [
+        "实数a≤c<d≤b，外区间[a,b]、内区间[c,d]。",
+        "g(x)=(x−a)(b−x)，h(x)=(x−c)(d−x)。"
+      ],
+      "statement": "对全部有限实数a≤c<d≤b，存在α,β≥0及实数γ，使g(x)=αh(x)+β(x+γ)^2对每个实数x成立；包含所有允许的共享端点情形。",
+      "start_line": 342,
+      "end_line": 343,
+      "pdf_pages": [
+        7
+      ],
+      "proof_steps": [
+        "作者结论：Lemma 3 statement见lines 342–343, PDF page 7。",
+        "作者证明：按区间端点平方的相对大小分情况构造γ、β、α，并验证恒等式与非负性；该证明跨lines 344–423, PDF pages 7–8。",
+        "核验基础推导：恒等式若成立，则外区间局部化生成元确为内区间局部化项的非负SOS扩展，因此足以支持Lemma 2的证书包含方向。",
+        "迁移推断：此一维恒等式可逐坐标用于轴平行嵌套盒；对非盒分支域、任意凸域或未给出分解的中心立方体外层目标不能自动推广。"
+      ],
+      "gaps": [
+        "c=d不属于原声明；不能将严格正内宽扩张为闭域。局部恒等式通过不认证Theorem1、整个SOS层或外引证明链。"
+      ],
+      "proof_context_locators": [
+        {
+          "start_line": 344,
+          "end_line": 352,
+          "pdf_pages": [
+            7
+          ]
+        },
+        {
+          "start_line": 404,
+          "end_line": 422,
+          "pdf_pages": [
+            8
+          ]
+        },
+        {
+          "start_line": 357,
+          "end_line": 358,
+          "pdf_pages": [
+            8
+          ]
+        }
+      ],
+      "local_review_receipts": [
+        {
+          "file": "evidence/reviews/AUDIT_CD/followups/P-deb72842d1067b4f-lemma3-correction.json",
+          "sha256": "96e0c5930902520af50c1f3d1ed46f29766062699eb53fa94e5b7cf9dbc48410"
+        },
+        {
+          "file": "evidence/reviews/AUDIT_AB/round2-cd/P-deb-scoped-correction.json",
+          "sha256": "77e9f8bd9edba61e4b1e606530f34770abad1ffcd8b00093e4d3348bb59b22fc"
+        }
+      ]
+    }
+  ],
+  "constant_dependence": "分支轮数l由变量数n、初始盒最大边长L及η按l>n log₂(L√n/η)确定；η<ε。固定SOS阶数k时，文中称子问题复杂度对k及约束数多项式、对l线性。为达到给定ε所需的k仅由存在性证明选出，未给显式界；实验使用k=5、η=0.005、l=200。近可行推论还依赖f及g_i在初始紧盒上的Lipschitz常数。",
+  "endpoint_limits": "要求非空紧可行集、盒覆盖及可用的Archimedean二次模表示。固定有限k时数值误差可能饱和；论文明确展示k=5时残差停滞、提高k才可继续下降。Theorem 1对任意ε只存在一个合适k，不给此k的明确上界或固定k下的精确终止保证。盒直径界控制几何接近，约束残差依赖另一个连续性/Lipschitz论证。",
+  "reusable_methods": [
+    "用每个活动盒的局部化SOS/矩松弛产生可验证的全局最小化下界。",
+    "通过嵌套盒的局部化多项式恒等式，证明缩小盒的下界单调不降。",
+    "将长边二分与近最优活动盒维护结合，使空间误差以O(log(1/ε))分支轮数收敛。",
+    "利用有限深度二分树中可能节点有限及每节点层级收敛，选择统一足够高的松弛阶数；这只给存在性，尚不给可计算阶数界。"
+  ],
+  "unchecked": [
+    "原PDF完整，旧物理截断判断撤回。Lemma3严格域及允许端点已局部独立核验；完整SOS层证明链仍待核。",
+    "Lemma2/定理1及外引的完整证明链不因Lemma3局部核验自动通过。",
+    "Putinar层级收敛、SOS/矩对偶及复杂度估计主要作为作者引用/论证结论记录，未另行核验被引用定理的完整假设。",
+    "数值例中的求解器计算与图表未独立重跑；作者报告的6变量样例有等式残差约0.0563和0.0610，故输出点是近可行而非精确可行。",
+    "中心立方体极大算子的建模、统一外层界和连续尺度极限不在本文定理范围内；任何该方向的用途均是迁移推断。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 423,
+    "source_lines": 423,
+    "required_content_lines": 385,
+    "covered_content_lines": 385,
+    "source": "evidence/papers/P-deb72842d1067b4f/paper.md",
+    "historical_reported_status": "partial_read",
+    "effective_reported_status": "scoped_correction_of_inherited_reading"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-deb72842d1067b4f.json",
+  "review_input_sha256": "4de613b9ce736607d9928cd728fe196418392ba20123b5ae92d2a06e6d13565c",
+  "historical_read_status": "partial_read (withdrawn physical-truncation reason; not active)",
+  "effective_source_state": {
+    "pdf_physical_completeness": "complete",
+    "locally_checked": "Lemma3 only: all a≤c<d≤b; both independent audit receipts",
+    "whole_SOS_proof_chain": "pending",
+    "new_full_read_count": 0,
+    "scoped_card": "evidence/reviews/TEAM_CD/evidence/SC-P-deb72842d1067b4f-appendix.json",
+    "scoped_card_sha256": "f4be8f23e416f334d997266d34dee82ea32d523538ea73842ca50fdc7ac6d7ae",
+    "historical_generated_card": "../history/AD-P-deb72842d1067b4f-before-completeness-correction.json",
+    "historical_generated_card_sha256": "ba21f4f1657566bc7145098dad589dba1127bb969c2f1f51917aa0ea2cd692c0",
+    "old_AD_source_unchanged": true,
+    "local_review_receipts": [
+      {
+        "file": "evidence/reviews/AUDIT_CD/followups/P-deb72842d1067b4f-lemma3-correction.json",
+        "sha256": "96e0c5930902520af50c1f3d1ed46f29766062699eb53fa94e5b7cf9dbc48410"
+      },
+      {
+        "file": "evidence/reviews/AUDIT_AB/round2-cd/P-deb-scoped-correction.json",
+        "sha256": "77e9f8bd9edba61e4b1e606530f34770abad1ffcd8b00093e4d3348bb59b22fc"
+      }
+    ]
+  }
+}

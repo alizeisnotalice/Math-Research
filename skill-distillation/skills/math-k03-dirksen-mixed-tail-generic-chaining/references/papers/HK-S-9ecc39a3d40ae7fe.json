@@ -1,0 +1,231 @@
+{
+  "paper_id": "S-9ecc39a3d40ae7fe",
+  "observed_title": "Tail bounds via generic chaining",
+  "authors": [
+    "Sjoerd Dirksen"
+  ],
+  "version": "arXiv:1309.3522v2; 27 PDF pages",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1294,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "scope": "entire text: definitions, all main results and proofs, compressed sensing/empirical process/chaos applications, appendix lemmas and references"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "K03": "direct: Theorem 3.5 proves mixed subgaussian-subexponential tail chaining with separate gamma_2/gamma_1 complexity and separate square-root/linear deviation scales; Sections 5–6 give empirical-process and chaos applications.",
+    "H05": "adjacent: uses Bernstein/Hanson–Wright single-increment tail inputs inside the chaining proof; it does not replace the need to prove those increment bounds for a target process.",
+    "K05": "adjacent: cites Talagrand generic chaining and majorizing measures, but the target result is a mixed-tail chaining inequality, not a standalone convex-concentration theorem."
+  },
+  "definitions": [
+    {
+      "name": "psi_alpha increment process",
+      "statement": "For a semi-metric d, P(||X_t-X_s|| >= u d(t,s)) <= 2 exp(-u^alpha), u>=0; gamma_alpha(T,d) is the infimum of the supremum chaining sum over admissible sequences with |T_0|=1 and |T_n|<=2^(2^n).",
+      "source_lines": [
+        140,
+        176
+      ],
+      "pdf_pages": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "mixed tail",
+      "statement": "For two semi-metrics d_1,d_2, P(||X_t-X_s|| >= sqrt(u)d_2(t,s)+u d_1(t,s)) <= 2 exp(-u), for all s,t and u>=0.",
+      "source_lines": [
+        287,
+        298
+      ],
+      "pdf_pages": [
+        6
+      ]
+    },
+    {
+      "name": "truncated gamma functional and base-point term",
+      "statement": "gamma_{alpha,p} truncates the admissible chaining sum below l=floor(log_2 p); the Lp theorem also retains 2 sup_t (E||X_t-X_t0||^p)^(1/p).",
+      "source_lines": [
+        180,
+        205
+      ],
+      "pdf_pages": [
+        4
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 3.5 (mixed-tail chaining)",
+      "assumptions": [
+        "T is finite in the proof; the paper states the extension to infinite T using lattice suprema over finite subsets.",
+        "For every s,t in T, the mixed-tail increment condition (12) holds for semi-metrics d_1,d_2.",
+        "1<=p<infinity for the moment bound; u>=1 for the tail bound."
+      ],
+      "statement": "There are universal constants C,c>0 such that (E sup_t ||X_t-X_t0||^p)^(1/p) <= C(gamma_2(T,d_2)+gamma_1(T,d_1))+2 sup_t(E||X_t-X_t0||^p)^(1/p). Consequently, P{sup_t ||X_t-X_t0|| >= C(gamma_2+gamma_1)+c(sqrt(u) Delta_{d_2}(T)+u Delta_{d_1}(T))} <= exp(-u).",
+      "start_line": 310,
+      "end_line": 369,
+      "pdf_pages": [
+        7,
+        8
+      ],
+      "proof_steps": [
+        "Choose admissible partitions B,C near-optimal for gamma'_2(T,d_2) and gamma'_1(T,d_1); intersect level-shifted partitions to obtain one admissible chain, then choose representatives pi_n(t).",
+        "Split X_t-X_t0 into the base approximation X_{pi_l(t)}-X_t0 and the telescoping increments over n>l, with l=floor(log_2 p). The base term is bounded using the finite cardinality of the l-th net and its Lp norm.",
+        "Apply the mixed-tail assumption to each pair (pi_n(t),pi_{n-1}(t)); count at most 2^(2^(n+1)) pairs and union-bound across levels, obtaining a good event with complement at most c exp(-p u/4) for u>=2.",
+        "On the good event, sum the two increment contributions separately: sqrt(u) times the d_2 chaining sum and u times the d_1 chaining sum. Compare gamma-prime and gamma functionals to obtain the moment bound.",
+        "Use the pointwise mixed-tail moment estimate for the base increments, then the paper's moment-to-tail lemma to derive the stated diameter terms and probability exp(-u)."
+      ],
+      "gaps": [
+        "The proof does not optimize numerical constants; the paper explicitly notes losses in the moment/tail conversion.",
+        "For uncountable T, measurability is not automatic; the stated interpretation is a lattice supremum, and a target application must establish separability/measurability if it needs an ordinary sample supremum.",
+        "No independence of increments is required, but every pairwise mixed-tail increment bound must still be established for the target process."
+      ]
+    },
+    {
+      "label": "Corollary 5.2 (unbounded empirical processes)",
+      "assumptions": [
+        "For each i, X_{t i} are measurable subexponential variables on independent probability spaces; across i the summands are independent.",
+        "Uniform Bernstein moment condition: m^(-1) sum_i E|X_{t i}-E X_{t i}|^q <= (q!/2) sigma^2 K^(q-2) for every t and integer q>=2.",
+        "The metrics are d_1(s,t)=max_i ||X_{t i}-X_{s i}||_{psi_1} and d_2(s,t)=(m^(-1)sum_i ||X_{t i}-X_{s i}||_{psi_1}^2)^(1/2)."
+      ],
+      "statement": "For E_t=m^(-1)sum_i(X_{t i}-E X_{t i}), the theorem gives an Lp bound with chaining terms m^(-1/2)gamma_2(T,d_2)+m^(-1)gamma_1(T,d_1), plus sigma sqrt(p/m)+pK/m; the tail form has sqrt(u) sigma/sqrt(m)+uK/m and probability at most exp(-u), up to absolute constants.",
+      "start_line": 550,
+      "end_line": 609,
+      "pdf_pages": [
+        12,
+        13
+      ],
+      "proof_steps": [
+        "Apply Bernstein's inequality to each centered increment E_t-E_s, obtaining the mixed-tail condition with the displayed d_1,d_2 scales.",
+        "Substitute those scaled metrics into Theorem 3.5 and simplify gamma functionals by homogeneity.",
+        "Retain the uniform Bernstein parameters sigma,K; they control the single-index/base-point terms as well as deviations."
+      ],
+      "gaps": [
+        "The independence assumption is across the summands i; the result does not automatically extend to dependent observations without another Bernstein-type increment theorem."
+      ]
+    },
+    {
+      "label": "Theorem 5.5 (supremum of averages of squares)",
+      "assumptions": [
+        "For each i, X_{t i} are subgaussian and independent across i; T is finite for the chaining proof.",
+        "Averages A_t=m^(-1)sum_i(X_{t i}^2-E X_{t i}^2) obey the uniform Bernstein moment condition (28) with parameters sigma,K.",
+        "The chaining metric is d_{psi_2}(s,t)=max_i ||X_{s i}-X_{t i}||_{psi_2}; the radius Delta-bar_{psi_2}=sup_{t,i}||X_{t i}||_{psi_2} is finite."
+      ],
+      "statement": "For 1<=p<infinity, the Lp norm of sup_t |A_t| is bounded, up to absolute constants, by m^(-1)gamma_{2,p}^2(T,d_{psi_2}) + (Delta-bar_{psi_2}/sqrt(m))gamma_{2,p}(T,d_{psi_2}) + sigma sqrt(p/m)+pK/m. The corresponding tail bound replaces p by u in the last two scales and uses full gamma_2, with probability <= exp(-u).",
+      "start_line": 707,
+      "end_line": 837,
+      "pdf_pages": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "proof_steps": [
+        "Split the chaining levels into subgaussian levels and subexponential levels at 2^(n/2) approximately sqrt(m); establish increment bounds for A_t in the first range and for the empirical L2 distance in the second.",
+        "On a union-bound good event, telescope A_t along an optimal gamma_{2,p} net; use Cauchy-Schwarz to control differences of squares by empirical L2 increments times square-root process size.",
+        "Solve the resulting quadratic inequality in (sup_t |A_t|)^(1/2), then convert the increment tail estimate to an Lp bound.",
+        "Control the coarse net with the uniform Bernstein condition (28), completing the Lp estimate; the appendix moment-tail lemma yields the deviation form."
+      ],
+      "gaps": [
+        "The subgaussianity of X_{t i} alone is not the whole hypothesis: the centered squares also need the uniform Bernstein moment condition (28), which the paper notes can be taken from uniform psi_2 bounds with explicit sigma,K choices."
+      ]
+    },
+    {
+      "label": "Theorem 6.5 (second-order chaos application)",
+      "assumptions": [
+        "Xi are independent, mean-zero real variables with finite psi_2 norms; A is a set of m-by-n matrices.",
+        "The proof uses Hanson-Wright tails, decoupling, symmetrization and the matrix metric d_infinity(A,B)=||A-B||_{S_infinity}.",
+        "The theorem is stated for 1<=p<infinity; the tail consequence for u>=1."
+      ],
+      "statement": "The supremum of centered squared norms ||A xi||_2^2-E||A xi||_2^2 has an Lp bound controlled by gamma_{2,p}^2(A,d_infinity)+Delta-bar_2(A)gamma_{2,p}(A,d_infinity)+sqrt(p)Delta-bar_4^2(A)+p Delta-bar_infinity^2(A), with constants depending on max_i||xi_i||_{psi_2}; the tail consequence yields matching sqrt(u) and u deviation scales.",
+      "start_line": 991,
+      "end_line": 1089,
+      "pdf_pages": [
+        21,
+        22,
+        23
+      ],
+      "proof_steps": [
+        "Normalize max_i||xi_i||_{psi_2}<=1 and approximate each A by a coarse net representative pi_l(A).",
+        "For the chaining remainder, decouple the quadratic form, use a bilinear chaining lemma, and control diagonal terms by symmetrization, contraction and subgaussian chaining.",
+        "For coarse representatives, apply Hanson-Wright to obtain sqrt(p) Delta_4^2 and p Delta_infinity^2 terms.",
+        "Combine the pieces into a quadratic inequality for the target moment and solve; use the appendix moment-tail lemma for the tail form."
+      ],
+      "gaps": [
+        "The input coordinates must be independent and subgaussian for the cited Hanson-Wright/decoupling route; the result does not assert a generic mixed-tail inequality is always sharp for chaos processes."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "Theorem 3.5 constants c,C are absolute and unoptimized. Corollary 5.2 retains sigma,K from a uniform Bernstein moment bound. Theorem 5.5 has absolute chaining constants and parameters sigma,K, Delta-bar_{psi_2}; the paper permits sigma=sup_t(m^(-1)sum_i||X_{t i}||_{psi_2}^4)^(1/2), K=sup_{t,i}||X_{t i}||_{psi_2}^2. Theorem 6.5 constants depend on max_i||xi_i||_{psi_2}.",
+    "dependence": "Theorem 3.5 does not require independent increments. Empirical-process and chaos corollaries add independence and moment/tail assumptions to produce d_1,d_2 or Hanson-Wright increment bounds. The gamma functionals encode index-set complexity; the base-point moments and metric diameters encode one-point/deviation scales."
+  },
+  "endpoint_limits": {
+    "index_set": "The main proof assumes finite T to avoid measurability issues. Infinite T uses finite-subset lattice suprema; ordinary supremum statements require target-specific measurability/separability.",
+    "tail_parameter": "The mixed-tail definition is for u>=0; Theorem 3.5's probability consequence is stated for u>=1, and the proof's chaining union bound starts at u>=2.",
+    "base_point": "The moment theorem includes 2 sup_t||X_t-X_t0||_Lp; it cannot be dropped unless a separate bound is proved.",
+    "constants": "Constants are not sharp; the paper explicitly warns about losses from converting between moments and tails.",
+    "applications": "Theorem 5.5 additionally needs uniform Bernstein control of centered squares; Theorem 6.5 uses independent subgaussian coordinates and matrix-specific radii."
+  },
+  "reusable_methods": [
+    {
+      "method": "Two-metric chaining for a mixed subgaussian-subexponential increment tail",
+      "transfer": "For a center-cube maximal-operator index family, define candidate d_2 and d_1 from small-jump/subgaussian and rare-event/subexponential increments only after proving the mixed-tail inequality for every pair of cubes. Compute both gamma functionals, retain the base-cube term, and show measurability for the chosen cube class. The paper does not identify those metrics for the center-cube maximal operator; that mapping is a project assumption to prove."
+    },
+    {
+      "method": "Split chaining scales when a statistic changes from subgaussian to subexponential increments",
+      "transfer": "Theorem 5.5 splits at a sample-size-dependent scale and controls squared empirical processes via an empirical L2 increment. A center-cube maximal-operator analogue would need a derived threshold, uniform Bernstein control, and a valid increment factorization; none follows from the paper automatically."
+    },
+    {
+      "method": "Moment-to-tail conversion via optimized Markov bounds",
+      "transfer": "Use only after obtaining the full p-moment estimate for all p>=1 and preserve the precise p-dependence. The source's universal constants are non-optimal."
+    }
+  ],
+  "unchecked": [
+    "The complete extracted text, all proof sections, appendices and references (27 pages) were read. Theorem 3.5 and the displayed mixed-tail/moment formulas were visually checked against PDF pages 7–8 rendered with PyMuPDF.",
+    "I checked the partition-intersection cardinality, level telescoping structure, union-bound exponent scale, and separation of gamma_2/gamma_1 and square-root/linear tails from the paper's proof. I did not independently optimize universal constants or reproduce the compressed-sensing application numerically.",
+    "Theorem 3.5 is an author-proved result. Any center-cube maximal-operator metric assignment and mixed-tail verification is a migration inference and remains to be proved for that operator."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1294,
+    "source_lines": 1294,
+    "required_content_lines": 1065,
+    "covered_content_lines": 1065,
+    "reported_status": "full_read",
+    "source": "supplementary/S-9ecc39a3d40ae7fe/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/S-9ecc39a3d40ae7fe.json",
+  "review_input_sha256": "513b060e8500975addab365bb8855cf7eb8923156aef01fb05761c0d5ce25d76"
+}

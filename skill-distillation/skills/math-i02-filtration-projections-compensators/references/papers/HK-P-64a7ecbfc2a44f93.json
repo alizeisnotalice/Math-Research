@@ -1,0 +1,193 @@
+{
+  "paper_id": "P-64a7ecbfc2a44f93",
+  "observed_title": "On solutions of Kolmogorov’s equations for nonhomogeneous jump Markov processes",
+  "authors": [
+    "Eugene A. Feinberg",
+    "Manasa Mandava",
+    "Albert N. Shiryaev"
+  ],
+  "version": "arXiv:1301.6998v3; 15 PDF pages. The source identifies the work as 2013; bibliographic publication details were not independently checked.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 745,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "scope": "完整15页全文：可测时变 Q-function 定义与稳定性假设、跳点过程及其补偿随机测度构造、条件等待/跳转核、转移函数级数、backward 和 forward Kolmogorov 方程、极小性/唯一性证明、非保守情形及参考文献。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "J01": "direct：论文明确研究非齐次（时间依赖、可测）Q-function 所定义的跳 Markov 过程，构造其补偿子/转移函数并证明相应 backward/forward 方程。它不含扩散项，也不提供中心立方体算子自身的跳生成元。",
+    "I02": "adjacent：以可预测随机测度补偿子构造跳过程，并使用条件投影/补偿引用；主要贡献是 Q-function 与 Kolmogorov 方程，不是一般 optional/predictable projection 理论。"
+  },
+  "definitions": [
+    {
+      "name": "Q-function 与真实时变跳率",
+      "statement": "q(x,t,B) 对每个 (x,t) 是有符号测度，q(x,t,X)≤0，且非对角部分 q(x,t,B\\{x}) 非负有限；对每个 B，q(x,t,B) 关于 (x,t) 可测。保守情形总质量 q(x,t,X)=0；跳率 q(x,t)=−q(x,t,{x})=q(x,t,X\\{x})。时间变量 t 允许可测但不连续依赖。",
+      "source_lines": [
+        69,
+        94
+      ],
+      "pdf_pages": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "稳定性",
+      "statement": "Assumption 1.1 要求对每个状态 x，sup_{t∈[T0,T1)} q(x,t)<∞；不要求对所有状态统一有界。更一般的文章后半引用条件包括局部时间可积或局部时间有界。",
+      "source_lines": [
+        85,
+        94
+      ],
+      "pdf_pages": [
+        2
+      ]
+    },
+    {
+      "name": "路径上的可预测补偿核",
+      "statement": "对第 n 次跳后停留在 x_n 的时段，ν(dt,B)=1_{t_n<t≤t_{n+1}}q(x_n,t,B\\{x_n})dt，再对 n 求和；这是相对历史可预测的强度核。",
+      "source_lines": [
+        175,
+        199
+      ],
+      "pdf_pages": [
+        4,
+        5
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Lemma 2.1 and Theorem 2.2: construction from a compensator",
+      "assumptions": [
+        "X 为 standard Borel 状态空间；q 为可测保守 Q-function，满足稳定性（每个状态的总跳率对全时间区间有界）。",
+        "采用文中由跳时与跳后状态构成的典范路径空间、自然过滤和初始分布。"
+      ],
+      "statement": "沿当前状态 x 的条件生存函数为 exp(−∫_u^t q(x,s)ds)，下一个跳时到 t 且落入 B 的条件强度为 exp(−∫_u^t q(x,s)ds)q(x,t,B\\{x})dt。由给定的可预测随机测度 ν 与初始分布定义的过程是 jump Markov process，其转移函数是按跳数求和的首跳递归级数 P=Σ_{n≥0}P^(n)。",
+      "start_line": 197,
+      "end_line": 371,
+      "pdf_pages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "proof_steps": [
+        "由 Jacod 的补偿子/跳时条件分布关系把 ν(dt,X) 识别为等待时间风险率，积分得到条件生存式，再推出落点的条件核。",
+        "用当前跳后状态及已走时间的条件概率公式，把结果扩展到任意时刻 u。",
+        "定义零跳项 P^(0) 与逐次首跳递归 P^(n)，并以 P=Σ_n P^(n) 构造转移函数。",
+        "对“区间内恰有 n 次跳”的 Markov 条件概率按 n 归纳；每次首跳后用条件核与归纳假设拼接，最后对 n 求和得到 Markov 转移关系。"
+      ],
+      "gaps": [
+        "Jacod 对任意合格 predictable random measure 构造唯一概率律的定理为外部引用；本文核对了其应用条件陈述，未独立证明该一般存在唯一性定理。",
+        "作者说明级数/转移性质的部分细节承接 Feller，对可测 q 的延拓主要以“证明仍成立”陈述；本卡不将未逐行展开处写作独立新证明。"
+      ]
+    },
+    {
+      "label": "Theorems 3.1–3.2: backward Kolmogorov equation and minimality",
+      "assumptions": [
+        "稳定 Q-function，q 对 (x,t) 可测且每个状态上全时间跳率上界有限。",
+        "转移级数 P(u,x;t,B)；对所有 B 的边界条件在 u↑t 时一致成立。"
+      ],
+      "statement": "P 对初始时刻 u 绝对连续，满足 ∂_uP=q(x,u)P−∫_{X\\{x}}q(x,u,dy)P(u,y;t,B)（几乎处处 u<t）。P 是 backward 方程非负解中的最小解；若 P regular（无爆炸、总质量恒为1），则在文中指定的测度值及[0,1]类中唯一。",
+      "start_line": 374,
+      "end_line": 509,
+      "pdf_pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "proof_steps": [
+        "先把跳数级数改写成第一跳积分恒等式 (25)，据此得到对 u 的绝对连续性。",
+        "以首跳剩余项界控制 n≥1 的项在 u↑t 时趋零，证明对 B 一致的初始边界条件。",
+        "对第一跳积分式对 u 求导；几乎处处求导后利用同一积分式合并首项和余项，得到 backward 方程。",
+        "最小性证明从积分方程逐步下界 P^(0)、P^(0)+P^(1)、…，归纳后取和；regular 情况由测度质量与两侧集合加法推出唯一性。"
+      ],
+      "gaps": [
+        "该方向控制的是转移概率，不自动给出任意非线性算子、带扩散项生成元或中心立方体最大算子的生成域。",
+        "regular/no-explosion 是唯一性的附加条件；一般稳定 Q-function 下可发生爆炸，最小转移函数可能次概率。"
+      ]
+    },
+    {
+      "label": "Theorems 4.1–4.3: forward Kolmogorov equation on q-bounded sets",
+      "assumptions": [
+        "稳定、保守、可测 Q-function。",
+        "测试集 B 必须对相应时间段 q-bounded；该局部限制用于使前向方程两积分有定义。"
+      ],
+      "statement": "P 对终时 t 绝对连续，并在几乎处处 t>u 满足 ∂_tP=−∫_B q(y,t)P(u,x;t,dy)+∫_X q(y,t,B\\{y})P(u,x;t,dy)，但只对 q-bounded 集 B 声称。该前向方程在此受限域上极小；regular 时，在测度值及[0,1]类中唯一。",
+      "start_line": 512,
+      "end_line": 669,
+      "pdf_pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "proof_steps": [
+        "用首跳核 Π 的递归式表示 P，对 t 求导。",
+        "只对 q-bounded B 对 Π 的终时变量求导并代入递归式；另一等式识别 ∫_B q(z,t)P(dz)，两式相减得到前向方程。",
+        "积分前向方程得到积分方程，再像 backward 情形通过逐跳项归纳证明极小性。",
+        "用 increasing q-bounded sets 覆盖状态空间，将极小性扩到全集上的测度；regular 时以总质量1推出唯一性。"
+      ],
+      "gaps": [
+        "Example 3.2 明确展示未受限的 B=X 上可出现两个无穷积分相减，即 ∞−∞，方程没有定义；不能把前向方程当作对任意状态集合自动有效。",
+        "q-bounded sets 的覆盖和 regularity 是定理条件；没有 no-explosion 时不能说转移函数唯一且为概率核。"
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "没有浓度常数。转移函数由 q 的实际时间路径积分及按跳数的递归级数给出；每个 q(x,t) 仅需满足文中相应逐状态稳定/局部条件。",
+    "dependence": "ν 的密度依赖当前状态、时刻和跳后落点核；改变时间变量 t 上的强度会改变生存指数与首跳分布，不能冻结为常率而仍称原过程。"
+  },
+  "endpoint_limits": {
+    "jump_rate": "stable q 只要求各固定状态的 sup_t 总率有限，不是跨状态一致有界；爆炸可能导致转移函数总质量小于1。",
+    "forward_domain": "前向方程只在 q-bounded B 上保证有定义；对全空间求两个无界积分可能出现 ∞−∞。",
+    "nonconservative": "可添加墓地/吸收态把非保守 Q-function 扩为保守 Q-function；这会改变状态空间及边界结算。",
+    "regularity": "regular 转移函数对应无爆炸；极小性不需唯一性，唯一性要另加 regularity。"
+  },
+  "reusable_methods": [
+    {
+      "method": "以历史可预测强度构造跳测度补偿子并从首跳核生成转移函数",
+      "transfer": "先从目标的原始跳机制逐项识别可测 Q-function q(x,t,dz)，验证状态空间、保守性/吸收状态和逐状态局部率条件；随后首跳递归才是候选生成方法。"
+    },
+    {
+      "method": "用受限测试集避免前向方程的无穷减无穷",
+      "transfer": "对时变/状态无界速率的目标，在各测试集合上证明 q-bounded 与可积，再逐步扩域；不能把“跳率处处有限”替代可积性。"
+    }
+  ],
+  "unchecked": [
+    "全文 1–745 行（15 页）已读；补偿核/首跳分布在 PDF p.5、backward 求导在 p.9、forward 求导在 p.12 已用配置的 PyMuPDF 渲染视觉检查。",
+    "阅读了本文展示的全部证明；Jacod 一般补偿子构造、Brémaud 条件公式等引用结果没有在原文重证，也未在本次独立证明。",
+    "主要转移函数与 Kolmogorov 方程陈述为原文结论；我检查了文内的首跳递归和证明链，但没有把全文作为独立证明审计。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 745,
+    "source_lines": 745,
+    "required_content_lines": 559,
+    "covered_content_lines": 559,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-64a7ecbfc2a44f93/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-64a7ecbfc2a44f93.json",
+  "review_input_sha256": "3b578c15159718f7f272407730ac99883834dfcef5767c4dbb324f75728385ff"
+}

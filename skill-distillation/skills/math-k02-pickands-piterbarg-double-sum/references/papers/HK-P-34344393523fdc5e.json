@@ -1,0 +1,233 @@
+{
+  "paper_id": "P-34344393523fdc5e",
+  "observed_title": "High excursion probabilities for Gaussian fields on smooth manifolds",
+  "authors": [
+    "Vladimir I. Piterbarg"
+  ],
+  "version": "arXiv:2108.07473v1; 18 August 2021; 17 PDF pages",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 775,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "scope": "逐页阅读全部正文、条件、局部引理、Theorem 1/Propositions 2–6、双重和划分、三类/一般方差情形和参考文献；依原文标明省略的证明细节"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "K02": "direct：该文明确构造各向异性 Pickands 网格与 Bonferroni 双重和，对光滑流形上的 Gaussian 最大偏差给出局部与整体渐近，并按最大方差流形邻域的方差损失分类 homogeneous-like / Talagrand / transition。"
+  },
+  "definitions": [
+    {
+      "name": "maximum-variance manifold M",
+      "statement": "对有界闭光滑 d 维流形 S 上的中心连续高斯场 X，令 M=argmax_{t∈S}σ(t)；假设 M 是有限连通光滑 r 维子流形，σ=1 on M。r=0 对应有限最大点；r=d 为方差常数的局部齐次情形。",
+      "source_lines": [
+        57,
+        76
+      ],
+      "pdf_pages": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "Conditions 2–4 (regularity/local homogeneity/anisotropic scale)",
+      "statement": "Condition2 要求标准化场在 M 邻域的 Dudley 熵积分有限。Condition3 要求每个 t 附近的相关结构可由齐次相关函数 r_t 近似。Condition4 存在分量尺度 q_i(u)>0 和一致有界正系数 C_{it}，使 u²[1−r_t(C_t q(u)s)]→h(s) 一致成立。",
+      "source_lines": [
+        187,
+        276
+      ],
+      "pdf_pages": [
+        4,
+        6
+      ]
+    },
+    {
+      "name": "variance-loss classification",
+      "statement": "Condition5 假设 h_{1t}(s)=lim_{u→∞}u²[1−σ(t+C_tq(u)s)] 存在于[0,∞]；h₁=0 为 homogeneous-like，h₁=∞ 为 Talagrand，0<h₁<∞ 为 transition。每个 t 的近法向集合 K_{0t},K_{ct},K_{∞t} 按 h₁分类。",
+      "source_lines": [
+        298,
+        317
+      ],
+      "pdf_pages": [
+        7
+      ]
+    },
+    {
+      "name": "local Pickands field and constant",
+      "statement": "引入 χ(0)=0、Eχ(s)=−h(s)、Var(χ(s₁)−χ(s₂))=2h(s₁−s₂)，并定义 P_{q,t}(T)=E exp{sup_{s∈T∩U}(χ(s)−h_{1t}(s))}。",
+      "source_lines": [
+        306,
+        317
+      ],
+      "pdf_pages": [
+        7
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Lemma 2 (局部小盒高斯超越近似)",
+      "assumptions": [
+        "Conditions 1,3–5；方差最大化流形 M 及其局部坐标如文中。",
+        "T⊂R^d 是有界闭集，基点 t∈U∩M；盒 t+q_t(u)T 位于坐标图/有效邻域。",
+        "边界图点且 h_{1t}≠0 时需按原文截断 T_t。"
+      ],
+      "statement": "P(sup_{s∈t+q_t(u)T}X(s)>u)=(1+o(1))P_{q,t}(T)Ψ(u)，u→∞，其中 Ψ(u)=e^{−u²/2}/(√(2π)u)。",
+      "start_line": 318,
+      "end_line": 380,
+      "pdf_pages": [
+        7,
+        8
+      ],
+      "proof_steps": [
+        "对基点 X(t) 按标准正态密度条件积分，并作 v=u−w/u 变换。",
+        "定义缩放局部场 χ_{ut}(s)=u(X(t+q_t(u)s)−u)+w。",
+        "用条件均值/协方差公式及 Conditions 3–5，证明条件局部场的均值趋 −h(s)−h_{1t}(s)，增量方差趋 2h(s₁−s₂)，且标准化方差损失的二阶项可忽略。",
+        "原文说明后续通过弱收敛、可积控制重演 Piterbarg 书中 Lemma 6.1，从而得到积分极限及 Pickands 型常数。"
+      ],
+      "gaps": [
+        "弱收敛与积分一致可积细节由引用书籍承接，正文仅概述；没有给出独立完整证明。",
+        "局部齐次函数 h、尺度 q 与边界截断需由具体场核验。"
+      ],
+      "proof_verification": "全文阅读；PDF pp.7–8视觉核对引理和条件极限公式。该文自身对引理后段引用既有证明。"
+    },
+    {
+      "label": "Theorem 1 / Proposition 2 (局部齐次最大值双重和渐近)",
+      "assumptions": [
+        "Condition4 对局部齐次场在相关图/子集成立；结构条件与尺度系数一致。",
+        "U₁ 为 U 中开集闭包；U₁(u) 依赖 u 时存在内外盒夹逼且每个尺度方向长度乘 q_i(u) 发散。",
+        "对最大方差流形限制时，M₁⊂U∩M 是开集闭包。"
+      ],
+      "statement": "Theorem1 给出 U₁ 上 sup X₀ 的超越概率为 Pickands 常数乘以积分的局部系数、各向异性 q_i(u)^{-1} 与 Ψ(u) 的乘积 (1+o(1))；Proposition2 给出 M₁ 上最大场对应的 r 维版本，常数 H_{q,r}=lim_{T→∞}T^{−r}H_q([0,T]^r×[0,0]^{d−r})∈(0,∞)。",
+      "start_line": 427,
+      "end_line": 500,
+      "pdf_pages": [
+        10,
+        11
+      ],
+      "proof_steps": [
+        "用 κ(u) 网格覆盖 U₁，选 κ→∞ 且 κ q_i(u)→0，使每盒尺度远大于局部相关尺度而仍在系数近似范围内。",
+        "对每块用极值常数的局部小盒概率估计；以 C_{it} 的块上、下界构造齐次场。",
+        "用 Slepian 比较夹住 X₀ 的超越概率，再用双重和/Bonferroni 控制块间联合超越。",
+        "从坐标图通过变量替换回到流形积分。正文将细节指向 [5],[4],[9],[10] 的近似证明。"
+      ],
+      "gaps": [
+        "原文仅给证明纲要，未展开块间联合超越的完整估算。",
+        "H_q 与 H_{q,r} 非显式，须另行证正有限及验证局部结构。"
+      ],
+      "proof_verification": "全文阅读；Theorem 1 和 Proposition 2 公式在 PDF pp.10–11视觉核对。正文未完整给出 Double Sum 估计。"
+    },
+    {
+      "label": "Propositions 3–5 (homogeneous-like、Talagrand 与 transition 三类)",
+      "assumptions": [
+        "Conditions 2–5；相应方差损失集合覆盖 M_ε。",
+        "Prop.3 homogeneous-like: h_{1t}=0；Prop.4 Talagrand: ∪_tK_{∞t}=M_ε；Prop.5 transition: ∪_tK_{ct}=M_ε。"
+      ],
+      "statement": "Prop.3 把渐近写为 Pickands 局部因子乘 Laplace 积分 L_f(u²)=∫_Ue^{−u²f(s)}ds 与各向异性尺度/Ψ(u)。Prop.4 仅最大方差流形主项贡献。Prop.5 以归一化的 transition Pickands 常数 P^ν_{q,t} 对 M 积分。",
+      "start_line": 502,
+      "end_line": 612,
+      "pdf_pages": [
+        11,
+        12,
+        13
+      ],
+      "proof_steps": [
+        "对每个局部块按方差轮廓的上下包络夹逼，并使用 Theorem 1 的局部齐次场近似。",
+        "Homogeneous-like 区域将块贡献求和化为 Laplace 型积分；Talagrand 情形把 informative set 夹在任意薄法向层内，比较 M 上主项。",
+        "Transition 情形按切向 q(u) 网格与法向 S q(u) 块细分；先令 u→∞，再令块参数 T,S→∞，以双重和控制其余块。"
+      ],
+      "gaps": [
+        "正文多处直接说“类似 [5],[9],[10]”并省略技术双重和细节。",
+        "三种区域覆盖与常数存在性依赖额外几何/可积条件，不能只据标签套用。"
+      ],
+      "proof_verification": "全文阅读；公式及分类 PDF pp.11–13视觉核对；证明按作者的 outline 阅读，相关展开被作者省略并指向文献。"
+    },
+    {
+      "label": "Condition 6 and Propositions 6 / general decomposition",
+      "assumptions": [
+        "K₀,K_c,K_∞ 的组成集按文中定义；Condition6 假设分类集合由有限个光滑两次可微流形组成，K₀ 可分成有限个正维、有限体积的光滑流形 K_{0i}。"
+      ],
+      "statement": "对 dim K_{0i}<d，Proposition6 声称 P(K₀∩U;u)=(1+o(1))Σ_iP(K_{0i}∩U;u)；若某分量 dim=d，则改用其上的另一 Laplace 积分。总渐近再由 K₀、K_c、K_∞ 三部分相加与跨坐标图 Bonferroni 汇合。",
+      "start_line": 613,
+      "end_line": 704,
+      "pdf_pages": [
+        14,
+        15
+      ],
+      "proof_steps": [
+        "按 Condition6 给出的平滑分层定义曲线坐标，重排各向异性尺度并对每个 K_{0i} 建立局部块网格。",
+        "用 Theorem1 估计各平滑块概率，thinning 网格并用有限体积条件得分量渐近。",
+        "用 Bonferroni 证明分层间/坐标图间交叉联合超越为次阶，再拼回 informative manifold 与整体 S。"
+      ],
+      "gaps": [
+        "Proposition6 仅宣称 standard additional techniques；完整交叉双和界未展示。",
+        "Condition6 排除了零维 K₀ 分量；若目标有孤立 K₀ 点，需重新核对其是否由其它情形/引用结果覆盖。",
+        "按原文 Remark6，不同维数项阶数不同，只有主导项留在最终一阶渐近。"
+      ],
+      "proof_verification": "全文阅读；Condition6、主分层和总分解公式在 PDF pp.14–15视觉核对；证明细节为纲要。"
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "主尾项尺度含 Ψ(u) 和 q_i(u)^{-1}，系数为 local Pickands 类常数 H_q、H_{q,r}、P^ν_{q,t} 与局部坐标雅可比/系数 C_{it}；常数被假设/引用为正有限，并未显式数值化。",
+    "dependence": "最大方差流形维数、相关方向指数/尺度、方差沿法向的衰减类别及其几何分层决定多项式因子与主积分。"
+  },
+  "endpoint_limits": {
+    "field": "零均值、连续样本路径、有界参数流形和正则相关结构；Condition2 熵积分与 Conditions3–5 的统一局部极限不可省略。",
+    "variance": "允许方差最大值沿正维流形或在局部齐次情形处处最大；多个不同方差衰减类别需满足 Condition6 等结构条件。",
+    "asymptotic": "结论是 u→∞ 的相对渐近，不给有限-u误差常数；局部盒 T 有界，转到全域还需控制块间依赖。",
+    "proof_detail": "本篇标题虽含 Pickands 双重和，但多个主要全局证明只列构造纲要并引用先前论文/专著；它不包含逐步展开的全部联合超越估计。"
+  },
+  "reusable_methods": [
+    {
+      "method": "在最大方差流形附近以相关尺度构造各向异性双重网格",
+      "transfer": "对每个中心点 t 求方向相关尺度 q_i(u) 与系数 C_{it}；用 κq_i→0、κ→∞ 的小块覆盖，并分别证明单块超越渐近与不相邻块联合超越可忽略。",
+      "limit": "必须验证局部齐次相关结构和跨块依赖估计；仅有相关连续性/样本连续不够。"
+    },
+    {
+      "method": "按方差损失与相关损失比分类 informative manifold",
+      "transfer": "比较 u²(1−σ(t+q_t(u)s)) 与 u²(1−r_t(q_t(u)s)) 的极限，分离切向最大值方向、齐次-like积分方向及 transition 常数。",
+      "limit": "本篇依赖具体 Condition5/6；任意“方差分层”不自动得到精确率函数。"
+    },
+    {
+      "method": "局部条件高斯场极限导出 Pickands 因子",
+      "transfer": "按基点条件化到 X(t)=u−w/u，展示缩放增量的条件均值、协方差趋限，再用稳定收敛和可积支配交换尾积分。",
+      "limit": "收敛和积分支配须目标场单独证明；本文只概述继承的标准部分。"
+    }
+  ],
+  "unchecked": [
+    "全文17页，包括全部正文和参考文献已读；原文无附录。",
+    "PDF pp.7–8 (local conditional limit), pp.10–15 (main asymptotics and strata)视觉核对。",
+    "阅读全文不等于独立证明核验；作者主动省略/引用的 Lemma1、Lemma2后段及 Proposition3–6 的双重和细节没有在该 PDF 中展开。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 775,
+    "source_lines": 775,
+    "required_content_lines": 548,
+    "covered_content_lines": 548,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-34344393523fdc5e/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-34344393523fdc5e.json",
+  "review_input_sha256": "afeb0b77b58372decc35271a712bc8549545acd2849f2110311036d37e6a5ab7"
+}

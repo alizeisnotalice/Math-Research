@@ -1,0 +1,234 @@
+{
+  "paper_id": "P-03df4e0c85ffb707",
+  "observed_title": "Pointwise Localization and Sharp Weighted Bounds for Rubio de Francia Square Functions",
+  "authors": [
+    "Francesco Di Plinio",
+    "Mikel Flórez-Amatriain",
+    "Ioannis Parissis",
+    "Luz Roncal"
+  ],
+  "version": "arXiv:2308.01442v3；文首日期 2024-09-20。",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 1009,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "G04": "adjacent"
+  },
+  "definitions": [
+    {
+      "term": "粗糙 Rubio de Francia 平方函数",
+      "definition": "对两两不交的频率区间族 Ω，H_ω 是傅里叶限制到 ω 的投影，T_RF^Ω f=(Σ_{ω∈Ω}|H_ωf|²)^{1/2}。文章另定义支持在 ω 且导数受尺度控制的平滑乘子平方函数 T_Ω，以及对测试函数族取上确界的 intrinsic smooth square function G_Ω。",
+      "source_ranges": [
+        {
+          "start_line": 50,
+          "end_line": 101,
+          "pdf_pages": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "稀疏算子与稀疏平方函数",
+      "definition": "对区间稀疏族 S，T_{p,S}f=Σ_{Q∈S}<f>_{p,Q}1_Q，G_{p,S}f=(Σ_{Q∈S}<f>_{p,Q}²1_Q)^{1/2}；本文所需的主稀疏界取 p=2。",
+      "source_ranges": [
+        {
+          "start_line": 101,
+          "end_line": 123,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Carleson 序列的 balayage",
+      "definition": "在固定二进格上给复数系数 a_Q，对 E⊂D 定义 A_E[a]=Σ_{Q∈E}|a_Q|1_Q；稀疏算子是相应 balayage 的特例。",
+      "source_ranges": [
+        {
+          "start_line": 318,
+          "end_line": 354,
+          "pdf_pages": [
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "term": "时间频率瓦片投影",
+      "definition": "瓦片 s=I_s×ω_s 带有局部化且频率支集在 ω_s 的 wave packet；按空间区间、频率区间组织系数，构造对 Ω 求 ℓ² 的区域投影 P^Φ_{I,ω}f。",
+      "source_ranges": [
+        {
+          "start_line": 452,
+          "end_line": 557,
+          "pdf_pages": [
+            13,
+            14,
+            15
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem A：粗糙 Rubio square function 的点态稀疏控制及加权弱型界",
+      "assumptions": [
+        "Ω 是 R 中两两不交区间的集合。",
+        "f∈L²(R) 且紧支撑；粗糙投影 H_ω 按文章的 Fourier 归一化定义。",
+        "加权估计分别在文章给定 Muckenhoupt 类与指数范围下成立。"
+      ],
+      "statement": "作者证明存在稀疏区间族 S，使 T_RF^Ω f(x)≲Σ_{Q∈S}<f>_{2,Q}1_Q(x)；右侧的 L² 平均不能统一替换为任一 p<2 的平均。另有弱 (2,2) 加权界，其依赖为 [w]_{A1}[w]_{A∞}(log(e+[w]_{A∞}))^{1/2}；对 2<p<∞，弱 (p,p) 界为 [w]_{A_p}^{1/2}[w]_{A∞}^{1/p}，后者作者称最佳可能。",
+      "start_line": 67,
+      "end_line": 79,
+      "pdf_pages": [
+        2
+      ],
+      "proof_steps": [
+        "作者把粗糙方波函数作为一般区间适配乘子的特例；Theorem C 的点态稀疏平方函数控制与 Proposition 1.2 的稀疏加权估计给出该结论。",
+        "Theorem C 的证明先把频率区间族分解到有限多个移位二进格与 Whitney 区域，再将每个区域投影拆成波包模型。",
+        "对波包模型，局部正交性给出 Carleson 系数序列；停时阈值选出稀疏子区间，对局部投影作递归分解并将各层 L² 平均求和，得到 sparse square bound。",
+        "我读了第 1–4 节作者证明结构并视觉核对第 2 页主公式；没有独立重做所有波包展开及 285 个模型项的时间频率计算。"
+      ],
+      "gaps": [
+        "定理假设是频率区间两两不交；没有给出任意树索引族的平方函数界。",
+        "不能把作者关于经典区间 Rubio 函数的结果直接改称任意空间树或方向捕获树结论。",
+        "点态稀疏族依赖 f 与 Ω；结论没有声称单一统一稀疏族适用于全部输入。"
+      ]
+    },
+    {
+      "name": "Theorems B–C：平滑与一般区间适配乘子的点态 sparse square domination",
+      "assumptions": [
+        "Ω 是两两不交频率区间族。",
+        "f∈L²(R) 紧支撑。",
+        "Theorem B 使用文章定义的 intrinsic smooth square function G_Ω；Theorem C 的 T_Ω 由每个 ω 上导数有界的平滑乘子 m_ω 组成。"
+      ],
+      "statement": "分别存在依赖于 f、Ω 的稀疏族 S，使 G_Ωf≲G_{2,S}f，以及 T_Ωf≲T_{2,S}f，逐点几乎处处成立，隐含常数绝对。Theorem A 是粗糙频率投影的专门情形。",
+      "start_line": 88,
+      "end_line": 123,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "Theorem B 将 G_Ω 离散化为 wave-packet 系数平方函数；局部正交性（Lemma 3.1）证明系数序列受 |f|² 控制的 Carleson 条件，再调用第 2 节的 balayage 稀疏支配。",
+        "Theorem C 建立时间频率区域投影模型。对固定区间进行局部平均阈值停时；L² 弱型估计和区间不交所给的投影正交性确保坏集占父区间小比例，从而生成稀疏树。",
+        "尾部由 Hardy–Littlewood maximal function 与加权局部平均控制；近场递归差由频率截断和 stopping oscillation lemma 控制。最后将 Ω 拆成 285 个满足 Whitney 性质的分组，并求和有限个稀疏控制。",
+        "上述步骤是对作者证明次序的概述；独立核对了定义、局部正交估计的引用位置和停时结构，没有独立重算所有波包积分。"
+      ],
+      "gaps": [
+        "仅适用于文章的平滑乘子类、紧支撑 L² 输入以及两两不交的频率区间。",
+        "证明使用一维实线的固定有限移位二进格与区间几何；不能省略这些结构而转成一般树。",
+        "稀疏控制不是关于任意树投影族的普适定理。"
+      ]
+    },
+    {
+      "name": "Theorem D：Walsh Rubio square function 的加权端点结果",
+      "assumptions": [
+        "定义域为 Walsh 群 T=[0,1)，Ω 是端点为自然数的两两不交频率区间族。",
+        "w∈A₁；强 p>2 结论按二进 A_{p/2,D} 特征量表述。"
+      ],
+      "statement": "作者给出 ||T^Ω f||_{L²(w)}≲[w]_{A₁,D}^{1/2}[w]_{A∞}^{1/2}||f||_{L²(w)}；当 2<p<∞，||T^Ω f||_{L^p(w)}≲_p [w]_{A_{p/2,D}}||f||_{L^p(w)}，并称权特征指数最佳。",
+      "start_line": 216,
+      "end_line": 232,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "用 Chang–Wilson–Wolff 不等式将 Walsh 投影平方函数比较到 Walsh wave-packet square function。",
+        "p=2 时按 λ 对满足 w(I_s)/|I_s|>λ 的极大二进区间作层析；局部正交性把系数和压到 ∫|f|²M_Dw，从 dyadic A₁ 得界。",
+        "p>2 使用加权外推；锐性归结到 Walsh 部分和蕴含 Haar 鞅变换界及其已知增长。"
+      ],
+      "gaps": [
+        "这是 Walsh 群与二进频率的模型结果，非连续 Fourier 任意树平方函数结论。",
+        "证明涉及二进 A_p 与 Walsh 波包，不能不经转移证明就用于其它底空间。"
+      ]
+    },
+    {
+      "name": "Theorem E：偶且径向递减 A₁ 权的连续 Rubio 函数 L² 界",
+      "assumptions": [
+        "w 是实线上偶且径向递减的 A₁ 权。",
+        "通过文章条件 (6.2) 控制每个阈值 λ 下被选区间所从属的稀疏超区间族。"
+      ],
+      "statement": "作者证明 ||G_Ωf||_{L²(w)}≲[w]_{A₁}||f||_{L²(w)}，以及 ||T_Ωf||_{L²(w)}≲[w]_{A∞}^{1/2}[w]_{A₁}||f||_{L²(w)}。",
+      "start_line": 233,
+      "end_line": 244,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "先以局部正交和层析把 intrinsic 波包平方函数 L²(w) 界化为阈值区间从属条件下的积分估计。",
+        "对偶对称、单调权用超水平集包含的中心区间作为从属覆盖；对几何放大层求和，利用 A₁ 控制积分，推出 (6.2)。",
+        "再由 Chang–Wilson–Wolff 比较回 T_Ω 与 G_Ω。作者指出 (6.2) 一般强于 A₁，但对偶且径向递减权等价于 A₁。"
+      ],
+      "gaps": [
+        "只覆盖偶且径向递减权，并未解决一般 A₁ 的连续 Rubio L² 加权猜想。",
+        "仍然是两两不交频率区间框架，不是任意树上版本。"
+      ]
+    }
+  ],
+  "constant_dependence": "Theorems B–C 的点态主稀疏界常数为绝对常数；稀疏族依赖具体 f、Ω。Theorem A 的加权弱型特征量依赖如 theorem card 所列，L² 平均阈值为 sharp。Walsh 界常数在 p>2 时可依赖 p，权特征为 dyadic A_{p/2}；Theorem E 依赖 A₁ 与 A∞ 的幂次。没有证明这些常数对任意树、任意空间维数或不同频率几何一致。",
+  "endpoint_limits": [
+    "主线 Theorem A–C 的输入是紧支撑 L²，频率区间两两不交；其主稀疏模型以 L² 平均为阈值，p<2 替代已由作者排除。",
+    "经典连续 Rubio square function 的强加权结论覆盖 p>2；一般 A₁ 的 L²(w) 强型当时仍为开放问题，文章只解决 Walsh 或偶递减权特例。",
+    "Walsh Theorem D 与连续 Theorem E 的端点结构和底空间假设不同，不能混合引用。",
+    "正文共 28 页，已读至第 28 页作者信息与参考文献；没有独立附录。"
+  ],
+  "reusable_methods": [
+    "把频率区间两两不交转成局部 wave-packet 正交性，再验证系数序列满足 Carleson packing。",
+    "在每个父区间按局部 L² 平均停止，并用弱型平方函数估计保证坏集比例小，从而构造 sparse family。",
+    "分开估计几何尾部与近场递归项；尾部用 maximal function，近场振荡用频率截断和正交性。",
+    "对层析型加权估计保留“被选区间从属于超区间族”这一精确条件，不能只写一个全局 Carleson 常数。"
+  ],
+  "unchecked": [
+    "我没有独立重做 Theorem C 时间频率区域投影的完整 wave-packet 代数，也未逐项核算 285 项分解的计数。",
+    "没有检验将任意树频率族转成两两不交区间族的额外假设；文章未提供此桥梁。",
+    "权常数的 sharpness 依赖文中引用的外部结果，本文只检查了所引逻辑主张及适用范围，没有独立证明那些外部结果。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1003,
+    "source_lines": 1009,
+    "required_content_lines": 798,
+    "covered_content_lines": 798,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-03df4e0c85ffb707/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-03df4e0c85ffb707.json",
+  "review_input_sha256": "350d76acae7b2ce0faa877b8f4c92c0c56aec9755b0c4ed6d0bb0dbd38006d69"
+}

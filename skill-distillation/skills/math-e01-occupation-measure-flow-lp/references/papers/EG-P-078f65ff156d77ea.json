@@ -1,0 +1,377 @@
+{
+  "paper_id": "P-078f65ff156d77ea",
+  "observed_title": "Occupation-Measure Mean-Field Control: Optimization over Measures and Frank-Wolfe Methods",
+  "authors": [
+    "Di Yu",
+    "Sixiong You",
+    "Chaoying Pei"
+  ],
+  "version": "PDF 首页视觉核对 arXiv:2603.16094v1；首页日期 2026-03-17。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 1098,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "E01": "direct"
+  },
+  "definitions": [
+    {
+      "term": "有限代理系统的运行/终端占用测度",
+      "definition": "对经典可行轨迹 ω=(x(·),u(·))，µ[ω] 把 Lebesgue 时间测度推前到 (t,x(t),u(t))，总质量 T；ν[ω]=δ_{x(T)} 为终端测度。N 个代理的经验占用对 (µᴺ,νᴺ) 是这些单轨迹测度的等权平均，状态时间边缘恢复 ρᴺ_t=N⁻¹∑ᵢδ_{xᵢ(t)}。",
+      "source_ranges": [
+        {
+          "start_line": 155,
+          "end_line": 187,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "弱 Liouville 可行集 Δ",
+      "definition": "给定初始概率分布 ρ₀，非负测度对 µ∈M₊([0,T]×X×U;T)、ν∈P(X) 对所有 v∈C¹([0,T]×X) 满足 ∫v(T)dν−∫v(0)dρ₀=∫(∂ₜv+∇v·f(x,u))dµ。该条件对 (µ,ν) 线性；在 compact X,U 及连续 f 条件下 Δ 是弱*紧凸集。",
+      "source_ranges": [
+        {
+          "start_line": 272,
+          "end_line": 305,
+          "pdf_pages": [
+            5
+          ]
+        },
+        {
+          "start_line": 381,
+          "end_line": 389,
+          "pdf_pages": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "term": "同一时刻人口相互作用二次泛函",
+      "definition": "原始 N 代理的 λN⁻¹∑ᵢ∫₀ᵀ(W*ρᴺ_t)(xᵢ(t))dt 可精确写为 λ∫₀ᵀ∫∫W(x−y)dµ_t(x,u)dµ_t(y,v)dt。文中的 δ(t−t′) 是将两份时空占用测度限制为相同时间的形式记号，随后式(9)给出严格时间积分。故整体目标是测度上的线性运行/终端项加二次相互作用项，并非一般的纯线性 LP。",
+      "source_ranges": [
+        {
+          "start_line": 191,
+          "end_line": 250,
+          "pdf_pages": [
+            3,
+            4
+          ]
+        },
+        {
+          "start_line": 289,
+          "end_line": 305,
+          "pdf_pages": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "term": "松弛控制与人口边缘连续性方程",
+      "definition": "可行 µ 可分解为 dt ρ_t(dx)λ_{t,x}(du)，其中 λ_{t,x} 是条件控制概率核。状态边缘满足 ∂ₜρ_t+∇ₓ·(F(t,x)ρ_t)=0，F(t,x)=∫f(x,u)dλ_{t,x}(u)∈co f(x,U)。只有 λ_{t,x}=δ_{ϕ(t,x)} 时才回到确定反馈控制形式；一般 µ 不强制 common deterministic feedback。",
+      "source_ranges": [
+        {
+          "start_line": 307,
+          "end_line": 332,
+          "pdf_pages": [
+            5
+          ]
+        },
+        {
+          "start_line": 963,
+          "end_line": 1000,
+          "pdf_pages": [
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "term": "正半定交互核",
+      "definition": "对称核 W 称 positive semidefinite，若对每个有限有符号状态测度 σ（积分有定义）有 ∫∫W(x−y)dσ(x)dσ(y)≥0；高斯等平移不变且 Fourier transform 非负的核是例子。该二次型条件控制 J 的凸性。正文以 λ 作为外乘的相互作用权重，但凸性定理附近没有显式重申 λ≥0；核定理应按 λ 非负或已吸收入 W 的约定解释。",
+      "source_ranges": [
+        {
+          "start_line": 364,
+          "end_line": 403,
+          "pdf_pages": [
+            6
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "定理1：有限 N 代理目标与经验占用测度的等价表达",
+      "assumptions": [
+        "各代理轨迹满足共享的连续动力学，f 关于状态局部 Lipschitz 且对控制一致；µᴺ、νᴺ 是单轨迹占用测度的经验平均。",
+        "运行成本 ℓ₀ 与终端成本 Ψ 有界连续；交互核 W 可测且对应积分有限。"
+      ],
+      "statement": "N 代理目标精确等于经验测度对上的线性运行项、线性终端项和相同时间下的二次交互项；同一经验测度还满足初始经验分布 ρᴺ₀ 对应的弱 Liouville 等式。交互项中 δ(t−t′) 只是相同时间积分的形式写法。",
+      "start_line": 206,
+      "end_line": 250,
+      "pdf_pages": [
+        4
+      ],
+      "proof_steps": [
+        "逐代理使用 µ[ωᵢ] 定义换写运行成本，使用 ν[ωᵢ] 换写终端成本。",
+        "将经验占用测度定义代入 W 项，双重求和恰还原 ∑ᵢ(W*ρᴺ_t)(xᵢ(t))/N；再把 t′ Dirac 表示为同一时间交互。",
+        "沿每条轨迹对 v(t,xᵢ(t)) 用链式法则积分并对 i 平均，得到弱 Liouville 关系。",
+        "我视觉核对了 PDF 第4页公式 (7)–(9)，检查双重求和系数与严格时间积分对应；未对有限代理近似任何连续控制策略作推导。"
+      ],
+      "gaps": [
+        "这是精确的有限代理表示，不是 N→∞ 的 mean-field 收敛定理。",
+        "相互作用目标是 quadratic measure functional；整体优化仅在核 PSD/交互权重符号合适等条件下凸。"
+      ]
+    },
+    {
+      "name": "定理2与推论1：PSD 核下目标凸、可行集弱*紧且存在最优解",
+      "assumptions": [
+        "X 与 U 紧，Σ=[0,T]×X×U 紧；f 连续；初始 ρ₀ 固定。",
+        "J 中运行成本 ℓ₀ 与终端成本 Ψ 有界连续。",
+        "W 是对称正半定核；另外，正文的交互权重 λ 应非负或并入 PSD 核，尽管定理段落未明写符号条件。"
+      ],
+      "statement": "若 W 为正半定，则交互二次项凸，J 在相应正测度空间上凸；Δ 由线性弱 Liouville 约束定义，是弱*紧凸集。J 在 Δ 上弱*下半连续，故存在最优 (µ*,ν*)。",
+      "start_line": 364,
+      "end_line": 372,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "线性运行/终端项自动凸；把交互项写为 signed-measure 二次型，插值余项为 −α(1−α)∫∫W d(µ₁−µ₂)d(µ₁−µ₂)，PSD 给非负曲率。",
+        "Δ 为正测度对空间与连续线性 Liouville 等式的交集，因底空间紧、质量固定而弱*紧凸。",
+        "对最小化序列取弱*收敛子列，线性项弱*连续，PSD 连续核二次泛函弱*下半连续，极限点达到最优值。",
+        "我视觉核对了 PDF p6 定理2/推论1和凸性恒等式；我没有独立重证弱*紧性或二次泛函的下半连续通用结论。"
+      ],
+      "gaps": [
+        "convexity 的交互项外权重符号需要 λ≥0；在所读正文定理的显式假设列表中未见该符号，应用时需把 λ 的约定写清楚。",
+        "弱*紧性使用固定总质量与 compact 状态/控制/时间域；非紧域不能直接使用此结论。"
+      ]
+    },
+    {
+      "name": "定理3–4：方向导数与凸问题的一阶最优性变分不等式",
+      "assumptions": [
+        "(µ,ν)∈Δ；方向为有限 signed measures (δµ,δν)，保持总质量并满足线性化 Liouville 约束。",
+        "定理4另假设 J 在 Δ 上凸。"
+      ],
+      "statement": "Gateaux 导数是线性运行项加终端项及相互作用梯度：δJ=⟨g_µ,δµ⟩+⟨Ψ,δν⟩，其中 g_µ=ℓ₀+2λ(W*ρ_t)(x) 为同一时刻的状态卷积。若 J 在 Δ 上凸，则可行点最优当且仅当对所有可行 (µ,ν)，⟨g_{µ*},µ−µ*⟩+⟨Ψ,ν−ν*⟩≥0。",
+      "start_line": 374,
+      "end_line": 444,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "proof_steps": [
+        "对二次相互作用在 µ+εδµ 上展开，二次余项除以 ε 后趋零，得到双线性主项的两份相等贡献，形成系数 2。",
+        "凸可微函数的一阶支撑不等式给必要充分 VI；必要性由方向导数，充分性由凸性。",
+        "我直接由对称二次型展开检查因子 2 与 VI 方向符号；未将可行方向说成 Δ 的全部代数方向，非负性边界仍由凸可行集最优条件处理。"
+      ],
+      "gaps": [
+        "interaction derivative uses same-time interpretation of δ(t−t′);严格实现应依赖式(9)的 dt 形式。",
+        "不显式处理非光滑成本或不可微核的次梯度版本。"
+      ]
+    },
+    {
+      "name": "定理5：精确 FW 线性预言机由初态参数化经典 OCP 实现",
+      "assumptions": [
+        "固定迭代 µᵏ 与其线性化成本 g_{µᵏ}。",
+        "对 ρ₀-a.e. 初态 ξ，经典轨迹问题 min∫₀ᵀg_{µᵏ}(t,x,u)dt+Ψ(x(T)) 具有最小解；且存在 ρ₀ 可测的最优轨迹选择 ξ↦ωᵏ(ξ)。",
+        "若最小值不达，正文说明以 ε-optimal 轨迹理解，需相应采用 inexact-oracle 收敛结果。"
+      ],
+      "statement": "把每一初始状态的最优经典轨迹占用测度按 ρ₀ 聚合，所得 (µ̄ᵏ,ν̄ᵏ)∈Δ 是整体 FW LMO 的解。由此每个 FW 线性方向可以分解为互相独立的、按初态索引的 classical optimal-control 子问题。",
+      "start_line": 456,
+      "end_line": 501,
+      "pdf_pages": [
+        7,
+        8
+      ],
+      "proof_steps": [
+        "附录 Lemma1 将 µ disintegrate 为 dtρ_tλ_{t,x}；对可行 Liouville 式应用 continuity-equation 表示与 superposition，得到路径空间概率 η。",
+        "对 η-a.e. relaxed trajectory，把平均状态速度与线性化成本速度增广成一个 convexified differential inclusion；附录 Lemma3 引用 chattering 定理构造均匀逼近的经典轨迹，端点和代价一并逼近。",
+        "由此每条 relaxed path 的线性化成本不小于其初态 ξ 的 classical OCP 值 V(ξ)；任一测度解总体成本下界为 ∫V(ξ)dρ₀。",
+        "聚合 measurable selection 中每个 ξ 的经典 minimizer 达到该积分下界，因此聚合测度是 LMO 最小解。",
+        "我阅读了 Appendix A–C 的完整论证链，并核对下界与达到两侧如何衔接；continuity-equation superposition/chattering 与 measurability 定理引用外部来源，未独立重证。"
+      ],
+      "gaps": [
+        "定理要求逐初态存在解和可测最优选择；作者承认非紧设置可能只有 ε-optimal 解，此时精确 oracle 结论应改用 inexact 版本。",
+        "区间轨迹松弛和点态控制核可由 chattering 近似，不意味着任一 measure-optimal solution 是单一 classical feedback trajectory。"
+      ]
+    },
+    {
+      "name": "定理6：L-smooth convex 目标下的 FW 速率与 fully-corrective 变体",
+      "assumptions": [
+        "J 在 Δ 上凸并对积 total variation 范数 L-smooth。",
+        "算法1 每步使用精确 LMO，步长 αₖ=2/(k+2)；有限 horizon T，µ 总质量 T，ν 总质量 1。"
+      ],
+      "statement": "对 k≥1，J(µᵏ,νᵏ)−J*≤8L(T+1)²/(k+2)，为 O(1/k)。若采用 FCFW 并精确解累计凸组合权重的修正问题，其目标值不高于同一字典上的普通 FW 更新，所以相同下降率成立。W 非 PSD 时目标可能非凸；文章仅援引标准 FW 在适当条件下趋向 VI 驻点，不给全局 gap 率。",
+      "start_line": 548,
+      "end_line": 609,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "proof_steps": [
+        "定义 L-smooth 为 J(z′)≤J(z)+δJ(z;z′−z)+(L/2)‖z′−z‖²。",
+        "每个线性化子问题最优性与最优可行点 z* 给 δJ(zₖ;sₖ−zₖ)≤J*−J(zₖ)。",
+        "单轨迹测度与 ν 的总变差差分别至多 2T 与 2；按积 TV 求和 ‖sₖ−zₖ‖≤2(T+1)，得 Δₖ₊₁≤(1−αₖ)Δₖ+2L(T+1)²αₖ²。",
+        "用 αₖ=2/(k+2) 的归纳得 8L(T+1)²/(k+2)。p9 视觉复核了 Theorem6 的步长与系数，附录 D 中我复算了递推常数。",
+        "FCFW 对历史聚合占用测度权重做 simplex QP；其中包含以当前点进行普通 FW 步的可行候选，故精确校正目标不增。"
+      ],
+      "gaps": [
+        "L 未在本文主定理内进一步显式界为 λ、‖W‖∞ 等模型数据的函数；速率需以已知 smoothness 常数为前提。",
+        "数值 LMO 由网格控制序列的 Adam 梯度优化近似，FCFW QP 也用投影梯度；实验没有 oracle/QP 误差认证，不能直接把 exact-theorem gap 数值当作实际运行的认证界。",
+        "速率仅适用于凸和 L-smooth 的情形；PSD 失败时不适用。"
+      ]
+    },
+    {
+      "name": "松弛速度反例与轨迹型算法的限制",
+      "assumptions": [
+        "一维受控系统仅允许 u∈{−1,+1}；两个控制向量场在当前位置给出速度 −1 或 +1。"
+      ],
+      "statement": "OM-MFC 可行连续状态松弛允许 λ=½δ₋₁+½δ₊₁，得到平均速度 F=0；该“ghost relaxation”不是原始单体动力学可一步实现的速度。附录 chattering 只证明可由快速切换经典轨迹一致逼近；FW LMO 若限于经典 Γ 内则所生成迭代是经典轨迹占用测度聚合，不会在有限一步直接选取此平均速度。",
+      "start_line": 303,
+      "end_line": 332,
+      "pdf_pages": [
+        5
+      ],
+      "proof_steps": [
+        "由 relaxed control 的平均速度公式计算 (−1+1)/2=0，不属于 U 的两个可取速度。",
+        "正文以 differential inclusion 的 convex hull 解释该松弛轨迹；通过 chattering 近似的论证延后到附录 Lemma3。",
+        "我核对了例子的输入输出；未将极限的快速切换轨迹称作同一条经典轨迹。"
+      ],
+      "gaps": [
+        "该例解释 feasible measure relaxation 会扩大轨迹类，并非宣称整体 mean-field 弱式问题无解或必有正 relaxation gap。",
+        "对群体概率边缘而言，多条经典路径的混合可精确产生分布变化；single-trajectory ghost 不应等同于 population-level empirical measure 的可实现性问题。"
+      ]
+    },
+    {
+      "name": "数值案例：二维 PDE 对照、三维障碍与卫星轨道（经验性）",
+      "assumptions": [
+        "UAV 例使用单积分器、软避障势与 Gaussian 排斥核；2D 部分将轨迹法结果与栅格 PDE 密度作定性比较。",
+        "3D 情形使用 10 个障碍且不作 PDE 对照；卫星例采用三维 Kepler 引力加有限推力控制。"
+      ],
+      "statement": "作者报告 2D 单初点及分布初点情形中 FCFW 与 PDE 的群体演化定性接近；3D 十障碍实例约 20 分钟运行；卫星群由共同低轨释放点飞向高轨并沿目标轨道扩散。所有具体轨迹/时间是有限次数值实验；软障碍并非硬可行约束。",
+      "start_line": 611,
+      "end_line": 895,
+      "pdf_pages": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "proof_steps": [
+        "逐段读完 6.1 UAV 各初始分布/维数设置、迭代参数与 PDE 对照说明。",
+        "逐段读完 6.2 卫星场景的 Kepler 动力学、推力界、权重和算法迭代。",
+        "我只记录文章报告，不重跑控制序列、PDE 基准或运行时间。"
+      ],
+      "gaps": [
+        "没有提供 finite-N mean-field approximation theorem、模型误差或数值不确定度。",
+        "障碍通过罚函数处理，不能从图像宣称形式化 collision-free 保证。",
+        "连续初始分布聚合是对 ρ₀ 的积分；有限粒子/轨迹样本只对离散支持精确，连续情形依赖 Monte Carlo 近似。"
+      ]
+    },
+    {
+      "name": "附录 A–C：测度可行性、连续方程表示与 classical LMO 证明",
+      "assumptions": [
+        "紧致 X,U、连续且满足文中 Lipschitz/可测要求的动力学；固定初始分布。",
+        "松弛测度与线性化成本满足附录假设。"
+      ],
+      "statement": "Lemma1 以 v(t,x)=ψ(t) 从 Liouville 式识别 µ 的时间边缘为 dt，再 disintegrate 成 dtρ_tλ_{t,x}；Lemma2 得到 continuity equation 并通过 superposition 得 path-space η；Lemma3 对状态与附加成本做 chattering 逼近；附录 C 用 path measure 推出任意 LMO 目标下界与聚合可测最优经典轨迹的匹配，证明定理5。",
+      "start_line": 963,
+      "end_line": 1055,
+      "pdf_pages": [
+        15,
+        16
+      ],
+      "proof_steps": [
+        "Lemma1：对只依赖 t 的测试函数 h，弱关系强制 µ 的时间投影 dt；空间控制 disintegration 得 dtρ_tλ。",
+        "Lemma2：把 f 对 λ 平均成 F，弱关系即连续性方程；引用概率表示定理将解表示为 F-积分曲线分布。",
+        "Lemma3：把 (x, cost) 增广；松弛轨迹速度在经典速度集合的 convex hull 内；套用 Filippov/chattering 引理得到统一逼近。",
+        "附录 C：由任一可行 µ 的路径表示将目标写成路径成本平均；逐初态下界 V(ξ) 给整体下界；按 ρ₀ 聚合逐初态 minimizer 达到下界。",
+        "我全读附录证明并核算逻辑次序；所引 Bogachev/Vinter/Filippov 定理未独立证明。"
+      ],
+      "gaps": [
+        "superposition 与 chattering 结论依赖紧性、boundedness/continuity 和值函数选择假设；不可直接迁移到任意状态约束或不可测动力学。",
+        "ρ₀ 连续支持时聚合定理是对概率分布积分，不自动产生有限条离散轨迹样本。"
+      ]
+    },
+    {
+      "name": "附录 D：定理6 的下降递推",
+      "assumptions": [
+        "定理6 的 convex/L-smooth、exact LMO 与步长假设。"
+      ],
+      "statement": "从 L-smoothness、线性 oracle 最优性与范数界推出 Δₖ₊₁≤(1−αₖ)Δₖ+2L(T+1)²αₖ²，再在 αₖ=2/(k+2) 下归纳给定误差率。",
+      "start_line": 1057,
+      "end_line": 1098,
+      "pdf_pages": [
+        16
+      ],
+      "proof_steps": [
+        "将 zₖ₊₁=zₖ+αₖ(sₖ−zₖ) 代入光滑性不等式。",
+        "用 oracle 最优性把 δJ 替换成 J*−J(zₖ)，用 ‖sₖ−zₖ‖≤2(T+1) 控制二次项。",
+        "得到递推并按 k 归纳；我视觉核对 p16 递推系数，且手算 TV 界与 2L 常数一致。"
+      ],
+      "gaps": [
+        "这是标准 exact-oracle FW 证明，不包含算法实现中的数值离散/控制优化误差。"
+      ]
+    }
+  ],
+  "constant_dependence": "Theorem6 明示 gap≤8L(T+1)²/(k+2)，显式依赖时间跨度 T、积 total-variation norm 下的 L-smooth 常数 L 和迭代 k。总变差几何因 µ 质量 T、ν 质量 1 而给 2(T+1)。本文未给 L 关于 λ、W 或具体系统参数的显式统一表达。",
+  "endpoint_limits": "有限时间 [0,T]；x,u 空间紧致是弱*紧性/存在性的基础。一般 positive semidefinite W 的定义针对对称状态核及所有有限 signed measures；目标外乘 λ 的符号需要非负或吸入核中的约定。线性 Liouville 可行集是 convex relaxation，可含 ghost averaged velocity；定理5 仅说 linear oracle 的值可由经典轨迹序列实现，不能推出 finite-N/共同反馈策略收敛。连续初始分布需要对初态积分，Monte Carlo 仅为近似。FW 全局 O(1/k) 只对凸且 L-smooth、精确 LMO；软障碍数值图不提供硬碰撞保障。",
+  "reusable_methods": [
+    "把有限代理时间轨迹目标精确写作经验 occupation measures 上的同刻二次核泛函，并单列终端分布和弱 Liouville 约束。",
+    "以时间只依赖的测试函数识别运行测度的时间边际 dt；随后 disintegrate 为 dtρ_tλ_{t,x}，并导出 mean velocity continuity equation。",
+    "用 signed-measure PSD 核条件验证交互二次型凸性；一阶变分增加 2 倍对手群体状态密度卷积，使 LMO 可按初态 ξ 分解。",
+    "用 continuity-equation superposition 建立路径概率，再在 (state,cost) 增广系统中套 chattering，论证松弛路径的线性化成本可由经典 admissible trajectories 逼近。",
+    "用总变差质量界 ‖µ‖=T、‖ν‖=1 给 FW 曲率/光滑项常数；迁移前需重查范数定义、精确 oracle 和离散解误差。"
+  ],
+  "verification_notes": [
+    "全文逐行通读转换文本 lines 5–1098，覆盖 PDF 16 页、主结果、数值案例、结论、Appendix A–D 与全部参考文献。",
+    "视觉核验 PDF pp.1,4–9,15–16：核对题名/版本、经验占用代价和 Liouville 式、ghost relaxation、凸性/最优性/LMO、FW 步长和 8L(T+1)² 系数、附录 continuity/chattering 结构。",
+    "我独立检查了同刻双重求和系数、核二次型凸性余项、gradient 因子 2、TV 质量界与 rate recurrence；weak*紧性、superposition、Filippov/chattering 及 convergence theorem 的通用版本依赖作者引用的结果。",
+    "分类 direct：本文核心对象即占用测度 mean-field control、线性 Liouville 动力学约束与 measure-space 优化方法；注意目标为含 quadratic interaction 的优化问题，不是单纯线性 LP。"
+  ],
+  "unchecked": [
+    "未独立重证 disintegration/superposition、概率表示、Filippov chattering、通用 FW exact/inexact oracle 理论。",
+    "未重跑 HJB-FP PDE 对照、Adam 控制优化、FCFW 权重优化或卫星传播，数值数字按作者报告。",
+    "interaction weight λ 的非负假设需查原稿其他上下文/作者惯例；本文所读凸定理段落明示 PSD 条件而未显写 λ 的符号，因此暂不将定理扩大解释到负 λ。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1094,
+    "source_lines": 1098,
+    "required_content_lines": 953,
+    "covered_content_lines": 953,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-078f65ff156d77ea/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-078f65ff156d77ea.json",
+  "review_input_sha256": "3364b59e511f0d70cb415e13a4a716d3a906ec04e1d581843cb0105f6192d725"
+}

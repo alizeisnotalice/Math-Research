@@ -1,0 +1,214 @@
+{
+  "paper_id": "P-436c21dd3224191c",
+  "observed_title": "Proximal-Gradient Algorithms for Fractional Programming",
+  "authors": [
+    "Radu Ioan Boț",
+    "Ernö Robert Csetnek"
+  ],
+  "version": "arXiv:1601.08166v1; manuscript dated 2021-07-15 in extracted copy; 15 PDF pages",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 813,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "scope": "entire paper: both denominator cases, convergence proofs, KL argument, future-work section and references"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "A01": "direct: develops proximal-gradient algorithms for positive-denominator fractional minimization and analyzes value/iterate convergence."
+  },
+  "definitions": [
+    {
+      "name": "fractional program",
+      "statement": "θ=inf_{x∈S} f(x)/g(x), with f≥0 on S and g>0 on S.",
+      "source_lines": [
+        35,
+        52
+      ],
+      "pdf_pages": [
+        1
+      ]
+    },
+    {
+      "name": "concave-denominator assumptions",
+      "statement": "S is nonempty closed convex; f is proper convex lsc, dom f intersects S and f≥0; g is concave, differentiable with L-Lipschitz gradient and 0<g≤M on S.",
+      "source_lines": [
+        149,
+        171
+      ],
+      "pdf_pages": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "KL property",
+      "statement": "A desingularizing function ϕ makes ϕ′(h(x)−h(x̄)) dist(0,∂_L h(x))≥1 near the reference value and point.",
+      "source_lines": [
+        540,
+        562
+      ],
+      "pdf_pages": [
+        10
+      ]
+    },
+    {
+      "name": "proximal-gradient iteration",
+      "statement": "The iteration combines a proximal minimization for f+δ_S with a gradient step for the denominator.",
+      "source_lines": [
+        175,
+        190
+      ],
+      "pdf_pages": [
+        4
+      ]
+    },
+    {
+      "name": "quotient parameter update",
+      "statement": "At each iterate the parameter is updated as θ_{k+1}=f(x_k)/g(x_k).",
+      "source_lines": [
+        414,
+        430
+      ],
+      "pdf_pages": [
+        8
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 7 (concave denominator)",
+      "assumptions": [
+        "Problem 5 assumptions",
+        "For weak convergence of x_k, inf_{x∈S} f(x)/g(x)>0"
+      ],
+      "statement": "θ_k is nonincreasing and converges to θ; the objective error has an O(1/k) upper bound depending on initial distance and g(x). Under the additional positive lower bound on the optimal ratio, x_k converges weakly to an optimal solution.",
+      "start_line": 158,
+      "end_line": 422,
+      "pdf_pages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "proof_steps": [
+        "Optimality of the proximal step gives a subgradient inequality.",
+        "Concavity of g and the descent lemma yield a Lyapunov inequality combining objective gap, step norm and distance to an optimizer.",
+        "Summability proves θ_k↓θ and yields the stated rate by telescoping.",
+        "When θ>0, step differences vanish and distances to every optimizer converge; Opial’s lemma gives weak convergence."
+      ],
+      "gaps": [
+        "The value convergence/rate does not itself ensure iterate convergence; the positive infimum of f/g is separately required. If θ_1=0, the displayed step-size 1/(2Lθ_1) is singular, although x_0 already certifies the optimum because f≥0."
+      ]
+    },
+    {
+      "label": "Theorem 10 (convex denominator, limit-point stationarity)",
+      "assumptions": [
+        "Problem 8 assumptions: f proper convex lsc and nonnegative; g convex differentiable with L-Lipschitz gradient and 0<g≤M",
+        "liminf η_k>0"
+      ],
+      "statement": "θ_k is nonincreasing and Σ||x_k−x_{k−1}||²/η_k<∞. Every strong cluster point x lies in dom f∩S and has limiting ratio θ=f(x)/g(x); if x is in int(dom f∩S), it is a limiting-subdifferential critical point of (f+δ_S)/g.",
+      "start_line": 425,
+      "end_line": 514,
+      "pdf_pages": [
+        8,
+        9,
+        10
+      ],
+      "proof_steps": [
+        "Proximal optimality plus convexity of g gives a decrease inequality for θ_k and a squared-step bound.",
+        "At a strong limit point, lower semicontinuity and continuity of g identify the limiting quotient.",
+        "Closedness of the convex subdifferential gives θ∇g(x)∈∂(f+δ_S)(x).",
+        "An interior subdifferential quotient rule converts this to 0∈∂_L((f+δ_S)/g)(x)."
+      ],
+      "gaps": [
+        "No whole-sequence convergence or global optimality is claimed here; for convex g, the limit point may only be critical."
+      ]
+    },
+    {
+      "label": "Theorem 15 (whole-sequence convergence under KL)",
+      "assumptions": [
+        "finite-dimensional H",
+        "convex-denominator setup, L-Lipschitz ∇g",
+        "liminf η_k>0, η_1θ_1<1/L, and η_k nonincreasing",
+        "(f+δ_S)/g is a KL function",
+        "(x_k) bounded and eventually in int(dom f∩S)"
+      ],
+      "statement": "The sequence has finite length Σ||x_{k+1}−x_k||<∞ and converges to x∞; if x∞ is interior, it is a limiting critical point.",
+      "start_line": 611,
+      "end_line": 698,
+      "pdf_pages": [
+        11,
+        12,
+        13
+      ],
+      "proof_steps": [
+        "The cluster set is compact and connected and the objective is constant on it by Lemma 13.",
+        "Uniformized KL inequality controls the objective gap by a subgradient residual.",
+        "Descent gives a sufficient-decrease inequality and proximal optimality gives a relative-error estimate.",
+        "Combine these inequalities to obtain finite path length, then Cauchy convergence."
+      ],
+      "gaps": [
+        "The proof relies on the eventual-interiority assumption for the quotient subdifferential rule, boundedness, and uniform η bounds; no general global-optimum conclusion is available."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "For the concave case η_k=1/(2Lθ_k); the objective estimate is O(1/k) with constants involving θ_1, denominator upper bound M, initial distance ||x−x_0||² and g(x). For the convex case, sufficient decrease depends on η_k, L and θ_k.",
+    "dependence": "No dimension-free cube maximal inequality is derived; the convergence results are optimization-algorithm statements in Hilbert spaces."
+  },
+  "endpoint_limits": {
+    "denominator": "g must be strictly positive on the feasible set; concave/convex denominator is smooth with Lipschitz gradient and bounded above.",
+    "concave_case": "Weak convergence of iterates additionally needs the optimal ratio bounded away from zero.",
+    "convex_case": "Without the KL and interior assumptions, only objective convergence/cluster-point properties are stated; critical points need not be globally optimal.",
+    "zero_ratio": "If the initial ratio is zero with f≥0, x_0 is already a global optimizer, but the paper does not define the infinite step parameter case; stop at that certificate."
+  },
+  "reusable_methods": [
+    {
+      "method": "Dinkelbach residual f−θg paired with proximal-gradient splitting",
+      "transfer": "A solver pattern for fractional minimization when numerator is convex nonsmooth and denominator is smooth with the stated curvature/sign conditions; it is not a proof of weak-type bounds for the continuous maximal-cube operator."
+    },
+    {
+      "method": "Separate value convergence from iterate convergence",
+      "transfer": "When reporting a numerical ratio algorithm, state whether only θ_k converges, whether weak/strong iterates converge, and which positivity/KL/interiority assumptions support each claim."
+    },
+    {
+      "method": "Use a Lyapunov inequality plus Opial or KL finite-length argument",
+      "transfer": "Reusable proof architecture only after verifying the corresponding Hilbert/finite-dimensional compactness and subdifferential conditions."
+    }
+  ],
+  "unchecked": [
+    "I read the full paper and checked the ratio-update identity, the sign of the descent inequality, and the distinction between concave-denominator global convergence and convex-denominator criticality. I did not independently reprove the cited Opial, subdifferential calculus, or KL framework results, nor run the algorithms. Those claims rely on the authors’ stated references."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 813,
+    "source_lines": 813,
+    "required_content_lines": 584,
+    "covered_content_lines": 584,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-436c21dd3224191c/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-436c21dd3224191c.json",
+  "review_input_sha256": "342103d2259c69984821d10944d20b90366b7f6120479769e35d68eff967bfc3"
+}

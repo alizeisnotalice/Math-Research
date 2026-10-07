@@ -1,0 +1,114 @@
+{
+  "paper_id": "P-70202a15ceda49c2",
+  "observed_title": "Combining Constraint Programming Reasoning with Large Language Model Predictions",
+  "authors": [
+    "Florian Régin",
+    "Elisabetta De Maria",
+    "Alexandre Bonlarron"
+  ],
+  "version": "arXiv:2407.13490v1, 18 July 2024; 15 PDF pages",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1048,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "scope": "全文各节、Algorithm 1、Figures 1–4、Tables 1–5、讨论及参考文献"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "L05",
+    "decision": "adjacent",
+    "basis": "生成式CSP的显式约束检验、回溯和域管理可迁移；LLM有限top-k域是模型的一部分，不能充当原数学问题的全域SAT/UNSAT证书。"
+  },
+  "definitions": [
+    {
+      "name": "GenCP(M,F)",
+      "statement": "M=(X,D,C), variables words, domains LLM predicted words; F contains generative functions G, Boolean acceptance B, helpers H. genV/genD/genC create variables/domains/constraints during search.",
+      "start_line": 246,
+      "end_line": 340,
+      "pdf_pages": [
+        5
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Algorithm 1 / generation-propagation-backtracking",
+      "evidence_class": "source_algorithm_not_formal_completeness_theorem",
+      "assumptions": [
+        "Finite generated candidate domains; all task structural constraints encoded and applied",
+        "Saved state includes variables, domains and constraints; after backtracking delete later generated objects",
+        "Acceptance Boolean checks task constraints and LLM predicts period; stopping/loop prevention is helper-dependent"
+      ],
+      "statement": "Call generative functions, helpers, save state, propagate, evaluate acceptance, then save solution/backtrack; predicted domain wipeout leads to backtrack.",
+      "start_line": 359,
+      "end_line": 419,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "Propagated accepted assignments checked within generated model",
+        "No theorem in this source proves that top-k domains exhaust all language or original CSP solutions"
+      ],
+      "gaps": [
+        "p11 asserts guarantee every solution and monotonicity in k without proving nesting/determinism/termination of candidate domains. Those claims require fixed deterministic nested finite domain tree and exhaustive traversal; backtrackTo can skip completions."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "k, top-k sampling parameters and prompt determine candidate domain; experiment uses llama v1 7B Q4, temp=.8, CPU, Java17; runtime/memory figures are configuration-specific."
+  },
+  "endpoint_limits": {
+    "scope": "Word-level text generation; structural constraints only. Meaning assessed by model PPL/human discussion.",
+    "not_established": "Full-language unsatisfiability, global SAT completeness, or domain nesting for nondeterministic predictions."
+  },
+  "reusable_methods": [
+    {
+      "method": "Explicitly manage model state and delete later generated variables/domains/constraints on backtracking",
+      "transfer": "Useful for dynamic finite CSP encoding; certify original constraints on accepted assignments."
+    },
+    {
+      "method": "Separate proposal domain from hard structural constraint filter",
+      "transfer": "Heuristic proposal omission must remain a search incompleteness flag; no solution found is not original UNSAT."
+    }
+  ],
+  "checked_derivation": [
+    {
+      "statement": "A one-variable original domain {a,b} with hard x=b is SAT. Predicted domain {a} filters to empty; search exhausts generated model yet original model remains SAT.",
+      "class": "checked_finite_counterexample_to_unqualified_completeness"
+    }
+  ],
+  "unchecked": [
+    "Source empirical benchmark was not rerun; no external LLM call is made.",
+    "All source pages read; quoted literature reference proofs not independently read."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1048,
+    "source_lines": 1048,
+    "required_content_lines": 655,
+    "covered_content_lines": 655,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-70202a15ceda49c2/paper.md"
+  },
+  "review_source": "reviews/TEAM_LM/evidence/P-70202a15ceda49c2.json",
+  "review_input_sha256": "6d721d8f592abbc1f7d0143ce00d1b875eccbacf9a12629c873e0f5ac33a2031"
+}

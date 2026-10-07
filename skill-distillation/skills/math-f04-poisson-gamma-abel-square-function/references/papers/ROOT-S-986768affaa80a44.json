@@ -1,0 +1,289 @@
+{
+  "paper_id": "S-986768affaa80a44",
+  "observed_title": "The weak-type (1,1) bound for the Hardy–Littlewood maximal function is O(√n log n)",
+  "authors": [
+    "Daniel Spector",
+    "Cody B. Stockdale"
+  ],
+  "version": "arXiv:2609.05377v1, 4 September 2026; 27页预印本",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 1506,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "scope": "全文所有证明、AI声明、参考文献；无另列附录"
+    }
+  ],
+  "topic_relevance": [
+    {
+      "code": "F04",
+      "decision": "adjacent",
+      "reason": "heat/Abel/吸收层及频率预算可迁移方法，球端点不等同cube端点"
+    },
+    {
+      "code": "F05",
+      "decision": "adjacent",
+      "reason": "heat/Abel/吸收层及频率预算可迁移方法，球端点不等同cube端点"
+    },
+    {
+      "code": "N04",
+      "decision": "adjacent",
+      "reason": "heat/Abel/吸收层及频率预算可迁移方法，球端点不等同cube端点"
+    }
+  ],
+  "definitions": [
+    "H_t=e^{tΔ}，h_t=(4πt)^(-n/2)exp(−|x|²/4t)；A_s=s(s−Δ)^−1。",
+    "v=log t，F_η,x(v)=H_{e^v}η(x)，Fourier约定exp(−2πiξv)。",
+    "扫掠μ=κ1_Ω，σ=ν−μ=−Δu；r(ξ)=2πiξ/(1+2πiξ)。"
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 1.1–1.4",
+      "start_line": 46,
+      "end_line": 279,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "assumptions": [
+        "球极大/heat极大界：任意n≥1及f∈L^1(R^n)。",
+        "n≥3；ν=Σm_iδ_xi，有限正原子，m_i>0，m=Σm_i；κ>0。",
+        "Ω={u>0}来自本文部分扫掠，u≥0紧支撑，ν=κ1_Ω dx−Δu，κ|Ω|=m，原子到Ω^c距离严格正。"
+      ],
+      "statement": "原文宣称：heat极大弱(1,1)界C log(1+n)；中心欧氏球极大界C√n log(1+n)。Abel N次幂的外域导数平方积分≤C√N κm；Mellin高频截断An的L1≤Cm，低频导数能量≤CBκm。",
+      "proof_steps": [
+        "核心路径：部分扫掠→自由/吸收Abel层→层的几乎正交→Gamma-Mellin频率分割→按阈值选κ→弱型界→球核转移。"
+      ],
+      "gaps": [
+        "球结果不是中心立方体结果；本文不证明cube端点上界。",
+        "高级依赖原文尚未逐一复核，不能把本文整体标为独立证明认证。"
+      ]
+    },
+    {
+      "label": "Proposition 2.1、Lemma 2.2、Proposition 2.3",
+      "start_line": 290,
+      "end_line": 547,
+      "pdf_pages": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "assumptions": [
+        "n≥3；ν=Σm_iδ_xi，有限正原子，m_i>0，m=Σm_i；κ>0。"
+      ],
+      "statement": "存在扫掠u、Ω及全部base条件；z∈Ω^c时球平均u≤κr²/(2n)；P(x)=∫_Ω u(y)|x−y|^(−n−2)dy在外域几乎处处有限，积分≤(nω_n/2)C^n m。",
+      "proof_steps": [
+        "构造一源球odometer给显式superharmonic上界，最小上包络s使u=s−γ紧支撑。",
+        "在非原子域证明−κ≤Δs≤0，继而障碍正则性给u∈C^{1,1}、接触集上二阶导数为0。",
+        "原子附近Newton势发散保证原子位于Ω内部，并得全局分布方程；以紧支撑测试函数取得质量恒等式。",
+        "u−κ|y−z|²/(2n)超调和且z处为0，球平均界后积分球均值。",
+        "Whitney立方体满足8 diam Q≤dist(Q,Ω^c)<18 diam Q；球平均控制∫u/d²≤C^n m；Tonelli和极坐标给P积分。"
+      ],
+      "gaps": [
+        "最小超调和上包络、障碍最优正则性、Stampacchia引理、Newton定理依赖标准文献，未另行证明。",
+        "P积分的C^n是真实指数损失，只在后续Mellin高频指数衰减后被消除。"
+      ]
+    },
+    {
+      "label": "Lemma 3.1–3.2：正则化与killed接口",
+      "start_line": 570,
+      "end_line": 768,
+      "pdf_pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "assumptions": [
+        "n≥3；ν=Σm_iδ_xi，有限正原子，m_i>0，m=Σm_i；κ>0。",
+        "Ω={u>0}来自本文部分扫掠，u≥0紧支撑，ν=κ1_Ω dx−Δu，κ|Ω|=m，原子到Ω^c距离严格正。",
+        "先以原子周围互不相交小球内的径向光滑概率替换原子，保持Ω及u边界邻域。",
+        "正则化后ν∈C_c^∞(Ω)，u∈H_0^1(Ω)∩L∞且Ω内严格正。"
+      ],
+      "statement": "K=−Δ_Ω+κ/u由闭非负Dirichlet形式定义，自伴且有谱隙；Ku=ν。z_j=s^j(s+K)^(-j−1)ν满足0≤z_j≤u，ρ_j=(κ/u)z_j≤κ1_Ω。零延拓后无额外边界测度，(A_s^N−B_s^N)ν=Σ_{j<N}A_s^(N−j)ρ_j。",
+      "proof_steps": [
+        "径向正则化的Newton势在小球外不变；原子附近势下界保证u_ε仍正，H²和边界二次衰减给H_0^1。",
+        "形式q(f)=∫|∇f|²+∫V|f|²闭且稠密，Vu=κ；弱方程推出Ku=ν。",
+        "以resolvent负部测试推出正性，z0=u−B_su及归纳得到z_j≤u。",
+        "边界collar cutoff的导数O(δ^-1),O(δ^-2)，z_j≤u=O(dist²)使所有边界项趋0；这是没有退出通量的关键。",
+        "用自由resolvent递推并望远镜求和取得层展开。"
+      ],
+      "gaps": [
+        "不能对任意Dirichlet解假定无边界通量；本文靠特殊u的二次衰减。",
+        "K、u依赖扫掠和正则化输入；不能映射到私有来源树算子后保留条件。"
+      ]
+    },
+    {
+      "label": "Lemma 3.3与Theorem 3.4：层预算与Schur几乎正交",
+      "start_line": 777,
+      "end_line": 939,
+      "pdf_pages": [
+        14,
+        15,
+        16,
+        17
+      ],
+      "assumptions": [
+        "n≥3；ν=Σm_iδ_xi，有限正原子，m_i>0，m=Σm_i；κ>0。",
+        "Ω={u>0}来自本文部分扫掠，u≥0紧支撑，ν=κ1_Ω dx−Δu，κ|Ω|=m，原子到Ω^c距离严格正。",
+        "正则化数据及上述K/V构造；N≥1。"
+      ],
+      "statement": "Σρ_j=μ；ρ_j≤C(j+1)^(-1/2)μ；j≥1时∫||ρ_j||_1 ds/s=m/j，故B_j=∫||ρ_j||_2² ds/s≤Cκm j^(-3/2)。外域自由Abel平方函数≤C√Nκm。",
+      "proof_steps": [
+        "Gamma resolvent表示产生Poisson权p_j(st)，求和1、sup p_j≈j^-1/2及∫p_j ds/s=1/j给层预算。",
+        "导数关系sρ_j′=jρ_j−(j+1)ρ_{j+1}与Beta-Poisson变换给跨层重参数。",
+        "导数望远镜式分零层、early j<N/2、late及terminal。零层用能量E_N及端点消失给常数界；early Minkowski Σj^-3/4平方给√N。",
+        "late层在每个空间频率成为非负Haar时间核，row integral≤2、column≤1；Schur给≤2N²B_N≈√Nκm。terminal收缩同阶。",
+        "回到Ω^c时killed项为0；正则化极限的核连续性和Fatou传到原子ν。"
+      ],
+      "gaps": [
+        "ds/s是不可省略的Haar尺度测度；L2平方界是√N，不能误读为L2范数√N。",
+        "标准谱定理、Gamma resolvent公式及Schur依赖单列。"
+      ]
+    },
+    {
+      "label": "Lemma 4.1及Theorem 1.4证明",
+      "start_line": 942,
+      "end_line": 1172,
+      "pdf_pages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "assumptions": [
+        "n≥3；ν=Σm_iδ_xi，有限正原子，m_i>0，m=Σm_i；κ>0。",
+        "Ω={u>0}来自本文部分扫掠，u≥0紧支撑，ν=κ1_Ω dx−Δu，κ|Ω|=m，原子到Ω^c距离严格正。"
+      ],
+      "statement": "高频∫_{Ωc}∫_{|ξ|>An}|Fhat_σ,x|≤Cm；低频E_σ(B)=∫_{Ωc}∫_{|ξ|≤B}(2πξ)²|Fhat|²≤CBκm，B≥1。",
+      "proof_steps": [
+        "P有限保证∫u∫|Δh_t|dt/t可积，Fubini后Mellin公式中Γ(n/2+2πiξ)及(n+4πiξ)(2+4πiξ)准确。",
+        "Gamma比的无限乘积给exp(−c min(ξ²/n,|ξ|))衰减；|ξ|>An使高频指数压过C^n。",
+        "ν原子距Ωc>0保证log-time Fν∈L1；σ由P有限得L1，μ=ν−σ也L1，因而不是未经定义的形式Fourier变换。",
+        "μ的热导数平方积分在全空间为||μ||²/4=κm/4。",
+        "Abel N次幂在log time由shape/rate均为N的Gamma密度卷积，M_N(ξ)=N^(-2πiξ)Γ(N+2πiξ)/Γ(N)。",
+        "|ξ|≤√N/(4π)时|M_N|≥e^-1/4；选N_B=ceil(16π²B²)并用Abel平方界，得到Eν(B)≤CBκm。"
+      ],
+      "gaps": [
+        "必须先建立外域各orbit的可积性再Fourier inversion/Plancherel；任意边界点不能直接配对临界齐次核。",
+        "文本提取跨行遗漏分母风险：PDF18页核对π^(-n/2)Γ(n/2)nω_n/2=1，不能漏/2。"
+      ]
+    },
+    {
+      "label": "Lemma 5.1与Theorem 1.2收口",
+      "start_line": 1177,
+      "end_line": 1313,
+      "pdf_pages": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "assumptions": [
+        "n≥3；ν=Σm_iδ_xi，有限正原子，m_i>0，m=Σm_i；κ>0。",
+        "Ω={u>0}来自本文部分扫掠，u≥0紧支撑，ν=κ1_Ω dx−Δu，κ|Ω|=m，原子到Ω^c距离严格正。",
+        "Λ>1，低频能量对所有1≤B≤Λ均≤KB。"
+      ],
+      "statement": "||T_Λ||_2²≤C log²(eΛ)K；取Λ=An，κ=α/[2 log(eΛ)]得heat弱型≤C log(1+n)m。",
+      "proof_steps": [
+        "频率拆|ξ|≤1和dyadic壳；r(ξ)=2πiξ/(1+2πiξ)，每壳L2范数≤C√K，三角求和logΛ壳得到平方log²。",
+        "Fσ−e^(-a)1_{a>0}*Fσ的Fourier乘子正是r；低频能量和高频L1保证rFhat∈L1及Fourier inversion。",
+        "在Ωc有ergodic σ平均=−H_tu/t≤0，H*μ≤κ，故H*ν≤κ+Q+T。",
+        "阈值分割含|Ω|=m/κ、T的L2 Chebyshev及Q的L1 Chebyshev；平衡κ=α/(2log(eΛ))给单log而非log²。",
+        "n=1,2另外用固定维度covering；一般f由heat正性转成|f|，最后使用[32]atomic reduction。"
+      ],
+      "gaps": [
+        "[32]原子化约化的全证明尚未回查。",
+        "不用壳正交而用三角，所以当前证明承担log；不能把可改进猜想当结果。"
+      ]
+    },
+    {
+      "label": "Theorem 1.1：球到heat核比较",
+      "start_line": 1315,
+      "end_line": 1334,
+      "pdf_pages": [
+        24
+      ],
+      "assumptions": [
+        "Lebesgue测度、中心欧氏球平均；f≥0后以|f|扩展。"
+      ],
+      "statement": "M_ball f≤C√n H* f，进而弱型界C√n log(1+n)。",
+      "proof_steps": [
+        "t=r²/(2n)，在球边界上heat核最小；Stirling使单位球常密度/该heat核约√n。",
+        "缩放和正核比较逐点，再取sup及heat弱型界。"
+      ],
+      "gaps": [
+        "立方体角点的半径约√n r，球的此核比较没有给立方体相同√n损失。",
+        "作者称√n转移锐性；δ_0比较可检查，但不蕴含极大算子整体最优常数。"
+      ]
+    }
+  ],
+  "constant_dependence": "主结果绝对常数C，维数heat log(1+n)、球√n log(1+n)；Abel平方积分√N κm；高频中间C^n由Λ=An衰减消除；所有公开比较中的隐常数未显式数值化。",
+  "endpoint_limits": [
+    "这是一篇2026预印本；全文阅读并局部核验，不是形式证明认证。",
+    "n≥3构造使用Newton势；n1,2仅收口另处理。",
+    "正原子数据及扫掠结构必需；任意u/K不满足所列条件。",
+    "不提供中心立方体弱(1,1)新界或GP-BRANCH、TC-A4内部定义。"
+  ],
+  "reusable_methods": [
+    "通过cap与异常域质量预算把弱型界转成外域残差界。",
+    "保持killed/free resolvent差的正吸收层和边界延拓条件。",
+    "Gamma-Poisson层点态及积分预算、Beta重参数与频率Schur。",
+    "Mellin log-time的高频指数消除维数损失，低频以Abel N≈B²恢复能量。",
+    "将每壳L2预算、总壳数及cap阈值平衡分开核算。"
+  ],
+  "unchecked": [
+    "标准障碍正则性与最小超调和majorant、Newton定理、Dirichlet形式理论、atomic reduction[32]依赖全文未逐一复核。",
+    "本文独立数学认证未完成；未提出新的cube研究定理。"
+  ],
+  "visual_checks": [
+    "PDF14页零延拓collar估计；17页Schur行列界与Mellin公式；18页Gamma指数与准确归一化/2；21页Gamma-Mellin符号及NB；23页Fourier inversion和阈值拆分。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1502,
+    "source_lines": 1506,
+    "required_content_lines": 1236,
+    "covered_content_lines": 1236,
+    "reported_status": "full_read",
+    "source": "evidence/supplementary/S-986768affaa80a44/paper.md"
+  },
+  "review_source": "evidence/reviews/ROOT/evidence/S-986768affaa80a44.json",
+  "review_input_sha256": "d33ecefb4a134ba2f36c48574245993858548c983a31fbcf0154f7870e2b0f4b"
+}

@@ -1,0 +1,270 @@
+{
+  "paper_id": "P-922909d5e8e47a30",
+  "observed_title": "Quasi Branch and Bound for Smooth Global Optimization",
+  "authors": [
+    "Nadav Dym"
+  ],
+  "version": "arXiv:2005.13728v1；2020。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 1147,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "C04": "direct"
+  },
+  "definitions": [
+    {
+      "term": "立方体全局优化问题",
+      "definition": "在 C₀⊂Rᵈ 的轴平行闭立方体上最小化连续 f；对 C∈K 记 f*(C)=min_C f，f*=min_C₀ f。文中“unconstrained”还要求存在包含 C₀ 的开集 U₀，使 inf_{U₀}f=min_{C₀}f。",
+      "source_ranges": [
+        {
+          "start_line": 119,
+          "end_line": 156,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "采样规则与真下界规则",
+      "definition": "x(C)∈C；lb(C)≤f*(C) 对所有子立方体 C 成立。",
+      "source_ranges": [
+        {
+          "start_line": 159,
+          "end_line": 197,
+          "pdf_pages": [
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "term": "准下界规则（quasi-lower bound）",
+      "definition": "qlb(C) 只要求在包含全局最小点的子立方体上满足 qlb(C)≤f*(C)=f*；其余子立方体可不是真下界。若 qlb(C)>当前可行上界 ub，则 C 不可能包含全局最小点，因为若含有则 qlb(C)≤f*≤ub。",
+      "source_ranges": [
+        {
+          "start_line": 248,
+          "end_line": 279,
+          "pdf_pages": [
+            5,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "term": "收敛阶与最终精确性",
+      "definition": "若对所有 C 有 f(x(C))−qlb(C)≤c r(C)^α，则收敛阶为 α；若所有充分靠近全局最小点的 C 上 gap 为0，则称最终精确。",
+      "source_ranges": [
+        {
+          "start_line": 280,
+          "end_line": 297,
+          "pdf_pages": [
+            6
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "qBnB(2)：无约束情形的二阶准下界",
+      "assumptions": [
+        "f∈C¹(C₀)，梯度 Lipschitz 常数 L₂ 已知。",
+        "存在包含 C₀ 的开邻域 U₀，使全局最小在 U₀ 内达到于 C₀；因而每个全局最小点 x* 满足 ∇f(x*)=0。"
+      ],
+      "statement": "取采样 x(C)=x_C（子立方体中心）、半径 r；设 qlb(C)=f(x_C)−(L₂/2)r²。若 C 含全局最小点，则 qlb(C)≤f*；gap f(x(C))−qlb(C)=(L₂/2)r²，故收敛阶2。另 Proposition 1 证明同一 L₂ 下经典 gradient-Lipschitz BnB 下界 lb(C)≤qlb(C)。",
+      "start_line": 309,
+      "end_line": 377,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "proof_steps": [
+        "若 x*∈C 且为无约束全局最小，则 ∇f(x*)=0。由 L₂-梯度 Lipschitz 的二次 Taylor 上界，对 x=x_C 得 f(x*)≥f(x_C)−(L₂/2)||x_C−x*||²≥f(x_C)−(L₂/2)r²。",
+        "直接计算 qBnB(2) gap 等于 (L₂/2)r²。",
+        "经典 gradient-Lipschitz 下界还要在 C 上最小化以中心梯度线性化后的下界；取 x=x_C 得到其值不超过 qlb。"
+      ],
+      "gaps": [
+        "这是准下界而非每个子立方体的真下界；正确性依赖只对含全局最小点的子立方体有效。",
+        "若最小点在约束边界且梯度非零，中心规则不保证上述驻点论证；作者明确将其 qBnB(2) 限为无约束情形。"
+      ]
+    },
+    {
+      "name": "constrained-qBnB(2)：盒约束下的二阶规则",
+      "assumptions": [
+        "f∈C¹(C₀)，梯度 Lipschitz 常数 L₂ 已知；C₀=∏[aᵢ,bᵢ]。",
+        "对子立方体 C=∏[cᵢ,dᵢ]，若任一维未满足 dᵢ−cᵢ<bᵢ−aᵢ，则该大盒先取 qlb=−∞、x(C)=x_C。其余盒依坐标边界取样。"
+      ],
+      "statement": "在符合宽度条件时，xᵢ(C)=cᵢ 若 cᵢ=aᵢ；xᵢ(C)=dᵢ 若 dᵢ=bᵢ；否则取 (cᵢ+dᵢ)/2。其构造保证每个 x∈C 的线段可从 x(C) 越过 x；若 C 含受约束最小点，则沿该线的一阶导为0。准下界 qlb(C)=f(x(C))−(L₂/2)Σᵢmax{(xᵢ(C)−cᵢ)²,(xᵢ(C)−dᵢ)²}，为有效二阶准下界且 gap=O(r²)。",
+      "start_line": 378,
+      "end_line": 444,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "proof_steps": [
+        "采样坐标按所属盒是否触及外盒左/右边界，取相应端点，否则取中点；线段延伸性质给出从该点朝任一盒内最小点的双向局部可行扰动。",
+        "受约束最小点沿该可行方向的一阶导为零。",
+        "L₂ 二次 Taylor 估计再用每个坐标从采样点到盒内点的最大偏差，得到所示准下界。"
+      ],
+      "gaps": [
+        "本文只给盒/立方体约束；向一般凸多面体的推广仅在文中作为作者认为可能的方向，没有定理。",
+        "大盒 qlb=−∞ 只保证在开始若干层不误删，直到盒宽严格缩小后才用有限界。"
+      ]
+    },
+    {
+      "name": "Proposition 2：qBnB(3)的正则化 Newton 估计",
+      "assumptions": [
+        "(f,C₀) 无约束；f∈C²(U₀)，C 周围闭球 B̄_{2r}(x₀)⊂U₀；Hessian 在该球 L₃-Lipschitz。",
+        "C 半径 r、中心 x₀；若 C 含全局最小点，则其 Hessian 半正定。"
+      ],
+      "statement": "置 λ̄=max{0,5L₃r−λ_min(x₀)}，f̂(x)=f(x)+(λ̄/2)||x−x₀||²，m=3L₃r，r₀=r、r_{k+1}=(3L₃/(2m))r_k²。若 C 含最小点，则 λ_min(x₀)≥−L₃r；f̂ 在 B_{2r}(x₀) 上 Hessian ≥mI；以 x₀ 初始化的 Newton 迭代满足步长与距离界，并收敛到唯一 f̂ 极小点 x̂*；且 f(x̂*)≥f*≥f̂(x̂*)−(λ̄/2)r²。",
+      "start_line": 471,
+      "end_line": 536,
+      "pdf_pages": [
+        9,
+        10
+      ],
+      "proof_steps": [
+        "Weyl 扰动界用 Hessian Lipschitz 性和 ∇f(x*)驻点得到 λ_min(x₀)≥−L₃r。",
+        "λ̄ 的定义使 f̂ Hessian 在半径2r球上强凸下界为 mI，并比较 f̂(x*) 与球外点，迫使全局极小位于半径 r 的闭球中。",
+        "Newton 误差用 Hessian 的 Lipschitz 性估计为 ||x_{k+1}−x̂*||≤(3L₃/(2m))||x_k−x̂*||²；由半径递推得收敛与半径界。",
+        "由 f̂ 与 f 的正则化差及 ||x*−x₀||≤r，得到 f* 的双侧夹逼。"
+      ],
+      "gaps": [
+        "按字面允许 L₃=0，但此时 m=3L₃r=0，迭代系数 3L₃/(2m) 未定义；此外允许 Hessian 半正定奇异时 Newton 步 Ĥ(x_k)^{-1} 也未必存在。作者未单列该端点或伪逆处理。例：f≡0、C₀非退化立方体、L₃=0 时检查(16)通过但 Newton 矩阵为零。本文不据此重写作者定理，只把该字面边界记作算法定义缺口。"
+      ]
+    },
+    {
+      "name": "Section 5 Theorem 1：qBnB(3)三阶收敛与最终精确",
+      "assumptions": [
+        "f∈C²(U₀)，U₀包含 C₀，(f,C₀) 无约束，Hessian 在 U₀ 上有已知 Lipschitz 常数 L₃。",
+        "最终精确部分另要求 C 中只有有限多个最小点且各处 Hessian 正定。"
+      ],
+      "statement": "所定义的 qBnB(3) 是有效准下界规则；对任何子立方体 gap f(x(C))−qlb(C)≤3L₃r³；非退化条件下最终精确。",
+      "start_line": 537,
+      "end_line": 603,
+      "pdf_pages": [
+        10,
+        11
+      ],
+      "proof_steps": [
+        "含全局最小点的立方体由 Proposition 2 得 qlb≤f*，故规则有效。",
+        "若 Newton 门槛失败则设 qlb=∞；否则(16)推出 λ̄≤6L₃r，以 qlb 定义代数化出 gap=(λ̄/2)(r²−||x̂*−x₀||²)≤3L₃r³。",
+        "靠近 Hessian 正定的有限多个最小点时选 δ 足够小，使 λ_min(x₀)≥5L₃δ；于是 λ̄=0 并 gap=0。"
+      ],
+      "gaps": [
+        "依赖精确计算 Hessian、Hessian-Lipschitz 界和理论上的 Newton 极限/门槛；实作中的 Newton 误差需另减 ε_Newton（第12页）。",
+        "L₃=0 的 Newton 奇异情形如 Proposition 2 gaps 所述。"
+      ]
+    },
+    {
+      "name": "Appendix A Theorem 2：BFS qBnB 全局有限终止",
+      "assumptions": [
+        "C₀ 是 Rᵈ 立方体，f:C₀→R 连续；有采样规则 x 与有效准下界 qlb。",
+        "存在连续 ψ:[0,∞)→[0,∞)、ψ(0)=0，使任意半径 r 子立方体满足 f(x(C))−qlb(C)≤ψ(r)。",
+        "算法按 Algorithm 1 广度优先搜索，并每次沿最长边二分。"
+      ],
+      "statement": "每代活动子立方体中最小 qlb 是 f* 的下界；在上述间隙模量条件下，算法有限步停止并给出 ε-最优 x_best。若有收敛阶 α>0，则间隙条件成立。最长边二分的半径收缩因子至多 q_d=√((d−3/4)/d)<1。",
+      "start_line": 992,
+      "end_line": 1078,
+      "pdf_pages": [
+        19,
+        20
+      ],
+      "proof_steps": [
+        "按代归纳：每个全局极小点起初在 C₀；若落在含全局极小点的 C 中，则有效 qlb≤f*≤ub，故该盒不会被剪掉，二分后至少一个子盒保留该点。",
+        "因此每代至少有含全局最小点的活动盒；活动盒 qlb 的最小值 lb≤f*。",
+        "最长边二分使半径几何收缩；ψ(r)→0 后，对含最小点盒有 ub−f*<ε/2，对该代任一活动盒有 f*−qlb(C)<ε/2，故 ub−lb<ε，有限代终止。"
+      ],
+      "gaps": [
+        "结论是有限终止与 ε 证书，不给关于维度的多项式复杂度；作者引言指出最坏情形全局优化在维度上指数困难。",
+        "由于准下界可在不含全局最小点的盒上任意低，证明 lb≤f* 的方式是保留至少一个含全局最小点的活动盒，而非每个盒都是真下界。"
+      ]
+    },
+    {
+      "name": "Appendix B：条件 Lipschitz 可微的联合最小化",
+      "assumptions": [
+        "问题 min_{x∈C₀,y∈Y} E(x,y)，E 连续，C₀ 为立方体，Y 紧。",
+        "每固定 y，E(·,y)∈C¹，且梯度 Lipschitz 常数 L₂ 对 y 一致；对固定 x 的 y 最小化可在多项式时间完成。"
+      ],
+      "statement": "定义 f(x)=min_{y∈Y}E(x,y)。若每个固定 y 有准下界 qlb_y(C)，则 qlb(C)=inf_{y∈Y}qlb_y(C) 是 f 的有效准下界；当各 E(·,y) 均为无约束且共享 L₂ 时，得 qlb(C)=min_y E(x_C,y)−(L₂/2)r²=f(x_C)−(L₂/2)r²。",
+      "start_line": 1083,
+      "end_line": 1140,
+      "pdf_pages": [
+        20,
+        21
+      ],
+      "proof_steps": [
+        "紧致性保证对含 f 全局最小的 x* 存在 y* 使 E(x*,y*)=f(x*)。",
+        "该盒上 qlb_{y*}(C)≤E(x*,y*)；再取 y 下确界仍不超过 f*，故整体有效。",
+        "共同 L₂ 与 qBnB(2) 公式给联合变量消去后的二阶准下界；有边界约束时需采用 constrained-qBnB(2) 版本。"
+      ],
+      "gaps": [
+        "对 y 的计算假定能够精确或按可证明方式求出 min_y E(x,y)；“多项式时间”是附录中的问题结构假设而非本文统一算法证明。"
+      ]
+    }
+  ],
+  "constant_dependence": "qBnB(2) gap 常数为 L₂/2；constrained-qBnB(2) gap 由 L₂/2 乘坐标最大偏差平方和给出；qBnB(3) gap 常数为 3L₃。Appendix A 的半径收缩 q_d=√((d−3/4)/d) 依赖维数 d。所有 Lipschitz 界需有效上界，界越松会放大误差。",
+  "endpoint_limits": [
+    "“准下界”只需在含全局最小点的盒上可靠；不能把所有输出都当作真正的局部下界。",
+    "qBnB(2) 要求 minimizer 对开邻域是无约束最小，因而可用梯度为零；受约束盒边界需换用 constrained-qBnB(2)。",
+    "qBnB(3) 只在球 B̄_{2r}(x_C) 落入可控的开域 U₀ 时工作；大盒可先以 qlb=−∞ 参与分割。它要求 Hessian 与 Hessian-Lipschitz 信息，并运行 Newton；并非导数自由算法。",
+    "constrained-qBnB(2) 处理轴平行盒，不证明一般约束集算法。",
+    "全局有限终止依赖 f 连续、C₀ 紧、最长边分割和 gap 模量趋零；没有统一的低维复杂度保证。",
+    "实证比较报告 Matlab 实验、Rastrigin 与 Dixon–Szego 测例；本文证据卡未重跑原代码。完整阅读含 A、B 两个附录及参考文献，共21页。"
+  ],
+  "reusable_methods": [
+    "在全局极小点附近可用一阶驻点或 Hessian 半正定信息，构造只在“可能含全局最小值”的盒上需要正确的准下界。",
+    "剪枝规则由 qlb(C)>ub 给出；其正确性直接来自“若 C 含全局最小值则 qlb(C)≤f*≤ub”的矛盾。",
+    "二阶、三阶误差模量与最长边二分结合，可从局部误差界推出广度优先全局有限终止证书。",
+    "对 min_y E(x,y) 先取可实现最小的 y*，再对 y-族准下界取下确界，可保留准下界有效性并消去辅助变量。",
+    "该证明结构可迁移作全局立方体优化接口；它不自动给中心立方体极大算子的解析弱型估计、端点不等式或任何私有 TC 接口。"
+  ],
+  "unchecked": [
+    "全文21页逐段通读，涵盖 Sections 1–7、实验、Appendix A–B、参考文献；PDF pp.7–11、20 与 constrained 公式页 p.8 已视觉核验。",
+    "Theorem/Proposition 证明结构逐步追踪，但没有独立重证所有算法正确性，也未运行作者 MATLAB 实验。",
+    "发现作者书面允许 L₃=0 时 Newton 模型的 m=3L₃r 退化，且 Hessian 可能奇异；以 f≡0、L₃=0 为直接字面端点例，要求算法实现另作处理。",
+    "未审查外部 arXiv 后续版本或代码仓库；按本地 arXiv:2005.13728v1 内容记录。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1143,
+    "source_lines": 1147,
+    "required_content_lines": 835,
+    "covered_content_lines": 835,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-922909d5e8e47a30/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-922909d5e8e47a30.json",
+  "review_input_sha256": "7bc53f836bb9b2f974bc002524daea8e8fef5ea3b36ef43bcc9d171b6c980718"
+}

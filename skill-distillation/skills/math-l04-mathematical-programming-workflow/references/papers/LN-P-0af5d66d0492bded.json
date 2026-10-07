@@ -1,0 +1,225 @@
+{
+  "paper_id": "P-0af5d66d0492bded",
+  "observed_title": "Linear Programming using Limited-Precision Oracles",
+  "authors": [
+    "Ambros Gleixner",
+    "Daniel E. Steffy"
+  ],
+  "version": "arXiv:1912.12820v1；ZIB Report 19-57，报告首页日期2019-11-30（封面沿纸面印2019-12-30）；后有Mathematical Programming期刊发表版本提示。PDF共27页。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 1591,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "L04",
+    "decision": "direct",
+    "basis": "全文提出精确LP工作流：用有限精度浮点LP oracle作迭代改进，再以精确有理基验证或有理重构并作精确可行性/最优性检查。给出oracle假设、误差与编码长度分析、终止条件、完整证明和SoPlex/QSopt ex实验；可迁移到可检查的数值求解/精确验证流程。"
+  },
+  "definitions": [
+    "输入为有理数据标准型 LP：min{cᵀx: Ax=b, x≥ℓ}，A满行秩。原始和对偶可行是基验证/重构终止定理的条件。",
+    "有限精度LP oracle具有固定精度网格F(p)、常数残差上限0<η<1及互补残差上限σ；对先舍入到F(p)的数据返回近似原始/对偶解，或明确报failure。real-world solver不自动保证该定义，必须计算残差并允许失败状态。",
+    "basis oracle额外给基B，使非基变量近界、基变量reduced cost近零；该结构用于迭代后精确解基系统与有限精度最优基验证。",
+    "Algorithm 1从oracle解出发，逐轮形成残差、按二次幂放大误差修正LP、校正(x,y)；有限正容差下残差几何下降。",
+    "Algorithm 2在指定的几何频率上对近似分量做连续分数近似/分母受限重构，再用有理精确算术验证原始可行、对偶可行和原始-对偶最优。失败后继续refinement。 此处失败指重构候选的精确验证失败；底层oracle failure则按Algorithm 1立即中止。"
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "A∈Q^{m×n}满行秩；输入数据有理。",
+        "oracle对舍入后的LP数据若成功返回F(p)中的原始/对偶向量，满足固定η、σ误差条件；允许不满足时报告failure。",
+        "迭代尺度增幅参数α≥2；有限容差τ必须为正。",
+        "输出容差保证以所需oracle调用均合法成功为条件；首次failure立即中止。Algorithm 1参数α∈N且α≥2；Lemma 3原文写α≥2，保持其闭端点。"
+      ],
+      "statement": "Definition 1形式化有限精度LP oracle，并区分附带返回近似基B的basis oracle。Lemma 3说明Algorithm 1的残差满足原始/界/对偶误差≤ε^k、互补误差≤σ ε^{2(k−1)}，其中ε=max{η,1/α}；尺度至少按1/ε几何增长，若直到达到容差的每次oracle调用均合法成功，则任意τ>0在不超过式(8)界的oracle调用后达到残差≤τ；若先发生failure则立即abort，不声称已达到容差，式(8)调用上界仍适用于提前中止。Lemma 4与Theorem 3进一步给出τ>0时中间数编码长度、多项式位操作数和oracle调用数均为输入/τ编码长度的多项式。",
+      "start_line": 376,
+      "end_line": 525,
+      "pdf_pages": [
+        8,
+        9,
+        10
+      ],
+      "proof_start_line": 995,
+      "proof_end_line": 1055,
+      "proof_pages": [
+        18,
+        19
+      ],
+      "proof_steps": [
+        "每轮把当前原始残差、变量下界违约、对偶违约及互补残差合并为δ_k。",
+        "将误差按∆_{k+1}=2^{ceil(log₂(1/δ_k))} 放大后交给oracle；回加缩放corrector，得到误差乘以至多ε的几何改进。",
+        "二次幂尺度舍入控制中间数分母，使编码长度至多线性随轮数增长；每轮只作多项式数量的有理/网格运算。",
+        "有限τ>0让轮数对输入与τ编码长度多项式；τ=0不由Algorithm1自身保证有限终止。"
+      ],
+      "gaps": [
+        "定理是oracle模型复杂度，不保证任意黑盒或商业浮点solver都满足固定η/σ；真实系统需校验、若失败即中止或升级精度。",
+        "正容差停止仅是近似可行/对偶/互补误差界，不等于精确有理最优解。",
+        "精确重构和基验证另外要求精确有理输入以及原始/对偶可行前提。"
+      ],
+      "author_claim": "低精度LP oracle调用可以作为多项式复杂度精确算法的子程序，只要输出误差有固定上界、输入舍入和位长控制如定义所述。",
+      "checked_derivation": "我核对了oracle定义的四类残差、尺度迭代式和Lemma 3的正容差几何误差结论，视觉检查PDF pp6–8；Theorem 3位长分析在Section5给出完整技术证明，本次未独立重做每个编码长度常数。"
+    },
+    {
+      "assumptions": [
+        "有理LP原始与对偶可行；使用limited-precision LP-basis oracle。",
+        "基信息满足非基变量近界、基变量reduced cost近零两条件，且迭代残差满足Lemma 3的几何衰减。",
+        "精确basis solve使用有理算术；以精确原始与对偶可行性验证结果。",
+        "所需LP-basis oracle调用直到精确最优证书返回均合法成功；首次failure中止。位运算/调用数界不等于每个允许failure的oracle必返回最优解。"
+      ],
+      "statement": "Lemma 5表明任一非零的basic primal violation至少为2^{−(4⟨A,b⟩+5⟨ℓ⟩+2n²+4n)}，任一非零basic dual violation至少为2^{−(4⟨A,c⟩+2n²+4n)}。Theorem 4若迭代向量与其当前精确基解的残差以及基结构误差同步趋零，则某有限K后所有基均最优，K=O((m²⟨A⟩+⟨b,ℓ,c⟩+n²)/log(1/ε))。在每轮尝试对当前基做精确有理求解，只需检查原始/对偶可行（互补松弛由基构造），在直到精确证书返回的所有所需oracle调用均合法成功时，Theorem 5对应的Algorithm 1交织基验证路线以oracle-polynomial时间返回精确最优基解；首次oracle failure仍立即abort，不输出未验证最优解。",
+      "start_line": 547,
+      "end_line": 674,
+      "pdf_pages": [
+        11,
+        12,
+        13
+      ],
+      "proof_start_line": 1056,
+      "proof_end_line": 1228,
+      "proof_pages": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "proof_steps": [
+        "用Cramer与Hadamard界基解有理分母，故任一非零有理可行性违约不能小于由输入编码长度决定的正阈值（Lemma 5）。",
+        "近似基结构控制非基变量距下界和基变量reduced cost；迭代误差几何下降后，关联的精确基本解也趋近当前近似解。",
+        "当精确基解违约小于Lemma 5的最小非零违约时，只可能是零；基解同时满足原始/对偶可行与基的互补松弛，故最优。",
+        "精确解基线性系统采用多项式位复杂度有理线性代数；迭代轮数和其编码长度由Theorem 3控制。"
+      ],
+      "gaps": [
+        "Theorem 5要求原始和对偶可行的LP；不是通用不可行性/无界性认证算法。",
+        "basis oracle附加结构条件不可省略；普通有限精度solution oracle不足以触发该版本基验证收敛定理。",
+        "最大轮数是输入长度上的最坏情形多项式界，实践常早得多；精确LU成本可在少数病态实例占主导。"
+      ],
+      "author_claim": "basis verification以exact rational solve和双侧可行性替代提高整个主求解器精度；理论上oracle调用与bit complexity多项式，实验常在约两轮内发现最优基。",
+      "checked_derivation": "我检查了基解一旦原始、对偶精确可行且非基变量在界上即有互补松弛、由LP强对偶成为最优解；并核对PDF pp9–11定理假设、pp19–22证明结构。最小违约分母编码常数仍视为作者完整证明，不自称逐行独立复算。"
+    },
+    {
+      "assumptions": [
+        "输入有理LP的原始、对偶可行；使用limited-precision LP-basis oracle，corrector entries有由固定精度p导出的统一绝对值界。",
+        "Algorithm 1 scales使∆_k/∆_{k+1}≤ε<1；Algorithm 2取1<β<1/ε，分量重构候选用精确有理运算验证。",
+        "Algorithm 2的参数域为α∈N、α≥2、f≥1、β>1；合用Theorem 6/7时为1<β<1/ε。所需oracle调用直到精确证书返回均合法成功；重构候选验证失败可继续，oracle failure立即中止。"
+      ],
+      "statement": "Lemma 7证明迭代数值解收敛到某个有理、基本且最优的极限(ẋ,ẏ)，且距第k轮解不超过C∑_{i≥k+1}∆_i^{−1}（C可取2^p或oraclecorrector的统一界）。若极限分量分母≤q̃，Theorem 6说明使用M_k=√(∆_{k+1}/(2β^k))的分母受限重构，足够大k后得到精确极限。Algorithm 2以几何重试频率控制连续分数成本；若所需oracle调用均合法成功，Theorem 7在上述可行性、basis oracle及参数前提下以oracle-polynomial时间返回精确最优有理解；首次oracle failure即中止。若早期重构得到另一个经精确验证的最优解，它未必是基本解。",
+      "start_line": 721,
+      "end_line": 937,
+      "pdf_pages": [
+        14,
+        15,
+        16,
+        17
+      ],
+      "proof_start_line": 1070,
+      "proof_end_line": 1080,
+      "proof_pages": [
+        19
+      ],
+      "proof_steps": [
+        "corrector向量有界且尺度几何增长，使迭代解成为Cauchy序列，尾项给出极限误差界。",
+        "basis oracle及前一节最终基最优保证极限是基本最优有理解，而非仅有小残差的任意极限。",
+        "分母约束有理重构若误差小于1/(2M²)，由连分数唯一恢复分量；Theorem 6分别让M最终盖住真实分母，并让尾误差低于恢复阈值。",
+        "算法对恢复出的候选精确验原始可行、再精确验对偶可行/目标最优；若不通过继续迭代。几何重构频率使总重构运算O((n+m)K²)。"
+      ],
+      "gaps": [
+        "算法成功依赖未显式可知的真实极限分母，但参数β^k放宽候选范围提供最终恢复；运行时间对输出解编码长度敏感。",
+        "首次oracle failure就使Algorithm 1及依赖它的Algorithm 2立即abort；不能将仅满足允许failure的Definition 1误读为无条件精确最优输出。Lemma 8仅在固定f>1时给累计重构O((n+m)K²)；f=1仍可整体oracle多项式，但累计逐轮重构的通用上界为O((n+m)K³)。",
+        "精确恢复保证有理LP最优解；不涉及浮点输入本身作为精确数据的合理性。"
+      ],
+      "author_claim": "basis verification与有理重构是两条不同精确化路线；后者可输出非基本的另一个最优点，且时间可对最终解大小敏感。",
+      "checked_derivation": "我用Theorem 1的有理唯一性条件核对PDF p14–15的M_k=√(∆_{k+1}/(2β^k))与阈值1/(2M_k²)=β^k/∆_{k+1)，并核对Lemma 7需要bounded corrector及basis oracle，未把普通近似残差误当作精确恢复。完整分母编码及重构复杂度常数依赖作者证明。"
+    },
+    {
+      "assumptions": [
+        "实验数据集由作者收集的1202个原始/对偶可行有理LP构成；程序为特定SoPlex扩展、GMP、EGlib及QSopt ex版本。",
+        "实例限制为每求解器每实例2小时、硬件为Xeon X5672 3.2GHz与48GB内存。"
+      ],
+      "statement": "作者报告SoPlexfac（精确基分解）解1191/1202，SoPlexrec（有理重构）解1189，QSopt ex解1163；在汇总的492个共同可解且至少一个求解器耗时≥2秒实例上，SoPlexfac平均用时为QSopt ex的0.54倍、SoPlexrec的约0.35倍。精确基验证约第2轮即发现最优基；重构平均68.3轮并在7例返回非基本最优解。结果依赖数据集和运行配置。",
+      "start_line": 1229,
+      "end_line": 1465,
+      "pdf_pages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "proof_steps": [
+        "作者实现basis verification与rational reconstruction为SoPlex扩展，与基于增精的QSopt ex对比。",
+        "在1202实例集合报告总体解数；对492例共同可解且非琐碎实例报告shifted geometric mean时间等。",
+        "分开讨论迭代轮数、rational LU和连分数重构成本以及底层浮点oracle失败。"
+      ],
+      "gaps": [
+        "不是本次重新运行所得；不将解率/速度外推为数学保证。",
+        "七例exact-refinement路线失败是底层双精度LP oracle未返回足够解，而非数学算法的反例。",
+        "部分情况下有理重构非常慢，而基分解也有个别因factorization成本高而超时；没有单一方案支配全部实例。"
+      ],
+      "author_claim": "在该测试集上SoPlex基验证法整体解数略多且平均快于SoPlexrec与QSopt ex；重构也有其特定快例和复杂解瓶颈。",
+      "checked_derivation": "我视觉核验PDF pp21–24的实验设置、Table1/2、成功计数和几何平均时间；复述时限定到作者给定的492例子集/指定版本，不称为普遍速度定理。"
+    }
+  ],
+  "constant_dependence": "有限精度误差常数η、σ及网格位数p固定；正容差算法位长依赖τ编码长度。basis eventual-optimal轮数按输入编码长度和1/log(1/ε)增长；分量有理重构轮数还依赖输出分母编码⟨q̃⟩与corrector界C。经验解数和速度依赖作者实验配置。",
+  "endpoint_limits": [
+    "Algorithm 1精度τ必须>0才能由残差收敛推出有限停止；τ=0精确输出需basis验证或有理重构。",
+    "精确化定理依赖 rational input、primal/dual feasibility、固定oracle精度/残差，且对应算法在不满足时须能failure。",
+    "普通有限精度LP oracle不能替代basis oracle去使用Theorem 5或Lemma 7/Thm7；basis条件是基本证明假设。",
+    "精确最优是按作者定义的有理输入LP；对自然带实数数据的问题，此算法只是在给定有理近似模型上求解。",
+    "precision boosting更适合底层低精度oracle频繁数值失效的病态实例；作者提出可混合而非证明兼容方案。",
+    "Definition 1允许oracle failure。Lemma 3/Theorem 3的调用数和位操作数界容许failure后提前中止；达到正容差以及Theorem 5/7的精确最优输出保证须以所需oracle调用合法成功直到证书返回为条件。"
+  ],
+  "reusable_methods": [
+    "用近似求解器筛出结构候选，随后对小型有理线性系统精确重算并验证可行性/对偶性，形成可检查的最优性证据。",
+    "迭代修正时使用幂二尺度保持编码长度可控，并同时记录原始、对偶、互补误差。",
+    "将分母有理重构视为猜测步骤，把正确性完全交由精确有理验证；失败即继续数值迭代。",
+    "实际工作流需暴露oracle failure与底层数值原因；不可把求解器返回optimal字符串替代残差与有理证书。"
+  ],
+  "unchecked": [
+    "未运行SoPlex、QSopt ex或复现作者1202例实验。",
+    "引理/定理外引资料（LLL、continued fractions、既有迭代refinement分析）没有逐篇独立阅读。",
+    "PDF视觉核验覆盖封面、oracle定义/误差收敛、Algorithm1与基验证/定理、Algorithm2与有理重构以及实验表格；其他页面按paper.md逐页深读但未全部逐页渲染。",
+    "本文section 5复杂编码长度证明已从paper.md完整逐段阅读，但未独立复算所有系数指数。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1587,
+    "source_lines": 1591,
+    "required_content_lines": 1168,
+    "covered_content_lines": 1168,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-0af5d66d0492bded/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/P-0af5d66d0492bded.json",
+  "review_input_sha256": "0d460f3de4b29db2908b05ba45de7e877a8971a151c2d906025aef9b10fa8bcd"
+}

@@ -1,0 +1,335 @@
+{
+  "paper_id": "P-6aa6572a41bc0df9",
+  "observed_title": "The partial sum process of orthogonal expansions as geometric rough process with Fourier series as an example—an improvement of Menshov-Rademacher theorem",
+  "authors": [
+    "Terry J. Lyons",
+    "Danyu Yang"
+  ],
+  "version": "arXiv:1109.1072v2; local37-page PDF has archive header7Oct2013 and body date24September2018; version dating ambiguity preserved",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 1564,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    }
+  ],
+  "reading_provenance": "TEAM_FG完整通读Sections1–7（定义、主定理、正文全部证明、HLog等价、有限/无限2variation反例、acknowledgments）与References；没有附录。未将外引proof认证算入全文阅读。",
+  "pdf_visual_checks": [
+    {
+      "pdf_page": 4,
+      "image": "P-6aa6572a41bc0df9-pdfp4.png",
+      "checked": "实际查看原PDF；tensor norm/area/rough norm、主定理和Hardy quantifiers、finiteLemma31、dyadic subsequence factor、zero frequency seminorm"
+    },
+    {
+      "pdf_page": 5,
+      "image": "P-6aa6572a41bc0df9-pdfp5.png",
+      "checked": "实际查看原PDF；tensor norm/area/rough norm、主定理和Hardy quantifiers、finiteLemma31、dyadic subsequence factor、zero frequency seminorm"
+    },
+    {
+      "pdf_page": 6,
+      "image": "P-6aa6572a41bc0df9-pdfp6.png",
+      "checked": "实际查看原PDF；tensor norm/area/rough norm、主定理和Hardy quantifiers、finiteLemma31、dyadic subsequence factor、zero frequency seminorm"
+    },
+    {
+      "pdf_page": 11,
+      "image": "P-6aa6572a41bc0df9-pdfp11.png",
+      "checked": "实际查看原PDF；tensor norm/area/rough norm、主定理和Hardy quantifiers、finiteLemma31、dyadic subsequence factor、zero frequency seminorm"
+    },
+    {
+      "pdf_page": 12,
+      "image": "P-6aa6572a41bc0df9-pdfp12.png",
+      "checked": "实际查看原PDF；tensor norm/area/rough norm、主定理和Hardy quantifiers、finiteLemma31、dyadic subsequence factor、zero frequency seminorm"
+    },
+    {
+      "pdf_page": 13,
+      "image": "P-6aa6572a41bc0df9-pdfp13.png",
+      "checked": "实际查看原PDF；tensor norm/area/rough norm、主定理和Hardy quantifiers、finiteLemma31、dyadic subsequence factor、zero frequency seminorm"
+    },
+    {
+      "pdf_page": 23,
+      "image": "P-6aa6572a41bc0df9-pdfp23.png",
+      "checked": "实际查看原PDF；tensor norm/area/rough norm、主定理和Hardy quantifiers、finiteLemma31、dyadic subsequence factor、zero frequency seminorm"
+    }
+  ],
+  "proof_verification": "finite_2variation_lemma_checked; global_rough_constants_and_external_sharpness_not_certified",
+  "topic_relevance": {
+    "F06": "direct"
+  },
+  "definitions": [
+    {
+      "term": "Hilbert-valued orthonormal system",
+      "definition": "存在measure space(Ω,F,μ)与HilbertV；u_n:Ω→V可测，∫⟨u_n,u_m⟩dμ=δ_nm。X_n=Σ_k=0^n c_ku_k；X的increments X_j−X_i不含initial c0u0。",
+      "source_ranges": [
+        {
+          "start_line": 35,
+          "end_line": 43,
+          "pdf_pages": [
+            1
+          ]
+        }
+      ],
+      "claim_class": "source_claim"
+    },
+    {
+      "term": "p-variation and geometric2 rough norm",
+      "definition": "V_p(γ)=sup_finite partitions(Σ||γ(k_j+1)−γ(k_j)||^p)^(1/p)。Area A(i,j)=1/2Σ_i≤h<k≤j−1[Δγ_h,Δγ_k]，bracket=u⊗v−v⊗u。norm²G2=V²₂(γ)+V₁(A)；tensor norm须||u⊗v||≤||u||||v||（若常数K_tensor则area常数依赖它），选定completed tensor space。",
+      "source_ranges": [
+        {
+          "start_line": 137,
+          "end_line": 184,
+          "pdf_pages": [
+            4,
+            5
+          ]
+        }
+      ],
+      "claim_class": "source_claim"
+    },
+    {
+      "term": "Hardy property",
+      "definition": "存在同一finite C，对所有ℓ² coefficient a，∫sup_0≤i≤j<∞||Σ_k=i^j a_ku_k||²dμ≤CΣ|a_k|²。它是interval sums的统一maximal hypothesis，不是单独orthogonality。",
+      "source_ranges": [
+        {
+          "start_line": 223,
+          "end_line": 230,
+          "pdf_pages": [
+            6
+          ]
+        }
+      ],
+      "claim_class": "source_claim"
+    }
+  ],
+  "theorems": [
+    {
+      "name": "Lemma31 finite2-variation",
+      "statement": "对n≥1，∫V²₂(X;[0,n])dμ≤8 log₂²(n+1)Σ_k=1^n|c_k|²。Hilbert维数无关；没有whole infinite process或area认证。",
+      "assumptions": "u_n是真正Hilbert-valuedL² orthonormal sequence，given order；X_n=Σ_0^n c_ku_k；sup over everyfinite partition[0,n]；Hilbert norm用于Parseval。",
+      "constants_endpoints": "constant8 conservative；n1也有效；c0是initial translation不进入incrementenergy；任意Banach的积分orthogonality不定义或Parseval不成立。",
+      "source_ranges": [
+        {
+          "start_line": 460,
+          "end_line": 482,
+          "pdf_pages": [
+            11,
+            12
+          ]
+        }
+      ],
+      "claim_class": "checked_derivation",
+      "proof": "任一interval J由≤4log₂(|J|+1)个dyadic intervals分解，每level≤2；CS给||X(J)||²≤4log₂(n+1)Σ_I⊂Jdyadic||X(I)||²。对partition Jj其dyadic subcollections disjoint，故V²≤4log₂(n+1)Σ_I⊂[0,n]||X(I)||²。积分orthogonality使ΣI energy≤2log₂(n+1)Σ_k=1^n|ck|²，乘得8log²。"
+    },
+    {
+      "name": "Theorem14, source whole rough claim",
+      "statement": "Σ_n≥0log₂²(n+1)|cn|²有限，则partial sum增强area为geometric2-rough process；source打印∫norm²G2≤121Σlog²|cn|²并称log²Weyl multiplier exact。",
+      "source_ranges": [
+        {
+          "start_line": 208,
+          "end_line": 213,
+          "pdf_pages": [
+            5
+          ]
+        },
+        {
+          "start_line": 491,
+          "end_line": 687,
+          "pdf_pages": [
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ]
+        }
+      ],
+      "claim_class": "source_claim",
+      "proof_status": "已读全部本文proof；finiteLemma31已checked；global36/85/121 exact constants未独立认证，p13 dyadic subsequence factor2理由待核；sharpness依赖外引Menshov/Tandori/Lewko。"
+    },
+    {
+      "name": "Theorem16, Hardy branch",
+      "statement": "若orthonormal system还满足Hardy property C，Σlog₂(n+1)|cn|²有限，则增强area为geometric2-rough process，打印∫norm²G2≤(604+26C)Σlog|cn|²。",
+      "source_ranges": [
+        {
+          "start_line": 223,
+          "end_line": 241,
+          "pdf_pages": [
+            6
+          ]
+        },
+        {
+          "start_line": 750,
+          "end_line": 899,
+          "pdf_pages": [
+            18,
+            19,
+            20,
+            21,
+            22
+          ]
+        }
+      ],
+      "claim_class": "source_claim",
+      "conditions_constants": "C必须对全部coefficients和interval sums统一；Fourier应用需原Carleson–Hunt Hardy bound及正确normalization/order，C包含那些依赖；任何tensor norm scaling进入area constants。",
+      "proof_status": "本文proof完整已读，exact604依赖sourceThm14 globalconstants，未独立认证。"
+    },
+    {
+      "name": "Theorem18 logarithmic difference seminorm",
+      "statement": "s>0, f∈L²([−π,π],R^d)，L_s(f)=∫∫ |f(u)−f(v)|²/|sin((u−v)/2)| · log₂^(2s−1)(π/|sin((u−v)/2)|)dudv≈_sΣ_n≥0log₂^(2s)(n+1)|cn|²。原source使用Euclidean norm使comparison dimension d无关。",
+      "source_ranges": [
+        {
+          "start_line": 251,
+          "end_line": 257,
+          "pdf_pages": [
+            6
+          ]
+        },
+        {
+          "start_line": 968,
+          "end_line": 1090,
+          "pdf_pages": [
+            24,
+            25,
+            26
+          ]
+        }
+      ],
+      "claim_class": "source_claim",
+      "scope": "按source Fourier real-vector grouping及normalization。两侧均忽略constant mode；不能直接称fullL² norm。全部proof已读但没有独立核完Rs bounds/externaldensity。"
+    },
+    {
+      "name": "Examples20/21/41",
+      "statement": "source构造增强rough a.s.有限但logweightedenergy发散的Fourier series；另构造L²Fourier partialsum2variation a.s.无限。uniform expectation multiplier optimal并不表示individual a.s.necessary。",
+      "source_ranges": [
+        {
+          "start_line": 1124,
+          "end_line": 1322,
+          "pdf_pages": [
+            27,
+            28,
+            29,
+            30,
+            31,
+            32
+          ]
+        },
+        {
+          "start_line": 1327,
+          "end_line": 1454,
+          "pdf_pages": [
+            32,
+            33,
+            34,
+            35
+          ]
+        }
+      ],
+      "claim_class": "source_claim",
+      "scope": "例子的independence来自disjoint binarydigits的approximation variables，不是不同Fourierexponentials直接independent。Skorohod/Donsker/Brownian2variation外引未wholeproof复核。"
+    }
+  ],
+  "source_cautions": [
+    {
+      "id": "F06-LYONS-DYADIC-FACTOR",
+      "finding": "p13从dyadic subsequence sup variation到2Σtail²的积分bound，常规pointwise elementary bound给4。未在该段找到把4降到2的独立理由。Walsh32实际orthonormal example在atom0有dyadicvalues[1,−1,1,−1,0], variation²13而2sumtail²8；该例integral仍53/2≤56，因此这里只反证可能的pointwise解释，不称printedintegral本身假，不否认121可由另一证明成立。",
+      "source_ranges": [
+        {
+          "start_line": 513,
+          "end_line": 522,
+          "pdf_pages": [
+            13
+          ]
+        }
+      ],
+      "claim_class": "checked_derivation_for_pointwise_scope_only"
+    },
+    {
+      "id": "F06-LYONS-ZERO-MODE",
+      "finding": "Definition37 p23称weightedexpression norm，但s>0时n0 weight log₂(1)^(2s)=0；constantnonzerofunction为0。作为seminorm/modconstants可用，fullnorm需mean-zero限制或另加|c0|²。sourceThm14incrementnorm无此问题，因为c0仅initial translation。sourceTheorem4 p2的inclusive interval maximum若保n0则需另控制|c0|²或改startindex1。",
+      "source_ranges": [
+        {
+          "start_line": 77,
+          "end_line": 85,
+          "pdf_pages": [
+            2
+          ]
+        },
+        {
+          "start_line": 930,
+          "end_line": 945,
+          "pdf_pages": [
+            23
+          ]
+        }
+      ],
+      "claim_class": "checked_derivation"
+    }
+  ],
+  "method_steps": [
+    "若只需F06 finite maximum，可用V∞≤V₂和finiteLemma31，但constant8更松于原prefix-specific bound。",
+    "若需要遍历partition的变差控制，以arbitraryintervaldyadic decomposition替代单prefix binary decomposition；保每level multiplicity及energy。",
+    "要将log²降到log，先真正证明统一Hardy property；正交本身不满足这一步。",
+    "area提升还须actual tensor completion和multiplicativity；不能把scalar variation例推广到任意Banach/private tree。"
+  ],
+  "migration_limits": [
+    "TC-A5 private center-cube/scale interface和actualgeometry尚未由本文接通。",
+    "有限variation数学proof不是wholecontinuousoperator或privateTC-A接口认证。"
+  ],
+  "unchecked": [
+    "wholeglobalconstants36、85、121、604+26C尚未独立checked；factor2步骤需第二审核。",
+    "Menshov–Rademacher sharpness原paper及Carleson–Hunt/Lewko–Lewko外引proof未通读复核。",
+    "HLog fullnorm/index0修复未替原source签发correctedglobalpaper。",
+    "仅本地v2；header2013/body2018日期差异未以外网题录消歧。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1558,
+    "source_lines": 1564,
+    "required_content_lines": 1160,
+    "covered_content_lines": 1160,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-6aa6572a41bc0df9/paper.md"
+  },
+  "review_source": "evidence/reviews/TEAM_FG/evidence/P-6aa6572a41bc0df9.json",
+  "review_input_sha256": "fe12bf3618610a7a4c0c14844712fb4049adf086a45c8e86d9a11388e7c8337a"
+}

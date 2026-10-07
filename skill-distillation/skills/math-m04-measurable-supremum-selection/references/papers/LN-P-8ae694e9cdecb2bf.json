@@ -1,0 +1,354 @@
+{
+  "paper_id": "P-8ae694e9cdecb2bf",
+  "observed_title": "A Chern-Class Obstruction to Measurable Eigensections of Analytic Quasi-Periodic Bundle Cocycles",
+  "authors": [
+    "Ahmadreza Azimifard"
+  ],
+  "version": "arXiv:2609.29577v1；首页日期 August 2026、侧栏标注 27 Aug 2026；PDF 共 38 页。首页题名、作者、版本视觉核对。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 2222,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "M04",
+    "decision": "adjacent",
+    "basis": "论文讨论二维环面上解析准周期向量丛 cocycle 的不变线及其可测 eigensection。它给出非零第一 Chern 数下特定不变线的可测特征截面不存在定理，并给出在解析、支配分裂、Diophantine 条件下精确分类；可作为“带动力学约束的线丛截面选择可能失败”的拓扑边界。它没有处理一般可测上确界/argmax、可测最大化选择、解析投影，故对 M04 的一般合法选择器机制仅邻近迁移。"
+  },
+  "definitions": [
+    "底空间为 T²=R²/Z²，S(w)=w+τ，τ=(α,β)；1,α,β 在 Q 上线性无关即 S 遍历。向量丛由连续酉 sewing U_j 的 cocycle 条件定义，连续可逆 A 满足与 sewing 相容的等变关系。",
+    "不变线 ℓ 是连续线场，满足 ℓ(w+e_j)=U_j(w)ℓ(w)、A(w)ℓ(w)=ℓ(Sw)。可测 eigensection F 是可测丛截面，满足 A(w)F(w)=λF(Sw)，且并非几乎处处零；定义不要求 F 可积。",
+    "归一化单位截面 e 的 charge m 由 e(w+e_1)=U_1(w)e(w)、e(w+e_2)=e^{2πimw_1}U_2(w)e(w) 给出；作者在指定定向和 Chern–Weil 约定下证明 m=c_1(L)[T²]。",
+    "线上的乘子 q 由 A(w)e(w)=q(w)e(Sw) 定义；经去除 mα 的拟周期因子后得到周期圆值相位，其绕数向量为 k，零绕数实相位记 g。H2 是可测实函数 v 解 v−v∘S=g−⟨g⟩。",
+    "DC(c,ν) 要求对任意非零 n∈Z²，||n·τ||_{R/Z}≥c(|n_1|+|n_2|)^{-ν}；支配分裂是两个连续不变线，其 N 步线性膨胀比至多 κ_0²<1。"
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "连续酉 sewing 系统和连续可逆等变 cocycle A；1,α,β 在 Q 上线性无关。",
+        "ℓ 是连续不变线且 c_1(L)≠0；(A,ℓ) 满足可测相位 coboundary 条件 H2。",
+        "F 是被 ℓ 承载的可测截面并满足 eigensection 方程；不假设 F∈L²。"
+      ],
+      "statement": "作者定理5.4：在上述条件下，对任何 λ∈C，满足 A(w)F(w)=λF(w+τ) a.e. 且 F(w)∈ℓ(w) a.e. 的可测截面必 a.e. 为零。因此 ℓ 不承载非零可测 eigensection。H2 是定理的真实输入；单有 c_1(L)≠0 不足以由该定理推出结论。",
+      "start_line": 754,
+      "end_line": 778,
+      "pdf_pages": [
+        14
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 444,
+          "end_line": 477,
+          "pdf_pages": [
+            8,
+            9
+          ]
+        },
+        {
+          "start_line": 525,
+          "end_line": 648,
+          "pdf_pages": [
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "start_line": 681,
+          "end_line": 745,
+          "pdf_pages": [
+            12,
+            13
+          ]
+        },
+        {
+          "start_line": 754,
+          "end_line": 778,
+          "pdf_pages": [
+            14
+          ]
+        }
+      ],
+      "proof_steps": [
+        "λ=0 时由 A 点态可逆，方程立即迫使 F=0。λ≠0 且 F 在正测集非零时，标量化 F=fe；利用 Z² sewing、乘子方程和遍历性得 f≠0 a.e.。",
+        "将 f 分成模长与相位；模长方程直接相除，不解 log|q|。H2 的解 v 把相位改为 φ′，得到 |φ′|=1、带 charge-m automorphy，且满足平移 walk 方程。",
+        "φ′ 属于可分 Hilbert 空间 H_m，并成为 W=̅c E_{−k}M_τ 的非零固定向量。磁平移交换关系给 W M_s=χ(s)M_sW；由 β（或 α）无理性，χ 在一条连续一参数区间上取互异值。",
+        "于是 {M_sφ′} 是不可数个等范数、两两正交的 W 特征向量，和 H_m 可分矛盾。"
+      ],
+      "gaps": [
+        "论文证明的是满足指定 cocycle 特征方程的线丛截面不存在，不是一般可测选择定理或 measurable argmax 定理。",
+        "Theorem 5.4 依赖 H2；作者明确指出相位可测 coboundary 只在后文解析–Diophantine 设定中自动得到。",
+        "Chern 数/charge 的识别使用线丛分类与 Chern–Weil 理论；作者在末尾说明这类常规输入未纳入其私有 Lean kernel-check 范围。本卡未独立核验这些外部定理。"
+      ]
+    },
+    {
+      "assumptions": [
+        "秩二、带值于 U(2) 与 GL(2,C) 的 strip-admissible 解析数据；存在连续支配分裂 E^s⊕E^u。",
+        "τ 满足 DC(c,ν)；L 是 E^s 或 E^u，且 c_1(L)≠0。"
+      ],
+      "statement": "作者定理8.6：L 不承载任何非零可测 eigensection。关键桥梁 Lemma 8.5 先构造解析规范，使 log|q| 和 g 都为实解析函数；Fourier 系数指数衰减与 DC 小除数下界给出实解析解，特别解出 H2，再应用定理5.4。",
+      "start_line": 1471,
+      "end_line": 1478,
+      "pdf_pages": [
+        26
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1441,
+          "end_line": 1469,
+          "pdf_pages": [
+            25,
+            26
+          ]
+        },
+        {
+          "start_line": 1471,
+          "end_line": 1478,
+          "pdf_pages": [
+            26
+          ]
+        },
+        {
+          "start_line": 1260,
+          "end_line": 1320,
+          "pdf_pages": [
+            22,
+            23
+          ]
+        }
+      ],
+      "proof_steps": [
+        "支配图变换与 Stein 规范化得到两条不变线的实解析归一化截面，任意 charge 均可；以正向 cocycle 定义的 q 解析、零点自由。",
+        "从 q 的拟周期相位定义解析周期函数 g；对解析实函数 h，Fourier 系数指数衰减，而 |1−e^{2πin·τ}|≥4c|n|_1^{-ν}，故除小除数后的系数仍在较窄带解析收敛，求解 v−v∘S=h−⟨h⟩。",
+        "对 h=g 得 H2；Diophantine 条件蕴含遍历，故定理5.4适用。"
+      ],
+      "gaps": [
+        "结论只覆盖秩二、解析带状延拓、支配分裂、Diophantine 平移；作者未声称可延拓到椭圆、非一致双曲、不可逆或高秩情形。",
+        "Lemmas 6.9–7.2 的图变换/Stein 证明及 Cartan 定理 B 等先验复分析工具虽在全文有论证或引用，本卡只按源文记载，不视为独立证明核验。"
+      ]
+    },
+    {
+      "assumptions": [
+        "与定理8.6相同的秩二 strip-admissible 解析 cocycle、支配分裂、DC(c,ν)。",
+        "L∈{E^s,E^u} 且 charge m(L)=c_1(L)[T²]=0，乘子绕数 k(L)=0。"
+      ],
+      "statement": "作者定理8.7：该线承载一个非零、实解析且处处非零的可测 eigensection F₀；λ₀ 由 ⟨log|q|⟩ 与 ⟨g⟩ 给出，且 |λ₀| 等于该线 Lyapunov 指数的指数。它展示在更强假设下非零选择存在，但不是一般选择器定理。",
+      "start_line": 1484,
+      "end_line": 1510,
+      "pdf_pages": [
+        26
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1441,
+          "end_line": 1469,
+          "pdf_pages": [
+            25,
+            26
+          ]
+        },
+        {
+          "start_line": 1484,
+          "end_line": 1510,
+          "pdf_pages": [
+            26
+          ]
+        },
+        {
+          "start_line": 650,
+          "end_line": 669,
+          "pdf_pages": [
+            12
+          ]
+        },
+        {
+          "start_line": 800,
+          "end_line": 847,
+          "pdf_pages": [
+            14,
+            15
+          ]
+        }
+      ],
+      "proof_steps": [
+        "H2 的解析解和 log|q| 的解析解来自同一 Fourier 小除数论证；m=0 使 q 周期，k=0 使 q 有全局解析对数 h=log|q|+2πig。",
+        "取 Ψ=−(v₁+2πiv₂)，则 Ψ∘S−Ψ=h−⟨h⟩。套用抽象存在定理5.9，F₀=e^Ψ e_an，λ₀=e^{⟨h⟩}；解析 Ψ 有界，故截面非零、处处不消失并属于 HU。"
+      ],
+      "gaps": [
+        "结论需 charge 与 winding 同时为零；支配分裂、解析性、DC 均不可从本文结论中略去。",
+        "作者用的对数绕数与小除数事实已在正文给出/引用；未在此重新证明全部复分析输入。"
+      ]
+    },
+    {
+      "assumptions": [
+        "strip-admissible 秩二解析数据、支配分裂与 Diophantine 平移；L 是连续不变线。"
+      ],
+      "statement": "作者定理9.6给出精确分类：L 承载非零可测 eigensection，当且仅当 m(L)=c_1(L)[T²]=0 且 k(L)=0；此时其点谱是定理9.5中的稠密圆周陪集。作者用 Lemma 9.4 排除除 E^s,E^u 外的其他连续不变线，再合并8.6、8.7和 charge-zero/winding-nonzero 的命题5.6。",
+      "start_line": 1669,
+      "end_line": 1681,
+      "pdf_pages": [
+        29
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1589,
+          "end_line": 1624,
+          "pdf_pages": [
+            28
+          ]
+        },
+        {
+          "start_line": 1669,
+          "end_line": 1681,
+          "pdf_pages": [
+            29
+          ]
+        },
+        {
+          "start_line": 1471,
+          "end_line": 1510,
+          "pdf_pages": [
+            26
+          ]
+        },
+        {
+          "start_line": 754,
+          "end_line": 788,
+          "pdf_pages": [
+            14
+          ]
+        }
+      ],
+      "proof_steps": [
+        "遍历连续底平移下，支配分裂穷尽连续不变线（Lemma 9.4）。",
+        "m≠0 时由定理8.6排除；m=0,k≠0 时由 Lemma 8.5 得 H2 并用命题5.6排除；m=k=0 时定理8.7构造 eigensection。"
+      ],
+      "gaps": [
+        "这是线丛 cocycle 的特征截面分类，和一般最大化选择/上确界可测性只有负边界类比。",
+        "全局谱和线维数结论另依赖 Lemma 9.1、Theorem 9.5 及遍历论；本卡不把它们当作 M04 的泛化工具。"
+      ]
+    },
+    {
+      "assumptions": [
+        "存在一个秩二 strip-admissible 解析 dominated cocycle，底平移 τ 遍历但 Liouville。",
+        "作者构造一条拓扑平凡、winding 为零且 H2 平凡成立的不变线；Theorem 9.13 的具体示例通过 Fourier 级数与连续分数构造。"
+      ],
+      "statement": "作者 Theorem 9.13 声称：可使 m(L)=k(L)=0 且 H2 成立，但该线仍不承载非零可测 eigensection。构造在 q=t e^{r(w₁)}>0 的模长 fluctuation 上制造不 tight 的 Birkhoff sums，说明定理9.6的解析–Diophantine存在方向不能去掉 DC 条件；失败落在模长 cohomology 方程。",
+      "start_line": 1780,
+      "end_line": 1899,
+      "pdf_pages": [
+        31,
+        32,
+        33
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1780,
+          "end_line": 1804,
+          "pdf_pages": [
+            31
+          ]
+        },
+        {
+          "start_line": 1811,
+          "end_line": 1867,
+          "pdf_pages": [
+            32
+          ]
+        },
+        {
+          "start_line": 1869,
+          "end_line": 1899,
+          "pdf_pages": [
+            33
+          ]
+        }
+      ],
+      "proof_steps": [
+        "假设存在 eigensection，标量化后 u=log|f| 满足 u∘Sⁿ−u=n c+S_n r。对任意有限 a.e. 可测 u，差分族 u∘Sⁿ−u 在测度意义 tight；由遍历定理 S_n r/n→0，迫使 c=0，进而 S_n r 本应 tight。",
+        "选 α 的连分数收敛分母 Q_j，ε_j=e^{−Q_j}，设 r(w)=Σ ε_j cos(2πQ_jw₁)。递归增大 Q_{j+1} 使主频振幅 B_j=ε_j/||Q_jα|| 远大于所有先前上界；故 α Liouville 且违反任何固定指数的 DC 条件。",
+        "在 n_j≈(4δ_j)^{-1} 处，作者估计第 j 个频率的 Dirichlet 核贡献为 >B_j/10，低频及尾频合计误差 ≤B_j/100；在一个测度至少 2/3 的相位集合上得 |S_{n_j}r|≥B_j/50，且 B_j→∞，与 tightness 矛盾。"
+      ],
+      "gaps": [
+        "这是依赖精心递归选取部分商的存在性构造；虽已通读全证明并视觉核对 PDF pp.32–33，但未独立逐步复核所有连分数估计、级数收敛界与误差常数。仅按作者结果记载。",
+        "其结论对可测 eigensection 的 modulus 方程，不构造/分析 argmax multifunction，也不提供一般选择器反例。"
+      ]
+    }
+  ],
+  "constant_dependence": [
+    "定理5.4的抽象排除没有尾概率常数；磁平移的分离特征值论证只需一个系数 k₁+mβ 或 k₂−mα 非零。",
+    "解析 Diophantine 解的小除数界取决于 strip 宽度、DC 常数 c 与指数 ν；定理8.6/8.7没有给出独立的概率常数。",
+    "Theorem 9.13 构造中常数（如 100、B_j/10、B_j/100、测度 2/3）是证明分频与 tightness 矛盾的定量余量；未独立核验这些具体常数。"
+  ],
+  "endpoint_limits": [
+    "一般 Chern-class obstruction Theorem 5.4 需要 H2；解析 dominated Diophantine 假设仅用于从结构自动得到 H2/模长方程。",
+    "精确“当且仅当 m=k=0”只在二维、秩二 strip-analytic dominated、Diophantine 的明确范围内成立。Liouville 反例说明 sufficiency endpoint 不能直接延伸。",
+    "作者明示不处理 equal-exponent elliptic、nonuniformly hyperbolic、noninvertible 及秩 n>2 的解析自动化结论；本文也不判定 time-frequency/HRT 线性独立。",
+    "不能从拓扑非平凡推出对所有可测截面的不存在：排除针对被给定不变线承载且满足特征方程的截面；line-resolved 区别不可删。"
+  ],
+  "reusable_methods": [
+    "对带约束的线丛截面问题，先从不变线选归一化截面 e 并写 F=fe，把向量丛方程降成标量乘子方程；登记 sewing automorphy 与零集遍历性。",
+    "将 phase 与 modulus 分开：若只需排除，可先用模长方程相除，再用 phase coboundary 将圆值因子规范化，避免错误要求求解 log|q|。",
+    "charge/Chern class 与 multiplier winding 是不同层次的障碍；拓扑平凡仍需乘子绕数为零，解析–Diophantine 下再用 Fourier 小除数法求解 additive cohomology。",
+    "可迁移至 M04 的只有“特定约束下选择器可能因拓扑/动力学不存在”的警示和检验清单；不可移植成一般可测 supremum、argmax 或 analytic projection 结论。"
+  ],
+  "unchecked": [
+    "全篇正文 38 页（含证明、例子和参考文献）已读；PDF 首页及 Theorem 5.4、Theorem 8.6/8.7、Theorem 9.13 的关键公式视觉核对。",
+    "全文阅读不等于独立证明验证。未独立核验 Chern–Weil/线丛分类、Cartan/Stein 输入、引文定理；作者声明所提 Lean 形式化为部分定理且这些几何分析输入在形式化范围外。",
+    "未验证作者提及的 HRT 反例、computer-assisted certificates、Zak/HRT 对应；它们明确不属于本论文证明。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 2218,
+    "source_lines": 2222,
+    "required_content_lines": 1616,
+    "covered_content_lines": 1616,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-8ae694e9cdecb2bf/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/P-8ae694e9cdecb2bf.json",
+  "review_input_sha256": "41ac7b774331ff83788ed746ec3a81b72f6a20ec5001326688a064031e060949"
+}

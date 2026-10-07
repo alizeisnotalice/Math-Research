@@ -1,0 +1,195 @@
+{
+  "paper_id": "P-5efa51c445ded152",
+  "observed_title": "Kolmogorov’s Equations for Jump Markov Processes with Unbounded Jump Rates",
+  "authors": [
+    "Eugene A. Feinberg",
+    "Manasa Mandava",
+    "Albert N. Shiryaev"
+  ],
+  "version": "arXiv:1603.02367v2; 17 PDF pages. The local source is the 2016 manuscript; later publication details were not independently checked.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 898,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "scope": "完整17页全文：Q-function定义与四档速率假设、路径跳跃随机测度补偿子、首跳递归转移函数、backward方程、受限测试集上的forward方程、等价积分方程、最小性/唯一性证明、CTMDP推论和参考文献。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "J01": "direct：论文对可测、显式时间依赖的Q-function构造 jump Markov 过程并研究Kolmogorov方程；速率允许逐状态局部可积/局部有界。可作为非齐次真实跳生成元及其前向/后向演化来源。",
+    "J05": "adjacent：提供按当前状态和时刻更新的跳强度、可预测补偿子与首跳递归构件；未定义私有“冻结坐标”状态，也未提供迭代补偿接口契约，因此只支持组件迁移，不是该工具整体方法来源。"
+  },
+  "definitions": [
+    {
+      "name": "可测Q-function及速率层级",
+      "statement": "状态空间X为standard Borel；q(x,t,·)为有符号测度，q(x,t,X)≤0，非对角部分有限非负且对(x,t)可测。保守时总质量为0。令q(x,t)=−q(x,t,{x})。Assumption 2为每个固定x有sup_t q(x,t)<∞；Assumption 3为每个x及每个s<T1有sup_{t<s}q(x,t)<∞；Assumption 4为每个x及s<T1有∫_[T0,s)q(x,t)dt<∞。A2⇒A3⇒A4；A1与A2等价。",
+      "source_lines": [
+        112,
+        156
+      ],
+      "pdf_pages": [
+        3
+      ]
+    },
+    {
+      "name": "sojourn区间上的可预测补偿测度",
+      "statement": "在跳后停留于x_n的时段(t_n,t_{n+1}]，ν(dt,B)按q(x_n,t,B\\{x_n})dt积分；将各停留区间相加得到点过程(t_n,x_n)的可预测随机测度补偿子。Jacod的一般存在唯一性定理被引用以从ν和初始分布构造概率律。",
+      "source_lines": [
+        228,
+        259
+      ],
+      "pdf_pages": [
+        5
+      ]
+    },
+    {
+      "name": "首跳递归转移函数",
+      "statement": "零跳项P̄^(0)(u,x;t,B)=1_{x∈B}exp(−∫_u^t q(x,s)ds)；n跳项由首跳时刻w及落点y的核e^(−∫_u^wq(x,θ)dθ)q(x,w,dy\\{x})递归卷积；P̄=Σ_{n≥0}P̄^(n)。",
+      "source_lines": [
+        267,
+        310
+      ],
+      "pdf_pages": [
+        6
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorems 1–2: local-integrability construction and backward equation",
+      "assumptions": [
+        "X为standard Borel，q为可测Q-function且满足Assumption 4：各固定状态的总跳率在每个紧前缀上的时间积分有限。",
+        "给定初始分布γ；按sojourn-time定义ν并使用文中典范路径空间。"
+      ],
+      "statement": "定理1称ν是所定义多元跳点过程的补偿子，并且该过程为jump Markov process，转移函数为首跳级数P̄。定理2称P̄是满足边界P(u,x;t,B)→1_{x∈B}、关于u绝对连续并几乎处处满足backward方程∂_uP=q(x,u)P−∫q(x,u,dy\\{x})P(u,y;t,B)的非负可测解中的最小者；若P̄ regular（总质量恒1），则在文中限定的[0,1]测度值解类中唯一。",
+      "start_line": 299,
+      "end_line": 347,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "proof_steps": [
+        "定义路径跳测度ν并按当前状态、当前时刻的q密度逐停留区间补偿；由Assumption 4得到每段累计强度有限。",
+        "以指数生存项作零跳概率，以首跳时刻和跳后状态核递归构造P̄^(n)，求和得到转移函数。",
+        "作者指出定理1论证承接 Feinberg et al. [6]；定理2证明也说明此前证明仅需式(9)的局部累计率有限，故该结论可在Assumption 4下沿用。"
+      ],
+      "gaps": [
+        "从随机测度及初始律构造唯一概率测度的Jacod定理是引用，不在本文证明。",
+        "定理1、2的部分Markov/转移核与backward证明直接援引前作或Feller方法；本卡记录全文阅读及作者论证，不声称独立重证这些引用结果。",
+        "regularity是唯一性的额外前提；无爆炸未由Assumption 4自动保证。"
+      ]
+    },
+    {
+      "label": "Theorem 3: forward equation on locally bounded-rate sets",
+      "assumptions": [
+        "q满足Assumption 3：每个固定状态上的速率在任何有限前缀局部有界。",
+        "测试集合B需为(q,s)-bounded，即B×[T0,s)上的q有界；P取值于文中定义的测度值、时间可测函数类。"
+      ],
+      "statement": "P̄是满足初值边界、关于终时局部绝对连续且对(q,s)-bounded B几乎处处满足∂_tP(u,x;t,B)=−∫_Bq(y,t)P(u,x;t,dy)+∫_Xq(y,t,B\\{y})P(u,x;t,dy)的最小函数。若P̄ regular，则在文中[0,1]值函数类中唯一。作者给出B=X时两个积分都可能为∞的例子，因此不能自动把方程扩展到无界速率的全空间。",
+      "start_line": 376,
+      "end_line": 411,
+      "pdf_pages": [
+        8
+      ],
+      "proof_steps": [
+        "以首跳级数写出P̄，并在速率有界的测试集上对终时积分项求导，得到forward方程；边界和局部绝对连续性由同一积分式导出。",
+        "反例取X=Z：0以率1跳到j≠0，随后在j与−j间以2^{|j|}速率对称振荡。起点0时，对B=X两侧forward积分各为∞，形成未定义的∞−∞。",
+        "定理3的最小性和唯一性并非由局部求导本身给出，而在定理4的等价积分方程及其后续证明中完成。"
+      ],
+      "gaps": [
+        "点态有限跳率不足以保证对整个测试集积分有限；必须保留(q,s)-bounded限制。",
+        "该结论专属jump Markov转移核，未涉及扩散项或目标中心立方体算子的生成域。"
+      ]
+    },
+    {
+      "label": "Theorem 4 and proof of Theorem 3: integral equivalence and minimality",
+      "assumptions": [
+        "Assumption 3成立。",
+        "局部等价先在任意(q,s)-bounded集合C上证明；推广至任意B依赖可数递增的有界集合逼近及单调收敛。"
+      ],
+      "statement": "forward方程的边界条件、局部绝对连续性与几乎处处微分式，当且仅当满足首跳型Volterra积分方程P(u,x;t,B)=1_{x∈B}e^(−∫_u^tq(x,θ)dθ)+∫_u^t∫_B∫_X e^(−∫_w^tq(y,θ)dθ)q(z,w,dy\\{z})P(u,x;w,dz)dw。其积分项非负；将等式反复代入并与n跳级数比较，得到P≥Σ_{m=0}^nP̄^(m)，令n→∞即得P≥P̄。若P̄ regular，借补集和总质量1排除严格大于，推出唯一性。",
+      "start_line": 412,
+      "end_line": 704,
+      "pdf_pages": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "proof_steps": [
+        "对有界C将forward导数改写为两个有限核测度之差，积分成H^(1)−H^(2)形式。",
+        "利用∫_w^t q(y,v)e^(−∫_w^v q(y,θ)dθ)dv=1−e^(−∫_w^tq(y,θ)dθ)，以及两次适用Fubini/有限测度积分版本，重排双积分，证明微分形式与首跳积分式互推。",
+        "把有界C扩为整个状态空间时，使用Assumption 3构造递增(q,s)-bounded集合覆盖X；由Lebesgue单调收敛得到全B积分式。",
+        "以积分方程非负余项为起点，归纳插入首跳核获得每阶部分和下界，极限给出最小性；regular情况下再用B与X\\B及质量1证明唯一。"
+      ],
+      "gaps": [
+        "我检查了文中积分重排与量词结构，但没有把Halmos的Fubini版本及所有测度核可测性条件作为独立定理重证。",
+        "定理的状态空间逼近依赖逐状态局部有界性；若目标没有递增有限率集合覆盖，不能直接搬用。",
+        "regular/no-explosion与生成域边界条件需在目标模型另证。"
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "没有浓度常数。候选转移核由每个状态的累计率∫q(x,s)ds与非对角跳核q(x,t,dy\\{x})共同决定。Assumption 4仅要求固定状态上局部累计率有限；forward积分论证使用更强Assumption 3及局部有界测试集。",
+    "dependence": "补偿子密度显式依赖路径当前状态x_n和绝对时刻t。把q(x,t,·)替换为时间冻结q(x,t0,·)会改变生存分布与转移核，不能称为原时变过程。"
+  },
+  "endpoint_limits": {
+    "rate_assumptions": "A2逐状态在全时间区间有界；A3在每个有限前缀逐状态有界；A4只要求前缀累计率有限。A4足以支持backward构造，不足以支持任意B的forward式。",
+    "forward_domain": "forward方程限于(q,s)-bounded集合；即使每个状态率有限，全空间两积分仍可能同时发散。",
+    "minimality_vs_uniqueness": "最小转移函数一般可能次概率；唯一性另需regular即无爆炸且总质量1。",
+    "nonconservative_q": "可增加吸收墓地状态把非保守Q-function扩成保守形式，但这改变状态空间和边界结算。"
+  },
+  "reusable_methods": [
+    {
+      "method": "在sojourn区间上构造时变跳强度补偿子，再由首跳核递归生成转移函数",
+      "transfer": "明确待迁移模型的当前状态与时刻强度q(x,t,dz)，核实可测性、保守/墓地约定和局部累计率；再验证首跳核与目标过滤一致。此法不提供冻结坐标分解本身。"
+    },
+    {
+      "method": "用局部有界测试域证明forward式，之后以单调集合逼近扩域",
+      "transfer": "对目标集合C逐项证明出入跳积分有限，再用可数递增C_n覆盖状态空间。若没有覆盖或单调性条件，不得把forward方程全域化。"
+    },
+    {
+      "method": "把微分方程转换为带指数生存因子的Volterra首跳方程",
+      "transfer": "要求路径总率可积、出入跳核可测非负且局部Fubini条件满足；该形式可用于最小解比较和迭代构造。"
+    }
+  ],
+  "unchecked": [
+    "完整阅读PDF 1–17页及paper.md行1–898；关键首跳公式页6、证明Fubini步骤页11、积分方程极限/最小性页13已用配置的PyMuPDF渲染并视觉检查。",
+    "全读不等于独立证明核验：Jacod补偿子构造及引用的Feller/前作Markov过程结果未重证。",
+    "三定理的原文结论与关键证明链已抽取；frozen-coordinate接口迁移仍属推断，本文没有该私有接口定义。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 898,
+    "source_lines": 898,
+    "required_content_lines": 713,
+    "covered_content_lines": 713,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-5efa51c445ded152/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-5efa51c445ded152.json",
+  "review_input_sha256": "8d3ac080659eb8df56ac95ef8e0d347d8c10b47ff04c09458c1596dc8fb64ed4"
+}

@@ -1,0 +1,340 @@
+{
+  "paper_id": "P-b8164dc1ce4dcf5d",
+  "observed_title": "Occupation measure relaxations in variational problems: the role of convexity",
+  "authors": [
+    "Didier Henrion",
+    "Milan Korda",
+    "Martin Kružík",
+    "Rodolfo Ríos-Zertuche"
+  ],
+  "version": "PDF 首页标注 arXiv:2303.02434v1，日期 2023-03-07。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 1200,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "E01": "direct"
+  },
+  "definitions": [
+    {
+      "term": "仿射测试函数占用测度 O_aff,p",
+      "definition": "在 Ω×Y×Z 上取正 Radon 测度 µ 和边界测度 µ∂；µ 总质量为 |Ω|，并满足相应 p 阶矩有限（p<∞）或紧支撑（p=∞）。对 φ(x,y)=φ₁(x)+yᵀφ₂(x) 的仿射 y 测试函数，Liouville 等式为 ∫[∂ₓφ₁+yᵀ∂ₓφ₂+φ₂ᵀz]dµ=∫(φ₁+yᵀφ₂)n dµ∂。",
+      "source_ranges": [
+        {
+          "start_line": 172,
+          "end_line": 215,
+          "pdf_pages": [
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "term": "完整弱占用测度 O_p 与松弛值",
+      "definition": "O_p 是 O_aff,p 中还满足对增长受控的非线性测试函数 φ∈F_p 的完整 Liouville 等式的测度对；因此 O_p⊆O_aff,p。M_aff 与 M_r 分别是对这两类测度的线性目标最小值，而 M 是原 Sobolev 函数变分问题的下确界。原函数诱导的占用测度属于两类可行集，故总有 M_aff≤M_r≤M。",
+      "source_ranges": [
+        {
+          "start_line": 217,
+          "end_line": 259,
+          "pdf_pages": [
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "term": "弱 Liouville 的边际含义",
+      "definition": "仿射测试取 φ₁=h(x)、φ₂=0 或仅用相应分量，可识别 µ 的 x 边际为 Lebesgue 测度（连通 Ω 时依质量与 Lemma A.1 得出；非连通时作者要求更强的 x 边际条件）。再作 disintegration µ(dx,dy,dz)=ν(dy,dz|x)dx，条件均值 y(x)=∫y dν、z(x)=∫z dν。仿射 Liouville 等式给出 z=Dy 的弱导数关系。",
+      "source_ranges": [
+        {
+          "start_line": 205,
+          "end_line": 230,
+          "pdf_pages": [
+            4
+          ]
+        },
+        {
+          "start_line": 282,
+          "end_line": 324,
+          "pdf_pages": [
+            5,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "term": "占用测度控制中的控制变量消去",
+      "definition": "在最优控制推广中，给定 (x,y,z) 后对控制 u 作纤维最小化，形成约化成本 L̄(x,y,z)=inf_u L(x,y,z,u)，边界同理。条件 OC1 要求可行控制纤维非空凸且积分约束密度凸；OC2 要求逐点控制极小值达到且 argmin 闭；OC3 要求约化密度局部有界并对 (y,z) 凸。",
+      "source_ranges": [
+        {
+          "start_line": 610,
+          "end_line": 700,
+          "pdf_pages": [
+            11,
+            12
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "定理3.1与推论3.2：凸数据下仿射与完整占用测度松弛均无间隙",
+      "assumptions": [
+        "Ω 为有界连通开集，边界分片 C¹；p∈[1,+∞] 且占用测度满足相应矩有限/紧支撑条件。",
+        "Y、Z 闭且凸。对每个 x，体内 L、Bᵢ、Cᵢ 关于 (y,z) 凸，Aᵢ 关于 (y,z) 仿射；边界 A∂,ᵢ 关于 y 仿射、B∂,ᵢ 与 C∂,ᵢ 关于 y 凸。允许 I 为不可数索引集，含点态与积分约束。"
+      ],
+      "statement": "仿射测试函数测度松弛值 M_aff=M。由于 M_r 位于 M_aff 与原值 M 之间，推论3.2进而给出 M_r=M_aff=M；即在这些联合凸性假设下，无论使用 affine 还是文中完整的非线性弱 Liouville 测试，均无松弛间隙。",
+      "start_line": 261,
+      "end_line": 382,
+      "pdf_pages": [
+        5,
+        6,
+        7
+      ],
+      "proof_steps": [
+        "任一原可行 Sobolev 函数诱导 (µ,µ∂)，故 M_aff≤M。",
+        "由连通域常值引理识别 µ 的 x 边际为 dx，再 disintegrate 并对每个 x 取条件均值 y(x)、z(x)。",
+        "把仿射测试函数代入 Liouville 式，推出 y∈W¹,p 且 Dy=z；边界条件显示 µ∂ 的条件均值是 Sobolev trace y∂。",
+        "仿射等式约束在条件均值下保留，凸不等式与积分约束由 Jensen 保留，闭凸 Y 也包含均值；目标成本由 Jensen 不增。因此由任一 affine 可行测度构造原问题的可行函数，得到 M≤M_aff。",
+        "我按原文检查了两边值比较方向、条件均值与 Jensen 各自承担的步骤；Sobolev trace/Stokes、Radon–Nikodym/disintegration 及可测性定理均是文中引用或标准结果，未独立重证。"
+      ],
+      "gaps": [
+        "无间隙依赖体内和边界的联合凸性/仿射条件；仅有 L 在梯度变量上凸一般不满足此定理。",
+        "完整测度类较 affine 测度类更小，但从 affine 等于原值和 M_aff≤M_r≤M 推出同值；非凸时不能沿用此夹逼结论。",
+        "该定理给值相等，不提供原可行函数的唯一性、测度解由单条轨迹生成，或数值 SDP 的有限阶精确性。"
+      ]
+    },
+    {
+      "name": "定理4.2：无积分约束时 affine 松弛等于逐点凸包络问题",
+      "assumptions": [
+        "本节取 p=∞、Y 与 Z 紧；点态可行纤维 K(x) 闭，且 x↦K(x) 关于 Hausdorff 度量连续。",
+        "L 对每个 x 关于 (y,z) 连续；除特别展示反例的例子外，本节主定理排除积分约束。",
+        "边界约束通过 K∂ 的相应闭凸包络处理。"
+      ],
+      "statement": "定义 Mhat 为在 conv K(x) 及边界 conv K∂(x) 上、以 L 在 K(x) 上的逐点凸包络 Lhat 为成本的凸化变分问题，则 Mhat=M_aff。故无积分约束时有“凸包络值 = affine occupation-measure 值 ≤ 完整 occupation-measure 值 ≤ 原始值”。",
+      "start_line": 435,
+      "end_line": 529,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "proof_steps": [
+        "从凸包络可行函数出发，逐点用 Choquet 表示其 (y,Dy) 为 K(x) 上概率测度的重心，并使成本等于 Lhat；通过紧弱拓扑、Prokhorov 和 Kuratowski–Ryll-Nardzewski 选取可测核，生成 affine 可行测度，得 M_aff≤Mhat。",
+        "反向从 affine 可行测度取条件重心，沿定理3.1论证得 y∈W¹,∞、Dy=z 且边界均值为 trace；重心位于 convK，凸包络的 Jensen 不等式给 Mhat≤M_aff。",
+        "我核对了两方向构造及值不等式方向；Choquet 与可测选择定理本身依赖被引的外部结果，未独立重证。"
+      ],
+      "gaps": [
+        "Hausdorff 连续纤维与紧性是构造可测 Choquet 核的关键；不能仅由逐点凸包定义自动省略。",
+        "对一般积分约束，该等价可失败；作者的例4.3/4.4分别给非凸 Y、非凸 Z 的例子，其中 Mhat=−1 而 M_aff=0。",
+        "Mhat=M_aff 不意味着完整非线性测试松弛必等于 convex envelope；M_r 可严格更强。"
+      ]
+    },
+    {
+      "name": "例4.3–4.4：积分约束下凸包络松弛可严格弱于 affine OM",
+      "assumptions": [
+        "例4.3取非凸 Y={−1,1}²、凸速度集 Z 为单位圆盘；L=y₁y₂+‖z‖²，C=−y₁y₂≤0 为积分约束。",
+        "例4.4取 Y 为单位圆盘、非凸 Z={−1,1}²；L=z₁z₂，C=−z₁z₂≤0 为积分约束。"
+      ],
+      "statement": "两个例子都算出凸包络变分值 Mhat=−1，而 affine occupation-measure 值 M_aff=0，故有严格差距。例4.3的 M_aff 下界由 L=−C+‖z‖² 且 ∫C≤0 推得非负，零由 z=0 的可行均匀测度达到；例4.4同理由 L=−C，零值由 y=0 的可行均匀测度达到。",
+      "start_line": 530,
+      "end_line": 601,
+      "pdf_pages": [
+        9,
+        10
+      ],
+      "proof_steps": [
+        "例4.3中 Y 四角点上 y₁y₂=±1，conv envelope 形成 Lhat=|y₁+y₂|−1+‖z‖² 与 Chat=|y₂−y₁|−1；凸包络问题沿连接两反对角角点的常值曲线达到 −1。",
+        "原 affine 测度问题因 ∫C≤0 而有 ∫L=−∫C+∫‖z‖²≥0，取 z=0 且平衡正负 y₁y₂ 得到 0。",
+        "例4.4交换非凸性到速度集 Z，得到 Lhat=|z₁+z₂|−1、Chat=|z₂−z₁|−1；凸化问题用导数沿反对角线段的可行曲线取 −1。",
+        "affine measure 问题再次由 L=−C 与积分约束得到非负值，取 y=0 的均匀测度达到 0。PDF 第9–10页视觉核对了两个构造与值方向。"
+      ],
+      "gaps": [
+        "这两例仅证明在给定数据下凸包络值严格低于 affine OM；不推出所有带积分约束的问题均有严格差距。",
+        "例子中的凸包络值、可行曲线和测度显式构造是专用反例，不能抽象替代定理4.2的 Hausdorff 连续性假设。"
+      ]
+    },
+    {
+      "name": "推论4.1：指定凸下估计量形成占用测度下界链",
+      "assumptions": [
+        "体内与边界等式约束仿射，使它们无需进一步凸化。",
+        "选取的成本/不等式/积分约束下估计量在原可行点上不超过原数据；凸化问题按式(14)定义。"
+      ],
+      "statement": "M_under≤M_aff≤M_r≤M；若某凸下估计问题恰好 M_under=M，则 affine 与完整占用测度松弛均与原值相等。",
+      "start_line": 390,
+      "end_line": 420,
+      "pdf_pages": [
+        7
+      ],
+      "proof_steps": [
+        "对凸化下估计问题应用推论3.2，得到其占用测度松弛值等于 M_under。",
+        "原 affine 可行测度对凸化问题仍可行，且下估计成本不高于原成本，因此凸化值不超过 M_aff。",
+        "结合始终成立的 M_aff≤M_r≤M 得结论。",
+        "我复核了松弛集合包含与成本方向；该推论不会自动构造达到 M 的某个下估计函数。"
+      ],
+      "gaps": [
+        "需验证候选下估计量对所有原可行点成立；任意凸函数替换不是自动合法的下界。",
+        "若等式约束非仿射，作者指出需进一步构造其凸化，而文中推论未直接覆盖。"
+      ]
+    },
+    {
+      "name": "定理5.2：带控制的 variational occupation-measure formulation 无间隙",
+      "assumptions": [
+        "采用第5节的 p 阶矩/紧支撑设定，原始状态 y∈W¹,p、控制可测，且 µ 的 Liouville 等式只对 y 仿射测试函数。",
+        "OC1：点态控制可行纤维非空凸，积分约束密度凸；边界对应条件也成立。",
+        "OC2：给定 (x,y,z) 后控制成本最小值可达且 argmin 非空闭；边界相同。",
+        "OC3：约化成本 L̄、L̄∂ 对 (y,z)/y 凸且局部有界。"
+      ],
+      "statement": "在 OC1–OC3 下，控制问题 M_oc=M_r^oc。作者通过平均掉占用测度中的状态、导数、控制后，再按均值状态选择逐点最优控制；可测选择与凸性确保得到原问题可行解，Jensen 保证成本不增。",
+      "start_line": 610,
+      "end_line": 828,
+      "pdf_pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "proof_steps": [
+        "原函数与可测控制诱导 occupation measures，故 relaxation 值不高于原问题值。",
+        "反向对 relaxation 测度按 x disintegrate，取 y,z 和边界 y 的条件均值；引用定理3.1相同弱式论证给出 Sobolev 函数与其 trace。",
+        "OC1 与 Jensen 保留等式、不等式、积分及边界约束；OC2 加 measurable graph 假设，使逐点 argmin 可用 measurable selection theorem 选出控制。",
+        "OC3 使约化成本凸，Jensen 比较平均控制状态成本与原测度成本，得到 M_oc≤M_r^oc。",
+        "我逐项读了可测选择、约束保留和成本链；selection 与 trace 定理是外部引用，未独立证明所有一般 Polish 控制空间下技术条件。"
+      ],
+      "gaps": [
+        "OC1–OC3 是真实的结构假设；一般非凸可行控制纤维、控制极小值不达或非凸约化成本均不由该定理覆盖。",
+        "该控制推广仍是变分域 Ω 上的弱占用测度结果，不是任意动态 mean-field/game 系统的通用无间隙定理。"
+      ]
+    },
+    {
+      "name": "命题6.1：二维 micromagnetics 的 affine 占用测度形式复现原问题下确界",
+      "assumptions": [
+        "二维刚性铁磁模型：磁化 m∈L²(D;R²)、|m|=1 a.e.；磁静场满足 div(−∇u_m+mχ_D)=0 的弱式。",
+        "作者把 y=(m₁,m₂,u_m)、z=(∇m₁,∇m₂,∇u_m) 作为变分状态/梯度，单位圆条件作为支持约束，磁静场弱式用一族线性积分约束表达。",
+        "目标中对圆周的各向异性能密度不必凸；使用 affine occupation relaxation 和定理4.2，另引用先前 Young-measure/convex-envelope 结果。"
+      ],
+      "statement": "式(31) 在 O_aff² 上的线性 occupation-measure 问题，其最小值等于原 micromagnetics 问题(24)的下确界。作者利用凸包络问题与 Young-measure 凸化值等于原 infimum 的既有结论，再套用定理4.2。",
+      "start_line": 936,
+      "end_line": 980,
+      "pdf_pages": [
+        16
+      ],
+      "proof_steps": [
+        "将 m 与磁势并成 y，梯度放在 z 中；用支持集编码 |m|=1，用 C_φ 表示 div 约束的测试积分。",
+        "该圆周约束不凸，所以一般不能直接套定理3.1；作者改用 affine 松弛，由定理4.2与问题(27)的凸 envelope 相连。",
+        "式(26)的 Young measure/凸包络等价来自引用的 [6, Thm.3.4, Remark 3.7]，本文没有重证；据此把式(31)值等同于原始 infimum。"
+      ],
+      "gaps": [
+        "结论是 infimum 的等价，不保证单位圆约束下原始问题取得 minimizer；文中指出序列可振荡而弱极限落在单位球内。",
+        "式(26)中凸包络极限等价依赖外部 micromagnetics 文献；本文未独立证明。",
+        "所谓可计算依赖后续 moment-SOS 阶层近似；本文没有给具体数值实验、截断阶误差或显式复杂度界。"
+      ]
+    },
+    {
+      "name": "附录 Lemma A.1：连通域上满足常向量通量弱式的质量边际是 Lebesgue",
+      "assumptions": [
+        "Ω 为有界连通开集；µ 是正且紧支撑的 Radon 测度，并且 µ(Ω)=|Ω|。",
+        "对所有紧支撑光滑测试函数，∫Ω∇φ dµ=0。"
+      ],
+      "statement": "则 µ 等于 Ω 上的 n 维 Lebesgue 测度；此引理用于由 occupation-measure Liouville 式的质量约束识别 x 边际。",
+      "start_line": 988,
+      "end_line": 1033,
+      "pdf_pages": [
+        17
+      ],
+      "proof_steps": [
+        "先取 Ω 内小平行多面体 R 及可行平移 τ(R)，沿坐标轴分解平移。",
+        "构造支撑在 R 与其平移凸包内的积分测试函数并用光滑逼近，将弱式变成 µ(R)=µ(τ(R))。",
+        "所有允许小平移下测度一致，调用文献 [24, Thm.2.20] 得 µ=c dx；质量条件给 c=1。",
+        "我读了构造和外部结论用途，未独立证明“所有小矩形平移同质量推出常数倍 Lebesgue”的测度唯一性定理。"
+      ],
+      "gaps": [
+        "连通性确保可由局部平移连接域内位置；非连通情形正文 Remark 2.6 要求直接规定 x 边际。",
+        "证明依赖将指标函数测试以光滑函数逼近及 Rudin 的测度识别结果。"
+      ]
+    },
+    {
+      "name": "附录 Lemma B.1：增长受控的弱 Liouville 测试函数积分可积",
+      "assumptions": [
+        "p∈[1,∞)；µ 与 µ∂ 满足 Def.2.4 中 y,z 的 p 阶矩条件。",
+        "测试函数 φ∈F_p，使 ∂ₓφ、∂ᵧφ、φ 满足文中对 |y|^p 与 |y|^{p−1} 的增长界。"
+      ],
+      "statement": "边界积分 φ(x,y)n(x) 对 µ∂ 可积，体内项 ∂ₓφ+zᵀ∂ᵧφ 对 µ 可积，因此 Definition 2.7 的完整弱 Liouville 等式有意义。p=∞ 时由紧支撑及连续性直接得到。",
+      "start_line": 1035,
+      "end_line": 1090,
+      "pdf_pages": [
+        17,
+        18
+      ],
+      "proof_steps": [
+        "p=∞ 由紧支撑与连续 integrand。",
+        "p<∞ 时对边界项用 y 的 p 阶矩控制。",
+        "体内 z·∂ᵧφ 采用 Hölder，配合 z 的 p 阶矩与 ∂ᵧφ 的 |y|^{p−1} 增长，得到有限积分。",
+        "我阅读并检查了所用矩条件与指数互补关系；没有逐行独立证明每个泛函分析可积性细节。"
+      ],
+      "gaps": [
+        "引理只保证特定增长类测试函数的积分定义良好，不提供测试类稠密性或松弛等价本身。"
+      ]
+    }
+  ],
+  "constant_dependence": "无显式收敛率或误差常数；核心是精确值等式 M_aff=M 或 M_hat=M_aff，分别在凸性或 compact/Hausdorff 连续纤维条件下成立。文章介绍 moment-SOS 层级作为有限维近似背景，但未在本文给可计算截断阶数对应的误差常数。",
+  "endpoint_limits": "区分 p∈[1,∞) 的矩有限测试/测度类与 p=∞ 的紧支撑版本。非凸主定理4.2限于紧 Y,Z、连续紧值点态纤维、Hausdorff 连续且无积分约束；含积分约束的例4.3/4.4显示 convex-envelope 问题可严格低于 affine OM。凸定理3.1需关于 (y,z) 联合凸，不足以只假设对梯度 z 凸。带控制定理另需 OC1–OC3。没有有限 SOS 阶误差或动态 mean-field 模型定理。",
+  "reusable_methods": [
+    "用仿射 y 测试函数的 Liouville 关系把条件均值导数 z 与弱导数 Dy 绑定，再通过 Jensen 把测度解投影回函数可行解；这是无间隙证明的核心构造。",
+    "将完整弱 OM O_p 与 affine 子类 O_aff,p 明确区分：凸情形利用 M_aff≤M_r≤M 夹逼；非凸情形只对 affine 版本建立凸包络值等价。",
+    "点态非凸可行集的 convex-envelope lift 可由 Choquet 表示与可测选择生成 occupation measures；反向用条件均值与 convex-envelope Jensen 收回凸化函数值。",
+    "将最优控制变量通过逐点纤维最小值约化为凸密度，再用可测 argmin selection 从测度平均状态恢复控制；迁移需逐条核验 OC1–OC3。",
+    "对弱式推导先检查域连通与 x-marginal 条件；非连通域需额外固定边际，否则总质量未必足以识别 Lebesgue。"
+  ],
+  "verification_notes": [
+    "逐行通读转换文本 lines 5–1200，覆盖 PDF 全部 20 页，包括 Theorem 3.1、Theorem 4.2、Theorem 5.2、micromagnetics 例、附录 A/B 与 26 条参考文献。",
+    "转换版公式有多栏 OCR 及符号错位，已视觉核对 PDF pp.4–10（occupation-measure 定义、Thm3.1、convex-envelope 定理和两个积分约束反例）、pp.12–14（OC1–OC3 与 Thm5.2）、p16（命题6.1的弱磁静场式）。",
+    "独立检查的仅为若干比较方向、集合包含和条件均值/Jensen 证明结构；所有 Schober/Choquet/KRN、Sobolev trace、常值测度引理所引用的外部定理未被当作独立证明。",
+    "分类 direct：文章主问题正是 calculus-of-variations 占用测度线性松弛、弱 Liouville 约束及其与原始问题的 gap/equivalence。"
+  ],
+  "unchecked": [
+    "未独立重证参考文献中的 Sobolev trace、Choquet 表示、Kuratowski–Ryll-Nardzewski selection、Prokhorov 紧性及凸 envelope 的 Young-measure 结论。",
+    "未运行 moment-SOS 求解，也无本文数值实例；不能由全文已读推出实际有限阶 hierarchy 已通过数值/误差核验。",
+    "非凸问题有积分约束时的完整几何更复杂，本文仅给两个展示严格差距的例子，不能推广为普遍精确 characterization。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1196,
+    "source_lines": 1200,
+    "required_content_lines": 879,
+    "covered_content_lines": 879,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-b8164dc1ce4dcf5d/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-b8164dc1ce4dcf5d.json",
+  "review_input_sha256": "295c7964b0cc57b5590434f4acff2062246bcec0a22e634760fd33707beb502c"
+}

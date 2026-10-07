@@ -1,0 +1,294 @@
+{
+  "paper_id": "P-aa39aabc6e3794e5",
+  "observed_title": "CCOpt: an Open-Source Solver for Large-Scale Mathematical Programs with Complementarity Constraints",
+  "authors": [
+    "Anton Pozharskiy",
+    "François Pacaud",
+    "Moritz Diehl",
+    "Armin Nurkanović"
+  ],
+  "version": "arXiv:2604.18726v2 [math.OC]; PDF首页日期2026年4月22日；51页。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 2521,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "L04",
+    "decision": "direct",
+    "basis": "全文介绍并评测CCOpt，一套基于MadNLP的MPCC求解器软件，含Scholtes松弛、内点罚函数、active-set crossover、接口、停止容差与基准对照。它直接对应数学规划求解工作流；可复用的是模型/算法选择/状态解释与stationarity验收边界，不是精确可行性证明或全局最优保证。"
+  },
+  "definitions": [
+    "MPCC模型为min f(x)，满足c(x)=0、x₀≥0及0≤x₁⊥x₂≥0；f,c至少二阶连续可微。‘x₁⊥x₂’是逐坐标非负且乘积为零。一般不等式可引入松弛变量。",
+    "约束互补的NLP改写在每个可行点均违反标准MFCQ；biactive index set I₀₀(x)是x₁,i=x₂,i=0的坐标。TNLP固定当前互补分支，RNLP则在双活跃点保留两侧非负。",
+    "W/S/C/M/A-stationarity是MPCC的一阶乘子概念，强弱次序S⇒M⇒C⇒A⇒W。几何B-stationarity由真实可行集切锥定义；转成LPCC代数判据还要MPCC-Abadie CQ。",
+    "Scholtes松弛引入s≥0及x₁∘x₂+s−τe=0；τ>0是互补松弛参数，µ>0是IPM障碍参数。本文的迭代是在每个参数状态下求解近似KKT系统，不是精确求解原MPCC。",
+    "active-set crossover在当前近似解附近解带∞范数信赖域的LPCC方向问题，再固定分支解普通NLP；B-stationarity核验取决于成功找到可行分支并正确求LPCC。",
+    "实验中的solve/fail和目标值均与作者给定的模型集、初值、求解器、tol、线性代数包及机器设置绑定；求解某一局部stationary点不表示全局最优。"
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "若x*是原MPCC的局部极小点，则真实可行集切锥条件成立；该必要条件不需要NLP约束正则性。",
+        "将切锥条件写成线性化互补约束LPCC还要求MPCC-Abadie约束资格。",
+        "B-stationarity与乘子stationarity之间的充分/等价结论需另加相应CQ：S⇒B总成立；B⇒S需要MPCC-LICQ。"
+      ],
+      "statement": "作者引用切锥一阶必要条件：对每个局部极小点x*，∇f(x*)ᵀd≥0对所有d∈T_Ω(x*)成立，等价于d=0局部最小化线性函数∇f(x*)ᵀd于真实切锥。若MPCC-Abadie成立，可用线性化约束加双活跃坐标互补条件的LPCC表示B-stationarity。作者也总结S-stationarity点必为B-stationary；若再有MPCC-LICQ，则B-stationary反推S-stationary。",
+      "start_line": 376,
+      "end_line": 420,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "proof_start_line": 384,
+      "proof_end_line": 420,
+      "proof_pages": [
+        8,
+        9
+      ],
+      "proof_steps": [
+        "Theorem 2.3直接引用[40, Corollary 3.3.1]，以局部可行方向的一阶导数非负给出切锥必要条件。",
+        "当MPCC-Abadie令可行集切锥等于相应线性化互补锥时，把切锥最小化改写为LPCC。",
+        "乘子型stationarity关系归因于[60]：S点可行方向一阶条件给B；在MPCC-LICQ下可从B得到S。文中明确指出只假设MFCQ不足以反推S。"
+      ],
+      "gaps": [
+        "上述理论均为背景引用；本文未证明MPCC Abadie/LICQ蕴含，也未用所提浮点迭代给出精确stationarity证书。",
+        "B-stationary是局部一阶必要性概念，不代表局部极小充分条件或全局最优。",
+        "通过数值LPCC子问题和有限容差识别branch仅是近似核验；实际全局可行性依赖LPCC/MILP求解方式。"
+      ],
+      "author_claim": "第2.1节概述MPCC stationarity体系，并把真实切锥B-stationarity作为无CQ的一阶必要条件；第5节的crossover旨在提升分支精确度并核验B-stationarity。",
+      "checked_derivation": "我比对了切锥表述、Abadie前提及LICQ边界，未将乘子站立性与真实切锥一阶必要条件混为一谈。关键公式按PDF第8–9页视觉核验；外部引用[40]/[60]未独立通读。"
+    },
+    {
+      "assumptions": [
+        "MPCC原始数据至少二阶连续可微；过滤线搜索/IPM每步解带µ、τ的松弛NLP KKT线性系统。",
+        "Q-block临界乘子正则化的充分情形另要求well-posed LPCC/QPCC、半正定目标Hessian及MPCC-LICQ；一般非凸MPCC仍可能需要inertia correction。",
+        "末端lower-bound relaxation仅按用户选项触发，并要求KKT残差小且估计互补乘子足够可信；默认ε_endgame=10⁻⁶。",
+        "Endgame的Ψ分支不作为已核准的放松量公式调用：PDF Eq.(31)的ζ≥0条件与Algorithm 3直接传入的负估计乘子及前文ζ̂₁<0情形冲突，须先核清源记号、正确导数约定和实际实现；目前source/implementation check pending。"
+      ],
+      "statement": "CCOpt-Relaxation以Scholtes松弛x₁∘x₂+s−τe=0和IPM障碍µ驱动一系列平滑NLP，采用过滤线搜索/恢复阶段求搜索方向；用乘积互补残差与KKT无穷范数≤ε_tol作浮点停止条件。为应对互补Hessian的2×2不定块，提供临界乘子截断与特征值截断正则化；它们只修复互补块造成的不定性，其他Lagrangian Hessian不定性/雅可比降秩仍交由MadNLP inertia correction。Endgame按估计乘子有选择地放松x₁/x₂下界。松弛参数τ与障碍µ可用单调曲线、LOQO式自适应、质量函数规则联合更新。另有penalty分支：最小化f(x)+ρ x₁ᵀx₂并动态提高ρ。",
+      "start_line": 523,
+      "end_line": 1510,
+      "pdf_pages": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "proof_start_line": 1226,
+      "proof_end_line": 1295,
+      "proof_pages": [
+        24,
+        25
+      ],
+      "proof_steps": [
+        "把互补不等式x₁x₂≤τ扩成带松弛变量的NLP，并对其KKT残差施加µ扰动；利用Newton方向和filter线搜索迭代。",
+        "消去bound multiplier行得到augmented KKT系统；对每个双变量互补对，把乘子耦合Hessian写成2×2块B_i，并在分解前截断off-diagonal乘子或截断负特征值。",
+        "当KKT系统仍然不适定时，用inertia检测调 primal/constraint regularization；对well-posed凸QPCC满足MPCC-LICQ的特例，作者称该互补块修复足以恢复惯性，可关闭循环inertia correction。",
+        "近终点可由估计乘子判断放松哪一侧下界；Ψ根据简化barrier模型计算放松量并限制δ_max。µ、τ默认/备选规则会改变迭代路径和所遇局部极小点，作者用示例比较而不声称统一最优。",
+        "罚函数算法以ρ x₁ᵀx₂惩罚互补性；静态更新可能遇到罚问题无界，动态策略监测互补残差并增大ρ。Section 3.7/4.5的收敛主张分别依赖[57,30,36]等既有理论。"
+      ],
+      "gaps": [
+        "本论文是实现与实验稿，未为CCOpt的完整算法给出一个新的全局/局部收敛定理；Section 3.7将局部二次收敛、ε-stationary极限stationarity与全局收敛归于[57,30,73,41]，且条件包含MPCC-MFCQ、strict complementarity等。罚算法到C-stationary的结论也依赖[36]及MPCC-LICQ。",
+        "Eq. (12)定义Lagrangian含+c(x)ᵀy_c，直接对x求导应有+J_iᵀy_c；但PDF第11页未扰动KKT显示−J_iᵀy_c，第12页扰动残差(13)又显示+J_iᵀy_c。符号内部不一致，实施前应回源代码确认采用的符号约定。",
+        "Endgame推导存在已由PDF原页确认的符号错误：对−µlog(τ−x₁x₂)求x₁导数应为+µx₂/(τ−x₁x₂)，而PDF式(27)和式(29)均印为负号；式(30)的δ₁=τµ/(µx₂+τζ̂₁)反而对应式(29)改为正号。式(27)下面‘最后两项等于乘子估计’的说明也与打印符号不匹配。不能不经复核直接照式实现。",
+        "第1005行提到‘Theorem 3.1’，全文却未出现该命名定理；后文对应位置是Example 3.1，疑为交叉引用错误。",
+        "结束点映射回原MPCC依赖[10, Theorem 3.1]，没有在本文完整展开条件。仅依近似KKT residual小不能证明实际乘子估计可靠。",
+        "作者的global convergence表述涉及滤线搜索/IPM子问题或引用算法；非凸MPCC目标不存在从这些说法推出全局最优的依据。",
+        "PDF physical/printed pp18–19，Algorithm 3令ζ̂₁=z₁−z_s x₂并在ζ̂₁≤−Ξ时直接调用Ψ(ζ̂₁,x₂,τ)，未定义ζ=−ζ̂₁的转换；p19 bullet及Eq.(30)前文讨论ζ̂₁<0、µx₂+τζ̂₁>0，但Eq.(31)有限分支印ζ≥0，条件又使用ζ₁下标而Ψ只列泛型ζ。此分支符号/记号须与已隔离的Eq.(27)/(29)导数问题一并回源核查，不能照印式实现或作为局部保持非负性的证书。本次未运行或判定CCOpt实现失效，也不推翻主算法/stationarity结果。"
+      ],
+      "author_claim": "作者报告Q-block正则化、endgame下界放松与联合µ/τ更新在不同测试集上改善稳定性/迭代表现；称其参考的Scholtes与penalty理论在列出CQ条件下给出相应stationarity极限。",
+      "checked_derivation": "我手算了式(15)消元结构及Q中每个2×2块的正定判据det(B_i)≥0，并核对作者对一般Hessian不定性的保留说明。对endgame模型由式(26)直接微分：d[-µlog(τ−x₁x₂)]/dx₁=+µx₂/(τ−x₁x₂)，据此确认PDF式(27)/(29)符号有误，而式(30)分母与正确的正号版本相符。PDF第11–19页主要KKT、正则化、barrier与更新公式视觉核验；第11/12页Lagrangian符号矛盾也已核对原页。此审阅没有运行CCOpt代码。"
+    },
+    {
+      "assumptions": [
+        "Phase II从已经可行的complementarity branch出发；每步LPCC信赖域半径正且BNLP子问题求解合格。",
+        "PROJ-LPEC从不可行点找初始branch要求起点足够接近MPCC可行集（条件引用[47, Theorem 4.1]）。",
+        "采用Big-M/MILP路线需要合法的界/大M建模和能给全局结果的MILP求解器；relaxation/penalty路线本身只给容差解。"
+      ],
+      "statement": "Active-set Phase II围绕信赖域LPCC方向迭代，按互补变量正/零选择branch，再求固定branch的BNLP；作者引述[47]称一旦可行branch建立，有限序列全局收敛到B-stationary点。针对近可行但不完全可行的初值，PROJ-LPEC尝试在trust region内找到可行branch，若失败则缩小步长/返回FAILURE。CCOpt提供松弛/罚LPCC和Big-M MILP两类实现；只有后者连同全局MILP solver继承global solution/infeasibility detection保证，作者明确说CCOpt自有LPCC近似算法没有这些保证。",
+      "start_line": 1511,
+      "end_line": 1679,
+      "pdf_pages": [
+        29,
+        30,
+        31,
+        32
+      ],
+      "proof_start_line": 1530,
+      "proof_end_line": 1668,
+      "proof_pages": [
+        30,
+        31,
+        32
+      ],
+      "proof_steps": [
+        "由当前可行MPCC点定义I₁/I₂分支，Phase II解线性化的LPEC方向并附加∞范数信赖域，使非stationary点的LPCC有界。",
+        "对候选方向形成新互补active set，解固定分支NLP；目标改善则接受并扩大信赖域，否则缩小信赖域。",
+        "不可行起点时先解PROJ-LPEC寻找可行branch；接近MPCC可行集的充分条件来自外部[47]，不是本论文证明。",
+        "LPCC可由CCOpt容差级relaxation/penalty处理，或转Big-M MILP；只有MILP路径明确保留全局优化及不可行识别能力。"
+      ],
+      "gaps": [
+        "‘phase II全局收敛到B-stationarity’仅作为引用[47]的结论概述，本文未提供完整证明。",
+        "由近可行点找branch需要起点接近可行集的定理条件；任意初值不保证成功。",
+        "若用容差级连续MPCC算法解内层LPCC，必须另做branch/残差验证；作者明确否认该路线有MILP全局可行性保证。",
+        "B-stationarity verification仍为浮点容差/线性化子问题，需区分几何切锥上的严格stationarity证书与实现报告状态。"
+      ],
+      "author_claim": "Section 5把[47]的互补active-set算法工程化；对大型问题加入PROJ-LPEC和Gurobi/HiGHS Big-M接口，并在42,960变量SC-OPF示例中报告精度改善。",
+      "checked_derivation": "我检查了式(40)信赖域LPCC、式(41)branch固定子问题及式(42)投影LPCC的变量/约束含义；按PDF第31页视觉核验算法和投影公式。未重证[47]的定理、未执行接口，也未验证测试系统中的大M界。"
+    },
+    {
+      "assumptions": [
+        "所有数据来自作者公开报告的macMPEC、SC-OPF、NOSBENCH、NOSBENCH-QPCC与moving-masses集合；比较按各节写明的solver版本、HSL MA27、容差、节点限制、计时口径执行。",
+        "表内容差解和性能profile反映算法在给定机器/配置上的表现；样本中不可行例与非收敛例的统计口径不可改写成全局求解成功率。"
+      ],
+      "statement": "作者在MacMPEC 180例、SC-OPF 40例（最大40万变量/2万互补约束）、NOSBENCH 90例及QPCC 251例等子集上比较时间、迭代数和solve fraction，报告CCOpt在部分集合上比IPOPT-Homotopy快约2–30倍、在部分QPCC/MPC测试上快约2–64倍；SC-OPF 40例中CCOpt-Relaxation解32例、Knitro解36例、IPOPT-Homotopy解12例，解出样本平均时间作者报24s对Knitro 393s。所有数字是实现/配置绑定测量，不是收敛或全局最优定理。",
+      "start_line": 1743,
+      "end_line": 2100,
+      "pdf_pages": [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "proof_start_line": 1863,
+      "proof_end_line": 2100,
+      "proof_pages": [
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "proof_steps": [
+        "列出比较软件、容差和数据集；MacMPEC里四个已知不可行问题按失败计数。",
+        "按benchmark分别比较迭代/时间profile；SC-OPF明确最大规模、40实例中各solver完成数与时间。",
+        "QPCC/MPC结果分凸化与未凸化Hessian组，比较内点松弛、IPOPT、SOS1/MILP及LCQPow，并注明不同容差与solver鲁棒性。",
+        "作者指出某些BI-LEVEL实例对初值敏感、会因无界迭代失败；由此性能表不支持无条件鲁棒性宣称。"
+      ],
+      "gaps": [
+        "未复现实验、重跑repo、检查补充数据或从log独立计算profile；数字均按作者报告转述。",
+        "求解目标是非凸MPCC的stationary/local solution；solve count不表示全局最优。",
+        "各数据集容差与计时方式不同，跨表横向比较存在口径差异；NOSBENCH的Matlab overhead被单独排除。",
+        "硬件/依赖/solver版本随时间变化，基准不保证当前部署环境仍有相同比例加速。"
+      ],
+      "author_claim": "CCOpt在多个挑战性问题上可取得明显时间/迭代加速；在极大SC-OPF中，比IPOPT-Homotopy稳健、对Knitro更快但略少解出实例。",
+      "checked_derivation": "我核对了正文给出的实例数、规模、各节容差及SC-OPF解出数/平均时间，避免将其泛化为数学保证；图表页面和算法选项附表按PDF第36–40、49–51页视觉检查。"
+    }
+  ],
+  "constant_dependence": "文章没有统一复杂度、误差或渐近运行时间常数。主算法的可用阈值是数值设置：默认ε_tol约10⁻⁸、ε_endgame约10⁻⁶，临界乘子块缩放α_B=0.999，最小特征值阈值10⁻⁸，endgame δ_max=10⁻⁴；更新参数和基准容差/实例规模按软件选项和实验集合变化。",
+  "endpoint_limits": [
+    "Scholtes松弛停在有限τ及double precision时只控制乘积残差；作者指出10⁻⁸附近已受双精度限制，max(x₁,x₂)可按O(√τ)而非O(τ)缩小，因此极高互补精度需crossover。",
+    "MPCC变量非凸，停机点是某种一阶stationary点；objective较低的发现不代表全局最优。",
+    "endgame的下界放松只有在KKT residual较小且估计乘子可靠时才试用；参数选择/局部线性近似可能影响回映射有效性。",
+    "Critical-multiplier/EVD只正则化互补诱导的Hessian块；其他不定方向或约束雅可比秩亏仍需inertia correction。",
+    "非凸MPCC的标准MFCQ在可行点失效；引用收敛理论要检查MPCC-MFCQ、strict complementarity、MPCC-LICQ等额外假设。",
+    "从不可行初值切换active set要求局部接近可行集；近似LPCC求解不提供全局branch证书。",
+    "Big-M全局结论要求合法建模界与全局MILP求解器；不能把CCOpt松弛/罚子算法输出说成全局certificate。",
+    "精确不可行检测与全局性能只明确归于MILP路线；连续内点算法仅报告近似KKT/互补残差。",
+    "方程(27)/(29)中barrier导数符号与微分结果及方程(30)不一致，端点放松量若按印刷推导实现有数学风险。",
+    "Eq.(31)的分支使用保持pending source/implementation check：Algorithm 3传入ζ̂而不是已定义的反号变量，负触发域与非负有限分支不一致；仅隔离这个局部公式调用，不改变主算法状态、实验声明或既有收敛理论的条件。"
+  ],
+  "reusable_methods": [
+    "设置求解流程时记录原始MPCC、松弛NLP、τ/µ规则、stationarity目标和最终残差；不要把松弛NLP feasible/KKT 当成原MPCC精确可行。",
+    "分别监控KKT残差与互补乘积，评估double precision能达到的互补精度；对关键branch使用crossover或全局MILP路线再核验。",
+    "遇到KKT分解惯性错误时，优先检查互补约束带来的2×2乘子耦合块，再判断是否仍需全矩阵inertia correction。",
+    "只有在凸QPCC且MPCC-LICQ等适用条件验证后，才考虑作者所述关闭反复inertia correction的快速配置。",
+    "endgame multiplier-based bound relaxation需实现端先独立微分barrier并对照代码；不应直接照录PDF式(27)/(29)的负号。",
+    "报告MPCC solver benchmark时注明实例、初值、tol、machine、线性求解器、timing overhead与失败原因；区分局部stationary求解和全局MILP求解。",
+    "记录B-stationarity时说明LPCC子问题的求解器/最优性状态与CQ假设；如只用容差连续解，报告为数值核验而非严格证明。"
+  ],
+  "unchecked": [
+    "逐段通读本地paper.md第5–2521行，覆盖51页正文、references、算法选项附表；表格p49–51的抽取文本顺序错乱，以PDF视觉核对为准。",
+    "题名、4位作者、arXiv:2604.18726v2、首页日期2026-04-22按PDF p1视觉核验；模型/核心公式p11–19、QP/LPCC crossover p31、选项附表p49–51视觉核验。",
+    "未运行CCOpt/MadNLP、未检查对应版本源码、未复现实验或抽查补充结果数据。",
+    "MPCC松弛/罚函数收敛性与active-set全局收敛主要引用外部文献；本次未通读这些证明，故仅记录本文声明和条件。",
+    "未对每个benchmark实例重构测试集/初值；SC-OPF、NOSBENCH、MacMPEC数字保留为作者报告。",
+    "发现并记录原文Eq. (12)/(未扰动KKT)/(13)符号不一致，以及Eq. (27)/(29)链式求导符号错误；尚未检查CCOpt源代码确认实现用的符号约定。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 2517,
+    "source_lines": 2521,
+    "required_content_lines": 1869,
+    "covered_content_lines": 1869,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-aa39aabc6e3794e5/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/P-aa39aabc6e3794e5.json",
+  "review_input_sha256": "ec2c9a30537f2db56fe4db67ac25e6fa7964dedc41c71865c08ae7159489b04c"
+}

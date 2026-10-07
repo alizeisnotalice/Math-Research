@@ -1,0 +1,231 @@
+{
+  "paper_id": "P-cda13e7e389de875",
+  "observed_title": "On the Green Function and Poisson Integrals of the Dunkl Laplacian",
+  "authors": [
+    "Piotr Graczyk",
+    "Tomasz Luks",
+    "Margit Rösler"
+  ],
+  "version": "arXiv:1607.08746v1（2016）。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 1169,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "F04": "adjacent"
+  },
+  "definitions": [
+    {
+      "term": "Dunkl Laplacian 与权测度",
+      "definition": "给定有限反射群 W、根系 R 及 W-不变非负重数 k，Dunkl 导数 T_ξ 含通常方向导数及反射差分；∆_k=Σ_iT_{ξ_i}²。令 γ=Σ_{α∈R⁺}k(α)，ω_k(x)=∏_{α∈R⁺}|⟨α,x⟩|^{2k(α)}。",
+      "source_ranges": [
+        {
+          "start_line": 95,
+          "end_line": 123,
+          "pdf_pages": [
+            2,
+            3
+          ]
+        },
+        {
+          "start_line": 168,
+          "end_line": 183,
+          "pdf_pages": [
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "term": "球内 Poisson 积分",
+      "definition": "对边界数据 f∈L¹(S,ω_kσ)，P_k[f](x)=d_k^{-1}∫_S P_k(x,z)f(z)ω_k(z)dσ(z)，其中 P_k 是单位球对 ∆_k 的 Poisson 核。",
+      "source_ranges": [
+        {
+          "start_line": 174,
+          "end_line": 183,
+          "pdf_pages": [
+            4
+          ]
+        },
+        {
+          "start_line": 361,
+          "end_line": 365,
+          "pdf_pages": [
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Taylor 余项 F 与 Hardy 空间",
+      "definition": "F(a,b)=|b|^p−|a|^p−p a|a|^{p−2}(b−a)≥0；它与 (b−a)² max(|a|,|b|)^{p−2} 可比。H_p^k(B) 以 harmonic 函数径向稀释 u_r(x)=u(rx) 的 L^p(ω_kσ) 上确界定义。",
+      "source_ranges": [
+        {
+          "start_line": 424,
+          "end_line": 448,
+          "pdf_pages": [
+            10
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem 3.1：球的 Dunkl Green 函数存在、表示及唯一性",
+      "assumptions": [
+        "作者从此处起假定 d+2γ>2。",
+        "x,y∈B，根系、重数及相应 Dunkl 翻转算子如正文定义。"
+      ],
+      "statement": "G_k(x,y)=N_k(x,y)−K_k[N_k(·,y)](x) 是球内 Green 函数；它非负、在边界 x∈S 时为零，对固定 y 在 B\\W.y 连续并在该处 ∆_k-调和，且由这些性质唯一确定。文中给出基于表示测度 µ_y^k 的显式积分式 (3.4)，并证明对称性。",
+      "start_line": 230,
+      "end_line": 265,
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "proof_steps": [
+        "利用 Newton 核 N_k 的积分式对 Kelvin 变换求值，证明原点可去奇点并延拓为调和函数。",
+        "利用 Kelvin 变换保持 ∆_k-调和性和边界值，差核 G_k 连续消失于边界；积分表达式给出非负性。",
+        "由表示测度在正尺度下的缩放关系和 N_k 对称性逐式证明 Kelvin 项亦关于 x,y 对称。",
+        "唯一性归于对应 ∆_k Dirichlet 问题的唯一性；相关基本解与 Kelvin 保持调和性为引用结论。"
+      ],
+      "gaps": [
+        "表示测度 µ_y^k 的结构强依赖根系，作者指出一般根系的双边核估计是开放问题。",
+        "本次逐读了作者证明，但没有重证所引 Dunkl Kelvin/Dirichlet 正则性定理。"
+      ]
+    },
+    {
+      "name": "Theorem 4.2：Dunkl-Poisson–Jensen 公式",
+      "assumptions": [
+        "u 为定义在单位球邻域上的实值 ∆_k-次调和函数；∆_k u≥0。",
+        "采用假设 d+2γ>2 及对应 Newton、Green、Poisson 核。"
+      ],
+      "statement": "对每个 x∈B，u(x)=d_k^{-1}∫_S P_k(x,y)u(y)ω_k(y)dσ(y)−∫_B G_k(x,y)∆_k u(y)ω_k(y)dy。",
+      "start_line": 395,
+      "end_line": 423,
+      "pdf_pages": [
+        9,
+        10
+      ],
+      "proof_steps": [
+        "对 u 使用 Riesz 分解，拆成 Newton 核与调和部分。",
+        "分别取两部分的 Poisson 积分；用 Lemma 4.1 把 Newton 项的边界 Poisson 积分表示成 N_k−G_k。",
+        "对紧区域和边界积分用 Fubini 重排，代数抵消后即得 Poisson–Jensen 表示。"
+      ],
+      "gaps": [
+        "所用 Riesz 分解及 Poisson Dirichlet 表示引用自 Dunkl 势论文献；本文演示如何接合而非重建完整势论。",
+        "这是单位球和 Dunkl 算子的公式，不是关于中心立方体平均的几何极大表示。"
+      ]
+    },
+    {
+      "name": "Theorem 4.5：Hardy–Stein 恒等式及 H_p^k 判据",
+      "assumptions": [
+        "1<p<∞。",
+        "u 为单位球 B 上的 ∆_k-调和函数，并按正文定义径向边界 Hardy 空间 H_p^k(B)。",
+        "F(a,b)=|b|^p−|a|^p−p a|a|^{p−2}(b−a)，根反射 σ_α 和权 ω_k 按文中定义。"
+      ],
+      "statement": "||u||_{H_p^k}^p=|u(0)|^p+C_k∫_B(|y|^{2−2γ−d}−1){p(p−1)|u(y)|^{p−2}|∇u(y)|²+2Σ_{α∈R⁺}k(α)F(u(y),u(σ_α(y)))/⟨α,y⟩²}ω_k(y)dy。文中还断言：调和 u 属于 H_p^k 当且仅当上述非负积分有限。边界数据 f∈L^p 的情形由 Corollary 4.6 代入 u=P_k[f] 得相应恒等式。",
+      "start_line": 484,
+      "end_line": 536,
+      "pdf_pages": [
+        11,
+        12
+      ],
+      "proof_steps": [
+        "先对 p≥2 使用 Lemma 4.4 的 Dunkl 链式公式：∆_k|u|^p 是梯度能量、反射差分 Taylor 余项及 u∆_ku 三项；调和时末项消失，故 |u|^p 次调和。",
+        "把 v=|u|^p 与其径向缩放 v_r 代入 Poisson–Jensen 公式并在 x=0 处计算；显式 Green 核化为权重 (|y|^{2−2γ−d}−r^{2−2γ−d})。",
+        "令 r↑1，利用 Hardy 范数的边界极限和单调收敛，得到 p≥2 的等式。",
+        "对 1<p<2 用 |u+iε|^p 正则化并使用 F_ε 版本链式公式；ε→0 由 Fatou、F_ε≤(p−1)^{-1}F 及支配收敛，再令 r↑1 得到相同身份。",
+        "积分项非负，故有限性与 Hardy 范数有限等价。"
+      ],
+      "gaps": [
+        "恒等式是单位球上的 Dunkl 调和函数恒等式，包含根反射跳项；它不是全空间 Poisson 半群的 Abel 参数平方函数。",
+        "1<p<∞ 是明确范围；p=1、∞ 未由此恒等式涵盖。",
+        "F(a,b) 的可比性和基本 Hardy 范数的边界收敛引用前述/外部结果；本次读证明但未独立重做这些背景定理。"
+      ]
+    },
+    {
+      "name": "Corollary 5.7：秩一情形 Poisson 核双边界估计",
+      "assumptions": [
+        "根系 A₁，∆_k 在 R^d，边界/内部变量 x∈B,y∈S。",
+        "作者在此节一直假定 d+2k>2。"
+      ],
+      "statement": "令 Φ(x,y)=max(|x−y|,|x−σy|)。秩一时 Poisson 核满足显式双边界：d=2 时出现 Φ^{−2k}|x−y|^{−2} 与反射距离对数项；d≥3 时 P_k(x,y)≈(1−|x|²)/[Φ(x,y)^{2k}|x−y|²(|x−y|∧|x−σy|)^{d−2}]。",
+      "start_line": 990,
+      "end_line": 1011,
+      "pdf_pages": [
+        22,
+        23
+      ],
+      "proof_steps": [
+        "先用秩一 intertwining 公式写出 Poisson 核的一维积分表示。",
+        "与 Newton 核表示比较，将维数换成 d+2 后直接套用 Theorem 5.1 的双边估计。"
+      ],
+      "gaps": [
+        "仅为秩一根系；常数允许依赖 d,k。",
+        "核点态估计本身不推出项目所需的 Abel–Gamma 平方函数等价。"
+      ]
+    }
+  ],
+  "constant_dependence": "Green/Poisson 比较常数一般依赖根系与重数；秩一双边界常数依赖 d,k。Hardy–Stein 恒等式的权重常数 C_k 来自 Newton 核归一化，不给无参数最佳常数。",
+  "endpoint_limits": [
+    "全文 25 页完整阅读，包括 Section 3 Green 核、Section 4 Poisson–Jensen 与 Hardy–Stein 证明、Section 5 秩一核估计和参考文献。",
+    "这是 Poisson 积分与 Hardy–Stein 能量恒等式的实质邻近来源，但没有 Gamma 次序 subordination、全空间 Abel 正则化或其极限公式；F04 项目私有接口仍缺定义。",
+    "作者明确说明任意根系下的核双边界推广取决于 intertwining 表示测度，仍属开放问题；不能从 rank-one 推及一般根系。",
+    "公式文本有少量 PDF 数学排版提取噪声；主定理结构与 p、d、γ 指数根据作者定义和推导上下文阅读，未将每条公式单独图像复核。"
+  ],
+  "reusable_methods": [
+    "把调和延拓 |u|^p 的 Laplacian 展开成梯度能量与非负凸函数余项，再积分得到 Hardy 范数恒等式。",
+    "反射差分项用凸函数一阶 Taylor 余项编码；其非负性和与平方增量的可比性给出能量估计。",
+    "Poisson–Jensen 与 Green 核在中心点的显式公式可用于径向逼近和单调极限。",
+    "证明低于二次幂时可先加 ε 正则化，使链式微分有效，再用余项比较和 Fatou/支配收敛去正则。"
+  ],
+  "unchecked": [
+    "未独立重证 Dunkl Riesz 分解、Dirichlet 问题唯一性、表示测度性质及边界 Hardy 空间表征等引用结果。",
+    "未单独进行 PDF 图像逐式核验，尤其原始抽取中的上标、根重数归一化和常数记号应以视觉原页复查为准。",
+    "F04 所需 Poisson–Gamma/Abel 半群接口定义未提供；本论文不能填补该项目公式或证明。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1165,
+    "source_lines": 1169,
+    "required_content_lines": 950,
+    "covered_content_lines": 950,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-cda13e7e389de875/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-cda13e7e389de875.json",
+  "review_input_sha256": "fd84247fa04497814b99ed1be463b7a328cf9355e6ca558f9dcacc62f4410afe"
+}

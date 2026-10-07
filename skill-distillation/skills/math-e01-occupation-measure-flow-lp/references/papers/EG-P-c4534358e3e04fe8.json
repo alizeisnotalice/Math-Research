@@ -1,0 +1,146 @@
+{
+  "paper_id": "P-c4534358e3e04fe8",
+  "observed_title": "Reconstructing trajectories from the moments of occupation measures",
+  "authors": [
+    "Mathieu Claeys"
+  ],
+  "version": "arXiv:1404.4079v1；首页标注 2014。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 355,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "E01": "adjacent"
+  },
+  "definitions": [
+    {
+      "term": "受控过程占用测度",
+      "definition": "µ(A×B×C)=∫_A1_B(u(t))1_C(x(t))dt，定义在时间×控制×状态空间；其对多项式的积分给出时空控制轨迹的矩。",
+      "source_ranges": [
+        {
+          "start_line": 62,
+          "end_line": 111,
+          "pdf_pages": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "term": "有限矩网格反问题",
+      "definition": "在有限网格 Zε 上寻找非负原子测度 μ̃，使提供的截断矩与 μ̃ 矩的最大误差最小，即 λ*=min sup_{|α|≤2r}|yα−⟨zα,μ̃⟩|。",
+      "source_ranges": [
+        {
+          "start_line": 114,
+          "end_line": 165,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem 1（引用 Lasserre 等）与 Corollary 1",
+      "assumptions": [
+        "OCP 目标、动力学、紧致基本半代数约束集为多项式/紧致设定，且矩层级所需的正多项式假设成立。",
+        "对 Corollary 1，存在一个可行连续过程，其真实成本恰与某阶矩松弛成本相同。"
+      ],
+      "statement": "矩 SDP 的成本随阶数从下方收敛到占用测度 LP 成本；若一个 admissible 轨迹的成本等于某阶松弛值，则它是全局最优轨迹。",
+      "start_line": 114,
+      "end_line": 127,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "作者把层级成本收敛作为既有 Lasserre occupation-measure 结果引用；Corollary 1 由原问题值≥测度 LP 值≥松弛值及轨迹达到松弛值推出。",
+        "这是作者陈述与引用链的摘要，未独立检查 Putinar 条件及每阶 SDP 的对偶闭性。"
+      ],
+      "gaps": [
+        "原文随后作唯一最优过程的 standing assumption 以唯一化最优测度；未满足该假设时单一重构会混合多条最优轨迹。"
+      ]
+    },
+    {
+      "name": "Theorem 2（Tchakaloff 原子矩表示）",
+      "assumptions": [
+        "µ 为紧支撑于 Z⊂R^q 的有限正 Borel 测度；固定有限多项式次数 d。"
+      ],
+      "statement": "存在有限个 Z 内节点 z_k 与正权重 w_k，使所有次数≤d 的多项式积分满足 ⟨f,µ⟩=Σ_kw_kf(z_k)；故有限阶矩总能由有限原子测度匹配。",
+      "start_line": 142,
+      "end_line": 153,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "作者直接援引 Tchakaloff 定理，没有在本文证明。",
+        "有限原子表示只匹配给定次数的多项式，并不重建连续测度的完整支撑。"
+      ],
+      "gaps": [
+        "网格化近似还要控制节点量与维数，原子定理本身不保证可行轨迹或控制弧可恢复。"
+      ]
+    },
+    {
+      "name": "Theorem 3：网格化矩匹配误差趋零",
+      "assumptions": [
+        "Z 紧，网格 Zε 有覆盖分辨率 ε；给定矩序列 y 由 Z 上正测度 µ 表示，且只约束有限阶矩。"
+      ],
+      "statement": "在 Zε 上最小化非负原子测度的有限矩最大误差 λ*ε；网格细化 ε→0 时 λ*ε→0。随后提高阶数并细化网格，可得到对 µ 的弱星逼近。",
+      "start_line": 119,
+      "end_line": 165,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "先由 Tchakaloff 得有限原子 µa 完全匹配有限阶矩。",
+        "有限组单项式在紧集上连续；把 µa 的原子移到 ε 网格邻近点后，每个矩扰动都随 ε 变小。有限个约束取最大值仍趋零，λ 下界为 0，故最优误差趋零。",
+        "弱星结论依赖紧集上多项式稠密及逐步增加矩阶。此处读过作者证明，未重做 Tchakaloff 的外部定理。"
+      ],
+      "gaps": [
+        "收敛定性不提供实际有限 ε、有限 r 的显式误差率。",
+        "用于控制问题的简化算法只抽取时间与单个状态/控制坐标矩以避免维数灾难，因而还需局部求解器修复可行性。"
+      ]
+    }
+  ],
+  "constant_dependence": "Theorem 3 的误差 λ*ε 仅证明趋零，未给 ε 与 λ 的定量常数；全时空控制网格维数为 1+n+m，粗网格可能带来极大 LP。",
+  "endpoint_limits": [
+    "低阶矩数据只确定有限分辨率的近似占用测度，不唯一决定无限维轨迹。",
+    "网格上的原子支撑近似不能保证得到的状态/控制满足 OCP；作者用 BOCOP 局部法热启动并检验成本。",
+    "若占用测度编码多条解，密度近似可能给加权平均而非任一可行轨迹；原子法可覆盖多条但识别更难。",
+    "非光滑切换控制不适合用光滑多项式密度恢复。"
+  ],
+  "reusable_methods": [
+    "用 Tchakaloff 说明有限阶矩存在精确有限原子表示，再把原子移动到细网格并估计有限矩误差。",
+    "优化与逆矩问题分开：先解 SDP，再在网格上解非负权重线性规划，避免直接网格化高维动态规划。",
+    "把重构状态/控制作为候选初值交给直接法，并用同一目标值比较作停止依据。"
+  ],
+  "unchecked": [
+    "数值案例的每个重构控制节点与 OCP 约束未逐点复算。",
+    "定理 1 使用的 occupation-measure 层级收敛条件作为既有结果引用，未独立证明。",
+    "中心立方体极大问题中的几何“赢家”不能由轨迹原子重构结果直接推出。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 351,
+    "source_lines": 355,
+    "required_content_lines": 327,
+    "covered_content_lines": 327,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-c4534358e3e04fe8/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-c4534358e3e04fe8.json",
+  "review_input_sha256": "2214131969b6bf3d224c24f60db974db8ea9f92447f802d45b94f89d52496ca4"
+}

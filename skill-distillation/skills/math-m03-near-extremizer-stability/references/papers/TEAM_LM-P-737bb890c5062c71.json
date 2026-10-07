@@ -1,0 +1,407 @@
+{
+  "paper_id": "P-737bb890c5062c71",
+  "observed_title": "An Extension of the Bianchi-Egnell Stability Estimate to Bakry, Gentil, and Ledoux's Generalization of the Sobolev Inequality to Continuous Dimensions",
+  "authors": [
+    "Francis Seuffert"
+  ],
+  "version": "arXiv1512.06121v2,2Sep2020 side label; front manuscript November5,2015. Official revision comments verified separately 2026-10-06; v1 not full read in this card.",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 2024,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "scope": "All sections1–8 including Taylor remainder, compact Hessian proof/Green functions/trace power, nullspace/ODE argument, global concentration compactness and delayed local compactness proof, references; all nonempty text sequentially read."
+    }
+  ],
+  "topic_relevance": {
+    "code": "M03",
+    "decision": "direct",
+    "basis": "Weighted continuous-dimensional Sobolev stability, fixed-parameter H1 distance to complex amplitude/dilation/x-translation manifold; cited primary dependency of GN lift but narrower revised parameter range and unresolved proof errors."
+  },
+  "official_sourcecheck": {
+    "url": "https://arxiv.org/abs/1512.06121",
+    "checked_date": "2026-10-06",
+    "observed_version": "v2,2Sep2020",
+    "locator": "official Comments and Submission history",
+    "read_scope": "Official metadata/revision notice only; local v2 full PDF read independently",
+    "change": "Original v1 claimed m>0. Author says only able to prove m≥1 with m+n>2, and only changes in Th1.4 and Th1.5. This is a scope revision, not a withdrawal notice or proof certification.",
+    "v1_status": "No silent substitution. Older GN reference cites1512.06121v1; its broader m>0 scope cannot be certified from v2."
+  },
+  "definitions": [
+    {
+      "name": "Weighted cylindrical Hilbert space",
+      "statement": "m≥1,n≥1 integer,m+n>2, dΛ=ω_mρ^(m−1)dρ dx. Complex φ on R+×R^n, finite distributional-gradient norm, each positive superlevel has finite Λ measure. The x variables are unrestricted, so translation tangents belong to this space. p*=2(m+n)/(m+n−2),γ=(m+n−2)/2.",
+      "start_line": 216,
+      "end_line": 253,
+      "pdf_pages": [
+        5
+      ]
+    },
+    {
+      "name": "Optimizer manifold and distance",
+      "statement": "F_(t,x0)=k0t^γ(1+t²ρ²+t²|x−x0|²)^(-γ),k0 gives H1norm1; M={zF_(t,x0):z∈C,t>0,x0∈R^n}; distance is inf H1 gradient norm over M.",
+      "start_line": 262,
+      "end_line": 310,
+      "pdf_pages": [
+        6
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem1.5 revised BE stability",
+      "evidence_class": "source_theorem_statement_global_proof_not_certified",
+      "assumptions": [
+        "m≥1,n≥1 integer,m+n>2; weighted cylindrical Ḣ1_C as defined",
+        "Distance to complete complex amplitude/positive dilation/x-translation optimizer manifold"
+      ],
+      "statement": "Source reports C_m,n²||φ||_Ḣ1²−||φ||_(p*)²≥α(m,n)dist_Ḣ1(φ,M)², α>0 depending only on fixed m,n. Source states quadratic exponent cannot be replaced by β<2 after homogeneous normalization.",
+      "start_line": 292,
+      "end_line": 310,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "Explicit norm Taylor expansion and duality-map continuity produce local quadratic estimate plus higher-order remainder",
+        "Compactness of Hessian correction via log radial coordinates, positive operator comparison and finite trace of large even powers",
+        "Source identifies Hessian kernel and obtains a positive spectral gap after nearest-manifold orthogonality",
+        "Global contradiction uses scaled/rearranged annular mass, pqr nonvanishing, x translations, local compactness and Brezis–Lieb decomposition"
+      ],
+      "proof_ranges": [
+        {
+          "start_line": 525,
+          "end_line": 1944,
+          "pdf_pages": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ]
+        }
+      ],
+      "gaps": [
+        "Th3.5/3.7 and Lem5.2 print a 3-dimensional Hessian nullspace despite n x-translation parameters. Translation tangent check below refutes that subclaim on the stated full space; source spectral-gap proof cannot be called as a complete certificate. This does not itself refute Th1.5.",
+        "Concentration proof7.8 invokes smaller radial dimension m/2, which is <1 if1≤m<2 and may make total dimension≤2 for n=1; those calls are outside the revised theorem as stated. n−δ call also is noninteger though Th1.4 states n integer. A separate double-radial theorem/argument is needed.",
+        "Local compactness estimates8.2/8.3 choose the wrong endpoint constant; locally repairable by minimum weight, but do not copy exact constants.",
+        "No explicit optimal global α, dimension-uniform constants, or m<1 stability certified."
+      ]
+    },
+    {
+      "label": "Theorem2.1 norm Taylor remainder",
+      "evidence_class": "source_theorem_with_external_duality_map_dependency",
+      "assumptions": [
+        "2<p<∞,||f||_p=||ψ||_p=1,f real,ψ complex",
+        "ε∈[−1,1], complex Lp treated as real direct sum"
+      ],
+      "statement": "Square Lp norm has quadratic expansion with operator LRe⊕LIm and remainder bounded by κ_p|ε|^βp; βp=3 forp≥4 and1+p/2 for2<p≤4, κ_p finite explicit parameter-dependent source formula.",
+      "start_line": 546,
+      "end_line": 671,
+      "pdf_pages": [
+        11,
+        12,
+        13
+      ],
+      "proof_steps": [
+        "Integral Taylor remainder is double integral of second-derivative difference",
+        "Expand into three scalar integrals and bound by duality-map differences",
+        "Apply Carlen–Frank–Lieb cited Hölder continuity Dp(g)=||g||_p^(1−p)|g|^(p−2)g and Hölder/triangle inequality, then integrate"
+      ],
+      "gaps": [
+        "Primary external duality-map lemma[7] not full read here; no unrestricted p=2/infinite-p endpoint or uniform κp extension.",
+        "The LRe/LIm form and normalizations must be used consistently; source3.12 claims ||ψ||_(p*)≤C/2 where elementary Sobolev only gives ≤C, so its downstream explicit remainder constants are unverified."
+      ]
+    },
+    {
+      "label": "Theorems3.5,3.7 / Lemma5.2 nullspace",
+      "evidence_class": "source_subclaim_refuted_on_stated_full_space",
+      "assumptions": [
+        "St=A^-1 L_(C^-1 F,p*) on entire complex weighted cylindrical Ḣ1",
+        "At F centered at x0=0; A=−∂ρ²−(m−1)ρ^-1∂ρ−Δx"
+      ],
+      "statement": "Source says ker(C²I−St) is spanned only by (F,0),(∂tF,0),(0,F).",
+      "start_line": 802,
+      "end_line": 813,
+      "pdf_pages": [
+        16
+      ],
+      "proof_steps": [
+        "Source5.1 derives positivity and these three tangent modes from constant amplitude/dilation/phase curves",
+        "Source5.2 attempts to force angular independence by replacing A by lower operator Ahat",
+        "Source5.4 infers positivity of X+Y+Z from positivity of X on the radial subspace orthogonal to F; this does not control nonradial angular sectors"
+      ],
+      "proof_ranges": [
+        {
+          "start_line": 1101,
+          "end_line": 1376,
+          "pdf_pages": [
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ]
+        }
+      ],
+      "gaps": [
+        "Missing translations: ∂x_jF is real, nonzero, finite energy, odd in x_j, hence independent of all listed radial-real and imaginary F modes. By differentiating AF=C^-p* F^(p*−1), LRe(∂x_jF)=C² A(∂x_jF), so it is also in the kernel.",
+        "Correcting kernel requires full tangent space (n+3 real directions) and proof of no further modes. Nearest-manifold optimization should give orthogonality to translations too, but those modes cannot simply be omitted."
+      ]
+    },
+    {
+      "label": "Theorem3.6 compact selfadjoint Hessian correction",
+      "evidence_class": "source_operator_method_not_full_spectral_certificate",
+      "assumptions": [
+        "Fixed valid m,n and same Hilbert/measure/operator definitions",
+        "Proper positive selfadjoint realizations and domains"
+      ],
+      "statement": "Source asserts St compact selfadjoint, scale parameter t gives unitarily equivalent spectrum.",
+      "start_line": 840,
+      "end_line": 1099,
+      "pdf_pages": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "proof_steps": [
+        "Rank-one real correction plus positive imaginary multiplication; selfadjointness via energy pairing",
+        "Use A^1/2 energy isometry, compare positive sandwich with Ahat whose spectrum separates in log-coordinate/Fourier/Jacobi/spherical modes",
+        "Kernel of sufficiently large even power has finite trace, summing radial and spherical eigenvalue multiplicities; source threshold d>(n+1)/2",
+        "Log radial coordinate turns scale t into translation in u"
+      ],
+      "gaps": [
+        "Green-function normalization, operator domains, series and trace exchanges not independently certified; only source method distilled.",
+        "Generalized Young source uses linear-map rank conditions with all exponent2; actual cycle rows have d−1 rank and d≥2. This is a specialized multilinear integral bound, not arbitrary mixed-norm permutation.",
+        "Compactness alone gives no positive gap until complete kernel and orthogonality established."
+      ]
+    },
+    {
+      "label": "Theorem7.1 concentration compactness",
+      "evidence_class": "source_theorem_proof_domain_gaps_preserved",
+      "assumptions": [
+        "||φj||_(p*)=1 and Sobolev deficits→0",
+        "Fixed m≥1,n integer,m+n>2"
+      ],
+      "statement": "Source states existence of dilations σj and x translations xj such that a subsequence converges strongly in weighted Ḣ1_C to normalized optimizer.",
+      "start_line": 1433,
+      "end_line": 1437,
+      "pdf_pages": [
+        28
+      ],
+      "proof_steps": [
+        "Normalize half of rearranged Lp* mass in unit ball via continuous dilation; dominated convergence uses one integrable ceiling on compact scale interval",
+        "Rule out split annular mass by uniform convexity and χ1²+χ2²=1 energy localization",
+        "Two angular cutoffs and smaller dimension Sobolev bound yield pqr nonvanishing; translated local-mass sequence has nonzero weak limit",
+        "Away-axis local compactness gives a.e. subsequence, Brezis–Lieb norm decomposition and strict concavity rule out residual mass; Hilbert weak+norm then strong"
+      ],
+      "proof_ranges": [
+        {
+          "start_line": 1422,
+          "end_line": 1880,
+          "pdf_pages": [
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37
+          ]
+        }
+      ],
+      "gaps": [
+        "Smaller dimension calls in7.8 not within all revised stated domains; no uniform/noninteger Cartesian dimension extension certified.",
+        "Theorem7.3 proof says WLOG φj≥0; modulus replacement preserves Lp* but is not a phase-invariant strong convergence argument for the original complex sequence. Need explicit phase/subsequence restoration, not treating |φj| as identical to φj.",
+        "External rearrangement contraction and Brezis–Lieb theorem prerequisites are cited methods; not separately reproduced globally."
+      ]
+    },
+    {
+      "label": "Theorem1.6 / section8 local compactness",
+      "evidence_class": "source_local_compactness_with_checked_weight_constant_repair",
+      "assumptions": [
+        "K has stated cone property, finite weighted measure; 0<ρ1<ρ<ρ2<∞",
+        "Bounded sequence in weighted Ḣ1_C; U open subset of K",
+        "Source claims p<max(p*,2(n+1)/(n−1)); n=1 exponent interpreted via two-dimensional Sobolev local result, not literal division0"
+      ],
+      "statement": "Source asserts a subsequence converges strongly in Lp(U,dΛ) in the stated subcritical range.",
+      "start_line": 1890,
+      "end_line": 1944,
+      "pdf_pages": [
+        38,
+        39
+      ],
+      "proof_steps": [
+        "Away from axis weight is bounded above and below, so weighted/unweighted Lq and gradients are equivalent",
+        "Control local unweighted H1 then apply ordinary local Rellich–Kondrachov",
+        "Use bounded Lp* and interpolation to extend strong convergence below p* when appropriate"
+      ],
+      "gaps": [
+        "8.2 and8.3 use ρ2 in upper norm bound despite preceding correct sandwich requiring ρ1 for m≥1. Replace by minimum weight factor ω_m^-1/q ρ1^(-(m−1)/q).",
+        "Cone/finite-volume hypotheses and unbounded-domain compactness require the precise local classical theorem; no global finite-volume compactness extension is inferred."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "scope": "C_m,n and existentialα(m,n), local spectral gap/remainder thresholds fixed parameter. Quadratic H1-distance power; no numerical optimalα certified.",
+    "weighted_norm_repair": "For m≥1, lower unweighted bound usesρ2, upper usesρ1. On compact away-axis region use min/max weight; no dimension-free equivalence.",
+    "mixed_norm": "Generalized Young rank conditions only for source trace integral; DCT for dilations only after common Lp* ceiling and compact positive scale interval. These do not justify arbitrary limit/norm exchanges."
+  },
+  "endpoint_limits": {
+    "source_revision": "v2 restricts m≥1; original v1 m>0 is explicitly superseded. m+n>2 is needed for p* even though mainTh1.5 abbreviated assumptions.",
+    "GN_transfer": "m=4t/(t−1)−2n≥1 is equivalent to1<t≤(2n+1)/(2n−3) for n≥2. n2 gives t≤5. This is revised dependency compatibility only, not independent GN certification; main source proof gaps remain.",
+    "not_established": "m<1, m+n=2, dimension-uniformα, arbitrary metric/space or maximal-cube stability."
+  },
+  "reusable_methods": [
+    {
+      "method": "Find full symmetry tangent kernel before spectral stability",
+      "transfer": "Include amplitude,dilation,phase,all allowed translations; establish orthogonality to each direction and no additional null modes."
+    },
+    {
+      "method": "Compact positive sandwich via finite trace power",
+      "transfer": "Requires selfadjoint domains, domination, series convergence, and specialized multilinear rank conditions."
+    },
+    {
+      "method": "Weak nonvanishing plus mass splitting to strong convergence",
+      "transfer": "Need admissible normalization, local compactness, Brezis–Lieb and strict concavity in actual weighted space."
+    }
+  ],
+  "checked_derivation": [
+    {
+      "class": "checked_translation_tangent_refutes_subclaim",
+      "statement": "Take m=n=2,N4,p*=4,F=k/(1+ρ²+|x|²). g=∂x1F=−2kx1/(1+ρ²+|x|²)². Finite energy, odd x1, hence orthogonal to F and outside span{F,∂tF,iF}. Differentiating AF=C^-4F³ gives Ag=3C^-4F²g. Odd integral in LRe rank-one term vanishes, so LRe g=3C^-2F²g=C²Ag and (C²I−A^-1LRe)g=0. This refutes the claimed 3-mode kernel, not full BE inequality."
+    },
+    {
+      "class": "checked_weight_constant_counterexample",
+      "statement": "m2,ρ1=1,ρ2=2: choose nonzero smooth φ compactly supported where1<ρ<3/2. Then ||∇φ||²_weighted≤(3/2)ω2||∇φ||²_unweighted, while printed8.2 would force ||∇φ||²_unweighted≤(2ω2)^-1||∇φ||²_weighted≤3/4||∇φ||²_unweighted. Impossible. Correctupperfactorusesρ1."
+    }
+  ],
+  "visual_checks": [
+    {
+      "pdf_pages": [
+        6,
+        16,
+        23,
+        25,
+        26,
+        35,
+        38
+      ],
+      "images": [
+        "reviews/TEAM_LM/visual/P-737bb890c5062c71-p6.png",
+        "reviews/TEAM_LM/visual/P-737bb890c5062c71-p16.png",
+        "reviews/TEAM_LM/visual/P-737bb890c5062c71-p23.png",
+        "reviews/TEAM_LM/visual/P-737bb890c5062c71-p25.png",
+        "reviews/TEAM_LM/visual/P-737bb890c5062c71-p26.png",
+        "reviews/TEAM_LM/visual/P-737bb890c5062c71-p35.png",
+        "reviews/TEAM_LM/visual/P-737bb890c5062c71-p38.png"
+      ],
+      "findings": "v2m≥1, 3-mode kernel on fullspace, invalid weight upperconstant and smaller-dimensional proof calls; visual source wording retained."
+    }
+  ],
+  "review_status": {
+    "first_review": "audit_lm_16_independently_confirmed_full_operator_domain_translation_kernel_subclaim_defect_revision_and_local_weight_dimension_gaps",
+    "second_review": "audit_n_16_requested_pending",
+    "first_review_path": "reviews/AUDIT_LM/P-737bb890c5062c71-review.md",
+    "first_review_scope": "Originalv2 PDFpp5/6/11/16/18/29–30/34–35/38. Translation derivative is in full operator domain. Section7 later rearrangement does not shrink Th3.5/3.7 domain. Refutes three-mode nullspace subclaim, not mainTh1.5.",
+    "reviewed_staged_card_sha256": "cafc4dcb86a318c78420c87b85ed2f458aa54e6de0aff891ccbd78970dec4826"
+  },
+  "unchecked": [
+    "All40pages read; external BGL/Nguyen/CarlenFrankLieb/Rellich sources are cited and not separately full read here.",
+    "Original v1 fulltext not read; officialrevision scope verified only. No source-wide global BE certificate accepted because nullspace and domain issues remain."
+  ],
+  "source_binding": {
+    "pdf_path": "corpus/papers/P-737bb890c5062c71/paper.pdf",
+    "pdf_sha256": "737bb890c5062c7154ff19b81638f0073e0b700bc4f8c537e521f2f89c559e8d",
+    "text_path": "corpus/papers/P-737bb890c5062c71/paper.md",
+    "text_sha256": "b138113871a0c4cad8da051b8eefb545b610da1cf06eaecf257a2fbe672a5e1c",
+    "pages": 40,
+    "first_page_version": "arXiv:1512.06121v2 [math.AP] 2 Sep 2020",
+    "full_read_of": "local complete v2 PDF/text, all40pages; abs only used for revision notice"
+  },
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 2024,
+    "source_lines": 2024,
+    "required_content_lines": 1525,
+    "covered_content_lines": 1525,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-737bb890c5062c71/paper.md"
+  },
+  "review_source": "reviews/TEAM_LM/evidence/P-737bb890c5062c71.json",
+  "review_input_sha256": "4c240a51c0330311aa7a913b85f9ea6ae76f077577ac0b4b85a760a0c391c3bc"
+}

@@ -1,0 +1,289 @@
+{
+  "paper_id": "P-53739dd293f0de1c",
+  "observed_title": "Cramér large deviation expansions for martingales under Bernstein’s condition",
+  "authors": [
+    "Xiequan Fan",
+    "Ion Grama",
+    "Quansheng Liu"
+  ],
+  "version": "arXiv:1210.2198v3; preprint submitted 11 April 2018; 26 PDF pages",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1056,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "scope": "全文逐段阅读：摘要、条件与主定理、鞅CLT、辅助引理、Theorem 2.1/2.2证明、Lemma 3.1完整证明、Bernstein/Sakhanenko/Cramér等价条件及参考文献"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "H01": "direct：给出鞅差三角阵（允许随 n 变化）在条件 Bernstein 矩与总预测二次变差接近 1 下的双侧 Cramér 型高斯尾相对展开；i.i.d.标准化和作为推论。它不是仅限独立变量的经典 Cramér 定理。",
+    "H03": "direct：正是 Fan–Grama–Liu 的鞅大偏差展开框架，逐项提供条件、鞅指数倾斜、主展开、适用范围及证明。",
+    "I01": "direct（方法证据）：全文给出条件 Bernstein 有序矩控制，含鞅差条件、由高阶条件矩推出绝对条件矩控制，以及 iid 情形与 Cramér 条件的等价；I01 目录中未见该 paper_id 对应条目，故此为跨主题证据而非账本条目。"
+  },
+  "definitions": [
+    {
+      "name": "martingale difference array and predictable quadratic characteristic",
+      "statement": "对每个 n，(ξ_i,F_i)_{i=1}^n 为平方可积鞅差，X_k=Σ_{i≤k}ξ_i，〈X〉_k=Σ_{i≤k}E(ξ_i²|F_{i−1})。",
+      "source_lines": [
+        118,
+        139
+      ],
+      "pdf_pages": [
+        3
+      ]
+    },
+    {
+      "name": "conditional Bernstein condition (A1)",
+      "statement": "存在 ε∈(0,1/2]，对所有 k≥3、1≤i≤n，|E(ξ_i^k|F_{i−1})|≤(1/2) k! ε^{k−2}E(ξ_i²|F_{i−1})。注意这是带阶乘的几何矩控制，不等同于另行证明的有界增量 Freedman 常数尺度。",
+      "source_lines": [
+        141,
+        146
+      ],
+      "pdf_pages": [
+        3
+      ]
+    },
+    {
+      "name": "variance normalization (A2)",
+      "statement": "存在 δ∈[0,1/2]，使得 |〈X〉_n−1|≤δ² a.s.。",
+      "source_lines": [
+        139,
+        145
+      ],
+      "pdf_pages": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "normalized-sum Bernstein assumptions (A1′),(A2′)",
+      "statement": "令 ξ_i=η_i/√n。η_i 满足参数 H 的同型条件矩界，且 |Σ_i E(η_i²|F_{i−1})−n|≤N²。i.i.d.有限指数矩情形可取某个 H>0、N=0。",
+      "source_lines": [
+        198,
+        223
+      ],
+      "pdf_pages": [
+        5,
+        6
+      ]
+    },
+    {
+      "name": "exponential conjugate change of measure",
+      "statement": "对 |λ|<ε^{-1}，Z_k(λ)=∏_{i≤k}e^{λξ_i}/E(e^{λξ_i}|F_{i−1}) 是乘法鞅，并以 Z_n(λ) 定义 P_λ；X_k=Y_k(λ)+B_k(λ)，其中 Y 是 P_λ 鞅、B 是漂移。",
+      "source_lines": [
+        259,
+        289
+      ],
+      "pdf_pages": [
+        7
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 2.1 (双侧上尾相对正态尾界)",
+      "assumptions": [
+        "(A1) 条件 Bernstein 矩界，ε∈(0,1/2]。",
+        "(A2) |〈X〉_n−1|≤δ²。",
+        "固定 α∈(0,1)，0≤x≤αε^{-1}。"
+      ],
+      "statement": "上下两侧分别有 P(X_n>x)/(1−Φ(x)) ≤ exp{c_α(x³ε+x²δ²)}[1+c_α(1+x)(ε|log ε|+δ)]，以及以 P(X_n<−x)/Φ(−x) 表示的同一上界。常数只依赖 α。",
+      "start_line": 147,
+      "end_line": 153,
+      "pdf_pages": [
+        4
+      ],
+      "proof_steps": [
+        "x<1 由 Theorem 3.1 的正态逼近处理。",
+        "定义条件对数 mgf 与指数倾斜，写出 P(X_n>x) 的 P_λ 积分表示。",
+        "控制条件累积生成函数和倾斜漂移，并选择 λ 为 λ+λδ²+c_α λ²ε=x 的最大解。",
+        "用倾斜鞅 Y 的 Berry–Esseen 型一致界替换正态积分，再用 Mills 比较 1−Φ(λ) 与 1−Φ(x)。",
+        "下尾对鞅 −X 应用同一上界。"
+      ],
+      "gaps": [
+        "证明依赖多个绝对常数 c_α，原文不追踪可用数值。",
+        "这不是独立增量 Freedman 界的 c/3 指数尺度。"
+      ],
+      "proof_verification": "full_text_read; displays and parameter ranges on PDF pp.3–6 visually checked; proof read, not independently re-proved."
+    },
+    {
+      "label": "Theorem 2.2 (双侧下尾相对正态尾界)",
+      "assumptions": [
+        "(A1),(A2)。",
+        "存在绝对 α₀>0，0≤x≤α₀ε^{-1} 且 δ≤α₀。"
+      ],
+      "statement": "P(X_n>x)/(1−Φ(x)) ≥ exp{−c_{α₀}[x³ε+x²δ²+(1+x)(ε|log ε|+δ)]}；下尾有对应结论。",
+      "start_line": 154,
+      "end_line": 162,
+      "pdf_pages": [
+        4
+      ],
+      "proof_steps": [
+        "x<1 由 Theorem 3.1 处理；大 x 取满足 λ−λδ²−(c_1/2)λ²ε=x 的最小正解。",
+        "在小倾斜区间用倾斜下的 CLT 界直接比较高斯尾积分。",
+        "在较大 λ 区间，对 0<Y_n(λ)≤Kγ 截断，利用高斯局部质量减去 CLT 误差得到该区间概率的正下界。",
+        "将两区间合并，比较 1−Φ(λ) 与 1−Φ(x) 得到下尾相对误差下界；对 −X 得下侧。"
+      ],
+      "gaps": [
+        "需小方差误差 δ≤α₀；下界常数非显式且不优化。"
+      ],
+      "proof_verification": "full_text_read; statement visually checked on PDF p.4; proof read, not independently re-proved."
+    },
+    {
+      "label": "Corollary 2.1 (相对尾概率双边指数展开)",
+      "assumptions": [
+        "(A1),(A2)。",
+        "0≤x≤α₀ min{(ε|log ε|)^{-1},δ^{-1}}，δ=0 时按无穷大解释相应限制。"
+      ],
+      "statement": "两侧比值为 exp{θ c_{α₀}x³ε}[1+θ′c_{α₀}(1+x)(ε|log ε|+δ)]，|θ|,|θ′|≤1；下尾有独立符号 θ。",
+      "start_line": 163,
+      "end_line": 175,
+      "pdf_pages": [
+        4
+      ],
+      "proof_steps": [
+        "由上、下相对界及 |e^z−1|≤e^{α}|z| 将指数误差夹成带有有界 θ 的乘法展开。"
+      ],
+      "gaps": [
+        "θ_i 依赖鞅、n、x；不是显式误差常数。"
+      ],
+      "proof_verification": "full_text_read; statement visually checked on PDF p.4."
+    },
+    {
+      "label": "Corollaries 2.2–2.4 (标准化和的一致展开)",
+      "assumptions": [
+        "(A1′),(A2′)：η_i 条件 Bernstein 参数 H、条件方差和偏差界 N²。"
+      ],
+      "statement": "Cor.2.2：对任意固定 α₁>0，α₁√log n≤x≤α₂√n，双侧 log-tail/normal-tail 比值为 O((H+N)x³/√n)。Cor.2.3：0≤x=O(√log n) 时比值为 1+O((H+N)(1+x)log n/√n)。Cor.2.4：α√log n≤x=o(n^{1/6}) 时比值为 1+O((H+N)x³/√n)。",
+      "start_line": 218,
+      "end_line": 256,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "将 ξ_i=η_i/√n 代入 Theorem 2.1、2.2 对应范围并整理 ε=H/√n 量级及 δ=N/√n。"
+      ],
+      "gaps": [
+        "Cor.2.2 的 α₂ 是存在的绝对常数；“任意 α₁>0”不意味着 α₂ 可任意增大。",
+        "Big-O 常数和渐近 n 起点未给显式数值。"
+      ],
+      "proof_verification": "full_text_read; displayed ranges and formulas visually checked on PDF p.6."
+    },
+    {
+      "label": "Theorem 3.1 (普通正态逼近率)",
+      "assumptions": [
+        "(A1),(A2)。"
+      ],
+      "statement": "sup_x |P(X_n≤x)−Φ(x)|≤c(ε|log ε|+δ)，其中 c 为文中绝对常数。视觉核对原 PDF p.7 的式 (24)：ε|log ε|+δ 整体位于括号中，没有除以 |log ε|。",
+      "start_line": 294,
+      "end_line": 300,
+      "pdf_pages": [
+        7
+      ],
+      "proof_steps": [
+        "原文同页 Lemma 3.1 给出 tilted martingale Y_n(λ) 在 P_λ 下的Kolmogorov误差上界 c(λε+ε|log ε|+δ)；取 λ=0 时 Y_n(0)=X_n、P_0=P，直接得到式 (24)。",
+        "Lemma 3.1 的证明使用平滑正态比较，将误差拆为 I1、I2、I3，以 predictable time change、Gaussian smoothing 与条件矩界逐项估计，最后吸收同一Kolmogorov误差项。"
+      ],
+      "gaps": [
+        "绝对常数 c 未显式计算；其证明继承 Bolthausen 平滑技术。"
+      ],
+      "proof_verification": "full_text_read; Theorem 3.1 and Lemma 3.1 statement visually checked on source PDF p.7 (equation (24)); proof of Lemma 3.1 read in paper.md lines 611–880 / PDF pp.16–23. OCR in paper.md mis-rendered the displayed numerator/denominator; source image is authoritative."
+    },
+    {
+      "label": "Propositions 8.1–8.2 (Bernstein、Sakhanenko、Cramér 条件等价)",
+      "assumptions": [
+        "8.1 是条件版本，逐个鞅差满足统一常数矩条件。",
+        "8.2 限于 i.i.d. 情形。"
+      ],
+      "statement": "Proposition 8.1 证明条件 Bernstein、Sakhanenko 指数加权三阶绝对矩条件及条件绝对高阶矩 Bernstein 界等价。Proposition 8.2 证明 i.i.d. 时 Bernstein、Cramér 有限指数矩及 Sakhanenko 条件等价。",
+      "start_line": 894,
+      "end_line": 951,
+      "pdf_pages": [
+        23,
+        24
+      ],
+      "proof_steps": [
+        "Bernstein 矩条件结合 Lemma 4.1 对条件绝对矩作指数级控制，选取 t 使 t f(t)=1 得 Sakhanenko 参数。",
+        "指数加权条件用 x^k≤k!e^x 推出统一绝对矩 Bernstein 形式；反向蕴含直接求和。",
+        "i.i.d.时再分别由 Bernstein 条件推出有限 mgf、由 Cramér 矩界推出 Bernstein 条件。"
+      ],
+      "gaps": [
+        "常数 H/K 的存在性论证不提供最小常数。",
+        "Cramér 条件等价是 iid 专属，不可直接推广为一般条件鞅独立结论。"
+      ],
+      "proof_verification": "full_text_read; Appendix/Section 8 proof on PDF pp.23–24 read."
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "Theorem 2.1 中 c_α 仅依赖固定 α；Theorem 2.2 中 α₀,c_{α₀} 为绝对常数。CLT 与辅助界常数绝对但未数值化。标准化和的误差显含 H+N。",
+    "dependence": "结果以 ε 控制条件高阶矩，以 δ² 控制预测二次变差偏离 1；相对尾界主误差分成 x³ε、x²δ² 与 (1+x)(ε|log ε|+δ)。"
+  },
+  "endpoint_limits": {
+    "moderate_range": "Theorem 2.1/2.2 保证 x 到固定比例 ε^{-1}；双边指数展开 Corollary 2.1 需更窄的 min{(ε|log ε|)^{-1},δ^{-1}}。",
+    "variance_normalization": "若 δ≤α₀ 才有 Theorem 2.2 的相对尾下界；若二次变差偏差不趋小，该定理不适用。",
+    "iid_corollary": "标准化和范围分别是 x∈[α₁√log n,α₂√n]、x=O(√log n)、x=o(n^{1/6})，每条结论的误差型不同。",
+    "not_provided": "不声称无条件任意 martingale 的 Cramér 展开，也不给有限样本可直接数值使用的全常数尾界。"
+  },
+  "reusable_methods": [
+    {
+      "method": "条件 Bernstein 矩界与 Cramér/Sakhanenko 条件互换",
+      "transfer": "对于目标鞅先核验每个条件增量的统一阶乘矩界；若从指数矩假设出发，需重新证明条件版本且保证统一常数，不能以“类 Cramér 条件”名称代替核验。",
+      "limit": "Section 8 的 Cramér 等价仅覆盖 iid。"
+    },
+    {
+      "method": "指数倾斜下的鞅+漂移分解",
+      "transfer": "构造乘法鞅 Z(λ)，在 P_λ 下写 X=Y+B；分别控制倾斜漂移/累积生成函数，并对 Y 使用 CLT 误差来逼近相对正态尾。",
+      "limit": "目标应用必须检查 mgf 域 |λ|<ε^{-1}、倾斜后的矩条件和方差偏差。"
+    },
+    {
+      "method": "高斯平滑证明带有可记录的精度成本",
+      "transfer": "逐项记录 Taylor 三阶误差、预测二次变差差、时间方差变化，并以可预测方差时间变化与积分尺度进行吸收。可迁移的是证明架构，不是此处的具体概率界常数。",
+      "limit": "需要 martingale difference 结构与可控条件矩，不可外推为任意依赖数组。"
+    }
+  ],
+  "unchecked": [
+    "全文纸面范围已读完，但没有独立重做每个长证明，也没有复算所有绝对常数。",
+    "PDF pp.3–7 的主要假设、定理与推论公式及范围做了视觉核对；其余证明公式以可检索文本阅读，未逐式图像复核。",
+    "此条不出现在 I01 的对应目录条目中，I01 交叉相关说明不是筛查条目状态。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1056,
+    "source_lines": 1056,
+    "required_content_lines": 771,
+    "covered_content_lines": 771,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-53739dd293f0de1c/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-53739dd293f0de1c.json",
+  "review_input_sha256": "50ff75a853c6c3114438e200e115063ede5aa8f4fec95b498b6f20cf8055b4f3"
+}

@@ -1,0 +1,240 @@
+{
+  "paper_id": "P-0f4471d96cc82d4f",
+  "observed_title": "An elementary proof of linear programming optimality conditions without using Farkas’ lemma",
+  "authors": [
+    "Anders Forsgren",
+    "Margaret H. Wright"
+  ],
+  "version": "Local PDF: arXiv:1407.1240v1 overlay dated July 4, 2014; title page internal date February 13, 2018. Both observed dates retained; no inferred publication version.",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 720,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "scope": "Complete paper.md, title/abstract, Sections 1–10 and all references. Initial output middle clipping was explicitly reread as lines207–390 and391–557. No appendix in this14-page PDF. Original PDF pages8–10 and13 rendered to inspect matrices, perturbation, Figure1 and Farkas bounded auxiliary LP."
+    }
+  ],
+  "topic_relevance": {
+    "B01": "direct: finite-dimensional mixed-form LP multiplier certificates and an elementary Farkas proof.",
+    "B04": "adjacent: active-set rank, degeneracy and perturbation; does not prove general conic constraint qualifications or minimax."
+  },
+  "definitions": [
+    {
+      "name": "Mixed LP and sign convention",
+      "statement": "min cᵀx, A_E x=b_E, A_I x≥b_I; A_E full row rank m_E, A=[A_E;A_I]. Equality multipliers unrestricted; inequality multipliers nonnegative in Aᵀλ=c.",
+      "source_lines": [
+        98,
+        109
+      ],
+      "pdf_pages": [
+        2
+      ]
+    },
+    {
+      "name": "Feasible direction",
+      "statement": "p≠0 and a positive step interval preserving all constraints; equivalently A_Ep=0 and active inequality rows times p≥0. Inactive rows only bound step length.",
+      "source_lines": [
+        135,
+        151
+      ],
+      "pdf_pages": [
+        3
+      ]
+    },
+    {
+      "name": "Vertex and working set",
+      "statement": "Vertex means full column rank n of the active-row matrix; working set contains all independent equality rows and an independent subset of active inequalities. An optimal working set additionally solves Wᵀλ_W=c with its inequality components nonnegative.",
+      "source_lines": [
+        224,
+        243,
+        364,
+        375,
+        407,
+        413
+      ],
+      "pdf_pages": [
+        5,
+        7,
+        8
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Propositions3.1–3.3: weak duality and complementarity",
+      "assumptions": [
+        "Finite real matrices, primal feasibility A_Ex=b_E and A_Ix≥b_I.",
+        "Multiplier Aᵀλ=c and λ_I≥0; equality multipliers have no sign condition."
+      ],
+      "statement": "cᵀx−λᵀb=λ_Iᵀ(A_Ix−b_I)≥0; if complementarity is zero then x is globally optimal with value λᵀb. If λ already certifies the optimal value, every primal optimum is complementary with that same λ.",
+      "start_line": 187,
+      "end_line": 220,
+      "pdf_pages": [
+        4,
+        5
+      ],
+      "proof_steps": [
+        "作者证明：expand Aᵀλ=c and split equality and inequality slacks, lines191–205,220.",
+        "本次核验：the gap identity is exact finite algebra; it proves a sufficient certificate without any rank or Slater condition."
+      ],
+      "gaps": [
+        "This gives sufficiency and weak duality; existence of a qualifying multiplier is a separate necessity result."
+      ]
+    },
+    {
+      "label": "Lemma4.4: optimal vertex or recession descent",
+      "assumptions": [
+        "Primal constraints are consistent.",
+        "Combined constraint matrix rank(A)=n.",
+        "Paper’s background convention c≠0,A≠0 and independent equality rows."
+      ],
+      "statement": "Either cᵀx is bounded below and an optimal vertex exists, or there is p with A_Ep=0,A_Ip≥0,cᵀp<0 giving unbounded descent.",
+      "start_line": 279,
+      "end_line": 328,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "proof_steps": [
+        "作者证明：start at any feasible x, find a nonzero null direction of active rows, choose a nonincreasing sign and take the maximal feasible step; newly active row is independent, so active rank increases. If no blocker exists in the descent sign, it is a recession direction. Enumerate the finite vertex set and choose smallest objective, lines287–328.",
+        "本次核验：positive finite blocker steps preserve old active rows and strictly increase rank; a recession direction plus any original feasible point gives cᵀ(x+tp)→−∞."
+      ],
+      "gaps": [
+        "Original line321 says no more than n executions of Step1. If initial active rank r=0, n rank increases need n+1 Step1 visits including terminal visit. Local correction: at most n−r increases and n−r+1 Step1 checks. This is an iteration-count off-by-one, not a failure of the dichotomy.",
+        "Without rank(A)=n the feasible set can have lineality and no vertex, e.g. min x₁+x₂ subject x₁+x₂≥1; multiplier sufficiency still holds."
+      ]
+    },
+    {
+      "label": "Propositions5.1 and6.3: degenerate multiplier existence",
+      "assumptions": [
+        "Consistent mixed LP, independent equality rows.",
+        "For6.3: rank(A)=n and original objective bounded below.",
+        "For5.1: candidate is a nondegenerate vertex, so active matrix is square nonsingular."
+      ],
+      "statement": "At a nondegenerate vertex, its unique active-row multiplier certifies optimality iff its inequality components are nonnegative. For a bounded-below full-column-rank mixed LP, an optimal vertex and an optimal nonsingular working set exist, and extending working multipliers by zeros gives Aᵀλ=c,λ_I≥0 and complementarity.",
+      "start_line": 335,
+      "end_line": 521,
+      "pdf_pages": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "proof_steps": [
+        "作者证明：negative active inequality multiplier yields feasible descent p=W⁻¹e_i; nonnegative multipliers certify via3.2 (lines340–354).",
+        "作者证明：relax each inequality rhs by distinct ε,ε²,…,ε^{m_I}; additional active dependent row would impose a nonzero polynomial equation with a unique ε^j term. Choose sufficiently small ε avoiding its roots, solve perturbed nondegenerate optimum, remove rhs perturbation, and extend multipliers by zero (lines431–521).",
+        "本次局部论证补足：perturbed and original LP have identical recession inequalities; if perturbed objective were unbounded, Lemma4.4 gives a direction that also makes the nonempty original LP unbounded. Thus boundedness transfers.",
+        "本次局部论证补足：there are finitely many nonsingular choices W and extra rows j, so finitely many nonzero polynomials and positive roots; a common small ε avoids all roots. To justify fixing W as ε varies in Part2, take an ε_k↓0 subsequence with one constant W, which exists by finiteness. Feasible x_{ε_k}=W⁻¹(b_W−e_W(ε_k))→x*=W⁻¹b_W preserves all original inequalities and fixes λ_W=W^{-T}c. This makes explicit the omitted dependence management."
+      ],
+      "gaps": [
+        "The paper writes W_ε,q as ε-dependent objects while arguing with a fixed polynomial; its finite-working-set repair is elementary but must be stated separately rather than called a printed hypothesis.",
+        "Any working set at a degenerate optimal vertex need not have nonnegative multipliers; existence of one optimal set is the conclusion.",
+        "No explicit numeric ε threshold, bit-complexity or solver runtime is given; Figure1 deliberately uses ε=1/2 only as illustration."
+      ]
+    },
+    {
+      "label": "Propositions7.1 and8.1: all optima and optimal working sets",
+      "assumptions": [
+        "Consistent LP, rank(A)=n, objective bounded below.",
+        "For8.1 the given optimum is a vertex."
+      ],
+      "statement": "A point is optimal iff feasible and admits Aᵀλ=c,λ_I≥0,λᵀ(Ax−b)=0; the same optimal multiplier works at all optima. Every optimal vertex has a nonsingular optimal working set, possibly different from another optimal vertex’s set.",
+      "start_line": 560,
+      "end_line": 612,
+      "pdf_pages": [
+        11,
+        12
+      ],
+      "proof_steps": [
+        "作者证明：6.3 supplies an optimal multiplier and3.3 gives complementarity at every other optimum. Keep equality rows and rows with positive multipliers, which must be active at every optimum; complete these independent rows to rank n using the given vertex’s other active rows.",
+        "本次核验：a zero multiplier permits the corresponding inequality to become inactive at another optimum, so working-set identity is not invariant."
+      ],
+      "gaps": [
+        "The statement on vertices requires full active rank; a general nonvertex optimum may have a smaller independent working set."
+      ]
+    },
+    {
+      "label": "Lemma9.1: Farkas alternative with no rank restriction",
+      "assumptions": [
+        "Finite real m×n A and n-vector c; no rank condition on A."
+      ],
+      "statement": "Exactly one holds: ∃y≥0,Aᵀy=c; or ∃p,Ap≥0,cᵀp<0.",
+      "start_line": 617,
+      "end_line": 645,
+      "pdf_pages": [
+        12,
+        13
+      ],
+      "proof_steps": [
+        "作者证明：simultaneous feasibility contradicts cᵀp=yᵀAp≥0. Minimize cᵀp subject Ap≥0 and−1≤p_i≤1. The added ±I makes rank n, zero is feasible and the cube is bounded. Optimal multiplier identity c=Aᵀλ₁+λ₂−λ₃ and value cᵀp*=−1ᵀ(λ₂+λ₃) imply zero value⇒λ₂=λ₃=0 and y=λ₁; negative value supplies p.",
+        "本次核验：rank assumption is discharged by the bounded auxiliary cube; it is not inherited as a restriction on the original Farkas matrix. Zero c directly gives y=0 and excludes strict-negative p; zero A handled directly if needed rather than invoked under paper’s A≠0 background."
+      ],
+      "gaps": [
+        "The proof is for finitely many coordinates and constraints; no infinite-index or infinite-dimensional extension follows."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "No quantitative error rate. Finite vertex enumeration count ≤binom(m,n) (equality-containing subsets reduce it). Active-rank procedure ≤n−r rank increases; at most n−r+1 Step1 checks. Perturbation exponents1,…,m_I and common ε threshold depend on all nonsingular row subsets and polynomial positive roots; paper gives no explicit threshold or conditioning bound.",
+    "dependence": "Multiplier magnitude depends on inverse working matrices W^{-T}; there is no uniform margin or dimension-free certificate conditioning."
+  },
+  "endpoint_limits": [
+    "Rank(A)<n invalidates vertex-existence assertion but not exact multiplier sufficiency.",
+    "Degenerate optimum need not certify with every independent active subset.",
+    "Strict descent cᵀp<0 distinguishes the Farkas alternative; nonpositive direction is insufficient.",
+    "Zero objective/vector/matrix cases should be checked directly under the author’s nonzero background convention."
+  ],
+  "reusable_methods": [
+    "Keep mixed inequality direction AIx≥bI and dual signs together.",
+    "Audit primal feasibility, stationarity and complementarity as an exact finite certificate before invoking existence theorems.",
+    "Use finite working-set enumeration or ε→0 fixed-basis subsequences to justify perturbation arguments.",
+    "For Farkas, bound homogeneous directions in a cube, derive a full-rank LP multiplier, then eliminate artificial box multipliers when the optimum is zero."
+  ],
+  "unchecked": [
+    "This is full-paper reading with key finite algebra independently checked; it is not certification of all cited books/articles.",
+    "No simplex/interior-point implementation run; source educational proof gives no practical complexity theorem.",
+    "No transfer to general conic, nonlinear, noncompact infinite LP or center-cube common-input model is asserted."
+  ],
+  "local_repairs": [
+    {
+      "classification": "printed proof dependence omitted; locally repaired",
+      "location": "Section6 proof pp9–10, lines442–521",
+      "repair": "Finite row-subset/root set and fixed-basis ε_k subsequence; same recession cone transfers boundedness.",
+      "theorem_conclusion_preserved": true
+    },
+    {
+      "classification": "printed iteration count off-by-one",
+      "location": "Lemma4.4 proof p7 line321",
+      "repair": "n−r rank increases and n−r+1 Step1 checks, including final check.",
+      "theorem_conclusion_preserved": true
+    }
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 720,
+    "source_lines": 720,
+    "required_content_lines": 538,
+    "covered_content_lines": 538,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-0f4471d96cc82d4f/paper.md"
+  },
+  "review_source": "evidence/reviews/TEAM_AB/evidence/P-0f4471d96cc82d4f.json",
+  "review_input_sha256": "020232a3125dc5401b9941cb1167de656b86f4ba831dbb8b0e1f94827bc4a66e"
+}

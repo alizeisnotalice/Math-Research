@@ -1,0 +1,177 @@
+{
+ "paper_id": "P-2f81500e5dfa70c6",
+ "observed_title": "On Jump Measures of Optional Processes with Regulated Trajectories",
+ "authors": [
+  "Frank Oertel"
+ ],
+ "version": "arXiv:1508.01973v1, 2015-08-09, 11 PDF pages; no later publication/version independently checked.",
+ "read_ranges": [
+  {
+   "start_line": 1,
+   "end_line": 487,
+   "pdf_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "scope": "entire extracted article: process measurability preliminaries, stopping-time enumeration for cadlag jumps, jump-measure construction/integration, Levy special case, regulated optional-process extension, all proofs, open problems and references"
+  }
+ ],
+ "read_status": "full_read",
+ "topic_relevance": {
+  "J05": "direct component source for enumerating jump times and representing the induced jump measure of an optional process with regulated trajectories. The theorem does not construct a compensator, a nonhomogeneous intensity kernel, or a frozen-coordinate iteration; those interface fields remain undefined.",
+  "I02": "adjacent: The preliminaries distinguish predictable, optional, progressive and adapted processes, and the paper constructs the induced jump random measure; it does not develop optional/predictable projection or a general compensator."
+ },
+ "definitions": [
+  {
+   "name": "regulated optional process and jump set",
+   "statement": "Under the usual conditions on the filtration, an optional process X with regulated trajectories has X− predictable and X+ adapted; the jump process ΔX=X+−X− is optional. The trajectory jump set is at most countable and is partitioned into finite subsets by bounded time windows and jump-size bands.",
+   "source_lines": [
+    102,
+    135
+   ],
+   "pdf_pages": [
+    2,
+    3
+   ]
+  },
+  {
+   "name": "jump measure",
+   "statement": "For Borel B⊂R+×R, jX(ω,B)=Σ_{s>0}1_B(s,ΔXs(ω))1_{ΔXs(ω)≠0}; for cadlag X and A bounded away from zero, only finitely many A-jumps occur on each compact time interval.【修订 2026-10-06 R47】原文 Lemma 2（PDF p5）仅假设 A∈B*（0∉A），未写 bounded away from zero；数学上 0∉A 不足以保证结论（A={1/n} 可有无穷多 A-jumps），本卡条件是必要的数学修补而非原文转录，原文 p5 \"A⊆R\\(−ε,ε) for all ε>0\" 的量词系原文疏漏（应为\"存在 ε\"）。",
+   "source_lines": [
+    179,
+    227
+   ],
+   "pdf_pages": [
+    5
+   ],
+   "statement_original_r47": "For Borel B⊂R+×R, jX(ω,B)=Σ_{s>0}1_B(s,ΔXs(ω))1_{ΔXs(ω)≠0}; for cadlag X and A bounded away from zero, only finitely many A-jumps occur on each compact time interval."
+  },
+  {
+   "name": "jump integrals on a finite-away-from-zero set",
+   "statement": "For cadlag X, measurable f and Borel A⊂R with 0∉closure(A), the integral over [0,t]×A equals the pathwise sum over jump times and also over the iterative stopping-time labels; the absolute integral is bounded pathwise by a finite random maximum of |f| times the finite number of such jumps.",
+   "source_lines": [
+    206,
+    274
+   ],
+   "pdf_pages": [
+    5,
+    6
+   ]
+  }
+ ],
+ "theorem_cards": [
+  {
+   "label": "Proposition 1 (iterative enumeration for cadlag adapted X)",
+   "assumptions": [
+    "X is adapted and cadlag on a filtered probability space satisfying the usual conditions.",
+    "A is Borel and 0∉A.【修订 2026-10-06 R47（卡↔PDF 比对）】PDF p4 原文仅假设 0∉A；卡原句\"hence is bounded away from zero\"系错误推断（0∉A 推不出，反例 A={1/n}）。原文证明中 \"lim ΔX_{t_n} ∈ Ā ⇒ ΔX_{t*}≠0 (since 0∉A)\" 一步实际需要 0∉closure(A)（即 A 与 0 有正距离），该条件为闭合原文证明 gap 所需的附加假设，使用本命题时应显式补充；卡另一定义卡已用正确的 0∉closure(A) 表述。"
+   ],
+   "statement": "Set T1A=inf{t>0:ΔXt∈A}, TnA=inf{t>Tn−1A:ΔXt∈A}; after modifying on an evanescent set, these are strictly increasing stopping times. The disjoint graphs of the adjusted SAn enumerate exactly {ΔX∈A}.",
+   "start_line": 144,
+   "end_line": 179,
+   "pdf_pages": [
+    4
+   ],
+   "proof_steps": [
+    "Use the standard stopping-time début result for cadlag adapted X.",
+    "Exclude finite accumulation of selected jumps: right continuity would force a nonzero limiting jump, contradicting the countability/regulated-path structure of the nonzero jump set.",
+    "If a selected jump time were not hit by the sequence, the next infimum would contradict the defining infimum; then apply the stopping-time graph theorem to obtain the disjoint graph union."
+   ],
+   "gaps": [
+    "The iterative representation is for a fixed Borel jump-size set bounded away from zero; it does not by itself provide a nonhomogeneous compensator or an ordering rule for private frozen coordinates."
+   ],
+   "assumptions_original_r47": [
+    "X is adapted and cadlag on a filtered probability space satisfying the usual conditions.",
+    "A is Borel and 0∉A, hence is bounded away from zero."
+   ]
+  },
+  {
+   "label": "Theorem 4 (thin-set stopping-time enumeration for optional regulated X)",
+   "assumptions": [
+    "X is optional; every trajectory is regulated; ΔX0=0.",
+    "Every trajectory has infinitely many jump times."
+   ],
+   "statement": "There is a sequence of stopping times (Tn) strictly increasing in (0,∞) for every ω such that the disjoint graphs [[Tn]] enumerate {ΔX≠0}; in particular the jump set is thin.",
+   "start_line": 376,
+   "end_line": 423,
+   "pdf_pages": [
+    9,
+    10
+   ],
+   "proof_steps": [
+    "Show ΔX is optional from predictability of X− and optionality of X+.",
+    "For each path, partition its countable jump set into finite sets Dm by the regulated-path decomposition, and sort each Dm increasingly.",
+    "Each first element is the début of an optional set; subsequent elements are obtained after the optional interval after the preceding stopping time, hence are stopping times.",
+    "Reassemble the finite enumerations over m into a countable sequence; the infinite-jump assumption ensures the sequence can enumerate all jumps."
+   ],
+   "gaps": [
+    "The pathwise infinite-jump condition excludes paths with only finitely many jumps; the theorem gives a measurable enumeration, not intensities or compensation identities."
+   ]
+  },
+  {
+   "label": "Theorem 5 and Corollary 1 (induced integer-valued random measure)",
+   "assumptions": [
+    "X is optional with regulated paths; ΔX0=0; every path has infinitely many jumps."
+   ],
+   "statement": "The function jX(ω,G)=Σ_{s>0}1_G(s,ΔXs(ω))1_{ΔXs(ω)≠0} is an integer-valued random measure, and its evaluation is the countable sum over the stopping-time enumeration from Theorem 4.",
+   "start_line": 424,
+   "end_line": 445,
+   "pdf_pages": [
+    10
+   ],
+   "proof_steps": [
+    "Invoke Theorem 4 to represent the thin jump set as disjoint stopping-time graphs.",
+    "Apply the cited random-measure theorem to obtain integer-valued measurability.",
+    "Substitute the disjoint graph indicators into the defining sum and interchange the two nonnegative sums."
+   ],
+   "gaps": [
+    "This is an uncompensated jump measure. The paper ends by asking whether the finite-away-from-zero count and integral propositions extend to all optional regulated processes; those extensions are not claimed."
+   ]
+  }
+ ],
+ "constant_dependence": {
+  "explicit": "No universal concentration constant is derived. For A bounded away from zero and finite t, the pathwise integral bound uses cAt(ω)=max_{jumps in [0,t]×A}|f(s,ΔXs)| and multiplies by jX(ω,[0,t]×A). For a Lévy process, the fixed-A count has Poisson intensity νX(A)=E[jX([0,1]×A)].",
+  "dependence": "The stopping-time construction depends on the chosen jump-size set A or on the countable pathwise magnitude/time decomposition; it does not yield a state/time-dependent intensity λ(t,x) or a compensator ν."
+ },
+ "endpoint_limits": {
+  "small_jumps": "The finite-count and finite-integral claims require jump sizes separated from zero; infinitely many small jumps are not covered by those finite-sum statements.",
+  "optional_regulated": "The paper extends graph enumeration and the random-measure definition, but explicitly leaves open whether the finite-count and integration propositions hold for arbitrary optional regulated trajectories.",
+  "compensation": "No Doob–Meyer/random-measure compensator is constructed for general X; the Lévy Poisson statement is a special law of the uncompensated count, not a general compensation theorem.",
+  "iteration": "No coordinate freezing, state update, intensity iteration, or convergence/error estimate is defined."
+ },
+ "reusable_methods": [
+  {
+   "method": "Enumerate cadlag jumps in a Borel size band by successive first-hit stopping times",
+   "transfer": "If the target process has cadlag adapted paths and its selected jump sizes stay away from zero, the same pathwise/filtration check can support event labeling. It does not establish target intensity or compensation."
+  },
+  {
+   "method": "Enumerate optional regulated jump graphs via finite pathwise layers and début stopping times",
+   "transfer": "Could provide a measurable jump-label layer if the target state process is optional regulated and has infinitely many jumps on every path, but those hypotheses and enumeration order must be proved for the target."
+  }
+ ],
+ "unchecked": [
+  "All 11 extracted pages, including the complete proofs and the two stated open problems, were read. Theorem 4/5 and Corollary 1 on PDF page 10 were checked against a PyMuPDF render at reviews/HK/P-2f81500e5dfa70c6_page_10.png.",
+  "I did not independently reprove cited stopping-time début or integer-valued random-measure results. I checked the article’s own reduction and distinguished its uncompensated random measure from compensator theory."
+ ],
+ "range_validation": {
+  "range_valid": true,
+  "full_coverage": true,
+  "covered_lines": 487,
+  "source_lines": 487,
+  "required_content_lines": 379,
+  "covered_content_lines": 379,
+  "reported_status": "full_read",
+  "source": "corpus/papers/P-2f81500e5dfa70c6/paper.md"
+ },
+ "review_source": "reviews/HK/evidence/P-2f81500e5dfa70c6.json",
+ "review_input_sha256": "d82bbdd179b393ea2c89f50f731074e44f908f001a239403535540deec8054de"
+}

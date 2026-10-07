@@ -1,0 +1,41 @@
+{
+  "paper_id": "P-80308b8e549e09e2",
+  "patch_of": "reviews/LN/evidence/P-80308b8e549e09e2.json",
+  "original_card_sha256": "2ac4062ab08f89880eea8f5cb5304b7afff1f4ca49fd4a2f4467a780ef46316f",
+  "observed_title": "Thinking Out of the Box: Hybrid SAT Solving by Unconstrained Continuous Optimization",
+  "read_status": "scoped_audit_followup",
+  "read_ranges": [],
+  "topic_relevance": {
+    "code": "L05",
+    "decision": "direct",
+    "basis": "全文将混合布尔约束的 Fourier 展开变成连续目标，给出 SAT 的平方/绝对值无约束优化归约、何时能省去布尔盒罚项、符号舍入及误差界，并测试多种求解器。对 SAT 约束编码与求解流程直接相关；但数值优化器本身不是完整 SAT 求解器，也不提供一般 UNSAT 证明。"
+  },
+  "source_check": {
+    "reviewer": "audit_lm_16",
+    "finding": "PDFp6 Proposition18 declares |FE_c(l)|≤ε while OR proof needs strictthreshold; k2,l(0,0),FE1/4 andsgn(+1,+1) violatesOR. Source endpoint proposition is false; repair with strictFE<2^-k or parameterε<2^-k. Fullspace rawFE+quarticbad negative outsidebox; squareFE+α>0 correct.",
+    "status": "accepted_and_preserved_in_spec_and_behavior"
+  },
+  "constant_dependence": "本文给出的约束舍入计数界对长度 k 的依赖分别为 4^k、4、4^{k−1} 乘以连续平方残差 W；这对长子句是指数代价。优化时间与可达目标值没有一般保证。算法实验每个公式限时 300 秒，属实验配置而非复杂度常数。",
+  "endpoint_limits": [
+    "平方/绝对值全局零值可认证 SAT 可满足性；非零数值近似值与局部优化器的停止状态不提供同等认证。",
+    "省略罚项需验证约束舍入性质；XOR、OR、NAE 的零残差情形有用，但不能把这一性质推广到一般 cardinality 或 pseudo-Boolean 约束。",
+    "Proposition 18 的闭阈值条件 |FE_c|≤ε 与严格小于证明冲突，阈值恰好取等时全零向量提供失败例；使用阈值须显式处理端点。",
+    "作者实验的随机 3-CNF、2-XOR、cardinality 基准与节点配置有限；经验上非零罚项有利于 cardinality，却降低 CNF/XOR 性能，不能据此推出普适调参定理。",
+    "文章允许连续数值搜索寻找满足赋值，但没有据此提供不可满足证明或完整性保证；完整 SAT/UNSAT 任务仍需完备离散求解器或可核验证明轨迹。"
+  ],
+  "unchecked": [
+    "No copied fullread claim; independentaudit_lm_16p6recheck is referenced; TEAMLMbehavior gives exactfinitecounterexample."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": false,
+    "covered_lines": 0,
+    "source_lines": 978,
+    "required_content_lines": 669,
+    "covered_content_lines": 0,
+    "reported_status": "scoped_audit_followup",
+    "source": "corpus/papers/P-80308b8e549e09e2/paper.md"
+  },
+  "review_source": "reviews/TEAM_LM/evidence/P-80308b8e549e09e2.json",
+  "review_input_sha256": "a0c56d8ad4bacbe1dec055907108a7345fbefd1263e1ddb80d1af335604ce67d"
+}

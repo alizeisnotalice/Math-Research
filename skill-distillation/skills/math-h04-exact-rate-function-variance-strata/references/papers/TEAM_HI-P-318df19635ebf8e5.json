@@ -1,0 +1,218 @@
+{
+  "paper_id": "P-318df19635ebf8e5",
+  "observed_title": "Moderate Deviations of Hitting Times for Trajectories of Sums of Independent and Identically Distributed Random Variables",
+  "authors": [
+    "Yuheng He"
+  ],
+  "version": "arXiv:2311.05409v1, 9 November 2023 visible watermark; nine PDF pages; external metadata not reverified",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "file": "corpus/papers/P-318df19635ebf8e5/paper.md",
+      "start_line": 1,
+      "end_line": 469,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "scope": "Full article: assumptions, main theorem, cited path MDP/LDP, all proofs, simulations and references; important pages1,2,4,6,8,9 visually checked"
+    }
+  ],
+  "proof_verification": "local_source_errors_checked_and_repairs_separated; external Hu–Lee/Schuette path theorems not independently certified",
+  "identity_status": "title_authors_visible_version_observed_not_bibliographic_dedup_certified",
+  "visual_checks": [
+    "reviews/TEAM_HI/evidence/rendered/P-318df19635ebf8e5/p1.png",
+    "reviews/TEAM_HI/evidence/rendered/P-318df19635ebf8e5/p2.png",
+    "reviews/TEAM_HI/evidence/rendered/P-318df19635ebf8e5/p4.png",
+    "reviews/TEAM_HI/evidence/rendered/P-318df19635ebf8e5/p6.png",
+    "reviews/TEAM_HI/evidence/rendered/P-318df19635ebf8e5/p8.png",
+    "reviews/TEAM_HI/evidence/rendered/P-318df19635ebf8e5/p9.png"
+  ],
+  "topic_relevance": {
+    "H01": "direct for logarithmic moderate deviation of iid path hitting time; not a Cramér normal relative-tail ratio",
+    "H04": "adjacent path rate minimization and unique-zero argument; not finite-threshold exact tail"
+  },
+  "definitions": [
+    {
+      "name": "Interpolated iid path",
+      "statement": "S̃_n(t)=Σ_{i≤floor(nt)}X_i+(nt−floor(nt))X_floor(nt)+1; μ=EX1>0, σ²=VarX1. Deterministic x(t)=μt and τr=r/μ for fixed 0<r<μ. Source first defines t∈[0,1], later uses arbitrary T; define/extend the iid path for all t≥0 or explicitly isolate no-hit event.",
+      "source_ranges": [
+        {
+          "file": "corpus/papers/P-318df19635ebf8e5/paper.md",
+          "start_line": 28,
+          "end_line": 74,
+          "pdf_pages": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Assumptions1.1–1.2",
+      "statement": "Λ(a)=logEe^(aX1) finite and continuous for every real a, sup_a[−Λ(a)]<∞; some θ∈(0,1], v>1,b>0 satisfy Eexp(θ|X1|^v)≤e^b. Main quotient additionally needs σ²>0; variance zero is not a valid literal denominator.",
+      "source_ranges": [
+        {
+          "file": "corpus/papers/P-318df19635ebf8e5/paper.md",
+          "start_line": 28,
+          "end_line": 50,
+          "pdf_pages": [
+            1
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem1.4",
+      "assumptions": [
+        "The preceding iid hypotheses and nonzero variance; fixed r∈(0,μ), fixed t>0; positive a_n with a_n/n→0 and sqrt(n)/a_n→0."
+      ],
+      "statement": "For both strict events (n/a_n)(τr^n−τr)>t and <−t, lim (n/a_n²)logP=−μ³t²/(2σ²r). Speed is a_n²/n; this supplies only logarithmic asymptotics, not ratio to 1−Φ or saddlepoint prefactor.",
+      "source_ranges": [
+        {
+          "file": "corpus/papers/P-318df19635ebf8e5/paper.md",
+          "start_line": 91,
+          "end_line": 120,
+          "pdf_pages": [
+            2,
+            3
+          ]
+        }
+      ],
+      "proof_steps": [
+        "Hu–Lee cited path MDP uses I_T(f)=∫₀ᵀ(f′)²/(2σ²) for f absolutely continuous,f(0)=0. Endpoint energy inf_{f(T)=a}I_T=a²/(2σ²T) follows by Cauchy–Schwarz, attained f(t)=at/T.",
+        "Schuette cited path LDP upper bound with J_T=∫Λ*(f′) plus goodness/unique zero yields P(|τr^n−τr|>δ)≤exp(−cδ n) asymptotically. Since n²/a_n²→∞, this error is superexponential at MDP speed.",
+        "On finite hit and |τr^n−τr|≤δ, S̃_n(τr^n)=nr converts late hitting into θ_n(τr^n)<−μt. Closed inf-window set Fδ gives upper bound; open sup-window set Gδ and linear negative test path give lower bound. First n→∞ then δ,ε→0.",
+        "For the upper inf-window energy, write uniform I≥μ²t²/[2σ²(τr+δ)] rather than retaining a witness s(δ) depending on f after an infimum. Same limit follows."
+      ],
+      "proof_source_ranges": [
+        {
+          "file": "corpus/papers/P-318df19635ebf8e5/paper.md",
+          "start_line": 128,
+          "end_line": 174,
+          "pdf_pages": [
+            3,
+            4
+          ]
+        },
+        {
+          "file": "corpus/papers/P-318df19635ebf8e5/paper.md",
+          "start_line": 179,
+          "end_line": 266,
+          "pdf_pages": [
+            4,
+            5
+          ]
+        },
+        {
+          "file": "corpus/papers/P-318df19635ebf8e5/paper.md",
+          "start_line": 269,
+          "end_line": 367,
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ]
+        }
+      ],
+      "gaps": [
+        "The source proves (1.2) in detail and says (1.3) analogously, without full printed proof. Use source assertion for the early branch unless supplied separately.",
+        "The original [0,1] hitting definition allows τ=∞ if no hit; equation(3.3) is not literal on that event. Extend path or discard no-hit event with exp(−cn) bound, choose δ<min(τr,1−τr); this local repair does not certify cited path results.",
+        "Source references Hu–Lee as 2001 but prints Transactions AMS355(8) citation; exact bibliographic identity/date not independently checked."
+      ],
+      "start_line": 91,
+      "end_line": 120,
+      "pdf_pages": [
+        2,
+        3
+      ]
+    },
+    {
+      "label": "Rate-function zero and attainment error",
+      "statement": "Λ*(x)=sup_a(ax−Λ(a))≥0 and equals0 iff x=μ for finite differentiable Λ around0 and σ²>0. Source claims concavity implies one and only one attained maximum for every slope; this is false at support endpoints.",
+      "source_ranges": [
+        {
+          "file": "corpus/papers/P-318df19635ebf8e5/paper.md",
+          "start_line": 195,
+          "end_line": 219,
+          "pdf_pages": [
+            4
+          ]
+        }
+      ],
+      "proof_steps": [
+        "For x≠μ, derivative of ax−Λ(a) at0 is x−μ; choose a small signed parameter to get a strictly positive value. For x=μ, Jensen gives Λ(a)≥aμ, so supremum=0. Thus J_T=0 forces f′=μ a.e., hence f(t)=μt.",
+        "Counterexample satisfying the written assumptions: X=0 or2 with equal probabilities. For x=0, Λ*(0)=log2 but supremum reached only as a→−∞; no finite maximizer."
+      ],
+      "gaps": [
+        "Goodness of J_T comes from cited theorem; unique-zero local argument does not prove whole path LDP."
+      ],
+      "start_line": 195,
+      "end_line": 219,
+      "pdf_pages": [
+        4
+      ]
+    },
+    {
+      "label": "Section4 examples and graph sign",
+      "statement": "a_n=n^0.9 is a valid MDP scale, but Example1 Exp(1) violates all-real mgf, bounded sup[−Λ], and superexponential-power moment assumptions; Example2 Poisson(1) has all-real mgf and bounded sup[−Λ]=1 but Eexp(θX^v)=∞ for every θ>0,v>1. Neither example follows by direct invocation of Theorem1.4 as printed.",
+      "source_ranges": [
+        {
+          "file": "corpus/papers/P-318df19635ebf8e5/paper.md",
+          "start_line": 371,
+          "end_line": 469,
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "file": "corpus/papers/P-318df19635ebf8e5/paper.md",
+          "start_line": 436,
+          "end_line": 469,
+          "pdf_pages": [
+            9
+          ]
+        }
+      ],
+      "proof_steps": [
+        "Exp mgf=1/(1−a) only a<1; −Λ(a)=log(1−a)→∞ as a→−∞; θx^v−x→∞ so powered exponential moment diverges.",
+        "Poisson k-th summand exp(θk^v−1−log(k!)) does not tend to zero since k^v dominates k logk. This is a necessary failure of Assumption1.2.",
+        "PDF p8 and p9 graph axes and legends display nonpositive scaled log probability and red −2t². The displayed simulation formula contains a leading minus before log, which would be nonnegative. Treat the formula sign as a source inconsistency; no Monte Carlo code is supplied to decide actual implementation."
+      ],
+      "gaps": [
+        "Experiments at n=100 and 10000 replicates do not certify limit, uniformity, or theorem applicability. Exponential/Poisson hitting MDP may hold under another theorem but it is not established here by the printed hypotheses."
+      ],
+      "start_line": 371,
+      "end_line": 469,
+      "pdf_pages": [
+        7,
+        8,
+        9
+      ]
+    }
+  ],
+  "transfer_boundary": "H01 may expose this as a path/hitting logarithmic-MDP branch, with a source-error warning and separate citation dependencies; never replace normal relative-tail expansion, triangular-array uniformity, optional stopping or random-field extremes. H04 may reuse fixed-time quadratic variational calculation after matching iid path law and assumptions.",
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 469,
+    "source_lines": 469,
+    "required_content_lines": 312,
+    "covered_content_lines": 312,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-318df19635ebf8e5/paper.md"
+  },
+  "review_source": "reviews/TEAM_HI/evidence/P-318df19635ebf8e5.json",
+  "review_input_sha256": "8702ed8040a117027dba67b82d1add5156c974871a646ecfd56a6f169614cecf"
+}

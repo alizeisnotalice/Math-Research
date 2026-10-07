@@ -1,0 +1,224 @@
+{
+  "paper_id": "P-0f47bc1fd2195ffc",
+  "observed_title": "Conditional Supremum in Riesz Spaces and Applications",
+  "authors": [
+    "Youssef Azouzi",
+    "Mohamed Amine Ben Amor",
+    "Dorsaf Cherif",
+    "Marwa Masmoudi"
+  ],
+  "version": "arXiv:2303.09868v1, 17 Mar 2023; manuscript March20 2023; 25PDFpages",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1114,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "scope": "全文1–4.2，各定义、命题、证明、金融节及references；全部非空行连续显示并阅读，无内容摘要/截断"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "M04",
+    "decision": "adjacent",
+    "basis": "Conditional order/essential supremum is least range-measurable upper envelope, not joint-parametric argmax selection or analytic projection theorem."
+  },
+  "definitions": [
+    {
+      "name": "Conditional Riesz triple (E,e,F)",
+      "statement": "E Dedekind complete Riesz space, weak order unite; F strictlypositive ordercontinuous linear projection, Fe=e, Dedekindcomplete range R(F). L∞(F) consists of elements orderbounded by some R(F) element.",
+      "start_line": 99,
+      "end_line": 155,
+      "pdf_pages": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "Conditional sup/inf and range oscillation",
+      "statement": "M_F(f)=inf{g∈R(F):f≤g}; m_F(f)=sup{g∈R(F):g≤f}; δ=M−m. Norm is M_F(|f|), R(F)-valued.",
+      "start_line": 202,
+      "end_line": 232,
+      "pdf_pages": [
+        5,
+        6
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Propositions3–5 (order envelope and tower)",
+      "evidence_class": "source_theorem",
+      "assumptions": [
+        "ConditionalRiesztriple",
+        "f,g∈L∞(F); tower G conditional expectation with GF=FG=F"
+      ],
+      "statement": "M is monotone,idempotent,positivelyhomogeneous,subadditive; translation by R(F) element commutes; |M(f)−M(g)|≤M(|f−g|); m(f)≤Ff≤M(f); M_F(M_G f)=M_F f=M_G(M_F f).",
+      "start_line": 237,
+      "end_line": 331,
+      "pdf_pages": [
+        6,
+        7,
+        8
+      ],
+      "proof_steps": [
+        "Minimal upper-bound definition; applying F to sandwich; rangeinclusion R(F)⊂R(G) and monotonicity give tower."
+      ],
+      "gaps": [
+        "These are order-envelope results; no index-dependent argmax or measurable-point-selector provided."
+      ]
+    },
+    {
+      "label": "Lemma11 / Proposition12 (limits)",
+      "evidence_class": "source_theorem",
+      "assumptions": [
+        "Net fα↑f in L∞(F) for M continuity; f≥0 for Lp limit"
+      ],
+      "statement": "M_F(fα)↑M_F(f) for increasing net. Decreasing fα does not in general imply decreasing M→M(f). For f∈L∞(F)+, source cites prior work for lim_{p→∞}F(f^p)^(1/p)=M_F(f).",
+      "start_line": 459,
+      "end_line": 493,
+      "pdf_pages": [
+        11
+      ],
+      "proof_steps": [
+        "f=sup fα≤sup M fα∈R(F), compare to minimalupperenvelope",
+        "Lp-limit is reported from [4], not proved in thissource"
+      ],
+      "gaps": [
+        "Must retain directional monotonicity; a.s./orderconvergence alone cannot commute M with arbitrary limits."
+      ]
+    },
+    {
+      "label": "Theorem25 (half-oscillation range-distance)",
+      "evidence_class": "source_theorem_with_typographic_proof_issue",
+      "assumptions": [
+        "ConditionalRiesztriple; f∈L∞(F)",
+        "Distance infimum in R(F)-valued norm, not general scalar Banach norm"
+      ],
+      "statement": "d(f,R(F))=δ(f)/2 attained by g=(m_Ff+M_Ff)/2.",
+      "start_line": 779,
+      "end_line": 805,
+      "pdf_pages": [
+        18
+      ],
+      "proof_steps": [
+        "Lipschitzδ estimate Prop24 gives δ(f)≤2||f−g|| for g∈R(F)",
+        "Midrange g bounds |f−g|≤(M−m)/2, producing matchingupperbound."
+      ],
+      "gaps": [
+        "Source proof p18 prints δ(f)≤||f−g||, omitting 2. Correct Prop24 estimate δ(f)≤2||f−g|| immediately yields δ(f)/2≤d(f,R(F)); midpoint gives opposite bound. Thus d=δ/2 is verified locally, not an erroneous conclusion."
+      ]
+    },
+    {
+      "label": "Theorem29 / Proposition33 (financial application)",
+      "evidence_class": "source_statement_only_no_general_financial_certification",
+      "assumptions": [
+        "Finite adapted self-financing process in conditionalRieszfiltration, source financial definitions",
+        "NA equivalence Proposition33 adds strict inequalities for each positive component"
+      ],
+      "statement": "Sourcecharacterizes AIP by m_Ft(S_{t+1})≤S_t≤M_Ft(S_{t+1}); additional strict hypotheses used for NA equivalence.",
+      "start_line": 813,
+      "end_line": 1019,
+      "pdf_pages": [
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "proof_steps": [
+        "Sign-split θ via M(hf)=h+M(f)−h−m(f); backward tower/translationargument controls portfolio infimum."
+      ],
+      "gaps": [
+        "Prop33 p23 sets p=(θ+²∧e) and calls it a component; that expression generally is not a component. No source-wide NA certificate accepted from this sketch."
+      ],
+      "usable_scope": "The order-envelope sign/tower method may be studied conditionally; Proposition33 no-arbitrage equivalence may not be called as a certified research tool from this proof."
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "M Lipschitz1 in conditional ordernorm; δ Lipschitz2, distanceδ/2. No dimensional/stabilitymodulus for M04 argmax."
+  },
+  "endpoint_limits": {
+    "scope": "L∞(F) orderboundedness guarantees range envelope; positive multiplier h∈R(F)+ for averaging, sign split required for signedh.",
+    "not_established": "Supremum attainment by an index point, measurableargmax, arbitrary limit interchange."
+  },
+  "reusable_methods": [
+    {
+      "method": "Replace conditionalessentialsup with least measurable/order range upperbound",
+      "transfer": "Requires order completeness/rangeboundedness, does not construct selector."
+    },
+    {
+      "method": "Track upward limits vs downward limits separately",
+      "transfer": "Example1_[0,1/n]↓0 a.e. but esssup remains1 shows limitation."
+    },
+    {
+      "method": "Midrange minimax approximation",
+      "transfer": "Finiteatom block conditionalspace permits exact envelope/oscillation certification."
+    }
+  ],
+  "checked_derivation": [
+    {
+      "class": "finite_counterexample",
+      "statement": "E=R², e=(1,1), θ+=(1/2,0): p=(θ+²∧e)=(1/4,0); p∧(e−p)=(1/4,0)≠0, so p is not a component. This refutes a proof step, not Proposition33 itself."
+    }
+  ],
+  "visual_checks": [
+    {
+      "pdf_pages": [
+        18,
+        23
+      ],
+      "images": [
+        "reviews/TEAM_LM/visual/P-0f47bc1fd2195ffc-p18.png",
+        "reviews/TEAM_LM/visual/P-0f47bc1fd2195ffc-p23.png"
+      ],
+      "findings": "Missingfactor2 and noncomponent proofstep checked against PDF pixels"
+    }
+  ],
+  "unchecked": [
+    "All25pagesread; cited externalLp-limit and martingale convergence not independentlyproved.",
+    "Financial theorem proofgap not resolved globally; only order-envelope methods reused."
+  ],
+  "review_status": {
+    "first_review": "audit_lm_16_independently_confirmed_Th25_local_repair_and_Prop33_invalid_step",
+    "second_review": "audit_n_16_independently_confirmed_Th25_conclusion_and_Prop33_step",
+    "scope": "Th25 d=δ/2 and midpoint verified with δ≤2||f−g||. Prop33 noncomponent step refuted; its whole proposition is not thereby refuted and general financial use is quarantined."
+  },
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1114,
+    "source_lines": 1114,
+    "required_content_lines": 722,
+    "covered_content_lines": 722,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-0f47bc1fd2195ffc/paper.md"
+  },
+  "review_source": "reviews/TEAM_LM/evidence/P-0f47bc1fd2195ffc.json",
+  "review_input_sha256": "295fadb378a49fa4bada57d4bffd72f2612711d0f10f011ca144893e6232d845"
+}

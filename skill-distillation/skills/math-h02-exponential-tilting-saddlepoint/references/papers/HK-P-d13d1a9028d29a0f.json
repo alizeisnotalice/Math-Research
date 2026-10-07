@@ -1,0 +1,277 @@
+{
+  "paper_id": "P-d13d1a9028d29a0f",
+  "observed_title": "The saddlepoint approximation for averages of conditionally independent random variables",
+  "authors": [
+    "Ziang Niu",
+    "Jyotishka Ray Choudhury",
+    "Eugene Katsevich"
+  ],
+  "version": "arXiv:2407.08915v3 (June 24, 2025 manuscript date shown); 64 PDF pages. Footnote says this work was incorporated into the longer manuscript arXiv:2407.08911.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 3575,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "scope": "逐行读完整 64 页：条件分布/鞍点定义、主结果、符号翻转应用、Theorem 1 的正文证明、Proposition 1、Appendices A–H（含所有 supporting lemmas/proofs）、参考文献。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "H02": "direct: Theorem 1 establishes a conditional Lugannani–Rice tail approximation with vanishing relative error for conditionally independent triangular-array averages, with an explicit conditional-CGF saddlepoint equation and explicit λ_n,r_n prefactors. Assumptions are conditional sub-exponential tails or conditional bounded support plus a variance lower bound; the cutoff must tend to zero in probability.",
+    "H01": "adjacent: it uses triangular arrays and uniform-in-row conditional tail/moment controls, but the result is a conditional saddlepoint approximation in a shrinking-threshold regime, not a general Cramér moderate-deviation expansion over x=o(√n)."
+  },
+  "definitions": [
+    {
+      "name": "conditional sub-exponential (CSE)",
+      "statement": "W|G is CSE(θ,β) if P(|W|≥t|G)≤θ exp(−βt) a.s. for every t>0, with G-measurable θ≥0 and fixed β>0. For the array, Assumption 1 uses θ_n<∞ a.s., θ_n=O_P(1), uniformly over i at each n.",
+      "source_lines": [
+        181,
+        192,
+        201,
+        208
+      ],
+      "pdf_pages": [
+        4
+      ]
+    },
+    {
+      "name": "conditional compact support (CCS)",
+      "statement": "W|G is CCS(ν) when W∈[−ν,ν] a.s. Assumption 2 requires ν_in<∞ a.s. and n^(−1)Σ_iν_in^4=O_P(1).",
+      "source_lines": [
+        194,
+        218
+      ],
+      "pdf_pages": [
+        4,
+        5
+      ]
+    },
+    {
+      "name": "conditional CGFs and saddlepoint",
+      "statement": "K_in(s)=log E[exp(sW_in)|F_n], K_n(s)=n^(−1)Σ_iK_in(s). The saddlepoint solves K_n'(s)=w_n inside [−ε/2,ε/2]. If there is exactly one root use it; otherwise define the fallback ε/2 sgn(w_n).",
+      "source_lines": [
+        220,
+        260
+      ],
+      "pdf_pages": [
+        5
+      ]
+    },
+    {
+      "name": "Lugannani–Rice parameters and conditional approximation",
+      "statement": "λ_n=ŝ_n√(nK_n''(ŝ_n)); r_n=sgn(ŝ_n)√{2n(ŝ_nw_n−K_n(ŝ_n))} when the radicand is nonnegative, and r_n=sgn(ŝ_n) otherwise. Then p̂_LR=1−Φ(r_n)+φ(r_n)(λ_n^(−1)−r_n^(−1)); at w_n=0 use ŝ_n=λ_n=r_n=0 and the convention 1/0−1/0=0, giving p̂_LR=1/2.",
+      "source_lines": [
+        261,
+        281
+      ],
+      "pdf_pages": [
+        5,
+        6
+      ]
+    },
+    {
+      "name": "conditional Berry–Esseen lemma for independent summands",
+      "statement": "For conditionally independent W_in under P_n, let S_n²=n^(−1)Σ Var_{P_n}(W_in|F_n). If S_n²=Ω_{P_n}(1) and n^(−1)Σ E_{P_n}[|W_in−E_{P_n}(W_in|F_n)|³|F_n]=O_{P_n}(1), then √n sup_t |P_{P_n}{(√n S_n)^(−1)Σ_i(W_in−E_{P_n}(W_in|F_n))≤t|F_n}−Φ(t)|=O_{P_n}(1).",
+      "source_lines": [
+        831,
+        863
+      ],
+      "pdf_pages": [
+        16,
+        17
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 1 (conditional Lugannani–Rice approximation)",
+      "assumptions": [
+        "For each n, W_1n,…,W_nn are independent conditionally on F_n and E[W_in|F_n]=0 a.s.",
+        "Either Assumption 1 CSE holds with fixed β>0 and θ_n=O_P(1), or Assumption 2 CCS holds with n^(−1)Σ_iν_in^4=O_P(1).",
+        "The conditional average variance n^(−1)Σ_i E[W_in²|F_n]=Ω_P(1).",
+        "Cutoff w_n is F_n-measurable and w_n=o_P(1); its rate of convergence may be arbitrary."
+      ],
+      "statement": "There is a unique finite solution ŝ_n∈[−ε/2,ε/2] to K_n'(s)=w_n with probability tending to 1. The conditional tail P{n^(−1)Σ_iW_in≥w_n|F_n} equals the conditional Lugannani–Rice approximation p̂_LR times (1+o_P(1)).",
+      "start_line": 283,
+      "end_line": 311,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "CSE/CCS yields conditional CGFs and all derivatives on a fixed neighborhood of zero; average second derivatives have a uniform-in-probability lower bound near zero. Since K_n'(0)=0 and w_n=o_P(1), strict local curvature and the intermediate value theorem give a unique root with probability tending to one; define fallback parameters off that event.",
+        "Show ŝ_n→_P0, K_n''(ŝ_n)=Ω_P(1), and the sign and asymptotic equivalence relations between λ_n and r_n required to control the LR denominator.",
+        "Split according to w_n>0,w_n<0,w_n=0. Reverse signs for the negative case; conditional CLT plus a no-atom argument gives conditional probability at zero tending to 1/2.",
+        "Tilt the conditional product law by dP_{n,s}/dP=∏_i exp(sW_in)/E(exp(sW_in)|F_n). This preserves the marginal law of F_n and conditional independence; under s=ŝ_n the conditional average is centered at w_n with variance K_n''(ŝ_n).",
+        "Apply the proved conditional Berry–Esseen lemma to the tilted summands at rate O_P(n^(−1/2)), tilt back, and reduce the tail probability to an exponentially weighted half-line integral.",
+        "Use integration by parts and Gaussian tail/Mills estimates to show the weighted conditional CDF error is negligible relative to the possibly very small LR denominator; compare the remaining Gaussian integral to the LR expression. Full technical details are in Appendix H."
+      ],
+      "gaps": [
+        "No rate is supplied for the final relative error o_P(1), despite the O_P(n^(−1/2)) conditional Berry–Esseen ingredient.",
+        "The essential cutoff condition w_n=o_P(1) excludes the large-deviation regime w_n=Ω_P(1); this is explicitly listed as a limitation in Section 5.",
+        "The theorem concerns averages of conditionally independent summands. It does not cover permutation-test dependence or studentized/more complex statistics; these are explicit limitations.",
+        "It supplies no general triangular-array Cramér expansion with an x-range growing to order o(√n)."
+      ]
+    },
+    {
+      "label": "Corollary 1 (unconditional triangular-array specialization)",
+      "assumptions": [
+        "W_in are independent and mean zero within each row and satisfy P(|W_in|≥t)≤θ exp(−βt) with fixed θ,β>0.",
+        "liminf_n n^(−1)Σ_i E W_in²>0.",
+        "Deterministic w_n→0."
+      ],
+      "statement": "For all sufficiently large n the unconditional saddlepoint equation has a unique root on [−ε/2,ε/2]; the unconditional LR tail approximation has relative error o(1).",
+      "start_line": 312,
+      "end_line": 338,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "proof_steps": [
+        "Set F_n trivial in Theorem 1; fixed tail constants imply θ_n=O_P(1), and the variance condition gives Ω_P(1).",
+        "Apply Theorem 1 with deterministic cutoff."
+      ],
+      "gaps": [
+        "The conclusion remains in the shrinking-cutoff regime; it does not assert a fixed-threshold large-deviation range."
+      ]
+    },
+    {
+      "label": "Proposition 1 (Robinson approximation equivalent to LR)",
+      "assumptions": [
+        "Theorem 1 assumptions, including conditional independence, either CSE/CCS, nondegenerate average conditional variance, and w_n=o_P(1)."
+      ],
+      "statement": "The Robinson conditional approximation p̂_R=exp{(λ_n²−r_n²)/2}(1−Φ(λ_n)) is asymptotically equivalent in relative error to the conditional tail probability, hence also equivalent to the LR approximation.",
+      "start_line": 388,
+      "end_line": 407,
+      "pdf_pages": [
+        8
+      ],
+      "proof_steps": [
+        "Reduce to the ratio of the LR and Robinson expressions.",
+        "Use the Appendix H estimates λ_n/r_n→_P1 and 1/λ_n−1/r_n→_P0 together with Gaussian Mills-ratio asymptotics; full ratio details in Appendix F."
+      ],
+      "gaps": [
+        "Same shrinking-cutoff and conditional-independence scope as Theorem 1; no finite-sample error constant."
+      ]
+    },
+    {
+      "label": "Theorem 2 (sign-flipping test application)",
+      "assumptions": [
+        "X_in=μ_n+ε_in, independent across i, errors symmetric.",
+        "liminf_n n^(−1)Σ_i E ε_in²>0.",
+        "For some δ>0, limsup_n n^(−1)Σ_i E|ε_in|^(4+δ)<∞.",
+        "μ_n=o(1)."
+      ],
+      "statement": "The data-conditional sign-flip saddlepoint equation has a unique root ŝ_n∈[−1,1] with probability tending to one; the resulting conditional LR approximation to the sign-flipping tail p-value has vanishing relative error.",
+      "start_line": 495,
+      "end_line": 540,
+      "pdf_pages": [
+        10
+      ],
+      "proof_steps": [
+        "Set W_in=π_inX_in, w_n=n^(−1)Σ_iX_in, and F_n=σ(X_1n,…,X_nn); conditional sign-flipped variables are independent and bounded by |X_in|.",
+        "Use the averaged 4+δ moment bound and μ_n=o(1) to show n^(−1)Σ_i X_in^4=O_P(1), and the second-moment condition to show the conditional variance lower bound.",
+        "Apply Theorem 1. Appendix G proves the moment and variance reductions."
+      ],
+      "gaps": [
+        "The statistic is the sample average/sign-flip construction specifically; the conclusion does not automatically cover permutation tests, dependent resampling, or studentized statistics."
+      ]
+    }
+  ],
+  "constant_dependence": "Main theorem is asymptotic: unique-root probability tends to one and relative error is o_P(1), with no quantitative rate or explicit error constant. The auxiliary conditional Berry–Esseen theorem has a universal numerical constant, but it does not make the final relative error rate explicit because the LR denominator and random saddlepoint scales also enter.",
+  "endpoint_limits": [
+    "The cutoff w_n may converge to zero at any rate, including O_P(n^(−α)) for α∈(0,1/2) or the CLT scale O_P(n^(−1/2)); it must still be o_P(1).",
+    "There is no result for w_n=Ω_P(1), which the authors identify as the large-deviation regime limitation.",
+    "The saddlepoint is restricted to a fixed interval near zero; uniqueness holds with probability tending to 1.",
+    "The conditional variance lower bound is Ω_P(1), not a requirement that the average variance equal exactly 1.",
+    "Conditional independence is required for each row; the authors state this excludes permutation tests."
+  ],
+  "reusable_methods": [
+    "For a target conditional sum, define the conditional CGF, verify derivative existence and positive local curvature, and solve K_n'(ŝ_n)=w_n before using the LR prefactor.",
+    "Exponential tilting under conditional independence preserves the conditioning sigma-field and gives tilted conditional mean/variance as CGF derivatives; a conditional Berry–Esseen estimate then controls the tilted center region.",
+    "When relative error is the goal, the normal-approximation error must be controlled relative to the LR denominator; the proof’s separate Gaussian-integral comparison prevents replacing a tiny-tail relative error claim by a central absolute-error CLT.",
+    "For H01 migration, the model gives a pattern for handling triangular arrays with a random conditional structure, but its threshold remains shrinking and no general moderate-deviation x-window is proved."
+  ],
+  "unchecked": [
+    "Full-text read is not independent proof verification. In particular, appendices rely on the cited conditional Berry–Esseen result of Chen–Goldstein–Shao and regular-conditional-distribution facts; citations were not separately audited in their original sources.",
+    "The proof uses pathwise versions of conditional laws and conditional expectations; no independent measure-theoretic audit was done.",
+    "The version footnote points to a longer later manuscript; this card follows the attached arXiv:2407.08915v3 text only.",
+    "Theorem statements and key assumptions/formulas visually checked on PDF pp.4–7; supporting proof formula pages were text-read but not all rendered individually."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 3575,
+    "source_lines": 3575,
+    "required_content_lines": 2380,
+    "covered_content_lines": 2380,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-d13d1a9028d29a0f/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-d13d1a9028d29a0f.json",
+  "review_input_sha256": "48705cad2438a5c579876e996ec10d3fc6b58dfae4cc03ec90c42a64d0fffca2"
+}

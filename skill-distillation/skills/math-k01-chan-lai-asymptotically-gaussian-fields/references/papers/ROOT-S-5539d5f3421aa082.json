@@ -1,0 +1,175 @@
+{
+  "paper_id": "S-5539d5f3421aa082",
+  "observed_title": "The weak type (1, 1) bounds for the maximal function associated to cubes grow to infinity with the dimension",
+  "authors": [
+    "J. M. Aldaz"
+  ],
+  "version": "Annals of Mathematics 173 (2011),1013–1023；doi:10.4007/annals.2011.173.2.10；Received July9 2008, Revised September2 2009；11页",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 524,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "scope": "全文及参考文献；无附录"
+    }
+  ],
+  "topic_relevance": [
+    {
+      "code": "K01",
+      "decision": "direct",
+      "reason": "多参数罕见层、二阶交叠控制和固定t后CLT的量词约束"
+    },
+    {
+      "code": "L01",
+      "decision": "direct",
+      "reason": "格点有限质量截断构造中心立方体弱端点见证"
+    },
+    {
+      "code": "N04",
+      "decision": "direct",
+      "reason": "缓冲体积与总质量计数产生维数损失"
+    }
+  ],
+  "definitions": [
+    "μ_d为Z^d每点单位Dirac的无限局部有限测度；最终必须有限截断。",
+    "E_u按非中心坐标计数在固定t个标准差的窄区间定义。"
+  ],
+  "theorem_cards": [
+    {
+      "label": "主定理及参数次序",
+      "start_line": 33,
+      "end_line": 53,
+      "pdf_pages": [
+        1
+      ],
+      "assumptions": [
+        "Lebesgue测度、轴平行中心立方体；c_d为弱(1,1)最佳常数。",
+        "先给定T>0，随后选取D(T)，最后所有d≥D(T)。"
+      ],
+      "statement": "c_d随维数趋无穷。本文不提供显式d的增长率。",
+      "proof_steps": [
+        "以格点Dirac质量构造下界，固定t足够大再令d足够大，最终弱比值至少常数乘t^(1/3)。",
+        "给定T选择t使该值超过T，再对有限参数集取所有维数门槛的最大值。"
+      ],
+      "gaps": [
+        "单调性c_(d+1)≥c_d引用[AV07]，本卡未重证；不需要单调性也可得到forall d≥D结论。"
+      ]
+    },
+    {
+      "label": "Claims 1–3：单层概率、交叠和并集",
+      "start_line": 185,
+      "end_line": 372,
+      "pdf_pages": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "assumptions": [
+        "固定t≫1，u∈[1/8,1/4]；非中心坐标计数k满足ud−(t+t^(−1))σ_u√d<k≤ud−tσ_u√d。",
+        "只使用有限网格u_j=1/8+j t^(−4/3)，j≤floor(t^(4/3)/8)。"
+      ],
+      "statement": "每层质量约t^(−1)e^(−t²/2)，交叠比例≤t^(−1/3)e^(−2t^(2/3)/9)，并集质量下界常数乘t^(1/3)e^(−t²/2)。",
+      "proof_steps": [
+        "独立均匀坐标给Bin(d,u)；固定t的CLT将区间概率压在正态带概率的固定倍内。",
+        "条件于u层非中心指标集K，v层计数服从Bin(k,v/u)，均值/方差估计给至少2t^(1/3)/3个标准差的左偏。",
+        "正态尾积分用y权重上界取得指数交叠率；对有限网格所有层/对取统一大d。",
+        "二阶Bonferroni：总单层质量阶t^(1/3)e^(−t²/2)，总交叠≤t^(4/3)e^(−2t^(2/3)/9)e^(−t²/2)，相对主项趋零。"
+      ],
+      "gaps": [
+        "Claim2声明D(u)实际需保守登记为D(t,u,v)；仅对已固定有限网格求最大值。",
+        "对随d变化的k须有一致CLT控制，例如固定p=v/u下Bin(k,p)的Berry–Esseen，k的最小值→∞；原文未给定量误差，不提取中偏差范围。"
+      ]
+    },
+    {
+      "label": "Claim 4：精确格点计数与整数尺度优化",
+      "start_line": 373,
+      "end_line": 417,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "assumptions": [
+        "固定t≫1，u∈[1/8,1/4]，d足够大；每个中心坐标在[u/2,1−u/2]。",
+        "s为正整数，半边长s−u/2；非中心计数r≤r0=ud−tσ_u√d。"
+      ],
+      "statement": "E_u上Mμ_d>e^(t²/2)/2。",
+      "proof_steps": [
+        "中心坐标区间恰含2s个格点，非中心坐标至少2s−1个，故密度≥(1−1/(2s))^r0/(1−u/(2s))^d。",
+        "连续最优s0=u(d−r0)/(2(ud−r0))=σ_u√d/(2t)+u/2。",
+        "实尺度函数在[1,s0]递增，floor(s0)∈[s0−1,s0]，以s0−1下界代替整数最优。",
+        "θ=1/(2(s0−1))=t/(σ_u√d)+O_(t,u)(d^(−1))；展开r0 log(1−θ)−d log(1−uθ)，一次项t²、二次项−t²/2，剩余O_(t,u)(d^(−1/2))。"
+      ],
+      "gaps": [
+        "O项常数依赖t，不能任意选t=t(d)并继续使用同一结论。",
+        "充分大d须使s0−1≥1及余项小于log2；不是小维数显式算法保证。"
+      ]
+    },
+    {
+      "label": "有限质量截断与弱型见证",
+      "start_line": 418,
+      "end_line": 437,
+      "pdf_pages": [
+        9
+      ],
+      "assumptions": [
+        "d固定且前述估计均成立；取整数R→∞。",
+        "格点质量限制在[-√d,R+√d]^d，核心为[0,R]^d。"
+      ],
+      "statement": "有限质量见证的弱比值下界趋于常数乘t^(1/3)。",
+      "proof_steps": [
+        "Claim4的实际尺度边长≤2√d，核心内每个单位胞的好点测试立方体均不越出截断缓冲区。",
+        "核心胞数量R^d；质量点数量≤(R+2√d+1)^d，所以缓冲损失至少(R/(R+2√d+1))^d。",
+        "先固定d再R→∞，该损失趋1；原子质量用微小非负mollifier变为L1函数，保质量并保留严格超水平见证。"
+      ],
+      "gaps": [
+        "原文引用离散化常数等价[TMS92]；下界所需的严格超水平mollification可用本目录独立说明，不继承整条等价定理认证。",
+        "R≫d只是定性描述；有限误差需要明确R对d和ε的依赖。"
+      ]
+    }
+  ],
+  "constant_dependence": "t、u、v均在CLT前固定；D隐含依赖t及有限参数网格。主结论定性，不给d^(1/4)或可计算D(T)。",
+  "endpoint_limits": [
+    "2011引言“cube p≤3/2未知”为历史状态，2012 Bourgain全文另卡给p>1。",
+    "本论文的CLT不能替代随d增长t的中偏差定理。",
+    "不能将欧氏球弱型上界与立方体下界混同。"
+  ],
+  "reusable_methods": [
+    "匹配尾概率e^(−t²/2)与密度放大e^(t²/2)，通过低交叠的多层并集留下t^(1/3)收益。",
+    "条件化指标集后仍用精确二项分布，从而量化两层交叠。",
+    "用有限缓冲区将周期无限构造转为有限质量见证。"
+  ],
+  "unchecked": [
+    "标准CLT、[AV07]单调性及[TMS92]完整离散化等价未重新证明。",
+    "未给显式维数门槛；不能把本论文视为全部课题内部接口的证明。"
+  ],
+  "visual_checks": [
+    "PDF第5–7页：Claim1常数2e²√(2π)、条件二项概率、交叠指数、并集幂次；第8页：2s与2s−1计数、s0、log展开；第9页：缓冲边长及分母幂d。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 520,
+    "source_lines": 524,
+    "required_content_lines": 420,
+    "covered_content_lines": 420,
+    "reported_status": "full_read",
+    "source": "supplementary/S-5539d5f3421aa082/paper.md"
+  },
+  "review_source": "reviews/ROOT/evidence/S-5539d5f3421aa082.json",
+  "review_input_sha256": "865d7ae59c412a6c9beb95c96e065fda84634f95f15433a7b5775490d5224c21"
+}

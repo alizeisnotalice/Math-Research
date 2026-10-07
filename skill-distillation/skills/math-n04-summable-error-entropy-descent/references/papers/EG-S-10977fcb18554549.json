@@ -1,0 +1,461 @@
+{
+  "paper_id": "S-10977fcb18554549",
+  "observed_title": "Dimension-free estimates for discrete Hardy–Littlewood averaging operators over the cubes in Z^d",
+  "authors": [
+    "Jean Bourgain",
+    "Mariusz Mirek",
+    "Elias M. Stein",
+    "Błażej Wróbel"
+  ],
+  "version": "arXiv:1804.07679v2（首页标记）；PDF首页 manuscript heading 标作 2019。",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 1454,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "F07": "adjacent"
+  },
+  "definitions": [
+    {
+      "term": "整数格上的离散 Hardy–Littlewood 平均",
+      "definition": "对闭对称凸体 G⊂R^d 及 t>0，M_G^t f(x)=|tG∩Z^d|^{-1}Σ_{y∈tG∩Z^d}f(x−y)。当 G=[−1,1]^d 时记 M_t；平均核的傅里叶乘子是各坐标一维 Dirichlet 平均的乘积。",
+      "source_ranges": [
+        {
+          "start_line": 35,
+          "end_line": 46,
+          "pdf_pages": [
+            1
+          ]
+        },
+        {
+          "start_line": 525,
+          "end_line": 552,
+          "pdf_pages": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": "长变差、短变差与 Poisson 投影",
+      "definition": "V_r(a_t:t∈Z) 对所有有限递增参数序列取 r 次增量和的上确界；在 dyadic set 上为长变差。短变差是每个 [2^n,2^{n+1}) 区间内相对端点的变差。对 lacunary 参数 a_n，Poisson 投影 S_n=P_{a_n}−P_{a_{n−1}} 给出频率分辨率恒等分解及维数无关 Littlewood–Paley 不等式。",
+      "source_ranges": [
+        {
+          "start_line": 160,
+          "end_line": 205,
+          "pdf_pages": [
+            4
+          ]
+        },
+        {
+          "start_line": 1065,
+          "end_line": 1088,
+          "pdf_pages": [
+            21
+          ]
+        },
+        {
+          "start_line": 838,
+          "end_line": 851,
+          "pdf_pages": [
+            17
+          ]
+        }
+      ]
+    },
+    {
+      "term": "离散 Poisson 半群",
+      "definition": "P_t 的傅里叶乘子为 exp(−t|ξ|_sin)，其中 |ξ|_sin=(Σ_k sin²(πξ_k))^{1/2}；它是由离散 Laplacian L 的平方根生成的对称扩散半群。",
+      "source_ranges": [
+        {
+          "start_line": 751,
+          "end_line": 787,
+          "pdf_pages": [
+            15,
+            16
+          ]
+        },
+        {
+          "start_line": 794,
+          "end_line": 825,
+          "pdf_pages": [
+            16
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem 1：大尺度离散平均的连续比较",
+      "assumptions": [
+        "G⊂R^d 是闭、对称、凸且有非空内部的凸体；令 c(G)=inf{t>0:Q_{1/2}⊂tG}。",
+        "p∈(1,∞)，取平均尺度 t≥c(G)d。"
+      ],
+      "statement": "作者证明 ||sup_{t≥c(G)d}|M_G^t f|||_{ℓ^p(Z^d)}≤e^6 ||M_G^*||_{L^p(R^d)→L^p(R^d)}||f||_{ℓ^p(Z^d)}。这是仅在大尺度成立的离散—连续转移；小尺度并未由此控制。",
+      "start_line": 90,
+      "end_line": 107,
+      "pdf_pages": [
+        2
+      ],
+      "proof_steps": [
+        "将 f 延拓为每个单位小立方体上取常值的 F，保持 ℓ^p 与 L^p 范数。",
+        "用 Minkowski 函数估计离散和的支持落在连续放大凸体内，再用体积包含关系 |G_{t−c(G)}|≤|tG∩Z^d| 比较归一化分母。",
+        "尺度条件 t≥c(G)d 使维数相关体积比可统一控制，得到文中 e^6 因子。"
+      ],
+      "gaps": [
+        "该比较不触及 t<c(G)d 的小尺度。",
+        "所需连续极大估计必须另有来源，不能从转移引理本身推出。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 367,
+          "end_line": 417,
+          "pdf_pages": [
+            8,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Theorem 2：非立方体离散极大函数的维数增长反例",
+      "assumptions": [
+        "取 1≤λ_1<…<λ_d<√2，定义椭球 E_d={x:Σ_j λ_j²x_j²≤1}。",
+        "p∈(1,∞)；极大算子对全部 t>0 取上确界。"
+      ],
+      "statement": "椭球离散极大算子范数至少为 C_p(log d)^{1/p}，其中 C_p>0 只依赖 p；因此一般对称凸体的离散极大算子不能仅凭连续维数无关估计得到全尺度离散维数无关界。",
+      "start_line": 121,
+      "end_line": 122,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "证明 λ_jE_d∩Z^d 恰为 Ω_j={0,±e_1,…,±e_j}，于是平均核是在该集合上的归一化指示函数。",
+        "按二进制块把前 d−1 个坐标分组，构造各块有界且奇偶性指定的集合 A_s，并在一个块把奇偶性翻转得到 A′_s。",
+        "将 f 取为块集合乘积的指示函数与剩余坐标的 δ_0。对尺度 j=2^s+1 的平均，在互不相交集合 B_s 上有统一正下界；共有约 log d 个块。",
+        "取 ℓ^p 范数并用 B_s 不交，得到 ||sup_j|K_{Ω_j}*f|||_p/||f||_p≳_p(log d)^{1/p}。"
+      ],
+      "gaps": [
+        "反例针对指定椭球族，不代表立方体 M_t 的维数无关估计失败。",
+        "p=1 与 p=∞ 不在该下界结论中。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 434,
+          "end_line": 519,
+          "pdf_pages": [
+            9,
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Theorem 3、Theorem 4 与 Theorem 8：立方体极大估计",
+      "assumptions": [
+        "离散平均是整数格 Z^d 上立方体 Q_t=[−t,t]^d 的平均。",
+        "Theorem 3 对全部 t>0；Theorem 4 为 dyadic t=2^n；Theorem 8 将参数推广到任意 lacunary sequence (a_n)，稀疏比 a=inf a_{n+1}/a_n>1。"
+      ],
+      "statement": "Theorem 3：对 p∈(3/2,∞]，||sup_{t>0}|M_t f|||_p≤C_p||f||_p，C_p 与 d 无关。Theorem 4：对 p∈(1,∞]，dyadic 极大估计维数无关。更一般 Theorem 8 给任意 lacunary 参数 a_n 的相同 p∈(1,∞] 维数无关界，其常数可依赖 p 与 lacunarity ratio a。",
+      "start_line": 138,
+      "end_line": 149,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "立方体格点数恰为 (2⌊t⌋+1)^d，乘子分解成各坐标一维 Dirichlet 核的乘积。",
+        "对平均乘子建立维数无关的衰减、低频偏差和尺度差分估计（Proposition 3.1）。",
+        "引入离散 Poisson 半群及 dyadic/lacunary Poisson 投影 S_n，使用维数无关 Littlewood–Paley 不等式。",
+        "将 M_t 与半群比较，令 T_t=M_t−P_t；以 Carbery 型几乎正交命题控制不同频带，并以数值 Menshov–Rademacher dyadic-block 不等式控制短尺度振荡。",
+        "Theorem 3 的 p∈(3/2,2] 部分由短块增量在 p=1 与 p=2 估计后插值，再应用几乎正交原则；p>2 由端点插值补齐。Lacunary/dyadic 情形省去连续尺度的短块控制，故可到全部 1<p≤∞。"
+      ],
+      "gaps": [
+        "全尺度定理只覆盖 p>3/2，没有 p=3/2 或更低指数的结论。",
+        "本结果限于有乘积结构的离散立方体，不适用于任意凸体，也不自动给向量值 MZ 定理。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 525,
+          "end_line": 727,
+          "pdf_pages": [
+            11,
+            12,
+            13,
+            14
+          ]
+        },
+        {
+          "start_line": 751,
+          "end_line": 850,
+          "pdf_pages": [
+            15,
+            16,
+            17
+          ]
+        },
+        {
+          "start_line": 852,
+          "end_line": 986,
+          "pdf_pages": [
+            17,
+            18,
+            19
+          ]
+        },
+        {
+          "start_line": 992,
+          "end_line": 1063,
+          "pdf_pages": [
+            20,
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Proposition 3.1：离散立方体平均的 Fourier 乘子控制",
+      "assumptions": [
+        "d∈N，t,t_1,t_2≥1，ξ∈T^d；m_t 是立方体平均核的傅里叶乘子。"
+      ],
+      "statement": "存在绝对常数 C（与 d 无关），使 |m_t(ξ)|≤C/(t|ξ|)，|m_t(ξ)−1|≤Ct|ξ|，以及 |m_{t_1}(ξ)−m_{t_2}(ξ)|≤C|t_1−t_2|max(t_1^{-1},t_2^{-1})。",
+      "start_line": 548,
+      "end_line": 552,
+      "pdf_pages": [
+        11
+      ],
+      "proof_steps": [
+        "写出乘子 m_N(ξ)=∏_k sin((2N+1)πξ_k)/((2N+1)sin(πξ_k))。",
+        "证明高频衰减时，把坐标分成 (2N+1)sin(πξ_k)≥2 的大坐标与小坐标；前者用乘积几何衰减，后者用 Taylor 展开得到 1−a_k/10 的因子，并以 (Σa_k)exp(−Σa_k/10)≤10 汇总。",
+        "将离散乘子与对齐的连续立方体平均 ν_N 作单元积分比较；用连续乘子的低频偏差与尺度差分估计，导出其余两条界。"
+      ],
+      "gaps": [
+        "估计依赖立方体乘子按坐标分解这一特殊结构；作者指出方法不直接扩展到其它离散凸体。",
+        "C 为非显式绝对常数，文中不声称最优。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 583,
+          "end_line": 689,
+          "pdf_pages": [
+            12,
+            13
+          ]
+        },
+        {
+          "start_line": 696,
+          "end_line": 727,
+          "pdf_pages": [
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Proposition 4.2：Carbery 型几乎正交原则（离散版本）",
+      "assumptions": [
+        "线性算子 T_t=M_t−H_t，M_t、H_t 为正算子。",
+        "对所有 p∈(1,2]，H 的极大算子有界；存在 p_0∈(1,2)，使每个 lacunary block U_n 上 T 的局部极大算子对 p∈(p_0,2] 一致有界。",
+        "频率分解 f=Σ S_n f 满足维数无关 Littlewood–Paley 界，并存在频带相互作用系数 b_j，使 Σ_j b_j^ρ<∞ 且 sup_t(Σ_n|T_tS_{j+n}f|²)^{1/2} 的 ℓ² 算子界 ≤b_j。"
+      ],
+      "statement": "对 p∈(p_0,2]，跨频带重组后的 ℓ^p 点态频率方和 (Σ_n sup_{t∈U_n}|T_t f|²)^{1/2} 有统一有界估计，进而 T 的全参数极大算子有界；常数只依赖 p,p_0,ρ,Σ b_j^ρ、所列局部界及 Littlewood–Paley/lacunarity 常数。",
+      "start_line": 853,
+      "end_line": 878,
+      "pdf_pages": [
+        17
+      ],
+      "proof_steps": [
+        "先以有限频带和定义 ℓ^p→ℓ^p(ℓ²) 算子 R_N；目标是对所有截断 N 与所有参数选择 t_n 得到统一界。",
+        "定义最佳混合范数常数 A_N(s,r)，先用局部极大界控制 A_N(q,q)，再借 H 的极大界与 T_t=M_t−H_t 分解控制 A_N(p,∞)。",
+        "通过复插值取得中间 ℓ^u(ℓ²) 控制；Littlewood–Paley 给出输入频带方和界，和离散化的频带估计插值后按 j 求和。",
+        "Σ b_j^ρ<∞ 确保频带求和收敛，推出统一有限截断界；再由单调收敛放开截断并取逐点实现参数上确界。"
+      ],
+      "gaps": [
+        "这是抽象充分条件框架；实际应用仍须分别证明局部块界、半群比较、频带衰减和 LP 假设。",
+        "证明使用复插值、Littlewood–Paley 等已引用工具；本卡概括作者推导，未独立重证引用的通用泛函分析定理。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 879,
+          "end_line": 934,
+          "pdf_pages": [
+            17,
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Theorem 5 与 Theorem 6：立方体 r-变差估计",
+      "assumptions": [
+        "Theorem 5：整数格立方体平均，p∈(3/2,4)，r∈(2,∞)，对所有 t>0 取变差。",
+        "Theorem 6：dyadic t=2^n，p∈(1,∞)，r∈(2,∞)。"
+      ],
+      "statement": "两定理均给出维数无关界：全尺度 ||V_r(M_t f:t>0)||_{ℓ^p}≤C_{p,r}||f||_{ℓ^p}（p∈(3/2,4)）；dyadic 长变差 ||V_r(M_{2^n}f:n∈N_0)||_{ℓ^p}≤C_{p,r}||f||_{ℓ^p}（任意 1<p<∞）。文章称 r>2 的范围尖锐，并引用 [11]。",
+      "start_line": 191,
+      "end_line": 199,
+      "pdf_pages": [
+        4
+      ],
+      "proof_steps": [
+        "先用变差分解把全变差化成 dyadic 长变差与每个 dyadic block 内相对于基点的短变差。",
+        "长变差由离散 Poisson 扩散半群的变差界控制；M_{2^n}−P_{2^n} 的误差通过 dyadic Poisson 频带分解、向量值平均界和频率衰减平方函数控制。",
+        "短变差由 dyadic 数值 Menshov–Rademacher 不等式化成 dyadic-block 增量平方函数。p∈(3/2,2] 时将 p=1 的粗界与 p=2 的乘子差分衰减插值，并按频带求和；2<p<4 时用向量值/稀疏极大控制与同一频带衰减插值。"
+      ],
+      "gaps": [
+        "全变差结论不覆盖 p≤3/2 或 p≥4；dyadic 结论虽覆盖所有 1<p<∞，但没有 p=1、∞。",
+        "r=2 不包含在结论内；尖锐性由引用的外部文献而非本文证明。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1065,
+          "end_line": 1145,
+          "pdf_pages": [
+            21,
+            22,
+            23
+          ]
+        },
+        {
+          "start_line": 1147,
+          "end_line": 1241,
+          "pdf_pages": [
+            23,
+            24,
+            25
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Theorem 7 与 Proposition 5.2：交换保测变换的遍历转移",
+      "assumptions": [
+        "σ-有限测度空间上有 d 个可交换、可逆保测变换；离散立方体平均的离散 ℓ^p 变差估计常数对 d 一致。",
+        "Theorem 7 的范围与所用离散定理一致：全尺度 p∈(3/2,4)、r>2；dyadic 长变差 p∈(1,∞)、r>2。"
+      ],
+      "statement": "Proposition 5.2 将对 Z^d 的维数无关变差估计转移到相应遍历平均，并保持 p,r 与常数；由此得到 Theorem 7 的遍历版本，且界不依赖底层变换个数 d。",
+      "start_line": 218,
+      "end_line": 225,
+      "pdf_pages": [
+        5
+      ],
+      "proof_steps": [
+        "对 h 与有限截断 R 构造在大立方体支撑的轨道函数 φ_x(y)=h(T_1^{y_1}…T_d^{y_d}x)。",
+        "在边界缓冲足够时，遍历平均与离散格点平均逐点相同；先将离散变差界用于 φ_x，再对 x 积分。",
+        "比较扩大后的支撑立方体与内侧求和立方体体积，令 R→∞ 消掉边界比，再令缓冲参数 ε→0，得到原函数的变差界。"
+      ],
+      "gaps": [
+        "应用要求变换可交换、可逆且保测；不能直接转移到不满足这些条件的动力系统。",
+        "这里只给作者证明的结构性复述，未独立重证一般遍历转移。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1243,
+          "end_line": 1290,
+          "pdf_pages": [
+            25,
+            26
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Appendix A：离散 Riesz 变换低指数维数依赖",
+      "assumptions": [
+        "令 R_j=(1/2)Δ_j L^{-1/2} 为 Z^d 上的离散 Riesz 变换。",
+        "q∈(1,2)。"
+      ],
+      "statement": "引用 Lust–Piquard 的结果指出，对 q∈(1,2)，(Σ_j(|R_j f|²+|R_j^*f|²))^{1/2} 的 ℓ^q 范数不能有维数无关界；本文给上界 C_{q,ε}d^{1/q−1/2+ε} 与下界 c_q d^{1/q−1/2}。",
+      "start_line": 1292,
+      "end_line": 1308,
+      "pdf_pages": [
+        26
+      ],
+      "proof_steps": [
+        "上界：用 Rademacher 随机化、对偶性与 Cauchy–Schwarz，把低 q 指数情形界在 d^{1/2} 乘子范数，再与 q=2 无维数界插值。",
+        "下界：取张量 δ_0 函数 G，利用各离散导数支撑集互不相交，得到导数方和下界 d^{1/q}；用半群 Taylor 公式与生成元 L 估计 ||L^{1/2}G||_q≤2||LG||_q^{1/2}||G||_q^{1/2}≲d^{1/2}，取 f=L^{1/2}G 得所需下界。"
+      ],
+      "gaps": [
+        "该附录约束的是离散 Riesz 向量变换在 q<2 的维数依赖，不是立方体平均极大结论的反例。",
+        "ε 损失上界与无 ε 下界之间仍有小指数差。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1309,
+          "end_line": 1423,
+          "pdf_pages": [
+            26,
+            27,
+            28
+          ]
+        }
+      ]
+    }
+  ],
+  "constant_dependence": "全文主结果常数与空间维数 d 无关。连续比较定理含绝对因子 e^6 和连续极大算子范数；dyadic/lacunary最大常数依赖 p，任意 lacunary 情形另依赖比值下界 a>1；全变差和dyadic变差常数依赖 p,r；almost-orthogonality 常数依赖 p,p_0,ρ,频带衰减序列的 ℓ^ρ 范数、局部块界及LP与稀疏比常数。Theorem 2 椭球反例下界常数仅依赖 p。",
+  "endpoint_limits": [
+    "全尺度立方体极大估计和全尺度变差的 p 范围分别是 p>3/2 与 3/2<p<4，开端点不含。",
+    "dyadic/lacunary立方体极大界覆盖 1<p≤∞；dyadic r-变差覆盖 1<p<∞、r>2，不包含 r=2。",
+    "大尺度比较定理仅适用于 t≥c(G)d；任意对称凸体的小尺度仍可能有维数发散，Theorem 2 即示范。",
+    "乘子论证依赖立方体格点的坐标乘积结构；文章没有把结论推广到一般离散凸体。",
+    "全文28页已读至作者与参考文献结束；选定的定理、乘子、几乎正交、变差及 Riesz 公式已按PDF视觉核验（PDF pp.2–4, 11–14, 16–17, 20–23, 25–28）。"
+  ],
+  "reusable_methods": [
+    "离散—连续大尺度转移：以单位立方体常值延拓把离散 l^p 范数等距嵌入连续 L^p，再以 Minkowski 范数控制平均支撑和归一化体积。",
+    "几乎正交方案：把 T_t 分解为易控的正平均/半群 H_t 与误差 T_t；分别建立局部参数块极大界和远离频带的可求和 ℓ² 衰减，再以 LP 分解与插值重组。",
+    "整数格乘子比较：先利用乘积 Dirichlet 公式得到维数无关的高频衰减，再与对齐连续核比较单元积分，控制低频偏差和尺度差。",
+    "短变差控制：用数值 dyadic Menshov–Rademacher 分解将块内上确界/变差转为等尺度增量平方函数，避免直接求参数连续导数。",
+    "遍历转移：有限支撑轨道截断加边界缓冲，先应用整数格估计，再令体积边界误差趋零。"
+  ],
+  "unchecked": [
+    "本文引用的扩散半群 maximal/Littlewood–Paley/变差定理、Carbery 原理、插值定理与外部 Riesz 变换结果没有独立重证；本卡区分了本文证明步骤与这些引用。",
+    "PDF公式与定理陈述已对关键页面抽查视觉版面，但没有对全文每一个积分常数、公式排印或引用文献版本逐一做外部校勘。",
+    "本篇处理整数格立方体 Hardy–Littlewood 平均、极大和变差；它只给 F07（Marcinkiewicz–Zygmund 向量值延拓）提供几乎正交、dyadic 分块与频带估计的邻近方法，不提供该主题的向量值 MZ 定理，也不定义私有 TC-A4/中心立方体接口。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1448,
+    "source_lines": 1454,
+    "required_content_lines": 1225,
+    "covered_content_lines": 1225,
+    "reported_status": "full_read",
+    "source": "supplementary/S-10977fcb18554549/paper.md"
+  },
+  "review_source": "reviews/EG/evidence/S-10977fcb18554549.json",
+  "review_input_sha256": "548fb7df0eccca4d4693fbda94710d7864f318abc6cd02565b255825c41d367a"
+}

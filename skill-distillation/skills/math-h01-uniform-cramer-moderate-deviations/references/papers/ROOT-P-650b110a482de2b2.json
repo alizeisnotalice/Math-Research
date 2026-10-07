@@ -1,0 +1,228 @@
+{
+  "paper_id": "P-650b110a482de2b2",
+  "observed_title": "A Cramér type moderate deviation theorem for the critical Curie-Weiss model",
+  "authors": [
+    "Van Hao Can",
+    "Viet-Hung Pham"
+  ],
+  "version": "arXiv:1709.04267v2, visible2017-10-30 watermark;externalversionidentitynotyetchecked",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 553,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  ],
+  "topic_relevance": {
+    "H01": "direct"
+  },
+  "theorem_cards": [
+    {
+      "label": "Critical target and Theorem1.4",
+      "start_line": 108,
+      "end_line": 141,
+      "pdf_pages": [
+        3
+      ],
+      "assumptions": [
+        "Classical ±1 Curie–Weiss Gibbs spins, β=1,h=0; Wn=Sn/n^(3/4); n sufficiently large;0≤x≤n^(1/12)."
+      ],
+      "statement": "p1(t)=exp(−t⁴/12),p2(t)=(t²/2−t⁶/30)p1(t). F normalized integralp1. G(x)=∫x∞p2/∫x∞p1−∫ℝp2/∫ℝp1. |P(Wn>x)/(1−F(x))−1−G(x)/√n|≤C(x¹²+n^(1/3))/n.",
+      "proof_steps": [
+        "Critical quadratic curvature vanishes; fourth-order saddle controls n^(3/4), not√n.",
+        "Numerator and partition denominator both expanded before ratio, subtracting totalintegral correction inG."
+      ],
+      "gaps": [
+        "Source proof has literal monotonicity/tail-ratio mistakes below; mainstatement kept originaltheorem with local repairs separated, not independentwholeproof certificate.",
+        "Near-critical β=1+O(n^-1/2) and non-Bernoulli models only external background; do not transfer sameG automatically."
+      ],
+      "proof_source_ranges": [
+        {
+          "file": "corpus/papers/P-650b110a482de2b2/paper.md",
+          "start_line": 235,
+          "end_line": 513,
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Corollary1.5 and convergence range",
+      "start_line": 147,
+      "end_line": 158,
+      "pdf_pages": [
+        4
+      ],
+      "assumptions": [
+        "Same critical classical model; fixedx for second claim."
+      ],
+      "statement": "Tailratio=1+O((1+x⁶)/√n) on0≤x≤n^(1/12). Fixedrealx: √n(Fn(x)−F(x))→(F(x)−1)G(x).",
+      "proof_steps": [
+        "G growth O(1+x⁶) from quartic-tail moments. Forx=o(n^(1/12)), error→0; atx=n^(1/12) bound is O1, notuniformvanishing.",
+        "SymmetryG0=0; lattice atomat0 isO(n^-3/4), smallerthann^-1/2."
+      ],
+      "gaps": [
+        "ConstantC existential, no numericalcertifiedvalue supplied. ExternaloriginalCLT/Steinresultsnot separatelyfullyread."
+      ]
+    },
+    {
+      "label": "Parity lattice and combinatorial partition",
+      "start_line": 237,
+      "end_line": 304,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "assumptions": [
+        "k=#positive spins; ℓ=2k−n has parityn; criticalh0."
+      ],
+      "statement": "Weightsproportionalbinom(n,k)exp((2k−n)²/(2n)); normalize by their fullsum. Strict eventℓ>n^(3/4)x. Scaled lattice spacing2/n^(3/4).",
+      "proof_steps": [
+        "Actual i<j interaction=(Sn²−n)/(2n)=Sn²/(2n)−1/2. Source switches to i≤j and +1/2, which multiplies every weight andZbye; normalizedprobabilitiesunchanged.",
+        "EntropyI(k/n)+quadratic energyJ cancel at secondorder; Stirlingprefactor nearcenter yieldsn^-1/2 weightfactor."
+      ],
+      "gaps": [
+        "Literal sourceZn withi≤j differs originaldefinedZn; use proportionalweights ordeclareconstantshift ratherthan assertingequalityoforiginalZn.",
+        "Parity/strictthreshold cannot disappear inRiemannapproximation; endpointmesh errors needkept."
+      ]
+    },
+    {
+      "label": "Degenerate Laplace expansion and central normalizer",
+      "start_line": 197,
+      "end_line": 229,
+      "pdf_pages": [
+        5
+      ],
+      "assumptions": [
+        "t∈[1/4,3/4] for8thderivative bound;sourceI(t)=−tlogt−(1−t)log(1−t)."
+      ],
+      "statement": "J′,J″,J‴ vanishat1/2; J⁽⁴⁾=-32,J⁽⁶⁾=-1536; −2²⁵<J⁽⁸⁾<0. n[J(k/n)−J(.5)]=−ℓ⁴/(12n³)−ℓ⁶/(30n⁵)+8thremainder.",
+      "proof_steps": [
+        "Stirlingprefactor expansion1+ℓ²/(2n²)+O(ℓ⁴/n⁴), multiplied exponent producesp2/√n.",
+        "Outsidecentral|k−n/2|≥n/4 exponential e^-cn; centralparitysumBn=(n^(3/4)/2)∫p1+(n^(1/4)/2)∫p2+O(n^(1/12)).",
+        "Uniformbounded derivatives ofpolynomial×quarticdensity giveRiemannerrors; bookStirlingversionquoted."
+      ],
+      "gaps": [
+        "OCR−225 atline221 is−2^25 visuallyconfirmed.",
+        "Printedline407 ne^-n^(1/3) too strong: at cutoffℓ≈n^(5/6), p1≈e^-n^(1/3)/12; sufficientweakerCe^-c n^(1/3) stillsmallfornormalizer."
+      ],
+      "proof_source_ranges": [
+        {
+          "file": "corpus/papers/P-650b110a482de2b2/paper.md",
+          "start_line": 318,
+          "end_line": 430,
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Tail Riemann sum literal errors and checked repairs",
+      "start_line": 431,
+      "end_line": 505,
+      "pdf_pages": [
+        10,
+        11
+      ],
+      "assumptions": [
+        "Large x>10 andx≤n^(1/12); signedp2 musthandled by−p2."
+      ],
+      "statement": "Lemma3.3 printedp2 decreasingon(9,∞) isfalse; p2 negativeandincreasingthere. Printedp1(x)/P1tail(x)=Θ1 isfalse; actual~x³/3. Keep mesherror n^-3/4(1+x³) inratio.",
+      "proof_steps": [
+        "p2′/p1=t−11t⁵/30+t⁹/90>0 fort≥9, so−p2 positive decreasing; applydecreasingquadrature to−p2 andrestore sign.",
+        "Quartictail viaL’Hopital/integrationbyparts: P1tail(x)~3x^-3 exp(−x⁴/12). Signedp2/P1tail=O(x⁹), r/P1tail=O(x¹⁵) pointwise;integralratios O(x⁶),O(x¹²) onrestrictedrange.",
+        "Sourceboundaryterms becomeO(n^-3/4x³+n^-5/4x⁹+n^-7/4x¹⁵). Forx≤n^(1/12), lasttwo≤first.",
+        "Checked Young/scaling: sety=x³ n^-1/12; n^-3/4x³=n^-2/3y≤n^-2/3(1+y⁴)=n^-2/3+x¹²/n. Thusmissingmeshterm fitsmainThm1.4bound, butnotprintedstrongerO(x¹²/n+n^-3/4) withoutextraargument."
+      ],
+      "gaps": [
+        "These local repairs do not independentlycertify all uniformratio remainder/division steps. Fullproof audit remainsnotindependentlycertified.",
+        "Atxlargeabsolute truncatedtailerrors needrelativebound versusP1tail; originalrangesmustretained."
+      ]
+    },
+    {
+      "label": "Bounded region and external dependencies",
+      "start_line": 507,
+      "end_line": 545,
+      "pdf_pages": [
+        12
+      ],
+      "assumptions": [
+        "Fixedboundedx orx≤10 inproof; same model."
+      ],
+      "statement": "Source ratio expansion1+G/√n+O(n^-2/3) onboundedpositivex, fromcentralnormalizer andtailsRiemannerror.",
+      "proof_steps": [
+        "BoundedxP1tail boundedaway0; O(n^(1/12)) sums dividedbyn^(3/4) givesn^-2/3.",
+        "Fullbibliographyread; RobbinsStirling, Ellis–Newmanlimit and Petrov iidbackground quoted not independentlyprovedhere."
+      ],
+      "gaps": [
+        "No dimensionuniform cube maximal inequality orprivateparameterfamily stated."
+      ]
+    }
+  ],
+  "constant_dependence": "Fixed classical critical model, existentialabsoluteC andsufficientlylargen; noexplicitC or n0 calculated. Noncriticalβ/h parameters differentnormalization andexternaltheorems.",
+  "endpoint_limits": [
+    "Uniformvanishingrelativeerror onlyx=o(n^(1/12)), not atupperboundaryautomatically.",
+    "QuarticF notstandardnormalΦ; Wn scalingn^(3/4).",
+    "Strictthreshold and paritymesh included."
+  ],
+  "reusable_methods": [
+    "Combinatorial Gibbsweight→entropy saddle→degenerateLaplacequarticexpansion.",
+    "Expandbothnormalizerandtailandretainfirstcorrection.",
+    "Use signedtailquadrature andexplicitmeshrelativeerror; absorbviaYoung."
+  ],
+  "unchecked": [
+    "ExternalStirlingandlimit theoremproofs notseparatelyread.",
+    "Completeuniformmainproof notindependentlycertified despitefullreading; localprintederrors auditedandrepaired as scoped."
+  ],
+  "cube_interface": [
+    "原文结论：经典临界Curie–Weiss的quartic目标Cramér型尾比。",
+    "已检查推导：interaction常数抵消、p2导数符号、quartic hazard尺度及mesherror的Young吸收。",
+    "迁移推断：课题若有四阶退化鞍点，可参考双归一化展开；不能直接替换模型或变量。",
+    "待验证：GP-BRANCH/TC-A4/HS对象、四阶鞍点、离散权重与一致误差。"
+  ],
+  "visual_checks": [
+    "reviews/ROOT/visual/critical-cw/p2.png",
+    "reviews/ROOT/visual/critical-cw/p3.png",
+    "reviews/ROOT/visual/critical-cw/p5.png",
+    "reviews/ROOT/visual/critical-cw/p6.png",
+    "reviews/ROOT/visual/critical-cw/p10.png",
+    "reviews/ROOT/visual/critical-cw/p11.png"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 549,
+    "source_lines": 553,
+    "required_content_lines": 442,
+    "covered_content_lines": 442,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-650b110a482de2b2/paper.md"
+  },
+  "review_source": "reviews/ROOT/evidence/P-650b110a482de2b2.json",
+  "review_input_sha256": "a7d69b42b16ee31cf40cea210c0aac742d6d7856c53e5a386e82ea6427936aa2"
+}

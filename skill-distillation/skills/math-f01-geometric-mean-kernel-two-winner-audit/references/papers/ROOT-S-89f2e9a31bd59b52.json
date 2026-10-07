@@ -1,0 +1,132 @@
+{
+  "paper_id": "S-89f2e9a31bd59b52",
+  "observed_title": "An equivalent form of Young's inequality with upper bound",
+  "authors": [
+    "E. Minguzzi"
+  ],
+  "version": "arXiv:0802.1334v2,5Aug2008；PDF5页；期刊占位页眉不是最终刊本信息",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 212,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "scope": "全文全部证明、Legendre例和参考文献"
+    }
+  ],
+  "topic_relevance": [
+    {
+      "code": "A02",
+      "decision": "adjacent",
+      "reason": "严格正部/Fenchel配对与余项上界；不涉及极大算子或无穷可和性"
+    },
+    {
+      "code": "F01",
+      "decision": "adjacent",
+      "reason": "通过共轭导数使余项上下界及等号同核，不是私有两赢家几何平均"
+    }
+  ],
+  "definitions": [
+    "F(a,b)=∫_(α1)^aφ+∫_(β1)^bψ−ab+α1β1；含端点常数，不能漏掉。"
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem1.1/Lemma2.1：双Young余项恒等式",
+      "start_line": 25,
+      "end_line": 141,
+      "pdf_pages": [
+        1,
+        2,
+        3
+      ],
+      "assumptions": [
+        "φ在闭区间连续严格递增，ψ是其逆，端点φ(α_i)=β_i；a,b在相应域。"
+      ],
+      "statement": "0≤F(a,b)≤−(ψ(b)−a)(φ(a)−b)；两端等号等价且iff b=φ(a)。",
+      "proof_steps": [
+        "按F积分定义，F(a,b)=∫_(ψ(b))^a(φ(x)−b)dx，反向积分时被积函数也反号，故非负；严格递增给唯一零点。",
+        "把对(a,b̃)和(ã,b)的Young式相加，减去ab+ãb̃，得F(a,b)+F(ã,b̃)≥−(ã−a)(b̃−b)。",
+        "取ã=ψ(b)、b̃=φ(a)，两交叉Young式均取等，因此成为精确恒等式F(a,b)+F(ψ(b),φ(a))=−(ψ(b)−a)(φ(a)−b)。",
+        "第二F非负给上界；其等于0 iff φ(ψ(b))=φ(a)，由可逆性等价b=φ(a)。"
+      ],
+      "gaps": [
+        "若φ只是非严格单调，逆函数和等号刻画需改为广义逆/次梯度，不能直接套此卡。"
+      ]
+    },
+    {
+      "label": "Theorem3.1/Example3.2：真正共轭的配对",
+      "start_line": 144,
+      "end_line": 177,
+      "pdf_pages": [
+        3,
+        4
+      ],
+      "assumptions": [
+        "Φ、Ψ互为Legendre变换且C1，导数连续严格递增并在所用域互逆。",
+        "幂例α,β>1且1/α+1/β=1，非负输入。"
+      ],
+      "statement": "0≤Φ(a)+Ψ(b)−ab≤−(Φ′(a)−b)(Ψ′(b)−a)，等号均iff b=Φ′(a)。",
+      "proof_steps": [
+        "积分表示Φ与Ψ的导数及端点Fenchel等式，把该余项化为Theorem1.1的F。",
+        "对Φ(s)=κs²，Ψ(x)=x²/(4κ)，Fenchel式取s=1给x≤κ+x²/(4κ)；此具体配对独立计算而非Ψ≡0。"
+      ],
+      "gaps": [
+        "有限区间受限共轭可能在端点导数不互逆；先核真正共轭域，不能只见两个凸函数就套式。"
+      ]
+    },
+    {
+      "label": "Remark1.2：与Merkle的比较边界",
+      "start_line": 69,
+      "end_line": 92,
+      "pdf_pages": [
+        2
+      ],
+      "assumptions": [
+        "α1=β1=0，φ和ψ递增且互逆，所以均非负。"
+      ],
+      "statement": "新上界不超过max{aφ(a),bψ(b)}−ab；并存在严格改进的内部输入。",
+      "proof_steps": [
+        "若φ(a)>b，则差由(b−φ(a))ψ(b)≤0控制；若φ(a)<b则对称。",
+        "若ψ(b)>0且φ(a)>b，则严格；边界ψ(b)=0不一定严格。"
+      ],
+      "gaps": [
+        "原文证明把非等值情形直接写严格，零端点需保留等号例：φ(x)=x，a=1,b=0时两个上界均1。",
+        "不影响Theorem1.1；不沿用旧Skill“严格对比全部相容”的概括。"
+      ]
+    }
+  ],
+  "constant_dependence": "常数1为精确恒等式推得，与维数无关；具体输入域、共轭配对必须满足；没有外层收敛常数。",
+  "endpoint_limits": [
+    "零端点上的严格比较须另核。",
+    "Ψ≡0并非正二次Φ的Fenchel共轭；不能使用旧包退化配对。"
+  ],
+  "reusable_methods": [
+    "双Young相加后交换两共轭导数，得到非负余项精确分解。",
+    "用余项零点核对两侧等号，避免把求值点猜成优化点。"
+  ],
+  "unchecked": [
+    "标准Young与共轭积分表示本次给了局部导数/面积检查，未形式化证明所有广义凸函数版本。",
+    "不证明课题中的线性预算或任意参数尺度求和。"
+  ],
+  "visual_checks": [
+    "PDF第2–3页：Lemma2.1交叉配对、Theorem1.1精确恒等式、Theorem3.1互为共轭条件及Remark1.2零端点问题。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 208,
+    "source_lines": 212,
+    "required_content_lines": 129,
+    "covered_content_lines": 129,
+    "reported_status": "full_read",
+    "source": "evidence/supplementary/S-89f2e9a31bd59b52/paper.md"
+  },
+  "review_source": "evidence/reviews/ROOT/evidence/S-89f2e9a31bd59b52.json",
+  "review_input_sha256": "d83f5d09f6ea098039dfad67d572f7c0f126f5d368fc51ff0f5fe080056c4bd1"
+}

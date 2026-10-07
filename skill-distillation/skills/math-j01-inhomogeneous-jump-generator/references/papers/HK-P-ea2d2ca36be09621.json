@@ -1,0 +1,213 @@
+{
+  "paper_id": "P-ea2d2ca36be09621",
+  "observed_title": "Kolmogorov’s Equations for Jump Markov Processes and their Applications to Control Problems",
+  "authors": [
+    "Eugene A. Feinberg",
+    "Albert N. Shiryaev"
+  ],
+  "version": "arXiv:2109.05079v2; 18 PDF pages. Local PDF is the 2021 survey-style article; later publication metadata was not independently checked.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1017,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "scope": "完整18页全文：非齐次 Q-function/跳率定义、局部积分/有界假设、补偿随机测度路径构造、首跳级数、backward/forward 方程及最小解、Markov 决策策略和充分性证明、代价准则与参考文献。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "J01": "direct：文章把 q(x,t,B) 明确定义为状态及时间依赖、可测的转移强度，给出由实际 Q-function 到跳过程/转移核/ Kolmogorov 方程的条件。局部有界性及前向方程测试集限制是关键；不自动产生 cube 算子的生成元。",
+    "I02": "adjacent：用可预测随机测度补偿子构造 jump process，也使用可预测策略和条件分布；不是一般可选/可预测投影理论。"
+  },
+  "definitions": [
+    {
+      "name": "可测非齐次 Q-function",
+      "statement": "对每个 (x,t)，q(x,t,·) 是有符号测度，总质量≤0，非对角部分非负有限；对每个 B，q(x,t,B) 关于 (x,t) 可测。本文默认保守情形，可添吸收态将非保守情况改写为保守情况。q(x,t)=q(x,t,X\\{x}) 为总跳率。",
+      "source_lines": [
+        169,
+        188
+      ],
+      "pdf_pages": [
+        4
+      ]
+    },
+    {
+      "name": "四级逐状态时间条件",
+      "statement": "Assumption 2.1/2.2 为逐状态对全时间率有界；Assumption 2.3 为每个状态在任意有限时间段上局部有界；Assumption 2.4 为每个状态在任意有限时间段上率函数局部 L1。后向方程结果使用 Assumption 2.4，前向方程结果使用较强的 Assumption 2.3。",
+      "source_lines": [
+        190,
+        205
+      ],
+      "pdf_pages": [
+        4
+      ]
+    },
+    {
+      "name": "策略下可预测强度",
+      "statement": "给定 history-predictable policy π，ν^π([0,t],B)=∫_0^t q̃(ξ_s,π_s,B\\{ξ_s})1_{ξ_s∈X}ds；这是其 jump random measure 的可预测补偿子。",
+      "source_lines": [
+        500,
+        557
+      ],
+      "pdf_pages": [
+        10,
+        11
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Construction of the process and Theorem 2.6",
+      "assumptions": [
+        "X 为 standard Borel 空间；q(x,t,B) 是可测 Q-function。",
+        "对每个固定状态 x，q(x,·) 满足 Assumption 2.4 的局部时间 L1 条件。",
+        "使用作者的跳时序列路径空间及初始分布。"
+      ],
+      "statement": "作者定义按 sojourn 区间累积的可预测随机测度 ν，其密度由当前状态的 q(x_n,s,B\\{x_n}) 给出；给定该补偿子和初始状态分布即可构造过程。转移函数写作零跳项和 n 次跳项的和；Theorem 2.6 称所得 ξ 为 jump Markov process。",
+      "start_line": 219,
+      "end_line": 278,
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "proof_steps": [
+        "按首跳递归定义 P^(0) 与 P^(n)，P=Σ_nP^(n)。",
+        "将历史过滤下的跳时/跳后状态条件分布按当前停留状态化简，得到等待生存 e^(−∫q) 及跳后核。",
+        "按区间内跳数 n 归纳条件转移式，再求和恢复 Markov 性和转移函数。"
+      ],
+      "gaps": [
+        "存在唯一过程的关键一般定理由作者引用 Jacod，而非此处重证。",
+        "该构造以局部时间 L1 条件为基础；更弱条件/爆炸的细节要按文中对应 theorem 读取。"
+      ]
+    },
+    {
+      "label": "Theorem 3.1: backward Kolmogorov equation",
+      "assumptions": [
+        "Assumption 2.4（每个状态的总跳率在每个有限时间段上可积）。",
+        "转移函数为非负解；要求终点边界 P(u,x;t,B)→1_{x∈B}，并有 u 上绝对连续性。"
+      ],
+      "statement": "转移函数满足 ∂_uP(u,x;t,B)=q(x,u)P(u,x;t,B)−∫_{X\\{x}}q(x,u,dy)P(u,y;t,B)，几乎处处 u<t；在同类解中极小。若 P regular，作者另给测度值[0,1]类的唯一性。",
+      "start_line": 282,
+      "end_line": 318,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "从首跳级数重排出积分恒等式。",
+        "由第一跳积分的绝对连续性推出 P 对起始时刻绝对连续；估计多跳项以验证 u↑t 的一致边界条件。",
+        "对积分恒等式对 u 几乎处处求导，合并零跳项和递归余项得到方程。",
+        "极小性和 regular 时唯一性的详细证明在 cited source [9] 中；本文将结构定理归因于 [9]。"
+      ],
+      "gaps": [
+        "本文是综述性陈述，Theorem 3.1 引用 [9] 的 Theorem 2；此处没有给出完整证明，相关证明源应继续追到目录中的原文。"
+      ]
+    },
+    {
+      "label": "Theorem 3.5 and Theorem 3.6: forward equation",
+      "assumptions": [
+        "Assumption 2.3：对每个 x 和有限 [T0,s) 时间段，q(x,t) 局部有界。",
+        "测试集 B 必须是 (q,s)-bounded，即 q 在 B×[T0,s) 上有界；仅逐点率有限并不足以对全集求积分。",
+        "regularity 若用于唯一性，另要求转移质量总和为1（无爆炸）。"
+      ],
+      "statement": "对测试集 B，P(u,x;t,B) 对终时绝对连续并在几乎处处 t 满足前向方程：−∫_B q(y,t)P(u,x;t,dy)+∫_X q(y,t,B\\{y})P(u,x;t,dy)。Theorem 3.5 给最小性和 regular 时唯一性；Theorem 3.6/ Lemma 3.7 给等价首跳/积分形式。",
+      "start_line": 310,
+      "end_line": 450,
+      "pdf_pages": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "proof_steps": [
+        "文章先给出 q 在全集上无界时两项可能分别发散、造成 −∞+∞ 的反例。",
+        "把测试集合限制在 (q,s)-bounded B 后，首跳公式的相关积分有限。",
+        "利用受限集上的积分方程与局部绝对连续性得到几乎处处的 forward equation；再将解的积分式与首跳项递推比较。"
+      ],
+      "gaps": [
+        "Theorem 3.5/3.6 主要引自 [9] 的定理 3/4，本文未完整重现所有证明。",
+        "对 B=X 不加条件的前向方程可能无定义；不能只因 q(x,t) 对每个 x,t 有限就忽略可积性。"
+      ]
+    },
+    {
+      "label": "Theorem 4.3: Markov policy reduction (application)",
+      "assumptions": [
+        "standard Borel state/action 空间、可测可行动作集和有限逐状态跳率；policy 相对于历史过滤可预测。",
+        "Markov policy由状态–时间上的 Radon–Nikodym 条件分布构造；终止/爆炸时用吸收状态。"
+      ],
+      "statement": "对固定初始分布，文中按时空边缘分布构造 Markov policy ϕ，使 joint state-action marginal 不大于一般 policy π；若 ϕ 对应过程在相应区间不爆炸，则不等式取等。",
+      "start_line": 534,
+      "end_line": 717,
+      "pdf_pages": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "proof_steps": [
+        "定义 history-dependent policy 的可预测强度 ν^π。",
+        "按时空联合分布对 state marginal 取 Radon–Nikodym 导数，得到 Markov policy。",
+        "对 q-bounded 集写前向积分方程，利用极小解性质比较两过程的状态边缘。",
+        "对任意初始分布通过增加初始态的辅助状态和策略时移还原；不爆炸时由总质量相等提升为等式。"
+      ],
+      "gaps": [
+        "应用的证明结构在本文展示，但引用 Theorem 4.3 的基础中会继续调用 Section 3 转移方程结果；策略优化结论不应被解读为 cube 参数冻结/迭代定理。"
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "没有浓度型通用常数。跳时核与转移函数精确依赖 q(x,t,·) 的时间积分、各状态的跳率和递归落点分布。",
+    "dependence": "局部 L1/局部有界条件按固定状态给出；forward 方程还依赖测试集上的有界性。爆炸与否决定转移函数是 subprobability 还是 regular。"
+  },
+  "endpoint_limits": {
+    "nonhomogeneity": "t 可真实进入 q(x,t,B)，无需连续；冻结 t 或以当前率常数替代须另作近似分析。",
+    "forward_integrals": "state-unbounded rates 可令全集上的 forward 方程成为 ∞−∞；限制到 q-bounded test sets。",
+    "explosion": "最小 transition function 对应过程；regular/no explosion 时有概率质量1并可得唯一性。",
+    "generator_domain": "有限状态或有界率只是特例；本文不为任意无界函数给强生成元定义及不变域。"
+  },
+  "reusable_methods": [
+    {
+      "method": "由当前状态–时间强度 q 构造历史可预测跳测度补偿子，再用首跳递归构造 P",
+      "transfer": "需从真实的选择/跳转机制识别 q(t,x,dz) 并逐条满足局部条件；time inhomogeneity 在生存指数中保留，不能将 q 冻结。"
+    },
+    {
+      "method": "对 unbounded rates 的前向式限定 q-bounded 测试集",
+      "transfer": "迁移到目标之前要先确定每个测试函数/集合上的补偿积分有限；不以逐点有限替代可积。"
+    }
+  ],
+  "unchecked": [
+    "全文1–1017行、PDF 1–18页已读；补偿随机测度/级数构造 p.5、前向反例与定理 p.7、policy 强度 p.10、Markov policy reduction p.12 已视觉核对。",
+    "文章主要为综述，Theorem 3.1/3.5 对应参考文献[9]中的结果；本文没有在这些 theorem 下展开完整证明，底层来源待继续阅读。",
+    "未独立核查 Jacod 的一般补偿子存在唯一性、filtered point-process 版本或 control MDP 引用。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1017,
+    "source_lines": 1017,
+    "required_content_lines": 765,
+    "covered_content_lines": 765,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-ea2d2ca36be09621/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-ea2d2ca36be09621.json",
+  "review_input_sha256": "a677cd33152b855c65a6bb7b077dbb2b3bdcca8e69bc0648418c1916e3156172"
+}

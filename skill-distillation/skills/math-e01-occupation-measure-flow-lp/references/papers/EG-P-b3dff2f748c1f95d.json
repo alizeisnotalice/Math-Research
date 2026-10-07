@@ -1,0 +1,125 @@
+{
+  "paper_id": "P-b3dff2f748c1f95d",
+  "observed_title": "Transient Stability Analysis of Power Systems via Occupation Measures",
+  "authors": [
+    "Cédric Josz",
+    "Daniel K. Molzahn",
+    "Matteo Tacchi",
+    "Somayeh Sojoudi"
+  ],
+  "version": "arXiv:1811.01372v1；首页标注 2018。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 307,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "E01": "direct"
+  },
+  "definitions": [
+    {
+      "term": "轨迹占用测度",
+      "definition": "对可行轨迹 x(·|x₀)，µ(A×B|x₀)=∫₀ᵀ1_{A×B}(t,x(t|x₀))dt，记录其在时空区域的停留；µT 为终端状态分布。",
+      "source_ranges": [
+        {
+          "start_line": 128,
+          "end_line": 151,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Liouville 弱流方程",
+      "definition": "对 v∈C¹([0,T]×X)，∫v(T,x)dµT=∫v(0,x)dµ₀+∫Lv dµ，其中 Lv=∂tv+∇v·f。",
+      "source_ranges": [
+        {
+          "start_line": 145,
+          "end_line": 168,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "ROA 占用测度 LP",
+      "definition": "最大化初始测度 µ₀ 的质量，满足弱流方程、µ₀+µ̂₀=λ_X、非负性及终端支持 supp(µT)⊂XT。",
+      "source_ranges": [
+        {
+          "start_line": 164,
+          "end_line": 183,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "ROA 占用 LP 的最优值、矩松弛及 SOS 对偶",
+      "assumptions": [
+        "状态集 X 是紧致基本半代数集，向量场 f 为多项式；给定有限终止时间 T 和终端集 XT。",
+        "轨迹在 [0,T] 留于 X，并以 x(T)∈XT 定义 ROA。",
+        "矩/SOS 层级需满足对应紧性条件；文中指出含等式 g₀=0 的变量变换流形需另作处理。"
+      ],
+      "statement": "作者据所引 occupation-measure 理论说明：无限维 LP 的最优值等于 ROA 的 Lebesgue 体积，且最优初始测度是 ROA 上的 Lebesgue 限制；对偶无间隙。截断矩层级给出下降的上界 p*_k↘p*，对偶多项式定义 ROA 外逼近 {x:v_k(0,x)≥0}，其体积随阶数趋近 ROA 体积。",
+      "start_line": 128,
+      "end_line": 186,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "用占用测度积分恒等式对生成元作时间积分，得到 Liouville 弱方程，再对初始分布积分形成平均流约束。",
+        "在初始测度被 λ_X 支配、终端支撑限于 XT 的条件下，流 LP 的可行轨迹恰编码进入终端集的初始点；最优初始质量因此对应 ROA 体积。",
+        "非负连续函数的对偶条件通过 SOS 矩层级松弛；截断矩 SDP 上界收敛性及 LP 强对偶引用 Henrion–Korda 等既有结果。",
+        "文中强调 OM 体积方法要求状态集有内点；变量替换造成的代数流形可在向量场切于流形（grad g₀·f≡0）时先忽略等式约束再与流形相交。",
+        "已通读全文与参考文献；这里是作者论证/引用链的归纳，没有独立重证所引强对偶与层级收敛定理。"
+      ],
+      "gaps": [
+        "论文给的是 ROA/动力系统应用，不是中心立方体极大函数的定理。",
+        "对于任意代数等式约束，作者明确指出忽略等式约束的做法无效；只对变量替换产生且轨迹保持的不变量成立。",
+        "案例规模小且计算阶数增加会迅速变难；稀疏化是未来工作。"
+      ]
+    }
+  ],
+  "constant_dependence": "LP 最优值界无显式常数；矩/SOS 阶数 k 控制松弛精度但文中未给误差速率。数值例选 T=8、ε=0.1；内逼近示例 k=3，外逼近 k=5。",
+  "endpoint_limits": [
+    "结果限于多项式动力学、紧致半代数状态集和固定有限终止时间。",
+    "等式不变量必须与向量场相容；任意等式约束会造成 OM 支撑集无内点问题。",
+    "文中只给有限低维案例，未解决大型电网计算复杂度。"
+  ],
+  "reusable_methods": [
+    "把按轨迹的时间积分转换为时空占用测度，再用生成元得到线性流约束。",
+    "值函数对偶与矩/SOS 证书给出 ROA 外逼近；对内逼近转而研究 ROA 补集。",
+    "对变换引入的等式约束先验证 Lie 导数为零，再决定是否能在凸松弛中后置相交。"
+  ],
+  "unchecked": [
+    "所引无限维 LP 强对偶、最优测度存在与 SOS 层级收敛定理未独立证明。",
+    "论文文本中的公式排版/下标有若干转换错位；复杂多项式实例未逐系数核验。",
+    "将时空流模型迁移到中心立方体位置×尺度空间需要新建状态、终端集合与时间参数化，尚无论证。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 303,
+    "source_lines": 307,
+    "required_content_lines": 283,
+    "covered_content_lines": 283,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-b3dff2f748c1f95d/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-b3dff2f748c1f95d.json",
+  "review_input_sha256": "b728ffccafdf52e44e4397a947495395f4bf4f7b34548e5e48043c0618cd76dc"
+}

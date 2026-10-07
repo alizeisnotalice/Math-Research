@@ -1,0 +1,330 @@
+{
+  "paper_id": "P-0297391ab7ac5c7b",
+  "observed_title": "Modal occupation measures and LMI relaxations for nonlinear switched systems control",
+  "authors": [
+    "Mathieu Claeys",
+    "Jamal Daafouz",
+    "Didier Henrion"
+  ],
+  "version": "本地 arXiv:1404.4699v2；首页 Draft of September 11, 2018；边栏 Dec 16, 2014。版本日期不自行合并；32页。",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 1615,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "E01": "direct"
+  },
+  "full_text_section_map": [
+    {
+      "section": "Introduction and preliminaries",
+      "source_ranges": [
+        {
+          "start_line": 7,
+          "end_line": 177,
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ],
+      "summary": "切换控制背景、弱星测度与多项式矩记号。"
+    },
+    {
+      "section": "2 Weak linear program",
+      "source_ranges": [
+        {
+          "start_line": 178,
+          "end_line": 664,
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "summary": "固定端点切换OCP、Young relaxation、occupation、modal projection、weak duality/attainment and HJB certificates。"
+    },
+    {
+      "section": "3 LMI relaxations",
+      "source_ranges": [
+        {
+          "start_line": 667,
+          "end_line": 941,
+          "pdf_pages": [
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        }
+      ],
+      "summary": "Archimedean polynomial moment/SOS hierarchy and approximate computational complexity。"
+    },
+    {
+      "section": "4 Trajectory extraction and 5 Extensions",
+      "source_ranges": [
+        {
+          "start_line": 942,
+          "end_line": 1151,
+          "pdf_pages": [
+            19,
+            20,
+            21,
+            22,
+            23
+          ]
+        }
+      ],
+      "summary": "共同时间边缘的网格重构、自由边界/模式约束/积分约束、仿射控制、开闭环和脉冲扩展。"
+    },
+    {
+      "section": "6 Examples",
+      "source_ranges": [
+        {
+          "start_line": 1152,
+          "end_line": 1419,
+          "pdf_pages": [
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ]
+        }
+      ],
+      "summary": "chattering、double integrator、LQR、double tank、quadrotor numerics；不作为本次重跑实验。"
+    },
+    {
+      "section": "Acknowledgments and references",
+      "source_ranges": [
+        {
+          "start_line": 1422,
+          "end_line": 1615,
+          "pdf_pages": [
+            29,
+            30,
+            31,
+            32
+          ]
+        }
+      ],
+      "summary": "完整读51篇参考文献条目；关键no-gap、Putinar和重构外引未另全文核。"
+    }
+  ],
+  "definitions": [
+    {
+      "term": "Modal occupation",
+      "definition": "K=[0,T]×X，U={e_1,…,e_m}；μ_j(A×B)=∫_{A×B×U}u_j dμ，μ_j≥0，Σ_jμ_j为联合时间状态occupation。",
+      "source_ranges": [
+        {
+          "start_line": 409,
+          "end_line": 454,
+          "pdf_pages": [
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Weak flow and mass",
+      "definition": "对每个v∈C¹(K)，Σ_j∫(∂_tv+∇v·f_j)dμ_j=v(T,x_T)−v(0,x_0)。取v=t得Σ_jμ_j(K)=T，且仅用时间测试得Σ_jπ_tμ_j=dt。",
+      "source_ranges": [
+        {
+          "start_line": 409,
+          "end_line": 454,
+          "pdf_pages": [
+            9
+          ]
+        },
+        {
+          "start_line": 518,
+          "end_line": 537,
+          "pdf_pages": [
+            11
+          ]
+        },
+        {
+          "start_line": 992,
+          "end_line": 1001,
+          "pdf_pages": [
+            20
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem 2: full weak LP and modal weak LP equivalence",
+      "assumptions": [
+        "T和x_0,x_T固定；X紧；f_j,l_j连续，f_j对x Lipschitz。",
+        "U为有限单位向量集合，动态与cost对mode coordinate u_j线性。"
+      ],
+      "statement": "完整occupation LP(8)与m个modal measure LP(10)最优值相等。该等价发生在两个弱LP之间；不默认原始非凸switching OCP无gap或存在最优switch。",
+      "start_line": 409,
+      "end_line": 511,
+      "pdf_pages": [
+        9,
+        10
+      ],
+      "proof_steps": [
+        "正向取μ_j=(π_{t,x})#(u_jμ)，弱流与cost逐项保持。",
+        "逆向μbar=Σ_jμ_j；ū_j=dμ_j/dμbar≥0且Σū_j=1 μbar-a.e.，明确构造 μ(dt,dx,du)=Σ_j ū_j(t,x)δ_{e_j}(du)μbar(dt,dx)，保持每个mode矩。",
+        "这是TEAM_EF核验的有限mode投影/合并构件；正文Theorem2证明首两段的(8)/(10)标签颠倒且δ1(du_j)写法含糊，按上述有类型构造读取。"
+      ],
+      "gaps": [
+        "不从此推原switching controls recoverability；p_S=p_W的Theorem1仅略述并引用Vinter。"
+      ]
+    },
+    {
+      "name": "Primal attained; HJB duality (Lemma 2, Theorem 3)",
+      "assumptions": [
+        "上述compact/continuous数据；modal LP可行（作者Theorem3）。"
+      ],
+      "statement": "可行modal LP有有限总质量T，连续cost下弱星紧给primal minimum；dual为sup_v[v(T,x_T)−v(0,x_0)] s.t. l_j−(∂_tv+∇v·f_j)≥0 on K。作者陈述primal/dual无gap，未断言C¹ dual supremum attained。",
+      "start_line": 518,
+      "end_line": 664,
+      "pdf_pages": [
+        11,
+        12,
+        13
+      ],
+      "proof_steps": [
+        "v=t固定总质量；Alaoglu在紧K上给measure subsequence，弱约束和连续cost保极限。",
+        "dual slack积分给对每个可行trajectory/measure的lower certificate。",
+        "作者借Anderson–Nash cone closure criterion证no gap；本次保原文依赖，不独立重证其拓扑conic dual theorem。"
+      ],
+      "gaps": [
+        "Corollary2以τ_j=spt π_tμ_j而非加权mode marginal积分；同页把τ_j再写为一个时间积分存在集合/标量类型冲突，暂不将该support-unweighted criterion列为可执行认证。"
+      ]
+    },
+    {
+      "name": "Theorems 4–5: polynomial hierarchy converges to weak modal LP",
+      "assumptions": [
+        "f_j,l_j及K defining functions均为多项式；K basic semialgebraic，描述中含对全部(time,state)变量的ball constraint。",
+        "所有moment/localizing PSD约束和允许test degrees随阶增加；有限SDP只能作为松弛。"
+      ],
+      "statement": "无限moment formulation等价weak modal LP；有限阶p_d单调非降并渐近趋p*，每阶为最小成本lower bound。不自动证明p*等于原始switching infimum。",
+      "start_line": 667,
+      "end_line": 812,
+      "pdf_pages": [
+        14,
+        15,
+        16
+      ],
+      "proof_steps": [
+        "将弱流对单项式测试写成线性moments，cost亦线性。",
+        "Archimedean Putinar criterion给全阶PSD序列的representing measures（外引Lasserre）。",
+        "截断约束扩大可行域，阶增加缩小，因此p_d≤p_{d+1}≤p*；compactness/Putinar给作者asymptotic result。"
+      ],
+      "gaps": [
+        "核心representing-measure与conic finite-SDP no-gap外引未独立重证；numerical positivity/residual仍需认证。"
+      ]
+    },
+    {
+      "name": "Joint modal reconstruction (Section 4)",
+      "assumptions": [
+        "已知有限modal moments；作者解释假设optimal pair unique且scalar state以便说明。"
+      ],
+      "statement": "按共同时间格点约束Σ_jΣ_k μ̃_j{(t_i,x_k)}=Δt_i，再同时拟合modal moments，估state barycenter与mode duty cycles；是candidate recovery，需真实dynamics integration与feasible cost来验收。",
+      "start_line": 942,
+      "end_line": 1036,
+      "pdf_pages": [
+        19,
+        20,
+        21
+      ],
+      "proof_steps": [
+        "分开重构各modal moments未保Σmodal=dt的时间边缘，会破坏duty cycle。",
+        "共同时间质量约束保证每个时间cell conditional state/mode mass规范化。",
+        "候选经local solver/refinement后比较feasible upper cost与certified lower bound，不能把有限moment matching直接称真实轨迹。"
+      ],
+      "gaps": [
+        "网格非零atoms不自动形成unique trajectory；作者experiments未由TEAM_EF重跑。"
+      ]
+    }
+  ],
+  "constant_dependence": "无dimension-free norm定理；总质量T精确，mode数m与state维数n影响moment block大小。§3.4是rough real-arithmetic complexity estimate；不作为实际CPU保证。",
+  "endpoint_limits": [
+    "Young/convexified p_S可能严格低于原switching OCP，原文p6明确保state/endpoint constraint gap和inward-pointing外引条件。",
+    "在切换小例p24，打印dynamic为ẋ=a_σ x(t)，但后文x(t)=1/2−t及cost1/24对应constant drift a_σ；本次PDF已确认该矛盾，不能把该例直接用于实算。",
+    "p24和p25数值只是作者实验；不代表有限阶SOS已普遍精确。",
+    "积分约束、closed-loop、impulse extensions多为sketch；每一种重新验证可实现性与对应no-gap假设。"
+  ],
+  "reusable_methods": [
+    "有限mode one-hot结构可用m个低维measure替代一个含m个control coordinate的measure，投影与Radon–Nikodym merge有明确可核构造。",
+    "v=t及time-only tests既检查总occupation质量又检查共同time marginal；分mode reconstruction必须保此流约束。",
+    "HJB非负slack对每个mode分别给min-cost lower bound。"
+  ],
+  "verification_notes": [
+    "全文按paper.md逐段读取7–1615，含32页正文、扩展、全部numerics与参考文献，无固定char截断。",
+    "pypdfium2渲染并视觉核对PDF pp7,10,13,16,20,24，校正提取错位并发现source标签/示例矛盾。",
+    "本次独立核有限mode projection/merge与time mass，不声称完整外引no-gap theorem已重新证明。"
+  ],
+  "unchecked": [
+    "未另全文读取Vinter[49,50]、Lasserre[29]、Anderson–Nash[1]、trajectory reconstruction[15]。",
+    "Corollary2 support criterion暂不认证；p24 chattering dynamics矛盾留待源纠错。",
+    "与任意中心立方体跨中心流、GP-BRANCH或TC-A4的共同input映射仍未定义。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1609,
+    "source_lines": 1615,
+    "required_content_lines": 1147,
+    "covered_content_lines": 1147,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-0297391ab7ac5c7b/paper.md"
+  },
+  "review_source": "evidence/reviews/TEAM_EF/evidence/P-0297391ab7ac5c7b.json",
+  "review_input_sha256": "d8cdcae3be480c34293629cb21594680450afd9b71cdb8cb2fd9cd622faf755b"
+}

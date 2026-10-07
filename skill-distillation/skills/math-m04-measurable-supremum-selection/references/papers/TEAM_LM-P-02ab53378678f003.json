@@ -1,0 +1,358 @@
+{
+  "paper_id": "P-02ab53378678f003",
+  "observed_title": "Valadier-like formulas for the supremum function I",
+  "authors": [
+    "R. Correa",
+    "A. Hantoute",
+    "M. A. López"
+  ],
+  "version": "arXiv1707.03782v1,12Jul2017 from local PDF firstpage side; officialabs checked2026-10-06 lists onlyv1 and27pages.",
+  "source_binding": {
+    "pdf_path": "corpus/papers/P-02ab53378678f003/paper.pdf",
+    "pdf_sha256": "02ab53378678f003a3afb21df82cf941b4e8faf84a95a83ca4c20203a4147867",
+    "text_path": "corpus/papers/P-02ab53378678f003/paper.md",
+    "text_sha256": "0db9a565c41f801b64bc8de33d815f81ab9dcbdd526e34e77a66a6b96ca160b3",
+    "official_url": "https://arxiv.org/abs/1707.03782"
+  },
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 993,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "scope": "All sections1–5, preliminary lemmas, Banach/lcs/continuity proofs, Examples1–4, corollaries and references; all nonempty extracted text read; important formula pixels reviewed."
+    }
+  ],
+  "topic_relevance": {
+    "code": "M04",
+    "decision": "adjacent",
+    "basis": "Convex supremum subdifferential via nearby exact subgradients, approximate active indices and domain-normal cones. No measurable original-index selector theorem."
+  },
+  "definitions": [
+    {
+      "name": "Topologies, active sets and nearby exact subgradients",
+      "statement": "X real separated locally convex; dualX* weakstar unless stated. cl/co-bar in dual weakstar. Tε(x)={t:ft(x)≥f(x)−ε}, F(x) finite-dimensional linear subspaces containingx. Nearby mapping ˘∂ε^pφ(x) contains exact subgradient y*∈∂φ(y), with p(y−x)≤ε, |φ(y)−φ(x)|≤ε and |<y*,y−x>|≤ε; it is not the global ε-subgradient atx. Outside domφ defineempty. In Banach case use norm insteadp.",
+      "start_line": 111,
+      "end_line": 129,
+      "pdf_pages": [
+        3
+      ],
+      "additional_ranges": [
+        {
+          "start_line": 246,
+          "end_line": 264,
+          "pdf_pages": [
+            6,
+            7
+          ]
+        },
+        {
+          "start_line": 464,
+          "end_line": 479,
+          "pdf_pages": [
+            13
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem6 Banach-space formula",
+      "evidence_class": "source_Banach_theorem_BR_perturbed_membership_visually_corrected",
+      "assumptions": [
+        "X real Banach; everyft proper lower-semicontinuous convex Γ0(X); nonemptyT; f=supft",
+        "Use finite referencevaluex∈domf; outside domain all subgradient/normal sets empty by source convention"
+      ],
+      "statement": "∂f(x)=∩_(ε>0,L∈F(x)) cl_w*co{∪_(t∈Tε(x))[˘∂εft(x)+N_(L∩domf)(x)]}. Normal may equally use closure(L∩domf), but the nearby mapping and original ft domain cannot be discarded.",
+      "start_line": 276,
+      "end_line": 278,
+      "pdf_pages": [
+        7
+      ],
+      "proof_steps": [
+        "Nearby exact slopes from ε-active functions lie in global∂3εf via three ε errors",
+        "Add finite-section normal cones and intersect ε,L for one inclusion",
+        "Reverse uses Brøndsted–Rockafellar perturbed exact subgradient, dual-unit-ball absorption into arbitrary weakstar neighborhoodU, compact positive scaling intervals and limitingε",
+        "No continuity assumption onf, but completeness and eachft lsc are essential"
+      ],
+      "gaps": [
+        "Independent auditLM p7 pixel review corrected our earlier misread: Lemma5 final line uses perturbedxε* in both memberships. The original-slope membership defect exists only atp14Th8Step2, notLemma5.",
+        "Original external epsilon formula[11,Theorem4], BR[19,Th3.1.1] and Fenchel sum/finite-section results not independently full read.",
+        "Examples1/2 show failure without lsc; Example4 uses cited supportless functions to show Banach form cannot simply extend to general lcs; that external construction not read."
+      ],
+      "proof_ranges": [
+        {
+          "start_line": 279,
+          "end_line": 350,
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Theorem8 general locally convex formula",
+      "evidence_class": "source_theorem_with_refuted_intermediate_subset_not_main_result",
+      "assumptions": [
+        "X real separated locally convex; ft∈Γ0(X); P all continuous seminorms",
+        "Keep finite-dimensional sections L∈F(x), and closure ofL∩domf inside augmented indicator"
+      ],
+      "statement": "∂f(x)=∩_(ε>0,p∈P,L∈F(x)) cl_w*co{∪_(t∈Tε(x)) ˘∂ε^p(ft+I_(closure(L∩domf)))(x)}. Pixelp13 confirms closurebar onL∩domf.",
+      "start_line": 479,
+      "end_line": 486,
+      "pdf_pages": [
+        13
+      ],
+      "proof_steps": [
+        "One inclusion nearby-exact slopes lie in ∂3ε(f+I_L)",
+        "Choose norm onL dominatingp and η+√η≤ε, √ηB_L*⊂U+Lperp",
+        "BRperturbed slopes extend by Hahn–Banach to exact augmented subgradients",
+        "Absorb Lperp; supporting-function inequality produces rescaled original slope in closedhull plusU; intersectη,U,L,p"
+      ],
+      "gaps": [
+        "p14Step2 concludes ∂ηgt(x)⊂˘∂ε^pgt(x), but only constructedxη* belongs. Explicit quadratic counterexample below refutes this intermediate line; Step3–6 introduces necessary scaling andU, so no mainTh8 falsity asserted.",
+        "Indicator closure is substantive and missing in extracted OCR; domain restriction cannot become ordinary nearby∂ft without a qualified sum rule.",
+        "Externally cited HB/subgradient calculus retained; no global certificate of every proof step."
+      ],
+      "proof_ranges": [
+        {
+          "start_line": 487,
+          "end_line": 593,
+          "pdf_pages": [
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Theorem9 removal of finite sections",
+      "evidence_class": "source_conditional_domain_formula",
+      "assumptions": [
+        "Assumptions ofTh8",
+        "ri(domf) nonempty and f restricted toaff(domf) continuous onri(domf)"
+      ],
+      "statement": "∂f(x)=∩_(ε>0,p∈P) cl_w*co{∪_(t∈Tε(x)) ˘∂ε^p(ft+I_(closure(domf)))(x)}. Removal ofL retains closed-domain indicator.",
+      "start_line": 628,
+      "end_line": 630,
+      "pdf_pages": [
+        17
+      ],
+      "proof_steps": [
+        "Accessibility closure(L∩domf)=L∩closure(domf) whenLmeetsri",
+        "Relative continuity gives weakstar closed sum rule withLperp",
+        "Nearby augmented slopes approximated within2ε and weakstarU; Lemma4 removes intersection overL"
+      ],
+      "gaps": [
+        "Relative interior/affine-hull topology is not absolute interior. Source relies on external[5,Th15] sum rule; no unqualified indicator removal."
+      ],
+      "proof_ranges": [
+        {
+          "start_line": 635,
+          "end_line": 681,
+          "pdf_pages": [
+            18,
+            19
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Theorem10 and Corollary11 continuity somewhere",
+      "evidence_class": "source_formula_with_joint_net_quantifier_gap_recorded",
+      "assumptions": [
+        "X real separated lcs; properconvexft∈Λ(X), notnecessarilylsc",
+        "f=supft finite and continuous at somepointx0; referencex∈domf",
+        "barTε(x)={(clft)(x)≥f(x)−ε}; for lscft barTε=Tε"
+      ],
+      "statement": "∂f(x)=N_domf(x)+∩_(ε>0,p∈P) cl_w*co{∪_(t∈barTε(x)) ˘∂ε^p(clft)(x)}. Normal cone stays atboundary even if fcontinuous elsewhere.",
+      "start_line": 688,
+      "end_line": 692,
+      "pdf_pages": [
+        19
+      ],
+      "proof_steps": [
+        "Continuityatx0 supplies uniform local upper bound over allindices and Moreau–Rockafellar split into exact slope + domainnormal",
+        "Slope falls in∂3εf; normal inN_2εdomf and has nonpositiveevaluationx0",
+        "Dual polar uniformbound allows Alaoglu–Bourbaki subnets; takeε→0 and retain nearby slope closedhull",
+        "For nonlscdata usecl f=supclft from citedcontinuity theorem; opposite inclusion via∂3εf"
+      ],
+      "gaps": [
+        "p23 says p arbitrarilyfixed hence one limitingy* lies in intersection over allp. Separate fixedp subnets can have differentlimits; the printed implication needs a joint directed net or finiteintersectioncompactness. Uniformpolarbound allows a plausible local repair indexed(ε,p,V), using p-dominance by finite maxima, but not claimed as source-wide completed proof.",
+        "Continuity somewhere is weaker than atreference; do not eraseNdomf.",
+        "External[11,Cor9(ii)] lscsup compatibility and qualifiedsumrule not fully read."
+      ],
+      "proof_ranges": [
+        {
+          "start_line": 693,
+          "end_line": 836,
+          "pdf_pages": [
+            19,
+            20,
+            21,
+            22,
+            23
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Corollary12 Valadier formula atcontinuous referencepoint",
+      "evidence_class": "source_corollary_with_reference_continuity",
+      "assumptions": [
+        "Properconvexft∈Λ(X); f=supft finite and continuous at referencex∈domf",
+        "Allp∈P and allε>0 retained; no exact active-index existence assumed"
+      ],
+      "statement": "∂f(x)=∩_(ε>0,p∈P) cl_w*co{∪_(t∈Tε(x),p(y−x)≤ε)∂ft(y)}. Here local uniform boundedness allows removing nearby graph-value/pairing constraints andNdomf.",
+      "start_line": 856,
+      "end_line": 858,
+      "pdf_pages": [
+        24
+      ],
+      "proof_steps": [
+        "Referencecontinuity removesnormal; clft=ft locally and barTε=Tε",
+        "Enlargep to max(p,pU) to constrain nearbyy within uniformcontinuity region",
+        "Converse uses ft(y),ft(2y) controlled bympU and activeerror to get ∂_(4m+1)εf",
+        "Intersectε,p to obtain exact subgradient"
+      ],
+      "gaps": [
+        "Proof uses Th10 with its joint-net quantifier gap and externallocalconvex Lipschitzlemma[19,2.2.8]. Formula retained as conditional source result, not an unconditional private selector certificate.",
+        "ReplacingTε by exactT may destroy result: fn(x)=x−1/n, supx, T(0)empty."
+      ],
+      "proof_ranges": [
+        {
+          "start_line": 859,
+          "end_line": 915,
+          "pdf_pages": [
+            24,
+            25,
+            26
+          ]
+        }
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "scope": "Qualitative formulas; nearby/global errors2ε,3ε; continuity proof uniformlocalm yields(4m+1)ε. No numerical stability modulus.",
+    "topology": "All dualclosedhulls weakstar; indicators use primalclosed domains inTh8/9. ε,p,L intersections cannot generally be exchanged with hull,normal sum or original-indexargmax."
+  },
+  "endpoint_limits": {
+    "scope": "Proper convex data, finite referencevalue, appropriate Banach versus lcs domain, lower semicontinuity and local continuity qualifications.",
+    "not_established": "Measurable argmax orselector onoriginal indexset; attainmentofsup; private maximalcube decomposition; arbitrary epsilon/closure/hull/sum exchanges."
+  },
+  "checked_derivation": [
+    {
+      "kind": "counterexample_to_printed_intermediate_subset",
+      "statement": "R,φ(z)=z²/2,x=0,p=|.|,ε=1/10,η=1/160,originalslope11/100. Fenchelgap=121/20000≤η; η+√η<ε and √ηB*⊂U=(-.1,.1). Nearbyexactε slopes lie in[-.1,.1], so11/100notnearby. Refutes p14Step2subset only. Lemma5p7 uses perturbedxη* and is not refuted by thisexample."
+    },
+    {
+      "kind": "source_example3_independently_checked",
+      "statement": "φ1=-√z forz≥0,+∞else;φ2=φ1(-z). sup=I{0},∂sup0=R, each∂φi0empty. For0<ε<1 nearbyφ1 slopes(-∞,-1/(2ε)],φ2[1/(2ε),∞); union +Ndomf0=R. Closedhull alonealsoR here; this example demonstrates nearbypoints, not a universal necessity ofnormal in everyinstance."
+    },
+    {
+      "kind": "joint_net_local_repair_plan_not_global_certificate",
+      "statement": "ForTh10replace separatefixedp subnet extraction by net indexedεdown, seminormsorderedbydominance (finite maxima), and weakstarneighborhoodVdown. Uniform rWpolar fromp22 is independentofp and boundedε≤1; compactness yields subnet eventually satisfyingeveryfixedε0,p0closedhull and normalN_2εcondition. Needallprecedingqualifieddecompositions/sourceexternallemmas before fulltheorem certificate."
+    }
+  ],
+  "reusable_methods": [
+    {
+      "method": "Near-point exact slopes with preserved graph-value andpairing errors",
+      "transfer": "Do not conflate with globalε-subgradient; sourceBR perturbation/scaling andneighborhoodU are essential."
+    },
+    {
+      "method": "Finite sections and closed-domain indicators inlcs",
+      "transfer": "Only qualifiedri/continuitysumrule removesL ornormal; preserveclosurebars."
+    },
+    {
+      "method": "Uniformcompactness for common subgradient decomposition",
+      "transfer": "Directallapproximationparametersjointly when a singlelimitmust satisfyintersections; separate perparameter convergence doesnot suffice."
+    }
+  ],
+  "visual_checks": [
+    {
+      "pdf_pages": [
+        1,
+        7,
+        12,
+        13,
+        14,
+        19,
+        23,
+        24
+      ],
+      "images": [
+        "reviews/TEAM_LM/visual/P-02ab53378678f003-p1.png",
+        "reviews/TEAM_LM/visual/P-02ab53378678f003-p7.png",
+        "reviews/TEAM_LM/visual/P-02ab53378678f003-p12.png",
+        "reviews/TEAM_LM/visual/P-02ab53378678f003-p13.png",
+        "reviews/TEAM_LM/visual/P-02ab53378678f003-p14.png",
+        "reviews/TEAM_LM/visual/P-02ab53378678f003-p19.png",
+        "reviews/TEAM_LM/visual/P-02ab53378678f003-p23.png",
+        "reviews/TEAM_LM/visual/P-02ab53378678f003-p24.png"
+      ],
+      "findings": "v1 binding; Lemma5 final memberships both use perturbedxε* (initialmisread withdrawn afterauditLM); Th6/8 closedhull andTh8 primalindicatorbar; Examples3/4; printedfalsep14Step2subset; Th10/Cor12quantifierorder andreferencecontinuity; p23 fixedp-limitgap."
+    }
+  ],
+  "review_status": {
+    "first_review": "audit_lm_16_requested_pending",
+    "second_review": "audit_n_16_requested_pending"
+  },
+  "unchecked": [
+    "All27pages fullyread, no unread internalappendix. Externalprimaries[1],[5],[7],[8],[11],[16],[18],[19] notfullreadhere; their statements in source distinguished from independentproof.",
+    "No blanketgapfree proofcertificate; intermediate subset and jointnetgaps isolated from sourcemainformula."
+  ],
+  "correction_log": [
+    {
+      "scope": "Lemma5p7only",
+      "previous": "Claimed originalx* in final nearby membership",
+      "corrected": "Both final memberships use perturbedxε*. Withdraw claimed p7sourceerror; p14original-slope subset remains separate.",
+      "basis": "audit_lm_16 directPDFp7review2026-10-06; pixel subscript clarification",
+      "invalidated_checks": "behaviorCorrea firstcheck p7part only"
+    }
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 993,
+    "source_lines": 993,
+    "required_content_lines": 698,
+    "covered_content_lines": 698,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-02ab53378678f003/paper.md"
+  },
+  "review_source": "reviews/TEAM_LM/evidence/P-02ab53378678f003.json",
+  "review_input_sha256": "ea64086ff8499ea177eb7705383d8b80b0350af74adfdd963f1b97d6c94c22a6"
+}

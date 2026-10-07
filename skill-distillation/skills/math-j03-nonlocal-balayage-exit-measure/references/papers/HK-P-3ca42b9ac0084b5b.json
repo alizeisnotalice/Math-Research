@@ -1,0 +1,179 @@
+{
+  "paper_id": "P-3ca42b9ac0084b5b",
+  "observed_title": "The exit-time problem for a Markov jump process",
+  "authors": [
+    "Nathanial Burch",
+    "Marta D’Elia",
+    "R. B. Lehoucq"
+  ],
+  "version": "arXiv:1411.1817v1; 2014 manuscript; 15 PDF pages. The source draft date is 28 May 2022; publication metadata was not independently checked.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 946,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "scope": "完整15页全文：有限距离Markov跳过程及主方程、交互域/非局部向量微积分、forward/backward算子、广义退出时与吸收/删失体积约束、退出分布/均值公式、变分良定性回顾和参考文献。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "J03": "direct：本文针对有限范围跳跃的非局部退出时问题，明确以交互域中的退出体积子集定义停时，用体积约束处理越过几何边界的跳跃，并由离开域的概率流给退出时间分布、均值方程。它是非局部退出测度/分布的近邻直接证据；没有建立一般balayage算子定理。",
+    "J01": "adjacent：给出空间非齐次、可能非对称的 jump-rate 主方程与前向/后向算子；未处理任意非齐次时间参数或中心立方体算子。"
+  },
+  "definitions": [
+    {
+      "name": "有限范围跳率与交互域",
+      "statement": "主方程为u_t(x,t)=∫[u(y,t)γ(y,x)−u(x,t)γ(x,y)]dy；γ可随空间变化且不对称，并假设γ(x,y)=0当|x−y|≥λ。对目标域Ω，交互域Ω_I=∪_{x∈Ω}B_λ(x)\\Ω是可能一跳到达的外部区域。",
+      "source_lines": [
+        119,
+        242
+      ],
+      "pdf_pages": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "广义退出时与退出体积",
+      "statement": "给定Ω_d⊆Ω_I，作者定义T_x=inf{t:X_t∈Ω_d}。若Ω_d不是整个交互域，过程跳到Ω_I\\Ω_d不算退出；Ω_d=∅对应删失/限制过程，Ω_d=Ω_I对应吸收退出，混合选择对应吸收/删失混合。",
+      "source_lines": [
+        625,
+        685
+      ],
+      "pdf_pages": [
+        10,
+        11
+      ]
+    },
+    {
+      "name": "退出域上的体积约束和前向密度",
+      "statement": "未退出密度u在Ω上按∫_{Ω∪Ω_d}[u(y)γ(y,x)−u(x)γ(x,y)]dy演化，并在Ω_d上置零；Ω_d作为整个体积约束区承接非局部跳跃，不以∂Ω上的经典边界值替代。可另规定从Ω_I\\Ω_d流入Ω的体积通量g。",
+      "source_lines": [
+        642,
+        702
+      ],
+      "pdf_pages": [
+        11,
+        12
+      ]
+    },
+    {
+      "name": "退出概率流与均值方程",
+      "statement": "作者给出P(T_x>t)=∫_Ωu(y,t)dy，且P(T_x≤t)=∫_0^t∫_Ω∫_{Ω_d}u(y,s)γ(y,z)dy dz ds。均值为∫_0^∞∫_Ωu(x,t)dxdt，并表述为稳态backward问题A⟨T_x⟩=−1于Ω、⟨T_x⟩=0于非空Ω_d。",
+      "source_lines": [
+        703,
+        759
+      ],
+      "pdf_pages": [
+        12
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Equations (16)–(18): volume-constrained exit law and mean exit time",
+      "assumptions": [
+        "X_t为有限范围跳 Markov 过程，主方程(5b)在有限区域Ω∪Ω_I上运行；初始密度u_0为Ω上的概率密度。",
+        "选择退出子域Ω_d⊆Ω_I；当Ω_d=∅时无该种退出，当Ω_d=Ω_I时交互域中的首次跳出都计为退出。",
+        "公式的确定性侧假定主方程密度与指定 absorbed/censored 约束一致；正文没有给所有γ的定量正则/可积假设。"
+      ],
+      "statement": "未退出概率是Ω内密度质量；退出时间CDF等于累计从Ω跳到Ω_d的概率流。退出均值通过对生存函数积分给出，并由稳态非局部后向Poisson方程A m=−1及Ω_d上的零体积约束表示。其他时刻矩可按重复积分得到。该退出时定义允许粒子跨越经典边界一次跳到外部交互域，故退出位置不必落在∂Ω。",
+      "start_line": 625,
+      "end_line": 759,
+      "pdf_pages": [
+        10,
+        11,
+        12
+      ],
+      "proof_steps": [
+        "对Ω内前向方程积分，并把非局部跳核的流入/流出项按反对称性和体积约束消去，得到Ω∪Ω_d上的总概率守恒。",
+        "将Ω内概率质量识别为P(T_x>t)，因此CDF为1−∫_Ωu；再次代入前向方程并对时间积分得到0至t的跨域跳跃流量公式。",
+        "利用E[T_x]=∫_0^∞P(T_x>t)dt定义均值；作者陈述其满足A m=−1并在退出域取零。其余矩以重复积分得到。"
+      ],
+      "gaps": [
+        "P(T_x≤t)的给定式是到退出体积的总跳流，原文没有单独陈述一般exit-location随机测度或balayage核。",
+        "稳态均值问题的等价性按与经典退出问题的类比陈述；本文没有逐步证明随机过程生成元域上的Dynkin公式。",
+        "退出分布/矩的有限性取决于γ的额外条件；这里只指向后文 coercivity 讨论及引用文献，未给完整普适阈值。"
+      ]
+    },
+    {
+      "label": "Nonlocal vector calculus and well-posedness framework",
+      "assumptions": [
+        "γ具有有限跳程以定义有限交互域；非局部向量场核α反对称，Θ对称，采用文中给出的非局部算子A、A*。",
+        "对变分部分需存在体积约束函数空间V及Lax–Milgram所需连续性、强制性条件；正文将精确分析归于既有文献。"
+      ],
+      "statement": "作者从jump-rate master equation定义非局部前向算子A*与后向算子A；用非局部散度/梯度建立Green恒等式，将边界面积数据换成交互域上的体积约束。变分双线性型的强制性提供稳态问题弱解唯一性、连续依赖与退出矩有限性的充分途径。",
+      "start_line": 445,
+      "end_line": 512,
+      "pdf_pages": [
+        8
+      ],
+      "proof_steps": [
+        "由α(x,y)=−α(y,x)直接得到非局部散度定理，再由对偶关系得到Green恒等式。",
+        "把主方程写成非局部Fick定律，识别跳率γ与α、Θ、μ的关系，并给出前向密度算子和其伴随后向生成元。",
+        "第9节以Hilbert空间V和双线性型写出弱问题，再援引Lax–Milgram：连续且coercive时解唯一，数据连续依赖；coercivity可推出退出矩有限。"
+      ],
+      "gaps": [
+        "该文称第9节为对前人分析的简要回顾，未给Lax–Milgram连续性与coercivity的具体充分条件，需追溯引用原文。",
+        "当γ对称时算子自伴；非对称空间跳率情形不能擅用对称能量或自伴谱结论。"
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "未给统一浓度常数。跳程λ决定交互域Ω_I；退出分布依赖空间跳核γ、Ω_d和时变未退出密度u。退出矩有限性依赖变分型coercivity/核γ条件，但本文未列通用显式常数。",
+    "dependence": "Ω_d大小改变被计入的跨域流与退出时分布；把Ω_d缩小会延迟/减少退出。即使同一Ω，改变交互域外数据或删除域也会改变模型。"
+  },
+  "endpoint_limits": {
+    "overshoot": "有限范围跳过程通常不命中几何边界；退出时通过一跳进入Ω_I，不能把退出位置投到最近∂Ω点。",
+    "exit_domain": "Ω_d=∅时该退出概率恒为0；Ω_d=Ω_I时所有离开Ω的交互跳均视作退出；中间Ω_d需单独定义剩余域的删失/流量约束。",
+    "wellposedness": "退出分布与均值有限不由有限跳程自动推出；需要核条件和 coercivity。",
+    "scope": "正文使用单个有限范围跳过程/非局部主方程，不是抽象balayage定理，也不是目标中心立方体结构。"
+  },
+  "reusable_methods": [
+    {
+      "method": "以完整交互域而非经典边界描述跳跃退出质量",
+      "transfer": "先由跳核支持求一跳可达外域Ω_I，再把退出子域Ω_d定义为Ω_I的明确子集；在数值或概率账本中保存跨越几何边界的落点，不压回∂Ω。"
+    },
+    {
+      "method": "由概率守恒把未退出质量的损失转为退出流",
+      "transfer": "对目标前向方程积分，核查对称/反对称跳率与体积约束后才能把Ω内质量导数等同跨域跳流；然后累积积分得到退出时间CDF。"
+    },
+    {
+      "method": "均值/高阶矩通过Poisson方程及生存概率积分",
+      "transfer": "在额外有限矩和生成元域条件下，将m(x)=E_xT写为−A^{-1}1；验证非局部体积Dirichlet数据和coercivity后再论唯一性、有限性。"
+    }
+  ],
+  "unchecked": [
+    "完整阅读paper.md行1–946及PDF 1–15页；主方程/有限跳程页3、生成元/退出定义页10、体积约束页11、概率流与均值方程页12、变分问题页13均已用PyMuPDF渲染并视觉查看。",
+    "公式(17)的OCR在系统括号处有错位，但p.11原始PDF视觉显示其在Ω上演化并在Ω_d上置零；p.12退出流与均值式视觉核对无误。",
+    "全读并非独立证明核验：well-posedness和有限矩的关键Lax–Milgram条件依赖外引分析，未独立检查。退出测度作为subset-valued jump flux的推广属于迁移推断，本文只给总时间分布。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 946,
+    "source_lines": 946,
+    "required_content_lines": 633,
+    "covered_content_lines": 633,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-3ca42b9ac0084b5b/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-3ca42b9ac0084b5b.json",
+  "review_input_sha256": "1327d0a9c489e930da2aeeebd1390b3017a04078d7e7aab652d9c92b29ae242c"
+}

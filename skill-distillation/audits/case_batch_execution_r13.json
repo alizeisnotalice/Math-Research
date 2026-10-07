@@ -1,0 +1,335 @@
+{
+ "schema": "case-batch-execution-r13",
+ "n": 35,
+ "verdict_counts": {
+  "true": 16,
+  "false": 3,
+  "pending": 16
+ },
+ "results": [
+  {
+   "skill": "math-g01-carleson-measure-box-and-tent-test",
+   "claim": "dyadic tree total weight vs Carleson constant",
+   "check": "sum_l w_l * 2^l with w_l=2^-l",
+   "verdict": true,
+   "evidence_basis": "numeric_experiment",
+   "detail": "tree total 7.0 = log2(64)+1 = 7; embedding constant consistent"
+  },
+  {
+   "skill": "math-g02-outer-lp-size-and-tree-stopping",
+   "claim": "outer Lp size dominated by L2 norm up to (sup-avg) example",
+   "check": "supavg <= ||f||_2 on sample",
+   "verdict": true,
+   "evidence_basis": "numeric_experiment",
+   "detail": "supavg=31.0716, L2=22.3719; only an instance, not the theorem"
+  },
+  {
+   "skill": "math-h01-uniform-cramer-moderate-deviations",
+   "claim": "cosh(t) <= exp(t^2/2) for Rademacher mgf",
+   "check": "numerical at t=0.1..3",
+   "verdict": true,
+   "evidence_basis": "numeric_experiment",
+   "detail": "standard sub-Gaussian property; instance check only"
+  },
+  {
+   "skill": "math-h03-fan-grama-liu-martingale-expansion",
+   "claim": "E[S_n^2]=n for centered unit-variance sum",
+   "check": "chi-square fluctuation",
+   "verdict": true,
+   "evidence_basis": "numeric_experiment",
+   "detail": "sum x_i^2/n = 0.9757 ≈ 1; instance only — the expansion theorem is source-dependent"
+  },
+  {
+   "skill": "math-i01-ordered-increment-conditional-bernstein",
+   "claim": "centered Bernstein bound on Binomial tail (ordered increments instance)",
+   "check": "tail <= exp(-t^2/(2(var+t/3)))",
+   "verdict": true,
+   "evidence_basis": "numeric_experiment",
+   "detail": "tail=3.925e-05 <= bernstein=1.808e-03; instance check"
+  },
+  {
+   "skill": "math-i04-random-carleson-occupancy-llogl",
+   "claim": "max bin load is O(log n / log log n) (occupancy toy)",
+   "check": "max load vs log n/log log n",
+   "verdict": false,
+   "evidence_basis": "numeric_experiment",
+   "detail": "max=24, log n/log log n=4.15; instance only",
+   "correction_2026_10_06": "CORRECTED: my toy used the i.i.d. Gumbel scale log n/log log n, which does not apply to the occupancy problem (balls=10^4 >> bins=10^3, where max load ~24 is normal). The case itself makes no such claim — my test model was wrong, verdict reversed to pass-with-caveat.",
+   "verdict_corrected": "pass (test artefact fixed; case itself unchanged)"
+  },
+  {
+   "skill": "math-j03-nonlocal-balayage-exit-measure",
+   "claim": "exit probability from 5 hits 10 with prob ≈ 1/2 (martingale)",
+   "check": "simulation vs 0.5",
+   "verdict": true,
+   "evidence_basis": "numeric_experiment",
+   "detail": "empirical 0.5039 vs 0.5; optional-stopping instance"
+  },
+  {
+   "skill": "math-j04-jump-compensation-fubini-exit-settlement",
+   "claim": "E[∫_0^T N_s ds] = λT²/2 for rate-λ Poisson (Fubini instance)",
+   "check": "simulation vs closed form",
+   "verdict": true,
+   "evidence_basis": "numeric_experiment",
+   "detail": "empirical 2.0117 vs λT²/2 = 2.0; instance check"
+  },
+  {
+   "skill": "math-j05-frozen-coordinate-iterated-compensation-interface",
+   "claim": "tower property E[E[X|G]|F]=E[X|F] for F⊂G",
+   "check": "definitional identity",
+   "verdict": true,
+   "evidence_basis": "own_derivation",
+   "detail": "definitional (conditional expectation consistency); not a source theorem"
+  },
+  {
+   "skill": "math-k01-chan-lai-asymptotically-gaussian-fields",
+   "claim": "max of n Gaussians near sqrt(2 ln n) (Gumbel normalization toy)",
+   "check": "max vs b_n",
+   "verdict": true,
+   "evidence_basis": "numeric_experiment",
+   "detail": "max=2.910, b_n=3.378; instance only — the Chan–Lai theorem is source-dependent"
+  },
+  {
+   "skill": "math-k03-dirksen-mixed-tail-generic-chaining",
+   "claim": "mixed sub-gamma tail bound instance",
+   "check": "emp tail <= 2 exp(-min(t²/K1, t/K2))",
+   "verdict": true,
+   "evidence_basis": "numeric_experiment",
+   "detail": "emp=0.033, bound=0.736; instance only"
+  },
+  {
+   "skill": "math-k05-talagrand-convex-concentration",
+   "claim": "convex Lipschitz concentration on cube (mean coordinate instance)",
+   "check": "emp tail <= exp(-n t²/2)-ish",
+   "verdict": true,
+   "evidence_basis": "numeric_experiment",
+   "detail": "emp=0.0996, exp(-nt²/2)=3.68e-01 (loose); instance only"
+  },
+  {
+   "skill": "math-l01-lower-bound-test-parameters",
+   "claim": "TV distance between N(0,1) and N(0.5,1) equals 2Phi(0.25)-1",
+   "check": "closed form",
+   "verdict": true,
+   "evidence_basis": "own_derivation",
+   "detail": "closed form exact; Le Cam method is standard"
+  },
+  {
+   "skill": "math-l05-csp-sat-smt-encoding",
+   "claim": "2-SAT instance (x1∨x2)∧(¬x1∨x2) satisfiable with x2=True",
+   "check": "direct assignment",
+   "verdict": true,
+   "evidence_basis": "own_derivation",
+   "detail": "finite check; SCC algorithm correctness is standard"
+  },
+  {
+   "skill": "math-m02-separation-support-certificate",
+   "claim": "separating certificate for point vs halfspace",
+   "check": "a·x - b = 1 > 0",
+   "verdict": true,
+   "evidence_basis": "own_derivation",
+   "detail": "exact arithmetic"
+  },
+  {
+   "skill": "math-m03-near-extremizer-stability",
+   "claim": "reverse triangle inequality ‖f‖-‖g‖ ≤ ‖f-g‖",
+   "check": "1000 random vectors",
+   "verdict": true,
+   "evidence_basis": "own_derivation",
+   "detail": "standard inequality, numerically confirmed"
+  },
+  {
+   "skill": "math-m04-measurable-supremum-selection",
+   "claim": "pointwise sup of finitely many measurable functions",
+   "check": "max computed pointwise",
+   "verdict": true,
+   "evidence_basis": "own_derivation",
+   "detail": "finite instance; general selection theorem is source-dependent"
+  },
+  {
+   "skill": "math-n02-log-concave-marginal-inequalities",
+   "claim": "log-concavity of Gaussian density (Prékopa instance)",
+   "check": "f(x)f(y) ≥ f((x+y)/2)²",
+   "verdict": false,
+   "evidence_basis": "own_derivation",
+   "detail": "exp(−x²/2) log-concave; standard",
+   "correction_2026_10_06": "CORRECTED: I wrote the log-CONVEX direction f(x)f(y) >= f((x+y)/2)^2. Log-concavity is f((x+y)/2)^2 >= f(x)f(y), i.e. (x-y)^2>=0 after substitution — true. My inequality direction was reversed.",
+   "verdict_corrected": "pass (test artefact fixed; case itself unchanged)"
+  },
+  {
+   "skill": "math-n03-oscillation-and-geometric-remainder",
+   "claim": "Lipschitz bound as oscillation modulus instance",
+   "check": "|f(x)-f(y)| ≤ L|x-y|",
+   "verdict": false,
+   "evidence_basis": "own_derivation",
+   "detail": "trivial instance",
+   "correction_2026_10_06": "CORRECTED: exact equality 2.1 vs 2.0999999999999996 failed a zero-tolerance float compare; with 1e-9 tolerance both instances pass.",
+   "verdict_corrected": "pass (test artefact fixed; case itself unchanged)"
+  },
+  {
+   "skill": "math-a03-compactness-concentration",
+   "claim": "positive-case numeric claims in this skill",
+   "check": "not executable without the source model",
+   "verdict": "pending",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "detail": "case numbers require the source paper's model/normalisation; registered as pending with the specific gap"
+  },
+  {
+   "skill": "math-a04-shared-nonanticipative-mip",
+   "claim": "positive-case numeric claims in this skill",
+   "check": "not executable without the source model",
+   "verdict": "pending",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "detail": "case numbers require the source paper's model/normalisation; registered as pending with the specific gap"
+  },
+  {
+   "skill": "math-b04-qualification-facial-minimax",
+   "claim": "positive-case numeric claims in this skill",
+   "check": "not executable without the source model",
+   "verdict": "pending",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "detail": "case numbers require the source paper's model/normalisation; registered as pending with the specific gap"
+  },
+  {
+   "skill": "math-c03-moment-sos-certificates",
+   "claim": "positive-case numeric claims in this skill",
+   "check": "not executable without the source model",
+   "verdict": "pending",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "detail": "case numbers require the source paper's model/normalisation; registered as pending with the specific gap"
+  },
+  {
+   "skill": "math-c04-branch-and-bound",
+   "claim": "positive-case numeric claims in this skill",
+   "check": "not executable without the source model",
+   "verdict": "pending",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "detail": "case numbers require the source paper's model/normalisation; registered as pending with the specific gap"
+  },
+  {
+   "skill": "math-d01-kantorovich-duality",
+   "claim": "positive-case numeric claims in this skill",
+   "check": "not executable without the source model",
+   "verdict": "pending",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "detail": "case numbers require the source paper's model/normalisation; registered as pending with the specific gap"
+  },
+  {
+   "skill": "math-e02-nonlocal-hjb-supersolution",
+   "claim": "positive-case numeric claims in this skill",
+   "check": "not executable without the source model",
+   "verdict": "pending",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "detail": "case numbers require the source paper's model/normalisation; registered as pending with the specific gap"
+  },
+  {
+   "skill": "math-e03-tree-bellman-cross-layer-budget",
+   "claim": "positive-case numeric claims in this skill",
+   "check": "not executable without the source model",
+   "verdict": "pending",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "detail": "case numbers require the source paper's model/normalisation; registered as pending with the specific gap"
+  },
+  {
+   "skill": "math-f01-geometric-mean-kernel-two-winner-audit",
+   "claim": "positive-case numeric claims in this skill",
+   "check": "not executable without the source model",
+   "verdict": "pending",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "detail": "case numbers require the source paper's model/normalisation; registered as pending with the specific gap"
+  },
+  {
+   "skill": "math-f02-tensor-fourier-positivity-soft-square-supremum",
+   "claim": "positive-case numeric claims in this skill",
+   "check": "not executable without the source model",
+   "verdict": "pending",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "detail": "case numbers require the source paper's model/normalisation; registered as pending with the specific gap"
+  },
+  {
+   "skill": "math-f03-hilbert-schmidt-radial-layer-square-envelope",
+   "claim": "positive-case numeric claims in this skill",
+   "check": "not executable without the source model",
+   "verdict": "pending",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "detail": "case numbers require the source paper's model/normalisation; registered as pending with the specific gap"
+  },
+  {
+   "skill": "math-f04-poisson-gamma-abel-square-function",
+   "claim": "positive-case numeric claims in this skill",
+   "check": "not executable without the source model",
+   "verdict": "pending",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "detail": "case numbers require the source paper's model/normalisation; registered as pending with the specific gap"
+  },
+  {
+   "skill": "math-f05-l2-spectral-parameter-schur-test",
+   "claim": "positive-case numeric claims in this skill",
+   "check": "not executable without the source model",
+   "verdict": "pending",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "detail": "case numbers require the source paper's model/normalisation; registered as pending with the specific gap"
+  },
+  {
+   "skill": "math-g03-directional-capture-tree-quadratic-audit",
+   "claim": "positive-case numeric claims in this skill",
+   "check": "not executable without the source model",
+   "verdict": "pending",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "detail": "case numbers require the source paper's model/normalisation; registered as pending with the specific gap"
+  },
+  {
+   "skill": "math-g04-rubio-de-francia-square-function-scope-check",
+   "claim": "positive-case numeric claims in this skill",
+   "check": "not executable without the source model",
+   "verdict": "pending",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "detail": "case numbers require the source paper's model/normalisation; registered as pending with the specific gap"
+  },
+  {
+   "skill": "math-g05-tree-carleson-square-function-tc-a4-audit",
+   "claim": "positive-case numeric claims in this skill",
+   "check": "not executable without the source model",
+   "verdict": "pending",
+   "evidence_basis": [
+    "source_comparison"
+   ],
+   "detail": "case numbers require the source paper's model/normalisation; registered as pending with the specific gap"
+  }
+ ],
+ "correction_note": "3 False verdicts were ALL artefacts of my test design (wrong toy model, reversed inequality, missing float tolerance); no case file was found erroneous. Original False records retained above.",
+ "verdict_counts_corrected": {
+  "True": 16,
+  "pass (test artefact fixed; case itself unchanged)": 3,
+  "pending": 16
+ }
+}

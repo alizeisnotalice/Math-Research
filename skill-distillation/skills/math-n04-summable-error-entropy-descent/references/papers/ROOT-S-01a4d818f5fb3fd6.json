@@ -1,0 +1,183 @@
+{
+  "paper_id": "S-01a4d818f5fb3fd6",
+  "observed_title": "Dimension-free estimates for discrete maximal functions over cubes in Z^d",
+  "authors": [
+    "Mariusz Mirek",
+    "Tomasz Z. Szarek",
+    "Błażej Wróbel"
+  ],
+  "version": "arXiv:2609.24030v1, 21 September 2026; 9页，无附录",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 471,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "scope": "全文，包括证明、引用依赖与参考文献"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": [
+    {
+      "code": "F02",
+      "decision": "direct",
+      "reason": "立方体概率核的张量结构、差分乘子、分数积分插值及维数独立常数；不证明弱(1,1)端点"
+    },
+    {
+      "code": "F04",
+      "decision": "adjacent",
+      "reason": "立方体概率核的张量结构、差分乘子、分数积分插值及维数独立常数；不证明弱(1,1)端点"
+    },
+    {
+      "code": "F05",
+      "decision": "adjacent",
+      "reason": "立方体概率核的张量结构、差分乘子、分数积分插值及维数独立常数；不证明弱(1,1)端点"
+    },
+    {
+      "code": "N04",
+      "decision": "adjacent",
+      "reason": "立方体概率核的张量结构、差分乘子、分数积分插值及维数独立常数；不证明弱(1,1)端点"
+    }
+  ],
+  "definitions": [
+    "M_N f=(2N+1)^(-d) Σ_{y∈[-N,N]^d∩Z^d} f(x−y)，N≥1。",
+    "μ_N为一维离散均匀概率，σ_N=(δ_{N+1}+δ_{−N−1})/2，β_N=2/(2N+3)。",
+    "λ_{N,s}=(1−s)μ_N+sσ_N，0≤s<1；其d重张量的Fourier乘子为各一维乘子的乘积。"
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 1.1 与 Theorem 1.2",
+      "start_line": 31,
+      "end_line": 103,
+      "pdf_pages": [
+        1,
+        2
+      ],
+      "assumptions": [
+        "1<p≤∞，d∈N；输入ℓ^p(Z^d)。",
+        "差分界仅1<p<∞，N≥1。"
+      ],
+      "statement": "存在只依赖p的C_p使离散立方体极大算子ℓ^p有界；相邻平均差分范数≤C_p/N。",
+      "proof_steps": [
+        "证明集中于差分界；同一尺度R≤N<2R内求和1/N得到一致短变动界。",
+        "从短变动界到全极大界使用此前论文[3]的dyadic极大估计和几乎正交原则；本文未重证。"
+      ],
+      "gaps": [
+        "本文没有给出C_p的显式p→1渐近。",
+        "Theorem1.1依赖[3]尚待全文回查；连续转移[8]已另建全文卡，但不涉及p=1强型结论。"
+      ]
+    },
+    {
+      "label": "Lemma 2.1",
+      "start_line": 140,
+      "end_line": 195,
+      "pdf_pages": [
+        3,
+        4
+      ],
+      "assumptions": [
+        "N≥1，x∈T；a_N=μ_N的Fourier乘子，b_N=cos(2π(N+1)x)。"
+      ],
+      "statement": "|b_N−a_N|≤7(1−|a_N|)。",
+      "proof_steps": [
+        "将1−e((N+1)x)分解成k及N+1−k两段并平方求和，得1−b_N≤6(1−a_N)。",
+        "a_N≥0时由三角不等式得7；a_N<0时Dirichlet核第一正零点及sin(πx)≥2x给a_N≥−1/2，于是平凡界2≤4(1−|a_N|)。"
+      ],
+      "gaps": [
+        "常数7是本文证明的可用值，未证明最优。"
+      ]
+    },
+    {
+      "label": "Proposition 3.1",
+      "start_line": 199,
+      "end_line": 251,
+      "pdf_pages": [
+        4,
+        5
+      ],
+      "assumptions": [
+        "固定整数k≥0，固定s_0∈(0,1)，0≤s≤s_0。",
+        "保持同一概率混合的乘积结构，不能换成任意有符号核。"
+      ],
+      "statement": "sup_{N,d,s,ξ}|∂_s^k m_{N,s}(ξ)|≤C_{k,s_0}，与维数无关。",
+      "proof_steps": [
+        "u_j=1−|a_N(ξ_j)|，c=1−s_0，因子|z_j|≤exp(−c u_j)。",
+        "k阶导数只作用于互异坐标；Σ_{|E|=k}∏u_j≤(Σu_j)^k/k!。",
+        "丢掉被微分坐标最多引入exp(ck)，因此导数≤7^k exp(ck) exp(−cU)U^k。",
+        "检查 sup_U exp(−cU)U^k≤c^(−k)k!，可取C_{k,s0}=7^k exp(ck)c^(−k)k!。"
+      ],
+      "gaps": [
+        "s_0→1时该常数恶化。这里是标量乘子界，p≠2时不能直接用Plancherel推出算子界。"
+      ]
+    },
+    {
+      "label": "Proposition 4.1 与差分证明",
+      "start_line": 257,
+      "end_line": 430,
+      "pdf_pages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "assumptions": [
+        "卷积核K_t∈ℓ^1，t≥1；sup_t||T_t||_{1→1}≤A_0。",
+        "m_t逐点C^n，max_{0≤j≤n}sup_{t,ξ}|t^j∂_t^j m_t|≤A_n。",
+        "1<p<2，p′/2<n<p′，n为整数。"
+      ],
+      "statement": "sup_t||t∂_t T_t||_{p→p}≤C_p(A_0+A_n)；应用于λ_{N,ρ(t)}^⊗d 得差分≤C_pβ_N≤C_p/N。",
+      "proof_steps": [
+        "令h(s)=m_s/s，通过从u到∞的分数积分构造解析族P_u^z。",
+        "选择ε=2n/p′−1∈(0,1)：z=−ε边界用概率核ℓ^1界，z=n−ε边界用乘子ℓ^2界。",
+        "θ=2/p′令插值点为1；分部积分边界在u处因正指数消失，在∞处因Re z>−1消失。",
+        "再次积分得P_u^1=T_u−u∂_uT_u，结合卷积核ℓ^1界及Young不等式，取得导数算子界。",
+        "固定光滑ρ在[1,1+2/5]等于t−1，之后常值；β_N≤2/5使T_1=M_N、T_{1+β_N}=M_{N+1}，积分dt/t。",
+        "p=2直接Plancherel；p>2因差分实对称核自伴，用共轭指数对偶。"
+      ],
+      "gaps": [
+        "Stein复插值定理和Gamma竖直线估计引用标准理论，未在本次重新证明。",
+        "对本文有限支撑概率核，t参数核光滑性保证求导及算子积分；迁移到一般核族须单独核对这些交换条件。"
+      ]
+    }
+  ],
+  "constant_dependence": "差分和极大界常数依赖p，与d及N无关；乘子k阶导数依赖k和s0，s0接近1时恶化；不提供端点常数。",
+  "endpoint_limits": [
+    "p=1不在结论内；原文用[1]与[8]说明弱(1,1)常数必随维数变化，依赖论文未重读。",
+    "非负概率嵌入不是一般软最大或GP-BRANCH接口。",
+    "连续中心立方体对应性需离散到连续转移引理；不能由同名算子默认成立。"
+  ],
+  "reusable_methods": [
+    "用一维概率混合嵌入离散平均，并保持张量结构。",
+    "以衰减exp(−cU)吸收组合导数中的U^k，避免逐坐标三角不等式的d损失。",
+    "通过分数积分解析族将高阶乘子导数与ℓ^1压缩插值，得到p≠2的算子导数界。",
+    "将相邻尺度差分1/N短变动界，与dyadic极大/几乎正交分开登记。"
+  ],
+  "unchecked": [
+    "文献[8]连续转移原文2010.07379v2已全文读并另建证据卡；文献[3]dyadic/几乎正交完整依赖仍待回查。",
+    "标准插值与Gamma估计未独立重建；未证明任何课题弱(1,1)新界。"
+  ],
+  "visual_checks": [
+    "PDF第5–8页：乘子组合系数、插值条带/θ、分部积分边界、P^1符号、β_N≤2/5与dt/t。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 467,
+    "source_lines": 471,
+    "required_content_lines": 346,
+    "covered_content_lines": 346,
+    "reported_status": "full_read",
+    "source": "supplementary/S-01a4d818f5fb3fd6/paper.md"
+  },
+  "review_source": "reviews/ROOT/evidence/S-01a4d818f5fb3fd6.json",
+  "review_input_sha256": "0154b34e111717ae305e6e657bce648a43ea8e41e73543910320cc88fcb30cfa"
+}

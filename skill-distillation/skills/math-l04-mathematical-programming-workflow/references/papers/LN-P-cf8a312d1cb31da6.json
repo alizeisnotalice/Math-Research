@@ -1,0 +1,124 @@
+{
+  "paper_id": "P-cf8a312d1cb31da6",
+  "observed_title": "Verifying Integer Programming Results",
+  "authors": [
+    "Kevin K. H. Cheung",
+    "Ambros Gleixner",
+    "Daniel E. Steffy"
+  ],
+  "version": "arXiv:1611.08832v2; revised March 2017; published in IPCO 2017; PDF 13 pages",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 730,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "L03",
+    "decision": "direct",
+    "basis": "The paper specifies a sequential, independently checkable proof format for LP/IP optimality and infeasibility certificates, with exact-rational arithmetic, integer rounding, branching assumptions, and assumption discharge."
+  },
+  "definitions": [
+    "A linear-inference step derives a valid inequality by taking a combination of the original or previously derived inequalities, with multiplier signs chosen consistently with each inequality direction.",
+    "For integer variables, if an inferred inequality has integer coefficients on the integer coordinates, its right-hand side may be rounded up to the next integer; this is the Chvátal–Gomory rounding step.",
+    "A split disjunction a^T x<=delta or a^T x>=delta+1, with integer delta and integral a^T x on feasible integer points, is represented by introducing both sides as assumptions, deriving consequences in each branch, then unsplitting to discharge the assumptions.",
+    "A certificate is a sequential list of statements whose justification is checked by a small set of inference rules, rather than a replay of the full solver algorithm."
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "The LP/IP data are rational.",
+        "Every linear combination is checked with exact rational arithmetic and sign restrictions.",
+        "For integer-rounding inferences, coefficients on rounded integer coordinates are integral and the original integer restrictions apply."
+      ],
+      "statement": "An LP optimum can be certified by deriving the claimed objective lower/upper bound from the constraints through linear inequality inference. A pure-integer bound can additionally use Chvátal–Gomory rounding. For branch-and-cut proofs, a sequential certificate with explicit branch assumptions and unsplitting can certify the final bound or infeasibility.",
+      "start_line": 180,
+      "end_line": 423,
+      "pdf_pages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "proof_steps": [
+        "For an LP, combine constraints with dual-feasible multiplier signs to infer the objective bound; matching a feasible primal objective certifies optimality, while a contradiction certifies infeasibility.",
+        "For integer programs, add a rounding rule: from c^T x>=v with integer c on integer coordinates infer c^T x>=ceil(v). The example derives y>=-1/2, rounds to y>=0, then derives x+y>=1/4 and rounds to the integer bound x+y>=1.",
+        "For branch-and-cut, introduce the disjuncts as assumptions; each local derivation carries the assumptions it depends on. At sibling leaves, unsplitting discharges the corresponding disjunction, working bottom-up until no branch assumption remains.",
+        "The paper renders a small infeasible two-variable integer system as a ten-line sequential proof; its PDF table was visually checked to recover OCR-damaged fractional coefficients in the derivation rows."
+      ],
+      "gaps": [
+        "The complete formal syntax and all inference rules are specified in the accompanying VIPR files, not reproduced in full in this article.",
+        "The article restricts its operational description to a branch-and-cut regime with split cuts and does not claim that every possible MIP solver operation already has a rule in the format."
+      ]
+    },
+    {
+      "assumptions": [
+        "The certificate contains a final claim derived from listed input constraints and prior derivations.",
+        "The checker uses exact rational arithmetic and validates every reason locally."
+      ],
+      "statement": "The independent checker need not reproduce the optimization search: it validates the listed derivations sequentially. A preprocessing pass can remove unused statements and topologically reorder dependencies; the reported experiments found checking faster than solving on the tested instances.",
+      "start_line": 424,
+      "end_line": 613,
+      "pdf_pages": [
+        9,
+        10,
+        11
+      ],
+      "proof_steps": [
+        "Generate a proof trace during search; form its derivation-dependency graph; retain the component ending at the final claim; topologically reorder it; then check each rational inference and assumption discharge."
+      ],
+      "gaps": [
+        "Runtime ratios are empirical for the paper's tested SCIP instances and hardware, not a worst-case complexity theorem.",
+        "The original solver and certificate checker can still share modeling errors; the certificate checks entailment from the encoded model, not whether that model correctly represents the intended mathematics."
+      ]
+    }
+  ],
+  "constant_dependence": "No numerical inequality constant is established. Certificate size can be large and depends on the proof/search trace; the paper reports computational results for 107 MIP instances and shows that a tightening pass can remove substantial redundancy. Exactness depends on rational input and rational checking, not floating-point tolerances.",
+  "endpoint_limits": [
+    "A checked certificate proves a claim about the encoded rational model; it does not certify that the model faithfully encodes the external problem.",
+    "The article explicitly notes that short polynomial-size certificates for general MIP optimality/infeasibility may not exist.",
+    "LP dual certificates are simpler; integer rounding and split assumptions are needed for the discrete problem.",
+    "Floating-point solver statuses, matching solver outputs, or a feasible point alone do not certify global MIP optimality.",
+    "Certificate validity is only as complete as the supported inference rules; arbitrary solver presolve or cuts must be represented by checked derivations or justified separately."
+  ],
+  "reusable_methods": [
+    "Write the claimed result as a final statement and require each step to cite a short, checkable inference rule.",
+    "Separate search from verification: allow a complicated optimizer to discover the proof while keeping the verifier small and independent.",
+    "Use exact rational arithmetic for the certificate checker; when using interval arithmetic instead, require outward-rounded enclosure rules and check their soundness separately.",
+    "Treat branching as assumptions and explicitly discharge each assumption by an exhaustive disjunction, rather than trusting a search tree summary.",
+    "Keep a model-validation check outside the proof checker so an internally valid certificate is not mistaken for correctness of the original encoding."
+  ],
+  "unchecked": [
+    "The precise VIPR file-format specification and C++ checker source are cited but were not in the paper corpus and were not inspected.",
+    "The example certificates and fractions on PDF pages 6 and 8 were rendered and visually checked; no other formula required visual correction.",
+    "The proof system's soundness argument is presented through inference-rule semantics and examples, not as a single separately labeled meta-theorem with a full formalization in the article."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 726,
+    "source_lines": 730,
+    "required_content_lines": 517,
+    "covered_content_lines": 517,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-cf8a312d1cb31da6/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/P-cf8a312d1cb31da6.json",
+  "review_input_sha256": "a54e776da5f4e43f9b31248f2e1f23e8aba8f50fbe47217eddc6bfb8b5266cc0"
+}

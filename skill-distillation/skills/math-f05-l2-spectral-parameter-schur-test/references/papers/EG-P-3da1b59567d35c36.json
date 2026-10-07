@@ -1,0 +1,650 @@
+{
+  "paper_id": "P-3da1b59567d35c36",
+  "observed_title": "Contributions of Issai Schur to Analysis",
+  "authors": [
+    "Harry Dym",
+    "Victor Katsnelson"
+  ],
+  "version": "arXiv:0706.1868v1（首页显示 arXiv:0706.1868v1，题名页日期为 2018-11-01；只记录原文可见信息，版本/日期关系未外部核验）。全文99页。",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 4680,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "F05": "adjacent"
+  },
+  "definitions": [
+    {
+      "term": "矩阵生成的 ℓ² 双线性型与算子范数",
+      "definition": "A=[a_jk] 定义 A(x,y)=Σ_j,k a_jk x_k y_j；在有限支撑向量上以 sup |A(x,y)|/(||x||₂||y||₂) 定义其范数 C_A，等于生成算子 A:ℓ²→ℓ² 的范数。",
+      "source_ranges": [
+        {
+          "start_line": 623,
+          "end_line": 660,
+          "pdf_pages": [
+            13,
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Schur 行列和与无权 Schur 检验",
+      "definition": "ζ(A)=sup_j Σ_k|a_jk| 为最大行绝对和，κ(A)=sup_k Σ_j|a_jk| 为最大列绝对和。若两者有限，则 ||A||_{ℓ²→ℓ²}≤√(ζ(A)κ(A))。",
+      "source_ranges": [
+        {
+          "start_line": 662,
+          "end_line": 703,
+          "pdf_pages": [
+            14,
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "term": "加权 Schur 检验",
+      "definition": "取正权 r_j>0，ζ_r(A)=sup_j r_j^{-1}Σ_k|a_jk|r_k，κ_r(A)=sup_k r_k^{-1}Σ_j|a_jk|r_j。若均有限，则 ||A||_{ℓ²→ℓ²}≤√(ζ_r(A)κ_r(A))。",
+      "source_ranges": [
+        {
+          "start_line": 748,
+          "end_line": 782,
+          "pdf_pages": [
+            16,
+            17
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Schur–Hadamard（逐项）乘积及正半定闭包",
+      "definition": "A∘B 按相同位置相乘；若同阶方阵 A,B 均正半定，则 A∘B 仍正半定。",
+      "source_ranges": [
+        {
+          "start_line": 914,
+          "end_line": 963,
+          "pdf_pages": [
+            20,
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Schur 乘子",
+      "definition": "矩阵 H 生成线性变换 T_H:A↦H∘A；若该变换在指定的无限矩阵范数空间有界，则 H 称为该范数下的 Schur 乘子。此定义不同于第3节行列和 Schur 检验。",
+      "source_ranges": [
+        {
+          "start_line": 965,
+          "end_line": 985,
+          "pdf_pages": [
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Schur 因子分解界",
+      "definition": "若 H=L M*，且 D_L=sup_p Σ_r|l_pr|²、D_M=sup_q Σ_r|m_qr|² 都有限，则 ||H∘A||_{2→2}≤√(D_LD_M)||A||_{2→2}；指标 r 可推广为测度空间积分。",
+      "source_ranges": [
+        {
+          "start_line": 1027,
+          "end_line": 1057,
+          "pdf_pages": [
+            22,
+            23
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Weyl 特征值—奇异值幂和不等式",
+      "definition": "有限方阵对任意 0<p<∞ 有 Σ_l|λ_l(A)|^p≤Σ_l s_l(A)^p；原文还陈述了 Schatten 类算子相应版本。",
+      "source_ranges": [
+        {
+          "start_line": 2295,
+          "end_line": 2311,
+          "pdf_pages": [
+            49
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Schur test（无权 ℓ² 算子范数估计）",
+      "assumptions": [
+        "A=[a_jk] 可为有限或无限矩阵；无限维时仅先在有限支撑向量上检验。",
+        "最大行和 ζ(A)=sup_jΣ_k|a_jk|<∞ 且最大列和 κ(A)=sup_kΣ_j|a_jk|<∞。"
+      ],
+      "statement": "生成的双线性型在 ℓ²×ℓ² 上有界，并有 C_A=||A||_{ℓ²→ℓ²}≤√(ζ(A)κ(A))。",
+      "start_line": 662,
+      "end_line": 703,
+      "pdf_pages": [
+        14,
+        15
+      ],
+      "proof_steps": [
+        "原始证明设 B=A* A，并用 B 的最大特征值等于 ||A||²；对最大模分量估特征方程，转而估计 B 的行和，再由 A 的最大行/列和控制。此证明先按有限矩阵处理。",
+        "作者另给较短证明：写 |Σa_jk x_k y_j|≤Σ|a_jk|^{1/2}|x_k|·|a_jk|^{1/2}|y_j|，用 Cauchy–Schwarz 拆成行和乘 |x_k|² 与列和乘 |y_j|² 两因子，分别由 κ、ζ 控制。",
+        "对无限矩阵，将有界估计从有限支撑向量上的稠密子空间延拓。"
+      ],
+      "gaps": [
+        "该估计要求行和与列和两项都有限；只控制其中一侧不能得到一般 ℓ² 有界性。",
+        "证明对无限矩阵依赖有限支撑估计后的连续延拓；本文在提取的这一段没有展开定义域闭包技术。"
+      ]
+    },
+    {
+      "name": "Weighted Schur test（正权行列和估计）",
+      "assumptions": [
+        "A=[a_jk]，权序列 r_j>0。",
+        "ζ_r(A)=sup_j r_j^{-1}Σ_k|a_jk|r_k<∞，κ_r(A)=sup_k r_k^{-1}Σ_j|a_jk|r_j<∞。"
+      ],
+      "statement": "C_A≤√(ζ_r(A)κ_r(A))。该形式适合未能通过无权行列和检验的核/矩阵。",
+      "start_line": 748,
+      "end_line": 813,
+      "pdf_pages": [
+        16,
+        17,
+        18
+      ],
+      "proof_steps": [
+        "将 ℓ¹ 与 ℓ∞ 范数改成对偶权范数 ℓ¹_r 与 ℓ∞,r^{-1}；相应算子范数恰对应加权列和 κ_r 与加权行和 ζ_r。",
+        "通过插值观点看 ℓ² 位于 ℓ¹_r 与 ℓ∞,r^{-1} 之间，故 ℓ² 算子范数由两端范数几何平均控制。作者说证明与无权版本相似，但此节没有逐行展开全部细节。",
+        "Toeplitz/Hankel 矩阵可用系数绝对和界定；Hilbert 矩阵 H⁺ 的无权行/列和发散，取 r_l=l^{−α} 后得到有限界 s(α)。连续类比积分常数为 π/sin(πα)，α=1/2 时最小值 π；离散最优 α 和精确常数作者未确定。"
+      ],
+      "gaps": [
+        "加权检验是充分条件，不一般给出最优算子范数；Hilbert 矩阵示例中离散 s(α) 的精确值未知。",
+        "作者把加权版证明称为与无权类似而略去细节；这里只检查了变量替换/插值陈述与例子的定位，未独立证明该广义范数插值。"
+      ]
+    },
+    {
+      "name": "Schur multiplier 正半定矩阵估计（相邻概念，非行列和检验）",
+      "assumptions": [
+        "H=[h_pq] 为正半定矩阵，D_H=sup_p h_pp<∞。",
+        "H∘A 表示 Hadamard/Schur 逐项乘积。"
+      ],
+      "statement": "||H∘A||_{ℓ²→ℓ²}≤D_H||A||_{ℓ²→ℓ²}。这是 Schur 乘子估计，不是上一条 row/column Schur test；也不是本组指定的参数化 Schur 检验。",
+      "start_line": 977,
+      "end_line": 1024,
+      "pdf_pages": [
+        21,
+        22
+      ],
+      "proof_steps": [
+        "作者先将正半定 H 写成 Gram 分解 H=LL*，于是 h_pq=Σ_r l_pr·l_qr̄。",
+        "在任意两向量诱导的双线性型中代入该分解并用算子范数与 Cauchy–Schwarz，得到两侧因子由 max_kΣ_r|l_kr|² 控制；该最大值等于 max_k h_kk=D_H。",
+        "先对有限矩阵给出推导；定理陈述为相应 ℓ² 算子范数估计。"
+      ],
+      "gaps": [
+        "这是 Hadamard 逐项乘子估计，不能与第3节的行/列绝对和 Schur test 混同。",
+        "原文证明先处理有限矩阵；从有限截断到一般无限矩阵的延拓细节没有在所引证明段逐项展开。"
+      ]
+    },
+    {
+      "name": "Schur 乘积定理（正半定矩阵逐项乘积）",
+      "assumptions": [
+        "A 与 B 是相同大小的有限或无限正半定矩阵；无限情形按有限支撑向量定义正性。"
+      ],
+      "statement": "A∘B 仍为正半定矩阵。",
+      "start_line": 923,
+      "end_line": 963,
+      "pdf_pages": [
+        20,
+        21
+      ],
+      "proof_steps": [
+        "作者先处理秩一情形 A=aa*、B=bb*，此时 A∘B=(a∘b)(a∘b)*。",
+        "有限维一般情形对 A、B 分别作谱分解，将逐项乘积写成正半定秩一矩阵逐项乘积之和。"
+      ],
+      "gaps": [
+        "这是矩阵正性闭包结论；它不单独给出 F05 所需参数族的一致范数界。"
+      ]
+    },
+    {
+      "name": "Schur 因子分解范数界及 Bennett 反向刻画",
+      "assumptions": [
+        "若使用正向界，假设 H=L M* 且 D_L=sup_pΣ_r|l_pr|²、D_M=sup_qΣ_r|m_qr|² 有限；测度空间版本将求和改成积分。",
+        "反向命题另假设存在与 A 无关的 D，使所有同型矩阵 A 均满足 ||H∘A||_{2→2}≤D||A||_{2→2}。"
+      ],
+      "statement": "正向有 ||H∘A||_{2→2}≤√(D_LD_M)||A||_{2→2}。作者转述 Bennett 的逆定理：对每个 ε>0 可取 H=L M*，使 √(D_LD_M)<D+ε。",
+      "start_line": 1027,
+      "end_line": 1100,
+      "pdf_pages": [
+        22,
+        23,
+        24
+      ],
+      "proof_steps": [
+        "正向推导由因子分解代入双线性型并用 Cauchy–Schwarz；原文将一般因子化推广至可测函数因子化。",
+        "反向刻画在本文中作为 Bennett 定理陈述，并说明证明依赖 Pietsch 的绝对可和算子结果；本文未重做 Bennett 证明。"
+      ],
+      "gaps": [
+        "逆向结论是本文引用的既有定理，不是 survey 在此处新证。",
+        "常数为可任意逼近 D 的乘积平方根界；不能把某个固定因子化分解的界误读为最优值。",
+        "没有参数化 A(λ) 或项目私有接口的统一端点结论。"
+      ]
+    },
+    {
+      "name": "Stieltjes 双算子积分的因子化估计（作者转述既有结果）",
+      "assumptions": [
+        "E(dλ)、F(dμ) 为 Hilbert 空间上的正交谱测度，h(μ,λ) 为适当可测核。",
+        "若 h(μ,λ)=∫_X m(μ,x)l(λ,x)dx，且 C_m=ess sup_μ∫|m(μ,x)|²dx、C_l=ess sup_λ∫|l(λ,x)|²dx 均有限。"
+      ],
+      "statement": "本文转述 Birman–Solomyak 结果：双算子积分 T_h 在有界算子范数及迹类范数的相应估计中可取 C=√(C_m C_l)；并转述 Peller 的反向因子化刻画。",
+      "start_line": 1135,
+      "end_line": 1224,
+      "pdf_pages": [
+        25,
+        26,
+        27
+      ],
+      "proof_steps": [
+        "先将算子按两组谱测度分解；离散秩一原子时退化为矩阵元素逐项乘 h。",
+        "核因子化为两组 L² 函数后，作者说明由与 Schur 因子分解相同的方法并用有界算子与迹类对偶，得到同一常数的界。",
+        "反向因子化是作者对 Peller 结果的转述。"
+      ],
+      "gaps": [
+        "该段引用 Birman–Solomyak 与 Peller 文献，本文没有完整证明这些深层定理。",
+        "证明依赖正交谱测度、适当定义的双算子积分及统一可测因子化；不能仅凭符号相似迁移到任意树或私有 TC-A4 接口。"
+      ]
+    },
+    {
+      "name": "Weyl 特征值—奇异值幂和不等式",
+      "assumptions": [
+        "A 为有限维方阵，λ_l(A) 为特征值、s_l(A) 为奇异值；原文由乘积不等式与 log-majorization 得出。",
+        "任意 0<p<∞。"
+      ],
+      "statement": "Σ_l|λ_l(A)|^p≤Σ_l s_l(A)^p。原文陈述 Schatten S_p 类 Hilbert 空间算子也有相应求和不等式。",
+      "start_line": 2254,
+      "end_line": 2318,
+      "pdf_pages": [
+        48,
+        49
+      ],
+      "proof_steps": [
+        "先按模递减排序，使用 Weyl 的部分乘积不等式及全乘积等式，得到 log|λ| 序列被 log s 序列 majorize。",
+        "对相应凸函数应用 majorization 不等式，再取 ϕ(t)=t^p，得到有限维幂和不等式。",
+        "作者说明 Schatten 类推广，并把它用于以有限秩核逼近积分核时估计奇异值。"
+      ],
+      "gaps": [
+        "正文将一般凸变换与 log-majorization 的论证归于 Weyl；此处不重做所有零特征值/极限处理。",
+        "它比较一般算子的谱与奇异值，不给出本项目特定矩阵族的 Schur 检验界。"
+      ]
+    }
+  ],
+  "constant_dependence": "本文所取常数均依赖各自显式假设：无权 Schur test 为 √(ζκ)，加权版为 √(ζ_rκ_r)；正半定 Schur 乘子界为 D_H=sup_p h_pp；一般因子分解与 Stieltjes 双算子积分界为 √(D_LD_M) 或 √(C_mC_l)。Bennett 反向刻画只保证对任意 ε>0 可逼近给定乘子范数 D。Weyl 幂和不等式常数为1。上述是一般矩阵/算子结论；未给出项目私有参数族或任意树接口的统一常数。",
+  "endpoint_limits": [
+    "全文为99页调查文章，现已覆盖 PDF pp.1–99（paper.md 行7–4680），包含主体、各节文末参考书目及末尾 Schur 论文目录。",
+    "第3节的 Schur test 是基于行/列绝对和的 ℓ² 范数界；第4节 Schur multiplier 指 Hadamard 逐项乘子；第5节 Schur 凸性涉及 majorization；第9节 Schur class/algorithm 属单位圆盘全纯函数。四者不可混称。",
+    "加权与无权 Schur 检验为充分估计，条件是两侧行列和（经权重归一）均有界。原文 Hilbert 矩阵连续类比常数 π/sin(πα)，在 α=1/2 取 π；离散幂权界作者未称最优。",
+    "乘子因子化定理的反向方向是本文转述 Bennett/Peller 的结果；survey 中的陈述可引用为作者报告，但此处未独立重建其外部文献证明。",
+    "本篇不含项目私有 F05 参数化接口、GP-BRANCH、TC-A4 或任意树版本结论；只能引用满足相应假设的一般构件。",
+    "题名页日期 2018-11-01 与侧边 arXiv 标记 2007-06-13 表面不协调；未外部核验，故未据此判定版本或内容真伪。"
+  ],
+  "reusable_methods": [
+    "对矩阵核寻找正权 r_j，使加权行和与列和同时可控，再应用 Cauchy–Schwarz 型 Schur test；使用时必须写出权重及两侧和的逐项估计。",
+    "若核有正半定结构，可尝试 Gram 因子化 H=LL* 并利用对角上界；若一般核可因子化 H=L M*，记录两组行向量的 ℓ² 上确界并得到乘子界。",
+    "在连续谱问题中，将离散 Schur 乘子替换为谱测度双积分时，显式验证正交谱测度条件、核的可测 L² 因子化和统一范数，再引用双算子积分估计。",
+    "对积分算子的谱估计，可先用有限秩核逼近控制奇异值，再通过 Weyl 幂和不等式控制特征值的 ℓ^p 和；该途径不会自动提供特定参数族端点界。",
+    "将“Schur”作为检索词时先核对运算对象：行列和检验、Hadamard 乘子、majorization、单位圆盘 Schur 函数分别属于不同结论。"
+  ],
+  "unchecked": [
+    "未外部核验 arXiv 版本标记与题名页日期的差异。",
+    "未另行获取并完整审读文中引用的 Bennett、Peller、Birman–Solomyak 原始论文；其结果仅标为本文转述。",
+    "未为本项目任何私有参数族、中心立方体极大算子或任意树接口推导一致端点常数。",
+    "公式已视觉核查关键页；其余全部公式未逐式与 PDF 像素校对，文本提取中的排版异常可能仍存在。"
+  ],
+  "full_text_section_map": [
+    {
+      "section": "1. 可交换微分算子与微分算子的分数幂",
+      "source_ranges": [
+        {
+          "start_line": 32,
+          "end_line": 351,
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        }
+      ],
+      "summary": "研究可交换微分表达式及分数幂构造；属分析史与算子论背景。"
+    },
+    {
+      "section": "2. 无限序列的广义极限",
+      "source_ranges": [
+        {
+          "start_line": 352,
+          "end_line": 613,
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "summary": "讨论序列空间、广义极限与由矩阵定义的序列变换，包括常见正则性/收敛条件。"
+    },
+    {
+      "section": "3. 矩阵与积分算子的估计",
+      "source_ranges": [
+        {
+          "start_line": 614,
+          "end_line": 909,
+          "pdf_pages": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        }
+      ],
+      "summary": "给出无权与加权 Schur 行列和检验、Toeplitz/Hankel 及 Hilbert 矩阵例子，并讨论积分算子估计。"
+    },
+    {
+      "section": "4. Schur 乘积与 Schur 乘子",
+      "source_ranges": [
+        {
+          "start_line": 910,
+          "end_line": 1455,
+          "pdf_pages": [
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ]
+        }
+      ],
+      "summary": "讲 Schur–Hadamard 乘积、正半定闭包、正半定乘子界、L M* 因子分解及其反向刻画，并引出 Stieltjes 双算子积分。"
+    },
+    {
+      "section": "5. Schur 凸性定理",
+      "source_ranges": [
+        {
+          "start_line": 1456,
+          "end_line": 1910,
+          "pdf_pages": [
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41
+          ]
+        }
+      ],
+      "summary": "讨论 majorization、双随机矩阵、Birkhoff 定理与 Schur–Horn 凸包结论。"
+    },
+    {
+      "section": "6. 特征值与奇异值之间的不等式",
+      "source_ranges": [
+        {
+          "start_line": 1911,
+          "end_line": 2447,
+          "pdf_pages": [
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52
+          ]
+        }
+      ],
+      "summary": "包括 Schur 三角化、特征值与奇异值估计、Weyl 的 log-majorization 及 Schatten 类推论。"
+    },
+    {
+      "section": "7. 矩阵的三角表示",
+      "source_ranges": [
+        {
+          "start_line": 2448,
+          "end_line": 3138,
+          "pdf_pages": [
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67
+          ]
+        }
+      ],
+      "summary": "讨论算子/矩阵三角表示与特征链条件。"
+    },
+    {
+      "section": "8. 保持 Laguerre–Pólya 类的乘子序列",
+      "source_ranges": [
+        {
+          "start_line": 3139,
+          "end_line": 3780,
+          "pdf_pages": [
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80
+          ]
+        }
+      ],
+      "summary": "讨论整函数、乘子序列、全正性与变差递减相关结果。"
+    },
+    {
+      "section": "9. Schur 类全纯函数与 Schur 算法",
+      "source_ranges": [
+        {
+          "start_line": 3781,
+          "end_line": 4514,
+          "pdf_pages": [
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96
+          ]
+        }
+      ],
+      "summary": "定义单位圆盘上的 Schur 类，讲 Schur 参数递推、插值及矩阵值推广；与第3节 Schur 检验、第4节 Hadamard 乘子仅共享人名。"
+    },
+    {
+      "section": "10. Schur 分析论文目录与参考文献",
+      "source_ranges": [
+        {
+          "start_line": 4515,
+          "end_line": 4680,
+          "pdf_pages": [
+            96,
+            97,
+            98,
+            99
+          ]
+        }
+      ],
+      "summary": "列出 Schur 分析主题论文书目。"
+    }
+  ],
+  "verification_notes": [
+    "逐段阅读全文行7–4680，覆盖 PDF 第1–99页；页范围由 pages.json 的 content_start_line/end_line 对齐。",
+    "用 PyMuPDF 渲染并视觉核对首页与关键公式页：PDF pp.1、17、21–23、49；确认首页元数据、加权 Schur 公式、正半定乘子分解、一般因子分解界及 Weyl 幂和公式。",
+    "本文作者报告的引文定理与我亲自逐页读取的事实分开记录；Bennett、Peller、Birman–Solomyak 的原始证明未在本调查中另行阅读或独立验证。",
+    "未把标准构件外推为项目私有参数族/树接口定理；原文可支持性按明确假设限缩。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 4674,
+    "source_lines": 4680,
+    "required_content_lines": 3378,
+    "covered_content_lines": 3378,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-3da1b59567d35c36/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-3da1b59567d35c36.json",
+  "review_input_sha256": "8a522f2f5949fd46063032555b2abd6bcdc718703c6b1184705e177fcbd3ad8a"
+}

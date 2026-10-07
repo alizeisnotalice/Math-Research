@@ -1,0 +1,170 @@
+{
+  "paper_id": "P-f75e7aa656d58a5a",
+  "observed_title": "Sharp Log-Sobolev Inequalities and Quartic Stability on Finite Cyclic Groups",
+  "authors": [
+    "Xinyuan Xie",
+    "Haonan Zhang"
+  ],
+  "version": "arXiv:2606.02847v4, sidebar 31 August 2026, manuscript date September 1 2026; 14 PDF pages",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 798,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "scope": "全文包括奇/偶共振证明、圆群极限、维数稳定性及references；被工具截断的p7–8已另完整补读"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "M03",
+    "decision": "direct",
+    "basis": "亏损控制归一化非负函数到常值极值的L2距离，且显式区分局部四次阶及d^-1依赖与未证最优数值系数。"
+  },
+  "definitions": [
+    {
+      "name": "word-length Dirichlet form",
+      "statement": "π uniform probability on Z_n; ψ_n(k)=min(k,n−k), E_n(f)=Σ ψ_n(k)|fhat(k)|², n≥4. Product generator A=Σ_i Aψn^(i); 0log0=0.",
+      "start_line": 51,
+      "end_line": 111,
+      "pdf_pages": [
+        2
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 5 (quartic stability)",
+      "evidence_class": "source_theorem",
+      "assumptions": [
+        "n≥4 integer; d≥1 integer",
+        "f:(Z_n)^d→[0,∞), ∫f²dμ=1, μ uniform probability product",
+        "Word-length Poisson generator, not unnormalized nearest-neighbor Laplacian"
+      ],
+      "statement": "2∫fAf dμ−Entμ(f²)≥(12d)^−1 ||f−1||_L2(μ)^4. Exponent4 and d^-1 order optimal; coefficient1/12 not claimed optimal.",
+      "start_line": 237,
+      "end_line": 282,
+      "pdf_pages": [
+        5
+      ],
+      "proof_steps": [
+        "Cubic-majorant remainder R(t)≥(t−1)^4/(6max(1,t²)); normalized Cauchy–Schwarz plus ∫max(1,f²)≤2 gives ∫R(f)≥||f−1||²_2²/12.",
+        "Cubic criterion follows from mean-zero third-moment π(u³)≤3S²Q; source counts odd/even Fourier resonances separately and retains self-conjugate even middle frequency.",
+        "Product proof forms f_i=(E_{x1,...,xi}f²)^1/2; entropy telescopes, slice unnormalized stability handles f_i=0 by zero convention. Norm contraction controls sliced energy, Jensen+Cauchy–Schwarz across d coordinates gives factor1/d.",
+        "Perturbation gε=(1+εv)/√(1+ε²), v first eigenfunction, then product Fε=Π gε; ratio deficit/distance^4→(3+πv^4)/(6d)."
+      ],
+      "proof_ranges": [
+        {
+          "start_line": 605,
+          "end_line": 742,
+          "pdf_pages": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "gaps": [
+        "Formal Lean repository reported for Theorem1 is not itself checked here.",
+        "Small ε product asymptotics are first ε→0 for fixed d; O_d constants do not certify uniform d→∞ expansion."
+      ]
+    },
+    {
+      "label": "Theorem 4 (circle)",
+      "evidence_class": "source_theorem",
+      "assumptions": [
+        "f≥0 in D(E_T)={f∈L²(T):Σ|k||fhat(k)|²<∞}",
+        "Normalized Haar probability measure"
+      ],
+      "statement": "Entπ(f²)≤2E_T(f), sharp2.",
+      "start_line": 176,
+      "end_line": 235,
+      "pdf_pages": [
+        4
+      ],
+      "proof_steps": [
+        "Direct finite Fourier third-moment estimate for trigonometric polynomials.",
+        "Positive Fejér approximants f_N→f inL², E(f_N)→E(f); entropy uses lower semicontinuity after f_N²→f² inL¹."
+      ],
+      "proof_ranges": [
+        {
+          "start_line": 552,
+          "end_line": 600,
+          "pdf_pages": [
+            10,
+            11
+          ]
+        }
+      ],
+      "gaps": [
+        "Pointwise convergence of Fourier multipliers alone would not justify arbitrary-function limit; source supplies approximation and lsc."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "LS constant2 uniform n≥4 and dimension via tensorization; stability coefficient1/(12d), numerical1/12 not sharp-certified; exponent4 locally optimal.",
+    "quantifiers": "Sharp order d^-1 shown by ε→0 separately at each fixed d; no dimension-independent positive coefficient possible."
+  },
+  "endpoint_limits": {
+    "scope": "n=3 excluded; stability stated for nonnegative f and normalizedL2. Complex functions have LS by modulus contraction, not this exact ||f−1|| stability without quotienting phase.",
+    "not_established": "No direct maximal-cube stability or phase-invariant complex stability statement."
+  },
+  "reusable_methods": [
+    {
+      "method": "Use exact remainder beyond a sharp pointwise majorant",
+      "transfer": "Requires matching cubic criterion and normalization; cannot transfer constant/exponent without reproving criterion."
+    },
+    {
+      "method": "Successive conditionalL2 norms + entropy telescoping + norm contraction",
+      "transfer": "Track positive jump kernel, zero slice convention and number of coordinates; factor1/d is structural."
+    }
+  ],
+  "checked_derivation": [
+    {
+      "statement": "If δ=2∫fAf−Ent(f²), then ||f−1||_2≤(12dδ)^(1/4) for the stated normalized nonnegative product domain.",
+      "class": "algebraic_rearrangement_not_new_stability_theorem"
+    }
+  ],
+  "visual_checks": [
+    {
+      "pdf_pages": [
+        5,
+        13
+      ],
+      "images": [
+        "reviews/TEAM_LM/visual/P-f75e7aa656d58a5a-p5.png",
+        "reviews/TEAM_LM/visual/P-f75e7aa656d58a5a-p13.png"
+      ],
+      "findings": "1/(12d), fourth power, and fixed-d asymptotics visible"
+    }
+  ],
+  "unchecked": [
+    "All14 sourcepages read; citations not independently read; no experiments or Lean compilation rerun."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 798,
+    "source_lines": 798,
+    "required_content_lines": 639,
+    "covered_content_lines": 639,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-f75e7aa656d58a5a/paper.md"
+  },
+  "review_source": "reviews/TEAM_LM/evidence/P-f75e7aa656d58a5a.json",
+  "review_input_sha256": "a0a0ebb134cf9f073d1f2e6b7cee926cbe8183a69db106a4986347cb952c18ca"
+}

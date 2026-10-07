@@ -1,0 +1,261 @@
+{
+  "paper_id": "P-8f72337f82756704",
+  "observed_title": "A Pointwise Lipschitz Selection Theorem",
+  "authors": [
+    "Miek Messerschmidt"
+  ],
+  "version": "arXiv:1611.08435v2；首页标注 23 Aug 2017；PDF 共 16 页。首页标题、作者、版本视觉核对。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 927,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "M04",
+    "decision": "adjacent",
+    "basis": "论文直接证明闭凸值对应的连续选择器可以获得稠密集上的逐点 Lipschitz 正则性，也改进 Bartle–Graves 连续右逆。与 M04 的选择器构造相关，但结论是连续（非一般可测）选择，且不涉及可测 supremum、argmax 或解析投影；因此是邻近的正则选择来源，不支持这些核心定理。"
+  },
+  "definitions": [
+    "Correspondence φ:M⇉X 是集合值映射；selection f 满足 f(a)∈φ(a) 对所有 a。Lower hemicontinuity：任意开集 U 若与 φ(a) 相交，则在 a 的某邻域内 φ(b) 仍与 U 相交。",
+    "Pointwise α-Lipschitz at b 的定义是 limsup_{r→0+} r^{-1} sup_{a∈B(b,r)} ||f(b)-f(a)|| ≤ α；strongly pointwise α-Lipschitz at b 则要求对所有 a，全局成立 ||f(b)-f(a)||≤αd(b,a)。两定义不同。",
+    "Local strongly pointwise selection 假设：每个 y∈φ(b) 都有一个连续全局选择 f 取值 f(b)=y，并在 b 的某邻域上满足强点态 α-Lipschitz 控制。",
+    "Lower pointwise α-Lipschitz correspondence：对所有 b,a 与 y∈φ(b)，φ(a)∩(y+αd(b,a)B_X) 非空。",
+    "r-separation 是不同点距离至少 r 的集合；递增的 maximal 2^{-(n−1)}-separations B_n 的并在度量空间中稠密。"
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "M 为任意度量空间，X 为 Banach 空间，α≥0；φ:M⇉X 非空值、闭值、凸值。",
+        "φ admits local strongly pointwise α-Lipschitz selections（逐点对每个纤维元素的局部选择条件）。",
+        "φ 至少有一个连续选择；若从一开始有界，结论可保有界。"
+      ],
+      "statement": "作者 Theorem 3.4：对任意 β>α，φ 存在连续选择 f，使 f 在 M 的一个稠密子集 B 上逐点 β-Lipschitz；初始连续选择有界时，可取有界 f。它不声称 f 在整个 M 上 Lipschitz 或逐点 Lipschitz。",
+      "start_line": 547,
+      "end_line": 615,
+      "pdf_pages": [
+        9,
+        10,
+        11
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 449,
+          "end_line": 541,
+          "pdf_pages": [
+            8,
+            9
+          ]
+        },
+        {
+          "start_line": 547,
+          "end_line": 615,
+          "pdf_pages": [
+            9,
+            10,
+            11
+          ]
+        },
+        {
+          "start_line": 262,
+          "end_line": 271,
+          "pdf_pages": [
+            5
+          ]
+        },
+        {
+          "start_line": 406,
+          "end_line": 415,
+          "pdf_pages": [
+            7
+          ]
+        }
+      ],
+      "proof_steps": [
+        "取 ε=(β−α)/3。对每个 n，扩张前一级 maximal 2^{-(n−1)}-separation 得 B_n；在新点 b 上用局部强点态选择替换 f_{n−1}，并以 locally finite partition of unity 与凸值性拼接成 f_n。",
+        "构造保持 sup_M||f_n−f_{n−1}||≤2^{-n}ε，并保证在新分离点附近精确等于局部选择；对旧点则保留越来越小邻域上的前级函数值。",
+        "几何级数使 (f_n) 一致 Cauchy，因此极限 f 连续；闭值性保证极限仍选自 φ，有界性由一致收敛保留。",
+        "B=∪_n B_n 稠密。对 b∈B 取首次进入级数 N；在小球中用 B 的点 c 近似任意 y，再用局部强 α 控制 f_N(b)−f_N(c)，并用一致扰动尾和及 ε 控制极限误差，得到 limsup r^{-1}sup_{y∈B(b,r)}||f(b)−f(y)||≤α+3ε=β。"
+      ],
+      "gaps": [
+        "结论只在构造出的稠密子集上给逐点 Lipschitz，不给整个 M 上逐点 Lipschitz/全局 Lipschitz。Cantor 函数备注具体说明稠密集结果不能这样加强。",
+        "证明需非空闭凸值、一个先验连续选择、Banach 目标空间及每点每个纤维元素对应的 local strongly pointwise 选择条件；这些不是任意可测 correspondence 自动满足的。",
+        "论文的局部构造依赖经典分割单位定理、Michael 选择定理及 Stone 的度量空间旁紧性；本文记录原文推理，未替代这些拓扑定理。"
+      ]
+    },
+    {
+      "assumptions": [
+        "M 为度量空间，X 为 Banach 空间；φ:M⇉X 闭值、凸值且 lower hemicontinuous。",
+        "对每个 ε>0，φ 是 lower pointwise (α+ε)-Lipschitz。"
+      ],
+      "statement": "作者 Proposition 4.4 / Corollary 4.5：在上述较自然的条件下，对任意 β>α 存在连续选择，在稠密集合上逐点 β-Lipschitz；若另有有界连续选择，结果可有界。Proposition 4.4 将 φ 限制为 ψ(a)=φ(a)∩(y+(α+ε)d(b,a)B_X)，证明 ψ lower hemicontinuous 且闭、凸、非空，再应用 Michael 选择定理。",
+      "start_line": 674,
+      "end_line": 770,
+      "pdf_pages": [
+        12,
+        13
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 634,
+          "end_line": 640,
+          "pdf_pages": [
+            11
+          ]
+        },
+        {
+          "start_line": 650,
+          "end_line": 672,
+          "pdf_pages": [
+            11,
+            12
+          ]
+        },
+        {
+          "start_line": 674,
+          "end_line": 746,
+          "pdf_pages": [
+            12,
+            13
+          ]
+        },
+        {
+          "start_line": 754,
+          "end_line": 770,
+          "pdf_pages": [
+            13
+          ]
+        }
+      ],
+      "proof_steps": [
+        "固定基点 a、基准值 y∈φ(a)，以 (α+ε)d(a,b) 半径截取 φ(b) 得 ψ(b)；lower pointwise 假设给非空，凸性继承。",
+        "在 b=a 处用 φ 的 lower hemicontinuity 与小半径控制证 ψ 的 lower hemicontinuity；在 b≠a 处先选 ψ(b)∩U 内的点，利用严格余量、reverse triangle inequality 和 φ 的 lower hemicontinuity 将附近可选值留在截断球内，故 ψ 仍 lower hemicontinuous。",
+        "Michael 选择定理给连续选择 f∈ψ；因 ψ 是 φ 的子对应且 ψ(b)={y}，该 f 是 φ 的选择、f(b)=y，并满足 ||f(a)-f(b)||≤(α+ε)d(a,b)。",
+        "给定 β>α 取 ε=(β−α)/2，使 α+ε<β，再套 Theorem 3.4 即得 Corollary 4.5。"
+      ],
+      "gaps": [
+        "Lower pointwise Lipschitz 是强几何相交条件，不可与单纯 lower hemicontinuity 混同。",
+        "Michael 选择定理是引用的经典结果；主文给出 ψ 的 lower hemicontinuity 论证。",
+        "仍然是连续选择及点态 Lipschitz 的结论，不涉及 measurable supremum/argmax 的 measurable graph 或解析投影条件。"
+      ]
+    },
+    {
+      "assumptions": [
+        "X,Y 是无限维 Banach 空间，T:X→Y 是连续线性满射。",
+        "γ>0 来自开映射定理并满足 γB_Y⊆T(B_X)；选择参数 α=γ^{-1}、任意 β>α。"
+      ],
+      "statement": "作者 Theorem 5.2：存在 η>0 与 positively homogeneous 的连续右逆 τ:Y→X（Tτ=id_Y），使 τ 在 Y 的一个稠密 meager 子集上逐点 η-Lipschitz。证明从逆像对应 φ(y)=T^{-1}{y}（限于单位球面）验证 lower hemicontinuity 与 lower pointwise Lipschitz；用 Corollary 4.6 得单位球面选择，再正齐次延拓。文中给 η=2β+||τ||∞。",
+      "start_line": 809,
+      "end_line": 837,
+      "pdf_pages": [
+        14
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 320,
+          "end_line": 394,
+          "pdf_pages": [
+            6,
+            7
+          ]
+        },
+        {
+          "start_line": 809,
+          "end_line": 837,
+          "pdf_pages": [
+            14
+          ]
+        }
+      ],
+      "proof_steps": [
+        "开映射定理给 γB_Y⊆T(B_X)，故单位球面上的每个 y 有非空纤维；纤维是闭凸集。",
+        "若 z 靠近 y，z−y 可由一个范数 ≤γ^{-1}||z−y|| 的 x′ 提升，故 x+x′∈T^{-1}{z}；这同时给 lower hemicontinuity 与任意松弛 α+ε 下的 lower pointwise Lipschitz。",
+        "用 Corollary 4.6 得单位球面上的连续选择 τ，逐点 β-Lipschitz 的稠密集由 maximal separated sets 构成且为 meager。正齐次延拓后，Lemma 2.8 给稠密射线集上的常数 2β+||τ||∞。"
+      ],
+      "gaps": [
+        "结论的稠密集在 Y 中仍是 meager；不是处处 Lipschitz 的连续右逆。",
+        "Open Mapping Theorem、Michael 选择定理是经典外部输入；本卡未核验其外部证明。"
+      ]
+    },
+    {
+      "assumptions": [
+        "作者采用 Aharoni–Lindenstrauss 的 Banach 商映射 q:D→D/C([0,1]) 作为反例；其“无 Lipschitz 甚至无 uniformly continuous 右逆”由外部来源给出。"
+      ],
+      "statement": "Example 6.1 及 Theorems 6.2–6.3 用来说明 Theorem 3.4 的稠密集端点不能一般加强成全域逐点 Lipschitz 选择：若全域逐点 Lipschitz，球面双 Lipschitz 同胚到 length space 的几何结果可推出 Lipschitz 映射，从而与商映射不存在 Lipschitz 右逆矛盾。",
+      "start_line": 850,
+      "end_line": 880,
+      "pdf_pages": [
+        15
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 850,
+          "end_line": 880,
+          "pdf_pages": [
+            15
+          ]
+        }
+      ],
+      "proof_steps": [
+        "作者定义有理点处可跳的有界右连续函数空间 D、其连续子空间 C([0,1]) 和商映射 q，引用既有文献说明 q 无 Lipschitz/一致连续右逆。",
+        "假设单位球面逆像 correspondence 存在全域逐点 Lipschitz 选择；Theorems 6.2–6.3 使该选择 Lipschitz，正齐次延拓成为 q 的 Lipschitz 右逆，矛盾。"
+      ],
+      "gaps": [
+        "Aharoni–Lindenstrauss 的无右逆构造未在本文证明，只引用 [1] 或 [3, Example 1.20]；Theorem 6.2 引文、Theorem 6.3 的改写也未展开证明。",
+        "该反例是连续线性满射右逆，不是可测 argmax 或一般选择器不存在的反例。"
+      ]
+    }
+  ],
+  "constant_dependence": [
+    "Theorem 3.4 的输出常数严格要求 β>α，选 ε=(β−α)/3；局部 Lipschitz 常数仍是 α，三份误差余量合计 3ε。",
+    "更自然 Corollary 4.5 要对每个 ε>0 满足 lower pointwise (α+ε)-Lipschitz；从 β>α 取 ε=(β−α)/2。",
+    "Bartle–Graves 应用以 γB_Y⊆T(B_X) 定义 α=γ^{-1}；任意 β>α 后，齐次延拓常数为 η=2β+||τ||∞。γ 来源为开映射定理，论文未给可计算的具体值。"
+  ],
+  "endpoint_limits": [
+    "稠密集上逐点 Lipschitz 是最强一般结论；备注3.5以 Cantor 函数排除全域升级，Example 6.1排除一般 Lipschitz 右逆。",
+    "证明需要可度量域、Banach 值域、闭凸值和连续可选性；面向 lower pointwise 版本还要 lower hemicontinuity 与全ε的松弛度量邻近条件。",
+    "论文未处理一般可测选择定理、measurable graph、可测上确界、argmax measurable selector 或解析投影。它为 M04 的连续正则选择构造给边界和 sufficient conditions，不能替代这些主题。"
+  ],
+  "reusable_methods": [
+    "把需求写成 lower pointwise condition：对每个纤维点 y∈φ(b)，要求邻近纤维 φ(a) 与以 y 为中心、半径 Ld(a,b) 的球相交；随后截取局部 correspondence 并用经典选择定理构造经过 y 的 Lipschitz 选择。",
+    "通过递增 maximal r_n-separated sets 与在新点局部替换/旧点冻结，构造一致 Cauchy 的连续选择序列；每阶段扰动可由几何级数控制。",
+    "将“逐点局部光滑”输出明确记录为稠密集而非全域，并检查 dense set 是否 meager；此处 maximal separation 产生的可数并在无孤立点球面上是 meager。",
+    "若选择定义在线性空间单位球面，正齐次延拓需单独证明连续性和常数变化；本文给出 2β+||τ||∞ 而不是保持 β。"
+  ],
+  "unchecked": [
+    "全篇16页已读（包括第6节与参考文献）；首页、Theorem 3.4 陈述、主证明关键误差估计（PDF pp.10–11）、Proposition 4.4（p.13）和 Theorem 5.2（p.14）已视觉核验。",
+    "Theorem 3.4 主证明按原文检查了 ε=(β−α)/3、扰动和与局部强点态控制的组合；未对所有拓扑引理和 Michael/Stone 定理作独立证明。",
+    "外部 Aharoni–Lindenstrauss 反例的原证明未在此重读；作者以引用支撑。Theorem 6.3 称为对引文结果的 straightforward adaptation，本文未给完整证明。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 923,
+    "source_lines": 927,
+    "required_content_lines": 736,
+    "covered_content_lines": 736,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-8f72337f82756704/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/P-8f72337f82756704.json",
+  "review_input_sha256": "a5db002f7c14e3029b526e70273afb110bf3e30bc4d4d3eb74c1e0b69c0c79c2"
+}

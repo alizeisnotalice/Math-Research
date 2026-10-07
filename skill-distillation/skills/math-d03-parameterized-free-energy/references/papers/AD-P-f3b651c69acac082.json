@@ -1,0 +1,296 @@
+{
+  "paper_id": "P-f3b651c69acac082",
+  "observed_title": "On Assessing the Accuracy of Defect Free Energy Computations",
+  "authors": [
+    "Matthew Dobson",
+    "Manh Hong Duong",
+    "Christoph Ortner"
+  ],
+  "version": "arXiv:1602.08643v2；本地首页印有 March 15, 2022（存档为 v2）。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 2600,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "D03": "adjacent"
+  },
+  "definitions": [
+    {
+      "term": "一维缺陷链配分自由能",
+      "definition": "最近邻键位移 r_i=u_i−u_{i−1}，边界 u_0=0,u_N=NA；无外力完美链 V(u)=Σψ(r_i)，缺陷链加局部势 P(r_1)。令 F_N=−log∫exp(−V)，F_N^P=−log∫exp(−V−P)，缺陷形成自由能 G_N(A)=F_N^P(A)−F_N(A)。作者全篇取 β=1。",
+      "source_ranges": [
+        {
+          "start_line": 7,
+          "end_line": 83,
+          "pdf_pages": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "term": "一致强凸与可和外力假设",
+      "definition": "Assumption 1.1：ψ,P∈C²，κ₁≤ψ″≤κ₂ 且 ς₁≤(ψ+P)″≤ς₂，所有常数正；Assumption 1.2：外力序列 h=(h₁,h₂,…)∈ℓ¹，H=Σ_{i≥2}h_i。",
+      "source_ranges": [
+        {
+          "start_line": 108,
+          "end_line": 119,
+          "pdf_pages": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "term": "有限温度 Cauchy–Born 密度及粗粒化能",
+      "definition": "W(A)=sup_{σ∈R}{σA−log∫exp(−ψ(y)+σy)dy}。外缺陷核上的连续粗粒化能量由该 W 构成，极限变分能量 E_cb(u)=W′(A)(A−u₁)+AH+Σ_{i≥2}[W(A+v′_i)−W(A)−W′(A)v′_i+h_iv′_i]，其中 v′∈ℓ² 时定义良好。",
+      "source_ranges": [
+        {
+          "start_line": 134,
+          "end_line": 172,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "无外力显式粗粒化极限",
+      "definition": "有限粗粒化能 E_N^{cg}(A,y)=inf_{u_1=y,u_N=NA}Σ_{i=2}^N[W(u_i−u_{i−1})−W(A)]；无限链极限记 E^{cg}(A,y)。",
+      "source_ranges": [
+        {
+          "start_line": 1082,
+          "end_line": 1165,
+          "pdf_pages": [
+            17,
+            18
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem 1.1 / 2.1：缺陷形成自由能的热力学极限与速率",
+      "assumptions": [
+        "β=1。ψ,P∈C² 且 ψ″、(ψ+P)″ 分别有正的上下界 Assumption 1.1。",
+        "Theorem 2.1 先陈述无外力情形；外力情形在 §3 用 h∈ℓ¹ 处理。"
+      ],
+      "statement": "存在热力学极限 G∞(A)。无外力时 G∞(A)=−log[∫e^{−(ψ+P)(y)+W′(A)y}dy / ∫e^{−ψ(y)+W′(A)y}dy]，且作者给出 |G_N(A)−G∞(A)|≲N⁻¹。外力情形 Theorem 3.2 将缺陷势与首键外力纳入分子，并以 E^{cg}(A,y) 表达极限比值积分。",
+      "start_line": 126,
+      "end_line": 243,
+      "pdf_pages": [
+        3,
+        4
+      ],
+      "proof_steps": [
+        "Lemma 2.2 通过凸对偶参数 σ* 将高维链积分与独立、中心化随机键位移和的密度 g_{N,A}(0) 联系起来。",
+        "Proposition 2.3 以完美链/缺陷链的 log-partition 凸对偶差和两组独立和密度之比表示 G_N。",
+        "Proposition 2.7 控制 log-partition差项到 O(N⁻¹)；其核心是 σ_N^P−σ₀=O(N⁻¹) 及单键指数倾斜的有界指数矩。",
+        "Proposition 2.10 用傅里叶反演把密度拆成小频区与大频区；大频区由一致特征函数衰减控制，小频区比较二次展开与方差，得到密度比误差 O(N⁻¹)。",
+        "本人逐项跟踪该证明链条及参数位置；详细的均匀特征函数估计引用 Menz / Grunewald 等工作，未从头重证其外部引理。"
+      ],
+      "gaps": [
+        "一般 Theorem 2.1 的 ≲ 符号没有明说隐含常数是否对 A 一致；谐波 Theorem 4.1 的显式式子显示误差中有非零 A²/N 项，因此不能把它解释成对所有 A∈R 的统一 C/N 界。",
+        "外力 Theorem 3.2 证明说明步骤3（密度比估计）与 Theorem 2.1 类似，但该部分主要略述，没有像无外力 Proposition 2.10 那样再次展开细节。"
+      ]
+    },
+    {
+      "name": "Theorem 1.2 / 2.11：变分粗粒化能表示与自由能一维化",
+      "assumptions": [
+        "同 Assumption 1.1 的一致强凸键能；无外力显式式子不需要外力序列。",
+        "变分空间具备文中使 E_cb 定义良好的差分平方可和条件。"
+      ],
+      "statement": "无外力时 E^{cg}(A,y)=lim_{N→∞}E_N^{cg}(A,y)=W′(A)(A−y)，且有限尺寸误差 |E_N^{cg}−E^{cg}|≲(A−y)²/(N−1)；G∞可改写为一维 canonical 比值积分 −log[∫e^{−P(y)−ψ(y)−E^{cg}(A,y)}dy / ∫e^{−ψ(y)−E^{cg}(A,y)}dy]。",
+      "start_line": 145,
+      "end_line": 173,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "对有限变分问题求 Euler–Lagrange 方程，凸性给所有外键位移相等且为 A+(A−y)/(N−1)。",
+        "将其代回有限能量并用两次均值定理，误差化为 W″ 在邻域内的值乘 (A−y)²/(N−1)。",
+        "从 Legendre 对偶 W′(x)=σ_x、W″(x)=1/Ψ′(σ_x) 及 ψ″下界得到 W″有界；由此取极限并把 Theorem 2.1 的 G∞ 比值重写成粗粒化能量下的低维 canonical 平均。",
+        "p.17关键定义、方程(59)–(61)已视觉核验；这是变分外区域压缩后积分的一维表达，不是一般高维模型定理。"
+      ],
+      "gaps": [
+        "一维模型的边界/最近邻结构是显式一维化的关键；作者明确说该维数降阶一般不能复制。"
+      ]
+    },
+    {
+      "name": "Theorem 1.3：有限粗粒化近似的误差传播",
+      "assumptions": [
+        "无外力证明使用 Theorem 2.11 的有限能误差与 Assumption 1.1 的凸性/二次尾部控制。",
+        "有外力的完整有限误差由 Theorem 3.1 的尾力项加入。"
+      ],
+      "statement": "作者定义有限粗粒化自由能 G_N^{cg}(A)，并声称其对每个 A 良定义、|G_N^{cg}(A)−G∞(A)|≲N⁻¹。",
+      "start_line": 178,
+      "end_line": 186,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "以两种 probability measure ζ₁、ζ₂ 重写两个配分积分的 log 差。",
+        "对 exp(E_N^{cg}−E^{cg})−1 使用 |e^t−1|≤|t|e^{|t|} 与 Theorem 2.11 的二次误差界。",
+        "作者通过两分布下的指数二次矩有限性控制两项 log expectation，再得 N⁻¹。"
+      ],
+      "gaps": [
+        "§2.3 明确援引“Assumption 7”保证所需指数矩有限，但全文只定义 Assumptions 1.1 与 1.2；我已视觉核验 PDF p.19 确实印作 “Assumption 7”，属于未在本文定义的交叉引用/假设缺口。若常数 C 对所有 A 统一，谐波显式解还与之冲突；宜按固定 A 或有界 A 区间解释，需作者澄清。"
+      ]
+    },
+    {
+      "name": "Theorem 3.1 / 3.2：ℓ¹外力下的极限粗粒化及尾力误差",
+      "assumptions": [
+        "Assumption 1.1 一致强凸；外力 h∈ℓ¹。",
+        "定义 H=Σ_{i≥2}h_i；局部缺陷势 P 在首键，首键外力 h₁ 单独进入。"
+      ],
+      "statement": "有外力时 E^{cg}(A,y)=(A−y)W′(A)+AH+inf_{v_1=0}Σ_{i≥2}[W(A+v′_i)−W(A)−W′(A)v′_i+h_iv′_i]；有限域逼近误差由 N⁻¹+|A|·|Σ_{i>N}h_i|+Σ_{i>N}|h_i|² 控制。用此变分能表示的 G∞ 是 Theorem 3.2 的首键缺陷配分积分比。",
+      "start_line": 1270,
+      "end_line": 1646,
+      "pdf_pages": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "proof_steps": [
+        "令 v_i=u_i−Ai，将有限能量拆成内部凸残差与边界项 AΣh_i+(A−y)W′(A)。",
+        "内部能量按键位移分离；Euler–Lagrange 方程给 |v′_i|≤|h_i|/κ₁。把无限极小子列修正为末端零边界以控制 N⁻¹ 截断误差，加上外力尾部 Σ|h_i|、Σh_i² 得式(68)。",
+        "Theorem 3.2 证明将极限自由能写成 log-partition差、变分能、最优倾斜 σ_N 与 σ₀ 之差，再以 Lemma 3.3 的 O(N⁻¹) 倾斜控制和与 §2 类似的指数密度比论证完成。",
+        "p.21的式(73)–(75)、尾力估计已视觉核验；Proof of Theorem 3.2 的 density-ratio步骤部分略写。"
+      ],
+      "gaps": [
+        "仅 ℓ¹ 外力；速率含显式力尾项，故不等于一般无条件的 N⁻¹ 速率。高维与非最近邻交互未由本文证明。"
+      ]
+    },
+    {
+      "name": "Theorem 4.1：无外力谐波链的精确表达与一致性警示",
+      "assumptions": [
+        "ψ(y)=α|y|²、P(y)=β|y|²，α,β>0。",
+        "有限链 N≥2；G_N 与 G∞ 采用文中对数配分函数定义。"
+      ],
+      "statement": "作者给出 G_N(A) 的显式有理式及 G∞(A)=αβA²/(α+β)+(1/2)log((α+β)/α)。PDF 声称存在 C 使对所有 A∈R、N≥2 有 |G_N(A)−G∞(A)|≤C/N。由视觉核验的精确有限式，本次直接化简 A² 系数得到 G_N−G∞ 的 A² 系数为 αβ²/[(α+β)(N(α+β)−β)]>0；故若 C 被读作对全体 A 统一，则不等式不成立，C 至少需依赖 A 或限制 A 范围。",
+      "start_line": 1714,
+      "end_line": 1912,
+      "pdf_pages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "proof_steps": [
+        "直接用一维高斯积分算完美链与缺陷链配分函数。",
+        "通过解均值约束求倾斜 σ₀=2αA、σ_N^P，再求两组中心化高斯和的密度 g_{N,A}(0)、g^P_{N,A}(0)。",
+        "代回由密度表示的 G_N，得到有理式与极限；我用符号代数逐项抽取 A² 系数，确认存在正的 A²/(N) 误差主项。",
+        "Theorem 4.1 的公式已视觉核验原PDF p.29；因此关于误差常数 uniformity 的观察不是 OCR 推测。"
+      ],
+      "gaps": [
+        "对误差估计的“for all A ... some C”范围存在明显量词/常数依赖歧义；不应据此宣称对无界 A 集合统一 C。"
+      ]
+    },
+    {
+      "name": "Theorem 4.2：外力谐波例子的闭式热力学极限",
+      "assumptions": [
+        "谐波键能 ψ(y)=αy²、缺陷 P(y)=βy²；外力序列满足 ℓ¹ 条件并令 H=Σ_{i≥2}h_i、̄H=Σ_{i≥2}h_i²。"
+      ],
+      "statement": "作者给出 G∞(A)=½log((α+β)/α)+αβA²/(α+β)−αAh₁/(α+β)+h₁²/[4(α+β)]+AH−̄H/(4α)。",
+      "start_line": 1913,
+      "end_line": 2125,
+      "pdf_pages": [
+        29,
+        30,
+        31,
+        32
+      ],
+      "proof_steps": [
+        "解有限 N 的最优对偶倾斜 σ_N 的线性方程。",
+        "把 log-partition 差拆为倾斜差、首键高斯归一化项与外键项，分别整理后取 N→∞。",
+        "与 Theorem 3.2 的变分极限表达比较一致。PDF p.30–32 中推导的主要量已顺序阅读；本次视觉核验 p.30（推导中段），未逐一放大式(4.2)全部排版。"
+      ],
+      "gaps": [
+        "有限域误差除谐波外还受外力尾部影响；本文数值部分展示尾力衰减影响，不推出任意非可和外力下闭式极限。"
+      ]
+    }
+  ],
+  "constant_dependence": "一般 O(N⁻¹) 界的隐含常数未完整列明参数依赖；应依赖统一凸性参数、缺陷势/外力数据以及对 A 的可取范围。谐波精确误差含正的 A²系数 αβ²/[(α+β)(N(α+β)−β)]，故界若覆盖所有 A 则常数必须依赖 A/有界A域。外力有限域误差显式含 |A|·|Σ_{i>N}h_i| 与 Σ_{i>N}|h_i|²。",
+  "endpoint_limits": [
+    "结论对象是 1D 最近邻链、局部首键缺陷、正温度（全文归一化 β=1）与均匀强凸势；不是一般自由能函数的泛函分析弱形式，也不是 arbitrary parameter 的自由能估计。",
+    "作者明确指出从高维积分降到一维只因模型的一维结构；向高维需另证。",
+    "外力只假设 h∈ℓ¹；理论误差还携带尾和项。",
+    "数值图中的 |G_N−G_N^{cg}|=O(N⁻¹) 是作者观察，文中明确说未由理论解释。",
+    "全文39页通读包括热力学极限证明、无/有外力粗粒化、谐波显式例子、谐波均匀粗粒化、MALA/分阶段数值模拟及参考文献。视觉核验PDF pp.3–4、17、19、21、29、34–35。"
+  ],
+  "reusable_methods": [
+    "将有限温度自由能的高维配分函数改写为独立键变量之和密度在零点的值，把自由能误差拆为凸对偶项和局部极限定理的密度比误差。",
+    "先在缺陷外区域求变分最优 coarse-grained energy，再把该能量代回低维 canonical average；在1D最近邻模型可将链积分压为单积分。",
+    "对非平凡无限域变分，把内部能量按键差分分离；用一致强凸给 |v′_i|≤|h_i|/κ₁，再显式保留有限域边界与外力尾项。",
+    "对谐波链，以高斯配分函数闭式校验通用渐近公式；也可通过在粗化时完整保留缺陷首键，直接观察统一分组因子消去。",
+    "用 MALA 和 thermodynamic integration/staging 做有限维自由能估计；这些是数值方法说明，未提供一般误差证明。"
+  ],
+  "unchecked": [
+    "全文39页逐页文本已通读，覆盖 lines 5–2600、PDF pp.1–39，含所有章节、数值例及引文。",
+    "视觉核验关键定理与公式 PDF pp.3–4、17、19、21、29、34–35；核实“Assumption 7”确实印在 PDF p.19。",
+    "直接重新化简谐波 Theorem 4.1 的 A²系数，得正值 αβ²/[(α+β)(N(α+β)−β)]；因此质疑对 A 全域统一误差常数。未重算整条有限 N 配分函数推导的每一项。",
+    "特征函数远频率衰减与局部极限定理细节利用作者所引 Menz / Grunewald 等结果；未独立复核这些外部论文。",
+    "未核对 arXiv 后续版本或勘误；本卡按本地 arXiv:1602.08643v2。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 2596,
+    "source_lines": 2600,
+    "required_content_lines": 1761,
+    "covered_content_lines": 1761,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-f3b651c69acac082/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-f3b651c69acac082.json",
+  "review_input_sha256": "65b03d88499feb90a4cc9bbfe60d237a1cdb5a463e6b20dbe609e419e95bd2ad"
+}

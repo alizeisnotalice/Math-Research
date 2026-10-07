@@ -1,0 +1,188 @@
+{
+  "paper_id": "P-8656e750bc1e0cf5",
+  "observed_title": "New Approximations for the Cone of Copositive Matrices and Its Dual",
+  "authors": [
+    "Jean B. Lasserre"
+  ],
+  "version": "arXiv:1012.2552v2; published-version note dated 2012; 10 PDF pages.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 466,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "scope": "逐行读完整篇：定义与预备、主定理2.1/2.2、证明、Corollary 2.3/2.4、n=2例子、K-copositive推广、致谢与参考文献。原PDF公式页4–6、8–9已渲染核查，pages.json的10页均low_text=false，未见空白/扫描页。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "C02": "direct：论文研究共正矩阵锥C与其对偶完全正锥C*，构造矩层次C_d为C的嵌套外逼近并证明交为C；对偶层次C*_d为C*的嵌套内逼近并证明闭包并为C*。这直接给出CP/COP半定层次、方向和矩阵提升的可复用证据。"
+  },
+  "definitions": [
+    {
+      "name": "copositive cone C / completely positive cone C*",
+      "statement": "A∈S^n为共正若xᵀAx≥0对所有x∈Rⁿ₊成立，记C={A:f_A(x)≥0 ∀x≥0}。其对偶C*是由有限个xxᵀ、x≥0相加生成的完全正矩阵锥（文中写作conv{xxᵀ:x≥0}）。",
+      "source_lines": [
+        148,
+        165
+      ],
+      "pdf_pages": [
+        4
+      ]
+    },
+    {
+      "name": "moment matrix M_d(y) / localizing matrix M_d(fy)",
+      "statement": "序列y=(y_α)诱导L_y(h)=Σh_αy_α；M_d(y)的(α,β)项为y_{α+β}，M_d(fy)的(α,β)项为Σ_γ f_γ y_{α+β+γ}。满足⟨g,M_d(fy)g⟩=L_y(g²f)；对具有表示测度μ的y，该项等于∫g²f dμ。",
+      "source_lines": [
+        93,
+        130
+      ],
+      "pdf_pages": [
+        3
+      ]
+    },
+    {
+      "name": "moment-based outer hierarchy C_d",
+      "statement": "取Rⁿ₊上n个均值1独立指数变量的联合概率测度μ，y_α=∏ᵢαᵢ!。定义C_d={A∈Sⁿ:M_d(f_A y)⪰0}。因为LMI在A中齐次线性，每个C_d是谱影/闭凸锥。",
+      "source_lines": [
+        148,
+        174
+      ],
+      "pdf_pages": [
+        4
+      ]
+    },
+    {
+      "name": "dual SOS-density inner hierarchy C*_d",
+      "statement": "定义C*_d=C_d*。其矩阵提升表示以X⪰0（X∈S^{s(d)})的线性像组成并取闭包；等价于闭包地由矩阵∫xxᵀσ(x)dμ(x)、σ为次数≤2d的SOS多项式生成。",
+      "source_lines": [
+        196,
+        218
+      ],
+      "pdf_pages": [
+        5
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 2.1 (outer spectrahedra converge to copositive cone)",
+      "assumptions": [
+        "A∈Sⁿ，f_A(x)=xᵀAx在非负正交锥Rⁿ₊上考察。",
+        "矩列来自支撑恰为Rⁿ₊的均值1独立指数测度，y_α=∏ᵢαᵢ!；使用局部化矩阵定义C_d。"
+      ],
+      "statement": "C₀⊃C₁⊃…⊃C_d⊃C，且C=∩_{d=0}^∞C_d。每级是矩阵变量A上的LMI谱锥，因此给出C的嵌套外逼近。",
+      "start_line": 175,
+      "end_line": 177,
+      "pdf_pages": [
+        4
+      ],
+      "proof_steps": [
+        "作者结论：Theorem 2.1 lines 175–177。",
+        "作者证明：正文称其直接来自作者先前一般多项式非负性定理[12, Theorem 3.3]；利用f_A在Rⁿ₊上非负等价于所有SOS测试多项式g满足∫g²f_A dμ≥0，逐阶矩阵化为M_d(f_A y)⪰0。",
+        "基础推导核验：矩阵局部化恒等式⟨g,M_d(f_Ay)g⟩=∫g²f_A dμ逐项匹配；所以C为每一阶C_d的交，C_d嵌套由测试多项式空间随d包含关系得到。一般非紧支持下的多项式定理还要求矩增长条件；此处指数测度矩列显式为阶乘。"
+      ],
+      "gaps": [
+        "论文未重证引用的多项式非负性定理，只注明本结果为特例；完整基础依赖此前结果。",
+        "该结论是无限层交恰等于C，不说明任意A在有限层d必能判定共正。"
+      ]
+    },
+    {
+      "label": "Theorem 2.2 / Corollary 2.3 (dual inner hierarchy for completely positive cone)",
+      "assumptions": [
+        "C_d按式(2.10)定义，C*_d为对偶锥。",
+        "用S^{s(d)}_+矩阵X提升，s(d)=dim R[x]_d=binom(n+d,d)，且对指数测度使用显式矩序列。"
+      ],
+      "statement": "C*_d是由X⪰0线性映射的闭包；等价于闭包地生成所有∫xxᵀσ(x)dμ，其中σ为次数≤2d的SOS密度。C*_d⊆C*_{d+1}，且C*=cl(∪_d C*_d)。所以它从内部逼近完全正锥，阶数增加时稠密覆盖。",
+      "start_line": 208,
+      "end_line": 218,
+      "pdf_pages": [
+        5
+      ],
+      "proof_steps": [
+        "作者结论：Theorem 2.2 lines 208–218；Corollary 2.3 lines 251–263。",
+        "作者证明：证明通过对X⪰0作谱分解X=Σ_k q_kq_kᵀ，把矩像写为Σ_k∫xxᵀq_k(x)²dμ，从而SOS密度得到；反过来把任意SOS和式写成X的Gram矩阵。由C_d的定义及双重极锥关系获得闭包；嵌套性和C_d外逼近交等式推出内层闭包并等于C*。",
+        "基础推导核验：关键映射是⟨X,M_d(x_ix_jy)⟩=∫x_ix_jσ(x)dμ；X的Gram分解给出σ=Σ_kq_k²。对偶表示需取闭包，不能删除cl。",
+        "迁移推断：该“非负性矩测试→矩阵LMI→对偶SOS密度矩像”的构造可供构造其它锥上的层次，但目标锥与测度必须重新选取。"
+      ],
+      "gaps": [
+        "内逼近一般只在d→∞的闭包意义下覆盖C*；有限阶未必包含每个完全正矩阵。",
+        "闭包是表示的一部分；忽略它可能造成错误的有限阶精确性声明。"
+      ]
+    },
+    {
+      "label": "Corollary 2.4 (polynomial-generator description of C*_d)",
+      "assumptions": [
+        "使用式(2.18)由多项式g∈R[x]_d生成矩阵G_d；矩测度μ固定为Rⁿ₊指数测度。"
+      ],
+      "statement": "C*_d=cl conv{G_d:g∈R[x]_d}，其中(G_d)_{ij}=∫g(x)²x_ix_jdμ。",
+      "start_line": 349,
+      "end_line": 385,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "proof_steps": [
+        "作者结论：Corollary 2.4 lines 353–354。",
+        "作者证明：由Theorem 2.2的PSD矩阵X谱/Gram分解推出G_d的有限凸组合；反方向把凸组合系数并入各多项式系数，组装成X⪰0，lines 356–385。",
+        "基础推导核验：前向/反向矩阵分解是线性矩像的重排；闭包保留。"
+      ],
+      "gaps": [
+        "此表示提供生成元刻画而非低维线性优化接口；直接对g参数优化可能非凸。"
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "statement": "不提供显式收敛误差率或精确层数。SOS基维数s(d)=binom(n+d,d)，完全正对偶lift使用阶数s(d) PSD矩阵X；C_d自身直接在Sⁿ上施加大小为s(d)的localizing PSD约束。复杂度随n,d迅速增长。",
+    "source_lines": [
+      327,
+      336
+    ],
+    "pdf_pages": [
+      7,
+      8
+    ]
+  },
+  "endpoint_limits": [
+    "C_d是共正锥外逼近：A∈C_d单独不能推出A∈C；需要所有d或另有有限阶证书。",
+    "C*_d是完全正锥内逼近：一般取闭包的并才覆盖C*；固定d无普遍精确性。",
+    "矩阵测度关系和对偶表达均须保留闭包cl。",
+    "非紧闭集上的一般多项式非负性表征需矩增长条件；指数测度提供已知的阶乘矩。",
+    "推广至一般闭凸锥K时需要支撑为K且矩已知的有限Borel测度；实用性取决于矩能否显式计算。对多面锥可利用紧基底积分，但论文没有给任意锥的高效矩计算法。",
+    "此层次讨论的是锥逼近，不等同于任意CP/COP优化问题的有限步可解性或某个算法的全局收敛率。"
+  ],
+  "reusable_methods": [
+    "选取已知支撑的有限正测度，将点态非负约束写成对所有多项式g的∫g²f dμ≥0，再把有限阶测试转为localizing matrix LMI。",
+    "若待判定函数齐次，可用单纯形上的紧基底测度替换非紧锥测度，并使用可计算矩。",
+    "将对偶锥层级写成lifted PSD Gram矩阵X的线性像；谱分解将其解释为SOS密度加权的二阶矩。",
+    "清楚分开外近似与内近似方向：原COP可行性用外层给必要条件/收敛证据，CP可行构造用内层给可表示证书。",
+    "改变底层闭凸锥K时同步更换支撑测度及矩列，并先验证增长条件与可计算性。"
+  ],
+  "unchecked": [
+    "Theorem 2.1引用同一作者更一般的positivity theorem，未在本文中完整证明；卡记录其引理依赖，不虚称独立重证。",
+    "未构造高阶d的通用收敛速度、有限层精确性阈值或数值优化实例。",
+    "原PDF公式页4–6、8–9已渲染检查，moment/localizing矩、主定理及SOS矩像公式可辨；全10页文本均人工读取。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 466,
+    "source_lines": 466,
+    "required_content_lines": 346,
+    "covered_content_lines": 346,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-8656e750bc1e0cf5/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-8656e750bc1e0cf5.json",
+  "review_input_sha256": "8c8b2496c51db910480f57f0e0ba5bdd5bed3750bd770c6e509066544e4e5dbd"
+}

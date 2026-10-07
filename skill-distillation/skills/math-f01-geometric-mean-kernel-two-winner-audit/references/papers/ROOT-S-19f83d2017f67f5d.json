@@ -1,0 +1,191 @@
+{
+  "paper_id": "S-19f83d2017f67f5d",
+  "observed_title": "On improvement of Young inequality using the Kontrovich constant",
+  "authors": [
+    "Maryam Khosravi",
+    "Alemeh Sheikhhosseini"
+  ],
+  "version": "arXiv:1605.02480v1,9May2016；10页全文无附录",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 484,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "scope": "全文归纳、算子、矩阵证明及参考文献"
+    }
+  ],
+  "topic_relevance": [
+    {
+      "code": "A02",
+      "decision": "adjacent",
+      "reason": "dyadic正余项和谱常数核对"
+    },
+    {
+      "code": "F01",
+      "decision": "adjacent",
+      "reason": "dyadic几何均值递归；有限层边界"
+    },
+    {
+      "code": "F05",
+      "decision": "adjacent",
+      "reason": "Hilbert–Schmidt对角化和逐谱求和，原文符号疑点"
+    }
+  ],
+  "definitions": [
+    "K(t,2)=(1+t)^2/(4t)，t>0，K≥1且K(t)=K(1/t)。源有K(t,1)/K(t,2)混记，本卡明确同一公式。"
+  ],
+  "theorem_cards": [
+    {
+      "label": "引言(1.1)–(1.3)：K常数的指数符号",
+      "start_line": 18,
+      "end_line": 48,
+      "pdf_pages": [
+        1,
+        2
+      ],
+      "assumptions": [
+        "a,b>0，ν∈[0,1]，h=b/a，r=min(ν,1−ν)，r′=min(2r,1−2r)，R=max(ν,1−ν)。"
+      ],
+      "statement": "原PDF是K(√h,2)^(r′)a^(1−ν)b^ν≤AM−r(√a−√b)²，及AM−R(√a−√b)²≤K(√h,2)^(−r′)a^(1−ν)b^ν；不是乘r′。",
+      "proof_steps": [
+        "PDF第1页确认r′为正/负指数；a=b=1,ν=0时K^0=1，第二式为1≤1。"
+      ],
+      "gaps": [
+        "这些是引文[14]结果，全文本文不重证；不把本卡校正转写等同原始来源证明完成。"
+      ]
+    },
+    {
+      "label": "Theorem2.1–2.3：dyadic均值余项",
+      "start_line": 113,
+      "end_line": 190,
+      "pdf_pages": [
+        3,
+        4,
+        5
+      ],
+      "assumptions": [
+        "a,b>0，n≥1，ν∈[0,1]；m_k=floor(2^kν)，r0=min(ν,1−ν)，r_k=min(2r_(k−1),1−2r_(k−1))，R_k=1−r_k。"
+      ],
+      "statement": "扣除k=0,…,n−1的r_k times相邻dyadic几何均值平方根差平方后，余项介于K(h^(1/2^n),2)^r_n和同K^R_n乘a^(1−ν)b^ν之间。",
+      "proof_steps": [
+        "ν≤1/2先扣r0平方项，AM化为a与√ab在参数2ν的AM，递归取得下一层。",
+        "ν>1/2交换a,b及1−ν；floor身份先对非dyadicν成立，dyadic边界须另处理。",
+        "reverse版本用AMGM将K^−r与K^r的两个互换几何均值配对。"
+      ],
+      "gaps": [
+        "原文dyadic精确等式只写ν=p/2^t而未要求p奇数；必须用约分后分母，否则r_(t−1)不一定1/2。",
+        "反例a=1,b=16,ν=1/4表示p=2,t=3：剩余均值为2，右端K(2,2)^1×2=9/4，不相等。",
+        "基例来自引文[12]/[14]；本文upper归纳“similar argument”略写，本卡不把全部无限层极限作为已证。"
+      ]
+    },
+    {
+      "label": "Theorems2.6/2.7：平方均值余项",
+      "start_line": 212,
+      "end_line": 281,
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "assumptions": [
+        "a,b>0、ν∈(0,1)、n≥1；保持相同dyadic系数。"
+      ],
+      "statement": "由a²,b²的版本取得平方均值的双边余项估计，用于Hilbert–Schmidt按谱项求和。",
+      "proof_steps": [
+        "独立检查：(AM)^2−r0²(a−b)^2=a²∇νb²−r0(a−b)^2；两半ν均成立。",
+        "在平方输入的Theorem2.1里扣掉k0项，再将剩余k≥1项登记，得到2.6。",
+        "2.7类似，使用R0²和反向式。"
+      ],
+      "gaps": [
+        "第6页2.7证明最后有限n−1和误印∞；本卡只保留有限和，不直接调用无限版本。"
+      ]
+    },
+    {
+      "label": "Theorem3.2及Corollary3.4：谱最小值不能给upper常数",
+      "start_line": 283,
+      "end_line": 352,
+      "pdf_pages": [
+        6,
+        7,
+        8
+      ],
+      "assumptions": [
+        "A,B严格正、M(A)≤m(B)，h=m(B)/M(A)≥1。"
+      ],
+      "statement": "原文lower方向可由谱X=A^−1/2BA^−1/2≥h和K在[1,∞)递增给出；同h给upper方向则不能直接成立。",
+      "proof_steps": [
+        "对每个谱值b≥h有K(b^(1/2^n))^r_n≥K(h^(1/2^n))^r_n，因此lower常数可替换。",
+        "upper需要控制谱最大值H，不能把较大的K(b)^R_n换成最小比值h。",
+        "反例A=I2,B=diag(4,16),ν=1/4,n=1，h=4。在第二坐标，扣余项后的AM为19/4−(1/4)(1−4)^2=5/2；原upper是K(2,2)^(1/2)×2=3/√2<5/2。"
+      ],
+      "gaps": [
+        "PDF第6–7页确认印刷upper与h定义，按写法拒绝该upper及依赖它的Heinz双边组合。",
+        "可修为依赖真正谱上界H的upper，但须独立推导；不作为原文已证同h结论。"
+      ]
+    },
+    {
+      "label": "Theorems4.1/4.2：矩阵Hilbert–Schmidt加号疑点",
+      "start_line": 361,
+      "end_line": 446,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "assumptions": [
+        "A,B正定矩阵，X任意，ν∈(0,1)；两套酉对角化，Y=U*XV。"
+      ],
+      "statement": "原文用各谱比K最小/最大常数，把标量平方均值界按|y_ij|²求和；印刷AM组合却写成(1−ν)AX−νXB。",
+      "proof_steps": [
+        "正号时元素为((1−ν)λ_i+νμ_j)y_ij，与标量均值一致。",
+        "负号时元素应为((1−ν)λ_i−νμ_j)y_ij；原文等式仍写加号，公式不一致。",
+        "反例A=B=X=[1],ν=1/2,t=1：原lower要求1≤0，故不能按印刷负号使用。"
+      ],
+      "gaps": [
+        "PDF第8–9页确认正文和证明均印负号，但元素和写加号；这是原PDF问题而非抽取错位。",
+        "4.2还印无限和，而相应标量2.7为有限层；需统一后才能引用完整反向公式。",
+        "仅修符号不能自动认证所有K指数与无限极限；本目录给更弱但独立检查的HS正向界。"
+      ]
+    }
+  ],
+  "constant_dependence": "标量常数依赖a/b、ν、层数；算子lower依赖最小谱比，upper必须另控最大谱比；HS谱对常数必须分别取min/max。",
+  "endpoint_limits": [
+    "a,b必须正，不能在含负幂的dyadic校正项直接用零输入。",
+    "dyadic分母需约分后登记，避免错误精确等式。",
+    "私有HS标签不能仅因Hilbert–Schmidt同缩写就映射。"
+  ],
+  "reusable_methods": [
+    "二分权重并将两输入化成a与√ab，递归记录正平方修正。",
+    "酉对角化将HS范数化为所有谱对的标量求和，用各自最小/最大常数。",
+    "原文公式即使标Theorem也先用一维和谱边界反例检查。"
+  ],
+  "unchecked": [
+    "引文[12]、[14]基例完整证明未补读；主upper归纳省略部分未独立重建。",
+    "原文dyadic等式、谱upper及矩阵符号/无限和疑点不据标签自动接受。"
+  ],
+  "visual_checks": [
+    "PDF第1页r′和−r′指数；第3页dyadicp,t声明；第6页谱h定义和upper；第7页lower证法；第8–9页HS负号/元素加号及无限和。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 480,
+    "source_lines": 484,
+    "required_content_lines": 377,
+    "covered_content_lines": 377,
+    "reported_status": "full_read",
+    "source": "evidence/supplementary/S-19f83d2017f67f5d/paper.md"
+  },
+  "review_source": "evidence/reviews/ROOT/evidence/S-19f83d2017f67f5d.json",
+  "review_input_sha256": "231e77fff93d3b26516303fbf701eb6711b683f3d1d3b78baf560e0886b2c037"
+}

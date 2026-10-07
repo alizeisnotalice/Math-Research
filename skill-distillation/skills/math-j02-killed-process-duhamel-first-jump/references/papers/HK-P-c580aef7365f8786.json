@@ -1,0 +1,240 @@
+{
+  "paper_id": "P-c580aef7365f8786",
+  "observed_title": "Feynman-Kac formula for Lévy processes with discontinuous killing rate",
+  "authors": [
+    "Kathrin Glau"
+  ],
+  "version": "arXiv:1502.07531v3; 37 PDF pages. The local manuscript is dated 6 November 2015; external publication details were not checked.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 2041,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "scope": "完整37页全文及附录A、B：时变Lévy process及符号、弱PIDE与加权Sobolev-Slobodeckii空间、符号抛物条件、Feynman-Kac主定理、Lévy类别验证、应用、Galerkin方案、弱解稳定性、Itô逼近证明、伴随算子及主符号定理附录证明。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "J02": "direct：论文研究时间非齐次Lévy过程加有界可测杀死率κ的弱PIDE，并证明路径权重exp(−∫κ(L_h)dh)的条件期望表示；指示型杀死率和域外惩罚也用于连接退出/障碍问题。它不提供首次跳跃标签分解或一般Duhamel恒等式。",
+    "J01": "adjacent：生成元A_t随绝对时间变化，并给出前后向时变演化；其对象限于时间非齐次Lévy过程/加权函数空间，不是一般状态依赖非齐次跳跃Q-kernel。"
+  },
+  "definitions": [
+    {
+      "name": "时变Lévy过程与符号",
+      "statement": "L具有独立增量，特征函数E exp(i⟨ξ,L_t⟩)=exp(−∫_0^t A_s(−iξ)ds)；A_t由时间依赖的漂移、扩散矩阵和Lévy测度给出。其Kolmogorov算子是符号A_t的伪微分算子。",
+      "source_lines": [
+        278,
+        346
+      ],
+      "pdf_pages": [
+        5,
+        6
+      ]
+    },
+    {
+      "name": "有界可测杀死率弱解",
+      "statement": "对权重η、α∈(0,2]，令V=H^{α/2}_η(R^d)、H=L²_η。κ:[0,T]×R^d→R有界可测；弱解u∈W¹(0,T;V,H)满足⟨∂_t u,v⟩+a_{T−t}(u,v)+⟨κ_{T−t}u,v⟩=⟨f,v⟩，u(0)=g。",
+      "source_lines": [
+        400,
+        454
+      ],
+      "pdf_pages": [
+        7,
+        8
+      ]
+    },
+    {
+      "name": "条件杀死路径权重",
+      "statement": "存活/贴现权重是exp(−∫_t^s κ_h(L_h)dh)，终端项使用∫_t^T κ_h(L_h)dh，积分源项在时刻s使用∫_t^s；κ可不连续，不需要对弱解逐点套Itô公式。",
+      "source_lines": [
+        98,
+        115
+      ],
+      "pdf_pages": [
+        2
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Conditions 3.2 and Theorem 3.3: symbol criterion for parabolicity",
+      "assumptions": [
+        "L为时间非齐次Lévy过程，符号可在相应复带U_{−η}延拓；对每个η′∈R_η有指数矩。",
+        "统一的符号上界A2和Gårding下界A3对t∈[0,T]、η′∈R_η成立；下界允许β<α的低阶扣项。",
+        "符号关于时间对固定复频率右连续（A4）。"
+      ],
+      "statement": "对每个权重η，uniform parabolicity与符号Sobolev指数α（文中Theorem 3.3陈述记号对应A2/A3的增长阶）等价。该条件加有界杀死势给弱解存在唯一性所需的抛物性。",
+      "start_line": 455,
+      "end_line": 528,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "proof_steps": [
+        "将加权Sobolev空间的双线性型用复移位符号A_t(ξ−iη′)的Fourier积分表示。",
+        "从符号上/下增长推出双线性型连续和Gårding不等式；反向以Fourier变换紧支集测试函数定位任意ξ处符号实部/模的下界。",
+        "附录B将固定频率、时间右连续和支配收敛结合，证明双线性型的时间正则能反推符号时间正则。"
+      ],
+      "gaps": [
+        "Theorem 3.3及附录B的若干伪微分符号延拓工具依赖文献(16)；此处逐读附录B，但没有独立重证所有外引解析定理。",
+        "该条件是Lévy符号条件，不能直接替代跳过程目标的状态依赖补偿核条件。"
+      ]
+    },
+    {
+      "label": "Theorem 3.4: Feynman-Kac representation with discontinuous killing",
+      "assumptions": [
+        "η∈R^d、α∈(0,2]；L是时间非齐次R^d-valued Lévy过程并满足(A1)–(A4)：指数矩、统一符号连续上界、统一Gårding下界、时间右连续。",
+        "κ在[0,T]×R^d上有界可测；g∈L²_η，f∈L²(0,T;(H^{α/2}_η)^*)保证弱解存在唯一。",
+        "条件期望表示另要求f∈L²(0,T;H^l_η)，l>(d−α)/2；结论对每个t和Lebesgue几乎处处x成立。"
+      ],
+      "statement": "PIDE ∂_t u+A_{T−t}u+κ_{T−t}u=f、u(0)=g有唯一弱解；额外源项正则性下，该解满足u(T−t,x)=E_{t,x}[g(L_T)e^(−∫_t^Tκ_h(L_h)dh)+∫_t^T f(T−s,L_s)e^(−∫_t^sκ_h(L_h)dh)ds]。κ可以是指标型、在空间上不连续的杀死率。",
+      "start_line": 531,
+      "end_line": 549,
+      "pdf_pages": [
+        10
+      ],
+      "proof_steps": [
+        "先用符号条件得双线性型uniform parabolic，再调用弱抛物演化方程的存在唯一性。",
+        "Lemma 8.1用Fourier公式将解拆为终端初值项、源项和κu项，提升到可逐点使用Itô公式的正则解；Lemma 7.1控制数据与双线性型正则化时弱解的强收敛。",
+        "对平滑近似解应用带路径杀死因子的Itô公式，得到终端条件期望恒等式。",
+        "Lemma 8.2证明L_s对加权L²函数的L¹控制，以及源项时间积分的条件期望界；配合κ_n点态收敛且一致有界，令近似参数n→∞传递等式。",
+        "当t→A_t(ξ−iη)仅右连续而非连续时，作者按连续时间区间分段并用条件期望塔式法则延拓。"
+      ],
+      "gaps": [
+        "Theorem 3.4的条件期望等式仅几乎处处x；d=1且α>1时Corollary 3.5利用Hölder正则性才将结论升至每个x。",
+        "Itô公式用于正则近似u_n，不可把κ不连续的原弱解直接代入经典Itô公式。",
+        "路径终端值L_T与时间变量T−t的反向记号按(20)使用；迁移时必须保持时间反向约定。"
+      ]
+    },
+    {
+      "label": "Corollary 5.5: penalization of the complement",
+      "assumptions": [
+        "Theorem 3.4全部假设，D⊂R^d为开集，λ>0；新增杀死率为λ1_{D^c}。"
+      ],
+      "statement": "有限λ下，对PIDE加入λ1_{D^c}u项仍有Theorem 3.4的路径表示，额外路径权重exp(−λ∫_t^T1_{D^c}(L_{h−})dh)。作者把λ→∞联系到域外占用时间被无限惩罚、越界即杀死的退出问题。",
+      "start_line": 1050,
+      "end_line": 1081,
+      "pdf_pages": [
+        19
+      ],
+      "proof_steps": [
+        "将有界可测指标杀死率κ与λ1_{D^c}相加后直接套用Theorem 3.4。",
+        "按定义把两段时间累计杀死率的指数因子分开，即得到式(45)的域外占用惩罚权重。"
+      ],
+      "gaps": [
+        "Corollary 5.5只证明每个有限λ的表示；λ→∞收敛到严格首次出域的边界值问题被作为路线讨论并引用/指向当时在研工作，本篇未给该极限的完整证明。",
+        "L_{h−}的左极限出现在杀死时钟中；若退出恰落在边界或跳时，约定需结合目标过程重新核对。"
+      ]
+    },
+    {
+      "label": "Lemma 7.1 and Section 8 proof: stability and approximation",
+      "assumptions": [
+        "一列双线性型a^n,a满足统一连续性(An1)、统一强制性(An2)，且其差异满足Fn(u)→0的形式控制(An3)。",
+        "初值g_n→g于H，源f_n→f于L²(X*)；Theorem 3.4证明中对κ_n另取一致有界、点态收敛，f_n、g_n取光滑逼近。"
+      ],
+      "statement": "弱解u_n在L²(0,T;X)及C(0,T;H)强收敛到极限方程弱解。此稳定性为平滑化杀死势和解、先做Itô公式再传回弱解提供闭环。",
+      "start_line": 1388,
+      "end_line": 1717,
+      "pdf_pages": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "proof_steps": [
+        "令w_n=u−u_n，方程相减并以w_n测试；能量导数项给出½||w_n(t)||²_H−½||w_n(0)||²_H。",
+        "以强制性吸收X范数项，对源差和双线性型差使用Young不等式，Gronwall给出sup_t||w_n(t)||²_H+c||w_n||²_{L²X}的误差界。",
+        "对平滑κ_n、f_n、g_n的解应用Itô公式，乘杀死指数后取F_t条件期望得恒等式(77)。",
+        "由状态平滑密度给点评价连续性、由源项Sobolev阈值l>(d−α)/2给时间积分连续性，结合 dominated convergence 使(77)极限成为Theorem 3.4表示。"
+      ],
+      "gaps": [
+        "对κ_n的逼近须保有统一L∞界；随空间/时间失控的惩罚率不能用此证明直接处理。",
+        "Itô随机积分是鞅需由近似解空间正则与积分可积性保证；原文核对了该论证，但未独立重证Jacod–Shiryaev引用中的半鞅公式。",
+        "某些OCR公式上下标丢失；以PDF p.25–30视觉核对证明主链。"
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "没有通用浓度常数。抛物弱解稳定常数依赖双线性型连续常数C、Gårding常数G,G′及T；Lemma 8.2的点态评价/源期望界常数依赖正时间下界t、Lévy符号的平滑衰减常数和Sobolev余量。",
+    "dependence": " killing权重逐路径依赖∫κ_h(L_h)dh；κ只要求有界可测，不需空间连续，但其sup范数进入统一抛物性常数。指标型killing按路径占域时间产生指数惩罚。"
+  },
+  "endpoint_limits": {
+    "killing_regularization": "κ不连续被允许，但原弱解通常不够正则；Ito只适用于光滑近似解，后续用稳定性和期望界极限传递。",
+    "spatial_endpoint": "表示定理只对几乎处处起点x成立；一维α>1借Sobolev嵌入得连续版本。",
+    "domain_exit": "λ1_{D^c}是有限惩罚，等同硬退出只是在λ趋无穷的极限意义；极限证明不在此文。",
+    "process_scope": "驱动过程是时间非齐次Lévy（独立增量、空间齐次）；不是任意时间和状态共同依赖的跳核。",
+    "source_regularity": "条件表示要求源项比弱解存在性更光滑：l>(d−α)/2；初值只在L²_η。"
+  },
+  "reusable_methods": [
+    {
+      "method": "在原始路径上加入exp(−∫κ(L_h)dh)杀死/占用权重并以弱PIDE表征",
+      "transfer": "先证明目标生成元对应的演化双线性型在所选空间uniform parabolic；κ须可测有界，源项须跨过Sobolev嵌入阈值，之后才可援用表示。"
+    },
+    {
+      "method": "用空间指标杀死率表达域外惩罚，再研究高惩罚极限",
+      "transfer": "有限λ由Feynman-Kac乘法直接表示；要把λ→∞解释成严格退出须独立证明路径占用时间与边界跳跃处理的极限。"
+    },
+    {
+      "method": "先正则化弱解/势，Itô表示后通过稳定估计收敛",
+      "transfer": "同时控制统一Gårding、连续性、双线性型误差、sup|κ_n|和L²源项误差；不满足统一能量界时不可交换极限与条件期望。"
+    }
+  ],
+  "unchecked": [
+    "完整阅读本地全文paper.md行1–2041、PDF 1–37页，Appendix A–B和Theorem 3.4全部证明均包含。",
+    "主定理PDF p.10、指标杀死Corollary 5.5 p.19、稳定/逼近链p.25–30、复移位伴随式p.31、符号等价证明p.33已用PyMuPDF渲染并视觉检查。",
+    "本次未独立验证外引的Lévy指数矩定理、伪微分延拓工具、抛物方程经典存在唯一性及一般半鞅Itô公式；原文对此多为引用。",
+    "本文主证据是杀死势路径权重的弱解Feynman-Kac表示；不包含J02题名中首次跳跃标签分解，也不等于一般Duhamel/第一跳更新公式。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 2041,
+    "source_lines": 2041,
+    "required_content_lines": 1625,
+    "covered_content_lines": 1625,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-c580aef7365f8786/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-c580aef7365f8786.json",
+  "review_input_sha256": "5d5b6108ebf78e1c4c48e1ca555859ddc65f7231be9028fb9dbc0df44b36cea1"
+}

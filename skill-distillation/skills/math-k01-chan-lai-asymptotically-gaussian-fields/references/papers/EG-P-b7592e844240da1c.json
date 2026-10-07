@@ -1,0 +1,161 @@
+{
+  "paper_id": "P-b7592e844240da1c",
+  "observed_title": "The Bellman Functions of the Carleson Embedding Theorem and the Doob’s Martingale Inequality",
+  "authors": [
+    "Jingguo Lai"
+  ],
+  "version": "arXiv:1411.5408v3；首页日期 2015-02-11。",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 846,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "G05": "adjacent"
+  },
+  "definitions": [
+    {
+      "term": "dyadic Carleson 序列",
+      "definition": "非负系数 α_I 满足对每个二进区间 I，Σ_{J⊂I}α_J≤C|I|；在该约束下控制加权区间平均的 p 次幂和。",
+      "source_ranges": [
+        {
+          "start_line": 7,
+          "end_line": 53,
+          "pdf_pages": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "term": "infinitely refining filtration",
+      "definition": "滤过概率空间具足够细分性质，可在有限层里构造近似二等分条件期望；定义见文章 Definition 1.3，是把 dyadic extremizer 重塑进一般滤过的假设。",
+      "source_ranges": [
+        {
+          "start_line": 53,
+          "end_line": 110,
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Bellman 超解",
+      "definition": "文章构造 dyadic Carleson embedding Bellman 上界并取 Burkholder hull；通过 concavity/main inequality 使子节点平均势不超过父节点势与新增费用组合。",
+      "source_ranges": [
+        {
+          "start_line": 142,
+          "end_line": 245,
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem 1.1：dyadic Carleson Embedding Theorem",
+      "assumptions": [
+        "D 是实线上标准 dyadic lattice，α_I≥0 并满足对每个 dyadic I 的 Carleson 条件 Σ_{J⊂I}α_J≤C|I|。",
+        "f∈L^p，p>1。"
+      ],
+      "statement": "Σ_{I∈D}α_I|<f>_I|^p≤(p′)^p C||f||_p^p；文章陈述常数 (p′)^p sharp。",
+      "start_line": 14,
+      "end_line": 40,
+      "pdf_pages": [
+        1
+      ],
+      "proof_steps": [
+        "先定义三变量 dyadic Bellman 函数，记录 F=<f^p>_I、f=<f>_I 与 Carleson 质量 M。",
+        "通过 Burkholder hull 得到一个可用的凹主函数，而非直接写出全部一般空间最优 Bellman 函数。",
+        "证明局部 main inequality 后对 dyadic 代数树望远镜求和，Carleson 预算吸收新增费用，得到嵌入上界。",
+        "我通读了主不等式及其证明结构；没有独立重做全文中的 Hessian/concavity 微分计算。"
+      ],
+      "gaps": [
+        "该经典定理的假设是二进区间与逐区间 Carleson 序列；不自动适用于接口未定义的 TC-A4。",
+        "文章锐性与 Bellman 计算所用归一化不可跨树结构照搬。"
+      ]
+    },
+    {
+      "name": "Theorems 1.6–1.9：滤过 Carleson 嵌入与 Bellman 函数相合",
+      "assumptions": [
+        "(X,F,μ) 为 infinitely refining 的滤过概率空间；适应序列 α_n 满足文中条件期望 Carleson 约束。",
+        "指数 p>1；对应 maximal/Doob 结论须满足相应可积性。"
+      ],
+      "statement": "作者证明 dyadic 与无限细分滤过上的 Carleson embedding Bellman 函数相合；滤过上的 Carleson 嵌入有尖锐常数 (p′)^p C；Doob maximal inequality 有相应 sharp 常数，并给出 maximal operator Bellman function 的结论。",
+      "start_line": 53,
+      "end_line": 133,
+      "pdf_pages": [
+        1,
+        2,
+        3
+      ],
+      "proof_steps": [
+        "从 dyadic Bellman 超解出发，将有限 dyadic extremizer 在 infinitely refining filtration 中逐层重塑成近似平衡分割。",
+        "重塑后 Carleson 约束引入 ((1+ε)/(1−ε))^N 型有限层损失；固定深度后令 ε→0，得到 Bellman 函数一致。",
+        "Doob 部分通过将停止事件嵌入条件期望系数，并构造互不交的测度集合实现对应树模型。",
+        "读完主论证与后续构造节；未独立重做 remodeling 中的全部条件期望误差估计。"
+      ],
+      "gaps": [
+        "一般滤过需要 infinitely refining 假设；不是任意滤过。",
+        "这些是标准平均型 Carleson/Doob 结论，不定义项目 TC-A4 的系数、树序或平方函数。"
+      ]
+    }
+  ],
+  "constant_dependence": "Theorem 1.1 及滤过 Carleson embedding 的 p 常数为 (p′)^p C，作者称 sharp。Doob 结论也按标准幂次常数表述；滤过比较的 ε 误差在固定深度后取极限。",
+  "endpoint_limits": [
+    "指数要求 p>1；不提供 p=1 强型。",
+    "infinitely refining 是 Bellman 相合结论不可省略的结构假设。",
+    "这里只是标准 dyadic/martingale Carleson embedding，不对 TC-A4 私有系数或空间中心立方体极大结构作结论。",
+    "18页全文已读至末尾参考文献；未见附录。"
+  ],
+  "reusable_methods": [
+    "Bellman 状态至少记录 p 次矩、平均值与累计 Carleson 预算，使局部不等式能按到达质量 telescoping。",
+    "从 dyadic 有限 extremizer 转移到一般滤过时，显式控制每层近似平分误差，先固定深度再令误差趋零。",
+    "用停止事件把 Doob maximal 目标改写为 Carleson 系数预算，并单独证明条件期望约束。"
+  ],
+  "unchecked": [
+    "未独立重算 Burkholder hull 的微分凹性及全部等号条件。",
+    "未从本文推出任意多父节点树、任意中心立方体或 TC-A4 结论。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 840,
+    "source_lines": 846,
+    "required_content_lines": 644,
+    "covered_content_lines": 644,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-b7592e844240da1c/paper.md"
+  },
+  "review_source": "reviews/EG/evidence/P-b7592e844240da1c.json",
+  "review_input_sha256": "320d744e80ec74ec820f710e056cf2ecb53aa494e961ea939c9ce5de6faabcb6"
+}

@@ -1,0 +1,196 @@
+{
+  "paper_id": "P-6a781aff4000e334",
+  "observed_title": "A stochastic Carleson embedding theorem with constant e and the vector of Riesz transforms",
+  "authors": [
+    "Komla Domelevo",
+    "Johanna Fladung",
+    "Spyridon Kakaroumpas",
+    "Paul Montobbio",
+    "Stefanie Petermichl"
+  ],
+  "version": "arXiv:2609.39919v1; 15 PDF pages; dated 30 September 2026",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 871,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "scope": "全文逐页阅读：随机Carleson定理及Bellman/Itô证明，Gundy–Varopoulos半空间表示与配对引理证明，Riesz向量推论、适用边界、AI披露及参考文献"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "I04": "direct（随机占用/Carleson嵌入）：主定理是连续时间条件 Carleson 过程下，特定正交等变连续鞅系统的常数 e 嵌入；其半空间应用通过占用公式控制 Poisson 与 Riesz 向量。主题名中 LlogL 部分不由本文给出，须另找来源。"
+  },
+  "definitions": [
+    {
+      "name": "orthogonal/equivariant driver",
+      "statement": "连续平方可积鞅 X^0,…,X^n，满足 〈X^k,X^ℓ〉=0(k≠ℓ)，〈X^k〉=〈X^0〉。定义 u^0= u^0_0+Σ∫a^k dX^k，u^k=u^k_0+∫a^k dX^0−∫a^0 dX^k。",
+      "source_lines": [
+        121,
+        140
+      ],
+      "pdf_pages": [
+        2
+      ]
+    },
+    {
+      "name": "conditional Carleson occupancy condition (C)",
+      "statement": "α≥0 progressive，M_t=E[∫_t^∞ α_s ds|F_t]≤1 a.s.；令 N_t=E[∫_0^∞α_s ds|F_t]，再假设 N 可表示为 N_0+Σ∫m^k dX^k。",
+      "source_lines": [
+        143,
+        158
+      ],
+      "pdf_pages": [
+        3
+      ]
+    },
+    {
+      "name": "Bellman state domain and function",
+      "statement": "F_t=E[Σ_k|u^k_∞|²|F_t]，状态域 D={0≤M≤1, Σ_k (u^k)²≤F}；B(u,M,F)=eF−e^{1−M}Σ_k u_k²，故 0≤B≤eF。",
+      "source_lines": [
+        165,
+        175
+      ],
+      "pdf_pages": [
+        3
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 2.1 (stochastic Carleson embedding, constant e)",
+      "assumptions": [
+        "Usual conditions on the filtered probability space; fixed n≥1.",
+        "Continuous square-integrable martingales X⁰,…,Xⁿ are pairwise orthogonal and have equal quadratic variations.",
+        "The u^k processes have generalized Cauchy–Riemann integral form (2.2)–(2.3), with square-integrable integrands and L² terminal values.",
+        "α≥0 progressive and its conditional tail mass M_t=E[∫_t^∞α_s ds|F_t]≤1 a.s.",
+        "The closed martingale N associated with total α-mass lies in the stable subspace of the X^k with square-integrable progressive coefficients."
+      ],
+      "statement": "E∫₀^∞ α_s Σ_{k=0}^n (u_s^k)² ds ≤ e·EΣ_{k=0}^n (u^k_∞)².",
+      "start_line": 142,
+      "end_line": 150,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "Define F_t as conditional terminal energy; Jensen puts (u_t,M_t,F_t) in D and the Bellman function is nonnegative and bounded by eF.",
+        "Apply multidimensional Itô to the continuous part e^{1−M_t}Σ(u_t^k)², keeping the Doob–Meyer drift of M separate because F_t need not be continuous.",
+        "Use orthogonality/equivariance to write all brackets explicitly; the finite variation remainder is ∫e^{1−M_s}Q_s d〈X⁰〉_s.",
+        "Rewrite Q as a sum of nonnegative squares using a Lagrange identity. The only dimension term is 2(n−1)(a⁰)², nonnegative for n≥1.",
+        "Take expectations, use e^{1−M}≥1 and B≥0, let t→∞, and use B≤eF to obtain the constant e."
+      ],
+      "gaps": [
+        "The bound requires the strong structural martingale representation assumption for N; generic Carleson measures need not satisfy it.",
+        "No LlogL input or endpoint Orlicz variant is established in this paper.",
+        "The optimality of e is not claimed."
+      ],
+      "proof_verification": "full_text_read; assumptions/theorem visually checked on PDF p.3 and square decomposition/conclusion on pp.6–7; proof read but not independently re-proved."
+    },
+    {
+      "label": "Theorem 3.1 (Riesz-vector upper-half-space consequence)",
+      "assumptions": [
+        "f is Schwartz on R^n; φ smooth on R^{n+1}_+ with Δφ≥0.",
+        "The integral on the left of (3.2) is finite.",
+        "Along background-radiation Brownian motion, α_s=Δφ(B_s) satisfies (C) and its closed martingale has representation (2.4) in the coordinate process filtration."
+      ],
+      "statement": "∫_{R^{n+1}_+}Δφ(x,y)[(P_yf)²+Σ_{k=1}^n(P_yR_kf)²]2y dy dx ≤ e·E[M_f(τ)²+Σ_{k=1}^n M_f^{(k)}(τ)²].",
+      "start_line": 460,
+      "end_line": 478,
+      "pdf_pages": [
+        8
+      ],
+      "proof_steps": [
+        "Use the background-radiation occupation formula (density 2y) to represent the left side as a stopped-path occupation integral.",
+        "For each k, prove an occupation pairing identity between the Gundy–Varopoulos martingale transform and the Poisson extension P_yR_kf by Green potential, stochastic Fubini, divergence theorem and ∂_yP_yR_kf=∂_{x_k}P_yf.",
+        "The pairing yields an L² occupation comparison; it does not assert equality of the two processes. For n=1 equality holds; for n≥2 it is generally strict.",
+        "Add the k estimates, identify the conditional Carleson density α=Δφ(B), and apply Theorem 2.1."
+      ],
+      "gaps": [
+        "The setup assumes the Gundy–Varopoulos representation and the Carleson condition rather than deriving them for every φ.",
+        "For n≥2 only one Cauchy–Riemann derivative identity per Riesz component is used; the full gradient identity is false."
+      ],
+      "proof_verification": "full_text_read; main formula and assumptions visually checked on PDF p.8, occupation/combination step on p.13; proof read, not independently re-proved."
+    },
+    {
+      "label": "Lemma 3.3 (occupation pairing identity)",
+      "assumptions": [
+        "g∈C_c^∞(R^{n+1}_+); f is Schwartz; background-radiation setup as in Section 3."
+      ],
+      "statement": "E∫₀^τ M_f^{(k)}(s)g(B_s)ds=E∫₀^τ v_k(B_s)g(B_s)ds, where v_k=P_y(R_kf).",
+      "start_line": 522,
+      "end_line": 578,
+      "pdf_pages": [
+        9,
+        10
+      ],
+      "proof_steps": [
+        "Represent ∫_r^τg(B_s)ds using Dirichlet Green potential U.",
+        "Apply stochastic Fubini and martingale representation to convert the left occupation pairing to 2∫ y V·∇U.",
+        "Integrate by parts on a truncated half-ball; show hemispherical boundary flux vanishes using decay of U,V.",
+        "Apply Green identity to the right pairing and reduce to −2∫U∂_yv.",
+        "Use the Fourier identity ∂_yv=∂_{x_k}u to identify both pairings."
+      ],
+      "gaps": [
+        "Proof invokes decay estimates for Schwartz data and limiting arguments; not independently checked.",
+        "Identity is an occupation pairing against position functions, not a process equality or conditional expectation identity."
+      ],
+      "proof_verification": "full_text_read; the pairing identity and final application visually checked on PDF pp.9–13; proof read, not independently re-proved."
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "The main stochastic embedding has the explicit multiplicative constant e, independent of n.",
+    "dependence": "The algebraic nonnegativity uses n≥1; no dimension factor is lost in the Riesz-vector application."
+  },
+  "endpoint_limits": {
+    "time": "Continuous-time and infinite-horizon formulation; passage to t→∞ uses nonnegative integrand and B bounded by eF.",
+    "martingale_structure": "The driving martingales must be continuous, orthogonal, and have equal bracket; α-associated closed martingale must be representable in their stable subspace.",
+    "geometry": "For n=1 the Riesz/Hilbert-transform comparison is equality; for n≥2 only an occupation inequality, generally strict.",
+    "missing_endpoint": "No LlogL endpoint, weak-type extension, arbitrary optional projection, or generic stochastic process occupancy theorem is stated."
+  },
+  "reusable_methods": [
+    {
+      "method": "Bellman–Itô square completion for a vector Carleson embedding",
+      "transfer": "For a candidate filtered occupancy problem, define a nonnegative conditional mass M and terminal energy F, then prove a state-domain inequality and calculate the full bracket quadratic form. Before using the constant e, verify all cross-bracket cancellation, equal bracket assumptions, and nonnegative square decomposition in the target system.",
+      "limit": "Here the generalized CR system and stable-subspace representation are essential; no automatic transfer to merely orthogonal increments."
+    },
+    {
+      "method": "Occupation pairing can replace false process identity",
+      "transfer": "When stochastic-transform and analytic extension processes are not pathwise equal, test against compactly supported functions of the state and prove an occupation pairing by Green potentials and integration by parts; then use polarization/square expansion to get the L² comparison.",
+      "limit": "The pairing is specific to the Gundy–Varopoulos Brownian half-space representation and decay assumptions."
+    }
+  ],
+  "unchecked": [
+    "All 15 extracted PDF pages, theorem proofs, analytic application, remarks, AI disclosure and references were read.",
+    "Main assumptions and Theorem 2.1 were visually checked on PDF p.3; square decomposition and limiting argument on pp.6–7; Theorem 3.1 on p.8; pairing-to-vector application on p.13.",
+    "I did not independently recompute the multidimensional Itô expansion or prove the Green-potential boundary decay estimates.",
+    "The paper does not resolve the LlogL component named in topic I04."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 871,
+    "source_lines": 871,
+    "required_content_lines": 682,
+    "covered_content_lines": 682,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-6a781aff4000e334/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-6a781aff4000e334.json",
+  "review_input_sha256": "d3239cd5e53b5ef4518acba142131f8f060d1bb887393273866dc8da92a76206"
+}

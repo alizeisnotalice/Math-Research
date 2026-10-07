@@ -1,0 +1,141 @@
+{
+  "paper_id": "P-408d52b16125bf50",
+  "observed_title": "Convex Optimal Uncertainty Quantification",
+  "authors": [
+    "Shuo Han",
+    "Molei Tao",
+    "Ufuk Topcu",
+    "Houman Owhadi",
+    "Richard M. Murray"
+  ],
+  "version": "arXiv:1311.7130v2; September 25, 2018 manuscript; PDF 22 pages",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 1108,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "L02",
+    "decision": "adjacent",
+    "basis": "The paper rigorously optimizes a worst-case expectation over all probability laws satisfying partial information and turns it into a finite convex program. Its finite-support and model-reduction methods transfer to adversarial search, but the target is a distributional moment problem, not a maximal-operator weak-type lower-bound construction."
+  },
+  "definitions": [
+    "An OUQ problem maximizes E_D[f(theta)] over probability distributions D supported on Theta, subject to expectation inequalities E_D[g(theta)] <= 0 and affine moment equalities E_D[h(theta)] = 0.",
+    "A piecewise-concave objective is f(theta)=max_k f^(k)(theta), where each branch is concave; each inequality component is piecewise convex, g_i(theta)=min_l g_i^(l)(theta), where each branch is convex.",
+    "A finite atomic law has the form sum_i p_i delta_(theta_i), p_i>=0 and sum_i p_i=1. The perspective p f(gamma/p), gamma=p theta, extends the weighted branch term to a convex-program variable representation when p=0 is treated by its closed perspective convention."
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "f is the pointwise maximum of K concave functions f^(k).",
+        "The scalar information inequality is built from the pointwise minimum of L convex functions g^(l); the paper states extension to p>1 inequalities.",
+        "h(theta)=A^T theta+b is affine; the original OUQ optimization is feasible and the paper invokes its finite-reduction framework."
+      ],
+      "statement": "The original OUQ problem and the finite-dimensional convex optimization over weights p_kl>=0 and first moments gamma_kl have the same optimal value/supremum: sum p_kl=1, sum A^T gamma_kl+b=0, sum p_kl g^(l)(gamma_kl/p_kl)<=0, and objective sum p_kl f^(k)(gamma_kl/p_kl). For multiple inequality components, the branch count generalizes to K times the product of the branch counts. This value equality alone does not assert that either problem attains its supremum.",
+      "start_line": 124,
+      "end_line": 145,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "The paper invokes its finite-reduction proposition (attributed to Rogosinski and extensions) to pass to finite support, with a stated support bound m+1 for m scalar information constraints.",
+        "Assuming an optimal discrete law exists, assign each atom a maximizing branch k of f and a minimizing branch l of g. If more than K L atoms occur, two atoms share (k,l). Replace them by their combined mass at their weighted barycenter.",
+        "Concavity of f^(k) makes the new contribution no smaller; convexity of g^(l) makes the inequality contribution no larger; affinity preserves the equality moment. This proves the K L support reduction when an optimizer exists.",
+        "Set gamma_kl=p_kl theta_kl. The perspective of a concave function is concave, and the perspective of a convex function is convex, so the resulting finite optimization is convex and value-equivalent.",
+        "The alternative dual proof expresses the infinite constraint dual as a pointwise maximum, applies a finite-mixture identity, exchanges max and min at a saddle point under the paper's stated feasibility conditions, and recovers the same primal finite program."
+      ],
+      "gaps": [
+        "The proof cites the Rogosinski/Shapiro/Owhadi finite-reduction theorem and standard strong-duality/saddle-point conditions; these foundations are not independently reproved here.",
+        "The paper says the vector inequality extension is analogous rather than spelling out every index and proof step.",
+        "Closed perspective behavior at zero weights is standard but is not fully stated in the displayed formulation; a numerical implementation must encode its closure correctly.",
+        "Neither compact support, compactness of the feasible-law set, nor continuity/semicontinuity assumptions ensuring attainment appear in the theorem assumptions. For example, on Theta=[0,1), maximizing E[theta] with f(theta)=theta and no moment constraints has supremum 1 but no maximizing law. The theorem can at most be read as equality of optimal values unless attainment is established separately.",
+        "Lemma 3.1 explicitly begins with an optimal distribution and its contradiction proof relies on that existence. Extending the displayed branch-merging proof to a nonattained supremum requires an epsilon-optimizer argument not written in the paper."
+      ],
+      "proof_start_line": 351,
+      "proof_end_line": 437,
+      "proof_pages": [
+        8,
+        9
+      ],
+      "author_claim": "Theorem 1.1 states that the convex formulation achieves the same optimal value as the original OUQ problem. Proposition 2.1 and the primal argument describe finitely supported optimal laws.",
+      "checked_derivation": "The branch-merging step was checked: Jensen for each active concave objective branch makes the objective contribution no smaller; convexity of the active information branch makes its expectation no larger; affine equalities are preserved under the barycenter. The perspective convexity step was checked. PDF pages 3, 8, 9, 12, and 13 were rendered and visually checked for the theorem and both proof displays."
+    },
+    {
+      "assumptions": [
+        "There are m scalar expectation constraints, and the original feasible set of probability laws and expectation objective is as in (1.2)."
+      ],
+      "statement": "The finite-reduction proposition asserts equality of the OUQ optimal value with the value obtained using at most m+1 atoms for m scalar information constraints (attributed to Rogosinski and extensions). It does not, without an attainment hypothesis, imply that a maximizing law exists.",
+      "start_line": 280,
+      "end_line": 299,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "The paper states this as a cited finite-dimensional reduction result and illustrates a one-moment seesaw example with two atoms at the extreme feasible locations. That example has an attained optimizer; it does not resolve nonattainment in general."
+      ],
+      "gaps": [
+        "The cited general theorem's proof is not included in this article and was not independently established in this review.",
+        "The cited general theorem’s proof is not included in this article and was not independently established in this review.",
+        "The proposition does not list assumptions ensuring an optimizer exists; “same optimal value” should not be upgraded to “attained by a law” in the extraction."
+      ],
+      "author_claim": "Proposition 2.1 says the finite-dimensional problem achieves the same optimal value as the distributional problem.",
+      "checked_derivation": "I checked the proposition wording and finite-dimensional seesaw example. No general attainment proof is supplied in the article."
+    }
+  ],
+  "constant_dependence": "The cited generic finite-reduction result states m+1 atoms for m scalar information constraints. The sharper K L branch count in Lemma 3.1 is proved by merging same-branch atoms conditional on an attained optimum; the corresponding nonattained-supremum extension is not supplied. Neither count depends on ambient dimension as stated. No maximal-operator constant is derived.",
+  "endpoint_limits": [
+    "The theorem is an exact-value reformulation under piecewise-concavity/convexity and affine-equality hypotheses; it is not a general convexification of arbitrary nonconvex adversarial input models.",
+    "An optimizer is a probability distribution and may be finitely supported; that does not supply a single function realizing a prescribed family of maximal averages.",
+    "The numerical experiments solve finite convex programs and compare bounds; their solver output is not itself an exact mathematical certificate.",
+    "Strong duality in the paper is conditioned on standard constraint qualifications; the dual derivation cannot be used when those hypotheses fail without a separate argument.",
+    "An optimizer need not exist under the displayed hypotheses: for Theta=[0,1), f(theta)=theta and no information constraints, the supremum is 1 but is not attained."
+  ],
+  "reusable_methods": [
+    "Reduce an adversarial distributional search to finitely many atoms only after counting the independent moment constraints.",
+    "When piecewise branches are available, group support atoms by the active objective/constraint branches and merge same-branch atoms using Jensen inequalities.",
+    "Use homogenized variables gamma=p theta and perspective functions to preserve convexity; explicitly handle the p=0 closed extension.",
+    "Keep an exact mathematical value-equivalence theorem separate from the numerical method used to approximate the finite program."
+  ],
+  "unchecked": [
+    "The referenced finite-reduction result and cited general strong-duality results were not independently proved in this read.",
+    "The theorem and proof displays on PDF pages 3, 8, 9, 12, and 13 were visually checked against the original PDF; other extracted pages were read in text form."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1104,
+    "source_lines": 1108,
+    "required_content_lines": 774,
+    "covered_content_lines": 774,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-408d52b16125bf50/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/P-408d52b16125bf50.json",
+  "review_input_sha256": "7a84e4da13e3a4ff3fff3babe45a27716f3bf2b86878e46958e4ab6307719858"
+}

@@ -1,0 +1,266 @@
+{
+  "paper_id": "P-fa9183276c325867",
+  "observed_title": "A Constructive Brownian Limit Theorem",
+  "authors": [
+    "Yuen-Kwok Chan"
+  ],
+  "version": "arXiv:2203.10687v1, 2022-03-06",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1976,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": [
+    {
+      "topic": "K01",
+      "decision": "irrelevant",
+      "reason": "The paper studies Brownian boundary limits for harmonic functions on a ball in Hardy h^p. It does not study high-threshold maxima of asymptotically Gaussian fields, moderate-deviation tails, local clumping, or cross-block exceedance control."
+    },
+    {
+      "topic": "J03",
+      "decision": "adjacent",
+      "reason": "It provides a continuous-path baseline for defining first exit times and exit distributions, and identifies the Brownian exit law with harmonic measure/Poisson kernel. It has no jump overshoot, exterior landing law, or nonlocal Dirichlet/balayage estimate, so it cannot prove the J03 jump-process claims."
+    }
+  ],
+  "definitions": [
+    {
+      "name": "Brownian first exit",
+      "statement": "For Brownian motion B^x starting at x in the open ball D(0,r), τ_{x,r}=inf{t≥0:B^x_t∉D(0,r)}; by path continuity B^x_{τ_{x,r}} lies on the sphere ∂D(0,r). The paper develops measurability/existence rather than taking this identification for granted.",
+      "source_ranges": [
+        {
+          "start_line": 1038,
+          "end_line": 1047,
+          "pdf_pages": [
+            25,
+            26
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Exit distribution",
+      "statement": "For the unit ball, the exit point from x has density equal to the Poisson kernel k_{0,1}(x,z) relative to normalized surface measure; for x=0 the exit point is uniform on the sphere.",
+      "source_ranges": [
+        {
+          "start_line": 1465,
+          "end_line": 1498,
+          "pdf_pages": [
+            36,
+            37
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 31: existence, continuity, and tightness of Brownian first-exit times",
+      "assumptions": [
+        "m≥2; x is strictly inside the open ball D(0,r); Brownian motion has continuous paths and is adapted to the paper’s right-continuous filtration.",
+        "The radial levels and error parameters satisfy the stated inequalities (1.55)–(1.59); the conclusion uses almost-uniform continuity conventions."
+      ],
+      "statement": "For each radius r>0 the first exit time from the open ball exists as a finite-valued stopping time. As the radius varies, the first-exit-time process is almost-uniformly continuous with an explicit exceptional-probability modulus, and the family over starting points/radii is tight.",
+      "start_line": 1211,
+      "end_line": 1240,
+      "pdf_pages": [
+        30,
+        31
+      ],
+      "proof_steps": [
+        "Approximate the target radius from above/below by a dense set of admissible radii. Use the one-dimensional Brownian reflection bound to control the probability that the exit times differ by more than 2^{-k}.",
+        "The summable exceptional-set estimates make the monotone approximating exit times converge almost uniformly to a stopping time; path continuity places the limiting exit point on the sphere.",
+        "A modulus argument extends the estimates to all radii and gives tightness from the reflection-principle tail bound."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1241,
+          "end_line": 1455,
+          "pdf_pages": [
+            31,
+            32,
+            33,
+            34,
+            35,
+            36
+          ]
+        }
+      ],
+      "gaps": [
+        "This construction is specific to continuous Brownian paths and the sphere-radius parametrization; it does not apply automatically to discontinuous paths or nonlocal jump exits.",
+        "The estimates use a reflection principle cited from Doob and probability conventions/results imported from Chan (2021)."
+      ]
+    },
+    {
+      "label": "Theorem 33: Brownian exit law on a sphere",
+      "assumptions": [
+        "m≥2; standard m-dimensional Brownian motion; x in the open unit ball (and radius-r scaling for the centered exit).",
+        "The first-exit-time existence result is established in Theorem 31; the displayed Poisson-kernel identity for harmonic measure is cited to Durrett (1984), not proved from scratch here."
+      ],
+      "statement": "For continuous boundary data f on the unit sphere, E_x[f(B_{τ_{x,1}})] = ∫_{∂D} k_{0,1}(x,z)f(z)σ(dz), where k is the Poisson kernel. Starting at the center, the exit point has uniform distribution on the sphere (and radius-r exit scales to the radius-r uniform law).",
+      "start_line": 1465,
+      "end_line": 1486,
+      "pdf_pages": [
+        36,
+        37
+      ],
+      "proof_steps": [
+        "For the Poisson-kernel identity, the author explicitly cites Durrett (1984), assertion (1), §1.10; this source does not reprove that classical identity.",
+        "For centered exit, rotational invariance of Brownian motion implies the exit distribution is rotation invariant; Corollary 14 identifies the unique rotation-invariant probability measure on the sphere as normalized surface measure."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1488,
+          "end_line": 1495,
+          "pdf_pages": [
+            37
+          ]
+        }
+      ],
+      "gaps": [
+        "This is a diffusion exit law supported on the geometric boundary because Brownian paths are continuous. It does not address nonlocal jump exits, where the landing point may lie anywhere in D^c.",
+        "The Poisson-kernel identity is imported from Durrett; only the rotation-invariance argument for centered exit is supplied here."
+      ]
+    },
+    {
+      "label": "Theorem 38: martingale maximal small-increment criterion",
+      "assumptions": [
+        "Finite discrete-time martingale Z_0,…,Z_n; ε>0; the displayed special convex function λ(v)=e^{−|v|}−1+|v| and its source-specific hypothesis (1.85)."
+      ],
+      "statement": "If Eλ(Z_n)−Eλ(Z_0) < ε^3 exp(−3ε(E|Z_0|∨E|Z_n|))/6, then P(max_{k≤n}|Z_k−Z_0|>ε)<ε.",
+      "start_line": 1623,
+      "end_line": 1644,
+      "pdf_pages": [
+        40
+      ],
+      "proof_steps": [
+        "The paper checks that λ meets the conditions of the maximal inequality in Bishop (1967), Chapter 8, then cites that result as Theorem 38; it does not reproduce Bishop's proof."
+      ],
+      "gaps": [
+        "This is a cited martingale inequality and depends on the exact exponential convexity increment condition; it is not a generic Doob bound with arbitrary constants."
+      ]
+    },
+    {
+      "label": "Theorem 41: Brownian boundary limit for Hardy h^p",
+      "assumptions": [
+        "Dimension m≥2, p≥1 fixed, u∈h^p harmonic on the unit ball; by Lyapunov reduction the paper assumes u(0)=0 and treats h=h^1.",
+        "Both I_{1,r}=∫|u(rz)|dσ and I_{2,r}=∫e^{−|u(rz)|}dσ converge as r↑1, with explicit rates δ_1(ε), δ_2(ε) as in (2.4)–(2.5).",
+        "The argument uses Brownian exit times, the a.u.-continuous martingale u(B_{τ_r}), and Theorem 38; statements are with the paper's constructive-probability conventions."
+      ],
+      "statement": "There is an increasing sequence r_q↑1 and a random variable V such that, for each q, outside a measurable set A_q of probability <2^{−q+4}, sup_{s∈[τ_{r_q},τ_1)}|V−u(B_s)|≤2^{−q+3}. Hence u(B_s)→V almost uniformly as s↑1.",
+      "start_line": 1675,
+      "end_line": 1702,
+      "pdf_pages": [
+        41,
+        42
+      ],
+      "proof_steps": [
+        "Set λ(v)=e^{−|v|}−1+|v|; convexity plus the martingale u(B_{τ_r}) makes I_{3,r}=Eλ(u(B_{τ_r})) nondecreasing, and the two boundary-limit assumptions give I_{3,r}→b_2−1+b_1 with explicit error δ_3.",
+        "Choose r_q from δ_3 and a Brownian exit-time tail cutoff N_{2,q}, so the probability of τ_1 exceeding the time cutoff is ≤2^{−q+1}.",
+        "Partition [0,N_{2,q}] into sufficiently short intervals using Brownian almost-uniform continuity and a modulus of continuity for u on the compact ball of radius r_{q+1}.",
+        "Clip the stopped Brownian path between τ_{r_q} and τ_{r_{q+1}} at the partition times; this is a finite martingale. The increment of Eλ is bounded by the boundary error, so Theorem 38 controls the maximum deviation from the starting value except on a small set.",
+        "Combine the Brownian continuity exceptional set, exit-time tail, and martingale maximal exceptional set to get a uniform bound for every s in [τ_{r_q},τ_{r_{q+1}}].",
+        "Union the exceptional sets over k≥q; the resulting summable geometric oscillation bound makes u(B_{τ_{r_q}}) almost-uniformly Cauchy, defining V, and extends the estimate over all s∈[τ_{r_q},τ_1)."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1703,
+          "end_line": 1911,
+          "pdf_pages": [
+            42,
+            43,
+            44,
+            45,
+            46,
+            47
+          ]
+        }
+      ],
+      "gaps": [
+        "The paper's nontangential boundary limit is only a conjecture in the stated constructive setting; Theorem 43 is the classical a.e. nontangential statement, while its constructive status remains open/conjectural.",
+        "The proof relies on Brownian/harmonic structure and cannot be transferred to discontinuous jump paths without new arguments.",
+        "The Brownian martingale maximal theorem is cited to Bishop (1967), and the Poisson kernel exit identity to Durrett (1984); full proofs of those external results are not included."
+      ]
+    }
+  ],
+  "constant_dependence": [
+    "Theorem 41's exceptional probabilities depend explicitly on q and the convergence moduli δ_1,δ_2 through r_q; the chosen subsequence is data-dependent.",
+    "Theorem 38 carries the displayed numerical constants 1/6 and 3 from its source-specific condition; they are not asserted optimal."
+  ],
+  "endpoint_limits": [
+    "Theorem 41 covers all p≥1 under both boundary-integral convergence assumptions; the non-tangential limit theorem is not established constructively by this paper."
+  ],
+  "reusable_methods": [
+    "Use rotational invariance to identify the centered Brownian exit law with normalized surface measure, after proving existence and measurability of exit time/point.",
+    "To obtain an almost-uniform boundary limit, prove summable exceptional-set bounds on a sequence of stopping radii and control the path between radii via a martingale maximal criterion plus path continuity."
+  ],
+  "unchecked": [
+    "External references (Bishop 1967, Durrett 1984, Helms 1969) are cited but not independently read in this card.",
+    "The article uses constructive analysis conventions for measurability, a.u. convergence, and stopping-time values; this evidence card reports its own framework rather than translating all notions to a different probability convention.",
+    "This source is only J03 adjacent background: no Lévy/jump kernel, nonlocal Dirichlet data on all D^c, overshoot, or jump-balayage formula is provided.",
+    "Visual checks performed on PDF pages 37 (Theorem 33 exit-law statement and external Durrett attribution), 42 (Theorem 41 assumptions/conclusion and constants), and 46 (between-radius oscillation estimate)."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1976,
+    "source_lines": 1976,
+    "required_content_lines": 1471,
+    "covered_content_lines": 1471,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-fa9183276c325867/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-fa9183276c325867.json",
+  "review_input_sha256": "4037da7f57aa8e6b3c90dd16f2ae425409c61323e371d4775981ea43215fdbe2"
+}

@@ -1,0 +1,289 @@
+{
+  "paper_id": "P-04672953a3d2f1c1",
+  "observed_title": "Optimal transport of vector measures",
+  "authors": [
+    "Krzysztof J. Ciosmak"
+  ],
+  "version": "arXiv:2108.07201v1；正文首页元数据处可见。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 1387,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "D01": "direct"
+  },
+  "definitions": [
+    {
+      "term": "向量测度输运计划与中性质量",
+      "definition": "对取值于 R^m 的有限 Borel 向量测度 π 于 X×X，定义边缘 P₁π、P₂π；给定向量测度 μ，Γ(μ)={π:P₁π−P₂π=μ}。Γ(μ)非空当且仅当 μ(X)=0。",
+      "source_ranges": [
+        {
+          "start_line": 327,
+          "end_line": 379,
+          "pdf_pages": [
+            6,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "term": "向量 Kantorovich–Rubinstein 代价/范数",
+      "definition": "I(μ)=inf_{π∈Γ(μ)}∫_{X×X}d(x,y)d||π||(x,y)。在 μ 总质量为零且一阶矩有限时定义 W(X,R^m)，以该下确界作范数。若 X 为 Polish，定理给出其 Banach 对偶。",
+      "source_ranges": [
+        {
+          "start_line": 327,
+          "end_line": 434,
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "term": "向量 Lipschitz 对偶空间",
+      "definition": "固定 x₀∈X，L(X,R^m) 是满足 u(x₀)=0 的 Lipschitz 映射，范数为 Lipschitz 常数。对 μ 定义 T(u)(μ)=∫⟨u,dμ⟩；对连续线性泛函 λ 定义 ⟨S(λ)(x),w⟩=λ((δ_x−δ_{x₀})w)。",
+      "source_ranges": [
+        {
+          "start_line": 603,
+          "end_line": 627,
+          "pdf_pages": [
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "term": "最优势与最优运输",
+      "definition": "使 ∫⟨u,dμ⟩ 达到 W 范数对偶上确界的 1-Lipschitz 映射称最优势；达到输运代价下确界的 π∈Γ(μ) 称最优输运。",
+      "source_ranges": [
+        {
+          "start_line": 694,
+          "end_line": 732,
+          "pdf_pages": [
+            13,
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "term": "叶与输运集",
+      "definition": "对 Euclidean 1-Lipschitz u:R^n→R^m，叶是 u 在其上等距的极大集合；输运集 A 对从 A 中唯一叶上的点 x，包含所有与 x 满足距离等式 ||u(x)−u(y)||=||x−y|| 的 y。",
+      "source_ranges": [
+        {
+          "start_line": 812,
+          "end_line": 850,
+          "pdf_pages": [
+            16
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem 1：W(X,R^m) 的等距对偶识别",
+      "assumptions": [
+        "X 为 Polish 度量空间；R^m 配有限维欧氏范数。",
+        "W(X,R^m) 由总质量零且一阶矩有限的 R^m-值 Borel 测度组成。"
+      ],
+      "statement": "T:L(X,R^m)→W(X,R^m)^* 与 S:W(X,R^m)^*→L(X,R^m) 互为逆，且是等距同构。",
+      "start_line": 614,
+      "end_line": 692,
+      "pdf_pages": [
+        12,
+        13
+      ],
+      "proof_steps": [
+        "对任意 π∈Γ(μ)，将 ∫u dμ 写成 ∫(u(x)−u(y))dπ，以 Lipschitz 常数乘代价积分，得 ||T(u)||≤Lip(u)。",
+        "用两点中性测度 (δ_x−δ_y)w/d(x,y) 测试，得到反向范数等式。",
+        "对 λ 以两点差测度定义 S(λ)；利用两点差测度的 W 范数不超过 d(x,y)，证明 S(λ) 是 ||λ||-Lipschitz。",
+        "在张成所有两点差的有限支撑中性测度上验证 T(S(λ))=λ，再用 Proposition 4 的稠密性延伸至 W；直接算出 S(T(u))=u。"
+      ],
+      "gaps": [
+        "证明中使用有限支撑中性向量测度在 W 中稠密（Proposition 4）；该逼近证明已阅读全文并追踪误差估计，但未独立复核 Polish 空间上所有 Borel/总变差细节。"
+      ]
+    },
+    {
+      "name": "Theorem 2：向量 Kantorovich–Rubinstein 对偶与势的存在",
+      "assumptions": [
+        "μ∈W(X,R^m)；同 Theorem 1 的设定。"
+      ],
+      "statement": "sup{∫_X⟨u,dμ⟩:u:X→R^m, Lip(u)≤1}=||μ||_W；并存在达到上确界的 1-Lipschitz 最优势 u₀。",
+      "start_line": 694,
+      "end_line": 722,
+      "pdf_pages": [
+        13,
+        14
+      ],
+      "proof_steps": [
+        "先用运输计划的代价给出对偶上界。",
+        "对非零 μ 用 Hahn–Banach 选范数一泛函 λ 使 λ(μ)=||μ||_W。",
+        "由 Theorem 1 把 λ 表示为 Lipschitz 势 u₀ 的积分，且 Lip(u₀)=||λ||=1；μ=0 的平凡情形另由任意常势达成。"
+      ],
+      "gaps": [
+        "定理是有限一阶矩的 exact duality；不是带熵正则项的 Schrödinger/entropic OT。"
+      ]
+    },
+    {
+      "name": "Theorem 3：等号条件、互补松弛与距离饱和",
+      "assumptions": [
+        "μ∈W(X,R^m)，u 为 1-Lipschitz，π∈Γ(μ)。"
+      ],
+      "statement": "对任意 Borel A⊂X×X 的局部配对饱和，整体配对等于 π 的代价，整体值等于 ||μ||_W，以及 u 为最优势且 π 为最优输运，四者等价；并且 ||u(x)−u(y)||=d(x,y) 对 ||π||-几乎处处成立。",
+      "start_line": 734,
+      "end_line": 784,
+      "pdf_pages": [
+        14,
+        15
+      ],
+      "proof_steps": [
+        "利用边缘关系把 ∫u dμ 写成 ∫(u(x)−u(y))dπ。",
+        "夹逼 ∫u dμ≤||μ||_W≤∫d d||π||；任一整体等号迫使两端相等。",
+        "若局部集合上严格不等，积分得到整体严格不等，故任意 Borel 子集上的局部等式等价于饱和。",
+        "标量配对饱和与 Cauchy–Schwarz/总变差支配取等，推出向量差的长度等于距离。"
+      ],
+      "gaps": [
+        "作者将最后的几乎处处距离饱和称为直接推出；本卡读取并核对推理结构，没有重写向量测度极分解的完整技术证明。"
+      ]
+    },
+    {
+      "name": "Theorem 4：存在正则最优输运时的质量平衡",
+      "assumptions": [
+        "R^n、R^m 使用 Euclidean 范数；μ∈W(R^n,R^m)，u 为 μ 的最优势。",
+        "存在最优向量输运 π，使 P₁||π||≪Leb、P₂||π||≪Leb。"
+      ],
+      "statement": "任意 u 的输运集 A 满足 μ(A)=0；限制 π|_{A×A} 是 μ|_A 的最优输运，且 u 仍为该限制测度的最优势。",
+      "start_line": 851,
+      "end_line": 915,
+      "pdf_pages": [
+        16,
+        17
+      ],
+      "proof_steps": [
+        "已知重叠叶边界集 B(u) 的 Lebesgue 测度为零；两个总变差边缘绝对连续使 π 不给 B(u)×R^n 或 R^n×B(u) 质量。",
+        "Theorem 3 令 π 集中在等距集合 I；去掉 B(u) 后，对 (x,y)∈I 可由输运集定义推出 x∈A 当且仅当 y∈A。",
+        "令 η=π|_{A×A}，用边缘差和上述双向等价证明 η∈Γ(μ|_A)。",
+        "用 Theorem 3 的局部等号证明限制计划仍最优且 u 仍最优；中性边缘恒等式给 μ(A)=0。"
+      ],
+      "gaps": [
+        "质量平衡结论有实质正则性前提：存在最优 π，且其总变差的两边缘都绝对连续。不能省掉该条件或推广为任意向量测度。"
+      ]
+    },
+    {
+      "name": "Theorem 5：向量情形质量平衡一般失败",
+      "assumptions": [
+        "m>1；Euclidean 空间设定。"
+      ],
+      "statement": "存在绝对连续 μ∈W(R^n,R^m)，以及任一最优势所对应的一个输运集，其向量质量 μ(A) 非零；因此该 μ 不存在总变差边缘绝对连续的最优输运。",
+      "start_line": 1018,
+      "end_line": 1137,
+      "pdf_pages": [
+        19,
+        20,
+        21
+      ],
+      "proof_steps": [
+        "取 m+1 个和为零且仿射独立的向量 v_i，把每个 v_i 均匀摊在互异中心 x_i 的小球上形成绝对连续 μ_ε。",
+        "反设有 ε_k→0 使所有相应最优势的输运集质量都为零；由非平凡叶与小球相交的输运集，得不同小球之间存在距离等式点。",
+        "Arzelà–Ascoli 给出局部一致极限 u₀；弱*极限 μ₀=Σδ_{x_i}v_i，Lemma 2 保证 u₀ 最优且在 m+1 个中心等距。",
+        "选满足式(28)严格内积不等式的中心和向量，构造 1-Lipschitz 映射 h 与显式最优计划；Theorem 3 迫使 u₀ 在同一支撑对上也饱和，和其在全部中心等距推出的关系矛盾。",
+        "故有 ε₀>0 使小 ε 存在输运集质量非零；若有总变差边缘 AC 的最优输运，则 Theorem 4 会推出质量平衡，矛盾。"
+      ],
+      "gaps": [
+        "作者的紧致性、输运集可测性与反证论证已通读；本次未独立重做所有极限及选点存在性细节。",
+        "任意 m>1 的适用依赖在 R^m 中选取 m+1 个仿射独立且和为零的向量；结论并非声称每个向量测度都违反质量平衡。"
+      ]
+    },
+    {
+      "name": "Theorem 6：满足普遍质量平衡的 1-Lipschitz 子族的刚性",
+      "assumptions": [
+        "m≤n；R^m 的范数严格凸；F 是 R^n→R^m 的 1-Lipschitz 映射族，且在局部一致收敛下闭。",
+        "假定任意绝对连续 μ 及其 F-最优势，对其任一输运集 A 都有 μ(A)=0。",
+        "末段的逆向刻画另假设源、靶范数皆为 Euclidean。"
+      ],
+      "statement": "在上述普遍质量平衡假设下，作者给出刚性二分：若 m>1，则 (i) m=n、F 中每个映射仿射且 F 含一等距映射；或 (ii) 任意绝对连续 μ 的任意 F-最优势在某个最大子空间 V 上等距，并且其投影到互补空间的推前/柱集测度满足式(29)的零质量条件。Euclidean 范数时又给出仿射及该柱集条件推出质量平衡的反向说明。",
+      "start_line": 1152,
+      "end_line": 1304,
+      "pdf_pages": [
+        22,
+        23,
+        24
+      ],
+      "proof_steps": [
+        "用 3 个仿射独立向量构造三小球上的绝对连续扰动；普遍质量平衡迫使各球附近的非平凡叶之间有距离等式点。",
+        "取小球半径趋零的局部一致子列，得到极限 F-最优势，在共线三点上等距。严格凸性使共线中点映至对应线段内的分点，推出任何 F 元素仿射。",
+        "最大等距子空间 V 的陪集成为输运叶；质量平衡变为对互补空间投影柱集的向量质量为零。",
+        "再构造 m+1 个小球上总向量为零的绝对连续测度，迫使 V=R^n，并推出等距及 m=n；最后在 Euclidean 情形说明 affine map 的叶是 V 的平移。"
+      ],
+      "gaps": [
+        "这是对满足极强、对所有 AC 向量测度均成立之质量平衡性质的映射族 F 的分类，不是普通标量 Kantorovich 对偶的附带结论。",
+        "Theorem 6 中利用 Hahn–Banach 延拓到仿射映射并控制导数范数的技术论证已视觉核对公式，但未独立审查严格凸靶范数下每个延拓细节。"
+      ]
+    }
+  ],
+  "constant_dependence": "Theorem 1–3 为等距范数恒等式/精确对偶，不含增长常数；Theorem 4–6 也是定性结构或反例，不提供定量常数。",
+  "endpoint_limits": [
+    "主对偶定理适用于 Polish 度量空间 X、有限维向量取值、μ 总质量为零且一阶矩有限；成本是 d(x,y)，即 1-Wasserstein/Kantorovich–Rubinstein 型代价。",
+    "标准标量 KR 公式在引言回顾；本文新推广对象是向量测度。向量质量平衡不是总成立：Theorem 4 要求存在总变差边缘绝对连续的最优计划，Theorem 5 给出 m>1 反例。",
+    "本文没有熵正则化、Gibbs 变分或 entropy chain rule；只能为 D01 的输运对偶与最优势/计划提供证据。",
+    "全文 26 页，包括所有定义、Theorem 1–6、证明和 26 条参考文献；无附录。"
+  ],
+  "reusable_methods": [
+    "把向量测度的中性约束 P₁π−P₂π=μ 作为输运计划可行性；总质量为零恰好是可行充要条件。",
+    "通过以 Lipschitz 映射为势函数，利用每个 π∈Γ(μ) 给出对偶上界；Hahn–Banach 保证存在达值势。",
+    "最优性同时要求全局 primal-dual 值相等与计划支撑上的点态/局部集合饱和；Theorem 3 给出完整等价刻画。",
+    "对叶分解式质量平衡需区分一般性失败与附带正则性结论：AC 总变差边缘的最优计划可保证质量平衡；缺该正则性时可能根本没有这种计划。"
+  ],
+  "unchecked": [
+    "已逐段阅读全文，但除对 Theorem 1–3 的基本泛函分析推理及 Theorem 4–6 的论证结构作检查外，并未独立重证每个测度论、紧致性、叶集可测性辅助结果。",
+    "未独立复核 Proposition 4 所有截断/有限分割误差及 Theorem 5、6 所有选取参数细节；视觉检查 PDF pp.14–15、17、21、23–24 的主要公式。",
+    "没有检查 arXiv 后续版本或外部勘误；该卡只报告本地 arXiv:2108.07201v1。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1383,
+    "source_lines": 1387,
+    "required_content_lines": 893,
+    "covered_content_lines": 893,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-04672953a3d2f1c1/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-04672953a3d2f1c1.json",
+  "review_input_sha256": "a9296481a4b1dac40de447c57999626b7de21a4bdb447acf40a7476a36e0343a"
+}

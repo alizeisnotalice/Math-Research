@@ -1,0 +1,180 @@
+{
+  "paper_id": "P-b229047f8662ec4e",
+  "observed_title": "Linear programming over exponent pairs",
+  "authors": [
+    "Andrew V. Lelechenko"
+  ],
+  "version": "arXiv:1402.1993v2; 2014-12-23; 11 pages",
+  "source_sha256": {
+    "pdf": "b229047f8662ec4ed0e2a952c380f4627155252753f636f4cc29c90b0282c3d7",
+    "paper_md": "ddca434e7a5b8178227301b98411891d71c3edd5547a238f4d618f6afc0c530b"
+  },
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 676,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  ],
+  "reading_log": {
+    "method": "complete local converted text read in sequential line chunks; key formulas checked in original PDF images",
+    "appendices": "all pages including references read; no separate appendix in source",
+    "no_character_truncation": true,
+    "visual_pages": [
+      7,
+      8
+    ]
+  },
+  "topic_relevance": {
+    "code": "N03",
+    "decision": "direct",
+    "basis": "Full source supplies the explicitly scoped methods below; private mathematical interfaces have no established identification."
+  },
+  "definitions": [
+    "P generated from externally known exponent pairs; optimization over P differs from optimization over convP.",
+    "Fractional linear forms require strictly positive denominators over the entire domain."
+  ],
+  "theorem_cards": [
+    {
+      "claim_id": "N03-LELECHENKO-AB",
+      "label": "A/BA projective representation and contraction",
+      "start_line": 38,
+      "end_line": 150,
+      "pdf_pages": [
+        1,
+        2,
+        3
+      ],
+      "source_locator": {
+        "file": "corpus/papers/P-b229047f8662ec4e/paper.md",
+        "start_line": 38,
+        "end_line": 150,
+        "pdf_pages": [
+          1,
+          2,
+          3
+        ]
+      },
+      "assumptions": [
+        "Classical exponent pair convention of Definition1: 0≤k≤1/2≤ℓ≤1; initial known pairs are supplied externally.",
+        "P is generated from specified P0 under A and BA; conv P is a separate feasible class.",
+        "Homogeneous coordinates μ(k,ℓ)=(k:ℓ:1) with nonzero positive denominator after transforms."
+      ],
+      "statement": "A(k,ℓ)=(k/[2(k+1)],(k+ℓ+1)/[2(k+1)]); B(k,ℓ)=(ℓ−1/2,k+1/2). Matrices A=[[1,0,0],[1,1,1],[2,0,2]], BA=[[0,1,0],[2,0,1],[2,0,2]]. On T=conv{(1/2,1/2),(0,1),(0,1/2)}, both maps contract by at most sqrt(3)/2.",
+      "proof_source_ranges": [
+        {
+          "file": "corpus/papers/P-b229047f8662ec4e/paper.md",
+          "start_line": 319,
+          "end_line": 342,
+          "pdf_pages": [
+            6
+          ]
+        }
+      ],
+      "proof_steps": [
+        "Use projective integer matrices and gcd reduction to avoid rational denominator growth.",
+        "Enclose transformed feasible sets in transformed triangles/polygons.",
+        "Lemma2 obtains squared-distance factor≤3/4."
+      ],
+      "author_claim": "A(k,ℓ)=(k/[2(k+1)],(k+ℓ+1)/[2(k+1)]); B(k,ℓ)=(ℓ−1/2,k+1/2). Matrices A=[[1,0,0],[1,1,1],[2,0,2]], BA=[[0,1,0],[2,0,1],[2,0,2]]. On T=conv{(1/2,1/2),(0,1),(0,1/2)}, both maps contract by at most sqrt(3)/2.",
+      "checked_derivation": "Matrix multiplication and A/BA identities checked algebraically; contraction proof read. Classical exponent-pair external prerequisites remain unverified inputs.",
+      "gaps": [
+        "The fact that A/B preserve classical exponent pairs and initial seed qualifications are cited, not proved here.",
+        "The statement that all known exponent pairs lie in convP is a 2014 historical statement; it is not a current exhaustive classification."
+      ],
+      "disposition": "conditional_source_statement",
+      "independent_proof_certificate": false
+    },
+    {
+      "claim_id": "N03-LELECHENKO-OPT",
+      "label": "Section5 objective bounds; source pseudocode quarantined",
+      "start_line": 388,
+      "end_line": 441,
+      "pdf_pages": [
+        7,
+        8
+      ],
+      "source_locator": {
+        "file": "corpus/papers/P-b229047f8662ec4e/paper.md",
+        "start_line": 388,
+        "end_line": 441,
+        "pdf_pages": [
+          7,
+          8
+        ]
+      },
+      "assumptions": [
+        "θ=max_i (a_i k+b_iℓ+c_i)/(d_i k+e_iℓ+f_i), finitely many forms.",
+        "Each denominator is strictly positive on convP; linear LC constraints may be strict or non-strict.",
+        "Outer polygons enclose the relevant transformed set; inf over P and inf over convP must be distinguished."
+      ],
+      "statement": "For an enclosing polygon V: max_i inf_V θ_i≤inf_V max_iθ_i≤max_i sup_Vθ_i. This bound is usable. Source Step1 updates the incumbent from all transformed initial pairs without checking LC, so the constrained search pseudocode is quarantined until feasibility filtering and a global active-node stopping certificate are added.",
+      "proof_source_ranges": [
+        {
+          "file": "corpus/papers/P-b229047f8662ec4e/paper.md",
+          "start_line": 388,
+          "end_line": 480,
+          "pdf_pages": [
+            7,
+            8
+          ]
+        }
+      ],
+      "proof_steps": [
+        "Compute safe lower/upper objective bounds over the outer polygon.",
+        "For a valid minimization incumbent, evaluate only points satisfying every LC constraint.",
+        "Prune a branch only with a valid lower bound relative to a feasible upper bound; strict constraints need strict comparisons.",
+        "At termination, compare the feasible upper bound to the smallest lower bound among all active nodes."
+      ],
+      "author_claim": "For an enclosing polygon V: max_i inf_V θ_i≤inf_V max_iθ_i≤max_i sup_Vθ_i. This bound is usable. Source Step1 updates the incumbent from all transformed initial pairs without checking LC, so the constrained search pseudocode is quarantined until feasibility filtering and a global active-node stopping certificate are added.",
+      "checked_derivation": "Lower/upper max-inf inequalities independently derived. Counterexample: minimize k with LC k≥1/4 and seed (0,1); source incumbent0 is infeasible and constraint θ<0 empties all feasible branches. Proposed filters are local repairs, not an author theorem. Original PDF p7-8 visually confirms Step1 without LC feasibility condition and separate P/convP example.",
+      "gaps": [
+        "Source Step1 at lines416–417 contains no LC feasibility check. An infeasible seed with a smaller objective creates an invalid upper bound and may discard every feasible point.",
+        "Source stop/contraction explanation does not give a complete global active-branch optimality certificate for strict constraints.",
+        "No current arithmetic application or private half-density estimate is certified by this computational method."
+      ],
+      "disposition": "quarantined_source_algorithm",
+      "independent_proof_certificate": false
+    }
+  ],
+  "reusable_methods": [
+    "Represent nonlinear A/BA maps by exact integer projective matrices.",
+    "Use outer-set lower bounds and feasible incumbents in branch and bound; separate discrete generated pairs from convex relaxations."
+  ],
+  "constant_dependence": "Contraction sqrt(3)/2 applies to stated triangle; requested numerical precision is a stopping tolerance, not an automatic mathematical optimality proof.",
+  "endpoint_limits": [
+    "Initial exponent-pair theorem conditions are external.",
+    "Strict feasibility and denominator signs must be preserved under every transform."
+  ],
+  "unchecked": [
+    "All11pages incl.references read. Initial seed theorems and downstream arithmetic bounds not independently reproved.",
+    "Paper infP example176/1025 versus infconvP176/1057 explicitly prevents free substitution."
+  ],
+  "overall_proof_verification": "not_independently_certified",
+  "two_round_review": "pending",
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 676,
+    "source_lines": 676,
+    "required_content_lines": 492,
+    "covered_content_lines": 492,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-b229047f8662ec4e/paper.md"
+  },
+  "review_source": "reviews/TEAM_N/evidence/P-b229047f8662ec4e.json",
+  "review_input_sha256": "ac6b5264dea8ca73d7a809685d63cabceb76f2b0e2c525d23a8ba8ea9a3b9a7b"
+}

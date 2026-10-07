@@ -1,0 +1,316 @@
+{
+  "paper_id": "P-aaa03e027f21d631",
+  "observed_title": "Duality for outer L^p_μ(ℓ^r) spaces and relation to tent spaces",
+  "authors": [
+    "Marco Fraccaroli"
+  ],
+  "version": "arXiv:2001.05903v1; local 32 pages, 17 Jan 2020; not the longer 2021 publication",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 1717,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    }
+  ],
+  "reading_provenance": "TEAM_FG逐页阅读Sections1–8（第8节Appendix）和References；无字符截断；p21、31已视觉回核。",
+  "topic_relevance": {
+    "G02": "direct"
+  },
+  "proof_verification": "source_claim_with_two_checked_printed_statement_defects",
+  "definitions": [
+    {
+      "term": "finite setting outerLp(ellr)",
+      "definition": "finite X，μ任意outermeasure，ω strictly positive weight；ellr= (μ(A)^−1 Σ_Aω f^r)^(1/r)；默认非负函数。outer distribution用最小排除费用。",
+      "source_ranges": [
+        {
+          "start_line": 7,
+          "end_line": 159,
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "upper half space setting",
+      "definition": "X=R^d×(0,∞)，generators是dyadic cubic boxes（再与全boxes/tents比较），费用为底面Lebesgue体积，ω(y,t)=t^−1；tent cone面积测度dy dt/t^{d+1}。",
+      "source_ranges": [
+        {
+          "start_line": 162,
+          "end_line": 272,
+          "pdf_pages": [
+            4,
+            5
+          ]
+        },
+        {
+          "start_line": 441,
+          "end_line": 587,
+          "pdf_pages": [
+            9,
+            10,
+            11
+          ]
+        },
+        {
+          "start_line": 819,
+          "end_line": 979,
+          "pdf_pages": [
+            17,
+            18,
+            19
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem1.1 finite-setting norm/duality range",
+      "claim_class": "source_claim",
+      "assumptions": [
+        "finite X，outerμ，positiveω；pairing为ordinaryL1(X,ω)，规范size ellr；constants independent finite setting。"
+      ],
+      "statement": "p=r∈(0,∞]时outerLp(ellp)≈ordinaryLp(ω)。统一Köthe型pairing与normability范围：1<p≤∞、1≤r<∞，或p=r∈{1,∞}。p=1,r>1常数非一致；1<p<∞,r=∞在此v1说uniformity open。",
+      "source_ranges": [
+        {
+          "start_line": 113,
+          "end_line": 215,
+          "pdf_pages": [
+            3,
+            4
+          ]
+        }
+      ],
+      "proof_steps": [
+        "Prop2.1 greedy分解以不同水平size上下界夹outerdistribution。",
+        "按(p,r)四分支构造g，控制其dual-size及L1配对下界；有限与上半空间的p1 proof不能混同。",
+        "ordinaryL1三角式+pairing刻画给等价norm。"
+      ],
+      "unchecked": [
+        "未独立重做所有greedy与近极值/密度；open只报告本文版本，未声称当前全领域仍open。"
+      ]
+    },
+    {
+      "name": "Lemma3.4 finite p1 nonuniformity",
+      "claim_class": "source_claim",
+      "assumptions": [
+        "X_m为[0,1]标准dyadic树节点深度≤m，generators E_I为叶到根路径，每路径费用1，ω节点计数；1<r≤∞。"
+      ],
+      "statement": "f_m(J)=2^m|J|=Σ_leafI 1_EI(J)，||f_m||outerL1(ellr)≥2^m(m+1)/2，而Σ_I||1_EI||=2^m(m+1)^(1/r)。因此quasi-triangle统一常数至少(1/2)(m+1)^(1−1/r)，m∞无界。",
+      "source_ranges": [
+        {
+          "start_line": 819,
+          "end_line": 924,
+          "pdf_pages": [
+            17,
+            18
+          ]
+        }
+      ],
+      "unchecked": [
+        "该具体树反例仅sourceclaim；本组未把有限all-nonemptyμ反例冒充这个证明。"
+      ]
+    },
+    {
+      "name": "Theorems1.2/1.3 upper-halfspace duality and tent equivalence",
+      "claim_class": "source_claim",
+      "assumptions": [
+        "指定R^d半空间box费用与ω=t^−1；不是任意μ或任意树。"
+      ],
+      "statement": "normability及pairing范围完整1≤p,r≤∞；outerLp(ellr)与T_r^p等价范围0<p,r≤∞。",
+      "source_ranges": [
+        {
+          "start_line": 162,
+          "end_line": 272,
+          "pdf_pages": [
+            4,
+            5
+          ]
+        },
+        {
+          "start_line": 872,
+          "end_line": 1039,
+          "pdf_pages": [
+            18,
+            19,
+            20
+          ]
+        }
+      ],
+      "proof_steps": [
+        "Prop2.2在覆盖过半的底面先扩大排除集，选择极大dyadicbox，并证所选底面2-Carleson/half-sparse。",
+        "p1 dual控制依赖该packing，Remark3.2明确省它会得到Σ1发散。",
+        "tent双向比较先用大倍数box/tent覆盖及Whitney分解，再幂变换、pairing与已知tent duality。"
+      ],
+      "unchecked": [
+        "tentdual引用Huang及覆盖/Whitney常数未独立复证；C可依赖维数，标题C(p,r)不能当维数无关。"
+      ]
+    },
+    {
+      "name": "Theorems1.4/6.1 scaled embedding classification",
+      "claim_class": "source_claim_with_printed_defect",
+      "assumptions": [
+        "1≤p,q≤∞、0<r≤∞、ε>0，F是test family |φ(z)|≤(1+|z|)^−d−ε的卷积尺度包络。"
+      ],
+      "statement": "strong: ||t^{d/p−d/q}F(f)||outerLq(ellr)≤C||f||p仅列(1<p<q≤∞,任意r)、(1<p=q≤∞,r∞)、(p1,q∞,任意r)。弱分支(p1<q<∞,任意r)、(p=q1,r∞)在印刷p21未写尺度权；Section6.3证明的是t^{d−d/q}F。",
+      "source_ranges": [
+        {
+          "start_line": 275,
+          "end_line": 335,
+          "pdf_pages": [
+            6
+          ]
+        },
+        {
+          "start_line": 1042,
+          "end_line": 1398,
+          "pdf_pages": [
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        }
+      ],
+      "proof_steps": [
+        "F≤CMf与F≤Ct^−d/p||f||p；strong用tent fractional inclusion；weak1q用Mf阈值的Whitneybox exclusion并优化高度R。",
+        "反例分别用大t尾和小t近边界展示外distribution不可积/不衰减。"
+      ],
+      "unchecked": [
+        "不调用p21字面未加权weak(1,q)；修复仅按§6.3读取并另列checkedscaling。"
+      ]
+    },
+    {
+      "name": "weak(1,q) omitted scale factor",
+      "claim_class": "checked_derivation",
+      "assumptions": [
+        "同半空间box外测度；q>1（印刷weak分支1<q<∞）；同缩放也否定未加权q∞，但源strong(1,∞)正确带t^d。非零非负基f有正的outerweakLq包络值；fε(x)=ε^−d f(x/ε)。"
+      ],
+      "statement": "F(fε)(y,t)=ε^−d F(f)(y/ε,t/ε)，outerμ按ε^d缩放，所以未加权weakLq范数=ε^{−d+d/q}原范数，ε→0发散而L1质量固定。t^{d−d/q}可消去该齐次缺口，但齐次一致只是必要核查，不独立证明完整修复定理。 q=1尺度指数0，本项不否定原weak(1,1)；q∞的修复由原加权strong(1,∞)或t^dF点态界处理。",
+      "source_ranges": [
+        {
+          "start_line": 1042,
+          "end_line": 1273,
+          "pdf_pages": [
+            21,
+            22,
+            23,
+            24
+          ]
+        }
+      ],
+      "behavior_evidence": "behavior/printed-outer-defects.json"
+    },
+    {
+      "name": "Proposition8.6 printed OR defect",
+      "claim_class": "checked_counterexample_to_source_printed_statement",
+      "assumptions": [
+        "PDF p30–31按印刷仅μ-null⇒ν-null分支、σfinite及通常size公理。",
+        "标准size反例使用同一个无限σfinite setting和所有n，避免将随设置变化的C误当矛盾。"
+      ],
+      "statement": "更强标准size反例：X=N离散，μ=ω=counting，S=ell∞ω(A)=||f1_A||∞，ν({n})=n。μ、ν均σfinite且μ-null⇒ν-null；f=δ_n的outerL1(S)=1而∫|f|dν=n，任何固定C失败。因此零集分支字面式即使标准非退化size也不成立。另有限非零退化size X={a,b},ν=δ_b,S(f)(A)=|f(a)|1_(a∈A),f=δ_b给0范数/1积分，同样印刷分支反例。局部积分–size兼容条件不能由零集条件推出。",
+      "source_ranges": [
+        {
+          "start_line": 1561,
+          "end_line": 1670,
+          "pdf_pages": [
+            30,
+            31
+          ]
+        }
+      ],
+      "behavior_evidence": "behavior/printed-outer-defects.json",
+      "unchecked": [
+        "没有猜测替换原文完整命题；项目须明确局部积分与size关系并独立证明。"
+      ]
+    }
+  ],
+  "pdf_visual_checks": [
+    {
+      "pdf_page": 21,
+      "image": "P-aaa03e027f21d631-pdfp21.png",
+      "checked": "p21显示weak公式无t权；p31显示either/or，仅零集分支可反例"
+    },
+    {
+      "pdf_page": 31,
+      "image": "P-aaa03e027f21d631-pdfp31.png",
+      "checked": "p21显示weak公式无t权；p31显示either/or，仅零集分支可反例"
+    }
+  ],
+  "reusable_methods": [
+    "以greedy dyadicbox分解同时证捕获、费用及packing，端点p1所需packing不能省。",
+    "区别任意finite outermeasure与具有half-sparsebox几何的upperhalfspace。",
+    "尺度映射先做fε齐次核查，再读取proof控制的真实对象。"
+  ],
+  "constant_dependence": "finite Thm1.1 C(p,r)独立X,μ,ω；几何半空间、embedding的C保d、ε及test函数依赖。Lemma3.4展示endpoint非一致。",
+  "endpoint_limits": [
+    "finite p1,r>1统一性失败；upperhalfspace1≤p,r≤∞可用但限指定几何。",
+    "p=q,r有限时普通F embedding通常失败，p=q>1,r∞保strong。",
+    "H1→outerL1(ell∞) Prop6.2另需Schwartz固定ϕ及H1原子消去，不是L1端点。"
+  ],
+  "migration": {
+    "claim_class": "inference",
+    "interface": "可将已构造的真实box/tree系数嵌入该size框架；必须给生成覆盖、底费用、ω、公共输入及packing。",
+    "gap": "频率相位或上半空间box不等同任意中心立方体sup，有限外对偶常数也不是维数一致结论。"
+  },
+  "external_dependencies": [
+    "Do–Thiele outerHölder、pullback与L1比较",
+    "Huang tentduality",
+    "Amenta fractionaltent inclusion proof外引（本源只改atom步骤）",
+    "H1–BMO对偶及Whitney覆盖"
+  ],
+  "unchecked": [
+    "全文阅读不等于上述外引wholeproof已核验；保两个印刷缺口，未认证所有定理无其他缺口。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1711,
+    "source_lines": 1717,
+    "required_content_lines": 1286,
+    "covered_content_lines": 1286,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-aaa03e027f21d631/paper.md"
+  },
+  "review_source": "evidence/reviews/TEAM_FG/evidence/P-aaa03e027f21d631.json",
+  "review_input_sha256": "d1d7c0c387605e7d754154c673e00b248c00acd47eded00827743e732701da34"
+}

@@ -1,0 +1,415 @@
+{
+  "paper_id": "P-ee636b8a2c2329ad",
+  "observed_title": "Jump Locations of Jump-Diffusion Processes with State-Dependent Rates",
+  "authors": [
+    "Christopher E. Miles",
+    "James P. Keener"
+  ],
+  "version": "arXiv:1701.01920v2, source PDF label 26 September 2018; 22 pages",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1124,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "scope": "All source PDF pp.1–22 read without character truncation, including Appendices A/B and references. New TEAM_JK reading, not inherited."
+    }
+  ],
+  "identity_verification": "title/authors/arXiv version read from local PDF p1; publisher version not verified this round",
+  "topic_relevance": {
+    "J01": "direct for the time-homogeneous state-dependent diffusion-plus-reset forward operator; does not prove a general time-dependent Q-function construction.",
+    "J02": "direct for survival/absorbing between-jump dynamics and first-jump location/time laws, subject to source gaps below.",
+    "J03": "adjacent for intensity-killing location measures; not spatial hard exit or nonlocal balayage.",
+    "J04": "adjacent for hazard and survival accounting, but no compensator theorem or stochastic Fubini/exit settlement contract.",
+    "J05": "adjacent for iterative jump-location distributions; no frozen coordinate, no round-dependent compensator, no private iteration contract."
+  },
+  "definitions": [
+    {
+      "name": "Absorbing versus reinjected forward equation",
+      "statement": "Full density satisfies ∂t ptilde=L ptilde−λ ptilde+J(λ ptilde); killed interjump density h satisfies ∂t h=(L−λ)h. L is the one-dimensional Fokker–Planck operator −∂x(A·)+∂xx(D·), λ is state-dependent and time-independent in the analyzed formulae, J pushes pre-jump mass to post-jump states.",
+      "source_ranges": [
+        {
+          "start_line": 126,
+          "end_line": 190,
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "scope": "Section2.1–2.2"
+        },
+        {
+          "start_line": 198,
+          "end_line": 241,
+          "pdf_pages": [
+            5
+          ],
+          "scope": "Reset/shift examples"
+        },
+        {
+          "start_line": 263,
+          "end_line": 277,
+          "pdf_pages": [
+            6
+          ],
+          "scope": "Eq3"
+        }
+      ]
+    },
+    {
+      "name": "Pre-jump location law and integrated occupation",
+      "statement": "In a valid construction set ui(x)=∫0∞hi(x,t)dt and pi(x)=λ(x)ui(x). The operator J is then applied to pi before starting the next killed interval. This correct operational definition avoids assigning 0/0 at λ=0.",
+      "source_ranges": [
+        {
+          "start_line": 278,
+          "end_line": 347,
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "scope": "Theorems1–2"
+        },
+        {
+          "start_line": 359,
+          "end_line": 379,
+          "pdf_pages": [
+            8
+          ],
+          "scope": "Eq5–6"
+        }
+      ],
+      "status": "corrected operational definition independently derived; original Eq5 writes ui=pi/λ"
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem1: first intensity-killing time and pre-jump location",
+      "assumptions": [
+        "Original scope: one-dimensional diffusion with forward L, nonnegative state hazard λ, sufficiently regular solution, zero boundary flux at ±∞, no explosion; exact regularity/nonexplosion criteria are delegated to reference[2].",
+        "To use these as probability densities rather than defective subdensities additionally establish P(τ<∞)=1; to move L through a time integral establish the needed domain/integrability and boundary conditions. Source does not spell out these assumptions."
+      ],
+      "statement": "p_location(x)=∫0∞λ(x)h(x,t)dt and p_time(t)=∫Rλ(x)h(x,t)dx. With no killing by another mechanism their total mass is P(τ<∞), which may be below1.",
+      "start_line": 278,
+      "end_line": 315,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "proof_steps": [
+        "Integrate killed forward equation spatially, use conservation of L to obtain −s′(t)=∫λh.",
+        "The absorbed component has no spatial transport, so integrate ∂tq=λh over time."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 289,
+          "end_line": 315,
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "scope": "Full proof, including source no-explosion comment"
+        }
+      ],
+      "proof_verification": "Formula checked conditionally; source regularity and nonexplosion delegated, eventual jump condition absent.",
+      "claim_id": "JK-MILES-01"
+    },
+    {
+      "label": "Theorems2–3: sequential resolvent map",
+      "assumptions": [
+        "Start first interval from known p0; restart later interval from Jpi−1 where J must be a mass-preserving pushforward on the chosen state space.",
+        "Killed semigroup has an integrable potential on the starting class and T=λ−L admits the required positive inverse; no-explosion alone is insufficient.",
+        "All state/time integrals and L/time-integral interchange need a valid Fubini/domain argument; fixed point and convergence are explicitly assumed or treated heuristically."
+      ],
+      "statement": "The coherent indexing is hi(0)=Jpi−1 for i>1 (h1(0)=p0), pi=∫λhi, ui=∫hi. Then Tui+1=J(λui), ui+1=T−1J(λui). Eq4 as printed labels the integrated hi output pi+1 while calling hi the ith interval; that indexing is not used literally.",
+      "start_line": 325,
+      "end_line": 400,
+      "pdf_pages": [
+        7,
+        8
+      ],
+      "proof_steps": [
+        "Integrate ∂thi=(L−λ)hi from0 to∞ with terminal limit zero: −hi(0)=(L−λ)ui.",
+        "Thus Tui=hi(0), and restarting gives the displayed resolvent map.",
+        "Use occupation ui as primary unknown; λui is jump law and a positive ui on a zero-hazard region is possible."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 378,
+          "end_line": 385,
+          "pdf_pages": [
+            8
+          ],
+          "scope": "Original integrated proof and domain assertion"
+        },
+        {
+          "start_line": 876,
+          "end_line": 907,
+          "pdf_pages": [
+            18
+          ],
+          "scope": "Green-kernel reformulation"
+        }
+      ],
+      "proof_verification": "Map algebra checked after explicitly disclosed index/sign repairs; source functional-analytic existence not certified.",
+      "claim_id": "JK-MILES-02"
+    },
+    {
+      "label": "Theorem4/Corollary1: stationary intensity bias",
+      "assumptions": [
+        "Source assumes a fixed point ustar exists and compares stationary nullspaces without a stated uniqueness hypothesis.",
+        "Valid transfer requires an invariant time law π, a finite positive mean hazard ∫λdπ and a compatible stationary embedded jump law; identifying any nullvector with π requires uniqueness or matching ergodic class."
+      ],
+      "statement": "Source states (L−λ+Jλ)ustar=0, pstar=λustar and claims pstar equals full stationary law iff λ is constant. Operational intensity-bias relation is pstar(dx)=λ(x)π(dx)/∫λdπ; equality requires λ constant π-almost everywhere, rather than globally.",
+      "start_line": 404,
+      "end_line": 433,
+      "pdf_pages": [
+        9
+      ],
+      "proof_steps": [
+        "The two stationary equations have the same operator.",
+        "Normalize time law by ∫π=1 and event law by ∫λustar=1.",
+        "Equality of the two normalized measures constrains λ only on the support of π; the printed proof does not establish a unique nullspace."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 414,
+          "end_line": 437,
+          "pdf_pages": [
+            9
+          ],
+          "scope": "Original proof and normalization equations9–10"
+        }
+      ],
+      "proof_verification": "Formal stationary equation read; global iff narrowed to supported law and missing uniqueness recorded.",
+      "claim_id": "JK-MILES-03"
+    },
+    {
+      "label": "Theorem5 and AppendixA: interjump moments",
+      "assumptions": [
+        "Integrable killed occupation yields finite first moment; for kth moment justify corresponding weighted time integrals, integration by parts and vanishing endpoint terms.",
+        "If λ has zeros, compute using occupation rather than pi/λ."
+      ],
+      "statement": "Eτi=∫ui under finite expectation. For T=λ−L, vi=T−1ui=∫0∞t hi(t)dt, so Eτi²=2∫vi; the printed AppendixA states −∫vi and is false even for constant hazard. Higher moments require the repeated resolvent hierarchy and their own integrability.",
+      "start_line": 438,
+      "end_line": 487,
+      "pdf_pages": [
+        9,
+        10
+      ],
+      "proof_steps": [
+        "Eτ=∫0∞P(τ>t)dt=∫ui by Tonelli for nonnegative h.",
+        "Eτ²=2∫0∞tP(τ>t)dt. Integrating t times the killed equation gives Tvi=ui.",
+        "For L=0, λ=c>0, normalized p0 gives u=p0/c, v=p0/c², actual Eτ²=2/c², whereas the printed formula gives −1/c²."
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 459,
+          "end_line": 487,
+          "pdf_pages": [
+            10
+          ],
+          "scope": "Theorem5 proof"
+        },
+        {
+          "start_line": 842,
+          "end_line": 868,
+          "pdf_pages": [
+            17
+          ],
+          "scope": "AppendixA including second-moment formula and A1"
+        }
+      ],
+      "proof_verification": "First moment and corrected second-moment algebra independently checked; source AppendixA is not certified.",
+      "claim_id": "JK-MILES-04"
+    }
+  ],
+  "constant_dependence": "No dimension-free or uniform analytic constants supplied. Model is one-dimensional; quantitative time-integral, Green-kernel, boundary flux and spectral convergence bounds depend on L,λ,J and the function space. Numerical example parameters do not certify a common constant.",
+  "source_gaps": [
+    {
+      "location": {
+        "start_line": 231,
+        "end_line": 239,
+        "pdf_pages": [
+          5
+        ],
+        "scope": "Scaling reset example(iv)"
+      },
+      "original": "Xpost=γXpre is paired with Jp(x)=γp(γx).",
+      "independent_check": "For γ>0 the pushforward for this map is γ^−1p(x/γ); the printed density corresponds to division byγ. γ=2 and Uniform[0,1] distinguish means1 versus1/4. For γ<0 use absolute Jacobian; source does not specify a γ range.",
+      "status": "visually confirmed printed mismatch; limited change-of-variable repair"
+    },
+    {
+      "location": {
+        "start_line": 218,
+        "end_line": 228,
+        "pdf_pages": [
+          5
+        ],
+        "scope": "Random displacement example(iii)"
+      },
+      "original": "Jp(x)=∫p(x−Δ)µ(Δ,x)dΔ while displacement distribution is said to be state-dependent.",
+      "independent_check": "If µ(Δ,z) is conditional on pre-jump state z, the mass-preserving kernel is µ(Δ,x−Δ). The printed form needs a different explicit convention and an independent flux-normalization check; none is supplied.",
+      "status": "ambiguous kernel convention; do not claim normalization"
+    },
+    {
+      "location": {
+        "start_line": 335,
+        "end_line": 344,
+        "pdf_pages": [
+          7
+        ],
+        "scope": "Eq4"
+      },
+      "original": "Integrated ith killed density is labelled pi+1 although initial condition uses Jpi−1.",
+      "independent_check": "Use pi=∫λhi or consistently reindex all three equations.",
+      "status": "visually confirmed index mismatch"
+    },
+    {
+      "location": {
+        "start_line": 363,
+        "end_line": 385,
+        "pdf_pages": [
+          8
+        ],
+        "scope": "Eq5 and Theorem3 proof"
+      },
+      "original": "0/0 causes no difficulties at λ=0; integrated equation prints hi(0)=∫Lhi−λ∫hi.",
+      "independent_check": "Occupation may be positive where λ=0 (finite-state counterexample computed separately); correct integrated left side is −hi(0).",
+      "status": "visually confirmed quotient gap and sign mismatch"
+    },
+    {
+      "location": {
+        "start_line": 565,
+        "end_line": 596,
+        "pdf_pages": [
+          12
+        ],
+        "scope": "Eq14–16"
+      },
+      "original": "Eq14 writes δ=(L−λ)u but Eq16 uses derivative jump−1.",
+      "independent_check": "Reset stationarity is0=(L−λ)u+δ, hence (L−λ)u=−δ. The matching condition−1 is consistent with this repaired equation. Bessel coefficient formulae were read, not independently derived.",
+      "status": "visually confirmed sign mismatch; no full Bessel certification"
+    },
+    {
+      "location": {
+        "start_line": 842,
+        "end_line": 868,
+        "pdf_pages": [
+          17
+        ],
+        "scope": "AppendixA"
+      },
+      "original": "Second moment=−∫v with Tv=u.",
+      "independent_check": "Constant-hazard example gives contradiction; corrected second moment2∫v derived under stated domain/integrability conditions.",
+      "status": "visually confirmed false printed formula"
+    },
+    {
+      "location": {
+        "start_line": 886,
+        "end_line": 900,
+        "pdf_pages": [
+          18
+        ],
+        "scope": "Shifted Green kernel"
+      },
+      "original": "Gtilde(x,ζ)=G(x,ζ+Δ)λ(ζ+Δ).",
+      "independent_check": "J(λu)(ξ)=λ(ξ−Δ)u(ξ−Δ); ξ=ζ+Δ gives Gtilde=G(x,ζ+Δ)λ(ζ). Positive-kernel algebra comparison computed separately.",
+      "status": "visually confirmed displaced-hazard factor"
+    },
+    {
+      "location": {
+        "start_line": 904,
+        "end_line": 941,
+        "pdf_pages": [
+          18,
+          19
+        ],
+        "scope": "AppendixB spectral discussion"
+      },
+      "original": "Dominant-eigenfunction result is quoted from Easterling; sequence convergence discussed as rough heuristic.",
+      "independent_check": "Full spectral theorem assumptions/proof not in this paper; positivity and mass normalization alone do not imply primitive/compact spectral behavior. No general stationary-convergence certificate claimed.",
+      "status": "external theorem/heuristic limit, not independently authenticated"
+    }
+  ],
+  "external_dependencies": [
+    "Bally–Goreac–Rabiet[2] for stochastic construction and nonexplosion; not independently read here.",
+    "Fokker–Planck/SDE correspondence and forward-domain conditions referred to books[6,26,29].",
+    "Easterling thesis[19], Ellner–Rees[20] and Krein–Rutman sources[37,38] for AppendixB; not independently read here."
+  ],
+  "transfer_limits": [
+    "Does not construct a compensator relative to an enlarged filtration.",
+    "Does not justify general stochastic Fubini or stopped wealth settlement.",
+    "Does not define frozen coordinates or iterative compensating measures.",
+    "Intensity killing is not spatial boundary exit; pre-jump location and post-jump landing distributions differ by J.",
+    "Finite-state behavior checks audit algebra and boundary cases, not every diffusion existence or uniform convergence claim."
+  ],
+  "visual_checks": [
+    {
+      "pdf_page": 5,
+      "image": "reviews/TEAM_JK/evidence/rendered/P-ee636b8a2c2329ad/p05.png",
+      "items": "Printed formula/layout checked for the described source gaps"
+    },
+    {
+      "pdf_page": 7,
+      "image": "reviews/TEAM_JK/evidence/rendered/P-ee636b8a2c2329ad/p07.png",
+      "items": "Printed formula/layout checked for the described source gaps"
+    },
+    {
+      "pdf_page": 8,
+      "image": "reviews/TEAM_JK/evidence/rendered/P-ee636b8a2c2329ad/p08.png",
+      "items": "Printed formula/layout checked for the described source gaps"
+    },
+    {
+      "pdf_page": 12,
+      "image": "reviews/TEAM_JK/evidence/rendered/P-ee636b8a2c2329ad/p12.png",
+      "items": "Printed formula/layout checked for the described source gaps"
+    },
+    {
+      "pdf_page": 17,
+      "image": "reviews/TEAM_JK/evidence/rendered/P-ee636b8a2c2329ad/p17.png",
+      "items": "Printed formula/layout checked for the described source gaps"
+    },
+    {
+      "pdf_page": 18,
+      "image": "reviews/TEAM_JK/evidence/rendered/P-ee636b8a2c2329ad/p18.png",
+      "items": "Printed formula/layout checked for the described source gaps"
+    }
+  ],
+  "new_read_owner": "/root/distill_jk_16",
+  "admission_status": "quarantine_partial_transfer",
+  "admission_note": "Printed source errors are quarantined individually. Only explicitly corrected conditional first-jump/occupation algebra and finite examples are admitted; diffusion-domain existence, general stationarity, spectral convergence and private compensating-measure contracts remain open.",
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1124,
+    "source_lines": 1124,
+    "required_content_lines": 763,
+    "covered_content_lines": 763,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-ee636b8a2c2329ad/paper.md"
+  },
+  "review_source": "reviews/TEAM_JK/evidence/P-ee636b8a2c2329ad.json",
+  "review_input_sha256": "5dfb7c6ccf10a14f1cf7f219f04a522b21bf2cb8c7ae949234aaf54260ffe8b7"
+}

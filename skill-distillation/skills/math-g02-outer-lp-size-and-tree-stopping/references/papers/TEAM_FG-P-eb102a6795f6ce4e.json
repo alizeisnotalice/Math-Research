@@ -1,0 +1,215 @@
+{
+  "paper_id": "P-eb102a6795f6ce4e",
+  "observed_title": "Duality for outer L^{p,∞} spaces",
+  "authors": [
+    "Marco Fraccaroli"
+  ],
+  "version": "arXiv:2303.01336v1, 3 March 2023; local 21-page version only",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 1119,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    }
+  ],
+  "reading_provenance": "TEAM_FG逐页阅读已覆盖正文Sections1–5、Appendices A/B和References；全文字段不是独立证明认证。",
+  "pdf_visual_checks": [
+    {
+      "pdf_page": 3,
+      "image": "P-eb102a6795f6ce4e-pdfp3.png",
+      "checked": "实际查看原PDF公式；p3外分布与Σ′定义、p4定理1.3、p15反例"
+    },
+    {
+      "pdf_page": 4,
+      "image": "P-eb102a6795f6ce4e-pdfp4.png",
+      "checked": "实际查看原PDF公式；p3外分布与Σ′定义、p4定理1.3、p15反例"
+    },
+    {
+      "pdf_page": 15,
+      "image": "P-eb102a6795f6ce4e-pdfp15.png",
+      "checked": "实际查看原PDF公式；p3外分布与Σ′定义、p4定理1.3、p15反例"
+    }
+  ],
+  "proof_verification": "source_claim_with_one_checked_finite_counterexample",
+  "topic_relevance": {
+    "G02": "direct"
+  },
+  "definitions": [
+    {
+      "term": "σ-finite setting",
+      "definition": "ω为σ-finite measure，μ为σ-finite outer measure，μ(A)=0⇒ω(A)=0；排除集须ω可测。Σμ={A:0<μ(A)<∞}。",
+      "source_ranges": [
+        {
+          "start_line": 60,
+          "end_line": 170,
+          "pdf_pages": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "outer distribution and Lorentz norm",
+      "definition": "d_f(λ)=inf{μ(A):||f1_(A^c)||outer∞(S)≤λ}；||f||outerLp,q(S)=p^{1/q}||λd_f(λ)^{1/p}||Lq(dλ/λ)，q=∞用sup，p^{1/∞}=1。",
+      "source_ranges": [
+        {
+          "start_line": 118,
+          "end_line": 170,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ],
+      "claim_class": "source_claim"
+    },
+    {
+      "term": "large residual condition",
+      "definition": "Σ′μ(A)={B⊂A:μ(A\\B)≤μ(A)/2}；只能推出μ(B)≥μ(A)/2。对非加性μ，二者不等价。",
+      "source_ranges": [
+        {
+          "start_line": 118,
+          "end_line": 227,
+          "pdf_pages": [
+            3,
+            4
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem1.3",
+      "claim_class": "source_claim",
+      "assumptions": [
+        "a,p,q,r∈(0,∞]；σ-finite setting；size ℓrω(A)=μ(A)^(−1/r)||f1_A||Lr(ω)，r∞为essentialsup。"
+      ],
+      "statement": "p>a：||f||outerLp,∞(ℓr)≈C sup_A μ(A)^(1/p−1/a)||f1_A||outerLa,q(ℓr)。p≤a：相应表达式须sup_A inf_(B∈Σ′μ(A)) μ(A)^(1/p−1/a)||f1_B||outerLa,q(ℓr)。C=C(a,p,q,r)，非统一端点常数。",
+      "source_ranges": [
+        {
+          "start_line": 118,
+          "end_line": 227,
+          "pdf_pages": [
+            3,
+            4
+          ]
+        }
+      ],
+      "proof_steps": [
+        "Sections3/4先用近最优超水平排除集和size分解性质比较分布；p>a由局部outer Hölder与分布下界。",
+        "p≤a先删高水平小μ集保剩余μ条件；反向用Lemma4.1及greedy Lemma4.2选到size下界的集合。",
+        "Section3结束以近极值与ε替代极值存在，幂变换将a化1。AppendixB证明两辅助引理。"
+      ],
+      "unchecked": [
+        "未独立复证一般σ-finite greediness与所有极限；outer Hölder、log-convex interpolation为引用依赖，AppendixA只组合应用。",
+        "不以全文覆盖认证任意size或参数一致常数。"
+      ]
+    },
+    {
+      "name": "Theorem2.1 and Remark4.3",
+      "claim_class": "source_claim",
+      "assumptions": [
+        "p有限且p>a；size S满足分割准次可加常数K；r,q,a>0（可∞）；一般size的p∞另须Remark4.3附加条件。"
+      ],
+      "statement": "p>a的刻画可推广到S_r并让C依赖K；p=∞的扩展不能仅凭通常size公理，Remark4.3要求S(f)(A)μ(A)≤||f||outer∞(S)μ(B)+||f1_(A\\B)||outer∞(S)μ(A)。",
+      "source_ranges": [
+        {
+          "start_line": 333,
+          "end_line": 617,
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      ],
+      "unchecked": [
+        "一般S∞=essentialsup的辅助断言需要非退化/适当size解释，未将其作为项目通用公式。"
+      ]
+    },
+    {
+      "name": "Remark4.4 nonadditive counterexample",
+      "claim_class": "checked_derivation",
+      "assumptions": [
+        "X={1,…,m}，ω=counting，μ(A)=1非空、μ(∅)=0；f=1，0<r<∞，q=∞，p≤a。"
+      ],
+      "statement": "||f||outerLp,∞(ℓr)=m^(1/r)。用Σ″μ(A)={B⊂A:μ(B)≥μ(A)/2}替代Σ′，每个A可选单点B，故错误比较K″=1；原Σ′强制B=A，K′=m^(1/r)。比值随m增长。",
+      "source_ranges": [
+        {
+          "start_line": 736,
+          "end_line": 843,
+          "pdf_pages": [
+            14,
+            15
+          ]
+        }
+      ],
+      "proof_steps": [
+        "全体集合size为|A|^(1/r)，去掉任何非空集费用1，因此分布在0<λ<m^(1/r)为1。",
+        "μ(A\\B)≤1/2只能是A\\B空；μ(B)≥1/2仅需B非空，单点测试遗漏其余m−1点。"
+      ],
+      "behavior_evidence": "behavior/outer-residual-condition.json"
+    }
+  ],
+  "reusable_methods": [
+    "用真实outer分布及近最优排除集而非逐点超水平集。",
+    "需要大剩余集合时控制被删部分μ(A\\B)，非只控制μ(B)。",
+    "外对偶刻画中参数依赖与有限/无限setting分开。"
+  ],
+  "migration": {
+    "claim_class": "inference",
+    "interface": "项目需先定义真实生成覆盖、费用与size，核准σ-finite及零集条件，再套匹配定理。",
+    "gap": "该论文相位Heisenberg tiles与κ-lacunary size，不编码中心立方体公共输入与任意中心/尺度上确界。"
+  },
+  "endpoint_limits": [
+    "p=a落sup-inf分支；不能当sup的极限。",
+    "p∞对标准ℓr可用定理1.3；一般size另保Remark4.3。",
+    "C随(a,p,q,r,K)变化，p→a不主张一致。"
+  ],
+  "constant_dependence": "定理1.3 C(a,p,q,r)；定理2.1增加K；Corollary5.1在κ固定模型下C(a,p,q)不依赖κ，仍不导出项目维数无关。",
+  "external_dependencies": [
+    "Do–Thiele outer Hölder/普通与outerL1比较",
+    "Di Plinio–Fragkos weak-type Carleson仅背景外引，不算该原证明本组全文复核"
+  ],
+  "unchecked": [
+    "未独立认证一般无限σ-finite外对偶、全参数最优常数或源Corollary5.1的所有归一化。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1113,
+    "source_lines": 1119,
+    "required_content_lines": 847,
+    "covered_content_lines": 847,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-eb102a6795f6ce4e/paper.md"
+  },
+  "review_source": "evidence/reviews/TEAM_FG/evidence/P-eb102a6795f6ce4e.json",
+  "review_input_sha256": "8cbf604221481630e2711dc5460d0101e487676365f6cbfdbb38a4461ca5a596"
+}

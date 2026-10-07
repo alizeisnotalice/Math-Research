@@ -1,0 +1,181 @@
+{
+  "paper_id": "P-18e365da3a6d391f",
+  "observed_title": "Lagrange Duality and Farkas’ Lemma for DC Composite Optimization Problems",
+  "authors": [
+    "Chenxi Wu"
+  ],
+  "version": "Advances in Applied Mathematics, 2026, 15(9), 137–149; DOI 10.12677/aam.2026.159380; published 2026-09-16; 13 PDF pages",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 824,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "scope": "entire paper: abstract, DC-composite semi-infinite model and notation, Fenchel/conjugate preliminaries, Lagrange dual, perturbation sets, Theorems 3.1–3.7, convex-constraint specialization, conclusion and all references"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "B01": "direct but specialized: gives geometric characterizations of weak/zero/strong Lagrange duality and a Farkas-type result for DC-composite semi-infinite optimization in locally convex spaces. Useful for making constraint-qualification and dual-attainment dependencies explicit; not a general-purpose LP certificate recipe."
+  },
+  "definitions": [
+    {
+      "name": "DC-composite semi-infinite primal",
+      "statement": "The paper studies inf_x (f₁∘f₂)(x)−(g₁∘g₂)(x) over x∈C subject to h_t(x)−φ_t(x)≤0 for all t∈T; A is the feasible set and p∈X* is used for linear perturbations.",
+      "source_lines": [
+        99,
+        108
+      ],
+      "pdf_pages": [
+        2
+      ]
+    },
+    {
+      "name": "Lagrange dual orientation",
+      "statement": "For each perturbation p, the displayed dual is sup_{λ∈R^{(T)}_+} inf_{μ∈H*} Φ_p(μ,λ); multipliers λ are nonnegative and finitely supported. Thus any certificate must preserve the common outer λ and its inner infimum over conjugate variables.",
+      "source_lines": [
+        261,
+        295
+      ],
+      "pdf_pages": [
+        5
+      ]
+    },
+    {
+      "name": "duality notions",
+      "statement": "The paper distinguishes weak duality v(P)≥v(D), zero duality v(P)=v(D), and strong duality as equality together with attainment of the dual optimum; it also defines perturbed/stable versions over p∈X*.",
+      "source_lines": [
+        308,
+        321
+      ],
+      "pdf_pages": [
+        6
+      ]
+    },
+    {
+      "name": "characterizing sets K and J",
+      "statement": "K is the conjugate epigraph set associated with the primal objective on A; J is the union over one multiplier λ of intersections over the conjugate variables μ of translated epigraph sets. The common λ is material to the later certificate quantifier.",
+      "source_lines": [
+        321,
+        335
+      ],
+      "pdf_pages": [
+        6
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 3.3 (weak and zero duality characterizations)",
+      "assumptions": [
+        "The DC-composite problem and associated Lagrange dual/sets K,J defined in §§1–3",
+        "Perturbations p∈X* are included for the weak-duality criterion"
+      ],
+      "statement": "Stable weak duality for all linear perturbations is equivalent to J⊆K. The zero-duality condition is characterized by J∩({0}×R)⊆K∩({0}×R). These are equivalences in the paper’s set formulation, not consequences of convexity alone for arbitrary models.",
+      "start_line": 471,
+      "end_line": 487,
+      "pdf_pages": [
+        8
+      ],
+      "proof_steps": [
+        "Lemma 3.2 identifies membership in K with a primal value lower bound and membership in J with the corresponding dual-side bound under the paper’s conjugate representation.",
+        "If weak duality holds, a point of J implies the same lower bound for the primal and hence lies in K.",
+        "Conversely, if J⊆K, a strict gap between a perturbed primal and dual value would produce a separating scalar r and a point in J minus K, a contradiction."
+      ],
+      "gaps": [
+        "The paper’s Chinese prose is partly corrupted in text extraction; the statement and set inclusions were checked against rendered original PDF page 8. The full ambient function-space hypotheses are in §§1–2 rather than repeated in Theorem 3.3."
+      ]
+    },
+    {
+      "label": "Theorem 3.5 (stable strong-duality characterization)",
+      "assumptions": [
+        "The paper’s DC-composite semi-infinite primal and dual setup",
+        "Strong duality in Definition 3.1 includes dual optimal-value attainment"
+      ],
+      "statement": "For the perturbed family, stable strong duality is equivalent to J=K; the zero-perturbation version restricts that equality to the slice {0}×R.",
+      "start_line": 547,
+      "end_line": 581,
+      "pdf_pages": [
+        9,
+        10
+      ],
+      "proof_steps": [
+        "Stable strong duality plus Theorem 3.3 gives J⊆K.",
+        "For a point in K, primal value bounds and dual attainment give the matching dual-side bound; the set-membership lemma then places the point in J.",
+        "The zero-perturbation statement follows by restricting both sets to {0}×R."
+      ],
+      "gaps": [
+        "The criterion J=K encodes the required qualification/closedness and attainment properties; it is not an explicit Slater condition or a checkable certificate unless J and K can be characterized for the application."
+      ]
+    },
+    {
+      "label": "Theorem 3.6 (stable Farkas-type equivalence, as printed)",
+      "assumptions": [
+        "The same locally convex DC-composite problem setup",
+        "J=K, equivalently the stable strong-duality condition asserted by Theorem 3.5"
+      ],
+      "statement": "The paper claims J=K iff, for every a∈R and p∈X*, the pointwise lower bound (f₁∘f₂)(x)−(g₁∘g₂)(x)≥⟨p,x⟩+a for every x∈A is equivalent to a dual inequality involving Φ_p. As rendered on PDF p.10, that dual clause reads ∀μ∈H* ∃λ∈R^{(T)}_+ such that Φ_p(μ,λ)≥a.",
+      "start_line": 586,
+      "end_line": 606,
+      "pdf_pages": [
+        10
+      ],
+      "proof_steps": [
+        "For the forward direction, the proof invokes stable strong duality and dual attainment, then uses the lower bound to infer a matching bound on the dual value.",
+        "For the converse, it says the two inequalities imply J=K by Lemma 3.2."
+      ],
+      "gaps": [
+        "Potential quantifier gap, visually verified in the original: the dual is defined as sup_λ inf_μ Φ_p(μ,λ) (equation (8), PDF p.5), and J is a union over λ of intersections over μ (PDF p.6), both requiring a single λ that works for all μ. But the displayed Theorem 3.6(ii) says for each μ there exists a potentially different λ. This ∀μ∃λ statement does not generally imply ∃λ∀μ or sup_λ inf_μ Φ_p≥a. The converse proof does not supply a minimax theorem or a quantifier-interchange argument. Treat the theorem’s equivalence as unverified unless the condition is corrected or an additional hypothesis is supplied."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "No numeric approximation constant or dimension-only bound is provided. The separating/duality criteria are expressed through equality or inclusion of K and J.",
+    "dependence": "The dual functional depends on conjugates, the finite-support multiplier λ, and the perturbation p; the qualification criterion is structural and may require checking closedness/attainment in the chosen locally convex spaces."
+  },
+  "endpoint_limits": {
+    "space": "The setting is general Hausdorff locally convex spaces with dual pairings; results should not be silently specialized to finite-dimensional Euclidean cones or extended to nonclosed spaces without checking the definitions.",
+    "constraints": "The primary model allows an arbitrary index set T and DC-form constraints h_t−φ_t≤0; the later section 4 specializes φ_t=0.",
+    "strong_duality": "Strong duality is stronger than equality of primal/dual values because the paper’s definition also requires dual attainment.",
+    "certificate": "The Farkas-type inequality is a value/certificate statement within the model’s conjugate framework; it is not the standard finite LP alternative without further specialization."
+  },
+  "reusable_methods": [
+    {
+      "method": "Represent duality and Farkas properties as inclusions/equalities of explicitly defined perturbation epigraph sets.",
+      "transfer": "A way to separate weak duality, zero gap, strong duality, and attainment. It is useful only after reproducing the set definitions and hypotheses for the target problem."
+    },
+    {
+      "method": "Track the order of outer multiplier optimization and inner conjugate infimum when translating a dual value into an attained certificate.",
+      "transfer": "The displayed order is sup_λ inf_μ; swapping to inf_μ sup_λ requires an independent minimax or saddle-point result."
+    }
+  ],
+  "unchecked": [
+    "All 13 pages, including the convex-constraint specialization and references, were read. Original PDF pages 5, 6, 9 and 10 were rendered to verify the conjugate dual, set J, duality definitions, and Theorems 3.4–3.6. The extraction garbles much Chinese prose, so ambient hypotheses were not independently normalized beyond the legible setup and the explicit equations.",
+    "I manually checked the order of sup_λ/inf_μ and the implication used in Theorem 3.6; I did not independently reprove the long conjugate-set equivalences in Theorems 3.3–3.5 or verify all cited Fenchel-calculus identities. No appendix is present."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 824,
+    "source_lines": 824,
+    "required_content_lines": 400,
+    "covered_content_lines": 400,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-18e365da3a6d391f/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-18e365da3a6d391f.json",
+  "review_input_sha256": "9b8739a39765bb2a7cb55e2b6823f0fdea7fd4b830b8785eae8279c6d6daa4f9"
+}

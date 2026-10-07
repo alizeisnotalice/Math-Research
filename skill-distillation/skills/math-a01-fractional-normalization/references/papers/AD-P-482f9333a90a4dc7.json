@@ -1,0 +1,290 @@
+{
+  "paper_id": "P-482f9333a90a4dc7",
+  "observed_title": "Convexification Techniques for Fractional Programs",
+  "authors": [
+    "Taotao He",
+    "Siyue Liu",
+    "Mohit Tawarmalani"
+  ],
+  "version": "arXiv:2310.08424v2; manuscript dated June 2024; 38 PDF pages",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 2207,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ],
+      "scope": "entire paper including Sections 1–7, every proof in Appendix A.1–A.15, computational tables and references; rendered PDF pages 6, 8, 14, 16, 22, 23 to inspect key formulas"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "A01": "direct: develops exact projective convex-hull correspondences and finite relaxations for single and multiple fractional objectives, subject to positivity/boundedness conditions."
+  },
+  "definitions": [
+    {
+      "name": "projective transformation Φ",
+      "statement": "For (ρ,x) with ρ>0, Φ(ρ,x)=(1/ρ,x/ρ). It swaps two cross-sections of the same homogenized cone.",
+      "source_lines": [
+        321,
+        331
+      ],
+      "pdf_pages": [
+        6
+      ]
+    },
+    {
+      "name": "fractional image set G",
+      "statement": "Given base functions f:X→R^m and α∈R^m, F={f(x):x∈X} and G={f(x)/(αᵀf(x)):x∈X}, where the denominator is positive.",
+      "source_lines": [
+        412,
+        433
+      ],
+      "pdf_pages": [
+        8
+      ]
+    },
+    {
+      "name": "Boolean quadric polytope (BQP)",
+      "statement": "For a graph G=(V,E), QP_G=conv{(x,z): x∈{0,1}^{|V|}, z_ij=x_i x_j for (i,j)∈E}. It links 0–1 fractional variables to quadratic monomials.",
+      "source_lines": [
+        542,
+        557
+      ],
+      "pdf_pages": [
+        10
+      ]
+    },
+    {
+      "name": "moment hull",
+      "statement": "The convex hull of the univariate moment curve (1,x,…,x^d) over a support interval; the paper obtains reciprocal-function hulls through a projective mapping to this curve.",
+      "source_lines": [
+        1010,
+        1055
+      ],
+      "pdf_pages": [
+        18,
+        19
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 1 (convex hull under projective transform)",
+      "assumptions": [
+        "S⊂R_{++}×R^n"
+      ],
+      "statement": "conv(S)={(ρ,x):(1,x)∈ρ conv(Φ(S)), ρ>0}, and conversely conv(Φ(S))={(σ,y):(1,y)∈σ conv(S), σ>0}.",
+      "start_line": 332,
+      "end_line": 377,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "proof_steps": [
+        "The map Φ is an involution, so it is enough to prove one direction.",
+        "For a point in the transformed convex hull, express it using convex multipliers λ_j on Φ(ρ_j,x_j).",
+        "Reweight by ρλ_j/ρ_j; positivity of every ρ_j makes these nonnegative and their sum is 1, giving a convex combination in S.",
+        "For the reverse inclusion, each original point maps into Φ(S), and the constructed set is convex as a cone slice/projection."
+      ],
+      "gaps": [
+        "The strict half-space ρ>0 is essential; zero-scale recession points are excluded from the exact non-closed hull formula."
+      ]
+    },
+    {
+      "label": "Theorem 2 (fractional functions and base-image hulls)",
+      "assumptions": [
+        "F and G are the sets defined from common base functions f_i and denominator αᵀf",
+        "There exists ε>0 with αᵀf(x)>ε for every x∈X",
+        "F is bounded for the first equality",
+        "For the reverse equality (7b), additionally f_1(x)=1"
+      ],
+      "statement": "The convex hull of G is obtained by scaling conv(F) and intersecting with αᵀg=1; under f_1=1 the reverse hull relation also holds. A closure version uses the recession cone of cl conv(F).",
+      "start_line": 434,
+      "end_line": 480,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "proof_steps": [
+        "Lift both sets by adding the denominator coordinate to S and apply Theorem 1.",
+        "Project the transform hull to obtain the scaling-and-normalization description.",
+        "Boundedness rules out nonzero zero-scale recession vectors satisfying αᵀg=1.",
+        "For the reverse formula, f_1=1 makes the first transformed coordinate recover the scale; boundedness closes the zero-scale case."
+      ],
+      "gaps": [
+        "Without boundedness, Example 1 shows the exact hull formula can add spurious points; the closure formula needs recession directions explicitly."
+      ]
+    },
+    {
+      "label": "Proposition 1 (k-term 0–1 fractional relaxations)",
+      "assumptions": [
+        "Binary domain x∈{0,1}^n",
+        "Positive linear denominator a_0+aᵀx",
+        "2≤k≤n−1"
+      ],
+      "statement": "The k-term relaxation is represented by a homogenized k-th RLT relaxation of the BQP variables with a_0ρ+aᵀy=1. The n-term level yields the exact simultaneous hull in Theorem 3.",
+      "start_line": 707,
+      "end_line": 726,
+      "pdf_pages": [
+        13
+      ],
+      "proof_steps": [
+        "Map each ratio subset to a graph-specific BQP through Theorem 2.",
+        "Use the affine-independence decomposition lemma for the two-term case.",
+        "For higher k, introduce RLT variables so the component lifts share common binary monomials."
+      ],
+      "gaps": [
+        "The general BQP hull may be exponentially complex; intermediate levels are relaxations, not exact hulls."
+      ]
+    },
+    {
+      "label": "Proposition 2 (bilinear fractional box problem and BQP)",
+      "assumptions": [
+        "q_G(x)>0 for all x∈[0,1]^{|V|}",
+        "Numerator/denominator are bilinear polynomials over the box"
+      ],
+      "statement": "The convex hull of the fractional lift G_G equals {(ρ,y,w):(y,w)∈ρ QP_G, ρ≥0, denominator-normalization=1}; the reverse hull identity also holds. This implies an optimizer exists at a binary vertex for the stated bilinear-ratio class.",
+      "start_line": 767,
+      "end_line": 790,
+      "pdf_pages": [
+        14
+      ],
+      "proof_steps": [
+        "Linearize each bilinear term x_i x_j with BQP variables.",
+        "Apply Theorem 2 to the positive denominator q_G.",
+        "A linear objective over the resulting convex hull attains its optimum at an extreme point corresponding to a BQP vertex."
+      ],
+      "gaps": [
+        "Polynomial-time solvability follows only for graph classes with tractable BQP separation, such as the stated series-parallel case."
+      ]
+    },
+    {
+      "label": "Proposition 3 (quadratic ratio to quadratic graph hull)",
+      "assumptions": [
+        "X∩L nonempty and bounded",
+        "q(x)>0 on X∩L",
+        "L={x:Cx=d}"
+      ],
+      "statement": "The hull of the normalized quadratic lift is obtained by scaling conv{(x,xxᵀ):x∈X}, imposing denominator normalization and the lifted affine-face equation. For X=R_+^n this yields an exact completely positive formulation.",
+      "start_line": 876,
+      "end_line": 895,
+      "pdf_pages": [
+        16
+      ],
+      "proof_steps": [
+        "First use Theorem 2 without the affine restriction.",
+        "Represent L by the valid nonnegative quadratic expression ||Cx−d||²=0.",
+        "Intersect with its supporting hyperplane; the cited face-intersection lemma preserves convexification.",
+        "Specialize the quadratic hull to the completely positive cone for nonnegative orthant X."
+      ],
+      "gaps": [
+        "Exact completely positive optimization is generally hard; the paper’s SDP variant is exact only in the separately stated ball setting or as a relaxation."
+      ]
+    },
+    {
+      "label": "Theorem 3 (finite hierarchy for multiple ratios)",
+      "assumptions": [
+        "m,n positive integers",
+        "X⊆{0,1}^n described by linear inequalities",
+        "Every denominator a_i0+a_iᵀx is positive on X"
+      ],
+      "statement": "The projected hierarchy is nested, proj_{ρ,y}(R_1)⊇…⊇proj_{ρ,y}(R_n)=conv(G); level n is exact for the simultaneous hull of all ratios.",
+      "start_line": 1232,
+      "end_line": 1252,
+      "pdf_pages": [
+        22
+      ],
+      "proof_steps": [
+        "Lift all ratios with shared monomial variables u.",
+        "At each level k, relax each ratio-specific projection with the same k-th RLT variables.",
+        "At level n, RLT_n describes the finite binary monomial hull.",
+        "The affine-independence decomposition lemma combines the individual lifts into the simultaneous hull."
+      ],
+      "gaps": [
+        "Exactness is finite but level-n formulation may be exponentially large; no general polynomial-time claim is made."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "The projective hull identities depend on a uniform denominator margin ε>0 and bounded F. The multiple-ratio RLT hierarchy is exact at k=n; intermediate levels give nested outer relaxations. BQP optimization is polynomial for the stated series-parallel graph case.",
+    "dependence": "RLT/BQP size grows with n and hierarchy level; CP cone formulations are exact representations but can be computationally intractable. Numerical performance statements (gap closed, runtime) are instance- and solver-dependent."
+  },
+  "endpoint_limits": {
+    "denominator": "Strict positive denominator is required on the entire feasible set; Theorem 2 strengthens this to a uniform ε>0.",
+    "boundedness": "Bounded F is needed to exclude nonzero recession points from the exact projective hull relation; without it use the explicit closure/recession formula.",
+    "binary": "The finite exact hierarchy assumes a binary domain with shared monomial lifts; continuous-variable variants require their own convexification.",
+    "graph": "BQP relaxations are exact/polynomial only for special graph structures; arbitrary BQP hulls can be NP-hard to separate.",
+    "quadratic": "Quadratic-ratio CP representation assumes bounded domain, positive denominator, and correct affine-face restriction; copositive/CP hardness remains."
+  },
+  "reusable_methods": [
+    {
+      "method": "Projective convexification via homogenize then renormalize",
+      "transfer": "For a common denominator that is uniformly positive, replace the fractional image by a linear slice of the base-function convex hull. Preserve all shared inputs and shared constraints in the lifted object; independent per-event hulls can be strictly weaker, as Example 4 demonstrates."
+    },
+    {
+      "method": "BQP/RLT lift for finite binary ratios",
+      "transfer": "Useful for discretized selection of scales, centers, or source labels with affine ratios; add one common set of binary monomials across all ratios to retain shared-choice coupling."
+    },
+    {
+      "method": "Copositive/completely positive formulation for quadratic ratios",
+      "transfer": "An exact modeling identity for nonnegative quadratic variables under positive denominator; using an SDP/DNN approximation requires separate containment and gap justification."
+    },
+    {
+      "method": "Moment-hull transformation for univariate reciprocals",
+      "transfer": "Map reciprocal terms with poles outside the support interval to a polynomial moment curve when denominator signs are fixed over the domain."
+    }
+  ],
+  "unchecked": [
+    "Full paper and every Appendix A proof were read. I independently checked that Φ is an involution, verified the convex-combination reweighting in Theorem 1, and checked the role of positivity and boundedness in Theorem 2. I did not independently rederive every BQP/RLT and completely-positive cone characterization, reproduce the numerical experiments, or validate solver tolerances; those portions remain author-reported or depend on cited polyhedral/moment results. The paper supplies a counterexample to the weaker strategy that convexifies each ratio separately, which is relevant to preserving joint choices."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 2207,
+    "source_lines": 2207,
+    "required_content_lines": 1607,
+    "covered_content_lines": 1607,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-482f9333a90a4dc7/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-482f9333a90a4dc7.json",
+  "review_input_sha256": "8facb7878adc91b73ec8351fa42870de9dfff706d0f8ceea2c1166002a0e58b8"
+}

@@ -1,0 +1,301 @@
+{
+  "paper_id": "P-08ccea72ef78920a",
+  "observed_title": "On the duality gap and Gale’s example in conic linear programming",
+  "authors": [
+    "Constantin Zălinescu"
+  ],
+  "version": "arXiv:2205.12631v2, September22,2022; local14-page PDF.",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 750,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "scope": "Read complete paper.md in sequential ranges1–255,256–505,506–750: introduction and convex-analysis preliminaries, all Proposition1–2/Corollary3–5/Example4, Gale Lemma7/Proposition8, original ℓp example/domain/closure discussion and references. No appendix. PDF pages2,5,7,8,10,13 rendered: visually retained overbars erased by text extraction, corrected Example4 printed location, Gale definition and gap formula."
+    }
+  ],
+  "topic_relevance": {
+    "B01": "direct: conic weak/strong duality through the value function; exact duality gap and dual-attainment separation in perturbed Gale example.",
+    "B02": "adjacent: infinite sequence LP and infinitely indexed dual inequalities; finite-dimensional truncation is not justified as full separation.",
+    "B04": "direct: topology-dependent value-function lower semicontinuity, subdifferentiability and four precise qualification conditions; boundary counterexample."
+  },
+  "definitions": [
+    {
+      "name": "Conic primal/dual and topology",
+      "statement": "X,Y Hausdorff locally convex, A:X→Y continuous linear, c∈X*, b∈Y, P⊂X,Q⊂Y convex cones. Primal inf⟨x,c⟩ over x∈P,Ax−b∈Q; dual sup⟨b,y*⟩ over y*∈Q+,c−A*y*∈P+. Positive cones use≥0 pairing, X* and Y* are continuous topological duals.",
+      "source_lines": [
+        20,
+        27,
+        120,
+        143
+      ],
+      "pdf_pages": [
+        1,
+        3
+      ]
+    },
+    {
+      "name": "Value function and lower semicontinuous envelope",
+      "statement": "h_c(y)=inf{⟨x,c⟩:x∈P,Ax−y∈Q}; dom h_c=A(P)−Q. Its lower semicontinuous envelope is bar h_c, distinct from h_c. PDF2 and5 overbars are lost in paper.md; Proposition1(iv) says bar h_c is proper iff h_c* proper, NOT h_c proper iff dual feasible.",
+      "source_lines": [
+        65,
+        98,
+        139,
+        151,
+        217,
+        225
+      ],
+      "pdf_pages": [
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "name": "Intrinsic core",
+      "statement": "icr E is the relative algebraic interior in aff E; Y0=span(A(P)−Q) carries its induced topology. icr, ambient int and relative int are not interchangeable without hypotheses.",
+      "source_lines": [
+        53,
+        64,
+        249,
+        255
+      ],
+      "pdf_pages": [
+        2,
+        5
+      ]
+    },
+    {
+      "name": "Gale finite-sequence model",
+      "statement": "X=R^(N) finite-support real sequences with convex-core topology τ_c, X*=R^N all sequences. P=nonnegative finite-support sequences,Q={0}, A x=(x0+Σ_{k≥1}k xk,Σ_{k≥1}xk). Its dual constraints are u≤c0,ku+v≤c_k for all k≥1.",
+      "source_lines": [
+        386,
+        423,
+        434,
+        437
+      ],
+      "pdf_pages": [
+        8,
+        9
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Proposition1: gap and dual attainment are separate",
+      "assumptions": [
+        "Exact Hausdorff locally convex conic model and continuous A,c as defined.",
+        "Finite value h_c(b)∈R for the finite strong-duality equivalence."
+      ],
+      "statement": "Primal value=h_c(b), dual value=h_c**(b)≤h_c(b). At a finite value, lower semicontinuity at b is equivalent to equal finite primal/dual values; ∂h_c(b) nonempty is equivalent to equality plus dual attainment, and optimal dual solutions are precisely∂h_c(b). PDF(iv) concerns properness of bar h_c, not properness of unclosed h_c.",
+      "start_line": 217,
+      "end_line": 244,
+      "pdf_pages": [
+        5
+      ],
+      "proof_steps": [
+        "作者证明：compute the conjugate of Φ_c and h_c as indicators of dual feasible sets (lines124–171), shift perturbation by b (lines181–200), then invoke [16]Theorem2.6.1 (lines227–241).",
+        "本次核验弱对偶：for feasible x,y*, ⟨x,c⟩−⟨b,y*⟩=⟨x,c−A*y*⟩+⟨Ax−b,y*⟩≥0.",
+        "本次核验：Fenchel equality identifies a supporting continuous affine minorant at b with an attained multiplier; continuity/lsc and subgradient existence remain separate concepts."
+      ],
+      "gaps": [
+        "General biconjugate/subdifferential implications are imported convex-analysis results, not independently reproved here.",
+        "Text extraction loses overbars in preliminaries and1(iv); replacing bar h_c by h_c would create a false properness statement in general infinite-dimensional spaces."
+      ]
+    },
+    {
+      "label": "Proposition2 and Corollary3: four qualification routes",
+      "assumptions": [
+        "Let Y0=span(A(P)−Q) with induced topology. At least one of the following four alternatives holds.",
+        "(i)For someλ0∈R, the feasible-value≤λ0 perturbations N0 form a neighborhood of b inY0.",
+        "(ii)There is x0∈P with Ax0−b∈int_{Y0}Q.",
+        "(iii)X,Y are Fréchet spaces, P,Q,Y0 are closed and b∈icr(A(P)−Q).",
+        "(iv)dimY0<∞ and b∈icr(A(P)−Q).",
+        "Corollary3 separately endows real vector spaces X,Y with the convex-core topologies and assumes b∈icr(A(P)−Q)."
+      ],
+      "statement": "Either h_c=−∞ throughout icr dom h_c and both values at b are−∞, or c∈P++A*(Q+), h_c restricted toY0 is continuous at b, values are equal and finite, and the dual is attained. If Y0=Y, dual optimum set is weak* compact.",
+      "start_line": 249,
+      "end_line": 315,
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "proof_steps": [
+        "作者证明：apply [16]Theorem2.7.1 to shifted perturbation; under finite branch use continuous convex subgradient theorem, thenProposition1. Weak* compactness invokes [16]Theorem2.4.9. Corollary3 uses algebraic dual/convex-core subdifferentiability result [7].",
+        "本次核验：the finite branch is conditional; none of four CQ alternatives by itself excludes−∞ objective."
+      ],
+      "gaps": [
+        "These are four alternatives, not a joint collection of assumptions. Weak* compactness additionally needsY0=Y.",
+        "Convex-core topology changes the continuous dual; its corollary cannot be transported to an arbitrary fixed norm topology.",
+        "The nonempty P interior alone does not place b in icr A(P); boundary counterexample remains."
+      ]
+    },
+    {
+      "label": "Example4: finite-dimensional conic gap and printed set typo",
+      "assumptions": [
+        "P0=R×R+, Q0={(y1,y2,y3):y1,y3≥0,y2²≤2y1y3}, A0(x1,x2)=(x1,x2,0).",
+        "Primal minimizes x2 over x∈P0,A0x−b∈Q0."
+      ],
+      "statement": "h0(y)=y2 for y∈R×R+×{0}, h0(y)=0 for y∈R×R×(−P) withP=(0,∞), and∞elsewhere. For b=(b1,b2,0) with b2>0, primal=b2, lower semicontinuous envelope/dual=0, so positive gap occurs at the boundary.",
+      "start_line": 330,
+      "end_line": 344,
+      "pdf_pages": [
+        7
+      ],
+      "proof_steps": [
+        "作者显示上述h0分段式，但末句把b∈R×R×(−P)写成h0(b)=b2>0的正gap位置，和它刚列出的分段式矛盾；PDF7确认是印刷内容而非转换错。",
+        "本次局部修复：取b=(0,1,0)，锥约束强制x2=1，primal=1；b_ε=(0,1,−ε)允许x2=0,x1=1/(2ε)，所以h0(b_ε)=0且b_ε→b。弱对偶非负零候选和下半连续包络给dual=0。正确正gap位置是R×(0,∞)×{0}，非第三坐标负的内域。"
+      ],
+      "gaps": [
+        "This is a local correction to the printedExample4 set, not approval of every external algebraic-duality result cited in the discussion."
+      ]
+    },
+    {
+      "label": "Corollary5: interior and boundary derivative route",
+      "assumptions": [
+        "(c,b) belongs toΛ so primal and dual feasible.",
+        "OneProposition2 qualification holds; interior usesint_{Y0}dom h_c.",
+        "At a boundary point y∈dom h_c\\int_{Y0}dom h_c the right directional derivative(h_c)′_+(y,·) must be proper."
+      ],
+      "statement": "h_c restricted toY0 is finite continuous on relative interior; at the specified boundary points proper directional derivative gives a nonempty subgradient and strong duality with dual attainment.",
+      "start_line": 346,
+      "end_line": 371,
+      "pdf_pages": [
+        7
+      ],
+      "proof_steps": [
+        "作者证明：continuous convex-function facts for interior and [2]Proposition2.134(ii) for boundary derivative criterion.",
+        "核验边界：being on dom alone is insufficient; proper directional derivative is explicit extra input and cannot be dropped."
+      ],
+      "gaps": [
+        "The full boundary derivative theorem is an external dependency; this reading does not independently establish it in every locally convex topology."
+      ]
+    },
+    {
+      "label": "Lemma7 and Proposition8: perturbed Gale gap and attainment",
+      "assumptions": [
+        "Gale finite-support model with convex-core topology as above.",
+        "b=(b1,0),b1>0. Writec0=u+β0,c_k=ku+v+βk(k≥1),u,v∈R,βk≥0.",
+        "Defineβbar=liminf_{k→∞}βk/k∈[0,∞], and ubar=u+min{β0,βbar}."
+      ],
+      "statement": "Unique primal feasible point isb1e0; primal=b1c0, dual supremum=b1ubar, gap=b1max{0,β0−βbar}. The baseline(u,v)is attained optimal ifmin{β0,βbar}=0; dual attained if0<β0<βbar. Ifβ0≥βbar>0, attainment iff inf_{k≥1}(βk−βbar k)>−∞ (a finite real infimum). In the interiorb1>b2>0, dual feasibilityc∈P++ImA* plusCQ(iv) yields zero gap and dual attainment.",
+      "start_line": 439,
+      "end_line": 534,
+      "pdf_pages": [
+        9,
+        10
+      ],
+      "proof_steps": [
+        "作者Lemma7：dual(u+β′,v′) feasibility iffv′≤v+inf_k(βk−β′k); this impliesβ′≤βbar, andβ′<βbar supplies a finite v′ by controlling the tail and finitely many initial indices.",
+        "作者Proposition8：upper bound on dualu′ ismin{c0,u+βbar}; approach it from below usingLemma7, obtaining sup and gap. At the limiting slope, finiteness of the intercept infimum determines attainment.",
+        "本次核验：βbar=∞ gives min{β0,βbar}=β0 andzero gap; theβ0≥βbar>0 branch necessarily has finiteβbar becauseβ0 is real. The gap and attainment statements require all infinitely many indices; finite sampled constraints do not verifyliminf or intercept tail."
+      ],
+      "gaps": [
+        "Zero gap alone does not guarantee attained dual multiplier: β0=1,βk=k−sqrt(k),u=v=0 hasβbar=1,gap0 butinf(βk−k)=−∞.",
+        "βbar andubar overbars are visually confirmed onPDF10 and distinct fromβk,u.",
+        "This formula is specific toGale operator/support/topology, not a general conic gap formula."
+      ]
+    },
+    {
+      "label": "Remark9–10 and Section4: ℓp domain and closure diagnosis",
+      "assumptions": [
+        "Original historical example proposesX=ℓp,1≤p<∞ andA x=(x0+Σn x_n,Σx_n).",
+        "Actual maximal domainD_A=X∩D0, whereD0={x:Σn x_n converges}; weighted absolute-sum domainD_A^a separately."
+      ],
+      "statement": "D_A is dense proper linear subspace; A is not defined on allℓp and its graph is not closed. With all displayed sums required finite andnonnegative sequences, the correctedC′ isC0∪C1 in(17), its closure is{η≥0,y1−1≤y2≤0}; intersection withL before closure requiresη≥1 butafter closureη≥0.",
+      "start_line": 593,
+      "end_line": 682,
+      "pdf_pages": [
+        12,
+        13
+      ],
+      "proof_steps": [
+        "作者证明：Abel test/domain inclusions, dense finite sequences and separation contradiction for nonclosed graph; constructC′ by two nonzero sequence coordinates and calculate closure.",
+        "本次核验更直接：x^(n)=e_n/n has||x^(n)||_p=1/n→0 andA x^(n)=(1,1/n)→(1,0)≠A0; eachx^(n) has finite support. Thus graph is not closed.",
+        "核验：historical full-space bounded/continuousA-adjoint setup is inapplicable. A densely defined unbounded operator can still have an adjoint on a restricted dual domain; do not export the author’s wording as a general statement that every nonclosed operator has no adjoint."
+      ],
+      "gaps": [
+        "The correctedC′ descriptions depend on all sums beingwell-defined and positivity.",
+        "No norm-topology∞-coordinate duality theorem follows from the finite-sequence convex-core example."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "Gap=b1max(0,β0−liminfβk/k); no approximation iteration rate or universal positive gap. Boundary Example4 usesx1=1/(2ε), escaping asε↓0. Gale nonattainment candidate withβk=k−sqrt(k) usesfinite intercept at slope1−δ sinceδk−sqrt(k)≥−1/(4δ), whose magnitude divergesasδ↓0.",
+    "dependence": "Qualifications depend onA,P,Q,chosen topology,Y0 and perturbationb; weak* compactness additionallyY0=Y. No dimension-free/sampling-basedcertificate is given."
+  },
+  "endpoint_limits": [
+    "Finite values,zero gap,dualattainment and primalattainment are distinct.",
+    "Gale b2=0 boundary has explicitgap; b1>b2>0interior usesqualification.",
+    "βbar can∞; thefinite liminf intercept endpoint isseparatefromapproachingslopes.",
+    "h_c vsbarh_c andXcontinuous dualvsalgebraic dualmustremain distinct."
+  ],
+  "reusable_methods": [
+    "Buildh_c perturbation andderivecontinuous dual feasible set fromitsconjugate.",
+    "Checkvaluefunctionlower semicontinuity separatelyfromsubgradient/attainment.",
+    "AuditdomainandtopologybeforeclaimingAcontinuousorusinganadjoint.",
+    "UseexplicitescapingsequencesorGale tails todistinguishgapfromattainment."
+  ],
+  "local_repairs": [
+    {
+      "classification": "printed Example4 location typo",
+      "source_lines": [
+        330,
+        344
+      ],
+      "pdf_pages": [
+        7
+      ],
+      "repair": "Positivegaplocationis b∈R×(0,∞)×{0}; thirdcoordinate<0branchhasvalue0."
+    },
+    {
+      "classification": "extraction loses overbar; no author error",
+      "source_lines": [
+        95,
+        98,
+        217,
+        225,
+        486,
+        521
+      ],
+      "pdf_pages": [
+        2,
+        5,
+        10
+      ],
+      "repair": "Keepbarh_c propernessandβbar/ubar asvisuallyprinted;donot substituteunclosedh_corbaselineu."
+    }
+  ],
+  "unchecked": [
+    "GeneralRockafellar/Fenchel/Fréchetqualificationresultsareexternaldependenciesnot independentlyreproved.",
+    "Fullreading is14pageswithnoappendix;itdoesnotcertifyallcitedsources.",
+    "No transfer to centered-cube privatecommoninput orminimaxisclaimed."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 750,
+    "source_lines": 750,
+    "required_content_lines": 522,
+    "covered_content_lines": 522,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-08ccea72ef78920a/paper.md"
+  },
+  "review_source": "evidence/reviews/TEAM_AB/evidence/P-08ccea72ef78920a.json",
+  "review_input_sha256": "54be1f506a75bfec108102fc73cef88a439272947a04c6031e896f1c191d7e3c"
+}

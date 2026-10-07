@@ -1,0 +1,251 @@
+{
+  "paper_id": "P-faa1738580ee2154",
+  "observed_title": "Optimal Stopping, Randomized Stopping and Singular Control with General Information Flow",
+  "authors": [
+    "Nacira Agram",
+    "Sven Haadem",
+    "Bernt Øksendal",
+    "Frank Proske"
+  ],
+  "version": "arXiv:1802.06347v4；首页日期 27 April 2021。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 766,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "E04": "direct"
+  },
+  "definitions": [
+    {
+      "term": "一般信息流下停止时",
+      "definition": "在给定过滤族 H=(H_t) 下，τ≤T 且对所有 t 有 {τ≤t}∈H_t；H 与过程自然过滤 F 不预设包含关系。",
+      "source_ranges": [
+        {
+          "start_line": 99,
+          "end_line": 150,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "term": "随机化停止过程",
+      "definition": "H 适应、右连续、非降过程 G，G(0)=0 且 G(T)≤1 a.s.；其期望奖励是 E∫₀ᵀk(t)dG(t)。它允许随机分配停止质量，可有总质量小于 1。",
+      "source_ranges": [
+        {
+          "start_line": 151,
+          "end_line": 178,
+          "pdf_pages": [
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "term": "奇异控制编码的停止分布",
+      "definition": "H 适应、右连续非降 ξ 且 ξ(0)=0；通过 G(t)=∫_[0,t]exp(−ξ(s))dξ(s) 得到随机化停止过程，其质量对应控制引起的累计 stopping hazard。",
+      "source_ranges": [
+        {
+          "start_line": 169,
+          "end_line": 201,
+          "pdf_pages": [
+            4
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem 3.1：停止与随机化停止的值等价",
+      "assumptions": [
+        "F 滤过满足通常条件；另给信息流 H（不要求先验满足 H⊂F 或 H⊃F）。",
+        "收益 k 为 F-predictable，连续于 t=0，样本路径左连续且右极限存在；sup_{τ∈T_H} E|k(τ)|=:κ<∞。",
+        "G 属于 H-adapted、右连续非降、G(0)=0、G(T)≤1 的过程类 G_H。"
+      ],
+      "statement": "作者原文声称：在其假设下，随机化停止总质量允许 G(T)≤1 时，sup_G E∫₀ᵀk(t)dG(t)=sup_τ E k(τ)。本组核验发现该结论按论文当前书写、对可取负值的 k 不成立；只能作为带符号/质量条件疑点的相关文献证据，不能无条件引用。",
+      "start_line": 192,
+      "end_line": 232,
+      "pdf_pages": [
+        4,
+        5
+      ],
+      "proof_steps": [
+        "原文正向以 G⁽ⁿ⁾逼近给定普通停止时，并把停止质量补到总质量1；该方向与本反例不冲突。",
+        "原文反向定义 α(r)=inf{s:G(s)≥r}，写 r∈[0,G(T))=[0,1)，再用层析积分比较两个上确界。",
+        "本次直接核对反向比较：G(T)≤1 并不推出 G(T)=1。若 Φ:=sup_τ E k(τ)<0，则从 E∫k dG=∫₀^{G(T)}E k(α(r))dr≤ΦG(T) 不能推出 ≤Φ；负数乘以小于1的质量会变大。",
+        "PDF p5（lines217–232）视觉确认 source 停止时事件写的是 {α(r)≤t}={G(t)≥r}，此式在非负右连续非降G、r>0且约定空集逆为∞时有效；没有 strict-event 错误。另印 G(α(r))=r for a.a. r 是实际错误：G=1_[t0,T],0<t0<T 时对每个r∈(0,1)有α(r)=t0及G(α(r))=1。"
+      ],
+      "gaps": [
+        "明确反例：取任意固定有限 T>0，令 k(t)≡−1。它满足定理中的连续、左连续、右极限及可积假设。普通停止值为 sup_{τ≤T}E k(τ)=−1；而 G(t)≡0 满足 G(0)=0、非降、右连续且 G(T)=0≤1，并给出随机化收益0。因此随机化上确界≥0；又任一可行 G 的收益为 −E G(T)≤0，所以随机化上确界恰为0，与−1不同。定位：条件/定义见 lines 151–178（PDF p.4）；定理与错误的 r∈[0,G(T))=[0,1) 及比较见 lines 192–232（PDF pp.4–5）。",
+        "要修复需改变问题设定，例如强制 G(T)=1（单位总停止质量），或在普通停止问题加入明确的零收益“不停止”选项 τ=∞ 且 k(∞)=0；也可在相容的非负收益条件下重审比较。本文该处没有明示这些修复条件。",
+        "Theorem 3.1 仍与随机化停止等主题直接相关，但其当前全符号结论不能作为正确等式直接复用。其余有关一般信息流的停止策略及 singular-control 变换需按各自定理条件单独判断。",
+        "source p5 的 G(α(r))=r a.a. 断言在跳跃时失效。它是中间断言错误，不是 Stieltjes/quantile 换元公式本身的反例；换元可由累计质量的 pushforward 等式独立证明，见 checked_local_derivations。该局部修复不修 G(T)≤1 与有限停止τ≤T在负收益下的值不等价，也不证明Theorem4.2所有r最优/奇异控制表示。"
+      ],
+      "independent_check": {
+        "status": "独立核对定理反向比较与有限维反例；不代表核验全文全部测度论细节",
+        "calculation": "固定有限T>0，k≡−1：普通停止值=−1；G≡0可行、值0；任意可行G值=−E G(T)≤0，故随机化值=0。",
+        "source_ranges": [
+          {
+            "start_line": 151,
+            "end_line": 178,
+            "pdf_pages": [
+              4
+            ]
+          },
+          {
+            "start_line": 192,
+            "end_line": 232,
+            "pdf_pages": [
+              4,
+              5
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Theorem 4.1–4.2：停止、随机化停止与 singular control 的值和解的对应",
+      "assumptions": [
+        "在 Theorem 4.1 中另要求 H 右连续、E[sup_{0≤t≤T}|k(t)|]<∞；还比较连续奇异控制类及 H-predictable 随机化/停止子类。",
+        "奇异控制 ξ 为 H-adapted、右连续非降，ξ(0)=0；其控制收益为 E∫k(t)e^(−ξ(t))dξ(t)。",
+        "Theorem 4.2 需要存在达到各 sup 的最优停止时/控制；否则只能比较上确界值。"
+      ],
+      "statement": "Theorem 4.1 将最优 stopping、randomized stopping 及 singular control 的上确界值相互等同，并说明在相应可预测类中仍有相同值。Theorem 4.2 给显式变换：停止 τ*→阶跃 G*；随机化 G*→广义逆 α*(r) 作为最优停止时（文中证明先 a.e. r，再借单侧连续性扩为所有 r）；ξ*→G*(t)=∫_[0,t]e^(−ξ*)dξ*；反向 G*→解 dξ*=e^(ξ*)dG*。",
+      "start_line": 234,
+      "end_line": 558,
+      "pdf_pages": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "proof_steps": [
+        "由 w(t)=∫_[0,t]e^(−ξ(s))dξ(s)∈G_H 及 Theorem 3.1，得到 singular value≤stopping value。",
+        "反向对 τ 构造速率 n、从 τ 开始增长的连续 ξ⁽ⁿ⁾，其 e^(−ξ)dξ 质量集中到 τ 右侧；以 k 右侧极限及可积支配给出趋近 E k(τ+)。",
+        "通过 H-predictable projection 将一般 G 的收益转为可预测 G 类，并用可预测停止时逼近说明各类上下界闭合，最终把所有值夹为相等。",
+        "给定已达成的最优 G，将收益表示成随机化层析 ∫₀¹E k(α*(r))dr。每个 α*(r) 的奖励不超过 stopping 最优值；积分等号说明几乎处处 r 最优，再用广义逆的单侧连续性推广。",
+        "控制与随机化过程互换由链式 Stieltjes 变换 G=∫e^(−ξ)dξ 和 dξ=e^ξdG 建立。原文把细节集中于第5–11页；作者证明未由本次独立完整再推。"
+      ],
+      "gaps": [
+        "证明使用 k 的左/右单侧极限、右连续过滤与可预测投影；缺失这些正则条件不能照搬。",
+        "ξ→G 的变换包含 e^(−ξ) 的左/右端点约定；原文在 Stieltjes 积分里使用 [0,t]，实现需明确跳点取值。",
+        "这是一种 stopping/randomization/control 表示，不给所研究的中心立方体尺度阈值最优停止结构。"
+      ]
+    },
+    {
+      "name": "Theorem 5.2：部分信息 singular-control 的一阶变分条件",
+      "assumptions": [
+        "H 满足 usual conditions 且 H_t⊂F_t。",
+        "ξ̂∈A_H 为收益 J(ξ)=E∫k(s)e^(−ξ(s))dξ(s) 的最优控制。",
+        "允许变分 ζ 属于作者定义的可行切锥 V(ξ̂)，使小幅 ξ̂+yζ 仍可行。"
+      ],
+      "statement": "必要条件是条件剩余收益 E[∫_t^T k(s)e^(−ξ̂(s))dξ̂(s)−k(t)e^(−ξ̂(t))|H_t]≥0，以及以 dξ̂(t) 积分后的互补松弛等式为零。作者还证明这两条对所有可行方向推出一阶方向导数 D(ξ̂,ζ)≤0。",
+      "start_line": 600,
+      "end_line": 717,
+      "pdf_pages": [
+        12,
+        13,
+        14
+      ],
+      "proof_steps": [
+        "对 J(ξ̂+yζ) 作右方向导数并用指数项微分，得到 D=E∫k e^(−ξ̂)(−ζdξ̂+dζ)。",
+        "用只在小区间斜坡增加的 H_t-可测扰动推出条件剩余收益非负。",
+        "取 dζ=±dξ̂ 并用 Fubini，把一阶最优性改写成关于 dξ̂ 的互补松弛等式。",
+        "对充分性方向，正文称反向推导可得，对所有 ζ 有 D≤0；细节省略，故本次不记作已独立核验的充分性证明。"
+      ],
+      "gaps": [
+        "变分命题与非负收益等通常优化条件相关；只有在作者指定可行切锥和正则性下成立。",
+        "Theorem 5.2 不涉及 Snell envelope 或通常停止包络的超鞅最小性。"
+      ]
+    }
+  ],
+  "constant_dependence": "不存在一个解析算子常数；Theorem 3.1 的两侧值相等。可积假设以 κ=sup_{τ∈T_H}E|k(τ)|<∞ 或 Theorem 4.1 的 E sup_t|k(t)|<∞ 表示。",
+  "endpoint_limits": [
+    "全文 15 页（包括 Section 5 变分论证、全部证明与参考文献）已读；无附录。",
+    "本文没有定义/证明经典 Snell envelope 最小超鞅定理，因此对 E04 的可迁移证据限 stopping↔randomized stopping↔singular control 接口。",
+    "作者在结尾 Theorem 5.2 充分性证明略去细节；该缺口已明确记录。",
+    "全文读取与作者证明结构总结，不代表对条件期望投影、optional/predictable 版本或 Stieltjes 随机积分所有技术引理的独立核验。",
+    "2026-10-06 audit_fg_16 独立撤回strict event误读；实际source逆值中间断言错误经PDF p5确认。仅本地pushforward修复换元，不升级representation theorem。"
+  ],
+  "reusable_methods": [
+    "用非降累积分布 G 编码随机停止；逆分位时间 α(r) 把随机停止分解成普通停止时的层析。",
+    "用 e^(−ξ)dξ 把 singular-control 累积 hazard 变成总量至多1的 stopping mass。",
+    "若要从值等价升级成最优策略对应，需证明所有层析样本的奖励都被最优值控制，并利用平均达到上界推出几乎处处最优；推广到所有参数值需额外单侧连续性。",
+    "partial information 情形以 H-可预测投影守住控制适应性，而不是默默把过程改写成自然过滤版本。"
+  ],
+  "unchecked": [
+    "未独立证明一般信息流下定理中所有停止时反演可测性与可积交换。",
+    "未独立重做 Theorem 4.1 关于预测投影、announceable stopping sequences 的测度论论证。",
+    "没有经典 Snell envelope 定理证据；若要求 Snell envelope 本身，仍需检索并深读对应论文。",
+    "Theorem 3.1 按原文 G(T)≤1 对可取负值的收益有明确反例；尚未查阅勘误/后续修订能否修复，引用时应写明不可无条件成立。"
+  ],
+  "checked_local_derivations": [
+    {
+      "name": "Quantile pushforward for finite right-continuous cumulative mass",
+      "status": "checked_local_derivation_not_source_theorem",
+      "assumptions": [
+        "固定路径G:[0,T]→[0,1]非降右连续，G(0)=0；令m=G(T)，ν_G为(0,T]上的Lebesgue–Stieltjes measure，其[0,t]质量G(t)。",
+        "α(r)=inf{s∈[0,T]:G(s)≥r}，r∈(0,m]；空集取∞。可允许α延至r∈(0,1]，但r>m时为∞并须指定k(∞)=0。"
+      ],
+      "proof_steps": [
+        "对r∈(0,m]及t∈[0,T]，α(r)≤t iff r≤G(t)：正向在inf点用右连续（终点T由集合非空处理），反向t本身在上集。平坦段且r=G(t)可在更早处首次达到，仍保≤事件；不用G(α(r))=r。",
+        "于是 (α#Leb_(0,m])([0,t])=Leb(0,G(t)]=G(t)。各累计区间决定finite measures，所以α#Leb_(0,m]=ν_G。",
+        "对bounded Borel k有∫_(0,T] k(t)dG(t)=∫_(0,m]k(α(r))dr；一般绝对可积k以截断/正负分解处理。随机路径下仍需joint measurability及Fubini绝对可积条件才取期望。",
+        "G(0)=0排除初始atom；r=0、r=m端点对Leb积分为零质量，结论未借其取值；T跳跃由m终点事件处理。此处不声称源定义的强制finite stoppingτ≤T在m<1时与randomized stopping等价。"
+      ],
+      "source_ranges": [
+        {
+          "start_line": 151,
+          "end_line": 178,
+          "pdf_pages": [
+            4
+          ]
+        },
+        {
+          "start_line": 217,
+          "end_line": 232,
+          "pdf_pages": [
+            5
+          ]
+        }
+      ]
+    }
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 762,
+    "source_lines": 766,
+    "required_content_lines": 513,
+    "covered_content_lines": 513,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-faa1738580ee2154/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-faa1738580ee2154.json",
+  "review_input_sha256": "2dfdbbe36b58823e94c5e9e80db7696635fed7c7db20a1a9fe7ce71b9091104c"
+}

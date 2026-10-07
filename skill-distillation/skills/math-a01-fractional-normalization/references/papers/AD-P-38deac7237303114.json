@@ -1,0 +1,213 @@
+{
+  "paper_id": "P-38deac7237303114",
+  "observed_title": "Fractional 0–1 Programming and Submodularity",
+  "authors": [
+    "Shaoning Han",
+    "Andrés Gómez",
+    "Oleg A. Prokopyev"
+  ],
+  "version": "arXiv:2012.07235v1 (2020 preprint); 18 PDF pages",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1133,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "scope": "entire note including all theorem proofs, applications, conclusion and references"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "A01": "direct: the work studies sums of ratios in binary fractional programs and exact submodularity conditions for each single-ratio term."
+  },
+  "definitions": [
+    {
+      "name": "single-ratio set function",
+      "statement": "h(S;a,b)=(Σ_{i∈S}a_i)/(b_0+Σ_{i∈S}b_i) on a downward-closed feasible family F.",
+      "source_lines": [
+        139,
+        176
+      ],
+      "pdf_pages": [
+        3
+      ]
+    },
+    {
+      "name": "submodularity on F",
+      "statement": "Diminishing returns; equivalently the two-element discrete second difference is nonpositive when S∪{i,j}∈F.",
+      "source_lines": [
+        189,
+        205
+      ],
+      "pdf_pages": [
+        4
+      ]
+    },
+    {
+      "name": "standing structural assumptions",
+      "statement": "A1 denominators are strictly positive on F; A2 a_i≥0,b_0≥0,b_i>0; A3 F is downward closed.",
+      "source_lines": [
+        75,
+        95
+      ],
+      "pdf_pages": [
+        2
+      ]
+    },
+    {
+      "name": "additional condition for Theorem 1",
+      "statement": "Theorem 1 additionally requires b_0>0.",
+      "source_lines": [
+        164,
+        173
+      ],
+      "pdf_pages": [
+        3
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 1 (necessary and sufficient submodularity criterion)",
+      "assumptions": [
+        "A1 denominator positive for every feasible set",
+        "A2 a_i≥0, b_0≥0, b_i>0",
+        "A3 F downward closed",
+        "b_0>0"
+      ],
+      "statement": "h is submodular on F iff for every admissible S and distinct i,j not in S with S∪{i,j}∈F, h(S∪{i})+h(S∪{j})≤a_i/b_i+a_j/b_j.",
+      "start_line": 256,
+      "end_line": 328,
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "proof_steps": [
+        "Write A_S=Σ_{j∈S}a_j and B_S=b_0+Σ_{j∈S}b_j.",
+        "Substitute the diminishing-returns condition into the ratio formula.",
+        "Cross-multiply only positive denominators, then rearrange to obtain the stated pairwise threshold condition.",
+        "Reverse the algebra to get the equivalence."
+      ],
+      "gaps": [
+        "The theorem is for one ratio with a positive intercept b_0; the paper separately shows homogeneous ratios with b_0=0 need not be submodular."
+      ]
+    },
+    {
+      "label": "Proposition 1 (monotonicity suffices)",
+      "assumptions": [
+        "A1–A3"
+      ],
+      "statement": "If h is monotone nondecreasing over F, then h is submodular over F.",
+      "start_line": 344,
+      "end_line": 375,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "proof_steps": [
+        "Monotonicity is rearranged to h(S)≤a_j/b_j for every admissible added item j.",
+        "Apply this to i and j and use Theorem 1’s criterion."
+      ],
+      "gaps": [
+        "Sufficiency only; the paper provides a counterexample showing submodularity does not generally imply global monotonicity."
+      ]
+    },
+    {
+      "label": "Proposition 3 (homogeneous-ratio obstruction)",
+      "assumptions": [
+        "b_0=0",
+        "Some feasible S contains at least three items with distinct a_i/b_i"
+      ],
+      "statement": "Under these assumptions h is not submodular.",
+      "start_line": 480,
+      "end_line": 510,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "proof_steps": [
+        "Order three item ratios strictly.",
+        "Compare the weighted averages after adding the largest-ratio item.",
+        "The resulting inequality contradicts diminishing returns."
+      ],
+      "gaps": [
+        "This is a sufficient obstruction, not a full characterization when b_0=0."
+      ]
+    },
+    {
+      "label": "Proposition 4 (assortment sufficient condition)",
+      "assumptions": [
+        "MMNL finite-support setup described in Section 4.1",
+        "Positive choice weights and revenue data as in the model"
+      ],
+      "statement": "If revenue spread (r_max−r_min)/r_min is bounded by the minimum no-purchase odds over feasible assortments, the revenue function is nondecreasing and submodular.",
+      "start_line": 605,
+      "end_line": 652,
+      "pdf_pages": [
+        10,
+        11
+      ],
+      "proof_steps": [
+        "Rewrite the spread condition as r_max q(S;v)≤r_min.",
+        "Bound current assortment revenue above by r_max q(S;v).",
+        "This gives the marginal monotonicity condition; Proposition 1 yields submodularity."
+      ],
+      "gaps": [
+        "Application-specific sufficient condition; the paper’s industry discussion uses contextual assumptions rather than a universal empirical claim."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "Theorem 1 has no approximation constant. Greedy guarantees cited for monotone submodular maximization include 1−1/e under cardinality constraints; Proposition 6 has its own ratio-spread condition.",
+    "dependence": "Submodularity test depends on pairwise ratios a_i/b_i and current feasible-set numerator/denominator A_S,B_S; no estimate for the central maximal operator follows without a separate model mapping."
+  },
+  "endpoint_limits": {
+    "positive_intercept": "Theorem 1 requires b_0>0. The authors’ Proposition 3 establishes non-submodularity for a common b_0=0 case with three distinct item ratios.",
+    "denominator": "Strict positivity is needed everywhere on F for ratios and cross multiplication.",
+    "feasible_family": "The stated diminishing-returns equivalence and applications use downward-closed F.",
+    "objective": "The multiple-ratio objective is a sum of these single-ratio terms; the submodularity certificate is checked term by term."
+  },
+  "reusable_methods": [
+    {
+      "method": "Test a ratio set function using discrete second differences and positive-denominator cross multiplication",
+      "transfer": "Relevant only when a finite discretization genuinely has 0–1 choices and a linear-over-linear score with b_0>0. It does not certify a continuous cube supremum or the maximal-cube operator."
+    },
+    {
+      "method": "Turn monotonicity into a tractable sufficient test for submodularity",
+      "transfer": "For a finite search layer, bound every current ratio by each admissible item marginal ratio; preserve the exact feasible family."
+    }
+  ],
+  "unchecked": [
+    "I read the full paper and manually checked the algebraic equivalence in Theorem 1 under positive denominators, along with the monotonicity implication. I did not independently derive the cited 1−1/e greedy guarantee or validate the paper’s external application data; those remain author-reported or cited results."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1133,
+    "source_lines": 1133,
+    "required_content_lines": 573,
+    "covered_content_lines": 573,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-38deac7237303114/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-38deac7237303114.json",
+  "review_input_sha256": "e70b325204929991f604ffc0ac6ef5ef48cb6ef3f30875a658534fa92a2f53fc"
+}

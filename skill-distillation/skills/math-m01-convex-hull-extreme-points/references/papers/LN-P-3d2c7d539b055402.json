@@ -1,0 +1,114 @@
+{
+  "paper_id": "P-3d2c7d539b055402",
+  "observed_title": "On the Krein-Milman-Ky Fan Theorem for Convex Compact Metrizable Sets",
+  "authors": [
+    "Mohammed Bachir"
+  ],
+  "version": "arXiv:1604.08473v4; 2016 preprint text in corpus",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 1019,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "M01",
+    "decision": "direct",
+    "basis": "The paper proves a metrizable Krein-Milman-Ky Fan result and applies it to weak and weak-star compact convex sets, replacing extreme points by exposed points."
+  },
+  "definitions": [
+    "A point x in a convex set K is extreme if x=ty+(1-t)z with 0<t<1 and y,z in K forces y=z=x.",
+    "For a family Phi of real-valued functions, x is Phi-exposed when one phi in Phi has a strict maximum over K only at x.",
+    "Phi-convex hull is the intersection of the Phi-convex sets containing the given set; in a locally convex space with Phi equal to the continuous dual, it is the closed convex hull."
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "S is Hausdorff; Phi is a Banach space of real-valued functions on S.",
+        "K is nonempty, compact, metrizable, and Phi-convex.",
+        "Restrictions of Phi-functions to K are continuous and uniformly bounded by alpha_K times the Phi norm.",
+        "Phi separates points of K."
+      ],
+      "statement": "The Phi-exposed points are nonempty, the exposing functions contain a dense G_delta subset of Phi, and K is the Phi-convex hull of its Phi-exposed points.",
+      "start_line": 138,
+      "end_line": 146,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "The key variational lemma studies f^×(phi)=sup_{x in K}(phi(x)-f(x)); it is convex and 1-Lipschitz.",
+        "Gateaux differentiability of f^× is equivalent, under compact metrizability and point-separating Phi, to a strong minimum of f-phi. This yields a dense G_delta set of perturbations with a unique maximizer when f is the indicator of K.",
+        "For the hull assertion, assume k0 lies outside the Phi-convex hull of exposed points. By the defining intersection representation, some h in Phi strictly separates k0 from that hull. A sufficiently small perturbation h+psi still separates them and exposes K at a point in the hull, contradicting maximality at k0."
+      ],
+      "author_claim": "Theorem 2 and its Banach-space corollaries state that weak-compact metrizable convex sets are the weak-closed convex hull of exposed points, and the analogous result holds weak-star for dual spaces.",
+      "checked_derivation": "I read all 17 extracted pages and checked the proof's separation/perturbation contradiction and the roles of compactness, metrizability, point separation, and the uniform bound. I did not independently reprove the cited differentiability and Fenchel-duality results used inside the key lemma.",
+      "transfer_inference": "This supports convex-hull reduction to exposed witnesses only when the feasible convex set is compact metrizable in the specified topology; it does not justify finite support in infinite dimensions."
+    },
+    {
+      "assumptions": [
+        "K is compact metrizable; Phi is a closed Banach subspace of C(K), separates points, and contains constants."
+      ],
+      "statement": "The weak-star exposed points of the dual unit ball B_{Phi*} are exactly plus/minus evaluation functionals at Phi-exposed points of K, and B_{Phi*} is their weak-star closed convex hull.",
+      "start_line": 177,
+      "end_line": 182,
+      "pdf_pages": [
+        3
+      ],
+      "proof_steps": [
+        "Identify the supremum norm as the maximum of the support function of K at phi and at -phi.",
+        "Use differentiability of the supremum function to identify the unique evaluation functional at an exposing point.",
+        "Apply the exposed-point hull theorem to the metrizable dual ball."
+      ],
+      "author_claim": "Theorem 3 gives the stated exposed-functional characterization and weak-star closed convex hull representation.",
+      "checked_derivation": "I followed the argument on pages 11-13 and checked that the plus/minus sign comes from the two branches of the supremum norm; the cited differentiability characterization is imported from an earlier result.",
+      "transfer_inference": "Evaluation functionals can be used as extremal witnesses for dual-ball arguments once compact metrizability and the function-space hypotheses have been verified."
+    }
+  ],
+  "constant_dependence": "No quantitative constant is asserted in the main Krein-Milman conclusion. The norm-control parameter alpha_K is a hypothesis for the perturbation argument. No dimension-only Caratheodory bound is claimed for general compact metrizable locally convex sets.",
+  "endpoint_limits": [
+    "Metrizability is essential to the exposed-point strengthening: the paper gives a nonmetrizable weak-star compact dual ball with no exposed points.",
+    "Krein-Milman gives a closed convex hull; in infinite dimensions it does not imply a finite convex combination.",
+    "Krein spaces (indefinite inner-product spaces) are unrelated to the Krein-Milman theorem despite the shared name."
+  ],
+  "reusable_methods": [
+    "Use the actual topology and its continuous dual to identify the correct closed convex hull.",
+    "Perturb a separating functional by a small exposing perturbation while preserving a strict gap.",
+    "When reducing an infinite-dimensional argument to finitely many points, add a separate finite-dimensional Caratheodory hypothesis rather than inferring it from Krein-Milman."
+  ],
+  "unchecked": [
+    "The referenced Deville-Godefroy-Zizler/Zajicek differentiability theorem and the cited nonconvex Fenchel duality result were not independently re-proved.",
+    "The PDF-to-text extraction has corrupted some notation; theorem statements and proof structure were cross-checked against page boundaries, but no visual PDF review was needed for the prose statements recorded here."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1015,
+    "source_lines": 1019,
+    "required_content_lines": 753,
+    "covered_content_lines": 753,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-3d2c7d539b055402/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/P-3d2c7d539b055402.json",
+  "review_input_sha256": "4c3cb6014e09727f9bb4756542335b11c0693a5bb301770cb0a85152fb1c1103"
+}

@@ -1,0 +1,278 @@
+{
+  "paper_id": "P-9dec1113f304933f",
+  "observed_title": "Anti-concentration inequalities for log-concave variables on the real line",
+  "authors": [
+    "Tulio Gaxiola",
+    "James Melbourne",
+    "Vincent Pigno",
+    "Emma Pollard"
+  ],
+  "version": "arXiv:2505.05793v1 watermark9May2025; stateddate24May2025;15pages",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 860,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "scope": "全文15页：定义、continuous/discrete全部证明、Section5推广与references，无独立appendix；PDF5/8/11/13/14公式视觉核验。"
+    }
+  ],
+  "proof_verified": false,
+  "topic_relevance": [
+    {
+      "code": "K04",
+      "decision": "direct",
+      "reason": "1D continuous/discrete logconcave anti-concentration andmoment bounds"
+    },
+    {
+      "code": "B03",
+      "decision": "adjacent",
+      "reason": "Convexorder extremal distribution reduction,distinctfromunconstrainedmomentoptimization"
+    }
+  ],
+  "definitions": [
+    "Continuous M essentialLebesguedensitysup vs discreteM maxpointmass, notsame units.",
+    "≺cx matchesmean andconvextests; ≺icx increasingconvextests; ≺1 increasingtests.",
+    "Continuousvariance-M bound1/12≤M²Var≤1;discretecorrectionM²Var+M≤1."
+  ],
+  "theorem_cards": [
+    {
+      "label": "Definitions and one/two crossing orders",
+      "start_line": 145,
+      "end_line": 224,
+      "pdf_pages": [
+        3,
+        4
+      ],
+      "assumptions": [
+        "Reference measureµ LebesgueR orcountingZ; signedφ integrable, mass0; twocrossing alsofinite firstmomentandmean0.",
+        "Forstrict equalityneed strictlyincreasing/strictlyconvex test andwell-defined integral."
+      ],
+      "statement": "Ifφ negativeleft/positiveright, increasingf gives∫fφ≥0. Ifφnegative inside(x0,x1)/positiveoutside plusmass/firstmoment0, convexf gives∫fφ≥0.",
+      "proof_steps": [
+        "Onecrosssubtractf(x′); productnonnegative,zeromass removesconstant.",
+        "TwocrosssubtractsecantaffineA throughcrossings; convexf−A hasmatching signs,affineintegralmoment0.",
+        "Strictconvexequalityforcesφoutsidecrossings0; remainingtwoatoms mass/mean equations withdistinctpointsforceboth0."
+      ],
+      "gaps": [
+        "Need bothmass andmeanconstraints forconvexorder; signpatternaloneinsufficient.",
+        "Signedtestintegral mustexist, e.g∫|fφ|<∞, toavoidundefined∞−∞."
+      ]
+    },
+    {
+      "label": "Asymmetric Laplace and Proposition3.3",
+      "start_line": 239,
+      "end_line": 306,
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "assumptions": [
+        "Continuous logconcavedensity, chosenpointt with0<f(t)<∞; meanfinite.",
+        "Allowmodearbitraryrealtranslation; originalDef3.1 prints m∈Z butcontinuousproofrequiresm∈R."
+      ],
+      "statement": "Scaleλ1,λ2≥0,λ1+λ2>0: M=1/(λ1+λ2),EX−mode=λ2−λ1,Var=λ1²+λ2². Forfixedpositivef(t),thereiscomparison asymmetricLaplacewithsamevalueatt,samemean,andX≺cx Xλ.",
+      "proof_steps": [
+        "Fixλ1+λ2=1/f(t); meanvariescontinuously fromt+1/f(t) to t−1/f(t).",
+        "Logdensitydifferenceconvex onhalflines impliesatmosttwo crossings; one-sidedendpoint exponentialsbracketmeanviaonecrossorder.",
+        "Intermediatevalue matchesmean; twocrossorder thengivesconvexdomination."
+      ],
+      "gaps": [
+        "PropositionliteraltanyR failsoutside support f(t)=0 ifrequireLaplacewithmodet. Restrictedproofonlypositivef(t);Theoremvariancecaninterpret1/f²=∞ outside.",
+        "Original prooftext gλ(0)=0 onnegativehalflinehasendpointx0densitypositive; a.e. endpoint immaterial forLebesgue."
+      ]
+    },
+    {
+      "label": "Theorems1.1/3.4 pointdensity variancebound",
+      "start_line": 308,
+      "end_line": 323,
+      "pdf_pages": [
+        6
+      ],
+      "assumptions": [
+        "Lebesguedensity logconcave; finitevariance;0<f(t)<∞ orf0 RHS∞."
+      ],
+      "statement": "2VarX≤1/f(t)²+(EX−t)²; atmean VarX f(EX)²≤1/2. Atmode M²[2Var−(EX−mode)²]≤1.",
+      "proof_steps": [
+        "Comparisonλ sum=1/f(t),difference=EX−t.",
+        "λ1²+λ2²=((sum)²+(difference)²)/2; convexdominationofx² givesVarbound."
+      ],
+      "gaps": [
+        "Density atmean andessentialmaximum notinterchangeable unlessmeanismode.",
+        "Modeattainment canbeensuredappropriateuppersemicontinuous logconcaverepresentative or approximatingsequence; pointwiseversions matter."
+      ]
+    },
+    {
+      "label": "Lemmas3.5–3.7 superlevelcomparison",
+      "start_line": 328,
+      "end_line": 403,
+      "pdf_pages": [
+        6,
+        7
+      ],
+      "assumptions": [
+        "Continuous asymmetricLaplace, samepositivefiniteM,centeredmeans; a≥0."
+      ],
+      "statement": "AllfixedM asymmetricLaplace equimeasurable; centeredabsolutevalues stochasticordered between symmetricLaplace andcenteredexponential. Centereduniforminterval withdensityM stochasticallysmallerthananycenteredvariable density≤M.",
+      "proof_steps": [
+        "Superlevelwidth=log(M/t)/M for0<t<M,0 fort≥M.",
+        "Centroidofcenteredsuperlevelinterval dependsonλ2; distancefrom0 minimizedsymmetric,maximizedone-sidedexponential. Intersectintervalwith[-a,a] monotonicincenter-distance.",
+        "LayercakeTonelli fornonnegativeincreasingtest yieldsstochasticorder."
+      ],
+      "gaps": [
+        "Originallemma3.5 superlevelmustrestrict0<t<M; t≥M empty,lognegativeformula notintervalwidth.",
+        "GeneralX centeredabsolute lowerstochastic boundonlyneedsdensityupperbound; upper requireslogconcavity viaearliercomparison."
+      ]
+    },
+    {
+      "label": "Theorem3.8 / Corollary3.9 moment-Orlicz bounds",
+      "start_line": 411,
+      "end_line": 486,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "assumptions": [
+        "0<M<∞ Lebesguedensity,finiteEX; upperbranchlogconcave.",
+        "Youngψ strictlyincreasingconvexψ0=0; p≥1; momentsallowed∞ whereinequalitywell-defined."
+      ],
+      "statement": "Uniform U~Unif[-1/(2M),1/(2M)]≺cx X−EX. ForlogconcaveX, |X−EX|≺icx |Z−EZ|,Z~Exp(rateM). CorrespondingOrlicznormorder. 1/[2^p(p+1)]≤M^p E|X−EX|^p≤Γ(1+p)/e+∫_0^1(1−x)^p e^-x dx. p2:1/12≤M²Var≤1; even2n upperderangement!(2n).",
+      "proof_steps": [
+        "Uniformcomparisonusesbounded density/twocrossing andmatchedzero means.",
+        "Choosepositivevaluedmodet soLaplacecomparisonalsoM matches; composeψ(|x−EX|)convex thenstochasticexponentialbound.",
+        "ScaleM1; integrateuniform|x|p andcenteredExp|x−1|p. Integerderangement identitybyintegrationbyparts/knownformula."
+      ],
+      "gaps": [
+        "Upperproofmustpickmode/approxmax explicitly toensurecomparisonM equalsM(X); paperdoesnotsaythischoice.",
+        "Laplace vs generalX onlyincreasingconvexorderafterProp3.3, notallincreasingorder withoutconvexity.",
+        "Momentdensityboundsdo not directlygiveGaussian-supcomparison; Levyinterval≤2εM is independent bounded-densityconsequence."
+      ]
+    },
+    {
+      "label": "Discrete Lemma4.3 / Theorem4.4 fixed-pointbound",
+      "start_line": 488,
+      "end_line": 556,
+      "pdf_pages": [
+        9,
+        10
+      ],
+      "assumptions": [
+        "CountingZ logconcavepmfwithintervalsupport/nointernalholes;atnpositivepmf;P0 RHS∞.",
+        "DiscreteasymmetricLaplace p,q∈[0,1);pointmassincludedp=q0."
+      ],
+      "statement": "C=(1−p)(1−q)/(1−pq),g(n)=C p^|n| left/Cq^nright. EX=(q−p)/[(1−q)(1−p)],Var=p/(1−p)²+q/(1−q)². 2VarY≤1/P(Y=n)²−1+(EY−n)², equalitydiscreteasymmetricLaplacewithmoden.",
+      "proof_steps": [
+        "Crossingandmeanmatching analogouscontinuous; strictx² test characterizesequality.",
+        "Solvep,qfrommatchedpmfandmean thencomputevariance.",
+        "Nearestintegermean|µ−[µ]|²≤1/4 ⇒P(Y=[µ])²≤1/(3/4+2Var)."
+      ],
+      "gaps": [
+        "DiscreteanaloguefullOrliczextremalorder notclaimed:fixedM Laplacepmfsnotequimeasurable.",
+        "Lemma4.3 proofabbreviatesexistence continuousargument; full parameterendpoint/existence needpositivepmf andsupportcondition."
+      ]
+    },
+    {
+      "label": "Theorems4.5/4.6 discretevariance/fourthmoment",
+      "start_line": 558,
+      "end_line": 632,
+      "pdf_pages": [
+        10,
+        11
+      ],
+      "assumptions": [
+        "CountingZ logconcavepmf;M=maxpmf∈(0,1];notcontinuousdensity.",
+        "Forcalculus0<M<1; M1 pointmassbyseparatecase."
+      ],
+      "statement": "M²Var+M≤1; M⁴E|X−EX|⁴+M(M²−10M+18)≤9. Equalitygeometricup totranslation/reflection (pointmasslimitincluded).",
+      "proof_steps": [
+        "Fixmode0 andnonpositivemean;comparisonreducesasymmetricLaplace withp≥q, q∈[0,(1−M)/(1+M)].",
+        "Variancefunction derivative2[−(1−M)+(1+M)q]/[M(1−q)³]<0 interior⇒q0geometricmaximum.",
+        "Fourthmomentexplicitrationalfunctionandderivativecubic; sourceassertsrootonlyendpoint andotherscomplex ⇒negativeinterior,maximumq0 gives(9−18M+10M²−M³)/M⁴.",
+        "已检查局部代数：由几何幂和逐系数构造原始矩并计算中心四阶矩，商法则导数的cubic精确分解为((1+M)q+M−1)[(M²+12M+18)q²+(22M²−36)q+M²−12M+18]。二次判别式96M²(5M²−12)<0且首项正，故0<M<1、0≤q<(1−M)/(1+M)导数负；M=1另作点质量。"
+      ],
+      "gaps": [
+        "p11 statement σ4(q)=0 iffderivativecubic0 istypoforσ4′(q)=0; σ4 ispositivefornondegenerateLaplace.",
+        "局部矩公式、导数和符号已精确核算；比较归约与等号分类仍为分开的原文结论，不由此代数计算自动认证。"
+      ],
+      "checked_derivation_evidence": [
+        "reviews/SOL_HN/check-logconcave-fourth-algebra.py",
+        "reviews/SOL_HN/logconcave-fourth-algebra.json"
+      ]
+    },
+    {
+      "label": "Section5 highercrossing theorem andcheckedliteralerrors",
+      "start_line": 638,
+      "end_line": 784,
+      "pdf_pages": [
+        12,
+        13,
+        14
+      ],
+      "assumptions": [
+        "Momentorthogonality∫x^kφ=0 for0≤k≤n−1,∫|x^kφ|finitek≤n; φ∏(x−xk)≥0.",
+        "Transferablerepairedassumptionforinterpolation:f^(n−2)strictlyconvex (An−2), notf∈An.",
+        "Testintegralwell-defined; generalunboundedtestneedsintegrability/approximation."
+      ],
+      "statement": "Theorem5.3 intended∫fφ≥0 forf^(n−2)convex, usingLagrangeinterpolantdegree<n; regularizef+εx^n thenpassε0. LiteralLemma5.2 andCor5.4 shouldnotbeuseduncorrected.",
+      "proof_steps": [
+        "Lemma5.1 signofg withnzerosprovedinductivelyviaRolle.",
+        "CorrectedLemma5.2:subtractinterpolant, its(n−2)derivativeaffine, strictconvexitypreserved;signofremainder matches∏(x−xk).",
+        "CheckLemma5.2 literaln2,f=x⁴−x²∈A2 sincef″strictconvex, points±1/2 forceuniqueaffineP=−3/16. At0 (f−P)(0)∏(0−xk)=−3/64<0. ThusprintedAn cannotjustifyresult; replaceAn−2.",
+        "CheckCor5.4 oddn:printedproduct(xk−x) reversesTheorem5.3 direction. n1,X1Unif[1,2],X2Unif[−2,−1],x10 satisfy(φ2−φ1)(−x)≥0 butEX1=3/2>EX2=−3/2,contradictsclaimedX1≺1X2. Useproduct(x−xk) orreverseorderforoddn."
+      ],
+      "gaps": [
+        "CounterexamplesapplyliteralSection5 formulations, notautomaticrefutationcontinuous/discretecoretheoremswhichuseone/twocross elementaryproofs.",
+        "Proofphrase(f−P)^(n−2) hasexactlynzeros confusesg=f−P withderivative;zerosareofg."
+      ]
+    }
+  ],
+  "unchecked": [
+    "Generalunboundedtestintegrability andsupdensitynonattainment approximations needexplicitconditions.",
+    "ExternalOrliczbackground/derangementidentity notwholebookproofread."
+  ],
+  "cube_interface": [
+    "原文结论：一维logconcave分布密度或pmf与centeredmoments界。",
+    "已检查推导：有限one/two crossing secant证书；Section5两个反例及可用修正方向。 离散四阶矩有理式、导数cubic及其符号已独立逐系数核算（仅该局部推导）。",
+    "迁移推断：cube课题变量若确证1Dlogconcave，可由continuousbounded density得intervalmass≤2εM，离散需单独计格点。",
+    "待验证：所需投影/阈值统计logconcavity、均值方差与维数uniform bound，以及GP-BRANCH/TC-A4/HS变量映射未给。"
+  ],
+  "gaps": [
+    "不继承Cor5.4奇数n原方向；入口禁直接引用。",
+    "无logconcavity时uppermomentbound失败，如spikyrare-tail mixture；仅bounded density保uniformlowerbranch。"
+  ],
+  "visual_checks": [
+    "reviews/ROOT/visual/logconcave/p5.png",
+    "reviews/ROOT/visual/logconcave/p8.png",
+    "reviews/ROOT/visual/logconcave/p11.png",
+    "reviews/ROOT/visual/logconcave/p13.png",
+    "reviews/ROOT/visual/logconcave/p14.png"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 856,
+    "source_lines": 860,
+    "required_content_lines": 664,
+    "covered_content_lines": 664,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-9dec1113f304933f/paper.md"
+  },
+  "review_source": "reviews/ROOT/evidence/P-9dec1113f304933f.json",
+  "review_input_sha256": "3dbec92b4dc82b961ca504806830b07f7fa9c2dbd1f44a5d31d01d56fff0ae22"
+}

@@ -1,0 +1,151 @@
+{
+  "paper_id": "P-a3e2357596f3eb7f",
+  "observed_title": "A generalization of Cramér large deviations for martingales",
+  "authors": [
+    "Xiequan Fan",
+    "Ion Grama",
+    "Quansheng Liu"
+  ],
+  "version": "Observed arXiv:1503.06627v1, 23 March 2015; article header cites C. R. Acad. Sci. Paris I 352 (2014) 853–858; footer dated 11 juillet 2018. Editions not conflated.",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "file": "corpus/papers/P-a3e2357596f3eb7f/paper.md",
+      "scope": "All seven PDF pages, main results, entire printed proof sketch, appendices for Lemmas 3.2/3.3 and references.",
+      "start_line": 1,
+      "end_line": 324,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ],
+  "topic_relevance": {
+    "H01": "direct",
+    "H03": "direct"
+  },
+  "theorem_cards": [
+    {
+      "label": "Theorem 2.1: conditional Cramér branch",
+      "assumptions": [
+        "For each n, martingale differences (ξ_i,F_i), i=0,…,n, ξ_0=0, F_0={∅,Ω}; X_n=Σξ_i and 〈X〉_n=ΣE(ξ_i²|F_{i−1}).",
+        "(A1) There are fixed positive c_0,c_1, uniform in n and i, with sup_i E(exp(c_0√n|ξ_i|)|F_{i−1})≤c_1 a.s.",
+        "(A2) ||〈X〉_n−1||_∞≤δ²; δ≥0, usually varying with n.",
+        "The source states existence of positive absolute α_0; 0≤x≤α_0√n and δ≤α_0. Source generic constants declared absolute/depending only α, but proof uses c_0,c_1; their uniformity across arbitrary models is not independently justified."
+      ],
+      "statement": "Both P(X_n>x)/(1−Φ(x)) and P(X_n<−x)/Φ(−x) have the form exp{θ c_{α_0}[x³/√n+x²δ²+(1+x)(log(n)/√n+δ)]}, |θ|≤1. This is a logarithmic relative error bound, not an explicit cumulant correction. The source consequence Eq(8) uses ≥x, unlike strict Eq(6); atom handling must be supplied before equating the event contracts.",
+      "proof_steps": [
+        "Exponential conjugate martingale product is defined for |λ|≤c_0√n; under P_λ, X_n=B_n(λ)+Y_n(λ).",
+        "Lemma 3.1 derives absolute moments directly from u^k/k!≤e^u. Lemmas 3.2/3.3 control B_n and Ψ_n on 0≤λ≤c_0√n/4.",
+        "Lemma 3.4 tilted Kolmogorov estimate and the main theorem proof are only referred to as similar to [3]. All printed text was read; the omitted adaptation is not an independent proof certificate."
+      ],
+      "source_ranges": [
+        {
+          "start_line": 59,
+          "end_line": 192,
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "start_line": 59,
+      "end_line": 192,
+      "pdf_pages": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "gaps": [
+        "Conditional Cramér (A1) alone does not imply the relative-to-variance Bernstein condition. A uniform positive lower bound on nE(ξ_i²|F_{i−1}) is a sufficient additional assumption cited by the source.",
+        "Main theorem and Lemma 3.4 rely on an unprinted adaptation of Fan–Grama–Liu 2013 [3]; precise c_0,c_1 dependence and atom convention remain review items."
+      ]
+    },
+    {
+      "label": "MDP consequence: actual normalization in displayed formula",
+      "assumptions": [
+        "(A1),(A2) above with fixed c_0,c_1; δ→0; a_n→∞ and a_n/√n→0.",
+        "B is a Borel subset of ℝ; B° interior and cl(B) closure."
+      ],
+      "statement": "The displayed MDP uses (1/a_n²)log P(X_n/a_n∈B), rate I(x)=x²/2. The paragraph calls the speed a_n, but the displayed normalization has speed a_n². This consequence does not give a normal tail ratio or saddlepoint prefactor.",
+      "proof_steps": [
+        "Combine relative logarithmic tail estimate with normal tail logarithms, then tail-based one-dimensional LDP reasoning as cited to [3]."
+      ],
+      "source_ranges": [
+        {
+          "start_line": 110,
+          "end_line": 121,
+          "pdf_pages": [
+            3
+          ]
+        }
+      ],
+      "start_line": 110,
+      "end_line": 121,
+      "pdf_pages": [
+        3
+      ],
+      "gaps": [
+        "The source only cites details in [3]; no independent general-B proof is printed here. Use the displayed a_n² normalization rather than the prose speed."
+      ]
+    },
+    {
+      "label": "Lemmas 3.1–3.3 and printed appendix",
+      "assumptions": [
+        "(A1), and (A2) for Lemmas 3.2/3.3; k≥3; 0≤λ≤c_0√n/4."
+      ],
+      "statement": "E(|ξ_i|^k|F_{i−1})≤k! c_1(c_0√n)^(−k); |B_n(λ)−λ|≤c(λδ²+λ²/√n); |Ψ_n(λ)−λ²/2|≤c(λ²δ²+λ³/√n). The first absolute moment inequality also extends directly to k=2.",
+      "proof_steps": [
+        "Jensen gives conditional mgf≥1; E(ξ_i e^{λξ_i}|F_{i−1})=E[ξ_i(e^{λξ_i}−1)|F_{i−1}]≥0 for λ≥0. Taylor remainder sums give the two drift bounds.",
+        "Log expansion uses u_i=E(e^{λξ_i}|F_{i−1})−1≥0. To certify the two-sided Ψ remainder, bound the absolute third-and-higher Taylor remainder plus the nonnegative quadratic log remainder. The printed intermediate inequalities omit absolute values; this local repair does not prove Lemma 3.4."
+      ],
+      "source_ranges": [
+        {
+          "start_line": 155,
+          "end_line": 317,
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ],
+      "start_line": 155,
+      "end_line": 317,
+      "pdf_pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "gaps": [
+        "Constants in these local estimates depend on the fixed conditional exponential moment parameters; no numerical constants were derived."
+      ]
+    }
+  ],
+  "transfer_boundary": "Keep as a separate conditional Cramér martingale branch with fixed parameters and declared filtration; do not replace (A1) by Bernstein-relative-to-variance or present its abbreviated proof as fully independently checked. Private cube/uniform-center-radius assumptions absent.",
+  "proof_verification": "Whole source read; Lemma 3.1 and local appendix algebra checked. Main theorem/Lemma 3.4 unprinted adaptations and constants dependence remain gaps.",
+  "identity_status": "title_authors_visible_version_observed_not_bibliographic_dedup_certified",
+  "used_claim_status": "not_added_to_used_claims_pending_independent_review",
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 324,
+    "source_lines": 324,
+    "required_content_lines": 217,
+    "covered_content_lines": 217,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-a3e2357596f3eb7f/paper.md"
+  },
+  "review_source": "reviews/TEAM_HI/evidence/P-a3e2357596f3eb7f.json",
+  "review_input_sha256": "29a33fdec60fcf7a19fc2fe1763897a0df7dea4239ebbff287d91fc8a528dac0"
+}

@@ -1,0 +1,206 @@
+{
+  "paper_id": "P-26133e7baeb4e290",
+  "observed_title": "LCQPow – A Solver for Linear Complementarity Quadratic Programs",
+  "authors": [
+    "Jonas Hall",
+    "Armin Nurkanović",
+    "Florian Messerer",
+    "Moritz Diehl"
+  ],
+  "version": "arXiv:2211.16341v1 [math.OC]；PDF日期2022-11-30；26页。论文用LCQPow v0.1.0。",
+  "read_ranges": [
+    {
+      "start_line": 5,
+      "end_line": 1386,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "code": "L04",
+    "decision": "direct",
+    "basis": "全文逐页介绍并评测LCQPow，一个线性互补二次规划求解软件，给出数学模型、stationarity解释、精确罚函数、SCP内外环、步长与终止准则、本地收敛分析、QP后端和基准。可迁移至约束优化求解器工作流；其算法与保证受LCQP结构限制。"
+  },
+  "definitions": [
+    "LCQP最小化严格凸二次目标 1/2 xᵀQx+gᵀx（Q≻0），满足线性界及逐对互补0≤Lx−ℓL ⟂ Rx−ℓR≥0；可行域非凸且标准MFCQ/LICQ在互补可行点失效。",
+    "强stationarity按互补活跃集为相关乘子施加特定符号条件；弱化活跃互补对乘子符号约束会得到更弱的stationarity概念。",
+    "互补违背量φ(x)=(Lx−ℓL)ᵀ(Rx−ℓR)≥0；罚问题在目标加入ρφ(x)，而SCP把φ在当前点一阶线性化，形成仍以Q为Hessian的凸QP子问题。",
+    "算法先逐步提高ρ的外环，再用SCP内环、解析线搜索、动态罚参数和梯度扰动；终止要求罚问题stationarity残差及φ≤容差。",
+    "基准输出是作者所用机器、实例集和QP后端上的解率/时间/目标值；定位到局部stationary解不表示全局最优。"
+  ],
+  "theorem_cards": [
+    {
+      "assumptions": [
+        "罚问题(7)在x*满足LICQ。",
+        "原LCQP强stationarity及互补可行按定义成立。"
+      ],
+      "statement": "作者引用Ralph–Wright精确罚定理：若x*是LCQP强stationary点，则存在足够大的有限ρ（式(8)给出由非活跃侧乘子与互补变量正松弛量组成的阈值），使其成为惩罚QP的KKT点；反过来，惩罚问题KKT点若满足原始互补条件，则可按式(9)转换乘子并得到原LCQP强stationarity。",
+      "start_line": 249,
+      "end_line": 307,
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "proof_steps": [
+        "第一方向由强stationarity乘子与足够大的ρ构造罚问题界乘子，使相应活跃边界乘子满足符号条件。",
+        "逆方向将罚问题界乘子按式(9)扣除罚项产生的互补梯度，恢复原LCQP乘子；再用互补可行性及KKT条件检查强stationarity。"
+      ],
+      "gaps": [
+        "此结果在本文作为引用的精确罚理论给出，不是本文原创证明；阈值需要未知强stationary点的乘子和非零松弛量，不能直接据此预先给出普适ρ。",
+        "LICQ是罚QP局部点条件；不能把精确罚性质外推到任意非凸MPEC或退化输入。"
+      ],
+      "author_claim": "算法采用该精确罚重构，并随ρ增长寻找满足互补条件的stationary解。",
+      "checked_derivation": "我核对了式(8)的ρ阈值依赖和式(9)乘子换算，视觉检查PDF第5–6页；没有重新证明引用[20]的完整结果。"
+    },
+    {
+      "assumptions": [
+        "Q≻0，使每个SCP内层QP目标严格凸且最优解唯一。",
+        "当前点满足松弛线性约束；ρ固定于外环。",
+        "线搜索按罚问题目标在方向p=x*−x上对α∈[0,1]精确最小化。"
+      ],
+      "statement": "在内层把非凸二次φ的一阶Taylor主部替换进目标，得到Hessian始终为Q的凸QP。步方向为该QP唯一解与当前点之差；解析线搜索最小化罚目标沿线段的值。若方向曲率pᵀCp≤0，则取α*=1；正曲率时按一维二次函数截取无约束极小点到[0,1]。定理2说明罚目标沿该方向非增，并在当前点不是外层stationary时严格下降。",
+      "start_line": 412,
+      "end_line": 497,
+      "pdf_pages": [
+        8,
+        9,
+        10
+      ],
+      "proof_start_line": 724,
+      "proof_end_line": 752,
+      "proof_pages": [
+        14
+      ],
+      "proof_steps": [
+        "Taylor线性化只改目标线性项，子问题Hessian仍为正定Q。",
+        "内层QP全局最小化蕴含其凸二次模型从当前点严格下降（若解不等于当前点）。",
+        "罚目标与该局部模型在当前点沿内层方向的一阶导数相同，因此其方向导数非正；若非外层stationary则由Lemma1方向非零而严格为负。",
+        "对一维线搜索目标直接最小化，得到文中解析α。"
+      ],
+      "gaps": [
+        "Lemma1为引用的标准结果；证明详节归于[26]。",
+        "严格下降只针对固定ρ的罚目标和线性可行的内层方向；不是对原非凸LCQP全局目标的单调下降/全局收敛。",
+        "数值QP内部精度若设置过紧会受舍入和底层QP停止准则干扰，文中要求实际协调容差。"
+      ],
+      "author_claim": "SCP内环使用每步下降的凸QP模型与解析全局化；惩罚函数仅在外环更新ρ时改变。",
+      "checked_derivation": "我手算核对了φ的梯度为Cx+gφ、模型与罚目标在x_kj处方向导数相等，以及定理2由严格凸QP全局最优性推出严格下降；PDF第9–10、14页视觉核验。"
+    },
+    {
+      "assumptions": [
+        "(x*,y*)是原LCQP(4)的强stationary点。",
+        "当前算法内层迭代x_kj原始互补可行，且L_l(x_kj)=L_l(x*)、R_l(x_kj)=R_l(x*)，互补活跃集合一致。",
+        "外环罚参数ρ_k足够大，使式(28d)–(28e)转换后的活跃边界乘子非负；内层凸QP精确求解，线搜索按文中解析公式执行。"
+      ],
+      "statement": "定理3：一旦当前互补活跃集合与强stationary解一致且ρ_k足够大，下一内层更新一步到达x*，且算法返回该强stationary点。",
+      "start_line": 753,
+      "end_line": 830,
+      "pdf_pages": [
+        14,
+        15,
+        16
+      ],
+      "proof_steps": [
+        "从原强stationarity乘子出发，用固定活动集的非互补变量正松弛量选择足够大的ρ_k，按式(28)构造罚QP的合法边界乘子。",
+        "将强stationarity代入罚子问题的一阶条件，得x*满足严格凸内层QP的KKT条件；唯一极小解即x*。",
+        "活动集合保持意味着线段上每一互补对至少一侧始终位于下界，故φ沿该方向恒为0，pᵀCp=0；解析线搜索给α*=1。"
+      ],
+      "gaps": [
+        "条件需要已经识别与解一致的互补活动集及足够大ρ；论文没有给识别该活动集的有限时间保证。",
+        "结论局部且落在强stationarity点；不推出找到全局解，也不说明弱stationarity点的行为。",
+        "底层QP需达到理论上的解精度；实际浮点程序以容差返回。"
+      ],
+      "author_claim": "论文新增局部一步收敛性质：目标强stationary活动集一旦识别，即可在充分大罚参数下一步返回。",
+      "checked_derivation": "我逐项检查式(28)乘子符号、式(30)由原KKT代换出凸内层QP驻点，以及式(31)→α=1的全步推导；PDF第14–15页视觉核验。活动一致时每对互补约束至少一侧固定在下界，乘积为零，支持弦上φ恒零的论证。"
+    },
+    {
+      "assumptions": [
+        "实现对应凸二次目标与线性约束的LCQP；梯度扰动、初值及罚参数选取均影响非凸罚轨迹。",
+        "实验只覆盖MacMPEC子集、初值OCP和moving-masses离散化实例及作者采用的求解器配置。"
+      ],
+      "statement": "作者数值比较报告LCQPow在多个测试子集的表现有竞争力；在MacMPEC 39例中qpOASES变体多半快于所测替代方法，但OSQP变体约四分之一实例收敛失败；在移动质量基准中OSQP约解75%并较快，MIQP因互补对增多而较慢。多个实验解的目标质量相近，但作者也展示局部解差异与初始化敏感性。",
+      "start_line": 831,
+      "end_line": 1279,
+      "pdf_pages": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "proof_steps": [
+        "按MacMPEC筛选39个符合LCQP框架的例子，比较不同QP后端、IPOPT变体与MIQP重构。",
+        "对初值问题将微分包含隐式Euler离散为LCQP，并扫不同初值及网格。",
+        "对移动质量摩擦模型建立互补动力学并离散OCP，比较性能曲线和目标值。"
+      ],
+      "gaps": [
+        "全局最优只对MIQP全局算法在正确建模/界设置及求解器保证条件下可能支持；LCQPow是局部求解器。",
+        "实验计时和成功率受机器、实例翻译、求解后端、容差、初值和网格影响；本次没有重跑。",
+        "作者说明OSQP分支较不稳健且存在失败，不宜只引用其速度优势。"
+      ],
+      "author_claim": "LCQPow提供可换QP后端的快速局部LCQP解法，在三个基准的若干子集上取得有竞争力的时间表现。",
+      "checked_derivation": "我按正文检查了性能剖面定义（失败设比值∞）、三个benchmark构造和作者自己报告的失败/局部解边界；视觉核验PDF第16–18、21页。未复现数值试验。"
+    }
+  ],
+  "constant_dependence": "精确罚参数阈值依赖强stationarity乘子和非活跃互补侧的正松弛量；外环通常按ρ_{k+1}=βρ_k增长。stationarityTolerance/complementarityTolerance是独立浮点容差，均由用户选项设定。",
+  "endpoint_limits": [
+    "标准LICQ/MFCQ在LCQP互补可行点失效；需用MPCC stationarity概念而非普通NLP KKT术语替代。",
+    "当罚参数过大，Q+ρC可能病态；同质增加ρ不是无代价的保证。",
+    "惩罚同伦只能作为局部启发式，原NLP非凸，文章明确不保证找到全局极小，甚至不保证找到任意极小。",
+    "若未满足强stationarity目标、活动集一致和足够大ρ，定理3一步收敛不适用。",
+    "混合整数重构依赖有限上界或有效大M；任意大M可能削弱数值质量/不正确界会改变模型。"
+  ],
+  "reusable_methods": [
+    "对互补条件可用精确罚参数外环，内部将唯一非凸二次罚项线性化为保持同一正定Hessian的凸QP序列。",
+    "对固定外层目标沿SCP方向精确做一维解析线搜索，可获得严格下降的局部化证据。",
+    "输出求解状态时同时检查底层QP状态、原始线性可行、互补违背、stationarity残差及当前罚参数；单报目标值/速度不够。"
+  ],
+  "unchecked": [
+    "未构建或运行LCQPow源码，未复现三组基准。",
+    "Theorem 1及Lemma 1依赖的源论文未独立通读；本文仅把它们标作引用结果。",
+    "PDF视觉核验首页、定理1/精确罚页面、SCP及线搜索、定理2/3、基准p16–18及p21；其它页面按paper.md逐页深读但未全部逐页渲染。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1382,
+    "source_lines": 1386,
+    "required_content_lines": 907,
+    "covered_content_lines": 907,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-26133e7baeb4e290/paper.md"
+  },
+  "review_source": "evidence/reviews/LN/evidence/P-26133e7baeb4e290.json",
+  "review_input_sha256": "7f54c70238a41518f3b1e8acd60dcfb0c671c8683e640fa3b410b8f0b6d4f9d5"
+}

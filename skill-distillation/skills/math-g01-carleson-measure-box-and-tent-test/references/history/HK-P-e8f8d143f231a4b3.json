@@ -1,0 +1,155 @@
+{
+  "paper_id": "P-e8f8d143f231a4b3",
+  "observed_title": "On the Bloch and Qp–Carleson measure problems",
+  "authors": [
+    "Bingyang Hu",
+    "Xiaojing Zhou"
+  ],
+  "version": "arXiv:2606.16760v2; 30 PDF pages; v2 dated 2026-06-19.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1548,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "scope": "逐页阅读全文及参考文献，PDF p.1–30 / paper.md L1–1548；证明链、附录（若有）均纳入阅读。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "legacy-iterated-compensating-measure": "direct for the fixed-disk Bloch–Carleson embedding/capacity equivalence; only a methodological analogy for a tree packing constant, not a central-cube theorem."
+  },
+  "definitions": [
+    {
+      "name": "Admissible dyadic resolution",
+      "statement": "A nested sequence of finite measurable partitions of D whose conditional expectations converge in L1, with an ordering fixed at each level."
+    },
+    {
+      "name": "Packet matrix",
+      "statement": "Γ_{μ,N}(R1,R2)=∫Φ_{R1}Φ_{R2}dμ is PSD since it is the Gram form of packet functions."
+    },
+    {
+      "name": "Bloch capacity",
+      "statement": "B_R(μ)=sup_N inf{Σλ_R: λ_R≥0, Γ_{μ,N}≤diag(λ_R)}; C_R is the coefficient supremum over dyadic simple functions."
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorems 3.1 and 4.1 / Theorem 1.4: embedding-capacity equivalence",
+      "assumptions": [
+        "μ is a finite positive Borel measure on the unit disk D; R is an admissible dyadic resolution with finite partitions, nesting, L1 convergence of conditional expectations, and fixed ordering.",
+        "The function space is the little Bloch space seminorm embedding into L2(μ); the full Bloch norm adds μ(D)."
+      ],
+      "statement": "The seminorm embedding is bounded iff the dyadic packet quantity C_R(μ) is finite, and iff the PSD packet matrices admit finite diagonal domination capacity B_R(μ). The optimal embedding constant is comparable to C_R(μ) and, up to the absolute Grothendieck/duality factor, B_R(μ), for every admissible R.",
+      "start_line": 542,
+      "end_line": 818,
+      "pdf_pages": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "proof_steps": [
+        "For sufficiency in Theorem 3.1, approximate ψ∈L∞ by dyadic conditional expectations E_Nψ; the finite coefficient test controls P0(E_Nψ), pointwise convergence follows because K0(z,·) is bounded for fixed z, and Fatou passes the L2(μ) bound.",
+        "For necessity, test the embedding on P0(Σ_R c_R1_R), |c_R|≤1, using boundedness of P0:L∞→Bloch; this yields C_R≤best embedding constant.",
+        "For C_R≤B_R, any diagonal majorant diag(λ)≥Γ bounds every coefficient quadratic form by Σλ_R.",
+        "For B_R≤C_R, write the finite-dimensional SDP dual over PSD X with diagonal X(R,R)≤1; strict primal feasibility gives strong duality.",
+        "Factor X as a Gram matrix of vectors of norm ≤1, apply the complex Grothendieck inequality, then Cauchy–Schwarz for the PSD form Γ to bound the dual objective by a universal multiple of C_R.",
+        "The full Bloch norm conclusion splits f=f(0)+(f−f(0)), adding μ(D)."
+      ],
+      "gaps": [
+        "The proof invokes P0:L∞ onto the Bloch space via cited [5, Theorem 3], finite-dimensional SDP duality, and the complex Grothendieck inequality; these are not re-proven here.",
+        "The comparison constant is absolute and independent of the chosen admissible resolution in the theorem statement; it depends on those external classical results."
+      ]
+    },
+    {
+      "label": "Theorem 1.7: compactness iff vanishing tail capacity",
+      "assumptions": [
+        "Same finite positive measure and Bloch embedding setting; Sρ={z:|z|>ρ}."
+      ],
+      "statement": "Compactness of the little Bloch seminorm embedding into L2(μ) is equivalent to boundedness together with B_R(1_{Sρ}μ)→0 as ρ→1 for every admissible dyadic resolution; the statement can equivalently be expressed using C_R.",
+      "start_line": 829,
+      "end_line": 910,
+      "pdf_pages": [
+        16,
+        17
+      ],
+      "proof_steps": [
+        "Compactness implies boundedness and uniform vanishing of the embedding norm on the tails; Theorem 3.1 converts that norm to C_R and Theorem 4.1 to B_R.",
+        "Conversely, compact-open convergence of bounded Bloch sequences controls an interior compact disk, while vanishing tail capacity controls the outer annulus uniformly; combine to get L2(μ)-convergence of a subsequence."
+      ],
+      "gaps": [
+        "The Qp compactness analogue later in the article is described as a parallel proof; this card concerns the Bloch theorem whose proof is provided."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "B_R≃C_R≃ optimal seminorm embedding constant with absolute comparison factors; full Bloch embedding includes additive μ(D)."
+  },
+  "endpoint_limits": {
+    "measure": "The criterion is for finite positive Borel measures on the disk and a specified admissible dyadic resolution. It is not stated for arbitrary trees or L1 weak-type estimates.",
+    "compactness": "Tail capacity must vanish as ρ→1; boundedness alone does not imply compactness."
+  },
+  "reusable_methods": [
+    {
+      "method": "Linearize the embedding through L∞ dyadic simple functions and a packet Gram matrix",
+      "transfer": "Requires a linear projection representation into a Hilbert L2(μ) target; the PSD form does not directly give the user’s L1 weak-(1,1) tree bound."
+    },
+    {
+      "method": "Replace coefficient testing by diagonal domination via SDP duality",
+      "transfer": "Finite dimensionality, PSD matrix, strong duality/strict feasibility, and Grothendieck are essential inputs."
+    },
+    {
+      "method": "Encode compactness by vanishing tail capacity",
+      "transfer": "Transfer requires an established capacity equivalence and a compatible exhaustion of the target domain."
+    }
+  ],
+  "unchecked": [
+    "Complete 30-page paper read, including proof sections and references; theorem/proof formulas on pp.4–5 and 14–16 visually inspected.",
+    "The external Bergman projection representation and Grothendieck inequality are cited, not independently derived."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1548,
+    "source_lines": 1548,
+    "required_content_lines": 1173,
+    "covered_content_lines": 1173,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-e8f8d143f231a4b3/paper.md"
+  },
+  "review_source": "evidence/reviews/HK/evidence/P-e8f8d143f231a4b3.json",
+  "review_input_sha256": "0f06f06ef797e3445013b7f0ec13b6bd8ff1ed9b913ceb04b83dfac737e55c34"
+}

@@ -1,0 +1,221 @@
+{
+  "paper_id": "P-9d82bdd7c870e801",
+  "observed_title": "On the extreme points of moments sets",
+  "authors": [
+    "Iosif Pinelis"
+  ],
+  "version": "arXiv:1204.0249v1; manuscript dated October 31, 2018; 10 PDF pages.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 496,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "scope": "Read the complete extracted text, including definitions, all proofs, topological corollaries, discussion, and references. Rendered PDF pages 2, 4, 6, and 8 to inspect the moment-vector, finite-atom, and Polish-space formulas."
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "A03": "adjacent: characterizes extreme points and finite-atom representations of generalized moment sets, and lists compactness conditions that ensure an extreme maximizer exists. It does not prove tightness of near-extremizing sequences or analyze concentration/mass escape."
+  },
+  "definitions": [
+    {
+      "name": "Generalized moment set",
+      "statement": "For measurable f=(f₁,…,f_k) and C⊂R^k, M_{f,C} consists of nonnegative measures μ with f∈L¹(μ) and ∫f dμ∈C; Λ_{f,C}=Λ∩M_{f,C}.",
+      "source_lines": [
+        62,
+        74
+      ],
+      "pdf_pages": [
+        2
+      ]
+    },
+    {
+      "name": "μ-atoms and atomic partitions",
+      "statement": "A is a μ-atom when every measurable B has μ(A∩B) equal to either 0 or μ(A). An atomic non-null partition divides S into disjoint μ-atoms of positive mass.",
+      "source_lines": [
+        39,
+        45
+      ],
+      "pdf_pages": [
+        1
+      ]
+    },
+    {
+      "name": "Restriction-stable cone hypothesis",
+      "statement": "The theorem assumes Λ is a convex cone closed under measurable restrictions μ↦μ_A.",
+      "source_lines": [
+        80,
+        86
+      ],
+      "pdf_pages": [
+        2
+      ]
+    },
+    {
+      "name": "Extreme point",
+      "statement": "μ∈ex K when every representation μ=(1−t)ν₀+tν₁ with t∈(0,1) and ν₀,ν₁∈K has ν₀=ν₁.",
+      "source_lines": [
+        75,
+        77
+      ],
+      "pdf_pages": [
+        2
+      ]
+    },
+    {
+      "name": "Finite atomic class Δ_f^(k)",
+      "statement": "The paper’s Δ_f^(k) consists of measures with at most k positive Dirac weights whose f-values at support points are linearly independent; Δ^(k) allows up to k nonnegative weights without that independence condition.",
+      "source_lines": [
+        118,
+        143
+      ],
+      "pdf_pages": [
+        3
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 1 (necessary atomic-partition condition for extreme moment measures)",
+      "assumptions": [
+        "C⊂R^k; Λ is a convex cone closed under measurable restrictions μ↦μ_A.",
+        "μ is a nonzero extreme point of Λ_{f,C}.",
+        "The generalized moments ∫f dμ exist as required by membership in Λ_{f,C}."
+      ],
+      "statement": "There is an atomic non-null partition of S into m≤k pieces such that the moment vectors ∫_{A_i} f dμ are linearly independent.",
+      "start_line": 80,
+      "end_line": 86,
+      "pdf_pages": [
+        2
+      ],
+      "proof_steps": [
+        "作者证明：if a positive-mass partition had n>k pieces, its n moment vectors in R^k would be linearly dependent.",
+        "作者证明：choose a nonzero dependence ε and define ν±=Σ_i(1±ε_i)μ_{A_i}; the restriction-stable cone keeps ν± in Λ, the moment dependence keeps them in the same moment set, and μ=(ν++ν−)/2 with ν+≠ν−, contradicting extremality.",
+        "作者证明：take a maximal number m of positive-mass partition pieces. It cannot exceed k; if any piece were not a μ-atom, splitting it would produce m+1 pieces, a contradiction. The moment vectors are independent by the same perturbation argument.",
+        "核验基础推导：the convex decomposition and moment-preservation identities follow directly from the linear dependence and restriction operation; the bound m≤k is the dimension bound in R^k."
+      ],
+      "gaps": [
+        "This is a structural characterization of extreme points, not a compactness theorem or a statement about arbitrary near-extremizing sequences."
+      ]
+    },
+    {
+      "label": "Corollary 4 (finite-atom representation preserving moments and objective)",
+      "assumptions": [
+        "The assumptions of Theorem 1 hold.",
+        "For a chosen measurable g, ∫g dμ exists for each μ∈Λ_{f,C}.",
+        "For membership of the representative in Λ itself, additionally require Δ_f^(k)⊂Λ."
+      ],
+      "statement": "For every extreme μ∈Λ_{f,C}, some measure μ̃ with at most k atoms has the same generalized moments and the same integral of g. With Δ_f^(k)⊂Λ, μ̃ also belongs to Λ_{f,C}. The representation need not mean μ itself is atomic on an abstract measurable space.",
+      "start_line": 167,
+      "end_line": 193,
+      "pdf_pages": [
+        4
+      ],
+      "proof_steps": [
+        "作者证明：Theorem 1 gives an atomic partition with ≤k pieces and independent moment vectors.",
+        "作者证明：on each μ-atom, Lemma 3 makes every f_j and g constant μ-a.e.; choose a representative point s_i from the full-measure intersection and set μ̃=Σ_i μ(A_i)δ_{s_i}.",
+        "作者证明：the selected values preserve each ∫f_j dμ and ∫g dμ; the extra inclusion Δ_f^(k)⊂Λ yields feasible membership.",
+        "核验基础推导：the coefficients μ(A_i) are nonnegative and sum to μ(S); when total mass is among the fixed moment constraints, mass is preserved as well."
+      ],
+      "gaps": [
+        "Without the additional Δ inclusion, the paper proves preservation of moments/objective but not membership in Λ. For abstract measurable spaces, the result is a representing measure, not equality with μ."
+      ]
+    },
+    {
+      "label": "Corollary 5 and Proposition 6 (reduction of a supremum to finite-atom measures)",
+      "assumptions": [
+        "Condition (2): Λ is a convex cone closed under restrictions.",
+        "The supremum of ∫g over Λ_{f,C} equals the supremum over its extreme points.",
+        "For equality with feasible finite-atom measures, also assume Δ_f^(k)⊂Λ. Proposition 6 lists sufficient cases, including a nonempty compact convex maximizing face in a locally convex topology."
+      ],
+      "statement": "Under the extreme-point supremum condition, the supremum over Λ_{f,C} is bounded above by the supremum over at-most-k-atom moment representatives; with Δ_f^(k)⊂Λ, the suprema are equal. A nonempty compact convex maximizing set is one sufficient route to an extreme maximizer and hence to that extreme-point condition.",
+      "start_line": 195,
+      "end_line": 249,
+      "pdf_pages": [
+        4,
+        5
+      ],
+      "proof_steps": [
+        "作者证明：Corollary 4 sends each extreme maximizer to a finite-atom representative preserving the objective; equality of the supremum over all measures and extreme points gives the upper bound.",
+        "作者证明：when Δ_f^(k)⊂Λ, the finite-atom competitors are feasible, giving the reverse inequality.",
+        "作者援引：compactness of a convex maximizing face yields an extreme point by Krein–Milman; some other Proposition 6 cases rely on the cited literature.",
+        "核验基础推导：the equality needs the stated inclusion and attainment/extreme-point premise; it does not follow from finite-atom representability alone."
+      ],
+      "gaps": [
+        "The paper does not guarantee that a maximizing face is compact/nonempty in a given application; these are external hypotheses to check. Equality of suprema does not imply every maximizing sequence has a convergent subsequence."
+      ]
+    },
+    {
+      "label": "Corollary 11 (literal atomicity in Polish Borel spaces)",
+      "assumptions": [
+        "S is Polish, Σ is its Borel σ-algebra, and Λ is the cone of all nonnegative measures M.",
+        "The moment set fixes a singleton generalized moment value c∈R^k."
+      ],
+      "statement": "The extreme points of Λ_{f,c} are exactly the feasible measures in Δ_f^(k); under these topological assumptions, the extreme measure itself is k-atomic rather than merely represented by one.",
+      "start_line": 367,
+      "end_line": 373,
+      "pdf_pages": [
+        8
+      ],
+      "proof_steps": [
+        "作者证明：Corollary 10 identifies μ-atoms with point masses under the Polish/Borel/Radon hypotheses.",
+        "作者推论：combine Corollary 10 with the necessary Theorem 1 and sufficient Theorem 7.",
+        "核验基础推导：this conclusion depends on all the topological and Λ=M hypotheses; it is not valid for a general measurable space."
+      ],
+      "gaps": [
+        "No weak-topology compactness, tightness, or near-extremizer convergence is asserted."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "The support-size bound is the number k of generalized moment coordinates: an extreme point has at most k atomic partition pieces. There is no metric rate, radius, or concentration parameter.",
+    "dependence": "The literal Dirac support conclusion additionally depends on S being Polish with its Borel σ-algebra and Λ=M. The objective reduction depends on the extreme-point supremum condition and, for equality over feasible atom measures, Δ_f^(k)⊂Λ."
+  },
+  "endpoint_limits": {
+    "atomicity": "On an abstract measurable space, conclusions are expressed via μ-atoms/partitions and finite atomic representatives; literal Dirac support requires Polish/Borel assumptions. If f includes the constant-one constraint, the representative also preserves total probability mass.",
+    "existence": "Proposition 6 gives compactness of a maximizing face as one sufficient condition for an extreme maximizer; the paper does not establish such compactness for a new problem.",
+    "escape": "No concentration-compactness alternative, tightness criterion for sequences, or mass-at-infinity analysis is provided."
+  },
+  "reusable_methods": [
+    {
+      "method": "For an extreme point under k linear moment constraints, use a partition into more than k positive pieces to build a nontrivial moment-preserving signed perturbation; this forces at most k atomic pieces.",
+      "transfer": "The perturbation requires the feasible cone to be stable under restrictions and the moment integrals to be defined."
+    },
+    {
+      "method": "When an objective maximum is attained at an extreme point, replace the optimizer by a measure supported on at most k points while preserving all constrained moments and the objective.",
+      "transfer": "Check the extreme-point attainment premise and whether finite-atom measures remain in the feasible cone."
+    },
+    {
+      "method": "Use compactness of the maximizing face as one route to an extreme maximizer.",
+      "transfer": "This is a sufficient abstract condition, not a quantitative tightness estimate and not a guarantee that the face is compact."
+    }
+  ],
+  "unchecked": [
+    "All 10 extracted PDF pages, including references, were read; pages 2, 4, 6, and 8 were rendered to inspect the key formulas and topological statements.",
+    "The necessity proof (Theorem 1), finite-atom representation (Corollary 4), sufficiency proof (Theorem 7), and Polish-space passage (Proposition 9/Corollary 11) were followed in the text.",
+    "Krein–Milman and external representation/topology results cited by the author were not independently reproved. No separate examples were run."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 496,
+    "source_lines": 496,
+    "required_content_lines": 394,
+    "covered_content_lines": 394,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-9d82bdd7c870e801/paper.md"
+  },
+  "review_source": "evidence/reviews/AD/evidence/P-9d82bdd7c870e801.json",
+  "review_input_sha256": "c374e4322e08d9d9f1a83cd37cf1be3583d61021a5e070c95c60bb55b1a186b8"
+}

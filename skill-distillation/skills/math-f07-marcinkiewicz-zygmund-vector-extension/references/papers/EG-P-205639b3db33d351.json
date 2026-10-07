@@ -1,0 +1,234 @@
+{
+  "paper_id": "P-205639b3db33d351",
+  "observed_title": "Quantitative weighted estimates for the Littlewood-Paley square function and Marcinkiewicz multipliers",
+  "authors": [
+    "Andrei K. Lerner"
+  ],
+  "version": "arXiv:1803.06981v1；PDF 首页标记 2018。",
+  "read_ranges": [
+    {
+      "start_line": 7,
+      "end_line": 727,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "F07": "adjacent"
+  },
+  "definitions": [
+    {
+      "term": "二进频带 Littlewood–Paley 平方函数",
+      "definition": "对 k∈Z，Δ_k=(−2^{k+1},−2^k]∪[2^k,2^{k+1})，令 S_Δk f 的傅里叶变换为 1_{Δ_k} f̂；S f=(Σ_k|S_Δk f|²)^{1/2}。",
+      "source_ranges": [
+        {
+          "start_line": 51,
+          "end_line": 68,
+          "pdf_pages": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Marcinkiewicz 乘子",
+      "definition": "T_m f 的傅里叶变换为 m f̂，其中 m∈L∞，并且 sup_k∫_{Δ_k}|m′(t)|dt<∞。文章研究其在 A_p 权下的 L^p(w) 算子范数。",
+      "source_ranges": [
+        {
+          "start_line": 60,
+          "end_line": 68,
+          "pdf_pages": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "term": "尺度 k 的 dyadic 权平均",
+      "definition": "对 dyadic lattice D 定义 w_{k,D}=Σ_{I∈D:|I|=2^{−k}}〈w〉_I 1_I。作者证明该分段常值权仍属于 A₂，且其 A₂ 特征由 [w]_{A₂} 统一控制。",
+      "source_ranges": [
+        {
+          "start_line": 335,
+          "end_line": 381,
+          "pdf_pages": [
+            8,
+            9
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "name": "Theorem 1.1：Littlewood–Paley 平方函数的最佳 A_p 指数范围",
+      "assumptions": [
+        "w∈A_p，1<p<∞；α_p 表示 ‖S‖_{L^p(w)→L^p(w)}≤C_p[w]_{A_p}^{α_p} 可成立的最佳指数。",
+        "S 是实线上的二进频带平方函数。"
+      ],
+      "statement": "max{1, 3/[2(p−1)]}≤α_p≤1/[2(p−1)]+max{1,1/(p−1)}，1<p<∞。特别地，1<p≤2 时 α_p=3/[2(p−1)]，达到尖锐指数；p>2 时本文仅给出上下界。",
+      "start_line": 72,
+      "end_line": 80,
+      "pdf_pages": [
+        2
+      ],
+      "proof_steps": [
+        "作者由已知无权 L^p 端点增长和 sharp extrapolation 给出所有 p 的指数下界。",
+        "上界由对偶性把 S 的加权估计转成频带向量函数 (S_{Δ_k}ψ_k)_k 的平方和估计；用 Theorem 2.7 将原函数范数控制到有限个平滑 dyadic 平方函数，再以 sharp extrapolation 降至 A₂ 加权 L²。",
+        "对每个尺度 k，Fourier 支集使平滑核只与相邻频带相互作用；Lemma 3.2 在 u=v=w 下给出相应的局部 L²(w_{k,D}) 估计，合并尺度得到 L²(w) 的 [w]_{A₂}^{3/2} 界，再外推。",
+        "证明初稿对无限频带的向量函数预先使用其 L^p(w) 可积性；作者在 Remark 4.1 明确指出此处有一处小的不严谨并给出两种修复（引用已知界或先用有限频带截断 S_N 再令 N→∞）。我核读了作者的修复说明，没有独立重证 sharp extrapolation。"
+      ],
+      "gaps": [
+        "当 p>2，Theorem 1.1 只给出指数区间；Conjecture 5.1 提出的 α_p=max{1,3/[2(p−1)]} 在本文未证明。",
+        "Theorem 2.7、two-weight Hilbert transform 估计及 sharp extrapolation 依赖引用文献，本文部分作为工具调用。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 462,
+          "end_line": 542,
+          "pdf_pages": [
+            11,
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Theorem 1.2：Marcinkiewicz 乘子的最佳 A_p 指数范围",
+      "assumptions": [
+        "w∈A_p，1<p<∞；m∈L∞ 且 sup_k∫_{Δ_k}|m′|<∞。",
+        "β_p 表示 ‖T_m‖_{L^p(w)→L^p(w)}≤C_{p,m}[w]_{A_p}^{β_p} 的最佳指数。"
+      ],
+      "statement": "(3/2)max{1,1/(p−1)}≤β_p≤p′/2+max{1,1/(p−1)}，1<p<∞，其中 p′=p/(p−1)。作者的 Conjecture 5.2 认为最佳指数等于下界，但本文没有证明该等式。",
+      "start_line": 81,
+      "end_line": 92,
+      "pdf_pages": [
+        2
+      ],
+      "proof_steps": [
+        "用对偶性可只处理 1<p≤2 的上界；sharp extrapolation 将目标降到 w∈A₂ 的 L² 估计。",
+        "Theorem 2.7 将 ‖T_m f‖ 控制为若干平滑 dyadic 平方函数；对偶后只需逐频带证明一个两权 L² 估计。",
+        "Lemma 3.1 控制平均权 w_{k,D} 和不同 dyadic lattice 下的双权 A₂ 特征；Lemma 3.2 对每个频带区间上的可微乘子给出 ‖T_{m1_[a,b]} f‖_{L²(u_{k,D})} 控制，代价为乘子的 ‖m‖∞+∫|m′|、区间长度/空间尺度因子及双权 A₂ 特征。对有效重叠的相邻频带求和，得到上界。",
+        "Lemma 3.2 的核化步骤把区间部分和写成调制 Hilbert 变换之差，再用 maximal Hilbert transform 的两权界与 Minkowski 不等式；第9页 Lemma 3.2 公式和第10页估计已视觉核对。"
+      ],
+      "gaps": [
+        "所有 p 的上下界通常不匹配；文中 β_p=(3/2)max{1,1/(p−1)} 是猜想，不是定理。",
+        "两权 maximal-Hilbert 估计和 sharp extrapolation 以外部结果调用；未独立重证。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 544,
+          "end_line": 592,
+          "pdf_pages": [
+            12,
+            13
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Theorem 2.7：有限个平滑 dyadic 平方函数控制原函数范数",
+      "assumptions": [
+        "给定 w∈A_p、1<p<∞；存在频率支撑于 1/2≤|ξ|≤2 的 Schwartz 函数 φ。",
+        "使用 3^n 个 dyadic lattice D^{(j)}，并按尺度定义 S_{φ,D^{(j)}}。"
+      ],
+      "statement": "‖f‖_{L^p(w)}≤C_{p,n}[w]_{A_p}^{1/2}Σ_{j=1}^{3^n}‖S_{φ,D^{(j)}}f‖_{L^p(w)}。它是特定平滑频带平方函数的再生/反向估计；不是任意算子的向量值延拓。",
+      "start_line": 232,
+      "end_line": 243,
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "proof_steps": [
+        "从离散 Calderón reproducing formula f=Σ_k(f*φ_{2^{-k}})*θ_{2^{-k}} 截断出有限和。",
+        "构造支撑于 3Q、均值零且有导数控制的平滑块 γ_Q；将尺度间隔为 1/3 的 dyadic lattice 用 Three Lattice Theorem 覆盖成 3^n 个通常 dyadic lattice。",
+        "把截断函数写成这些 lattice 上满足 Wilson 加权原子平方估计条件的原子和，逐 lattice 应用 [w]_{A_p}^{1/2} 加权估计，最后用 L^p(w) 收敛取极限。",
+        "第6页 Theorem 2.7 公式及分解构造已视觉核对。"
+      ],
+      "gaps": [
+        "结果只适用于特定平滑平方函数与一组 dyadic lattice；不是从任意标量算子 L^p 有界性推出其 ℓ² 扩张。",
+        "关键 smooth atom square estimate 来自引用的 Wilson 定理。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 244,
+          "end_line": 292,
+          "pdf_pages": [
+            6,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lemma 3.2：频率区间截断乘子的两权局部 L² 估计",
+      "assumptions": [
+        "m 是 [a,b] 上有界可微函数，u,v∈A₂；D 为 dyadic lattice，w_{k,D} 为尺度 2^{−k} 上 u 的平均权。",
+        "K(m)=‖m‖∞+∫_a^b|m′(t)|dt。"
+      ],
+      "statement": "‖T_{m1_[a,b]}f‖_{L²(u_{k,D})}≤cK(m)N(u,v)(2^{−k}(b−a)+1)‖f‖_{L²(v)}，其中 N(u,v)=min{[u,v]_{A₂},[u_{k,D},v]_{A₂}}^{1/2}([u]_{A₂}^{1/2}+[v]_{A₂}^{1/2})，c 为绝对常数。",
+      "start_line": 384,
+      "end_line": 450,
+      "pdf_pages": [
+        9,
+        10
+      ],
+      "proof_steps": [
+        "对空间尺度 |I|=2^{−k} 的同一 dyadic 区间内两点 x,y，借部分和算子恒等式将频带投影写成调制的 Hilbert 变换差。",
+        "将输入拆为近场 3I 与远场；近场由区间长度(b−a)和 Hardy–Littlewood 极大函数控制，远场 Hilbert 核在 x,y 上的差由 M f 控制，再界为 H* M_{−t}f 与 H* M_{−b}f 等项。",
+        "对 m′(t) 积分并用两权 maximal/Hilbert 界及 Minkowski，分别按 L²(u) 与 L²(u_{k,D}) 估计，取较小的双权 A₂ 因子，得到所述 N(u,v)。"
+      ],
+      "gaps": [
+        "区间因子 2^{−k}(b−a)+1 反映频宽与空间尺度的乘积；不能把常数宣称为对任意截断区间一致。",
+        "两权 Hilbert 变换估计来自引用结果；本文证明使用而未重新建立。"
+      ]
+    }
+  ],
+  "constant_dependence": "Theorem 1.1 的上界常数取决于 p、维数、平滑函数及 [w]_{A_p} 指数；对 1<p≤2 指数 3/[2(p−1)] 是精确最佳值。Theorem 1.2 的乘子上界常数进一步依赖 K(m)=‖m‖∞+sup_k∫_{Δ_k}|m′|；Lemma 3.2 还依赖频率带宽、dyadic 尺度及 u,v、u_{k,D} 的双权 A₂ 特征。",
+  "endpoint_limits": [
+    "文章范围 1<p<∞；端点 p=1 和 ∞ 未处理。",
+    "平方函数指数在 1<p≤2 尖锐；p>2 仍有 Theorem 1.1 上下界与 Conjecture 5.1 缺口。",
+    "Marcinkiewicz 乘子所有 p 的最佳 A_p 幂次没有解决；Conjecture 5.2 和拟议稀疏界 (5.1) 均明确未证。",
+    "文中向量值平方函数估计专用于特定频带分解/平滑算子，不给一般 MZ 随机化结论。",
+    "全文16页已读至未解猜想和参考文献；Theorems 1.1/1.2、第6页 Theorem 2.7、第9–10页 Lemma 3.2 已视觉核对。"
+  ],
+  "reusable_methods": [
+    "用 Three Lattice Theorem 将平滑频率平方函数分派到 3^n 个 dyadic lattice，结合加权原子平方估计建立反向 Littlewood–Paley 控制。",
+    "通过锐外推将一般 p 的 A_p 指数估计约化为 A₂ 上的 L² 估计。",
+    "为乘子频带截断建立带尺度平均权的双权 L² 估计：局部项用 M，远场项用调制 maximal Hilbert transform 与核差分控制。",
+    "加权平均权 w_{k,D} 保持 A₂ 控制，使频率尺度与空间 dyadic 尺度匹配。"
+  ],
+  "unchecked": [
+    "未独立证明 sharp extrapolation、Wilson 原子平方函数估计及双权 maximal-Hilbert 界。",
+    "Lemma 3.2 和 Theorems 1.1/1.2 已阅读全文，但没有逐行独立重做所有加权不等式；Remark 4.1 的作者自述修复已纳入卡片。",
+    "未将该特定 Littlewood–Paley/MARCINKIEWICZ 结果扩展到任意线性标量算子。"
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 721,
+    "source_lines": 727,
+    "required_content_lines": 552,
+    "covered_content_lines": 552,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-205639b3db33d351/paper.md"
+  },
+  "review_source": "evidence/reviews/EG/evidence/P-205639b3db33d351.json",
+  "review_input_sha256": "c54d6f64e9af0625e0abc3e3de9b49ecd34a59734d9057342407f6bcf3577b80"
+}

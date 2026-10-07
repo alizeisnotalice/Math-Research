@@ -1,0 +1,398 @@
+{
+  "paper_id": "P-52fde473d714f0b2",
+  "observed_title": "Gaussian Approximation of Suprema of Empirical Processes",
+  "authors": [
+    "Victor Chernozhukov",
+    "Denis Chetverikov",
+    "Kengo Kato"
+  ],
+  "version": "arXiv:1212.6885v6; 53 PDF pages; title page says submitted to the Annals of Statistics and gives manuscript date August 19, 2014.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 2290,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53
+      ],
+      "scope": "逐行通读全文：主文、全部命题与推导、Supplementary Material 的 Appendix A.1–A.8（包括 Theorem 2.1/5.2 与各应用证明）、系列估计动机例子、几乎处处界附录和参考文献。阅读不等于重新证明或独立核验全部外引定理。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "K04": "direct. 论文的核心对象就是经验过程上确界的高斯近似，给出非渐近标量 supremum coupling、有限维随机向量最大值耦合、经验过程偏差/最大不等式及局部与级数经验过程应用。主结果耦合的是两个 supremum 随机变量，不是整个经验过程的 sup-norm coupling。"
+  },
+  "definitions": [
+    {
+      "name": "经验过程设置和可测性/高斯性假设",
+      "statement": "X_1,…,X_n 为共同分布 P 的 iid 样本，F 为 P-centered 可测函数类，F 是逐点可测的非负可测 envelope。A1：F 有逐点收敛的可数子类；A2：F∈L^q(P)；A3：存在 ℓ∞(F) 中紧的 centered Gaussian random variable G_P，协方差 E[G_P(f)G_P(g)]=P(fg)。论文先在一般设置中允许 A2 的 q≥2；Theorem 2.1 本身另要求 q≥3。",
+      "source_ranges": [
+        {
+          "start_line": 257,
+          "end_line": 280,
+          "pdf_pages": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "name": "主近似定理的局部复杂度与随机包络项",
+      "statement": "F_ε={f−g:f,g∈F,e_P(f,g)<ε||F||_{P,2}}；φ_n(ε)=E||G_n||_{F_ε}∨E||G_P||_{F_ε}；H_n(ε)=log(N(F,e_P,ε||F||_{P,2})∨n)；M=max_{i≤n}F(X_i)。它们分别量化局部经验/高斯过程波动、网格复杂度及样本最大 envelope。",
+      "source_ranges": [
+        {
+          "start_line": 290,
+          "end_line": 307,
+          "pdf_pages": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VC-type 类与统一熵积分",
+      "statement": "F 对 envelope F 为 VC type，是指对所有有限离散概率 Q 和 0<ε≤1，N(F,e_Q,ε||F||_{Q,2})≤(A/ε)^v。J(δ,F,F)=∫_0^δ sup_Q sqrt(1+log N(F,e_Q,ε||F||_{Q,2}))dε。VC-type 定义允许 envelope 无界；乘积和 Lipschitz 变换的覆盖数闭包由补充材料 Lemma A.6/Corollary A.1 给出。",
+      "source_ranges": [
+        {
+          "start_line": 345,
+          "end_line": 399,
+          "pdf_pages": [
+            8,
+            9
+          ]
+        },
+        {
+          "start_line": 1793,
+          "end_line": 1838,
+          "pdf_pages": [
+            41,
+            42
+          ]
+        }
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem 2.1 (Gaussian approximation to suprema)",
+      "assumptions": [
+        "F 是 P-centered；A1 pointwise measurability、A2 envelope F∈L^q(P) 且 q≥3、A3 P-pre-Gaussian 均成立。",
+        "κ>0 满足 κ^3≥E[||E_n[|f(X_i)|^3]||_F]；每个 ε∈(0,1]、γ∈(0,1) 均可分别取值。",
+        "n≥3；函数类、包络和其它量允许随 n 改变。"
+      ],
+      "statement": "令 Z=sup_{f∈F}G_nf。存在随机变量 Z_tilde，满足 Z_tildeᵈ=sup_{f∈F}G_Pf，并且 P{|Z−Z_tilde|>K(q)Δ_n(ε,γ)}≤γ{1+δ_n(ε,γ)}+C(log n)/n。K(q) 仅依赖 q，C 为通用常数；Δ_n=φ_n(ε)+γ^(−1/q)ε||F||_{P,2}+n^(−1/2)γ^(−1/q)||M||_q+n^(−1/2)γ^(−2/q)||M||_2+n^(−1/4)γ^(−1/2)(E||G_n||_{F·F})^(1/2)H_n(ε)^(1/2)+n^(−1/6)γ^(−1/3)κH_n(ε)^(2/3)；δ_n=(1/4)P{(F/κ)^3 1(F/κ>cγ^(−1/3)n^(1/3)H_n(ε)^(−1/3))}。",
+      "start_line": 309,
+      "end_line": 331,
+      "pdf_pages": [
+        7,
+        8
+      ],
+      "proof_steps": [
+        "取 (F,e_P) 的 ε||F||_{P,2}-net，将经验过程 supremum 和 Gaussian supremum 各自压到有限网格；两项离散化误差分别由 ||G_n||_{F_ε} 和 ||G_P||_{F_ε} 控制。",
+        "对有限网格应用 Corollary 4.1 的随机向量最大值耦合。协方差经验波动项由 n^(−1/2)E||G_n||_{F·F} 控制；三阶项由 κ^3 控制；大 envelope 截断尾项归入 δ_n。选取网格最大值误差尺度后，有限维事件误差为 γ 量级加 C(log n)/n。",
+        "Theorem 5.1 控制经验过程局部振荡，Borell–Sudakov–Tsirel'son 不等式控制 Gaussian 局部振荡；两项各以至少 1−γ/4 概率成立。",
+        "将有限维分布比较与上述两个振荡界组合，再用 Lemma 4.1 的标量 Strassen 耦合构造同分布 Gaussian supremum 的版本，得到 stated coupling。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1325,
+          "end_line": 1390,
+          "pdf_pages": [
+            31,
+            32,
+            33
+          ]
+        },
+        {
+          "start_line": 1623,
+          "end_line": 1650,
+          "pdf_pages": [
+            37,
+            38
+          ]
+        }
+      ],
+      "gaps": [
+        "主定理直接给 supremum 随机变量耦合；它不声称也不推出经验过程整体的 sup-norm coupling。",
+        "δ_n 中的 envelope 尾事件和 κ 条件是结论的一部分，不能在未验证尾矩/截断项时删掉。",
+        "主证明引用外部 Gaussian anti-concentration / Borell 事实、Theorem 5.1 的基础矩不等式及 Strassen 定理；本次阅读未独立重证这些被引用结果。",
+        "核对原 PDF 第 7 页：δ_n 只进入失败概率上界；Theorem 2.1 的耦合误差阈值为 K(q)Δ_n，不含 +δ_n。"
+      ]
+    },
+    {
+      "label": "Theorem 4.1 (coupling for maxima of sums of random vectors)",
+      "assumptions": [
+        "X_1,…,X_n 是 R^p 中独立、均值为 0 的随机向量，逐坐标绝对三阶矩有限。",
+        "Y_i 独立且 Y_i∼N(0,E[X_iX_i^T])；不要求 X_i 同分布。",
+        "β>0 且 δ>1/β；α=β²δ²−1>0，ε=exp(−α)(1+α)^(1/2)<1。"
+      ],
+      "statement": "令 Z=max_{j≤p}Σ_i X_{ij}。存在 Z_tildeᵈ=max_{j≤p}Σ_iY_{ij}，满足 P{|Z−Z_tilde|>2β^(−1)log p+3δ}≤[ε+Cβδ^(−1){B_1+β(B_2+B_3)}]/(1−ε)，其中 B_1=E max_{j,k≤p}|Σ_i(X_{ij}X_{ik}−E[X_{ij}X_{ik}])|，B_2=E max_{j≤p}Σ_i|X_{ij}|³，B_3=Σ_iE[max_{j≤p}|X_{ij}|³·1(max_j|X_{ij}|>β^(−1/2))]。",
+      "start_line": 886,
+      "end_line": 918,
+      "pdf_pages": [
+        20,
+        21
+      ],
+      "proof_steps": [
+        "正文先陈述定理及误差项，并说明证明使用 Stein exchangeable-pairs 方法；第 6 节将它作为 net 上离散 supremum 的有限维耦合输入。",
+        "图像核对 PDF p.21 上 β、δ 条件、α/ε 定义、阈值 2β^(−1)log p+3δ 及 B_1–B_3 的求和位置；本卡保留原文对定理的结论，不重写其完整证明。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 986,
+          "end_line": 1156,
+          "pdf_pages": [
+            23,
+            24,
+            25,
+            26,
+            27
+          ]
+        }
+      ],
+      "gaps": [
+        "耦合误差依赖坐标协方差波动 B_1、逐项三阶矩 B_2 和大坐标截断 B_3；没有一般维数无关的自动小误差结论。",
+        "证明调用并构造 Stein/exchangeable-pair 工具，但若在新依赖结构下使用，需重验独立性、协方差匹配与尾项条件。"
+      ]
+    },
+    {
+      "label": "Theorem 5.1 (deviation inequality for empirical-process suprema)",
+      "assumptions": [
+        "F 是 pointwise measurable 函数类，附带可测 envelope F；本节不要求 F 为 P-centered。",
+        "存在 σ²>0 使 sup_{f∈F}Pf²≤σ²≤||F||²_{P,2}；envelope F∈L^q(P)，q≥2。",
+        "t≥1 且 α>0。"
+      ],
+      "statement": "概率大于 1−t^(−q/2) 时，||G_n||_F≤(1+α)E||G_n||_F+K(q)[(σ+n^(−1/2)||M||_q)√t+α^(−1)n^(−1/2)||M||_2t]，其中 M=max_iF(X_i)，K(q) 只依赖 q。",
+      "start_line": 1267,
+      "end_line": 1272,
+      "pdf_pages": [
+        30
+      ],
+      "proof_steps": [
+        "从 Boucheron–Bousquet–Lugosi–Massart 的正偏差 q 阶矩界出发，以其 Lemma 7 控制随机方差代理 Σ²≤σ²+64n^(−1/2)||M||_2 E||G_n||_F+32n^(−1)||M||²_2。",
+        "用 2√(ab)≤βa+β^(−1)b 分离 E||G_n||_F 项，继而 Markov 不等式给出上尾；选择 β 与 α,t 成比例得到声明。图像核对 PDF p.30 的概率幂次、n 因子和 α^(−1) 项。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1274,
+          "end_line": 1288,
+          "pdf_pages": [
+            30
+          ]
+        }
+      ],
+      "gaps": [
+        "基础 q 阶矩不等式及方差代理 lemma 来自文中引用 [5]，本次未独立核验其原文证明。",
+        "结论仅为上偏差控制；不能不加论证地改为双侧尾界。"
+      ]
+    },
+    {
+      "label": "Theorem 5.2 and Corollary 5.1 (uniform-entropy maximal bounds)",
+      "assumptions": [
+        "F 是 pointwise measurable 类并附带 envelope F∈L²(P)。",
+        "σ² 为 sup_f Pf² 的正上界，δ=σ/||F||_{P,2}；J 是对有限离散 Q 取上确界的 uniform entropy integral。",
+        "Corollary 5.1 另要求 A≥e、v≥1 且 N(F,e_Q,ε||F||_{Q,2})≤(A/ε)^v，对全部有限离散 Q 和 0<ε≤1 成立。"
+      ],
+      "statement": "Theorem 5.2: E||G_n||_F≲J(δ,F,F)||F||_{P,2}+||M||_2J²(δ,F,F)/(δ²√n)。VC-type 条件下 Corollary 5.1 给出 E||G_n||_F≲√vσ² log(A||F||_{P,2}/σ)+v||M||_2 log(A||F||_{P,2}/σ)/√n（省略通用常数）。",
+      "start_line": 1307,
+      "end_line": 1323,
+      "pdf_pages": [
+        31
+      ],
+      "proof_steps": [
+        "附录 A.4 先证明熵积分 J 的凹性/缩放性质。对经验过程做 symmetrization，再条件于样本应用标准熵积分上界，将其化为经验 L2 尺度 σ_n 与 J(σ_n/||F||_{P_n,2})。",
+        "以 Rademacher contraction 和 Cauchy–Schwarz 控制 Eσ_n²，再由 Hoffman–Jørgensen 型不等式处理 Rademacher supremum；分两种情形比较随机上限与 δ，得到 Theorem 5.2。",
+        "VC-type corollary 用覆盖数上界积分出 J(δ)≲δ√{v log(A/δ)}，代回 Theorem 5.2。图像核对 PDF p.31 的主式、δ²√n 分母和 VC-type 推论。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1710,
+          "end_line": 1774,
+          "pdf_pages": [
+            39,
+            40,
+            41
+          ],
+          "scope": "Appendix A.4 完整 Theorem 5.2 proof."
+        },
+        {
+          "start_line": 1776,
+          "end_line": 1791,
+          "pdf_pages": [
+            41
+          ],
+          "scope": "Appendix A.5 完整 VC-type Corollary 5.1 proof."
+        }
+      ],
+      "gaps": [
+        "Rademacher contraction、Hoffmann–Jørgensen 不等式、经验过程熵积分上界被引用使用；本次没有分别重证这些已知输入。",
+        "Theorem 5.2 的结论依赖 uniform entropy integral 和 envelope 二阶矩；不可直接移到未验证熵控制或非 iid 样本。"
+      ]
+    },
+    {
+      "label": "Lemma A.1 (Gaussian supremum anti-concentration used for Kolmogorov conversion)",
+      "assumptions": [
+        "F⊂L²(P) 为 P-pre-Gaussian 类，G_P 紧且协方差为 Cov_P。",
+        "对所有 f∈F，方差满足 0<σ²≤Var_P(f)≤̅σ²<∞。"
+      ],
+      "statement": "论文所列结论是 sup_{x∈R} P{|sup_{f∈F}G_Pf−x|≤ε}≤C_σ ε{E[sup_{f∈F}G_Pf]+sqrt(1∨log(σ/ε))}；C_σ 依赖 σ 与上方差界 σ̄。该引理支撑 Lemma 2.3 的 coupling-to-Kolmogorov-distance 转换。",
+      "start_line": 1614,
+      "end_line": 1625,
+      "pdf_pages": [
+        37
+      ],
+      "proof_steps": [
+        "作者说明证明与所引文献 [14] 的 Theorem 2.1 相同，差别是改用 [12] 的 Theorem 3(ii) 而非 part (i)。未在本文重新证明该 anti-concentration 定理。"
+      ],
+      "gaps": [
+        "正下方差下界和有限上界是该反集中结论明确的条件；退化 Gaussian process 不在该引理原条件内。",
+        "定理的关键外引版本没有在本文展开，需读 [12]/[14] 原文才可独立审计。"
+      ]
+    },
+    {
+      "label": "Propositions 3.1–3.2 (kernel/local empirical-process applications)",
+      "assumptions": [
+        "(Y_i,X_i) iid，X_i∈R^d 有有界 Lebesgue 密度；h_n→0 且 log(1/h_n)=O(log n)。",
+        "有界版本：函数类 G pointwise measurable、uniformly bounded 且 VC-type；核 k 有界连续，平移/缩放核类 VC-type；标准化系数 c_n 在索引上有界并满足逐点连续性。",
+        "无界版本将有界 G 换为包络 G∈L^q、q≥4 及 sup_x E[G^4(Y)|X=x]<∞，其余局部 VC/密度/带宽条件维持。"
+      ],
+      "statement": "令 W_n 为 kernel 型局部经验过程的标准化 supremum，W_tilde_n 为协方差匹配的 Gaussian-process supremum。Proposition 3.1 给 |W_n−W_tilde_n|=O_P((nh_n^d)^(−1/6)log n+(nh_n^d)^(−1/4)log^(5/4)n+(nh_n^d)^(−1/2)log^(3/2)n)。Proposition 3.2 的无界包络版本将末项换成 (n^(1−2/q)h_n^d)^(−1/2)log^(3/2)n。",
+      "start_line": 531,
+      "end_line": 629,
+      "pdf_pages": [
+        12,
+        13,
+        14
+      ],
+      "proof_steps": [
+        "补充材料 A.8 将索引 (x,g) 编成中心化函数类 F_n，利用 VC-type 对乘积类的闭包推覆盖数；对有界/无界包络分别验证三、四阶矩和 envelope 条件。",
+        "将 Corollary 2.2 应用于 F_n，取 γ_n=(log n)^(−1)，b=O(1)（有界时）或由 G 包络导出 b（无界时），σ_n=h_n^(d/2)，得到 supremum coupling rate；再按标准化系数还原目标统计量。"
+      ],
+      "proof_source_ranges": [
+        {
+          "start_line": 1966,
+          "end_line": 2054,
+          "pdf_pages": [
+            45,
+            46,
+            47
+          ]
+        }
+      ],
+      "gaps": [
+        "这些 rate 是在明确的局部核 VC、密度、带宽和矩条件下导出，不是对任意经验过程的无条件速率。",
+        "统计量实际可否由目标估计量线性化到这里的局部过程，需另外核验其 remainder；Appendix B 对级数均值/分位数例子的 asymptotic linear form 也引用外部结果。"
+      ]
+    }
+  ],
+  "constant_dependence": "Theorem 2.1 中 K(q) 仅依赖 q，C 与 c 为通用常数；但误差本身显式依赖 ε、γ、局部熵 H_n、局部振荡 φ_n、envelope M、κ 及尾项 δ_n。有限维 Theorem 4.1 还显式依赖 β、δ 以及 B_1–B_3；VC-type 化简中常数会依赖 VC 参数 A,v。应用的带宽/维度/矩依赖不可从“direct relevance”推为统一常数。",
+  "endpoint_limits": [
+    "Theorem 2.1 只对 ε∈(0,1]、γ∈(0,1)、q≥3陈述；任意小 γ 会通过 γ 的负幂放大误差，不能令 γ=0。",
+    "一般 VC-type Corollary 2.2 假设 q∈[4,∞] 并要求二至四阶 envelope moment domination；不是主定理 q≥3 的无条件推论。",
+    "Theorem 4.1 要求 δ>1/β，从而 α>0、ε<1；大坐标项 B_3 不能省略，除非另证其为零/可忽略。",
+    "Gaussian supremum anti-concentration 明确要求统一正方差下界和有限上界；退化 Gaussian process 不在该引理原条件内。",
+    "Supremum scalar coupling 与完整过程 sup-norm coupling 是不同结论；原文引言明确指出后者可推出前者而通常更难。"
+  ],
+  "reusable_methods": [
+    "先以 e_P 的局部 L² net 离散索引类，再将有限索引最大值的 Gaussian coupling 与两侧局部振荡分开控制；仅在这三部分假设分别满足时可迁移该证明架构。",
+    "以乘积/幂函数熵闭包把经验协方差和经验三阶矩过程纳入覆盖数估计，结合 envelope moments 与尾截断项形成可核验的 nonasymptotic bound。",
+    "通过局部熵积分 J(δ) 而非全局熵控制 maximal expectation；若应用类可算局部 covering number，可复用此降阶接口。",
+    "将 scalar Strassen coupling 与 Gaussian anti-concentration 分成两步：前者给概率耦合，后者在统一非退化方差时转为 Kolmogorov distance。"
+  ],
+  "unchecked": [
+    "未独立核对所引用的 CCK Gaussian comparison/anti-concentration 原文 [12],[14]、Boucheron et al. [5]、van der Vaart–Wellner 熵积分与 Rademacher 不等式 [43],[64],[65]；卡中只记录本文如何调用。",
+    "未对任何新目标模型做入口运行或数值测试；本卡是来源证据，不是目标工具行为演练。",
+    "Theorem 4.1 与 Theorem 5.2 的正文/补充证明已阅读，但复杂概率推导不构成对每一行估计的独立证明认证。"
+  ],
+  "visual_checks": [
+    {
+      "pdf_pages": [
+        7
+      ],
+      "items": "Theorem 2.1 条件、Δ_n、δ_n、指数和包络项；核对源渲染图 reviews/HK/rendered/P-52fde473d714f0b2/page-07.png。"
+    },
+    {
+      "pdf_pages": [
+        21
+      ],
+      "items": "Theorem 4.1 的 β,δ,α,ε 范围、阈值及 B_1–B_3；核对 source rendering page-21.png。"
+    },
+    {
+      "pdf_pages": [
+        30,
+        31,
+        32
+      ],
+      "items": "Theorem 5.1 概率幂/尾项，Theorem 5.2 与 VC-type maximal bound，及 Theorem 2.1 离散网格证明中的 B_1/B_2/B_4 和 δ 选择；核对 source renderings page-30.png through page-32.png。"
+    },
+    {
+      "pdf_pages": [
+        37
+      ],
+      "items": "Lemma A.1 精确检查区间概率 RHS 含 Cσ ε(E sup_f G_P f + sqrt(1∨log(σ/ε)))；核对 page-37.png。"
+    }
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 2290,
+    "source_lines": 2290,
+    "required_content_lines": 1734,
+    "covered_content_lines": 1734,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-52fde473d714f0b2/paper.md"
+  },
+  "review_source": "reviews/HK/evidence/P-52fde473d714f0b2.json",
+  "review_input_sha256": "4c6628e19a3b23b9c9a7a8c0f356041524e2bc4fd88031230f83601aa22ac795"
+}

@@ -1,0 +1,171 @@
+{
+  "paper_id": "P-a594f1076246b512",
+  "observed_title": "Selections of Integrable Multifunctions in Arbitrary Banach Spaces",
+  "authors": [
+    "Luisa Di Piazza",
+    "Anna Rita Sambucini"
+  ],
+  "version": "arXiv:2507.19460v1, dated 2025-07-28; 24 PDF pages.",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 1009,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "scope": "逐页阅读全文：多值Pettis、Henstock–Kurzweil–Pettis、Henstock/McShane/Birkhoff与variationally Henstock章节、证明草图、参考文献。"
+    }
+  ],
+  "read_status": "full_read",
+  "topic_relevance": {
+    "M04": "direct for measurable/scalarly measurable selections from measurable multifunctions and integrability-preserving conditions, including arbitrary (possibly nonseparable) Banach ranges. It does not establish measurable argmax selection, analytic projection measurability, or legality of a selector constrained by an optimization objective; its results are reusable only where the target correspondence meets its scalar-measurability, weak-compactness, and integrability assumptions."
+  },
+  "definitions": [
+    {
+      "name": "Scalar measurability",
+      "statement": "For every x*∈X*, the support function s(x*,Γ(·))=sup_{x∈Γ(·)}<x*,x> is measurable. The chapter distinguishes this from Effros measurability of the correspondence and Bochner measurability."
+    },
+    {
+      "name": "cwk(X)-valued multifunction",
+      "statement": "Γ takes nonempty convex weakly compact subsets of a Banach space X."
+    },
+    {
+      "name": "Pettis multivalued integrability",
+      "statement": "Each support function s(x*,Γ(·)) is Lebesgue-integrable and for every measurable set A there is MΓ(A)∈cwk(X) whose support function is the integral of s(x*,Γ(·)) on A."
+    },
+    {
+      "name": "Aumann integral",
+      "statement": "The set of integrals of L1 selections of a measurable multifunction; it may be empty if no integrable selection exists."
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Theorem A / Theorem B: characterization of Pettis-integrable multifunctions by selections",
+      "assumptions": [
+        "Γ:Ω→cwk(X) on a complete finite measure space.",
+        "For Theorem A, X is separable; for Theorem B, X is arbitrary and Γ is scalar measurable."
+      ],
+      "statement": "In a separable Banach space, Γ is Pettis integrable iff the support-function family {s(x*,Γ(·)):x*∈B_X*} is uniformly integrable and all scalar-measurable selections are Pettis integrable. In an arbitrary Banach space, the cited Theorem B gives Pettis integrability iff all scalar-measurable selections are Pettis integrable, and Pettis integrability implies the support-function family is uniformly integrable. The chapter also states that scalar-measurable selections exist for scalar-measurable weakly compact-valued multifunctions, citing Cascales–Kadets–Rodríguez.",
+      "start_line": 217,
+      "end_line": 252,
+      "pdf_pages": [
+        6
+      ],
+      "proof_steps": [
+        "These are reported as results from prior papers; the chapter supplies no proof of Theorem A/B.",
+        "The chapter emphasizes that equality between the multivalued Pettis integral and the set of Pettis integrals of selections generally fails in a nonseparable Banach space, even though the family is nonempty (formula (3), lines 247–252)."
+      ],
+      "gaps": [
+        "The equivalence and selector existence rely on cited external theorems; the source is a survey/chapter, not a primary proof.",
+        "These theorems concern integrability, not maximization or argmax selection."
+      ]
+    },
+    {
+      "label": "Theorem 4.3: HKP integrability and scalar-measurable selections",
+      "assumptions": [
+        "Γ:[0,1]→cwk(X) is scalar measurable, X any Banach space."
+      ],
+      "statement": "Γ is Henstock–Kurzweil–Pettis integrable iff every scalar-measurable selection of Γ is Henstock integrable; the HKP multivalued integral equals the set of integrals of its HKP-integrable selections on each interval.",
+      "start_line": 330,
+      "end_line": 393,
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "proof_steps": [
+        "In the forward direction, bound each selected scalar projection between −s(−x*,Γ) and s(x*,Γ); use support-function integrability and the weakly compact integral values to obtain HKP integrability.",
+        "For the reverse direction, for fixed x*, form the exposed face G(t)={x∈Γ(t):<x*,x>=s(x*,Γ(t))}; cited measurable-selection results provide a scalar-measurable selector g of G.",
+        "That selector attains the support-function integral and hence identifies the support function of the closure/convex set of selection integrals; James weak compactness yields the desired cwk(X) value."
+      ],
+      "gaps": [
+        "Proof is explicitly a sketch and invokes prior measurable-selection results and James characterization.",
+        "This uses a fixed linear functional exposed face, not a measurable selector of maximizers over a general parameterized optimization problem."
+      ]
+    },
+    {
+      "label": "Theorem 5.4 and Theorem 6.6: selection plus integrability decomposition",
+      "assumptions": [
+        "Theorem 5.4: Γ:[0,1]→cwk(X) is Henstock integrable.",
+        "Theorem 6.6: Γ is variationally Henstock integrable, X any Banach space."
+      ],
+      "statement": "Theorem 5.4 characterizes Henstock integrability by existence of a Henstock-integrable selector f such that Γ−f is McShane integrable (with the stated quantification over such selectors). Theorem 6.6 states that a variationally Henstock integrable Γ has a nonempty family of variationally Henstock-integrable selections and, moreover, every strongly measurable selection is variationally Henstock integrable.",
+      "start_line": 566,
+      "end_line": 757,
+      "pdf_pages": [
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "proof_steps": [
+        "Theorem 5.4 is quoted from [12] without proof.",
+        "Theorem 6.6 proof uses variational Henstock measurability to get Bochner measurability/strongly measurable selectors, subtracts a chosen selector to form a Pettis-integrable residual multifunction, and uses absolute continuity of the variation measure plus the Radström embedding to transfer variational Henstock integrability."
+      ],
+      "gaps": [
+        "Theorem 5.4 is a cited result and the proof of Theorem 6.6 relies on cited propositions/theorems about measurability, Pettis integrability, and Radström embedding.",
+        "These are integration/selection results; no measurable optimization objective, analytic projection, or argmax map is treated."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "No quantitative selector modulus is asserted. Selection existence/integrability is conditional on scalar measurability, cwk(X) values and the corresponding integrability hypotheses; the source does not provide finite-dimensional measurable-selection error bounds."
+  },
+  "endpoint_limits": {
+    "scope": "Complete finite measure spaces; weakly compact convex-valued multifunctions; arbitrary Banach target in the cited scalar-measurability results. Integrability notions vary by section (Pettis/HKP/gauge/variational).",
+    "not_established": "No theorem identifies measurable selectors with optimizers, proves Borel/analytic selector under arbitrary graph assumptions, or handles nonattainment of a pointwise supremum."
+  },
+  "reusable_methods": [
+    {
+      "method": "Use support functions to define scalar measurability and encode the set-valued integral.",
+      "transfer": "Requires a weakly compact convex-valued correspondence; it is not by itself a measurable argmax construction."
+    },
+    {
+      "method": "For a fixed x*, pass to the exposed-face correspondence {x∈Γ(t):<x*,x>=s(x*,Γ(t))} and select a point attaining the support function.",
+      "transfer": "This realizes a linear support supremum when the cited face-measurability and selection assumptions apply; general objective families need separate joint measurability/graph hypotheses."
+    },
+    {
+      "method": "Subtract an integrable selector to decompose a multifunction into a selected part plus an integrable residual.",
+      "transfer": "Useful for integration-compatible selector interfaces, not for proving a measurable optimizer exists."
+    }
+  ],
+  "unchecked": [
+    "All source pages were read; stated results from cited papers were not independently checked against their original proofs.",
+    "This source supports a measurable-selection method family, but the chapter does not prove the M04 analytic-projection or measurable-argmax claims."
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 1009,
+    "source_lines": 1009,
+    "required_content_lines": 748,
+    "covered_content_lines": 748,
+    "reported_status": "full_read",
+    "source": "corpus/papers/P-a594f1076246b512/paper.md"
+  },
+  "review_source": "reviews/LN/evidence/P-a594f1076246b512.json",
+  "review_input_sha256": "072cf975ac98665d84dd3554ca366ec9c5c423551de2b1269aab6f210c3dd1a0"
+}

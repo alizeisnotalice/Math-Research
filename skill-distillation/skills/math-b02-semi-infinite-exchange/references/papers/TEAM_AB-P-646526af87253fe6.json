@@ -1,0 +1,154 @@
+{
+  "paper_id": "P-646526af87253fe6",
+  "observed_title": "A note on generalized semi-infinite program bounding methods",
+  "authors": [
+    "Stuart M. Harwood"
+  ],
+  "version": "Local arXiv:1912.01075v1 overlay December 2, 2019; internal title date December 4, 2019. Both observed dates retained.",
+  "read_status": "full_read",
+  "read_ranges": [
+    {
+      "start_line": 1,
+      "end_line": 394,
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "Complete seven-page text in sequential ranges1–210 and211–394, including all references; no appendix. Original PDF pp5 and7 viewed to recover reciprocals, AUX quantifiers and the exact α=0.95 sequence; pp2,6 additionally rendered."
+    }
+  ],
+  "topic_relevance": {
+    "B02": "direct: GSIP relaxed-disjunction separation, two exact lower-level algorithm counterexamples, and strict boundary failure."
+  },
+  "definitions": [
+    {
+      "name": "GSIP and its relaxed SIP",
+      "statement": "GSIP requires g(x,y)≥0 for every y satisfying h_j(x,y)≤0. With hbar=max_j h_j, exact disjunction is [g≥0]∨[hbar>0]. Its relaxation uses hbar≥0, equivalently max{g,hbar}≥0 for all y. The relaxed separation problem is inf_y max{g(x,y),hbar(x,y)}, not min g subject to hbar≤0.",
+      "source_lines": [
+        32,
+        46,
+        53,
+        83
+      ],
+      "pdf_pages": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "Assumption1 and global lower master",
+      "statement": "Compact X,Y; continuous f,g,hbar; f*=fL is separately assumed. For a given ε>0 either infeasible or an ε-optimal xs with a common δ>0 and [g(xs,y)≥δ]∨[hbar(xs,y)≥δ] for every y. A finite master uses the relaxed disjunction and is solved globally.",
+      "source_lines": [
+        91,
+        103,
+        125,
+        139
+      ],
+      "pdf_pages": [
+        2,
+        3
+      ]
+    }
+  ],
+  "theorem_cards": [
+    {
+      "label": "Counterexample1: exact GSIP LLP does not separate the relaxed SIP",
+      "assumptions": [
+        "X=Y=[−1,1], f=−x, g=(x−y)²−10, hbar=−2x+y.",
+        "Empty initial index set; exact global GSIP LLP min_y g subject hbar≤0; always choose its minimizer y_k=x_k at the positive master iterates."
+      ],
+      "statement": "GSIP feasible set [−1,−1/2) has unattained infimum1/2; relaxed SIP feasible set [−1,−1/2] has minimum1/2. Nevertheless x_k=y_k=2^{1−k}, selected g<0 and hbar<0 every iteration, and lower bounds approach0 rather than1/2.",
+      "start_line": 196,
+      "end_line": 260,
+      "pdf_pages": [
+        4,
+        5
+      ],
+      "proof_steps": [
+        "作者反例：g≤4−10<0 throughout the product. The GSIP is feasible exactly when its lower-index set is empty, x<−1/2; replacing >0 by ≥0 adds the boundary.",
+        "作者反例：each finite relaxed cut simplifies to −2x+y_k≥0, hence x_{k+1}=x_k/2.",
+        "作者定位原证明错误：hbar(x_k,y_k)<0 for each k does not imply one K with hbar(x_ℓ,y_k)<0 for all ℓ>k≥K. Here hbar(x_ℓ,y_k)=−2·2^{1−ℓ}+2^{1−k}>0 once ℓ>k+1.",
+        "本次核验：for every ε>0 choose η=min(ε/2,1/4), xs=−1/2−η and δ=2η; f(xs)≤f*+ε and hbar(xs,y)≥δ for all y. Thus the example meets the stated Slater assumption, not merely compactness."
+      ],
+      "gaps": [
+        "The infinite infimum/attainment difference is a genuine strict-boundary issue; f*=fL is not automatic for general GSIP."
+      ]
+    },
+    {
+      "label": "Counterexample2: solving AUX LLP at every iteration still fails",
+      "assumptions": [
+        "X=Y=[−1,1], f=−x, g=−y−10, hbar=min{−2x+y,−x}; continuous but hbar is a function in its own right, equivalently one scalar lower constraint.",
+        "Empty initial index set; GSIP LLP solved globally; AUX minimizes hbar over y∈Y with g(x_k,y)≤α g(x_k,y_k); α=0.95.",
+        "Generated index sets contain the AUX minimizers."
+      ],
+      "statement": "GSIP has feasible set [−1,−1/2), relaxed SIP [−1,−1/2], and common infimum1/2. First master x1=1, GSIP LLP y1=1 with value−11, AUX domain[0.45,1] and minimizer0.45. Its cut yields x2=0. Every later AUX optimizer lies in[0.45,1] and adds no tighter cut; all subsequent masters remain0 and lower bounds stay0.",
+      "start_line": 258,
+      "end_line": 364,
+      "pdf_pages": [
+        5,
+        6,
+        7
+      ],
+      "proof_steps": [
+        "作者反例：g<0 everywhere, so relaxed cuts require min{−2x+y,−x}≥0, equivalently x≤0 and x≤y/2.",
+        "作者反例：at x1=1, AUX objective min{−2+y,−1} is minimized at y=0.45. At x=0 its objective is zero on all allowed y∈[0.45,1]; any such index keeps the master feasible set[−1,0].",
+        "本次核验：the true relaxed separation at x=0 chooses y=−1 and has max{g,hbar}=−1<0; it is excluded by AUX since g(0,−1)=−9>−10.45. Thus the missing cut is not a numerical/local-optimality artifact.",
+        "本次核验：xs=−1/2−η with η=min(ε/2,1/4) gives hbar(xs,y)≥min(2η,1/2+η)>0 for all y and f(xs)≤1/2+ε, so all stated assumptions hold."
+      ],
+      "gaps": [
+        "Different α or initial cuts may change this one instance; they do not restore a universal theorem for the quoted algorithm.",
+        "This note suggests using the correct SIP LLP and references later approaches; it does not itself supply a general convergence theorem for those external GSIP solvers."
+      ]
+    }
+  ],
+  "constant_dependence": {
+    "explicit": "Counterexample2 fixes α=0.95, AUX lower endpoint11α−10=0.45, first post-cut master0, gap1/2. Slater witness uses η=min(ε/2,1/4) and positive δ=min(2η,1/2+η).",
+    "dependence": "No convergent GSIP iteration rate is proved. Strict-feasibility margin is not a uniform future-iterate margin."
+  },
+  "endpoint_limits": [
+    "Boundary hbar=0 distinguishes exact GSIP from the closed disjunction.",
+    "The scalar hbar=min{−2x+y,−x} in CEx2 is allowed as one continuous constraint; it need not be the maximum of those two displayed linear expressions.",
+    "Generic equality f*=fL cited from external [3] is not a universal claim."
+  ],
+  "reusable_methods": [
+    "Derive the actual relaxed SIP oracle from its full disjunction before importing an exchange proof.",
+    "Audit diagonal strict inequalities separately from quantified cross-iterate inequalities.",
+    "Test lower-level filters for exclusion of a still-violating index, including hbar boundary points."
+  ],
+  "unchecked": [
+    "All local pages and references read; external algorithms and generic-feasible-closure result are not independently certified.",
+    "These counterexamples reject the cited lower-bound claims, not all GSIP exchange methods or upper-bounding components.",
+    "No finite tolerance rate, general solver implementation or center-cube transfer asserted."
+  ],
+  "local_repairs": [
+    {
+      "classification": "extraction repair, not an author mathematical error",
+      "location": "CEx1 PDF p5 / paper.md line240",
+      "repair": "Read the original stacked fraction x_k=y_k=1/2^{k−1}; flattened text incorrectly resembles2^{k−1}.",
+      "theorem_conclusion_preserved": true
+    },
+    {
+      "classification": "minor indexing typo",
+      "location": "PDF p5 third iteration / paper.md lines235–237",
+      "repair": "The third finite index set is Y^{L,3}={1,1/2}; printed superscriptL,2 is a repeated label. Sequence calculation unaffected.",
+      "theorem_conclusion_preserved": true
+    }
+  ],
+  "range_validation": {
+    "range_valid": true,
+    "full_coverage": true,
+    "covered_lines": 394,
+    "source_lines": 394,
+    "required_content_lines": 255,
+    "covered_content_lines": 255,
+    "reported_status": "full_read",
+    "source": "evidence/papers/P-646526af87253fe6/paper.md"
+  },
+  "review_source": "evidence/reviews/TEAM_AB/evidence/P-646526af87253fe6.json",
+  "review_input_sha256": "a3fa2f7c32c4afe275c3b9ea683e9d42e90103ff3157eb68e06a56c3d4df72d9"
+}
