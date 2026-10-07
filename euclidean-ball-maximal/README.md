@@ -2,6 +2,7 @@
 
 状态：维数无关 weak-(1,1) 上界及随维数发散的下界均未在本项目证明。
 
+- [第44轮研究记录](rounds/044/report.md)：连续占用分配、平移后的来源矩与尾收缩；维数损失仍在几何偏移。[验证摘要](rounds/044/verification.json)。复现：`python3 rounds/044/verify.py`。
 - [第43轮研究记录](rounds/043/report.md)：全局净流、观察端无维平方预算、密度向量漂移与谱隙障碍。[验证摘要](rounds/043/verification.json)。复现：`python3 rounds/043/verify.py`（标准库有理算术）。
 - [第42轮研究记录](rounds/042/report.md)：有符号交换流、远层正流与内半球费用；两个局部质量加强版反例。[验证摘要](rounds/042/verification.json)。复现：`python3 rounds/042/verify.py`（需要 NumPy；高维部分仅为浮点探索）。
 - [第41轮研究记录](rounds/041/report.md)：来源二阶接口、远层行预算及纯层差衰减反例；[验证摘要](rounds/041/verification.json)。复现：`python3 rounds/041/verify.py`。
