@@ -2,6 +2,7 @@
 
 状态：维数无关 weak-(1,1) 上界及随维数发散的下界均未在本项目证明。
 
+- [第51轮研究记录](rounds/051/report.md)：真实P加权外侧重复尾≤X，剩余重复系数降至对数级；完整球锐常数2及真实二维光滑输入的径向选择障碍。原外侧无维预算仍未证明。[验证摘要](rounds/051/verification.json)。复现：`python3 rounds/051/verify.py`。
 - [第50轮研究记录](rounds/050/report.md)：深细化平均预算≤9X/8、激活首矩≤5X/2，以及真实光滑L¹输入的任意大逆向标签跳变；一般外侧预算仍未证明。[验证摘要](rounds/050/verification.json)。复现：`python3 rounds/050/verify.py`。
 - [第49轮研究记录](rounds/049/report.md)：全空间记录比较预算的光滑L¹反例、兼容部分常数改进，以及保留原粗尺度的全深度首矩≤4X；相关乘积预算仍未证明。[验证摘要](rounds/049/verification.json)。复现：`python3 rounds/049/verify.py`。
 - [第48轮研究记录](rounds/048/report.md)：两来源归一化几何的全维尺度差总和小于83、剪切可控部分，以及保留完整高度带但删除记录系数的有界L¹反例；实际外侧统一预算仍未证明。[验证摘要](rounds/048/verification.json)。复现：`python3 rounds/048/verify.py`。
