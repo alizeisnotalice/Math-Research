@@ -2,6 +2,7 @@
 
 状态：维数无关 weak-(1,1) 上界及随维数发散的下界均未在本项目证明。
 
+- [第57轮研究记录](rounds/057/report.md)：真实光滑格点输入使无权链根覆盖κ无界，但完整任务显式容量≤0.75006；有限laminar族的精确子树需求公式及20例证书。一般容量仍未证明。[验证摘要](rounds/057/verification.json)。复现：`python3 rounds/057/verify.py`。
 - [第56轮研究记录](rounds/056/report.md)：真实捕获链的来源重分配负载≤3P/2、分数链根预算及随机同锚费用≤3X/8；16例精确容量证书与20例列积分。一般分叉容量仍未证明。[验证摘要](rounds/056/verification.json)。复现：`python3 rounds/056/verify.py`。
 - [第55轮研究记录](rounds/055/report.md)：保留共同来源的16例精确诊断，以及真实光滑输入中归一化Gram相关性趋零但局部外侧费用不趋零的反例；整体空间预算仍未证明。[验证摘要](rounds/055/verification.json)。复现：`python3 rounds/055/verify.py`。
 - [第54轮研究记录](rounds/054/report.md)：真实光滑输入使删除共同来源定量质量的记录滞后放松沿一列维数至少线性增长，保留来源存在指标仍失败；实际弱型下界不由此发散。[验证摘要](rounds/054/verification.json)。复现：`python3 rounds/054/verify.py`。
