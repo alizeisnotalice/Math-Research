@@ -2,6 +2,7 @@
 
 状态：维数无关 weak-(1,1) 上界及随维数发散的下界均未在本项目证明。
 
+- [第41轮研究记录](rounds/041/report.md)：来源二阶接口、远层行预算及纯层差衰减反例；[验证摘要](rounds/041/verification.json)。复现：`python3 rounds/041/verify.py`。
 - [第40轮研究记录](rounds/040/report.md)：一般避让约束、点态覆盖反例、原 band 正超额有理证书。
 - [复现核验](rounds/040/verification.json)；[来源哈希与可移植性修改](rounds/040/provenance.json)。
 - `python3 verify_round40.py`：在临时目录从零执行三批28例并核验；`--regenerate` 是兼容别名。
