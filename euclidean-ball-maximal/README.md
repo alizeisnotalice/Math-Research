@@ -2,6 +2,7 @@
 
 状态：维数无关 weak-(1,1) 上界及随维数发散的下界均未在本项目证明。
 
+- [第53轮研究记录](rounds/053/report.md)：真实记录接受率≤ln2、纯几何二次吸收反例及光滑输入的逐格熵障碍；空间总预算仍未证明。[验证摘要](rounds/053/verification.json)。复现：`python3 rounds/053/verify.py`。
 - [第52轮研究记录](rounds/052/report.md)：不交细尺度的精确最大核、真实来源的薄边界截断与径向深度总预算≤2X；剩余薄层仍未控制。[验证摘要](rounds/052/verification.json)。复现：`python3 rounds/052/verify.py`。
 - [第51轮研究记录](rounds/051/report.md)：真实P加权外侧重复尾≤X，剩余重复系数降至对数级；完整球锐常数2及真实二维光滑输入的径向选择障碍。原外侧无维预算仍未证明。[验证摘要](rounds/051/verification.json)。复现：`python3 rounds/051/verify.py`。
 - [第50轮研究记录](rounds/050/report.md)：深细化平均预算≤9X/8、激活首矩≤5X/2，以及真实光滑L¹输入的任意大逆向标签跳变；一般外侧预算仍未证明。[验证摘要](rounds/050/verification.json)。复现：`python3 rounds/050/verify.py`。
