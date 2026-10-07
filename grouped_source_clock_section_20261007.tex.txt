@@ -1,0 +1,226 @@
+\section{任意来源 packets 的整组时钟与真实合并}
+
+本节保留任意来源分割的有符号删除减增长费用，建立已接受历史下的整组合并控制与原始标签质量倾斜。合并改变时钟对象而不改变当前来源；它不能免费采用小空间格的 $16W$，也不销毁原始标签熵。本节仅给一般多 packet 终端的充分接口，主平方根上界仍未完成。
+
+\subsection{固定物理分割、当前来源与 signed 费用}
+
+完整有限正来源 $\mu$ 固定分成有限个不交 Borel packets $\mu_i=\mu|_{E_i}$，质量 $w_i>0$，$\sum_iw_i=W_0$。它们不要求空间直径小；重合物理原子不拆成独立标签。当前来源为
+\[
+ \nu=\sum_{i\in A}c_i\mu_i,\qquad c_i>0,
+\]
+当前 groups $\mathcal B$ 分割存活原细标签 $A$，并有
+\[
+ \nu_B=\sum_{i\in B}c_i\mu_i,\qquad W_B=\nu_B(\mathbf R^n),
+ \qquad W=\sum_BW_B.
+\]
+窗口为原完整连续 $[a,b]$、$a>0$，阈值 $\tau>0$。写
+\[
+ M=M_\nu,\quad E=\{M>\tau\},\quad I=\tau|E|,\quad
+ \Phi(\nu)=\tau\int\log_+(M/\tau)\,dx,\quad Z=1+n\log(b/a).
+\]
+取当前共同可测真赢家 $R$，$m=MR^n$、$z=\log(M/\tau)$，并令
+\[
+ \pi_B(x)=\nu_B(Q(x,R(x)))/m(x),\qquad \sum_B\pi_B=1.
+\]
+所有分母是当前完整 $\nu$。合法子窗最大响应的可数右逼近使最小真赢家联合可测；此选择不自动继承其他原历史选择器。
+
+对不随接收点 $x$ 改变的 $a_B\in[0,1]$，定义
+\[
+ D_B=\Phi(\nu)-\Phi(\nu-\nu_B)\ge0,\qquad
+ L_a=\tau\int_E\sum_Ba_B\pi_B\,dx,\qquad
+ R_a=\sum_Ba_BD_B-L_a.
+\]
+原赢家在删除后的完整来源给
+\[
+ D_B\le\tau\int_E\min\{z,-\log(1-\pi_B)\}\,dx.
+\]
+由 $\min\{z,-\log(1-p)\}\le p+(1+4z)p^2$ 得
+\[
+ R_a\le C_a,\qquad
+ C_a=\tau\int_E(1+4z)\sum_Ba_B\pi_B^2\,dx.        \tag{GC1}
+\]
+任意 packet 不能使用空间小格的碰撞常数。只有通用界
+\[
+ -ZW\le R_a\le C_a\le I+4\Phi(\nu)
+              \le Z(1+4/e)W.                    \tag{GC2}
+\]
+全部来源一组时，$R_a=a(\Phi-I)$；若当前 $\Phi=I$，真实 signed 费用为零，而正帽为 $5aI$。不能用正帽掩盖该差异或声称 stationarity 沿控制路径保持。
+
+\subsection{合并不改来源的有限控制与真实补偿}
+
+政策仅观察已接受整组死亡、当前来源、当前分组及独立政策种子。在有限确定刷新点或已接受死亡后，可以把若干当前 groups 合并为 union，并给新 groups 选速率。只合并，不分裂、不复活；合并时 $\nu,\Phi,W,c_i$ 不变，新 packet 是当时真实成员之和，而非把成员重新恢复为共同初始系数。
+
+相邻刷新间 $a_B$ 固定，尚存 packet 共同乘法增长；按左状态速率接受死亡，删除后才合并和刷新。条件于段首历史，各 group 的等待时间独立为 $\mathrm{Exp}(a_B)$，零速率为无穷，到下一确定刷新时刻截断。指数记忆无关使未死 groups 合法重启。合并和死亡总次数均有限，拒绝 Poisson proposal 及未来 marks 不纳入政策观察。
+
+无跳段 $\nu_h=\sum_Be^{a_Bh}\nu_B$，当前真赢家下
+\[
+ \log[U_R(\nu_h)/M]
+ =\log\sum_B\pi_Be^{a_Bh}\ge h\sum_Ba_B\pi_B.
+\]
+原 $E$ 外新收益非负，TV-Lipschitz 使 $\Phi$ 沿段局部绝对连续，实际漂移在 $dt$ 几乎处处至少为 $L_a$。赢家切换和阈值平台不要求精确导数等式。
+
+首死亡标签 $B$、延迟 $s$ 的条件密度为 $a_Be^{-\Lambda s}ds$，$\Lambda=\sum_Ba_B$；无死亡到 $s$ 的概率是 $e^{-\Lambda s}$。因此该段死亡损失期望等于该段存活占用 $\int\sum_Ba_BD_B(\nu_s)ds$ 的期望。死亡或确定刷新后递归使用同一计算，有限拼接及条件塔式期望给完整补偿。对质量同理：连续增长 $\sum_Ba_BW_B$ 与实际删除质量补偿相消。
+
+任意有界观察停时 $T$，先给确定时刻条件合同，再对 $\Phi+\int R_a$ 向上有限网格停止，得到
+\[
+ \mathbf E_PW_T=W_0,\qquad
+ \mathbf E_P\Phi(\nu_T)\ge\Phi(\mu)
+             -\mathbf E_P\int_0^TR_a(\nu_s,\mathcal B_s)\,ds.
+                                                               \tag{GC3}
+\]
+有限 horizon $h$ 下 $W_t\le e^hW_0$ 与 (GC2) 保证 signed 积分绝对可积。合并本身没有物理损失，不能凭标签熵下降擅记为负费用。
+
+\subsection{原始细标签的质量倾斜}
+
+初始按 $w_i/W_0$ 抽细标签 $J=i$。带标签 $Q$ 保护它当前所在整组不死亡，其余 groups 按同一已接受历史政策执行原死亡速率；所有 groups 仍按各自速率增长。合并后含标签的整个大组都被保护，不能将其非标签成员继续当作独立死亡。
+
+给定一条有限接受死亡路径，同一路径上的政策值相同。非标签 groups 的死亡速率因子相消，禁止标签所在组死亡的无死亡指数比值为
+\[
+ c_i(t)\mathbf1_{\{i\ \mathrm{alive}\}},\qquad
+ c_i(t)=\exp\left(\int_0^ta_{B_s(i)}\,ds\right).
+\]
+合并不产生新的路径似然因子。混合原细标签得到
+\[
+ \frac{dQ}{dP}\bigg|_{\mathcal F_t}
+ =\frac{\sum_iw_ic_i(t)\mathbf1_{\{i\ \mathrm{alive}\}}}{W_0}
+ =W_t/W_0.                                      \tag{GC4}
+\]
+使用原始接受历史滤过，不提前加入无限未来的 $P$-零测事件。细标签及组标签后验为
+\[
+ p_i(t)=c_i(t)w_i/W_t,\qquad
+ q_B(t)=\sum_{i\in B}p_i(t)=W_B(t)/W_t.
+\]
+整组的隐藏标签死亡率准确为 $a_B(1-q_B)$，$\overline a=\sum_Ba_Bq_B$。终值密度与绝对可积 Fubini 给有界停止的主合同
+\[
+ \frac{\Phi(\mu)}{W_0}
+ \le\mathbf E_Q\frac{\Phi(\nu_T)}{W_T}
+   +\mathbf E_Q\int_0^T\frac{R_a(\nu_s,\mathcal B_s)}{W_s}\,ds.
+                                                               \tag{GC5}
+\]
+一般组費不是普通标签活动量 $\mathbf E_Q\int\overline a$；用 $C_a$ 替代 $R_a$ 只是可能很粗的充分帽。
+
+\subsection{自身响应的系数一 residual 包络}
+
+令 $H_B=M_{\nu_B}$，$G(v)=\log(1+v)-v/(1+v)$，
+\[
+ K_B=\sup_{\rho>0}\Phi_\rho(\nu_B)/W_B.
+\]
+原 $E$ 上 $u=M/\tau\ge\max(1,v)$、$v=H_B/\tau$、$p=\pi_B\le v/u$。对
+\[
+ \min(\log u,-\log(1-p))-p
+\]
+的 $p$ 最大值，在两支交点 $p=1-1/u$ 或约束端点 $p=v/u$ 取得。交点可行时其值 $\log u-1+1/u$ 随 $u$ 增；交点不可行时最优 $p=v/u$ 随 $u$ 减。两支共同在 $u=v+1$、$p=v/(1+v)$ 取得 $G(v)$，故
+\[
+ D_B-L_B\le\tau\int G(H_B/\tau)\,dx.
+\]
+对每个 $v\ge0$，
+\[
+ G(v)=\int_0^\infty\frac{2}{(1+t)^3}
+                 t\log_+(v/t)\,dt.
+\]
+导数右边为 $v^{-1}\int_0^v2t(1+t)^{-3}dt=v/(1+v)^2=G'(v)$，且零端相同。非负 Tonelli 和权重积分为一给
+\[
+ D_B-L_B\le\int_0^\infty\frac{2}{(1+t)^3}
+                \Phi_{\tau t}(\nu_B)\,dt\le K_BW_B,\qquad
+ R_a\le\sum_Ba_BK_BW_B.                          \tag{GC6}
+\]
+这里 $K_B$ 是当前完整 packet 的真实 all-threshold 常数，不免费为维数无关常数。合并成员过去系数可能不同，必须重新核验合并后自身响应。其后的同组共同增长保持该 sup 的尺度齐次性，不意味着可以继承 children 的常数。
+
+自身功能随正阈值连续，被积函数由 $H_B/e$ 支配，因此 $K_B$ 的上确界可取正有理阈值，当前有限来源系数下可测；零质量组忽略。
+
+若当前 nearmax 有 $\Phi(\nu)\ge(K-\varepsilon)W$，只得 $D_B\ge KW_B-\varepsilon W$。若另有已核来源 nearflat 误差 $\Delta=\int|S_\nu-K|d\nu$，则
+\[
+ R_a\ge-\varepsilon W\sum_Ba_B-\Delta.
+\]
+严格 $\varepsilon=\Delta=0$ 时当前 $R_a\ge0$，但不能把原输入 nearmax 当作整条路径的状态假设。
+
+\subsection{真实合并的费用不是单向的}
+
+同速率 $a$ 的 children 合并时，$L_a$ 不变，正帽增加
+\[
+ \Delta C_a=2a\tau\int_E(1+4z)
+                    \sum_{C<D\ \mathrm{merged}}\pi_C\pi_D\,dx\ge0.
+\]
+signed 变化则为 $a(D_{\mathrm{union}}-\sum D_C)$，没有同样单调性。真实一维例：固定全边长 $1$，两个不同点 packets $\nu_\pm=v\tau\delta_{\pm\epsilon}$，$0<\epsilon<1/2$，有
+\[
+ \Phi(\nu_++\nu_-)
+ =\tau[(1-2\epsilon)\log_+(2v)+4\epsilon\log_+v],
+ \qquad\Phi(\nu_\pm)=\tau\log_+v.
+\]
+所以
+\[
+ \Delta R_a=a\tau(1-2\epsilon)
+                 [2\log_+v-\log_+(2v)].         \tag{GC7}
+\]
+$v=3/4$ 为负，$v=3$ 为正。无重合标签。窗口 $[1,1+\delta]$ 随 $\delta\downarrow0$ 的响应单调降至固定尺度响应，有限支撑及确定包络给功能支配收敛，严格符号也存在于正宽连续窗口。此诊断不认证 nearmax 或新目标阶数。
+
+\subsection{粗分组熵与原始细标签的准确账}
+
+自然对数有限 Shannon 链式给
+\[
+ H(p)=H(q)+K_{\mathrm{in}},\qquad
+ K_{\mathrm{in}}=\sum_Bq_BH((p_i/q_B)_{i\in B}).
+                                                               \tag{GC8}
+\]
+合并 children $B_j$ 为 $B$ 时，细 $p_i$ 和来源不变；粗熵下降
+\[
+ \delta_{\mathrm{merge}}
+ =q_BH((q_{B_j}/q_B)_j)\ge0,
+\]
+而块内残余 $K_{\mathrm{in}}$ 增加同量。不能将其当作原标签信息被销毁。
+
+固定分组段内 $\dot q_B=q_B(a_B-\overline a)$。真实整组删除后其余概率重归一化，乘 $Q$ 强度 $a_B(1-q_B)$ 与连续漂移相加，给
+\[
+ \mathcal L_QH(q)=\sum_Ba_B(1-q_B)\log(1-q_B)
+ =-\mathcal D(q,a),\qquad0\le\mathcal D\le\overline a.
+\]
+组内比例不变；记 $h_B=H(p_i/q_B)$，$K_{\mathrm{in}}=\sum_Bq_Bh_B$。其连续漂移为 $\sum_Bq_B(a_B-\overline a)h_B$，组删除跳漂移为 $\sum_Ba_Bq_B(K_{\mathrm{in}}-h_B)$，恰相消。所以固定分组间 $\mathcal L_QK_{\mathrm{in}}=0$，$\mathcal L_QH(p)=-\mathcal D$；合并时细熵也不跳。
+
+补偿可由有限 first-jump 直接证明：段首 $q$，$r(s)=\sum_Bq_Be^{a_Bs}$，$Q$ 无死亡概率和标签 $B$ 的首死亡密度为
+\[
+ S_Q(s)=e^{-s\sum_Ba_B}r(s),\qquad
+ f_{Q,B}(s)=a_Be^{-s\sum_Ba_B}[r(s)-q_Be^{a_Bs}]
+           =S_Q(s)a_B(1-q_B(s)).
+\]
+有限拼接、有界网格停止、$H\le\log N$ 给
+\[
+ \mathbf E_QH(p_T)=H(p_0)-\mathbf E_Q\int_0^T\mathcal D\,ds,
+\]
+\[
+ \mathbf E_QH(q_T)=H(q_0)-\mathbf E_Q\int_0^T\mathcal D\,ds
+                   -\mathbf E_Q\sum_{\mathrm{merges}\le T}\delta_{\mathrm{merge}},
+\]
+\[
+ \mathbf E_QK_{\mathrm{in}}(T)=K_{\mathrm{in}}(0)
+                   +\mathbf E_Q\sum_{\mathrm{merges}\le T}\delta_{\mathrm{merge}}.
+                                                               \tag{GC9}
+\]
+质量一的 singleton 删除强度为零，不使用零分母。无界停止必须另核 $Q$ 终止及极限条件。
+
+若终端粗组至多 $k$，平均活动量 $A=\mathbf E_Q\int_0^T\overline a\,dt$，则
+\[
+ \mathbf E_QK_{\mathrm{in}}(T)\ge H(p_0)-A-\log k.
+\]
+全部来源合并后立即冻结可使粗熵和工作量为零，却保留完整细熵和原功能。少标签本身不是可支付终态。
+
+\subsection{多 packet 终端的充分证书与未闭合部分}
+
+终端若每个原 $Q(x,b)$ 至多捕获 $k$ 个 packets，并且每个 packet 有已证 all-threshold 自身 cap
+$\Phi_\rho(\nu_B)\le\kappa_BW_B$，则
+\[
+ M_\nu(x)\le k\max_BM_{\nu_B}(x),\qquad
+ \Phi_\tau(\nu)\le\sum_B\Phi_\tau(k\nu_B)
+                    \le k\sum_B\kappa_BW_B.     \tag{GC10}
+\]
+若运行状态也有真实自身 caps，(GC5)、(GC6) 给
+\[
+ \frac{\Phi(\mu)}{W_0}
+ \le\mathbf E_Q\left[k_T\sum_Bq_B(T)\kappa_B(T)\right]
+   +\mathbf E_Q\int_0^T\sum_Ba_B(t)q_B(t)\kappa_B(t)\,dt.
+                                                               \tag{GC11}
+\]
+可保留更强 signed $R_a/W$ 取代第二帽。此证书允许多个共同捕获 packets 和任意多块内原标签；真正待证的是 overlap、自身 shape caps 和实际 $Q$ 占用。取全部来源一组时自身 cap 就是原未知问题，不能称为收益。
+
+有限深实际 $Q$ 决策历史也可组织为 Bellman 充分验证：节点费用为 signed 阶段期望 $\int R_a/W$，终端势支配 (GC10)，逐节点核父势至少节点费加真实条件转移期望的子势。有限深塔式期望保留终端后给上界。合并节点物理费用为零，粗熵下降不能自动记成负费；必须保存细标签或 residual 信息。这只是形式验证接口，没有构造目标维数势。
+
+本节建立合法整组控制、真实标签 law、signed 费用和残余熵账；没有为一般多格 group 免费给常数自身 cap，也没有证明存在使 (GC11) 达到平方根费用的控制。原 FIRST、完整未来资格、CP/GP、LCA 与全部历史亦未自动继承。一般主上界仍未闭合。

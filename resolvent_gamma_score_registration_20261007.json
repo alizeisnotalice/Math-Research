@@ -1,0 +1,35 @@
+{
+  "status": "registered_before_execution",
+  "date": "2026-10-07",
+  "purpose": "Original Exp/Gamma subordination score and common-Gamma small-r cancellation, plus a precisely truncated source-once maximal bound; not a full maximal endpoint",
+  "rounds": [
+    {"n": 8, "exp_terms": 64},
+    {"n": 32, "exp_terms": 160},
+    {"n": 128, "exp_terms": 512}
+  ],
+  "r_values": "deduplicated 1/(4n),1/n,1/ceil(sqrt(n)),1/ceil(cuberoot(n)),1/4,1/2,3/4,1",
+  "truncated_L_values": [1,2,4],
+  "kernel": "G_c is the original resolvent integral of the Markov semigroup exp(-ct B), and G_c^j is Gamma(j,rate1) mixing. All latent score bounds are uniform c>0 by Markov data processing, not a reset replacement.",
+  "arithmetic": "Pure Fraction for all moments and constants; Gamma(integer shape) CDF and Poisson mass have certified rational exp intervals from positive Taylor series. No floating quadrature or Monte Carlo.",
+  "checks": [
+    "Exp score mean1 and variance1/r+r-1",
+    "Full binomial-Gamma sum score mean0 and variance n(1/r+r-1)",
+    "Exact latent expected absolute score interval compared to Cauchy-Schwarz and trivial2n",
+    "Exact Poisson expected absolute score 2n Pois(nr){floor(nr)} interval compared to sqrt(n/r) and2n",
+    "Original symbol-independent Gamma Laplace moment identities",
+    "F(z)=sum z^k/((k+1)!k!) derivative coefficient bound F'<=F/2",
+    "Improved chi squared constants2 on r<=1 and4/3 on r<=1/2, from F>=1+z/2, the quadratic inverse bound, and cubic exp(-r) lower bound",
+    "Product cancellation bound min(4,(1+C(r)r^3)^n-1), C=4/3 for r<=1/2 else2",
+    "Truncated variation cost C(n,L/n)<=(6L^2+4L^3)"
+  ],
+  "revision_before_execution": "Root simplified the preliminary constant6 to2 and4/3 after registration was written but before any execution. The registered strategy and code were revised before their first run; no constant6 result exists.",
+  "exclusions": [
+    "No rerun of prior6030 or other original-kernel experiments",
+    "No duplication of root actual-face n^(2/3) lower bound",
+    "No actual obstacle/source samples or actual geom gate certification",
+    "No polylog maximal claim from single-r TV",
+    "No n-exponent fitting",
+    "No positive N assumption",
+    "No cap-L2 for the positive obstacle source"
+  ]
+}

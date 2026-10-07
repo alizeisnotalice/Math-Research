@@ -1,0 +1,32 @@
+{
+  "status": "registered_before_execution",
+  "dimensions": [8,32,128],
+  "r_intervals": [128,256,512],
+  "r_nodes": "q_j=j^2/[j^2+(M-j)^2], j=0..M; exact continuum factor <=512/511",
+  "receiver_samples_per_independent_batch": [1024,512,512],
+  "independent_batches": 4,
+  "c_values": [1,0.5],
+  "periods": [1,2,4],
+  "common_receiver_torus_period": 4,
+  "kernel": "Original Ghat_c(xi)=1/[1+c*(xi^2/log(1+xi^2)-1)], periodized; no reset or replaced spectrum",
+  "source_models": [
+    "period4 central Hamming exact shell",
+    "period4 equal mixture of separately normalized shells at n/2 +- floor(sqrt(n)/2)",
+    "period4 separately normalized band at n/2-1,n/2,n/2+1",
+    "one shared source: (period1 central band + period2 shifted double shell + period4 central shell)/3"
+  ],
+  "source_mass": "Each component has normalized period average 1; each complete input has mass 1 per normalized period volume",
+  "one_dimensional_fourier_harmonic_cutoff": 16384,
+  "one_dimensional_table_size": 262144,
+  "weak_thresholds": "lambda=2^(j/8), j from -8 through ceil(8*log2(input_height))+8; predetermined from input height",
+  "sampling_confidence": "99% simultaneous DKW for 24 dimension/c/model aggregated profiles; independent uniform receivers, c and models intentionally share each batch",
+  "continuum_and_error_direction": "maxnode <= true continuous max <=(512/511)*maxnode; original Fourier truncation and spatial interpolation give additive profile error; floating FFT/DP not interval certified",
+  "large_box_lifting": "Periodic lower weak levels lift to an L1 input on [0,4Mbox]^n, Mbox=65536*n^2, interior distance 8n; relative boundary loss <=1/16384 and original kernel tail error explicit",
+  "excluded_claims": [
+    "No empirical order fitting or universal weak upper bound",
+    "No full actual FIRST, hardband, CP/GP or history sample certification",
+    "No upper torus result transferred as an upper bound on Rn",
+    "No rerun of previous experiments"
+  ],
+  "seed_namespace": 202610070900
+}

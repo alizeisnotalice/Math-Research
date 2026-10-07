@@ -1,0 +1,61 @@
+{
+  "source_file": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/adversarial_shell_pressure_20261007/cell_residual_validation_20261006T174331920727Z.json",
+  "source_sha256": "8525051e9266075c5aff2a8d76ba01bec1b379c0611d506972f5cc46100470fa",
+  "rounds": [
+    [
+      1,
+      512,
+      129,
+      202610078012
+    ],
+    [
+      2,
+      1024,
+      257,
+      202610079012
+    ],
+    [
+      3,
+      2048,
+      513,
+      202610080012
+    ]
+  ],
+  "etas": [
+    0.5,
+    0.25,
+    0.125
+  ],
+  "packet_assignment": "fixed floor(original atom_index/8), no new grouping, no source/weight/lambda/winner optimization",
+  "bases": "Primary: existing fixed-cell eta=.5 residual. Also full original hardband base to expose the complete source partition.",
+  "quantities": "Gamma_v1=E[hardband,base,0<=beta-t<=1]; Theta_hard=E[hardband,base,beta>=t]*exp(t-beta)",
+  "decomposition": "Profiles total=paid+residual at every node; energies total=paid^2+residual^2+2 paid*residual. Independent replicate energy uses PA*PB+RA*RB+PA*RB+RA*PB.",
+  "confidence": "Unbiased cross-replicate products for fixed floating-node quantities; empirical square is upward biased. Hoeffding joint bands conditional on frozen input/lambda and heuristic arithmetic screening across 15 input-round records, both bases, 2 quantities, 7 parts, lower/upper RVs, both tails. Trapezoid bounds only finite-node targets, not continuum error. Never interpret a Monte Carlo zero as analytic zero.",
+  "arithmetic": "True full continuous [1,2] candidate enumeration using frozen complete mu, endpoints and complete floating distance ties; source q=1 preserved. Near response/band/branch threshold tolerance (n+1)*1e-10 is not exact-real geometry certification. Near packet-share winner decisions use exact dyadic subset masses for stored weights; branch is never used to reselect the winner.",
+  "pigeonhole": "max captured packet share >=1/packet_count. N32 has 4 packets: eta=.125 impossible; eta=.25 forces exact 4-way equality, checked by positive subset-mass intersection in stored dyadic model. N128 has 16 packets: do not extrapolate 4-packet emptiness.",
+  "jacobian": "normalized cube cone boundary [-.5,.5]^n gives dx=r^n dt dnu; source-cone expectations count complete weighted labels, not unweighted Lebesgue samples",
+  "L02_skill": "/Users/zhengzhihao/.codex/skills/math-l02-adversarial-input-search/SKILL.md",
+  "L02_references_read": [
+    "provenance.md",
+    "method.md",
+    "cube-interface.md",
+    "verification-log-20261006.md",
+    "audit-sol_hn.md",
+    "examples/positive.md",
+    "examples/negative.md"
+  ],
+  "skill_use": "Reconstruct frozen feasible input and independently recompute actual response; no external optimization theorem or toy weak-ratio theorem is invoked.",
+  "validation": [
+    "completed distance groups aggregate cell and packet masses",
+    "uniform four-packet quarter equality remains possible",
+    "strict paid/closed residual boundary",
+    "all squared cross terms reconstruct total"
+  ],
+  "limits": [
+    "genuine hard continuous-window partition, not actual FIRST/GOOD/CP/GP/early-jump gates",
+    "No original arbitrary finite J or diffuse L1 conclusion",
+    "No asymptotic fitting, no new source search",
+    "Exact mass certificates concern saved dyadic weights; ordinary numeric zeros remain numeric zeros"
+  ],
+  "engine_sha256": "24f05871e744203225542adaa142a1342b5f4516ab807602efa788748f5a33e3"
+}

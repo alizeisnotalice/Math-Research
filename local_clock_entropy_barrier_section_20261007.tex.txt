@@ -1,0 +1,162 @@
+\subsection{受控来源局部时钟的熵耗散障碍}
+
+% 独立插入片段：无 document 环境，无自定义宏。
+% 标签前缀 eq:local-clock-entropy-。
+
+在有限确定刷新与已接受删除刷新构成的 LC 控制类中，真实质量倾斜 law 下的 Shannon 熵损失不超过活动工作量。完整原 cube 来源可产生 \(n^n\) 等质量格的真正 co-capture clique，因此任何有限停止到图独立集的这类策略需要至少 \(n\log n\) 平均工作量。这否定全输入统一平方根工作量的过强终端策略；不声称该输入 nearmax，也不反驳 cube 弱型上界或更宽的可支付终端。
+
+\paragraph{有限完整来源与合法控制历史}
+
+有限 \(N\ge1\) 个正质量来源格 \(C_i\)，完整原来源 \(\mu=\sum_{i=1}^N\mu_i\)，\(\mu_i=\mu|_{C_i}\)，\(w_i>0\)，\(W=\sum_iw_i\)。格内所有原质量共同增长或删除；重合原子不拆为独立标签。可以采用已有连续原窗口 \([a,b]\) 下的半开小格，但以下熵计算不更换原来源或接收端。
+
+在原观察历史下，存活格有速率 \(a_i(t)\in[0,1]\)，质量增长速率与整格删除速率均为 \(a_i\)，死格约定 \(a_i=0\)。本段限定在 LC 已构造的控制类：只在预先固定的有限个确定时刻或已经发生的删除时刻刷新，已接受删除至多 \(N\) 次；刷新后取值仅依已接受历史，在相邻刷新间常值。死亡强度采用左状态，因此该类速率可预见。不要求固定图策略或对称速率，不宣称所有一般可预见控制都已构造。
+
+这里 accepted-history 指已发生的删除、已揭示的独立外部随机决定及当前来源状态。不能预先看未来死亡时钟、未揭示随机决定或永生标签。若扩大观察历史到其他提议信息，须先核验它仍具有下述实际 \(Q\) 删除强度，不能在计算中保留旧速率却额外赋予控制器未来信息。当前有限 LC 控制类及其质量倾斜符合这项约定；以后定义局部政策也必须保持它。
+
+写 \(A_i(t)=\int_0^t a_i(s)ds\)，存活集 \(B_t\)，\(\nu_t=\sum_{i\in B_t}e^{A_i(t)}\mu_i\)。有限时域质量 \(W_t\) 为原 \(P\) 鞅。质量倾斜 law \(Q\) 有有限时域密度 \(W_t/W\)，可用初始按 \(w_i/W\) 抽永生格 \(J\) 来构造：保护该格，其他格执行同一个接受历史政策；格质量仍按各自 \(a_i\) 增长。标签隐藏，使用 raw 观察滤过，不全局补齐无限未来的 \(P\)-零测事件。
+
+合法有限时域路径似然给标签后验及实际删除强度
+\begin{equation}
+\label{eq:local-clock-entropy-1}
+ p_i(t)=Q(J=i\mid\mathcal F_t)=\frac{\nu_t(C_i)}{W_t},
+ \quad\bar a(t)=\sum_{i\in B_t}a_i(t)p_i(t),\quad
+ q_i(t)=a_i(t)(1-p_i(t)).
+\end{equation}
+删除后该格 \(p_i=0\)，其他格重归一化。\(Q\) 下永生格保证总质量正；本段不把这个后验替换成自由 simplex 的任意动态。
+
+\paragraph{无跳漂移与真实删除后的熵}
+
+取自然对数，\(H(p)=-\sum_i p_i\log p_i\)，\(0\log0=0\)。\(0\le H\le\log N\)。无跳区间由相同真实增长给
+\begin{equation}
+\label{eq:local-clock-entropy-2}
+ \dot p_i=p_i(a_i-\bar a),\qquad
+ \frac d{dt}H(p)=-\sum_i a_i p_i\log p_i-\bar a H(p).
+\end{equation}
+这在每一无刷新区间逐点成立，有限刷新和有限删除后可拼接为时间积分；控制刷新本身不改变来源状态，亦不产生熵跳跃。连续漂移绝对值不超过 \(2\log N\)。零质量格不参与漂移。没有把公式代数的可推广性当作一般控制过程已合法构造。
+
+若删除活格 \(j\) 且 \(0<p_j<1\)，新分布为
+\begin{equation}
+\label{eq:local-clock-entropy-3}
+ p_i^{(-j)}=p_i/(1-p_j)\ (i\ne j),\quad p_j^{(-j)}=0,
+ \qquad
+ H(p^{(-j)})=\frac{H(p)+p_j\log p_j}{1-p_j}+\log(1-p_j).
+\end{equation}
+所以其真实熵跳跃为
+\begin{equation}
+\label{eq:local-clock-entropy-4}
+ \Delta_jH=\frac{p_jH+p_j\log p_j}{1-p_j}+\log(1-p_j).
+\end{equation}
+这个跳跃可为正，不能逐次删除都声称熵下降；下面下降的是补偿后的平均熵。
+
+当 \(p_j=1\)，\(q_j=0\)，不会发生该删除；无需定义空来源的 Shannon 概率。此时 singleton 的无跳 \(p\) 恒定、熵为零，即使其 \(a_j>0\) 也如此。当 \(a_j=0\) 时，对应强度与下文耗散项都为零。
+
+\paragraph{熵生成元与每单位工作量的信息上限}
+
+把 \eqref{eq:local-clock-entropy-4} 乘实际 \(Q\) 强度 \(a_j(1-p_j)\)，再加 \eqref{eq:local-clock-entropy-2} 的连续漂移，准确消去所有 \(p_jH\) 与 \(p_j\log p_j\) 项：
+\begin{equation}
+\label{eq:local-clock-entropy-5}
+ \begin{aligned}
+ \mathcal L_QH
+ &=-\sum_i a_i p_i\log p_i-\bar a H
+ +\sum_j a_j\{p_jH+p_j\log p_j+(1-p_j)\log(1-p_j)\}\\
+ &=\sum_j a_j(1-p_j)\log(1-p_j).
+ \end{aligned}
+\end{equation}
+在 \(p_j=1\) 时最后项按 \(0\log0=0\) 延拓，与真实零删除强度一致；不能把 \eqref{eq:local-clock-entropy-4} 的零分母硬代入。
+
+对 \(0\le p\le1\)，
+\begin{equation}
+\label{eq:local-clock-entropy-6}
+ 0\le-(1-p)\log(1-p)\le p.
+\end{equation}
+对 \(p<1\)，由 \(-\log(1-p)\le p/(1-p)\) 得到；两个端点直接延拓。因此定义耗散
+\begin{equation}
+\label{eq:local-clock-entropy-7}
+ \mathcal D(p,a)=-\mathcal L_QH
+ =\sum_j a_j[-(1-p_j)\log(1-p_j)],
+ \qquad0\le\mathcal D\le\bar a\le1.
+\end{equation}
+这项常数 1 与维数、格数和来源权重无关。它依赖真实质量倾斜删除强度，并不是对任意 posterior 演化的自由假设。
+
+\paragraph{有界停时补偿与无界停止的熵边界}
+
+有限格至多有 \(N-1\) 次 \(Q\) 删除，总强度至多 \(N\)。对固定有限时间窗，无跳熵漂移由 \(2\log N\) 控制，跳跃绝对值由 \(\log N\) 控制。补偿只使用 LC 已自证的有限 first-jump 条件化，不引用一般补偿定理。
+
+具体地，条件于一次已接受刷新后的状态 \(p\) 与已知常速率 \(a\)，在下一个确定刷新前且未发生删除时，令 \(r(t)=\sum_i p_i e^{a_i t}\)。原 \(P\) 无删除概率为 \(e^{-t\sum_i a_i}\)，质量倾斜给
+\[
+ S_Q(t)=e^{-t\sum_i a_i}r(t),\qquad
+ f_{Q,j}(t)=a_j e^{-t\sum_i a_i}
+ [r(t)-p_je^{a_jt}]=S_Q(t)a_j(1-p_j(t)).
+\]
+因此有界的删除前历史测试 \(F_j(t)\) 的 first-jump 期望，与删除前占用积分 \(\int S_Q(t)\sum_jq_j(t)F_j(t)dt\) 相同。死亡后再条件化，确定刷新到达时按已接受的新值重启该计算；有限确定刷新和至多 \(N-1\) 次删除允许有限拼接。把 \(F_j=\Delta_jH\) 与无跳积分合并即得
+\begin{equation}
+\label{eq:local-clock-entropy-8}
+ H(p_t)=H(p_0)-\int_0^t\mathcal D(p_s,a_s)ds+\mathcal M_t,
+\end{equation}
+其中有限时域 \(\mathcal M_t\) 为真鞅。对任何有界 accepted-history 停时 \(S\)，有限网格向上取整、右连续和有界支配给
+\begin{equation}
+\label{eq:local-clock-entropy-9}
+ \mathbb E_QH(p_S)=H(p_0)-\mathbb E_Q\int_0^S\mathcal D(p_t,a_t)dt.
+\end{equation}
+死亡时取删除并重归一化后的右连续状态；若 \(S\) 正好是删除时刻，\(H(p_S)\) 包含该跳跃。补偿的停时指标可取 \(\mathbf1_{\{t\le S\}}\)，其左连续版本可预见，单个端点不影响 \(dt\) 积分。
+
+令 \(T\) 为合法停时，假设 \(Q(T<\infty)=1\)。对 \(S=T\wedge h\) 用 \eqref{eq:local-clock-entropy-9}。因 \(H\le\log N\)，停止熵由 dominated convergence 收敛到真实 \(H(p_T)\)；耗散非负，积分由 monotone convergence 收敛。因而准确有
+\begin{equation}
+\label{eq:local-clock-entropy-10}
+ H(p_0)-\mathbb E_QH(p_T)
+ =\mathbb E_Q\int_0^T\mathcal D(p_t,a_t)dt
+ \le\mathbb E_Q\int_0^T\bar a_tdt.
+\end{equation}
+右边允许无穷；若期望工作量有限，这就是非平凡的必要预算。这里不要求 \(\mathbb E_QT<\infty\)，也不要求终值质量的 \(P\)-UI：熵本身在有限 \(N\) 下有界，而需要的 law 是 \(Q\)。反之，\(P(T<\infty)=1\) 不能代替 \(Q(T<\infty)=1\)；全灭停时在永生标签 law 下不终止，不能以空分布熵零套 \eqref{eq:local-clock-entropy-10}。
+
+若 terminal 的存活格数至多 \(k\ge1\)，则 \(H(p_T)\le\log k\)，所以
+\begin{equation}
+\label{eq:local-clock-entropy-11}
+ \mathbb E_Q\int_0^T\bar a_tdt\ge H(p_0)-\log k.
+\end{equation}
+这只给必要费用；没有把 Shannon 熵等同于全部过程工作量。
+
+\paragraph{完整原 cube 来源的 clique：\(n\log n\) 强障碍}
+
+取整数 \(n\ge2\)，\(a>0\)，原窗口 \([a,2a]\)，\(d=a/(8n)\)，\(N=n^n\)。完整原来源为
+\begin{equation}
+\label{eq:local-clock-entropy-12}
+ \mu=\frac1{n^n}\sum_{k\in\{0,\ldots,n-1\}^n}\delta_{dk},\qquad W=1.
+\end{equation}
+每个原点 \(dk\) 属于唯一半开格 \(d(k+[0,1)^n)\)，没有重合点或标签拆分。格质量均为 \(1/N\)，所以真实初始标签后验及 Shannon 熵是
+\begin{equation}
+\label{eq:local-clock-entropy-13}
+ p_i(0)=1/N,\qquad H(p_0)=\log N=n\log n.
+\end{equation}
+选 \(x_*=(d(n-1)/2,\ldots,d(n-1)/2)\)。任意来源点到该中心的 \(\ell^\infty\) 距离至多 \(d(n-1)/2<a/16\)，所以同一个原 \(Q(x_*,2a)\) 捕获所有点的正质量（甚至原 \(a\) cube 就足够）。因此真实 co-capture 图为 clique；任何覆盖图也含该 clique。这是同一完整原来源产生的图，不是自由图模型。
+
+在 clique 上，独立集最多含一个格；\(Q\) 下永生标签保证终态不为空。若某个合法控制在 \(Q\) 下有限停到独立集，必有 \(p_T\) 为 singleton、\(H(p_T)=0\)。由 \eqref{eq:local-clock-entropy-10}，
+\begin{equation}
+\label{eq:local-clock-entropy-14}
+ \boxed{\quad\mathbb E_Q\int_0^T\bar a_tdt\ge n\log n.\quad}
+\end{equation}
+由于 \(n\log n\) 大于任何 \(O(\sqrt n\,n^{o(1)})\)，不存在对所有完整输入都以该目标工作量停到独立集的策略，包括依当前已接受历史调整不同局部速率的策略。
+
+已有“有存活邻居才 active”的图政策在该 clique 上工作量为 \(H_{N-1}\)，并有 \(\log N\le H_{N-1}<\log N+1\)。故其大费用在这类终端目标下已接近信息下界，仅改时钟速率不能把阶数从 \(n\log n\) 降为平方根。若只停到 \(k\) 格，必要费用仍为 \(\log(N/k)\)。
+
+\paragraph{对主路线的严格含义}
+
+受控 \(16\) 工作引理给 \(\Phi(\mu)/W\) 的策略上界形如“真实终端得分 + \(16\) 倍工作量”。\eqref{eq:local-clock-entropy-14} 表明：把所有输入都强制压到 one-packet-per-query 的图独立集终端，再要求平方根工作量，是一个过强中间目标。
+
+没有计算或认证 \eqref{eq:local-clock-entropy-12} 的 nearmax／high-m／actual FIRST 资格，没有据它声称弱型下界 \(n\log n\)。一个输入可以另行直接支付；而更宽的终端类可以保留大量共同捕获、仍能协同估计的来源格。要求策略只作用于某个已证明的未付资格类也是不同量词，本文不否定它。
+
+若后续使用熵条件作为新停时政策，它必须使用实际 accepted-history 后验 \(p_i=\nu_i/W\)，而非事后知道永生标签的 oracle。允许揭示标签会令该 posterior 熵初时就变成零，改变信息与过程律；不属于本文或 LC 的控制类。
+
+若仅在终端作依 \(\mathcal F_T\) 选择的粗分组 \(\mathcal B_T\)，保留原标签与原时钟过程，令 \(q_B=\sum_{i\in B}p_i(T)\)，有限 Shannon 链式恒等式给
+\begin{equation}
+\label{eq:local-clock-entropy-15}
+ H(p_T)=H(q)+\sum_{B\in\mathcal B_T}q_B
+ H\bigl((p_i(T)/q_B)_{i\in B}\bigr).
+\end{equation}
+零质量块贡献按零定义。若平均工作量至多 \(A\)，必要条件就是
+\begin{equation}
+\label{eq:local-clock-entropy-16}
+ \mathbb E_Q H(p_T)\ge H(p_0)-A.
+\end{equation}
+因此粗终端只有至多 \(k\) 块时，期望块内残余标签熵至少 \(H(p_0)-A-\log k\)。这可说明便宜终端必须允许保留大量块内协同来源；它没有证明这种粗终端可支付。若政策在途中真正合并来源标签、改用整组删除或改变时钟对象，则已改变本段的控制模型，必须另核生成元与受控质量预算，不能直接套 \eqref{eq:local-clock-entropy-5} 或把被合并标签的熵免费丢弃。
+

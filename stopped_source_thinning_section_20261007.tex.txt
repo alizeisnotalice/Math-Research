@@ -1,0 +1,151 @@
+\section{来源死亡过程的适应停止与永生质量标签}
+
+本节沿用完整连续窗口 $[a,b]$、阈值 $\tau>0$、固定半开空间格子及已证来源稀疏化预算。格子内仍是原任意测度形状，不要求来源坐标独立。只讨论真实适应停止，不以连续可选抽样定理名称代替证明。
+
+\subsection{同一来源过程及确定时刻合同}
+
+记 $\mu_i=\mu|_{C_i}$、$w_i=\mu_i(\mathbf R^n)>0$、$\sum_iw_i=W$，忽略零质量格；先设格子数 $N<\infty$。写
+\[
+ \Phi(\nu)=\tau\int\log_+(M_\nu/\tau)\,dx,\qquad
+ Z=1+n\log(b/a),\qquad 0\le\Phi(\nu)\le (Z/e)W(\nu).
+\]
+取独立 $P$-寿命 $L_i\sim\mathrm{Exp}(1)$，定义
+\[
+ A_t=\{i:L_i>t\},\qquad
+ \mu_t=e^t\sum_{i\in A_t}\mu_i,\qquad
+ W_t=e^t\sum_{i\in A_t}w_i.
+\]
+死亡时使用删除后的右连续状态。观察滤过 $\mathcal F_t$ 只记录已经发生的死亡、标签和独立政策种子，不揭示未来寿命。为构造下文质量倾斜，规范路径空间允许 $L_i=\infty$；不能预先把无限时域所有 $P$-零测事件加入 $\mathcal F_0$。
+
+指数剩余寿命给确定 $s\le t$ 的质量合同
+\[
+ \mathbf E_P[W_t\mid\mathcal F_s]=W_s.
+\]
+条件于当前完整来源，重新使用已证 $16uW$ 定时预算，得到
+\[
+ \mathbf E_P[\Phi(\mu_t)\mid\mathcal F_s]
+ \ge\Phi(\mu_s)-16(t-s)W_s.                       \tag{ST1}
+\]
+当前来源为空时，两边按零解释；不把初始赢家当作死亡后的新赢家。
+
+\subsection{任意有界适应停时的有限网格证明}
+
+置 $V_t=\int_0^tW_s\,ds$、$X_t=\Phi(\mu_t)+16V_t$。条件 Fubini 与质量合同给
+\[
+ \mathbf E_P[X_t\mid\mathcal F_s]\ge X_s.
+\]
+固定 $h<\infty$，逐路径 $W_t\le e^hW$、$\Phi(\mu_t)\le (Z/e)e^hW$、$V_t\le he^hW$ 对 $t\le h$ 成立。有限格路径在 TV 中右连续；窗口稳定性
+\[
+ |\Phi(\nu)-\Phi(\widetilde\nu)|\le Z\|\nu-\widetilde\nu\|_{\mathrm{TV}}
+\]
+使 $X_t,W_t$ 也右连续。这里 TV 指差测度的总绝对质量。
+
+设 $T\le h$ 为观察停止时，向上取整到有限二进网格得 $T_m\downarrow T$。相邻网格时刻 $t_j,t_{j+1}$ 上，$\{T_m>t_j\}\in\mathcal F_{t_j}$，并且
+\[
+ X_{T_m}=X_0+\sum_j\mathbf1_{\{T_m>t_j\}}
+                         (X_{t_{j+1}}-X_{t_j}).
+\]
+逐项条件期望非负，故 $\mathbf E_PX_{T_m}\ge X_0$；同样展开质量增量给 $\mathbf E_PW_{T_m}=W$。由右连续及确定包络取极限，得到
+\[
+ \mathbf E_P\Phi(\mu_T)\ge\Phi(\mu)
+             -16\mathbf E_P\int_0^TW_s\,ds,\qquad
+ \mathbf E_PW_T=W.                              \tag{ST2}
+\]
+定时预算已经保留阈值平台：沿无跳路径严格超阈体积只是 $dt$ 几乎处处的增长导数，瞬时右导数为 $\tau|\{M\ge\tau\}|$。本证明使用积分合同，不假设全状态点态生成元等于严格超阈体积减删除损失。
+
+\subsection{质量倾斜的直接构造与准确死亡率}
+
+对有限 $h$，令 $dQ_h=(W_h/W)dP$ 于 $\mathcal F_h$。质量合同使这些概率一致。直接构造共同 $Q$：先按 $w_i/W$ 抽格子标签 $J$，置 $L_J=\infty$，其余寿命独立为 $\mathrm{Exp}(1)$，来源仍按同一 $e^t$ 补偿增长。
+
+固定 $J=i$ 后，有限时域观察法则等于 $P$ 条件于 $L_i>h$ 的法则。因此对 $F\in\mathcal F_h$，
+\[
+ Q(F)=\sum_i\frac{w_i}W e^hP(F\cap\{L_i>h\})
+     =\mathbf E_P[\mathbf1_FW_h]/W.             \tag{ST3}
+\]
+标签保护整个原格子测度，不以抽样点替换它。由于永生事件在 $P$ 下为零而在 $Q$ 下为一，有限时域密度不意味着无限时域全局绝对连续。
+
+隐藏标签后的后验为
+\[
+ Q(J=i\mid\mathcal F_t)
+ =\frac{w_i\mathbf1_{\{i\in A_t\}}}{w_{A_t}}.
+\]
+在 $Q$ 下来源永不为空；当前存活格子 $i$ 的死亡率准确为
+\[
+ q_i(A)=1-\frac{w_i}{w_A}
+       =1-\frac{\mu_t(C_i)}{W_t},\qquad
+ \sum_{i\in A}q_i(A)=|A|-1.                     \tag{ST4}
+\]
+若标签是 $i$，该格不死；否则其指数剩余寿命率为 $1$。也可从小步密度核验：原无死亡概率 $1-|A|\Delta+o(\Delta)$ 乘质量比 $e^\Delta$，得到新总率 $|A|-1$；格子 $i$ 死亡概率乘 $e^\Delta(w_A-w_i)/w_A$，得到单格率。来源确定增长未改变。
+
+\subsection{停止费用、终值密度与质量加权实现}
+
+任何停止时的非负费用都有准确 Tonelli 身份
+\[
+ \mathbf E_P\int_0^TW_s\,ds
+ =\int_0^\infty\mathbf E_P[W_s\mathbf1_{\{T>s\}}]\,ds
+ =W\int_0^\infty Q(T>s)\,ds=W\mathbf E_QT.      \tag{ST5}
+\]
+它使用 $\{T>s\}\in\mathcal F_s$，不预设终值质量守恒。
+
+有界 $T\le h$ 时，对 $F\in\mathcal F_T$，简单停止时的质量合同给 $\mathbf E_P[W_h\mathbf1_F]=\mathbf E_P[W_T\mathbf1_F]$；向上网格逼近、有界收敛给
+\[
+ Q(F)=\mathbf E_P[W_T\mathbf1_F]/W.
+\]
+故定义 $G_T=\Phi(\mu_T)/W_T$ 于 $Q$ 下的正质量实现，有
+\[
+ \mathbf E_QG_T=\mathbf E_P\Phi(\mu_T)/W
+ \ge\Phi(\mu)/W-16\mathbf E_QT.                 \tag{ST6}
+\]
+若原完整输入比值至少 $K-\varepsilon$，存在正质量停止实现保留比值至少 $K-\varepsilon-16\mathbf E_QT$。来源类须对删除与放大封闭；完整正 Borel 及完整非负 $L^1$ 类均满足。
+
+固定时刻还具有真实 $Q$-条件合同
+\[
+ G_t=\Phi(\mu_t)/W_t,\qquad 0\le G_t\le Z/e,\qquad
+ \mathbf E_Q[G_t\mid\mathcal F_s]\ge G_s-16(t-s).
+                                                               \tag{ST7}
+\]
+所以 $G_t+16t$ 的有界停止亦可用同一有限网格证明，不需要连续 Snell 定理。
+
+\subsection{可数格和无界停止的边界}
+
+可数格用同寿命有限截断，在任意紧时域满足确定界
+\[
+ \sup_{t\le h}\|\mu_t-\mu_t^{(N)}\|_{\mathrm{TV}}
+ \le e^h\sum_{i>N}w_i\longrightarrow0.
+\]
+故完整路径仍 TV 右连续、有左极限。非负 Tonelli 保留质量和密度合同，已证可数来源定时预算保留 (ST1)，有界停止的网格证明直接推广。无限格可以在紧时域有无限次死亡，不能使用有限总跳率。全观察滤过的停时也不能未经说明改成只观察截断格子的停时。
+
+对任意无界停时，仅在有限停止事件解释终值时，先用有界 $T\wedge h$ 得
+\[
+ \mathbf E_P[W_T\mathbf1_{\{T\le h\}}]=WQ(T\le h),
+ \qquad
+ \mathbf E_P[W_T\mathbf1_{\{T<\infty\}}]=WQ(T<\infty).
+                                                               \tag{ST8}
+\]
+若 $Q(T<\infty)=1$ 且 $\mathbf E_QT<\infty$，未停止功能尾项满足
+\[
+ 0\le\mathbf E_P[\Phi(\mu_h)\mathbf1_{\{T>h\}}]
+ \le (Z/e)WQ(T>h)\longrightarrow0.
+\]
+将 $\mathbf E_P\Phi(\mu_{T\wedge h})$ 分成有限停止项和该尾项，非负单调收敛及 (ST5) 给
+\[
+ \mathbf E_P[\Phi(\mu_T)\mathbf1_{\{T<\infty\}}]
+ \ge\Phi(\mu)-16W\mathbf E_QT,\qquad
+ \mathbf E_P[W_T\mathbf1_{\{T<\infty\}}]=W.        \tag{ST9}
+\]
+若再有 $P(T<\infty)=1$，就是普通完整终值陈述；否则不擅造未停止实现的来源。
+
+原 $P$ 下有限格的全灭时间 $T_0=\max_iL_i$ 几乎处处有限，却 $W_{T_0}=0$；在 $Q$ 下永生标签使 $T_0=\infty$。原 $W_h$ 几乎处处趋零而每个时刻均值仍为 $W$，所以无界时域质量族并非一致可积。缺少上述停止、费用或终值条件时，只能保留截断合同和尾项。
+
+\subsection{停止到剩余格子数的调和复杂度}
+
+有限正质量格子数 $N$，$1\le k\le N$，令 $T_k=\inf\{t:|A_t|\le k\}$，$H_0=0$、$H_m=\sum_{j=1}^m1/j$。在 $Q$ 下固定永生标签，其余 $N-1$ 格寿命独立为 $\mathrm{Exp}(1)$；剩 $j$ 格时下一死亡等待时间的存活函数为 $e^{-(j-1)t}$，均值 $1/(j-1)$。递归记忆无关给
+\[
+ \mathbf E_QT_k=H_{N-1}-H_{k-1},\qquad
+ \mathbf E_P\Phi(\mu_{T_k})
+ \ge\Phi(\mu)-16W(H_{N-1}-H_{k-1}),\qquad
+ \mathbf E_PW_{T_k}=W.                           \tag{ST10}
+\]
+时间法则与权重无关，死亡标签法则仍依赖权重。$k=0$ 不在此结论中。可数无穷个正质量格在每个有限时刻仍有无穷个存活格，故按数量止于有限 $k$ 的停时为无穷。
+
+因此停止推广消除了固定全局时间的限制，却没有消除输入格子复杂度。仍须由真实来源几何构造有目标费用的停止规则；永生标签不是原 FIRST、完整未来资格、CP/GP、LCA 或全部历史的免费跨输入耦合。一般平方根弱型目标仍未解决。

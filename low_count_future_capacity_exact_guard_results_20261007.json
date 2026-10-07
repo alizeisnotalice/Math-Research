@@ -1,0 +1,1576 @@
+{
+  "status": "PASS_EXACT",
+  "seed": "none; integers and Fraction",
+  "scope": "Exact finite coefficients for RN mask weights, union source/label marginal domination, and original dyadic source-only entropy range. Not an actual FIRST or geometric fixture.",
+  "theory_epsilon_unchanged": "ln(n+2)^(-4), unchanged",
+  "checker_epsilon": "1/4096",
+  "cutoffs_are_not_theory_log_epsilon_certificates": true,
+  "registration_sha256": "90a659acf45a5a2b394c5bad5b36a90fbd616c1adca4f6bed437797233342432",
+  "script_sha256": "93ca3b71e53788c13011ae695c29385c3bf390dcee3e0ae5ad04dbedb8e851d5",
+  "rounds": [
+    {
+      "n": 1024,
+      "alpha": 32,
+      "checker_epsilon": "1/4096",
+      "models": [
+        {
+          "sigma": "1/512",
+          "sample_weights": [
+            {
+              "k": 0,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 204,
+                "framed_pair_sha256": "4accd803f0c1892086ffe5a8253f4e39a099584130c817e9bc12ec6f0894e6cb",
+                "exact": "1/13521589885511927177078208020745832856800474786065182331965025"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 1,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 199,
+                "framed_pair_sha256": "3d6fc0ccde1a082be217d4561645d645d9213a6c9964fd3e9d7778a4364ace5f",
+                "exact": "1/795387640324231010416365177690931344517674987415598960703825"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 2,
+              "w": {
+                "numerator_bits": 7,
+                "denominator_bits": 202,
+                "framed_pair_sha256": "f74ccb5d016c257743e53979ec1b801a7be3a0778aedb575828a46320dec6209",
+                "exact": "97/4412308278430207815678152090980219142745418088084427918851745"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 16,
+              "w": {
+                "numerator_bits": 172,
+                "denominator_bits": 306,
+                "framed_pair_sha256": "6e26924d075e055c56b35996dff399de104feb8ed03735fd9b8227c9ad31f666"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 32,
+              "w": {
+                "numerator_bits": 316,
+                "denominator_bits": 372,
+                "framed_pair_sha256": "b1d58678b98d34e9db9dcac3d35170e75bc4024555aeed4336609cdbed572a95"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 64,
+              "w": {
+                "numerator_bits": 614,
+                "denominator_bits": 498,
+                "framed_pair_sha256": "4174f66b357842d71d4a3bb4d02359d601bbf0056a22d4b0146760029b5fd647"
+              },
+              "w_ge_checker_epsilon": true
+            },
+            {
+              "k": 192,
+              "w": {
+                "numerator_bits": 1805,
+                "denominator_bits": 860,
+                "framed_pair_sha256": "252b631c85598295c4ffdbf8d5e0ea692b25f0865b069325796882e7ff2ac54e"
+              },
+              "w_ge_checker_epsilon": true
+            }
+          ],
+          "cutoff": {
+            "exact_within_registered_range": 41,
+            "epsilon": "1/4096"
+          },
+          "independent_RN_identity": {
+            "supported_soft_coordinates": 8,
+            "gamma": "3/4",
+            "current_count_p": "3/2047",
+            "future_RN_ratio": {
+              "numerator_bits": 131,
+              "denominator_bits": 334,
+              "framed_pair_sha256": "7fc30f2280eb5d2605a437a86a7490944c1785db2e75d5b0d3d0c258937f7ece"
+            },
+            "scope": "finite nonnegative hardpersistent coefficient fixture, not original phi input"
+          },
+          "joint_fee_models": [
+            {
+              "label": "source-low with label-high",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "S": {
+                "numerator_bits": 1998,
+                "denominator_bits": 2012,
+                "framed_pair_sha256": "d8f6a80b4d13267d154e2aafd72ad6e6bbfcbf070b87b51092894e8edc8cda88"
+              },
+              "Z": {
+                "numerator_bits": 1998,
+                "denominator_bits": 2013,
+                "framed_pair_sha256": "081bbf6e2bf7666f52233c9e7510591b3ca1bd754119890aa1def9ca17f05d0a"
+              },
+              "source_high": false,
+              "old_paid_mass": "0/1",
+              "new_label_paid_mass": "5012000058529814388324559261755754059219615427537073961033342036869223577271679983251667409408491591548043940251716779086331084568580620583232964352041536707907282543953789525971693219459994466653108604670882676389207445172880130618241873747599164800685947525/49026244845254740670163043774999902595335037168773328092492982994212996717894393507906362672051304128747364891921093847573662198312005377666990931607265255620917654816931326696715434961376256484770505324088409668414604700480436542072630395257705474285144801999661718534720593834583248468272844803036451177174691582972772419647609352752547689126315953996880486674940044389810999146381645010955819287750072532424460689667810064144483619694126054268502454452307525279648873007627988919986911034007555919113750559121565732403673684788203516586915692544",
+              "combined_paid_mass": "5012000058529814388324559261755754059219615427537073961033342036869223577271679983251667409408491591548043940251716779086331084568580620583232964352041536707907282543953789525971693219459994466653108604670882676389207445172880130618241873747599164800685947525/49026244845254740670163043774999902595335037168773328092492982994212996717894393507906362672051304128747364891921093847573662198312005377666990931607265255620917654816931326696715434961376256484770505324088409668414604700480436542072630395257705474285144801999661718534720593834583248468272844803036451177174691582972772419647609352752547689126315953996880486674940044389810999146381645010955819287750072532424460689667810064144483619694126054268502454452307525279648873007627988919986911034007555919113750559121565732403673684788203516586915692544"
+            },
+            {
+              "label": "source threshold equality paid",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "S": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "Z": {
+                "numerator_bits": 1,
+                "denominator_bits": 204,
+                "framed_pair_sha256": "4accd803f0c1892086ffe5a8253f4e39a099584130c817e9bc12ec6f0894e6cb",
+                "exact": "1/13521589885511927177078208020745832856800474786065182331965025"
+              },
+              "source_high": true,
+              "old_paid_mass": "1/1",
+              "new_label_paid_mass": "0/1",
+              "combined_paid_mass": "1/1"
+            },
+            {
+              "label": "label threshold equality paid",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 199,
+                "framed_pair_sha256": "3d6fc0ccde1a082be217d4561645d645d9213a6c9964fd3e9d7778a4364ace5f",
+                "exact": "1/795387640324231010416365177690931344517674987415598960703825"
+              },
+              "S": {
+                "numerator_bits": 1,
+                "denominator_bits": 200,
+                "framed_pair_sha256": "3031870dc8dadd497a3db301e9d196eff19e6ee41d69d7eeac4969db1875b8bf",
+                "exact": "1/1229235444137447925188928001885984805163679526005925666542275"
+              },
+              "Z": {
+                "numerator_bits": 1,
+                "denominator_bits": 201,
+                "framed_pair_sha256": "3ab1a8497cdccd9c26c297c189993c83a05cdf72000d366822242a96c6d1841b",
+                "exact": "1/2704317977102385435415641604149166571360094957213036466393005"
+              },
+              "source_high": false,
+              "old_paid_mass": "0/1",
+              "new_label_paid_mass": "1/4",
+              "combined_paid_mass": "1/4"
+            }
+          ]
+        },
+        {
+          "sigma": "1/128",
+          "sample_weights": [
+            {
+              "k": 0,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 204,
+                "framed_pair_sha256": "4accd803f0c1892086ffe5a8253f4e39a099584130c817e9bc12ec6f0894e6cb",
+                "exact": "1/13521589885511927177078208020745832856800474786065182331965025"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 1,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 201,
+                "framed_pair_sha256": "3ab1a8497cdccd9c26c297c189993c83a05cdf72000d366822242a96c6d1841b",
+                "exact": "1/2704317977102385435415641604149166571360094957213036466393005"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 2,
+              "w": {
+                "numerator_bits": 7,
+                "denominator_bits": 206,
+                "framed_pair_sha256": "b5dfb9ed27e25a6515b6d90093548d1e829554854d524fd032d0a9750af7eb37",
+                "exact": "113/59881326635838534641346349806160116937259245481145807470130825"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 16,
+              "w": {
+                "numerator_bits": 138,
+                "denominator_bits": 301,
+                "framed_pair_sha256": "149ebdd76bae621a8531f8ab6f6fbb989d03ab03eba9f94748aefbe882d0fa6f"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 32,
+              "w": {
+                "numerator_bits": 268,
+                "denominator_bits": 384,
+                "framed_pair_sha256": "811a59e57284c5f498f81201ef651b0fb47a752670bbebc61d19c53310f4e2c4"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 64,
+              "w": {
+                "numerator_bits": 510,
+                "denominator_bits": 516,
+                "framed_pair_sha256": "22b8ade839ccb8b8fdd7f8b5d6e1a07e99ed8add212c97753652f3ebc6a0e5b3"
+              },
+              "w_ge_checker_epsilon": true
+            },
+            {
+              "k": 192,
+              "w": {
+                "numerator_bits": 1435,
+                "denominator_bits": 868,
+                "framed_pair_sha256": "1d9b058486bcb6636cb459a146ca906c6908dd746b219d0306c94040b0863ad9"
+              },
+              "w_ge_checker_epsilon": true
+            }
+          ],
+          "cutoff": {
+            "exact_within_registered_range": 63,
+            "epsilon": "1/4096"
+          },
+          "independent_RN_identity": {
+            "supported_soft_coordinates": 8,
+            "gamma": "3/4",
+            "current_count_p": "3/511",
+            "future_RN_ratio": {
+              "numerator_bits": 117,
+              "denominator_bits": 320,
+              "framed_pair_sha256": "c3c8d2b87b7f340ec162d7b5ab2c52329706dee560e0388ab2eb2239e737c7ee"
+            },
+            "scope": "finite nonnegative hardpersistent coefficient fixture, not original phi input"
+          },
+          "joint_fee_models": [
+            {
+              "label": "source-low with label-high",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "S": {
+                "numerator_bits": 1630,
+                "denominator_bits": 1644,
+                "framed_pair_sha256": "82b4acb309e3fcbaee6cc216e235c86ffd998db51d34ea2d49b0d4dae51f5930"
+              },
+              "Z": {
+                "numerator_bits": 1630,
+                "denominator_bits": 1645,
+                "framed_pair_sha256": "1113922c572de4d3a3e780545f0cc9299cf4c03c25b51da0a611d71ea2a3ab22"
+              },
+              "source_high": false,
+              "old_paid_mass": "0/1",
+              "new_label_paid_mass": "1615787543193387350994946156380405015383335587641830422216159742815769531740866302060068626835307281143334533192176434710745255214890361038943768794162752923223233720021340330370150028658451513435989461033384398392047141824625642541635478876651685339879516736965/26993533781540881041479180100461492148297379940198777642914769365633349104071240130419360421940859503767140457338789125908101953179459247303126149981342524350435740199328948000389579507001634786424455059881670200058922291306392346474442533270481330575747039789429713078287288611217159780784883933050488441003613184739363507909216561490392273546325988194753901985994041609034181344735619413231604394832127173056542193012016840848409001984",
+              "combined_paid_mass": "1615787543193387350994946156380405015383335587641830422216159742815769531740866302060068626835307281143334533192176434710745255214890361038943768794162752923223233720021340330370150028658451513435989461033384398392047141824625642541635478876651685339879516736965/26993533781540881041479180100461492148297379940198777642914769365633349104071240130419360421940859503767140457338789125908101953179459247303126149981342524350435740199328948000389579507001634786424455059881670200058922291306392346474442533270481330575747039789429713078287288611217159780784883933050488441003613184739363507909216561490392273546325988194753901985994041609034181344735619413231604394832127173056542193012016840848409001984"
+            },
+            {
+              "label": "source threshold equality paid",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "S": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "Z": {
+                "numerator_bits": 1,
+                "denominator_bits": 204,
+                "framed_pair_sha256": "4accd803f0c1892086ffe5a8253f4e39a099584130c817e9bc12ec6f0894e6cb",
+                "exact": "1/13521589885511927177078208020745832856800474786065182331965025"
+              },
+              "source_high": true,
+              "old_paid_mass": "1/1",
+              "new_label_paid_mass": "0/1",
+              "combined_paid_mass": "1/1"
+            },
+            {
+              "label": "label threshold equality paid",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 201,
+                "framed_pair_sha256": "3ab1a8497cdccd9c26c297c189993c83a05cdf72000d366822242a96c6d1841b",
+                "exact": "1/2704317977102385435415641604149166571360094957213036466393005"
+              },
+              "S": {
+                "numerator_bits": 1,
+                "denominator_bits": 202,
+                "framed_pair_sha256": "dd984c827f53efbc09180116da42a8e1844c22bf194b084da54e018c33e4b43d",
+                "exact": "1/3863311395860550622022345148784523673371564224590052094847150"
+              },
+              "Z": {
+                "numerator_bits": 2,
+                "denominator_bits": 204,
+                "framed_pair_sha256": "98e88aa4694313b620b3e1ec52521eb5db43be6650830ab2a602a07d9eeefdc5",
+                "exact": "2/13521589885511927177078208020745832856800474786065182331965025"
+              },
+              "source_high": false,
+              "old_paid_mass": "0/1",
+              "new_label_paid_mass": "1/4",
+              "combined_paid_mass": "1/4"
+            }
+          ]
+        },
+        {
+          "sigma": "1/2",
+          "sample_weights": [
+            {
+              "k": 0,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 204,
+                "framed_pair_sha256": "4accd803f0c1892086ffe5a8253f4e39a099584130c817e9bc12ec6f0894e6cb",
+                "exact": "1/13521589885511927177078208020745832856800474786065182331965025"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 1,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 203,
+                "framed_pair_sha256": "e08212265fb2ba25b10765bb2ec689b84f7fda46ccdfdca46828dc4d45da50c7",
+                "exact": "1/12726202245187696166661842843054901512282799798649583371261200"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 2,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 203,
+                "framed_pair_sha256": "5658d023544eb21a1d104658905280f5b7458be945feb6cc99259d6bd9755346",
+                "exact": "1/11976265327167706928269269961232023387451849096229161494026165"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 16,
+              "w": {
+                "numerator_bits": 104,
+                "denominator_bits": 306,
+                "framed_pair_sha256": "666c8e470da8e458791ddb46c59bdc043f2f00adcef189b0a46fe2d597bbc252"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 32,
+              "w": {
+                "numerator_bits": 177,
+                "denominator_bits": 377,
+                "framed_pair_sha256": "8e7d7ad6b39dfb8e87f80bf5db1ecda77fc61dae832c623851e58f1b0ac1d600"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 64,
+              "w": {
+                "numerator_bits": 319,
+                "denominator_bits": 516,
+                "framed_pair_sha256": "dd93452b7f273ca8ad0655c700f1f90cd0d2201726479b841ee009f1c795b103"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 192,
+              "w": {
+                "numerator_bits": 696,
+                "denominator_bits": 878,
+                "framed_pair_sha256": "75ee0c572e58c0734e230821d7ddfd663167f6bd301d86edc48855b631d30035"
+              },
+              "w_ge_checker_epsilon": false
+            }
+          ],
+          "cutoff": {
+            "strictly_greater_than": 192,
+            "analytic_upper_bound": 1024,
+            "epsilon": "1/4096"
+          },
+          "independent_RN_identity": {
+            "supported_soft_coordinates": 8,
+            "gamma": "3/4",
+            "current_count_p": "3/7",
+            "future_RN_ratio": {
+              "numerator_bits": 66,
+              "denominator_bits": 268,
+              "framed_pair_sha256": "9b83c0678bc623b9e50cf8e7beda0f9ff9c879fe77a28af1743a6fb9495f9c16"
+            },
+            "scope": "finite nonnegative hardpersistent coefficient fixture, not original phi input"
+          },
+          "joint_fee_models": [
+            {
+              "label": "source-low all registered low labels",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "S": {
+                "numerator_bits": 2,
+                "denominator_bits": 204,
+                "framed_pair_sha256": "98e88aa4694313b620b3e1ec52521eb5db43be6650830ab2a602a07d9eeefdc5",
+                "exact": "2/13521589885511927177078208020745832856800474786065182331965025"
+              },
+              "Z": {
+                "numerator_bits": 1,
+                "denominator_bits": 204,
+                "framed_pair_sha256": "4accd803f0c1892086ffe5a8253f4e39a099584130c817e9bc12ec6f0894e6cb",
+                "exact": "1/13521589885511927177078208020745832856800474786065182331965025"
+              },
+              "source_high": false,
+              "old_paid_mass": "0/1",
+              "new_label_paid_mass": "0/1",
+              "combined_paid_mass": "0/1"
+            },
+            {
+              "label": "source threshold equality paid",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "S": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "Z": {
+                "numerator_bits": 1,
+                "denominator_bits": 204,
+                "framed_pair_sha256": "4accd803f0c1892086ffe5a8253f4e39a099584130c817e9bc12ec6f0894e6cb",
+                "exact": "1/13521589885511927177078208020745832856800474786065182331965025"
+              },
+              "source_high": true,
+              "old_paid_mass": "1/1",
+              "new_label_paid_mass": "0/1",
+              "combined_paid_mass": "1/1"
+            },
+            {
+              "label": "label threshold equality paid",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 203,
+                "framed_pair_sha256": "e08212265fb2ba25b10765bb2ec689b84f7fda46ccdfdca46828dc4d45da50c7",
+                "exact": "1/12726202245187696166661842843054901512282799798649583371261200"
+              },
+              "S": {
+                "numerator_bits": 1,
+                "denominator_bits": 204,
+                "framed_pair_sha256": "fc6765855000c08feb3b519854a8283fe080fd70e480cc61e5157ec843f56be9",
+                "exact": "1/13013259438688170516285794185379448162935795282829649161590400"
+              },
+              "Z": {
+                "numerator_bits": 1,
+                "denominator_bits": 204,
+                "framed_pair_sha256": "3cae1afb01614f3714477969d605803c9bd9d9872bb01ea446d08956cab8a641",
+                "exact": "1/13313565425734820605123158666580512351311236712433410296088640"
+              },
+              "source_high": false,
+              "old_paid_mass": "0/1",
+              "new_label_paid_mass": "1/4",
+              "combined_paid_mass": "1/4"
+            }
+          ]
+        }
+      ],
+      "endpoints": {
+        "sigma0_w0": {
+          "numerator_bits": 1,
+          "denominator_bits": 204,
+          "framed_pair_sha256": "4accd803f0c1892086ffe5a8253f4e39a099584130c817e9bc12ec6f0894e6cb",
+          "exact": "1/13521589885511927177078208020745832856800474786065182331965025"
+        },
+        "sigma0_new_future_allsoft_prior_mass": "1/33",
+        "sigma0_full_RN_identity": "not applicable; future has new support",
+        "sigma1_genuine_K": 1024,
+        "sigma1_w_n": "1/1"
+      },
+      "source_entropy": {
+        "occupied_children": "2^n, compressed exact symmetry",
+        "mass": "1/1",
+        "source_p": {
+          "numerator_bits": 1,
+          "denominator_bits": 1029,
+          "framed_pair_sha256": "d6bcd0de58a2b85e66ba3ecf1dfa1f86a011b275953bce3b0eb4b0631d81a6eb"
+        },
+        "entropy_sum": "ln(sqrt(n)*(2^n-1))",
+        "entropy_lower": "(n-1)*ln2",
+        "entropy_upper": ".5lnn+nln2",
+        "binary_depths": [
+          {
+            "depth": 1,
+            "full_mass_layer_reuse": "1/1",
+            "exact_entropy_sum": "depth * ln(sqrt(n))"
+          },
+          {
+            "depth": 2,
+            "full_mass_layer_reuse": "2/1",
+            "exact_entropy_sum": "depth * ln(sqrt(n))"
+          },
+          {
+            "depth": 8,
+            "full_mass_layer_reuse": "8/1",
+            "exact_entropy_sum": "depth * ln(sqrt(n))"
+          }
+        ],
+        "scope": "source-only range certificate, not actual input/output"
+      },
+      "exact_checks": 3106,
+      "status": "PASS_EXACT"
+    },
+    {
+      "n": 4096,
+      "alpha": 64,
+      "checker_epsilon": "1/4096",
+      "models": [
+        {
+          "sigma": "1/2048",
+          "sample_weights": [
+            {
+              "k": 0,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 473,
+                "framed_pair_sha256": "c6f335ec245c908e40f488fed51e4df76aed894b8ba8a14431efb0f1a9239d0d"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 1,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 468,
+                "framed_pair_sha256": "0285080a7522f86386a3f5ef5b12bc9b78834a361c4067f33240599a497b8021"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 2,
+              "w": {
+                "numerator_bits": 9,
+                "denominator_bits": 472,
+                "framed_pair_sha256": "5d930a8757e982fd813ba35e5874e433f39823e5890ccee12f9a5a94f64314ed"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 32,
+              "w": {
+                "numerator_bits": 397,
+                "denominator_bits": 699,
+                "framed_pair_sha256": "50a55ea460919df23c3ad32162abf2cf51c2d7ed7c4e0ab47c0dca8f71a19868"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 64,
+              "w": {
+                "numerator_bits": 769,
+                "denominator_bits": 885,
+                "framed_pair_sha256": "731c6fc0c0a05db32f00b8b6d6e61b4ca6d22cad670d3259d4cc9312288a19e4"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 128,
+              "w": {
+                "numerator_bits": 1528,
+                "denominator_bits": 1237,
+                "framed_pair_sha256": "5f21add50831dd7456b9aed927d373520e6e1b84ca763d8b6dab8dc28eec1706"
+              },
+              "w_ge_checker_epsilon": true
+            },
+            {
+              "k": 320,
+              "w": {
+                "numerator_bits": 3708,
+                "denominator_bits": 2031,
+                "framed_pair_sha256": "4ca7eb34363abc6df7f9160c83484736fade4786b1bccc2ef78395fa17b372a9"
+              },
+              "w_ge_checker_epsilon": true
+            }
+          ],
+          "cutoff": {
+            "exact_within_registered_range": 81,
+            "epsilon": "1/4096"
+          },
+          "independent_RN_identity": {
+            "supported_soft_coordinates": 16,
+            "gamma": "3/4",
+            "current_count_p": "3/8191",
+            "future_RN_ratio": {
+              "numerator_bits": 334,
+              "denominator_bits": 806,
+              "framed_pair_sha256": "0ebce04b87cfbaff002f6940762c24c5e97cf9da7c7c5cde19f373f4dfcfdd2f"
+            },
+            "scope": "finite nonnegative hardpersistent coefficient fixture, not original phi input"
+          },
+          "joint_fee_models": [
+            {
+              "label": "source-low with label-high",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "S": {
+                "numerator_bits": 4170,
+                "denominator_bits": 4184,
+                "framed_pair_sha256": "694c40cc13b79b1829ed88e9ad73c4e45116a92309360836add192c411449798"
+              },
+              "Z": {
+                "numerator_bits": 4170,
+                "denominator_bits": 4185,
+                "framed_pair_sha256": "8c17902fc78052ffb2698232b74396cf606277512d532febba185010febfb2ca"
+              },
+              "source_high": false,
+              "old_paid_mass": "0/1",
+              "new_label_paid_mass": "131504223638292893052720178037036622728829892602022212980684794524852399423296906556932153680021685385460159576577640411320024059995288250172191797969376725996725310858519140872038759315716739958019902093825746721585446320140763771658588775257627825239322697722698328010073841413289594864276027789405297673587506143724261193004291129881975697501085191386294290734206138837009278143518846957913736326887770452910649698710975653363477979967831400190457828992017581604668386785866378613673844647061354451118611639754455955797396042656458179745015713693780002764490643392315655166562348243267566195996830101413189425/44557452100126264464843273192343684198881320496692999390345383750107811344603490363614602235077203357244182118815466779325854567800594108622373483098232218685476501367454415014615119393860087325057288925991081125085120193565331468179976731798772379045648321402290259920381276394808255805326721481613474719115221574487821906121632633105932740180736658008877254291941623983994012684464035700351059055947115482508928699553817219300606924414389578086803743726460941844551148764303364151891085180064696080141837598851009438429477792924738158714667663019614692456801561779156010367711835922492778934639735232223740178009715844756521016541481703741029416013220017211527343038911468221900712228689856559597380178285059629198978021789462353041972801792590264663994870622133367317327263057663346030858704315956945482268169952497907641425299641266321554717706191780656389408094397159048473471685560325765173603148151240376314818578025981992401715000894113995207994313386562601270438590038001603614171849266250812063485543950051938127096236040134856567198888773702826551148232912119862664519655149146420593003768828689074783207849984",
+              "combined_paid_mass": "131504223638292893052720178037036622728829892602022212980684794524852399423296906556932153680021685385460159576577640411320024059995288250172191797969376725996725310858519140872038759315716739958019902093825746721585446320140763771658588775257627825239322697722698328010073841413289594864276027789405297673587506143724261193004291129881975697501085191386294290734206138837009278143518846957913736326887770452910649698710975653363477979967831400190457828992017581604668386785866378613673844647061354451118611639754455955797396042656458179745015713693780002764490643392315655166562348243267566195996830101413189425/44557452100126264464843273192343684198881320496692999390345383750107811344603490363614602235077203357244182118815466779325854567800594108622373483098232218685476501367454415014615119393860087325057288925991081125085120193565331468179976731798772379045648321402290259920381276394808255805326721481613474719115221574487821906121632633105932740180736658008877254291941623983994012684464035700351059055947115482508928699553817219300606924414389578086803743726460941844551148764303364151891085180064696080141837598851009438429477792924738158714667663019614692456801561779156010367711835922492778934639735232223740178009715844756521016541481703741029416013220017211527343038911468221900712228689856559597380178285059629198978021789462353041972801792590264663994870622133367317327263057663346030858704315956945482268169952497907641425299641266321554717706191780656389408094397159048473471685560325765173603148151240376314818578025981992401715000894113995207994313386562601270438590038001603614171849266250812063485543950051938127096236040134856567198888773702826551148232912119862664519655149146420593003768828689074783207849984"
+            },
+            {
+              "label": "source threshold equality paid",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "S": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "Z": {
+                "numerator_bits": 1,
+                "denominator_bits": 473,
+                "framed_pair_sha256": "c6f335ec245c908e40f488fed51e4df76aed894b8ba8a14431efb0f1a9239d0d"
+              },
+              "source_high": true,
+              "old_paid_mass": "1/1",
+              "new_label_paid_mass": "0/1",
+              "combined_paid_mass": "1/1"
+            },
+            {
+              "label": "label threshold equality paid",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 468,
+                "framed_pair_sha256": "0285080a7522f86386a3f5ef5b12bc9b78834a361c4067f33240599a497b8021"
+              },
+              "S": {
+                "numerator_bits": 1,
+                "denominator_bits": 469,
+                "framed_pair_sha256": "e338d477de6bc5052d104bc7c2b1ade17854a21c71c19ec2dc6d28713bb14d42"
+              },
+              "Z": {
+                "numerator_bits": 1,
+                "denominator_bits": 470,
+                "framed_pair_sha256": "bb78327f59dabf68a92aa6b8ef16d9e8dc4363cd86a71aa7922f5a15a0229ac1"
+              },
+              "source_high": false,
+              "old_paid_mass": "0/1",
+              "new_label_paid_mass": "1/4",
+              "combined_paid_mass": "1/4"
+            }
+          ]
+        },
+        {
+          "sigma": "1/256",
+          "sample_weights": [
+            {
+              "k": 0,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 473,
+                "framed_pair_sha256": "c6f335ec245c908e40f488fed51e4df76aed894b8ba8a14431efb0f1a9239d0d"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 1,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 471,
+                "framed_pair_sha256": "b266830fdc88a87b08b6dc0a75650d184627debe8b46a74f3cab39ebf10cbe57"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 2,
+              "w": {
+                "numerator_bits": 6,
+                "denominator_bits": 474,
+                "framed_pair_sha256": "5cc1bd7a607ea051a8199fc8b5524039ec59e5fb414c3ee1e7543b92e7d2db20"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 32,
+              "w": {
+                "numerator_bits": 289,
+                "denominator_bits": 680,
+                "framed_pair_sha256": "e94b1d77b1a3d4606ed87f0d61b3f8c50a3ce3422137e710f00df212aa06dec5"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 64,
+              "w": {
+                "numerator_bits": 575,
+                "denominator_bits": 873,
+                "framed_pair_sha256": "04d608fbcd1a7069c1e85ba3cd5d12aeaca1e5cb0f8a77e70749567ae362cede"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 128,
+              "w": {
+                "numerator_bits": 1154,
+                "denominator_bits": 1234,
+                "framed_pair_sha256": "69f850fafc88962bc63b1f160fa51755911e05f36cec9cd40fe156427ab2d355"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 320,
+              "w": {
+                "numerator_bits": 2760,
+                "denominator_bits": 2027,
+                "framed_pair_sha256": "c3b2b5a7fe26c563a448912d6c16950635b695955bc88997d46250bf1d363367"
+              },
+              "w_ge_checker_epsilon": true
+            }
+          ],
+          "cutoff": {
+            "exact_within_registered_range": 147,
+            "epsilon": "1/4096"
+          },
+          "independent_RN_identity": {
+            "supported_soft_coordinates": 16,
+            "gamma": "3/4",
+            "current_count_p": "1/341",
+            "future_RN_ratio": {
+              "numerator_bits": 253,
+              "denominator_bits": 726,
+              "framed_pair_sha256": "f5d4b16ccdc0807a9bc234e16b0a1795522aa20fa897ed17503346ded6463364"
+            },
+            "scope": "finite nonnegative hardpersistent coefficient fixture, not original phi input"
+          },
+          "joint_fee_models": [
+            {
+              "label": "source-low with label-high",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "S": {
+                "numerator_bits": 3225,
+                "denominator_bits": 3239,
+                "framed_pair_sha256": "ba2a37471b545e034ed395f70229622eecfcb7387cee5a6a5ce60dca043312ff"
+              },
+              "Z": {
+                "numerator_bits": 3225,
+                "denominator_bits": 3240,
+                "framed_pair_sha256": "6dbce4f71d9e54b950dc2e66dbc07ad9465e04fb83a5bd00db45e31a19e306ca"
+              },
+              "source_high": false,
+              "old_paid_mass": "0/1",
+              "new_label_paid_mass": "11756044159120538815898459221163646992637829713134699295802753983271335941725265206320467620956206276559253006315768670709311155431443702406275876954623286195194843006803521308414714122393816130982252434407928572735703612006443695009743102896579316053630302047408713738114922203094959408812650603144738662475604496863883470858373012468320624088592972216900858973562738382550260315630818577353854622370081161987835935935392517498529010136087942764441368638073434337792725769781769752048127230504230794706250374699976938429757657058633064488689011552907039607636829724410504858143231212896274504606939953978681915/19376328582516368150042249089647747963699258885762583424606911487620157356944361636097138819836830623557723479344349434267156962833013401308706214843102013936235918701622340447849635359125181622516700291884548346528195620588702372250448138174521896361266427409044403547274864592863634325460078412014824590581292718373838765796433377414638475433701353995531635888698367728457936310619400561126724934860610225486747253272600193601615317630294427499521259756337177199410838182950578004391502537645504993721146793194729351364445104962778463562022402674230013399220660749056211413303852963487328665015683554086832774035167481837014722463076698552067359615138221529981244705485844597274875588010569103180496939479703021948579960148116791015220265081214430619809538344438611727530542212035428391880239818892993557502968412870685706678651682816",
+              "combined_paid_mass": "11756044159120538815898459221163646992637829713134699295802753983271335941725265206320467620956206276559253006315768670709311155431443702406275876954623286195194843006803521308414714122393816130982252434407928572735703612006443695009743102896579316053630302047408713738114922203094959408812650603144738662475604496863883470858373012468320624088592972216900858973562738382550260315630818577353854622370081161987835935935392517498529010136087942764441368638073434337792725769781769752048127230504230794706250374699976938429757657058633064488689011552907039607636829724410504858143231212896274504606939953978681915/19376328582516368150042249089647747963699258885762583424606911487620157356944361636097138819836830623557723479344349434267156962833013401308706214843102013936235918701622340447849635359125181622516700291884548346528195620588702372250448138174521896361266427409044403547274864592863634325460078412014824590581292718373838765796433377414638475433701353995531635888698367728457936310619400561126724934860610225486747253272600193601615317630294427499521259756337177199410838182950578004391502537645504993721146793194729351364445104962778463562022402674230013399220660749056211413303852963487328665015683554086832774035167481837014722463076698552067359615138221529981244705485844597274875588010569103180496939479703021948579960148116791015220265081214430619809538344438611727530542212035428391880239818892993557502968412870685706678651682816"
+            },
+            {
+              "label": "source threshold equality paid",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "S": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "Z": {
+                "numerator_bits": 1,
+                "denominator_bits": 473,
+                "framed_pair_sha256": "c6f335ec245c908e40f488fed51e4df76aed894b8ba8a14431efb0f1a9239d0d"
+              },
+              "source_high": true,
+              "old_paid_mass": "1/1",
+              "new_label_paid_mass": "0/1",
+              "combined_paid_mass": "1/1"
+            },
+            {
+              "label": "label threshold equality paid",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 471,
+                "framed_pair_sha256": "b266830fdc88a87b08b6dc0a75650d184627debe8b46a74f3cab39ebf10cbe57"
+              },
+              "S": {
+                "numerator_bits": 1,
+                "denominator_bits": 471,
+                "framed_pair_sha256": "a0f04eef179cbfbe2cad09716b2c69a507b2257d404628cb287bd1149329b2b9"
+              },
+              "Z": {
+                "numerator_bits": 2,
+                "denominator_bits": 473,
+                "framed_pair_sha256": "a288b6b8cfbca96f9db61427c354fda9d8ee0a6503597f32c31f03558b843754"
+              },
+              "source_high": false,
+              "old_paid_mass": "0/1",
+              "new_label_paid_mass": "1/4",
+              "combined_paid_mass": "1/4"
+            }
+          ]
+        },
+        {
+          "sigma": "1/2",
+          "sample_weights": [
+            {
+              "k": 0,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 473,
+                "framed_pair_sha256": "c6f335ec245c908e40f488fed51e4df76aed894b8ba8a14431efb0f1a9239d0d"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 1,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 473,
+                "framed_pair_sha256": "18dd2aecb5bfac693799e391a98f5919f56e7239c6fdac075d33ddb7d6bae086"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 2,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 473,
+                "framed_pair_sha256": "e71d5b9c0921ecafb8f0ac1736b4fdd5a70cdff513382d8a68756614d406f4fb"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 32,
+              "w": {
+                "numerator_bits": 234,
+                "denominator_bits": 705,
+                "framed_pair_sha256": "6d59ad21a61578cb5ff0dab20c3f7533fdfbf56a2555edc1996f1fcf79329d89"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 64,
+              "w": {
+                "numerator_bits": 410,
+                "denominator_bits": 880,
+                "framed_pair_sha256": "d7f05fdf2c4a1428f3eb5a00aee92340ed732c8d877b047edb1d23bbbeea0663"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 128,
+              "w": {
+                "numerator_bits": 773,
+                "denominator_bits": 1239,
+                "framed_pair_sha256": "18107ddee015a792080029c5b781c9dc3310c2452f230682edb3ac929ea47885"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 320,
+              "w": {
+                "numerator_bits": 1572,
+                "denominator_bits": 2029,
+                "framed_pair_sha256": "412ac0a2142beccc71a0bc56ae58040a3140cb3e245c90db0adc9bfb830bb122"
+              },
+              "w_ge_checker_epsilon": false
+            }
+          ],
+          "cutoff": {
+            "strictly_greater_than": 320,
+            "analytic_upper_bound": 4096,
+            "epsilon": "1/4096"
+          },
+          "independent_RN_identity": {
+            "supported_soft_coordinates": 16,
+            "gamma": "3/4",
+            "current_count_p": "3/7",
+            "future_RN_ratio": {
+              "numerator_bits": 171,
+              "denominator_bits": 643,
+              "framed_pair_sha256": "409734a574def255a03700f9affb282b53f09cd7b00eae912d5e4bd6cb661979"
+            },
+            "scope": "finite nonnegative hardpersistent coefficient fixture, not original phi input"
+          },
+          "joint_fee_models": [
+            {
+              "label": "source-low all registered low labels",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "S": {
+                "numerator_bits": 2,
+                "denominator_bits": 473,
+                "framed_pair_sha256": "a288b6b8cfbca96f9db61427c354fda9d8ee0a6503597f32c31f03558b843754"
+              },
+              "Z": {
+                "numerator_bits": 1,
+                "denominator_bits": 473,
+                "framed_pair_sha256": "c6f335ec245c908e40f488fed51e4df76aed894b8ba8a14431efb0f1a9239d0d"
+              },
+              "source_high": false,
+              "old_paid_mass": "0/1",
+              "new_label_paid_mass": "0/1",
+              "combined_paid_mass": "0/1"
+            },
+            {
+              "label": "source threshold equality paid",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "S": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "Z": {
+                "numerator_bits": 1,
+                "denominator_bits": 473,
+                "framed_pair_sha256": "c6f335ec245c908e40f488fed51e4df76aed894b8ba8a14431efb0f1a9239d0d"
+              },
+              "source_high": true,
+              "old_paid_mass": "1/1",
+              "new_label_paid_mass": "0/1",
+              "combined_paid_mass": "1/1"
+            },
+            {
+              "label": "label threshold equality paid",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 473,
+                "framed_pair_sha256": "18dd2aecb5bfac693799e391a98f5919f56e7239c6fdac075d33ddb7d6bae086"
+              },
+              "S": {
+                "numerator_bits": 5,
+                "denominator_bits": 478,
+                "framed_pair_sha256": "ff0c40692a1fc1df07cd9bf975897a28f6875de480abf85c92b0d6594fb93625"
+              },
+              "Z": {
+                "numerator_bits": 6,
+                "denominator_bits": 479,
+                "framed_pair_sha256": "f3997a416ff8a7bdff1d8a259f09606f966c810233ce9667131505b33104b7b1"
+              },
+              "source_high": false,
+              "old_paid_mass": "0/1",
+              "new_label_paid_mass": "1/4",
+              "combined_paid_mass": "1/4"
+            }
+          ]
+        }
+      ],
+      "endpoints": {
+        "sigma0_w0": {
+          "numerator_bits": 1,
+          "denominator_bits": 473,
+          "framed_pair_sha256": "c6f335ec245c908e40f488fed51e4df76aed894b8ba8a14431efb0f1a9239d0d"
+        },
+        "sigma0_new_future_allsoft_prior_mass": "1/65",
+        "sigma0_full_RN_identity": "not applicable; future has new support",
+        "sigma1_genuine_K": 4096,
+        "sigma1_w_n": "1/1"
+      },
+      "source_entropy": {
+        "occupied_children": "2^n, compressed exact symmetry",
+        "mass": "1/1",
+        "source_p": {
+          "numerator_bits": 1,
+          "denominator_bits": 4102,
+          "framed_pair_sha256": "354d6120ec23c20952ba9be44c8673e47885da2c79661487157de979e8c2aa61"
+        },
+        "entropy_sum": "ln(sqrt(n)*(2^n-1))",
+        "entropy_lower": "(n-1)*ln2",
+        "entropy_upper": ".5lnn+nln2",
+        "binary_depths": [
+          {
+            "depth": 1,
+            "full_mass_layer_reuse": "1/1",
+            "exact_entropy_sum": "depth * ln(sqrt(n))"
+          },
+          {
+            "depth": 2,
+            "full_mass_layer_reuse": "2/1",
+            "exact_entropy_sum": "depth * ln(sqrt(n))"
+          },
+          {
+            "depth": 8,
+            "full_mass_layer_reuse": "8/1",
+            "exact_entropy_sum": "depth * ln(sqrt(n))"
+          }
+        ],
+        "scope": "source-only range certificate, not actual input/output"
+      },
+      "exact_checks": 8222,
+      "status": "PASS_EXACT"
+    },
+    {
+      "n": 16384,
+      "alpha": 128,
+      "checker_epsilon": "1/4096",
+      "models": [
+        {
+          "sigma": "1/8192",
+          "sample_weights": [
+            {
+              "k": 0,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 1077,
+                "framed_pair_sha256": "0f130365e5d647210419aac475fb6e2e4613f0004fe98766d5483db066ad5702"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 1,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 1071,
+                "framed_pair_sha256": "3e2378f147d15394834234e447b218652575df88a5901e88dd840d1bb454b95e"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 2,
+              "w": {
+                "numerator_bits": 12,
+                "denominator_bits": 1077,
+                "framed_pair_sha256": "a803877985df029b05ba971301a8d21ff9313bc149442aefb69c9ed116c13b21"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 64,
+              "w": {
+                "numerator_bits": 929,
+                "denominator_bits": 1600,
+                "framed_pair_sha256": "ece7f9e37d2da0b97f114c05e3ff148358000f1038f3b09cb1db2d1e932ee752"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 128,
+              "w": {
+                "numerator_bits": 1764,
+                "denominator_bits": 1999,
+                "framed_pair_sha256": "9e349a11fe6981d9e4472163bc9c40a90ef8e07ad0c63d54c05822d9627f6bae"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 256,
+              "w": {
+                "numerator_bits": 3507,
+                "denominator_bits": 2804,
+                "framed_pair_sha256": "316bae2a9f848c140d2c8913a3f77b076c054af4a6315f887ca6e31016ba4dc6"
+              },
+              "w_ge_checker_epsilon": true
+            },
+            {
+              "k": 576,
+              "w": {
+                "numerator_bits": 7807,
+                "denominator_bits": 4511,
+                "framed_pair_sha256": "8b9db3199308bdee5a853790433311c3566f4fff8de1aaedc2a2369fded60213"
+              },
+              "w_ge_checker_epsilon": true
+            }
+          ],
+          "cutoff": {
+            "exact_within_registered_range": 160,
+            "epsilon": "1/4096"
+          },
+          "independent_RN_identity": {
+            "supported_soft_coordinates": 32,
+            "gamma": "3/4",
+            "current_count_p": "3/32767",
+            "future_RN_ratio": {
+              "numerator_bits": 737,
+              "denominator_bits": 1813,
+              "framed_pair_sha256": "ec570966afb58404068b8e526f5c4e21afaeae58af2413e43d50f01d723f2345"
+            },
+            "scope": "finite nonnegative hardpersistent coefficient fixture, not original phi input"
+          },
+          "joint_fee_models": [
+            {
+              "label": "source-low with label-high",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "S": {
+                "numerator_bits": 8871,
+                "denominator_bits": 8885,
+                "framed_pair_sha256": "3f0ce485bb41432fa447a281b1d44f00796d3db5b9d1675fcae84629c59d7be8"
+              },
+              "Z": {
+                "numerator_bits": 8871,
+                "denominator_bits": 8886,
+                "framed_pair_sha256": "5b0d657df3d11fbf799333427e2d5a728f2756c7f6c632f1580f8bf943f5c6b2"
+              },
+              "source_high": false,
+              "old_paid_mass": "0/1",
+              "new_label_paid_mass": "58604492368466042014945182338050040476670958025476812420355626274418030663063502260939304833307668846427623842981565633735339664275830440140619751803154078262449359997493294219626201489811737394227690187871467840234246152582775033472206651214844867206636886572483535541759446742308700553649017205721660829469005197428645391185733986754095533733167286918769991369838368723376244209714750637971355978192243603753265775760753938122052959389002969224914979516005158534449371728880168200056902031523221038514478451985567413460009602147492272996274314269675171325288863925007925583360815428137309302865654113641658044825567689538189445268251692315427979222967971013814256531301356016024464341353180105044083578624690382226979241438235438858958347738516881898913532504502022654328644076243473863298040833243340297010818374679966697585756236016362809758048501163665997213012199430799719757267673661955093167150988161955563792834215731311496312857715635754212095941905506749724669145208732591707695602858166637920774410496847969479709403219417432733771900879229108062414762817647881563241816315866491264539942285559561443878572587063542207119887641349646648470385129945977637463859114326829790893620009449212546022237340693265403997280862433264460249578391629794844997618079328885046207951247544450844495680577574034123382310549548505156745299006857940349002080698339/242636707358883809996570484318840139625544669242153886818594821644303881073753746746473713250970018517176326036999865691801859591959645916369801179523428874700936031213660518575366038593236866297468542010764746381178461952377680442950640562336552200753656790493297126853523513591543603221444947906401661757546183850813946752012646329619071424663877092972540405723065027066811352420801624264764080976170205884904357934007744555303751208913683498289104935287341916250502539354532549400843179871543954329729653285013442961768348703883010174231785859114840681129415934129200454928900610275249063331342209933925322450671012776438850933364017187575079696209318007273048188663435469366008892934618975338281378154540653844851173512106786787331814926531398046655330210625727123995641011403687054678963841484280068598142146112590597690504397187223205109975040918563157643632752126928900884274706753822544431628443680706372823032985745537327803317328039194276890964692727536077694182012017941684762783755633139269938435307707172234380720030843998633587499832731420696297373780955854945339194772013018018707736955299510658219844421548465768332861387714936370692465776207085600486259546428471532710606189363669469423955291196184104876647460495053409784169644249759345248243002430050720201068418053730188576675613954161381131945337010841761753861810102717137174937274527823786980839482685554224839650291668803083077991499749351927890309725334711445908795715857794982652110684782390079645890927221815414467356668734286240123183400232992178374760635114898528217582194206055698549799842317856483588899508590864516058651268611281576819048035727818335463209932614702511240182857616801129512311766043012575261677589359238306074202004180101656077873911188372748184125497590649156010547069618364483383604329165392285569970687299096132532362336553931578614053594857106605315594031056784579674217872336786767741944232382837833706373102210025232546384349639811248219518408004648363631525479463511553153496780619604338673311923733877578113967439085002055304271656089072266849148427794055914896900154163227137748607723402002367526698723086878822719634176669539323056337374789151896593273227268836050965883674128896050501797764659086018655385417221335495206904492595263975325231780849187061272114440432669502933502512455144439723537760215458361934900610108264021713347880711229636608",
+              "combined_paid_mass": "58604492368466042014945182338050040476670958025476812420355626274418030663063502260939304833307668846427623842981565633735339664275830440140619751803154078262449359997493294219626201489811737394227690187871467840234246152582775033472206651214844867206636886572483535541759446742308700553649017205721660829469005197428645391185733986754095533733167286918769991369838368723376244209714750637971355978192243603753265775760753938122052959389002969224914979516005158534449371728880168200056902031523221038514478451985567413460009602147492272996274314269675171325288863925007925583360815428137309302865654113641658044825567689538189445268251692315427979222967971013814256531301356016024464341353180105044083578624690382226979241438235438858958347738516881898913532504502022654328644076243473863298040833243340297010818374679966697585756236016362809758048501163665997213012199430799719757267673661955093167150988161955563792834215731311496312857715635754212095941905506749724669145208732591707695602858166637920774410496847969479709403219417432733771900879229108062414762817647881563241816315866491264539942285559561443878572587063542207119887641349646648470385129945977637463859114326829790893620009449212546022237340693265403997280862433264460249578391629794844997618079328885046207951247544450844495680577574034123382310549548505156745299006857940349002080698339/242636707358883809996570484318840139625544669242153886818594821644303881073753746746473713250970018517176326036999865691801859591959645916369801179523428874700936031213660518575366038593236866297468542010764746381178461952377680442950640562336552200753656790493297126853523513591543603221444947906401661757546183850813946752012646329619071424663877092972540405723065027066811352420801624264764080976170205884904357934007744555303751208913683498289104935287341916250502539354532549400843179871543954329729653285013442961768348703883010174231785859114840681129415934129200454928900610275249063331342209933925322450671012776438850933364017187575079696209318007273048188663435469366008892934618975338281378154540653844851173512106786787331814926531398046655330210625727123995641011403687054678963841484280068598142146112590597690504397187223205109975040918563157643632752126928900884274706753822544431628443680706372823032985745537327803317328039194276890964692727536077694182012017941684762783755633139269938435307707172234380720030843998633587499832731420696297373780955854945339194772013018018707736955299510658219844421548465768332861387714936370692465776207085600486259546428471532710606189363669469423955291196184104876647460495053409784169644249759345248243002430050720201068418053730188576675613954161381131945337010841761753861810102717137174937274527823786980839482685554224839650291668803083077991499749351927890309725334711445908795715857794982652110684782390079645890927221815414467356668734286240123183400232992178374760635114898528217582194206055698549799842317856483588899508590864516058651268611281576819048035727818335463209932614702511240182857616801129512311766043012575261677589359238306074202004180101656077873911188372748184125497590649156010547069618364483383604329165392285569970687299096132532362336553931578614053594857106605315594031056784579674217872336786767741944232382837833706373102210025232546384349639811248219518408004648363631525479463511553153496780619604338673311923733877578113967439085002055304271656089072266849148427794055914896900154163227137748607723402002367526698723086878822719634176669539323056337374789151896593273227268836050965883674128896050501797764659086018655385417221335495206904492595263975325231780849187061272114440432669502933502512455144439723537760215458361934900610108264021713347880711229636608"
+            },
+            {
+              "label": "source threshold equality paid",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "S": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "Z": {
+                "numerator_bits": 1,
+                "denominator_bits": 1077,
+                "framed_pair_sha256": "0f130365e5d647210419aac475fb6e2e4613f0004fe98766d5483db066ad5702"
+              },
+              "source_high": true,
+              "old_paid_mass": "1/1",
+              "new_label_paid_mass": "0/1",
+              "combined_paid_mass": "1/1"
+            },
+            {
+              "label": "label threshold equality paid",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 1071,
+                "framed_pair_sha256": "3e2378f147d15394834234e447b218652575df88a5901e88dd840d1bb454b95e"
+              },
+              "S": {
+                "numerator_bits": 6,
+                "denominator_bits": 1077,
+                "framed_pair_sha256": "15b8ba67fdf194aca5fec1d871b158f8a34a7477f2221ce9e7232c4432f4d41a"
+              },
+              "Z": {
+                "numerator_bits": 1,
+                "denominator_bits": 1073,
+                "framed_pair_sha256": "e84d03f4405e65ecc152521466f5714165a89b05302cd3709d42be1cf36a8dd9"
+              },
+              "source_high": false,
+              "old_paid_mass": "0/1",
+              "new_label_paid_mass": "1/4",
+              "combined_paid_mass": "1/4"
+            }
+          ]
+        },
+        {
+          "sigma": "1/512",
+          "sample_weights": [
+            {
+              "k": 0,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 1077,
+                "framed_pair_sha256": "0f130365e5d647210419aac475fb6e2e4613f0004fe98766d5483db066ad5702"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 1,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 1075,
+                "framed_pair_sha256": "e193bc4967f4dfba5978b37354778c28405ffc24bbd41068171d4c2f96340246"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 2,
+              "w": {
+                "numerator_bits": 12,
+                "denominator_bits": 1084,
+                "framed_pair_sha256": "5496b7196dc610cca1f0c3a3f1bf9330e8a06ef4c510a68e8ff6e841e8af934b"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 64,
+              "w": {
+                "numerator_bits": 696,
+                "denominator_bits": 1610,
+                "framed_pair_sha256": "7b0d0e4c955fa3fba9b2f9efab32de2ad601a40eec846536bfed3ff98313bcbf"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 128,
+              "w": {
+                "numerator_bits": 1272,
+                "denominator_bits": 1998,
+                "framed_pair_sha256": "56375da6571e32a889d793a9877a02ff5f9f22eb3a72767ebe8cb6701dd29ba2"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 256,
+              "w": {
+                "numerator_bits": 2550,
+                "denominator_bits": 2843,
+                "framed_pair_sha256": "def4580eb390d7d1a33dbd3c9af6a7749f3b6a02b33a73d94032421b7ae3df16"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 576,
+              "w": {
+                "numerator_bits": 5541,
+                "denominator_bits": 4515,
+                "framed_pair_sha256": "1f2ffda2cc1ec9cd523e87d86a82e188d9c758549668b0563b25afcf9b379b8d"
+              },
+              "w_ge_checker_epsilon": true
+            }
+          ],
+          "cutoff": {
+            "exact_within_registered_range": 331,
+            "epsilon": "1/4096"
+          },
+          "independent_RN_identity": {
+            "supported_soft_coordinates": 32,
+            "gamma": "3/4",
+            "current_count_p": "3/2047",
+            "future_RN_ratio": {
+              "numerator_bits": 618,
+              "denominator_bits": 1694,
+              "framed_pair_sha256": "16bd24719366c75956f48bb2462799f3e036f2341c7461ff6054e231059f47ac"
+            },
+            "scope": "finite nonnegative hardpersistent coefficient fixture, not original phi input"
+          },
+          "joint_fee_models": [
+            {
+              "label": "source-low with label-high",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "S": {
+                "numerator_bits": 6609,
+                "denominator_bits": 6623,
+                "framed_pair_sha256": "ac5179f37a26fb562fdd9ebda6b21bb206e792768892ff6c31158526d400401c"
+              },
+              "Z": {
+                "numerator_bits": 6609,
+                "denominator_bits": 6624,
+                "framed_pair_sha256": "06d7047b4ae3c7befa34c1d23f1112b12adb83a2791195484b6f362d348b8af7"
+              },
+              "source_high": false,
+              "old_paid_mass": "0/1",
+              "new_label_paid_mass": "908252094509394819769196981251358286430810219455612976869622596711114223040099044538246132387843630366095260156402792904575356069937423626715765509384006385846746968401323645184587558470914896306892852359144768560052051456530519751704466586128801762070617456132620600209172081030520257010026299727666169405473059812567233783399582012984932484690027335108690303697771282474030909562123519404418710393878504802737833893242139383860091936644447364189204944402479099287964133488340001753322645387509845467479173920029105206332662247767556966836605820371810581104671695318511917152252401369622153371249097186178046327795021844031086328222677688177685949094321218826444742389861135107955020472307383335381988557698552412058554012375286611090834455320880533629759980217165041174611979922255154798823606419995838138226771563996834972990481588605970965579685296737281811798575125894347431566978572173378808998966442205740602109863507634852921930329124295131217887421758884785807093333090003516759507082061687223206431537840917501718572091444501989560140846328929130665328317262078630675307873766862994679192210817033163904505767162335340608716793442622711908009014984082916121369995469331459201562176450084197314137868117797882623442305956616342227170772356466452689350430802586273771076456271544306492212441555492532930872068628153723111520366618431448949284876636825/18488627412388149098037340034223365198379080353112879613648232728563883474185571897414566362358979620182293687240560077553800406696812879117385288502948957956834547827518407840049559003012474813078303249050230809150187841617738655460585512323962722074538040694393429810881935924878852874443207709268634763752175820508997184611536236686147399737134627688690614310301107630649980996956914831800662739847851851961670077989902972528353198582192180414120910312580704937599761408613413877499644739606579760892674136348571834516888427925620765579198964327577457742747844184716889175350530019324385616351293357182749588476489691644059473367685931585485326076902234672679583503589748689311991757576608002939472790098241103985348176797821495870747263601689562538236674114801247553322060269695681907191496536680640352524401468160276672796584171672687515869255925818428550502416789170598786299085986034101354353563779824320938400208380053186370846501438624004708233426297048034911607217397315154944916669903684995954985292205896092776884905169835234554968557203452090554346976269450339114720691531051505942307385542526996110310150363687454864746472057699063160234615487986362712421489997231535324551706408807262174857607787061054564955500479554363834011977640281298473193669422447773851343293350156555700031308724865284520524069270793163584735723388475403659389992109546961023492097709051156995504691568494050439038420036134933583674808012478003706971474735424412885033394065098747413199366227425216271916965264113143119714072915067206918596540584888034113571782574452306641389468366091860601271732990334122128463725739515998786253921821206699695582735673568780676651320908911936831488",
+              "combined_paid_mass": "908252094509394819769196981251358286430810219455612976869622596711114223040099044538246132387843630366095260156402792904575356069937423626715765509384006385846746968401323645184587558470914896306892852359144768560052051456530519751704466586128801762070617456132620600209172081030520257010026299727666169405473059812567233783399582012984932484690027335108690303697771282474030909562123519404418710393878504802737833893242139383860091936644447364189204944402479099287964133488340001753322645387509845467479173920029105206332662247767556966836605820371810581104671695318511917152252401369622153371249097186178046327795021844031086328222677688177685949094321218826444742389861135107955020472307383335381988557698552412058554012375286611090834455320880533629759980217165041174611979922255154798823606419995838138226771563996834972990481588605970965579685296737281811798575125894347431566978572173378808998966442205740602109863507634852921930329124295131217887421758884785807093333090003516759507082061687223206431537840917501718572091444501989560140846328929130665328317262078630675307873766862994679192210817033163904505767162335340608716793442622711908009014984082916121369995469331459201562176450084197314137868117797882623442305956616342227170772356466452689350430802586273771076456271544306492212441555492532930872068628153723111520366618431448949284876636825/18488627412388149098037340034223365198379080353112879613648232728563883474185571897414566362358979620182293687240560077553800406696812879117385288502948957956834547827518407840049559003012474813078303249050230809150187841617738655460585512323962722074538040694393429810881935924878852874443207709268634763752175820508997184611536236686147399737134627688690614310301107630649980996956914831800662739847851851961670077989902972528353198582192180414120910312580704937599761408613413877499644739606579760892674136348571834516888427925620765579198964327577457742747844184716889175350530019324385616351293357182749588476489691644059473367685931585485326076902234672679583503589748689311991757576608002939472790098241103985348176797821495870747263601689562538236674114801247553322060269695681907191496536680640352524401468160276672796584171672687515869255925818428550502416789170598786299085986034101354353563779824320938400208380053186370846501438624004708233426297048034911607217397315154944916669903684995954985292205896092776884905169835234554968557203452090554346976269450339114720691531051505942307385542526996110310150363687454864746472057699063160234615487986362712421489997231535324551706408807262174857607787061054564955500479554363834011977640281298473193669422447773851343293350156555700031308724865284520524069270793163584735723388475403659389992109546961023492097709051156995504691568494050439038420036134933583674808012478003706971474735424412885033394065098747413199366227425216271916965264113143119714072915067206918596540584888034113571782574452306641389468366091860601271732990334122128463725739515998786253921821206699695582735673568780676651320908911936831488"
+            },
+            {
+              "label": "source threshold equality paid",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "S": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "Z": {
+                "numerator_bits": 1,
+                "denominator_bits": 1077,
+                "framed_pair_sha256": "0f130365e5d647210419aac475fb6e2e4613f0004fe98766d5483db066ad5702"
+              },
+              "source_high": true,
+              "old_paid_mass": "1/1",
+              "new_label_paid_mass": "0/1",
+              "combined_paid_mass": "1/1"
+            },
+            {
+              "label": "label threshold equality paid",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 1075,
+                "framed_pair_sha256": "e193bc4967f4dfba5978b37354778c28405ffc24bbd41068171d4c2f96340246"
+              },
+              "S": {
+                "numerator_bits": 1,
+                "denominator_bits": 1075,
+                "framed_pair_sha256": "2435eaa32bae92be1effa6d5c3eec23681d21a0df70243cee0ed5cd05dd6d23c"
+              },
+              "Z": {
+                "numerator_bits": 2,
+                "denominator_bits": 1077,
+                "framed_pair_sha256": "504c3212310ec20e005be8bf3634e1ce71c8501182c73144a60f30a8663fd19f"
+              },
+              "source_high": false,
+              "old_paid_mass": "0/1",
+              "new_label_paid_mass": "1/4",
+              "combined_paid_mass": "1/4"
+            }
+          ]
+        },
+        {
+          "sigma": "1/2",
+          "sample_weights": [
+            {
+              "k": 0,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 1077,
+                "framed_pair_sha256": "0f130365e5d647210419aac475fb6e2e4613f0004fe98766d5483db066ad5702"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 1,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 1077,
+                "framed_pair_sha256": "6134f2bd6c29c8c31548ca7c4068db9744f98488a7b89c24a19fe0079305a007"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 2,
+              "w": {
+                "numerator_bits": 1,
+                "denominator_bits": 1077,
+                "framed_pair_sha256": "d815abc526d1021ad2cd489451755fab9918902edf181c78e171e87d2e5a51ed"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 64,
+              "w": {
+                "numerator_bits": 522,
+                "denominator_bits": 1597,
+                "framed_pair_sha256": "ece39487809f815da42524e6445e6568287b5e5a9d6919123fb661c03f0dc4de"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 128,
+              "w": {
+                "numerator_bits": 939,
+                "denominator_bits": 2013,
+                "framed_pair_sha256": "54816876152da9c770d840ebe88ad5a10b62d20268f98fc539d478c5275097e9"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 256,
+              "w": {
+                "numerator_bits": 1783,
+                "denominator_bits": 2854,
+                "framed_pair_sha256": "395ac5cfe51a082417c68d34f473bd029ec17561fee430182e23ed3c356d5910"
+              },
+              "w_ge_checker_epsilon": false
+            },
+            {
+              "k": 576,
+              "w": {
+                "numerator_bits": 3465,
+                "denominator_bits": 4529,
+                "framed_pair_sha256": "12b7195d1cf0e6c274f0ffc3a57d00e3c6dec1704cdc92d88d6e9c7a93d47807"
+              },
+              "w_ge_checker_epsilon": false
+            }
+          ],
+          "cutoff": {
+            "strictly_greater_than": 576,
+            "analytic_upper_bound": 16384,
+            "epsilon": "1/4096"
+          },
+          "independent_RN_identity": {
+            "supported_soft_coordinates": 32,
+            "gamma": "3/4",
+            "current_count_p": "3/7",
+            "future_RN_ratio": {
+              "numerator_bits": 359,
+              "denominator_bits": 1436,
+              "framed_pair_sha256": "f24d077709acd152166792dedcf6f125238a14ebe086e570c6d3bb6c3129f950"
+            },
+            "scope": "finite nonnegative hardpersistent coefficient fixture, not original phi input"
+          },
+          "joint_fee_models": [
+            {
+              "label": "source-low all registered low labels",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "S": {
+                "numerator_bits": 2,
+                "denominator_bits": 1077,
+                "framed_pair_sha256": "504c3212310ec20e005be8bf3634e1ce71c8501182c73144a60f30a8663fd19f"
+              },
+              "Z": {
+                "numerator_bits": 1,
+                "denominator_bits": 1077,
+                "framed_pair_sha256": "0f130365e5d647210419aac475fb6e2e4613f0004fe98766d5483db066ad5702"
+              },
+              "source_high": false,
+              "old_paid_mass": "0/1",
+              "new_label_paid_mass": "0/1",
+              "combined_paid_mass": "0/1"
+            },
+            {
+              "label": "source threshold equality paid",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "S": {
+                "numerator_bits": 1,
+                "denominator_bits": 13,
+                "framed_pair_sha256": "5aca699ec1559bb39cdda4f92dc8bbc1c16b919c96146e9366bdfb31e145e90c",
+                "exact": "1/4096"
+              },
+              "Z": {
+                "numerator_bits": 1,
+                "denominator_bits": 1077,
+                "framed_pair_sha256": "0f130365e5d647210419aac475fb6e2e4613f0004fe98766d5483db066ad5702"
+              },
+              "source_high": true,
+              "old_paid_mass": "1/1",
+              "new_label_paid_mass": "0/1",
+              "combined_paid_mass": "1/1"
+            },
+            {
+              "label": "label threshold equality paid",
+              "epsilon": {
+                "numerator_bits": 1,
+                "denominator_bits": 1077,
+                "framed_pair_sha256": "6134f2bd6c29c8c31548ca7c4068db9744f98488a7b89c24a19fe0079305a007"
+              },
+              "S": {
+                "numerator_bits": 1,
+                "denominator_bits": 1077,
+                "framed_pair_sha256": "f9367b9f386697a35c9f17a3eee4d8afe3d8da584f3df61aab3f443360d69013"
+              },
+              "Z": {
+                "numerator_bits": 1,
+                "denominator_bits": 1077,
+                "framed_pair_sha256": "3ff82d5774357ef8d8265fccbddb5eea60fc85ce8614677e564fb9fb39cb4071"
+              },
+              "source_high": false,
+              "old_paid_mass": "0/1",
+              "new_label_paid_mass": "1/4",
+              "combined_paid_mass": "1/4"
+            }
+          ]
+        }
+      ],
+      "endpoints": {
+        "sigma0_w0": {
+          "numerator_bits": 1,
+          "denominator_bits": 1077,
+          "framed_pair_sha256": "0f130365e5d647210419aac475fb6e2e4613f0004fe98766d5483db066ad5702"
+        },
+        "sigma0_new_future_allsoft_prior_mass": "1/129",
+        "sigma0_full_RN_identity": "not applicable; future has new support",
+        "sigma1_genuine_K": 16384,
+        "sigma1_w_n": "1/1"
+      },
+      "source_entropy": {
+        "occupied_children": "2^n, compressed exact symmetry",
+        "mass": "1/1",
+        "source_p": {
+          "numerator_bits": 1,
+          "denominator_bits": 16391,
+          "framed_pair_sha256": "b53f3bf55033f34a518b27fa74bd9bcf623500797da1a81aa190845a62c869c4"
+        },
+        "entropy_sum": "ln(sqrt(n)*(2^n-1))",
+        "entropy_lower": "(n-1)*ln2",
+        "entropy_upper": ".5lnn+nln2",
+        "binary_depths": [
+          {
+            "depth": 1,
+            "full_mass_layer_reuse": "1/1",
+            "exact_entropy_sum": "depth * ln(sqrt(n))"
+          },
+          {
+            "depth": 2,
+            "full_mass_layer_reuse": "2/1",
+            "exact_entropy_sum": "depth * ln(sqrt(n))"
+          },
+          {
+            "depth": 8,
+            "full_mass_layer_reuse": "8/1",
+            "exact_entropy_sum": "depth * ln(sqrt(n))"
+          }
+        ],
+        "scope": "source-only range certificate, not actual input/output"
+      },
+      "exact_checks": 25991,
+      "status": "PASS_EXACT"
+    }
+  ],
+  "total_exact_checks": 37321
+}

@@ -1,0 +1,18 @@
+{
+  "registered_before_run": true,
+  "date": "2026-10-07",
+  "claim": "Original-symbol diagnostics for the real all-visited translation estimate and the full logtime contour identity; uniform-c theorem remains analytic, not inferred from finite samples.",
+  "rounds": [{"n":8,"gl_orders":[16,32]},{"n":32,"gl_orders":[32,64]},{"n":128,"gl_orders":[64,128]}],
+  "c": [1.0,0.0625,0.000244140625],
+  "density_t_over_c": [1,2,4,16,64],
+  "symbol_lambda_log2_grid": [-24,-16,-8,-4,0,4,8,16,24],
+  "mellin_omega": [0.5,1,2,4],
+  "fourier_directions": ["balanced","one_large_coordinate","five_scale_pattern"],
+  "ell": 1,
+  "strip_theta": "1/128",
+  "contour_beta": "1/256",
+  "fixed_cutoff": "1024*n*n",
+  "density_integration": "u=xi/sqrt(Binverse(1/t)); [0,1] and 16 panels in log(u) up to U=65536*sqrt(beta_c/beta_t); retain analytic positive tail upper",
+  "contour_integration": "32 panels in log(t); lower t=c*exp(-40/n); upper t=(40+n*log(2))/(cos(beta)*sum(psi_c(xi_i^2))); retain small/large analytic tails",
+  "not_claimed": ["interval quadrature","numerical proof of uniform c","actual cube FIRST/history","strong L1 imaginary powers","dimension order fit"]
+}

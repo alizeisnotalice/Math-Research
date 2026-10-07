@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-07",
+  "scope": "new finite obstacle solver and bad/good source split; not continuum existence or actual cube",
+  "arithmetic": "fractions.Fraction throughout",
+  "rounds": [7, 11, 19],
+  "capacity": "kappa=1, counting measure, symmetric complete-graph rates (1+(i+j)%3)/(8m)",
+  "profiles": ["strict_single_3", "strict_single_half_capacity", "strict_mixed", "strict_alternating", "strict_arithmetic", "strict_uniform", "critical_single", "critical_uniform", "over_capacity", "disconnected_over_component_capacity"],
+  "algorithm": "strict: exact expanding active set; critical: solve mean-zero Poisson equation then subtract minimum",
+  "required_checks": ["positivity", "total cap", "saturation", "full mass", "outside flux", "bad/good split", "bad cap and mass", "volume paid by bad mass", "capacity rejects"],
+  "reuse": "does not rerun previous Abel or phi guards"
+}

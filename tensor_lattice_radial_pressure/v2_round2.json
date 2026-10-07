@@ -1,0 +1,4426 @@
+{
+  "round": "v2_round2",
+  "version": "v2 local coordinate arrivals; exact symbolic c=0 band ties",
+  "protocol": {
+    "samples_per_side": 512,
+    "nodes": 257,
+    "coarse_nodes": 129,
+    "replicates": 8,
+    "n": [
+      8,
+      32,
+      128
+    ],
+    "L": 257,
+    "c": [
+      -0.5,
+      0.0,
+      0.5,
+      1.0
+    ],
+    "window_side_length": [
+      1,
+      2
+    ],
+    "winner_tie": "smallest R, exact floating equal scores",
+    "cone": "uniform 2n faces, uniform free coordinates",
+    "jacobian": "dx = r^n dt d(normalized cone); no 2^-n",
+    "integrand": "Y=1_{2lambda<u<=4lambda}(r/R)^n 1_{r<=R}; energy=int(EY)^2 dt",
+    "status": "Hardband g1 relaxation only; no original softFIRST geom qualification."
+  },
+  "elapsed_seconds": 69.9335150718689,
+  "rows": [
+    {
+      "n": 8,
+      "L": 257,
+      "log10_total_atoms": 19.279464986650357,
+      "c": -0.5,
+      "log_lambda": -45.80682224153485,
+      "energy_mean": 0.00011340458802131012,
+      "energy_replicate_sd": 6.139082824636958e-05,
+      "approx95_MC_t_interval": [
+        6.208057122403527e-05,
+        0.00016472860481858497
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        2.66269354551146
+      ],
+      "nested_grid_mean_abs_difference": 2.08105729880736e-06,
+      "nested_grid_max_abs_difference": 3.6538750844161986e-06,
+      "same_sample_square_diagnostic_mean": 0.00012889248676939424,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2825209,
+            2825210
+          ],
+          "energy": [
+            0.0002341265100530111,
+            0.22081556075302658,
+            0.01768202053936731,
+            1.633134141827072e-05
+          ],
+          "coarse_energy": [
+            0.0002377803851374273,
+            0.2209492531806996,
+            0.017976049996288303,
+            1.6042507040920938e-05
+          ],
+          "same_sample_square_diagnostic": [
+            0.00021543916663019672,
+            0.21682457675504324,
+            0.018830638963833555,
+            3.836822807291088e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 33234,
+            "hardband_near_threshold": 809,
+            "symbolic_c0_ties_resolved": 809,
+            "c0_band_values_changed_by_exact_ties": 576,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 20
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2031,
+            "winner_near_r": 32176,
+            "hardband_near_threshold": 795,
+            "symbolic_c0_ties_resolved": 795,
+            "c0_band_values_changed_by_exact_ties": 576,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 41
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2825219,
+            2825220
+          ],
+          "energy": [
+            3.412460365249106e-05,
+            0.21509191166833083,
+            0.014006433565911686,
+            6.1234875587697165e-06
+          ],
+          "coarse_energy": [
+            3.4687544284504194e-05,
+            0.21539645865001864,
+            0.014248853416552914,
+            6.0501306945873696e-06
+          ],
+          "same_sample_square_diagnostic": [
+            3.2233197170386566e-05,
+            0.20207515890361238,
+            0.015736910976205866,
+            4.91514965241397e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 31945,
+            "hardband_near_threshold": 796,
+            "symbolic_c0_ties_resolved": 796,
+            "c0_band_values_changed_by_exact_ties": 562,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 30
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 33071,
+            "hardband_near_threshold": 852,
+            "symbolic_c0_ties_resolved": 852,
+            "c0_band_values_changed_by_exact_ties": 616,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 21
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2825229,
+            2825230
+          ],
+          "energy": [
+            0.00013418218158637153,
+            0.19252419679343785,
+            0.018892260370514197,
+            7.00706534337095e-06
+          ],
+          "coarse_energy": [
+            0.0001354164352455907,
+            0.19300503604872538,
+            0.019196345127798956,
+            6.126539582438426e-06
+          ],
+          "same_sample_square_diagnostic": [
+            0.000303244503796197,
+            0.2005927973843794,
+            0.017840283437413687,
+            5.9997495477492224e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 33355,
+            "hardband_near_threshold": 785,
+            "symbolic_c0_ties_resolved": 785,
+            "c0_band_values_changed_by_exact_ties": 587,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 35
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 32749,
+            "hardband_near_threshold": 792,
+            "symbolic_c0_ties_resolved": 792,
+            "c0_band_values_changed_by_exact_ties": 549,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 28
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2825239,
+            2825240
+          ],
+          "energy": [
+            0.00012681131427723702,
+            0.1955237865653919,
+            0.01657820174133569,
+            1.4008884583704887e-05
+          ],
+          "coarse_energy": [
+            0.00012874576898167368,
+            0.19611347638063897,
+            0.016856441573755813,
+            1.3506631845698779e-05
+          ],
+          "same_sample_square_diagnostic": [
+            0.00010595357413004946,
+            0.20014136264887658,
+            0.016749428986848176,
+            3.035973826648488e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 32953,
+            "hardband_near_threshold": 796,
+            "symbolic_c0_ties_resolved": 796,
+            "c0_band_values_changed_by_exact_ties": 566,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 34
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2037,
+            "winner_near_r": 34056,
+            "hardband_near_threshold": 835,
+            "symbolic_c0_ties_resolved": 835,
+            "c0_band_values_changed_by_exact_ties": 594,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 36
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2825249,
+            2825250
+          ],
+          "energy": [
+            0.00014471623715299513,
+            0.19296232620221848,
+            0.017016161201749494,
+            3.4482282572480923e-06
+          ],
+          "coarse_energy": [
+            0.00014654290320654443,
+            0.1934730782385691,
+            0.017319671592944858,
+            3.2583215680350368e-06
+          ],
+          "same_sample_square_diagnostic": [
+            6.542959745384618e-05,
+            0.18982111744612415,
+            0.023242896127948727,
+            5.056187043994282e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 32303,
+            "hardband_near_threshold": 780,
+            "symbolic_c0_ties_resolved": 780,
+            "c0_band_values_changed_by_exact_ties": 560,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 33
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 31667,
+            "hardband_near_threshold": 797,
+            "symbolic_c0_ties_resolved": 797,
+            "c0_band_values_changed_by_exact_ties": 564,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 30
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2825259,
+            2825260
+          ],
+          "energy": [
+            8.665111586279894e-05,
+            0.19956018382262158,
+            0.01902662673103468,
+            3.077129604655758e-05
+          ],
+          "coarse_energy": [
+            8.996613031912832e-05,
+            0.1996751128052832,
+            0.019305231895106686,
+            2.930373051925096e-05
+          ],
+          "same_sample_square_diagnostic": [
+            4.3935139261619406e-05,
+            0.19208422450810891,
+            0.020674845015898915,
+            2.44049419464379e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 32826,
+            "hardband_near_threshold": 756,
+            "symbolic_c0_ties_resolved": 756,
+            "c0_band_values_changed_by_exact_ties": 535,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 33
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 33540,
+            "hardband_near_threshold": 839,
+            "symbolic_c0_ties_resolved": 839,
+            "c0_band_values_changed_by_exact_ties": 599,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 30
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2825269,
+            2825270
+          ],
+          "energy": [
+            7.289400663190555e-05,
+            0.20372243144127566,
+            0.016658054477848832,
+            1.2690563819197792e-06
+          ],
+          "coarse_energy": [
+            7.515156143101146e-05,
+            0.20382110066615394,
+            0.016937574631563264,
+            9.49577121366057e-07
+          ],
+          "same_sample_square_diagnostic": [
+            9.962479930477724e-05,
+            0.19283689095886086,
+            0.013825428890346225,
+            9.266628045919483e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 32876,
+            "hardband_near_threshold": 799,
+            "symbolic_c0_ties_resolved": 799,
+            "c0_band_values_changed_by_exact_ties": 574,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 26
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 33481,
+            "hardband_near_threshold": 816,
+            "symbolic_c0_ties_resolved": 816,
+            "c0_band_values_changed_by_exact_ties": 592,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 36
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2825279,
+            2825280
+          ],
+          "energy": [
+            7.373073495367057e-05,
+            0.21280866871884363,
+            0.01984212361858534,
+            1.875203266965101e-06
+          ],
+          "coarse_energy": [
+            7.55944339550597e-05,
+            0.21323241583800123,
+            0.020239870668466345,
+            1.8121920786127528e-06
+          ],
+          "same_sample_square_diagnostic": [
+            0.00016527991640808134,
+            0.20443623273114134,
+            0.026885849782408905,
+            1.917679139638667e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 33799,
+            "hardband_near_threshold": 814,
+            "symbolic_c0_ties_resolved": 814,
+            "c0_band_values_changed_by_exact_ties": 601,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 32
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 33063,
+            "hardband_near_threshold": 831,
+            "symbolic_c0_ties_resolved": 831,
+            "c0_band_values_changed_by_exact_ties": 592,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 34
+          }
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "L": 257,
+      "log10_total_atoms": 19.279464986650357,
+      "c": 0.0,
+      "log_lambda": -44.39260867916176,
+      "energy_mean": 0.20412613324564333,
+      "energy_replicate_sd": 0.010878671557650071,
+      "approx95_MC_t_interval": [
+        0.19503133622618976,
+        0.2132209302650969
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        2.8667062741690823
+      ],
+      "nested_grid_mean_abs_difference": 0.0003321082303679411,
+      "nested_grid_max_abs_difference": 0.0005896898152470686,
+      "same_sample_square_diagnostic_mean": 0.19985154516701836,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2825209,
+            2825210
+          ],
+          "energy": [
+            0.0002341265100530111,
+            0.22081556075302658,
+            0.01768202053936731,
+            1.633134141827072e-05
+          ],
+          "coarse_energy": [
+            0.0002377803851374273,
+            0.2209492531806996,
+            0.017976049996288303,
+            1.6042507040920938e-05
+          ],
+          "same_sample_square_diagnostic": [
+            0.00021543916663019672,
+            0.21682457675504324,
+            0.018830638963833555,
+            3.836822807291088e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 33234,
+            "hardband_near_threshold": 809,
+            "symbolic_c0_ties_resolved": 809,
+            "c0_band_values_changed_by_exact_ties": 576,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 20
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2031,
+            "winner_near_r": 32176,
+            "hardband_near_threshold": 795,
+            "symbolic_c0_ties_resolved": 795,
+            "c0_band_values_changed_by_exact_ties": 576,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 41
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2825219,
+            2825220
+          ],
+          "energy": [
+            3.412460365249106e-05,
+            0.21509191166833083,
+            0.014006433565911686,
+            6.1234875587697165e-06
+          ],
+          "coarse_energy": [
+            3.4687544284504194e-05,
+            0.21539645865001864,
+            0.014248853416552914,
+            6.0501306945873696e-06
+          ],
+          "same_sample_square_diagnostic": [
+            3.2233197170386566e-05,
+            0.20207515890361238,
+            0.015736910976205866,
+            4.91514965241397e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 31945,
+            "hardband_near_threshold": 796,
+            "symbolic_c0_ties_resolved": 796,
+            "c0_band_values_changed_by_exact_ties": 562,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 30
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 33071,
+            "hardband_near_threshold": 852,
+            "symbolic_c0_ties_resolved": 852,
+            "c0_band_values_changed_by_exact_ties": 616,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 21
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2825229,
+            2825230
+          ],
+          "energy": [
+            0.00013418218158637153,
+            0.19252419679343785,
+            0.018892260370514197,
+            7.00706534337095e-06
+          ],
+          "coarse_energy": [
+            0.0001354164352455907,
+            0.19300503604872538,
+            0.019196345127798956,
+            6.126539582438426e-06
+          ],
+          "same_sample_square_diagnostic": [
+            0.000303244503796197,
+            0.2005927973843794,
+            0.017840283437413687,
+            5.9997495477492224e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 33355,
+            "hardband_near_threshold": 785,
+            "symbolic_c0_ties_resolved": 785,
+            "c0_band_values_changed_by_exact_ties": 587,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 35
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 32749,
+            "hardband_near_threshold": 792,
+            "symbolic_c0_ties_resolved": 792,
+            "c0_band_values_changed_by_exact_ties": 549,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 28
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2825239,
+            2825240
+          ],
+          "energy": [
+            0.00012681131427723702,
+            0.1955237865653919,
+            0.01657820174133569,
+            1.4008884583704887e-05
+          ],
+          "coarse_energy": [
+            0.00012874576898167368,
+            0.19611347638063897,
+            0.016856441573755813,
+            1.3506631845698779e-05
+          ],
+          "same_sample_square_diagnostic": [
+            0.00010595357413004946,
+            0.20014136264887658,
+            0.016749428986848176,
+            3.035973826648488e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 32953,
+            "hardband_near_threshold": 796,
+            "symbolic_c0_ties_resolved": 796,
+            "c0_band_values_changed_by_exact_ties": 566,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 34
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2037,
+            "winner_near_r": 34056,
+            "hardband_near_threshold": 835,
+            "symbolic_c0_ties_resolved": 835,
+            "c0_band_values_changed_by_exact_ties": 594,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 36
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2825249,
+            2825250
+          ],
+          "energy": [
+            0.00014471623715299513,
+            0.19296232620221848,
+            0.017016161201749494,
+            3.4482282572480923e-06
+          ],
+          "coarse_energy": [
+            0.00014654290320654443,
+            0.1934730782385691,
+            0.017319671592944858,
+            3.2583215680350368e-06
+          ],
+          "same_sample_square_diagnostic": [
+            6.542959745384618e-05,
+            0.18982111744612415,
+            0.023242896127948727,
+            5.056187043994282e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 32303,
+            "hardband_near_threshold": 780,
+            "symbolic_c0_ties_resolved": 780,
+            "c0_band_values_changed_by_exact_ties": 560,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 33
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 31667,
+            "hardband_near_threshold": 797,
+            "symbolic_c0_ties_resolved": 797,
+            "c0_band_values_changed_by_exact_ties": 564,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 30
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2825259,
+            2825260
+          ],
+          "energy": [
+            8.665111586279894e-05,
+            0.19956018382262158,
+            0.01902662673103468,
+            3.077129604655758e-05
+          ],
+          "coarse_energy": [
+            8.996613031912832e-05,
+            0.1996751128052832,
+            0.019305231895106686,
+            2.930373051925096e-05
+          ],
+          "same_sample_square_diagnostic": [
+            4.3935139261619406e-05,
+            0.19208422450810891,
+            0.020674845015898915,
+            2.44049419464379e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 32826,
+            "hardband_near_threshold": 756,
+            "symbolic_c0_ties_resolved": 756,
+            "c0_band_values_changed_by_exact_ties": 535,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 33
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 33540,
+            "hardband_near_threshold": 839,
+            "symbolic_c0_ties_resolved": 839,
+            "c0_band_values_changed_by_exact_ties": 599,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 30
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2825269,
+            2825270
+          ],
+          "energy": [
+            7.289400663190555e-05,
+            0.20372243144127566,
+            0.016658054477848832,
+            1.2690563819197792e-06
+          ],
+          "coarse_energy": [
+            7.515156143101146e-05,
+            0.20382110066615394,
+            0.016937574631563264,
+            9.49577121366057e-07
+          ],
+          "same_sample_square_diagnostic": [
+            9.962479930477724e-05,
+            0.19283689095886086,
+            0.013825428890346225,
+            9.266628045919483e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 32876,
+            "hardband_near_threshold": 799,
+            "symbolic_c0_ties_resolved": 799,
+            "c0_band_values_changed_by_exact_ties": 574,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 26
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 33481,
+            "hardband_near_threshold": 816,
+            "symbolic_c0_ties_resolved": 816,
+            "c0_band_values_changed_by_exact_ties": 592,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 36
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2825279,
+            2825280
+          ],
+          "energy": [
+            7.373073495367057e-05,
+            0.21280866871884363,
+            0.01984212361858534,
+            1.875203266965101e-06
+          ],
+          "coarse_energy": [
+            7.55944339550597e-05,
+            0.21323241583800123,
+            0.020239870668466345,
+            1.8121920786127528e-06
+          ],
+          "same_sample_square_diagnostic": [
+            0.00016527991640808134,
+            0.20443623273114134,
+            0.026885849782408905,
+            1.917679139638667e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 33799,
+            "hardband_near_threshold": 814,
+            "symbolic_c0_ties_resolved": 814,
+            "c0_band_values_changed_by_exact_ties": 601,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 32
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 33063,
+            "hardband_near_threshold": 831,
+            "symbolic_c0_ties_resolved": 831,
+            "c0_band_values_changed_by_exact_ties": 592,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 34
+          }
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "L": 257,
+      "log10_total_atoms": 19.279464986650357,
+      "c": 0.5,
+      "log_lambda": -42.97839511678867,
+      "energy_mean": 0.017462735280793402,
+      "energy_replicate_sd": 0.0018429105112119494,
+      "approx95_MC_t_interval": [
+        0.015922023537115144,
+        0.01900344702447166
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        2.680042876204232
+      ],
+      "nested_grid_mean_abs_difference": 0.00029726958201623877,
+      "nested_grid_max_abs_difference": 0.00039774704988100595,
+      "same_sample_square_diagnostic_mean": 0.019223285272613008,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2825209,
+            2825210
+          ],
+          "energy": [
+            0.0002341265100530111,
+            0.22081556075302658,
+            0.01768202053936731,
+            1.633134141827072e-05
+          ],
+          "coarse_energy": [
+            0.0002377803851374273,
+            0.2209492531806996,
+            0.017976049996288303,
+            1.6042507040920938e-05
+          ],
+          "same_sample_square_diagnostic": [
+            0.00021543916663019672,
+            0.21682457675504324,
+            0.018830638963833555,
+            3.836822807291088e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 33234,
+            "hardband_near_threshold": 809,
+            "symbolic_c0_ties_resolved": 809,
+            "c0_band_values_changed_by_exact_ties": 576,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 20
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2031,
+            "winner_near_r": 32176,
+            "hardband_near_threshold": 795,
+            "symbolic_c0_ties_resolved": 795,
+            "c0_band_values_changed_by_exact_ties": 576,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 41
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2825219,
+            2825220
+          ],
+          "energy": [
+            3.412460365249106e-05,
+            0.21509191166833083,
+            0.014006433565911686,
+            6.1234875587697165e-06
+          ],
+          "coarse_energy": [
+            3.4687544284504194e-05,
+            0.21539645865001864,
+            0.014248853416552914,
+            6.0501306945873696e-06
+          ],
+          "same_sample_square_diagnostic": [
+            3.2233197170386566e-05,
+            0.20207515890361238,
+            0.015736910976205866,
+            4.91514965241397e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 31945,
+            "hardband_near_threshold": 796,
+            "symbolic_c0_ties_resolved": 796,
+            "c0_band_values_changed_by_exact_ties": 562,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 30
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 33071,
+            "hardband_near_threshold": 852,
+            "symbolic_c0_ties_resolved": 852,
+            "c0_band_values_changed_by_exact_ties": 616,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 21
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2825229,
+            2825230
+          ],
+          "energy": [
+            0.00013418218158637153,
+            0.19252419679343785,
+            0.018892260370514197,
+            7.00706534337095e-06
+          ],
+          "coarse_energy": [
+            0.0001354164352455907,
+            0.19300503604872538,
+            0.019196345127798956,
+            6.126539582438426e-06
+          ],
+          "same_sample_square_diagnostic": [
+            0.000303244503796197,
+            0.2005927973843794,
+            0.017840283437413687,
+            5.9997495477492224e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 33355,
+            "hardband_near_threshold": 785,
+            "symbolic_c0_ties_resolved": 785,
+            "c0_band_values_changed_by_exact_ties": 587,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 35
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 32749,
+            "hardband_near_threshold": 792,
+            "symbolic_c0_ties_resolved": 792,
+            "c0_band_values_changed_by_exact_ties": 549,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 28
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2825239,
+            2825240
+          ],
+          "energy": [
+            0.00012681131427723702,
+            0.1955237865653919,
+            0.01657820174133569,
+            1.4008884583704887e-05
+          ],
+          "coarse_energy": [
+            0.00012874576898167368,
+            0.19611347638063897,
+            0.016856441573755813,
+            1.3506631845698779e-05
+          ],
+          "same_sample_square_diagnostic": [
+            0.00010595357413004946,
+            0.20014136264887658,
+            0.016749428986848176,
+            3.035973826648488e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 32953,
+            "hardband_near_threshold": 796,
+            "symbolic_c0_ties_resolved": 796,
+            "c0_band_values_changed_by_exact_ties": 566,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 34
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2037,
+            "winner_near_r": 34056,
+            "hardband_near_threshold": 835,
+            "symbolic_c0_ties_resolved": 835,
+            "c0_band_values_changed_by_exact_ties": 594,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 36
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2825249,
+            2825250
+          ],
+          "energy": [
+            0.00014471623715299513,
+            0.19296232620221848,
+            0.017016161201749494,
+            3.4482282572480923e-06
+          ],
+          "coarse_energy": [
+            0.00014654290320654443,
+            0.1934730782385691,
+            0.017319671592944858,
+            3.2583215680350368e-06
+          ],
+          "same_sample_square_diagnostic": [
+            6.542959745384618e-05,
+            0.18982111744612415,
+            0.023242896127948727,
+            5.056187043994282e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 32303,
+            "hardband_near_threshold": 780,
+            "symbolic_c0_ties_resolved": 780,
+            "c0_band_values_changed_by_exact_ties": 560,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 33
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 31667,
+            "hardband_near_threshold": 797,
+            "symbolic_c0_ties_resolved": 797,
+            "c0_band_values_changed_by_exact_ties": 564,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 30
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2825259,
+            2825260
+          ],
+          "energy": [
+            8.665111586279894e-05,
+            0.19956018382262158,
+            0.01902662673103468,
+            3.077129604655758e-05
+          ],
+          "coarse_energy": [
+            8.996613031912832e-05,
+            0.1996751128052832,
+            0.019305231895106686,
+            2.930373051925096e-05
+          ],
+          "same_sample_square_diagnostic": [
+            4.3935139261619406e-05,
+            0.19208422450810891,
+            0.020674845015898915,
+            2.44049419464379e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 32826,
+            "hardband_near_threshold": 756,
+            "symbolic_c0_ties_resolved": 756,
+            "c0_band_values_changed_by_exact_ties": 535,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 33
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 33540,
+            "hardband_near_threshold": 839,
+            "symbolic_c0_ties_resolved": 839,
+            "c0_band_values_changed_by_exact_ties": 599,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 30
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2825269,
+            2825270
+          ],
+          "energy": [
+            7.289400663190555e-05,
+            0.20372243144127566,
+            0.016658054477848832,
+            1.2690563819197792e-06
+          ],
+          "coarse_energy": [
+            7.515156143101146e-05,
+            0.20382110066615394,
+            0.016937574631563264,
+            9.49577121366057e-07
+          ],
+          "same_sample_square_diagnostic": [
+            9.962479930477724e-05,
+            0.19283689095886086,
+            0.013825428890346225,
+            9.266628045919483e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 32876,
+            "hardband_near_threshold": 799,
+            "symbolic_c0_ties_resolved": 799,
+            "c0_band_values_changed_by_exact_ties": 574,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 26
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 33481,
+            "hardband_near_threshold": 816,
+            "symbolic_c0_ties_resolved": 816,
+            "c0_band_values_changed_by_exact_ties": 592,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 36
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2825279,
+            2825280
+          ],
+          "energy": [
+            7.373073495367057e-05,
+            0.21280866871884363,
+            0.01984212361858534,
+            1.875203266965101e-06
+          ],
+          "coarse_energy": [
+            7.55944339550597e-05,
+            0.21323241583800123,
+            0.020239870668466345,
+            1.8121920786127528e-06
+          ],
+          "same_sample_square_diagnostic": [
+            0.00016527991640808134,
+            0.20443623273114134,
+            0.026885849782408905,
+            1.917679139638667e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 33799,
+            "hardband_near_threshold": 814,
+            "symbolic_c0_ties_resolved": 814,
+            "c0_band_values_changed_by_exact_ties": 601,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 32
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 33063,
+            "hardband_near_threshold": 831,
+            "symbolic_c0_ties_resolved": 831,
+            "c0_band_values_changed_by_exact_ties": 592,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 34
+          }
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "L": 257,
+      "log10_total_atoms": 19.279464986650357,
+      "c": 1.0,
+      "log_lambda": -41.56418155441557,
+      "energy_mean": 1.0104320357100853e-05,
+      "energy_replicate_sd": 9.976179738821351e-06,
+      "approx95_MC_t_interval": [
+        1.7640253795985916e-06,
+        1.8444615334603114e-05
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        2.662590245243796
+      ],
+      "nested_grid_mean_abs_difference": 4.731165507370637e-07,
+      "nested_grid_max_abs_difference": 1.4675655273066227e-06,
+      "same_sample_square_diagnostic_mean": 1.5036037714443662e-05,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2825209,
+            2825210
+          ],
+          "energy": [
+            0.0002341265100530111,
+            0.22081556075302658,
+            0.01768202053936731,
+            1.633134141827072e-05
+          ],
+          "coarse_energy": [
+            0.0002377803851374273,
+            0.2209492531806996,
+            0.017976049996288303,
+            1.6042507040920938e-05
+          ],
+          "same_sample_square_diagnostic": [
+            0.00021543916663019672,
+            0.21682457675504324,
+            0.018830638963833555,
+            3.836822807291088e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 33234,
+            "hardband_near_threshold": 809,
+            "symbolic_c0_ties_resolved": 809,
+            "c0_band_values_changed_by_exact_ties": 576,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 20
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2031,
+            "winner_near_r": 32176,
+            "hardband_near_threshold": 795,
+            "symbolic_c0_ties_resolved": 795,
+            "c0_band_values_changed_by_exact_ties": 576,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 41
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2825219,
+            2825220
+          ],
+          "energy": [
+            3.412460365249106e-05,
+            0.21509191166833083,
+            0.014006433565911686,
+            6.1234875587697165e-06
+          ],
+          "coarse_energy": [
+            3.4687544284504194e-05,
+            0.21539645865001864,
+            0.014248853416552914,
+            6.0501306945873696e-06
+          ],
+          "same_sample_square_diagnostic": [
+            3.2233197170386566e-05,
+            0.20207515890361238,
+            0.015736910976205866,
+            4.91514965241397e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 31945,
+            "hardband_near_threshold": 796,
+            "symbolic_c0_ties_resolved": 796,
+            "c0_band_values_changed_by_exact_ties": 562,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 30
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 33071,
+            "hardband_near_threshold": 852,
+            "symbolic_c0_ties_resolved": 852,
+            "c0_band_values_changed_by_exact_ties": 616,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 21
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2825229,
+            2825230
+          ],
+          "energy": [
+            0.00013418218158637153,
+            0.19252419679343785,
+            0.018892260370514197,
+            7.00706534337095e-06
+          ],
+          "coarse_energy": [
+            0.0001354164352455907,
+            0.19300503604872538,
+            0.019196345127798956,
+            6.126539582438426e-06
+          ],
+          "same_sample_square_diagnostic": [
+            0.000303244503796197,
+            0.2005927973843794,
+            0.017840283437413687,
+            5.9997495477492224e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 33355,
+            "hardband_near_threshold": 785,
+            "symbolic_c0_ties_resolved": 785,
+            "c0_band_values_changed_by_exact_ties": 587,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 35
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 32749,
+            "hardband_near_threshold": 792,
+            "symbolic_c0_ties_resolved": 792,
+            "c0_band_values_changed_by_exact_ties": 549,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 28
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2825239,
+            2825240
+          ],
+          "energy": [
+            0.00012681131427723702,
+            0.1955237865653919,
+            0.01657820174133569,
+            1.4008884583704887e-05
+          ],
+          "coarse_energy": [
+            0.00012874576898167368,
+            0.19611347638063897,
+            0.016856441573755813,
+            1.3506631845698779e-05
+          ],
+          "same_sample_square_diagnostic": [
+            0.00010595357413004946,
+            0.20014136264887658,
+            0.016749428986848176,
+            3.035973826648488e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 32953,
+            "hardband_near_threshold": 796,
+            "symbolic_c0_ties_resolved": 796,
+            "c0_band_values_changed_by_exact_ties": 566,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 34
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2037,
+            "winner_near_r": 34056,
+            "hardband_near_threshold": 835,
+            "symbolic_c0_ties_resolved": 835,
+            "c0_band_values_changed_by_exact_ties": 594,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 36
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2825249,
+            2825250
+          ],
+          "energy": [
+            0.00014471623715299513,
+            0.19296232620221848,
+            0.017016161201749494,
+            3.4482282572480923e-06
+          ],
+          "coarse_energy": [
+            0.00014654290320654443,
+            0.1934730782385691,
+            0.017319671592944858,
+            3.2583215680350368e-06
+          ],
+          "same_sample_square_diagnostic": [
+            6.542959745384618e-05,
+            0.18982111744612415,
+            0.023242896127948727,
+            5.056187043994282e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 32303,
+            "hardband_near_threshold": 780,
+            "symbolic_c0_ties_resolved": 780,
+            "c0_band_values_changed_by_exact_ties": 560,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 33
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 31667,
+            "hardband_near_threshold": 797,
+            "symbolic_c0_ties_resolved": 797,
+            "c0_band_values_changed_by_exact_ties": 564,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 30
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2825259,
+            2825260
+          ],
+          "energy": [
+            8.665111586279894e-05,
+            0.19956018382262158,
+            0.01902662673103468,
+            3.077129604655758e-05
+          ],
+          "coarse_energy": [
+            8.996613031912832e-05,
+            0.1996751128052832,
+            0.019305231895106686,
+            2.930373051925096e-05
+          ],
+          "same_sample_square_diagnostic": [
+            4.3935139261619406e-05,
+            0.19208422450810891,
+            0.020674845015898915,
+            2.44049419464379e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 32826,
+            "hardband_near_threshold": 756,
+            "symbolic_c0_ties_resolved": 756,
+            "c0_band_values_changed_by_exact_ties": 535,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 33
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 33540,
+            "hardband_near_threshold": 839,
+            "symbolic_c0_ties_resolved": 839,
+            "c0_band_values_changed_by_exact_ties": 599,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 30
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2825269,
+            2825270
+          ],
+          "energy": [
+            7.289400663190555e-05,
+            0.20372243144127566,
+            0.016658054477848832,
+            1.2690563819197792e-06
+          ],
+          "coarse_energy": [
+            7.515156143101146e-05,
+            0.20382110066615394,
+            0.016937574631563264,
+            9.49577121366057e-07
+          ],
+          "same_sample_square_diagnostic": [
+            9.962479930477724e-05,
+            0.19283689095886086,
+            0.013825428890346225,
+            9.266628045919483e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 32876,
+            "hardband_near_threshold": 799,
+            "symbolic_c0_ties_resolved": 799,
+            "c0_band_values_changed_by_exact_ties": 574,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 26
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 33481,
+            "hardband_near_threshold": 816,
+            "symbolic_c0_ties_resolved": 816,
+            "c0_band_values_changed_by_exact_ties": 592,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 36
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2825279,
+            2825280
+          ],
+          "energy": [
+            7.373073495367057e-05,
+            0.21280866871884363,
+            0.01984212361858534,
+            1.875203266965101e-06
+          ],
+          "coarse_energy": [
+            7.55944339550597e-05,
+            0.21323241583800123,
+            0.020239870668466345,
+            1.8121920786127528e-06
+          ],
+          "same_sample_square_diagnostic": [
+            0.00016527991640808134,
+            0.20443623273114134,
+            0.026885849782408905,
+            1.917679139638667e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 33799,
+            "hardband_near_threshold": 814,
+            "symbolic_c0_ties_resolved": 814,
+            "c0_band_values_changed_by_exact_ties": 601,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 32
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 33063,
+            "hardband_near_threshold": 831,
+            "symbolic_c0_ties_resolved": 831,
+            "c0_band_values_changed_by_exact_ties": 592,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 34
+          }
+        }
+      ]
+    },
+    {
+      "n": 32,
+      "L": 257,
+      "log10_total_atoms": 77.11785994660143,
+      "c": -0.5,
+      "log_lambda": -180.39886184139323,
+      "energy_mean": 0.0,
+      "energy_replicate_sd": 0.0,
+      "approx95_MC_t_interval": [
+        0.0,
+        0.0
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        10.650320563693755
+      ],
+      "nested_grid_mean_abs_difference": 0.0,
+      "nested_grid_max_abs_difference": 0.0,
+      "same_sample_square_diagnostic_mean": 3.511757275318815e-07,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2849209,
+            2849210
+          ],
+          "energy": [
+            0.0,
+            0.08268229374442981,
+            0.03605797157831352,
+            0.0004861791866156197
+          ],
+          "coarse_energy": [
+            0.0,
+            0.08385764171158244,
+            0.03530983293759275,
+            0.0005006445219923312
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.08471278551447367,
+            0.03746533258809735,
+            0.0004496007391971299
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 21417,
+            "hardband_near_threshold": 826,
+            "symbolic_c0_ties_resolved": 826,
+            "c0_band_values_changed_by_exact_ties": 232,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 119
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 21026,
+            "hardband_near_threshold": 730,
+            "symbolic_c0_ties_resolved": 730,
+            "c0_band_values_changed_by_exact_ties": 200,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 116
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2849219,
+            2849220
+          ],
+          "energy": [
+            0.0,
+            0.06652977536055982,
+            0.03813845578061524,
+            0.0006755042717742954
+          ],
+          "coarse_energy": [
+            0.0,
+            0.06781083973158668,
+            0.03738204217845386,
+            0.0007122390318216982
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.06867115007944033,
+            0.04177142647112632,
+            0.0008857951701763495
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19906,
+            "hardband_near_threshold": 672,
+            "symbolic_c0_ties_resolved": 672,
+            "c0_band_values_changed_by_exact_ties": 187,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 110
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19985,
+            "hardband_near_threshold": 707,
+            "symbolic_c0_ties_resolved": 707,
+            "c0_band_values_changed_by_exact_ties": 196,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 96
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2849229,
+            2849230
+          ],
+          "energy": [
+            0.0,
+            0.06645719214244744,
+            0.042428519305690665,
+            0.0003640135500250028
+          ],
+          "coarse_energy": [
+            0.0,
+            0.06738826476579629,
+            0.04230725493489851,
+            0.0003830841676550924
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.06783033627849315,
+            0.042400020167962016,
+            0.0004220454287033306
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19884,
+            "hardband_near_threshold": 716,
+            "symbolic_c0_ties_resolved": 716,
+            "c0_band_values_changed_by_exact_ties": 223,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 114
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 20159,
+            "hardband_near_threshold": 718,
+            "symbolic_c0_ties_resolved": 718,
+            "c0_band_values_changed_by_exact_ties": 213,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 89
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2849239,
+            2849240
+          ],
+          "energy": [
+            0.0,
+            0.06702945344418065,
+            0.04439964503973525,
+            0.0008504941068978202
+          ],
+          "coarse_energy": [
+            0.0,
+            0.06833253783280596,
+            0.04371260797948973,
+            0.0009036806207259045
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.06604154833316267,
+            0.04308948727579824,
+            0.0009725941883266787
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 20734,
+            "hardband_near_threshold": 730,
+            "symbolic_c0_ties_resolved": 730,
+            "c0_band_values_changed_by_exact_ties": 197,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 103
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 21033,
+            "hardband_near_threshold": 685,
+            "symbolic_c0_ties_resolved": 685,
+            "c0_band_values_changed_by_exact_ties": 194,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 113
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2849249,
+            2849250
+          ],
+          "energy": [
+            0.0,
+            0.06630298005488738,
+            0.039411618850259636,
+            0.00033477585323727553
+          ],
+          "coarse_energy": [
+            0.0,
+            0.06699513769288676,
+            0.03875888664337035,
+            0.0003469215505301338
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.06226922820595768,
+            0.04348858245000403,
+            0.0004135489215435756
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 20603,
+            "hardband_near_threshold": 752,
+            "symbolic_c0_ties_resolved": 752,
+            "c0_band_values_changed_by_exact_ties": 219,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 111
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 20519,
+            "hardband_near_threshold": 735,
+            "symbolic_c0_ties_resolved": 735,
+            "c0_band_values_changed_by_exact_ties": 200,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 110
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2849259,
+            2849260
+          ],
+          "energy": [
+            0.0,
+            0.07770883946319074,
+            0.02986800710425781,
+            0.0003931967201382489
+          ],
+          "coarse_energy": [
+            0.0,
+            0.07843671389622253,
+            0.02886524732513015,
+            0.0004080836109247323
+          ],
+          "same_sample_square_diagnostic": [
+            1.652591658973568e-07,
+            0.0764540796190204,
+            0.031652216245265666,
+            0.00044599572873521993
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 19859,
+            "hardband_near_threshold": 719,
+            "symbolic_c0_ties_resolved": 719,
+            "c0_band_values_changed_by_exact_ties": 187,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 126
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 19518,
+            "hardband_near_threshold": 795,
+            "symbolic_c0_ties_resolved": 795,
+            "c0_band_values_changed_by_exact_ties": 252,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 103
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2849269,
+            2849270
+          ],
+          "energy": [
+            0.0,
+            0.06936813434456557,
+            0.03786767591467548,
+            0.00047084181612563853
+          ],
+          "coarse_energy": [
+            0.0,
+            0.07031003980991564,
+            0.03755991066094612,
+            0.0004834261502860706
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.07795814882576324,
+            0.04190712891960441,
+            0.00039585210584956775
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 21387,
+            "hardband_near_threshold": 803,
+            "symbolic_c0_ties_resolved": 803,
+            "c0_band_values_changed_by_exact_ties": 249,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 124
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 19995,
+            "hardband_near_threshold": 692,
+            "symbolic_c0_ties_resolved": 692,
+            "c0_band_values_changed_by_exact_ties": 173,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 111
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2849279,
+            2849280
+          ],
+          "energy": [
+            0.0,
+            0.07258367690674647,
+            0.03795871953487359,
+            0.0003436461802242312
+          ],
+          "coarse_energy": [
+            0.0,
+            0.0739867812404372,
+            0.03739792989809357,
+            0.00037039424945875315
+          ],
+          "same_sample_square_diagnostic": [
+            2.644146654357695e-06,
+            0.07520681048573914,
+            0.04058243164735664,
+            0.00039132492514322247
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 21286,
+            "hardband_near_threshold": 808,
+            "symbolic_c0_ties_resolved": 808,
+            "c0_band_values_changed_by_exact_ties": 237,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 95
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 20995,
+            "hardband_near_threshold": 772,
+            "symbolic_c0_ties_resolved": 772,
+            "c0_band_values_changed_by_exact_ties": 247,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 116
+          }
+        }
+      ]
+    },
+    {
+      "n": 32,
+      "L": 257,
+      "log10_total_atoms": 77.11785994660143,
+      "c": 0.0,
+      "log_lambda": -177.57043471664704,
+      "energy_mean": 0.07108279318262598,
+      "energy_replicate_sd": 0.0061533723892101535,
+      "approx95_MC_t_interval": [
+        0.06593844512795731,
+        0.07622714123729464
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        10.721403356876381
+      ],
+      "nested_grid_mean_abs_difference": 0.0010569514025282022,
+      "nested_grid_max_abs_difference": 0.00140310433369073,
+      "same_sample_square_diagnostic_mean": 0.07239301091775628,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2849209,
+            2849210
+          ],
+          "energy": [
+            0.0,
+            0.08268229374442981,
+            0.03605797157831352,
+            0.0004861791866156197
+          ],
+          "coarse_energy": [
+            0.0,
+            0.08385764171158244,
+            0.03530983293759275,
+            0.0005006445219923312
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.08471278551447367,
+            0.03746533258809735,
+            0.0004496007391971299
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 21417,
+            "hardband_near_threshold": 826,
+            "symbolic_c0_ties_resolved": 826,
+            "c0_band_values_changed_by_exact_ties": 232,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 119
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 21026,
+            "hardband_near_threshold": 730,
+            "symbolic_c0_ties_resolved": 730,
+            "c0_band_values_changed_by_exact_ties": 200,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 116
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2849219,
+            2849220
+          ],
+          "energy": [
+            0.0,
+            0.06652977536055982,
+            0.03813845578061524,
+            0.0006755042717742954
+          ],
+          "coarse_energy": [
+            0.0,
+            0.06781083973158668,
+            0.03738204217845386,
+            0.0007122390318216982
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.06867115007944033,
+            0.04177142647112632,
+            0.0008857951701763495
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19906,
+            "hardband_near_threshold": 672,
+            "symbolic_c0_ties_resolved": 672,
+            "c0_band_values_changed_by_exact_ties": 187,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 110
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19985,
+            "hardband_near_threshold": 707,
+            "symbolic_c0_ties_resolved": 707,
+            "c0_band_values_changed_by_exact_ties": 196,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 96
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2849229,
+            2849230
+          ],
+          "energy": [
+            0.0,
+            0.06645719214244744,
+            0.042428519305690665,
+            0.0003640135500250028
+          ],
+          "coarse_energy": [
+            0.0,
+            0.06738826476579629,
+            0.04230725493489851,
+            0.0003830841676550924
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.06783033627849315,
+            0.042400020167962016,
+            0.0004220454287033306
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19884,
+            "hardband_near_threshold": 716,
+            "symbolic_c0_ties_resolved": 716,
+            "c0_band_values_changed_by_exact_ties": 223,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 114
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 20159,
+            "hardband_near_threshold": 718,
+            "symbolic_c0_ties_resolved": 718,
+            "c0_band_values_changed_by_exact_ties": 213,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 89
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2849239,
+            2849240
+          ],
+          "energy": [
+            0.0,
+            0.06702945344418065,
+            0.04439964503973525,
+            0.0008504941068978202
+          ],
+          "coarse_energy": [
+            0.0,
+            0.06833253783280596,
+            0.04371260797948973,
+            0.0009036806207259045
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.06604154833316267,
+            0.04308948727579824,
+            0.0009725941883266787
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 20734,
+            "hardband_near_threshold": 730,
+            "symbolic_c0_ties_resolved": 730,
+            "c0_band_values_changed_by_exact_ties": 197,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 103
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 21033,
+            "hardband_near_threshold": 685,
+            "symbolic_c0_ties_resolved": 685,
+            "c0_band_values_changed_by_exact_ties": 194,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 113
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2849249,
+            2849250
+          ],
+          "energy": [
+            0.0,
+            0.06630298005488738,
+            0.039411618850259636,
+            0.00033477585323727553
+          ],
+          "coarse_energy": [
+            0.0,
+            0.06699513769288676,
+            0.03875888664337035,
+            0.0003469215505301338
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.06226922820595768,
+            0.04348858245000403,
+            0.0004135489215435756
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 20603,
+            "hardband_near_threshold": 752,
+            "symbolic_c0_ties_resolved": 752,
+            "c0_band_values_changed_by_exact_ties": 219,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 111
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 20519,
+            "hardband_near_threshold": 735,
+            "symbolic_c0_ties_resolved": 735,
+            "c0_band_values_changed_by_exact_ties": 200,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 110
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2849259,
+            2849260
+          ],
+          "energy": [
+            0.0,
+            0.07770883946319074,
+            0.02986800710425781,
+            0.0003931967201382489
+          ],
+          "coarse_energy": [
+            0.0,
+            0.07843671389622253,
+            0.02886524732513015,
+            0.0004080836109247323
+          ],
+          "same_sample_square_diagnostic": [
+            1.652591658973568e-07,
+            0.0764540796190204,
+            0.031652216245265666,
+            0.00044599572873521993
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 19859,
+            "hardband_near_threshold": 719,
+            "symbolic_c0_ties_resolved": 719,
+            "c0_band_values_changed_by_exact_ties": 187,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 126
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 19518,
+            "hardband_near_threshold": 795,
+            "symbolic_c0_ties_resolved": 795,
+            "c0_band_values_changed_by_exact_ties": 252,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 103
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2849269,
+            2849270
+          ],
+          "energy": [
+            0.0,
+            0.06936813434456557,
+            0.03786767591467548,
+            0.00047084181612563853
+          ],
+          "coarse_energy": [
+            0.0,
+            0.07031003980991564,
+            0.03755991066094612,
+            0.0004834261502860706
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.07795814882576324,
+            0.04190712891960441,
+            0.00039585210584956775
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 21387,
+            "hardband_near_threshold": 803,
+            "symbolic_c0_ties_resolved": 803,
+            "c0_band_values_changed_by_exact_ties": 249,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 124
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 19995,
+            "hardband_near_threshold": 692,
+            "symbolic_c0_ties_resolved": 692,
+            "c0_band_values_changed_by_exact_ties": 173,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 111
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2849279,
+            2849280
+          ],
+          "energy": [
+            0.0,
+            0.07258367690674647,
+            0.03795871953487359,
+            0.0003436461802242312
+          ],
+          "coarse_energy": [
+            0.0,
+            0.0739867812404372,
+            0.03739792989809357,
+            0.00037039424945875315
+          ],
+          "same_sample_square_diagnostic": [
+            2.644146654357695e-06,
+            0.07520681048573914,
+            0.04058243164735664,
+            0.00039132492514322247
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 21286,
+            "hardband_near_threshold": 808,
+            "symbolic_c0_ties_resolved": 808,
+            "c0_band_values_changed_by_exact_ties": 237,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 95
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 20995,
+            "hardband_near_threshold": 772,
+            "symbolic_c0_ties_resolved": 772,
+            "c0_band_values_changed_by_exact_ties": 247,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 116
+          }
+        }
+      ]
+    },
+    {
+      "n": 32,
+      "L": 257,
+      "log10_total_atoms": 77.11785994660143,
+      "c": 0.5,
+      "log_lambda": -174.74200759190086,
+      "energy_mean": 0.03826632663855265,
+      "energy_replicate_sd": 0.004341356522978447,
+      "approx95_MC_t_interval": [
+        0.03463686175799892,
+        0.041895791519106385
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        10.688586890332308
+      ],
+      "nested_grid_mean_abs_difference": 0.0006046125688057694,
+      "nested_grid_max_abs_difference": 0.0010027597791276606,
+      "same_sample_square_diagnostic_mean": 0.040294578220651835,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2849209,
+            2849210
+          ],
+          "energy": [
+            0.0,
+            0.08268229374442981,
+            0.03605797157831352,
+            0.0004861791866156197
+          ],
+          "coarse_energy": [
+            0.0,
+            0.08385764171158244,
+            0.03530983293759275,
+            0.0005006445219923312
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.08471278551447367,
+            0.03746533258809735,
+            0.0004496007391971299
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 21417,
+            "hardband_near_threshold": 826,
+            "symbolic_c0_ties_resolved": 826,
+            "c0_band_values_changed_by_exact_ties": 232,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 119
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 21026,
+            "hardband_near_threshold": 730,
+            "symbolic_c0_ties_resolved": 730,
+            "c0_band_values_changed_by_exact_ties": 200,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 116
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2849219,
+            2849220
+          ],
+          "energy": [
+            0.0,
+            0.06652977536055982,
+            0.03813845578061524,
+            0.0006755042717742954
+          ],
+          "coarse_energy": [
+            0.0,
+            0.06781083973158668,
+            0.03738204217845386,
+            0.0007122390318216982
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.06867115007944033,
+            0.04177142647112632,
+            0.0008857951701763495
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19906,
+            "hardband_near_threshold": 672,
+            "symbolic_c0_ties_resolved": 672,
+            "c0_band_values_changed_by_exact_ties": 187,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 110
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19985,
+            "hardband_near_threshold": 707,
+            "symbolic_c0_ties_resolved": 707,
+            "c0_band_values_changed_by_exact_ties": 196,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 96
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2849229,
+            2849230
+          ],
+          "energy": [
+            0.0,
+            0.06645719214244744,
+            0.042428519305690665,
+            0.0003640135500250028
+          ],
+          "coarse_energy": [
+            0.0,
+            0.06738826476579629,
+            0.04230725493489851,
+            0.0003830841676550924
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.06783033627849315,
+            0.042400020167962016,
+            0.0004220454287033306
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19884,
+            "hardband_near_threshold": 716,
+            "symbolic_c0_ties_resolved": 716,
+            "c0_band_values_changed_by_exact_ties": 223,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 114
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 20159,
+            "hardband_near_threshold": 718,
+            "symbolic_c0_ties_resolved": 718,
+            "c0_band_values_changed_by_exact_ties": 213,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 89
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2849239,
+            2849240
+          ],
+          "energy": [
+            0.0,
+            0.06702945344418065,
+            0.04439964503973525,
+            0.0008504941068978202
+          ],
+          "coarse_energy": [
+            0.0,
+            0.06833253783280596,
+            0.04371260797948973,
+            0.0009036806207259045
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.06604154833316267,
+            0.04308948727579824,
+            0.0009725941883266787
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 20734,
+            "hardband_near_threshold": 730,
+            "symbolic_c0_ties_resolved": 730,
+            "c0_band_values_changed_by_exact_ties": 197,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 103
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 21033,
+            "hardband_near_threshold": 685,
+            "symbolic_c0_ties_resolved": 685,
+            "c0_band_values_changed_by_exact_ties": 194,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 113
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2849249,
+            2849250
+          ],
+          "energy": [
+            0.0,
+            0.06630298005488738,
+            0.039411618850259636,
+            0.00033477585323727553
+          ],
+          "coarse_energy": [
+            0.0,
+            0.06699513769288676,
+            0.03875888664337035,
+            0.0003469215505301338
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.06226922820595768,
+            0.04348858245000403,
+            0.0004135489215435756
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 20603,
+            "hardband_near_threshold": 752,
+            "symbolic_c0_ties_resolved": 752,
+            "c0_band_values_changed_by_exact_ties": 219,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 111
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 20519,
+            "hardband_near_threshold": 735,
+            "symbolic_c0_ties_resolved": 735,
+            "c0_band_values_changed_by_exact_ties": 200,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 110
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2849259,
+            2849260
+          ],
+          "energy": [
+            0.0,
+            0.07770883946319074,
+            0.02986800710425781,
+            0.0003931967201382489
+          ],
+          "coarse_energy": [
+            0.0,
+            0.07843671389622253,
+            0.02886524732513015,
+            0.0004080836109247323
+          ],
+          "same_sample_square_diagnostic": [
+            1.652591658973568e-07,
+            0.0764540796190204,
+            0.031652216245265666,
+            0.00044599572873521993
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 19859,
+            "hardband_near_threshold": 719,
+            "symbolic_c0_ties_resolved": 719,
+            "c0_band_values_changed_by_exact_ties": 187,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 126
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 19518,
+            "hardband_near_threshold": 795,
+            "symbolic_c0_ties_resolved": 795,
+            "c0_band_values_changed_by_exact_ties": 252,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 103
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2849269,
+            2849270
+          ],
+          "energy": [
+            0.0,
+            0.06936813434456557,
+            0.03786767591467548,
+            0.00047084181612563853
+          ],
+          "coarse_energy": [
+            0.0,
+            0.07031003980991564,
+            0.03755991066094612,
+            0.0004834261502860706
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.07795814882576324,
+            0.04190712891960441,
+            0.00039585210584956775
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 21387,
+            "hardband_near_threshold": 803,
+            "symbolic_c0_ties_resolved": 803,
+            "c0_band_values_changed_by_exact_ties": 249,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 124
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 19995,
+            "hardband_near_threshold": 692,
+            "symbolic_c0_ties_resolved": 692,
+            "c0_band_values_changed_by_exact_ties": 173,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 111
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2849279,
+            2849280
+          ],
+          "energy": [
+            0.0,
+            0.07258367690674647,
+            0.03795871953487359,
+            0.0003436461802242312
+          ],
+          "coarse_energy": [
+            0.0,
+            0.0739867812404372,
+            0.03739792989809357,
+            0.00037039424945875315
+          ],
+          "same_sample_square_diagnostic": [
+            2.644146654357695e-06,
+            0.07520681048573914,
+            0.04058243164735664,
+            0.00039132492514322247
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 21286,
+            "hardband_near_threshold": 808,
+            "symbolic_c0_ties_resolved": 808,
+            "c0_band_values_changed_by_exact_ties": 237,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 95
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 20995,
+            "hardband_near_threshold": 772,
+            "symbolic_c0_ties_resolved": 772,
+            "c0_band_values_changed_by_exact_ties": 247,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 116
+          }
+        }
+      ]
+    },
+    {
+      "n": 32,
+      "L": 257,
+      "log10_total_atoms": 77.11785994660143,
+      "c": 1.0,
+      "log_lambda": -171.91358046715467,
+      "energy_mean": 0.0004898314606297666,
+      "energy_replicate_sd": 0.00018342249441625404,
+      "approx95_MC_t_interval": [
+        0.00033648641783871116,
+        0.000643176503420822
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        10.650810395154386
+      ],
+      "nested_grid_mean_abs_difference": 2.3727777294572984e-05,
+      "nested_grid_max_abs_difference": 5.3186513828084345e-05,
+      "same_sample_square_diagnostic_mean": 0.0005470946509593843,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2849209,
+            2849210
+          ],
+          "energy": [
+            0.0,
+            0.08268229374442981,
+            0.03605797157831352,
+            0.0004861791866156197
+          ],
+          "coarse_energy": [
+            0.0,
+            0.08385764171158244,
+            0.03530983293759275,
+            0.0005006445219923312
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.08471278551447367,
+            0.03746533258809735,
+            0.0004496007391971299
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 21417,
+            "hardband_near_threshold": 826,
+            "symbolic_c0_ties_resolved": 826,
+            "c0_band_values_changed_by_exact_ties": 232,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 119
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 21026,
+            "hardband_near_threshold": 730,
+            "symbolic_c0_ties_resolved": 730,
+            "c0_band_values_changed_by_exact_ties": 200,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 116
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2849219,
+            2849220
+          ],
+          "energy": [
+            0.0,
+            0.06652977536055982,
+            0.03813845578061524,
+            0.0006755042717742954
+          ],
+          "coarse_energy": [
+            0.0,
+            0.06781083973158668,
+            0.03738204217845386,
+            0.0007122390318216982
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.06867115007944033,
+            0.04177142647112632,
+            0.0008857951701763495
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19906,
+            "hardband_near_threshold": 672,
+            "symbolic_c0_ties_resolved": 672,
+            "c0_band_values_changed_by_exact_ties": 187,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 110
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19985,
+            "hardband_near_threshold": 707,
+            "symbolic_c0_ties_resolved": 707,
+            "c0_band_values_changed_by_exact_ties": 196,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 96
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2849229,
+            2849230
+          ],
+          "energy": [
+            0.0,
+            0.06645719214244744,
+            0.042428519305690665,
+            0.0003640135500250028
+          ],
+          "coarse_energy": [
+            0.0,
+            0.06738826476579629,
+            0.04230725493489851,
+            0.0003830841676550924
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.06783033627849315,
+            0.042400020167962016,
+            0.0004220454287033306
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19884,
+            "hardband_near_threshold": 716,
+            "symbolic_c0_ties_resolved": 716,
+            "c0_band_values_changed_by_exact_ties": 223,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 114
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 20159,
+            "hardband_near_threshold": 718,
+            "symbolic_c0_ties_resolved": 718,
+            "c0_band_values_changed_by_exact_ties": 213,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 89
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2849239,
+            2849240
+          ],
+          "energy": [
+            0.0,
+            0.06702945344418065,
+            0.04439964503973525,
+            0.0008504941068978202
+          ],
+          "coarse_energy": [
+            0.0,
+            0.06833253783280596,
+            0.04371260797948973,
+            0.0009036806207259045
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.06604154833316267,
+            0.04308948727579824,
+            0.0009725941883266787
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 20734,
+            "hardband_near_threshold": 730,
+            "symbolic_c0_ties_resolved": 730,
+            "c0_band_values_changed_by_exact_ties": 197,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 103
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 21033,
+            "hardband_near_threshold": 685,
+            "symbolic_c0_ties_resolved": 685,
+            "c0_band_values_changed_by_exact_ties": 194,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 113
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2849249,
+            2849250
+          ],
+          "energy": [
+            0.0,
+            0.06630298005488738,
+            0.039411618850259636,
+            0.00033477585323727553
+          ],
+          "coarse_energy": [
+            0.0,
+            0.06699513769288676,
+            0.03875888664337035,
+            0.0003469215505301338
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.06226922820595768,
+            0.04348858245000403,
+            0.0004135489215435756
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 20603,
+            "hardband_near_threshold": 752,
+            "symbolic_c0_ties_resolved": 752,
+            "c0_band_values_changed_by_exact_ties": 219,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 111
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 20519,
+            "hardband_near_threshold": 735,
+            "symbolic_c0_ties_resolved": 735,
+            "c0_band_values_changed_by_exact_ties": 200,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 110
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2849259,
+            2849260
+          ],
+          "energy": [
+            0.0,
+            0.07770883946319074,
+            0.02986800710425781,
+            0.0003931967201382489
+          ],
+          "coarse_energy": [
+            0.0,
+            0.07843671389622253,
+            0.02886524732513015,
+            0.0004080836109247323
+          ],
+          "same_sample_square_diagnostic": [
+            1.652591658973568e-07,
+            0.0764540796190204,
+            0.031652216245265666,
+            0.00044599572873521993
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 19859,
+            "hardband_near_threshold": 719,
+            "symbolic_c0_ties_resolved": 719,
+            "c0_band_values_changed_by_exact_ties": 187,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 126
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 19518,
+            "hardband_near_threshold": 795,
+            "symbolic_c0_ties_resolved": 795,
+            "c0_band_values_changed_by_exact_ties": 252,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 103
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2849269,
+            2849270
+          ],
+          "energy": [
+            0.0,
+            0.06936813434456557,
+            0.03786767591467548,
+            0.00047084181612563853
+          ],
+          "coarse_energy": [
+            0.0,
+            0.07031003980991564,
+            0.03755991066094612,
+            0.0004834261502860706
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.07795814882576324,
+            0.04190712891960441,
+            0.00039585210584956775
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 21387,
+            "hardband_near_threshold": 803,
+            "symbolic_c0_ties_resolved": 803,
+            "c0_band_values_changed_by_exact_ties": 249,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 124
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 19995,
+            "hardband_near_threshold": 692,
+            "symbolic_c0_ties_resolved": 692,
+            "c0_band_values_changed_by_exact_ties": 173,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 111
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2849279,
+            2849280
+          ],
+          "energy": [
+            0.0,
+            0.07258367690674647,
+            0.03795871953487359,
+            0.0003436461802242312
+          ],
+          "coarse_energy": [
+            0.0,
+            0.0739867812404372,
+            0.03739792989809357,
+            0.00037039424945875315
+          ],
+          "same_sample_square_diagnostic": [
+            2.644146654357695e-06,
+            0.07520681048573914,
+            0.04058243164735664,
+            0.00039132492514322247
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 21286,
+            "hardband_near_threshold": 808,
+            "symbolic_c0_ties_resolved": 808,
+            "c0_band_values_changed_by_exact_ties": 237,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 95
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 20995,
+            "hardband_near_threshold": 772,
+            "symbolic_c0_ties_resolved": 772,
+            "c0_band_values_changed_by_exact_ties": 247,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 116
+          }
+        }
+      ]
+    },
+    {
+      "n": 128,
+      "L": 257,
+      "log10_total_atoms": 308.4714397864057,
+      "c": -0.5,
+      "log_lambda": -715.9385931160806,
+      "energy_mean": 0.0,
+      "energy_replicate_sd": 0.0,
+      "approx95_MC_t_interval": [
+        0.0,
+        0.0
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        42.60128225477502
+      ],
+      "nested_grid_mean_abs_difference": 0.0,
+      "nested_grid_max_abs_difference": 0.0,
+      "same_sample_square_diagnostic_mean": 0.0,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2945209,
+            2945210
+          ],
+          "energy": [
+            0.0,
+            0.052893319823283304,
+            0.04027953658338488,
+            0.00866867689712872
+          ],
+          "coarse_energy": [
+            0.0,
+            0.0535064253960819,
+            0.04102140194337472,
+            0.008194831366334959
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.052582265207741716,
+            0.04396578302041995,
+            0.008307613343857326
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 19431,
+            "hardband_near_threshold": 734,
+            "symbolic_c0_ties_resolved": 734,
+            "c0_band_values_changed_by_exact_ties": 522,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 335
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19090,
+            "hardband_near_threshold": 749,
+            "symbolic_c0_ties_resolved": 749,
+            "c0_band_values_changed_by_exact_ties": 542,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 326
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2945219,
+            2945220
+          ],
+          "energy": [
+            0.0,
+            0.057715162077648,
+            0.034951084036225676,
+            0.007814615021197655
+          ],
+          "coarse_energy": [
+            0.0,
+            0.056560706307775155,
+            0.034809272727061615,
+            0.007454028033631651
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05994022304826318,
+            0.03499087121720537,
+            0.010430868927100647
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 18568,
+            "hardband_near_threshold": 753,
+            "symbolic_c0_ties_resolved": 753,
+            "c0_band_values_changed_by_exact_ties": 519,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 330
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2040,
+            "winner_near_r": 19043,
+            "hardband_near_threshold": 765,
+            "symbolic_c0_ties_resolved": 765,
+            "c0_band_values_changed_by_exact_ties": 524,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 306
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2945229,
+            2945230
+          ],
+          "energy": [
+            0.0,
+            0.0551765774591368,
+            0.03869092444016676,
+            0.009405155055787463
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05732419254246507,
+            0.03983052520057885,
+            0.008980922966958984
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05289840842337411,
+            0.037863336310315146,
+            0.010937391789998762
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19441,
+            "hardband_near_threshold": 691,
+            "symbolic_c0_ties_resolved": 691,
+            "c0_band_values_changed_by_exact_ties": 479,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 320
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 19961,
+            "hardband_near_threshold": 703,
+            "symbolic_c0_ties_resolved": 703,
+            "c0_band_values_changed_by_exact_ties": 506,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 314
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2945239,
+            2945240
+          ],
+          "energy": [
+            0.0,
+            0.05782188957169616,
+            0.03976836945429762,
+            0.007083062950228759
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05803133986645765,
+            0.039276020825398966,
+            0.0068234039102052935
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05949315378211422,
+            0.03786828692615901,
+            0.007560124711189218
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 18590,
+            "hardband_near_threshold": 774,
+            "symbolic_c0_ties_resolved": 774,
+            "c0_band_values_changed_by_exact_ties": 523,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 338
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 19282,
+            "hardband_near_threshold": 711,
+            "symbolic_c0_ties_resolved": 711,
+            "c0_band_values_changed_by_exact_ties": 521,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 324
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2945249,
+            2945250
+          ],
+          "energy": [
+            0.0,
+            0.05330081122649133,
+            0.040136761356515824,
+            0.00898031179391303
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05306650928421938,
+            0.04038729124815268,
+            0.008978502644055837
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05294470273811215,
+            0.041615645546792666,
+            0.009151879078558205
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2047,
+            "winner_near_r": 19478,
+            "hardband_near_threshold": 709,
+            "symbolic_c0_ties_resolved": 709,
+            "c0_band_values_changed_by_exact_ties": 509,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 316
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 19387,
+            "hardband_near_threshold": 696,
+            "symbolic_c0_ties_resolved": 696,
+            "c0_band_values_changed_by_exact_ties": 508,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 334
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2945259,
+            2945260
+          ],
+          "energy": [
+            0.0,
+            0.05615453861596257,
+            0.04265413731916872,
+            0.008444265546830459
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05678849194076109,
+            0.04205467852053103,
+            0.00791481197686639
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05449293838293289,
+            0.0457437619140523,
+            0.010684299073736348
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 19504,
+            "hardband_near_threshold": 717,
+            "symbolic_c0_ties_resolved": 717,
+            "c0_band_values_changed_by_exact_ties": 527,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 313
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19570,
+            "hardband_near_threshold": 767,
+            "symbolic_c0_ties_resolved": 767,
+            "c0_band_values_changed_by_exact_ties": 532,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 313
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2945269,
+            2945270
+          ],
+          "energy": [
+            0.0,
+            0.04648142343555366,
+            0.03554215391801513,
+            0.008320610015362436
+          ],
+          "coarse_energy": [
+            0.0,
+            0.0454944265062185,
+            0.035804851374539995,
+            0.007694187640235756
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.048643343370748854,
+            0.03656133502280616,
+            0.009973916447939471
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2035,
+            "winner_near_r": 18513,
+            "hardband_near_threshold": 698,
+            "symbolic_c0_ties_resolved": 698,
+            "c0_band_values_changed_by_exact_ties": 471,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 331
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 18108,
+            "hardband_near_threshold": 705,
+            "symbolic_c0_ties_resolved": 705,
+            "c0_band_values_changed_by_exact_ties": 494,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 351
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2945279,
+            2945280
+          ],
+          "energy": [
+            0.0,
+            0.06205824817432969,
+            0.03910421003137899,
+            0.009153803006877091
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05904146223340666,
+            0.0372231833336658,
+            0.00864299444230614
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05601415605977533,
+            0.046661289754463736,
+            0.010148239048434506
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 19243,
+            "hardband_near_threshold": 713,
+            "symbolic_c0_ties_resolved": 713,
+            "c0_band_values_changed_by_exact_ties": 508,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 319
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 18768,
+            "hardband_near_threshold": 797,
+            "symbolic_c0_ties_resolved": 797,
+            "c0_band_values_changed_by_exact_ties": 541,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 329
+          }
+        }
+      ]
+    },
+    {
+      "n": 128,
+      "L": 257,
+      "log10_total_atoms": 308.4714397864057,
+      "c": 0.0,
+      "log_lambda": -710.2817388665882,
+      "energy_mean": 0.05520024629801269,
+      "energy_replicate_sd": 0.004568351907704303,
+      "approx95_MC_t_interval": [
+        0.051381008526762334,
+        0.05901948406926305
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        42.656482501073036
+      ],
+      "nested_grid_mean_abs_difference": 0.001124583107261233,
+      "nested_grid_max_abs_difference": 0.003016785940923035,
+      "same_sample_square_diagnostic_mean": 0.05462614887663281,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2945209,
+            2945210
+          ],
+          "energy": [
+            0.0,
+            0.052893319823283304,
+            0.04027953658338488,
+            0.00866867689712872
+          ],
+          "coarse_energy": [
+            0.0,
+            0.0535064253960819,
+            0.04102140194337472,
+            0.008194831366334959
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.052582265207741716,
+            0.04396578302041995,
+            0.008307613343857326
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 19431,
+            "hardband_near_threshold": 734,
+            "symbolic_c0_ties_resolved": 734,
+            "c0_band_values_changed_by_exact_ties": 522,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 335
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19090,
+            "hardband_near_threshold": 749,
+            "symbolic_c0_ties_resolved": 749,
+            "c0_band_values_changed_by_exact_ties": 542,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 326
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2945219,
+            2945220
+          ],
+          "energy": [
+            0.0,
+            0.057715162077648,
+            0.034951084036225676,
+            0.007814615021197655
+          ],
+          "coarse_energy": [
+            0.0,
+            0.056560706307775155,
+            0.034809272727061615,
+            0.007454028033631651
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05994022304826318,
+            0.03499087121720537,
+            0.010430868927100647
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 18568,
+            "hardband_near_threshold": 753,
+            "symbolic_c0_ties_resolved": 753,
+            "c0_band_values_changed_by_exact_ties": 519,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 330
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2040,
+            "winner_near_r": 19043,
+            "hardband_near_threshold": 765,
+            "symbolic_c0_ties_resolved": 765,
+            "c0_band_values_changed_by_exact_ties": 524,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 306
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2945229,
+            2945230
+          ],
+          "energy": [
+            0.0,
+            0.0551765774591368,
+            0.03869092444016676,
+            0.009405155055787463
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05732419254246507,
+            0.03983052520057885,
+            0.008980922966958984
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05289840842337411,
+            0.037863336310315146,
+            0.010937391789998762
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19441,
+            "hardband_near_threshold": 691,
+            "symbolic_c0_ties_resolved": 691,
+            "c0_band_values_changed_by_exact_ties": 479,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 320
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 19961,
+            "hardband_near_threshold": 703,
+            "symbolic_c0_ties_resolved": 703,
+            "c0_band_values_changed_by_exact_ties": 506,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 314
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2945239,
+            2945240
+          ],
+          "energy": [
+            0.0,
+            0.05782188957169616,
+            0.03976836945429762,
+            0.007083062950228759
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05803133986645765,
+            0.039276020825398966,
+            0.0068234039102052935
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05949315378211422,
+            0.03786828692615901,
+            0.007560124711189218
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 18590,
+            "hardband_near_threshold": 774,
+            "symbolic_c0_ties_resolved": 774,
+            "c0_band_values_changed_by_exact_ties": 523,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 338
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 19282,
+            "hardband_near_threshold": 711,
+            "symbolic_c0_ties_resolved": 711,
+            "c0_band_values_changed_by_exact_ties": 521,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 324
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2945249,
+            2945250
+          ],
+          "energy": [
+            0.0,
+            0.05330081122649133,
+            0.040136761356515824,
+            0.00898031179391303
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05306650928421938,
+            0.04038729124815268,
+            0.008978502644055837
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05294470273811215,
+            0.041615645546792666,
+            0.009151879078558205
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2047,
+            "winner_near_r": 19478,
+            "hardband_near_threshold": 709,
+            "symbolic_c0_ties_resolved": 709,
+            "c0_band_values_changed_by_exact_ties": 509,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 316
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 19387,
+            "hardband_near_threshold": 696,
+            "symbolic_c0_ties_resolved": 696,
+            "c0_band_values_changed_by_exact_ties": 508,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 334
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2945259,
+            2945260
+          ],
+          "energy": [
+            0.0,
+            0.05615453861596257,
+            0.04265413731916872,
+            0.008444265546830459
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05678849194076109,
+            0.04205467852053103,
+            0.00791481197686639
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05449293838293289,
+            0.0457437619140523,
+            0.010684299073736348
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 19504,
+            "hardband_near_threshold": 717,
+            "symbolic_c0_ties_resolved": 717,
+            "c0_band_values_changed_by_exact_ties": 527,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 313
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19570,
+            "hardband_near_threshold": 767,
+            "symbolic_c0_ties_resolved": 767,
+            "c0_band_values_changed_by_exact_ties": 532,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 313
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2945269,
+            2945270
+          ],
+          "energy": [
+            0.0,
+            0.04648142343555366,
+            0.03554215391801513,
+            0.008320610015362436
+          ],
+          "coarse_energy": [
+            0.0,
+            0.0454944265062185,
+            0.035804851374539995,
+            0.007694187640235756
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.048643343370748854,
+            0.03656133502280616,
+            0.009973916447939471
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2035,
+            "winner_near_r": 18513,
+            "hardband_near_threshold": 698,
+            "symbolic_c0_ties_resolved": 698,
+            "c0_band_values_changed_by_exact_ties": 471,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 331
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 18108,
+            "hardband_near_threshold": 705,
+            "symbolic_c0_ties_resolved": 705,
+            "c0_band_values_changed_by_exact_ties": 494,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 351
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2945279,
+            2945280
+          ],
+          "energy": [
+            0.0,
+            0.06205824817432969,
+            0.03910421003137899,
+            0.009153803006877091
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05904146223340666,
+            0.0372231833336658,
+            0.00864299444230614
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05601415605977533,
+            0.046661289754463736,
+            0.010148239048434506
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 19243,
+            "hardband_near_threshold": 713,
+            "symbolic_c0_ties_resolved": 713,
+            "c0_band_values_changed_by_exact_ties": 508,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 319
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 18768,
+            "hardband_near_threshold": 797,
+            "symbolic_c0_ties_resolved": 797,
+            "c0_band_values_changed_by_exact_ties": 541,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 329
+          }
+        }
+      ]
+    },
+    {
+      "n": 128,
+      "L": 257,
+      "log10_total_atoms": 308.4714397864057,
+      "c": 0.5,
+      "log_lambda": -704.6248846170957,
+      "energy_mean": 0.0388908971423942,
+      "energy_replicate_sd": 0.0025420501115650746,
+      "approx95_MC_t_interval": [
+        0.036765690065827424,
+        0.04101610421896098
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        42.640173151917416
+      ],
+      "nested_grid_mean_abs_difference": 0.0006886673628721546,
+      "nested_grid_max_abs_difference": 0.0018810266977131868,
+      "same_sample_square_diagnostic_mean": 0.04065878871402679,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2945209,
+            2945210
+          ],
+          "energy": [
+            0.0,
+            0.052893319823283304,
+            0.04027953658338488,
+            0.00866867689712872
+          ],
+          "coarse_energy": [
+            0.0,
+            0.0535064253960819,
+            0.04102140194337472,
+            0.008194831366334959
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.052582265207741716,
+            0.04396578302041995,
+            0.008307613343857326
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 19431,
+            "hardband_near_threshold": 734,
+            "symbolic_c0_ties_resolved": 734,
+            "c0_band_values_changed_by_exact_ties": 522,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 335
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19090,
+            "hardband_near_threshold": 749,
+            "symbolic_c0_ties_resolved": 749,
+            "c0_band_values_changed_by_exact_ties": 542,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 326
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2945219,
+            2945220
+          ],
+          "energy": [
+            0.0,
+            0.057715162077648,
+            0.034951084036225676,
+            0.007814615021197655
+          ],
+          "coarse_energy": [
+            0.0,
+            0.056560706307775155,
+            0.034809272727061615,
+            0.007454028033631651
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05994022304826318,
+            0.03499087121720537,
+            0.010430868927100647
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 18568,
+            "hardband_near_threshold": 753,
+            "symbolic_c0_ties_resolved": 753,
+            "c0_band_values_changed_by_exact_ties": 519,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 330
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2040,
+            "winner_near_r": 19043,
+            "hardband_near_threshold": 765,
+            "symbolic_c0_ties_resolved": 765,
+            "c0_band_values_changed_by_exact_ties": 524,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 306
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2945229,
+            2945230
+          ],
+          "energy": [
+            0.0,
+            0.0551765774591368,
+            0.03869092444016676,
+            0.009405155055787463
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05732419254246507,
+            0.03983052520057885,
+            0.008980922966958984
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05289840842337411,
+            0.037863336310315146,
+            0.010937391789998762
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19441,
+            "hardband_near_threshold": 691,
+            "symbolic_c0_ties_resolved": 691,
+            "c0_band_values_changed_by_exact_ties": 479,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 320
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 19961,
+            "hardband_near_threshold": 703,
+            "symbolic_c0_ties_resolved": 703,
+            "c0_band_values_changed_by_exact_ties": 506,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 314
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2945239,
+            2945240
+          ],
+          "energy": [
+            0.0,
+            0.05782188957169616,
+            0.03976836945429762,
+            0.007083062950228759
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05803133986645765,
+            0.039276020825398966,
+            0.0068234039102052935
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05949315378211422,
+            0.03786828692615901,
+            0.007560124711189218
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 18590,
+            "hardband_near_threshold": 774,
+            "symbolic_c0_ties_resolved": 774,
+            "c0_band_values_changed_by_exact_ties": 523,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 338
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 19282,
+            "hardband_near_threshold": 711,
+            "symbolic_c0_ties_resolved": 711,
+            "c0_band_values_changed_by_exact_ties": 521,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 324
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2945249,
+            2945250
+          ],
+          "energy": [
+            0.0,
+            0.05330081122649133,
+            0.040136761356515824,
+            0.00898031179391303
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05306650928421938,
+            0.04038729124815268,
+            0.008978502644055837
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05294470273811215,
+            0.041615645546792666,
+            0.009151879078558205
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2047,
+            "winner_near_r": 19478,
+            "hardband_near_threshold": 709,
+            "symbolic_c0_ties_resolved": 709,
+            "c0_band_values_changed_by_exact_ties": 509,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 316
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 19387,
+            "hardband_near_threshold": 696,
+            "symbolic_c0_ties_resolved": 696,
+            "c0_band_values_changed_by_exact_ties": 508,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 334
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2945259,
+            2945260
+          ],
+          "energy": [
+            0.0,
+            0.05615453861596257,
+            0.04265413731916872,
+            0.008444265546830459
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05678849194076109,
+            0.04205467852053103,
+            0.00791481197686639
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05449293838293289,
+            0.0457437619140523,
+            0.010684299073736348
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 19504,
+            "hardband_near_threshold": 717,
+            "symbolic_c0_ties_resolved": 717,
+            "c0_band_values_changed_by_exact_ties": 527,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 313
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19570,
+            "hardband_near_threshold": 767,
+            "symbolic_c0_ties_resolved": 767,
+            "c0_band_values_changed_by_exact_ties": 532,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 313
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2945269,
+            2945270
+          ],
+          "energy": [
+            0.0,
+            0.04648142343555366,
+            0.03554215391801513,
+            0.008320610015362436
+          ],
+          "coarse_energy": [
+            0.0,
+            0.0454944265062185,
+            0.035804851374539995,
+            0.007694187640235756
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.048643343370748854,
+            0.03656133502280616,
+            0.009973916447939471
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2035,
+            "winner_near_r": 18513,
+            "hardband_near_threshold": 698,
+            "symbolic_c0_ties_resolved": 698,
+            "c0_band_values_changed_by_exact_ties": 471,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 331
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 18108,
+            "hardband_near_threshold": 705,
+            "symbolic_c0_ties_resolved": 705,
+            "c0_band_values_changed_by_exact_ties": 494,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 351
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2945279,
+            2945280
+          ],
+          "energy": [
+            0.0,
+            0.06205824817432969,
+            0.03910421003137899,
+            0.009153803006877091
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05904146223340666,
+            0.0372231833336658,
+            0.00864299444230614
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05601415605977533,
+            0.046661289754463736,
+            0.010148239048434506
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 19243,
+            "hardband_near_threshold": 713,
+            "symbolic_c0_ties_resolved": 713,
+            "c0_band_values_changed_by_exact_ties": 508,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 319
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 18768,
+            "hardband_near_threshold": 797,
+            "symbolic_c0_ties_resolved": 797,
+            "c0_band_values_changed_by_exact_ties": 541,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 329
+          }
+        }
+      ]
+    },
+    {
+      "n": 128,
+      "L": 257,
+      "log10_total_atoms": 308.4714397864057,
+      "c": 1.0,
+      "log_lambda": -698.9680303676034,
+      "energy_mean": 0.008483812535915701,
+      "energy_replicate_sd": 0.0007574929851545923,
+      "approx95_MC_t_interval": [
+        0.007850532552497473,
+        0.009117092519333929
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        42.609766067310936
+      ],
+      "nested_grid_mean_abs_difference": 0.0003983521633413253,
+      "nested_grid_max_abs_difference": 0.0006264223751266803,
+      "same_sample_square_diagnostic_mean": 0.00964929155260181,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2945209,
+            2945210
+          ],
+          "energy": [
+            0.0,
+            0.052893319823283304,
+            0.04027953658338488,
+            0.00866867689712872
+          ],
+          "coarse_energy": [
+            0.0,
+            0.0535064253960819,
+            0.04102140194337472,
+            0.008194831366334959
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.052582265207741716,
+            0.04396578302041995,
+            0.008307613343857326
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 19431,
+            "hardband_near_threshold": 734,
+            "symbolic_c0_ties_resolved": 734,
+            "c0_band_values_changed_by_exact_ties": 522,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 335
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19090,
+            "hardband_near_threshold": 749,
+            "symbolic_c0_ties_resolved": 749,
+            "c0_band_values_changed_by_exact_ties": 542,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 326
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2945219,
+            2945220
+          ],
+          "energy": [
+            0.0,
+            0.057715162077648,
+            0.034951084036225676,
+            0.007814615021197655
+          ],
+          "coarse_energy": [
+            0.0,
+            0.056560706307775155,
+            0.034809272727061615,
+            0.007454028033631651
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05994022304826318,
+            0.03499087121720537,
+            0.010430868927100647
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 18568,
+            "hardband_near_threshold": 753,
+            "symbolic_c0_ties_resolved": 753,
+            "c0_band_values_changed_by_exact_ties": 519,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 330
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2040,
+            "winner_near_r": 19043,
+            "hardband_near_threshold": 765,
+            "symbolic_c0_ties_resolved": 765,
+            "c0_band_values_changed_by_exact_ties": 524,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 306
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2945229,
+            2945230
+          ],
+          "energy": [
+            0.0,
+            0.0551765774591368,
+            0.03869092444016676,
+            0.009405155055787463
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05732419254246507,
+            0.03983052520057885,
+            0.008980922966958984
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05289840842337411,
+            0.037863336310315146,
+            0.010937391789998762
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19441,
+            "hardband_near_threshold": 691,
+            "symbolic_c0_ties_resolved": 691,
+            "c0_band_values_changed_by_exact_ties": 479,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 320
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 19961,
+            "hardband_near_threshold": 703,
+            "symbolic_c0_ties_resolved": 703,
+            "c0_band_values_changed_by_exact_ties": 506,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 314
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2945239,
+            2945240
+          ],
+          "energy": [
+            0.0,
+            0.05782188957169616,
+            0.03976836945429762,
+            0.007083062950228759
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05803133986645765,
+            0.039276020825398966,
+            0.0068234039102052935
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05949315378211422,
+            0.03786828692615901,
+            0.007560124711189218
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 18590,
+            "hardband_near_threshold": 774,
+            "symbolic_c0_ties_resolved": 774,
+            "c0_band_values_changed_by_exact_ties": 523,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 338
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 19282,
+            "hardband_near_threshold": 711,
+            "symbolic_c0_ties_resolved": 711,
+            "c0_band_values_changed_by_exact_ties": 521,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 324
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2945249,
+            2945250
+          ],
+          "energy": [
+            0.0,
+            0.05330081122649133,
+            0.040136761356515824,
+            0.00898031179391303
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05306650928421938,
+            0.04038729124815268,
+            0.008978502644055837
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05294470273811215,
+            0.041615645546792666,
+            0.009151879078558205
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2047,
+            "winner_near_r": 19478,
+            "hardband_near_threshold": 709,
+            "symbolic_c0_ties_resolved": 709,
+            "c0_band_values_changed_by_exact_ties": 509,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 316
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 19387,
+            "hardband_near_threshold": 696,
+            "symbolic_c0_ties_resolved": 696,
+            "c0_band_values_changed_by_exact_ties": 508,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 334
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2945259,
+            2945260
+          ],
+          "energy": [
+            0.0,
+            0.05615453861596257,
+            0.04265413731916872,
+            0.008444265546830459
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05678849194076109,
+            0.04205467852053103,
+            0.00791481197686639
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05449293838293289,
+            0.0457437619140523,
+            0.010684299073736348
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 19504,
+            "hardband_near_threshold": 717,
+            "symbolic_c0_ties_resolved": 717,
+            "c0_band_values_changed_by_exact_ties": 527,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 313
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19570,
+            "hardband_near_threshold": 767,
+            "symbolic_c0_ties_resolved": 767,
+            "c0_band_values_changed_by_exact_ties": 532,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 313
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2945269,
+            2945270
+          ],
+          "energy": [
+            0.0,
+            0.04648142343555366,
+            0.03554215391801513,
+            0.008320610015362436
+          ],
+          "coarse_energy": [
+            0.0,
+            0.0454944265062185,
+            0.035804851374539995,
+            0.007694187640235756
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.048643343370748854,
+            0.03656133502280616,
+            0.009973916447939471
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2035,
+            "winner_near_r": 18513,
+            "hardband_near_threshold": 698,
+            "symbolic_c0_ties_resolved": 698,
+            "c0_band_values_changed_by_exact_ties": 471,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 331
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 18108,
+            "hardband_near_threshold": 705,
+            "symbolic_c0_ties_resolved": 705,
+            "c0_band_values_changed_by_exact_ties": 494,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 351
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2945279,
+            2945280
+          ],
+          "energy": [
+            0.0,
+            0.06205824817432969,
+            0.03910421003137899,
+            0.009153803006877091
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05904146223340666,
+            0.0372231833336658,
+            0.00864299444230614
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.05601415605977533,
+            0.046661289754463736,
+            0.010148239048434506
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 19243,
+            "hardband_near_threshold": 713,
+            "symbolic_c0_ties_resolved": 713,
+            "c0_band_values_changed_by_exact_ties": 508,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 319
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 18768,
+            "hardband_near_threshold": 797,
+            "symbolic_c0_ties_resolved": 797,
+            "c0_band_values_changed_by_exact_ties": 541,
+            "unresolved_near_hardband": 0,
+            "boundary_sources": 329
+          }
+        }
+      ]
+    }
+  ]
+}

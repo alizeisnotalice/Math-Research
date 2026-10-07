@@ -1,0 +1,29 @@
+{
+  "status": "registered_before_execution",
+  "date": "2026-10-07",
+  "models": [
+    {"n": 8, "phase_points_per_axis": 32, "time_panels": 128},
+    {"n": 32, "phase_points_per_axis": 64, "time_panels": 256},
+    {"n": 128, "phase_points_per_axis": 128, "time_panels": 512}
+  ],
+  "c": 1,
+  "eta": 1,
+  "Z": 1,
+  "source": "4/5+(7/20)cos(4*x1)-(2/5)cos(64*sum(xi))",
+  "source_minimum": "1/20",
+  "exact_scalar_rounds": [8, 32, 128],
+  "root_bisection_iterations": 64,
+  "numeric_screen_absolute_tolerance": 0.03,
+  "numeric_screen_is_not_interval_certificate": true,
+  "kernel": "original G_d coupled first-axis symbol 4*j+64*l",
+  "checks": [
+    "exact hinge pair positivity and log-linear scalar coefficient",
+    "actual first-touch with nonhit terminal wealth retained",
+    "original-symbol hinge flux against exact terminal hinge drop",
+    "full/high-current/low-inactive signed commutator decomposition",
+    "history deficit identity and recross classification"
+  ],
+  "old_models_rerun": false,
+  "random_seed": null,
+  "does_not_certify": "Rn actual FIRST/history or an ordered weak bound"
+}

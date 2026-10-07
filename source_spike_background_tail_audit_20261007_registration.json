@@ -1,0 +1,24 @@
+{
+  "registered_before_execution": true,
+  "date": "2026-10-07",
+  "rounds": [{"n":16,"J":256},{"n":64,"J":4096},{"n":256,"J":65536}],
+  "eta": "1/100",
+  "q": "1+1/(2J)",
+  "b": "q^J, kept symbolic with 3/2<=b<2",
+  "input": "alpha delta0 + beta indicator_Q(0,2b), alpha=eta beta, tau=beta",
+  "winner": "Unique smallest scale capturing the spike on full E=Qb",
+  "checks": [
+    "pointwise spike profile bracket from true finite winners",
+    "exact cone P/B one-coordinate integral product formula and q/1 square ratio",
+    "complete background mass beta(2b)^n and I1=beta b^n in common b^n units",
+    "second-moment bound <=[64+eta(1+n/2)^2](2/3)^n using b>=3/2",
+    "registered square-root comparison only for these original single-spike qualification instances"
+  ],
+  "random_seed": null,
+  "exclusions": [
+    "No J-item enormous denominator profile enumeration.",
+    "No continuous L1 spike quadrature; transfer is analytic at fixed n,J.",
+    "No source-tail general theorem, actual FIRST/fullfuture history, or multi-spike LP certificate.",
+    "No old guard rerun."
+  ]
+}

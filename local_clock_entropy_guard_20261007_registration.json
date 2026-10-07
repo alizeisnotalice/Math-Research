@@ -1,0 +1,93 @@
+{
+  "claims": "Q H=sum_i a_i(1-p_i)ln(1-p_i); D=-QH<=abar=sum_i a_i p_i; H=-sum p_i ln p_i.",
+  "endpoints": "p_i=1: rate=0, do not evaluate deleted posterior or ln0; a_i=0 contributes exact0.",
+  "generator": "p drift p_i(a_i-abar), mass-tilted deletion rate a_i(1-p_i), deletion normalisation p_j/(1-p_i). This is not raw clock generator.",
+  "log_certificate": "100-term atanh series after exact power-of-2 range reduction, rational positive tail, signed ln2 reduction, outward dyadic256. Exact symbolic logp coefficients cancelled before interval evaluation.",
+  "posterior_rounds": [
+    {
+      "weights": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "weights": [
+        1,
+        2,
+        3,
+        5,
+        11
+      ]
+    },
+    {
+      "weights": [
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        55
+      ]
+    }
+  ],
+  "product_n": [
+    4,
+    16,
+    64
+  ],
+  "product_source": "N=n^n unit-total-mass atoms at d*k, k in {0,...,n-1}^n, d=1/(8n), a=1,b=2, receiver0; half-open grid side d, exact cell labels k.",
+  "rate_definitions": {
+    "all1": "a_i=1",
+    "alternating": "a_i=i mod 2, labels start 0",
+    "graded": "a_i=(i+1)/(original N+1)"
+  },
+  "rates": [
+    "all1",
+    "alternating",
+    "graded"
+  ],
+  "run_policy": "Freeze registration and code before one new execution.",
+  "save": "All posterior p/rates, symbolic coefficients/deletion records, entropy/D/residual intervals in deterministic gzip; complete compressed product coordinate geometry and n ln n intervals.",
+  "scope": "Only new finite arithmetic and compressed geometry guard. No old max, nearmax or geom closure; no large N enumeration.",
+  "script_sha256": "e2303b4a2ce34fd607faea047fd237e83ef4aca56e8dc6f499e7f30a4e1594fd",
+  "seed": null,
+  "skills_read": [
+    {
+      "path": "/Users/zhengzhihao/.codex/skills/math-d04-entropy-chain-rule/SKILL.md",
+      "sha256": "674f8250231baa46a591de572d6dcd99c52272c6c44ed3456bee31d078a82aec"
+    },
+    {
+      "path": "/Users/zhengzhihao/.codex/skills/math-d04-entropy-chain-rule/references/method.md",
+      "sha256": "5a735a5bcc8124a3b7be9555c8a4a1497f38c227e88dea83abb3ef8e3a58d934"
+    },
+    {
+      "path": "/Users/zhengzhihao/.codex/skills/math-d04-entropy-chain-rule/references/cube-interface.md",
+      "sha256": "8cc686fa95fbaab92ceeff61140359978148c353d539e5baa2bf76a7c2ed55f2"
+    },
+    {
+      "path": "/Users/zhengzhihao/.codex/skills/math-d04-entropy-chain-rule/references/provenance.md",
+      "sha256": "51b415dda94661d9a41db817af16e49e05ab6ff1d149c4c7be5f3c7f3b9d4d3c"
+    },
+    {
+      "path": "/Users/zhengzhihao/.codex/skills/math-l03-rational-and-interval-certificates/SKILL.md",
+      "sha256": "ba244ab4c3ed128b8a487f16ce70174a0c29e4296a01d023d860d09ffe21a29d"
+    },
+    {
+      "path": "/Users/zhengzhihao/.codex/skills/math-l03-rational-and-interval-certificates/references/method.md",
+      "sha256": "9a76bd1959a2b623dbe7951684ce55428bbd9e9ddaa4a3516688ca785b31508c"
+    },
+    {
+      "path": "/Users/zhengzhihao/.codex/skills/math-l03-rational-and-interval-certificates/references/cube-interface.md",
+      "sha256": "764b98f99801a38b35ebeab5b3a934d5f8b31842ad3f94ff68da3b4844fe64a6"
+    },
+    {
+      "path": "/Users/zhengzhihao/.codex/skills/math-l03-rational-and-interval-certificates/references/provenance.md",
+      "sha256": "ced0d588ce52a592b3142a8b5d4f09e37d3ebb9f6a922e1fc76e8e089b9ad5ab"
+    }
+  ],
+  "status": "FROZEN BEFORE EXECUTION",
+  "subset_rule": "Every nonempty subset in integer mask order; keep original labels, renormalize weights only."
+}

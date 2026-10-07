@@ -1,0 +1,25 @@
+{
+  "registered_before_execution": true,
+  "model": "gpt-6.1-sol high",
+  "skill": "math-j01-inhomogeneous-jump-generator",
+  "scope": "Original c=1 one-coordinate continuous Levy density, diagonal r,L chain. Three deterministic quadrature rounds are diagnostics, not certified intervals or actual geom pressure.",
+  "analytic_candidate_before_run": "dr/dlogL >= 2r(1-r) makes the original Levy measure derivative nonnegative; odds(r)=C L^2 gives finite-step measure order.",
+  "r_values": [0.01, 0.1, 0.5, 0.9, 0.99],
+  "slopes": ["0.25*2r(1-r)", "0.5*2r(1-r)", "2r(1-r)", "2*2r(1-r)", "2(1-r)"],
+  "logL_steps": [0.01, 0.05, 0.1],
+  "rounds": [
+    {"name": "exploratory", "s_gauss_nodes": 128, "a_gauss_nodes": 64, "x_nodes": 129},
+    {"name": "pressure", "s_gauss_nodes": 256, "a_gauss_nodes": 128, "x_nodes": 257},
+    {"name": "refinement", "s_gauss_nodes": 512, "a_gauss_nodes": 256, "x_nodes": 513}
+  ],
+  "s_map": "s=1+t/(1-t), t in (0,1), Gauss-Legendre; s tail is transformed, not truncated.",
+  "x_grid": "zero plus geomspace(1e-6,1,x_nodes-1), even negative part integrated on [-1,1]; analytical H>=0 for |x|>=1 at every nonnegative slope.",
+  "finite_difference_negative_part_scope": "Only registered x in [0,1] and their negatives; unlike generator, finite difference tail outside this interval not certified numerically.",
+  "original_Ga_validation": "Spectral rho_a formula integrated against 2s/(s^2+xi^2), xi=0,.5,2,8, compared with exact original symbol; closed a-integrated phase checked against independent Gauss a integration at s=1.0001,1.1,2,8.",
+  "metrics": ["minimum generator at registered x", "grid-integrated negative generator part", "finite-step Lambda differences", "original symbol quadrature residual", "closed phase vs nested a quadrature", "coarse/fine diagnostic differences"],
+  "profiles": "Save all x,generator,finite-step profiles with file hashes. No clipping negative values.",
+  "seeds": "None: deterministic quadrature only. No independent random validation claimed.",
+  "confidence": "No probabilistic CI or numerical certification. Refinement differences are not rigorous error bars. General positivity is established analytically separately.",
+  "stop_rule": "Finish these bounded rounds and analytic derivation; no full-rank MC, no old data rerun, no adaptive slope tuning.",
+  "actual_interface_limit": "One diagonal curve does not cover the full two-parameter receiver family for free; a foliation does not share one stopping-source budget automatically. No full FIRST/CP/GP or actual geom estimate is claimed."
+}

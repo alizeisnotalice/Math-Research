@@ -1,0 +1,260 @@
+\section{固定空间格子的来源稀疏化及绝对损失预算}
+
+本节给出完整来源的一般随机稀疏化归约。所有随机标记都作用于同一份预固定空间分割，不能随接收点另选；来源坐标无须独立。本节不使用外部随机过程定理，也不证明一般中心立方体的平方根弱型上界。
+
+\subsection{完整输入、原赢家与窗口包络}
+
+设 $n\ge1$，$0<a<b<\infty$，$\tau>0$，$\mu$ 为 $\mathbf R^n$ 上完整有限正 Borel 测度，$W=\mu(\mathbf R^n)>0$。采用全边长约定
+\[
+ Q(x,r)=x+[-r/2,r/2]^n,\qquad
+ U_r(x)=r^{-n}\mu(Q(x,r)),\qquad
+ M(x)=\max_{a\le r\le b}U_r(x).
+\]
+全连续窗口 $[a,b]$ 都是原合法尺度。取原可测真赢家 $R(x)$，并记
+\[
+ E=\{x:M(x)>\tau\},\quad I=\tau|E|,\quad
+ m(x)=\mu(Q(x,R(x)))=M(x)R(x)^n,\quad
+ z(x)=\log(M(x)/\tau)>0\quad(x\in E).
+\]
+闭立方体保留来源边界原子。对数正部在零响应处约定为零，定义
+\[
+ \Phi_\tau(\mu)=\tau\int_{\mathbf R^n}\log_+(M(x)/\tau)\,dx,
+ \qquad Z=1+n\log(b/a).
+\]
+窗口正包络 $k_*(y)=\sup_{a\le r\le b}r^{-n}\mathbf1_{Q(0,r)}(y)$ 满足 $\int k_*=Z$。因此 $M\le k_* *\mu$，且
+\[
+ I\le ZW,\qquad \Phi_\tau(\mu)\le ZW/e.
+\]
+后一个界使用标量不等式 $\tau\log_+(v/\tau)\le v/e$，不是未知的平方根极大算子界。以下对零来源约定 $I=\Phi_\tau=0$。
+
+固定网格边长
+\[
+ 0<d\le\min\{a/(8n),(b-a)/4\},\qquad
+ \alpha=n\log(1+2d/a)\le1/4.
+\]
+令 $\mathcal C$ 为半开格子 $C=d(k+[0,1)^n)$，$k\in\mathbf Z^n$ 的可数分割。令 $c_C$ 为格子的下角点，并写
+\[
+ w_C=\mu(C),\quad
+ \pi_C(x)=\frac{\mu(C\cap Q(x,R(x)))}{m(x)},\quad
+ \chi(x)=\sum_{C\in\mathcal C}\pi_C(x)^2\quad(x\in E).
+\]
+于是 $\sum_C\pi_C=1$，$0\le\chi\le1$。重合来源原子归入同一格，不人为拆开。
+
+\subsection{未加权及对数加权的真实碰撞预算}
+
+将 $E$ 分成 $E_{\mathrm{int}}=\{x\in E:R(x)\le b-2d\}$ 与 $E_{\mathrm{top}}=E\setminus E_{\mathrm{int}}$。若 $\pi_C(x)>0$，则 $C\cap Q(x,R(x))$ 非空，整个格子包含于闭立方体 $Q(x,R(x)+2d)$。置 $r_C(x)=2\|x-c_C\|_\infty$，则 $r_C\le R+2d$。
+
+在内区，$R+2d$ 是原合法尺度。原真赢家及阈值给出
+\[
+ w_C\le M(R+2d)^n\le e^\alpha m,
+ \qquad m>\tau R^n,\qquad r_C^n\le e^\alpha R^n.
+\]
+所以，在 $w_C>0$、$\pi_C>0$ 时，
+\[
+ m\ge e^{-\alpha}\max\{w_C,\tau r_C^n\},\qquad
+ \pi_C^2\le\frac{e^{2\alpha}w_C^2}{\max\{w_C,\tau r_C^n\}^2}.
+\]
+由于 $|\{x:r_C(x)\le r\}|=r^n$，换元 $v=\tau r_C^n/w_C$ 的 Lebesgue 推前为 $(w_C/\tau)\,dv$。因而
+\[
+ \tau\int_{E_{\mathrm{int}}}\pi_C^2\,dx
+ \le e^{2\alpha}w_C\int_0^\infty\frac{dv}{\max(1,v)^2}
+ =2e^{2\alpha}w_C.
+\]
+对零质量格或零捕获格，左边为零，不使用上面的质量下界。
+
+顶部使用 $\chi\le1$。因为 $b-2d>a$，顶部原赢家落在合法窄窗 $[b-2d,b]$，其尺度正包络的质量为
+\[
+ C_{\mathrm{top}}=1+n\log\frac b{b-2d}\le\frac43.
+\]
+这里 $2d/b\le1/(4n)$，并使用 $-\log(1-s)\le s/(1-s)$。完整来源卷积及 Tonelli 给出 $\tau|E_{\mathrm{top}}|\le C_{\mathrm{top}}W$。对格子求和只领一次 $\sum_Cw_C=W$，得到
+\[
+ \tau\int_E\chi\,dx
+ \le(2e^{2\alpha}+C_{\mathrm{top}})W
+ \le(2e^{1/2}+4/3)W<6W.                       \tag{1}
+\]
+
+加权估计保留同一原交通的 $z$。在内区置
+\[
+ u=e^\alpha m/w_C,\qquad v=\tau r_C^n/w_C.
+\]
+上述质量帽给 $u\ge\max(1,v)$，并且
+\[
+ z=\log\frac m{\tau R^n}\le\log(u/v),\qquad
+ \tau\pi_C^2z\le\tau e^{2\alpha}F(v),\qquad
+ F(v)=\sup_{u\ge\max(1,v)}\frac{\log(u/v)}{u^2}.  \tag{2}
+\]
+单点 $r_C=0$ 的 Lebesgue 零测集合可用无穷包络解释。直接对 $u$ 求导得：当 $0<v\le e^{-1/2}$ 时 $F(v)=-\log v$；当 $v\ge e^{-1/2}$ 时 $F(v)=(2ev^2)^{-1}$。因此
+\[
+ \int_0^\infty F(v)\,dv=2e^{-1/2},\qquad
+ \tau\int_{E_{\mathrm{int}}}\pi_C^2z\,dx
+ \le2e^{2\alpha-1/2}w_C\le2w_C.              \tag{3}
+\]
+在顶部，原 $M$ 等于窄窗最大响应，故同一窄窗包络和 $\tau\log_+(v/\tau)\le v/e$ 给
+\[
+ \tau\int_{E_{\mathrm{top}}}\chi z\,dx
+ \le \tau\int_{E_{\mathrm{top}}}z\,dx
+ \le\frac{C_{\mathrm{top}}}{e}W
+ \le\frac4{3e}W<\frac12W.
+\]
+结合 (3) 的逐格求和，得到全输入加权预算
+\[
+ \tau\int_E\chi(x)\log(M(x)/\tau)\,dx
+ \le\left(2+\frac4{3e}\right)W<\frac52W.       \tag{4}
+\]
+这两个碰撞预算明确依赖原连续尺度允许 $R+2d$。对稀疏尺度族，不能免费补入这一查询。
+
+\subsection{任意保留率的同一来源 Bernoulli 稀疏化}
+
+对固定格子独立抽取 $\eta_C$，使 $\mathbf P(\eta_C=1)=p$，其中 $0<p\le1$，定义
+\[
+ \mu_p=p^{-1}\sum_C\eta_C\mu|_C,\qquad W_p=\mu_p(\mathbf R^n).
+\]
+同一标记供所有接收点使用。逐实现 $0\le\mu_p\le\mu/p$，允许全零实现，且 $\mathbf E\mu_p=\mu$、$\mathbf EW_p=W$。在原 $E$ 和原赢家处，
+\[
+ \frac{U_R(\mu_p)}M=1+V_x,\qquad
+ V_x=p^{-1}\sum_C\pi_C(x)\eta_C-1,
+ \quad\mathbf EV_x=0,
+ \quad\mathbf EV_x^2=\frac{1-p}{p}\chi(x),
+ \quad V_x\ge-1.
+\]
+可数和绝对收敛；独立性仅来自外加格子硬币，不来自输入来源的坐标。
+
+对 $z>0$、$V\ge-1$ 定义冻结原赢家的对数损失
+\[
+ \ell=z-\log_+(e^z(1+V)),
+\]
+其中 $V=-1$ 时新收益按零解释。置 $G=\{V\ge-1/2\}$。在 $G$ 上，
+\[
+ \ell\le-\log(1+V)\le-V+2V^2.
+\]
+第二个不等式对全部 $V\ge-1/2$ 成立，无需正向上限：$h(v)=\log(1+v)-v+2v^2$ 满足 $h(0)=h'(0)=0$ 及 $h''(v)=4-(1+v)^{-2}\ge0$。补集上 $\ell\le z$，且
+\[
+ \mathbf E[-V\mathbf1_G]=\mathbf E[V\mathbf1_{G^c}]\le0,
+ \qquad\mathbf P(G^c)\le4\mathbf EV^2.
+\]
+因此
+\[
+ \mathbf E\ell\le(2+4z)\mathbf EV^2.             \tag{5}
+\]
+新最大响应至少冻结原赢家的响应；原 $E$ 外新收益非负。由 (1)、(4)、(5) 得
+\[
+ \mathbf E\Phi_\tau(\mu_p)
+ \ge\Phi_\tau(\mu)-22\frac{1-p}{p}W,
+ \qquad\mathbf EW_p=W.                        \tag{6}
+\]
+交换期望与空间积分无无穷中心化问题：对该实际 $V_x$，$1+V_x\le1/p$，所以 $-\log(1/p)\le\ell\le z$，而 $\tau\int_Ez=\Phi_\tau(\mu)$、$\tau|E|=I$ 均有限。新函数亦满足 $\Phi_\tau(\mu_p)\le ZW_p/e$，故期望有限。闭立方体响应在尺度上可由右侧尺度递减逼近；窗口最大值可写成合法有理尺度与端点的可数上确界，随机来源下仍可测。
+
+\subsection{同分布离散步给出 $22uW$ 连续预算}
+
+固定 $u\ge0$。给每个格子一份相互独立、参数为 $1$ 的指数寿命 $T_C$，定义
+\[
+ \mu^{(u)}=e^u\sum_C\mathbf1_{\{T_C>u\}}\mu|_C,
+ \qquad W^{(u)}=\mu^{(u)}(\mathbf R^n).
+\]
+这是完整来源的死亡与补偿增长过程。先把 $u$ 分成 $k$ 步，每步用独立新硬币以 $p=e^{-u/k}$ 保留尚存格子，并乘以 $p^{-1}$。条件于之前来源，对当前完整来源重新使用 (6)；当前为空时不等式两边均为零。每步质量期望守恒，故
+\[
+ \mathbf E\Phi_\tau(\mu^{(u)})
+ \ge\Phi_\tau(\mu)-22k(e^{u/k}-1)W.
+\]
+每个有限 $k$ 的最终存活指标在格子之间独立，单格存活率精确为 $p^k=e^{-u}$，总补偿为 $p^{-k}=e^u$。因此每个 $k$ 的终点分布已经相同，不需要无限步过程逼近。取费用的下确界，$\inf_{k\ge1}k(e^{u/k}-1)=u$，得到
+\[
+ \mathbf E\Phi_\tau(\mu^{(u)})
+ \ge\Phi_\tau(\mu)-22uW,
+ \qquad\mathbf EW^{(u)}=W.                    \tag{7}
+\]
+
+\subsection{真实单格删除与总损失 $I+16W$}
+
+定义使用完整新赢家的真实删除损失
+\[
+ D_C(\mu)=\Phi_\tau(\mu)-\Phi_\tau(\mu-\mu|_C)\ge0.
+\]
+删除后的完整最大值不超过原最大值，因此原 $E$ 外旧、新收益均为零。在原 $E$ 上使用原赢家查询删除后的来源，响应为 $M(1-\pi_C)$，所以
+\[
+ D_C(\mu)\le\tau\int_E\min\{z,-\log(1-\pi_C)\}\,dx. \tag{8}
+\]
+$\pi_C=1$ 时 $-\log(1-\pi_C)=+\infty$，最小值按 $z$ 解释。对 $0\le q\le1$、$z>0$，
+\[
+ \min\{z,-\log(1-q)\}\le q+(1+4z)q^2.
+\]
+当 $q\le1/2$ 时，对数级数给 $-\log(1-q)-q\le q^2/[2(1-q)]\le q^2$；当 $q>1/2$ 时 $4zq^2\ge z$。对 (8) 求和并用 $\sum_C\pi_C=1$、(1)、(4)，得到确定性全输入预算
+\[
+ \sum_C D_C(\mu)\le I(\mu)+16W.               \tag{9}
+\]
+此处汇总的是同一完整来源的各个单格删除，其余格子的权重不变。连续过程每次死亡必须在当时完整来源重新应用 (9)，不能反复引用初始赢家。
+
+\subsection{有限格路径、阈值平台与真实寿命补偿}
+
+先设来源仅有有限个非空格子。尚存来源确定地以 $d\nu/dt=\nu$ 增长，每个尚存格子以率 $1$ 删除其整份当前质量；空状态保持空。这个新构造的来源过程没有被认作原极大算子的内生首次跳跃过程。
+
+沿无跳区间，以区间起点来源 $\nu_0$ 表示，准确有
+\[
+ \Phi_\tau(e^t\nu_0)
+ =\tau\int\bigl(t+\log(M_{\nu_0}/\tau)\bigr)_+\,dx.
+\]
+零响应处被积函数按零解释。此函数局部绝对连续；紧时间区间内超阈体积由窗口包络控制，逐点正部函数与 Fubini 给其导数为 $I(e^t\nu_0)$，但仅对 $dt$ 几乎处处成立。瞬时右增长导数实际为
+\[
+ \tau|\{x:M_{\nu_0}(x)\ge\tau\}|,
+\]
+有阈值平台时不能将其改成严格超阈体积。固定存活集的正质量水平集只可能在可数个时间产生例外；无跳区间积分仍使用上述几乎处处导数。这里不声称 $\Phi$ 在每个状态都有漂移 $I$ 的点态生成元公式。
+
+有限格逐路径只有有限次死亡（寿命重合事件概率为零）。沿各个无跳区间积分，并在死亡时扣除左状态的真实 $D_C$。固定一个格子 $C$，条件于其余寿命，记
+\[
+ \psi_C(s)=D_C\left(e^s\left[\mu|_C+
+                \sum_{B\ne C,\ T_B>s}\mu|_B\right]\right).
+\]
+其死亡时刻密度 $e^{-s}\,ds$ 给
+\[
+ \mathbf E\bigl[\mathbf1_{\{T_C\le u\}}\psi_C(T_C)\bigr]
+ =\int_0^u e^{-s}\mathbf E\psi_C(s)\,ds
+ =\int_0^u\mathbf E\bigl[
+          \mathbf1_{\{T_C>s\}}D_C(\mu^{(s)})\bigr]ds.
+\]
+死亡使用左状态；确定时刻的左右差只出现在概率零的事件。全部量在紧时间区间可积：$I(\mu^{(s)})\le Ze^uW$，$\Phi_\tau(\mu^{(s)})\le Ze^uW/e$，有限格删除项的和亦有限。因此直接 Fubini 得精确补偿身份
+\[
+ \mathbf E\Phi_\tau(\mu^{(u)})-\Phi_\tau(\mu)
+ =\int_0^u\mathbf E\left[
+ I(\mu^{(s)})-\sum_{C\ \mathrm{alive}}D_C(\mu^{(s)})
+ \right]ds.
+\]
+质量守恒也可直接计算，而不调用抽象生成元定理：
+\[
+ \mathbf EW^{(s)}=e^s\sum_Cw_C\mathbf P(T_C>s)=W.
+\]
+对当时来源应用 (9)，增长的 $I$ 与删除预算中的 $I$ 相消，得到改进的连续预算
+\[
+ \mathbf E\Phi_\tau(\mu^{(u)})
+ \ge\Phi_\tau(\mu)-16uW.                      \tag{10}
+\]
+
+\subsection{可数格的总变差极限与正质量实现选择}
+
+完整来源可有可数无穷个非空格子，不能将其总死亡率假称有限。取有限格截断 $\mu_N$，质量 $W_N\uparrow W$，并与完整来源使用同一组寿命。于是 $\mu_N^{(u)}\le\mu^{(u)}$，且
+\[
+ \mathbf E\|\mu^{(u)}-\mu_N^{(u)}\|_{\mathrm{TV}}=W-W_N.
+\]
+这里总变差范数指差测度的总绝对质量，不含额外的 $1/2$。对任意两个完整有限正来源，窗口稳定性为
+\[
+ |\Phi_\tau(\nu)-\Phi_\tau(\widetilde\nu)|
+ \le Z\|\nu-\widetilde\nu\|_{\mathrm{TV}}.
+\]
+证明是 $|M_\nu-M_{\widetilde\nu}|\le M_{|\nu-\widetilde\nu|}\le k_* *|\nu-\widetilde\nu|$，以及 $v\mapsto\tau\log_+(v/\tau)$ 的 $1$-Lipschitz 性。故初值和随机终值的 $\Phi$ 分别在确定意义、期望意义下收敛。将有限格 (10) 取极限，得到任意完整有限正来源的同一 $16uW$ 预算。这里只推广不等式，不需要给无限死亡过程另写无限总率的补偿恒等式。
+
+令 $K=\sup_{\nu\ne0}\Phi_\tau(\nu)/\nu(\mathbf R^n)$，上确界取在同一阈值、窗口及对该稀疏化封闭的合法来源类中；例如完整有限正 Borel 类或完整非负 $L^1$ 类。设原输入满足 $\Phi_\tau(\mu)\ge(K-\varepsilon)W$。质量加权概率
+\[
+ d\mathbf Q=\frac{W^{(u)}}W\,d\mathbf P
+\]
+在正质量实现上的比值平均为
+\[
+ \mathbf E_{\mathbf Q}
+       \frac{\Phi_\tau(\mu^{(u)})}{W^{(u)}}
+ =\frac{\mathbf E\Phi_\tau(\mu^{(u)})}W
+ \ge K-\varepsilon-16u.
+\]
+所以存在一份正质量实现，其比值至少 $K-\varepsilon-16u$。全零实现由质量加权概率自动忽略；右侧为负时结论平凡。$\mu^{(u)}\le e^u\mu$ 保留完整 $L^1$ 来源资格。离散步 (7) 仍是一条不使用路径微分的独立较弱证明。
+
+\subsection{尚未闭合的一般几何接口}
+
+上述预算的损失是绝对 $O(u)W$，不含维数、格子数、物理原子数或输入坐标独立假设，但它本身没有给 $K$ 的上界。一个赢家立方体可能含极多非空小格；稀疏化会将尚存格子质量放大 $e^u$，并改变赢家、阈值集合和空间选择。若仅为压低格子数量而选取依赖输入复杂度的 $u$，这份损失不能隐入目标常数。
+
+仍须证明：一般高值近极大来源，在允许平方根量级（至多再乘次幂因子）的总损失下，能够稀疏化到一个已有真实几何预算的来源分支。独立格子存活不赋予接收点坐标独立，也没有自动保留原 FIRST、完整未来资格、CP/GP、LCA 或全部历史的跨输入耦合。因此本节是合法的一般来源归约及常数损失合同，不是原几何余项已经付款的声明。本片段仅整理解析证明，没有运行新的数值或改动主账。

@@ -1,0 +1,34 @@
+{
+  "registered_before_execution": true,
+  "model": "gpt-6.1-sol high",
+  "goal": "Pressure the deterministic source potential S induced by actual finite centered-cube winners of one complete positive source. No shared-field acceptance-count substitution.",
+  "physical_window": [1,2],
+  "families": {
+    "capacity_weighted_grid": "B38-inspired finite full-coordinate product grid with positive alternating 1D masses; represents a restricted feasible capacity input, not a solved B38 LP.",
+    "overlap_resolution_mixture": "B41 positive mixture of complete n-dimensional tensor grids at shared resolutions k_l; the full source is mixed before computing any winner.",
+    "concentric_box_mixture": "B62-inspired positive finite log-width mixture of whole n-dimensional uniform boxes, exact box-intersection response; not the continuous B62 integral or its lower-bound qualification."
+  },
+  "rounds": [
+    {"name": "exploratory", "n": 4, "layers": 2, "J": 9, "outer_sources": 64, "inner_receivers_per_replicate": 128, "seed": 710071},
+    {"name": "pressure", "n": 16, "layers": 4, "J": 17, "outer_sources": 128, "inner_receivers_per_replicate": 256, "seed": 710072},
+    {"name": "new_seed_refinement", "n": 64, "layers": 8, "J": 33, "outer_sources": 256, "inner_receivers_per_replicate": 256, "seed": 710073}
+  ],
+  "same_n_dependency_checks": [
+    {"name": "same_n16_two_layers", "n": 16, "layers": 2, "J": 33, "outer_sources": 128, "inner_receivers_per_replicate": 256, "seed": 710074},
+    {"name": "same_n16_eight_layers", "n": 16, "layers": 8, "J": 33, "outer_sources": 128, "inner_receivers_per_replicate": 256, "seed": 710075}
+  ],
+  "same_n_checks_family": "overlap_resolution_mixture",
+  "thresholds_prespecified": {
+    "grid_families": "tau=alpha*(1/(32n))^n",
+    "box_family": "tau=alpha*2^(-n)",
+    "alpha_values": [0.1,0.5,2.0]
+  },
+  "tail_cutoffs": "K=0.5sqrt(n),sqrt(n),2sqrt(n), fixed before samples; do not select a favorable K/alpha afterwards.",
+  "receiver_importance_sampling": "Conditional on true source point y, sample density sup_{1<=L<=2}h_L(x-y)/(1+n log2): core cube1 plus cone shell. The estimator g h_R/q_y is bounded by 1+n log2. This estimates receiver Lebesgue integral S(y), not volume by source probabilities.",
+  "square": "Two conditionally independent receiver replicates at each source point; their product is unbiased for S(y)^2 before arithmetic errors. Save both profiles; empirical-square bias is avoided.",
+  "tail": "Plugin tail is biased and explicitly labeled; conservative inner Hoeffding intervals plus outer bounds are allowed and likely broad. No floating-point numerical-zero claim of analytic zero.",
+  "response": "Complete source response at every finite L node; choose lowest index exact mathematical tie. Grid winner is genuine finite J, not certified continuous supremum. Closed atom-count arrivals; ambiguous boundary/ties separately reported.",
+  "confidence": "Finite frozen inputs only; confidence does not certify floating-point arithmetic. Use global union budget across records/metrics/source-point bands; no asymptotic extrapolation.",
+  "cost": "Batched O(outer*inner*2*J*layers*n) coordinate operations; reuse responses for all alpha and K, never multiply geometric evaluation cost by thresholds. Reduce batch memory, not mathematical scope.",
+  "stop_rule": "Run the registered bounded three rounds and same-n checks only, preserve all empty records; no adaptive input/threshold optimization, no old experiment reruns."
+}

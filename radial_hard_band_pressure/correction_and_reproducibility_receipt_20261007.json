@@ -1,0 +1,292 @@
+{
+  "created_utc": "2026-10-06T16:37:49.199908+00:00",
+  "files": [
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/radial_hard_band_pressure/radial_hard_band_results_20261006T163428553577Z.json",
+      "sha256": "957f1aa882f4fdeeac454339375327d715b681af191d07e11327b6ac3aeca2b9",
+      "runtime_seconds": 1.3386208750016522,
+      "fine_nodes": 129,
+      "samples_per_replicate_by_n": {
+        "8": 256,
+        "32": 128,
+        "128": 64
+      }
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/radial_hard_band_pressure/radial_hard_band_results_20261006T163542102101Z.json",
+      "sha256": "40bbe5eea00efa9acf08e8cae93a54ef744d940e84e678b47de48137d5a3d670",
+      "runtime_seconds": 5.243130417002249,
+      "fine_nodes": 513,
+      "samples_per_replicate_by_n": {
+        "8": 256,
+        "32": 128,
+        "128": 64
+      }
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/radial_hard_band_pressure/radial_hard_band_results_20261006T163718777842Z.json",
+      "sha256": "2e6ce7c1d6f942b205722730211ca94e48b900d56d7a0f82e0f32bd1174aa7de",
+      "runtime_seconds": 71.48587166699872,
+      "fine_nodes": 513,
+      "samples_per_replicate_by_n": {
+        "8": 2048,
+        "32": 2048,
+        "128": 2048
+      }
+    }
+  ],
+  "script": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/radial_hard_band_pressure/radial_hard_band_pressure.py",
+  "script_sha256": "73635406777ba8cbb535936c7752c4cbf3d6fb3a6690aabe0adfbaac42eff39a",
+  "metadata_correction": {
+    "affected_file": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/radial_hard_band_pressure/radial_hard_band_results_20261006T163428553577Z.json",
+    "wrong_jacobian": "dx=(r^n/2^n) dt dnu",
+    "correct_jacobian": "dx=r^n dt dnu because the cube [-1/2,1/2]^n has volume 1",
+    "impact": "Y calculation never used the wrong factor; numerical values unchanged by correction. Original file preserved; later files contain corrected metadata and normalization validation."
+  },
+  "confidence_correction": {
+    "initial_factor": 2,
+    "later_factor": 4,
+    "meaning": "The final formula gives two-sided Hoeffding control for each of lower and upper screened RVs over 45 records and K finite nodes; both tails and both RVs are covered. Initial factor 2 can cover the two needed one-sided bounds but that allocation was not explicitly documented. Final files conservatively use factor 4. No continuum quadrature error certification."
+  },
+  "input_hashes_identical_all_runs": true,
+  "pilot_coupling": {
+    "first_two_runs": "Same source and cone sample streams, same input hashes; 129 fine nodes embed in 513 fine nodes",
+    "max_shared_node_phi_difference": 0.0
+  },
+  "expanded_sampling": {
+    "sampling_seed_base": 202610071947,
+    "replicates": 2,
+    "samples_per_replicate": 2048,
+    "input_seed_base": 202610070941,
+    "relation_to_pilots": "Fresh sampling seed namespace on unchanged atoms; standard distinct PRNG stream independence assumption. The algorithm is the same, so this is increased-sample verification, not an independent implementation audit. CRN within each run across t and fixed lambda variants."
+  },
+  "expanded_checks": {
+    "all_validation_pass": true,
+    "record_count": 45,
+    "zero_energy_records": 0,
+    "maximum_nested_grid_difference": 0.006047926511930951,
+    "finite_node_hoeffding_epsilon": 0.0419684198283954,
+    "maximum_empirical_square_minus_cross": 0.0001227751695467294,
+    "fullscale_control_confidence": "The fullscale-max-then-filter control is raw floating event evaluation; screened Hoeffding bands apply only to the primary continuous-window quantity."
+  },
+  "lambda_factor_1_summary": [
+    {
+      "n": 8,
+      "N": 8,
+      "family": "unequal_diagonal",
+      "energy_cross_replicates_fine": 0.13793102289439835,
+      "energy_cross_replicates_coarse": 0.13779067654450894,
+      "coarse_fine_abs_difference": 0.00014034634988940864,
+      "max_phi": 0.4411794577359791,
+      "raw_event_observations": 215054,
+      "ambiguous_sample_node_observations": 0,
+      "energy_finite_node_hoeffding_lower": 0.09851584261869067,
+      "energy_finite_node_hoeffding_upper": 0.19354682031062448,
+      "fullscale_max_then_filter_control_energy_cross": 0.1378139268111555
+    },
+    {
+      "n": 8,
+      "N": 8,
+      "family": "correlated_two_clusters",
+      "energy_cross_replicates_fine": 0.09405132046375331,
+      "energy_cross_replicates_coarse": 0.09408450412301037,
+      "coarse_fine_abs_difference": 3.3183659257057796e-05,
+      "max_phi": 0.30190805359813,
+      "raw_event_observations": 208090,
+      "ambiguous_sample_node_observations": 177,
+      "energy_finite_node_hoeffding_lower": 0.06007626922500949,
+      "energy_finite_node_hoeffding_upper": 0.14308680486139852,
+      "fullscale_max_then_filter_control_energy_cross": 0.09416664212227793
+    },
+    {
+      "n": 8,
+      "N": 8,
+      "family": "random_sign_outlier",
+      "energy_cross_replicates_fine": 0.3069201906187322,
+      "energy_cross_replicates_coarse": 0.3061055762508123,
+      "coarse_fine_abs_difference": 0.000814614367919908,
+      "max_phi": 0.6739259354021273,
+      "raw_event_observations": 266349,
+      "ambiguous_sample_node_observations": 0,
+      "energy_finite_node_hoeffding_lower": 0.2550506886777988,
+      "energy_finite_node_hoeffding_upper": 0.37297991568146543,
+      "fullscale_max_then_filter_control_energy_cross": 0.3069201906187322
+    },
+    {
+      "n": 32,
+      "N": 16,
+      "family": "unequal_diagonal",
+      "energy_cross_replicates_fine": 0.1717377407253376,
+      "energy_cross_replicates_coarse": 0.16920273306486122,
+      "coarse_fine_abs_difference": 0.002535007660476374,
+      "max_phi": 0.4902508655457991,
+      "raw_event_observations": 60721,
+      "ambiguous_sample_node_observations": 0,
+      "energy_finite_node_hoeffding_lower": 0.1254265031938231,
+      "energy_finite_node_hoeffding_upper": 0.2638652703699158,
+      "fullscale_max_then_filter_control_energy_cross": 0.1717377407253376
+    },
+    {
+      "n": 32,
+      "N": 16,
+      "family": "correlated_two_clusters",
+      "energy_cross_replicates_fine": 0.08837455533426279,
+      "energy_cross_replicates_coarse": 0.08861563690157868,
+      "coarse_fine_abs_difference": 0.0002410815673158928,
+      "max_phi": 0.31517935568913247,
+      "raw_event_observations": 49238,
+      "ambiguous_sample_node_observations": 308,
+      "energy_finite_node_hoeffding_lower": 0.05665169177067423,
+      "energy_finite_node_hoeffding_upper": 0.1655141237660957,
+      "fullscale_max_then_filter_control_energy_cross": 0.08908099594823764
+    },
+    {
+      "n": 32,
+      "N": 16,
+      "family": "random_sign_outlier",
+      "energy_cross_replicates_fine": 0.6767539670804255,
+      "energy_cross_replicates_coarse": 0.6767539670804255,
+      "coarse_fine_abs_difference": 0.0,
+      "max_phi": 0.988037109375,
+      "raw_event_observations": 65520,
+      "ambiguous_sample_node_observations": 0,
+      "energy_finite_node_hoeffding_lower": 0.6203985873472735,
+      "energy_finite_node_hoeffding_upper": 0.7317712546100101,
+      "fullscale_max_then_filter_control_energy_cross": 0.6767539670804255
+    },
+    {
+      "n": 128,
+      "N": 32,
+      "family": "unequal_diagonal",
+      "energy_cross_replicates_fine": 0.20496450275051564,
+      "energy_cross_replicates_coarse": 0.2046784108594656,
+      "coarse_fine_abs_difference": 0.0002860918910500554,
+      "max_phi": 0.49029202610291667,
+      "raw_event_observations": 16212,
+      "ambiguous_sample_node_observations": 0,
+      "energy_finite_node_hoeffding_lower": 0.15355836258227917,
+      "energy_finite_node_hoeffding_upper": 0.4187605724002085,
+      "fullscale_max_then_filter_control_energy_cross": 0.20496450275051564
+    },
+    {
+      "n": 128,
+      "N": 32,
+      "family": "correlated_two_clusters",
+      "energy_cross_replicates_fine": 0.30058372966423486,
+      "energy_cross_replicates_coarse": 0.2987932690011725,
+      "coarse_fine_abs_difference": 0.0017904606630623765,
+      "max_phi": 0.5947276325613229,
+      "raw_event_observations": 15226,
+      "ambiguous_sample_node_observations": 21,
+      "energy_finite_node_hoeffding_lower": 0.2510646140524586,
+      "energy_finite_node_hoeffding_upper": 0.5104548618126112,
+      "fullscale_max_then_filter_control_energy_cross": 0.30058372966423486
+    },
+    {
+      "n": 128,
+      "N": 32,
+      "family": "random_sign_outlier",
+      "energy_cross_replicates_fine": 0.6864112169579674,
+      "energy_cross_replicates_coarse": 0.6864112169579674,
+      "coarse_fine_abs_difference": 0.0,
+      "max_phi": 0.9951171875,
+      "raw_event_observations": 16384,
+      "ambiguous_sample_node_observations": 0,
+      "energy_finite_node_hoeffding_lower": 0.6297190657521767,
+      "energy_finite_node_hoeffding_upper": 0.8484987363239646,
+      "fullscale_max_then_filter_control_energy_cross": 0.6864112169579674
+    },
+    {
+      "n": 32,
+      "N": 8,
+      "family": "unequal_diagonal",
+      "energy_cross_replicates_fine": 0.23097544770293846,
+      "energy_cross_replicates_coarse": 0.2370233742148694,
+      "coarse_fine_abs_difference": 0.006047926511930951,
+      "max_phi": 0.5761293627883299,
+      "raw_event_observations": 65339,
+      "ambiguous_sample_node_observations": 0,
+      "energy_finite_node_hoeffding_lower": 0.1790664713404137,
+      "energy_finite_node_hoeffding_upper": 0.3280799464368346,
+      "fullscale_max_then_filter_control_energy_cross": 0.23097544770293846
+    },
+    {
+      "n": 32,
+      "N": 8,
+      "family": "correlated_two_clusters",
+      "energy_cross_replicates_fine": 0.11162579023389936,
+      "energy_cross_replicates_coarse": 0.11202061513896575,
+      "coarse_fine_abs_difference": 0.0003948249050663849,
+      "max_phi": 0.3162517538609313,
+      "raw_event_observations": 53468,
+      "ambiguous_sample_node_observations": 279,
+      "energy_finite_node_hoeffding_lower": 0.07410519369085813,
+      "energy_finite_node_hoeffding_upper": 0.19395434725998512,
+      "fullscale_max_then_filter_control_energy_cross": 0.11221657812929443
+    },
+    {
+      "n": 32,
+      "N": 8,
+      "family": "random_sign_outlier",
+      "energy_cross_replicates_fine": 0.6569144389552818,
+      "energy_cross_replicates_coarse": 0.6569144389552818,
+      "coarse_fine_abs_difference": 0.0,
+      "max_phi": 0.97314453125,
+      "raw_event_observations": 65536,
+      "ambiguous_sample_node_observations": 0,
+      "energy_finite_node_hoeffding_lower": 0.601020261321461,
+      "energy_finite_node_hoeffding_upper": 0.7330566374402759,
+      "fullscale_max_then_filter_control_energy_cross": 0.6569144389552818
+    },
+    {
+      "n": 32,
+      "N": 32,
+      "family": "unequal_diagonal",
+      "energy_cross_replicates_fine": 0.10185253977237162,
+      "energy_cross_replicates_coarse": 0.10202250242261413,
+      "coarse_fine_abs_difference": 0.00016996265024250834,
+      "max_phi": 0.36036239218778965,
+      "raw_event_observations": 49861,
+      "ambiguous_sample_node_observations": 0,
+      "energy_finite_node_hoeffding_lower": 0.06668606374037525,
+      "energy_finite_node_hoeffding_upper": 0.1828562357447317,
+      "fullscale_max_then_filter_control_energy_cross": 0.10185253977237162
+    },
+    {
+      "n": 32,
+      "N": 32,
+      "family": "correlated_two_clusters",
+      "energy_cross_replicates_fine": 0.05833215433226637,
+      "energy_cross_replicates_coarse": 0.05838592942090027,
+      "coarse_fine_abs_difference": 5.3775088633897794e-05,
+      "max_phi": 0.22833604426089082,
+      "raw_event_observations": 46837,
+      "ambiguous_sample_node_observations": 329,
+      "energy_finite_node_hoeffding_lower": 0.031096849452467462,
+      "energy_finite_node_hoeffding_upper": 0.13166629873428048,
+      "fullscale_max_then_filter_control_energy_cross": 0.05890827635108131
+    },
+    {
+      "n": 32,
+      "N": 32,
+      "family": "random_sign_outlier",
+      "energy_cross_replicates_fine": 0.6837027108133656,
+      "energy_cross_replicates_coarse": 0.6836928444198114,
+      "coarse_fine_abs_difference": 9.86639355426977e-06,
+      "max_phi": 0.9931640625,
+      "raw_event_observations": 65545,
+      "ambiguous_sample_node_observations": 0,
+      "energy_finite_node_hoeffding_lower": 0.627112516259011,
+      "energy_finite_node_hoeffding_upper": 0.7314298240467204,
+      "fullscale_max_then_filter_control_energy_cross": 0.6837027108133656
+    }
+  ],
+  "reproduce_command": "/Users/zhengzhihao/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 /Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/radial_hard_band_pressure/radial_hard_band_pressure.py --samples-per-replicate 2048 --nodes 513 --sampling-seed-base 202610071947",
+  "limits": [
+    "g=1 hard-band relaxation only; neither softFIRST nor actual geom",
+    "Continuous-window [1,2] diagnostic only; no arbitrary finite J certification",
+    "All quadrature differences are diagnostics, not certified continuum errors",
+    "No inference of asymptotic order or endpoint theorem",
+    "Floating arithmetic sorting/grouping and ambiguity screening are not exact-real interval certification"
+  ]
+}

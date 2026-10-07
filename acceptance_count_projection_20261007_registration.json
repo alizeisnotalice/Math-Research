@@ -1,0 +1,38 @@
+{
+  "registered_before_execution": true,
+  "date": "2026-10-07",
+  "scope": "New exact finite common-chain/receiver-coin representation and CI calibration, not original Rn Gc, not actual FIRST or moving-soft proof.",
+  "random_seed": null,
+  "rounds": [
+    {"dimension": 3, "times": 3, "reflection_times": 3},
+    {"dimension": 4, "times": 6, "reflection_times": 6},
+    {"dimension": 5, "times": 9, "reflection_times": 9}
+  ],
+  "finite_model": {
+    "space": "Z_2^d with counting measure",
+    "Gi": "(2I+coordinate_flip)/3",
+    "Pj_axis_eigenvalue": "rho_j=1-j/(3J)",
+    "rj": "(3/2)(1-rho_j^2), so Pj^2=Krj",
+    "increment_axis_eigenvalue": "rho_j/rho_(j-1)",
+    "obstacle": "u(0)=1,u(1)=2, zero elsewhere; kappa=max outside sum_neighbor(u)/3; nu=1_Omega(kappa+Su), mu=nu-Su",
+    "sensors": ["identity", "(I+coordinate_flip_(j mod d))/2"],
+    "thresholds": ["kappa/16", "kappa/8", "kappa/4", "kappa"],
+    "winner": "strict M>tau outside Omega, smallest maximizing index"
+  },
+  "checks": [
+    "positive conserved common chain, exact Pj^2=Krj and V cocycle",
+    "complete joint count law by forward and independent backward recursion",
+    "mean-volume, stop, deficit, pair, tail-sum and compensated first-accept future count",
+    "accepted receiver Palm marginal and size-biased reciprocal",
+    "source-conditional tail integral and saturated signed dual identity",
+    "deterministic whole-path Poisson-binomial identities",
+    "reflection bistochastic sensor Bin(J,1/2) reverse pressure",
+    "exact binomial-tail inversion coverage with M=8, grid step 1/16, delta_total=1/20 and delta_m=1/(20J)"
+  ],
+  "exclusions": [
+    "No old 240 fixtures or old guard rerun.",
+    "No original-source Monte Carlo execution.",
+    "No centered-hard geometry, true actual history, or moving-soft chain certification.",
+    "No proof of dimension-free Palm small-count or original weak endpoint."
+  ]
+}

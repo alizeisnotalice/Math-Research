@@ -1,0 +1,39 @@
+{
+  "status": "registered_before_execution",
+  "date": "2026-10-07",
+  "purpose": "Exact scalar certificate of signed oriented commutator high/low regularized contrast split; not an actual source experiment or weak endpoint theorem",
+  "rounds": [
+    8,
+    32,
+    128
+  ],
+  "delta": [
+    "1",
+    "1/2",
+    "1/8"
+  ],
+  "lambda": [
+    "1/8",
+    "1/2",
+    "2"
+  ],
+  "ratio_grids": "near r=1+delta*j/N, j=0..N; far r=1+delta*(1+j/N), j=0..N, plus 1+delta*2^j, j=0..12",
+  "test_differences": "j/8 for j=0..16",
+  "receiver_node_values": "u/lambda,v/lambda in 0,1/16,1/4,1/2,1,2,8,128; M/lambda=max(1,v/lambda)+1/N and twice that; gates0/1",
+  "certificates": [
+    "log r<=r-1 supplied by analytic proof; rational (r-1)<=((1+delta)/delta)(r-1)^2/r for far branch",
+    "two-oriented-edge entropy counting and diff t<=2",
+    "exact product difference Delta t and signs",
+    "H<=2lambda/(lambda+v) and t<=2",
+    "rational cubic-log trapezoid envelope yields near remainder<=delta D/3",
+    "both-alive adverse response order vs maximum ratio"
+  ],
+  "arithmetic": "Pure Python Fraction only; logarithm inequalities proved analytically in Markdown, not falsely certified by floating values",
+  "exclusions": [
+    "No rerun of capped guard",
+    "No main-ledger/cube fee",
+    "No source counterexample",
+    "No predictable/supermartingale interpretation of deterministic receiver H",
+    "No general near-contrast payment claim"
+  ]
+}

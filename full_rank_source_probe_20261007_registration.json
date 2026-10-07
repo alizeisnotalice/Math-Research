@@ -1,0 +1,46 @@
+{
+  "task": "full-rank saturated source feasibility and original moving-soft quotient guard",
+  "registered_before_execution": true,
+  "model": "gpt-6.1-sol high",
+  "skill": "math-l02-adversarial-input-search",
+  "scope": "Original c=1 full-coordinate source formulas; minimal scale-dilation interface. Not another fixed-K weak pressure run.",
+  "source_formula_parameters": {
+    "kappa": "1",
+    "delta_layers": ["1/2", "1/4", "1/8"],
+    "positive_weights": ["1/7", "2/7", "4/7"],
+    "bump": "b_delta(x)=(1-(2x/delta)^2)_+^3",
+    "outer_support_width": "1/2",
+    "C0": "101/100",
+    "L_delta": "C0*16*delta/35",
+    "amplitude": "kappa/sum(weight*L_delta)",
+    "whole_source": "nu=(kappa+S u)1_Omega; layers not independently normalized",
+    "mechanism": "Nested positive full tensor potentials motivated by B41/B62 multiresolution mixing; no claim to implement complete lower-bound qualifications."
+  },
+  "executed_small_guard_rounds": [
+    {"n": 4, "r_values": ["1/4", "1/2"], "xi_squared_values": ["1/4", "1", "16"], "log_series_terms": 40},
+    {"n": 16, "r_values": ["1/2", "3/4"], "xi_squared_values": ["1/4", "1", "256"], "log_series_terms": 56},
+    {"n": 64, "r_values": ["1/4", "3/4"], "xi_squared_values": ["1/4", "1", "4096"], "log_series_terms": 72}
+  ],
+  "exact_guard_contracts": [
+    "For same 0<r<1 and scales 1<2, original squared quotient at each registered nonzero frequency is strictly below 1 and reversed quotient strictly above 1.",
+    "All multiaffine vertices, classified by zero-coordinate count, satisfy L sum(products excluding i)-n product <= L for original full-coordinate saturation formula."
+  ],
+  "seeds": "None used: executed guards are deterministic exact rational intervals.",
+  "spatial_MC_status": "NOT_EXECUTED: fixed-K D already has known O(sqrt(n)) positive Bernstein budget; actual moving-soft scale chain is unavailable by same-r quotient obstruction.",
+  "optional_future_plan_NOT_EXECUTED": {
+    "rounds": [
+      {"n": 4, "r_nodes": 8, "source_path_samples": 256},
+      {"n": 8, "r_nodes": 16, "source_path_samples": 512},
+      {"n": 16, "r_nodes": 32, "source_path_samples": 1024}
+    ],
+    "threshold_alphas_fixed_before_any_future_run": ["1/2", "1", "2"],
+    "method": "Source rejection plus original P increments, conditionally independent receiver sensors, weak-normalized acceptance counts.",
+    "complexity": "O(samples*r_nodes^2*n*layer_count) table operations; 3 layers gives about 0.20,3.15,50.33 million per threshold per round, before source-rejection cost.",
+    "activation_requirement": "A new actual moving hard/soft interface, or an explicitly requested fixed-soft/variable-hard necessary diagnostic. No automatic activation.",
+    "periodic_FFT_error": "Not certified; negative kernel mass cannot be clipped. Confidence would concern only a frozen finite model, not original Rn.",
+    "selection": "Finite registered r grid, tie minimum index; grid winner is not a continuous exact Bernstein winner.",
+    "confidence": "Hoeffding for count N in [0,J], positive excess in [0,J-1], pair count in [0,J(J-1)/2]; union over frozen records and metrics; no adaptive validation claims.",
+    "empty_records": "Preserve all. Never lower thresholds after seeing empty records without a separate registration."
+  },
+  "stop_rule": "Run only the small exact guard; save feasibility, failed original-scale interface, and tool. Do not launch high-dimensional Monte Carlo or repeat old two-phase batches."
+}

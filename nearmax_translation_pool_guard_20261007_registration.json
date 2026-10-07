@@ -1,0 +1,28 @@
+{
+  "name": "nearmax_translation_pool_guard_20261007",
+  "status_before_execution": "REGISTERED_FROZEN",
+  "dimensions": [
+    1,
+    2,
+    3
+  ],
+  "original_source": "mu=(1/3)delta_0+(2/3)delta_(3/2,...,3/2), full mass W=1",
+  "original_scales": [
+    "1",
+    "2"
+  ],
+  "tau": "3/(8*2^n)",
+  "translation_z": "(1/4,...,1/4)",
+  "translated_sources": "mu_plus=T_z mu, mu_minus=T_-z mu; nu=(mu_plus+mu_minus)/2, each full mass 1",
+  "receiver_partition": "Cartesian open cells induced by every coordinate of every atom in mu, mu_plus, mu_minus plus/minus R/2 for R=1,2. Full bounding halo partition; faces have zero Lebesgue mass; outside box all responses zero.",
+  "selectors": "Actual finite-J maxima for original, plus, minus, pooled. Exact Fraction, smallest R for ties, including zero-response cells.",
+  "pooling_pointwise": "beta=min(B-h_Rplus mu_minus,A-h_Rminus mu_plus)/(A+B), beta=0 if A+B=0; certify 0<=beta<=1/2 and Mnu>=((A+B)/2)(1-beta).",
+  "integrated_inequality": "Phi(nu)-Phi(mu) >= gain -(tau*ln2/2)*|Eplus symmetric_difference Eminus| - tau integral_F0[-log(1-beta)].",
+  "log_method": "Fresh 100-term 2*atanh series after binary range reduction to [1,2), exact Fraction endpoints with remainder 2*z^201/[201*(1-z^2)]. Signed coefficients choose outward endpoints. Merge identical rational log arguments before evaluation. Independently regroup full residual per cell as one log rational argument>=1.",
+  "script_sha256": "8be03dc2151573f985d986e42fbc7213c45b3e69f43791fc75c2911516645835",
+  "proof_sha256": "05afeb387e63a4bc8d5102570e258d2171bde78b157283ac998473f3fa3aad2a",
+  "planned_execution_count": 1,
+  "seed": null,
+  "scope": "New full-space finite-family variational-contract arithmetic guard with exact complete atoms and Lebesgue cell volumes. No receiver sampling, old oracle call, continuous-window claim, near-max/K/epsilon certification, actual FIRST/history certification or weak counterexample.",
+  "sign_policy": "Preserve all computed signs; interval crossing zero retained as UNRESOLVED unless exact merged map is empty or independently nonnegative rational residual arguments certify inequality. Do not tune inputs after observing results."
+}

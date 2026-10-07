@@ -1,0 +1,35 @@
+{
+  "status": "registered_before_execution",
+  "date": "2026-10-07",
+  "purpose": "Exact conditional winner-persistence/Gamma occupancy bridge for original positive K_r nu_bad; no actual spatial counterexample or full endpoint claim",
+  "rounds": [
+    {"n": 8, "window_nodes": 129, "exp_terms": 64},
+    {"n": 32, "window_nodes": 257, "exp_terms": 128},
+    {"n": 128, "window_nodes": 513, "exp_terms": 256}
+  ],
+  "b": "1/ceil(cuberoot(n)), hence b<=n^-1/3 and b<=1/2",
+  "stationary_p": "k/n for all 1<=k<=floor(n*b)",
+  "rational_window": "epsilon=1/(4ceil(sqrt(k))), q in[p(1-epsilon),p], exact rational uniform nodes",
+  "responses": "single-mask polynomial with exact global peak p; also mean-k posterior on k-1,k,k+1 with weights1/4,1/2,1/4 for k>=2 (stationarity only, no unverified global-peak claim)",
+  "source_cap_screen": "kappa=1,M=4+1/128,8+1/128,16,64; Hnu_bad<=1, Dmu_bad<=1",
+  "overshoot_a": ["1/8","1/2","1","2","8"],
+  "checks": [
+    "outside constant coefficient0 and positive stationary mean np>=1",
+    "rational-window chi upper n(p-q)^2/[q(1-q)]<=1/6",
+    "actual normalized positive response >=5/6 throughout saved rational window",
+    "same source cap subtraction gives Dsigma>kappa for M>4kappa, and Dsigma>=M/2 for M>8kappa",
+    "ceil-square-root window loses at most factor2 relative to ideal square-root window",
+    "exp(2/3)<2 with exact rational positive-series remainder, sqrt3>5/3",
+    "ideal analytic volume coefficient<10 and weighted peak coefficient<128/5; proof is analytic, rational narrow-window screens do not independently certify spatial source budget",
+    "Beta integral of single-mask profile exact finite factorial identity, no scalar sharpness advertised as actual source obstruction"
+  ],
+  "scope": "All arithmetic Fraction/rational intervals. Scalar profiles are universal positive-Bernstein lemma screens, not claimed realizable arbitrary mask coefficients of original G_c input. Actual sigma=Su,Omega outside,nu_bad/mu_bad source contract and same receiver global winner are kept in the analytic reduction.",
+  "exclusions": [
+    "No rerun of old6425/6030 or root mesh/face guard",
+    "No actual cube FIRST/fullfuture/birth gate certification",
+    "No inference from a truncated polynomial winner or signed D polynomial positivity",
+    "No full maximal polylog claim or optimal n exponent",
+    "No second source payment per parameter",
+    "No claim the stationary three-term mixture has global winner p"
+  ]
+}

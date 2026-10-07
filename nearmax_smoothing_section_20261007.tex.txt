@@ -1,0 +1,259 @@
+% 可插入片段；无 document 环境、无新宏；按任务不编译。
+% 解析来源：nearmax_smoothing_obstacle_20261007.md
+% SHA256: 05afeb387e63a4bc8d5102570e258d2171bde78b157283ac998473f3fa3aad2a
+% 数值来源：nearmax_translation_pool_guard_20261007_results.json
+% SHA256: e1be0d9906cc3116433a206af58714ad74385a531213afb2cb0109f23c1d73de
+% 作者：gated_radial_energy_audit，2026-10-07；仅写本片段，不改主稿。
+
+\subsection{完整来源的平移池化：幅度增益与两项不可删除的费用}
+
+设完整有限正来源为 $\mu$，质量 $W>0$，
+允许尺度是同一共同有限族 $\mathcal R\subset[a,b]$，或完整连续窗口
+$\mathcal R=[a,b]$，其中 $0<a\le b<\infty$。
+采用全边长闭方体核
+\[
+ h_R(y)=R^{-n}\mathbf1_{[-R/2,R/2]^n}(y),\qquad
+ M_\mu(x)=\max_{R\in\mathcal R}(h_R*\mu)(x).
+\]
+连续窗口的可测真赢家使用原已核选择器；有限族保持原目录及同一
+tie 规则，不添加中间尺度。定义
+\[
+ E=\{M_\mu>\tau\},\qquad I=\tau|E|,\qquad
+ \Phi_\tau(\mu)=\tau\int_{\mathbb R^n}
+                  \log_+\!\left(\frac{M_\mu(x)}{\tau}\right)\,dx.
+\]
+这里 $\log_+u=\max(\log u,0)$，在 $u=0$ 时置为 $0$。
+固定窗口包络给
+$\int M_\mu\le ZW$、$I\le ZW$，其中
+$Z=1+n\log(b/a)$，所以以上积分有限。
+令 $K$ 为同一完整输入类、同一尺度族的
+$\sup_{\mu,\tau}\Phi_\tau(\mu)/W$。
+若使用近极值假设，准确前提是
+$\Phi_\tau(\mu)\ge(K-\epsilon)W$；
+不假设极值存在或 $K$ 已具有平方根维数阶。
+
+\paragraph{完整平移与交叉赢家亏损。}
+固定一个全局向量 $z\in\mathbb R^n$，令
+\[
+ \mu_+=(T_z)_\#\mu,\quad \mu_-=(T_{-z})_\#\mu,\quad
+ T_z(y)=y+z,\qquad \nu=\frac{\mu_++\mu_-}{2}.
+\]
+三个来源的质量都是 $W$。平移协变精确给
+\[
+ M_\pm(x)=M_\mu(x\mp z),\qquad
+ \Phi_\tau(\mu_+)=\Phi_\tau(\mu_-)=\Phi_\tau(\mu).
+\]
+取各自完整输入的真赢家 $R_\pm(x)$，记
+\[
+ A=M_+(x),\quad B=M_-(x),\quad T_0=\frac{A+B}{2},
+\]
+\[
+ d_1=B-(h_{R_+}*\mu_-)(x),\qquad
+ d_2=A-(h_{R_-}*\mu_+)(x),\qquad d=\min(d_1,d_2).
+\]
+由各自真赢家，$d_i\ge0$，且
+$0\le d\le\min(A,B)$。在 $A+B>0$ 时定义
+$\beta=d/(A+B)$；在 $A+B=0$ 时置 $\beta=0$。
+于是 $0\le\beta\le1/2$。把两个合法原尺度分别用于 $\nu$，
+\[
+ \begin{split}
+ M_\nu(x)
+ &\ge \max\left\{
+ \frac{A+B-d_1}{2},\frac{A+B-d_2}{2}\right\}\\
+ &=\frac{A+B-d}{2}=T_0(1-\beta).
+ \end{split}
+\]
+新最大值并未被强行等同于旧赢家的响应。
+这是两份\emph{整来源}的共同平移变换；
+没有逐接收点选择不同来源扰动，也没有交换卷积和上确界。
+
+令 $F_0=\{T_0>\tau\}$。因为
+$c_\beta=-\log(1-\beta)\le2\beta$，
+$\log_+$ 对向下的对数平移满足
+$(s-c)_+\ge s_+-c$，所以
+\[
+ \Phi_\tau(\nu)
+ \ge \tau\int\log_+\!\left(\frac{T_0}{\tau}\right)\,dx
+       -\tau\int_{F_0}-\log(1-\beta)\,dx.
+\]
+$F_0$ 有限体积，$\beta\le1/2$，故亏损费用可积。
+
+\paragraph{标量池化与严格阈值跨越。}
+对 $a_0,b_0\ge0$，定义
+\[
+ \Gamma(a_0,b_0)
+ =\log_+\!\left(\frac{a_0+b_0}{2}\right)
+ -\frac{\log_+a_0+\log_+b_0}{2}.
+\]
+若 $a_0,b_0>1$，则
+\[
+ \Gamma(a_0,b_0)
+ =\log\cosh\!\left(\frac{\log a_0-\log b_0}{2}\right)\ge0.
+\]
+若两者都不大于 $1$，则 $\Gamma=0$。
+若 $a_0>1\ge b_0$，固定 $a_0$ 时最坏情况为 $b_0=0$；
+$1<a_0\le2$ 时
+$\Gamma\ge-(\log a_0)/2$，
+$a_0\ge2$ 时
+$\Gamma\ge(\log a_0)/2-\log2$。
+因此单边跨越时统一有
+$\Gamma\ge-(\log2)/2$。
+这保留了严格超阈集合，也没有删除正测度阈值 plateau。
+
+记
+\[
+ E_\pm=\{M_\pm>\tau\}=E\pm z,
+\]
+\[
+ G_z=\tau\int_{E_+\cap E_-}
+ \log\cosh\!\left(\frac{\log A-\log B}{2}\right)\,dx,
+\quad
+ T_z^{\rm cross}=\frac{\tau\log2}{2}|E_+\triangle E_-|,
+\quad
+ C_z^{\rm regret}=\tau\int_{F_0}-\log(1-\beta)\,dx.
+\]
+对所有完整来源均有精确有限差分下界
+\[
+ \boxed{\Phi_\tau(\nu)-\Phi_\tau(\mu)
+       \ge G_z-T_z^{\rm cross}-C_z^{\rm regret}.}
+\]
+若再满足原 $\epsilon$-近极值前提，
+由 $\Phi_\tau(\nu)\le KW$ 得
+\[
+ \boxed{G_z\le\epsilon W
+                 +T_z^{\rm cross}+C_z^{\rm regret}.}
+\]
+原质量 $W$ 只用一次：两份平移来源各有质量 $W$，
+但扰动 $\nu$ 是它们的半和，仍只有质量 $W$；
+原两份 $\Phi$ 的算术平均准确等于 $\Phi_\tau(\mu)$。
+该合同不要求先证明来源势平坦。
+
+两个平移赢家相同的地方有 $\beta=0$；
+一般交叉赢家亏损不可删除。
+阈值项同样不可删除，即便两个赢家处处使用同一尺度。
+由 $|E|<\infty$ 可知 $z\to0$ 时
+$|E_+\triangle E_-|\to0$，但没有输入一致的二阶速率。
+尚未证明 $C_z^{\rm regret}$ 小于幅度增益，
+所以不能把以上合同改写成无费用的平滑正增益、
+Dirichlet 能量或 $n^{-1/2}$ 峰宽结论。
+
+\paragraph{平滑不免费，一阶障碍也不自动产生全空间次调和性。}
+任取一份合法保质量正变换 $T$，令 $\eta=T\mu$。
+对 $0<t<1$，完整来源
+$\mu_t=(1-t)\mu+t\eta$ 的原赢家冻结下界是
+\[
+ \tau\int_E
+ \log\!\left(1+t\left[
+ \frac{h_{R(x)}*\eta(x)}{M_\mu(x)}-1\right]\right)\,dx
+ \le\Phi_\tau(\mu_t)-\Phi_\tau(\mu)
+ \le\epsilon W.
+\]
+上限需要原全局近极值前提；下限本身对每个完整输入有效。
+它不要求新赢家不变，却也没有断言左端为正。
+精确极值上的一阶条件
+$\int(T^*S-S)\,d\mu\le0$
+只是既有 $S\le K$ 与来源接触的推论；
+不能扩成 $T^*S-S$ 的全空间符号或新的 odometer。
+
+一个合法固定尺度例清楚显示严格下降。
+取 $n=1$、$a=b$、$\mu=W\delta_0$、
+$\tau=W/(ea)$。由
+$\tau\log_+(u/\tau)\le u/e$，
+同一固定尺度的 $K=1/e$，原输入准确达到
+$\Phi_\tau(\mu)=W/e$。
+取 $0<z<a/2$，
+$\nu_z=W(\delta_{-z}+\delta_z)/2$。
+两个 interval 的重叠长 $a-2z$，响应 $W/a$；
+两侧总长 $4z$，响应 $W/(2a)$，故
+\[
+ \frac{\Phi_\tau(\nu_z)}{W}
+ =\frac1e\left[1+\frac{2z}{a}(1-2\log2)\right]<\frac1e.
+\]
+这里交叉赢家亏损为零，真实阈值边缘损失仍不可省。
+该例只排除普适免费平滑改善，
+不是非退化窗口的大 $K$ 或实际几何余项反例。
+
+\paragraph{尺度膨胀改变窗口与阈值。}
+若 $D_c(y)=cy$、$c>0$，
+由 $h_R*((D_c)_\#\mu)(cx)=c^{-n}(h_{R/c}*\mu)(x)$
+及 $dx$ 的尺度换元，准确有
+\[
+ \boxed{\Phi_\tau^{[a,b]}((D_c)_\#\mu)
+        =\Phi_{c^n\tau}^{[a/c,b/c]}(\mu).}
+\]
+来源质量保持，但同一阈值、同一窗口的问题已经改变。
+共同有限目录版须相应把整个目录变成 $\mathcal R/c$。
+不能把每个接收点的最优径向尺度微调
+当成一次合法的完整来源膨胀；
+越窗、改阈值与选择复杂度都需另外清算。
+
+\paragraph{三轮新的有限族精确守卫。}
+执行前冻结完整输入
+\[
+ \mu=\tfrac13\delta_0+\tfrac23\delta_{(3/2,\ldots,3/2)},\quad
+ W=1,\quad\mathcal R=\{1,2\},\quad
+ \tau=\frac3{8\,2^n},\quad z=(1/4,\ldots,1/4).
+\]
+按原来源与两份平移来源的全部
+$x_i=y_i\pm R/2$ 超平面分割完整 halos，
+在每个有理 cell 内所有 atom/cube incidence 恒定；
+有理中点是整 cell 的精确代表，不是 Lebesgue 抽样。
+边界 faces 的 Lebesgue 体积为零，盒外响应全为零。
+所有最大值、赢家、体积与 $\beta$ 用 Fraction，
+ties 使用同一 smallest $R$。
+完整平移 $\Phi$ 的合并 log 系数逐项等于原 $\Phi$；
+每份来源在每个固定尺度的全空间响应积分精确等于 $1$。
+
+三轮一次执行共有 $41413$ 项精确检查通过：
+$n=1,2,3$ 分别有 $14,196,2744$ 个完整 cells，
+检查数分别为 $214,2762,38434$，
+另有 $3$ 项冻结完整性检查。
+严格 log 区间采用新的 $100$ 项有理 atanh 级数与二进制
+range reduction。若 $r\in[1,2]$、
+$w=(r-1)/(r+1)$，余项准确由
+\[
+ 0\le
+ \log r-2\sum_{j=0}^{99}\frac{w^{2j+1}}{2j+1}
+ \le\frac{2w^{201}}{201(1-w^2)}
+\]
+向外包住；有符号系数选择正确区间端点，
+相同有理 log 参数先合并。
+另逐 cell 将完整合同残差重组成
+$\tau\,{\rm volume}\,\log r_x/2$，
+用 Fraction 核 $r_x\ge1$，与直接四项 log 区间交叉核验。
+三轮均无未决区间符号、无旧 oracle 调用，也无执行修复。
+
+下表小数仅为严格有理区间的可读近似，
+其中 $\Delta\Phi=\Phi_\tau(\nu)-\Phi_\tau(\mu)$，
+$L_z=\Delta\Phi-G_z+T_z^{\rm cross}+C_z^{\rm regret}$：
+\begin{center}
+\begin{tabular}{r|rrrrr}
+$n$ & $\Delta\Phi$ & $G_z$ & $T_z^{\rm cross}$ &
+$C_z^{\rm regret}$ & $L_z$\\ \hline
+1 & $-0.136015583$ & $0.008401140$ & $0.064982548$ &
+$0.128488688$ & $0.049054513$\\
+2 & $-0.098695291$ & $0.029103482$ & $0.146210733$ &
+$0.072879024$ & $0.091290984$\\
+3 & $-0.064970313$ & $0.037898722$ & $0.174640598$ &
+$0.020816384$ & $0.092587947$
+\end{tabular}
+\end{center}
+各轮 $|E_+\triangle E_-|$ 精确为
+$1,9/2,43/4$，$F_0$ 内 $\beta>0$ 的体积为
+$2,3,7/2$。
+幅度增益、阈值跨越和交叉亏损均非零；
+合同残差的严格区间为正，
+但 pooling 后完整 $\Phi$ 三轮都下降。
+未知 $K,\epsilon$ 未被赋值或数值认证。
+
+这只验证上述全空间有限目录合同。
+有限 $\{1,2\}$ 赢家不能认证连续窗口赢家，
+这些固定输入也未认证近极值，
+未实现原 FIRST、fullfuture、CP/GP、出生、LCA 或 history 门。
+完整来源扰动会改变这些门，
+其变化项没有出现在本合同里，
+因此不能直接登记为实际几何剩余的付款。
+一般平方根维数目标仍需新的空间估计。
+数值注册、完整 cells、results 与 receipt 独立保存在
+\texttt{nearmax\_translation\_pool\_guard\_20261007} 前缀下。
+

@@ -1,0 +1,90 @@
+{
+  "additional_v0_u": [
+    "1",
+    "2"
+  ],
+  "branch_rule": "p<=1-1/u iff -log(1-p)<=logu; exact rational comparison; never log0",
+  "derivative": "1/(1+v)-1/(1+v)^2 == v/(1+v)^2",
+  "equality": "Merge identical rational log arguments with exact coefficients, then detect all-zero symbolic gap. No interval pass based merely on overlap.",
+  "execution": "Freeze code and registration, then one new main run. No old oracle.",
+  "integral": "G(v)=integral_0^v t/(1+t)^2dt = v^2 integral_0^1 s/(1+vs)^2ds; analytic primitive; finite exact Darboux enclosure with endpoints v*j/4, powers2 starting1/4, critical1,0,v.",
+  "logs": "100-term rational atanh with positive tail and exact power2 reduction; dyadic256 outward; negative coeff swaps endpoints",
+  "p": [
+    "0",
+    "pmax/2",
+    "pmax",
+    "min(pmax,1-1/u)"
+  ],
+  "pmax": "v/u",
+  "rounds": [
+    {
+      "name": "small",
+      "v": [
+        "1/64",
+        "1/4",
+        "1"
+      ]
+    },
+    {
+      "name": "moderate",
+      "v": [
+        "2",
+        "8",
+        "32"
+      ]
+    },
+    {
+      "name": "extreme",
+      "v": [
+        "1/1024",
+        "1024",
+        "65536"
+      ]
+    }
+  ],
+  "save": "All108 rows including repeats, p1/zeros/negativeh, full log coefficients/intervals; nine exact derivative and positive integral certificates; two v0 cases.",
+  "scalar": "h=min(logu,-log(1-p))-p, p1 min=logu; G=log(1+v)-v/(1+v)",
+  "scope": "Scalar lemma parameter guards only. No source/actual qualification or time history, no global numerical theorem; J01 scope forbids manufacturing a process from these scalar parameters.",
+  "script_sha256": "5e7d32e6535946e600363828fbd01d35b8007dff586b895021bfc501feb1d22c",
+  "seed": null,
+  "skills_read": [
+    {
+      "path": "/Users/zhengzhihao/.codex/skills/math-l03-rational-and-interval-certificates/SKILL.md",
+      "sha256": "ba244ab4c3ed128b8a487f16ce70174a0c29e4296a01d023d860d09ffe21a29d"
+    },
+    {
+      "path": "/Users/zhengzhihao/.codex/skills/math-l03-rational-and-interval-certificates/references/method.md",
+      "sha256": "9a76bd1959a2b623dbe7951684ce55428bbd9e9ddaa4a3516688ca785b31508c"
+    },
+    {
+      "path": "/Users/zhengzhihao/.codex/skills/math-l03-rational-and-interval-certificates/references/cube-interface.md",
+      "sha256": "764b98f99801a38b35ebeab5b3a934d5f8b31842ad3f94ff68da3b4844fe64a6"
+    },
+    {
+      "path": "/Users/zhengzhihao/.codex/skills/math-l03-rational-and-interval-certificates/references/provenance.md",
+      "sha256": "ced0d588ce52a592b3142a8b5d4f09e37d3ebb9f6a922e1fc76e8e089b9ad5ab"
+    },
+    {
+      "path": "/Users/zhengzhihao/.codex/skills/math-j01-inhomogeneous-jump-generator/SKILL.md",
+      "sha256": "534941c02bde3dda279b06e2de022f2a11c7b658a04579b2ce4c8588870e8fd8"
+    },
+    {
+      "path": "/Users/zhengzhihao/.codex/skills/math-j01-inhomogeneous-jump-generator/references/method.md",
+      "sha256": "00d7fb82e863c6719ed1bb89a7455d916d77c74e95be5609a8126651d0814dd3"
+    },
+    {
+      "path": "/Users/zhengzhihao/.codex/skills/math-j01-inhomogeneous-jump-generator/references/cube-interface.md",
+      "sha256": "e5cf47c429f57ebc709fa07fc48214469b289dbb2529a28ddb6e4c16f9394e58"
+    },
+    {
+      "path": "/Users/zhengzhihao/.codex/skills/math-j01-inhomogeneous-jump-generator/references/provenance.md",
+      "sha256": "6bb1ea5d2df6b2d756f70380a60c0075731125ccde6dc4bef956f3761f37753c"
+    }
+  ],
+  "status": "FROZEN BEFORE EXECUTION",
+  "u": [
+    "max(1,v)",
+    "v+1",
+    "2(v+1)"
+  ]
+}

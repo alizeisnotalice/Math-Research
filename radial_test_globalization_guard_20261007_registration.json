@@ -1,0 +1,50 @@
+{
+  "name": "radial_test_globalization_guard_20261007",
+  "status_before_execution": "REGISTERED_FROZEN",
+  "rounds": [
+    [
+      2,
+      16
+    ],
+    [
+      4,
+      64
+    ],
+    [
+      8,
+      256
+    ]
+  ],
+  "H_factors": [
+    1,
+    2,
+    4
+  ],
+  "epsilon": [
+    "1/8",
+    "1/4"
+  ],
+  "source": "f_H(y)=(1-epsilon*||y||_2^2/(n H^2))*1_{[-H,H]^n}(y), H=factor*(n^2+2)",
+  "original_scale_window": [
+    1,
+    2
+  ],
+  "candidate_L": "1+1/n",
+  "tau": "1/2",
+  "receiver_domain": "E0=[-H+1,H-1]^n, a true subdomain of complete E={M>tau}; E is not replaced by E0.",
+  "source_mass": "W=(1-epsilon/3)*(2H)^n; full box background is charged.",
+  "exact_radial_formula": "J=[nL/(n+1)-1+L^(-n)/(n+1)]/(L-1)",
+  "proof_sha256": "56d36f2bb2908ab974340c706be749a80c3758812a2cf56e22cd6b43f8cfb790",
+  "script_sha256": "73f3616a7ebb15a03a772615d46b1e04ffe859e280e1aab1d453905f3acd202d",
+  "arithmetic": "Fraction throughout; three independent exact formulas for J. rho<=2 certified by rational rho_squared<=4. log(1+1/n)<=1/n and n log(1+1/n)>=n/(n+1)>=2/3 are analytic bounds, not floating log certification.",
+  "planned_execution_count": 1,
+  "seed": null,
+  "scope": "Arithmetic certificates for the explicit original continuous-cube full-L1 counterexample, with rational L variant. Not a discrete global-v sampling or a new weak-type counterexample; no near-max or actual FIRST/history certification. The universal all-v L2 estimate is proved analytically in the frozen md, not numerically enumerated.",
+  "prohibited": [
+    "old oracle/probe calls",
+    "old-result mutation",
+    "receiver discretization pretending to all-v",
+    "unknown near-max certification",
+    "main ledger or frozen proof edits"
+  ]
+}

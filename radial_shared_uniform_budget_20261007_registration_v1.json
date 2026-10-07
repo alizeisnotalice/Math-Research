@@ -1,0 +1,23 @@
+{
+  "registered_before_execution": true,
+  "date": "2026-10-07",
+  "rounds": [{"n":2,"J":8},{"n":4,"J":16},{"n":8,"J":32}],
+  "q": "1+1/(2J)",
+  "L_j": "q^j for j=0,...,J",
+  "tau": "1/(2 L_J^n)",
+  "source_atomic": "delta0",
+  "source_L1": "Uniform([-epsilon,epsilon]^n), epsilon=1/(1000000 n J^2)",
+  "receiver_domain": "Full strict superlevel E={max_j h_Lj*mu>tau}, including A0",
+  "coupling": "one source, shared U uniform centered cube, independent acceptance coins",
+  "checks": [
+    "true finite winner annuli and threshold factors",
+    "full Poisson-binomial count law with rare shared activation and A0",
+    "mean=1/2, stop, overlap, Palm reciprocal and size-biased smallcount",
+    "exact L1 safe-norm margins for arbitrary source y in epsilon cube",
+    "exact bad-U volume <=12n epsilon and count-mean approximation",
+    "conservative rareactivation tail-sum bounds"
+  ],
+  "random_seed": null,
+  "scope": "New original centered hard geometry coupling boundary; no actual FIRST/fullsoft future/CP-GP/history certification. No old guard rerun.",
+  "large_fraction_policy": "Save numerator/denominator hashes plus bit lengths and display approximations, while all assertions use Fraction."
+}

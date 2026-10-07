@@ -1,0 +1,81 @@
+{
+  "status": "PASS_EXACT_SQRT_TRAFFIC_POLICY_GUARD",
+  "eta0": "49/65536",
+  "rows": [
+    {
+      "n": 4,
+      "sqrt_lower": "2",
+      "sqrt_upper": "2",
+      "sqrt_exact_rational": true,
+      "eta_conservative_rational": "49/131072",
+      "eta_irrational_policy_upper_bound": "49/131072",
+      "near_absorption_coefficient_exact": "49/32768",
+      "epsilon": "49/16384",
+      "paid_traffic_factor_without_4e6_exact": "131072/49",
+      "max_paid_extra_factor_additive_without_4e6": "1/784"
+    },
+    {
+      "n": 16,
+      "sqrt_lower": "4",
+      "sqrt_upper": "4",
+      "sqrt_exact_rational": true,
+      "eta_conservative_rational": "49/262144",
+      "eta_irrational_policy_upper_bound": "49/262144",
+      "near_absorption_coefficient_exact": "49/65536",
+      "epsilon": "49/16384",
+      "paid_traffic_factor_without_4e6_exact": "262144/49",
+      "max_paid_extra_factor_additive_without_4e6": "1/784"
+    },
+    {
+      "n": 64,
+      "sqrt_lower": "8",
+      "sqrt_upper": "8",
+      "sqrt_exact_rational": true,
+      "eta_conservative_rational": "49/524288",
+      "eta_irrational_policy_upper_bound": "49/524288",
+      "near_absorption_coefficient_exact": "49/131072",
+      "epsilon": "49/16384",
+      "paid_traffic_factor_without_4e6_exact": "524288/49",
+      "max_paid_extra_factor_additive_without_4e6": "1/784"
+    },
+    {
+      "n": 8,
+      "sqrt_lower": "741455/262144",
+      "sqrt_upper": "2965821/1048576",
+      "sqrt_exact_rational": false,
+      "eta_conservative_rational": "784/2965821",
+      "eta_irrational_policy_upper_bound": "196/741455",
+      "near_absorption_coefficient_exact": "3136/2965821",
+      "epsilon": "49/16384",
+      "paid_traffic_factor_without_4e6_exact": "2965821/784",
+      "max_paid_extra_factor_additive_without_4e6": "1/784"
+    },
+    {
+      "n": 32,
+      "sqrt_lower": "5931641/1048576",
+      "sqrt_upper": "2965821/524288",
+      "sqrt_exact_rational": false,
+      "eta_conservative_rational": "392/2965821",
+      "eta_irrational_policy_upper_bound": "784/5931641",
+      "near_absorption_coefficient_exact": "1568/2965821",
+      "epsilon": "49/16384",
+      "paid_traffic_factor_without_4e6_exact": "2965821/392",
+      "max_paid_extra_factor_additive_without_4e6": "1/784"
+    },
+    {
+      "n": 128,
+      "sqrt_lower": "11863283/1048576",
+      "sqrt_upper": "2965821/262144",
+      "sqrt_exact_rational": false,
+      "eta_conservative_rational": "196/2965821",
+      "eta_irrational_policy_upper_bound": "784/11863283",
+      "near_absorption_coefficient_exact": "784/2965821",
+      "epsilon": "49/16384",
+      "paid_traffic_factor_without_4e6_exact": "2965821/196",
+      "max_paid_extra_factor_additive_without_4e6": "1/784"
+    }
+  ],
+  "policy": "h=2a/n, eta_n=eta0/sqrt n; paid traffic<=4e6 sqrt n W/eta0. Conservative rational guards round eta down, not up.",
+  "remaining": "Same-receiver far traffic unproved; no general full-energy closure.",
+  "script_sha256": "e2284a4e1daf5f3d981f4b92b1a911f281d7d65899244a8547c736b911a14ee8"
+}

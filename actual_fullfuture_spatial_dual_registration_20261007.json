@@ -1,0 +1,27 @@
+{
+  "id": "actual_fullfuture_spatial_dual_parameter_guard_20261007",
+  "status": "REGISTERED_BEFORE_EXECUTION",
+  "scope": "Exact scalar parameter certificate for equation (20), not a D_n spatial integral, actual FIRST/history gate fixture, or central transport experiment.",
+  "rounds": [
+    {"n": 64, "m": 2, "atanh_terms": 8},
+    {"n": 4096, "m": 4, "atanh_terms": 12},
+    {"n": 262144, "m": 8, "atanh_terms": 16}
+  ],
+  "arithmetic": "Python fractions.Fraction only; no exponential or logarithm evaluation, randomness, solver, or source sampling.",
+  "analytic_inputs": [
+    "log(3)=2 sum_{j>=0} (1/2)^(2j+1)/(2j+1)",
+    "Positive atanh tail is at most 2 (1/2)^(2K+1)/((2K+1)(1-1/4))",
+    "x-x^2/2 <= 1-exp(-x) <= x for x>=0"
+  ],
+  "intervals": {
+    "ratio": "4 log3_lo - 2 log3_hi^2/n <= n sigma/m <= 4 log3_hi",
+    "sigma": "sigma=(m/n)(n sigma/m)",
+    "asymptotic_error": "0 <= 4 log(3)-n sigma/m <= 2 log3_hi^2/n < 3/n"
+  },
+  "assertions_per_round": 8,
+  "cross_round_assertions": 4,
+  "expected_checks": 28,
+  "execution_limit": "Run this new guard once; do not rerun old scripts.",
+  "output": "actual_fullfuture_spatial_dual_parameter_results_20261007.json",
+  "ledger": "No new actual paid cost or endpoint claim. n=64 is a scalar guard dimension below the current n>=512 actual ledger scope."
+}

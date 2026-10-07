@@ -1,0 +1,168 @@
+{
+  "created_utc": "2026-10-06T17:38:34.124070+00:00",
+  "artifacts": [
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/adversarial_shell_pressure_20261007/design_20261006T173636280680Z.json",
+      "sha256": "6294377a16e26100b15d20d179bcc9a51d774d6d6e09b0326905900a13c4338c"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/adversarial_shell_pressure_20261007/exploration_20261006T173636280680Z.json",
+      "sha256": "ebd822ec07690c76f23040ab102f7db5aba7632a5839e5ed9b5bac707d1ae0bc"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/adversarial_shell_pressure_20261007/pressure_20261006T173636280680Z.json",
+      "sha256": "d0af374a7e8cf0601e5f70225ee84f131a62508cab1f3d3523c10f99d4915823"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/adversarial_shell_pressure_20261007/summary_20261006T173636280680Z.json",
+      "sha256": "64f3619100e3ddd8c740d1009de6af3eee982b79c0ae0a79c1b845fcba4c3a3d"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/adversarial_shell_pressure_20261007/validation_20261006T173636280680Z.json",
+      "sha256": "c61524ff15bba13900b303ae985e79407a11d2dec62d32003d280dfb1ef95496"
+    }
+  ],
+  "scripts": [
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/adversarial_shell_pressure_20261007/adversarial_shell_search.py",
+      "sha256": "b9d98e549554e75ad53bc61f777eda08f66cc8ca99195444dee723797a9b43cd"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/adversarial_shell_pressure_20261007/winner_engine_snapshot.py",
+      "sha256": "24f05871e744203225542adaa142a1342b5f4516ab807602efa788748f5a33e3"
+    }
+  ],
+  "search_count": 108,
+  "pressure_count": 12,
+  "frozen_validation_count": 6,
+  "training_CI_scope": "All exploration finite_node_95 fields are unadjusted diagnostics at the training-selected lambda and MUST NOT be interpreted as 95% bounds after adaptive lambda/input selection. The 20-anchor lambda training scores and all adaptive genealogy are saved.",
+  "pressure_CI_scope": "Condition on the training-frozen input and lambda. record_total=12 union covers all 12 candidates, 3 quantities, lower/upper screened RVs, both tails, and 257 nodes; selecting the six pressure winners does not invalidate the joint 12-candidate event.",
+  "validation_CI_scope": "Condition on six pressure-selected frozen input/lambda pairs. Fresh sampling namespaces and record_total=6 union cover all six records, three quantities, lower/upper RVs, both tails, and 513 nodes. This covers only fixed finite-node weighted targets, assuming the heuristic arithmetic screening encloses real values; not a rigorous real-arithmetic or continuum certificate.",
+  "sampling": "Seeds: geometry input frozen per candidate; exploration sampling BASE+8e6+candidate*1009; pressure BASE+16e6+candidate*1013; validation BASE+32e6+candidate*1019, with replicate increment 1000003. CRN within replicate over t and lambda; separate stage seeds under standard PRNG independence assumption. Same implementation, not an independent algorithm audit.",
+  "weighted_Theta_scope": "Actual geometric exponential delay weight is present. No actual FIRST/GOOD/CP/GP/early-jump g supplied, so these are Theta_hard and Theta_hard,v1 with g=1, W=H=1. No equality to actual Theta_g is claimed.",
+  "qualification": "Positive finite atomic source, true floating continuous [1,2] maximal winner from sorted real candidates including exact floating tie-group endpoints and a,b, fixed common lambda in final sample. All source distance q=1 equalities retained. No finite-J, positive-L1 smoothing, A13/A14 or original geom counterexample qualification.",
+  "endpoint_grid_checks": [
+    {
+      "candidate_id": 0,
+      "n": 8,
+      "N": 16,
+      "input_sha256": "2ddc01c903cbe35730437f1358fba229019c52362285fff08e5de5451a1ab5a4",
+      "source_mass": 1.0,
+      "min_weight": 0.05567955508911831,
+      "log_lambda": -4.636626284699583,
+      "Gamma1_nonzero_fine_nodes": 188,
+      "Gamma1_endpoint_quadrature_contribution": 0.0,
+      "Theta_hard_vs_Gamma1": "Theta_hard includes all nonnegative delays; it is not bounded by Gamma1 pointwise. Theta_hard_v1<=Gamma1 checked below.",
+      "pointwise_Theta_hard_v1_le_Gamma1": true,
+      "pointwise_exp_minus1_Gamma1_le_Theta_hard_v1": true,
+      "ambiguity_sample_nodes": {
+        "Gamma_v1": 0,
+        "Theta_hard": 0,
+        "Theta_hard_v1": 0
+      },
+      "near_response_tie_sample_nodes": 3489
+    },
+    {
+      "candidate_id": 26,
+      "n": 16,
+      "N": 64,
+      "input_sha256": "d58fa34a1335a26708bc65318e10bd23f6ca186810adc20f11944a20a98335e3",
+      "source_mass": 1.0,
+      "min_weight": 0.013394392204317937,
+      "log_lambda": -8.56160961628735,
+      "Gamma1_nonzero_fine_nodes": 74,
+      "Gamma1_endpoint_quadrature_contribution": 0.0,
+      "Theta_hard_vs_Gamma1": "Theta_hard includes all nonnegative delays; it is not bounded by Gamma1 pointwise. Theta_hard_v1<=Gamma1 checked below.",
+      "pointwise_Theta_hard_v1_le_Gamma1": true,
+      "pointwise_exp_minus1_Gamma1_le_Theta_hard_v1": true,
+      "ambiguity_sample_nodes": {
+        "Gamma_v1": 0,
+        "Theta_hard": 0,
+        "Theta_hard_v1": 0
+      },
+      "near_response_tie_sample_nodes": 3923
+    },
+    {
+      "candidate_id": 47,
+      "n": 32,
+      "N": 64,
+      "input_sha256": "1a9172b6ed3bd9d420aa1c20a85e211866fe03236ea32913b32ff102d123509e",
+      "source_mass": 1.0,
+      "min_weight": 0.010365598626893957,
+      "log_lambda": -11.865723860546922,
+      "Gamma1_nonzero_fine_nodes": 69,
+      "Gamma1_endpoint_quadrature_contribution": 0.0,
+      "Theta_hard_vs_Gamma1": "Theta_hard includes all nonnegative delays; it is not bounded by Gamma1 pointwise. Theta_hard_v1<=Gamma1 checked below.",
+      "pointwise_Theta_hard_v1_le_Gamma1": true,
+      "pointwise_exp_minus1_Gamma1_le_Theta_hard_v1": true,
+      "ambiguity_sample_nodes": {
+        "Gamma_v1": 0,
+        "Theta_hard": 0,
+        "Theta_hard_v1": 0
+      },
+      "near_response_tie_sample_nodes": 3758
+    },
+    {
+      "candidate_id": 68,
+      "n": 64,
+      "N": 128,
+      "input_sha256": "166599785a94f691c151a6b3fc9eb72be9f1036cb8bd9bb95c45e3ce4cb45e86",
+      "source_mass": 1.0,
+      "min_weight": 0.00701722147823829,
+      "log_lambda": -48.03192273926255,
+      "Gamma1_nonzero_fine_nodes": 21,
+      "Gamma1_endpoint_quadrature_contribution": 0.0,
+      "Theta_hard_vs_Gamma1": "Theta_hard includes all nonnegative delays; it is not bounded by Gamma1 pointwise. Theta_hard_v1<=Gamma1 checked below.",
+      "pointwise_Theta_hard_v1_le_Gamma1": true,
+      "pointwise_exp_minus1_Gamma1_le_Theta_hard_v1": true,
+      "ambiguity_sample_nodes": {
+        "Gamma_v1": 0,
+        "Theta_hard": 0,
+        "Theta_hard_v1": 0
+      },
+      "near_response_tie_sample_nodes": 4055
+    },
+    {
+      "candidate_id": 81,
+      "n": 64,
+      "N": 16,
+      "input_sha256": "70ef9c5841efeb10969bfd8072df1ab7baca844a5faa516617fce128941f5593",
+      "source_mass": 1.0,
+      "min_weight": 0.0002631550003607549,
+      "log_lambda": -35.920819437307195,
+      "Gamma1_nonzero_fine_nodes": 76,
+      "Gamma1_endpoint_quadrature_contribution": 0.0,
+      "Theta_hard_vs_Gamma1": "Theta_hard includes all nonnegative delays; it is not bounded by Gamma1 pointwise. Theta_hard_v1<=Gamma1 checked below.",
+      "pointwise_Theta_hard_v1_le_Gamma1": true,
+      "pointwise_exp_minus1_Gamma1_le_Theta_hard_v1": true,
+      "ambiguity_sample_nodes": {
+        "Gamma_v1": 0,
+        "Theta_hard": 0,
+        "Theta_hard_v1": 0
+      },
+      "near_response_tie_sample_nodes": 4096
+    },
+    {
+      "candidate_id": 65,
+      "n": 64,
+      "N": 64,
+      "input_sha256": "b53d7dd3f5777e896d27fabf741c85d88edace6ddf91622d31b581ddf7dce0f3",
+      "source_mass": 1.0,
+      "min_weight": 0.01033294848395811,
+      "log_lambda": -16.926075006840875,
+      "Gamma1_nonzero_fine_nodes": 19,
+      "Gamma1_endpoint_quadrature_contribution": 0.0,
+      "Theta_hard_vs_Gamma1": "Theta_hard includes all nonnegative delays; it is not bounded by Gamma1 pointwise. Theta_hard_v1<=Gamma1 checked below.",
+      "pointwise_Theta_hard_v1_le_Gamma1": true,
+      "pointwise_exp_minus1_Gamma1_le_Theta_hard_v1": true,
+      "ambiguity_sample_nodes": {
+        "Gamma_v1": 0,
+        "Theta_hard": 0,
+        "Theta_hard_v1": 0
+      },
+      "near_response_tie_sample_nodes": 4003
+    }
+  ],
+  "conclusion": "Within this 108-input finite search, maximum fresh-seed Gamma1 energy was below log2. No fixed-v high-energy counterexample was found; this is neither evidence ruling out other inputs nor a proof of a uniform/polylog bound. Even a hard-relaxation candidate failure would not be an actual geom counterexample.",
+  "reproduce_command": "/Users/zhengzhihao/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 /Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/adversarial_shell_pressure_20261007/adversarial_shell_search.py"
+}

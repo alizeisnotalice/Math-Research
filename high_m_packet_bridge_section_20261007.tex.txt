@@ -1,0 +1,243 @@
+% 可插入片段；无 document 环境、无自定义宏、未编译。
+% 来源：high_m_packet_bridge_20261007.md 第2--6节；本片段不改主账。
+\subsection{High-m packet：任意细化的量词边界与同源稀疏化近恒等极限}
+
+固定维数 \(n\)、连续全边长窗口 \(0<a<b\)、有限正非原子 Borel
+来源 \(\mu\)，记 \(W=\mu(\mathbb R^n)>0\)。用闭中心方体
+\(Q(x,r)=x+[-r/2,r/2]^n\)，设
+\[
+ U_r(x)=\frac{\mu(Q(x,r))}{r^n},\qquad
+ M(x)=\max_{a\le r\le b}U_r(x),\qquad
+ E=\{M>\tau\},\qquad m=\frac{\tau|E|}{W},\qquad
+ Z=1+n\log(b/a).
+\]
+以下 \(R(x)\in[a,b]\) 始终是真实可测赢家，接收端积分为 Lebesgue
+积分。窗口强包络给 \(\int M\,dx\le ZW\)。本节只说明固定输入、
+固定维数的量词及极限；没有关于维数的免费统一收敛速率，没有
+证明 \(\sqrt n\,n^{o(1)}\) 的上界或 no-go。已有保持常数的
+mollification nearmax 归约在此只被引用，不另记为新成果。
+
+\paragraph{非原子来源的最大小块质量。}
+定义
+\[
+ q_d=\sup_{y\in\mathbb R^n}\mu(y+[-d,d]^n).
+\]
+则 \(q_d\to0\) 当 \(d\downarrow0\)。若结论不成立，可取
+\(d_j\downarrow0,y_j,c>0\)，使上述方体质量至少 \(c\)。取紧集
+\(K\) 满足 \(\mu(K^c)<c/2\)，这些方体均与 \(K\) 相交，故
+\(y_j\) 有界。取子列 \(y_j\to y\)，任意固定 \(r>0\) 的
+\(y+[-r,r]^n\) 最终包含这些方体，质量至少 \(c\)。有限测度
+从上连续性遂给 \(\mu(\{y\})\ge c\)，矛盾。任意非空、
+\(\ell^\infty\) 直径不超过 \(d\) 的 Borel 格子 \(C\) 都包含于
+以其中一点为中心的边长 \(2d\) 方体，因而
+\(w_C=\mu(C)\le q_d\)。这个界对所有平移一致，允许非原子奇异来源。
+
+\paragraph{真实 posterior 检测在任意微细分割上的退化。}
+取上述任意可数 Borel 分割，令
+\[
+ \pi_r(C)=\frac{\mu(C\cap Q(x,r))}{\mu(Q(x,r))},
+ \qquad \chi_r=\sum_C\pi_r(C)^2.
+\]
+在 \(E\) 上 \(\mu(Q(x,R))>\tau a^n\)，故
+\[
+ \chi_R\le\frac{q_d}{\mu(Q(x,R))}
+       \le\frac{q_d}{\tau a^n}.
+\]
+对任意真实合法候选 \(L(x)\in[a,b]\)，若
+\(g(x)=\log(M/U_L)\in[0,\eta]\)，则
+\(\mu(Q(x,L))=e^{-g}ML^n>e^{-\eta}\tau a^n\)。因此
+\[
+ \chi_L\le\frac{e^\eta q_d}{\tau a^n},\qquad
+ B_d(x)^2:=\sum_C(\pi_R(C)-\pi_L(C))^2
+ \le\frac{2(1+e^\eta)q_d}{\tau a^n}.
+\]
+每格赋一个共同全局的独立符号 \(\xi_C\)，取
+\(v_\xi|_C=\xi_C\)。独立性仅作用在完整来源格子的符号上，由
+二阶矩与 Cauchy--Schwarz，
+\[
+ \mathbb E_\xi|\pi_Rv_\xi-\pi_Lv_\xi|\le B_d(x).
+\]
+从而对 \(0<t\le1\)，
+\[
+ \frac{\tau}{W}\int_E\mathbb E_\xi
+ [t|\pi_Rv_\xi-\pi_Lv_\xi|-g]_+\,dx
+ \le tm\left[\frac{2(1+e^\eta)q_d}{\tau a^n}\right]^{1/2}
+ \longrightarrow0.
+\]
+已有 deterministic \(B_d/\sqrt3\) hinge 亦被同一右端控制；若
+\(g\ge g_0>0\) 且 \(tB_d/\sqrt3<g_0\)，该 hinge 恰为零。
+
+所以，对一个固定的真实非原子 high-m 或 nearmax 输入，不存在
+只依赖其固定参数的正检测下限，能对每个足够细分割成立。已有
+保常数平滑归约使任意精度的全局 nearmax 可取光滑密度，故此
+量词障碍并非只属于 low-m 示例。但它没有否定 variance-sensitive
+合同：平方曲率可能趋零得更快，候选 gap 也可能随 \(d\) 更快趋零。
+特别不能由此排除某个 \(d\asymp a/n\) 的有效几何策略。
+
+随机平移不改变 \(q_d\) 和以上各界。先抽层 \(j\)，概率
+\(\lambda_j\ge0,\sum_j\lambda_j=1\)，若所有层格直径至多 \(d_*\)，
+整个有限或可数混合仍受同一 \(q_{d_*}^{1/2}\) 界控制。以
+\(v=\sum_jc_jv_j\) 合并共同测试时，\(\sum_j|c_j|\le1\) 保证
+\(|v|\le1\)，三角不等式再次给该界。对微细 checker 作无界
+放大必须同时缩小扰动幅度，才能保持 \((1\pm tv)\mu\ge0\)，
+不存在免费归一化。接收点专属的平移也不是共同来源测试。
+
+\paragraph{固定时间、同源微细稀疏化的全连续近恒等定理。}
+固定 \(u<\infty\)，令 \(p=e^{-u}\)。对任意平移的边长 \(d\)
+半开网格，使用完整空间格子的独立 survival 硬币
+\(\eta_C\sim{\rm Bernoulli}(p)\)，定义
+\[
+ \mu_d=p^{-1}\sum_C\eta_C\mu|_C,\qquad
+ W_d=\mu_d(\mathbb R^n).
+\]
+则
+\[
+ \mathbb E\|M_{[a,b]}\mu_d-M_{[a,b]}\mu\|_{L^1(dx)}\to0,\qquad
+ \mathbb E|\Phi_\tau(\mu_d)-\Phi_\tau(\mu)|\to0,
+ \qquad
+ \Phi_\tau(\lambda)=\tau\int\log_+(M_{[a,b]}\lambda/\tau)\,dx .
+\]
+同时
+\[
+ \mathbb E|W_d-W|^2
+ =(e^u-1)\sum_Cw_C^2\le(e^u-1)q_dW\to0.
+\]
+
+证明如下。对原固定查询 \(s\in[a,b]\)，设
+\(V_{s,d}=U_s(\mu_d)-U_s(\mu)\)。完整格硬币的独立性给
+\[
+ \mathbb EV_{s,d}(x)=0,\qquad
+ \mathbb E|V_{s,d}(x)|^2
+ =\frac{e^u-1}{s^{2n}}\sum_C\mu(C\cap Q(x,s))^2
+ \le\frac{(e^u-1)q_d}{s^{2n}}\mu(Q(x,s)).
+\]
+可数求和先有限截断；\(\sum_Cw_C=W\) 保证定义及二阶极限有效。
+Tonelli 给
+\[
+ \int\mathbb E|V_{s,d}|^2\,dx\le(e^u-1)q_dW/s^n.
+\]
+在 \(A_H=[-H,H]^n\)、\(H>b/2\) 上，
+\[
+ \mathbb E\int_{A_H}|V_{s,d}|\,dx
+ \le\sqrt{(2H)^n(e^u-1)q_dW/a^n}.
+\]
+在其补集，任何被查询的来源点至少有一坐标落在
+\([-H+b/2,H-b/2]\) 外。由核质量为 \(1\)、
+\(\mathbb E\mu_d=\mu\)，若
+\[
+ T_H=\mu(\mathbb R^n\setminus[-H+b/2,H-b/2]^n),
+\]
+则
+\[
+ \mathbb E\int_{A_H^c}|V_{s,d}|\,dx\le2T_H.
+\]
+这明确支付来源尾部，不能将紧盒上的 Cauchy--Schwarz
+直接当全空间 \(L^1\) 控制。
+
+取 \(0<\xi\le1\)，令
+\[
+ \Delta=\frac{a\xi}{2n},\qquad
+ J=\left\lceil\frac{b-a}{\Delta}\right\rceil,\qquad
+ s_j=\min(b,a+j\Delta),\quad 0\le j\le J,\qquad
+ M_J(\lambda)=\max_jU_{s_j}(\lambda).
+\]
+相邻比 \(s_{j+1}/s_j\le1+\xi/(2n)\)，且
+\(n\log(1+\xi/(2n))\le\xi/2\le\log(1+\xi)\)。
+任意 \(r\in[a,b]\) 向上取最近的 \(s_j\)，cube 包含及归一化
+体积比给任意有限正来源 \(\lambda\) 的准确包络
+\[
+ M_J(\lambda)\le M_{[a,b]}(\lambda)\le(1+\xi)M_J(\lambda).
+\]
+端点 \(b\) 准确保留，不作窗外 padding；有限 mesh 不是 exact
+continuous winner。记 \(A=M(\mu_d),B=M(\mu)\)，
+\(a_J=M_J(\mu_d),b_J=M_J(\mu)\)。两个方向分别使用包络可得
+\[
+ |A-B|\le(1+\xi)|a_J-b_J|+\xi(A+B),\qquad
+ |a_J-b_J|\le\sum_{j=0}^J|V_{s_j,d}|.
+\]
+又 \(\mathbb E\int A\,dx\le ZW,\int B\,dx\le ZW\)，故
+\[
+ \mathbb E\|M(\mu_d)-M(\mu)\|_1
+ \le(1+\xi)(J+1)
+ \left[\sqrt{(2H)^n(e^u-1)q_dW/a^n}+2T_H\right]
+ +2\xi ZW.
+\]
+严格极限顺序是：固定 \(\xi,H\) 后令 \(d\downarrow0\)，再
+\(H\to\infty\)，最后 \(\xi\downarrow0\)。
+\(t\mapsto\tau\log_+(t/\tau)\) 的 \(1\)-Lipschitz 性给
+\(\Phi_\tau\) 的期望收敛。质量方差公式独立地由完整格硬币得到。
+
+这也给 \(\Phi_\tau(\mu_d)/W_d\to\Phi_\tau(\mu)/W\) 于概率中，
+零质量实现的概率趋零。故原 nearmax 输入在任意固定得分损失
+容许量下，稀疏化后仍以趋于 \(1\) 的概率 nearmax；其新赢家
+必须是真正新输入的赢家。全部估计只用
+\((e^u-1)q_d\)，所以对确定时间安排 \(u_d\ge0\)，若
+\(e^{u_d}q_d\to0\)，同样的近恒等结论允许 \(u_d\to\infty\)。
+这不允许来源依赖的随机停止免费代入确定时间合同。
+
+\paragraph{固定时间不强制进入少格来源类。}
+若 \(\mu\) 紧支撑，非空格数 \(N_d<\infty\) 且
+\(N_d\ge W/q_d\to\infty\)。存活非空格数为
+\({\rm Binomial}(N_d,p)\)，由均值趋于无穷和方差至多均值，
+每个固定 \(K<\infty\) 满足
+\[
+ \mathbb P\{N_d^{\rm alive}\le K\}\to0,\qquad
+ \sup_C\mu_d(C)\le e^uq_d\to0.
+\]
+若非空格可数无穷，固定 \(p>0\) 时存活格也无穷 a.s.：
+无穷独立硬币从任何固定起点全灭的概率为零，再作可数并。
+来源仍非原子。对上述确定 \(u_d\) 加强，
+\(N_dp_d\ge W/(e^{u_d}q_d)\to\infty\)，同样得到少格概率趋零，
+最大格质量也趋零。于是固定时间任意细化既没有少量原子，
+也没有少量存活格，却按前述定理保留原尺度响应与得分。
+几何尺度 \(d\asymp a/n\)、真实几何停止或信号与曲率比较仍须
+新证明，均未被本节排除。
+
+\paragraph{新增三轮精确 mesh 守卫及边界。}
+先冻结 high\_m\_packet\_mesh\_guard\_20261007 的 registration，
+随后只执行新脚本一次。维数 \(4,64,256\) 各用原窗口
+\([1,2]\)、\([1/2,3/2]\)、\([1,1+1/(16n)]\)，以及
+\(\xi=1/2,1/4,1/8\)。共 \(27\) 个 mesh、\(27\,252\) 个节点、
+\(27\,225\) 个相邻比。Fraction 精确核验 ceiling、端点、窗口、
+单调和 \((s_{j+1}/s_j)^n\le1+\xi\)，保存全部节点及比值。
+
+另外按已冻结 posterior\_radial\_age manifest 顺序，选原
+三轮第一个非空 receiver，原维数为 \(1,4,16\)，各作三个
+新 mesh；完整 labelled source 不变，重合原子全部累加。
+共保存 \(597\) 个新查询的所有捕获标签、边界标签、累计质量
+及响应，九次均满足
+\(M_{\rm mesh}\le M_{\rm saved}\le(1+\xi)M_{\rm mesh}\)。
+三个 saved 值为 \(10/19,8/27,4/25\)，本次有限 mesh 值与其相等，
+最小 mesh 赢家均为 \(a=1\)。这是冻结选择的左端点输入，因此
+不检验正误差尖锐性。
+
+终态 \(169\,515\) 项精确检查全部通过，零失败尝试；continuous
+oracle 调用 \(0\)，旧 MC 调用 \(0\)。这些仅认证有限参数算术
+及 saved receiver 的新查询包络，不数值证明全连续 winner、
+非原子定性极限、nearmax 资格或 actual FIRST/history。
+全连续包络与极限由以上解析证明承担；已有 saved continuous
+值的 provenance 保持独立。完整 code/results/receipt 与
+所有 mesh 文件见同 prefix，results SHA256 为
+\[
+\texttt{0ea9221e7adb0abe4b9bd076c9b1f66b1e51185984de5cbd978e6f8a47e3bc2d}.
+\]
+
+
+\paragraph{另注册的严格非零 mesh 误差补充。}
+主批已终态后，另冻结三轮 \(n=4,64,256\)、
+\(\xi=1/2,1/4,1/8\) 的九条记录，未更改或重跑主批。
+完整原来源为 \(\mu=\delta_0\)，
+\(x=(7/10,0,\ldots,0)\)，原窗口 \([1,2]\)。原 closed cube
+响应在 \(R<7/5\) 为零，其后为 \(R^{-n}\)，故唯一真实连续赢家
+为 \(R=7/5\)。向上最近 mesh 点
+\(r=1+\lceil(R-1)/\Delta\rceil\Delta\) 在这九条记录严格大于
+\(R\)，并精确满足
+\[
+ M_{\rm mesh}=r^{-n}<M_{\rm true}=R^{-n}
+ \le(1+\xi)M_{\rm mesh}.
+\]
+补充新脚本一次执行，\(91\) 项 Fraction 检查通过，无失败，
+oracle 调用 \(0\)。它只检验非零包络费用；主批的九个 saved
+左端点比较仍退化为相等。两个批次分别登记、分别计数，
+没有将有限记录声称为普适数值证明、nearmax 或 actual 资格。
+

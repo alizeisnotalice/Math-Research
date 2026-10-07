@@ -1,0 +1,23 @@
+{
+  "status": "registered_before_execution",
+  "rounds": [4,16,64],
+  "parameters": {"L":"8*n","epsilon":"1/8","tau":"3/4","B":"3/4","scales":[1,2]},
+  "arithmetic": "Fraction and exact interval lengths",
+  "random_seed": null,
+  "input": "f=1_{[-L,L]^n}(1+epsilon*cos(pi*y1)), complete original L1 source",
+  "new_checks": [
+    "genuine h1/h2 sign receiver interval occupancy; no floating pi",
+    "triangle A period area exactly one",
+    "whole source/core/query geometry and whole E bound",
+    "hardband tau<M<=2tau and mass bands exactly 0,n",
+    "positive cross lower at least 21/256 W",
+    "normalized cross lower at least 35/384",
+    "two-band aggregate remains <=4 I1"
+  ],
+  "limits": [
+    "does not disprove aggregate sqrt(n) I1",
+    "actual FIRST/fullfuture/LCA/history not certified",
+    "no lower-bound catalog model reruns"
+  ],
+  "overwrite_policy": "refuse an existing terminal result"
+}

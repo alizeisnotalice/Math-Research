@@ -1,0 +1,3849 @@
+{
+  "round": "round2",
+  "protocol": {
+    "samples_per_side": 512,
+    "nodes": 257,
+    "coarse_nodes": 129,
+    "replicates": 8,
+    "n": [
+      8,
+      32,
+      128
+    ],
+    "L": 257,
+    "c": [
+      -0.5,
+      0.0,
+      0.5,
+      1.0
+    ],
+    "window_side_length": [
+      1,
+      2
+    ],
+    "winner_tie": "smallest R, exact floating equal scores",
+    "cone": "uniform 2n faces, uniform free coordinates",
+    "jacobian": "dx = r^n dt d(normalized cone); no 2^-n",
+    "integrand": "Y=1_{2lambda<u<=4lambda}(r/R)^n 1_{r<=R}; energy=int(EY)^2 dt",
+    "status": "Hardband g1 relaxation only; no original softFIRST geom qualification."
+  },
+  "elapsed_seconds": 52.75749611854553,
+  "rows": [
+    {
+      "n": 8,
+      "L": 257,
+      "log10_total_atoms": 19.279464986650357,
+      "c": -0.5,
+      "log_lambda": -45.80682224153485,
+      "energy_mean": 6.188243315569004e-05,
+      "energy_replicate_sd": 3.054268571092658e-05,
+      "approx95_MC_t_interval": [
+        3.634810890499575e-05,
+        8.741675740638433e-05
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        2.6626420233565944
+      ],
+      "nested_grid_mean_abs_difference": 8.481689983934936e-06,
+      "nested_grid_max_abs_difference": 1.7928647943771345e-05,
+      "same_sample_square_diagnostic_mean": 7.446271077987081e-05,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2825209,
+            2825210
+          ],
+          "energy": [
+            0.00012221020338968632,
+            0.127769035946416,
+            0.010355067465203288,
+            9.509267802844526e-06
+          ],
+          "coarse_energy": [
+            0.00014013885133345766,
+            0.12759255911139997,
+            0.009704380591518152,
+            1.2519261233595951e-05
+          ],
+          "same_sample_square_diagnostic": [
+            0.00012575278186565395,
+            0.12427208357990516,
+            0.010939689921330244,
+            2.1631680295750393e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 33236,
+            "hardband_near_threshold": 809,
+            "boundary_sources": 20
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2031,
+            "winner_near_r": 32178,
+            "hardband_near_threshold": 795,
+            "boundary_sources": 41
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2825219,
+            2825220
+          ],
+          "energy": [
+            1.687304734041502e-05,
+            0.12389176454166413,
+            0.007938095914986506,
+            3.3752808422276154e-06
+          ],
+          "coarse_energy": [
+            1.8027712683351938e-05,
+            0.12400587923615704,
+            0.007786844887815236,
+            3.5761764902925578e-06
+          ],
+          "same_sample_square_diagnostic": [
+            1.8538724758751966e-05,
+            0.11739112369846208,
+            0.00895242121401883,
+            3.3451875763888402e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 31946,
+            "hardband_near_threshold": 796,
+            "boundary_sources": 30
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 33071,
+            "hardband_near_threshold": 852,
+            "boundary_sources": 21
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2825229,
+            2825230
+          ],
+          "energy": [
+            7.394566611423507e-05,
+            0.11034122937300364,
+            0.010799227183420567,
+            3.6967449889505567e-06
+          ],
+          "coarse_energy": [
+            8.496078935963556e-05,
+            0.10950175034160493,
+            0.01025104923238387,
+            3.7100391829180042e-06
+          ],
+          "same_sample_square_diagnostic": [
+            0.00015330704305576242,
+            0.11367640775545122,
+            0.010265317061944048,
+            3.9534595447957656e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 33355,
+            "hardband_near_threshold": 785,
+            "boundary_sources": 35
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 32751,
+            "hardband_near_threshold": 792,
+            "boundary_sources": 28
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2825239,
+            2825240
+          ],
+          "energy": [
+            6.130882174258899e-05,
+            0.11037179603689176,
+            0.009545691132185183,
+            8.828017415413096e-06
+          ],
+          "coarse_energy": [
+            6.891549818138265e-05,
+            0.11032429852063297,
+            0.00912505913239809,
+            8.712865826120463e-06
+          ],
+          "same_sample_square_diagnostic": [
+            4.385754102512069e-05,
+            0.11215900127784807,
+            0.00964029628955333,
+            1.6979846552677996e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 32956,
+            "hardband_near_threshold": 796,
+            "boundary_sources": 34
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2037,
+            "winner_near_r": 34058,
+            "hardband_near_threshold": 835,
+            "boundary_sources": 36
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2825249,
+            2825250
+          ],
+          "energy": [
+            7.358056438205017e-05,
+            0.11023201016716405,
+            0.009966956111413565,
+            1.6170569490029762e-06
+          ],
+          "coarse_energy": [
+            8.666166909471518e-05,
+            0.11007366514785835,
+            0.009466271841629972,
+            1.1854205806450247e-06
+          ],
+          "same_sample_square_diagnostic": [
+            3.709235833922129e-05,
+            0.10754548195165964,
+            0.013878462082381169,
+            3.6930206495662016e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 32302,
+            "hardband_near_threshold": 780,
+            "boundary_sources": 33
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 31670,
+            "hardband_near_threshold": 797,
+            "boundary_sources": 30
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2825259,
+            2825260
+          ],
+          "energy": [
+            4.252894296531412e-05,
+            0.11397195497108316,
+            0.010755274889488967,
+            1.5492853812218897e-05
+          ],
+          "coarse_energy": [
+            5.1223804231642965e-05,
+            0.1123093404767696,
+            0.010436424755742652,
+            1.6346700183217855e-05
+          ],
+          "same_sample_square_diagnostic": [
+            2.3835073655222693e-05,
+            0.1100668170215543,
+            0.011682054346696419,
+            1.2580298172857878e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 32826,
+            "hardband_near_threshold": 756,
+            "boundary_sources": 33
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 33540,
+            "hardband_near_threshold": 839,
+            "boundary_sources": 30
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2825269,
+            2825270
+          ],
+          "energy": [
+            5.5772985801462536e-05,
+            0.11640645955565732,
+            0.009661590902623977,
+            7.195893636334694e-07
+          ],
+          "coarse_energy": [
+            5.7639729875047724e-05,
+            0.11597232612306366,
+            0.009348190284137081,
+            4.905065583852077e-07
+          ],
+          "same_sample_square_diagnostic": [
+            8.025994144211597e-05,
+            0.10918857488820496,
+            0.008118534702971154,
+            5.121025801622745e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 32877,
+            "hardband_near_threshold": 799,
+            "boundary_sources": 26
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 33483,
+            "hardband_near_threshold": 816,
+            "boundary_sources": 36
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2825279,
+            2825280
+          ],
+          "energy": [
+            4.883923350976811e-05,
+            0.12169139136253057,
+            0.01137803894067975,
+            7.890408318157797e-07
+          ],
+          "coarse_energy": [
+            5.534493035776614e-05,
+            0.12097202168351237,
+            0.011160844834762245,
+            8.724067146030482e-07
+          ],
+          "same_sample_square_diagnostic": [
+            0.00011305822209711749,
+            0.11801184681095264,
+            0.015487573950630702,
+            1.3392720589976838e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 33799,
+            "hardband_near_threshold": 814,
+            "boundary_sources": 32
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 33063,
+            "hardband_near_threshold": 831,
+            "boundary_sources": 34
+          }
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "L": 257,
+      "log10_total_atoms": 19.279464986650357,
+      "c": 0.0,
+      "log_lambda": -44.39260867916176,
+      "energy_mean": 0.11683445524430133,
+      "energy_replicate_sd": 0.006854173009127394,
+      "approx95_MC_t_interval": [
+        0.11110422320963766,
+        0.12256468727896501
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        2.77941459616774
+      ],
+      "nested_grid_mean_abs_difference": 0.0005190038377996947,
+      "nested_grid_max_abs_difference": 0.0016626144943135551,
+      "same_sample_square_diagnostic_mean": 0.11403891712300476,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2825209,
+            2825210
+          ],
+          "energy": [
+            0.00012221020338968632,
+            0.127769035946416,
+            0.010355067465203288,
+            9.509267802844526e-06
+          ],
+          "coarse_energy": [
+            0.00014013885133345766,
+            0.12759255911139997,
+            0.009704380591518152,
+            1.2519261233595951e-05
+          ],
+          "same_sample_square_diagnostic": [
+            0.00012575278186565395,
+            0.12427208357990516,
+            0.010939689921330244,
+            2.1631680295750393e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 33236,
+            "hardband_near_threshold": 809,
+            "boundary_sources": 20
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2031,
+            "winner_near_r": 32178,
+            "hardband_near_threshold": 795,
+            "boundary_sources": 41
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2825219,
+            2825220
+          ],
+          "energy": [
+            1.687304734041502e-05,
+            0.12389176454166413,
+            0.007938095914986506,
+            3.3752808422276154e-06
+          ],
+          "coarse_energy": [
+            1.8027712683351938e-05,
+            0.12400587923615704,
+            0.007786844887815236,
+            3.5761764902925578e-06
+          ],
+          "same_sample_square_diagnostic": [
+            1.8538724758751966e-05,
+            0.11739112369846208,
+            0.00895242121401883,
+            3.3451875763888402e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 31946,
+            "hardband_near_threshold": 796,
+            "boundary_sources": 30
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 33071,
+            "hardband_near_threshold": 852,
+            "boundary_sources": 21
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2825229,
+            2825230
+          ],
+          "energy": [
+            7.394566611423507e-05,
+            0.11034122937300364,
+            0.010799227183420567,
+            3.6967449889505567e-06
+          ],
+          "coarse_energy": [
+            8.496078935963556e-05,
+            0.10950175034160493,
+            0.01025104923238387,
+            3.7100391829180042e-06
+          ],
+          "same_sample_square_diagnostic": [
+            0.00015330704305576242,
+            0.11367640775545122,
+            0.010265317061944048,
+            3.9534595447957656e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 33355,
+            "hardband_near_threshold": 785,
+            "boundary_sources": 35
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 32751,
+            "hardband_near_threshold": 792,
+            "boundary_sources": 28
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2825239,
+            2825240
+          ],
+          "energy": [
+            6.130882174258899e-05,
+            0.11037179603689176,
+            0.009545691132185183,
+            8.828017415413096e-06
+          ],
+          "coarse_energy": [
+            6.891549818138265e-05,
+            0.11032429852063297,
+            0.00912505913239809,
+            8.712865826120463e-06
+          ],
+          "same_sample_square_diagnostic": [
+            4.385754102512069e-05,
+            0.11215900127784807,
+            0.00964029628955333,
+            1.6979846552677996e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 32956,
+            "hardband_near_threshold": 796,
+            "boundary_sources": 34
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2037,
+            "winner_near_r": 34058,
+            "hardband_near_threshold": 835,
+            "boundary_sources": 36
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2825249,
+            2825250
+          ],
+          "energy": [
+            7.358056438205017e-05,
+            0.11023201016716405,
+            0.009966956111413565,
+            1.6170569490029762e-06
+          ],
+          "coarse_energy": [
+            8.666166909471518e-05,
+            0.11007366514785835,
+            0.009466271841629972,
+            1.1854205806450247e-06
+          ],
+          "same_sample_square_diagnostic": [
+            3.709235833922129e-05,
+            0.10754548195165964,
+            0.013878462082381169,
+            3.6930206495662016e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 32302,
+            "hardband_near_threshold": 780,
+            "boundary_sources": 33
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 31670,
+            "hardband_near_threshold": 797,
+            "boundary_sources": 30
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2825259,
+            2825260
+          ],
+          "energy": [
+            4.252894296531412e-05,
+            0.11397195497108316,
+            0.010755274889488967,
+            1.5492853812218897e-05
+          ],
+          "coarse_energy": [
+            5.1223804231642965e-05,
+            0.1123093404767696,
+            0.010436424755742652,
+            1.6346700183217855e-05
+          ],
+          "same_sample_square_diagnostic": [
+            2.3835073655222693e-05,
+            0.1100668170215543,
+            0.011682054346696419,
+            1.2580298172857878e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 32826,
+            "hardband_near_threshold": 756,
+            "boundary_sources": 33
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 33540,
+            "hardband_near_threshold": 839,
+            "boundary_sources": 30
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2825269,
+            2825270
+          ],
+          "energy": [
+            5.5772985801462536e-05,
+            0.11640645955565732,
+            0.009661590902623977,
+            7.195893636334694e-07
+          ],
+          "coarse_energy": [
+            5.7639729875047724e-05,
+            0.11597232612306366,
+            0.009348190284137081,
+            4.905065583852077e-07
+          ],
+          "same_sample_square_diagnostic": [
+            8.025994144211597e-05,
+            0.10918857488820496,
+            0.008118534702971154,
+            5.121025801622745e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 32877,
+            "hardband_near_threshold": 799,
+            "boundary_sources": 26
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 33483,
+            "hardband_near_threshold": 816,
+            "boundary_sources": 36
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2825279,
+            2825280
+          ],
+          "energy": [
+            4.883923350976811e-05,
+            0.12169139136253057,
+            0.01137803894067975,
+            7.890408318157797e-07
+          ],
+          "coarse_energy": [
+            5.534493035776614e-05,
+            0.12097202168351237,
+            0.011160844834762245,
+            8.724067146030482e-07
+          ],
+          "same_sample_square_diagnostic": [
+            0.00011305822209711749,
+            0.11801184681095264,
+            0.015487573950630702,
+            1.3392720589976838e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 33799,
+            "hardband_near_threshold": 814,
+            "boundary_sources": 32
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 33063,
+            "hardband_near_threshold": 831,
+            "boundary_sources": 34
+          }
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "L": 257,
+      "log10_total_atoms": 19.279464986650357,
+      "c": 0.5,
+      "log_lambda": -42.97839511678867,
+      "energy_mean": 0.010049992817500224,
+      "energy_replicate_sd": 0.0010547668558097832,
+      "approx95_MC_t_interval": [
+        0.009168185658822716,
+        0.010931799976177733
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        2.672630133740939
+      ],
+      "nested_grid_mean_abs_difference": 0.0003901096224518128,
+      "nested_grid_max_abs_difference": 0.0006506868736851357,
+      "same_sample_square_diagnostic_mean": 0.011120543696190737,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2825209,
+            2825210
+          ],
+          "energy": [
+            0.00012221020338968632,
+            0.127769035946416,
+            0.010355067465203288,
+            9.509267802844526e-06
+          ],
+          "coarse_energy": [
+            0.00014013885133345766,
+            0.12759255911139997,
+            0.009704380591518152,
+            1.2519261233595951e-05
+          ],
+          "same_sample_square_diagnostic": [
+            0.00012575278186565395,
+            0.12427208357990516,
+            0.010939689921330244,
+            2.1631680295750393e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 33236,
+            "hardband_near_threshold": 809,
+            "boundary_sources": 20
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2031,
+            "winner_near_r": 32178,
+            "hardband_near_threshold": 795,
+            "boundary_sources": 41
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2825219,
+            2825220
+          ],
+          "energy": [
+            1.687304734041502e-05,
+            0.12389176454166413,
+            0.007938095914986506,
+            3.3752808422276154e-06
+          ],
+          "coarse_energy": [
+            1.8027712683351938e-05,
+            0.12400587923615704,
+            0.007786844887815236,
+            3.5761764902925578e-06
+          ],
+          "same_sample_square_diagnostic": [
+            1.8538724758751966e-05,
+            0.11739112369846208,
+            0.00895242121401883,
+            3.3451875763888402e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 31946,
+            "hardband_near_threshold": 796,
+            "boundary_sources": 30
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 33071,
+            "hardband_near_threshold": 852,
+            "boundary_sources": 21
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2825229,
+            2825230
+          ],
+          "energy": [
+            7.394566611423507e-05,
+            0.11034122937300364,
+            0.010799227183420567,
+            3.6967449889505567e-06
+          ],
+          "coarse_energy": [
+            8.496078935963556e-05,
+            0.10950175034160493,
+            0.01025104923238387,
+            3.7100391829180042e-06
+          ],
+          "same_sample_square_diagnostic": [
+            0.00015330704305576242,
+            0.11367640775545122,
+            0.010265317061944048,
+            3.9534595447957656e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 33355,
+            "hardband_near_threshold": 785,
+            "boundary_sources": 35
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 32751,
+            "hardband_near_threshold": 792,
+            "boundary_sources": 28
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2825239,
+            2825240
+          ],
+          "energy": [
+            6.130882174258899e-05,
+            0.11037179603689176,
+            0.009545691132185183,
+            8.828017415413096e-06
+          ],
+          "coarse_energy": [
+            6.891549818138265e-05,
+            0.11032429852063297,
+            0.00912505913239809,
+            8.712865826120463e-06
+          ],
+          "same_sample_square_diagnostic": [
+            4.385754102512069e-05,
+            0.11215900127784807,
+            0.00964029628955333,
+            1.6979846552677996e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 32956,
+            "hardband_near_threshold": 796,
+            "boundary_sources": 34
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2037,
+            "winner_near_r": 34058,
+            "hardband_near_threshold": 835,
+            "boundary_sources": 36
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2825249,
+            2825250
+          ],
+          "energy": [
+            7.358056438205017e-05,
+            0.11023201016716405,
+            0.009966956111413565,
+            1.6170569490029762e-06
+          ],
+          "coarse_energy": [
+            8.666166909471518e-05,
+            0.11007366514785835,
+            0.009466271841629972,
+            1.1854205806450247e-06
+          ],
+          "same_sample_square_diagnostic": [
+            3.709235833922129e-05,
+            0.10754548195165964,
+            0.013878462082381169,
+            3.6930206495662016e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 32302,
+            "hardband_near_threshold": 780,
+            "boundary_sources": 33
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 31670,
+            "hardband_near_threshold": 797,
+            "boundary_sources": 30
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2825259,
+            2825260
+          ],
+          "energy": [
+            4.252894296531412e-05,
+            0.11397195497108316,
+            0.010755274889488967,
+            1.5492853812218897e-05
+          ],
+          "coarse_energy": [
+            5.1223804231642965e-05,
+            0.1123093404767696,
+            0.010436424755742652,
+            1.6346700183217855e-05
+          ],
+          "same_sample_square_diagnostic": [
+            2.3835073655222693e-05,
+            0.1100668170215543,
+            0.011682054346696419,
+            1.2580298172857878e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 32826,
+            "hardband_near_threshold": 756,
+            "boundary_sources": 33
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 33540,
+            "hardband_near_threshold": 839,
+            "boundary_sources": 30
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2825269,
+            2825270
+          ],
+          "energy": [
+            5.5772985801462536e-05,
+            0.11640645955565732,
+            0.009661590902623977,
+            7.195893636334694e-07
+          ],
+          "coarse_energy": [
+            5.7639729875047724e-05,
+            0.11597232612306366,
+            0.009348190284137081,
+            4.905065583852077e-07
+          ],
+          "same_sample_square_diagnostic": [
+            8.025994144211597e-05,
+            0.10918857488820496,
+            0.008118534702971154,
+            5.121025801622745e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 32877,
+            "hardband_near_threshold": 799,
+            "boundary_sources": 26
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 33483,
+            "hardband_near_threshold": 816,
+            "boundary_sources": 36
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2825279,
+            2825280
+          ],
+          "energy": [
+            4.883923350976811e-05,
+            0.12169139136253057,
+            0.01137803894067975,
+            7.890408318157797e-07
+          ],
+          "coarse_energy": [
+            5.534493035776614e-05,
+            0.12097202168351237,
+            0.011160844834762245,
+            8.724067146030482e-07
+          ],
+          "same_sample_square_diagnostic": [
+            0.00011305822209711749,
+            0.11801184681095264,
+            0.015487573950630702,
+            1.3392720589976838e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 33799,
+            "hardband_near_threshold": 814,
+            "boundary_sources": 32
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 33063,
+            "hardband_near_threshold": 831,
+            "boundary_sources": 34
+          }
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "L": 257,
+      "log10_total_atoms": 19.279464986650357,
+      "c": 1.0,
+      "log_lambda": -41.56418155441557,
+      "energy_mean": 5.503481500763365e-06,
+      "energy_replicate_sd": 5.276576644350917e-06,
+      "approx95_MC_t_interval": [
+        1.0921530326091719e-06,
+        9.914809968917558e-06
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        2.6625856444049396
+      ],
+      "nested_grid_mean_abs_difference": 6.17158286183611e-07,
+      "nested_grid_max_abs_difference": 3.009993430751425e-06,
+      "same_sample_square_diagnostic_mean": 8.580473831582189e-06,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2825209,
+            2825210
+          ],
+          "energy": [
+            0.00012221020338968632,
+            0.127769035946416,
+            0.010355067465203288,
+            9.509267802844526e-06
+          ],
+          "coarse_energy": [
+            0.00014013885133345766,
+            0.12759255911139997,
+            0.009704380591518152,
+            1.2519261233595951e-05
+          ],
+          "same_sample_square_diagnostic": [
+            0.00012575278186565395,
+            0.12427208357990516,
+            0.010939689921330244,
+            2.1631680295750393e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 33236,
+            "hardband_near_threshold": 809,
+            "boundary_sources": 20
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2031,
+            "winner_near_r": 32178,
+            "hardband_near_threshold": 795,
+            "boundary_sources": 41
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2825219,
+            2825220
+          ],
+          "energy": [
+            1.687304734041502e-05,
+            0.12389176454166413,
+            0.007938095914986506,
+            3.3752808422276154e-06
+          ],
+          "coarse_energy": [
+            1.8027712683351938e-05,
+            0.12400587923615704,
+            0.007786844887815236,
+            3.5761764902925578e-06
+          ],
+          "same_sample_square_diagnostic": [
+            1.8538724758751966e-05,
+            0.11739112369846208,
+            0.00895242121401883,
+            3.3451875763888402e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 31946,
+            "hardband_near_threshold": 796,
+            "boundary_sources": 30
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 33071,
+            "hardband_near_threshold": 852,
+            "boundary_sources": 21
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2825229,
+            2825230
+          ],
+          "energy": [
+            7.394566611423507e-05,
+            0.11034122937300364,
+            0.010799227183420567,
+            3.6967449889505567e-06
+          ],
+          "coarse_energy": [
+            8.496078935963556e-05,
+            0.10950175034160493,
+            0.01025104923238387,
+            3.7100391829180042e-06
+          ],
+          "same_sample_square_diagnostic": [
+            0.00015330704305576242,
+            0.11367640775545122,
+            0.010265317061944048,
+            3.9534595447957656e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 33355,
+            "hardband_near_threshold": 785,
+            "boundary_sources": 35
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 32751,
+            "hardband_near_threshold": 792,
+            "boundary_sources": 28
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2825239,
+            2825240
+          ],
+          "energy": [
+            6.130882174258899e-05,
+            0.11037179603689176,
+            0.009545691132185183,
+            8.828017415413096e-06
+          ],
+          "coarse_energy": [
+            6.891549818138265e-05,
+            0.11032429852063297,
+            0.00912505913239809,
+            8.712865826120463e-06
+          ],
+          "same_sample_square_diagnostic": [
+            4.385754102512069e-05,
+            0.11215900127784807,
+            0.00964029628955333,
+            1.6979846552677996e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 32956,
+            "hardband_near_threshold": 796,
+            "boundary_sources": 34
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2037,
+            "winner_near_r": 34058,
+            "hardband_near_threshold": 835,
+            "boundary_sources": 36
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2825249,
+            2825250
+          ],
+          "energy": [
+            7.358056438205017e-05,
+            0.11023201016716405,
+            0.009966956111413565,
+            1.6170569490029762e-06
+          ],
+          "coarse_energy": [
+            8.666166909471518e-05,
+            0.11007366514785835,
+            0.009466271841629972,
+            1.1854205806450247e-06
+          ],
+          "same_sample_square_diagnostic": [
+            3.709235833922129e-05,
+            0.10754548195165964,
+            0.013878462082381169,
+            3.6930206495662016e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 32302,
+            "hardband_near_threshold": 780,
+            "boundary_sources": 33
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 31670,
+            "hardband_near_threshold": 797,
+            "boundary_sources": 30
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2825259,
+            2825260
+          ],
+          "energy": [
+            4.252894296531412e-05,
+            0.11397195497108316,
+            0.010755274889488967,
+            1.5492853812218897e-05
+          ],
+          "coarse_energy": [
+            5.1223804231642965e-05,
+            0.1123093404767696,
+            0.010436424755742652,
+            1.6346700183217855e-05
+          ],
+          "same_sample_square_diagnostic": [
+            2.3835073655222693e-05,
+            0.1100668170215543,
+            0.011682054346696419,
+            1.2580298172857878e-05
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 32826,
+            "hardband_near_threshold": 756,
+            "boundary_sources": 33
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 33540,
+            "hardband_near_threshold": 839,
+            "boundary_sources": 30
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2825269,
+            2825270
+          ],
+          "energy": [
+            5.5772985801462536e-05,
+            0.11640645955565732,
+            0.009661590902623977,
+            7.195893636334694e-07
+          ],
+          "coarse_energy": [
+            5.7639729875047724e-05,
+            0.11597232612306366,
+            0.009348190284137081,
+            4.905065583852077e-07
+          ],
+          "same_sample_square_diagnostic": [
+            8.025994144211597e-05,
+            0.10918857488820496,
+            0.008118534702971154,
+            5.121025801622745e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 32877,
+            "hardband_near_threshold": 799,
+            "boundary_sources": 26
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 33483,
+            "hardband_near_threshold": 816,
+            "boundary_sources": 36
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2825279,
+            2825280
+          ],
+          "energy": [
+            4.883923350976811e-05,
+            0.12169139136253057,
+            0.01137803894067975,
+            7.890408318157797e-07
+          ],
+          "coarse_energy": [
+            5.534493035776614e-05,
+            0.12097202168351237,
+            0.011160844834762245,
+            8.724067146030482e-07
+          ],
+          "same_sample_square_diagnostic": [
+            0.00011305822209711749,
+            0.11801184681095264,
+            0.015487573950630702,
+            1.3392720589976838e-06
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 33799,
+            "hardband_near_threshold": 814,
+            "boundary_sources": 32
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 33063,
+            "hardband_near_threshold": 831,
+            "boundary_sources": 34
+          }
+        }
+      ]
+    },
+    {
+      "n": 32,
+      "L": 257,
+      "log10_total_atoms": 77.11785994660143,
+      "c": -0.5,
+      "log_lambda": -180.39886184139323,
+      "energy_mean": 0.0,
+      "energy_replicate_sd": 0.0,
+      "approx95_MC_t_interval": [
+        0.0,
+        0.0
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        10.650320563693755
+      ],
+      "nested_grid_mean_abs_difference": 0.0,
+      "nested_grid_max_abs_difference": 0.0,
+      "same_sample_square_diagnostic_mean": 2.6854614458304485e-07,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2849209,
+            2849210
+          ],
+          "energy": [
+            0.0,
+            0.04454322311422103,
+            0.021294393289821606,
+            0.0003045403076401705
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05029834751544133,
+            0.019978435843252845,
+            0.00028040178972534935
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.04598442764195447,
+            0.022762790959368645,
+            0.00028128557206524006
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 21422,
+            "hardband_near_threshold": 826,
+            "boundary_sources": 119
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 21028,
+            "hardband_near_threshold": 730,
+            "boundary_sources": 116
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2849219,
+            2849220
+          ],
+          "energy": [
+            0.0,
+            0.035680121647795014,
+            0.023083863811067574,
+            0.00041617045195142946
+          ],
+          "coarse_energy": [
+            0.0,
+            0.041300698254309945,
+            0.021453401419507405,
+            0.00040248569409967087
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03691964014516029,
+            0.025170402595368232,
+            0.0005335798604761934
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19910,
+            "hardband_near_threshold": 672,
+            "boundary_sources": 110
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19985,
+            "hardband_near_threshold": 707,
+            "boundary_sources": 96
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2849229,
+            2849230
+          ],
+          "energy": [
+            0.0,
+            0.035730068258415654,
+            0.025682471894103918,
+            0.00020665797068870366
+          ],
+          "coarse_energy": [
+            0.0,
+            0.0404070685091657,
+            0.02445537341278646,
+            0.00020478218585913833
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03784467255720646,
+            0.0259494479639261,
+            0.00026239878387344283
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19887,
+            "hardband_near_threshold": 716,
+            "boundary_sources": 114
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 20159,
+            "hardband_near_threshold": 718,
+            "boundary_sources": 89
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2849239,
+            2849240
+          ],
+          "energy": [
+            0.0,
+            0.03627649412459178,
+            0.026670938225131748,
+            0.00048336476247734137
+          ],
+          "coarse_energy": [
+            0.0,
+            0.04141808219859338,
+            0.02525278698256548,
+            0.00048181183584063516
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03600949901795712,
+            0.026761141413266486,
+            0.0005781834881481544
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 20732,
+            "hardband_near_threshold": 730,
+            "boundary_sources": 103
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 21035,
+            "hardband_near_threshold": 685,
+            "boundary_sources": 113
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2849249,
+            2849250
+          ],
+          "energy": [
+            0.0,
+            0.035387143383703606,
+            0.02360063076264115,
+            0.00021162493650880924
+          ],
+          "coarse_energy": [
+            0.0,
+            0.039636326076484714,
+            0.02171957756661201,
+            0.000207105501606623
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03360261289898819,
+            0.026786125967940794,
+            0.0002513126507547029
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 20606,
+            "hardband_near_threshold": 752,
+            "boundary_sources": 111
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 20524,
+            "hardband_near_threshold": 735,
+            "boundary_sources": 110
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2849259,
+            2849260
+          ],
+          "energy": [
+            0.0,
+            0.04258074821688946,
+            0.01816561813637791,
+            0.00022605394918795356
+          ],
+          "coarse_energy": [
+            0.0,
+            0.047168980571911934,
+            0.016667450328512523,
+            0.00022097909246564316
+          ],
+          "same_sample_square_diagnostic": [
+            1.652591658973568e-07,
+            0.04174878673443632,
+            0.019506729451380947,
+            0.00026501416180414077
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 19860,
+            "hardband_near_threshold": 719,
+            "boundary_sources": 126
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 19519,
+            "hardband_near_threshold": 795,
+            "boundary_sources": 103
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2849269,
+            2849270
+          ],
+          "energy": [
+            0.0,
+            0.03643488209630408,
+            0.022423784907343793,
+            0.00031281765952900754
+          ],
+          "coarse_energy": [
+            0.0,
+            0.04220676683696874,
+            0.021294970071653707,
+            0.0002984347981545919
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.042245284399617215,
+            0.024650229783261077,
+            0.0002753350558863109
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 21390,
+            "hardband_near_threshold": 803,
+            "boundary_sources": 124
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 19997,
+            "hardband_near_threshold": 692,
+            "boundary_sources": 111
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2849279,
+            2849280
+          ],
+          "energy": [
+            0.0,
+            0.03765360647643416,
+            0.02280912270092534,
+            0.0002036474148727123
+          ],
+          "coarse_energy": [
+            0.0,
+            0.04269480673470535,
+            0.021729096311385282,
+            0.0001990208936123529
+          ],
+          "same_sample_square_diagnostic": [
+            1.983109990767002e-06,
+            0.038745834422859664,
+            0.02460336169118901,
+            0.00023822806449238346
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 21289,
+            "hardband_near_threshold": 808,
+            "boundary_sources": 95
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 20997,
+            "hardband_near_threshold": 772,
+            "boundary_sources": 116
+          }
+        }
+      ]
+    },
+    {
+      "n": 32,
+      "L": 257,
+      "log10_total_atoms": 77.11785994660143,
+      "c": 0.0,
+      "log_lambda": -177.57043471664704,
+      "energy_mean": 0.03803578591479434,
+      "energy_replicate_sd": 0.00351909644047285,
+      "approx95_MC_t_interval": [
+        0.03509374766606393,
+        0.04097782416352475
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        10.688356349608549
+      ],
+      "nested_grid_mean_abs_difference": 0.005105598672403288,
+      "nested_grid_max_abs_difference": 0.0057718847406646595,
+      "same_sample_square_diagnostic_mean": 0.03913759472727247,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2849209,
+            2849210
+          ],
+          "energy": [
+            0.0,
+            0.04454322311422103,
+            0.021294393289821606,
+            0.0003045403076401705
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05029834751544133,
+            0.019978435843252845,
+            0.00028040178972534935
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.04598442764195447,
+            0.022762790959368645,
+            0.00028128557206524006
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 21422,
+            "hardband_near_threshold": 826,
+            "boundary_sources": 119
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 21028,
+            "hardband_near_threshold": 730,
+            "boundary_sources": 116
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2849219,
+            2849220
+          ],
+          "energy": [
+            0.0,
+            0.035680121647795014,
+            0.023083863811067574,
+            0.00041617045195142946
+          ],
+          "coarse_energy": [
+            0.0,
+            0.041300698254309945,
+            0.021453401419507405,
+            0.00040248569409967087
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03691964014516029,
+            0.025170402595368232,
+            0.0005335798604761934
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19910,
+            "hardband_near_threshold": 672,
+            "boundary_sources": 110
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19985,
+            "hardband_near_threshold": 707,
+            "boundary_sources": 96
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2849229,
+            2849230
+          ],
+          "energy": [
+            0.0,
+            0.035730068258415654,
+            0.025682471894103918,
+            0.00020665797068870366
+          ],
+          "coarse_energy": [
+            0.0,
+            0.0404070685091657,
+            0.02445537341278646,
+            0.00020478218585913833
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03784467255720646,
+            0.0259494479639261,
+            0.00026239878387344283
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19887,
+            "hardband_near_threshold": 716,
+            "boundary_sources": 114
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 20159,
+            "hardband_near_threshold": 718,
+            "boundary_sources": 89
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2849239,
+            2849240
+          ],
+          "energy": [
+            0.0,
+            0.03627649412459178,
+            0.026670938225131748,
+            0.00048336476247734137
+          ],
+          "coarse_energy": [
+            0.0,
+            0.04141808219859338,
+            0.02525278698256548,
+            0.00048181183584063516
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03600949901795712,
+            0.026761141413266486,
+            0.0005781834881481544
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 20732,
+            "hardband_near_threshold": 730,
+            "boundary_sources": 103
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 21035,
+            "hardband_near_threshold": 685,
+            "boundary_sources": 113
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2849249,
+            2849250
+          ],
+          "energy": [
+            0.0,
+            0.035387143383703606,
+            0.02360063076264115,
+            0.00021162493650880924
+          ],
+          "coarse_energy": [
+            0.0,
+            0.039636326076484714,
+            0.02171957756661201,
+            0.000207105501606623
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03360261289898819,
+            0.026786125967940794,
+            0.0002513126507547029
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 20606,
+            "hardband_near_threshold": 752,
+            "boundary_sources": 111
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 20524,
+            "hardband_near_threshold": 735,
+            "boundary_sources": 110
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2849259,
+            2849260
+          ],
+          "energy": [
+            0.0,
+            0.04258074821688946,
+            0.01816561813637791,
+            0.00022605394918795356
+          ],
+          "coarse_energy": [
+            0.0,
+            0.047168980571911934,
+            0.016667450328512523,
+            0.00022097909246564316
+          ],
+          "same_sample_square_diagnostic": [
+            1.652591658973568e-07,
+            0.04174878673443632,
+            0.019506729451380947,
+            0.00026501416180414077
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 19860,
+            "hardband_near_threshold": 719,
+            "boundary_sources": 126
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 19519,
+            "hardband_near_threshold": 795,
+            "boundary_sources": 103
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2849269,
+            2849270
+          ],
+          "energy": [
+            0.0,
+            0.03643488209630408,
+            0.022423784907343793,
+            0.00031281765952900754
+          ],
+          "coarse_energy": [
+            0.0,
+            0.04220676683696874,
+            0.021294970071653707,
+            0.0002984347981545919
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.042245284399617215,
+            0.024650229783261077,
+            0.0002753350558863109
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 21390,
+            "hardband_near_threshold": 803,
+            "boundary_sources": 124
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 19997,
+            "hardband_near_threshold": 692,
+            "boundary_sources": 111
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2849279,
+            2849280
+          ],
+          "energy": [
+            0.0,
+            0.03765360647643416,
+            0.02280912270092534,
+            0.0002036474148727123
+          ],
+          "coarse_energy": [
+            0.0,
+            0.04269480673470535,
+            0.021729096311385282,
+            0.0001990208936123529
+          ],
+          "same_sample_square_diagnostic": [
+            1.983109990767002e-06,
+            0.038745834422859664,
+            0.02460336169118901,
+            0.00023822806449238346
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 21289,
+            "hardband_near_threshold": 808,
+            "boundary_sources": 95
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 20997,
+            "hardband_near_threshold": 772,
+            "boundary_sources": 116
+          }
+        }
+      ]
+    },
+    {
+      "n": 32,
+      "L": 257,
+      "log10_total_atoms": 77.11785994660143,
+      "c": 0.5,
+      "log_lambda": -174.74200759190086,
+      "energy_mean": 0.02296635296592663,
+      "energy_replicate_sd": 0.0026098433618416826,
+      "approx95_MC_t_interval": [
+        0.020784469313797536,
+        0.025148236618055722
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        10.673286916659682
+      ],
+      "nested_grid_mean_abs_difference": 0.0013974664738921655,
+      "nested_grid_max_abs_difference": 0.001881053196029138,
+      "same_sample_square_diagnostic_mean": 0.02452377872821266,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2849209,
+            2849210
+          ],
+          "energy": [
+            0.0,
+            0.04454322311422103,
+            0.021294393289821606,
+            0.0003045403076401705
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05029834751544133,
+            0.019978435843252845,
+            0.00028040178972534935
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.04598442764195447,
+            0.022762790959368645,
+            0.00028128557206524006
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 21422,
+            "hardband_near_threshold": 826,
+            "boundary_sources": 119
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 21028,
+            "hardband_near_threshold": 730,
+            "boundary_sources": 116
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2849219,
+            2849220
+          ],
+          "energy": [
+            0.0,
+            0.035680121647795014,
+            0.023083863811067574,
+            0.00041617045195142946
+          ],
+          "coarse_energy": [
+            0.0,
+            0.041300698254309945,
+            0.021453401419507405,
+            0.00040248569409967087
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03691964014516029,
+            0.025170402595368232,
+            0.0005335798604761934
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19910,
+            "hardband_near_threshold": 672,
+            "boundary_sources": 110
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19985,
+            "hardband_near_threshold": 707,
+            "boundary_sources": 96
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2849229,
+            2849230
+          ],
+          "energy": [
+            0.0,
+            0.035730068258415654,
+            0.025682471894103918,
+            0.00020665797068870366
+          ],
+          "coarse_energy": [
+            0.0,
+            0.0404070685091657,
+            0.02445537341278646,
+            0.00020478218585913833
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03784467255720646,
+            0.0259494479639261,
+            0.00026239878387344283
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19887,
+            "hardband_near_threshold": 716,
+            "boundary_sources": 114
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 20159,
+            "hardband_near_threshold": 718,
+            "boundary_sources": 89
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2849239,
+            2849240
+          ],
+          "energy": [
+            0.0,
+            0.03627649412459178,
+            0.026670938225131748,
+            0.00048336476247734137
+          ],
+          "coarse_energy": [
+            0.0,
+            0.04141808219859338,
+            0.02525278698256548,
+            0.00048181183584063516
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03600949901795712,
+            0.026761141413266486,
+            0.0005781834881481544
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 20732,
+            "hardband_near_threshold": 730,
+            "boundary_sources": 103
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 21035,
+            "hardband_near_threshold": 685,
+            "boundary_sources": 113
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2849249,
+            2849250
+          ],
+          "energy": [
+            0.0,
+            0.035387143383703606,
+            0.02360063076264115,
+            0.00021162493650880924
+          ],
+          "coarse_energy": [
+            0.0,
+            0.039636326076484714,
+            0.02171957756661201,
+            0.000207105501606623
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03360261289898819,
+            0.026786125967940794,
+            0.0002513126507547029
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 20606,
+            "hardband_near_threshold": 752,
+            "boundary_sources": 111
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 20524,
+            "hardband_near_threshold": 735,
+            "boundary_sources": 110
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2849259,
+            2849260
+          ],
+          "energy": [
+            0.0,
+            0.04258074821688946,
+            0.01816561813637791,
+            0.00022605394918795356
+          ],
+          "coarse_energy": [
+            0.0,
+            0.047168980571911934,
+            0.016667450328512523,
+            0.00022097909246564316
+          ],
+          "same_sample_square_diagnostic": [
+            1.652591658973568e-07,
+            0.04174878673443632,
+            0.019506729451380947,
+            0.00026501416180414077
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 19860,
+            "hardband_near_threshold": 719,
+            "boundary_sources": 126
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 19519,
+            "hardband_near_threshold": 795,
+            "boundary_sources": 103
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2849269,
+            2849270
+          ],
+          "energy": [
+            0.0,
+            0.03643488209630408,
+            0.022423784907343793,
+            0.00031281765952900754
+          ],
+          "coarse_energy": [
+            0.0,
+            0.04220676683696874,
+            0.021294970071653707,
+            0.0002984347981545919
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.042245284399617215,
+            0.024650229783261077,
+            0.0002753350558863109
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 21390,
+            "hardband_near_threshold": 803,
+            "boundary_sources": 124
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 19997,
+            "hardband_near_threshold": 692,
+            "boundary_sources": 111
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2849279,
+            2849280
+          ],
+          "energy": [
+            0.0,
+            0.03765360647643416,
+            0.02280912270092534,
+            0.0002036474148727123
+          ],
+          "coarse_energy": [
+            0.0,
+            0.04269480673470535,
+            0.021729096311385282,
+            0.0001990208936123529
+          ],
+          "same_sample_square_diagnostic": [
+            1.983109990767002e-06,
+            0.038745834422859664,
+            0.02460336169118901,
+            0.00023822806449238346
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 21289,
+            "hardband_near_threshold": 808,
+            "boundary_sources": 95
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 20997,
+            "hardband_near_threshold": 772,
+            "boundary_sources": 116
+          }
+        }
+      ]
+    },
+    {
+      "n": 32,
+      "L": 257,
+      "log10_total_atoms": 77.11785994660143,
+      "c": 1.0,
+      "log_lambda": -171.91358046715467,
+      "energy_mean": 0.00029560968160701595,
+      "energy_replicate_sd": 0.00010584600878090897,
+      "approx95_MC_t_interval": [
+        0.00020712020381735723,
+        0.0003840991593966747
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        10.650616173375363
+      ],
+      "nested_grid_mean_abs_difference": 8.731957686515372e-06,
+      "nested_grid_max_abs_difference": 2.4138517914821156e-05,
+      "same_sample_square_diagnostic_mean": 0.0003356672046875711,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2849209,
+            2849210
+          ],
+          "energy": [
+            0.0,
+            0.04454322311422103,
+            0.021294393289821606,
+            0.0003045403076401705
+          ],
+          "coarse_energy": [
+            0.0,
+            0.05029834751544133,
+            0.019978435843252845,
+            0.00028040178972534935
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.04598442764195447,
+            0.022762790959368645,
+            0.00028128557206524006
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 21422,
+            "hardband_near_threshold": 826,
+            "boundary_sources": 119
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 21028,
+            "hardband_near_threshold": 730,
+            "boundary_sources": 116
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2849219,
+            2849220
+          ],
+          "energy": [
+            0.0,
+            0.035680121647795014,
+            0.023083863811067574,
+            0.00041617045195142946
+          ],
+          "coarse_energy": [
+            0.0,
+            0.041300698254309945,
+            0.021453401419507405,
+            0.00040248569409967087
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03691964014516029,
+            0.025170402595368232,
+            0.0005335798604761934
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19910,
+            "hardband_near_threshold": 672,
+            "boundary_sources": 110
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19985,
+            "hardband_near_threshold": 707,
+            "boundary_sources": 96
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2849229,
+            2849230
+          ],
+          "energy": [
+            0.0,
+            0.035730068258415654,
+            0.025682471894103918,
+            0.00020665797068870366
+          ],
+          "coarse_energy": [
+            0.0,
+            0.0404070685091657,
+            0.02445537341278646,
+            0.00020478218585913833
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03784467255720646,
+            0.0259494479639261,
+            0.00026239878387344283
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19887,
+            "hardband_near_threshold": 716,
+            "boundary_sources": 114
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 20159,
+            "hardband_near_threshold": 718,
+            "boundary_sources": 89
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2849239,
+            2849240
+          ],
+          "energy": [
+            0.0,
+            0.03627649412459178,
+            0.026670938225131748,
+            0.00048336476247734137
+          ],
+          "coarse_energy": [
+            0.0,
+            0.04141808219859338,
+            0.02525278698256548,
+            0.00048181183584063516
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03600949901795712,
+            0.026761141413266486,
+            0.0005781834881481544
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 20732,
+            "hardband_near_threshold": 730,
+            "boundary_sources": 103
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 21035,
+            "hardband_near_threshold": 685,
+            "boundary_sources": 113
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2849249,
+            2849250
+          ],
+          "energy": [
+            0.0,
+            0.035387143383703606,
+            0.02360063076264115,
+            0.00021162493650880924
+          ],
+          "coarse_energy": [
+            0.0,
+            0.039636326076484714,
+            0.02171957756661201,
+            0.000207105501606623
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03360261289898819,
+            0.026786125967940794,
+            0.0002513126507547029
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 20606,
+            "hardband_near_threshold": 752,
+            "boundary_sources": 111
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 20524,
+            "hardband_near_threshold": 735,
+            "boundary_sources": 110
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2849259,
+            2849260
+          ],
+          "energy": [
+            0.0,
+            0.04258074821688946,
+            0.01816561813637791,
+            0.00022605394918795356
+          ],
+          "coarse_energy": [
+            0.0,
+            0.047168980571911934,
+            0.016667450328512523,
+            0.00022097909246564316
+          ],
+          "same_sample_square_diagnostic": [
+            1.652591658973568e-07,
+            0.04174878673443632,
+            0.019506729451380947,
+            0.00026501416180414077
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 19860,
+            "hardband_near_threshold": 719,
+            "boundary_sources": 126
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 19519,
+            "hardband_near_threshold": 795,
+            "boundary_sources": 103
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2849269,
+            2849270
+          ],
+          "energy": [
+            0.0,
+            0.03643488209630408,
+            0.022423784907343793,
+            0.00031281765952900754
+          ],
+          "coarse_energy": [
+            0.0,
+            0.04220676683696874,
+            0.021294970071653707,
+            0.0002984347981545919
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.042245284399617215,
+            0.024650229783261077,
+            0.0002753350558863109
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 21390,
+            "hardband_near_threshold": 803,
+            "boundary_sources": 124
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 19997,
+            "hardband_near_threshold": 692,
+            "boundary_sources": 111
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2849279,
+            2849280
+          ],
+          "energy": [
+            0.0,
+            0.03765360647643416,
+            0.02280912270092534,
+            0.0002036474148727123
+          ],
+          "coarse_energy": [
+            0.0,
+            0.04269480673470535,
+            0.021729096311385282,
+            0.0001990208936123529
+          ],
+          "same_sample_square_diagnostic": [
+            1.983109990767002e-06,
+            0.038745834422859664,
+            0.02460336169118901,
+            0.00023822806449238346
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 21289,
+            "hardband_near_threshold": 808,
+            "boundary_sources": 95
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 20997,
+            "hardband_near_threshold": 772,
+            "boundary_sources": 116
+          }
+        }
+      ]
+    },
+    {
+      "n": 128,
+      "L": 257,
+      "log10_total_atoms": 308.4714397864057,
+      "c": -0.5,
+      "log_lambda": -715.9385931160806,
+      "energy_mean": 0.0,
+      "energy_replicate_sd": 0.0,
+      "approx95_MC_t_interval": [
+        0.0,
+        0.0
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        42.60128225477502
+      ],
+      "nested_grid_mean_abs_difference": 0.0,
+      "nested_grid_max_abs_difference": 0.0,
+      "same_sample_square_diagnostic_mean": 0.0,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2945209,
+            2945210
+          ],
+          "energy": [
+            0.0,
+            0.029403019354567593,
+            0.023694963265428567,
+            0.005120171740430519
+          ],
+          "coarse_energy": [
+            0.0,
+            0.030904667707610696,
+            0.0243996363953915,
+            0.0047079142072763164
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.028155924883100845,
+            0.025346372075869737,
+            0.005109695516657922
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 19417,
+            "hardband_near_threshold": 734,
+            "boundary_sources": 335
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19084,
+            "hardband_near_threshold": 749,
+            "boundary_sources": 326
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2945219,
+            2945220
+          ],
+          "energy": [
+            0.0,
+            0.03264496084205383,
+            0.020719602156120905,
+            0.004789821651535392
+          ],
+          "coarse_energy": [
+            0.0,
+            0.03112914770828594,
+            0.020265573373059325,
+            0.004449152158118033
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.0330702017194619,
+            0.021429471721496125,
+            0.006899455723871654
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 18557,
+            "hardband_near_threshold": 753,
+            "boundary_sources": 330
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2040,
+            "winner_near_r": 19039,
+            "hardband_near_threshold": 765,
+            "boundary_sources": 306
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2945229,
+            2945230
+          ],
+          "energy": [
+            0.0,
+            0.030802643594371463,
+            0.022680923692667776,
+            0.005400644135717855
+          ],
+          "coarse_energy": [
+            0.0,
+            0.02949139011150008,
+            0.023224147399509197,
+            0.004815814050207793
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.029061959171401294,
+            0.022691923630794274,
+            0.006374671221041711
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19434,
+            "hardband_near_threshold": 691,
+            "boundary_sources": 320
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 19953,
+            "hardband_near_threshold": 703,
+            "boundary_sources": 314
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2945239,
+            2945240
+          ],
+          "energy": [
+            0.0,
+            0.030130156247477186,
+            0.023245682870034846,
+            0.004419686627748413
+          ],
+          "coarse_energy": [
+            0.0,
+            0.029920035171180973,
+            0.02333142552015522,
+            0.004063019255629847
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03126525827675691,
+            0.0226383413217551,
+            0.004605351733684914
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 18578,
+            "hardband_near_threshold": 774,
+            "boundary_sources": 338
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 19271,
+            "hardband_near_threshold": 711,
+            "boundary_sources": 324
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2945249,
+            2945250
+          ],
+          "energy": [
+            0.0,
+            0.029651836437522203,
+            0.02436295770541818,
+            0.005494546479330963
+          ],
+          "coarse_energy": [
+            0.0,
+            0.029796583543647406,
+            0.024288703280636398,
+            0.005038412759063534
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03014137373991915,
+            0.025478674221526533,
+            0.005657053990339137
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2047,
+            "winner_near_r": 19470,
+            "hardband_near_threshold": 709,
+            "boundary_sources": 316
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 19377,
+            "hardband_near_threshold": 696,
+            "boundary_sources": 334
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2945259,
+            2945260
+          ],
+          "energy": [
+            0.0,
+            0.03049871005883152,
+            0.024804364913434844,
+            0.004969906174668261
+          ],
+          "coarse_energy": [
+            0.0,
+            0.029722822857269078,
+            0.024589006830476056,
+            0.004455207925720638
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.029116052318435483,
+            0.026826674815023703,
+            0.006379188857724836
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 19500,
+            "hardband_near_threshold": 717,
+            "boundary_sources": 313
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19559,
+            "hardband_near_threshold": 767,
+            "boundary_sources": 313
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2945269,
+            2945270
+          ],
+          "energy": [
+            0.0,
+            0.0273861073185796,
+            0.020754504957911226,
+            0.004786223134836454
+          ],
+          "coarse_energy": [
+            0.0,
+            0.027903462568801607,
+            0.021035572952337062,
+            0.004443960751298559
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.030549848265966215,
+            0.021766596139301812,
+            0.006118935015828166
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2035,
+            "winner_near_r": 18498,
+            "hardband_near_threshold": 698,
+            "boundary_sources": 331
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 18103,
+            "hardband_near_threshold": 705,
+            "boundary_sources": 351
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2945279,
+            2945280
+          ],
+          "energy": [
+            0.0,
+            0.03612385370819911,
+            0.023011139161255835,
+            0.0056231071740583125
+          ],
+          "coarse_energy": [
+            0.0,
+            0.03540998142614565,
+            0.02250501906710705,
+            0.004867077407846131
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03312513972644954,
+            0.027726671232587922,
+            0.006642907533374874
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 19233,
+            "hardband_near_threshold": 713,
+            "boundary_sources": 319
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 18763,
+            "hardband_near_threshold": 797,
+            "boundary_sources": 329
+          }
+        }
+      ]
+    },
+    {
+      "n": 128,
+      "L": 257,
+      "log10_total_atoms": 308.4714397864057,
+      "c": 0.0,
+      "log_lambda": -710.2817388665882,
+      "energy_mean": 0.030830160945200313,
+      "energy_replicate_sd": 0.0025968110210767286,
+      "approx95_MC_t_interval": [
+        0.028659172602605795,
+        0.03300114928779483
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        42.63211241572022
+      ],
+      "nested_grid_mean_abs_difference": 0.000836337235742713,
+      "nested_grid_max_abs_difference": 0.0015158131337678904,
+      "same_sample_square_diagnostic_mean": 0.030560719762686414,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2945209,
+            2945210
+          ],
+          "energy": [
+            0.0,
+            0.029403019354567593,
+            0.023694963265428567,
+            0.005120171740430519
+          ],
+          "coarse_energy": [
+            0.0,
+            0.030904667707610696,
+            0.0243996363953915,
+            0.0047079142072763164
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.028155924883100845,
+            0.025346372075869737,
+            0.005109695516657922
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 19417,
+            "hardband_near_threshold": 734,
+            "boundary_sources": 335
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19084,
+            "hardband_near_threshold": 749,
+            "boundary_sources": 326
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2945219,
+            2945220
+          ],
+          "energy": [
+            0.0,
+            0.03264496084205383,
+            0.020719602156120905,
+            0.004789821651535392
+          ],
+          "coarse_energy": [
+            0.0,
+            0.03112914770828594,
+            0.020265573373059325,
+            0.004449152158118033
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.0330702017194619,
+            0.021429471721496125,
+            0.006899455723871654
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 18557,
+            "hardband_near_threshold": 753,
+            "boundary_sources": 330
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2040,
+            "winner_near_r": 19039,
+            "hardband_near_threshold": 765,
+            "boundary_sources": 306
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2945229,
+            2945230
+          ],
+          "energy": [
+            0.0,
+            0.030802643594371463,
+            0.022680923692667776,
+            0.005400644135717855
+          ],
+          "coarse_energy": [
+            0.0,
+            0.02949139011150008,
+            0.023224147399509197,
+            0.004815814050207793
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.029061959171401294,
+            0.022691923630794274,
+            0.006374671221041711
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19434,
+            "hardband_near_threshold": 691,
+            "boundary_sources": 320
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 19953,
+            "hardband_near_threshold": 703,
+            "boundary_sources": 314
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2945239,
+            2945240
+          ],
+          "energy": [
+            0.0,
+            0.030130156247477186,
+            0.023245682870034846,
+            0.004419686627748413
+          ],
+          "coarse_energy": [
+            0.0,
+            0.029920035171180973,
+            0.02333142552015522,
+            0.004063019255629847
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03126525827675691,
+            0.0226383413217551,
+            0.004605351733684914
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 18578,
+            "hardband_near_threshold": 774,
+            "boundary_sources": 338
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 19271,
+            "hardband_near_threshold": 711,
+            "boundary_sources": 324
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2945249,
+            2945250
+          ],
+          "energy": [
+            0.0,
+            0.029651836437522203,
+            0.02436295770541818,
+            0.005494546479330963
+          ],
+          "coarse_energy": [
+            0.0,
+            0.029796583543647406,
+            0.024288703280636398,
+            0.005038412759063534
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03014137373991915,
+            0.025478674221526533,
+            0.005657053990339137
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2047,
+            "winner_near_r": 19470,
+            "hardband_near_threshold": 709,
+            "boundary_sources": 316
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 19377,
+            "hardband_near_threshold": 696,
+            "boundary_sources": 334
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2945259,
+            2945260
+          ],
+          "energy": [
+            0.0,
+            0.03049871005883152,
+            0.024804364913434844,
+            0.004969906174668261
+          ],
+          "coarse_energy": [
+            0.0,
+            0.029722822857269078,
+            0.024589006830476056,
+            0.004455207925720638
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.029116052318435483,
+            0.026826674815023703,
+            0.006379188857724836
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 19500,
+            "hardband_near_threshold": 717,
+            "boundary_sources": 313
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19559,
+            "hardband_near_threshold": 767,
+            "boundary_sources": 313
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2945269,
+            2945270
+          ],
+          "energy": [
+            0.0,
+            0.0273861073185796,
+            0.020754504957911226,
+            0.004786223134836454
+          ],
+          "coarse_energy": [
+            0.0,
+            0.027903462568801607,
+            0.021035572952337062,
+            0.004443960751298559
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.030549848265966215,
+            0.021766596139301812,
+            0.006118935015828166
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2035,
+            "winner_near_r": 18498,
+            "hardband_near_threshold": 698,
+            "boundary_sources": 331
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 18103,
+            "hardband_near_threshold": 705,
+            "boundary_sources": 351
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2945279,
+            2945280
+          ],
+          "energy": [
+            0.0,
+            0.03612385370819911,
+            0.023011139161255835,
+            0.0056231071740583125
+          ],
+          "coarse_energy": [
+            0.0,
+            0.03540998142614565,
+            0.02250501906710705,
+            0.004867077407846131
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03312513972644954,
+            0.027726671232587922,
+            0.006642907533374874
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 19233,
+            "hardband_near_threshold": 713,
+            "boundary_sources": 319
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 18763,
+            "hardband_near_threshold": 797,
+            "boundary_sources": 329
+          }
+        }
+      ]
+    },
+    {
+      "n": 128,
+      "L": 257,
+      "log10_total_atoms": 308.4714397864057,
+      "c": 0.5,
+      "log_lambda": -704.6248846170957,
+      "energy_mean": 0.02290926734028402,
+      "energy_replicate_sd": 0.0015087959824893527,
+      "approx95_MC_t_interval": [
+        0.021647882332768282,
+        0.02417065234779976
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        42.624191522115304
+      ],
+      "nested_grid_mean_abs_difference": 0.0003580586082876872,
+      "nested_grid_max_abs_difference": 0.0007046731299629322,
+      "same_sample_square_diagnostic_mean": 0.024238090644794402,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2945209,
+            2945210
+          ],
+          "energy": [
+            0.0,
+            0.029403019354567593,
+            0.023694963265428567,
+            0.005120171740430519
+          ],
+          "coarse_energy": [
+            0.0,
+            0.030904667707610696,
+            0.0243996363953915,
+            0.0047079142072763164
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.028155924883100845,
+            0.025346372075869737,
+            0.005109695516657922
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 19417,
+            "hardband_near_threshold": 734,
+            "boundary_sources": 335
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19084,
+            "hardband_near_threshold": 749,
+            "boundary_sources": 326
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2945219,
+            2945220
+          ],
+          "energy": [
+            0.0,
+            0.03264496084205383,
+            0.020719602156120905,
+            0.004789821651535392
+          ],
+          "coarse_energy": [
+            0.0,
+            0.03112914770828594,
+            0.020265573373059325,
+            0.004449152158118033
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.0330702017194619,
+            0.021429471721496125,
+            0.006899455723871654
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 18557,
+            "hardband_near_threshold": 753,
+            "boundary_sources": 330
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2040,
+            "winner_near_r": 19039,
+            "hardband_near_threshold": 765,
+            "boundary_sources": 306
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2945229,
+            2945230
+          ],
+          "energy": [
+            0.0,
+            0.030802643594371463,
+            0.022680923692667776,
+            0.005400644135717855
+          ],
+          "coarse_energy": [
+            0.0,
+            0.02949139011150008,
+            0.023224147399509197,
+            0.004815814050207793
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.029061959171401294,
+            0.022691923630794274,
+            0.006374671221041711
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19434,
+            "hardband_near_threshold": 691,
+            "boundary_sources": 320
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 19953,
+            "hardband_near_threshold": 703,
+            "boundary_sources": 314
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2945239,
+            2945240
+          ],
+          "energy": [
+            0.0,
+            0.030130156247477186,
+            0.023245682870034846,
+            0.004419686627748413
+          ],
+          "coarse_energy": [
+            0.0,
+            0.029920035171180973,
+            0.02333142552015522,
+            0.004063019255629847
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03126525827675691,
+            0.0226383413217551,
+            0.004605351733684914
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 18578,
+            "hardband_near_threshold": 774,
+            "boundary_sources": 338
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 19271,
+            "hardband_near_threshold": 711,
+            "boundary_sources": 324
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2945249,
+            2945250
+          ],
+          "energy": [
+            0.0,
+            0.029651836437522203,
+            0.02436295770541818,
+            0.005494546479330963
+          ],
+          "coarse_energy": [
+            0.0,
+            0.029796583543647406,
+            0.024288703280636398,
+            0.005038412759063534
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03014137373991915,
+            0.025478674221526533,
+            0.005657053990339137
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2047,
+            "winner_near_r": 19470,
+            "hardband_near_threshold": 709,
+            "boundary_sources": 316
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 19377,
+            "hardband_near_threshold": 696,
+            "boundary_sources": 334
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2945259,
+            2945260
+          ],
+          "energy": [
+            0.0,
+            0.03049871005883152,
+            0.024804364913434844,
+            0.004969906174668261
+          ],
+          "coarse_energy": [
+            0.0,
+            0.029722822857269078,
+            0.024589006830476056,
+            0.004455207925720638
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.029116052318435483,
+            0.026826674815023703,
+            0.006379188857724836
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 19500,
+            "hardband_near_threshold": 717,
+            "boundary_sources": 313
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19559,
+            "hardband_near_threshold": 767,
+            "boundary_sources": 313
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2945269,
+            2945270
+          ],
+          "energy": [
+            0.0,
+            0.0273861073185796,
+            0.020754504957911226,
+            0.004786223134836454
+          ],
+          "coarse_energy": [
+            0.0,
+            0.027903462568801607,
+            0.021035572952337062,
+            0.004443960751298559
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.030549848265966215,
+            0.021766596139301812,
+            0.006118935015828166
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2035,
+            "winner_near_r": 18498,
+            "hardband_near_threshold": 698,
+            "boundary_sources": 331
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 18103,
+            "hardband_near_threshold": 705,
+            "boundary_sources": 351
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2945279,
+            2945280
+          ],
+          "energy": [
+            0.0,
+            0.03612385370819911,
+            0.023011139161255835,
+            0.0056231071740583125
+          ],
+          "coarse_energy": [
+            0.0,
+            0.03540998142614565,
+            0.02250501906710705,
+            0.004867077407846131
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03312513972644954,
+            0.027726671232587922,
+            0.006642907533374874
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 19233,
+            "hardband_near_threshold": 713,
+            "boundary_sources": 319
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 18763,
+            "hardband_near_threshold": 797,
+            "boundary_sources": 329
+          }
+        }
+      ]
+    },
+    {
+      "n": 128,
+      "L": 257,
+      "log10_total_atoms": 308.4714397864057,
+      "c": 1.0,
+      "log_lambda": -698.9680303676034,
+      "energy_mean": 0.005075513389790771,
+      "energy_replicate_sd": 0.000412262451001928,
+      "approx95_MC_t_interval": [
+        0.004730853355637218,
+        0.0054201734239443244
+      ],
+      "hoeffding95_grid_interval": [
+        0.0,
+        42.60635776816481
+      ],
+      "nested_grid_mean_abs_difference": 0.0004704435753956647,
+      "nested_grid_max_abs_difference": 0.0007560297662121815,
+      "same_sample_square_diagnostic_mean": 0.005973407449065401,
+      "replicate_data": [
+        {
+          "replicate": 0,
+          "seeds": [
+            2945209,
+            2945210
+          ],
+          "energy": [
+            0.0,
+            0.029403019354567593,
+            0.023694963265428567,
+            0.005120171740430519
+          ],
+          "coarse_energy": [
+            0.0,
+            0.030904667707610696,
+            0.0243996363953915,
+            0.0047079142072763164
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.028155924883100845,
+            0.025346372075869737,
+            0.005109695516657922
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 19417,
+            "hardband_near_threshold": 734,
+            "boundary_sources": 335
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19084,
+            "hardband_near_threshold": 749,
+            "boundary_sources": 326
+          }
+        },
+        {
+          "replicate": 1,
+          "seeds": [
+            2945219,
+            2945220
+          ],
+          "energy": [
+            0.0,
+            0.03264496084205383,
+            0.020719602156120905,
+            0.004789821651535392
+          ],
+          "coarse_energy": [
+            0.0,
+            0.03112914770828594,
+            0.020265573373059325,
+            0.004449152158118033
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.0330702017194619,
+            0.021429471721496125,
+            0.006899455723871654
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2041,
+            "winner_near_r": 18557,
+            "hardband_near_threshold": 753,
+            "boundary_sources": 330
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2040,
+            "winner_near_r": 19039,
+            "hardband_near_threshold": 765,
+            "boundary_sources": 306
+          }
+        },
+        {
+          "replicate": 2,
+          "seeds": [
+            2945229,
+            2945230
+          ],
+          "energy": [
+            0.0,
+            0.030802643594371463,
+            0.022680923692667776,
+            0.005400644135717855
+          ],
+          "coarse_energy": [
+            0.0,
+            0.02949139011150008,
+            0.023224147399509197,
+            0.004815814050207793
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.029061959171401294,
+            0.022691923630794274,
+            0.006374671221041711
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19434,
+            "hardband_near_threshold": 691,
+            "boundary_sources": 320
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2038,
+            "winner_near_r": 19953,
+            "hardband_near_threshold": 703,
+            "boundary_sources": 314
+          }
+        },
+        {
+          "replicate": 3,
+          "seeds": [
+            2945239,
+            2945240
+          ],
+          "energy": [
+            0.0,
+            0.030130156247477186,
+            0.023245682870034846,
+            0.004419686627748413
+          ],
+          "coarse_energy": [
+            0.0,
+            0.029920035171180973,
+            0.02333142552015522,
+            0.004063019255629847
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03126525827675691,
+            0.0226383413217551,
+            0.004605351733684914
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 18578,
+            "hardband_near_threshold": 774,
+            "boundary_sources": 338
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 19271,
+            "hardband_near_threshold": 711,
+            "boundary_sources": 324
+          }
+        },
+        {
+          "replicate": 4,
+          "seeds": [
+            2945249,
+            2945250
+          ],
+          "energy": [
+            0.0,
+            0.029651836437522203,
+            0.02436295770541818,
+            0.005494546479330963
+          ],
+          "coarse_energy": [
+            0.0,
+            0.029796583543647406,
+            0.024288703280636398,
+            0.005038412759063534
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03014137373991915,
+            0.025478674221526533,
+            0.005657053990339137
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2047,
+            "winner_near_r": 19470,
+            "hardband_near_threshold": 709,
+            "boundary_sources": 316
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2046,
+            "winner_near_r": 19377,
+            "hardband_near_threshold": 696,
+            "boundary_sources": 334
+          }
+        },
+        {
+          "replicate": 5,
+          "seeds": [
+            2945259,
+            2945260
+          ],
+          "energy": [
+            0.0,
+            0.03049871005883152,
+            0.024804364913434844,
+            0.004969906174668261
+          ],
+          "coarse_energy": [
+            0.0,
+            0.029722822857269078,
+            0.024589006830476056,
+            0.004455207925720638
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.029116052318435483,
+            0.026826674815023703,
+            0.006379188857724836
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2043,
+            "winner_near_r": 19500,
+            "hardband_near_threshold": 717,
+            "boundary_sources": 313
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2042,
+            "winner_near_r": 19559,
+            "hardband_near_threshold": 767,
+            "boundary_sources": 313
+          }
+        },
+        {
+          "replicate": 6,
+          "seeds": [
+            2945269,
+            2945270
+          ],
+          "energy": [
+            0.0,
+            0.0273861073185796,
+            0.020754504957911226,
+            0.004786223134836454
+          ],
+          "coarse_energy": [
+            0.0,
+            0.027903462568801607,
+            0.021035572952337062,
+            0.004443960751298559
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.030549848265966215,
+            0.021766596139301812,
+            0.006118935015828166
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2035,
+            "winner_near_r": 18498,
+            "hardband_near_threshold": 698,
+            "boundary_sources": 331
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2039,
+            "winner_near_r": 18103,
+            "hardband_near_threshold": 705,
+            "boundary_sources": 351
+          }
+        },
+        {
+          "replicate": 7,
+          "seeds": [
+            2945279,
+            2945280
+          ],
+          "energy": [
+            0.0,
+            0.03612385370819911,
+            0.023011139161255835,
+            0.0056231071740583125
+          ],
+          "coarse_energy": [
+            0.0,
+            0.03540998142614565,
+            0.02250501906710705,
+            0.004867077407846131
+          ],
+          "same_sample_square_diagnostic": [
+            0.0,
+            0.03312513972644954,
+            0.027726671232587922,
+            0.006642907533374874
+          ],
+          "screens_a": {
+            "arrivals_near_window_endpoint": 2044,
+            "winner_near_r": 19233,
+            "hardband_near_threshold": 713,
+            "boundary_sources": 319
+          },
+          "screens_b": {
+            "arrivals_near_window_endpoint": 2045,
+            "winner_near_r": 18763,
+            "hardband_near_threshold": 797,
+            "boundary_sources": 329
+          }
+        }
+      ]
+    }
+  ]
+}

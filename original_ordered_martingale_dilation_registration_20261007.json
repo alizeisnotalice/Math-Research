@@ -1,0 +1,16 @@
+{
+  "status": "registered_before_execution",
+  "scope": "Exact algebra guards for the original Fourier multiplier identities and the universal finite-filtration projection/thinning identities. Finite filtration is not an original G_c spatial sample, saturated-obstacle example, actual FIRST/geom sample, or weak endpoint proof.",
+  "rounds": [
+    {"dimension_for_tensor_symbol": 4, "filtration_levels": 3, "terminal_atoms": 16},
+    {"dimension_for_tensor_symbol": 16, "filtration_levels": 6, "terminal_atoms": 128},
+    {"dimension_for_tensor_symbol": 64, "filtration_levels": 9, "terminal_atoms": 1024}
+  ],
+  "spectral_q_values": ["0", "1", "3", "31", "255"],
+  "r_nodes": "0, 1/(n+1), 1/3, 2/3, 1",
+  "source": "In the algebra-only filtration guard the complete nonnegative terminal function is fixed before evaluation, positive on odd terminal indices and zero on even indices; the receiver partition uses only even indices.",
+  "receiver_selector": "Fixed partition of exterior even indices by 1+(index//2)%J, not optimized after seeing data.",
+  "arithmetic": "Python Fraction exact rational arithmetic; no FFT, Monte Carlo, tolerance, confidence interval, or original-kernel space approximation.",
+  "checks": ["Bernstein increment derivative signs at registered rational q", "tensor K logarithmic derivative identity", "increment composition on squared P symbols", "conditional projection tower identity", "zero source/receiver product conditional covariance identity", "reverse-adapted random stopping thinning", "source-once stopped mass", "exact residual overlap and pair-overlap upper bound"],
+  "no_reruns": "Does not import or execute previous entropy/spike/TV guards. The unbounded saturated-source entropy example is only an existing applicability boundary, with no new numerical experiment."
+}

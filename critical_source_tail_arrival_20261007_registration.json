@@ -1,0 +1,47 @@
+{
+  "registered_before_execution": true,
+  "model": "gpt-6.1-sol high",
+  "scope": "Continuous [1,2] full positive atomic-mixture arrival oracle and source-cone-relative tilt proof; bounded exact rational original-space cross-checks only. No large source-tail MC in this registration.",
+  "common_source": {
+    "n_values": [4,16,64],
+    "half_width": "A=16n",
+    "resolutions_k": [1,2,4,8],
+    "component_weights": ["1/2","1/6","1/6","1/6"],
+    "each_component": "Complete n-dimensional tensor uniform grid {m/k:-Ak<=m<=Ak}; q_k=2Ak+1, each atom mass q_k^-n. Coincident physical atoms sum in full mixture.",
+    "W": "1",
+    "source_size_scope": "Every component has the same n; fixed four layers across dimensions. No source-label dimension substitution."
+  },
+  "critical_threshold": {
+    "reference_component": "k=1, weight=1/2",
+    "reference_R": "3/2; m=1,theta=1/2",
+    "reference_probability": "Under interior uniform Lebesgue lattice phase, high coordinate count is Bernoulli(1/2); this is not the source-cone prior or the full-mixture winner law.",
+    "rule": "t_n=min{t>n/2: exact P(Bin(n,1/2)>=t)<=1/n^2}",
+    "tau": "(1/2)*(32n+1)^(-n)*(3/2)^(-n)*2^t_n",
+    "round_parameters": [
+      {"n":4,"t_n":4,"binomial_tail":"1/16","tilt_odds_T":"8","seed":710081},
+      {"n":16,"t_n":14,"binomial_tail":"137/65536","tilt_odds_T":"7","seed":710082},
+      {"n":64,"t_n":47,"binomial_tail":"2092620625940629/18446744073709551616","tilt_odds_T":"47/17","seed":710083}
+    ],
+    "no_componentwise_max": "Threshold uses a reference count map, but every oracle response, winner and M>tau decision uses the full mixture. Other components may change the actual critical regime; record rather than assert it."
+  },
+  "arrival_oracle": "Include R=1,2 and all coordinate arrivals 2|x_i-m/k| in (1,2]; deduplicate exact Fraction radii, group all simultaneous component/coordinate multiplicities, update counts first, then evaluate full mixture mass/R^n. Candidate completeness analytic; do not use a radius grid.",
+  "tilt": {
+    "base_mixture_eta":"1/4",
+    "coordinates":"Condition on source y, shell radius r, face/sign; tilt only the n-1 free coordinates. Core uses all n coordinates and its fixed cube1 prior.",
+    "high_set":"Actual finite reference-grid centers whose closed reference-R interval contains two atoms; partition free-coordinate range at real lattice arrival center endpoints.",
+    "probability":"p_i is exact prior length of the actual high set, including finite-body boundaries; Z_i=1-p_i+p_i*T",
+    "density_ratio":"tilted/base=T^(sum high)/product Z_i; mixture/base=eta+(1-eta)*tilted/base",
+    "RN":"base/mixture=1/[eta+(1-eta)*T^(sum high)/product Z_i], positive and <=1/eta=4",
+    "claim":"Real receiver-cone prior RN; no conditional uniform mask assumption, no source probability as volume."
+  },
+  "bounded_three_round_tests": {
+    "continuous_oracle_receivers_per_round":8,
+    "receiver_types":"Four rational face-cone receivers with many exact ties, four rational receivers with prime denominators to separate arrivals; record all exact locations and candidates.",
+    "oracle_crosscheck":"Independent all-atom scalar sorted-distance implementation for n1,2,3 tiny full mixtures; at main n values independent closed count recomputation at selected actual candidates.",
+    "tilt_configs_per_round":3,
+    "tilt_crosscheck":"Actual finite high-set intervals and exact Poisson-binomial status laws; verify RN total mass, first high-count moment and registered critical count-tail identity. Not arbitrary free coins.",
+    "confidence":"No statistical CI: rational locations are implementation probes, not MC estimates of volume, I1, I2 or tail.",
+    "complexity":"O(n sum k) arrivals per receiver; sorting O(H log H); grouped integer product updates avoid complete q^n atom enumeration. Rational scores have dimension-dependent integer bit costs. Tilt high-set geometry O(n*k_ref); status-law cross-check O(n^2).",
+    "stop_rule":"Run only these bounded cross-checks after reporting registration. Do not launch large receiver/source rare-event simulation or optimize tau after results."
+  }
+}

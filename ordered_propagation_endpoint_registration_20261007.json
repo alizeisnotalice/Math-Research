@@ -1,0 +1,24 @@
+{
+  "status": "registered_before_execution",
+  "purpose": "Scope guard for a strong-L1 lower bound of the original first-event exit subsource; not a weak endpoint test or actual geom history sample",
+  "dimensions": [512, 1024, 4096],
+  "physical_scale": 1,
+  "initial_density": "uniform on [-epsilon,epsilon]^n, epsilon=1/(100*n^2), total mass 1",
+  "exit_cell": "[-1/(2*n),1/(2*n)]^n",
+  "early_cutoff": "(12+floor(log2(n)/2))/n; all three n are powers of two",
+  "receiver_channels": "one disjoint channel per nonempty visited mask, evaluated at s=|A|/n, outer coordinate cutoff n",
+  "arithmetic": "exact Python integers/Fraction; hashes store large integers without decimal serialization",
+  "claims_checked": [
+    "D_n exact full Bernstein coefficient peak sum",
+    "original w peak/tail coarse probability floor is consistent with epsilon",
+    "first-event omitted source upper mass is late probability plus 2/n",
+    "strong potential lower is at least (D_n-1)/32",
+    "strong potential lower squared is at least n/128^2"
+  ],
+  "not_checked": [
+    "No numerical sampling or interval evaluation of G_c",
+    "No full actual FIRST, CPGP, hardwinner, hardband or source history certification",
+    "No claim against polylog weak(1,1)",
+    "No rerun of old D_n experiments"
+  ]
+}

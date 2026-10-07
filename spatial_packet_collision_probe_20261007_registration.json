@@ -1,0 +1,101 @@
+{
+  "bernoulli": "One independent fair etaC per complete cell, nu=2*sum etaC*muC; captured cells determine V=2*sum piC*etaC-1. Exact subset integer-mass DP; unselected cells integrate out.",
+  "budget": {
+    "cases": 15,
+    "q_values": [
+      2,
+      4,
+      16
+    ],
+    "receivers": 74
+  },
+  "cells": "Fixed half-open axis grid floor(y_i/d), lower corner d*cell_index; complete cell weight includes all unselected labels and fractional coincident allocation.",
+  "d": "min(a/(8*n),(b-a)/4)",
+  "geometry": "Saved actual R/M only: eligible R<=b-2*d; closed saved D determines mR,m_(R+2d). All labels in each captured cell captured at R+2d; corner r<=R+2d; mR>tau*R^n; eligible mR>= (R/(R+2d))^n*wC and m_(R+2d)<=M*(R+2d)^n.",
+  "input_profiles": [
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/posterior_radial_age_probe_20261007_r1_small_random_n1_N4_a1_b2.json.gz",
+      "sha256": "0f023ba43a22356aaee0b4e95624934a50e65594d071725028c40f54ba741805"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/posterior_radial_age_probe_20261007_r1_small_random_n2_N7_a1_b2.json.gz",
+      "sha256": "1af17d37836d63dfcdfc432c6dd83a8f26ea2968ef566be00df03272bf2739a9"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/posterior_radial_age_probe_20261007_r1_small_random_n3_N10_a1_b2.json.gz",
+      "sha256": "e6cb153be9891e3c184b00447db529e1a222605ab74602e04c02551e79990c25"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/posterior_radial_age_probe_20261007_r2_correlated_ray_n4_N12_a1_b2.json.gz",
+      "sha256": "feed4fa2357c1d3751605b0b436a362c775407d4e232e78823bd017b98a961ba"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/posterior_radial_age_probe_20261007_r2_nested_sign_layers_n8_N16_a1_b2.json.gz",
+      "sha256": "6cdaa402178b5971bd504977e6486abe698d445e0a76d77f415c16a9b83c184b"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/posterior_radial_age_probe_20261007_r2_separated_clusters_n8_N24_a1_b2.json.gz",
+      "sha256": "f9ce2c2c3083f32205bd67e3f51784e1500f66f6c85325304e83deb05f567703"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/posterior_radial_age_probe_20261007_r2_finite_lattice_n4_N32_a1_b2.json.gz",
+      "sha256": "672a92c5282d39e7e8ddaf43180f211ab3e56956759f97f38171af834af9fe52"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/posterior_radial_age_probe_20261007_r3_large_block_layers_n16_N8_a1_b2.json.gz",
+      "sha256": "7f595f0e23a42b5f560dc22ae33d9f24348a8fa92b2f08cad528461f66ce1fd6"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/posterior_radial_age_probe_20261007_r3_large_block_layers_n16_N32_a1_b2.json.gz",
+      "sha256": "38bef70fdd149ebfa556f7e205a77aa62df4d1ee24a43a086069d6f5f16273ea"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/posterior_radial_age_probe_20261007_r3_large_block_layers_n64_N8_a1_b2.json.gz",
+      "sha256": "6b348f6f885f3cb2c5f65b8d280e76937b42880a6cb9ba5fc25797371dfb48ce"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/posterior_radial_age_probe_20261007_r3_large_block_layers_n64_N32_a1_b2.json.gz",
+      "sha256": "8846a01a5a3d58effbc1a4df9b989440bcb9835117d29808d9a11d3482b18d9a"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/posterior_radial_age_probe_20261007_r3_large_block_layers_n64_N32_a1d2_b3d2.json.gz",
+      "sha256": "aca491b2b1a3d5f097df97675a7f0b4478dd90942f4c654e94196e954b97f4b6"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/posterior_radial_age_probe_20261007_r3_large_block_layers_n256_N8_a1_b2.json.gz",
+      "sha256": "34bd9cd04627dc2a2d7944b142118af056624cf87cd7e42fe105e0bfd731888f"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/posterior_radial_age_probe_20261007_r3_large_block_layers_n256_N32_a1_b2.json.gz",
+      "sha256": "e1d6b461921790c678ae06ad1b93433b044aa68b6e2f1f90eff4fa509fd40777"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/posterior_radial_age_probe_20261007_r3_large_block_layers_n256_N32_a1_b3.json.gz",
+      "sha256": "44bd36ac947d29fd178248a5894353182560961b1622301c309701d87ea3066f"
+    }
+  ],
+  "input_registration": {
+    "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/posterior_radial_age_probe_20261007_registration.json",
+    "sha256": "830520dad13695d0a890f48932484717b60dc4e8fd1f09133abd50d23e7929f2"
+  },
+  "input_results": {
+    "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/posterior_radial_age_probe_20261007_results.json",
+    "sha256": "28e585a4c9e2f0b7baaed6c4222b614c6067946465acd156a76450bf4645d088"
+  },
+  "local_contract": "E[log(q)-log_+(q*(1+V))] <= (2+4*log(q))*chi.",
+  "log_interval": {
+    "check": "Expectation upper <= RHS lower, exact Fraction; unresolved retained if intervals overlap.",
+    "outward_dyadic_bits": 192,
+    "range_reduction": "x=2^k*t, 1<=t<2; log t=2*atanh((t-1)/(t+1))",
+    "series_terms": 100,
+    "tail_upper": "2*z^(2K+1)/((2K+1)*(1-z^2))"
+  },
+  "posterior": "piC=mu(C intersect Q_R)/mR, collision chi=sum piC^2; source allocation never renormalized cellwise.",
+  "scope": "Finite local geometry/Bernoulli guards only, not numerical validation of global 6W radial integral budget or Lebesgue coverage; no asymptotic claim.",
+  "script_sha256": "1297ec5e27227106a3efc4955ec9fae058d596142fb3eca4c32a41f0f3aaa704",
+  "seeds": "Original frozen source/receiver seeds retained; no new random samples; independent cell Bernoulli law integrated exactly by DP.",
+  "status": "registered_before_new_postprocessing",
+  "stopping": "One complete postprocessing pass through all frozen cases; all empty/top/failure branches saved; no tuning and no old oracle execution.",
+  "tau": "Per-receiver diagnostics tau=M/q, q=2,4,16. Not a common-threshold Lebesgue experiment.",
+  "utc": "2026-10-07T04:19:23.815456+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "status": "registered_before_execution",
+  "purpose": "Original G_c checks of a bounded convex entropy source-once budget and true mask edge compatibility; not a weak endpoint proof",
+  "dimensions": [8,32,128],
+  "fejer_degrees": [3,5,7],
+  "nested_phase_grids": [64,128,256],
+  "c_values": [1,0.75,0.5],
+  "lambda_values": [0.125,0.5,1,2,8],
+  "source_models": [
+    "F_d(theta)F_d(eta)",
+    "0.4 F_d(theta)F_d(eta)+0.4 F_d(theta+pi/3)F_d(eta+pi/2)+0.2 F_d(theta)"
+  ],
+  "phase_vectors": "First columns (v_i,w_i)=(1,0),(0,1); remaining columns cycle (1,1),(1,-1),(2,1),(-1,2),(0,1),(1,0)",
+  "kernel": "Original multiplier 1/[1+c B((k*v_i+l*w_i)^2)], B(z)=z/log(1+z)-1; zero frequency exact one",
+  "source_mass": "Mean 1 on the full n-torus and its two-dimensional phase Haar pushforward; no independent-source-coordinate assumption",
+  "mask_paths": "natural, reverse, and two seeded random coordinate permutations; all paths use the same source",
+  "bounded_entropy": "Phi_lambda(t)=t-lambda log(1+t/lambda), 0<=Phi<=t",
+  "claims_screened": [
+    "Each true mask edge multiplier equals the original G_i action",
+    "Integrated Jensen edge defects nonnegative within numerical screen",
+    "Each complete path telescopes to one endpoint defect <=W=1",
+    "Averaging path fees does not multiply W",
+    "Selected first/middle/last pointwise Jensen defects screened by original-symbol Fourier action",
+    "Nested-grid differences and nonnegative source response ranges"
+  ],
+  "arithmetic": "Fraction for beta edge weights; finite source Fourier responses plus double FFT/trapezoid for nonlinear Phi. Not interval arithmetic",
+  "numerical_tolerance": 1e-7,
+  "exclusions": [
+    "No use of old numerical receipts or reset kernels",
+    "No claim of all n-dimensional sources or actual geom qualification",
+    "No transfer of time-integrated entropy budget to receiver graph r_*(x)",
+    "No cube ledger fee"
+  ],
+  "seed_namespace": 202610071200
+}

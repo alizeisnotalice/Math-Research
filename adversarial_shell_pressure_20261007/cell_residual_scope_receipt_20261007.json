@@ -1,0 +1,130 @@
+{
+  "created_utc": "2026-10-06T17:45:14.775748+00:00",
+  "artifacts": [
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/adversarial_shell_pressure_20261007/cell_residual_design_20261006T174331920727Z.json",
+      "sha256": "6f81c30250c0b760f752784805a41994a8a222ca74f10fab34ccf7b6eddb63f2"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/adversarial_shell_pressure_20261007/cell_residual_exploration_20261006T174331920727Z.json",
+      "sha256": "beb2d7ca65e4125947260b92794942e92acb5076f1743390e251ba2117620b4d"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/adversarial_shell_pressure_20261007/cell_residual_pressure_20261006T174331920727Z.json",
+      "sha256": "f995afde32f81f5ff487913d0ae53aae4495ff54cea48b94a3c6adcd92e49fb0"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/adversarial_shell_pressure_20261007/cell_residual_summary_20261006T174331920727Z.json",
+      "sha256": "97910bfc6e6eafea32fe22632ff5ae45bbc41c226847c12864dfe8a00aa453a6"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/adversarial_shell_pressure_20261007/cell_residual_validation_20261006T174331920727Z.json",
+      "sha256": "8525051e9266075c5aff2a8d76ba01bec1b379c0611d506972f5cc46100470fa"
+    }
+  ],
+  "script_sha256": "20312e66445f0952f1508fe846ab7d2059ab41ef71a8e3c70e6cfdfaedd2ef6f",
+  "scope": "Fixed source cells side a/n=1/n, half-open at origin0, criterion max_C mu(C intersect Q_winner)<=eta*mu(Q_winner), eta=.5 main, .25 raw diagnostic. Every original atom and full source mass W=H=1 retained; cell-mass grouping precedes gate. This is a hard continuous-window cooperative residual, not actual FIRST/geom transport.",
+  "equality": "Dominant-cell paid complement can be taken with strict >eta*m and equality assigned to the cooperative residual. Do not add an overlapping dominant branch a second time.",
+  "paid_guard": "The root-supplied general cell-mass bound uses full M_C, not atom multiplicity: lambda|E_domcell|<=eW/(2eta), integral_E_domcell u<=2eW/eta on the original current residual intersection. Finite atomic tests are a subclass of that general fixed-cell criterion; no proof of the remaining energy budget is inferred.",
+  "conditional_CI": "Exploration finite_node_95 values at trained-selected lambda are unadjusted diagnostics and are NOT post-selection 95% confidence bounds. Pressure used joint record_total=8 on frozen input/lambda; final used record_total=5 after independent fresh sampling. Formula log(12*records*K/.05)/(4M) controls 3 quantities, lower/upper RVs, both tails at finite nodes conditional on heuristic numerical screening. No continuum or exact-real certificate.",
+  "stage_counts": {
+    "exploration": 80,
+    "pressure": 8,
+    "validation": 5
+  },
+  "checks": [
+    {
+      "candidate_id": 6,
+      "n": 8,
+      "N": 32,
+      "fixed_cell_count": 30,
+      "source_mass": 1.0,
+      "lambda_frozen": true,
+      "eta_quarter_raw_energy": 0.16547318684589132,
+      "main_Gamma_energy": 0.3181507076520778,
+      "main_Gamma_grid_difference": 0.0003711514292097373,
+      "endpoint_quadrature_contribution": 0.0,
+      "positive_nodes": 268,
+      "ambiguity_counts": {
+        "Gamma_v1": 0,
+        "Theta_hard": 0,
+        "Theta_hard_v1": 0
+      }
+    },
+    {
+      "candidate_id": 20,
+      "n": 16,
+      "N": 32,
+      "fixed_cell_count": 32,
+      "source_mass": 1.0,
+      "lambda_frozen": true,
+      "eta_quarter_raw_energy": 0.4930538303928207,
+      "main_Gamma_energy": 0.4930538303928207,
+      "main_Gamma_grid_difference": 0.0004877934142396567,
+      "endpoint_quadrature_contribution": 1.0328697868584771e-08,
+      "positive_nodes": 77,
+      "ambiguity_counts": {
+        "Gamma_v1": 0,
+        "Theta_hard": 0,
+        "Theta_hard_v1": 0
+      }
+    },
+    {
+      "candidate_id": 34,
+      "n": 32,
+      "N": 32,
+      "fixed_cell_count": 32,
+      "source_mass": 1.0,
+      "lambda_frozen": true,
+      "eta_quarter_raw_energy": 0.4317818772533113,
+      "main_Gamma_energy": 0.4317818772533113,
+      "main_Gamma_grid_difference": 0.00047173228905406095,
+      "endpoint_quadrature_contribution": 3.0986093605754313e-06,
+      "positive_nodes": 32,
+      "ambiguity_counts": {
+        "Gamma_v1": 0,
+        "Theta_hard": 0,
+        "Theta_hard_v1": 0
+      }
+    },
+    {
+      "candidate_id": 48,
+      "n": 64,
+      "N": 32,
+      "fixed_cell_count": 32,
+      "source_mass": 0.9999999999999999,
+      "lambda_frozen": true,
+      "eta_quarter_raw_energy": 0.1198492522920811,
+      "main_Gamma_energy": 0.5126097221457968,
+      "main_Gamma_grid_difference": 0.005325393991459371,
+      "endpoint_quadrature_contribution": 0.0,
+      "positive_nodes": 14,
+      "ambiguity_counts": {
+        "Gamma_v1": 0,
+        "Theta_hard": 0,
+        "Theta_hard_v1": 0
+      }
+    },
+    {
+      "candidate_id": 55,
+      "n": 64,
+      "N": 128,
+      "fixed_cell_count": 116,
+      "source_mass": 1.0,
+      "lambda_frozen": true,
+      "eta_quarter_raw_energy": 0.1571104016861239,
+      "main_Gamma_energy": 0.30545628350888143,
+      "main_Gamma_grid_difference": 0.0021563015966287735,
+      "endpoint_quadrature_contribution": 0.0,
+      "positive_nodes": 28,
+      "ambiguity_counts": {
+        "Gamma_v1": 0,
+        "Theta_hard": 0,
+        "Theta_hard_v1": 0
+      }
+    }
+  ],
+  "sampling": "Seed namespaces BASE=202610074012 then +8e6 (exploration),+16e6 (pressure),+32e6 (final), with distinct candidate increments and two replicate seeds. Each replicate uses CRN across nodes and training lambda. Final uses same algorithm with fresh sample streams, not an independent implementation.",
+  "conclusion": "No high-energy cooperative counterexample was found in this registered finite budget. Every final winner source is a multiresolution packet-network candidate, with nonzero fixed-cell cooperative mass. Energies and eta=.25 diagnostics show the implemented residual is nonempty; they do not rule out more general inputs or prove any asymptotic bound.",
+  "reproduce_command": "/Users/zhengzhihao/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 /Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/adversarial_shell_pressure_20261007/cell_residual_shell_search.py"
+}

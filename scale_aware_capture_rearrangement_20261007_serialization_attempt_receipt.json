@@ -1,0 +1,30 @@
+{
+  "status": "failed_attempt_receipt_from_observed_tool_output",
+  "timestamp": null,
+  "attempt": "First new scale-aware guard execution before replacing the unnecessary full prefix-denominator LCM with a lower certificate.",
+  "observed_exec_tool_result": {
+    "chunk_id": "e81e6b",
+    "exit_code": 1,
+    "session_id": null
+  },
+  "observed_exception": {
+    "type": "ValueError",
+    "message": "Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit",
+    "location": "cert(proxy) -> fs(x) -> str(x.numerator)",
+    "stage": "Constructing JSON-ready certificate summary; no terminal results file had been written."
+  },
+  "not_a_mathematical_residual_failure": true,
+  "failed_attempt_check_count": null,
+  "failed_attempt_script_sha256": null,
+  "missing_fields_explanation": "No timestamp, intermediate check counter, or pre-revision script hash was emitted by the observed failed tool output; these fields are not reconstructed.",
+  "correction": "Keep each exact coefficient >= volume/3 check; certify the same-source proxy from (sum actual retained volumes/3)^2, avoiding an unnecessary enormous LCM.",
+  "successful_terminal_receipt": {
+    "results_file": "scale_aware_capture_rearrangement_20261007_results.json",
+    "total_checks": 52453,
+    "counts_successful_execution_only": true,
+    "failed_attempt_checks_not_added": true,
+    "script_sha256": "7dd20ff095ef80a23abd6bc5b177b74f89881666bb4c5f499b63e4185b210f38",
+    "results_sha256": "70a42c3951aef64705f709c0bb01284fe61c64844010aab2326bb0101d57605e"
+  },
+  "action_scope": "Receipt only; no computation rerun, no modification to old drafts or main ledger."
+}

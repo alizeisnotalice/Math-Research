@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-07",
+  "scope": "new proper-face high-Mellin source bound for labelled axis jumps; not all-visited high tail or actual cube",
+  "rounds": [8, 32, 128],
+  "cutoff": "Lambda=16n fixed before execution",
+  "coupon_steps": "0,1,n/2,n,2n,4n,8n; integer positive occupancy counts",
+  "gamma_steps": "k=1,n/2,n,2n,8n",
+  "gamma_frequencies": "omega=sqrt(k),k/2,k,2k,16n",
+  "sum_frequencies": "omega=n,4n,16n,64n",
+  "finite_sum": "1<=k<=8n, exact missing-label mass times diagnostic Gamma modulus",
+  "bounds": "Gamma ratio <=exp(-min(omega^2/k,omega)/10); union mass<=n(1-1/n)^k; coefficient sum<=2n^2 exp(-omega/(10sqrt(n)))",
+  "floating_tolerance": "logarithmic comparisons absolute slack 1e-8; floating Gamma is not interval certified",
+  "exact_cutoff_bound": "proper-face tail/W <1/16+8*2^(-16n)<1/8",
+  "source_accounting": "sigma=nu_bad-mu_bad, ||sigma||1<=2W_bad; does not replace q||u||1 by W",
+  "reuse": "no old Abel, obstacle, reset, phi or source-sampling rerun"
+}

@@ -1,0 +1,55 @@
+{
+  "status": "registered_before_new_probe_implementation_and_execution",
+  "timestamp_utc": "2026-10-07T03:34:13.316162+00:00",
+  "scope": "Saved-cell postprocessing only. No oracle, arrival enumerator or MC rerun. Complete finite positive source, all saved physical scales, Lebesgue cell volumes.",
+  "source_profiles": [
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/log_max_variation_probe_20261007_n1_cell_profiles.json.gz",
+      "sha256": "32c1426d247d6c0151aa844b2e617e96696918fa994ca5a83aba312229596a40"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/log_max_variation_probe_20261007_n2_cell_profiles.json.gz",
+      "sha256": "1dcaab830a6a0de0f75a007a40d5c6cbbafd54e522d080cfeb1ed3cb30400fc0"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/log_max_variation_probe_20261007_n3_cell_profiles.json.gz",
+      "sha256": "2103154a7a4104a37c7ca6510282557d3e6ded3f956b842e7d09095a072f73e5"
+    }
+  ],
+  "rounds": [
+    {
+      "n": 1,
+      "new_threshold_rule": "tau_prime=original_tau/2",
+      "original_tau": "1/4",
+      "tau_prime": "1/8"
+    },
+    {
+      "n": 2,
+      "new_threshold_rule": "tau_prime=original_tau/2",
+      "original_tau": "1/8",
+      "tau_prime": "1/16"
+    },
+    {
+      "n": 3,
+      "new_threshold_rule": "tau_prime=original_tau/2",
+      "original_tau": "1/16",
+      "tau_prime": "1/32"
+    }
+  ],
+  "t_positive": [
+    "1/8",
+    "1/32",
+    "1/128"
+  ],
+  "winner_pair": "min/max distinct exact original-max scales on each new E cell; on unique winner use same scale twice",
+  "source_tests": "Saved v, physically coincident labels merged by signed_mass/mass. Auxiliary source partition is all distinct physical atoms.",
+  "checks": [
+    "Pair posterior delta p and physical source collision via exact Fraction",
+    "Nested beta=(R/L)^n; posterior difference inner coefficient=1-beta",
+    "Reintegrate Phi_tauprime from original and six saved perturbed full M values",
+    "sumPhi_plusminus-2Phi_base >= t*tauprime*sum_E(volume*abs(delta_p))-t^2*I/(1-t)^2 for each of3positive t",
+    "Classify strict positivity of rational RHS separately from observed positive numerical sumdiff"
+  ],
+  "logarithms": "160-digit Decimal diagnostics plus independent exact rational lower/upper intervals using 80-term atanh log series and dyadic range reduction. No floating threshold or winner comparisons.",
+  "limits": "Not nearoptimal inputs, no known K, no dimension-order inference; original results and thresholds unchanged; postprocessing new threshold explicitly registered."
+}

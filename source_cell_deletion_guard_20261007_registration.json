@@ -1,0 +1,148 @@
+{
+  "budget": {
+    "cases": 15,
+    "coin_q_checks": 576,
+    "deletion_q_checks": 192,
+    "nonempty_expected": 64,
+    "receiver_count": 74,
+    "weighted_DP_laws": 192
+  },
+  "coin_contract": "E ell <= (2+4*log(q))*((1-p)/p)*chi; compare expectation upper with RHS lower using audited rational log enclosures.",
+  "coin_law": "Independent etaC~Bernoulli(p) per complete fixed cell, nu=(1/p)*sum etaC*muC. U=sum piC etaC, V=U/p-1, ell=log(q)-log_+(q*(1+V)), log_+(0)=0.",
+  "deletion_contract": "sum_C min(log(q),-log(1-piC)) <= 1+(1+4*log(q))*chi. Handle pi=1 explicitly as log(q); otherwise use exact branch criterion pi<=1-1/q, no ambiguous floating log branch.",
+  "helper": {
+    "log_parameters": {
+      "atanh_terms": 100,
+      "outward_dyadic_bits": 192,
+      "strict_tail": "2*z^(201)/(201*(1-z^2))"
+    },
+    "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/spatial_packet_collision_probe_20261007.py",
+    "reuse_scope": "Only selected log definitions AST-executed in a new Fraction namespace; old main/module/response/geometry not executed.",
+    "selected_AST_sha256": "ad0e18eafb02667df2142d20da1036cff921f9278e61582224e0e362bec2bfef",
+    "selected_functions": [
+      "outward",
+      "atanh_log_interval",
+      "log_interval",
+      "log_plus_interval"
+    ],
+    "sha256": "1297ec5e27227106a3efc4955ec9fae058d596142fb3eca4c32a41f0f3aaa704"
+  },
+  "input_profiles": [
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/spatial_packet_collision_probe_20261007_r1_small_random_n1_N4_a1_b2.json.gz",
+      "sha256": "8e92837048e3c87ab75743ec7f9f8bb8b0fd8c4bcfda6a6f59226f93477c2ec6"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/spatial_packet_collision_probe_20261007_r1_small_random_n2_N7_a1_b2.json.gz",
+      "sha256": "b600eecb3139591039d9c176e22d7920ee797540ff8110cc954d85cab8255905"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/spatial_packet_collision_probe_20261007_r1_small_random_n3_N10_a1_b2.json.gz",
+      "sha256": "34f44bbf1e8eb89737b69f00ab5e2e852fd33462f4a5bd4f33d4353c19623c30"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/spatial_packet_collision_probe_20261007_r2_correlated_ray_n4_N12_a1_b2.json.gz",
+      "sha256": "278d5b1109b5361a38bd985850e65126e49969ae225bee87203e4133ac8e6e46"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/spatial_packet_collision_probe_20261007_r2_nested_sign_layers_n8_N16_a1_b2.json.gz",
+      "sha256": "0076d49864a108faac867dc9be4faf82df033e9d8e498b5d17d384a3dec46193"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/spatial_packet_collision_probe_20261007_r2_separated_clusters_n8_N24_a1_b2.json.gz",
+      "sha256": "3fb10c082c5479999ac18b925dd07776ce074f4152b109b91981e5ada31c0c76"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/spatial_packet_collision_probe_20261007_r2_finite_lattice_n4_N32_a1_b2.json.gz",
+      "sha256": "b4f9f1a9c1bad5d6f2417bfa80173a3c9d64327facde21a990e3af1913b0b7c9"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/spatial_packet_collision_probe_20261007_r3_large_block_layers_n16_N8_a1_b2.json.gz",
+      "sha256": "47b7d2501a6390dba5465f1aab23a515627a2b43820eb7b01b16afa1c4175609"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/spatial_packet_collision_probe_20261007_r3_large_block_layers_n16_N32_a1_b2.json.gz",
+      "sha256": "6e33bd4f32cffaaa0490f9492c8cdac78f0ba81e8339e230cb4d73d9619033f4"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/spatial_packet_collision_probe_20261007_r3_large_block_layers_n64_N8_a1_b2.json.gz",
+      "sha256": "4c9ff3c80e16d0d47fc513a79290bce9ec0157b90f35221b770c47c295b4ebc0"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/spatial_packet_collision_probe_20261007_r3_large_block_layers_n64_N32_a1_b2.json.gz",
+      "sha256": "9fbb929c88d3bec69dbf7dc538a268bfea8a183c196bed6e74dc6f15ce0ab75f"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/spatial_packet_collision_probe_20261007_r3_large_block_layers_n64_N32_a1d2_b3d2.json.gz",
+      "sha256": "4d889cc66620ab836dd7b81b0057265607e5402e9966d560c2f2512b8c636f42"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/spatial_packet_collision_probe_20261007_r3_large_block_layers_n256_N8_a1_b2.json.gz",
+      "sha256": "fd3e83c3afa17b85db2ab2b67b6f4695385b219d6de73ecd7078d5cea96520d4"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/spatial_packet_collision_probe_20261007_r3_large_block_layers_n256_N32_a1_b2.json.gz",
+      "sha256": "5b6b4549aeedd4bf0db1a51184ad3d4e673e6b68bd02370bfe7b2b28b5e8a084"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/spatial_packet_collision_probe_20261007_r3_large_block_layers_n256_N32_a1_b3.json.gz",
+      "sha256": "d6fb2449a689d428ed11381a161034a6a23a3de4dbc37d1a8f857bd17cceff27"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/spatial_packet_collision_probe_20261007_results.json",
+      "sha256": "bd59e559158c50ece856ce50e457d447c4903ba714bb75589f58528deed4744a"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/spatial_packet_collision_probe_20261007_registration.json",
+      "sha256": "d531d6064a4ee5e791375ac2b695119f5fa704c82e06bb2432886b2b0f5cbdd8"
+    }
+  ],
+  "p": [
+    "1/4",
+    "3/4",
+    "7/8"
+  ],
+  "q": [
+    2,
+    4,
+    16
+  ],
+  "rounds": [
+    {
+      "n": [
+        1,
+        2,
+        3
+      ],
+      "receiver_count": 18,
+      "round": 1
+    },
+    {
+      "n": [
+        4,
+        8
+      ],
+      "receiver_count": 24,
+      "round": 2
+    },
+    {
+      "n": [
+        16,
+        64,
+        256
+      ],
+      "receiver_count": 32,
+      "round": 3
+    }
+  ],
+  "scope": "Finite posterior scalar general-p/deletion guards, not numerical proof of general lemma, 16W full-space integral, geom/near-optimal qualification, or dimension order.",
+  "script_sha256": "554b36e00181478b5cf5923302a2eeefb235e0ab7d321c0919af4b3db8a1d61f",
+  "seeds": "Frozen original construction seeds retained; no new random sampling, DP integrates full prescribed coin law exactly.",
+  "source": "Original full complete cell measures muC, all source labels retained; use frozen piC=muC(Q_R)/mR and chi=sum piC^2, never remaximize.",
+  "status": "registered_before_general_p_and_deletion_postprocessing",
+  "stopping": "One fixed complete pass through all 15 frozen profiles; retain empty/top/unresolved/failures, no input tuning or old oracle execution.",
+  "utc": "2026-10-07T04:36:09.567025+00:00",
+  "weighted_DP": "For p=A/B and saved pi integer shares uC/T: reject multiplier B-A, accept A; probability numerator per score over B^K. Integrate uncaptured cells out, complete source still retained. Check E U=p, E V=0, E V^2=((1-p)/p)*chi exactly."
+}

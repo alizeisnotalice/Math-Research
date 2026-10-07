@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-07",
+  "status": "REGISTERED_BEFORE_EXECUTION",
+  "scope": "Exact finite coefficients for RN mask weights, union source/label marginal domination, and original dyadic source-only entropy range. Not an actual FIRST or geometric fixture.",
+  "dimensions": [
+    1024,
+    4096,
+    16384
+  ],
+  "alpha": "exact sqrt(n); dimensions are squares",
+  "theory_epsilon": "ln(n+2)^(-4), unchanged",
+  "checker_epsilon": "1/4096, a pre-fixed rational coefficient threshold only, not a certified value of theory epsilon",
+  "softnesses": [
+    "2/n",
+    "1/(4sqrt(n))",
+    "1/2"
+  ],
+  "sample_counts": [
+    "0",
+    "1",
+    "2",
+    "floor(alpha/2)",
+    "alpha",
+    "2alpha",
+    "4alpha+64"
+  ],
+  "independent_RN_model": "At most 8,16,32 supported soft mask coordinates in the three rounds, other coordinates hardpersistent; finite positive coefficient model only.",
+  "union_marginal_models": "Rational low/high label weights and envelope S>=averaged response, with source-high, source-low label-high, equality-paid and strict-low branches. No inference of actual continuous FIRST.",
+  "source_entropy_models": "Exactly compressed full-born uniform 2^n-child node and explicit binary depth sum, not actual output or history samples.",
+  "seed": "none; integer/Fraction arithmetic",
+  "forbidden_claims": [
+    "original phi kernel sample",
+    "actual early active count",
+    "actual CP-GP residual counterexample",
+    "endpoint bound",
+    "finite future nodes certify original full cap"
+  ],
+  "cutoff_search": "Exact monotone binary search only inside the registered interval 0..4alpha+64; if last weight remains below checker epsilon report a strict lower bound, not an invented exact cutoff. Whole-range existence is analytic.",
+  "equality_checker": "Additional rational epsilon_eq=w_1(sigma) to check label equality is paid, explicitly distinct from both fixed checker epsilon and theoretical epsilon."
+}

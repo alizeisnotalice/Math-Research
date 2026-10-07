@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-07",
+  "status": "registered_before_execution",
+  "seed": null,
+  "scope": "Exact Fraction component guard for clipping energy/tail identities. Finite symmetric Markov models are not actual Rn kernels or FIRST samples. The actual finite-box spike checks are only analytic coefficient guards using the previously proved obstacle existence.",
+  "rounds": [
+    {"finite_dimension": 2, "spike_dimension": 8},
+    {"finite_dimension": 3, "spike_dimension": 32},
+    {"finite_dimension": 4, "spike_dimension": 128}
+  ],
+  "finite_operator": "G_i=(I+coordinate_flip_i)/2, counting measure on the Boolean cube",
+  "potentials": ["single positive spike", "two unequal spikes", "positive support with an internal low value", "unequal disconnected support"],
+  "levels": ["kappa/2", "kappa", "2*kappa", "max(u)/2"],
+  "checks": [
+    "Original saturation/cap/mass contract for explicitly prescribed u and induced nu_b,mu_b",
+    "Exact u=w_L+v_L and S linear decomposition",
+    "0<=energy(w_L)<=cross_energy(w_L,u)<=L*W_b",
+    "positive tail bounded by original source restricted to u>L; zero signed total and L1<=2W_L",
+    "negative tail <=kappa only on original Omega complement; global kappa+nL coarse bound",
+    "finite original-box spike coefficient H-kappa>n*max(L_j) ensures every preselected tail retains all source mass"
+  ],
+  "not_checked": ["Joint spectral maximal bound (already checked elsewhere)", "New resolvent repacking (already checked by root)", "actual FIRST/history/cube gates", "weak endpoint closure", "asymptotic numerical fit"],
+  "failure_policy": "Save all failed exact residuals and exit nonzero; do not silently adjust or rerun."
+}

@@ -1,0 +1,40 @@
+{
+  "purpose": "Full L1 quartic source, unique interior continuous winner; exact posterior age mean and half exponential moment, rational interval critical moment. No Lebesgue integration or nearmax claim.",
+  "source": "f=(1+epsilon/n sum(y_i^2-y_i^4))*1_[-2,2]^n",
+  "window": [
+    1,
+    2
+  ],
+  "tau": "1/2",
+  "rounds": [
+    [
+      4,
+      8,
+      12
+    ],
+    [
+      16,
+      64,
+      256
+    ],
+    [
+      32,
+      128,
+      512
+    ]
+  ],
+  "epsilon": [
+    "1/100",
+    "1/200"
+  ],
+  "receivers": [
+    "all zero",
+    "all 1/10",
+    "alternating +/-1/10",
+    "first half 1/10, second half zero"
+  ],
+  "arithmetic": "Fraction for mean and mgf at sigma1/2; log q interval 120 terms atanh tail; n multiple4",
+  "expected_tests": "mean<=1; half moment<=2; critical >= (352/401)*(1+n/2); q strictly between1 and4; all source density bounds kept",
+  "scope": "Formula verification for whole positive-Lebesgue interior family; selected discrete receivers check formulas only. Continuous theorem separate.",
+  "no_old_runs": true
+}

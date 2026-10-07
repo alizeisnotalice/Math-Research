@@ -1,0 +1,145 @@
+{
+  "status": "registered_before_sampler_and_execution",
+  "timestamp_utc": "2026-10-07T02:55:25.221058+00:00",
+  "skills": [
+    "H02 exponential tilt identity only; no saddlepoint probability approximation",
+    "L03 exact realized-dyadic oracle and selected old Fraction-function cross-check; no interval-certified MC law"
+  ],
+  "source_inputs": {
+    "4": {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/critical_source_tail_arrival_20261007_n4_exact_profiles.json.gz",
+      "sha256": "3474c42799ef1d85f58a43b3ebf603d5228dc5b64f2b9760e870c37ba73ae716",
+      "input": {
+        "n": 4,
+        "A": 64,
+        "ks": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "qs": [
+          129,
+          257,
+          513,
+          1025
+        ],
+        "weights": [
+          "1/2",
+          "1/6",
+          "1/6",
+          "1/6"
+        ],
+        "source_union_atoms": 1103812890625
+      },
+      "tau": "128/22430753361"
+    },
+    "16": {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/critical_source_tail_arrival_20261007_n16_exact_profiles.json.gz",
+      "sha256": "3cb35ef617b77219565f4b216baea0e61f711cb0b9b8f70e85b02297aa7bfee4",
+      "input": {
+        "n": 16,
+        "A": 256,
+        "ks": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "qs": [
+          513,
+          1025,
+          2049,
+          4097
+        ],
+        "weights": [
+          "1/2",
+          "1/6",
+          "1/6",
+          "1/6"
+        ],
+        "source_union_atoms": 6301666612564002246052328737021260962224950069815341547521
+      },
+      "tau": "536870912/990416614869441993916643712375733691872563640727361"
+    },
+    "64": {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/critical_source_tail_arrival_20261007_n64_exact_profiles.json.gz",
+      "sha256": "a78f930c614ac7df397e0d3b23799c09acd4a8832de516cfb551e3a083b1a41c",
+      "input": {
+        "n": 64,
+        "A": 1024,
+        "ks": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "qs": [
+          2049,
+          4097,
+          8193,
+          16385
+        ],
+        "weights": [
+          "1/2",
+          "1/6",
+          "1/6",
+          "1/6"
+        ],
+        "source_union_atoms": 530362154247057553462165036838712925023664471382677438143793251382557854401126195514241145320116196199110650189002569721588110831728208222916524742016770321322123557785634902357583822612699392335152023757149928585341271190107246581713074107256034039892256259918212890625
+      },
+      "tau": "1298074214633706907132624082305024/298157432348562941398444582607793343159015764818992257306137380303236211657179311047987589523083258064095801324587720239517821688768657881795107239294006504948312996985661092908252866369611897442395291061844725176683383570158510744110886862081"
+    }
+  },
+  "oracle_module_path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/critical_source_tail_arrival_20261007.py",
+  "oracle_module_sha256": "58fb95ab7dc77c0d1413471068d602f414d6bd57a3cedfeffdb19967454b58dc",
+  "rounds": [
+    {
+      "n": 4,
+      "seed_source": 7310404,
+      "seed_replica_1": 7410404,
+      "seed_replica_2": 7510404,
+      "source_samples": 256,
+      "receivers_per_replica": 8,
+      "replicas": 2,
+      "tilt_odds_T": "8"
+    },
+    {
+      "n": 16,
+      "seed_source": 7310416,
+      "seed_replica_1": 7410416,
+      "seed_replica_2": 7510416,
+      "source_samples": 256,
+      "receivers_per_replica": 8,
+      "replicas": 2,
+      "tilt_odds_T": "7"
+    },
+    {
+      "n": 64,
+      "seed_source": 7310464,
+      "seed_replica_1": 7410464,
+      "seed_replica_2": 7510464,
+      "source_samples": 256,
+      "receivers_per_replica": 8,
+      "replicas": 2,
+      "tilt_odds_T": "47/17"
+    }
+  ],
+  "source_law": "Choose label using uniform integer 0..5: 0..2->k1, 3->k2,4->k4,5->k8. Each source coordinate independently uniform integer -A*k..A*k divided by k. Coincident fractional contributions sum to full original mu; W=1.",
+  "receiver_prior": "Cn=1+n log2. Given y, core probability1/Cn: uniform y+[-.5,.5]^n. Shell probability nlog2/Cn: log r uniform [0,log2], face uniform 2n signed faces, free offsets uniform[-r/2,r/2]; q_y=sup_[1,2] h_L/Cn. dx=n r^(n-1)dr dnu (normalized boundary cone measure).",
+  "conditional_tilt": "Given y, core/shell, r, signedface, partition actual free-coordinate intervals by finite k1 captured count at reference R*=1.5 exactly equal2. p_i actual interval length/r. Entire product mixture .25 base +.75 tilted, tilt factor T^sum_freeH/product_free(1-p_i+p_iT). Face H is recorded diagnostic but not RN. RN=1/[.25+.75 exp(logL)]<=4, complete base support. Core all coordinates free.",
+  "sampler_checks_before_mc": "New actual high/low partition and finite-coordinate law checks using 4 configurations/n including support edges. Fraction DP RN mass/moment identity for actual p_i; sampler branch/status checks for every draw. No re-use of old 9 configurations as sampler certificate.",
+  "response_oracle": "Store y and offset float.hex; interpret each realized offset as exact dyadic. Common binary denominator and integer arrival keys for every coordinate/atom arrival in[1,2], simultaneous grouped updates, full mixture mass. Compare candidate mass/R^n by integer cross multiplication; smallest R tie. Exact compare E=M>registered tau and fullsource capture. No radius grid.",
+  "new_original_oracle_crosschecks": "Only 3 new actual receivers/n (source0 rep1 draw0; source0 rep2 draw0; source1 rep1 draw0), call imported old pure arrival_oracle on realized dyadic x. Never old main or old probes.",
+  "score": "Z=1_E*1_capture*(tau/M)*h_R(x-y)/q_y(x)*RN <=4Cn; conditional expectation S(y) in ideal continuous exact model. Save S1,S2 per source. I1/W mean .5(S1+S2), I2/W mean S1*S2 from independent conditional replicas. S itself <=Cn.",
+  "confidence": "Distribution-free Hoeffding simultaneous across 3 rounds, 2 outer means, all prefixes1..256: delta_outer=.025, union1536 estimates; score mean bound4Cn, product bound16Cn^2. Conditional S profiles from16 draws: delta_profiles=.025, union768 sources, range4Cn, clamp target to[0,Cn]. Total ideal-model coverage>=.95. All numerical proposal/log evaluations are non-interval; intervals are ideal-law statistical ranges, not certified floating/continuous integration error.",
+  "stopping": "Fixed256 sources each/n; no data-dependent tuning, no expanded rerun. If execution interrupted externally retain completed prefix, apply pre-registered prefix-union CI and explicitly withdraw stopped-mean unbiasedness; do not restart old finished sources.",
+  "tail_diagnostic": "Plugin mean(max(.5(S1+S2)-K,0)), K=sqrt(n),2sqrt(n), biased conditional nonlinear diagnostic; unlike I2 cross product it is not unbiased source-tail estimate. No tail/order conclusion.",
+  "diagnostics": [
+    "source/receiver labels; offsets;r;core/shell;face/sign;global mixture branch;free p_i, log normalizer/logL/RN;actual H;reference face H",
+    "full winner R, mass, capture counts, E/capture; exacttie count, log runnerup gap and near threshold at1e-10",
+    "proposal RN ESS and score ESS; outer means and independent-replica discrepancy",
+    "sampled support edge and coincident-source summaries; full source profiles preserved"
+  ],
+  "cost": "12288 new receiver calls total; per call O(n sum k) arrival generation and O(n kmax log(n kmax)) sorting; exact integers up to a few thousand bits. No q^n atom enumeration or n-dimensional grids. Expected minutes bounded fixed sample scope."
+}

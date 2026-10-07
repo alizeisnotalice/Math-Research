@@ -1,0 +1,49 @@
+{
+  "scope": "General fixed symmetric jump operator identities; finite matrices are ingredient checks, not cube/FIRST instances",
+  "rounds": [
+    {
+      "states": 5,
+      "inside": 3,
+      "quadrature_order_per_panel": 16
+    },
+    {
+      "states": 9,
+      "inside": 5,
+      "quadrature_order_per_panel": 32
+    },
+    {
+      "states": 17,
+      "inside": 9,
+      "quadrature_order_per_panel": 64
+    }
+  ],
+  "kernel": "complete symmetric J_ij=(1+((i+j)%3))/(8*states), zero diagonal",
+  "odometer": "u_i=(1+i%3)/(64*states) inside; zero outside",
+  "cap": 1,
+  "source": "nu_inside=1+(L u)_inside; nu_outside=0; mu=nu-Lu",
+  "exact_s": [
+    "1/4",
+    "1",
+    "4"
+  ],
+  "exact_abel_powers": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "exact_layer_tail_max_j": 8,
+  "numeric_abel_powers": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "numeric_log_s_interval": "[-24 log(2),24 log(2)]",
+  "quadrature": "16 panels, compare stated order and twice stated order, positive Gauss-Legendre",
+  "relative_absolute_convergence_tolerance": "1e-8 * max(1, fine_integral)",
+  "analytic_tail_enclosures": "small s uses spectral gaps states*min_offdiagonal_J and min_V; large s uses 2maxdegree and 2maxdegree+max_V",
+  "status": "registered before execution",
+  "seed": "none"
+}

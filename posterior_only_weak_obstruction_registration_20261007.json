@@ -1,0 +1,27 @@
+{
+  "status": "registered_before_execution",
+  "purpose": "Necessary obstruction to a new posterior-only weak stopping lemma; not a G_c input or kernel counterexample",
+  "dimensions": [8,32,128],
+  "lambda": "3/2",
+  "arithmetic": "Pure fractions.Fraction, integer binomial coefficients; no floats in predicates",
+  "r_values": ["0","1","1/(n+1)","1/n","1/4","1/2","3/4","1-1/n"],
+  "strict_thresholds": "lambda*(1-2^(-m)), m in [1,2,4,8,16,32,64]",
+  "baseline": "Disjoint finite boxes E_k, volume binom(n,k)*b_k/lambda, amplitude a_k=lambda/b_k; b_k=(k/n)^k*(1-k/n)^(n-k), 0^0=1",
+  "height_cap_version": "H=lambda*max(1,max_{k>=1}1/[binom(n,k)*b_k]); replace E0 volume by 1/H and a0 by H, keeping k>=1",
+  "checks": [
+    "Each integral a_k equals binom(n,k), initial source mass one",
+    "For selected r total response mass one in both versions",
+    "Basis derivative identity, zero derivative at each interior peak and signed nearby derivatives",
+    "Peak heights lambda or H, algebraic posterior mean k=n*p_k and variance zero",
+    "Strict > superlevel integral at every registered threshold, monotone exact approach to weak supremum",
+    "Exact strict endpoint sets at lambda and H",
+    "All enhanced a_k<=binom(n,k)*H",
+    "Enhanced global weak supremum D_n-1+lambda/H exceeds one",
+    "All boxes finite and disjoint via one-axis separated placement"
+  ],
+  "excluded": [
+    "No original G_c convolution, no reset proxy, no previous numerical rerun",
+    "No actual FIRST/CPGP/hardwinner/history certification",
+    "No claim that real mask coefficients can be assigned independently"
+  ]
+}

@@ -1,0 +1,226 @@
+# 固定来源格邻接图的局部时钟与质量加权调和度数预算
+
+2026-10-07。有限格图策略由 root 提出，本文件给独立核验后的完整证明。仅新增本文件及配套 LaTeX 片段，不修改主 TXT 或其他工作者文件。
+
+**逻辑状态。** 本定理条件于 `local_clock_source_budget_20261007.md` 的受控 \(16\) 工作量引理；该引理正在独审。本稿重证图过程、质量倾斜、活动工作量、终端几何及极限，不重复宣称受控引理已无条件完成。使用已读 J01 SKILL/method/cube-interface/provenance 的真实速率与域审计流程，不调用未核外部过程定理。
+
+这是新的局部度数工作量接口。对固定 \([a,2a]\) 窗口所得 \(O(n\log n)\) 比已有 \(Z/e=O(n)\) 的 log-max 基线更弱，既不改善一般上界，也不由此证明全尺度 \(O(n\log n)\) 或平方根目标。
+
+## 1. 完整输入与条件引理
+
+令 \(\mu\) 为 \(\mathbb R^n\) 上完整有限正 Borel 测度，\(W>0\)，\(0<a<b<\infty\)，\(\tau>0\)，全部 \([a,b]\) 是原允许尺度。定义
+\[
+ Q(x,r)=x+[-r/2,r/2]^n,\quad
+ U_r(\nu)(x)=r^{-n}\nu(Q(x,r)),\quad
+ M_\nu=\max_{a\le r\le b}U_r(\nu),
+\]
+\[
+ \Phi(\nu)=\tau\int_{\mathbb R^n}\log_+(M_\nu/\tau)dx,
+ \qquad Z=1+n\log(b/a),\qquad0\le\Phi(\nu)\le(Z/e)W(\nu).
+\tag{1}
+\]
+接收端为 Lebesgue，来源坐标无需独立。固定半开来源格 \(C_i=d(k_i+[0,1)^n)\)，取
+\[
+ 0<d\le\min\{a/(8n),(b-a)/4\},\quad
+ \alpha=n\log(1+2d/a)\le1/4.
+\tag{2}
+\]
+先设正质量格仅有有限 \(N\) 个，\(\mu_i=\mu|_{C_i}\)，\(w_i>0\)，\(\sum_iw_i=W\)。原子、奇异来源及格边界质量均保留；重合点不拆成独立标签。
+
+**受控引理（本稿的前提）。** 若每个存活格按可预见、接收点无关的 \(a_i(t)\in[0,1]\) 增长其整格质量，并以同一速率整格删除，控制只在确定时刻或已发生死亡时刷新，则对有界原观察停时 \(S\) 有
+\[
+ \mathbb E_P\Phi(\nu_S)\ge\Phi(\mu)
+ -16\mathbb E_P\int_0^S W_{\rm active}(t)dt,
+ \qquad W_{\rm active}(t)=\sum_{i\ {\mathrm{alive}}}a_i(t)\nu_t(C_i).
+\tag{3}
+\]
+质量过程 \(W_t\) 的增长与删除补偿相消，在每个有限时间窗是鞅，故 \(\mathbb E_PW_S=W\)。后者也直接由小时间条件期望核验；所有有限时域有 \(W_t\le e^hW\)。下面图策略满足这一受控引理的范围。
+
+## 2. 静态图与准确度数上包
+
+取无自环有限无向图 \(G\)，要求它包含所有真实 co-capture 边：若存在一个 \(x\) 使 \(\mu_i(Q(x,b))>0\) 与 \(\mu_j(Q(x,b))>0\)，\(i\ne j\)，则 \(i\sim j\)。允许加入满足下述 (4) 的额外边；为使用统一度数帽，\(G\) 必须是该 grid overgraph 的子图。
+
+令格子下角为 \(c_i=dk_i\)。若上述真实 co-capture 发生，任选相应被捕获的 \(y\in C_i,z\in C_j\)。有 \(\|y-z\|_\infty\le b\) 及 \(\|y-c_i\|_\infty,\|z-c_j\|_\infty\le d\)，因此
+\[
+ \|c_i-c_j\|_\infty\le b+2d.
+\tag{4}
+\]
+于是用 (4) 定义边的 grid overgraph 覆盖全部危险边。方向须区分：(4) 是真实 co-capture 的必要条件；它足以用来加入 overgraph 边，却不保证该对格子真的能同时被捕获。
+
+完整格点中每个坐标的邻接整数差绝对值至多 \(\lfloor(b+2d)/d\rfloor\)，去掉自身，故
+\[
+ \deg_G(i)\le D:=(2\lfloor(b+2d)/d\rfloor+1)^n-1.
+\tag{5}
+\]
+只取非空格会减小度数。可使用更小、仍覆盖实际 co-capture 的图；下面结论依赖其实际局部度数。
+
+## 3. 有限格原过程与终端独立集
+
+存活集合为 \(A_t\)，定义
+\[
+ a_i(t)=\mathbf1_{\{i\in A_t,\ N_G(i)\cap A_t\ne\varnothing\}}.
+\tag{6}
+\]
+每次死亡后刷新，死亡前的左状态决定速率；无跳段速率保持不变。每格以速率 \(a_i\) 整格删除，并在尚存时按速率 \(a_i\) 乘法增长。可用各格独立单位率累计活动时钟构造；同一个时钟用于整格的完整原来源。写
+\[
+ A_i(t)=\int_0^t a_i(s)ds,\qquad
+ \nu_t=\sum_{i\in A_t}e^{A_i(t)}\mu_i,
+ \qquad W_t=\sum_{i\in A_t}e^{A_i(t)}w_i.
+\tag{7}
+\]
+当一个格与存活图中所有邻居脱离时，\(a_i=0\) 并永久冻结；静态图只删顶点，所以不会重新激活。
+
+令 \(T=\inf\{t:G[A_t]\text{ 无边}\}\)。在 \(T\) 后整个过程冻结，终态存活格形成独立集。若初态无边，\(T=0\)。否则每个有边状态至少有两个 active 格，其原 \(P\) 总死亡率至少为 2；至多 \(N-1\) 次死亡就停止。按每次刷新后的独立指数等待，可耦合使
+\[
+ T\le\sum_{j=1}^{N-1}E_j,\quad E_j\text{ 独立 Exp}(2),\qquad
+ \mathbb E_Pe^{qT}\le\left(\frac2{2-q}\right)^{N-1}<\infty\ (0\le q<2).
+\tag{8}
+\]
+零跳或提前停止用多余独立等待补足。特别 \(P(T<\infty)=1\)。对任意 \(0<\delta<1\)，\(W_{t\wedge T}\le We^T\) 且 \(\mathbb E_Pe^{(1+\delta)T}<\infty\)，故停止质量族一致可积，终值质量守恒并非形式声明。
+
+## 4. 有限时域质量倾斜与永生标签
+
+在 raw 观察滤过上构造路径，不预先加入无限未来的 \(P\)-零测事件。有限 \(h\) 上定义
+\[
+ dQ_h=(W_h/W)dP.
+\tag{9}
+\]
+质量鞅使这些密度一致。一个共同全路径 \(Q\) 可直接构造：先按 \(w_i/W\) 抽标签 \(J=i\)，该格永不删除，其余格执行同一图政策及原删除速率，全部格仍按各自 \(a_i\) 增长。
+
+固定标签 \(i\)，有限时域路径密度为
+\[
+ D_i(h)=e^{A_i(h)}\mathbf1_{\{i\in A_h\}}.
+\tag{10}
+\]
+可直接从有限跳路径似然核验：标签未死的路径中，只从等待指数中去掉其死亡 hazard \(a_i\)，各其他已发生死亡的速率完全相同；因此密度增加 \(\exp(\int a_i)\)。有标签死亡的原路径密度为零。两条 law 都在观察到的路径上重算同一个合法政策，无未来选择。混合 (10) 给 \(\sum_i(w_i/W)D_i(h)=W_h/W\)，证明该 \(Q\) 的有限时域确为 (9)。
+
+隐藏标签的当前后验是
+\[
+ Q(J=i\mid\mathcal F_t)=\frac{\nu_t(C_i)}{W_t},
+ \qquad \bar a_t=\frac{W_{\rm active}(t)}{W_t}
+ =\mathbb E_Q[a_J(t)\mid\mathcal F_t].
+\tag{11}
+\]
+比值只在 \(Q\) 的正质量状态使用。在无边终态 \(\bar a=0\)。
+
+## 5. 局部活动时钟恰为邻居寿命最大值
+
+条件于永生标签 \(J=i\)。每个初始邻居 \(j\in N_G(i)\) 只要尚存，就有永生邻居 \(i\)，故始终 \(a_j=1\) 直到删除。它们从时刻 0 起的死亡时间是相互独立的 Exp\((1)\)；其他邻居或远端的删除不能关掉这些时钟。
+
+标签 \(i\) active 当且仅当至少一个初始邻居仍活。因此令 \(k_i=\deg_G(i)\)，
+\[
+ \int_0^T a_i(t)dt=\max_{j\in N_G(i)}L_j,
+ \quad L_j\text{ 独立 Exp}(1),\qquad
+ \mathbb E_{Q(\cdot\mid J=i)}\int_0^T a_i(t)dt=H_{k_i},
+\tag{12}
+\]
+空集最大值和 \(H_0\) 均为零。用层蛋糕可自含计算最后期望：
+\[
+ \int_0^\infty[1-(1-e^{-t})^k]dt
+ =\int_0^1\frac{1-(1-p)^k}{p}dp
+ =\sum_{r=1}^k\frac1r=H_k.
+\tag{13}
+\]
+标签停止活动后永久冻结，但其他分支可能尚未停止，所以这里算的是局部工作量，不把全局 \(T\) 冒称为最大邻居寿命。
+
+有边状态在 \(Q\) 下仍至少有一个可死亡的非标签 active 格，总死亡率至少 1；至多 \(N-1\) 次死亡，故 \(Q(T<\infty)=1\)。有限时域密度、非负 Tonelli 与 (11)(12) 给
+\[
+ \begin{aligned}
+ \mathbb E_P\int_0^T W_{\rm active}(t)dt
+ &=W\mathbb E_Q\int_0^T\bar a_tdt\\
+ &=\sum_iw_iH_{k_i}.
+ \end{aligned}
+\tag{14}
+\]
+来源只付一次；没有把死亡次数、普通时间或最大所有格寿命代入费用。
+
+## 6. 无界图停止的原质量 UI 与 \(Q\) 尾项
+
+对 \(S=T\wedge h\) 使用条件引理 (3)。原 \(P\) 下由 (8) 与 \(\Phi(\nu_S)\le(Z/e)We^T\)，可支配收敛；工作量积分非负单调收敛且 (14) 有限。于是
+\[
+ \mathbb E_PW_T=W,\qquad
+ \Phi(\mu)\le\mathbb E_P\Phi(\nu_T)+16\sum_iw_iH_{k_i}.
+\tag{15}
+\]
+这里未对一般控制无界停时宣称 UI，只证明当前有限图政策。
+
+也可单独核 \(Q\) 尾：有界停止密度给
+\(\mathbb E_P[W_T\mathbf1_{\{T\le h\}}]=WQ(T\le h)\)。而
+\[
+ \mathbb E_P[\Phi(\nu_h)\mathbf1_{\{T>h\}}]
+ =W\mathbb E_Q\left[\frac{\Phi(\nu_h)}{W_h}\mathbf1_{\{T>h\}}\right]
+ \le(Z/e)WQ(T>h)\longrightarrow0.
+\tag{16}
+\]
+因为 \(Q(T<\infty)=1\)。故终值没有隐藏的未停止质量尾项。
+
+## 7. Single-packet 的精确正部积分与终端支付
+
+任一完整来源格测度 \(\sigma\) 支持在一个原边长 \(d\) 格中，质量为 \(w\)，下角为 \(c\)。若某原尺度 \(r\in[a,b]\) 捕获其正质量，令 \(r_c=2\|x-c\|_\infty\)，则 \(r_c\le r+2d\le(1+2d/a)r\)。同时 \(U_r(\sigma)\le w/a^n\)。所以在整个接收空间
+\[
+ M_\sigma(x)\le\frac{e^\alpha w}{\max(a,r_c)^n}.
+\tag{17}
+\]
+半开格的边界与原子均由闭 cube 扩张保留；\(r_c=0\) 用 \(a\) 截断。
+
+令 \(K_c=e^\alpha w\)。因 \(|\{x:r_c\le r\}|=r^n\)，将径向 Lebesgue 变量写成 \(v=r^n\)，得到准确的 envelope 积分
+\[
+ \begin{aligned}
+ \Phi(\sigma)&\le\tau\int_0^\infty
+ \log_+\frac{K_c}{\tau\max(a^n,v)}dv\\
+ &=(K_c-\tau a^n)_+\le e^\alpha w.
+ \end{aligned}
+\tag{18}
+\]
+若 \(K_c\le\tau a^n\)，积分为零。否则核心项为 \(\tau a^n\log[K_c/(\tau a^n)]\)，外围 \(v\in[a^n,K_c/\tau]\) 的积分恰抵消该对数项，留下 \(K_c-\tau a^n\)。这里积分域外放到全 \(\mathbb R^n\) 仅用于 majorant，不扩张原允许尺度。
+
+终态 \(G[A_T]\) 无边，而静态图包含全部真实 co-capture 边，故任一 \(Q(x,b)\) 最多捕获一个存活格的正质量。较小原尺度亦如此。因此
+\[
+ M_{\nu_T}(x)=\max_{i\in A_T}M_{\nu_T|C_i}(x),\qquad
+ \Phi(\nu_T)\le\sum_{i\in A_T}\Phi(\nu_T|C_i)
+ \le e^\alpha W_T.
+\tag{19}
+\]
+实际上任一点至多一个格响应为正，故第一项后的 functional 求和也为等号；上界已足够。结合 (15)，得到有限格的条件定理
+\[
+ \boxed{\quad
+ \frac{\Phi(\mu)}W\le e^\alpha+
+ 16\sum_i\frac{w_i}W H_{\deg_G(i)}.
+ \quad}
+\tag{20}
+\]
+右端为原完整来源质量加权的局部调和度数，不是最大原格数的 \(\log N\)。
+
+## 8. 可数来源只经确定性截断推广不等式
+
+若正质量格可数，选递增有限集合 \(F_N\) 穷尽格子，\(\mu^{(N)}=\sum_{i\in F_N}\mu_i\)。用同一个 countable overgraph 的有限诱导图；其度数统一受 (5) 控制。原窗口的稳定性
+\[
+ |\Phi(\mu)-\Phi(\mu^{(N)})|
+ \le Z\|\mu-\mu^{(N)}\|_{\rm TV}=Z(W-W_N)\longrightarrow0
+\tag{21}
+\]
+可由 \(|M_\mu-M_{\mu^{(N)}}|\le M_{\mu-\mu^{(N)}}\)、窗口强包络及 log-positive 的 1-Lipschitz 性直接证明。
+
+每个顶点的邻居有限，诱导度数最终等于其 countable 图度数，且 \(w_iH_{\deg(i)}\le w_iH_D\) 可求和。故有限格 (20) 的右边以 dominated convergence 收敛，得到对任意完整有限正来源的确定性条件上界
+\[
+ \boxed{\quad
+ \Phi(\mu)\le e^\alpha W+16\sum_iw_iH_{\deg_G(i)}
+ \le(e^\alpha+16H_D)W.
+ \quad}
+\tag{22}
+\]
+这里未构造无限格受控过程、无限总死亡率或无限时域停止；仅把有限来源的不等式用 TV 稳定性传给完整来源。因此不附带无限控制过程的实现或可选停止结论。
+
+## 9. one-window 量级与核心缺口
+
+对 \(b=2a\)、\(d=a/(8n)\)，准确 (5) 给 \(D=(32n+5)^n-1\)，\(\alpha\le1/4\)，于是
+\[
+ \frac{\Phi(\mu)}W\le e^{1/4}+16H_{(32n+5)^n-1}
+ \le e^{1/4}+16[1+n\log(32n+5)]=O(n\log n).
+\tag{23}
+\]
+已有固定窗口正包络却直接给 \(\Phi/W\le(1+n\log2)/e=O(n)\)，所以 (23) 并不改善一般上界。若把 (22) 用于固定窗口的全局 log-max 常数 \(K\)，转成 weak 常数仍要使用已有 \(C_{\rm weak}\le eK\)；不能把 \(\Phi/W\) 与弱常数混写。
+
+邻接图由最大允许 cube \(Q_b\) 决定。令 \(b\to\infty\) 时图度数也增长，不能从这个 one-window 结论免费推出全尺度 \(O(n\log n)\)。更不能按多个窗口重复领来源 \(W\) 而忽略跨窗费用。
+
+本接口的实质是将控制代价变成 \(\sum_i(w_i/W)H_{\deg_G(i)}\)，并合法地停到 single-packet 可支付终态。要获得平方根量级，需要更好的真实政策／终端几何，使两项总代价受目标维数控制；当前 co-capture overgraph 一般只提供 (23)。旧稿已有 sourcecell bounded-degree Schur 图与随机平移 near-pair预算，但未发现本存活邻居触发、永生标签局部最大寿命政策。图几何构件与新的过程接口应分别计数。

@@ -1,0 +1,141 @@
+{
+  "status": "registered_before_execution",
+  "target": "Original c1 periodic saturated nu_b with sharpened analytically admissible amplitude; weak-normalized exact positive future-union D versus pair and signed obstacle term.",
+  "rounds": [
+    {
+      "n": 8,
+      "phase_grid": 128
+    },
+    {
+      "n": 32,
+      "phase_grid": 256
+    },
+    {
+      "n": 128,
+      "phase_grid": 512
+    }
+  ],
+  "full_dimension_phase_map": "theta1=sum first n/2 coordinates, theta2=sum last n/2 coordinates, modulo 2pi. Haar pushforward is uniform two-phase measure; every coordinate still has the original g1(xi^2) multiplier.",
+  "coordinate_symbol": "g1(v)=log(1+v)/v, with g1(0)=1; no reset/discrete-Laplacian substitution",
+  "physical_period": "2*pi",
+  "c": 1,
+  "kappa": 1,
+  "threshold_alpha": [
+    0.5,
+    1,
+    2
+  ],
+  "parameter_panels": [
+    8,
+    16,
+    32
+  ],
+  "parameter_nodes": "r_j=(j/J)^2, j=0..J; nested grids. Grid max is NOT continuous exact max.",
+  "sources": [
+    {
+      "name": "single_packet_control",
+      "centers_pi_units": [
+        [
+          0,
+          0
+        ]
+      ],
+      "center_weights": [
+        1
+      ],
+      "widths": [
+        0.25
+      ],
+      "layer_weights": [
+        1
+      ]
+    },
+    {
+      "name": "nested_shared_resolution",
+      "centers_pi_units": [
+        [
+          0,
+          0
+        ]
+      ],
+      "center_weights": [
+        1
+      ],
+      "widths": [
+        1,
+        0.5,
+        0.25,
+        0.125
+      ],
+      "layer_weights": [
+        "1/15",
+        "2/15",
+        "4/15",
+        "8/15"
+      ]
+    },
+    {
+      "name": "shifted_nested_positive_mixture",
+      "centers_pi_units": [
+        [
+          0,
+          0
+        ],
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "center_weights": [
+        "1/2",
+        "1/2"
+      ],
+      "widths": [
+        1,
+        0.5,
+        0.25,
+        0.125
+      ],
+      "layer_weights": [
+        "1/15",
+        "2/15",
+        "4/15",
+        "8/15"
+      ]
+    }
+  ],
+  "packet_profile": "Product over two phases of max(1-(2*wrapped_distance/width)^2,0)^3. Positive complete fixed mixture U, no layer-specific source budget.",
+  "saturated_source": "C0=101/100, A=35*kappa/(8*C0*n*D_eff); for each positive product packet Gb<=L=C0*16*delta/35<=1 and bilinear corners give -SU<=n*L/2; positive mixture gives Su>=-kappa. Thus nu_b=(Su+kappa)1_Omega>=0 and mu_b=kappa1_Omega-Su1_Omega_complement<=kappa. Not output-based lambda retuning.",
+  "mechanism_provenance": "Read lower-bound total table B41 shared full-source resolution mixture and B62 continuous shared concentric-scale mixture. These inputs use finite positive multiresolution/nested support mechanisms, not the full B41 lattice qualification or full continuous B62 family; the phase-correlated construction is separately declared.",
+  "receiver_rule": "A={Omega_complement:M_grid>alpha*kappa}, smallest-index argmax label A_j. Main g_j=(alpha*kappa/M_grid)*1_Aj, so capped traffic equals alpha*kappa*receiver volume. Uncapped a_j=1_Aj recorded only as stronger comparison.",
+  "D_method": "Positive future-union recursion c_j=q_j+(1-q_j)V c_{j+1}, d_j=V d_{j+1}+q_j V c_{j+1}; Cstop=P1 c1,Cdef=P1 d1. Also save survival and direct source-weighted future-union scalar for independent identity checks, plus future occupancy recursion for pair upper. O(J) convolution steps, no source-cone receiver sampling or Monte Carlo.",
+  "signed_obstacle_diagnostic": "For each capped/uncapped record save mu_b*Cdef and u*S*Cdef integrals separately and check D=sum of these via independent S action. In particular alpha=2 enables cap-part absorption but signed potential is not assumed nonnegative or paid.",
+  "source_spatial_stability": {
+    "n": 32,
+    "source": "nested_shared_resolution",
+    "phase_grids": [
+      128,
+      256,
+      512
+    ],
+    "parameter_panels": 32,
+    "alpha": 1,
+    "same_continuous_input_and_lambda": true
+  },
+  "kernel_screens": "Save min inverse-FFT coordinate Gi/P/increment kernels and mass error; do not clip negative kernels or probability fields. Floating screens are not interval certificates.",
+  "ambiguity": "Threshold and top-two response margins <=1e-10*(1+abs response) counted and retained; actual strict float comparison/tie rule used, no adaptive threshold change.",
+  "saved_reconstruction": "Source arrays U/u/nu_b/mu_b/Omega, source hashes, q/P symbols, r nodes, receiver winner labels and g weight, survival/D/pair/stop columns, main/uncapped scalars. Scripts reject any existing result filename.",
+  "limitations": [
+    "Periodic normalized Lebesgue receivers, not source-weighted receiver sampling",
+    "Original Fourier-symbol cyclic discretization and FFT nonlinear aliasing, no interval certification",
+    "Spatial refinement is a diagnostic, not certified continuum error",
+    "Finite r grid cannot certify continuous max",
+    "Rn truncation reconstructs a different saturated source from truncated u; source boundary error is analytic, while actual receiver winner migration requires threshold/tie margin and is not certified here",
+    "No actual FIRST/CPGP/hard-soft geom qualification or asymptotic fit",
+    "Sharpened amplitude only bounds sum Gi u outside Omega; direct u-cutoff on Rn can violate mu cap at box boundary. The earlier globally capped pilot lifting does not certify this strengthened source; boundary correction/source migration remains unproved."
+  ],
+  "budget": "81 main records, 2 additional fixed-input spatial stability records; 2D closed original-symbol phase model, not an exponential n-dimensional grid. Expected 1-3 minutes, peak memory under 250MB.",
+  "randomness": "None; deterministic quadrature and receiver grids. Common fixed source across parameter-node variants. No validation-set tuning.",
+  "adaptive_relation_to_prior_run": "Input amplitude strengthened after the completely empty registered pilot; fixed alpha/kappa/r/widths/weights remain unchanged. This is adaptive exploratory input revision, not independent validation; preserve the entire prior result.",
+  "continuous_constant_certificate": "w(t)<=exp(-abs t), periodized sup<=coth(pi); pi>3 and e>8/3 imply e^(2pi)>(8/3)^6>201, hence coth(pi)<101/100. Profile integral is exactly 16*delta/35, and all widths<=1."
+}

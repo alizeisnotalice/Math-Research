@@ -1,0 +1,124 @@
+{
+  "seed_base": 202610070812,
+  "cells": [
+    [
+      8,
+      16
+    ],
+    [
+      8,
+      64
+    ],
+    [
+      8,
+      128
+    ],
+    [
+      16,
+      16
+    ],
+    [
+      16,
+      64
+    ],
+    [
+      16,
+      128
+    ],
+    [
+      32,
+      16
+    ],
+    [
+      32,
+      64
+    ],
+    [
+      32,
+      128
+    ],
+    [
+      64,
+      16
+    ],
+    [
+      64,
+      64
+    ],
+    [
+      64,
+      128
+    ]
+  ],
+  "families": [
+    "hierarchical_orthant_cascade",
+    "anisotropic_product_strata",
+    "lowrank_wavy_cloud",
+    "multilevel_shell_spokes",
+    "sparse_grid_capacity",
+    "shared_resolution_overlap"
+  ],
+  "stages": "72 starting candidates + 24 adaptive geometry/all-positive-coefficient mutations + 12 sparse-grid capacity-only mutations; select one per n,N cell; pressure frozen-lambda winners with fresh sampling; select 6 after pressure; final fresh-seed validation",
+  "search_budget": {
+    "exploration_M": 32,
+    "exploration_K": 65,
+    "pressure_M": 256,
+    "pressure_K": 257,
+    "validation_M": 1024,
+    "validation_K": 513
+  },
+  "objective": "maximize integral Gamma_v=1(t)^2 dt by independent replicate cross product; record Theta_hard and Theta_hard,v1 with actual geometric exp(-delay)",
+  "eligibility": "Finite positive atomic mu with total W=H=1; actual centered continuous [1,2] full-side maximal winner; a single fixed selected lambda per frozen input; hardband 2lambda<u<=4lambda; source face inclusion uses equality",
+  "qualification_limits": [
+    "No actual FIRST/continuation/CP/GP gate supplied: g=1 hard relaxation, so weighted Theta_hard is not actual Theta_g",
+    "Continuous window does not certify original arbitrary finite allowed J",
+    "Atomic inputs do not certify diffuse L1 inputs",
+    "A large fixed finite energy is not a violation of unspecified C log^A(n); no asymptotic exponent fitting",
+    "Search lambda and parameters overfit training; pressure/final streams separate and final input/lambda frozen"
+  ],
+  "arithmetic": "Exact enumeration for floating distances including all equal-distance groups and endpoints a,b; source distance computed from offsets preserves q_source=1; tolerance (n+1)*1e-10 lower/upper screening is not exact-real interval certification",
+  "jacobian": "dx=r^n dt dnu. Expectations retain source labels and sample with source weights; not unweighted spatial samples.",
+  "engine_snapshot_sha256": "24f05871e744203225542adaa142a1342b5f4516ab807602efa788748f5a33e3",
+  "construction_source": {
+    "path": "/Users/zhengzhihao/Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_2ypj2h60ogms22_45c1/temp/RWTemp/2026-10/07aa327ce93623270ba54256177864ed/中心立方体_阶段性下界构造总表_20261005 (3).txt",
+    "sha256": "22577136d022fae5e9ad4bef147152e90ca77391a94291d3962a7d208d76b8dd",
+    "mappings": {
+      "sparse_grid_capacity": "B38: arbitrary positive coefficients on a finite sparse grid, evolutionary weight updates; atomic sparse subset, not full q^n cell density or LP/MIP certificate",
+      "shared_resolution_overlap": "B41/B40: full n-dimensional atom uses one shared dyadic resolution before positive layer mixing; finite sampled truncation, not full tensor lattice or its weak-budget theorem",
+      "anisotropic_product_strata": "B07/B06: graph cut coordinates derived from common vertex signs; correlated Ising-like weights, anisotropic spacings, atomic finite graph realization",
+      "hierarchical_orthant_cascade": "B61/B52: frozen binary-tree path energies produce positive Gibbs weights on multiresolution leaf geometry; not the exact original periodic histogram input",
+      "lowrank_wavy_cloud": "B04/B18 continuous latent/correlated positive source inspiration only; explicit new finite atomic cloud",
+      "multilevel_shell_spokes": "B62: entire atom shares a radial layer before mixture; finite spoke realization rather than continuous cube-density integral"
+    },
+    "excluded": "A13/A14 positive spectral compensation, Sidon labels, peak widths, full winner/FIRST qualifications are not implemented or inherited"
+  },
+  "validation": [
+    {
+      "pass_": true,
+      "u": 0.5,
+      "R": 1.0,
+      "mass": 0.5
+    },
+    {
+      "pass_": true,
+      "u": 0.8999999999999999,
+      "R": 1.0,
+      "mass": 0.8999999999999999
+    },
+    {
+      "pass_": true,
+      "u": 1.0,
+      "R": 1.0,
+      "mass": 1.0
+    },
+    {
+      "pass_": true,
+      "validation": "single atom lambda=.25: Gamma1=Theta_hard=1 on [0,log2), delay0 accepted; analytic squared energy=log2",
+      "energy": 0.6931471805599453
+    },
+    {
+      "pass_": true,
+      "validation": "cone Jacobian dx=r^n dt dnu on boundary [-1/2,1/2]^n; shell volume matches"
+    }
+  ]
+}

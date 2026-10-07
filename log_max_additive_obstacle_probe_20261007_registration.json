@@ -1,0 +1,86 @@
+{
+  "status": "registered_before_implementation_execution",
+  "timestamp_utc": "2026-10-07T03:35:00.795413+00:00",
+  "analytic_proof_path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/log_max_additive_obstacle_20261007.md",
+  "analytic_proof_sha256": "93f969763019f97d267122443617984951c154123f29e235668bda6416427954",
+  "bad_component_rounds": [
+    {
+      "n": 4,
+      "a": "1",
+      "b": "2",
+      "tau": "1",
+      "eta": "1/10",
+      "finite_H": 32,
+      "finite_J": "R_l=1+l/H, l=0,...,H"
+    },
+    {
+      "n": 16,
+      "a": "1",
+      "b": "2",
+      "tau": "1",
+      "eta": "1/10",
+      "finite_H": 128,
+      "finite_J": "R_l=1+l/H, l=0,...,H"
+    },
+    {
+      "n": 64,
+      "a": "1",
+      "b": "2",
+      "tau": "1",
+      "eta": "1/10",
+      "finite_H": 512,
+      "finite_J": "R_l=1+l/H, l=0,...,H"
+    }
+  ],
+  "bad_formula": "mu_bad=tau(1_[-2,2]^n dx+eta delta0); Wbad=tau(4^n+eta); continuous E=Q2, winner max(1,2||x||inf). S0=1/(1+eta)+n ln2+ln(1+eta/2^n)-ln(1+eta); Phi_bad/tau=(2^n+eta)ln(1+eta/2^n)+eta*n ln2-eta ln(1+eta).",
+  "finite_J_formula": "True common finite-family winner is smallest R_l capturing spike; S_J=1/(1+eta)+sum_l(R_l^n-R_(l-1)^n)/(R_l^n+eta). This is a distinct finite input contract, not an approximation certificate for continuous formula.",
+  "interval_arithmetic": {
+    "type": "Fraction exact rational endpoints rounded outward to binary256bits; signed interval arithmetic endpoints exact",
+    "ln2_terms": 120,
+    "ln2_remainder": "atanh x=1/3: lower2sum_(k=0..119)x^(2k+1)/(2k+1), remainder<=2*x^241/[241(1-x^2)]",
+    "log1p_terms": 120,
+    "log1p_remainder": "0<=s<=1/10. Even alternating truncation lower; upper lower+s^121/121.",
+    "e_max_index": 80,
+    "e_remainder": "sum_(k=0..80)1/k! lower; upper plus [1/81!]/[1-1/82]",
+    "finite_sum": "Each exact rational summand rounded outward separately, then interval-summed. No giant denominator aggregation."
+  },
+  "certificates": [
+    "e_lower>2",
+    "S0>Z/e and S0>=Z-2eta, with strict endpoint-positive rational gap",
+    "S_J>Z/e for independently fixed finite scales; Z_J<=Z",
+    "Full bad-background mass always included; explicit Phi_bad interval and ratio only badcomponent, not nearoptimal"
+  ],
+  "dilution_parameters": [
+    "1/8",
+    "1/32",
+    "1/128"
+  ],
+  "dilution_scope": "Unknown compact nearopt source only symbolic WA>0 and ratio Kg>=K-epsilon/2, K<=Z/e. Sufficient N>=ceil(2Z Wbad/(epsilon WA)), certified using Z_upper. Record normalized mass-ratio threshold, badfraction bound, nearmax-deficit coefficient and d_N expression. Do not assign WA,Kg,K,N or geometry; no actual nearmax numeric input.",
+  "nu_guard_rounds": [
+    {
+      "n": 1,
+      "input_path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/log_max_variation_probe_20261007_n1_cell_profiles.json.gz",
+      "input_sha256": "32c1426d247d6c0151aa844b2e617e96696918fa994ca5a83aba312229596a40"
+    },
+    {
+      "n": 2,
+      "input_path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/log_max_variation_probe_20261007_n2_cell_profiles.json.gz",
+      "input_sha256": "1dcaab830a6a0de0f75a007a40d5c6cbbafd54e522d080cfeb1ed3cb30400fc0"
+    },
+    {
+      "n": 3,
+      "input_path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/log_max_variation_probe_20261007_n3_cell_profiles.json.gz",
+      "input_sha256": "2103154a7a4104a37c7ca6510282557d3e6ded3f956b842e7d09095a072f73e5"
+    }
+  ],
+  "nu_guard": "Read saved original finite-J full-cell profiles only. G=complete receiver bounding rectangle expanded by b/2 in all axes, nu=tau1_G dx. All selected queries of original E are inside G, so A_R nu=tau. p=tau/M<1; Fraction Dnu=tau sum_Evol*p, Qnu=tau sum_Evol*p^2<=Dnu. Full new source mass is W+tV, V=tau|G|.",
+  "nu_t_values": [
+    "1/8",
+    "1",
+    "4"
+  ],
+  "nu_logarithms": "160-digit Decimal gain=tau sum_Evol ln(1+t p), compare to exact Fraction tDnu-t^2Qnu/2; numerical non-interval; only frozen-originalE gain, never compute new whole max or A={S>K+u}.",
+  "atomic_positive_width_scope": "Bad numeric formulas explicitly atomic spike+full L1 background. Analytic positive-width existence is proved in cited paper fixed n then halfwidth->0; no fixed positive-width numerical source or exact response is certified here.",
+  "stopping_scope": "Exactly prescribed 3bad+3nu rounds; no MC, randomseeds, parameter adaptation, oldoracle/probe reruns or unknown nearopt simulation.",
+  "cost": "Scalar rational series and672 finite-shell terms; read10914 saved cells and evaluate803 originalE cells at3t. Bounded seconds/minutes, no n-dimensional new partition/oracle."
+}

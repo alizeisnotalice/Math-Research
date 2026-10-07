@@ -1,0 +1,41 @@
+{
+  "status": "PASS_ACTUAL_ORACLE_DEGENERATE_SIGMA1_LOGIC",
+  "records": [
+    {
+      "coordinate_soft_value": 0.1,
+      "expected": "NUMERICALLY_ENCLOSED_FULL_FUTURE_NOT_FLOAT_CERTIFIED",
+      "result": {
+        "status": "NUMERICALLY_ENCLOSED_FULL_FUTURE_NOT_FLOAT_CERTIFIED",
+        "sigma_start": 1.0,
+        "degenerate_sigma1_checked": true,
+        "accepted_cells": 1,
+        "tested_cells": 1,
+        "remaining_or_failed": [],
+        "max_accepted_upper": 0.20000000000000004
+      }
+    },
+    {
+      "coordinate_soft_value": 2.0,
+      "expected": "UNKNOWN",
+      "result": {
+        "status": "UNKNOWN",
+        "sigma_start": 1.0,
+        "degenerate_sigma1_checked": true,
+        "accepted_cells": 0,
+        "tested_cells": 1,
+        "remaining_or_failed": [
+          {
+            "sigma_cell": [
+              1.0,
+              1.0
+            ],
+            "upper": 4.0,
+            "L_cell_index": 0
+          }
+        ],
+        "max_accepted_upper": null
+      }
+    }
+  ],
+  "scope": "Synthetic coefficient check only; not a full-source FIRST or floating interval certificate."
+}

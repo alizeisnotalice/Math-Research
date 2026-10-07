@@ -1,0 +1,201 @@
+{
+  "status": "registered_before_implementation_execution",
+  "timestamp_utc": "2026-10-07T03:16:26.801845+00:00",
+  "plans": [
+    {
+      "n": 1,
+      "atoms": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ],
+        [
+          "1"
+        ],
+        [
+          "4"
+        ]
+      ],
+      "weights": [
+        "1/8",
+        "1/8",
+        "1/4",
+        "1/2"
+      ],
+      "v": [
+        "1",
+        "-1",
+        "1",
+        "-1/2"
+      ],
+      "J": [
+        "1",
+        "2"
+      ],
+      "tau": "1/4"
+    },
+    {
+      "n": 2,
+      "atoms": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "4",
+          "4"
+        ]
+      ],
+      "weights": [
+        "1/16",
+        "1/16",
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/2"
+      ],
+      "v": [
+        "1",
+        "-1",
+        "1",
+        "1",
+        "-1",
+        "-1/4"
+      ],
+      "J": [
+        "1",
+        "3/2",
+        "2"
+      ],
+      "tau": "1/8"
+    },
+    {
+      "n": 3,
+      "atoms": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "4",
+          "4",
+          "4"
+        ]
+      ],
+      "weights": [
+        "1/32",
+        "1/32",
+        "1/16",
+        "1/16",
+        "1/16",
+        "1/16",
+        "1/16",
+        "1/16",
+        "1/16",
+        "1/2"
+      ],
+      "v": [
+        "1",
+        "-1",
+        "-1",
+        "-1",
+        "1",
+        "-1",
+        "1",
+        "1",
+        "-1",
+        "1/8"
+      ],
+      "J": [
+        "1",
+        "5/4",
+        "3/2",
+        "2"
+      ],
+      "tau": "1/16"
+    }
+  ],
+  "t_values": [
+    "1/8",
+    "-1/8",
+    "1/32",
+    "-1/32",
+    "1/128",
+    "-1/128"
+  ],
+  "q_optional": "2",
+  "Decimal_precision": 160,
+  "partition": "All atom+-R/2 coordinate faces for every common finite scale R in J; unique Fraction cuts and open interiors. Product finite cells between extreme cuts contain complete response support. Exterior response exactly0; coordinate faces Lebesgue-null.",
+  "winner": "Complete atom mixture at every original/perturbed input and all same finite J. Exact Fraction responses; tie lowest R. No continuous-window supremum or radius-grid approximation claim.",
+  "algebra_checks": [
+    "All perturbed masses positive and total1; original sum a*v=0 and abs(v)<=1",
+    "sum a_j S_j=tau|E| where E=M>tau strict; M=tau plateau separate",
+    "sum a_j v_j S_j=tau sum_E volume*p, p=captured signedmass/full captured mass",
+    "Q=tau sum_E volume*p^2; abs(p)<=1",
+    "Every original-positive cell frozen-winner perturbed response=M*(1+t*p); perturbed true max dominates",
+    "Phi(pert)-Phi(base)>=tD-t^2Q/[2(1-|t|)^2] numerically in160-digit Decimal, not interval certificate",
+    "Optional Phi>=log(2)/2*(2tau)|M>2tau| numerical Decimal; threshold strict"
+  ],
+  "stress": "n1/2/3, atom labels4/6/10 and scales2/3/4 increasing, coincident contributions, exact ties, positive-volume threshold plateaus. Preset tau/weights fixed; no post-observation adaptation.",
+  "outputs": "Same-prefix script, gzip full cell profiles, JSON results/receipt, md report; old MC/oracle not imported or called.",
+  "complexity": "Unique coordinate values0,1,4 with2/3/4 scales. At most 12/18/24 cuts per axis; <=11/17^2/23^3 cells. No sampling or seeds. All integrals algebraic except log, which is high-precision numerical and not outward-rounded."
+}

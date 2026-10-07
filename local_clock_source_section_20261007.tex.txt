@@ -1,0 +1,174 @@
+\section{来源格子的独立局部时钟与受控工作量}
+
+本节给出有限空间格、有限确定刷新和接受死亡时刷新范围内的真实控制接口。每格内保留原任意测度形状，来源坐标不要求独立；不默认覆盖无限刷新或任意一般可预见控制，也不将新接口当成主平方根目标完成。
+
+\subsection{当前完整来源与加权几何费用}
+
+沿用完整窗口 $0<a<b$、阈值 $\tau>0$，固定半开格边长 $d\le\min(a/(8n),(b-a)/4)$。对当前完整来源 $\nu$，记 $W=\nu(\mathbf R^n)$、$M=M_\nu$、$E=\{M>\tau\}$，取当前完整真赢家 $R$，并写
+\[
+ m=\nu(Q(x,R)),\qquad
+ \pi_C(x)=\nu(C\cap Q(x,R))/m,\qquad z=\log(M/\tau).
+\]
+给一份不随接收点 $x$ 改变的格子速率 $0\le a_C\le1$，置
+\[
+ \nu_{\mathrm{active}}=\sum_Ca_C\nu|_C,\qquad
+ W_{\mathrm{active}}=\sum_Ca_C\nu(C),\qquad
+ L_a(\nu)=\tau\int_E\sum_Ca_C\pi_C\,dx.
+\]
+这是完整 $\nu$ 的后验分母，不把 active 来源另外最大化后替换它。
+
+令 $\alpha=n\log(1+2d/a)\le1/4$。内区 $R\le b-2d$ 的完整格子扩张 $Q(x,R+2d)$ 是原合法查询，逐格已有径向计算给
+\[
+ \tau\int_{E_{\mathrm{int}}}\pi_C^2\,dx
+ \le2e^{2\alpha}\nu(C),\qquad
+ \tau\int_{E_{\mathrm{int}}}z\pi_C^2\,dx
+ \le2e^{2\alpha-1/2}\nu(C)\le2\nu(C).
+\]
+这来自 $m\ge e^{-\alpha}\max(\nu(C),\tau r_C^n)$、$r_C=2\|x-c_C\|_\infty$，以及 $v=\tau r_C^n/\nu(C)$ 的径向推前。未加权积分为 $\int_0^\infty\max(1,v)^{-2}dv=2$；加权积分为 $\int_0^\infty F(v)dv=2e^{-1/2}$，其中 $F(v)=\sup_{u\ge\max(1,v)}u^{-2}\log(u/v)$。乘以同一 $a_C$ 后求和，只付 $W_{\mathrm{active}}$。
+
+顶部 $R>b-2d$ 上有
+\[
+ \sum_Ca_C\pi_C^2\le\sum_Ca_C\pi_C
+ =U_R(\nu_{\mathrm{active}})/M.
+\]
+用 $\tau/M<1$ 和 $\tau z/M=ze^{-z}\le1/e$，再用合法窄窗 $[b-2d,b]$ 的正包络质量至多 $4/3$，给顶部两费分别至多 $(4/3)W_{\mathrm{active}}$ 和 $4W_{\mathrm{active}}/(3e)$。因此
+\[
+ \tau\int_E\sum_Ca_C\pi_C^2\,dx\le6W_{\mathrm{active}},\qquad
+ \tau\int_Ez\sum_Ca_C\pi_C^2\,dx<\frac52W_{\mathrm{active}}.
+                                                               \tag{LC1}
+\]
+同一标量删除帽
+\[
+ \min(z,-\log(1-p))\le p+(1+4z)p^2,\qquad0\le p\le1
+\]
+乘 $a_C$，结合真实完整删除损失
+$D_C(\nu)=\Phi(\nu)-\Phi(\nu-\nu|_C)\ge0$，得到
+\[
+ \sum_Ca_CD_C(\nu)\le L_a(\nu)+16W_{\mathrm{active}}.
+                                                               \tag{LC2}
+\]
+
+\subsection{有限受控过程及非均匀增长的漂移下界}
+
+固定初始有限个正质量格子。政策只观察接受死亡历史、当前来源和独立政策种子；在有限个确定时刻或已经接受的死亡时刻刷新 $a_C\in[0,1]$，相邻刷新之间固定。死亡按左状态速率接受，接受并删除后才刷新后续速率。死亡后的格子质量为零，尚存格子的全部原形状以速率 $a_C$ 乘法增长。构造辅助的拒绝 Poisson proposal 和未用标记不纳入政策观察滤过。
+
+自含构造如下：每次刷新后，各尚存格独立抽 $\mathrm{Exp}(a_C)$ 等待时间，$a_C=0$ 时为无穷；到下一确定刷新时刻截断。若先有死亡，删除其整格并根据已发生记录刷新。未死亡格子的剩余寿命由指数记忆无关重新抽取。接受死亡至多为初始格子数，确定刷新亦有限。等价的单位率 Poisson 加 uniform 接受标记仅是构造方式，不承担未证一般补偿定理。
+
+在一个无跳、无刷新段，当前来源的未来值为
+\[
+ \nu_h=\sum_Ce^{a_Ch}\nu|_C.
+\]
+冻结当前任一真赢家，在原 $E$ 上
+\[
+ U_R(\nu_h)/M=\sum_C\pi_Ce^{a_Ch},\qquad
+ \log\left(\sum_C\pi_Ce^{a_Ch}\right)
+ \ge h\sum_Ca_C\pi_C.
+\]
+原 $E$ 外新收益非负，故
+\[
+ \Phi(\nu_h)-\Phi(\nu)\ge hL_a(\nu).
+\]
+沿段 $\nu_h$ 在 TV 中局部 Lipschitz，窗口稳定性使 $\Phi(\nu_h)$ 局部绝对连续。因此在导数存在的几乎所有时刻，实际连续漂移至少为当前 $L_a$。赢家切换和阈值平台只提高此下界，不需要任选赢家的精确导数公式。
+
+积分所需的当前赢家可取共同可测版本：有限格质量系数、$x$ 和尺度的响应联合可测，闭 cube 响应可从尺度右侧递减逼近。对子窗 $[a,q]$，其最大值是有理尺度和端点的可数上确界；最小真赢家满足 $\{R\le q\}=\{\max_{a\le r\le q}U_r=M\}$，故联合可测。所有帽对任意真赢家成立，该选择仅服务于完整功能证明，不免费继承另一个原历史选择器。
+
+\subsection{有限状态指数计算给出真实接受补偿}
+
+条件于某次刷新历史，当前速率固定，置 $\Lambda=\sum_{\mathrm{alive}}a_C$，距下一确定刷新时刻为 $l$。首死亡的标签 $C$、延迟 $v<l$ 的密度为
+\[
+ a_Ce^{-\Lambda v}\,dv,
+\]
+而无死亡到 $v$ 的概率为 $e^{-\Lambda v}$。无跳来源 $\nu(v)=\sum_Ce^{a_Cv}\nu|_C$ 此时已确定。该段真实死亡损失的条件期望是
+\[
+ \sum_C\int_0^l a_Ce^{-\Lambda v}D_C(\nu(v))\,dv.
+\]
+该段至首死亡或确定刷新为止的占用
+\[
+ \int_0^{\mathrm{首死亡}\wedge l}\sum_Ca_CD_C(\nu(v))\,dv
+\]
+的条件期望正是同一式；$\Lambda=0$ 时两者均零。死亡或确定刷新后递归使用该计算，有限段数及塔式期望给全时域接受补偿。死亡损失始终取左状态，不以刷新后的速率追溯决定当次死亡。
+
+固定 $H<\infty$，逐路径 $W_t\le e^HW_0$、$\Phi(\nu_t)\le Ze^HW_0/e$；单次删除亦被后一界控制，总速率不超过初始格子数。因此漂移、删除和期望均有限可积。将连续漂移下界和 (LC2) 相消，在任意确定 $s\le t\le H$ 得
+\[
+ \mathbf E_P[\Phi(\nu_t)-\Phi(\nu_s)\mid\mathcal F_s]
+ \ge-16\mathbf E_P\left[\int_s^tW_{\mathrm{active}}(r)\,dr
+                                      \mid\mathcal F_s\right]. \tag{LC3}
+\]
+对质量同样逐路径展开：连续增长为 $\int W_{\mathrm{active}}$，删除扣当前整格质量；同一指数补偿使两者期望相消。所以 $W_t$ 是非负鞅。
+
+由 (LC3)，$\Phi(\nu_t)+16\int_0^tW_{\mathrm{active}}$ 有条件次鞅合同。任意 $T\le H$ 向上有限网格逼近，事件 $\{T_m>t_j\}\in\mathcal F_{t_j}$ 使增量条件求和合法；右连续和确定包络给
+\[
+ \mathbf E_PW_T=W_0,\qquad
+ \mathbf E_P\Phi(\nu_T)
+ \ge\Phi(\nu_0)-16\mathbf E_P\int_0^TW_{\mathrm{active}}(r)\,dr.
+                                                               \tag{LC4}
+\]
+
+\subsection{局部时钟的质量倾斜及隐藏永生标签}
+
+在有限 $H$ 定义 $dQ_H=(W_H/W_0)dP$；质量鞅使有限时域密度一致。采用接受死亡历史的原始观察滤过，不把无限时域的 $P$-零测事件预先加入初始信息。令
+\[
+ B_t=\Phi(\nu_t)/W_t,\qquad
+ \overline a_t=W_{\mathrm{active}}(t)/W_t.
+\]
+在 $Q$ 下 $W_t>0$、$0\le B_t\le Z/e$、$0\le\overline a_t\le1$。Bayes 和 (LC3) 给 $B_t+16\int_0^t\overline a_r\,dr$ 的条件次鞅合同；此外非负 Fubini 给
+\[
+ \mathbf E_P\int_0^TW_{\mathrm{active}}(r)\,dr
+ =W_0\mathbf E_Q\int_0^T\overline a_r\,dr.       \tag{LC5}
+\]
+因此有界停止满足
+\[
+ \Phi(\nu_0)/W_0
+ \le\mathbf E_Q B_T
+     +16\mathbf E_Q\int_0^T\overline a_r\,dr.    \tag{LC6}
+\]
+费用是局部质量工作量，不是普通 $P$ 时间，也不自动等于 $Q$ 时间；只有所有尚存格速率都为 $1$ 时才退化为 $\mathbf E_QT$。
+
+有限格可直接构造同一 $Q$：初始按 $w_C/W_0$ 抽永生标签，保护该格不死亡，其余格执行同一接受死亡历史政策和原死亡速率；政策不直接观察标签，所有格仍按各自 $a_C$ 增长。条件于政策种子，有限死亡路径的密度是各段无死亡指数
+\[
+ \exp\left(-\int\sum_{\mathrm{alive}}a_C\right)
+\]
+与实际死亡标签速率因子的乘积。指定标签 $C$ 后，只留下无 $C$ 死亡的路径。同一路径上政策值相同，其他死亡因子相消，无死亡指数的比值为 $\exp(\int a_C)$。故指定标签的有限时域观察密度为
+\[
+ \exp\left(\int_0^ta_C(r)\,dr\right)\mathbf1_{\{C\ \mathrm{alive}\}}.
+\]
+混合后为 $W_t/W_0$；零速率段按无死亡概率质量解释。隐藏标签后，当前后验为 $\nu_t(C)/W_t$，单格死亡率为左状态的
+\[
+ a_C\left(1-\frac{\nu_t(C)}{W_t}\right).
+\]
+总率不再是存活格子数减一。条件后验及 Fubini 得局部费用的标签表示
+\[
+ \mathbf E_Q\int_0^T\overline a_t\,dt
+ =\mathbf E_{\mathrm{带标签}\ Q}\int_0^Ta_J(t)\,dt.
+\]
+若将拒绝 proposal 或未来辅助标记也纳入观察，不能不加证明照搬此密度法则。
+
+\subsection{孤立冻结例及仍未解决的目标}
+
+作为另需明确几何邻接定义的控制例，取预固定有限无向格子图，令 $a_C=1$ 当且仅当该格有存活邻居；孤立后永久冻结。只要还有边，原 $P$ 至少有两个 active 格；在 $Q$ 下总死亡率为 active 格子数减 $\overline a_t$，至少为 $1$。有限格每死减少一个，故双方的全局终止几乎处处有限。
+
+条件于永生标签 $J=i$，其初始 $D_i$ 个邻居始终以速率 $1$ 活动直到死亡，其寿命独立为 $\mathrm{Exp}(1)$。标签活动时钟准确为这些寿命的最大值，空邻居集时为零。因此
+\[
+ \mathbf E_Q\int_0^Ta_J(t)\,dt=H_{D_i}
+ \quad\hbox{（条件于 $J=i$）},\qquad
+ \mathbf E_Q\int_0^T\overline a_t\,dt
+ =\sum_i\frac{w_i}{W_0}H_{D_i}.
+\]
+其中 $\mathbf E\max_{1\le j\le D}L_j
+=\int_0^\infty[1-(1-e^{-t})^D]dt
+=\int_0^1[1-(1-v)^D]\,dv/v=H_D$，为直接积分证明。
+有限格先应用 $T\wedge H$，再令 $H\to\infty$；$B$ 有界、$Q$ 下终止有限、标签工作量可积，足以通过该极限，不要求原全时域质量族一致可积。
+
+若图的非邻接保证每个边长 $b$ 的 cube 至多捕获一个终端来源格，终端功能可以逐格相加。单格内 $\ell^\infty$ 直径至多 $d$；只要 $Q(x,r)$ 捕获该格任一点，$Q(x,r+2d)$ 就包含其下角点，且 $(r+2d)/r\le1+2d/a$。因此该格最大响应被质量 $e^\alpha w_C$ 的点源、扩张窗口 $[a+2d,b+2d]$ 支配。点源功能至多其质量可直接计算：若点源质量为 $v$、窗口下端为 $a'$，$\lambda=v/\tau$，则外放窗口上端到无穷后的功能为
+\[
+ \tau\int_0^\infty\log_+\frac{\lambda}{\max((a')^n,s)}\,ds
+ =\max(v-\tau(a')^n,0)\le v.
+\]
+故终端 $\Phi\le e^\alpha W$。结合前式得到该图方案的有限格初值上界
+\[
+ \Phi(\nu_0)/W_0
+ \le e^\alpha+16\sum_i(w_i/W_0)H_{D_i}.
+\]
+具体图必须真正核验上述 cube 非邻接条件及统一度数界，不能仅凭任意抽象图使用该几何结论。可数格即使标签时钟有限，也未必有有限全局终止；稳妥迁移是先对有限格截断得到统一初值功能界，再用初值 TV 极限，不能擅称无限过程已经到达独立集。
+
+例如单窗口 $[a,2a]$ 可取 $d=a/(8n)$，连接所有下角点距离 $\ell^\infty$ 不超过 $b+2d$ 的不同格子。同一 $Q(x,b)$ 捕获两格时两下角点距离至多 $b+2d$，故此图满足上述真实几何条件。其度数不超过 $(32n+5)^n-1$，于是 $H_{D_i}\le1+n\log(32n+5)$。该控制例只给 $O(n\log n)$ 基线，还比既有 $O(n)$ 基线粗。它展示局部工作量确可受控制，而不是平方根目标的进步结论。LC6 是新的完整来源控制接口；还需一般输入的真正控制方案，把终端功能和质量工作量同时降到目标费用。原 FIRST、完整未来资格、CP/GP、LCA 及全部历史没有因来源控制而免费继承。主平方根上界仍未解决。

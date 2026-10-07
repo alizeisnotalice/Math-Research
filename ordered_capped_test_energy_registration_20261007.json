@@ -1,0 +1,64 @@
+{
+  "status": "registered_before_execution",
+  "date": "2026-10-07",
+  "purpose": "Original-kernel actual finite-horizon winner test-energy pressure, including initial-gap variant, and time-local entropy/test pairing; not a weak endpoint counterexample or actual geom sample",
+  "rounds": [
+    {
+      "n": 8,
+      "K": 64,
+      "epsilon": "1/1000"
+    },
+    {
+      "n": 32,
+      "K": 128,
+      "epsilon": "1/10000"
+    },
+    {
+      "n": 128,
+      "K": 256,
+      "epsilon": "1/100000"
+    }
+  ],
+  "c": 1,
+  "Z": 1,
+  "lambda": "1/2",
+  "sources": [
+    "f=1+epsilon cos(K sum_i x_i), full E all torus",
+    "f=1+cos(K sum_i x_i), Enew={cos<=-3/4}"
+  ],
+  "actual_kernel": "g_d(v)=1/(1+d*(v/log(1+v)-1)); d=exp(-z). Original T response m(z)=[exp(-z)+(1-exp(-z))*g_1(K^2)]^n, not reset",
+  "winner": "Unique 0 for positive cosine, unique Z for negative cosine. Exact cosine-zero ties choose 0. Gap set lies strictly in negative phase",
+  "phase_grids": [
+    1024,
+    2048,
+    4096
+  ],
+  "time_panels": [
+    256,
+    512,
+    1024
+  ],
+  "phase_rule": "Midpoint equispaced phase grid, double FFT of bounded actual t, log(1+v/lambda), and original g_d(j^2 K^2) actions",
+  "time_rule": "Nested composite Simpson; analytic entropy drop used as independent check",
+  "exact_claims": [
+    "Flat lower energy >=n for epsilon<=1/1000, K>=64,n>=8",
+    "Gap lower energy >=n/6 for K>=64,n>=8",
+    "Finite Fourier actual endpoint and derivative multiplier identities",
+    "Constant chain uses Fraction: g<1/100, late m<1/16, t perturbation bounds, directed Dirichlet lower bounds"
+  ],
+  "quantities": [
+    "unscaled integral test energy",
+    "actual entropy drop",
+    "global Cauchy bound sqrt(drop*scaled energy)",
+    "time-local paired bound integral sqrt(d(z)*a(z))",
+    "signed commutator, positive Bregman term, exact winner flow and initial fee"
+  ],
+  "uncertainty": "Double FFT nonlinear/discontinuous t sampling and Simpson integration are noninterval diagnostics; nested-grid differences are disclosed. Fraction guard certifies only explicit rational constant chain, analytic proof supplies continuous winner and finite-L1 lifting",
+  "exclusions": [
+    "No general polylog paired-budget claim",
+    "No weak endpoint counterexample",
+    "No full FIRST/hardband/nonconcentration/history qualification",
+    "No re-run of old guards",
+    "No main-ledger fee"
+  ]
+}

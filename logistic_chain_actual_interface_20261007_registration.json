@@ -1,0 +1,17 @@
+{
+  "id": "logistic-chain-common-source-representation-20261007-v1",
+  "registered_before_execution": true,
+  "scope": "Three exact rational finite Bernoulli-cell representation guards. No original Levy density, original spatial input, actual FIRST/gates, central order, or MC certificate.",
+  "rounds": [4, 5, 6],
+  "cell_probabilities": "p_i=1/(i+2), independently",
+  "parameter_sets": "A00={0}; A01={0,1} plus even i>=4; A10={0,2} plus odd i>=4; A11=all cells",
+  "source_masses": [2, 3],
+  "Ch": "16/3",
+  "receiver_states": 4,
+  "receiver_law": "Q_j(y,b,x)=(((x+y+sum_{i in A_j}b_i) mod 4)+1)/10",
+  "acceptance": "a_j(y)=(2+y+j)/(7+j); accepted index j owns receiver state x=j",
+  "weak_threshold": "tau=min_j T(j)/2; g_j=tau/T(j)",
+  "checks": ["each marginal PGF", "nested count and increment independence", "incomparable shared-intersection count covariance", "one source normalization", "strong traffic calibration", "weak true-threshold calibration", "uniform Palm receiver", "stop plus deficit", "tail sum and reciprocal-count Palm identity"],
+  "execution_policy": "Execute once after registration; preserve result and refuse overwrite. Exact Fraction only; no random sampling; no old guard rerun.",
+  "paid_fee": false
+}

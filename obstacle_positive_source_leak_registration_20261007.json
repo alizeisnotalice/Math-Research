@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-07",
+  "status": "registered_before_execution",
+  "seed": null,
+  "scope": "New exact rational/interval checks for degree-one trace constants, nonpositive one-coordinate degree-two coefficient, and one-coordinate repeated positive-envelope budget. These are original-kernel coefficient statements, not actual FIRST samples or an endpoint proof.",
+  "rounds": [8, 32, 128],
+  "t_choices": ["1", "ceil(log2(n+2))"],
+  "r_choices": ["0", "1/n^2", "1/(2n)", "1/n", "2/n", "min(4/n,1/2)", "1/2", "1"],
+  "positive_exp_interval": "Exact positive Taylor lower sum, with first omitted term divided by 1-q/(M+2) as upper remainder; M=4*ceil(q)+64. Negative exp obtained by reciprocal endpoint reversal.",
+  "new_checks": [
+    "degree-one original coefficient identity and |d1|<=1/n, |beta|<=18/n",
+    "one-coordinate degree-two coefficient <=0 including r=0 endpoint",
+    "degree-m positive coefficient bounded by t/n^(m-1) for 3<=m<=n+2",
+    "exact geometric positive envelope finite sum and remaining infinite tail equals t/(n-1)",
+    "rational constants 1113/64<18 and short-degree budget factor at J=floor(sqrt(n)/2)",
+    "independent finite positive Markov algebra for Q^j u and original exterior trace, not simulated original kernels"
+  ],
+  "not_checked": ["Previously executed signed two-face negativity", "previous L2 maximal theorem", "previous resolvent obstacle guard", "actual cube/FIRST/history eligibility", "multi-face weak endpoint"],
+  "failure_policy": "Save failed residuals and exit nonzero. No unregistered search, fitting, or silent retry."
+}

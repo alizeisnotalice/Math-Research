@@ -1,0 +1,1079 @@
+{
+  "created_utc": "2026-10-06T18:06:35.766358+00:00",
+  "artifact_hashes": [
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/frozen_packet_residual_20261007/frozen_packet_partition.py",
+      "sha256": "d25327f7f729e2c3de9ff7d870d55ce71fbbbda526eaa320b906509544a9dae3"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/frozen_packet_residual_20261007/plan_20261006T180246265659Z.json",
+      "sha256": "311888129751bdc904f0290bf96557272198f2d6a6cba71c33c1938ddd5cde76"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/frozen_packet_residual_20261007/round_1_20261006T180246265659Z.json",
+      "sha256": "f8633809367edd5fc47145544527a49d76812f72bd19aef4f4d518742abeb4d6"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/frozen_packet_residual_20261007/round_2_20261006T180246265659Z.json",
+      "sha256": "7495ceca40bbab005eabf783103ab1c8dbe6636294248cec63f832604f81f7d1"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/frozen_packet_residual_20261007/round_3_20261006T180246265659Z.json",
+      "sha256": "94589c1152995c833e4438c84232575853ecea9bdd1e70ed108c1812cd2e738e"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/frozen_packet_residual_20261007/summary_20261006T180246265659Z.json",
+      "sha256": "e950280e9d077a5bcb80436cda56ea27c681a1b7fc22f528e6743b41516c0f1f"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/frozen_packet_residual_20261007/winner_engine_snapshot.py",
+      "sha256": "24f05871e744203225542adaa142a1342b5f4516ab807602efa788748f5a33e3"
+    }
+  ],
+  "record_count": 15,
+  "rounds": [
+    {
+      "round": 1,
+      "samples_per_replicate": 512,
+      "fine_nodes": 129,
+      "seeds": [
+        202610078012,
+        202610182741,
+        202610287470,
+        202610392199,
+        202610496928
+      ]
+    },
+    {
+      "round": 2,
+      "samples_per_replicate": 1024,
+      "fine_nodes": 257,
+      "seeds": [
+        202610079012,
+        202610183741,
+        202610288470,
+        202610393199,
+        202610497928
+      ]
+    },
+    {
+      "round": 3,
+      "samples_per_replicate": 2048,
+      "fine_nodes": 513,
+      "seeds": [
+        202610080012,
+        202610184741,
+        202610289470,
+        202610394199,
+        202610498928
+      ]
+    }
+  ],
+  "reconstruction_checks": {
+    "max_saved_profile_total_minus_paid_minus_residual": 1.3801893655740471e-16,
+    "max_saved_energy_reconstruction_error": 1.1102230246251565e-16,
+    "independent_Fraction_mass_checks": [
+      {
+        "candidate_id": 6,
+        "n": 8,
+        "N": 32,
+        "independent_Fraction_positive_intersection_count": 0,
+        "quarter_exact_mass_model_empty": true,
+        "eighth_pigeonhole_empty": true
+      },
+      {
+        "candidate_id": 20,
+        "n": 16,
+        "N": 32,
+        "independent_Fraction_positive_intersection_count": 0,
+        "quarter_exact_mass_model_empty": true,
+        "eighth_pigeonhole_empty": true
+      },
+      {
+        "candidate_id": 34,
+        "n": 32,
+        "N": 32,
+        "independent_Fraction_positive_intersection_count": 0,
+        "quarter_exact_mass_model_empty": true,
+        "eighth_pigeonhole_empty": true
+      },
+      {
+        "candidate_id": 48,
+        "n": 64,
+        "N": 32,
+        "independent_Fraction_positive_intersection_count": 0,
+        "quarter_exact_mass_model_empty": true,
+        "eighth_pigeonhole_empty": true
+      }
+    ]
+  },
+  "statistical_scope": "15 fixed input-round records, independent fresh stage and replicate seed namespaces, CRN across nodes within each replicate. All input weights/positions/lambda/packet indices stayed byte-value identical. No branch source renormalization or winner reselection. Cross-replicate energy estimates include both paid-residual directions; they are not linearly subtracted energies.",
+  "CI_scope": "Joint finite-node confidence allocation covers both bases, 2 quantities, 7 total/branch parts, lower/upper screened RVs, both tails, all 15 records. Per-round eps uses that round K and allocates 5/15 of total failure probability; the global three-round union remains <=.05. Bounds only finite trapezoidal targets conditional on heuristic arithmetic screening, not continuum quadrature or exact-real geometry. Generic bands remain positive even for zero observations. Exact stored-mass/pigeonhole empty branches separately have energy upper0 by certificate, not Monte Carlo.",
+  "exact_mass_scope": "Independent Fraction enumeration verified no positive common captured subset mass across the four packets of each N32 saved input. Thus eta=.25 empty for the exact saved dyadic positive masses, regardless of capture geometry; eta=.125 empty by four-packet pigeonhole. Do not infer emptiness for unrounded generator weights, N128 sixteen-packet input, arbitrary source allocations, or actual geom traffic.",
+  "round3_summary": [
+    {
+      "candidate_id": 6,
+      "n": 8,
+      "N": 32,
+      "epsilon": 0.045099928640402444,
+      "bases": {
+        "full_hard": [
+          {
+            "eta": 0.5,
+            "analytic_mass_or_pigeonhole_empty": false,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.32357171956405556,
+                "paid": 0.32190240057888386,
+                "residual": 4.634228516187271e-05,
+                "paid_residual_cross": 0.0016229767000098636,
+                "residual_positive_nodes": 168,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.012039887241260885
+                ],
+                "exact_mass_model_upper": null
+              },
+              "Theta_hard": {
+                "total": 0.17845583308371862,
+                "paid": 0.17731824021819856,
+                "residual": 2.338922283220113e-05,
+                "paid_residual_cross": 0.0011142036426878843,
+                "residual_positive_nodes": 216,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.011830908675443948
+                ],
+                "exact_mass_model_upper": null
+              }
+            }
+          },
+          {
+            "eta": 0.25,
+            "analytic_mass_or_pigeonhole_empty": true,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.32357171956405556,
+                "paid": 0.32357171956405556,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.01127891068158701
+                ],
+                "exact_mass_model_upper": 0
+              },
+              "Theta_hard": {
+                "total": 0.17845583308371862,
+                "paid": 0.17845583308371862,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.01127891068158701
+                ],
+                "exact_mass_model_upper": 0
+              }
+            }
+          },
+          {
+            "eta": 0.125,
+            "analytic_mass_or_pigeonhole_empty": true,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.32357171956405556,
+                "paid": 0.32357171956405556,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.01127891068158701
+                ],
+                "exact_mass_model_upper": 0
+              },
+              "Theta_hard": {
+                "total": 0.17845583308371862,
+                "paid": 0.17845583308371862,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.01127891068158701
+                ],
+                "exact_mass_model_upper": 0
+              }
+            }
+          }
+        ],
+        "fixed_cell_eta_half_residual": [
+          {
+            "eta": 0.5,
+            "analytic_mass_or_pigeonhole_empty": false,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.32357171956405556,
+                "paid": 0.32190240057888386,
+                "residual": 4.634228516187271e-05,
+                "paid_residual_cross": 0.0016229767000098636,
+                "residual_positive_nodes": 168,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.012039887241260885
+                ],
+                "exact_mass_model_upper": null
+              },
+              "Theta_hard": {
+                "total": 0.17845583308371862,
+                "paid": 0.17731824021819856,
+                "residual": 2.338922283220113e-05,
+                "paid_residual_cross": 0.0011142036426878843,
+                "residual_positive_nodes": 216,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.011830908675443948
+                ],
+                "exact_mass_model_upper": null
+              }
+            }
+          },
+          {
+            "eta": 0.25,
+            "analytic_mass_or_pigeonhole_empty": true,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.32357171956405556,
+                "paid": 0.32357171956405556,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.01127891068158701
+                ],
+                "exact_mass_model_upper": 0
+              },
+              "Theta_hard": {
+                "total": 0.17845583308371862,
+                "paid": 0.17845583308371862,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.01127891068158701
+                ],
+                "exact_mass_model_upper": 0
+              }
+            }
+          },
+          {
+            "eta": 0.125,
+            "analytic_mass_or_pigeonhole_empty": true,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.32357171956405556,
+                "paid": 0.32357171956405556,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.01127891068158701
+                ],
+                "exact_mass_model_upper": 0
+              },
+              "Theta_hard": {
+                "total": 0.17845583308371862,
+                "paid": 0.17845583308371862,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.01127891068158701
+                ],
+                "exact_mass_model_upper": 0
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 20,
+      "n": 16,
+      "N": 32,
+      "epsilon": 0.045099928640402444,
+      "bases": {
+        "full_hard": [
+          {
+            "eta": 0.5,
+            "analytic_mass_or_pigeonhole_empty": false,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.4969356390910263,
+                "paid": 0.49675281081005446,
+                "residual": 1.1361567655443279e-07,
+                "paid_residual_cross": 0.00018271466529526509,
+                "residual_positive_nodes": 41,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.022589952298990332
+                ],
+                "exact_mass_model_upper": null
+              },
+              "Theta_hard": {
+                "total": 0.4156579931815147,
+                "paid": 0.4155362710982658,
+                "residual": 5.486482761069604e-08,
+                "paid_residual_cross": 0.00012166721842132023,
+                "residual_positive_nodes": 56,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.02258348113531642
+                ],
+                "exact_mass_model_upper": null
+              }
+            }
+          },
+          {
+            "eta": 0.25,
+            "analytic_mass_or_pigeonhole_empty": true,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.4969356390910263,
+                "paid": 0.4969356390910263,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.02255782136317402
+                ],
+                "exact_mass_model_upper": 0
+              },
+              "Theta_hard": {
+                "total": 0.4156579931815147,
+                "paid": 0.4156579931815147,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.02255782136317402
+                ],
+                "exact_mass_model_upper": 0
+              }
+            }
+          },
+          {
+            "eta": 0.125,
+            "analytic_mass_or_pigeonhole_empty": true,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.4969356390910263,
+                "paid": 0.4969356390910263,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.02255782136317402
+                ],
+                "exact_mass_model_upper": 0
+              },
+              "Theta_hard": {
+                "total": 0.4156579931815147,
+                "paid": 0.4156579931815147,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.02255782136317402
+                ],
+                "exact_mass_model_upper": 0
+              }
+            }
+          }
+        ],
+        "fixed_cell_eta_half_residual": [
+          {
+            "eta": 0.5,
+            "analytic_mass_or_pigeonhole_empty": false,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.4969356390910263,
+                "paid": 0.49675281081005446,
+                "residual": 1.1361567655443279e-07,
+                "paid_residual_cross": 0.00018271466529526509,
+                "residual_positive_nodes": 41,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.022589952298990332
+                ],
+                "exact_mass_model_upper": null
+              },
+              "Theta_hard": {
+                "total": 0.4156579931815147,
+                "paid": 0.4155362710982658,
+                "residual": 5.486482761069604e-08,
+                "paid_residual_cross": 0.00012166721842132023,
+                "residual_positive_nodes": 56,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.02258348113531642
+                ],
+                "exact_mass_model_upper": null
+              }
+            }
+          },
+          {
+            "eta": 0.25,
+            "analytic_mass_or_pigeonhole_empty": true,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.4969356390910263,
+                "paid": 0.4969356390910263,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.02255782136317402
+                ],
+                "exact_mass_model_upper": 0
+              },
+              "Theta_hard": {
+                "total": 0.4156579931815147,
+                "paid": 0.4156579931815147,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.02255782136317402
+                ],
+                "exact_mass_model_upper": 0
+              }
+            }
+          },
+          {
+            "eta": 0.125,
+            "analytic_mass_or_pigeonhole_empty": true,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.4969356390910263,
+                "paid": 0.4969356390910263,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.02255782136317402
+                ],
+                "exact_mass_model_upper": 0
+              },
+              "Theta_hard": {
+                "total": 0.4156579931815147,
+                "paid": 0.4156579931815147,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.02255782136317402
+                ],
+                "exact_mass_model_upper": 0
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 34,
+      "n": 32,
+      "N": 32,
+      "epsilon": 0.045099928640402444,
+      "bases": {
+        "full_hard": [
+          {
+            "eta": 0.5,
+            "analytic_mass_or_pigeonhole_empty": false,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.42885604635068164,
+                "paid": 0.42883803310159885,
+                "residual": 0.0,
+                "paid_residual_cross": 1.801324908281189e-05,
+                "residual_positive_nodes": 1,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.04511659931512592
+                ],
+                "exact_mass_model_upper": null
+              },
+              "Theta_hard": {
+                "total": 0.27989691814887374,
+                "paid": 0.27989002424340637,
+                "residual": 0.0,
+                "paid_residual_cross": 6.893905467322654e-06,
+                "residual_positive_nodes": 1,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.045116103175892014
+                ],
+                "exact_mass_model_upper": null
+              }
+            }
+          },
+          {
+            "eta": 0.25,
+            "analytic_mass_or_pigeonhole_empty": true,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.42885604635068164,
+                "paid": 0.42885604635068164,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.04511564272634804
+                ],
+                "exact_mass_model_upper": 0
+              },
+              "Theta_hard": {
+                "total": 0.27989691814887374,
+                "paid": 0.27989691814887374,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.04511564272634804
+                ],
+                "exact_mass_model_upper": 0
+              }
+            }
+          },
+          {
+            "eta": 0.125,
+            "analytic_mass_or_pigeonhole_empty": true,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.42885604635068164,
+                "paid": 0.42885604635068164,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.04511564272634804
+                ],
+                "exact_mass_model_upper": 0
+              },
+              "Theta_hard": {
+                "total": 0.27989691814887374,
+                "paid": 0.27989691814887374,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.04511564272634804
+                ],
+                "exact_mass_model_upper": 0
+              }
+            }
+          }
+        ],
+        "fixed_cell_eta_half_residual": [
+          {
+            "eta": 0.5,
+            "analytic_mass_or_pigeonhole_empty": false,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.42885604635068164,
+                "paid": 0.42883803310159885,
+                "residual": 0.0,
+                "paid_residual_cross": 1.801324908281189e-05,
+                "residual_positive_nodes": 1,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.04511659931512592
+                ],
+                "exact_mass_model_upper": null
+              },
+              "Theta_hard": {
+                "total": 0.27989691814887374,
+                "paid": 0.27989002424340637,
+                "residual": 0.0,
+                "paid_residual_cross": 6.893905467322654e-06,
+                "residual_positive_nodes": 1,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.045116103175892014
+                ],
+                "exact_mass_model_upper": null
+              }
+            }
+          },
+          {
+            "eta": 0.25,
+            "analytic_mass_or_pigeonhole_empty": true,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.42885604635068164,
+                "paid": 0.42885604635068164,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.04511564272634804
+                ],
+                "exact_mass_model_upper": 0
+              },
+              "Theta_hard": {
+                "total": 0.27989691814887374,
+                "paid": 0.27989691814887374,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.04511564272634804
+                ],
+                "exact_mass_model_upper": 0
+              }
+            }
+          },
+          {
+            "eta": 0.125,
+            "analytic_mass_or_pigeonhole_empty": true,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.42885604635068164,
+                "paid": 0.42885604635068164,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.04511564272634804
+                ],
+                "exact_mass_model_upper": 0
+              },
+              "Theta_hard": {
+                "total": 0.27989691814887374,
+                "paid": 0.27989691814887374,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.04511564272634804
+                ],
+                "exact_mass_model_upper": 0
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 48,
+      "n": 64,
+      "N": 32,
+      "epsilon": 0.045099928640402444,
+      "bases": {
+        "full_hard": [
+          {
+            "eta": 0.5,
+            "analytic_mass_or_pigeonhole_empty": false,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.5128127636884974,
+                "paid": 0.5128127636884974,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": null
+              },
+              "Theta_hard": {
+                "total": 0.3659264883336673,
+                "paid": 0.3659264883336673,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": null
+              }
+            }
+          },
+          {
+            "eta": 0.25,
+            "analytic_mass_or_pigeonhole_empty": true,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.5128127636884974,
+                "paid": 0.5128127636884974,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": 0
+              },
+              "Theta_hard": {
+                "total": 0.3659264883336673,
+                "paid": 0.3659264883336673,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": 0
+              }
+            }
+          },
+          {
+            "eta": 0.125,
+            "analytic_mass_or_pigeonhole_empty": true,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.5128127636884974,
+                "paid": 0.5128127636884974,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": 0
+              },
+              "Theta_hard": {
+                "total": 0.3659264883336673,
+                "paid": 0.3659264883336673,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": 0
+              }
+            }
+          }
+        ],
+        "fixed_cell_eta_half_residual": [
+          {
+            "eta": 0.5,
+            "analytic_mass_or_pigeonhole_empty": false,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.5128127636884974,
+                "paid": 0.5128127636884974,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": null
+              },
+              "Theta_hard": {
+                "total": 0.3659264883336673,
+                "paid": 0.3659264883336673,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": null
+              }
+            }
+          },
+          {
+            "eta": 0.25,
+            "analytic_mass_or_pigeonhole_empty": true,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.5128127636884974,
+                "paid": 0.5128127636884974,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": 0
+              },
+              "Theta_hard": {
+                "total": 0.3659264883336673,
+                "paid": 0.3659264883336673,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": 0
+              }
+            }
+          },
+          {
+            "eta": 0.125,
+            "analytic_mass_or_pigeonhole_empty": true,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.5128127636884974,
+                "paid": 0.5128127636884974,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": 0
+              },
+              "Theta_hard": {
+                "total": 0.3659264883336673,
+                "paid": 0.3659264883336673,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": 0
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 55,
+      "n": 64,
+      "N": 128,
+      "epsilon": 0.045099928640402444,
+      "bases": {
+        "full_hard": [
+          {
+            "eta": 0.5,
+            "analytic_mass_or_pigeonhole_empty": false,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.3536083424538917,
+                "paid": 0.3536083424538917,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": null
+              },
+              "Theta_hard": {
+                "total": 0.2980072506811339,
+                "paid": 0.2980072506811339,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": null
+              }
+            }
+          },
+          {
+            "eta": 0.25,
+            "analytic_mass_or_pigeonhole_empty": false,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.3536083424538917,
+                "paid": 0.3536083424538917,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": null
+              },
+              "Theta_hard": {
+                "total": 0.2980072506811339,
+                "paid": 0.2980072506811339,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": null
+              }
+            }
+          },
+          {
+            "eta": 0.125,
+            "analytic_mass_or_pigeonhole_empty": false,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.3536083424538917,
+                "paid": 0.3536083424538917,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": null
+              },
+              "Theta_hard": {
+                "total": 0.2980072506811339,
+                "paid": 0.2980072506811339,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": null
+              }
+            }
+          }
+        ],
+        "fixed_cell_eta_half_residual": [
+          {
+            "eta": 0.5,
+            "analytic_mass_or_pigeonhole_empty": false,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.3010620836024621,
+                "paid": 0.3010620836024621,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": null
+              },
+              "Theta_hard": {
+                "total": 0.2537997171099238,
+                "paid": 0.2537997171099238,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": null
+              }
+            }
+          },
+          {
+            "eta": 0.25,
+            "analytic_mass_or_pigeonhole_empty": false,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.3010620836024621,
+                "paid": 0.3010620836024621,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": null
+              },
+              "Theta_hard": {
+                "total": 0.2537997171099238,
+                "paid": 0.2537997171099238,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": null
+              }
+            }
+          },
+          {
+            "eta": 0.125,
+            "analytic_mass_or_pigeonhole_empty": false,
+            "quantities": {
+              "Gamma_v1": {
+                "total": 0.3010620836024621,
+                "paid": 0.3010620836024621,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": null
+              },
+              "Theta_hard": {
+                "total": 0.2537997171099238,
+                "paid": 0.2537997171099238,
+                "residual": 0.0,
+                "paid_residual_cross": 0.0,
+                "residual_positive_nodes": 0,
+                "residual_generic_finite_node_CI": [
+                  0.0,
+                  0.09023128545269608
+                ],
+                "exact_mass_model_upper": null
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 162.87604712499888,
+  "L02_usage": "Applied finite feasible-input reconstruction, independent recomputation and qualification guards. No external optimization theorem or tree weak-ratio theorem invoked.",
+  "reproduce_command": "/Users/zhengzhihao/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 /Users/zhengzhihao/Desktop/T/output/cube_general_20261003/geom_20261006/frozen_packet_residual_20261007/frozen_packet_partition.py",
+  "conclusion": "Packet payment removes most measured energy of these five frozen hard-relaxation candidates. Remaining sampled zero energies are not generally analytic zeros. This audit does not prove a dimension-uniform residual estimate or an actual geom conclusion."
+}
