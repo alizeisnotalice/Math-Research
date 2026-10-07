@@ -2,6 +2,7 @@
 
 状态：维数无关 weak-(1,1) 上界及随维数发散的下界均未在本项目证明。
 
+- [第47轮研究记录](rounds/047/report.md)：逐点记录增量预算、外侧两来源费用，以及任意固定阈值律的局部超线性反例（含光滑L¹输入）；全局无维预算仍未证明。[验证摘要](rounds/047/verification.json)。复现：`python3 rounds/047/verify.py`。
 - [第46轮研究记录](rounds/046/report.md)：真实前序亏损反例、共同阈值的首次记录区间及平均交叉流；整体无维预算仍未证明。[验证摘要](rounds/046/verification.json)。复现：`python3 rounds/046/verify.py`。
 - [第45轮研究记录](rounds/045/report.md)：平均秩亏损的等价性、层内最优重排至多节省 X/6，以及真实高维双原子基准；主无维上界仍未闭合。[验证摘要](rounds/045/verification.json)。复现：`python3 rounds/045/verify.py`。
 - [第44轮研究记录](rounds/044/report.md)：连续占用分配、平移后的来源矩与尾收缩；维数损失仍在几何偏移。[验证摘要](rounds/044/verification.json)。复现：`python3 rounds/044/verify.py`。
