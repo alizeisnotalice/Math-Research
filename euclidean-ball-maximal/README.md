@@ -2,6 +2,7 @@
 
 状态：维数无关 weak-(1,1) 上界及随维数发散的下界均未在本项目证明。
 
+- [第64轮研究记录](rounds/064/report.md)：最远来源平移不交与全维交球壳体积界；任意来源块3/8预算；光滑高维输入否定任意可数分数整块覆盖的统一来源拥塞。一般上界仍未证明。[验证摘要](rounds/064/verification.json)。复现：`python3 rounds/064/verify.py`。
 - [第63轮研究记录](rounds/063/report.md)：单原子见证部分全维容量≤3/8、一般测度单捕获类预算；完整格点族显式容量328/1225与零搬移方案，光滑输入否定普遍正补全余量。共同来源大值部分仍未控制。[验证摘要](rounds/063/verification.json)。复现：`python3 rounds/063/verify.py`。
 - [第62轮研究记录](rounds/062/report.md)：一般来源测度的容量余量重分配引理，搬移≤(1−ε)δ/ε；固定目标多批费用可累计结算，真实链给1/ε阶必要性。目标容量的一致上界仍未证明。[验证摘要](rounds/062/verification.json)。复现：`python3 rounds/062/verify.py`。
 - [第61轮研究记录](rounds/061/report.md)：光滑真实子任务的旧分配搬移/新增需求比无界；固定网格删峰产生ρlog(1/ρ)高度边界费用；来源最优负载单调与L¹收缩。一般上界仍未证明。[验证摘要](rounds/061/verification.json)。复现：`python3 rounds/061/verify.py`。
