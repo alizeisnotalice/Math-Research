@@ -2,6 +2,7 @@
 
 状态：维数无关 weak-(1,1) 上界及随维数发散的下界均未在本项目证明。
 
+- [第62轮研究记录](rounds/062/report.md)：一般来源测度的容量余量重分配引理，搬移≤(1−ε)δ/ε；固定目标多批费用可累计结算，真实链给1/ε阶必要性。目标容量的一致上界仍未证明。[验证摘要](rounds/062/verification.json)。复现：`python3 rounds/062/verify.py`。
 - [第61轮研究记录](rounds/061/report.md)：光滑真实子任务的旧分配搬移/新增需求比无界；固定网格删峰产生ρlog(1/ρ)高度边界费用；来源最优负载单调与L¹收缩。一般上界仍未证明。[验证摘要](rounds/061/verification.json)。复现：`python3 rounds/061/verify.py`。
 - [第60轮研究记录](rounds/060/report.md)：规范最小二次来源负载与精确尾公式；真实任务否定冻结分配的全局最优性，抽象递归族损失无界；固定网格高度边界估计及移动截断反例。一般上界仍未证明。[验证摘要](rounds/060/verification.json)。复现：`python3 rounds/060/verify.py`。
 - [第59轮研究记录](rounds/059/report.md)：共享阈值密度稳定性不损失标签跳层数；光滑平顶输入否定无边界项删源预算。保留原任务的剩余容量拼接及其均匀预留损失反例；一般上界仍未证明。[验证摘要](rounds/059/verification.json)。复现：`python3 rounds/059/verify.py`。
