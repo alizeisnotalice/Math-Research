@@ -2,6 +2,7 @@
 
 状态：维数无关 weak-(1,1) 上界及随维数发散的下界均未在本项目证明。
 
+- [第59轮研究记录](rounds/059/report.md)：共享阈值密度稳定性不损失标签跳层数；光滑平顶输入否定无边界项删源预算。保留原任务的剩余容量拼接及其均匀预留损失反例；一般上界仍未证明。[验证摘要](rounds/059/verification.json)。复现：`python3 rounds/059/verify.py`。
 - [第58轮研究记录](rounds/058/report.md)：一般来源限制精确保留极大值与两个首次标签，分离复制给切集/总需求极值的常数1等价；真实最小紧块的连接比可趋零，容量仍为1/4。一般上界未闭合。[验证摘要](rounds/058/verification.json)。复现：`python3 rounds/058/verify.py`。
 - [第57轮研究记录](rounds/057/report.md)：真实光滑格点输入使无权链根覆盖κ无界，但完整任务显式容量≤0.75006；有限laminar族的精确子树需求公式及20例证书。一般容量仍未证明。[验证摘要](rounds/057/verification.json)。复现：`python3 rounds/057/verify.py`。
 - [第56轮研究记录](rounds/056/report.md)：真实捕获链的来源重分配负载≤3P/2、分数链根预算及随机同锚费用≤3X/8；16例精确容量证书与20例列积分。一般分叉容量仍未证明。[验证摘要](rounds/056/verification.json)。复现：`python3 rounds/056/verify.py`。
