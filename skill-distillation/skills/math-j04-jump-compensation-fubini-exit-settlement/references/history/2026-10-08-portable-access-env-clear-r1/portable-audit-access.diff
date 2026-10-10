@@ -1,0 +1,29 @@
+--- before
++++ after
+@@ -70,7 +70,7 @@
+ fi
+ ```
+ 
+-Run the bootstrap block and one resolver block in the same shell session so its variables are available. Each resolver block uses fail-fast shell options. For a registry-selected root, retain `--root-id "$MATH64_ROOT_ID" --registry "$MATH64_REGISTRY"` in the resolver command. For either environment-selected root, pass `--package-root "$MATH64_PACKAGE_ROOT"`. A packaged Skill can use `$MATH64_PACKAGE_ROOT/workspace_revised/math-j04-jump-compensation-fubini-exit-settlement` as `MATH64_SKILL_DIR`; an isolated installed Skill normally uses `$MATH64_CODEX_HOME/skills/math-j04-jump-compensation-fubini-exit-settlement`.
++Run the bootstrap block and one resolver block in the same shell session so its variables are available. Each resolver block uses fail-fast shell options. The resolver currently gives a nonempty `EVIDENCE_ROOT` precedence over `--root-id`. In registry mode, prefix every resolver call with `env -u EVIDENCE_ROOT` and pass `--root-id "$MATH64_ROOT_ID" --registry "$MATH64_REGISTRY"`; this forces the validated registry selection. In environment-fallback mode, pass the selected root explicitly as `--package-root "$MATH64_PACKAGE_ROOT"`. A packaged Skill can use `$MATH64_PACKAGE_ROOT/workspace_revised/math-j04-jump-compensation-fubini-exit-settlement` as `MATH64_SKILL_DIR`; an isolated installed Skill normally uses `$MATH64_CODEX_HOME/skills/math-j04-jump-compensation-fubini-exit-settlement`.
+ 
+ ## Resolve and verify an indexed PDF
+ 
+@@ -80,7 +80,7 @@
+ set -eu
+ PAPER_ID="P-…"
+ if [ "$MATH64_ROOT_MODE" = registry ]; then
+-  python3 "$MATH64_RESOLVER" --root-id "$MATH64_ROOT_ID" --registry "$MATH64_REGISTRY" \
++  env -u EVIDENCE_ROOT python3 "$MATH64_RESOLVER" --root-id "$MATH64_ROOT_ID" --registry "$MATH64_REGISTRY" \
+     --skill-dir "$MATH64_SKILL_DIR" --paper-id "$PAPER_ID" --verify-sha256
+ else
+   python3 "$MATH64_RESOLVER" --package-root "$MATH64_PACKAGE_ROOT" \
+@@ -98,7 +98,7 @@
+ set -eu
+ ARTIFACT_PATH="audit_current/…/record.json"
+ if [ "$MATH64_ROOT_MODE" = registry ]; then
+-  python3 "$MATH64_RESOLVER" --root-id "$MATH64_ROOT_ID" --registry "$MATH64_REGISTRY" \
++  env -u EVIDENCE_ROOT python3 "$MATH64_RESOLVER" --root-id "$MATH64_ROOT_ID" --registry "$MATH64_REGISTRY" \
+     --artifact-path "$ARTIFACT_PATH"
+ else
+   python3 "$MATH64_RESOLVER" --package-root "$MATH64_PACKAGE_ROOT" \

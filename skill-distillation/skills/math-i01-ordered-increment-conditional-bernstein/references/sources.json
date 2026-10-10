@@ -278,9 +278,9 @@
       "sha256": "983c45fe3cd6a0bad01500580a5517732744afb0fc1f77225fd68f0c95974b6a",
       "bytes": 616137,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "irrelevant",
+      "screening_reason": "PDF title page and SHA verified; abstract/introduction pp.1–2 screened. The paper studies conditional Pearson, correlation-ratio, maximal-correlation and information-correlation notions and noninteractive simulation. It does not bound conditional moments of ordered increments, construct an exponential supermartingale, or establish a martingale tail inequality; conditional correlation terminology alone is not a transferable hypothesis/interface for I01.",
+      "identity_status": "verified",
       "paper_id": "P-983c45fe3cd6a0ba",
       "local_file": "corpus/papers/P-983c45fe3cd6a0ba/paper.pdf",
       "review": {
@@ -288,18 +288,11 @@
         "topic": "I01",
         "paper_id": "P-983c45fe3cd6a0ba",
         "decision": "irrelevant",
-        "reason": "摘要为条件 Pearson、correlation ratio 与 maximal correlation 及非交互模拟；不是 I01 增量指数矩。",
-        "read_scope": "Title and first-page abstract/introduction lines7–38 only; initial relevance screen, not full article.",
+        "reason": "PDF title page and SHA verified; abstract/introduction pp.1–2 screened. The paper studies conditional Pearson, correlation-ratio, maximal-correlation and information-correlation notions and noninteractive simulation. It does not bound conditional moments of ordered increments, construct an exponential supermartingale, or establish a martingale tail inequality; conditional correlation terminology alone is not a transferable hypothesis/interface for I01.",
+        "read_scope": "targeted identity/relevance screen; not full read",
         "source_ranges": [
-          {
-            "start_line": 7,
-            "end_line": 38,
-            "pdf_pages": [
-              1
-            ]
-          }
-        ],
-        "full_text_read": false
+          "title/abstract/introduction and topic-screen pages"
+        ]
       }
     },
     {
@@ -508,30 +501,20 @@
       "sha256": "c0cf564821b58361d3ffb830353394659fadf4c922ca8a5fb9097d861a336c31",
       "bytes": 887875,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "irrelevant",
+      "screening_reason": "PDF title/abstract and SHA verified; screened abstract, model, and main-results outline pp.1–4. The paper derives negative correlation of adjacent Busemann increments in last-passage percolation from a large-deviation-rate condition for independent weights. Negative correlation does not imply an ordered filtration, conditional centering, or the factorial conditional-moment envelope required by I01; no transferable Bernstein proof interface was identified.",
+      "identity_status": "verified",
       "paper_id": "P-c0cf564821b58361",
       "local_file": "corpus/papers/P-c0cf564821b58361/paper.pdf",
       "review": {
         "entry_id": "E0839",
         "topic": "I01",
         "paper_id": "P-c0cf564821b58361",
-        "decision": "adjacent",
-        "reason": "摘要以 iid 和的大偏差率刻画 Busemann 相邻增量负相关，邻近 H04 rate function 应用；未给 I01 条件 mgf。",
-        "read_scope": "Title and first-page abstract/introduction lines7–38 only; initial relevance screen, not full article.",
+        "decision": "irrelevant",
+        "reason": "PDF title/abstract and SHA verified; screened abstract, model, and main-results outline pp.1–4. The paper derives negative correlation of adjacent Busemann increments in last-passage percolation from a large-deviation-rate condition for independent weights. Negative correlation does not imply an ordered filtration, conditional centering, or the factorial conditional-moment envelope required by I01; no transferable Bernstein proof interface was identified.",
+        "read_scope": "targeted identity/relevance screen; not full read",
         "source_ranges": [
-          {
-            "start_line": 7,
-            "end_line": 38,
-            "pdf_pages": [
-              1
-            ]
-          }
-        ],
-        "full_text_read": false,
-        "cross_topics": [
-          "H04"
+          "title/abstract/introduction and topic-screen pages"
         ]
       }
     },
@@ -779,23 +762,37 @@
         "entry_id": "E0847",
         "topic": "I01",
         "paper_id": "P-073066f98d171070",
-        "decision": "direct",
-        "reason": "摘要明确将 Wald martingale/associated random walk 从 iid 扩至 stationary ergodic increments，p1 定义 E exp(−θX)=1 与指数换测度；I01/I02 指数鞅结构直接相关，依赖情形额外条件待全文。",
-        "read_scope": "Title and first-page abstract/introduction lines7–38 only; initial relevance screen, not full article.",
+        "decision": "adjacent",
+        "reason": "全文核验后限定：Grey 2010 给出平稳增量中的指数换测及 RN 导数鞅构造，但不含 I01 的逐增量条件中心化或 p!/2*v_k*c^(p-2) Bernstein 矩条件；仅作换测背景。",
+        "read_scope": "Full article PDF pp.1–13 (all pages); extracted lines 1–571; visual formula review pp.3,5,8–9; full read independently completed 2026-10-07.",
         "source_ranges": [
           {
-            "start_line": 7,
-            "end_line": 38,
+            "start_line": 1,
+            "end_line": 571,
             "pdf_pages": [
-              1
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
             ]
           }
         ],
-        "full_text_read": false,
+        "full_text_read": true,
         "cross_topics": [
           "I02",
           "H02"
-        ]
+        ],
+        "appendix_status": "No separate appendix; references pp.12–13 included.",
+        "identity": "D.R. Grey, The associated random walk and martingales in random walks with stationary increments, arXiv:1006.4465v1."
       }
     },
     {
@@ -1328,5 +1325,5 @@
     }
   ],
   "supplementary": [],
-  "status": "待证据验收：可执行方法工作流，不是已证明的课题结论"
+  "status": "条件假设下的 I01 Bernstein 矩推导已独立完成；Grey 2010 为 adjacent/background，不作 Bernstein 定理来源。其余附件仍在相关性与全文筛查中。"
 }

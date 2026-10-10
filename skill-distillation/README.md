@@ -1,24 +1,21 @@
-# 论文与 skill 蒸馏资料库
+# 论文与 Skill 蒸馏资料库
 
-本目录保存用于构建数学研究 skill 的原始文献、已蒸馏的 skill 文件及其审核记录，供不同研究项目引用和后续更新。
+本目录保存数学研究 Skill、来源资料及分范围审核材料。`skills/` 是当前 64 项 Skill 的工作副本；`papers/` 保留此前导入的文献；`audits/current-release-20261011/` 是当前公开元数据快照。
 
-- `papers/`：原始文献库，保留原有工具主题分类、PDF、文献清单与缺失记录。
-- `skills/`：64 个审核修订后的 skill 目录，每个目录保留 `SKILL.md`、参考资料、来源记录、示例及 Agent 配置。
-- `audits/`：技能交付包中的审核日志、索引、证据记录和审核脚本，按原样归档。
-- `delivery/`：原技能交付包的说明文件。
-- `manifest.json`：两个来源压缩包的 SHA-256，以及每个导入文件的来源路径、仓库路径、大小与 SHA-256。
+## 当前 release
 
-## 来源
+当前 64 项索引、444 行 claims ledger 派生目录、声明式来源图和来源范围/读页摘要见 [`audits/current-release-20261011/README.md`](audits/current-release-20261011/README.md)。这些材料明确区分 source-method scope、ledger 状态、案例记录、运行时调用和数学证明；目录状态不等于定理证明或 Skill runtime 验收。公开更新仅包含 Skill 文件与有限元数据/说明，本次没有新增或修改论文 PDF。完整本地证据包与公共 Git 元数据快照是不同交付物。
 
-导入日期：2026-10-07。
+## 历史归档
 
-1. 数学工具64项_审核修订交付包_20261006.zip
-2. 中心立方体极大算子_64项训练清单文献库_20261005.zip
+`manifest.json` 记录 2026-10-07 对两个来源压缩包的原始导入清单，是导入时点的历史 manifest，不是当前 `skills/` 字节的清单。旧交付说明保留其 2026-10-06 时点内容；请从上面的 current-release 目录读取当前状态。
 
-为便于 GitHub 存储与逐文件追踪，仓库保存解压后的内容，不重复提交来源压缩包。部分非 UTF-8 标记的 ZIP 文件名按其原始 UTF-8 字节恢复；文件内容未经修改。
+## 目录
 
-本次仅进行归档及完整性检查，没有运行包内脚本或重新确认其数学断言；归档也不等于将 skill 安装进当前 Agent 的技能目录。
+- `papers/`：此前归档的文献及题录；当前 PR 不新增或修改其中的 PDF。
+- `skills/`：64 项当前修订 Skill、引用/方法记录、示例和 Agent 配置。
+- `audits/current-release-20261011/`：当前公开 metadata snapshot 与 SHA-256 manifest。
+- `delivery/`：原始 2026-10-06 包的历史说明。
+- `manifest.json`：原始导入清单，保留其历史用途。
 
-## 后续新增与更新
-
-新增文献放入 `papers/` 的对应主题目录；蒸馏出的 skill 放入 `skills/<skill-name>/`，并保留出处及假设范围。审核和数值验证记录放入 `audits/`。每轮完成后只提交对应变更，不覆盖无关项目或他人的工作。
+当前修改只更新所列的 64 项 Skill 树、当前 release 文档和 metadata，不触碰其他项目路径。

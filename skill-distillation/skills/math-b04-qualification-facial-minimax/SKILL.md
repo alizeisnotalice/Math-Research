@@ -3,15 +3,12 @@ name: math-b04-qualification-facial-minimax
 description: "用于约束资格、面约化与极小极大交换的数学研究：核对输入与假设，组织方法和证据，说明中心立方体极大算子的迁移条件；不凭名称补造内部接口。"
 ---
 
-> **交接准备状态（结构性）**：本副本只整理技能结构与引用可移植性；未进行全文深读或数学验证。原评级、可用状态、假设、证明限制和未决条件均沿用原件。结构检查不构成科学验证。
-> 外部文献证据由第二证据包提供，是独立数据输入，不随单个 Skill 安装。合并交接包默认将 `EVIDENCE_ROOT` 设为包内 `evidence/`；单独安装时由调用方传入 `EVIDENCE_ROOT`，按本地[证据索引](references/handoff-evidence-index.csv)中的 `portable_path` 查找。无需全局安装，也不要把外部 PDF 当作 Skill 内文件。
+> 外部文献、claims/cases 与 PDF 属于完整证据包，不随单个 Skill 安装。请使用[便携证据访问指南](references/evidence-guide.md)，按本 Skill 的[来源索引](references/handoff-evidence-index.csv)通过统一 resolver 定位。registry/显式包根路由均不依赖当前工作目录；SHA 检查只确认当前字节，不等于全文阅读或数学验收。
 
 
 # B04 · 约束资格、面约化与极小极大交换
 
-当前证据状态：**待证据验收：可执行方法工作流，不是已证明的课题结论**。全文转换、论文阅读和证明核验是三个独立状态。（此行声明已被下方【修订】标注替代：该 skill 经外部审核提升为「部分可用」，详见对应修订行与 references/verification-log-20261006.md）
-  【修订 2026-10-06（外部审核 R26）】既有验证记录支撑档位提升：R18 内容级核对（资格条件/Example 4/Prop 4.1-4.2 与源卡一致）+ R13 案例通过。证据状态提升为：部分可用：基础推导已检查，专题证据仍待完整验收。源定理证明本身未重证（守卫保持）。
-  【修订 2026-10-06（外部审核 R18）】本项步骤 7/8 引用的 P-08ccea72ef78920a 与 P-5ae169908ed70fca 源卡位于共享证据池 math-b01-lagrange-farkas/references/papers/ （TEAM_AB 系列，两轮审核状态保留）；本项 papers/ 仅存自有卡 AD-P-552143febc99a746。经内容级核对，步骤中引用的资格条件、Example 4 修正位置与 Prop 4.1/4.2 修复声明均与源卡记录一致。
+当前证据状态：**部分可用**。可在有限维闭凸锥LP且拆分锥/有限值/PPS前提均满足时核查资格与面约化；一般minimax、测度或无限维问题不直接继承强对偶。P-5ae 的局部缩放采用独立检查的比值比例，并已登记源平方根印刷错误及精确标量复核；源定理整体证明未独立重证。专题验收仍在进行。
 
 ## 输入与产出
 
@@ -28,7 +25,7 @@ description: "用于约束资格、面约化与极小极大交换的数学研究
 5. 需要复杂度界时先计算各块ℓpoly(Kᵢ)，使用FRA-Poly的≤1+Σℓpoly(Kᵢ)步界；需最小奇异度时检查相对内部方向可实现性。
 6. 对sup/inf交换另列问题空间、凸凹性、闭性、紧性和适用的minimax定理；本论文的PPS/面约化结果自身不提供交换。
 7. P-08ccea72ef78920a的四类资格条件要按Y0=span(A(P)−Q)及原拓扑逐一选择；Fréchet方案需P,Q,Y0闭且b∈icr像锥，有限维方案需dimY0<∞与icr。仍有−∞分支；仅有限值分支给零gap及dual达到，weak*紧另需Y0=Y。其Example4印刷正gap位置已修为第三坐标0、第二坐标正；非紧序列逃逸与值lsc另核。
-8. Hilbert generator来源P-5ae169908ed70fca的exact dual达到以共享normal及⟨v,x*⟩>0认证，逆向另需Ran(A*)闭；有限维非零共享normal或closed P都不充分。Prop4.1采用λ*=j_K(x*)和比例λ*/σ_K(A*y)，修正原平方根缩放；Prop4.2另需∀x∈P Span{x}+P闭。所有新修复保留两轮审核状态。
+8. Hilbert generator来源P-5ae169908ed70fca的exact dual达到以共享normal及⟨v,x*⟩>0认证，逆向另需Ran(A*)闭；有限维非零共享normal或closed P都不充分。Prop4.1的源平方根比例为印刷错误，PDF p.22推导和精确标量例支持局部修正比例λ*/σ_K(A*y)；须满足σ_K(A*y)>0及源条件，不能把此局部修补提升成原定理整体已证。Prop4.2另需∀x∈P Span{x}+P闭。详细记录见references/verification-log-20261007.md。
 
 ## 证据与失败处理
 

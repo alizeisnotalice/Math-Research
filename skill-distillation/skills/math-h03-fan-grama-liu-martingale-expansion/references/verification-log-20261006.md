@@ -21,3 +21,8 @@
 - **f06 (m+1)² 界归属澄清**：不来自源论文，是 skill 自有"已检查推导"（归属正确）。
   推导核验：(m+1)² 的两个因子定位——一个来自 Cauchy–Schwarz、一个来自二进层数
   （每层正交消交叉项、每层总能量 Σ‖fⱼ‖²）；与 R8 的 1400 例数值互证 ✓
+
+## 覆盖历史更正（2026-10-07）
+旧 HK 卡标 full_read，而 shared-reading/revise_f 当时实际仅 page 1；这两个记录当时冲突，页1卡不支撑全文状态。当前 P-53739 匹配 SHA 已重新逐页读完26页并核对主要公式，现行卡为 `audit_current/shared-reading/revise_hi/53739dd293f0de1c466a278829271bd71c72b1e68af9504a9ae48a8cdab2dd83.json`。这只更新阅读覆盖/可引用范围，原文证明未独立重证。
+
+Package-relative `audit_current/...` locators in this file are resolved with the package-root resolver described in [portable audit access](portable-audit-access.md); they are not Skill-local file links.

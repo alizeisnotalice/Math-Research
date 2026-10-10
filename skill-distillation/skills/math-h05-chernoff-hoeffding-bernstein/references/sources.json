@@ -715,9 +715,9 @@
       "sha256": "d4372618f5671505d4ea5ea54c439a687ba1d591c004b1f1896d39680debdfdd",
       "bytes": 362752,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "direct",
+      "screening_reason": "Full exact-SHA read of all 35 original PDF pages (including references and formula pages) confirms specialized H05 topical relevance: theorem 1.1 concerns dependent T-product tensor sums along a stationary walk on a regular expander. However, its assumption 4 requires the fixed beta_0(t)=pi/[2(cosh(pi*t)+1)] (defined in theorem 8) to admit a global Gaussian upper bound for every real t; this is impossible for every finite C,sigma>0 because beta_0 has exponential tails. Thus theorem 1.1 and corollary 1 have an empty admissible parameter class as printed and provide no operative H05 claim support. This is not a counterexample to a valid tail inequality under corrected/restricted assumptions. SHA-bound full-read record: audit_current/independent-g/P-d4372618f5671505-full-card-20261010.json.",
+      "identity_status": "verified_local_pdf_identity_and_exact_sha",
       "paper_id": "P-d4372618f5671505",
       "local_file": "corpus/papers/P-d4372618f5671505/paper.pdf",
       "review": {
@@ -725,20 +725,66 @@
         "topic": "H05",
         "paper_id": "P-d4372618f5671505",
         "decision": "direct",
-        "reason": "摘要为dependentT-producttensor expanderChernoff，相关；tensorproduct、图walk和majorization条件全文待核。",
-        "read_scope": "PDFp1 title/author/abstract and opening material, lines7–35; initial relevance screen only",
+        "topic_relevance": "Specialized dependent tensor/expander Chernoff theorem; topical relevance only.",
+        "mathematical_support_status": "no_admissible_instance_as_printed",
+        "claim_use": [],
+        "operative_h05_claim_use": "none",
+        "reason": "Theorem 1.1 (PDF pp.30–32) concerns a Ky Fan k-norm tail bound for polynomial functions of dependent random T-product tensors along a stationary walk on a regular expander, with tensor positivity/order and graph-walk hypotheses. Its assumption 4 requires finite C,sigma>0 with beta_0(t) <= C/(sigma*sqrt(2*pi))*exp(-t^2/(2*sigma^2)) for all real t, while Theorem 8 (PDF p.22, formula (122)) fixes beta_0(t)=pi/[2(cosh(pi*t)+1)]. For t>=0, beta_0(t)>=(pi/4)exp(-pi*t), so the ratio to any such Gaussian majorant is at least [pi*sigma*sqrt(2*pi)/(4*C)]*exp(t^2/(2*sigma^2)-pi*t), which tends to infinity. The assumption class is therefore empty for the paper's beta_0. This establishes vacuity/unusability as printed, not falsity of a valid probability inequality under a corrected or restricted hypothesis.",
+        "read_scope": "All 35 physical pages of the original exact-SHA PDF, including theorem/proof sections and references; independently full-read by audit_g and visually checked pages as recorded in the source-bound card/receipt.",
         "source_ranges": [
           {
-            "file": "corpus/papers/P-d4372618f5671505/paper.md",
-            "start_line": 7,
-            "end_line": 35,
+            "file": "evidence/papers/P-d4372618f5671505/paper.md",
+            "start_page": 1,
+            "end_page": 35,
             "pdf_pages": [
-              1
-            ]
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35
+            ],
+            "scope": "Full original PDF, all physical pages."
           }
         ],
-        "initial_screen_only": true,
-        "full_read": false
+        "full_read": true,
+        "full_text_read": true,
+        "initial_screen_only": false,
+        "source_card_path": "audit_current/independent-g/P-d4372618f5671505-full-card-20261010.json",
+        "source_card_sha256": "9ae7c28b65bfbcde1419e30ee68d69313f0b118963f5fb07beec5023c0d3cb9b",
+        "full_read_receipt_path": "audit_current/independent-g/P-d4372618f5671505-fullread-receipt-20261010.json",
+        "full_read_receipt_sha256": "bd22a12b5e7a05c3afc7396be10cc6d77d3a17d2c9b90e42221ec5841201e1ff",
+        "theorem_locator": "PDF pp.30–32, Theorem 1.1 and Corollary 1; inconsistent Gaussian domination assumption 4 on p.30; beta_0 definition in Theorem 8, p.22 formula (122).",
+        "limitation": "No current H05 operative claim uses this source. Do not bind it to the independent bounded-sum Hoeffding claim or infer support for scalar/independent, conditional, martingale, or general dependent-sum inequalities."
       }
     },
     {
@@ -827,30 +873,115 @@
       "sha256": "7516b738a413305e4d618292f7c831f3e9fe485cbd28c20095c76a0820466ba7",
       "bytes": 194698,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "adjacent",
+      "screening_reason": "Full article read. Theorem 2.3 states a Tropp matrix Chernoff bound for independent PSD summands (proof cited externally, not included); the paper applies it in a model-specific selector/submatrix tail argument. Adjacent matrix method; not a scalar Chernoff theorem.",
+      "identity_status": "verified_title_authors_arxiv_version_and_pdf_sha256",
       "paper_id": "P-7516b738a413305e",
       "local_file": "corpus/papers/P-7516b738a413305e/paper.pdf",
       "review": {
         "entry_id": "E2765",
         "topic": "H05",
         "paper_id": "P-7516b738a413305e",
-        "decision": "direct",
-        "reason": "摘要taildecoupling+noncommutativeChernoff给randomsubmatrix quasiisometry/coherence概率界，相关；采样与范数常数全文待核。",
-        "read_scope": "PDFp1 title/author/abstract and opening material, lines7–35; initial relevance screen only",
+        "decision": "adjacent",
+        "reason": "H05 adjacent method only. Theorem 2.3 assumes independent PSD matrices X_j∈R^{d×d}, ||X_j||≤B a.s. and ||EΣX_j||≤μ_max; for r≥e μ_max it gives P(||ΣX_j||≥r)≤d(e μ_max/r)^{r/B}. This statement is cited to Tropp [11]. The paper applies it conditionally to independent Bernoulli selector-weighted PSD rank-one matrices after tail decoupling. Theorem 3.1 additionally assumes full rank X, unit column norms, r∈(0,1), α≥1, coherence μ(X)≤r/[2(1+α)log p], and s≤r²p/[4(1+α)e²||X||²log p], yielding P(||X_T^T X_T−I_s||≥r)≤2p^{−α}. Do not treat as a scalar independent-sum theorem or infer matrix results from scalar H05 claims without separate hypotheses/proof.",
+        "read_scope": "Whole article pp.1–10 including proofs and references; PDF SHA-bound full-read card available.",
         "source_ranges": [
           {
-            "file": "corpus/papers/P-7516b738a413305e/paper.md",
-            "start_line": 7,
-            "end_line": 35,
+            "file": "evidence/papers/P-7516b738a413305e/paper.md",
+            "start_line": 5,
+            "end_line": 45,
             "pdf_pages": [
               1
             ]
+          },
+          {
+            "file": "evidence/papers/P-7516b738a413305e/paper.md",
+            "start_line": 46,
+            "end_line": 92,
+            "pdf_pages": [
+              2
+            ]
+          },
+          {
+            "file": "evidence/papers/P-7516b738a413305e/paper.md",
+            "start_line": 93,
+            "end_line": 137,
+            "pdf_pages": [
+              3
+            ]
+          },
+          {
+            "file": "evidence/papers/P-7516b738a413305e/paper.md",
+            "start_line": 138,
+            "end_line": 183,
+            "pdf_pages": [
+              4
+            ]
+          },
+          {
+            "file": "evidence/papers/P-7516b738a413305e/paper.md",
+            "start_line": 184,
+            "end_line": 229,
+            "pdf_pages": [
+              5
+            ]
+          },
+          {
+            "file": "evidence/papers/P-7516b738a413305e/paper.md",
+            "start_line": 230,
+            "end_line": 274,
+            "pdf_pages": [
+              6
+            ]
+          },
+          {
+            "file": "evidence/papers/P-7516b738a413305e/paper.md",
+            "start_line": 275,
+            "end_line": 318,
+            "pdf_pages": [
+              7
+            ]
+          },
+          {
+            "file": "evidence/papers/P-7516b738a413305e/paper.md",
+            "start_line": 319,
+            "end_line": 363,
+            "pdf_pages": [
+              8
+            ]
+          },
+          {
+            "file": "evidence/papers/P-7516b738a413305e/paper.md",
+            "start_line": 364,
+            "end_line": 408,
+            "pdf_pages": [
+              9
+            ]
+          },
+          {
+            "file": "evidence/papers/P-7516b738a413305e/paper.md",
+            "start_line": 409,
+            "end_line": 466,
+            "pdf_pages": [
+              10
+            ]
           }
         ],
-        "initial_screen_only": true,
-        "full_read": false
+        "full_read": true,
+        "initial_screen_only": false,
+        "evidence_file": "audit_current/shared-reading/revise_hi/7516b738a413305e4d618292f7c831f3e9fe485cbd28c20095c76a0820466ba7.json",
+        "visual_review_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
       }
     },
     {
@@ -1007,34 +1138,67 @@
       "sha256": "d71c2862a1947b0bcef83dde64f1762a5471925b2ab00ee0ca8709807cbec967",
       "bytes": 1016622,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "direct",
+      "screening_reason": "Full PDF pp.1–30 read; source card records a direct but narrow weighted-testing contribution. Theorem 3.1 gives the binary weighted Chernoff loss exponent only for i.i.d. laws, a nonnegative product-factorized sample weight, finite positive weighted affinities and uniform-in-alpha log-likelihood integrability. Theorem 3.16 has bounded log-likelihood increments and finite-variance assumptions. The paper does not supply generic Chernoff/Hoeffding/Bernstein or conditional-moment bounds. See SHA-bound full-read card audit_current/shared-reading/revise_cd/d71c2862a1947b0bcef83dde64f1762a5471925b2ab00ee0ca8709807cbec967.json.",
+      "identity_status": "verified_title_authors_arxiv_version_and_pdf_sha256",
       "paper_id": "P-d71c2862a1947b0b",
       "local_file": "corpus/papers/P-d71c2862a1947b0b/paper.pdf",
       "review": {
         "entry_id": "E2770",
         "topic": "H05",
         "paper_id": "P-d71c2862a1947b0b",
-        "decision": "adjacent",
-        "reason": "摘要weightedChernoff信息/tiltedlikelihoodconcentration，必须跨observationsfactorizedweight；偏差/tilt邻近H04/H02，全文未读。",
-        "read_scope": "PDFp1 title/author/abstract and opening material, lines7–35; initial relevance screen only",
+        "decision": "direct",
+        "reason": "Direct H05 evidence only for weighted binary/M-ary hypothesis-testing loss exponents and specific tilted log-likelihood concentration under the paper’s explicit factorization, i.i.d., finiteness, integrability and (for finite-n concentration) bounded-increment/variance conditions. It is not a dependency of H05’s generic Chernoff/Hoeffding/Bernstein claims or method. Source caveats retained: PDF p.7 calls -ln rho^w_alpha nonnegative, contradicted by the arbitrary weight scale and explicit PDF p.20 example; Theorem 3.1 proof on p.9 omits the zero-tilted-mean endpoint case, repairable by the LLN argument recorded in the card. Do not extend to non-factorized weights, dependent observations, unbounded log-likelihood increments, or generic martingale Bernstein bounds.",
+        "read_scope": "Whole article PDF pp.1–30, including all proofs, Appendix A and references; exact-SHA owner card audit_current/shared-reading/revise_cd/d71c2862a1947b0bcef83dde64f1762a5471925b2ab00ee0ca8709807cbec967.json (card file SHA-256 53ac78fe6e95ca7843b8a18dcd23a080ee4ef3ff1f85f60611f285e7f6fcc9f7). Source PDF SHA and text-cache SHA independently matched.",
         "source_ranges": [
           {
-            "file": "corpus/papers/P-d71c2862a1947b0b/paper.md",
-            "start_line": 7,
-            "end_line": 35,
+            "file": "evidence/papers/P-d71c2862a1947b0b/paper.md",
+            "start_line": 5,
+            "end_line": 1702,
             "pdf_pages": [
-              1
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30
             ]
           }
         ],
-        "initial_screen_only": true,
-        "full_read": false,
+        "initial_screen_only": false,
+        "full_read": true,
         "cross_topic_candidates": [
           "H02",
           "H04"
-        ]
+        ],
+        "full_text_read": true,
+        "card_path": "audit_current/shared-reading/revise_cd/d71c2862a1947b0bcef83dde64f1762a5471925b2ab00ee0ca8709807cbec967.json",
+        "card_sha256": "53ac78fe6e95ca7843b8a18dcd23a080ee4ef3ff1f85f60611f285e7f6fcc9f7",
+        "text_cache_sha256": "8c836ec5028dd30423b1de4ef64fe9777124651a0ea92317347fca30aabdd709"
       }
     },
     {
@@ -1045,20 +1209,21 @@
       "sha256": "ab0dfeab300abaff3c6e25a737f929fb1f93c431afee2554fe2f7d28e7dfd169",
       "bytes": 77020,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "completed",
+      "screening_reason": "全文逐页核验；positive-polynomial Bernstein derivative bound, not a probabilistic tail inequality. Adjacent only to I04’s specialized deterministic Carleson comparison.",
+      "identity_status": "title_authors_version_sha_verified",
       "paper_id": "P-ab0dfeab300abaff",
       "local_file": "corpus/papers/P-ab0dfeab300abaff/paper.pdf",
       "review": {
         "entry_id": "E2771",
         "topic": "H05",
         "paper_id": "P-ab0dfeab300abaff",
-        "decision": "adjacent",
-        "reason": "全文已读；正多项式 Bernstein n² 与 I04 矩阵 Carleson 改进相关，TheoremA(ii) 原打印范数缺口待原CT定义核。",
-        "read_scope": "full article, all 5 PDF pages; proof verification graded separately",
+        "decision": "irrelevant",
+        "reason": "H05: “Bernstein-type” here is a positive-polynomial derivative/growth inequality, not a probability tail bound, Chernoff mgf, or conditional moment inequality. I04 cross-topic use is only a narrow adjacent dyadic matrix-Carleson comparison, not random occupancy/LlogL evidence.",
+        "read_scope": "All five PDF pages and proofs read; see SHA-bound owner card audit_current/shared-reading/revise_hi/ab0dfeab300abaff3c6e25a737f929fb1f93c431afee2554fe2f7d28e7dfd169.json.",
         "source_ranges": [
           {
+            "file": "evidence/papers/P-ab0dfeab300abaff/paper.md",
             "start_line": 1,
             "end_line": 224,
             "pdf_pages": [
@@ -1072,8 +1237,10 @@
         ],
         "full_text_read": true,
         "cross_topics": [
-          "I04"
-        ]
+          "I04 (adjacent only)"
+        ],
+        "original_topic_decision": "irrelevant",
+        "full_read": true
       }
     },
     {
@@ -1116,9 +1283,9 @@
       "sha256": "9ca8ad3fe6cf70f7649e819c2d71a9314abc4cbc40c9649ebbd5dcf3658c67ae",
       "bytes": 386086,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "direct",
+      "screening_reason": "Full article read. Theorem 1 directly supplies a finite-exchangeable weighted Hoeffding MGF after centering by the finite-population mean; exact Gamma_N and proof checked. Scope is not i.i.d./arbitrary dependence and the authors explicitly state Bernstein extension does not follow.",
+      "identity_status": "verified_title_authors_arxiv_version_and_pdf_sha256",
       "paper_id": "P-9ca8ad3fe6cf70f7",
       "local_file": "corpus/papers/P-9ca8ad3fe6cf70f7/paper.pdf",
       "review": {
@@ -1126,18 +1293,137 @@
         "topic": "H05",
         "paper_id": "P-9ca8ad3fe6cf70f7",
         "decision": "direct",
-        "reason": "摘要为finiteexchangeable有界weighted和，围绕finitepopulation平均而非无条件均值；inflation1/N与显式常数待全文，不能扩给 arbitrarydependence。",
-        "read_scope": "title and first-page abstract only; initial relevance screen, not full article",
+        "reason": "H05 direct, narrow finite-exchangeable Hoeffding method. Theorem 1 assumptions: N≥2; X_1,…,X_N∈[-1,1] exchangeable; n≤N; arbitrary w∈R^n; Xbar_N=N^-1ΣX_i; w~=(w_1,…,w_n,0,…,0), and P_{1⊥} projection onto sum-zero hyperplane. For every λ∈R, E exp{λΣ_{i≤n}w_i(X_i−Xbar_N)}≤exp{(λ²/2)Γ_N||P_{1⊥}w~||_2²}; exact Γ_N is the parity-specific expression in Theorem 1 and Γ_N=1+3/(2N)+O(N^-2). Corollary 1 supplies the one-sided tail after optimizing λ. Do not transfer to general dependence, unconditional-mean centering, or Bernstein/range-variance bounds.",
+        "read_scope": "Whole article pp.1–14, all proofs, remarks, references; PDF SHA-bound full-read card available.",
         "source_ranges": [
           {
-            "start_line": 7,
-            "end_line": 35,
+            "file": "evidence/papers/P-9ca8ad3fe6cf70f7/paper.md",
+            "start_line": 5,
+            "end_line": 54,
             "pdf_pages": [
               1
             ]
+          },
+          {
+            "file": "evidence/papers/P-9ca8ad3fe6cf70f7/paper.md",
+            "start_line": 55,
+            "end_line": 110,
+            "pdf_pages": [
+              2
+            ]
+          },
+          {
+            "file": "evidence/papers/P-9ca8ad3fe6cf70f7/paper.md",
+            "start_line": 111,
+            "end_line": 166,
+            "pdf_pages": [
+              3
+            ]
+          },
+          {
+            "file": "evidence/papers/P-9ca8ad3fe6cf70f7/paper.md",
+            "start_line": 167,
+            "end_line": 224,
+            "pdf_pages": [
+              4
+            ]
+          },
+          {
+            "file": "evidence/papers/P-9ca8ad3fe6cf70f7/paper.md",
+            "start_line": 225,
+            "end_line": 279,
+            "pdf_pages": [
+              5
+            ]
+          },
+          {
+            "file": "evidence/papers/P-9ca8ad3fe6cf70f7/paper.md",
+            "start_line": 280,
+            "end_line": 337,
+            "pdf_pages": [
+              6
+            ]
+          },
+          {
+            "file": "evidence/papers/P-9ca8ad3fe6cf70f7/paper.md",
+            "start_line": 338,
+            "end_line": 402,
+            "pdf_pages": [
+              7
+            ]
+          },
+          {
+            "file": "evidence/papers/P-9ca8ad3fe6cf70f7/paper.md",
+            "start_line": 403,
+            "end_line": 468,
+            "pdf_pages": [
+              8
+            ]
+          },
+          {
+            "file": "evidence/papers/P-9ca8ad3fe6cf70f7/paper.md",
+            "start_line": 469,
+            "end_line": 525,
+            "pdf_pages": [
+              9
+            ]
+          },
+          {
+            "file": "evidence/papers/P-9ca8ad3fe6cf70f7/paper.md",
+            "start_line": 526,
+            "end_line": 585,
+            "pdf_pages": [
+              10
+            ]
+          },
+          {
+            "file": "evidence/papers/P-9ca8ad3fe6cf70f7/paper.md",
+            "start_line": 586,
+            "end_line": 650,
+            "pdf_pages": [
+              11
+            ]
+          },
+          {
+            "file": "evidence/papers/P-9ca8ad3fe6cf70f7/paper.md",
+            "start_line": 651,
+            "end_line": 715,
+            "pdf_pages": [
+              12
+            ]
+          },
+          {
+            "file": "evidence/papers/P-9ca8ad3fe6cf70f7/paper.md",
+            "start_line": 716,
+            "end_line": 775,
+            "pdf_pages": [
+              13
+            ]
+          },
+          {
+            "file": "evidence/papers/P-9ca8ad3fe6cf70f7/paper.md",
+            "start_line": 776,
+            "end_line": 796,
+            "pdf_pages": [
+              14
+            ]
           }
         ],
-        "full_text_read": false
+        "full_read": true,
+        "initial_screen_only": false,
+        "evidence_file": "audit_current/shared-reading/revise_hi/9ca8ad3fe6cf70f7649e819c2d71a9314abc4cbc40c9649ebbd5dcf3658c67ae.json",
+        "visual_review_pages": [
+          1,
+          3,
+          5,
+          6,
+          7,
+          8,
+          11,
+          12,
+          13,
+          14
+        ]
       }
     },
     {
@@ -1350,30 +1636,65 @@
       "sha256": "2c071834af4b4655689e171845ec395a1bbc21e8fb724bfcf01ffcf123dfa3cb",
       "bytes": 446509,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "adjacent",
+      "screening_reason": "Full exact-SHA read (16/16 pages) confirms the article is topically adjacent to H05 because it discusses Hoeffding applications, but its serial-correlation extension is false as stated and it has additional range/sign/arithmetic errors. Do not use its claims as H05 theorem support; see the F source card and the H05 guard reconciliation.",
+      "identity_status": "verified_local_version_from_original_pdf_p1",
       "paper_id": "P-2c071834af4b4655",
       "local_file": "corpus/papers/P-2c071834af4b4655/paper.pdf",
       "review": {
         "entry_id": "E2780",
         "topic": "H05",
         "paper_id": "P-2c071834af4b4655",
-        "decision": "direct",
-        "reason": "已读封面及PDFp2全部引言，金融regime应用Hoeffding相关；p2声称serialcorrelation也无条件满足iidHoeffding是错误警讯，相关不能算可用定理，未阅读全文。",
-        "read_scope": "cover page and complete PDF page2 introduction only, not full article",
+        "decision": "adjacent",
+        "topic_relevance": "The article discusses Hoeffding and a trading application; topical adjacency only.",
+        "mathematical_support_status": "not_usable_as_written_for_H05_concentration_claims",
+        "claim_use": "No current H05 operative claim or source binding uses this source.",
+        "reason": "Exact-SHA full-read card identifies a false claim that the [0,1] iid Hoeffding tail remains valid under serial correlation (p.2 vs Appendix A pp.9,11), incorrect range-width scaling in Eq. (1.10) (p.6), a lower-tail sign mismatch (p.4), and a trading example with wrong tail direction, arithmetic and interpretation (p.8). The iid Hoeffding result itself is not refuted; the source’s invalid extension/application is not accepted.",
+        "read_scope": "All 16 PDF pages, including Appendix A pp.9–15 and references p.16, were read and visually checked by f_producer_r2.",
         "source_ranges": [
           {
-            "start_line": 7,
-            "end_line": 85,
+            "start_page": 1,
+            "end_page": 16,
             "pdf_pages": [
               1,
-              2
-            ]
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            "scope": "Full exact-SHA page coverage; formulas, examples, Appendix A and references visually checked."
           }
         ],
-        "full_text_read": false
-      }
+        "full_text_read": true,
+        "source_card_path": "audit_current/shared-reading/revise_f/2c071834af4b4655689e171845ec395a1bbc21e8fb724bfcf01ffcf123dfa3cb.json",
+        "source_card_sha256": "a0f16ff172cf0d787974e932508861b5ace9556f498c105b8305fe4807c9a5a5",
+        "counterexample_receipt": "audit_current/independent-hi/h05_e2780_guard_reconciliation_20261008.json"
+      },
+      "identity": {
+        "title": "A New Application of Hoeffding’s Inequality Can Give Traders Early Warning of Financial Regime Change",
+        "authors": [
+          "Daniel Egger",
+          "Jacob Vestal"
+        ],
+        "version": "arXiv:2512.08851v1 [q-fin.RM], title page dated 9 December 2025."
+      },
+      "topic_relevance": "adjacent",
+      "mathematical_support_status": "unusable_as_written_for_H05_concentration_claims",
+      "operative_h05_claim_use": "none",
+      "source_card_path": "audit_current/shared-reading/revise_f/2c071834af4b4655689e171845ec395a1bbc21e8fb724bfcf01ffcf123dfa3cb.json",
+      "source_card_sha256": "a0f16ff172cf0d787974e932508861b5ace9556f498c105b8305fe4807c9a5a5",
+      "independent_counterexample_receipt": "audit_current/independent-hi/h05_e2780_guard_reconciliation_20261008.json"
     },
     {
       "entry_id": "E2781",
@@ -1588,9 +1909,9 @@
       "sha256": "98cbf559ff52539512a28e97721a6b5350e0f17bd5e7b6a12cc7a0b2e9183884",
       "bytes": 831505,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "direct",
+      "screening_reason": "Full paper read. Theorem 3 (PDF pp.6, 9–16) gives two-sided sharp Chernoff–Hoeffding prefactors for Bin(n,p); proof handles integral and real thresholds separately. Conditions are fixed p∈(0,1), x away from 0/1 for general-x asymptotics; explicit integral case covers all x. Do not extend prefactor to general sums or martingales.",
+      "identity_status": "verified_title_authors_arxiv_version_and_pdf_sha256",
       "paper_id": "P-98cbf559ff525395",
       "local_file": "corpus/papers/P-98cbf559ff525395/paper.pdf",
       "review": {
@@ -1598,18 +1919,253 @@
         "topic": "H05",
         "paper_id": "P-98cbf559ff525395",
         "decision": "direct",
-        "reason": "摘要randomhypergraphminimization用improvedbinomialChernoff-Hoeffding达到constantfactor，上尾/下尾口径、endpoint和prefactor待全文。",
-        "read_scope": "title and first-page abstract only; initial relevance screen, not full article",
+        "reason": "H05 direct, specific to X~Bin(n,p). For fixed 0<p<1 and x=x(n)∈[ε,1−ε], with ε>0 and n sufficiently large, define φ(n,p,x)=min{1,[(p−x)√(xn)]^{-1}} for x≤p, φ=1 at x=p; ψ(n,p,x)=min{1,[(x−p)√((1−x)n)]^{-1}} for x≥p, ψ=1 at x=p. Theorem 3 gives C1 φ 2^{-nD(x∥p)}≤P(X≤xn)≤C2 φ 2^{-nD(x∥p)} when x≤p and C3 ψ 2^{-nD(x∥p)}≤P(X≥xn)≤C4 ψ 2^{-nD(x∥p)} when x≥p, for positive constants depending on p,ε but not n,x. In the integral case xn∈Z, Lemma 15 gives explicit constants for all x∈[0,1] and all n. Preserve the binomial law, tail direction, endpoint/integrality or asymptotic range, and constants. Do not present this as an exact general-sum Chernoff prefactor or a conditional/martingale Bernstein theorem.",
+        "read_scope": "Whole article pp.1–28 including complete proofs and references; SHA-bound full-read card.",
         "source_ranges": [
           {
-            "start_line": 7,
-            "end_line": 60,
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 5,
+            "end_line": 64,
             "pdf_pages": [
               1
             ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 65,
+            "end_line": 127,
+            "pdf_pages": [
+              2
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 128,
+            "end_line": 190,
+            "pdf_pages": [
+              3
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 191,
+            "end_line": 252,
+            "pdf_pages": [
+              4
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 253,
+            "end_line": 321,
+            "pdf_pages": [
+              5
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 322,
+            "end_line": 386,
+            "pdf_pages": [
+              6
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 387,
+            "end_line": 460,
+            "pdf_pages": [
+              7
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 461,
+            "end_line": 530,
+            "pdf_pages": [
+              8
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 531,
+            "end_line": 595,
+            "pdf_pages": [
+              9
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 596,
+            "end_line": 660,
+            "pdf_pages": [
+              10
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 661,
+            "end_line": 730,
+            "pdf_pages": [
+              11
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 731,
+            "end_line": 792,
+            "pdf_pages": [
+              12
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 793,
+            "end_line": 855,
+            "pdf_pages": [
+              13
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 856,
+            "end_line": 927,
+            "pdf_pages": [
+              14
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 928,
+            "end_line": 993,
+            "pdf_pages": [
+              15
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 994,
+            "end_line": 1059,
+            "pdf_pages": [
+              16
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 1060,
+            "end_line": 1128,
+            "pdf_pages": [
+              17
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 1129,
+            "end_line": 1183,
+            "pdf_pages": [
+              18
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 1184,
+            "end_line": 1248,
+            "pdf_pages": [
+              19
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 1249,
+            "end_line": 1323,
+            "pdf_pages": [
+              20
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 1324,
+            "end_line": 1389,
+            "pdf_pages": [
+              21
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 1390,
+            "end_line": 1457,
+            "pdf_pages": [
+              22
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 1458,
+            "end_line": 1525,
+            "pdf_pages": [
+              23
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 1526,
+            "end_line": 1591,
+            "pdf_pages": [
+              24
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 1592,
+            "end_line": 1659,
+            "pdf_pages": [
+              25
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 1660,
+            "end_line": 1727,
+            "pdf_pages": [
+              26
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 1728,
+            "end_line": 1795,
+            "pdf_pages": [
+              27
+            ]
+          },
+          {
+            "file": "evidence/papers/P-98cbf559ff525395/paper.md",
+            "start_line": 1796,
+            "end_line": 1815,
+            "pdf_pages": [
+              28
+            ]
           }
         ],
-        "full_text_read": false
+        "full_read": true,
+        "initial_screen_only": false,
+        "evidence_file": "audit_current/shared-reading/revise_hi/98cbf559ff52539512a28e97721a6b5350e0f17bd5e7b6a12cc7a0b2e9183884.json",
+        "visual_review_pages": [
+          1,
+          5,
+          6,
+          10,
+          12,
+          14,
+          15,
+          16,
+          20,
+          21,
+          22,
+          23,
+          24,
+          28
+        ]
       }
     },
     {

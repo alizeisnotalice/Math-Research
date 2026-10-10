@@ -28,7 +28,7 @@
 |E0844|22_Gao_2016_Product space for two processes with independent increments.pdf|P-8568bb7a0afcc69d|adjacent|摘要构造非线性期望下独立增量过程的 product space；相关但独立性/期望合同不同，不能直接使用普通线性期望 I01。|
 |E0845|36_Kallsen_2009_Utility maximization in models with conditionally independen.pdf|P-839aa374bd0969c9|irrelevant|摘要为金融资产 conditional independent increments 下 power utility 优化，未见 I01 指数增量尾界接口。|
 |E0846|26_Chaumont_2014_Shifting processes with cyclically exchangeable increments a.pdf|P-9ee53cb3fff816cd|irrelevant|摘要为循环可交换增量的路径变换、最小值条件化和 Vervaat 极限；不是指数超鞅。|
-|E0847|33_Grey_2010_The associated random walk and martingales in random walks w.pdf|P-073066f98d171070|direct|摘要明确将 Wald martingale/associated random walk 从 iid 扩至 stationary ergodic increments，p1 定义 E exp(−θX)=1 与指数换测度；I01/I02 指数鞅结构直接相关，依赖情形额外条件待全文。|
+|E0847|33_Grey_2010_The associated random walk and martingales in random walks w.pdf|P-073066f98d171070|adjacent|全文核验后降类：其 Assumption 1/2/2* 研究平稳增量中的指数换测及 RN 导数鞅，不包含有序增量条件中心化或 Bernstein 阶乘矩条件；只作换测背景。|
 |E0848|18_Jamneshan_2017_Measures and integrals in conditional set theory.pdf|P-0bdf979d2d4967d1|adjacent|摘要建立 conditional measure theory 与核/条件分布积分表示；邻近条件期望定义基础，未给增量指数可积或超鞅。|
 |E0849|03_Selk_2021_Large Deviations for High Minima of Gaussian Processes with.pdf|P-6e4b9187393e4871|adjacent|摘要为非负相关 Gaussian 增量的高极小值 LDP；邻近 H01 logarithmic rate 与 K04 process，但非条件 mgf 超鞅。|
 |E0850|20_Criens_2016_Monotone and Convex Stochastic Orders for Processes with Ind.pdf|P-61561c799c9c19bb|adjacent|摘要以 Lévy characteristics 与 coupling 刻画独立增量过程的单调/凸序；邻近条件凸函数比较，不自动给指数矩界。|
@@ -48,10 +48,70 @@
 
 ## 实际阅读卡
 
-尚无可纳入的实际阅读卡；不能用自动全文转换补作深读证据。
+- [P-073066f98d171070：full_read；与 I01 的关系为 adjacent/background](evidence-card-Grey2010-P-073066f98d171070.md)
+
+## 本轮独立重读与适用性更正（2026-10-07）
+
+Grey 2010 PDF 13/13 页逐页重读，全文转换 lines 1–571；附录不适用/无单独附录；视觉核对 PDF pp.3、5、8–9 的假设和 Gaussian 公式。题录核对 arXiv:1006.4465v1。原 verification-log 中 R28 的“唯一 direct”与由此推出 I01 专题直接支撑，是从摘要关键词作出的过宽相关性分类；本轮将 Grey 改为 **adjacent/background**。不继承旧“已深读”的断言作为本轮证据；本轮确实完成了独立全文重读，见阅读卡。
+
+来源的具体条件：Assumption 1（PDF p.3）要求存在 `θ>0` 使 `q=lim_n E exp(−θS_n)∈(0,∞)`；伴随随机游走使用双端 Assumption 2（p.3，对所有 `k` 与 `B∈F_{−k,k}` 的 `m,n→∞` 联合极限），Wald 鞅用单端 Assumption 2*（p.5，对所有 `k` 与 `B∈F_k` 的 `n→∞` 极限）。Gaussian 例（§2.2，pp.8–9）要求 `Σ r|ρ_r|<∞`，定义 `R=Σρ_r`、`S=Σrρ_r` 并排除 `1+2R=0`；仅在此模型下给出 `θ=2μ/[σ²(1+2R)]` 与 `q=exp[-4μ²S/(σ²(1+2R)²)]`。这些不是条件 Bernstein 假设。Grey 2001 的引用定理未重读/重证，不以 Grey 2010 全文状态背书。
+
+I01 的条件 Bernstein 上述结论是按 `references/method.md` 的显式假设自行推导；Grey 不作该证明来源。其它 39 个附件当前仍只有早先标题/首面筛选记录，相关性和全文状态待本轮候选筛查继续更新；“irrelevant/adjacent”不得仅凭摘要作最终排除。
 
 ## 本地原文定位
 
 原附件PDF：工作包根目录的 `corpus/papers/<paper_id>/paper.pdf`；全文 `paper.md`；页码映射 `pages.json`。
 补充PDF：`supplementary/<paper_id>/`。完整原文不放入轻量Skill ZIP；可用SHA-256与附件成员名定位原文件。
 逐篇完整处理状态见工作包 `catalog/entries-reviewed.json`、`catalog/reading-queue.json`。
+
+
+## 2026-10-07 evidence-plan re-screen
+
+|Entry|Source|Decision|Scope and limitation|
+|---|---|---|---|
+|E0832|P-983c45fe3cd6a0ba|irrelevant|Yu, title/abstract/introduction targeted screen; conditional-correlation measures, no conditional moment or martingale tail result.|
+|E0839|P-c0cf564821b58361|irrelevant|Alevy–Krishnan, abstract/model/main-results outline targeted screen; LPP Busemann negative correlation does not imply I01 filtration or conditional-moment hypotheses.|
+|E2518 (cross-topic H03)|P-048bfe95a33fe7e7|adjacent|Independent full-read card is in audit_hi queue: Fan–Grama–Liu 2013 conditional-MGF/maximal theorem; I01 moment→MGF remains self-derived and assumptions are not identical.|
+|E2500 (cross-topic H03)|P-d349bcb7490d61cf|adjacent|Full read in shared-reading/revise_hi: positive-part sub-Weibull plus predictable variance process; not I01's factorial conditional moments.|
+
+## 便携证据定位
+
+本 Skill 的清单 PDF 可按自身 `references/handoff-evidence-index.csv` 的条目定位；例如在解包工作包中核验 Grey 背景来源：
+
+```sh
+export EVIDENCE_ROOT="/path/to/unpacked/math64-package"
+python3 "$EVIDENCE_ROOT/audit_current/delivery/resolve_evidence.py" \
+  --skill-dir "$EVIDENCE_ROOT/workspace_revised/math-i01-ordered-increment-conditional-bernstein" \
+  --evidence-id E0847 --verify-sha256
+```
+
+Fan–Grama–Liu 2012 的 Proposition 8.1(III) 是 I01 这里引用的条件矩接口，但它属于 H03 来源索引，而非本 Skill 附件队列。解包包内从 H03 的 SHA 绑定索引解析该跨主题来源：
+
+```sh
+python3 "$EVIDENCE_ROOT/audit_current/delivery/resolve_evidence.py" \
+  --skill-dir "$EVIDENCE_ROOT/workspace_revised/math-h03-fan-grama-liu-martingale-expansion" \
+  --paper-id P-53739dd293f0de1c --verify-sha256
+```
+
+仅安装 Skill 时，设 `MATH64_SOURCE_PACKAGE_ROOT` 为完整来源工作包根，并在 `~/.codex/math-skill-evidence-roots.json` 注册：
+
+```json
+{"schema":"math-skill-evidence-root-registry-v1","roots":[{"id":"math64-20261007","package_root":"${MATH64_SOURCE_PACKAGE_ROOT}"}]}
+```
+
+然后用注册根解析本 Skill 的本地来源或 H03 索引中的跨主题论文；例如：
+
+```sh
+python3 "$MATH64_SOURCE_PACKAGE_ROOT/audit_current/delivery/resolve_evidence.py" \
+  --root-id math64-20261007 \
+  --skill-dir "$HOME/.codex/skills/math-i01-ordered-increment-conditional-bernstein" \
+  --evidence-id E0847 --verify-sha256
+python3 "$MATH64_SOURCE_PACKAGE_ROOT/audit_current/delivery/resolve_evidence.py" \
+  --root-id math64-20261007 \
+  --skill-dir "$MATH64_SOURCE_PACKAGE_ROOT/workspace_revised/math-h03-fan-grama-liu-martingale-expansion" \
+  --paper-id P-53739dd293f0de1c --verify-sha256
+```
+
+这两个 Fan 论文不得互换：2012 年 P-53739… 是 Proposition 8.1(III) 条件阶乘矩接口；2015 年 P-048b… 是相邻的条件 MGF/最大不等式论文。不要硬编码 Desktop、WorkBuddy 路径或假定安装 Skill 相对目录下存在 `../../evidence`。resolver 将索引相对路径限制在单一来源包 `evidence/` 内并核对 SHA。
+
+Package-relative `audit_current/...` locators in this file are resolved with the package-root resolver described in [portable audit access](portable-audit-access.md); they are not Skill-local file links.

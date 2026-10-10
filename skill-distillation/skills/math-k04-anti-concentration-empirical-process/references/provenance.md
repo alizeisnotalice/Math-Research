@@ -7,7 +7,7 @@
 |---|---|---|---|---|
 |E2703|13_Becker_2025_Uniform spectral gaps, non-abelian Littlewood-Offord and ant.pdf|P-bb809d1f8ab0fc55|adjacent|semisimple algebraic groups random walks对代数子簇的uniform anti-concentration及nonabelian Littlewood–Offord，邻近反集中方法但不是Gaussian maximum anti-concentration；群结构/height gap/常数依赖需全文。|
 |E2704|28_Kevei_2016_Bahadur--Kiefer Representations for Time Dependent Quantile.pdf|P-5612110893d746ee|direct|全文核验：对 iid fractional Brownian paths 的 time-dependent empirical/quantile process 给出 Theorem 3 uniform Bahadur–Kiefer representation，并证明加权 t^H 小时间端点 corollary，属经验过程直接证据。Theorems 1–2 的 Gaussian strong coupling 明确转引 Kevei–Mason [5]，本篇未证明；不属于 Gaussian-max anti-concentration。|
-|E2705|10_Tu_2023_An elementary proof of anti-concentration for degree two non.pdf|P-6d836a3f30fbd5fb|direct|已完整读Gaussian非负degree2 anti-concentration；卡明确Q≠0、trace0/σ0/ε大分支，并直接Schur修补γ事件等号。|
+|E2705|10_Tu_2023_An elementary proof of anti-concentration for degree two non.pdf|P-6d836a3f30fbd5fb|direct|全文6页已读。主定理对非零非负次数不超过2的多项式与标准高斯成立；印刷Lemma 2.4的q11>tr(Q22)分支将严格次水平集极限写成非严格事件，但省略的端点步骤可由非恒定多项式水平集高斯零测补齐，正常数情形另行平凡处理。故不把这处省略写成定理缺口；Skill中的Schur补推导作为独立佐证。见SHA卡audit_current/shared-reading/revise_jk/6d836a3f30fbd5fbc4bdc37e5ae5e8b0ddd8ddf1cb4af2062b3cec5276e69d56.json。|
 |E2706|27_Meckes_2017_Convergence of the empirical spectral measure of unitary Bro.pdf|P-b4c675c7aba4eb18|adjacent|unitary BM empirical spectral measure Wasserstein1及路径compact-time收敛速率，heat kernel concentration与moment estimates邻近经验过程uniform/tail方法，不是Nazarov反集中。全文维数/时间常数待核。|
 |E2707|34_Raseta_2015_Empirical Processes and Schatte Model.pdf|P-1c2fd847e8d226ab|direct|全文核验：对有界、具有有界密度的 iid 随机游走增量，给模1轨道经验CDF提供依赖序列Gaussian strong approximation与明确协方差极限；是K04经验过程直接证据，但不是iid经验过程通用耦合或Gaussian反集中。证明依赖先前稿未证明的block-shift Lemma 1及Berthet–Mason外引；优化段有−a/+a符号冲突，已保留。|
 |E2708|38_Chernozhukov_2012_Gaussian approximation of suprema of empirical processes.pdf|P-52fde473d714f0b2|direct|全文核验：Theorem 2.1 给满足点可测性、q≥3 包络矩和 P-pre-Gaussian 假设的经验过程 supremum 与协方差匹配 Gaussian supremum 的非渐近标量耦合；有限维 Theorem 4.1、局部偏差/熵最大不等式支撑核与级数经验过程应用。结果不等同整个过程的 sup-norm coupling。|
@@ -63,3 +63,8 @@
 原附件PDF：工作包根目录的 `corpus/papers/<paper_id>/paper.pdf`；全文 `paper.md`；页码映射 `pages.json`。
 补充PDF：`supplementary/<paper_id>/`。完整原文不放入轻量Skill ZIP；可用SHA-256与附件成员名定位原文件。
 逐篇完整处理状态见工作包 `catalog/entries-reviewed.json`、`catalog/reading-queue.json`。
+
+
+## J/K current atom bindings (2026-10-08)
+
+The K04 theorem/local-proof atoms in `audit_current/jk/claims.json` bind the following exact local PDFs to current full-read records: Giessing `7c5071…2701` (Thm. 2, Cor. 1); CCK maxima `fbc49c…1d7e` (Thm. 2–3); Tu–Boczar `6d836a…9d56` (Thm. 1.2 and endpoint repair); Gaxiola `9dec11…2147` (continuous/discrete core bounds, with Section 5 literal counterexamples scoped separately); Cohen–Conze `a150ab…5f32` (qualitative Theorem 1.9 only); CCK empirical-process `52fde4…5dc1` (Thm. 2.1 scalar supremum coupling only); Belloni–Fang–Shen `b3fd0f…80cd` (historical 61-page proof read reused after exact local PDF SHA/page-count verification). Every atom carries its exact card hash, theorem/page locator, hypotheses, and unresolved external dependencies. Full reading is evidence about source scope, not independent proof of cited external results.

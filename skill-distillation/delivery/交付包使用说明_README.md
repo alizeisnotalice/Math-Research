@@ -60,3 +60,5 @@ audit_r12/                    最终审计产物（索引/依赖图/登记簿/�
 - 本包为纯静态文件，无全局安装动作。将 `workspace_revised/` 复制到任意工作目录即可。
 - Skill 内引用论文时按 `references/` 的相对路径与 provenance 定位；PDF 原件在主交接包的 `evidence/papers/`。
 - 修改历史：所有修订均为 append-only；冻结源未改动。
+
+> 历史说明：本文记录 2026-10-06 原交付包的状态与审计统计，保留作为当时快照，不代表当前 64 项状态。当前索引、444 行账本派生目录、来源范围与明确限制见 [`../audits/current-release-20261011/README.md`](../audits/current-release-20261011/README.md)。

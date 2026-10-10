@@ -26,7 +26,7 @@
 |E1183|40_Stephen_2024_Clause chaining in Dzongkha【题录】.txt|R-46402d96a88b350a|pending|尚未人工筛选|
 |E1184|13_Wang_2024_Tail Asymptotic of Heavy-Tail Risks with Elliptical Copula.pdf|P-71d9467d7df93615|adjacent|typeI elliptical copula重尾风险联合尾及covariance/tail-set依赖，邻近Gaussian/copula换边缘后tail变化与固定边缘接口；不证明mixed-tail chaining，全文待核。|
 |E1185|11_Townes_2024_Mixed Poisson families with real-valued mixing distributions.pdf|P-68ab72b0e8e6bec3|irrelevant|mixed Poisson count-family用实值mixing的生成函数表示，mixed并非两metric混合尾；第一页没有indexed increments/chaining/entropy结构，不当K03来源。关于负参数条件分布的表述真伪未审计。|
-|E1186|12_Hu_2026_Simultaneous Pointwise Majorization for Mixed Tail Processes.pdf|P-b19fb9f102d33f2e|direct|全文核验：Theorem 3.1 在有限个真正混合尾度量下给出单一事件控制所有指标的点态majorization；附录C完成共细化链及可分空间延拓，Appendix E/Thm 5.3给出高斯混沌应用。|
+|E1186|12_Hu_2026_Simultaneous Pointwise Majorization for Mixed Tail Processes.pdf|P-b19fb9f102d33f2e|direct|Exact PDF SHA `b19fb9f102d33f2eeeee056a0d8c0cad45d21d63f6d8a1996939cf3bf27e3d3e`; exact 46-page full-read card `workspace_revised/math-k03-dirksen-mixed-tail-generic-chaining/references/papers/HK-P-b19fb9f102d33f2e.json` (SHA `b7f7a936c8b06a979ecd8f6f67f00ad46dfc48d9a61dbe523091726c3e74f879`). Theorem 3.1/setup pp.7–9 and Appendix C pp.30–39; direct only under all listed setup conditions, fixed pre-observation Borel priors, common mixed-tail parameter, and C depending on m,α; not uniform in m. Visual review p.7–9 is in `audit_current/jk/pdf-review/`.
 |E1187|22_Corwin_2018_KPZ equation tails for general initial data.pdf|P-a097f0c5a31aeabd|adjacent|Cole–Hopf KPZ general initial data在shallow/deep tail不同指数及Brownian Gibbs尾比较；邻近尾分支预算/初值一致性，非Gaussian/mixed increments定理，时间尺度与模型正则假设待全文。|
 |E1188|08_Kim_2025_Heavy-Tailed Mixed p-Spin Spherical Model_ Breakdown of Ultr.pdf|P-af48a130c56e7381|pending|尚未人工筛选|
 |E1189|05_Dirksen_2025_A resolution of the Gaussian hyperplane tessellation conject.pdf|P-209019cc8ae966fd|adjacent|Dirksen Gaussian hyperplane tessellation给δ^−3 w*(S)²反例否定δ^−2猜想，邻近Gaussian complexity不足决定非光滑uniform事件的边界；不是直接mixed-tail theorem，正文与构造待核。|
@@ -43,7 +43,7 @@
 |E1200|10_Shen_2026_Sharp Concentration Inequalities_ Phase Transition and Mixin.pdf|P-1a4418ea22ad46ef|adjacent|sub-Weibull sums Orlicz/variance混合浓缩及α2相变，邻近建立mixed increments之前的单变量/和tail工具；需正文核中心化、独立与α分支及常数，不将abstract未列mean条件当无条件定理。|
 |E1201|39_Gwendolyn_2024_Clause chaining in Kurtöp【题录】.txt|R-55d4139a3b48797a|pending|尚未人工筛选|
 |E1202|15_Yu_2024_Strongly Tail-Optimal Scheduling in the Light-Tailed M_G_1.pdf|P-f5797ae8376a5de3|irrelevant|M/G/1 scheduling优化response-time tail constant与Boost策略，未呈generic chaining/indexed metric entropy接口；tail字样不作K03入选理由。|
-|E1203|28_Dirksen_2013_Tail bounds via generic chaining.pdf|P-9ecc39a3d40ae7fe|direct|Dirksen Tail bounds via generic chaining v2，是专题核心来源；与已全文HK补充源S-9ecc39a3d40ae7fe逐字节SHA相同，复用其27页全文证据，不重复深读；原PDF/补取成员均保留关系。|
+|E1203|28_Dirksen_2013_Tail bounds via generic chaining.pdf|P-9ecc39a3d40ae7fe|direct|Exact PDF SHA `9ecc39a3d40ae7fe18fca07a7ab9b891bb200bf446fb71ca497a409d65e25795` equals supplementary S-9ecc39a3d40ae7fe. The E1203 attachment retains its historical p.1 screen; the 27-page full-read card `audit_current/shared-reading/revise_g/9ecc39a3d40ae7fe18fca07a7ab9b891bb200bf446fb71ca497a409d65e25795.json` (SHA `fcb048583aa37394fe508d158f29b9d26dc4a8241ccf56889af8e071c731ab94`) is reused by exact SHA. Theorem 3.5 applies under finite-T mixed-tail hypotheses; Remark 3.1 gives only the Lp lattice-supremum extension. Visual checks pp.6–8 are recorded in `audit_current/jk/pdf-review/`.
 |E1204|26_Ostrovsky_2014_Exact exponential tail estimations in the Law of Iterated Lo.pdf|P-4a98b00043fb03fd|adjacent|Banach mixed Lebesgue norm normalized iid sums的LIL尺度全n指数tail，邻近uniform over time/index尾预算与norm正则资格，不是两metric mixed-tail；全部uniform conditions待全文。|
 
 ## 实际阅读卡
@@ -58,3 +58,8 @@
 原附件PDF：工作包根目录的 `corpus/papers/<paper_id>/paper.pdf`；全文 `paper.md`；页码映射 `pages.json`。
 补充PDF：`supplementary/<paper_id>/`。完整原文不放入轻量Skill ZIP；可用SHA-256与附件成员名定位原文件。
 逐篇完整处理状态见工作包 `catalog/entries-reviewed.json`、`catalog/reading-queue.json`。
+
+## K03 exact-SHA theorem use (2026-10-08)
+
+- Dirksen Theorem 3.5 is ledgered as separate Lp-moment and tail claims. The source assumes finite T in the theorem setup; its Remark 3.1 extension is specifically a lattice-supremum moment bound. No blanket uncountable ordinary-supremum or tail extension is asserted.
+- Hu–Simchi-Levi Theorem 3.1 is ledgered separately with standard-Borel/separable-space, jointly measurable finite pseudometrics, an anchored ρ-continuous modification, one common mixed-tail parameter, and Borel priors fixed before process observation. Its pointwise envelope uses one common event and a constant depending on m and α.

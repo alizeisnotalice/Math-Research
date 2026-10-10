@@ -22,7 +22,7 @@
 |E0354|26_Arizmendi_2014_Convergence of the Fourth Moment and Infinite Divisibility.pdf|P-8caa672258aef1f6|pending|尚未人工筛选|
 |E0355|29_Davide_2026_On the limit in the CLT for a field of martingale difference.pdf|P-9cb332a9b4ed87f8|pending|尚未人工筛选|
 |E0356|31_Nourdin_2013_Fisher Information and the Fourth Moment Theorem.pdf|P-8377d218a77c5a87|pending|尚未人工筛选|
-|E0357|35_Antonella_2018_Martingale representations in progressive enlargement by the.pdf|P-49856320c1dcbbc4|pending|尚未人工筛选|
+|E0357|35_Antonella_2018_Martingale representations in progressive enlargement by the.pdf|P-49856320c1dcbbc4|irrelevant|Screened PDF pp.1–2: predictable martingale representation under enlarged filtrations; no suffix fourth-moment maximal comparison or terminal L4 transfer.|
 |E0358|35_Nourdin_2013_Entropy and the fourth moment phenomenon.pdf|P-be939c0a79ff6013|pending|尚未人工筛选|
 |E0359|12_Bhattacharya_2020_Motif Estimation via Subgraph Sampling_ The Fourth Moment Ph.pdf|P-60df29a5560c718e|pending|尚未人工筛选|
 |E0360|25_Höf_2014_The Third and Fourth Moment of the Renormalized Intersection.pdf|P-ee6ba2ee6d426d35|pending|尚未人工筛选|
@@ -35,7 +35,7 @@
 |E0367|36_Deya_2012_Fourth Moment Theorem and q-Brownian Chaos.pdf|P-150eb8c50d69ec78|pending|尚未人工筛选|
 |E0368|32_Nourdin_2013_The optimal fourth moment theorem.pdf|P-fc4f2af722e32801|pending|尚未人工筛选|
 |E0369|39_Kemp_2010_Wigner chaos and the fourth moment.pdf|P-15d2a2893037dba8|pending|尚未人工筛选|
-|E0370|05_Chen_2023_An improved complex fourth moment theorem.pdf|P-90eb2d5e1e8bd8f2|pending|尚未人工筛选|
+|E0370|05_Chen_2023_An improved complex fourth moment theorem.pdf|P-90eb2d5e1e8bd8f2|irrelevant|Screened PDF pp.1–2: complex Wiener-chaos fourth-moment theorem and Wasserstein Berry–Esseen bound; no martingale suffix maximal comparison.|
 |E0371|09_Zheng_2026_A Kolmogorov fourth-moment bound on Poisson chaos via a mart.pdf|P-02fe3214a278af1b|pending|尚未人工筛选|
 |E0372|23_Bordenave_2016_On the spectral radius of a random matrix_ an upper bound wi.pdf|P-d600ae367cd97053|pending|尚未人工筛选|
 |E0373|14_Rednoß_2024_Quantification of the Fourth Moment Theorem for Cyclotomic G.pdf|P-d3dbb0183572374a|pending|尚未人工筛选|

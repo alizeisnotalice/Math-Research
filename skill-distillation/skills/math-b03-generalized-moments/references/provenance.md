@@ -1,4 +1,7 @@
-# B03 来源与实际处理状态
+# B03 来源基线清单（旧标签待复核）
+
+> 当前筛查说明：下方标题、作者/版本、direct/adjacent/irrelevant及理由均是基线记录或旧人工备注，不代表本轮已复核；本轮状态以交付根 `audit_current/pdf_screening_and_reading_queue.csv` 和共享读卡为准。列表中的专题附件数是路径/条目口径，不可直接当SHA去重的论文数。题录TXT不是全文证据。
+
 
 附件归属 41 条；本专题关联不同PDF 38 份。
 题名按附件文件名原样保留，未自动认定身份。下表的人工判定与读取范围来源于真实审读记录；pending不能当作无关。
@@ -57,3 +60,8 @@
 原附件PDF：工作包根目录的 `evidence/papers/<paper_id>/paper.pdf`；全文 `paper.md`；页码映射 `pages.json`。
 补充PDF：`evidence/supplementary/<paper_id>/`。完整原文不放入轻量Skill ZIP；可用SHA-256与附件成员名定位原文件。
 逐篇完整处理状态见工作包 `catalog/entries-reviewed.json`、`catalog/reading-queue.json`。
+
+
+## 本轮复核状态（2026-10-07）
+
+- **E0997 / P-75068ca1d23232fc**：PDF 身份/版本按首页核验为 Guo, He, Jiang, Wang，arXiv:2201.01445v3；本地 PDF SHA-256 与 56 页逐页卡一致，主文、e-companion 附录和参考文献均记录覆盖。具体相关性为 B03 direct。仅将 §2 Theorem 1 与三步候选—验证法登记为条件性证据备注；`SKILL.md` 默认操作流程尚未启用此路线，定理的独立复核仍待完成。卡片中具体定理条件及边界见 [E0997 逐页卡](papers/AD-P-75068ca1d23232fc.json)。外部出版元数据未独立核验。

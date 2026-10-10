@@ -14,7 +14,7 @@
 
 7. 有限深度、零测度节点和无限极限分开；中心立方体选族需先证明真实公共输入、树化和packing，不能直接替代任意中心上确界。
 
-8. 新增复用P-6a781aff4000e334 stochastic常数e限连续平方可积、orthogonal/equal-bracket驱动及generalized CR系统，alpha条件tail mass≤1且其closed martingale在驱动stable subspace可表示；不能当一般Carleson树常数e，更未提供TC-A4。
+8. 复用 P-6a781aff4000e334 的随机常数 e 定理时须固定 n≥1 并保留 usual conditions（滤过右连续且完备）；驱动 X⁰,…,Xⁿ 为连续平方可积鞅，满足两两正交、等二次变差；u^k 具有广义 Cauchy–Riemann 积分形式；α≥0 且条件尾质量 M_t=E[∫_t^∞α_s ds|F_t]≤1 a.s.；总 α 质量的闭鞅须能在驱动 stable subspace 表示。该定理不提供一般确定性树常数 e 或 TC-A4。
 
 ## 不可省略的限制
 

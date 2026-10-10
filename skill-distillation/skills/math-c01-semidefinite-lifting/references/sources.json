@@ -431,9 +431,9 @@
       "sha256": "76fc5e5ff59f90054a2fc367dddd2e52f2f881e8445a585f417fc98a07c3322c",
       "bytes": 572269,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "adjacent",
+      "screening_reason": "全文阅读确认该文研究稀疏随机投影压缩SDP并给近似误差界；与C01矩阵提升接口相邻，不作为精确lift主张的直接支持。",
+      "identity_status": "verified_title_authors_version_pdf_sha_and_page_count",
       "paper_id": "P-76fc5e5ff59f9005",
       "local_file": "evidence/papers/P-76fc5e5ff59f9005/paper.pdf",
       "review": {
@@ -442,17 +442,121 @@
         "paper_id": "P-76fc5e5ff59f9005",
         "decision": "adjacent",
         "reason": "随机投影压缩SDP变量并给近似误差界；重点是投影算法，不是精确矩阵提升。",
-        "read_scope": "初筛：查看本地PDF第1页题名、作者、摘要和引言开头；未读完整主定理证明，不计全文深读。",
+        "read_scope": "Exact local arXiv:2406.14249v1 PDF full-read record covers physical pages 1–27 in sequence, including all references [1]–[56]; no appendix identified. The independent C01 peer review targeted pp.5–8 and did not repeat the full read.",
+        "full_read": true,
+        "identity_status": "verified_title_authors_version_pdf_sha_and_page_count",
         "source_ranges": [
           {
-            "start_line": 7,
-            "end_line": 62,
+            "file": "evidence/papers/P-76fc5e5ff59f9005/paper.pdf",
             "pdf_pages": [
-              1
-            ],
-            "basis": "本地全文PDF p.1题名/摘要及引言开头，初筛相关性证据。"
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27
+            ]
           }
-        ]
+        ],
+        "initial_screen_only": false,
+        "full_read_card": "audit_current/shared-reading/audit_jk/76fc5e5ff59f90054a2fc367dddd2e52f2f881e8445a585f417fc98a07c3322c.json",
+        "full_read_card_sha256": "6dcd88831119a60348baf0f110a65f529249a26c33492e3458c6d8606990bac4",
+        "visual_review_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27
+        ],
+        "source_warning": {
+          "scope": "PDF pp.5–8; printed Lemmas 1–3 only",
+          "classification": "scoped counterexamples refute the printed probability statements under their displayed scaling and quantifiers; likely local normalization/notation mismatch; intended correction unknown",
+          "lemma_1": "For the stated entry variance 1/k, E[(1/k)PP^T]=(n/k^2)I_k. At n=2k, the claimed event has probability at most 2/[k(1-epsilon)] by trace/Markov, while the printed lower bound tends to 1 for fixed epsilon and sufficiently small fixed gamma.",
+          "lemma_2": "With Q entries of variance 1/k and P=Q/sqrt(k), E||P e_1||^2=1/k. For T={0,e_1}, Markov forces the claimed near-isometry event probability to zero as k grows, contradicting the displayed lower bound.",
+          "lemma_3": "For x=e_1, a zero first column (probability (1-gamma)^k) violates the lower isometry bound; this eventually exceeds the claimed failure bound 2 exp(-C^2 epsilon^2 k^5 gamma^4). The proof rescales Q=P/sqrt(k) and derives inequalities for Q while the statement concerns P.",
+          "not_inferred": "No intended correction inferred; this does not refute unrelated results or the paper as a whole.",
+          "peer_review_receipt": "audit_current/cd/source-recovery/c01-guedes-ayala-sparse-projection-peer-review-20261008.json",
+          "peer_review_receipt_sha256": "74816e211f1ed2b344f6814cf9e363b98304858c7a0d6aa51bfb66de95eb90c0"
+        },
+        "operative_use_check": {
+          "result": "No operative use found in current C01 skill, method, examples, evidence guide, cube interface, or CD claims/cases at the peer-review receipt hashes. Source remains adjacent provenance only.",
+          "receipt": "audit_current/cd/source-recovery/c01-guedes-ayala-sparse-projection-peer-review-20261008.json",
+          "receipt_sha256": "74816e211f1ed2b344f6814cf9e363b98304858c7a0d6aa51bfb66de95eb90c0",
+          "operative_skill_body_edit": "none"
+        }
+      },
+      "initial_screen_history": {
+        "screening": "pending",
+        "screening_reason": "尚未人工筛选",
+        "identity_status": "pending",
+        "full_read": false,
+        "read_scope": "PDF p.1 title, authors, abstract and opening introduction only; initial screen, not a full read.",
+        "source_range": {
+          "file": "evidence/papers/P-76fc5e5ff59f9005/paper.pdf",
+          "pdf_pages": [
+            1
+          ]
+        },
+        "superseded_by_full_read_card": "audit_current/shared-reading/audit_jk/76fc5e5ff59f90054a2fc367dddd2e52f2f881e8445a585f417fc98a07c3322c.json",
+        "preserved_preimage": "audit_current/cd/source-recovery/metadata-preimages/c01-e0499-sources.json.pre-fullread-20261008",
+        "preimage_sha256": "1c013b85f3c35ad3cacb1fd6e6a009f1072cb4b586b792f475d5d0a1c7f7efc1"
+      },
+      "bibliographic_identity": {
+        "title": "Sparse Sub-gaussian Random Projections for Semidefinite Programming Relaxations",
+        "authors": [
+          "Monse Guedes-Ayala",
+          "Pierre-Louis Poirion",
+          "Lars Schewe",
+          "Akiko Takeda"
+        ],
+        "year": 2024,
+        "arxiv_id": "2406.14249",
+        "version": "v1",
+        "version_basis": "Local PDF p.1 identifies arXiv:2406.14249v1; official arXiv record history lists v1 submitted 2024-06-20. No later version is merged into this entry.",
+        "publication_status": "arXiv preprint version v1; formal journal publication status not asserted here."
       }
     },
     {

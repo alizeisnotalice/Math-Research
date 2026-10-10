@@ -3,14 +3,14 @@ name: math-f04-poisson-gamma-abel-square-function
 description: "用于Poisson–Gamma 与 Abel 平方函数接口的数学研究：核对输入与假设，组织方法和证据，说明中心立方体极大算子的迁移条件；不凭名称补造内部接口。"
 ---
 
-> **交接准备状态（结构性）**：本副本只整理技能结构与引用可移植性；未进行全文深读或数学验证。原评级、可用状态、假设、证明限制和未决条件均沿用原件。结构检查不构成科学验证。
-> 外部文献证据由第二证据包提供，是独立数据输入，不随单个 Skill 安装。合并交接包默认将 `EVIDENCE_ROOT` 设为包内 `evidence/`；单独安装时由调用方传入 `EVIDENCE_ROOT`，按本地[证据索引](references/handoff-evidence-index.csv)中的 `portable_path` 查找。无需全局安装，也不要把外部 PDF 当作 Skill 内文件。
+> **生产修订（2026-10-07）**：当前断言与证据等级记录位于 `audit_current/f/production_audit_20261007.md`（包内路径）；独立安装时按[包级审计访问说明](references/portable-audit-access.md)解析。此前交接状态和追加修订历史位于 `audit_current/f/history/pre-audit-20261007/`。示例运行只检验具体输入，不作为一般定理证明。
+
+来源索引路径及便携解析方式见[来源访问说明](references/source-access.md)；解析器会校验单项来源 SHA，不能替代阅读与数学核验。
 
 
 # F04 · Poisson–Gamma 与 Abel 平方函数接口
 
-当前证据状态：**待证据验收：可执行方法工作流，不是已证明的课题结论**。全文转换、论文阅读和证明核验是三个独立状态。（此行声明已被下方【修订】标注替代：该 skill 经外部审核提升为「部分可用」，详见对应修订行与 references/verification-log-20261006.md）
-  【修订 2026-10-06（外部审核 R21）】三条核心恒等式经 sympy 符号精确验证（∫tλe^{−2t√λ}=1/4、去 t 权得 (1/2)‖L^{1/4}f‖²、Gamma-Laplace=(r/(r+u))^α），P-1cd2c10e/P-ba2136 守卫与源卡一致；证据状态提升为：部分可用：基础推导已检查，专题证据仍待完整验收。粗糙域迁移细节与私有接口比较待做。
+当前断言与等级以原子账本为准；本条 Skill 不因某一基础引理通过就整体标记为已验收。
 
 ## 输入与产出
 
@@ -27,7 +27,7 @@ description: "用于Poisson–Gamma 与 Abel 平方函数接口的数学研究�
 5. 有限Fourier/谱和先核Abel极限，再凭适用的支配或强收敛推广；逐谱收敛不自动控制极大值。
 6. 新增邻近P-1cd2c10e2d8842c2限半空间、半有限von Neumann代数的列/行BMO–HMO与标准Poisson核，平方范数含完整梯度及球Carleson积分；BMO→HMO方向与部分对偶步骤引Mei且省细节。该表示不含Gamma shape/rate、Abel极限或任意中心立方体比较，不能替换本Hilbert谱恒等式。
 7. P-ba2136b0727e6a09为粗糙域zero-boundary −Lu=H−divΞ，corkscrew+n-AR、n≥2、real uniformly elliptic L，H/Ξ紧支撑有界；modifiedPR_p已可解且1<p≤2时作者报告q∈(1−ε,p)外推，但其p18/p21打印atom normalization与λ预算不相合。Th5.7是两侧平均积分，proof继承Th5.1；外推原子估计细节留给读者。先用已修source卡与显式PDE入口，不将打印atom theorem当已认证，也不混同Gamma/Abel半群。
-8. ROOT已检查热核正原子→L¹弱型扩展，仅限正连续热核；立方体指标边界、Poisson-Gamma私有接口和与平均尺度族的比较仍需另证。
+8. 热核正原子估计推广至非负 L¹ 数据只在所核条件下调用：固定维数 n，h_t≥0；对每个 t>0，y↦h_t(x−y) 在紧集连续，且 t↦h_t*f_R(x) 在正时间连续；假设所有有限正原子 ν 满足 α|{sup_{t>0}h_t*ν>α}|≤Cν(Rⁿ)。先将紧支撑 f_R 的质量离散到网格点，逐个正有理 t 收敛；时间连续把有理上确界等同全时间上确界，再由层集包含与 Fatou 得同一 C 的 L¹ 弱型界。令 R↑∞ 用正核单调收敛；一般实/复输入由 |h_t*f|≤h_t*|f|。完整推导见 [ROOT 局部核验](references/audit-root.md)。球/立方体指标核的边界、连续尺度约化或不连续/有符号核均不由此推出；Poisson–Gamma私有接口和与平均尺度族的比较仍需另证。
 9. 粗糙域PDE显式迁移入口（P-ba2136，非Gamma/Abel）：输入Ω corkscrew+n-AR、实强椭圆L、已可解modifiedPR_p且1<p≤2；对zero-boundary −Lu=H−divΞ先计算δH/Ξ的T²_q area norm（δ^(−n−1)dx），再在data远离2B时用Th5.7的边界截断N梯度均值≲域内annulus梯度均值；两侧都是fint。q∈(1−ε,p)外推需原子与annulus控制，作者细节留读者；其p18/p21原子定义/构造/λ^p预算指数不相合，暂不调用打印atom theorem作已认证入口。energyσ^(1−2/q)的标准修正仅独立代数建议，覆盖和收敛另证，详见TEAM_EF source amendment。
 
 ## 证据与失败处理

@@ -50,7 +50,7 @@
 
 - [P-2f81500e5dfa70c6：full_read](papers/HK-P-2f81500e5dfa70c6.json)
 - [P-5efa51c445ded152：full_read](papers/HK-P-5efa51c445ded152.json)
-- [P-ee636b8a2c2329ad：full_read](papers/TEAM_JK-P-ee636b8a2c2329ad.json)
+- [P-ee636b8a2c2329ad：full_read, exact-SHA card](papers/TEAM_JK-P-ee636b8a2c2329ad.json)；复用 `audit_current/shared-reading/revise_g/ee636b8a2c2329adc7a3b137b960f798e7bd40ea04971c821d75d629b88ae0c7.json`（card SHA-256 `f5be04747fd5b8c00636e7039f698ea6b290e6e4079d57b32480ff5452c74767`），但对 J05 仍为 adjacent。条件性积分推导另见 `audit_current/jk/derivations-j05-step05-miles-resolvent.md`。
 
 ## 本地原文定位
 

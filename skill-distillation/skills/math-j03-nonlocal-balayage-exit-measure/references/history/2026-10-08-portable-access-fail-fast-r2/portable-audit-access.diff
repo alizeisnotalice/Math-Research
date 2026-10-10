@@ -1,0 +1,69 @@
+--- workspace_revised/math-j03-nonlocal-balayage-exit-measure/references/portable-audit-access.md.before
++++ workspace_revised/math-j03-nonlocal-balayage-exit-measure/references/portable-audit-access.md
+@@ -4,22 +4,21 @@
+ 
+ ## Discover the bundle root from any directory
+ 
+-Set `MATH64_SKILL_DIR` when this Skill is installed somewhere other than the default directory. For a Skill used from the unpacked package, set it to `$EVIDENCE_ROOT/workspace_revised/math-j03-nonlocal-balayage-exit-measure`. Choose the bundle root using, in order, `EVIDENCE_ROOT`, `MATH64_SOURCE_PACKAGE_ROOT`, or the user-local registry entry `math64-20261007` in `${CODEX_HOME:-$HOME/.codex}/math-skill-evidence-roots.json`. The registry must have the schema `math-skill-evidence-root-registry-v1` and exactly one matching ID with a concrete absolute `package_root`.
++Set `MATH64_SKILL_DIR` when this Skill is installed somewhere other than the default directory. For a Skill used from the unpacked package, set it to `$EVIDENCE_ROOT/workspace_revised/math-j03-nonlocal-balayage-exit-measure`. Use the user-local registry entry `math64-20261007` in `${CODEX_HOME:-$HOME/.codex}/math-skill-evidence-roots.json` first. The registry must have the schema `math-skill-evidence-root-registry-v1` and exactly one matching ID with a concrete absolute `package_root`. If the registry file is absent, fall back to explicit `EVIDENCE_ROOT` or `MATH64_SOURCE_PACKAGE_ROOT`; if a readable registry is malformed or ambiguous, stop instead of overriding it with an environment value.
+ 
+ ```sh
++set -eu
+ MATH64_ROOT_ID="math64-20261007"
+ MATH64_CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
+ MATH64_REGISTRY="${MATH64_CODEX_HOME}/math-skill-evidence-roots.json"
+ MATH64_SKILL_NAME="math-j03-nonlocal-balayage-exit-measure"
+ MATH64_SKILL_DIR="${MATH64_SKILL_DIR:-}"
+ 
+-if [ -n "${EVIDENCE_ROOT:-}" ]; then
+-  MATH64_PACKAGE_ROOT="$EVIDENCE_ROOT"
+-  MATH64_ROOT_MODE="package-root"
+-elif [ -n "${MATH64_SOURCE_PACKAGE_ROOT:-}" ]; then
+-  MATH64_PACKAGE_ROOT="$MATH64_SOURCE_PACKAGE_ROOT"
+-  MATH64_ROOT_MODE="package-root"
+-elif [ -r "$MATH64_REGISTRY" ]; then
++if [ -e "$MATH64_REGISTRY" ]; then
++  if [ ! -r "$MATH64_REGISTRY" ]; then
++    printf '%s\n' "Evidence root registry exists but is unreadable: $MATH64_REGISTRY"
++    exit 2
++  fi
+   MATH64_PACKAGE_ROOT="$(python3 - "$MATH64_REGISTRY" "$MATH64_ROOT_ID" <<'PYROOT'
+ import json, os, re, sys
+ from pathlib import Path
+@@ -36,6 +35,12 @@
+ PYROOT
+   )" || exit 2
+   MATH64_ROOT_MODE="registry"
++elif [ -n "${EVIDENCE_ROOT:-}" ]; then
++  MATH64_PACKAGE_ROOT="$EVIDENCE_ROOT"
++  MATH64_ROOT_MODE="package-root"
++elif [ -n "${MATH64_SOURCE_PACKAGE_ROOT:-}" ]; then
++  MATH64_PACKAGE_ROOT="$MATH64_SOURCE_PACKAGE_ROOT"
++  MATH64_ROOT_MODE="package-root"
+ else
+   printf '%s\n' "Bundle root is not configured; set EVIDENCE_ROOT/MATH64_SOURCE_PACKAGE_ROOT or configure the registry."
+   exit 2
+@@ -65,13 +70,14 @@
+ fi
+ ```
+ 
+-For a registry-selected root, retain `--root-id "$MATH64_ROOT_ID" --registry "$MATH64_REGISTRY"` in the resolver command. For either environment-selected root, pass `--package-root "$MATH64_PACKAGE_ROOT"`. A packaged Skill can use `$MATH64_PACKAGE_ROOT/workspace_revised/math-j03-nonlocal-balayage-exit-measure` as `MATH64_SKILL_DIR`; an isolated installed Skill normally uses `$MATH64_CODEX_HOME/skills/math-j03-nonlocal-balayage-exit-measure`.
++Run the bootstrap block and one resolver block in the same shell session so its variables are available. Each resolver block uses fail-fast shell options. For a registry-selected root, retain `--root-id "$MATH64_ROOT_ID" --registry "$MATH64_REGISTRY"` in the resolver command. For either environment-selected root, pass `--package-root "$MATH64_PACKAGE_ROOT"`. A packaged Skill can use `$MATH64_PACKAGE_ROOT/workspace_revised/math-j03-nonlocal-balayage-exit-measure` as `MATH64_SKILL_DIR`; an isolated installed Skill normally uses `$MATH64_CODEX_HOME/skills/math-j03-nonlocal-balayage-exit-measure`.
+ 
+ ## Resolve and verify an indexed PDF
+ 
+ Use the exact `paper_id` or `evidence_id` from this Skill's `references/handoff-evidence-index.csv`. `--verify-sha256` makes the resolver hash the local PDF and compare it with the indexed SHA before returning its path.
+ 
+ ```sh
++set -eu
+ PAPER_ID="P-…"
+ if [ "$MATH64_ROOT_MODE" = registry ]; then
+   python3 "$MATH64_RESOLVER" --root-id "$MATH64_ROOT_ID" --registry "$MATH64_REGISTRY" \
+@@ -89,6 +95,7 @@
+ Pass the package-relative path printed in the Skill's evidence notes. The resolver rejects absolute paths and `..`, then returns the path and current artifact SHA-256.
+ 
+ ```sh
++set -eu
+ ARTIFACT_PATH="audit_current/…/record.json"
+ if [ "$MATH64_ROOT_MODE" = registry ]; then
+   python3 "$MATH64_RESOLVER" --root-id "$MATH64_ROOT_ID" --registry "$MATH64_REGISTRY" \

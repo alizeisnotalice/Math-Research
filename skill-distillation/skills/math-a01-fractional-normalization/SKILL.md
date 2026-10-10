@@ -3,13 +3,12 @@ name: math-a01-fractional-normalization
 description: "用于齐次归一化与分式规划的数学研究：核对输入与假设，组织方法和证据，说明中心立方体极大算子的迁移条件；不凭名称补造内部接口。"
 ---
 
-> **交接准备状态（结构性）**：本副本只整理技能结构与引用可移植性；未进行全文深读或数学验证。原评级、可用状态、假设、证明限制和未决条件均沿用原件。结构检查不构成科学验证。
-> 外部文献证据由第二证据包提供，是独立数据输入，不随单个 Skill 安装。合并交接包默认将 `EVIDENCE_ROOT` 设为包内 `evidence/`；单独安装时由调用方传入 `EVIDENCE_ROOT`，按本地[证据索引](references/handoff-evidence-index.csv)中的 `portable_path` 查找。无需全局安装，也不要把外部 PDF 当作 Skill 内文件。
+> 外部文献、claims/cases 与 PDF 属于完整证据包，不随单个 Skill 安装。请使用[便携证据访问指南](references/evidence-guide.md)，按本 Skill 的[来源索引](references/handoff-evidence-index.csv)通过统一 resolver 定位。registry/显式包根路由均不依赖当前工作目录；SHA 检查只确认当前字节，不等于全文阅读或数学验收。
 
 
 # A01 · 齐次归一化与分式规划
 
-当前证据状态：**部分可用：基础推导已检查，专题证据仍待完整验收**。全文转换、论文阅读和证明核验是三个独立状态。
+当前证据状态：**部分可用**。支持清单中明确假设下的单比值CCT、射线放松、SOS层级及题型专属审计；不自动覆盖零/变号分母、不同不确定性结构或课题结论。P-fdba 弦/切线界须用已修正的覆盖域和方向；其余引用范围见逐篇卡。当前全库相关性重筛仍在进行。
 
 ## 输入与产出
 
@@ -25,7 +24,7 @@ description: "用于齐次归一化与分式规划的数学研究：核对输入
 4. 其凸多项式达到定理需要K非空、f≥0、g>0、f/−g/h_i凸且sup_Kg<∞；CCT强对偶另检原约束Slater，不能从正分母或凸性单独推。
 5. 其SOS渐近层级还需有界K、Slater及g_min>0，保L>域半径、C>2/g_min的罚常数与每层下界方向；无通用速率。首层精确仅SOS-convex版本，普通凸不够。
 6. 矩恢复需来源具体rank-one与非零y₀条件或SOS-convex Jensen；浮点近rank-one不认证可行/最优。固定λ residual f−λg的方向保留，不对鲁棒sup/inf任意交换。
-7. 若实际问题是binary多比值、鲁棒比值、proximal迭代、projective凸包或chance constraint，先读[分模型来源与定位](references/frozen-source-locators.md)。保共同binary单项式、相关不确定性和正分母；P-fdba03cbf10513db的目标曲率/尾分位缺口及弦包络收紧约束的最大化下界方向另列，不沿用其卡中upper推论。
+7. 若实际问题是binary多比值、鲁棒比值、proximal迭代、projective凸包或chance constraint，先读[分模型来源与定位](references/frozen-source-locators.md)，按题型打开相应全文阅读卡；该表明确标注P-334/P-fdba之外的五篇来源。保共同binary单项式、相关不确定性和正分母；P-fdba03cbf10513db的目标曲率/尾分位缺口及弦包络收紧约束的最大化下界方向另列，不沿用其卡中upper推论。
 8. 齐次归一化先检缩放保全部约束；中心立方体接口固定M_c f(x)=sup_{Q:center(Q)=x}|Q|⁻¹∫_Q|f|，维数、阈值、尺度和同输入耦合保留，CCT不证明其解析界。
 
 ## 证据与失败处理
