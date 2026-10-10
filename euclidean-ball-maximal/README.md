@@ -2,6 +2,7 @@
 
 状态：维数无关 weak-(1,1) 上界及随维数发散的下界均未在本项目证明。
 
+- [第67轮研究记录](rounds/067/report.md)：Kelvin外域反演给阈值相关集中来源的完整极大水平集界2√e，包含部分捕获；光滑有界密度输入严格否定集中子块全局覆盖。一般上界仍未证明。[验证摘要](rounds/067/verification.json)。复现：`python3 rounds/067/verify.py`。
 - [第66轮研究记录](rounds/066/report.md)：最小包围球/任意来源方差证书给强球壳界与几何衰减的新增来源预算；临界预装修复配对粗拥塞。集中块及部分来源的全局覆盖仍未解决。[验证摘要](rounds/066/verification.json)。复现：`python3 rounds/066/verify.py`。
 - [第65轮研究记录](rounds/065/report.md)：一般来源增加的见证出生体积≤新增质量/阈值；可数链与共同核心的新增来源分配；光滑配对构型否定粗增量拥塞，而实际配对预算趋零。一般上界仍未证明。[验证摘要](rounds/065/verification.json)。复现：`python3 rounds/065/verify.py`。
 - [第64轮研究记录](rounds/064/report.md)：最远来源平移不交与全维交球壳体积界；任意来源块3/8预算；光滑高维输入否定任意可数分数整块覆盖的统一来源拥塞。一般上界仍未证明。[验证摘要](rounds/064/verification.json)。复现：`python3 rounds/064/verify.py`。
