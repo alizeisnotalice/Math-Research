@@ -1,0 +1,106 @@
+{
+  "round": 70,
+  "status": "passed",
+  "python": "3.14.6",
+  "batches": [
+    {
+      "batch": 0,
+      "seed": 700000,
+      "source_intervals": 1,
+      "copies": 2,
+      "replication_levels": 3,
+      "tail_extractions": 6,
+      "dimensions": [
+        1,
+        2,
+        3
+      ],
+      "jacobian_certificates": 6,
+      "counterexamples": [
+        {
+          "epsilon_power": 6,
+          "missed_volume": "27/160",
+          "carrier_volume": "1/16"
+        },
+        {
+          "epsilon_power": 8,
+          "missed_volume": "123/640",
+          "carrier_volume": "1/64"
+        },
+        {
+          "epsilon_power": 10,
+          "missed_volume": "507/2560",
+          "carrier_volume": "1/256"
+        }
+      ]
+    },
+    {
+      "batch": 1,
+      "seed": 700001,
+      "source_intervals": 2,
+      "copies": 3,
+      "replication_levels": 3,
+      "tail_extractions": 6,
+      "dimensions": [
+        8,
+        16,
+        32
+      ],
+      "jacobian_certificates": 6,
+      "counterexamples": [
+        {
+          "epsilon_power": 12,
+          "missed_volume": "2043/10240",
+          "carrier_volume": "1/1024"
+        },
+        {
+          "epsilon_power": 16,
+          "missed_volume": "32763/163840",
+          "carrier_volume": "1/16384"
+        },
+        {
+          "epsilon_power": 20,
+          "missed_volume": "524283/2621440",
+          "carrier_volume": "1/262144"
+        }
+      ]
+    },
+    {
+      "batch": 2,
+      "seed": 700002,
+      "source_intervals": 3,
+      "copies": 4,
+      "replication_levels": 3,
+      "tail_extractions": 6,
+      "dimensions": [
+        64,
+        128,
+        256
+      ],
+      "jacobian_certificates": 6,
+      "counterexamples": [
+        {
+          "epsilon_power": 24,
+          "missed_volume": "8388603/41943040",
+          "carrier_volume": "1/4194304"
+        },
+        {
+          "epsilon_power": 32,
+          "missed_volume": "2147483643/10737418240",
+          "carrier_volume": "1/1073741824"
+        },
+        {
+          "epsilon_power": 48,
+          "missed_volume": "140737488355323/703687441776640",
+          "carrier_volume": "1/70368744177664"
+        }
+      ]
+    }
+  ],
+  "sha256": {
+    "rounds/070/verify.py": "a653e7ce4f5865b291c3830dd87a986615a4c2466d461df27c302b2433b8c173",
+    "rounds/069/verify.py": "b5ef1570b0d632f1116de61905f7d74aa596a647c8d0e3f0434f9e211c4876a0"
+  },
+  "scope": "Exact full-line continuous-density levels; abstract finite envelope is not C_1; high-dimensional checks are scaling identities only.",
+  "main_theorem_proved": false
+}
