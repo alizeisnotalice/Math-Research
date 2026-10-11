@@ -2,6 +2,7 @@
 
 状态：维数无关 weak-(1,1) 上界及随维数发散的下界均未在本项目证明。
 
+- [第71轮研究记录](rounds/071/report.md)：真实连续输入否定逐层少数收费；根捕获量归一化的双抽样势消除树深度重复，保留终端碰撞项。无原子极限仍等价真实占用，空间总预算未闭合。[验证摘要](rounds/071/verification.json)。复现：`python3 rounds/071/verify.py`。
 - [第70轮研究记录](rounds/070/report.md)：充分分离分量的小余项近极值提取，质量加权亏损≤η+2√ε；复制保持完整弱型比与小载体却允许无集中。连续双团否定小载体直接消除跨块费用。一般上界未闭合。[验证摘要](rounds/070/verification.json)。复现：`python3 rounds/070/verify.py`。
 - [第69轮研究记录](rounds/069/report.md)：真实近极值输入的饱和质量定量约束；删去低部分并同步阈值后仍近极值，假想发散序列可约化至小体积可测载体。未获得直径控制或一般一致上界。[验证摘要](rounds/069/verification.json)。复现：`python3 rounds/069/verify.py`。
 - [第68轮研究记录](rounds/068/report.md)：光滑球体严格否定全外域正核拼接；真实极大函数不越阈，支撑外正核假阳性体积却有n/log n增长下界，任意固定例外预算后平方费用至少c(C)n²。未否定真实任务域上的预算。[验证摘要](rounds/068/verification.json)。复现：`python3 rounds/068/verify.py`。
