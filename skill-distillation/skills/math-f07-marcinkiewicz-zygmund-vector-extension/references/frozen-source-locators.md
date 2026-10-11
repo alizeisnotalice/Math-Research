@@ -115,3 +115,12 @@ k_{ec q,p}(r)<∞ 当且仅当下列至少一项成立：r=2；q=1 且 1≤r≤
 
 端点与限制：["定理1.3仅完整分类 1≤p<∞；2<p<q 时只知有限性必有 2≤r<p，且 r=2 足够，其他区间未决。", "p=∞由命题1.7证明一段发散区间，但作者表示其余范围有空缺。", "定理3.1的充要范围要求所有 q_i≤2。", "输入索引是每个变量各自的 k_i，输出对笛卡尔积多指标求和；不能误读为只对同一 k 的对角和。作者在第4、26、27页专门比较这两种不等式，指出最优幂关系不同。", "全文在实 L^p 空间与 σ-有限测度设置；复值和 Banach 空间的一般情形不由这些主定理自动覆盖。"]
 
+## P-205639b3db33d351
+
+Lerner, *Quantitative Weighted Estimates for the Littlewood-Paley Square Function and Marcinkiewicz Multipliers*, arXiv:1803.06981v1；SHA-256 `205639b3db33d351867659d084999a80b6b0e6614f1e3b21250338b7f294ebee`。本轮已逐页读 PDF pp.1–16，无附录。
+
+Theorems 1.1–1.2（pp.2–3）研究 `R` 上一维 lacunary 区间 `Δ_k` 的 Littlewood–Paley 平方函数 `S` 与 Marcinkiewicz 乘子 `T_m`，在 `1<p<∞`、`w∈A_p` 下给出最佳 `A_p` 特征指数的上下界；`1<p≤2` 时平方函数指数精确为 `3/(2(p−1))`。这只是特定频率分解与权重下的平方函数/乘子估计。
+
+证明路线：引入 Wilson 的 dyadic square-function estimate（Theorem 2.5/2.7），三格定理把连续尺度覆盖为有限 dyadic 格；sharp extrapolation（Theorem 2.8）从 `p=2` 加权界推出一般 `p`；乘子部分使用频带分解、对偶和两权部分和估计（Lemma 3.2）及定理 1.1。外部 Wilson、extrapolation 与两权最大 Hilbert 变换结果作为引用前提，没有在本文重证。
+
+与 F07 的关系：相邻的平方函数估计方法；没有推出“任意一个标量 `L^p` 有界算子自动有 `L^p(ℓ²)` 扩张”，也没有中心立方体尺度族结论。

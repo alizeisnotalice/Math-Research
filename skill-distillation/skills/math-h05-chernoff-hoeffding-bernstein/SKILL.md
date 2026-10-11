@@ -5,8 +5,6 @@ description: "用于Chernoff、Hoeffding、Bernstein 不等式的数学研究：
 
 # H05 · Chernoff、Hoeffding、Bernstein 不等式
 
-> **交接预处理说明：** 本副本只做结构、格式与可移植性预处理；这不构成数学内容、文献或定理的科学验证。下方原有证据状态、适用范围和例子保持原样。
-
 > 便携证据定位见[本Skill证据索引](references/handoff-evidence-index.csv)。读取外部文献时，将 `EVIDENCE_ROOT` 设为单独提供的数据包根目录，再按索引的 `resolved_portable_path` 定位文件。文献文件属于额外数据输入，不是本Skill目录内的必需文件。
 
 当前证据状态：**部分可用：基础推导已检查，专题证据仍待完整验收**。全文转换、论文阅读和证明核验是三个独立状态。
@@ -36,3 +34,5 @@ description: "用于Chernoff、Hoeffding、Bernstein 不等式的数学研究：
 依赖表提供方法路线，不表示所有工具之间存在无条件定理蕴含。
 
 用 [适用案例](examples/positive.md) 与 [条件缺失案例](examples/negative.md) 检查适用边界。
+
+H–I 操作步骤与来源定理的逐项证据、证明状态及未覆盖接口见[H–I 操作证据与共享审计文件定位说明](references/portable-audit-access.md)。

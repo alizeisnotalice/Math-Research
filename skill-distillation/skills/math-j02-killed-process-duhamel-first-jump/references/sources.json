@@ -235,24 +235,24 @@
         "topic": "J02",
         "paper_id": "P-c580aef7365f8786",
         "decision": "direct",
-        "reason": "全文核验：时间非齐次Lévy过程的有界可测杀死率进入弱PIDE，并由Theorem 3.4表示为路径累计杀死权重；还给出指标型域外惩罚。不是首次跳跃标签分解或一般Duhamel公式。",
-        "read_scope": "全文1–2041行（PDF 1–37页）含Appendix A–B与主定理证明；p.10、19、26–33视觉核验。",
+        "reason": "Full-read re-adjudication: direct only for Theorem 3.4 / Corollary 5.5’s finite-λ weak-PIDE Feynman–Kac representation with bounded measurable killing; does not prove first-jump label decomposition, generic Duhamel, or the λ→∞ strict-exit limit.",
+        "read_scope": "All 37 PDF pages read; Theorem 3.4 p.10 and §5.4/Corollary 5.5 p.19 visually checked; full source record in audit_current/jk/papers-read.json.",
         "source_ranges": [
           {
-            "start_line": 455,
+            "start_line": 531,
             "end_line": 549,
             "pdf_pages": [
-              8,
-              9,
               10
-            ]
+            ],
+            "scope": "Theorem 3.4 representation and hypotheses"
           },
           {
             "start_line": 1050,
             "end_line": 1081,
             "pdf_pages": [
               19
-            ]
+            ],
+            "scope": "§5.4 discussion and Corollary 5.5 finite-λ representation; not a λ→∞ convergence proof"
           },
           {
             "start_line": 1388,
@@ -264,20 +264,21 @@
               28,
               29,
               30
-            ]
-          },
-          {
-            "start_line": 1727,
-            "end_line": 1925,
-            "pdf_pages": [
-              31,
-              32,
-              33,
-              34
-            ]
+            ],
+            "scope": "Theorem 3.4 regularization/stability proof path"
           }
         ],
-        "inherited_from": "reviews/HK/screening.json"
+        "inherited_from": "reviews/HK/screening.json",
+        "current_adjudication": {
+          "decision": "direct_but_narrow",
+          "basis": "full_read_and_visual_check",
+          "scope": "finite-λ complement-occupation penalty under Theorem 3.4 assumptions only",
+          "visual_review_paths": [
+            "audit_current/jk/pdf-review/P-c580aef7365f8786-10.png",
+            "audit_current/jk/pdf-review/P-c580aef7365f8786_p19-19.png"
+          ],
+          "hard_exit_limit": "not proved by this paper"
+        }
       }
     },
     {
@@ -1001,6 +1002,19 @@
       }
     }
   ],
-  "supplementary": [],
+  "supplementary": [
+    {
+      "paper_id": "P-ee636b8a2c2329ad",
+      "title": "Jump Locations of Jump-Diffusion Processes with State-Dependent Rates",
+      "source_version": "arXiv:1701.01920v2 (as printed; external authority verification not claimed)",
+      "pdf_sha256": "ee636b8a2c2329adc7a3b137b960f798e7bd40ea04971c821d75d629b88ae0c7",
+      "pdf_path": "evidence/papers/P-ee636b8a2c2329ad/paper.pdf",
+      "page_count": 22,
+      "reuse_kind": "cross-skill exact-SHA reuse; original attachment E0797 belongs to J01 and E0057 to J05",
+      "full_read_card": "audit_current/shared-reading/revise_g/ee636b8a2c2329adc7a3b137b960f798e7bd40ea04971c821d75d629b88ae0c7.json",
+      "full_read_card_sha256": "f5be04747fd5b8c00636e7039f698ea6b290e6e4079d57b32480ff5452c74767",
+      "J02_scope": "J02 step 6 only: first intensity-kill densities in a one-dimensional diffusion under source assumptions; no general jump Duhamel or hard-exit limit."
+    }
+  ],
   "status": "待证据验收：可执行方法工作流，不是已证明的课题结论"
 }

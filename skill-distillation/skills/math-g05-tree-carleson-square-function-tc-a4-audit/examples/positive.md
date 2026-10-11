@@ -1,5 +1,5 @@
-# 适用案例
+# 标准二进 Carleson 嵌入的有限实例
 
-深度1二进树根[0,1]、alpha_root=1、f=1，packing常数C=1、embedding和1=||f||2²。它是基本正例；标准4C上界右侧4，此例不饱和锐常数4。
+深度 1 二进树根测度 1、两子节点测度 1/2；取 α_root=1、其他 α=0，且 f≡1。逐节点 packing C=1，左侧嵌入和为 1，而 p=2 来源上界 4C‖f‖₂²=4。该例不饱和锐常数 4，也不验证一般树定理。
 
-本例是边界检查任务；是否通过实际调用见总体验证报告，不因文件存在自动计作行为测试通过。
+本例已实际运行，见 `audit_current/g/case_results_20261007.json`（G05-positive-depth1-Carleson-embedding）。标准来源定理与条件列于 `audit_current/g/claims.json`。

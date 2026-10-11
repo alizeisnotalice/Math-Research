@@ -1,4 +1,11 @@
-# B01 来源与实际处理状态
+# B01 来源基线清单（旧标签待复核）
+
+> 当前筛查说明：下方标题、作者/版本、direct/adjacent/irrelevant及理由均是基线记录或旧人工备注，不代表本轮已复核；本轮状态以交付根 `audit_current/pdf_screening_and_reading_queue.csv` 和共享读卡为准。列表中的专题附件数是路径/条目口径，不可直接当SHA去重的论文数。题录TXT不是全文证据。
+
+
+## 本轮补充来源核验（非旧基线标签）
+
+- **E1258 / P-f7c5f0af2f09c2df，adjacent，局部原文错误已独立复核。** `Improved Linear Embeddings via Lagrange Duality`，Kshiteej Sheth、Dinesh Garg、Anirban Dasgupta，arXiv:1711.11527v2（2017-12-14），20页，PDF SHA-256 `f7c5f0af2f09c2dfb22612b826cea54ce5a30f617bd7b01d2b989b9d1d9555ef`。已直接检查 PDF pp.2–6；p.4 的 Relaxed Primal 只去掉跨列正交约束、仍保留逐列单位范数，p.5 Eq.(2) 将该等式加入 Lagrangian，p.5–6 Lemma 2 的 top-k 特征值有限性判定被同一问题域反例否定。准确范围及证明见[当前核验记录](verification-log-20261007.md)与全库主读卡 `audit_current/shared-reading/audit_ln/f7c5f0af2f09c2dfb22612b826cea54ce5a30f617bd7b01d2b989b9d1d9555ef.json`；原文PDF可在包内 `EVIDENCE_ROOT/reviews/TEAM_N/retrieval/20261006-r1/E1258/arxiv-v2.pdf` 定位。该 arXiv 版本与 DOI `10.1007/s10994-018-5729-x` 的发表版本关系未核验；不能据此推断发表版文本相同，也不据此否定整篇的近似算法/保证。
 
 附件归属 91 条；本专题关联不同PDF 58 份。
 题名按附件文件名原样保留，未自动认定身份。下表的人工判定与读取范围来源于真实审读记录；pending不能当作无关。

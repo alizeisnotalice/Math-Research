@@ -79,7 +79,7 @@
 |E0733|23_Cabral_2019_Projective Analytic Vectors and Infinitesimal Generators.pdf|P-66f5567de717d47a|irrelevant|首面摘要未提出多值映射的可测性、Borel/可测选择、可测最大值或 argmax 选择结论；smooth/continuous selection 单独不满足目标。|
 |E0734|38_Melentijević_2022_Hollenbeck-Verbitsky conjecture on best constant inequalitie.pdf|P-6fb8eb88b75ea80f|irrelevant|首面摘要未提出多值映射的可测性、Borel/可测选择、可测最大值或 argmax 选择结论；smooth/continuous selection 单独不满足目标。|
 |E0735|20_Biswas_2024_Concerning semirings of measurable functions.pdf|P-288eaad5a93a9c9e|irrelevant|首面摘要未提出多值映射的可测性、Borel/可测选择、可测最大值或 argmax 选择结论；smooth/continuous selection 单独不满足目标。|
-|E0736|02_Clerico_2026_Borel selection of dominating hyperplanes.pdf|P-55ddb3291a49ef12|direct|题名和摘要均指向支配超平面的 Borel 选择，直接涉及可测选择器。|
+|E0736|02_Clerico_2026_Borel selection of dominating hyperplanes.pdf|P-55ddb3291a49ef12|direct (scoped)|有限维、半解析输入和存在逐点仿射主控时，选择 Borel 仿射主控；并在明确条件下选择次梯度。不是一般 argmax/API 或任意多值映射选择定理。|
 |E0737|10_Vooys_2023_Measurable Functions and Topolgical Algebra.pdf|P-97c7a08aef53d1b9|irrelevant|首面摘要未提出多值映射的可测性、Borel/可测选择、可测最大值或 argmax 选择结论；smooth/continuous selection 单独不满足目标。|
 |E0738|27_Chami_2008_Induced Measures on _Mu___- measurable Sets.pdf|P-7e3301978795ec2d|irrelevant|首面摘要未提出多值映射的可测性、Borel/可测选择、可测最大值或 argmax 选择结论；smooth/continuous selection 单独不满足目标。|
 |E0739|35_Li_2026_Strong and weak-type estimates for radial weighted Bergman p.pdf|P-aa9be517e4151523|irrelevant|首面摘要未提出多值映射的可测性、Borel/可测选择、可测最大值或 argmax 选择结论；smooth/continuous selection 单独不满足目标。|

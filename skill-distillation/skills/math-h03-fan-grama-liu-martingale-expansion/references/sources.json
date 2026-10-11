@@ -55,9 +55,9 @@
       "sha256": "53739dd293f0de1c466a278829271bd71c72b1e68af9504a9ae48a8cdab2dd83",
       "bytes": 292374,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "reviewed",
+      "screening_reason": "身份、SHA与全文覆盖已由当前源卡核实。",
+      "identity_status": "verified_local_pdf_version",
       "paper_id": "P-53739dd293f0de1c",
       "local_file": "corpus/papers/P-53739dd293f0de1c/paper.pdf",
       "review": {
@@ -65,10 +65,11 @@
         "topic": "H03",
         "paper_id": "P-53739dd293f0de1c",
         "decision": "direct",
-        "reason": "作者、标题与正文均为 Fan–Grama–Liu 鞅展开原文；含条件、主展开范围、指数倾斜证明与等价条件。全文 26 页已读。",
-        "read_scope": "full paper (26 PDF pages), definitions/main results/proofs/equivalent conditions/references",
+        "reason": "Fan–Grama–Liu H03原文；当前revise_hi卡绑定SHA并记录26/26页全文及公式视觉核对。",
+        "read_scope": "full paper pp.1–26, proofs and references; no separate appendix.",
         "source_ranges": [
           {
+            "file": "evidence/papers/P-53739dd293f0de1c/paper.md",
             "start_line": 1,
             "end_line": 1056,
             "pdf_pages": [
@@ -99,9 +100,12 @@
               25,
               26
             ],
-            "scope": "全文逐页阅读；主定理 PDF pp.3–7 视觉核对"
+            "scope": "All pages read; theorem and appendix-section formulas visually checked at pp.3–7,23–24."
           }
-        ]
+        ],
+        "full_read": true,
+        "identity_status": "verified_local_pdf_version",
+        "current_sha_bound_card": "audit_current/shared-reading/revise_hi/53739dd293f0de1c466a278829271bd71c72b1e68af9504a9ae48a8cdab2dd83.json"
       }
     },
     {
@@ -311,19 +315,30 @@
       "sha256": "bfa4604dd5161ffe7dd994edb506d2c32bbc3e77b78b0e39331f4491315adb1b",
       "bytes": 517105,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "completed",
+      "screening_reason": "Screened PDF pp.1–2: weighted Lp solutions/comparison for random-horizon BSDEs; no Fan–Grama–Liu moderate-deviation expansion.",
+      "identity_status": "observed_title_authors_version_from_pdf_page1_local_sha_verified",
       "paper_id": "P-bfa4604dd5161ffe",
       "local_file": "corpus/papers/P-bfa4604dd5161ffe/paper.pdf",
       "review": {
         "entry_id": "E2491",
         "topic": "H03",
         "paper_id": "P-bfa4604dd5161ffe",
-        "decision": "pending",
-        "reason": "尚未人工筛选",
-        "read_scope": "pending",
-        "source_ranges": []
+        "decision": "irrelevant",
+        "reason": "Screened PDF pp.1–2: weighted Lp solutions/comparison for random-horizon BSDEs; no Fan–Grama–Liu moderate-deviation expansion.",
+        "read_scope": "title/abstract and introductory material, PDF pp.1–2; relevance screen only",
+        "source_ranges": [
+          {
+            "file": "evidence/papers/P-bfa4604dd5161ffe/paper.md",
+            "pdf_pages": [
+              1,
+              2
+            ]
+          }
+        ],
+        "full_read": false,
+        "initial_screen_only": true,
+        "identity_status": "observed_title_authors_version_from_pdf_page1_local_sha_verified"
       }
     },
     {
@@ -518,19 +533,23 @@
       "sha256": "d349bcb7490d61cf14a0751fcc46f4a101be94725fdde491e98736eec77451b7",
       "bytes": 134560,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "adjacent",
+      "screening_reason": "Theorem 2.2 (PDF p.2) and Corollary 2.1 (pp.2–3) prove exponential tail/maximal inequalities for supermartingale differences under positive-part sub-Weibull exponential-moment assumptions, with a predictable conditional-variance cap/scale condition. This is adjacent to H03 martingale large-deviation tools and to I01 stopping/maximal methods, but not a source for I01’s factorial conditional moment ⇒ one-step MGF implication; its assumptions and tail regime differ.",
+      "identity_status": "verified",
       "paper_id": "P-d349bcb7490d61cf",
       "local_file": "corpus/papers/P-d349bcb7490d61cf/paper.pdf",
       "review": {
         "entry_id": "E2500",
         "topic": "H03",
         "paper_id": "P-d349bcb7490d61cf",
-        "decision": "pending",
-        "reason": "尚未人工筛选",
-        "read_scope": "pending",
-        "source_ranges": []
+        "decision": "adjacent",
+        "reason": "Theorem 2.2 (PDF p.2) and Corollary 2.1 (pp.2–3) prove exponential tail/maximal inequalities for supermartingale differences under positive-part sub-Weibull exponential-moment assumptions, with a predictable conditional-variance cap/scale condition. This is adjacent to H03 martingale large-deviation tools and to I01 stopping/maximal methods, but not a source for I01’s factorial conditional moment ⇒ one-step MGF implication; its assumptions and tail regime differ.",
+        "read_scope": "full PDF pp.1–9",
+        "source_ranges": [
+          "Theorem 2.1 PDF p.2, proof pp.3–6",
+          "Theorem 2.2 PDF p.2, proof pp.7–8",
+          "Corollary 2.1 PDF pp.2–3, proof p.8"
+        ]
       }
     },
     {
@@ -564,19 +583,30 @@
       "sha256": "cd30b6c33c482320097200ab1ed2a3b6e928e9225d7bd307ef5e6a98a4066d0c",
       "bytes": 332327,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "completed",
+      "screening_reason": "Screened PDF pp.1–2: a.e./L2 convergence of random and ergodic series by filtration decomposition and Doob maximal inequalities; no exponential large-deviation expansion or specifically transferable H03 interface.",
+      "identity_status": "observed_title_authors_version_from_pdf_page1_local_sha_verified",
       "paper_id": "P-cd30b6c33c482320",
       "local_file": "corpus/papers/P-cd30b6c33c482320/paper.pdf",
       "review": {
         "entry_id": "E2502",
         "topic": "H03",
         "paper_id": "P-cd30b6c33c482320",
-        "decision": "pending",
-        "reason": "尚未人工筛选",
-        "read_scope": "pending",
-        "source_ranges": []
+        "decision": "irrelevant",
+        "reason": "Screened PDF pp.1–2: a.e./L2 convergence of random and ergodic series by filtration decomposition and Doob maximal inequalities; no exponential large-deviation expansion or specifically transferable H03 interface.",
+        "read_scope": "title/abstract and introductory material, PDF pp.1–2; relevance screen only",
+        "source_ranges": [
+          {
+            "file": "evidence/papers/P-cd30b6c33c482320/paper.md",
+            "pdf_pages": [
+              1,
+              2
+            ]
+          }
+        ],
+        "full_read": false,
+        "initial_screen_only": true,
+        "identity_status": "observed_title_authors_version_from_pdf_page1_local_sha_verified"
       }
     },
     {
@@ -778,19 +808,23 @@
       "sha256": "890b0aaf9124ba44a63067513146cb816333a9e47baa4ff9cd201182e6f5e7df",
       "bytes": 420607,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "adjacent",
+      "screening_reason": "正文 Theorems 1–3 are sharp LD expansions for independent centered sums; tilted-measure method is adjacent but not H03 martingale theorem.",
+      "identity_status": "verified",
       "paper_id": "P-890b0aaf9124ba44",
       "local_file": "corpus/papers/P-890b0aaf9124ba44/paper.pdf",
       "review": {
         "entry_id": "E2510",
         "topic": "H03",
         "paper_id": "P-890b0aaf9124ba44",
-        "decision": "pending",
-        "reason": "尚未人工筛选",
-        "read_scope": "pending",
-        "source_ranges": []
+        "decision": "adjacent",
+        "reason": "Theorem 1 (PDF p.4), Corollary 2 (p.5), Theorem 2 (p.6), Theorem 3 (p.7), and Esscher proof (pp.7–18) apply to independent sums under their own conditions; no martingale difference result. Full PDF pp.1–19 read.",
+        "read_scope": "full_read",
+        "source_ranges": [
+          "PDF pp.1–19 (all pages; no appendix)",
+          "Theorem 1 / condition (A): PDF p.4; proofs pp.11–14",
+          "Theorems 2–3: PDF pp.6–7; proofs pp.14–18"
+        ]
       }
     },
     {
@@ -847,19 +881,30 @@
       "sha256": "2eee8ad0403d475b2e3f3205a45ddfc2d53e310b4317e43829742fcb50b7b471",
       "bytes": 504219,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "completed",
+      "screening_reason": "Screened PDF pp.1–2: superlinear stochastic reaction-diffusion well-posedness, regularity and strong approximation; no martingale moderate-deviation expansion.",
+      "identity_status": "observed_title_authors_version_from_pdf_page1_local_sha_verified",
       "paper_id": "P-2eee8ad0403d475b",
       "local_file": "corpus/papers/P-2eee8ad0403d475b/paper.pdf",
       "review": {
         "entry_id": "E2513",
         "topic": "H03",
         "paper_id": "P-2eee8ad0403d475b",
-        "decision": "pending",
-        "reason": "尚未人工筛选",
-        "read_scope": "pending",
-        "source_ranges": []
+        "decision": "irrelevant",
+        "reason": "Screened PDF pp.1–2: superlinear stochastic reaction-diffusion well-posedness, regularity and strong approximation; no martingale moderate-deviation expansion.",
+        "read_scope": "title/abstract and introductory material, PDF pp.1–2; relevance screen only",
+        "source_ranges": [
+          {
+            "file": "evidence/papers/P-2eee8ad0403d475b/paper.md",
+            "pdf_pages": [
+              1,
+              2
+            ]
+          }
+        ],
+        "full_read": false,
+        "initial_screen_only": true,
+        "identity_status": "observed_title_authors_version_from_pdf_page1_local_sha_verified"
       }
     },
     {
@@ -962,19 +1007,53 @@
       "sha256": "048bfe95a33fe7e79a22541b53b7e0685108d054e8a37d6cdabcddc2d97ab7e1",
       "bytes": 431036,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "adjacent",
+      "screening_reason": "Exact-SHA full read of the 22-page 2015 journal paper. Its conditional exponential/maximal inequalities are adjacent to H03 but do not provide the 2012 paper’s precise Fan–Grama–Liu Cramér expansion; keep the two papers separate.",
+      "identity_status": "verified_title_authors_journal_version_from_pdf; exact_sha_full_read",
       "paper_id": "P-048bfe95a33fe7e7",
       "local_file": "corpus/papers/P-048bfe95a33fe7e7/paper.pdf",
       "review": {
         "entry_id": "E2518",
         "topic": "H03",
         "paper_id": "P-048bfe95a33fe7e7",
-        "decision": "pending",
-        "reason": "尚未人工筛选",
-        "read_scope": "pending",
-        "source_ranges": []
+        "decision": "adjacent",
+        "reason": "Different Fan–Grama–Liu paper from P-53739dd293f0de1c: 2015 EJP conditional-MGF/maximal inequalities, not the 2012 Cramér expansion.",
+        "read_scope": "Full 22-page PDF pp.1–22, including all theorem proofs, applications and references; exact SHA-bound card audit_current/shared-reading/audit_hi/048bfe95a33fe7e79a22541b53b7e0685108d054e8a37d6cdabcddc2d97ab7e1.json.",
+        "source_ranges": [
+          {
+            "file": "evidence/papers/P-048bfe95a33fe7e7/paper.md",
+            "start_line": 1,
+            "end_line": 1543,
+            "pdf_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22
+            ],
+            "scope": "Full read including Theorem 2.1, Corollaries 2.2–2.5, Theorem 2.6, proof sections, applications and references."
+          }
+        ],
+        "full_read": true,
+        "identity_status": "verified_title_authors_journal_version_from_pdf; exact_sha_full_read",
+        "initial_screen_only": false
       }
     },
     {

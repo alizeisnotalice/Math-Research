@@ -1,7 +1,11 @@
-# A04 来源与实际处理状态
+> **当前状态（2026-10-07）：** P-56 已逐页阅读至PDF pp.1–19（含附录A/B）；原文和缓存 SHA、页码/文本行定位见 [`逐项复核日志`](verification-log-20261007.md)。Lemma 2 的连通性判据可用；Algorithm 1 任意逐 cut 并行树选择的全局最小性不可调用，同模型反例见 [`案例`](../examples/shared-edge-counterexample.md)。以下附件清单中的相关性和全文状态仍以逐源账本为准，旧标签不自动继承。
 
-附件归属 91 条；本专题关联不同PDF 59 份。
-题名按附件文件名原样保留，未自动认定身份。下表的人工判定与读取范围来源于真实审读记录；pending不能当作无关。
+便携包或已安装 Skill 的本地来源访问方法见 [`便携来源解析说明`](source-access.md)。该校验器只解析本地路径并核对索引 SHA，不替代逐页阅读或数学核验。
+
+# A04 来源基线清单（旧标签待本轮复核）
+
+附件归属 91 条；基线专题索引列出59个PDF路径，实际SHA去重需看总文献账本。
+下表保留附件文件名和原先筛选理由，作为历史线索；不构成本轮身份或相关性判定，也不能由旧 `direct/adjacent/irrelevant` 标签推断当前状态。当前状态见 `audit_current` 的全库唯一SHA队列及逐篇阅读卡。`pending` 不是无关结论。
 
 |条目|文件名|SHA-256 / 论文ID|人工判定|理由|
 |---|---|---|---|---|
@@ -105,4 +109,4 @@
 
 原附件PDF：工作包根目录的 `evidence/papers/<paper_id>/paper.pdf`；全文 `paper.md`；页码映射 `pages.json`。
 补充PDF：`evidence/supplementary/<paper_id>/`。完整原文不放入轻量Skill ZIP；可用SHA-256与附件成员名定位原文件。
-逐篇完整处理状态见工作包 `catalog/entries-reviewed.json`、`catalog/reading-queue.json`。
+本轮逐篇审查状态见交付根 `audit_current/pdf_screening_and_reading_queue.csv`、`audit_current/shared-reading/<agent>/`；A04 专题断言账本见 `audit_current/ab/claims.json`。

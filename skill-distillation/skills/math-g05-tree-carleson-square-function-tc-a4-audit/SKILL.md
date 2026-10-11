@@ -3,14 +3,12 @@ name: math-g05-tree-carleson-square-function-tc-a4-audit
 description: "用于TC-A4 Carleson 型平方函数界的数学研究：核对输入与假设，组织方法和证据，说明中心立方体极大算子的迁移条件；不凭名称补造内部接口。"
 ---
 
-> **交接准备状态（结构性）**：本副本只整理技能结构与引用可移植性；未进行全文深读或数学验证。原评级、可用状态、假设、证明限制和未决条件均沿用原件。结构检查不构成科学验证。
-> 外部文献证据由第二证据包提供，是独立数据输入，不随单个 Skill 安装。合并交接包默认将 `EVIDENCE_ROOT` 设为包内 `evidence/`；单独安装时由调用方传入 `EVIDENCE_ROOT`，按本地[证据索引](references/handoff-evidence-index.csv)中的 `portable_path` 查找。无需全局安装，也不要把外部 PDF 当作 Skill 内文件。
+> **当前状态（2026-10-07）**：标准二进 Carleson 嵌入构件部分可用；TC-A4 仍未定义，专属平方函数界无可检对象。条件化有限过滤树的 4C 推导另列且不冒充 TC-A4。
+> 外部文献证据随完整证据包提供；包根须同时含 `workspace_revised/`、`audit_current/` 与 `evidence/`。`EVIDENCE_ROOT` 和 `MATH64_SOURCE_PACKAGE_ROOT` 均指包根。单独安装的 Skill 不含共享 PDF/claims/cases；按[本地访问说明](references/portable-audit-access.md)从 registry root `math64-20261007` 解析包根以定位绝对 resolver，或显式提供包根。用 `--skill-dir` 与来源 ID 核验来源 SHA、用 `--artifact-path` 定位 claims/cases 并核验当前 SHA。registry、root 或 resolver 缺失时报告配置缺口，不猜路径/内容。resolver 的 PASS 只验证路径和当前字节，不代表全文阅读、命题证明或数学验收。
 
 
 # G05 · TC-A4 Carleson 型平方函数界
 
-当前证据状态：**待证据验收：可执行方法工作流，不是已证明的课题结论**。全文转换、论文阅读和证明核验是三个独立状态。（此行声明已被下方【修订】标注替代：该 skill 经外部审核提升为「部分可用」，详见对应修订行与 references/verification-log-20261006.md）
-  【修订 2026-10-06（外部审核 R24）】p=2 嵌入常数 4C 数值验证（小树 50 例）；Theorem 1.1 引用一致、弱构件链正确；证据状态提升为：部分可用：基础推导已检查，专题证据仍待完整验收。Bellman sharpness 与 TC-A4 定义待补。
 
 ## 输入与产出
 
@@ -27,7 +25,7 @@ description: "用于TC-A4 Carleson 型平方函数界的数学研究：核对输
 5. 已检查弱构件：一般测度有限过滤树有互不交孩子、统一mass流及所有子树packing≤Cσ(J)时，极大节点层蛋糕+Doob L²给嵌入≤4C||f||²。此上界不需Lebesgue或小边界；sharpness和私有树适用性另证。
 6. 平方函数若定义使积分正好为上述非负嵌入和才用该界；多个算子的交叉项另证正交/几乎正交。
 7. 有限深度、零测度节点和无限极限分开；中心立方体选族需先证明真实公共输入、树化和packing，不能直接替代任意中心上确界。
-8. 新增复用P-6a781aff4000e334 stochastic常数e限连续平方可积、orthogonal/equal-bracket驱动及generalized CR系统，alpha条件tail mass≤1且其closed martingale在驱动stable subspace可表示；不能当一般Carleson树常数e，更未提供TC-A4。
+8. 复用 P-6a781aff4000e334 Theorem 2.1 的随机常数 e 时，滤过满足 usual conditions（右连续且完备），整数 n≥1；驱动 X⁰,…,Xⁿ 为连续平方可积实鞅，彼此正交且二次变差相等。对每个 k=0,…,n，a^k 渐进可测且 E∫₀∞|a_s^k|²d⟨X^k⟩_s<∞；初值 u⁰₀,…,uⁿ₀∈L²，u^k 按 (2.2)–(2.3) 的广义 Cauchy–Riemann 积分式定义，因此有 L² 终值。α≥0 渐进可测且对所有 t≥0，M_t=E[∫_t^∞α_s ds|F_t]≤1 a.s.；总 α 质量闭鞅 N_t=E[∫₀∞α_s ds|F_t]须有表示 N_t=N₀+Σ_{k=0}ⁿ∫₀ᵗm_s^k dX_s^k，其中 N₀∈L¹、m^k 渐进可测且对每个有限 t 有 E∫₀ᵗ|m_s^k|²d⟨X^k⟩_s<∞。此定理仅给上述随机系统的嵌入≤e·EΣ_k|u^k_∞|²，不是一般确定性 Carleson 树常数 e，也未提供 TC-A4。
 
 ## 证据与失败处理
 

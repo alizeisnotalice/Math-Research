@@ -1,15 +1,15 @@
 ---
 name: math-m01-convex-hull-extreme-points
-description: "用于Carathéodory、Krein–Milman 极点的数学研究：核对输入与假设，组织方法和证据，说明中心立方体极大算子的迁移条件；不凭名称补造内部接口。"
+description: "用于Carathéodory、Krein–Milman 极点的数学研究：核对输入与假设，组织方法和证据；不凭名称补造内部接口。"
 ---
 
 # M01 · Carathéodory、Krein–Milman 极点
 
-> **交接预处理说明：** 本副本只做结构、格式与可移植性预处理；这不构成数学内容、文献或定理的科学验证。下方原有证据状态、适用范围和例子保持原样。
+> **当前核验范围（2026-10-07）：** 本 Skill 仍属于 L–N 组进行中的审核；逐条数学与能力状态记录在完整交付包的 `audit_current/ln/claims.json`，案例定义记录在 `audit_current/ln/cases.json`；单独安装目录不包含这两份包级账本。请按 [`references/portable-audit-access.md`](references/portable-audit-access.md) 通过 bundle-root resolver 访问。以下限定只陈述已绑定账本的证据边界，不代表整项验收完成。
 
-> 便携证据定位见[本Skill证据索引](references/handoff-evidence-index.csv)。读取外部文献时，将 `EVIDENCE_ROOT` 设为单独提供的数据包根目录，再按索引的 `resolved_portable_path` 定位文件。文献文件属于额外数据输入，不是本Skill目录内的必需文件。
+> 便携文献定位见 [本 Skill 证据索引](references/handoff-evidence-index.csv)。若需读取包外 PDF，以数据包根目录为 `EVIDENCE_ROOT`，按索引中的相对路径定位。
 
-当前证据状态：**部分可用：基础推导已检查，专题证据仍待完整验收**。全文转换、论文阅读和证明核验是三个独立状态。
+> **本项边界：** 账本 M01-BND-01a/b 已在有限维 R^d 证明 Carathéodory 的 d+1 上界及标准单纯形重心的锐性。Bachir 的结果只在论文明确的 Banach 函数、紧可度量 Φ-凸、连续性及分离条件下支持 exposed-point 闭凸包表示；一般 Krein–Milman 来源仍待核。有限维证明不推出一般 KM。
 
 ## 输入与产出
 
@@ -22,7 +22,8 @@ description: "用于Carathéodory、Krein–Milman 极点的数学研究：核�
 1. 核对凸性和具体拓扑；区分有限维 Carathéodory 条件与局部凸紧集的 Krein--Milman 条件。
 2. 在 R^d 中对 conv(S) 内的点，用仿射相关性将有限凸组合化简到至多 d+1 个点。
    【修订 2026-10-06（外部审核）】三个不同陈述须区分：(a) 『至多 d+1』＝Carathéodory 定理（标准结果引用；LP 佐证：等式约束秩 d+1 ⟹ 基本解支撑 ≤d+1，未独立证明）；(b) 『锐性』＝存在需要 d+1 的实例（单纯形顶点本身即需 d+1 表示的极端情形；数值观察 150 例 max=d+1 与之一致）；(c) 『所有实例都须 d+1』＝不成立也不被声称（单纯形内点 1 个足够）。登记簿 ID：M01-BND-01a（pending）/ M01-BND-01b（instance_check_only）。
-3. 对 Hausdorff 局部凸空间中的紧凸集，只在 Krein--Milman 假设下推出它是极点闭凸包。
+   【修订 2026-10-07（本轮独立证明）】上述旧状态由本轮断言卡覆盖：仿射相关消元证明 M01-BND-01a；标准 d-单纯形重心的唯一重心坐标证明 M01-BND-01b。150 次随机样本仅作演示，不再作为锐性的证据。当前假设、证明和边界见 `references/audit-current-lmn-20261007.md` 及 `references/method.md` 中的锐性证明。
+3. 对 Hausdorff 局部凸空间中的**非空紧凸集**，才应用 Krein--Milman 得到它是极点的闭凸包；这不是有限凸组合结论。
 4. 检查目标究竟需要有限凸组合、闭包还是积分表示。
 5. 若文献只是提到 Krein 空间或 Krein 算子，须确认存在真正的凸极点论证。
 

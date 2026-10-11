@@ -305,9 +305,9 @@
       "sha256": "03282aa9acfadc13512dbb47a7fe8bf56ce8483293330938f80aaf3957051589",
       "bytes": 549743,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "adjacent",
+      "screening_reason": "Full exact-SHA read of all 8 pages, including appendices, found relevant interval-inclusion and reachability machinery but no exact-rational or outward-rounded floating-point certification; imported comparison results were not independently verified.",
+      "identity_status": "verified_pdf_metadata_and_full_text",
       "paper_id": "P-03282aa9acfadc13",
       "local_file": "corpus/papers/P-03282aa9acfadc13/paper.pdf",
       "review": {
@@ -536,9 +536,9 @@
       "sha256": "cf8a312d1cb31da661286b243708100c45e9cee7d70d8202b4516b543c526870",
       "bytes": 415683,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "direct",
+      "screening_reason": "The paper proposes a sequentially checkable certificate format for exact-rational LP/IP and branch-and-cut results, using linear-inference multipliers, integer rounding, split disjunction assumptions and unsplitting. It describes an independent exact-rational checker (viprchk), a certificate trimmer (viprttn), and reported experiments. This directly supports proof-object and exact-checking workflow guidance. The paper gives the conceptual format, while full technical file-format details are in accompanying computer files; the historical experimental solver/checker versions and test set are not current-runtime evidence.",
+      "identity_status": "verified_pdf_title_authors_arxiv_version_date_and_sha256",
       "paper_id": "P-cf8a312d1cb31da6",
       "local_file": "corpus/papers/P-cf8a312d1cb31da6/paper.pdf",
       "review": {
@@ -546,8 +546,8 @@
         "topic": "L03",
         "paper_id": "P-cf8a312d1cb31da6",
         "decision": "direct",
-        "reason": "给出混合整数规划结果的独立验证与证明对象，针对浮点求解误差的证书核验。",
-        "read_scope": "全文深读：覆盖原文13个PDF页及证明/附录/参考文献；证明独立核验程度和未查事项见证据卡。",
+        "reason": "The paper proposes a sequentially checkable certificate format for exact-rational LP/IP and branch-and-cut results, using linear-inference multipliers, integer rounding, split disjunction assumptions and unsplitting. It describes an independent exact-rational checker (viprchk), a certificate trimmer (viprttn), and reported experiments. This directly supports proof-object and exact-checking workflow guidance. The paper gives the conceptual format, while full technical file-format details are in accompanying computer files; the historical experimental solver/checker versions and test set are not current-runtime evidence.",
+        "read_scope": "已逐页通读当前 exact-SHA 13 页 PDF（含参考文献）；PDF 第1、5、7、8、10、13页视觉复核。该文件与同 SHA 的另一归档项为重复文件，仅计一次。",
         "source_ranges": [
           {
             "file": "corpus/papers/P-cf8a312d1cb31da6/paper.md",
@@ -570,7 +570,9 @@
               11
             ]
           }
-        ]
+        ],
+        "current_read_card": "audit_current/ln/paper-reviews/P-cf8a312d1cb31da6.json",
+        "current_read_card_sha256": "19d9ecc918cf218dfde94100ec105a0bf05abe03d1f1471a218dae838e60b46d"
       }
     },
     {
@@ -997,9 +999,9 @@
       "sha256": "473597b9e3586cd71d36f95aeb6ca0ac820749a63501eb58752ba1bdf0baa9f4",
       "bytes": 429813,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "direct",
+      "screening_reason": "The paper directly describes exact-rational MIP workflow: retain rational input alongside a floating approximation; derive safe dual bounds from approximate LP solutions using bound-shift/project-and-shift/exact LP; exactly check primal feasibility; add rational presolve and exact repair for heuristic candidates; and export independently checkable VIPR certificates. It also states limits: safe-bound methods have assumptions, PaPILO presolving did not yet support certificate generation, VIPR checks the certificate rather than proving the solver implementation correct, and experiments are version/hardware/test-set specific.",
+      "identity_status": "verified_pdf_title_authors_arxiv_version_date_and_sha256",
       "paper_id": "P-473597b9e3586cd7",
       "local_file": "corpus/papers/P-473597b9e3586cd7/paper.pdf",
       "review": {
@@ -1007,8 +1009,8 @@
         "topic": "L03",
         "paper_id": "P-473597b9e3586cd7",
         "decision": "direct",
-        "reason": "精确有理MIP框架以安全对偶界、精确原始解检查和独立VIPR证书分离数值搜索与证明；文章明确给出方法条件及当前限制。",
-        "read_scope": "与同SHA256的E2198为重复文件；已将共享17页PDF（含全部参考文献）通读一次，PDF第6、7、8、9、10、13、14页视觉复核。",
+        "reason": "The paper directly describes exact-rational MIP workflow: retain rational input alongside a floating approximation; derive safe dual bounds from approximate LP solutions using bound-shift/project-and-shift/exact LP; exactly check primal feasibility; add rational presolve and exact repair for heuristic candidates; and export independently checkable VIPR certificates. It also states limits: safe-bound methods have assumptions, PaPILO presolving did not yet support certificate generation, VIPR checks the certificate rather than proving the solver implementation correct, and experiments are version/hardware/test-set specific.",
+        "read_scope": "已逐页通读当前 exact-SHA 17 页 PDF（含全部参考文献）；PDF 第1、6、8、10、14、17页视觉复核。E2188/E2198 为同一 SHA 的重复归档，仅计一次。误差区间判定 s+μ≤b 的等号端点按 Ax≥b 保留为严格性缺口。",
         "source_ranges": [
           {
             "file": "corpus/papers/P-473597b9e3586cd7/paper.md",
@@ -1034,7 +1036,9 @@
               17
             ]
           }
-        ]
+        ],
+        "current_read_card": "audit_current/ln/paper-reviews/P-473597b9e3586cd7.json",
+        "current_read_card_sha256": "beb2cc6c9f6a14d944eecedbecf93074b6ba8749edd0cc91f972720395bd0170"
       }
     },
     {
@@ -1320,9 +1324,9 @@
       "sha256": "473597b9e3586cd71d36f95aeb6ca0ac820749a63501eb58752ba1bdf0baa9f4",
       "bytes": 429813,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "direct",
+      "screening_reason": "The paper directly describes exact-rational MIP workflow: retain rational input alongside a floating approximation; derive safe dual bounds from approximate LP solutions using bound-shift/project-and-shift/exact LP; exactly check primal feasibility; add rational presolve and exact repair for heuristic candidates; and export independently checkable VIPR certificates. It also states limits: safe-bound methods have assumptions, PaPILO presolving did not yet support certificate generation, VIPR checks the certificate rather than proving the solver implementation correct, and experiments are version/hardware/test-set specific.",
+      "identity_status": "verified_pdf_title_authors_arxiv_version_date_and_sha256",
       "paper_id": "P-473597b9e3586cd7",
       "local_file": "corpus/papers/P-473597b9e3586cd7/paper.pdf",
       "review": {
@@ -1330,8 +1334,8 @@
         "topic": "L03",
         "paper_id": "P-473597b9e3586cd7",
         "decision": "direct",
-        "reason": "与E2188是同一PDF（SHA256相同）；共享全文给出精确有理MIP、安全界及独立证书工作流，直接关联L03。",
-        "read_scope": "与同SHA256的E2188为重复文件；已将共享17页PDF（含全部参考文献）通读一次，PDF第6、7、8、9、10、13、14页视觉复核。",
+        "reason": "The paper directly describes exact-rational MIP workflow: retain rational input alongside a floating approximation; derive safe dual bounds from approximate LP solutions using bound-shift/project-and-shift/exact LP; exactly check primal feasibility; add rational presolve and exact repair for heuristic candidates; and export independently checkable VIPR certificates. It also states limits: safe-bound methods have assumptions, PaPILO presolving did not yet support certificate generation, VIPR checks the certificate rather than proving the solver implementation correct, and experiments are version/hardware/test-set specific.",
+        "read_scope": "已逐页通读当前 exact-SHA 17 页 PDF（含全部参考文献）；PDF 第1、6、8、10、14、17页视觉复核。E2188/E2198 为同一 SHA 的重复归档，仅计一次。误差区间判定 s+μ≤b 的等号端点按 Ax≥b 保留为严格性缺口。",
         "source_ranges": [
           {
             "file": "corpus/papers/P-473597b9e3586cd7/paper.md",
@@ -1357,7 +1361,9 @@
               17
             ]
           }
-        ]
+        ],
+        "current_read_card": "audit_current/ln/paper-reviews/P-473597b9e3586cd7.json",
+        "current_read_card_sha256": "beb2cc6c9f6a14d944eecedbecf93074b6ba8749edd0cc91f972720395bd0170"
       }
     },
     {

@@ -34,7 +34,7 @@
 |E1660|02_Grigorova_2026_European Options in Market Models with Multiple Defaults_ th.pdf|P-5aaa1a10e0eb16b0|pending|尚未人工筛选|
 |E1661|10_Liu_2024_Limit theorems for compensated weighted sums and application.pdf|P-f8570ad7e2afd792|pending|尚未人工筛选|
 |E1662|08_Janson_2010_Absolutely Continuous Compensators.pdf|P-ff2984c03b862319|pending|尚未人工筛选|
-|E1663|21_Kiiski_2015_Optional and predictable projections of normal integrands an.pdf|P-70fa8d230ae07835|pending|尚未人工筛选|
+|E1663|21_Kiiski_2015_Optional and predictable projections of normal integrands an.pdf|P-70fa8d230ae07835|direct|可选/可预测投影定理，严格限于其离散稠密、可积性、class (C)/(C_p)、凸性/连续性与选择器条件；不支持一般补偿子。Full-read card: `audit_current/shared-reading/revise_ln/70fa8d230ae07835cfa0f882cd5952174dae57b273c77b26f0f17ceb58bee3ec.json` exact-SHA card（use [portable audit access](portable-audit-access.md) to resolve）|
 |E1664|17_Gayen_2017_Projection Theorems of Divergences and Likelihood Maximizati.pdf|P-162b8101ac2d2714|pending|尚未人工筛选|
 |E1665|25_Louriki_2022_Information-Based Approach_ Pricing of a Credit Risky Asset.pdf|P-dd6b34c535e362f2|pending|尚未人工筛选|
 |E1666|19_Jacka_2017_On the compensator in the Doob-Meyer decomposition of the Sn.pdf|P-1fd3611ce73c9da3|pending|尚未人工筛选|
@@ -50,7 +50,7 @@
 |E1676|13_Adan_2022_A finite compensation procedure for a certain class of two-d.pdf|P-8348e7fdb1bd9a74|pending|尚未人工筛选|
 |E1677|08_Klimsiak_2020_Reflected BSDEs with two optional barriers and monotone coef.pdf|P-80adafbfb8389e45|pending|尚未人工筛选|
 |E1678|35_Larsson_2011_Filtration shrinkage, strict local martingales and the Föllm.pdf|P-67a30d7a540a7389|pending|尚未人工筛选|
-|E1679|07_Sarma_2024_Study of discrete-time Hawkes process and its compensator.pdf|P-401edbef8820d0ec|pending|尚未人工筛选|
+|E1679|07_Sarma_2024_Study of discrete-time Hawkes process and its compensator.pdf|P-401edbef8820d0ec|adjacent, full_read|Lemma 3.1 and eq. (3), PDF pp.4–5, prove the model-specific discrete Doob decomposition for the bounded DTHP count: Λ_n=ΣE(ξ_i|F_{i−1}) is increasing predictable and H_n−Λ_n is a martingale in the natural filtration. Full 13-page preprint read. It does not establish a generic projection/compensator theorem; later Λ CLT imports Seol (2015). Card: audit_current/shared-reading/revise_hi/401edbef8820d0eccfd26695af1d1be7d48c94329fd127720b53159311a2029b.json|
 |E1680|10_Bender_2026_Optional Stopping for Superhedging Supermartingales.pdf|P-2303d35862274904|pending|尚未人工筛选|
 |E1681|05_Hadjikyriakou_2025_Doob-type optional sampling theorems for demimartingales wit.pdf|P-5a7bb4e396c37014|pending|尚未人工筛选|
 |E1682|38_Jaimungal_2022_Minimal Kullback-Leibler Divergence for Constrained Lévy-Itô.pdf|P-ec45d77dae7a45cd|pending|尚未人工筛选|
@@ -81,3 +81,7 @@
 原附件PDF：工作包根目录的 `corpus/papers/<paper_id>/paper.pdf`；全文 `paper.md`；页码映射 `pages.json`。
 补充PDF：`supplementary/<paper_id>/`。完整原文不放入轻量Skill ZIP；可用SHA-256与附件成员名定位原文件。
 逐篇完整处理状态见工作包 `catalog/entries-reviewed.json`、`catalog/reading-queue.json`。
+
+|E1656|P-17a8583c356bf5f8|adjacent|全文逐页读 PDF pp.1–26，含附录 A/B/C 与参考文献；提供通常条件下 optional/dual optional projection 与 optional-semimartingale decomposition 的专门框架，不是任意随机测度补偿通则。|
+
+|E1659|P-0fc7cd11875816a9|adjacent|全文逐页读 PDF pp.1–36（含附录）；Boltzmann–Enskog 模型里的特定 Poisson 随机测度补偿子例子，含 usual conditions、law-matching 与有限矩条件；不外推到一般补偿定理。|
