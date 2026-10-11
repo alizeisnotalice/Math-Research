@@ -1,0 +1,83 @@
+{
+  "schema": "b03-current-skill-scope-delta/v1",
+  "status": "accepted_narrow_skill_hash_scope_bridge_no_claim_or_grade_change",
+  "created_local_date": "2026-10-11",
+  "skill": {
+    "id": "B03",
+    "path": "workspace_revised/math-b03-generalized-moments/SKILL.md",
+    "previous_sha256": "f80521b2743a7f832d7ed0e7f2fc509242ab50bb9d9b1f7055f406d8d803c766",
+    "current_sha256": "7111f54f4821be0e21a89893e605e7b353b56d452e60f528c180451f8eaf1f07",
+    "preimage_path": "audit_current/delivery/history/index-preimages/index-64.ab3c729307bd3d6dcf4c339738f6d78a567df00af8cfadae38299ae5079fd490.json.preimage",
+    "preimage_sha256": "ab3c729307bd3d6dcf4c339738f6d78a567df00af8cfadae38299ae5079fd490",
+    "source_change": "One paragraph clarifies the unrestricted-support domain of Proposition 1 and the upper-bound-only transfer to a restricted subclass. No claim-ledger row, case-ledger row, method/example file, source edge, proof grade, or capability grade changed."
+  },
+  "canonical_inputs": {
+    "claims": {
+      "path": "audit_current/ab/claims.json",
+      "sha256": "0ee8d5256f3411600be66e9efd7b28190c2d77de737b5f2f27466e5c4d927cca",
+      "unchanged": true
+    },
+    "cases": {
+      "path": "audit_current/ab/cases.json",
+      "sha256": "a90427c03863c2b81fd34a41a443288a86c516ecb3b0d614386b74e44a9d4267",
+      "unchanged": true
+    },
+    "old_index": {
+      "path": "audit_current/delivery/index-64.json",
+      "sha256": "ab3c729307bd3d6dcf4c339738f6d78a567df00af8cfadae38299ae5079fd490",
+      "b03_item_canonical_sha256": "d0517c76dc044a12b2107e8bd6563898ef2ed661dcaf7ea071298e71d8b9e893"
+    }
+  },
+  "fresh_scoped_manual_checks": {
+    "review_receipt_sha256": "528ef3e74bdb1facad93cceed0e702a6601e87133b19505e09b73dfcbe4ea105",
+    "review_artifact_external_relative_path": "math/b03-independent/b03-support-guard-independent-review-r1-20261011.json",
+    "checks": [
+      {
+        "case_id": "B03-POS",
+        "current_case_row_canonical_sha256": "164b703449255ce24daefbe860c260b8723a060f3ef4b5665760bf02d787a0f4",
+        "scope": "fixed unrestricted-support input; manual, unblinded"
+      },
+      {
+        "case_id": "B03-NEG",
+        "current_case_row_canonical_sha256": "a1d40b7e97c2ed567e8c0c8096aea46e8d65f154ccee36f6d9995b426bf8ba6f",
+        "scope": "fixed unrestricted-support input; manual, unblinded"
+      },
+      {
+        "case_id": "B03-RESTRICTED-SUPPORT-CHALLENGE",
+        "input_sha256": "3f3d2b576272adca98e8e75291c82354c736c3fdb72863913214d845d64b4b6f",
+        "scope": "singleton restricted-support class; manual, unblinded"
+      }
+    ],
+    "runtime": "No native Skill runtime, SDK, or API call is claimed.",
+    "historical_rows": "Existing POS/NEG rows remain bound to the pre-guard Skill SHA; they are not relabelled as current reruns."
+  },
+  "independent_reviews": [
+    {
+      "reviewer": "AB",
+      "artifact_external_relative_path": "math/b03-independent/b03-support-guard-independent-review-r1-20261011.json",
+      "sha256": "528ef3e74bdb1facad93cceed0e702a6601e87133b19505e09b73dfcbe4ea105",
+      "scope": "Accepted support-domain guard and three scoped checks; no claim/proof-grade transfer."
+    },
+    {
+      "reviewer": "CD",
+      "artifact_external_relative_path": "math/limited-math-spot-check-r2.md",
+      "sha256": "faeb7749b11c5c0b302c1dbf16ebfee24dafb8ad9475bd02fbb486fa815b047d",
+      "input_manifest_sha256": "524e24a4f7cc5be013683847910a5bb209d787f45b4cbe35be61dc30da147eed",
+      "scope": "Accepted narrow B03 guard review; no ledger or grade change."
+    }
+  ],
+  "index_policy": {
+    "allowed_current_item_delta": [
+      "skill_sha256",
+      "current_scope_delta"
+    ],
+    "allowed_item_id": "B03",
+    "all_other_63_items_unchanged": true,
+    "case_and_claim_fields_preserved": true,
+    "source_scope_does_not_upgrade_math_claims": true
+  },
+  "f07_status_extractor_bridge": {
+    "path": "audit_current/delivery/f07-status-extractor-delta-20261011.json",
+    "sha256": "7495a5d5f02926b90cdd68b15e344c4a05e8507af0a2f68b595af9589f6d8a9b"
+  }
+}

@@ -1,6 +1,6 @@
 # 64 项当前索引（WIP）
 
-生成时间：2026-10-10T16:29:02.309535+00:00。当前能力档位尚未完成全局审核，故逐项保留“待定级”；历史 R12 档位另列，不继承为当前结论。
+生成时间：2026-10-11T05:20:36.580400+00:00。当前能力档位尚未完成全局审核，故逐项保留“待定级”；历史 R12 档位另列，不继承为当前结论。
 
 Producer/auditor 的正负案例槽位是结构映射，不是数学结论验收。当前绑定的 in-session 行为应用与已验证的 installed-runtime API 分开计数；映射不推导行为调用。每行 SHA 均绑定当前 Skill；来源正文按 portable path 与 EVIDENCE_ROOT 核验。未知值不补成零。
 
@@ -12,7 +12,7 @@ Producer/auditor 的正负案例槽位是结构映射，不是数学结论验收
 |A04|[math-a04-shared-nonanticipative-mip](../../workspace_revised/math-a04-shared-nonanticipative-mip/SKILL.md)|待定级（全局来源与数学验收仍在进行）|`08eb2dbbe410391326ffecd99e86118cea06469d06d128a7c1bb54d00e28af79`|A04-POS / A04-NEG|A04-POS / A04-NEG|0/0/16 (组级)|0|部分可用|
 |B01|[math-b01-lagrange-farkas](../../workspace_revised/math-b01-lagrange-farkas/SKILL.md)|待定级（全局来源与数学验收仍在进行）|`d32a083a86be34c7c308b766157caa113c045837c2f33b61c9d958fff908a15e`|B01-POS / B01-NEG|B01-POS / B01-NEG|0/0/16 (组级)|0|部分可用|
 |B02|[math-b02-semi-infinite-exchange](../../workspace_revised/math-b02-semi-infinite-exchange/SKILL.md)|待定级（全局来源与数学验收仍在进行）|`d0a647e9828068d055e52dfd9bfdb26e885e929f961d9de8075d58af5499cd00`|B02-POS / B02-NEG|B02-POS / B02-NEG|0/0/16 (组级)|0|部分可用|
-|B03|[math-b03-generalized-moments](../../workspace_revised/math-b03-generalized-moments/SKILL.md)|待定级（全局来源与数学验收仍在进行）|`f80521b2743a7f832d7ed0e7f2fc509242ab50bb9d9b1f7055f406d8d803c766`|B03-POS / B03-NEG|B03-POS / B03-NEG|0/0/16 (组级)|0|部分可用|
+|B03|[math-b03-generalized-moments](../../workspace_revised/math-b03-generalized-moments/SKILL.md)|待定级（全局来源与数学验收仍在进行）|`7111f54f4821be0e21a89893e605e7b353b56d452e60f528c180451f8eaf1f07`|B03-POS / B03-NEG|B03-POS / B03-NEG|0/0/16 (组级)|0|部分可用|
 |B04|[math-b04-qualification-facial-minimax](../../workspace_revised/math-b04-qualification-facial-minimax/SKILL.md)|待定级（全局来源与数学验收仍在进行）|`70973b74e5272eb31b3a9fded2a9eae826c9ce01da0a944eae5fd9de39d33788`|B04-POS / B04-NEG|B04-POS / B04-NEG|0/0/16 (组级)|0|部分可用|
 |C01|[math-c01-semidefinite-lifting](../../workspace_revised/math-c01-semidefinite-lifting/SKILL.md)|待定级（全局来源与数学验收仍在进行）|`de9d8b0c320768c10c856b6209e203407b9877f164369e64955c6db94a308ea7`|C01-POSITIVE / C01-NEGATIVE|C01 POSITIVE / C01 NEGATIVE|0/0/16 (组级)|0|部分可用|
 |C02|[math-c02-completely-positive-copositive](../../workspace_revised/math-c02-completely-positive-copositive/SKILL.md)|待定级（全局来源与数学验收仍在进行）|`3ae54705d4a51aa8e7c21f10fc18bb7e75514927e69628ddaa114ece3fb02542`|C02-POSITIVE / C02-NEGATIVE|C02 POSITIVE / C02 NEGATIVE|0/0/16 (组级)|0|部分可用|
