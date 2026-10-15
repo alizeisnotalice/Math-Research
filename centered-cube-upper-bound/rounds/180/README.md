@@ -11,3 +11,5 @@
 解压后 `python reproduce.py --verify-only` 检查清单；`python reproduce.py --output-dir <不存在的目录>` 重放。数值需已有vendor mpmath1.3.0，路径明确记录；两行历史物理数据已嵌入，无须运行时读取历史整JSON。
 
 本轮按需运行1 Astra high、2 Sol high、1 Sol medium、1 Luna medium，全部在有限交付后停止。后续遵守最多8个、1 Astra/3 Sol/4 Luna配置；没有实际扣额数据，不猜模型成本比例。
+
+后续第181轮通过原共同父来源A和ζ+=(β−ν)+修复正companion的来源预算，无需ν≤β。此修复不赋予辅助来源原历史资格，带负基准能量差的新增项仍需保留；见[第181轮](../181/README.md)。
