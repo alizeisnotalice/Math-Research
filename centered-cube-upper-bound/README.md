@@ -1,6 +1,6 @@
 # 中心立方体极大算子上界研究资料
 
-本项目按 rounds/ 中的轮次独立归档。一般 sqrt(n)n^{o(1)} 上界尚未闭合，最新第201轮见 [rounds/201/README.md](rounds/201/README.md)。新证完整截帽输运、真实J位移方差及分数权尾估计，保留来源和选择费用；15文件哈希及三份完整数值JSON重放通过。原capture/资格/selector联合费用与tiny-Wg来源权仍未支付。保留详细LaTeX文本，不编译PDF。
+本项目按 rounds/ 中的轮次独立归档。一般 sqrt(n)n^{o(1)} 上界尚未闭合，最新第202轮见 [rounds/202/README.md](rounds/202/README.md)。新证原ΠJ加权中心分解与全重叠材料偏差界，保留实际来源及选择费用；11文件哈希和完整数值JSON重放通过。重叠接近1的中间区域、变帽权与capture/selector联合费用仍未支付。保留详细LaTeX文本，不编译PDF。
 
 ## 资料约定
 
