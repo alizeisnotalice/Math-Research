@@ -1,6 +1,6 @@
 # 中心立方体极大算子上界研究资料
 
-本项目按 rounds/ 中的轮次独立归档。一般 sqrt(n)n^{o(1)} 上界尚未闭合，最新第222轮见 [rounds/222/README.md](rounds/222/README.md)。本轮恢复原RN单位权，证明全域实际硬来源及可变R核的统一(16/3)√e支配，覆盖R=b且无额外R菜单；保实际条件平均、真实接收域及全部clock资格。剩余L/soft、几何分母与双后验交通的联合根阶预算仍未证。详细LaTeX、完整独审和迁移后全JSON一致的本机精确验证均保留，不编译PDF。
+本项目按 rounds/ 中的轮次独立归档。一般 sqrt(n)n^{o(1)} 上界尚未闭合，最新第223轮见 [rounds/223/README.md](rounds/223/README.md)。本轮核清原 good−bad 方向、连续负交通与删除跳的区别，给出保全部来源及门的 signed 后验恒等式；没有新增根阶付款。边界与 suffix 恢复的联合几何预算仍未证。详细LaTeX、完整独审及迁移后Python/MATLAB全JSON一致的验证保留，不编译PDF。
 
 ## 资料约定
 
