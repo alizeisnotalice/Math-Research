@@ -1,6 +1,6 @@
 # 中心立方体极大算子上界研究资料
 
-本项目按 rounds/ 中的轮次独立归档。一般 sqrt(n)n^{o(1)} 上界尚未闭合，最新第191轮见 [rounds/191/README.md](rounds/191/README.md)。原LCA储备权重子支获√(n log(n+2))来源价；归一化空间重叠给近hard整片直接来源预算。一次reserve祖先分解保留低K0、captured-neutral与硬面联合费用；一般中间段仍开。独审、两套本机完整JSON归档重放通过，保留详细LaTeX文本，不编译PDF。
+本项目按 rounds/ 中的轮次独立归档。一般 sqrt(n)n^{o(1)} 上界尚未闭合，最新第192轮见 [rounds/192/README.md](rounds/192/README.md)。来源对自适应原LCA定位与持续捕获质量分别取得真实接收预算，按总ε各半使用；中间层的排序失败、低K0与reserve联合价仍未付。辅助tiny-score和真实Δ接口保留完整量词。独审、两套本机完整JSON归档重放通过，保留详细LaTeX文本，不编译PDF。
 
 ## 资料约定
 
