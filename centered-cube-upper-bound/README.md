@@ -1,6 +1,6 @@
 # 中心立方体极大算子上界研究资料
 
-本项目按 rounds/ 中的轮次独立归档。一般 sqrt(n)n^{o(1)} 上界尚未闭合，最新第223轮见 [rounds/223/README.md](rounds/223/README.md)。本轮核清原 good−bad 方向、连续负交通与删除跳的区别，给出保全部来源及门的 signed 后验恒等式；没有新增根阶付款。边界与 suffix 恢复的联合几何预算仍未证。详细LaTeX、完整独审及迁移后Python/MATLAB全JSON一致的验证保留，不编译PDF。
+本项目按 rounds/ 中的轮次独立归档。一般 sqrt(n)n^{o(1)} 上界尚未闭合，最新第224轮见 [rounds/224/README.md](rounds/224/README.md)。本轮证明全尺度独立软度共同核的定量阈值缺口，并为终端时钟带中明确分配的原J正交通给出εX+Cε√n log²n||f||1预算。两条移动目标核、更深clock及一般自适应来源回代仍未付。详细LaTeX、完整独审及两套迁移后全JSON一致的本机验证保留，不编译PDF。
 
 ## 资料约定
 
