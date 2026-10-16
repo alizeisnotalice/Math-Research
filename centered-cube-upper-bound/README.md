@@ -1,6 +1,6 @@
 # 中心立方体极大算子上界研究资料
 
-本项目按 rounds/ 中的轮次独立归档。一般 sqrt(n)n^{o(1)} 上界尚未闭合，最新第210轮见 [rounds/210/README.md](rounds/210/README.md)。持续捕获的真实时钟恢复价为 Gcap/(mathsfT e_g)，同钟链按储备总下降结算；两来源剩余时间能量不超过来源时钟耗散之和。原far接缝保 n/u0，原逆w_g、Omega重用及接收选择器全局预算仍未支付。745行详细LaTeX经全文独审，11文件哈希与主代理完整JSON重放通过，不编译PDF。
+本项目按 rounds/ 中的轮次独立归档。一般 sqrt(n)n^{o(1)} 上界尚未闭合，最新第211轮见 [rounds/211/README.md](rounds/211/README.md)。原完整far余项可有价替换为alpha0=Dq/QJ基线：原heavy门支付恢复一次，负余额只留基线一次，不需构造虚拟空捕获历史。高alpha0基线及near等未涉部分仍未付。955行详细LaTeX经全文独审，12文件哈希与主代理完整JSON迁移重放通过，不编译PDF。
 
 ## 资料约定
 
