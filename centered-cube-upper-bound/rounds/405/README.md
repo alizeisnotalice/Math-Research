@@ -1,0 +1,11 @@
+# 第405轮：全远域后验平均比较与数值质量守恒
+
+本轮没有新增根阶付款，第404轮完整近源估计与原总账不变。
+
+已核验：全远域exclusive矩与真实父后验行均值平方P_2之差，恰由已有界的near项和指数小common项组成。三源插入仅给常数可比量，仍缺实际父匹配子水平集的来源平均估计；不把该表示当作闭合。
+
+实际运行673+147项Fraction检查及MATLAB连续来源诊断。首次独立网格出现严重捕获混叠，已改用真实来源cell质量；修订12组满足质量平衡。far求积误差未认证，不推断维数阶。
+
+复现：解压research.zip，运行python3 r405_geometry_check.py、python3 r405_aux_check.py；MATLAB运行r405_posterior_check.m。仅新增本README和research.zip并更新总览；含独审与LaTeX源，不编译PDF。一般上界仍未闭合。
+
+归档SHA256：`dac9f4ff291ffcbf3ec1aa5e54f43bc9f7894e0da17f24291890e5894257e63e`。
