@@ -1,6 +1,6 @@
 # 中心立方体极大算子上界研究资料
 
-本项目按 rounds/ 中的轮次独立归档。一般 n^(1/2+o(1)) 一致弱型上界仍未闭合，最新第497轮见 [rounds/497/README.md](rounds/497/README.md)。显式线性log-mass上解控制完整父Green势，并将其价格写成原头部质量谱；真实中心deep-ancestor可保价局部化，近边界联合贡献和整体根阶预算仍未付。534项报告核验单位复现通过，有限计算不认证原hardcore/history。详细LaTeX、独审及必要复现随包，不编译PDF。
+本项目按 rounds/ 中的轮次独立归档。一般 n^(1/2+o(1)) 一致弱型上界仍未闭合，最新第498轮见 [rounds/498/README.md](rounds/498/README.md)。完整父势可来源局部化，signed重置修正经真实empty停止预算付成维数无关W价；局部头部谱与负Bellman信用的联合根阶预算仍未证。同对外部来源匹配密度≤1不认证跨父累计。329项报告核验单位复现通过，有限模型不认证原hardcore/history。详细LaTeX、独审及必要复现随包，不编译PDF。
 
 ## 资料约定
 
