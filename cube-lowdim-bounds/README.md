@@ -16,3 +16,5 @@ python3 src/audit_stage.py
 python3 src/search_stage.py 1
 ```
 已有审计只在改动或新疑点时重跑。搜索输出是数值证据，不代替有理证书。
+
+[第4轮](rounds/004.md)证明了非负缩放凸起的受限模型效率障碍，没有新增一般上下界。
