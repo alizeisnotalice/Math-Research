@@ -1,0 +1,70 @@
+{
+  "status": "numerical_exploration_only",
+  "solver": "scipy.optimize.linprog / HiGHS",
+  "scipy_version": "1.18.1",
+  "numpy_version": "2.5.4",
+  "LP_count": 81,
+  "LP_budget": 81,
+  "R_range": [
+    "17/10",
+    "21/10"
+  ],
+  "R_step": "1/200",
+  "radial_grid_count": 6002,
+  "radial_grid": "linspace(0.1,1,6001) union {0.75}",
+  "constraints": "e2,e3>=0; Gdiag>=0 for all grid r; Gdiag+k*r^2>=0 for grid r>=.75; outer; kernel dominance",
+  "baseline_round008": "21773155252261/5615797500000",
+  "best_numerical": {
+    "index": 39,
+    "R": "379/200",
+    "status": 0,
+    "success": true,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "iterations": 12,
+    "e2": 0.6596884863091788,
+    "e3": 0.2621937170070445,
+    "cost": 3.8761509830019554,
+    "minimum_grid_slack": 0.0,
+    "active_constraints": [
+      {
+        "family": "diag",
+        "r": 0.8254,
+        "slack": 0.0,
+        "dual_marginal": -0.029350230344139378
+      },
+      {
+        "family": "diag",
+        "r": 0.82555,
+        "slack": 0.0,
+        "dual_marginal": -0.018020570489560718
+      }
+    ],
+    "numeric_dual_objective": -0.13616745275223424,
+    "numeric_primal_objective": -0.13616745275223424,
+    "numeric_dual_gap": 0.0,
+    "numeric_dual_feasibility_residual": 0.0
+  },
+  "rational_candidate": {
+    "R": "379/200",
+    "e2": "164757/250000",
+    "e3": "261931/1000000",
+    "selection": "best of 81 fixed-R numerical LPs; multiply e2,e3 by 999/1000 then floor at denominator 1000000",
+    "cost": "6938554331/1790000000",
+    "cost_display": 3.87628733575419,
+    "improvement_over_round008": "3372734361287/4020911010000000",
+    "improvement_over_round008_display": 0.00083879855905764,
+    "numerical_minima": {
+      "diag": {
+        "numerical_minimum": 0.002878254140594727,
+        "r": 0.8254591029997308,
+        "not_a_proof": true
+      },
+      "angular": {
+        "numerical_minimum": 0.28643333950334704,
+        "r": 0.9163048598244647,
+        "not_a_proof": true
+      }
+    }
+  },
+  "elapsed_seconds": 7.272951040999033
+}
