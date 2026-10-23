@@ -1,0 +1,100 @@
+{
+  "round": 9,
+  "family": "Lin_2h_by_V_two_atoms_plus_one_free_periodic_satellite",
+  "status": "numerical_discovery_only",
+  "seed": 2026102909,
+  "evaluation_budget": 500,
+  "evaluations_completed": 500,
+  "patch_periods": [
+    3,
+    3
+  ],
+  "enumeration": "all x/y endpoint coordinate-rectangular closures within finite 3x3 patch",
+  "controls": {
+    "zero_mass": {
+      "evaluation": 1,
+      "source": "zero_mass_control",
+      "x_fraction": 0.0,
+      "y_fraction": 0.0,
+      "satellite_mass": 0.0,
+      "score": 1.6855099933555249,
+      "box_count": 20,
+      "period_mass": 4.973518115477081
+    },
+    "near_zero": {
+      "evaluation": 2,
+      "source": "near_zero_control",
+      "x_fraction": 0.371,
+      "y_fraction": 0.619,
+      "satellite_mass": 1e-12,
+      "score": 1.685509993355256,
+      "box_count": 40,
+      "period_mass": 4.973518115478081
+    },
+    "phi": 1.685509993355525,
+    "zero_mass_minus_phi": -2.220446049250313e-16,
+    "near_zero_minus_phi": -2.6911806116913795e-13
+  },
+  "best_noncontrol": {
+    "evaluation": 11,
+    "source": "structured_small_mass",
+    "x_fraction": 0.5,
+    "y_fraction": 0.0,
+    "satellite_mass": 0.0001,
+    "score": 1.6854857935889827,
+    "box_count": 23,
+    "period_mass": 4.97361811547708
+  },
+  "best_minus_phi": -2.4199766542443157e-05,
+  "strict_improvement_candidate": false,
+  "best_structured": {
+    "evaluation": 11,
+    "source": "structured_small_mass",
+    "x_fraction": 0.5,
+    "y_fraction": 0.0,
+    "satellite_mass": 0.0001,
+    "score": 1.6854857935889827,
+    "box_count": 23,
+    "period_mass": 4.97361811547708
+  },
+  "best_random": {
+    "evaluation": 314,
+    "source": "joint_loguniform",
+    "x_fraction": 0.38600022059466055,
+    "y_fraction": 0.5770083921566375,
+    "satellite_mass": 0.00010121876049878723,
+    "score": 1.685482758777315,
+    "box_count": 40,
+    "period_mass": 4.973619334237579
+  },
+  "independent_edge_cell_checks": [
+    {
+      "label": "zero_mass_control",
+      "box_count": 20,
+      "period_mass": 4.973518115477081,
+      "sweep_area": 8.382914485771357,
+      "edge_cell_area": 8.382914485771348,
+      "absolute_area_difference": 8.881784197001252e-15,
+      "edge_cell_score": 1.685509993355523,
+      "recorded_score": 1.6855099933555249,
+      "absolute_score_difference": 1.7763568394002505e-15
+    },
+    {
+      "label": "best_noncontrol",
+      "box_count": 23,
+      "period_mass": 4.97361811547708,
+      "sweep_area": 8.382962676373428,
+      "edge_cell_area": 8.382962676373436,
+      "absolute_area_difference": 8.881784197001252e-15,
+      "edge_cell_score": 1.6854857935889844,
+      "recorded_score": 1.6854857935889827,
+      "absolute_score_difference": 1.7763568394002505e-15
+    }
+  ],
+  "elapsed_seconds": 2.3376897080015624,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "numpy": "2.5.4"
+  }
+}
