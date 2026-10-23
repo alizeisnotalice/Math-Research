@@ -1,0 +1,917 @@
+{
+  "round": 12,
+  "status": "finite_search_complete_numerical_only",
+  "R": "379/200",
+  "incumbent_strict_upper": "6938554331/1790000000",
+  "LP_budget": 3,
+  "generator_evaluation_budget": 30000,
+  "generator_counting": "each true-2D point costs one AH_R and one Apsi_p for p=2,3,4",
+  "family": "nonnegative e2,e3,e4; psi_p=(1-r)_+^p; fixed R",
+  "formula_source": "slice_derivation.txt; check_slice.py and slice_check.json are independent inputs, not overwritten",
+  "grid": {
+    "coarse": "100 inner radii .005..995, 50 outer 1.002..R-.002, 30 q angles j/30",
+    "enrichment": "150 original radii x 18 added angles + 10 near-r1 radii x 30 angles",
+    "r1_both_sides": [
+      0.998,
+      0.999,
+      0.9999,
+      0.99999,
+      0.99999999,
+      1.0,
+      1.00000001,
+      1.00001,
+      1.0001,
+      1.001
+    ],
+    "near_axis_q": [
+      0.99,
+      0.9999,
+      0.99999999
+    ]
+  },
+  "environment": {
+    "python": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 21.0.0 (clang-2100.3.34.2)]",
+    "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "LPs": [
+    {
+      "name": "coarse_quartic",
+      "e4_forced_zero": false,
+      "status": "finite_grid_numerical_only",
+      "joint_points": 4500,
+      "total_constraints": 4502,
+      "success": true,
+      "solver_status": 0,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "iterations": 8,
+      "e2": 0.75600307338441,
+      "e3": 0.0,
+      "e4": 0.20474082876058483,
+      "cost_candidate": 3.872668534939416,
+      "strict_incumbent": "6938554331/1790000000",
+      "candidate_minus_incumbent": -0.003618800814773948,
+      "minimum_grid_generator_slack": 0.0,
+      "global_sufficient_slacks": [
+        0.0,
+        1.6800335518950575
+      ],
+      "max_benefit_primal_objective": 0.139649900814774,
+      "max_benefit_dual_objective": 0.13964990081477396,
+      "numeric_dual_gap": -2.7755575615628914e-17,
+      "active_constraints": [
+        {
+          "kind": "true_2d_generator",
+          "r": 0.845,
+          "d_over_r": 0.0,
+          "u": 0.4225,
+          "v": 0.4225,
+          "slack": 0.0,
+          "max_benefit_dual": 0.03678877450221633,
+          "coefficients": [
+            3.5909011115694294,
+            1.9565319700849202,
+            0.8726806393442529
+          ],
+          "rhs": 2.893405633908642
+        },
+        {
+          "kind": "global_exterior_sufficient",
+          "slack": 0.0,
+          "max_benefit_dual": 0.03320505340546666,
+          "coefficients": [
+            1.0408601061816376,
+            1.0408601061816376,
+            1.0408601061816376
+          ],
+          "rhs": 1.0
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.845,
+          "d_over_r": 0.03333333333333333,
+          "u": 0.4365833333333334,
+          "v": 0.40841666666666665,
+          "slack": 0.0005707630509679262,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.590104954937952,
+            1.9568957194313288,
+            0.8734690299437184
+          ],
+          "rhs": 2.8935359158440392
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.845,
+          "d_over_r": 0.06666666666666667,
+          "u": 0.45066666666666666,
+          "v": 0.3943333333333333,
+          "slack": 0.0022877942460373113,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.5877105866122383,
+            1.9579856825043802,
+            0.8758339458640344
+          ],
+          "rhs": 2.8939269920715294
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8350000000000001,
+          "d_over_r": 0.0,
+          "u": 0.41750000000000004,
+          "v": 0.41750000000000004,
+          "slack": 0.002550921589385524,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.5576416953854193,
+            2.0366645580017977,
+            0.935485770618937
+          ],
+          "rhs": 2.8836711092715412
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8350000000000001,
+          "d_over_r": 0.03333333333333333,
+          "u": 0.4314166666666667,
+          "v": 0.40358333333333335,
+          "slack": 0.0031653598247323167,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.556786833956601,
+            2.0369906106970226,
+            0.9362626346064722
+          ],
+          "rhs": 2.8837983254160253
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.855,
+          "d_over_r": 0.0,
+          "u": 0.4275,
+          "v": 0.4275,
+          "slack": 0.00340763625129048,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.6158079084666626,
+            1.874405056480893,
+            0.812258342772163
+          ],
+          "rhs": 2.9032719740866146
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.855,
+          "d_over_r": 0.03333333333333333,
+          "u": 0.44175000000000003,
+          "v": 0.41325,
+          "slack": 0.003935738393231691,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.61506956703785,
+            1.8748048704398048,
+            0.813056769221311
+          ],
+          "rhs": 2.9034053583320696
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8350000000000001,
+          "d_over_r": 0.06666666666666667,
+          "u": 0.44533333333333336,
+          "v": 0.3896666666666667,
+          "slack": 0.005013764263835707,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.554215892173375,
+            2.0379672977529264,
+            0.9385929152273251
+          ],
+          "rhs": 2.884180193551076
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.845,
+          "d_over_r": 0.1,
+          "u": 0.46475,
+          "v": 0.38025,
+          "slack": 0.005165429853841275,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.5837001687640795,
+            1.959797973749545,
+            0.8797746134222084
+          ],
+          "rhs": 2.8945795550023
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.855,
+          "d_over_r": 0.06666666666666667,
+          "u": 0.45599999999999996,
+          "v": 0.399,
+          "slack": 0.005524447465699023,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.6128490948892216,
+            1.876003199384042,
+            0.8154518409045365
+          ],
+          "rhs": 2.9038057525971737
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8350000000000001,
+          "d_over_r": 0.1,
+          "u": 0.4592500000000001,
+          "v": 0.37575000000000003,
+          "slack": 0.008111522999142196,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.5499096436901825,
+            2.039590170914646,
+            0.9424756710806804
+          ],
+          "rhs": 2.884817373849623
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.855,
+          "d_over_r": 0.1,
+          "u": 0.47025,
+          "v": 0.38475,
+          "slack": 0.00818707299451038,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.6091300170170095,
+            1.8779966780225652,
+            0.8194429299312525
+          ],
+          "rhs": 2.904473882699424
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.845,
+          "d_over_r": 0.13333333333333333,
+          "u": 0.47883333333333333,
+          "v": 0.36616666666666664,
+          "slack": 0.009227936277992566,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.5780434894101165,
+            1.962326013527215,
+            0.8852897226840744
+          ],
+          "rhs": 2.8954947624906846
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8250000000000001,
+          "d_over_r": 0.0,
+          "u": 0.41250000000000003,
+          "v": 0.41250000000000003,
+          "slack": 0.010896539393146831,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.5162777389324993,
+            2.1145090817165073,
+            1.0005441027294828
+          ],
+          "rhs": 2.87406554570365
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8250000000000001,
+          "d_over_r": 0.03333333333333333,
+          "u": 0.4262500000000001,
+          "v": 0.39875000000000005,
+          "slack": 0.011555679435224064,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.515363283128284,
+            2.1147957739498064,
+            1.0013078889722504
+          ],
+          "rhs": 2.8741897325756067
+        }
+      ],
+      "lower_bound_reduced_costs": [
+        0.0,
+        0.006540228867212158,
+        0.0
+      ],
+      "upper_bound_reduced_costs": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "enriched_quartic",
+      "e4_forced_zero": false,
+      "status": "finite_grid_numerical_only",
+      "joint_points": 7500,
+      "total_constraints": 7502,
+      "success": true,
+      "solver_status": 0,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "iterations": 8,
+      "e2": 0.75600307338441,
+      "e3": 0.0,
+      "e4": 0.20474082876058483,
+      "cost_candidate": 3.872668534939416,
+      "strict_incumbent": "6938554331/1790000000",
+      "candidate_minus_incumbent": -0.003618800814773948,
+      "minimum_grid_generator_slack": 0.0,
+      "global_sufficient_slacks": [
+        0.0,
+        1.6800335518950575
+      ],
+      "max_benefit_primal_objective": 0.139649900814774,
+      "max_benefit_dual_objective": 0.13964990081477396,
+      "numeric_dual_gap": -2.7755575615628914e-17,
+      "active_constraints": [
+        {
+          "kind": "global_exterior_sufficient",
+          "slack": 0.0,
+          "max_benefit_dual": 0.03320505340546666,
+          "coefficients": [
+            1.0408601061816376,
+            1.0408601061816376,
+            1.0408601061816376
+          ],
+          "rhs": 1.0
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.845,
+          "d_over_r": 0.0,
+          "u": 0.4225,
+          "v": 0.4225,
+          "slack": 0.0,
+          "max_benefit_dual": 0.03678877450221633,
+          "coefficients": [
+            3.5909011115694294,
+            1.9565319700849202,
+            0.8726806393442529
+          ],
+          "rhs": 2.893405633908642
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.845,
+          "d_over_r": 0.016666666666666666,
+          "u": 0.42954166666666665,
+          "v": 0.4154583333333333,
+          "slack": 0.00014261688180727816,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.590702164298312,
+            1.956622927439702,
+            0.872877740980488
+          ],
+          "rhs": 2.8934382007943964
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.845,
+          "d_over_r": 0.03333333333333333,
+          "u": 0.4365833333333334,
+          "v": 0.40841666666666665,
+          "slack": 0.0005707630509679262,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.590104954937952,
+            1.9568957194313288,
+            0.8734690299437184
+          ],
+          "rhs": 2.8935359158440392
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.845,
+          "d_over_r": 0.06666666666666667,
+          "u": 0.45066666666666666,
+          "v": 0.3943333333333333,
+          "slack": 0.0022877942460373113,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.5877105866122383,
+            1.9579856825043802,
+            0.8758339458640344
+          ],
+          "rhs": 2.8939269920715294
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8350000000000001,
+          "d_over_r": 0.0,
+          "u": 0.41750000000000004,
+          "v": 0.41750000000000004,
+          "slack": 0.002550921589385524,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.5576416953854193,
+            2.0366645580017977,
+            0.935485770618937
+          ],
+          "rhs": 2.8836711092715412
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8350000000000001,
+          "d_over_r": 0.016666666666666666,
+          "u": 0.4244583333333333,
+          "v": 0.4105416666666667,
+          "slack": 0.0027044518515739746,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.557428079065927,
+            2.0367460940922895,
+            0.9356799914662424
+          ],
+          "rhs": 2.883702909876908
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8350000000000001,
+          "d_over_r": 0.03333333333333333,
+          "u": 0.4314166666666667,
+          "v": 0.40358333333333335,
+          "slack": 0.0031653598247323167,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.556786833956601,
+            2.0369906106970226,
+            0.9362626346064722
+          ],
+          "rhs": 2.8837983254160253
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.855,
+          "d_over_r": 0.0,
+          "u": 0.4275,
+          "v": 0.4275,
+          "slack": 0.00340763625129048,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.6158079084666626,
+            1.874405056480893,
+            0.812258342772163
+          ],
+          "rhs": 2.9032719740866146
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.855,
+          "d_over_r": 0.016666666666666666,
+          "u": 0.434625,
+          "v": 0.42037499999999994,
+          "slack": 0.0035395931923143387,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.615623407977614,
+            1.8745050273088462,
+            0.8124579526197153
+          ],
+          "rhs": 2.9033053163764935
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.845,
+          "d_over_r": 0.08333333333333333,
+          "u": 0.4577083333333333,
+          "v": 0.38729166666666665,
+          "slack": 0.0035802581231334507,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.5859089749403803,
+            1.958801883648969,
+            0.8776073796868149
+          ],
+          "rhs": 2.894220526298284
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.855,
+          "d_over_r": 0.03333333333333333,
+          "u": 0.44175000000000003,
+          "v": 0.41325,
+          "slack": 0.003935738393231691,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.61506956703785,
+            1.8748048704398048,
+            0.813056769221311
+          ],
+          "rhs": 2.9034053583320696
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8350000000000001,
+          "d_over_r": 0.06666666666666667,
+          "u": 0.44533333333333336,
+          "v": 0.3896666666666667,
+          "slack": 0.005013764263835707,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.554215892173375,
+            2.0379672977529264,
+            0.9385929152273251
+          ],
+          "rhs": 2.884180193551076
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.845,
+          "d_over_r": 0.1,
+          "u": 0.46475,
+          "v": 0.38025,
+          "slack": 0.005165429853841275,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.5837001687640795,
+            1.959797973749545,
+            0.8797746134222084
+          ],
+          "rhs": 2.8945795550023
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.855,
+          "d_over_r": 0.06666666666666667,
+          "u": 0.45599999999999996,
+          "v": 0.399,
+          "slack": 0.005524447465699023,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.6128490948892216,
+            1.876003199384042,
+            0.8154518409045365
+          ],
+          "rhs": 2.9038057525971737
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8350000000000001,
+          "d_over_r": 0.08333333333333333,
+          "u": 0.4522916666666667,
+          "v": 0.3827083333333334,
+          "slack": 0.00640510212241896,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.5522813961998194,
+            2.038698357805756,
+            0.9403403177070159
+          ],
+          "rhs": 2.8844668111400713
+        }
+      ],
+      "lower_bound_reduced_costs": [
+        0.0,
+        0.006540228867212158,
+        0.0
+      ],
+      "upper_bound_reduced_costs": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "enriched_e4_zero_control",
+      "e4_forced_zero": true,
+      "status": "finite_grid_numerical_only",
+      "joint_points": 7500,
+      "total_constraints": 7502,
+      "success": true,
+      "solver_status": 0,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "iterations": 5,
+      "e2": 0.6756639251775332,
+      "e3": 0.2356308284084902,
+      "e4": 0.0,
+      "cost_candidate": 3.876144698717085,
+      "strict_incumbent": "6938554331/1790000000",
+      "candidate_minus_incumbent": -0.0001426370371047092,
+      "minimum_grid_generator_slack": 0.0,
+      "global_sufficient_slacks": [
+        0.0514696460196824,
+        1.6910977988851272
+      ],
+      "max_benefit_primal_objective": 0.13617373703710453,
+      "max_benefit_dual_objective": 0.13617373703710456,
+      "numeric_dual_gap": 2.7755575615628914e-17,
+      "active_constraints": [
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8250000000000001,
+          "d_over_r": 0.0,
+          "u": 0.41250000000000003,
+          "v": 0.41250000000000003,
+          "slack": 0.0,
+          "max_benefit_dual": 0.04518450892716059,
+          "coefficients": [
+            3.5162777389324993,
+            2.1145090817165073,
+            1.0005441027294828
+          ],
+          "rhs": 2.87406554570365
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8350000000000001,
+          "d_over_r": 0.0,
+          "u": 0.41750000000000004,
+          "v": 0.41750000000000004,
+          "slack": 0.0,
+          "max_benefit_dual": 0.002188355221829515,
+          "coefficients": [
+            3.5576416953854193,
+            2.0366645580017977,
+            0.935485770618937
+          ],
+          "rhs": 2.8836711092715412
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8350000000000001,
+          "d_over_r": 0.016666666666666666,
+          "u": 0.4244583333333333,
+          "v": 0.4105416666666667,
+          "slack": 0.0001569210297289736,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.557428079065927,
+            2.0367460940922895,
+            0.9356799914662424
+          ],
+          "rhs": 2.883702909876908
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8250000000000001,
+          "d_over_r": 0.016666666666666666,
+          "u": 0.419375,
+          "v": 0.405625,
+          "slack": 0.00016854329545035185,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.51604923129936,
+            2.1145807808132395,
+            1.000735055126704
+          ],
+          "rhs": 2.8740965891523196
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8350000000000001,
+          "d_over_r": 0.03333333333333333,
+          "u": 0.4314166666666667,
+          "v": 0.40358333333333335,
+          "slack": 0.0006279871062817577,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.556786833956601,
+            2.0369906106970226,
+            0.9362626346064722
+          ],
+          "rhs": 2.8837983254160253
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8250000000000001,
+          "d_over_r": 0.03333333333333333,
+          "u": 0.4262500000000001,
+          "v": 0.39875000000000005,
+          "slack": 0.0006744981416031415,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.515363283128284,
+            2.1147957739498064,
+            1.0013078889722504
+          ],
+          "rhs": 2.8741897325756067
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8350000000000001,
+          "d_over_r": 0.06666666666666667,
+          "u": 0.44533333333333336,
+          "v": 0.3896666666666667,
+          "slack": 0.0025168102779113966,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.554215892173375,
+            2.0379672977529264,
+            0.9385929152273251
+          ],
+          "rhs": 2.884180193551076
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8250000000000001,
+          "d_over_r": 0.06666666666666667,
+          "u": 0.44,
+          "v": 0.38500000000000006,
+          "slack": 0.002703207076066416,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.512613090857652,
+            2.115654179226561,
+            1.0035988730597967
+          ],
+          "rhs": 2.8745625025519734
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8350000000000001,
+          "d_over_r": 0.08333333333333333,
+          "u": 0.4522916666666667,
+          "v": 0.3827083333333334,
+          "slack": 0.003938236723775024,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.5522813961998194,
+            2.038698357805756,
+            0.9403403177070159
+          ],
+          "rhs": 2.8844668111400713
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8250000000000001,
+          "d_over_r": 0.08333333333333333,
+          "u": 0.446875,
+          "v": 0.378125,
+          "slack": 0.00422989680149799,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.5105436946041397,
+            2.116296329687805,
+            1.00531674051915
+          ],
+          "rhs": 2.874842286327155
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8350000000000001,
+          "d_over_r": 0.1,
+          "u": 0.4592500000000001,
+          "v": 0.37575000000000003,
+          "slack": 0.005681168381904023,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.5499096436901825,
+            2.039590170914646,
+            0.9424756710806804
+          ],
+          "rhs": 2.884817373849623
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8150000000000001,
+          "d_over_r": 0.0,
+          "u": 0.40750000000000003,
+          "v": 0.40750000000000003,
+          "slack": 0.006067526058105344,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.467019188842079,
+            2.189776518077749,
+            1.0677120486912735
+          ],
+          "rhs": 2.8645861748410906
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8250000000000001,
+          "d_over_r": 0.1,
+          "u": 0.4537500000000001,
+          "v": 0.37125,
+          "slack": 0.006101892492788252,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.508006522176355,
+            2.117079243248112,
+            1.0074159221770365
+          ],
+          "rhs": 2.8751844847078236
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.845,
+          "d_over_r": 0.0,
+          "u": 0.4225,
+          "v": 0.4225,
+          "slack": 0.00614404502246968,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.5909011115694294,
+            1.9565319700849202,
+            0.8726806393442529
+          ],
+          "rhs": 2.893405633908642
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.8150000000000001,
+          "d_over_r": 0.016666666666666666,
+          "u": 0.41429166666666667,
+          "v": 0.40070833333333333,
+          "slack": 0.006247950770577937,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.46677556763105,
+            2.1898379564172914,
+            1.0678993295111279
+          ],
+          "rhs": 2.8646164702567054
+        },
+        {
+          "kind": "true_2d_generator",
+          "r": 0.845,
+          "d_over_r": 0.016666666666666666,
+          "u": 0.42954166666666665,
+          "v": 0.4154583333333333,
+          "slack": 0.006289601045473159,
+          "max_benefit_dual": 0.0,
+          "coefficients": [
+            3.590702164298312,
+            1.956622927439702,
+            0.872877740980488
+          ],
+          "rhs": 2.8934382007943964
+        }
+      ],
+      "lower_bound_reduced_costs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_bound_reduced_costs": [
+        0.0,
+        0.0,
+        -0.019410397553787304
+      ]
+    }
+  ],
+  "evaluation_counters": {
+    "joint_points": 7500,
+    "AH_R": 7500,
+    "Apsi2": 7500,
+    "Apsi3": 7500,
+    "Apsi4": 7500
+  },
+  "generator_evaluations_total": 30000,
+  "coarse_candidate_on_new_points": {
+    "minimum_slack": 0.00014261688180727816,
+    "worst_points": [],
+    "violation_count_below_minus_1e_minus_8": 0
+  },
+  "shape_comparison": {
+    "enriched_e4": 0.20474082876058483,
+    "quartic_cost_minus_e4zero_control": -0.003476163777669239,
+    "quartic_new_shape_selected": true,
+    "scope": "Only the finite enriched LP; no continuous feasibility/optimality claim."
+  },
+  "LPs_completed": 3,
+  "elapsed_seconds": 0.1168637079972541,
+  "slice_argument_and_stability_summary": {
+    "all_positive_a_slice_arguments_min": 2.5125628266322454e-11,
+    "all_positive_a_slice_arguments_max": 13611.000000103497,
+    "t_gt_2_slice_count_per_bump": 1331,
+    "t_gt_2_min": 2.001494768310912,
+    "t_gt_2_max": 13611.000000103497,
+    "exterior_moment_series_terms": 33,
+    "exterior_moment_series_indices": [
+      0,
+      32
+    ],
+    "exterior_remainder_exact_arithmetic_upper_for_each_slice": {
+      "2": "1/166020696663385964544",
+      "3": "1/221360928884514619392",
+      "4": "1/276701161105643274240"
+    },
+    "remainder_scope": "Analytic omitted-series bound only, excluding floating-point roundoff; no interval certificate.",
+    "tail_f_small_argument_series_terms": 40,
+    "tail_f_series_condition": "abs(c/R)<1/4"
+  },
+  "minimal_summary": {
+    "claim": "finite-grid numerical quartic candidate only; no new strict upper yet",
+    "R": "379/200",
+    "e2": 0.75600307338441,
+    "e3": 0.0,
+    "e4": 0.20474082876058483,
+    "cost_candidate": 3.872668534939416,
+    "candidate_minus_strict_U10": -0.003618800814773948,
+    "same_grid_e4_zero_control_cost": 3.876144698717085,
+    "quartic_cost_minus_control": -0.003476163777669239,
+    "LPs_completed": 3,
+    "generator_evaluations_total": 30000
+  }
+}
