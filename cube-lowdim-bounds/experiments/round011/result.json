@@ -1,0 +1,209 @@
+{
+  "round": 11,
+  "status": "finite_experiment_no_improvement_above_trigger",
+  "scope": "finite position perturbations only; no impossibility/global optimality claim",
+  "mass": 4,
+  "weights": "all four parity masses are 1",
+  "fixed_spacings": true,
+  "evaluations_per_dimension": 80,
+  "index_lengths": [
+    1,
+    4
+  ],
+  "dimensions": [
+    {
+      "dimension": 3,
+      "seed": 2026102414,
+      "counts": {
+        "control": 1,
+        "axis3_structured": 42,
+        "random": 37
+      },
+      "baseline_reference": 1.7939332277947704,
+      "baseline_reproduced": 1.79393322779477,
+      "best_noncontrol": {
+        "evaluation": 80,
+        "source": "joint_position_uniform_scale_0.01",
+        "score": 1.7919450784365656,
+        "score_minus_reference": -0.0019881493582047938,
+        "spacings": [
+          1.6299605249474367,
+          1.0723571212766658,
+          1.1299605249474367
+        ],
+        "delta_in_spacing_units": [
+          [
+            -0.0015498598689774176
+          ],
+          [
+            0.001017281208422447
+          ],
+          [
+            -9.198823530885171e-06
+          ],
+          [
+            0.0005417774840858567
+          ]
+        ],
+        "physical_delta": [
+          [
+            -0.0017512804711446882
+          ],
+          [
+            0.001149487608288191
+          ],
+          [
+            -1.039430746585784e-05
+          ],
+          [
+            0.0006121871703223562
+          ]
+        ],
+        "box_count": 69
+      },
+      "best_noncontrol_minus_baseline": -0.0019881493582043497,
+      "baseline_endpoint_check": {
+        "status": "checked",
+        "volume": 7.175732911179082,
+        "score": 1.7939332277947706,
+        "cell_shape": [
+          22,
+          26,
+          13
+        ],
+        "total_cells": 7436,
+        "slab_axis": 1,
+        "peak_boolean_cells": 286,
+        "total_cell_limit": 2000000000,
+        "slab_cell_limit": 32000000,
+        "difference_from_recursive_score": 6.661338147750939e-16,
+        "agreement_tolerance": 1e-09,
+        "agrees": true
+      },
+      "best_noncontrol_endpoint_check": {
+        "status": "checked",
+        "volume": 7.167780313746265,
+        "score": 1.7919450784365663,
+        "cell_shape": [
+          22,
+          26,
+          27
+        ],
+        "total_cells": 15444,
+        "slab_axis": 2,
+        "peak_boolean_cells": 572,
+        "total_cell_limit": 2000000000,
+        "slab_cell_limit": 32000000,
+        "difference_from_recursive_score": 6.661338147750939e-16,
+        "agreement_tolerance": 1e-09,
+        "agrees": true
+      },
+      "all_noncontrols_strictly_below_reference_in_float": true
+    },
+    {
+      "dimension": 4,
+      "seed": 2026102415,
+      "counts": {
+        "control": 1,
+        "axis3_structured": 42,
+        "coupled_structured": 18,
+        "random": 19
+      },
+      "baseline_reference": 1.9017426111009557,
+      "baseline_reproduced": 1.9017426111009557,
+      "best_noncontrol": {
+        "evaluation": 4,
+        "source": "axis3_single_parity_0_-0.01",
+        "score": 1.8941575821799068,
+        "score_minus_reference": -0.007585028921048842,
+        "spacings": [
+          1.7071067811865475,
+          1.0533409598501606,
+          1.0946035575013604,
+          1.0946035575013604
+        ],
+        "delta_in_spacing_units": [
+          [
+            -0.0075,
+            0.0
+          ],
+          [
+            0.0025,
+            0.0
+          ],
+          [
+            0.0025,
+            0.0
+          ],
+          [
+            0.0025,
+            0.0
+          ]
+        ],
+        "physical_delta": [
+          [
+            -0.008209526681260203,
+            0.0
+          ],
+          [
+            0.002736508893753401,
+            0.0
+          ],
+          [
+            0.002736508893753401,
+            0.0
+          ],
+          [
+            0.002736508893753401,
+            0.0
+          ]
+        ],
+        "box_count": 217
+      },
+      "best_noncontrol_minus_baseline": -0.007585028921048842,
+      "baseline_endpoint_check": {
+        "status": "checked",
+        "volume": 7.606970444403819,
+        "score": 1.9017426111009548,
+        "cell_shape": [
+          39,
+          42,
+          21,
+          21
+        ],
+        "total_cells": 722358,
+        "slab_axis": 1,
+        "peak_boolean_cells": 17199,
+        "total_cell_limit": 2000000000,
+        "slab_cell_limit": 32000000,
+        "difference_from_recursive_score": -8.881784197001252e-16,
+        "agreement_tolerance": 1e-09,
+        "agrees": true
+      },
+      "best_noncontrol_endpoint_check": {
+        "status": "checked",
+        "volume": 7.576630328719626,
+        "score": 1.8941575821799066,
+        "cell_shape": [
+          39,
+          42,
+          29,
+          21
+        ],
+        "total_cells": 997542,
+        "slab_axis": 1,
+        "peak_boolean_cells": 23751,
+        "total_cell_limit": 2000000000,
+        "slab_cell_limit": 32000000,
+        "difference_from_recursive_score": -2.220446049250313e-16,
+        "agreement_tolerance": 1e-09,
+        "agrees": true
+      },
+      "all_noncontrols_strictly_below_reference_in_float": true
+    }
+  ],
+  "files": {
+    "code": "search_positions.py",
+    "report": "../../rounds/011.md"
+  }
+}
