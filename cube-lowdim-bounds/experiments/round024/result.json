@@ -1,0 +1,96 @@
+{
+  "status": "failed_or_rejected",
+  "phase": "cache_A",
+  "counts": {
+    "LP_started": 0,
+    "LP_completed": 0,
+    "primitive_B_entries_started": 20423304,
+    "primitive_B_entries_completed": 20423304,
+    "primitive_L_entries_started": 9888120,
+    "primitive_L_entries_completed": 9888120,
+    "singular_entries_started": 51574,
+    "singular_entries_completed": 51574,
+    "direction_entries_started": 9902208,
+    "direction_entries_completed": 9902208,
+    "baseline_entries_started": 51574,
+    "baseline_entries_completed": 51574,
+    "residual_entries_started": 51574,
+    "residual_entries_completed": 51574,
+    "residual_batches_started": 1,
+    "residual_batches_completed": 1,
+    "affine_matrix_rows_checked": 0,
+    "direction_column_in_progress": null
+  },
+  "solves": [],
+  "candidate_exported": false,
+  "limits": {
+    "seconds_internal": 300.0,
+    "LP_calls": 6,
+    "LP_soft_seconds": 20.0,
+    "fine_classes": 96,
+    "variables": 288,
+    "per_pool_points": 30000,
+    "residual_batches": 8,
+    "residual_scalar_checks": 480000,
+    "direction_formula_entries": 17280000,
+    "MATLAB_existing_matrix_checks_separate": 60000
+  },
+  "clock_scope": "Import separately recorded; outer wrapper must hard-kill entire process group at 300s.",
+  "elapsed_seconds": 2.593880042004457,
+  "pool_counts": {
+    "K": {
+      "validation": 26604,
+      "initial": 16270
+    },
+    "A": {
+      "validation": 24970,
+      "initial": 14698
+    }
+  },
+  "dependencies": {
+    "reviewed_round02_sha256": "a56f8cb1cd7f1e08f13aafc29d1963dd203943cc17532f23875d1e747da177df",
+    "baseline_sha256": "21d39978590d3659021c093b3100e4e4d5e8dafe4834d46aa55d6c86c6a5e172",
+    "points_source_sha256": "3fada3868a155c0c961d092cc965a28de73e5c5ebbe05d050389587783f7e05a",
+    "refinement_identity_sha256": "3018b6bf86029ea434d820210c97cf8dec25e05827b5e7ae8ed0e5da9879ec2e",
+    "formula_sha256": {
+      "bspl_closed.py": "76b3db2d949cacda607ed76c071498ac3f033b9424cea7c510ab2866d10e205d",
+      "sing2.py": "f26288b9893e6853bda7b4f108371eb21c8c67acbaf74d899359803107e49dce",
+      "sing3.py": "118f86371c3a9f17d2b78b0f885cfa81955826f7ddd3c960eed890f558f9cd34"
+    }
+  },
+  "support": {
+    "old_actual_bound": "9/4",
+    "coarse_actual_bound": "5/2",
+    "declared_window_bound": "41/16",
+    "fine_activation_max_I": 80,
+    "old_actual_support_may_expand": true
+  },
+  "baseline_residual": {
+    "label": "baseline",
+    "K": {
+      "minimum_value": 0.0,
+      "maximum_violation": 0.0,
+      "bad_indices": [],
+      "bad_count": 0,
+      "tolerance": 1e-09
+    },
+    "A": {
+      "minimum_value": 0.0,
+      "maximum_violation": 0.0,
+      "bad_indices": [],
+      "bad_count": 0,
+      "tolerance": 1e-08
+    },
+    "passed": true
+  },
+  "reason": "Rejected: add_rows_not_kOk",
+  "source_sha256": "169b1e2d33684e7250da45dbf482d8c2faff9d60d59ad9fefbd481209f600407",
+  "module_import_seconds_separate": 0.16319929200108163,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "highspy": "1.15.1"
+  },
+  "scope": "Finite numerical model only. No automatic checker, strict cost proof, MATLAB solve, repair or restart."
+}
