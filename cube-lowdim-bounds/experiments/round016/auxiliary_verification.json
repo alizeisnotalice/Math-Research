@@ -1,0 +1,40 @@
+{
+  "status": "exact_small_radius_and_unscaled_identity_checks_passed",
+  "new_LPs": 0,
+  "new_generator_points": 0,
+  "new_quadrature_points": 0,
+  "small_radius": {
+    "powers": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "slice_range": "0<t<=1/100",
+    "spatial_range": "0<r<=1/100 in the open quadrants",
+    "harmonic7": "363/140",
+    "formula": "B=2*(101/100)^6*Harm7+log(1/101)+(99/100)^7*log(1/99)",
+    "B_interval": [
+      "-237533260236026023244253198287480596571094865753/70000000000000000000000000000000000000000000000",
+      "-237533260236026023244253198287469777005146586609/70000000000000000000000000000000000000000000000"
+    ],
+    "B_upper_display": -3.393332289086086,
+    "strictly_negative": true,
+    "conclusion": "h_p(t)/(2p)<=B<0 for p=2..8; positive slice scaling preserves the sign",
+    "analytic_assumptions": "All log terms are negative; polynomial terms use upper bounds and log coefficients use lower bounds. t=u/(1-v)<=r and its symmetric counterpart."
+  },
+  "unscaled_identity": {
+    "homogeneity_identities_exactly_zero": 70,
+    "coordinate_substitutions_exactly_zero": 4,
+    "domain": "u>0,v>0,u+v<1; n=p-1>=1",
+    "log_step": "In this positive domain log((u/a)/(1+u/a))=log(u/(a+u)) and the minus/symmetric identities hold exactly.",
+    "scope": "Verifies the algebraic substitution underlying continuous_interface.md; endpoint inclusion still requires the stated one-sided interval rules."
+  },
+  "core_sha256": "ed7a2460b2b71333072093843aa5818b822d11d07bbf7d6ba70b841d1c0485e2",
+  "interface_sha256": "3158d77ba1eef73e6372ef806c78517b3bb464dc846b1340ba332a6f15cfea41",
+  "verifier_sha256": "36ab6b2a9d6a2118f48bce70d1b009c704525af5870c7cbd2e71bd5ded77971b",
+  "scope": "Auxiliary exact lemmas only; no candidate-wide certificate or new general upper bound."
+}
