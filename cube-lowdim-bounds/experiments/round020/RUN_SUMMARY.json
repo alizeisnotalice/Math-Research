@@ -1,0 +1,185 @@
+{
+  "scope": "Summaries extracted from actual complete runs; full second-checker per-cell logs retained locally. No geometric or interval check re-executed during extraction.",
+  "runs": [
+    {
+      "label": "first_public",
+      "elapsed_seconds": 60.827930000006745,
+      "budget_seconds": 600,
+      "exit_code": 0,
+      "full_log_sha256": "b66ec798b7d2641d5a23c42339bb3bf056bf493ad2805f6084875917748831a3",
+      "report_sha256": "761df8a8501658d87ff6872406e544dfe2e934e5e68860a1ee2786d22e0e4160",
+      "command": [
+        "python3",
+        "-I",
+        "checker/cert_run.py",
+        "cert/cert_h32_a4740_R3320_3p59123.json",
+        "--Q",
+        "8",
+        "--maxdepth",
+        "7",
+        "--Kdepth",
+        "6",
+        "--procs",
+        "6",
+        "--only",
+        "MKA",
+        "--out",
+        "../first_public.json"
+      ],
+      "report": {
+        "mass_half": "[3.59122432750645234527147802 +/- 2.23e-27]",
+        "U": "9/4",
+        "K_fail": [],
+        "A_fail": [],
+        "A_cells": 219732
+      }
+    },
+    {
+      "label": "second_public",
+      "elapsed_seconds": 21.814817999998922,
+      "budget_seconds": 900,
+      "exit_code": 0,
+      "full_log_sha256": "baf28c41f3f730bbe78297824f980f82b1bb0f52a6910e2c8ba179b6b7af55f2",
+      "report_sha256": "35c6a1cc5ca5a7da4ed65ddefed284c6f4e4975563c7cecf57771b31e03fa951",
+      "command": [
+        "python3",
+        "-I",
+        "checker/independent/hl_check.py",
+        "cert/cert_h32_a4740_R3320_3p59123.json",
+        "--claim",
+        "3.59123",
+        "--procs",
+        "6",
+        "--out",
+        "../second_public.json"
+      ],
+      "c1": {
+        "ok": true,
+        "cells": 1368,
+        "leaves": 2025,
+        "min": "0",
+        "fails": []
+      },
+      "c2": {
+        "ok": true,
+        "cells": 272,
+        "leaves": 272,
+        "min": "[1.000099345 +/- 3.68e-10]",
+        "fails": []
+      },
+      "c3": {
+        "ok": true,
+        "half_mass": "[3.5912243275064523453 +/- 2.86e-20]",
+        "sum_a": "-632486554619619/1099511627776"
+      },
+      "c4": {
+        "ok": true,
+        "prov_consistent": true,
+        "cells": 1368,
+        "leaves": 443754,
+        "min": 3.2881759239326806e-08
+      },
+      "provenance": {
+        "hl_check.py": "0a5ee85e9b6c250494aaf88abce55bb28a4ba5fc46075c531eeefaa0cc2888f8",
+        "hl_core.py": "c3d864b1368ad8150fd3366bf77f687a9a3cdd49b924a20d576aa678aed42ebf",
+        "flint_version": "0.9.0",
+        "python": "3.12.14",
+        "arb.abi3.so": "a06a5d1afc2c1d70bf9cf8a7085951261c975691bd8c618d3001f4bf7852294c",
+        "acb.abi3.so": "73aad6c4cdf2338d8f6533f9f653b7d7bad5c67a0e557eac5024bc1497f8f1f0",
+        "arb_mat.abi3.so": "775c7d853a801fab2a7d871513a0a9eefe226e6b58d1d9ea79267e5ddb2579ff",
+        "fmpq.abi3.so": "50aa1517d028bc149255f0f06f966b7549e91892e3045f292940984d8ec55574"
+      },
+      "certificate_sha256": "bd8d91b535e0a91fed777251afa6c4d73d78b1e7d14aee7288e5950d8ad28db3"
+    },
+    {
+      "label": "scaled_first",
+      "elapsed_seconds": 62.87010887499491,
+      "budget_seconds": 600,
+      "exit_code": 0,
+      "full_log_sha256": "810616c402fb7f61136c58c52090352f2457a2fe3a0afe7a6beb2b63ee2afd21",
+      "report_sha256": "5a31999e4a8a94117c85aaa6c4b6d63e5abb899e81832916ad3dacec493f3d09",
+      "command": [
+        "python3",
+        "-I",
+        "checker/cert_run.py",
+        "../round01/scaled_certificate.json",
+        "--Q",
+        "8",
+        "--maxdepth",
+        "7",
+        "--Kdepth",
+        "6",
+        "--procs",
+        "6",
+        "--only",
+        "MKA",
+        "--out",
+        "../scaled_first.json"
+      ],
+      "report": {
+        "mass_half": "[3.590901146403276050426939597 +/- 7.75e-28]",
+        "U": "9/4",
+        "K_fail": [],
+        "A_fail": [],
+        "A_cells": 219732
+      }
+    },
+    {
+      "label": "scaled_second",
+      "elapsed_seconds": 24.31402570800128,
+      "budget_seconds": 600,
+      "exit_code": 0,
+      "full_log_sha256": "a50571f38effa18e307e0d4f0c8398af57dd66d82a53a9fbcc849b9a12c1b409",
+      "report_sha256": "30a79ecad7546f78082d8e5299292396b54e118ad4d8df9ff97bc3df4dc11faf",
+      "command": [
+        "python3",
+        "-I",
+        "checker/independent/hl_check.py",
+        "../round01/scaled_certificate.json",
+        "--claim",
+        "3.59091",
+        "--procs",
+        "6",
+        "--out",
+        "../scaled_second.json"
+      ],
+      "c1": {
+        "ok": true,
+        "cells": 1368,
+        "leaves": 2025,
+        "min": "0",
+        "fails": []
+      },
+      "c2": {
+        "ok": true,
+        "cells": 272,
+        "leaves": 272,
+        "min": "[1.000009344 +/- 2.09e-10]",
+        "fails": []
+      },
+      "c3": {
+        "ok": true,
+        "half_mass": "[3.5909011464032760504 +/- 2.70e-20]",
+        "sum_a": "-282360069026615625/490897582063616"
+      },
+      "c4": {
+        "ok": true,
+        "prov_consistent": true,
+        "cells": 1368,
+        "leaves": 443754,
+        "min": 3.287880014731355e-08
+      },
+      "provenance": {
+        "hl_check.py": "0a5ee85e9b6c250494aaf88abce55bb28a4ba5fc46075c531eeefaa0cc2888f8",
+        "hl_core.py": "c3d864b1368ad8150fd3366bf77f687a9a3cdd49b924a20d576aa678aed42ebf",
+        "flint_version": "0.9.0",
+        "python": "3.12.14",
+        "arb.abi3.so": "a06a5d1afc2c1d70bf9cf8a7085951261c975691bd8c618d3001f4bf7852294c",
+        "acb.abi3.so": "73aad6c4cdf2338d8f6533f9f653b7d7bad5c67a0e557eac5024bc1497f8f1f0",
+        "arb_mat.abi3.so": "775c7d853a801fab2a7d871513a0a9eefe226e6b58d1d9ea79267e5ddb2579ff",
+        "fmpq.abi3.so": "50aa1517d028bc149255f0f06f966b7549e91892e3045f292940984d8ec55574"
+      },
+      "certificate_sha256": "21d39978590d3659021c093b3100e4e4d5e8dafe4834d46aa55d6c86c6a5e172"
+    }
+  ]
+}
