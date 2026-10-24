@@ -1,0 +1,13 @@
+# 第30轮最小证据与复现
+
+没有新C2界。严格排除第29轮核的生成元条件，并给出可收紧新β奇异列的正向尾余项引理。
+
+准确反例输入为points.json的三个有理点和第29轮candidate.json。将后者只保留alpha/R/h/N/c/a得到旧schema，SHA必须等于e88f1a86ffe0dfb5e12140bd77e2defedc21249ef6514f45400fe5128112b0ad。result.json保存六次完整区间值和组成项，两套表达共享Arb与解析模型，不能称独立定义求积。
+
+重放完整选点及6值流程：恢复scratch round10_first.json（前轮本地完整失败报告，hash4a37443a3b5e9e894537e5b1d309f1318239461e1317c471ed9cc34afd7cf2b1）、round10/candidate_public_schema.json；第23轮diagnose.py置round04，或复制为本目录dependency_round04_diagnose.py；Tomar v4的checker目录置../upstream-v4/checker或本目录public_src。运行python -B run_once.py，180秒hard；有现存证据时拒绝重跑。现在无需重放查看结果。
+
+只核三个给定反例不需要8.6MiB失败报告：points.json已保存准确点、原盒和选点来源。用第23轮OriginalAdapter.AK和IndependentAdapter.AK直接对这三个有理点评价即可；适配器及两public代码hash见diagnose.py。必须先导入两模块，再设flint.ctx.prec=192，再构造核。此简化核对复用同一算术原语，不能称第三独立实现。完整有限样条数据已在第29轮归档，不在本轮重复。
+
+新增尾公式的最小程序tail_check.py只依赖python-flint、mpmath、SymPy，固定9个参数/半径组合及2个符号恒等式。run_tail_once.py给60秒hard；tail_result.json保存9个Arb区间、9个mpmath对照及全部标志。mpmath与double中点对照仅数值佐证，Arb上下端与解析引理承担严格性。三个p=1控制准确0，六个p>1都满足T>Tquad>0。没有新LP或完整生成元收益主张。
+
+MANIFEST记录来源与运行文件hash。raw calls.jsonl仅本地，避免与result.json六完成行重复归档；大缓存、私人附件均不复制。下一机制仅见next_mechanism.md，尚未运行。
