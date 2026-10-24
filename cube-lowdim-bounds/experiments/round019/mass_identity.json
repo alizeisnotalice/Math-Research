@@ -1,0 +1,24 @@
+{
+  "task": "structural_identity_only_no_candidate_evaluation",
+  "weight_matrix": [
+    [
+      "1",
+      "w*(1+k)"
+    ],
+    [
+      "1",
+      "w*(1-k)"
+    ]
+  ],
+  "determinant": "-2*k*w",
+  "complete_period_mass": "2*(w + 1)",
+  "conditions": "w>0, 0<k<1",
+  "symbolic_residuals": [
+    "0",
+    "0"
+  ],
+  "interpretation": "Nonzero determinant excludes row-factor times alternating-column weights with this fixed row/column incidence. It does not prove nonrepresentation under arbitrary relabelling, or any bound improvement.",
+  "sympy": "1.14.0",
+  "objective_evaluations": 0,
+  "execution_note": "Initial structural == assertion failed on factored versus expanded mass; rerun uses exact simplify residuals. No geometry evaluated in either invocation."
+}
