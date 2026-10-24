@@ -1,0 +1,40 @@
+--- upstream/checker/hlcert.py
++++ fixed_checker/hlcert.py
+@@ -367,19 +367,19 @@
+             return arb(0)
+         aa, bb, alc = acb(a), acb(b), acb(al)
+         Ra = acb(apow(self.R, -al))
+-        pw = lambda z, e: ((z.log()) * e).exp()
++        pw = lambda z, e, an: ((z.log(analytic=an)) * e).exp()
+         if kind == 'H':
+-            f = lambda t, an: (pw(t + bb, -alc) - Ra) * (pw(aa - t, -1 - alc) + pw(aa + t, -1 - alc))
++            f = lambda t, an: (pw(t + bb, -alc, an) - Ra) * (pw(aa - t, -1 - alc, an) + pw(aa + t, -1 - alc, an))
+         elif kind == 'Ha':
+-            f = lambda t, an: (pw(t + bb, -alc) - Ra) * (-(1 + alc)) * (pw(aa - t, -2 - alc) + pw(aa + t, -2 - alc))
++            f = lambda t, an: (pw(t + bb, -alc, an) - Ra) * (-(1 + alc)) * (pw(aa - t, -2 - alc, an) + pw(aa + t, -2 - alc, an))
+         elif kind == 'Hb':
+-            f = lambda t, an: (-alc) * pw(t + bb, -alc - 1) * (pw(aa - t, -1 - alc) + pw(aa + t, -1 - alc))
++            f = lambda t, an: (-alc) * pw(t + bb, -alc - 1, an) * (pw(aa - t, -1 - alc, an) + pw(aa + t, -1 - alc, an))
+         elif kind == 'Haa':
+-            f = lambda t, an: (pw(t + bb, -alc) - Ra) * (1 + alc) * (2 + alc) * (pw(aa - t, -3 - alc) + pw(aa + t, -3 - alc))
++            f = lambda t, an: (pw(t + bb, -alc, an) - Ra) * (1 + alc) * (2 + alc) * (pw(aa - t, -3 - alc, an) + pw(aa + t, -3 - alc, an))
+         elif kind == 'Hab':
+-            f = lambda t, an: (-alc) * pw(t + bb, -alc - 1) * (-(1 + alc)) * (pw(aa - t, -2 - alc) + pw(aa + t, -2 - alc))
++            f = lambda t, an: (-alc) * pw(t + bb, -alc - 1, an) * (-(1 + alc)) * (pw(aa - t, -2 - alc, an) + pw(aa + t, -2 - alc, an))
+         elif kind == 'Hbb_int':
+-            f = lambda t, an: alc * (alc + 1) * pw(t + bb, -alc - 2) * (pw(aa - t, -1 - alc) + pw(aa + t, -1 - alc))
++            f = lambda t, an: alc * (alc + 1) * pw(t + bb, -alc - 2, an) * (pw(aa - t, -1 - alc, an) + pw(aa + t, -1 - alc, an))
+         val = acb.integral(f, acb(0), acb(L))
+         return 2 * val.real
+ 
+@@ -482,8 +482,8 @@
+             Ra = acb(apow(R, -al))
+ 
+             def f(s, analytic):
+-                return ((((s + bb).log()) * (-alc)).exp() - Ra) * \
+-                    ((((aa - s).log()) * (-1 - alc)).exp() + (((aa + s).log()) * (-1 - alc)).exp())
++                return ((((s + bb).log(analytic=analytic)) * (-alc)).exp() - Ra) * \
++                    ((((aa - s).log(analytic=analytic)) * (-1 - alc)).exp() + (((aa + s).log(analytic=analytic)) * (-1 - alc)).exp())
+             val = acb.integral(f, acb(0), acb(L))
+             tot += 2 * val.real
+         return tot

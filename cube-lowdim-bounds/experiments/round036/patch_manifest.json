@@ -1,0 +1,81 @@
+{
+  "status": "static_patch_materialized_no_math_execution",
+  "original_hlcert_sha256": "4bd7e823bdcb336f8e20c188d68d6d8c1e4aa22ec52353885059c24445317db5",
+  "fixed_hlcert_sha256": "4c347b7782120f64e20df07a44b51453feff8eb2e3ed9ab4abfec68f2776fa05",
+  "original_cert_run_sha256": "079906db354febdd57d537f0d747428bc90bd37fa88297449cd1d46c7446310d",
+  "fixed_cert_run_sha256": "079906db354febdd57d537f0d747428bc90bd37fa88297449cd1d46c7446310d",
+  "patch_sha256": "b3ac6a012c3ac942e87c74a6a7d9187d256b7f00db62eaf3a31c844e8f11ee01",
+  "make_patch_sha256": "ca5302ef0ad515fab7503306882c8dee9db3c8440b8efee1c71963ea4a070974",
+  "baseline_sha256": "21d39978590d3659021c093b3100e4e4d5e8dafe4834d46aa55d6c86c6a5e172",
+  "forwarding_only_AST_normalization_passed": true,
+  "AST_forwarding_counts": {
+    "log_keywords": 4,
+    "pw_arguments": 18,
+    "pw_parameters": 1
+  },
+  "hint_pw_replacements": [
+    {
+      "original": "pw(t + bb, -alc)",
+      "fixed": "pw(t + bb, -alc, an)",
+      "occurrences": 3
+    },
+    {
+      "original": "pw(t + bb, -alc - 1)",
+      "fixed": "pw(t + bb, -alc - 1, an)",
+      "occurrences": 2
+    },
+    {
+      "original": "pw(t + bb, -alc - 2)",
+      "fixed": "pw(t + bb, -alc - 2, an)",
+      "occurrences": 1
+    },
+    {
+      "original": "pw(aa - t, -1 - alc)",
+      "fixed": "pw(aa - t, -1 - alc, an)",
+      "occurrences": 3
+    },
+    {
+      "original": "pw(aa + t, -1 - alc)",
+      "fixed": "pw(aa + t, -1 - alc, an)",
+      "occurrences": 3
+    },
+    {
+      "original": "pw(aa - t, -2 - alc)",
+      "fixed": "pw(aa - t, -2 - alc, an)",
+      "occurrences": 2
+    },
+    {
+      "original": "pw(aa + t, -2 - alc)",
+      "fixed": "pw(aa + t, -2 - alc, an)",
+      "occurrences": 2
+    },
+    {
+      "original": "pw(aa - t, -3 - alc)",
+      "fixed": "pw(aa - t, -3 - alc, an)",
+      "occurrences": 1
+    },
+    {
+      "original": "pw(aa + t, -3 - alc)",
+      "fixed": "pw(aa + t, -3 - alc, an)",
+      "occurrences": 1
+    }
+  ],
+  "driver_byte_identical": true,
+  "original_files_modified": false,
+  "flint_imports": 0,
+  "mathematical_executions": 0,
+  "fixed_files": {
+    "hlcert.py": "fixed_checker/hlcert.py",
+    "cert_run.py": "fixed_checker/cert_run.py"
+  },
+  "planned_unique_math_run": {
+    "kernel": "B1 only",
+    "hard_seconds": 180,
+    "Q": 8,
+    "maxdepth": 7,
+    "Kdepth": 6,
+    "procs": 6,
+    "only": "MKA",
+    "precision": "Original 96bit unchanged"
+  }
+}
