@@ -1,0 +1,49 @@
+# 第七轮缓存与独占MATLAB协调器审查
+
+2026-10-24。最终静态结论：已完整审coordinator、batch、PLAN及外wrapper，最终种子pin/协议/清理复读通过，已通知主侧可启动唯一既定运行。本代理不运行新点、LP、MATLAB或API探针，不修改作者源码。最终无剩余运行阻断；本结论不预报优化或认证成功。
+
+## 固定范围与缓存链
+
+保持K1、α47/40、R33/20、h1/32/N80、190粗D4类/两权重、最多96真实违例足迹细类、原变量盒和固定K26604/A24970池。源数据是第25轮已存MATLAB192维向量，它是本轮待核种子，不是已认证核。第一步完整细系数展开复查全池；通过则可以直接走唯一有理出口，无须启动MATLAB。
+
+缓存B/L、奇异项、基线和192列必须按第25轮记录逐个核hash及shape，并关联准确point_manifest/列顺序/准确输入核及refinement。缺失或改变即停止，不能悄悄重建。基线已通过的检查可沿此hash链复用，不额外花一个残差批。必须保持0新B/L或奇异闭式调用；新细列只是已缓存B/L上的D4有限算术，最多96×60000=5760000条，不能再次调用LB或Aψ补缓存。
+
+种子+最多6LP解+有理候选=8全池残差批、≤480000标量。仿射矩阵对照是已有矩阵算术另记；新的full gate仍取完整细系数重组的未删减原尺度K/AK，不能仅靠MATLAB的有限原行exitflag。目标/质量和D4精确映射承接原已审机制，不能将不同同轨道格点再次累加为类系数。数据复用省去闭式构造，不省去必要候选完整复查。
+
+## Batch、IPC及终止边界
+
+仅一个独占MATLAB batch，最多6次linprog，各20秒soft；没有basis热启动保证，不应作此声明。共享GUI不参与。外wrapper先创建新session/process group并计300秒，含Python import/cache读取/IPC/许可证等待和MATLAB启动；最终对本轮自己拥有的组清残余。现wrapper仅kill其自建PGID，无GUI进程名扫描/全局MATLAB关闭操作。
+
+本机/Applications/MATLAB_R2026a.app/bin/matlab是shell launcher；静态尾部为eval exec MATLAB_COMMAND，未见setsid/nohup。此观察支持进程组继承设计，但不替代协调器对实际子PGID的检查与finally退出收尾。异常应写stop/terminate/wait，外限强制kill只针对本轮组，不能启动第二batch或改用MCP兜底。
+
+模型和ready响应需先写临时文件后原子rename，使用唯一iteration号及输入hash对应结果，拒绝旧号/错号/未知schema；求解前先保存原矩阵/rhs/界/目标/row keys/column keys。等待中须检查剩余墙钟及child.poll，batch异常不能无限等文件。正常、失败、种子直接退出等分支均需清楚记录是否启动MATLAB及其退出状态。当前仅为待核实现清单，不声称这些未见路径已通过。
+
+## 准确成本工具差分
+
+已静态比较round07/enclose_cost.py与round02原版：唯一逻辑改动是below_user_target从359123/100000改为17/5，并保存user_target="17/5"。D4完整半积分、整数根包含断言、对B1.lower的严格改善比较和“cost only”范围均未改。当前hash为bffd104ed54d722af32090942818d6df48f4f635db79090154471566d53dde35；未运行成本计算。只有本轮唯一有理候选合格后才可调用，不能因改了目标字段而声称达到3.4。
+
+## 前半协调器与batch协议的静态进度
+
+已读当前前半coordinator和完整batch_solver.m。缓存文件逐个字节数/hash验证，准确点序及192列顺序关联原result；以Geometry.__new__恢复缓存算术而不调用构造器，不使用Bv/LBv/Aψ。完整细矩阵重组仍由已审spline函数计算，细列只用已缓存B/L上的D4轨道。前半分离和有理出口预算不因复用旧数据消失；种子检查属于本轮新的完整残差批。
+
+batch按iteration1至6检查request，模型文件名固定、请求输入SHA与实际文件一致；每轮只linprog一次，soft限取20秒/请求剩余/全局剩余的最小值。结果先原子写JSON，再原子写ready并附结果SHA和输入SHA；started另存。未知schema/错号或hash拒绝，异常返回worker_error。Java仅作文件hash，不作数学点评价。尚待coordinator尾部实现才能核完整启动/等待/cleanup路径；本节不表示未完成尾部已放行。
+
+## 最终冻结实现与启动结论
+
+最终search.py实际hash为c2a906680a95468f78450e01a595f44f68030b98b983ae7136f16b8c21b9b823；batch_solver.m为79b2b0fcd12c2c13cd675628f0abee4b4614ab334aa1d7d53b75123330e59b5d；run_once.py为186f342919bc626a382392c1b7546d7a905bbc13e50cf9333f6624100aaeb53a。已完整/局部复读最终436行coordinator及99行batch，并实核hash；未自行运行工具测试、API或求解。
+
+原MATLAB种子已pin到实际58babd6a834bac16eddfe0cbbd67607151904aff2dab646bdd4bf0b866bd7bdf，源码/基线也pin，cache全文件hash与shape、固定点序及方向序关联原记录。定义模块仅导入类与函数，未调main、Geometry构造器、B/L或奇异函数；Geometry.__new__只装入已校验缓存。新增fine列调用已缓存B/L上的orbit_column，入口先保留条目再构建，本轮外层5760000 cap比原继承方法的更宽上限更严格。
+
+coordinator先对192维种子做变量界及完整全池检查，先于start_batch。失败时仅按预定真实遗漏违例排序分离，最多24新细类/轮、总96；模型使用全部保留行列和未删减原系数。每个optimal有限向量再次核固定变量盒、完整细展开全池及活跃affine/raw和full残差，不能用内部HiGHS处理后的模型替代。全池通过才走唯一2^−50有理化及同池再查；支撑仍准确核R≤U≤41/16，完整半质量不漏轨道或负样条部分。没有种子通过后仍强制启动LP的路径。
+
+主循环最多6次request，batch自身另限1至6；种子1+解6+有理化1共8完整批，仿射对照只用于种子及最多6解，两个计数上限分别480000和420000。每次模型保存行/列序、原矩阵/目标/界，既有Matlab的行残差输出是已有模型算术，不能当新增核点或完整函数证书。0新primitive字段与实际调用路径一致；基线沿已校hash链复用，非重新评价一批。
+
+## 最终IPC与生命周期审核
+
+write_model先写model_N.mat.tmp再replace，生成其SHA后才原子写request_N.ready.json；同编号不可覆盖。batch校验请求编号/固定文件名/输入hash，再记started_N并调用一次linprog，先原子写result_N.json，再写附结果SHA和输入SHA的ready。coordinator校验ready的编号、输入hash、结果文件名、实际结果SHA及结果内部绑定，缺started记录则拒绝；未知/错误结果不回退到另一solver或第二batch。各模型至多60000行/288列，soft上限由20秒、请求上限和剩余墙钟共同限制。
+
+唯一Popen使用start_new_session=False，继承wrapper独占组；coordinator自身必须是该组leader，随后实际读取子PGID并要求同组。batch源hash于启动记录并在终态再记录，不触碰共享MCP GUI。等待每0.05秒检查deadline、worker_error和process.poll，避免无结果时无限等；种子通过则Popen完全不调用。
+
+finally无论正常/错误均写stop，已起batch先wait，必要时terminate再wait、kill再wait，记录cleanup；outer wrapper在300秒硬截止或协调器退出后仅清理它自建的组内残余。finally还从原子started/ready账本按编号及hash对齐LP_started/completed；cleanup期间完成的解只记evidence-not-used，不拿来补候选。外SIGKILL可能来不及执行finally，此时wrapper终态和原子IPC记录共同界定最后在途状态，不能把checkpoint当成完成数。该设计没有GUI关闭、进程名全局kill、第二batch重试或basis热启动声明。
+
+以上静态审核后已明确给主侧启动结论。实际是否进入MATLAB、完成多少求解、是否出现全池合格候选，应以本轮唯一run终态为准；不以代码审核推导新上界。
