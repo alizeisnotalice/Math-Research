@@ -1,0 +1,221 @@
+{
+  "round": 15,
+  "status": "finite_numerical_experiment_complete_no_certificate",
+  "family": "joint_h_V_w_and_free_positive_satellite_in_2h_by_V_period",
+  "atoms_per_period": [
+    "(0,0;1)",
+    "(h,0;w)",
+    "(2hx,Vy;m)"
+  ],
+  "normalization": "complete period mass 1+w+m",
+  "patch_periods": [
+    3,
+    3
+  ],
+  "enumeration": "all coordinate-rectangular closed atom subsets in the true finite patch",
+  "witness": "common radius sqrt(M)/2 in both coordinates; true periodic split and geometric union",
+  "Lin_parameters": {
+    "h0": 1.615069293303905,
+    "V0": 2.615069293303905,
+    "w0": 3.9735181154770807
+  },
+  "variable_order": [
+    "h/h0",
+    "V/V0",
+    "w/w0",
+    "x",
+    "y",
+    "log(m)"
+  ],
+  "bounds": [
+    [
+      0.85,
+      1.15
+    ],
+    [
+      0.85,
+      1.15
+    ],
+    [
+      0.7,
+      1.3
+    ],
+    [
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.0
+    ],
+    [
+      -9.210340371976182,
+      0.0
+    ]
+  ],
+  "optimizer": {
+    "method": "scipy.optimize.differential_evolution",
+    "seed": 2026102415,
+    "popsize": 10,
+    "maxiter": 14,
+    "polish": false,
+    "tol": 0.0,
+    "atol": 0.0,
+    "workers": 1,
+    "updating": "immediate",
+    "actual_nfev": 900,
+    "actual_nit": 14,
+    "success": false,
+    "message": "Maximum number of iterations has been exceeded."
+  },
+  "actual_counts": {
+    "objective_calls": 902,
+    "objective_call_hard_limit": 1000,
+    "control_calls": 2,
+    "DE_calls": 900,
+    "independent_geometry_rebuilds": 2,
+    "total_geometry_builds": 904
+  },
+  "controls": {
+    "zero_mass": {
+      "evaluation": 1,
+      "source": "zero_mass_Lin_baseline",
+      "parameters": {
+        "h_ratio": 1.0,
+        "V_ratio": 1.0,
+        "w_ratio": 1.0,
+        "h": 1.615069293303905,
+        "V": 2.615069293303905,
+        "w": 3.9735181154770807,
+        "x_fraction": 0.0,
+        "y_fraction": 0.0,
+        "satellite_mass": 0.0,
+        "log_mass": null,
+        "periods": [
+          3.23013858660781,
+          2.615069293303905
+        ],
+        "period_mass": 4.973518115477081
+      },
+      "score": 1.6855099933555249,
+      "union_area": 8.382914485771357,
+      "box_count": 20,
+      "period_mass": 4.973518115477081
+    },
+    "previous_best_nonzero": {
+      "evaluation": 2,
+      "source": "round009_best_nonzero_control",
+      "parameters": {
+        "h_ratio": 1.0,
+        "V_ratio": 1.0,
+        "w_ratio": 1.0,
+        "h": 1.615069293303905,
+        "V": 2.615069293303905,
+        "w": 3.9735181154770807,
+        "x_fraction": 0.5,
+        "y_fraction": 0.0,
+        "satellite_mass": 0.0001,
+        "log_mass": -9.210340371976182,
+        "periods": [
+          3.23013858660781,
+          2.615069293303905
+        ],
+        "period_mass": 4.97361811547708
+      },
+      "score": 1.6854857935889827,
+      "union_area": 8.382962676373428,
+      "box_count": 23,
+      "period_mass": 4.97361811547708
+    },
+    "Phi": 1.685509993355525,
+    "baseline_minus_Phi": -2.220446049250313e-16
+  },
+  "best_nonzero": {
+    "evaluation": 2,
+    "source": "round009_best_nonzero_control",
+    "parameters": {
+      "h_ratio": 1.0,
+      "V_ratio": 1.0,
+      "w_ratio": 1.0,
+      "h": 1.615069293303905,
+      "V": 2.615069293303905,
+      "w": 3.9735181154770807,
+      "x_fraction": 0.5,
+      "y_fraction": 0.0,
+      "satellite_mass": 0.0001,
+      "log_mass": -9.210340371976182,
+      "periods": [
+        3.23013858660781,
+        2.615069293303905
+      ],
+      "period_mass": 4.97361811547708
+    },
+    "score": 1.6854857935889827,
+    "union_area": 8.382962676373428,
+    "box_count": 23,
+    "period_mass": 4.97361811547708
+  },
+  "best_DE": {
+    "evaluation": 3,
+    "source": "six_dimensional_DE",
+    "parameters": {
+      "h_ratio": 1.0,
+      "V_ratio": 1.0,
+      "w_ratio": 1.0,
+      "h": 1.615069293303905,
+      "V": 2.615069293303905,
+      "w": 3.9735181154770807,
+      "x_fraction": 0.5,
+      "y_fraction": 0.0,
+      "satellite_mass": 0.00010000000000000009,
+      "log_mass": -9.210340371976182,
+      "periods": [
+        3.23013858660781,
+        2.615069293303905
+      ],
+      "period_mass": 4.97361811547708
+    },
+    "score": 1.6854857935889827,
+    "union_area": 8.382962676373428,
+    "box_count": 23,
+    "period_mass": 4.97361811547708
+  },
+  "best_nonzero_minus_Phi": -2.4199766542443157e-05,
+  "numerical_improvement_candidate": false,
+  "independent_endpoint_cell_checks": [
+    {
+      "label": "zero_mass_Lin_baseline",
+      "box_count": 20,
+      "period_mass": 4.973518115477081,
+      "sweep_area": 8.382914485771357,
+      "endpoint_cell_area": 8.382914485771348,
+      "absolute_area_difference": 8.881784197001252e-15,
+      "endpoint_cell_score": 1.685509993355523,
+      "recorded_score": 1.6855099933555249,
+      "absolute_score_difference": 1.7763568394002505e-15
+    },
+    {
+      "label": "best_nonzero",
+      "box_count": 23,
+      "period_mass": 4.97361811547708,
+      "sweep_area": 8.382962676373428,
+      "endpoint_cell_area": 8.382962676373436,
+      "absolute_area_difference": 8.881784197001252e-15,
+      "endpoint_cell_score": 1.6854857935889844,
+      "recorded_score": 1.6854857935889827,
+      "absolute_score_difference": 1.7763568394002505e-15
+    }
+  ],
+  "geometry_dependency": "round009/search_satellite.py",
+  "geometry_sha256": "085a0880430483471ffea5b3055ea8d349c734b541eac74df534f266adec4cc9",
+  "search_sha256": "956e42029457ca969f8d40a17c558c36bbc40a48f50a1073d625d25b5eb26ddc",
+  "full_trajectory": "local temporary JSONL only; excluded from archived result",
+  "elapsed_seconds": 3.793066625003121,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "scope": "Numerical finite witnesses only. No rigorous lower-bound certificate, boundary expansion, or extra optimization."
+}
