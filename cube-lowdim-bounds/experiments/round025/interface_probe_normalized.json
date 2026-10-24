@@ -1,0 +1,89 @@
+{
+  "source_raw_sha256": "143d94820f805f16084e95105cb34c0a0575dd42b27012237252cd4acf8f8041",
+  "transformation": "Serialization only; nonfinite model bounds converted to symbolic strings. No computation repeated.",
+  "result": {
+    "budget_seconds": 10,
+    "wall_seconds": 0.07257762499648379,
+    "exit_code": 0,
+    "stderr": "",
+    "worker": {
+      "version": "1.15.1",
+      "addRows_calls": 3,
+      "solver_run_calls": 0,
+      "kernel_evaluations": 0,
+      "cases": [
+        {
+          "case": "ordinary",
+          "addVars": "HighsStatus.kOk",
+          "addRows": "HighsStatus.kOk",
+          "num_rows": 1,
+          "num_cols": 2,
+          "matrix_format": "MatrixFormat.kRowwise",
+          "start": [
+            0,
+            2
+          ],
+          "indices": [
+            0,
+            1
+          ],
+          "values": [
+            1.0,
+            0.25
+          ],
+          "row_lower": [
+            0.0
+          ],
+          "row_upper": [
+            "+Infinity"
+          ]
+        },
+        {
+          "case": "tiny_entry",
+          "addVars": "HighsStatus.kOk",
+          "addRows": "HighsStatus.kWarning",
+          "num_rows": 1,
+          "num_cols": 2,
+          "matrix_format": "MatrixFormat.kRowwise",
+          "start": [
+            0,
+            1
+          ],
+          "indices": [
+            0
+          ],
+          "values": [
+            1.0
+          ],
+          "row_lower": [
+            0.0
+          ],
+          "row_upper": [
+            "+Infinity"
+          ]
+        },
+        {
+          "case": "invalid_column",
+          "addVars": "HighsStatus.kOk",
+          "addRows": "HighsStatus.kError",
+          "num_rows": 0,
+          "num_cols": 2,
+          "matrix_format": "MatrixFormat.kColwise",
+          "start": [
+            0,
+            0,
+            0
+          ],
+          "indices": [],
+          "values": [],
+          "row_lower": [
+            0.0
+          ],
+          "row_upper": [
+            "+Infinity"
+          ]
+        }
+      ]
+    }
+  }
+}

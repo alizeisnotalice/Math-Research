@@ -1,0 +1,50 @@
+# 第六轮可观测装载与有限LP结果审计
+
+2026-10-24。**本轮已解释并存证小项删除warning，但唯一Python LP返回kError/Not Set、无有效原解；独立安排的MATLAB有限模型求解返回exitflag1。没有导出可认证核，没有新的已证上界。** MATLAB结果不等于原核全池或全域可行，目标C₂<3.4仍未达到。
+
+本审计只读既有result/run/log、装载快照、删除清单及MATLAB结果；实际以本机Python作矩阵存储数据比较和Fraction求和，没有运行新核点/LP、重新构列或重放MATLAB行残差。
+
+## 唯一运行及计算账本
+
+外层4.726954332996684秒、exit0，内部4.532152542000404秒，300秒预算内。source前后与当前hash均为b5d9f5de7259b5c430ef6f0cb6e7e2c75310a41e2731497739e877d2e54cefd5；discovery.log实际hash与run记录694a852181cdf3f528e043b64c6b53e0f123d9b693ba2c7be0411a79c3798e4b一致。result的closed仅表示有限程序终止，不表示数学认证闭合。
+
+准确point_manifest与第24轮逐字hash一致，K26604/A24970、合计51574；初始16270+14698=30968行。B条目20423304=396×51574，LB条目9888120=396×24970，方向条目9902208=192×51574。奇异列、基线及唯一基线残差批各51574，started/completed相等；缓存方向无in_progress。1个基线批通过，无浮点解/有理候选残差批，0细类激活、0候选导出。这些是不同类别的条目数，不能相加当作不同核点数；本轮重建已计费，不是旧缓存复用。
+
+Python的LP_started=LP_completed=1，192变量/30968行，唯一run返回HighsStatus.kError，模型Not Set、valid_primal=false，记录时间0.9598968339996645秒且没有重试。日志明确是dual simplex ratio test因excessive dual values停止，并建议缩放objective；这不是Infeasible或原核族不可能的证据。结果termination=LP_not_optimal_no_retry。
+
+## 载入warning的实际证据与独立核对
+
+首addRows真实返回kWarning；其当前callback原文报告3329个小项、阈值1e−9。getLp实际格式kRowwise，存储后比较的shape、cost、变量上下界、row上下界均一致。保存的完整scaled模型中恰有3329项变0，无其他变化；warning计数及阈值与模型差对应，故本轮记录的是已识别的载入近似，不把loaded LP当成intended LP逐字相同。
+
+本审计实际读取已存raw/scaled/loaded/delta矩阵与输入向量，独立断言：
+
+- raw乘保存row_scales后与scaled存储系数逐项相同，rhs缩放也相同；
+- loaded−scaled与保存delta完全一致，共3329非零差；
+- 每个删除记录对应actual=0、delta=−source、0<|source|≤1e−9，删除hex可精确还原输入IEEE值；
+- 对全部3329项以Fraction重算模总和和逐行有限变量盒误差，与保存分数逐行相同。
+
+涉及842行；删除模的准确总和为
+
+96790416704274343822441276752428287131/178405961588244985132285746181186892047843328，
+
+最大scaled行盒误差为
+
+23063293786007850837372821/5192296858534827628530496329220096。
+
+二者显示约5.42529049156235e−7与4.4418288118672585e−9。此界只针对所存IEEE矩阵在有限变量盒的删项影响；它不是点函数区间，不能拿它放宽原raw门槛，也不能直接与未缩放的K/A容差作同尺度比较。
+
+实际独立核了全部pre-API输入文件hash与API记录一致，独立_pre_api.mat未被solved覆盖；solved.mat与final last_model的hash同为69f6dc5a926b78529dbe69c4e58a602033fcc55058a203456c961ea3448ad05b，pre_api.mat hash另为b9abbc26a5bdccf9da5c6d5b0afebe75b914aae584b3973f1069583532bde729。输入先存证、历史快照保留在本轮实际发生；这不回溯补足第24轮缺失记录。删除清单hash为a8ab91c7f03d7cca1224b78e2d7c488f8623e33c83d4cb08aebe191c5474b13d。
+
+## MATLAB结果的准确范围
+
+主侧唯一MATLAB linprog实际3.1699715秒，Algorithm=dual-simplex-highs、30秒软限，exitflag1，迭代1450，返回192维x。它与Python共享HiGHS求解器家族，不是独立算法内核。MATLAB实际计算30968条已有矩阵残差，kernel_evaluations=0，没有添加约束、细类或核候选；其调用不混入Python的1次LP计数。
+
+本审计独立核last_model.mat中的A_ub=−raw、b_ub=−raw_rhs以及c/lb/ub与保存输入逐项一致，且Python x/objective字段为空。MATLAB是在**未删除小项的原尺度intended模型**上交叉求解；本审计读取其保存残差结果，没有重新执行矩阵行残差乘法。保存的minimum_row_slack=−8.010696679894461e−10、minimum_bound_slack=0.19990702021919782，残差条数30968；负松弛在MATLAB1e−9数值容差内，不是严格可行证书。
+
+保存objective增量−0.00031800567518935343，full_cost显示3.5905831407280879，高于3.4。这只是既有初始行模型上的浮点成本；未执行完整51574池的该解展开复查、唯一准确有理化、准确成本包围或两全域checker，不能提升为新上界或当作已合格核出口。MATLAB结果hash为58babd6a834bac16eddfe0cbbd67607151904aff2dab646bdd4bf0b866bd7bdf。
+
+Python求解错误与MATLAB成功也不构成逻辑矛盾：二者前端/选项、装载缩放及数值系数处理不同，当前证据没有隔离其具体根因。不得假称已证明只需某一种缩放就能修复，更不能把Python状态改写成已通过。
+
+## 结论与后续边界
+
+本轮修订成功留下了原矩阵、装载变化和可交叉求解的有限模型；Python优化仍未取得有效原解。仅此工程可观测性已改进，不意味着目标3.4有数学进展。后续可在明确新预算下处理条件数/求解器前端或检查已有MATLAB解的完整约束，但本轮没有追补、修核或追加认证。第一轮B1仍是当前已证上界。

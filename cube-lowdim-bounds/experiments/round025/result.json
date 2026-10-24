@@ -1,0 +1,536 @@
+{
+  "status": "finite_coarse_fine_discovery_closed",
+  "phase": "LP_1",
+  "counts": {
+    "LP_started": 1,
+    "LP_completed": 1,
+    "primitive_B_entries_started": 20423304,
+    "primitive_B_entries_completed": 20423304,
+    "primitive_L_entries_started": 9888120,
+    "primitive_L_entries_completed": 9888120,
+    "singular_entries_started": 51574,
+    "singular_entries_completed": 51574,
+    "direction_entries_started": 9902208,
+    "direction_entries_completed": 9902208,
+    "baseline_entries_started": 51574,
+    "baseline_entries_completed": 51574,
+    "residual_entries_started": 51574,
+    "residual_entries_completed": 51574,
+    "residual_batches_started": 1,
+    "residual_batches_completed": 1,
+    "affine_matrix_rows_checked": 0,
+    "direction_column_in_progress": null
+  },
+  "solves": [
+    {
+      "iteration": 1,
+      "status": "Not Set",
+      "variables": 192,
+      "rows": 30968,
+      "prior_extended_basis_valid": false,
+      "same_solver_instance": true,
+      "time_limit_soft_seconds": 20.0,
+      "run_status": "HighsStatus.kError",
+      "wall_seconds": 0.9598968339996645,
+      "valid_primal": false,
+      "max_scaled_primal_infeasibility": null
+    }
+  ],
+  "interface_events": [
+    {
+      "operation": "option_output_flag",
+      "actual_enum": "HighsStatus.kOk"
+    },
+    {
+      "operation": "option_log_file",
+      "actual_enum": "HighsStatus.kOk"
+    },
+    {
+      "operation": "option_log_to_console",
+      "actual_enum": "HighsStatus.kOk"
+    },
+    {
+      "operation": "option_threads",
+      "actual_enum": "HighsStatus.kOk"
+    },
+    {
+      "operation": "option_solver",
+      "actual_enum": "HighsStatus.kOk"
+    },
+    {
+      "operation": "option_simplex_strategy",
+      "actual_enum": "HighsStatus.kOk"
+    },
+    {
+      "operation": "option_presolve",
+      "actual_enum": "HighsStatus.kOk"
+    },
+    {
+      "operation": "option_primal_feasibility_tolerance",
+      "actual_enum": "HighsStatus.kOk"
+    },
+    {
+      "operation": "option_dual_feasibility_tolerance",
+      "actual_enum": "HighsStatus.kOk"
+    },
+    {
+      "operation": "initial_variables",
+      "actual_enum": "HighsStatus.kOk"
+    },
+    {
+      "operation": "cost",
+      "actual_enum": "HighsStatus.kOk"
+    },
+    {
+      "operation": "addRows",
+      "actual_enum": "HighsStatus.kWarning",
+      "snapshot": 1
+    },
+    {
+      "operation": "zero_primal_start",
+      "actual_enum": "HighsStatus.kOk"
+    },
+    {
+      "operation": "time_limit",
+      "actual_enum": "HighsStatus.kOk"
+    }
+  ],
+  "load_snapshots": [
+    {
+      "snapshot": 1,
+      "operation": "addRows",
+      "status": "loaded_model_checked",
+      "input_files": {
+        "_raw_input.npz": "e77c22fed388f034d7d86545f79dc39cf8dc90639675bcfaa005541c5a4df390",
+        "_scaled_input.npz": "7e11b895b2b2a275eb5b55e296f9cc4a84db2e5d73263a115c78d3e4ae7d3d35",
+        "_input_vectors.npz": "b75f475fe1331fceae0597e701e3d5b0df6f9f947863391e0c6dd88e2f58aab5",
+        "_row_keys.json": "044ba7b2fa22caa1fa6a3a2a8947b7541dc9f299150df98cddd1d58c4baa8a00",
+        "_pre_api.mat": "b9abbc26a5bdccf9da5c6d5b0afebe75b914aae584b3973f1069583532bde729"
+      },
+      "rows": 30968,
+      "columns": 192,
+      "actual_enum": "HighsStatus.kWarning",
+      "api_seconds": 0.013964750003651716,
+      "current_api_log_messages": [
+        {
+          "log_type": "HighsLogType.kWarning",
+          "message": "WARNING: LP matrix packed vector contains 3329 |value| in [2.46722e-30, 9.96908e-10] less than or equal to 1e-09: ignored\n"
+        }
+      ],
+      "nonmatrix_exact_checks": {
+        "cost": true,
+        "column_lower": true,
+        "column_upper": true,
+        "row_lower": true,
+        "row_upper": true
+      },
+      "loaded_format": "MatrixFormat.kRowwise",
+      "small_matrix_value": 1e-09,
+      "matrix_difference_entries": 3329,
+      "deleted_entries": 3329,
+      "new_deleted_entries": 3329,
+      "unknown_changes": [],
+      "current_warning_lines": [
+        "WARNING: LP matrix packed vector contains 3329 |value| in [2.46722e-30, 9.96908e-10] less than or equal to 1e-09: ignored"
+      ],
+      "current_error_lines": [],
+      "warning_log_count": 3329,
+      "warning_log_thresholds": [
+        1e-09
+      ],
+      "current_warning_fully_explained": true,
+      "fraction_seconds": 0.01978883300034795,
+      "readback_comparison_seconds": 0.16779124999447959,
+      "deleted_absolute_sum_exact": "96790416704274343822441276752428287131/178405961588244985132285746181186892047843328",
+      "maximum_row_box_error_exact": "23063293786007850837372821/5192296858534827628530496329220096",
+      "warning_accepted_as_numerical_approximation": true
+    }
+  ],
+  "local_cache_files": [
+    {
+      "file": "cache.local/K_fine_B0.npz",
+      "bytes": 1345885,
+      "sha256": "219ff0fce9a4fc749e97d19c04401d7c1376c2019cd4ecdd0422db35029b89ba"
+    },
+    {
+      "file": "cache.local/K_fine_B1.npz",
+      "bytes": 1350997,
+      "sha256": "f4f5019b6defd33a34ea6a4b989d5b047ccca38a9c77814b20a703716093eb8a"
+    },
+    {
+      "file": "cache.local/K_coarse_B0.npz",
+      "bytes": 1330189,
+      "sha256": "ebe0d6af9e2f235c714e3fefcc3148d3209a6e3e6ddf17884de4e9ee00d19f1f"
+    },
+    {
+      "file": "cache.local/K_coarse_B1.npz",
+      "bytes": 1373377,
+      "sha256": "988f2131bb6adb344f9736da1a10e6ed440a300a8fd50ac7618dfd8928d6beb5"
+    },
+    {
+      "file": "cache.local/K_singular.npy",
+      "bytes": 212960,
+      "sha256": "268bd7c17b310d7d0fdf19eb68649ee0faef3421de20730b0e1300af2c73e211"
+    },
+    {
+      "file": "cache.local/A_fine_B0.npz",
+      "bytes": 1293353,
+      "sha256": "b0a7d6c09f1494afaa7f68b34e13ab0fc42453b7a04dda979ca265cb922079a3"
+    },
+    {
+      "file": "cache.local/A_fine_B1.npz",
+      "bytes": 1299137,
+      "sha256": "e3c124dce06ea1ff2b99968ea4ee3bf9e7a2c33a2728d2c9426a82b0e7b8742b"
+    },
+    {
+      "file": "cache.local/A_fine_L0.npy",
+      "bytes": 32161488,
+      "sha256": "729ec4d00bffb13346333ba973eb941ed2f4fac4ed532ab0ff2d0ff945d410f6"
+    },
+    {
+      "file": "cache.local/A_fine_L1.npy",
+      "bytes": 32161488,
+      "sha256": "82a860d6e011318c800402c7ffda99326d1bbcfda00c1a1bb0a6f6a6c6f6c607"
+    },
+    {
+      "file": "cache.local/A_coarse_B0.npz",
+      "bytes": 1257389,
+      "sha256": "d593ae93af7280c20c04fd318504df9a89afcdd199d113b30a7de1897a36dfbe"
+    },
+    {
+      "file": "cache.local/A_coarse_B1.npz",
+      "bytes": 1297709,
+      "sha256": "eb39eb451ae1f62edd39880f3ecc9ae1cc8bf26893026bea65144a77d1b58bb3"
+    },
+    {
+      "file": "cache.local/A_coarse_L0.npy",
+      "bytes": 7391248,
+      "sha256": "1bffd3ff200f53226cda59418b17dba9f9730741de69a64b163f0300b1e1dea9"
+    },
+    {
+      "file": "cache.local/A_coarse_L1.npy",
+      "bytes": 7391248,
+      "sha256": "56852633709674410a0e917d30f10e9a1a7133ba3acc9f4b9f3911f92df592a0"
+    },
+    {
+      "file": "cache.local/A_singular.npy",
+      "bytes": 199888,
+      "sha256": "bab9c50aacf123a0b2d1e48b16e8884468ee59f4b634337d939b0d288a15cd79"
+    },
+    {
+      "file": "cache.local/K_directions_192.npy",
+      "bytes": 40863872,
+      "sha256": "e4a8f57fc0b18a650999552c0da3dbe7e0ff5a4dabe3977f8bab981c40da8e7c"
+    },
+    {
+      "file": "cache.local/A_directions_192.npy",
+      "bytes": 38354048,
+      "sha256": "67f6d5d37a665fcf581344893ad8d4d0ac8f7ada065fa7591491c87a40f28183"
+    },
+    {
+      "file": "cache.local/K_baseline.npy",
+      "bytes": 212960,
+      "sha256": "2a88958c069fc16b65b1a8e2d50f2db6663e7117787cbe15531cc52c2100d588"
+    },
+    {
+      "file": "cache.local/A_baseline.npy",
+      "bytes": 199888,
+      "sha256": "7cf63c1ff6d264cac68696ffd7c531cd9a8445eed528c835d404f19ad63b82bb"
+    }
+  ],
+  "candidate_exported": false,
+  "limits": {
+    "seconds_internal": 300.0,
+    "LP_calls": 6,
+    "LP_soft_seconds": 20.0,
+    "fine_classes": 96,
+    "variables": 288,
+    "per_pool_points": 30000,
+    "residual_batches": 8,
+    "residual_scalar_checks": 480000,
+    "direction_formula_entries": 17280000,
+    "MATLAB_existing_matrix_checks_separate": 60000,
+    "load_snapshots": 11
+  },
+  "clock_scope": "Import separately recorded; outer wrapper must hard-kill entire process group at 300s.",
+  "elapsed_seconds": 4.532152542000404,
+  "pool_counts": {
+    "K": {
+      "validation": 26604,
+      "initial": 16270
+    },
+    "A": {
+      "validation": 24970,
+      "initial": 14698
+    }
+  },
+  "dependencies": {
+    "reviewed_round02_sha256": "a56f8cb1cd7f1e08f13aafc29d1963dd203943cc17532f23875d1e747da177df",
+    "baseline_sha256": "21d39978590d3659021c093b3100e4e4d5e8dafe4834d46aa55d6c86c6a5e172",
+    "points_source_sha256": "3fada3868a155c0c961d092cc965a28de73e5c5ebbe05d050389587783f7e05a",
+    "previous_point_manifest_sha256": "513c8d953695d9ddd1c7a097ee9af2ab624f79b875330d02e0d42ad2dcc70ebd",
+    "refinement_identity_sha256": "3018b6bf86029ea434d820210c97cf8dec25e05827b5e7ae8ed0e5da9879ec2e",
+    "formula_sha256": {
+      "bspl_closed.py": "76b3db2d949cacda607ed76c071498ac3f033b9424cea7c510ab2866d10e205d",
+      "sing2.py": "f26288b9893e6853bda7b4f108371eb21c8c67acbaf74d899359803107e49dce",
+      "sing3.py": "118f86371c3a9f17d2b78b0f885cfa81955826f7ddd3c960eed890f558f9cd34"
+    }
+  },
+  "support": {
+    "old_actual_bound": "9/4",
+    "coarse_actual_bound": "5/2",
+    "declared_window_bound": "41/16",
+    "fine_activation_max_I": 80,
+    "old_actual_support_may_expand": true
+  },
+  "baseline_residual": {
+    "label": "baseline",
+    "K": {
+      "minimum_value": 0.0,
+      "maximum_violation": 0.0,
+      "bad_indices": [],
+      "bad_count": 0,
+      "tolerance": 1e-09
+    },
+    "A": {
+      "minimum_value": 0.0,
+      "maximum_violation": 0.0,
+      "bad_indices": [],
+      "bad_count": 0,
+      "tolerance": 1e-08
+    },
+    "passed": true
+  },
+  "latest_intended_model": {
+    "snapshot": 1,
+    "rows": 30968,
+    "columns": 192,
+    "saved_before_API": true,
+    "input_sha256": {
+      "_raw_input.npz": "e77c22fed388f034d7d86545f79dc39cf8dc90639675bcfaa005541c5a4df390",
+      "_scaled_input.npz": "7e11b895b2b2a275eb5b55e296f9cc4a84db2e5d73263a115c78d3e4ae7d3d35",
+      "_input_vectors.npz": "b75f475fe1331fceae0597e701e3d5b0df6f9f947863391e0c6dd88e2f58aab5",
+      "_row_keys.json": "044ba7b2fa22caa1fa6a3a2a8947b7541dc9f299150df98cddd1d58c4baa8a00",
+      "_pre_api.mat": "b9abbc26a5bdccf9da5c6d5b0afebe75b914aae584b3973f1069583532bde729"
+    }
+  },
+  "zero_primal_start_checked": true,
+  "latest_solve_model": {
+    "snapshot": 1,
+    "rows": 30968,
+    "columns": 192,
+    "finite_valid_python_x_saved": false,
+    "immutable_solved_mat": "interface_01_solved.mat",
+    "immutable_solved_mat_sha256": "69f6dc5a926b78529dbe69c4e58a602033fcc55058a203456c961ea3448ad05b"
+  },
+  "termination": "LP_not_optimal_no_retry",
+  "fine_classes": [],
+  "direction_order": [
+    "relative_c",
+    "relative_S",
+    "coarse_0_0",
+    "coarse_1_0",
+    "coarse_1_1",
+    "coarse_2_0",
+    "coarse_2_1",
+    "coarse_2_2",
+    "coarse_3_0",
+    "coarse_3_1",
+    "coarse_3_2",
+    "coarse_3_3",
+    "coarse_4_0",
+    "coarse_4_1",
+    "coarse_4_2",
+    "coarse_4_3",
+    "coarse_4_4",
+    "coarse_5_0",
+    "coarse_5_1",
+    "coarse_5_2",
+    "coarse_5_3",
+    "coarse_5_4",
+    "coarse_5_5",
+    "coarse_6_0",
+    "coarse_6_1",
+    "coarse_6_2",
+    "coarse_6_3",
+    "coarse_6_4",
+    "coarse_6_5",
+    "coarse_6_6",
+    "coarse_7_0",
+    "coarse_7_1",
+    "coarse_7_2",
+    "coarse_7_3",
+    "coarse_7_4",
+    "coarse_7_5",
+    "coarse_7_6",
+    "coarse_7_7",
+    "coarse_8_0",
+    "coarse_8_1",
+    "coarse_8_2",
+    "coarse_8_3",
+    "coarse_8_4",
+    "coarse_8_5",
+    "coarse_8_6",
+    "coarse_8_7",
+    "coarse_8_8",
+    "coarse_9_0",
+    "coarse_9_1",
+    "coarse_9_2",
+    "coarse_9_3",
+    "coarse_9_4",
+    "coarse_9_5",
+    "coarse_9_6",
+    "coarse_9_7",
+    "coarse_9_8",
+    "coarse_9_9",
+    "coarse_10_0",
+    "coarse_10_1",
+    "coarse_10_2",
+    "coarse_10_3",
+    "coarse_10_4",
+    "coarse_10_5",
+    "coarse_10_6",
+    "coarse_10_7",
+    "coarse_10_8",
+    "coarse_10_9",
+    "coarse_10_10",
+    "coarse_11_0",
+    "coarse_11_1",
+    "coarse_11_2",
+    "coarse_11_3",
+    "coarse_11_4",
+    "coarse_11_5",
+    "coarse_11_6",
+    "coarse_11_7",
+    "coarse_11_8",
+    "coarse_11_9",
+    "coarse_11_10",
+    "coarse_11_11",
+    "coarse_12_0",
+    "coarse_12_1",
+    "coarse_12_2",
+    "coarse_12_3",
+    "coarse_12_4",
+    "coarse_12_5",
+    "coarse_12_6",
+    "coarse_12_7",
+    "coarse_12_8",
+    "coarse_12_9",
+    "coarse_12_10",
+    "coarse_12_11",
+    "coarse_12_12",
+    "coarse_13_0",
+    "coarse_13_1",
+    "coarse_13_2",
+    "coarse_13_3",
+    "coarse_13_4",
+    "coarse_13_5",
+    "coarse_13_6",
+    "coarse_13_7",
+    "coarse_13_8",
+    "coarse_13_9",
+    "coarse_13_10",
+    "coarse_13_11",
+    "coarse_13_12",
+    "coarse_13_13",
+    "coarse_14_0",
+    "coarse_14_1",
+    "coarse_14_2",
+    "coarse_14_3",
+    "coarse_14_4",
+    "coarse_14_5",
+    "coarse_14_6",
+    "coarse_14_7",
+    "coarse_14_8",
+    "coarse_14_9",
+    "coarse_14_10",
+    "coarse_14_11",
+    "coarse_14_12",
+    "coarse_14_13",
+    "coarse_14_14",
+    "coarse_15_0",
+    "coarse_15_1",
+    "coarse_15_2",
+    "coarse_15_3",
+    "coarse_15_4",
+    "coarse_15_5",
+    "coarse_15_6",
+    "coarse_15_7",
+    "coarse_15_8",
+    "coarse_15_9",
+    "coarse_15_10",
+    "coarse_15_11",
+    "coarse_15_12",
+    "coarse_15_13",
+    "coarse_15_14",
+    "coarse_15_15",
+    "coarse_16_0",
+    "coarse_16_1",
+    "coarse_16_2",
+    "coarse_16_3",
+    "coarse_16_4",
+    "coarse_16_5",
+    "coarse_16_6",
+    "coarse_16_7",
+    "coarse_16_8",
+    "coarse_16_9",
+    "coarse_16_10",
+    "coarse_16_11",
+    "coarse_16_12",
+    "coarse_16_13",
+    "coarse_16_14",
+    "coarse_16_15",
+    "coarse_16_16",
+    "coarse_17_0",
+    "coarse_17_1",
+    "coarse_17_2",
+    "coarse_17_3",
+    "coarse_17_4",
+    "coarse_17_5",
+    "coarse_17_6",
+    "coarse_17_7",
+    "coarse_17_8",
+    "coarse_17_9",
+    "coarse_17_10",
+    "coarse_17_11",
+    "coarse_17_12",
+    "coarse_17_13",
+    "coarse_17_14",
+    "coarse_17_15",
+    "coarse_17_16",
+    "coarse_17_17",
+    "coarse_18_0",
+    "coarse_18_1",
+    "coarse_18_2",
+    "coarse_18_3",
+    "coarse_18_4",
+    "coarse_18_5",
+    "coarse_18_6",
+    "coarse_18_7",
+    "coarse_18_8",
+    "coarse_18_9",
+    "coarse_18_10",
+    "coarse_18_11",
+    "coarse_18_12",
+    "coarse_18_13",
+    "coarse_18_14",
+    "coarse_18_15",
+    "coarse_18_16",
+    "coarse_18_17",
+    "coarse_18_18"
+  ],
+  "final_MATLAB_model": {
+    "file": "last_model.mat",
+    "sha256": "69f6dc5a926b78529dbe69c4e58a602033fcc55058a203456c961ea3448ad05b",
+    "scope": "Final mutable MATLAB view; historical pre-API and solved snapshots are separate immutable files."
+  },
+  "source_sha256": "b5d9f5de7259b5c430ef6f0cb6e7e2c75310a41e2731497739e877d2e54cefd5",
+  "module_import_seconds_separate": 0.13061237500369316,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "highspy": "1.15.1"
+  },
+  "scope": "Finite numerical model only. No automatic checker, strict cost proof, MATLAB solve, repair or restart."
+}
