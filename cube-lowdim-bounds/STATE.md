@@ -55,3 +55,6 @@
 
 ## 第36轮
 修正版hlcert SHA4c347b7782120f64e20df07a44b51453feff8eb2e3ed9ab4abfec68f2776fa05仅两积分口analytic传播；标准库AST/diff及独立审读通过。唯一B1 fixed full MKA Q8/A7/K6/96bit/6procs/180hard，实际59.046120416s exit0 PASS，K2628fail0、A219732fail0。report同旧SHA5a31999...但新log21d6dad.../run a9d829...，输入源码前后一致。第二证据链补齐，原件/历史run未改；未另跑公开原核。B1不变，无新界、未证明3.4。下一轮先接纳父52,1连续基线模型，并加入外层K充分约束c>=s*c1，复用原3父格模型。详见rounds/036.md。
+
+## 第37轮
+父52,1 const-only唯一运行6.938126s：385AS+385常数/385Bern/6160准确行，311接受叶、73splits；首depth4失败node615(root97)即停，pending231/completefalse。准确保存模型Fraction重组385模型6160行/树/哈希0.133203s通过，未宣称整父域覆盖。失败盒下界−.01187764176，扣E前−.01187763642，E5.33645e−9、Bernwidth1.5e−48；不是AK负证，不能靠提精度修。B1不变、未证明3.4。35—37阶段无新界，下一阶段复用AS改Psi多项式保持空间抵消，先固定失败盒并审坐标R分支。详见rounds/037.md及C2_TO_34_ROUNDS_035_037.md。
