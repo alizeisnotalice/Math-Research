@@ -1,0 +1,59 @@
+{
+  "status": "PASS independent fixed-formula and adversarial audit",
+  "mass_and_optimization": [
+    {
+      "n": 3,
+      "raw_mass": "(n-1)/n * J * c^(-1/(n-1))",
+      "optimal_c": "g/n",
+      "optimal_cost": "3*sqrt(3)*E",
+      "counterexample_gamma": "3/2",
+      "counterexample_angular_G_integral": "2",
+      "counterexample_angular_G_power_integral": "infinity"
+    },
+    {
+      "n": 4,
+      "raw_mass": "(n-1)/n * J * c^(-1/(n-1))",
+      "optimal_c": "g/n",
+      "optimal_cost": "4*2**(2/3)*E",
+      "counterexample_gamma": "5/2",
+      "counterexample_angular_G_integral": "2",
+      "counterexample_angular_G_power_integral": "infinity"
+    }
+  ],
+  "positive_homogeneous_but_illegal_source_toys": [
+    {
+      "n": 3,
+      "toy": "G=norm_inf(x)^(-(n-1)), c=2^(-(n-1)), g=1",
+      "point": "(1,99/100,0,...)",
+      "geometry_only_cost": "16/3",
+      "L_K_exact": "(-3940598*log(199)/970299 - 2000000*log(101)/970299 + 5881196*log(2)/970299 + 13180633/2600532 + 4000000*log(10)/970299)/(3*pi)",
+      "L_K_rigorous_ball": "[-1.29955655088764209794444344673 +/- 1.28e-30]",
+      "fails_source_positive_away_origin": true
+    },
+    {
+      "n": 4,
+      "toy": "G=norm_inf(x)^(-(n-1)), c=2^(-(n-1)), g=1",
+      "point": "(1,99/100,0,...)",
+      "geometry_only_cost": "48/7",
+      "L_K_exact": "2*(-196059601*log(199)/32019867 - 100000000*log(101)/32019867 + 292119202*log(2)/32019867 + 3611200409849/273243098304 + 200000000*log(10)/32019867)/(7*pi)",
+      "L_K_rigorous_ball": "[-1.17343650919328562523014523106 +/- 2.58e-30]",
+      "fails_source_positive_away_origin": true
+    }
+  ],
+  "n3_independent_residue_anchors": {
+    "p_axis": "4*t*(80*t**2 + 1)/(pi**3*(16*t**2 + 1)**3)",
+    "p_edge": "2*t*(40*t**2 + 1)/(pi**3*(4*t**2 + 1)*(16*t**2 + 1)**2)",
+    "G_axis": "3/(8*pi**3)",
+    "G_edge": "-log(4)/(4*pi**3) - 1/(8*pi**3) + log(16)/(4*pi**3)",
+    "scope": "only two fixed points, hence upper bounds on true g; no global face minimum certified"
+  },
+  "analytic_conditions": "For actual transient probability semigroup with pt infinity<=C t^-n: split short-time L1/long-time Linfinity yields weak L^{n/(n-1)}, hence J=n*volume{G>1}<infinity. Semigroup Jensen gives L(G-c)+ >= -delta0 distributionally; complete source theory separately locked/audited in026.",
+  "shared_libraries": {
+    "SymPy": "1.14.0",
+    "arb": "python-flint, 128 bits",
+    "Fraction": "Python standard library"
+  },
+  "scope": "no cone code, no theory implementation, no g/J grid, no new cost or global bound",
+  "elapsed_seconds": 1.0084942079993198,
+  "checker_sha256": "1099d021e5be745ae185c0d77adc592e4a9fad732776e225b8587409c4ce31c8"
+}

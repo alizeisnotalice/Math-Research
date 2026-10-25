@@ -1,0 +1,126 @@
+{
+  "batch": "U09",
+  "status": "finite exact diagnostics PASS; not continuum source/cost certification",
+  "matrix": {
+    "generator": [
+      [
+        "-1",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "-2",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "-2",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "-2",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "-1"
+      ]
+    ],
+    "t": "1/4",
+    "green": [
+      "0",
+      "3/4",
+      "1/2",
+      "1/4",
+      "0"
+    ],
+    "green_source": [
+      "3/4",
+      "-1",
+      "0",
+      "0",
+      "1/4"
+    ],
+    "threshold": "3/8",
+    "positive_part": [
+      "0",
+      "3/8",
+      "1/8",
+      "0",
+      "0"
+    ],
+    "new_positive_source": [
+      "3/8",
+      "3/8",
+      "1/8",
+      "1/8",
+      "0"
+    ],
+    "new_source_mass": "1",
+    "jensen_slack": [
+      "3/32",
+      "3/32",
+      "1/32",
+      "1/32",
+      "0"
+    ],
+    "note": "source-node positive mass3/8 exists in finite model; continuum no-atom uses small-cutoff proof"
+  },
+  "symbolic_mass_checks": [
+    {
+      "n": 3,
+      "q": "3/2",
+      "radial_mass": "2*a**(3/2)/(3*sqrt(c))",
+      "layer_integral": "2/sqrt(c)",
+      "cost_log_derivative": "-(3*c - g)/(2*c*(c - g))",
+      "optimal_c": "g/3",
+      "optimal_mass_ratio": "sqrt(3)*J/(8*g**(3/2))",
+      "line_small_time_integral": "oo",
+      "off_line_small_time_integral": "1/2"
+    },
+    {
+      "n": 4,
+      "q": "4/3",
+      "radial_mass": "3*a**(4/3)/(4*c**(1/3))",
+      "layer_integral": "3/c**(1/3)",
+      "cost_log_derivative": "-(4*c - g)/(3*c*(c - g))",
+      "optimal_c": "g/4",
+      "optimal_mass_ratio": "2**(2/3)*J/(16*g**(4/3))",
+      "line_small_time_integral": "oo",
+      "off_line_small_time_integral": "1"
+    }
+  ],
+  "new_upper_bound": false,
+  "code_sha256": "54f1293b7b5f0eb7bcc3f821ee69818c6f95947c75c728c804e5adbb2f1ca16f",
+  "matlab_actual": {
+    "source_sha256": "ffa4861a86ef6453a798b2992136814b7856a969d5cb4bf82912b01bd76685d6",
+    "runner": "serialized primary local MATLAB_R2026a -batch",
+    "exit_code": 0,
+    "output": "U09 rows 0 source_mass 1 min_source 0\nU09 raw_source 0.75 -1 0 0 0.25\nU09 positive_source 0.375 0.375 0.125 0.125 0\nU09 Jensen_slack 0.09375 0.09375 0.03125 0.03125 0\nU09 algebra n3 radial_defect 0 normalized_formula_defect 2.7755575615628914e-17\nU09 algebra n4 radial_defect 8.8817841970012523e-16 normalized_formula_defect 0\n",
+    "scope": "finite path algebra only, not continuum bound",
+    "shared_session_modified": false,
+    "receipt_path": "/Users/zhengzhihao/Desktop/T/Math-Research-finite-dim/cube-finite-dim-bounds/results/round009_u09_matlab.json",
+    "receipt_sha256": "8949c7d53f378bc7381d572292df09c8a133cc010a90c586425f132138b8728c",
+    "log_path": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/round009_u09_matlab.log",
+    "log_sha256": "f6bd994e8079555417f14c83cf4366ded0e6c476a6338c097d221f0f0785f928"
+  },
+  "external_comparison_only": {
+    "path": "/Users/zhengzhihao/Desktop/T/Math-Research-finite-dim/cube-finite-dim-bounds/results/round009_cost_probe.json",
+    "sha256": "2e7a9159bead457f85942bfd5aadcc6d074e6c32b7d402d6fbc458a995d04eb4",
+    "scope": "read primary numerical record, not recomputed or certified in this branch",
+    "status": "numerical only: sampled minimum is an upper bound on true g, so these costs are not certified upper bounds"
+  }
+}
