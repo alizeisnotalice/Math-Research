@@ -1,6 +1,6 @@
 # 六维中心方体研究状态
 
-active。最新顺序归档至014；严格C6>2067397333267/10^12，C6≤64。上下门槛完整准确表达、原始系数与区间见results/bounds_ledger.json，展示小数不作证书。Lebesgue、中心、轴平行、共同半径、一般L1、所有r>0不变；资料包、原暂停项目及五维只读。
+active。最新顺序归档至015；严格C6>2067397333267/10^12，C6≤64。上下门槛完整准确表达、原始系数与区间见results/bounds_ledger.json，展示小数不作证书。Lebesgue、中心、轴平行、共同半径、一般L1、所有r>0不变；资料包、原暂停项目及五维只读。
 
 优先级：上界为主，下界低资源。A/B/C/F和独立Astra角色集中上界；D低资源019仅12个有理parity检查CPU约.000278秒，没有union/扫描/旧基线；E、D下界Astra无计算。默认sol high/xhigh，瓶颈/突破授权Astra，主保留证明、集成及push责任。MATLAB仅主串行，不clear/重置path/干扰其他项目。代理独立clone、明确文件所有权，不共享暂存、不覆盖、不push、不扩招。
 
@@ -13,3 +13,5 @@ active。最新顺序归档至014；严格C6>2067397333267/10^12，C6≤64。上
 lower_since_phase_freeze=true，upper=false，dual_checkpoint=null，post_dual0/3。必须双侧严格认证后从下一轮共同再三轮，最后独立审计与实际最小代码全过，才编译论文/核验push/释放本任务资源并停止。当前尚未满足完成条件。主clone /Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6；数学Python /Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python。
 
 014归档完成：generic短势/梯度/密度联合引擎和独立审计通过；软件证据不作全域C6界。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
+
+015归档完成：T48第二点首停严格反例独审通过；band Taylor局部认证改进、无完整全域tree。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
