@@ -1,0 +1,14 @@
+{
+  "round": "006",
+  "status": "registered_before_execution",
+  "mechanism": "period-two alternating mass only in the first lattice coordinate",
+  "parameters": ["1/8", "1/4", "1/2"],
+  "spacing": "the fixed rational dyadic spacing recorded by lower_round005; it comes from algebraic root isolation, not displayed decimals",
+  "period": "2*a1 x a2 x a3 x a4 x a5, mass 2",
+  "lengths": "{1,2,3,4}^5; first-axis starts j=-5,...,3",
+  "first_axis_mass": "l1 + theta*(-1)^j when l1 odd, otherwise l1; multiply by l2*l3*l4*l5",
+  "level_and_ratio": "strict r^5 < mass/32; receiver domain [0,2a1] x prod_{2..5}[0,ak/2]; ratio = 16*union_volume/2 = 8*union_volume",
+  "limits_per_candidate": {"wall_seconds": 120, "recursive_nodes": 200000},
+  "scope": "a finite periodic-model diagnostic only. A new finite-collar and smoothing/transfer audit is required before any C5 claim.",
+  "stop_conditions": ["deadline", "node cap", "union-engine mismatch", "failed strict mass-radius feasibility", "all three candidates complete"]
+}

@@ -1,0 +1,13 @@
+{
+  "round": "007",
+  "status": "registered_before_execution",
+  "mechanism": "common last-four spacing event-interval analysis around C",
+  "family": "a1=1+u^3/2 fixed; a2=a3=a4=a5=(1+u)/2+delta; full l in {1,2,3,4}^5",
+  "event_window": "delta in [-1/16,1/16]",
+  "batch": "at most four adjacent event intervals on each side of delta=0; at most 32 Bernstein subdivisions per selected interval",
+  "exact_work": "all raw endpoint functions and event ordering in Q(u,v), u^5=2, v^5=3; each interpolation datum is an exact dual-union evaluation; rational nodes are chosen strictly within each exact event interval",
+  "degree_claim": "on an event interval, endpoint order and coverage masks are fixed, so the first-coordinate factor is constant and the other four affine factors give union ratio degree at most 4 in delta",
+  "acceptance": "a potential improvement requires complete exact union certificate whose lower endpoint exceeds locked C upper endpoint; a Bernstein exclusion is only local to the listed intervals",
+  "limits": {"per_exact_union_seconds":120, "per_union_nodes":200000, "per_interval_bernstein_subdivisions":32},
+  "stop_conditions": ["eight selected intervals finished", "combinatorial event construction fails", "union limit", "Bernstein unresolved at cap", "certified improvement"]
+}

@@ -1,0 +1,12 @@
+{
+  "round": "008",
+  "status": "registered_before_execution",
+  "mechanism": "two-group tail-spacing symmetry breaking",
+  "spacing": "a1=1+u^3/2; a2=a3=(1+u)/2+delta; a4=a5=(1+u)/2-delta",
+  "candidates": ["1/512", "1/256", "1/128"],
+  "negative_delta": "not run: it is coordinate-permutation equivalent to positive delta",
+  "length_family": "{1,2,3,4}^5, all 1024 contiguous blocks",
+  "exactness": "Q(u,v), u^5=2, v^5=3; exact dual union engines; compare ratio directly to full C coefficient vector",
+  "limits_per_candidate": {"wall_seconds":120, "recursive_nodes":200000},
+  "stop_conditions": ["all three candidates complete", "union mismatch", "limit", "strict exact improvement over C"]
+}

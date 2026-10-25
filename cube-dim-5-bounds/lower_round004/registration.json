@@ -1,0 +1,14 @@
+{
+  "round": "004-lower-a",
+  "task": "common-tail-spacing perturbations around the certified C configuration",
+  "fixed_a1": "1+u^3/2",
+  "tail_spacing": "t=(1+u)/2+delta shared by a2,a3,a4,a5",
+  "deltas": ["-1/64", "-3/256", "-1/128", "-1/256", "1/256", "1/128", "3/256", "1/64"],
+  "deduplication": "These common-tail configurations differ from the prior asymmetric tail perturbations and have not been evaluated in lower_round003.",
+  "length_vectors": "all l in {1,2,3,4}^5",
+  "arithmetic": "Q(u,v), u^5=2, v^5=3, exact Fraction coefficients and isolating intervals for order only",
+  "per_candidate_soft_stop_seconds": 120,
+  "recursive_node_stop": 200000,
+  "comparison": "each exact lower endpoint is compared to the certified C exact upper endpoint from lower_round003/lock_c_a2_equals_a3.json",
+  "limitation": "With four spacings varying together, the union volume can be piecewise polynomial of degree at most four.  This finite eight-point batch is not a coordinate-optimality claim."
+}

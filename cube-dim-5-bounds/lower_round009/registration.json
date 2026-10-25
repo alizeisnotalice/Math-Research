@@ -1,0 +1,14 @@
+{
+  "round": "009",
+  "status": "registered_before_execution",
+  "mechanism": "equal-mass period-two alternating first-axis spacing",
+  "first_axis_atoms": "x_j=j*a1 for even j, x_j=j*a1+delta for odd j; period 2*a1 has atoms at 0 and a1+delta",
+  "fixed_spacings": "a1=1+u^3/2; a2=a3=a4=a5=(1+u)/2",
+  "candidates": ["1/32", "1/8", "1/4"],
+  "blocks": "all l in {1,2,3,4}^5, unit atom weights, common radius (prod l)^(1/5)/2; first-axis starts j=-6,...,5",
+  "receiver_cell": "[0,2*a1] x product_{2..5}[0,ak/2]",
+  "normalization": "16 reflected tail cells / mass 2 = 8, so ratio=8*absolute_union_volume",
+  "exactness": "Q(u,v), exact dual unions, compare to full C coefficient vector",
+  "limits_per_candidate": {"wall_seconds":120, "recursive_nodes":200000},
+  "scope": "finite periodic diagnostic only; any winning input would need separate collar/smoothing transfer"
+}
