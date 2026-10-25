@@ -1,0 +1,22 @@
+{
+  "time": "2026-10-26T05:03:08.486306+08:00",
+  "results": [
+    {
+      "command": "audit/round029/leakage_counterexample_review/check.py",
+      "exit_code": 0,
+      "elapsed_seconds": 0.02587754200794734,
+      "stdout": "{\n  \"status\": \"PASS_ALL_8_EXACT_CHECKS\",\n  \"completed_utc\": \"2026-10-25T21:03:08.482971+00:00\",\n  \"arithmetic\": \"Python fractions.Fraction; no floats\",\n  \"checks\": [\n    {\n      \"name\": \"01_parameter_order\",\n      \"pass\": true,\n      \"d\": \"1/1000000\",\n      \"a\": \"19/20\",\n      \"b\": \"999999/1000000\",\n      \"r0\": \"949999/1000000\"\n    },\n    {\n      \"name\": \"02_total_mass\",\n      \"pass\": true,\n      \"background_mass\": \"2048\",\n      \"spike_mass\": \"32\",\n      \"total_mass\": \"2080\"\n    },\n    {\n      \"name\": \"03_unique_big\",\n      \"pass\": true,\n      \"twice_big_threshold\": \"224/5\",\n      \"total_spike\": \"32\"\n    },\n    {\n      \"name\": \"04_small_bound\",\n      \"pass\": true,\n      \"S\": \"1435087247951592576602513537494300001/1470174495903185153205027074988600002\",\n      \"h_minus_S\": \"70142887151523234724233166906487747099957/2940348991806370306410054149977200004000000\"\n    },\n    {\n      \"name\": \"05_big_bound\",\n      \"pass\": true,\n      \"B\": \"2773776091200458763651263774994250001/2940348991806370306410054149977200004\",\n      \"h_minus_B\": \"166541291854249624277996466900837748099957/2940348991806370306410054149977200004000000\"\n    },\n    {\n      \"name\": \"06_leakage\",\n      \"pass\": true,\n      \"slab_volume\": \"49998750005499989500010249994950001/31250000000000000000000000000000000\",\n      \"L6_allowance\": \"4472/3125\",\n      \"strict_gap\": \"5278750005499989500010249994950001/31250000000000000000000000000000000\"\n    },\n    {\n      \"name\": \"07_support_margin\",\n      \"pass\": true,\n      \"b_plus_d\": \"1\",\n      \"two_b_plus_d\": \"1999999/1000000\"\n    },\n    {\n      \"name\": \"08_constants\",\n      \"pass\": true,\n      \"theta\": \"43/4000000\",\n      \"coefficient\": \"43/62500\",\n      \"h\": \"3999957/4000000\"\n    }\n  ],\n  \"kernel_calls\": 0,\n  \"union_engine_calls\": 0,\n  \"matlab_calls\": 0,\n  \"spatial_grids\": 0,\n  \"script_sha256\": \"0eb30926872d8a7862457961f7fdceb7a56fdcc3714f563c0d8c346fdbdbcf64\",\n  \"input_sha256\": \"be629400e5ff8e6f022dfea1eb0aabe33aadd927112cb08a8e5b077d858574c5\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "full_kernel_calls": 0,
+  "lower_calculations": 0,
+  "saved_new_outputs": [
+    {
+      "path": "audit/round029/leakage_counterexample_review/results.json",
+      "receipt": "rounds/029/primary_replay/audit/round029/leakage_counterexample_review/results.json",
+      "sha256": "b2d486fc13c71634de84d1a7805cf62a362538d7973528c4d65960b54c24fbd4"
+    }
+  ],
+  "author_frozen_outputs_restored": true
+}

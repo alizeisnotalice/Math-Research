@@ -1,0 +1,63 @@
+{
+  "status": "PASS_EIGHT_EXACT_CHECKS_ONLY",
+  "checks": [
+    {
+      "name": "mass and finite L1 source",
+      "PASS": true,
+      "mass": "2080",
+      "spike_density": "500000000000000000000000000000000000"
+    },
+    {
+      "name": "exact L6 allowance",
+      "PASS": true,
+      "theta": "43/4000000",
+      "allowance": "4472/3125"
+    },
+    {
+      "name": "all small components below h",
+      "PASS": true,
+      "upper": "1435087247951592576602513537494300001/1470174495903185153205027074988600002",
+      "height": "3999957/4000000",
+      "margin": "70142887151523234724233166906487747099957/2940348991806370306410054149977200004000000"
+    },
+    {
+      "name": "unique big component below h",
+      "PASS": true,
+      "upper": "2773776091200458763651263774994250001/2940348991806370306410054149977200004",
+      "height": "3999957/4000000",
+      "margin": "166541291854249624277996466900837748099957/2940348991806370306410054149977200004000000"
+    },
+    {
+      "name": "slab exceeds L6 allowance",
+      "PASS": true,
+      "volume": "49998750005499989500010249994950001/31250000000000000000000000000000000",
+      "margin": "5278750005499989500010249994950001/31250000000000000000000000000000000",
+      "leakage_ratio_lower": "3846057692730768423077711538073077/5000000000000000000000000000000000000"
+    },
+    {
+      "name": "small radial bound decreasing",
+      "PASS": true,
+      "derivative": "-21/(10*r**7)"
+    },
+    {
+      "name": "big radial bound decreasing",
+      "PASS": true,
+      "derivative": "-(r**5 + 240)/(80*r**7)"
+    },
+    {
+      "name": "strict full-input witness on 0<r<1",
+      "PASS": true,
+      "residual": "0",
+      "positive_factorization": "(1 - r)*(r**5 + r**4 + r**3 + r**2 + r + 1)/(2*r**6)"
+    }
+  ],
+  "kernel_calls": 0,
+  "union_or_grid_runs": 0,
+  "new_C6_bound": false,
+  "pid": 40794,
+  "elapsed_seconds": 0.015792999998666346,
+  "python": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "sympy": "1.14.0",
+  "registration_sha256": "4cbeb186792d0b5b285f6acbfa45d9ab4cadc06a29abdf47ec3d7c8b25792fb1",
+  "exit_code": 0
+}
