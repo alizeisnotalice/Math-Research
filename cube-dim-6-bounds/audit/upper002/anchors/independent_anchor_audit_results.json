@@ -1,0 +1,73 @@
+{
+  "case_A_reproduced_author_nonpilot_anchor": {
+    "aggregated_interval": "[3.48079723832451724433456244140170679164286169372536827982159274195282507457497633615859601e-5 +/- 3.05e-95]",
+    "author_declared_interval": "[3.48079723832451724433456244140170679164286169372536827982159274195282500000000000000000000e-5 +/- 7.47e-76]",
+    "contains_zero": true,
+    "direct_interval": "[3.48079723832451724433456244140170679164286169372536827982159274195282507457497633615859601e-5 +/- 3.05e-95]",
+    "direct_minus_aggregated": "[-1.61518781018070688196657749477579675694268516301129685777835358024795682307145322036598142e-153 +/- 4.77e-151]",
+    "direct_minus_author_declared": "[7.45749763361585960130450195591127990241510305547729188797506664415900699771755345974547367e-76 +/- 7.47e-76]",
+    "direct_terms": 20160,
+    "epsilon": "1/1000",
+    "full_action_count": 46080,
+    "merged_exact_node_tuples": 20076,
+    "orbit_size": 960,
+    "overlaps_author_interval": true,
+    "point": [
+      "1",
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4",
+      "0"
+    ],
+    "stabilizer": 48
+  },
+  "case_B_fresh_epsilon": {
+    "aggregated_interval": "[0.000117420000785534475132830169970009858797661865665626884726522123324283638636643863193780833 +/- 1.38e-94]",
+    "contains_zero": true,
+    "direct_interval": "[0.000117420000785534475132830169970009858797661865665626884726522123324283638636643863193780833 +/- 1.38e-94]",
+    "direct_minus_aggregated": "[-9.09111645962375122216512275017575610162755985643804782680372166823461593151105206063110614e-152 +/- 3.14e-150]",
+    "direct_terms": 10080,
+    "epsilon": "1/1500",
+    "full_action_count": 46080,
+    "merged_exact_node_tuples": 8686,
+    "orbit_size": 480,
+    "point": [
+      "1",
+      "1/2",
+      "1/2",
+      "0",
+      "0",
+      "0"
+    ],
+    "stabilizer": 96
+  },
+  "epsilon_check": "Both epsilons are positive exact Fractions. The formula is evaluated for integral from epsilon to infinity, not substituted for the epsilon=0 Green potential.",
+  "formula_scope": "Assumes the separately stated finite-cone identity H_epsilon=(2*pi)^-6 sum alpha DD5 atan(b/epsilon); this audit checks its finite exact-node realization.",
+  "inputs": {
+    "author_batch_sha256": "6d5fe3fb515a7f31efa2b9af440170964c832f28d24c65a5040fd959274ee6e9",
+    "author_results_sha256": "f5c91cfc7fdaae5b9650970085bd0664250eba380bf6c1e4b113d1617f27b6a8",
+    "fan": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/upper/round002/fan/exact_cells_results.json",
+    "fan_sha256": "18d8aa578f84283d00e1c9c30522fb14cc49812092afd5716f2cc9ae68ba2798"
+  },
+  "interval_rounding_check": "All input nodes/coefficients are Fraction through equality, sorting, orbit multiplicity and aggregation; arithmetic after exact-to-Arb conversion is Arb ball arithmetic at 512 bits. The reported values are enclosures, not displayed floating-point values.",
+  "not_checked": [
+    "validity of the 21-cell fan as a full Fourier cone cover",
+    "global convergence as epsilon tends to zero",
+    "continuous face minimum",
+    "g0",
+    "I0",
+    "a weak-(1,1) C6 bound"
+  ],
+  "precision_bits": 512,
+  "reality_conjugation_check": "All b_j, alpha and multiplicities are exact real rationals. The evaluator uses the real DD5[atan(b/epsilon)] identity, which is the real part of the complex cone integral in the stated kernel interface; no unpaired complex term is numerically discarded.",
+  "scope": "Two finite H_epsilon values only; neither global H/g nor face integral nor C6 is certified.",
+  "software": {
+    "python": "3.15.0",
+    "python_flint": "0.9.0",
+    "sympy": "1.14.0"
+  },
+  "source_sha256": "0dc8485486552bd5ee1ff22567d28facf2a2f7f3836f734a06c7546cea0ec7b1",
+  "status": "independent_bounded_anchor_audit_pass",
+  "symbolic_F_e_derivatives_orders_1_to_5": true
+}

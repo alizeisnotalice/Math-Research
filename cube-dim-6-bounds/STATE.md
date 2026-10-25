@@ -1,6 +1,6 @@
 # 六维中心方体研究状态
 
-状态：active。第001轮完成，下界突破；上界未突破。总目标未完成，尚不生成最终论文PDF。
+状态：active。第001轮完成并已推送c3f73ea2d05ff3f987086d05f25bd3779f0a9a99；第002轮完成，待本轮提交推送。下界突破，上界未突破。总目标未完成，尚不生成最终论文PDF。
 
 固定Lebesgue、中心轴平行、共同半径、一般L1、全部正尺度。三四维资料包与五维项目只读，不改变其状态。
 
@@ -10,6 +10,5 @@
 
 停止路线：各向同性和坐标product正部模型成本已严格排除；三对角块仅数值不佳；32-body条件化MonteCarlo方差失控已停。不要重复这些基线/网格。
 
-下一轮002：准确32-body谱胞元与单纯剖分；已有12可变号form准确计数、21开cell浮点诊断，未认证覆盖。尚未启动下一轮计算。第001轮所有计算已结束，子代理无运行计算句柄。
-
-主clone /Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6。独立代理clone只供取证，不共享暂存区。Python环境 /Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python（3.15/SymPy1.14/flint0.9）。MATLAB前次成功短检后工具报jupyter.Idler，未clear/path重置、未创建图窗。
+第002轮完成，待本轮提交推送：32-body谱fan已由准确8568交点系统/4096符号模式重建，21单纯胞元覆盖及peak积分通过独立审计。商空间短时face范数预算收紧为 (6/7)(32/243)^(1/6)π^(-11/6)ε^(7/6)。12个三层非奇异锚点的Hε区间已实际完成，已通过独立审计；它们不能认证全局g。下一步先评估模型成本排除判据及连续认证可行性，避免盲目大网格。两个非奇异点G准确Q/π^5已求得，主点通过独立4-jet复核；尚缺face积分预算，不能排除或认证模型成本。当前无运行中的计算句柄。
+主clone /Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6。独立代理clone只供取证，不共享暂存区。Python环境 /Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python（3.15/SymPy1.14/flint0.9）。MATLAB第002轮恢复并完成三个新标量核验，未clear/path重置、未创建图窗。

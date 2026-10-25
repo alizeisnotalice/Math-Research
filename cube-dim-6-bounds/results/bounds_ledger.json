@@ -10,7 +10,7 @@
     ],
     "certificate": "baseline/original_certificates.json",
     "source_sha256": "030ce0d945b1864e70a6dee24259f0145ed6a71650925524987cf299ef4d6e69",
-    "transfer_status": "proof_under_current_review"
+    "transfer_status": "proved and audited; see rounds/001.md and lower/round001 proof"
   },
   "upper": {
     "exact": "64",
@@ -83,5 +83,21 @@
     "comparison_rule": "next candidate reliable lower must exceed full exact R6 interval upper, not simple display"
   },
   "current_round": 1,
-  "objective_complete": false
+  "objective_complete": false,
+  "round002_status": {
+    "new_C6_bound": false,
+    "upper_exact": "64",
+    "certified_model_infrastructure": [
+      "exact 21-simplex body fan coverage and peak",
+      "whole-face short-time L6/5 budget",
+      "finite exact Green point via globally cancelled Laurent principal parts"
+    ],
+    "pending": [
+      "continuous g lower certificate",
+      "continuous I upper certificate",
+      "strict cost below64"
+    ],
+    "pointwise_data": "upper/round002/anchors/truncated_anchor_results.json",
+    "green_point_certificate": "upper/round002/green_point/laurent_points_results.json"
+  }
 }
