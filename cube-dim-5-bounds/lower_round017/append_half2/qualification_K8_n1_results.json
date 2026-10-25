@@ -1,0 +1,144 @@
+{
+  "status": "PASS_one_analytic_planar_cover_qualification",
+  "K": 8,
+  "n": 1,
+  "exact_common_radius": "8^(1/5)/2=u^3/2",
+  "strict_inner_radius": "1832388892472054596080455/2417851639229258349412352",
+  "selected_mass": 8,
+  "nearest_point_cover_proof": "round both original rotated-lattice coordinates to integers; error lies in[-1/2,1/2]^2 and R maps its corners to supnorm<=7/10; multiply by s",
+  "supnorm_cover_radius_upper": "18183318439435771893530329/24178516392292583494123520",
+  "strict_radius_margin_lower": "140570485284774067274221/24178516392292583494123520",
+  "plane_capture_set": "entire full[0,5s]^2 period even at the strict inner radius",
+  "plane_area_exact_expression": "25*s^2=(25/4)+(25/2)*u+(25/4)*u^2",
+  "plane_area_interval": [
+    "42172585391572060578424183010153790598591879263225/1461501637330902918203684832716283019655932542976",
+    "168690341566288242313696861921461158364166756555225/5846006549323611672814739330865132078623730171904"
+  ],
+  "first_axis_activation_parameter_interval": [
+    "1832388892472054596080455/1208925819614629174706176",
+    "229048611559006824510057/151115727451828646838272"
+  ],
+  "single_family_ratio_expression": "8*s^2*(r-a/2)*(r-s/2)^2 for3/2<=a<2r;0 for a>=2r",
+  "single_family_maximum_at_a": [
+    "3/2"
+  ],
+  "single_family_maximum_ratio_interval": [
+    "36501215453089285373761801033220148154466281844617301513981860877513822609061393137613134743819709831248334859832145991/10328999512347634358623676688012047497318823171316894051322637426162590488067364778518581413120551325743612687890989973504",
+    "4562651931636160671720494432651011038755069731464825563234462057338881230516419407714746913087001061893464059617039449/1291124939043454294827959586001505937164852896414611756415329678270323811008420597314822676640068915717951585986373746688"
+  ],
+  "single_family_alone_below_C_cert": true,
+  "unrotated_inner_box_at_a_3_2": [
+    "1794388566371832928038073/2417851639229258349412352",
+    "3/4",
+    "95653503430917673588699/302231454903657293676544",
+    "1298808459959697992395023/2417851639229258349412352",
+    "95653503430917673588699/302231454903657293676544",
+    "1298808459959697992395023/2417851639229258349412352"
+  ],
+  "distinct_unrotated_vertices": 8,
+  "exact_corner_and_endpoint_inequalities_checked": 56,
+  "original_pending_materialized_plane_packets": 18,
+  "analytically_resolved_capture_cases": [
+    [
+      8,
+      1
+    ]
+  ],
+  "remaining_unresolved_capture_count": 17,
+  "remaining_unresolved_capture_cases": [
+    [
+      8,
+      2
+    ],
+    [
+      27,
+      10
+    ],
+    [
+      27,
+      11
+    ],
+    [
+      27,
+      12
+    ],
+    [
+      27,
+      13
+    ],
+    [
+      27,
+      14
+    ],
+    [
+      27,
+      15
+    ],
+    [
+      27,
+      16
+    ],
+    [
+      36,
+      10
+    ],
+    [
+      36,
+      11
+    ],
+    [
+      36,
+      12
+    ],
+    [
+      36,
+      13
+    ],
+    [
+      36,
+      14
+    ],
+    [
+      48,
+      8
+    ],
+    [
+      48,
+      9
+    ],
+    [
+      48,
+      10
+    ],
+    [
+      48,
+      11
+    ]
+  ],
+  "fixed_atom_ID_partition_materialized": false,
+  "downstream_usage": "use wholeplane with its nearest-point selector proof; do not assignonefixedatomID totheentireperiod; materialize a fixed-IDpartition only if a laterpipeline requiresit",
+  "source_sha256": "d72355749242be52a966fb00607ec183253d1d60bd33e91891fbd62528a27192",
+  "previous_result_sha256": "a865d31660cec73a4abb0eee64719f7032c32f8f8305911b6e63616a2897ca3b",
+  "C_source_sha256": "f385811e5460af63abc117804965461eed88d8ecb5b9d2cd30268387646f45d2",
+  "nodes": 56,
+  "runtime": {
+    "pid": 27674,
+    "nice": 10,
+    "threads": 1,
+    "peak_rss_bytes": 21741568,
+    "wall_seconds": 0.0022722090070601553,
+    "thread_environment": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "BLIS_NUM_THREADS": "1"
+    }
+  },
+  "limits": {
+    "seconds": 120,
+    "nodes": 200000
+  },
+  "scope": "one previouslyunevaluated planarcase only; no arrangement scan,fullunion,newparameter grid or lowerrecord"
+}

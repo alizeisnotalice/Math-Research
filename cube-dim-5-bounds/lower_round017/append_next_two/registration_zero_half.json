@@ -1,0 +1,63 @@
+{
+  "stage": "first_of_atmost_two_new_shortest_streams_from4of10",
+  "registered_at_utc": "2026-10-25T18:38:23.623632+00:00",
+  "selected_stream": [
+    "0",
+    "1/2"
+  ],
+  "expected_pairs": 159,
+  "starting_completed_streams": [
+    [
+      "0",
+      "1"
+    ],
+    [
+      "1/2",
+      "2"
+    ],
+    [
+      "1/2",
+      "1"
+    ],
+    [
+      "-1",
+      "1/2"
+    ]
+  ],
+  "prior_progress_path": "append_two_shortest/result_minus1_half.json",
+  "prior_progress_sha256": "0ee2edd70b34207ba870d765d0eaccc405122bb3b5b42da9362e1daa0b33de28",
+  "completed_event_inputs": [
+    {
+      "path": "event_stream_slopes0_1.json",
+      "sha256": "d45155b905cc9fcbe4d662339fa4e94ea3a46a7bc9fde8d653b766580b5881bb"
+    },
+    {
+      "path": "append_half2/stream_half2_results.json",
+      "sha256": "67b3b5b6f4d732a1e78ed1a8f72d3124579d0bb8680e772f44a260e2b384bb17"
+    },
+    {
+      "path": "append_two_shortest/result_half1.json",
+      "sha256": "eebc56c1365baa2a1217bb34cf7b75b8a018be0502119c8e2d108b2522a9480e"
+    },
+    {
+      "path": "append_two_shortest/result_minus1_half.json",
+      "sha256": "0ee2edd70b34207ba870d765d0eaccc405122bb3b5b42da9362e1daa0b33de28"
+    }
+  ],
+  "raw_catalog_sha256": "9c55f5bc4a3a1a91e39f68f752c74eb075960c58caf5b40aca11cd3f901e9def",
+  "exact_helper_sha256": "94bc6201b0679088c08082cb21e2dcafc06a5af2060e9b05c03be98b2a0f3de7",
+  "plane_qualification_sha256": "7ee28a3a9ba20e63da026cb12fefb2c2e20564cb366cca4577f89ed302b7b2a3",
+  "source_sha256": "ed6bc7f53a88e38d913f8e7d9828f30a34f8bb10a429ad9b0870c2e876909002",
+  "limits": {
+    "seconds": 120,
+    "nodes": 200000
+  },
+  "resources": {
+    "single_process": true,
+    "nice_minimum": 10,
+    "numeric_threads": 1
+  },
+  "outside_retention": "exact pairclassification/bounds and deterministictracehash, not a large outsideeventarray",
+  "no_new_plane_qualification": true,
+  "scope": "only one eventstream; no union, grid, angle or fixed-IDpartition"
+}

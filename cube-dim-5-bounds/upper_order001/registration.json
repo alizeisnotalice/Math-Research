@@ -1,0 +1,13 @@
+{
+  "status":"registered_before_order_max_point_computation",
+  "mechanism":"Partition the original 16 iid stable variables by their unique maximum; conditional on max winner value z, the remaining15 are iid conditioned on S<=z. No tilt and no KL.",
+  "point":[1,1,1,1,0],
+  "projection_groups":[{"p":"16/5","q":"4/5","count":2},{"p":"4/5","q":"16/5","count":8},{"p":"0","q":"4","count":6}],
+  "conditional_moments":"Derive exact truncated first/inverse moment series from the stable tail expansion and Laplace inversion. No lower cutoff delta is introduced.",
+  "partition":{"left":"1","ratio":"65/64","bins":1024,"weight":"(F(right)^16-F(left)^16)/16 per maximum winner"},
+  "series":{"terms_per_residue":64,"residues":[1,2,3],"modulus":4,"remainder":"First omitted alternating term; adjusted moment ratios are bounded by z^-3/(k+4) and z^-3/k."},
+  "omissions":"For the lower bound discard z<1 and z>last endpoint. For the upper bound use m>=a>=F/n0 and B_a<=16zI at z<1, and m>=m(U),a<=a0 at z>U.",
+  "resource_limit":{"seconds":120,"processes":1},
+  "stopping":"Report one-point formula interval and compare with52e-6 and1e-4. No all-domain grid, no top2/3 layer, no new parameter search in this batch.",
+  "scope":"Lower bound on actualG. An upper enclosure bounds this particular order-max Jensen formula, not actualG."
+}

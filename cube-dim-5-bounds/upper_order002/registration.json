@@ -1,0 +1,12 @@
+{
+  "status":"registered_after_exact_geometry_and_weights_before_top2_integration",
+  "point":[1,1,1,1,0],
+  "mechanism":"Partition by the unordered pair of largest original stable variables; retain both values, condition the remaining14 variables below their minimum. No tilt or KL.",
+  "geometry":"120 unordered body pairs grouped into11 exact invariant classes (r²,b1²,b2²,r*b1*b2); full square integration per pair, without an additional factor1/2.",
+  "partition":{"left":"1/4","ratio":"17/16","bins":256},
+  "weights":{"off_diagonal":"(F_i_hi-F_i_lo)*(F_j_hi^15-F_j_lo^15)/15 for i>j, evaluated in both label orientations","diagonal":"2*[F_hi*(F_hi^15-F_lo^15)/15-(F_hi^16-F_lo^16)/16]"},
+  "moments":"Exact stable CDF/truncated moment series proved in upper_order001,64 terms per residue with valid remainders for z>=1/4.",
+  "tail_bounds":"Use q>=1/(20*min(z1,z2)), detplane>=16*z1*z2, m>=a>=F/n0. Low minimum below1/4 is bounded analytically. For the high complement, integrate the finite smaller-variable factor by positive bin bounds and use the iid minimum squared-tail bound when both exceedU.",
+  "resource_limit":{"seconds_per_checkpoint":120,"processes":1},
+  "stopping":"One registered box-count batch only. Report point formula interval versus order001 and1e-4. No spatial grid, top3 layer, or assumed monotonic improvement."
+}

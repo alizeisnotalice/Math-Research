@@ -1,0 +1,73 @@
+{
+  "id": "upper_I020",
+  "registered_at_utc": "2026-10-25T18:03:44.562793+00:00",
+  "source_head": "9bea6c1e502ef8d9b9529f960cd620236a11978c",
+  "model": "16 unnormalized body directions, alpha=3/2, independent standard stable times, Lebesgue, full Green face I",
+  "ownership": "Only upper_I020/ in independent audit-cont clone; not alone in repository; no source edits or commits",
+  "excluded_route": "No alpha*d^(-3/14)+A+B*d+C*d² family or repeat baseline",
+  "new_mechanism": "Exact four-subset Cauchy-Binet regrouping followed by weighted AMGM, generalized Holder, and exact stable linear-sum negative moments",
+  "batch": [
+    {
+      "case": "C1",
+      "finite_scope": "1820 four-subsets only: integer cofactor normals, C_J=16||normal||², exact aggregate normal-type probabilities and sum C_J=5*16^5; no 4368 all-bases re-enumeration"
+    },
+    {
+      "case": "C2",
+      "finite_scope": "One fixed b=3/20, beta=3/4 explicit Gamma/normal-type formula at 384-bit Arb; compare new J and full I with locked old ball, 11/1e6 and 1/60000"
+    },
+    {
+      "case": "C3",
+      "finite_scope": "Independent 4-subset example reconstruction and all-equal S calibration; exact count and normalization checks; no stochastic/spatial samples"
+    }
+  ],
+  "formula_candidate": "J4=2*Gamma(7/4)*[Gamma(6/5)/Gamma(23/20)]^5 * product_types R_type^(-(1/5)*theta_type), R_J=sum_i [w_i/C_J]^(3/4), theta_J=C_J/(5*16^5)",
+  "stop_condition": "Finish this one grouped-normal formula batch, report actual strict bound or failure and analytic applicability; no automatic grids, refinements or new families",
+  "checkpoints": "120 seconds per tool process; actual unresolved handles reported if any",
+  "shared_MATLAB": "not used",
+  "inputs": [
+    {
+      "path": "cube-dim-5-bounds/round007/determinant_majorant_report.md",
+      "source": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/round007/determinant_majorant_report.md",
+      "sha256": "2a734fb9674fe72153ee839fc1a8ffdc37069acd6844583233ef2038dccd3e15",
+      "bytes": 1897
+    },
+    {
+      "path": "cube-dim-5-bounds/round007/det_majorant_dual.json",
+      "source": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/round007/det_majorant_dual.json",
+      "sha256": "3533e09028c74af02d5be7fd5a04cf6e5648784bd8c09907e34ba663d2102de1",
+      "bytes": 1510
+    },
+    {
+      "path": "cube-dim-5-bounds/round006/orbit_minkowski_proof.md",
+      "source": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/round006/orbit_minkowski_proof.md",
+      "sha256": "ba298fabe815adceac6cb9a0001268d04177862134722042cb32326bde41c3f0",
+      "bytes": 3731
+    },
+    {
+      "path": "cube-dim-5-bounds/round006/orbit_minkowski.json",
+      "source": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/round006/orbit_minkowski.json",
+      "sha256": "3a36a82f995c84570a2e58097bf675f6c6c97401763b5fc405a9857bdfcf2d20",
+      "bytes": 935
+    },
+    {
+      "path": "cube-dim-5-bounds/astra_upper001/report.md",
+      "source": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper001/report.md",
+      "sha256": "99d1ad30fa9b1df3f59bc88ae0dfa782c4928280efb3550ecfd11a0cee58a462",
+      "bytes": 11553
+    },
+    {
+      "path": "cube-dim-5-bounds/audit_upper019/report.md",
+      "source": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/audit_upper019/report.md",
+      "sha256": "1bd956cf68ad54d1afcd9727ead7c7c297a904a74cb2b0e86ff868d33f2089eb",
+      "bytes": 11792
+    }
+  ],
+  "current_certified_C5_upper": 32,
+  "fractional_holder_extension": {
+    "registered_at_utc": "2026-10-25T18:06:05.511099+00:00",
+    "basis": "Parent explicitly allowed a finite-type Finner/fractional-Holder refinement after warning about ordinary Holder moment concentration.",
+    "finite_case": "Use the same 1820 groups; define scope A_J=J union {i:w_i>0}; exact rho=sum(theta_J*|A_J|)/16. Verify every coordinate occupancy equals rho. Apply coordinate-wise generalized Holder with weights theta_J/rho, producing (ES^(-b*rho))^(5/rho) times the same R_J factors. One fixed rho, no optimized exponents or parameter sweep.",
+    "candidate_formula": "J4_Finner=2Gamma(7/4)*(ES^(-b*rho))^(5/rho)*product_types R_type^(-theta_type/5)",
+    "new_batch_count": 1
+  }
+}

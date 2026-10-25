@@ -1,0 +1,110 @@
+{
+  "id": "audit_g016",
+  "registered_utc": "2026-10-25T18:45:18.612066+00:00",
+  "candidate_result_lock_sha256": "ba76a872d6791bfc613dfba46f3e5f350291ff564ac6745533437380accca9a2",
+  "script_sha256": "c64a20d3952005dad9fe97680091e37ce80cb94f43c9eff421d218a98240d311",
+  "sources": [
+    {
+      "id": "corner_d_moments",
+      "project_relative": "astra_upper006/verification.json",
+      "registered_origin": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper006/verification.json",
+      "sha256": "be2f4d92856b9f2a95b59b5c94a6df31d33610189f929f557b34d07f144be622"
+    },
+    {
+      "id": "corner_b_moments",
+      "project_relative": "astra_upper004/corner_checkpoint.json",
+      "registered_origin": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper004/corner_checkpoint.json",
+      "sha256": "7c502b9f002bed265ef1d847b7c2161d7c3524b505e32f3a929dde312fae890a"
+    },
+    {
+      "id": "space_moments",
+      "project_relative": "astra_upper007/space_moments.json",
+      "registered_origin": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper007/space_moments.json",
+      "sha256": "88cdf7c224523a86a3a4a4e0ad10927568f2023bb55372c34c47c394b5344323"
+    },
+    {
+      "id": "unimported_production_helper",
+      "project_relative": "astra_upper004/verify_global.py",
+      "registered_origin": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper004/verify_global.py",
+      "sha256": "3100c28d807fd68a6f7e2d1060f301c943d8506b40e4c1f91a278839966137ab"
+    },
+    {
+      "id": "constant_c",
+      "project_relative": "astra_upper003/verification.json",
+      "registered_origin": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper003/verification.json",
+      "sha256": "287b257693c39976ff5f8e17a0e0e305a811b6c66a8c6ee014448f28d5bab976"
+    },
+    {
+      "id": "previous_g_result",
+      "project_relative": "astra_upper009/verification.json",
+      "registered_origin": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper009/verification.json",
+      "sha256": "9fb82676ccf0f76fc00131eda6a2f2a061784b0628de1a4d41e65b555c0b97bf"
+    },
+    {
+      "id": "candidate_program",
+      "project_relative": "round008/hermite_linear.py",
+      "registered_origin": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/round008/hermite_linear.py",
+      "sha256": "af588252e3b5eb163fb4485ce3de8b2fe61c0d737e6ec72584c8cd9582afa01c"
+    },
+    {
+      "id": "candidate_registration",
+      "project_relative": "round008/hermite_linear_registration.md",
+      "registered_origin": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/round008/hermite_linear_registration.md",
+      "sha256": "d63465873ce33586a80bd4cea3dc0a7e2fa080c0c10237e5c95b8a4ed7e0a335"
+    },
+    {
+      "id": "candidate_result",
+      "project_relative": "round008/hermite_linear.json",
+      "registered_origin": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/round008/hermite_linear.json",
+      "sha256": "ba76a872d6791bfc613dfba46f3e5f350291ff564ac6745533437380accca9a2"
+    },
+    {
+      "id": "Young_interface_report",
+      "project_relative": "astra_upper003/report.md",
+      "registered_origin": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper003/report.md",
+      "sha256": "ae83020c68c174423d4ebe5dd7dcc3238f95e4b42bfd8d3337b3ddf0931ce38b"
+    },
+    {
+      "id": "shared_corner_scope_report",
+      "project_relative": "astra_upper006/report.md",
+      "registered_origin": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper006/report.md",
+      "sha256": "1d0adf6324b5adec75dce16d8221ae7ccee3d4664c4b5da442aa23f196cb9c60"
+    },
+    {
+      "id": "shared_space_scope_report",
+      "project_relative": "astra_upper007/report.md",
+      "registered_origin": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper007/report.md",
+      "sha256": "806b0091b595ba59652d0d22ed37192111cb21e4236a07ab1c096e13c6ab1739"
+    }
+  ],
+  "eta": "27/250",
+  "a": "3467/5000",
+  "nodes": [
+    "2823/10000",
+    "3693/5000"
+  ],
+  "execution_cap": 1,
+  "candidate_cap": 1,
+  "node_root_denominator": 1000000000000000000,
+  "design": [
+    "4x4 rational confluent Vandermonde with two RHS, no production Hermite basis import",
+    "two integer binary-search 11th-root enclosures, coefficientwise sign-aware rational lower bounds",
+    "read locked006 32 scalar d moments and004 12 b moments; read007 44 spatial moment polynomials; compare all44 corner projections",
+    "rebuild only the new fixed power polynomial; all2401 Bernstein coefficients via one common integer denominator and integer matrices",
+    "check c_lower after full polynomial positivity; compare exact g and complete qualified009 rational reference"
+  ],
+  "shared_input_limit": "Moment tables006/007 and their original GMP graph backend are shared locked inputs, not an independent moment-production reconstruction.",
+  "not_executed": [
+    "Gauss node selection",
+    "a optimization",
+    "SLSQP",
+    "old g tables",
+    "original graph production",
+    "author program",
+    "production helper",
+    "MATLAB"
+  ],
+  "portable_reading": "--project-root required, defaults hashes only, registered_origin is provenance and never read",
+  "ownership": "audit_g016 only, no commits or pushes",
+  "new_C5_bound": false
+}

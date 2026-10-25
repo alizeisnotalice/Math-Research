@@ -1,0 +1,23 @@
+{
+  "round": "upper_cover013",
+  "registered_before_finite_batch": true,
+  "topic": "Direct Lebesgue covering: fractional packet certificate and a failed common-center replacement",
+  "fixed_operator": "Lebesgue centered axis-parallel cubes in R5, common radius across coordinates, all positive radii",
+  "source_read": "Aldaz arXiv:1811.10478v2, Definition1.1, Theorem1.2/2.5, Lemma2.6, Theorem3.3 and Corollary3.5; frozen literature strict_upper_second_batch.md also read",
+  "one_parametric_geometry_model": "32 equal-radius cubes Q_epsilon=a*epsilon+[-1,1]^5",
+  "preselected_offsets": ["3/5", "3/4", "999/1000"],
+  "strict_witness_excess": "1/100",
+  "receiver_neighborhood_radius": "1/1000",
+  "core_mass_excess_for_union_obstruction": "1/10000",
+  "same_model_amendment_before_new_constant_check": "After the initial 3-offset geometry run (result SHA a85aedc904ac3b4d898c9bb2eb6315d0447e7eae2fdf5569042ed022e6da0667), a theoretical core/outside dichotomy yielded a uniform local 256/9 bound. Add only its rational constant and core-support halo checks; do not add any geometry offsets, grids or search.",
+  "finite_checks": [
+    "For each of the three offsets, enumerate only the 5^5 open rectangular cells induced by the six coordinate endpoints. Check exact multiplicity volume histogram, total cube volume, union volume, common core and the outside-central-cube bound N<=16.",
+    "Construct the ten outer face boxes and an absolutely continuous piecewise-constant f. Check exact 32 by 10 intersections, each cube average=101/100, total mass and zero central-cube mass.",
+    "Verify the all-radius common-center maximum formula (101/100)*512/(3125*a) and its strict value below1. Use one symbolic derivative identity and exact rational comparisons; no sampled supremum.",
+    "Check nonzero receiver neighborhoods remain in {Mf>1}, and the near-degenerate core-supported model has union-volume/mass>319/10 at a=999/1000.",
+    "Same-model amendment: check (6/5)^5>2, (17/10)^5<128/9 and the t=2/9 split giving the uniform local 256/9 receiver bound; check the explicit core-support halo bound is <101/100 of mass at a=999/1000."
+  ],
+  "theoretical_output": "A sufficient packet/congestion certificate that would transfer to all L1; a local kernel/half-outside-mass lemma; explicit obstruction to moving a witness to the common center; no assertion that the required global packet selection exists.",
+  "stop_condition": "Exactly this finite model and three rational offsets. Do not run new stable/Young/negative-moment calculations or an unregistered global covering search. Do not claim U<32 without the global selection certificate.",
+  "archive": "Only this registration, self-contained verifier, compact result and report. Main clone and all other directories read-only; no commit; MATLAB not used."
+}
