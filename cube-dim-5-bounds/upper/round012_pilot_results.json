@@ -1,0 +1,199 @@
+{
+  "status": "three_new_high_degree_moments_and_recovery_certified",
+  "scope": "No full high-degree spatial expansion, old 3389-moment baseline, Bernstein certificate, g or C5 improvement.",
+  "source_sha256": {
+    "round012_graph_moments_gmp.hpp": "7ae71c1a9ddc0d4a1b6a8bd94393988adc55bf4154a8ee3afa692337f97391a8",
+    "round012_graph_moments_cli.cpp": "a8b241df049dcc7d19a124be04c67a12339280f9c42b0dd0557d126e5834dcc7",
+    "round012_registration.json": "83301ae466c0719219e5d8cb334cb5c1b7a77d48a6ea69ba189d1dc13192db05",
+    "round012_pilot.py": "40b119314fe17d65c74f3d81cb1b090e03a91fc75f3f1644227f4daf1e11a646",
+    "frozen_astra004_graph_moments.cpp": "2ccb0cae445f330c5155c70b90aa8c39a4e6ab994a45bc8494aed6918d0af9b3"
+  },
+  "GMP_version": "6.3.0",
+  "compile_command": [
+    "/usr/bin/clang++",
+    "-O2",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-isystem",
+    "/opt/homebrew/Cellar/gmp/6.3.0/include",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube5-upper/cube-dim-5-bounds/upper/round012_graph_moments_cli.cpp",
+    "-L/opt/homebrew/Cellar/gmp/6.3.0/lib",
+    "-lgmpxx",
+    "-lgmp",
+    "-o",
+    "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/upper_round012/pilot/graph_moments"
+  ],
+  "binary_sha256": "74c47a41e1d27c12c7e7b3b0bddc4f5a7f0ed5e029aa61cbc9bbc6f6afe1df82",
+  "work_dir": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/upper_round012/pilot",
+  "runs": [
+    {
+      "label": "forced_checkpoint",
+      "returncode": 75,
+      "stdout": "checkpoint: 0 requests, 10 new canonical submoments, 0.00282812 seconds\n",
+      "wall_seconds": 0.6492978330061305,
+      "result": {
+        "status": "checkpoint",
+        "checkpoint_reason": "completed-submoment checkpoint reached",
+        "GMP_version": "6.3.0",
+        "elapsed_seconds": 0.00261262,
+        "completed_requests": 0,
+        "results": [],
+        "cache": {
+          "loaded": 0,
+          "computed": 10,
+          "cached_moments": 11,
+          "canonical_cache_peak": 14,
+          "subsets_visited": 129,
+          "trailing_bytes_removed": 0,
+          "max_B_bits": 92,
+          "max_product_bits": 92
+        }
+      }
+    },
+    {
+      "label": "after_recovery",
+      "returncode": 0,
+      "stdout": "completed: 3 requests, 93 new canonical submoments, 0.00662658 seconds\n",
+      "wall_seconds": 0.012353375001112,
+      "result": {
+        "status": "completed",
+        "checkpoint_reason": "",
+        "GMP_version": "6.3.0",
+        "elapsed_seconds": 0.00652308,
+        "completed_requests": 3,
+        "results": [
+          {
+            "id": "single_edge_26",
+            "degree": 26,
+            "counts": [
+              26,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "canonical_code": "26",
+            "B": "1921695688017576803223777768906945796875",
+            "D": "654019644904558303836431802744185605453125",
+            "moment": "43119702416260199/14675129178108858921",
+            "B_bits": 131,
+            "D_bits": 139
+          },
+          {
+            "id": "triangle_18",
+            "degree": 18,
+            "counts": [
+              6,
+              6,
+              0,
+              0,
+              6,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "canonical_code": "6291654",
+            "B": "707297652688733981022375",
+            "D": "173407420068655576409731125",
+            "moment": "287475548519528113/70480077251904923603",
+            "B_bits": 80,
+            "D_bits": 88
+          },
+          {
+            "id": "four_cycle_22",
+            "degree": 22,
+            "counts": [
+              6,
+              0,
+              4,
+              0,
+              6,
+              0,
+              0,
+              6,
+              0,
+              0
+            ],
+            "canonical_code": "140515520",
+            "B": "20606223734150162122302893881875",
+            "D": "7419136758370889359733910587728125",
+            "moment": "11879768794484875848037/4277233445643024554642955",
+            "B_bits": 105,
+            "D_bits": 113
+          }
+        ],
+        "cache": {
+          "loaded": 10,
+          "computed": 93,
+          "cached_moments": 104,
+          "canonical_cache_peak": 366,
+          "subsets_visited": 21599,
+          "trailing_bytes_removed": 7,
+          "max_B_bits": 131,
+          "max_product_bits": 130
+        }
+      }
+    }
+  ],
+  "independent_crosschecks": {
+    "single_edge_26_two_group_fraction": "43119702416260199/14675129178108858921",
+    "triangle_18_four_group_fraction": "287475548519528113/70480077251904923603",
+    "both_exactly_equal": true,
+    "elapsed_seconds": 0.016723582986742258
+  },
+  "signed_128_bit_range_exceeded_by": [
+    "single_edge_26"
+  ],
+  "quadratic_Z_scale": {
+    "W22_raw_edge_compositions": 20160075,
+    "W_powers_0_through_22_total_raw_compositions": 64512240,
+    "degree26_raw_edge_compositions": 70607460,
+    "spatial_partition_count_by_X_total_degree_max_coordinate12": {
+      "0": 1,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 5,
+      "5": 7,
+      "6": 10,
+      "7": 13,
+      "8": 18,
+      "9": 23,
+      "10": 30,
+      "11": 37,
+      "12": 47,
+      "13": 56,
+      "14": 68,
+      "15": 80,
+      "16": 94,
+      "17": 107,
+      "18": 123,
+      "19": 137,
+      "20": 154,
+      "21": 168,
+      "22": 184,
+      "23": 197
+    },
+    "spatial_partitions_total_degree_up_to23_max_coordinate12": 1565,
+    "full_face_Bernstein_grid_at_coordinate_degree12": 28561,
+    "warning": "These are enumeration bounds/counts, not completed space coefficients or a runtime estimate."
+  },
+  "checkpoint": {
+    "journal": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/upper_round012/pilot/moments.journal",
+    "sha256": "edbed3224fd23c4a9015c803fa6dbcaad230e2ff0b29398c75acfee801f0f08d",
+    "bytes": 4235,
+    "protocol": "source-SHA256-locked append-only canonical B integer journal; per-record FNV checksum; partial trailing row removed; completed entries fsync checkpoints",
+    "resume_command": "python -B round012_pilot.py --work-dir /Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/upper_round012/pilot --resume"
+  },
+  "frozen_reference_modified": false,
+  "MATLAB_used": false
+}

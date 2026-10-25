@@ -1,0 +1,22 @@
+{
+  "round": 12,
+  "owner": "upper_theory_cont",
+  "model": "K5 Eulerian correlation moments under the alpha=3/2 normalized-stable R probability",
+  "frozen_source": "astra_upper004/graph_moments.cpp, read-only SHA256 2ccb0cae445f330c5155c70b90aa8c39a4e6ab994a45bc8494aed6918d0af9b3",
+  "backend": "Installed GMP 6.3.0 mpz_class; independent includeable graph-moment engine and checkpoint runner. No fixed-width moment or factorial arithmetic.",
+  "edge_order": ["01", "02", "03", "04", "12", "13", "14", "23", "24", "34"],
+  "pilot_requests": [
+    {"id": "single_edge_26", "counts": [26,0,0,0,0,0,0,0,0,0], "degree": 26},
+    {"id": "triangle_18", "counts": [6,6,0,0,6,0,0,0,0,0], "degree": 18},
+    {"id": "four_cycle_22", "counts": [6,0,4,0,6,0,0,6,0,0], "degree": 22}
+  ],
+  "independent_exact_crosschecks": [
+    "single_edge_26 against ordinary rational Taylor inversion of 2/[(1-z)^(3/4)+(1+z)^(3/4)]",
+    "triangle_18 against independent four-group rational multivariate Stieltjes inversion, with three correlation variables and no graph canonicalization"
+  ],
+  "checkpoint_trial": "First run the same three requests with max_new_moments=10 and a 120-second deadline, save completed submoments, append one incomplete journal fragment, then resume with the same source fingerprint and requests. Do not discard a 120-second checkpoint; continue it if necessary.",
+  "per_process_checkpoint_seconds": 120,
+  "allowed_scale_checks": "Exact stars-and-bars W22 count, integer partitions for spatial degree<=23/max coordinate<=12, and Bernstein grid size 13^4. No complete space expansion or old 3389-moment/2401-Bernstein replay.",
+  "artifact_policy": "Binary, request files, journal and raw run files are outside all Git repositories; archive only sources, this registration, compact final results and proof report.",
+  "scope": "This is a backend/recovery pilot, not a complete degree26 spatial certificate, a new g, or a C5 claim. No MATLAB session is used."
+}
