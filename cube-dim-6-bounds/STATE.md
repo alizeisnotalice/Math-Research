@@ -1,15 +1,11 @@
 # 六维中心方体研究状态
 
-active；001–008各轮状态见git log和rounds对应报告，009/010上界继续。总目标未完成。
+active，最新顺序归档至009；后续010–014上界任务在独立clone已有完成及进行状态，主逐轮集成不混提交。严格界保持 C6>2067397333267/10^12=2.067397333267，C6≤64。完整准确构造区间/系数与来源见results/bounds_ledger.json，不从展示小数重造证书。Lebesgue、中心、轴平行、共同半径、一般L1、全尺度不变；原暂停项目/资料包/五维只读。
 
-当前严格C6>2067397333267/10^12=2.067397333267，C6≤64。固定Lebesgue、中心轴平行、六坐标共同半径、一般L1、全部正尺度。完整准确理想区间、36系数、独立内缩与有限L1见证在results/bounds_ledger.json所引原件。任何新下端须严格超过当前完整准确上端，不从展示小数重造。资料包、原暂停项目和五维只读；内部认证不称公开发表。
+优先级：上界优先、下界低资源。008候选收尾后D/E/下界独审停止，新下界搜索只在主明确小批调度时启动。上界默认sol high/xhigh，瓶颈/突破授权Astra，主保留最终证明及push责任；代理独立clone与文件所有权、不共暂存、不覆盖、不递归扩招。MATLAB仅主串行、不clear/重置path/干扰其他项目。
 
-用户最新优先级：优先突破上界，下界低资源。D/E只收尾008唯一候选，全部已停止，无新下界扫描。主/A/B/C/F与临时Astra理论主要资源投入上界；角色、clone、所有权见coordination/phase_20261025/roles.json。默认sol high/xhigh，真实瓶颈/突破按授权升Astra。代理不push/不共暂存/不失控扩招，主负责证明及集成。
+009新主接口：短势K_T=∫0^T p_t，massT；正Markov平均最大weak1准确常数1已自包含证明且独审，故若全cube m_T>T/4096则C6≤T/(64m_T)<64，无需I。K_.032在dist(S2)≤1/80000整个邻域已严格≥1/125000；compact补集未证。alpha3/2真S1帽也已完成严格积分预算，但整体模型成本仍不竞争。
 
-008已证G在ordered chamber也不凸；不能用其凸性作全域g。alpha3/2同模型全cube g>1.08235e-7和全face norm<.001002681有效但不竞争。Cauchy offS2距离界、奇异管覆盖与W1q理论已审，粗帽最优分时预算仍不足，旧网格不扩。没有新C6上界。
+后续已发生、待单轮集成：010准确点反例已排.032/.064，整片K_T凸性有解析反证（不是全局min数值）；011单新T=.048仅两点必要条件通过；012新的body+axis frame及更简最近子空间几何只证明模型/点条件。编译Arb512点值工具已交叉验证；013/014梯度/短势工具各按独立有限验证。上述均尚无C6上界突破，不能把候选或软件改进入C6账。
 
-009新上界主线是短时势K_T=∫0^T p_t、massT：若T=.032全cube m_T≥1/125000，或T=.064全cube m_T≥1/62500，可推出C6≤62.5；这些全域m条件尚未认证。正Markov weak1/正源/全尺度接口由B/F分别证明，独立归档009；A做S2短势下屏障，B下一最小点诊断，C替代核几何，F独审。额外Astra审K_T ordered chamber曲率，不能把G反例或单个正Jensen误当K性质。
-
-lower_since_phase_freeze=true, upper=false；双侧检查点未触发，后续三轮0/3。待双侧均严格突破且独审后，从下一轮起再三轮完整并行研究；最终全部独审及最小检查通过后才编译论文、核验push、释放本任务资源并停止。
-
-MATLAB仅主串行：不clear、不重置path、不干扰其他项目。008仅无赋值标量两次显示核对，未造图形或进程；Python批次均有限注册，句柄依实际回报，不重启旧计算。主clone /Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6；Python /Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python。
+lower_since_phase_freeze=true, upper=false，双侧checkpoint未触发，后三轮0/3。待双侧严格认证后从下一轮再三轮；最终独审及实际最小验证全过，才编译论文、push核验、释放本任务资源并停止。所有历史句柄不重启；实际活动依各registration/进程和角色回报，主clone /Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6；Python /Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python。

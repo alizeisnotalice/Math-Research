@@ -1,0 +1,37 @@
+{
+  "id": "R6-009-C-alpha15-off-strata",
+  "inputs": {
+    "alpha": "3/2",
+    "q": "4/3",
+    "distance_layers": [
+      "[0,1/32]",
+      "[1/32,1/8]",
+      "[1/8,1/2]",
+      "[1/2,sqrt(3/2)]"
+    ],
+    "epsilon": [
+      "1/10000",
+      "1/1000",
+      "1/100"
+    ],
+    "scalar_layer_epsilon_cap": 12,
+    "geometric_checks_cap": 4,
+    "geometry": [
+      "rho^2=z^T(I-11T/6)z",
+      "exact positive-cone rho-ball volume K*rho^5, K=4sqrt6*pi^2/45",
+      "rho<=1/sqrt2 implies positive ellipsoid lies in [0,1]^5",
+      "r_min(rho_upper)^2=1+5 max(0,1-sqrt(6/5)*rho_upper)^2"
+    ],
+    "singular_cap_radius": "1/1000",
+    "target_short_norm": "T_(1/1000) norm<1/100000 OR rigorous useful S1 cap geometry budget",
+    "peak_sources": "read frozen C008/F008 JSON, no Gamma-peak rerun",
+    "no_new_MC": true,
+    "no_high_dim_grid": true
+  },
+  "input_sha256": "665a9ab46d8322f1c90fc4a57050853a490e27443c4e94c9f383e0d57f398a5f",
+  "acceptance": "reprove projected stable product deletion, rank2 Gram coarea, and true positive-face S1 volume; actually bound12 layer/epsilon cases and derived whole-face budgets; report noncompetitive outcome candidly",
+  "stop": "after frozen4layers x3eps and4symbolic geometry checks; no expansion",
+  "no_MATLAB": true,
+  "no_spawn": true,
+  "no_push": true
+}
