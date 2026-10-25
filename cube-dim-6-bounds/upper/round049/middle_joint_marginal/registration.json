@@ -1,0 +1,46 @@
+{
+  "task": "A049-true-two-coordinate-middle-L1",
+  "registered_utc": "2026-10-25T21:40:25.340803+00:00",
+  "started_utc": "2026-10-25T21:40:25.340803+00:00",
+  "deadline_utc": "2026-10-25T21:55:25.340803+00:00",
+  "max_wall_seconds": 900,
+  "max_new_configurations": 7,
+  "source_sha256": {
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-curvature-astra/cube-dim-6-bounds/upper/round043/two_parameter_middle/manifest.json": "98a287ab122d8fd3830c039696ace64bf6a441ba72e0a993a2eaffee38cf1f3e",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-curvature-astra/cube-dim-6-bounds/upper/round043/two_parameter_middle/results.json": "734626a85b8d033801e20da3cfd372022ec8f247700ba65a03effb15fed3d88c",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-curvature-astra/cube-dim-6-bounds/upper/round043/two_parameter_middle/theorem.md": "2e80ab1bda192499abb71162a8443db0263c06852b75256296af3598922954ad",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-curvature-astra/cube-dim-6-bounds/upper/round043/two_parameter_middle/checked_results.json": "29f7344dacce37cf35ad08f049112cb93af10399bb8f99fa7f772353fb8e8668",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-literature/cube-dim-6-bounds/audit/round043/two_parameter_middle_review/manifest.json": "9b48da6bab2df16ea114f8035a5fa44eff6d8610034e9fa6a4e2eed0930966ba",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-literature/cube-dim-6-bounds/audit/round043/two_parameter_middle_review/report.md": "7b219137918028affdf438f70c9ce5b6f61dab3abcab3fefbfcae807c3160559"
+  },
+  "domain": "same A3 middle D as043; rho=1/64, mean_B in[1/4,3/4], positive face; choose fixed j=4",
+  "time_range": "0<s<=1/1000",
+  "acceptance": "derive actual two-coordinate marginal and remaining-four-coordinate positive-orthant factor, prove true coordinate range and branch domination, then one new L1-interface budget with complete disjoint complement. No allI/C6 claim.",
+  "fixed_plan": [
+    {
+      "id": 1,
+      "kind": "exact structure",
+      "scope": "split32body directions into two16-parameter blocks for j4,2x2 Jacobian and numerator normalization; zero-sum B coordinate-deviation norm bound"
+    },
+    {
+      "id": 2,
+      "kind": "exact symbolic",
+      "scope": "differentiate rational/log primitive, verify interpolation/time exponents for q6/5"
+    },
+    {
+      "id": 3,
+      "kind": "one Arb768 scalar configuration",
+      "scope": "fixed L/U and C_joint, new big/complement/total short bounds using only saved043 complete D_big/Mbad endpoints, compare saved043 old short and existing conditional threshold without recomputation"
+    }
+  ],
+  "stop": "If any symmetry/domain/coarea/source/precision gap occurs stop and report; otherwise exactly3 planned configurations then freeze. No parameter scans/newtime/old budget recompute.",
+  "native_G_H_K_p_calls": 0,
+  "spatial_grid_points": 0,
+  "matlab_calls": 0,
+  "forbidden": "fullframe/fan enumerations, native kernels, old source writes, optimizer, MATLAB, delegation, stage/commit/push",
+  "new_C6_bound": false,
+  "code_sha256": {
+    "evaluate.py": "63502bd99103a85b5eea992edbe2a8f79c27dd51f619966207d2f22a166cecc3",
+    "theorem.md": "3462c9dbf1525fbe2326e504e9ff046752f476a78bc44dfa6cfc85a15301c617"
+  }
+}
