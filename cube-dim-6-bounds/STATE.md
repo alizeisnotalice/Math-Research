@@ -1,27 +1,15 @@
 # 六维中心方体研究状态
 
-active。最新顺序归档至020；严格C6>2067397333267/10^12，C6≤64。上下门槛完整准确表达、原始系数与区间见results/bounds_ledger.json，展示小数不作证书。Lebesgue、中心、轴平行、共同半径、一般L1、所有r>0不变；资料包、原暂停项目及五维只读。
+active，最新顺序归档至021。严格C6>2067397333267/10^12、C6≤64；完整准确原件/系数/区间见results/bounds_ledger.json。Lebesgue、中心、轴平行、共同半径、一般L1、全部正尺度不变。公开仅已核范围A6/64，不称穷尽；内部不称公开发表。原暂停项目/来源包/五维只读。
 
-优先级：上界为主，下界低资源。A/B/C/F和独立Astra角色集中上界；D低资源019仅12个有理parity检查CPU约.000278秒，没有union/扫描/旧基线；E、D下界Astra无计算。默认sol high/xhigh，瓶颈/突破授权Astra，主保留证明、集成及push责任。MATLAB仅主串行，不clear/重置path/干扰其他项目。代理独立clone、明确文件所有权，不共享暂存、不覆盖、不push、不扩招。
+上界优先，下界低资源。019仅12 Fraction计数、CPU.000278秒、0union，完成停；D下界Astra/E停止。当前上界：B024有限精确polynomial/root batch；独立Astra025原始文献及corner几何；C026固定点PF势积分工具；F023符号G/极点审计已完成。主负责证明/账本/提交，代理独立clone与文件所有权、不push/不扩招，MATLAB仅主串行不clear/重置path。
 
-有效上界接口：K_T=∫0^Tp_t，massT，正Markov最大平均weak1准确常数1，若全cube essential K_T≥m>T/4096则C6≤T/(64m)<64，无需I。一般有限正spanning Cauchy frame真奇异层为S2全部pair spans，off-S2小时间p=O(1)且G/K有限连续；S2上p≥c t^-2，含线/交叠。body32还已证off-S3 C²及每T整片有序face不凸。不能照搬四维线外连续或假设加轴frame任意三列独立。
+已严格排固定模型：body32 T=.032/.048/.064；支持{.032,.064}的全部时间概率混合；整段[.0446,.0502]及支持其中的概率混合；β1加轴T2/45；β1 pair-orbitT32/875。未排全部T、全部support、全部β/frame，未得到C6新上界。任何local/software/模型成本都不登记为C6界。
 
-已排模型：010严格排body32 T=.032/.064；011同一点排支持这两个时间的所有概率混合；后续015已独审严格排T=.048，018已准确排β1加轴T2/45，待单轮集成；017另严格排body32连续时间区间[.0446,.0502]及支持其中的概率混合，待集成。未排全部T/任意support/所有frame；没有C6新上界。
+有效理论：一般有限正spanning Cauchy frame真S2、offS2 p=O(1)/K/G连续、S2 p≥ct^-2；body offS3 C²、所有T整片chamber非凸。K_T质量T、全空间分布源与Markov maximal weak1常数1，若匹配新全cube m>T/4096才有C6≤T/(64m)。015正band Taylor只局部工具，尚无全域paid tree；旧tube/数值不得向新frame继承。
 
-待集成/下一步：015 Taylor有限band局部方法及反例，016零/重复节点band引擎，017时间区间，018加轴反例，019低资源质量机制均完成或审计中；020正pair-orbit新frame理论active。真实native B0152passes、B0181pass均exit0且全部wait，C0161pass已exit；无这些旧句柄可重启，后继须新有限登记。活动证明/整理角色详coordination/phase_20261025/roles.json，不把写报告等同运行核。
+待顺序集成：022新对称点x0的精确全群压缩，023partial fractions真实degree417及独立HermiteG已完成；024未完成all-time证书、025局部corner缺跨cube输入计费，026尚待软件批结果。历史native015/018/021及C016均exit0/wait，不重启。计算实际句柄以各registration/execution和coordination roles为准，旧checkpoint不能删除后复跑。首达双侧checkpoint仍null，lower_sincefreeze=true、upper=false，后续三轮0/3；全满足后才最终独审/PDF/停机。
 
-lower_since_phase_freeze=true，upper=false，dual_checkpoint=null，post_dual0/3。必须双侧严格认证后从下一轮共同再三轮，最后独立审计与实际最小代码全过，才编译论文/核验push/释放本任务资源并停止。当前尚未满足完成条件。主clone /Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6；数学Python /Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python。
+021只读刷新五维local/remote，锁定下界链未变、六维准确下端仍更强，未继承五维上界。主clone /Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6，数学Python /Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python。
 
-014归档完成：generic短势/梯度/密度联合引擎和独立审计通过；软件证据不作全域C6界。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
-
-015归档完成：T48第二点首停严格反例独审通过；band Taylor局部认证改进、无完整全域tree。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
-
-016归档完成：正band Arb512支持所有实零/重复节点，有限scalar/full验证通过；full梯度独立全群交叉仍缺。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
-
-017归档完成：同一旧点严格排连续T区间[223/5000,251/5000]及支持其中的任意概率混合。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
-
-018归档完成：β1加轴frame固定T2/45在同z严格失败，703pair真S2及essential障碍闭合。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
-
-019归档完成：单轴周期2正质量机制精确接口；可微一阶为0，非光滑cusp仍需真实并集暴露边界；低资源12计数完成。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
-
-020归档完成：62列pair-orbit正frame完整理论/1251平面新S2/准确fan独审PASS；无数值m，后021首T反例。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
+021归档完成：主唯一pairβ1/T32/875新模型probe严格失败；完整1891pair/essential域及0native最小复核闭合。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
