@@ -1,0 +1,103 @@
+{
+  "purpose": "conditional Monte Carlo variance-stop pilot; not a C6 certificate",
+  "frame": "32 body directions (1,eps2,...,eps6)",
+  "base_indices": [
+    0,
+    3,
+    5,
+    14,
+    22,
+    25
+  ],
+  "base_columns": [
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      -1,
+      -1,
+      -1,
+      -1,
+      1,
+      1
+    ],
+    [
+      -1,
+      -1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    [
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      -1
+    ],
+    [
+      -1,
+      1,
+      -1,
+      1,
+      1,
+      -1
+    ],
+    [
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      1
+    ]
+  ],
+  "determinant_exact": 160,
+  "conditional_identity": "G(x)=E_Y int_0^infty t^-6 p_B,1(x/t-Y) dt; Y=sum of other 26 directions times standard Cauchy variables",
+  "analytic_checks": {
+    "base_density_normalization": "exactly one by invertible linear change of variables",
+    "base_density_at_zero": "1/(160*pi^6) = 6.5010092080990779e-06",
+    "scaling": "p_B,t(x)=t^-6 p_B,1(x/t), used in the estimator"
+  },
+  "finite_batch": {
+    "spatial": "32 face + 32 cube points",
+    "conditional_samples": "two independent 512-point scrambled Sobol replicates",
+    "time": {
+      "log_rule_order": 80,
+      "cutoff": 18.0
+    }
+  },
+  "replicates": [
+    {
+      "sobol_seed": 601255,
+      "g_sample_min": 1.6027920050208803e-07,
+      "I_face_sample": 1.1717599950233518e-06,
+      "formal_cost_sample": 1434.7213671091308
+    },
+    {
+      "sobol_seed": 601256,
+      "g_sample_min": 2.2972784985909793e-06,
+      "I_face_sample": 3.409495007424024e-06,
+      "formal_cost_sample": 171.00750942682438
+    }
+  ],
+  "cost_range": [
+    171.00750942682438,
+    1434.7213671091308
+  ],
+  "relative_spread": 1.5740065164780759,
+  "stop_rule": "if replica spread is material, do not expand this estimator; derive an all-cone or variance-controlled representation first",
+  "source_sha256": "82c702eb7e7deb587be1be84a1fd535d57bb033ead5d26180faa6ed09fb258b1",
+  "environment": {
+    "python": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 21.0.0 (clang-2100.3.34.2)]",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "purpose": "finite numerical screen; not a C6 certificate",
+  "n": 6,
+  "q": 1.2,
+  "quadrature": {
+    "variable": "s=log(t)",
+    "order": 96,
+    "cutoff": 24.0
+  },
+  "samples": {
+    "minimum": "1024 Sobol + 64 corners + 729 grid",
+    "face": "2048 scrambled Sobol"
+  },
+  "cost_formula": "6^(6/5)*I/g^(6/5), valid only after cube-symmetric rigorous g and I certificates plus the full transfer proof",
+  "results": [
+    {
+      "model": "coordinate",
+      "frame": "six coordinate Cauchy directions",
+      "points_minimum": 1817,
+      "points_face": 2048,
+      "g_empirical": 1.901223458910507e-05,
+      "g_empirical_argmin": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "I_face_q_empirical": 0.00017422915779661294,
+      "formal_cost_empirical": 691.930605151929,
+      "under_64_empirically": false,
+      "classification": "numerical candidate only; neither g nor I has a rigorous enclosure"
+    },
+    {
+      "model": "three_pairs",
+      "frame": "three independent (1,1),(1,-1) Cauchy direction pairs",
+      "points_minimum": 1817,
+      "points_face": 2048,
+      "g_empirical": 6.0541314218313914e-05,
+      "g_empirical_argmin": [
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "I_face_q_empirical": 0.00011935158054243028,
+      "formal_cost_empirical": 118.07214740791048,
+      "under_64_empirically": false,
+      "classification": "numerical candidate only; neither g nor I has a rigorous enclosure"
+    }
+  ],
+  "environment": {
+    "python": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 21.0.0 (clang-2100.3.34.2)]",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+  },
+  "source_sha256": "231582f634fcf7581ecf06c2269ffdc7a2436c053e51b5ede903d4b24b016958"
+}
