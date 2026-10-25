@@ -1,0 +1,51 @@
+{
+  "task": "upper_cover046",
+  "registered_before_new_H_computations": true,
+  "model": "alpha1,16 unnormalised body Cauchy directions, inverse Fourier factor (2*pi)^-5",
+  "epsilon": "1/64",
+  "target": "1/10000",
+  "upstream_read_only_inputs": {
+    "astra_vertex017/boundary_triangulation.json.gz": "8dd2e9895d7465ac599d43feb1b5099506f4e43d1248215eba0a77e11f4d13f9",
+    "astra_green018/kernel.py": "5045f262ef0e00eb38746f1cf2293ee6cde138a6874e8f6850dc90d28b33ea08",
+    "astra_green018/batch_result.json": "4eab4509995282e65c643c7423a523a9e4dbf02397060d185a0967ee5b6bd294"
+  },
+  "reference043_read_only_inputs": {
+    "registration.json": "2aa15b3b96f479e789245387855389d430a700280f506a39d96d224ac617ecf5",
+    "certify.py": "b463b1f941f47de2063e24ffaf6b4b70e1ffe58654186026fd71d27b9abef82f",
+    "results.json": "65ae80d993d3b207b54050a6ebf16e701e69234a02e43cb4aed245df25f4727d",
+    "report.md": "a298ca56ba980fce4fe2542929e03befb97b528afd3d390ed9d15651da68322a"
+  },
+  "API": "Direct outward Arb five-component first jet (value plus four physical tail derivatives), all3504 terms, no exact rational log-stencil. Exact integer nodes/deltas and rational initial derivative inputs; DD R0=P0/d,Rj=(Pj-delta_j R0)/d.",
+  "qualification": {
+    "point": ["1","104115/104729","103354/104729","71094/104729","6327/104729"],
+    "precision_ladder_bits": [256,384],
+    "test": "all five new direct-Arb balls contain the corresponding stored043 balls and have width <= max(abs endpoints,1e-6)*2^-40; one point, second precision only if needed; not new coverage progress"
+  },
+  "pilot_precision_ladder_bits": [256,384,512],
+  "precision_retry": "Retry only if nonfinite/insufficient width or center H interval straddles target; never retry merely because the whole-box geometric certificate fails. At512 unresolved -> diagnostic stop, retain box.",
+  "initial_cover": {
+    "domain": "positive unit face ordered tail y1>=y2>=y3>=y4",
+    "level": 5,
+    "side": "1/32",
+    "roots": "all integer tuples31>=i1>=i2>=i3>=i4>=0, box product[i_j/32,(i_j+1)/32]",
+    "count": 52360,
+    "order": "ascending nested loops i1=0..31,i2=0..i1,i3=0..i2,i4=0..i3; FIFO pending queue; failed children appended after all existing pending leaves"
+  },
+  "anchor_rule": {
+    "candidate0": "exact box midpoint",
+    "candidates1to3": "midpoint + (minimum side/4096)*(1,beta,beta^2,beta^3), beta respectively1/8,1/16,1/32; test in this fixed order, take first exact eligible",
+    "eligibility": "all280 true-vertex projections exactly nonzero and distinct; all four candidates remain in original closed box; geometry-only rejected candidates are not density evaluations",
+    "if_none_eligible": "diagnostic stop, keep this box pending; never drop box or invoke ordinary DD on repeated/zero nodes"
+  },
+  "whole_box_certificate": "043 lower log-paraboloid, exact Q=I4/4-J4/36, all16 physical box corners relative to chosen anchor, directed dyadic H and gradlogH endpoints; min exact rational log margin>0",
+  "split_rule": "failed whole-box certificate -> bisect longest side, tie lowest coordinate index, closed lower and upper children; do not remove any unsolved region",
+  "finite_batch_limits": {
+    "max_new_anchor_starts": 128,
+    "seconds": 120,
+    "count": "qualification excluded from new anchors, but included in wall time; each geometric new coordinate counted once, numeric precision retries recorded separately",
+    "kernel_checkpoint_stride_cones": 128,
+    "checkpoint": "full FIFO queue, exact roots and split/pass tree, anchor cache and active partial cone sum; persistent scratch outside Git; lock source/registration/input fingerprint; save after every completed leaf and immediately on limit"
+  },
+  "counterexample_stop": "if a fully enclosed center H upper endpoint<1/10000, save strict counterexample to this fixed-epsilon H target and stop; no C5 or full-G failure claim",
+  "allowed_claim": "partial certified cover plus full remaining queue, unless the entire tree actually closes; no projection singularity assumption on whole boxes, no global-g/C5 claim, no MATLAB, no commits, no edits to frozen043/017/018 or others"
+}

@@ -1,0 +1,26 @@
+{
+  "task": "upper_harnack043",
+  "registered_before_computation": true,
+  "model": "alpha1,16 independent unnormalised body Cauchy directions in R5, Lebesgue measure, Fourier inverse(2*pi)^-5",
+  "read_only_inputs": {
+    "astra_vertex017/boundary_triangulation.json.gz": "8dd2e9895d7465ac599d43feb1b5099506f4e43d1248215eba0a77e11f4d13f9",
+    "astra_green018/kernel.py": "5045f262ef0e00eb38746f1cf2293ee6cde138a6874e8f6850dc90d28b33ea08",
+    "astra_green018/batch_result.json": "4eab4509995282e65c643c7423a523a9e4dbf02397060d185a0967ee5b6bd294"
+  },
+  "one_new_object": "H_epsilon(x)=integral_epsilon^infinity p_t(x)dt",
+  "epsilon": "1/64",
+  "center": ["1", "104115/104729", "103354/104729", "71094/104729", "6327/104729"],
+  "fixed_body_basis_columns": [[1,1,1,1,1],[1,-1,-1,-1,1],[1,-1,-1,1,-1],[1,-1,1,-1,-1],[1,1,-1,-1,-1]],
+  "precision_bits": 384,
+  "numerical_quantities": "Only center H_epsilon and its four physical tail-coordinate first derivatives, using all3504 simplices and exact rational log stencils. No fullG or third-order replay, no H at another point.",
+  "finite_algebra": "Check determinant and inverse of this one fixed basis, restricted Q=N^-T N^-1,16 sign corners, and one centered Q-ellipsoid. No optimization over N or epsilon.",
+  "fixed_closed_box_tail_halfwidth": "1/16384",
+  "primary_target": "1/10000",
+  "secondary_comparison_only": "11/100000",
+  "safe_cube": "Take the minimum of16 explicit positive roots of the conservative lower-log-paraboloid corner quadratics, then round downward to denominator2^24; also clip to the positive unit face. This is maximum for that conservative paraboloid test, not maximum for H.",
+  "safe_ellipsoid": "Use rho from Delta-B*rho-rho^2/epsilon^2>=0, with exact directed Delta lower and B>=sqrt(gradlogH' Q^-1 gradlogH). Round rho downward to denominator2^24 and verify rational residual.",
+  "checkpoint_seconds": 120,
+  "checkpoint_stride_simplices": 256,
+  "stop_condition": "Exactly one H object, five center quantities, one fixed box and the explicit paraboloid regions. No global spatial mesh, second epsilon, basis search or extra kernel points. Preserve a source-locked external checkpoint if120s is reached.",
+  "scope": "Independently prove all positive-mixture differentiation/finite-score conditions. Numeric data gives global bounds on the affine x1=1 plane only; the full5D theorem is analytic and no fifth gradient is sampled. No global g or C5 improvement. No MATLAB/commit or edits to frozen sources."
+}

@@ -1,0 +1,18 @@
+{
+  "status": "actual_MATLAB_fixed_geometry_crosscheck_float_only",
+  "code": "disp(jsonencode(feval(@(N,Q,S) struct('det_fixed_body_basis',det(N),'tail_gram_minus_Q_inf',norm((N\\[zeros(1,4);eye(4)])'*(N\\[zeros(1,4);eye(4)])-Q,Inf),'Q_eigenvalues',eig(Q)','corner_quadratic_max',max(sum((S*Q).*S,2)),'diagnostic_only',true),[1 1 1 1 1;1 -1 -1 -1 1;1 -1 -1 1 -1;1 -1 1 -1 -1;1 1 -1 -1 -1],eye(4)/4-ones(4)/36,2*(dec2bin(0:15,4)-'0')-1)));",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"det_fixed_body_basis\":-48,\"tail_gram_minus_Q_inf\":1.1102230246251565E-16,\"Q_eigenvalues\":[0.13888888888888895,0.25,0.25,0.25],\"corner_quadratic_max\":1,\"diagnostic_only\":true}\n"
+      }
+    ]
+  },
+  "resources": {
+    "base_variables_created": 0,
+    "figures_created": 0,
+    "pools_created": 0,
+    "clear_or_path_reset": false
+  }
+}

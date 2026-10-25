@@ -1,0 +1,33 @@
+{
+  "task": "upper_cover048",
+  "registered_before_computation": true,
+  "ownership": "Only new048 source/results and scratch;046/043/017/018 and parent snapshots read-only; no commit or MATLAB",
+  "model": "alpha1",
+  "epsilon": "1/64",
+  "target": "1/10000",
+  "workers": 8,
+  "pool": "One multiprocessing spawn pool, eight Python worker processes; workers only evaluate independent first jets; one master journal/state writer; close and join at batch end",
+  "max_new_anchor_starts": 4096,
+  "seconds": 120,
+  "source046_hashes": {
+    "arb_cover.py": "df3fb4165aea29e4aa3d1fb7ecacdb9cc5ad4a531bc03e3cc43a0820671fe028",
+    "registration.json": "a5d9e1d670ff578f73ab690440e135f46e1c68e8e50c61c472a52cc702ee8bcf",
+    "report.md": "49084c03c66ebe0c48e41dbbf74733f9b4893aaf2d4f31c270e029730c733a8d",
+    "results.json": "b20824bb4b9ffad67217eab9529cf9b77f22453fe5957dffd3df259f3d8e4011"
+  },
+  "parent_state_sha256": "b23f4ee65bc7ce1d8bdee7f0050b4e492b453241a6594cce8e79f96e7bcfbb2f",
+  "parent_fingerprint": "5ac95d23a36f4bfea5fabd7a2d834e9045e774a78d2cc318d7124e46ad82ca9e",
+  "selected_queue_prefix": {
+    "count": 4096,
+    "sha256": "389af47a843955abc366b8b36eadb5d7134b1eabeef68710cab5e45fa2691e46",
+    "first_node": [128,""],
+    "last_node": [4223,""],
+    "rule": "Only original046 remaining queue prefix; no split child is dispatched this batch; earlier128 passed leaves/cache reused, no qualification repeat"
+  },
+  "anchor_and_precision": "Import locked046 choose_anchor/FirstJetKernel/certificate directly; same midpoint plus3 fixed rational jitters, reject exact zero/repeated projections,256 then384/512 only for numerical inadequacy or target straddle; no retry for geometric box failure",
+  "dispatch": "At most eight live jobs, one worker per node. Assign and merge in selected ordinal order; record out-of-order completed results durably. Cached coordinates reused read-only. Stop new dispatch at4096 new starts,120 seconds, strict H upper<target, worker error or numerical/geometry diagnostic; drain already dispatched jobs",
+  "coverage": "043 log-paraboloid with directed gradient endpoints and exact Q at16 corners; failures split longest side with lowest-coordinate ties, append children to queue for future batches",
+  "durability": "Master hash-chained append journal for dispatch/received/merge; small received records fsync, full-state compaction at most64 completed merges apart. Partition passed+queue+inflight checked at compaction. Worker deadline checks every128 cones; retain exact partial prefix/precision/attempts. Final unresolved nodes requeue in ordinal order with resume_jobs metadata. No partial sum is a density",
+  "recovery": "Immutable initial048 state plus full journal permits replay without any density computation; final state and immutable batch001 snapshot retain parent transition/fingerprint, full queue/tree, cache, activity and partial resume metadata",
+  "scope": "One finite batch only, partial cover unless entire tree closes. No globalg or C5 claim; no extrapolation from first128 pass rate"
+}

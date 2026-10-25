@@ -1,0 +1,13 @@
+# Astra Green019: four-point exact zero-ray principal-part qualification
+
+Parent authorization2026-10-26. Only this new019 directory is writable.017 geometry and018 kernel/results are read-only; no commits, no other agent reversions, no spatial grid or optimization.
+
+First and mandatory point: x=(1,1,1,2/3,1/16). Exactly check all120 pairs of the16 body directions; rank(v,w,x)=3 for every pair is required. Then consume the locked0173504-simplex/280-vertex table. For every sorted5-node list, expand the Hermite DD4 as an exact Fraction linear functional of h_eta^(j)(node)/j!. Separate zero-node data and sum their coefficients over every simplex, including all determinant factors, before taking eta->0.
+
+With common rational denominator L and integer nodes k=(L*x).z, eta=144L*epsilon and h_eta(k)=log(eta²+k²)/2. Atzero, the only possible nonzero data throughorder4 are logeta,1/(2eta²),-1/(4eta⁴); odd derivatives vanish. The global coefficients of these three formal terms must each be exactly zero. Neither individual zero terms nor failed points may be discarded. If any principal coefficient is nonzero, save the exact diagnostic and stop this batch without trying further points or automatic restarts.
+
+If the first point passes, evaluate at most these three additional fixed points, in this order: (1,1,1,3/4,1/8), (1,1,1,1/2,1/16), (1,1,3/4,1/2,1/8). Apply the same120-pair and exact principal-part checks separately. No new points, no old-point reruns, no old fan baseline.
+
+After exact cancellation, evaluate all remaining nonzero-node data at256-bit Arb: order0 log|k|, orderj>=1 (-1)^(j-1)/(j*k^j). Multiply the unchanged negative factor -L^4/[144(2pi)^5]. Save complete rational grouped coefficients and their hashes, actual nonzero remainder ball, input/source hashes, PID and timings. Prove that the finite h_eta formula converges after the exact three cancellations and equals the full Green by nonnegative monotone convergence of the already-proved p_t; do not assume zero projection means infinity or import a four-dimensional continuity claim.
+
+Each point has a120-second checkpoint. The active process is armed before mathematical execution so its actual PID and exec session can be reported to the parent along with this registration. All transient states live/tmp/astra_green019, not017/018. Completed groups are saved on timeout; a failure is recorded and the batch stops without repeated restart. Four completed point certificates, a reusable finite zero-ray kernel, a proof, and a compact manifest are the deliverable. This is a domain/representation extension, not a global g or C5 improvement.

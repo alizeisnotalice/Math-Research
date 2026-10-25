@@ -1,0 +1,55 @@
+{
+  "id": "astra_alpha1_Lp045",
+  "status": "registered_before_computation",
+  "model": "alpha=1, beta=1/2, 16 unnormalised body directions, independent LT exp(-sqrt(lambda)) subordinators",
+  "ownership": "Only astra_alpha1_Lp045; no commits and no edits to prior locks",
+  "new_r_values": ["8/5", "13/8", "33/20"],
+  "precision_bits": 384,
+  "full_formula_evaluations_per_r": 1,
+  "gamma": "(r-1)/(2r)",
+  "trace_k": "5gamma-1/2",
+  "moment_cap_formula": "8 sqrt(pi) 16^(5gamma-1) Gamma(1-2k)/Gamma(1-k) [Gamma(1+2gamma)/Gamma(1+gamma)]^5 (2661/64)^(-gamma)",
+  "K_formula": "(1/(32pi^3))^r (pi^2/60) 5^(2r-5/2) moment_cap^r",
+  "target_q": "5/4",
+  "target_tube_error": "1/1000000",
+  "tube_union_volume": "108delta^3-243delta^4, 0<=delta<=1/3",
+  "rationalization": "Save exact dyadic outward endpoints; strictly round K upper endpoint upward to denominator 10^30, lower endpoint downward to denominator 10^30",
+  "dyadic_search": "Find smallest integer n>=2 with cap^A V(2^-n)^B <= 10^(-6D), where q/r=A/D and 1-q/r=B/D. Exponent doubling then binary threshold comparisons only; initial bracket n=2, maximum checked exponent 128. Save the passing n and failure at n-1.",
+  "integer_power_tests": {
+    "8/5": [25, 7, 32],
+    "13/8": [10, 3, 13],
+    "33/20": [25, 8, 33]
+  },
+  "scope": "General-r complete face L^r theorem and three scalar certificates; sufficient tube budget only, no true I or C5 estimate",
+  "time_policy": "Expected less than one second per scalar after imports. Each r is a separate 120-second alarm/checkpoint; save completed r results immediately and diagnose failure without automatic retries.",
+  "checkpoint": "/tmp/astra_alpha1_Lp045/checkpoint.json",
+  "old_037_policy": "Read its locked r=3/2 result and the 034 link delta=2^-23 only; do not evaluate its Gamma formula",
+  "forbidden": ["continuous r grid", "space grid", "Green evaluations", "QMC", "recompute old r=3/2 Gamma", "new g or C5 claim"],
+  "sources": [
+    {
+      "role": "037 theory, consumed as locked reference; general r re-proved",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_alpha1_Lp037/report.md",
+      "sha256": "5a8df005484c2c138261a8ac1cc9cabd19f778aa8db5a8327ff694fe070ae777"
+    },
+    {
+      "role": "037 old numerical result, not recomputed",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_alpha1_Lp037/results.json",
+      "sha256": "61b6f77a677f131e96dbe8a3fdce1a6c473465acf7539ee0f73ce802fba769d5"
+    },
+    {
+      "role": "034 exact tube volume, external geometry input not reproduced",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube5-upper-audit-cont/cube-dim-5-bounds/upper_alpha1_034/cover_results.json",
+      "sha256": "12366f614636de5295753571b87d33f962f38f855eee1a5ad9d1ea50d6a5c623"
+    },
+    {
+      "role": "034 locked old radius 2^-23, exact comparison baseline",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube5-upper-audit-cont/cube-dim-5-bounds/upper_alpha1_034/tube_link_results.json",
+      "sha256": "4552a38ca46e29e6d33731d8771afd235e23695d2ff3206ae4a7b4b5159ef2f0"
+    },
+    {
+      "role": "014 original flag probability types; pure geometry and beta-half scale input",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube5-astra-upper/cube-dim-5-bounds/astra_upper014/flag_types.json",
+      "sha256": "6c277d078be30e879b112219b4d675f2f145432c2befa5954148fa52e23b4f76"
+    }
+  ]
+}

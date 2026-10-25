@@ -1,0 +1,102 @@
+{
+  "status": "pass_043_theory_source_review_and_saved_endpoint_checks",
+  "source_sha256": {
+    "report.md": "a298ca56ba980fce4fe2542929e03befb97b528afd3d390ed9d15651da68322a",
+    "certify.py": "b463b1f941f47de2063e24ffaf6b4b70e1ffe58654186026fd71d27b9abef82f",
+    "results.json": "65ae80d993d3b207b54050a6ebf16e701e69234a02e43cb4aed245df25f4727d"
+  },
+  "checks": {
+    "saved_state": {
+      "processed_simplices": 3504,
+      "stencil_quantities": 5,
+      "stencil_entries": 704,
+      "fingerprint_verified": true,
+      "source_producer_executed": false
+    },
+    "scalar_lower_gap": {
+      "lhs": "2 + (2*r - 2)/(r + 1)**2",
+      "rhs": "2*r*(r + 3)/(r + 1)**2",
+      "residual": "0"
+    },
+    "scalar_upper_gap": {
+      "lhs": "1/4 - (2*r - 2)/(r + 1)**2",
+      "rhs": "(r - 3)**2/(4*(r + 1)**2)",
+      "residual": "0"
+    },
+    "score_bound_square": {
+      "lhs": "-4*t**2*w**2 + (t**2 + w**2)**2",
+      "rhs": "(t**2 - w**2)**2",
+      "residual": "0"
+    },
+    "Hessian_upper_constant": {
+      "lhs": "21/4",
+      "rhs": "21/4",
+      "residual": "0"
+    },
+    "paraboloid_lower_constant": {
+      "lhs": "-1",
+      "rhs": "-1",
+      "residual": "0"
+    },
+    "paraboloid_upper_constant": {
+      "lhs": "21/8",
+      "rhs": "21/8",
+      "residual": "0"
+    },
+    "fixed_basis_and_Q": {
+      "det_N": "-48",
+      "Q": "I_4/4-J_4/36",
+      "Q_inverse": "4I_4+(4/5)J_4",
+      "eigenvalues": {
+        "1/4": 3,
+        "5/36": 1
+      },
+      "positive_definite": true
+    },
+    "initial_node_physical_derivative": {
+      "lhs": "B**2*k*l/(A**2 + B**2*k**2)",
+      "rhs": "B**2*k*l/(A**2 + B**2*k**2)",
+      "residual": "0"
+    },
+    "first_jet_quotient_derivative": {
+      "lhs": "-P0*delta/den**2 + P1/den",
+      "rhs": "(-P0*delta/den + P1)/den",
+      "residual": "0"
+    },
+    "cone_time_scale": {
+      "lhs": "D**4/144",
+      "rhs": "D**4/144",
+      "residual": "0"
+    },
+    "scaled_epsilon": {
+      "lhs": "942561/4",
+      "rhs": "942561/4",
+      "residual": "0"
+    },
+    "cube_and_fixed_box": {
+      "sign_corners": 16,
+      "Q_sign_max": "1",
+      "safe_halfwidth": "53571/8388608",
+      "face_halfwidth": "614/104729",
+      "saved_exact_min_residual": "246807106575839973232540021895060178084656525715273641505624614732337952523517741511651871531324251514485226539654461/82631996098781074868989413504096379978550585370535152410581099409300723904538918228148651304964410605948901503127919788032",
+      "min_residual_using_independent_saved_gradient_rectangle": "1974456852606719785860320175160481424677252205722189132044996917858703620188141932093214972250594012115881812321146371/661055968790248598951915308032771039828404682964281219284648795274405791236311345825189210439715284847591212025023358304256",
+      "fixed_box_primary_margin_from_paraboloid_positive": true,
+      "saved_fixed_box_lower_exceeds_both_targets": true,
+      "all_saved_root_brackets_verified": true
+    },
+    "ellipsoid": {
+      "gradient_rectangle_vertices": 16,
+      "B_upper_covers_entire_gradient_rectangle": true,
+      "B_squared_minus_rectangle_max": "2053823087264611474014912060542009802101093353041791852722813369233354094691234869027720352568591441536953981658658082866633/194064761537588616893622436057812819407110752139587076392381504753256369085797110791359801103580809743810966337141384150771447505514351798930535909380147642400556872002606238193783160703949805603157874899214558593861605856727007232",
+      "rho": "51857/8388608",
+      "exact_log_residual": "51556783333680024950315997224148806166149156116906764948501949299975642490768604907669522656356675710689699586290471/41315998049390537434494706752048189989275292685267576205290549704650361952269459114074325652482205302974450751563959894016",
+      "residual_positive": true
+    }
+  },
+  "transcendental_calls": 0,
+  "Green_or_H_calls": 0,
+  "source_producer_executed": false,
+  "new_global_g_claim": false,
+  "numerical_scope": "four tail gradients on x1=1 only; no fifth gradient",
+  "dependency": "Saved Delta and H/gradient enclosures are accepted after source review; no new log/exp evaluation."
+}

@@ -1,0 +1,32 @@
+{
+  "task": "upper_local035",
+  "registered_before_computation": true,
+  "model": "alpha=1, 16 independent unnormalised body-direction Cauchy components in R5; Fourier inverse(2*pi)^-5",
+  "read_only_inputs": {
+    "astra_vertex017/boundary_triangulation.json.gz": "8dd2e9895d7465ac599d43feb1b5099506f4e43d1248215eba0a77e11f4d13f9",
+    "astra_green018/kernel.py": "5045f262ef0e00eb38746f1cf2293ee6cde138a6874e8f6850dc90d28b33ea08",
+    "astra_green018/batch_result.json": "4eab4509995282e65c643c7423a523a9e4dbf02397060d185a0967ee5b6bd294"
+  },
+  "one_closed_box": {
+    "fixed_first_coordinate": "1",
+    "center": ["1", "104115/104729", "103354/104729", "71094/104729", "6327/104729"],
+    "four_tail_halfwidth": "1/16384",
+    "target_lower_bound": "1/10000"
+  },
+  "precision_bits": 384,
+  "Taylor_total_degree": 3,
+  "Taylor_multiindices": 35,
+  "method": "Compute exact fmpq coefficients of1 and log|k_v| for all35 center Taylor coefficients, summing all3504 simplices before Arb evaluation. Bound the complete-time resolvent product tail per simplex, not an ordinary DD interval box.",
+  "remainder": {
+    "projection_guard": "q_v=h*D*sum(abs(z_tail))/abs(k_v)<1 for all280 vertices",
+    "per_cone_tail": "(1-q)^-5 - sum_(n=0..3) binom(n+4,4)*q^n",
+    "absolute_time_integral": "Split at the five sorted positive abs(k_j), use min(1/abs(k_j),1/s) factor bounds; all terms rational except one log ratio.",
+    "log_majorant": "Range-reduce ratio to2^e*u,1<=u<2; use16 positive atanh-series terms plus explicit geometric tail, entirely rational."
+  },
+  "finite_operations": "Exactly3504 simplices; center nonzero/distinct qualification; no second box, radius/order adjustment, point search, time truncation, or spatial mesh. Center constant compared to the stored018 ball without re-running frozen018.",
+  "checkpoint_seconds": 120,
+  "checkpoint_stride_full_simplices": 128,
+  "checkpoint_policy": "Save exact global Taylor stencils and directed dyadic remainder upper bound after complete simplex blocks outside Git. On120sec checkpoint exit75 and resume the same fixed box; source/registration/input fingerprint mismatch rejects resume.",
+  "zero_and_repetition_policy": "Ordinary DD is used only at the exactly qualified center. Whole-box proof uses the resolvent integral; q<1 excludes zero individual projections, while any repeated nonzero projections in the box are covered by analytic continuation, never by ordinary zero-denominator substitution.",
+  "scope": "Certify only this closed spatial box for the full-time Green function, or honestly report a failed bound. No new global g or C5 claim. Main/017/018 and other agents read-only; no commit; no MATLAB."
+}
