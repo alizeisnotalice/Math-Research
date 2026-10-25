@@ -1,0 +1,31 @@
+{
+  "status": "PASS exact Fraction comparisons",
+  "candidate": {
+    "name": "L5-001 one-orbit rectangular perturbation",
+    "parameters": {
+      "delta_a1": "0",
+      "delta_a2": "1/64"
+    },
+    "lower_endpoint_reference": "rectangular_certificate.json:candidates[delta1=0,delta2=1/64].ratio_interval[0]",
+    "certificate_sha256": "c936085a919c855f02c8370764c85785f31852dffb5ab4c0be28fc12cd24dde5",
+    "display_lower_only": "1.9931518095794045"
+  },
+  "comparisons": [
+    {
+      "against": "Aldaz 2000 Proposition 1.4 n=5",
+      "upper_endpoint_reference": "../literature/aldaz_a5_certificate.json:interval[1]",
+      "source_sha256": "ed24cdd284f3adc1269a0eb02129f90cda8da855373b1e536f0c39a80ee7ffc4",
+      "strict_candidate_lower_gt_reference_upper": true,
+      "display_gap_lower_only": "0.24502717523092452"
+    },
+    {
+      "against": "internal R4 inherited by dimension monotonicity",
+      "upper_endpoint_reference": "../results/bounds_ledger.json:lower.exact_interval[1]",
+      "source_sha256": "c7bd9726b485eec898072469e55a666adddc370a863594b83128cf91fa0bf544",
+      "strict_candidate_lower_gt_reference_upper": true,
+      "display_gap_lower_only": "0.0914091984784485"
+    }
+  ],
+  "method": "Python fractions.Fraction parsed all referenced exact endpoint strings; no displayed decimal participates in either comparison.",
+  "scope": "Comparison is complete only for the locked finite witness certificate plus transfer.md. Independent geometric audit remains a separate acceptance gate."
+}

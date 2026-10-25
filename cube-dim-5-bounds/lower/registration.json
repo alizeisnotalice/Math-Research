@@ -1,0 +1,19 @@
+{
+  "round": "001",
+  "task": "L5-001 rectangular-lattice perturbation",
+  "scope": "fixed Lebesgue background; centered axis-parallel cubes; one common radius; finite witness lower cover followed by L1 smoothing",
+  "candidate_grid": {
+    "delta_a1": ["-1/64", "0", "1/64"],
+    "delta_a2": ["-1/64", "0", "1/64"]
+  },
+  "source_model": [
+    "a1=1+u^3/2+delta_a1",
+    "a2=(2+u^4 v)/4+delta_a2",
+    "a3=a4=a5=(1+u)/2",
+    "u^5=2, v^5=3"
+  ],
+  "finite_batch": "nine candidates; all l in {1,2,3,4}^5; exact endpoint ordering and union volume",
+  "stop_condition": "lock any candidate whose exact lower endpoint exceeds the unperturbed exact upper endpoint; send for independent review",
+  "result_file": "rectangular_certificate.json",
+  "proof_file": "transfer.md"
+}

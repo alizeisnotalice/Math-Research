@@ -1,0 +1,20 @@
+{
+  "round": 1,
+  "task": "five-dimensional body-frame short-time face interface",
+  "model": "16 unnormalised body directions (1,+/-1,+/-1,+/-1,+/-1), all Cauchy weights one",
+  "input": "script-internal integer direction set",
+  "batch": "exact direction, pair, triple, and five-subset enumeration",
+  "stop_condition": "enumerate all 16 directions, all 120 pairs, all 560 triples, and all 4368 five-subsets; no mesh expansion",
+  "command": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python -B cube-dim-5-bounds/upper/round001_shorttime.py",
+  "actual_exit_status": 0,
+  "actual_elapsed_seconds": 0.024511541,
+  "source_sha256": "547ccddf98bf9ab8e081d099d3b36d3b1acc67cc79a6b646ac15da02fdc9ff50",
+  "results_sha256": "b61fe328aba3c51eeeebb94390441ac8e2eba3973ca843006bac4bcb206189a3",
+  "independent_cross_check": {
+    "method": "SymPy Matrix.det and Matrix.rank over exact integers",
+    "actual_exit_status": 0,
+    "elapsed_seconds": 6.883980958,
+    "result": "same rank and determinant histograms, with complement determinant set {48}"
+  },
+  "proof_status": "The finite geometry and short-time L^(5/4) interface are established. No pointwise five-dimensional Green continuity, cube lower bound, face integral certificate, or C5 improvement is claimed."
+}
