@@ -1,0 +1,42 @@
+{
+  "status": "PASS independent finite U08 analytical diagnostics",
+  "source_sha256": {
+    "u08_cauchy_obstacle.md": "c1163c7b40ec5d5723228df0959fc00f7ae91197db49fe0bfc7f132fa6ad7aec",
+    "u08_kernel_transfer.md": "98ee459c6d24ad80e4bff39822d7f27746ff046710b0cc5ce3a64183d807f405"
+  },
+  "potential_constants": [
+    {
+      "n": 3,
+      "uniform_potential_integral": "3*F**(2/3)*M**(1/3)/(2*pi)"
+    },
+    {
+      "n": 4,
+      "uniform_potential_integral": "4*F**(3/4)*M**(1/4)/(3*pi)"
+    }
+  ],
+  "spectral_tail_chord_check": "h(0)=h(1)=0 and h_second=-exp(-x)<0; hence 1-exp(-x)>=(1-exp(-1))*x for 0<=x<=1",
+  "origin_cutoff_compact_C2_example_L_at_zero": "32*epsilon/(35*pi)",
+  "contact_example": {
+    "u": "product_j (1-x_j^2)_+^2, belongs H1",
+    "point": "(2,0,...,0)",
+    "L_u_exact": "(80/3 - log(282429536481))/pi",
+    "strict_positive_lower": "9/(100*pi)",
+    "meaning": "nonlocal contact Lu is generally positive, not zero; no new kernel cost"
+  },
+  "fixed_infinite_Levy_source_diagnostic": {
+    "kernel": "K=integral_0^infty exp(-t)/sqrt(t) p_t dt",
+    "mass_exact": "sqrt(pi)",
+    "k_of_psi": "sqrt(pi)/sqrt(a + 1)",
+    "rho_of_psi": "sqrt(pi)*a/sqrt(a + 1)",
+    "nu_density_mixture_weight": "(t + 1/2)*exp(-t)/t**(3/2)",
+    "nu_total_mass": "infinite",
+    "Levy_small_time_weighted_integral": "-exp(-1) + sqrt(pi)*erf(1)",
+    "meaning": "one fixed analytic example tests that L1 K can require infinite Levy source; no cube majorization or cost optimization"
+  },
+  "libraries": {
+    "SymPy": "1.14.0",
+    "Fraction": "Python standard library"
+  },
+  "scope": "finite symbolic/integral auxiliaries only; whole-space limit/CND/LK closure assessed in written proof, not inferred from diagnostics",
+  "checker_sha256": "dd0393414fd15c9ece86be285481ee6b7e380bc26e0b55e43d0fa5073daf6e04"
+}

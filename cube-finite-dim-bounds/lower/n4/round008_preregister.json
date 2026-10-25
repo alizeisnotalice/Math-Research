@@ -1,0 +1,162 @@
+{
+  "date": "2026-10-25",
+  "target": "Original exact dimension4 R4 full certificate; baseline embedding must be exact before search",
+  "mechanism": "Two-layer superperiod Q=(2P1,P2,P3,P4), positions0 and(P1,0,0,0)+d, d=P*h, masses1+epsilon,1-epsilon, full cell mass2",
+  "key_format": "16 integers: lo[orbit0,orbit1] then hi[orbit0,orbit1], each4coordinates; empty lo0/hi-1; original blocks split by first-coordinate parity with negative/cross-cell indices retained",
+  "directions_and_amplitudes": [
+    {
+      "epsilon": "0",
+      "h": [
+        "1/50",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "0",
+      "h": [
+        "0",
+        "1/50",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "0",
+      "h": [
+        "0",
+        "0",
+        "1/50",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "1/20",
+      "h": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "0",
+      "h": [
+        "1/25",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "0",
+      "h": [
+        "0",
+        "1/25",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "0",
+      "h": [
+        "0",
+        "0",
+        "1/25",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "1/10",
+      "h": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "1/20",
+      "h": [
+        "1/50",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "1/20",
+      "h": [
+        "0",
+        "1/50",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "1/20",
+      "h": [
+        "0",
+        "0",
+        "1/50",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "1/20",
+      "h": [
+        "0",
+        "1/50",
+        "1/50",
+        "1/50"
+      ]
+    },
+    {
+      "epsilon": "1/20",
+      "h": [
+        "1/50",
+        "1/50",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "1/20",
+      "h": [
+        "1/50",
+        "1/50",
+        "1/50",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "1/10",
+      "h": [
+        "1/20",
+        "0",
+        "1/20",
+        "1/20"
+      ]
+    },
+    {
+      "epsilon": "1/10",
+      "h": [
+        "1/20",
+        "1/20",
+        "1/20",
+        "1/20"
+      ]
+    }
+  ],
+  "baseline": "All old length1..4 blocks with starts[-2,2] first coordinate and[-2,1] others are parity-split. Verify integer mass/extrema embedding for all81920 blocks; exact Q(u,v) full-supercell union coefficient must equal2*R4, then divide mass2. Old formula/root JSON read only, not rebuilt from decimals.",
+  "finite_search": "16 points at original periods, then best2 symmetry-distinct nonzero starts, each at most240 Nelder-Mead evaluations. Variables log(P/P0)4,epsilon,h4. logperiod[-.03,.03],epsilon[-.2,.2],h[-.15,.15]. Custom simplex .002 logperiod,.01 epsilon,.005 h.",
+  "capture": "All passing cube entry events from256 deterministic Sobol centers seed20261025808 at each parameter change, retained parity keys and selected-start captured keys. Exactly one4096-center final capture seed20261025809 per endpoint with old keys retained. Full4D union, one common radius, mass2. No sparse satellite random phase search.",
+  "stop": "Any ratio>R4+1e-11 triggers accurate certificate priority/audit; no float improvement claim. If baseline embedding fails, fix interface and do not search on weaker coverage. Stop after16+2x240 and2final captures; no extra starts/grid.",
+  "ownership": "Only lower/n4/round008_*; no old evidence/ledger/project edits, no commit/push/spawn. Python actual; MATLAB primary serialized, no clear/path. Negative finite results are not family upper bounds.",
+  "input_sha256": {
+    "cube-finite-dim-bounds/baseline/original_certificates.json": "030ce0d945b1864e70a6dee24259f0145ed6a71650925524987cf299ef4d6e69",
+    "cube-finite-dim-bounds/baseline/algebraic_bounds.py": "8b3cb2dd042332e52ef9ed3360c9cc8fce210ea37f2112584eb9f5a8d0c31030",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-finite-dim/cube-finite-dim-bounds/rounds/008-registration.md": "d169f427d81129423c043f22f94d6d6ae72eb14e747dadc58cb2e026a40c0fd9"
+  }
+}

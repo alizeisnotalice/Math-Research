@@ -1,0 +1,7 @@
+# cb8三份实际signed连续dual证书独审登记
+
+2026-10-25。三次solve已由作者停止；本批不求解/优化、不修改020或旧证据/账本，不提交推送扩招，MATLAB仍主串行。只新021_*。
+
+锁定bridge upper/continuous_bridge三证书：n3_q1 SHA a36b9f52081528685c866d3a2714d0ca6c2be3580752e1394d281bbd9287ebaf；n3_q2 SHA 67f2c0b6644ef252846fbd4d4f761619d7afc21ae3e6bba76bf0f2cb181e42a8；n4_q1 SHA 46ee76cfd5f0a9cdf7979e699e77bb7c0eb88c4343f4d1029628af72129df2eb。作者checker未就绪，不依赖或导入。
+
+一批独立Python，最多一次实现修复：完整signed lattice以abs-sort展开轨道，核公共分子分母、重数、原点row与精确消元及Hessian含q²。由原B定义生成一维变换表，Python任意精度整数/NumPy object逐轴精确作用于完整系数张量，同时传播ψ及Δ，覆盖全部支撑胞元和Bernstein索引，不用作者对称约化矩阵。精确全ψ≥0、Δ≤1和原点0；目标由独立一维幂积分/面通量并与全胞元Bernstein积分核对，逐轨道目标亦全核；反推raw缩放及D修复。n4全中心非零，不误用018稀疏零胞元捷径。只声明准确连续可行测试函数，不把D<8/16当Cn界或全族障碍。若任一源变化立即拒绝重新锁定。完成准确报告后停批。

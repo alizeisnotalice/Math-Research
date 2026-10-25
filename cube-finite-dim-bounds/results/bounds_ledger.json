@@ -6,16 +6,16 @@
       "id": "L3",
       "status": "complete_strict_certificate",
       "interval": [
-        "2054294132167586889317603057538900249470143764928325398773826066658754006497742878066874789/1145024711052880000000000000000000000000000000000000000000000000000000000000000000000000000",
-        "14380058925173108225223221402793919572052022001502853547720185221337687824069986217368370263/8015172977370160000000000000000000000000000000000000000000000000000000000000000000000000000"
+        "575203812404224613608281575992133109687751372091898928600969175210489688457361381452203311/320606919109809280000000000000000000000000000000000000000000000000000000000000000000000000",
+        "14380095310105615340207039399825285902565185523463570451465843956305664344177985572283965141/8015172977745232000000000000000000000000000000000000000000000000000000000000000000000000000"
       ],
       "new_improvement": true,
-      "certificate": "audit/015_results.json",
+      "certificate": "audit/022_results.json",
       "public": "482167717377842991882283179477574801392641890014291050323/283174368139841919615520431313000857449005056000000000000",
-      "construction": "lower/n3/round007_certificate_input.json",
-      "simple_display_lower": "17941046270334288/10000000000000000",
-      "comparison_rule": "Must exceed full exact audit/015 upper, not display decimal or earlier checkpoints.",
-      "proof": "audit/015_audit.md"
+      "construction": "lower/n3/round008_certificate_input.json",
+      "simple_display_lower": "17941091664563071/10000000000000000",
+      "comparison_rule": "Must exceed full exact audit/022 upper, not display decimal or earlier checkpoints.",
+      "proof": "audit/022_audit.md"
     },
     {
       "id": "U3",
@@ -41,14 +41,14 @@
       "new_improvement": false
     }
   ],
-  "latest_round": 7,
+  "latest_round": 8,
   "round2_new_bound": false,
   "round2_report": "rounds/002.md",
   "progress": {
-    "L3": "015 fully certified and primary rerun; C3 >1.7941046270334288; exceeds public and prior internal full exact upper",
-    "L4": "Round7 90 structure cases +480 evaluations completed; joint nonadditivity useful but best finite witnessed ratio 1.9017191293027622 remains below R4; no new bound",
-    "U3": "U07 finite batch completed, no bound improvement; continuous signed dual interface certified for next round",
-    "U4": "U07 finite batch completed, no bound improvement; selected kernel exact cost exceeds16"
+    "L3": "022 independent+primary exact PASS; C3>1.7941091664563071 above full015 upper",
+    "L4": "Round8 exact superperiod embedding passed; finite16+480 search no improvement",
+    "U3": "Public model constructions certified and audited023; Cauchy comparison audited024; no global bound improvement",
+    "U4": "Public model constructions certified and audited023; Cauchy comparison audited024; no global bound improvement"
   },
   "round3_new_bound": false,
   "round3_report": "rounds/003.md",
@@ -164,6 +164,29 @@
       "new_construction": "T3_007: rational three-orbit input;637 keys,553 nonempty",
       "strictly_above_previous_exact_upper": true,
       "exact_gain_lower": "4440799105819684639621813186394966383575090059470847971738881998859581156147349844088238954657606031/143399548791970142350387427320000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "round": 8,
+      "checkpoint": "022",
+      "task": "L3",
+      "previous": {
+        "id": "L3",
+        "status": "complete_strict_certificate",
+        "interval": [
+          "2054294132167586889317603057538900249470143764928325398773826066658754006497742878066874789/1145024711052880000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "14380058925173108225223221402793919572052022001502853547720185221337687824069986217368370263/8015172977370160000000000000000000000000000000000000000000000000000000000000000000000000000"
+        ],
+        "new_improvement": true,
+        "certificate": "audit/015_results.json",
+        "public": "482167717377842991882283179477574801392641890014291050323/283174368139841919615520431313000857449005056000000000000",
+        "construction": "lower/n3/round007_certificate_input.json",
+        "simple_display_lower": "17941046270334288/10000000000000000",
+        "comparison_rule": "Must exceed full exact audit/015 upper, not display decimal or earlier checkpoints.",
+        "proof": "audit/015_audit.md"
+      },
+      "new_construction": "T3_008: free joint11 block, 639 keys555 nonempty",
+      "strictly_above_previous_exact_upper": true,
+      "exact_gain_lower": "9113316695531373206830854611285995861030594292497546330103613298168184282942241903554831781636129937/2007593683130346948326182471160000000000000000000000000000000000000000000000000000000000000000000000000000"
     }
   ],
   "round4_new_bound": true,
@@ -182,7 +205,7 @@
     "audit/010_audit.md",
     "proofs/finite_grid_kernel_diagnostic.md"
   ],
-  "current_round": 7,
+  "current_round": 8,
   "current_round_status": "completed",
   "round6_new_bound": true,
   "round6_improved_tasks": [
@@ -206,5 +229,17 @@
     "audit/018_audit.md",
     "audit/019_audit.md",
     "proofs/signed_dual_interface.md"
+  ],
+  "round8_new_bound": true,
+  "round8_improved_tasks": [
+    "L3"
+  ],
+  "round8_report": "rounds/008.md",
+  "round8_reusable_results": [
+    "audit/020_audit.md",
+    "audit/021_audit.md",
+    "audit/023_audit.md",
+    "audit/024_audit.md",
+    "proofs/public_models_n34.md"
   ]
 }

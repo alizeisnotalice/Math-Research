@@ -1,0 +1,63 @@
+{
+  "status": "PASS finite independent round8 interface prechecks",
+  "origin": [
+    {
+      "n": 3,
+      "integer_origin_row": [
+        8,
+        12,
+        6,
+        1
+      ],
+      "origin_denominator": 27,
+      "unit_grid_Hessian_diagonal_coefficients": [
+        "-8/9",
+        "0",
+        "2/3",
+        "2/9"
+      ],
+      "general_grid_scaling": "multiply Hessian by q^2 for h=1/q",
+      "all_ones_elimination_exact_zero": true
+    },
+    {
+      "n": 4,
+      "integer_origin_row": [
+        16,
+        32,
+        24,
+        8,
+        1
+      ],
+      "origin_denominator": 81,
+      "unit_grid_Hessian_diagonal_coefficients": [
+        "-16/27",
+        "-8/27",
+        "4/9",
+        "10/27",
+        "2/27"
+      ],
+      "general_grid_scaling": "multiply Hessian by q^2 for h=1/q",
+      "all_ones_elimination_exact_zero": true
+    }
+  ],
+  "independent_rounding_error_origin": "1/6750000000000",
+  "parity_mass_cases": 54,
+  "integer_blocks": 9,
+  "receiver_layers": [
+    0,
+    1
+  ],
+  "supercell_mass_exact": "2",
+  "negative_slope_counterexample": {
+    "N": 1,
+    "delta": -1,
+    "epsilon": "1/2",
+    "true_radius_fourth": "1/32",
+    "incorrect_positive_slope_lower": "109/256",
+    "incorrect_lower_fourth_exceeds_true": true
+  },
+  "safe_Taylor_condition": "|epsilon*delta/N|<=rho<1, remainder <=(3*r0/32)*(delta/N)^2*(1-rho)^(-7/4)*epsilon^2; rational factor (1-rho)^(-2) also sufficient",
+  "scope": "new finite identities and parity embedding only; no old R4 volume or LP run; author source audit pending",
+  "libraries": "Python int/Fraction; SymPy 1.14.0",
+  "checker_sha256": "8474173f011f19701e08b12d9a773aefae8f53b1d6d6ac1cd943d751eba065ae"
+}

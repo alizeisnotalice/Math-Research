@@ -1,0 +1,134 @@
+{
+  "batch": "U08",
+  "status": "finite diagnostics PASS, not a continuum numerical proof or new upper bound",
+  "matrix": {
+    "N": 5,
+    "t": "1/4",
+    "P_exact": [
+      [
+        "3/8",
+        "1/4",
+        "1/16",
+        "1/16",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "3/8",
+        "1/4",
+        "1/16",
+        "1/16"
+      ],
+      [
+        "1/16",
+        "1/4",
+        "3/8",
+        "1/4",
+        "1/16"
+      ],
+      [
+        "1/16",
+        "1/16",
+        "1/4",
+        "3/8",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "1/16",
+        "1/16",
+        "1/4",
+        "3/8"
+      ]
+    ],
+    "fixed_u_exact": [
+      "2/5",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "sigma_exact": [
+      "1",
+      "2/5",
+      "1/10",
+      "1/10",
+      "2/5"
+    ],
+    "mass_exact": "2",
+    "energy_exact": "2/5",
+    "40_step_error_exact": "12157665459056928801/3323069989462289682259517650700861440",
+    "40_step_error_display": 3.65856436897502e-18,
+    "supercritical_20step_mass_exact": "221479/32768",
+    "supercritical_20step_mass_display": 6.759002685546875,
+    "supercritical_obstruction": "input mass6>total cap5, so no finite mass-conserving capped fixed point"
+  },
+  "analytic_family": [
+    {
+      "n": 3,
+      "input": "f=100*p_1, T=3, kappa=1",
+      "uT_L1_exact": "300",
+      "f_peak": "3.225153443319948918442205",
+      "sigma_peak": "0.05039302255187420185065946",
+      "uT_peak": "1.511790676556226055519784",
+      "full_potential_peak": "1.612576721659974459221103",
+      "full_potential_L1": "infinite by Tonelli",
+      "saturation": "fails: uT>0 everywhere, sigma not kappa",
+      "discrete_potential_peak_checks": [
+        {
+          "t": "0.5",
+          "discrete_potential_peak": "2.60665806788692390267913505206",
+          "right_sum_bound": "3.22515344331994891844220526886"
+        },
+        {
+          "t": "0.25",
+          "discrete_potential_peak": "2.0651233444219021184589709927",
+          "right_sum_bound": "2.41886508248996168883165395164"
+        },
+        {
+          "t": "0.125",
+          "discrete_potential_peak": "1.82668244918432432233844788284",
+          "right_sum_bound": "2.01572090207496807402637829304"
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "input": "f=100*p_1, T=3, kappa=1",
+      "uT_L1_exact": "300",
+      "f_peak": "1.026598225468433518915278",
+      "sigma_peak": "0.004010149318236068433262806",
+      "uT_peak": "0.3368525427318297483940757",
+      "full_potential_peak": "0.3421994084894778396384261",
+      "full_potential_L1": "infinite by Tonelli",
+      "saturation": "fails: uT>0 everywhere, sigma not kappa",
+      "discrete_potential_peak_checks": [
+        {
+          "t": "0.5",
+          "discrete_potential_peak": "0.676103085141420737566662275194",
+          "right_sum_bound": "0.85549852122369459909606527226"
+        },
+        {
+          "t": "0.25",
+          "discrete_potential_peak": "0.491292440615906575358878562487",
+          "right_sum_bound": "0.598848964856586219367245690582"
+        },
+        {
+          "t": "0.125",
+          "discrete_potential_peak": "0.411667732101793046367838542147",
+          "right_sum_bound": "0.470524186673032029502835899743"
+        }
+      ]
+    }
+  ],
+  "new_upper_bound": false,
+  "code_sha256": "42f1e86962874d5717dac0884b6dea646ded5128a444288f40a19fbeae38ac25",
+  "matlab_actual": {
+    "execution": "parent serialized MATLAB -batch, actual exit0; no shared-session clear/path change",
+    "script_sha256": "a0036035547d76e13929ebdd3ea3d0708fca3db13f18ffa432686a96a4a1bc96",
+    "log_path": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/round008_u08_matlab.log",
+    "log_sha256": "667cdeecf7dc159f516b4affe3f9341f3e5a723c6ef12f125ab2f4a045f3bc87",
+    "stdout": "U08 P row defect 0 fixedpoint defect 0 mass 2 energy 0.40000000000000002\nU08 sigma 1 0.40000000000000002 0.10000000000000001 0.10000000000000001 0.40000000000000002\nU08 supercritical 20-step mass 6.7590026855468741 (proved lower bound 5)\nU08 analytic n3 f_peak 3.2251534433199494 sigma_peak 0.050393022551874209 uT_peak 1.5117906765562263 uT_L1 300; saturation fails\nU08 analytic n4 f_peak 1.0265982254684338 sigma_peak 0.0040101493182360696 uT_peak 0.33685254273182985 uT_L1 300; saturation fails\nU08 Cauchy semigroup one-dimensional convolution 0.17425723696192918 exact 0.17425723696192921 defect 2.78e-17\n",
+    "classification": "floating independent finite diagnostic; not continuous certificate"
+  }
+}
