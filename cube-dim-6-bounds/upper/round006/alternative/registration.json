@@ -1,0 +1,12 @@
+{
+  "id":"R6-006-C-alpha150-body32",
+  "scope":"independent finite positive-weight symmetric alpha=3/2 body32 stable frame; model diagnostics only, no C6 bound",
+  "dimension":6,"alpha":"3/2","weights":"all 32 weights 1; common rescaling cancels model cost",
+  "spatial_parameter_cap":16,
+  "batch":"16 fixed cube/positive-face parameters; 2 independently scrambled Sobol replicates, N=4096 positive-stable covariance samples each; analytic time integration; no time quadrature",
+  "resource_limit":{"wall_seconds":1200,"matlab":"forbidden to subagent","python":"existing local scipy/numpy/sympy"},
+  "acceptance":"exact symbolic scaling/exponent/cost checks, determinant/span check; two-replicate numerical feasibility only",
+  "stop":"after registered finite batch; no refinement if disagreement or positivity/conditioning failure; no C6 claim even if formal cost <64",
+  "output":"same directory stable_frame_batch.py, stable_frame_results.json, report.md, sources.json",
+  "proof_obligations":"generator and conservative semigroup; alpha-homogeneous Green; positive-source comparison; full allscale general L1 transfer; continuous g and face integral remain separate"
+}

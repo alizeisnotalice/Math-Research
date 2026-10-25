@@ -1,33 +1,15 @@
 # 六维中心方体研究状态
 
-状态active。第001–004轮已推送，第四轮提交479600a8259af962b31217b476921deadb7e0986。第005轮已完成，归档/提交以git log和rounds/005.md为准；第006轮按新六项职责并行推进。当前总目标未完成。
+状态active。第001–005轮已推送，005提交10f7e261d28d7908884556ab2e12f867b7aba8ea；第006轮已完成，提交状态见git log与rounds/006.md。总目标未完成。
 
-## 固定问题与准确门槛
+固定Lebesgue、中心轴平行共同半径、一般L1与全部正尺度。此轮认证门槛C6>5167309565027/2500000000000，C6≤64。完整原件区间与公开/内部来源分列results/bounds_ledger.json，追加阶段冻结coordination/phase_20261025/frozen_thresholds.json不变。任何新下界须严格超过当前完整构造上端，不能只超展示小数。
 
-Lebesgue、中心轴平行、所有坐标共同半径、一般L1、全部正尺度。已认证 C6>5167309565027/2500000000000=2.0669238260108，C6≤64。完整代数区间及公开/内部历史在results/bounds_ledger.json；任何新下界须严格超过当前完整构造上端，不能用展示小数。
+第006轮没有新C6界。body32-Cauchy的全空间条件接口、S2分类和whole-face短时预算已证；局部g达到1/60000但覆盖远未全域，I亦未闭合。alpha3/2替代核重新证明条件接口及S1奇异分类，经Astra审计，数值近线探路方差触发停止。三类相关质量/错位/二聚化共48候选未晋级；E各自有限L1接口已证且主实际检查通过。详见rounds/006.md。
 
-第003断点下界通过作者数域、主整数内缩与独立有限L1回放：127原始盒/96保留，K2^50、eta5e-36。新阶段冻结快照为coordination/phase_20261025/frozen_thresholds.json；三四维来源包、原暂停项目和五维项目只读。
+不重复：固定旧spacing标准族cap4→5/6已证无增益、旧粗120-leaf预算、失控MC、跳过重/零节点、纯虚Cauchy圆捷径。二聚化active长度8必须新collar3（未筛superset4），不能继承旧collar。
 
-## 已证/未闭合
+A–F独立职责、clone与模型见coordination/phase_20261025/roles.json。主负责集成/最终证明和push，代理不push、不递归扩招、不共用暂存。默认GPT-6.1-sol high/xhigh，按用户最新指令瓶颈/突破升Astra。MATLAB仅主串行；代理只交脚本，禁止clear/重置path或影响其他项目。此前未协调调用的收据已保存，不复跑不清空。
 
-body32-Cauchy全空间正部源、一般L1全尺度条件接口已审；21-cell准确fan、S2奇异层、whole-face短时可积性已审。第五轮新Cf=1/(243π^6)，K=(6/7)243^-1/6π^-11/6；K比旧值乘32^-1/6。严格全cube模型g下界约6.35e-8太弱，局部盒有更强下界；缺达到有竞争力成本的全域g/I认证，C6上界未降。
+完成条件：追加阶段双侧先均严格突破并独立认证，才登记双侧检查点；下一轮起再完成3轮，两侧均继续。现上界未进，检查点未触发，计数0/3。最终独审全部通过后才编译论文、核验推送并停止。
 
-固定当前spacing标准居中见证的cap4→5/6已由准确跨度、修正单盒包含及符号端点union覆盖严格证明无增益。不要重跑。失控条件MC、跳过零/重节点计算、各向同性/坐标product失败路线和已证不足的粗120-leaf积分预算不重复。有限512点H_.001形式norm5.7652e-5不是I证书。
-
-## 六项职责与模型
-
-最新角色/模型/独立clone/文件所有权及批次状态以coordination/phase_20261025/roles.json为准。A g理论、B I认证、C替代机制、D下界构造、E下界严格认证、F独立审计；代理不commit/push、不共享暂存区、不递归扩招。默认GPT-6.1-sol high/xhigh；按最新用户授权，明确瓶颈/突破时升Astra。F已因全域g/I瓶颈升Astra；D旧sol的相关质量/列错位批均未晋级、已停止，新D在独立clone以Astra试质量-间隙联合二聚化。
-
-代理MATLAB一律禁用，只能交函数脚本给主串行执行。此前一名新审计代理的未协调标量调用及变量/目录影响已收据记录，不得复跑；未清空或重置共享会话。今后主仅无赋值标量或函数局部计算，不干扰其他项目。
-
-## 新完成条件与计数
-
-按用户追加要求：本追加阶段首次两侧均满足冻结及动态门槛比较并独立认证后，登记dual_breakthrough_checkpoint.json；从其下一轮起再完成三轮完整并行研究。先达标一侧仍继续，新增突破不自动重置计数；撤回先修复并暂停未来计入。
-
-当前尚无双侧达标，后续三轮计数0。三轮后由未参与相应构造者独立复核、实际跑最小代码；全部通过后才编译论文PDF、核验推送、释放资源、最终停止。
-
-## 计算句柄
-
-第五轮所有计算已结束；其中原未决endpoint程序不恢复，已由新准确tag实现闭合。第六轮A/B/C/旧D的首批均已退出；新D Astra与F数学审计按各自登记继续。实际存活只依进程/exec句柄检查和roles最新回报，不从STATE推断，不因观察超时重复启动。
-
-主clone /Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6；Python /Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python。
+006全部批次已退出，无旧计算恢复。后续按各新registration有限批推进，句柄以实际进程和角色回报为准；不从历史记录重复启动。主clone /Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6；Python /Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python。只修改六维项目，资料包、原暂停项目和五维只读。
