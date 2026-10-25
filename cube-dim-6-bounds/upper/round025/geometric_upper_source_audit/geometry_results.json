@@ -1,0 +1,65 @@
+{
+  "completed_utc": "2026-10-25T19:37:49.896472+00:00",
+  "arithmetic": "Python fractions.Fraction; exact integers and rationals",
+  "named_checks": 8,
+  "kernel_calls": 0,
+  "matlab_calls": 0,
+  "new_spatial_grid_points": 0,
+  "proof_status": "General statements proved analytically in theorem.md; finite checks are sanity checks.",
+  "input_sha256": "49a1d9d0d9d824b3e29b26f3c970ca6bc56eeeabc1572834648c580da9a98d9d",
+  "source_sha256": "d80baba0f75d435dc5b7f0f00589839d5d01c195b65bc6814a55a72ad3d3e424",
+  "results": [
+    {
+      "name": "01_epsilon_and_center_exclusion",
+      "pass": true,
+      "epsilon": "1/100",
+      "center_distance": "99/50"
+    },
+    {
+      "name": "02_common_intersection",
+      "pass": true,
+      "common_volume": "1/15625000000",
+      "ratio_to_one_cube": "1/1000000000000"
+    },
+    {
+      "name": "03_pair_overlap",
+      "pass": true,
+      "ratios": "[Fraction(1, 100), Fraction(1, 10000), Fraction(1, 1000000), Fraction(1, 100000000), Fraction(1, 10000000000), Fraction(1, 1000000000000)]"
+    },
+    {
+      "name": "04_union_redundancy",
+      "pass": true,
+      "union_volume": "62103840598801/15625000000",
+      "redundancy_ratio": "1896159401199/64000000000000"
+    },
+    {
+      "name": "05_corner_mass_threshold",
+      "pass": true,
+      "single_corner_threshold": "729/15625",
+      "twenty_one_times": "15309/15625",
+      "twenty_two_times": "16038/15625"
+    },
+    {
+      "name": "06_empty_corner_gap",
+      "pass": true,
+      "empty_corners": "43",
+      "delta": "43/15625",
+      "gamma": "999957/15625"
+    },
+    {
+      "name": "07_large_mass_branch",
+      "pass": true,
+      "large_mass_bound": "500000/8019",
+      "gamma": "999957/15625"
+    },
+    {
+      "name": "08_conditional_leakage_arithmetic",
+      "pass": true,
+      "theta": "43/4000000",
+      "leakage_budget": "43/62500",
+      "conditional_global_constant": "1999957/31250"
+    }
+  ],
+  "input_sha256_at_run": "7202b7d3d7a868f02e9b1159ef82f74139db21d50f1de6a55f6d5a1d7dd23485",
+  "metadata_correction": "The initially mistyped manual timestamp was corrected from filesystem birthtime; mathematical inputs and check list were unchanged and the checks were not rerun."
+}

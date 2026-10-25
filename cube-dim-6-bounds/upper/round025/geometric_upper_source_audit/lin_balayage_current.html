@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Two partial balayage principles for weak-type estimates | Yongxi (Aaron) Lin</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Two partial balayage principles for weak-type estimates" />
+<meta name="author" content="Yongxi Lin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Two partial balayage principles for weak-type estimates, with applications to Riesz transforms, projections, and maximal operators." />
+<meta property="og:description" content="Two partial balayage principles for weak-type estimates, with applications to Riesz transforms, projections, and maximal operators." />
+<link rel="canonical" href="https://coolrmal.github.io/articles/two-partial-balayage-principles/" />
+<meta property="og:url" content="https://coolrmal.github.io/articles/two-partial-balayage-principles/" />
+<meta property="og:site_name" content="Yongxi (Aaron) Lin" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Two partial balayage principles for weak-type estimates" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Yongxi Lin"},"description":"Two partial balayage principles for weak-type estimates, with applications to Riesz transforms, projections, and maximal operators.","headline":"Two partial balayage principles for weak-type estimates","url":"https://coolrmal.github.io/articles/two-partial-balayage-principles/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="/assets/css/main.css?v=1792898706">
+  
+  <link rel="stylesheet" href="/assets/css/article.css?v=1792898706">
+  <link type="application/atom+xml" rel="alternate" href="https://coolrmal.github.io/feed.xml" title="Yongxi (Aaron) Lin" /><link rel="stylesheet" href="/js/highlightjs/styles/github.css">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+      }
+    });
+    MathJax.Hub.Register.StartupHook("End", function () {
+      if (window.gluePunctuation) window.gluePunctuation();
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/javascript" src="/js/highlightjs/highlight.min.js"></script>
+  <script type="text/javascript" src="/js/highlightjs/languages/plaintext.min.js"></script>
+  <script type="text/javascript"> hljs.highlightAll(); </script>
+</head>
+<body>
+    <header><nav id="navbar">
+  <div class="container nav-inner">
+    <a class="nav-brand" href="/">Yongxi (Aaron) Lin</a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a class="nav-link" href="/">About</a></li>
+      <li><a class="nav-link active" href="/research/">Research</a></li>
+      <li><a class="nav-link" href="/archive.html">Blog</a></li>
+    </ul>
+  </div>
+</nav>
+</header>
+    <main role="main"><div class="container page article-page">
+  <header class="post-header">
+    <a href="/research/">&larr; Research</a>
+    <h1 class="post-title">Two partial balayage principles for weak-type estimates</h1>
+    <p class="article-author">Yongxi Lin</p>
+    <a href="/assets/papers/two-partial-balayage-principles.pdf">Download PDF</a>
+  </header>
+  <article class="post-content mathematical-article">
+<nav aria-label="Article contents" class="article-toc"><h2>Contents</h2><ol><li><a href="#sec:balayage-input">1 Linear
+principle</a><ol><li><a href="#the-decomposition">1.1 The
+decomposition</a></li></ol></li><li><a href="#applications-of-the-linear-principle">2 Applications of the linear principle</a><ol><li><a href="#sec:riesz">2.1 Riesz transform</a></li><li><a href="#sec:beurling">2.2 Beurling–Ahlfors transform</a></li><li><a href="#sec:hessians">2.3 Second-order Riesz transforms</a></li><li><a href="#sec:leray">2.4 Projections</a></li></ol></li><li><a href="#maximal-principle">3 Maximal
+principle</a><ol><li><a href="#the-decomposition-1">3.1 The
+decomposition</a></li><li><a href="#the-estimate">3.2 The
+estimate</a></li></ol></li><li><a href="#applications-of-the-maximal-principle">4 Applications of the maximal principle</a><ol><li><a href="#sec:intervals">4.1 Intervals</a></li><li><a href="#sec:balls">4.2 Euclidean balls</a></li><li><a href="#sec:squares">4.3 Axis-parallel squares</a></li><li><a href="#sec:poisson">4.4 Poisson maximal</a></li><li><a href="#sec:heat">4.5 Heat maximal</a></li></ol></li><li><a href="#app:planar-sharp">A Sharp
+planar bound for the second-order Riesz transform</a></li><li><a href="#references">References</a></li></ol></nav><h2 id="abstract">Abstract</h2>
+<p>We formulate two principles for weak-type (1,1) estimates. The first
+applies to linear operators through a locality identity; the second
+applies to maximal operators through comparison with a positive kernel.
+We explain the principles and apply them to obtain the following
+bounds.</p>
+<div aria-label="Operator bounds" class="article-table-scroll" role="region" tabindex="0"><table class="operator-bounds"><caption>Upper bounds for the weak-type (1,1) constant obtained by the principles</caption><thead><tr><th scope="col">Operator</th><th scope="col">Upper bound</th></tr></thead><tbody><tr><th scope="row"><p>Riesz transform</p>
+</th><td><p><span class="math inline">$$2$$</span></p>
+</td></tr><tr><th scope="row"><p>Beurling–Ahlfors transform</p>
+</th><td><p><span class="math inline">$$2$$</span></p>
+</td></tr><tr><th scope="row"><p>Second-order Riesz transform, <span class="math inline">$$n=
+2$$</span></p>
+</th><td><p><span class="math inline">$$\frac{3\sqrt{6}}{4}$$</span></p>
+</td></tr><tr><th scope="row"><p>Second-order Riesz transform, <span class="math inline">$$n\ge
+2$$</span></p>
+</th><td><p><span class="math inline">$$\frac1{a_n}+\frac{(n-1)a_n}{n-a_n^2}$$</span>,
+<span class="math inline">$$a_n:=\sqrt{\frac{2n}{n+1+\sqrt{(n+1)^2+4(n-2)}}}$$</span></p>
+</td></tr><tr><th scope="row"><p>Traceless second-order Riesz transform</p>
+</th><td><p><span class="math inline">$$2\sqrt{1-n^{-1}}$$</span></p>
+</td></tr><tr><th scope="row"><p>Leray and gradient projections</p>
+</th><td><p><span class="math inline">$$\approx 1.805$$</span></p>
+</td></tr><tr><th scope="row"><p>Centered Hardy–Littlewood maximal operator, <span class="math inline">$$n=1$$</span></p>
+</th><td><p><span class="math inline">$$2$$</span></p>
+</td></tr><tr><th scope="row"><p>Centered Hardy–Littlewood maximal operator for balls, <span class="math inline">$$n=2$$</span></p>
+</th><td><p><span class="math inline">$$e$$</span></p>
+</td></tr><tr><th scope="row"><p>Centered Hardy–Littlewood maximal operator for axis-parallel squares,
+<span class="math inline">$$n=2$$</span></p>
+</th><td><p><span class="math inline">$$3.879$$</span></p>
+</td></tr><tr><th scope="row"><p>Centered Hardy–Littlewood maximal operator for balls, <span class="math inline">$$n\ge 3$$</span></p>
+</th><td><p><span class="math inline">$$(n/2)^{n/(n-2)}$$</span></p>
+</td></tr><tr><th scope="row"><p>Poisson maximal operator, <span class="math inline">$$n=1$$</span></p>
+</th><td><p><span class="math inline">$$1+\frac2\pi\left(\frac{\sqrt5}{3}-\arctan\frac2{\sqrt5}\right)\approx
+1.010$$</span></p>
+</td></tr><tr><th scope="row"><p>Poisson maximal operator, <span class="math inline">$$n=2$$</span></p>
+</th><td><p><span class="math inline">$$\approx 1.021$$</span></p>
+</td></tr><tr><th scope="row"><p>Poisson maximal operator</p>
+</th><td><p><span class="math inline">$$\frac{\Gamma((n+1)/2)}{\sqrt\pi\,\Gamma(n/2)}
+\biggl[\frac{2b^{n/2}}{n(1+a)^{(n+1)/2}}+\int_b^\infty\frac{z^{n/2-1}}{(1+z)^{(n+1)/2}}\,dz\biggr]$$</span></p>
+</td></tr><tr><th scope="row"><p>Heat maximal operator, <span class="math inline">$$n=1$$</span></p>
+</th><td><p><span class="math inline">$$\approx 1.037087$$</span></p>
+</td></tr><tr><th scope="row"><p>Heat maximal operator, <span class="math inline">$$n=2$$</span></p>
+</th><td><p><span class="math inline">$$\approx 1.094052$$</span></p>
+</td></tr><tr><th scope="row"><p>Heat maximal operator</p>
+</th><td><p><span class="math inline">$$\frac1{\Gamma(n/2)}
+\left[
+\frac{2(\rho_n a)^{n/2}e^{-a}}{n}
++\int_{\rho_n a}^\infty z^{n/2-1}e^{-z}\,dz
+\right]$$</span>, <span class="math inline">$$\rho_n=
+\begin{cases}
+(n/2)^{2/(n-2)},&amp;n\ne2,\\
+e,&amp;n=2.
+\end{cases}$$</span> Here <span class="math inline">$$a$$</span> is the
+unique nonzero solution in <span class="math inline">$$(n/(2\rho_n),n/2)$$</span> of <span class="math inline">$$e^{-(\rho_n-1)a}=1-\frac{2a}{n}.$$</span></p>
+</td></tr></tbody></table></div>
+<section class="level1" data-number="1" id="sec:balayage-input">
+<h2 data-number="1"><span class="header-section-number">1</span> Linear
+principle</h2>
+<section class="level2" data-number="1.1" id="the-decomposition">
+<h3 data-number="1.1"><span class="header-section-number">1.1</span> The
+decomposition</h3>
+<p>The following theorem extends <a href="#ref-oss">[2, Theorem 1.2]</a>
+to finite-dimensional Hilbert-valued functions and includes the endpoint
+<span class="math inline">$$\alpha=2$$</span>.</p>
+<div class="theorem article-theorem" id="lem:vector-obstacle">
+<p><strong>Theorem 1.1</strong>. <em>Let <span class="math inline">$$E$$</span> be a finite-dimensional real or complex
+Hilbert space and <span class="math inline">$$0&lt;\alpha\le2$$</span>.
+For <span class="math inline">$$f\in L^1(\mathbb R^n;E)\cap L^2(\mathbb
+R^n;E)$$</span> and <span class="math inline">$$\kappa&gt;0$$</span>,
+there exist <span class="math inline">$$u\in H^\alpha(\mathbb R^n;E)\cap
+L^1(\mathbb R^n;E)$$</span> and <span class="math inline">$$\mu\in
+L^1(\mathbb R^n;E)\cap L^\infty(\mathbb R^n;E)$$</span> with</em></p>
+<ul>
+<li><p><em><span class="math inline">$$f=\mu+(-\Delta)^{\alpha/2}u$$</span>;</em></p></li>
+<li><p><em><span class="math inline">$$\|\mu\|_{\infty}\le\kappa$$</span> and <span class="math inline">$$\|\mu\|_1\le\|f\|_1$$</span>;</em></p></li>
+<li><p><em><span class="math inline">$$\mu=\kappa u/|u|_E$$</span>
+almost everywhere on <span class="math inline">$$\Omega:=\{|u|_E&gt;0\}$$</span>;</em></p></li>
+<li><p><em><span class="math inline">$$\kappa|\Omega|\le\|f\|_1$$</span>.</em></p></li>
+</ul>
+<p><em>For <span class="math inline">$$\alpha=2$$</span>, both <span class="math inline">$$\nabla u$$</span> and <span class="math inline">$$D^2u$$</span> vanish almost everywhere on <span class="math inline">$$\Omega^c$$</span>, and consequently <span class="math inline">$$f=\mu$$</span> there.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Replace the scalar absolute value in the variational
+argument of <a href="#ref-oss">[2, Section 4]</a> by the Hilbert norm,
+and minimize <span class="math display">$$J(v)=\frac12\|(-\Delta)^{\alpha/4}v\|_2^2
+       +\kappa\|v\|_1-\operatorname{Re}\int\langle f,v\rangle_E$$</span>
+over <span class="math inline">$$H^{\alpha/2}\cap L^1$$</span>. The same
+compactness argument gives a unique minimizer <span class="math inline">$$u$$</span>. At <span class="math inline">$$\alpha=2$$</span>, the energy is <span class="math inline">$$\frac12\|\nabla v\|_2^2$$</span>.</p>
+<p>The <em>Euler condition</em> means that no perturbation <span class="math inline">$$u+th$$</span> lowers <span class="math inline">$$J$$</span> to first order; <span class="math inline">$$t$$</span> is real even when <span class="math inline">$$E$$</span> is complex. At <span class="math inline">$$u\ne0$$</span>, the norm has directional
+derivative <span class="math inline">$$\operatorname{Re}\langle
+u/|u|_E,h\rangle_E$$</span>; at zero its one-sided directional
+derivative is <span class="math inline">$$|h|_E$$</span>. Minimality in
+both directions gives <span class="math display">$$(-\Delta)^{\alpha/2}u+\mu=f,\qquad
+|\mu|_E\le\kappa,\qquad
+\mu=\kappa u/|u|_E\quad\text{on }\Omega.$$</span> In the nonnegative
+scalar case the saturated value is <span class="math inline">$$\kappa$$</span>. Here it is a vector of length
+<span class="math inline">$$\kappa$$</span> pointing along <span class="math inline">$$u$$</span>.</p>
+<p>For the <span class="math inline">$$L^1$$</span> estimate, choose
+<span class="math inline">$$w=u/|u|_E$$</span> on <span class="math inline">$$\Omega$$</span> and <span class="math inline">$$w=\mu/|\mu|_E$$</span> elsewhere, taking zero when
+both vanish. The positive averaging semigroup <span class="math inline">$$P_t=e^{-t(-\Delta)^{\alpha/2}}$$</span> satisfies
+<span class="math display">$$|u|_E-P_t|u|_E
+\le\operatorname{Re}\langle w,u-P_tu\rangle_E.$$</span> Divide by <span class="math inline">$$t$$</span> and pass to the limit against
+nonnegative smooth test functions. Since <span class="math inline">$$(u-P_tu)/t\to f-\mu$$</span> in <span class="math inline">$$L^2_{\rm loc}$$</span>, this gives <span class="math display">$$(-\Delta)^{\alpha/2}|u|_E\le |f|_E-|\mu|_E
+\quad\text{in distributions}.$$</span> Test with <span class="math inline">$$\chi_R=\chi(\cdot/R)$$</span>, where <span class="math inline">$$0\le\chi\le1$$</span> is smooth, compactly
+supported, and equals one near zero. Since <span class="math inline">$$\|(-\Delta)^{\alpha/2}\chi_R\|_\infty=O(R^{-\alpha})$$</span>,
+letting <span class="math inline">$$R\to\infty$$</span> gives <span class="math inline">$$\|\mu\|_1\le\|f\|_1$$</span>. Saturation then
+gives <span class="math inline">$$\kappa|\Omega|\le\|f\|_1$$</span>.</p>
+<p>Now <span class="math inline">$$\mu\in L^1\cap L^\infty\subset
+L^2$$</span>, so Plancherel gives <span class="math inline">$$u\in
+H^\alpha$$</span>. At <span class="math inline">$$\alpha=2$$</span>,
+applying the Sobolev zero-set property to <span class="math inline">$$u$$</span> and then to its first derivatives gives
+<span class="math inline">$$\nabla u=D^2u=0$$</span> on <span class="math inline">$$\Omega^c$$</span>, hence <span class="math inline">$$\mu=f$$</span> there. For scalar <span class="math inline">$$f\ge0$$</span>, replacing <span class="math inline">$$u$$</span> by <span class="math inline">$$|u|$$</span> does not increase <span class="math inline">$$J$$</span>, so <span class="math inline">$$u\ge0$$</span>. Testing the decomposition with
+<span class="math inline">$$\chi_R$$</span> also gives <span class="math inline">$$\int\mu=\int f$$</span>, which together with the
+<span class="math inline">$$L^1$$</span> bound implies <span class="math inline">$$\mu\ge0$$</span>. ◻</p>
+</div>
+<p>For nonnegative scalar data, this is the partial balayage
+construction: <span class="math inline">$$f$$</span> is redistributed
+into the capped density <span class="math inline">$$\mu$$</span>, while
+the odometer <span class="math inline">$$u$$</span> records the
+redistribution through <span class="math inline">$$(-\Delta)^{\alpha/2}u=f-\mu$$</span>. We now apply
+Theorem <a data-reference="lem:vector-obstacle" data-reference-type="ref" href="#lem:vector-obstacle">1.1</a> to obtain our first
+principle. <span data-label="sec:linear-principle" id="sec:linear-principle"></span></p>
+<div class="principle article-theorem" id="thm:linear-principle">
+<p><strong>Principle 1</strong> (Linear). <em>Let <span class="math inline">$$E$$</span> and <span class="math inline">$$F$$</span> be finite-dimensional real or complex
+Hilbert spaces, and let <span class="math inline">$$T:L^2(\mathbb
+R^n;E)\to L^2(\mathbb R^n;F)$$</span> be a bounded linear operator.
+Suppose that <span class="math inline">$$\|T\|_{2\to2}\le M$$</span>
+and, for some <span class="math inline">$$0&lt;\alpha\le2$$</span>, the
+composition <span class="math inline">$$T(-\Delta)^{\alpha/2}$$</span>
+is local in the following sense: for every <span class="math inline">$$u\in H^\alpha(\mathbb R^n;E)$$</span>, <span class="math inline">$$T(-\Delta)^{\alpha/2}u=0$$</span> almost
+everywhere on <span class="math inline">$$\{u=0\}.$$</span> Then <span class="math inline">$$\|T\|_{1\to1,\infty}\le2M$$</span>.</em></p>
+</div>
+<p>In the applications below, <span class="math inline">$$T(-\Delta)^{\alpha/2}$$</span> is a differential
+operator; the required vanishing follows from the Sobolev zero-set
+property.</p>
+<div class="proof">
+<p><em>Proof.</em> For <span class="math inline">$$f\in L^1\cap
+L^2$$</span>, use the decomposition <span class="math inline">$$f=\mu+(-\Delta)^{\alpha/2}u$$</span>. Outside
+<span class="math inline">$$\Omega$$</span> one has <span class="math inline">$$Tf=T\mu+T(-\Delta)^{\alpha/2}u=T\mu$$</span> by
+locality, so Chebyshev’s inequality gives <span class="math display">$$\begin{aligned}
+\lambda\bigl|\{|Tf|&gt;\lambda\}\bigr|
+\le\lambda|\Omega|+\lambda^{-1}\|T\mu\|_2^2\le\left(\frac{\lambda}{\kappa}
+             +\frac{M^2\kappa}{\lambda}\right)\|f\|_1.
+\end{aligned}$$</span> Here <span class="math inline">$$\|\mu\|_2^2\le\kappa\|\mu\|_1\le\kappa
+\|f\|_1$$</span>. For <span class="math inline">$$M&gt;0$$</span>,
+choose <span class="math inline">$$\kappa=\lambda/M$$</span>. The case
+<span class="math inline">$$M=0$$</span> is trivial. ◻</p>
+</div>
+<p>An identity component can improve the bound.</p>
+<div class="principlevariant article-theorem" id="prop:identity-component">
+<p><strong>Principle 1.2</strong> (Variant of Principle <a data-reference="thm:linear-principle" data-reference-type="ref" href="#thm:linear-principle">1</a>). <em>Suppose <span class="math inline">$$E=F$$</span> and <span class="math inline">$$T=cI+S$$</span> for some <span class="math inline">$$c\ne0$$</span>, with <span class="math inline">$$\|S\|_{2\to2}\le M$$</span>. Assume the same
+locality condition as in Principle <a data-reference="thm:linear-principle" data-reference-type="ref" href="#thm:linear-principle">1</a>.
+Then <span class="math display">$$\|T\|_{1\to1,\infty}
+\le\inf_{0&lt;a&lt;1/|c|}
+\left\{\frac1a+\frac{M^2a}{(1-|c|a)^2}\right\}.$$</span></em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Choose <span class="math inline">$$0&lt;\kappa&lt;\lambda/|c|$$</span> and write
+<span class="math inline">$$f=\mu+(-\Delta)^{\alpha/2}u$$</span> using
+the decomposition. Outside <span class="math inline">$$\Omega$$</span>
+one has <span class="math display">$$|Tf|=|T\mu|=|c\mu+S\mu|
+\le |c|\kappa+|S\mu|.$$</span> Hence, up to a null set, <span class="math display">$$\{|Tf|&gt;\lambda\}
+\subseteq \Omega\cup\{|S\mu|&gt;\lambda-|c|\kappa\}.$$</span> The
+restriction on <span class="math inline">$$\kappa$$</span> makes the
+latter threshold positive. Applying Chebyshev’s inequality gives <span class="math display">$$\begin{aligned}
+\lambda|\{|Tf|&gt;\lambda\}|
+\le \lambda|\Omega|
+       +\frac{\lambda\|S\mu\|_2^2}{(\lambda-|c|\kappa)^2}\le
+\left(\frac{\lambda}{\kappa}
+       +\frac{\lambda M^2\kappa}{(\lambda-|c|\kappa)^2}\right)\|f\|_1.
+\end{aligned}$$</span> Here <span class="math inline">$$\|S\mu\|_2^2\le
+M^2\|\mu\|_2^2
+\le M^2\kappa\|\mu\|_1
+\le M^2\kappa\|f\|_1$$</span>. Set <span class="math inline">$$\kappa=a\lambda$$</span>, where <span class="math inline">$$0&lt;a&lt;1/|c|$$</span>. The estimate becomes
+<span class="math display">$$\lambda|\{|Tf|&gt;\lambda\}|
+\le\left(\frac1a+\frac{M^2a}{(1-|c|a)^2}\right)\|f\|_1.$$</span> ◻</p>
+</div>
+</section>
+</section>
+<section class="level1" data-number="2" id="applications-of-the-linear-principle">
+<h2 data-number="2"><span class="header-section-number">2</span>
+Applications of the linear principle</h2>
+<section class="level2" data-number="2.1" id="sec:riesz">
+<h3 data-number="2.1"><span class="header-section-number">2.1</span>
+Riesz transform</h3>
+<p>Denote the Riesz transform by <span class="math inline">$$R=\nabla(-\Delta)^{-1/2}$$</span>. Its Fourier
+multiplier is <span class="math inline">$$i\xi/|\xi|$$</span>, so
+Plancherel gives <span class="math inline">$$\|R\|_{2\to2}=1$$</span>.
+<span class="math inline">$$R(-\Delta)^{1/2}u=\nabla u$$</span>.
+Principle <a data-reference="thm:linear-principle" data-reference-type="ref" href="#thm:linear-principle">1</a> therefore gives <span class="math inline">$$\|R\|_{1\to1,\infty}\le2.$$</span> This is exactly
+Theorem 1.1 in <a href="#ref-oss">[2]</a>.</p>
+</section>
+<section class="level2" data-number="2.2" id="sec:beurling">
+<h3 data-number="2.2"><span class="header-section-number">2.2</span>
+Beurling–Ahlfors transform</h3>
+<p>The Beurling–Ahlfors transform is <span class="math display">$$Bf(z)=-\frac1\pi\operatorname{p.v.}\int_\mathbb C
+             \frac{f(w)}{(z-w)^2}\,dA(w),
+\qquad \widehat{Bf}(\xi)=\frac{(\xi_1-i\xi_2)^2}{|\xi|^2}\widehat
+f(\xi).$$</span> Its multiplier has modulus one and thus <span class="math inline">$$\|B\|_{2\to2}=1$$</span>. With <span class="math inline">$$D=\partial_1-i\partial_2$$</span>, <span class="math inline">$$B(-\Delta u)=-D^2u.$$</span> Principle <a data-reference="thm:linear-principle" data-reference-type="ref" href="#thm:linear-principle">1</a> gives <span class="math inline">$$\|B\|_{1\to1,\infty}\le2$$</span>
+for complex-valued inputs.</p>
+<p>Classical Calderón–Zygmund theory gives weak-type <span class="math inline">$$(1,1)$$</span> boundedness; Astala–Iwaniec–Martin
+record the explicit upper bound <span class="math inline">$$30$$</span> <a href="#ref-aim">[3, Theorem
+4.5.2]</a>. Guerra <a href="#ref-guerra">[4, Corollary 1.2]</a> proved
+the sharp constant <span class="math inline">$$2$$</span> for
+real-valued inputs using quasiconvexity and Morse theory.</p>
+</section>
+<section class="level2" data-number="2.3" id="sec:hessians">
+<h3 data-number="2.3"><span class="header-section-number">2.3</span>
+Second-order Riesz transforms</h3>
+<p>For scalar <span class="math inline">$$f$$</span>, define the
+matrix-valued second-order Riesz transform <span class="math inline">$$\mathcal H_nf=(R_jR_kf)_{j,k}
+=D^2(-\Delta)^{-1}f.$$</span> The multiplier of <span class="math inline">$$\mathcal H_n$$</span> is <span class="math inline">$$-\xi\otimes\xi/|\xi|^2$$</span>. With the
+Frobenius norm, <span class="math inline">$$\|\mathcal
+H_n\|_{2\to2}=1$$</span>. Define its traceless part by <span class="math inline">$$\mathcal H_{0,n}f=\mathcal H_nf+\frac fn
+I.$$</span> Orthogonality to the identity matrix gives <span class="math display">$$|\mathcal H_nf|_F^2=|\mathcal
+H_{0,n}f|_F^2+\frac{|f|^2}{n},
+\qquad
+\|\mathcal H_{0,n}f\|_2^2=\left(1-\frac1n\right)\|f\|_2^2.$$</span> Both
+compositions are local: <span class="math display">$$\mathcal
+H_n(-\Delta u)=D^2u,
+\qquad
+\mathcal H_{0,n}(-\Delta u)=D^2u-\frac{\Delta u}{n}I.$$</span>
+Principle <a data-reference="thm:linear-principle" data-reference-type="ref" href="#thm:linear-principle">1</a> therefore gives <span class="math inline">$$\|\mathcal H_n\|_{1\to1,\infty}\le2$$</span> and
+<span class="math inline">$$\|\mathcal
+H_{0,n}\|_{1\to1,\infty}\le2\sqrt{1-1/n}$$</span>. The trace identity
+improves the first bound.</p>
+<div class="corollary article-theorem">
+<p><strong>Corollary 2.1</strong>. <em>For <span class="math inline">$$n\ge2$$</span>,</em></p>
+<p><em><span class="math display" id="eq:hessian-bound">$$\|\mathcal H_n\|_{1\to1,\infty}
+\le\min_{0&lt;a&lt;\sqrt n}\left(\frac1a+\frac{(n-1)a}{n-a^2}\right)
+=\frac1{a_n}+\frac{(n-1)a_n}{n-a_n^2},
+\tag{1}$$</span></em></p>
+<p><em>where <span class="math display">$$a_n^2=\frac{2n}{n+1+\sqrt{(n+1)^2+4(n-2)}}.$$</span>
+In dimension two this upper bound is <span class="math inline">$$3\sqrt6/4=1.837117307087\ldots$$</span>. For every
+<span class="math inline">$$n\ge2$$</span> it is less than <span class="math inline">$$2$$</span>, and as <span class="math inline">$$n\to\infty$$</span> it equals <span class="math inline">$$2-n^{-2}+2n^{-3}+O(n^{-4})$$</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> The proof is similar to that of Principle <a data-reference="prop:identity-component" data-reference-type="ref" href="#prop:identity-component">1.2</a>. Write <span class="math inline">$$f=\mu-\Delta u$$</span> with cap <span class="math inline">$$\kappa$$</span>. Outside <span class="math inline">$$\Omega=\{|u|&gt;0\}$$</span>, locality and trace
+orthogonality imply <span class="math display">$$|\mathcal
+H_nf|_F^2=|\mathcal H_n\mu|_F^2
+=|\mathcal H_{0,n}\mu|_F^2+\frac{|\mu|^2}{n}
+\le |\mathcal H_{0,n}\mu|_F^2+\frac{\kappa^2}{n}.$$</span> For <span class="math inline">$$0&lt;\kappa&lt;\sqrt n\,\lambda$$</span>,
+Chebyshev’s inequality yields <span class="math display">$$\begin{aligned}
+\lambda|\{|\mathcal H_nf|_F&gt;\lambda\}|
+\le \lambda|\Omega|
++\frac{\lambda\|\mathcal
+H_{0,n}\mu\|_2^2}{\lambda^2-\kappa^2/n}\le\left(\frac\lambda\kappa+
+\frac{\lambda(n-1)\kappa}{n\lambda^2-\kappa^2}\right)\|f\|_1.
+\end{aligned}$$</span> Set <span class="math inline">$$a=\kappa/\lambda$$</span>. Differentiating the
+resulting expression gives <span class="math display">$$(n-2)a^4+n(n+1)a^2-n^2=0,$$</span> whose unique
+positive solution gives the stated minimum. ◻</p>
+</div>
+<p>For real-valued <span class="math inline">$$f$$</span> in dimension
+two, <span class="math display">$$Bf=-(\mathcal H_2f)_{11}+(\mathcal
+H_2f)_{22}
+       +2i(\mathcal H_2f)_{12},\qquad
+|\mathcal H_2f|_F^2=\frac{|f|^2+|Bf|^2}{2},\qquad
+|\mathcal H_{0,2}f|_F=\frac{|Bf|}{\sqrt2}.$$</span> Guerra’s
+quasiconvexity theorem and sharp Beurling–Ahlfors estimate <a href="#ref-guerra">[4, Theorem 1.1 and Corollary 1.2]</a> imply, for
+real-valued inputs, <span class="math display">$$\|\mathcal
+H_2\|_{1\to1,\infty}
+=\|\mathcal H_{0,2}\|_{1\to1,\infty}=\sqrt2.$$</span> We give the
+deduction in Appendix <a data-reference="app:planar-sharp" data-reference-type="ref" href="#app:planar-sharp">A</a>. Thus
+the method we use gives a sharp bound to <span class="math inline">$$\mathcal H_{0,2}$$</span> but not to <span class="math inline">$$\mathcal H_{2}$$</span>.</p>
+</section>
+<section class="level2" data-number="2.4" id="sec:leray">
+<h3 data-number="2.4"><span class="header-section-number">2.4</span>
+Projections</h3>
+<p>For <span class="math inline">$$n\ge2$$</span>, the Helmholtz–Leray
+projection and its complement have multipliers <span class="math display">$$\widehat{\mathbb
+Pf}(\xi)=\left(I-\frac{\xi\otimes\xi}{|\xi|^2}\right)
+\widehat f(\xi),\qquad \mathbb Q=I-\mathbb P.$$</span> The fields carry
+the pointwise Euclidean norm (Hermitian norm for complex fields). These
+operators extract their divergence-free and gradient parts. Classical
+singular-integral theory gives weak <span class="math inline">$$(1,1)$$</span> boundedness in each dimension <a href="#ref-steinSI">[5]</a>. To obtain an explicit uniform bound, use
+the local identities: <span class="math display">$$\mathbb P(-\Delta
+u)=-\Delta u+\nabla\operatorname{div}u,
+\qquad \mathbb Q(-\Delta u)=-\nabla\operatorname{div}u.$$</span> For
+either projection <span class="math inline">$$T$$</span>, write <span class="math inline">$$T=\tfrac12I+S$$</span>. The Fourier multipliers
+project onto the direction of <span class="math inline">$$\xi$$</span>
+and its orthogonal complement, so Plancherel’s theorem gives <span class="math inline">$$Tf\perp(I-T)f$$</span> in <span class="math inline">$$L^2$$</span>. Hence <span class="math display">$$\|Sf\|_2^2
+=\frac14\|Tf-(I-T)f\|_2^2
+=\frac14\bigl(\|Tf\|_2^2+\|(I-T)f\|_2^2\bigr)
+=\frac14\|f\|_2^2.$$</span> Thus orthogonality gives <span class="math inline">$$\|S\|_{2\to2}=1/2$$</span>. Principle <a data-reference="prop:identity-component" data-reference-type="ref" href="#prop:identity-component">1.2</a> gives the dimension-free
+bound <span class="math display">$$\|T\|_{1\to1,\infty}\le\min_{0&lt;a&lt;2}\left(\frac1a+\frac{a}{(2-a)^2}\right)
+=1.805359306638\ldots.$$</span> The minimizing <span class="math inline">$$a_*$$</span> is the unique root in <span class="math inline">$$(0,1)$$</span> of <span class="math display">$$a_*^3-2a_*^2+6a_*-4=0,
+\qquad
+\|T\|_{1\to1,\infty}\le\frac1{a_*}+\frac{a_*}{(2-a_*)^2}.$$</span> The
+gain comes from using pointwise control of the identity component and
+the smaller <span class="math inline">$$L^2$$</span> norm of the
+remainder.</p>
+</section>
+</section>
+<section class="level1" data-number="3" id="maximal-principle">
+<h2 data-number="3"><span class="header-section-number">3</span> Maximal
+principle</h2>
+<section class="level2" data-number="3.1" id="the-decomposition-1">
+<h3 data-number="3.1"><span class="header-section-number">3.1</span> The
+decomposition</h3>
+<p>Let <span class="math inline">$$\mathcal A$$</span> be the generator
+of a conservative, symmetric Markov convolution semigroup on <span class="math inline">$$\mathbb R^n$$</span>. This means <span class="math display">$$P_tg(x)=\int_{\mathbb
+R^n}g(x-y)\,d\nu_t(y),$$</span> where <span class="math inline">$$\nu_t$$</span> are probability measures invariant
+under <span class="math inline">$$y\mapsto-y$$</span>, satisfying <span class="math inline">$$\nu_s*\nu_t=\nu_{s+t}$$</span> and <span class="math inline">$$\nu_t\rightharpoonup\delta_0$$</span> as <span class="math inline">$$t\downarrow0$$</span>. Thus <span class="math inline">$$P_t$$</span> preserves positivity, constants, and
+mass, and is self-adjoint on <span class="math inline">$$L^2$$</span>.
+The generator is <span class="math display">$$\mathcal
+Ag=\lim_{t\downarrow0}\frac{P_tg-g}{t}
+\quad\text{in }L^2,\qquad g\in\operatorname{Dom}(\mathcal A),$$</span>
+with Fourier symbol <span class="math inline">$$-\psi$$</span>, where
+<span class="math inline">$$\psi\ge0$$</span>. We assume that, for every
+bounded, compactly supported <span class="math inline">$$f\ge0$$</span>
+and <span class="math inline">$$\kappa&gt;0$$</span>, there exist <span class="math inline">$$u\ge0$$</span> in <span class="math inline">$$L^1\cap\operatorname{Dom}(\mathcal A)$$</span> and
+a density <span class="math inline">$$\sigma$$</span> such that <span class="math display">$$f=\sigma-\mathcal A u,\qquad
+0\le\sigma\le\kappa,\qquad
+\sigma=\kappa\text{ on }D=\{u&gt;0\},\qquad
+\int\sigma=\int f.$$</span> Here <span class="math inline">$$\operatorname{Dom}(\mathcal A)$$</span> is the
+<span class="math inline">$$L^2$$</span> operator domain. In particular,
+<span class="math inline">$$|D|\le\|f\|_1/\kappa$$</span>. This is the
+partial balayage decomposition needed below. It holds for <span class="math inline">$$\Delta$$</span> by Theorem <a data-reference="lem:vector-obstacle" data-reference-type="ref" href="#lem:vector-obstacle">1.1</a>, and <span class="math inline">$$\mathcal A_\alpha=-\sum_j|D_j|^\alpha$$</span>,
+<span class="math inline">$$0&lt;\alpha&lt;2$$</span>, by the same
+variational argument: their energy is comparable to the fractional
+Sobolev energy, their semigroups preserve positivity and mass, and <span class="math inline">$$\|\mathcal
+A_\alpha\chi(\cdot/R)\|_\infty=O(R^{-\alpha})$$</span>.</p>
+</section>
+<section class="level2 samepage" data-number="3.2" id="the-estimate">
+<h3 data-number="3.2"><span class="header-section-number">3.2</span> The
+estimate</h3>
+<div class="principle article-theorem" id="prop:positive-maximal">
+<p><strong>Principle 2</strong> (Maximal). <em>Suppose <span class="math inline">$$\mathcal A$$</span> is homogeneous of order <span class="math inline">$$\alpha&gt;0$$</span> and admits the decomposition
+above. Let <span class="math inline">$$K\ge0$$</span> be an even <span class="math inline">$$L^1$$</span> kernel satisfying <span class="math display">$$\mathcal AK\ge0
+\quad\text{in distributions on }\mathbb R^n\setminus\{0\}.$$</span> For
+<span class="math inline">$$K_r(x)=r^{-n}K(x/r)$$</span>, define <span class="math display">$$M_Kf(x)=\sup_{r&gt;0}(K_r*|f|)(x).$$</span> Then
+<span class="math display">$$\|M_K\|_{1\to1,\infty}\le\int_{\mathbb
+R^n}K.$$</span> Any measurable operator dominated in absolute value by
+<span class="math inline">$$M_K$$</span> satisfies the same
+estimate.</em></p>
+</div>
+</section>
+<div class="proof">
+<p><em>Proof.</em> We give an outline; details of the kernel argument
+for the coordinate-stable case can be found in <a href="#ref-LinSquare">[6, Lemma 3]</a>. Write <span class="math inline">$$M=\int K$$</span> and assume <span class="math inline">$$M&gt;0$$</span>, since <span class="math inline">$$K=0$$</span> otherwise. For <span class="math inline">$$\lambda&gt;0$$</span> and bounded, compactly
+supported <span class="math inline">$$f\ge0$$</span>, take the
+decomposition at height <span class="math inline">$$\kappa=\lambda/M$$</span>. It suffices to show
+that every <span class="math inline">$$K_r*f$$</span> is at most <span class="math inline">$$\lambda$$</span> outside the same set <span class="math inline">$$D=\{u&gt;0\}$$</span>.</p>
+<p>Put <span class="math inline">$$\mathcal Bv=K*\mathcal Av$$</span>.
+The condition <span class="math inline">$$\mathcal AK\ge0$$</span> away
+from the origin, together with a cutoff argument at the origin, gives
+the positive minimum principle for <span class="math inline">$$\mathcal
+B$$</span>: if <span class="math inline">$$\varphi\in
+C_c^\infty$$</span> is nonnegative and <span class="math inline">$$\varphi(x)=0$$</span>, then <span class="math inline">$$\mathcal B\varphi(x)\ge0$$</span>. Courrège’s
+theorem <a href="#ref-Courrege">[7]</a> then identifies <span class="math inline">$$\mathcal B$$</span> as a conservative, symmetric
+Markov generator. Its symbol is <span class="math inline">$$-\psi\widehat K$$</span>, with <span class="math inline">$$0\le\psi\widehat K\le M\psi$$</span>, so <span class="math inline">$$u$$</span> lies in its operator domain.</p>
+<p>The Markov property gives <span class="math inline">$$\mathcal
+Bu\ge0$$</span> almost everywhere on <span class="math inline">$$D^c$$</span>. Indeed, for <span class="math inline">$$0\le\varphi\in C_c^\infty$$</span>, set <span class="math inline">$$h_\varepsilon=(\varepsilon\varphi-u)_+$$</span>.
+The Dirichlet form satisfies <span class="math display">$$-\langle\mathcal Bu,h_\varepsilon\rangle
+\le-\varepsilon\langle\mathcal B\varphi,h_\varepsilon\rangle.$$</span>
+Divide by <span class="math inline">$$\varepsilon$$</span> and let <span class="math inline">$$\varepsilon\downarrow0$$</span>, using <span class="math inline">$$h_\varepsilon/\varepsilon\to\varphi\mathbf1_{D^c}$$</span>
+and <span class="math inline">$$\|h_\varepsilon\|_2\le\varepsilon\|\varphi\|_2$$</span>.
+Consequently, <span class="math display">$$K*f=K*\sigma-\mathcal
+Bu\le\kappa\int K=\lambda
+\quad\text{almost everywhere on }D^c.$$</span> Homogeneity gives <span class="math inline">$$\mathcal AK_r=r^{-n-\alpha}(\mathcal
+AK)(\cdot/r)\ge0$$</span> away from zero, so the same argument applies
+to every dilation. Continuity of <span class="math inline">$$r\mapsto
+K_r$$</span> in <span class="math inline">$$L^1$$</span> extends the
+conclusion from rational scales to all scales outside one null set.
+Hence <span class="math display">$$\lambda|\{M_Kf&gt;\lambda\}|\le\lambda|D|\le
+M\|f\|_1.$$</span> Monotone approximation gives the result for general
+<span class="math inline">$$f$$</span>. ◻</p>
+</div>
+<div class="corollary article-theorem" id="cor:optimal-majorant">
+<p><strong>Corollary 3.1</strong>. <em>For <span class="math inline">$$\mathcal A$$</span> as in Principle <a data-reference="prop:positive-maximal" data-reference-type="ref" href="#prop:positive-maximal">2</a> and an even nonnegative
+<span class="math inline">$$\phi\in L^1$$</span>, let <span class="math display">$$M_\phi f=\sup_{r&gt;0}\phi_r*|f|,
+\qquad \phi_r(x)=r^{-n}\phi(x/r).$$</span> Then <span class="math display">$$\begin{aligned}
+\|M_\phi\|_{1\to1,\infty}\le C_{\mathcal A}(\phi):=\inf\biggl\{
+&amp;\int K:\ K\in L^1\text{ is even},\quad K\ge\phi,\quad\mathcal
+AK\ge0\text{ on }\mathbb R^n\setminus\{0\}\biggr\}.
+\end{aligned}$$</span></em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Since <span class="math inline">$$M_\phi\le
+M_K$$</span> for every admissible <span class="math inline">$$K$$</span>, Principle <a data-reference="prop:positive-maximal" data-reference-type="ref" href="#prop:positive-maximal">2</a> applies; take the infimum
+of the resulting bounds. ◻</p>
+</div>
+</section>
+<section class="level1" data-number="4" id="applications-of-the-maximal-principle">
+<h2 data-number="4"><span class="header-section-number">4</span>
+Applications of the maximal principle</h2>
+<section class="level2" data-number="4.1" id="sec:intervals">
+<h3 data-number="4.1"><span class="header-section-number">4.1</span>
+Intervals</h3>
+<p>The normalized tent kernel is the simplest exact example of the
+maximal principle: <span class="math display">$$\tau(x)=(1-|x|)_+,\qquad
+\int_\mathbb R\tau=1,\qquad
+\tau''=\delta_{-1}+\delta_1-2\delta_0.$$</span> Thus its
+dilation maximal operator <span class="math display">$$T_*f(x)=\sup_{r&gt;0}(\tau_r*|f|)(x),\qquad
+\tau_r(x)=r^{-1}\tau(x/r),$$</span> has weak-type constant at most one.
+For the centered Hardy–Littlewood maximal operator on intervals, <span class="math display">$$M_cf(x)=\sup_{r&gt;0}\frac1{2r}\int_{x-r}^{x+r}|f(y)|\,dy,$$</span>
+the majorant <span class="math display">$$K(x)=(1-|x|/2)_+\ge\tfrac12\mathbf1_{[-1,1]}(x),
+\qquad \int K=2,$$</span> gives <span class="math inline">$$\|M_c\|_{1\to1,\infty}\le2$$</span>. This majorant
+attains <span class="math inline">$$C_\Delta(\frac12\mathbf1_{[-1,1]})$$</span> by
+Corollary <a data-reference="cor:radial-optimal" data-reference-type="ref" href="#cor:radial-optimal">4.1</a>. Melas <a href="#ref-Melas">[8]</a> proved the sharper, optimal value <span class="math inline">$$\|M_c\|_{1\to1,\infty}=\frac{11+\sqrt{61}}{12}=1.5675208063\ldots$$</span>
+using discretization.</p>
+</section>
+<section class="level2" data-number="4.2" id="sec:balls">
+<h3 data-number="4.2"><span class="header-section-number">4.2</span>
+Euclidean balls</h3>
+<p>The centered Hardy–Littlewood maximal operator over Euclidean balls
+is <span class="math display">$$M_{B,n}f(x)=\sup_{r&gt;0}\frac1{\omega_n
+r^n}\int_{B(x,r)}|f(y)|\,dy,
+\qquad \omega_n=\frac{\pi^{n/2}}{\Gamma(n/2+1)}.$$</span> Here the
+averages are over solid Euclidean balls.</p>
+<p>The classical covering argument gives an exponential bound <span class="math inline">$$2^n$$</span> <a href="#ref-taoCovering">[9,
+Exercise 42]</a>. Stein–Strömberg improved the dimensional order to
+<span class="math inline">$$O(n)$$</span> <a href="#ref-SteinStromberg">[10]</a>.</p>
+<div class="corollary article-theorem" id="cor:radial-optimal">
+<p><strong>Corollary 4.1</strong> (Radial majorants). <em>Put <span class="math display">$$\rho_n=\begin{cases}(n/2)^{2/(n-2)},&amp;n\ne2,\\
+e,&amp;n=2.\end{cases}$$</span> Suppose <span class="math inline">$$\phi(x)=q(|x|^2)$$</span>, with <span class="math inline">$$q$$</span> left-continuous at <span class="math inline">$$a&gt;0$$</span>. If an admissible radial majorant
+for <span class="math inline">$$\mathcal A=\Delta$$</span> is harmonic
+for <span class="math inline">$$0&lt;|x|&lt;\sqrt b$$</span>, touches
+<span class="math inline">$$\phi$$</span> at <span class="math inline">$$|x|=\sqrt a$$</span>, and equals <span class="math inline">$$\phi$$</span> for <span class="math inline">$$|x|\ge\sqrt b$$</span>, where <span class="math inline">$$b=\rho_n a$$</span>, then it attains <span class="math inline">$$C_\Delta(\phi)$$</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Rotational averaging preserves the mass and
+admissibility of any competitor. Write the average as <span class="math inline">$$k(|x|^2)$$</span>. Subharmonicity means that <span class="math inline">$$k$$</span> is convex in the coordinate <span class="math display">$$s(z)=\begin{cases}
+\dfrac{z^{1-n/2}}{1-n/2},&amp;n\ne2,\\[4pt]
+\log z,&amp;n=2.
+\end{cases}$$</span> If <span class="math inline">$$Z$$</span> has
+density <span class="math inline">$$\frac{n}{2b^{n/2}}z^{n/2-1}$$</span>
+on <span class="math inline">$$(0,b)$$</span>, then <span class="math inline">$$\mathbb E s(Z)=s(a)$$</span>. Jensen’s inequality
+gives <span class="math display">$$\int_0^b k(z)z^{n/2-1}\,dz
+\ge\frac{2b^{n/2}}n k(a)
+\ge\frac{2b^{n/2}}n q(a).$$</span> Outside <span class="math inline">$$b$$</span> use <span class="math inline">$$k\ge
+q$$</span>. The stated majorant attains both inequalities, so no
+admissible kernel has smaller mass. ◻</p>
+</div>
+<p>The following radial majorants give explicit constants: <span class="math display">$$\|M_{B,2}\|_{1\to1,\infty}\le e,
+\qquad
+\|M_{B,n}\|_{1\to1,\infty}\le\left(\frac
+n2\right)^{n/(n-2)}\quad(n\ge3).$$</span> For the planar unit ball use
+<span class="math display">$$K_2(x)=\frac2\pi\log\frac{\sqrt e}{|x|}\,
+                  \mathbf1_{\{|x|&lt;\sqrt e\}}.$$</span> It majorizes
+<span class="math inline">$$\pi^{-1}\mathbf1_{B(0,1)}$$</span>, its
+distributional Laplacian is a positive boundary measure minus an atom at
+zero, and its mass is <span class="math inline">$$e$$</span>. For <span class="math inline">$$n\ge3$$</span> put <span class="math display">$$R_n=\left(\frac n2\right)^{1/(n-2)},\qquad
+K_n(x)=\frac1{\omega_n}
+\frac{(|x|^{2-n}-R_n^{2-n})_+}{1-R_n^{2-n}}.$$</span> The same
+conditions hold and direct polar integration gives <span class="math display">$$\int K_n=R_n^n=\left(\frac
+n2\right)^{n/(n-2)}.$$</span> These kernels attain <span class="math inline">$$C_\Delta(\omega_n^{-1}\mathbf1_{\overline{B(0,1)}})$$</span>
+by Corollary <a data-reference="cor:radial-optimal" data-reference-type="ref" href="#cor:radial-optimal">4.1</a>; changing the ball boundary
+does not affect the averages. The bound is asymptotic to <span class="math inline">$$n/2$$</span>, whereas Spector–Stockdale prove
+<span class="math inline">$$\|M_{B,n}\|_{1\to1,\infty}=O(\sqrt
+n\log(1+n))$$</span> by exploiting the heat residual <a href="#ref-ss">[1, Theorem 1.1]</a>.</p>
+</section>
+<section class="level2" data-number="4.3" id="sec:squares">
+<h3 data-number="4.3"><span class="header-section-number">4.3</span>
+Axis-parallel squares</h3>
+<p>The centered Hardy–Littlewood maximal operator over axis-parallel
+squares in the plane is <span class="math display">$$M_\square
+f(x)=\sup_{r&gt;0}\frac1{4r^2}
+                 \int_{x+[-r,r]^2}|f(y)|\,dy.$$</span> The invertible
+map <span class="math inline">$$(u,v)\mapsto(u+v,u-v)$$</span> takes the
+unit diamond <span class="math display">$$D_\diamond=\{(u,v):|u|+|v|\le1\}$$</span> to the
+unit square. Change of variables preserves a weak-type constant, and the
+diamond has area two. Use the homogeneous symmetric Markov generator
+<span class="math display">$$\mathcal
+A_\alpha=-|D_u|^\alpha-|D_v|^\alpha,
+\qquad \widehat{\mathcal A_\alpha g}(\xi)
+=-(|\xi_1|^\alpha+|\xi_2|^\alpha)\widehat g(\xi).$$</span> Corollary <a data-reference="cor:optimal-majorant" data-reference-type="ref" href="#cor:optimal-majorant">3.1</a> gives <span class="math display">$$
+\|M_\square\|_{1\to1,\infty}\le C_\alpha:=\inf\biggl\{
+\frac12\int_{\mathbb R^2}K:\ K\in L^1(\mathbb R^2)\text{ is
+even},\quad
+K\ge\mathbf1_{D_\diamond},\quad
+\mathcal A_\alpha K\ge0\text{ on }\mathbb R^2\setminus\{0\}\biggr\}.
+$$</span> The weak-type <span class="math inline">$$(1,1)$$</span> estimate
+<span class="math inline">$$\|M_\square\|_{1\to1,\infty}\le3.879$$</span>
+for the centered maximal operator over axis-parallel squares in the plane
+has been verified in <a href="https://github.com/CoolRmal/centered-maximal-constant">Lean</a>
+and registered in <a href="https://palomar-registry.org/entry?id=PALOMAR-2026-09-19-000002&amp;version=3">Palomar</a>.
+AI has also proposed a kernel for <span class="math inline">$$\alpha=6/5$$</span>
+claimed to yield the sharper estimate
+<span class="math inline">$$\|M_\square\|_{1\to1,\infty}\le3.615749$$</span>.
+The required computations are substantial, making this improvement difficult
+to verify in Lean.</p>
+</section>
+<section class="level2" data-number="4.4" id="sec:poisson">
+<h3 data-number="4.4"><span class="header-section-number">4.4</span>
+Poisson maximal</h3>
+<p>Define <span class="math display">$$P_*f(x)=\sup_{t&gt;0}(p_t*|f|)(x),\qquad
+p_t(x)=\frac{\Gamma((n+1)/2)}{\pi^{(n+1)/2}}
+          \frac{t}{(t^2+|x|^2)^{(n+1)/2}}.$$</span> Dimension-free weak
+<span class="math inline">$$(1,1)$$</span> boundedness is a classical
+application of the Hopf–Dunford–Schwartz ergodic theorem <a href="#ref-Stein1970">[11, pp. 48–49]</a>; see also <a href="#ref-GarofaloTralli">[12, Theorem 5.5]</a>. An explicit evaluation
+of this argument gives, in every dimension, <span class="math display">$$\|P_*\|_{1\to1,\infty}\le B_P:=
+\operatorname{erf}\sqrt{\frac32}
++\sqrt{\frac{3}{2\pi}}e^{-3/2}
+=1.070915813140\ldots.$$</span> Indeed, the subordination density <span class="math display">$$m_t(s)=\frac{t}{2\sqrt\pi}s^{-3/2}e^{-t^2/(4s)}$$</span>
+peaks at <span class="math inline">$$s_0=t^2/6$$</span>. Its
+nonincreasing majorant, constant before <span class="math inline">$$s_0$$</span> and equal to <span class="math inline">$$m_t$$</span> thereafter, has mass <span class="math inline">$$B_P$$</span>. Integration by parts dominates <span class="math inline">$$P_*f$$</span> by <span class="math inline">$$B_P$$</span> times the maximal heat ergodic
+average, whose weak constant is one.</p>
+<p>The Laplacian majorant gives the following bound.</p>
+<div class="corollary article-theorem">
+<p><strong>Corollary 4.2</strong>. <em>With <span class="math inline">$$\rho_n$$</span> as in Corollary <a data-reference="cor:radial-optimal" data-reference-type="ref" href="#cor:radial-optimal">4.1</a>, let <span class="math inline">$$a$$</span> be the unique nonzero solution in <span class="math inline">$$(n/(3\rho_n),n/3)$$</span> of <span class="math display">$$\frac{1-a/n}{(1+a)^{(n+3)/2}}
+=\frac{1}{(1+\rho_n a)^{(n+1)/2}},\qquad b=\rho_n a.$$</span>
+Then</em></p>
+<p><em><span class="math display" id="eq:poisson-general">$$\begin{aligned}
+\|P_*\|_{1\to1,\infty}\le
+\frac{\Gamma((n+1)/2)}{\sqrt\pi\,\Gamma(n/2)}
+\biggl[&amp;\frac{2b^{n/2}}{n(1+a)^{(n+1)/2}}+\int_b^\infty\frac{z^{n/2-1}}{(1+z)^{(n+1)/2}}\,dz\biggr].
+\end{aligned}
+\tag{2}$$</span></em></p>
+<p><em>For <span class="math inline">$$n=1$$</span>, this is <span class="math display">$$\|P_*\|_{1\to1,\infty}\le
+1+\frac2\pi\left(\frac{\sqrt5}{3}-\arctan\frac2{\sqrt5}\right)
+=1.009949307880\ldots.$$</span> The right-hand side of <a data-reference="eq:poisson-general" data-reference-type="eqref" href="#eq:poisson-general">(2)</a> tends to
+<span class="math inline">$$B_P=1.070915813140\ldots$$</span> as <span class="math inline">$$n\to\infty$$</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Write <span class="math inline">$$q(z)=(1+z)^{-(n+1)/2}$$</span>
+and <span class="math inline">$$z=|x|^2$$</span>. For <span class="math inline">$$z&lt;b$$</span>, replace <span class="math inline">$$q$$</span> by its radial harmonic tangent at <span class="math inline">$$a$$</span>: <span class="math display">$$k(z)=\begin{cases}
+q(a)+\dfrac{2a q'(a)}{2-n}
+       \bigl((z/a)^{1-n/2}-1\bigr),&amp;n\ne2,\\[6pt]
+q(a)+a q'(a)\log(z/a),&amp;n=2.
+\end{cases}$$</span> For <span class="math inline">$$z\ge b$$</span>,
+keep <span class="math inline">$$k(z)=q(z)$$</span>. The equation for
+<span class="math inline">$$a$$</span> makes the branches continuous.
+The Poisson profile has negative Laplacian for <span class="math inline">$$z&lt;n/3$$</span> and positive Laplacian for <span class="math inline">$$z&gt;n/3$$</span>. Thus its graph is concave and
+then convex in the harmonic radial coordinate: the tangent majorizes the
+inner profile, and the derivative jumps upward at the outer joining
+point. Consequently <span class="math display">$$K(x)=\frac{\Gamma((n+1)/2)}{\pi^{(n+1)/2}}k(|x|^2)
+\ge p_1(x),\qquad \Delta K=\nu-c\delta_0,
+\quad \nu\ge0,\ c&gt;0.$$</span> Corollary <a data-reference="cor:optimal-majorant" data-reference-type="ref" href="#cor:optimal-majorant">3.1</a> bounds the maximal operator
+by <span class="math inline">$$\int K$$</span>. Integrating the inner
+branch, using <span class="math inline">$$\rho_n^{1-n/2}=2/n$$</span> when <span class="math inline">$$n\ne2$$</span>, gives <span class="math display">$$\int_0^b k(z)z^{n/2-1}\,dz=\frac{2b^{n/2}q(a)}{n};$$</span>
+the logarithmic case gives the same identity. The
+majorant attains <span class="math inline">$$C_\Delta(p_1)$$</span> by
+Corollary <a data-reference="cor:radial-optimal" data-reference-type="ref" href="#cor:radial-optimal">4.1</a>. Polar integration now yields
+<a data-reference="eq:poisson-general" data-reference-type="eqref" href="#eq:poisson-general">(2)</a>. In
+dimension one <span class="math inline">$$a=1/5$$</span> and <span class="math inline">$$b=4/5$$</span>, which gives the stated elementary
+expression. Finally, <span class="math inline">$$a/n\to1/3$$</span> and
+<span class="math inline">$$b/n\to1/3$$</span>. Stirling’s formula gives
+the limit <span class="math inline">$$\sqrt{3/(2\pi)}e^{-3/2}$$</span>
+for the inner contribution. In the outer integral, the substitution
+<span class="math inline">$$y=(n/2)/z$$</span> gives the limiting
+contribution <span class="math inline">$$\pi^{-1/2}\int_0^{3/2}y^{-1/2}e^{-y}\,dy
+=\operatorname{erf}\sqrt{3/2}$$</span>. ◻</p>
+</div>
+</section>
+<section class="level2" data-number="4.5" id="sec:heat">
+<h3 data-number="4.5"><span class="header-section-number">4.5</span>
+Heat maximal</h3>
+<p>Define <span class="math display">$$H_*f(x)=\sup_{t&gt;0}(h_t*|f|)(x),\qquad
+h_t(x)=(4\pi t)^{-n/2}e^{-|x|^2/(4t)}.$$</span></p>
+<p>For each <span class="math inline">$$n\ge1$$</span>, use <span class="math inline">$$\rho_n$$</span> from Corollary <a data-reference="cor:radial-optimal" data-reference-type="ref" href="#cor:radial-optimal">4.1</a> and let <span class="math inline">$$a=a(n)$$</span> be the unique nonzero solution in
+<span class="math inline">$$(n/(2\rho_n),n/2)$$</span> of <span class="math display">$$e^{-(\rho_n-1)a}=1-\frac{2a}{n}.$$</span>
+Corollary <a data-reference="cor:optimal-majorant" data-reference-type="ref" href="#cor:optimal-majorant">3.1</a> gives <span class="math display">$$\|H_*\|_{1\to1,\infty}\le
+\frac1{\Gamma(n/2)}
+\left[
+\frac{2(\rho_n a)^{n/2}e^{-a}}{n}
++\int_{\rho_n a}^\infty z^{n/2-1}e^{-z}\,dz
+\right].$$</span></p>
+<p>To construct the majorant, put <span class="math inline">$$z=|x|^2$$</span> and replace <span class="math inline">$$q(z)=e^{-z}$$</span> for <span class="math inline">$$0&lt;z&lt;\rho_n a$$</span> by its harmonic
+tangent at <span class="math inline">$$a$$</span>: <span class="math display">$$k(z)=e^{-a}
+\begin{cases}
+1+\dfrac{2a}{n-2}\bigl((z/a)^{1-n/2}-1\bigr),&amp;n\ne2,\\[6pt]
+1-a\log(z/a),&amp;n=2.
+\end{cases}$$</span> For <span class="math inline">$$z\ge\rho_n
+a$$</span>, keep <span class="math inline">$$k(z)=e^{-z}$$</span>, and
+set <span class="math inline">$$K(x)=\pi^{-n/2}k(|x|^2)$$</span>. The
+root equation makes the two branches meet. The profile is concave and
+then convex in the harmonic radial coordinate, because the sign of its
+Laplacian is the sign of <span class="math inline">$$z-n/2$$</span>. The
+tangent lies above the inner profile and meets its convex outer branch
+with a nonnegative flux jump. Therefore <span class="math inline">$$K\ge
+h_{1/4}$$</span> and <span class="math inline">$$\Delta K$$</span> is a
+positive finite measure minus an atom at zero. Polar integration gives
+the displayed bound. The majorant attains <span class="math inline">$$C_\Delta(h_{1/4})$$</span> by Corollary <a data-reference="cor:radial-optimal" data-reference-type="ref" href="#cor:radial-optimal">4.1</a>.</p>
+<p>In dimension one, <span class="math inline">$$a(1)$$</span> satisfies
+<span class="math inline">$$e^{-3a(1)}=1-2a(1)$$</span>, and the bound
+is <span class="math display">$$\|H_*\|_{1\to1,\infty}\le
+4\sqrt{\frac{a(1)}\pi}\,e^{-a(1)}
++\operatorname{erfc}(2\sqrt{a(1)})
+=1.037087059430\ldots,$$</span> where <span class="math inline">$$\operatorname{erfc}(r)=\frac2{\sqrt\pi}\int_r^\infty
+e^{-s^2}\,ds$$</span>. In dimension two, <span class="math inline">$$a(2)$$</span> satisfies <span class="math inline">$$e^{-(e-1)a(2)}=1-a(2)$$</span>, and <span class="math display">$$\|H_*\|_{1\to1,\infty}\le
+[1+(e-1)a(2)]e^{-a(2)}=1.094052157640\ldots.$$</span> For <span class="math inline">$$n=3$$</span>, the bound is <span class="math inline">$$1.150845692298\ldots$$</span>.</p>
+<p>As <span class="math inline">$$n\to\infty$$</span>, <span class="math display">$$a(n)=\frac n2-1+o(1),\qquad
+\rho_n a(n)=\frac n2+\log\frac n2-1+o(1).$$</span> Stirling’s formula
+shows that the resulting upper bound is asymptotic to <span class="math inline">$$\sqrt n/(2\sqrt\pi)$$</span>. This growth is worse
+than the <span class="math inline">$$O(\log(1+n))$$</span> heat bound
+proved by Spector–Stockdale <a href="#ref-ss">[1, Theorem 1.2]</a>.</p>
+</section>
+</section>
+<section class="level1" data-number="A" id="app:planar-sharp">
+<h2 data-number="5"><span class="header-section-number">A</span> Sharp
+planar bound for the second-order Riesz transform</h2>
+<p>We deduce the sharp planar matrix estimate from Guerra’s
+quasiconvexity theorem <a href="#ref-guerra">[4, Theorem 1.1]</a>.</p>
+<div class="corollary article-theorem" id="cor:planar-sharp">
+<p><strong>Corollary A.1</strong>. <em>For every real-valued <span class="math inline">$$f\in L^1(\mathbb R^2)$$</span> and <span class="math inline">$$t&gt;0$$</span>, <span class="math display">$$t\bigl|\{|f|+|Bf|&gt;t\}\bigr|\le2\|f\|_1.$$</span>
+Consequently, <span class="math inline">$$\|\mathcal
+H_2\|_{1\to1,\infty}
+=\|\mathcal H_{0,2}\|_{1\to1,\infty}=\sqrt2$$</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Identify <span class="math inline">$$\mathbb
+R^2$$</span> with <span class="math inline">$$\mathbb C$$</span> and
+write a real matrix as <span class="math inline">$$Az=a_+z+a_-\overline
+z$$</span>. Then <span class="math inline">$$\|A\|_{\rm
+op}=|a_+|+|a_-|$$</span> and <span class="math inline">$$\det
+A=|a_+|^2-|a_-|^2$$</span>. Guerra’s integrand is <span class="math display">$$L(A)=
+\begin{cases}
+  \det A,&amp; |a_+|+|a_-|\le1,\\
+  2|a_+|-1,&amp; |a_+|+|a_-|&gt;1.
+\end{cases}$$</span> Its definition gives the following strengthening
+of <a href="#ref-guerra">[4, (6.1)]</a>: <span class="math display">$$L(A/t)\le\frac{2|a_+|}{t}
+       -\mathbf1_{\{|a_+|+|a_-|&gt;t\}}.$$</span> Indeed, equality holds
+when <span class="math inline">$$|a_+|+|a_-|&gt;t$$</span>; otherwise
+the indicator vanishes and <span class="math inline">$$\det(A/t)\le
+|a_+|^2/t^2\le |a_+|/t$$</span>.</p>
+<p>First take real <span class="math inline">$$f\in C_c^\infty(\mathbb
+R^2)$$</span> and set <span class="math display">$$u(x)=\frac1\pi\int_{\mathbb
+R^2}\log|x-y|\,f(y)\,dy,
+\qquad \Delta u=2f.$$</span> For <span class="math inline">$$A=D^2u$$</span>, the complex coefficients satisfy
+<span class="math display">$$a_+=\frac{u_{11}+u_{22}}2=f,\qquad
+a_-=\frac{u_{11}-u_{22}}2+i u_{12},\qquad |a_-|=|Bf|.$$</span> We claim
+that Guerra’s theorem implies <span class="math display">$$\int_{\mathbb
+R^2}L(D^2u/t)\,dx\ge0.$$</span> To justify its use for this noncompact
+potential, choose a smooth cutoff <span class="math inline">$$\eta_R$$</span> equal to one on <span class="math inline">$$B(0,R)$$</span> and zero outside <span class="math inline">$$B(0,2R)$$</span>, and apply the theorem at the
+zero matrix to <span class="math inline">$$\eta_Ru/t$$</span>. At
+infinity, <span class="math display">$$u=O(\log|x|),\qquad \nabla
+u=O(|x|^{-1}),\qquad
+D^2u=O(|x|^{-2}).$$</span> On the cutoff annulus, therefore, <span class="math inline">$$D^2(\eta_Ru)=O(R^{-2}\log R)$$</span>. For fixed
+<span class="math inline">$$t$$</span> and sufficiently large <span class="math inline">$$R$$</span>, this lies in the determinant branch of
+<span class="math inline">$$L$$</span>, whose integral over that annulus
+is <span class="math inline">$$O(R^{-2}\log^2R)=o(1)$$</span>. Also
+<span class="math inline">$$L(D^2u/t)=O(|x|^{-4})$$</span> at infinity,
+so it is integrable. Letting <span class="math inline">$$R\to\infty$$</span> proves the claim.</p>
+<p>Integrating the pointwise inequality now gives <span class="math display">$$0\le\int L(D^2u/t)
+\le\frac2t\|f\|_1-\bigl|\{|f|+|Bf|&gt;t\}\bigr|.$$</span> Approximation
+in <span class="math inline">$$L^1$$</span>, using the weak-type
+continuity of <span class="math inline">$$B$$</span>, extends this
+estimate to every real <span class="math inline">$$f\in L^1$$</span>. By
+the identities in Section <a data-reference="sec:hessians" data-reference-type="ref" href="#sec:hessians">2.3</a>, <span class="math display">$$|\mathcal H_2f|_F
+=\frac{\sqrt{|f|^2+|Bf|^2}}{\sqrt2}
+\le\frac{|f|+|Bf|}{\sqrt2}.$$</span> Taking <span class="math inline">$$t=\sqrt2\lambda$$</span> yields <span class="math display">$$\lambda\bigl|\{|\mathcal
+H_2f|_F&gt;\lambda\}\bigr|
+\le\sqrt2\|f\|_1.$$</span> Conversely, <span class="math inline">$$|\mathcal H_2f|_F\ge |Bf|/\sqrt2$$</span>, so the
+sharp constant <span class="math inline">$$2$$</span> for <span class="math inline">$$B$$</span> on real inputs <a href="#ref-guerra">[4, Corollary 1.2]</a> forces <span class="math inline">$$\|\mathcal H_2\|_{1\to1,\infty}\ge\sqrt2$$</span>.
+Finally, <span class="math inline">$$|\mathcal
+H_{0,2}f|_F=|Bf|/\sqrt2$$</span> gives the same sharp constant for the
+traceless transform. ◻</p>
+</div>
+</section>
+<section id="references"><h2>References</h2><ol class="article-references"><li id="ref-ss"><p>D. Spector and C. B. Stockdale, <em>The weak-type <span class="math inline">$$(1,1)$$</span> bound for the Hardy–Littlewood
+maximal function is <span class="math inline">$$O(\sqrt n\log
+n)$$</span></em>, preprint, <a href="https://arxiv.org/abs/2609.05377v1">arXiv:2609.05377v1</a>,
+2026.</p>
+</li><li id="ref-oss"><p>Y. Ouyang, D. Spector, and C. B. Stockdale, <em>A dimension-free
+weak-type <span class="math inline">$$(1,1)$$</span> bound for the
+vector Riesz transform on <span class="math inline">$$\mathbb
+R^n$$</span></em>, preprint, <a href="https://arxiv.org/abs/2608.18068v1">arXiv:2608.18068v1</a>,
+2026.</p>
+</li><li id="ref-aim"><p>K. Astala, T. Iwaniec, and G. Martin, <a href="https://doi.org/10.1515/9781400830114"><em>Elliptic Partial
+Differential Equations and Quasiconformal Mappings in the
+Plane</em></a>, Princeton University Press, Princeton, NJ, 2009.</p>
+</li><li id="ref-guerra"><p>A. Guerra, <em>Quasiconvexity of the Burkholder function on symmetric
+matrices</em>, preprint, <a href="https://arxiv.org/abs/2608.23388v1">arXiv:2608.23388v1</a>,
+2026.</p>
+</li><li id="ref-steinSI"><p>E. M. Stein, <a href="https://doi.org/10.1515/9781400883882"><em>Singular Integrals and
+Differentiability Properties of Functions</em></a>, Princeton
+Mathematical Series, vol. 30, Princeton University Press, Princeton, NJ,
+1970.</p>
+</li><li id="ref-LinSquare"><p>Y. Lin, <a href="https://coolrmal.github.io/assets/papers/c2-less-than-4.pdf"><em><span class="math inline">$$c_2&lt;4$$</span></em></a>, unpublished
+manuscript.</p>
+</li><li id="ref-Courrege"><p>P. Courrège, <em>Générateur infinitésimal d’un semi-groupe de
+convolution sur <span class="math inline">$$\mathbb R^n$$</span>, et
+formule de Lévy–Khintchine</em>, Bull. Sci. Math. (2)
+<strong>88</strong> (1964), 3–30.</p>
+</li><li id="ref-Melas"><p>A. D. Melas, <a href="https://annals.math.princeton.edu/2003/157-2/p08"><em>The best
+constant for the centered Hardy–Littlewood maximal inequality</em></a>,
+Ann. of Math. (2) <strong>157</strong> (2003), 647–688.</p>
+</li><li id="ref-taoCovering"><p>T. Tao, <a href="https://terrytao.wordpress.com/2010/10/16/245a-notes-5-differentiation-theorems/"><em>245A,
+Notes 5: Differentiation theorems</em></a>, lecture notes, 2010.</p>
+</li><li id="ref-SteinStromberg"><p>E. M. Stein and J.-O. Strömberg, <a href="https://doi.org/10.1007/BF02384314"><em>Behavior of maximal
+functions in <span class="math inline">$$\mathbb R^n$$</span> for large
+<span class="math inline">$$n$$</span></em></a>, Ark. Mat.
+<strong>21</strong> (1983), 259–269.</p>
+</li><li id="ref-Stein1970"><p>E. M. Stein, <em>Topics in Harmonic Analysis Related to the
+Littlewood–Paley Theory</em>, Annals of Mathematics Studies, vol. 63,
+Princeton University Press, Princeton, NJ, 1970.</p>
+</li><li id="ref-GarofaloTralli"><p>N. Garofalo and G. Tralli, <a href="https://doi.org/10.1007/s00208-020-02090-6"><em>Hardy–Littlewood–Sobolev
+inequalities for a class of non-symmetric and non-doubling hypoelliptic
+semigroups</em></a>, Math. Ann. <strong>383</strong> (2022), 1–38.</p>
+</li></ol></section>
+
+</article>
+</div>
+<script>
+  // Keep $$ source delimiters for inline formulas and mark their mode for MathJax.
+  document.querySelectorAll('.post-content .math.inline').forEach(function (span) {
+    var tex = span.textContent;
+    var math = document.createElement('script');
+    math.type = 'math/tex';
+    math.text = tex.slice(2, -2);
+    span.textContent = '';
+    span.appendChild(math);
+  });
+</script>
+
+</main><footer class="site-footer">
+  <div class="container">
+    &copy; Copyright 2026 Yongxi (Aaron) Lin.
+    Built with <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
+  </div>
+</footer>
+<script src="/assets/js/site.js?v=1792898706"></script>
+  </body>
+</html>
