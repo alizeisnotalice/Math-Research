@@ -1,0 +1,85 @@
+{
+  "updated_at": "2026-10-26T00:09:33.631702+08:00",
+  "prior_agents": "lower005_finish and upper005_review completed; no live processes found; existing independent clones reused",
+  "matlab_owner": "primary only; subagents submit scripts without executing MATLAB",
+  "roles": [
+    {
+      "role": "A",
+      "task_name": "a_upper_theory",
+      "responsibility": "g 全域、奇异层与精细估计",
+      "clone": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory",
+      "owned_project_path": "upper/round006/g",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "xhigh",
+      "status": "first_finite_batch_completed; awaiting_Astra_review; no_live_compute_handle"
+    },
+    {
+      "role": "B",
+      "task_name": "b_upper_certification",
+      "responsibility": "I 严格积分、区间与成本",
+      "clone": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-numerics",
+      "owned_project_path": "upper/round006/integral",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "status": "first_finite_batch_completed; awaiting_Astra_review; no_live_compute_handle"
+    },
+    {
+      "role": "C",
+      "task_name": "c_upper_mechanism",
+      "responsibility": "替代核/frame/机制",
+      "clone": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit",
+      "owned_project_path": "upper/round006/alternative",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "xhigh",
+      "status": "alpha_three_halves_first_batch_completed; theory_requires_independent_review"
+    },
+    {
+      "role": "D",
+      "task_name": "d_astra_construction",
+      "responsibility": "新质量/移位/相关陪集",
+      "clone": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-lower-astra",
+      "owned_project_path": "lower/round006/astra_construction/",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "xhigh",
+      "status": "Astra24_joint_mass_gap_candidates_completed_no_promotion_no_live_handle",
+      "previous_assignment": {
+        "task_name": "d_lower_construction",
+        "model": "gpt-6.1-sol",
+        "clone": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-lower-clean",
+        "completed_owned_paths": [
+          "lower/round006/correlated/",
+          "lower/round006/staggered/"
+        ],
+        "status": "two_finite_batches_completed_no_promotion_no_live_handle"
+      },
+      "escalation_reason": "repeated finite mass/coset/staggered candidates no promotion; fresh structural design needed"
+    },
+    {
+      "role": "E",
+      "task_name": "e_lower_certification",
+      "responsibility": "准确并集/比较/有限L1",
+      "clone": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-lower-round005-endpointfix",
+      "owned_project_path": "audit/lower006",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "xhigh",
+      "status": "initial_parity_and_staggered_interfaces_completed; reviewing_new_dimerization_interface"
+    },
+    {
+      "role": "F",
+      "task_name": "f_astra_audit",
+      "responsibility": "两侧理论/证书/接口独立审计",
+      "clone": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-literature",
+      "owned_project_path": "audit/round006",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "xhigh",
+      "status": "time_moment_audit_completed; independent_alpha15_review_active",
+      "escalation_reason": "current global body32 g/I closure bottleneck documented through rounds004/005"
+    }
+  ],
+  "default_model": "gpt-6.1-sol",
+  "conditional_escalation_model": "gpt-6-astra",
+  "escalation_triggers": [
+    "verified bottleneck",
+    "breakthrough candidate needing stronger proof or audit"
+  ]
+}

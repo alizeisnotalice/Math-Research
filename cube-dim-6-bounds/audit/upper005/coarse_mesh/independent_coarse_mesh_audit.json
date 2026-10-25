@@ -1,0 +1,26 @@
+{
+  "status": "PASS_fixed_method_only",
+  "no_kernel_evaluations": true,
+  "Dmin": "25/192",
+  "epsilon_split": "1/100",
+  "L": "[6.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e-8 +/- 5.30e-123]",
+  "U": "[2.300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e-5 +/- 9.10e-121]",
+  "point_G_upper_used_for_essential_g": "[2.2501338596882661014596145325523546206069246978571478779463719021875719946855087e-5 +/- 3.98e-85]",
+  "necessary_budget_ceiling_from_g_le_U": "[0.0001226666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666667 +/- 5.53e-119]",
+  "coarse_upper_certificate_lower_envelope_at_split": "[28160408990.533893368077097860196103763404739630274214403178149345399593672205012605262625195170042761258960321100 +/- 3.87e-103]",
+  "tail_upper_certificate_floor_at_split": "[0.000195288827594760304877001292181399338825358934314107397899246059495802109079592591329368453061589597984167507515874 +/- 7.41e-118]",
+  "coarse_to_ceiling_ratio": "[229568551553265.43506584590646898997633210385568158326959112621748967060058862782015159748800410360946678500261766 +/- 3.71e-99]",
+  "tail_to_ceiling_ratio": "[1.59202848582685031149729314278314678390238261669109291765689722415056067184450482061985151952382824443614815909680 +/- 5.28e-114]",
+  "direction_check": {
+    "small_epsilon": "The mesh formula is an upper certificate, not a lower bound on actual norm. Its RHS is forced >= L exp(Dmin/(32 eps^2)) and increases as eps decreases.",
+    "large_epsilon": "The whole-face tail is an upper certificate, not a lower bound on actual tail. Its allocated amount K eps^(7/6) increases as eps increases.",
+    "cost_gate": "For q=6/5, 6^q(B/g)^q < 64 iff B < 16g/3. Essential g <= U makes B < 16U/3 necessary for this fixed-budget proof route."
+  },
+  "scope": "Only excludes a proof using this fixed 120-leaf log-convex upper certificate, this spectral L insertion, this essential-g point cap, and K_new tail allocation. It says nothing about the actual H norm, actual tail, I, model cost, or C6.",
+  "inputs_sha256": {
+    "mesh": "6ac59bbc965266f0cee8a4b08c4ef122bfb350aed80e0d74264ff6fd0b70c11b",
+    "spectral": "159fa7e3cdd93b11568e3548008ff6d75be53759ecb6dc588cbd898cc7ee71e0",
+    "point": "d31cc5ba69a442e10d81ff2f32094152cf8e974a02ace68768901133f7efda60"
+  },
+  "source_sha256": "d00a0e8ad4f5d254848117cb2fddd0d01bd82ca883897f0fd8b930679903f4bb"
+}
