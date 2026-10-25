@@ -1,0 +1,65 @@
+{
+  "round": "014_geometry_D5",
+  "registered_at_utc": "2026-10-25T15:57:28.495237+00:00",
+  "status": "registered_before_execution",
+  "mechanism": "full-five-axis D5 parity deletion: atoms at a*j with sum(j) even, unit masses",
+  "different_from_sibling": "sibling lower_alternative_cont confirmed only two-axis parity at fixed exact C spacings; this has all-five-axis parity and new spacings",
+  "source_sha256": "c4fabbc543e3ad34ddd2d4d1e6dafa87fc1901a2d26a7c383e2736048d97ed25",
+  "period_mass": 16,
+  "period_lengths": "2*a_i",
+  "finite_witnesses": "per-axis (l,k) in ((1,0),(1,1),(2,0),(3,-1),(3,0),(4,-1)); 6^5=7776 blocks; retain only even-sum integer atoms",
+  "mass_formula": "N=(product(l_i)+(-1)^sum(k_i)*product(1_{l_i odd}))/2",
+  "radius_formula": "r=N^(1/5)/2 in every coordinate; actual strict dyadic lower side at 2^-80",
+  "normalization": "receiver D=product[0,a_i], 32 reflection copies divided by period mass16: ratio2*V",
+  "candidates": {
+    "anisotropic_27_32": [
+      "189/128",
+      "459/512",
+      "459/512",
+      "459/512",
+      "459/512"
+    ],
+    "anisotropic_7_8": [
+      "49/32",
+      "119/128",
+      "119/128",
+      "119/128",
+      "119/128"
+    ],
+    "anisotropic_29_32": [
+      "203/128",
+      "493/512",
+      "493/512",
+      "493/512",
+      "493/512"
+    ],
+    "isotropic_31_32": [
+      "31/32",
+      "31/32",
+      "31/32",
+      "31/32",
+      "31/32"
+    ],
+    "isotropic_1": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "isotropic_33_32": [
+      "33/32",
+      "33/32",
+      "33/32",
+      "33/32",
+      "33/32"
+    ]
+  },
+  "limits_per_candidate": {
+    "seconds": 120,
+    "nodes": 200000
+  },
+  "frozen_reference": "complete C_cert from lower_round003/a2_equals_a3_results.json, not a rounded safety threshold",
+  "acceptance": "exact ratio above full C upper and independent audit before ledger promotion",
+  "scope": "finite block family, not global D5 superlevel geometry"
+}

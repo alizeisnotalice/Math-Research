@@ -1,0 +1,8 @@
+{
+  "status":"registered_after_diagnostic_batches_before_exact_execution",
+  "purpose":"Certify the closest finite candidate from each completed diagnostic batch, to check geometry and normalization and provide auditable failure evidence; this does not reopen the floating search.",
+  "candidates":["one tail half-shift, epsilon=1/1024, fixed baseline spacings","same shift and epsilon, spacings multiplied by(1025/1024)^(1/5)"],
+  "rationalization":"All spacings rounded strictly down to denominator2^64 from rational isolating upper/lower roots; common side at each exact mass rounded strictly down to denominator2^64. All comparisons and both union engines use Fraction.",
+  "limits_per_candidate":{"seconds":120,"nodes":200000},
+  "stop":"Exactly two exact reconstructions, whether failure or unexpected success. Only a strict certified improvement triggers a candidate lock and external audit."
+}

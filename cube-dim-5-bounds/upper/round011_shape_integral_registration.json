@@ -1,0 +1,16 @@
+{
+  "round": 11,
+  "owner": "upper_theory_cont",
+  "registered_before_production_batch": true,
+  "model": "independent alpha=3/2 stable sum over 16 unnormalised body directions in R5",
+  "analytic_route": "Use the Astra time/radial shape representation, eliminate all four face coordinates by homogeneous sphere/cube integration, then bound one negative determinant moment by Cauchy-Binet weighted AM-GM and independent-coordinate negative association.",
+  "batch": [
+    "Verify the exact 5x5 frame and 16-direction signed-permutation closure; no re-enumeration of determinant bases.",
+    "Compute only fixed rational exponents b=3/14, a=15/224, gamma=9/28 and the exact first determinant moment beta^5*5!/(beta)_5.",
+    "Use 256-bit Arb once for the explicit Gamma negative-determinant-moment upper bound, its Jensen lower benchmark, the resulting complete-I upper bound, and the fixed target 11/1000000 threshold."
+  ],
+  "preselected_comparisons": ["negative_moment_upper < 5/2", "I_upper < 1/50000", "I_upper < 11/1000000"],
+  "stop_condition": "Stop after this single finite formula batch. Do not run any Monte Carlo, QMC, spatial sampling, peak refinement, parameter optimization, or an additional integration grid.",
+  "scope": "The all-face spatial elimination is exact and retains x1=1 through the positive Gaussian Green formula; it is not a peak-in-time estimate. A strict I bound may remain weaker than the target and will be reported as such. No g or C5 claim.",
+  "shared_MATLAB": "not used; parent serialises MATLAB"
+}

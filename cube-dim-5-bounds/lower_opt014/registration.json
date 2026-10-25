@@ -1,0 +1,16 @@
+{
+ "round":"lower_opt014",
+ "registered_before_execution":true,
+ "model":"unit-mass rectangular lattice with spacings (b,b,c,c,c), all common-radius contiguous blocks ell in {1,2,3,4}^5",
+ "not_previously_excluded":"C has multiplicity pattern 1+4. This batch searches the distinct 2+3 stratum and the all-equal diagonal over [4/5,9/4]^2, reaching far beyond small C perturbations. Old common-tail local intervals and 1+3/2+2 tail splitting at fixed or almost-fixed first axis do not cover this model plane.",
+ "seeds":[["1","1"],["5/4","5/4"],["3/2","1"],["7/4","1"],["2","1"],["1","3/2"],["1","7/4"],["1","2"]],
+ "total_registered_configurations":12,
+ "event_steps":"Eight fixed seeds, then exactly four adaptive global coordinate-event steps. Starting from the best seed, alternate b,c,b,c. At each step scan all distinct floating raw endpoint event coordinates in [4/5,9/4] with the other coordinate fixed. Update only if the maximum improves the current floating value. Event representatives retain integer root-products, signs and half-integer slopes, allowing exact algebraic reconstruction. No additional seed, minimizer, grid or replacement is allowed.",
+ "event_lines":"0, a/2, root(prod ell)/2-(ell_j-1)*a/2, ell_j*a/2-root(prod ell)/2 for all 1024 length vectors and each possible ell_j; solve pair intersections within one axis",
+ "numerical_scope":"float64 diagnostic only. No interpolation or numerical maximum is a proof or global exclusion.",
+ "numerical_caps":{"event_count":20000,"total_union_evaluations":80008,"wall_seconds":240,"per_union_recursive_nodes":20000},
+ "exact_selection":"Select at most two best distinct configurations among the eight seeds and four coordinate-step outputs. Reconstruct event coordinates from stored Q(u,v) line pairs, never from displayed decimal; rational seed coordinates remain rational. Exact ratio minus all 25 complete C coefficients must have positive lower bound to win.",
+ "exact_caps_per_candidate":{"wall_seconds":120,"recursive_nodes":200000},
+ "guards":"positive real lattice spacings; actual unit atoms; common cube radius; exact union by two engines; explicit finite collar and smooth L1 transfer applicability; no model improvement may be called C5 improvement without review",
+ "stop":"Finish after eight seeds, four coordinate steps, and at most two exact certifications, or stop at a registered cap. No global claim from these finite operations. Do not commit."
+}

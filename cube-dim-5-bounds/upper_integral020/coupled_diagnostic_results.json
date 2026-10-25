@@ -1,0 +1,105 @@
+{
+  "status": "finite_nested_quadrature_diagnostic_NOT_a_rigorous_Q_or_I_certificate",
+  "parameters": {
+    "beta": "3/4",
+    "a": "15/224",
+    "gamma": "9/28",
+    "dimension": 16,
+    "inner_logu": [
+      -64,
+      6
+    ],
+    "outer_loglambda": [
+      -40,
+      "log(16)"
+    ],
+    "outer_breakpoints": [
+      -40,
+      -20,
+      -10,
+      -5,
+      0,
+      "log(16)"
+    ],
+    "inner_epsabs": 2e-14,
+    "inner_epsrel": 2e-11,
+    "inner_limit": 200,
+    "outer_epsabs": 5e-10,
+    "outer_epsrel": 2e-09,
+    "outer_limit": 160,
+    "max_distinct_inner_integrals": 2000
+  },
+  "python": "3.15.0",
+  "scipy": "1.18.1",
+  "source_json_sha256": "5b77e6a098f314e8d3cac1fbbc1625ea846e6baeec562f839e9d9d298846211d",
+  "script_sha256": "ebb6de2b01f1c15edfab858d3a7f55faffa49f7c35d7464cf12c4194997375ba",
+  "diagnostic": {
+    "m0": 0.9898818372405827,
+    "q_prefactor_including_m0_power": 0.1544615064075835,
+    "normalized_finite_outer_integral": 13.145691815287632,
+    "normalized_large_lambda_main_tail": 1.2760772204563255,
+    "coupled_Q_surrogate_estimate": 2.2276081703232546,
+    "coupled_I_bound_surrogate_estimate": 1.75684095819139e-05,
+    "imported_separated_Q_baseline": 2.4576305439372286,
+    "ratio_coupled_to_separated": 0.9064048198044169,
+    "imported_target_sufficient_Q_gate": 1.3947585727271261,
+    "coupled_Q_over_target_gate": 1.5971281438103548,
+    "I_over_new_orbit_bound_as_reported_by_parent": 1.112426284735055
+  },
+  "finite_outer_pieces": [
+    {
+      "loglambda_left": -40,
+      "loglambda_right": -20,
+      "normalized_outer_integral": 0.0020564982148234554,
+      "quadpack_error_estimate": 9.421178791773506e-15
+    },
+    {
+      "loglambda_left": -20,
+      "loglambda_right": -10,
+      "normalized_outer_integral": 0.28171995775252195,
+      "quadpack_error_estimate": 3.1277198359327624e-15
+    },
+    {
+      "loglambda_left": -10,
+      "loglambda_right": -5,
+      "normalized_outer_integral": 2.7577446541031914,
+      "quadpack_error_estimate": 3.061711611022301e-14
+    },
+    {
+      "loglambda_left": -5,
+      "loglambda_right": 0,
+      "normalized_outer_integral": 8.26913683058919,
+      "quadpack_error_estimate": 9.180586103072834e-14
+    },
+    {
+      "loglambda_left": 0,
+      "loglambda_right": 2.772588722239781,
+      "normalized_outer_integral": 1.8350338746279058,
+      "quadpack_error_estimate": 2.037296858579014e-14
+    }
+  ],
+  "analytic_error_interface_arb256": {
+    "inner_left_proxy_overestimate_bound_EL": "[1.665244321541118817174395116105226294458799725440612719176636265639340e-24 +/- 3.78e-94]",
+    "inner_right_omitted_bound_EU": "[1.236635516896623282114617633896249943373114231126012402296102265778229e-42 +/- 2.50e-112]",
+    "induced_Q_error_from_inner_analytic_truncation": "[4.960621688218144827501312577508249952652706760666389477764921426357628e-18 +/- 1.73e-88]",
+    "small_lambda_omitted_Q_upper_bound": "[7.925340154094405237385904694296167296297011577264782739763238110689733e-7 +/- 2.70e-77]",
+    "large_lambda_main_tail_overestimate_Q_bound": "[4.539769379346296392370993469653775325413892733830818702303307163111803e-48 +/- 9.19e-119]",
+    "interpretation": "If finite nested integral were evaluated exactly, add the small-lambda upper bound, allow the inner-truncation bound in both directions, and subtract at most the large-tail correction. These do not bound floating quadrature error."
+  },
+  "floating_error_diagnostics_NOT_certified": {
+    "outer_quadpack_error_sum_in_Q_units": 2.3994798671639593e-14,
+    "maximum_sampled_inner_quadpack_error_estimate": 9.964812509656557e-13,
+    "crude_Q_proxy_from_maximum_sampled_inner_error": 2.9684331851486486e-06,
+    "warnings": [],
+    "clamps_to_phi_one": 0,
+    "interpretation": "QUADPACK estimates and sampled maxima are diagnostics, not rigorous enclosures or supremum bounds."
+  },
+  "cost": {
+    "distinct_inner_integrals": 147,
+    "inner_function_evaluations": 35595,
+    "outer_subintervals": 5,
+    "random_samples": 0,
+    "elapsed_seconds": 0.01182041599531658
+  },
+  "scope": "Two nested positive one-dimensional integrals retain T/S coupling in the AM-GM surrogate; actual determinant moment may be smaller. No new certified global I, g or C5."
+}
