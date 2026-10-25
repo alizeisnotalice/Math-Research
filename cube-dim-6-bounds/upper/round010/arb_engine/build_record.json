@@ -1,0 +1,24 @@
+{
+  "compile_command": [
+    "/usr/bin/clang++",
+    "-O3",
+    "-std=c++20",
+    "-I",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round010/arb_engine/scratch/include",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round010/arb_engine/arb_kernel.cpp",
+    "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/lib/python3.15/site-packages/flint/.dylibs/libflint.24.0.dylib",
+    "-Wl,-rpath,/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/lib/python3.15/site-packages/flint/.dylibs",
+    "-o",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round010/arb_engine/scratch/arb_kernel"
+  ],
+  "local_binary_install_name_command": [
+    "/usr/bin/install_name_tool",
+    "-change",
+    "/DLC/flint/.dylibs/libflint.24.0.dylib",
+    "@rpath/libflint.24.0.dylib",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round010/arb_engine/scratch/arb_kernel"
+  ],
+  "binary_sha256": "429cdccca45a69c1de6c04725231297e00ee8d3951ccbb1a6141feb934f13bb8",
+  "kernel_calls": 0,
+  "headers_archive_sha256": "64e1144a1f909467307d5928f580d51c257c19b8d63565a69d47062557112570"
+}
