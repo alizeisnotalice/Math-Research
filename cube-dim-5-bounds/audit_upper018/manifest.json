@@ -1,0 +1,143 @@
+{
+  "audit_id": "upper018",
+  "completed_at_utc": "2026-10-25T16:06:42.623088+00:00",
+  "status": "pass_conditional_interfaces_and_global_g_benchmark_no_new_C5_bound",
+  "certified_C5_upper": 32,
+  "commit_or_push_performed": false,
+  "white_list": [
+    {
+      "path": "report.md",
+      "bytes": 14715,
+      "sha256": "10a82f461bc99feedaed9a279020e78d20b92408724231e3d43f223b9e6fc53a",
+      "role": "final independent analytic audit; no new C5 bound"
+    },
+    {
+      "path": "registration.json",
+      "bytes": 8487,
+      "sha256": "d754f1db64ea9d67b829436adc2fbcb3dec2200c68625f064723f389434929f5",
+      "role": "finite scope, source roots, exact input hashes and snapshot mapping"
+    },
+    {
+      "path": "check_interfaces.py",
+      "bytes": 16362,
+      "sha256": "079b7f7437c2071253352dcab123798bac38dc250ecf2a42a3ccdbdf649d7a51",
+      "role": "independent exact/Arb/SymPy checker"
+    },
+    {
+      "path": "check_results.json",
+      "bytes": 21332,
+      "sha256": "9692f8be136d0b3435c8cfc74aba8a0451d0d120603fd1cf5f277f1feca0e47d",
+      "role": "actual successful check output"
+    },
+    {
+      "path": "replay_portable.py",
+      "bytes": 2700,
+      "sha256": "1a56a021040caa86be7054c52d8fd7b3fc2821416e15f91cf1f4365615c62f98",
+      "role": "minimal SHA-locked staging entry; default only validates hashes/imports"
+    }
+  ],
+  "primary_archive_files": [
+    "report.md",
+    "registration.json",
+    "check_interfaces.py",
+    "check_results.json",
+    "replay_portable.py",
+    "manifest.json"
+  ],
+  "excluded_duplicate_snapshots": [
+    "inputs/",
+    "inputs_extra/"
+  ],
+  "independent_irreplaceable_snapshot_bytes": false,
+  "portable_entry": "replay_portable.py maps registered source paths to a temporary inputs tree under HERE, enforces SHA256, and removes temporary files. Default hash/staging mode was actually run successfully against the primary repository.",
+  "portable_hash_staging_inputs_checked": 17,
+  "original_checker_rerun_in_portable_final_check": false,
+  "prior_no_snapshot_checker_replay": "passed; byte-identical check_results.json",
+  "registered_source_mapping": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "18025c63fdc4225e0c326bc535b810c9a9e54ab683b990dce818758f3ca732d5",
+      "primary_source_matches": true
+    },
+    {
+      "path": "cube-dim-5-bounds/round005/alpha15_middle_budget.py",
+      "sha256": "850064504579e8876156fa0469169b25cde39f62fc27419731de4fc30a14dcad",
+      "primary_source_matches": true
+    },
+    {
+      "path": "cube-dim-5-bounds/round005/alpha15_middle_budget.json",
+      "sha256": "929c764989ce6f51a4fc55ab0ab21ad315996534eaebaa06d14c48134102365b",
+      "primary_source_matches": true
+    },
+    {
+      "path": "cube-dim-5-bounds/round005/alpha15_middle_budget.md",
+      "sha256": "ffe95b1242de39c725933feb4efdf092f055745f82ab2df676a5186cab5aef40",
+      "primary_source_matches": true
+    },
+    {
+      "path": "cube-dim-5-bounds/upper/round009_alpha_shorttime.md",
+      "sha256": "c855080454e4a988b387943274aa6b26932701331317a515e5b945c9301b23db",
+      "primary_source_matches": true
+    },
+    {
+      "path": "cube-dim-5-bounds/upper/round009_alpha_shorttime.py",
+      "sha256": "37b5ba9a07ddadb66c79e4ce866d385666e1f28b4f3c88bedd029dde2a3b5da6",
+      "primary_source_matches": true
+    },
+    {
+      "path": "cube-dim-5-bounds/upper/round009_alpha_shorttime_results.json",
+      "sha256": "d99e7f23ee9fd728c2aa0094a102f7ac5e117479d7ad24aa69b37cea10e8beb7",
+      "primary_source_matches": true
+    },
+    {
+      "path": "cube-dim-5-bounds/alternative_alpha/transfer.md",
+      "sha256": "3d2acf640e1be0ee11d10fd6e29719ddc4291117975407e0175c8142573d5465",
+      "primary_source_matches": true
+    },
+    {
+      "path": "cube-dim-5-bounds/upper_g_round010/report.md",
+      "sha256": "98db39b1340de0c4dce0f6ec3c533451eb5b0b15bf4c46daf55762a945bd43d6",
+      "primary_source_matches": true
+    },
+    {
+      "path": "cube-dim-5-bounds/upper_g_round010/registration.md",
+      "sha256": "2619001ae4ff5da8bb7b5cd1cb95857242d82badd0e163305d913cd1b038917d",
+      "primary_source_matches": true
+    },
+    {
+      "path": "cube-dim-5-bounds/upper_g_round010/tilted_gaussian_bound.py",
+      "sha256": "f62764cf49abcc10f66efecc926c51e52be1680bd9b67dd823468e781310550e",
+      "primary_source_matches": true
+    },
+    {
+      "path": "cube-dim-5-bounds/upper_g_round010/tilted_gaussian_bound.json",
+      "sha256": "346f86883404c13b28a607c83d80c442cd5fc0139f49401ee88eaec84040d65a",
+      "primary_source_matches": true
+    },
+    {
+      "path": "cube-dim-5-bounds/upper/round002_quotient_peak_proof.md",
+      "sha256": "ab07e606920cb7e1ab247bc4ddb2be13ea4ada62cc70584ca1b0c5546f4edb1b",
+      "primary_source_matches": true
+    },
+    {
+      "path": "cube-dim-5-bounds/upper/round010_alpha_strata.md",
+      "sha256": "8cdf321d9692fbb8d71180671cb090698e937c3bca3cc3ba32c84ff1c91f99ba",
+      "primary_source_matches": true
+    },
+    {
+      "path": "cube-dim-5-bounds/upper/round010_alpha_strata.py",
+      "sha256": "7aae286fe0cb5afb15e307287143e8726443bf09a3b2debacf734eaef4a33782",
+      "primary_source_matches": true
+    },
+    {
+      "path": "cube-dim-5-bounds/upper/round010_alpha_strata_registration.json",
+      "sha256": "b0a037dfa7d6de7afb73e317b34bfc6ece586c27ad1711f67c31896f569ee519",
+      "primary_source_matches": true
+    },
+    {
+      "path": "cube-dim-5-bounds/upper/round010_alpha_strata_results.json",
+      "sha256": "897ec72800a5d61f60cf7d404f9c76646ddec62659ff7d8ae57a5dc58a146639",
+      "primary_source_matches": true
+    }
+  ]
+}

@@ -1,0 +1,879 @@
+{
+  "status": "pass_conditional_interfaces_and_global_g_benchmark_no_new_C5_bound",
+  "source_sha256": "079b7f7437c2071253352dcab123798bac38dc250ecf2a42a3ccdbdf649d7a51",
+  "registration_sha256": "d754f1db64ea9d67b829436adc2fbcb3dec2200c68625f064723f389434929f5",
+  "runtime": {
+    "python": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python",
+    "python_version": "3.15.0",
+    "flint_version": "0.9.0",
+    "sympy_version": "1.14.0",
+    "Arb_bits_for_A_K_only": 384,
+    "Fraction_root_decimal_digits": 90
+  },
+  "checked_inputs": [
+    {
+      "snapshot": "inputs/AGENTS.md",
+      "sha256": "18025c63fdc4225e0c326bc535b810c9a9e54ab683b990dce818758f3ca732d5"
+    },
+    {
+      "snapshot": "inputs/cube-dim-5-bounds/round005/alpha15_middle_budget.py",
+      "sha256": "850064504579e8876156fa0469169b25cde39f62fc27419731de4fc30a14dcad"
+    },
+    {
+      "snapshot": "inputs/cube-dim-5-bounds/round005/alpha15_middle_budget.json",
+      "sha256": "929c764989ce6f51a4fc55ab0ab21ad315996534eaebaa06d14c48134102365b"
+    },
+    {
+      "snapshot": "inputs/cube-dim-5-bounds/round005/alpha15_middle_budget.md",
+      "sha256": "ffe95b1242de39c725933feb4efdf092f055745f82ab2df676a5186cab5aef40"
+    },
+    {
+      "snapshot": "inputs/cube-dim-5-bounds/upper/round009_alpha_shorttime.md",
+      "sha256": "c855080454e4a988b387943274aa6b26932701331317a515e5b945c9301b23db"
+    },
+    {
+      "snapshot": "inputs/cube-dim-5-bounds/upper/round009_alpha_shorttime.py",
+      "sha256": "37b5ba9a07ddadb66c79e4ce866d385666e1f28b4f3c88bedd029dde2a3b5da6"
+    },
+    {
+      "snapshot": "inputs/cube-dim-5-bounds/upper/round009_alpha_shorttime_results.json",
+      "sha256": "d99e7f23ee9fd728c2aa0094a102f7ac5e117479d7ad24aa69b37cea10e8beb7"
+    },
+    {
+      "snapshot": "inputs/cube-dim-5-bounds/alternative_alpha/transfer.md",
+      "sha256": "3d2acf640e1be0ee11d10fd6e29719ddc4291117975407e0175c8142573d5465"
+    },
+    {
+      "snapshot": "inputs_extra/Math-Research-cube5-gprobe/cube-dim-5-bounds/upper_g_round010/report.md",
+      "sha256": "98db39b1340de0c4dce0f6ec3c533451eb5b0b15bf4c46daf55762a945bd43d6"
+    },
+    {
+      "snapshot": "inputs_extra/Math-Research-cube5-gprobe/cube-dim-5-bounds/upper_g_round010/registration.md",
+      "sha256": "2619001ae4ff5da8bb7b5cd1cb95857242d82badd0e163305d913cd1b038917d"
+    },
+    {
+      "snapshot": "inputs_extra/Math-Research-cube5-gprobe/cube-dim-5-bounds/upper_g_round010/tilted_gaussian_bound.py",
+      "sha256": "f62764cf49abcc10f66efecc926c51e52be1680bd9b67dd823468e781310550e"
+    },
+    {
+      "snapshot": "inputs_extra/Math-Research-cube5-gprobe/cube-dim-5-bounds/upper_g_round010/tilted_gaussian_bound.json",
+      "sha256": "346f86883404c13b28a607c83d80c442cd5fc0139f49401ee88eaec84040d65a"
+    },
+    {
+      "snapshot": "inputs_extra/Math-Research-cube-dim-5/cube-dim-5-bounds/upper/round002_quotient_peak_proof.md",
+      "sha256": "ab07e606920cb7e1ab247bc4ddb2be13ea4ada62cc70584ca1b0c5546f4edb1b"
+    },
+    {
+      "snapshot": "inputs_extra/Math-Research-cube5-upper/cube-dim-5-bounds/upper/round010_alpha_strata.md",
+      "sha256": "8cdf321d9692fbb8d71180671cb090698e937c3bca3cc3ba32c84ff1c91f99ba"
+    },
+    {
+      "snapshot": "inputs_extra/Math-Research-cube5-upper/cube-dim-5-bounds/upper/round010_alpha_strata.py",
+      "sha256": "7aae286fe0cb5afb15e307287143e8726443bf09a3b2debacf734eaef4a33782"
+    },
+    {
+      "snapshot": "inputs_extra/Math-Research-cube5-upper/cube-dim-5-bounds/upper/round010_alpha_strata_registration.json",
+      "sha256": "b0a037dfa7d6de7afb73e317b34bfc6ece586c27ad1711f67c31896f569ee519"
+    },
+    {
+      "snapshot": "inputs_extra/Math-Research-cube5-upper/cube-dim-5-bounds/upper/round010_alpha_strata_results.json",
+      "sha256": "897ec72800a5d61f60cf7d404f9c76646ddec62659ff7d8ae57a5dc58a146639"
+    }
+  ],
+  "E1_geometry": {
+    "direction_count": 16,
+    "all_16_det48_complements": [
+      {
+        "selected_direction": [
+          1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "full_det": "-48",
+        "quotient_det": "-48",
+        "coordinate_Jacobian": 1
+      },
+      {
+        "selected_direction": [
+          1,
+          -1,
+          -1,
+          -1,
+          1
+        ],
+        "full_det": "48",
+        "quotient_det": "48",
+        "coordinate_Jacobian": 1
+      },
+      {
+        "selected_direction": [
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "full_det": "48",
+        "quotient_det": "48",
+        "coordinate_Jacobian": 1
+      },
+      {
+        "selected_direction": [
+          1,
+          -1,
+          -1,
+          1,
+          1
+        ],
+        "full_det": "-48",
+        "quotient_det": "-48",
+        "coordinate_Jacobian": 1
+      },
+      {
+        "selected_direction": [
+          1,
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        "full_det": "48",
+        "quotient_det": "48",
+        "coordinate_Jacobian": 1
+      },
+      {
+        "selected_direction": [
+          1,
+          -1,
+          1,
+          -1,
+          1
+        ],
+        "full_det": "-48",
+        "quotient_det": "-48",
+        "coordinate_Jacobian": 1
+      },
+      {
+        "selected_direction": [
+          1,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        "full_det": "-48",
+        "quotient_det": "-48",
+        "coordinate_Jacobian": 1
+      },
+      {
+        "selected_direction": [
+          1,
+          -1,
+          1,
+          1,
+          1
+        ],
+        "full_det": "48",
+        "quotient_det": "48",
+        "coordinate_Jacobian": 1
+      },
+      {
+        "selected_direction": [
+          1,
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        "full_det": "48",
+        "quotient_det": "48",
+        "coordinate_Jacobian": 1
+      },
+      {
+        "selected_direction": [
+          1,
+          1,
+          -1,
+          -1,
+          1
+        ],
+        "full_det": "-48",
+        "quotient_det": "-48",
+        "coordinate_Jacobian": 1
+      },
+      {
+        "selected_direction": [
+          1,
+          1,
+          -1,
+          1,
+          -1
+        ],
+        "full_det": "-48",
+        "quotient_det": "-48",
+        "coordinate_Jacobian": 1
+      },
+      {
+        "selected_direction": [
+          1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "full_det": "48",
+        "quotient_det": "48",
+        "coordinate_Jacobian": 1
+      },
+      {
+        "selected_direction": [
+          1,
+          1,
+          1,
+          -1,
+          -1
+        ],
+        "full_det": "-48",
+        "quotient_det": "-48",
+        "coordinate_Jacobian": 1
+      },
+      {
+        "selected_direction": [
+          1,
+          1,
+          1,
+          -1,
+          1
+        ],
+        "full_det": "48",
+        "quotient_det": "48",
+        "coordinate_Jacobian": 1
+      },
+      {
+        "selected_direction": [
+          1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        "full_det": "48",
+        "quotient_det": "48",
+        "coordinate_Jacobian": 1
+      },
+      {
+        "selected_direction": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "full_det": "-48",
+        "quotient_det": "-48",
+        "coordinate_Jacobian": 1
+      }
+    ],
+    "signed_permutation_cases": 3840,
+    "VVt": [
+      [
+        16,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        16,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        16,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        16,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        16
+      ]
+    ],
+    "quotient_set": "all 15 nonzero {-2,0}^4 vectors",
+    "density_coordinate_Jacobian": 1
+  },
+  "E2_old_middle_gate": {
+    "epsilon": "1/65536",
+    "T": "4",
+    "target_total_I": "11/1000000",
+    "A_input": {
+      "lower_fraction": "7183818786304111125612054057174871706543195949155421669608100149997134455474792565326559474475138266118065147/25000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "upper_fraction": "28735275145216444502448216228699486826172783796621686678432400599988537821899170261306237897900553064472260589/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "decimal_outward": [
+        "0.287352751452164445024482162286994868261727",
+        "0.287352751452164445024482162286994868261728"
+      ]
+    },
+    "K_input": {
+      "lower_fraction": "429193557803543978157991928123876570095666071319681217592990305813085230454696883271656331493969689313753933101/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "upper_fraction": "214596778901771989078995964061938285047833035659840608796495152906542615227348441635828165746984844656876966551/50000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "decimal_outward": [
+        "4.291935578035439781579919281238765700956660",
+        "4.291935578035439781579919281238765700956661"
+      ]
+    },
+    "power_root_method": "integer-power comparisons with exact rational endpoints",
+    "comparisons": {
+      "short_Lq_upper_ball": {
+        "independent_enclosure": {
+          "lower_fraction": "7651526281082069875471512140805338591702986693552538412069888490799259456050361036251/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "upper_fraction": "1912881570270517468867878035201334647925746673388134603017472122699814864012590259063/250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "decimal_outward": [
+            "0.000007651526281082069875471512140805338591",
+            "0.000007651526281082069875471512140805338592"
+          ]
+        },
+        "contained_in_saved_printed_ball": true
+      },
+      "long_Lq_upper_ball": {
+        "independent_enclosure": {
+          "lower_fraction": "688734963732908868440315633708521028901299691364888043654351431774420716273256823773/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "upper_fraction": "344367481866454434220157816854260514450649845682444021827175715887210358136628411887/500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "decimal_outward": [
+            "0.000000688734963732908868440315633708521028",
+            "0.000000688734963732908868440315633708521029"
+          ]
+        },
+        "contained_in_saved_printed_ball": true
+      },
+      "remaining_middle_Lq_limit_ball": {
+        "independent_enclosure": {
+          "lower_fraction": "32970502123661429391413837136590420977240331271878353084545016558756805792237945375121/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "upper_fraction": "329705021236614293914138371365904209772403312718783530845450165587568057922379453751213/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "decimal_outward": [
+            "0.000329705021236614293914138371365904209772",
+            "0.000329705021236614293914138371365904209773"
+          ]
+        },
+        "contained_in_saved_printed_ball": true
+      },
+      "middle_integral_limit_ball": {
+        "independent_enclosure": {
+          "lower_fraction": "10614356230046029742816909152060683188665308077341432326499252504131491226426050013129/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "upper_fraction": "1061435623004602974281690915206068318866530807734143232649925250413149122642605001313/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "decimal_outward": [
+            "0.000010614356230046029742816909152060683188",
+            "0.000010614356230046029742816909152060683189"
+          ]
+        },
+        "contained_in_saved_printed_ball": true
+      }
+    },
+    "safe_rational_middle_integral_gate": "1061435623/100000000000000",
+    "middle_integral_itself_certified": false
+  },
+  "E3_transfer": {
+    "positive_face_patches": 160,
+    "full_faces": 10,
+    "octants_per_face": 16,
+    "radial_Jacobian": "r^4",
+    "volume_V1_over_I": 32,
+    "optimal_c_over_g": "3/10",
+    "conditional_costs_at_I0": {
+      "1/10000": {
+        "conditional_cost_interval": {
+          "lower_fraction": "31816180040536301532605179507560452063458145140745803778852123675154951122636483926303097507/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "upper_fraction": "7954045010134075383151294876890113015864536285186450944713030918788737780659120981575774377/250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "decimal_outward": [
+            "31.816180040536301532605179507560452063458145",
+            "31.816180040536301532605179507560452063458146"
+          ]
+        },
+        "strictly_below_32": true,
+        "strictly_above_32": false
+      },
+      "1/65000": {
+        "conditional_cost_interval": {
+          "lower_fraction": "14414608532311288427278236614752485762576062794202732172519660075426075424811382104104219197/31250000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "upper_fraction": "92253494606792245934580714334415908880486801882897485904125824482726882718792845466267002861/200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "decimal_outward": [
+            "461.267473033961229672903571672079544402434009",
+            "461.267473033961229672903571672079544402434010"
+          ]
+        },
+        "strictly_below_32": false,
+        "strictly_above_32": true
+      }
+    },
+    "I_limit_for_cost_32_at_new_g": {
+      "lower_fraction": "381557361594065495291311870280069615769457277182281762113244256847216257253328186339/500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "upper_fraction": "763114723188130990582623740560139231538914554364563524226488513694432514506656372679/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "decimal_outward": [
+        "0.000000763114723188130990582623740560139231",
+        "0.000000763114723188130990582623740560139232"
+      ]
+    }
+  },
+  "E4_contour": {
+    "analytic_review": "pass; see report.md",
+    "theta": "pi/3",
+    "subtracted_constant_integral": "i/x, with zero real part",
+    "K_star": "sqrt(2/pi)*3^(-1/4)",
+    "numerical_K_or_new_budget_recomputed": false
+  },
+  "E5_quotient_spectral_peak": {
+    "power_mean_terms": 15,
+    "old_quotient_volume_input": "14455/191102976",
+    "Gamma_parameter": "11/3",
+    "15_exponent": "4/3",
+    "Fourier_factor": "(2*pi)^(-4)",
+    "polytope_volume_recomputed": false
+  },
+  "E6_global_g": {
+    "conditional_covariance": "2*A",
+    "Gaussian_factor": "(4*pi)^(-5/2)",
+    "time_integral_by_sympy": "9*gamma(3/4)/(16*a**(7/4))",
+    "saved_ball_lower_exceeds_1_over_65000": true,
+    "saved_ball_upper_below_1_over_10000": true,
+    "new_Green_g": "1/65000",
+    "author_Arb_computation_rerun": false
+  },
+  "E7_rank_and_tube": {
+    "analytic_review": "pass; see report.md",
+    "constructed_basis_by_selected_mask": {
+      "(0, 0, 0, 1)": [
+        [
+          0,
+          0,
+          0,
+          -2
+        ],
+        [
+          -2,
+          -2,
+          0,
+          0
+        ],
+        [
+          -2,
+          0,
+          -2,
+          0
+        ],
+        [
+          0,
+          -2,
+          -2,
+          0
+        ]
+      ],
+      "(0, 0, 1, 0)": [
+        [
+          0,
+          0,
+          -2,
+          0
+        ],
+        [
+          -2,
+          -2,
+          0,
+          0
+        ],
+        [
+          -2,
+          0,
+          0,
+          -2
+        ],
+        [
+          0,
+          -2,
+          0,
+          -2
+        ]
+      ],
+      "(0, 0, 1, 1)": [
+        [
+          0,
+          0,
+          -2,
+          -2
+        ],
+        [
+          -2,
+          0,
+          -2,
+          0
+        ],
+        [
+          0,
+          -2,
+          -2,
+          0
+        ],
+        [
+          -2,
+          -2,
+          0,
+          -2
+        ]
+      ],
+      "(0, 1, 0, 0)": [
+        [
+          0,
+          -2,
+          0,
+          0
+        ],
+        [
+          -2,
+          0,
+          -2,
+          0
+        ],
+        [
+          -2,
+          0,
+          0,
+          -2
+        ],
+        [
+          0,
+          0,
+          -2,
+          -2
+        ]
+      ],
+      "(0, 1, 0, 1)": [
+        [
+          0,
+          -2,
+          0,
+          -2
+        ],
+        [
+          -2,
+          -2,
+          0,
+          0
+        ],
+        [
+          0,
+          -2,
+          -2,
+          0
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -2
+        ]
+      ],
+      "(0, 1, 1, 0)": [
+        [
+          0,
+          -2,
+          -2,
+          0
+        ],
+        [
+          -2,
+          -2,
+          0,
+          0
+        ],
+        [
+          0,
+          -2,
+          0,
+          -2
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -2
+        ]
+      ],
+      "(0, 1, 1, 1)": [
+        [
+          -2,
+          -2,
+          0,
+          0
+        ],
+        [
+          -2,
+          0,
+          -2,
+          0
+        ],
+        [
+          -2,
+          0,
+          0,
+          -2
+        ],
+        [
+          0,
+          -2,
+          -2,
+          -2
+        ]
+      ],
+      "(1, 0, 0, 0)": [
+        [
+          -2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -2,
+          -2,
+          0
+        ],
+        [
+          0,
+          -2,
+          0,
+          -2
+        ],
+        [
+          0,
+          0,
+          -2,
+          -2
+        ]
+      ],
+      "(1, 0, 0, 1)": [
+        [
+          -2,
+          0,
+          0,
+          -2
+        ],
+        [
+          -2,
+          -2,
+          0,
+          0
+        ],
+        [
+          -2,
+          0,
+          -2,
+          0
+        ],
+        [
+          0,
+          -2,
+          -2,
+          -2
+        ]
+      ],
+      "(1, 0, 1, 0)": [
+        [
+          -2,
+          0,
+          -2,
+          0
+        ],
+        [
+          -2,
+          -2,
+          0,
+          0
+        ],
+        [
+          -2,
+          0,
+          0,
+          -2
+        ],
+        [
+          0,
+          -2,
+          -2,
+          -2
+        ]
+      ],
+      "(1, 0, 1, 1)": [
+        [
+          -2,
+          -2,
+          0,
+          0
+        ],
+        [
+          0,
+          -2,
+          -2,
+          0
+        ],
+        [
+          0,
+          -2,
+          0,
+          -2
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -2
+        ]
+      ],
+      "(1, 1, 0, 0)": [
+        [
+          -2,
+          -2,
+          0,
+          0
+        ],
+        [
+          -2,
+          0,
+          -2,
+          0
+        ],
+        [
+          -2,
+          0,
+          0,
+          -2
+        ],
+        [
+          0,
+          -2,
+          -2,
+          -2
+        ]
+      ],
+      "(1, 1, 0, 1)": [
+        [
+          -2,
+          0,
+          -2,
+          0
+        ],
+        [
+          0,
+          -2,
+          -2,
+          0
+        ],
+        [
+          0,
+          0,
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -2,
+          0,
+          -2
+        ]
+      ],
+      "(1, 1, 1, 0)": [
+        [
+          -2,
+          0,
+          0,
+          -2
+        ],
+        [
+          0,
+          -2,
+          0,
+          -2
+        ],
+        [
+          0,
+          0,
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -2,
+          -2,
+          0
+        ]
+      ],
+      "(1, 1, 1, 1)": [
+        [
+          -2,
+          -2,
+          0,
+          0
+        ],
+        [
+          -2,
+          0,
+          -2,
+          0
+        ],
+        [
+          -2,
+          0,
+          0,
+          -2
+        ],
+        [
+          -2,
+          -2,
+          -2,
+          -2
+        ]
+      ]
+    },
+    "constructed_basis_count": 15,
+    "coordinate_reciprocal_sums": [
+      "3/16",
+      "3/16",
+      "3/16",
+      "3/16"
+    ],
+    "rank_exponents_k_0_to_5": [
+      "-10/3",
+      "-5/3",
+      "0",
+      "5/3",
+      "10/3",
+      "5"
+    ],
+    "weighted_quotient_time_split_by_sympy": "5*C**(2/5)*P**(3/5)/(2*r)",
+    "tube_layer_coefficient": "14/9",
+    "tube_norm_powers": [
+      "9/5",
+      "14/5"
+    ],
+    "author_display_table_9_upper_roundings_checked": true,
+    "author_full_enumerations_or_constants_recomputed": false
+  },
+  "certified_C5_upper": 32,
+  "missing_for_target": [
+    "global essential g>=1/10000",
+    "certified matching middle integral on [epsilon,T]"
+  ]
+}

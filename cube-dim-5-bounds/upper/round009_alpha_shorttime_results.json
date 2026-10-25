@@ -1,0 +1,106 @@
+{
+  "A_decimal": "0.2873527514521644450244821622869948682617",
+  "B_decimal": "4.608122238950731710487931265676167856916",
+  "B_formula": "16^(-7/10)*(5/6)*Cf^(3/10)*(16K)^(7/10)",
+  "Cf_decimal": "9.988340438312581101287585926425315905462",
+  "Cf_formula": "(1/3)*K*16^(5/2)*A^4",
+  "Cquotient_decimal": "29.96502131493774330386275777927594771639",
+  "K_decimal": "4.291935578035439781579919281238765700957",
+  "alpha": "3/2",
+  "c_decimal": "0.2992067103010745084549595449507864013569",
+  "density_peak": "A=s_1(0)=2*Gamma(2/3)/(3*pi)",
+  "density_tail_constant": "K=2*c*(alpha+1)^(alpha+1)/[alpha^(alpha+1)*(2-alpha)]=(25/6)*sqrt(10/(3*pi))",
+  "explicit_complement": {
+    "full_5_by_5_det": "-48",
+    "other_directions": [
+      [
+        1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ]
+    ],
+    "quotient_4_by_4_det": "-48",
+    "quotient_rows": [
+      [
+        -2,
+        -2,
+        -2,
+        0
+      ],
+      [
+        -2,
+        -2,
+        0,
+        -2
+      ],
+      [
+        -2,
+        0,
+        -2,
+        -2
+      ],
+      [
+        0,
+        -2,
+        -2,
+        -2
+      ]
+    ],
+    "v": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "face_pointwise": "p_t(1,y)<=Cf*t^(1-4/alpha)=Cf*t^(-5/3)",
+  "finite_epsilon_error_budget": [
+    {
+      "bound_B_epsilon_6_over_5": "0.0002131532964502750019955532267174736595535",
+      "epsilon": "1/4096"
+    },
+    {
+      "bound_B_epsilon_6_over_5": "0.00004038499782949798119182005310433018541176",
+      "epsilon": "1/16384"
+    },
+    {
+      "bound_B_epsilon_6_over_5": "0.000007651526281082069875471512140805338591703",
+      "epsilon": "1/65536"
+    }
+  ],
+  "interpolation": "||p_t(1,.)||_q <= Cf^(3/10)*(16K)^(7/10)*t^(1/5)",
+  "levy_density_constant": "c=Gamma(5/2)*sin(3*pi/4)/pi=3*sqrt(2)/(8*sqrt(pi))",
+  "marginal": "integral_R4 p_t(1,y)dy=s_(16t)(1)<=16*K*t",
+  "marginal_constant_decimal": "68.67096924856703650527870849982025121531",
+  "one_dimensional_characteristic_function": "exp(-t*|xi|^(3/2))",
+  "positive_face_shorttime": "||int_0^eps p_t(1,.)dt||_L^q([0,infty)^4) <= B*eps^(6/5)",
+  "q": "10/7",
+  "scope": "All displayed short-time inequalities follow from the stated independent 16-direction stable model and the global one-dimensional K bound. They do not prove the alpha=3/2 rank-stratum assertions, finite-source transfer, g/I, or a C5 improvement.",
+  "singleton_quotient_crosscheck": "The four quotient singleton directions have determinant 16 and give 3*Cf, hence a weaker independent certificate.",
+  "tail_constant_decimal": "1.595769121605730711759784239737527473903",
+  "tail_decomposition": "P(|Z_t|>x) <= 4*c*t/[alpha*(2-alpha)]*x^(-alpha)=2*sqrt(2/pi)*t*x^(-3/2)"
+}

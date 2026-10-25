@@ -1,0 +1,68 @@
+{
+  "round": "lower_alt013",
+  "registered_before_execution": true,
+  "created_utc": "2026-10-25T15:50:24.678216+00:00",
+  "mechanisms": [
+    {
+      "id": "weighted_two_axis_parity",
+      "screen": "new dependence on j_p+j_q, unlike historical single-axis weights",
+      "execute": true
+    },
+    {
+      "id": "parity_deletion",
+      "screen": "remove one parity class, making holes but keeping positive surviving atomic masses",
+      "execute": true
+    },
+    {
+      "id": "multiscale_layer_overlay",
+      "screen": "Only single-layer witnesses cannot exceed mass-weighted maximum of component certified ratios; genuine mixed-layer witnesses need additional geometry. No candidate launched in this bounded round.",
+      "execute": false
+    }
+  ],
+  "candidates": [
+    {
+      "name": "weighted_first_tail",
+      "axes": [
+        0,
+        1
+      ],
+      "theta": "1/8"
+    },
+    {
+      "name": "weighted_tail_tail",
+      "axes": [
+        1,
+        2
+      ],
+      "theta": "1/8"
+    },
+    {
+      "name": "deleted_first_tail",
+      "axes": [
+        0,
+        1
+      ],
+      "theta": "1"
+    },
+    {
+      "name": "deleted_tail_tail",
+      "axes": [
+        1,
+        2
+      ],
+      "theta": "1"
+    }
+  ],
+  "candidate_count_cap": 4,
+  "spacing": "exact rational inward C spacing from lower_round005/rational_l5_results.json",
+  "finite_witness_family": "Every contiguous lattice block length in {1,2,3,4}^5 whose strict inward common-radius box meets the reflection-reduced periodic receiver domain; zero-mass blocks omitted. Completeness asserted only for this finite family.",
+  "mass": "sum over distinct lattice sites, w_j=1+theta*(-1)^(j_p+j_q); zero sites absent",
+  "radius": "maximal dyadic r at denominator 2^40 with 32*r^5 < exact block mass",
+  "normalization": "period mass4, full cell factor32 relative to reduced receiver domain; ratio=8*union_volume",
+  "limits_per_candidate": {
+    "seconds": 120,
+    "recursive_nodes": 200000
+  },
+  "acceptance": "exact Fraction union by two engines and strict comparison to full C exact isolating interval; no decimal-based decision",
+  "transfer": "prove finite collar plus atomic bump smoothing for any certified periodic witness ratio; no universal/all-scale exclusion from finite witness failures"
+}

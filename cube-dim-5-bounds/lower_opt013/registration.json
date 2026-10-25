@@ -1,0 +1,15 @@
+{
+  "round": "lower_opt013",
+  "registered_before_execution": true,
+  "task": "Eight new algebraic event candidates for 1+3 tail splitting with first-axis coupling",
+  "baseline": "a=(1+u^3/2,s,s,s,s), s=(1+u)/2; u^5=2,v^5=3",
+  "unoriented_directions": [[0,3,-1,-1,-1],[1,3,-1,-1,-1],[-1,3,-1,-1,-1],[2,3,-1,-1,-1]],
+  "candidate_rule": "For each direction and its negative, take t equal to the nearest strictly positive raw same-axis endpoint crossing in (0,1/64]; fall back to 1/64 only if none exists. Raw affine endpoints are 0,a_j/2,r-(ell_j-1)*a_j/2,ell_j*a_j/2-r for all ell in {1,2,3,4}^5. Crossings at t=0 are excluded. Evaluate only these eight candidate spacings; no adaptive replacements.",
+  "comparison": "Decode all 25 exact coefficients of lower_round003/a2_equals_a3_results.json, compute ratio-C in Q(u,v), and isolate its sign. Displayed decimals never construct C or spacings.",
+  "deduplication": "The baseline tail is split 1+3 with zero tail mean, unlike prior common-tail and 2+2 perturbations. Nonzero first-axis direction components couple the first axis with that split. No periodic mass or gap modulation.",
+  "witness_family": "all 1024 length vectors in {1,2,3,4}^5, common cube radius (product lengths)^(1/5)/2, actual unit atoms in contiguous rectangular lattice blocks",
+  "per_candidate_limits": {"wall_seconds":120,"recursive_nodes":200000},
+  "event_selection_limits": {"wall_seconds":120,"raw_endpoint_pair_tests":1000000},
+  "stop": "After exactly 8 candidates or a registered resource cap. No winning finite model is called a C5 improvement without transfer audit.",
+  "scope": "Finite-model certificates and reusable same-radius collar/smoothing argument; no claim of local or global optimality. Main team remains responsible for any C5 update."
+}

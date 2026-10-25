@@ -1,0 +1,16 @@
+{
+  "round": 10,
+  "owner": "upper_theory_cont",
+  "registered_before_final_batch": true,
+  "model": "five-dimensional independent 16-body-direction symmetric alpha=3/2 stable sum",
+  "batch": [
+    "Enumerate all C(15,4)=1365 quotient four-column sets with exact integer determinants; for each quotient direction choose a maximal-determinant complement and sum reciprocal determinants over the eight directions affecting one fixed coordinate.",
+    "Enumerate all C(16,5)=4368 body five-column sets with exact integer determinants and certify a complement for each of the 120 pairs.",
+    "Evaluate the new contour tail constant, Jensen/Cauchy-volume quotient peak, short-time L^(10/7) coefficient, weighted quotient potential constant, and three preselected time/tube cutoffs using 256-bit Arb balls."
+  ],
+  "preselected_cutoffs": ["1/4096", "1/16384", "1/65536"],
+  "preselected_rational_checks": ["K < 607/1000", "P < 1/125000", "B < 27/100", "D < 3"],
+  "stop_condition": "Finish exactly this finite geometry/constant batch and the self-contained proof. Do not perform pointwise Green searches, g optimization, face quadrature, or a C5 claim.",
+  "calculation_evidence": "Actual Python, exact Python integers/Fraction, python-flint Arb at 256-bit precision; no MATLAB session used. Arb output is only used for these explicit constants, not to certify a global Green integral.",
+  "exploration_before_registration": "Symbolic derivation of the contour inequality and two-rank exponent; a separate Fourier-moment lower-g tangent was evaluated with mpmath, found far below target, and is not used in any result."
+}

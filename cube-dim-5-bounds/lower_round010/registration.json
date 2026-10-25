@@ -1,0 +1,13 @@
+{
+  "round": "010",
+  "status": "registered_before_execution",
+  "mechanism": "non-product two-row staggered periodic point set in the first two axes",
+  "periodic_points": "(j*a1 + h*(k mod 2), k*s) for j,k in Z, with h=tau*a1; axes 3--5 have the ordinary s grid",
+  "period_cell": "[0,a1] x [0,2s] x s^3 with two unit atoms and total mass 2",
+  "candidates": ["tau=1/8", "tau=1/4", "tau=1/2"],
+  "witnesses": "all row-respecting l1 by l2 blocks and l3,l4,l5 in {1,...,4}; common r=(product l)^(1/5)/2; starts j,k=-6,...,6",
+  "receiver_cell": "[0,a1] x [0,2s] x [0,s/2]^3",
+  "normalization": "tail reflections give factor 8, divided by period mass 2: ratio=4*absolute_union_volume",
+  "limits_per_candidate": {"wall_seconds":120,"recursive_nodes":200000},
+  "acceptance": "exact dual union ratio strictly exceeds complete C algebraic value; then separate periodic collar/smoothing transfer is still required"
+}

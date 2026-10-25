@@ -1,0 +1,11 @@
+# 接续计划与当前批次
+
+生效门槛为 continuation_reference.json 中锁定的完整代数C与32；历史下界突破不计本次突破。仅双侧完整认证及初步独立审核后记录时点，随后再完成三轮上下界同步实质迭代，才进行最终全面审计、中文论文PDF、逐轮提交推送与本任务资源释放。原包和三四维项目只读；沿用原核验。
+
+常规原生代理GPT-6.1-sol；用户追加授权瓶颈/突破时提升GPT-6-astra。全域g已构成实际瓶颈，astra_upper_bottleneck已专项接续。主保持证明责任与MATLAB串行调度，各代理独立clone，不自行提交。
+
+本轮分工：upper_theory_cont处理α3/2奇异区域和商势积分；cosine_global担任upper_g完成新倾斜Jensen严格基准；stable_audit担任upper_integral试验低维正卷积包围；staggered_continue担任lower_geometry做5坐标半移双轨六候选；lower_optimization_cont做未覆盖1+3尾距及首轴耦合八代数事件；lower_alternative_cont做删点/parity/多尺度结构筛选；audit_upper_cont核时间预算到传递接口；audit_lower_cont独立审两原子结构证明并准备新候选审计。
+
+各批次参数、有限停止条件、输入输出hash由负责代理在独占目录登记。当前验收仍是完整C差值与严格g/I，不以局部核证书代替C5界。
+
+主新增接收检查：读取stable017完整球，不重复生产积分。在六段各取两个非生产子区间，检查消费API有限/正性及越界拒绝，另用MATLAB一次数值积分交叉两个此前未测点0.003与2.007，仅检错，非严格认证。Python批12次区间评估，MATLAB批2点，无图窗/工作池；完成即释放局部量，无后台作业。
