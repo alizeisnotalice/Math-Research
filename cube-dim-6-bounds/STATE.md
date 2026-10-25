@@ -1,6 +1,6 @@
 # 六维中心方体研究状态
 
-active；最新顺序归档至041，实际研究前沿041。上界优先，下界极低资源。固定Lebesgue、中心轴平行共同半径、一般L1、全部正尺度。当前严格C6>2067397333267/10^12、C6≤64。完整准确下界008系数/理想上端/有限L1证书与来源hash在results/bounds_ledger.json，公开已核范围非穷尽；内部不称公开发表。phase冻结文件不变，双侧检查点null，lower_sincefreeze=true、upper=false、后续三轮0/3。
+active；最新顺序归档至042，实际研究前沿050。上界优先，下界极低资源。固定Lebesgue、中心轴平行共同半径、一般L1、全部正尺度。当前严格C6>2067397333267/10^12、C6≤64。完整准确下界008系数/理想上端/有限L1证书与来源hash在results/bounds_ledger.json，公开已核范围非穷尽；内部不称公开发表。phase冻结文件不变，双侧检查点null，lower_sincefreeze=true、upper=false、后续三轮0/3。
 
 已闭合障碍：028独立复核PASS，body32全部T>0的K_T/T及任意概率时间混合成本≥1025/16，已停止该家族时间搜索。只排此机制，不排C6或原始R_c空间正部源。轴beta1/T2/45、pairbeta1/T32/875仍只为精确固定模型反例，不泛化到全部frame。029主L1反例及独审否定025跨cube L6 leakage；局部corner定理不撤回。032完整G证书严格反证essential g≥1/60000，旧依此前提的条件成本不得用于突破声明。
 
@@ -41,3 +41,9 @@ active；最新顺序归档至041，实际研究前沿041。上界优先，下�
 040归档完成：全S3正矩J2发散/闭管付款/完整compact域和严格余量条件窗口接口独审PASS，未有实用全域g覆盖。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
 
 041归档完成：完整正大参数事件与补分支ALL-t点态界独审PASS，只有唯一短帽已求值。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
+
+042当前检查点：完整S1 cap全部正时间范数<2118205441/10^15已独审PASS；043代表A3中段short<615635661087/(125000000000000000)已独审PASS但长尾/其它区域未付。049真实二维边际L1新预算在独审，不能提前称认证。044新152列frame合法但21旧cone全split；046仅首parent14新cone已独审PASS；050其余20parent有限完整fan批已门控release、须先自登记，未完成前只称partial。045两新G点第二步上升首停，均>1/65000，不证明local/global min。048新band21 Hessian字段1full计算已结清，独立组件参考在F进行，full21逐项independent仍false。047新双轴周期质量低资源模型在封存，0union；039之外不自动外推。
+
+当前代理：B/Astra upper050，C/sol upper048已冻结，F/Astra audit048，A/sol audit049等待源锁，额外Astra upper049封存，D/sol lower047小批，E/sol audit039完成停止。所有旧G/native/band/union句柄都exit/wait，050代码/实际子进程由本目录register/checkpoint另记；没有重启旧计算。MATLAB036主串行四标量已完成、未创建变量或图窗，无本任务窗口待关闭。当前上界仍64，lower008不变、双侧未触发、后三轮0/3。
+
+042归档完成：完整ALL-time S1 cap范数<2118205441/10^15，正事件/长尾独审PASS；帽外I/g仍未证。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
