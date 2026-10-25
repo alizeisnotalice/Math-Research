@@ -1,0 +1,27 @@
+{
+  "status": "PASS exact coalescent/zero-knot algebra",
+  "L_b": "log|b|=log(b^2)/2",
+  "rows": [
+    {
+      "nodes": "0,b,b",
+      "log_epsilon_coefficient": "1/b^2",
+      "finite_real_constant": "(1-L_b)/b^2"
+    },
+    {
+      "nodes": "0,0,b",
+      "log_epsilon_coefficient": "-1/b^2",
+      "finite_real_constant": "L_b/b^2"
+    },
+    {
+      "nodes": "b,b,b; b!=0",
+      "log_epsilon_coefficient": "0",
+      "finite_real_constant": "-1/(2b^2)"
+    },
+    {
+      "nodes": "0,b,c; b,c nonzero distinct",
+      "log_epsilon_coefficient": "1/(bc)",
+      "finite_real_constant": "L_b/[b(b-c)]+L_c/[c(c-b)]"
+    }
+  ],
+  "scope": "formal identities, no additional tau/spatial numerical points beyond preregistered36"
+}

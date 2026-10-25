@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-25",
+  "mechanism": "normalized rational shear S_t=I+t*(P01/P02)e1e2^T; lattice atom x=(P01*(k1+t*k2),P02*k2,P03*k3,P04*k4), mass1",
+  "authorization": "Primary normalized original shear amplitude; no linear conjugation of receiver/operator. Four fixed nonzero t unchanged.",
+  "parameters": [
+    "-1/16",
+    "-1/32",
+    "1/32",
+    "1/16"
+  ],
+  "source_sha256": {
+    "original_certificates.json": "030ce0d945b1864e70a6dee24259f0145ed6a71650925524987cf299ef4d6e69",
+    "round011_manifest.json": "8f7a7398a9520752389fa0298f0aa99f7fa47d575cfdfbb86a302fa0ed93e82b",
+    "round011c_manifest.json": "fdfcb28d4950853301bc5262ec463f0cb20cac044b2e55761074e38734819a2d",
+    "round007_union_fast.py": "8e5d65788771cda4396852b16fc3d4dde75146ffe27173e0480027f5a047f308",
+    "round007_union_kernel.cpp": "7eb1433e0a35fffb419841f2afafdd886e57a7a371daf0797666ab5d28d39a8a",
+    "mechanism_card_at_registration": "439b2a9fe7f36e18b7ab91d280c6ecba33e1e3f8b7ea1761953558a56fdea843",
+    "bounds_ledger_at_registration": "cd6df2ee29cb6189930d0800c52af09ecf0673d24f168f089b8155e81c52ac30"
+  },
+  "target": {
+    "certificate": "baseline/original_certificates.json dimension4",
+    "exact_interval": [
+      "29714728298452438328989785171403506553338348218399473135599188868742835555185799179789995160134282851426809085889334508849687500055841680692580114472150275443342632483626266472208914641603932613167731654170107003141033410790358196446862275667399221422319114294809209/15625000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "1901742611100956053055346250969824419413660002947272816129411058089248166682093829643669036652815343458960860898492289662129437495976237271398696002720493349488455524736963573865595246403534684153457643772884503536165301682006880757548746414636076981716865555243892262511/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    ]
+  },
+  "geometry": "D=prod[0,P0j] is measurable fundamental domain for triangular lattice: rowwise b2 translations and x1 modulo b1. ALL selected generators are first closed under whole lattice; finite visibility bounds enumerate exactly all translates meeting D. Full4D axis-aligned common-radius receiver union clipped to D. Old blocks recomputed after shear; no claim old coverage preserved.",
+  "supercell": "t=p/q reduced; q orbits in axisparallel period(P01,qP02,P03,P04), massq. Orbitj phase frac(p*j/q), j/q; n1=k1+p*floor(k2/q)+floor(p*j/q). Negative divmod checked. Firstpoint compare rows0,1,q-1 after full lattice closure. Multiplying rowjoint volume byq only after closure/periodicity lemma.",
+  "old_generators": "all256 Cartesian length1..4 shapes at origin; each is closed under full sheared lattice translations, not legacy clipped265 boxes",
+  "capture": "512 centers:256 scrambledSobol seed20261025114 and x1 reflection. Enumerate all exact numerical cube-entry event batches among proven-sufficient original indices[-3,4]^4, keep events r<=3 and N>(2r)^4*(1+1e-10). Actual subsets have staircase first-two coordinates times independent last intervals. Canonicalize by integer lattice translation, rebuild common r=N^(1/4)/2 from complete mass. All ties batch. No independent marginal product.",
+  "validation": "Before firstpoint result: exact Fraction superorbit/inverse for positive/negative indices; exact finite union fixtures with 2D rational polygon inclusion-exclusion; brute capture vs larger integer index grid; real row0,1,q-1 full joint check. If failure stop no remainingpoint optimization.",
+  "resources": "Four fixed points only, no optimization/phase/period/mass grid. Firstpoint-1/16 validates before remaining3 independent process parallel evaluations as primary authorized; no user hard compute limit.",
+  "stop": "Any value>oldR4 numerical+1e-11 immediately accurate certificate and audit; otherwise end after four points. Float union is only finite coverage evidence; no input/family upper bound.",
+  "transfer": "Recheck finite atom index margin in lattice labels; atom input truncates by labels, Euclidean/shear support uses actual physical infinity norms; Lebesgue/commonr/all scales retained.",
+  "ownership": "Only lower/n4/shear; old011/011c locked; no ledger/commit/push/subagents; MATLAB primary serialized."
+}

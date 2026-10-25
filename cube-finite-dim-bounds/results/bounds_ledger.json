@@ -19,9 +19,17 @@
     },
     {
       "id": "U3",
-      "status": "verified_general_bound",
-      "bound": "8",
-      "new_improvement": false
+      "status": "complete_strict_certificate",
+      "bound": "1979/250",
+      "new_improvement": true,
+      "strict": true,
+      "previous_effective_bound": "8",
+      "certificate": "audit/036_manifest.json",
+      "proof": "audit/036_audit.md",
+      "cost_squared_exact": "1547906585017734375000000000/24707828464688747938727861",
+      "comparison_rule": "Use the certified exact cost upper bound in exact_comparison_threshold, not the rounded display bound 1979/250; reusing tighter archived endpoints is arithmetic sharpening, not a new mechanism.",
+      "public_comparison": "Strictly below checked general benchmark 8; not exhaustive global literature claim.",
+      "exact_comparison_threshold": "sqrt(1547906585017734375000000000/24707828464688747938727861)"
     },
     {
       "id": "L4",
@@ -36,19 +44,46 @@
     },
     {
       "id": "U4",
-      "status": "verified_general_bound",
-      "bound": "16",
-      "new_improvement": false
+      "status": "complete_strict_certificate",
+      "bound": "14371/1000",
+      "new_improvement": true,
+      "strict": true,
+      "previous_effective_bound": "14753/1000",
+      "certificate": "audit/037_manifest.json",
+      "proof": "audit/037_audit.md",
+      "cost_cube_exact": "(6244212653911047061276408/1944624818861484527587890625)*pi^12",
+      "comparison_rule": "Use the certified exact cost upper bound in exact_comparison_threshold, not the rounded display bound 14371/1000; rigorous root/pi enclosure required for comparison.",
+      "public_comparison": "Strictly below checked general benchmark 16; not an exhaustive global literature claim.",
+      "round_start_bound": "16",
+      "g_exact": "17/(640*pi^3)",
+      "I_outward": "92072351/500000000000",
+      "history": [
+        {
+          "bound": "16",
+          "status": "prior general benchmark"
+        },
+        {
+          "bound": "14753/1000",
+          "strict": true,
+          "certificate": "audit/035_manifest.json"
+        },
+        {
+          "bound": "14371/1000",
+          "strict": true,
+          "certificate": "audit/037_manifest.json"
+        }
+      ],
+      "exact_comparison_threshold": "((6244212653911047061276408/1944624818861484527587890625)*pi^12)^(1/3)"
     }
   ],
-  "latest_round": 10,
+  "latest_round": 11,
   "round2_new_bound": false,
   "round2_report": "rounds/002.md",
   "progress": {
-    "L3": "022 independent+primary exact PASS; C3>1.7941091664563071 above full015 upper",
-    "L4": "Round8 exact superperiod embedding passed; finite16+480 search no improvement",
-    "U3": "Round10 joint bump numerical costs8.13376/8.04000; exact eight-basis candidate rejected by028; no new bound; U10/cb10 independent audit pending",
-    "U4": "Audited026 finite-frame theorem retained; new four-dimensional cost construction next"
+    "L3": "022 remains exact threshold; round11 new1030 raw keys fully periodic-closed, no new positive key/union, primary rational review PASS",
+    "L4": "Round11 four-coset checkerboard exact baseline embedding; finite8+320 search no improvement, new local coverage diagnostics",
+    "U3": "033 final manifest imported and primary reviewed: global g>=131/25000; full8256 integral batch running, 034 pending; U3 remains8",
+    "U4": "11K author exact global g>=21/25000 certificate, independent boundary review and I4 new full-sum interface pending; U4 remains16"
   },
   "round3_new_bound": false,
   "round3_report": "rounds/003.md",
@@ -205,8 +240,8 @@
     "audit/010_audit.md",
     "proofs/finite_grid_kernel_diagnostic.md"
   ],
-  "current_round": 10,
-  "current_round_status": "completed_finite_batch_goal_active",
+  "current_round": 11,
+  "current_round_status": "active",
   "round6_new_bound": true,
   "round6_improved_tasks": [
     "L3"
@@ -242,7 +277,7 @@
     "audit/024_audit.md",
     "proofs/public_models_n34.md"
   ],
-  "last_remote_confirmed_commit": "fcc2a7dbdc0c26ca28352727b8201c6b701d11c0",
+  "last_remote_confirmed_commit": "d5f647caec30f0006d3dee7c95855b604dbdd05b",
   "round9_new_bound": false,
   "round9_improved_tasks": [],
   "round9_report": "rounds/009.md",
@@ -261,5 +296,19 @@
     "audit/028_audit.md",
     "upper/u10_joint_certificate.md",
     "upper/continuous_bridge/cb10_mu_interval.md"
+  ],
+  "round11_status": "research and initial audits complete; archive commit pending; second complete review and two papers next",
+  "round11_new_bound": true,
+  "round11_improved_tasks": [
+    "U3",
+    "U4"
+  ],
+  "round11_report": "rounds/011.md",
+  "round11_reusable_results": [
+    "audit/035_audit.md",
+    "audit/036_audit.md",
+    "audit/037_audit.md",
+    "upper/direct_receiver/dr11r_mechanism.md",
+    "lower/n4/shear/report.md"
   ]
 }

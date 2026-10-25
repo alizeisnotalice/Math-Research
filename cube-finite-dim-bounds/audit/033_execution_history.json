@@ -1,0 +1,26 @@
+{
+  "attempt1": {
+    "exit_code": 1,
+    "checker_sha256": "63ff89111ef7c86a46c9f5e2eb0a2e82f1e0ffeab1c21ed9143d0cac6eba354b",
+    "stage": "first patch after441 fresh node evaluations; algebra prechecks passed",
+    "error": "TypeError: Fraction cannot directly consume flint.fmpq in this Python3.15 binding",
+    "repair": "convert exact fmpq endpoints by their exact rational string before Fraction; no math,precision,degree,grid,target or cache-policy change",
+    "no_success_or_target_failure_claimed": true
+  },
+  "next_attempt": "restart full59976-node fresh run from zero; no cache reuse",
+  "attempt2": {
+    "status": "PASS complete fresh from zero",
+    "exit_code": 0,
+    "session_id": 82619,
+    "checker_sha256": "7305f5915bdba606c82922f45626693c48464b9acf55849ea2e41424a9139e64",
+    "fresh_point_calls": 59976,
+    "cache_reads": 0,
+    "cache_writes": 0,
+    "precision_bits": 384,
+    "seconds": 62.02110087500478,
+    "all_nodes_stream_sha256": "4f45e2d83f49096acd58b66ea763498f9a0efdcb3c76580da71d8b8d4cfd71d7",
+    "all136_roots_strictly_above": "131/25000",
+    "parameter_or_branch_change": false
+  },
+  "total_new_point_evaluations_including_aborted_first_patch": 60417
+}

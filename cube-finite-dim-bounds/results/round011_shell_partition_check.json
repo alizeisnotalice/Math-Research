@@ -1,0 +1,36 @@
+{
+  "status": "exact symbolic coordinate identities PASS",
+  "reference_shell": "lambda>=0, 1/2<=sum(lambda)<=1",
+  "three_cases": [
+    {
+      "barycentric_weights": [
+        "2*x + y + z - 1",
+        "y",
+        "z",
+        "-2*x - 2*y - 2*z + 2"
+      ],
+      "volume": "1/12"
+    },
+    {
+      "barycentric_weights": [
+        "2*x + 2*y + z - 1",
+        "z",
+        "2*x",
+        "-4*x - 2*y - 2*z + 2"
+      ],
+      "volume": "1/24"
+    },
+    {
+      "barycentric_weights": [
+        "2*x + 2*y + 2*z - 1",
+        "2*x",
+        "2*y",
+        "-4*x - 4*y - 2*z + 2"
+      ],
+      "volume": "1/48"
+    }
+  ],
+  "total_volume": "7/48",
+  "scope": "partition identities only, not I4 or new upper bound",
+  "shared": "SymPy1.14; independently derived weights, no author geometry import"
+}

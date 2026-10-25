@@ -1,0 +1,136 @@
+{
+  "date": "2026-10-25",
+  "status": "incremental analytic Lshape batch closed; no new L4 bound",
+  "new_bound": false,
+  "files": {
+    "round011c_matlab_check.m": {
+      "sha256": "bdd0a62f06af302f2d57569fd65965924eca0801bc1d45b55f7ff6b01888515a",
+      "bytes": 1523
+    },
+    "round011c_paths.py": {
+      "sha256": "13a033f1b8f5e388ae658ba707222a26cda5a7a1e0ee6fe353b366e5403b9788",
+      "bytes": 4046
+    },
+    "round011c_preregister.json": {
+      "sha256": "388866f9bbf7cef0ab4f9d92d21891479325df43f2237f857d1982e87139681c",
+      "bytes": 3527
+    },
+    "round011c_report.md": {
+      "sha256": "59042ca6715af8329c82a1a1cf32249e0e1f19a7e5ce0fd6cdd875f94a6f5834",
+      "bytes": 6585
+    },
+    "round011c_results.json": {
+      "sha256": "ce769dbb55fa6f59662e1b1440586ac57487b6c51af76d66b1c5efc8e9e6c00a",
+      "bytes": 32701
+    },
+    "round011c_validate.py": {
+      "sha256": "766152dd8a2e02e0570f3f3ba646b23838c195997b6c8ae97f11c9dd67b7434e",
+      "bytes": 3063
+    },
+    "round011c_validation_results.json": {
+      "sha256": "9476356b6c7f40a66a89883e84c10dc939cc6b3954e4a4118b299cc6a76b5fbe",
+      "bytes": 7996
+    }
+  },
+  "whitelist": [
+    "round011c_matlab_check.m",
+    "round011c_paths.py",
+    "round011c_preregister.json",
+    "round011c_report.md",
+    "round011c_results.json",
+    "round011c_validate.py",
+    "round011c_validation_results.json",
+    "round011c_manifest.json"
+  ],
+  "preregister_sha256": "388866f9bbf7cef0ab4f9d92d21891479325df43f2237f857d1982e87139681c",
+  "reused_sources": {
+    "round011_manifest.json": "8f7a7398a9520752389fa0298f0aa99f7fa47d575cfdfbb86a302fa0ed93e82b",
+    "round011_gain_certificate.json": "cfc5fabff73c8ad256ecbd6419de8f364393be3580bb5a993100532e7ccd943f",
+    "round011_chess_engine.py": "6aed115888502fb44715337cd850ff83f82710d07f426fa91e072b3838d06651",
+    "round011_embedding.py": "a916402a09015c9632069e35b856665de4874802bf847c6b8418eb854d8e931f",
+    "round011_search_results.json": "1c00442e922400af2a8cff809b6a9c6cc2786ff9d5c3d618e0648c68945803d4",
+    "certify_scan.py": "8f31cbe24d19cad9dd4deaf22aa0f43b98d4b45ed2ea07318fba40d6f1ea34c3",
+    "round007_union_fast.py": "8e5d65788771cda4396852b16fc3d4dde75146ffe27173e0480027f5a047f308",
+    "round007_union_kernel.cpp": "7eb1433e0a35fffb419841f2afafdd886e57a7a371daf0797666ab5d28d39a8a"
+  },
+  "original_certificate_sha256": "030ce0d945b1864e70a6dee24259f0145ed6a71650925524987cf299ef4d6e69",
+  "locked_round011_all12_files_verified": true,
+  "actual_runs": {
+    "processes": 1,
+    "paths": 3,
+    "candidates_per_path": 20,
+    "candidates": 60,
+    "optimizer_evaluations": 0,
+    "centers_per_candidate": 256,
+    "complete_union_stages_per_candidate": 3,
+    "L_periodic_keys": 81,
+    "exact_hull_in_BASE_checks": 81,
+    "exact_affine_extrema_systems": 24,
+    "seconds": 32.4145624590019
+  },
+  "path_summary": [
+    {
+      "path": 0,
+      "best_t": "1/20",
+      "best_ratio": 1.8955361053156172,
+      "theta_interval": [
+        "961648214835/1099511627776",
+        "240412053709/274877906944"
+      ],
+      "theta_float": 0.8746139563622819,
+      "end_ratio": 1.7708209599820128,
+      "max_L_gain": 2.6004132042123373e-05
+    },
+    {
+      "path": 1,
+      "best_t": "1/20",
+      "best_ratio": 1.8966618562383692,
+      "theta_interval": [
+        "375630520799/549755813888",
+        "751261041599/1099511627776"
+      ],
+      "theta_float": 0.6832679369822472,
+      "end_ratio": 1.7898509122520525,
+      "max_L_gain": 0.00011936736796935854
+    },
+    {
+      "path": 2,
+      "best_t": "1/20",
+      "best_ratio": 1.896655775601985,
+      "theta_interval": [
+        "769189212943/1099511627776",
+        "48074325809/68719476736"
+      ],
+      "theta_float": 0.6995735138330019,
+      "end_ratio": 1.7950863080678738,
+      "max_L_gain": 0.0
+    }
+  ],
+  "matlab": {
+    "mode": "primary serialized actual run",
+    "exit_code": 0,
+    "session": 51877,
+    "input_sha256": "bdd0a62f06af302f2d57569fd65965924eca0801bc1d45b55f7ff6b01888515a",
+    "log": "scratch/round011o-run/n4_activation_matlab.log",
+    "cases": 6,
+    "all_assertions_passed": true,
+    "actual_F": [
+      -0.0514496513515914,
+      0.00781779060810006,
+      -0.050572349642902,
+      0.0252432563177591,
+      -0.0505791644404319,
+      0.0226169381928569
+    ],
+    "mass": 4,
+    "L_atoms": 30,
+    "hull_atoms": 36
+  },
+  "proof_status": {
+    "exact": "fixed L/hull all-t extrema, single-hull containment gate, unique thresholds of width2^-40, A/B uncut pair loss comparison",
+    "numerical": "60 finite full4D witness unions, signed oldunion loss and newcoverage decomposition",
+    "construction": "no improved R4 certificate",
+    "open": "full operator ratio, full oldunion derivative, continuous-path global sign, entire chess family optimum"
+  },
+  "scope": "Only round011c files added; oldround011 locked artifact unchanged; no ledger/commit/push/subagents; no further search."
+}

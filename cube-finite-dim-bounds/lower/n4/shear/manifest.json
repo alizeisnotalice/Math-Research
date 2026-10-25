@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-25",
+  "status": "11R four normalized shears complete; no new L4 bound; awaiting review",
+  "new_bound": false,
+  "files": {
+    "engine.py": {
+      "sha256": "af4cb41b5691051458cee49990bec9377bb7e6781ec149b83d8cf63b811e9b0f",
+      "bytes": 3981
+    },
+    "matlab_check.m": {
+      "sha256": "969b1c4b16c588360219fba5a79a9d065c204ca739ec1399f8ff4fb389fa4794",
+      "bytes": 1289
+    },
+    "registration.json": {
+      "sha256": "1982a376cc4a210bd07da0fad7e2cbbebac6ad11ea96ab0eef9a363c8f8dc373",
+      "bytes": 4671
+    },
+    "report.md": {
+      "sha256": "5eac3484d2e4a0d3969bd1fedfc18ad0cd87deed63f1ea312f42c1a09bd2940f",
+      "bytes": 8867
+    },
+    "results.json": {
+      "sha256": "163cd5bfd050a82ba376fa9cabfc03041cbac6689c35cd8681d7451fc91c0534",
+      "bytes": 3611
+    },
+    "run.py": {
+      "sha256": "906ee9069f076d073af617a6e506fad0aae51719ef406085fe1c3e1199b84b17",
+      "bytes": 2128
+    },
+    "validate.py": {
+      "sha256": "d6845c56ec15828e94bf549bfeb5f905d6d6cd9b5188e01983e55ad68f2a4deb",
+      "bytes": 3168
+    },
+    "validation_results.json": {
+      "sha256": "e7593dc64b3a023a7deac4517cd8a43c5d60d5543e3461b503801c1c8e87468d",
+      "bytes": 1987
+    }
+  },
+  "whitelist": [
+    "engine.py",
+    "matlab_check.m",
+    "registration.json",
+    "report.md",
+    "results.json",
+    "run.py",
+    "validate.py",
+    "validation_results.json",
+    "manifest.json"
+  ],
+  "source_sha256": {
+    "original_certificates.json": "030ce0d945b1864e70a6dee24259f0145ed6a71650925524987cf299ef4d6e69",
+    "round011_manifest.json": "8f7a7398a9520752389fa0298f0aa99f7fa47d575cfdfbb86a302fa0ed93e82b",
+    "round011c_manifest.json": "fdfcb28d4950853301bc5262ec463f0cb20cac044b2e55761074e38734819a2d",
+    "round007_union_fast.py": "8e5d65788771cda4396852b16fc3d4dde75146ffe27173e0480027f5a047f308",
+    "round007_union_kernel.cpp": "7eb1433e0a35fffb419841f2afafdd886e57a7a371daf0797666ab5d28d39a8a",
+    "mechanism_card_at_registration": "439b2a9fe7f36e18b7ab91d280c6ecba33e1e3f8b7ea1761953558a56fdea843",
+    "bounds_ledger_at_registration": "cd6df2ee29cb6189930d0800c52af09ecf0673d24f168f089b8155e81c52ac30"
+  },
+  "original_target": {
+    "certificate": "baseline/original_certificates.json dimension4",
+    "exact_interval": [
+      "29714728298452438328989785171403506553338348218399473135599188868742835555185799179789995160134282851426809085889334508849687500055841680692580114472150275443342632483626266472208914641603932613167731654170107003141033410790358196446862275667399221422319114294809209/15625000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "1901742611100956053055346250969824419413660002947272816129411058089248166682093829643669036652815343458960860898492289662129437495976237271398696002720493349488455524736963573865595246403534684153457643772884503536165301682006880757548746414636076981716865555243892262511/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    ]
+  },
+  "locked_round011_and_round011c_all_artifacts_verified": true,
+  "reused_sources": {
+    "staggered_search.py": "54d9fb67402b009b56ab55115853bf0cea4f7b44113ae21549636e5e0a77f379",
+    "round007_union_fast.py": "8e5d65788771cda4396852b16fc3d4dde75146ffe27173e0480027f5a047f308",
+    "round007_union_kernel.cpp": "7eb1433e0a35fffb419841f2afafdd886e57a7a371daf0797666ab5d28d39a8a"
+  },
+  "actual_runs": {
+    "parameters": [
+      "-1/16",
+      "-1/32",
+      "1/32",
+      "1/16"
+    ],
+    "firstpoint": "-1/16",
+    "firstpoint_validation_before_remaining": true,
+    "remaining_processes": 3,
+    "centers_per_parameter": 512,
+    "passing_event_batches": [
+      654,
+      670,
+      670,
+      654
+    ],
+    "new_generators": [
+      8,
+      6,
+      6,
+      8
+    ],
+    "numerical_finite_union_values": [
+      1.822018295780902,
+      1.8527977265910367,
+      1.8527977265910367,
+      1.822018295780902
+    ],
+    "candidate": false,
+    "total_wall_seconds": 0.6508574159961427,
+    "exact_toy_cases": 8,
+    "exact_firstpoint_negative_index_checks": 169,
+    "large_grid_capture_cases": 64,
+    "real_rows": [
+      0,
+      1,
+      15
+    ]
+  },
+  "matlab": {
+    "mode": "primary serialized actual",
+    "exit_code": 0,
+    "session": 20035,
+    "input_sha256": "969b1c4b16c588360219fba5a79a9d065c204ca739ec1399f8ff4fb389fa4794",
+    "log": "scratch/round011o-run/shear_matlab.log",
+    "actual_results": "169 index checks per4t passed;24 atoms,r=1.10668191970032; x1span±1/16=1.92049512883487,±1/32=1.81380095501071",
+    "scope": "finite index/mass/geometry crosscheck, not full union validation"
+  },
+  "finite_transfer": {
+    "index_margin": 4,
+    "retained_labels": "[-N-4,N+4]^4",
+    "receiver_cells": "D+X_t(k),k in[-N,N]^4",
+    "mass": "(2N+9)^4",
+    "maximum_generator_mass_bound": 864,
+    "common_radius_bound": "r<3",
+    "background": "Lebesgue",
+    "operator": "centered axisparallel cubes, one commonr, all scales"
+  },
+  "proof_status": {
+    "exact_lemmas": "measurable D fundamental domain; whole-lattice periodic closure; finite visibility bounds; rational qcoset mapping/mass; strip-volume equivalence; capture index bounds; finite block smoothing",
+    "numerical": "four selected finite full4D periodic unions, not whole input/family upper bounds",
+    "construction": "new nonrectangular-index captured finite coverage; no improved L4 certificate",
+    "remaining": "actual sheared-union exact volume certificate not attempted because no candidate; full input/sheer family optimum open"
+  },
+  "scope": "Only lower/n4/shear written; no old evidence/ledger/commit/push/subagents; four fixed parameters finished, no next round."
+}

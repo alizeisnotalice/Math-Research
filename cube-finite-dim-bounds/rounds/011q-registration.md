@@ -1,0 +1,4 @@
+# 11Q 单批准确系数比值加锐（不修改035输入）
+机制：已锁三case全和N17/D20和非负cone坐标不变，直接取a³N与D的准确系数比值最小值，检验是否优于手选g0。没有新参数、采样或网格。
+固定输入upper/u11_minimum_global_results.json SHA 43be4de041c9da823d192ff6d8ef2440c3668f88b13fc52dbff320dd0011d96f
+主仅写src/round011_n4_coefficient_ratio.py、results/round011_n4_coefficient_ratio.json及本登记。单Python进程、仅三次准确多项式代换；全部完成/遇任一系数前提失败即停，无循环调参。D零系数要求A非负，D正系数取A/D最小值。候选g=c/π³，必须由完整表示/边界审计接续；即使更强，也不修改035正在核的g0或有效界表。预期准确受限系数证书或失败诊断。

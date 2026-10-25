@@ -1,0 +1,5 @@
+# 11I/032：候选所用三维真实Green表达独审（待031结束接续）
+
+2026-10-25。固定cb11模块ffbacd4f1a466f8f20d11dc59c458be2980b45be964751b8ea1a980cbbf1d849与报告2e8126458ee3b5b6a472be612645dabd411e8705271c8195a18f9c85cc8b34c2，最终manifest7b22d25442f8d13837ece005849d2d142a18fd0e33d57543663e244de05701fa。主已读全证明，MATLAB实际36固定点/96det/peak正常数通过。
+
+原independent_audit在031结束后仅audit/032_*，核全96锥覆盖/符号/Jacobian、真实Fourier密度、截断time DD及所有zero/repeated实部渐近、精确合并Γlogε的有限/无限分类。不能删负cone，不能以36点通过代替表示证明。一次独立符号身份和关键退化有限例（具体点先锁）；无成本grid/新tau优化，不扩g/I认证。Python符号/准确算术，MATLAB主串行。若缺口立即通知minimum/J两任务；共享数学内核与026/031依赖如实披露。完成锁manifest后停，不改作者文件/总账/其他项目/提交推送/扩招。

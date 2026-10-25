@@ -1,0 +1,7 @@
+# 11N/033：三维全域minimum正式独审
+
+2026-10-25。作者136闭patch/degree20完整证书本地PASS，主已阅读报告和实际运行有限代数selfcheck；不冒称独审。固定cc11_cheb_manifest.json SHA3e36efe767eb8f87ca78bbee9ab5c640113eb5b76a2da28f8202b528155ecf20，首批manifest SHA320bdba75d2273568d55e06c2cc888bd310daa38aea60cff79486e0c8cd0c7cf，report f6be7132f37aebecb2c3c872cf7bd0af7a56a9c85de7a638d04bd5eee1b52bdf，checker f3f57f72959b6350337ed95a702d137b8e485d9f640fb8b2dff67168bc6a5db8。
+
+原independent_audit在032结束后只audit/033_*。完整审τ1/3,H1/50≤G、global tube bound/peak、Cheb roots有理替代及Cauchy导数误差、双变量插值alias/Lebesgue预算、DCT/Bernstein正确转换、closed136覆盖/对称齐次、准确每patch下端。重点核强目标131/25000=.00524（同证据作者已严格比较），不是只13/2500。
+
+最小重算需禁用作者旧节点缓存，以实际fresh全部59976节点或独立等价实现核136结果；共享point evaluator、Arb、032理论须逐一披露，不把共享内核当无共享独立。并行与MATLAB仍主协调，不重搜参数或改degree/grid。出现gap立即通知主/积分代理。成功只认证g接口，I未证，不更新U3；一遍完整审计/实际复核后锁证据，禁止自动扩审其他模型。

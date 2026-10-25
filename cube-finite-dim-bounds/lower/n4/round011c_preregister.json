@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-25",
+  "scope": "incremental finite analytic Lshape activation paths; round011 locked evidence unchanged",
+  "model": "four chess cosets00,01,10,11; s=+,-,-,+; mass1+s*epsilon; position offset+s*P*h; complete mass4",
+  "source_sha256": {
+    "round011_manifest.json": "8f7a7398a9520752389fa0298f0aa99f7fa47d575cfdfbb86a302fa0ed93e82b",
+    "round011_gain_certificate.json": "cfc5fabff73c8ad256ecbd6419de8f364393be3580bb5a993100532e7ccd943f",
+    "round011_chess_engine.py": "6aed115888502fb44715337cd850ff83f82710d07f426fa91e072b3838d06651",
+    "round011_embedding.py": "a916402a09015c9632069e35b856665de4874802bf847c6b8418eb854d8e931f",
+    "round011_search_results.json": "1c00442e922400af2a8cff809b6a9c6cc2786ff9d5c3d618e0648c68945803d4"
+  },
+  "baseline_sha256": "030ce0d945b1864e70a6dee24259f0145ed6a71650925524987cf299ef4d6e69",
+  "analytic_input": {
+    "Lkey_source": "round011_gain_certificate.json/new_key",
+    "counts": [
+      12,
+      6,
+      12,
+      0
+    ],
+    "N": 30,
+    "delta": -6,
+    "hull_lo": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "hull_hi": [
+      1,
+      2,
+      1,
+      2
+    ],
+    "hull_N": 36,
+    "hull_delta": 0,
+    "small_positive_h_span": "L:(1,2+2h2,1+2h3,2); hull:(1+2h1,2+2h2,1+2h3,2), times Pj; h4=0",
+    "containment_gate": "2*P1*h1 <= radius(36)-radius(30-6*epsilon) implies L receiver contained in original36 hull receiver; equality first lower-end contact"
+  },
+  "paths": [
+    {
+      "name": "A_observed_ray",
+      "epsilon": "t/10",
+      "h": [
+        "t/50",
+        "t/50",
+        "t/100",
+        "0"
+      ],
+      "period": "P0",
+      "basis": "follow the already certified Lshape ray, find finite activation cost"
+    },
+    {
+      "name": "B_radius_help_no_transverse_shift",
+      "epsilon": "-t/5",
+      "h": [
+        "t/50",
+        "0",
+        "0",
+        "0"
+      ],
+      "period": "P0",
+      "basis": "increase L mass while remove tangential span penalties"
+    },
+    {
+      "name": "C_keep_hull_span",
+      "epsilon": "-t/5",
+      "h": [
+        "t/50",
+        "0",
+        "0",
+        "0"
+      ],
+      "period": "P1=P01/(1+t/25), Pj=P0j for j>1",
+      "basis": "same radius help and compensate first hull span P1*(1+2h1)=P01"
+    }
+  ],
+  "resources": {
+    "processes": 1,
+    "candidates_per_path": 20,
+    "t_values": "m/20,m=1..20",
+    "threshold": "Fraction bisection width<=2^-40 using old P1 enclosure and generic fourth-root mass enclosure; no random direction/optimizer",
+    "event_centers_per_candidate": 256,
+    "event_seed": 20261025113,
+    "event_radius_max": 3,
+    "optimizer_evaluations": 0
+  },
+  "evaluation": "At each candidate compute full4D union of all old embedded keys, old+81 Q-translates of fixed Lkey, then union also all shared-radius event keys; mass4 throughout. Save oldunion loss vs reused R4 and isolated Lgain/eventgain. Numeric complete unions are finite witness diagnostics only. Reuse baseline exact result, no original recertification.",
+  "stop": "At60 candidates or earlier strict potential above old R4+1e-11 stop for exact verification; no additional direction/refinement. Accurate hull threshold may justify early closure. Negative finite findings do not bound entire input/model family.",
+  "proof_scope": "Accurate individual L/hull containment/threshold only; oldunion loss values numerical, not strict full operator derivative.",
+  "ownership": "Only lower/n4/round011c_*; no old evidence/ledger/commit/push/subagents; MATLAB primary serialized."
+}

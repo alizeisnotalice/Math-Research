@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-25",
+  "matlab_actual": {
+    "runner": "primary serialized MATLAB, actual exit0/session4782",
+    "script_sha256": "faa3c07f5faec736fc60020ce8c63f4c674ba20de63fd5575143ff88cccc7dc2",
+    "exit_code": 0,
+    "log_path": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/round011o-run/direct_receiver_matlab.log",
+    "log_sha256": "29179614d1ab2d9c5f32aee281e9029a5be774f6fcc9c44eb5f6e347271fce7d",
+    "output": "11R n3 case1 vertices343 h=(0.75,1) maxTh 1 rawmax 1.25 mass 256 receiver_ratio 1.25 dualmass 256 PASS\n11R n3 case2 vertices343 h=(0.75,1) maxTh 1 rawmax 1.25 mass 112 receiver_ratio 1.1428571428571428 dualmass 112 PASS\n11R n3 case3 vertices343 h=(0.984375,1) maxTh 1 rawmax 1.015625 mass 127 receiver_ratio 1.0078740157480315 dualmass 127 PASS\n11R n4 case1 vertices2401 h=(0.75,1) maxTh 1 rawmax 1.25 mass 1024 receiver_ratio 1.25 dualmass 1024 PASS\n11R n4 case2 vertices2401 h=(0.75,1) maxTh 1 rawmax 1.25 mass 448 receiver_ratio 1.1428571428571428 dualmass 448 PASS\n11R n4 case3 vertices2401 h=(0.99609375,1) maxTh 1 rawmax 1.00390625 mass 511 receiver_ratio 1.0019569471624266 dualmass 511 PASS\n11R SIX_CONFIGS PASS total_vertices 8232; finite receiver class only, no new C_n.\n",
+    "clear_or_path_calls": false
+  },
+  "main_bounds_at_delivery": [
+    {
+      "id": "U3",
+      "status": "complete_strict_certificate",
+      "bound": "1979/250",
+      "new_improvement": true,
+      "strict": true,
+      "previous_effective_bound": "8",
+      "certificate": "audit/036_manifest.json",
+      "proof": "audit/036_audit.md",
+      "cost_squared_exact": "1547906585017734375000000000/24707828464688747938727861",
+      "comparison_rule": "Use the certified exact cost upper bound in exact_comparison_threshold, not the rounded display bound 1979/250; reusing tighter archived endpoints is arithmetic sharpening, not a new mechanism.",
+      "public_comparison": "Strictly below checked general benchmark 8; not exhaustive global literature claim.",
+      "exact_comparison_threshold": "sqrt(1547906585017734375000000000/24707828464688747938727861)"
+    },
+    {
+      "id": "U4",
+      "status": "complete_strict_certificate",
+      "bound": "14371/1000",
+      "new_improvement": true,
+      "strict": true,
+      "previous_effective_bound": "14753/1000",
+      "certificate": "audit/037_manifest.json",
+      "proof": "audit/037_audit.md",
+      "cost_cube_exact": "(6244212653911047061276408/1944624818861484527587890625)*pi^12",
+      "comparison_rule": "Use the certified exact cost upper bound in exact_comparison_threshold, not the rounded display bound 14371/1000; rigorous root/pi enclosure required for comparison.",
+      "public_comparison": "Strictly below checked general benchmark 16; not an exhaustive global literature claim.",
+      "round_start_bound": "16",
+      "g_exact": "17/(640*pi^3)",
+      "I_outward": "92072351/500000000000",
+      "history": [
+        {
+          "bound": "16",
+          "status": "prior general benchmark"
+        },
+        {
+          "bound": "14753/1000",
+          "strict": true,
+          "certificate": "audit/035_manifest.json"
+        },
+        {
+          "bound": "14371/1000",
+          "strict": true,
+          "certificate": "audit/037_manifest.json"
+        }
+      ],
+      "exact_comparison_threshold": "((6244212653911047061276408/1944624818861484527587890625)*pi^12)^(1/3)"
+    }
+  ],
+  "main_ledger_at_delivery_sha256": "43d7d6e54f5e96ade5f26aff9b65c095932763a999c1f8989a305ed914178c67",
+  "scope": "Current receiver finite batch does not establish or change these main C_n bounds."
+}

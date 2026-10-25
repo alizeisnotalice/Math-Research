@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-25",
+  "mechanism": "Fourcoset2D chess superperiod Q=(2P1,2P2,P3,P4); order00,01,10,11; s=+,-,-,+; mass1+s*epsilon; ALL positions shift+s*P*h; totalmass4",
+  "target": "Original exact R4 upper endpoint, read-only baseline/original_certificates.json dimension4",
+  "directions": [
+    {
+      "epsilon": "0",
+      "h": [
+        "1/100",
+        "1/100",
+        "1/100",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "0",
+      "h": [
+        "1/50",
+        "1/100",
+        "1/100",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "0",
+      "h": [
+        "1/100",
+        "1/50",
+        "1/100",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "1/20",
+      "h": [
+        "1/100",
+        "1/100",
+        "1/100",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "1/20",
+      "h": [
+        "1/50",
+        "1/100",
+        "1/100",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "1/20",
+      "h": [
+        "1/100",
+        "1/50",
+        "1/100",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "1/10",
+      "h": [
+        "1/50",
+        "1/50",
+        "1/100",
+        "0"
+      ]
+    },
+    {
+      "epsilon": "1/20",
+      "h": [
+        "1/100",
+        "1/100",
+        "1/50",
+        "0"
+      ]
+    }
+  ],
+  "embedding": "Original length1..4 blocks with starts[-2,2] on both first axes and[-2,1] on last axes,102400 keys. Split both axes by signed ceil/floor parity, retain four old translation residues00,01,10,11. At epsilon=h=0 exact original pointset/radii/mass; physical union is four old cells, mass4. Reuse R4 proof, do not call original baseline.calculate/reproduce. Verify new embedding integer identities and exact new full-supercell coefficients if feasible, then numeric backend regression before search.",
+  "capture": "All passing common cube entry events, four independent coset rectangles,256 Sobol centers seed20261025111 per parameter point; retain all embedded old keys. Full4D union/mass4. No random phase grid.",
+  "refinement_gate": "Benefit means new captured keys enlarge the SAME perturbed input's embedded-old witness union by>1e-10. It is not a new bound or improvement over R4. If no8-point benefit, stop. Otherwise choose highest total ratio among benefit points, one9-variable Nelder-Mead at most320 evaluations; retain starting keys and refresh256 centers per evaluation. Variables log(P/P0)4 in[-.03,.03],epsilon[-.2,.2],h4[-.1,.1]. Custom simplex .001 logperiod,.01epsilon,.002h. Exactly one4096-center endpoint capture seed20261025112 with previous keys retained.",
+  "candidate_stop": "Ratio>old R4 numerical value+1e-11 stops for exact certification against full old exact upper, immediately notify primary/original audit. No float new-bound claim, no extra starts/grid. Negative finite result is not family upper bound.",
+  "ownership": "Only lower/n4/round011_*; not alone, no other edits/reverts/ledger/commit/push/agents. Python actual; MATLAB primary serialized, no clear/path.",
+  "input_sha256": {
+    "cube-finite-dim-bounds/baseline/original_certificates.json": "030ce0d945b1864e70a6dee24259f0145ed6a71650925524987cf299ef4d6e69",
+    "cube-finite-dim-bounds/lower/n4/round008_embedding.py": "57f5fe8d7055349a41eca198df651fd70801de2ba482f8683d7baa8565e32048",
+    "cube-finite-dim-bounds/lower/n4/round008_embedding_results.json": "1332dd7fdaf815e1bfacdc011bccaa542542507d523be0921579552544464125",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-finite-dim/cube-finite-dim-bounds/rounds/011b-registration.md": "18c1f29cbfca535c60d218cd2f0c0f0c4cc14e62f92a7afe1ce36f1411d2b270",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-finite-dim/cube-finite-dim-bounds/results/round011_lower_snapshot.json": "4c14a0d07ac0e22be72e00d13119a03d0cefb7ceb4a4a4d10a9de89e707a07e0"
+  },
+  "fixed_gain_certificate": "After the registered finite batch only: at existing case6 (largest observed new-capture increment), seek one retained new32key and rational receiving cube strictly inside it but outside every102400 embedded-old witness box, using rational root/coordinate intervals. No new input/optimization/directions. Certifies finite-witness gain only, not R4 improvement."
+}
