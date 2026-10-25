@@ -1,0 +1,60 @@
+{
+  "id": "R6-007-C-alpha15-deterministic-truncation",
+  "inputs": {
+    "point": [
+      "1",
+      "4/5",
+      "3/5",
+      "2/5",
+      "1/5",
+      "0"
+    ],
+    "alpha": "3/2",
+    "beta": "3/4",
+    "weights": "32 equal weights1",
+    "small_cutoffs": [
+      "1/8",
+      "1/16",
+      "1/32",
+      "1/64"
+    ],
+    "large_cutoffs": [
+      "1000000000000",
+      "1000000000000000000",
+      "1000000000000000000000000",
+      "1000000000000000000000000000000"
+    ],
+    "negative_moment_orders": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "positive_moment_orders": [
+      "1/4",
+      "1/2",
+      "2/3",
+      "7/10"
+    ],
+    "target": "1/1000000",
+    "grid": "Cartesian product of four small and four large cutoffs only;16 pairs",
+    "numerical_precision_bits": 256
+  },
+  "input_sha256": "c61e81932393dd81c33bc2529e5e3d8ee298e8b340efd504eb9232524a97c478",
+  "scope": "deterministic upper budget for removed Gaussian-mixing parameter tails at one rational point, not a Green point evaluation or C6 bound",
+  "wall_limit_seconds": 1200,
+  "candidate_cap": 16,
+  "no_MC": true,
+  "no_matlab": true,
+  "no_32dim_grid": true,
+  "stop_condition": "after these16 certified parameter budgets; no parameter/sample expansion; report truncation success separately from unsolved interior quadrature",
+  "outputs": [
+    "report.md",
+    "truncation_budget.py",
+    "truncation_results.json",
+    "manifest.json"
+  ]
+}

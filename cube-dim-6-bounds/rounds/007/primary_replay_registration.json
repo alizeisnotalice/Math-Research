@@ -1,0 +1,32 @@
+{
+  "time": "2026-10-26T00:54:21.162670+08:00",
+  "scope": "main integration minimal replays; sole candidate number-field execution after path/frozen-comparison fix; no discovery scans or new kernels",
+  "finite_batch": [
+    "audit/lower007/candidate_number_field/certify_candidate.py",
+    "audit/round007/lower_candidate/inward_replay.py",
+    "audit/round007/lower_candidate/check_comparison_transfer.py",
+    "upper/round007/mixed_time_error/check_mixed_error.py",
+    "upper/round007/g_time_moments/check_results.py",
+    "audit/round007/check.py",
+    "audit/lower007/jet_interface/toy_jet_checks.py"
+  ],
+  "input_sha256": {
+    "audit/lower007/candidate_number_field/certify_candidate.py": "5790d0cb94ad84b039147e52466c63cf9f92b1c8f9e150da37dd26bcf29fcccf",
+    "audit/round007/lower_candidate/inward_replay.py": "570336112117aef31aa4a76192a22da10c227ad9e144b779549714c79f5e580d",
+    "audit/round007/lower_candidate/check_comparison_transfer.py": "0de4dc130d7958720f4e4fd3e2639be719828e9716c7726450049f2374c5e347",
+    "upper/round007/mixed_time_error/check_mixed_error.py": "8a05ad89cf9ad23e73eca9b1b2d10d4905dd0ae0cdef6c9c656ee309277036ba",
+    "upper/round007/g_time_moments/check_results.py": "430324c66c8d0026366e1eb0e19384a95ac426b35fe4347e294d2778e734815e",
+    "audit/round007/check.py": "a995e5e5e712481588a97f956a8cd74b84a11e76d038be79df509e9d8ccfb414",
+    "audit/lower007/jet_interface/toy_jet_checks.py": "d3f3898c2c57582e64c09149bf7d7189fef608291ae88deb419cd4efc7e27763"
+  },
+  "limits": {
+    "jobs": 7,
+    "candidate_count": 1,
+    "wall_seconds_per_script": 1200,
+    "number_field_union_nodes": 1000000
+  },
+  "stop": "any exception, exact sign not separated, or code/source inconsistency; do not silently pass",
+  "portable_changes": "project-relative paths only; sole E comparison uses immutable round007 old lower snapshot; F replay identical to main inward code",
+  "original_hashes": "integration_sources.json",
+  "outputs": "owned script sibling results"
+}
