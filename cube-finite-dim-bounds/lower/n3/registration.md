@@ -1,0 +1,12 @@
+# N3 batch 001 registration — two orbit joint perturbations
+
+2026-10-25. Scope fixed Lebesgue, centered axis-parallel cubes with one radius, general L1 and all scales. Source baseline remains original_certificates.json dimension 3 algebraic formula; no decimal reconstruction.
+
+Mechanism: supercell periods P=(2a1,a2,a3), atoms p0=0 and p1=(a1,0,0)+delta, masses (1+e,1-e). Vary periods, relative position (including staggered layers) and mass jointly. Baseline delta=e=0 is the inherited lattice. Discovery uses full three-dimensional joint receiver samples with every sampled center selecting all atoms within each common-radius cube, never a product of marginals. A finite periodic atom window is a subset and thus yields valid witness lower estimates after exact certification, but its sample averages alone are numerical evidence.
+
+Budget: finite batch of at most 1200 parameter evaluations; 4096 or 8192 fixed Sobol receivers, independent 131072 receiver validation of selected candidates; at most 8 local optimization starts. Atom window extends far enough for radii <=2.8, with boundary safety checked. Stop at evaluation budget or complete the batch. If a statistically promising strict gain occurs, extract finite witness boxes, evaluate their full joint union and certify with Fraction/root intervals. Otherwise retain accurate numerical conclusion and limitations; do not exclude the construction family.
+
+Required artifacts: minimal search code, compact result/candidate, independent MATLAB arithmetic check, source hashes, report with numerical/local sufficient/full certified/excluded classifications. No commit/push and no modifications outside lower/n3.
+
+## Batch 002 amendment (after batch 001 validation, before execution)
+The first batch produced 1124 evaluations; the sampled apparent improvement failed independent validation. Extracted full joint witness unions matched the inherited baseline to 9e-15 and gave all seven distinct perturbed survivors below R3. Next run: at most 1800 deterministic full-union evaluations on the union of their finite integer atom-block keys; seven genuinely joint parameters, up to six local starts. This fixes the witness family while moving geometry/mass and is a valid finite-witness lower mechanism, not a claim to enumerate the whole periodic maximal function. Selected nontrivial perturbations will be rationalized and inner/outer root intervals certified even if no gain, to distinguish numerical loss from rigorous absence of gain for that finite witness. It cannot exclude the full configuration family.
