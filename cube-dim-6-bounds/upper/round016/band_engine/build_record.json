@@ -1,0 +1,30 @@
+{
+  "compile": [
+    "/usr/bin/clang++",
+    "-O3",
+    "-std=c++20",
+    "-I",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round016/band_engine/scratch/include",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round016/band_engine/band_engine.cpp",
+    "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/lib/python3.15/site-packages/flint/.dylibs/libflint.24.0.dylib",
+    "-Wl,-rpath,/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/lib/python3.15/site-packages/flint/.dylibs",
+    "-o",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round016/band_engine/scratch/band_engine"
+  ],
+  "local_binary_patch": [
+    "/usr/bin/install_name_tool",
+    "-change",
+    "/DLC/flint/.dylibs/libflint.24.0.dylib",
+    "@rpath/libflint.24.0.dylib",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round016/band_engine/scratch/band_engine"
+  ],
+  "binary_sha256": "774d47d8c0bfaddccc71dbb274b4f2af050240522969438229dfac879ca69216",
+  "source_sha256": "615ac041bc0d36f8eab0ceed8110b95fcd837f3a0c9efa7a30a85f0525c6e529",
+  "headers_archive": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round010/arb_engine/headers_min.tar.gz",
+  "headers_sha256": "64e1144a1f909467307d5928f580d51c257c19b8d63565a69d47062557112570",
+  "runtime_dylib_sha256": {
+    "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/lib/python3.15/site-packages/flint/.dylibs/libflint.24.0.dylib": "9c257de62afab11ce51b94658faf6d9fd08a062809e86e117ccb8c8b8eea7d03",
+    "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/lib/python3.15/site-packages/flint/.dylibs/libgmp.10.dylib": "f5b67752db8791d7979ebfba705f7c452b72047f9cd5fe02411a103cb0ddfa94",
+    "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/lib/python3.15/site-packages/flint/.dylibs/libmpfr.6.dylib": "eefed865a4cc0665a45ab9dbc5f27911fc8d50a3f9a6f6c02566bfe1fd70242f"
+  }
+}
