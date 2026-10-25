@@ -1,0 +1,81 @@
+{
+  "status": "PASS independent fixed single-bump necessary source certificate",
+  "source_sha256": {
+    "rounds/010-registration.md": "191fa546a2f29ff8501fddee506142b3415b2646dd6d76200614c5214fe0601e",
+    "results/round010_input_snapshot.json": "d3c5d09be5ff988c251fa5fcc3f557c84de84ae5a0207c2d372e0b55bbf41c9a",
+    "proofs/round009_bump_source_certificate.md": "00d61717f89afda71d3ae99c28cb829e9cb9706c6646139f5d578dbf15e1ec21",
+    "src/round009_bump_source_certificate.py": "062e23849dbdde1af0655c999dfc20022202d9dc530919278012e96a4c94b35c",
+    "results/round009_bump_source_certificate.json": "7a5d5c9ab9ba12cd10b7521dcd98963c8bb65b1a0bb90b1ceadc62ca095bc6b9",
+    "proofs/round009_bump_interface.md": "154dbc3fe14a98dcfe25aa32172920972740f9b7e8adce72c979bd817fc2aa30",
+    "src/round009_bump_interface.py": "1fdce2ec7064ee3463fa0b8d73ca396d5786b503628759fc3a99aa02ba4d20be"
+  },
+  "feynman": {
+    "simplex_volume": "1/6",
+    "simplex_pair_moment": "1/120",
+    "normalized_pair_moment": "1/20",
+    "Green_simplex_coefficient": "3/(32*pi**3)",
+    "pair_distance_square_sum": "w**2 + x**2 + y**2",
+    "G_lower_coefficient": "5/(16*pi**3)"
+  },
+  "b_local": {
+    "slice": "b(e1+s*v)=s^2*(2+3s)^2 on [-2/3,0], zero elsewhere",
+    "slice_integral": "8/9",
+    "Lb_e1_exact": "32/(9*pi)",
+    "regularity": "C_c^{1,1}; continuous full directional generator, no sphere atom"
+  },
+  "parameters": {
+    "precision_bits": 192,
+    "fixed_c": "(4 log(2)-1)/(24 pi^3)",
+    "R_exact_expression": "15/(2*(4 log(2)-1))",
+    "e1_inside_Omega": true,
+    "whole_cube_inside_Omega_from_lower": true,
+    "g_equals_edge_assumed": false
+  },
+  "tail_integral": {
+    "route": "s -> -1/u on negative tail, s -> 1/u on positive tail; two finite rational Acb integrals",
+    "finite_integral_balls": [
+      "[0.483586299183745499803201051764000773234658824989293 +/- 5.06e-52]",
+      "[0.76532858240816136350174156829699483894167276493329 +/- 4.39e-51]"
+    ],
+    "I_interval": [
+      "979945721323851186748713275438648014155538726884329164363/784637716923335095479473677900958302012794430558004314112",
+      "1959891442647702373497426550877296028311077453768669183571/1569275433846670190958947355801916604025588861116008628224"
+    ],
+    "independent_antiderivative_interval": [
+      "1959891442647702373497426550877296028311077453768663756007/1569275433846670190958947355801916604025588861116008628224",
+      "1959891442647702373497426550877296028311077453768663756297/1569275433846670190958947355801916604025588861116008628224"
+    ],
+    "published_closed_form_interval": [
+      "3919782885295404746994853101754592056622154907537327511967/3138550867693340381917894711603833208051177722232017256448",
+      "3919782885295404746994853101754592056622154907537327512637/3138550867693340381917894711603833208051177722232017256448"
+    ]
+  },
+  "mu_upper_expression_interval": [
+    "6086802551866904711630316641522465128284334384024300308779/1606938044258990275541962092341162602522202993782792835301376",
+    "6086802551866904711630316641522465128284334384024334021029/1606938044258990275541962092341162602522202993782792835301376"
+  ],
+  "mu_upper_expression_ball": "[0.0037878265273591932431742251846902457885364578050160 +/- 5.80e-53]",
+  "epsilon_necessary_upper_interval": [
+    "5378133988349064636991073441417961147022978259338424370741/1606938044258990275541962092341162602522202993782792835301376",
+    "5378133988349064636991073441417961147022978259338454158435/1606938044258990275541962092341162602522202993782792835301376"
+  ],
+  "epsilon_necessary_upper_ball": "[0.0033468209975880504728632336756058998811038810260240 +/- 1.50e-53]",
+  "simple_strict_necessary_condition": "epsilon < 3347/1000000",
+  "rejected_epsilon": "1/200",
+  "corrected_density_upper_expression_interval": [
+    "-6013213241954452669426199074196660756145689582923912262585/3213876088517980551083924184682325205044405987565585670602752",
+    "-6013213241954452669426199074196660756145689582923844838047/3213876088517980551083924184682325205044405987565585670602752"
+  ],
+  "corrected_density_upper_expression_ball": "[-0.0018710158936859742508305308463324870837998851546447 +/- 3.17e-53]",
+  "strict_corrected_source_density_upper_below": "-1871/1000000",
+  "all_three_expression_intervals_strictly_inside_published_balls": true,
+  "scope": "only fixed 3D c and unit-ball bump; necessary upper bound plus one rejected correction; no C_n, cost/g, joint-bump or full-cb9 certificate",
+  "shared_libraries": {
+    "SymPy": "1.14.0",
+    "Arb/Acb": "python-flint, 192bit",
+    "Fraction": "Python standard library"
+  },
+  "implementation": "no author checker or cone module imports; scalar Feynman factors plus reciprocal finite-tail integration; published expression interval is an upper-bound expression, not enclosure of unknown actual mu",
+  "elapsed_seconds": 0.09308641700772569,
+  "checker_sha256": "d05040b1160fb772393b7356123c1bbbc9d08ea164f1f1c4dffaaf0505b3ac1a"
+}

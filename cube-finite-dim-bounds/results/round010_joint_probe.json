@@ -1,0 +1,112 @@
+{
+  "status": "numerical finite LP only; no full g/J, source or dominance certification",
+  "module_sha256": "d23501eeaf417a736730a6e61398e27b9364c231d35ec6ee8bf573e357058bf5",
+  "fixed_c": 0.0023820294254673917,
+  "normalizer_unproved_global_g": 0.007146088276402175,
+  "basis_volumes": [
+    0.9574377610940322,
+    0.7180783208205241
+  ],
+  "first_LP": {
+    "success": true,
+    "weights": [
+      0.0006238857583167599,
+      0.0011959779779202161
+    ],
+    "mass_reduction": 0.0014561376417445257,
+    "optimistic_cost_estimate": 8.13375712313276,
+    "max_finite_constraint_violation": 2.168404344971009e-19,
+    "source_rows": 34,
+    "domain_rows": 87,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+  },
+  "second_LP": {
+    "success": true,
+    "weights": [
+      0.0006238846087966198,
+      0.0011959764063144585
+    ],
+    "mass_reduction": 0.0014561354126145132,
+    "optimistic_cost_estimate": 8.133757181620965,
+    "max_finite_constraint_violation": 0.0,
+    "source_rows": 33,
+    "domain_rows": 87,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+  },
+  "validation": [
+    {
+      "x": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "tolerance": 1e-07,
+      "G": "infinity",
+      "Lb": [
+        0.48529269727448726,
+        0.0
+      ],
+      "mu": 0.00225997256071173,
+      "error_estimate_only": 6.776475856774521e-08,
+      "warnings": [],
+      "seconds": 0.6654338836669922,
+      "status": "numerical_only",
+      "source_slack": 0.00195720591612078,
+      "dominance_slack": "infinity"
+    },
+    {
+      "x": [
+        1.3125,
+        1.3125,
+        0.1875
+      ],
+      "tolerance": 1e-07,
+      "G": 0.00417464814582144,
+      "Lb": [
+        0.002208948544806071,
+        0.02181141533608601
+      ],
+      "mu": 0.0038359394501956395,
+      "error_estimate_only": 2.869124834063384e-08,
+      "warnings": [],
+      "seconds": 1.0139403343200684,
+      "status": "numerical_only",
+      "source_slack": 0.003808475383066627,
+      "dominance_slack": 0.0017926187203540487
+    },
+    {
+      "x": [
+        1.125,
+        1.125,
+        0.375
+      ],
+      "tolerance": 1e-07,
+      "G": 0.005852810290926684,
+      "Lb": [
+        0.08998128958545241,
+        0.07971197584345777
+      ],
+      "mu": 0.003328665271548313,
+      "error_estimate_only": 8.944700811445658e-08,
+      "warnings": [],
+      "seconds": 1.309297800064087,
+      "status": "numerical_only",
+      "source_slack": 0.003177193687486794,
+      "dominance_slack": 0.003470780865459292
+    }
+  ],
+  "validation_has_negative_source_slack": false,
+  "elapsed_seconds": 26.139025926589966,
+  "scope": "two fixed bases, at most2 LPs/8 refined rows/32 Sobol points; excluded quadrature rows are unresolved, not passed constraints",
+  "validation_counts": {
+    "total": 31,
+    "negative_source": 0
+  },
+  "raw_provenance": {
+    "file": "round010_joint_probe.json",
+    "original_sha256": "62bf89dd5e96903eec4e8f6f6bb6af6bd143b1e1f55ed951a07ab8aeed50af06",
+    "original_bytes": 52087,
+    "backup": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/round010_archive_raw/round010_joint_probe.json"
+  },
+  "archive_note": "Minimal LP inputs retained separately; full transient rows in local backup, regenerate via probe."
+}

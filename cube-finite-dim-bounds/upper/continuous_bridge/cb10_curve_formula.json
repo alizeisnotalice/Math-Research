@@ -1,0 +1,18 @@
+{
+  "status": "PASS exact curve identities",
+  "curve": "x=(a,1,1), a>0, a!=1; here a ranges [1/4,5/2] excluding1",
+  "R_u": "N3/((u+4)(u+(a-1)^2)^2(u+(a+1)^2)^2)",
+  "partial_fractions": {
+    "A4": "-8/((a - 1)**2*(a + 1)**2)",
+    "Bp": "2*(a + 2)/(a + 1)**2",
+    "Cp": "-2*(a - 1)**2/(a + 1)",
+    "Bq": "-2*(a - 2)/(a - 1)**2",
+    "Cq": "2*(a + 1)**2/(a - 1)"
+  },
+  "M_formula": "(a-1)^2 * 32*pi^3*G(a,1,1) = mp*log((a-1)^2/4)+mq*log((a+1)^2/4)+mr",
+  "mp": "-2*(a - 1)**2*(a + 2)/(a + 1)**2",
+  "mq": "2*(a - 2)",
+  "mr": "4*(a - 1)/(a + 1)",
+  "conditional_density_residue_identity": "PASS independent simple poles it,-1+it and double pole (a-1)/2+it",
+  "scope": "one curve for fixed e1 directional source only; no full-frame cost/source optimization"
+}
