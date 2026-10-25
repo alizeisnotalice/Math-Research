@@ -1,0 +1,31 @@
+{
+  "status": "exact continuous cube-minimum identities PASS",
+  "engine": "SymPy 1.14.0",
+  "scope": "n3/n4; B>=0 and B<=Bcrit, i.e. RB>=sqrt(n); no mass/cost computation",
+  "dimensions": [
+    {
+      "n": 3,
+      "H4_corner": "-12/5",
+      "sphere_H4_min_coefficient": "-4/15",
+      "sphere_H4_max_coefficient": "2/5",
+      "Bcrit": "5*sqrt(3)/144",
+      "quartic_deficit_upper_slack": "2*d0*d1 + 2*d0*d2 + 2*d1*d2",
+      "continuous_cube_min": "n^((2-n)/2) + 2*n*(n-1)*B/(n+2)"
+    },
+    {
+      "n": 4,
+      "H4_corner": "-4",
+      "sphere_H4_min_coefficient": "-1/4",
+      "sphere_H4_max_coefficient": "1/2",
+      "Bcrit": "1/32",
+      "quartic_deficit_upper_slack": "2*d0*d1 + 2*d0*d2 + 2*d0*d3 + 2*d1*d2 + 2*d1*d3 + 2*d2*d3",
+      "continuous_cube_min": "n^((2-n)/2) + 2*n*(n-1)*B/(n+2)"
+    }
+  ],
+  "n3_radial_remainder_times_sqrt3": "-(t - 1)**3*(3*t**2 + 9*t + 8)/(8*t)",
+  "n3_remainder_domain": "t=sqrt((3-D)/3), 0<t<=1",
+  "n4_radial_remainder": "-D**3/(64*(D - 4))",
+  "n4_remainder_domain": "0<=D<4",
+  "outer_stationary_envelope": "(n+2)/4*R^(2-n)-A",
+  "checker_sha256": "76f6e63f4bec46c02216c148987670294f5a124db6f670f152f62559fbabfb77"
+}

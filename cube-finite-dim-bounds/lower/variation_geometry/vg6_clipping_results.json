@@ -1,0 +1,46 @@
+{
+  "status": "audit013 raw-clipping regression and repaired guards PASS",
+  "prior_defect": "1-Lipschitz clipping alone does not preserve a fixed baseline B through later branch changes",
+  "bad_cap": "1/16",
+  "bad_epsilon": "1/32",
+  "bad_value": "1/64",
+  "original_claimed_B": 0,
+  "large_cap_rejected": true,
+  "repaired_cap": "1/256",
+  "repaired_endpoint": {
+    "base": "0",
+    "velocity": "0",
+    "B": "0"
+  },
+  "guards": [
+    {
+      "gap": "1/64",
+      "movement_upper": "1/256",
+      "strict_slack": "3/256"
+    }
+  ],
+  "full_cap_alternative_B": 16,
+  "nonnegative_square": "16*x**2 - x + 1/64",
+  "tied_max": {
+    "base": "0",
+    "velocity": "1",
+    "B": "2"
+  },
+  "tied_min": {
+    "base": "0",
+    "velocity": "-1",
+    "B": "2"
+  },
+  "tied_guards": [
+    {
+      "gap": "1",
+      "movement_upper": "289/2048",
+      "strict_slack": "1759/2048"
+    }
+  ],
+  "source_sha256": {
+    "vg6_bounds.py": "97daad9454fb092b8802b42f95a0ffbbb27de99b48219bdc14abb3cf5f5ba5cc",
+    "vg6_clipping_check.py": "be263562583bcc516e0724549e33b681104f2eeff36e63ae2f851287bdbc736a"
+  },
+  "scope": "new fixed guard regression only; old 512/MATLAB/phase searches not rerun"
+}

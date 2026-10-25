@@ -1,0 +1,5 @@
+# Independent013 explicit-epsilon remainder interface
+
+2026-10-25. Priority followed012/012b exact candidates; no candidate left unreviewed. Onlyaudit/013_*; no n4 phase/grid search or old512 rerun. Read original vg6 source1061d2... and found finite-cap clipping branch defect; author repaired only that recipe with all-raw-candidate guards. Final source c9281915b3464bc20673024e6ce8864e2c703ec56aa0336e66a272afc63a8f6a, interface97daad9454fb092b8802b42f95a0ffbbb27de99b48219bdc14abb3cf5f5ba5cc.
+
+Analytic priorities: affine coordinate-order polynomial and tensor higher-coefficient bound, true-endpoint remainder volumes, raw max/min guards, pure epsilon^(7/4) constants/locality/separation, complete mass/Jacobian numerator and rational epsilon selection. Independent local-tool batch: one exact SymPy tensor/numerator identity check, exact clipping counterexample/repair, one fixed Fraction halving fixture. No author code import, no optimizer or duplicate toy/phase run. Existing parent-serialized vg6 MATLAB is shared evidence only; no direct MATLAB call and no new run requested. Stop after final explicit assumptions and verdict.

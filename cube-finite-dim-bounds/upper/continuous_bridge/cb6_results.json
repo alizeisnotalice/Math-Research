@@ -1,0 +1,68 @@
+{
+  "status": "PASS exact symbolic finite batch",
+  "sympy": "1.14.0",
+  "dimensions": [
+    {
+      "n": 3,
+      "Delta_H4": "0",
+      "unit_sphere_H4_range": [
+        "-4/15",
+        "2/5"
+      ],
+      "c_n": "1/(4*pi)",
+      "nonradial_legality_example": {
+        "normalized_c": "1",
+        "a": "1",
+        "b": "1/100",
+        "R": "2",
+        "sphere_max_F": "-343/750",
+        "cube_certificate": false
+      },
+      "W1_radial_example": {
+        "A": "1",
+        "B": "0",
+        "R": "2",
+        "free_radius": "1",
+        "mass": "1/6",
+        "source_mass": "1",
+        "core_mass_rho_half": "1/12",
+        "cube_certificate": false
+      }
+    },
+    {
+      "n": 4,
+      "Delta_H4": "0",
+      "unit_sphere_H4_range": [
+        "-1/4",
+        "1/2"
+      ],
+      "c_n": "1/(4*pi**2)",
+      "nonradial_legality_example": {
+        "normalized_c": "1",
+        "a": "1",
+        "b": "1/100",
+        "R": "2",
+        "sphere_max_F": "-71/100",
+        "cube_certificate": false
+      },
+      "W1_radial_example": {
+        "A": "1",
+        "B": "0",
+        "R": "2",
+        "free_radius": "1",
+        "mass": "1/8",
+        "source_mass": "1",
+        "core_mass_rho_half": "7/128",
+        "cube_certificate": false
+      }
+    }
+  ],
+  "critical_zero_local_model": {
+    "P": "x^2-y^2",
+    "critical_set": "x=y=0",
+    "Delta_smoothed_positive_part": "2*e**2*(x**2 + y**2)/(e**2 + (x**2 - y**2)**2)**(3/2)",
+    "sign": "nonnegative for real x,y,z and epsilon>0"
+  },
+  "scope": "legality and normalization cross-check only; no candidate cube domination or new U3/U4",
+  "shared_arithmetic": "formulas shared with analytic proof; not independent mathematical audit"
+}

@@ -6,16 +6,16 @@
       "id": "L3",
       "status": "complete_strict_certificate",
       "interval": [
-        "2393750311737778302713280763562733980981757802167728875431076739844606133693297805695765213/1334308451800768000000000000000000000000000000000000000000000000000000000000000000000000000",
-        "7181250935213334908139842290700498201061906373655419493064372808067507886223105314304425523/4002925355402304000000000000000000000000000000000000000000000000000000000000000000000000000"
+        "7189905355778961779134726988843185889383358052219804492642993893354507044780000096301601119/4007586488787248000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "7189905355778961779134726988856468918514682584912455581947894861581147745032186931373624461/4007586488787248000000000000000000000000000000000000000000000000000000000000000000000000000"
       ],
       "new_improvement": true,
-      "certificate": "audit/007c_results.json",
+      "certificate": "audit/012b_results.json",
       "public": "482167717377842991882283179477574801392641890014291050323/283174368139841919615520431313000857449005056000000000000",
-      "construction": "lower/n3/round005c_certificate_input.json",
-      "simple_display_lower": "17940007113851367/10000000000000000",
-      "comparison_rule": "Must exceed exact T3_005c full certificate upper, not display decimal or earlier checkpoints.",
-      "proof": "audit/007c_audit.md"
+      "construction": "lower/n3/round006_certificate_input.json",
+      "simple_display_lower": "17940736590203267/10000000000000000",
+      "comparison_rule": "Must exceed full exact audit/012b upper, not display decimal or earlier checkpoints.",
+      "proof": "audit/012b_audit.md"
     },
     {
       "id": "U3",
@@ -41,14 +41,14 @@
       "new_improvement": false
     }
   ],
-  "latest_round": 5,
+  "latest_round": 6,
   "round2_new_bound": false,
   "round2_report": "rounds/002.md",
   "progress": {
-    "L3": "005c strictly above round4 and all intermediate exact targets; C3 > 1.7940007113851367",
-    "L4": "contact seam loss corrected; N0=0 supplement checked exactly zero at all 97 saved phases; no new bound",
-    "U3": "Delta finite positive source comparison audited closed; no continuous cost < 8",
-    "U4": "same Delta comparison applies; no continuous cost < 16"
+    "L3": "012b fully certified; C3 >1.7940736590203267; strictly exceeds public and prior internal exact targets",
+    "L4": "625 mixed phases and finite paired optimizations yield no new bound; epsilon-scale clearance diagnosed",
+    "U3": "H4 continuous source/cube mechanism audited; selected kernels strictly cost >8; no improvement",
+    "U4": "same audited H4 mechanism; selected kernel strictly cost >16; no improvement"
   },
   "round3_new_bound": false,
   "round3_report": "rounds/003.md",
@@ -95,6 +95,52 @@
         "audit/007b_results.json",
         "audit/007c_results.json"
       ]
+    },
+    {
+      "round": 6,
+      "checkpoint": "structural_012",
+      "task": "L3",
+      "previous": {
+        "id": "L3",
+        "status": "complete_strict_certificate",
+        "interval": [
+          "2393750311737778302713280763562733980981757802167728875431076739844606133693297805695765213/1334308451800768000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "7181250935213334908139842290700498201061906373655419493064372808067507886223105314304425523/4002925355402304000000000000000000000000000000000000000000000000000000000000000000000000000"
+        ],
+        "new_improvement": true,
+        "certificate": "audit/007c_results.json",
+        "public": "482167717377842991882283179477574801392641890014291050323/283174368139841919615520431313000857449005056000000000000",
+        "construction": "lower/n3/round005c_certificate_input.json",
+        "simple_display_lower": "17940007113851367/10000000000000000",
+        "comparison_rule": "Must exceed exact T3_005c full certificate upper, not display decimal or earlier checkpoints.",
+        "proof": "audit/007c_audit.md"
+      },
+      "new_construction": "T3_006_structural: exact complementary second satellite, quarter mass, 434 retained keys",
+      "strictly_above_previous_exact_upper": true,
+      "exact_gain_lower": "627814909300496905732760500304098111305320436016294899590948210620580258938510316750235079407447163/1001646180984438952281069414720000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "round": 6,
+      "checkpoint": "final_012b",
+      "task": "L3",
+      "previous": {
+        "id": "L3",
+        "status": "complete_strict_certificate",
+        "interval": [
+          "14365130934111858975609964065564673145968327505242962809602032285426654267094140215552699749/8007313388505760000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "14365130934111858975609964065585767560696825296581639000366882227262550791634960075199187313/8007313388505760000000000000000000000000000000000000000000000000000000000000000000000000000"
+        ],
+        "new_improvement": true,
+        "certificate": "audit/012_results.json",
+        "public": "482167717377842991882283179477574801392641890014291050323/283174368139841919615520431313000857449005056000000000000",
+        "construction": "lower/n3/round006_structural_input.json",
+        "simple_display_lower": "17940013381682475/10000000000000000",
+        "comparison_rule": "Must exceed full exact audit/012 upper, not displayed decimal or 007c.",
+        "proof": "proofs/three_orbit_n3_transfer.md"
+      },
+      "new_construction": "T3_006: free three-orbit rational input;619 keys605 nonempty",
+      "strictly_above_previous_exact_upper": true,
+      "exact_gain_lower": "145048513232840419428742541630478402987401728196714582877151902083625043264234832766671329358899760051/2005625059203807483540328909280000000000000000000000000000000000000000000000000000000000000000000000000000"
     }
   ],
   "round4_new_bound": true,
@@ -112,5 +158,17 @@
     "audit/009_audit.md",
     "audit/010_audit.md",
     "proofs/finite_grid_kernel_diagnostic.md"
+  ],
+  "current_round": 6,
+  "current_round_status": "completed",
+  "round6_new_bound": true,
+  "round6_improved_tasks": [
+    "L3"
+  ],
+  "round6_report": "rounds/006.md",
+  "round6_reusable_results": [
+    "audit/011_audit.md",
+    "audit/013_audit.md",
+    "proofs/three_orbit_n3_transfer.md"
   ]
 }
