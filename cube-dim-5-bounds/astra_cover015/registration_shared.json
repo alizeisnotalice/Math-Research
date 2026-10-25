@@ -1,0 +1,22 @@
+{
+  "round": "astra_cover015",
+  "batch": "second_registered_batch",
+  "previous_batch_results_sha256": "d42af94518c50b5fb3729efe2b7be96b0d298714264e9e80f2f6bd27b5c8f710",
+  "status": "registered_before_shared_clique_computation",
+  "reason": "A new analytic construction shows that exactly saturated cube capacities can coexist with 32 cliques sharing one cube; this is distinct from the first batch's small-contaminant obstruction.",
+  "cases": [
+    {
+      "id": "D",
+      "type": "one new exact rational geometry and its finite packet-choice LP",
+      "parameters": {"a": "65535/65536", "eta": "1/16777216"},
+      "definition": "One central cube radius 1 plus cubes of radius 1/2 at every center in {+/-a/2,+/-3a/2}^5 except centers in {+/-a/2}^5; 993 cubes total. Put mass 1+eta uniformly on each of the 32 small common cores centered at a*sigma.",
+      "checks": "Exact integer geometry for all cube pairs; exact cell arrangement identifying every 32-clique; source incidence; union volume; average and multiplicity defects; every complete clique contains the central cube, so disjoint-index packet selection has at most one member. Compute the exact minimum of the upper_cover014 whole-packet charging expression over these 33 possibilities."
+    }
+  ],
+  "checkpoint_policy": "Real PID and progress after each stage; 120-second recoverable deadline; no numerical radius or receiver-space sampling.",
+  "same_geometry_amendment_before_rerun": {
+    "first_results_sha256": "5b6c1f0a77d37787abb3cc4f76a1cd86fd18b122e026dce4c0b67628fd3c33c4",
+    "addition": "Verify rational inequalities for 32 outer-corner receiver boxes with every signed coordinate between 3/2 and (1+3a)/2. Total-mass radius cutoff and separation from 31 other sources prove these boxes are outside the genuine superlevel set at lambda=1. No new geometry or sampling."
+  },
+  "limits": "This checks a fixed legal covering family. It does not prove that every possible covering choice has this defect, and does not assert that the witness union is the genuine maximal superlevel set."
+}

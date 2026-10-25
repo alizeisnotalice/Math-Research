@@ -1,0 +1,37 @@
+{
+  "round": "astra_cover015",
+  "status": "registered_before_computation",
+  "scope": "Fixed Lebesgue measure; centered axis-parallel cubes in dimension five with one common radius per cube; arbitrary L1 and all positive scales in analytic statements.",
+  "ownership": "Only cube-dim-5-bounds/astra_cover015 in the independent clone; no commits or pushes; no MATLAB.",
+  "checkpoint_policy": "Each verification stage writes checkpoint.json with real PID and elapsed time. Deadline 120 seconds per recoverable run, not a total computation budget. No unregistered geometry sweep.",
+  "cases": [
+    {
+      "id": "A",
+      "type": "new rational geometry",
+      "description": "One 32-star, a=7/8; all-positive center radius 1, all other centers radius 2/3. Independently check all center separations, sign adjacency and common-core widths. No equal-radius assumption."
+    },
+    {
+      "id": "B",
+      "type": "new rational geometry",
+      "description": "65 homothetic stars indexed j=0,...,64; radius 8^(-j); a=8191/8192; first-coordinate translation (11/4)r_j; baseline core mass (1+2^(-24))(2r_j)^5; extra mass 2^(-12) times the sum of critical cube volumes placed in the last core. Verify packet separation, dilation incidences, exact defects and raw charging. No receiver sampling."
+    },
+    {
+      "id": "C",
+      "type": "exact finite LP on case B",
+      "description": "Maximize sum retained core masses z_j subject to 0<=z_j<=mu_j and z_j<=v_j=(2r_j)^5 for every packet; 32 original cube constraints per packet coincide. Verify primal z=v and a dual using one original cube per packet. This verifies the specialized clipping calculation, not a universal global covering theorem."
+    }
+  ],
+  "analytic_tasks": [
+    "Independently audit the locked upper_cover014 core lemma and local 127/4 estimate, including all radius ratios and zero-volume cores.",
+    "Prove that arbitrarily small average and multiplicity defects do not uniformly bound raw expanded-packet charging, even with witness-union ratio tending to 32; explicitly retain the receiver-defect gap.",
+    "Prove global finite-family capacity clipping and an exact conditional transfer inequality for a stable capped-core estimate."
+  ],
+  "locked_sources": {
+    "upper_cover013/report.md": "f787895653d2d382a28321ed44e0191e31a0ce47e93710dffb8c8cbc85d0a91d",
+    "upper_cover014/report.md": "e863d180d9d125b980b9e9c269d2611d1f4b6fd45222e1171efde1cd97309f67",
+    "upper_cover014/registration.json": "41007eb61d05e9f375347d0137aae91a56696e827103f330252b7e4bb881cd62",
+    "upper_cover014/verify.py": "e633ba51410941ed97f0db49959da6d28a5049b344fba054823132df942032c6",
+    "upper_cover014/results.json": "3df5428219086ff73927f61ebeae4d58c69fab7a27d5a54b8533b9fcacf355bb"
+  },
+  "external_primary_source": "https://arxiv.org/html/1811.10478v2; Definition 1.1 and uniform-versus-fixed-background distinction read directly. Two targeted web searches did not produce an additional verified strict five-dimensional bound."
+}

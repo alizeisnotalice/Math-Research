@@ -1,0 +1,12 @@
+{
+  "batch": "sqrt026-corner-true-positive-moment-screen",
+  "status": "registered_before_computation",
+  "model": {"alpha": "1", "beta": "1/2", "V": "(1,+/-1,+/-1,+/-1,+/-1), lexicographic -1 first", "x": [1,1,1,1,1], "S": "1/(4Y), Y iid Gamma(shape=1/2,scale=1)", "R_weight": "T^(-1/2)/Ztilt", "Ztilt": "1/(16 Gamma(3/2))", "u_weights": "((v dot x)^2-1)/24, exactly 1,1/3,0", "g_needed": "15198363/100000000000", "V_moment": "965344619/31225862828160", "c1": "1/(32 pi^3)"},
+  "finite_MC_scope": {"seed": 26026, "sample_count": 32768, "chunk": 4096, "repeat": false, "spatial_points": 1, "clipping": false, "record": ["eigenvalue extrema", "condition quantiles", "nonpositive or nonfinite determinants", "tilt weight mean", "U", "Ucrit", "effective sample size", "MC standard error diagnostic"]},
+  "exact_screen": {"input": "locked astra_upper016 manifest and exact mu0..3 from u6 R", "nodes": "unique two-node Gauss from exact moments", "precision_bits": 256, "purpose": "sqrt has negative fourth derivative, so two-node Hermite polynomial gives true U upper bound", "node_optimization": false},
+  "resources": {"python": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python", "threads": 1, "MATLAB": false, "expected_memory_MB": 128},
+  "checkpoint": {"interval_seconds": 120, "unit": "4096 samples or completed exact stage", "path": "checkpoint.json", "state": "sum statistics and RNG state for resume", "stop_after_seconds": 120},
+  "handles": {"process": "not_started"},
+  "constraints": "Only astra_sqrt026; preserve locked astra_I025; no submit or push; no full-space grid; 2D integral pilot only after this screening warrants it",
+  "claim_level": "MC diagnostics are not rigorous; exact moment upper screen is separately certified only after lock hash verification"
+}

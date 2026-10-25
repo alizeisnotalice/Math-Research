@@ -1,0 +1,12 @@
+{
+  "batch": "sqrt030-reciprocal_linear_shape_two_rho_corner_screen",
+  "status": "registered_before_computation",
+  "model": {"alpha":"1", "beta":"1/2", "V_directions":"(1,+/-1,+/-1,+/-1,+/-1), lexicographic -1 first", "x":[1,1,1,1,1], "u_i":"((v_i dot x)^2-1)/24", "rho":["7/8","31/32"], "lambda_i":"1-rho u_i", "Z_shape":"a0 (sum lambda_i P_i)^(-3/2)", "U":"E_R sqrt(d) L^(-3)", "V":"E_R B L^(-9/2)", "g_needed":"15198363/100000000000", "c1":"1/(32 pi^3)"},
+  "MC": {"seed":30030, "samples":32768, "chunk":4096, "two_rho_share_same_draws":true, "new_repeat_or_added_seed":false, "clipping":false, "self_normalization":false, "record_condition_threshold":1000000000000, "purpose":"necessary corner diagnostic only, not G or a confidence interval"},
+  "exact_checks": {"V_formula":"(128/35) x^T adj(D)x/C^5", "D":"sum lambda_i^(-1/2) v_i v_i^T", "C":"sum sqrt(lambda_i)", "rho_zero_check":"8/7", "CB_integral_prefactor":"2048/pi^2", "Arb_bits":256},
+  "resources":{"python":"/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python", "threads":1,"MATLAB":false,"memory_expected_MB":128},
+  "checkpoint":{"seconds":120,"unit":"4096 samples","file":"checkpoint.json","arrays":"checkpoint_arrays.npz","resume":"RNG plus completed arrays","stop_after_seconds":120},
+  "handles":{"pid":"not_started"},
+  "next_stage":"Only if a rho has clear necessary competitive diagnostic: register one finite positive 2D pilot with joint (corner category,p) profiles",
+  "ownership":"astra_sqrt030 only; astra_I025 and astra_sqrt026 remain locked; no commit or push"
+}

@@ -1,0 +1,35 @@
+{
+  "stage": "pre_registered_single_plane_qualification",
+  "registered_at_utc": "2026-10-25T20:13:13.442793+00:00",
+  "K": 8,
+  "n": 2,
+  "common_radius": "16^(1/5)/2",
+  "test": "exact rational radius4/5 two-cover on [0,5]^2 of RZ^2, R=(4,-3;3,4)/5, then prove r>(4/5)s by integer-root brackets",
+  "limits": {
+    "seconds": 30,
+    "candidate_cells": 10000
+  },
+  "stop": "after rational two-cover classification and strict margin; preserve undercovered cells if any; no automatic arrangement/union expansion",
+  "resources": {
+    "nice_minimum": 10,
+    "numeric_threads": 1,
+    "single_process": true
+  },
+  "inputs": [
+    {
+      "path": "lower_round017/append_last_two/checkpoint_10of10.json",
+      "sha256": "c6f23afb5b31f274afeefb8351b6de05f83c830d2b1017bbd3e781b7a51f6074"
+    },
+    {
+      "path": "lower_round017/raw_endpoint_catalog.json",
+      "sha256": "9c55f5bc4a3a1a91e39f68f752c74eb075960c58caf5b40aca11cd3f901e9def"
+    },
+    {
+      "path": "lower_round017/append_half2/qualification_K8_n1_results.json",
+      "sha256": "7ee28a3a9ba20e63da026cb12fefb2c2e20564cb366cca4577f89ed302b7b2a3"
+    }
+  ],
+  "source_sha256": "c93e456029dea5349421c168aabf509618f00c04eb1ced1b84758b53dd0c5a84",
+  "no_old_lock_mutations": true,
+  "scope": "one of17 planar qualification cases; no newangle, fullunion, parameter optimization or lowerrecord"
+}

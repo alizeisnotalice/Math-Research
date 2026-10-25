@@ -1,0 +1,73 @@
+{
+  "id": "audit_profile031",
+  "registered_utc": "2026-10-25T20:12:10.945998+00:00",
+  "script_sha256": "c3dfabc725ad25c4a67b138c69f21b9e0451c3f1238b68fb7613e4bc4b0fcc22",
+  "sources": [
+    {
+      "id": "candidate_program",
+      "project_relative": "round009/profile_barrier.py",
+      "registered_origin": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/round009/profile_barrier.py",
+      "sha256": "e648f8e4a8c277c0b9e5bf4fc21ca8ebbd5fb5f61cf6398599448cc1517b4627"
+    },
+    {
+      "id": "candidate_registration",
+      "project_relative": "round009/profile_barrier_registration.md",
+      "registered_origin": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/round009/profile_barrier_registration.md",
+      "sha256": "53e887eab22f588525a4eb568b3d1b19bb9af0ecf60289e27e67c47bd3e4b06f"
+    },
+    {
+      "id": "candidate_result",
+      "project_relative": "round009/profile_barrier.json",
+      "registered_origin": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/round009/profile_barrier.json",
+      "sha256": "045c87233755809c36833d8f8c7e75b32dbab7025de3febe6ac6143e4459e9b7"
+    },
+    {
+      "id": "candidate_proof",
+      "project_relative": "round009/profile_barrier_proof.md",
+      "registered_origin": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/round009/profile_barrier_proof.md",
+      "sha256": "69f0a857b86fe1872be09b3f12b8a91788295a28d969d0ad5e00c877f99a76ad"
+    },
+    {
+      "id": "shared_Laplace_model",
+      "project_relative": "astra_sqrt030/report.md",
+      "registered_origin": "/Users/zhengzhihao/Desktop/T/Math-Research-cube5-astra-I/cube-dim-5-bounds/astra_sqrt030/report.md",
+      "sha256": "79e297a97f8cec60bff1a296f4f204f39120f1685536ee1c8e896710de392e11"
+    },
+    {
+      "id": "shared_alpha1_qualification",
+      "project_relative": "upper_alpha1_029/report.md",
+      "registered_origin": "/Users/zhengzhihao/Desktop/T/Math-Research-cube5-upper-audit-cont/cube-dim-5-bounds/upper_alpha1_029/report.md",
+      "sha256": "298f0de7277ea6a7a516b85344c5189562bf7026f3f8de43d4d3f304ff6fed81"
+    }
+  ],
+  "model": "alpha1 beta1/2, sixteen unnormalized body directions, standard stable LT, same R and c1=1/(32pi^3)",
+  "family": "Z=a0*(1-rho*(W_x+2)/12)^(-3/2), all finite rho<1 and a0>=0, deterministic in M, spatial adaptation allowed",
+  "execution_cap": 1,
+  "rho_sample_count": 0,
+  "matrix_scope": "four head-sign patterns plus scalar eigenspaces; no5x5 SymPy matrix",
+  "finite_checks": [
+    "eigenvalue product polynomials for detD and x0-adjugate quadratic form",
+    "rho-range cleared-denominator coefficient identities",
+    "Mellin constants from integer factorial and half-Gamma recurrences",
+    "uniform point cap and exact patch factor; face and cube patch positive volumes"
+  ],
+  "theory_audit_focus": [
+    "rho negative unbounded and rho approaching1",
+    "relative-lambda estimates",
+    "adjugate quadratic Loewner via orthogonal compression",
+    "x0 eigenvector projection bound independent of condition number",
+    "x0 in S2 with real G=infinity versus finite certificate budget"
+  ],
+  "not_executed": [
+    "production source",
+    "production SymPy matrix",
+    "030 two fixed rho baselines",
+    "MC or spatial sampling",
+    "MATLAB",
+    "previous failed production attempts"
+  ],
+  "shared_input_limit": "Same accepted alpha1 positive-Green and singular-set model from029; analytic LT framework from030. No numerical baseline or failed run is used as evidence.",
+  "portable_reading": "--project-root required, default hash-only; registered_origin is provenance only",
+  "ownership": "audit_profile031 only, no commits or pushes",
+  "new_C5_bound": false
+}

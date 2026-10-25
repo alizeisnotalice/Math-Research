@@ -1,0 +1,136 @@
+{
+  "status": "NUMERICAL_DIAGNOSTIC_no_rigorous_bounds",
+  "model": "alpha=1, 16 unnormalized body directions, independent unit positive-stable variables",
+  "point": [
+    "1",
+    "7/8",
+    "3/4",
+    "5/8",
+    "1/2"
+  ],
+  "known_infinite_11110_point_was_not_run": true,
+  "seed": 202610260141,
+  "requested_n": 32768,
+  "completed_n": 32768,
+  "formula": "K E[T^-beta det(M)^-1/2 (x^T M^-1 x)^(-2)]",
+  "K_double": 0.014291089100934072,
+  "expected_checks": {
+    "E_exp_minus_S1": 0.36787944117144233,
+    "E_T_negative_beta": 0.07052369794346955
+  },
+  "summary": {
+    "G_mean": 0.0002996073565858675,
+    "laplace_S1_at1_mean": 0.36787803734136515,
+    "T_negative_beta_mean": 0.0705167278445729,
+    "cost_proxy_using_point_sample_mean_NOT_global_g": 13.699521644680962
+  },
+  "blocks_descriptive_not_CI": [
+    {
+      "n": 4096,
+      "G_mean": 0.00029480334525139914,
+      "G_max": 0.028984302416997027,
+      "laplace_S1_at1_mean": 0.3678886195575788,
+      "T_negative_beta_mean": 0.0702200420114363,
+      "min_M_eigenvalue": 3.1972161304307e-08,
+      "max_M_condition": 156385979.49265596,
+      "cholesky_max_absolute_residual": 3.3306690738754696e-16
+    },
+    {
+      "n": 4096,
+      "G_mean": 0.00031289747486639075,
+      "G_max": 0.02393873972465868,
+      "laplace_S1_at1_mean": 0.367857832603194,
+      "T_negative_beta_mean": 0.07039829177231274,
+      "min_M_eigenvalue": 3.2877319351612554e-09,
+      "max_M_condition": 1520805209.1873765,
+      "cholesky_max_absolute_residual": 2.220446049250313e-16
+    },
+    {
+      "n": 4096,
+      "G_mean": 0.00028500756067464966,
+      "G_max": 0.027349432812796354,
+      "laplace_S1_at1_mean": 0.36788343063421164,
+      "T_negative_beta_mean": 0.07061562789666605,
+      "min_M_eigenvalue": 4.624253501264367e-09,
+      "max_M_condition": 1081255577.9682512,
+      "cholesky_max_absolute_residual": 3.3306690738754696e-16
+    },
+    {
+      "n": 4096,
+      "G_mean": 0.0003069804520231018,
+      "G_max": 0.03271840000357193,
+      "laplace_S1_at1_mean": 0.36787749043441387,
+      "T_negative_beta_mean": 0.07014716203453046,
+      "min_M_eigenvalue": 4.461930757805494e-10,
+      "max_M_condition": 11205911176.845577,
+      "cholesky_max_absolute_residual": 3.3306690738754696e-16
+    },
+    {
+      "n": 4096,
+      "G_mean": 0.00029470155596881495,
+      "G_max": 0.02126225636194545,
+      "laplace_S1_at1_mean": 0.3678845084760909,
+      "T_negative_beta_mean": 0.07078982349534604,
+      "min_M_eigenvalue": 1.2834917478016639e-11,
+      "max_M_condition": 389562302057.78375,
+      "cholesky_max_absolute_residual": 3.3306690738754696e-16
+    },
+    {
+      "n": 4096,
+      "G_mean": 0.0002990688214893169,
+      "G_max": 0.015277740578198683,
+      "laplace_S1_at1_mean": 0.367881976021358,
+      "T_negative_beta_mean": 0.07057359358111795,
+      "min_M_eigenvalue": 1.2694003557391257e-08,
+      "max_M_condition": 393871995.7288139,
+      "cholesky_max_absolute_residual": 3.3306690738754696e-16
+    },
+    {
+      "n": 4096,
+      "G_mean": 0.00031044401268753245,
+      "G_max": 0.0188106762027304,
+      "laplace_S1_at1_mean": 0.3678610537566482,
+      "T_negative_beta_mean": 0.07076778815902657,
+      "min_M_eigenvalue": 1.884210979146162e-11,
+      "max_M_condition": 265363064697.0316,
+      "cholesky_max_absolute_residual": 3.3306690738754696e-16
+    },
+    {
+      "n": 4096,
+      "G_mean": 0.0002929556297257347,
+      "G_max": 0.02197948397141431,
+      "laplace_S1_at1_mean": 0.367889387247426,
+      "T_negative_beta_mean": 0.0706214938061471,
+      "min_M_eigenvalue": 4.4735113838874694e-09,
+      "max_M_condition": 1117690161.533461,
+      "cholesky_max_absolute_residual": 2.220446049250313e-16
+    }
+  ],
+  "failure": null,
+  "limitations": [
+    "No certified QMC or floating-point error.",
+    "Block ranges are not confidence intervals.",
+    "A single-point sample mean is not a global g and not a rigorous bound in either direction.",
+    "No time truncation, density interpolation, sample rejection, matrix repair or condition clipping was used."
+  ],
+  "source_hashes": {
+    "direct_shape.py": "e6033ee8a684b2ccd7c89d00a8bacfb09e2de5a2a7256a875aa6882e661ff4f7",
+    "registration.md": "ebc34a68c6d3efe97ce71e74b3cab9f4fc7c6d6bdedde964028d84aa30904848",
+    "budget.json": "2dc42c046a96698be7bd4c895e1e986823fc1055ed0faad3d3d751fec36cfb81"
+  },
+  "runtime": {
+    "pid": 34144,
+    "python": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python",
+    "numpy": "2.5.4",
+    "nice": 0,
+    "threads_env": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    },
+    "seconds": 0.07462395902257413,
+    "peak_RSS_platform_units": 128925696,
+    "platform": "darwin"
+  }
+}

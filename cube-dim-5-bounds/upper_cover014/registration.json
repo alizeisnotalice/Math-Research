@@ -1,0 +1,26 @@
+{
+  "round": "upper_cover014",
+  "registered_before_finite_batch": true,
+  "owner": "upper_theory_cont",
+  "topic": "Near32 defect bookkeeping, unequal-radius clique core geometry and packet source-localization",
+  "theory_before_calculation": [
+    "For a finite Besicovitch witness cover, 32m-lambda|E| splits exactly into receiver-volume defect, average slack and multiplicity defect; near32 forces source onto the disjoint 32-fold clique cores.",
+    "Any 32 intersecting Besicovitch cubes, with arbitrary radii and centers, have common core width <max radius in each coordinate, via adjacent orthant pairs. This gives the whole-mass local receiver constant127/4, not a global C5 bound.",
+    "Descending-radius greedy assignment localizes each receiver witness to twice its assigned cube. The resulting dilated packet source sets can overlap without a uniform geometric bound; weighted source congestion and witness slack must both be tracked."
+  ],
+  "instances": [
+    {"id":"unequal_single32", "radii":"1 for all-plus orthant, 1/16 for the other31", "center_rule":"(33/34)*radius*epsilon", "input":"uniform common-core mass (1+1/65536)*32"},
+    {"id":"two_packets_balanced", "packet_count":2, "a":"4095/4096", "b":"5/2", "radius_ratio":16, "radii":"16^(-j), j=0,1", "packet_common_point":"(b*r,0,0,0,0)", "center_rule":"common_point+a*r*epsilon", "input":"each packet core gets (1+1/65536)*(2r)^5"},
+    {"id":"three_packets_concentrated", "packet_count":3, "a":"4095/4096", "b":"5/2", "radius_ratio":16, "radii":"16^(-j), j=0,1,2", "center_rule":"as previous instance", "input":"balanced core masses plus 100 times their sum on the smallest packet core"}
+  ],
+  "finite_checks": [
+    "Exactly three new rational instances; pairwise Besicovitch distances and 80 adjacent-orthant inequalities per32-clique, core box widths, all witness averages and exact source incidences.",
+    "Only unequal_single32 uses one5^5 arrangement volume check; multiscale packets use exact rectangular union/disjointness identities and box intersections, with no receiver sampling.",
+    "Verify core halo constants: (6/5)^5>2 and (17/10)^5+16<127/4; source split1/4.",
+    "For the balanced two-packet instance verify union/mass>3197/100 while the complete true maximal-level-set halo bound is<51/50 using threshold split1/100 and radius bound1003/1000.",
+    "For the concentrated three-packet instance verify all source still has multiplicity32, but twice-cube packet source charging/mass>29/10. Verify exact defect bookkeeping in all three instances."
+  ],
+  "stop_condition": "No fourth instance, global covering search or old cover013 replay. Archive local/conditional results and the source-localization obstruction. Do not add whole-mass packet estimates as if source costs were disjoint.",
+  "tools": "Python standard-library Fraction exact arithmetic. No MATLAB, sampling, floating geometry or optimizer.",
+  "scope": "No new global U<32 unless the receiver and source charging conditions are independently closed. Main and all other tasks read-only; no commit."
+}

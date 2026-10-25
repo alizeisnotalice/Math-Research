@@ -1,0 +1,21 @@
+{
+ "id":"upper_sip015",
+ "registered_before_execution":true,
+ "purpose":"One finite batch for gamma=1/5, degree-four polynomial majorants of d^(-3/20), with new I027 cap",
+ "new_problem_reason":"Unlike excluded old gamma=3/14 and degree-two batches, this uses a different negative exponent, the stronger Harris+new-flag entropy cap, and four positive moments. The old abstract witness is not reused.",
+ "majorant":"d^(-3/20)<=alpha*d^(-1/5)+A+B*d+C*d^2+D*d^3+E*d^4, alpha>=0",
+ "polynomial":"z=d^(1/20); P(z)=alpha+A*z^4+B*z^24+C*z^44+D*z^64+E*z^84-z>=0 on [0,1]",
+ "Q":"926346056693/500000000000",
+ "Q_source":"/Users/zhengzhihao/Desktop/T/Math-Research-cube5-upper-audit-cont/cube-dim-5-bounds/upper_I027",
+ "Q_status":"locked source pending main/independent admission; this batch gives no new actual I until admission",
+ "moments_source":"/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper006/verification.json",
+ "moments_selection":"For k=1,2,3,4 use complete Fraction moments[str(k)][0]; m0=1",
+ "initial_nodes":{"rule":"z_i=i/160, i=0,...,160","count":161},
+ "bounds":{"alpha":[0,10],"A_B_C_D_E":[-1000000,1000000]},
+ "exchange":{"maximum_added_nodes":4,"maximum_worker_seconds":30,"separation":"numerical diagnostic: 4097 uniform nodes plus bounded local minima around every sampled local minimum and polynomial derivative roots whose imaginary part is small. Only choose the smallest found value; no numerical global certification.","stop":"stop early if no separated numerical violation below -1e-9; never enlarge the grid after registered batch"},
+ "decision":"If the finite candidates cannot beat the current complete-J budget around 1.41637494, prioritize extracting at most six nonzero dual z supports, rationalize z (denominators 160 or 10^8 as applicable), and solve a 6x6 Fraction linear system matching m0..4 and sum w*z^-4=Q. Certify w>=0 and sum w*z^-3>17705/12500 (1.4164). Such nu is only abstract, not the real d distribution and not a C5 lower bound. If competitive, rationalize and certify the full degree84 P via exact subdivided Bernstein before any majorant claim.",
+ "rational_witness_attempts":"Use only dual supports from the registered masters; at most five support sets, one from each master. No random or new support search.",
+ "runtime":"/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python",
+ "process_logging":"Record source hashes, actual worker PID, return code, timeout status, wall time, all finite master solutions and dual support candidates",
+ "scope":"Only new upper_sip015; lower_opt014 and all source files read-only; no MATLAB; no commit or push"
+}

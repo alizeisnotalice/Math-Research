@@ -1,0 +1,17 @@
+# Astra vertex017: exact original-vertex boundary triangulation
+
+Parent authorization2026-10-26. Ownership only astra_vertex017 in the independent Astra clone. Prior fan/vertex/analysis sources and all older evidence are read-only. No commits. No MATLAB task or global spatial grid.
+
+Inputs: locked audit/005_vertex_rays_exact.py and its JSON from the audit clone; the exact old numerics/body_fan_geometry.py and old256bit body_fan_arb_anchor.py from the main clone. The three known vertex orbits are11000/16,11110/24,21111/36, giving280 distinct vertices. Expand these orbits but do not repeat the vertex-vs-artificial classification. Use common denominator144 and lexicographic order on integer coordinates144*r. The old exact fan coverage and005 classification are inputs establishing that these are all vertices.
+
+Stage1 contacts: no persistent all-halfspace/contact table was found in the inspected old sources/results or named/tmp fan files. Reuse their precise definition and enumerate all65536 sign choices once for this new facet task; merge the5817 expected distinct integer slopes. For each slope a compute exact contacts a.n=psi(n), equivalently a.(144r)=144. Contacts with linear rank5 are precisely facets. Record all ranks/counts and hashes. Integer NumPy arithmetic may be used with explicit bounds, never floating-rank tolerances. Save state after finite chunks and at120-second checkpoints.
+
+Stage2 face lattice: starting with the full vertex set, close under intersection with all facet contact masks. Include the empty face, use exact integer ranks for proper-face dimensions, and record all dimensions and incidence counts. Intermediate face sets/cache belong in/tmp/astra_vertex017. A120-second process checkpoint saves a source/input-fingerprinted completed queue index and all discovered faces; resume exactly, not approximate.
+
+Stage3 boundary pulling: use one global least-vertex order. For each face choose its least vertex and cone it over recursively triangulated codimension-one faces not containing that vertex. Generate all boundary4-simplices of all facets, only original280 vertices, no new rays. Verify exact ranks/determinants, face restrictions/coherence, tetrahedral incidence2, and exact volume against the old26880 cones. Coverage/nonoverlap must follow from the finite polytope and pulling proof, not from a volume-only or anchor comparison. Checkpoint completed face/facet work at120 seconds.
+
+Archive a compact deterministic actual vertex/facet/simplex table, its SHA256, generator, registration, compact results and proof; the full face lattice and transient data stay outside the repository. Source and cache fingerprints are mandatory; no silent mutation of prior locked data.
+
+Only after geometry completion, run exactly two qualification anchors at256bit Arb: (x,t)=((1,7/8,3/4,5/8,1/2),1/3) and ((1,1,1,1,0),1/8). For each evaluate the new original-vertex formula once and the locked old26880-cone implementation once, and test rigorous interval overlap/zero-containing differences. Formula p_t=(2pi)^-5 sum |detR|/product_j(t-i*x.r_j). No Fejer test, time integration, old failed interval box, grid, or globalg claim. Positive time makes both anchor evaluations finite, including the S2 spatial point.
+
+Completion deliverable: actual facet and simplex scales, process runtimes/checkpoint status, exact geometry certificate/proof, new source hashes, and two anchor crosschecks. This batch alone cannot improve C5.
