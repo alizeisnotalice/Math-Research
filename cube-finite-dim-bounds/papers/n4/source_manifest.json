@@ -1,0 +1,426 @@
+{
+  "base_commit": "e5b541b348786b9aa0906eddd6e9d5e2f6453bcf",
+  "path_base": "cube-finite-dim-bounds/",
+  "paper_scope": "Fixed Lebesgue, centered axis-parallel cube, common radius, general L1 and all positive scales.",
+  "proof_dependencies": {
+    "analysis": "Self-contained sections2-3 use finite probability source; no general-kernel CND/Levy closure needed.",
+    "representation": "Rebuild1152 cones, six stars,20-term full sums and degenerate residues.",
+    "minimum": "All support coefficients including19 A-only terms, internal D positivity, true Green continuity.",
+    "integral": "Deterministic2440-cell geometry,4932474 exact nonnegative residuals, convexity and oneE4/8 cap.",
+    "cost": "Exact Fraction Machin upper and positive cube gap."
+  },
+  "shared_arithmetic": "Python Fraction, SymPy, python-flint exact fmpq_mpoly, Arb; independence does not mean different arithmetic kernels.",
+  "locked_project_sources": [
+    {
+      "path": "audit/030_audit.md",
+      "sha256": "dcbc9f31561668e0b31922990b659786038f205cdb106230921ace53a72db640",
+      "bytes": 8080
+    },
+    {
+      "path": "audit/035_audit.md",
+      "sha256": "dfaaaf755b06ecd8107ac8de4299ffabded0475aa0ba40821e8ecbb356aab121",
+      "bytes": 13264
+    },
+    {
+      "path": "audit/035_check.py",
+      "sha256": "9a998fdbe2de2d8e527f0215aa18fa9ad181c3be8eaf7a2ed08a5c6fea39f374",
+      "bytes": 1323
+    },
+    {
+      "path": "audit/035_integral_check.py",
+      "sha256": "858e761f85acbe7ebfdbe6d182dd66e1cf368f10468e37d89bbe6a408ee31a17",
+      "bytes": 8145
+    },
+    {
+      "path": "audit/035_integral_results.json",
+      "sha256": "026c325d575d380fd4be096f2e7666823423983b6a0ae15e99ac8da105c1344a",
+      "bytes": 378706
+    },
+    {
+      "path": "audit/035_manifest.json",
+      "sha256": "20bab2e853ba76be14929f07c9938bf21e9a1014103c2f3ec42c581f8b74670d",
+      "bytes": 7811
+    },
+    {
+      "path": "audit/035_representation_check.py",
+      "sha256": "4a58462e15fbcc1a48e74060dc1d93471029d4f3bbce24d56695f013d78a6d70",
+      "bytes": 9909
+    },
+    {
+      "path": "audit/035_representation_results.json",
+      "sha256": "f8e2e3f80707401a4cf56b61548e28e06305c3ad63d8ea37545a73cc5e5401b6",
+      "bytes": 8125
+    },
+    {
+      "path": "audit/035_source_snapshot.json",
+      "sha256": "76ef7ef6f9e7b1e7024bb711bdb0394156c779beeef42711c3eeb4e71172ebbd",
+      "bytes": 4760
+    },
+    {
+      "path": "audit/037_audit.md",
+      "sha256": "18fd59063bc40d1756e34cbcc601e79e8a4107be9f6945d2d0a6e6d7df8a06b1",
+      "bytes": 6277
+    },
+    {
+      "path": "audit/037_check.py",
+      "sha256": "dac2b8ec06585e43c5639ff03ebf85f9a82fb84b25361b24113283380639691e",
+      "bytes": 4887
+    },
+    {
+      "path": "audit/037_results.json",
+      "sha256": "e3769d8fe49f9ad605aedeae43215768e9ebfcb1da9d92e12e9745d304d5dd64",
+      "bytes": 5103
+    },
+    {
+      "path": "audit/037_source_snapshot.json",
+      "sha256": "54eacec1ac2a26d39b1e155356cea8430da4fe33b84e72a2e6a93126a003b2cc",
+      "bytes": 1681
+    },
+    {
+      "path": "literature/references.bib",
+      "sha256": "1019133dda87dc340380da8c6b36a5ddab01604288127dbd3f8075ca77c94601",
+      "bytes": 1523
+    },
+    {
+      "path": "literature/table.md",
+      "sha256": "583e3880a41340f58544c3c8712f2a24f1706f16e319e0857bd8f35ebd223cd2",
+      "bytes": 2642
+    },
+    {
+      "path": "proofs/round011_candidate_assembly.md",
+      "sha256": "47b3cfca749873cfffea0b5602331d9983bd778ca2952e544b818035aff58437",
+      "bytes": 3573
+    },
+    {
+      "path": "proofs/round011_face_caps.md",
+      "sha256": "b1564bf4c0cb4a6e2f72786ea5ffae30c922ad45c0cb9874aae6bfa55d4fa8de",
+      "bytes": 4650
+    },
+    {
+      "path": "proofs/round011_n4_minimum_sharpening.md",
+      "sha256": "71723362c82e38c1e8cee9979b932c5c65069ef45425fa2b923fd9bf6d2ee7ee",
+      "bytes": 1253
+    },
+    {
+      "path": "proofs/round011_sharp_rational_cost.md",
+      "sha256": "07fd05dcfde5b096415e6e64ea6c9ef0f04d31d0e883ae9f01b4911992b866c8",
+      "bytes": 1363
+    },
+    {
+      "path": "proofs/round011_shell_partition_review.md",
+      "sha256": "7a93a313ffbcef601f7a660dc4c72d5589ae469eade8e37090218a4b92694cc1",
+      "bytes": 1274
+    },
+    {
+      "path": "proofs/round011_weighted_frame_transfer.md",
+      "sha256": "78ff3d964c555d9dd857da7a4bd9bbb243d5011ebff4b00798cf217ff9239f7f",
+      "bytes": 3865
+    },
+    {
+      "path": "results/round011_n4_actual_candidate_cost.json",
+      "sha256": "42e301bb6adccc517079d0ce15f6afc1d8ced8243d12618630aeafc10f823403",
+      "bytes": 930
+    },
+    {
+      "path": "results/round011_n4_coefficient_ratio.json",
+      "sha256": "19e310dcfbb19c0b6255b72dc139ea09a8721f11382eb5015e428320dc839586",
+      "bytes": 1190
+    },
+    {
+      "path": "results/round011_sharp_rational_cost.json",
+      "sha256": "1c11e0be718c0700665c1c49c3be8a8ba5fc9277b51c46f217d10c37032ad2e7",
+      "bytes": 745
+    },
+    {
+      "path": "results/round011_shell_partition_check.json",
+      "sha256": "bcc7247fcf0f787ad86f8b6a385b10e02186c22cfe341c06c2c13579ad5276b8",
+      "bytes": 806
+    },
+    {
+      "path": "rounds/011q-registration.md",
+      "sha256": "1717a8650e097ec3451cc1ac66da87065a64e65a4c2da7f3d5dd6741d849d987",
+      "bytes": 807
+    },
+    {
+      "path": "src/round011_n4_coefficient_ratio.py",
+      "sha256": "0c1569a760a04c720e00da12d21bd3b7244dd497f6a525df42bdc9e5a5f722f9",
+      "bytes": 2205
+    },
+    {
+      "path": "src/round011_sharp_rational_cost.py",
+      "sha256": "19440f5ab1644f882f283045d894f62fc8033d8fb0a8cd2a98a5c4d2f95858f4",
+      "bytes": 1479
+    },
+    {
+      "path": "src/verify_round011_n4_integral.py",
+      "sha256": "e34372d5fcd6cb9261c2420018165139a28fefd07cf48616ec9f88a992619303",
+      "bytes": 1537
+    },
+    {
+      "path": "upper/continuous_certificate/n4_review_check.py",
+      "sha256": "734fd32bea4ce66b4ebe480458937618c0e48d6130169ad2539324f0ec7f8ff9",
+      "bytes": 8492
+    },
+    {
+      "path": "upper/continuous_certificate/n4_review_manifest.json",
+      "sha256": "642399432f975b9afa70a9b0f09dbc0236bdad84de249e36d87b16cace605474",
+      "bytes": 1631
+    },
+    {
+      "path": "upper/continuous_certificate/n4_review_report.md",
+      "sha256": "a478179b566a9a424db51fe72f1dd657d501262764885f07b45658838a6c603f",
+      "bytes": 9080
+    },
+    {
+      "path": "upper/continuous_certificate/n4_review_result.json",
+      "sha256": "541498cad7799cda89ae91d9bd9e4cf4d12107800aaaa32131df3d2f2a51dfc1",
+      "bytes": 47750
+    },
+    {
+      "path": "upper/continuous_certificate/n4_sharp_review_check.py",
+      "sha256": "a30b782cd40a3fd72b182790a1d7057f82c8e7136bd7088cc739648d2212511a",
+      "bytes": 5226
+    },
+    {
+      "path": "upper/continuous_certificate/n4_sharp_review_report.md",
+      "sha256": "33d3e03b4c5ff707dfa4b386943f35975778bcc1e1bdf57437bbfef57600aeb2",
+      "bytes": 4276
+    },
+    {
+      "path": "upper/continuous_certificate/n4_sharp_review_result.json",
+      "sha256": "77b41046fd2142df2afa5eef13581b2db418fdf0bd651b02b8af08452f1ad352",
+      "bytes": 4871
+    },
+    {
+      "path": "upper/continuous_integral_n4/ci4b_affine.py",
+      "sha256": "5c54cac11da5989d65cf35f1cff03729be47b5d10d4ceb9181a1ec51789e9e34",
+      "bytes": 5845
+    },
+    {
+      "path": "upper/continuous_integral_n4/ci4b_certificate.json",
+      "sha256": "4dbb544ba34762b239adea8e4dc152987ce33c15ef855f459efb63bffa1281b0",
+      "bytes": 1541620
+    },
+    {
+      "path": "upper/continuous_integral_n4/ci4b_certificate.py",
+      "sha256": "babf044645845ad0a6bc5f372e9a007f2348601fb25565182c7bc6f736dbaead",
+      "bytes": 5831
+    },
+    {
+      "path": "upper/continuous_integral_n4/ci4b_check_results.json",
+      "sha256": "ea99abf732e0ad6cb2981321f01e922f1a2251e5bdeb50271bad21a788ea0351",
+      "bytes": 2324
+    },
+    {
+      "path": "upper/continuous_integral_n4/ci4b_manifest.json",
+      "sha256": "81da109495409d65a585ba3595dbb487c8a07683027d4de308deced14488137e",
+      "bytes": 1632
+    },
+    {
+      "path": "upper/continuous_integral_n4/ci4b_pilot_results.json",
+      "sha256": "b3ccdd8a373678b73e526d53e7708f483cef511f3cdf81a155a2dea564e9eeae",
+      "bytes": 14149
+    },
+    {
+      "path": "upper/continuous_integral_n4/ci4b_proof.md",
+      "sha256": "abeb3e65246d61417cb7778f55db6a40197c5b0f1d65bc50c5fcf9eaba845ec4",
+      "bytes": 8695
+    },
+    {
+      "path": "upper/continuous_integral_n4/ci4b_registration.md",
+      "sha256": "a5696336c394920573905c491ad38c789a8d499831cf6865b36cb5ccdca68d53",
+      "bytes": 2273
+    },
+    {
+      "path": "upper/u09_frame_transfer.md",
+      "sha256": "4ca72f62da5d4cafe3b3b2662a54e9574424c3810332b861dbf3840ad90ef265",
+      "bytes": 5989
+    },
+    {
+      "path": "upper/u09_positive_part.md",
+      "sha256": "3745b83f22961ac7977cf1b4a1e718fa77d8a2eb0691b15398bc4fb709e48912",
+      "bytes": 7618
+    },
+    {
+      "path": "upper/u11_green.py",
+      "sha256": "fdfa422f2105710c84e7e43fdff1a4dcbef20dcc4e8a69d5a42116db3010b99d",
+      "bytes": 7039
+    },
+    {
+      "path": "upper/u11_manifest.json",
+      "sha256": "de82d61a49ead499bdacfa89b57a5f6f50871f2d119610bdb431724f34e3be6e",
+      "bytes": 1407
+    },
+    {
+      "path": "upper/u11_minimum_certificate_check.py",
+      "sha256": "35489f9fa4c52a09154105ad949a8d3410f61bf226e8a24dd8d57359f0a3e060",
+      "bytes": 4685
+    },
+    {
+      "path": "upper/u11_minimum_certificate_results.json",
+      "sha256": "23a8ce3a07c6c5ad94b29dd0b57aba4dd4e3f1fd4a9098374ec700b73b0feb3d",
+      "bytes": 869800
+    },
+    {
+      "path": "upper/u11_minimum_dd.py",
+      "sha256": "2ed3070118111b93b7f5091e8d66145d42a49ac6297ba4f4974e148cf6743797",
+      "bytes": 3510
+    },
+    {
+      "path": "upper/u11_minimum_global_interface.py",
+      "sha256": "6c8d1a5b4912103df8105f7c7662ac2265b0978f91de00651be03acfb1790bae",
+      "bytes": 2435
+    },
+    {
+      "path": "upper/u11_minimum_global_results.json",
+      "sha256": "43be4de041c9da823d192ff6d8ef2440c3668f88b13fc52dbff320dd0011d96f",
+      "bytes": 171990
+    },
+    {
+      "path": "upper/u11_minimum_global_revision.py",
+      "sha256": "1fc65358b0eb70f975d98a0f03620ca0ddacecba006dbcd55160bfc10c98e13f",
+      "bytes": 3627
+    },
+    {
+      "path": "upper/u11_minimum_initial_check.py",
+      "sha256": "08e1a39c0d98758888e6a67b4fdcd92a9767a631146a86331b4a31b806499b1d",
+      "bytes": 2914
+    },
+    {
+      "path": "upper/u11_minimum_initial_summary.json",
+      "sha256": "e93bad0bfed1e90bb3855bf3dd1b79d1f7f8f237c2341337b7bafcd640c0ceff",
+      "bytes": 4280
+    },
+    {
+      "path": "upper/u11_minimum_inputs.json",
+      "sha256": "971c11315f4c7cc345d127f511dd3a56687a7aae1e71bbde6291f9ae921af929",
+      "bytes": 806
+    },
+    {
+      "path": "upper/u11_minimum_manifest.json",
+      "sha256": "ce84e15718bf1af45ad03432612e2e54f1bc29d1105942e33cac1a866d0bf069",
+      "bytes": 3303
+    },
+    {
+      "path": "upper/u11_minimum_matlab.m",
+      "sha256": "11f71ee1795d1e68cd5d6a6dfb096e1567100f2db17b200c22db3858c384458e",
+      "bytes": 1928
+    },
+    {
+      "path": "upper/u11_minimum_preregistration.md",
+      "sha256": "adb42935694bfe4e3cfc5352993c942d87e1dee0e92c4e1d70d63802ec26a61c",
+      "bytes": 2592
+    },
+    {
+      "path": "upper/u11_minimum_proof.md",
+      "sha256": "5546ee2fd0c8dddab3b88d0db79143a846a81711f13c6967b4fa922fa9c4757e",
+      "bytes": 5910
+    },
+    {
+      "path": "upper/u11_minimum_report.md",
+      "sha256": "d12079c2e3eb359f8dfc75c4c731a14baed52c944db1b538a5bde4a63f4ad053",
+      "bytes": 5920
+    },
+    {
+      "path": "upper/u11_minimum_run_receipt.json",
+      "sha256": "2d1459190900f5e6c04b503f1de0f1bcf624fe07eb43e4d3d15c703a657a7bd4",
+      "bytes": 1699
+    },
+    {
+      "path": "upper/u11_minimum_star_results.json",
+      "sha256": "90c3a75635d1caf898ad2662656f35f9a2afc67aebba5f4652e5730c1ffc166f",
+      "bytes": 12307
+    },
+    {
+      "path": "upper/u11_minimum_star_revision.py",
+      "sha256": "bb167652210adc18a8d9c95be6f5e2a9a7911adf0cb996be0e621359a3c1319a",
+      "bytes": 2628
+    },
+    {
+      "path": "upper/u11_representation.md",
+      "sha256": "63f759e850f3864390cf2af6bf39c57ead78130421389a2cfc5e853335063ea5",
+      "bytes": 8625
+    },
+    {
+      "path": "upper/u11_results.json",
+      "sha256": "ede4665638817012b2970f6954789f207e3933b352abcaf9250a4a53c5e8dd5d",
+      "bytes": 14670
+    }
+  ],
+  "second_review_read_sources": [
+    {
+      "read_from": "/Users/zhengzhihao/Desktop/T/Math-Research-finite-review-theory/cube-finite-dim-bounds/audit/second_review/theory/paper_finite_source.md",
+      "integration_path": "audit/second_review/theory/paper_finite_source.md",
+      "sha256": "5e5cd1cac6cd3172eeff584696661066c61c3b7a666ed287bc1cbd5e93325608",
+      "bytes": 8212
+    },
+    {
+      "read_from": "/Users/zhengzhihao/Desktop/T/Math-Research-finite-review-n4/cube-finite-dim-bounds/audit/second_review/n4/review.md",
+      "integration_path": "audit/second_review/n4/review.md",
+      "sha256": "1fa32e37b9fff987e32d84e17f2938c0cbb75d2aa002fe580ef11081af1e8995",
+      "bytes": 14774
+    },
+    {
+      "read_from": "/Users/zhengzhihao/Desktop/T/Math-Research-finite-review-n4/cube-finite-dim-bounds/audit/second_review/n4/check.py",
+      "integration_path": "audit/second_review/n4/check.py",
+      "sha256": "8c282183dd6150a72dbe2ade971048492069f64e82062158ec614cefe1a2997e",
+      "bytes": 10615
+    },
+    {
+      "read_from": "/Users/zhengzhihao/Desktop/T/Math-Research-finite-review-n4/cube-finite-dim-bounds/audit/second_review/n4/results.json",
+      "integration_path": "audit/second_review/n4/results.json",
+      "sha256": "ace29195ea47d5ba5ace35272318625caa167a4350e75dbab15db1bf0ae462dc",
+      "bytes": 4606
+    },
+    {
+      "read_from": "/Users/zhengzhihao/Desktop/T/Math-Research-finite-review-theory/cube-finite-dim-bounds/audit/second_review/theory/audit.md",
+      "integration_path": "audit/second_review/theory/audit.md",
+      "sha256": "f683a1f7e7e1b01e20063a93e4488102e690c8b73ed1e9865707e83f93b849c6",
+      "bytes": 16237
+    },
+    {
+      "read_from": "/Users/zhengzhihao/Desktop/T/Math-Research-finite-review-theory/cube-finite-dim-bounds/audit/second_review/theory/manifest.json",
+      "integration_path": "audit/second_review/theory/manifest.json",
+      "sha256": "53670a93b218209f04c9733b9db2d2163b95af2779021ecdff364cd7450ff2b5",
+      "bytes": 1675
+    }
+  ],
+  "paper_files": [
+    {
+      "path": "papers/n4/main.tex",
+      "sha256": "1e173ee28eed26945f5f94523c902d4c1496f9218cc3fd488376ee01a76b984b",
+      "bytes": 35043
+    },
+    {
+      "path": "papers/n4/references.bib",
+      "sha256": "700a5f3a71069a1659993e3b4bd0721b318dfd542c97e46ed8332812776af56e",
+      "bytes": 1084
+    },
+    {
+      "path": "papers/n4/main.pdf",
+      "sha256": "956ba8990a911911aef872ee9cac62be63a70eb5ba7ed03d23582fd426b87dcd",
+      "bytes": 457443
+    },
+    {
+      "path": "papers/n4/draft_review_notes.md",
+      "sha256": "76b236ba7be97af2a348d5159083b59e37d83826f8856525adf1cda34c2adbfe",
+      "bytes": 3053
+    },
+    {
+      "path": "papers/n4/check_paper_scalars.py",
+      "sha256": "0bec6421f54e40ffe95ee5eb25fa7f7cbbbed12cd5dc75442668dfb1bd557f51",
+      "bytes": 1240
+    },
+    {
+      "path": "papers/n4/paper_scalar_check.json",
+      "sha256": "2f9af9a5e357a89f1b10ae0d1007a23925b19b98c86ddf0063042051ef286fd4",
+      "bytes": 612
+    },
+    {
+      "path": "papers/n4/compile_receipt.json",
+      "sha256": "ef32ac5cf7853532868b5dfcad11fcb4877d660f9c18742121292e66928d7407",
+      "bytes": 638
+    }
+  ],
+  "review_status": "Shared theory ACCEPT; concrete n4 complete second review ACCEPT; author review pending."
+}

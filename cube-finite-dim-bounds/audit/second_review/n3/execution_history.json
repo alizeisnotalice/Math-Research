@@ -1,0 +1,60 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "checker_sha256": "54331341c8dc618199b5f413eaa1179d82ee6187002214fd829fc5907a11d763",
+      "exit_code": 1,
+      "fresh_g_nodes_completed": 59976,
+      "fresh_I_nodes_completed": 2178,
+      "all_g_above_g0": true,
+      "failed_assertion": "independent interval nesting at I patch [64,64], own mean upper larger by 4.8683750861e-119; both range endpoints nested",
+      "interpretation": "Interval enclosures from different arithmetic paths need not nest. This is not evidence that original endpoint is invalid. No math parameters changed.",
+      "next_action": "Replace generic root displacement bound 2^-128 in new audit only by directly certified max root displacement; retain strict endpoint nesting assertion, rerun full default batch."
+    },
+    {
+      "attempt": 2,
+      "checker_sha256": "39462ddf81bb128b624ee2756579fa7927379d04e49054a799f67a6f994c4d9f",
+      "exit_code": 0,
+      "session": 87009,
+      "seconds": 84.88775508399704,
+      "fresh_g_nodes_completed": 59976,
+      "fresh_I_nodes_completed": 7623,
+      "distinct_I_patches": [
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          71,
+          34
+        ],
+        [
+          127,
+          0
+        ],
+        [
+          127,
+          57
+        ],
+        [
+          127,
+          126
+        ],
+        [
+          127,
+          127
+        ]
+      ],
+      "all_g_above_g0": true,
+      "all_selected_I_range_and_mean_nested": true,
+      "root_displacement_change": "Actual Arb512bit upper bound on every true Chebyshev root minus same dyadic replacement; maximum eta<2^-128. No epsilon/degree/grid/rho/node change or tolerance relaxation.",
+      "eta_g_exact": "18911541796712564628824723915760226129286407181179294600386706340984086117207518473276002659668251451787316394525652123041793/7198262071269114212496861612297570974191515389283066612961208916178940129074380592510465097766225371439873457013633432197133225688790879502413624289384262168215552",
+      "eta_I_exact": "2544098963891098886464607520427035385498770140319837218218276280254156880732338627577243860931731117164181550952777103695873/899782758908639276562107701537196371773939423660383326620151114522367516134297574063808137220778171429984182126704179024641653211098859937801703036173032771026944"
+    }
+  ],
+  "total_actual_new_point_evaluations_both_attempts": 129753
+}

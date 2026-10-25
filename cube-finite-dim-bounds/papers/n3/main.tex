@@ -1,0 +1,680 @@
+% !TEX program = xelatex
+\documentclass[UTF8,11pt,a4paper,fontset=fandol]{ctexart}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,geometry,booktabs,longtable,array}
+\usepackage{hyperref}
+\geometry{margin=26mm}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,pdftitle={三维中心立方体极大算子的一个严格弱型上界}}
+\allowdisplaybreaks
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{corollary}[theorem]{推论}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{定义}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{注}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\pos}[1]{(#1)_+}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Rea}{Re}
+\DeclareMathOperator{\Dom}{Dom}
+\DeclareMathOperator{\mean}{mean}
+\newcommand{\src}[1]{\nolinkurl{#1}}
+\title{三维中心立方体极大算子的一个严格弱型上界\\\large 有限方向Cauchy势、障碍比较与连续计算证书}
+\author{}
+\date{2026年10月25日\\\small 匿名中文审核稿；共享理论与三维证书第二次复审已通过}
+\begin{document}
+\maketitle
+\begin{abstract}
+对固定Lebesgue测度下的三维中心轴平行立方体极大算子，本文给出弱$(1,1)$常数的严格上界$C_3<1979/250=7.916$。构造采用四条体对角方向及六条面对角方向的Cauchy过程，面对角权重固定为$1/3$。其Green势正部具有全空间有限概率源；将该源与障碍分解配对，可用同一接收集控制全部共同半径，并以单调逼近覆盖一般$L^1$输入。计算部分将真实Green势化为96个谱锥上的实Hermite差商，在136个闭块上认证方体下界，在8256个闭块上认证截时核的积分上界，再以整个平面上的短时$L^{3/2}$估计付清方向线奇性。全部连续误差、节点位移、均值及凸弦判据均明确给出。向外有理参数为$g=2621323989/500000000000$及$I_0=23129127/40000000000$；最终比较只用有理运算。本文不确定最优常数，也不声称该固定核族或公开文献范围的穷尽最优性。
+\end{abstract}
+\noindent\textbf{关键词：}中心极大算子；弱型估计；非局部障碍问题；Cauchy过程；Green势；计算机辅助证明。
+
+\section{问题、结论与方法定位}
+对$x\in\R^3$及$r>0$，令$Q(x,r)=x+[-r,r]^3$，定义
+\begin{equation}\label{eq:maximal}
+ M^\square_3 f(x)=\sup_{r>0}\frac1{(2r)^3}\int_{Q(x,r)}\abs{f(y)}\dd y,
+ \qquad
+ C_3=\sup_{\substack{0\ne f\in L^1(\R^3)\\\lambda>0}}
+ \frac{\lambda\abs{\{M^\square_3 f>\lambda\}}}{\norm f_1}.
+\end{equation}
+本文所有体积、输入积分和卷积均取同一个固定Lebesgue测度。半径$r$由三个坐标共同使用，尺度遍历全部正数。
+
+\begin{theorem}\label{thm:main}
+式\eqref{eq:maximal}的常数满足
+\begin{equation}\label{eq:bound}
+ C_3\le \sqrt{\frac{1547906585017734375000000000}
+ {24707828464688747938727861}}<\frac{1979}{250}=7.916.
+\end{equation}
+\end{theorem}
+
+中心方体的固定维常数与随维数变化的估计是相关而不同的问题。Aldaz的工作给出固定维下界及维数增长现象\cite{Aldaz2000,Aldaz2011}；对一般局部有限Borel背景的统一估计可给出三维上界$2^3=8$\cite{AldazKissing2020}。该一般背景估计的锐性并不等于Lebesgue背景下$8$的最优性。本文严格降低这一已核公开通用基准，不就全部文献作全球最优性判断。
+
+证明采用Lin公开手稿中的部分扫掠与障碍比较框架\cite{Lin}。我们据此构造适合三维方体的真实有限方向生成元，并在本文证明所用障碍分解、正部势的全空间源以及一般$L^1$/全部尺度传递。具体贡献是体对角与面对角混合的固定模型、其96锥表达，以及足以降低成本的连续认证；这些内容不是从公开框架自动得到的数值结论。本文只需要正部势的有限概率源，不需要断言任意候选核都具有有限跳源。
+
+证明分为三个层次。首先把$C_3$控制为一个正核的质量；其次把该质量化为Green势的方体下界和一个面上的积分；最后用闭块插值及严格误差界认证这两个量。百万量级的节点不逐项印入正文，正文给出确定的有限接受判据，附录给出源码、数据及SHA256入口。存档程序的实际运行是计算证据，分析论证则不以程序输出中的状态词替代。
+
+\section{真实半群与障碍分解}
+\subsection{有限方向Cauchy生成元}
+令
+\[
+ V_b=\{(1,\varepsilon_2,\varepsilon_3):\varepsilon_2,\varepsilon_3\in\{-1,1\}\},
+ \quad V_f=\{e_i+e_j,e_i-e_j:1\le i<j\le3\}.
+\]
+方向均不单位化。对$v\in V_b$置$c_v=1$，对$v\in V_f$置$c_v=1/3$。定义
+\begin{equation}\label{eq:symbol}
+ \psi(\xi)=\sum_{v\in V_b}\abs{v\cdot\xi}
+       +\frac13\sum_{v\in V_f}\abs{v\cdot\xi},\qquad L=-\psi(D).
+\end{equation}
+Fourier变换约定为$\widehat h(\xi)=\int e^{-ix\cdot\xi}h(x)\dd x$，逆变换常数为$(2\pi)^{-3}$。若$Z^v_t$为相互独立、尺度为$c_vt$的一维Cauchy变量，则$X_t=\sum_vvZ^v_t$的特征函数是$e^{-t\psi}$。因此$P_th=p_t*h$是保正、保质量、自伴的卷积半群。
+
+\begin{lemma}\label{lem:semigroup}
+$p_t$是严格正连续概率密度，满足$p_t(x)=t^{-3}p_1(x/t)$。此外$\psi\asymp\abs\xi$，$L$在$L^2$中的算子域为$H^1(\R^3)$，二次型域为$H^{1/2}(\R^3)$。对$\phi\in C_c^\infty$，
+\begin{equation}\label{eq:generator}
+ L\phi(x)=\frac1{2\pi}\sum_vc_v\int_\R
+ \frac{\phi(x+sv)+\phi(x-sv)-2\phi(x)}{s^2}\dd s
+ \in L^1\cap C_0\cap L^\infty.
+\end{equation}
+可取$\norm{p_t}_\infty\le C_*t^{-3}$，其中$C_*=1/(4\pi^3)$。
+\end{lemma}
+\begin{proof}
+取三个体对角方向构成列矩阵$B$，可使$\abs{\det B}=4$。对应三项的密度为
+\[
+ p_t^B(x)=\frac1{\abs{\det B}}\prod_{j=1}^3
+ \frac{t}{\pi(t^2+(B^{-1}x)_j^2)}.
+\]
+其余项为概率测度，故真实密度是$p_t^B$与该测度的卷积。这给出严格正性、连续性、质量和峰值界；缩放来自各独立变量的共同时间。Gram恒等式$\sum_{V_b}vv^T=4I$及$\sum_{V_f}vv^T=4I$给
+\[
+ 2\abs\xi\le\psi(\xi)\le(4+2\sqrt6/3)\abs\xi.
+\]
+域的结论由Plancherel定理成立。式\eqref{eq:generator}来自一维Cauchy生成元；二差分可由下式控制：
+\[\min\{s^2\abs v^2\norm{D^2\phi},4\norm\phi\}.\]
+分别用$L^1$与上确界范数积分即得所述空间归属。也由此及一阶齐次性得
+\begin{equation}\label{eq:cutoff}
+ \norm{L\chi(\cdot/R)}_\infty=R^{-1}\norm{L\chi}_\infty,
+ \qquad \norm{L\chi(\cdot/\varepsilon)}_1
+       =\varepsilon^2\norm{L\chi}_1.
+\end{equation}
+\end{proof}
+
+\subsection{同一接收集的障碍分解}
+\begin{proposition}\label{prop:obstacle}
+若$f\ge0$有界且紧支撑，$\kappa>0$，则存在
+\[
+ u\ge0,\quad u\in L^1\cap L^\infty\cap H^1,
+ \qquad \sigma\in L^1\cap L^\infty,
+\]
+使得
+\begin{equation}\label{eq:obstacle}
+ f=\sigma-Lu,\quad 0\le\sigma\le\kappa,
+ \quad \sigma=\kappa\ \text{几乎处处于 }D=\{u>0\},
+ \quad \int\sigma=\int f.
+\end{equation}
+特别地$\kappa\abs D\le\norm f_1$。
+\end{proposition}
+\begin{proof}
+$f=0$时取零解。以下置$F=\norm f_\infty$、$m=\norm f_1$，并对$0<t\le1$定义
+\[
+ V_t=t\sum_{j=0}^\infty P_{jt}f,
+ \qquad u_{t,0}=0,\qquad
+ u_{t,k+1}=\pos{P_tu_{t,k}+t(f-\kappa)}.
+\]
+由$\norm{P_sf}_\infty\le\min(F,C_*ms^{-3})$，级数有界且
+\begin{equation}\label{eq:Vbound}
+ \norm{V_t}_\infty\le tF+\frac32(C_*m)^{1/3}F^{2/3}=:A_t\le A.
+\end{equation}
+正性及$P_tV_t=V_t-tf$说明迭代递增且被$V_t$控制。其极限$u_t$满足固定点方程，并且$u_t\le(V_t-\kappa t)_+$。由于$V_t-tf\in C_0$而$f$紧支撑，固定$t$时$u_t$有本质紧支撑，故属于$L^1\cap L^2$。
+
+记$L_t=(P_t-I)/t$及$\sigma_t=f+L_tu_t$。在$u_t>0$处固定点式给$\sigma_t=\kappa$；在$u_t=0$处它给$0\le f+P_tu_t/t\le\kappa$。半群保质量遂给$\int\sigma_t=m$。把固定点饱和关系乘$u_t$积分，得到
+\begin{equation}\label{eq:energy}
+ \mathcal E_t(u_t,u_t)+\kappa\norm{u_t}_1=\int fu_t,
+ \qquad \mathcal E_t(h,h)=t^{-1}\langle h,(I-P_t)h\rangle\ge0.
+\end{equation}
+因此
+\[
+ \norm{u_t}_1\le mA/\kappa,\quad
+ \norm{u_t}_2^2\le mA^2/\kappa,\quad
+ \norm{\sigma_t}_2^2\le\kappa m,\quad
+ \norm{L_tu_t}_2\le\norm f_2+\sqrt{\kappa m}.
+\]
+这里统一$L^1$界来自能量式，而不是声称$V_t\in L^1$。
+
+令$\psi_t=(1-e^{-t\psi})/t$。对$Q>0$及$t\le Q^{-1}$，在$\psi\ge Q$处有$\psi_t\ge(1-e^{-1})Q$。上一行故给$\widehat u_t$的统一$L^2$高频尾$O(Q^{-2})$。低频截断在$H^1$中有界；在任意有界区域使用Rellich紧性，再令频率截断增长，得到$t_j\downarrow0$及子列，使$u_{t_j}$局部强$L^2$、几乎处处收敛到$u$，同时$u_{t_j}$、$\sigma_{t_j}$分别弱$L^2$收敛到$u$、$\sigma$。Fatou给$u\in L^1\cap L^\infty$。
+
+对Schwartz测试函数，$L_t\phi\to L\phi$于$L^2$，所以$Lu=\sigma-f$于分布及$L^2$。Fourier乘子表征给$u\in H^1$。弱极限保持$0\le\sigma\le\kappa$。在$u>0$的几乎处处点，$u_{t_j}$最终为正，故$\sigma_{t_j}$最终等于$\kappa$；用有界区域上的支配收敛与弱极限配对，得$\sigma=\kappa$于$D$。
+
+用$0\le\chi_R\uparrow1$的光滑截断测试弱极限，先得$\int\sigma\le m$。再在$f=\sigma-Lu$中测试$\chi_R$，由\eqref{eq:cutoff}及$u\in L^1$得$\langle u,L\chi_R\rangle\to0$。故$\int\sigma=m$，没有质量逃逸。最后$\kappa\abs D=\int_D\sigma\le m$。
+\end{proof}
+
+\section{Green势正部、有限源及全部尺度比较}
+\subsection{可积性与全空间分布源}
+定义扩展非负函数
+\begin{equation}\label{eq:Green}
+ G(x)=\int_0^\infty p_t(x)\dd t,
+ \qquad W_c(x)=\pos{G(x)-c}\quad(c>0).
+\end{equation}
+$G$允许在方向线上取无穷值。以下证明不删去这些线、正部的非光滑界面或无穷远尾。
+
+\begin{proposition}\label{prop:source}
+$G$局部可积、几乎处处有限且属于弱$L^{3/2}$；$W_c$为非负偶$L^1$函数。整个$\R^3$上有
+\begin{equation}\label{eq:source}
+ LW_c=\mu_c-\delta_0,
+ \qquad \mu_c\ge0,\quad\mu_c(\R^3)=1,\quad\mu_c(\{0\})=0,
+\end{equation}
+其中$\mu_c$为有限Radon测度。
+\end{proposition}
+\begin{proof}
+写$U_T=\int_0^Tp_t\dd t$、$A_T=\int_T^\infty p_t\dd t$。则$\norm{U_T}_1=T$，$0\le A_T\le C_*/(2T^2)$。取$T=(C_*/\lambda)^{1/2}$，Chebyshev不等式给
+\[
+ \abs{\{G>\lambda\}}\le 2\sqrt{C_*}\lambda^{-3/2}.
+\]
+又对有限体积集合$E$，
+$\int_EG\le\int_0^\infty\min(1,C_*\abs E t^{-3})\dd t<\infty$。
+由层积分，$\int W_c=\int_c^\infty\abs{\{G>s\}}\dd s<\infty$。
+
+对$\phi\in C_c^\infty$，引理\ref{lem:semigroup}给
+\[
+ \int G\abs{L\phi}
+ \le\int_0^\infty\min(\norm{L\phi}_\infty,
+ C_*\norm{L\phi}_1t^{-3})\dd t<\infty.
+\]
+半群导数遂可积分，且$P_T\phi(0)\to0$，从而
+$\langle G,L\phi\rangle=\int_0^\infty P_tL\phi(0)\dd t=-\phi(0)$。
+即$LG=-\delta_0$。
+
+正Tonelli与半群律给$G=P_tG+U_t$。对几乎处处有限点，保常数及正部凸性给
+\[
+ P_tW_c\ge(P_tG-c)_+\ge W_c-U_t.
+\]
+将其乘非负测试$\phi$，利用自伴性并除以$t$。左边极限为$\langle W_c,L\phi\rangle$，因为$(P_t\phi-\phi)/t\to L\phi$于$L^\infty$；右边$-\langle U_t/t,\phi\rangle\to-\phi(0)$。测试函数的上述生成元极限也直接由$\psi\widehat\phi\in L^1$及Fourier支配收敛成立。故$LW_c+\delta_0$是正分布，因而是正Radon测度$\mu_c$。
+
+对\eqref{eq:cutoff}的大截断，
+$\int\chi_R\dd\mu_c=1+\langle W_c,L\chi_R\rangle\to1$。
+正性与单调收敛给总质量$1$。再置$h=\min(G,c)$，则$0\le h\le c$且$\mu_c=-Lh$。取非负光滑$\chi$在原点邻域等于$1$，由小截断的$L^1$缩放，
+\[
+ 0\le\int\chi(x/\varepsilon)\dd\mu_c(x)
+ \le c\varepsilon^2\norm{L\chi}_1\longrightarrow0.
+\]
+因此原点没有正原子。证明中的所有配对均是全空间配对。
+\end{proof}
+
+\subsection{具体有限源足够的比较定理}
+\begin{lemma}\label{lem:finite-source}
+若$W=W_c$且$u\in H^1$，则
+\begin{equation}\label{eq:conv-source}
+ W*Lu=\mu_c*u-u\quad\text{于 }L^2.
+\end{equation}
+若$u\ge0$且$D=\{u>0\}$，则右边在$D^c$上几乎处处非负。
+\end{lemma}
+\begin{proof}
+$W\in L^1$、$Lu\in L^2$及有限测度$\mu_c$使两边均为$L^2$函数。对Schwartz测试$\phi$，因$\psi\widehat\phi\in L^1$及$W\in L^1$，Fourier逆积分与$W$的配对可由Fubini交换。因此对\eqref{eq:source}作Fourier变换确实给出
+$-\psi\widehat W=\widehat\mu_c-1$，先在分布意义成立，两边也是连续函数。乘$\widehat u$并用Plancherel即得\eqref{eq:conv-source}。正测度卷积保持非负性；在$D^c$上$u=0$，故结论成立。这一步只用有限源，不涉及无限跳测度的两个无穷量相减。
+\end{proof}
+
+\begin{proposition}\label{prop:comparison}
+若$G\ge g>0$几乎处处于$[-1,1]^3$，取$0<c<g$及
+\begin{equation}\label{eq:kernel}
+ K=\frac{W_c}{8(g-c)},\quad a=\frac1{8(g-c)},
+ \qquad K_r(x)=r^{-3}K(x/r),\qquad M=\int K.
+\end{equation}
+则对一般$f\in L^1$及$\lambda>0$，
+\begin{equation}\label{eq:weakK}
+ \lambda\abs{\{\sup_{r>0}K_r*\abs f>\lambda\}}\le M\norm f_1.
+\end{equation}
+特别地$C_3\le M$。
+\end{proposition}
+\begin{proof}
+先令$f\ge0$有界紧支撑，并在命题\ref{prop:obstacle}中取$\kappa=\lambda/M$。一阶齐次性给，若$\mu_{c,r}$为$\mu_c$在$x\mapsto rx$下的像测度，
+\[
+ LK_r=\frac a r(\mu_{c,r}-\delta_0),\qquad
+ K_r*Lu=\frac a r(\mu_{c,r}*u-u).
+\]
+后一恒等式按引理\ref{lem:finite-source}同样在$L^2$成立。因此对每个固定$r$，在同一个$D^c$上几乎处处有
+\[
+ K_r*f=K_r*\sigma-K_r*Lu\le K_r*\sigma\le\kappa M=\lambda.
+\]
+先对正有理$r$合并可数零集。核缩放在$L^1$中连续，且
+$\norm{K_r*f-K_s*f}_\infty\le\norm f_\infty\norm{K_r-K_s}_1$，
+所以同一结论扩到所有$r>0$。坏集包含于$D$（模零集），由$\kappa\abs D\le\norm f_1$得\eqref{eq:weakK}。
+
+对一般$f$，令$f_j=\min(\abs f,j)\one_{[-j,j]^3}\uparrow\abs f$。
+非负卷积以及对全部$r$的上确界均与该单调极限交换，故坏集及质量单调收敛。各$f_j$的上确界等于有理尺度的上确界，因而可测；极限同样可测。最后$K\ge\one_{[-1,1]^3}/8$，逐尺度方体平均被$K_r*\abs f$支配，得所述$C_3$结论。
+\end{proof}
+
+\begin{remark}
+同一接收集$D$指对一次障碍分解的全部共同半径使用同一个集合，而不是对所有逼近输入强制使用同一个障碍解。固定Lebesgue背景实际用于保质量、卷积自伴、Fourier恒等式、测度卷积的Fubini及$K_r*\sigma\le\kappa\int K$。本文不把该推论转移到任意正密度背景或各坐标独立尺度。
+\end{remark}
+
+\section{质量成本化为单面上的两个量}
+符号\eqref{eq:symbol}在坐标反射和置换下不变，因此$G$具有立方体对称性。半群缩放给$G(rx)=r^{-2}G(x)$，包括无穷值。定义
+\begin{equation}\label{eq:I}
+ I=\int_{[0,1]^2}G(1,y,z)^{3/2}\dd y\dd z,
+ \qquad J=\sum_{\text{六个面 }F}\int_FG(y)^{3/2}\dd S(y).
+\end{equation}
+\begin{lemma}\label{lem:mass}
+$I<\infty$，$J=24I$，且对$c>0$有
+\begin{equation}\label{eq:mass}
+ \int W_c=\frac23c^{-1/2}J.
+\end{equation}
+因此若$G\ge g$于方体且$I\le I_0$，取$c=g/3$即得
+\begin{equation}\label{eq:cost}
+ C_3\le\int K\le\frac{3^{3/2}I_0}{g^{3/2}}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+置$V=\abs{\{G>1\}}<\infty$；有限性已由弱$L^{3/2}$证明，而非仅由齐次性推出。齐次性给$\abs{\{G>s\}}=s^{-3/2}V$，故$\int W_c=2Vc^{-1/2}$。用方体各面射线参数化$x=ry$，Jacobian为$r^2\dd r\dd S(y)$，由Tonelli有
+\[
+ V=\sum_F\int_F\int_0^{G(y)^{1/2}}r^2\dd r\dd S(y)=J/3.
+\]
+从而$J$有限并得\eqref{eq:mass}。六面及面内四象限对称给$J=24I$。将\eqref{eq:mass}除以$8(g-c)$，函数$c^{-1/2}/(g-c)$在$0<c<g$中唯一极小于$c=g/3$，代入即得\eqref{eq:cost}。
+\end{proof}
+
+\section{96锥上的真实Green表达}
+\subsection{谱空间闭覆盖与正常数}
+先保留面对角权$\tau\ge0$以展示表示，最后固定$\tau=1/3$。将频率的绝对坐标排序为$a\ge b\ge c\ge0$。体对角谱和、面对角谱和分别为
+\[
+ \max\{4a,2(a+b+c)\},\qquad4a+2b.
+\]
+设$A=(1,0,0)$、$B=(1,1,0)$、$C=(2,1,1)$、$D=(1,1,1)$。排序区域分为锥$ABC$及$BCD$；对应非负坐标分别是
+\[
+ (a-b-c,b-c,c),\qquad(b-c,a-b,b+c-a).
+\]
+二者分别对应$a\ge b+c$和$a\le b+c$，Jacobian绝对值均为$1$。48个带符号置换区域给96个锥，内部互不相交，边界为有限个平面的并。每个原方向在每锥三条射线上的投影同弱号，故绝对值谱确实在锥内线性。四类射线的速率为
+\begin{equation}\label{eq:rates}
+ k_A=4+4\tau,\quad k_B=4+6\tau,\quad
+ k_C=8+10\tau,\quad k_D=6+6\tau.
+\end{equation}
+对锥$q$写三射线为$r_{qj}$、对应速率为$k_{qj}$，则逐一积分正实部指数，得到
+\begin{equation}\label{eq:heatcones}
+ p_t(x)=\frac1{8\pi^3}\sum_{q=1}^{96}
+ \prod_{j=1}^3(tk_{qj}-ix\cdot r_{qj})^{-1}.
+\end{equation}
+反锥项为共轭，所以也可写成48对的两倍实部。不能取每项绝对值替代原和。
+
+谱单位体积为
+\[
+ \abs{\{\psi_\tau\le1\}}=
+ \frac5{6(1+\tau)(2+3\tau)(4+5\tau)}.
+\]
+因此在$\tau=1/3$时
+\begin{equation}\label{eq:peak}
+ 0<p_t(x)\le p_t(0)=\frac{15}{544\pi^3t^3},
+ \qquad \int_T^\infty p_t(x)\dd t\le\frac{15}{1088\pi^3T^2}.
+\end{equation}
+上界来自Fourier三角不等式，正性来自真实概率过程；它们不是由锥的单项符号推出。
+
+\subsection{截时实Hermite差商及全部退化}
+以下记
+\[
+ H_\varepsilon(x)=\int_\varepsilon^\infty p_t(x)\dd t,
+ \quad f_\varepsilon(b)=\tfrac12\log(\varepsilon^2+b^2),
+ \quad b_{qj}=\frac{x\cdot r_{qj}}{k_{qj}},\quad
+ w_q=\prod_jk_{qj}^{-1}.
+\]
+$H_\varepsilon$与正部势$W_c$是不同对象。对实节点，$f[b_1,b_2,b_3]$记二阶差商，节点重复时按Hermite导数定义。
+\begin{proposition}\label{prop:dd}
+任意$\varepsilon>0$及$x\in\R^3$均有
+\begin{equation}\label{eq:DD}
+ H_\varepsilon(x)=\frac1{8\pi^3}\sum_{q=1}^{96}
+ w_q f_\varepsilon[b_{q1},b_{q2},b_{q3}].
+\end{equation}
+该式包含零节点及任意重复节点，无复对数分支选择。
+\end{proposition}
+\begin{proof}
+互异节点的部分分式恒等式给
+\[
+ \frac\dd{\dd\varepsilon}f_\varepsilon[b_1,b_2,b_3]
+ =-\Rea\prod_j(\varepsilon-ib_j)^{-1}.
+\]
+两边从$\varepsilon$积分至无穷，差商与尾积分在无穷均趋零，故得单锥时间积分。固定$\varepsilon>0$时积分由$t^{-3}$统一控制，差商连续延拓为Hermite差商，故重复及零节点也成立。有限锥求和给\eqref{eq:DD}。
+实际计算使用
+\[
+ f_\varepsilon'(a)=\frac a{\varepsilon^2+a^2},\quad
+ \tfrac12f_\varepsilon''(a)=\frac{\varepsilon^2-a^2}{2(\varepsilon^2+a^2)^2},
+\]
+以及$f[a,a,b]=(f(b)-f(a)-f'(a)(b-a))/(b-a)^2$。
+\end{proof}
+对非零$x$，独立的三射线使每锥不可能三个节点全为零。令$\varepsilon\downarrow0$，完整六类展开均为$\gamma\log\varepsilon+F+O(\varepsilon^2)$，如下表；所有$a,b,c$均为实数，表中非零条件明确保留。
+\begin{center}\small
+\begin{tabular}{lll}\toprule
+节点类型&$\gamma$&$F$\\\midrule
+互异非零$a,b,c$&$0$&$\displaystyle\sum_j\frac{\log\abs{b_j}}{\prod_{k\ne j}(b_j-b_k)}$\\[2mm]
+$a,a,b\ne0$, $a\ne b$&$0$&$\displaystyle\frac{\log\abs b-\log\abs a-(b-a)/a}{(b-a)^2}$\\[2mm]
+$a,a,a\ne0$&$0$&$-1/(2a^2)$\\[1mm]
+$0,b,c$, $bc\ne0$, $b\ne c$&$1/(bc)$&$\displaystyle\frac{\log\abs b}{b(b-c)}+\frac{\log\abs c}{c(c-b)}$\\[2mm]
+$0,b,b$, $b\ne0$&$1/b^2$&$(1-\log\abs b)/b^2$\\[1mm]
+$0,0,b$, $b\ne0$&$-1/b^2$&$\log\abs b/b^2$\\\bottomrule
+\end{tabular}
+\end{center}
+这些式子由上述Hermite定义及$f_\varepsilon(0)=\log\varepsilon$、$f_\varepsilon'(0)=0$直接得到。只有对数的参数可取绝对值；有符号分母及导数不能改为绝对值。
+
+将全部96锥加权合并，记$\Gamma=\sum_qw_q\gamma_q$。真实$H_\varepsilon\ge0$且随$\varepsilon\downarrow0$单调，故$\Gamma>0$不可能；$\Gamma<0$时$G=+\infty$，$\Gamma=0$时$G=(8\pi^3)^{-1}\sum_qw_qF_q$。原点由\eqref{eq:peak}直接给$G(0)=+\infty$。例如$(1,0,0)$处有正负对数项抵消，不能逐锥判断有限性；$(1,1,0)$及$(1,1,1)$在当前$\tau$下均有真实无穷值。下文计算始终取$\varepsilon>0$，因此不以接近重根时的小差除法或有限样本外推处理奇性。
+
+\section{闭块连续认证的统一误差定理}
+本节给出两个有限证书共同使用的解析与代数判据。记$F_\varepsilon(y,z)=H_\varepsilon(1,y,z)$。由全部射线上的
+$k_r\ge3(\abs{r_y}+\abs{r_z})$及锥非负表示，得到
+\begin{equation}\label{eq:strip-symbol}
+ \psi(\xi)\ge3(\abs{\xi_y}+\abs{\xi_z}).
+\end{equation}
+所以在$\max(\abs{\Im y},\abs{\Im z})\le s<3\varepsilon$的复管中，Fourier绝对支配及\eqref{eq:peak}给
+\begin{equation}\label{eq:tube}
+ \abs{F_\varepsilon(y,z)}\le
+ \frac{15}{1088\pi^3(\varepsilon-s/3)^2}=:M(\varepsilon,s).
+\end{equation}
+在严格复管紧子集上的同一支配说明函数联合全纯。这里两个虚部由一个最大值$s$控制，不需把$s$再乘$2$；实部可任意，不要求Cauchy圆盘的实部留在原块。
+
+\begin{theorem}[闭方块插值判据]\label{thm:certificate}
+设闭块$B=[y_0-h,y_0+h]\times[z_0-h,z_0+h]$，插值次数$d$，$N=d+1$，$\rho>1$满足
+\[
+ s=\frac h2(\rho-\rho^{-1})<3\varepsilon,
+ \quad M=M(\varepsilon,s),\quad
+ E_d=8(d+1)M\frac{\rho^{-d}}{\rho-1}.
+\]
+以真实Chebyshev根$t_j=\cos((2j+1)\pi/(2N))$作张量插值，所得多项式$P$满足$\norm{F_\varepsilon-P}_{L^\infty(B)}\le E_d$。
+设严格节点球经DCT及准确Bernstein变换包围了$P$的系数$\beta_{ab}$，并包围了其归一均值$\bar P$。则
+\begin{align}\label{eq:range}
+ L&=\max\{0,\min_{a,b}\underline\beta_{ab}-E_d\},\\
+ U&=\max_{a,b}\overline\beta_{ab}+E_d,
+ \qquad m=\min\{U,\overline{\bar P}+E_d\}
+\end{align}
+分别给$0\le L\le F_\varepsilon\le U$及$\mean_BF_\varepsilon\le m$。若$L\le m\le U$、$U>0$，则
+\begin{equation}\label{eq:chord}
+ \mean_B(F_\varepsilon^{3/2})
+ \le L^{3/2}+
+ \frac{U+\sqrt{UL}+L}{\sqrt U+\sqrt L}(m-L).
+\end{equation}
+所有区间运算取向外端点。
+\end{theorem}
+\begin{proof}
+复椭圆高度为$s$，式\eqref{eq:tube}给单坐标Chebyshev系数上界$2M\rho^{-k}$。在$N$个根上，任一$T_k$的采样按余弦周期与反射alias为某个$\pm T_l$（$l\le d$）或零，所以其插值上确界不超过$1$。高频项的函数与插值之差不超过$2$，从绝对收敛级数得单坐标误差
+$E_1\le4M\rho^{-d}/(\rho-1)$。
+根插值的cardinal式
+\[
+ \ell_j(t)=\frac1N\left(1+2\sum_{k=1}^d\cos(k\theta_j)T_k(t)\right),
+ \qquad\theta_j=(2j+1)\pi/(2N)
+\]
+给插值算子范数$\Lambda\le2d+1$。恒等式
+$I-I_yI_z=(I-I_y)+I_y(I-I_z)$遂给误差$(1+\Lambda)E_1=E_d$。
+
+DCT矩阵取
+$A_{kj}=(2-\delta_{k0})\cos(k\theta_j)/N$。
+余弦的有限正交关系给$AVA^T$是张量Chebyshev系数矩阵，其中$V$为节点值矩阵。若
+$T_k(2u-1)=\sum_{l=0}^kp_{kl}u^l$，则由二项式恒等式
+\[
+ u^l=\sum_{a=l}^d\frac{\binom al}{\binom dl}
+ \binom da u^a(1-u)^{d-a}
+\]
+得到准确转换矩阵
+\begin{equation}\label{eq:Bernstein}
+ B_{ak}=\sum_{l\le\min(a,k)}p_{kl}\frac{\binom al}{\binom dl},
+ \qquad(\beta_{ab})=BAVA^TB^T.
+\end{equation}
+Bernstein基非负且和为$1$，故系数端点给整个闭块的范围；再加$E_d$即得\eqref{eq:range}。均值以
+\begin{equation}\label{eq:mean}
+ \mu_0=1,\quad \mu_k=0\ (k\text{奇}),\quad
+ \mu_k=-\frac1{k^2-1}\ (k\ge2\text{偶}),\qquad
+ \bar P=\mu AVA^T\mu^T
+\end{equation}
+计算；它也等于所有Bernstein系数之和除以$N^2$。此处是平均值，尚未乘面积。
+
+凸函数$x^{3/2}$在$[L,U]$上位于端点连线下方。令$a=\sqrt U$、$b=\sqrt L$，其斜率为$(a^3-b^3)/(a^2-b^2)=(a^2+ab+b^2)/(a+b)$，非负，故可把真实均值替换为上界$m$。这给\eqref{eq:chord}，也涵盖$L=0$。$U=L>0$时$m=L$，右边仍正确且不除以$U-L$。
+\end{proof}
+
+\subsection{有理节点替代及舍入传播}
+真实根通常无理。对每个正根，用严格球算术证明$2^{128}t_j$有唯一整数floor，取该准确二进有理数$q_j$；负根反对称构造，中央根取$0$。于是$\abs{q_j-t_j}<2^{-128}$。取单坐标Cauchy半径$R<3\varepsilon$，由\eqref{eq:tube}得实偏导上界
+\begin{equation}\label{eq:derivative}
+ D=\frac{15}{1088\pi^3(\varepsilon-R/3)^2R}.
+\end{equation}
+在实坐标折线路径上，准确有理节点与真实根节点值之差不超过
+\begin{equation}\label{eq:displacement}
+ \eta=2Dh\,2^{-128}.
+\end{equation}
+因此先把$\eta$加入每个有理点的函数值球半径，再做全部DCT、Bernstein及均值运算。矩阵中的余弦也用球算术向外包围。这样节点位移和算术误差均在矩阵传播前付清，不是在可能放大误差的变换之后只扣一次$\eta$。准确重复节点由有理数相等判定，不能根据两个球重叠猜测重复。
+
+\section{136个闭块上的方体下界}
+采用固定参数
+\begin{equation}\label{eq:gparams}
+ \varepsilon=1/50,\quad d=20,\quad \rho=3,\quad h=1/32,
+ \quad R=1/50,\quad\text{精度 }384\text{ bit}.
+\end{equation}
+闭块为
+\[
+ B_{ij}=[i/16,(i+1)/16]\times[j/16,(j+1)/16],
+ \qquad0\le j\le i<16.
+\]
+总共136块，每块$21^2=441$节点。若$0\le z\le y\le1$，取
+$i=\min(15,\lfloor16y\rfloor)$、$j=\min(15,\lfloor16z\rfloor)$即可落入相应闭块；对角块核整个方形，允许多覆盖，不缺边界。
+
+此时$s=1/24$，$\varepsilon-s/3=11/1800$，所以
+\begin{align*}
+ M&=\frac{15}{1088\pi^3(11/1800)^2}<11.906178395825,\\
+ D&=\frac{15}{1088\pi^3(1/75)^2(1/50)}<125.056215,\\
+ E_{20}&=84M/3^{20}<2.868313237155\cdot10^{-7},\quad
+ \eta<2.296921\cdot10^{-38}.
+\end{align*}
+这些显示上界只解释量级；接受判据使用完整球及准确有理端点。
+
+\begin{theorem}[下界证书]\label{thm:g}
+按\eqref{eq:DD}、\eqref{eq:Bernstein}及\eqref{eq:gparams}计算各块的Bernstein球系数，并令
+\[
+ \ell_{ij}=\operatorname{down}\!\left(
+  \min_{a,b}\underline\beta^{ij}_{ab}-E_{20}\right).
+\]
+全部136个有限判据$\ell_{ij}>g_0$成立，其中
+\begin{equation}\label{eq:g0}
+ g_0=\frac{2621323989}{500000000000}.
+\end{equation}
+因此$G(x)\ge g_0$对整个闭方体$[-1,1]^3$逐点成立。
+\end{theorem}
+\begin{proof}
+有限判据的实际准确结果由附录入口提供。独立fresh实现重新计算全部$136\cdot441=59976$个节点；其最小认证下端$\ell_*$的完整分子分母保存在附件
+\src{audit/033_results.json}的\src{minimum_H_lower_exact}字段。
+确定的有限比较给
+\[
+ \ell_*>\frac{5242647978717}{10^{15}}>g_0.
+\]
+定理\ref{thm:certificate}故给整个面内基本三角形上$H_{1/50}\ge g_0$。因$p_t\ge0$，有$G\ge H_{1/50}$，此下界无需支付短时误差。
+
+对任意非零方体点$x$，令$m=\max_i\abs{x_i}\le1$，用立方体对称将$x/m$送到$(1,y,z)$、$0\le z\le y\le1$。使用的是$G$的齐次性，故
+$G(x)=m^{-2}G(1,y,z)\ge g_0$；并未对截时核误用齐次性。原点$G=\infty$也满足结论。
+\end{proof}
+
+\begin{remark}
+$\ell_*$约为$0.0052426479787179679751$，来自块$(15,7)$，它是整块的认证下端，并不声称是真实最小值、最小值位置或唯一性。$g_0$是该端点向外取的有理下界。
+\end{remark}
+
+\section{8256个闭块上的面积分上界}
+\subsection{截时核积分的确定有限判据}
+本节固定另一组参数
+\begin{equation}\label{eq:Iparams}
+ \varepsilon=9/5000,\quad d=32,\quad\rho=5/2,\quad
+ h=1/256,\quad R=\varepsilon,\quad\text{精度 }384\text{ bit}.
+\end{equation}
+对$0\le j\le i<128$，取闭方块
+$B_{ij}=[i/128,(i+1)/128]\times[j/128,(j+1)/128]$。
+共8256块，每块$33^2=1089$节点。令$w_{ij}=2$若$j<i$，$w_{ii}=1$；由交换$y,z$对称性，整正面积分等于这些整方块积分的加权和。对角块已经包含对角线两侧，不能再减半。准确地
+\begin{equation}\label{eq:area}
+ \sum_{0\le j\le i<128}\frac{w_{ij}}{128^2}
+ =\frac{16384}{16384}=1.
+\end{equation}
+此时$s=21/5120$、$\varepsilon-s/3=277/640000$，所以
+\begin{equation}\label{eq:Ierrors}
+ M=\frac{15}{1088\pi^3(277/640000)^2},\quad
+ E_{32}=176M(2/5)^{32}<7.706294\cdot10^{-8},\quad
+ \eta<3.938478\cdot10^{-36}.
+\end{equation}
+对每块用定理\ref{thm:certificate}得到准确端点$L_{ij},U_{ij},m_{ij}$。保存的贡献上界$b_{ij}$须满足以下完整有限判据：
+\begin{equation}\label{eq:finite-I}
+ \begin{gathered}
+ 0\le L_{ij}\le m_{ij}\le U_{ij},\quad U_{ij}>0,\\
+ b_{ij}\ge\frac{w_{ij}}{128^2}\left[
+ L_{ij}^{3/2}+\frac{U_{ij}+\sqrt{U_{ij}L_{ij}}+L_{ij}}
+ {\sqrt{U_{ij}}+\sqrt{L_{ij}}}(m_{ij}-L_{ij})\right].
+ \end{gathered}
+\end{equation}
+$L,U,m,b$的保存端点均为准确二进有理数。节点、连续误差、矩阵四则及均值误差已在生成它们时付清。
+
+\begin{proposition}\label{prop:IH}
+对\eqref{eq:Iparams}的完整8256块，式\eqref{eq:finite-I}全部成立，且准确有理数
+$B=\sum_{ij}b_{ij}$满足
+\begin{equation}\label{eq:IH}
+ \int_{[0,1]^2}H_\varepsilon^{3/2}\le B,
+ \qquad B=0.0005620627584450029912931962438471980490\ldots.
+\end{equation}
+小数仅为展示；准确$B$以附件的分子分母为定义。
+\end{proposition}
+\begin{proof}
+定理\ref{thm:certificate}给每块的连续范围、平均值及凸弦积分上界；式\eqref{eq:area}给无遗漏的积分覆盖。全部记录的准确求和与逐块有限判据由附录的8256条紧凑证书承载，可逐条复核而无需重新生成节点。独立512bit复核对全部8256条重新取正根和凸弦，所得上端均不超过保存$b_{ij}$。索引集、总面积及有理总和同时通过准确比较，因此\eqref{eq:IH}成立。
+
+这次逐条复核本身不重新证明节点值正确：节点由冻结384bit全批执行及其连续算法给出，算法由定理\ref{thm:certificate}和\eqref{eq:DD}证明。若要求从零重建，附录另给完整节点运行命令。两种证据层次不能互称。
+\end{proof}
+
+\subsection{整个平面的短时误差}
+置$T_\varepsilon(1,y)=\int_0^\varepsilon p_t(1,y)\dd t$。它由非负时间积分定义，$G=H_\varepsilon+T_\varepsilon$由Tonelli成立，不作无穷值相减。
+
+\begin{lemma}\label{lem:shorttime}
+对任意$\varepsilon>0$，
+\begin{equation}\label{eq:time}
+ \norm{T_\varepsilon(1,\cdot)}_{L^{3/2}([0,1]^2)}
+ \le E_\varepsilon
+ =2^{-4/3}\frac34
+ \left(\frac{256}{3\pi^3}\right)^{1/3}
+ \left(\frac{16}{3\pi}\right)^{2/3}\varepsilon^{4/3}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+在十个方向中，第一个坐标非零的有八个，其中四个体对角权为$1$，四个面对角权为$1/3$，所以$k=8$，总权$A=16/3$。若第一坐标在$1-\delta$以上，则这些参数中至少一个满足$\abs{Z_t^i}\ge(1-\delta)/k$。为每个该方向选择另两条权$1$体对角方向补基，可使行列式绝对值均为$4$。具体地，对代表方向$(1,1,1)$和$(1,1,0)$，都可补以$(1,-1,-1)$、$(1,-1,1)$，行列式均为$-4$；保持第一坐标的自由坐标反射和置换覆盖全部八个方向。受限Cauchy参数密度不超过$c_ik^2t/[\pi(1-\delta)^2]$，另两项密度各不超过$1/(\pi t)$。余变量作概率卷积不增加上确界。对八种事件求和并除以基变换Jacobian，得到邻域密度上界，再用$p_t$连续性及$\delta\downarrow0$得
+\begin{equation}\label{eq:face-sup}
+ p_t(1,y)\le C_ft^{-1},\qquad
+ C_f=\frac{k^2}{\pi^3}\sum_i\frac{c_i}{4}
+     =\frac{256}{3\pi^3}.
+\end{equation}
+这里在空间密度层面使用事件分解，未把零概率平面截面当作正概率事件。
+
+第一坐标是尺度$At$的Cauchy和。通过正的基密度表示并用一个非零法向参数解出第一坐标，Tonelli及线性Jacobian消去给固定截面上的真边际恒等式
+\begin{equation}\label{eq:marginal}
+ \int_{\R^2}p_t(1,y)\dd y=\frac{At}{\pi(1+A^2t^2)}.
+\end{equation}
+也可由连续密度及Fatou只取该上界，已足够以下估计。
+将同一真实密度的\eqref{eq:face-sup}与\eqref{eq:marginal}合并，$p^{3/2}\le\norm p_\infty^{1/2}p$给
+\[
+ \norm{p_t(1,\cdot)}_{L^{3/2}(\R^2)}
+ \le C_f^{1/3}(A/\pi)^{2/3}t^{1/3}.
+\]
+先在有限时间及空间区域使用Minkowski，再单调极限，得到整个平面短时核的范数不超过
+$(3/4)C_f^{1/3}(A/\pi)^{2/3}\varepsilon^{4/3}$。
+真实过程在两个自由坐标分别反射不变，故正象限的$3/2$次积分是整个平面的$1/4$，范数因子为$4^{-2/3}=2^{-4/3}$。单位正面是正象限的子集，即得\eqref{eq:time}。
+\end{proof}
+
+该估计包含所有方向线邻域、整个平面及空间无穷尾；未删除奇性帽。特别地这些方向线上$G$虽可无穷，面上的$L^{3/2}$积分仍由此以及$H_\varepsilon$的连续积分有限地控制。
+
+\begin{theorem}[积分证书]\label{thm:I}
+固定\eqref{eq:Iparams}时，
+\begin{equation}\label{eq:I0}
+ I\le (B^{2/3}+E_\varepsilon)^{3/2}
+ \le I_0=\frac{23129127}{40000000000}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+由$G=H_\varepsilon+T_\varepsilon$、命题\ref{prop:IH}及Minkowski不等式得第一个不等式。短时表达式在512bit用正三次根向外计算，$E_\varepsilon$展示约为$0.00012996912954638279224$。将准确$B$合成的上包围为准确二进有理数，展示约为
+$0.00057822817482354580122732$，其与$I_0$的比较为准确有理比较。完整端点及合成判据见\src{audit/036_results.json}与冻结积分清单；没有用展示小数代替端点。
+\end{proof}
+
+\section{准确成本、复现范围及结论}
+\begin{proof}[定理\ref{thm:main}的证明]
+定理\ref{thm:g}、\ref{thm:I}提供相同真实生成元的$g_0,I_0$，正部势命题及障碍比较允许取
+\[
+ c=g_0/3,\qquad K=\frac{(G-g_0/3)_+}{8g_0(1-1/3)}.
+\]
+它是合法的非负偶$L^1$核并支配$\one_{[-1,1]^3}/8$。引理\ref{lem:mass}给$C_3\le\sqrt{27I_0^2/g_0^3}$。准确有理运算给
+\[
+ \frac{27I_0^2}{g_0^3}=
+ \frac{1547906585017734375000000000}{24707828464688747938727861},
+\]
+并且
+\begin{equation}\label{eq:slack}
+ \left(\frac{1979}{250}\right)^2-\frac{27I_0^2}{g_0^3}
+ =\frac{22590856465666228399282662701}
+ {1544239279043046746170491312500}>0.
+\end{equation}
+全部量为正，故平方比较严格保序，得\eqref{eq:bound}。成本的展示值约为$7.91507592404543687$，没有用该近似值承担严格比较。
+\end{proof}
+
+论文结论是固定Lebesgue背景、一般$L^1$输入及全部共同半径上的一个严格上界。$g_0$并非Green势最小值的精确解，$c=g_0/3$只是给定认证下界时的标量质量最优选择，本文也不判定$\tau=1/3$在全部方向核或全部$\tau$中最优。采用整个平面的短时预算避免对奇线作未经控制的截断，但该预算仍可能有余量。本文没有提供最坏输入分类或精确$C_3$。
+
+\appendix
+\section{证书、源码锁定与复现入口}\label{app:reproduce}
+以下路径均相对项目根目录\src{cube-finite-dim-bounds/}。正文的确定有限判据与附件源码相配合；源码哈希只确认输入身份，不独立证明数学结论。仓库基线为提交\texttt{e5b541b348786b9aa0906}\allowbreak\texttt{eddd6e9d5e2f6453bcf}；本稿源文件另附清单。
+
+\begin{center}\small
+\begin{tabular}{p{.25\textwidth}p{.66\textwidth}}\toprule
+用途&路径\\\midrule
+真实96锥及退化复核&\src{audit/032_check.py}，\src{audit/032_audit.md}\\
+全136块下界fresh复核&\src{audit/033_check.py}，\src{audit/033_results.json}\\
+连续误差及短时接口&\src{audit/034_check.py}，\src{audit/034_audit.md}\\
+冻结全节点积分程序&\src{upper/continuous_bridge/cb11_integral_cheb_check.py}\\
+积分完整紧凑数据清单&\src{upper/continuous_bridge/cb11_integral_cheb_final_manifest.json}\\
+全8256条独立标量复核&\src{audit/036_check.py}，\src{audit/036_results.json}\\
+原证明与迁移&\src{upper/u09_frame_transfer.md}，\src{upper/u09_positive_part.md}，\src{proofs/round011_weighted_frame_transfer.md}\\\bottomrule
+\end{tabular}
+\end{center}
+关键源码及清单的SHA256如下，完整关联哈希由各存档manifest及本稿\src{source_manifest.json}给出：
+\begin{flushleft}\footnotesize
+\src{audit/033_check.py}\\
+\src{7305f5915bdba606c82922f45626693c48464b9acf55849ea2e41424a9139e64}\\[1mm]
+\src{audit/033_results.json}\\
+\src{6827dd911091941d5918c08ac55e51b48a2b537ae9d72991022dc00a5d82e9ef}\\[1mm]
+\src{upper/continuous_bridge/cb11_integral_cheb_check.py}\\
+\src{4f89a377fbdf263061c2d6525d2101a773f7a6ba4127bb367bd3b7328ed57eb5}\\[1mm]
+\src{upper/continuous_bridge/cb11_integral_cheb_final_manifest.json}\\
+\src{19665768679a50ecb1ae2efed8ec5bb05ceb4a4762abfc08883f971975b578a4}\\[1mm]
+\src{audit/036_check.py}\\
+\src{fe20d14ec426d585b15dc27bb4e14816c223c79577b82800793a896d7222fe48}
+\end{flushleft}
+
+在具备\src{python-flint}及\src{SymPy}的Python环境，从项目根目录运行：
+\begin{verbatim}
+python audit/032_check.py
+python audit/033_check.py
+python audit/034_check.py
+python audit/036_check.py
+python src/round011_sharp_rational_cost.py
+\end{verbatim}
+这些命令默认不覆盖已锁证据。033重新生成59976个节点；036只读紧凑证据，重新复核8256条凸弦、面积、准确总和、短时合成及成本，新增Green节点为零。033的下界实现采用独立有理实Hermite点值与SymPy多项式构造，但共享已审射线数据及Arb内核。036不导入作者聚合代码，但重用已审连续算法与原节点执行数据。因此不能将其描述为约899万节点的完全独立第二套重算。
+
+如需从零重建积分节点，将下列文件复制到独立输出目录：\src{upper/continuous_bridge/cb11_cones.json}、\src{cb11_integral_cheb_check.py}、\src{cb11_integral_cheb_selfcheck.py}；后两者均来自同一\src{upper/continuous_bridge/}目录。随后在该输出目录运行
+\begin{verbatim}
+python cb11_integral_cheb_check.py --stage part --part 0 --parts 1
+python cb11_integral_cheb_selfcheck.py --parts 1
+python cb11_integral_cheb_check.py --stage aggregate --parts 1
+\end{verbatim}
+可按固定整数$P$拆为$P$个part，但必须全部完成并核唯一索引后聚合。原执行用12进程，各有688块，序号$i(i+1)/2+j$按模12分配。全部$8256\cdot1089=8990784$节点中，4356个来自四个已锁pilot缓存，8986428个为全批新节点；12进程均实际exit $0$。可选缓存不是数学前提，从零运行也不需要它。紧凑数据约9.29MB，保存每块准确范围、均值及贡献端点；原节点缓存和大量stdout留在仓外，不是默认便携复核的依赖。
+
+实际初审环境为Python 3.15、SymPy 1.14.0、python-flint 0.9.0/Arb；NumPy 2.5.4和SciPy 1.18.1参与候选产生或模块依赖，不承担最终有理比较。下界成功轮59976节点为fresh384bit；曾在此前441个节点后修复准确端点类型转换，数学参数未改。全积分为384bit，全部8256条独立标量为512bit。MATLAB R2026a实际交叉核验有限Gram、差商恒等式、误差常数、均值、凸弦、面积及准确成本，均有退出记录；它没有替代连续证书。
+
+本次撰稿仅重算了式\eqref{eq:slack}的标准库Fraction算术，未启动新参数搜索或正式节点批次。共享理论及三维数值/几何的完整第二次复审现均已通过。第二审以从十个真实方向重建的全96锥Newton--Hermite实现，在512bit重新计算全部59976个下界节点、7个积分关键块的7623节点，并核全部8256条标量凸弦、面积、准确总和、短时及成本；它继承完整积分的原节点执行证据，未重跑全部8990784个积分节点。已有初审、作者执行及第二审的层次、共享依赖及局限按上述记录披露。审核待确认项单列\src{draft_review_notes.md}，不作为额外数学假设塞入定理。
+
+\begin{thebibliography}{9}
+\bibitem{Aldaz2000} J. M. Aldaz.
+A remark on the centered $n$-dimensional Hardy--Littlewood maximal function.
+\emph{Czechoslovak Mathematical Journal}, 50(1):103--112, 2000.
+\url{https://dml.cz/dmlcz/127554}.
+\bibitem{Aldaz2011} J. M. Aldaz.
+The weak type $(1,1)$ bounds for the maximal function associated to cubes grow to infinity with the dimension.
+\emph{Annals of Mathematics}, 173(2):1013--1023, 2011.
+\url{https://doi.org/10.4007/annals.2011.173.2.10}.
+\bibitem{AldazKissing2020} J. M. Aldaz.
+Kissing numbers and the centered maximal operator.
+arXiv:1811.10478, version 2, 10 March 2020.
+\url{https://arxiv.org/abs/1811.10478}.
+\bibitem{Lin} Yongxi Lin.
+Two partial balayage principles for weak-type estimates.
+作者网页手稿，未标日期，2026年10月25日访问；本文使用其第3节的框架，未主张期刊发表状态。
+\url{https://coolrmal.github.io/articles/two-partial-balayage-principles/}.
+\end{thebibliography}
+\end{document}
