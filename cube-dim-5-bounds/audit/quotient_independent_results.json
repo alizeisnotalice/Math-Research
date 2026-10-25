@@ -1,0 +1,30 @@
+{
+  "arithmetic": "SymPy exact rank/nullspace/Matrix determinant plus Python rational arithmetic only; no floating-point hull or coverage computation.",
+  "boundary_edge_count": 4560,
+  "coverage_certificate": {
+    "facet": "Every signed subset-form sum was tested exactly against all vertices. Equality sets of affine rank three are precisely the exposed 3-faces; their 370 cones cover the boundary of the convex ball up to lower-dimensional overlaps.",
+    "ridge": "Within each affine 3-face, every vertex triple was sign-tested against all face vertices. The collected equality sets are exactly its supporting 2-faces. Each ridge is partitioned by its vertex centroid coned to its exact boundary edges.",
+    "vertex": "All 455 form triples were tested with SymPy rank. A rank-three zero set gives a one-dimensional cell whose normalized ray is an exact boundary vertex; conversely every vertex has three independent zero forms, so this list is complete.",
+    "volume": "The 3-face centroid coned to those ridge triangles partitions the face. Since the origin is strictly interior, coning every boundary 3-face to the origin partitions the ball up to measure-zero intersections. Each summand is abs(det(c3,c2,v_i,v_j))/4!."
+  },
+  "exact_volume": "14455/191102976",
+  "expected_volume": "14455/191102976",
+  "facet_count": 370,
+  "facet_vertex_count_histogram": {
+    "4": 350,
+    "5": 20
+  },
+  "form_count": 15,
+  "origin_coned_4simplex_count": 4560,
+  "quotient_ball": "{x in R^4: 2 sum_{empty != S subset [4]} |sum_{j in S} x_j| <= 1}",
+  "rank3_triple_count": 430,
+  "ridge_count": 1520,
+  "ridge_vertex_count_histogram": {
+    "3": 1520
+  },
+  "source_sha256": "1eb5696e771e29b75363b97a2f6238bf5d885146987adf9e81180bb6b7f4bbf8",
+  "status": "complete_independent_exact_centroid_ridge_audit",
+  "support_vector_count": 1611,
+  "triple_count": 455,
+  "vertex_count": 90
+}
