@@ -1,6 +1,13 @@
 # Fixed finite-dimensional centered cube weak-type bounds
 
-Scope: n=3,4 first; Lebesgue background, centered axis-parallel cubes with one radius, all positive scales and general L1 inputs. Read STATE.md and rounds/001.md. No new bound in round 1.
+Scope: n=3,4 first; Lebesgue background, centered axis-parallel cubes with one radius, all positive scales and general L1 inputs. Read STATE.md and rounds/004.md. Round 4 proves C3 > 1.7939726044040153; C4 lower and both upper bounds are unchanged.
+
+Minimal independent verification of the new three-dimensional certificate (Python standard library only, no optimization and no writes):
+```
+python3 cube-finite-dim-bounds/audit/006-satellite_n3_check.py --author-result cube-finite-dim-bounds/lower/n3/round004_certificate_result.json
+python3 cube-finite-dim-bounds/src/check_round004_integration.py
+```
+The general L1 transfer is in proofs/satellite_n3_transfer.md. The complete exact interval, not the shortened display decimal, is the next comparison target. MATLAB floating checks are supplied in lower/n3/round004_matlab.m; the strict comparison uses exact Python integers/Fraction. The independent checker shares the saved input and standard integer arithmetic, but has its own root, atom-enumeration and union algorithms.
 
 From this repository root:
 ```

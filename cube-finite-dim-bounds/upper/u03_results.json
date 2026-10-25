@@ -1,0 +1,35 @@
+{
+  "batch": "U03 restricted killed coordinate stable Green finite discovery",
+  "status": "discrete numerical evidence; no continuous upper bound",
+  "jump_density": "|z|^(-1-alpha), one common positive time constant omitted",
+  "density_normalization": "p=P/h; S=sum(P); no h factor in S",
+  "grids": [65, 129],
+  "a_scan": "all positive cell centers in [0.25,0.75]; 16 and 32 per grid",
+  "minimum_costs_by_alpha": [
+    {"alpha": 0.5, "n3_N65": 79.68666465994876, "n3_N129": 79.8789950269107, "n4_N65": 422.2235786259741, "n4_N129": 423.65439868930065},
+    {"alpha": 0.8, "n3_N65": 29.81907970294991, "n3_N129": 29.84242494114384, "n4_N65": 106.33247781156395, "n4_N129": 106.50856950368959},
+    {"alpha": 1.0, "n3_N65": 20.117897901747952, "n3_N129": 20.10150896226249, "n4_N65": 60.75374428779671, "n4_N129": 60.70139655746481},
+    {"alpha": 1.2, "n3_N65": 15.31428573823118, "n3_N129": 15.258155097707974, "n4_N65": 41.16690069333491, "n4_N129": 40.88934450353334},
+    {"alpha": 1.5, "n3_N65": 11.80361347658269, "n3_N129": 11.695281157039922, "n4_N65": 28.33262549112549, "n4_N129": 27.909786881582612},
+    {"alpha": 1.8, "n3_N65": 10.21326011289062, "n3_N129": 10.08931120667063, "n4_N65": 23.015593016204363, "n4_N129": 22.581186494787765}
+  ],
+  "selected": [
+    {"n": 3, "alpha": 1.8, "N": 129, "a": 0.49612403100775193, "unit_mass": 0.0626045917490985, "unit_corner_green": 0.006351610992152022, "python_cost": 10.08931120667063, "matlab_cost": 10.089311206669397},
+    {"n": 4, "alpha": 1.8, "N": 129, "a": 0.48062015503875966, "unit_mass": 0.05147425471793187, "unit_corner_green": 0.0026700255073982345, "python_cost": 22.581186494787765, "matlab_cost": 22.58118649478428}
+  ],
+  "cauchy_normalization_diagnostic": [
+    {"N": 65, "lifetime_relative_error": 0.00772166379781436, "green_relative_error": 0.0065384100428358405},
+    {"N": 129, "lifetime_relative_error": 0.003883451306933683, "green_relative_error": 0.0033464280964667914}
+  ],
+  "matrix_checks": {"max_row_killing_defect": 1.0459189070388675e-11, "max_source_reconstruction_error": 5.9703733334114316e-15},
+  "spatial_error_status": "not bounded; missing self-cell jumps have an h^(2-alpha)/(2-alpha) local term; two grids do not certify convergence",
+  "continuous_monotonicity_status": "symmetric decreasing convolution/truncation plus standard inner-domain dense-sampling killed-kernel limit; report gives proof and primary source",
+  "independent_audit_status": "Q and h normalization preliminarily checked; auditor reassigned before a complete U03 audit",
+  "source_sha256": {
+    "u03_restricted_scan.py": "8dd23f3e40401caa6d727fad70254de17cf2db112c072b995db03ea8634f2a7d",
+    "u03_cauchy_normalization.py": "9fb2af6f2ebafa9df250034bc0ebf9522ac5ca61026529c5e6115071f3e39260",
+    "u03_restricted_matlab.m": "e40121457b543a92153f20e53f747b4087f48b1c157c30878c9a8e889f6efda3"
+  },
+  "N257_triggered": false,
+  "new_Cn_bound": false
+}
