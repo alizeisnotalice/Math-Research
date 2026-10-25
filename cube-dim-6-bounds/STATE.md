@@ -1,19 +1,15 @@
 # 六维中心方体研究状态
 
-active，最新顺序归档至013；后续010–014上界任务在独立clone已有完成及进行状态，主逐轮集成不混提交。严格界保持 C6>2067397333267/10^12=2.067397333267，C6≤64。完整准确构造区间/系数与来源见results/bounds_ledger.json，不从展示小数重造证书。Lebesgue、中心、轴平行、共同半径、一般L1、全尺度不变；原暂停项目/资料包/五维只读。
+active。最新顺序归档至014；严格C6>2067397333267/10^12，C6≤64。上下门槛完整准确表达、原始系数与区间见results/bounds_ledger.json，展示小数不作证书。Lebesgue、中心、轴平行、共同半径、一般L1、所有r>0不变；资料包、原暂停项目及五维只读。
 
-优先级：上界优先、下界低资源。008候选收尾后D/E/下界独审停止，新下界搜索只在主明确小批调度时启动。上界默认sol high/xhigh，瓶颈/突破授权Astra，主保留最终证明及push责任；代理独立clone与文件所有权、不共暂存、不覆盖、不递归扩招。MATLAB仅主串行、不clear/重置path/干扰其他项目。
+优先级：上界为主，下界低资源。A/B/C/F和独立Astra角色集中上界；D低资源019仅12个有理parity检查CPU约.000278秒，没有union/扫描/旧基线；E、D下界Astra无计算。默认sol high/xhigh，瓶颈/突破授权Astra，主保留证明、集成及push责任。MATLAB仅主串行，不clear/重置path/干扰其他项目。代理独立clone、明确文件所有权，不共享暂存、不覆盖、不push、不扩招。
 
-009新主接口：短势K_T=∫0^T p_t，massT；正Markov平均最大weak1准确常数1已自包含证明且独审，故若全cube m_T>T/4096则C6≤T/(64m_T)<64，无需I。K_.032在dist(S2)≤1/80000整个邻域已严格≥1/125000；compact补集未证。alpha3/2真S1帽也已完成严格积分预算，但整体模型成本仍不竞争。
+有效上界接口：K_T=∫0^Tp_t，massT，正Markov最大平均weak1准确常数1，若全cube essential K_T≥m>T/4096则C6≤T/(64m)<64，无需I。一般有限正spanning Cauchy frame真奇异层为S2全部pair spans，off-S2小时间p=O(1)且G/K有限连续；S2上p≥c t^-2，含线/交叠。body32还已证off-S3 C²及每T整片有序face不凸。不能照搬四维线外连续或假设加轴frame任意三列独立。
 
-后续已发生、待单轮集成：010准确点反例已排.032/.064，整片K_T凸性有解析反证（不是全局min数值）；011单新T=.048仅两点必要条件通过；012新的body+axis frame及更简最近子空间几何只证明模型/点条件。编译Arb512点值工具已交叉验证；013/014梯度/短势工具各按独立有限验证。上述均尚无C6上界突破，不能把候选或软件改进入C6账。
+已排模型：010严格排body32 T=.032/.064；011同一点排支持这两个时间的所有概率混合；后续015已独审严格排T=.048，018已准确排β1加轴T2/45，待单轮集成；017另严格排body32连续时间区间[.0446,.0502]及支持其中的概率混合，待集成。未排全部T/任意support/所有frame；没有C6新上界。
 
-lower_since_phase_freeze=true, upper=false，双侧checkpoint未触发，后三轮0/3。待双侧严格认证后从下一轮再三轮；最终独审及实际最小验证全过，才编译论文、push核验、释放本任务资源并停止。所有历史句柄不重启；实际活动依各registration/进程和角色回报，主clone /Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6；Python /Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python。
+待集成/下一步：015 Taylor有限band局部方法及反例，016零/重复节点band引擎，017时间区间，018加轴反例，019低资源质量机制均完成或审计中；020正pair-orbit新frame理论active。真实native B0152passes、B0181pass均exit0且全部wait，C0161pass已exit；无这些旧句柄可重启，后继须新有限登记。活动证明/整理角色详coordination/phase_20261025/roles.json，不把写报告等同运行核。
 
-010已独立归档两个固定T严格反例、全T非凸性定理及Arb512实现，主3项纯后核全部exit0。追加015局部优化已2passes首停排T=.048，待其单轮完整集成；016零节点band引擎与017全时间障碍理论并行，未将模型失败外推C6。
+lower_since_phase_freeze=true，upper=false，dual_checkpoint=null，post_dual0/3。必须双侧严格认证后从下一轮共同再三轮，最后独立审计与实际最小代码全过，才编译论文/核验push/释放本任务资源并停止。当前尚未满足完成条件。主clone /Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6；数学Python /Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python。
 
-011归档完成：正时间混合接口闭合，所有{.032,.064}概率混合严格排除；T48两点仅必要条件通过，后015已反例。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
-
-012归档完成：38列加轴合法frame及一般正frame真S2/小时间积分闭合；最近距离5/6项化简；两点仅必要条件。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
-
-013归档完成：generic非零Green与六梯度引擎、独立准确x2参考和saved审计通过；全域支配未证。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
+014归档完成：generic短势/梯度/密度联合引擎和独立审计通过；软件证据不作全域C6界。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
