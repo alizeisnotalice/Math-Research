@@ -1,27 +1,17 @@
 # 六维中心方体研究状态
 
-active，最新顺序归档至027。严格C6>2067397333267/10^12、C6≤64；完整准确原件/系数/区间见results/bounds_ledger.json。Lebesgue、中心、轴平行、共同半径、一般L1、全部正尺度不变。公开仅已核范围A6/64，不称穷尽；内部不称公开发表。原暂停项目/来源包/五维只读。
+active；最新顺序归档至028，实际研究前沿041。上界优先，下界极低资源。固定Lebesgue、中心轴平行共同半径、一般L1、全部正尺度。当前严格C6>2067397333267/10^12、C6≤64。完整准确下界008系数/理想上端/有限L1证书与来源hash在results/bounds_ledger.json，公开已核范围非穷尽；内部不称公开发表。phase冻结文件不变，双侧检查点null，lower_sincefreeze=true、upper=false、后续三轮0/3。
 
-上界优先，下界低资源。019仅12 Fraction计数、CPU.000278秒、0union，完成停；D下界Astra/E停止。当前上界：B024有限精确polynomial/root batch；独立Astra025原始文献及corner几何；C026固定点PF势积分工具；F023符号G/极点审计已完成。主负责证明/账本/提交，代理独立clone与文件所有权、不push/不扩招，MATLAB仅主串行不clear/重置path。
+已闭合障碍：028独立复核PASS，body32全部T>0的K_T/T及任意概率时间混合成本≥1025/16，已停止该家族时间搜索。只排此机制，不排C6或原始R_c空间正部源。轴beta1/T2/45、pairbeta1/T32/875仍只为精确固定模型反例，不泛化到全部frame。029主L1反例及独审否定025跨cube L6 leakage；局部corner定理不撤回。032完整G证书严格反证essential g≥1/60000，旧依此前提的条件成本不得用于突破声明。
 
-已严格排固定模型：body32 T=.032/.048/.064；支持{.032,.064}的全部时间概率混合；整段[.0446,.0502]及支持其中的概率混合；β1加轴T2/45；β1 pair-orbitT32/875。未排全部T、全部support、全部β/frame，未得到C6新上界。任何local/software/模型成本都不登记为C6界。
+上界当前：原始G=∫p、q=6/5、I=∫positiveface G^q、B=I^(5/6)，正部源条件成本(6B/g)^(6/5)。033准确商峰已035独立全枚举/理论PASS，034正face管体积已A034独审PASS。036新shorttail在eps.001≤9.813382244121e−6，若g≥1/65000且Hnorm≤1/14000两个全域前提都证，条件成本63.2432178；两者均未证。036旧帽公式即最优两包络仍超新目标≥3.792656，已关闭，不能盲扩旧rho格。037逐pair真实距离Green包络新机制封存，F独审进行中；未等于I证书。038三次新G下降到1.60054264817e−5但仍>1/65000，不证明全域g。040研究全域极小值/覆盖新接口，041另研one-large-jump S1帽，均不保证突破。
 
-有效理论：一般有限正spanning Cauchy frame真S2、offS2 p=O(1)/K/G连续、S2 p≥ct^-2；body offS3 C²、所有T整片chamber非凸。K_T质量T、全空间分布源与Markov maximal weak1常数1，若匹配新全cube m>T/4096才有C6≤T/(64m)。015正band Taylor只局部工具，尚无全域paid tree；旧tube/数值不得向新frame继承。
+下界：008严格下界保留。019仅12有理计数，039仅127标签facet一阶低资源分析收尾，无新union/epsilon候选，不重启旧已失败length4→5/6扩展。E等待039定稿后独审；D/E历史union无存活计算句柄。
 
-待顺序集成：022新对称点x0的精确全群压缩，023partial fractions真实degree417及独立HermiteG已完成；024未完成all-time证书、025局部corner缺跨cube输入计费，026尚待软件批结果。历史native015/018/021及C016均exit0/wait，不重启。计算实际句柄以各registration/execution和coordination roles为准，旧checkpoint不能删除后复跑。首达双侧checkpoint仍null，lower_sincefreeze=true、upper=false，后续三轮0/3；全满足后才最终独审/PDF/停机。
+代理当前独立clone及唯一所有权由coordination/phase_20261025/roles.json记录。主负责集成/账本/推送与最终证明，子代理不push不递归扩招，不共享暂存。MATLAB仅主串行、不clear/path改动/其他项目干扰；036主实际无变量/无图窗四标量数值交叉已完成，只作sanity，严格证明用准确原件/Arb。历史native均已wait退出，不重启；新批次登记/句柄以各owned目录receipt为准。
 
-021只读刷新五维local/remote，锁定下界链未变、六维准确下端仍更强，未继承五维上界。主clone /Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6，数学Python /Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python。
+顺序归档仍待029—041的已完成材料；源冻结在各独立clone，本地真实证据未丢失。所有旧锁定源、资料包、暂停三四维项目、五维只读。021五维只读刷新认证链未变，六维下端仍更强，未继承五维上界。主clone=/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6，数学Python=/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python。
 
-021归档完成：主唯一pairβ1/T32/875新模型probe严格失败；完整1891pair/essential域及0native最小复核闭合。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
+完成条件未满足：需双侧对冻结及动态门槛严格突破、独立复核、再三轮、最终独审/最小核/PDF/推送核验后才停止任务。不因仅模型预算下降或困难宣布完成。
 
-022归档完成：一个新准确对称点完整967680逻辑项压成40320准确tuple，rawdegree889尚不等于reduced；offS3距离下界。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
-
-023归档完成：完整符号PF核真实degree417，独立Hermite全核Γ严格相等/负幂准确消去；无全域Cn界。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
-
-024归档完成：准确N/D/P及全部两个简单正临界点认证；本轮K付款未做，不单独排全部T。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
-
-025归档完成：原始公开来源核对及局部corner定理；跨cube L6仅未证假设，后029严格排除。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
-
-026归档完成：固定点PF640 K/p与唯一H512全群交叉通过；只是工具无全域支配。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
-
-027归档完成：原始R_c成本与数据来源澄清；旧g=1/50000已排、1/60000后032也排，全域I/g仍开。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
+028归档完成：body32全部T及任意概率时间混合成本≥1025/16，完整理论/双实现独审PASS。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
