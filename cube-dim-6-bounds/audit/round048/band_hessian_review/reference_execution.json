@@ -1,0 +1,52 @@
+{
+  "status": "COMPLETE_TWO_REFERENCES",
+  "pid": 49909,
+  "started_unix": 1792964951.2116249,
+  "reference_components": [
+    [
+      2,
+      2
+    ],
+    [
+      5,
+      6
+    ]
+  ],
+  "full_21_independent_reference": false,
+  "author_binary_executions": 0,
+  "compile": {
+    "command": [
+      "/usr/bin/clang++",
+      "-O3",
+      "-std=c++20",
+      "-I",
+      "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-literature/cube-dim-6-bounds/audit/round048/band_hessian_review/scratch/include",
+      "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-literature/cube-dim-6-bounds/audit/round048/band_hessian_review/reference.cpp",
+      "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/lib/python3.15/site-packages/flint/.dylibs/libflint.24.0.dylib",
+      "-Wl,-rpath,/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/lib/python3.15/site-packages/flint/.dylibs",
+      "-o",
+      "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-literature/cube-dim-6-bounds/audit/round048/band_hessian_review/scratch/two_components"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "patch": {
+    "command": [
+      "/usr/bin/install_name_tool",
+      "-change",
+      "/DLC/flint/.dylibs/libflint.24.0.dylib",
+      "@rpath/libflint.24.0.dylib",
+      "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-literature/cube-dim-6-bounds/audit/round048/band_hessian_review/scratch/two_components"
+    ],
+    "exit_code": 0,
+    "stderr": ""
+  },
+  "source_sha256": "84af233da1ab010629045d21f6cb486810b93ddc92de707362bbeaa2596b5759",
+  "binary_sha256": "472eb417885ee51e00584e29a698e51c0d7a337cdccf8c7e9720fa6039f76939",
+  "exit_code": 0,
+  "process_seconds": 20.993380333005916,
+  "stderr": "",
+  "finished_unix": 1792964972.92825,
+  "audit_elapsed_seconds": 74.93218302726746
+}
