@@ -1,0 +1,64 @@
+{
+  "task": "A043-two-specified-Cauchy-parameters-middle-tube",
+  "registered_utc": "2026-10-25T21:17:16.920441+00:00",
+  "started_utc": "2026-10-25T21:17:16.920441+00:00",
+  "deadline_utc": "2026-10-25T21:37:16.920441+00:00",
+  "max_wall_seconds": 1200,
+  "max_new_configurations": 10,
+  "spatial_region": "positive face, U=span(ones,(+++---)), rho=dist(x,U)<1/64, mean_B(x) in[1/4,3/4]",
+  "time_range": "0<s<=1/1000 (s is semigroup time, u is middle spatial coordinate)",
+  "proposed_parameter_partition": "both |a_ones|>=1/2 and |a_w|>=1/16, plus explicitly retained complementary events; modify event interfaces only analytically before any scalar evaluation",
+  "acceptance": "one genuinely new finite-time pointwise or L6/5 envelope on this middle tube paying all remainder events, or an exact obstruction identifying the unpaid term; never actual Green asymptotics/globalI/C6",
+  "preflight": "derive a complete positive proof before any Arb configuration; structural exact checks allowed to diagnose true distance zeros. At most10 total structural/scalar configurations. No parameter scan or numerical expansion if proof fails.",
+  "stop": "Exactly six planned configurations after proof, or any failure/deadline; pure saved-data rational checking is allowed without new Arb configurations. No changes of rho, thresholds, spatial middle interval or time.",
+  "source_sha256": {
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-curvature-astra/cube-dim-6-bounds/upper/round033/exact_projection_peaks/results.json": "c3c8401fbbb7ef4efe925338cf6c544ed5acc784187e7e2f225cd57c61fe7eba",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-curvature-astra/cube-dim-6-bounds/upper/round041/one_large_jump_cap/theorem.md": "09b69e5b0ea5d1e27b2d0aab51c20052fd39a9611b866ed58b3513f338f14e63",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-curvature-astra/cube-dim-6-bounds/upper/round041/one_large_jump_cap/manifest.json": "a1c195da4acad86e1ed9804458b1c27f35afb2cdf788f525c3434af659fff21d",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round037/pair_resolved_green_envelope/theorem.md": "938f8501ceb80ec1b27d21ae447ff73e57d23ddcf99f51a02480d65f2ec74451",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round037/pair_resolved_green_envelope/manifest.json": "ff19f756bbc40113cf28ad94bd5addb1d8e9cd9a5cc458298b14f688566fc911",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-literature/cube-dim-6-bounds/upper/round034/positive_face_tube_budget/theorem.md": "0f9779ec781cd68ea916f50eafac3397153e723f7ef067bc6ff3c193f8ba85bc",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-upper-astra/cube-dim-6-bounds/upper/round036/exact_peak_budget/theorem.md": "dda9b1e97ed484bcd60ee08809866f82d737dcc3a4a87a4311a3cc16c96cc868",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-curvature-astra/cube-dim-6-bounds/upper/round041/one_large_jump_cap/results.json": "99fd0dd2b717b33b8dc8114e7068bbfc517115867b61e17188fcc4f3c031449c"
+  },
+  "forbidden": "G/H/K/p/native, spatial grid, old failed cap budget scan, MATLAB, old source edits, delegation, stage/commit/push",
+  "new_kernel_calls": 0,
+  "new_C6_bound": false,
+  "fixed_configuration_plan": [
+    {
+      "id": 1,
+      "kind": "exact structure",
+      "scope": "32-sign symbol at ones equals60, symmetric convex l1 comparison and missing-one peak loss(10/9)^3"
+    },
+    {
+      "id": 2,
+      "kind": "exact structure",
+      "scope": "one middle residual pair-zero certificate, true two-column Gram coarea, symbolic denominator identity for the Cauchy-averaged resolvent"
+    },
+    {
+      "id": 3,
+      "kind": "Arb512",
+      "scope": "one fixed tube rho1/64, two parameter thresholds1/2 and1/16, middle endpoints1/4 and3/4, uniform first-two gaps and original other-plane gap; no scan"
+    },
+    {
+      "id": 4,
+      "kind": "Arb512",
+      "scope": "both specified parameters large: R2_k3 and short-time L6/5 budget at epsilon1/1000"
+    },
+    {
+      "id": 5,
+      "kind": "Arb512",
+      "scope": "both complementary-event upper terms via exact scalar Cauchy average, complete restricted triple coefficient, sum M"
+    },
+    {
+      "id": 6,
+      "kind": "Arb512",
+      "scope": "combined disjoint-remainder L1 interpolation, short-time norm bound, compare only conditional threshold4/48750"
+    }
+  ],
+  "theoretical_gate": "Derive uniform first-two distances, retain a-dependent third distance and integrate it against its actual Cauchy density; never assume a uniform positive third distance. Missing-one quotient peaks are bounded by a proved symbol comparison, not inherited unmodified.",
+  "code_sha256": {
+    "evaluate.py": "3e030cfb9b975361350d0efdabcfd08e36e661865b9f802aa7d870712fddf202",
+    "theorem.md": "2e80ab1bda192499abb71162a8443db0263c06852b75256296af3598922954ad"
+  }
+}

@@ -1,6 +1,6 @@
 # 六维中心方体研究状态
 
-active；最新顺序归档至042，实际研究前沿050。上界优先，下界极低资源。固定Lebesgue、中心轴平行共同半径、一般L1、全部正尺度。当前严格C6>2067397333267/10^12、C6≤64。完整准确下界008系数/理想上端/有限L1证书与来源hash在results/bounds_ledger.json，公开已核范围非穷尽；内部不称公开发表。phase冻结文件不变，双侧检查点null，lower_sincefreeze=true、upper=false、后续三轮0/3。
+active；最新顺序归档至043，实际研究前沿050。上界优先，下界极低资源。固定Lebesgue、中心轴平行共同半径、一般L1、全部正尺度。当前严格C6>2067397333267/10^12、C6≤64。完整准确下界008系数/理想上端/有限L1证书与来源hash在results/bounds_ledger.json，公开已核范围非穷尽；内部不称公开发表。phase冻结文件不变，双侧检查点null，lower_sincefreeze=true、upper=false、后续三轮0/3。
 
 已闭合障碍：028独立复核PASS，body32全部T>0的K_T/T及任意概率时间混合成本≥1025/16，已停止该家族时间搜索。只排此机制，不排C6或原始R_c空间正部源。轴beta1/T2/45、pairbeta1/T32/875仍只为精确固定模型反例，不泛化到全部frame。029主L1反例及独审否定025跨cube L6 leakage；局部corner定理不撤回。032完整G证书严格反证essential g≥1/60000，旧依此前提的条件成本不得用于突破声明。
 
@@ -47,3 +47,5 @@ active；最新顺序归档至042，实际研究前沿050。上界优先，下�
 当前代理：B/Astra upper050，C/sol upper048已冻结，F/Astra audit048，A/sol audit049等待源锁，额外Astra upper049封存，D/sol lower047小批，E/sol audit039完成停止。所有旧G/native/band/union句柄都exit/wait，050代码/实际子进程由本目录register/checkpoint另记；没有重启旧计算。MATLAB036主串行四标量已完成、未创建变量或图窗，无本任务窗口待关闭。当前上界仍64，lower008不变、双侧未触发、后三轮0/3。
 
 042归档完成：完整ALL-time S1 cap范数<2118205441/10^15，正事件/长尾独审PASS；帽外I/g仍未证。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
+
+043归档完成：真Cauchy平均处理a零距、缺参商峰损失及完整中段短预算独审PASS，后049更锐。严格C6上端仍64、下端第008轮不变；双侧未触发、后三轮0/3。
