@@ -1,0 +1,186 @@
+{
+  "id": "C013-generic-G-gradient-engine",
+  "precision_bits": 512,
+  "domain": "all exact full-group Fourier nodes nonzero; repeated nonzero allowed; any zero causes whole evaluation unsupported",
+  "unique_scalar_anchor_cases": 6,
+  "anchors": [
+    [
+      [
+        3,
+        1
+      ],
+      [
+        -2,
+        1
+      ],
+      [
+        -3,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    [
+      [
+        -2,
+        1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    [
+      [
+        -2,
+        1
+      ],
+      [
+        -2,
+        1
+      ],
+      [
+        -2,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        -1,
+        7
+      ],
+      [
+        -1,
+        7
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    [
+      [
+        -2,
+        1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ]
+    ]
+  ],
+  "full_evaluator_execution_cap": 3,
+  "planned_executions": [
+    "1native G+all6grad",
+    "1independent Python fmpq-DD6 gradient_x2"
+  ],
+  "point": "existing A007 center,den1000000007",
+  "new_points": 0,
+  "old_G_reference": "main/upper/round003/direct_kernel/local_minimum/exact_local_reference_results.json",
+  "gradient_reference_component": "x2 (index1), full group exact rational sum DD6(sign,copied_node) times original slope",
+  "checks": [
+    "G exact Q/pi5",
+    "gradient_x2 exact independent Q/pi5",
+    "Euler x dot grad=-5G",
+    "complete dyadic output",
+    "same-sign local constants handled exactly, no sign(0) convention"
+  ],
+  "stop": "20min; immediately stop on inconsistent sign/endpoints; no expansion or grid; any exact zero unsupported",
+  "no_MC": true,
+  "no_MATLAB": true,
+  "no_push": true,
+  "no_spawn": true,
+  "input_sha256": "a17e48092b7799518381c2381a8ada2d20efc1ec536b900803f6c6b4237ffba3"
+}
