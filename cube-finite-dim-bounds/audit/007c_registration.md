@@ -1,0 +1,7 @@
+# Independent 007c final bounded-stage audit
+
+2026-10-25. Main agent's standing authorization and author delivery identify immutable round005c input SHA256 6d77724d8c4c7eaf416c9686e9c2cb6b041dfb2e11e0e0fe769a688fa7a64bc7. Preserve all 007/007b evidence. New target is full independent 007b upper endpoint, not checkpoint a or original T3/R3. No optimization or duplicate search process.
+
+170 keys remain, but author reports only158 positive boxes; independent code must classify inner/outer boxes and explicitly allow proved zero-volume/empty outer boxes, not assume all saved keys remain viable. Reuse Newton/slab-mask engine; recalculate every atom/mass/root/coordinate, original-key inclusion, b, radius equality count, full-target exact comparison. One full run, at most one coding repair. One deterministic explicit finite-N formula if exact pass. MATLAB script supplied to parent for serialized execution; no direct MATLAB call by this agent. Stop after exact verdict and report/source hashes.
+
+Execution complete: first exact run passed; 12 outer boxes have strictly negative widths, 158 positive boxes. One Fraction-only finite-N evaluation and one exact empty-width check used already saved roots (no prior certificate rerun). MATLAB script delivered to parent and serialized actual run receipt returned successfully. Final outputs preserve all earlier stage files; no further refinement runs by this auditor.

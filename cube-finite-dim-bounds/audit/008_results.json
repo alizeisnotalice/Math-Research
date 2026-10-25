@@ -1,0 +1,32 @@
+{
+  "status": "exact symbolic identities PASS",
+  "engine": "SymPy 1.14.0",
+  "scope": "fixed examples and sign identities only; abstract PDE proof is in008_audit.md",
+  "radial_examples": [
+    {
+      "n": 3,
+      "f_cap": 8,
+      "kappa": 1,
+      "support_radius": 2,
+      "inner_formula": "2 - 7*r**2/6",
+      "outer_formula": "(r*(r**2 - 12) + 16)/(6*r)",
+      "patching": "values and first derivatives match; radius2 derivative zero",
+      "laplacian_inside": "-7",
+      "laplacian_annulus": "1"
+    },
+    {
+      "n": 4,
+      "f_cap": 16,
+      "kappa": 1,
+      "support_radius": 2,
+      "inner_formula": "3 - 15*r**2/8",
+      "outer_formula": "r**2/8 - 1 + 2/r**2",
+      "patching": "values and first derivatives match; radius2 derivative zero",
+      "laplacian_inside": "-15",
+      "laplacian_annulus": "1"
+    }
+  ],
+  "negative_part_penalty_derivative": "Piecewise((x, x < 0), (0, True))",
+  "source_scaling_after_change_of_variables": "r^-2",
+  "checker_sha256": "3264c2d4db4674399516c43b4b56f2f56ef810116d27a16879f09a794e97befc"
+}

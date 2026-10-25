@@ -6,16 +6,16 @@
       "id": "L3",
       "status": "complete_strict_certificate",
       "interval": [
-        "3589959540169491648451832387441629814222286288592506080984694892944827497909496988743586057/2001122832844000000000000000000000000000000000000000000000000000000000000000000000000000000",
-        "358995954016949164845183238744692625842751036487802106452380470704062534659529133623809371/200112283284400000000000000000000000000000000000000000000000000000000000000000000000000000"
+        "2393750311737778302713280763562733980981757802167728875431076739844606133693297805695765213/1334308451800768000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "7181250935213334908139842290700498201061906373655419493064372808067507886223105314304425523/4002925355402304000000000000000000000000000000000000000000000000000000000000000000000000000"
       ],
       "new_improvement": true,
-      "certificate": "audit/006-satellite_n3_results.json",
+      "certificate": "audit/007c_results.json",
       "public": "482167717377842991882283179477574801392641890014291050323/283174368139841919615520431313000857449005056000000000000",
-      "construction": "lower/n3/round004_certificate_input.json",
-      "simple_display_lower": "17939726044040153/10000000000000000",
-      "comparison_rule": "New candidate must exceed this construction T3, using exact certificate upper endpoint, not the shorter display lower.",
-      "proof": "proofs/satellite_n3_transfer.md"
+      "construction": "lower/n3/round005c_certificate_input.json",
+      "simple_display_lower": "17940007113851367/10000000000000000",
+      "comparison_rule": "Must exceed exact T3_005c full certificate upper, not display decimal or earlier checkpoints.",
+      "proof": "audit/007c_audit.md"
     },
     {
       "id": "U3",
@@ -41,14 +41,14 @@
       "new_improvement": false
     }
   ],
-  "latest_round": 4,
+  "latest_round": 5,
   "round2_new_bound": false,
   "round2_report": "rounds/002.md",
   "progress": {
-    "L3": "new T3 > 1.7939726044040153; independent exact union and general L1 transfer passed",
-    "L4": "small satellite selected finite union upper < original R4; no new bound",
-    "U3": "restricted stable two-grid numerical minimum 10.0893 > 8; no new bound",
-    "U4": "restricted stable two-grid numerical minimum 22.5812 > 16; no new bound"
+    "L3": "005c strictly above round4 and all intermediate exact targets; C3 > 1.7940007113851367",
+    "L4": "contact seam loss corrected; N0=0 supplement checked exactly zero at all 97 saved phases; no new bound",
+    "U3": "Delta finite positive source comparison audited closed; no continuous cost < 8",
+    "U4": "same Delta comparison applies; no continuous cost < 16"
   },
   "round3_new_bound": false,
   "round3_report": "rounds/003.md",
@@ -69,11 +69,48 @@
       },
       "new_construction": "T3: rational two-orbit small satellite, 170 witnesses",
       "strictly_above_previous_exact_upper": true
+    },
+    {
+      "round": 5,
+      "task": "L3",
+      "previous": {
+        "id": "L3",
+        "status": "complete_strict_certificate",
+        "interval": [
+          "3589959540169491648451832387441629814222286288592506080984694892944827497909496988743586057/2001122832844000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "358995954016949164845183238744692625842751036487802106452380470704062534659529133623809371/200112283284400000000000000000000000000000000000000000000000000000000000000000000000000000"
+        ],
+        "new_improvement": true,
+        "certificate": "audit/006-satellite_n3_results.json",
+        "public": "482167717377842991882283179477574801392641890014291050323/283174368139841919615520431313000857449005056000000000000",
+        "construction": "lower/n3/round004_certificate_input.json",
+        "simple_display_lower": "17939726044040153/10000000000000000",
+        "comparison_rule": "New candidate must exceed this construction T3, using exact certificate upper endpoint, not the shorter display lower.",
+        "proof": "proofs/satellite_n3_transfer.md"
+      },
+      "new_construction": "T3_005c: 170 retained keys, 158 nonempty boxes; exact rational satellite",
+      "strictly_above_previous_exact_upper": true,
+      "intermediate_audit_chain": [
+        "audit/007_results.json",
+        "audit/007b_results.json",
+        "audit/007c_results.json"
+      ]
     }
   ],
   "round4_new_bound": true,
   "round4_improved_tasks": [
     "L3"
   ],
-  "round4_report": "rounds/004.md"
+  "round4_report": "rounds/004.md",
+  "round5_new_bound": true,
+  "round5_improved_tasks": [
+    "L3"
+  ],
+  "round5_report": "rounds/005.md",
+  "round5_reusable_results": [
+    "audit/008_audit.md",
+    "audit/009_audit.md",
+    "audit/010_audit.md",
+    "proofs/finite_grid_kernel_diagnostic.md"
+  ]
 }
