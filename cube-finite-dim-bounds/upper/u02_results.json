@@ -1,0 +1,39 @@
+{
+  "batch": "U02 finite cube-domain Green kernels",
+  "generator": "Delta, coordinate Brownian variance 2t",
+  "cost_formula": "M_n / (2^n a^n g_n(a)), a=1/R",
+  "rows": [
+    {
+      "n": 3,
+      "a_decimal_input": "0.47716536955561023",
+      "R_numeric": "2.0957095040893514",
+      "unit_mass_numeric": "0.2248513193177414576431503339363424664973973144541147336",
+      "unit_corner_green_numeric": "0.02915094428544827158945728121148030523829726507165096353",
+      "cost_numeric": "8.87454456310112195239468574239958727281364673969750122",
+      "target": 8,
+      "improved_target": false
+    },
+    {
+      "n": 4,
+      "a_decimal_input": "0.47095317569629574",
+      "R_numeric": "2.1233533429762272",
+      "unit_mass_numeric": "0.1890886925095794603572755848332434970827013389503322269",
+      "unit_corner_green_numeric": "0.01277612861813428856396104426761760001955419830797634655",
+      "cost_numeric": "18.80335658236862377499805268067061882357981712840014745",
+      "target": 16,
+      "improved_target": false
+    }
+  ],
+  "coordinate_monotonicity": "proved by derivative heat equation and half-interval maximum principle",
+  "distributional_source": "Delta G = positive probability exit measure - delta_0, by stopped Dynkin identity",
+  "analytic_tail_status": "rigorous dyadic bounds: Green omissions <1e-48, mass omissions <1e-62 for specified cutoffs; not quadrature error",
+  "quadrature_status": "non-rigorous floating/multiprecision quadrature, cross-checked in MATLAB",
+  "optimizer_status": "one bounded scalar run per dimension; not a global optimality certificate",
+  "source_sha256": {
+    "u02_green_numeric.py": "c3776f2783987b618463afb7d43c90d3bf66826296ea6acba795f84926c6ec7a",
+    "u02_green_multiprecision.py": "1010eb1272bd0588e50162535701cd57a1296c4847bd7e40320787c176129244",
+    "u02_tail_bounds.py": "ec35ff364d3e7845eaebd02ed5a3deeac482036fd87d559fa2ad1722c6a434cf",
+    "u02_green_matlab.m": "694f93351ce9fb18d0cf8f0fa86ed39b694ff4880734bc1915cc550165b779f7"
+  },
+  "new_Cn_bound": false
+}
