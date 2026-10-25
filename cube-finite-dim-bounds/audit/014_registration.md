@@ -1,0 +1,7 @@
+# Independent014 seventh-round theory audit
+
+2026-10-25. Read actual main rounds/007-registration.md and STATE after e897c01; L3 true target is full012b upper, L4 originalR4, U3/U4=8/16. Onlyaudit/014_* and necessary literature, no old evidence/ledger/commit/push/spawn. New exact lower candidates interrupt this waiting-theory batch. Six existing agents only; MATLAB parent-serialized.
+
+Initial scope H4+H6 sphere/cube strata and all radial positive intervals, without importing H4 unique-root/corner conclusions or repeating cost scans. During analytic review a new candidate theorem arose: in n3/4, strict full-sphere negative boundary plus one positive pole and a harmonic regular perturbation may itself imply a unique simple radial zero via Poisson-kernel/ball-Green ratio. This requires independent proof and is not assumed.
+
+Finite batch: one SymPy exact run verifies both Poisson-ratio derivative numerators, positive denominator decomposition, angular equal-multiplicity flat-value identity, and the cube free-coordinate quadratic difference. At most one implementation repair. No cost integration, random search or repeated H6 harmonicity batch. Then write exact assumptions and proof; any unguarded multiroot example remains outside the legal-candidate theorem. No direct MATLAB; provide a small script only if parent requests. Stop after theorem/stratum verdict and source hashes or report a gap; queue dual-satellite review separately.

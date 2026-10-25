@@ -1,0 +1,5 @@
+# 第7轮分层与共同见证的有限独审登记
+
+2026-10-25。先读最终cb7_stratification.md（SHA e55314369108302cc795f117233c32161361711bf6aab14d222402b166542caf）及vg7_joint_witness.md（SHA 034c633ef1ab779ad669d3eba1d6239eff4d924def91d85fddaa85948c4ce220）。只写016_*，不改账本/旧证据，不提交推送，不做成本或phase优化。
+
+一次Python批次，最多一次实现修复：独立Fraction枚举两固定实际输入的sphere候选值及两个退化例；SymPy核cube偏导差、等multiplicity系数与n3/4径向积分/Lipschitz系数；用独立有理端点分格核vg7固定法向并集、四状态mixed项和一个准确有限sigma。禁止导入作者checker/geometry/volume。未进行算法的全参数符号验证之处用逐式证明审查。MATLAB仅记录主已实际串行receipt，不另调用。完成上述有限证据和适用范围报告即停止本批；新下界候选优先。

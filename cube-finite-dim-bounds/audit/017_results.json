@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "source_sha256": "d87178e5f35374eb3fd51ebee976a2aa7e3b901b2c98a29807e493e498a54af8",
+  "u06_source_sha256": "5f41dabdc023ea00c5213e1e812e89bf797fabdfc57f8e722f58793fd2fe9707",
+  "spline_checks": [
+    {
+      "n": 3,
+      "h": "2/5",
+      "coefficient": "1/75",
+      "all_support_cells": 64,
+      "tensor_bernstein_coefficients_checked": 4096,
+      "laplacian_bernstein_max": "2/81",
+      "laplacian_bernstein_min": "-2/9",
+      "dual_value_exact": "2401/2400",
+      "dual_value_display": 1.0004166666666667,
+      "grid_only_false_certificate_laplacian": "50/3"
+    },
+    {
+      "n": 4,
+      "h": "2/5",
+      "coefficient": "1/100",
+      "all_support_cells": 256,
+      "tensor_bernstein_coefficients_checked": 65536,
+      "laplacian_bernstein_max": "1/81",
+      "laplacian_bernstein_min": "-4/27",
+      "dual_value_exact": "16001/16000",
+      "dual_value_display": 1.0000625,
+      "grid_only_false_certificate_laplacian": "250/27"
+    }
+  ],
+  "selected_kernel_failures": [
+    {
+      "n": 3,
+      "core_margin_exact": "3550766252755404899284961/144375000000000000000000000",
+      "core_mass_lower_exact": "1479847065414070432527/125000000000000000000",
+      "corner_upper_exact": "8626094563521846979/48125000000000000000",
+      "specific_kernel_cost_lower_exact": "113948224036883423304579/13801751301634955166400",
+      "display_only": 8.256069939717369,
+      "scope": "only the two fixed kernels, not C_n or a whole-family obstruction"
+    },
+    {
+      "n": 4,
+      "core_margin_exact": "158907593729297143/44100000000000000000",
+      "core_mass_lower_exact": "130360181920284318270637887/5000000000000000000000000",
+      "corner_upper_exact": "8242236846332023/100000000000000000",
+      "specific_kernel_cost_lower_exact": "130360181920284318270637887/6593789477065618400000000",
+      "display_only": 19.770146191912918,
+      "scope": "only the two fixed kernels, not C_n or a whole-family obstruction"
+    }
+  ],
+  "shared_libraries": {
+    "Fraction": "Python standard library",
+    "SymPy": "1.14.0"
+  },
+  "scope": "independent finite exact identities and all support cells for one example per dimension; general correctness separately proved; no LP/search/author imports",
+  "checker_sha256": "7d1985eb2aff4ac11856116401f1e335462a65ff69091f89877665d2738c7ab4"
+}

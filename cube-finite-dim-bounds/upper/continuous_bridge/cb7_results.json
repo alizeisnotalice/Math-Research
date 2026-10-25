@@ -1,0 +1,148 @@
+{
+  "status": "PASS exact finite symbolic batch",
+  "sympy": "1.14.0",
+  "sphere": [
+    {
+      "n": 3,
+      "B4": "-3/22",
+      "B6": "1",
+      "exact_global_range": [
+        "-1/35",
+        "26/315"
+      ],
+      "degenerate_stationary_families": [
+        {
+          "support": 2,
+          "p": 1,
+          "q": 1,
+          "sum_u_v": "1",
+          "representative": "uniform support"
+        }
+      ],
+      "nonuniform_equals_uniform": "-1/35"
+    },
+    {
+      "n": 4,
+      "B4": "1/2",
+      "B6": "1",
+      "exact_global_range": [
+        "-11/144",
+        "5/16"
+      ],
+      "degenerate_stationary_families": [
+        {
+          "support": 4,
+          "p": 2,
+          "q": 2,
+          "sum_u_v": "1/2",
+          "representative": "uniform support"
+        }
+      ],
+      "nonuniform_equals_uniform": "-1/16"
+    }
+  ],
+  "cube_equal_multiplicity": {
+    "n": 4,
+    "B4": "2/3",
+    "B6": "2/3",
+    "equal_multiplicity": "2+2",
+    "stationary_y": [
+      "1/4",
+      "1/4",
+      "3/4",
+      "3/4"
+    ],
+    "gradient": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "reduced_polynomial": "(4*t - 3)*(4*t - 1)/12",
+    "admissible_roots": [
+      "1/4",
+      "3/4"
+    ],
+    "scope": "stationary candidate completeness only; not a global cube minimum or kernel certificate"
+  },
+  "radial_three_root_examples": [
+    {
+      "n": 3,
+      "variable": "r",
+      "A": "1543/1470",
+      "D=B4*h4": "-23/420",
+      "E=B6*h6": "1/196",
+      "factorization": "-(t - 3)*(t - 2)*(t - 1)*(15*t**4 + 90*t**3 + 214*t**2 + 384*t + 490)/2940",
+      "positive_roots_with_multiplicity": [
+        {
+          "interval": [
+            "1",
+            "1"
+          ],
+          "multiplicity": 1
+        },
+        {
+          "interval": [
+            "2",
+            "2"
+          ],
+          "multiplicity": 1
+        },
+        {
+          "interval": [
+            "3",
+            "3"
+          ],
+          "multiplicity": 1
+        }
+      ],
+      "interval_signs_at_half_points": [
+        "1",
+        "-1",
+        "1",
+        "-1"
+      ],
+      "scope": "univariate radial mechanism example only; no global outer-ball negativity or cube certificate claimed"
+    },
+    {
+      "n": 4,
+      "variable": "z=r^2",
+      "A": "85/66",
+      "D=B4*h4": "-25/66",
+      "E=B6*h6": "1/11",
+      "factorization": "-(t - 3)*(t - 2)*(t - 1)*(6*t + 11)/66",
+      "positive_roots_with_multiplicity": [
+        {
+          "interval": [
+            "1",
+            "1"
+          ],
+          "multiplicity": 1
+        },
+        {
+          "interval": [
+            "2",
+            "2"
+          ],
+          "multiplicity": 1
+        },
+        {
+          "interval": [
+            "3",
+            "3"
+          ],
+          "multiplicity": 1
+        }
+      ],
+      "interval_signs_at_half_points": [
+        "1",
+        "-1",
+        "1",
+        "-1"
+      ],
+      "scope": "univariate radial mechanism example only; no global outer-ball negativity or cube certificate claimed"
+    }
+  ],
+  "new_upper_bound": false,
+  "shared_arithmetic": "derivations and implementation share normalized formulas/SymPy; independent audit required"
+}

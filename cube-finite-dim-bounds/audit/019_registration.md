@@ -1,0 +1,9 @@
+# Signed连续对偶接口的有限独审登记
+
+2026-10-25。只新增019_*，不改旧证据/账本，不提交推送/扩招，无新LP，MATLAB主串行。主来源已锁：proofs/signed_dual_interface.md SHA 6f1501b2850670e2d4b1a61c2339a470cd6ea52e89681e393ebf96c535c4c2e1，src/check_signed_dual_interface.py SHA 9683d6b91e0b5ec181f28f34a0c6ad424ad830b35a5f71876d5b675266fa9391，results/round007_signed_interface.json SHA 6128935e6522d16d78460006a1960b222594cc14f33a8e6b96396d7b49cad03f。
+
+一批独立Python（最多一次实现修复）：由truncated-power cardinal B公式独立构造全部分段、phi及导数，用Python任意精度整数的二变量系数递推核n3/n4全部胞元Bernstein系数；逐式证明旧非负模型Hess0、signed例非负与Hessian，另独立一维积分/面通量给目标值。不得导入主checker或NumPy广播实现。只证新有限接口实质扩大，不当Cn界。U07待作者实际最终源hash锁定后才允许同019追加有限参数单调/具体失败核查，不代做自由R搜索。完成有限报告即停批，新候选优先。
+
+## U07锁源后追加（实际核查前）
+
+upper已锁u07_certificate.md SHA edbc2a59331019783dbd6fcfe5fced106a119d03081e4c667ca71a538aff3eb2 与u07_parameter_check.py SHA bcc1847b9f3a328d8b5b44ddaed7511ca44920ee725b31eec069c3308ed39051。只核其中两固定自由R输入：Fraction独立重算sphere guard、cube严格负梯度充分余量、core质量与两具体成本下界；SymPy核导数公式。另一次有限Python，不导入作者checker、不依赖可继续追加MATLAB字段的results，不重跑任何搜索。

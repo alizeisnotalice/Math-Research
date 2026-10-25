@@ -1,0 +1,56 @@
+{
+  "status": "PASS independent signed-interface audit",
+  "source_sha256": {
+    "proofs/signed_dual_interface.md": "6f1501b2850670e2d4b1a61c2339a470cd6ea52e89681e393ebf96c535c4c2e1",
+    "src/check_signed_dual_interface.py": "9683d6b91e0b5ec181f28f34a0c6ad424ad830b35a5f71876d5b675266fa9391",
+    "results/round007_signed_interface.json": "6128935e6522d16d78460006a1960b222594cc14f33a8e6b96396d7b49cad03f"
+  },
+  "univariate_integrals": {
+    "B": "11/12",
+    "phi": "13/36",
+    "B_second": "-1",
+    "phi_second": "1/3"
+  },
+  "runs": [
+    {
+      "n": 3,
+      "status": "PASS",
+      "full_cells": 216,
+      "coefficients_per_polynomial": 13824,
+      "nonnegative_psi_Bernstein_min": "0",
+      "raw_Delta_Bernstein_max": "8/3",
+      "raw_Delta_Bernstein_min": "-128/81",
+      "scale": "3/8",
+      "scaled_origin_Hessian_diagonal": "1/3",
+      "cube_Delta_integral_raw": "-55/48",
+      "D_exact": "1079/1024",
+      "D_display_only": 1.0537109375,
+      "nonzero_signed_center_coefficient": "-3/8",
+      "signed_axis_neighbor_coefficients": "1/4",
+      "seconds": 0.00541712500853464
+    },
+    {
+      "n": 4,
+      "status": "PASS",
+      "full_cells": 1296,
+      "coefficients_per_polynomial": 331776,
+      "nonnegative_psi_Bernstein_min": "0",
+      "raw_Delta_Bernstein_max": "64/27",
+      "raw_Delta_Bernstein_min": "-352/243",
+      "scale": "27/64",
+      "scaled_origin_Hessian_diagonal": "1/4",
+      "cube_Delta_integral_raw": "-847/324",
+      "D_exact": "13135/12288",
+      "D_display_only": 1.0689290364583333,
+      "nonzero_signed_center_coefficient": "-9/16",
+      "signed_axis_neighbor_coefficients": "9/32",
+      "seconds": 0.1478469579888042
+    }
+  ],
+  "shared_libraries": {
+    "Fraction": "standard Python",
+    "SymPy": "1.14.0"
+  },
+  "independence": "truncated-power generation and arbitrary-integer scalar coefficient recurrence; no author imports, NumPy, solver or new LP",
+  "checker_sha256": "b0fd08a18ef89d7047519ec9ed96aeb49c0a1826fff1163ed7ec04628939c6c1"
+}

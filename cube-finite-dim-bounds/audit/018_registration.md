@@ -1,0 +1,5 @@
+# 两份已保存连续样条dual证书独审登记
+
+2026-10-25。只新增018_*，不改旧证据/总账，不提交推送/扩招；不运行第三LP或任何参数搜索，MATLAB仍主串行。锁定bridge来源：q1证书SHA b9dad20dd2c7408add7e95e6078a9e322db17127624e64fba206c072aed86c21，q2证书SHA dd4e8b98bab49e6c15a10ad2063ef5119a3557d7edb7dbe1ca5968e9e543875e，作者cb7_dual_check.py SHA 89cbeab8bcd5733fcf640c6e0e979d5bf7d6b26d27bf1fa9cc1c4b9b5a161e75。源变化立即停止并要求锁定，不静默接受新输入。
+
+一批独立Python，最多一次实现修复：不导入作者代码或硬编码其Bernstein表。全signed lattice按sorted(abs(k))归类独立展开轨道，核全部原点排除、系数/重数。由原始分段B公式生成局部幂系数，先累加全胞元Laplacian幂多项式，再独立逐轴升阶为Bernstein，核全部支撑胞元64系数。另由幂系数直接积分cube，与边界导数/一维积分通量及所有轨道目标系数比较。按scale_alpha反推10^-10舍入前修复系数，核raw最大和1+(D_raw−1)/C修复公式。完整有限核查和报告完成即停批，不把可行D<8报告成Cn界或整个方法障碍。
