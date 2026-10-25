@@ -1,0 +1,10 @@
+{
+  "round": "003-lower-d2",
+  "task": "continue exact exhaustion of the remaining a1 endpoint-crossing candidates in the registered D window",
+  "input": "the 83 exact candidates of a1_breakpoint_search.py, excluding C and every a1 coefficient vector recorded by prior a1_breakpoint*_results.json files",
+  "selection": "Choose the next eight remaining candidates nearest C in exact absolute distance; all are evaluated with the full 1024-block family, not a float filter.",
+  "per_candidate_soft_stop_seconds": 120,
+  "recursive_node_stop": 200000,
+  "comparison": "each lower endpoint is compared against C's exact interval upper endpoint from lock_c_a2_equals_a3.json",
+  "promotion": "a strict winner is separately locked; completed candidates are never overwritten or rerun."
+}

@@ -1,0 +1,12 @@
+{
+  "round": "003-lower-d",
+  "task": "finite a1 breakpoint search with a2=a3=a4=a5=(1+u)/2 fixed",
+  "window": "a1 in [1+u^3/2-1/8, 1+u^3/2+1/8]",
+  "endpoint_family": "all raw first-coordinate endpoint affine functions from the full 1024 length vectors, before fixed-point dominance deletion",
+  "breakpoints": "exact pairwise crossings of distinct endpoint affine functions in the stated closed window, plus the two window endpoints",
+  "selection": "If at most 8 unrun candidates occur, evaluate all.  Otherwise exclude the current C spacing and select the 8 values nearest the C spacing by exact absolute difference, resolving ties by exact ascending value.",
+  "per_candidate_soft_stop_seconds": 120,
+  "recursive_node_stop": 200000,
+  "promotion": "Any exact union ratio exceeding C's complete interval upper endpoint is recorded separately, without altering C, and sent to the parent for a distinct audit decision.",
+  "scope": "This finite endpoint construction partitions possible raw endpoint orders; it does not itself prove a global optimum outside the window or after arbitrary changes to the witness family."
+}

@@ -1,0 +1,116 @@
+{
+  "status": "success",
+  "replay": "007_single_point_clean_portable_replay",
+  "source_dir": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/numerics",
+  "dependency_dir": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/numerics",
+  "python": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "commands": [
+    {
+      "command": [
+        "c++",
+        "--version"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.014582333009457216,
+      "stdout": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin27.2.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python",
+        "007_generate_fejer_inputs.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.05538629100192338,
+      "stdout": "{\n  \"segments\": 7,\n  \"degree\": 24,\n  \"N\": 25,\n  \"rho\": \"49/10\",\n  \"interpolation_error_arb\": \"[2.15465358660105977098780409005959765949765360936261758146852782721303149478e-12 +/- 7.50e-87]\",\n  \"tail_error_arb\": \"[3.794911440873592961065285681722192327225101119976668847603408317057130290198e-8 +/- 4.37e-84]\",\n  \"minimum_weight_arb\": \"[2.68866798132421593977551168056361720818775500959320287864461296457711974967e-5 +/- 8.01e-80]\",\n  \"nodes_bits_sha256\": \"8152b6ec23d0072a8cfe47ff24ed0751798775cfe3a1e1b69a2c680e0cb6521a\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "c++",
+        "-O2",
+        "-std=c++20",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "-DCUBE7_BUILD_COMMAND=\"c++ -O2 -std=c++20 -fno-fast-math -ffp-contract=off -DCUBE7_SOURCE_SHA256=384e82609064db7f0fece98ff3f959d2a7093a0afb529731b8fe3f07a99faede -DCUBE7_INPUT_SHA256=8152b6ec23d0072a8cfe47ff24ed0751798775cfe3a1e1b69a2c680e0cb6521a -DCUBE7_BUILD_COMMAND=<self-recorded> 007_interval_fejer.cpp -o cube5-007-replay\"",
+        "-DCUBE7_SOURCE_SHA256=\"384e82609064db7f0fece98ff3f959d2a7093a0afb529731b8fe3f07a99faede\"",
+        "-DCUBE7_INPUT_SHA256=\"8152b6ec23d0072a8cfe47ff24ed0751798775cfe3a1e1b69a2c680e0cb6521a\"",
+        "007_interval_fejer.cpp",
+        "-o",
+        "/var/folders/lq/2c4qbz2n0354_tnttkv_qsz00000gn/T/cube5-replay-007-462hv76n/cube5-007-replay"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.4982628330180887,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/var/folders/lq/2c4qbz2n0354_tnttkv_qsz00000gn/T/cube5-replay-007-462hv76n/cube5-007-replay"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 4.078648916998645,
+      "stdout": "nodes=175 seconds=3.71823 fp=aarch64_fpcr_0x0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python",
+        "007_final_verify.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 1.3190627500007395,
+      "stdout": "{\n  \"status\": \"complete_onepoint_H_epsilon_interval_certificate_conditional_on_Cpeak\",\n  \"precision_bits\": 256,\n  \"point_tail_numerators\": [\n    936,\n    673,\n    68,\n    917\n  ],\n  \"epsilon\": \"1/128\",\n  \"T\": 1,\n  \"degree\": 24,\n  \"rho\": \"49/10\",\n  \"nodes\": 175,\n  \"quadrature_bits\": {\n    \"lo_bits\": \"0x3f23280a2f93e82e\",\n    \"hi_bits\": \"0x3f23280a2f9aa51f\"\n  },\n  \"Cpeak_arb\": \"[1.517964576349437184426114272688876930890040447990667539041363326822852116079e-7 +/- 2.02e-83]\",\n  \"interpolation_error_arb\": \"[2.15465358660105977098780409005959765949765360936261758146852782721303149478e-12 +/- 7.50e-87]\",\n  \"tail_interval_arb\": \"[0, [3.794911440873592961065285681722192327225101119976668847603408317057130290198e-8 +/- 4.13e-85]]\",\n  \"H_interval_bits\": {\n    \"lo_bits\": \"0x3f23280a2ad6f1df\",\n    \"hi_bits\": \"0x3f2329502f53cbc2\"\n  },\n  \"H_interval_decimal_display\": [\n    0.0001461517726236835,\n    0.00014618972605936863\n  ],\n  \"direct_H_1_128_arb_ball\": \"[0.00014618841304835673886194300077727227350462859934284067354210538091529805 +/- 8.39e-75]\",\n  \"direct_arb_ball_contained\": true,\n  \"input_nodes_sha256\": \"8152b6ec23d0072a8cfe47ff24ed0751798775cfe3a1e1b69a2c680e0cb6521a\",\n  \"heat_output_sha256\": \"d4d542ca07f3db7039e64991fe057de8a1d8a596cf60045d6182fb7f54cb988c\",\n  \"node_generator_source_sha256\": \"1b6adc121d895b62e40f4506690d3a67e09bb6803acd2395ec1129291c340bc1\",\n  \"final_verifier_source_sha256\": \"921da8b22ecab5f92a00920c769deaa379061e7347b57cbb12e9c765dda26a1f\",\n  \"scope\": \"A single-point interval certificate conditional on the stated complex-time Cpeak inequality and the audited 005b binary64 kernel assumptions. It proves no spatial uniformity, g, I, or C5 bound.\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "forbidden_not_copied": [
+    "body_fan_check.py"
+  ],
+  "original_sha256": {
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/numerics/005b_interval_heat.cpp": "bbc523c6c953e7baea02fd79aa97d5403950720f97342d0ebd692271aaf0c88c",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/numerics/007_interval_fejer.cpp": "384e82609064db7f0fece98ff3f959d2a7093a0afb529731b8fe3f07a99faede",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/numerics/007_generate_fejer_inputs.py": "1b6adc121d895b62e40f4506690d3a67e09bb6803acd2395ec1129291c340bc1",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/numerics/007_final_verify.py": "921da8b22ecab5f92a00920c769deaa379061e7347b57cbb12e9c765dda26a1f",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/numerics/body_fan_geometry.py": "84dad4a7c74297fcb4e63377276d4a56e7dfa75c038063c2e3f319954aa1ce43",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/numerics/body_fan_arb_anchor.py": "348f0d348e084c4fb5ce62ce7194a9a6dfa58b5e1244e6a883a0fe7ae3f1f9c3",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/numerics/body_fan_h_epsilon_arb.py": "18d086627bc2fee3db6b00207d7d171a5b4ed8455e4f0d7b5270b9bc626d06c6",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/numerics/body_fan_green_arb.py": "6f59e4cf18dae43806307581d60be17968c04f50e5a1cc7b8cc30e44d7e406b8"
+  },
+  "temporary_dependency_sha256": {
+    "body_fan_geometry.py": "84dad4a7c74297fcb4e63377276d4a56e7dfa75c038063c2e3f319954aa1ce43",
+    "body_fan_arb_anchor.py": "348f0d348e084c4fb5ce62ce7194a9a6dfa58b5e1244e6a883a0fe7ae3f1f9c3",
+    "body_fan_h_epsilon_arb.py": "18d086627bc2fee3db6b00207d7d171a5b4ed8455e4f0d7b5270b9bc626d06c6",
+    "body_fan_green_arb.py": "6f59e4cf18dae43806307581d60be17968c04f50e5a1cc7b8cc30e44d7e406b8"
+  },
+  "temporary_replay_source_sha256": {
+    "005b_interval_heat.cpp": "bbc523c6c953e7baea02fd79aa97d5403950720f97342d0ebd692271aaf0c88c",
+    "007_interval_fejer.cpp": "384e82609064db7f0fece98ff3f959d2a7093a0afb529731b8fe3f07a99faede",
+    "007_generate_fejer_inputs.py": "1b6adc121d895b62e40f4506690d3a67e09bb6803acd2395ec1129291c340bc1",
+    "007_final_verify.py": "921da8b22ecab5f92a00920c769deaa379061e7347b57cbb12e9c765dda26a1f"
+  },
+  "compiler_version": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin27.2.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+  "binary_sha256": "285ec1a44203a346799277a3f8d3405d6e33ba719d9aa9961f1b58d6d9bc4b25",
+  "elapsed_seconds": 5.969446125003742,
+  "generated_input_sha256": "8152b6ec23d0072a8cfe47ff24ed0751798775cfe3a1e1b69a2c680e0cb6521a",
+  "generated_heat_output_sha256": "d4d542ca07f3db7039e64991fe057de8a1d8a596cf60045d6182fb7f54cb988c",
+  "generated_final_output_sha256": "81f0adad059b06916a2da4bcae0bb80758caaebb1b83dbd7b2888e863031dcd6",
+  "result_summary": {
+    "input_nodes_sha256": "8152b6ec23d0072a8cfe47ff24ed0751798775cfe3a1e1b69a2c680e0cb6521a",
+    "quadrature_bits": {
+      "lo_bits": "0x3f23280a2f93e82e",
+      "hi_bits": "0x3f23280a2f9aa51f"
+    },
+    "H_interval_bits": {
+      "lo_bits": "0x3f23280a2ad6f1df",
+      "hi_bits": "0x3f2329502f53cbc2"
+    },
+    "direct_arb_ball_contained": true,
+    "H_interval_decimal_display": [
+      0.0001461517726236835,
+      0.00014618972605936863
+    ]
+  },
+  "scope": "One clean finite replay only. It does not replay 005b throughput, prove spatial uniformity, or establish g/I/C5."
+}
