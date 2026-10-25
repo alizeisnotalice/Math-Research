@@ -1,0 +1,69 @@
+{
+  "id": "R6-008-C-alpha15-coercivity",
+  "inputs": {
+    "alpha": "3/2",
+    "common_coercivity": "32*3^(-1/4)",
+    "refined_coercivities": "c_m=32*(3-2/m)^(-1/4), m4,5,6",
+    "peak_cases": [
+      [
+        "6",
+        "common"
+      ],
+      [
+        "5",
+        "common"
+      ],
+      [
+        "4",
+        "common"
+      ],
+      [
+        "6",
+        "dimension6"
+      ],
+      [
+        "5",
+        "dimension6"
+      ],
+      [
+        "4",
+        "dimension6"
+      ],
+      [
+        "5",
+        "dimension5"
+      ],
+      [
+        "4",
+        "dimension4"
+      ]
+    ],
+    "counterchecks": [
+      "xi=(1,1,0,0,0,0) disproves c=32",
+      "zeta=(1,-1,0,0,0) disproves free quotient c=32"
+    ],
+    "cap_target_I": "1/1000000",
+    "arb_bits": 256,
+    "old_cap_source": "main/audit/round006/alpha15_review/check_results.json",
+    "cap_models": [
+      "old_F",
+      "common_free",
+      "common_coarea",
+      "dimension_free",
+      "dimension6_coarea"
+    ]
+  },
+  "input_sha256": "c444c5a8d7e4b160a0d1b7c9c8315c74a3abb58b1b701ce8ca1b8e4416e4f150",
+  "peak_parameter_case_cap": 8,
+  "no_high_dim_integral": true,
+  "no_MC": true,
+  "no_matlab": true,
+  "wall_limit_seconds": 1200,
+  "stop": "after8 fixed Gamma peak cases and algebraically derived cap comparisons; no broad search or new grid",
+  "outputs": [
+    "coercivity_check.py",
+    "coercivity_results.json",
+    "report.md",
+    "manifest.json"
+  ]
+}

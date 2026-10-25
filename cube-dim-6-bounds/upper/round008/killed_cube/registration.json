@@ -1,0 +1,13 @@
+{
+  "scope": "New upper mechanism: Dirichlet Green of Laplacian killed on outer cube; finite scalar pilot only, not a C6 certificate",
+  "dimension": 6,
+  "generator": "Delta",
+  "domain": "(-a,a)^6",
+  "parameters_a": ["8/5","9/5","2","11/5","12/5","13/5"],
+  "finite_limit": "six scalar 1D quadratures; 24 spectral/image terms each; no spatial grid or MC",
+  "inputs": "p_a(t;0,1) Dirichlet interval heat kernel; S_a(t) survival; mass=int S_a^6, corner=int p_a^6",
+  "stop": "after six a, or any negative kernel/inconsistent image-spectral formula; if cost upper candidate below64, stop discovery and rigorous audit next",
+  "acceptance": "numerical candidate mass/(64*corner) below64 is discovery only; require distributional DeltaG positivity away origin, cube domination, exact mass and positive g lower, generalL1/fullscale interface",
+  "resources": "one main Python process, scipy quad; upper priority; no lower search",
+  "output": "pilot.py and pilot_results.json"
+}

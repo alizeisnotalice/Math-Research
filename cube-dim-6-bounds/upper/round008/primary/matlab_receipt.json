@@ -1,0 +1,28 @@
+{
+  "time": {
+    "current_time": "2026-10-25 17:02:45 UTC"
+  },
+  "scope": "one fixed upper scalar formula; two invocations because first inherited MATLAB display format printed only four decimals",
+  "precision": "MATLAB binary64 diagnostic, not a rigorous certificate",
+  "first": {
+    "content": [
+      {
+        "type": "text",
+        "text": "26.1.0.3312084 (R2026a) Update 4\n    0.0020    0.0200    0.0010    0.0001    0.0002\n\n"
+      }
+    ]
+  },
+  "precise": {
+    "content": [
+      {
+        "type": "text",
+        "text": "26.1.0.3312084 (R2026a) Update 4\ntc t0 U I required_g\n0.0020469099844885432 0.019966566500743139 0.001002680234066613 0.00010035752408401032 0.00017725049821755418 \n"
+      }
+    ]
+  },
+  "executed_code": "disp(version);\nfprintf('tc t0 U I required_g\\n');\nfprintf('%.17g ',feval(@(M,A,c) feval(@(P,Q) feval(@(B,E) feval(@(tc,t0) feval(@(U) [tc,t0,U,U^(4/3),U/sqrt(32)],(6/7)*B^(1/4)*A^(3/4)*tc^(7/6)+(4/3)*P^(1/4)*A^(3/4)*(t0^(3/4)-tc^(3/4))+2*P^(1/4)*E^(3/4)*t0^(-1/2)),(P/B)^(3/5),(E/A)^(3/5)),A*32^(5/2)*Q,M*32^(-5/3)),c^(-4)/(16*pi^3),gamma(10/3)*c^(-10/3)/(18*pi^3*sqrt(6))),gamma(2/3)/(1.5*pi),gamma(5/2)/(pi*sin(pi/3)^(5/2)),32*(8/3)^(-1/4)));\nfprintf('\\n');",
+  "variables_assigned": [],
+  "figures_created": 0,
+  "clear_or_path_reset": false,
+  "criterion": "U agrees with Arb norm envelope; required g = U/sqrt(32) approximately .0001772504982, not established"
+}

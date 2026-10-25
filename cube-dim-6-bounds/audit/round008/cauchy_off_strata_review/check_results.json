@@ -1,0 +1,101 @@
+{
+  "status": "PASS_GEOMETRY_AND_ONE_ALLOCATED_BUDGET; NO_C6_BOUND",
+  "kernel_evaluations": 0,
+  "MC_samples": 0,
+  "matlab_calls": 0,
+  "geometric_layers": 1,
+  "scalar_short_time_pairs": 1,
+  "exact_gramdet3_unordered_counts": {
+    "64": 480,
+    "96": 1920,
+    "128": 480,
+    "160": 640,
+    "192": 1440
+  },
+  "exact_positive_face_pair_classes": {
+    "distance_at_least_1_over_sqrt2": 375,
+    "same_sign_segment": 31,
+    "mixed_sign_plane": 90
+  },
+  "same_sign_segments": 31,
+  "mixed_endpoint_boxes": 26,
+  "canonical_tube_geometry": [
+    {
+      "h": 1,
+      "fixed_block_dimension": 4,
+      "fixed_block_metric_determinant": "1/5",
+      "axis_length_squared": 1,
+      "tube_cross_section_factor_squared": 5
+    },
+    {
+      "h": 2,
+      "fixed_block_dimension": 3,
+      "fixed_block_metric_determinant": "1/4",
+      "axis_length_squared": 2,
+      "tube_cross_section_factor_squared": 8
+    },
+    {
+      "h": 3,
+      "fixed_block_dimension": 2,
+      "fixed_block_metric_determinant": "1/3",
+      "axis_length_squared": 3,
+      "tube_cross_section_factor_squared": 9
+    },
+    {
+      "h": 4,
+      "fixed_block_dimension": 1,
+      "fixed_block_metric_determinant": "1/2",
+      "axis_length_squared": 4,
+      "tube_cross_section_factor_squared": 8
+    },
+    {
+      "h": 5,
+      "fixed_block_dimension": 0,
+      "fixed_block_metric_determinant": "1",
+      "axis_length_squared": 5,
+      "tube_cross_section_factor_squared": 5
+    }
+  ],
+  "first_three_time_denominators": [
+    1024,
+    992,
+    960
+  ],
+  "constants": {
+    "S3": "[2717.43046386404283746077478942422855362268291303001015629791 +/- 4.24e-57]",
+    "B3": "[46.1414202757949096432385020273617119055549550684052220110998 +/- 8.65e-60]",
+    "Ctube": "[423.617311061107481238275740810964803320449585973266898875379 +/- 3.53e-58]",
+    "Cmixed": "[147.078210486801885075375627317808600171245875039202599610375 +/- 3.08e-58]"
+  },
+  "one_budget": {
+    "delta": "1/16",
+    "epsilon": "1/1000",
+    "tube_volume_upper": "[0.00660415190454914244164255855588268800096362996159694002305644 +/- 3.26e-63]",
+    "off_short_norm_upper": "[7.99028284135405109934438853067933650832023297310854201781381e-6 +/- 3.31e-66]",
+    "global_short_norm_upper": "[1.33048729415937733159510295159598116285746966584028642223206e-5 +/- 4.81e-66]",
+    "off_over_global": "[0.600553111362287506042414537435184241929607813599662742002087 +/- 3.99e-61]",
+    "cap_split": "[0.0388769587159729824441664501105887731510601152352998421902923 +/- 6.21e-63]",
+    "cap_allocated_norm_upper": "[0.00105119516842144087106430833101696735844082375084734113750129 +/- 4.96e-63]",
+    "cap_allocated_upper_over_target": "[11.8259456447412097994734687239408827824592671970325877968895 +/- 4.33e-59]",
+    "cap_loose": "[0.00132226722238915993977400530915847141016909359521605611545523 +/- 2.18e-63]",
+    "optimum_two_envelope_budget_lower": "[0.000472847035926939707964116698300874857230413603145953586284034 +/- 4.18e-64]",
+    "optimum_two_envelope_budget_lower_over_target": "[5.31952915417807171459631285588484214384215303539197784569539 +/- 2.80e-60]",
+    "cap_allocated_upper_exceeds_target": true,
+    "actual_cap_norm_lower_bound_claimed": false
+  },
+  "strict_rational_upper_bounds": {
+    "tube_volume": "825519/125000000",
+    "off_short_norm": "7990283/1000000000000",
+    "cap_allocated_norm_budget": "262799/250000000"
+  },
+  "derivative_conclusion": "Pointwise O(1) heat times t^-m is not integrable at zero for m>=1. The L6/5 envelope is t^(5/6), so m=1 DOES give local W^(1,6/5); m>=2 is not covered at zero. No nonexistence claim about actual derivatives.",
+  "input_sha256": {
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/upper/round008/off_strata_integration/registration.md": "97ffe0dcd60a355efc46bbddde26003c8032a0b0de6c614aa1359c15d215066d",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/upper/round008/off_strata_integration/check_budget.py": "5a3e85f77cb4e232bd6a347dd5f0f88ed5c1e696a67b73d997509980fa53603e",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/upper/round008/off_strata_integration/results.json": "d0b14dc3d8d8c95033390537fe2d4064c90baee0d3f31fbb64609dc48d20e1c1",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/upper/round008/off_strata_integration/report.md": "268063957a7e9866e9b833b154edbc619ef0c3ebc119df2d76976b2cb98dc5b8"
+  },
+  "script_sha256": "6f85cb734f7dc2fb1b22a6d5d749657f39f93e6de433ac15121553c1b35810fc",
+  "elapsed_seconds": 0.0805817499931436,
+  "exit_code": 0
+}
