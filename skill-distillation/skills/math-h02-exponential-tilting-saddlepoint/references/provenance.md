@@ -54,9 +54,70 @@
 ## 实际阅读卡
 
 - [P-d13d1a9028d29a0f：full_read](papers/HK-P-d13d1a9028d29a0f.json)
+- [Niu 2024 原文定理与推论边界卡](evidence-card-Niu2024-P-d13d1a9028d29a0f.md)
+
+## 本轮复核范围与边界（2026-10-07）
+
+E0215/E0255 是同一PDF SHA，仅按一篇计。本文已逐页阅读 64/64 页，含附录 A–H；PDF 公式回看 pp.5–7、28–29、61–64。身份为 Niu, Ray Choudhury & Katsevich, arXiv:2407.08915v3；其脚注称内容并入较长稿 arXiv:2407.08911，本轮实际阅读版本是 v3，不把后来稿的内容当作已读。
+
+原文 Theorem 1 直接支持条件 Lugannani–Rice 相对误差 `1+o_P(1)`，条件为条件独立与中心化、CSE/CCS 二选一、平均条件方差 `Ω_P(1)`、阈值 `w_n=o_P(1)`。简单上尾前因子不是 Theorem 1 原样结论；只有再要求 `w_n>0` w.p.→1 且 `r_n→+∞`，用 Appendix H 的 `λ_n/r_n→_P1` 与 Gaussian Mills 界，才可在此模型内推出相对渐近等价。该推导无明确总误差率，不支持中心区、固定偏差大偏差或任意模型迁移。Appendix H p.62 公式 (H.23) 有局部常数笔误：其打出的 `r e^{r²/2}Q(r)≥1/2` 应弱化为由 Mills 界可证的 `≥1/(2√(2π))`（`r≥1`）；原证明只需某个正的常数下界，结论不受影响。
+
+当前仅将该直接相关篇登记为 full-read；其余 H02 附件的“pending/初筛”不代表无关或已深读。剩余候选将继续逐项筛选和去重后更新。
 
 ## 本地原文定位
 
 原附件PDF：工作包根目录的 `corpus/papers/<paper_id>/paper.pdf`；全文 `paper.md`；页码映射 `pages.json`。
 补充PDF：`supplementary/<paper_id>/`。完整原文不放入轻量Skill ZIP；可用SHA-256与附件成员名定位原文件。
 逐篇完整处理状态见工作包 `catalog/entries-reviewed.json`、`catalog/reading-queue.json`。
+
+
+## 2026-10-07 evidence-plan re-screen (SHA-level full reads)
+
+|Entry|SHA source|Decision|Verified scope|
+|---|---|---|---|
+|E0216 / E0219|P-984d1186de4dd158|adjacent|Townes, full PDF pp.1–12; exponential-tilt domain/class preservation only; no LR prefactor.|
+|E0225 / E0244|P-a8b537e1c2c66325|adjacent|Goodman, full PDF pp.1–17; Theorem 3 is factorization for recursively compounded sample-path approximations only.|
+|E0227|P-478d0d2c157c1d59|adjacent|Gatto, full PDF pp.1–30; LR worked example for a reflected/reset Brownian FPT with steepness condition.|
+|E0232|P-9c3eadcf7350a43f|adjacent|Asmussen–Jensen–Rojas-Nandayapa, full PDF pp.1–23 incl. Appendices A–C; iid lognormal left-tail saddlepoint only.|
+|E0224|P-483dbea3d30a8e49|irrelevant|Letac, title/abstract/intro and pp.1–5 targeted screen; NEF duality background, no saddlepoint tail method.|
+|E0231|P-d789eedb143b3a62|irrelevant|Pinelis, abstract/intro and Theorems 2.1/2.4 pp.1–5; Winsorized-tilted mean bound, not H02 tail approximation.| 
+|E0242|P-b54df48bb5e31056|irrelevant|Mandal et al., abstract/intro pp.1–2 targeted screen; diffusion-based tilted-sample generation, not saddlepoint tail asymptotics.|
+
+## 便携证据定位
+
+证据索引中的路径相对于完整工作包根目录，不是相对于安装后的 Skill。若从解包工作包运行，令 `EVIDENCE_ROOT` 指向同时含 `workspace_revised/`、`audit_current/` 与 `evidence/` 的工作包根目录，并用当前 Skill 的索引和 SHA 解析来源：
+
+```sh
+export EVIDENCE_ROOT="/path/to/unpacked/math64-package"
+python3 "$EVIDENCE_ROOT/audit_current/delivery/resolve_evidence.py" \
+  --skill-dir "$EVIDENCE_ROOT/workspace_revised/math-h02-exponential-tilting-saddlepoint" \
+  --evidence-id E0215 --verify-sha256
+```
+
+E0215 与 E0255 是同一 Niu PDF 的两个清单条目；应以索引 SHA `d13d1a9028d29a0f21d767d68ecde717a0300ece7938472782cbb15b7a332ea9` 去重。
+
+若只安装了 Skill，另设 `MATH64_SOURCE_PACKAGE_ROOT` 指向该完整解包工作包，并在 `~/.codex/math-skill-evidence-roots.json` 注册该根：
+
+```json
+{"schema":"math-skill-evidence-root-registry-v1","roots":[{"id":"math64-20261007","package_root":"${MATH64_SOURCE_PACKAGE_ROOT}"}]}
+```
+
+随后仍由工作包内 resolver 依据注册根、当前安装 Skill 的索引相对路径与 SHA 定位：
+
+```sh
+python3 "$MATH64_SOURCE_PACKAGE_ROOT/audit_current/delivery/resolve_evidence.py" \
+  --root-id math64-20261007 \
+  --skill-dir "$HOME/.codex/skills/math-h02-exponential-tilting-saddlepoint" \
+  --evidence-id E0215 --verify-sha256
+```
+
+不得把附件目录写死为某台机器的 Desktop、WorkBuddy 或 Skill 相对 `../../evidence`。resolver 会拒绝绝对/越界便携路径并核对 SHA；来源包根必须由 `EVIDENCE_ROOT` 或用户本地注册表明确提供。
+
+Package-relative `audit_current/...` locators in this file are resolved with the package-root resolver described in [portable audit access](portable-audit-access.md); they are not Skill-local file links.
+
+
+## Independent H02 scope cross-review (2026-10-08)
+
+The current E0215/E0255 records point to the same Niu–Ray Choudhury–Katsevich PDF SHA `d13d1a9028d29a0f21d767d68ecde717a0300ece7938472782cbb15b7a332ea9` and full-read source card `audit_current/shared-reading/revise_e/d13d1a9028d29a0f21d767d68ecde717a0300ece7938472782cbb15b7a332ea9.json` (card SHA `e4217e51b60ae5ed64b90b5013364e403e436488d935f9e21bbf8cd09caf4d3a`). The independent claim-ledger/current-Skill/source-card scope receipt is `audit_current/independent-hi/h02_general_scope_cross_review_20261008.json` (SHA `f4ed38784b3f21ca64513e969d28ef5fa329f28f7279c9cf14d17c1b43596ccf`); it reviewed the exact current claims, Skill, method, provenance, card, PDF, and extracted-text hashes.
+
+The receipt confirms only the three current H02 claims: (1) the full conditional Lugannani–Rice result under Theorem 1’s conditional-independence/centering, CSE-or-CCS, nondegenerate average conditional variance, and shrinking measurable-cutoff conditions, with relative `1+o_P(1)` and no explicit rate; (2) reduction to the positive diverging-`r_n` leading factor under the extra conditions stated in the source; and (3) Gaussian Mills inequalities for standard Gaussian `Q(u)`, `u>0`. The independent review is a scope reconciliation, not a second full read of the 64-page article. General-K saddlepoint accuracy, arbitrary dependence, fixed nonzero cutoffs, generic third-moment-only sufficiency, and a general lattice/nonlattice prefactor remain unsupported.

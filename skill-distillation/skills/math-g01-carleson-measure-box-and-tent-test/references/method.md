@@ -8,13 +8,13 @@
 
 3. 解析/调和空间的嵌入与反向kernel测试按指定空间定理，先明确核范数归一化；普通盒packing不自动证明所有reproducing-kernel thesis。
 
-4. 邻近P-e9e9211495f0b20e限Ω⊂R^{d+1}有界调和函数局部能量r^{-d}∫_{B(x,r)∩Ω}|∇u|²dist(y,∂Ω)dy≤C||u||∞²；不是任意度量Carleson测试。
+4. 邻近 P-e9e9211495f0b20e 限 domain Ω⊂R^{d+1}, d≥1。性质 (a)：对所有有界调和 u、x∈∂Ω、0<r<diam(Ω)，r^{-d}∫_{B(x,r)∩Ω}|∇u(y)|²dist(y,∂Ω)dy≤C||u||∞²。
 
-5. 其Theorem1.1正向需存在Ω̃⊂Ω、∂Ω⊂∂Ω̃且∂Ω̃为UR；逆向另需corkscrew+CDC。Theorem1.2需两两不交边界E_j及ω(p_j,E_j)≥1−ε，得Σdist(p_j,∂Ω)^d≤C(ε)R^d。
+5. 性质 (b)：对所有有界调和 u 和 0<ε<1，存在 g∈W^{1,1}_{loc}(Ω)，||u−g||∞<ε，且存在 C=C(ε,Ω) 对所有 x∈∂Ω、r>0，r^{-d}∫_{B(x,r)∩Ω}|∇g(y)|dy≤C。Theorem 1.1 A 向：存在 Ω̃⊂Ω、∂Ω⊂∂Ω̃、∂Ω̃ UR 即推出 (a),(b)；B 向还要求 corkscrew (1.4)+CDC (1.7)，且 (a) 或 (b) 任一成立。Theorem 1.2 两向都要求 (1.4),(1.7)，ε₀依赖这些几何常数。A 向在 (a) 或 (b) 成立时，对每个 0<ε<ε₀ 存在 C(ε)，所有 x∈∂Ω、R>0、p_j∈Ω∩B(x,R) 和两两不交 E_j⊂∂Ω 若满足 ω(p_j,E_j,Ω)≥1−ε，则 Σ_j dist(p_j,∂Ω)^d≤C(ε)R^d；B 向为反向：若对某个 0<ε<ε₀，上述 implication 对所有可行情形成立，则 (a),(b) 成立。
 
 6. 作者Whitney近/远边界拆分→调和事件packing→corona/UR构造的常数依赖d、几何参数及ε；外引容量/UR理论未独立复证，不能称维数无关。
 
-7. 中心立方体迁移须实际树化或帐篷化、共同输入及packing桥梁；区分有界、消失、加权与算子特定Carleson，不从邻近边界PDE定理得全尺度最大界。
+7. 中心立方体迁移须实际树化或帐篷化、共同输入及 packing 桥梁；盒、帐篷与所有并集条件分别定义，只有已证明的桥梁才允许迁移。Holmes–Psaromiligkos–Volberg Theorem 1.11 虽印出 product-bi-tree 分离，但显示的 `μ_A` 分量在顶盒 Q 的计数与 p.15 约 N 的说法不合；`μ_A` 只是总测度 `μ` 的一部分，其他分量及其对两侧的影响未说明。将其记为 source-proof gap，不当作已验证反例，也不判断定理真假；精确核对见 `audit_current/independent-g/P-e38596-top-box-counting-proof-gap-20261007.json`。区分有界、消失、加权与算子特定 Carleson，不从邻近边界 PDE 定理得全尺度最大界。
 
 ## 不可省略的限制
 

@@ -54,7 +54,7 @@
 |E1744|30_Gribkova_2016_Cramér type moderate deviations for trimmed L-statistics.pdf|P-5b332eff97c0d194|direct|重截尾L-statistics Cramér中偏差，F逆在截尾两点及权重的光滑条件；直接相关，但摘要很弱条件不代表无条件，完整假设待读。|
 |E1745|29_Doney_2017_Cramér's Estimate for the Reflected Process Revisited.pdf|P-c1f5fff79a22fb2e|adjacent|反射随机游走/Lévy过程excursion height指数尾渐近，包括不满足Cramér root的指数矩类并修正旧证明；邻近尾渐近/换测度，不是CLT与LLN间的一致Cramér中偏差。|
 |E1746|27_Shao_2018_Cramér-type Moderate Deviation Theorems for Nonnormal Approx.pdf|P-2760b700df3b12ce|direct|非normal近似Cramér中偏差的一般Stein identity，exchangeable pair/Stein coupling及Curie–Weiss/monomer-dimer应用；直接相关。摘要跨第1/2页已完整读取，不可用GaussianΦ替代目标分布。|
-|E1747|12_Dai_2024_Self-normalized Cramér-type Moderate Deviation of Stochastic.pdf|P-2a57ad2731b72cd2|direct|SGLD经验测度自归一化Cramér，以SDE近似/Stein分解为鞅及可忽略remainder；直接相关，步长、噪声、损失系数及二级近似误差待全文核。|
+|E1747|12_Dai_2024_Self-normalized Cramér-type Moderate Deviation of Stochastic.pdf|P-2a57ad2731b72cd2|adjacent|精确 SHA 全读 PDF pp.1–23。只留 SGLD 的 Stein/SDE/鞅分解证明架构；PDF p.3 的全域 K1 耗散和全域未中心化梯度 sub-Gaussian 联合不相容，因此 Theorems 2.4–2.6 不作结论来源。详见 revise_cd 精确 SHA 卡。|
 |E1748|06_Fan_2022_Cramér-type moderate deviations for Euler-Maruyama scheme fo.pdf|P-a3ce3941796bf460|direct|与E1740同SHA Fan–Hu–Xu Euler–Maruyama Cramér文献；保留附件重复关系，不重复计独立阅读。|
 |E1749|15_Logachov_2024_Moderate, large and super large deviations principles for Po.pdf|P-a087f6ce439fb6d2|adjacent|uniform catastrophes Poisson过程sublinear/linear/superlinear三尺度rate函数；可迁移偏差分区和速率函数核验，非一般Gaussian相对尾误差。|
 |E1750|39_Petit_2011_Cramér's theorem in measurable locally convex spaces.pdf|P-b6fa0537a36f1471|adjacent|measurable locally convex空间Cramér大偏差，弱LDP与凸集上界、entropy/pressure共轭及单调收敛；邻近C01/D03无限维对偶，但不是中偏差尾比。原文主体法语，摘要英法均已读。|
@@ -72,3 +72,13 @@
 原附件PDF：工作包根目录的 `corpus/papers/<paper_id>/paper.pdf`；全文 `paper.md`；页码映射 `pages.json`。
 补充PDF：`supplementary/<paper_id>/`。完整原文不放入轻量Skill ZIP；可用SHA-256与附件成员名定位原文件。
 逐篇完整处理状态见工作包 `catalog/entries-reviewed.json`、`catalog/reading-queue.json`。
+
+
+## 2026-10-07 evidence-plan re-screen
+
+|Entry|Source|Decision|Verified scope and limits|
+|---|---|---|---|
+|E1713|P-603c30fd4e32d8e8|adjacent|Shao–Zhou, full PDF pp.1–51 incl. Appendices A–C; self-normalized relative-tail bound under explicit truncated-moment/perturbation conditions, plus Studentized U-statistic specialization. Does not replace generic unstudentized Cramér-array hypotheses.|
+
+
+**E1747 来源纠正（2026-10-07）**：旧的 direct/pending 分类由首页方法摘要作出；同 SHA 已全读后，按打印假设改为 adjacent。Theorem 2.4–2.6 的联合假设不可满足，不能把正文暗示的 at-origin 噪声矩当作原文已写条件。

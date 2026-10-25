@@ -1,8 +1,8 @@
-# 证据卡：Grey 2010（I01 唯一 direct 文献，全文深读 13/13 页）
+# 独立阅读卡：Grey 2010（I01 adjacent/background，全文重读 13/13 页）
 
 **paper_id**: P-073066f98d171070 ｜ arXiv:1006.4465v1 [math.PR] 23 Jun 2010
 **题名**: The associated random walk and martingales in random walks with stationary increments
-**作者**: D. R. Grey（Sheffield）｜ 13 页 ｜ 阅读范围：全文 p1–13（2026-10-06，R28）
+**作者**: D. R. Grey（Sheffield）｜ 13 页 ｜ 本轮独立阅读范围：PDF p1–13（2026-10-07）；历史 R28 声明单独保留，不作为本轮阅读依据
 **SHA256（sources.json 登记）**: 073066f98d171070514958d8eff6d59ac50ee69fabf330c051d34099073a2ca5
 
 ## 定义与假设
@@ -76,9 +76,10 @@
 - Gaussian 情形 Assumption 2* 的"similar calculations"未在论文中完整给出；
 - 遍历性/对偶性开放问题（论文自declare）。
 
-## 与 I01 skill 的关系
+## 与 I01 skill 的关系（本轮修正）
 
-skill 的"有序增量条件 Bernstein"依赖指数鞅结构；本文提供 iid→stationary ergodic 的
-最小推广框架与两个可计算特例 + 端点警示。skill 步骤中"依赖情形额外条件待全文"
-（sources.json review 原话）——本文即该"全文"，条件为 Assumption 1/2/2*（或特例的
-正则条件）。
+本文与有序滤过中的换测鞅有概念邻近性，但不能支撑 I01 的条件 Bernstein 矩输入或尾界。Assumption 1/2/2* 是构造伴随随机游走和 RN 导数鞅的渐近极限条件；文中没有要求逐个增量条件中心化，也没有 `E(|X_k|^p|F_{k-1})≤(p!/2)v_k c^(p-2)` 假设。因此 E0847 当前归类为 **adjacent/background**，不是 I01 的 direct theorem source。
+
+本轮独立逐页重读全文 lines 1–571、PDF p.1–13，视觉核验 pp.3、5、8–9 的假设和公式。Assumption 1 在 PDF p.3；双端 Assumption 2 在 p.3；单端 Assumption 2* 在 p.5；Gaussian 例横跨 pp.8–9。I01 当前条件 Bernstein 推导的证明见同目录 `method.md`，该证明仅以 I01 明列的条件矩假设为前提，不借用 Grey。
+
+Grey (2001) VHS 收敛定理仅在本文参考文献中被引用，本轮未读未证；不能把本文 full-read 状态传递给该参考文献。

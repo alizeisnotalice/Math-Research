@@ -14,7 +14,7 @@
 
 7. P-08ccea72ef78920a的四类资格条件要按Y0=span(A(P)−Q)及原拓扑逐一选择；Fréchet方案需P,Q,Y0闭且b∈icr像锥，有限维方案需dimY0<∞与icr。仍有−∞分支；仅有限值分支给零gap及dual达到，weak*紧另需Y0=Y。其Example4印刷正gap位置已修为第三坐标0、第二坐标正；非紧序列逃逸与值lsc另核。
 
-8. Hilbert generator来源P-5ae169908ed70fca的exact dual达到以共享normal及⟨v,x*⟩>0认证，逆向另需Ran(A*)闭；有限维非零共享normal或closed P都不充分。Prop4.1采用λ*=j_K(x*)和比例λ*/σ_K(A*y)，修正原平方根缩放；Prop4.2另需∀x∈P Span{x}+P闭。所有新修复保留两轮审核状态。
+8. Hilbert generator来源P-5ae169908ed70fca的exact dual达到以共享normal及⟨v,x*⟩>0认证，逆向另需Ran(A*)闭；有限维非零共享normal或closed P都不充分。Prop4.1采用λ*=j_K(x*)和比例λ*/σ_K(A*y)，修正原平方根缩放；Prop4.2另需∀x∈P Span{x}+P闭。平方根印刷错误的局部修复只在 σ_K(A*y)>0 及源共享法向/稳定性条件下使用，原定理整体证明未独立重证；精确标量复核见 verification-log-20261007.md。
 
 ## 不可省略的限制
 

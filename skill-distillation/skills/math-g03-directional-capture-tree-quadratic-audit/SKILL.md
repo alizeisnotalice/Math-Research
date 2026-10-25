@@ -3,14 +3,12 @@ name: math-g03-directional-capture-tree-quadratic-audit
 description: "用于方向性捕获树二次型与来源算子的数学研究：核对输入与假设，组织方法和证据，说明中心立方体极大算子的迁移条件；不凭名称补造内部接口。"
 ---
 
-> **交接准备状态（结构性）**：本副本只整理技能结构与引用可移植性；未进行全文深读或数学验证。原评级、可用状态、假设、证明限制和未决条件均沿用原件。结构检查不构成科学验证。
-> 外部文献证据由第二证据包提供，是独立数据输入，不随单个 Skill 安装。合并交接包默认将 `EVIDENCE_ROOT` 设为包内 `evidence/`；单独安装时由调用方传入 `EVIDENCE_ROOT`，按本地[证据索引](references/handoff-evidence-index.csv)中的 `portable_path` 查找。无需全局安装，也不要把外部 PDF 当作 Skill 内文件。
+> **当前状态（2026-10-07）**：仅可执行明确输入的有限 Hermitian/PSD 矩阵算术。私有捕获树、方向、可行叶、来源到 Gram 矩阵的映射及共享输入谓词未定义；缺任一项时返回 `evidencepending`，不声称项目捕获估计。12 项 G 组案例中本 Skill 两例的结果和源码散列见 `audit_current/g/cases.json`。
+> 外部文献证据随完整证据包提供；包根须同时含 `workspace_revised/`、`audit_current/` 与 `evidence/`。`EVIDENCE_ROOT` 和 `MATH64_SOURCE_PACKAGE_ROOT` 均指包根。单独安装的 Skill 不含共享 PDF/claims/cases；按[本地访问说明](references/portable-audit-access.md)从 registry root `math64-20261007` 解析包根以定位绝对 resolver，或显式提供包根。用 `--skill-dir` 与来源 ID 核验来源 SHA、用 `--artifact-path` 定位 claims/cases 并核验当前 SHA。registry、root 或 resolver 缺失时报告配置缺口，不猜路径/内容。resolver 的 PASS 只验证路径和当前字节，不代表全文阅读、命题证明或数学验收。
 
 
 # G03 · 方向性捕获树二次型与来源算子
 
-当前证据状态：**待证据验收：可执行方法工作流，不是已证明的课题结论**。全文转换、论文阅读和证明核验是三个独立状态。（此行声明已被下方【修订】标注替代：该 skill 经外部审核提升为「部分可用」，详见对应修订行与 references/verification-log-20261006.md）
-  【修订 2026-10-06（外部审核 R23）】弱反例（全 1 PSD Gram：特征值 N、ones 二次型 N²）精确验证，对角界不能控交叉项；P-e8f8 来源合同引用一致；证据状态提升为：部分可用：基础推导已检查，专题证据仍待完整验收。TC-A14 几何可实现性待内部定义。
 
 ## 输入与产出
 

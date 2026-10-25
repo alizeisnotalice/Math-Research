@@ -574,31 +574,22 @@
       "sha256": "603c30fd4e32d8e88733ee32a3b3dd43594a3d572969d27c63b15887a12ed44c",
       "bytes": 484395,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "adjacent",
+      "screening_reason": "Theorem 2.1 (PDF pp.4–5) gives two-sided relative Gaussian-tail bounds for a self-normalized process T_n=(W_n+D_{1n})/[V_n(1+D_{2n})^{1/2}] built from independent centered array entries with total variance 1, under the explicit truncated-moment conditions (2.7)–(2.8), and with perturbation functional R_{n,x}; Theorem 3.1 (PDF pp.7–8) specializes this to Studentized U-statistics under (3.3) and a stated moderate-deviation range. Adjacent for H01: it gives a precise self-normalized relative-tail interface, but is not a generic unstudentized Cramér-array theorem and its remainder/moment hypotheses cannot be dropped.",
+      "identity_status": "verified",
       "paper_id": "P-603c30fd4e32d8e8",
       "local_file": "corpus/papers/P-603c30fd4e32d8e8/paper.pdf",
       "review": {
         "entry_id": "E1713",
         "topic": "H01",
         "paper_id": "P-603c30fd4e32d8e8",
-        "decision": "direct",
-        "reason": "自归一化过程的Cramér型中偏差、随机化集中和Studentized非线性/U统计，直接相关；相对尾误差不同于绝对Berry–Esseen，矩条件待全文核验。",
-        "read_scope": "PDF第1页完整内容：题名、作者、版本水印、摘要及该页引言；仅初筛，不是全文深读。",
-        "full_read": false,
-        "identity_status": "first_page_observed_not_bibliographic_dedup_certified",
+        "decision": "adjacent",
+        "reason": "Theorem 2.1 (PDF pp.4–5) gives two-sided relative Gaussian-tail bounds for a self-normalized process T_n=(W_n+D_{1n})/[V_n(1+D_{2n})^{1/2}] built from independent centered array entries with total variance 1, under the explicit truncated-moment conditions (2.7)–(2.8), and with perturbation functional R_{n,x}; Theorem 3.1 (PDF pp.7–8) specializes this to Studentized U-statistics under (3.3) and a stated moderate-deviation range. Adjacent for H01: it gives a precise self-normalized relative-tail interface, but is not a generic unstudentized Cramér-array theorem and its remainder/moment hypotheses cannot be dropped.",
+        "read_scope": "full PDF pp.1–51 incl. appendices A–C",
         "source_ranges": [
-          {
-            "file": "corpus/papers/P-603c30fd4e32d8e8/paper.md",
-            "start_line": 7,
-            "end_line": 53,
-            "pdf_pages": [
-              1
-            ]
-          }
-        ],
-        "initial_screen_only": true
+          "Theorem 2.1 pp.4–5; proof pp.13–24",
+          "Theorem 3.1 pp.7–8; proof pp.25–34"
+        ]
       }
     },
     {
@@ -1792,31 +1783,54 @@
       "sha256": "2a57ad2731b72cd2366761929686b95e5773ec6ee31964795506fd8983d557d5",
       "bytes": 271414,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "adjacent",
+      "screening_reason": "Exact-SHA full read of the 23-page local PDF; the SGLD martingale/SDE proof architecture is method-adjacent, but the globally dissipative Assumption 2.1 and uniform uncentered-gradient sub-Gaussian Assumption 2.2 printed together on PDF p.3 contradict. Its theorem conclusions are not usable as printed.",
+      "identity_status": "verified_title_author_version_from_pdf; exact_sha_full_read",
       "paper_id": "P-2a57ad2731b72cd2",
       "local_file": "corpus/papers/P-2a57ad2731b72cd2/paper.pdf",
       "review": {
         "entry_id": "E1747",
         "topic": "H01",
         "paper_id": "P-2a57ad2731b72cd2",
-        "decision": "direct",
-        "reason": "SGLD经验测度自归一化Cramér，以SDE近似/Stein分解为鞅及可忽略remainder；直接相关，步长、噪声、损失系数及二级近似误差待全文核。",
-        "read_scope": "PDF第1页完整内容：题名、作者、版本水印、摘要及该页引言；仅初筛，不是全文深读。",
-        "full_read": false,
-        "identity_status": "first_page_observed_not_bibliographic_dedup_certified",
+        "decision": "adjacent",
+        "reason": "Proof architecture only; Theorems 2.4–2.6 inherit inconsistent global assumptions (PDF p.3). No theorem conclusion is imported into H01.",
+        "read_scope": "Full local PDF pp.1–23, including all theorem proofs and references; exact SHA-bound card audit_current/shared-reading/revise_cd/2a57ad2731b72cd2366761929686b95e5773ec6ee31964795506fd8983d557d5.json.",
+        "full_read": true,
+        "identity_status": "verified_title_author_version_from_pdf; exact_sha_full_read",
         "source_ranges": [
           {
-            "file": "corpus/papers/P-2a57ad2731b72cd2/paper.md",
-            "start_line": 7,
-            "end_line": 47,
+            "file": "evidence/papers/P-2a57ad2731b72cd2/paper.md",
+            "start_line": 1,
+            "end_line": 999,
             "pdf_pages": [
-              1
-            ]
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23
+            ],
+            "scope": "Full read; assumptions/theorems p.3–5, proof sections pp.7–21, references pp.22–23."
           }
         ],
-        "initial_screen_only": true
+        "initial_screen_only": false
       }
     },
     {

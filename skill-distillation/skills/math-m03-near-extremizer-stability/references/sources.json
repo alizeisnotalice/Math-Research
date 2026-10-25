@@ -273,28 +273,37 @@
       "sha256": "03d825c9c0143b45148e99cbc0645726cf38a511ef1ba0c51e78002af57a3a59",
       "bytes": 311402,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "adjacent",
+      "screening_reason": "全文邻接：该文实际证明仿射BV Sobolev亏损到仿射椭球指标函数极值族的定量距离界（Theorem 1.2，PDF p.5），但对象、范数、亏损与指数均模型特定，不可迁移为M03通用定理。",
+      "identity_status": "verified_pdf_front_matter_sha_match",
       "paper_id": "P-03d825c9c0143b45",
       "local_file": "corpus/papers/P-03d825c9c0143b45/paper.pdf",
       "review": {
         "entry_id": "E0747",
         "topic": "M03",
         "paper_id": "P-03d825c9c0143b45",
-        "decision": "irrelevant",
-        "reason": "首面摘要研究的 stability 多指系统稳定性、算子关系或谱刚性，而非尖锐不等式亏损控制到极值集合距离。",
-        "read_scope": "首面题名、摘要和引言开头用于主题初筛；这不是全文深读声明。",
+        "decision": "adjacent",
+        "reason": "全文邻接：该文实际证明仿射BV Sobolev亏损到仿射椭球指标函数极值族的定量距离界（Theorem 1.2，PDF p.5），但对象、范数、亏损与指数均模型特定，不可迁移为M03通用定理。",
+        "read_scope": "audit_g exact-SHA full-read card: full PDF pp.1–29 including references pp.26–29; identity p.1; Theorem 1.2 p.5 and its proof pp.23–25. This is a neighbor model only, not a transferable theorem.",
         "source_ranges": [
           {
-            "file": "corpus/papers/P-03d825c9c0143b45/paper.md",
-            "start_line": 5,
-            "end_line": 46,
+            "file": "evidence/papers/P-03d825c9c0143b45/paper.md",
             "pdf_pages": [
-              1
+              1,
+              5,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29
             ]
           }
-        ]
+        ],
+        "source_card": "audit_current/shared-reading/audit_g/03d825c9c0143b45148e99cbc0645726cf38a511ef1ba0c51e78002af57a3a59.json",
+        "pdf_sha256": "03d825c9c0143b45148e99cbc0645726cf38a511ef1ba0c51e78002af57a3a59",
+        "full_read": "29/29; no separate appendix."
       }
     },
     {
@@ -360,9 +369,9 @@
       "sha256": "b270e46ae6c105456c18588a04f9667e1e8bd4679667fbf91471d6b285c7e522",
       "bytes": 357813,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "direct",
+      "screening_reason": "This source gives exact deficit/stability results for two specific integral inequalities with non-attained virtual extremizers: a Hardy deficit identity for all p>1 and an exact squared-residual identity at p=2; and a Carleman deficit bound below an integrated local weighted Hellinger/variance distance to {c/t}. These are direct examples of deficit-to-distance stability. Scope is limited to the stated Hardy/Carleman operators and hypotheses; the paper does not establish general near-extremizer compactness, symmetry-modulo stability, or M03-STAB-API-01.",
+      "identity_status": "verified_pdf_title_author_arxiv_version_date_and_sha256",
       "paper_id": "P-b270e46ae6c10545",
       "local_file": "corpus/papers/P-b270e46ae6c10545/paper.pdf",
       "review": {
@@ -370,8 +379,8 @@
         "topic": "M03",
         "paper_id": "P-b270e46ae6c10545",
         "decision": "direct",
-        "reason": "给出 Hardy 与 Carleman 不等式的距离稳定性，直接量化亏损与极值距离。",
-        "read_scope": "全文深读：覆盖原文9个PDF页及证明/附录/参考文献；证明独立核验程度和未查事项见证据卡。",
+        "reason": "This source gives exact deficit/stability results for two specific integral inequalities with non-attained virtual extremizers: a Hardy deficit identity for all p>1 and an exact squared-residual identity at p=2; and a Carleman deficit bound below an integrated local weighted Hellinger/variance distance to {c/t}. These are direct examples of deficit-to-distance stability. Scope is limited to the stated Hardy/Carleman operators and hypotheses; the paper does not establish general near-extremizer compactness, symmetry-modulo stability, or M03-STAB-API-01.",
+        "read_scope": "已逐页通读当前 exact-SHA 9 页 arXiv v1 PDF（含参考文献）；PDF 第1、3、4、6、7、8、9页视觉复核。证明核对范围与一般性边界见当前卡。",
         "source_ranges": [
           {
             "file": "corpus/papers/P-b270e46ae6c10545/paper.md",
@@ -406,7 +415,9 @@
               6
             ]
           }
-        ]
+        ],
+        "current_read_card": "audit_current/ln/paper-reviews/P-b270e46ae6c10545.json",
+        "current_read_card_sha256": "984a14d1829cfe8ff903b2ddefe069a72fb7a1bcb6a167260cdd12d37dd452e7"
       }
     },
     {

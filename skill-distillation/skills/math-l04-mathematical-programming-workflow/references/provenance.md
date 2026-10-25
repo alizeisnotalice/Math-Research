@@ -45,7 +45,7 @@
 |E0334|01_Pantuso_2025_The L-Shaped Method for Stochastic Programs with Decision-De.pdf|P-c87123ba8b3ccbda|irrelevant|首面摘要聚焦单个应用领域的数学结论/算法，未给出可复用的软件建模接口、数值求解/停止或验证工作流。|
 |E0335|23_Gleixner_2019_Linear Programming using Limited-Precision Oracles.pdf|P-0af5d66d0492bded|direct|全文深读：提出以受限精度LP oracle迭代求解，再进行有理基验证或精确有理重构，给出完整复杂度/证明和实验；直接支持数值求解后验精确验证工作流。|
 |E0336|31_Yuan_2016_Binary Optimization via Mathematical Programming with Equili.pdf|P-e80af77c1fd80717|irrelevant|首面摘要聚焦单个应用领域的数学结论/算法，未给出可复用的软件建模接口、数值求解/停止或验证工作流。|
-|E0337|13_Bestuzheva_2023_Global Optimization of Mixed-Integer Nonlinear Programs with.pdf|P-8609a2d25daeb5eb|irrelevant|首面摘要聚焦单个应用领域的数学结论/算法，未给出可复用的软件建模接口、数值求解/停止或验证工作流。|
+|E0337|13_Bestuzheva_2023_Global Optimization of Mixed-Integer Nonlinear Programs with.pdf|P-8609a2d25daeb5eb|adjacent|SCIP 8全文62页（含附录A–B及78条参考文献）支持L04的有限维软件接口/求解流程、benchmark与正确性核查范围（pp.2–18,20–25）；不证明本机API行为，也不是精确原/对偶证书来源。SHA-bound卡：`audit_current/shared-reading/audit_ln/8609a2d25daeb5eb66ff129da886b824e816a604e0fab984012ff2807afb1302.json`。|
 |E0338|09_Gupta_2022_Branch-and-Bound Performance Estimation Programming_ A Unifi.pdf|P-6e660372e6874d0a|irrelevant|首面摘要聚焦单个应用领域的数学结论/算法，未给出可复用的软件建模接口、数值求解/停止或验证工作流。|
 |E0339|16_Iommazzo_2024_Learning to Configure Mathematical Programming Solvers by Ma.pdf|P-88ac8765be1eab8d|irrelevant|首面摘要聚焦单个应用领域的数学结论/算法，未给出可复用的软件建模接口、数值求解/停止或验证工作流。|
 

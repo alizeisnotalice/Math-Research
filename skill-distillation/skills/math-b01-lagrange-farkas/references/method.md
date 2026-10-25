@@ -18,7 +18,9 @@
 
 9. 输出原与对偶可行候选及gap；浮点残差不冒充精确不可行证书。
 
-10. 非闭锥来源P-5ae169908ed70fca限Hilbert与bounded linear A、bounded closed convex generator K∋0：cl A(coneK)的零support方向测试只证明∀ε>0近似可解；exact A(coneK)另需一个共同C使∀y ⟨b,y⟩≤Cσ_K(A*y)。ε>0 dual唯一不推ε=0 dual达到；general support-face inclusion需同时回验残差/normal，H/E恢复原非凸锥是额外条件。该文Remark1.7 upper semicont错误及Prop4.1平方根缩放错误按卡局部修复后才可调用，均尚待两轮审核。
+10. 非闭锥来源P-5ae169908ed70fca限Hilbert与bounded linear A、bounded closed convex generator K∋0：cl A(coneK)的零support方向测试只证明∀ε>0近似可解；exact A(coneK)另需一个共同C使∀y ⟨b,y⟩≤Cσ_K(A*y)。ε>0 dual唯一不推ε=0 dual达到；general support-face inclusion需同时回验残差/normal，H/E恢复原非凸锥是额外条件。Remark 1.7 的上半连续声明被 P-5ae 的 ℓ² 反例否定；该例不建立一般下半连续结论。Prop.4.1 的 PDF p.22 根号比例为原文错误；在 σ_K(A*y)>0 及源共享法向/稳定性条件下，局部校正比例为 λ*/σ_K(A*y)。精确标量案例及限制见 verification-log-20261007.md。
+
+11. 对只含齐次项 `v_j^T A_jv_j`、各 `v_j` 相互独立的二次 Lagrangian，先代入等式乘子后计算 `g=inf L`；一阶驻点不能替代全局有界性。若 `A_j=μ_jI−M` 且求下确界的实际域为 `v_j≠0`，有限下界当且仅当每个 `A_j⪰0`；存在负曲率方向时缩放即给出 `−∞`。当 `A_j⪰0`，该项下确界为0；若 `A_j` 正定，不存在达到该下确界的非零向量。E1258 arXiv v2 第2.2节 Lemma 2 的局部反例及范围见 verification-log-20261007.md。
 
 ## 不可省略的限制
 

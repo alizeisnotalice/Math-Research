@@ -70,3 +70,10 @@
 原附件PDF：工作包根目录的 `evidence/papers/<paper_id>/paper.pdf`；全文 `paper.md`；页码映射 `pages.json`。
 补充PDF：`evidence/supplementary/<paper_id>/`。完整原文不放入轻量Skill ZIP；可用SHA-256与附件成员名定位原文件。
 逐篇完整处理状态见工作包 `catalog/entries-reviewed.json`、`catalog/reading-queue.json`。
+
+
+## C02-HIER-02 的外部定理依赖（版本与阅读范围）
+
+C02 来源 P-8656e750bc1e0cf5 的 Theorem 2.1（PDF pp.4–5）引用 Lasserre [12, Theorem 3.3]。该编号对应完整阅读的 arXiv:1009.0125v1（2010-09-01），Theorem 3.3（PDF pp.6–7；SHA-256 `db8513c625874ebad0733c26503f16bee393b3152ca204f8d5a5e246beae8ee1`）。后续 v2/v3 及 repository author copy 将对应结果编号为 Theorem 3.4；publisher PDF 本轮未全文阅读，不声称与 v1 字节相同。完整条件迁移记录见 `audit_current/shared-reading/open-dependency-recovery-r3/lasserre-2011-c02-hier2-full-read.json`（SHA-256 `5ca54de9932022bfd0f537ca3edf2ad29885a6fb56c557b3b93099907ddba34a`）。
+
+对 `K=R₊ⁿ`、`f_A=xᵀAx`、乘积 Exp(1) 测度，闭性、连续性、正交锥为精确支撑、每个多项式加权积分有限，以及每个坐标每个固定移位 `s≥0` 的阶乘矩 Carleman 发散均已核验，且 `M_d(z)=M_d(f_Ay)`。结论为该具体层级的无限交刻画；证明仍导入未独立重证的 Berg Proposition 2.1 与 Nussbaum Carleman 扩展。保持 `standard_result_cited`，不声称独立证明、有限阶精确性或收敛率。

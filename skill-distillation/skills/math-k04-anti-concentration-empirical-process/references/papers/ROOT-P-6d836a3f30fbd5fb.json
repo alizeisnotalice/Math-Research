@@ -135,12 +135,11 @@
       "proof_steps": [
         "Checked derivation: directlydivideq11>0, SchurQ22−q12q12ᵀ/q11≥0. No γlimitneeded.",
         "q12≠0 scalarGaussianhaspositivevariance; applyLemma2.3 withεscalar=sqrt(2ε)<1. q12=0 scalarconstant=sqrtq11, eventimpossible since2ε<1.",
-        "NonzeroQ guaranteesEf>0 andcoversconstantpositive aswellasactualdegree2."
+        "Nonconstant f has Gaussian-null level sets, so the strict-to-nonstrict endpoint follows; the positive constant case is separately trivial. The direct Schur proof above is a corroborating alternate derivation."
       ],
       "gaps": [
-        "Originalγk eventsunion={f<2εq11}, not≤; printedcontinuityfrombelow identifiesbothwithoutcheckingnoatom. Repaired directSchurargument bypasseslimitentirely.",
-        "Nonconstants Gaussianpolynomial levelsets havezeroLebesgue/Gaussianmeasure, butthisfactnotneeded in directrepair.",
-        "OriginalusesLemma2.3 σ>0 whenq12=0; splitdeterministiccase."
+        "OriginalusesLemma2.3 σ>0 whenq12=0; splitdeterministiccase.",
+        "Printed proof omits the endpoint identification after increasing strict-sublevel events. For nonconstant f, {f=c} is a polynomial zero set and hence Lebesgue/Gaussian null; if f is a positive constant (PSD forces q12=Q22=0), handle ε<1 by an empty event and larger ε by the bound capped at 1. This fills the omission under the nonzero-polynomial condition."
       ]
     }
   ],

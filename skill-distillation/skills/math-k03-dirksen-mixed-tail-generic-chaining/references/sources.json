@@ -771,9 +771,9 @@
       "sha256": "b19fb9f102d33f2eeeee056a0d8c0cad45d21d63f6d8a1996939cf3bf27e3d3e",
       "bytes": 582037,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "direct",
+      "screening_reason": "Full-read direct source, restricted to Theorem 3.1 under its exact finite-regime, separability, continuity, common mixed-tail and preselected-prior hypotheses; constant depends on m and α, and no data-selected-prior transfer is claimed.",
+      "identity_status": "exact_local_pdf_sha_and_full_read_card_registered",
       "paper_id": "P-b19fb9f102d33f2e",
       "local_file": "corpus/papers/P-b19fb9f102d33f2e/paper.pdf",
       "review": {
@@ -781,8 +781,8 @@
         "topic": "K03",
         "paper_id": "P-b19fb9f102d33f2e",
         "decision": "direct",
-        "reason": "全文核验：Theorem 3.1 在有限个真正混合尾度量下给出单一事件控制所有指标的点态majorization；附录C完成共细化链及可分空间延拓，Appendix E/Thm 5.3给出高斯混沌应用。",
-        "read_scope": "full article, pp.1–46; Theorem 3.1 and all proof appendices, diffusion and chaos applications read; key formulas visually checked.",
+        "reason": "Full-read direct source, restricted to Theorem 3.1 under its exact finite-regime, separability, continuity, common mixed-tail and preselected-prior hypotheses; constant depends on m and α, and no data-selected-prior transfer is claimed.",
+        "read_scope": "Exact-SHA full article pp.1–46. Theorem 3.1/setup and Appendix C proof route were checked; theorem pages pp.7–9 visually reviewed. Historical first-page screen remains recorded in audit_current/jk/source-screening.json.",
         "source_ranges": [
           {
             "start_line": 1,
@@ -838,7 +838,23 @@
             "scope": "全文逐行阅读，覆盖全部46页。"
           }
         ],
-        "inherited_from": "reviews/HK/screening.json"
+        "inherited_from": "reviews/HK/screening.json",
+        "full_read": true,
+        "identity_status": "exact_pdf_sha256_matches_full_read_source_card",
+        "source_card_path": "workspace_revised/math-k03-dirksen-mixed-tail-generic-chaining/references/papers/HK-P-b19fb9f102d33f2e.json",
+        "source_card_sha256": "b7f7a936c8b06a979ecd8f6f67f00ad46dfc48d9a61dbe523091726c3e74f879",
+        "pdf_sha256": "b19fb9f102d33f2eeeee056a0d8c0cad45d21d63f6d8a1996939cf3bf27e3d3e",
+        "page_count": 46,
+        "visual_review_pages": [
+          7,
+          8,
+          9
+        ],
+        "visual_review_sha256": {
+          "audit_current/jk/pdf-review/K03-P-b19fb9f102d33f2e-p07.png": "6d2069ee4ebccb5afe920c046e3264b534ed44bb4c92946c0e5c18d8781756fd",
+          "audit_current/jk/pdf-review/K03-P-b19fb9f102d33f2e-p08.png": "6ea5e73b2609c053cf18831bd8a8557ecb6e9e313b69489cab772aed70c82127",
+          "audit_current/jk/pdf-review/K03-P-b19fb9f102d33f2e-p09.png": "23b5eaacc65b4f5ec4bb07c373c5d47b912e97f1972bde3abad668ffb40b42d5"
+        }
       }
     },
     {
@@ -1387,9 +1403,9 @@
       "sha256": "9ecc39a3d40ae7fe18fca07a7ab9b891bb200bf446fb71ca497a409d65e25795",
       "bytes": 318889,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "direct",
+      "screening_reason": "Exact-SHA alias to the 27/27-page full-read Dirksen source card; Theorem 3.5 is direct under its finite-index mixed-tail hypotheses. Infinite-index lattice extension is moment-only in Remark 3.1; no unrestricted ordinary-sup tail extension is claimed.",
+      "identity_status": "exact_sha256_alias_to_existing_full_read_source",
       "paper_id": "P-9ecc39a3d40ae7fe",
       "local_file": "corpus/papers/P-9ecc39a3d40ae7fe/paper.pdf",
       "review": {
@@ -1397,9 +1413,9 @@
         "topic": "K03",
         "paper_id": "P-9ecc39a3d40ae7fe",
         "decision": "direct",
-        "reason": "Dirksen Tail bounds via generic chaining v2，是专题核心来源；与已全文HK补充源S-9ecc39a3d40ae7fe逐字节SHA相同，复用其27页全文证据，不重复深读；原PDF/补取成员均保留关系。",
-        "read_scope": "PDF第1页完整内容；E1203全文另复用同SHA HK S源卡。仅本次初筛，不代表新全文阅读。",
-        "full_read": false,
+        "reason": "Exact-SHA alias to the 27/27-page full-read Dirksen source card; Theorem 3.5 is direct under its finite-index mixed-tail hypotheses. Infinite-index lattice extension is moment-only in Remark 3.1; no unrestricted ordinary-sup tail extension is claimed.",
+        "read_scope": "The E1203 attachment was initially screened at PDF p.1 only. Exact PDF SHA equals the separately full-read 27-page S-9ecc39a3d40ae7fe PDF; theorem claims reuse its exact-SHA full-read card. Theorem 3.5 pages 6–8 were visually reviewed in this audit.",
+        "full_read": true,
         "identity_status": "exact_sha256_alias_to_existing_full_read_source",
         "source_ranges": [
           {
@@ -1412,7 +1428,22 @@
           }
         ],
         "initial_screen_only": true,
-        "evidence_alias": "S-9ecc39a3d40ae7fe"
+        "evidence_alias": "S-9ecc39a3d40ae7fe",
+        "full_read_basis": "Exact PDF SHA alias to audit_current/shared-reading/revise_g/9ecc39a3d40ae7fe18fca07a7ab9b891bb200bf446fb71ca497a409d65e25795.json",
+        "source_card_path": "audit_current/shared-reading/revise_g/9ecc39a3d40ae7fe18fca07a7ab9b891bb200bf446fb71ca497a409d65e25795.json",
+        "source_card_sha256": "fcb048583aa37394fe508d158f29b9d26dc4a8241ccf56889af8e071c731ab94",
+        "pdf_sha256": "9ecc39a3d40ae7fe18fca07a7ab9b891bb200bf446fb71ca497a409d65e25795",
+        "page_count": 27,
+        "visual_review_pages": [
+          6,
+          7,
+          8
+        ],
+        "visual_review_sha256": {
+          "audit_current/jk/pdf-review/K03-P-9ecc39a3d40ae7fe-p06.png": "3523ae4f1d51233e462e44cfb82d64886fffd2d09148ff17b242ce513b35f9aa",
+          "audit_current/jk/pdf-review/K03-P-9ecc39a3d40ae7fe-p07.png": "47a2aa73dc5d3200b2957811919ffbe34d1cb46729759ab98beb98613acaa1eb",
+          "audit_current/jk/pdf-review/K03-P-9ecc39a3d40ae7fe-p08.png": "def7da57cecb2b3c80f61c98bdfbd6aa1d0301a0c00e78cc63ecc2a115ba69b6"
+        }
       }
     },
     {
@@ -1460,16 +1491,58 @@
       ],
       "expected_title": "Tail bounds via generic chaining",
       "basis": "https://arxiv.org/abs/1309.3522",
-      "identity_status": "pending",
+      "identity_status": "verified_exact_pdf_sha_alias_to_E1203_P-9ecc39a3d40ae7fe",
       "attempted_at": "2026-10-05",
-      "status": "downloaded_parsed",
+      "status": "downloaded_parsed_exact_sha_full_read_card_reused",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/1309.3522",
       "paper_id": "S-9ecc39a3d40ae7fe",
       "sha256": "9ecc39a3d40ae7fe18fca07a7ab9b891bb200bf446fb71ca497a409d65e25795",
       "page_count": 27,
       "local_file": "supplementary/S-9ecc39a3d40ae7fe/paper.pdf",
-      "text_file": "supplementary/S-9ecc39a3d40ae7fe/paper.md"
+      "text_file": "supplementary/S-9ecc39a3d40ae7fe/paper.md",
+      "read_card_path": "audit_current/shared-reading/revise_g/9ecc39a3d40ae7fe18fca07a7ab9b891bb200bf446fb71ca497a409d65e25795.json",
+      "read_card_sha256": "fcb048583aa37394fe508d158f29b9d26dc4a8241ccf56889af8e071c731ab94",
+      "read_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "unread_pages": [],
+      "visual_review_pages": [
+        6,
+        7,
+        8
+      ],
+      "visual_review_sha256": {
+        "audit_current/jk/pdf-review/K03-P-9ecc39a3d40ae7fe-p06.png": "3523ae4f1d51233e462e44cfb82d64886fffd2d09148ff17b242ce513b35f9aa",
+        "audit_current/jk/pdf-review/K03-P-9ecc39a3d40ae7fe-p07.png": "47a2aa73dc5d3200b2957811919ffbe34d1cb46729759ab98beb98613acaa1eb",
+        "audit_current/jk/pdf-review/K03-P-9ecc39a3d40ae7fe-p08.png": "def7da57cecb2b3c80f61c98bdfbd6aa1d0301a0c00e78cc63ecc2a115ba69b6"
+      }
     },
     {
       "key": "R-e6c5802012c7f728",

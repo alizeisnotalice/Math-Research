@@ -97,9 +97,9 @@
       "assumptions": [
         "I₀ 上有限或按文中约定截断的标准二进树；每节点给非负 λ_I，形成 Λ，α_I≥0。",
         "所有 I⊂I₀ 满足 |I|⁻¹ Σ_{K⊂I} α_K (Λ)_K² ≤ (Λ)_I。",
-        "函数 ϕ 的平方平均有限；定理中根状态满足 Bellman 域条件 f²≤Fv、A≤v。"
+        "函数 ϕ 的平方平均有限；定理状态满足 f²≤Fv、0≤A≤v。每次实际代入 B 还须 v+A>0；本组运行守卫采用 v>0。"
       ],
-      "statement": "作者给出 (1/|I₀|)Σ_{I⊂I₀} α_I(ϕ√Λ)_I² ≤ 4(ϕ²)_{I₀}（等价加权写法见正文）。势 B(F,f,A,v)=4F−f²/(v+A)，在 f²≤Fv、0≤A≤v 域上非负、至多 4F，并满足主不等式：当状态按 (1.11) 的均值加新根增量 (b²,ab,c,a²) 连接时，cf²/v² ≤ B(parent)−½B(left)−½B(right)。",
+      "statement": "作者给出 (1/|I₀|)Σ_{I⊂I₀} α_I(ϕ√Λ)_I² ≤ 4(ϕ²)_{I₀}（等价加权写法见正文）。PDF p. 2 定义势 B(F,f,A,v)=4(F−f²/(v+A))，4 乘整个括号；在 f²≤Fv、0≤A≤v 域上非负、至多 4F，并满足主不等式：当状态按 (1.11) 的均值加新根增量 (b²,ab,c,a²) 连接时，cf²/v² ≤ B(parent)−½B(left)−½B(right)。 Formula evaluation is restricted to v+A>0. The printed closed coordinate inequalities by themselves admit v=A=0 (then f=0 from f²≤Fv), where the displayed expression is undefined; no zero-mass extension is asserted.",
       "start_line": 83,
       "end_line": 300,
       "pdf_pages": [
@@ -118,7 +118,8 @@
       "gaps": [
         "该版本的 Bellman 常数 4 是其给出的上界；文中不主张对 Theorem 1.3 的一般数据为最佳。",
         "适用的是标准二进树与指定树 measure/Carleson 条件，不涵盖不同中心立方体交叠形成的非树家族。",
-        "树深有限化的技术性说明虽文中称可把树视作有限但很大，不能直接推出任意无限树的所有极限结论而省略收敛论证。"
+        "树深有限化的技术性说明虽文中称可把树视作有限但很大，不能直接推出任意无限树的所有极限结论而省略收敛论证。",
+        "At the zero-mass state v=A=0 the source formula has denominator zero (and f=0 under f²≤Fv); no boundary value/extension is supplied here. Require a separate zero-mass branch or a separately justified extension before use."
       ]
     },
     {

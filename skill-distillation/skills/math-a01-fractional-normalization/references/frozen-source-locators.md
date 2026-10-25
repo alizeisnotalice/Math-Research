@@ -126,3 +126,16 @@ Theorem 3 (piecewise chord quantile approximation; printed bound direction corre
 
 端点与限制：{"denominator": "Each scenario denominator must remain positive; theorem assumptions ensure it by a₂^j≥0,c(x)≥0,b₂^j>0. A denominator that can vanish cannot be multiplied through this way.", "quantile": "Finite interpolation nodes cannot include z=1 because Φ⁻¹(1)=+∞; the upper approximation must explicitly handle the tail above the final node.", "curvature": "The objective curvature condition is inconsistent as printed for a maximization model.", "probability": "Gaussian/discrete independence structure and finite scenario support are essential to the exact conditioning argument."}
 
+
+
+## A01 Step 7 cross-model source locators (current, 2026-10-07)
+
+The legacy frozen batch above contains only the primary CCT paper P-33450 and the chance-constraint paper P-fdba03. When Step 7 invokes a model below, use its separate complete reading card here; do not treat the two legacy cards above as exhaustive. Original PDFs and extraction caches are in the delivery root `evidence/papers/<paper_id>/` and are SHA-indexed in `audit_current/`.
+
+- **Binary/projective multi-ratio convex hull:** [P-482f9333a90a4dc7 source card](papers/AD-P-482f9333a90a4dc7.json), PDF SHA `482f9333a90a4dc761a7ed1037645f9eb0c0e804b1e0fbd8389003dcdfae5967`, 38 pages incl. Appendix A.1–A.15. Projective hull Theorems 1–2, PDF pp.6–9; common binary/RLT monomial lift, pp.12–14; simultaneous multi-ratio hull Theorem 3 p.22 and Appendix A.10.
+- **Robust fractional programming:** [P-42888155391c88e9 source card](papers/AD-P-42888155391c88e9.json), PDF SHA `42888155391c88e9a23f15a65b6a6eecc67f76b60bb993336f27338cc1ea56e0`, 21 pages incl. Appendices A/B. Independent numerator/denominator uncertainty special case, pp.6–7; x-independent denominator, pp.7–8; general root method pp.8–10; Sion exchange assumptions p.18.
+- **Proximal fractional algorithms:** [P-436c21dd3224191c source card](papers/AD-P-436c21dd3224191c.json), PDF SHA `436c21dd3224191c0fe6f365271279b15eff055481eb3fb24c4aa52659348731`, 15 pages. Concave denominator Theorem 7, pp.3–7; convex denominator Theorem 10, pp.8–10; whole-sequence KL convergence Theorem 15, pp.11–13.
+- **Binary multi-ratio submodularity:** [P-38deac7237303114 source card](papers/AD-P-38deac7237303114.json), PDF SHA `38deac7237303114fbd5b439961b710b4d8110f47dd10a2aa528390dc008807f`, 18 pages. Single-ratio theorem with positive intercept `b₀>0` and assumptions A1–A3, pp.3–6; `b₀=0` obstruction Proposition 3 p.8.
+- **Fuzzy multiobjective fractional modeling:** [P-83d2d3b1c87ebaa1 source card](papers/AD-P-83d2d3b1c87ebaa1.json), PDF SHA `83d2d3b1c87ebaa1f4fa9b1fc7b933eb277dd2e05d45cd5d2f0eda3a067ea861`, 12 pages. The fuzzy/Taylor construction and local approximation scope appear in §2.2, PDF p.4; it is not evidence for a general CCT theorem.
+
+P-fdba03 remains a local source-error case: Theorem 3, PDF pp.8–9, prints a maximization upper-bound label inconsistent with the inclusion in (13). On the covered node interval, a convex chord lies above `q(z)=log Φ⁻¹(z)`, tightening the maximization constraints and hence giving a lower bound; for `z` beyond the last node or `z=1`, no full-domain chord envelope is established. See the P-fdba card and current A01 correction log.

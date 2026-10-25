@@ -15,7 +15,7 @@
 |E1536|11_Li_2024_Learning with Logical Constraints but without Shortcut Satis.pdf|P-ea0c1b2f118af83a|irrelevant|首面摘要中的“constraint/satisfaction”用于特定调度、控制、学习或组合结构，未给出可复用的有限 CSP/SAT/SMT 编码与解/不可满足证书流程。|
 |E1537|30_Yuksekgonul_2023_Attention Satisfies_ A Constraint-Satisfaction Lens on Factu.pdf|P-768756369721aebd|irrelevant|首面摘要中的“constraint/satisfaction”用于特定调度、控制、学习或组合结构，未给出可复用的有限 CSP/SAT/SMT 编码与解/不可满足证书流程。|
 |E1538|23_Lanham_2022_Quantum-Inspired Approximations to Constraint Satisfaction P.pdf|P-fe79b743c9ea60bd|irrelevant|首面摘要中的“constraint/satisfaction”用于特定调度、控制、学习或组合结构，未给出可复用的有限 CSP/SAT/SMT 编码与解/不可满足证书流程。|
-|E1539|31_Hawkins_2011_Solving Set Constraint Satisfaction Problems using ROBDDs.pdf|P-ebc52940200f2d3a|direct|用有序二元决策图表示并求解集合约束满足问题，提供有限模型压缩与精确解法。|
+|E1539|31_Hawkins_2011_Solving Set Constraint Satisfaction Problems using ROBDDs.pdf|P-ebc52940200f2d3a|direct（限有限集合 CSP/ROBDD）|全文精读 PDF pp.1–48；有限宇宙成员位编码、原始集合约束的 ROBDD、存在量化投影和传播算法。ROBDD 可指数膨胀且依变量顺序，整数位数/补零有源文不一致；不支持一般 SAT/SMT 完备性、通用多项式效率或通用求解器优势。完整卡：`../../../audit_current/shared-reading/revise_cd/ebc52940200f2d3a79bb4c1dc7f28ce0af0279eaf328dae1980678b1a45efb34.json`。|
 |E1540|02_Schmied_2025_Efficient Implementation of the Global Cardinality Constrain.pdf|P-e576c364ed7b7a02|irrelevant|首面摘要中的“constraint/satisfaction”用于特定调度、控制、学习或组合结构，未给出可复用的有限 CSP/SAT/SMT 编码与解/不可满足证书流程。|
 |E1541|36_Bessiere_2009_Decomposition of the NVALUE constraint.pdf|P-ae6a073840e1ef63|irrelevant|首面摘要中的“constraint/satisfaction”用于特定调度、控制、学习或组合结构，未给出可复用的有限 CSP/SAT/SMT 编码与解/不可满足证书流程。|
 |E1542|06_Chen_2014_An Algebraic Hardness Criterion for Surjective Constraint Sa.pdf|P-be9e46c022b0d227|irrelevant|首面摘要中的“constraint/satisfaction”用于特定调度、控制、学习或组合结构，未给出可复用的有限 CSP/SAT/SMT 编码与解/不可满足证书流程。|

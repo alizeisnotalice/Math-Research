@@ -1,3 +1,7 @@
+> **冻结入库快照（2026-10-06）**：以下附件行与当时的相关性/阅读状态是历史证据，不是本轮最终覆盖表。历史原文另存于 `../../../audit_current/f/history/pre-audit-20261007/`。当前逐条数学断言请看 `../../../audit_current/f/claims.json`，实际运行请看 `../../../audit_current/f/cases.json`；本轮候选池身份筛查和逐页阅读账以 `../../../audit_current/independent-f/` 的审核报告为准。不得把本文中的 `pending` 自动解释为无关，也不得把旧卡的 `full_read` 标签视为本轮已复核。
+
+便携包或已安装 Skill 的本地来源访问方法见[来源访问说明](source-access.md)。单条索引查找会验证来源 SHA；解析成功不等于已阅读或已证明。
+
 # F03 来源与实际处理状态
 
 附件归属 46 条；本专题关联不同PDF 45 份。

@@ -3,14 +3,12 @@ name: math-b01-lagrange-farkas
 description: "用于Lagrange 对偶与 Farkas 证书的数学研究：核对输入与假设，组织方法和证据，说明中心立方体极大算子的迁移条件；不凭名称补造内部接口。"
 ---
 
-> **交接准备状态（结构性）**：本副本只整理技能结构与引用可移植性；未进行全文深读或数学验证。原评级、可用状态、假设、证明限制和未决条件均沿用原件。结构检查不构成科学验证。
-> 外部文献证据由第二证据包提供，是独立数据输入，不随单个 Skill 安装。合并交接包默认将 `EVIDENCE_ROOT` 设为包内 `evidence/`；单独安装时由调用方传入 `EVIDENCE_ROOT`，按本地[证据索引](references/handoff-evidence-index.csv)中的 `portable_path` 查找。无需全局安装，也不要把外部 PDF 当作 Skill 内文件。
+> 外部文献、claims/cases 与 PDF 属于完整证据包，不随单个 Skill 安装。请使用[便携证据访问指南](references/evidence-guide.md)，按本 Skill 的[来源索引](references/handoff-evidence-index.csv)通过统一 resolver 定位。registry/显式包根路由均不依赖当前工作目录；SHA 检查只确认当前字节，不等于全文阅读或数学验收。
 
 
 # B01 · Lagrange 对偶与 Farkas 证书
 
-当前证据状态：**待证据验收：可执行方法工作流，不是已证明的课题结论**。全文转换、论文阅读和证明核验是三个独立状态。（此行声明已被下方【修订】标注替代：该 skill 经外部审核提升为「部分可用」，详见对应修订行与 references/verification-log-20261006.md）
-  【修订 2026-10-06（外部审核 R26）】既有验证记录支撑档位提升：B1 案例通过（LP gap 恒等式一行解析证明，A 级）。证据状态提升为：部分可用：基础推导已检查，专题证据仍待完整验收。源定理证明本身未重证（守卫保持）。
+当前证据状态：**部分可用**。有限维 Farkas/弱对偶证书及列出的已核条件可用；一般锥、无限维或 DC-composite 强对偶需另证资格/拓扑/紧性。两项原文错误须按本入口更正后再调用：P-18e Theorem 3.6 的 `∀μ∃λ` 不推出共同乘子；P-5ae Remark 1.7 的上半连续说法被反例否定，Prop.4.1 的平方根比例修为 `λ*/σ_K(A*y)` 且仅在源条件下采用。新增相邻来源 E1258 的 arXiv v2 第2.2节 Lemma 2 局部反例显示其放松问题的对偶有限性条件错误；不得调用其 top-k 特征值刻画，后续近似结论需分别审查。其余一般定理证明未独立重证，专题验收未完。
 
 ## 输入与产出
 
@@ -29,7 +27,8 @@ description: "用于Lagrange 对偶与 Farkas 证书的数学研究：核对输�
 7. 锥LP来源P-08ccea72ef78920a用h_c(b)与h_c**(b)区分原/对偶值：有限值下零gap检h_c在b的下半连续，dual达到另需∂h_c(b)非空。保拓扑、连续A及正对偶锥；PDF的bar h_c proper不能误抄成h_c proper。Gale全无限指标的liminf尾与截距inf不能由有限采样认证。
 8. DC-composite来源P-18e365da3a6d391f的sup_λ inf_μ必须保留一个共同λ。其Theorem3.6印刷∀μ∃λ不足以推出∃λ∀μ，缺量词交换证明时不调用等价。
 9. 输出原与对偶可行候选及gap；浮点残差不冒充精确不可行证书。
-10. 非闭锥来源P-5ae169908ed70fca限Hilbert与bounded linear A、bounded closed convex generator K∋0：cl A(coneK)的零support方向测试只证明∀ε>0近似可解；exact A(coneK)另需一个共同C使∀y ⟨b,y⟩≤Cσ_K(A*y)。ε>0 dual唯一不推ε=0 dual达到；general support-face inclusion需同时回验残差/normal，H/E恢复原非凸锥是额外条件。该文Remark1.7 upper semicont错误及Prop4.1平方根缩放错误按卡局部修复后才可调用，均尚待两轮审核。
+10. 非闭锥来源P-5ae169908ed70fca限Hilbert与bounded linear A、bounded closed convex generator K∋0：cl A(coneK)的零support方向测试只证明∀ε>0近似可解；exact A(coneK)另需一个共同C使∀y ⟨b,y⟩≤Cσ_K(A*y)。ε>0 dual唯一不推ε=0 dual达到；general support-face inclusion需同时回验残差/normal，H/E恢复原非凸锥是额外条件。该文Remark1.7的上半连续声明由ℓ²反例否定；本例只否定该声明，不据此声称一般下半连续。Prop4.1由PDF p.22核得的校正比例为 λ*/σ_K(A*y)，且需要σ_K(A*y)>0和源中共享法向/稳定性假设；平方根比例是原文错误。精确标量例与适用范围见references/verification-log-20261007.md。
+11. 对只含齐次项 `v_j^T A_jv_j`、各 `v_j` 相互独立的二次 Lagrangian，先把全部等式乘子代入后再计算 `g=inf L`，不能只靠一阶驻点筛选。若 `A_j=μ_jI−M`，在域 `v_j≠0` 上有限下界的充要条件是每个 `A_j⪰0`：若存在负方向，沿其任意非零倍数趋于无穷可令该项趋于 `−∞`；若 `A_j⪰0`，该项下确界为0，但当 `A_j` 正定时下确界不达到。不要把有限下确界、达到的极小点和特征值驻点混为一谈。E1258 的局部核验见 `references/verification-log-20261007.md`。
 
 ## 证据与失败处理
 

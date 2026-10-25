@@ -159,20 +159,52 @@
       "sha256": "497c3b054aafd391e9dc7488c5e18fce50ce3dd5498d00807a4626d189fb50e9",
       "bytes": 233579,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "full_read_adjacent",
+      "screening_reason": "Adjacent only: selected-jump-time Malliavin integration-by-parts under the paper’s conditional regularity/density and boundary-term hypotheses. It does not prove a predictable-compensator formula for general random measures, stochastic Fubini, or exit/wealth settlement.",
+      "identity_status": "version_observed_in_exact_sha_card",
       "paper_id": "P-497c3b054aafd391",
       "local_file": "corpus/papers/P-497c3b054aafd391/paper.pdf",
       "review": {
         "entry_id": "E1029",
         "topic": "J04",
         "paper_id": "P-497c3b054aafd391",
-        "decision": "pending",
-        "reason": "尚未人工筛选",
-        "read_scope": "pending",
-        "source_ranges": [],
-        "inherited_from": "reviews/HK/screening.json"
+        "decision": "adjacent",
+        "reason": "Adjacent only: selected-jump-time Malliavin integration-by-parts under the paper’s conditional regularity/density and boundary-term hypotheses. It does not prove a predictable-compensator formula for general random measures, stochastic Fubini, or exit/wealth settlement.",
+        "read_scope": "exact-PDF-SHA full-read card reuse; 22/22 pages including references; visual review pages 1,5,6,8,12,16,20,21.",
+        "source_ranges": [
+          {
+            "file": "evidence/papers/P-497c3b054aafd391/paper.md",
+            "start_line": 1,
+            "end_line": 1231,
+            "pdf_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22
+            ]
+          }
+        ],
+        "inherited_from": "cross-skill exact-PDF-SHA full-read card, owner revise_hi",
+        "full_read_card_path": "audit_current/shared-reading/revise_hi/497c3b054aafd391e9dc7488c5e18fce50ce3dd5498d00807a4626d189fb50e9.json",
+        "full_read_card_sha256": "34f4ab838ff9afaf906ac1caadf3355841a7c909db6d64fa8672d6ecce5a90e0"
       }
     },
     {
@@ -1089,6 +1121,48 @@
       "status": "failed",
       "error": "HTTPError: HTTP Error 403: Forbidden",
       "http_status": 403
+    },
+    {
+      "paper_id": "P-c7a4dec8102c2b5b",
+      "title": "Itô Isomorphisms for Lp-Valued Poisson Stochastic Integrals",
+      "source_version": "arXiv:1208.3885v3; The Annals of Probability 42(6) (2014), 2595–2643, DOI 10.1214/13-AOP906",
+      "pdf_sha256": "c7a4dec8102c2b5b63bb6c62f4cdab69271cb89fdcf184d039d5487ae3c49f8d",
+      "pdf_path": "evidence/papers/P-c7a4dec8102c2b5b/paper.pdf",
+      "page_count": 51,
+      "reuse_kind": "cross-skill exact-PDF-SHA reuse of existing full-read card; original attachment E1175 belongs to K03",
+      "full_read_card": "workspace_revised/math-k03-dirksen-mixed-tail-generic-chaining/references/papers/HK-P-c7a4dec8102c2b5b.json",
+      "full_read_card_sha256": "471bdd2a7689e46cdf6fd3a845a269be671352ff7c97a7cf1e05f5759cbc068b",
+      "paper_text_path": "evidence/papers/P-c7a4dec8102c2b5b/paper.md",
+      "paper_text_sha256": "be25d346b971577e148a22bcc955d38e7ee7a8f38fe6d208b396c79957d16029",
+      "J04_scope": "Step 5 only: Dirksen 2012 Theorem 1.1 for simple adapted Lq(S)-valued integrands against a Poisson random measure of deterministic sigma-finite intensity; the two-sided equivalence is for 1<p,q<infinity, with the source card recording q=1 upper-bound limit. It provides no general Banach, random/state-dependent compensator, random Fubini, or exit-settlement theorem.",
+      "K03_scope": "Adjacent to generic chaining; moment estimates can be a Poisson-integral input but do not establish chaining."
+    },
+    {
+      "paper_id": "P-8c541dc0bb435647",
+      "title": "Poisson Stochastic Integration in Banach Spaces",
+      "source_version": "arXiv:1307.7901v1, 2013-07-30",
+      "pdf_sha256": "8c541dc0bb435647c872638c1fe4b99364b4fa18d9425ea8fcbda97a59a4a42f",
+      "pdf_path": "evidence/papers/P-8c541dc0bb435647/paper.pdf",
+      "page_count": 26,
+      "reuse_kind": "cross-skill exact-PDF-SHA reuse of existing full-read card; original attachment E1179 belongs to K03",
+      "full_read_card": "workspace_revised/math-k03-dirksen-mixed-tail-generic-chaining/references/papers/HK-P-8c541dc0bb435647.json",
+      "full_read_card_sha256": "db88fca759a898d0ce43a2712e1a1f710dffc9a4f4c5e7aefd83cd349ad97084",
+      "paper_text_path": "evidence/papers/P-8c541dc0bb435647/paper.md",
+      "paper_text_sha256": "c4926dc07325faaa7de3d2eab78ceb1a158ad3f4fb9359906e0ab26c59e4bbfc",
+      "J04_scope": "Step 5 only: Theorems 2.11/2.13 give the stated type/cotype one-sided Poisson-integral bounds under deterministic sigma-finite intensity and simple adapted integrands; Theorem 4.5 gives the UMD stochastic-nu_p isomorphism for 1<p<infinity. No random/state-dependent compensator, general random Fubini, or exit-settlement theorem is supplied.",
+      "K03_scope": "Adjacent to generic chaining; Poisson-integral moment estimates can supply a finite-increment input but do not establish chaining."
+    },
+    {
+      "paper_id": "P-497c3b054aafd391",
+      "title": "Integration by parts formula with respect to jump times for stochastic differential equations",
+      "source_version": "arXiv:1004.3131v1 as printed on PDF p.1; dated April 7, 2010; 22-page preprint.",
+      "pdf_sha256": "497c3b054aafd391e9dc7488c5e18fce50ce3dd5498d00807a4626d189fb50e9",
+      "pdf_path": "evidence/papers/P-497c3b054aafd391/paper.pdf",
+      "page_count": 22,
+      "reuse_kind": "cross-skill exact-PDF-SHA full-read card reuse; original full-read card owner revise_hi",
+      "full_read_card": "audit_current/shared-reading/revise_hi/497c3b054aafd391e9dc7488c5e18fce50ce3dd5498d00807a4626d189fb50e9.json",
+      "full_read_card_sha256": "34f4ab838ff9afaf906ac1caadf3355841a7c909db6d64fa8672d6ecce5a90e0",
+      "J04_scope": "Adjacent only: selected-jump-time Malliavin integration-by-parts under the paper’s conditional regularity/density and boundary-term hypotheses. It does not prove a predictable-compensator formula for general random measures, stochastic Fubini, or exit/wealth settlement."
     }
   ],
   "status": "待证据验收：可执行方法工作流，不是已证明的课题结论"

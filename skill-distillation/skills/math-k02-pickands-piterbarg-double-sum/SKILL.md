@@ -1,16 +1,12 @@
 ---
 name: math-k02-pickands-piterbarg-double-sum
-description: "用于Pickands–Piterbarg 双重求和的数学研究：核对输入与假设，组织方法和证据，说明中心立方体极大算子的迁移条件；不凭名称补造内部接口。"
+description: "用于Pickands–Piterbarg 双重求和的数学研究：核对输入与假设，组织方法和证据；不凭名称补造内部接口。"
 ---
 
 # K02 · Pickands–Piterbarg 双重求和
 
-> **交接预处理说明：** 本副本只做结构、格式与可移植性预处理；这不构成数学内容、文献或定理的科学验证。下方原有证据状态、适用范围和例子保持原样。
-
-> 便携证据定位见[本Skill证据索引](references/handoff-evidence-index.csv)。读取外部文献时，将 `EVIDENCE_ROOT` 设为单独提供的数据包根目录，再按索引的 `resolved_portable_path` 定位文件。文献文件属于额外数据输入，不是本Skill目录内的必需文件。
-
-当前证据状态：**待证据验收：可执行方法工作流，不是已证明的课题结论**。全文转换、论文阅读和证明核验是三个独立状态。（此行声明已被下方【修订】标注替代：该 skill 经外部审核提升为「部分可用」，详见对应修订行与 references/verification-log-20261006.md）
-  【修订 2026-10-06（外部审核 R26）】既有验证记录支撑档位提升：Ψ(2)=0.0227501 与 2p−p²=0.0449827 erfc 闭式精确（instance_check_only）。证据状态提升为：部分可用：基础推导已检查，专题证据仍待完整验收。源定理证明本身未重证（守卫保持）。
+> 审核边界：本流程整理给定对象的定义、前提、推导与证据；它本身不构成专题定理证明。数值或玩具例只核对对应实例。来源结论须在账本列出的条件内使用，未独立核验的迁移必须标注“未证迁移”。本轮逐条断言、原文定位与实际案例记录见工作包 `audit_current/jk/`。
+> 文献定位见 `references/handoff-evidence-index.csv`；完整原文应以工作包 `evidence/papers/<paper_id>/paper.pdf` 及其 SHA-256 为准，自动转换文本只作检索辅助。
 
 ## 输入与产出
 
@@ -22,10 +18,12 @@ description: "用于Pickands–Piterbarg 双重求和的数学研究：核对输
 
 1. 验证样本路径可测/连续、方差上界与最大方差点结构；记录局部相关 1−r(t,t+h) 的幂指数 α、慢变项和常数。
 2. 按相关长度与阈值选择小块，使用 Pickands/Piterbarg 单块超越渐近并保留对应常数 H_α/Piterbarg 常数。
-3. 执行double-sum时先固定block长度参数T并令阈值u→∞，再令T→∞；分别给相邻边带、中距和固定紧域远距交集预算。P-6c5bcc98b64321b6 Lemma5只写固定t₀的sufficiently-large-u，不能直接代入随u增长的中距索引；该uniform pair界尚待补。
+3. 执行double-sum时先固定block长度参数T并令阈值u→∞，再令T→∞；分别给相邻边带、中距和固定紧域远距交集预算。对有限块并集，除非联合律另给独立性，必须以实际交集概率处理 Bonferroni；两边际相同或各自标准正态不蕴含独立。只有在已核验块事件相互独立时才可写 P(E₁∪E₂)=2p−p²。P-6c5bcc98b64321b6 Lemma5只写固定t₀的sufficiently-large-u，不能直接代入随u增长的中距索引；该uniform pair界尚待补。
 4. 核对域维数、网格稠密度与连续上确界版本；常数、指数项和多重峰贡献分别列出。
 
 ## 证据与失败处理
+
+从独立安装位置访问文献 PDF 或共享审计记录时，先按 [便携证据访问指南](references/portable-audit-access.md) 定位证据包并调用共享解析器。
 
 常数取决于局部相关、方差峰和索引维度；单块渐近不能在无联合界时直接乘块数。 Michna首个完整double-sum来源的局部条件极限需uniform entropy/Borell domination，不能省固定域依赖；远距相关隙应在紧区间[ε/4,p]取min，不能用全半轴inf。Theorem1的Hα显式下界只有外引证明；作者整体证明的中距uniform量词尚未独立补齐。
 

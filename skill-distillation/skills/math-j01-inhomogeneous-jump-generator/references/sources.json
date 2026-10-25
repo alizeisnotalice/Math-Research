@@ -9,30 +9,58 @@
       "sha256": "86e3b72f3b605def55817230693c22b778a410721cab800e95065b6a4c27617f",
       "bytes": 957210,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "full_read_adjacent",
+      "screening_reason": "精确PDF SHA-256对应的共享来源卡记录22/22页全文、全部页面视觉复核；身份为PDF首页所示 arXiv:2108.10176v1。对J01仅邻近：给出该自激强度模型的扩展生成元，不是一般非齐次跳过程定理。独立JK回执复核Theorem 1 (PDF p.7)的反例，否定其按印刷Assumption 1推出的weighted-f/total-variation几何遍历结论（缺少可达/φ-不可约性）；不否定显示的生成元公式、弱收敛或该例中δ1不变分布。此定理结论目前不是J01 SKILL/method/claims的操作依赖。",
+      "identity_status": "version_recorded_from_arxiv_stamp_and_exact_pdf_sha",
       "paper_id": "P-86e3b72f3b605def",
       "local_file": "corpus/papers/P-86e3b72f3b605def/paper.pdf",
       "review": {
         "entry_id": "E0785",
         "topic": "J01",
         "paper_id": "P-86e3b72f3b605def",
-        "decision": "pending",
-        "reason": "摘要与状态相关跳强度/生成元、非爆炸、非局部过程或首跳构造邻近；需要主定理及全文核验才能确定可迁移范围。",
-        "read_scope": "local PDF title/abstract, p1; no theorem/proof read claimed",
+        "decision": "adjacent",
+        "reason": "仅邻近J01：论文的模型特定扩展生成元不构成一般非齐次跳过程定理。独立JK回执确认Theorem 1在印刷假设下的weighted-f/TV几何遍历结论被反例否定；其余生成元、弱收敛和本例δ1不变分布不受此反例否定。当前J01技能、方法和claims均未使用该几何遍历结论。",
+        "read_scope": "复用 exact-SHA 共享卡：PDF 1–22页完整阅读，含参考文献及逐页视觉复核；身份/版本由PDF首页核对。独立JK窄审回执另行复核PDF pp.4,6,7和Theorem 1反例；回执不是第二次全文阅读。",
         "source_ranges": [
           {
-            "start_line": 7,
-            "end_line": 48,
+            "claim": "该自激强度模型的extended generator (5)及Proposition 1",
             "pdf_pages": [
-              1
+              2,
+              3,
+              4,
+              5,
+              6
             ],
-            "scope": "Local PDF first-page title/abstract screen; may include opening introduction"
+            "conditions": "该文的d维计数过程/状态依赖mark law及指定μ、B模型；命题还依赖其可测性和有限积分条件。",
+            "scope_limit": "模型特定公式，不是一般时间非齐次Q-function或任意测试函数生成元域定理。"
+          },
+          {
+            "claim": "Theorem 1的weighted-f几何遍历结论（按印刷Assumption 1）",
+            "pdf_pages": [
+              6,
+              7
+            ],
+            "independent_review_receipt": "audit_current/independent-jk/source_review_P-86e3b72f_theorem1_geometric_ergodicity_20261008_r2.json",
+            "independent_review_receipt_sha256": "e4ed7cb3542db1243dbfd2f6888c59ecede64283dff517aabd9f154d6c999528",
+            "counterexample": "lambda>=0, lambda0=1, mu(lambda)=1-lambda, B=0, nu=Uniform(0,1), f(lambda)=1+lambda^2; Assumption 1 and Af<=2-f hold, while for lambda>1 finite-time transition Dirac laws stay mutually singular to delta_1 and weighted-f norm does not tend to zero.",
+            "scope_limit": "仅否定按印刷假设推出的weighted-f/TV几何遍历；不否定显示生成元公式、弱收敛或该例中delta_1的不变性/唯一性。"
           }
         ],
         "inherited_from": "reviews/HK/screening.json",
-        "authentication_this_round": "abstract screen only"
+        "authentication_this_round": "abstract screen only",
+        "evidence_binding": {
+          "source_pdf_sha256": "86e3b72f3b605def55817230693c22b778a410721cab800e95065b6a4c27617f",
+          "producer_full_read_card": {
+            "path": "audit_current/shared-reading/revise_e/86e3b72f3b605def55817230693c22b778a410721cab800e95065b6a4c27617f.json",
+            "sha256": "e7eef8e3f63d5d7f8503c561b95fbf1f3a2cc54c3a64b024905071ba503f52b4",
+            "prior_card_sha256_bound_by_receipt": "120f199b5415bdfa8c431dcf62f671e1af249c43a6ecf99bbb96489948a5f836"
+          },
+          "independent_review_receipt": {
+            "path": "audit_current/independent-jk/source_review_P-86e3b72f_theorem1_geometric_ergodicity_20261008_r2.json",
+            "sha256": "e4ed7cb3542db1243dbfd2f6888c59ecede64283dff517aabd9f154d6c999528",
+            "scope": "narrow theorem-1 counterexample audit; not another full-paper read"
+          }
+        }
       }
     },
     {
@@ -883,30 +911,79 @@
       "sha256": "500a71307a38c036d97bca3c6b958c710c22abd9ca1479c201a1ed17713b424f",
       "bytes": 318253,
       "format": "pdf",
-      "screening": "pending",
-      "screening_reason": "尚未人工筛选",
-      "identity_status": "pending",
+      "screening": "full_read_direct_scoped",
+      "screening_reason": "Direct J01 model source: the paper defines conservative stable time-inhomogeneous Q-functions, constructs the minimal q-transition process, and studies nonexplosion/explosion and Dynkin-formula applicability for drift functions. It does not by itself establish a pointwise generator domain for arbitrary tests or a general Kolmogorov forward equation.",
+      "identity_status": "version_recorded_from_arxiv_stamp_and_exact_pdf_sha",
       "paper_id": "P-500a71307a38c036",
       "local_file": "corpus/papers/P-500a71307a38c036/paper.pdf",
       "review": {
         "entry_id": "E0810",
         "topic": "J01",
         "paper_id": "P-500a71307a38c036",
-        "decision": "pending",
-        "reason": "摘要与状态相关跳强度/生成元、非爆炸、非局部过程或首跳构造邻近；需要主定理及全文核验才能确定可迁移范围。",
-        "read_scope": "local PDF title/abstract, p1; no theorem/proof read claimed",
+        "decision": "direct-but-scoped",
+        "reason": "Direct J01 model source: the paper defines conservative stable time-inhomogeneous Q-functions, constructs the minimal q-transition process, and studies nonexplosion/explosion and Dynkin-formula applicability for drift functions. It does not by itself establish a pointwise generator domain for arbitrary tests or a general Kolmogorov forward equation.",
+        "read_scope": "Independent exact-PDF-SHA full read, 28/28 pages including Appendix A and references; visual review pp.2–4, 8, 10, 12, 15–17.",
         "source_ranges": [
           {
-            "start_line": 7,
-            "end_line": 54,
+            "claim": "Conservative stable Q-function convention and minimal q-transition construction",
             "pdf_pages": [
-              1
+              2,
+              3,
+              4,
+              5
             ],
-            "scope": "Local PDF first-page title/abstract screen; may include opening introduction"
+            "conditions": "Borel state space; off-diagonal kernel nonnegative finite; conservative q; source stability condition sup over all time of each state’s total rate finite.",
+            "scope_limit": "This is the source Q-function construction; it does not assert arbitrary test functions lie in a pointwise generator domain."
+          },
+          {
+            "claim": "Forward equation for (q,s)-bounded test sets",
+            "pdf_pages": [
+              4
+            ],
+            "conditions": "Theorem Proposition 2.2 uses a set Γ with sup over x in Γ and all times of q_x finite.",
+            "proof_support": "The proposition cites Corollary 4.2 of Feinberg et al.; that imported result is not independently reproved here."
+          },
+          {
+            "claim": "Nonexplosion/explosion criteria for nonhomogeneous pure-jump Q-processes",
+            "pdf_pages": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "conditions": "Theorem 3.1 is the source’s equivalence for its stable conservative Q-function model; Theorem 3.2 gives a sharp drift criterion with necessity only under locally compact separable metric state space, local rate bounds and weak-Feller transition conditions.",
+            "proof_scope": "The paper supplies its proof structure; stability theory tools cited from Meyn–Tweedie and related results are not independently verified."
+          },
+          {
+            "claim": "Practical finite-horizon drift condition and Dynkin-formula applicability via transformed process",
+            "pdf_pages": [
+              11,
+              12,
+              15,
+              16,
+              17,
+              18
+            ],
+            "conditions": "Corollary 3.2 is derived for the specified finite-horizon truncations; Theorem 4.1 concerns c-drift functions and the f-transformed Q-process.",
+            "scope_limit": "These results do not prove J01’s generic local generator-limit identity for every test function."
+          },
+          {
+            "claim": "Appendix proof material and references",
+            "pdf_pages": [
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ],
+            "scope_limit": "Appendix arguments and citations read; cited results remain external dependencies."
           }
         ],
-        "inherited_from": "reviews/HK/screening.json",
-        "authentication_this_round": "abstract screen only"
+        "inherited_from": "audit_current/shared-reading/audit_jk exact-SHA card; original historical p.1 screen retained",
+        "authentication_this_round": "abstract screen only",
+        "full_read_card_path": "audit_current/shared-reading/audit_jk/500a71307a38c036d97bca3c6b958c710c22abd9ca1479c201a1ed17713b424f.json",
+        "full_read_card_sha256": "cd12ef9aff0a82aac45d1dc503cce2177f92b52ec95fd229fe4f6d0195ce68d2"
       }
     },
     {
@@ -1397,6 +1474,75 @@
       "http_status": 200,
       "final_url": "https://link.springer.com/article/10.1007/s00034-022-01995-8?error=cookies_not_supported&code=e2fc1e79-7713-4982-b748-0410cfcedb43",
       "error": "ValueError: Response is not a PDF"
+    },
+    {
+      "paper_id": "P-500a71307a38c036",
+      "title": "On the nonexplosion and explosion for nonhomogeneous Markov pure jump processes",
+      "source_version": "arXiv:1511.05011v2 (as printed on PDF p.1)",
+      "pdf_sha256": "500a71307a38c036d97bca3c6b958c710c22abd9ca1479c201a1ed17713b424f",
+      "pdf_path": "evidence/papers/P-500a71307a38c036/paper.pdf",
+      "page_count": 28,
+      "reuse_kind": "exact-PDF-SHA full-read card reuse from independent J-K auditor; original attachment E0810 belongs to J01",
+      "full_read_card": "audit_current/shared-reading/audit_jk/500a71307a38c036d97bca3c6b958c710c22abd9ca1479c201a1ed17713b424f.json",
+      "full_read_card_sha256": "cd12ef9aff0a82aac45d1dc503cce2177f92b52ec95fd229fe4f6d0195ce68d2",
+      "J01_scope": "Direct J01 model source: the paper defines conservative stable time-inhomogeneous Q-functions, constructs the minimal q-transition process, and studies nonexplosion/explosion and Dynkin-formula applicability for drift functions. It does not by itself establish a pointwise generator domain for arbitrary tests or a general Kolmogorov forward equation.",
+      "source_locators": [
+        {
+          "claim": "Conservative stable Q-function convention and minimal q-transition construction",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "conditions": "Borel state space; off-diagonal kernel nonnegative finite; conservative q; source stability condition sup over all time of each state’s total rate finite.",
+          "scope_limit": "This is the source Q-function construction; it does not assert arbitrary test functions lie in a pointwise generator domain."
+        },
+        {
+          "claim": "Forward equation for (q,s)-bounded test sets",
+          "pdf_pages": [
+            4
+          ],
+          "conditions": "Theorem Proposition 2.2 uses a set Γ with sup over x in Γ and all times of q_x finite.",
+          "proof_support": "The proposition cites Corollary 4.2 of Feinberg et al.; that imported result is not independently reproved here."
+        },
+        {
+          "claim": "Nonexplosion/explosion criteria for nonhomogeneous pure-jump Q-processes",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "conditions": "Theorem 3.1 is the source’s equivalence for its stable conservative Q-function model; Theorem 3.2 gives a sharp drift criterion with necessity only under locally compact separable metric state space, local rate bounds and weak-Feller transition conditions.",
+          "proof_scope": "The paper supplies its proof structure; stability theory tools cited from Meyn–Tweedie and related results are not independently verified."
+        },
+        {
+          "claim": "Practical finite-horizon drift condition and Dynkin-formula applicability via transformed process",
+          "pdf_pages": [
+            11,
+            12,
+            15,
+            16,
+            17,
+            18
+          ],
+          "conditions": "Corollary 3.2 is derived for the specified finite-horizon truncations; Theorem 4.1 concerns c-drift functions and the f-transformed Q-process.",
+          "scope_limit": "These results do not prove J01’s generic local generator-limit identity for every test function."
+        },
+        {
+          "claim": "Appendix proof material and references",
+          "pdf_pages": [
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "scope_limit": "Appendix arguments and citations read; cited results remain external dependencies."
+        }
+      ]
     }
   ],
   "status": "待证据验收：可执行方法工作流，不是已证明的课题结论"

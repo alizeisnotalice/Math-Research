@@ -10,7 +10,7 @@
 |E1026|02_Liang_2025_Mean Field Game with Reflected Jump Diffusion Dynamics_ A Li.pdf|P-84922ac336b62d22|pending|尚未人工筛选|
 |E1027|15_Li_2017_Doubly Damped Stochastic Parallel Translations and Hessian F.pdf|P-bac33b74c50ed88f|pending|尚未人工筛选|
 |E1028|21_Leahy_2014_On Degenerate Linear Stochastic Evolution Equations Driven b.pdf|P-0eeb51becf8686af|pending|尚未人工筛选|
-|E1029|32_Bally_2010_Integration by parts formula with respect to jump times for.pdf|P-497c3b054aafd391|pending|尚未人工筛选|
+|E1029|32_Bally_2010_Integration by parts formula with respect to jump times for.pdf|P-497c3b054aafd391|adjacent|精确 SHA 全读卡复用：22/22页含参考文献；只支持选定跳时的 Malliavin 分部积分及其条件，不支持补偿子、随机 Fubini 或退出结算。|
 |E1030|39_Hui_2020_Stochastic Fubini Theorem for Jump Noises in Banach Spaces【题录】.txt|R-19fd115f32050d4c|pending|尚未人工筛选|
 |E1031|27_Confortola_2013_Backward stochastic differential equations associated to jum.pdf|P-6211617b63c19a61|pending|尚未人工筛选|
 |E1032|23_Dupuis_2014_Moderate deviations for recursive stochastic algorithms.pdf|P-1a7334404447431b|pending|尚未人工筛选|
@@ -58,3 +58,21 @@
 原附件PDF：工作包根目录的 `corpus/papers/<paper_id>/paper.pdf`；全文 `paper.md`；页码映射 `pages.json`。
 补充PDF：`supplementary/<paper_id>/`。完整原文不放入轻量Skill ZIP；可用SHA-256与附件成员名定位原文件。
 逐篇完整处理状态见工作包 `catalog/entries-reviewed.json`、`catalog/reading-queue.json`。
+
+
+## 第5步跨专题来源：精确 SHA 的全读卡复用
+
+以下两篇原附件属于 K03。其 PDF SHA 与既有全读卡逐字节对应；J04 只在可选向量 Poisson 积分矩界分支使用，不把它们当作一般随机 Fubini、随机补偿子或退出结算来源。K03 对泛链主题仍判为 adjacent。
+
+|来源|PDF SHA / 版本|全读卡与关键定位|J04 限定范围|
+|---|---|---|---|
+|P-c7a4dec8102c2b5b, Dirksen, *Itô Isomorphisms for Lp-Valued Poisson Stochastic Integrals*|`c7a4dec8102c2b5b63bb6c62f4cdab69271cb89fdcf184d039d5487ae3c49f8d`; arXiv:1208.3885v3; 51页|`workspace_revised/math-k03-dirksen-mixed-tail-generic-chaining/references/papers/HK-P-c7a4dec8102c2b5b.json` (resolve as a package artifact using [portable evidence access](portable-audit-access.md)), card SHA `471bdd2a7689e46cdf6fd3a845a269be671352ff7c97a7cf1e05f5759cbc068b`; Theorem 1.1 p.3, proof pp.19–24 and 46–49|仅简单适应 Lq(S)-值被积量、确定 σ 有限强度 dt×ν；两侧等价 1<p,q<∞，q=1 仅记录上界。
+|P-8c541dc0bb435647, Dirksen–Maas–van Neerven, *Poisson Stochastic Integration in Banach Spaces*|`8c541dc0bb435647c872638c1fe4b99364b4fa18d9425ea8fcbda97a59a4a42f`; arXiv:1307.7901v1; 26页|`workspace_revised/math-k03-dirksen-mixed-tail-generic-chaining/references/papers/HK-P-8c541dc0bb435647.json` (resolve as a package artifact using [portable evidence access](portable-audit-access.md)), card SHA `db88fca759a898d0ce43a2712e1a1f710dffc9a4f4c5e7aefd83cd349ad97084`; Theorems 2.11/2.13 pp.8–12, Theorem 4.5 p.16|type/cotype 和 UMD 结论各自按定理列出的指数、确定 σ 有限强度和简单适应过程使用；一般 X 的 ν_p 仍可能是抽象随机范数。
+
+
+
+## J04 E1029：Bally–Clément exact-SHA full-read reuse (adjacent only)
+
+- PDF SHA `497c3b054aafd391e9dc7488c5e18fce50ce3dd5498d00807a4626d189fb50e9`, arXiv:1004.3131v1, 22/22 pages. Existing card: [portable source-card lookup](evidence-guide.md#j04-p-497c3b054aafd391-full-read-card), card SHA `34f4ab838ff9afaf906ac1caadf3355841a7c909db6d64fa8672d6ecce5a90e0`.
+- The paper gives conditional jump-time Malliavin integration by parts with density/regularity assumptions and boundary terms; Theorem 1 and Theorem 2 are located on pp.8–13. The PDF pages 1,5,6,8,12,16,20,21 were visually reviewed in the card.
+- J04 decision: adjacent only. It does not prove a general predictable-compensator identity, stochastic Fubini theorem, or exit/wealth settlement.

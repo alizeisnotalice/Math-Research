@@ -68,3 +68,8 @@
 原附件PDF：工作包根目录的 `corpus/papers/<paper_id>/paper.pdf`；全文 `paper.md`；页码映射 `pages.json`。
 补充PDF：`supplementary/<paper_id>/`。完整原文不放入轻量Skill ZIP；可用SHA-256与附件成员名定位原文件。
 逐篇完整处理状态见工作包 `catalog/entries-reviewed.json`、`catalog/reading-queue.json`。
+
+
+## J/K current atom bindings (2026-10-08)
+
+Current K05 atoms bind Ledoux `b7ea4e…1914` (35-page version/input review; Gaussian equation (5) and scope taxonomy) and Louart–Couillet `ccb5a1…422ef` (72-page exact-SHA full read; Theorems 2.36 and 2.40). The former distinguishes reference-measure versions; Theorem 2.36 requires independent `[0,1]` entries, while Theorem 2.40 assumes the whole vector already has the source convex q-exponential concentration property. These bounds have separate gates and are not a generic dependent-law theorem.

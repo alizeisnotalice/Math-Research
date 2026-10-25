@@ -55,3 +55,11 @@ LP 求解成功、误差极小均**不构成**一般命题的证明；"全部成
   分离定理的使用条件齐备）——本 skill 的证书逻辑两端闭环（对偶侧 gap 恒等式 R26 已证）。
 - **不交谱投影 Parseval 分解**：P_I 正交投影代数（P_IP_J=0）+ 分辨率恒等 ⟹ p=2 常数
   恰 1 且**不可改进**（单频取等）——本 skill 的 p=2 常数机理完整。
+
+
+## 本轮更正记录（2026-10-07，append-only）
+
+- `M01-BND-01a`：旧“pending”状态由 `references/method.md` 的仿射相关消元完整证明覆盖，条件为有限维 `R^d`、`x∈conv(S)`。
+- `M01-BND-01b`：旧“instance_check_only”由标准单纯形重心坐标唯一性证明覆盖；150次随机试验仍只是演示。
+- 增补黎曼和论证以明确弱星闭凸包与有限原子凸组合的区别。
+- Bachir `P-3d2c7d539b055402` 本轮复核全文17页，只有满足原文可度量 `Phi`-凸等假设的 exposed-point 结论；不作Caratheodory或一般Krein–Milman支撑证明。完整定位见 `references/audit-current-lmn-20261007.md`。

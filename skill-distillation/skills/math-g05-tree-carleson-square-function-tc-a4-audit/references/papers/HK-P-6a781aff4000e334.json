@@ -77,10 +77,10 @@
       "label": "Theorem 2.1 (stochastic Carleson embedding, constant e)",
       "assumptions": [
         "Usual conditions on the filtered probability space; fixed n≥1.",
-        "Continuous square-integrable martingales X⁰,…,Xⁿ are pairwise orthogonal and have equal quadratic variations.",
-        "The u^k processes have generalized Cauchy–Riemann integral form (2.2)–(2.3), with square-integrable integrands and L² terminal values.",
+        "Continuous square-integrable real martingales X⁰,…,Xⁿ are adapted, pairwise orthogonal, and have equal quadratic variations.",
+        "For each k=0,…,n, a^k is progressively measurable and E∫₀∞|a_s^k|²d⟨X^k⟩_s<∞. Initial values u₀^k are fixed L² random variables, and u^k are defined by (2.2)–(2.3), hence are continuous L²-bounded martingales with L² terminal values.",
         "α≥0 progressive and its conditional tail mass M_t=E[∫_t^∞α_s ds|F_t]≤1 a.s.",
-        "The closed martingale N associated with total α-mass lies in the stable subspace of the X^k with square-integrable progressive coefficients."
+        "For N_t=E[∫₀∞α_s ds|F_t], the stable-subspace representation is N_t=N₀+Σ_k∫₀ᵗm_s^k dX_s^k, with N₀∈L¹; each m^k is progressively measurable and E∫₀ᵗ|m_s^k|²d⟨X^k⟩_s<∞ for every finite t."
       ],
       "statement": "E∫₀^∞ α_s Σ_{k=0}^n (u_s^k)² ds ≤ e·EΣ_{k=0}^n (u^k_∞)².",
       "start_line": 142,

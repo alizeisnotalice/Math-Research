@@ -3,14 +3,12 @@ name: math-g02-outer-lp-size-and-tree-stopping
 description: "用于外测度 Lp、大小函数与树嵌入（Do–Thiele）的数学研究：核对输入与假设，组织方法和证据，说明中心立方体极大算子的迁移条件；不凭名称补造内部接口。"
 ---
 
-> **交接准备状态（结构性）**：本副本只整理技能结构与引用可移植性；未进行全文深读或数学验证。原评级、可用状态、假设、证明限制和未决条件均沿用原件。结构检查不构成科学验证。
-> 外部文献证据由第二证据包提供，是独立数据输入，不随单个 Skill 安装。合并交接包默认将 `EVIDENCE_ROOT` 设为包内 `evidence/`；单独安装时由调用方传入 `EVIDENCE_ROOT`，按本地[证据索引](references/handoff-evidence-index.csv)中的 `portable_path` 查找。无需全局安装，也不要把外部 PDF 当作 Skill 内文件。
+> **当前状态（2026-10-07）**：部分可用。外分布定义、有限 retained-set 反例和局部 Cauchy 目标已核；旧 R13 的 plain `supavg≤L2` 通过已撤回，历史脚本实际检查的是更弱的 `supavg≤L2·√(N/10)`。Do–Thiele 及 Fraccaroli 只在各自写明的 size、几何和参数范围内引用。一般中心立方体/树接口仍未证明。
+> 外部文献证据随完整证据包提供；包根须同时含 `workspace_revised/`、`audit_current/` 与 `evidence/`。`EVIDENCE_ROOT` 和 `MATH64_SOURCE_PACKAGE_ROOT` 均指包根。单独安装的 Skill 不含共享 PDF/claims/cases；按[本地访问说明](references/portable-audit-access.md)从 registry root `math64-20261007` 解析包根以定位绝对 resolver，或显式提供包根。用 `--skill-dir` 与来源 ID 核验来源 SHA、用 `--artifact-path` 定位 claims/cases 并核验当前 SHA。registry、root 或 resolver 缺失时报告配置缺口，不猜路径/内容。resolver 的 PASS 只验证路径和当前字节，不代表全文阅读、命题证明或数学验收。
 
 
 # G02 · 外测度 Lp、大小函数与树嵌入（Do–Thiele）
 
-当前证据状态：**待证据验收：可执行方法工作流，不是已证明的课题结论**。全文转换、论文阅读和证明核验是三个独立状态。（此行声明已被下方【修订】标注替代：该 skill 经外部审核提升为「部分可用」，详见对应修订行与 references/verification-log-20261006.md）
-  【修订 2026-10-06（外部审核 R14）】定理引用忠实性已核对通过（Theorem 4.1/5.1/1.3/2.1 与源卡逐条一致，参数与端点声明更细）；证据状态提升为：部分可用：基础推导已检查，专题证据仍待完整验收。源定理证明本身未重证；中心立方体接口仍为推断。
 
 ## 输入与产出
 
@@ -30,7 +28,8 @@ description: "用于外测度 Lp、大小函数与树嵌入（Do–Thiele）的�
 8. 不能把被删部分条件换成μ(B)≥μ(A)/2：已检查有限μ(nonempty)=1、ω计数、f=1、r=2、q∞时，真weaknorm和正确K′均sqrt(m)，错误K″=1；比值无界。
 9. 同源Theorem2.1对一般size须p有限且p>a并保分割常数K；p∞推广另需Remark4.3的size–mass不等式。新源原定理为sourceclaim，有限反例是checkedderivation，中心立方体接口仅推断。
 10. 新全文P-aaa03e027f21d631的finite outerellr统一对偶限1<p≤∞、1≤r<∞或p=r=1/∞；p1,r>1有树反例非一致。指定R^d半空间box费用、ω=t^−1的对偶范围才完整1≤p,r≤∞，tent等价另保几何与维数常数。
-11. 该v1 Thm6.1 weak1q印刷漏t^{d−d/q}（§6.3实际控制尺度加权对象），缩放检验否定未加权字面式。AppendixProp8.6印刷OR仅零集分支有合法非零size反例；须提供局部积分–size兼容，不能照抄该泛化。
+11. 该v1 Thm6.1 weak-(1,q) 印刷式漏尺度因子 t^{d−d/q}；§6.3 控制的是尺度加权对象，缩放检验否定未加权字面式（q=1 不由该缩放反例否定）。Appendix Prop.8.6 p.31 印有“μ-null⇒ν-null 或逐集合局部积分–size 控制”两种替代假设。固定标准模型 X=N、μ=ω=counting、S=ℓ∞_ω、ν({n})=n 满足零集分支；对每个 n 取 f_n=δ_n，则 d_{f_n}(λ)=1 对 0≤λ<1、其后为0，outer L¹(S)=1 而 ∫|f_n|dν=n。故在同一个 σ-finite 模型和同一个 ν 下，n→∞ 给出比值无界，零集分支单独不足以推出 (8.1)，印刷的 OR 命题因该分支而有反例。这个序列论证是解析反例；有限案例只复算若干 n，不是一般证明。第二个局部积分–size 分支需按原文完整保留，本审计不否定该分支本身，也不猜写替代定理。
+12. Do–Lewers 2020 Theorems 1–2（P-e448d2077c4eb584）仅支持其连续上半三维 wave-packet P(f)、定制 tent σ_w/S_w（含 sup 与 lacunary 加权 L² square size）、Fourier 紧支 Schwartz φ、δ=2^{-8b}、2<q<∞、w∈A_{q/2}及常数依赖范围；证明用三套 dyadic grids、well-separated partial families 与 good-λ。它不是抽象外测度或任意树定理，中心立方体接口另证。Fraccaroli 2021《Duality for double iterated outer Lp spaces》（P-6920b727cff4af3e，PDF 44页、含附录 A/B）研究三层迭代 outer Lp 的有限模型对偶、collapse 与特定上半三维 dyadic 几何；它仅作双迭代结构旁证，不替代本组单层 size/stopping 定理。P-aaa03e027f21d631 是 2020 年《Duality for outer L^p_μ(ℓ^r) spaces and relation to tent spaces》，正文第10步引用保留该 ID。
 
 ## 证据与失败处理
 

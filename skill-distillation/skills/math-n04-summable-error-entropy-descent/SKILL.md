@@ -1,15 +1,15 @@
 ---
 name: math-n04-summable-error-entropy-descent
-description: "用于可求和误差管理与熵递减的数学研究：核对输入与假设，组织方法和证据，说明中心立方体极大算子的迁移条件；不凭名称补造内部接口。"
+description: "用于可求和误差管理与熵递减的数学研究：核对输入与假设，组织方法和证据；不凭名称补造内部接口。"
 ---
 
 # N04 · 可求和误差管理与熵递减
 
-> **交接预处理说明：** 本副本只做结构、格式与可移植性预处理；这不构成数学内容、文献或定理的科学验证。下方原有证据状态、适用范围和例子保持原样。
+> **当前核验范围（2026-10-07）：** 本 Skill 仍属于 L–N 组进行中的审核；逐条数学与能力状态记录在完整交付包的 `audit_current/ln/claims.json`，案例定义记录在 `audit_current/ln/cases.json`；单独安装目录不包含这两份包级账本。请按 [`references/portable-audit-access.md`](references/portable-audit-access.md) 通过 bundle-root resolver 访问。以下限定只陈述已绑定账本的证据边界，不代表整项验收完成。
 
-> 便携证据定位见[本Skill证据索引](references/handoff-evidence-index.csv)。读取外部文献时，将 `EVIDENCE_ROOT` 设为单独提供的数据包根目录，再按索引的 `resolved_portable_path` 定位文件。文献文件属于额外数据输入，不是本Skill目录内的必需文件。
+> 便携文献定位见 [本 Skill 证据索引](references/handoff-evidence-index.csv)。若需读取包外 PDF，以数据包根目录为 `EVIDENCE_ROOT`，按索引中的相对路径定位。
 
-当前证据状态：**部分可用：基础推导已检查，专题证据仍待完整验收**。全文转换、论文阅读和证明核验是三个独立状态。
+> **本项边界：** 账本 N04-TELE-01/02 在势能有统一下界、下降项非负且误差部分和一致有界时证明有限望远镜与下降项可和；N04-TELE-03 给出没有误差预算时的调和级数反例。负误差、任意条件收敛或没有统一部分和界的情形不能直接套用。
 
 ## 输入与产出
 
@@ -35,3 +35,5 @@ description: "用于可求和误差管理与熵递减的数学研究：核对输
 依赖表提供方法路线，不表示所有工具之间存在无条件定理蕴含。
 
 用 [适用案例](examples/positive.md) 与 [条件缺失案例](examples/negative.md) 检查适用边界。
+
+本轮数列望远镜推导与两篇邻接全文的边界记录见 [当前审核](references/audit-current-lmn-20261007.md)；论文全文阅读不等于它们支持N04递推。

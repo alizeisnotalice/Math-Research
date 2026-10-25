@@ -13,7 +13,7 @@
 |E0908|29_Decreusefond_2010_Time reversal of Volterra processes driven stochastic differ.pdf|P-3d22a8156126e087|pending|尚未人工筛选|
 |E0909|36_Freitas_2007_Extreme values for Benedicks-Carleson quadratic maps.pdf|P-ad85b538d6b12cda|pending|尚未人工筛选|
 |E0910|01_Koo_2026_Finite-size occupancy scaling of apparent fractal dimensions.pdf|P-2b2e13f2d526ea46|pending|尚未人工筛选|
-|E0911|31_Aman_2010_L^{p}-solutions of backward doubly stochastic differential e.pdf|P-41d58ebe9049f66a|pending|尚未人工筛选|
+|E0911|31_Aman_2010_L^{p}-solutions of backward doubly stochastic differential e.pdf|P-41d58ebe9049f66a|irrelevant|Screened PDF pp.1–2: existence/uniqueness and Lp estimates for backward doubly stochastic differential equations; no Carleson occupancy/LlogL.|
 |E0912|26_Alpay_2012_Non-commutative stochastic distributions and applications to.pdf|P-34527a47b583ac41|pending|尚未人工筛选|
 |E0913|32_Lin_2010_Representation of G-martingales as stochastic integrals with.pdf|P-24aa2935680cb752|pending|尚未人工筛选|
 |E0914|40_Liam_2020_Normal approximations for discrete-time occupancy processes.pdf|P-48a8e1edeb0ce2e4|pending|尚未人工筛选|
@@ -23,7 +23,7 @@
 |E0918|16_Bayraktar_2016_Stochastic Perron for Stochastic Target Problems.pdf|P-122c20f158dfb2d5|pending|尚未人工筛选|
 |E0919|39_Alexander_2021_Late levels of nested occupancy scheme in random environment.pdf|P-b9e72f8116a5d4d3|pending|尚未人工筛选|
 |E0920|34_Bahlali_2008_A general stochastic maximum principle for mixed relaxed-sin.pdf|P-221c88024e785194|pending|尚未人工筛选|
-|E0921|06_Pal_2021_The inspection paradox in stochastic resetting.pdf|P-0857479e0d5efd64|pending|尚未人工筛选|
+|E0921|06_Pal_2021_The inspection paradox in stochastic resetting.pdf|P-0857479e0d5efd64|irrelevant|Screened PDF pp.1–2: inspection paradox, renewal sampling bias and stochastic resetting; no Carleson packing/embedding, random occupancy or LlogL endpoint.|
 |E0922|03_Beckman_2024_Inferring birth versus death dynamics for ecological interac.pdf|P-31dedbc8673d83b9|pending|尚未人工筛选|
 |E0923|12_Khoshnevisan_2017_Talagrand Concentration Inequalities for Stochastic Partial.pdf|P-ecaf939ed10ea697|pending|尚未人工筛选|
 |E0924|20_Honda_2014_Infinite-dimensional stochastic differential equations relat.pdf|P-89f1027419098508|pending|尚未人工筛选|
@@ -37,8 +37,8 @@
 |E0932|19_Dupuis_2014_Moderate deviations for recursive stochastic algorithms.pdf|P-1a7334404447431b|pending|尚未人工筛选|
 |E0933|25_Budhiraja_2012_Large Deviations for Stochastic Partial Differential Equatio.pdf|P-760be09da6f248df|pending|尚未人工筛选|
 |E0934|38_unk_2023_Decision letter for _Broadening applications of stochastic p【题录】.txt|R-cb31d07f3a616b57|pending|尚未人工筛选|
-|E0935|05_Chen_2022_Small ball probabilities for the stochastic heat equation wi.pdf|P-51d3d5361927578e|pending|尚未人工筛选|
-|E0936|07_Sauerbrey_2026_Parabolic-hyperbolic splitting in support propagation for st.pdf|P-7fae18380b1e05d7|pending|尚未人工筛选|
+|E0935|05_Chen_2022_Small ball probabilities for the stochastic heat equation wi.pdf|P-51d3d5361927578e|irrelevant|Screened PDF pp.1–2: small-ball probabilities for stochastic heat equations with colored Gaussian noise; no Carleson packing/embedding endpoint.|
+|E0936|07_Sauerbrey_2026_Parabolic-hyperbolic splitting in support propagation for st.pdf|P-7fae18380b1e05d7|irrelevant|Screened PDF pp.1–2: stochastic-flow-localized energy method for porous-media support propagation; no random Carleson occupancy or embedding.|
 |E0937|30_Bayraktar_2010_Minimizing the Probability of Lifetime Ruin under Stochastic.pdf|P-503a2ebb244934e5|pending|尚未人工筛选|
 |E0938|33_Aman_2009_Lp-solution of backward doubly stochastic differential equat.pdf|P-1e91a095cb0ba817|pending|尚未人工筛选|
 |E0939|27_Bank_2011_On a stochastic differential equation arising in a price imp.pdf|P-667f7eca7d8b9db0|pending|尚未人工筛选|

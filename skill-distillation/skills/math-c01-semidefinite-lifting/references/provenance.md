@@ -18,7 +18,7 @@
 |E0496|18_Heimendahl_2022_A semidefinite program for least distortion embeddings of fl.pdf|P-9b689f486c804a6f|adjacent|平坦环面嵌入问题的无限维SDP；属于半定表示但对象和无限维分析特殊。|
 |E0497|37_Paparella_2012_A note on the Lovasz-Schrijver Semidefinite Programming Rela.pdf|P-f9aa8ab78f03a701|adjacent|二元整数规划的Lovasz–Schrijver半定lift-and-project松弛；专门层级应用。|
 |E0498|35_Nie_2013_Semidefinite Relaxations for Best Rank-1 Tensor Approximatio.pdf|P-430da7e9916c90b1|direct|秩一张量近似转为球面多项式优化并构造SOS/SDP松弛，研究近似保证。|
-|E0499|09_Guedes-Ayala_2024_Sparse Sub-gaussian Random Projections for Semidefinite Prog.pdf|P-76fc5e5ff59f9005|adjacent|随机投影压缩SDP变量并给近似误差界；重点是投影算法，不是精确矩阵提升。|
+|E0499|09_Guedes-Ayala_2024_Sparse Sub-gaussian Random Projections for Semidefinite Prog.pdf|P-76fc5e5ff59f9005|adjacent|arXiv:2406.14249v1，精确SHA绑定的27页全文已读；Lemma 1–3打印概率结论有局部反例与P/Q归一化不一致（peer receipt见audit_current/cd/source-recovery/c01-guedes-ayala-sparse-projection-peer-review-20261008.json）；C01无操作性引用，仍仅为投影算法邻接证据。|
 |E0500|01_Xu_2023_New semidefinite relaxations for a class of complex quadrati.pdf|P-fc57ada29665bec4|direct|复数非凸QCQP中构造新的lift矩阵有效约束，比较松弛强度；直接支持复数lift扩展。|
 |E0501|18_Filho_2018_On the integrality gap of the maximum-cut semidefinite progr.pdf|P-6559b62bf4af5e0b|adjacent|最大割SDP松弛的integrality gap factor-revealing优化；研究松弛性能界而非构造接口。|
 |E0502|36_Lasserre_2012_A Lagrangian relaxation view of linear and semidefinite hier.pdf|P-6d53b70110481e4c|direct|将拉格朗日放松、LP/RLT与SOS/SDP层级关联，给出多项式优化凸松弛构造。|

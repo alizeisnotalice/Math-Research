@@ -35,3 +35,7 @@
 conditional_proof 7、instance_check_only 13、pending 4。随机采样无违反、暴力未超界、
 LP 求解成功、误差极小均**不构成**一般命题的证明；"全部成立"的表述撤回。
 本日志的分级字段以本更正条目及登记簿为准（验证状态 × 依据类型双维）。
+
+## 范围澄清（2026-10-07）
+
+H02 正文现明确区分三个命题：Niu et al. Theorem 1 在其条件独立、CSE/CCS、非退化方差及 shrinking-cutoff 条件下给完整 LR 相对式；只有在其正上尾 `w_n>0` 且 `r_n→_P∞` 并使用 Appendix H 的 `λ_n/r_n→_P1` 后，才能在该来源模型内推出简单 `u^{-1}` 型前因子；Gaussian Mills 首项则有独立精确界。`Q(u)` 的首项 `φ(u)/u` 是上界，且 `0<(A−Q)/A<1/(u²+1)`、`0<A/Q−1<1/u²`。其他 saddlepoint 候选只按其具体模型记为邻近方法，均不扩展一般误差定理。修订后 SKILL SHA-256：`a8ff27f8f6f2aa761b9f0ba7fdb57555f9d3a71b1bd7285609a4c369211ea3f5`。

@@ -12,7 +12,7 @@
 |E0744|19_Bredies_2024_On extremal points for some vectorial total variation semino.pdf|P-035b8bda3b412b07|irrelevant|首面摘要研究的 stability 多指系统稳定性、算子关系或谱刚性，而非尖锐不等式亏损控制到极值集合距离。|
 |E0745|31_Seuffert_2015_An Extension of the Bianchi-Egnell Stability Estimate to Bak.pdf|P-737bb890c5062c71|direct|扩展 Bianchi–Egnell 稳定性估计，具有尖锐不等式亏损控制到等号流形距离的目标结构。|
 |E0746|08_Banerjee_2025_Extremizer Stability of Higher-order Hardy-Rellich inequalit.pdf|P-8d0eb5c5ab1ae895|direct|研究高阶 Hardy–Rellich 不等式的极值稳定性，直接匹配近极值/刚性流程。|
-|E0747|33_Nguyen_2015_New approach to the affine Pólya-Szegö principle and the sta.pdf|P-03d825c9c0143b45|irrelevant|首面摘要研究的 stability 多指系统稳定性、算子关系或谱刚性，而非尖锐不等式亏损控制到极值集合距离。|
+|E0747|33_Nguyen_2015_New approach to the affine Pólya-Szegö principle and the sta.pdf|P-03d825c9c0143b45|adjacent|全文29页已由 audit_g 按 SHA `03d825…a3a59` 复核；Theorem 1.2（PDF p.5）给出仿射 BV Sobolev 亏损到特定椭球指标函数极值族的距离界，指数 1/1680、常数依赖维数。对象与假设高度模型特定，不迁移为通用 M03 定理；全文卡见 `audit_current/shared-reading/audit_g/03d825c9c0143b45148e99cbc0645726cf38a511ef1ba0c51e78002af57a3a59.json`。|
 |E0748|30_Seuffert_2016_A Stability Result for a Family of Sharp Gagliardo-Nirenberg.pdf|P-4fdb2f9035708168|direct|为一族尖锐 Gagliardo–Nirenberg 不等式证明稳定性估计。|
 |E0749|14_Leng_2026_Distance Stability for the Integral Hardy and Carleman Inequ.pdf|P-b270e46ae6c10545|direct|给出 Hardy 与 Carleman 不等式的距离稳定性，直接量化亏损与极值距离。|
 |E0750|40_Huan_2023_Spectral stability of near-extremal spacetimes.pdf|P-ef88e4ee19fb89ea|irrelevant|首面摘要研究的 stability 多指系统稳定性、算子关系或谱刚性，而非尖锐不等式亏损控制到极值集合距离。|

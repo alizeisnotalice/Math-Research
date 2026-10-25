@@ -7,7 +7,7 @@
 |---|---|---|---|---|
 |E0527|19_Kubota_2018_Continuity result for the rate function of the simple random.pdf|P-72629c9d418e467b|pending|尚未人工筛选|
 |E0528|36_unk_2025_Luisa Veras de Sandes Guimarães Discusses Calculating Varian【题录】.txt|R-a0ba5a0ec7402095|pending|尚未人工筛选|
-|E0529|06_Yuan_2026_Exact Closed-Form Formulae for Linear and Circular Continuou.pdf|P-2a030406d5bb0a3b|pending|尚未人工筛选|
+|E0529|06_Yuan_2026_Exact Closed-Form Formulae for Linear and Circular Continuou.pdf|P-2a030406d5bb0a3b|irrelevant|Screened PDF pp.1–2: iid-uniform linear/circular scan-statistic exact distributions via spacing geometry; not exact large-deviation rate/variance strata.|
 |E0530|20_Pinelis_2017_Exact upper and lower bounds on the misclassification probab.pdf|P-83c661129605aa1f|pending|尚未人工筛选|
 |E0531|35_R_2025_Exact Calculation of the Large Deviation Function for k-nary.pdf|P-c13a984e162e0652|pending|尚未人工筛选|
 |E0532|17_Cázares_2018_Exact Simulation of the Extrema of Stable Processes.pdf|P-7df135514043b39f|pending|尚未人工筛选|

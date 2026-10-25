@@ -3,14 +3,14 @@ name: math-f05-l2-spectral-parameter-schur-test
 description: "用于L² 谱参数与 Schur 估计的数学研究：核对输入与假设，组织方法和证据，说明中心立方体极大算子的迁移条件；不凭名称补造内部接口。"
 ---
 
-> **交接准备状态（结构性）**：本副本只整理技能结构与引用可移植性；未进行全文深读或数学验证。原评级、可用状态、假设、证明限制和未决条件均沿用原件。结构检查不构成科学验证。
-> 外部文献证据由第二证据包提供，是独立数据输入，不随单个 Skill 安装。合并交接包默认将 `EVIDENCE_ROOT` 设为包内 `evidence/`；单独安装时由调用方传入 `EVIDENCE_ROOT`，按本地[证据索引](references/handoff-evidence-index.csv)中的 `portable_path` 查找。无需全局安装，也不要把外部 PDF 当作 Skill 内文件。
+> **生产修订（2026-10-07）**：当前断言与证据等级记录位于 `audit_current/f/production_audit_20261007.md`（包内路径）；独立安装时按[包级审计访问说明](references/portable-audit-access.md)解析。此前交接状态和追加修订历史位于 `audit_current/f/history/pre-audit-20261007/`。示例运行只检验具体输入，不作为一般定理证明。
+
+来源索引路径及便携解析方式见[来源访问说明](references/source-access.md)；解析器会校验单项来源 SHA，不能替代阅读与数学核验。
 
 
 # F05 · L² 谱参数与 Schur 估计
 
-当前证据状态：**待证据验收：可执行方法工作流，不是已证明的课题结论**。全文转换、论文阅读和证明核验是三个独立状态。（此行声明已被下方【修订】标注替代：该 skill 经外部审核提升为「部分可用」，详见对应修订行与 references/verification-log-20261006.md）
-  【修订 2026-10-06（外部审核 R20）】步骤 3 的 Schur test 推导经独立完整重证（Cauchy–Schwarz 拆分+交换非负和+列界 ⟹ ‖A‖≤√(RC)），行列 Schur 与逐项乘子的区分、双谱积分条件均与源卡一致；证据状态提升为：部分可用：基础推导已检查，专题证据仍待完整验收。双谱积分/Peller 外引证明未另核；具体 A(λ) 实例化待做。
+当前断言与等级以原子账本为准；本条 Skill 不因某一基础引理通过就整体标记为已验收。
 
 ## 输入与产出
 
@@ -24,9 +24,9 @@ Hilbert 基或谱分解、参数矩阵/核 A(λ)、输入输出测度、所声�
 2. 取正权p_i,q_j，验证Σ_j|a_ij(λ)|q_j≤R p_i及Σ_i|a_ij(λ)|p_i≤C q_j，两侧同时成立且R,C对所需λ范围统一。
 3. 已检查Cauchy–Schwarz构件：把每行Σ_j|a_ij||x_j|拆为√(|a_ij|q_j)与√(|a_ij|/q_j)|x_j|；平方后求i、交换非负和并用列界，得||Ax||²≤RC||x||²。
 4. 积分核同理先检可测性、正权、Tonelli与有限支撑估计，再密度延拓；权可依赖λ但界及定义域必须可控。
-5. P-3da1b59567d35c36的Luna全文卡现覆盖99页；第3节行列和界为√(RC)，第4节正PSD逐项乘子另为||H∘A||≤sup h_ii||A||，不能相互替换。全文覆盖不等于全部外引定理独立认证。
-6. 若实际问题是逐项乘子且H=LM*，给D_L=sup_iΣ|l_ir|²与D_M=sup_jΣ|m_jr|²，才能用√(D_LD_M)界；Bennett逆向、Peller与Birman–Solomyak双谱积分是作者转述，外部原始证明未另核。
-7. survey双谱积分入口另需正交谱测度E,F和核h(mu,lambda)=∫m(mu,x)l(lambda,x)dx，两因子L2 norm的esssup受控；仅矩阵行列界或有界h都不能替代该因子证书。Birman–Solomyak/Peller等原始外引证明仍未另读认证。
+5. P-3da1b59567d35c36第3节的两侧行列和给√(RC)界；第4节的正PSD逐项乘子是另一命题。有限正半定 H 可作 Gram 分解 H=LL*；由 (H∘A)_{ij}=H_{ij}A_{ij} 的因子化可独立得 ||H∘A||_{2→2}≤(max_i h_ii)||A||_{2→2}。这不是行列和检验，也不提供参数族的一致界。
+6. 对有限同尺寸矩阵，若 `H=LM*`、`h_ij=Σ_r l_ir conjugate(m_jr)`，且 `D_L=sup_iΣ_r|l_ir|²<∞`、`D_M=sup_jΣ_r|m_jr|²<∞`，则 **F05-LMSTAR-005** 的独立有限支撑证明给出 `||H∘A||_(2→2)≤√(D_LD_M)||A||_(2→2)`：对有限支撑测试向量展开乘积，按因子指标 `r` 求和，以 `||A||` 控制每项，再对 `r` 用 Cauchy–Schwarz 和两个行 `ℓ²` 上界。此界不要求 `H⪰0`，也不等于两侧行列和 Schur 检验。来源 §4 (4.6)–(4.10) 的正向版本及可选积分/非方阵扩展另作来源定位；当前原子证明只认证有限矩阵。**F05-BENNETT-006** 单独登记 Bennett 逆向：作者在 (4.11) 转述其定理，有限/无限矩阵上若 Schur 乘子对所有同尺寸 `A` 一致有界为 `D`，其中 `D_L=sup_p Σ_r|l_pr|²`、`D_M=sup_q Σ_r|m_qr|²`，则每个 `ε>0` 存在 `H=LM*` 因子化且 `√(D_LD_M)<D+ε`。它保持 `citation_only`，不得据此认证 Bennett/Peller 的外部证明。
+7. survey 的 Stieltjes 双算子积分模型要求 Λ、M 为可测空间，E(dλ)、F(dμ) 是同一可分 Hilbert 空间 H 上的完备正交谱测度（E(Λ)=F(M)=I）；双算子积分按文中所述意义存在。若可测核有因子化 h(μ,λ)=∫_X m(μ,x)l(λ,x)dx，其中 X 带非负 σ 有限测度 dx，且 C_m=esssup_μ∫|m(μ,x)|²dx、C_l=esssup_λ∫|l(λ,x)|²dx 均有限，则 survey 转述的估计分别为 ‖T_h‖_{B(H)→B(H)}≤√(C_mC_l) 与 ‖T_h‖_{S₁(H)→S₁(H)}≤√(C_mC_l)。这是作者转述 Birman–Solomyak 结果，未独立证明；Peller 的反向因子化刻画也只是转述。有界 h、矩阵行列界或 PSD Schur 界均不能替代上述谱测度和因子证书。
 8. 参数端点、极点、零权及正交谱块分别检查；常数1的有限Weyl谱/奇异值幂和比较也不提供具体A(λ)一致界。范数统一界不证明核逐点收敛、Hilbert矩阵最优权或任何私人谱接口。
 
 ## 证据与失败处理
