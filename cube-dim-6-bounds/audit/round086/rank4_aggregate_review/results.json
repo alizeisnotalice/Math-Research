@@ -1,0 +1,96 @@
+{
+  "schema": "B086-minimal-frame-results-v1",
+  "status": "PASS_BOTH_NEW_CONFIGURATIONS",
+  "configurations_started": 2,
+  "configurations_completed": 2,
+  "configurations": [
+    {
+      "id": "B086-C001-minimal-weighted-six-column-closed-form",
+      "status": "PASS",
+      "columns": 6,
+      "independent_four_subsets": 15,
+      "determinant": "21/8",
+      "tail_count_per_physical_column": 10,
+      "completion_count_per_physical_column": 5,
+      "d_tail": "4401/512",
+      "d_completion": "729/16",
+      "pi6_M4": [
+        [
+          "25095825/2048",
+          "-25095825/2048",
+          "25095825/2048",
+          "-25095825/2048",
+          "25095825/2048",
+          "-25095825/1024"
+        ],
+        [
+          "-25095825/2048",
+          "426629025/32768",
+          "-426629025/32768",
+          "426629025/32768",
+          "-426629025/32768",
+          "828162225/32768"
+        ],
+        [
+          "25095825/2048",
+          "-426629025/32768",
+          "471243825/32768",
+          "-471243825/32768",
+          "471243825/32768",
+          "-872777025/32768"
+        ],
+        [
+          "-25095825/2048",
+          "426629025/32768",
+          "-471243825/32768",
+          "507381813/32768",
+          "-507381813/32768",
+          "908915013/32768"
+        ],
+        [
+          "25095825/2048",
+          "-426629025/32768",
+          "471243825/32768",
+          "-507381813/32768",
+          "26467841637/1605632",
+          "-46142968437/1605632"
+        ],
+        [
+          "-25095825/1024",
+          "828162225/32768",
+          "-872777025/32768",
+          "908915013/32768",
+          "-46142968437/1605632",
+          "99156504537/1605632"
+        ]
+      ],
+      "pi6_K012": [
+        "32805/224",
+        "10919691/448",
+        "18174005721/4480"
+      ],
+      "pi6_trace_M4": "214156951461/1605632",
+      "reference_inverse_method": "Finite nilpotent geometric series, independently of the sealed Gaussian elimination",
+      "scope": "New weighted nonaxis m=6 frame only; no full Green or body32 constant."
+    },
+    {
+      "id": "B086-C002-zero-column-insertion-invariance",
+      "status": "PASS",
+      "columns": 7,
+      "zero_column_index": 2,
+      "independent_four_subsets": 15,
+      "matrix_and_scalar_certificate_equal_to_previous": true,
+      "scope": "One fixed zero insertion. No pattern enumeration and no density evaluation."
+    }
+  ],
+  "body32_constant_instantiations": 0,
+  "density_or_kernel_calls": 0,
+  "scalar_patterns_enumerated": 0,
+  "automatic_retries": 0,
+  "active_configuration": null,
+  "python": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "dependencies": [
+    "Python standard library Fraction",
+    "Source-pinned aggregate.py"
+  ]
+}
