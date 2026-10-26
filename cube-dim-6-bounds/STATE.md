@@ -8,12 +8,13 @@ ACTIVE，仅推进上界；下界按用户明确要求停止。新任务不调�
 
 ## 当前实际计算
 
-C121 dispatcher已从C117接管，旧owner原件保存coordination/floor_dispatch_history/C117.json。唯一observer session41549，observer PID80482，producer PID80490；入口upper/round121/primary_gate/observe_once.py；实际代码在独立numerics clone upper/round121/precision_family_production。初始tool bc5054，最近确认live wait2453d5。不得重复启动observer/producer。
+C121终态COMPLETED_FINITE_FRONTIER，session41549已exit0、禁止重启。11,322新增实际native全128bit，0旧点窗重算；15 lanes，完整child wall3380.746438666秒，子CPU user44391.647543/system194.209155。270/325树闭合，55因预算保留，3622新pass、3851queued+55blocked=3906残余，无ROOT_ERROR/inflight。journal SHA3116d5abd0e88f90516352c7d525582197f3dc2ca8767a5d318ad3cb603d19db，forest cd10145dc43b58118c8a1470803daf9429e5d599556397ea00b4c410ff0948f3。Luna只读账务11322核验exit0；N独立15worker数学审计exit0，3652band证书116864角点512bit再包围PASS，精确闭split图通过；globalg仍未证。
 
-325真实残余root、继承212pass、759旧raw/jet及757旧角证书只读复用。15 native lanes；root最多128真实attempt/256processednode，总41600，每个128→256→512回退也计数，无wall/CPU时限。source e7057efe70c35fef0707fa02a7f07db3780be70b81654b2ec6cbb5340e2ef89d，release58d041ccacda84d02ece723e7de2c2cade058d2b5d6e29fe0d852760dcf3f8ea。主及独立Sol数学gate通过，预审全部4248 source-seal文件/759链及325映射通过；之前静态错误和未运行v1保留。
+127准备仅续55完整残余子树，继承270闭树及12081缓存。新增每root512真实attempt/1024processed、15lanes、总28160，无时间上限。K独立源/缓存/覆盖静审主路径通过，发现root错误exit0及中断停止机制需修；Luna仅修改UNRUN127并保留旧版，尚未release/启动，禁止跳gate重复开工。
 
-最新样本：2806 started/2791 reaped/15 active；159根闭合、1根预算耗尽、其余165 READY（含正在执行的根），1275新局部通过。仅瞬时样本，不是最终结果或globalg。精度/宽度/全部参考相交、source/group/Euler门保持；分片atomic state及先fsync reservation后launch已执行，避免全量index O(N²)写盘。source冻结，当前不得改程序。完整checkpoint/原PID/receipt/childrenCPU在producer目录；主execution_handle记录原句柄。
+125唯一joint-count新优化+完整735471prefix/16tail证书实际exit0，observer session72273终态，完整child wall23.476498125秒/CPU22.976831，116objective。candidate严格M上包约.0642706609164，低于124但仍高于竞争目标约.06232947；一般I的矩接口有效，globalg和C6均未闭。作者savedchecker/封存及I独审进行。
 
+126唯一八h真实first-count矩Arb512实际exit0，session31565终态，wall2.070957584秒/CPU1.78、512新tuple/h。八项全严格改善旧β1，最大改善因子约1.23051；仅辅助预算，不是M或C6证书。作者封存及独审待完成，不倒改125源。
 117已终态exit0：576新512native全正常、42根闭合、170新pass、271queued+54budgetblocked=325残余，inflight0；原forest925f13a4885d1020597c89bd09935bb879ca7390a9b9f3f606d29542c609cdc9只读。脚本receipt前343.9400805秒，完整outer未记。一次保存核验0exp/native，完整闭union成立但未globalg。精简归档去掉192份逐root重复trace，原clone保留完整原件。
 
 ## 上界数学前沿
@@ -26,7 +27,7 @@ C121 dispatcher已从C117接管，旧owner原件保存coordination/floor_dispatc
 
 123新完整边界Minkowski机制：M=E detSigma^(-1/12)，I<=(3/16)^(6/5)M^(6/5)/384。单shape不能套384，先全boundary norm再用原law对称。Gamma/CB给矩有限及解析上包；严格竞争矩上包未取得。唯一8192新shape探针只给经验M=.06012377、条件未证g0成本约61.29，不是严格期望或Cn证书。主MATLAB R2026a Symbolic实际通过3项准确归一化/门槛恒等式，0窗口/clear/path/cwd；只验证常数，未验证期望。
 
-124 J正准备rank-peeling协方差det正项及Binomial count-weight Holder：真实投影峰付EdΦ_k(N_h)，33项和及有限凸优化求严格M_U；8固定Gaussian h、上限20000 objective，尚未放行/运行。读取002已有准确fan R0=520066141/48769479475200作为π³Ed，不重算旧峰。辅助Gamma阈值不是物理Cauchy时间/算子尺度变化。主保留最终proof与gate责任。
+124已实际完成八固定h rank-peeling/33项矩证明，最优完整严格M<.068475443529；八个指定单h cap预算族均被凸对偶排除竞争阈值，不是实际M下证。独审1039checks通过，原件/准确h4证书待主归档。125改用真正嵌套joint count已取得更好严格candidate上包，仍无C6新界。
 
 ## 仓库和资源
 
@@ -41,3 +42,7 @@ C121 dispatcher已从C117接管，旧owner原件保存coordination/floor_dispatc
 122归档完成：完整rank6峰回收CEH准确预算；主/独审接受限定范围，0新Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
 
 123归档完成：完整边界Minkowski矩机制及有限探针；主/独审接受限定范围，0新Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
+
+本次接续更新UTC：2026-10-26T22:01:13.653712+00:00
+
+124归档完成：秩剥离完整矩严格上包与指定单h族障碍；独审通过，无新C6界。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
