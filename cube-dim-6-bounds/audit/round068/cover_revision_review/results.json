@@ -1,0 +1,159 @@
+{
+  "status": "PASS_C068_REVISION_CORE_AND_MATH_CONTRACT_WITH_MAIN_RELEASE_PENDING",
+  "actual_configurations": 9,
+  "checks": [
+    {
+      "configuration": 1,
+      "status": "PASS_REAL_GENESIS_READONLY",
+      "snapshot_sha256": "10da5e4344f7876af1152b641bb9d02b913798c05542973ef6426b35a94b464a",
+      "pre_release_reservation_rejection": "ValueError: Preparation does not authorize dispatch",
+      "real_release_created": false
+    },
+    {
+      "configuration": 2,
+      "status": "PASS_R1_R3_REPLAY_AND_EVENT_API",
+      "rejections": {
+        "shrunk_root": "ValueError: Successor is not the complete replayed legal transition",
+        "promoted_test_environment": "ValueError: Successor is not the complete replayed legal transition",
+        "arbitrary_successor_field": "ValueError: Unexpected/missing event fields",
+        "test_authorize": "ValueError: Authorization cannot reset/replace an existing batch"
+      }
+    },
+    {
+      "configuration": 3,
+      "status": "PASS_R2_DURABLE_ORPHAN_MONOTONICITY",
+      "rejections": {
+        "stale_writer": "ValueError: Stale writer; do not retry a dispatch",
+        "reset_event": "ValueError: Unregistered event; reset/delete/requeue/reissue is not an operation",
+        "inflight_reissue": "ValueError: Halted or existing inflight work: no dispatch",
+        "reinitialize": "FileExistsError: [Errno 17] File exists: '/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/audit/round068/cover_revision_review/independent_fixtures_14jbwnuf/durable-orphan/state'",
+        "post_orphan_dispatch": "ValueError: Halted or existing inflight work: no dispatch"
+      },
+      "retained_original_token": "r.a0.n000001",
+      "retained_reservations": 1,
+      "recovery_action": "HALTED_BATCH_NO_TRANSITION"
+    },
+    {
+      "configuration": 4,
+      "status": "PASS_NODE_WINDOW_UNIQUENESS",
+      "tokens": [
+        "r.a0.n000001",
+        "r.a1.n000002"
+      ],
+      "old_command_rejection": "ValueError: Native command/parameters mismatch",
+      "old_window_rejection": "ValueError: Native receipt window mismatch",
+      "normal_gradient_retained_in_both": true
+    },
+    {
+      "configuration": 5,
+      "status": "PASS_MIXED_CUTOFF_TOTAL_ATTEMPT_CAP",
+      "attempt_node_ids": [
+        "r",
+        "r",
+        "r",
+        "r0",
+        "r1",
+        "r00",
+        "r01",
+        "r10"
+      ],
+      "reservations": 8,
+      "distinct_nodes": 6,
+      "ninth_rejection": "ValueError: Batch native-reservation budget exhausted",
+      "full_history_replayed": true
+    },
+    {
+      "configuration": 6,
+      "status": "PASS_TOPOLOGY_AND_PASSED_HISTORY",
+      "missing_sibling_rejection": "ValueError: Successor is not the complete replayed legal transition",
+      "counterfeit_pass_rejection": "ValueError: Successor is not the complete replayed legal transition",
+      "passed_node_change_rejection": "ValueError: Successor is not the complete replayed legal transition",
+      "duplicate_import_rejection": "ValueError: No matching inflight result",
+      "passed_synthetic_child": "r0",
+      "global_g_certificate": false
+    },
+    {
+      "configuration": 7,
+      "status": "PASS_ALL_SIX_INTERVAL_FIELDS_AND_REAL_ARB_CORNERS",
+      "complete_physical_gradient_intervals": [
+        [
+          "-49/268435456",
+          "-47/268435456"
+        ],
+        [
+          "31/268435456",
+          "33/268435456"
+        ],
+        [
+          "-17/268435456",
+          "-15/268435456"
+        ],
+        [
+          "63/268435456",
+          "65/268435456"
+        ],
+        [
+          "-33/268435456",
+          "-31/268435456"
+        ],
+        [
+          "15/268435456",
+          "17/268435456"
+        ]
+      ],
+      "actual_corner_count": 32,
+      "Arb_bits": 384,
+      "normal_field_corruption_rejection": "ValueError: Independent exact-rational Euler reconstruction misses zero",
+      "native_Euler_still_contains_zero": true
+    },
+    {
+      "configuration": 8,
+      "status": "PASS_LATE_ORIGINAL_AND_REHASHED_EXP_FORGERY_REJECTION",
+      "changed_original_rejection": "ValueError: Saved mathematical result differs from native/Arb reconstruction",
+      "fake_box_rejection": "ValueError: Saved mathematical result differs from native/Arb reconstruction",
+      "mutated_files_are_new_review_fixtures_only": true
+    },
+    {
+      "configuration": 9,
+      "status": "PASS_PRODUCTION_MATH_CONTRACT_UNIT_BRANCH",
+      "rejections": {
+        "release": "ValueError: Native release mismatch",
+        "source": "ValueError: Source/binary/fan receipt pins mismatch",
+        "window": "ValueError: Native receipt window mismatch",
+        "original_pid": "ValueError: Native process/intent binding mismatch"
+      },
+      "fictional_PIDs_never_observed": true,
+      "actual_main_release_created": false,
+      "actual_production_Context_authorized": false,
+      "actual_native_calls": 0,
+      "unit_fixture_not_a_real_native_receipt": true
+    }
+  ],
+  "actual_Arb384_checker_calls": 31,
+  "actual_Arb_corner_evaluations": 992,
+  "native_calls": 0,
+  "production_calls": 0,
+  "old_C063_writer_runs": 0,
+  "author_formal_program_runs": 0,
+  "old_formal_replays": 0,
+  "matlab_calls": 0,
+  "subagents": 0,
+  "author_files_unchanged": true,
+  "actual_release_created": false,
+  "real_launch_path_tested": false,
+  "real_timeout_kill_path_tested": false,
+  "global_g_certificate": false,
+  "actual_body32_cover": false,
+  "new_C6_bound": false,
+  "pid": 70982,
+  "python": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "start_utc": "2026-10-26T11:00:26.866747+00:00",
+  "end_utc": "2026-10-26T11:00:27.250287+00:00",
+  "elapsed_seconds": 0.3835530420183204,
+  "hard_process_limit_seconds": 180,
+  "source_sha256": {
+    "registration.md": "45b8a3a7b85cd94e1c8177cf1f7db05acfda570933c4e30b0c48648decae8b91",
+    "input_manifest.json": "5f092eadb5d328678de8b10e81361a6b216fd94c87a710a63e5303f26b1e4b16",
+    "verify_revision.py": "70bc6870bcbdc6de3694caeadde3a0b883b80428a8046c0edfef2218d1581069"
+  }
+}

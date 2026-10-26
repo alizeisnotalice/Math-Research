@@ -1,0 +1,87 @@
+{
+  "status": "PASS_EIGHT_TARGETED_INTEGRATION_FIXTURES_ZERO_NATIVE",
+  "fixtures": [
+    {
+      "fixture": 1,
+      "topic": "R1 root shrink, target/model and root depth attacks rejected",
+      "passed": true,
+      "omitted_witness_in_old_bug": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "fixture": 2,
+      "topic": "R2 old inflight/attempt/reservation cannot disappear or be reissued",
+      "passed": true,
+      "retained_token": "r.a0.n000001"
+    },
+    {
+      "fixture": 3,
+      "topic": "R3 test-to-production and MAIN_RELEASED without actual reviewed release rejected",
+      "passed": true
+    },
+    {
+      "fixture": 4,
+      "topic": "child/queue topology and unknown-orphan retained stop; no reset/requeue",
+      "passed": true
+    },
+    {
+      "fixture": 5,
+      "topic": "complete native all6grad/param/source/dyadic/count/zero-repeat/exact-Euler binding",
+      "passed": true,
+      "negative_mutations_rejected": 10
+    },
+    {
+      "fixture": 6,
+      "topic": "forged PASS and self-consistent fake endpoint hashes rejected by real Arb reconstruction",
+      "passed": true,
+      "real_checker_precision_bits": 384,
+      "corners_per_call": 32
+    },
+    {
+      "fixture": 7,
+      "topic": "eight distinct nodes/eight cumulative reservations and passed-leaf proof history",
+      "passed": true,
+      "started_nodes": [
+        "r",
+        "r0",
+        "r1",
+        "r00",
+        "r01",
+        "r10",
+        "r11",
+        "r000"
+      ],
+      "passed_fixture_leaves": [
+        "r000"
+      ]
+    },
+    {
+      "fixture": 8,
+      "topic": "durable typed-event recovery imports original once; duplicate, reset and orphan redispatch rejected",
+      "passed": true,
+      "published_sequence": 3
+    }
+  ],
+  "native_calls": 0,
+  "production_calls": 0,
+  "original_C063_formal_replays": 0,
+  "old_C061_recalculations": 0,
+  "synthetic_jets_are_kernel_evidence": false,
+  "global_g_certificate": false,
+  "new_C6_bound": false,
+  "elapsed_seconds": 0.6265737080248073,
+  "actual_Arb32_corner_checker_calls": 43,
+  "production_genesis_sha256": "10da5e4344f7876af1152b641bb9d02b913798c05542973ef6426b35a94b464a",
+  "production_genesis_source_sha256": "9cac6bc4fe23d9ae8f6b7c1a81130d1c6522769766b8142d2bc1f5506d797c3f",
+  "input_manifest_sha256": "026bf3344cfa7820659ad95a13aab2e04e1137d4e9bf931aab35076eb9cc3a13",
+  "initial_queue": [
+    "r"
+  ],
+  "initial_inflight": null,
+  "initial_environment": "PREPARE_ONLY"
+}

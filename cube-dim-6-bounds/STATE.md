@@ -1,35 +1,23 @@
 # 六维中心方体研究状态
 
-active；最新顺序归档至067，实际研究前沿074。上界优先，下界低资源。每程序单次墙钟上限180秒，总研究及思考预算不限。超时保存日志/检查点，仅终止回收本任务进程，不自动重发。政策见coordination/run_policy.json。
+active；最新顺序归档至068，前沿074。上界优先、下界低资源。每程序总墙钟≤180秒（包含清理/收据）；每批有限登记、实际句柄接续、不自动重发，总研究预算不限。角色与唯一文件所有权见coordination/phase_20261025/roles.json，实际owned receipts优先于历史PID文字。
 
-固定Lebesgue、中心轴平行、全部坐标共同半径、一般L1和所有正尺度。当前严格内部C6>2070186602851/10^12，C6≤64。066理想R≈2.070186602851448487，完整36系数/有理区间、新旧完整上端比较、明确finiteL1及主实际最小复核均PASS；不是从展示小数造证书。a2=v^5/6+u^4v/3，其余间距及127共同半径源见audit/round066/post_s2_local_event_review/report.md。内部成果不称公开发表或全球穷尽纪录。
+固定Lebesgue、中心轴平行、共同半径、一般L1、全部正尺度。当前严格内部C6>2071938494109/10^12，C6≤64。完整准确36系数/根区间、上一构造完整最大上端、finiteL1及主实际最小复核通过：audit/round068/adjacent_hidden_chain_review/report.md；内部成果不称公开发表或穷尽全球纪录。公开已核非穷尽门槛与内部/phase冻结分列见results/bounds_ledger.json，未从展示小数造证书。
 
-phase冻结原件不改；lower=true，upper=false，dualcheckpoint=null，后三轮0/3。须双侧严格突破、独审后再三轮，最后终审/实际最小代码/PDF/逐轮推送，才完成。当前绝不保证未知上界必然突破，也不提前编译突破论文。
+phase冻结不改；lower=true、upper=false、dual=null、后三轮0/3。只有双侧严格突破+独审之后才开始后三轮，最终终审/实际代码/PDF/推送后才完成。
 
-原body32上界：q6/5、I=∫positivefaceG^q、B=I^(5/6)，条件成本(6B/g)^(6/5)。g1/65000与完整I均未闭合；g1/60000已032严格反证。028只排body32全部时间平均/概率时间混合，不排空间Rc；029全L1反例否定跨cube L6 leakage，保留局部corner。
+上界body32：真S2全部496pairplanes，G在其上发散、offS2有限连续（052）。q6/5、I=∫faceG^q、B=I^(5/6)，条件成本(6B/g)^(6/5)。g1/65000与完整I仍未闭合，g1/60000已032反证；028排全部body32时间平均/概率时间混合，不排空间Rc。029一般L1反例否定全跨cube leakage。
 
-059已独审正face真S2=min31unsigned距离与C/E/D/H/F不遗漏优先分区。042 cap、056 low、062 high完整时间已付；安全合成三块B上端约3.813680774630099e-5。051 middle仅0..1/1000 short已付，middle长时、far完整G仍缺；若未来g1/65000成立，本保守分配留D/F充分B额度约5.3698116236626484e-5，绝非未付积分的实际值/下界。见upper/round062/primary_joint_account/actual_run/results.json。
+059正face真S2=min31unsigned距离/分区独审PASS，042cap+056low+062high完整时间已付，B_CEH安全上包约3.813680774630099e-5；051middle仅short已付，middlelong/farfullG/globalg未付；若未来g1/65000成立，保守余充分预算约5.3698116236626484e-5，不是未付积分实际值或下界。074仅研究middlelong新正事件时间分母，未结论。060粗高端失败保留不重跑。
 
-057固定全32右逆正混合曲率/整盒接口独审PASS。061两个真实同窗B_(1/250,1/2)中心和半宽1/1000整盒通过。065独立physical-time-pole PF补齐两case全部12物理grad，128partial+967552remaining准确合并/field，全零/repeat计数、source/multiplicity/端点均核，24.925/20.114秒退出；仅这两case gap闭合，不声称全局g或所有未来点已实际交叉。
+057全32正混合曲率/匹配同窗整盒接口PASS。061两真实case的band中心和半宽1/1000整盒通过；065独立physical-time-pole参考完整12梯度PASS，仅两固定case不是未来点普遍独立重算。063恢复API三个真实反例REJECT但几何保留；068 typed-event固定genesis回放及真实数学原件重建core/math独审ACCEPT，runtimeCONDITIONAL。生产仍PREPARE_ONLY、root[r]、0 native reservations，069外watchdog及独审/主release后才能首8node/8native。不得重启063或改冻结068。069 strict offS3完整G C2/一致epsilon3,2,1余项已F/B通过待归档，不能冒称S3导数。072局部semiconcavity新机制未给body32结论。
 
-063 puregeometry/正确genesis保留，但独审3个合法API攻击表明根缩域、inflight回退重发、无release升级可通过，implementation被REJECT，生产gate关闭。068在新目录做typed-event确定性replay与真实原件数学重建，不改063冻结源；须新seal+独审+主release后才首8node/8native，当前没有真实globalcover。
+067 alpha3/2同模型旧006/008去重、43来源/58pins/21准确槽PASS，actual0science；已有完整理论与粗全域g/I，非竞争性分配预算>1.2e6不排模型；007只外尾已付、内部32维期望未付，未重开旧MC。
 
-050完整152frame fan及052一般6D真S2有限性/零节点scalar finitepart均独审PASS，后者不自动给G导数。055唯一beta1/80,T32/825完整G/H试验91.6秒，Kupper<1/105600，独审只排此固定参数，不排allT/allbeta/Rc。
+下界058→064→066→068依完整容斥分支的真实投影空交接续；070真实既有质量8盒的双侧参数collar遮盖换序薄层，另组inactive，经Fubini同仿射分支而非集合不动。070已独审且主mincheck PASS，待顺序归档，仍未覆盖本066/068账本。073新投影空交候选已作者/独审新增认证，主尚未验收，不提前登记。0旧length5/6网格/union重算。
 
-060高端Phi作者预算过大且pure checker FAIL，9成功+1失败原样冻结不重跑，未作为排除Rc的证书。062改用真实ones大参数b1/4及补事件正残点gap，全部高端时间预算<27779670841319/10^18，作者9+1及B独立8配置PASS，已计付。
+五维只读066固定commit源full interval仍低于六维008，更低于当前；不继承五维上界/不启其程序。资料包1175项PASS与zip hash是此前本任务实际核验，不冒称新运行；暂停三四维状态/锁定源只读。MATLAB仅主串行，059三真实标量显示交叉，无变量/图形/path/cwd改变；无本任务窗口待关，native handles均须依实际ownedreceipt确认。
 
-下界058→064→066均是新参数实例和准确容斥接续，0旧union重算。068有限链新候选a2=u*v^2-u/2、ideal≈2.0719384941095003，已按首正投影交集停规停止作者批；E068正审新增hidden链/新区间/finiteL1，未据display覆盖066。首次非空投影不等于真实kink，未付同时tie/背景遮盖/右斜率绝不外推。旧length5/6和039/047特定质量一阶批不重跑。
+主clone=/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6，数学Python=/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python。子代理独立clone、不stage/push/递归/MATLAB，主集成和最终证明负责。
 
-067只读去重发现alpha3/2同模型006/008已有完整接口和严格但粗g/I配对；预算>1.2e6不是模型最优成本下界。C007仅付外尾，内部32维积分未付，不能当完整点值上障碍。该支actual0science，不重启旧MC；待归档来源审计。
-
-五维只读最新固定commit证书上端仍低于六维008，更低于066；从未继承五维上界或启动其程序。资料包1175项PASS/zip hash为此前本任务实际核验，不重复当新运行。原暂停三四维状态及所有锁定原件只读。
-
-MATLAB仅主串行；059真实三标量与准确Python根证书一致，只作显示交叉。无变量/figure/clear/path/cwd改变，无本任务窗口待关闭。055/061/065已知native均wait退出；任何新程序实际句柄以独立owned receipt为准，不能从旧STATE/PID假称running。
-
-主clone=/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6；数学Python=/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python。代理独立clone/唯一所有权，主集成及最终证明；子代理不得stage/push/递归/MATLAB。当前C068修复准备、E068新增下界独审；其它已完成批不自动续跑。067/068待按完成轮次独立精简归档。
-
-066归档完成：严格新C6下界>2070186602851/10^12，完整064最大上端及新finiteL1/独审通过。严格C6上端仍64、当前下端2070186602851/1000000000000；双侧未触发、后三轮0/3。
-
-当前协调：068恢复core/math新独审ACCEPT，runtime仍CONDITIONAL，069外watchdog补充未完production关闭；069严格offS3全G C2已作者与B独审PASS待归档；072轴frame局部semiconcavity研究未给body32结论；074只middle长时新机制。068/070新增下界E独审PASS但主mincheck/顺序归档仍待，不提前写入当前账本。073下界低CPU新几何，0旧union。
-
-067归档完成：alpha3/2旧完整接口和粗g/I去重通过，真正未付内部积分识别，0新科学配置，无Cn。严格C6上端仍64、当前下端2070186602851/1000000000000；双侧未触发、后三轮0/3。
+068归档完成：严格新C6下界>2071938494109/1000000000000，完整准确当前比较/有限L1/独审及主实际mincheckPASS；上界仍64。严格C6上端仍64、当前下端2071938494109/1000000000000；双侧未触发、后三轮0/3。
