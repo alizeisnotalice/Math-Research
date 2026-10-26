@@ -1,0 +1,49 @@
+--- check_saved.py
++++ check_saved_v2.py
+@@ -8,13 +8,13 @@
+ def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+ def read(p): return json.loads(p.read_text())
+ def save(n,x): (P/n).write_text(json.dumps(x,indent=2)+'\n')
+-if any((P/n).exists() for n in ['started.json','review_results.json','run_receipt.json']):
++if any((P/n).exists() for n in ['started_v2.json','review_results_v2.json','run_receipt_v2.json']):
+     raise SystemExit('one attempt only')
+-reg=read(P/'registration.json')
++reg=read(P/'registration_v2.json')
+ assert sha(Path(__file__))==reg['script_sha256']
+ assert sha(P/'source_manifest.json')==reg['source_manifest_sha256']
+-save('started.json',{'pid':os.getpid(),'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+-    'registration_sha256':sha(P/'registration.json'),'script_sha256':sha(Path(__file__))})
++save('started_v2.json',{'pid':os.getpid(),'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
++    'registration_sha256':sha(P/'registration_v2.json'),'script_sha256':sha(Path(__file__))})
+ checks=0; completed=[]; status='FIRST_FAILURE_STOP'; failure=None
+ def check(b,label):
+     global checks
+@@ -55,6 +55,7 @@
+ def includes(a,b): return a[0]<=b[0]<=b[1]<=a[1]
+ def json_intervals(d): return {k:list(map(str,v)) for k,v in d.items()}
+ def recursive_equal(o,target):
++    if o==target: return True
+     if isinstance(o,dict): return o==target or any(recursive_equal(v,target) for v in o.values())
+     if isinstance(o,list): return any(recursive_equal(v,target) for v in o)
+     return False
+@@ -172,17 +173,17 @@
+         'theorem_proof_review':'proof_review.md','global_g_fullI_far_S_unpaid':True,
+         'new_Cn_or_lower_project_work':False,'CPU_seconds_before_result_save':time.process_time()-cpu,
+         'wall_seconds_before_result_save':time.monotonic()-start}
+-    save('review_results.json',output); status='COMPLETED'
++    save('review_results_v2.json',output); status='COMPLETED'
+ except Exception:
+     failure=traceback.format_exc()
+ finally:
+-    save('run_receipt.json',{'status':status,'pid':os.getpid(),'assertions':checks,
++    save('run_receipt_v2.json',{'status':status,'pid':os.getpid(),'assertions':checks,
+         'completed_checks':completed,'failure':failure,'attempts':1,'automatic_retries':0,
+         'children':0,'current_user_runtime_ceiling':None,
+         'wall_seconds_before_receipt_write':time.monotonic()-start,
+         'CPU_seconds_since_start_before_receipt_write':time.process_time()-cpu,
+         'CPU_process_total_before_receipt_write':time.process_time(),
+         'timing_scope':'one Python process, before final receipt write/stdout/normal exit; outer tool stopwatch recorded separately',
+-        'source_script_sha256':sha(Path(__file__)),'registration_sha256':sha(P/'registration.json')})
++        'source_script_sha256':sha(Path(__file__)),'registration_sha256':sha(P/'registration_v2.json')})
+     print(json.dumps({'status':status,'assertions':checks,'completed_checks':len(completed),'pid':os.getpid()}))
+ if status!='COMPLETED': raise SystemExit(1)
