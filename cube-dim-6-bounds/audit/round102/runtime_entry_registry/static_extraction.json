@@ -1,0 +1,2671 @@
+{
+  "scope_id": "round102-runtime-entry-static-index-v1",
+  "extraction_utc_start": "2026-10-26T15:28:48.856347+00:00",
+  "extraction_utc_end": "2026-10-26T15:28:48.907169+00:00",
+  "python": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "elapsed_seconds": 0.050659583997912705,
+  "method": "one bounded read/hash/AST/JSON pass; no source execution",
+  "sources": [
+    {
+      "id": "S01",
+      "root_key": "main",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/upper/round068/cover_batch001/control.py",
+      "role": "068 wrapper controller",
+      "bytes": 6887,
+      "sha256": "27822848fb6e0111be5bf138d32f6dac502e0f33e133f6cf3c4fb61d02732a68",
+      "kind": ".py",
+      "ast_parse": "ok",
+      "relevant_calls": [
+        {
+          "line": 23,
+          "call": "TimeoutError",
+          "args": [
+            "'180-second scheduler/verification program wall limit'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 24,
+          "call": "signal.signal",
+          "args": [
+            "signal.SIGALRM",
+            "timeout"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 25,
+          "call": "signal.setitimer",
+          "args": [
+            "signal.ITIMER_REAL",
+            "180"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 27,
+          "call": "receipt_dir.mkdir",
+          "args": [],
+          "keywords": {
+            "exist_ok": "True"
+          }
+        },
+        {
+          "line": 35,
+          "call": "receipt_path.with_suffix",
+          "args": [
+            "'.pending'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 36,
+          "call": "temporary.write_text",
+          "args": [
+            "json.dumps(receipt, indent=2) + '\\n'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 36,
+          "call": "json.dumps",
+          "args": [
+            "receipt"
+          ],
+          "keywords": {
+            "indent": "2"
+          }
+        },
+        {
+          "line": 87,
+          "call": "json.dumps",
+          "args": [
+            "dict(token=token, verification_path=str(path), sha256=sha(path), center=rebuilt['center_classification'], native_calls_this_program=0)"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 101,
+          "call": "json.dumps",
+          "args": [
+            "dict(operation=command, snapshot_sha256=latest['sha256'], sequence=latest['sequence'], queue=state['queue'], inflight=state['inflight'], passed_leaves=state['passed_leaves'], halted=state['halted'], reservations=state['batch']['native_reservations'], started_nodes=state['batch']['started_nodes'], observed_native_calls=state['production_kernel_calls'], native_calls_this_program=0, global_g_certificate=False, program_wall_seconds=time.monotonic() - tic)"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 107,
+          "call": "receipt.update",
+          "args": [],
+          "keywords": {
+            "status": "'COMPLETED'",
+            "exit_code": "0",
+            "after_snapshot_sha256": "latest['sha256']",
+            "end_utc": "datetime.now(timezone.utc).isoformat()"
+          }
+        },
+        {
+          "line": 109,
+          "call": "save_receipt",
+          "args": [],
+          "keywords": {}
+        },
+        {
+          "line": 111,
+          "call": "signal.setitimer",
+          "args": [
+            "signal.ITIMER_REAL",
+            "0"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 112,
+          "call": "receipt.update",
+          "args": [],
+          "keywords": {
+            "status": "'STOP_NO_RETRY'",
+            "exit_code": "1",
+            "error": "repr(error)",
+            "end_utc": "datetime.now(timezone.utc).isoformat()"
+          }
+        },
+        {
+          "line": 114,
+          "call": "save_receipt",
+          "args": [],
+          "keywords": {}
+        },
+        {
+          "line": 117,
+          "call": "signal.setitimer",
+          "args": [
+            "signal.ITIMER_REAL",
+            "0"
+          ],
+          "keywords": {}
+        }
+      ],
+      "matched_lines": [
+        {
+          "line": 10,
+          "text": "import signal"
+        },
+        {
+          "line": 22,
+          "text": "    def timeout(signum, frame):"
+        },
+        {
+          "line": 23,
+          "text": "        raise TimeoutError('180-second scheduler/verification program wall limit')"
+        },
+        {
+          "line": 24,
+          "text": "    signal.signal(signal.SIGALRM, timeout)"
+        },
+        {
+          "line": 25,
+          "text": "    signal.setitimer(signal.ITIMER_REAL, 180)"
+        },
+        {
+          "line": 26,
+          "text": "    receipt_dir = P / 'operation_receipts'"
+        },
+        {
+          "line": 27,
+          "text": "    receipt_dir.mkdir(exist_ok=True)"
+        },
+        {
+          "line": 28,
+          "text": "    receipt_path = receipt_dir / f'{time.time_ns()}-{os.getpid()}.json'"
+        },
+        {
+          "line": 29,
+          "text": "    receipt = dict(schema='C068-bounded-control-program-v1', pid=os.getpid(), command=sys.argv,"
+        },
+        {
+          "line": 30,
+          "text": "                   status='RUNNING', start_utc=datetime.now(timezone.utc).isoformat(), timeout_seconds=180,"
+        },
+        {
+          "line": 32,
+          "text": "    write_new(receipt_path, receipt)"
+        },
+        {
+          "line": 33,
+          "text": "    def save_receipt():"
+        },
+        {
+          "line": 34,
+          "text": "        receipt['wall_seconds'] = time.monotonic()-tic"
+        },
+        {
+          "line": 35,
+          "text": "        temporary = receipt_path.with_suffix('.pending')"
+        },
+        {
+          "line": 36,
+          "text": "        temporary.write_text(json.dumps(receipt, indent=2)+'\\n')"
+        },
+        {
+          "line": 37,
+          "text": "        temporary.replace(receipt_path)"
+        },
+        {
+          "line": 43,
+          "text": "        receipt['before_snapshot_sha256'] = latest['sha256']"
+        },
+        {
+          "line": 54,
+          "text": "                receipt['bounded_stop'] = 'BATCH_BUDGET_EXHAUSTED_QUEUE_RETAINED'"
+        },
+        {
+          "line": 56,
+          "text": "                receipt['bounded_stop'] = 'NO_QUEUED_WORK_MAIN_MUST_AUDIT_FRONTIER'"
+        },
+        {
+          "line": 102,
+          "text": "                              queue=state['queue'], inflight=state['inflight'], passed_leaves=state['passed_leaves'],"
+        },
+        {
+          "line": 107,
+          "text": "        receipt.update(status='COMPLETED', exit_code=0, after_snapshot_sha256=latest['sha256'],"
+        },
+        {
+          "line": 109,
+          "text": "        save_receipt()"
+        },
+        {
+          "line": 111,
+          "text": "        signal.setitimer(signal.ITIMER_REAL, 0)"
+        },
+        {
+          "line": 112,
+          "text": "        receipt.update(status='STOP_NO_RETRY', exit_code=1, error=repr(error),"
+        },
+        {
+          "line": 114,
+          "text": "        save_receipt()"
+        },
+        {
+          "line": 116,
+          "text": "    finally:"
+        },
+        {
+          "line": 117,
+          "text": "        signal.setitimer(signal.ITIMER_REAL, 0)"
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "root_key": "main",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/upper/round068/cover_batch001/run_native_once.py",
+      "role": "068 production entry",
+      "bytes": 7113,
+      "sha256": "20a1d87699847637087acda3bf4529b9e828bf02662f77c5ca557dc829d70a78",
+      "kind": ".py",
+      "ast_parse": "ok",
+      "relevant_calls": [
+        {
+          "line": 28,
+          "call": "TimeoutError",
+          "args": [
+            "'180-second whole-program wall limit'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 29,
+          "call": "signal.signal",
+          "args": [
+            "signal.SIGALRM",
+            "timeout"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 30,
+          "call": "signal.setitimer",
+          "args": [
+            "signal.ITIMER_REAL",
+            "180"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 52,
+          "call": "signal.setitimer",
+          "args": [
+            "signal.ITIMER_REAL",
+            "0"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 70,
+          "call": "native_path.open",
+          "args": [
+            "'xb'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 70,
+          "call": "stderr_path.open",
+          "args": [
+            "'xb'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 71,
+          "call": "subprocess.Popen",
+          "args": [
+            "command"
+          ],
+          "keywords": {
+            "cwd": "P",
+            "stdout": "out",
+            "stderr": "err",
+            "start_new_session": "True"
+          }
+        },
+        {
+          "line": 77,
+          "call": "child.wait",
+          "args": [],
+          "keywords": {
+            "timeout": "max(0.001, 180 - (time.monotonic() - tic))"
+          }
+        },
+        {
+          "line": 92,
+          "call": "json.dumps",
+          "args": [
+            "dict(token=token, native_pid=child.pid, exit_code=code, native_receipt=str(folder / 'native_receipt.json'), next='MAIN_ATTACH_ORIGINAL_HANDLE_THEN_VERIFY')"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 95,
+          "call": "signal.setitimer",
+          "args": [
+            "signal.ITIMER_REAL",
+            "0"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 98,
+          "call": "os.killpg",
+          "args": [
+            "child.pid",
+            "signal.SIGKILL"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 101,
+          "call": "child.wait",
+          "args": [],
+          "keywords": {}
+        },
+        {
+          "line": 113,
+          "call": "signal.setitimer",
+          "args": [
+            "signal.ITIMER_REAL",
+            "0"
+          ],
+          "keywords": {}
+        }
+      ],
+      "matched_lines": [
+        {
+          "line": 11,
+          "text": "import signal"
+        },
+        {
+          "line": 12,
+          "text": "import subprocess"
+        },
+        {
+          "line": 27,
+          "text": "    def timeout(signum, frame):"
+        },
+        {
+          "line": 28,
+          "text": "        raise TimeoutError('180-second whole-program wall limit')"
+        },
+        {
+          "line": 29,
+          "text": "    signal.signal(signal.SIGALRM, timeout)"
+        },
+        {
+          "line": 30,
+          "text": "    signal.setitimer(signal.ITIMER_REAL, 180)"
+        },
+        {
+          "line": 48,
+          "text": "                                               timeout_seconds=180, synthetic_fixture=False))"
+        },
+        {
+          "line": 52,
+          "text": "        signal.setitimer(signal.ITIMER_REAL, 0)"
+        },
+        {
+          "line": 56,
+          "text": "                  synthetic_fixture=False, automatic_retries=0, timeout_seconds=180, wall_seconds=time.monotonic()-tic))"
+        },
+        {
+          "line": 64,
+          "text": "                  owned_wrapper_pid=os.getpid(), started_utc=utc(), timeout_seconds=180, synthetic_fixture=False)"
+        },
+        {
+          "line": 68,
+          "text": "    receipt = None"
+        },
+        {
+          "line": 71,
+          "text": "            child = subprocess.Popen(command, cwd=P, stdout=out, stderr=err, start_new_session=True)"
+        },
+        {
+          "line": 75,
+          "text": "                                  timeout_seconds=180, status='RUNNING_ORIGINAL_NATIVE')"
+        },
+        {
+          "line": 77,
+          "text": "            code = child.wait(timeout=max(0.001, 180 - (time.monotonic() - tic)))"
+        },
+        {
+          "line": 79,
+          "text": "        receipt = dict(schema='C068-native-receipt-v1', token=token, input_sha256=attempt['input_sha256'],"
+        },
+        {
+          "line": 85,
+          "text": "                       native_exit_code=code, stderr_empty=stderr_path.stat().st_size == 0,"
+        },
+        {
+          "line": 89,
+          "text": "                       timeout_seconds=180, synthetic_fixture=False, automatic_retries=0)"
+        },
+        {
+          "line": 90,
+          "text": "        write_new(folder / 'native_receipt.json', receipt)"
+        },
+        {
+          "line": 91,
+          "text": "        require(code == 0 and receipt['stderr_empty'], 'Native failed: preserve receipt and halt without retry')"
+        },
+        {
+          "line": 92,
+          "text": "        print(json.dumps(dict(token=token, native_pid=child.pid, exit_code=code,"
+        },
+        {
+          "line": 93,
+          "text": "                              native_receipt=str(folder / 'native_receipt.json'), next='MAIN_ATTACH_ORIGINAL_HANDLE_THEN_VERIFY')))"
+        },
+        {
+          "line": 95,
+          "text": "        signal.setitimer(signal.ITIMER_REAL, 0)"
+        },
+        {
+          "line": 98,
+          "text": "                os.killpg(child.pid, signal.SIGKILL)"
+        },
+        {
+          "line": 100,
+          "text": "                pass"
+        },
+        {
+          "line": 101,
+          "text": "            child.wait()"
+        },
+        {
+          "line": 103,
+          "text": "                    (folder/'reserved_input.json', folder/'intent.json', folder/'original_process.json', native_path, stderr_path, folder/'native_receipt.json') if path.exists()]"
+        },
+        {
+          "line": 105,
+          "text": "                       reason='PROGRAM_TIMEOUT_STOP' if isinstance(error,(TimeoutError,subprocess.TimeoutExpired)) else 'NATIVE_ERROR_STOP',"
+        },
+        {
+          "line": 107,
+          "text": "                       native_exit_code=child.returncode if child is not None else None,"
+        },
+        {
+          "line": 109,
+          "text": "                       timeout_seconds=180, synthetic_fixture=False, automatic_retries=0)"
+        },
+        {
+          "line": 112,
+          "text": "    finally:"
+        },
+        {
+          "line": 113,
+          "text": "        signal.setitimer(signal.ITIMER_REAL, 0)"
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "root_key": "main",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/upper/round068/cover_batch001/integration_receipt.json",
+      "role": "068 observed receipt",
+      "bytes": 574,
+      "sha256": "910e90bc1cb8bee50caaaf01409a0640b4fdf9fad215ce5fedd200b3c5b309e7",
+      "kind": ".json",
+      "json_parse": "ok",
+      "relevant_json_pointers": [
+        {
+          "pointer": "$/status",
+          "value": "PASS_PREPARATION_ONLY"
+        },
+        {
+          "pointer": "$/timeout_seconds",
+          "value": 180
+        },
+        {
+          "pointer": "$/wall_seconds",
+          "value": 0.6270584160229191
+        },
+        {
+          "pointer": "$/exit_code",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "root_key": "main",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/audit/round068/cover_revision_review/report.md",
+      "role": "068 independent review",
+      "bytes": 3442,
+      "sha256": "fd7dc84eaf1eaed65f65fd2c36dde56c4f4556dc96569e4ca3dbbd80cc00adb6",
+      "kind": ".md",
+      "matched_lines": [
+        {
+          "line": 1,
+          "text": "# F068: core/math PASS; actual release and runtime enforcement remain pending"
+        },
+        {
+          "line": 6,
+          "text": "- **Runtime: CONDITIONAL / NEEDS_WRAPPER.** Main keeps the real production gate closed until a separately sealed hard-wall-time supplement is reviewed. The original C068 seal is unchanged; no passed mathematical configuration is rerun for that future runtime-only review."
+        },
+        {
+          "line": 8,
+          "text": "The repaired event-replayed core and mathematical importer pass independent review against preparation manifest `a3b254ce4ba9b833ba369fa72c65b457e648d563b10c61bb969199a087e59db3`. The original R1/R2/R3 counterexamples no longer pass the actual API: root/environment substitution is rejected, stale/orphan history cannot reset reservations, and test history cannot acquire a production release."
+        },
+        {
+          "line": 10,
+          "text": "Nine independent configurations completed once in 0.3835530420183204 seconds, under a 180-second hard alarm. They included a mixed-cutoff eight-attempt/six-node history, omitted sibling and counterfeit passed leaf, mixed-sign six-gradient intervals, corruption of the normal derivative, replacement of original artifacts after verification, rehashed false exponential endpoints, and wrong release/source/window/PID bindings in a production-contract unit branch. All expected rejections occurred."
+        },
+        {
+          "line": 14,
+          "text": "There is one explicit operational qualification before production: `run_native_once.py` disables its alarm before an unbounded cleanup `child.wait()`, and `control.py` disables its alarm before failure-receipt writing. The code supplies a 180-second work deadline but does not alone guarantee that cleanup-inclusive process wall time is at most 180 seconds. Main must provide independent outer hard enforcement or a reviewed bounded cleanup arrangement. No real timeout/kill overrun was observed or t"
+        },
+        {
+          "line": 16,
+          "text": "The real state is still PREPARE_ONLY genesis: no release, attempt, inflight job or native call. The unit fixtures\u2014including the production-specific branch test\u2014are not actual native receipts or a body32 cover. F061's accepted finite gradient checks are bound as source evidence, with no universal future-input rerun claim. Genuine launch/kill handling, actual main release, authentic new native results and final global proof remain outside this review's completed execution."
+        },
+        {
+          "line": 26,
+          "text": "The final receipt and manifest bind the execution and artifacts. Core/math PASS does not authorize a production batch, certify global g or establish a new C6 bound."
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "root_key": "main",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/upper/round082/runtime_revision/worker.py",
+      "role": "082 worker",
+      "bytes": 2781,
+      "sha256": "a5f82d9cd5cae404fbc8d80b64f64ae878219a0394c76c0f5fa67e6d7eed25c5",
+      "kind": ".py",
+      "ast_parse": "ok",
+      "relevant_calls": [
+        {
+          "line": 4,
+          "call": "signal.signal",
+          "args": [
+            "signal.SIGALRM",
+            "signal.SIG_DFL"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 5,
+          "call": "signal.setitimer",
+          "args": [
+            "signal.ITIMER_REAL",
+            "178"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 19,
+          "call": "os.killpg",
+          "args": [
+            "os.getpgrp()",
+            "signal.SIGKILL"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 20,
+          "call": "signal.signal",
+          "args": [
+            "signal.SIGALRM",
+            "kill_own_group"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 21,
+          "call": "signal.setitimer",
+          "args": [
+            "signal.ITIMER_REAL",
+            "max(0.001, start + policy['worker_fallback'] - time.monotonic())"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 23,
+          "call": "TimeoutError",
+          "args": [
+            "'Fixed soft work cutoff; preserve original attempt, never retry'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 24,
+          "call": "signal.signal",
+          "args": [
+            "signal.SIGUSR1",
+            "soft"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 30,
+          "call": "json.dumps",
+          "args": [
+            "value"
+          ],
+          "keywords": {
+            "separators": "(',', ':')"
+          }
+        },
+        {
+          "line": 54,
+          "call": "signal.signal",
+          "args": [
+            "signal.SIGUSR1",
+            "signal.SIG_IGN"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 56,
+          "call": "signal.pause",
+          "args": [],
+          "keywords": {}
+        }
+      ],
+      "matched_lines": [
+        {
+          "line": 2,
+          "text": "import signal"
+        },
+        {
+          "line": 4,
+          "text": "signal.signal(signal.SIGALRM, signal.SIG_DFL)"
+        },
+        {
+          "line": 5,
+          "text": "signal.setitimer(signal.ITIMER_REAL, 178)"
+        },
+        {
+          "line": 19,
+          "text": "        os.killpg(os.getpgrp(), signal.SIGKILL)"
+        },
+        {
+          "line": 20,
+          "text": "    signal.signal(signal.SIGALRM, kill_own_group)"
+        },
+        {
+          "line": 21,
+          "text": "    signal.setitimer(signal.ITIMER_REAL, max(0.001, start + policy['worker_fallback']-time.monotonic()))"
+        },
+        {
+          "line": 23,
+          "text": "        raise TimeoutError('Fixed soft work cutoff; preserve original attempt, never retry')"
+        },
+        {
+          "line": 24,
+          "text": "    signal.signal(signal.SIGUSR1, soft)"
+        },
+        {
+          "line": 50,
+          "text": "        emit(dict(kind='TASK_RESULT', logical_exit_code=0, detail=data))"
+        },
+        {
+          "line": 52,
+          "text": "        emit(dict(kind='TASK_RESULT', logical_exit_code=1, error=repr(error)))"
+        },
+        {
+          "line": 54,
+          "text": "    signal.signal(signal.SIGUSR1, signal.SIG_IGN)"
+        },
+        {
+          "line": 56,
+          "text": "        signal.pause()"
+        }
+      ]
+    },
+    {
+      "id": "S06",
+      "root_key": "main",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/upper/round082/runtime_revision/control_task.py",
+      "role": "082 control task",
+      "bytes": 6871,
+      "sha256": "f9e67a6d003878ecda5754070f476766828d26c79c40156b6e99b84f2340528c",
+      "kind": ".py",
+      "ast_parse": "ok",
+      "relevant_calls": [
+        {
+          "line": 27,
+          "call": "receipt_dir.mkdir",
+          "args": [],
+          "keywords": {
+            "exist_ok": "True"
+          }
+        },
+        {
+          "line": 35,
+          "call": "receipt_path.with_suffix",
+          "args": [
+            "'.pending'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 36,
+          "call": "temporary.write_text",
+          "args": [
+            "json.dumps(receipt, indent=2) + '\\n'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 36,
+          "call": "json.dumps",
+          "args": [
+            "receipt"
+          ],
+          "keywords": {
+            "indent": "2"
+          }
+        },
+        {
+          "line": 87,
+          "call": "json.dumps",
+          "args": [
+            "dict(token=token, verification_path=str(path), sha256=sha(path), center=rebuilt['center_classification'], native_calls_this_program=0)"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 101,
+          "call": "json.dumps",
+          "args": [
+            "dict(operation=command, snapshot_sha256=latest['sha256'], sequence=latest['sequence'], queue=state['queue'], inflight=state['inflight'], passed_leaves=state['passed_leaves'], halted=state['halted'], reservations=state['batch']['native_reservations'], started_nodes=state['batch']['started_nodes'], observed_native_calls=state['production_kernel_calls'], native_calls_this_program=0, global_g_certificate=False, program_wall_seconds=time.monotonic() - tic)"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 107,
+          "call": "receipt.update",
+          "args": [],
+          "keywords": {
+            "status": "'COMPLETED'",
+            "exit_code": "0",
+            "after_snapshot_sha256": "latest['sha256']",
+            "end_utc": "datetime.now(timezone.utc).isoformat()"
+          }
+        },
+        {
+          "line": 109,
+          "call": "save_receipt",
+          "args": [],
+          "keywords": {}
+        },
+        {
+          "line": 111,
+          "call": "receipt.update",
+          "args": [],
+          "keywords": {
+            "status": "'STOP_NO_RETRY'",
+            "exit_code": "1",
+            "error": "repr(error)",
+            "end_utc": "datetime.now(timezone.utc).isoformat()"
+          }
+        },
+        {
+          "line": 113,
+          "call": "save_receipt",
+          "args": [],
+          "keywords": {}
+        }
+      ],
+      "matched_lines": [
+        {
+          "line": 10,
+          "text": "import signal"
+        },
+        {
+          "line": 25,
+          "text": "    # The enclosing worker/watchdog own both deadlines; never cancel them here."
+        },
+        {
+          "line": 26,
+          "text": "    receipt_dir = P / 'operation_receipts'"
+        },
+        {
+          "line": 27,
+          "text": "    receipt_dir.mkdir(exist_ok=True)"
+        },
+        {
+          "line": 28,
+          "text": "    receipt_path = receipt_dir / f'{time.time_ns()}-{os.getpid()}.json'"
+        },
+        {
+          "line": 29,
+          "text": "    receipt = dict(schema='C068-bounded-control-program-v1', pid=os.getpid(), command=sys.argv,"
+        },
+        {
+          "line": 30,
+          "text": "                   status='RUNNING', start_utc=datetime.now(timezone.utc).isoformat(), timeout_seconds=180,"
+        },
+        {
+          "line": 32,
+          "text": "    write_new(receipt_path, receipt)"
+        },
+        {
+          "line": 33,
+          "text": "    def save_receipt():"
+        },
+        {
+          "line": 34,
+          "text": "        receipt['wall_seconds'] = time.monotonic()-tic"
+        },
+        {
+          "line": 35,
+          "text": "        temporary = receipt_path.with_suffix('.pending')"
+        },
+        {
+          "line": 36,
+          "text": "        temporary.write_text(json.dumps(receipt, indent=2)+'\\n')"
+        },
+        {
+          "line": 37,
+          "text": "        temporary.replace(receipt_path)"
+        },
+        {
+          "line": 43,
+          "text": "        receipt['before_snapshot_sha256'] = latest['sha256']"
+        },
+        {
+          "line": 54,
+          "text": "                receipt['bounded_stop'] = 'BATCH_BUDGET_EXHAUSTED_QUEUE_RETAINED'"
+        },
+        {
+          "line": 56,
+          "text": "                receipt['bounded_stop'] = 'NO_QUEUED_WORK_MAIN_MUST_AUDIT_FRONTIER'"
+        },
+        {
+          "line": 102,
+          "text": "                              queue=state['queue'], inflight=state['inflight'], passed_leaves=state['passed_leaves'],"
+        },
+        {
+          "line": 107,
+          "text": "        receipt.update(status='COMPLETED', exit_code=0, after_snapshot_sha256=latest['sha256'],"
+        },
+        {
+          "line": 109,
+          "text": "        save_receipt()"
+        },
+        {
+          "line": 111,
+          "text": "        receipt.update(status='STOP_NO_RETRY', exit_code=1, error=repr(error),"
+        },
+        {
+          "line": 113,
+          "text": "        save_receipt()"
+        }
+      ]
+    },
+    {
+      "id": "S07",
+      "root_key": "main",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/upper/round082/runtime_revision/watchdog.py",
+      "role": "082 watchdog",
+      "bytes": 2976,
+      "sha256": "ca3154849395224c39a07b41952512815d9d12cd45a4c708f195df335c02f62a",
+      "kind": ".py",
+      "ast_parse": "ok",
+      "relevant_calls": [
+        {
+          "line": 9,
+          "call": "signal.signal",
+          "args": [
+            "signal.SIGALRM",
+            "signal.SIG_DFL"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 10,
+          "call": "signal.setitimer",
+          "args": [
+            "signal.ITIMER_REAL",
+            "179.5"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 29,
+          "call": "json.dumps",
+          "args": [
+            "dict(kind=kind, pid=os.getpid(), elapsed=time.monotonic() - start, **extra)"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 39,
+          "call": "os.killpg",
+          "args": [
+            "pgid",
+            "signal.SIGKILL"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 47,
+          "call": "os.kill",
+          "args": [
+            "parent",
+            "signal.SIGKILL"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 65,
+          "call": "os.killpg",
+          "args": [
+            "pgid",
+            "signal.SIGKILL"
+          ],
+          "keywords": {}
+        }
+      ],
+      "matched_lines": [
+        {
+          "line": 1,
+          "text": "\"\"\"Independent, fixed-deadline process-group and supervisor fuse."
+        },
+        {
+          "line": 3,
+          "text": "No potentially blocking disk write precedes either deadline action. The pipe"
+        },
+        {
+          "line": 6,
+          "text": "import signal"
+        },
+        {
+          "line": 9,
+          "text": "signal.signal(signal.SIGALRM, signal.SIG_DFL)"
+        },
+        {
+          "line": 10,
+          "text": "signal.setitimer(signal.ITIMER_REAL, 179.5)"
+        },
+        {
+          "line": 29,
+          "text": "            os.write(events, (json.dumps(dict(kind=kind, pid=os.getpid(), elapsed=time.monotonic()-start, **extra))+'\\n').encode())"
+        },
+        {
+          "line": 31,
+          "text": "            pass"
+        },
+        {
+          "line": 39,
+          "text": "                os.killpg(pgid, signal.SIGKILL)"
+        },
+        {
+          "line": 47,
+          "text": "                os.kill(parent, signal.SIGKILL)"
+        },
+        {
+          "line": 60,
+          "text": "                emit('WATCHDOG_DISARMED_AFTER_RECEIPT')"
+        },
+        {
+          "line": 65,
+          "text": "                        os.killpg(pgid, signal.SIGKILL)"
+        },
+        {
+          "line": 68,
+          "text": "                        pass"
+        }
+      ]
+    },
+    {
+      "id": "S08",
+      "root_key": "main",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/upper/round082/runtime_revision/execution_receipt.json",
+      "role": "082 execution receipt",
+      "bytes": 757,
+      "sha256": "df4dfd591533c172256d315c0322acf413708507126335b2c31a858e50571501",
+      "kind": ".json",
+      "json_parse": "ok",
+      "relevant_json_pointers": [
+        {
+          "pointer": "$/configurations_passed",
+          "value": 4
+        },
+        {
+          "pointer": "$/observed_harness_wall_seconds",
+          "value": 2.4533843750250526
+        },
+        {
+          "pointer": "$/observed_tool_exit_code",
+          "value": 0
+        },
+        {
+          "pointer": "$/post_run_ps_exit_code",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "S09",
+      "root_key": "main",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/audit/round082/runtime_revision_review/report.md",
+      "role": "082 independent review",
+      "bytes": 8911,
+      "sha256": "662205783654e9bc5f3dacc8faa0887f06efa60841039c0aeb50d2e810c897d6",
+      "kind": ".md",
+      "matched_lines": [
+        {
+          "line": 3,
+          "text": "\u7ed3\u8bba\uff1a**PASS_INDEPENDENT_RUNTIME_SUPPLEMENT_REVIEW**\u3002\u63a5\u53d7\u672c\u6b21\u5c01\u5b58\u6e90\u7801\u7684\u8fd0\u884c\u65f6"
+        },
+        {
+          "line": 26,
+          "text": "receipt \u5199\u5165\u5f02\u5e38\u4ea7\u751f receipt_failure\uff0c\u660e\u786e final_receipt_written=false\uff1b\u82e5\u5199\u5165"
+        },
+        {
+          "line": 27,
+          "text": "\u672c\u8eab\u6302\u4f4f\uff0c\u4ecd\u4fdd\u6301\u72ec\u7acb watchdog \u548c\u9ed8\u8ba4\u603b alarm\u3002\u82e5\u6240\u6709 checkpoint \u5199\u5165\u90fd\u6545\u969c\uff0c"
+        },
+        {
+          "line": 34,
+          "text": "\u6e05\u7406/\u56de\u6536\u5747\u53d7\u539f\u7edd\u5bf9\u671f\u9650\u9650\u5236\uff0c\u6e05\u7406\u53ca\u6536\u636e\u9636\u6bb5\u6ca1\u6709\u53d6\u6d88\u603b alarm\u3002\u672c\u6587\u63a5\u53d7\u6b63\u5e38 OS"
+        },
+        {
+          "line": 41,
+          "text": "\u91c7\u7528\u5141\u8bb8\u7684 timeout/error reason\u3002\u5b83\u4e0d\u4fee\u6539 replay state\uff0c\u4e0d\u9000\u6b3e\u3001\u4e0d\u91cd\u65b0\u4fdd\u7559 token\uff0c"
+        },
+        {
+          "line": 44,
+          "text": "production_gate \u7684 release\u3001source/receipt/\u72ec\u5ba1\u6587\u4ef6\u54c8\u5e0c\u7ed1\u5b9a\u4ecd\u4fdd\u7559\uff0c\u5e76\u518d\u6b21\u9a8c\u8bc1"
+        },
+        {
+          "line": 55,
+          "text": "  supervisor \u672a\u91cd\u590d kill\uff0cbefore/receipt/completion \u5b8c\u6574\u3002"
+        },
+        {
+          "line": 58,
+          "text": "- supervisor \u7684\u771f receipt \u6ee1\u7ba1\u9053\u7531\u72ec\u7acb watchdog SIGKILL\uff0c\u53ea\u6709 before checkpoint\uff0c"
+        },
+        {
+          "line": 59,
+          "text": "  \u6ca1\u6709\u4f2a\u9020 final receipt/completion\u3002"
+        },
+        {
+          "line": 61,
+          "text": "  \u6ca1\u6709\u8bef\u6807 final_receipt_written\uff1b\u7f3a release \u548c\u53c2\u6570\u8986\u76d6\u8bf7\u6c42\u88ab\u62d2\u7edd\u3002"
+        },
+        {
+          "line": 74,
+          "text": "| A1 \u9519\u8bef\u7ba1\u9053\u4f2a ACK + \u771f cleanup \u6ee1\u7ba1\u9053 | 93738 / 93739 / 93740 | PASS\uff1bexit1\uff0c0.879154084 \u79d2 |"
+        },
+        {
+          "line": 75,
+          "text": "| A2 watchdog \u65e9\u6b7b + cleanup \u6ee1\u7ba1\u9053 + receipt \u76ee\u5f55\u5f02\u5e38 | 93745 / 93746 / 93747 | PASS\uff1bexit1\uff0c0.969015541 \u79d2 |"
+        },
+        {
+          "line": 76,
+          "text": "| A3 watchdog \u65e9\u6b7b + supervisor receipt \u6ee1\u7ba1\u9053 | 93751 / 93752 / 93753 | PASS\uff1b\u9ed8\u8ba4 SIGALRM exit\u221214\uff0c1.619232792 \u79d2 |"
+        },
+        {
+          "line": 85,
+          "text": "receipt.json \u76ee\u5f55\u89e6\u53d1\u771f\u5b9e FileExistsError\uff0creceipt_failure \u660e\u786e false\u3002\u5b8c\u6210\u8bb0\u5f55"
+        },
+        {
+          "line": 88,
+          "text": "A3 \u5728 supervisor receipt \u6ee1\u7ba1\u9053\u6807\u8bb0\u540e\uff0c\u4ec5\u5411\u539f watchdog 93753 \u6ce8\u5165 SIGKILL\u3002"
+        },
+        {
+          "line": 92,
+          "text": "\u4ecd\u8986\u76d6\u6536\u636e\u9636\u6bb5\uff1b\u4e0d\u662f\u5b9e\u9645\u751f\u4ea7 native \u7684 timeout \u6d4b\u8bd5\u3002"
+        },
+        {
+          "line": 94,
+          "text": "\u4e09\u9879\u65b0\u7ec4\u5408\u4e00\u6b21\u8fd0\u884c\u5747 PASS\uff1bcontinuation harness PID 93737\uff0cexit0\uff0c"
+        },
+        {
+          "line": 109,
+          "text": "\u4e2d\u4ec5\u4fee\u590d marker \u8bfb\u53d6\uff0c\u5728\u539f\u7edd\u5bf9 deadline \u5185\u7b49\u5f85\u5b8c\u6574 JSON\uff0c\u4e0d\u5ef6\u957f\u671f\u9650\u3001\u4e0d\u6539\u88ab\u6d4b"
+        },
+        {
+          "line": 112,
+          "text": "\u7684\u6761\u4ef6\u6e05\u7406\u5206\u652f\uff1b\u539f observation \u672a\u8bb0\u5f55\u8be5\u7d27\u6025\u5206\u652f\uff0c\u4e0d\u80fd\u628a\u7a7a reviewer_signals"
+        },
+        {
+          "line": 128,
+          "text": "\u672c audit \u76ee\u5f55\u3002086 \u4fdd\u6301 WIP\uff0c\u4e0e\u672c PASS \u4e0d\u6df7\u8d26\u3002\u672a stage\u3001commit\u3001push \u6216 MATLAB\u3002"
+        }
+      ]
+    },
+    {
+      "id": "S10",
+      "root_key": "main",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/lower/round089/ordered_a1_derivative/ordered_derivative.py",
+      "role": "089 final checker",
+      "bytes": 12014,
+      "sha256": "420f3ffda662ba261b5b92c3ed6c7183b3a189dfd566392c36f8fc877b1a313a",
+      "kind": ".py",
+      "ast_parse": "ok",
+      "relevant_calls": [
+        {
+          "line": 14,
+          "call": "TimeoutError",
+          "args": [
+            "'170 second soft wall cap, cleanup reserve remains'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 15,
+          "call": "signal.signal",
+          "args": [
+            "signal.SIGALRM",
+            "alarm"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 15,
+          "call": "signal.alarm",
+          "args": [
+            "170"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 23,
+          "call": "TimeoutError",
+          "args": [
+            "'18.5 second algorithm prelimit; no retry'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 24,
+          "call": "TimeoutError",
+          "args": [
+            "'wall algorithm prelimit; no retry'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 166,
+          "call": "OUT.open",
+          "args": [
+            "'x'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 166,
+          "call": "json.dump",
+          "args": [
+            "out",
+            "f"
+          ],
+          "keywords": {
+            "indent": "2"
+          }
+        },
+        {
+          "line": 168,
+          "call": "BinOp(left=Name(id='H'), op=Div(), right=Constant(value='receipt.json')).open",
+          "args": [
+            "'x'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 168,
+          "call": "json.dump",
+          "args": [
+            "receipt",
+            "f"
+          ],
+          "keywords": {
+            "indent": "2"
+          }
+        },
+        {
+          "line": 169,
+          "call": "signal.alarm",
+          "args": [
+            "0"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 169,
+          "call": "json.dumps",
+          "args": [
+            "receipt"
+          ],
+          "keywords": {}
+        }
+      ],
+      "matched_lines": [
+        {
+          "line": 8,
+          "text": "import json,hashlib,time,resource,signal,os,sys"
+        },
+        {
+          "line": 12,
+          "text": "CPU,WALL=time.process_time(),time.monotonic()"
+        },
+        {
+          "line": 14,
+          "text": "def alarm(*_):raise TimeoutError('170 second soft wall cap, cleanup reserve remains')"
+        },
+        {
+          "line": 15,
+          "text": "signal.signal(signal.SIGALRM,alarm);signal.alarm(170)"
+        },
+        {
+          "line": 20,
+          "text": "admitted=0;refused=0;requested=0;configs=0;cache={};cell_receipts=[]"
+        },
+        {
+          "line": 23,
+          "text": " if time.process_time()-CPU>=18.5:raise TimeoutError('18.5 second algorithm prelimit; no retry')"
+        },
+        {
+          "line": 24,
+          "text": " if time.monotonic()-WALL>=169:raise TimeoutError('wall algorithm prelimit; no retry')"
+        },
+        {
+          "line": 37,
+          "text": " assert prev['status']=='finished' and e['status']=='pass_new_s8_disjoint_seam_chamber_and_s9_finite_L1'"
+        },
+        {
+          "line": 163,
+          "text": "finally:"
+        },
+        {
+          "line": 167,
+          "text": " receipt={'status':out['status'],'pid':out['pid'],'CPU_seconds_including_save':time.process_time()-CPU,'wall_seconds_including_save':time.monotonic()-WALL,'resource':out['resource'],'result_sha256':hashlib.sha256(OUT.read_bytes()).hexdigest(),'exit_code':1 if 'error' in out else 0}"
+        },
+        {
+          "line": 168,
+          "text": " with (H/'receipt.json').open('x') as f:json.dump(receipt,f,indent=2);f.write('\\n')"
+        },
+        {
+          "line": 169,
+          "text": " print(json.dumps(receipt));signal.alarm(0)"
+        }
+      ]
+    },
+    {
+      "id": "S11",
+      "root_key": "endpointfix",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-lower-round005-endpointfix/cube-dim-6-bounds/audit/round089/ordered_derivative_review/report.md",
+      "role": "089 independent review",
+      "bytes": 13299,
+      "sha256": "d6f52057d9d97ef0f95fb56130f813300093ac853556d23435cfe1f86ff3f727",
+      "kind": ".md",
+      "matched_lines": [
+        {
+          "line": 3,
+          "text": "**\u5b8c\u6574\u5ba1\u8ba1 PASS\uff0c\u5f85\u4e3b\u7ebf\u7a0b\u6700\u7ec8\u9a8c\u6536\u3002** \u56fa\u5b9a\u539f 127 \u4e2a\u5171\u540c\u534a\u5f84\u89c1\u8bc1\u3001\u56fa\u5b9a\u4e94\u4e2a"
+        },
+        {
+          "line": 33,
+          "text": "\u672c\u8f6e\u5148\u767b\u8bb0\u3001\u540e\u7ed1\u5b9a\u5168\u90e8 20 \u4e2a\u4f5c\u8005\u6587\u4ef6\u53ca\u51bb\u7ed3\u4f9d\u8d56\uff0c\u79d1\u5b66\u6267\u884c\u524d\u95e8\u7981 PASS\u3002"
+        },
+        {
+          "line": 226,
+          "text": "`saved_checker_execution_receipt.json` \u4fdd\u5b58\u51bb\u7ed3\u8f93\u5165\u3001\u524d\u540e hash \u53ca\u9002\u914d\u8bb0\u5f55\uff1b"
+        }
+      ]
+    },
+    {
+      "id": "S12",
+      "root_key": "main",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/upper/round090/cover_batch001_actual/release_once.py",
+      "role": "090 actual entry; run_native_once.py absent",
+      "bytes": 4721,
+      "sha256": "03594679b37dd2e13c5da64be85e2e78a2e08b5fe8a1f34ae73fb290da05446f",
+      "kind": ".py",
+      "ast_parse": "ok",
+      "relevant_calls": [
+        {
+          "line": 5,
+          "call": "signal.signal",
+          "args": [
+            "signal.SIGALRM",
+            "signal.SIG_DFL"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 6,
+          "call": "signal.setitimer",
+          "args": [
+            "signal.ITIMER_REAL",
+            "175"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 13,
+          "call": "Call(func=Name(id='Path'), args=[Name(id='p')]).open",
+          "args": [
+            "'x'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 13,
+          "call": "json.dump",
+          "args": [
+            "v",
+            "f"
+          ],
+          "keywords": {
+            "indent": "2",
+            "sort_keys": "True"
+          }
+        },
+        {
+          "line": 59,
+          "call": "json.dumps",
+          "args": [
+            "receipt"
+          ],
+          "keywords": {
+            "sort_keys": "True"
+          }
+        }
+      ],
+      "matched_lines": [
+        {
+          "line": 1,
+          "text": "import sys, json, hashlib, signal, time, os"
+        },
+        {
+          "line": 5,
+          "text": "signal.signal(signal.SIGALRM, signal.SIG_DFL)"
+        },
+        {
+          "line": 6,
+          "text": "signal.setitimer(signal.ITIMER_REAL, 175)"
+        },
+        {
+          "line": 34,
+          "text": "    stop_conditions=['8 nodes or 8 total reservations','native or verification failure','timeout','unknown orphan','unresolved cutoff ladder'],"
+        },
+        {
+          "line": 37,
+          "text": "write(O/'core_acceptance.json',dict(status='PASS_C068_REVISION_ACCEPTED_BY_MAIN',owner='main',"
+        },
+        {
+          "line": 39,
+          "text": "    future_native_jets_accepted_under_engine_proof=True,F061_is_not_a_universal_new_point_crosscheck=True,finite_caps='8 nodes/8 total native, no renewal',"
+        },
+        {
+          "line": 43,
+          "text": "    future_native_jets_accepted_under_engine_proof=True,revision_acceptance=ref(O/'core_acceptance.json'))"
+        },
+        {
+          "line": 45,
+          "text": "write(O/'runtime_acceptance.json',dict(status='PASS_RUNTIME_180S_ACCEPTED_BY_MAIN',owner='main',"
+        },
+        {
+          "line": 47,
+          "text": "    prior071_rejected_preserved=True,actual_body_deadline_kill_not_pretested=True,total_wall_cap_including_cleanup_seconds=180,"
+        },
+        {
+          "line": 55,
+          "text": "receipt=dict(status='PASS_PREFLIGHT_RELEASED_NOT_YET_NATIVE',pid=os.getpid(),python=sys.executable,time=datetime.now(timezone.utc).isoformat(),wall_seconds=time.monotonic()-start,"
+        },
+        {
+          "line": 57,
+          "text": "    native_calls=0,production_transitions=0,exit_code=0)"
+        },
+        {
+          "line": 58,
+          "text": "write(O/'preflight_receipt.json',receipt)"
+        },
+        {
+          "line": 59,
+          "text": "print(json.dumps(receipt,sort_keys=True))"
+        }
+      ]
+    },
+    {
+      "id": "S13",
+      "root_key": "coveraudit",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-cover090-audit/cube-dim-6-bounds/audit/round090/actual_cover_review/report.md",
+      "role": "090 independent review",
+      "bytes": 11730,
+      "sha256": "589f5b4aaa47b1e3751902c64d6a5201a71ce0e43e35e747098d1e681395fca8",
+      "kind": ".md",
+      "matched_lines": [
+        {
+          "line": 3,
+          "text": "\u7ed3\u8bba\uff1a**PASS_SAVED_ONLY_ACTUAL_COVER_REVIEW_WITH_RETAINED_REVIEWER_HARNESS_ERROR**\u3002"
+        },
+        {
+          "line": 36,
+          "text": "`passed_leaves=[r000]`\uff1b\u5f85\u5904\u7406\u961f\u5217\u4e25\u683c\u4e3a"
+        },
+        {
+          "line": 49,
+          "text": "\u539f token/input\u3001handle\u3001\u5df2\u5bfc\u5165 observation\u3001passed leaf \u548c\u7d2f\u8ba1\u9884\u7b97\u4e0d\u5f97\u5220\u9664\u6216\u56de\u9000\uff1b"
+        },
+        {
+          "line": 81,
+          "text": "\u56fa\u5b9a frame32 \u4e8c\u6b21\u9879\u3001\u6307\u6570\u8868\u8fbe\u5f0f\u3001\u6709\u5e8f\u533a\u95f4\u3001\u4e0a\u4e0b\u6700\u5c0f\u503c\u3001\u9010\u89d2\u70b9 passes_target \u4e0e\u6574\u76d2 status\u3002"
+        },
+        {
+          "line": 83,
+          "text": "\u4e0d\u53ea\u8bfb\u53d6 PASS \u5b57\u7b26\u4e32\u3002"
+        },
+        {
+          "line": 95,
+          "text": "082 runtime preparation \u4e3a `a6894939\u2026`\uff1b\u539f071\u7684\u771f\u5b9e\u62d2\u7edd\u6ca1\u6709\u6539\u6210PASS\u3002"
+        },
+        {
+          "line": 96,
+          "text": "\u68c0\u67e5\u4e86 fixed soft170/group178/parent179/watchdog179.5/supervisor179.8 \u53ca\u6e05\u7406/\u6536\u636e\u4ecd\u53d7 deadline \u7684\u6e90\u7801\u3002"
+        },
+        {
+          "line": 97,
+          "text": "\u672c\u6279\u6ca1\u6709\u89e6\u53d1 body/native timeout\uff0c\u4e0d\u80fd\u628a\u5df2\u6709\u5408\u6210\u6545\u969c\u8bc1\u636e\u8bf4\u6210\u672c\u6279\u771f\u5b9e timeout \u5b9e\u9a8c\u3002"
+        },
+        {
+          "line": 100,
+          "text": "\u51bb\u7ed3 `runtime_receipts.json` \u9010\u9879\u4e00\u81f4\uff0c\u539f\u7269\u7406\u6587\u4ef6\u4e5f\u9010\u5b57\u8282\u4e00\u81f4\uff1b\u53e6\u5916\u8bfb\u53d6\u5176\u539f stdout/stderr\u3002"
+        },
+        {
+          "line": 103,
+          "text": "42\u4e2a task_result \u7684 logical_exit_code \u90fd\u4e3a0\uff0c\u65e0 timeout/error/receipt_failure \u6216 unresolved cleanup\u3002"
+        },
+        {
+          "line": 105,
+          "text": "\u539f native_exit_code=0 \u4e14\u539f stderr \u4e3a\u7a7a\uff1bworker\u672b\u5c3e\u22129\u662f\u6b63\u5e38\u6e05\u7406\u8eab\u4efd\u951a\u70b9\uff0c\u4e0d\u80fd\u6539\u8bb0\u6210 native \u9519\u8bef\u3002"
+        },
+        {
+          "line": 126,
+          "text": "1passed/7queue\u3001\u539f\u5de5\u5177/PID\u548csource pins\u65ad\u8a00\u5df2\u901a\u8fc7\uff1b\u4f46\u672c\u6b21\u6ca1\u6709\u5199\u51fa\u6700\u7ec8 core_results\u3002"
+        },
+        {
+          "line": 127,
+          "text": "\u4e0d\u80fd\u628a\u8fd9\u6b21\u6574\u4f53\u7a0b\u5e8f\u8bf4\u6210\u9996\u8dd1\u5168PASS\uff0c\u4e5f\u4e0d\u80fd\u8865\u9020\u5f53\u65f6\u672a\u5199\u51fa\u7684\u8f93\u51fa\u3002"
+        },
+        {
+          "line": 128,
+          "text": "\u539f failure receipt \u8bb0\u5f55 wall `0.23348362499382347` \u79d2\u3001CPU `0.21158` \u79d2\u3001PID27220\uff1b"
+        },
+        {
+          "line": 138,
+          "text": "| 2 \u660e\u786e\u6279\u51c6\u7684source-binding\u7eed\u5ba1 | PASS\uff0cexit0\uff0cchunk1bd3cc\uff0cPID27850 | 0.044889167 / 0.028897 | 0 / 0 / 0 |"
+        },
+        {
+          "line": 139,
+          "text": "| 3 runtime+\u51c6\u786e\u6bd4\u8f83 | PASS\uff0cexit0\uff0cchunk70a3a4\uff0cPID27887 | 0.067363334 / 0.04133 | 0 / 0 / 0 |"
+        },
+        {
+          "line": 141,
+          "text": "\u6bcf\u7ec4hard alarm179.5\u79d2\u3001CPU limit20\u79d2\uff0c\u5305\u542b\u6e05\u7406/\u8f93\u51fa\u9636\u6bb5\uff1b\u7d2f\u8ba13\u7ec4\u3001\u539fcore recover\u4ec51\u6b21\u3002"
+        }
+      ]
+    },
+    {
+      "id": "S14",
+      "root_key": "coveraudit",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-cover090-audit/cube-dim-6-bounds/audit/round090/actual_cover_review/runtime_run_receipt.json",
+      "role": "090 observed receipt",
+      "bytes": 534,
+      "sha256": "e5ba34659853e9aca57269649ec9ec6c1378ada2baca70d268b632526169ae60",
+      "kind": ".json",
+      "json_parse": "ok",
+      "relevant_json_pointers": [
+        {
+          "pointer": "$/cleanup_and_receipt_included",
+          "value": true
+        },
+        {
+          "pointer": "$/exit_code",
+          "value": 0
+        },
+        {
+          "pointer": "$/status",
+          "value": "PASS"
+        },
+        {
+          "pointer": "$/wall_limit_seconds",
+          "value": 180
+        },
+        {
+          "pointer": "$/wall_seconds",
+          "value": 0.06736333400476724
+        }
+      ]
+    },
+    {
+      "id": "S15",
+      "root_key": "main",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/upper/round091/cost_interval/check_exact.py",
+      "role": "091 final checker",
+      "bytes": 6941,
+      "sha256": "849065fd8ece77e0936e04f8cc8b07f4310afd1e0ef657437a485c711728d26d",
+      "kind": ".py",
+      "ast_parse": "ok",
+      "relevant_calls": [
+        {
+          "line": 10,
+          "call": "signal.alarm",
+          "args": [
+            "170"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 144,
+          "call": "OUT.open",
+          "args": [
+            "'x'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 144,
+          "call": "json.dumps",
+          "args": [
+            "result"
+          ],
+          "keywords": {
+            "indent": "2"
+          }
+        }
+      ],
+      "matched_lines": [
+        {
+          "line": 4,
+          "text": "import signal"
+        },
+        {
+          "line": 10,
+          "text": "signal.alarm(170)"
+        },
+        {
+          "line": 129,
+          "text": "    result=dict(status='PASS_SIX_FIXED_CERTIFICATE_CONFIGURATIONS',model='body32_unit_cauchy_v1',q='6/5',"
+        },
+        {
+          "line": 143,
+          "text": "                configurations=6,elapsed_seconds=time.monotonic()-START)"
+        },
+        {
+          "line": 145,
+          "text": "    print('PASS six zero-kernel cost configurations; same-model complete endpoints; no C6 improvement')"
+        }
+      ]
+    },
+    {
+      "id": "S16",
+      "root_key": "curvature",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-curvature-astra/cube-dim-6-bounds/audit/round091/cost_interval_review/report.md",
+      "role": "091 independent review",
+      "bytes": 6635,
+      "sha256": "ea0d6d3e864a7d20e484029b098b417d99e01a27d442ec12afbc6d338769d472",
+      "kind": ".md",
+      "matched_lines": [
+        {
+          "line": 3,
+          "text": "\u7ed3\u8bba\uff1a**\u6838\u5fc3 PASS\uff1b\u4e00\u5904\u62a5\u544a\u5c55\u793a\u5c0f\u6570\u7684\u4e25\u683c\u6bd4\u8f83\u9700\u66f4\u6b63**\u3002"
+        },
+        {
+          "line": 100,
+          "text": "\u767b\u8bb04\u9879\u65b0\u5c0f\u914d\u7f6e\uff0c\u6267\u884c\u524d\u51bb\u7ed3\u4ee3\u7801\u548c\u8bc1\u660e SHA\uff0c\u5355\u6b21\u5168\u90e8 PASS\uff1a"
+        },
+        {
+          "line": 104,
+          "text": "|1|\u5168\u65f6\u95f4\u7f29\u653e\u30016\u6781\u70b9 Phi24 \u6052\u7b49\u5f0f\u53ca\u6839\u5f0f\u95ed\u5f0f|PASS|"
+        },
+        {
+          "line": 105,
+          "text": "|2|\u540ct\u4e8b\u4ef6\u5f52\u4e00\u5316\u3001\u5df2\u8bc1\u57fa\u5e95\u7684\u6807\u91cf\u9006\u6052\u7b49\u5f0f\u3001\u6574\u4e2a\u65f6\u95f4\u7a97\u56e0\u5f0f\u754c|PASS|"
+        },
+        {
+          "line": 106,
+          "text": "|3|\u51c6\u786e\u6e90\u7ed1\u5b9a\uff1b10\u4e2a091\u7b2c\u4e94\u6839\u4e0e2\u4e2a\u539f058\u516d\u6839\u7684\u76f4\u63a5\u5e42\u5939\u903c|PASS|"
+        },
+        {
+          "line": 107,
+          "text": "|4|\u4e24\u76d2\u6700\u7ec8\u72ec\u5ba1\u94fe\u3001\u5b8c\u6574g_U\u3001volume/power\u548cU/S\u7684\u6709\u7406\u8f6c\u79fb|PASS|"
+        }
+      ]
+    },
+    {
+      "id": "S17",
+      "root_key": "main",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/upper/round093/full_gamma_account/run_once.py",
+      "role": "093 final entry",
+      "bytes": 2496,
+      "sha256": "750c7c3823b26e4d6b455ddcc217b08d7d355963a1f154aaad667c7407997b8e",
+      "kind": ".py",
+      "ast_parse": "ok",
+      "relevant_calls": [
+        {
+          "line": 6,
+          "call": "signal.alarm",
+          "args": [
+            "180"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 7,
+          "call": "BinOp(left=Name(id='ROOT'), op=Div(), right=Constant(value='execution_receipt.json')).exists",
+          "args": [],
+          "keywords": {}
+        },
+        {
+          "line": 17,
+          "call": "BinOp(left=Name(id='ROOT'), op=Div(), right=Constant(value='execution_receipt.json')).write_text",
+          "args": [
+            "json.dumps(receipt, indent=2) + '\\n'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 17,
+          "call": "json.dumps",
+          "args": [
+            "receipt"
+          ],
+          "keywords": {
+            "indent": "2"
+          }
+        },
+        {
+          "line": 19,
+          "call": "subprocess.Popen",
+          "args": [
+            "receipt['command']"
+          ],
+          "keywords": {
+            "cwd": "ROOT",
+            "stdout": "subprocess.PIPE",
+            "stderr": "subprocess.PIPE",
+            "text": "True",
+            "start_new_session": "True",
+            "env": "{**os.environ, 'PYTHONDONTWRITEBYTECODE': '1'}"
+          }
+        },
+        {
+          "line": 20,
+          "call": "receipt.update",
+          "args": [],
+          "keywords": {
+            "child_pid": "p.pid",
+            "owned_child_pgid": "p.pid",
+            "status": "'RUNNING'"
+          }
+        },
+        {
+          "line": 22,
+          "call": "p.communicate",
+          "args": [],
+          "keywords": {
+            "timeout": "165"
+          }
+        },
+        {
+          "line": 24,
+          "call": "os.killpg",
+          "args": [
+            "p.pid",
+            "signal.SIGKILL"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 24,
+          "call": "p.communicate",
+          "args": [],
+          "keywords": {
+            "timeout": "10"
+          }
+        },
+        {
+          "line": 25,
+          "call": "receipt.update",
+          "args": [],
+          "keywords": {
+            "returncode": "p.returncode",
+            "stdout": "stdout",
+            "stderr": "stderr",
+            "child_user_cpu_seconds": "resource.getrusage(resource.RUSAGE_CHILDREN).ru_utime",
+            "child_system_cpu_seconds": "resource.getrusage(resource.RUSAGE_CHILDREN).ru_stime",
+            "guard_cpu_seconds": "time.process_time()",
+            "completed_utc": "datetime.datetime.now(datetime.timezone.utc).isoformat()"
+          }
+        },
+        {
+          "line": 27,
+          "call": "json.dumps",
+          "args": [
+            "receipt"
+          ],
+          "keywords": {}
+        }
+      ],
+      "matched_lines": [
+        {
+          "line": 3,
+          "text": "import datetime,hashlib,json,os,resource,signal,subprocess,sys,time"
+        },
+        {
+          "line": 6,
+          "text": "signal.alarm(180);resource.setrlimit(resource.RLIMIT_CPU,(2,29));start=time.monotonic()"
+        },
+        {
+          "line": 7,
+          "text": "if (ROOT/\"execution_receipt.json\").exists() or (ROOT/\"results.json\").exists():raise SystemExit(\"Existing receipt/results: no automatic retry\")"
+        },
+        {
+          "line": 13,
+          "text": "receipt={\"schema\":\"A093-single-execution-receipt-v1\",\"status\":\"STARTING\",\"guard_pid\":os.getpid(),\"started_utc\":datetime.datetime.now(datetime.timezone.utc).isoformat(),"
+        },
+        {
+          "line": 17,
+          "text": "    receipt[\"elapsed_wall_seconds\"]=time.monotonic()-start;(ROOT/\"execution_receipt.json\").write_text(json.dumps(receipt,indent=2)+\"\\n\")"
+        },
+        {
+          "line": 19,
+          "text": "p=subprocess.Popen(receipt[\"command\"],cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,start_new_session=True,env={**os.environ,\"PYTHONDONTWRITEBYTECODE\":\"1\"})"
+        },
+        {
+          "line": 20,
+          "text": "receipt.update(child_pid=p.pid,owned_child_pgid=p.pid,status=\"RUNNING\");save()"
+        },
+        {
+          "line": 22,
+          "text": "    stdout,stderr=p.communicate(timeout=165);receipt[\"status\"]=\"COMPLETE\" if p.returncode==0 else \"FAILED_FIRST_STOP\""
+        },
+        {
+          "line": 23,
+          "text": "except subprocess.TimeoutExpired:"
+        },
+        {
+          "line": 24,
+          "text": "    receipt[\"status\"]=\"TIMEOUT_KILL_OWNED_GROUP_NO_RETRY\";save();os.killpg(p.pid,signal.SIGKILL);stdout,stderr=p.communicate(timeout=10)"
+        },
+        {
+          "line": 25,
+          "text": "receipt.update(returncode=p.returncode,stdout=stdout,stderr=stderr,child_user_cpu_seconds=resource.getrusage(resource.RUSAGE_CHILDREN).ru_utime,"
+        },
+        {
+          "line": 27,
+          "text": "save();print(json.dumps(receipt));raise SystemExit(0 if receipt[\"status\"]==\"COMPLETE\" else 1)"
+        }
+      ]
+    },
+    {
+      "id": "S18",
+      "root_key": "greenaudit",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-green-audit076/cube-dim-6-bounds/audit/round093/full_gamma_review/report.md",
+      "role": "093 independent review",
+      "bytes": 13038,
+      "sha256": "bdccaf1b4db305dc88db4d3853889c43c6a140787d558aa5911fcaad2a6c74b5",
+      "kind": ".md",
+      "matched_lines": [
+        {
+          "line": 108,
+          "text": "\u7a0b\u5e8f\u4ec5\u4e00\u6b21\uff0c1\u4e2a\u65b0\u914d\u7f6ePASS\uff1btool chunk `a96992`\uff0cguard PID20799\u3001child PID20800\uff0cexit0\u3002\u5168guard\u5899\u949f0.028053458\u79d2\uff1bguard CPU0.038576\u79d2\u3001child OS CPU0.021768\u79d2\uff0c\u603b0.060344\u79d2\u3002\u65e0\u6d3b\u8fdb\u7a0b\u3001\u5931\u8d25\u6216\u91cd\u53d1\u3002guard\u5141\u8bb8165\u79d2\u5de5\u4f5c\u30013\u79d2kill/reap\uff0c179\u79d2\u786calarm\u8986\u76d6\u6536\u636e\uff1bchild CPU27\u79d2\u52a0guard CPU2\u79d2\uff0c\u5728CPU30\u53ca\u603b\u5899\u949f180\u4e0a\u9650\u5185\u3002"
+        }
+      ]
+    },
+    {
+      "id": "S19",
+      "root_key": "main",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/upper/round095/smooth_kernel_correction/check_constants.py",
+      "role": "095 final checker",
+      "bytes": 4439,
+      "sha256": "075272357f3549d4b3a64744e821b419201bb40155ab6ee7f25a3f2bcaf682ce",
+      "kind": ".py",
+      "ast_parse": "ok",
+      "relevant_calls": [
+        {
+          "line": 5,
+          "call": "signal.signal",
+          "args": [
+            "signal.SIGALRM",
+            "signal.SIG_DFL"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 6,
+          "call": "signal.setitimer",
+          "args": [
+            "signal.ITIMER_REAL",
+            "179.8"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 25,
+          "call": "BinOp(left=Name(id='P'), op=Div(), right=Name(id='name')).open",
+          "args": [
+            "'x'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 26,
+          "call": "json.dump",
+          "args": [
+            "data",
+            "f"
+          ],
+          "keywords": {
+            "indent": "2",
+            "sort_keys": "True"
+          }
+        },
+        {
+          "line": 97,
+          "call": "json.dumps",
+          "args": [
+            "dict(status='PASS_THREE_EXACT_SANITY_GROUPS', pid=os.getpid(), wall_seconds=time.monotonic() - START, cpu_seconds=time.process_time(), native_calls=0)"
+          ],
+          "keywords": {}
+        }
+      ],
+      "matched_lines": [
+        {
+          "line": 2,
+          "text": "import signal"
+        },
+        {
+          "line": 5,
+          "text": "signal.signal(signal.SIGALRM,signal.SIG_DFL)"
+        },
+        {
+          "line": 6,
+          "text": "signal.setitimer(signal.ITIMER_REAL,179.8)"
+        },
+        {
+          "line": 56,
+          "text": "    groups.append(dict(id=1,status='PASS',support_first_coordinate_lower=str(p[0]-h),"
+        },
+        {
+          "line": 71,
+          "text": "    groups.append(dict(id=2,status='PASS',eta_prime_bound=first,eta_second_bound=second,"
+        },
+        {
+          "line": 91,
+          "text": "    groups.append(dict(id=3,status='PASS',exact_values={k:str(v) for k,v in values.items()},"
+        },
+        {
+          "line": 93,
+          "text": "    save('results.json',dict(status='PASS_THREE_EXACT_SANITY_GROUPS',configurations=groups,"
+        },
+        {
+          "line": 97,
+          "text": "    print(json.dumps(dict(status='PASS_THREE_EXACT_SANITY_GROUPS',pid=os.getpid(),"
+        }
+      ]
+    },
+    {
+      "id": "S20",
+      "root_key": "theory",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/audit/round095/smooth_correction_review/report.md",
+      "role": "095 independent review",
+      "bytes": 4665,
+      "sha256": "e349ffdef667bbdd7ad3d470a67eef24b2ee86651b782b3408115902e0954bd7",
+      "kind": ".md",
+      "matched_lines": [
+        {
+          "line": 3,
+          "text": "**PASS_PROOF_WITH_SCOPE**\u3002\u672a\u53d1\u73b0\u963b\u65ad\u7f3a\u53e3\uff1aC095 \u7684\u7cbe\u786e\u5c01\u5b58\u7248\u672c\u8bc1\u660e\u4e86\u540c\u4e00\u516d\u7ef4"
+        },
+        {
+          "line": 51,
+          "text": "\u7a0b\u5e8f\u8bbe\u7f6e CPU hard cap25 \u79d2\uff08\u4efb\u52a1\u9884\u7b9730\u79d2\uff09\u4e0e\u9ed8\u8ba4\u603b alarm170\u79d2\uff08\u603b\u5899\u949f\u9650180\u79d2\uff09\uff0c"
+        }
+      ]
+    },
+    {
+      "id": "S21",
+      "root_key": "main",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/upper/round096/joint_middle_budget/run_guard.py",
+      "role": "096 final entry",
+      "bytes": 910,
+      "sha256": "e82433ff86338f49c9381f3a25a5adc87d47eaa1cc6c6d922db40607d0e05920",
+      "kind": ".py",
+      "ast_parse": "ok",
+      "relevant_calls": [
+        {
+          "line": 6,
+          "call": "subprocess.Popen",
+          "args": [
+            "[sys.executable, '-B', str(H / 'evaluate.py')]"
+          ],
+          "keywords": {
+            "cwd": "H",
+            "stdout": "subprocess.PIPE",
+            "stderr": "subprocess.STDOUT",
+            "text": "True"
+          }
+        },
+        {
+          "line": 8,
+          "call": "R.write_text",
+          "args": [
+            "json.dumps(r, indent=2) + '\\n'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 8,
+          "call": "json.dumps",
+          "args": [
+            "r"
+          ],
+          "keywords": {
+            "indent": "2"
+          }
+        },
+        {
+          "line": 9,
+          "call": "p.communicate",
+          "args": [],
+          "keywords": {
+            "timeout": "178"
+          }
+        },
+        {
+          "line": 11,
+          "call": "p.kill",
+          "args": [],
+          "keywords": {}
+        },
+        {
+          "line": 11,
+          "call": "p.communicate",
+          "args": [],
+          "keywords": {
+            "timeout": "2"
+          }
+        },
+        {
+          "line": 13,
+          "call": "R.write_text",
+          "args": [
+            "json.dumps(r, indent=2) + '\\n'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 13,
+          "call": "json.dumps",
+          "args": [
+            "r"
+          ],
+          "keywords": {
+            "indent": "2"
+          }
+        },
+        {
+          "line": 14,
+          "call": "json.dumps",
+          "args": [
+            "r"
+          ],
+          "keywords": {}
+        }
+      ],
+      "matched_lines": [
+        {
+          "line": 2,
+          "text": "import json,subprocess,time,sys,os"
+        },
+        {
+          "line": 4,
+          "text": "H=Path(__file__).resolve().parent;R=H/'process_receipt.json'"
+        },
+        {
+          "line": 6,
+          "text": "start=time.monotonic();p=subprocess.Popen([sys.executable,'-B',str(H/'evaluate.py')],cwd=H,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)"
+        },
+        {
+          "line": 9,
+          "text": "try:out,_=p.communicate(timeout=178)"
+        },
+        {
+          "line": 10,
+          "text": "except subprocess.TimeoutExpired:"
+        },
+        {
+          "line": 11,
+          "text": "    p.kill();out,_=p.communicate(timeout=2);r['timeout']=True"
+        },
+        {
+          "line": 12,
+          "text": "r.update(status='EXITED_AND_REAPED',exit_code=p.returncode,total_wall_seconds=time.monotonic()-start)"
+        }
+      ]
+    },
+    {
+      "id": "S22",
+      "root_key": "localaudit",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-localmax-audit/cube-dim-6-bounds/audit/round096/joint_middle_review/report.md",
+      "role": "096 independent review",
+      "bytes": 11852,
+      "sha256": "a50a28ef74eef5116a94dc8126c933661ff3c27ad57ae656808bc726aae42ee2",
+      "kind": ".md",
+      "matched_lines": [
+        {
+          "line": 5,
+          "text": "**PASS\uff0c\u9650\u4e8e\u4f5c\u8005\u51c6\u786e\u9650\u5b9a\u7684\u4e24\u4e2a\u5206\u522b\u6c42\u89e3\u7684\u62bd\u8c61\u677e\u5f1b\u9884\u7b97\u3002** \u65b0\u7684 mass/peak/volume"
+        },
+        {
+          "line": 200,
+          "text": "\u767b\u8bb0\u5148\u4e8e\u8fd0\u884c\uff1aCPU \u786c\u4e0a\u965020\u79d2\u3001prelimit18\u79d2\u3001alarm165\u79d2\u3001\u5916\u5c42timeout170\u79d2\uff0c"
+        },
+        {
+          "line": 201,
+          "text": "\u4e3a\u6bcf\u7a0b\u5e8f\u542b\u4fdd\u5b58/reap/\u6e05\u7406\u603b\u5899\u949f180\u79d2\u7559\u4f59\u91cf\u3002`launcher_receipt.json` \u8bb0\u5f55\u771f\u5b9e"
+        }
+      ]
+    },
+    {
+      "id": "S23",
+      "root_key": "main",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/lower/round097/full_spacing_local_max/check_saved.py",
+      "role": "097 final checker",
+      "bytes": 3812,
+      "sha256": "257ecd0b5d7c686ce62222d86d01a2c32376d7f8aa57ee58f2536d05f9e28db3",
+      "kind": ".py",
+      "ast_parse": "ok",
+      "relevant_calls": [
+        {
+          "line": 8,
+          "call": "signal.alarm",
+          "args": [
+            "170"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 16,
+          "call": "BinOp(left=Name(id='H'), op=Div(), right=Constant(value='receipt.json')).read_text",
+          "args": [],
+          "keywords": {}
+        },
+        {
+          "line": 43,
+          "call": "BinOp(left=Name(id='H'), op=Div(), right=Constant(value='checker_receipt.json')).open",
+          "args": [
+            "'x'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 43,
+          "call": "json.dump",
+          "args": [
+            "out",
+            "f"
+          ],
+          "keywords": {
+            "indent": "2"
+          }
+        },
+        {
+          "line": 44,
+          "call": "signal.alarm",
+          "args": [
+            "0"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 44,
+          "call": "json.dumps",
+          "args": [
+            "{k: out.get(k) for k in ['status', 'checked_assertions', 'CPU_seconds_before_save', 'wall_seconds_before_save', 'error']}"
+          ],
+          "keywords": {}
+        }
+      ],
+      "matched_lines": [
+        {
+          "line": 6,
+          "text": "import json,time,resource,signal,hashlib,sys"
+        },
+        {
+          "line": 8,
+          "text": "H=Path(__file__).resolve().parent;CPU,WALL=time.process_time(),time.monotonic();resource.setrlimit(resource.RLIMIT_CPU,(15,15));signal.alarm(170)"
+        },
+        {
+          "line": 16,
+          "text": " reg=json.loads((H/'registration.json').read_text());r=json.loads((H/'results.json').read_text());rec=json.loads((H/'receipt.json').read_text())"
+        },
+        {
+          "line": 39,
+          "text": " out.update({'status':'pass_saved_scalar_and_chamber_certificate','checked_assertions':n,'delta':str(delta),'B':B,'simple_decrease_coefficient':'1/50'})"
+        },
+        {
+          "line": 41,
+          "text": "finally:"
+        },
+        {
+          "line": 42,
+          "text": " out.update({'CPU_seconds_before_save':time.process_time()-CPU,'wall_seconds_before_save':time.monotonic()-WALL,'input_sha256':{str(H/p):hashlib.sha256((H/p).read_bytes()).hexdigest() for p in ['results.json','registration.json','receipt.json','field.py','check_saved.py']}})"
+        },
+        {
+          "line": 43,
+          "text": " with (H/'checker_receipt.json').open('x') as f:json.dump(out,f,indent=2);f.write('\\n')"
+        },
+        {
+          "line": 44,
+          "text": " print(json.dumps({k:out.get(k) for k in ['status','checked_assertions','CPU_seconds_before_save','wall_seconds_before_save','error']}));signal.alarm(0)"
+        },
+        {
+          "line": 45,
+          "text": " if out['status']!='pass_saved_scalar_and_chamber_certificate':sys.exit(1)"
+        }
+      ]
+    },
+    {
+      "id": "S24",
+      "root_key": "localaudit",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-localmax-audit/cube-dim-6-bounds/audit/round097/full_spacing_review/report.md",
+      "role": "097 independent review",
+      "bytes": 10341,
+      "sha256": "e6d43d0f3b5fcb7f2331e875845d91a63b88e4d116f0e9b85d3b0410eb35e385",
+      "kind": ".md",
+      "matched_lines": [
+        {
+          "line": 5,
+          "text": "**PASS\uff0c\u6761\u4ef6\u4e3a\u4e3b\u7ebf\u7a0b\u6700\u7ec8\u63a5\u53d7 E089 \u5bf9 R089 \u5b8c\u6574\u5de6\u53f3\u5bfc\u6570\u7684\u72ec\u5ba1\u3002**"
+        },
+        {
+          "line": 57,
+          "text": "\u9a8c\u6536\u5c1a\u672a\u7531\u4e3b\u7ebf\u7a0b\u63d0\u4f9b\u3002\u4e0d\u80fd\u628a\u4f5c\u8005 seal \u6216\u4f5c\u8005 checker PASS \u5199\u6210 E089 \u7684\u72ec\u5ba1\u63a5\u53d7\u3002"
+        },
+        {
+          "line": 159,
+          "text": "\u6267\u884c\u767b\u8bb0\u5148\u4e8e\u8fd0\u884c\uff0cCPU \u786c\u4e0a\u9650 15 \u79d2\u3001prelimit 13.5 \u79d2\u3001\u5b50\u7a0b\u5e8f alarm 165 \u79d2\u3001"
+        },
+        {
+          "line": 160,
+          "text": "\u5916\u5c42 timeout 170 \u79d2\uff0c\u4e3a\u603b\u5899\u949f\u542b\u6e05\u7406 180 \u79d2\u7559\u4f59\u91cf\u3002\u7a0b\u5e8f\u9996\u5931\u8d25\u505c\u6b62\u3001\u6392\u4ed6\u8f93\u51fa\uff0c"
+        },
+        {
+          "line": 161,
+          "text": "\u65e0\u81ea\u52a8\u91cd\u8dd1\uff1b\u672c\u6b21\u65e0\u5931\u8d25\u3002`launcher_receipt.json` \u662f\u5916\u5c42\u771f\u5b9e\u6536\u636e\u3002"
+        }
+      ]
+    },
+    {
+      "id": "S25",
+      "root_key": "upper098",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-upper098/cube-dim-6-bounds/upper/round098/direct_green_geometry/run_once.py",
+      "role": "098 production entry",
+      "bytes": 2129,
+      "sha256": "1f1a77f71c0ab644cdf457decfadbd13474285c3ad36cc9b22d2b6cc1a195c02",
+      "kind": ".py",
+      "ast_parse": "ok",
+      "relevant_calls": [
+        {
+          "line": 6,
+          "call": "receipt.exists",
+          "args": [],
+          "keywords": {}
+        },
+        {
+          "line": 9,
+          "call": "signal.signal",
+          "args": [
+            "signal.SIGALRM",
+            "lambda *_: (_ for _ in ()).throw(TimeoutError('supervisor wall175'))"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 9,
+          "call": "TimeoutError",
+          "args": [
+            "'supervisor wall175'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 10,
+          "call": "signal.alarm",
+          "args": [
+            "175"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 15,
+          "call": "subprocess.Popen",
+          "args": [
+            "[sys.executable, str(P / 'check_fixed.py')]"
+          ],
+          "keywords": {
+            "cwd": "P",
+            "stdout": "subprocess.PIPE",
+            "stderr": "subprocess.PIPE",
+            "text": "True",
+            "start_new_session": "True",
+            "preexec_fn": "limit"
+          }
+        },
+        {
+          "line": 17,
+          "call": "child.communicate",
+          "args": [],
+          "keywords": {
+            "timeout": "160"
+          }
+        },
+        {
+          "line": 21,
+          "call": "os.killpg",
+          "args": [
+            "child.pid",
+            "signal.SIGKILL"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 22,
+          "call": "child.communicate",
+          "args": [],
+          "keywords": {
+            "timeout": "8"
+          }
+        },
+        {
+          "line": 25,
+          "call": "os.killpg",
+          "args": [
+            "child.pid",
+            "signal.SIGKILL"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 25,
+          "call": "child.wait",
+          "args": [],
+          "keywords": {
+            "timeout": "5"
+          }
+        },
+        {
+          "line": 26,
+          "call": "signal.alarm",
+          "args": [
+            "0"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 29,
+          "call": "receipt.write_text",
+          "args": [
+            "json.dumps(r, indent=2) + '\\n'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 29,
+          "call": "json.dumps",
+          "args": [
+            "r"
+          ],
+          "keywords": {
+            "indent": "2"
+          }
+        },
+        {
+          "line": 30,
+          "call": "json.dumps",
+          "args": [
+            "r"
+          ],
+          "keywords": {}
+        }
+      ],
+      "matched_lines": [
+        {
+          "line": 1,
+          "text": "\"\"\"One owned child, CPU60, wall<=180 including cleanup and receipt.\"\"\""
+        },
+        {
+          "line": 3,
+          "text": "import datetime, json, os, resource, signal, subprocess, sys, time"
+        },
+        {
+          "line": 5,
+          "text": "receipt=P/'run_receipt.json'"
+        },
+        {
+          "line": 6,
+          "text": "if receipt.exists() or (P/'results.json').exists(): raise SystemExit('one attempt only')"
+        },
+        {
+          "line": 9,
+          "text": "signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(TimeoutError('supervisor wall175')))"
+        },
+        {
+          "line": 10,
+          "text": "signal.alarm(175)"
+        },
+        {
+          "line": 15,
+          "text": "    child=subprocess.Popen([sys.executable,str(P/'check_fixed.py')],cwd=P,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,start_new_session=True,preexec_fn=limit)"
+        },
+        {
+          "line": 17,
+          "text": "        out,err=child.communicate(timeout=160);code=child.returncode"
+        },
+        {
+          "line": 19,
+          "text": "    except (subprocess.TimeoutExpired,TimeoutError):"
+        },
+        {
+          "line": 20,
+          "text": "        status='TIMEOUT_NO_RETRY'"
+        },
+        {
+          "line": 21,
+          "text": "        os.killpg(child.pid,signal.SIGKILL)"
+        },
+        {
+          "line": 22,
+          "text": "        out,err=child.communicate(timeout=8);code=child.returncode"
+        },
+        {
+          "line": 23,
+          "text": "finally:"
+        },
+        {
+          "line": 25,
+          "text": "        os.killpg(child.pid,signal.SIGKILL);child.wait(timeout=5)"
+        },
+        {
+          "line": 26,
+          "text": "    signal.alarm(0)"
+        },
+        {
+          "line": 28,
+          "text": "    r={'status':status,'started_utc':started_utc,'finished_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'guard_pid':os.getpid(),'child_pid':None if child is None else child.pid,'exit_code':code,'timeout_seconds':160,'cpu_limit_seconds':60,'program_wall_hard_seconds':180,'cleanup_included':True,'guard_elapsed_seconds':time.monotonic()-start,'guard_cpu_seconds':time.process_time()-cpu,'child_cpu_seconds':after.ru_utime+after.ru_stime-before.ru_utime-before.ru_stime,'reaped':child "
+        },
+        {
+          "line": 29,
+          "text": "    receipt.write_text(json.dumps(r,indent=2)+'\\n')"
+        }
+      ]
+    },
+    {
+      "id": "S26",
+      "root_key": "upper098",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-upper098/cube-dim-6-bounds/upper/round098/direct_green_geometry/run_receipt.json",
+      "role": "098 observed receipt",
+      "bytes": 1280,
+      "sha256": "2129b2cbe49832a7a2884b598fee772d83c1447a979c9a61bb8e622ba9084c3a",
+      "kind": ".json",
+      "json_parse": "ok",
+      "relevant_json_pointers": [
+        {
+          "pointer": "$/status",
+          "value": "COMPLETED"
+        },
+        {
+          "pointer": "$/exit_code",
+          "value": 0
+        },
+        {
+          "pointer": "$/timeout_seconds",
+          "value": 160
+        },
+        {
+          "pointer": "$/program_wall_hard_seconds",
+          "value": 180
+        },
+        {
+          "pointer": "$/guard_elapsed_seconds",
+          "value": 0.4359341250092257
+        }
+      ]
+    },
+    {
+      "id": "S27",
+      "root_key": "localaudit",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-localmax-audit/cube-dim-6-bounds/audit/round098/direct_green_review/report.md",
+      "role": "098 independent review",
+      "bytes": 14175,
+      "sha256": "ce868edda9a485d7b18dafa73f73a52f2b2d141a713a4f6d6fabf41f54f4688b",
+      "kind": ".md",
+      "matched_lines": [
+        {
+          "line": 5,
+          "text": "**PASS\u3002** \u5728\u7ee7\u627f\u7684 033/037/043/074 \u63a5\u53e3\u4e0b\uff0c098 \u7684\u771f\u5b9e\u56db\u7ef4\u5546\u6052\u7b49\u5f0f\u5bf9\u6bcf\u4e2a"
+        },
+        {
+          "line": 249,
+          "text": "\u5916\u58f3\u542b reap \u5899\u949f0.039393\u79d2\u3002CPU\u786c\u4e0a\u965020\u79d2\u3001prelimit18\u79d2\u3001\u5b50 alarm165\u79d2\u3001"
+        },
+        {
+          "line": 250,
+          "text": "\u5916\u5c42timeout170\u79d2\uff0c\u4e3a\u542b\u4fdd\u5b58/\u6e05\u7406\u603b\u5899\u949f180\u79d2\u7559\u4f59\u91cf\u3002\u9996\u5931\u8d25\u505c\u6b62\u672a\u89e6\u53d1\uff0c"
+        }
+      ]
+    },
+    {
+      "id": "S28",
+      "root_key": "coveraudit",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-cover090-audit/cube-dim-6-bounds/audit/round099/parity_mass_review/check_exact_saved.py",
+      "role": "099 auditor checker",
+      "bytes": 20272,
+      "sha256": "61e2e2b1de1a8d9b3a7744b389cf2a142c0a124daf5db8920ed0c4d028ab98ce",
+      "kind": ".py",
+      "ast_parse": "ok",
+      "relevant_calls": [
+        {
+          "line": 10,
+          "call": "signal.signal",
+          "args": [
+            "signal.SIGALRM",
+            "signal.SIG_DFL"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 11,
+          "call": "signal.setitimer",
+          "args": [
+            "signal.ITIMER_REAL",
+            "179.5"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 47,
+          "call": "BinOp(left=Name(id='OUT'), op=Div(), right=Name(id='name')).open",
+          "args": [
+            "'x'"
+          ],
+          "keywords": {}
+        },
+        {
+          "line": 48,
+          "call": "json.dump",
+          "args": [
+            "data",
+            "stream"
+          ],
+          "keywords": {
+            "indent": "2",
+            "sort_keys": "True"
+          }
+        },
+        {
+          "line": 306,
+          "call": "subprocess.run",
+          "args": [
+            "['/bin/ps', '-p', str(failed['pid']) + ',' + str(data['pid']), '-o', 'pid=,stat=,command=']"
+          ],
+          "keywords": {
+            "capture_output": "True",
+            "text": "True",
+            "timeout": "5"
+          }
+        },
+        {
+          "line": 337,
+          "call": "json.dumps",
+          "args": [
+            "{k: result[k] for k in ('status', 'unequal_velocity_group_count', 'static_B_to_C_maps', 'normal_cofacet_occurrences', 'patch_projection_containments', 'saved_background_separation_certificates_checked', 'ratio_normalization_factor')}"
+          ],
+          "keywords": {}
+        }
+      ],
+      "matched_lines": [
+        {
+          "line": 9,
+          "text": "import signal"
+        },
+        {
+          "line": 10,
+          "text": "signal.signal(signal.SIGALRM,signal.SIG_DFL)"
+        },
+        {
+          "line": 11,
+          "text": "signal.setitimer(signal.ITIMER_REAL,179.5)"
+        },
+        {
+          "line": 14,
+          "text": "import os,json,hashlib,time,difflib,subprocess"
+        },
+        {
+          "line": 306,
+          "text": "    observation=subprocess.run(['/bin/ps','-p',str(failed['pid'])+','+str(data['pid']),'-o','pid=,stat=,command='],"
+        },
+        {
+          "line": 307,
+          "text": "        capture_output=True,text=True,timeout=5)"
+        },
+        {
+          "line": 310,
+          "text": "    result=dict(status='PASS_INDEPENDENT_CURRENT075_PARITY_CUSP_REVIEW',"
+        },
+        {
+          "line": 327,
+          "text": "        original_producer_pid_observation=dict(pids=[failed['pid'],data['pid']],ps_exit_code=observation.returncode,"
+        },
+        {
+          "line": 328,
+          "text": "            stdout=observation.stdout,stderr=observation.stderr,signals_sent=0),"
+        },
+        {
+          "line": 331,
+          "text": "    save('run_receipt.json',dict(status='PASS',pid=os.getpid(),exit_code=0,"
+        },
+        {
+          "line": 334,
+          "text": "        hard_alarm_seconds=179.5,cpu_limit_seconds=15,cleanup_and_receipt_remain_under_hard_alarm=True,"
+        },
+        {
+          "line": 344,
+          "text": "        save('failure_receipt.json',dict(status='STOP_NO_RETRY',pid=os.getpid(),error=repr(error),"
+        }
+      ]
+    },
+    {
+      "id": "S29",
+      "root_key": "coveraudit",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-cover090-audit/cube-dim-6-bounds/audit/round099/parity_mass_review/timing_binding_run_receipt.json",
+      "role": "099 timing binding receipt",
+      "bytes": 534,
+      "sha256": "2863ce1e0b9858ed46c585f454c6f066c57453099cab24b20c914654f5a412af",
+      "kind": ".json",
+      "json_parse": "ok",
+      "relevant_json_pointers": [
+        {
+          "pointer": "$/cleanup_and_receipt_remain_under_hard_alarm",
+          "value": true
+        },
+        {
+          "pointer": "$/exit_code",
+          "value": 0
+        },
+        {
+          "pointer": "$/status",
+          "value": "PASS"
+        },
+        {
+          "pointer": "$/wall_seconds_including_result_save",
+          "value": 0.00381633298820816
+        }
+      ]
+    },
+    {
+      "id": "S30",
+      "root_key": "coveraudit",
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-cover090-audit/cube-dim-6-bounds/audit/round099/parity_mass_review/report.md",
+      "role": "099 independent review",
+      "bytes": 11520,
+      "sha256": "b6ec30b949f74c199755377ff60d16ad4dbaf8f5e84d51785a95bc1f3dbe2d2e",
+      "kind": ".md",
+      "matched_lines": [
+        {
+          "line": 3,
+          "text": "\u7ed3\u8bba\uff1a**PASS_INDEPENDENT_CURRENT075_PARITY_CUSP_REVIEW**\u3002"
+        },
+        {
+          "line": 16,
+          "text": "\u672a\u6765\u4e0d\u5f97\u636e\u672c\u6570\u5b66PASS\u7ee7\u7eed\u8fd0\u884c\u76f8\u540c\u672a\u4fee\u590d\u5165\u53e3\u3002\u672c\u72ec\u5ba1\u7684\u51c6\u786e\u8bc1\u4e66\u9a8c\u8bc1\u4f7f\u7528\u7b26\u5408\u786c\u603balarm\u7684\u72ec\u7acb\u7a0b\u5e8f\u3002"
+        },
+        {
+          "line": 169,
+          "text": "\u9759\u6001\u6e90\u7801\u68c0\u67e5\u786e\u8ba4\uff1a180\u79d2SIGALRM handler\u4f1araise\u53ef\u6355\u83b7\u7684TimeoutError\uff0c"
+        },
+        {
+          "line": 170,
+          "text": "\u82e5\u5728try\u5185\u89e6\u53d1\u4f1a\u88abexcept Exception\u6355\u83b7\uff1b\u4e00\u6b21\u6027alarm\u5df2\u6d88\u8017\u800cfinally\u672arearm\u3002"
+        },
+        {
+          "line": 171,
+          "text": "alarm(0)\u53c8\u5728\u53ef\u9009\u9519\u8bef\u6253\u5370/sys.exit\u53ca\u89e3\u91ca\u5668\u9000\u51fa\u524d\u53d6\u6d88\u3002CPU15/16\u79d2\u9650\u5236\u4e5f\u4e0d\u80fd\u66ff\u4ee3wall\u4e0a\u9650\u3002"
+        },
+        {
+          "line": 172,
+          "text": "\u56e0\u6b64\u539f\u751f\u6210\u5668\u7684\u5168\u7a0b\u542b\u6e05\u7406\u786cpolicy\u672a\u8ba4\u8bc1\uff1b\u8fd9\u4e0e\u672c\u8f6e\u6ca1\u6709\u5b9e\u9645\u8d85\u65f6\u8bc1\u636e\u3001\u51c6\u786e\u8bc1\u4e66\u6570\u5b66PASS\u5206\u5f00\u3002"
+        },
+        {
+          "line": 179,
+          "text": "| 1 \u72ec\u7acbsaved/exact\u8bc1\u4e66 | 8189e8 / 31619 | exit0\uff0cPASS | 0.120116750\uff08\u542b\u7ed3\u679c\u4fdd\u5b58\uff09 / 0.102317 |"
+        },
+        {
+          "line": 180,
+          "text": "| 2 \u884c\u653f\u9644\u5f55\u5b57\u8282\u7ed1\u5b9a | fac745 / 33131 | exit0\uff0cPASS | 0.003816333\uff08\u542b\u7ed3\u679c\u4fdd\u5b58\uff09 / 0.001682 |"
+        },
+        {
+          "line": 182,
+          "text": "\u4e24\u7a0b\u5e8f\u4ece\u5165\u53e3\u88c5\u9ed8\u8ba4SIGALRM179.5\u79d2\u3001CPU\u786c\u9650\u523615\u79d2\uff0c\u4fdd\u5b58/receipt/\u89e3\u91ca\u5668\u6e05\u7406\u4ecd\u5728\u9ed8\u8ba4\u603bfuse\u5185\uff0c"
+        },
+        {
+          "line": 183,
+          "text": "\u6ca1\u6709\u6355\u83b7\u6216\u53d6\u6d88\u8be5\u603balarm\u3002\u4e24\u6b21\u5747\u6b63\u5e38\u9000\u51fa\uff1b\u6ca1\u6709\u79d1\u5b66\u6216checker\u91cd\u8dd1\u3001\u5931\u8d25\u7eed\u8dd1\u3001\u7b2c\u4e09\u9636\u6bb5\u6216\u81ea\u52a8\u91cd\u8bd5\u3002"
+        },
+        {
+          "line": 184,
+          "text": "\u8fd0\u884cPython\u4e3a\u672c\u673a\u65e2\u6709\u6570\u5b66venv\u3002\u6700\u5c0f\u51c6\u786echecker\u3001\u4e24\u4e2a\u7ed3\u679c/\u5b9e\u9645receipt\u3001\u767b\u8bb0\u548c\u5c01\u5b58manifest\u4e00\u8d77\u4ea4\u4ed8\u3002"
+        }
+      ]
+    }
+  ]
+}
