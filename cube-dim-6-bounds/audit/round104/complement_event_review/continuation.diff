@@ -1,0 +1,57 @@
+--- check_saved.py	2026-10-27 00:34:40
++++ check_saved_v2.py	2026-10-27 00:48:31
+@@ -45,10 +45,16 @@
+ def main():
+     # These checks precede any certificate arithmetic. The primary writes this
+     # release only after approving the exact scripts and registered inputs.
+-    approval=read(OUT/'primary_release.json');registration=read(OUT/'registration.json')
++    approval=read(OUT/'continuation_release.json');registration=read(OUT/'registration.json')
++    continuation=read(OUT/'continuation_registration.json')
+     need(approval['authorized'] is True and approval['round']=='104-independent-review' and
++         approval['continuation_registration_sha256']==sha(OUT/'continuation_registration.json') and
+          approval['review_registration_sha256']==sha(OUT/'registration.json') and
+          approval['script_sha256'][Path(__file__).name]==sha(Path(__file__)), 'No exact main static release')
++    need(sha(OUT/'primary_release.json')==continuation['first_attempt']['release_sha256'] and
++         sha(OUT/'check_saved.py')==continuation['first_attempt']['script_sha256'] and
++         sha(OUT/'saved_failure_receipt.json')==continuation['first_attempt']['failure_receipt_sha256'],
++         'Original stopped attempt must remain frozen')
+     for name,digest in registration['input_sha256'].items():need(sha(AUTHOR/name)==digest,'Registered original input')
+     need(sha(AUTHOR/'manifest.json')==approval['author_final_manifest_sha256']==registration['author_final_manifest_sha256'],'Author final seal')
+     manifest=read(AUTHOR/'manifest.json')
+@@ -59,7 +65,19 @@
+         need(sha(p)==row['sha256'],'Final author artifact hash')
+         if 'bytes' in row:need(p.stat().st_size==row['bytes'],'Final author bytes')
+     sources=read(AUTHOR/'source_manifest.json')
+-    for row in sources['sources']:need(sha(row['path'])==row['sha256'],'Readonly source pin')
++    mapping=continuation['historical_source_mapping']
++    need(mapping['original_path']==str(BASE/'coordination/run_policy.json') and
++         mapping['snapshot_relative']=='historical_inputs/run_policy_104.json' and
++         mapping['original_sha256']=='f0fbdc860cd7d266050f9461d3f527040873fbc9357d8ef4cfde7d010abb206a',
++         'Only the explicitly frozen historical administrative policy may be mapped')
++    mapped=0
++    for row in sources['sources']:
++        source_path=Path(row['path'])
++        if row['path']==mapping['original_path']:
++            source_path=OUT/mapping['snapshot_relative'];mapped+=1
++            need(row['sha256']==mapping['original_sha256'],'Exact historical source pin')
++        need(sha(source_path)==row['sha256'],'Readonly source pin')
++    need(mapped==1,'Map the administrative policy exactly once; all other sources unchanged')
+     data=read(AUTHOR/'results.json');receipt=read(AUTHOR/'run_receipt.json');release=read(AUTHOR/'parent_release.json')
+     old=read(AUTHOR/'upstream_constants.json')
+     need(data['status']=='PASS_FOUR_CONFIGURATIONS_SOURCE_PROOF_REVIEW_SEPARATE' and
+@@ -141,6 +159,7 @@
+     need(c4['three_nonparallel_normal_contributions_sum_zero'] and c4['no_two_normal_contributions_cancel'],'Original source-witness flags')
+     for p,digest in list(HASHES.items()):need(hashlib.sha256(Path(p).read_bytes()).hexdigest()==digest,'Postcheck evidence mutation')
+     review=dict(status='PASS_SAVED_BINDINGS_RESTORED_PAIR_ACCOUNT_AND_LOCAL_GLOBAL_SCOPE',source_hashes=HASHES,
++        historical_administrative_source_mapping=mapping,first_attempt_retained=True,
+         author_final_manifest_sha256=sha(AUTHOR/'manifest.json'),ordered_pair_counts=counts,coarea_J_squared=[20,32,36],ordered_pairs=930,
+         source_restoration_precedes_peak_and_time=True,omission_Crem_and_third_deletion_not_used=True,
+         core_ratio=text(ratio),core_partial_I_plan=text(core_plan),core_remaining_allowance_is_not_global_S=True,
+@@ -165,6 +184,6 @@
+ if __name__=='__main__':
+     try:main()
+     except BaseException as error:
+-        save('saved_failure_receipt.json',dict(status='STOP_NO_RETRY',error=repr(error),pid=os.getpid(),
++        save('saved_v2_failure_receipt.json',dict(status='STOP_NO_RETRY',error=repr(error),pid=os.getpid(),
+             wall_seconds=time.monotonic()-START,cpu_seconds=time.process_time()-CPU,author_generator_runs=0))
+         raise

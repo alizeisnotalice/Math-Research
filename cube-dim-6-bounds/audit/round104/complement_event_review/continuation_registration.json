@@ -1,0 +1,41 @@
+{
+  "schema": "A104-explicit-administrative-source-continuation-v2",
+  "model": "GPT-6.1-sol",
+  "owner": "k090_sol_cover_audit",
+  "must_not_run_before_new_main_static_release": true,
+  "first_attempt": {
+    "script": "check_saved.py",
+    "script_sha256": "0364b359bb6a349661c712f0d283413961be566b270c538569d48c319d571f1c",
+    "release_sha256": "3622e3b9f0d1fe8d09aa6d7e998895e436d002ce0675b539b8338c81003fd820",
+    "failure_receipt_sha256": "2a91d56854bce370879d0da0fe6034fbc1afca9c2669cf283a6d1a038d749113",
+    "tool_chunk": "826001",
+    "pid": 50477,
+    "exit_code": 1,
+    "reason": "Live mutable administrative run_policy changed following the user's explicit runtime-policy override; frozen original104 source pin remained the old policy.",
+    "mathematical_configuration_or_dyadic_checks_reached": false,
+    "generator_invocations": 0,
+    "first_attempt_retained_without_overwrite": true
+  },
+  "historical_source_mapping": {
+    "original_path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/coordination/run_policy.json",
+    "original_sha256": "f0fbdc860cd7d266050f9461d3f527040873fbc9357d8ef4cfde7d010abb206a",
+    "snapshot_relative": "historical_inputs/run_policy_104.json",
+    "provenance": "git show 961b8d8f2d3a25cd7f2af580f7385f6da4b99e04:cube-dim-6-bounds/coordination/run_policy.json from main clone, original bytes redirected without transformation",
+    "provenance_git_show_tool_chunk": "d0d6cd",
+    "provenance_git_show_exit_code": 0,
+    "snapshot_hash_tool_chunk": "9e426a",
+    "current_policy_sha256_at_failure_for_context_only": "b3bb5af5b10e0a634eb30da2ce8c3092c90fdf848e8ca3c10ac4210a8db0a214",
+    "only_one_administrative_source_remapped": true,
+    "other_sources_and_all_mathematics_unchanged": true
+  },
+  "original_registration_sha256": "299564a88c1e3639e683a9c998baf3c40705db6cb0ac4f7901c8a48b648c43fe",
+  "author_final_manifest_sha256_unchanged": "2763e2c714c8c76d4254ec558bc6e379e6dec7316af0bbcbd5d1914af924aebb",
+  "fixed_new_saved_exact_groups": ["check_saved_v2.py", "check_new_certificates.py"],
+  "continuation_is_explicit_not_an_automatic_retry": true,
+  "author_generator_or_original_checker_or_old_configuration_replays": 0,
+  "source_math_changes": 0,
+  "second_script_source_sha256_unchanged": "4746b550de02e09902cf853fa79dea8c37e772d8ca318c488ee0645b7718b755",
+  "second_script_gate": "Original primary_release remains unchanged and binds this exact second source. The new main continuation release additionally binds both scripts and authorizes its unique execution only after v2 success.",
+  "runtime_policy": "User explicitly cancelled time ceilings. Already registered default179/CPU20 retained as this audit's own short-feedback budget; it is not a current user limit.",
+  "stop": "Any v2 failure stops without executing group2; any group2 failure stops without retry. No implicit expansion, no lower-bound research, no future105 coefficient."
+}

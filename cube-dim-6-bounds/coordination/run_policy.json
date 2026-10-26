@@ -1,13 +1,13 @@
 {
-  "effective_utc": "2026-10-26T09:21:50.233364+00:00",
-  "source": "user: 程序时间上限设置为三分钟",
-  "wall_seconds_per_program": 180,
+  "effective_utc": "2026-10-26T16:43:45.633722+00:00",
+  "source": "user: 程序运行时间不设上限",
+  "wall_seconds_per_program": null,
   "total_research_budget": "unlimited",
   "priority": "upper only; lower research explicitly stopped by user",
-  "termination": "timeout: preserve logs/checkpoint, terminate and wait only task-owned process; no automatic rerun",
+  "termination": "stop on finite registered candidate/node/exhaustion/convergence or real computational error; preserve/checkpoint own work",
   "existing_completed_runs": "retain actual original limits and timings; no retroactive rewriting",
-  "new_programs": "apply180s wall timeout, including native/checkers; administrative runtime also bounded",
-  "limit_includes_cleanup": true,
+  "new_programs": "no user-imposed time ceiling; finite input/parameter/candidate batches, resumable checkpoints and mathematical acceptance/stop conditions",
+  "limit_includes_cleanup": "no time ceiling; still clean only task-owned resources",
   "runtime_current": "068core+082runtime main releases bound for090;8nodes/8totalnative;follow real original handles",
   "model_amendment": {
     "source": "user: 下一轮开始不得调用astra subagent",
@@ -17,5 +17,6 @@
     "supersedes": "earlier bottleneck/breakthrough Astra preference"
   },
   "lower_stop_checkpoint": "coordination/phase_20261025/lower_stop_20261026.json",
-  "new_program_gate": "primary must inspect default hard fuse through last receipt/stdout/exit; no early cancellation; task-owned subprocess cleanup bounded"
+  "new_program_gate": "main reviews mathematics/source bindings and resource ownership before execution; hard180 default-fuse requirement superseded by latest user instruction",
+  "runtime_amendment": "coordination/phase_20261025/unlimited_runtime_20261027.json"
 }

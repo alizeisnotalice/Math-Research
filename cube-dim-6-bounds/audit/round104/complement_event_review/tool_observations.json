@@ -1,0 +1,65 @@
+{
+  "scope": "Actual tool outputs, with complete Date.now-around-awaited-exec timing distinct from internal samples; no source generator or original checker replay.",
+  "first_attempt": {
+    "group": 1,
+    "complete_awaited_tool_roundtrip_seconds": 0.105,
+    "result": {
+      "chunk_id": "826001",
+      "wall_time_seconds": 0.000006167,
+      "exit_code": 1,
+      "original_token_count": 218,
+      "output": "Traceback (most recent call last):\n  File \"/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-cover090-audit/cube-dim-6-bounds/audit/round104/complement_event_review/check_saved.py\", line 166, in <module>\n    try:main()\n        ~~~~^^\n  File \"/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-cover090-audit/cube-dim-6-bounds/audit/round104/complement_event_review/check_saved.py\", line 62, in main\n    for row in sources['sources']:need(sha(row['path'])==row['sha256'],'Readonly source pin')\n                                  ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-cover090-audit/cube-dim-6-bounds/audit/round104/complement_event_review/check_saved.py\", line 22, in need\n    if not ok:raise ValueError(message)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Readonly source pin\n"
+    }
+  },
+  "explicit_continuation": {
+    "main_release_sha256": "df2317c471566981df0a30e9c8d3212345ad59fad4f4464a0f240b087ec884be",
+    "saved_group": {
+      "group": "v2-saved",
+      "complete_awaited_tool_roundtrip_seconds": 0.091,
+      "result": {
+        "chunk_id": "185fc5",
+        "wall_time_seconds": 0.000008084,
+        "exit_code": 0,
+        "original_token_count": 288,
+        "output": "{\"status\": \"PASS_SAVED_BINDINGS_RESTORED_PAIR_ACCOUNT_AND_LOCAL_GLOBAL_SCOPE\", \"ordered_pairs\": 930, \"core_ratio_interval\": [\"948418426630486574125447876903365399142989833576446736360478296835330562654150094900633304859897760344391549704011/4925250774549309901534880012517951725634967408808180833493536675530715221437151326426783281860614455100828498788352\", \"3793673706521946296501791507613461596571959334305786945441913187341322250616600379602533219439591041377566198816065/19701003098197239606139520050071806902539869635232723333974146702122860885748605305707133127442457820403313995153408\"], \"full_middle_ratio_interval\": [\"730863284430203892985696106743030097513514117189346320359914507660512081927099732343340410767639415398873090552991/153914086704665934422965000391185991426092731525255651046673021110334850669910978950836977558144201721900890587136\", \"11693812550883262287771137707888481560216225875029541125758632122568193310833595717493446572282230646381969448847971/2462625387274654950767440006258975862817483704404090416746768337765357610718575663213391640930307227550414249394176\"], \"complete_g_I_S\": false, \"author_generator_runs\": 0}\n"
+      }
+    },
+    "new_exact_group": {
+      "group": "new-exact",
+      "complete_awaited_tool_roundtrip_seconds": 0.472,
+      "result": {
+        "chunk_id": "45a34a",
+        "wall_time_seconds": 0.312835542,
+        "exit_code": 0,
+        "original_token_count": 40,
+        "output": "{\"status\": \"PASS_NEW_EXACT_CERTIFICATES_AND_FORMAL_SOURCE_WITNESS\", \"new_radial20\": \"15/164916224\", \"complete_global_g_I_S\": false, \"author_generator_runs\": 0}\n"
+      }
+    }
+  },
+  "actual_receipt_PIDs": {
+    "first_administrative_stop": 50477,
+    "saved_v2_pass": 51436,
+    "new_exact_pass": 51444
+  },
+  "process_observation": {
+    "command": "ps -p 50477,51436,51444 -o pid=,ppid=,state=,command=",
+    "chunk_id": "218dfe",
+    "exit_code": 1,
+    "output": "",
+    "scope": "These three actual audit PIDs had no rows; this is not evidence of reaping all descendants.",
+    "discarded_prior_query": "An initial ps query included two unobserved PID numbers; that empty output is not used as evidence."
+  },
+  "timing_policy": "User current instruction removes time ceilings; retained original default179/CPU20 are own audit feedback budgets, and do not alter historical execution observations.",
+  "administrative_archive_edit_error": {
+    "tool": "apply_patch",
+    "error": "Delete and add same target in one patch was rejected before filesystem mutation; replaced using one Update File operation.",
+    "mathematical_runs": 0
+  },
+  "new_scientific_configuration_runs": 0,
+  "author_generator_runs": 0,
+  "author_saved_checker_runs": 0,
+  "old_configurations_or_kernels_replayed": 0,
+  "explicit_continuation_not_automatic_retry": true,
+  "first_failed_attempt_retained": true,
+  "completed_new_saved_exact_groups": 2
+}
