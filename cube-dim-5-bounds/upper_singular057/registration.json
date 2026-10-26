@@ -1,0 +1,36 @@
+{
+  "id": "upper_singular057",
+  "status": "registered_before_computation",
+  "ownership": "Only upper_singular057 in the Astra upper clone; prior locks, other agents, 052 and MATLAB remain untouched; no commit",
+  "model": "alpha=1, five-dimensional 16 unnormalised body directions, Cauchy density t/[pi(t^2+s^2)]",
+  "finite_geometry": "Exactly 15 positive-face S2 lines L_D and 16 S1 points in the full affine face x1=1. Verify the 105 distinct-line intersections are only their common positive S1 corner, and the 15 t=0 endpoints have 2^(|D|-1) distinct incident pair planes. Read the locked280 vertex table only to verify its maximum squared norm 1/128; do not reproduce any fan.",
+  "analytic_acceptance": "A nonnegative quadratic frame descent inequality for orthogonal quotient densities, leading to an explicit complete Green upper bound involving r_v^-2 and log(2 r_v/rho_vw), with r_v Euclidean distance to Rv and rho_vw Euclidean distance to span(v,w). All dimension changes and Jacobians must be proved.",
+  "formula_constants": {
+    "ellipticity": "psi(xi)>=8sqrt(2)|xi|",
+    "P2": "1/(256pi)",
+    "P3": "1/(1024sqrt(2)pi^2)",
+    "P4": "3/(65536pi^2)",
+    "S": "5sqrt(5)/4+5sqrt(5/6)",
+    "B": "7sqrt(3/2)/(8pi^2)",
+    "split_time": "T=r_v/24",
+    "A0": "288P4+8P3 S/pi",
+    "A1": "16P3/pi",
+    "F5": "16/(pi sqrt(5))"
+  },
+  "preselected_strict_rational_caps": {"A0":"27/10000", "A1":"9/25000", "F5":"23/10", "S":"15/2"},
+  "new_numeric_batch": "One 256-bit Arb scalar evaluation of the displayed constants only, after exact Fraction geometry; no Green evaluation. Constants are checked against the preselected rational caps; failure is recorded without parameter adjustment.",
+  "counterexample_acceptance": "Prove that a uniform pure distance-to-S1 power bound cannot cover an S1 cap containing S2, even if S2 itself is deleted: lower semicontinuity and actual G=infinity on S2 force blow-up on approach to any nearby S2 point.",
+  "time_policy": "Two finite stages, geometry and constants, each with a 120-second alarm and a persistent checkpoint. No automatic restart after failure.",
+  "checkpoint": "/tmp/upper_singular057/checkpoint.json",
+  "scope_limit": "This batch certifies the kernel and local incidence objects. It does not claim a tube integral <=1e-6 at delta=1/256 or1/1024 unless the new majorant is actually integrated and certified; that remains an explicit gap.",
+  "excluded_work": ["old third-largest-parameter triple union", "560 triple complement enumeration", "old failed heat/Green box grids", "new Green grid", "continuous parameter search", "true I or C5 claim"],
+  "sources": [
+    {"path":"/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/upper_alpha1_029/report.md", "sha256":"298f0de7277ea6a7a516b85344c5189562bf7026f3f8de43d4d3f304ff6fed81"},
+    {"path":"/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/upper_alpha1_034/report.md", "sha256":"d7360aaf14e935fe242a52cc7f006197925ddbd2693996c3d58c205849fab4a9"},
+    {"path":"/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/upper/round003_tube_diagnostic.md", "sha256":"0f9f4aa56d88c3a39543ea52683bfbecc1dbad5223fca66f8cd0c13e38e04302"},
+    {"path":"/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/upper/round009_alpha_shorttime.md", "sha256":"c855080454e4a988b387943274aa6b26932701331317a515e5b945c9301b23db"},
+    {"path":"/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/upper/round010_alpha_strata.md", "sha256":"8cdf321d9692fbb8d71180671cb090698e937c3bca3cc3ba32c84ff1c91f99ba"},
+    {"path":"/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_vertex017/report.md", "sha256":"e0775db99fcccacffef9a84da142a851f1d48267331eb2a551638e7f1d3b7df7"},
+    {"path":"/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_vertex017/boundary_triangulation.json.gz", "sha256":"8dd2e9895d7465ac599d43feb1b5099506f4e43d1248215eba0a77e11f4d13f9"}
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "upper_detmoment055",
+  "registered_before_execution": true,
+  "fixed_model": {
+    "alpha": "1",
+    "beta": "1/2",
+    "R": "law of M=A/T tilted by T^(-1/2)/E[T^(-1/2)]; 16 original unnormalized body directions; Mii=1 and 0<detM<=1"
+  },
+  "source_backend_resolution": "Requested graph_moments_beta_half.py is absent. Locked actual backend is graph_moments_beta_half.hpp, hash verified against Astra015 manifest; it explicitly uses beta1/2. No beta3/4 moments or cache are read.",
+  "moment_selection": "Existing Astra016 hermite_moments.json moments[str(k)][0] for k=1,2,3 are E_R d^k W^0, hence unweighted d moments. m0=1. Consume these complete exact fractions; do not claim new production.",
+  "cache": {
+    "source": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/astra_upper016_beta_half_cache_3ec914.tsv",
+    "sha256": "3ec914ae25051c44f9f824cf2c926be85b146cd88e80c4724adbb820de34cd9e",
+    "states_including_implicit_constant": 55942,
+    "mutation_allowed": false,
+    "private_expansion_path": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/upper_detmoment055_beta_half_cache.tsv",
+    "copy_before_any_extension": true,
+    "extension_expected": false
+  },
+  "finite_batch": {
+    "moment_orders": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "max_new_graph_states": 10000,
+    "graph_checkpoint_seconds": 120,
+    "exact_certificate_seconds": 120,
+    "root_isolation_digits": 80,
+    "Arb_bits": 384,
+    "no_automatic_order_increase": true,
+    "no_new_seed_or_grid": true
+  },
+  "certificate": "Unique monic p2 orthogonal to 1,d from m0..3, exactly isolated positive roots in (0,1) and positive Gauss weights. f(d)=d^(-1/10) has f4=(1*11*21*31)/10^4*d^(-41/10)>0; cubic double-node Hermite is a global lower function on (0,1]. Match Gauss moments 0..3 and certify E_R f>=sum w_i f(x_i) by integer tenth-root brackets and/or full Arb balls.",
+  "gate": {
+    "g0": "1/10000",
+    "cost": "32",
+    "pure_Minkowski": "I_M^4=J^5/(60^4*32^5*pi^7), cost^4=3125*I_M^4/g0^5",
+    "necessary_J": "J_gate=g0*(60^4*32^9*pi^7/3125)^(1/5)",
+    "pi": "Use full locked round010 Machin80 rational interval; never reconstruct from displayed decimals.",
+    "old_Jflag": "Read full source interval only for context; no repeat flag calculation or orbit subtraction."
+  },
+  "decision": "If Gauss lower exceeds gate upper, exclude only pure Minkowski budget at g0/cost32; if not separated, report local inconclusion and stop. No reverse inference on actual I/C5 and no exclusion of newer all-orbit bounds.",
+  "sources": {
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper015/graph_moments_beta_half.hpp": {
+      "sha256": "bfdf502cac067d2a1d9465c96ac15076c2e897cee89f8121bfed40977fc3fbf0",
+      "bytes": 9306
+    },
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper014/report.md": {
+      "sha256": "2265c3ad69fc4b3885fe4f2feb36ef3bd7582ac0c4d7f09b6ef371f24e8cbcd6",
+      "bytes": 11531
+    },
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper015/report.md": {
+      "sha256": "0d7cabea1511a8d7ce02c122af25e2d2efcc99d14eb2fb333533c8683c6b693b",
+      "bytes": 7399
+    },
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper015/manifest.json": {
+      "sha256": "7b47755a0ba4d0a32411e18ae0dd3afeeed2de88ff703bb7e35c3a9349d0b6b7",
+      "bytes": 1961
+    },
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper016/hermite_moments.json": {
+      "sha256": "0d8e07afc820d10604c06457aa6a7993d0ada41a8e258bdd60f8abcb408b237e",
+      "bytes": 975
+    },
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper016/hermite_verification.json": {
+      "sha256": "9ee4972195eb1fd16c4e8cfb75313f9af971eecf0c3a04108c2c128dd80542ca",
+      "bytes": 4708
+    },
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper016/report.md": {
+      "sha256": "8ed6221c07e4be76b4a1a0d416a1ca523fdcd718159620d98b71b65973d1dbf7",
+      "bytes": 8581
+    },
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/astra_upper016/manifest.json": {
+      "sha256": "26cafe5a65ed1f2922e30bb50d8d5d59787497379da12397d3578411f888651a",
+      "bytes": 2572
+    },
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/round010/orbit_budget.json": {
+      "sha256": "dfbc3b121593177842c16087f99d3c77d80950b73912e9ae7b289e46e58f9510",
+      "bytes": 8521
+    },
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/round010/orbit_budget.py": {
+      "sha256": "127d6bfb7daa45f090db40e0d39e46baac14aba6ff4b3025db26e7aea5d10f73",
+      "bytes": 4619
+    },
+    "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/astra_upper016_beta_half_cache_3ec914.tsv": {
+      "sha256": "3ec914ae25051c44f9f824cf2c926be85b146cd88e80c4724adbb820de34cd9e",
+      "bytes": 3121997
+    }
+  },
+  "ownership": "Only new upper_detmoment055; old SIP015 and all other files locked; no commit, no shared MATLAB"
+}

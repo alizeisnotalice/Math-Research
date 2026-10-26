@@ -1,0 +1,31 @@
+{
+  "id": "upper_tube064",
+  "status": "registered_before_computation",
+  "ownership": "Only upper_tube064; locked057 and all prior research read only; no MATLAB, commit or push",
+  "objective": "Certify one explicit complete T_delta integral majorant for q=5/4, determine whether delta=1/1024 and 1/2048 meet the fixed 1e-6 tube budget, and identify the largest passing dyadic radius in the preregistered finite range if its adjacent radius fails.",
+  "input_files": [
+    {"path":"../upper_singular057/report.md", "sha256":"30155587faa5dfc8b83ab022c5dd717ee483abb71090a397241ba5e6d96b28fa"},
+    {"path":"../upper_singular057/manifest.json", "sha256":"80810f6460fe702e39e89c28885fa638ade340323eb7414c4e75f1dae1789482"},
+    {"path":"../upper_singular057/results.json", "sha256":"e751cf4f92c3d0b0695c7ebe3ae4739c27210149bb69df5361d4b1c93fbb9faa"},
+    {"path":"/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/upper_alpha1_034/report.md", "sha256":"d7360aaf14e935fe242a52cc7f006197925ddbd2693996c3d58c205849fab4a9"}
+  ],
+  "analytic_inputs": {
+    "a":"27/10000", "b":"9/25000", "s":"15/2", "f":"23/10", "q":"5/4",
+    "V":"108*delta^3-243*delta^4",
+    "noncentral_prefactor":"r_v^2 >= m/(m+1) >= 1/2 on the positive face when v has m>=1 negative tail coordinates; prove by convex quadratic minimization",
+    "face_distance":"d_face_to_pair_line <= 2*rho_pair from |P_span(v,w)e1|^2=2/(5+v.w)>=1/4; hence log(2r/rho)<=log(9/d_face)",
+    "J0":"(8*pi/3)*sqrt(pi)*Gamma(3/4)/Gamma(5/4)",
+    "m2_upper":"(log(2)+2-pi/2)^2+4/9; follows from the exact weighted second logarithmic moment and Catalan >= 8/9",
+    "K":"5^(2/5)*15^(4/5)*2^(6/5)*J0^(4/5)*(a+b*s*sqrt(m2_upper))",
+    "M5":"512*pi*sum_{k=0}^5 [5!/(5-k)! * log(9/4)^(5-k) / 3^(k+1)]",
+    "norm_majorant":"f*(K*delta^(6/5)+30*a*V^(4/5)+30*b*s*M5^(1/5)*V^(3/5))",
+    "integral_majorant":"norm_majorant^(5/4)"
+  },
+  "finite_batch": "One 256-bit Arb evaluation each of J0,m2_upper,K,M5, using only the displayed expressions; then exact Fraction comparisons at the thirteen fixed delta=2^-n, n=10,...,22. No adaptive constant or parameter changes.",
+  "rationalization": "K and M5 use denominator 10^30 with strict floor upper/lower enclosure. Fifth roots in radius comparisons use integer arithmetic and denominator 10^30. Compare (f*S_upper)^5<=10^-24 for success and (f*S_lower)^5>10^-24 for failure of this explicit envelope.",
+  "runtime_limit_seconds": 120,
+  "checkpoint": "/tmp/upper_tube064/checkpoint.json",
+  "failure_policy": "Stop and preserve failure on mismatch, ambiguous budget test, nonfinite Arb output or timeout. No restart or substituted formula.",
+  "excluded": ["Green kernel calls", "space grids", "old geometry enumerations", "old Arb scalar reruns", "continuous optimization", "new true I or g or C5 claim"],
+  "scope": "A passing result certifies this tube error only. A failed result disproves the sufficiency of this envelope at that radius, not the true tube integral. The regular complement and full C5 cost remain open."
+}

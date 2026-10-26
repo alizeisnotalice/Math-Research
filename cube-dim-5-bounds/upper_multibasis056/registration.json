@@ -1,0 +1,46 @@
+{
+  "round": "upper_multibasis056",
+  "status_at_registration": "before_the_only_162_box_requalification_batch",
+  "ownership": "Only upper_multibasis056 in the existing independent Math-Research-cube5-astra-I clone. All previous locks and all 052 files are read-only; no controller, STOP, queue or cache mutation; no commit or push.",
+  "input_state": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/upper_cover052/batch0002/state.json",
+  "input_state_sha256": "b79c134fdcec283c120d464cf78f131c669c905ac5cdacda309a34f07a9fb29b",
+  "input_registration": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/upper_cover052/batch0002/registration.json",
+  "input_registration_sha256": "585a5de78b8f159ca03f138013894041dba350d144c3217b7bbda09fd5c7c9e9",
+  "input_fingerprint": "d2067c9ddfe6baba298ebe7bc9292bab91f26630774a49bfb69cb5088b2c9229",
+  "source046": "/Users/zhengzhihao/Desktop/T/Math-Research-cube5-upper/cube-dim-5-bounds/upper_cover046/arb_cover.py",
+  "source046_sha256": "df3fb4165aea29e4aa3d1fb7ecacdb9cc5ad4a531bc03e3cc43a0820671fe028",
+  "source052_hashes": {
+    "batch_registration.schema.json": "a2299b89061cc383eefd3fd203c7062053ad12ada535799e9a7e45304b990bfc",
+    "controller.py": "7d39ed194fc6a57382a8a8c44e22f8e85c5d25a6db5b04109524842ed87c5765",
+    "policy.json": "4341d0eb18153bbfff0ca33c06d47c47843d20b04ffa4c189cfee6aa25b6aa84"
+  },
+  "model": {
+    "alpha": "1",
+    "epsilon": "1/64",
+    "target": "1/10000",
+    "face": "x1=1",
+    "numeric_gradient_components": "x2,x3,x4,x5"
+  },
+  "theory": "Use every signed tail basis N_s=diag(1,s)N. The maximum lower log paraboloid has curvature psi(v)=||v||2^2/4-||v||1^2/36. On each closed orthant it is a concave quadratic, so boxes containing the anchor are certified by the Cartesian product of each coordinate's lower offset, zero, and upper offset (at most 81 points).",
+  "finite_scope": {
+    "selected_nodes": "Exactly the 162 state.splits entries; assert every path is empty (original coarse root)",
+    "old_points_per_box": 16,
+    "new_points_per_box": 81,
+    "new_kernel_calls": 0,
+    "new_gradient_calls": 0,
+    "new_log_exp_Gamma_calls": 0
+  },
+  "interval_policy": "Reuse saved failed_certificate Delta_lower and loggradient_directed without recomputing any transcendental. Verify directed gradient ratios against the five cached exact rational intervals; verify old minima exactly. All margin arithmetic uses Fraction.",
+  "algebra_checks": "16 signed bases/Q_s, positive eigenvalues, curvature min formula and a rational counterexample to global concavity. No search over bases or parameters.",
+  "resources": {
+    "processes": 1,
+    "threads": 1,
+    "memory_mb": 1024,
+    "deadline_seconds": 120
+  },
+  "checkpoint": "Actual PID, source fingerprints and completed prefix every 16 boxes. A 120-second alarm saves that prefix; --resume continues only identical input and code. No background work.",
+  "python": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python",
+  "claim_limit": "New certificates for a fixed subset of previously split boxes only; no tree mutation, global g, C5 or Cn claim. Failed new tests remain uncertified.",
+  "registered_utc": "2026-10-25T22:24:30.556389+00:00",
+  "audit_code_sha256": "e8f289311c9fc77043256820bd25842eb0db507a38f4333333a588974d2be59b"
+}

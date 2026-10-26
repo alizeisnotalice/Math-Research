@@ -1,0 +1,47 @@
+{
+  "round": "upper_lobatto051",
+  "status": "registered_after_analytic_derivation_before_polynomial_or_matrix_computation",
+  "ownership": "Only upper_lobatto051. Source049/050/038 and other projects remain locked/read-only. No commit/push/MATLAB.",
+  "analytic_claims_to_document": [
+    "For fixed SPD A=M^-1 and B=UAU^T, f(t)=[det(M)det(tA+(1-t)B)]^-1/2 has every even derivative nonnegative by differentiating its dominated Gaussian integral.",
+    "The 8-node Lobatto Hermite interpolant matches two endpoints and function/first derivative at six interior roots. f-H = f^(14)(xi)/14! * t(t-1) prod(t-ti)^2 <=0, hence its positive-weight rule is an upper bound without a derivative-size estimate.",
+    "Original measure is Beta(5/4,5/4). Modified measure t(1-t)mu normalized is Beta(9/4,9/4), normalization 5/28. Six Gaussian nodes yield exact Lobatto moments through degree13.",
+    "Positive weights and 0<f<=1 yield 0<r_true<=r_Lobatto<=1 for every SPD shape; old integrable determinant moment still dominates all near-degenerate shapes. R expectation remains uncomputed and uncertified."
+  ],
+  "single_fixed_shape": {
+    "identity": "Original050 repaired sample99, using the original049 pending Gamma floats exactly as binary rationals.",
+    "source_pending": "../upper_orbit049/pending.json",
+    "source_pending_sha256": "16184efb41d1cf077469406c8ac45b66b3eb586275e57d42522b66dac7e21161",
+    "source049_manifest_sha256": "3aa021819a2014b26293f62f4712ac7c986ed5f3f55902fe13511383c5e3c45f",
+    "source050_manifest_sha256": "1f8cbaa8ee053d18a47c2d24422f961e9a28b832ab4d51c8e8694f234d6095e8",
+    "source050_repair_sha256": "08d6dc2f3e1d5bf55875d150d52f824d9e091613d38e19b100e1f853b0883cc3",
+    "source050_results_sha256": "b25c63d7034b465a158e2c1f39acc71e9e9aae7a5d06a33025cb5c1452aa1ed0",
+    "construction": "Each float.as_integer_ratio yields exact Y_i; P_i=(1/Y_i)/sum_j(1/Y_j), exactly equivalent to Z-normalization. Build M=sum P_i vv^T and inverse/determinant in exact rational arithmetic; no resampling, no float matrix source, no symmetrization.",
+    "comparison_only": "Read saved050 sample99 r16=0.0262488485054654; never rerun that rule or treat it as a certified lower bound."
+  },
+  "quadrature_certificate": {
+    "original_beta_q": "5/4",
+    "lobatto_nodes": 8,
+    "modified_beta_a": "9/4",
+    "interior_nodes": 6,
+    "monic_recurrence": "p0=1,p1=t-1/2; p{k+1}=(t-1/2)pk-bk p{k-1}; bk=k(k+2a-2)/[4(2k+2a-1)(2k+2a-3)]",
+    "root_method": "Exact rational polynomial plus exact real-root isolation to width<=2^-560; verify each interval has exactly one simple root by exact root counting and all six lie in (0,1).",
+    "precision_bits": 512,
+    "gauss_weights": "g_i=1/sum_{k=0}^5 p_k(t_i)^2/h_k, h0=1,hk=prod_{j=1}^k b_j",
+    "interior_lobatto_weights": "w_i=(5/28)g_i/[t_i(1-t_i)]",
+    "endpoints": "Exact rational integrals of (1-t)(p6(t)/p6(0))^2 and t(p6(t)/p6(1))^2 against Beta(5/4,5/4); verify equality, positivity, and consistency with mass/first moment.",
+    "checks": "Exact rational polynomial orthogonality and squared norms; analytic degree13 exactness; 512-bit outward positivity and moment enclosures for all degrees0..13. No float roots_jacobi used."
+  },
+  "group_certificate": {
+    "group_size": 1920,
+    "description": "All120 coordinate permutations and16 sign vectors with first sign+1; global +/- conjugation quotient.",
+    "determinants": 15360,
+    "arithmetic": "512-bit Arb matrices from exact rational A and d, evaluated at outward node balls. Compute all8 endpoint/interior determinants. Endpoint f=1 may then be inserted exactly using its proved identity, after checking the computed endpoint interval contains1.",
+    "checkpoint_every_groups": 120,
+    "time_limit_seconds": 120,
+    "early_checkpoint_yield_seconds": 110,
+    "retention": "Save roots/weights certificate, one exact shape description, block partial sums and final directed ball. Do not save all group/node matrices."
+  },
+  "stop_policy": "Stop and preserve checkpoint/input on a failed exact root count, positivity/moment check, nonpositive Arb determinant enclosure, or time limit. No precision escalation or replacement matrix in this registered batch.",
+  "interpretation": "The Lobatto direction is a universal theorem. The numerical outward ball certifies one fixed rational shape's Lobatto orbit upper expression only, not the R expectation, full I, or C5."
+}

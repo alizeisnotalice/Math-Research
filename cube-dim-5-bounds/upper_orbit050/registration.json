@@ -1,0 +1,50 @@
+{
+  "round": "upper_orbit050",
+  "status": "registered_before_repair_or_remaining_draws",
+  "authorization": "Parent explicitly authorized a separate bounded arithmetic repair of fixed pending sample99, then only the originally ungenerated indices100..127 after all unchanged numerical conditions pass. 049 remains frozen.",
+  "parent": {
+    "directory": "../upper_orbit049",
+    "manifest_sha256": "3aa021819a2014b26293f62f4712ac7c986ed5f3f55902fe13511383c5e3c45f",
+    "report_sha256": "e7afb79cebac0b3d2184764414c36a1fa54af18f13d0af2aa90a62ac92da3954",
+    "registration_sha256": "a49c3e8b112b5f0c0adb5607f30d116591bc704924e7f0923a633014dd045cd4",
+    "diagnostic_script_sha256": "4118dc8c57002ae205c0a8d0f3812ad7cf29c77e66cfb55a12423b8d9603fe4c",
+    "completed_99_samples_sha256": "10a4d4354e20bbf2265cd984f7303d9de846a85cbce5330f91835128402a90f5",
+    "pending_sample99_sha256": "16184efb41d1cf077469406c8ac45b66b3eb586275e57d42522b66dac7e21161",
+    "failure_sha256": "d0ba464d00e30057a0a95b4ba4fd86b52048a6ae5145294489dc628b194c0503"
+  },
+  "fixed_repair": {
+    "sample_id": 99,
+    "source": "The 16 saved original Gamma float64 inputs in 049/pending.json; no random draw.",
+    "exact_input_interpretation": "Convert each saved float via as_integer_ratio, then form its exact rational value at mpmath 80 decimal digits; do not reinterpret printed decimal strings as new samples.",
+    "arithmetic": "At 80 decimal digits compute R=sumY, Z=Y/R, H=sum1/Z, P=(1/Z)/H, M=sum P*v*v^T, det(M), inverse(M), eigenvalues and residuals. Diag1 follows from the formula, with no diagonal reset or symmetrize operation.",
+    "mp_prechecks": "Positive inputs/eigenvalues/determinant, 80-digit residual and relative asymmetry <=1e-60; P-sum and M-diagonal errors <=1e-70; condition<1e12.",
+    "conversion": "Convert the computed M and inverse to float64; use high-precision logdet converted to float. Record conversion diagnostics. No symmetrization, determinant/eigenvalue clipping, or shape replacement.",
+    "same_group_path": "Use the exact unchanged 049 orbit_energy function and saved 16-node Gauss-Jacobi nodes/weights, through verified source AST extraction; all original residual/asymmetry/identity/kernel and condition thresholds stay unchanged."
+  },
+  "continuation": {
+    "original_seed": 20261026049,
+    "new_seed": false,
+    "rng_state_before_sample100": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 266455183047328870039146164715381898359,
+        "state": 213655870450164324060364895801479550255
+      },
+      "uinteger": 0
+    },
+    "new_draw_indices": "100..127 inclusive, exactly 28 shapes, only after fixed sample99 passes.",
+    "old_completed_data": "Indices0..98 are read-only, never re-evaluated or changed.",
+    "new_draw_arithmetic": "Use unchanged 049 evaluate float64 path for indices100..127. Any further numerical failure is saved and stops this batch; no automatic high-precision retry or additional repair.",
+    "maximum_shapes_evaluated_here": 29,
+    "maximum_group_determinants_here": 890880,
+    "quadrature": "16 nodes only; original first-four 8-node crosschecks remain read-only from049."
+  },
+  "resources": {
+    "matrix_block": "120*16*5*5 float64 entries, plus one 80-digit 5x5 matrix computation.",
+    "thread_limit": 1,
+    "checkpoint": "Per shape save pending input, RNG-after and completed continuation row. Yield after110s and retain recoverable state within120s. No retry after a recorded failure."
+  },
+  "interpretation": "Only arithmetic precision changes for the same Gamma sample99. This is not resampling, a new seed, or manufacturing a favorable input. All outputs remain noncertified diagnostics, not I or C5 bounds.",
+  "ownership": "Only upper_orbit050; no edit to049/038/015/main, no commit/push/MATLAB."
+}

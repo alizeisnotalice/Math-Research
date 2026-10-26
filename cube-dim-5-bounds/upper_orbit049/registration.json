@@ -1,0 +1,56 @@
+{
+  "round": "upper_orbit049",
+  "status": "registered_after_independent_radial_derivation_before_sampling",
+  "ownership": "Only upper_orbit049 in the independent clone. Older cover015/orbit038 and all other clones are read-only. No commit/push/MATLAB.",
+  "theory_checked_before_run": {
+    "stable_representation": "S_i=1/(4Y_i), Y_i iid Gamma(shape=1/2,rate=1), gives Laplace exp(-sqrt(u)).",
+    "radial_simplex_split": "R=sum Y_i ~ Gamma(8,1), Z_i=Y_i/R ~ Dirichlet((1/2)^16), R and Z independent.",
+    "shape": "H=sum_i 1/Z_i, P_i=(1/Z_i)/H, M=sum_i P_i v_i v_i^T, T=H/(4R).",
+    "tilted_expectation": "E_Rshape F = C E_Dir[H^(-1/2)F(M)], C=16 sqrt(pi) Gamma(17/2)/Gamma(8)=6435*pi/256. The half-integer Gamma ratio is eliminated algebraically, not sampled or re-evaluated as a flag budget.",
+    "normalization": "E T^(-1/2)=1/(8 sqrt(pi)); E Gamma(8,1)^(1/2)=Gamma(17/2)/Gamma(8). No independence of T and P is used.",
+    "weight_cap": "H>=256 by Cauchy-Schwarz, hence 0<w=C/sqrt(H)<=C/16; E_Dir w=1 exactly."
+  },
+  "random_source": {
+    "generator": "numpy.random.Generator(numpy.random.PCG64(20261026049))",
+    "seed": 20261026049,
+    "shapes": 128,
+    "per_shape_draw": "Exactly 16 sequential Gamma(shape=0.5,scale=1.0) draws, normalized to Z; no rejection/resampling. This samples Dirichlet only; radial R is integrated analytically.",
+    "resume": "Each completed sample keeps RNG-after state. A pending sample is persisted before matrix work and is reused without a new draw on resume. Never add shapes or seeds."
+  },
+  "quadrature": {
+    "q": "5/4",
+    "complete_group": "1920 representatives: all 120 coordinate permutations and 16 row-sign patterns whose first sign is +1; global -U duplicates U M U^T.",
+    "main_nodes": 16,
+    "jacobi_alpha_beta": [0.25, 0.25],
+    "expectation_weights": "t=(x+1)/2, positive roots_jacobi weights normalized by their sum",
+    "crosscheck": "Only sample IDs 0,1,2,3 additionally use 8 Jacobi nodes. Their differences are diagnostics, never error certificates.",
+    "group_block_size": 120,
+    "determinant_evaluations_main": 3932160,
+    "determinant_evaluations_crosscheck": 61440,
+    "retention": "Do not retain per-group/per-node determinant arrays; store sample inputs, scalar diagnostics and worst indices only."
+  },
+  "stop_conditions": {
+    "input": "Any nonfinite/nonpositive Gamma, Z, reciprocal, H, P; impossible H<256*(1-1e-12); invalid weight cap beyond 1e-12 relative tolerance.",
+    "matrix": "Nonpositive eigenvalue or determinant sign; nonfinite log determinant; 2-norm condition >=1e12; inverse residual infinity norm >1e-5; relative inverse asymmetry >1e-10; nonpositive symmetric-part inverse eigenvalue.",
+    "mixture": "Any nonpositive determinant sign or nonfinite determinant/log-ratio/exponential; any zero exponential from underflow; normalized node kernel >1+1e-5; identity-conjugation kernel differs from 1 by >1e-5; orbit energy nonpositive or >1+1e-5.",
+    "policy": "Persist the exact failing input and stage, stop immediately with failure status, never clip determinants, eigenvalues, rho, weights or samples and never replace the failed shape. Tiny retained roundoff excesses within the declared tolerance are reported, not clipped."
+  },
+  "resources": {
+    "working_matrix_block": "120*16*5*5 float64 entries (384000 bytes), plus modest batch/work arrays; no 4-million-array retention.",
+    "threads": "BLAS/OpenMP thread limits 1 for this diagnostic process",
+    "checkpoint": "Persist after every shape with actual PID, elapsed time, completed count and RNG state. Yield after a completed sample if elapsed >=110s; a run cannot start another sample near the 120s checkpoint deadline. Resume the same finite batch if needed.",
+    "max_total_shapes": 128
+  },
+  "outputs": [
+    "Unnormalized sample mean of w*d^(-1/10)*r_Gamma^(1/5)",
+    "Unnormalized sample mean of w*d^(-1/10)",
+    "Weight mean, descriptive Monte Carlo standard errors and effective weight sample size",
+    "Condition/inverse/determinant/orbit diagnostics; first four 8-versus-16 differences",
+    "Noncertified plug-in I=c1^(5/4)*(pi^2/60)*Jhat^(5/4), compared with 5.36e-5 and 32*(1e-4/5)^(5/4). Never report it as a strict I or C5 bound."
+  ],
+  "prohibited": "No repeat of 038 SPD, Gamma flag, 034 face inputs, old Kanter, parameter grids, extra seeds or extra samples.",
+  "source_report_sha256": {
+    "upper_alpha1_029/report.md": "298f0de7277ea6a7a516b85344c5189562bf7026f3f8de43d4d3f304ff6fed81",
+    "astra_orbit038/report.md": "fd60fc7b14afd6d907532c9660b4deeea5b93e59ff1d88069ad61445f11cddb8"
+  }
+}

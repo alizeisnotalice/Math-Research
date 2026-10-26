@@ -1,0 +1,17 @@
+{
+  "id": "upper_singular057_saved_evidence_audit",
+  "status": "registered_before_audit",
+  "scope": "Read and verify saved evidence only; do not rerun check.py, geometry, Arb constants, Green kernels, or any previous numeric batch.",
+  "input_results_sha256": "e751cf4f92c3d0b0695c7ebe3ae4739c27210149bb69df5361d4b1c93fbb9faa",
+  "input_registration_sha256": "f21af7692026df9630d72e0a2fdc95aa60e7dd392c77251dc622e7aaf9811d24",
+  "input_check_sha256": "c6f18a8524ed18e0c0986fbd20f030acdd4d663bcb3fc35136067dce8adbdfb6",
+  "finite_checks": [
+    "Verify the three locked local hashes and all seven external input hashes.",
+    "Compare the completed checkpoint byte for byte with saved results when the original checkpoint is present.",
+    "Check positive ordered saved dyadic endpoints for all eight constants; compare the saved upper endpoints to the four preregistered rational caps using Fraction only.",
+    "Preserve recorded timings and original PID as historical receipt fields, without inferring an original shell exit code."
+  ],
+  "runtime_limit_seconds": 120,
+  "failure_policy": "Stop on the first mismatch; no restart, recalculation, parameter adjustment or replacement of original evidence.",
+  "new_tube_scalar_evaluation": false
+}

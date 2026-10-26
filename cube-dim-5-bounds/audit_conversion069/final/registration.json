@@ -1,0 +1,40 @@
+{
+  "task": "audit_conversion069_final",
+  "scope": "Frozen 17-block 066 chain, every tested margin, deterministic selection and skip, retirement deltas, exact trees/logical hashes, and final full-state materialization",
+  "source": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/upper_cover061/batch0001/state.json",
+  "source_sha256": "d0d62d99d57b3f15d3acb1f4a635b188e196b0de6e155b461460ccbd64a72d31",
+  "source_counts": {"passed": 82544, "splits": 91662, "queue": 61478, "cache": 178722, "roots": 52360},
+  "source_cache_canonical_sha256": "f3b174e2bab3fcaed2c291090b378ddac7414393a6fb7a7bceffedca0ffaccac",
+  "manifest": "/Users/zhengzhihao/Desktop/T/Math-Research-cube5-upper/cube-dim-5-bounds/upper_cover066/manifest.json",
+  "manifest_sha256": "75d5754fde6813285fe59d36b68680fd31675c375ae46cfcbb261f2c6649e8a6",
+  "final_state": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/upper_cover066/final/state.json",
+  "final_state_sha256": "42c67156078cb0eb134910a5248821eb3c826c96981afb3d1d5b2fe3242a871b",
+  "run_registration_sha256": "b8cc3a17538649edaf9472175f863c5335b51c44859bf98e89f91c1cd25b1c34",
+  "author_code": "/Users/zhengzhihao/Desktop/T/Math-Research-cube5-upper/cube-dim-5-bounds/upper_cover066/convert.py",
+  "author_code_sha256": "e4061fa845d60f8606119c79d6a997924fd7907cc09a3daabb58443714990b46",
+  "blocks": 17,
+  "maximum_tested_per_block": 2048,
+  "certificate_loop_seconds_per_block": 120,
+  "program_total_wall_limit_seconds": 180,
+  "normal_checkpoint_at_total_seconds": 160,
+  "emergency_signal_at_total_seconds": 174,
+  "deadline_scope": "Total process wall including loading, audits and writes is capped at180 seconds. Checkpoint before160s and signal at174s preserve an independently verified prefix. Each block also keeps its at-most-2048/120s certificate limit.",
+  "reuse_first_block": "Use locked audit_conversion069/result.json for2048 first-block certificate results; do not recompute their81-point margins. Replay the structural delta to connect later blocks.",
+  "resources": {"processes": 1, "threads": 1, "MATLAB_calls": 0},
+  "zero_new_calls": ["H", "gradient", "kernel", "Green", "log", "exp", "Gamma", "Arb"],
+  "protected_first_block069": {
+    "registration.json": "34e30618a2294bb3d973f52b68c3eef6542d8bad715c7951a1a93dd172ce3d5c",
+    "check.py": "4e98a4f2f30836111db3c50bd7468ff48844a125a7ae2c4c9fda64e675d2bec7",
+    "result.json": "31a9967b74785c61ddadda63c6975259dab515e2642066dbe711e7233c5b4a8b",
+    "report.md": "e1984e7faec9c64bd89b54109020105a87f146cf6e9391010c1f10e08f2866f5"
+  },
+  "protected_062": {
+    "registration.json": "1f89d0f030af64f17c204c72d320d5d51b9f5924e96385cc5b21c92f98c75cc9",
+    "check.py": "566d48d2f1483e5398e9c912ce871b23c6fb5b45465a4bc5d3c10534db2fcec6",
+    "result.json": "eb4dc9f228f7fb47da2f5e5c7f364e36db73ecf10300ea0ccd596645c81d62fc",
+    "report.md": "fd04c06eae186018c51b326b5f86ab1bd2e4ec0b7df0ac24029bd1b839984bce"
+  },
+  "independence": "Standalone auditor-owned JSON/interleaved-bit/integer/dyadic primitives; no author module/function calls. Direct object comparison of every final cache entry, retained record and unchanged top-level source value.",
+  "limits": "Inherited certified numerical H/physical-gradient balls, saved directed Delta log and 056/060 analytic theorem are not recomputed. Uncertified rows are not H counterexamples. Nonempty final queue prevents a global g or C5 claim.",
+  "write_policy": "Only new audit_conversion069/final files; protect first-block069 and062; no MATLAB/commit/push/live-state changes"
+}

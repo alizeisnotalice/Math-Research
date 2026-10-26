@@ -1,0 +1,7 @@
+{
+  "status": "actual_MATLAB_floating_diagnostic_only",
+  "purpose": "16 signed tail-basis curvature identity on 81 ternary offsets, plus nonconcavity example",
+  "actual_output": "multibasis max identity error 0 on 81 offsets\nnonconcavity gap 0.0026041666666666574; rational target 1/384 0.0026041666666666665\nbase vars 0; figures 0",
+  "code": "feval(@(V,S) fprintf('multibasis max identity error %.17g on %d offsets\\n',max(abs(min(sum(V.^2,1)/4-(S*V).^2/36,[],1)-(sum(V.^2,1)/4-sum(abs(V),1).^2/36))),size(V,2)),mod(floor((0:80)./(3.^(0:3)')),3)-1,2*(dec2bin(0:15,4)-'0')-1); fprintf('nonconcavity gap %.17g; rational target 1/384 %.17g\\n',-(1/4+1/1024-(17/16)^2/36)+2/9,1/384); fprintf('base vars %d; figures %d\\n',numel(who),numel(findall(groot,'Type','figure')));",
+  "shared_session": "Serial main; anonymous local functions; no clear or path reset; zero created base variables, figures or pools"
+}
