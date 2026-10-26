@@ -43,14 +43,54 @@
     "current_short_tail_certificate": "upper/round036/exact_peak_budget/results.json",
     "strict_partial_budgets": [
       {
-        "region": "original body32 positiveface dist-to-onesline<1/64",
-        "quantity": "L6/5 full positive time Green norm",
+        "region": "cap distones<1/64",
+        "time": "all t>0",
+        "quantity": "L6/5 Green norm",
         "strict_upper": "2118205441/1000000000000000",
-        "certificate": "upper/round042/full_S1_cap_budget/results.json",
-        "independent_review": "audit/round042/full_S1_cap_review/report.md",
-        "is_full_I_or_C6": false
+        "source": "upper/round042/full_S1_cap_budget/results.json",
+        "independent_audit": "audit/round042/full_S1_cap_review/report.md"
+      },
+      {
+        "region": "all31 low endpoint tubes meanB<=1/4,rho1/64",
+        "time": "all t>0",
+        "quantity": "L6/5 Green norm",
+        "strict_upper": "13404268290817/1000000000000000000",
+        "source": "upper/round056/signed_endpoint_integration/results.json",
+        "independent_audit": "audit/round056/signed_endpoint_review/report.md"
+      },
+      {
+        "region": "all31 middle tubes meanB in[1/4,3/4],rho1/64",
+        "time": "only0<t<1/1000",
+        "quantity": "L6/5 short potential norm",
+        "strict_upper": "4689838525803/1000000000000000000",
+        "source": "upper/round051/all_unsigned_middles/results.json",
+        "independent_audit": "audit/round051/all_middle_review/report.md"
       }
-    ]
+    ],
+    "region_account": {
+      "source": "upper/round059/global_region_account/theorem.md",
+      "independent_audit": "audit/round059/global_region_account_review/report.md",
+      "paid_C_and_E_B_upper": "upper/round059/global_region_account/actual_run/results.json",
+      "unpaid": [
+        "middle long times",
+        "high full Green awaiting062independent review",
+        "far full Green",
+        "global g1/65000"
+      ],
+      "is_full_I_certificate": false
+    },
+    "curvature_interface": {
+      "theory": "upper/round057/positive_mixture_curvature/theorem.md",
+      "independent": "audit/round057/positive_mixture_curvature_review/report.md",
+      "pilot061": "2 new same-band center/box cases complete;full-gradient reference audit pending,notglobal g",
+      "global_cover063": "preparing bounded resumable queue,0kernel"
+    },
+    "new_frame_fixed_time_obstruction": {
+      "source": "upper/round055/sparse4_first_scalar_probe/full_report.md",
+      "independent": "audit/round055/sparse4_probe_postrun_review/report.md",
+      "scope": "onlybeta1/80,T32/825",
+      "new_C6_bound": false
+    }
   },
   "no_certified_new_bound_yet": false,
   "opening_thresholds": {
@@ -167,7 +207,7 @@
     "above_checked_public": true,
     "comparison_rule": "new reliable ideal and finite L1 lower > target > full complete R008 ideal upper; exact rational/root certificate, not decimals"
   },
-  "current_round": 58,
+  "current_round": 59,
   "objective_complete": false,
   "round002_status": {
     "new_C6_bound": false,
@@ -380,8 +420,8 @@
     "dual_achieved": false,
     "post_dual_counter": 0
   },
-  "last_archived_round": "058",
-  "research_work_in_progress": "上界061匹配band全域覆盖pilot、062高端真实正事件预算；下界低资源058新认证待继续下一断点；global g/I尚开",
+  "last_archived_round": "059",
+  "research_work_in_progress": "061独立真实grad参考准备；062高端独审待finalseal；063可恢复全域g覆盖准备；064低资源新下界候选独审",
   "round009_status": {
     "new_C6_bound": false,
     "lower_retained": "2067397333267/1000000000000",
@@ -668,7 +708,7 @@
     "new_G_H_calls": 0,
     "post_dual_counter": 0
   },
-  "active_research_frontier": 50,
+  "active_research_frontier": 64,
   "round036_status": {
     "summary": "真实峰全权重与新shorttail闭合，旧帽公式严格预算失败关闭；条件63.2432前提未证",
     "new_C6_bound": false,
@@ -900,6 +940,15 @@
     "author_union_runs": 0,
     "independent_union_runs": 0,
     "independent_configurations": 8,
+    "post_dual_counter": 0
+  },
+  "current_program_runtime_limit_seconds": 180,
+  "future_candidate_lower064": "exact ideal candidate only;finite L1 independent audit pending; does not supersede058 yet",
+  "round059_status": {
+    "summary": "全face不遗漏五块分区与partial I合成独审PASS，180s政策及真实代理状态同步；无新Cn",
+    "new_C6_bound": false,
+    "independent_configurations": 4,
+    "primary_configurations": 5,
     "post_dual_counter": 0
   }
 }

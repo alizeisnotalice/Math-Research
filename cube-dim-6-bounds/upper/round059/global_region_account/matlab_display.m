@@ -1,0 +1,1 @@
+fprintf('C059 paid C+E norm (display only): %.17g\n',((2118205441/1e15)^(6/5)+(13404268290817/1e18)^(6/5))^(5/6)); fprintf('C059 conditional Bcrit (display only): %.17g\n',4/48750); fprintf('C059 sufficient remaining allowance (display only): %.17g\n',((4/48750)^(6/5)-(2118205441/1e15)^(6/5)-(13404268290817/1e18)^(6/5))^(5/6));
