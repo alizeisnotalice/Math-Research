@@ -1,0 +1,33 @@
+{
+  "schema": "A085-fixed-inputs-v1",
+  "model": "original unit-weight body32: columns (1,s2,s3,s4,s5,s6), signs enumerated (+1,-1)",
+  "point": ["1", "1", "1", "1", "1/2", "0"],
+  "tangential_coordinates": ["(x1+x2+x3+x4)/2", "x5", "x6"],
+  "normal_coordinates": ["(x1+x2-x3-x4)/2", "(x1-x2+x3-x4)/2", "(x1-x2-x3+x4)/2"],
+  "selected_U": "span((1,1,1,1,0,0),e5,e6)",
+  "unique_incident_U_dependency": "Parent's independent primary_unique_U appendix, announced before this registration; final source hash and review acceptance pending. This batch does not duplicate its sign check.",
+  "tangential_center": ["2", "1/2", "0"],
+  "tangential_box_halfwidth": "1/32",
+  "time_upper_bound": "1/64",
+  "local_ball_radius": "1/512",
+  "sum_column_norm_upper_bound": "80",
+  "scalar_cutoff_radius": "1/41472",
+  "nonincident_rank3_distance_lower_bound": "1/32",
+  "inplane_scalar_centers_affine_coefficients_y0_y1_y2": [["0", "0", "0"], ["0", "-1/2", "-1/2"], ["1/4", "0", "-1/2"], ["1/4", "-1/2", "0"]],
+  "fixed_quotient_basis_body_columns": [[1, 1, -1, -1, 1, 1], [1, -1, 1, -1, 1, -1], [1, -1, -1, 1, -1, 1]],
+  "configurations": [
+    {"id": "Q001-geometry", "work": "32 exact column transforms; orthogonal and fiber Jacobian identities; 32 scalar two-cluster assignments for NEW-point off-S2 distance; integer Gram margin arithmetic"},
+    {"id": "Q002-inplane-density", "work": "one true selected-U 3D density point path, all four upper-half-plane residues"},
+    {"id": "Q003-amplitude-C4", "work": "35 exact point partials and 35 uniform box bounds through order4; fixed C4 extension bounds"},
+    {"id": "Q004-time-remainder-C2", "work": "10 uniform box/time bounds through spatial order2 for the t5 correction; C2 extension bounds"},
+    {"id": "Q005-labelled-quotient-bases", "work": "7 quotient matrix inversions, 56 dual-sign norm evaluations, explicit basis mapping for all28 outside labels; no weighted-law merging"},
+    {"id": "Q006-quotient-coercivity", "work": "ordered-cone polynomial certificates for exact c=16sqrt2 and C=16sqrt3, deficit norm and signed-layer constant formulas"},
+    {"id": "Q007-single-cusp-budget", "work": "selected negative-profile amplitude and local semiconcavity/Lipschitz budgets only; no complete G constant"}
+  ],
+  "readonly_sources": [
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-literature/cube-dim-6-bounds/upper/round076/body32_semiconcavity_theory/theorem.md",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-literature/cube-dim-6-bounds/upper/round076/body32_semiconcavity_theory/manifest.json",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/upper/round057/positive_mixture_curvature/theorem.md"
+  ],
+  "excluded": ["full6D kernel", "old061 point", "all-body32 kernel", "32-vertex baseline", "native kernel", "all rank3 classification", "rank>=4 aggregate proof owned by086", "MATLAB", "recursive agents", "automatic retry"]
+}
