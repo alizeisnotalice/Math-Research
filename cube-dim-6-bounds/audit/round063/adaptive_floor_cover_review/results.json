@@ -1,0 +1,191 @@
+{
+  "status": "REJECT_IMPLEMENTATION_FOR_RELEASE_PURE_GEOMETRY_RETAINED",
+  "actual_configurations": 7,
+  "checks": [
+    {
+      "configuration": 1,
+      "status": "PASS_PURE_GEOMETRY_CONFIGURATION",
+      "raw_box": [
+        [
+          "1/8",
+          "7/8"
+        ],
+        [
+          "1/4",
+          "3/4"
+        ],
+        [
+          "0",
+          "1/2"
+        ],
+        [
+          "1/3",
+          "2/3"
+        ],
+        [
+          "0",
+          "1/4"
+        ]
+      ],
+      "tightened_box": [
+        [
+          "1/3",
+          "7/8"
+        ],
+        [
+          "1/3",
+          "3/4"
+        ],
+        [
+          "1/3",
+          "1/2"
+        ],
+        [
+          "1/3",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/4"
+        ]
+      ],
+      "seam_witness": [
+        "29/48",
+        "1/2",
+        "1/3",
+        "1/3",
+        "0"
+      ],
+      "general_proof": "proof_review.md"
+    },
+    {
+      "configuration": 2,
+      "status": "BLOCKER_ACCEPTS_ROOT_COVERAGE_LOSS",
+      "public_api_path": [
+        "append_snapshot(initial)",
+        "append_snapshot(smaller_root,current_hash)",
+        "recover"
+      ],
+      "previous_snapshot_sha256": "25203d47d2cf65105895c58b43373dbe13613017d3ebafeda3d1e5402fec708b",
+      "accepted_snapshot_sha256": "4ea2fdc7908ce7c5d1a8eecd86d81145208051485a166717da98c01750ffe2a3",
+      "missed_ordered_face_witness": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "validator_claim": {
+        "nonempty_frontier": [
+          "r"
+        ],
+        "all_nonempty_leaves_passed": false,
+        "root_partition_preserved": true,
+        "global_g_certificate": false
+      },
+      "raw_snapshot_bytes_modified": false,
+      "hashes_forged": false
+    },
+    {
+      "configuration": 3,
+      "status": "BLOCKER_ACCEPTS_ORPHAN_ROLLBACK_AND_REISSUE",
+      "public_api_path": [
+        "reserve",
+        "append_snapshot(inflight)",
+        "append_snapshot(stale_initial,current_hash)",
+        "recover",
+        "reserve"
+      ],
+      "inflight_snapshot_sha256": "4ae3b4cb8d698e095f3c5ddd870f36a9b0c46882cfc29c88e9795da46b2626c6",
+      "accepted_rollback_sha256": "e925ba38a8c45b49bd872bd2df6d1e5cbc70589b3c1c1ebad1e51f3c9db5e013",
+      "original_token": "r.a0.n000001",
+      "reissued_token": "r.a0.n000001",
+      "same_exact_input_sha256": "4f59c5ae94ee6dae5366d5420c6e2856f814468982b12e502cb56261468c94f7",
+      "reservation_count_before": 1,
+      "reservation_count_after_rollback": 0,
+      "reservation_count_after_reissue": 1,
+      "recovery_action": "CONTINUE_FROM_UNIQUE_QUEUE_AFTER_MAIN_RELEASE",
+      "native_launches": 0,
+      "raw_snapshot_bytes_modified": false,
+      "hashes_forged": false
+    },
+    {
+      "configuration": 4,
+      "status": "PASS_RETAINED_HISTORY_EIGHT_NODE_EIGHT_ATTEMPT_CAP",
+      "started_nodes": [
+        "r",
+        "r0",
+        "r1",
+        "r00",
+        "r01",
+        "r10",
+        "r11",
+        "r000"
+      ],
+      "reservations": 8,
+      "ninth_reservation_error": "Batch native-reservation budget exhausted",
+      "synthetic_only": true,
+      "actual_native_calls": 0,
+      "global_g_certificate": false
+    },
+    {
+      "configuration": 5,
+      "status": "PASS_SAME_WINDOW_GUARD",
+      "old_a": "1/32",
+      "new_a": "1/64",
+      "reuse_rejection": "Jet window mismatch",
+      "prior_attempt_retained": true,
+      "synthetic_only": true
+    },
+    {
+      "configuration": 6,
+      "status": "PASS_PASSED_LEAF_NO_RECOMPUTE",
+      "dispatch_rejection": "No queued node",
+      "snapshot_change_rejection": "Passed leaf recomputation/change forbidden",
+      "synthetic_only": true,
+      "all_nonempty_leaves_passed_is_not_a_global_g_certificate": true
+    },
+    {
+      "configuration": 7,
+      "status": "BLOCKER_ACCEPTS_MISSING_RELEASE_AFTER_ENVIRONMENT_CHANGE",
+      "public_api_path": [
+        "append_snapshot(TEST_ONLY)",
+        "append_snapshot(environment_MAIN_RELEASED_release_None,current_hash)",
+        "recover",
+        "reserve"
+      ],
+      "accepted_snapshot_sha256": "60c3cfa8bab7c7985076dfcc33076ee7229b2cc272fc6cc3ce10fe164c008c10",
+      "release": null,
+      "reserved_token": "r.a0.n000001",
+      "actual_native_calls": 0,
+      "external_provenance_forged": false,
+      "raw_snapshot_bytes_modified": false,
+      "hashes_forged": false
+    }
+  ],
+  "concrete_blocking_scenarios": [
+    2,
+    3,
+    7
+  ],
+  "native_calls": 0,
+  "kernel_calls": 0,
+  "author_formal_program_runs": 0,
+  "old_formal_replays": 0,
+  "matlab_calls": 0,
+  "subagents": 0,
+  "global_g_certificate": false,
+  "new_C6_bound": false,
+  "author_files_unchanged": true,
+  "pid": 67075,
+  "python": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "start_utc": "2026-10-26T10:19:37.035786+00:00",
+  "end_utc": "2026-10-26T10:19:37.073052+00:00",
+  "elapsed_seconds": 0.03727674999390729,
+  "hard_process_limit_seconds": 180,
+  "source_sha256": {
+    "registration.md": "db853403f910d1e09e9c712dc0c740f51b285d46121e2b53d601582f7513e88c",
+    "input_manifest.json": "cbee2038ae37eca7d71f24d4d089e21f631cb28f92adfdd6f2ecfa538b77806a",
+    "verify_core.py": "bea524ae8d0e27633982c782ebc3f4a1e0e2543572597191f3aa535cf7b49a9d"
+  }
+}
