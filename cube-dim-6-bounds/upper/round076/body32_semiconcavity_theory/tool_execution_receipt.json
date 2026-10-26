@@ -1,0 +1,34 @@
+{
+  "schema": "A076-tool-execution-provenance-v1",
+  "tool": "functions.exec -> tools.exec_command",
+  "invocations": [
+    {
+      "role": "original_zero_science_startup_failure",
+      "tool_chunk_id": "44b27b",
+      "tool_session_id": null,
+      "tool_exit_code": 1,
+      "guard_pid": 85973,
+      "child_pid": 85974,
+      "scientific_configurations_started": 0,
+      "receipt": "execution_receipt.json"
+    },
+    {
+      "role": "explicitly_authorized_corrected_guard_continuation",
+      "tool_chunk_id": "772b26",
+      "tool_session_id": null,
+      "tool_exit_code": 0,
+      "guard_pid": 86350,
+      "child_pid": 86351,
+      "scientific_configurations_started": 3,
+      "scientific_configurations_completed": 3,
+      "receipt": "continuation_receipt.json"
+    }
+  ],
+  "session_id_explanation": "Both calls completed inside the exec_command response; neither yielded an ongoing session_id.",
+  "administrative_preregistration_chunks": ["f28142", "2b0435"],
+  "automatic_retries": 0,
+  "explicit_continuations_after_startup_failure": 1,
+  "timeout_events": 0,
+  "live_owned_children_after_completion": 0,
+  "all_programs_wall_limit_seconds_including_cleanup": 180
+}
