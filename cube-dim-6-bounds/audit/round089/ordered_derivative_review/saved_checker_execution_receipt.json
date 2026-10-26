@@ -1,0 +1,31 @@
+{
+  "status": "pass_once_frozen_saved_checker",
+  "source_checker_sha256": "cc56c5caccf8e3be882a10c6fbc59572698781559839511cd5ff726683046aa1",
+  "adapted_execution_text_sha256": "98b149aa64d5499a0b573a35f61ec9dce73402bff30b1f58f69616f1fbfacaf5",
+  "only_adaptations": [
+    {
+      "from": "resource.setrlimit(resource.RLIMIT_CPU,(20,20))",
+      "to": "resource.setrlimit(resource.RLIMIT_CPU,(15,15))"
+    },
+    {
+      "from": "time.process_time()-CPU<18.5",
+      "to": "time.process_time()-CPU<14"
+    },
+    {
+      "from": "with (H/'checker_complete_receipt.json').open('x') as f:",
+      "to": "with Path('/Users/zhengzhihao/Desktop/T/Math-Research-cube6-lower-round005-endpointfix/cube-dim-6-bounds/audit/round089/ordered_derivative_review/saved_checker_review_receipt.json').open('x') as f:"
+    }
+  ],
+  "source_math_equations_changed": false,
+  "output_receipt_path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-lower-round005-endpointfix/cube-dim-6-bounds/audit/round089/ordered_derivative_review/saved_checker_review_receipt.json",
+  "output_receipt_sha256": "d439882131429629598cc17040cdbe3253aa4318a09d663762df1a541faa34bf",
+  "registered_audit_phase": 3,
+  "actual_checker_invocations": 1,
+  "new_parameter_configurations": 0,
+  "new_integration_states": 0,
+  "author_integral_generation_replays": 0,
+  "old087_DP_replays": 0,
+  "CPU_seconds_including_checker_save_and_input_recheck": 0.15010199999999999,
+  "wall_seconds_including_checker_save_and_input_recheck": 0.1561100829858333,
+  "all20_frozen_sources_unchanged": true
+}
