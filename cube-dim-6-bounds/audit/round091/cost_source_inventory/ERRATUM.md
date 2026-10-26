@@ -1,0 +1,34 @@
+# Erratum: compare the n5 construction upper endpoint with the C6 lower endpoint
+
+This is an additive correction. The previous `inventory.md` and its sealed 40-source scope remain unchanged. Its n5 paragraph compared the n5 **simple lower** `19943/10000` with the C6 upper `64`; that comparison does not answer whether the five-dimensional construction can improve the six-dimensional lower bound. The proper comparison is between the **upper endpoint of the exact n5 construction-ratio interval** and the reliable C6 075 lower target.
+
+## n5 certified construction interval
+
+The current on-disk n5 ledger's accepted `lower` slot has status `complete_strict_certificate_primary_and_independent_review` and points to `lower_round003/a2_equals_a3_results.json`. It gives the exact ratio interval
+
+- lower endpoint: `1901928388184057049374938391579973799396131549902514910425700484770275366056039091023048589822842475345638936418341932202141837337811803601937964304490934265206209848895264766152642338891335249353737501092443377654388944818362681567512560899851454715463870200834051433215149399322841802832873754278926324314003935851307863156121494690373101787228625402132605127253519844688902850683423981107156605654055848595411289147975780932928660536467715866945797105174207115446885136953/953674316406250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`
+- **upper endpoint:** `1994316461568485804605375398889362606675598036070579474871958882680979692283967071676225057280741889944111621241007553362459944289235213253150533997066452138759447223153693767427420109736134397286251295104965260426362699204634193499697610561940847223839274237294375092039596283389150581107949410874469503641291518085050012431396498261803951399535995606585469173759124435813971294903230922307801612853446074336957192297802624527045312708864843090832990524074525328429972578535325513/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`
+
+The source certificate status is `completed_exact_algebraic_breakpoint_test`. Its exact candidate is specified in `lower_round003/a2_equals_a3_results.json#/spacing` as `[1+u^3/2, (1+u)/2, (1+u)/2, (1+u)/2, (1+u)/2]`; `#/delta2_expression` is `(2*u-u^4*v)/4`; its rational expansion is stored at `#/coefficients` in the basis `u^i v^j, u^5=2, v^5=3`. No coefficient, root, ratio, or old program was recomputed. The certificate's embedded `source_sha256` is `4af617b2e8257fb569feea4cedfa571c7a66b0fa1d28ce62f40f4158bec453e7` and `locked_reference_sha256` is `1f9467f3c738810c9bed68111cc0d15ada20777f84cc5d58be1fddafc7747a9b`. The physical current certificate file SHA-256 is `f385811e5460af63abc117804965461eed88d8ecb5b9d2cd30268387646f45d2`.
+
+Both the current ledger's `/lower/exact_interval` and this current certificate's `/ratio_interval` match the interval saved in the C6 066 record at `/complete_n5_lower_interval`; the 066 record points to the same certificate path. That proves exact value/path agreement with the saved comparison record, though it does **not** provide a physical certificate-file hash in the old 066 JSON. The current n5 ledger file hash is `a7faefb5907cfd3ebb666fd65497bd58d18e047fd7dee6b0d1f25a73b0c48adb`; the 066 record's `ledger_sha256` was `c52529f9cfd0e89a27071fcdd04ef5bfa05b2e0bc84e8ff3263ebd1455af0245`, so the ledger snapshots are not byte-identical. The 066 saved threshold is `2070186602851/1000000000000` and it records `upper_inherited=False`.
+
+## Correct endpoint comparison
+
+The C6 075 reliable strict lower target is **`2073015624830/1000000000000`**, from the previously sealed `audit/round075/post_s8_overlap_review/review_results.json` (SHA-256 `03ee9356878432d22cf88c42889bddbc19a7bd021bb99da654249b088d0f0590`; reused without rereading). The new bounded erratum check compared only already-stored exact rational endpoints:
+
+- n5 construction ratio upper endpoint `<` C6 075 strict lower target: **True**;
+- current n5 ledger interval = current certificate interval: **True**;
+- current certificate interval = saved C6 066 interval: **True**.
+
+Therefore this n5 construction cannot raise the C6 lower bound above the current 075 certified lower target. This does not compare the n5 simple lower against 64, does not establish an upper bound for all of C5, and does not create any new C6 bound. The exact endpoint comparison is recorded in `erratum_comparison.json`; it performs no model-cost calculation or candidate recomputation.
+
+## Dirty-state and model identity
+
+At inspection time n5 HEAD was `b6acac941cb0dc16c3fa87460de711121779cfdb`. Tracked files `README.md`, `STATE.md`, and `results/bounds_ledger.json` were modified. The cited `lower_round003/a2_equals_a3_results.json` was not listed among tracked modifications. There were also untracked files/directories under `upper_reenvelope088/` and `upper_shift091/`; they are in-progress work and are not substituted for the accepted ledger lower slot. The ledger's current accepted lower interval exactly matches the cited complete certificate and the saved 066 interval.
+
+The new guidance identifies the separate n5 auxiliary model as the same α=1, 16 body-diagonal direction model, with its own g/I pair and a paired cost still above 32. It remains a five-dimensional model and is not inherited into C6. The original n6 cost inventory remains scoped to `body32_unit_cauchy_v1` with 32 directions and q=6/5. Uncommitted/public-construction privacy language is preserved: this erratum is local and no push was performed.
+
+## Four-source receipt
+
+The one additional standard-library static read/hash pass covered exactly four sources and exited 0 in `0.001389` seconds. It executed no certificate, root finder, kernel, matrix/scalar calculation, network request, MATLAB, or decompression. Exact paths, bytes and SHA-256 values are in `erratum_source_manifest.json`; UTC timing and Python version are in `erratum_scan_receipt.json`. The guidance hash is `737149392f1346f4b53d5a6056466deb08f17474a2377ff5c3b7f5db26e52357`; the C6 066 dynamic check hash is `807eba4dddf442cb01cb0b26b45d7f8748dd36f1741f61ed324363658d1c8f90`.
