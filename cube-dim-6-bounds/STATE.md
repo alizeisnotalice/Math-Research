@@ -1,37 +1,21 @@
 # 六维中心方体研究状态
 
-active；最新顺序归档至082，实际研究前沿086。上界优先、下界低资源。每程序总墙钟≤180秒含cleanup/收据；每批有限登记、真实句柄接续、不自动重发，总研究不限。coordination/run_policy.json；主串行MATLAB、0本任务窗口待关闭。
+active；上界优先，下界低资源。当前研究前沿097；每个程序含清理/收据总墙钟<=180秒，总研究无预设预算。仅本项目可写，原暂停三四维项目和五维只读。主串行MATLAB，不clear/path/cwd/他项目窗口。
 
-固定Lebesgue、中心轴平行、共同半径、一般L1、所有正尺度。当前正式归档C6>2073015624830/10^12，上端64。075是当前最强已核内部结果：完整理想R≈2.073015624830795685，finiteL1下端≈2.073015624830792980。完整36系数/根区间/前代完整最大上端/明确有限L1与主实际最小复核见audit/round075/post_s8_overlap_review/report.md，非展示小数证书。公开已核非穷尽A6及64、phase冻结准确原件另列；内部不称公开发表。
+口径固定：Lebesgue、中心轴平行方体、六坐标共同半径、一般L1、全部正尺度。当前正式严格C6>2073015624830/1000000000000，C6<=64。075完整理想/有限L1/根与36系数/前代完整上端/主mincheck已封存，不能从展示小数重造。公开检索非穷尽，Aldaz A6及64与内部成果分列；078原文补查、080指定经典cover allocatedK障碍不等于最优覆盖或C6下界。
 
-lower=true、upper=false、dual=null、后三轮0/3。必须双侧严格突破+独审，随后三轮+最终终审/实际代码/PDF/逐轮推送才完成，尚未满足不编突破论文。
+lower=true、upper=false、dual=null、后三轮0/3。双侧严格新界与独审后再三轮+最终独审/实际代码/PDF才完成。尚无新C6上界，不能编突破论文/报完成。
 
-body32 q6/5、I=∫positivefaceG^q、B=I^(5/6)，条件成本(6B/g)^(6/5)。真S2全部496pairs，G∞其上/offS2有限连续052；069严格offS3完整G C2+epsilon³/²/¹余项已独审。076新一般finitepositiveframe offS2局部半凹性完整证明，主全文/新Astra独审PASS待归档，但没有实际body32 Γ/vertexcover。085实际rank3 inplane/quotient数据、086四大tail aggregate理论在有限研究，不重跑旧076/061。
+body32真S2全部496pairplanes，G在其上无限、补集有限连续；069 offS3 C2接受；076一般正权spanning6D frame offS2局部半凹性主和独审接受。085真实rank3数据及086rank4聚合独审通过；093完整Gamma粗预算已作者封存待独审。095同生成元光滑减项全空间正源证明待独审，模型质量下降未得Cn。
 
-057同窗positive band整盒接口PASS，061两case半宽1/1000整盒和065全部12物理grad独立参考PASS。063恢复API REJECT；068 typed-event回放/math ACCEPT；071新runtime真实cleanup EPERM使receipt缺失，runtimeREJECT，0body/0实际180超时，冻结源不动。082新最小修订已下达，C真实状态/句柄以其目录receipt为准，生产仍closed直到新seal/独审/主release。首cover限8node/8总native，尚无真实全域cover。
+同模型g/I成本091已主实际6配置，待独审：全域极粗gL和完整IU虽有限但不竞争，actualmodelcost区间跨64、S区间跨0，不能排真实模型。条件g0=1/65000尚无全域证明，g1/60000已032反证。C/E/H全time预算已支付、D长时074完整但过大、far竞争性预算未付；092严格固定包络下积分显示单加密时间表不能挽救该包络，待独审；096正在改joint空间时间松弛而非旧格扩算。
 
-059完整正face真S2距离及C/E/D/H/F账本PASS。042cap/056low/062high full-time安全B合约3.813680774630099e-5；051middle short已付。074完整D long严格<49091761943697/1e17已作者/独审PASS但过大；竞争性D+F充分余额约5.3698116236626484e-5是条件budget而非实际未付积分下界。far与globalg1/65000仍缺，g1/60000已032反证。028排原body32alltime平均/概率时间混合，不排Rc；029全L1反例否定全跨cube leakage。
+覆盖：063API和071runtime历史拒绝不改；068typed-event core/math与082独立runtime已主正式绑定release。090首真实批次限8新node/8总native，当前唯一句柄/队列与state链见upper/round068/cover_batch001，运行外壳见upper/round082/runtime_revision/operations，独立登记/本次预检失败与放行见upper/round090/cover_batch001_actual。接续真实inflight token/原session，不重复启动、不刷新预算、不凭中心过门称整盒过门；全域g仍未认证。
 
-072已独审轴/可逆6列半凹和条件vertex下证书，8列交叠仅几何，抽象log反例非Cauchy反例。067 alpha3/2与006/008、081body+axis与012/015/018是准确旧模型去重actual0science；018仅fixedbeta/time障碍。084静态92源registry防重复，覆盖有限不是未收录即新。080经典选择/等log壳allocatedK全beta>1,m整数>64.08已主+独审，只排指定分配式不排真实覆盖最优/C6。
+下界075当前最强，完整finiteL1下端约2.073015624830792980；079固定a2族局部最大接受。083卫星有限3盒子族准确排除，不排整个新模型；087a1有限DP失败，089新ordered算法已作者完成并独审中；097同步spacing严格局部最大理论在推进，不误从逐轴最优推联合最优。后两者均非Cn新界。
 
-下界058/064/066/068/070/073/075完整127晶格commonradius证书链，真实空投影或明确背景薄层cover使容斥仿射分支接续；最终新端点源几何/有限L1各新验证。079在s9到新rightchamber完整五维截面jump认证右斜率<0，固定单参族局部极大，不称全局最优或Cn新界；083新bodycenter satellite有限3box子族预检无增益，不排所有w/λ/机制，下界保持低资源继续新机制。
+新指导coordination/guidance_20261026/next_steps_original.md只按用户明确采纳范围执行。用户已明确授权仍向现有PUBLIC仓库推送，保留出处hash、内部成果不称发表。五维最新完整认证区间上端低于075可靠下端（091来源勘误），不迁五维上界，不采进行中候选。
 
-资料包此前实际1175项PASS及zipSHA不冒新运行，原暂停n3/n4与n5只读；066n5动态full上端仍低于008，不继承五维上界。主clone=/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6；数学Python=/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python。各代理独立.git/唯一目录，不stage/push/递归/MATLAB，主集成与最终证明。G076完整checkout/远端clone两次环境失败透明保留，最终在独立.git局部目录审计，0共享stage；不影响其只读sourcehash数学验证。
+主clone=/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6，数学Python=/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python。各代理独立clone/所有权，不stage/push/递归/MATLAB；G完整checkout失败后透明保留独立.git局部审核，不伪称完整clone。主保留最终证明责任。
 
-075归档完成：严格有限L1下界>2073015624830/1000000000000，完整前代比较、独审及主mincheckPASS。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
-
-076解析定理已主+独审接受，原body32 offS2局部半凹性不再是未证假设；实际body Gamma及globalg/I仍缺，085/086定量在推进。
-
-076归档完成：一般finitepositive6D Cauchyframe offtrueS2局部上半凹性独审及主接受，无数值Gamma/Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
-
-078归档完成：8定向查询1新原始全文，未建立新适用公开界，非穷尽/actual0science。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
-
-079归档完成：准确新5D跳变证明a2固定族局部最大，独审/主证书检查PASS，无新Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
-
-080归档完成：指定经典cover allocatedK全beta/m>64.08独审PASS，不排真实最优/无Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
-
-081归档完成：body32加axis精确命中012/015/018，actual0science去重，无Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
-
-082三分钟总时限修订独审PASS已归档，待主core/runtime acceptance和实际release绑定后首真实8/8cover batch；原071 REJECT作为历史事实保留。
-
-082归档完成：新runtime最小修订作者4+独审3组合PASS，供mainrelease，0body/无Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
+083归档完成：新body-center双陪集有限三mixed子族准确排除，独审PASS，非全模型/无Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
