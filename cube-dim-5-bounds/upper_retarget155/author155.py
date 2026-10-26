@@ -1,0 +1,31 @@
+"""Production/source/hash/algebra gates only; no q formula/log/corner rerun."""
+from pathlib import Path
+from fractions import Fraction as F
+import json,os,time
+from util155 import sha,digest,atomic
+H=Path(__file__).resolve().parent;W=Path('/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/upper_retarget155');O=W/'run001'
+def chain(path):
+ previous='0'*64;seq=0
+ for b in open(path,'rb'):
+  assert b.endswith(b'\n');r=json.loads(b);h=r.pop('hash');seq+=1;assert r['seq']==seq and r['previous']==previous and digest(r)==h;previous=h;yield r['body'],h
+def main():
+ began=time.monotonic();dest=O/'author_validation.json';assert not dest.exists();m=json.load(open(H/'prepared_manifest.json'));assert sha(H/'prepared_manifest.json')=='bd5c2564a3a91d01a1d3f1460e49a5560f492a03348ec6a24295b7a078c0b1d9';mathm=json.load(open(O/'math_outputs_manifest.json'))
+ for n,h in m['repository_files'].items():assert sha(H/n)==h
+ for p,h in {**m['source_locks'],**m['prepared_external_files'],**mathm['files']}.items():assert sha(p)==h
+ atomic(O/'author_registration.json',{'pid':os.getpid(),'code_sha256':sha(__file__),'math_outputs_manifest_sha256':sha(O/'math_outputs_manifest.json'),'q_formula_log_or_corner_reexecutions':0},True)
+ common=json.load(open(O/'common_log_certificate.json'));assert common['ratio']=='23/22' and common['terms']==64 and F(common['upper'])==F(common['lower'])+F(common['tail_upper']) and F(common['upper'])>F(common['lower'])>0;Ulog=F(common['upper']);plan=json.load(open(W/'finite_plan.json'));seenq=set();seenleaf=set();pending=[];minimum=None;qcount=leafcount=passed=0;rss=[];qwork=[];leafwork=[]
+ for spec in plan['shards']:
+  data=json.load(open(spec['input_path']));d=O/f'shard{spec["shard_id"]:02d}';summary=json.load(open(d/'summary.json'));cp=json.load(open(d/'checkpoint.json'));assert summary['status']==cp['status']=='complete' and cp['next_q']==len(data['sources']) and cp['next_leaf']==len(data['leaves']);params={};qh='0'*64;lh='0'*64;local_min=None;local_pass=0
+  for source,(r,h) in zip(data['sources'],chain(d/'q_updates.jsonl'),strict=True):
+   c=source['old_core'];oid=source['canonical_id'];assert oid not in seenq and r['canonical_id']==oid and r['epsilon']==c['epsilon'] and r['point']==c['point'] and r['loggradient_directed']==c['loggradient_directed'] and r['Delta110_lower']==c['Delta110_lower'] and F(r['Delta115_lower'])==F(c['Delta110_lower'])-Ulog and r['q_old']==c['penalty_coefficient'];assert r['mass_qualification']==source['mass_qualification'] and r['raw_record_sha256']==source['raw_record_sha256'] and r['source_penalty_sha256']==m['penalty_source']['sha256'];assert 0<F(r['q_new'])<=F(r['q_old']) and r['q_new']==r['caps153']['new_q_upper'];seenq.add(oid);params[oid]=r;qh=h;qcount+=1
+  for leaf,(r,h) in zip(data['leaves'],chain(d/'leaf_results.jsonl'),strict=True):
+   i=leaf['leaf_index'];assert i not in seenleaf and r['leaf_index']==i and r['node']==leaf['node'] and r['canonical_id']==leaf['canonical_id'] and r['epsilon']==leaf['epsilon'] and r['checked_points']==16 and r['q_new']==params[r['canonical_id']]['q_new'];margin=F(r['margin110_new']);assert margin>=F(leaf['saved_g110_margin'])>0 and r['saved_old_margin110']==leaf['saved_g110_margin'] and F(r['margin115'])==margin-Ulog and r['passed115']==(F(r['margin115'])>0) and r['full110_leaf_preserved'];seenleaf.add(i);key=margin,i;minimum=key if minimum is None else min(minimum,key);local_min=key if local_min is None else min(local_min,key);passed+=r['passed115'];local_pass+=r['passed115'];lh=h;leafcount+=1
+   if not r['passed115']:pending.append({'leaf_index':i,'node':r['node'],'canonical_id':r['canonical_id'],'margin115':r['margin115'],'margin110_new':r['margin110_new']})
+  assert cp['q_hash']==qh and cp['leaf_hash']==lh and cp['passed115']==local_pass and cp['minimum110']==[str(local_min[0]),local_min[1]];rss.append(summary['peak_rss_bytes']);qwork.append(summary['new_q_objects']);leafwork.append(summary['new_leaf16corner_cases'])
+ assert len(seenq)==qcount==107530 and seenleaf==set(range(111201)) and leafcount==111201 and passed==109961;pending.sort(key=lambda r:r['leaf_index']);assert pending==json.load(open(O/'target115_pending.json')) and len(pending)==1240
+ full=json.load(open(O/'full_domain_candidate.json'));assert full['minimum_margin110_new']==str(minimum[0]) and full['minimum_witness_leaf_index']==minimum[1] and F(full['candidate_floor'])==F(11,100000)*(1+minimum[0]) and F(full['minimum_margin115'])==minimum[0]-Ulog and full['full110_leaf_count']==111201 and full['old_complete_domain_not_pending'];actual=json.load(open(O/'actual_attempt0001_summary.json'));assert actual['status']=='complete_fixed153_jointretarget_candidate' and actual['fault'] is None and actual['old_qualified110_domain_unchanged'] and actual['new110_margin_updates_complete'];pids=[actual['master_pid']]+[r['pid'] for r in actual['worker_evidence']]
+ for pid in pids:
+  try:os.kill(pid,0);raise AssertionError(('production PID still exists',pid))
+  except ProcessLookupError:pass
+ assert len(pids)==16 and all(r['exitcode']==0 and not r['alive'] for r in actual['worker_evidence']);result={'status':'PASS_all_source_qrecord_leafrecord_hash_prefix_algebra_and_exit_gates','pid':os.getpid(),'q_objects':qcount,'leaf_cases':leafcount,'new16corner_cases':111201,'target115_passed':passed,'target115_pending':len(pending),'full110_domain_unchanged_and_all_newmargins_positive':True,'minimum_margin110_new':str(minimum[0]),'candidate_full_floor':full['candidate_floor'],'production_pid_all16_OS_absent':True,'worker_actual_q_counts':qwork,'worker_actual_leaf_counts':leafwork,'worker_peak_rss_bytes':rss,'sum_individual_worker_peak_rss_bytes':sum(rss),'CPU_measurement':'all15 actually processed their recordedobject/leaf counts;frozenworker code didnot record CPUtime;postexit OSsample was empty;no resource rerun','new_q_formula_log_H_gradient_corner_or_exp_evaluations':0,'production_new_log_objects':1,'oldq_corner_baseline_runs':0,'source_and_math_output_hashes_unchanged':True,'formal_g_C5_updated':False,'wall_seconds':time.monotonic()-began};atomic(dest,result,True);print(json.dumps({'status':result['status'],'pid':os.getpid(),'q_objects':qcount,'leaf_cases':leafcount,'target115_pending':len(pending),'author_sha256':sha(dest),'wall_seconds':result['wall_seconds']}),flush=True)
+if __name__=='__main__':main()

@@ -1,0 +1,7 @@
+# 018证据布局
+
+upper_integral167的root准备manifest保留原内容。大node_index原字节只存在packet/node_index.jsonl.gz；其SHA与root原索引相同，没有重复提交21MB，也没有跟踪symlink。root导出程序是本机实际历史来源；读者使用packet/verify_packet.py，或stage_packet.py在全新目录物化所需库文件。被复用的38库原件逐项以仓库relative路径与SHA绑定。
+
+upper_integral156/actual保留原registration/factors/results/completion和完整原output manifest。逐节点原始值由167完整精确index、已存factors和原树提供；独审的逐节点整数证明与DFS保存在161去重blob包。原390个production chunk仍在本机原路径，SHA全保留，不再重复归档同一批数学字段。
+
+所有导入都是字节复制或已明确的无损有理字段投影，不调用归档代码。161 safe restore与167 transport roundtrip的真实证据属于原执行附录；主导入只做SHA/长度核对，没有把它们冒报为新数学执行。
