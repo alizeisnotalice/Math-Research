@@ -1,0 +1,156 @@
+{
+  "task": "C061-cutoff-gradient-pilot-PREPARE-ONLY",
+  "registered_utc": "2026-10-26T09:12:58.984161+00:00",
+  "stage": "PREPARE_ONLY_WAITING_MAIN_REVIEW",
+  "model": "body32_unit_cauchy_v1",
+  "window": {
+    "kind": "B",
+    "a": "1/250",
+    "T": "1/2"
+  },
+  "precision_bits": 512,
+  "target_exact": "1/65000",
+  "implementation_choice": "reuse unchanged existing C016 all-real-node positive-band and physical-gradient binary; no new DD implementation",
+  "source_path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round016/band_engine/band_engine.cpp",
+  "binary_path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round016/band_engine/scratch/band_engine",
+  "fan_path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round010/arb_engine/fan_integer_input.txt",
+  "formal_configuration_cap": 12,
+  "planned_formal_configurations": [
+    {
+      "id": 1,
+      "type": "read-only saved C016 scalar case",
+      "case_index": 0
+    },
+    {
+      "id": 2,
+      "type": "read-only saved C016 scalar case",
+      "case_index": 1
+    },
+    {
+      "id": 3,
+      "type": "read-only saved C016 scalar case",
+      "case_index": 2
+    },
+    {
+      "id": 4,
+      "type": "read-only saved C016 scalar case",
+      "case_index": 3
+    },
+    {
+      "id": 5,
+      "type": "read-only saved C016 scalar case",
+      "case_index": 4
+    },
+    {
+      "id": 6,
+      "type": "read-only saved C016 scalar case",
+      "case_index": 5
+    },
+    {
+      "id": 7,
+      "type": "exact true-S3 witness and off-S2 tube eligibility of prescribed pilot point"
+    },
+    {
+      "id": 8,
+      "type": "exact ordinary low-value point metadata/domain/node integer-range eligibility"
+    },
+    {
+      "id": 9,
+      "type": "symbolic normalized atan recurrence through6 and contour copied-node differentiation identity"
+    },
+    {
+      "id": 10,
+      "type": "positive-window and allzero normalized-jet identities; old-control saved-band target prerequisite"
+    },
+    {
+      "id": 11,
+      "type": "synthetic valid same-band value/face-gradient adapter fixture"
+    },
+    {
+      "id": 12,
+      "type": "synthetic wrong-window adapter rejection fixture"
+    }
+  ],
+  "compile_cap": 1,
+  "planned_compiles": 0,
+  "automatic_compile_fixes": 0,
+  "production_kernel_calls_authorized_now": 0,
+  "future_production_kernel_cap": 3,
+  "proposed_future_calls": "2 if primary low point passes;3 only if primary strictly fails, fallback strictly passes,then S3",
+  "future_call_timeout_seconds": 600,
+  "future_total_timeout_seconds": 1800,
+  "future_points": [
+    {
+      "id": "A038-low3",
+      "point_numerators": [
+        100000000000000,
+        99999998999999,
+        99999997999988,
+        99999996999867,
+        57255226550170,
+        43659674865
+      ],
+      "denominator": 100000000000000,
+      "reason": "saved A038 third ordinary generic low-value point; no new point search"
+    },
+    {
+      "id": "S3",
+      "point_numerators": [
+        5,
+        5,
+        5,
+        5,
+        3,
+        0
+      ],
+      "denominator": 5,
+      "reason": "prescribed genuine S3 point, ties and coordinate zero; outside paid S2 tube"
+    }
+  ],
+  "order": [
+    "A038-low3 primary a=1/250",
+    "if primary F_upper<target: A038-low3 fallback a=1/1000",
+    "S3 in the same window whose ordinary-point F_lower>target"
+  ],
+  "gates": [
+    "all preparation checks pass",
+    "A057 fixed-right-inverse proof independently reviewed and accepted by main before curvature box use",
+    "main separately selects and releases the actual finite pilot batch",
+    "source/binary/fan/runtime/registration hashes match immediately before any release"
+  ],
+  "stopping_rule": "first native/input/hash/ABI/count/nonfinite/timeout failure or interval overlapping target => stop full batch, no retry/precision change. Only primary strict F_upper<target permits the single predeclared smaller-a fallback. Fallback failure stops before S3. No extra parameter/point or kernel beyond3.",
+  "no_Hessian": true,
+  "no_finitepart_jets": true,
+  "no_full_G_gradient_substitution": true,
+  "no_MATLAB": true,
+  "no_spawn": true,
+  "no_stage_commit_push": true,
+  "global_floor_1_65000_certified": false,
+  "new_C6_bound": false,
+  "current_main_partial_I_closed": false,
+  "main_plan_amendment_utc": "2026-10-26T09:14:13.765544+00:00",
+  "predeclared_fallback_window": {
+    "kind": "B",
+    "a": "1/1000",
+    "T": "1/2"
+  },
+  "branch_rules": {
+    "primary_lower_above_target": "reuse matching primary jet for at most8 planned whole-box checks, then S3 primary (2 kernels total)",
+    "primary_upper_below_target": "fallback same ordinary point at predeclared a=1/1000,T=1/2; no S3 primary",
+    "primary_interval_overlaps_target": "UNRESOLVED stop; no fallback/no precision increase",
+    "fallback_lower_above_target": "reuse matching fallback jet for at most8 planned whole-box checks, then S3 fallback (3 kernels total)",
+    "fallback_upper_below_or_overlaps_target": "stop batch, no S3; strict failure concerns this band only",
+    "S3_lower_above_target": "same-window whole-box checks, then stop",
+    "S3_upper_below_or_overlaps_target": "stop; no extra window or point"
+  },
+  "whole_box_rule": {
+    "only_after_main_accepts_F057": "frame32 fixed right inverse Q=I5/32",
+    "halfwidths": "h_k=a/2^k for k=1,...,8, in descending order; take first certified width, at most8 candidates per authentic jet",
+    "face_intervals": "[max(0,c_i-h_k),min(1,c_i+h_k)] for physical coordinates i=2,...,6; no ordered-chamber truncation needed",
+    "corners_per_candidate": 32,
+    "kernel_recomputations": 0,
+    "no_passing_candidate": "report unresolved local radius; no automatic new kernel or finer halfwidth",
+    "gradient_pairing": "every box consumes F and all five derivatives of exactly the same window and center; changing a requires its own matching jet"
+  },
+  "old_seed_recalculations": 0
+}
