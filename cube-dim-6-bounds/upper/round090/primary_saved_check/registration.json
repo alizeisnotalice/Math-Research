@@ -1,0 +1,21 @@
+{
+  "time": "2026-10-26T15:16:38.702537+00:00",
+  "owner": "main",
+  "purpose": "actual minimal saved proof checker with the known Markdown/JSON administrative bug fixed",
+  "max_runs": 1,
+  "program_total_wall_seconds": 180,
+  "default_hard_alarm_seconds": 179.5,
+  "CPU_seconds": 20,
+  "native_calls": 0,
+  "Arb_corner_calls": 0,
+  "new_scientific_candidates": 0,
+  "scope": "one saved typed-event replay and eight saved exact certificate checks; no engine reconstruction or corner exp recalculation",
+  "source": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-cover090-audit/cube-dim-6-bounds/audit/round090/actual_cover_review/check_saved.py",
+  "source_sha256": "dbf84d54ffcba0665118aa0b231d4688db9d3ba3b2a13636fa2ad1306709b741",
+  "code_sha256": "407bac966a89fa6998b326d01534d750e60246e73cb2c2de06657a7eff13a158",
+  "only_source_change": {
+    "old": "    return read(item['path'])\n",
+    "new": "    return read(item['path']) if Path(item['path']).suffix == '.json' else Path(item['path']).read_text()\n"
+  },
+  "stop_on_failure": true
+}
