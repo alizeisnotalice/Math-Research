@@ -1,0 +1,46 @@
+{
+  "status": "ADMINISTRATIVE_RUNTIME_LIMITATION_NO_SCIENTIFIC_REPLAY",
+  "round": "100",
+  "prepared_utc": "2026-10-26T15:35:14.389339+00:00",
+  "bindings": {
+    "sealed_manifest_sha256": "2d61eaa9c626f8790519b577a11d6ec591b2ce531ca6d8268c52bc1d0edfe774",
+    "supervisor_run_once_sha256": "b216432bf9533d995415e62a39c452513e5f4fc86c4019e44a04ceddf7c46d0c",
+    "receipt_sha256": "098638107fe514adcba0b33ee21a72c6a1d5f281aafd3af5279076bb342c1a19",
+    "results_sha256": "794aed9c4ec5053f40ec0e88d41aa32a95f41fbd4f349da2afb2a31bd2c9b944",
+    "no_existing_seal_file_modified": true
+  },
+  "observed_supervisor_design": {
+    "outer_file": "run_once.py",
+    "independent_external_run_guard_found": false,
+    "child_wait_seconds": 160,
+    "guard_alarm_seconds": 175,
+    "alarm_handler": "Python handler raises TimeoutError",
+    "alarm_cancellation_point": "finally: after owned-child cleanup and before after=getrusage, receipt dict construction, receipt.write_text, print, and process exit",
+    "final_receipt_print_exit_covered_by_remaining_alarm": false,
+    "cleanup_inclusive_hard_cap_proven": false,
+    "child_CPU_limit_does_not_bound_guard_or_final_receipt": true
+  },
+  "actual_timing_evidence": {
+    "guard_monotonic_sample_seconds": 0.4727162089839112,
+    "guard_sample_exact_location": "time.monotonic()-start evaluated while constructing data dict, after child cleanup and signal.alarm(0), before receipt.write_text, print and process exit",
+    "child_CPU_seconds": 0.376944,
+    "guard_CPU_seconds_sample": 0.0014809999999999997,
+    "receipt_started_utc": "2026-10-26T15:24:44.576289+00:00",
+    "receipt_finished_utc_sample": "2026-10-26T15:24:45.048980+00:00",
+    "finished_utc_is_not_post_receipt_exit_time": true,
+    "all_owned_children_reported_reaped": true
+  },
+  "original_tool_evidence": {
+    "functions_exec_call": "tools.exec_command running mathematics-venv Python on upper/round100/time_first_budget_refinement/run_once.py; yield_time_ms1000",
+    "exec_command_chunk_id": "e4e3a1",
+    "exec_command_exit_code": 0,
+    "exec_command_reported_wall_time_seconds": 0.382043667,
+    "functions_exec_displayed_wall_time_seconds_rounded": 0.5,
+    "running_session_returned": false,
+    "independent_cleanup_receipt_exit_inclusive_hard_timeout_configured_in_tool_arguments": false,
+    "independently_audited_outer_complete_monotonic_wall_seconds": "unavailable",
+    "metadata_caveat": "The command tool reports exit0 and a wall duration, but its timing basis is not an independent cleanup-inclusive hard-cap proof. The reported0.382043667 also differs from the guard monotonic sample0.4727162089839112; no common clock/timing scope is available to reconcile them."
+  },
+  "conclusion": "The actual invocation returned exit0 with results and final receipt. The sealed design does not prove a cleanup/receipt/exit-inclusive180-second hard cap because the only explicit guard timer was cancelled before final administrative writes and exit. Fast completion does not retroactively validate that design. No scientific arithmetic was rerun; the original100 seal is unchanged.",
+  "new104_design_requirement": "top-level default SIG_DFL timer177 remains armed through final receipt and process exit; prefer one process; source first, no run before parent release"
+}
