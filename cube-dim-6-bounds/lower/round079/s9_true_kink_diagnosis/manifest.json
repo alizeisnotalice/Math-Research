@@ -1,0 +1,132 @@
+{
+  "round": "079",
+  "artifacts": [
+    {
+      "path": "registration.json",
+      "sha256": "f36a4fc2df90a8e462c54b126f8169f9ef6f2430b034832cb7d61f8413a79013",
+      "bytes": 788
+    },
+    {
+      "path": "diagnose.py",
+      "sha256": "b9162a5fdbec14bdbc68c1bd4a74fe4a3b2af93f4a724867981d3187a2f9fb07",
+      "bytes": 10551
+    },
+    {
+      "path": "results.json",
+      "sha256": "1526b2b4db02cca173681efda36f19959e07ee9b42e2111cbe21ec98e040675f",
+      "bytes": 300142
+    },
+    {
+      "path": "continuation_registration.json",
+      "sha256": "250b88a9a493ce93741163a3bed89900d20be100fcdf53f20f4165e36b01b39f",
+      "bytes": 694
+    },
+    {
+      "path": "complete_section.py",
+      "sha256": "54f6e7ef5366226efff98d01af98382169cbd25849a00bc2e61f50a6d1fe41d6",
+      "bytes": 8417
+    },
+    {
+      "path": "section_results.json",
+      "sha256": "3874b5a96e54224e315d5865dd7b8f74d3c527fc2906eaa7ab04d029779e1f85",
+      "bytes": 53893
+    },
+    {
+      "path": "check_saved.py",
+      "sha256": "2359a0aaa295e8b79106faecb538329ce3047da7c13f3fd0aa892245971a5ddf",
+      "bytes": 2351
+    },
+    {
+      "path": "report.md",
+      "sha256": "4fee1b612fb8311e3f484696b9a9d80fc3295d3208e4f2d5b7e74f840c538943",
+      "bytes": 8146
+    }
+  ],
+  "frozen_external_dependencies": [
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-lower-clean/cube-dim-6-bounds/lower/round075/post_s8_overlap/results.json",
+      "frozen_sha256": "dec62274abcf8204cf698cd7665dd6c754db3fee87a55beb5bfa1ece676e2817",
+      "current_sha256": "dec62274abcf8204cf698cd7665dd6c754db3fee87a55beb5bfa1ece676e2817",
+      "matches": true
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/lower/round008/spacing_chamber/chamber_interface.json",
+      "frozen_sha256": "99e762ad8fb63303f90b56c5d7f90fb855a3335903cae21650a23bfb07fea933",
+      "current_sha256": "99e762ad8fb63303f90b56c5d7f90fb855a3335903cae21650a23bfb07fea933",
+      "matches": true
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/lower/round001_rectangular_certificate.py",
+      "frozen_sha256": "9072275d47bd66c3ba9ec7de0c435efdba0785c39a02b122ea1ebb960403ec82",
+      "current_sha256": "9072275d47bd66c3ba9ec7de0c435efdba0785c39a02b122ea1ebb960403ec82",
+      "matches": true
+    }
+  ],
+  "saved21_continuation_input": {
+    "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-lower-clean/cube-dim-6-bounds/lower/round079/s9_true_kink_diagnosis/results.json",
+    "file_sha256": "1526b2b4db02cca173681efda36f19959e07ee9b42e2111cbe21ec98e040675f",
+    "json_field": "retained_cross_sections",
+    "canonical_json_encoding": "json.dumps(array,sort_keys=True,separators=(comma,colon)),UTF8",
+    "canonical_array_sha256": "988b3a0d05ea18d3ce43e22d76be0ff8d283cef6d4c6e986869d221d93bf1ea4",
+    "boxes": 21
+  },
+  "execution_history": [
+    {
+      "entry": "diagnose.py",
+      "output": "results.json",
+      "pid": 81935,
+      "exit": 1,
+      "status": "stopped_exception",
+      "error": "AssertionError()",
+      "reason": "False trial assumption that an origin cube was uncovered; stopped before union after all125 background records. Preserved, not rerun.",
+      "cpu_seconds": 0.080928,
+      "nodes": 125,
+      "union_nodes": 0
+    },
+    {
+      "entry": "complete_section.py",
+      "registration": "continuation_registration.json",
+      "output": "section_results.json",
+      "pid": 82295,
+      "exit": 0,
+      "status": "finished_strict_local_maximum",
+      "continuation_cpu_seconds": 0.10556600000000001,
+      "new_union_nodes": 63,
+      "old_background_nodes_replayed": 0
+    }
+  ],
+  "combined_totals": {
+    "configurations": 3,
+    "nodes": 224,
+    "cpu_seconds": 0.186496,
+    "new5Dunions": 1,
+    "full6Dunions": 0,
+    "failed_trial_programs": 1,
+    "old_phase_reruns": 0
+  },
+  "saved_checker": {
+    "entry": "check_saved.py",
+    "exit": 0,
+    "pass": true,
+    "new_symbolic_configurations": 0,
+    "union_calls": 0,
+    "writes": 0
+  },
+  "proof_fields": {
+    "all125background_and76active_collars": "results.json.all_background_normal_classifications",
+    "exact_new_union": "section_results.json.exact_background_5D_union",
+    "full_uncovered_volume": "section_results.json.exact_uncovered_5D_volume",
+    "exact_right_slope": "section_results.json.right_slope",
+    "real_open_uncovered_box": "section_results.json.open_uncovered_region",
+    "right_chamber": "section_results.json.right_chamber_full_order_gaps"
+  },
+  "scope": "Strict local maximum for fixed127 common-radius unit-mass witness union, only a2 varying. Not global-optimality of all constructions or C6.",
+  "new_C6_bound": false,
+  "new_improving_candidate": false,
+  "previous_rounds_modified": false,
+  "not_done": [
+    "independent NEW5Dunion/slope audit",
+    "s10 seam classification or further continuation",
+    "global optimality or other parameter/mass directions"
+  ]
+}
