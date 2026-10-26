@@ -1,6 +1,6 @@
 # 六维中心方体研究状态
 
-active；最新顺序归档至066（066封存中），实际研究前沿068。上界优先，下界低资源。每程序单次墙钟上限180秒，总研究及思考预算不限。超时保存日志/检查点，仅终止回收本任务进程，不自动重发。政策见coordination/run_policy.json。
+active；最新顺序归档至067，实际研究前沿074。上界优先，下界低资源。每程序单次墙钟上限180秒，总研究及思考预算不限。超时保存日志/检查点，仅终止回收本任务进程，不自动重发。政策见coordination/run_policy.json。
 
 固定Lebesgue、中心轴平行、全部坐标共同半径、一般L1和所有正尺度。当前严格内部C6>2070186602851/10^12，C6≤64。066理想R≈2.070186602851448487，完整36系数/有理区间、新旧完整上端比较、明确finiteL1及主实际最小复核均PASS；不是从展示小数造证书。a2=v^5/6+u^4v/3，其余间距及127共同半径源见audit/round066/post_s2_local_event_review/report.md。内部成果不称公开发表或全球穷尽纪录。
 
@@ -29,3 +29,7 @@ MATLAB仅主串行；059真实三标量与准确Python根证书一致，只作�
 主clone=/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6；数学Python=/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python。代理独立clone/唯一所有权，主集成及最终证明；子代理不得stage/push/递归/MATLAB。当前C068修复准备、E068新增下界独审；其它已完成批不自动续跑。067/068待按完成轮次独立精简归档。
 
 066归档完成：严格新C6下界>2070186602851/10^12，完整064最大上端及新finiteL1/独审通过。严格C6上端仍64、当前下端2070186602851/1000000000000；双侧未触发、后三轮0/3。
+
+当前协调：068恢复core/math新独审ACCEPT，runtime仍CONDITIONAL，069外watchdog补充未完production关闭；069严格offS3全G C2已作者与B独审PASS待归档；072轴frame局部semiconcavity研究未给body32结论；074只middle长时新机制。068/070新增下界E独审PASS但主mincheck/顺序归档仍待，不提前写入当前账本。073下界低CPU新几何，0旧union。
+
+067归档完成：alpha3/2旧完整接口和粗g/I去重通过，真正未付内部积分识别，0新科学配置，无Cn。严格C6上端仍64、当前下端2070186602851/1000000000000；双侧未触发、后三轮0/3。

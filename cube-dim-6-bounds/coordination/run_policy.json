@@ -6,5 +6,7 @@
   "priority": "upper; lower low resource",
   "termination": "timeout: preserve logs/checkpoint, terminate and wait only task-owned process; no automatic rerun",
   "existing_completed_runs": "retain actual original limits and timings; no retroactive rewriting",
-  "new_programs": "apply180s wall timeout, including native/checkers; administrative runtime also bounded"
+  "new_programs": "apply180s wall timeout, including native/checkers; administrative runtime also bounded",
+  "limit_includes_cleanup": true,
+  "runtime_pending_audit": "069 new outer watchdog;068nativegatecloseduntilauditandprimaryrelease"
 }
