@@ -1,0 +1,78 @@
+{
+  "round": "070",
+  "status": "sealed",
+  "artifacts": [
+    {
+      "name": "registration.json",
+      "sha256": "b802d7395a7a60d44f42f3ac2173b05db41642d1bd6648d6ede6d8edccf2864f",
+      "bytes": 804
+    },
+    {
+      "name": "review.py",
+      "sha256": "35b50106d179637a5223f95368e0ab5c40196cc58ad1902fdef1c98fb274a9c5",
+      "bytes": 16923
+    },
+    {
+      "name": "review_results.json",
+      "sha256": "3d33b93fd5e94f60bc6d9f076ca27fa9d6f7587cbaffbf65f2a17297b64bfe2c",
+      "bytes": 242102
+    },
+    {
+      "name": "frozen_068_baseline.json",
+      "sha256": "cc758608d030a290b2e74c35ca5e245fa492607e8335b254b7708d64d26fe796",
+      "bytes": 10380
+    },
+    {
+      "name": "check_saved.py",
+      "sha256": "11894a578531176bd75d455fe7c174626c1ba132baed9f1b6c363652ecfe2755",
+      "bytes": 2398
+    },
+    {
+      "name": "report.md",
+      "sha256": "ed472288c398b319497b23104e827bd9883b29cc812355c6cba70b9cc5dd671b",
+      "bytes": 10919
+    }
+  ],
+  "immutable_input_hashes_all_match": true,
+  "baseline": "maximum complete D068/E068 upper in frozen snapshot; no backward comparison to066",
+  "mathematical_execution": {
+    "count": 1,
+    "pid": 74113,
+    "exit": 0,
+    "cpu_seconds": 0.679562,
+    "wall_seconds": 0.6817333750077523,
+    "resource": {
+      "configurations": 9,
+      "local_nodes": 493,
+      "nodes_by_type": {
+        "new_germ_box": 254,
+        "new_cover_pair": 6,
+        "new_fixed_projection_read": 13,
+        "new_inactive_label": 8,
+        "new_adjacent_pair_and_gap": 36,
+        "new_effective_gap": 21,
+        "new_cover_source_box_at_collar": 12,
+        "new_inactive_collar_check": 16,
+        "new_s7_source_box": 127
+      },
+      "new_scalar_source_endpoint_checks": 3336,
+      "full_union_calls": 0,
+      "old23_pair_or_gap_or_baseline_replays": 0,
+      "MATLAB_calls": 0
+    }
+  },
+  "coverage_strength": "explicit parameter collar 1e-6; all six real common-radius source boxes checked at both endpoints; complete swapped strip inclusion by affine margins; all eight inactive labels stay inactive",
+  "fixed_projection_equality": "allowed by exact non-strict inclusion; proof does not require strict fixed-face margins",
+  "saved_only_check": {
+    "command": "python3 -B check_saved.py",
+    "exit": 0,
+    "pass": true,
+    "new_scientific_configurations": 0,
+    "union_calls": 0
+  },
+  "post_s7_slope_checked": false,
+  "no_automatic_reruns": true,
+  "new_C6_registration_performed": false,
+  "git_mutations_performed": false,
+  "final_status": "all work stopped"
+}
