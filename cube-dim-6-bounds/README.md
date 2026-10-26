@@ -1,6 +1,6 @@
 # 六维中心共同半径方体弱型常数
 
-当前严格内部结果：C6>2068316441022/10^12，C6≤64。下界当前准确证书已独立复核与有限L1传递；上界没有突破。内部结果不称公开发表。
+当前严格内部结果：C6>2070186602851/10^12，C6≤64。下界当前准确证书已独立复核与有限L1传递；上界没有突破。内部结果不称公开发表。
 
 [当前状态](STATE.md) · [准确账本](results/bounds_ledger.json) · [完整区域总账](upper/round059/global_region_account/theorem.md) · [064严格下界及有限L1](audit/round064/a2_one_more_event_review/report.md)。
 
