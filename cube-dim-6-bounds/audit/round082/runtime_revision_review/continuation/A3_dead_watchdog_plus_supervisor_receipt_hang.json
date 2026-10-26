@@ -1,0 +1,86 @@
+{
+  "driver_wall_seconds": 1.6192327919998206,
+  "exit_code": -14,
+  "files": {
+    "before_receipt.json": {
+      "sha256": "0f072f4098e67438dec05080a816ca72433a66ae5686478bb2533b63d8dfe409",
+      "text": "{\n  \"all_descendants_reaped_claim\": false,\n  \"args\": [\n    \"receipt_retained_reader_hang\"\n  ],\n  \"automatic_retries\": 0,\n  \"cleanup_error\": null,\n  \"deadline_policy\": {\n    \"group\": 0.85,\n    \"parent\": 1.25,\n    \"reap\": 0.12,\n    \"soft\": 0.35,\n    \"supervisor\": 1.6,\n    \"watchdog\": 1.45,\n    \"worker_fallback\": 1.1\n  },\n  \"elapsed_before_receipt\": 0.04069229101878591,\n  \"events\": [\n    {\n      \"elapsed\": 0.038484666001750156,\n      \"kind\": \"WATCHDOG_ARMED\",\n      \"pid\": 93753,\n      \"supervisor_pid\": 93751,\n      \"worker_pgid\": 93752\n    },\n    {\n      \"kind\": \"WORKER_STARTED\",\n      \"pgid\": 93752,\n      \"pid\": 93752,\n      \"supervisor_pid\": 93751\n    },\n    {\n      \"detail\": {\n        \"case\": \"A3_dead_watchdog_plus_supervisor_receipt_hang\",\n        \"next\": \"Original supervisor receipt hook\"\n      },\n      \"kind\": \"TASK_RESULT\",\n      \"logical_exit_code\": 0\n    },\n    {\n      \"elapsed\": 0.03929962500114925,\n      \"kind\": \"GROUP_KILL_ACKNOWLEDGED\",\n      \"pid\": 93753\n    }\n  ],\n  \"group_kill_acknowledged\": true,\n  \"group_sigkill_sent_by_supervisor\": true,\n  \"mode\": \"fixture\",\n  \"native_calls\": 0,\n  \"original_worker_observation\": null,\n  \"reaps\": {\n    \"worker\": {\n      \"reaped\": true,\n      \"returncode\": -9\n    }\n  },\n  \"schema\": \"C069-runtime-receipt-v1\",\n  \"status\": \"TASK_RESULT_OBSERVED\",\n  \"supervisor_pid\": 93751,\n  \"task_result\": {\n    \"detail\": {\n      \"case\": \"A3_dead_watchdog_plus_supervisor_receipt_hang\",\n      \"next\": \"Original supervisor receipt hook\"\n    },\n    \"kind\": \"TASK_RESULT\",\n    \"logical_exit_code\": 0\n  },\n  \"watchdog_pid\": 93753,\n  \"worker_pid\": 93752\n}\n"
+    },
+    "entered.json": {
+      "sha256": "9bcff91c546df3bf314996dffaf054fa3a1130b1284c5db99af42b477a364ef3",
+      "text": "{\"case\": \"A3_dead_watchdog_plus_supervisor_receipt_hang\", \"elapsed\": 0.03906275000190362, \"pid\": 93752}\n"
+    },
+    "handles.json": {
+      "sha256": "eba4bc3cde809417f35ffc36030e2d58d6116881bfcc81b01c5999b8691fa08f",
+      "text": "{\n  \"inherited_native_pgid\": 93752,\n  \"supervisor_pid\": 93751,\n  \"watchdog_pid\": 93753,\n  \"worker_pgid\": 93752,\n  \"worker_pid\": 93752\n}\n"
+    },
+    "receipt_blocked.json": {
+      "sha256": "ffb43fb05a1f32beabd522b90136420c40f2b8980c5008ceb58ac0436d255c7a",
+      "text": "{\"elapsed\": 0.04167854101979174, \"filled_bytes\": 65536, \"pgid\": 93751, \"pid\": 93751, \"reader_fd\": 3, \"retained_reader\": true, \"writer_fd\": 4}\n"
+    },
+    "start.json": {
+      "sha256": "17f488eb5d24854098cc69f1613c456effaed7cfb2418ff7d5b69ce5d3b9ed65",
+      "text": "{\n  \"args\": [\n    \"receipt_retained_reader_hang\"\n  ],\n  \"automatic_retries\": 0,\n  \"deadline_policy\": {\n    \"group\": 0.85,\n    \"parent\": 1.25,\n    \"reap\": 0.12,\n    \"soft\": 0.35,\n    \"supervisor\": 1.6,\n    \"watchdog\": 1.45,\n    \"worker_fallback\": 1.1\n  },\n  \"mode\": \"fixture\",\n  \"native_calls\": 0,\n  \"runtime_release_sha256\": null,\n  \"schema\": \"C069-runtime-start-v1\",\n  \"started_monotonic\": 181053.120350375,\n  \"supervisor_pgid\": 93751,\n  \"supervisor_pid\": 93751\n}\n"
+    },
+    "watchdog.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "watchdog.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "worker.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "worker.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    }
+  },
+  "id": "A3_dead_watchdog_plus_supervisor_receipt_hang",
+  "known_process_observations": [
+    {
+      "live": false,
+      "pid": 93751,
+      "ps_exit": 1,
+      "raw": ""
+    },
+    {
+      "live": false,
+      "pid": 93752,
+      "ps_exit": 1,
+      "raw": ""
+    },
+    {
+      "live": false,
+      "pid": 93753,
+      "ps_exit": 1,
+      "raw": ""
+    }
+  ],
+  "reviewer_signals": [
+    {
+      "elapsed": 0.06123187500634231,
+      "pid": 93753,
+      "reason": "registered fault of original watchdog only",
+      "signal": "SIGKILL"
+    }
+  ],
+  "source_copy_sha256": {
+    "check_revision.py": "4b36ee430de3a4b3cae7d91981fc21304e9f07e6ba8e19c7588c4048b320dc4c",
+    "control_task.py": "f9e67a6d003878ecda5754070f476766828d26c79c40156b6e99b84f2340528c",
+    "envelope.py": "0b89aac0f983c6a4cc3775b2f1648faf3e6069cb9483235b914de129eca91b42",
+    "fixture_stubs.py": "efaa9ae5cb1d55eb719e50741560f7c8809cbe70937773d5a1cde58223cd1a88",
+    "native_task.py": "0bcb0edf344eacbbfb94422ccaee3a4c2c77df96973fa8bbc9974654395d25f5",
+    "runtime_support.py": "94f1b4f88de2b18fe0c0454292ce1214c35f39dba176b5cfad12cc38f1a4ab7a",
+    "watchdog.py": "ca3154849395224c39a07b41952512815d9d12cd45a4c708f195df335c02f62a",
+    "worker.py": "a5f82d9cd5cae404fbc8d80b64f64ae878219a0394c76c0f5fa67e6d7eed25c5"
+  },
+  "special": {},
+  "status": "PASS",
+  "stderr": "",
+  "stdout": "",
+  "supervisor_pid": 93751
+}

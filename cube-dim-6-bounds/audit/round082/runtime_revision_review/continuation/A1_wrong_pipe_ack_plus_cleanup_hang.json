@@ -1,0 +1,91 @@
+{
+  "driver_wall_seconds": 0.8791540840175003,
+  "exit_code": 1,
+  "files": {
+    "before_receipt.json": {
+      "sha256": "f978bd3c272412bfacd210a97f3de45de34d075e28b591890142c4145a340e28",
+      "text": "{\n  \"all_descendants_reaped_claim\": false,\n  \"args\": [\n    \"retained_reader_cleanup\"\n  ],\n  \"automatic_retries\": 0,\n  \"cleanup_error\": null,\n  \"deadline_policy\": {\n    \"group\": 0.85,\n    \"parent\": 1.25,\n    \"reap\": 0.12,\n    \"soft\": 0.35,\n    \"supervisor\": 1.6,\n    \"watchdog\": 1.45,\n    \"worker_fallback\": 1.1\n  },\n  \"elapsed_before_receipt\": 0.858337916986784,\n  \"events\": [\n    {\n      \"elapsed\": 0.033505374973174185,\n      \"kind\": \"WATCHDOG_ARMED\",\n      \"pid\": 93740,\n      \"supervisor_pid\": 93738,\n      \"worker_pgid\": 93739\n    },\n    {\n      \"kind\": \"WORKER_STARTED\",\n      \"pgid\": 93739,\n      \"pid\": 93739,\n      \"supervisor_pid\": 93738\n    },\n    {\n      \"from_untrusted_result_pipe\": true,\n      \"kind\": \"GROUP_SIGKILL_SENT\",\n      \"pgid\": 93739,\n      \"pid\": 93740\n    },\n    {\n      \"elapsed\": 0.35173616698011756,\n      \"kind\": \"SOFT_WORK_CUTOFF_SENT\"\n    },\n    {\n      \"elapsed\": 0.8569688749848865,\n      \"kind\": \"GROUP_SIGKILL_SENT\",\n      \"pgid\": 93739,\n      \"pid\": 93740\n    }\n  ],\n  \"group_kill_acknowledged\": true,\n  \"group_sigkill_sent_by_supervisor\": false,\n  \"mode\": \"fixture\",\n  \"native_calls\": 0,\n  \"original_worker_observation\": null,\n  \"reaps\": {\n    \"worker\": {\n      \"reaped\": true,\n      \"returncode\": -9\n    }\n  },\n  \"schema\": \"C069-runtime-receipt-v1\",\n  \"status\": \"STOP_NO_RETRY\",\n  \"supervisor_pid\": 93738,\n  \"task_result\": null,\n  \"watchdog_pid\": 93740,\n  \"worker_pid\": 93739\n}\n"
+    },
+    "cleanup_blocked.json": {
+      "sha256": "d3325d89efbf16f48a211099dc39dfc4841f824534ed9cc0d263be773c9934d1",
+      "text": "{\"elapsed\": 0.3518032079737168, \"filled_bytes\": 65536, \"pgid\": 93739, \"pid\": 93739, \"reader_fd\": 3, \"retained_reader\": true, \"writer_fd\": 4}\n"
+    },
+    "completion.json": {
+      "sha256": "fbc1e410f5b382f26155d24d392da7cb49a28e3915cfa0bd8d80b54fe3d2423c",
+      "text": "{\n  \"all_descendants_reaped_claim\": false,\n  \"automatic_retries\": 0,\n  \"cleanup_error\": null,\n  \"elapsed\": 0.8615008749766275,\n  \"final_receipt_written\": true,\n  \"reaps\": {\n    \"watchdog\": {\n      \"reaped\": true,\n      \"returncode\": 0\n    },\n    \"worker\": {\n      \"reaped\": true,\n      \"returncode\": -9\n    }\n  }\n}\n"
+    },
+    "entered.json": {
+      "sha256": "56aa2ceef00cd74d397aa0bd8ccc4ed3fd45159471ceb6fa4399088a1aa2cfda",
+      "text": "{\"case\": \"A1_wrong_pipe_ack_plus_cleanup_hang\", \"elapsed\": 0.034057166980346665, \"pid\": 93739}\n"
+    },
+    "forged_message.json": {
+      "sha256": "8fb40f32f0a0715e475562219dcd34002a7c3b39eb653270b90ee833fbfc5407",
+      "text": "{\"from_untrusted_result_pipe\": true, \"kind\": \"GROUP_SIGKILL_SENT\", \"pgid\": 93739, \"pid\": 93740}\n"
+    },
+    "handles.json": {
+      "sha256": "19a964df14599bb8b6ed219cb58a458b7ac06133d689682f58310c1e14ea486f",
+      "text": "{\n  \"inherited_native_pgid\": 93739,\n  \"supervisor_pid\": 93738,\n  \"watchdog_pid\": 93740,\n  \"worker_pgid\": 93739,\n  \"worker_pid\": 93739\n}\n"
+    },
+    "receipt.json": {
+      "sha256": "f978bd3c272412bfacd210a97f3de45de34d075e28b591890142c4145a340e28",
+      "text": "{\n  \"all_descendants_reaped_claim\": false,\n  \"args\": [\n    \"retained_reader_cleanup\"\n  ],\n  \"automatic_retries\": 0,\n  \"cleanup_error\": null,\n  \"deadline_policy\": {\n    \"group\": 0.85,\n    \"parent\": 1.25,\n    \"reap\": 0.12,\n    \"soft\": 0.35,\n    \"supervisor\": 1.6,\n    \"watchdog\": 1.45,\n    \"worker_fallback\": 1.1\n  },\n  \"elapsed_before_receipt\": 0.858337916986784,\n  \"events\": [\n    {\n      \"elapsed\": 0.033505374973174185,\n      \"kind\": \"WATCHDOG_ARMED\",\n      \"pid\": 93740,\n      \"supervisor_pid\": 93738,\n      \"worker_pgid\": 93739\n    },\n    {\n      \"kind\": \"WORKER_STARTED\",\n      \"pgid\": 93739,\n      \"pid\": 93739,\n      \"supervisor_pid\": 93738\n    },\n    {\n      \"from_untrusted_result_pipe\": true,\n      \"kind\": \"GROUP_SIGKILL_SENT\",\n      \"pgid\": 93739,\n      \"pid\": 93740\n    },\n    {\n      \"elapsed\": 0.35173616698011756,\n      \"kind\": \"SOFT_WORK_CUTOFF_SENT\"\n    },\n    {\n      \"elapsed\": 0.8569688749848865,\n      \"kind\": \"GROUP_SIGKILL_SENT\",\n      \"pgid\": 93739,\n      \"pid\": 93740\n    }\n  ],\n  \"group_kill_acknowledged\": true,\n  \"group_sigkill_sent_by_supervisor\": false,\n  \"mode\": \"fixture\",\n  \"native_calls\": 0,\n  \"original_worker_observation\": null,\n  \"reaps\": {\n    \"worker\": {\n      \"reaped\": true,\n      \"returncode\": -9\n    }\n  },\n  \"schema\": \"C069-runtime-receipt-v1\",\n  \"status\": \"STOP_NO_RETRY\",\n  \"supervisor_pid\": 93738,\n  \"task_result\": null,\n  \"watchdog_pid\": 93740,\n  \"worker_pid\": 93739\n}\n"
+    },
+    "start.json": {
+      "sha256": "fc7cd6582829cbd474e7b9979b26d4296ff5238d3611cd2f644731532c105321",
+      "text": "{\n  \"args\": [\n    \"retained_reader_cleanup\"\n  ],\n  \"automatic_retries\": 0,\n  \"deadline_policy\": {\n    \"group\": 0.85,\n    \"parent\": 1.25,\n    \"reap\": 0.12,\n    \"soft\": 0.35,\n    \"supervisor\": 1.6,\n    \"watchdog\": 1.45,\n    \"worker_fallback\": 1.1\n  },\n  \"mode\": \"fixture\",\n  \"native_calls\": 0,\n  \"runtime_release_sha256\": null,\n  \"schema\": \"C069-runtime-start-v1\",\n  \"started_monotonic\": 181051.247562833,\n  \"supervisor_pgid\": 93738,\n  \"supervisor_pid\": 93738\n}\n"
+    },
+    "watchdog.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "watchdog.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "worker.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "worker.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    }
+  },
+  "id": "A1_wrong_pipe_ack_plus_cleanup_hang",
+  "known_process_observations": [
+    {
+      "live": false,
+      "pid": 93738,
+      "ps_exit": 1,
+      "raw": ""
+    },
+    {
+      "live": false,
+      "pid": 93739,
+      "ps_exit": 1,
+      "raw": ""
+    },
+    {
+      "live": false,
+      "pid": 93740,
+      "ps_exit": 1,
+      "raw": ""
+    }
+  ],
+  "reviewer_signals": [],
+  "source_copy_sha256": {
+    "check_revision.py": "4b36ee430de3a4b3cae7d91981fc21304e9f07e6ba8e19c7588c4048b320dc4c",
+    "control_task.py": "f9e67a6d003878ecda5754070f476766828d26c79c40156b6e99b84f2340528c",
+    "envelope.py": "0b89aac0f983c6a4cc3775b2f1648faf3e6069cb9483235b914de129eca91b42",
+    "fixture_stubs.py": "efaa9ae5cb1d55eb719e50741560f7c8809cbe70937773d5a1cde58223cd1a88",
+    "native_task.py": "0bcb0edf344eacbbfb94422ccaee3a4c2c77df96973fa8bbc9974654395d25f5",
+    "runtime_support.py": "94f1b4f88de2b18fe0c0454292ce1214c35f39dba176b5cfad12cc38f1a4ab7a",
+    "watchdog.py": "ca3154849395224c39a07b41952512815d9d12cd45a4c708f195df335c02f62a",
+    "worker.py": "a5f82d9cd5cae404fbc8d80b64f64ae878219a0394c76c0f5fa67e6d7eed25c5"
+  },
+  "special": {},
+  "status": "PASS",
+  "stderr": "",
+  "stdout": "{\"folder\": \"/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/audit/round082/runtime_revision_review/continuation/_scratch/A1_wrong_pipe_ack_plus_cleanup_hang/fixtures/retained_reader_cleanup\", \"receipt\": \"/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/audit/round082/runtime_revision_review/continuation/_scratch/A1_wrong_pipe_ack_plus_cleanup_hang/fixtures/retained_reader_cleanup/receipt.json\", \"task_result\": null, \"elapsed\": 0.8616658329847269}\n",
+  "supervisor_pid": 93738
+}

@@ -1,0 +1,47 @@
+{
+  "error": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')",
+  "files": {
+    "handles.json": {
+      "sha256": "584332a426b1ef45986b47f484dfc6d5542e67124850db0642989c9b194ec922",
+      "text": "{\n  \"inherited_native_pgid\": 92739,\n  \"supervisor_pid\": 92738,\n  \"watchdog_pid\": 92740,\n  \"worker_pgid\": 92739,\n  \"worker_pid\": 92739\n}\n"
+    },
+    "start.json": {
+      "sha256": "dfeef3ed7b62421b594b334f469a149f5dbf228839270540917ae17382d8f964",
+      "text": "{\n  \"args\": [\n    \"retained_reader_cleanup\"\n  ],\n  \"automatic_retries\": 0,\n  \"deadline_policy\": {\n    \"group\": 0.85,\n    \"parent\": 1.25,\n    \"reap\": 0.12,\n    \"soft\": 0.35,\n    \"supervisor\": 1.6,\n    \"watchdog\": 1.45,\n    \"worker_fallback\": 1.1\n  },\n  \"mode\": \"fixture\",\n  \"native_calls\": 0,\n  \"runtime_release_sha256\": null,\n  \"schema\": \"C069-runtime-start-v1\",\n  \"started_monotonic\": 180915.469463541,\n  \"supervisor_pgid\": 92738,\n  \"supervisor_pid\": 92738\n}\n"
+    },
+    "watchdog.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "watchdog.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "worker.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "worker.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    }
+  },
+  "id": "A1_wrong_pipe_ack_plus_cleanup_hang",
+  "reviewer_signals": [],
+  "source_copy_sha256": {
+    "check_revision.py": "4b36ee430de3a4b3cae7d91981fc21304e9f07e6ba8e19c7588c4048b320dc4c",
+    "control_task.py": "f9e67a6d003878ecda5754070f476766828d26c79c40156b6e99b84f2340528c",
+    "envelope.py": "0b89aac0f983c6a4cc3775b2f1648faf3e6069cb9483235b914de129eca91b42",
+    "fixture_stubs.py": "efaa9ae5cb1d55eb719e50741560f7c8809cbe70937773d5a1cde58223cd1a88",
+    "native_task.py": "0bcb0edf344eacbbfb94422ccaee3a4c2c77df96973fa8bbc9974654395d25f5",
+    "runtime_support.py": "94f1b4f88de2b18fe0c0454292ce1214c35f39dba176b5cfad12cc38f1a4ab7a",
+    "watchdog.py": "ca3154849395224c39a07b41952512815d9d12cd45a4c708f195df335c02f62a",
+    "worker.py": "a5f82d9cd5cae404fbc8d80b64f64ae878219a0394c76c0f5fa67e6d7eed25c5"
+  },
+  "special": {},
+  "status": "FAIL_STOP",
+  "stderr": "",
+  "stdout": "",
+  "supervisor_pid": 92738,
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/audit/round082/runtime_revision_review/check_review.py\", line 141, in one\n    handles=await_marker(folder/'handles.json',begin+2)\n  File \"/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/audit/round082/runtime_revision_review/check_review.py\", line 118, in await_marker\n    return json.loads(path.read_text())\n           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0_1/Frameworks/Python.framework/Versions/3.15/lib/python3.15/json/__init__.py\", line 371, in loads\n    return _default_decoder.decode(s)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0_1/Frameworks/Python.framework/Versions/3.15/lib/python3.15/json/decoder.py\", line 358, in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0_1/Frameworks/Python.framework/Versions/3.15/lib/python3.15/json/decoder.py\", line 376, in raw_decode\n    raise JSONDecodeError(\"Expecting value\", s, err.value) from None\njson.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\n"
+}

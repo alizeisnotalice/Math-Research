@@ -1,0 +1,101 @@
+{
+  "Arb_calls": 0,
+  "actual_deadline_overrun_observed": false,
+  "all_descendants_reaped_claim": false,
+  "all_registered_scripts_and_injection_bytes_unchanged": true,
+  "author_and_all_readonly_pins_unchanged": true,
+  "authorized_continuation_count": 1,
+  "authorized_continuation_harness_pid": 93737,
+  "authorized_continuation_harness_wall_seconds": 3.527681959007168,
+  "authorized_continuation_tool_chunk_id": "111713",
+  "authorized_continuation_tool_exit": 0,
+  "automatic_retries": 0,
+  "body_kernel_calls": 0,
+  "known_original_runtime_pids": [
+    92738,
+    92739,
+    92740,
+    93738,
+    93739,
+    93740,
+    93745,
+    93746,
+    93747,
+    93751,
+    93752,
+    93753
+  ],
+  "native_calls": 0,
+  "no_processes_killed_by_this_observation": true,
+  "observed_utc": "2026-10-26T13:22:25.698959+00:00",
+  "old_normal_soft_math_reruns": 0,
+  "original_combination_faults_entered": 0,
+  "original_harness_pid": 92737,
+  "original_setup_attempts": 1,
+  "original_tool_chunk_id": "a0a36e",
+  "original_tool_exit": 1,
+  "passed_combinations": 3,
+  "post_run_ps_returncode": 1,
+  "post_run_ps_stderr": "",
+  "post_run_ps_stdout": "",
+  "production_release_created": false,
+  "schema": "A082-independent-runtime-execution-receipt-v1",
+  "summaries": [
+    {
+      "exit": 1,
+      "handles": {
+        "inherited_native_pgid": 93739,
+        "supervisor_pid": 93738,
+        "watchdog_pid": 93740,
+        "worker_pgid": 93739,
+        "worker_pid": 93739
+      },
+      "id": "A1_wrong_pipe_ack_plus_cleanup_hang",
+      "reviewer_signals": [],
+      "wall": 0.8791540840175003
+    },
+    {
+      "exit": 1,
+      "handles": {
+        "inherited_native_pgid": 93746,
+        "supervisor_pid": 93745,
+        "watchdog_pid": 93747,
+        "worker_pgid": 93746,
+        "worker_pid": 93746
+      },
+      "id": "A2_dead_watchdog_plus_cleanup_and_receipt_exception",
+      "reviewer_signals": [
+        {
+          "elapsed": 0.37160558300092816,
+          "pid": 93747,
+          "reason": "registered fault of original watchdog only",
+          "signal": "SIGKILL"
+        }
+      ],
+      "wall": 0.969015540991677
+    },
+    {
+      "exit": -14,
+      "handles": {
+        "inherited_native_pgid": 93752,
+        "supervisor_pid": 93751,
+        "watchdog_pid": 93753,
+        "worker_pgid": 93752,
+        "worker_pid": 93752
+      },
+      "id": "A3_dead_watchdog_plus_supervisor_receipt_hang",
+      "reviewer_signals": [
+        {
+          "elapsed": 0.06123187500634231,
+          "pid": 93753,
+          "reason": "registered fault of original watchdog only",
+          "signal": "SIGKILL"
+        }
+      ],
+      "wall": 1.6192327919998206
+    }
+  ],
+  "total_envelope_launches": 4,
+  "total_harness_invocations": 2,
+  "unique_combinations_tested": 3
+}

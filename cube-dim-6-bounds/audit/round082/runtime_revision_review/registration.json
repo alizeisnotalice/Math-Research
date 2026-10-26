@@ -1,0 +1,36 @@
+{
+  "Arb_calls": 0,
+  "author_preparation_manifest_sha256": "a68949397da1dc7825c1d4979ca1fcc096fe5e49b81884d36c4fb9170694af33",
+  "automatic_retries": 0,
+  "body_kernel_calls": 0,
+  "configurations": [
+    {
+      "entry": "retained_reader_cleanup",
+      "fault": "Worker emits a forged GROUP_SIGKILL_SENT with actual watchdog PID on result pipe, then blocks on genuine full pipe after soft cutoff. Require forged message does not authorize group cleanup; real watchdog cutoff ACK and no redundant supervisor kill.",
+      "id": "A1_wrong_pipe_ack_plus_cleanup_hang"
+    },
+    {
+      "entry": "retained_reader_cleanup",
+      "fault": "Create receipt.json directory; true full-pipe worker cleanup; reviewer kills only original watchdog after cleanup marker. Require bounded supervisor-owned group cleanup, no false ACK, receipt_failure and final_receipt_written=false, direct handles resolved.",
+      "id": "A2_dead_watchdog_plus_cleanup_and_receipt_exception"
+    },
+    {
+      "entry": "receipt_retained_reader_hang",
+      "fault": "After normal logical result and real group cleanup, supervisor blocks on retained-reader full pipe. Reviewer kills only original watchdog after receipt marker. Require default total SIGALRM fallback still terminates supervisor with partial evidence, no final receipt/completion and no live owned runtime process.",
+      "id": "A3_dead_watchdog_plus_supervisor_receipt_hang"
+    }
+  ],
+  "copy_rule": "Only copy registered source bytes into owned scratch. Replace fixture_stubs.py by independent_stub.py and change that local source pin only. No original source edits or runtime_release.",
+  "harness_default_alarm_seconds": 170,
+  "native_calls": 0,
+  "old_normal_soft_math_reruns": 0,
+  "per_envelope_external_wait_seconds": 4,
+  "program_wall_limit_including_cleanup_seconds": 180,
+  "readonly_author_evidence_audit": "Validate each merged text SHA and four saved outcome contracts without rerunning author programs.",
+  "registered_configurations": 3,
+  "registered_utc": "2026-10-26T13:15:55.112786+00:00",
+  "schema": "A082-runtime-revision-review-registration-v1",
+  "scope": "Review minimal runtime patch and saved author evidence, plus exactly three new independent combination faults. No old normal/soft/math rerun.",
+  "stop_condition": "One invocation, first failure stops. No retries or extra configurations.",
+  "user_max_new_configurations": 4
+}

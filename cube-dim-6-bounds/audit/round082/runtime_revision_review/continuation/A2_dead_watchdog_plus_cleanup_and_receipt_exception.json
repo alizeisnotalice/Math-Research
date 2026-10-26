@@ -1,0 +1,96 @@
+{
+  "driver_wall_seconds": 0.969015540991677,
+  "exit_code": 1,
+  "files": {
+    "before_receipt.json": {
+      "sha256": "2cc8ba39448adc8c757a2d453efd9d0690c86bdfc8514f70f2f751cf142d5ed7",
+      "text": "{\n  \"all_descendants_reaped_claim\": false,\n  \"args\": [\n    \"retained_reader_cleanup\"\n  ],\n  \"automatic_retries\": 0,\n  \"cleanup_error\": null,\n  \"deadline_policy\": {\n    \"group\": 0.85,\n    \"parent\": 1.25,\n    \"reap\": 0.12,\n    \"soft\": 0.35,\n    \"supervisor\": 1.6,\n    \"watchdog\": 1.45,\n    \"worker_fallback\": 1.1\n  },\n  \"elapsed_before_receipt\": 0.9500836670049466,\n  \"events\": [\n    {\n      \"elapsed\": 0.03625954198651016,\n      \"kind\": \"WATCHDOG_ARMED\",\n      \"pid\": 93747,\n      \"supervisor_pid\": 93745,\n      \"worker_pgid\": 93746\n    },\n    {\n      \"kind\": \"WORKER_STARTED\",\n      \"pgid\": 93746,\n      \"pid\": 93746,\n      \"supervisor_pid\": 93745\n    },\n    {\n      \"elapsed\": 0.3532679170020856,\n      \"kind\": \"SOFT_WORK_CUTOFF_SENT\"\n    },\n    {\n      \"error\": \"BrokenPipeError(32, 'Broken pipe')\",\n      \"kind\": \"WATCHDOG_ACK_REQUEST_FAILED\"\n    }\n  ],\n  \"group_kill_acknowledged\": false,\n  \"group_sigkill_sent_by_supervisor\": true,\n  \"mode\": \"fixture\",\n  \"native_calls\": 0,\n  \"original_worker_observation\": null,\n  \"reaps\": {\n    \"worker\": {\n      \"reaped\": false,\n      \"reason\": \"No watchdog ACK; PG identity not released\",\n      \"returncode\": null\n    }\n  },\n  \"schema\": \"C069-runtime-receipt-v1\",\n  \"status\": \"STOP_NO_RETRY\",\n  \"supervisor_pid\": 93745,\n  \"task_result\": null,\n  \"watchdog_pid\": 93747,\n  \"worker_pid\": 93746\n}\n"
+    },
+    "cleanup_blocked.json": {
+      "sha256": "6253d78e9c1bcc406c745c115387dfbc9d78c4d983fa0fedb300dcb40ae6b39c",
+      "text": "{\"elapsed\": 0.35335362498881295, \"filled_bytes\": 65536, \"pgid\": 93746, \"pid\": 93746, \"reader_fd\": 3, \"retained_reader\": true, \"writer_fd\": 4}\n"
+    },
+    "completion.json": {
+      "sha256": "ad7841879cd84cf8c1acd7feb92a2de36ea9a1059117e585cb7e288bc50db336",
+      "text": "{\n  \"all_descendants_reaped_claim\": false,\n  \"automatic_retries\": 0,\n  \"cleanup_error\": null,\n  \"elapsed\": 0.9507898750016466,\n  \"final_receipt_written\": false,\n  \"reaps\": {\n    \"watchdog\": {\n      \"reaped\": true,\n      \"returncode\": -9\n    },\n    \"worker\": {\n      \"reaped\": true,\n      \"returncode\": -9\n    }\n  }\n}\n"
+    },
+    "entered.json": {
+      "sha256": "4425915c74fe43b0c3c02f5ef1d9522e0efc5054e920737b69ab23490afa928c",
+      "text": "{\"case\": \"A2_dead_watchdog_plus_cleanup_and_receipt_exception\", \"elapsed\": 0.03690308300429024, \"pid\": 93746}\n"
+    },
+    "handles.json": {
+      "sha256": "7d7c5010038ccf633964d970fa688797d69c9dec7f9f35e53bf54d02941f6114",
+      "text": "{\n  \"inherited_native_pgid\": 93746,\n  \"supervisor_pid\": 93745,\n  \"watchdog_pid\": 93747,\n  \"worker_pgid\": 93746,\n  \"worker_pid\": 93746\n}\n"
+    },
+    "receipt_failure.json": {
+      "sha256": "d9a8c0e9b56a45c9347d5de22a5fbd2df4318165eabd66d8d5cdec1c8f4b0161",
+      "text": "{\n  \"all_descendants_reaped_claim\": false,\n  \"automatic_retries\": 0,\n  \"cleanup_error\": null,\n  \"elapsed\": 0.9505944999982603,\n  \"error\": \"FileExistsError(17, 'File exists')\",\n  \"final_receipt_written\": false,\n  \"group_ack\": false,\n  \"reaps\": {\n    \"worker\": {\n      \"reaped\": false,\n      \"reason\": \"No watchdog ACK; PG identity not released\",\n      \"returncode\": null\n    }\n  },\n  \"status\": \"STOP_RECEIPT_WRITE_ERROR_NO_RETRY\"\n}\n"
+    },
+    "start.json": {
+      "sha256": "c0d81f1838f8dd31ff6ada32f982a16f4f9efb35353a3f9dd770250fac7b3466",
+      "text": "{\n  \"args\": [\n    \"retained_reader_cleanup\"\n  ],\n  \"automatic_retries\": 0,\n  \"deadline_policy\": {\n    \"group\": 0.85,\n    \"parent\": 1.25,\n    \"reap\": 0.12,\n    \"soft\": 0.35,\n    \"supervisor\": 1.6,\n    \"watchdog\": 1.45,\n    \"worker_fallback\": 1.1\n  },\n  \"mode\": \"fixture\",\n  \"native_calls\": 0,\n  \"runtime_release_sha256\": null,\n  \"schema\": \"C069-runtime-start-v1\",\n  \"started_monotonic\": 181052.137365208,\n  \"supervisor_pgid\": 93745,\n  \"supervisor_pid\": 93745\n}\n"
+    },
+    "watchdog.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "watchdog.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "worker.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "worker.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    }
+  },
+  "id": "A2_dead_watchdog_plus_cleanup_and_receipt_exception",
+  "known_process_observations": [
+    {
+      "live": false,
+      "pid": 93745,
+      "ps_exit": 1,
+      "raw": ""
+    },
+    {
+      "live": false,
+      "pid": 93746,
+      "ps_exit": 1,
+      "raw": ""
+    },
+    {
+      "live": false,
+      "pid": 93747,
+      "ps_exit": 1,
+      "raw": ""
+    }
+  ],
+  "reviewer_signals": [
+    {
+      "elapsed": 0.37160558300092816,
+      "pid": 93747,
+      "reason": "registered fault of original watchdog only",
+      "signal": "SIGKILL"
+    }
+  ],
+  "source_copy_sha256": {
+    "check_revision.py": "4b36ee430de3a4b3cae7d91981fc21304e9f07e6ba8e19c7588c4048b320dc4c",
+    "control_task.py": "f9e67a6d003878ecda5754070f476766828d26c79c40156b6e99b84f2340528c",
+    "envelope.py": "0b89aac0f983c6a4cc3775b2f1648faf3e6069cb9483235b914de129eca91b42",
+    "fixture_stubs.py": "efaa9ae5cb1d55eb719e50741560f7c8809cbe70937773d5a1cde58223cd1a88",
+    "native_task.py": "0bcb0edf344eacbbfb94422ccaee3a4c2c77df96973fa8bbc9974654395d25f5",
+    "runtime_support.py": "94f1b4f88de2b18fe0c0454292ce1214c35f39dba176b5cfad12cc38f1a4ab7a",
+    "watchdog.py": "ca3154849395224c39a07b41952512815d9d12cd45a4c708f195df335c02f62a",
+    "worker.py": "a5f82d9cd5cae404fbc8d80b64f64ae878219a0394c76c0f5fa67e6d7eed25c5"
+  },
+  "special": {
+    "receipt.json": "DIRECTORY"
+  },
+  "status": "PASS",
+  "stderr": "",
+  "stdout": "{\"folder\": \"/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/audit/round082/runtime_revision_review/continuation/_scratch/A2_dead_watchdog_plus_cleanup_and_receipt_exception/fixtures/retained_reader_cleanup\", \"receipt\": \"/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/audit/round082/runtime_revision_review/continuation/_scratch/A2_dead_watchdog_plus_cleanup_and_receipt_exception/fixtures/retained_reader_cleanup/receipt.json\", \"task_result\": null, \"elapsed\": 0.9511238749837503}\n",
+  "supervisor_pid": 93745
+}

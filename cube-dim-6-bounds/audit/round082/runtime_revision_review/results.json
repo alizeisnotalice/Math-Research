@@ -1,0 +1,29 @@
+{
+  "Arb_calls": 0,
+  "actual_body_native_launch_kill_tested": false,
+  "actual_configurations": 1,
+  "all_descendants_reaped_claim": false,
+  "automatic_retries": 0,
+  "body_kernel_calls": 0,
+  "failure": {
+    "error": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')",
+    "traceback": "Traceback (most recent call last):\n  File \"/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/audit/round082/runtime_revision_review/check_review.py\", line 217, in main\n    one(case);print(case['id'],'PASS',flush=True)\n    ~~~^^^^^^\n  File \"/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/audit/round082/runtime_revision_review/check_review.py\", line 141, in one\n    handles=await_marker(folder/'handles.json',begin+2)\n  File \"/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/audit/round082/runtime_revision_review/check_review.py\", line 118, in await_marker\n    return json.loads(path.read_text())\n           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0_1/Frameworks/Python.framework/Versions/3.15/lib/python3.15/json/__init__.py\", line 371, in loads\n    return _default_decoder.decode(s)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0_1/Frameworks/Python.framework/Versions/3.15/lib/python3.15/json/decoder.py\", line 358, in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0_1/Frameworks/Python.framework/Versions/3.15/lib/python3.15/json/decoder.py\", line 376, in raw_decode\n    raise JSONDecodeError(\"Expecting value\", s, err.value) from None\njson.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\n"
+  },
+  "harness_wall_seconds": 0.08672158297849819,
+  "native_calls": 0,
+  "old_normal_soft_math_reruns": 0,
+  "passed_configurations": 0,
+  "production_release_created": false,
+  "registered_configurations": 3,
+  "results": [
+    {
+      "exit_code": null,
+      "id": "A1_wrong_pipe_ack_plus_cleanup_hang",
+      "observation_sha256": "a57c6559cac3e0f27cc794a5769ce9d3ad3542965ce3533ac970737cd7315e8a",
+      "status": "FAIL_STOP",
+      "wall_seconds": null
+    }
+  ],
+  "schema": "A082-independent-runtime-review-results-v1",
+  "status": "FAIL_STOP_NO_RETRY"
+}
