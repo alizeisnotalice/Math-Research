@@ -1,0 +1,92 @@
+{
+  "task": "A060-fixed-high-endpoint-joint-radial-angular-Green-budget",
+  "registered_utc": "2026-10-26T09:10:53.599486+00:00",
+  "deadline_utc": "2026-10-26T09:30:53.599486+00:00",
+  "max_scientific_wall_seconds": 1200,
+  "preparation_reading_start_utc": "2026-10-26T09:06:01+00:00",
+  "fixed_model": "original body32 Cauchy; G integral over all t>0",
+  "fixed_rho": "1/64",
+  "fixed_q": "6/5",
+  "fixed_high_range": "mean_B>3/4",
+  "domain": "high union of all31 unsigned T_A, with distones>=rho; cap/low/mid exclusions can only shrink it",
+  "fixed_a": "47/64",
+  "fixed_R_squared": "385/4096",
+  "fixed_transition": "s0=31^(1/4)*rho; analytic covering threshold, not optimized",
+  "fixed_angular_cover": "normalized area <= min(1,31*(rho/s)^4)",
+  "fixed_angular_integral": "normalized integral_E sin(theta)^(-q) <= (1-q/4)^(-1)*mu^(1-q/4)",
+  "fixed_r0_squared": "1+5*a^2",
+  "fixed_D_squared": "(10/3)*a^2",
+  "fixed_g": "sqrt(2)*a",
+  "max_configurations": 10,
+  "fixed_plan": [
+    {
+      "id": 1,
+      "scope": "exact incident-ones counts, background accounting, positive-coordinate gates and source reuse"
+    },
+    {
+      "id": 2,
+      "scope": "exact projected face Jacobian and radial max bound identities"
+    },
+    {
+      "id": 3,
+      "scope": "exact angular CDF factorization and weak-L4 rearrangement bound coefficients"
+    },
+    {
+      "id": 4,
+      "scope": "symbolic radial primitive identities for J3,J1,V at fixed q"
+    },
+    {
+      "id": 5,
+      "scope": "Arb768 fixed source M full interval loading, radius and positive constants"
+    },
+    {
+      "id": 6,
+      "scope": "Arb768 J3 joint line-plane singular integral upper"
+    },
+    {
+      "id": 7,
+      "scope": "Arb768 J1 reverse-order plane integral upper"
+    },
+    {
+      "id": 8,
+      "scope": "Arb768 angular-cover volume upper"
+    },
+    {
+      "id": 9,
+      "scope": "Arb768 complete high-union positive budget all992 terms and conditional target comparison"
+    },
+    {
+      "id": 10,
+      "scope": "pure saved-data rational power audit and strict comparison; no new Arb"
+    }
+  ],
+  "source_sha256": {
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round037/pair_resolved_green_envelope/theorem.md": "938f8501ceb80ec1b27d21ae447ff73e57d23ddcf99f51a02480d65f2ec74451",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round037/pair_resolved_green_envelope/results.json": "40019aabbcec27d990f2a5c1e2e7c6b3e822b3d2865ac12ba8d47c2f340e56dc",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round037/pair_resolved_green_envelope/manifest.json": "ff19f756bbc40113cf28ad94bd5addb1d8e9cd9a5cc458298b14f688566fc911",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round037/pair_resolved_green_envelope/audit_dependency.json": "acd10b8471fba6d273f4cdcafd18889a1f20421e3805f0a111d0158bd486d186",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-literature/cube-dim-6-bounds/audit/round037/pair_green_envelope_review/manifest.json": "6a89dc230847d57b886adbf85e17189a925a310b27beafffdb5e4ed1bf250792",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-literature/cube-dim-6-bounds/audit/round037/pair_green_envelope_review/report.md": "499a19a44286d85a654a126568149e5a1ab69e23fd50f3f1ee3b92a95e45f48e"
+  },
+  "source_M_mode": "read complete C037 dyadic intervals; never reevaluate defining integrals",
+  "acceptance": "finite rigorous upper bound for same model high region over all positive times, or precise failure diagnosis of this fixed upper formula",
+  "forbidden": [
+    "new kernel/native",
+    "old M integral",
+    "old cap rerun",
+    "full direction enumeration",
+    "grid",
+    "rho scan",
+    "parameter repair",
+    "MATLAB",
+    "recursive agents",
+    "old frozen source edits",
+    "stage",
+    "commit",
+    "push"
+  ],
+  "new_global_I": false,
+  "new_C6_bound": false,
+  "stop": "one fixed batch only, no retries on mathematical/source failure; seal by scientific deadline",
+  "code_binding": "write execution_binding.json once after theorem and driver preparation, before any scientific executable call"
+}

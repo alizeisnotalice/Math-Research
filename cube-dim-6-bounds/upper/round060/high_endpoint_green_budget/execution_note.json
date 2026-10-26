@@ -1,0 +1,47 @@
+{
+  "recorded_utc": "2026-10-26T09:25:42.421210+00:00",
+  "producer": {
+    "pid": 62504,
+    "tool_chunk_id": "b156fc",
+    "exit_code": 0,
+    "elapsed_seconds": 0.057794708001893014,
+    "started_utc": "2026-10-26T09:19:36.094367+00:00",
+    "finished_utc": "2026-10-26T09:19:36.152505+00:00",
+    "completed_configurations": 9,
+    "process_alive_at_seal": false
+  },
+  "pure_checker": {
+    "status": "FAILED_SAVED_DATA_AUDIT_NO_RERUN",
+    "configuration_id": 10,
+    "tool_chunk_id": "b9adef",
+    "exit_code": 1,
+    "failure_line": 39,
+    "failed_assertion": "sbL**5 <= sL**7 and sbU**5 >= sU**7",
+    "exception": "AssertionError",
+    "diagnosis": "Root and its 7/5 power candidates were both enlarged by relative1e-40. The corresponding lower/upper candidates need not enclose the 7/5 power of the enlarged root endpoints. This is an audit candidate-width issue; it does not test the original Arb enclosure directly.",
+    "scope": "pure checker failed before branch/final budget validation; no PASS claimed",
+    "producer_reruns": 0,
+    "checker_reruns": 0,
+    "new_configs_after_policy": 0,
+    "active_handles": [],
+    "recorded_utc": "2026-10-26T09:21:39.670020+00:00"
+  },
+  "actual_configurations": {
+    "successful": 9,
+    "failed": 1,
+    "total": 10
+  },
+  "new_scientific_configs_after_180s_policy": 0,
+  "all_source_hashes_unchanged": true,
+  "A056_manifest_unchanged": "9305a1c06d472f5a712f4c31f580be5b3e653dd7edb01b751cef0e3413f48e71",
+  "registration_to_administrative_seal_seconds": 888.821724,
+  "administrative_seal_within_original_1200_seconds": true,
+  "program_180s_policy": "recorded after both programs exited; future scientific programs/checkers require timeout180, no automatic rerun",
+  "policy_amendment_sha256": "03caeb25c3370c5816cfc6d5ad7147b5273220d3a22e37a0b73bf9bad37bbdcb",
+  "producer_reruns": 0,
+  "checker_reruns": 0,
+  "active_handles": [],
+  "scientific_deadline_extended": false,
+  "new_C6_bound": false,
+  "git_stage_commit_push": false
+}
