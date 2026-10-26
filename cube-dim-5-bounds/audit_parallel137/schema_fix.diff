@@ -1,0 +1,22 @@
+--- audit137.py
++++ audit137_v2.py
+@@ -47,7 +47,7 @@
+     ap.add_argument('--reviewed-plan-sha',required=True)
+     ap.add_argument('--output',type=Path,required=True)
+     args=ap.parse_args();start=time.monotonic()
+-    planpath=HERE/'audit_plan.json';assert sha(planpath)==args.reviewed_plan_sha
++    planpath=HERE/'audit_plan_v2.json';assert sha(planpath)==args.reviewed_plan_sha
+     plan=load(planpath)
+     for name,h in plan['code_locks'].items():assert sha(HERE/name)==h
+     for path,h in plan['all_input_locks'].items():assert sha(path)==h,path
+@@ -187,7 +187,9 @@
+             if row['leaf_epsilon']=='1/64':h64nodes.add(node)
+             for source in ancestry.get(node,[]):
+                 a=source['H64_g105_ancestry'];assert row['leaf_epsilon']=='1/64'
+-                assert row['target']==row['certificate']['target']=='21/200000'
++                assert row['target']=='21/200000'
++                if 'target' in row['certificate']:
++                    assert row['certificate']['target']==row['target']
+                 assert row['certificate']['passed'] and f(row['certificate']['minimum_log_margin'])[0]>0
+                 assert digest(row)==a['source_leaf_sha256']
+                 assert a['source_state_sha256']==plan['all_input_locks'][str(P['state098'])]

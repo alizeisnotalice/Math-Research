@@ -1,3 +1,15 @@
+# 当前：016完整上界再降至U139，后续g110仍局部
+
+正式 C_cert≤C5≤U139≈31.924961805107365，便携准确上界15962481/500000；完整g105不变，139新完整I及140独审/主审通过，准确证书round016/primary_upper139_acceptance.json。严格改善上一轮U136及三类32门槛。lower停止，双侧时点无、后三轮0/3。016归档中，尚未提交。138全部4274新H/21370components已独审过，1371153新pass独审过；next2350零H另增671仅候选，1679剩余，独审141准备中。下一1679H只准备，未派。无wallcap，仅Sol/Luna。以下全部历史。
+
+# 当前调度：016新4274H128计算完成，独立认证接续
+
+正式U136≈31.93801968477627和g105不变；015远端6eb062510f71bf4685068613e9b7a8b1d72bf6e0。016两批4096+178真实新H128已完成，3099新pass/1175split，108734pass/2350pending/58724split/52360roots仍局部。两次15worker均exit0并join，详见round016/production_completed_entry.json；独立15核PF准备、137整数audit PID56300实际运行，新2350child尚未派。无wallcap，lower停止，无新/续Astra。下文全部历史，不能把旧running句柄当存活状态。
+
+# 当前调度：016新H128实际15worker运行，上界已严格改善
+
+正式 C_cert≤C5≤U136≈31.93801968477627，完整准确证书round015/primary_upper_acceptance.json；015已提交推送并远端确认6eb062510f71bf4685068613e9b7a8b1d72bf6e0。下界停止，双侧条件未成立、后三轮0/3。016首4096 freshH128真实master55456、15worker55475–55489，无wallcap，句柄见round016/production_live_entry.json。该PID为开工快照，存活状态应实时核验。余178及新child未授权，137新增1153pass独审准备中。只Sol/Luna，原三四维与资料包只读。下文均为历史。
+
 # 当前调度：第015轮完整上界突破已主审接纳，上界继续
 
 固定五维Lebesgue、中心轴平行、共同半径、一般L1与全部正尺度。正式 C_cert≤C5≤U136≈31.93801968477627<32；U136为round015/primary_upper_acceptance.json准确正四次根，便携有理上界799/25。完整g=21/200000，完整I准确端点来自136，已消费134/133/135新机制并独立审计。公开、原内部、接续上界32均严格改善；lower C_cert未变、按用户停止，双侧突破未成立、后三轮0/3。无新/续Astra，只Sol/Luna。015收口归档中，提交状态据Git回执。
