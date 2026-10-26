@@ -1,0 +1,205 @@
+{
+  "status": "PREPARED_UNRUN_ONE_PARENT_RELEASE",
+  "round": "111",
+  "prepared_utc": "2026-10-26T17:35:28.780225+00:00",
+  "authorization": "source/proof/static review only so far; one later release covers phase1 and the predefined phase2 continuation",
+  "model": "unchanged body32 alpha1 unit weights common Cauchy time Lebesgue Fourier(2pi)^-6",
+  "target": "centered axis-parallel common-radius cubes, general L1, all positive radii, dimension6",
+  "new_k_values": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "k1_read_only": true,
+  "jobs": [
+    {
+      "id": "k2_s0",
+      "k": 2,
+      "u": [
+        "1/4",
+        "5/12"
+      ],
+      "initial_leaves": 4
+    },
+    {
+      "id": "k2_s1",
+      "k": 2,
+      "u": [
+        "5/12",
+        "7/12"
+      ],
+      "initial_leaves": 4
+    },
+    {
+      "id": "k2_s2",
+      "k": 2,
+      "u": [
+        "7/12",
+        "3/4"
+      ],
+      "initial_leaves": 4
+    },
+    {
+      "id": "k3_s0",
+      "k": 3,
+      "u": [
+        "1/4",
+        "5/12"
+      ],
+      "initial_leaves": 2
+    },
+    {
+      "id": "k3_s1",
+      "k": 3,
+      "u": [
+        "5/12",
+        "7/12"
+      ],
+      "initial_leaves": 4
+    },
+    {
+      "id": "k3_s2",
+      "k": 3,
+      "u": [
+        "7/12",
+        "3/4"
+      ],
+      "initial_leaves": 2
+    },
+    {
+      "id": "k4_s0",
+      "k": 4,
+      "u": [
+        "1/4",
+        "5/12"
+      ],
+      "initial_leaves": 2
+    },
+    {
+      "id": "k4_s1",
+      "k": 4,
+      "u": [
+        "5/12",
+        "7/12"
+      ],
+      "initial_leaves": 4
+    },
+    {
+      "id": "k4_s2",
+      "k": 4,
+      "u": [
+        "7/12",
+        "3/4"
+      ],
+      "initial_leaves": 2
+    },
+    {
+      "id": "k5_s0",
+      "k": 5,
+      "u": [
+        "1/4",
+        "5/12"
+      ],
+      "initial_leaves": 2
+    },
+    {
+      "id": "k5_s1",
+      "k": 5,
+      "u": [
+        "5/12",
+        "7/12"
+      ],
+      "initial_leaves": 4
+    },
+    {
+      "id": "k5_s2",
+      "k": 5,
+      "u": [
+        "7/12",
+        "3/4"
+      ],
+      "initial_leaves": 2
+    }
+  ],
+  "max_workers": 12,
+  "worker_BLAS_threads": 1,
+  "thread_env_names": [
+    "OMP_NUM_THREADS",
+    "OPENBLAS_NUM_THREADS",
+    "MKL_NUM_THREADS",
+    "VECLIB_MAXIMUM_THREADS",
+    "NUMEXPR_NUM_THREADS"
+  ],
+  "geometry_generation": "parent once per k,b:4*2*930=7440 new ordered-pair visits; never by workers",
+  "max_total_depth": 28,
+  "phase_limits": {
+    "1": {
+      "leaves_per_job": 4096,
+      "total_leaves_cap": 49152,
+      "cumulative_cell_bounds_cap": 98268
+    },
+    "2": {
+      "leaves_per_job": 32768,
+      "total_leaves_cap": 393216,
+      "cumulative_cell_bounds_cap": 786396
+    }
+  },
+  "phase_selection": "after all12 phase1 full certificates, stop if reference S_plan interval is strictly positive or negative; only if unseparated continue same persistent worker states to phase2; then stop at registered caps",
+  "continuation": "same PID, same state/tree/heap; CONTINUE bound to own phase1 payload hash; no initial_state or pair generation refresh",
+  "space_shape": "complete q mixed terms, real P(u), actual source clamps, sqrt(k)r perturbation, sqrt(m/k) face measure, r=delta*s^5 and exact s13 weight",
+  "slab_coverage": "per k three disjoint intervals[1/4,5/12],[5/12,7/12],[7/12,3/4] with actual clamp/line switch breakpoints added",
+  "geometry_parameters": {
+    "radius": "1/64",
+    "u": [
+      "1/4",
+      "3/4"
+    ],
+    "v_parameter_threshold": "1/2",
+    "w_parameter_threshold": "1/16"
+  },
+  "coefficients": {
+    "oldK": "3sqrt3/(64pi4)",
+    "referenceK": "1/(8pi5)",
+    "q": "6/5",
+    "global_factor_proposed_once": true
+  },
+  "reference_status": "Kref=1/(8pi5), unchanged frozen expression, now PRIMARY+INDEPENDENT108 ACCEPTED as actual original-body32 coefficient; g0/far/fullS remain unpaid",
+  "qualification_addendum_sha256": "7c2eccbb10a6039218c8e1d07b4017204a2e625375af32501ac2a6ca7630bcb6",
+  "global_cost": "read107k1 +sum multiplicity(k)*3newslabs then commonK^q +paidCEH; g0unproved/farUNPAID, zero far only for conditional plan diagnosis",
+  "runtime": {
+    "program_wall_limit": null,
+    "CPU_limit": null,
+    "source_policy": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/coordination/phase_20261025/unlimited_runtime_20261027.json",
+    "cleanup_waits_only": "own children graceful20s, then own kill/reap10s; no research timer",
+    "IPC": "private framed pickle only between these own authorized subprocesses, no external streams",
+    "IPC_frame_cap_bytes": 268435456,
+    "no_multiprocessing_helper": true
+  },
+  "checkpoints": {
+    "writer": "parent only, atomic files and index last",
+    "leaf_records_per_gzip_chunk": 4096,
+    "committed_file_guard_bytes": 99614720,
+    "partial_snapshots": "phase2 every4096 refinements plus phase boundaries",
+    "complete_coverage_and_rational_leaf_certificates": true,
+    "lineage": "phase1 tree-prefix hash and payload binding, recorded separately"
+  },
+  "failure_policy": "first failure/interruption stops all jobs, controls only registered own Popen handles, retains committed checkpoints, no automatic restart",
+  "prohibited": {
+    "lower_work": 0,
+    "Astra_or_new_LLM_agents": 0,
+    "MATLAB": 0,
+    "old_native_kernel_peak_tuple_grid_baselines": 0,
+    "stage_push": 0
+  },
+  "code_sha256": {
+    "run_prepared.py": "1ff4fefc6e524dbe10f838f96eb9ea80e221ab4d22d2c5650e04401c119363ee",
+    "worker_entry.py": "e6e8c7293ed15df8fbed11f15242cbac875ff009395d149eb84bc790cfba1136",
+    "math_core.py": "32eb30796171efe79edb533934c6901279a5c98cd70c50336845bc2930c0f38e",
+    "protocol.py": "8d7f68412b7ae8fa655f0f1382c1d6abaed9bd7ec0ef3683ae05ec9eff2a136c"
+  },
+  "source_manifest_sha256": "baf079f70480a250ab14d056fe5872dfb45e2d03e2aa77b015b76647cf7f4777",
+  "upstream_constants_sha256": "385a13175ba9264d9ced66764f25e7d0eb98205828b9579120f3ef35d7b53639",
+  "proof_sha256": "e97048a092849725c9c673f68d241c837b934780630ab644b40dc71bd7dcf10a",
+  "release_contract": "parent_release.json authorized=true round111 registration_sha256 and script_sha256; exact code pins verified; both finite phases in this single authorization"
+}
