@@ -1,0 +1,12 @@
+--- qualified_predecessor/numeric.py
++++ audit_final147/numeric.py
+@@ -56,7 +56,8 @@
+     assert len({tuple(e['point']) for e in entries})==len(entries)
+     out=C.SCRATCH/('numeric_batch%04d'%r['batch']);out.mkdir(exist_ok=True)
+     locks={**r['input_locks'],str(rp):a.reviewed_registration_sha,**lock['code_locks']}
+-    plans=[dict(block=0,start=0,end=1)]+[dict(block=i,start=j,end=min(j+128,len(entries))) for i,j in enumerate(range(1,len(entries),128),1)]
++    block_size=r['block_size'];assert type(block_size) is int and 1<=block_size<=128 and block_size==C.CONFIG['block_size']
++    plans=[dict(block=0,start=0,end=1)]+[dict(block=i,start=j,end=min(j+block_size,len(entries))) for i,j in enumerate(range(1,len(entries),block_size),1)]
+     states={};pending=[]
+     for plan in plans:
+         bid=plan['block'];p=out/('block%04d.json'%bid)

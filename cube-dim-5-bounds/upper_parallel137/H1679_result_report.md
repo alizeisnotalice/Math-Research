@@ -1,0 +1,11 @@
+# Round017 checkpoint: fixed1679 new H128 jets
+
+The authorized single finite program completed all1679 fresh EPS128 anchors. It added1562 passed leaves and117 split parents, leaving234 exact new closed children pending. The complete candidate frontier is110967 passed/58841 splits/234 pending/111201 active leaves over52360 ordered roots. New children and a second batch were not dispatched. Global g110 remains pending; no S credit is taken and the accepted g105 upper bound is unchanged.
+
+Master59378 persisted workers59400–59414 before the first H request. Production took18.814897 seconds. All1679 jets used256-bit precision and one complete3504-cone segment, giving1679 H and6716 physical-gradient intervals. No old H, source jet, or failed source/region pair was recomputed; no cache hit, retry, partial result, numerical fault, H128 target obstruction or inflight task occurred. The kernel,107v2 checkpoint wrapper and129 single-anchor certificate were unchanged from the reviewed prior batch. All fifteen workers exited zero and were joined; the master and all workers were subsequently absent from the OS.
+
+Author gate59554 completed in7.538015 seconds. It passed5038 hash-chained journal events (1679 dispatch/received/merge and one finish), exact point-checkpoint/record comparisons, complete partial=None semantics, epsilon128/target110/kernel identity, new typed-cache insertions, directed physical-gradient ratio bounds, q/H64g105 ancestor/H128-upper bindings, immutable source objects, exact whole-root Kraft/antichain/tree checks and process exit. It made no H, gradient, logarithm or repeated corner calls.
+
+The final inherited cache contains184796 EPS64 and16480 EPS128 records. The frozen packet contains only the new point manifest, finite delta state and journal, deterministically compressed with exact original/decompressed SHA receipts; the unchanged source cache is referenced, not copied. audit_g123_sol has been given the exact raw point-manifest and production hashes for143, which will audit only these1679 new objects. Independent numerical/certificate and primary acceptance remain pending.
+
+Primary authorization: round017-authorizations/primaryH1679.json SHAad072f0eaf0025579f47cc1303e91d2fe199d6387cc01f905d13895d4dbfdb12. No MATLAB, Astra, commit or other project edit was performed.

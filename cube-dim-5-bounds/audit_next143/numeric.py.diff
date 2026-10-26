@@ -1,0 +1,33 @@
+--- qualified138/numeric.py
++++ audit_next143/numeric.py
+@@ -49,10 +49,10 @@
+ 
+ def main():
+     ap=argparse.ArgumentParser();ap.add_argument('--registration',required=True);ap.add_argument('--reviewed-registration-sha',required=True);ap.add_argument('--main-authorization',required=True);a=ap.parse_args()
+-    assert a.main_authorization=='actualaudit138-approved-after-source-review','main must explicitly authorize actual values'
++    assert a.main_authorization==C.HERE.name+'-approved-after-source-review','main must explicitly authorize actual values'
+     rp=Path(a.registration);assert C.sha(rp)==a.reviewed_registration_sha;r=C.read(rp);lock=C.read(C.HERE/'source_lock.json')
+     assert C.sha(C.HERE/'source_lock.json')==r['source_lock_sha256'];C.check_locks(lock['code_locks']);C.check_locks(lock['input_locks']);C.check_locks(r['input_locks'])
+-    assert r['workers']==15;C.assert_pids_absent(r['production_pids']);began=time.monotonic();tasks=C.read(r['tasks']);pm=C.read(r['point_manifest']);entries=pm['records'];assert len(entries)==len(tasks)==r['point_count']
++    assert r['workers']==15 and r['audit_id']==C.HERE.name;C.assert_pids_absent(r['production_pids']);began=time.monotonic();tasks=C.read(r['tasks']);pm=C.read(r['point_manifest']);entries=pm['records'];assert len(entries)==len(tasks)==r['point_count']
+     assert len({tuple(e['point']) for e in entries})==len(entries)
+     out=C.SCRATCH/('numeric_batch%04d'%r['batch']);out.mkdir(exist_ok=True)
+     locks={**r['input_locks'],str(rp):a.reviewed_registration_sha,**lock['code_locks']}
+@@ -72,7 +72,7 @@
+         rows=[dict(index=i,entry=entries[i],task=tasks[i]) for i in range(plan['start']+len(state['points']),plan['end'])]
+         if rows:pending.append((bid,rows))
+     if not pending:print(json.dumps(dict(status='already_all_verified',new_evaluations=0)));return
+-    index=dict(task='audit_residual138_numeric',batch=r['batch'],status='running',master_pid=os.getpid(),registration_sha256=a.reviewed_registration_sha,
++    index=dict(task=r['audit_id']+'_numeric',batch=r['batch'],status='running',master_pid=os.getpid(),registration_sha256=a.reviewed_registration_sha,
+         main_authorization=a.main_authorization,input_locks=locks,plans=plans,workers=[],old_values_recomputed=False,successful_saved_points_skipped=True,wall_cap=None)
+     def save():
+         prefix=0
+@@ -83,7 +83,7 @@
+             blocks=[dict(block=bid,verified=len(s['points']),sha256=C.sha(out/('block%04d.json'%bid)) if (out/('block%04d.json'%bid)).exists() else None) for bid,s in sorted(states.items())])
+         C.write(out/'index.json',index)
+     ctx=mp.get_context('spawn');tq=ctx.Queue();rq=ctx.Queue();stop=ctx.Event();acks=[ctx.Queue() for _ in range(r['workers'])]
+-    pool=[ctx.Process(target=worker,args=(i,tq,rq,acks[i],stop),name='PF138-%02d'%i) for i in range(r['workers'])];fault=None
++    pool=[ctx.Process(target=worker,args=(i,tq,rq,acks[i],stop),name=r['audit_id']+'-%02d'%i) for i in range(r['workers'])];fault=None
+     save();remaining={bid for bid,rows in pending};sent=set();pilot=next((x for x in pending if x[0]==0),None)
+     def submit_rest():
+         for job in pending:

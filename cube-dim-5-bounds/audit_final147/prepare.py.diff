@@ -1,0 +1,30 @@
+--- qualified143/prepare.py
++++ audit_final147/prepare.py
+@@ -10,11 +10,12 @@
+ def main():
+     assert not (C.HERE/'source_lock.json').exists(),'inspect existing143;no duplicate setup'
+     cfg=C.CONFIG;N=cfg['fixed_points'];assert type(N) is int and N>0 and cfg['batches']==[1] and cfg['workers']==15
++    assert type(cfg['block_size']) is int and 1<=cfg['block_size']<=128
+     pp=Path(cfg['prepared_manifest']);assert C.sha(pp)==cfg['prepared_manifest_sha256'];m=C.read(pp)
+     assert len(m['finite_batches'])==1 and m['maximum_new_H128']==N and m['fulljet_hits']==0
+     locks={str(pp):cfg['prepared_manifest_sha256'],str(C.HERE/'config.json'):C.sha(C.HERE/'config.json'),**m['source_locks'],**m['external_files'],**m['legacy_code_locks'],**{str(C.AUTHOR/n):h for n,h in m['repository_files'].items()}}
+     for path,sha in [(cfg['source_result_manifest'],cfg['source_result_manifest_sha256']),(cfg['actual_result_manifest'],cfg['actual_result_manifest_sha256'])]:assert C.sha(path)==sha;locks[path]=sha
+-    old=C.HERE.parent/'audit_residual138';assert C.sha(old/'manifest.json')=='3636278ad5651eb094e0639f47287a3606226c1a53392a0123d219c052fe7897'
++    old=Path(cfg['predecessor_dir']);assert C.sha(old/'manifest.json')==cfg['predecessor_manifest_sha256']
+     oldmanifest=C.read(old/'manifest.json');oldlock=C.read(old/'source_lock.json')
+     protected={str(old/'manifest.json'):C.sha(old/'manifest.json'),**{str(old/n):h for n,h in oldmanifest['files'].items()},**oldlock['protected_old_locks']}
+     C.check_locks(locks);C.check_locks(protected)
+@@ -63,11 +64,11 @@
+     C.check_locks(locks);C.check_locks(protected);code={str(p):C.sha(p) for p in C.HERE.glob('*.py')}
+     lock=dict(task=C.HERE.name,status='prepared_real_fixed_inputs_noPF',input_locks=locks,protected_old_locks=protected,code_locks=code,finite_points=N,finite_components=5*N,finite_batches=[N],workers=15,block_max=128,pilot_each_batch=1,wall_cap=None,new_PF=0,new_q=0,new_corners=0,source_tree=tree,source_recipe=recipe)
+     C.write(C.HERE/'source_lock.json',lock);lsha=C.sha(C.HERE/'source_lock.json')
+-    reg=dict(audit_id=C.HERE.name,task=C.HERE.name+'_new_values',batch=1,point_count=N,component_count=5*N,point_manifest=str(b/'point_manifest.json'),tasks=str(taskpath),input_locks=local,production_pids=pids,workers=15,block_size=128,pilot_count=1,wall_cap=None,actual_value_authorization_still_required=True,old_values_recomputed=False,source_lock_sha256=lsha)
++    reg=dict(audit_id=C.HERE.name,task=C.HERE.name+'_new_values',batch=1,point_count=N,component_count=5*N,point_manifest=str(b/'point_manifest.json'),tasks=str(taskpath),input_locks=local,production_pids=pids,workers=15,block_size=cfg['block_size'],pilot_count=1,wall_cap=None,actual_value_authorization_still_required=True,old_values_recomputed=False,source_lock_sha256=lsha)
+     rp=C.SCRATCH/'batch0001_registration.json';C.write(rp,reg)
+     C.write(C.HERE/'all_plan.json',dict(audit_id=C.HERE.name,source_lock_sha256=lsha,finite_points=N,finite_components=5*N,workers=15,blocks_are_not_total_budget=True,wall_cap=None,ordered_batches=[dict(batch=1,registration=str(rp),sha256=C.sha(rp))]))
+     for name in ('numeric.py','structure.py','run_all.py'):
+-        text=''.join(difflib.unified_diff((old/name).read_text().splitlines(True),(C.HERE/name).read_text().splitlines(True),fromfile='qualified138/'+name,tofile=C.HERE.name+'/'+name));(C.HERE/(name+'.diff')).write_text(text)
++        text=''.join(difflib.unified_diff((old/name).read_text().splitlines(True),(C.HERE/name).read_text().splitlines(True),fromfile='qualified_predecessor/'+name,tofile=C.HERE.name+'/'+name));(C.HERE/(name+'.diff')).write_text(text)
+     print(json.dumps(dict(source_lock_sha256=lsha,all_plan_sha256=C.sha(C.HERE/'all_plan.json'),registration_sha256=C.sha(rp),fixed_points=N,fixed_components=5*N,new_PF=0,new_q=0,new_corners=0,workers=15)),flush=True)
+ 
+ if __name__=='__main__':main()

@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+"""One explicit authorization for the registered fixed input,not per block."""
+import sys
+sys.dont_write_bytecode=True
+import argparse,json,os,subprocess,time
+import common as C
+
+def main():
+    ap=argparse.ArgumentParser();ap.add_argument('--reviewed-plan-sha',required=True);ap.add_argument('--primary-authorization',required=True);a=ap.parse_args()
+    assert a.primary_authorization==C.HERE.name+'-approved-after-source-review'
+    planpath=C.HERE/'all_plan.json';assert C.sha(planpath)==a.reviewed_plan_sha;plan=C.read(planpath)
+    lock=C.read(C.HERE/'source_lock.json');assert C.sha(C.HERE/'source_lock.json')==plan['source_lock_sha256']
+    C.check_locks(lock['code_locks']);C.check_locks(lock['input_locks']);C.check_locks(lock['protected_old_locks'])
+    assert [r['batch'] for r in plan['ordered_batches']]==C.CONFIG['batches'] and plan['finite_points']==C.CONFIG['fixed_points'] and plan['workers']==15
+    out=C.SCRATCH/'all_execution.json';assert not out.exists(),'existing execution requires prefix/PID diagnosis;no blind duplicate'
+    began=time.monotonic();state=dict(status='registered_before_PF',master_pid=os.getpid(),reviewed_plan_sha256=a.reviewed_plan_sha,phases=[],wall_cap=None,finite_points=plan['finite_points'])
+    C.write(out,state)
+    for entry in plan['ordered_batches']:
+        rp=entry['registration'];assert C.sha(rp)==entry['sha256'];reg=C.read(rp);C.assert_pids_absent(reg['production_pids'])
+        for name in ('numeric.py','structure.py'):
+            cmd=[sys.executable,'-B',str(C.HERE/name),'--registration',rp,'--reviewed-registration-sha',entry['sha256']]
+            if name=='numeric.py':cmd+=['--main-authorization',a.primary_authorization]
+            state.update(status='running',current_batch=entry['batch'],current_phase=name);C.write(out,state)
+            result=subprocess.run(cmd)
+            state['phases'].append(dict(batch=entry['batch'],phase=name,exitcode=result.returncode));C.write(out,state)
+            if result.returncode:
+                state.update(status='fault_preserved_successful_prefix_no_restart',seconds=time.monotonic()-began);C.write(out,state);raise SystemExit(result.returncode)
+    C.check_locks(lock['code_locks']);C.check_locks(lock['input_locks']);C.check_locks(lock['protected_old_locks'])
+    state.update(status='all_fixed_values_and_new129q_structure_complete',seconds=time.monotonic()-began);C.write(out,state);print(json.dumps(state),flush=True)
+
+if __name__=='__main__':main()

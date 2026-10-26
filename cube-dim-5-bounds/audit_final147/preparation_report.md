@@ -1,0 +1,13 @@
+**147：最后126个真实新jet，固定630分量、15worker准备**
+
+尚未运行新PF、Delta/log、q或角点。只写audit_final147/与外置scratch/audit_final147/；原143最终manifest `7cc2db15c61472fda0898499e3ecb5900f032f386e30ada64aabb54f80620db0`及其全部文件按SHA保护。
+
+本轮PF绑定、raw_gate、structure和run_all与143逐字节相同。唯一runtime差异在numeric.py.diff：分块步长改读登记block_size，要求整数1≤block_size≤128且等于冻结config。当前config=5，pilot1点成功并fsync后，余125点拆25块供15个显式worker多次领取；逐点PF算术、顺序、ACK/成功前缀、故障清理、Delta/物理梯度/129q/16闭角点不变。128仍只是块大小上限，不是总预算。一次授权自动完成全126/630分量和structure，无wallcap、respawn或新生child。
+
+prepare只新增读取config.block_size和显式前驱目录/manifest资格字段，geometry recipe与路径/计数改为本次来源。source_geometry从143已资格源几何追加其1562pass/117split，再追加234零H阶段108个candidate引用，得111075passed/58841split/126pending，全部52360原根精确closed Kraft。旧108个零H资格由相应独审/主验收承担，不在147重跑。
+
+H126 prepared manifest SHA `d49439203a926a046f0d69f0c183ba30e11ae12c8141e01ca31641c83a1a56fb`；固定input SHA `80de5f927e0f356f958068540394fa143cb6c94c0c7bc009f1bb666462ac8eda`；真实point_manifest SHA `6df31240fea7e5b23f5e4c9cecda41f0fcd5a43074ec134ea88a811f2950c346`；作者完整结果manifest SHA `a5d5eefbc9e3a7218177b3f3103ed6a053c64326ea272da6663367d846a4265c`。全部126个raw均绑定完整point/typedEPS128/target110/model/kernel和complete/partial=None。
+
+新126个point互异、与16480个已完成EPS128 key无交，精确转移未执行backup reservation，同point旧H64 guard均为null。真正EPS64g105祖先packet资格和新point包含关系沿143已审回执绑定，不重算任何旧PF或旧零H。生产master61978、15worker61993–62007已实际ps确认退出，PF启动前再次检查。
+
+作者报告126全PASS、queue0只作候选，147尚不接受为独立值或完整g110结论。主将审source_lock/all_plan、numeric的2行调度delta、prepare数据绑定delta及config后再授权。实际字符串为audit_final147-approved-after-source-review。正式C5仍由主已接纳账本决定；无自动g/C5更新、不下界、不Astra、不MATLAB、不提交推送。

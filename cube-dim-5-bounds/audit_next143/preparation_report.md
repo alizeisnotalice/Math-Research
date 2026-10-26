@@ -1,0 +1,17 @@
+**143：固定1679新EPS128 jet，单批15worker独立审计准备**
+
+现已绑定真实生产raw，尚未运行任何新PF、Delta/log、q或角点。固定N=1679，8395分量，单batch、15个显式不respawn的worker；1个真实pilot的全部5分量严格内含并持久保存后，自动执行余1678点的≤128恢复块和structure。一次主授权覆盖这个完整固定输入，无wallcap，不逐块询问，不自动增加点、批或新生child。没有假运行记录，没有重跑4274旧PF、旧零H或成功点。
+
+来源为upper_parallel137/H1679_run.py SHA295e8b8891b0277af7016b9fce166d83c12cedad2d6d2cda87c827c73fadd7e0，prepared manifest SHAcb482a5ac6175b4b6b2cc8e316bbbb244bff881b48f10b5e18a7b09975132a62。固定input SHA f4c153cfb7c9995de72c197daccf7606b3b337907bb07bf8e8a2e3de99e16a28。真实point_manifest SHA81c0fef15e855b4c7d77e4fabc3afb777cb7cac5315a3967951f85c50c0eac72，完整作者结果manifest SHAd891720904ef21e8d7e5bca1aff874e359da48a709d47bce67f9cfd57d2912ea。所有1679个checkpoint按原legacy098 EPS128 schema核complete/partial=None、完整point/pairkey、target110、model/kernel、attempts/calls/PID及5分量宽度。此为来源/结构绑定，不是独立新值结论。
+
+PF绑定与raw_gate文件完全等于已审138版本，129证书算术不变。numeric.py.diff仅把审计标签/授权字符串/显式进程名从138字面值改为当前目录及登记audit_id，不改变PF、向外球、pilot、ACK/fsync、恢复跳过、fault清理或15进程协议。structure.py.diff只有seed_result来源路径改读冻结配置；完整fresh Delta、物理梯度/H端点、q=1024−768*g105/newU128及q.denominator进整数共同分母、单anchor16闭角点、journal与闭树规则完全复用138。
+
+计数和只读路径集中于config.json及已冻结registration/all_plan。执行层通过当前目录名绑定audit_id；生产root/result_manifest路径、固定N、单batch、原始task SHA和来源geometry recipe均由数据登记，不再改数值代码常量。配置也进入source_lock，实际启动必须匹配主审plan SHA；改配置、增加点或换原始文件都会使锁失败。模型仍硬限定EPS128/target110、legacy098 fulljet schema、15worker及32-root网格协议；不同epsilon、数值schema或曲率规则需要新审阅，不能靠配置绕过。prepare中已审前驱138的资格身份仍显式锁定，换来源资格链须新的来源登记。
+
+新的source_geometry从138已资格source几何出发，只追加其生产4274 delta（3099pass/1175split）与2350零H阶段的671个完整candidate引用，形成109405 passed、58724 split、1679 pending，111084活叶和52360根精确closed Kraft。671个旧零H证明仍由141独审/主验收负责，143不重算其39510对检查，也不转移旧证明责任。每个新point的H64g105原祖先packet-member回执直接按SHA继承138，核真EPS64、后代路径和新锚点闭盒包含；H64只进入q质量比，不混入EPS128梯度。
+
+全1679个新typed key互异，与14801个已完成EPS128对象无交，并与冻结scalar/planned点集分开。它们是旧2350未执行backup reservation中相同child/point的精确1679子集转移，其余671因盒已通过而退役；转移不是重复H。生产master59378与15worker59400–59414已实际ps确认不存在；执行前再次检查，不与生产池并行占15核。
+
+旧138/123/132最终文件保持原字节。只写audit_next143/及外置scratch/audit_next143/，不提交推送、不Astra、不下界、不MATLAB。当前正式U139≈31.924961805107365、便携15962481/500000不由本准备改变；g110仍局部，生产报告的1562pass/117split/234pending尚不是本PF独审结论，主保留最终责任。
+
+主阅读最小入口：config.json→三份runtime *.diff→prepare.py的source recipe与真实raw绑定→all_plan/source_lock。实际一次CLI为run_all.py配reviewed-plan SHA及audit_next143-approved-after-source-review字符串；尚待主审授权，不执行新PF。

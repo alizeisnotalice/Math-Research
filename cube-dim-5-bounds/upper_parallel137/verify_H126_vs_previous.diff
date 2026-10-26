@@ -1,0 +1,15 @@
+--- verify_H1679.py
++++ verify_H126.py
+@@ -4,10 +4,10 @@
+ from collections import Counter
+ import argparse,json,os,time
+ from common import sha,digest,write
+-import H1679_run as residual_run
++import H126_run as residual_run
+ H=Path(__file__).resolve().parent;S=residual_run.S;W=residual_run.W
+ def main():
+- began=time.monotonic();ap=argparse.ArgumentParser();ap.add_argument('--batch',type=int,choices=(1,),required=True);a=ap.parse_args();bdir=W/f'future_batch{a.batch:04d}';dest=bdir/'author_validation.json';assert not dest.exists();package=json.load(open(H/'next1679_H_prepared_manifest.json'));assert sha(H/'next1679_H_prepared_manifest.json')=='cb482a5ac6175b4b6b2cc8e316bbbb244bff881b48f10b5e18a7b09975132a62'
++ began=time.monotonic();ap=argparse.ArgumentParser();ap.add_argument('--batch',type=int,choices=(1,),required=True);a=ap.parse_args();bdir=W/f'future_batch{a.batch:04d}';dest=bdir/'author_validation.json';assert not dest.exists();package=json.load(open(H/'next126_H_prepared_manifest.json'));assert sha(H/'next126_H_prepared_manifest.json')=='d49439203a926a046f0d69f0c183ba30e11ae12c8141e01ca31641c83a1a56fb'
+  for n,h in package['repository_files'].items():assert sha(H/n)==h
+  for p,h in {**package['source_locks'],**package['external_files'],**package['legacy_code_locks']}.items():assert sha(p)==h
+  old=residual_run.legacy_load(package);seed=residual_run.source_seed(package);summary=json.load(open(bdir/'summary.json'));reg=json.load(open(bdir/'registration.json'));manifest=json.load(open(bdir/'manifest.json'));assert summary['status']=='finite_original_prefix_complete' and summary['faults']==summary['obstructions']==summary['inflight']==0

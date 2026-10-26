@@ -1,0 +1,9 @@
+# Prepared zero-H reuse on234 actual pending children
+
+3904 fixed source/child/curvature objects cover all234 current children, with each child's direct parent first and then nearest15 real anchors/nearest16 parabolic centers. Exact dedup leaves16–18 objects per child. The115605-source immutable union is extended by only1679 new typed EPS128 sources, giving117284 objects;2346 distinct sources are selected. Existing source cores and their epsilon/point/Delta/gradient/q bindings remain unchanged. New1679 numerical qualification depends on143 and primary acceptance; finalg110 also depends on the prior integer audits.
+
+The unchanged131 exact core and137 shard worker require one source to pass all16 closed corners; outside anchors and negative Delta remain allowed. The fifteen child-owned shards contain15–16 children each,250–269 pairs each and15,279,226 serialized bytes total. A child's first whole-box PASS skips its remaining candidates. No same source/child/q failure is retried. No H, gradient, log, exp, split or corner evaluation was made in preparation.
+
+`next234_consume.py` changes only the previously reviewed parallel consumer's paths, manifest name, actual counts3904/234 and inherited110967 passed/58841 splits. The exact diff is included. Fifteen explicit workers, actual-PID start gate, durable JSONL/128-pair checkpoints, fingerprinted prefix recovery, fault stop and joins remain unchanged. No backup H is automatically requested. The result remains a candidate until independent and primary acceptance.
+
+All234 optional backup EPS128 points are fresh, unique, generic280 and strictly inside their actual child and certified H64g105 ancestor, with no completed16480-jet or095/103/107/123/4274/1679 planned collision. They are not scheduled. Current preparation only proposes the zero-H batch first.

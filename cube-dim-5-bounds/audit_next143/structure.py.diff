@@ -1,0 +1,11 @@
+--- qualified138/structure.py
++++ audit_next143/structure.py
+@@ -75,7 +75,7 @@
+         for key in old:
+             if key not in ('next_merge','journal_seq','journal_hash','batch','status'):assert initial[key]==old[key]
+         assert initial['queue'][:len(tasks)]==[t['node'] for t in tasks]
+-    assert initial['target']=='11/100000' and initial['seed_source_manifest_sha256']==lock['input_locks'][str(C.AUTHOR/'result_manifest.json')]
++    assert initial['target']=='11/100000' and initial['seed_source_manifest_sha256']==lock['input_locks'][str(C.SOURCE_RESULT)]
+     expected=copy.deepcopy(initial);seq=0;previous='0'*64;dispatch={};received={};certs=[]
+     for event in C.lines(b/'journal.jsonl'):
+         body=event['body'];kind=event['kind'];assert event['seq']==seq+1 and event['previous']==previous

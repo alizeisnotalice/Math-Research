@@ -1,0 +1,54 @@
+--- locked_residual_run.py
++++ H1679_run.py
+@@ -1,12 +1,13 @@
+ #!/usr/bin/env python3
+-"""Reviewed fixed4274 residual only, fifteen explicit nonrespawning processes."""
++"""Reviewed fixed1679 residual only, fifteen explicit nonrespawning processes."""
+ from pathlib import Path
+ from fractions import Fraction as F
+ from datetime import datetime,timezone
+ import argparse,importlib.util,json,multiprocessing as mp,os,queue,sys,time,traceback
+ from common import sha,digest,write
+ import residual_certificate
+-H=Path(__file__).resolve().parent;S=Path('/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch');W=S/'upper_parallel137/residual_preflight';LEGACY=H.parent/'upper_continue123';TARGET=F(11,100000);WORKERS=15
++import residual_run as parent_residual137
++H=Path(__file__).resolve().parent;S=Path('/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch');W=S/'upper_parallel137/next1679_H_preflight';LEGACY=H.parent/'upper_continue123';TARGET=F(11,100000);WORKERS=15
+ def legacy_load(package):
+  for p,h in package['legacy_code_locks'].items():assert sha(p)==h
+  sys.path.insert(0,str(LEGACY));spec=importlib.util.spec_from_file_location('locked123_dispatch_helpers',LEGACY/'run.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);assert m.TARGET==TARGET;return m
+@@ -19,26 +20,21 @@
+    got=old.worker.evaluate_job(task);returned.put({'ordinal':task['batch_ordinal'],'returned':got})
+  except BaseException as exc:returned.put({'fatal_worker_pid':os.getpid(),'exception':repr(exc),'traceback':traceback.format_exc()})
+ def source_seed(package):
+- # One immutable old cache load in master; no worker receives a source cache.
+- seed=json.load(open(S/'upper_continue123/seed.json'));last=json.load(open(S/'upper_continue123/batch0002/state.json'));seed['cache_by_epsilon']['1/128']=dict(seed['cache_by_epsilon']['1/128'])
+- for p,record in last['new_cache_by_epsilon']['1/128'].items():assert p not in seed['cache_by_epsilon']['1/128'];seed['cache_by_epsilon']['1/128'][p]=record
+- seed['passed']=seed['passed']+last['new_passed'];seed['splits']=seed['splits']+last['new_splits'];path=S/'upper_curvature128/evaluation001/candidate_results.jsonl'
+- for i,row in enumerate(map(json.loads,open(path))):
+-  if row['passed']:seed['passed'].append({'node':row['child_node'],'proof_source':{'path':str(path),'row':i,'row_sha256':digest(row),'kind':'locked128_single_parent_Jensen'}})
+- state=json.load(open(S/'upper_parallel137/run001/master_attempt0001_state.json'))
+- for k,cert in state['qualified_children'].items():seed['passed'].append({'node':cert['child_node'],'leaf_epsilon':cert['epsilon'],'certificate':cert,'proof_source':{'path':str(S/'upper_parallel137/run001/master_attempt0001_state.json'),'qualified_child_index':k}})
+- assert len(seed['passed'])==105635 and len(seed['splits'])==57549 and len(seed['cache_by_epsilon']['1/128'])==10527 and len(seed['cache_by_epsilon']['1/64'])==184796
+- seed['queue']=state['pending_children'];assert len(seed['queue'])==4274;return seed
++ seed=parent_residual137.source_seed(package);last=json.load(open(S/'upper_parallel137/residual_preflight/future_batch0002/state.json'));seed['passed']+=last['new_passed'];seed['splits']+=last['new_splits']
++ for p,r in last['new_cache_by_epsilon']['1/128'].items():assert p not in seed['cache_by_epsilon']['1/128'];seed['cache_by_epsilon']['1/128'][p]=r
++ state=json.load(open(S/'upper_parallel137/next2350_preflight/run001/master_attempt0001_state.json'))
++ for k,c in state['qualified_children'].items():seed['passed'].append({'node':c['child_node'],'certificate':c,'proof_source':{'path':str(S/'upper_parallel137/next2350_preflight/run001/master_attempt0001_state.json'),'qualified_child_index':k}})
++ seed['queue']=state['pending_children'];assert len(seed['passed'])==109405 and len(seed['splits'])==58724 and len(seed['queue'])==1679 and len(seed['cache_by_epsilon']['1/128'])==14801 and len(seed['cache_by_epsilon']['1/64'])==184796;return seed
+ def main():
+- began=time.monotonic();ap=argparse.ArgumentParser();ap.add_argument('--dispatch-reviewed',action='store_true');ap.add_argument('--batch',type=int,choices=(1,2),required=True);ap.add_argument('--target',required=True);ap.add_argument('--reviewed-manifest-sha',required=True);a=ap.parse_args();assert a.dispatch_reviewed and F(a.target)==TARGET
+- manifest=H/'residual_prepared_manifest.json';assert sha(manifest)==a.reviewed_manifest_sha;package=json.load(open(manifest))
++ began=time.monotonic();ap=argparse.ArgumentParser();ap.add_argument('--dispatch-reviewed',action='store_true');ap.add_argument('--batch',type=int,choices=(1,),required=True);ap.add_argument('--target',required=True);ap.add_argument('--reviewed-manifest-sha',required=True);a=ap.parse_args();assert a.dispatch_reviewed and F(a.target)==TARGET
++ manifest=H/'next1679_H_prepared_manifest.json';assert sha(manifest)==a.reviewed_manifest_sha;package=json.load(open(manifest))
+  for n,h in package['repository_files'].items():assert sha(H/n)==h
+  for p,h in {**package['source_locks'],**package['external_files'],**package['legacy_code_locks']}.items():assert sha(p)==h
+  old=legacy_load(package);seed=source_seed(package);plan=json.load(open(W/'summary.json'));selection=plan['finite_batches'][a.batch-1];tasks=json.load(open(selection['path']));assert sha(selection['path'])==selection['sha256'] and len(tasks)==selection['count'] and len(tasks)<=4096 and all(not t['cached'] for t in tasks)
+  current=W/'CURRENT.json';parent=None
+  if a.batch==1:
+-  assert not current.exists();ordered=json.load(open(W/'tasks.json'));assert {tuple(t['node']) for t in ordered}=={tuple(n) for n in seed['queue']} and len(ordered)==4274
+-  ov={'seed_source_manifest':str(H/'result_manifest.json'),'seed_source_manifest_sha256':package['result_manifest_sha256'],'target':str(TARGET),'pending_evaluation_epsilon':'1/128','lower_bound_object':'G','new_cache_by_epsilon':{'1/128':{}},'new_passed':[],'new_splits':[],'queue':[t['node'] for t in ordered],'inflight':{},'obstructions_H128':[],'faults':[],'counts':{'new_anchor_starts':0,'new_complete':0,'kernel_segment_calls':0,'cache_hits':0},'status':'initialized'}
++  assert not current.exists();ordered=json.load(open(W/'tasks.json'));assert {tuple(t['node']) for t in ordered}=={tuple(n) for n in seed['queue']} and len(ordered)==1679
++  ov={'seed_source_manifest':str(H/'next2350_results_manifest.json'),'seed_source_manifest_sha256':package['result_manifest_sha256'],'target':str(TARGET),'pending_evaluation_epsilon':'1/128','lower_bound_object':'G','new_cache_by_epsilon':{'1/128':{}},'new_passed':[],'new_splits':[],'queue':[t['node'] for t in ordered],'inflight':{},'obstructions_H128':[],'faults':[],'counts':{'new_anchor_starts':0,'new_complete':0,'kernel_segment_calls':0,'cache_hits':0},'status':'initialized'}
+  else:
+   parent=json.load(open(current));assert parent['batch']==1 and sha(parent['state'])==parent['state_sha256'] and sha(parent['journal'])==parent['journal_sha256'];ov=json.load(open(parent['state']));assert ov['status']=='finite_original_prefix_complete' and not ov['faults'] and not ov['obstructions_H128'] and not ov['inflight']
+  assert ov['queue'][:len(tasks)]==[t['node'] for t in tasks] and all(t['batch']==a.batch and t['batch_ordinal']==i and t['target']==str(TARGET) and t['epsilon']=='1/128' for i,t in enumerate(tasks))
