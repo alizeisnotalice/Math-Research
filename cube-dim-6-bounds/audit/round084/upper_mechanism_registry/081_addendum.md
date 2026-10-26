@@ -1,0 +1,5 @@
+# Post-seal 081 report availability check
+
+The baseline registry was sealed before this check. On 2026-10-26, I checked only the already designated sibling clone roots (`Math-Research-cube6-upper-astra`, `Math-Research-cube6-audit`, `Math-Research-cube6-curvature-astra`, and `Math-Research-cube6-literature`) for a file under an `audit/round081/` directory, with the bounded command `find <root> -maxdepth 4 -type f -path '*/round081/*'`. No such path was returned. I did not open any 081 probe, source, or report, and did not widen the search to other clones or the full filesystem.
+
+Therefore the optional 081 final-report comparison is **unavailable / not performed in the checked roots**. This is not a claim that the report does not exist elsewhere, nor a claim of novelty for the body32-plus-axis mechanism. The bounded baseline registry already routes any such full-model proposal to M-C38-1; its precise parameter/frame identity and proof scope must be compared against the final 081 report once the primary integrator provides an accessible path.
