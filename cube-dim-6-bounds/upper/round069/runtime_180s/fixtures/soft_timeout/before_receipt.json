@@ -1,0 +1,66 @@
+{
+  "all_descendants_reaped_claim": false,
+  "args": [
+    "soft_timeout"
+  ],
+  "automatic_retries": 0,
+  "deadline_policy": {
+    "group": 0.85,
+    "parent": 1.25,
+    "reap": 0.12,
+    "soft": 0.35,
+    "supervisor": 1.6,
+    "watchdog": 1.45,
+    "worker_fallback": 1.1
+  },
+  "elapsed_before_receipt": 0.5627456250076648,
+  "events": [
+    {
+      "elapsed": 0.034917499986477196,
+      "kind": "WATCHDOG_ARMED",
+      "pid": 79455,
+      "supervisor_pid": 79453,
+      "worker_pgid": 79454
+    },
+    {
+      "kind": "WORKER_STARTED",
+      "pgid": 79454,
+      "pid": 79454,
+      "supervisor_pid": 79453
+    },
+    {
+      "elapsed": 0.353905833006138,
+      "kind": "SOFT_WORK_CUTOFF_SENT"
+    },
+    {
+      "error": "TimeoutExpired(['/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python', '-B', '/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round069/runtime_180s/fixture_stubs.py', 'soft_timeout', 'child'], 0.5090873750043101)",
+      "kind": "TASK_RESULT",
+      "logical_exit_code": 1
+    },
+    {
+      "elapsed": 0.558751000004122,
+      "kind": "GROUP_KILL_ACKNOWLEDGED",
+      "pid": 79455
+    }
+  ],
+  "group_kill_acknowledged": true,
+  "group_sigkill_sent_by_supervisor": true,
+  "mode": "fixture",
+  "native_calls": 0,
+  "reaps": {
+    "worker": {
+      "reaped": true,
+      "returncode": -9
+    }
+  },
+  "schema": "C069-runtime-receipt-v1",
+  "status": "TASK_RESULT_OBSERVED",
+  "supervisor_pid": 79453,
+  "task_result": {
+    "error": "TimeoutExpired(['/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python', '-B', '/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round069/runtime_180s/fixture_stubs.py', 'soft_timeout', 'child'], 0.5090873750043101)",
+    "kind": "TASK_RESULT",
+    "logical_exit_code": 1
+  },
+  "watchdog_pid": 79455,
+  "worker_pid": 79454
+}

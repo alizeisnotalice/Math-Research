@@ -1,0 +1,84 @@
+{
+  "automatic_retries": 0,
+  "body_kernel_calls": 0,
+  "failed_configurations": 1,
+  "mathematical_fixtures_repeated": 0,
+  "native_calls": 0,
+  "pass_configurations": 2,
+  "production_gate": "CLOSED",
+  "results": [
+    {
+      "elapsed": 0.08898566701100208,
+      "group_sigkill_sent_by_supervisor": true,
+      "independent_watchdog_group_sigkill_observed": false,
+      "logical_result": {
+        "detail": {
+          "child_reaped": true,
+          "child_returncode": 0,
+          "worker_pgid": 79449
+        },
+        "kind": "TASK_RESULT",
+        "logical_exit_code": 0
+      },
+      "name": "normal_child",
+      "owned_direct_children_reaps": {
+        "watchdog": {
+          "reaped": true,
+          "returncode": 0
+        },
+        "worker": {
+          "reaped": true,
+          "returncode": -9
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed": 0.5719382079842035,
+      "group_sigkill_sent_by_supervisor": true,
+      "independent_watchdog_group_sigkill_observed": false,
+      "logical_result": {
+        "error": "TimeoutExpired(['/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python', '-B', '/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round069/runtime_180s/fixture_stubs.py', 'soft_timeout', 'child'], 0.5090873750043101)",
+        "kind": "TASK_RESULT",
+        "logical_exit_code": 1
+      },
+      "name": "soft_timeout",
+      "owned_direct_children_reaps": {
+        "watchdog": {
+          "reaped": true,
+          "returncode": 0
+        },
+        "worker": {
+          "reaped": true,
+          "returncode": -9
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed": 0.5722264169889968,
+      "group_sigkill_sent_by_supervisor": true,
+      "independent_watchdog_group_sigkill_observed": false,
+      "logical_result": {
+        "error": "BrokenPipeError(32, 'Broken pipe')",
+        "kind": "TASK_RESULT",
+        "logical_exit_code": 1
+      },
+      "name": "cleanup_hang",
+      "owned_direct_children_reaps": {
+        "watchdog": {
+          "reaped": true,
+          "returncode": 0
+        },
+        "worker": {
+          "reaped": true,
+          "returncode": -9
+        }
+      },
+      "status": "FAIL_EXPECTED_WATCHDOG_ACTION_NOT_OBSERVED"
+    }
+  ],
+  "started_configurations": 3,
+  "status": "PARTIAL_TWO_PASS_THIRD_FIXTURE_FAILED_STOPPED",
+  "unexecuted_configurations": 3
+}

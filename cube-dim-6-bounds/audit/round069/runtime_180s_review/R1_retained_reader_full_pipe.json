@@ -1,0 +1,126 @@
+{
+  "driver_wall_seconds": 0.8953347909846343,
+  "error": "KeyError('before_receipt.json')",
+  "files": {
+    "cleanup_block_entered.json": {
+      "bytes": 126,
+      "content": {
+        "elapsed": 0.3559547500044573,
+        "filled_bytes": 65536,
+        "pid": 84003,
+        "reader_fd": 3,
+        "retained_reader": true,
+        "writer_fd": 4
+      },
+      "sha256": "fb101af57f306c39a3b18e60a18d495e1c335115b2b1913cfa25ad7d54a565bd"
+    },
+    "handles.json": {
+      "bytes": 136,
+      "content": {
+        "inherited_native_pgid": 84003,
+        "supervisor_pid": 84002,
+        "watchdog_pid": 84004,
+        "worker_pgid": 84003,
+        "worker_pid": 84003
+      },
+      "sha256": "55220202814efa77a6ffe711c0fd187e835f1ab9495f688e431e316e359790d2"
+    },
+    "injection_entered.json": {
+      "bytes": 102,
+      "content": {
+        "case": "R1_retained_reader_full_pipe",
+        "elapsed": 0.03837575000943616,
+        "pgid": 84003,
+        "pid": 84003
+      },
+      "sha256": "5b468ba9f4efb1463c46859fd4fb36fe83afddf349249577763795b3e498741d"
+    },
+    "start.json": {
+      "bytes": 449,
+      "content": {
+        "args": [
+          "cleanup_hang"
+        ],
+        "automatic_retries": 0,
+        "deadline_policy": {
+          "group": 0.85,
+          "parent": 1.25,
+          "reap": 0.12,
+          "soft": 0.35,
+          "supervisor": 1.6,
+          "watchdog": 1.45,
+          "worker_fallback": 1.1
+        },
+        "mode": "fixture",
+        "native_calls": 0,
+        "runtime_release_sha256": null,
+        "schema": "C069-runtime-start-v1",
+        "started_monotonic": 178215.095743833,
+        "supervisor_pgid": 84002,
+        "supervisor_pid": 84002
+      },
+      "sha256": "7c7380ec57f6cce271ecbb0a216feb63eaf0e86c70e34c4c066c7f00c9105c6e"
+    },
+    "watchdog.stderr": {
+      "bytes": 0,
+      "content": "",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "watchdog.stdout": {
+      "bytes": 0,
+      "content": "",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "worker.stderr": {
+      "bytes": 0,
+      "content": "",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "worker.stdout": {
+      "bytes": 0,
+      "content": "",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "id": "R1_retained_reader_full_pipe",
+  "original_supervisor_pid": 84002,
+  "owned_process_observations": [
+    {
+      "live": false,
+      "pid": 84002,
+      "ps_exit": 1,
+      "raw": ""
+    },
+    {
+      "live": false,
+      "pid": 84003,
+      "ps_exit": 1,
+      "raw": ""
+    },
+    {
+      "live": false,
+      "pid": 84004,
+      "ps_exit": 1,
+      "raw": ""
+    }
+  ],
+  "reviewer_emergency_cleanup": true,
+  "reviewer_injected_signal": null,
+  "source_copy_sha256": {
+    "check_runtime.py": "c89c29c2c5f8ff470c8666bd0126de4e9a8376cbd697b8d49bc944fa6b734db0",
+    "control_task.py": "f9e67a6d003878ecda5754070f476766828d26c79c40156b6e99b84f2340528c",
+    "envelope.py": "52e8811d278df33eb3b0470485d1a9b850d9a4d5dea000f936018aba446d9d2a",
+    "fixture_stubs.py": "50a5cae5ed7ede3c1128b43f98419d5452074c4b4857d37a8f174605ced4c487",
+    "native_task.py": "0bcb0edf344eacbbfb94422ccaee3a4c2c77df96973fa8bbc9974654395d25f5",
+    "runtime_support.py": "8194ba7e79a4d9009657d34e34da5ecbe650b17f812483d07007794e35dc1c97",
+    "watchdog.py": "ca3154849395224c39a07b41952512815d9d12cd45a4c708f195df335c02f62a",
+    "worker.py": "a5f82d9cd5cae404fbc8d80b64f64ae878219a0394c76c0f5fa67e6d7eed25c5"
+  },
+  "special_files": {},
+  "started_utc": "2026-10-26T12:33:16.914095+00:00",
+  "status": "FAIL_STOP",
+  "supervisor_exit_code": 1,
+  "supervisor_stderr": "Traceback (most recent call last):\n  File \"/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/audit/round069/runtime_180s_review/_scratch/R1_retained_reader_full_pipe/envelope.py\", line 156, in <module>\n    sys.exit(main())\n             ~~~~^^\n  File \"/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/audit/round069/runtime_180s_review/_scratch/R1_retained_reader_full_pipe/envelope.py\", line 108, in main\n    os.killpg(worker.pid, signal.SIGKILL)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nPermissionError: [Errno 1] Operation not permitted\n",
+  "supervisor_stdout": "",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/audit/round069/runtime_180s_review/review_runtime.py\", line 179, in run_fault\n    before_receipt = files['before_receipt.json']['content']\n                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'before_receipt.json'\n"
+}

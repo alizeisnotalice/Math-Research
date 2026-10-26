@@ -1,0 +1,53 @@
+{
+  "archive_round": 71,
+  "automatic_retries": 0,
+  "body_kernel_calls": 0,
+  "commands": [
+    "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python",
+    "-B",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round069/runtime_180s/check_runtime.py"
+  ],
+  "fixture_policy": {
+    "group": 0.85,
+    "parent": 1.25,
+    "reap": 0.12,
+    "soft": 0.35,
+    "supervisor": 1.6,
+    "watchdog": 1.45,
+    "worker_fallback": 1.1
+  },
+  "fixtures": [
+    "normal_child",
+    "soft_timeout",
+    "cleanup_hang",
+    "descendant_group",
+    "receipt_write_hang",
+    "gate_and_deadline_isolation"
+  ],
+  "mathematical_fixtures_repeated": 0,
+  "max_configurations": 6,
+  "native_calls": 0,
+  "one_shot": "check_runtime.py refuses existing fixture_run_started.json or fixtures/",
+  "owner": "C",
+  "production_policy": {
+    "group": 178.0,
+    "parent": 179.0,
+    "reap": 1.0,
+    "soft": 170.0,
+    "supervisor": 179.8,
+    "watchdog": 179.5,
+    "worker_fallback": 178.0
+  },
+  "schema": "C069-runtime-pre-execution-registration-v1",
+  "source_sha256": {
+    "check_runtime.py": "c89c29c2c5f8ff470c8666bd0126de4e9a8376cbd697b8d49bc944fa6b734db0",
+    "control_task.py": "f9e67a6d003878ecda5754070f476766828d26c79c40156b6e99b84f2340528c",
+    "envelope.py": "52e8811d278df33eb3b0470485d1a9b850d9a4d5dea000f936018aba446d9d2a",
+    "fixture_stubs.py": "cac269023cedb82f4846a5338a7ad9bc1de9c14c9b8d965c5df8dc85fec559e8",
+    "native_task.py": "0bcb0edf344eacbbfb94422ccaee3a4c2c77df96973fa8bbc9974654395d25f5",
+    "runtime_support.py": "8194ba7e79a4d9009657d34e34da5ecbe650b17f812483d07007794e35dc1c97",
+    "watchdog.py": "ca3154849395224c39a07b41952512815d9d12cd45a4c708f195df335c02f62a",
+    "worker.py": "a5f82d9cd5cae404fbc8d80b64f64ae878219a0394c76c0f5fa67e6d7eed25c5"
+  },
+  "status": "PREPARE_ONLY_ZERO_PRODUCTION"
+}

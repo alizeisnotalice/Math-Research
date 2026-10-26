@@ -1,0 +1,111 @@
+{
+  "automatic_retries": 0,
+  "completion": {
+    "all_descendants_reaped_claim": false,
+    "automatic_retries": 0,
+    "elapsed": 0.08898566701100208,
+    "final_receipt_written": true,
+    "reaps": {
+      "watchdog": {
+        "reaped": true,
+        "returncode": 0
+      },
+      "worker": {
+        "reaped": true,
+        "returncode": -9
+      }
+    }
+  },
+  "handles": {
+    "inherited_native_pgid": 79449,
+    "supervisor_pid": 79448,
+    "watchdog_pid": 79450,
+    "worker_pgid": 79449,
+    "worker_pid": 79449
+  },
+  "name": "normal_child",
+  "native_calls": 0,
+  "pid_observations": [
+    {
+      "observed": "",
+      "pid": 79451,
+      "ps_exit_code": 1,
+      "running": false
+    }
+  ],
+  "receipt": {
+    "all_descendants_reaped_claim": false,
+    "args": [
+      "normal_child"
+    ],
+    "automatic_retries": 0,
+    "deadline_policy": {
+      "group": 0.85,
+      "parent": 1.25,
+      "reap": 0.12,
+      "soft": 0.35,
+      "supervisor": 1.6,
+      "watchdog": 1.45,
+      "worker_fallback": 1.1
+    },
+    "elapsed_before_receipt": 0.08611975001986139,
+    "events": [
+      {
+        "elapsed": 0.034690458996919915,
+        "kind": "WATCHDOG_ARMED",
+        "pid": 79450,
+        "supervisor_pid": 79448,
+        "worker_pgid": 79449
+      },
+      {
+        "kind": "WORKER_STARTED",
+        "pgid": 79449,
+        "pid": 79449,
+        "supervisor_pid": 79448
+      },
+      {
+        "detail": {
+          "child_reaped": true,
+          "child_returncode": 0,
+          "worker_pgid": 79449
+        },
+        "kind": "TASK_RESULT",
+        "logical_exit_code": 0
+      },
+      {
+        "elapsed": 0.08477229200070724,
+        "kind": "GROUP_KILL_ACKNOWLEDGED",
+        "pid": 79450
+      }
+    ],
+    "group_kill_acknowledged": true,
+    "group_sigkill_sent_by_supervisor": true,
+    "mode": "fixture",
+    "native_calls": 0,
+    "reaps": {
+      "worker": {
+        "reaped": true,
+        "returncode": -9
+      }
+    },
+    "schema": "C069-runtime-receipt-v1",
+    "status": "TASK_RESULT_OBSERVED",
+    "supervisor_pid": 79448,
+    "task_result": {
+      "detail": {
+        "child_reaped": true,
+        "child_returncode": 0,
+        "worker_pgid": 79449
+      },
+      "kind": "TASK_RESULT",
+      "logical_exit_code": 0
+    },
+    "watchdog_pid": 79450,
+    "worker_pid": 79449
+  },
+  "stderr": "",
+  "stdout": "{\"folder\": \"/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round069/runtime_180s/fixtures/normal_child\", \"receipt\": \"/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round069/runtime_180s/fixtures/normal_child/receipt.json\", \"task_result\": {\"kind\": \"TASK_RESULT\", \"logical_exit_code\": 0, \"detail\": {\"child_returncode\": 0, \"child_reaped\": true, \"worker_pgid\": 79449}}, \"elapsed\": 0.08922162500675768}\n",
+  "supervisor_pid": 79448,
+  "supervisor_returncode": 0,
+  "wall_seconds": 0.10758895898470655
+}

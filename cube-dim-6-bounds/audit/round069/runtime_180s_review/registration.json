@@ -1,0 +1,52 @@
+{
+  "Arb_calls": 0,
+  "archive_round": 71,
+  "author_preparation_manifest_sha256": "ea1bdbbfe261b07f675c82da4f62e71eb06188496e79e5555b7ab747f8dba9df",
+  "author_source_root": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round069/runtime_180s",
+  "automatic_retries": 0,
+  "body_kernel_calls": 0,
+  "configurations": [
+    {
+      "attack": "After soft interruption keep read end of anonymous pipe open without draining, fill it nonblockingly, then block in cleanup write. Require independently timed watchdog group SIGKILL, no task result, no cleanup-return marker.",
+      "entry_name": "cleanup_hang",
+      "id": "R1_retained_reader_full_pipe"
+    },
+    {
+      "attack": "New stub starts child and grandchild inheriting worker PG, returns while both loop. Require group termination and unrelated own-PG sentinel still live before reviewer terminates/reaps sentinel.",
+      "entry_name": "descendant_group",
+      "id": "R2_early_return_descendants_and_sentinel"
+    },
+    {
+      "attack": "New stub returns; exact original envelope blocks opening receipt FIFO without reader. Require SIGKILL exit before supervisor fallback, before_receipt preserved, receipt/completion absent.",
+      "entry_name": "receipt_write_hang",
+      "id": "R3_supervisor_receipt_fifo"
+    },
+    {
+      "attack": "Stub pre-creates receipt.json as directory. Require bounded nonzero supervisor exit, no completion, child group terminated, watchdog exits on control EOF.",
+      "entry_name": "gate_and_deadline_isolation",
+      "id": "R4_receipt_path_exception"
+    },
+    {
+      "attack": "Same registered true-full-pipe cleanup, with owned watchdog killed after cleanup marker. Require independent supervisor deadline cleanup still terminates worker PG, records no ACK/unreaped identity anchor, exits within fixed fixture cap. No unrelated process targeted.",
+      "entry_name": "cleanup_hang",
+      "id": "R5_watchdog_death_during_cleanup"
+    },
+    {
+      "attack": "Four readonly rejection probes on original source: production native r.a0.n000001; production control status; standalone native_task.py; standalone control_task.py. Require no operation/state/attempt writes. AST/source review fixed production deadlines, bounded waits, inherited native PG, no cancellation or looped launch.",
+      "entry_name": null,
+      "id": "R6_absent_release_and_static_contract"
+    }
+  ],
+  "envelope_test_external_wait_seconds": 4,
+  "harness_alarm_seconds": 170,
+  "max_configurations": 6,
+  "native_calls": 0,
+  "old_normal_soft_reruns": 0,
+  "program_hard_limit_seconds": 180,
+  "registered_utc": "2026-10-26T12:30:33.994403+00:00",
+  "schema": "A069-independent-runtime-review-registration-v1",
+  "scope": "Runtime supplement only. No C068 core/math rerun or real release. Independent new fault injection in owned copies.",
+  "source_copy_rule": "Production .py bytes copied exactly. Only fixture_stubs.py replaced by registered independent_stub.py and its digest updated in copied input_manifest.json. Original author files are read-only. Copies and all runtime writes stay in this review directory. No runtime_release is fabricated.",
+  "stop_condition": "Stop on first failed assertion or source pin mismatch; otherwise stop after the six registered configurations. No rerun/parameter expansion.",
+  "stub_alarm_seconds": 4
+}

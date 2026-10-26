@@ -1,0 +1,66 @@
+{
+  "all_descendants_reaped_claim": false,
+  "args": [
+    "cleanup_hang"
+  ],
+  "automatic_retries": 0,
+  "deadline_policy": {
+    "group": 0.85,
+    "parent": 1.25,
+    "reap": 0.12,
+    "soft": 0.35,
+    "supervisor": 1.6,
+    "watchdog": 1.45,
+    "worker_fallback": 1.1
+  },
+  "elapsed_before_receipt": 0.5669991670001764,
+  "events": [
+    {
+      "elapsed": 0.0399015829898417,
+      "kind": "WATCHDOG_ARMED",
+      "pid": 79461,
+      "supervisor_pid": 79459,
+      "worker_pgid": 79460
+    },
+    {
+      "kind": "WORKER_STARTED",
+      "pgid": 79460,
+      "pid": 79460,
+      "supervisor_pid": 79459
+    },
+    {
+      "elapsed": 0.3524529169953894,
+      "kind": "SOFT_WORK_CUTOFF_SENT"
+    },
+    {
+      "error": "BrokenPipeError(32, 'Broken pipe')",
+      "kind": "TASK_RESULT",
+      "logical_exit_code": 1
+    },
+    {
+      "elapsed": 0.5655741670052521,
+      "kind": "GROUP_KILL_ACKNOWLEDGED",
+      "pid": 79461
+    }
+  ],
+  "group_kill_acknowledged": true,
+  "group_sigkill_sent_by_supervisor": true,
+  "mode": "fixture",
+  "native_calls": 0,
+  "reaps": {
+    "worker": {
+      "reaped": true,
+      "returncode": -9
+    }
+  },
+  "schema": "C069-runtime-receipt-v1",
+  "status": "TASK_RESULT_OBSERVED",
+  "supervisor_pid": 79459,
+  "task_result": {
+    "error": "BrokenPipeError(32, 'Broken pipe')",
+    "kind": "TASK_RESULT",
+    "logical_exit_code": 1
+  },
+  "watchdog_pid": 79461,
+  "worker_pid": 79460
+}
