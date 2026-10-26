@@ -1,0 +1,32 @@
+--- /Users/zhengzhihao/Desktop/T/Math-Research-cube5-upper/cube-dim-5-bounds/upper_cover046/arb_cover.py (kernel section)
++++ /Users/zhengzhihao/Desktop/T/Math-Research-cube5-upper/cube-dim-5-bounds/upper_mixed098/epsilon_kernel.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Reusable direct Arb first-jet kernel and bounded positive-mixture cover pilot."""
++"""Independent fixed H_1/128 first-jet kernel for mixed G leaf bounds; no driver."""
+ from __future__ import annotations
+ import argparse
+ from collections import deque
+@@ -42,9 +42,9 @@
+     Integer projection eligibility is exact. All subsequent real arithmetic is
+     outward Arb; partial sums are saved using exact dyadic interval endpoints.
+     """
+-    def __init__(self,table,epsilon=F(1,64)):
++    def __init__(self,table,epsilon=F(1,128)):
+         self.vertices=table['vertices'];self.simplices=table['simplices'];self.epsilon=F(epsilon)
+-        assert self.epsilon>0 and table['denominator']==144 and len(self.vertices)==280 and len(self.simplices)==3504
++        assert self.epsilon==F(1,128) and table['denominator']==144 and len(self.vertices)==280 and len(self.simplices)==3504
+ 
+     def projections(self,point):
+         point=tuple(map(F,point));assert len(point)==5
+@@ -61,7 +61,9 @@
+         """Return {complete, values/partial, ...}; a deadline never omits a cone."""
+         began=time.monotonic();ctx.prec=bits;point=tuple(map(F,point));D,k=self.projections(point)
+         assert 0 not in k and len(set(k))==280,'generic-center-only DD API'
+-        scaled=144*D*self.epsilon;A,B=scaled.numerator,scaled.denominator
++        scaled=F(144*D,128)
++        assert scaled==144*D*self.epsilon
++        A,B=scaled.numerator,scaled.denominator
+         slopes=[tuple(D*z for z in v[1:]) for v in self.vertices]
+         jets=[]
+         for node,l in zip(k,slopes):

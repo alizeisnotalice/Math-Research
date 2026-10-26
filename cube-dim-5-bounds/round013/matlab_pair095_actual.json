@@ -1,0 +1,20 @@
+{
+  "task": "matlab_scalar_pair095_actual",
+  "actual_code": "fprintf('g100_cap_cost %.17g\\n',5^(5/4)*(54702517/1e12)/(1/10000)^(5/4));\nfprintf('g105_cap_cost %.17g\\n',5^(5/4)*(54702517/1e12)/(21/200000)^(5/4));\nfprintf('g105_I_gate %.17g\\n',32*(21/200000/5)^(5/4));\nfprintf('g110_conditional_I_gate %.17g\\n',32*(11/100000/5)^(5/4));",
+  "tool": "mcp__matlab__evaluate_matlab_code",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "g100_cap_cost 40.899671062841549\ng105_cap_cost 38.479834133618397\ng105_I_gate 4.5490854714227325e-05\ng110_conditional_I_gate 4.821457349412778e-05\n"
+      }
+    ]
+  },
+  "classification": "display double precision check, not strict certificate",
+  "base_variables_created": 0,
+  "figures_created": 0,
+  "pools_created": 0,
+  "H_or_kernel_calls": 0,
+  "registration": "matlab_pair095_registration.json",
+  "formatting_note": "Actual code uses fprintf newline escape; all four preregistered arithmetic expressions unchanged."
+}
