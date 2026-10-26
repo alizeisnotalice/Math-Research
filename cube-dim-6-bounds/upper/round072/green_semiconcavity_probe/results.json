@@ -1,0 +1,733 @@
+{
+  "status": "COMPLETE_SCOPED_AXIS_SEMICONCAVITY_AND_OVERLAP_DIAGNOSTIC",
+  "configurations": [
+    {
+      "id": 1,
+      "name": "3D_normal_deficit_normalization",
+      "Laplace_identity_residual": "0",
+      "normal_norm_sphere_coefficient": "3/(8*pi**2)",
+      "radial_integral": "pi*abs(a)/2",
+      "Tonelli_nonnegative": true
+    },
+    {
+      "id": 2,
+      "name": "new_axis6_offS2_onS3_point",
+      "frame": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "point": [
+        1,
+        2,
+        4,
+        0,
+        0,
+        0
+      ],
+      "rank": 6,
+      "pair_count": 15,
+      "pairs": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "rank": 2,
+          "residual_squared": "16"
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "rank": 2,
+          "residual_squared": "4"
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "rank": 2,
+          "residual_squared": "20"
+        },
+        {
+          "pair": [
+            1,
+            5
+          ],
+          "rank": 2,
+          "residual_squared": "20"
+        },
+        {
+          "pair": [
+            1,
+            6
+          ],
+          "rank": 2,
+          "residual_squared": "20"
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "rank": 2,
+          "residual_squared": "1"
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "rank": 2,
+          "residual_squared": "17"
+        },
+        {
+          "pair": [
+            2,
+            5
+          ],
+          "rank": 2,
+          "residual_squared": "17"
+        },
+        {
+          "pair": [
+            2,
+            6
+          ],
+          "rank": 2,
+          "residual_squared": "17"
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "rank": 2,
+          "residual_squared": "5"
+        },
+        {
+          "pair": [
+            3,
+            5
+          ],
+          "rank": 2,
+          "residual_squared": "5"
+        },
+        {
+          "pair": [
+            3,
+            6
+          ],
+          "rank": 2,
+          "residual_squared": "5"
+        },
+        {
+          "pair": [
+            4,
+            5
+          ],
+          "rank": 2,
+          "residual_squared": "21"
+        },
+        {
+          "pair": [
+            4,
+            6
+          ],
+          "rank": 2,
+          "residual_squared": "21"
+        },
+        {
+          "pair": [
+            5,
+            6
+          ],
+          "rank": 2,
+          "residual_squared": "21"
+        }
+      ],
+      "min_pair_residual_squared": "1",
+      "on_selected_rank3": true,
+      "old069_point_repeated": false
+    },
+    {
+      "id": 3,
+      "name": "axis3_normal_norm_two_coordinate_slice",
+      "normalization": "N=(2*pi^2)^(-1)*normtilde",
+      "normtilde": "(a**2 + a*b + b**2)/(a + b)",
+      "Hessian_factor": "Matrix([[2*b**2/(a + b)**3, -2*a*b/(a + b)**3], [-2*a*b/(a + b)**3, 2*a**2/(a + b)**3]])",
+      "determinant": "0",
+      "positive_trace": "2*(a**2 + b**2)/(a + b)**3",
+      "axis_restriction": "a/(2*pi^2)",
+      "actual_variable_range": "a,b>0; no samples"
+    },
+    {
+      "id": 4,
+      "name": "one_true_axis6_Green_path",
+      "path": [
+        1,
+        2,
+        4,
+        "s",
+        0,
+        0
+      ],
+      "range": "0<s<1/2",
+      "integrand_without_pi_minus6": "t**2/((s**2 + t**2)*(t**2 + 1)*(t**2 + 4)*(t**2 + 16))",
+      "G_times_pi5": "(s + 7)/(180*(s + 1)*(s + 2)*(s + 4))",
+      "value_at_zero_times_pi5": "7/1440",
+      "right_derivative_times_pi5": "-1/128",
+      "left_derivative_times_pi5": "1/128",
+      "derivative_jump_times_pi5": "-1/64",
+      "right_second_derivative_limit_times_pi5": "217/11520",
+      "true_time_integrals": 1,
+      "formal_DD_evaluations": 0,
+      "negative_cusp": true
+    },
+    {
+      "id": 5,
+      "name": "axis_exact_t2_remainder_structure",
+      "one_minus_H_factor": "t**2*(a**2*b**2 + a**2*c**2 + b**2*c**2 + t**4 + t**2*(a**2 + b**2 + c**2))/((a**2 + t**2)*(b**2 + t**2)*(c**2 + t**2))",
+      "quotient_at_t0": "(a**2*b**2 + a**2*c**2 + b**2*c**2)/(a**2*b**2*c**2)",
+      "dy_quotient_at_t0": "-2/a**3",
+      "dyy_quotient_at_t0": "6/a**4",
+      "dy1dy2_quotient_at_t0": "0",
+      "uniform_on_y_compact_away_zero": true
+    },
+    {
+      "id": 6,
+      "name": "new_rank3_overlap_offS2_geometry",
+      "frame": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0"
+        ]
+      ],
+      "point": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "pair_count": 28,
+      "pairs": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "rank": 2,
+          "residual_squared": "1"
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "rank": 2,
+          "residual_squared": "1"
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "rank": 2,
+          "residual_squared": "2"
+        },
+        {
+          "pair": [
+            1,
+            5
+          ],
+          "rank": 2,
+          "residual_squared": "2"
+        },
+        {
+          "pair": [
+            1,
+            6
+          ],
+          "rank": 2,
+          "residual_squared": "2"
+        },
+        {
+          "pair": [
+            1,
+            7
+          ],
+          "rank": 2,
+          "residual_squared": "2"
+        },
+        {
+          "pair": [
+            1,
+            8
+          ],
+          "rank": 2,
+          "residual_squared": "3/2"
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "rank": 2,
+          "residual_squared": "1"
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "rank": 2,
+          "residual_squared": "2"
+        },
+        {
+          "pair": [
+            2,
+            5
+          ],
+          "rank": 2,
+          "residual_squared": "2"
+        },
+        {
+          "pair": [
+            2,
+            6
+          ],
+          "rank": 2,
+          "residual_squared": "2"
+        },
+        {
+          "pair": [
+            2,
+            7
+          ],
+          "rank": 2,
+          "residual_squared": "3/2"
+        },
+        {
+          "pair": [
+            2,
+            8
+          ],
+          "rank": 2,
+          "residual_squared": "2"
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "rank": 2,
+          "residual_squared": "2"
+        },
+        {
+          "pair": [
+            3,
+            5
+          ],
+          "rank": 2,
+          "residual_squared": "2"
+        },
+        {
+          "pair": [
+            3,
+            6
+          ],
+          "rank": 2,
+          "residual_squared": "2"
+        },
+        {
+          "pair": [
+            3,
+            7
+          ],
+          "rank": 2,
+          "residual_squared": "3/2"
+        },
+        {
+          "pair": [
+            3,
+            8
+          ],
+          "rank": 2,
+          "residual_squared": "3/2"
+        },
+        {
+          "pair": [
+            4,
+            5
+          ],
+          "rank": 2,
+          "residual_squared": "3"
+        },
+        {
+          "pair": [
+            4,
+            6
+          ],
+          "rank": 2,
+          "residual_squared": "3"
+        },
+        {
+          "pair": [
+            4,
+            7
+          ],
+          "rank": 2,
+          "residual_squared": "2"
+        },
+        {
+          "pair": [
+            4,
+            8
+          ],
+          "rank": 2,
+          "residual_squared": "2"
+        },
+        {
+          "pair": [
+            5,
+            6
+          ],
+          "rank": 2,
+          "residual_squared": "3"
+        },
+        {
+          "pair": [
+            5,
+            7
+          ],
+          "rank": 2,
+          "residual_squared": "5/2"
+        },
+        {
+          "pair": [
+            5,
+            8
+          ],
+          "rank": 2,
+          "residual_squared": "5/2"
+        },
+        {
+          "pair": [
+            6,
+            7
+          ],
+          "rank": 2,
+          "residual_squared": "5/2"
+        },
+        {
+          "pair": [
+            6,
+            8
+          ],
+          "rank": 2,
+          "residual_squared": "5/2"
+        },
+        {
+          "pair": [
+            7,
+            8
+          ],
+          "rank": 2,
+          "residual_squared": "1"
+        }
+      ],
+      "min_pair_residual_squared": "1",
+      "W1_rank": 3,
+      "W2_rank": 3,
+      "union_rank": 4,
+      "intersection_dimension": 2,
+      "intersection_basis": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "W1_projector": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "W2_projector": [
+        [
+          "2/3",
+          "1/3",
+          "0",
+          "1/3",
+          "0",
+          "0"
+        ],
+        [
+          "1/3",
+          "2/3",
+          "0",
+          "-1/3",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/3",
+          "-1/3",
+          "0",
+          "2/3",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "Green_evaluations": 0,
+      "Hessian_evaluations": 0,
+      "semiconcavity_claim_for_this_frame": false
+    },
+    {
+      "id": 7,
+      "name": "abstract_negative_cusp_not_sufficient",
+      "positive_side_function": "s**2*log(1/s) - s",
+      "right_derivative_limit": "-1",
+      "left_derivative_limit": "1",
+      "derivative_jump": "-2",
+      "classical_second_derivative": "-2*log(s) - 3",
+      "second_derivative_limit": "+infinity",
+      "remainder_is_o_abs_s": true,
+      "Cauchy_frame_counterexample": false,
+      "body32_counterexample": false
+    },
+    {
+      "id": 8,
+      "name": "weighted_convex_norm_Hessian_product",
+      "norm_PSD_numerator": "epsilon**2*k1**2 + epsilon**2*k2**2 + k1**2*z2**2 - 2*k1*k2*z1*z2 + k2**2*z1**2",
+      "weighted_product_identity_residuals": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "example_A": "1+y^2",
+      "example_local_bound": "7 on |y|<=1, |z|<=1, 0<epsilon<=1",
+      "general_lemma_requires_A_nonnegative_C2": true,
+      "general_lemma_requires_uniform_remainder_upper_Hessian": true
+    }
+  ],
+  "body32_semiconcavity_proved": false,
+  "body32_counterexample_found": false,
+  "axis_independent6_semiconcavity_author_proof": true,
+  "overlap_fixture_is_geometry_only": true,
+  "new_Cn_bound": false,
+  "actual_work": {
+    "producer_configurations": 8,
+    "exact_tiny_pair_residuals": 43,
+    "true_tiny_Green_symbolic_paths": 1,
+    "normal_norm_symbolic_slices": 1,
+    "abstract_counterexamples": 1,
+    "overlap_geometry_points": 1,
+    "body32_kernel_calls": 0,
+    "body32_pair_or_triple_enumerations": 0,
+    "old069_fixture_replays": 0,
+    "old_baseline_replays": 0,
+    "parameter_grid_calls": 0,
+    "matlab_calls": 0
+  }
+}

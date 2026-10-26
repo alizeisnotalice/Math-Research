@@ -1,6 +1,6 @@
 # 六维中心方体研究状态
 
-active；最新顺序归档至071，前沿085。上界优先、下界低资源。每程序总墙钟≤180秒（包含清理/收据）；每批有限登记、实际句柄接续、不自动重发，总研究预算不限。角色与唯一文件所有权见coordination/phase_20261025/roles.json，实际owned receipts优先于历史PID文字。
+active；最新顺序归档至072，前沿085。上界优先、下界低资源。每程序总墙钟≤180秒（包含清理/收据）；每批有限登记、实际句柄接续、不自动重发，总研究预算不限。角色与唯一文件所有权见coordination/phase_20261025/roles.json，实际owned receipts优先于历史PID文字。
 
 固定Lebesgue、中心轴平行、共同半径、一般L1、全部正尺度。当前严格内部C6>2071993199356/10^12，C6≤64。完整准确36系数/根区间、上一构造完整最大上端、finiteL1及主实际最小复核通过：audit/round070/first_overlap_cover_review/report.md；内部成果不称公开发表或穷尽全球纪录。公开已核非穷尽门槛与内部/phase冻结分列见results/bounds_ledger.json，未从展示小数造证书。
 
@@ -25,3 +25,7 @@ phase冻结不改；lower=true、upper=false、dual=null、后三轮0/3。只有
 071已拒绝runtime release：真实cleanup EPERM使收据缺失，0body/0实际超180；082新目录最小修订待审，生产关闭。073/075独审+主minchecker已过，数学当前最好>2073015624830/10^12，正式源按073/075顺序归档，dynamic比较必须用较强075，不能退回70。
 
 071归档完成：真实cleanup故障EPERM导致收据缺失，独审REJECT生产，0body/0实际180超限。严格C6上端仍64、当前下端2071993199356/1000000000000；双侧未触发、后三轮0/3。
+
+072独立六列族semiconcavity及条件vertex下证书已独审；076一般body32完整稿由新Astra独立审计，无数值Γ/globalg/Cn。
+
+072归档完成：3D deficit及有限重叠条件/独立六列族局部半凹性独审PASS，无body32或Cn。严格C6上端仍64、当前下端2071993199356/1000000000000；双侧未触发、后三轮0/3。

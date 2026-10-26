@@ -1,0 +1,379 @@
+{
+  "status": "PASS_FIVE_NEW_INDEPENDENT_CONFIGURATIONS",
+  "checks": [
+    {
+      "id": 1,
+      "pass": true,
+      "name": "anisotropic_radial_Cauchy_normal_deficit",
+      "T": [
+        [
+          "2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "3",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "5"
+        ]
+      ],
+      "determinant": "30",
+      "radial_density": "t/[pi^2*(t^2+r^2)^2]",
+      "deficit_integral_without_pi_minus2": "3*pi*r/4",
+      "transformed_norm": "sqrt(z1^2/4+z2^2/9+z3^2/25)/(40*pi)",
+      "old_axis_product_slice_replayed": false,
+      "new_Green_path": false
+    },
+    {
+      "id": 2,
+      "pass": true,
+      "name": "joint_amplitude_and_normal_semiconcavity",
+      "amplitude": "z2**2 + (y + z1)**2 + 2",
+      "norm": "sqrt(epsilon**2 + z1**2 + 4*z2**2)",
+      "norm_Hessian_nonnegative_numerator": "epsilon**2*(h1**2 + 4*h2**2) + 4*(-h1*z2 + h2*z1)**2",
+      "joint_Hessian_product_residuals": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "gradient_norm_bound": "2",
+      "amplitude_gradient_bound": "4",
+      "amplitude_Hessian_bound": "4",
+      "norm_value_bound": "3",
+      "semiconcavity_constant_upper": "28",
+      "joint_2x2_Hessian_det_at_new_point": "-25/9",
+      "joint_function_not_claimed_concave": true
+    },
+    {
+      "id": 3,
+      "pass": true,
+      "name": "new_weighted_joint_remainder_dominators",
+      "tangential_rates": [
+        1,
+        2,
+        4
+      ],
+      "normal_rates": [
+        "2",
+        "3",
+        "5"
+      ],
+      "exact_small_time_limits": [
+        {
+          "y_derivative_indices": [],
+          "limit_of_derivative_1minusH_over_t2": "(16*y1**2*y2**2 + 4*y1**2*y3**2 + y2**2*y3**2)/(y1**2*y2**2*y3**2)"
+        },
+        {
+          "y_derivative_indices": [
+            0
+          ],
+          "limit_of_derivative_1minusH_over_t2": "-2/y1**3"
+        },
+        {
+          "y_derivative_indices": [
+            1
+          ],
+          "limit_of_derivative_1minusH_over_t2": "-8/y2**3"
+        },
+        {
+          "y_derivative_indices": [
+            2
+          ],
+          "limit_of_derivative_1minusH_over_t2": "-32/y3**3"
+        },
+        {
+          "y_derivative_indices": [
+            0,
+            0
+          ],
+          "limit_of_derivative_1minusH_over_t2": "6/y1**4"
+        },
+        {
+          "y_derivative_indices": [
+            0,
+            1
+          ],
+          "limit_of_derivative_1minusH_over_t2": "0"
+        },
+        {
+          "y_derivative_indices": [
+            0,
+            2
+          ],
+          "limit_of_derivative_1minusH_over_t2": "0"
+        },
+        {
+          "y_derivative_indices": [
+            1,
+            1
+          ],
+          "limit_of_derivative_1minusH_over_t2": "24/y2**4"
+        },
+        {
+          "y_derivative_indices": [
+            1,
+            2
+          ],
+          "limit_of_derivative_1minusH_over_t2": "0"
+        },
+        {
+          "y_derivative_indices": [
+            2,
+            2
+          ],
+          "limit_of_derivative_1minusH_over_t2": "96/y3**4"
+        }
+      ],
+      "A_upper_without_pi_minus3": "1/288",
+      "small_time_A_times_1minusH_derivative_bounds_without_pi_minus3": {
+        "order0": "17/5184",
+        "order1": [
+          "43/10368",
+          "43/20736",
+          "25/15552"
+        ],
+        "order2": [
+          [
+            "55/6912",
+            "217/82944",
+            "7/3456"
+          ],
+          [
+            "217/82944",
+            "55/27648",
+            "7/6912"
+          ],
+          [
+            "7/3456",
+            "7/6912",
+            "107/93312"
+          ]
+        ]
+      },
+      "normal_peak_constant_without_pi_minus3": "1/30",
+      "normal_gradient_constant_without_pi_minus3": "31/900",
+      "normal_Hessian_constant_without_pi_minus3": "811/27000",
+      "large_time_normal_difference_gradient_Hessian_constants_without_pi_minus3": [
+        "811/13500",
+        "811/13500",
+        "811/27000"
+      ],
+      "small_time_integrand_exponents_for_z_orders012": [
+        2,
+        1,
+        0
+      ],
+      "large_time_all_joint_derivative_integrand_exponent": -2,
+      "body_or_axis_Green_integrals_executed": 0
+    },
+    {
+      "id": 4,
+      "pass": true,
+      "name": "general_nonorthogonal_sixcolumn_transport",
+      "N": [
+        [
+          "2",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "3",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "5",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "7",
+          "2",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "11",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "13"
+        ]
+      ],
+      "inverse": [
+        [
+          "1/2",
+          "-1/6",
+          "1/30",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1/3",
+          "-1/15",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1/5",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1/7",
+          "-2/77",
+          "2/1001"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1/11",
+          "-1/143"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1/13"
+        ]
+      ],
+      "absolute_determinant": "30030",
+      "new_point": [
+        "7",
+        "15",
+        "30",
+        "0",
+        "0",
+        "0"
+      ],
+      "unique_axis_coordinates": [
+        "2",
+        "3",
+        "6",
+        "0",
+        "0",
+        "0"
+      ],
+      "off_S2_by_support_count": 3,
+      "Green_evaluations": 0,
+      "pair_enumerations": 0,
+      "Hessian_pullback_identity": true,
+      "finite_semiconcavity_multiplier_using_Frobenius": "423631591/27081081027000",
+      "sharp_operator_formula": "abs(detN)^(-1)*C_axis*||N^-1||op^2",
+      "positive_leading_minors_of_coarse_bound_difference": [
+        "99090683/13540540513500",
+        "53486112748456931/733384949590939374729000000",
+        "1403662200777911717173/1379226197489898591116719803241875000",
+        "568802511832771413369516402943/37350936408785047760045031406048714154405625000000",
+        "236361708481798279102604522136397646413/1011503735320632273015844348675964965924620519649576875000000000",
+        "8969098614049441950446066245514085986153/2485264677682793494799929564696845921276792616779010381875000000000000"
+      ]
+    },
+    {
+      "id": 5,
+      "pass": true,
+      "name": "whole_linear_box_vertex_lower_certificate",
+      "L": [
+        [
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "3",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "2",
+          "-1",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "2"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ]
+      ],
+      "halfwidths": [
+        "1/5",
+        "1/7",
+        "1/11"
+      ],
+      "vertex_count": 8,
+      "barycentric_sum": "1",
+      "covariance_identity": true,
+      "quadratic_equality_identity": true,
+      "maximum_lower_penalty_per_unit_C": "7027/29645",
+      "general_pointwise_penalty": "(C/2)*sum_i (h_i^2-s_i^2)*||L_i||^2",
+      "whole_box_lower": "min_vertex_lower-(C/2)*sum_i h_i^2*||L_i||^2",
+      "axis_box_full_side_coefficient": "C/8 times sum of squared full side lengths",
+      "requires_uniform_semiconcavity_on_entire_convex_box": true
+    }
+  ],
+  "scientific_configurations": 5,
+  "registration_sha256": "520307ba8b1531ddd4a6f4b62013db14222964bc39ca8a1df1dcf6038531667a",
+  "checker_sha256": "f30e038275ff2b7c793e4aa5fa9049f47cb551fa9fa49d98235a3c6c71d7b1a5",
+  "producer_manifest_sha256": "f0cf4a06301a2bfe4e72f1c4beb81935693658ad481a45887edbd0f66418355d",
+  "body32_semiconcavity_proved": false,
+  "body32_counterexample": false,
+  "old_fixtures_replayed": 0,
+  "pair_residual_evaluations": 0,
+  "Green_path_evaluations": 0,
+  "new_Cn_bound": false,
+  "main_retains_final_proof": true
+}

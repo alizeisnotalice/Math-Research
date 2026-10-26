@@ -1,0 +1,122 @@
+{
+  "task": "A072-local-Green-semiconcavity-finite-probe",
+  "registered_utc": "2026-10-26T11:47:48.124058+00:00",
+  "problem": "Whether originalbody32 G is locally semiconcave on R6 minus trueS2; no assumption of S3 Hessian regularity",
+  "allowed_new_conclusions": "exact small-frame counterexample if found, otherwise carefully scoped local sufficient lemma and explicit body32 gaps",
+  "max_configurations": 9,
+  "fixed_plan": [
+    {
+      "id": 1,
+      "scope": "symbolic Laplace/radial deficit identity and exact3D Fourier normalization"
+    },
+    {
+      "id": 2,
+      "scope": "new axis6 x0=(1,2,4,0,0,0), exactly15 pair-span residuals and rank qualification"
+    },
+    {
+      "id": 3,
+      "scope": "axis3 normal norm on(a,b,0), a,b>0: exact rational time integration and Hessian PSD factorization"
+    },
+    {
+      "id": 4,
+      "scope": "one true axis6 path(1,2,4,s,0,0),0<s<1/2: exact Green integral, one-sided cusp slopes and finite one-sided Hessian limit"
+    },
+    {
+      "id": 5,
+      "scope": "axis6 tangent coefficient product remainder1-H_y exact t\u00b2 factorization and derivative-order structure"
+    },
+    {
+      "id": 6,
+      "scope": "one8-column overlap geometry: E6 plus(e1+e4),(e2-e4), x0=(1,1,1,0,0,0), exactly28 pair residuals, two selectedrank3 spans and their intersection"
+    },
+    {
+      "id": 7,
+      "scope": "abstract function\u2212|s|+s\u00b2log(1/|s|): negative gradient jump but positive Hessian divergence, explicitly not a Cauchy-frame counterexample"
+    },
+    {
+      "id": 8,
+      "scope": "symbolic weighted smoothed-norm product Hessian identity underlying finite-overlap semiconcavity sufficient lemma"
+    },
+    {
+      "id": 9,
+      "scope": "one pure saved-result structural/rational audit; no new point or kernel"
+    }
+  ],
+  "fixtures": {
+    "axis_frame": "I6",
+    "axis_point": [
+      1,
+      2,
+      4,
+      0,
+      0,
+      0
+    ],
+    "axis_path": [
+      1,
+      2,
+      4,
+      "s",
+      0,
+      0
+    ],
+    "axis_path_range": "0<s<1/2, symbolic; no parameter samples",
+    "normal_slice": [
+      "a",
+      "b",
+      0
+    ],
+    "normal_slice_range": "a,b>0, symbolic",
+    "overlap_frame": "I6 with v7=(1,0,0,1,0,0), v8=(0,1,0,-1,0,0)",
+    "overlap_point": [
+      1,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "overlap_W1": "span(e1,e2,e3)",
+    "overlap_W2": "span(v7,v8,e3)",
+    "abstract_counterexample": "\u2212|s|+s\u00b2log(1/|s|),0<|s|<1/2"
+  },
+  "planned_exact_pair_residual_count": 43,
+  "planned_actual_tiny_Green_paths": 1,
+  "planned_body32_scalar_or_derivative_evaluations": 0,
+  "runtime": {
+    "wall_limit_seconds_including_cleanup": 180,
+    "scientific_child_work_timeout_seconds": 170,
+    "reserved_cleanup_seconds": 10,
+    "on_timeout": "kill only owned new-session group, reap within cleanup reserve, save checkpoint/failure; no automatic rerun"
+  },
+  "source_sha256": {
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-literature/cube-dim-6-bounds/upper/round069/green_C2_off_S3/manifest.json": "527cb3097e55d346e2867c7f58b0ed66f8a8a590ffe26b07979e9f6e111f8ce8",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-literature/cube-dim-6-bounds/upper/round069/green_C2_off_S3/theorem.md": "a1689203f2c6f36765535247847f6ab29e591e1182c0c3e5d7d1b691fb6b65c7",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-literature/cube-dim-6-bounds/upper/round069/green_C2_off_S3/report.md": "ae9427c045e28e13cc9aa25ed500429562233339e6a94ffee387bf1207cd979c",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-upper-astra/cube-dim-6-bounds/audit/round069/green_C2_review/manifest.json": "fc08b8df8a1049cb2bb43f1a4546df262b196a506927448885eba5e9df0c55d8",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-upper-astra/cube-dim-6-bounds/audit/round069/green_C2_review/report.md": "ddc64218cbf6945fddf095ea98acce78504092bd38b217d5e6972970ed41284a",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-upper-astra/cube-dim-6-bounds/upper/round052/zero_node_green_finite_part/manifest.json": "175171c3be5757699e33cd3895b29a2a5e6ef4e5edcdb5f4c4cff9f6bc8223d4",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-upper-astra/cube-dim-6-bounds/upper/round052/zero_node_green_finite_part/theorem.md": "f4ead1ef2785595fa71603f6a2ec651f5a31d16dd19296b963bfc4cd584233b3",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/upper/round040/global_green_floor_strategy/theorem.md": "a23bcd3b84b1789fc63b30a6afe5fbec8b9f30053802a542755b21f5852ba47e"
+  },
+  "source_069_manifest_sha256": "527cb3097e55d346e2867c7f58b0ed66f8a8a590ffe26b07979e9f6e111f8ce8",
+  "source_use": "accepted052 finite-continuous offS2; accepted069 C2 strictly offS3;040 positive-moment obstruction not actual Hessian conclusion",
+  "forbidden": [
+    "body32 fullkernel",
+    "old baseline/reference replay",
+    "old069 axis(1,2,3,4,0,0) fixture",
+    "new parameter grid",
+    "body32 allpairs/triples enumeration",
+    "MATLAB",
+    "recursive agents",
+    "old frozen source edits",
+    "stage",
+    "commit",
+    "push"
+  ],
+  "scientific_calls_before_registration": 0,
+  "body32_semiconcavity_assumed": false,
+  "new_Cn_bound": false,
+  "code_binding_required_before_execution": true,
+  "parent_retains_final_proof_responsibility": true
+}

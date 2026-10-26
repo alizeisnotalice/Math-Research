@@ -1,0 +1,25 @@
+{
+  "task": "B072-independent-scoped-semiconcavity-review",
+  "registered_before_scientific_execution": true,
+  "producer_directory": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-curvature-astra/cube-dim-6-bounds/upper/round072/green_semiconcavity_probe",
+  "producer_manifest_sha256": "f0cf4a06301a2bfe4e72f1c4beb81935693658ad481a45887edbd0f66418355d",
+  "producer_theorem_sha256": "47ef45f244c361409a2182d55a2ab6a9bd78e537f684d39a4fa82ecc08ff55c9",
+  "configuration_cap": 6,
+  "fixed_configuration_count": 5,
+  "cpu_seconds_total_limit": 30,
+  "wall_total_limit_including_cleanup_seconds": 180,
+  "work_timeout_seconds": 170,
+  "cleanup_reserve_seconds": 10,
+  "automatic_retries": 0,
+  "fixed_configurations": [
+    {"id":1,"kind":"new anisotropic isotropic-Cauchy normal deficit cross-check","T":"diag(2,3,5)","identity":"N_T(z)=3*||T^-1*z||/(4*pi*abs(detT))","method":"independent3D radial Fourier/Laplace identity and nonoscillatory rational integral; no axis-product slice or Green path"},
+    {"id":2,"kind":"joint-variable negative weighted norm","amplitude":"2+(y+z1)^2+z2^2","smoothed_norm":"sqrt(z1^2+4*z2^2+epsilon^2)","domain":"y^2+z1^2+z2^2<=1,0<epsilon<=1","bound":"M<=3,L<=2,gradientA<=4,HessianA<=4,semiconcavity bound28","additional_exact_point":["1/2","1/3","0"]},
+    {"id":3,"kind":"weighted product remainder endpoint dominators","tangential_rates":[1,2,4],"normal_rates":[2,3,5],"tangential_box":[[2,3],[4,5],[6,7]],"normal_ball_radius":2,"method":"exact rational coefficients for small-t factors and global normal Hessian t^-5 bound; joint derivative orders<=2, no Green integral"},
+    {"id":4,"kind":"invertible nonorthogonal six-column transport","N_rows":[[2,1,0,0,0,0],[0,3,1,0,0,0],[0,0,5,0,0,0],[0,0,0,7,2,0],[0,0,0,0,11,1],[0,0,0,0,0,13]],"axis_coordinates":[2,3,6,0,0,0],"method":"exact inverse/Jacobian and quadratic-Hessian pullback; offS2 from unique coordinate support, no pair enumeration"},
+    {"id":5,"kind":"whole linear-box vertex lower certificate","L_columns":[[1,0,0,2,0,0],[0,3,0,-1,0,1],[0,0,1,1,2,0]],"halfwidths":["1/5","1/7","1/11"],"vertices":8,"method":"symbolic product barycentric covariance and sharp quadratic check of C/2 coefficient; general dimension proven separately"}
+  ],
+  "forbidden": ["author9/43pair/path replay", "old069 replay", "body32 kernel", "body32 pair/triple enumeration", "general body32 extension assigned toF076", "parameter grid", "MATLAB", "recursive agents", "stage", "commit", "push"],
+  "failure_policy": "First unexpected failure or resource limit stops without retry or replacement fixture.",
+  "claim_scope": "3D deficit norm; finite-overlap sufficient condition; invertible6-column offS2 semiconcavity; conditional linear-box certificate only. No general body32 semiconcavity/globalg/I/Cn.",
+  "main_retains_final_proof": true
+}
