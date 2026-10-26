@@ -1,0 +1,209 @@
+{
+  "status": "PASS_SEVEN_FIXED_CONFIGURATIONS_NO_GLOBAL_CERTIFICATE",
+  "fixed_configurations": 7,
+  "checks": [
+    {
+      "configuration": 1,
+      "gap_identities": [
+        "(-t**2 + z**2)**2/(t**2*(t**2 + z**2)**2)",
+        "2*z**2*(3*t**2 + z**2)/(t**2*(t**2 + z**2)**2)",
+        "(-3*t**2 + z**2)**2/(4*t**2*(t**2 + z**2)**2)"
+      ],
+      "pass": true
+    },
+    {
+      "configuration": 2,
+      "N_rows": [
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "-1",
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "1",
+          "-1",
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "1",
+          "1",
+          "-1",
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "1",
+          "1",
+          "1",
+          "-1",
+          "1"
+        ],
+        [
+          "-1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "-1"
+        ]
+      ],
+      "determinant": "128",
+      "Q_rows": [
+        [
+          "7/32",
+          "-1/32",
+          "-1/32",
+          "-1/32",
+          "-1/32"
+        ],
+        [
+          "-1/32",
+          "7/32",
+          "-1/32",
+          "-1/32",
+          "-1/32"
+        ],
+        [
+          "-1/32",
+          "-1/32",
+          "7/32",
+          "-1/32",
+          "-1/32"
+        ],
+        [
+          "-1/32",
+          "-1/32",
+          "-1/32",
+          "7/32",
+          "-1/32"
+        ],
+        [
+          "-1/32",
+          "-1/32",
+          "-1/32",
+          "-1/32",
+          "7/32"
+        ]
+      ],
+      "eigenvalues": {
+        "3/32": 1,
+        "1/4": 4
+      },
+      "pass": true
+    },
+    {
+      "configuration": 3,
+      "symbolic_quadratic": "(7*d1**2 - 2*d1*d2 - 2*d1*d3 - 2*d1*d4 - 2*d1*d5 + 7*d2**2 - 2*d2*d3 - 2*d2*d4 - 2*d2*d5 + 7*d3**2 - 2*d3*d4 - 2*d3*d5 + 7*d4**2 - 2*d4*d5 + 7*d5**2)/32",
+      "unit_box_max_q6": "39/32",
+      "unit_box_min_q6": "15/32",
+      "pass": true
+    },
+    {
+      "configuration": 4,
+      "halfwidth": [
+        "1/8",
+        "1/10",
+        "1/12",
+        "1/14",
+        "1/16"
+      ],
+      "log_gradient": [
+        "1/3",
+        "-1/5",
+        "2/7",
+        "-3/11",
+        "1/13"
+      ],
+      "a": "1/2",
+      "joint_corner_min": "-9891209/65894400",
+      "winning_signs": [
+        -1,
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "separate_payment": "-69804743/461260800",
+      "improvement": "11/8960",
+      "pass": true
+    },
+    {
+      "configuration": 5,
+      "shared_denominator_cases": [
+        {
+          "dot": "-1",
+          "minimizer": "2"
+        },
+        {
+          "dot": "3",
+          "minimizer": "3"
+        },
+        {
+          "dot": "7",
+          "minimizer": "5"
+        }
+      ],
+      "synthetic_only": true,
+      "interface_status": "PASS_CONDITIONAL_ON_MATCHING_CENTER_JET",
+      "bound_lower": "9592292127395300466584137582439338134540066087519068413844410960201578372450339330172131895623707207646438314159115/4925250774549309901534880012517951725634967408808180833493536675530715221437151326426783281860614455100828498788352",
+      "bound_upper": "2398073031848825116646034395609834533635016521879767103461102740050394593112584832543032973905926801911609578539779/1231312693637327475383720003129487931408741852202045208373384168882678805359287831606695820465153613775207124697088",
+      "pass": true
+    },
+    {
+      "configuration": 6,
+      "synthetic_only": true,
+      "status": "UNRESOLVED",
+      "rejected": [
+        "zero_cutoff",
+        "model_mismatch"
+      ],
+      "pass": true
+    },
+    {
+      "configuration": 7,
+      "frame_gram": "32 I6",
+      "R": "A.T/32",
+      "face_Q": "I5/32",
+      "Q6_minus_Q32_eigenvalues": {
+        "1/16": 1,
+        "7/32": 4
+      },
+      "isotropic_curvature_cost_ratio_Q6_over_Q32": "39/5",
+      "pass": true
+    }
+  ],
+  "kernel_G_H_p_gradient_Hessian_calls": 0,
+  "fullfan_calls": 0,
+  "matlab_calls": 0,
+  "global_g_certificate": false,
+  "new_C6_bound": false,
+  "synthetic_jets_are_kernel_evidence": false,
+  "python": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "sympy": "1.14.0",
+  "python_flint": "0.9.0",
+  "precision_bits": 384,
+  "elapsed_seconds": 0.06708407402038574,
+  "source_sha256": {
+    "registration.md": "cdecda2e618684b70c17379b6cef8d05629e4d1bdac0563fb8f8734994fb6970",
+    "theorem.md": "68fa917e01548c25258612e13d3f976109c55ea29ccf3456d2e83f71d995fb8a",
+    "box_certificate.py": "891a16137bbb483099d577e1ef7199e7a632f141d2517f2540713a19ad27c279",
+    "check_fixed.py": "0d6a6d824f02f7cfc8b0a01ceb335b246c2ca0278d5012d491c3c4c48da5f330",
+    "input_manifest.json": "3f8a21b4474655cb76ba38108ba20bcedeb123f9452ed59611ae38ec65c3033e"
+  }
+}
