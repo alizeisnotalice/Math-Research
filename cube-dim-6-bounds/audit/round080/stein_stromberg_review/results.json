@@ -1,0 +1,199 @@
+{
+  "status": "PASS_SPECIFIED_ALLOCATION_DIAGNOSTIC_ONLY",
+  "configurations": [
+    {
+      "id": 1,
+      "pass": true,
+      "name": "finite_greedy_exact_selection_and_persistence",
+      "selected": [
+        "A",
+        "B",
+        "D",
+        "E"
+      ],
+      "unselected": [
+        "C"
+      ],
+      "blocked_radius": "3",
+      "subsequently_selected_radius": "1",
+      "exact_boundary_admission": "1",
+      "disjoint_increment_total": "19"
+    },
+    {
+      "id": 2,
+      "pass": true,
+      "name": "outer_radius_and_disjoint_shell_certificate",
+      "x": "9",
+      "minimum_selected": "E",
+      "outer_ids": [
+        "B"
+      ],
+      "outer_weight": "2/3",
+      "shell_ids": [
+        "D",
+        "E"
+      ],
+      "shell_weight": "1",
+      "shell_volume_upper": "5/2",
+      "threshold_identity": "(beta+1)r-(beta*r+beta)=r-beta",
+      "beta_boundary_in_outer": true,
+      "spatial_sampling_grid": false
+    },
+    {
+      "id": 3,
+      "pass": true,
+      "name": "independent_symbolic_all_parameter_structure",
+      "derivative": "exp(u)*(u-1)/u^2",
+      "minimization": "a*exp(u)/u >= a*e for u=a/m>0",
+      "first_factor_derivative": "-12*(beta+2)^5/beta^7",
+      "shell_volume_ratio_residual": "0",
+      "allocated_six_dimensional_formula_residual": "0",
+      "author_five_rational_facts_reevaluated": 0,
+      "parameter_grid_points": 0,
+      "beta_equals_one_claim": false
+    },
+    {
+      "id": 4,
+      "pass": true,
+      "name": "exact_weighted_L1_witness_transfer_on_same_fixture",
+      "function": "indicator[-10,12]",
+      "function_L1": "22",
+      "lambda_value": "1/2",
+      "weighted_integral": "19",
+      "increment_total": "19",
+      "original_union_measure": "19",
+      "restricted_to_finite_fixture": true,
+      "general_L1_and_all_scales": "proved in proof_review.md, not inferred from fixture"
+    }
+  ],
+  "fixture_dimension": 1,
+  "fixture_count": 1,
+  "fixture_ball_count": 5,
+  "author_five_fact_reevaluations": 0,
+  "parameter_grid_points": 0,
+  "body32_kernel_calls": 0,
+  "old_baseline_evaluations": 0,
+  "author_saved_fact_strings_read_only": {
+    "exp_prefix": "8/3",
+    "log_two_prefix": "2/3",
+    "log_seven_prefix": "5223903223377/2687038914560",
+    "middle_product_lower": "3245450/50421",
+    "uniform_allocated_cost_strict_lower": "1602/25"
+  },
+  "greedy_trace": [
+    {
+      "chosen": "A",
+      "radius": "4",
+      "admission_score": "0",
+      "ineligible_before_choice": [],
+      "increment_measure": "8",
+      "weight": "2/3"
+    },
+    {
+      "chosen": "B",
+      "radius": "4",
+      "admission_score": "2/3",
+      "ineligible_before_choice": [],
+      "increment_measure": "8",
+      "weight": "2/3"
+    },
+    {
+      "chosen": "D",
+      "radius": "1",
+      "admission_score": "2/3",
+      "ineligible_before_choice": [
+        "C"
+      ],
+      "increment_measure": "1",
+      "weight": "1/3"
+    },
+    {
+      "chosen": "E",
+      "radius": "1",
+      "admission_score": "1",
+      "ineligible_before_choice": [
+        "C"
+      ],
+      "increment_measure": "2",
+      "weight": "2/3"
+    }
+  ],
+  "selected_increment_intervals": {
+    "A": [
+      [
+        "-8",
+        "0"
+      ]
+    ],
+    "B": [
+      [
+        "0",
+        "8"
+      ]
+    ],
+    "D": [
+      [
+        "8",
+        "9"
+      ]
+    ],
+    "E": [
+      [
+        "9",
+        "11"
+      ]
+    ]
+  },
+  "unselected_cover_certificates": [
+    {
+      "unselected": "C",
+      "large_controllers": [
+        "A",
+        "B"
+      ],
+      "large_weight_sum": "4/3"
+    }
+  ],
+  "common_scale_witnesses": [
+    {
+      "id": "A",
+      "small_radius": "4",
+      "witness_radius": "6",
+      "average": "1"
+    },
+    {
+      "id": "B",
+      "small_radius": "4",
+      "witness_radius": "6",
+      "average": "1"
+    },
+    {
+      "id": "C",
+      "small_radius": "3",
+      "witness_radius": "9/2",
+      "average": "1"
+    },
+    {
+      "id": "D",
+      "small_radius": "1",
+      "witness_radius": "3/2",
+      "average": "1"
+    },
+    {
+      "id": "E",
+      "small_radius": "1",
+      "witness_radius": "3/2",
+      "average": "1"
+    }
+  ],
+  "author_manifest_sha256": "5b69ee9803ff0a133d0ebf95fe0423da878710192270b3f197f817ecea1a319f",
+  "author_theorem_sha256": "6a44d397fce20e250e55ee85bdcb7022006e4b8ec4102d5dd85c44a9ea21113b",
+  "analytical_beta_domain": "beta>1",
+  "analytical_m_domain": "integer m>=1",
+  "specified_formula_strict_lower": "1602/25",
+  "new_C6_bound": false,
+  "true_covering_optimum_lower_bound": false,
+  "general_covering_method_excluded": false,
+  "source_five_facts_read_only": true,
+  "fixture_scope": "one 1D five-interval family; not numerical evidence for all 6D bodies"
+}
