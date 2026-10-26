@@ -1,0 +1,17 @@
+{
+  "status": "PASS_guard_only_negative_cases",
+  "checker": "check_portable_tree_v2.py",
+  "checker_sha256": "0e7e7db53c0e12db1dbeb9f5d8da866f50fc0e34ad40ea3733cb445b6ae21f58",
+  "catalog_count": 52360,
+  "catalog_first_five": [[0, 0, 0, 0], [1, 0, 0, 0], [1, 1, 0, 0], [1, 1, 1, 0], [1, 1, 1, 1]],
+  "catalog_last": [31, 31, 31, 31],
+  "negative_cases_rejected": [
+    "repeated root range",
+    "skipped first root ID",
+    "range stop beyond catalog",
+    "valid root tuple assigned to the wrong ID",
+    "root ID outside catalog",
+    "malformed or out-of-order root tuple"
+  ],
+  "scope": "finite root/range guards only; no bundle load, certificate arithmetic, or H/gradient/kernel calls"
+}

@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+"""Portable complete-layer readback. No old cache or local evidence needed."""
+from pathlib import Path
+from fractions import Fraction as F
+from collections import Counter
+from math import factorial,prod,ceil
+import gzip,json,hashlib,time,os,resource,signal,sys,argparse,ast
+from flint import arb,ctx,fmpq
+if hasattr(sys,'set_int_max_str_digits'):sys.set_int_max_str_digits(0)
+H=Path(__file__).resolve().parent;N=1<<160
+
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def rq(x):
+ x=F(str(x));return fmpq(x.numerator,x.denominator)
+def ep(x,up=False):return F(str((x.upper() if up else x.lower()).fmpq()))
+def alarm(sig,frame):raise TimeoutError('portable verify590s')
+def main():
+ ap=argparse.ArgumentParser();ap.add_argument('--record',action='store_true');args=ap.parse_args();start=time.monotonic();ctx.prec=384;reg=json.loads((H/'registration.json').read_text());summary=json.loads((H/'summary.json').read_text());assert sha(H/'engine.py')==reg['engine_sha256'];assert sha(H/'registration.json')==json.loads((H/'block0000_registration.json').read_text())['registration_sha256'];assert sha(H/'roots.json.gz')==reg['roots_sha256'];assert sha(H/'initial_cells.json.gz')==summary['compact_cells_sha256'];assert sha(H/'cap_scalar.json')==reg['cap_scalar_sha256'];assert sha(H/'geometry017.json.gz')==reg['table_sha256'];assert sha(H/'mechanism.md')==reg['mechanism_sha256']
+ policy=json.loads((H/'execution_policy_v2.json').read_text());assert sha(H/'engine_v2.py')==policy['new_engine_sha256'];assert sha(H/'engine.py')==policy['old_engine_sha256'];roots=json.loads(gzip.decompress((H/'roots.json.gz').read_bytes()));cells=json.loads(gzip.decompress((H/'initial_cells.json.gz').read_bytes()));assert cells['denominator']==str(N);cols=cells['columns'];rows=[dict(zip(cols,r)) for r in cells['rows']];assert len(rows)==len(roots)==52360;catalog=[[a,b,c,d] for a in range(32) for b in range(a+1) for c in range(b+1) for d in range(c+1)];assert sorted(r['rootid'] for r in roots)==list(range(52360));prev=None;prev_id=None;lower=upper=weight=0;mat=[];evid=[]
+ for rank,(root,r) in enumerate(zip(roots,rows)):
+  assert root['rank']==r['rank']==rank and root['rootid']==r['rootid'];assert root['indices']==catalog[root['rootid']];assert root['point'][0]=='1';assert all(F(i,32)<F(x)<F(i+1,32) for i,x in zip(root['indices'],root['point'][1:]));w=factorial(4)//prod(factorial(m) for m in Counter(root['indices']).values());assert w==root['weight']==r['weight'];key=F(w)**4*F(root['cached_H1over64']['upper'])**5;assert prev is None or key<prev or key==prev and root['rootid']>prev_id;prev,prev_id=key,root['rootid'];assert r['positive_bands']==73;l,u,m=[F(r[k],N) for k in ('L_i','U_i','M_i')];assert 0<l<=m<=u<=3;q=arb(5)/4;v=arb(1)/1048576;lp=arb(rq(l))**q;up=arb(rq(u))**q;chord=v*(lp*arb(rq((u-m)/(u-l)))+up*arb(rq((m-l)/(u-l))));assert F(r['integral_lower_i'],N)<=ep(v*lp) and ep(chord,True)<=F(r['integral_upper_i'],N);lower+=w*r['integral_lower_i'];upper+=w*r['integral_upper_i'];weight+=w;evid.append(r['evidence_sha256']);mat.append(r['mathematical_sha256'])
+ assert sha(H/'endpoint_samples.json.gz')==summary['endpoint_samples_sha256'];samples=json.loads(gzip.decompress((H/'endpoint_samples.json.gz').read_bytes()))['samples'];table=json.loads(gzip.decompress((H/'geometry017.json.gz').read_bytes()))
+ for ev in samples:
+  rank=ev['rank'];assert hashlib.sha256(json.dumps(ev,sort_keys=True,separators=(',',':')).encode()).hexdigest()==rows[rank]['mathematical_sha256'];assert ev['point']==roots[rank]['point'];D=ev['D'];point=list(map(F,ev['point']));nodes=[sum(int(x*D)*z for x,z in zip(point,v)) for v in table['vertices']];assert len(set(nodes))==280;weights={}
+  for cone in table['simplices']:
+   ks=[nodes[i] for i in cone['vertices']]
+   for j,k in enumerate(ks):weights[k*k]=weights.get(k*k,F(0))-F(cone['det_numerator'],2*prod(k-l for n,l in enumerate(ks) if n!=j))
+  assert weights=={int(k):F(v) for k,v in ev['weights'].items()} and sum(weights.values())==0;assert ev['endpoints'][24]['H']==roots[rank]['cached_H1over64'] and ev['endpoints'][24]['origin']=='cached066_H1over64'
+  for i,entry in enumerate(ev['endpoints']):
+   nxt=ev['endpoints'][i+1]['H'] if i+1<73 else {'lower':'0','upper':'0'};assert F(entry['H']['lower'])-F(nxt['upper'])>0
+ assert weight==1048576 and F(lower,N)==F(summary['H_integral_lower']) and F(upper,N)==F(summary['H_integral_upper']);assert hashlib.sha256(''.join(evid).encode()).hexdigest()==summary['evidence_tree_sha256'];scalar=json.loads((H/'cap_scalar.json').read_text());piL=F(scalar['pi_lower']);P5=2/(arb(rq(piL))**3*(8*arb(2).sqrt())**5);eps=F(1,512);T=F(1,16);cap=arb(rq(F(scalar['C3_upper'])/2*(eps**(-2)-T**(-2))))+arb(rq(scalar['C1_upper']))*arb(32).log()+P5/(4*arb(rq(T))**4);assert cap<3;E=F(scalar['E076_norm']['upper']);piv=arb.pi();F5=16/(piv*arb(5).sqrt());P3=1/(1024*arb(2).sqrt()*piv**2);P4=3/(65536*piv**2);Sv=5*arb(5).sqrt()/4+5*(arb(5)/6).sqrt();assert ep(F5*P4,True)<=F(scalar['C3_upper']);assert ep(F5*480*Sv*P3/piv,True)<=F(scalar['C1_upper']);assert piv>arb(rq(piL));assert E**5>=(F(5,6)**5*eps**6*(F(scalar['C3_upper'])+F(scalar['C1_upper'])*eps**2)/piL**4);I=(arb(rq(F(upper,N)))**(arb(4)/5)+arb(rq(E)))**(arb(5)/4);assert ep(I,True)<=F(summary['I_upper'])
+ # Frozen block/state hash chain reconstructed from compact integer ledger.
+ fp=json.loads((H/'block0000_registration.json').read_text())['fingerprint'];state={'fingerprint':fp,'next_rank':0,'sum_lower_weighted_units':0,'sum_upper_weighted_units':0,'computed_weight':0,'blocks':[]};lastreceipt=None
+ for bid in range(summary['production_program_count']):
+  bs=f'{bid:04d}';bregpath=H/('block'+bs+'_registration.json');br=json.loads(bregpath.read_text());rp=H/('block'+bs+'_receipt.json');rc=json.loads(rp.read_text());assert rc['status']=='complete' and rc['workers_joined'];assert br['parent_block_receipt_sha256']==lastreceipt;assert br['start']==state['next_rank'];expected_fp=policy['old_fingerprint'] if bid<policy['transition_block'] else hashlib.sha256((sha(H/'engine_v2.py')+sha(H/'registration.json')+sha(H/'execution_policy_v2.json')).encode()).hexdigest();assert br['fingerprint']==expected_fp and br['engine_sha256']==(policy['old_engine_sha256'] if bid<policy['transition_block'] else policy['new_engine_sha256']);
+  if bid==policy['transition_block']:assert br['parent_state_sha256']==policy['parent_state_sha256'] and br['parent_block_receipt_sha256']==policy['parent_block_receipt_sha256'] and br['start']==policy['transition_rank']
+  if bid>=policy['transition_block']:assert br['execution_policy_sha256']==sha(H/'execution_policy_v2.json')
+  expected=hashlib.sha256((json.dumps(state,sort_keys=True,separators=(',',':'))+'\n').encode()).hexdigest() if bid else None;assert br['parent_state_sha256']==expected
+  selected=roots[br['start']:br['end']];assert hashlib.sha256(json.dumps(selected,sort_keys=True,separators=(',',':')).encode()).hexdigest()==br['selection_sha256'];assert len(selected)<=4096;part=rows[br['start']:br['end']];state['sum_lower_weighted_units']+=sum(r['weight']*r['integral_lower_i'] for r in part);state['sum_upper_weighted_units']+=sum(r['weight']*r['integral_upper_i'] for r in part);state['computed_weight']+=sum(r['weight'] for r in part);state['next_rank']=br['end'];state['fingerprint']=br['fingerprint'];cap_units=ceil(ep(arb(3)**(arb(5)/4)/arb(1048576),True)*N);full_UH=F(state['sum_upper_weighted_units']+(1048576-state['computed_weight'])*cap_units,N);assert full_UH==F(rc['space_ledger']['full_face_UH_upper']);assert F(rc['space_ledger']['computed_weighted_volume'])+F(rc['space_ledger']['uncomputed_weighted_volume'])==1;assert F(rc['space_ledger']['uncomputed_weighted_volume'])==F(1048576-state['computed_weight'],1048576);I_block=(arb(rq(full_UH))**(arb(4)/5)+arb(rq(E)))**(arb(5)/4);assert ep(I_block,True)<=F(rc['space_ledger']['full_I_upper']);lastreceipt=sha(rp);state['blocks'].append({'id':bid,'start':br['start'],'end':br['end'],'registration_sha256':sha(bregpath),'receipt_sha256':lastreceipt,'ledger_sha256':rc['ledger_sha256']})
+ assert policy['old_fingerprint']==hashlib.sha256((sha(H/'engine.py')+sha(H/'registration.json')).encode()).hexdigest();functions=[]
+ for name in ('engine.py','engine_v2.py'):
+  tree=ast.parse((H/name).read_text());functions.append({n.name:ast.dump(n,include_attributes=False) for n in tree.body if isinstance(n,ast.FunctionDef) and n.name in policy['identical_AST_functions']})
+ assert functions[0]==functions[1];assert state['next_rank']==52360;assert hashlib.sha256((json.dumps(state,sort_keys=True,separators=(',',':'))+'\n').encode()).hexdigest()==summary['state_sha256']
+ result={'status':'pass','portable':True,'complete_cells':52360,'sum_weights':weight,'weighted_volume':'1','positive_band_records':52360*73,'endpoint_samples_exact_stencils_checked':len(samples),'all_52360_chords_checked':True,'complete_block_hash_chain_checked':True,'every_block_uncomputed_region_paid':True,'H_integral_lower':str(F(lower,N)),'H_integral_upper':str(F(upper,N)),'I_upper':str(ep(I,True)),'new_H_or_jet_evaluations':0,'mathematical_hash_tree':hashlib.sha256(''.join(mat).encode()).hexdigest(),'seconds':time.monotonic()-start,'pid':os.getpid(),'source_sha256':sha(__file__),'peak_rss':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss}
+ if args.record:(H/'verification.json').write_text(json.dumps(result,indent=2)+'\n')
+ print(json.dumps(result,indent=2))
+if __name__=='__main__':main()

@@ -1,0 +1,74 @@
+{
+  "id": "upper_shorttime076",
+  "status": "registered_before_computation",
+  "ownership": "Only upper_shorttime076; 057/064 and every prior source stay read only; no MATLAB, commits or push",
+  "model": "body16 unnormalised directions, alpha1, common time weight1, Fourier inverse (2*pi)^-5, Lebesgue, F=[0,1]^4 and x1=1",
+  "sources": [
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube5-astra-upper/cube-dim-5-bounds/upper_singular057/results.json",
+      "sha256": "e751cf4f92c3d0b0695c7ebe3ae4739c27210149bb69df5361d4b1c93fbb9faa"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube5-astra-upper/cube-dim-5-bounds/upper_singular057/report.md",
+      "sha256": "30155587faa5dfc8b83ab022c5dd717ee483abb71090a397241ba5e6d96b28fa"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube5-astra-upper/cube-dim-5-bounds/upper_tube064/report.md",
+      "sha256": "e2d934d43e8f9acdb924983ed0b7e4356bd107f437642bc7df01b0b4b8ef3dc5"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/round010/orbit_budget.json",
+      "sha256": "dfbc3b121593177842c16087f99d3c77d80950b73912e9ae7b289e46e58f9510"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/upper_integral063/budget.json",
+      "sha256": "3aa93b3c6e33bc0848e3331733f91daf93a917ffc8e1d224911af0373d9c5b9a"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/upper_integral063/report.md",
+      "sha256": "cf71d00f90971bf4c58faa7e405376feb167756dcc9b9bd7bd64975845d887b7"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-5/cube-dim-5-bounds/upper_alpha1_029/report.md",
+      "sha256": "298f0de7277ea6a7a516b85344c5189562bf7026f3f8de43d4d3f304ff6fed81"
+    }
+  ],
+  "analytic_formula": {
+    "C3": "F5*P4",
+    "C1": "F5*480*S*P3/pi",
+    "F5": "16/(pi*sqrt(5))",
+    "E_eps": "(5/6)*pi^(-4/5)*eps^(6/5)*(C3+C1*eps^2)^(1/5)",
+    "exact_fifth_power": "(5/6)^5*eps^6*(C3+C1*eps^2)/pi^4"
+  },
+  "epsilons": [
+    "1/2048",
+    "1/1024",
+    "1/512",
+    "1/256"
+  ],
+  "preselected_strict_E_caps": [
+    "1/250000",
+    "1/100000",
+    "1/50000",
+    "1/20000"
+  ],
+  "preselected_old_E_multipliers": [
+    "1/2",
+    "1",
+    "2",
+    "5"
+  ],
+  "numeric_method": "Zero new Arb or Gamma calls. Consume saved 256-bit P3/P4/S/F5 outward dyadic endpoints from057 and exact saved Machin80 pi interval. Round pi outward to dyadic denominator2^384. Compute four new rational E^5 enclosures and enclose fifth roots with denominator2^384. Compare each to its fixed cap and to the complete saved063 E_(1/2048) endpoints. No recomputation of old short-time formula.",
+  "independent_verification": "Standard library only: reconstruct F5 using the saved Machin pi interval and an independent integer sqrt5 enclosure; use Newton fifth roots on denominator2^320; check all caps/comparisons and saved rational powers. No old Gamma or Green calls.",
+  "runtime_limit_seconds_per_invocation": 180,
+  "checkpoint": "/tmp/upper_shorttime076/checkpoint.json",
+  "checkpoint_policy": "Persist after each of exactly four cases. Manual resume only with unchanged registration/source/input hashes, reusing all completed cases; no automatic retries. A completed batch refuses rerun.",
+  "excluded": [
+    "Green evaluations",
+    "space sampling",
+    "old Gamma or Arb baseline recomputation",
+    "continuous parameter search",
+    "new complete I or g or C5 claim"
+  ],
+  "scope": "E is an L^(5/4) norm upper bound for the full small-time remainder, not a pointwise remainder bound or an I contribution. Combining with U_H and tube errors requires the separate Minkowski interface."
+}
