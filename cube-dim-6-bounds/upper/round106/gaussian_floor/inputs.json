@@ -1,0 +1,17 @@
+{
+  "round": 106,
+  "model": "body32 original alpha=1 Cauchy, all weights one",
+  "frame": "all vectors (1,s2,s3,s4,s5,s6), sj in {-1,1}",
+  "stable_normalization": "E exp(-lambda S)=exp(-sqrt(lambda)); S=1/(4Y), Y~Gamma(1/2,1)",
+  "target_g": "1/65000",
+  "deterministic_orbit_example": {
+    "Sigma": "I+100*v*v^T, v=(1,1,1,1,1,1)",
+    "stable_scales": "all S_i=1/32, with an additional 100 on v",
+    "rho": "100/601",
+    "branches_k": [1,2,3,4,5],
+    "y_interval": ["0","1"],
+    "uniform_y_subintervals": 64,
+    "certificate_target_before_det_factor": "1/20"
+  },
+  "scope": "exact normalization and one deterministic 1D orbit-floor certificate; no Monte Carlo, no original kernel point evaluation, no lower-bound research, no C6 claim"
+}
