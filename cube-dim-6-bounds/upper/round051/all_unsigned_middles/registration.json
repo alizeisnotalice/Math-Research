@@ -1,0 +1,69 @@
+{
+  "task": "A051-all31-unsigned-middle-domains-short-budget",
+  "started_utc": "2026-10-25T21:56:02.914440+00:00",
+  "registered_utc": "2026-10-25T21:56:02.914440+00:00",
+  "deadline_utc": "2026-10-25T22:16:02.914440+00:00",
+  "max_wall_seconds": 1200,
+  "max_configurations": 8,
+  "source_sha256": {
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-curvature-astra/cube-dim-6-bounds/upper/round033/exact_projection_peaks/results.json": "c3c8401fbbb7ef4efe925338cf6c544ed5acc784187e7e2f225cd57c61fe7eba",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-curvature-astra/cube-dim-6-bounds/upper/round043/two_parameter_middle/theorem.md": "2e80ab1bda192499abb71162a8443db0263c06852b75256296af3598922954ad",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-curvature-astra/cube-dim-6-bounds/upper/round043/two_parameter_middle/results.json": "734626a85b8d033801e20da3cfd372022ec8f247700ba65a03effb15fed3d88c",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-curvature-astra/cube-dim-6-bounds/upper/round043/two_parameter_middle/manifest.json": "98a287ab122d8fd3830c039696ace64bf6a441ba72e0a993a2eaffee38cf1f3e",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-curvature-astra/cube-dim-6-bounds/upper/round049/middle_joint_marginal/theorem.md": "3462c9dbf1525fbe2326e504e9ff046752f476a78bc44dfa6cfc85a15301c617",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-curvature-astra/cube-dim-6-bounds/upper/round049/middle_joint_marginal/results.json": "de7ebaa9e2cec7d64bcd33435224daa5a205d900ead76e01129b802b68900a8e",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-curvature-astra/cube-dim-6-bounds/upper/round049/middle_joint_marginal/manifest.json": "d70a5d3684f3d2e2373e6348b55cf0cbfac51486bb766b4e68c78e01437bfba0",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/audit/round049/joint_marginal_review/manifest.json": "e3814c572b93a699373a8da029babd2bf41a1858d4914cf966acae09df8b0155"
+  },
+  "fixed_domain": "each A contains coordinate1,1<=k=|A|<=5,m=6-k; D_A onpositiveface has dist(x,span(1_A,1_B))<rho1/64 and mean_B in[1/4,3/4]",
+  "time_range": "0<s<=epsilon1/1000",
+  "parameter_thresholds": [
+    "1/2",
+    "1/16"
+  ],
+  "fixed_plan": [
+    {
+      "id": 1,
+      "kind": "exact structural",
+      "scope": "symbolic block projection geometry, true Gram/J2 cancellation and allfive positivity gates; no spatial or fan enumeration"
+    },
+    {
+      "id": 2,
+      "kind": "exact structural/source reuse",
+      "scope": "joint marginal factor and B residualnorm(m-1)/m includingm1; binomial weights[1,5,10,10,5], exactk3savedconstant identity, nooldscalar recomputation"
+    },
+    {
+      "id": 3,
+      "kind": "Arb768",
+      "k": 1
+    },
+    {
+      "id": 4,
+      "kind": "Arb768",
+      "k": 2
+    },
+    {
+      "id": 5,
+      "kind": "Arb768",
+      "k": 4
+    },
+    {
+      "id": 6,
+      "kind": "Arb768",
+      "k": 5
+    },
+    {
+      "id": 7,
+      "kind": "Arb768 union",
+      "scope": "sum allfive binomial-weighted U_k^(6/5), usingk3saved049complete endpoints; noextra geometry/rho/time"
+    }
+  ],
+  "acceptance": "strict short-time L6/5 upper envelope on union of all31 unsigned middle domains, with everykweight and allcomplement events paid; overlap permitted and never calleddisjoint",
+  "stop": "stop before anynewscalar ifanyk proof/positivity fails; otherwise exactly7planned configs, then freeze. Noscan/newkernel or repairingfailedkbychangingparameters.",
+  "forbidden": "G/H/K/p/native, oldfullenumerations, grids, oldfailedrho budget reruns, MATLAB, oldsourcewrites, delegation, stage/commit/push",
+  "new_C6_bound": false,
+  "code_sha256": {
+    "evaluate.py": "e2827898911e7d16303c35637ff0e0cc117f5483c49581a3ca193581b39fef75",
+    "theorem.md": "be016876f6d77f793e31ac7d49d65fbfdd3aa92bafa3de1e7d2fe74e8dc7c0c3"
+  }
+}
