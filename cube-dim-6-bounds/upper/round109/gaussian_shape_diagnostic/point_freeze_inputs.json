@@ -1,0 +1,24 @@
+{
+  "round":109,
+  "scope":"point registration only; no MC, kernel evaluation, lower-bound work or C6 claim",
+  "generator":"scipy.stats.qmc.Sobol(d=5,scramble=True,seed=20261027).random_base2(5)",
+  "candidate_count":32,
+  "denominator":4096,
+  "quantization":"floor(4096*u), sort the five coordinates descending, prepend4096",
+  "take_first_eligible":16,
+  "eligibility":"all six positive absolute coordinates strictly different; exact canonical sorted-absolute point absent from limited old tables and prior accepted new points",
+  "S2_avoidance":"a span of two sign vectors has at most two distinct coordinate absolute values; these points have six; min adjacent absolute gap is also a positive all-pairplane infinity-distance lower bound",
+  "old_tables":[
+    "upper/round005/integral_probe/sobol_4x128.txt",
+    "upper/round006/alternative/stable_frame_results.json",
+    "upper/round015/spatial_minimum_search/preparation.json",
+    "upper/round022/reduced_point_preflight/input_manifest.json",
+    "upper/round032/green_target_diagnostic/results.json",
+    "upper/round032/green_target_diagnostic/candidate_01.json",
+    "upper/round038/green_floor_diagnostic/results.json",
+    "upper/round038/green_floor_diagnostic/candidate_02.json"
+  ],
+  "duplicate_search_exhaustive":false,
+  "children":0,
+  "runs_authorized":1
+}
