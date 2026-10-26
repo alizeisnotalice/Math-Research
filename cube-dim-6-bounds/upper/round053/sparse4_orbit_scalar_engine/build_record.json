@@ -1,0 +1,30 @@
+{
+  "compile": [
+    "/usr/bin/clang++",
+    "-O3",
+    "-std=c++20",
+    "-I",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round053/sparse4_orbit_scalar_engine/scratch/include",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round053/sparse4_orbit_scalar_engine/joint_scalar_core.cpp",
+    "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/lib/python3.15/site-packages/flint/.dylibs/libflint.24.0.dylib",
+    "-Wl,-rpath,/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/lib/python3.15/site-packages/flint/.dylibs",
+    "-o",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round053/sparse4_orbit_scalar_engine/scratch/joint_scalar_core"
+  ],
+  "local_binary_patch": [
+    "/usr/bin/install_name_tool",
+    "-change",
+    "/DLC/flint/.dylibs/libflint.24.0.dylib",
+    "@rpath/libflint.24.0.dylib",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round053/sparse4_orbit_scalar_engine/scratch/joint_scalar_core"
+  ],
+  "binary_sha256": "2dd40f70c307f01b9dbe4a1092ae6defafaee165d3e0eff09e9c9b95512b1d24",
+  "source_sha256": "3f2daa865ee5ccc218a9ee003f314eded13054e119b2f62014c20a05a7da0c48",
+  "headers_archive": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round010/arb_engine/headers_min.tar.gz",
+  "headers_sha256": "64e1144a1f909467307d5928f580d51c257c19b8d63565a69d47062557112570",
+  "runtime_dylib_sha256": {
+    "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/lib/python3.15/site-packages/flint/.dylibs/libflint.24.0.dylib": "9c257de62afab11ce51b94658faf6d9fd08a062809e86e117ccb8c8b8eea7d03",
+    "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/lib/python3.15/site-packages/flint/.dylibs/libgmp.10.dylib": "f5b67752db8791d7979ebfba705f7c452b72047f9cd5fe02411a103cb0ddfa94",
+    "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/lib/python3.15/site-packages/flint/.dylibs/libmpfr.6.dylib": "eefed865a4cc0665a45ab9dbc5f27911fc8d50a3f9a6f6c02566bfe1fd70242f"
+  }
+}
