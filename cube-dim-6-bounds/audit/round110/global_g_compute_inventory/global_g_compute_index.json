@@ -1,0 +1,160 @@
+{
+  "scope_id": "round110-global-g-compute-interface-index-v1",
+  "source_count": 30,
+  "findings": {
+    "B_semantics": {
+      "classification": "positive_time_band_window",
+      "window_example": {
+        "kind": "B",
+        "a": "1/32",
+        "T": "1/2"
+      },
+      "face_box_is_separate_geometry": true,
+      "sources": [
+        "S06",
+        "S09",
+        "S10",
+        "S26",
+        "S28"
+      ],
+      "plan_initial_box_interval_count": 4,
+      "core_root_interval_count": 5,
+      "note": "recorded first_batch_plan dimension mismatch; actual 090 starting state is a 5-face box"
+    },
+    "native_point_interface": {
+      "source": "C068 band_engine",
+      "registered_binary_sha256": "774d47d8c0bfaddccc71dbb274b4f2af050240522969438229dfac879ca69216",
+      "registered_source_sha256": "615ac041bc0d36f8eab0ceed8110b95fcd837f3a0c9efa7a30a85f0525c6e529",
+      "fan_sha256": "7a57caad9b7713d9ce0896e51ab1dd402566feb1cba50829104c593a6d12a812",
+      "hashes_are_manifest_pins_not_rehashed_here": true,
+      "argv_shape": [
+        "binary",
+        "full",
+        "fan",
+        "a_num",
+        "a_den",
+        "T_num",
+        "T_den",
+        "center_den",
+        "six_center_numerators"
+      ],
+      "facebox_passed_to_native": false,
+      "sources": [
+        "S14",
+        "S15",
+        "S17"
+      ]
+    },
+    "box_certificate": {
+      "type": "separate_A057_whole_tightened_face_box",
+      "corners": 32,
+      "checker_bits": 384,
+      "point_native_bits": 512,
+      "native_full_group_terms": 967680,
+      "native_sign_pairs": 483840,
+      "acceptance": "minimum exact outward corner lower bound >= 1/65000",
+      "sources": [
+        "S09",
+        "S10",
+        "S14"
+      ]
+    },
+    "runtime_parallelism": {
+      "current_reservation_slots": 1,
+      "current_production_native_mode": "serial_one_guarded_native_at_a_time",
+      "15_core_parallel_batch_currently_supported": false,
+      "sources": [
+        "S06",
+        "S07",
+        "S10",
+        "S21",
+        "S22",
+        "S23",
+        "S27",
+        "S28"
+      ]
+    },
+    "full_face_status": {
+      "032": "one full-G point/gradient only; no global-g certificate",
+      "063": "preparation-only full ordered-face cover design; no native calls, no termination/success guarantee",
+      "090": "8/8 budget spent; 8 center pass relative to target, 7 full boxes unresolved/split, r000 full box passed; global_g_certificate=false",
+      "all_face_or_ordered_simplex_excluded_by_registered_failed_window": false,
+      "sources": [
+        "S01",
+        "S06",
+        "S07",
+        "S26"
+      ]
+    },
+    "time_windows": {
+      "C063_proposed_ladder": [
+        "1/32",
+        "1/64",
+        "1/128",
+        "1/250",
+        "1/1000"
+      ],
+      "fixed_T": "1/2",
+      "actual_090_window_only": {
+        "a": "1/32",
+        "T": "1/2"
+      },
+      "actual_090_center_failures": 0,
+      "actual_090_unresolved_boxes": 7,
+      "cutoff_advance_observed": false,
+      "sources": [
+        "S06",
+        "S07",
+        "S09",
+        "S26"
+      ]
+    },
+    "frontier_090": {
+      "reported_queued_unresolved_boxes": 7,
+      "final_passed_node": "r000",
+      "registered_native_tokens": 8,
+      "registered_native_pids": [
+        19120,
+        19346,
+        19697,
+        20775,
+        21440,
+        22286,
+        23253,
+        23711
+      ],
+      "all_eight_have_observed_completion_or_import_operations": true,
+      "pre_run_inflight": null,
+      "post_run_persisted_inflight": "not directly recorded in registered sources",
+      "do_not_assert_post_run_null": true,
+      "sources": [
+        "S26",
+        "S28",
+        "S29",
+        "S30"
+      ]
+    },
+    "next_batch_proposal_not_authorized": {
+      "fresh_unstarted_frontier_nodes_max": 7,
+      "native_calls_max": 7,
+      "window": {
+        "kind": "B",
+        "a": "1/32",
+        "T": "1/2"
+      },
+      "one_midpoint_jet_then_one_whole_node_32_corner_certificate_per_leaf": true,
+      "no_repeat_tokens": true,
+      "parallel_workers_fit_15_cores_in_principle": true,
+      "prerequisite": "new reviewed unique-token multi-inflight reservation/checkpoint merger plus accepted outer runtime gate",
+      "release_or_cap_change_authorized": false,
+      "sources": [
+        "S06",
+        "S09",
+        "S10",
+        "S21",
+        "S23",
+        "S26"
+      ]
+    }
+  }
+}
