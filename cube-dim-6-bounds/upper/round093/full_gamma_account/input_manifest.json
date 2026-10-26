@@ -1,0 +1,35 @@
+{
+  "schema": "A093-fixed-ledger-inputs-v1",
+  "model": "original unit-weight body32, 32 columns (1,+/-1,...,+/-1), c_t(s)=t/[pi(t^2+s^2)]",
+  "point": ["1", "1", "1", "1", "1/2", "0"],
+  "rho": "1/512",
+  "face_halfwidth": "1/2048",
+  "scalar_cutoff_R": "1/41472",
+  "T": "1/64",
+  "Tmax_for_reused_r_bounds": "1/64",
+  "candidate_g0": "1/65000",
+  "comparison_positive_window": {"a": "1/250", "b": "1/2", "actual_point_or_jet_evaluated": false},
+  "rational_majorants": {"pi_lower": "3", "full6D_coercivity_lower": "13", "quotient3D_coercivity_lower": "22", "all_containing_j_basis_Lambda_upper": "9/4", "cutoff_removal_amplitude_transport_upper": "5"},
+  "configurations": [
+    {"id": "G001-uniform-constants", "work": "exact scalar determinant/cofactor/count, Fourier radial constants, and fixed face geometry arithmetic; no matrix/frame enumeration"},
+    {"id": "G002-rank4", "work": "instantiate086 with a uniform body32 determinant/inverse majorant, no independent-four-subset enumeration"},
+    {"id": "G003-cutoff-removal", "work": "one unexpanded-amplitude cutoff-removal Hessian polynomial with all28 label determinants summed"},
+    {"id": "G004-quadratic-and-t5", "work": "two full physical-direction Hessian polynomials from frozen085 C4/C2 data and M2/M1/M0"},
+    {"id": "G005-signed-and-normal", "work": "renormalized signed layer plus coefficient/linear/tail payments, normal deficit constant/tail, and negative cusp"},
+    {"id": "G006-original-tail-and-value", "work": "original6D t>=T Fourier Hessian tail and a uniform true-G value upper bound, both analytic arithmetic only"},
+    {"id": "G007-complete-ledger", "work": "sum all components; fixed-box vertex requirement; analytic all-T envelope obstruction via exact eighth-power comparison, no time scan or candidate kernel"},
+    {"id": "G008-same-box-and-S", "work": "positive-window vertex and original positive-mixture center-jet comparison objects; exact conditional S threshold"}
+  ],
+  "readonly_sources": [
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-literature/cube-dim-6-bounds/upper/round076/body32_semiconcavity_theory/theorem.md",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-literature/cube-dim-6-bounds/upper/round085/body32_rank3_quantitative/manifest.json",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-literature/cube-dim-6-bounds/upper/round085/body32_rank3_quantitative/results.json",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/upper/round086/rank4_pattern_aggregate/theorem.md",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/upper/round086/rank4_pattern_aggregate/manifest.json",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/upper/round085/primary_unique_U/manifest.json",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-theory/cube-dim-6-bounds/upper/round057/positive_mixture_curvature/theorem.md",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6/cube-dim-6-bounds/coordination/guidance_20261026/next_steps_original.md"
+  ],
+  "rank4_dependency_status_at_registration": "086 author sealed; independent review/main final acceptance pending",
+  "excluded": ["old085 seven checks", "old kernel", "6D density evaluation", "native call", "new fan", "2^32 patterns", "body independent-four enumeration", "time scan", "MATLAB", "recursive agent", "automatic retry"]
+}
