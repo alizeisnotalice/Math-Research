@@ -1,47 +1,39 @@
-# 六维中心方体当前状态
+# 六维中心方体当前真实状态
 
-ACTIVE；只研究上界。用户最新取消程序时限，优先本机多核/低token开销；新任务只Sol/Luna，不Astra，不递归扩招。下界证明、计算和验证保持停止，D103中断草稿不恢复。原暂停三四维项目、资料包与五维只读。只改本项目，各代理独立clone，主集成/提交/最终证明。
+ACTIVE，仅推进上界；下界按用户明确要求停止。新任务不调用Astra，使用现有Sol/Luna；不重启原暂停三四维或五维项目。最新用户指令：程序无限时，优先本机性能、减少token。每批仍有限参数/节点/真实attempt，保留检查点，未知进程不重发。MATLAB只主串行，不clear/path/cwd、不干扰其他项目。
 
-固定Lebesgue、中心轴平行、六坐标共同半径、一般L1、全部正尺度。当前正式严格2073015624830/10^12<C6<=64；没有新C6上界。lower=true、upper=false、dual=null、达标后三轮0/3。g0=1/65000仍未证明全域，不能从局部budget正剩余宣布突破。
+问题固定：Lebesgue，中心轴平行六维方体，共同半径，一般L1及全部正尺度。当前正式2073015624830/10^12<C6<=64。075下界只保留准确原件，不从小数重建；内部不称发表。公开覆盖非穷尽，门槛/冻结快照见准确账本。lower=true、upper=false、dual=null、双侧后追加三轮0/3；没有C6新上界或突破论文。
 
-已认证108：原body32任意r维投影峰Q_r(0)<=(2+2r/3)^(r/2)/(32pi)^r，r1..6；全r6热核峰216/(2^30pi6)t^-6，非isotropic空间形状。真实源/同时间/全空间正部与一般L1全尺度接口保持。107/111真实逐pair距离、clamp、faceJac与所有高秩/奇异邻域积分通过主及Sol独审。
+本模型body32 unit Cauchy，q=6/5，原generator不改。全空间正部源/一般L1及全正共同尺度001/027接口保持；真S2含全部496 pairplanes，052/069奇异层结论不以四维线外连续替代。g0=1/65000尚未全域认证。I=正face积分G^(6/5)，完整成本U=6^(6/5)I/g^(6/5)，正S须完整g/I证书及独审；局部预算/模型改善不等于C6。
 
-111完整31middle I上包<=2978273230515339401/10^24；含原准确paidCEH后，g0条件下far额度下包4537105317164041237/10^24。12worker一次phase1通过，childCPU124.485176秒，phase2未启动；独审12进程全49152leaf及98268node通过。k1只读原107，不重跑。仍需全域g与真far完整积分，才可检验完整S=64(gL/6)^(6/5)-IU。
+## 当前实际计算
 
-全域g当前owner=C117（前批C114原件已封存），见coordination/floor_dispatch_owner.json。旧068 seq25/head30ffc83e8b7643250429cb5267c57a11d8131fc31123fd88abd165ffa8d28cf2与8/8cap原样只读；112接续7新native完成，14残余child。114又166唯一native全部exit0，6/14root闭合、41新passed leaf，残余94queued+2blocked，不能重新dispatch旧queue或重启旧句柄。所有本次native均已结束/回收。
+C121 dispatcher已从C117接管，旧owner原件保存coordination/floor_dispatch_history/C117.json。唯一observer session41549，observer PID80482，producer PID80490；入口upper/round121/primary_gate/observe_once.py；实际代码在独立numerics clone upper/round121/precision_family_production。初始tool bc5054，最近确认live wait2453d5。不得重复启动observer/producer。
 
-114两个blocked点严格排除了固定B_[1/32,1/2]单独认证全域g0的计划，不排完整G。115仅2次新lowband[1/64,1/32]，复用旧high原jet，首次192角证书；两个合并center超过目标，整盒仍未过。分段证书优于统一小a，结果已封存，当前没有115原生进程。下一g方案须据真实多band信息推进，不盲扩已排固定band全域计划。完整positive-time band只是G的合法下包，核/算子口径未改变。
+325真实残余root、继承212pass、759旧raw/jet及757旧角证书只读复用。15 native lanes；root最多128真实attempt/256processednode，总41600，每个128→256→512回退也计数，无wall/CPU时限。source e7057efe70c35fef0707fa02a7f07db3780be70b81654b2ec6cbb5340e2ef89d，release58d041ccacda84d02ece723e7de2c2cade058d2b5d6e29fe0d852760dcf3f8ea。主及独立Sol数学gate通过，预审全部4248 source-seal文件/759链及325映射通过；之前静态错误和未运行v1保留。
 
-116真far新源事件预算经Sol独审通过：指定Ienv族严格超额，actual t>=1/8尾范数已付；不排actual far/model/C6。120正准备保留联合空间信息的新time-first机制，未运行。历史116计划的真far F={face到全部31正pairplane距离>=1/64}的新源质量/108峰估计有限证书与障碍诊断，尚未科学运行；不重跑旧074/096格。105备用sharp/cap、106 Gaussian sample-min机制障碍、109十二进程65536shape数值诊断均已完成并保留来源；有限点MC min是连续orbit-min上包，绝非g证书。
+最新样本：2806 started/2791 reaped/15 active；159根闭合、1根预算耗尽、其余165 READY（含正在执行的根），1275新局部通过。仅瞬时样本，不是最终结果或globalg。精度/宽度/全部参考相交、source/group/Euler门保持；分片atomic state及先fsync reservation后launch已执行，避免全量index O(N²)写盘。source冻结，当前不得改程序。完整checkpoint/原PID/receipt/childrenCPU在producer目录；主execution_handle记录原句柄。
 
-已排历史预算：093粗Gamma全允许T、092旧074固定表达式、096两单独时空秩松弛、101等权axes6正部真实成本>66。均不排原body32或C6。075下界只保留既有完整准确证书，不从展示小数重造；内部成果不称期刊公开结果。公开文献覆盖非穷尽，公开/内部门槛分账。
+117已终态exit0：576新512native全正常、42根闭合、170新pass、271queued+54budgetblocked=325残余，inflight0；原forest925f13a4885d1020597c89bd09935bb879ca7390a9b9f3f606d29542c609cdc9只读。脚本receipt前343.9400805秒，完整outer未记。一次保存核验0exp/native，完整闭union成立但未globalg。精简归档去掉192份逐root重复trace，原clone保留完整原件。
 
-数学Python=/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python；主clone=/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6。本机实测15物理核/24GiB；实际已用12进程积分/独审、14路原生核批。MATLAB只主串行，不clear/path/cwd、不动其他项目进程/窗口；本任务不创建多余UI。最新准确证据、source hashes与运行时钟scope见各轮manifest/收据，不把旧运行改称本次或回填未知时钟。
+## 上界数学前沿
 
-117已终态exit0：producer session68932、wrapper PID69755、tool b73724；576新native全部AVAILABLE，96root返回，其中42根闭合，170新passed、271queued+54budget-blocked（残余325），inflight0。脚本自计343.940369875秒，完整外层时钟未记录；瞬时14原生CPU样本只作瞬时证据。759旧及新native全部保存，不再启动117；N正在saved-only全树/缓存封存。121由Luna独立目录准备15路长批，最多128真实attempt/root、256node/root，预期325root/总41600，来源待117最终seal和主gate，尚未科学运行。118已主/独审接受同公式128/256/512 family，仅可按类型化有限回退及完整interval质量验收；当前无121放行。
+108任意r真原law投影峰已主/独审接受：Q_r(0)<=(2+2r/3)^(r/2)/(32pi)^r；不可变成isotropic空间形状。107/111完整31middle准确I_U<=2978273230515339401/10^24，原paidCEH约4.9844e-6；原111条件far额度完整端点见原件。
 
-状态刷新UTC：2026-10-26T18:15:38.987853+00:00
+116真实far源事件上预算族已严格排除（仅指定表达式，非actualI）；真实t>=1/8尾范数已付。120 time-first真实far角积分及指定Jensen预算障碍已独审通过，完整粗actualfar上包<1.84896e-5不竞争，待归档。
 
-114归档完成：166本机原生、41整盒通过；固定band全域g0计划严格反例，非全G排除/0Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
+122 actual B_subdensity先<=p、另<=Bbar后用108 full6峰取min，原P/τ/V/C/E不改；4cfg与独审262checks通过，严格回收准确delta约2.50633e-7，CEH新上预算约4.73377e-6。待主集成准确delta及更新111两个条件far端点；不要从此显示小数建证。仍非完整I/S/Cn。
 
-105归档完成：备用sharp与cap系数及来源资格归档；108更强，0Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
+123新完整边界Minkowski机制：M=E detSigma^(-1/12)，I<=(3/16)^(6/5)M^(6/5)/384。单shape不能套384，先全boundary norm再用原law对称。Gamma/CB给矩有限及解析上包；严格竞争矩上包未取得。唯一8192新shape探针只给经验M=.06012377、条件未证g0成本约61.29，不是严格期望或Cn证书。主MATLAB R2026a Symbolic实际通过3项准确归一化/门槛恒等式，0窗口/clear/path/cwd；只验证常数，未验证期望。
 
-105归档完成：备用sharp与cap系数及来源资格归档；108更强，0Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
+124 J正准备rank-peeling协方差det正项及Binomial count-weight Holder：真实投影峰付EdΦ_k(N_h)，33项和及有限凸优化求严格M_U；8固定Gaussian h、上限20000 objective，尚未放行/运行。读取002已有准确fan R0=520066141/48769479475200作为π³Ed，不重算旧峰。辅助Gamma阈值不是物理Cauchy时间/算子尺度变化。主保留最终proof与gate责任。
 
-106归档完成：Gaussian样本min结构障碍与确定反射例子，author+主阅、独审待定；无Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
+## 仓库和资源
 
-109归档完成：十二本机进程完成65536shape，数值诊断与反例；非g证书/0Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
+主clone /Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6，仅cube-dim-6-bounds可写。数学Python /Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python；实测15核/24GiB，已真实14路576及当前15路长批。无任务新建图形窗口；不关闭其他项目进程。
 
-110归档完成：30源原生接口静态索引，0数学/新界。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
+105/106/109/110/115/116/118/117逐轮commit经正常rebase，SSH push已获服务器6156d09f→0ff98c9f确认（32b703）；独立后续remote-read因连接banner超时待核，不能称完成远端包含验证。旧114已核远端。SSH源是仓库AGENTS指定地址，未强推/改写他人提交；其他项目并行提交正常。未来归档先核真实Git和句柄，不覆盖未运行证据。
 
-115归档完成：2新低时间带完成，2合并中心过门、整盒未过；192首次角计算，非globalg/无Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
+更新时间UTC：2026-10-26T20:23:29.169132+00:00
 
-当前本地105/106/109/110/115逐轮独立提交待推送：GitHub443连续3次TLS失败，未声称已同步；旧114已验证远端fa28b4f850e2860d39bf3db7cf99e07fad21d1f1。程序不限时/本机优先低token新登记coordination/phase_20261025/local_compute_priority_20261027.json。
-
-116归档完成：真实far新预算族严格障碍；108真实大时尾范数已支付，主/独审接受，无完整far/g/S/Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
-
-118归档完成：128编译与4新点40包含通过，主/独审接受受验收precision family；0新Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
-
-120已完成：time-first真实far角积分新接口及指定Jensen族严格预算障碍，完整粗actual far upper<1.84896e-5不competitive；Sol独审进行中。122只准备CEH准确预算回收，最多4新scalar配置，待gate。当前无未完成本机数学producer；121准备中，不能称已满核运行。最新Git118=c162721d01f7f7ba0a8c0182b39853beb65b06bb，本地待推送，连续TLS失败未声称已同步。
-
-117归档完成：576新原生exit0，170新增局部整盒，325残余完整保留；无globalg/Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
+120归档完成：真实far角积分及Jensen预算审计；主/独审接受限定范围，0新Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
