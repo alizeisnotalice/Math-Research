@@ -18,7 +18,7 @@ ACTIVE；只研究上界。用户最新取消程序时限，优先本机多核/�
 
 数学Python=/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python；主clone=/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6。本机实测15物理核/24GiB；实际已用12进程积分/独审、14路原生核批。MATLAB只主串行，不clear/path/cwd、不动其他项目进程/窗口；本任务不创建多余UI。最新准确证据、source hashes与运行时钟scope见各轮manifest/收据，不把旧运行改称本次或回填未知时钟。
 
-117当前实际运行：producer session68932、wrapper PID69755、主唯一持有；96真实残余root、14并行、每root8次新native/16node、总768次，程序无限时。183旧native/183证书/2组115缓存只读复用，继承42pass；主核1420pins及96root一一原件相等。当前dispatcher=C117，C114历史已保存；接续原句柄，不重复启动。瞬时实际ps有14个原生进程，CPU各约54.2至99.9%，不冒称全程利用率。118四样本128bit通过保存512区间包含，独审通过待封存，117仍用512，不改运行中程序。
+117已终态exit0：producer session68932、wrapper PID69755、tool b73724；576新native全部AVAILABLE，96root返回，其中42根闭合，170新passed、271queued+54budget-blocked（残余325），inflight0。脚本自计343.940369875秒，完整外层时钟未记录；瞬时14原生CPU样本只作瞬时证据。759旧及新native全部保存，不再启动117；N正在saved-only全树/缓存封存。121由Luna独立目录准备15路长批，最多128真实attempt/root、256node/root，预期325root/总41600，来源待117最终seal和主gate，尚未科学运行。118已主/独审接受同公式128/256/512 family，仅可按类型化有限回退及完整interval质量验收；当前无121放行。
 
 状态刷新UTC：2026-10-26T18:15:38.987853+00:00
 
@@ -41,3 +41,7 @@ ACTIVE；只研究上界。用户最新取消程序时限，优先本机多核/�
 116归档完成：真实far新预算族严格障碍；108真实大时尾范数已支付，主/独审接受，无完整far/g/S/Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
 
 118归档完成：128编译与4新点40包含通过，主/独审接受受验收precision family；0新Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
+
+120已完成：time-first真实far角积分新接口及指定Jensen族严格预算障碍，完整粗actual far upper<1.84896e-5不competitive；Sol独审进行中。122只准备CEH准确预算回收，最多4新scalar配置，待gate。当前无未完成本机数学producer；121准备中，不能称已满核运行。最新Git118=c162721d01f7f7ba0a8c0182b39853beb65b06bb，本地待推送，连续TLS失败未声称已同步。
+
+117归档完成：576新原生exit0，170新增局部整盒，325残余完整保留；无globalg/Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
