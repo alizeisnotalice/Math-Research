@@ -1,0 +1,14 @@
+--- /Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round016/band_engine/band_engine.cpp
++++ band_engine_precision.cpp
+@@ -14,7 +14,10 @@
+ #include <vector>
+ #include "arb.h"
+ #include "fmpz.h"
+-static constexpr slong PREC=512;
++#ifndef BAND_ENGINE_PRECISION_BITS
++#define BAND_ENGINE_PRECISION_BITS 512
++#endif
++static constexpr slong PREC=BAND_ENGINE_PRECISION_BITS;
+ struct Ball{arb_t a;Ball(){arb_init(a);}~Ball(){arb_clear(a);}Ball(const Ball&b){arb_init(a);arb_set(a,b.a);}Ball&operator=(const Ball&b){arb_set(a,b.a);return*this;}};
+ struct Rat{int64_t n,d;bool operator==(const Rat&o)const{return n==o.n&&d==o.d;}};
+ static int64_t integer(const std::string&s){if(s.empty()||s=="-0"||s[0]=='+'||(s[0]=='0'&&s.size()>1)||(s[0]=='-'&&(s.size()<2||s[1]=='0')))throw std::runtime_error("noncanonical integer token");int64_t v=0;auto r=std::from_chars(s.data(),s.data()+s.size(),v);if(r.ec!=std::errc()||r.ptr!=s.data()+s.size())throw std::runtime_error("invalid or overflowing integer token");return v;}

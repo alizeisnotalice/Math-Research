@@ -1,0 +1,54 @@
+{
+  "scope_id": "round118-v2-build-128",
+  "bits": 128,
+  "start_utc": "2026-10-26T18:41:33.981359+00:00",
+  "end_utc": "2026-10-26T18:41:35.036530+00:00",
+  "phases": [
+    {
+      "phase": "compile",
+      "command": [
+        "/usr/bin/clang++",
+        "-O3",
+        "-std=c++20",
+        "-DBAND_ENGINE_PRECISION_BITS=128",
+        "-I",
+        "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-audit/cube-dim-6-bounds/upper/round016/band_engine/scratch/include",
+        "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-numerics/cube-dim-6-bounds/upper/round118/band_engine_performance/band_engine_precision.cpp",
+        "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/lib/python3.15/site-packages/flint/.dylibs/libflint.24.0.dylib",
+        "-Wl,-rpath,/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/lib/python3.15/site-packages/flint/.dylibs",
+        "-o",
+        "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-numerics/cube-dim-6-bounds/upper/round118/band_engine_performance/band_engine_128"
+      ],
+      "start_utc": "2026-10-26T18:41:33.981359+00:00",
+      "end_utc": "2026-10-26T18:41:35.021293+00:00",
+      "wall_seconds": 1.0398152499983553,
+      "child_user_cpu_seconds": 0.59522,
+      "child_system_cpu_seconds": 0.22939299999999999,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "phase": "post_link",
+      "command": [
+        "/usr/bin/install_name_tool",
+        "-change",
+        "/DLC/flint/.dylibs/libflint.24.0.dylib",
+        "@rpath/libflint.24.0.dylib",
+        "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-numerics/cube-dim-6-bounds/upper/round118/band_engine_performance/band_engine_128"
+      ],
+      "start_utc": "2026-10-26T18:41:35.021319+00:00",
+      "end_utc": "2026-10-26T18:41:35.036530+00:00",
+      "wall_seconds": 0.015217958018183708,
+      "child_user_cpu_seconds": 0.0039000000000000146,
+      "child_system_cpu_seconds": 0.003919000000000006,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "binary_path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-numerics/cube-dim-6-bounds/upper/round118/band_engine_performance/band_engine_128",
+  "binary_sha256": "d50e5822b3e3d6d40550386b0aaaf118569acd55d1214a3926f51cadcba3f9d5",
+  "successful": true,
+  "compiler": "clang++ -O3 -std=c++20; no fast-math flag"
+}
