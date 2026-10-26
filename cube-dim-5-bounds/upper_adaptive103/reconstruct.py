@@ -1,0 +1,6 @@
+"""Explicit one-point reproduction in a fresh output directory (never automatic)."""
+from pathlib import Path
+import argparse,gzip,json,hashlib
+import kernel as K
+H=Path(__file__).resolve().parent
+p=argparse.ArgumentParser();p.add_argument('--key',required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args();assert not a.output.exists();a.output.mkdir(parents=True);reg=json.loads((H/'registration.json').read_text());K.S=a.output.resolve();fp=hashlib.sha256((K.sha(H/'run.py')+K.sha(H/'kernel.py')+K.sha(H/'registration.json')).encode()).hexdigest();job=next(j for j in json.loads(gzip.decompress((H/'jobs.json.gz').read_bytes())) if j['key']==a.key);table=json.loads(gzip.decompress((H.parent/'upper_global080/geometry017.json.gz').read_bytes()));cat=json.loads((H/'ratio_catalog.json').read_text());K.init(table,reg['time_endpoints'],cat,fp);result=K.worker(job);print(json.dumps(result,indent=2));assert result['status']=='complete';ev=json.loads(gzip.decompress(K.path(a.key).read_bytes()));mathdata={k:ev[k] for k in ('point','weights','endpoints','bounds')};expected=next(p['mathhash'] for p in json.loads(gzip.decompress((H/'mathematical_hashes.json.gz').read_bytes())) if p['key']==a.key);assert hashlib.sha256(K.serial(mathdata).encode()).hexdigest()==expected;print('deterministic mathematical SHA matches')

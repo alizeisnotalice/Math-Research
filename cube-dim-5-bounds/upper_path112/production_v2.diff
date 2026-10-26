@@ -1,0 +1,40 @@
+--- consume.py
++++ production_v2.py
+@@ -71,9 +71,12 @@
+  l,u,m=F(li,N),F(ui,N),F(mi,N);lp=root(l**5,4);up=root(u**5,4);theta=F(mi-li,ui-li) if ui>li else F(0);chord=((1-theta)*lp+theta*up)/2**(4*row['level']);nu=min(row['old_selfU'],row['weight']*ceil(chord*N));assert row['old_selfL']<=nu
+  return {'key':row['key'],'new_M_i':mi,'new_selfU':nu,'old_M_i':row['old_M_i'],'old_selfU':row['old_selfU'],'packet_sha256':row['packet_sha256']}
+ def propagate(st,r):
+- ns=st['nodes'];k=r['key'];n=ns[k];assert r['new_selfU']<=n['selfU'];n['selfU']=r['new_selfU']
++ ns=st['nodes'];k=r['key'];rt=k
++ while ns[rt]['parent'] is not None:rt=ns[rt]['parent']
++ old=ns[rt]['effU'];n=ns[k];assert r['new_selfU']<=n['selfU'];n['selfU']=r['new_selfU']
+  while k is not None:
+   n=ns[k];n['effU']=min(n['selfU'],sum(ns[c]['effU'] for c in n['children'])) if n['children'] else n['selfU'];assert n['effL']<=n['effU'];k=n['parent']
++ return ns[rt]['effU']-old
+ def batch(kind):
+  reg=read(H/'scalar_registration.json');rows=read(H/'nodes.json.gz');rm={r['key']:r for r in rows};times=reg['time_endpoints'];fac={g:{a:F(x['factor_upper']) for a,x in fs.items()} for g,fs in read(H/'factor_catalog.json').items()};sp=S/'state.json.gz'
+  if sp.exists():st=read(sp)
+@@ -90,20 +93,19 @@
+  before=sum(ns[k]['effU'] for k in st['roots']);write(rcp,{'status':'running','pid':os.getpid(),'count':len(keys),'before':budget(before),'registration_sha256':sha(rp)})
+  saved={}
+  if resultp.exists():saved={r['key']:r for r in map(json.loads,resultp.read_text().splitlines())}
+- t=time.monotonic()
++ t=time.monotonic();up=before
+  for ix,k in enumerate(keys):
+   if k in done:continue
+   r=saved.get(k)
+   if r is None:
+    r=node_value(rm[k],fac[rm[k]['geometry']],times)
+    with resultp.open('a') as f:f.write(ser(r)+'\n');f.flush()
+-  propagate(st,r);done.add(k);st['path112']['processed'].append(k)
+-  up=sum(ns[z]['effU'] for z in st['roots'])
++  delta=propagate(st,r);assert delta<=0;up+=delta;done.add(k);st['path112']['processed'].append(k)
+   b=budget(up)
+   if b['strict32'] and not (H/'first_strict32.json').exists():
+    write(sp,st);snap=S/'first_strict32_state.json.gz';write(snap,st);write(H/'first_strict32.json',{'status':'pending_main_independent','budget':b,'state_path':str(snap),'state_sha256':sha(snap),'processed':len(done),'volume':'1'});print('FIRST_STRICT32',ser(b),flush=True);return
+   if (ix+1)%256==0:print(name,ix+1,'cost',b['cost_display'],'seconds',time.monotonic()-t,flush=True)
+- st['path112']['blocks'].append(name);write(sp,st);after=sum(ns[k]['effU'] for k in st['roots']);assert after<=before
++ st['path112']['blocks'].append(name);write(sp,st);after=sum(ns[k]['effU'] for k in st['roots']);assert after==up and after<=before
+  write(rcp,{'status':'complete','pid':os.getpid(),'count':len(keys),'processed_total':len(done),'before':budget(before),'after':budget(after),'strict_global_improvement':after<before,'state_sha256':sha(sp),'results_path':str(resultp),'results_sha256':sha(resultp),'seconds':time.monotonic()-t,'new_H':0,'new_R':0,'weighted_volume':'1','range_L_U_unchanged':True,'consumer_sha256':sha(__file__),'registration_sha256':sha(rp)})
+  print('BATCH_COMPLETE',name,len(done),budget(after)['cost_display'],flush=True)
+ if __name__=='__main__':

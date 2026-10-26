@@ -1,0 +1,19 @@
+{
+  "task": "matlab_symbolic_new112_pair_actual",
+  "actual_code": "if exist('sym','file')==2\nfeval(@(Icap,g) fprintf('symbolic_g105_margin_sign %s\\n',char(sign(sym(32)^4*g^5-sym(5)^5*Icap^4))),sym(297621)/sym(6250000000),sym(21)/sym(200000));\nfeval(@(Icap,g) fprintf('symbolic_g110_conditional_margin_sign %s\\n',char(sign(sym(32)^4*g^5-sym(5)^5*Icap^4))),sym(297621)/sym(6250000000),sym(11)/sym(100000));\nelse\nfprintf('Symbolic toolbox unavailable; double_g105_cost %.17g\\n',5^(5/4)*(297621/6250000000)/(21/200000)^(5/4));\nfprintf('double_g110_conditional_cost %.17g\\n',5^(5/4)*(297621/6250000000)/(11/100000)^(5/4));\nend",
+  "tool_result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "symbolic_g105_margin_sign -1\nsymbolic_g110_conditional_margin_sign 1\n"
+      }
+    ]
+  },
+  "classification": "exact Symbolic Toolbox rational fourth-power sign cross-check; not complete operator proof",
+  "case1": "qualified g105 margin negative",
+  "case2": "conditional g110 margin positive, global g110 not yet proved",
+  "new_H_or_log_calls": 0,
+  "base_variables_created": 0,
+  "figures_or_pools_created": 0,
+  "shared_MATLAB_session_preserved": true
+}

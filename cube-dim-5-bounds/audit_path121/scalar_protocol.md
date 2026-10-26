@@ -1,0 +1,5 @@
+# 121 finite scalar and plan audit
+
+Consume frozen111 proof and112 finite catalog. Independently rescale the two integer square roots at224bits for exactly5772 missingx; consume184 usedoldR without evaluating them again. Check all196 inherited rows against qualified source bytes. Determine every CDF polynomial by five exact interior clipped-length samples and degree≤4; W derivative/continuity/terminalzero then identify the positive survival integral. Compute all19272 alpha,beta by direct W times affinepolynomial integration, exactnonnegativity, sumweights=M2/2, all365 factors and192bit upward rounding. Full offset/a identities are reserved for whole-tree stage.0newH/log/exp/Arb. No wallcap, finite512root/32plan checkpoints. Successful outputs must not be rerun.
+
+111 Taylor uses25/(24a²) times J, including(1−s); no extra half. The scalarR is convex, not the density. Its secant and rightDarboux use the samecatalog. RangeL/U are unchanged by this mean improvement. FinalI/C5 awaits fullsnapshot independent audit and mainacceptance.
