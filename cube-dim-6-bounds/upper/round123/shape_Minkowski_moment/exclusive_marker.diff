@@ -1,0 +1,16 @@
+--- probe.py@3f9cd126
++++ probe.py@exclusive-marker
+@@ -52,6 +52,13 @@
+     release=json.loads((HERE/'primary_release.json').read_text())
+     assert release['authorized'] is True
+     assert release['source_sha256']==sha(SOURCE) and release['input_sha256']==sha(HERE/'inputs.json')
++    started={'pid':os.getpid(),'unix_time':time.time(),'source_sha256':sha(SOURCE),
++             'input_sha256':sha(HERE/'inputs.json'),'release_sha256':sha(HERE/'primary_release.json')}
++    with (HERE/'started.json').open('x') as handle:
++        json.dump(started,handle,indent=2,allow_nan=False)
++        handle.write('\n')
++        handle.flush()
++        os.fsync(handle.fileno())
+     assert spec['samples']==8192 and spec['chunk_samples']==1024 and spec['chunks']==list(range(8))
+     assert spec['workers']==1 and spec['numerical_threads']==1
+     keys=('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','VECLIB_MAXIMUM_THREADS','BLIS_NUM_THREADS','NUMEXPR_NUM_THREADS')
