@@ -8,17 +8,17 @@ ACTIVE；只研究上界。用户最新取消程序时限，优先本机多核/�
 
 111完整31middle I上包<=2978273230515339401/10^24；含原准确paidCEH后，g0条件下far额度下包4537105317164041237/10^24。12worker一次phase1通过，childCPU124.485176秒，phase2未启动；独审12进程全49152leaf及98268node通过。k1只读原107，不重跑。仍需全域g与真far完整积分，才可检验完整S=64(gL/6)^(6/5)-IU。
 
-全域g当前owner=C114，见coordination/floor_dispatch_owner.json。旧068 seq25/head30ffc83e8b7643250429cb5267c57a11d8131fc31123fd88abd165ffa8d28cf2与8/8cap原样只读；112接续7新native完成，14残余child。114又166唯一native全部exit0，6/14root闭合、41新passed leaf，残余94queued+2blocked，不能重新dispatch旧queue或重启旧句柄。所有本次native均已结束/回收。
+全域g当前owner=C117（前批C114原件已封存），见coordination/floor_dispatch_owner.json。旧068 seq25/head30ffc83e8b7643250429cb5267c57a11d8131fc31123fd88abd165ffa8d28cf2与8/8cap原样只读；112接续7新native完成，14残余child。114又166唯一native全部exit0，6/14root闭合、41新passed leaf，残余94queued+2blocked，不能重新dispatch旧queue或重启旧句柄。所有本次native均已结束/回收。
 
 114两个blocked点严格排除了固定B_[1/32,1/2]单独认证全域g0的计划，不排完整G。115仅2次新lowband[1/64,1/32]，复用旧high原jet，首次192角证书；两个合并center超过目标，整盒仍未过。分段证书优于统一小a，结果已封存，当前没有115原生进程。下一g方案须据真实多band信息推进，不盲扩已排固定band全域计划。完整positive-time band只是G的合法下包，核/算子口径未改变。
 
-116正准备真far F={face到全部31正pairplane距离>=1/64}的新源质量/108峰估计有限证书与障碍诊断，尚未科学运行；不重跑旧074/096格。105备用sharp/cap、106 Gaussian sample-min机制障碍、109十二进程65536shape数值诊断均已完成并保留来源；有限点MC min是连续orbit-min上包，绝非g证书。
+116真far新源事件预算经Sol独审通过：指定Ienv族严格超额，actual t>=1/8尾范数已付；不排actual far/model/C6。120正准备保留联合空间信息的新time-first机制，未运行。历史116计划的真far F={face到全部31正pairplane距离>=1/64}的新源质量/108峰估计有限证书与障碍诊断，尚未科学运行；不重跑旧074/096格。105备用sharp/cap、106 Gaussian sample-min机制障碍、109十二进程65536shape数值诊断均已完成并保留来源；有限点MC min是连续orbit-min上包，绝非g证书。
 
 已排历史预算：093粗Gamma全允许T、092旧074固定表达式、096两单独时空秩松弛、101等权axes6正部真实成本>66。均不排原body32或C6。075下界只保留既有完整准确证书，不从展示小数重造；内部成果不称期刊公开结果。公开文献覆盖非穷尽，公开/内部门槛分账。
 
 数学Python=/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python；主clone=/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-6。本机实测15物理核/24GiB；实际已用12进程积分/独审、14路原生核批。MATLAB只主串行，不clear/path/cwd、不动其他项目进程/窗口；本任务不创建多余UI。最新准确证据、source hashes与运行时钟scope见各轮manifest/收据，不把旧运行改称本次或回填未知时钟。
 
-当前无未完成本机数学程序句柄；下一计算尚在准备，现有已结束句柄须原样保留、禁止重复启动。持续上界研究，不把短暂准备阶段误作任务暂停或完成。
+117当前实际运行：producer session68932、wrapper PID69755、主唯一持有；96真实残余root、14并行、每root8次新native/16node、总768次，程序无限时。183旧native/183证书/2组115缓存只读复用，继承42pass；主核1420pins及96root一一原件相等。当前dispatcher=C117，C114历史已保存；接续原句柄，不重复启动。瞬时实际ps有14个原生进程，CPU各约54.2至99.9%，不冒称全程利用率。118四样本128bit通过保存512区间包含，独审通过待封存，117仍用512，不改运行中程序。
 
 状态刷新UTC：2026-10-26T18:15:38.987853+00:00
 
@@ -35,3 +35,7 @@ ACTIVE；只研究上界。用户最新取消程序时限，优先本机多核/�
 110归档完成：30源原生接口静态索引，0数学/新界。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
 
 115归档完成：2新低时间带完成，2合并中心过门、整盒未过；192首次角计算，非globalg/无Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
+
+当前本地105/106/109/110/115逐轮独立提交待推送：GitHub443连续3次TLS失败，未声称已同步；旧114已验证远端fa28b4f850e2860d39bf3db7cf99e07fad21d1f1。程序不限时/本机优先低token新登记coordination/phase_20261025/local_compute_priority_20261027.json。
+
+116归档完成：真实far新预算族严格障碍；108真实大时尾范数已支付，主/独审接受，无完整far/g/S/Cn。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
