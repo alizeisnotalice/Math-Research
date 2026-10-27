@@ -1,7 +1,7 @@
 {
   "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
   "status": "active research; lower paused and n7-specific stopped",
-  "current_round": 65,
+  "current_round": 66,
   "accepted": [
     {
       "round": 34,
@@ -380,6 +380,48 @@
       "full_cost": "Phi64=F(A_n(t),B_n(t)−(61/200)n), t=n/[(909/1000)logn]",
       "mechanism": "multiplicative matching, relativeg/R domain, boundedtarget radial r/rhi cancels column dr/r, boundedsourceinverse, same actualhistory",
       "comparison": "strict full-cost improvement over R061 and R059 on each actualvalid intersection, explicit thresholds not transferred"
+    },
+    {
+      "round": 66,
+      "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+      "full_proof": "upper/round066/target_profile/PROOF.md",
+      "proof_sha256": "4b7b3210f063312527c08adab5b7f81dc4b2c0ecf879e466dc715eb56ea6ebd1",
+      "independent_audit": "audit/round066/target_profile/review.md",
+      "independent_audit_sha256": "5a13e5a4364a2fbcc4b9d89fb2536ebeded2569033041017a7355237fd110ea8",
+      "exact_scalar_corollary": "audit/round066/exact_scalar/SCALAR_PROOF.md",
+      "leading_coefficient": 1,
+      "public_status": "internal independently reviewed theorem, no public priority/global optimum claim",
+      "scope": "fixedtargetprofile tuple, sufficiently large integern; unknownN",
+      "explicit_threshold": null,
+      "bound": "Cn<=Phi66<T−23n/100; T=nlogn−nloglogn",
+      "parameters": {
+        "s": "3/2",
+        "source_q": [
+          "2/3",
+          "917/1000"
+        ],
+        "sigma": "83/1000",
+        "chi": "9/200",
+        "h_coeff": "1/1208925819614629174706176",
+        "target_inset": "1/1073741824",
+        "gamma": "317/1000",
+        "mass_lower": "637/2000",
+        "Jphi_mean_constant": "1/2−(5/2)log(6/5)",
+        "Jphi_baseline_rate_upper": "221/5000",
+        "Jphi_profile_match_upper": "2211/50000",
+        "source_mean_rate_upper": "223/5000",
+        "epsJ_N_S_T_D_radial": "1/1048576",
+        "epsRet": "1/4096",
+        "epsA": "1/65536"
+      },
+      "full_cost": "Phi66=F(A_n(t),B_n(t)−(317/1000)n), t=n/[(917/1000)logn]",
+      "coarse_source_display": "T−9n/40 via sigma/(1−sigma)",
+      "exact_price_expression": "317/1000+log(917/1000); every fixed smaller c gives eventual display",
+      "exact_price_upper": "4333/50000",
+      "exact_price_display_slack": "17/50000",
+      "same_Phi_sharper_scalar_display": true,
+      "mechanism": "ambient target Jphi first-profile concentration/Fubini→each inverse sourceface improved mean; bounded radial doubleweight and same actualhistory",
+      "comparison": "fullPhi66<Phi64 and layercost on actual domains intersections; scalar display sharpening itself does not changePhi"
     }
   ],
   "unaccepted": [
@@ -421,7 +463,8 @@
     "upper/round062/REPORT.md",
     "upper/round061/REPORT.md",
     "upper/round065/REPORT.md",
-    "upper/round064/REPORT.md"
+    "upper/round064/REPORT.md",
+    "upper/round066/REPORT.md"
   ],
   "accepted_scoped_mechanisms": [
     {
@@ -528,36 +571,46 @@
     }
   ],
   "strongest_asymptotic": {
-    "round": 64,
+    "round": 66,
     "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-    "full_proof": "upper/round064/radial_calibration/PROOF.md",
-    "proof_sha256": "17ce38ab5af46c0358046bdcc2aa57a05844c0799e9a97280d959887f59615d6",
-    "independent_audit": "audit/round064/radial_calibration/REVIEW.md",
-    "independent_audit_sha256": "443699173985a45738e535fcf7e0b2407c67f06b5d55832e59f361e1793a55af",
+    "full_proof": "upper/round066/target_profile/PROOF.md",
+    "proof_sha256": "4b7b3210f063312527c08adab5b7f81dc4b2c0ecf879e466dc715eb56ea6ebd1",
+    "independent_audit": "audit/round066/target_profile/review.md",
+    "independent_audit_sha256": "5a13e5a4364a2fbcc4b9d89fb2536ebeded2569033041017a7355237fd110ea8",
+    "exact_scalar_corollary": "audit/round066/exact_scalar/SCALAR_PROOF.md",
     "leading_coefficient": 1,
-    "public_status": "internal independently reviewed theorem, no published/priority/global optimum claim",
-    "scope": "fixed multiplicative/radial tuple, sufficiently large integern; unknownN",
+    "public_status": "internal independently reviewed theorem, no public priority/global optimum claim",
+    "scope": "fixedtargetprofile tuple, sufficiently large integern; unknownN",
     "explicit_threshold": null,
-    "bound": "Cn<=Phi64<T−n/5; T=nlogn−nloglogn",
+    "bound": "Cn<=Phi66<T−23n/100; T=nlogn−nloglogn",
     "parameters": {
       "s": "3/2",
       "source_q": [
         "2/3",
-        "909/1000"
+        "917/1000"
       ],
-      "sigma": "91/1000",
-      "chi": "1/20",
-      "h_coeff": "1/18446744073709551616",
+      "sigma": "83/1000",
+      "chi": "9/200",
+      "h_coeff": "1/1208925819614629174706176",
       "target_inset": "1/1073741824",
-      "all_eps_and_baseline": "1/1024",
-      "mass_lower": "1239/4000",
-      "gamma": "61/200",
-      "coarse_craw": "37249/181800",
-      "slack_to_one_fifth": "889/181800"
+      "gamma": "317/1000",
+      "mass_lower": "637/2000",
+      "Jphi_mean_constant": "1/2−(5/2)log(6/5)",
+      "Jphi_baseline_rate_upper": "221/5000",
+      "Jphi_profile_match_upper": "2211/50000",
+      "source_mean_rate_upper": "223/5000",
+      "epsJ_N_S_T_D_radial": "1/1048576",
+      "epsRet": "1/4096",
+      "epsA": "1/65536"
     },
-    "full_cost": "Phi64=F(A_n(t),B_n(t)−(61/200)n), t=n/[(909/1000)logn]",
-    "mechanism": "multiplicative matching, relativeg/R domain, boundedtarget radial r/rhi cancels column dr/r, boundedsourceinverse, same actualhistory",
-    "comparison": "strict full-cost improvement over R061 and R059 on each actualvalid intersection, explicit thresholds not transferred"
+    "full_cost": "Phi66=F(A_n(t),B_n(t)−(317/1000)n), t=n/[(917/1000)logn]",
+    "coarse_source_display": "T−9n/40 via sigma/(1−sigma)",
+    "exact_price_expression": "317/1000+log(917/1000); every fixed smaller c gives eventual display",
+    "exact_price_upper": "4333/50000",
+    "exact_price_display_slack": "17/50000",
+    "same_Phi_sharper_scalar_display": true,
+    "mechanism": "ambient target Jphi first-profile concentration/Fubini→each inverse sourceface improved mean; bounded radial doubleweight and same actualhistory",
+    "comparison": "fullPhi66<Phi64 and layercost on actual domains intersections; scalar display sharpening itself does not changePhi"
   },
   "current_paper": {
     "round": 60,
@@ -845,5 +898,37 @@
     "full_cost": "Phi61=F(A_n(t),B_n(t)−(429/2000)n), t=n/[(47/50)logn]",
     "mechanism": "one deficit measure, fixed finite point-disjoint Aj/Pj, layerwise degrees and chi_j, samehistory/tau, ca>=1",
     "comparison": "Phi61<Phi59 and Phi56 on respective actual domains intersections; old explicit bounds remain in earlier dimensions"
+  },
+  "strongest_asymptotic_pre_R066": {
+    "round": 64,
+    "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+    "full_proof": "upper/round064/radial_calibration/PROOF.md",
+    "proof_sha256": "17ce38ab5af46c0358046bdcc2aa57a05844c0799e9a97280d959887f59615d6",
+    "independent_audit": "audit/round064/radial_calibration/REVIEW.md",
+    "independent_audit_sha256": "443699173985a45738e535fcf7e0b2407c67f06b5d55832e59f361e1793a55af",
+    "leading_coefficient": 1,
+    "public_status": "internal independently reviewed theorem, no published/priority/global optimum claim",
+    "scope": "fixed multiplicative/radial tuple, sufficiently large integern; unknownN",
+    "explicit_threshold": null,
+    "bound": "Cn<=Phi64<T−n/5; T=nlogn−nloglogn",
+    "parameters": {
+      "s": "3/2",
+      "source_q": [
+        "2/3",
+        "909/1000"
+      ],
+      "sigma": "91/1000",
+      "chi": "1/20",
+      "h_coeff": "1/18446744073709551616",
+      "target_inset": "1/1073741824",
+      "all_eps_and_baseline": "1/1024",
+      "mass_lower": "1239/4000",
+      "gamma": "61/200",
+      "coarse_craw": "37249/181800",
+      "slack_to_one_fifth": "889/181800"
+    },
+    "full_cost": "Phi64=F(A_n(t),B_n(t)−(61/200)n), t=n/[(909/1000)logn]",
+    "mechanism": "multiplicative matching, relativeg/R domain, boundedtarget radial r/rhi cancels column dr/r, boundedsourceinverse, same actualhistory",
+    "comparison": "strict full-cost improvement over R061 and R059 on each actualvalid intersection, explicit thresholds not transferred"
   }
 }

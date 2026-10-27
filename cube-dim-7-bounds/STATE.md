@@ -1,9 +1,9 @@
 # 当前状态：一般高维覆盖持续攻关
 
-HIGH_DIM_COVER_ACTIVE；LOWER_PAUSED；N7_SPECIFIC_STOPPED。最新R064 FULL ACCEPT：固定乘法匹配+bounded目标径向校准，充分大integern有Cn≤Phi64<T−n/5，未知N；完整F/参数/独审与源hash见准确账本和upper/round064/REPORT.md。R061的128层Cn<T−3n/20已通过完整审，在适用交集Phi64更小。首项nlogn系数仍1、内部未发表，不声称最优或公开纪录。
+HIGH_DIM_COVER_ACTIVE；LOWER_PAUSED；N7_SPECIFIC_STOPPED。R066最新FULL ACCEPT：典型target Jphi first-profile、新Fubini均值及每inverse sourceface改良均值，固定tuple充分大n有Cn≤Phi66<T−23n/100。完整Phi为F(A_n(t),B_n(t)−317n/1000)，t=n/[(917/1000)logn]。原9/40显示由同一Phi的精确对数价格强化为23/100，没有另改kernel/gamma/fullcost。未知N；R069新量化门槛另轮审核归档，不追改历史receipt。所有参数、严格新旧比较和源/独审hash见准确账本与R066REPORT。
 
-已量化域仍R063自然log n≥2^33时Cn≤Phi59<T−n/10；R056在log n≥2^20时Cn≤Phi56<T−n/40。不能把这些门槛搬给R064/R061。所有旧bound仅在自身真valid域取min，完整函数比较保留正Bbuffer，未用显示小数代证书。
+当前已显式入账仍R063 log n≥2^33/n10与R056 log n≥2^20/n40；R064和R061是各自eventual结果，在真实valid交集新Phi66更小。只在每个真实有效域取min，首项系数仍1，内部未发表，不声称全局最优或公开纪录。
 
-当前24页R060论文已全文数学FINAL ACCEPT、主真实双pass编译及全24页图审，正文固定R056/R059范围；R061/R063/R064后续新结果先见正式REPORT/账本，下一次论文统一修订。旧稿通过稳定Gitblob恢复。R066新target Jphi first-profile机制与exactprice corollary仍待full审，R067真实数值批次结束但不能独立激活Cn；R062/R065数值、条件scalar、错误记录与理论身份分别归档。
+当前paper R06024页已全文数学FINAL ACCEPT、主实际双pass及逐页图审，正文冻结R056/R059。R068新稿正整合R056与R066、后续真实阈值，未经新全文审不替换。旧论文有稳定Gitblob恢复；所有stage/大raw/截图不入库。R067真实数值批和后补probe单独facts/conditional审，不独立证明Cn。
 
-Terra本机生产、Sol推导和独审、Luna facts审、主保留证明责任，每批有限登记和停止。CPU实际平均与峰分开，内存只记真实RSS；主串行使用MATLAB，不重置workspace/path。goal active，旧项目/下界/n7专项不恢复。每完成轮独立commit正常fetch/rebase/push及远端readback，未知来源未跟踪同名2文件不改删/不暂存/不作证据。
+Terra本机生产、Sol证明及独审、Luna facts审、主保留责任；每批有限登记/停止，CPU峰与平均区分。主串行实际MATLAB，不重置workspace/path；原资料、lower/n7专项及旧暂停项目均不恢复。goal active，每轮独立commit和正常fetch/rebase/push/readback；未知来源未跟踪同名2文件不改删/不暂存/不作证据。

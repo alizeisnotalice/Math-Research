@@ -1,0 +1,44 @@
+{
+  "status": "PASS: conditional scalar corollary for unchanged Phi66; full operator ACCEPT required",
+  "actual_pid": 95635,
+  "actual_utc": "2026-10-27T23:08:59.107933+00:00",
+  "python": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "method": "seven-term odd alternating log1p upper, six-term even lower; integral remainder signs proved in SCALAR_PROOF.md",
+  "parameters": {
+    "gamma": "317/1000",
+    "sigma": "83/1000",
+    "u": "83/917",
+    "price_upper": "4333/50000",
+    "chosen_c": "23/100"
+  },
+  "log_lower_S6": "3091183634525760757/35675269650690922140",
+  "log_upper_S7": "19842309378183917676803/228999555887785029216660",
+  "upper_gap": "6980337628832387781889/572498889719462573041650000",
+  "net_slack": "17/50000",
+  "checks": {
+    "log1p_domain": true,
+    "exact_price_argument": true,
+    "seven_term_upper_exceeds_six_term_lower": true,
+    "S7_below_chosen_rational_upper": true,
+    "net_slack_identity": true,
+    "sigma_positive_decay": true,
+    "exact_bound_coefficient_lower": true,
+    "display_coefficient_improves_old_display": true
+  },
+  "check_count": 8,
+  "source": {
+    "path": "/Users/zhengzhihao/Desktop/T/cube-r030-geometry/cube-dim-7-bounds/upper/round066/target_profile/PROOF.md",
+    "sha256": "4b7b3210f063312527c08adab5b7f81dc4b2c0ecf879e466dc715eb56ea6ebd1"
+  },
+  "own_sources": {
+    "REGISTRATION.md": "b4eeae81aa72de347cf7002f0ec5583fcb2a3164900fb34834501365daab98ca",
+    "SCALAR_PROOF.md": "d058c87d90db9748ac05a6d42fd711f68546daa217eee5ef8106b9c6e1d689f0",
+    "check_scalar.py": "1c9a7ae36620584284109373128dd8a9285715d2eff3c31786bb2dee46337d8a"
+  },
+  "scope": "same complete F(A,B-gamma*n); improved scalar display only; no new kernel/gamma/Phi; no explicit N; general L1/all radii deferred to full review",
+  "no_author_verifier_replay": true,
+  "no_old_grid": true,
+  "no_production": true,
+  "no_MATLAB": true,
+  "no_Git": true
+}

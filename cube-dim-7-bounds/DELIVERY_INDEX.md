@@ -1,10 +1,11 @@
 # 一般高维覆盖：当前结果与逐轮交付索引
 
-项目目录：`cube-dim-7-bounds/`。目标active；下界暂停、七维专项停止、原资料包/旧暂停项目只读。
+项目目录：`cube-dim-7-bounds/`；goal active，下界暂停、七维专项停止、旧资料/暂停项目只读。
 
-当前最强已接受eventual完整成本是[R064](upper/round064/REPORT.md)：Cn≤Phi64<T−n/5，未知起点。已显式认证[R063](upper/round063/REPORT.md) log n≥2^33的n/10和[R056](upper/round056/REPORT.md) log n≥2^20的n/40。所有比较使用完整F和各自valid域；首项系数仍1、内部未发表。
+当前已接受渐近完整成本：[R066](upper/round066/target_profile/PROOF.md)，`Cn<=Phi66<T−23n/100; T=nlogn−nloglogn`；有效域：fixedtargetprofile tuple, sufficiently large integern; unknownN。
+当前显式构造：[R063](upper/round063/wideband_threshold/THRESHOLD_PROOF.md)，`Cn<=Phi59<T−n/10, T=nlogn−nloglogn`；真实门槛：log(n)>=2^33。较早R056在log n≥2^20仍有n/40。全部界只在自身有效域取min，首项系数仍1、内部未发表。
 
-当前[24页PDF](paper/main.pdf)和[TeX](paper/main.tex)是R060冻结稿，全文数学FINAL ACCEPT、主双编译和逐页图审，证明范围R056/R059。R061/R063/R064是后续报告，不冒称已写入该PDF；后续论文将统一修订。paper/BUILD.json与MANIFEST锁源/PDFhash、原运行身份和旧20/30页Gitblob恢复。
+当前[PDF](paper/main.pdf)和[TeX](paper/main.tex)为R060的24页冻结稿，全文数学FINAL ACCEPT、主实际双编译及逐页图审；正文证明范围R056/R059。后续新机制/门槛以各轮报告为准，未冒称全部已写入该PDF。旧稿稳定Gitblob恢复、源/PDFhash与作者/主编译证据见paper/BUILD.json、MANIFEST.json。
 
 | 轮次 | 独立提交主题 | 实际提交 | 完整报告 | 必要变更文件数 |
 |---|---|---|---|---|
@@ -30,11 +31,12 @@
 | R061 | 同一真实历史不交分层的严格线性改进 | `c33eff40c5a91305db69232db81c36cbddb21112` | [报告](upper/round061/REPORT.md) | 20 |
 | R062 | 分层直接和前沿本机计算与准确层证书 | `86473c652e19d4b7abdd83f938786f28e71a3e18` | [报告](upper/round062/REPORT.md) | 33 |
 | R063 | 宽来源带一成修正的完整显式门槛 | `a4da5e5d5744e31a8536923043e3e00c8a4b8830` | [报告](upper/round063/REPORT.md) | 17 |
+| R064 | 乘法匹配与有界径向校准的完整严格改进 | `8095d6b588136b0d31c34022afb25abb218543a8` | [报告](upper/round064/REPORT.md) | 25 |
 | R065 | 乘法相对核有限诊断与真实错误符号审计 | `87904a9de0961cba253397fe9021fccbc57769df` | [报告](upper/round065/REPORT.md) | 25 |
-| R064 | 乘法匹配与径向校准 | 本轮commit见Git log及最终readback | [报告](upper/round064/REPORT.md) | 以本轮精确白名单为准 |
+| R066 | 典型目标一阶profile与精确价格推论 | 本轮身份见Git log及真实readback | [报告](upper/round066/REPORT.md) | 具体白名单与MANIFEST |
 
-以上历史提交均已确认远端包含；本轮R064只有真实同步receipt成功后才报告已推送，避免把自身hash写入自身。每轮原件/来源SHA、最小code、原actualreceipt、独审及清理范围在REPORT/MANIFEST；过去轮次另见rounds与准确账本。
+以上历史提交均已确认远端包含；本轮只有真实readback成功后才报告已推送，不把自身hash嵌入自身提交。每轮报告有机制/假设、完整成本及范围、准确原件/来源SHA、最小代码、实际receipt与独审，过去R001–040另见rounds和账本。
 
-R062本机v2实际136.02秒、累计CPU1846.22秒、平均13.57核，采样峰14.588核；R065为19.7459秒、累计CPU247.9498秒、采样峰14.488核。R067新批次数据由自身正式审核/报告单独记，不以运行意图或worker数量冒称持续满核。数值候选/条件证书/计算失败/完整Cn严格认证分开；错误tau符号是真实假失败而非数学反例。
+R062 v2真实136.02秒、CPU1846.22秒、平均13.57核、采样峰14.588核；R065真实19.7459秒、CPU247.9498秒、采样峰14.488核。R067真实新Jphi批次另有576000状态和独立facts审，按自己报告记账。资源采样峰与持续平均分开；没有通过空转或填内存伪造工作。
 
-归档采用具体文件白名单，保留必要原UTF8收据压缩单份，不上传全中间表、缓存、截图或重复旧论文。未知来源同名2未跟踪文件保持原样。R066尚待full审，不把更好targetprofile模型自动升级为Cn。
+数值候选、条件准确证书、计算失败/误抄以及完整Cn严格认证分开；同一Phi的精确价格推论不称新kernel或额外完整cost优化。原始收据压缩保留单份，不上传全中间表/缓存/截图/重复论文；未知来源未跟踪同名2文件保持原样。
