@@ -1,9 +1,9 @@
 # 八维中心方体真实状态
 
-ACTIVE_CONTINUOUS_UNTIL_USER_STOP。正式严格 2187076155088659/10^15 < C8 < 56627260639/2000000000。完整准确证书在results/bounds_ledger.json。
+ACTIVE_CONTINUOUS_UNTIL_USER_STOP。正式严格 2188478854531916/10^15 < C8 < 56627260639/2000000000。完整准确端点见results/bounds_ledger.json。
 
-R001已推送核远端4adabaedfdc68162e0306802940d53f58a807ea0；R002已推送并独立ls-remote核远端ab943d9f957c7e80c40f5f6b58bbc7f19a55ffb8。R003两事件真实child exit0、左赢家独立全标签exit0。R004独审已封存，按轮次下一步集成；R005完整事件目录正在封存，旧16/历史4不重跑。
+R001远端核4adabaed、R002远端核ab943d9f、R003正常rebase并推送后实际ls-remote核a230c14f20e15ad6b7c85ac021d337417298251f；未force。R00414新事件全部child exit0，唯一最高rank16独立全标签exit0已主接受。上界仍R001；三个4+4点锚和热峰/尾预算虽完整准确认证，并非g/I或新Cn。
 
-固定Lebesgue、中心轴平行共同半径、一般L1、全部正尺度。S3奇异分层及全空间正部源理论已审，但无g/I数值Cn证书。上界R002/R003仅排除指定局部模型候选，没有新上界。原其他项目与暂停状态不改。
+R005266新事件14进程全部完成exit0、UNKNOWN0，56严格cell预筛，最高E098独审进行；当前正式下界不提前采纳。R006双参数tail结构正在推导，未实际union。旧终态基线不重跑。
 
-终态批次不重启；每批有限、无总算时轮数上限。共享MATLAB主串行，不clear/path/cwd重置。
+固定Lebesgue、中心轴平行共同半径、一般L1、全部正尺度。原其他项目和暂停状态不改。共享MATLAB仅主串行，不clear/path/cwd重置。持续到用户明确要求停止，有限批次可续算，无总时限/轮数上限。

@@ -1,0 +1,327 @@
+{
+  "status": "PASS",
+  "scope": "three exact point anchors only; no g_min, continuous I certificate or new C8 bound",
+  "independent_density_method": "all 1152 real/imaginary numerators over one common u=t^2 denominator, first gcd only after complete summation",
+  "cone_count": 1152,
+  "ray_count": 240,
+  "density_prefactor": "1/(16*pi^4)",
+  "shared_time_model": "p8_t(x,y)=p4_t(x)*p4_t(y), integrated over one t",
+  "raw_absolute_density_tail_coefficient_pi_minus4": "11/3072",
+  "exact_global_peak": {
+    "p4_at_origin_coefficient_pi_minus4_t_minus4": "11/3072",
+    "p8_at_origin_coefficient_pi_minus8_t_minus8": "121/9437184",
+    "global_uniform_long_tail_coefficient_pi_minus8_T_minus7": "121/66060288",
+    "improvement_factor_over_basis_C": "36864/121",
+    "proof": "At x=0 every raw cone term is positive weight*t^-4; positive Fourier inversion bounds abs(p4_t(x)) by p4_t(0). Shared-time product gives the p8 peak."
+  },
+  "densities": {
+    "A": {
+      "raw_common_denominator_degree": 16,
+      "raw_zero_pole_multiplicity": 2,
+      "cones_with_zero_projection": 528,
+      "cones_with_repeated_signed_projection": 816,
+      "complete_imaginary_numerator_zero": true,
+      "reduced_numerator_degree_u": 6,
+      "reduced_denominator_degree_u": 8,
+      "t0_pi_minus4": "3/16",
+      "leading_t_minus4_coefficient_pi_minus4": "11/3072",
+      "N_coefficients_ascending_u": [
+        "1/13194139533312",
+        "85/2473901162496",
+        "3431/463856467968",
+        "6527/9663676416",
+        "445/16777216",
+        "3455/7077888",
+        "11/3072"
+      ],
+      "D_coefficients_ascending_u": [
+        "1/2473901162496",
+        "25/154618822656",
+        "41/1610612736",
+        "625/301989888",
+        "3581/37748736",
+        "1975/786432",
+        "1399/36864",
+        "175/576",
+        "1"
+      ],
+      "pole_squared_multiplicities": {
+        "1/144": 1,
+        "1/64": 3,
+        "1/16": 4
+      }
+    },
+    "B": {
+      "raw_common_denominator_degree": 12,
+      "raw_zero_pole_multiplicity": 3,
+      "cones_with_zero_projection": 672,
+      "cones_with_repeated_signed_projection": 864,
+      "complete_imaginary_numerator_zero": true,
+      "reduced_numerator_degree_u": 2,
+      "reduced_denominator_degree_u": 4,
+      "t0_pi_minus4": "1/3",
+      "leading_t_minus4_coefficient_pi_minus4": "11/3072",
+      "N_coefficients_ascending_u": [
+        "1/7077888",
+        "125/3538944",
+        "11/3072"
+      ],
+      "D_coefficients_ascending_u": [
+        "1/2359296",
+        "5/65536",
+        "59/12288",
+        "35/288",
+        "1"
+      ],
+      "pole_squared_multiplicities": {
+        "1/64": 2,
+        "1/36": 1,
+        "1/16": 1
+      }
+    }
+  },
+  "known_four_dimensional_integral_crosschecks": {
+    "A": {
+      "G4_pi_minus3": "17/640",
+      "density_full_function_identity_verified": true
+    },
+    "B": {
+      "G4_pi_minus3": "1/24",
+      "density_full_function_identity_verified": true
+    }
+  },
+  "eight_dimensional_integrals": {
+    "AA": {
+      "G8_pi_minus7": "10495703317/2149908480000",
+      "partial_fraction_terms_independent_local_Taylor": [
+        {
+          "a": "1/12",
+          "k": 2,
+          "coefficient": "81/6553600"
+        },
+        {
+          "a": "1/12",
+          "k": 1,
+          "coefficient": "-14800401/1310720000"
+        },
+        {
+          "a": "1/8",
+          "k": 6,
+          "coefficient": "1/618475290624"
+        },
+        {
+          "a": "1/8",
+          "k": 5,
+          "coefficient": "-5/4831838208"
+        },
+        {
+          "a": "1/8",
+          "k": 4,
+          "coefficient": "157/754974720"
+        },
+        {
+          "a": "1/8",
+          "k": 3,
+          "coefficient": "-35551/2388787200"
+        },
+        {
+          "a": "1/8",
+          "k": 2,
+          "coefficient": "335243/559872000"
+        },
+        {
+          "a": "1/8",
+          "k": 1,
+          "coefficient": "101801/131220000"
+        },
+        {
+          "a": "1/4",
+          "k": 8,
+          "coefficient": "1/154618822656"
+        },
+        {
+          "a": "1/4",
+          "k": 7,
+          "coefficient": "-1/1207959552"
+        },
+        {
+          "a": "1/4",
+          "k": 6,
+          "coefficient": "101/2415919104"
+        },
+        {
+          "a": "1/4",
+          "k": 5,
+          "coefficient": "-109/100663296"
+        },
+        {
+          "a": "1/4",
+          "k": 4,
+          "coefficient": "25483/2038431744"
+        },
+        {
+          "a": "1/4",
+          "k": 3,
+          "coefficient": "-19325/2038431744"
+        },
+        {
+          "a": "1/4",
+          "k": 2,
+          "coefficient": "-61727/3057647616"
+        },
+        {
+          "a": "1/4",
+          "k": 1,
+          "coefficient": "144694081/13759414272"
+        }
+      ],
+      "full_partial_fraction_identity": true,
+      "source_partial_fraction_identity": true,
+      "t0_integrand_pi_minus8": "9/256",
+      "tail_bound_pi_minus8_coefficient": "121/9437184",
+      "tail_integral_T_power": -7,
+      "tail_integral_coefficient_pi_minus8": "121/66060288"
+    },
+    "AB": {
+      "G8_pi_minus7": "15547486331/1920360960000",
+      "partial_fraction_terms_independent_local_Taylor": [
+        {
+          "a": "1/12",
+          "k": 1,
+          "coefficient": "567/204800"
+        },
+        {
+          "a": "1/8",
+          "k": 5,
+          "coefficient": "5/4831838208"
+        },
+        {
+          "a": "1/8",
+          "k": 4,
+          "coefficient": "-23/37748736"
+        },
+        {
+          "a": "1/8",
+          "k": 3,
+          "coefficient": "71/516096"
+        },
+        {
+          "a": "1/8",
+          "k": 2,
+          "coefficient": "-6732463/365783040"
+        },
+        {
+          "a": "1/8",
+          "k": 1,
+          "coefficient": "1084890113/600112800"
+        },
+        {
+          "a": "1/6",
+          "k": 1,
+          "coefficient": "-53774361/27440000"
+        },
+        {
+          "a": "1/4",
+          "k": 5,
+          "coefficient": "-5/12582912"
+        },
+        {
+          "a": "1/4",
+          "k": 4,
+          "coefficient": "143/13271040"
+        },
+        {
+          "a": "1/4",
+          "k": 3,
+          "coefficient": "-24001/796262400"
+        },
+        {
+          "a": "1/4",
+          "k": 2,
+          "coefficient": "774407/497664000"
+        },
+        {
+          "a": "1/4",
+          "k": 1,
+          "coefficient": "1669853611/11197440000"
+        }
+      ],
+      "full_partial_fraction_identity": true,
+      "source_partial_fraction_identity": true,
+      "t0_integrand_pi_minus8": "1/16",
+      "tail_bound_pi_minus8_coefficient": "121/9437184",
+      "tail_integral_T_power": -7,
+      "tail_integral_coefficient_pi_minus8": "121/66060288"
+    },
+    "BB": {
+      "G8_pi_minus7": "143/10584",
+      "partial_fraction_terms_independent_local_Taylor": [
+        {
+          "a": "1/8",
+          "k": 4,
+          "coefficient": "25/37748736"
+        },
+        {
+          "a": "1/8",
+          "k": 3,
+          "coefficient": "-35/98304"
+        },
+        {
+          "a": "1/8",
+          "k": 2,
+          "coefficient": "5977/64512"
+        },
+        {
+          "a": "1/8",
+          "k": 1,
+          "coefficient": "-42491/2646"
+        },
+        {
+          "a": "1/6",
+          "k": 2,
+          "coefficient": "9/64"
+        },
+        {
+          "a": "1/6",
+          "k": 1,
+          "coefficient": "5589/392"
+        },
+        {
+          "a": "1/4",
+          "k": 2,
+          "coefficient": "25/1024"
+        },
+        {
+          "a": "1/4",
+          "k": 1,
+          "coefficient": "389/216"
+        }
+      ],
+      "full_partial_fraction_identity": true,
+      "source_partial_fraction_identity": true,
+      "t0_integrand_pi_minus8": "1/9",
+      "tail_bound_pi_minus8_coefficient": "121/9437184",
+      "tail_integral_T_power": -7,
+      "tail_integral_coefficient_pi_minus8": "121/66060288"
+    }
+  },
+  "author_quadrature_repeated": false,
+  "author_failed_run_preserved": {
+    "status": "KeyboardInterrupt; exit 1",
+    "wall_seconds": 66.53380966698751,
+    "script": "run_interrupted.py",
+    "receipt": "receipt_interrupted.json"
+  },
+  "author_files": {
+    "check-receipt.json": "547a99a3f2c9f3caef1cff7cca4a57d4114f4a470587467221a54680bd8615f3",
+    "check.py": "bcc24d8b7aa6f95eac5b9c950f84ee3cc3ca16a1b59e7687dc90d24e426837f4",
+    "manifest.json": "7c951b65b84cb7ca3cff67dd0934d098fa07d67bcf2cafed01d6f79137ef61dc",
+    "receipt.json": "7cc9ee96c6a52086291d1271a648081f8186056e0b2fa1139b0499187dbfafc1",
+    "receipt_interrupted.json": "f6002cb84b675e0a9e9796268de33878c95476b6f21934229ddc2a0471ead85c",
+    "registration.md": "ae3297297ec9da37d0a4e90f53ca44c2e71469af2b19da9053523d0a5934f80c",
+    "report.md": "91c306c494d71da98cad562e832e9c0c12c8c759739065540a4aa78189ce4808",
+    "result.json": "2bfc8d7d424d0166afb51938e29afcd94f8ece4eb528f81f2b03ea3661d27a8d",
+    "run.py": "07bfb88797f8b0dc8d78dd4f4c430efb61c7f2f6e67304461f246973a424bb9a",
+    "run_interrupted.py": "5c110576706f0851e64792de03ba1eebffcaadfa2b05721c79f6dc906a94fd79"
+  }
+}
