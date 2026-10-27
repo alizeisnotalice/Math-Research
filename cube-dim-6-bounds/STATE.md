@@ -10,7 +10,7 @@ ACTIVE，仅推进上界；下界按用户明确要求停止。新任务不调�
 
 C121终态COMPLETED_FINITE_FRONTIER，session41549已exit0、禁止重启。11,322新增实际native全128bit，0旧点窗重算；15 lanes，完整child wall3380.746438666秒，子CPU user44391.647543/system194.209155。270/325树闭合，55因预算保留，3622新pass、3851queued+55blocked=3906残余，无ROOT_ERROR/inflight。journal SHA3116d5abd0e88f90516352c7d525582197f3dc2ca8767a5d318ad3cb603d19db，forest cd10145dc43b58118c8a1470803daf9429e5d599556397ea00b4c410ff0948f3。Luna只读账务11322核验exit0；N独立15worker数学审计exit0，3652band证书116864角点512bit再包围PASS，精确闭split图通过；globalg仍未证。
 
-127准备仅续55完整残余子树，继承270闭树及12081缓存。新增每root512真实attempt/1024processed、15lanes、总28160，无时间上限。K独立源/缓存/覆盖静审主路径通过，发现root错误exit0及中断停止机制需修；Luna仅修改UNRUN127并保留旧版，尚未release/启动，禁止跳gate重复开工。
+127原观察句柄49857已不存在，主observer8370/producer8379及band_engine进程均经实际ps确认不存在；没有terminalreceipt，退出码未知，不称成功。最后counter3127started/3112reaped/15active，当前保存3112 AVAILABLE与15 NATIVE_RUNNING。recover127只读核验/恢复checkpoint+events+state，15未知不重发；准备新129继续未用预算，原127不修改或重启。所有程序仍无时限，恢复后优先15路本地计算。
 
 125唯一joint-count新优化+完整735471prefix/16tail证书实际exit0，observer session72273终态，完整child wall23.476498125秒/CPU22.976831，116objective。candidate严格M上包约.0642706609164，低于124但仍高于竞争目标约.06232947；一般I的矩接口有效，globalg和C6均未闭。作者savedchecker/封存及I独审进行。
 
@@ -46,3 +46,9 @@ C121终态COMPLETED_FINITE_FRONTIER，session41549已exit0、禁止重启。11,3
 本次接续更新UTC：2026-10-26T22:01:13.653712+00:00
 
 124归档完成：秩剥离完整矩严格上包与指定单h族障碍；独审通过，无新C6界。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
+
+125和126独立复核均已PASS；分别737161/11842项，126全部4096新functional在768bit独立包围通过。两者作者封存进行；准确全scope不变，0新C6界。
+
+GitHub push已获服务器确认0ff98c9f→69bba302；正在核验远端包含第120/122/123/124轮。
+
+125归档完成：真实嵌套count完整矩严格上包改善；独审通过，尚未竞争，无新C6界。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。

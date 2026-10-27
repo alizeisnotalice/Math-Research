@@ -1,0 +1,15 @@
+# Round 125: final common-simplex nested-count candidate
+
+The same original Cauchy/Gaussian mixture determinant moment is bounded using the 49 nonnegative common-simplex weights at eight fixed auxiliary h values. The proof and assumptions are in proof.md; exact inputs, including the unchanged round 124 caps, are in upstream.json. Auxiliary h is not semigroup time.
+
+The sole authorized optimization completed with 116 objective/analytic-gradient calls and 108 iterations; one exact 2^-44 rational simplex was retained. The complete exact certificate covers all 735471 nested count states 0<=N1<=...<=N8<=16 and all 16 tail values K=17,...,32. No tail was discarded and neither endpoint law was renormalized. Exact positive integer probabilities at whole CDF endpoint vectors and outward 192-bit reciprocal fifth-root inequalities give the H interval, then M^6<=H_U^5. Exact rational values and differences are retained in candidate_certificate.json.
+
+The certified upper expression for M is approximately 0.064270660916429218. It strictly improves the saved round 124 best upper and all eight fixed single-h family witnesses. It does not pass the full round 123 threshold (approximately 0.06232947). This is a valid fixed-candidate upper certificate, not a lower bound for the actual M or I and not exclusion of the whole joint family. The global g0 assertion remains unproved; the established C6 upper bound remains 64.
+
+The sole scientific child exited 0. The external observer measured 23.476498125004582 wall seconds and 22.976831 CPU seconds, including spawn, final receipt, exit and reap. One CPU, one BLAS thread, nice +10, no time or CPU ceiling, no children, no Monte Carlo, and no old optimization replays were used. observed_tool_receipt.json and run_receipt.json are the actual runtime evidence.
+
+Independent audit round125/joint_candidate_review passed one full exact saved-data enumeration: 737161 assertions, 735471 prefix states, 16 tail records, and 735487 reciprocal-root checks. Its manifest SHA256 is 746f545f1d7c6376f8051ea066b08d4ce900424667a54ef52f8859feeaea1b05. Author final documents were pending at that observation; this report and manifest complete that administrative item. The author checker was not rerun after that exhaustive independent check.
+
+To verify saved data, use the pinned Python environment from observe_once.py to run check_saved.py; this performs integer arithmetic only, without reoptimization, Arb, or determinants. Scientific reproduction additionally requires the source paths and exact hashes in source_manifest.json and the same python-flint, NumPy, SciPy environment; the original exclusive launch is preserved and must not be reused for a second scientific run.
+
+The manifest is an explicit archive whitelist: final report/proof, exact inputs and source hashes, final implementation/checker, release and actual receipts, exact candidate/tables/certificate, and compressed root chunks. Checkpoints and started markers stay local and are excluded. No important counterexample arose; failure of the threshold is retained as the unresolved result. No staging, commit, or push was performed by this worker.
