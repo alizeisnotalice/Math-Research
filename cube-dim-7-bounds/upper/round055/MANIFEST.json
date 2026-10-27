@@ -1,0 +1,87 @@
+{
+  "round": 55,
+  "frozen_proof_sha256": "5d2c61adf0e341b2a11daabec61daedd6e009b65a0139bb468711175f0288e9f",
+  "frozen_review_sha256": "cd8440a63cd30bd7368db692595a35a309c8050e7921637edc473cc447b8b41b",
+  "copied_sources": [
+    {
+      "file": "upper/round055/simple_tuple_threshold/PROOF.md",
+      "source": "/Users/zhengzhihao/Desktop/T/cube-r030-parameters/cube-dim-7-bounds/upper/round055/simple_tuple_threshold/PROOF.md",
+      "sha256": "5d2c61adf0e341b2a11daabec61daedd6e009b65a0139bb468711175f0288e9f",
+      "bytes": 6619
+    },
+    {
+      "file": "upper/round055/simple_tuple_threshold/verification.json",
+      "source": "/Users/zhengzhihao/Desktop/T/cube-r030-parameters/cube-dim-7-bounds/upper/round055/simple_tuple_threshold/verification.json",
+      "sha256": "7311b84e93a7da8379d812deeb8754b1cd43c49f87da5f61de21ef315cb0348f",
+      "bytes": 2511
+    },
+    {
+      "file": "upper/round055/simple_tuple_threshold/verify.py",
+      "source": "/Users/zhengzhihao/Desktop/T/cube-r030-parameters/cube-dim-7-bounds/upper/round055/simple_tuple_threshold/verify.py",
+      "sha256": "ccc40f186ba81de7deeeceb6d3a83066b1dddfd4024f1e9b71fab632b0c6e3aa",
+      "bytes": 4493
+    },
+    {
+      "file": "audit/round055/threshold/microcheck.json",
+      "source": "/Users/zhengzhihao/Desktop/T/cube-r030-uniform-audit/cube-dim-7-bounds/audit/round055/threshold/microcheck.json",
+      "sha256": "5a01c36b94843886fdb11f93a188cf6964c7c40021cf1a7bc8fc40d68d04a0f9",
+      "bytes": 2565
+    },
+    {
+      "file": "audit/round055/threshold/microcheck.py",
+      "source": "/Users/zhengzhihao/Desktop/T/cube-r030-uniform-audit/cube-dim-7-bounds/audit/round055/threshold/microcheck.py",
+      "sha256": "632fac4b6716801b4d6b6b0c56c8b0502a2228a4b7de55e3a726a0baa074bbb8",
+      "bytes": 3948
+    },
+    {
+      "file": "audit/round055/threshold/review.md",
+      "source": "/Users/zhengzhihao/Desktop/T/cube-r030-uniform-audit/cube-dim-7-bounds/audit/round055/threshold/review.md",
+      "sha256": "cd8440a63cd30bd7368db692595a35a309c8050e7921637edc473cc447b8b41b",
+      "bytes": 10631
+    }
+  ],
+  "sha256": {
+    "upper/round055/REPORT.md": "9bd98cfdf50e96bc3e52aa0e959ea909066559b48062924d52566463daf00003",
+    "upper/round055/certificate.json": "311c76f3ef6aa43e623361f512c9c9f54bae102385fc1ea0e9cde649dbf30339",
+    "upper/round055/simple_tuple_threshold/PROOF.md": "5d2c61adf0e341b2a11daabec61daedd6e009b65a0139bb468711175f0288e9f",
+    "upper/round055/simple_tuple_threshold/verification.json": "7311b84e93a7da8379d812deeb8754b1cd43c49f87da5f61de21ef315cb0348f",
+    "upper/round055/simple_tuple_threshold/verify.py": "ccc40f186ba81de7deeeceb6d3a83066b1dddfd4024f1e9b71fab632b0c6e3aa",
+    "audit/round055/threshold/review.md": "cd8440a63cd30bd7368db692595a35a309c8050e7921637edc473cc447b8b41b",
+    "audit/round055/threshold/microcheck.py": "632fac4b6716801b4d6b6b0c56c8b0502a2228a4b7de55e3a726a0baa074bbb8",
+    "audit/round055/threshold/microcheck.json": "5a01c36b94843886fdb11f93a188cf6964c7c40021cf1a7bc8fc40d68d04a0f9"
+  },
+  "full_operator_accepted": true,
+  "bound": {
+    "round": 55,
+    "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+    "full_proof": "upper/round055/simple_tuple_threshold/PROOF.md",
+    "proof_sha256": "5d2c61adf0e341b2a11daabec61daedd6e009b65a0139bb468711175f0288e9f",
+    "independent_audit": "audit/round055/threshold/review.md",
+    "independent_audit_sha256": "cd8440a63cd30bd7368db692595a35a309c8050e7921637edc473cc447b8b41b",
+    "leading_coefficient": 1,
+    "public_status": "internal independently reviewed theorem; no public priority/global optimality claim",
+    "scope": "natural log(n)>=2^27",
+    "bound": "Cn<=Phi_simple<T−2^-16n; T=nlogn−nloglogn",
+    "explicit_threshold": "log(n)>=2^27",
+    "parameters": {
+      "a_soft": "9",
+      "s": "19",
+      "d": "1/1024",
+      "epsJ_S_T_D": "1/1024",
+      "epsA": "1/64",
+      "P0": "3579/4096",
+      "u_lo": "3579/8200",
+      "u_hi": "8589934592/7494715899",
+      "mass": "63/131168",
+      "M": "4",
+      "bracket": "151679/524800",
+      "Gamma": "9555777/275347865600",
+      "gamma": "9775559871/281956214374400",
+      "sigma": "19/1048576",
+      "c_raw": "4893063658542547/295647162275777740800"
+    },
+    "full_cost": "Phi_simple=F(A_n(t),B_n(t)−gamma_simple*n), t=n/[(1−19/2^20)logn]",
+    "mechanism_source": "upper/round051/flexible_budget/PROOF.md",
+    "piecewise_minimum": "L>=2^32: Phi_raw from R053 is strictly smaller; otherwise keep Phi_simple and all other own-domain bounds"
+  }
+}

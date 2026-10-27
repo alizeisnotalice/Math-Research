@@ -1,7 +1,7 @@
 {
   "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
   "status": "active research; lower paused and n7-specific stopped",
-  "current_round": 53,
+  "current_round": 55,
   "accepted": [
     {
       "round": 34,
@@ -179,6 +179,39 @@
       },
       "full_cost": "Phi_raw=F(A_n(t),B_n(t)−gamma_raw*n), t=n/[(1−sigma_raw)logn]",
       "mechanism_source": "upper/round051/flexible_budget/PROOF.md"
+    },
+    {
+      "round": 55,
+      "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+      "full_proof": "upper/round055/simple_tuple_threshold/PROOF.md",
+      "proof_sha256": "5d2c61adf0e341b2a11daabec61daedd6e009b65a0139bb468711175f0288e9f",
+      "independent_audit": "audit/round055/threshold/review.md",
+      "independent_audit_sha256": "cd8440a63cd30bd7368db692595a35a309c8050e7921637edc473cc447b8b41b",
+      "leading_coefficient": 1,
+      "public_status": "internal independently reviewed theorem; no public priority/global optimality claim",
+      "scope": "natural log(n)>=2^27",
+      "bound": "Cn<=Phi_simple<T−2^-16n; T=nlogn−nloglogn",
+      "explicit_threshold": "log(n)>=2^27",
+      "parameters": {
+        "a_soft": "9",
+        "s": "19",
+        "d": "1/1024",
+        "epsJ_S_T_D": "1/1024",
+        "epsA": "1/64",
+        "P0": "3579/4096",
+        "u_lo": "3579/8200",
+        "u_hi": "8589934592/7494715899",
+        "mass": "63/131168",
+        "M": "4",
+        "bracket": "151679/524800",
+        "Gamma": "9555777/275347865600",
+        "gamma": "9775559871/281956214374400",
+        "sigma": "19/1048576",
+        "c_raw": "4893063658542547/295647162275777740800"
+      },
+      "full_cost": "Phi_simple=F(A_n(t),B_n(t)−gamma_simple*n), t=n/[(1−19/2^20)logn]",
+      "mechanism_source": "upper/round051/flexible_budget/PROOF.md",
+      "piecewise_minimum": "L>=2^32: Phi_raw from R053 is strictly smaller; otherwise keep Phi_simple and all other own-domain bounds"
     }
   ],
   "unaccepted": [
@@ -208,7 +241,8 @@
     "upper/round049/REPORT.md",
     "upper/round051/REPORT.md",
     "upper/round052/REPORT.md",
-    "upper/round053/REPORT.md"
+    "upper/round053/REPORT.md",
+    "upper/round055/REPORT.md"
   ],
   "accepted_scoped_mechanisms": [
     {
@@ -315,35 +349,36 @@
     "new_Cn_bound": false
   },
   "strongest_explicit": {
-    "round": 53,
+    "round": 55,
     "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-    "full_proof": "upper/round053/explicit_candidate_threshold/THRESHOLD_PROOF.md",
-    "proof_sha256": "26adb4e31f0026637ea17d8f7943bc2933dce97b8655e121f2604b6ddeea2775",
-    "independent_audit": "audit/round053/threshold/review.md",
-    "independent_audit_sha256": "eef083003c5020cc184e2ee312a0374052c1a4fa962fef7da753e22f0e9fba1b",
+    "full_proof": "upper/round055/simple_tuple_threshold/PROOF.md",
+    "proof_sha256": "5d2c61adf0e341b2a11daabec61daedd6e009b65a0139bb468711175f0288e9f",
+    "independent_audit": "audit/round055/threshold/review.md",
+    "independent_audit_sha256": "cd8440a63cd30bd7368db692595a35a309c8050e7921637edc473cc447b8b41b",
     "leading_coefficient": 1,
     "public_status": "internal independently reviewed theorem; no public priority/global optimality claim",
-    "scope": "natural log(n)>=2^32",
-    "bound": "Cn<=Phi_raw<T−2^-16n; T=nlogn−nloglogn",
-    "explicit_threshold": "log(n)>=2^32",
+    "scope": "natural log(n)>=2^27",
+    "bound": "Cn<=Phi_simple<T−2^-16n; T=nlogn−nloglogn",
+    "explicit_threshold": "log(n)>=2^27",
     "parameters": {
-      "a_soft": "73/8",
-      "s": "293/16",
-      "d": "1023/1048576",
+      "a_soft": "9",
+      "s": "19",
+      "d": "1/1024",
       "epsJ_S_T_D": "1/1024",
       "epsA": "1/64",
       "P0": "3579/4096",
       "u_lo": "3579/8200",
-      "u_hi": "8796093022208/7674592741893",
-      "mass": "64449/134315936",
+      "u_hi": "8589934592/7494715899",
+      "mass": "63/131168",
       "M": "4",
-      "bracket": "11148919/38310400",
-      "Gamma": "718536680631/20582788938137600",
-      "gamma": "735063024285513/21076775872652902400",
-      "sigma": "306632997/17592186044416",
-      "c_raw": "6468305130094850733787980147/370780099533215320770594052505600"
+      "bracket": "151679/524800",
+      "Gamma": "9555777/275347865600",
+      "gamma": "9775559871/281956214374400",
+      "sigma": "19/1048576",
+      "c_raw": "4893063658542547/295647162275777740800"
     },
-    "full_cost": "Phi_raw=F(A_n(t),B_n(t)−gamma_raw*n), t=n/[(1−sigma_raw)logn]",
-    "mechanism_source": "upper/round051/flexible_budget/PROOF.md"
+    "full_cost": "Phi_simple=F(A_n(t),B_n(t)−gamma_simple*n), t=n/[(1−19/2^20)logn]",
+    "mechanism_source": "upper/round051/flexible_budget/PROOF.md",
+    "piecewise_minimum": "L>=2^32: Phi_raw from R053 is strictly smaller; otherwise keep Phi_simple and all other own-domain bounds"
   }
 }
