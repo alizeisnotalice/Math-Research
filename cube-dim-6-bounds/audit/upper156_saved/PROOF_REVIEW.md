@@ -1,0 +1,41 @@
+# Independent C156 saved certification: theory and static code preparation
+
+Sol has prepared this code without executing prepare, checker, Arb/FLINT, fixture or any mathematical preflight. Static syntax parsing and source/file SHA256 are administrative checks only. A separate main/independent exact-hash gate must authorize one Terra audit. Existing source-result success does not certify this new checker before its actual execution.
+
+Source producer root: `/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-brascamp108/cube-dim-6-bounds/upper/round156/pair_integral_without_full_density`; immutable result SHA256 `f9a0689da14fb34d48c3ffb65b6abaef06193906ff71cc3cab77420074bee21f`. New code root is the reviewer's `audit/upper156_saved_code`. Terra's separate prepared/output root is `.../Math-Research-cube6-sol-brascamp108/cube-dim-6-bounds/audit/upper156_saved`. The checker imports no producer file or helper. Original source outputs and all previous functionals remain read only.
+
+## Source inequalities
+
+For h>0, k is the correctly normalized positive truncated Gamma kernel. Differentiating its closed erfc form gives `k'=-q`, with `q(a)=exp(2a)*erfc(a/(2sqrt(h))+sqrt(h))`. The Gaussian bound pays integrability and vanishing at infinity. For x>=0, the elementary Gaussian tail bound gives the increasing hazard R and hence log concavity of erfc. Thus q is log concave. Ratios `q(a+u)/q(a)` decrease in a, so its survival k has increasing hazard and is log concave on the full half-axis, including the right derivative at zero.
+
+For f=k/p, log concavity and f(0)=1 imply `f(a+b)<=f(a)f(b)`. Independence is used only across disjoint original Exp(1) columns, not between the correlated physical outputs A and B. This justifies an arbitrary seed expectation multiplied by normalized remaining single-column upper factors. At zero columns the exact factor is one; rank-zero/one laws retain the p^2/single-column/global-MGF fallbacks.
+
+Two independent source columns have density bounded by 1/D. Convolution with the remaining probability measures cannot increase this supremum, giving the seed bound `min(p^2,I0^2/D)`. Each independent two-column density has squared L2 norm 1/(4D). For two disjoint such column pairs, Cauchy--Schwarz yields convolution supremum at most `1/(4sqrt(D1*D2))`; among the three pairings of four distinct columns, maximizing the exact positive determinant product is valid. The resulting seed bound is `min(p^2,I0^2/(4sqrt(P)))`. No full density or finite-support mass approximation is required.
+
+The two full-half-axis log tangents at 0 and s=sqrt(h) give `k(a)<=C_r*exp(-tau_r*a)`. Their exact original-column Laplace products retain all six Exp inputs and their scales. They yield both the four whole-law MGF bounds and the normalized single-column factors. Signed-erfc cancellation is kept in the anchor formula; no term clipping or output independence is assumed.
+
+The finite upper expression has at most 35 candidates per pair: one all-single factor bound, at most 15 independent two-column seeds with residual factors, at most 15 four-column seeds with residual factors, and four global tangents. Minimum lower and minimum upper endpoints enclose the same fixed finite minimum even if different candidate labels attain the endpoints. Every candidate is a true whole-support upper bound. Summing one such bound for each unordered pair and cone with positive alpha and the single inherited kappa=46080/pi^3 proves a complete true beta2 upper endpoint. The lower endpoint is only a lower bound on this specified upper expression, never an actual beta2/M/C6 lower bound.
+
+## Independent fresh scalar qualification
+
+The accepted C128 p interval and C130 kappa interval are inherited by exact original bytes and indices; no new erf, pi-factor recomputation, old functional or old baseline is allowed. C130's complete moment interval is additionally linked to the previously passed independent saved audit, with the same source-result hash.
+
+Only one fresh Arb768 scalar evaluation is permitted. It uses `I0=h+(h-1/2)*p+sqrt(h)*exp(-h)/sqrt(pi)` to reduce the producer's repeated-p dependency; the anchor K uses `erfc(1/2-s)/2-exp(2s)*erfc(1/2+s)/2`, followed by its derivative ratio and tangent intercept. Tau at zero is independently enclosed by exact endpoint monotonicity `(1-pU)/pU` and `(1-pL)/pL`. All fresh ranges must be contained in the saved positive Arb512 scalar ranges; mere overlap is insufficient.
+
+The complete new special-call budget is exactly exp3, erfc2, sqrt(h)1, sqrt(pi)1 and pi constant1, at precision768. Each attempt is capped before invocation and its completed/raised/inflight status is kept. These are counts of named scalar special calls, not instrumentation of every FLINT arithmetic/bootstrap instruction. No Cauchy sqrt is recomputed: all 147 paid root intervals must be positive and satisfy `lo^2<=P<=hi^2` with exact rationals. Every root key must be canonical, unique and used. A pruned seed uses the exact sufficient inequality `I0_L^4>=16P*p_U^4`; then its true minimum is p^2 over the whole parameter interval.
+
+No precision, expression or fallback is changed after a failure. If the new enclosure does not fit a saved scalar or the runtime/API differs, this registered audit stops and preserves failure. It cannot claim a certificate by trusting an unsupported producer value.
+
+## Complete independent finite reconstruction
+
+The checker reconstructs the 32 body vectors `(1,sign2,...,sign6)` in the original fixed order. From the frozen six cone rays it independently recomputes all absolute body dot products, verifies the L1 ray rates and node/rate identities, and computes alpha from a literal 720-permutation six-by-six determinant divided by the rate product. This is a finite identity check of the saved fan, not generation of another fan or a numerical angular baseline. The inherited fan's complete cover proof is not rerun.
+
+For all 21 cones and all 496 unordered pairs, independently organized block-product intervals produce the complete finite candidate family. Candidate identities and tie priorities are explicit. Saved flat/best intervals, determinant, cap count and both minimum selectors must all match exactly. All unweighted cone sums and positive alpha-weighted totals are then independently reconstructed and multiplied by inherited kappa once. Original budgets and every exact 7e-8/8e-8/146-cap comparison must match. All 10,416 identities, 229,314 actual caps, 156,240 column determinants, 468,720 pairing products, 73,524 exact prunes and 147 used paid roots must reconcile to the producer's counts. The maximal allowed cap budget is 364,560.
+
+The old C130 complete **actual** moment lower endpoint is checked against each new certified upper endpoint. A contradiction fails the audit. No display decimal is used. C156 BL is never substituted for that actual lower bound. C146's old valid cap and its exact sufficient-threshold interfaces are read from their frozen source. A prospective pass certifies only the fixed new beta2 upper candidate and its comparisons; later M optimization, global g and C6 qualifications remain separate.
+
+## Execution and unknown states
+
+Only Terra may prepare this separate root, freezing all source/input/old-cert/runtime files and source-result/observer chains. All source paths are read only. The unique evaluator requires a concrete exact-hash release, main and independent approvals, fixed source/runtime versions, one process/CPU, nice15 and the five one-thread environment settings. There is no wall/CPU ceiling. Actual PIDs and full wait4 CPU/wall are captured by the separate one-shot observer. New outputs are local only.
+
+One scalar checkpoint and one checkpoint per completed cone preserve verified progress. A caught failure writes observed progress and special-call uncertainty, without claiming the complete pair sum. A lost process leaves uncheckpointed work unknown; the observer never invents final zero counts or automatically reruns. API/cap/consistency failure is evidence about this audit, not a universal mathematical-family exclusion. No new density, old functional, 6D grid, optimizer, MC/native integral, staged commit, push or recursive agent is involved.

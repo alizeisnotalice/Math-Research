@@ -1,0 +1,7 @@
+# C129 sealed evidence
+
+Read SELECTION.md and archive_receipt.json. Six chunks concatenate in the order in build_receipt.json to one gzip tar stream. inventory.jsonl.gz records every original relative path and SHA; 18257 zero-byte stderr paths have storage=empty and can be recreated as empty files in a fresh extraction directory. No original path or original embedded absolute provenance was edited.
+
+To verify bytes, copy this complete v2 directory to a new writable directory, then run python3 verify_bundle.py there; it writes verify_receipt.json. Do not overwrite the sealed receipt. Full mathematical review is audit/upper129_terminal/REVIEW.md and its source manifest. Any mathematical replay also uses a new independent output directory, with old121/127 sources materialized from their existing bundles and exact paths resolved deliberately. Do not start run_prepared_129.py or old live launchers merely to verify the archive.
+
+The archive-worker checkout was incomplete due to a missing unrelated other-project Git object; neither that object nor another project was modified. Main verified selected file/chunk hashes in its existing independent research clone before integration. An earlier unfinished archive build was stopped for selection review and remains in the archive worker local directory, excluded here; it has no mathematical outcome. The v2 build and full streaming verification succeeded separately, once each.

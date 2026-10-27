@@ -1,0 +1,19 @@
+# C161 v2 incremental static gate — PASS for prepare-only
+
+Both initial resource/sample receipt qualifications are resolved in the new separate v2 source packet. The concrete Terra case packet, source freeze, registration and prepare receipt remain pending before the final scientific gate. No RNG, mathematics, prepare/preflight, numerical API or interruption fixture was executed by this reviewer. The unchanged mathematical/diagnostic qualifications are inherited from `INITIAL_REVIEW.md`.
+
+Frozen v2 manifest: `5f7de9b65c3411ffc1814d6aba9551de604f9c36b4655a96f824477555e6a759`; runner: `411bedfbaea0f2483c056046277b65de532f387312bd05396f4e72f7fda94a53`; core: `c624bb3e1e31d0ac2eaa16ac01181b3b8236d80727e35e9331887e53d1f6c27e`. Source location is `/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-localmax-audit/cube-dim-6-bounds/upper/round161/true_beta2_rqmc_diagnostic/source_packet_v2`.
+
+## Shutdown evidence
+
+The controller now sets stop in the exceptional body before cleanup, then explicitly calls `pool.shutdown(wait=True,cancel_futures=False)` in `finally`. Its reap flag begins null and becomes true only on an observed normal return from shutdown. An interruption during shutdown keeps the flag null/UNKNOWN, preserves shutdown traceback and reports child CPU as an observed reaped subset. It no longer infers complete reaping merely from reaching the outer final receipt. Returned worker PIDs and submitted IDs without returns remain available for operator reconciliation; missing returns do not establish zero samples or erase ownership. Original issued records and job intents remain immutable. No shutdown/interrupt test was used to reach this static conclusion.
+
+## Sampling evidence
+
+The worker now begins with a planned/no-request state rather than `new_samples_started=True` on entry to the evaluator. It records constructor attempt, point request inflight, returned-but-unvalidated, and complete validated 16384-point phases separately. A pre-RNG import/version failure leaves zero point requests and known zero actual points. Before a request it marks actual counts unknown; only a successful shape/range/finite validation sets actual16384 points and a known count. The exceptional path also resets point/coordinate counters to null when an interrupt falls between lifecycle-state updates and counter updates. An unreturned request cannot be mislabeled as zero generated samples.
+
+The sampling operation and mathematical plan are unchanged: the same Sobol constructor arguments and one random_base2(m=14) call per job,53-bit U with legitimate0 and strict U<1, no shifting/clipping/rejection, shared Exp6 inputs for all32 bodies, and the stable erfcx kernel with positive prefix e2. The numerical block from np.errstate through return is byte-identical. `prepare.py`, `common.py`, `plan.json` and `source_pins.json` are byte-identical, preserving the exact168-job seed-label rule and all finite counts. V1 files and their original `b28d...8787` manifest are unchanged.
+
+The new science release round is explicitly `C161_V2_TRUE_BETA2_RQMC_DIAGNOSTIC`, rejecting accidental reuse of an old-round science release. This revision supplies no numerical estimate, accuracy certificate or runtime/API success evidence. The nonstrict descriptive mean/replicate-dispersion interpretation, fixed15-worker/nice19/thread1/no-timeout/no-retry protocol, no old baseline or density dependency, and no strict mu2/Cn claim remain intact.
+
+There is no remaining code-only blocker to main's separate Terra prepare-only authorization for these exact bytes. Final main/independent release still requires the newly prepared frozen metadata, source hash, versions,168 unique seed/job identities and registration. A mixed v1/v2 deployment or any science before that concrete gate is outside this review. No author source, live model, staged index or remote was modified.
