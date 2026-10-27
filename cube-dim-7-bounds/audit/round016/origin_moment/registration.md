@@ -1,0 +1,7 @@
+# R016 independent finite origin-moment audit registration
+
+2026-10-27. New no-hardlinks sparse independent clone at HEAD14f3507f406185667f84146328f1db9da3f9949a. Sole write scope audit/round016/origin_moment. Earlier rounds sealed; no edits elsewhere, no commit/push, MATLAB, subagents, phase/DD/MC or new physical point.
+
+Before arithmetic: fix scope to independently derive the positive-frequency Tonelli identity at the actual point0; rawZ seventh-moment origin bound; common-time Gaussian normalization and complete-boundary factor896; Gamma32 radial conditioning, strict eta and its powers; exact sum of the212saved positive rational alpha weights; same copied fan/R006 hashes; ten frozen scalar formulas at768bits and their outward endpoint/rational budget comparison. No scientific enumeration or mesh. Compare the old R006 true budget expression in its lower direction without calling it actualI lower. Any conditional g=1/320000 remains unproved. R015 only obstructs its old g targets/fixed old numerator. Produce independent stdout-only portable checker, exactresults, self-contained review/sourcehash/receipt/manifest; preserve failures/repairs and stop.
+
+The raw formula and radial-conditioned formula are distinct; D^7 is not a seventh radial moment. New point_theory/math source is read as source, not accepted by author status. The original allr/generalL1 comparison is a retained proof dependency; only I is replaced. Parent retains overall proof responsibility.

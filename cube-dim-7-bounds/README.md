@@ -63,3 +63,5 @@ R013真实结论见rounds/013.md；最新状态以STATE.md与准确账本为准�
 R014真实结论见rounds/014.md；最新状态以STATE.md与准确账本为准。
 
 R015真实结论见rounds/015.md；最新状态以STATE.md与准确账本为准。
+
+R016真实结论见rounds/016.md；最新状态以STATE.md与准确账本为准。
