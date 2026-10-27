@@ -1,6 +1,6 @@
-# 七维真实状态（R020）
+# 七维真实状态（R021）
 
-UPPER_ACTIVE；LOWER_PAUSED。严格下界C7>2136578727666/10^12；当前完整严格算子上界128。最新结论与准确比较见rounds/020.md、results/bounds_ledger.json。目标未完成。
+UPPER_ACTIVE；LOWER_PAUSED。严格下界C7>2136578727666/10^12；当前完整严格算子上界77436179562403/1000000000000。最新结论与准确比较见rounds/021.md、results/bounds_ledger.json。目标未完成。
 
 固定Lebesgue、中心共同半径方体、一般L1、全部正尺度。R021直接selection证明无需Green奇异性迁移；Green中R001真实S3与小时间、whole-space源接口仍按原范围保留。不得把H当G或从4D直接照搬连续性。I预算4018421141119/10^18有效但不是新Cn来源。
 

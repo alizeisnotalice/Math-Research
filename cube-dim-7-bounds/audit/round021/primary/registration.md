@@ -1,0 +1,1 @@
+R021 primary finite independent scalar: n=7,a=64 only; log2 via 128 rational atanh terms at1/3 and geometric upper tail. No numerical optimization, phase, shape, or lower work. Compare exact enclosing rationals with the Terra grid upper77436179562403/10^12 and128. This scalar does not alone prove selection theorem. Lock program/source before execution.

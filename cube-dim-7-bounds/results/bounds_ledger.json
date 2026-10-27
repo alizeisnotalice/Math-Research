@@ -1,9 +1,9 @@
 {
   "dimension": 7,
-  "updated_utc": "2026-10-27T11:13:49.800624+00:00",
-  "status": "upper_active_lower_paused_after_round020",
+  "updated_utc": "2026-10-27T11:13:50.091073+00:00",
+  "status": "upper_active_lower_paused_after_round021",
   "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-  "current_round": 20,
+  "current_round": 21,
   "lower": {
     "status": "complete_strict_primary_and_independent_full_union",
     "exact_construction": "R006: a1=(8^(1/7)+288^(1/7))/2; six tails(1+2^(1/7))/2; full8192 halfcell union times128",
@@ -27,39 +27,28 @@
     "family_exhausted": false
   },
   "upper": {
-    "exact": "128",
-    "new_bound": false,
-    "status": "verified_public_generic_retained",
-    "public_source": "Aldaz arXiv1811.10478v2 Corollary3.5",
-    "theory": "upper/round001/theory/proof.md",
-    "theory_audit": "audit/round001/theory/review.md",
-    "complete_I_upper": "4018421141119/1000000000000000000",
-    "complete_I_scope": "strictly valid bound for body64 potential face integral, not a C7 bound",
-    "I_proof": "upper/round016/origin_moment_theory/proof.md",
-    "I_independent_audit": "audit/round016/origin_moment/proofreview.md",
-    "conditional_g_target": "1/320000",
-    "conditional_g_target_proved": false,
-    "conditional_cost_below128": true,
-    "conditional_cost_is_C7_bound": false,
-    "missing": [
-      "globally certified competitive essential cube g0 for the same original process",
-      "strict valid C7 cost comparison after all premises"
+    "exact": "77436179562403/1000000000000",
+    "relation": "C7 < exact",
+    "new_bound": true,
+    "status": "complete_strict_operator_upper_primary_and_two_independent_theory_reviews",
+    "expression": "[1+(33/32)^7]*[1+(65/64)^7*(1+42*log(2))]",
+    "range": "Lebesgue; centered common-radius cubes; every L1 input and all positive scales",
+    "proof": "upper/round021/explicit_public_upper/PROOF-DRAFT.md",
+    "proof_status_note": "source frozen as draft, final theorem accepted in rounds/021.md and two reviews",
+    "audits": [
+      "audit/round021/explicit_public_upper/proofreview.md",
+      "audit/round021/ss_parameter_theory/proof.md"
     ],
-    "complete_I_upper_previous": "6786705917228899846376183916068183109588692602262595554118344488289543544386872998915571264617464281541351664188315251994609635308472494035179847016386777/878694100496718043517683302282418331810487718418343092402491322775749527474899974671687634004666183037093927858109549828751614463963730408009475621262727315456",
-    "complete_I_expression": "eta*(5040*A_sum)^(1/6)/(840*pi^(5/3)); eta=Gamma(65/2)/Gamma32 / ((65/2)*(67/2)*(69/2))^(1/6)",
-    "I_budget_improved": true,
-    "I_budget_is_C7_improvement": false,
-    "failed_g_probe_use": "finite-cache full-G optimization selected8 points with exactS3 membership; G=infinity; these are not counterexamples to g target",
-    "old_g_target_1over179000_refuted": true,
+    "scalar": "upper/round021/ss_scalar/result.json",
+    "independent_scalar": "audit/round021/primary/result.json",
+    "independent_checker": "audit/round021/primary/check.py",
+    "old_operator_upper": "128",
+    "strict_comparison_with_old_upper": true,
+    "public_explicit_baseline_verified": "128; not claimed exhaustive optimum",
+    "provenance": "internal explicit quantitative derivation from published Stein-Stromberg 1983 proof, not an already published numeric theorem",
     "complete_I_rational_upper": "4018421141119/1000000000000000000",
-    "I_primary_checker": "audit/round016/origin_moment/minchecker.py",
-    "old_g_targets_refuted": [
-      "1/219000",
-      "1/194000",
-      "1/179000"
-    ],
-    "g_refutation_certificate": "upper/round015/green_point/result.json",
-    "conditional_cost_sixth_power_exact": "3467520043407020568600308581402817201103836312444436657610273062255536417685102583/2910383045673370361328125000000000000000000000000000000000000000000000"
+    "I_proof": "upper/round016/origin_moment_theory/proof.md",
+    "I_budget_is_C7_improvement": false
   },
   "public_best_verified": {
     "qualification": "best among sources actually checked in finite directed search; not exhaustive global claim",
@@ -120,7 +109,8 @@
       "R006 finiteL1 lower unchanged, LOWER_PAUSED",
       "R015 exact trueG point and local target refutation",
       "R016 complete originalG I budget",
-      "R017 restricted proxy certificate-chain barrier"
+      "R017 restricted proxy certificate-chain barrier",
+      "R021 complete operator C7<77436179562403/10^12 via direct selection; two independent proofs and rational scalar certificate"
     ],
     "numerical_candidates": [
       "R007 empirical matrix hierarchy only; no strict expectation value"
@@ -139,13 +129,13 @@
     ]
   },
   "new_lower": false,
-  "new_upper": false,
+  "new_upper": true,
   "objective_complete": false,
   "next_focus": "direct Stein-Stromberg quantitative selection; no lower work",
   "publication_status": "internal, not claimed publicly published",
   "archival_status": "round010 sealing; normal shared-main synchronization pending",
   "last_archived_commit": "22208695024e443ac5307e242d5a11a29593bd60",
-  "active_batch": "R021 direct covering proof acceptance in progress",
+  "active_batch": "R021 closed; next finite SS parameter optimization to be separately registered",
   "lower_history": [
     {
       "round": 1,
@@ -487,5 +477,44 @@
   "round020": {
     "report": "rounds/020.md",
     "new_C7_bound": false
+  },
+  "round021": {
+    "report": "rounds/021.md",
+    "new_C7_bound": true
+  },
+  "upper_pre_R021": {
+    "exact": "128",
+    "new_bound": false,
+    "status": "verified_public_generic_retained",
+    "public_source": "Aldaz arXiv1811.10478v2 Corollary3.5",
+    "theory": "upper/round001/theory/proof.md",
+    "theory_audit": "audit/round001/theory/review.md",
+    "complete_I_upper": "4018421141119/1000000000000000000",
+    "complete_I_scope": "strictly valid bound for body64 potential face integral, not a C7 bound",
+    "I_proof": "upper/round016/origin_moment_theory/proof.md",
+    "I_independent_audit": "audit/round016/origin_moment/proofreview.md",
+    "conditional_g_target": "1/320000",
+    "conditional_g_target_proved": false,
+    "conditional_cost_below128": true,
+    "conditional_cost_is_C7_bound": false,
+    "missing": [
+      "globally certified competitive essential cube g0 for the same original process",
+      "strict valid C7 cost comparison after all premises"
+    ],
+    "complete_I_upper_previous": "6786705917228899846376183916068183109588692602262595554118344488289543544386872998915571264617464281541351664188315251994609635308472494035179847016386777/878694100496718043517683302282418331810487718418343092402491322775749527474899974671687634004666183037093927858109549828751614463963730408009475621262727315456",
+    "complete_I_expression": "eta*(5040*A_sum)^(1/6)/(840*pi^(5/3)); eta=Gamma(65/2)/Gamma32 / ((65/2)*(67/2)*(69/2))^(1/6)",
+    "I_budget_improved": true,
+    "I_budget_is_C7_improvement": false,
+    "failed_g_probe_use": "finite-cache full-G optimization selected8 points with exactS3 membership; G=infinity; these are not counterexamples to g target",
+    "old_g_target_1over179000_refuted": true,
+    "complete_I_rational_upper": "4018421141119/1000000000000000000",
+    "I_primary_checker": "audit/round016/origin_moment/minchecker.py",
+    "old_g_targets_refuted": [
+      "1/219000",
+      "1/194000",
+      "1/179000"
+    ],
+    "g_refutation_certificate": "upper/round015/green_point/result.json",
+    "conditional_cost_sixth_power_exact": "3467520043407020568600308581402817201103836312444436657610273062255536417685102583/2910383045673370361328125000000000000000000000000000000000000000000000"
   }
 }
