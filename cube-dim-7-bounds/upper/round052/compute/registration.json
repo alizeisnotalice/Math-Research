@@ -1,0 +1,34 @@
+{
+  "batch": "R052",
+  "model_status": "conditional scalar candidate only; no operator-bound claim before R051 audit and full cost comparison",
+  "R045_source_sha256": "22db93b275416b90e9f15a0118a88cd412fee0c2d0b20c4cce1ed32769f259ac",
+  "R051_source_status": "proof in progress; no frozen theorem hash yet",
+  "code_sha256": "ae558a0a04ccf71242f74e048117c06014d03b2dc1a4f2696bc71e64721d2454",
+  "equivalence_sha256": "eea422b160ddcd6f44f5f08d02988775244946a533903d59766f1f50c3b927ee",
+  "A_inclusive": [
+    32,
+    256
+  ],
+  "a": "A/8 = 4+k/8, k=0..224",
+  "rho_numerators_over16": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128
+  ],
+  "d": "k/2^20, k=1..4096",
+  "tuple_count": 7372800,
+  "guard_policy": "reject d>=1/(32a), sigma>=1/2, nonpositive bracket; count all guards; other declared guards hold on registered ranges",
+  "chunk": "one A and 512 consecutive k, all eight rho; 1800 chunks",
+  "workers": 15,
+  "thread_env": 1,
+  "local_top": 32,
+  "global_top": 64,
+  "stop": "all 7372800 tuples exactly once; no time cap, no unbounded grid",
+  "monitor": "0.5s initial, then 5s",
+  "registered_unix_time": 1793133524.5850391
+}
