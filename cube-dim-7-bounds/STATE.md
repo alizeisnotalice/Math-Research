@@ -1,6 +1,6 @@
 # 当前状态：一般高维覆盖持续攻关
 
-HIGH_DIM_COVER_ACTIVE；LOWER_PAUSED；N7_SPECIFIC_STOPPED。已接受轮次及准确域见results/general_cover_ledger.json；当前本次整合到R051。R051泛预算族对每个固定合格tuple给原算子上界，R053与R055分别量化raw/simple tuple，不靠搜索最优性。所有结论仍leading nlogn系数1、内部未发表，其他旧界只在自身valid域取minimum。
+HIGH_DIM_COVER_ACTIVE；LOWER_PAUSED；N7_SPECIFIC_STOPPED。已接受轮次及准确域见results/general_cover_ledger.json；当前本次整合到R053。R051泛预算族对每个固定合格tuple给原算子上界，R053与R055分别量化raw/simple tuple，不靠搜索最优性。所有结论仍leading nlogn系数1、内部未发表，其他旧界只在自身valid域取minimum。
 
 R048当前30页PDF已独立全文ACCEPT及主实际编译渲染，是早期R045核心稿；R054正在整合最新generic及显式实例，未提前冒充已完成。R044/046/047/052数值或有限证书与完整Cn theorem分开，实际本机R047峰15worker合计1461.3%CPU，长尾平均非满核，不虚构持续利用率。
 

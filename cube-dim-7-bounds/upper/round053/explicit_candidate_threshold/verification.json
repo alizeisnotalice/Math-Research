@@ -1,0 +1,88 @@
+{
+  "status": "PASS: exact fixed-tuple and threshold gates; operator conditional on R051 full ACCEPT",
+  "operator_status": "conditional draft; generic R051 full chain acceptance required",
+  "candidate_threshold": "log(n)>=2^32",
+  "comparison_formula_domain": "log(n)>=2^40; each old operator keeps its own valid domain",
+  "exact_fields": {
+    "a": "73/8",
+    "s": "293/16",
+    "d": "1023/1048576",
+    "u_lo": "3579/8200",
+    "u_hi": "8796093022208/7674592741893",
+    "mass": "64449/134315936",
+    "M": "4",
+    "bracket": "11148919/38310400",
+    "delta_lim": "718536680631/20582788938137600",
+    "delta": "735063024285513/21076775872652902400",
+    "sigma": "306632997/17592186044416",
+    "penalty": "306632997/17591879411419",
+    "c_raw": "6468305130094850733787980147/370780099533215320770594052505600"
+  },
+  "epsilon_A": "1/64",
+  "other_epsilons": "1/1024",
+  "chosen_c": "1/65536",
+  "checks": {
+    "domain_a_s": true,
+    "domain_d_sigma": true,
+    "all_error_domains": true,
+    "positive_bracket": true,
+    "exact_M_branch": true,
+    "craw_above_chosen_c": true,
+    "h_over_d": true,
+    "zeta_t_over_h": true,
+    "shift_below_half_d": true,
+    "q_bridge_lower": true,
+    "q0_upper": true,
+    "R_bridge": true,
+    "rho_geometry": true,
+    "g_range": true,
+    "baseline_abs_mean": true,
+    "tight_baseline_variance": true,
+    "log_Cheb_probability": true,
+    "Kw_Cheb_probability": true,
+    "target_cap_probability": true,
+    "target_cap_geometry": true,
+    "individual_J_precision": true,
+    "product_exact_P0": true,
+    "Ld": true,
+    "source_decay_positive": true,
+    "source_cap_epsS": true,
+    "tau_decay_exact": true,
+    "tau_base_argument": true,
+    "tau_base_prefactor": true,
+    "tau_epsT": true,
+    "fixed_epsD_margin": true,
+    "budget_positivity": true,
+    "scalar_base_argument": true,
+    "full_scalar_slack": true,
+    "comparison_new_domain": true,
+    "comparison_old_delta42": true,
+    "comparison_old_R049_R042": true,
+    "comparison_old_sqrt_log_base": true,
+    "comparison_old_q_full_cost": true
+  },
+  "sources": {
+    "R051_generic_pending": {
+      "path": "/Users/zhengzhihao/Desktop/T/cube-r030-geometry/cube-dim-7-bounds/upper/round051/flexible_budget/PROOF.md",
+      "sha256": "aeddd67b7a2109d402ea76d9f6fb3d93accf44bea80240340bd163759a7c9df6"
+    },
+    "R052_results": {
+      "path": "/Users/zhengzhihao/Desktop/T/cube-r030-compute/cube-dim-7-bounds/upper/round052/compute/results.json",
+      "sha256": "9b088d1c38f1e61cdb7314c6088483c0c84704488ac9b9ddf344e92fbb65dda7"
+    },
+    "R052_retained_check": {
+      "path": "/Users/zhengzhihao/Desktop/T/cube-r030-compute/cube-dim-7-bounds/upper/round052/compute/verify_top64.json",
+      "sha256": "c3d3f9f3d921a9f7f1875c70872a990f8dec89f2dcde042ea220cd4a20a05371"
+    },
+    "R052_independent_audit": {
+      "path": "/Users/zhengzhihao/Desktop/T/cube-r030-num-audit/cube-dim-7-bounds/audit/round052/README.md",
+      "sha256": "30a6e5cd894debf7e76278f6bd71dfe8a6b68496758bc8dff473853ea136d38b"
+    }
+  },
+  "source_sha256": {
+    "THRESHOLD_PROOF.md": "26adb4e31f0026637ea17d8f7943bc2933dce97b8655e121f2604b6ddeea2775",
+    "verify_threshold.py": "cf55cc9bc464babfb591fc4d25055e611d61ab2048823f38a5d0b0b0c7074543"
+  },
+  "no_grid_replay": true,
+  "no_production_computation": true
+}
