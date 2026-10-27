@@ -1,0 +1,131 @@
+{
+  "batch": "R047",
+  "model": "complete source pinned-face cross-radius second moment; numerical diagnostics, not a Cn theorem",
+  "code_sha256": "cd36c22d1f9dd78fd15a0f22e438dd7bb9f2bc7f8cf1fe6257dbad17a29a9551",
+  "micro_sha256": "6c3b4bc5cab02d6026327e380b745397f8392e5eee2d01c6e50eaf71ae047c9f",
+  "cases": [
+    {
+      "m": 32,
+      "d": "1/256"
+    },
+    {
+      "m": 32,
+      "d": "1/4096"
+    },
+    {
+      "m": 32,
+      "d": "1/65536"
+    },
+    {
+      "m": 64,
+      "d": "1/256"
+    },
+    {
+      "m": 64,
+      "d": "1/4096"
+    },
+    {
+      "m": 64,
+      "d": "1/65536"
+    },
+    {
+      "m": 128,
+      "d": "1/256"
+    },
+    {
+      "m": 128,
+      "d": "1/4096"
+    },
+    {
+      "m": 128,
+      "d": "1/65536"
+    },
+    {
+      "m": 256,
+      "d": "1/256"
+    },
+    {
+      "m": 256,
+      "d": "1/4096"
+    },
+    {
+      "m": 256,
+      "d": "1/65536"
+    },
+    {
+      "m": 512,
+      "d": "1/256"
+    },
+    {
+      "m": 512,
+      "d": "1/4096"
+    },
+    {
+      "m": 512,
+      "d": "1/65536"
+    }
+  ],
+  "grid": {
+    "u_over_d": [
+      "1/4",
+      "17/60",
+      "19/60",
+      "7/20",
+      "23/60",
+      "5/12",
+      "9/20",
+      "29/60",
+      "31/60",
+      "11/20",
+      "7/12",
+      "37/60",
+      "13/20",
+      "41/60",
+      "43/60",
+      "3/4"
+    ],
+    "theta1": [
+      "-1",
+      "-13/15",
+      "-11/15",
+      "-3/5",
+      "-7/15",
+      "-1/3",
+      "-1/5",
+      "-1/15",
+      "1/15",
+      "1/5",
+      "1/3",
+      "7/15",
+      "3/5",
+      "11/15",
+      "13/15",
+      "1"
+    ],
+    "theta2": [
+      "-1",
+      "-13/15",
+      "-11/15",
+      "-3/5",
+      "-7/15",
+      "-1/3",
+      "-1/5",
+      "-1/15",
+      "1/15",
+      "1/5",
+      "1/3",
+      "7/15",
+      "3/5",
+      "11/15",
+      "13/15",
+      "1"
+    ]
+  },
+  "cartesian_triples_per_case": 4096,
+  "workers": 15,
+  "precision_dps": 80,
+  "integration": "exact piecewise first-moment primitives; mpmath piecewise 1D quad of shared delta1*delta2; cache swapped radius pairs",
+  "limit": "4096 triples per task; stop that task on first numerical >4096 or invalid geometry; no new scans",
+  "monitor": "first 0.05s then 5s",
+  "registered_unix_time": 1793131199.537063
+}
