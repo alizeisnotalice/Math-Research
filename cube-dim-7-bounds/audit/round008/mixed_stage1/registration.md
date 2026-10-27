@@ -1,0 +1,5 @@
+# R008 mixed StageI independent Sol audit registration
+
+2026-10-27. New independent clone; sole writable directory audit/round008/mixed_stage1/. All earlier rounds and other workspaces read-only. No MATLAB, commits/pushes, subagents, new strategy or StageII. Stop after this StageI audit.
+
+Fixed scope before mathematical execution: read full R007 mixed_moment_design and actual Terra StageI source/registration/results/receipts; independently review exchangeable positive weighted Mellin F_j, coefficient sums C_j, absolute Mellin/Fourier domain, non-modsquare cross-kernel, crossed-endpoint Cstar maximum, signed Taylor panels and symmetric absolute tails, positive l7 Minkowski lower bound for mean H, complete old q reuse, mu/materiality gate quantifiers. Numerical support limited to exact 256-ledger dyadic sums and four768-bit fixed scalar integral-error reassemblies, followed by fixed LH/materiality endpoint arithmetic. No panel recomputation or StageII moments. Portable checker prints JSON only, with source-dir CLI args; retain real repairs, failures and source hashes. A failure to reach31/500 rejects this certificate surrogate, not actual M or C7. No wall cap.

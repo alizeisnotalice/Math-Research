@@ -1,13 +1,13 @@
 # 七维当前真实状态
 
-UPPER_ACTIVE，LOWER_PAUSED。用户最新明确暂停下界、全力上界，覆盖此前恢复低资源；不启动余57事件。停在严格C7>2136578727666/10^12，上界128。全部准确原件及比较门槛以R006结果/账本为准，不能由小数重造。原三四维项目及暂停状态未动。
+UPPER_ACTIVE，LOWER_PAUSED。最新用户明确暂停下界、全力上界；不启动余57事件。停在严格C7>2136578727666/10^12，上界128。下界完整准确区间在lower/round006/results.json，不能从展示小数重造。原三四维资料包及其暂停状态未动。
 
-当前完整原G积分 I<7723627498344/10^18，仍缺全域g，g0=1/219000仅条件，未给新Cn上界。固定Lebesgue、中心轴平行cube、共同半径、一般L1、全部正尺度；原R001七维S3/小时可积性、whole-space source及sameD allr/generalL1接口保持。
+当前完整原G积分 I<7723627498344/10^18。仍缺全域g；g0=1/219000仅条件，127.141不是新的Cn界。固定Lebesgue、中心轴平行cube、共同半径、一般L1、全部正尺度；R001真实S3/小时间、whole-space source/sameD allr/generalL1链保留。
 
-R00715×2^20新Dirichlet矩阵slack诊断全部15任务terminal，Z0=.03174、Z1=.07480、Z2=.08104仅经验均值；矩阵与标量gap约6.9倍，不能从严界扣样本差。1997同输入128decimal回退，2浮点层级异常复核通过，0弃样/重采。精简归档将完整终态及所有回退输入无损gzip，删除重复pretty results与进度日志的仓内副本，原件在独立clone保留；compact checker实际PASS。
+R008256 signed mixed-Mellin面板全部terminal，768bit独审及主可携带重组PASS，严格LHupper<1。此固定Jensen surrogate的正mu gate失败，StageII未启动；不是实际矩阵增益为负、不是模型或Cn反例。certificate里legacy optimistic_surrogate_M_lower仅负mu形式值，域外无lower语义，未纳入接受账本。没有新I/g/Cn。
 
-R008 signed mixed-Mellin StageI256面板已在独立clone完成并经独审确认LH<1，正mu门槛失败；StageII未启动，主待归档。没有新I/g/Cn。当前无在飞数值runner、无自动新批；新策略先有限登记与真实句柄检查。
+R00715mshape诊断仅经验，已封存；无旧fullG伪最小化重跑。R009新ordered-frequency arrangement ray理论/精确有限枚举已授权：先Sol冻结29mixed prefix normals+7domain facets，Terra15进程枚举C36,6=1947792 exact6×7kernels。先检查真实句柄/登记再接续，不重复启动。它不是R00321谱顶点catalog，不自动等于完整fan triangulation/Green/g证；未来闭式H_eps接口需完整覆盖及signedperm cone求和。下界没有runner。
 
-R002–006各独立提交已推送；2026-10-27实际HTTPS ls-remote确认main=22208695024e443ac5307e242d5a11a29593bd60，包含R004/005，GitHub compare API本次TLS超时不作为确认。R007独立提交推送，网络失败保留并普通同步，禁强推。
+R002–006各独立提交已推送，HTTPS ls-remote确认22208695024e443ac5307e242d5a11a29593bd60包含全部；R007本地0678a2a2已提交，HTTPS fetch遇SSL中断待同步重试。R008独立提交，同步状态以实际push/ref回执为准，禁强推。
 
-本机15核24GiB共享，Sol推导/Terra数值、主串行MATLAB；无clear/path/cwd重置，有限批无总wall限。R007wall24.220s/CPU153.416s≈6.33核，其他维度共享，不能称满核。整体目标仍active未完成。
+本机15核24GiB共享，Sol推导/Terra操作、主串行MATLAB，无clear/path/cwd重置。每批有限参数/状态，无总wall限，不填无用内存占资源。整体goal active未完成。

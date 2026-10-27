@@ -1,9 +1,9 @@
 {
   "dimension": 7,
-  "updated_utc": "2026-10-27T06:55:57.205698+00:00",
-  "status": "upper_active_lower_paused_after_round007",
+  "updated_utc": "2026-10-27T07:15:53.754414+00:00",
+  "status": "upper_active_lower_paused_after_round008",
   "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-  "current_round": 7,
+  "current_round": 8,
   "lower": {
     "status": "complete_strict_primary_and_independent_full_union",
     "exact_construction": "R006: a1=(8^(1/7)+288^(1/7))/2; six tails(1+2^(1/7))/2; full8192 halfcell union times128",
@@ -22,7 +22,7 @@
     "new_bound": false,
     "strictly_above_previous_full_interval_upper": true,
     "comparison_rule": "Use complete accurate current construction upper endpoint, not simple threshold or displayed decimal.",
-    "search_status": "PAUSED by latest explicit user instruction; no next event authorized",
+    "search_status": "PAUSED latest user instruction; no lower runner or future event batch",
     "remaining_unevaluated_events": 57,
     "family_exhausted": false
   },
@@ -111,31 +111,30 @@
   },
   "status_classes": {
     "complete_strict": [
-      "retained R006 finiteL1 lower and complete I budget",
-      "R007 per-shape matrix/scalar diamond and envelope D/64 (no new I)"
+      "retained R006 operator lower and complete I budget",
+      "R008 complete signed-Mellin surrogate interval and failed positivity gate"
     ],
     "numerical_candidates": [
-      "R007 15728640-shape same-input matrix slack hierarchy; empirical gap ratio6.9, not expectation certificate"
+      "R007 empirical matrix hierarchy only; no strict expectation value"
     ],
     "excluded": [
       "eight selected full-G low candidates as real minima: all exactly inS3 with G=infinity",
-      "uniform additive finite-cache error budget on fullface/complementS3 is impossible"
+      "uniform additive finite-cache error budget on fullface/complementS3 is impossible",
+      "R008 fixed optimized CB/Jensen lower surrogate: certified LHupper<1, cannot certify positive matrix correction; not an actual-matrix/operator exclusion"
     ],
     "local_or_conditional": [
-      "unexecuted R007 mixed-moment design; independent R008 candidate tested separately; no new g"
+      "remaining global g target unproved; R009 structure is not yet a Green/g certificate"
     ],
-    "calculation_failures": [
-      "1997 same-input128decimal fallback rows; 2 float hierarchy tolerance anomalies resolved at high precision, no discarded/resampled row"
-    ]
+    "calculation_failures": []
   },
   "new_lower": false,
   "new_upper": false,
   "objective_complete": false,
-  "next_focus": "strict matrix-pair moments with materiality gate; lower paused",
+  "next_focus": "exact polyhedral frequency representation of truncated Green; requires complete cones/triangulation beyond ray catalog",
   "publication_status": "internal, not claimed publicly published",
-  "archival_status": "R002–006 pushed and HTTPS remote refs confirmed22208695; R007 sealing",
+  "archival_status": "R008 sealing; normal push retries",
   "last_archived_commit": "22208695024e443ac5307e242d5a11a29593bd60",
-  "active_batch": "R008 mixed signed-Mellin StageI completed and gate failed; independent review/archive pending",
+  "active_batch": "R009 ordered-frequency arrangement rays: finite exact enumeration registered/released to Terra after frozen Sol proof",
   "lower_history": [
     {
       "round": 1,
@@ -323,5 +322,19 @@
         "I_primary_checker": "src/check_primary_round005.py"
       }
     }
-  ]
+  ],
+  "round008_failure": {
+    "status": "certified surrogate gate failure; not computation failure",
+    "LH_display_interval": [
+      "0.90127456571435855668",
+      "0.90127456571435855677"
+    ],
+    "certificate": "upper/round008/mixed_stage1/certificate.json",
+    "proof_audit": "audit/round008/mixed_stage1/proofreview.md",
+    "StageII_started": false,
+    "new_I": false,
+    "new_g": false,
+    "new_C7_upper": false,
+    "rejected_interpretation": "optimistic_surrogate_M_lower field is a formal negative-mu expression, has no valid lower-bound meaning; not entered in accepted budget"
+  }
 }
