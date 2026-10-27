@@ -1,0 +1,7 @@
+# R017 trace surrogate analytic materiality gate
+
+Separate fixed scalar gate after the already completed R017 cache diagnostic: do not rerun any cache row or add any sample. Theory proves tr B>=7 det(B)^(1/7), L_trace<=KD det(B)^(1/14)/343 and E L_trace<=C M/343; L_vertex<=L_trace. This is a ceiling only for the named surrogate expectations, not actual G or the true global floor. Source proof and registration are hash-locked before execution.
+
+At 512 bits produce exactly four named enclosures: K_barrier=7^(14/3)π³/840; U_proxy=C M0/343 with M0=(J0/F)^(6/7); g_required=7(J0/128)^(6/7); U_shape=CD/(343 sqrt2048). Here C=1/(2π^(7/2)), D=2Γ(65/2)/Γ32, F=1/(105·2^(25/6)π^(13/12)), J0=4018421141119/10^18 is the R016 rounded upper bound derived from the specific moment budget. The provenance of J0 makes M0>=actual M; an arbitrary I bound would not. Verify J0 against the copied R016 result/manifest, K_barrier>128, U_proxy<g_required, U_shape>0, both equivalent barrier forms overlap and U_proxy/g_required overlaps (128/K_barrier)^(6/7). Do not treat intermediate Gamma/pi/root operations as extra named scalar outputs.
+
+The barrier applies when the chosen lower certificate is at most E L_trace and the upper numerator is F M_U^(7/6) with M_U>=M. It is not an upper bound for actual g, not a lower bound for Cn, and does not exclude richer x-dependent or other I methods. No samples, vertices, phases, MATLAB, commit or push. Stop on failure; no expansion.

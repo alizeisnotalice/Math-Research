@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+"""Recheck same 4 scalar gates and exact R016 source; no shape or vertex evaluation."""
+from flint import arb,fmpq,ctx
+from fractions import Fraction
+from pathlib import Path
+import json,hashlib
+ctx.prec=512;p=Path(__file__).resolve().parent;sha=lambda q:hashlib.sha256(q.read_bytes()).hexdigest();m=json.loads((p/'manifest.json').read_text())
+for f,h in m['files'].items():assert sha(p/f)==h,f
+for line in (p/'prerun-sha256.txt').read_text().splitlines():
+ h,f=line.split('  ',1);q=Path(f);q=(p/'check-original.py.txt') if f=='check.py' else (q if q.is_absolute() else p/q);assert sha(q)==h,f
+old=json.loads((p/'r016-manifest.json').read_text());assert sha(p/'r016-result.json')==old['files']['result.json'];R=json.loads((p/'r016-result.json').read_text());S=json.loads((p/'result.json').read_text());E=S['enclosures'];J=Fraction(R['B_RB_rational_upper']);assert J==Fraction(4018421141119,10**18)==Fraction(S['J0'])
+def dy(a):return Fraction(int(a[0]))*Fraction(2)**int(a[1])
+def A(x):return arb(fmpq(x.numerator,x.denominator))
+def box(x):return A(dy(x['lower'])).union(A(dy(x['upper'])))
+pi=arb.pi();C=1/(2*pi**3*pi.sqrt());D=2*arb(fmpq(65,2)).gamma()/arb(32).gamma();F=1/(105*(arb(2).log()*arb(fmpq(25,6))).exp()*(pi.log()*arb(fmpq(13,12))).exp());M=((A(J)/F).log()*arb(fmpq(6,7))).exp();v=C*M/343;g=7*(A(J/128).log()*arb(fmpq(6,7))).exp();b=(arb(7).log()*arb(fmpq(14,3))).exp()*pi**3/840;shape=C*D/(343*arb(2048).sqrt())
+for name,x in [('K_barrier',b),('U_proxy',v),('g_required',g),('U_shape',shape)]:assert x.overlaps(box(E[name])),name
+assert dy(E['U_proxy']['upper'])<dy(E['g_required']['lower']) and dy(E['K_barrier']['lower'])>128 and dy(E['U_shape']['lower'])>0
+assert (v/g).overlaps(((A(Fraction(128))/b).log()*arb(fmpq(6,7))).exp()) and S['proxy_strictly_below_required'] and S['barrier_strictly_above_128']
+print('PASS: four same-input scalar gates, exact R016 numerator, strict surrogate ceiling and restricted-method cost barrier; no shapes, actual g upper or Cn lower.')
