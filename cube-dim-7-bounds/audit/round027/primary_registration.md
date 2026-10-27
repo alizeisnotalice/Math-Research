@@ -1,0 +1,1 @@
+R027 primary exact Fraction independent audit: exactly t=4,5,11/2,6,8. Aggregate full signed rational coefficients first; preserve possibly negative log coefficient; N128 rational log-tail and integer sqrt. Check Bcap>0, Bcap<B0, five-row winner and exact new/old comparison. No global t optimization, MC, phase or lower work.
