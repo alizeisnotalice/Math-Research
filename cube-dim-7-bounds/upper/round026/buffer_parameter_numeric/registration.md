@@ -1,0 +1,3 @@
+# R026 finite scalar registration
+
+Main released exactly 83 new function evaluations at 512-bit Arb: G at 5 and 6, 80 exact dyadic bisection midpoints, then F at the final midpoint. All input values and sign handling follow sources/registration.md and sources/parameters.json. Any unresolved sign stops; no expansion, extra parameters, MC, phase, MATLAB or optimizer. F(11/2) is reused verbatim from the R025 completed result and terminal id 1, with both bytes verified against the R025 manifest. G(11/2) is the first new midpoint and a different functional. An independent checker may repeat these same fixed inputs for verification; checker operations are separately reported. No continuous minimization claim for C7 or interval of the family minimum is made.

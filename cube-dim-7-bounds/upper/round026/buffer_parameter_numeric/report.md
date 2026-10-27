@@ -1,0 +1,7 @@
+# R026 finite buffer parameter certificate
+
+The registered 512-bit Arb batch completed: 82 G signs and one F candidate, with all 83 terminal records present and no unresolved sign. The root of the proved scalar family is in the exact bracket recorded in result.json, of width 2^-80; its candidate midpoint is within 2^-81. The candidate F outward enclosure is approximately 29.05955628518305660797; its exact upper endpoint lies strictly below the full lower endpoint of the reused R025 t=11/2 row. Strict outward rounding yields C7 < 29.059556285184, conditional on the cited selection theorem and calculus proof. The root is unique for this scalar family; the candidate's value interval is not an enclosure of the family minimum and is not a lower bound for C7.
+
+R025 result and id 1 terminal were checked against their archived manifest and reused unchanged. No F at 11/2 was reevaluated. The G at 11/2 is the first midpoint of the new functional. The checker independently repeats the same 83 input/functional combinations only, as verification; it uses 83 logarithms and two square roots, accounted separately in check.stdout. The primary run used the same counts and no other scientific rows. No MC, phase, MATLAB, or other parameter search was performed.
+
+Primary process reported 0.006116 s wall, 0.005864 s CPU, peak RSS 31,277,056 bytes; a small serial calculation makes no saturation claim. Source and program bytes were locked before the run in prerun-sha256.txt. The entire result bundle is hash recorded by manifest.json.

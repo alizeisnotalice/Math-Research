@@ -1,0 +1,1 @@
+R026 independent exact Fraction verification of final two root endpoints and one new midpoint F only, using immutable R024 rational_lib N128. Do not rerun80 scientific steps or old F(11/2); compare exact saved old interval. Verify width and source candidate exactly. Parent/independent proofs separately cover family monotonicity and original operator scope.
