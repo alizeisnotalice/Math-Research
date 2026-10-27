@@ -1,0 +1,90 @@
+--- PROOF.md@06a3ea9ac8e754ca0f3e63664aea99de20cd49a9c9080c49c8ceb3312e35f8ff
++++ PROOF.md@fe95f369634bbc753f5e44a32d6a2b74b288748ebd4bfe1f6c3cac43b086bd8f
+@@ -94,8 +94,14 @@
+ relevant annuli. A signed maximal face at radius R>1 has weight
+ dR/(2R), with its other n-1 coordinates independent Uniform[-R,R].
+ 
+-Targets have radius r in [rlo,rhi]. Sources have radius rho=tq, with
+-q in [qmin,qmax]. Matching means
++Targets have radius r in [rlo,rhi]. Define the FULL source band and
++its final cap restriction explicitly by
++
++    mathcal P_0={z:rho=||z||_infinity, rho/t in [qmin,qmax]},
++    P=D intersect mathcal P_0.
++
++The set mathcal P_0 is distinct from the scalar product lower bound P0
++in Section 1. Sources have radius rho=tq, q in [qmin,qmax]. Matching means
+ 
+     |r-q-d|<h.                                          (6)
+ 
+@@ -108,9 +114,13 @@
+     G(z)=product_i ell_R(z_i),
+     b_soft(z)=min(1,theta/G(z)).                         (7)
+ 
+-All these definitions are independent of an unknown actual increment
+-measure. For each fixed n, G is positive and the inverse densities used
+-below are finite. The actual kernel weight is 0<b_soft<=1.
++Define G and b_soft by (7) on ALL of mathcal P_0, including points
++outside D and sources with no matched target radius. They may be extended
++by b_soft=0 off mathcal P_0. All these definitions are independent of an
++unknown actual increment measure. For each fixed n, G is positive and
++the inverse densities used below are finite. On mathcal P_0 the actual
++kernel weight is 0<b_soft<=1. The full source laws and inverse-row laws
++below are used before the restriction from mathcal P_0 to P.
+ 
+ Eventually h<delta/2, h<d/8 and zeta t<h/2. Hence the FULL interval
+ 
+@@ -240,6 +250,20 @@
+ 
+ No assumption has been made that an actual history measure has this
+ random full-face law; (13) is an ambient-envelope statement only.
++
++With this A and the P defined in Section 2, the FINAL kernel is exactly
++
++    K(w,z)=1_A(w)1_P(z)1_{|r-q-d|<h}
++                  1_{||z-w||_infinity<kappa rho} b_soft(z),
++    r=||w||_infinity, rho=||z||_infinity, q=rho/t.
++
++Write R_lambda(w)=integral K(w,z)d lambda(z) and
++C_lambda(z)=integral K(w,z)d lambda(w). These are the final ambient
++degrees used below. Eventually A intersect P is empty, because r<=rhi<2
++on A and rho>=tqmin>4 on P. A source in mathcal P_0 is inactive when
++no r in [rlo,rhi] matches it; its final column is identically zero,
++including if it lies in P. This fixes both the pre-cap probability space
++and the post-cap energy kernel without changing any estimate.
+ 
+ ## 4. Whole-interval inverse row calibration
+ 
+@@ -515,15 +539,26 @@
+ one threshold. This note neither computes that threshold nor imports
+ the explicit R056 threshold for its different tuple.
+ 
+-The local d<=1/3 J/AC, baseline 3/6/12 moment, and inverse-face identities
+-were read from the accepted local lemma at
+-`cube-r030-roots-audit/cube-dim-7-bounds/audit/round056/one_coordinate/LEMMA.md`.
+-Its SHA256 at use is
+-`6d1742b7be914df8e7a26fd0a3f8942ae5275ab0923ce6598d87ad7fd3634800`.
++The current local d<=1/3 J/AC, baseline 3/6/12 moment, and inverse-face
++dependency is the final local lemma at
++`cube-r030-roots-audit/cube-dim-7-bounds/audit/round056/one_coordinate/LEMMA.md`,
++SHA256 `97430af9980c2de5d105bc4ea86667573c5c28e0ff40a92f1c613cd95a243eec`.
++That actual final text was read again in full; its local interfaces and
++guards were matched to Sections 2--5. `DEPENDENCY_ADAPTATION.md` records
++the current binding and the historical receipt identity explicitly.
++
++The unchanged historical `certificate.json` records the source hash
++`6d1742b7be914df8e7a26fd0a3f8942ae5275ab0923ce6598d87ad7fd3634800`
++observed in its original run. No verified original-text copy of that old
++identity was retained, so this revision does not claim that the old source
++can be reproduced from the current external path. The receipt is not
++rewritten or relabeled as a run against the final lemma. The adaptation
++uses the final frozen lemma and does not rerun the 64-term arithmetic.
++
+ All new band geometry, target probabilities, face-count calibration,
+ soft retention, sharp column coefficient and exponent guards were
+ derived explicitly above. The original finite cover/envelope reference
+-and the R058 candidate identity are hashed in `certificate.json`.
++and the R058 candidate identity remain hashed in the historical receipt.
+ 
+ Actual new computation: `python3 certify.py` in this directory. It uses
+ local Python standard-library Fraction arithmetic, one fixed tuple,
