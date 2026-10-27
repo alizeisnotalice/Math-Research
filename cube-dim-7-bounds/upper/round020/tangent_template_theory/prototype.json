@@ -1,0 +1,33 @@
+{
+  "orbit_id":"psi7-004",
+  "primitive_p":[4,3,3,2,2,1,1],
+  "psi_rate":344,
+  "unit_vertex":"primitive_p/344",
+  "zero_indices":[7,11,12,17,18,33,34],
+  "basis_indices":[7,11,12,17,18,33],
+  "basis_rows":[[1,-1,-1,-1,1,1,1],[1,-1,-1,1,-1,1,1],[1,-1,-1,1,1,-1,-1],[1,-1,1,-1,-1,-1,1],[1,-1,1,-1,-1,1,-1],[1,1,-1,-1,-1,-1,1]],
+  "extra_row":[1,1,-1,-1,-1,1,-1],
+  "extra_in_basis":[0,0,0,-1,1,1],
+  "gradient_definition":"g=sum sign(z dot primitive_p)*z over the 57 nonzero body forms; no normalization of g",
+  "L_definition":"rows=(-g,basis_rows)",
+  "three_dimensional_coordinates":"y=(-s4,s5,s6), y4=-y1-y2-y3; c=(-b4,b5,b6,0)",
+  "root_definition":"r_ij=q_i-q_j, q1=(1,0,0),q2=(0,1,0),q3=(0,0,1),q4=(0,0,0)",
+  "sign_cones":"all nonempty proper subsets I of [1,2,3,4], roots i in I,j not in I",
+  "paired_triples_edges":[
+    [[1,2],[1,3],[1,4]],
+    [[2,1],[2,3],[2,4]],
+    [[3,1],[3,2],[3,4]],
+    [[4,1],[4,2],[4,3]],
+    [[1,3],[1,4],[2,4]],
+    [[1,3],[2,3],[2,4]],
+    [[1,2],[1,4],[3,4]],
+    [[1,2],[3,2],[3,4]],
+    [[1,2],[1,3],[4,3]],
+    [[1,2],[4,2],[4,3]]
+  ],
+  "opposite_rule":"negate all three roots of each literal representative triple; do not independently retriangulate the opposite quad",
+  "counts":{"three_dimensional_sign_cones":14,"three_dimensional_simplices":20,"paired_terms":10,"expanded_six_dimensional_sign_cones":112,"expanded_six_dimensional_simplices":160,"stabilizer":8,"star_term_upper_bound":1696},
+  "gate_beta":[["1/10","2/10","3/10","4/10","5/10","6/10"],["-2/11","3/11","-5/11","7/11","-1/11","4/11"],["5/13","-3/13","1/13","-4/13","6/13","-2/13"]],
+  "physical_gate_definition":"x=g+sum_i beta_i*basis_row_i, exactly in Fraction; record seven literal coordinates; x dot v=1",
+  "no_full_G_claim":true
+}

@@ -71,3 +71,5 @@ R017 proxy证书链屏障及运行失败记录见rounds/017.md。
 R018已封存，真实结论见rounds/018.md。
 
 R019已封存，真实结论见rounds/019.md。
+
+R020已封存，真实结论见rounds/020.md。

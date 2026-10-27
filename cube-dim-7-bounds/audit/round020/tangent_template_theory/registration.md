@@ -1,0 +1,5 @@
+# R020 one-prototype independent pure theoretical audit
+
+2026-10-27. Independent no-hardlinks partial/sparse clone atcb19b12a1de8d0aa4bd92367fa55d5e20ee97cc7. Sole writable scope audit/round020/tangent_template_theory. Author/source and earlier sealed artifacts remain read-only. No mathematical numerical/symbolic software, new samples, gates, phase/DD, MATLAB, commit or push.
+
+Review only the frozen psi7-004 seven-zero prototype: displayed rank-six relation and3+3factorization, fourteen sign cones and twenty unimodular cones, opposite pairing, dimensional signs/determinants/scales, generic denominator contract and equality with the accepted star normalization. Main's paired expression is a claim to audit, not a premise. Do not expand to other prototypes, fullH/G, derivatives or globalg. Actual three exact gates belong to n7_lower_audit_r006; no repetition here. Source hashes/metadata, independent review, receipt and manifest only, then stop. Parent retains overall proof responsibility.
