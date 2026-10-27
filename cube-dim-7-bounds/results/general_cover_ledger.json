@@ -79,12 +79,35 @@
       "status": "internal strict proof, independent ACCEPT; not claimed published/global best",
       "leading_coefficient": 1,
       "comparison_scope": "L>=2^240 dominates complete listed valid fixed-old-t costs; unitcore all-t comparison only eventual; otherwise take applicable minimum"
+    },
+    {
+      "round": 45,
+      "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+      "scope": "all sufficiently large integer n; absolute N not quantified",
+      "d": "1/16777216",
+      "L": "log n",
+      "sigma": "1/8796093022208",
+      "t": "n/((1−2^-43)log n)",
+      "A": "(1+1/t)^n",
+      "B": "original exact B_n(t)",
+      "removed_budget": "2^-40 n",
+      "operator_cost": "Cn<=F(A,B−2^-40n)",
+      "bound": "Cn<=nlogn−nloglogn−2^-41n",
+      "proof": "upper/round045/soft_inverse_column/PROOF.md",
+      "endpoint_and_comparison": "upper/round045/comparison/PROOF.md",
+      "independent_full_audit": "audit/round045/full_theory/proof_review.md",
+      "independent_endpoint_audit": "audit/round045/comparison/AUDIT.md",
+      "leading_coefficient": 1,
+      "explicit_threshold": null,
+      "status": "strict internal theorem; independent ACCEPT, not claimed public/global best",
+      "comparison_scope": "scalar L>=2^240 and own operator valid domains; take all applicable old/new minima"
     }
   ],
   "unaccepted": [
     "leading coefficient below 1",
     "global optimality of any cover family",
-    "a uniform improved bound for the new causal-spill or joint-mass models"
+    "a uniform improved bound for causal-spill/joint-mass models",
+    "an explicit threshold for R045 (R049 pending)"
   ],
   "public_comparison": "only previously checked original sources; internal results not claimed published",
   "source_reports": [
@@ -101,7 +124,8 @@
     "upper/round043/REPORT.md",
     "upper/round044/REPORT.md",
     "upper/round046/REPORT.md",
-    "upper/round047/REPORT.md"
+    "upper/round047/REPORT.md",
+    "upper/round045/REPORT.md"
   ],
   "accepted_scoped_mechanisms": [
     {
@@ -155,5 +179,27 @@
       "new_Cn_bound": false,
       "status": "numerical diagnostics only; no interval/full-domain theorem"
     }
-  ]
+  ],
+  "strongest_asymptotic": {
+    "round": 45,
+    "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+    "scope": "all sufficiently large integer n; absolute N not quantified",
+    "d": "1/16777216",
+    "L": "log n",
+    "sigma": "1/8796093022208",
+    "t": "n/((1−2^-43)log n)",
+    "A": "(1+1/t)^n",
+    "B": "original exact B_n(t)",
+    "removed_budget": "2^-40 n",
+    "operator_cost": "Cn<=F(A,B−2^-40n)",
+    "bound": "Cn<=nlogn−nloglogn−2^-41n",
+    "proof": "upper/round045/soft_inverse_column/PROOF.md",
+    "endpoint_and_comparison": "upper/round045/comparison/PROOF.md",
+    "independent_full_audit": "audit/round045/full_theory/proof_review.md",
+    "independent_endpoint_audit": "audit/round045/comparison/AUDIT.md",
+    "leading_coefficient": 1,
+    "explicit_threshold": null,
+    "status": "strict internal theorem; independent ACCEPT, not claimed public/global best",
+    "comparison_scope": "scalar L>=2^240 and own operator valid domains; take all applicable old/new minima"
+  }
 }
