@@ -2,7 +2,7 @@
 
 ## 当前权威快照（2026-10-27，历史行保留）
 
-仅上界ACTIVE，下界USER_PAUSED。C156完整真实beta2上端已由独立saved 321842断言PASS并主接受，准确证书和本轮报告在156；仅辅助预算，无新M/C6。C161新168任务RQMC实际exit0，仅数值诊断。C154v3原observer93266/producer93280现已真实终态exit0，10266box完成/localgstar6977，严格saved审计待完成，禁止重启。C151原controller76106保持原排他运行；C159 dummy probe已实际UNKNOWN_OR_REFUSED，不据此控制151或绕过系统保护。C157v1因catalog schema失败的部分准确M6/gstar比较9c45保留；分类修复另审，不重比。C160原prepare作用域失败保留，v2只工程修复后另科学gate。正式C6上端仍64。GitHub最新补推仍连接失败，已完成轮次独立本地提交保留，未获远端确认的不能称同步。以下为各时点历史。
+仅上界ACTIVE，下界USER_PAUSED。C160新完整严格M上预算已15worker独立saved735487存根/两完整CDF通过并主接受，准确M6/I5原件及mainacceptance c7a55...见160；严格低于128完整预算且过gstar成本槽，未过g0槽，但globalgstar未证、正式C6上端仍64。C156完整beta2上端维持accepted。C154生产已终态10266done/localgstar6977；独立v3 source资格审计因旧/新semantic namespace alias KeyError失败，454source durable、0point/box/Horner，未声称整体7575严格复核通过，v4另修另门。C157 v3完整20643分类JSONL保存但末footer误读212=42+170而失败、SQL图回滚；v4只做metadata恢复，未重分类/未globalgstar。C151 controller76106原句柄仍在，不重启；C159 dummy权限拒绝，不控制151/绕系统保护。162/163/164/165新机制分工准备或独审，实际运行以各release/receipt为准。129完整原链174MB六分块及独立584224角认证已精简归档。GitHub逐轮push仍连接失败，未验证远端接收者均待补，不能称已同步。以下各行均为对应时点历史。
 
 角色：Sol推导/数学源码静审，Terra新数值及符号执行，main保最终证明、排他release/集成/Git；不使用Astra。以下旧LIVE/暂停/角色描述为对应时点历史，不能替代本快照及其后实际receipt。
 
@@ -130,3 +130,5 @@ Git已有HTTPS一次正常补推11轮并收到serverACK，独立lsremote=723f548
 161归档完成：完整168新采样诊断及实际链独审；仅浮点证据，无严格mu2或新C6界。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
 
 129归档完成：恢复续批18257新点及584224角点独审通过，290/325根已闭；完整原链分块封存，无全域g或新C6界。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
+
+160归档完成：新完整M上预算严格改善128，经15worker735487存根独审及主接受；全域g未闭、无新C6界。严格C6上端仍64、当前下端2073015624830/1000000000000；双侧未触发、后三轮0/3。
