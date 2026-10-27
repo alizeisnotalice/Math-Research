@@ -1,9 +1,9 @@
 {
   "dimension": 7,
-  "updated_utc": "2026-10-27T11:13:50.091073+00:00",
-  "status": "upper_active_lower_paused_after_round021",
+  "updated_utc": "2026-10-27T11:19:53.820936+00:00",
+  "status": "upper_active_lower_paused_after_round022",
   "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-  "current_round": 21,
+  "current_round": 22,
   "lower": {
     "status": "complete_strict_primary_and_independent_full_union",
     "exact_construction": "R006: a1=(8^(1/7)+288^(1/7))/2; six tails(1+2^(1/7))/2; full8192 halfcell union times128",
@@ -27,11 +27,11 @@
     "family_exhausted": false
   },
   "upper": {
-    "exact": "77436179562403/1000000000000",
+    "exact": "77433340322253/1000000000000",
     "relation": "C7 < exact",
     "new_bound": true,
     "status": "complete_strict_operator_upper_primary_and_two_independent_theory_reviews",
-    "expression": "[1+(33/32)^7]*[1+(65/64)^7*(1+42*log(2))]",
+    "expression": "[1+(65/63)^7]*[1+(64/63)^7*(1+7*log(63))]",
     "range": "Lebesgue; centered common-radius cubes; every L1 input and all positive scales",
     "proof": "upper/round021/explicit_public_upper/PROOF-DRAFT.md",
     "proof_status_note": "source frozen as draft, final theorem accepted in rounds/021.md and two reviews",
@@ -39,10 +39,10 @@
       "audit/round021/explicit_public_upper/proofreview.md",
       "audit/round021/ss_parameter_theory/proof.md"
     ],
-    "scalar": "upper/round021/ss_scalar/result.json",
-    "independent_scalar": "audit/round021/primary/result.json",
-    "independent_checker": "audit/round021/primary/check.py",
-    "old_operator_upper": "128",
+    "scalar": "upper/round022/ss_parameter_numeric/resume/result.json",
+    "independent_scalar": "audit/round022/primary_result.json",
+    "independent_checker": "audit/round022/primary_check.py",
+    "old_operator_upper": "77436179562403/1000000000000",
     "strict_comparison_with_old_upper": true,
     "public_explicit_baseline_verified": "128; not claimed exhaustive optimum",
     "provenance": "internal explicit quantitative derivation from published Stein-Stromberg 1983 proof, not an already published numeric theorem",
@@ -135,7 +135,7 @@
   "publication_status": "internal, not claimed publicly published",
   "archival_status": "round010 sealing; normal shared-main synchronization pending",
   "last_archived_commit": "22208695024e443ac5307e242d5a11a29593bd60",
-  "active_batch": "R021 closed; next finite SS parameter optimization to be separately registered",
+  "active_batch": "R023 threshold generalization: pure proof audits and finite8pairs",
   "lower_history": [
     {
       "round": 1,
@@ -516,5 +516,35 @@
     ],
     "g_refutation_certificate": "upper/round015/green_point/result.json",
     "conditional_cost_sixth_power_exact": "3467520043407020568600308581402817201103836312444436657610273062255536417685102583/2910383045673370361328125000000000000000000000000000000000000000000000"
+  },
+  "upper_pre_R022": {
+    "exact": "77436179562403/1000000000000",
+    "relation": "C7 < exact",
+    "new_bound": true,
+    "status": "complete_strict_operator_upper_primary_and_two_independent_theory_reviews",
+    "expression": "[1+(33/32)^7]*[1+(65/64)^7*(1+42*log(2))]",
+    "range": "Lebesgue; centered common-radius cubes; every L1 input and all positive scales",
+    "proof": "upper/round021/explicit_public_upper/PROOF-DRAFT.md",
+    "proof_status_note": "source frozen as draft, final theorem accepted in rounds/021.md and two reviews",
+    "audits": [
+      "audit/round021/explicit_public_upper/proofreview.md",
+      "audit/round021/ss_parameter_theory/proof.md"
+    ],
+    "scalar": "upper/round021/ss_scalar/result.json",
+    "independent_scalar": "audit/round021/primary/result.json",
+    "independent_checker": "audit/round021/primary/check.py",
+    "old_operator_upper": "128",
+    "strict_comparison_with_old_upper": true,
+    "public_explicit_baseline_verified": "128; not claimed exhaustive optimum",
+    "provenance": "internal explicit quantitative derivation from published Stein-Stromberg 1983 proof, not an already published numeric theorem",
+    "complete_I_rational_upper": "4018421141119/1000000000000000000",
+    "I_proof": "upper/round016/origin_moment_theory/proof.md",
+    "I_budget_is_C7_improvement": false
+  },
+  "round022": {
+    "report": "rounds/022.md",
+    "new_C7_bound": true,
+    "runtime_failure": "missing import os after a50; repaired separately and reused a50; original exit1 retained",
+    "only_finite_set_optimum": true
   }
 }

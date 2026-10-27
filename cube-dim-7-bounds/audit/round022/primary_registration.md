@@ -1,0 +1,1 @@
+Independent scalar certificate only for winner exact integer a=63,n7. N128 rational atanh series after extracting power2; reuse old source intervals, no old a64 recomputation or new optimizer. Primary final theorem uses R021 all-parameter proof.

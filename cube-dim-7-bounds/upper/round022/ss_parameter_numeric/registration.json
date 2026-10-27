@@ -1,0 +1,9 @@
+{
+ "scope":"n=7; exactly one 512-bit outward Arb evaluation at each integer a=50,...,80 except 64; 30 new parameters; no repeats or other parameters",
+ "formula":"[1+((a+2)/a)^7][1+((a+1)/a)^7(1+7 log a)]",
+ "baseline":"read exact original R021 a=64 512-bit result lower and upper; do not reevaluate",
+ "comparison":"each new upper to baseline lower; all 30 complete; finite-set winner must have upper strictly smaller than lower of every other parameter including 64",
+ "walltime_limit":null,"processes":1,"precision_bits":512,
+ "stop":"30 completed or first calculation error; preserve completed terminals; no retry or automatic extension",
+ "excluded":"continuous or global optimization; extra parameters; lower; phase; MC; MATLAB; commit or push"
+}

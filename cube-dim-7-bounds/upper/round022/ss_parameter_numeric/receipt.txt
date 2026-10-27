@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "/Users/zhengzhihao/Desktop/T/Math-Research-cube7-ss-parameter-r022/cube-dim-7-bounds/upper/round022/ss_parameter_numeric/run.py", line 28, in main
+    rows.append(row);out.write(json.dumps(row)+'\n');out.flush();os.fsync(out.fileno())
+                                                                 ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhengzhihao/Desktop/T/Math-Research-cube7-ss-parameter-r022/cube-dim-7-bounds/upper/round022/ss_parameter_numeric/run.py", line 38, in <module>
+    try:print(json.dumps(main(),indent=2));sys.exit(0)
+                         ~~~~^^
+  File "/Users/zhengzhihao/Desktop/T/Math-Research-cube7-ss-parameter-r022/cube-dim-7-bounds/upper/round022/ss_parameter_numeric/run.py", line 30, in main
+    out.write(json.dumps({'a':a,'status':'failed','error':repr(exc)})+'\n');out.flush();os.fsync(out.fileno());raise
+                                                                                        ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'?
+        0.14 real         0.08 user         0.03 sys
+            32702464  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                3952  page reclaims
+                 423  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  29  voluntary context switches
+                 276  involuntary context switches
+           929021395  instructions retired
+           357645030  cycles elapsed
+            17351112  peak memory footprint
+
+actual exit status: 1; first failure stops batch; no retry
