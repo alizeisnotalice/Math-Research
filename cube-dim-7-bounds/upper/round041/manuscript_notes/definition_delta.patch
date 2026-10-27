@@ -1,0 +1,51 @@
+--- stage_e523_main.tex
++++ main.tex
+@@ -404,6 +404,13 @@
+ \end{proof}
+ 
+ 
++为统一下面所用的壳面记号，定义原角点捕获积分
++\[
++ \ell_t(\rho)=1+\frac1{2t}-\frac1{2\rho},\qquad
++ I_n(t)=\int_1^t\ell_t(\rho)^{n-1}\frac{\dint\rho}{\rho}.
++\]
++这里 $I_n$ 始终表示式\eqref{eq:B}中的单点角点壳积分。
++
+ \begin{lemma}\label{lem:integral-uniform}
+ 对所有 $n\ge2$、$t>1$，
+ \[
+@@ -445,7 +452,7 @@
+ 置 $a_0=x/2$、$H=(n-x)/2$、$g=(1+x/n)/2$。换元
+ $v=n/(2\rho)-x/2$ 给出
+ \[
+- I_n(t):=\int_1^t\ell_t(\rho)^{n-1}\frac{\dint\rho}{\rho}
++ I_n(t)=\int_1^t\ell_t(\rho)^{n-1}\frac{\dint\rho}{\rho}
+  =\int_0^H\frac{(1-v/n)^{n-1}}{v+a_0}\dint v,
+  \quad\ell_t(\rho)=1+1/(2t)-1/(2\rho).
+ \]
+@@ -513,7 +520,7 @@
+ \begin{lemma}[双边能量缺额]\label{lem:energy}
+ 设 $\lambda_0$ 为有限正测度，$\mu\le\lambda_0$，$A,P$ 为不交 Borel 集，
+ $0\le K\le1$ 为支撑在 $A\times P$ 上的 Borel 核。
+-若其 $\lambda_0$ 行积分和列积分均不超过 $M$，且
++若存在 $M>0$ 使其 $\lambda_0$ 行积分和列积分均不超过 $M$，且
+ $\int K(w,z)\dint\mu(z)\le\tau$ 对 $\mu$ 几乎处处的 $w\in A$ 成立，则
+ \begin{equation}\label{eq:energy-deficit}
+  (\lambda_0-\mu)(\R^n)\ge
+@@ -703,6 +710,16 @@
+  g=r_--q+\zeta\rho=d-h+\zeta\rho.
+ \]
+ 已由 $s\ge S$ 得到 $\zeta t\le h/2$，故 $0<d-h\le g\le d<r_-,\rho$。
++
++本节的完整来源壳测度明确取为
++\[
++ \dint\lambda^0_{\rm source}(z)
++ =2^{-n}\norm z_\infty^{-n}
++   \one_{\{\norm z_\infty/t\in1-I\}}\dint z,
++ \qquad1-I=[1-3d/4,1-d/4].
++\]
++它包含该来源径向带的全部壳面；每张固定最大面在半径 $\rho$ 处的径向测度为
++$\dint\rho/(2\rho)$，其余坐标独立均匀于 $[-\rho,\rho]$。
+ 
+ \begin{lemma}\label{lem:second-moment}
+ 在完整来源壳测度 $\lambda^0_{\rm source}$ 下，

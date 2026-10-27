@@ -1,52 +1,60 @@
 {
-  "status": "SUCCESS local XeLaTeX; final 13 pages visually reviewed",
-  "pages": 13,
-  "main_tex_sha256": "beec9bbe707950dfa3e84a2db4b6a5a2eaa07ff242935d1f0d2f669431d4d487",
-  "pdf_sha256": "5eb344895934317ca24ba493f16d5fad8d0ecc487bdf97ab4e5f30c849339fd5",
-  "verify_code_sha256": "7934699516dd173c72a03c22712b46cf474b7fccb4150e1a28bdd95c4244bfdc",
-  "compiler": "local TeX Live 2026 / XeLaTeX / latexmk4.88",
-  "compiler_exit_code": 0,
+  "date": "2026-10-28",
+  "status": "SUCCESS primary integration; exact accepted TeX unchanged",
+  "pages": 24,
+  "main_tex_sha256": "94c5e61d3bf86b16736e328ffe3e412d46df957dd2b8f8760939edc8831e8692",
+  "pdf_sha256": "d3316cdbbc3ef42a1f3afe26470c5df3c4ea0b6f4471c329284995723a22d40a",
+  "compiler": "local TeX Live 2026 / XeLaTeX",
   "command": [
-    "/Library/TeX/texbin/latexmk",
-    "-norc",
-    "-xelatex",
+    "/Library/TeX/texbin/xelatex",
     "-interaction=nonstopmode",
     "-halt-on-error",
-    "-synctex=1",
-    "-outdir=/Users/zhengzhihao/Desktop/T/cube-v3-work/build",
-    "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-7/cube-dim-7-bounds/paper/main.tex"
+    "-output-directory=/Users/zhengzhihao/Desktop/T/cube-v3-work/primary-paper-build",
+    "cube-dim-7-bounds/paper/main.tex"
   ],
-  "local_compile_log_sha256": "c8b04b64adc2ec36a4aedceec71b35e4f6097e5eeffc98a1bb56b9a5d20f48b0",
-  "overfull_missing_glyph_undefined_reference": false,
-  "underfull_bibliography_hboxes": "2 nonfatal warnings; final rendered lines readable",
+  "actual_passes": 2,
+  "compiler_exit_code": 0,
+  "compile_log_sha256": "a9104f72536fae5f828f9cdbc2bbb92e0f2d15ec025f0415269695453a63f7dd",
+  "stdout_sha256": {
+    "pass1": "618c5bb2b42e3b0b2bbe1c5363e322776d6191eac1bf39872684c0ed648de067",
+    "pass2": "bd570661e93b9aeb18a1e89931040d5505f630f5e19c379e01cc7d67b4a46afd"
+  },
+  "overfull_hbox": false,
+  "undefined_references": false,
+  "missing_glyph": false,
+  "underfull_bibliography_hboxes": 2,
   "visual_review": {
-    "renderer": "Ghostscript10.07.0 png16m 100dpi",
-    "all_pages_inspected": 13,
-    "clipping_overlap_missing_glyphs_detected": false,
-    "render_hashes": {
-      "page-01.png": "cb190a27aeb9413d7f1d35da55fb4d3a310df245ee2587169b2b0ffd48cd2b6e",
-      "page-02.png": "145945f8cd68543d4d0bfc56d63d0f96319fd687d0a219c1a6251f790b14cec6",
-      "page-03.png": "5b2e18aafe5eb60a4e65465a28c9184b4a9b6bfd9f0c982763cedd12568133ef",
-      "page-04.png": "14d365949cb4b34b755b5e4aa0115ee412b63caf19d55cafc2a024eb45af5f58",
-      "page-05.png": "0d7c2f64cfd51f1b7acb97d804840f7dc06c53b19adfd75fba886d59ee56a706",
-      "page-06.png": "406da676485e3e64f93bea6ee9a025ebb43abcd2b57988f1a37ecde2747e558f",
-      "page-07.png": "6f006a7c8dbc8752f6b23e5493138ba22f2b03ee7082b653d70f528b47e932b8",
-      "page-08.png": "7e7717251101080b9727d94ff9e2b1b0323d137228fb0b9f84a74c50ceb82ca4",
-      "page-09.png": "c160611268bade384f68aee6d79fd00fbeb5c5e2e3e952d7cf62acd7791e5f1c",
-      "page-10.png": "655c6c6ca409408547a9df86cdfba5b8047261bb0fd7f43967ea0c67bfd2a8bc",
-      "page-11.png": "3fe092f3479a8286c190b105d5dfb18091664133bfc0b2dc392e0d8de41808a0",
-      "page-12.png": "57556a909ee054cb553f523baf08dacc37df394279580cd8de6c5fffe2ec6930",
-      "page-13.png": "47da5836f9bbcabf184017c0f535cb3d2c64ead5c858fef5ed66f69dd6489efc"
+    "primary_actual_render": "Ghostscript png16m 90dpi",
+    "pages_inspected_in_contact_sheets": 24,
+    "full_page_inspection": [
+      2,
+      11,
+      21
+    ],
+    "clipping_overlap_detected": false,
+    "render_location_private": "/Users/zhengzhihao/Desktop/T/cube-v3-work/primary-paper-build/render",
+    "contact_sha256": {
+      "contact-1.png": "0c496d780fdcf0cda43da907efb714e9e48da1a67e9903af8ec126d531a6b71d",
+      "contact-2.png": "ed844b73d32d969e9132fb46c8e886cc2853e870c000832cd90d2f96dc04b910",
+      "contact-3.png": "3bd87f8e5d43b21150ade908d80c5e30cd897b708d3b6aa8509a6da506e584a3",
+      "contact-4.png": "297f157fcb0ce0da2aa279a3e6fbe03a5b0bfafa7daf903d8ac86bfdc827223e"
     }
   },
-  "mathematical_review": "ACCEPT frozen source; revision_v3/final_audit/review.md",
-  "operational_failures_resolved": [
-    "First draft table input/booktabs noalign fixed by inlining exact same rows.",
-    "Table rational fractions changed to same slash rationals and float placed at top; final review addendum confirms only typography changed."
-  ],
-  "old_builtin_preview": "Not retried; local PDF compilation is authoritative.",
-  "goal_status_observed": "paused",
-  "one_off_revision_authorized": true,
-  "lower_research": "paused; no new work",
-  "date": "2026-10-27"
+  "mathematical_review": {
+    "status": "FINAL_ACCEPT_ALL_NOTES_RESOLVED",
+    "review_path": "/Users/zhengzhihao/Desktop/T/cube-r030-uniform-audit/cube-dim-7-bounds/audit/round041/manuscript/review.md",
+    "review_sha256": "4ac36f127a0b77b45bf4661a767f65a7e1705ede1094b41e1305051e2c0cfe84",
+    "sourcehash_path": "/Users/zhengzhihao/Desktop/T/cube-r030-uniform-audit/cube-dim-7-bounds/audit/round041/manuscript/sourcehash.json",
+    "sourcehash_sha256": "a7804e20393487e6e9f6352a5662fcbbc74f1fb82003faac29206521cd44c955",
+    "locked_tex_sha256": "94c5e61d3bf86b16736e328ffe3e412d46df957dd2b8f8760939edc8831e8692",
+    "scope": "Full e523 mathematical review plus exact final three-definition delta; author compilation/layout evidence remains separate."
+  },
+  "author_build": "upper/round041/author_build.json",
+  "author_pdf_sha256": "055680c62e9b48e15c5c6759ed484b95a84615bf4be52acb4cbf6d675a87c4fe",
+  "pdf_hash_difference": "separate actual recompilation; accepted source hash identical",
+  "new_mathematical_checks_run_by_primary": false,
+  "old_n7_verifier_rerun": false,
+  "new_lower_work": false,
+  "general_cover_goal": "active",
+  "documentation_adaptation": "README runtime command and private-stage references corrected; chapter_plan consolidated; no TeX change"
 }

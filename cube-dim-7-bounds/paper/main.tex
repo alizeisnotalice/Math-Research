@@ -1,7 +1,7 @@
 \documentclass[UTF8,a4paper,11pt,fontset=fandol]{ctexart}
 \usepackage[margin=27mm,headheight=14pt]{geometry}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
-\usepackage{booktabs,enumitem,listings,fancyhdr}
+\usepackage{booktabs,enumitem,listings,fancyhdr,longtable}
 \usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
 \allowdisplaybreaks[2]
@@ -30,125 +30,116 @@
   columns=fullflexible,keepspaces=true,showstringspaces=false,
   breaklines=true,frame=single,rulecolor=\color{black!25},
   xleftmargin=0.5em,xrightmargin=0.5em}
-\title{中心立方体极大算子的显式弱型估计及其维数渐近}
-\author{}
-\date{}
-\begin{document}
-\maketitle
-\vspace{-2em}
+\newcommand{\Fcal}{\mathcal F}
+\title{中心立方体极大算子的覆盖估计与一般高维弱型上界}
+\author{}\date{}
+\begin{document}\maketitle\vspace{-2em}
 \begin{abstract}
-研究 Lebesgue 测度下、对所有正共同半径取上确界的中心轴平行立方体极大算子。
-从有限立方体族的半径选择出发，分别保留选择阈值和缓冲膨胀参数，
-并以坐标壳面的截集面积控制未被选择条件覆盖的增量。
-由此得到一个适用于每个正整数维数的显式弱型 $(1,1)$ 上界公式。
-记该公式族的下确界为 $U_n$，进一步证明
-$U_n=n\log n-n\log\log n+O(n\log\log n/\log n)$，
-因而 $\limsup_{n\to\infty}C_n/(n\log n)\le1$。
-一、二、三维的公式族下确界分别为 $2,4,8$，均仅由参数端点趋近；
-从四维起存在内部全局极小点。
-对 $n=2,\ldots,20,32,64$ 给出明确有理参数及准确证书；
-七维结论为 $C_7<24.554960525965$。
-全部算子估计适用于一般 $L^1$ 输入及所有正尺度。
+研究 Lebesgue 测度下中心轴平行立方体极大算子的弱型 $(1,1)$ 常数 $C_n$。
+在按半径选择的有限覆盖中，保留同一选择历史的实际增量，并将两个分离径向区间按反对角关系匹配。
+为控制来源的重复使用，构造完整列积分的逐点上包，以其固定面二阶矩截去高列能量。
+记 $L=\log n$。当 $L\ge2^{108}$ 时，证明
+\[
+ C_n<n\log n-n\log\log n-2^{-32}n(\log n)^{-1/3}.
+\]
+证明保留二阶矩指数中的有界补偿，并完成有限膨胀参数、一般 $L^1$ 输入及全部正共同半径的传递。
+还给出带显式门槛的其他上界，并说明当前逐点重叠估计中前导系数 $1$ 的限制。
 \end{abstract}
-\noindent\textbf{关键词：}中心极大算子；立方体；弱型 $(1,1)$；覆盖选择；显式常数
+\noindent\textbf{关键词：}中心极大算子；立方体；弱型 $(1,1)$；覆盖选择；维数估计
 
 \section{引言}
-对 $x\in\R^n$ 和 $r>0$，记
-\[
- Q(x,r)=x+(-r,r)^n.
-\]
-本文始终采用 Lebesgue 测度，并研究
+对 $x\in\R^n$、$r>0$，记 $Q(x,r)=x+(-r,r)^n$，定义
 \begin{equation}\label{eq:maximal}
- M_n f(x)=\sup_{r>0}\frac{1}{(2r)^n}
-                    \int_{Q(x,r)}|f(y)|\dint y,\qquad f\in L^1(\R^n).
+ M_nf(x)=\sup_{r>0}\frac1{(2r)^n}\int_{Q(x,r)}|f(y)|\dint y,
+ \qquad f\in L^1(\R^n).
 \end{equation}
-所有坐标使用同一个半径；立方体以 $x$ 为中心且轴平行。
-定义最优弱型常数
+所有坐标使用同一个半径，立方体以 $x$ 为中心且轴平行，底测度始终为 Lebesgue 测度。
+其最优弱型常数为
 \begin{equation}\label{eq:constant}
- C_n=\sup_{\substack{f\in L^1(\R^n),\,\norm f_1>0\\ \lambda>0}}
-       \frac{\lambda\,|\{x:M_nf(x)>\lambda\}|}{\norm f_1}.
+ C_n=\sup_{\norm f_1>0,\,\lambda>0}
+ \frac{\lambda|\{M_nf>\lambda\}|}{\norm f_1}.
 \end{equation}
-开、闭立方体的边界均为 Lebesgue 零测集，因此它们在这里给出相同的平均。
+开、闭立方体在这里给出相同的平均。
 
-Stein 与 Strömberg 对一般有界开对称凸体的中心极大算子建立了
-$O(n\log n)$ 的弱型估计\cite[第2节，第260--263页]{SS83}。
-Aldaz 的定量覆盖定理进一步给出：对每个固定 $\varepsilon>0$，
-充分大维数的任意范数球中心极大算子有
-$(2+3\varepsilon)n\log n$ 的弱型上界\cite[定理5.2]{Aldaz17}。
-这些结论适用于立方体，但没有利用逐坐标的截集几何。
-Stein--Str\"omberg 的证明先在有限球族中按半径选择子族，再同时控制覆盖体积和加权重叠。
-这一框架适于记录显式常数，但需要保留选择过程中的膨胀损失。
-Aldaz 关于测度的统一几何估计取 Lebesgue 特例，给出
-\begin{equation}\label{eq:generic}
- C_n\le 2^n
- \qquad\text{\cite[推论3.5]{Aldaz20}}.
-\end{equation}
-这里的 $2^n$ 是一个通用比较值，并非各固定维数的最好已知界。
-一维的精确常数为 $(11+\sqrt{61})/12$\cite[推论1]{Melas03}；
-二维也有专门估计，例如 Tomar 的公开预印本第4版给出
-$C_2\le3.59123$\cite[定理1.2]{Tomar26}。
-这些低维结果说明通用覆盖公式需要与专门构造分别比较。
-另一方面，立方体情形的最优弱型常数随维数趋于无穷
-\cite{Aldaz11}，因此给定维数下的定量估计有独立意义。
+维数增长的一个基本上界来自一般对称凸体的覆盖选择。
+\begin{known}[Stein--Str\"omberg]\label{known:SS}
+一般有界开对称凸体所定义的中心极大算子，其 Lebesgue 弱型 $(1,1)$ 常数为
+$O(n\log n)$。\cite[第2节，第260--263页]{SS83}
+\end{known}
+\begin{known}[Aldaz]\label{known:aldaz}
+对每个固定 $\varepsilon>0$，充分大维数下，任意范数球的中心极大算子有
+$(2+3\varepsilon)n\log n$ 的弱型上界。\cite[定理5.2]{Aldaz17}
+\end{known}
+\begin{known}[Aldaz]\label{known:generic}
+中心轴平行立方体的 Lebesgue 弱型常数满足 $C_n\le2^n$。
+\cite[推论3.5]{Aldaz20}
+\end{known}
+定理 A 的有限选择同时控制覆盖测度与加权重叠。
+定理 B 适用于更广的范数球几何，定理 C 则提供所有维数下的通用比较。
+本文沿用有限选择的思路，研究立方体逐坐标截集结构能够在其加权重叠中保留多少信息。
 
-本文的问题是在上述有限选择框架中保留位置几何，
-而不只按半径区间估计所有贡献项。
-选择条件本身已经控制了一部分重叠；对余下部分，
-轴平行立方体允许逐坐标计算截集面积。
-所需的核心结论是：在适当归一化后，一个径向加权的立方体截集积分
-随平移向量各坐标的绝对值单调增加，其最大值可在比较立方体的角点计算。
+若将每一个后序位置的最坏前序贡献独立相加，同一个前序增量可能被多次使用。
+因此需要在同一有限选择历史中比较两组增量，同时控制一个来源可被多少后序位置捕获。
+本文使用两个分离的径向区间，并按反对角带匹配半径；
+其核心是一个双边积分缺额引理：捕获核的行积分给出所需贡献，列积分控制来源的重复使用。
 
-对 $t>1$，定义
+对 $t>1$ 定义
 \begin{align}
- A_n(t)&=\left(1+\frac1t\right)^n,\label{eq:A}\\
- B_n(t)&=1-\left(\frac{1+1/t}{2}\right)^n+n\log t \notag\\
- &\hspace{1.5em}
- -\frac n2\int_1^t
- \left(1+\frac1{2t}-\frac1{2\rho}\right)^{n-1}
-                         \frac{\dint\rho}{\rho}.
- \label{eq:B}
+ A_n(t)&=(1+1/t)^n,\label{eq:A}\\
+ B_n(t)&=1-\left(\frac{1+1/t}{2}\right)^n+n\log t
+ -\frac n2\int_1^t\left(1+\frac1{2t}-\frac1{2\rho}\right)^{n-1}
+                         \frac{\dint\rho}{\rho},\label{eq:B}\\
+ \Fcal(A,B)&=(\sqrt A+\sqrt B)^2\qquad(A,B>0).\notag
 \end{align}
 \begin{theorem}\label{thm:main}
-对每个整数 $n\ge1$ 和每个 $t>1$，有 $B_n(t)>0$，且
+对每个整数 $n\ge1$、$t>1$，$B_n(t)>0$，且
 \begin{equation}\label{eq:main}
- C_n\le \left(\sqrt{A_n(t)}+\sqrt{B_n(t)}\right)^2.
+ C_n\le\Fcal(A_n(t),B_n(t)).
 \end{equation}
 \end{theorem}
-记
+这一覆盖公式是后续改进的起点。以下均取自然对数。
+\begin{theorem}\label{thm:second-moment}
+对满足 $L=\log n\ge2^{108}$ 的整数 $n$，令
 \[
- F_n(t)=\bigl(\sqrt{A_n(t)}+\sqrt{B_n(t)}\bigr)^2,
- \qquad U_n=\inf_{t>1}F_n(t).
+ L=\log n,\quad s=L^{1/3},\quad x_2=L-s,\quad t_2=n/x_2,
+ \quad\delta_2=2^{-31}nL^{-1/3},\quad T_n=nL-n\log L.
 \]
-\begin{theorem}\label{thm:asymptotic}
-当 $n\to\infty$ 时，
-\[
- U_n=n\log n-n\log\log n+
- O\!\left(\frac{n\log\log n}{\log n}\right).
-\]
-特别地，$\limsup_{n\to\infty}C_n/(n\log n)\le1$。
-\end{theorem}
-这是上界公式族的渐近式。定理\ref{thm:main}给出 $C_n\le U_n$，
-所以此处关于 $U_n$ 的下界不构成 $C_n$ 的下界。
-对于立方体，由此得到的前导系数为 $1$；
-上述 Aldaz 定理在更广的任意范数球范围内给出可趋近 $2$ 的系数。
-本比较只针对这两个明确估计，不主张真实常数的最优渐近系数。
-
-\begin{corollary}\label{cor:seven}
-取 $t_0=3391749/524288$，则
-\begin{equation}\label{eq:seven}
- C_7\le \left(\sqrt{A_7(t_0)}+\sqrt{B_7(t_0)}\right)^2
-       <\frac{4910992105193}{200000000000}
-       =24.554960525965.
+则
+\begin{equation}\label{eq:second-main}
+ C_n\le\Fcal(A_n(t_2),B_n(t_2)-\delta_2)
+ <T_n-2^{-32}nL^{-1/3}.
 \end{equation}
-\end{corollary}
+\end{theorem}
+定理\ref{thm:second-moment}改变覆盖公式的参数尺度，并以二阶矩控制高列的能量损失。
+其负修正项阶为 $nL^{-1/3}$，大于 $n\sqrt{\log L/L}$ 的渐近阶。
+前导 $n\log n$ 系数仍为 $1$。
 
-有限选择的思路来自 Stein--Strömberg。
-本文将选择阈值与缓冲膨胀分开，并对未被选择条件控制的项利用立方体壳面几何。
-这一步从重叠估计中扣除可明确计算的截集，最终得到式\eqref{eq:B}。
-数值推论只需在一个给定有理参数上验证有限个准确不等式。
-第2节给出有限选择及可测性准备，第3节证明定理\ref{thm:main}，
-第4节给出逐维认证、七维专门化与稳定性推论；附录说明准确证书的复核方法。
+另一条直接控制行列积分的论证给出如下完整显式界。为陈述它，记
+\begin{equation}\label{eq:large-parameters}
+ \begin{gathered}
+ L=\log n,\quad l=\log L,\quad x=L-3l,\quad t=n/x,\quad T_n=nL-nl,\\
+ W_n=T_n+\frac{(3l+1)n}{L}+\frac{(9l^2+1)n}{L^2}.
+ \end{gathered}
+\end{equation}
+\begin{theorem}\label{thm:energy}
+若 $n$ 为整数且 $l\ge128$，置 $d=\sqrt{l/L}$、$\delta=nd/65536$，则
+\begin{equation}\label{eq:energy-main}
+ C_n\le\Fcal(A_n(t),B_n(t)-\delta)
+ <W_n-\delta<T_n-\delta/2.
+\end{equation}
+特别地，$C_n<T_n-\dfrac{n}{131072}\sqrt{l/L}$。
+\end{theorem}
+式\eqref{eq:energy-main}具有明确起效门槛，并比定理\ref{thm:main}同参数的标量公式减少超过 $\delta$。
+在更小门槛下，第\ref{sec:application}节还给出
+$C_n<W_n-n/(20\sqrt L)$（$L\ge4096$）。两个估计应在各自范围内取较小值。
 
+有限选择与膨胀的思路来自定理 A。
+本文先用立方体壳面给出角点包络，再利用典型面坐标的准确条件均值，
+在反对角匹配带上得到一致乘积估计。完整列上包随目标半径单调，
+其固定来源面二阶矩允许按能量截去高列。双边能量比较将保留的能量转为同一实际增量测度的缺额；
+严格缩小的捕获半径将连续点对传到有限立方体中心。
+第2节建立有限选择与能量准备，第3节证明覆盖公式、能量改进及显式门槛；
+第4节给出参数比较和当前逐点估计的适用限制。
 \section{预备知识}
 \subsection{水平集与有限覆盖}
 记 $\norm{x}_\infty=\max_i|x_i|$。
@@ -413,32 +404,13 @@ $\tau=\sqrt{A_nB_n}$ 即得\eqref{eq:main}。
 \end{proof}
 
 
-\subsection{参数导数}
-
-对 $n\ge2$，Leibniz 法则给出
-\begin{equation}\label{eq:B-derivative}
- B_n'(t)=\frac n{2t}
- +\frac n{2t^2}\left(\frac{1+1/t}{2}\right)^{n-1}
- +\frac{n(n-1)}{4t^2}\int_1^t
-       \ell_t(\rho)^{n-2}\frac{\dint\rho}{\rho}>0.
-\end{equation}
-当 $n=1$ 时，单独有 $B_1'(t)=1/(2t)+1/(2t^2)$。
-由此
-\begin{equation}\label{eq:F-derivative}
- F_n'(t)=(\sqrt{A_n}+\sqrt{B_n})
- \left[\frac{B_n'(t)}{\sqrt{B_n(t)}}
- -\frac n{t^2}(1+1/t)^{n/2-1}\right].
-\end{equation}
-式\eqref{eq:F-derivative}给出内点极小值的必要条件，
-并不证明全局极小点或驻点的唯一性。
-事实上 $B_n(t)=n(t-1)+O((t-1)^2)$，所以 $F_n'(t)\to+\infty$
-当 $t\downarrow1$。
-
-\subsection{上界公式族的维数渐近}
-令 $\ell_t(\rho)=1+1/(2t)-1/(2\rho)$，并记
+为统一下面所用的壳面记号，定义原角点捕获积分
 \[
+ \ell_t(\rho)=1+\frac1{2t}-\frac1{2\rho},\qquad
  I_n(t)=\int_1^t\ell_t(\rho)^{n-1}\frac{\dint\rho}{\rho}.
 \]
+这里 $I_n$ 始终表示式\eqref{eq:B}中的单点角点壳积分。
+
 \begin{lemma}\label{lem:integral-uniform}
 对所有 $n\ge2$、$t>1$，
 \[
@@ -466,374 +438,1107 @@ $\ell_t(\rho)^{n-1}\le
 \]
 \end{proof}
 
-\begin{proof}[定理\ref{thm:asymptotic}的证明]
-置 $L=\log n$、$T=nL-n\log L$。
-我们给出对所有 $L\ge32$ 成立的显式估计
-\begin{equation}\label{eq:asymptotic-explicit}
- T-\frac{4n(\log L+1)}L
- \le U_n\le T+\frac{n(6\log L+5)}L.
+
+\subsection{一个显式标量上包}
+后续能量改进要与同一参数下的覆盖公式比较，故先保留积分扣除的一阶作用。
+\begin{lemma}\label{lem:W}
+当 $L\ge18$，取式\eqref{eq:large-parameters}中的 $x,t$，则
+$\Fcal(A_n(t),B_n(t))\le W_n$。当 $L\ge64$ 时还有
+\begin{equation}\label{eq:AB-bounds}
+ A_n(t)\le n/L^3,\qquad 8n<B_n(t)\le nL,\qquad 3L/4<x<L.
 \end{equation}
-该起始范围仅为简化常数，不作最小化。
+\end{lemma}
+\begin{proof}
+置 $a_0=x/2$、$H=(n-x)/2$、$g=(1+x/n)/2$。换元
+$v=n/(2\rho)-x/2$ 给出
+\[
+ I_n(t)=\int_1^t\ell_t(\rho)^{n-1}\frac{\dint\rho}{\rho}
+ =\int_0^H\frac{(1-v/n)^{n-1}}{v+a_0}\dint v,
+ \quad\ell_t(\rho)=1+1/(2t)-1/(2\rho).
+\]
+密度 $q(v)=(1-v/n)^{n-1}$ 在 $[0,n]$ 的质量为 $1$、一阶矩为 $n/(n+1)<1$。
+截断质量 $m=1-g^n$，截断一阶矩 $r<1$。
+对严格凸函数 $1/(v+a_0)$ 用 Jensen 不等式得
+$I_n>m^2/(a_0m+r)$。
+当 $L\ge18$，$x\ge L/2\ge9$、$x+2\le L$、$x\le n/2$，故 $g\le3/4$。
+$n\ge16$ 时 $n(3/4)^n\le1$：在 $16$ 可直接核验，随后相邻比小于 $1$。
+于是 $m\ge1-1/n$，并有
+\[
+ I_n\ge\frac{2(1-2/n)}{x+2}.
+\]
+利用 $-\log(1-v)\le v+v^2$（$0\le v\le1/2$）及 $3l/L\le1/2$，得到
+\[
+ B_n\le T_n+3nl/L+9nl^2/L^2-n/L+1+2/L.
+\]
+又 $A_n\le e^x=n/L^3$，$B_n\le1+n(L-\log x)\le nL$，故
+$2\sqrt{A_nB_n}\le2n/L$。
+由 $n\ge L^5/120$、$L\ge18$ 得 $n/L^3>1+2/L$，再用 $2/L^3\le1/L^2$，
+合并三项即得 $W_n$。
 
-先证明对全部 $t>1$ 的下界。
-置 $x=n/t$、$x_0=L+4\log L\le2L$。
-由式\eqref{eq:B-derivative}，$B_n$ 严格增加。
-当 $x\le L/2$ 时，$t\ge2n/L$，利用引理\ref{lem:integral-uniform}得
-\[
- B_n(t)\ge B_n(2n/L)
- \ge T+n\log2-4n/L\ge T.
-\]
-当 $L/2\le x\le x_0$ 时，同一引理与 $1-((1+1/t)/2)^n\ge0$ 给出
-\[
- B_n(t)\ge nL-n\log x-2n/x
- \ge T-\frac{4n(\log L+1)}L.
-\]
-此处用了 $n/(n-1)\le2$ 及
-$\log(1+4\log L/L)\le4\log L/L$。
-当 $x\ge x_0$ 时，$\log(1+s)\ge s-s^2/2$ 给出
-\[
- A_n(t)\ge(1+x_0/n)^n
- \ge e^{x_0-x_0^2/(2n)}\ge nL^4/e\ge nL\ge T.
-\]
-所用 $x_0^2\le4L^2\le2e^L$、$4\log L\le L$ 均在 $L=32$ 成立，
-并由相应两边之比的导数在 $L\ge32$ 保持。
-由于 $F_n\ge A_n$ 且 $F_n\ge B_n$，三区间覆盖全部参数，
-从而得到式\eqref{eq:asymptotic-explicit}左侧。
-
-上界取 $t=n/(L-3\log L)>1$。
-对 $L\ge32$ 有 $L-3\log L\ge L/2$，并由
-$-\log(1-y)\le2y$（$0\le y\le1/2$）得到
-\[
- A_n(t)\le n/L^3,\qquad
- B_n(t)\le1+n\log t\le T+6n\log L/L+1,
- \qquad B_n(t)\le2nL.
-\]
-因此 $2\sqrt{A_nB_n}\le2\sqrt2\,n/L<3n/L$。
-再用 $1\le n/L$ 和 $n/L^3\le n/L$，
-展开 $F_n=A_n+B_n+2\sqrt{A_nB_n}$ 得到右侧。
-取下确界是合法的，因为下界已对所有参数成立，而上界使用一个明确参数。
-最后由 $C_n\le U_n$ 得到上极限结论。
+当 $L\ge64$，$3L/4<x<L$ 在 $64$ 由 $\log2<3/4$ 成立，随后 $L/4-3\log L$ 递增。
+引理\ref{lem:integral-uniform}给
+$B_n\ge n(L-\log L)-4n/L>8n$；最后一个不等式在 $64$ 成立且左侧括号递增。
+$\log2<3/4$ 可由 $e^{3/4}>1+3/4+(3/4)^2/2>2$ 得到。
 \end{proof}
 
-\subsection{有限膨胀参数的作用}
-在当前预算估计中，保留有限 $a$ 不会改善固定 $t$ 的上界。
-置 $u=1/a$、$L=\log t$，并令
+\subsection{实际增量与双边能量缺额}
+角点包络估计还未使用所有前序项之间的资格条件。本节将它们放在同一个测度中。
+在引理\ref{lem:load}的归一化下，反射坐标使末中心 $0\le u_i<\alpha$，
+并仍以 $I_j$ 表示相应归一化前的实际增量。
+相对末项未被捕获、且在 $W(0)$ 中有正贡献的全部前序项定义
+\begin{equation}\label{eq:mu}
+ \dint\mu_a(z)=\alpha^{-n}2^{-n}\sum_j r_j^{-n}
+                 \one_{I_j/(a+1)}(z)\dint z.
+\end{equation}
+这不是新选择的增量；其总质量就是那些前序项的原权重和。
+令 $m(z)=\max(1,\norm z_\infty)$，以及
+\begin{align}
+ H_a&=\{\norm z_\infty<t:\ \exists i,\ z_i\le\alpha-cm(z)\},\notag\\
+ \dint\lambda_a(z)&=\alpha^{-n}2^{-n}m(z)^{-n}\one_{H_a}(z)\dint z,\label{eq:lambda-a}\\
+ D&=\{\norm z_\infty<t:\ \exists i,\ z_i<1-\beta m(z)\},\quad \beta=1+1/t,\notag\\
+ \dint\lambda(z)&=2^{-n}m(z)^{-n}\one_D(z)\dint z.\label{eq:lambda}
+\end{align}
+\begin{lemma}\label{lem:actual}
+$\mu_a\le\lambda_a$，$\lambda_a(\R^n)=\alpha^{-n}J_a(t)$，且在每个 Borel 集 $E\subset D$ 上，
+\begin{equation}\label{eq:exact-scaling}
+ \lambda_a(E)=\alpha^{-n}\lambda(E).
+\end{equation}
+\end{lemma}
+\begin{proof}
+实际未捕获增量满足 $r_j\ge m(z)$ 及 $\norm{u-z}_\infty\ge cm(z)$。
+正方向差 $z_i-u_i\le m(z)<cm(z)$，故必在某坐标有
+$z_i\le u_i-cm(z)\le\alpha-cm(z)$。
+增量互不相交，遂有测度支配。
+角点域积分由式\eqref{eq:Ja}给出其总质量。
+又在 $m\ge1$ 上
 \[
- A_{n,a}=(1+1/t+u)^n,\qquad E_{n,a}=a^{-n}+\alpha^{-n}J_a(t).
+ \alpha-cm-(1-\beta m)=\frac{(\beta+1)m-1}{a+1}>0,
 \]
-利用 $\ell_a=\alpha\ell_t$ 可得精确恒等式
-\[
- E_{n,a}-B_n
- =u^n+[(1+u)^n-1](1+nL)-\frac n2uI_n(t).
-\]
-由 $I_n(t)\le L$ 及 $(1+u)^n-1\ge nu$，
-\[
- E_{n,a}-B_n\ge u^n+nu[1+(n-\tfrac12)L]>0.
-\]
-同时 $A_{n,a}>A_n$，故每个有限 $a>2t$ 的 $\tau$ 优化值
-$(\sqrt{A_{n,a}}+\sqrt{E_{n,a}})^2$ 严格大于 $F_n(t)$。
-这只排除了在本预算族中靠有限 $a$ 改善的路线；
-联合下确界仍等于 $U_n$，因为固定 $t$ 时可令 $a\to\infty$。
+故 $D\subset H_a$，并直接得到\eqref{eq:exact-scaling}。
+\end{proof}
 
+\begin{lemma}[双边能量缺额]\label{lem:energy}
+设 $\lambda_0$ 为有限正测度，$\mu\le\lambda_0$，$A,P$ 为不交 Borel 集，
+$0\le K\le1$ 为支撑在 $A\times P$ 上的 Borel 核。
+若存在 $M>0$ 使其 $\lambda_0$ 行积分和列积分均不超过 $M$，且
+$\int K(w,z)\dint\mu(z)\le\tau$ 对 $\mu$ 几乎处处的 $w\in A$ 成立，则
+\begin{equation}\label{eq:energy-deficit}
+ (\lambda_0-\mu)(\R^n)\ge
+ \frac{\iint K(w,z)\dint\lambda_0(w)\dint\lambda_0(z)-\tau\lambda_0(A)}{M}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+记 $\sigma=\lambda_0-\mu$。由非负性与 Tonelli 定理，
+$E_{\mu\mu}\le\tau\mu(A)\le\tau\lambda_0(A)$，而
+\[
+ E_{\lambda_0\lambda_0}-E_{\mu\mu}
+ =E_{\sigma|A,\lambda_0|P}+E_{\mu|A,\sigma|P}
+ \le M[\sigma(A)+\sigma(P)]\le M\sigma(\R^n).
+\]
+这里 $E_{\nu\eta}=\iint K\dint\nu\dint\eta$。
+不交性使最后一步只使用一次总缺额。
+\end{proof}
 
-\subsection{参数端点与内部极小值}
-\begin{proposition}\label{prop:endpoints}
-$U_1=2$、$U_2=4$、$U_3=8$，这些下确界均不在 $t>1$ 内取得。
-对每个 $n\ge4$，有 $U_n<2^n$，且存在内部全局极小点。
-此时 $F_n$ 至少有两个不同的驻点；本文不证明全局极小点的唯一性。
+\subsection{新的参数尺度与原始行能量}\label{subsec:second-row}
+接下来证明定理\ref{thm:second-moment}。
+本节至第\ref{subsec:second-scalar}节临时采用它的参数尺度，写作
+\begin{equation}\label{eq:second-parameters}
+\begin{gathered}
+ s=L^{1/3},\quad x=L-s,\quad t=n/x,\quad\beta=1+1/t,
+ \quad d=1/s,\quad h=d^2/100,\\
+ I=[d/4,3d/4],\quad p=e^{-s/4},\quad M_0=nhp,
+ \quad\zeta=n^{-3},\quad\kappa=\beta-\zeta.
+\end{gathered}
+\end{equation}
+置 $S=2^{36}$。下文固定 $s\ge S$；所有估计一致于显示的半径区间、面与坐标指标。
+由 $s\ge8$ 和 $n=e^{s^3}\ge s^6/2$，有
+\[
+ \begin{gathered}
+ x\in[L/2,L],\quad d<1/4,\quad t\ge L/2,\quad q=1-v>1/2,\\
+ r=1+u<2,\quad\rho=tq>4,\quad1<\kappa<\beta<2,\quad\zeta t<h/2.
+ \end{gathered}
+\]
+特别地 $t\ge s^3/2$、$\rho\ge s^3/4>4$，而
+\[\zeta t=1/(xn^2)\le8/s^{15}\le h/2,\]
+最后一式只需 $s^{13}\ge1600$，在 $s\ge2$ 已成立。
+所以 $h+\zeta t\le3h/2<d/2$、$\kappa>1$，且 $2d<r,\rho$。
+
+环境测度仍由\eqref{eq:lambda}定义，但 $t,\beta$ 采用\eqref{eq:second-parameters}。
+在目标壳 $r=1+u$、来源壳 $\rho=t(1-v)$ 上取 $u,v\in I$，
+仍按 $|u+v-d|<h$ 匹配。
+$h/d=1/(100s)<1/2$，所以端点处允许的匹配长度也至少为 $h$。
+目标好集 $\mathcal A$ 定义为
+\begin{equation}\label{eq:second-target}
+ \mathcal A=D\cap\{u\in I:\ |S_w-m_w|\le t/100,\ K_w\le12nd\},
+\end{equation}
+其中 $S_w,m_w,K_w$ 仍为
+\[
+ S_w=\sum_i(|w_i|-(r-d))_+,\quad m_w=d+(n-1)d^2/(2r),
+ \quad K_w=\#\{i:|w_i|>r-2d\}.
+\]
+来源暂取完整径向带 $\mathcal P_{\rm raw}=D\cap\{v\in I\}$，不加来源统计好集。
+原始核为
+\[
+ K_{\rm raw}(w,z)=\one_{\mathcal A}(w)\one_{\mathcal P_{\rm raw}}(z)
+ \one_{\{|r-q-d|<h\}}\one_{\{\norm{z-w}_\infty<\kappa\rho\}}.
+\]
+各集合与核均为 Borel 对象。
+
+\begin{lemma}\label{lem:second-row}
+当 $s\ge S$ 时，有
+\begin{equation}\label{eq:second-row-energy}
+\begin{gathered}
+ nd/16\le a_*:=\lambda(\mathcal A)\le nd,\\
+ e^{-2}M_0/4\le R_{\rm raw}(w):=\int K_{\rm raw}(w,z)\dint\lambda(z)
+ \le4e^2M_0<36M_0,\\
+ E_{\rm raw}:=\iint K_{\rm raw}\dint\lambda\dint\lambda
+ >c_E ndM_0,\qquad c_E=2^{-10}.
+\end{gathered}
+\end{equation}
+\end{lemma}
+\begin{proof}
+在每张目标面上，固定坐标贡献 $d$，其余坐标的超出量均值为 $d^2/(2r)$、
+二阶矩为 $d^3/(3r)$。所以 $m_w$ 是准确的面条件均值，方差至多 $nd^3/(3r)$。
+在 $t/100$ 阈值的 Chebyshev 坏概率至多
+$10000nd^3/(3rt^2)\le20000/(3s^3)<1/4$，
+因为 $x^2/n\le L^2/n\le2$，且 $S^3>80000/3$。
+又 $nd\ge s^5/2>2$，故 $\mathbb E K_w\le1+2nd\le3nd$，Markov 坏概率至多 $1/4$。
+故每面至少一半面积保留。
+完整目标壳质量至少 $nd/4$；原角点捕获部分至多
+$(nd/4)(3/4)^{n-1}\le nd/16$，因为
+\[\frac1r-\frac1t\ge\frac1{1+3/(4s)}-\frac2{s^3}>\frac12.\]
+右侧随 $s$ 递增，在 $s=4$ 时由 $16/19-1/32>1/2$ 验证；
+又 $n\ge6$、$(3/4)^5<1/4$。这给出 $a_*\ge nd/16$。上界由完整壳质量不超过 $nd$ 得到。
+
+匹配时置 $b=r-q-d+\zeta\rho$，则 $|b|\le h+\zeta t<d$。
+固定好目标，来源的归一化交长为
+\[
+ L_i(w,\rho)=1-\frac{(|w_i|-(r-d-b))_+}{2\rho}.
+\]
+阈值移动只作用于 $K_w$ 记录的坐标；故损失和 $T_w=\sum_i(1-L_i)$ 满足
+\begin{equation}\label{eq:second-row-error}
+ \left|T_w-\frac{nd^2}{4r\rho}\right|
+ \le\frac{t/100+12nd(h+\zeta t)+2d}{2\rho}.
+\end{equation}
+用 $q\ge1/2$、$h+\zeta t\le3h/2$、$x\le L$ 和 $t\ge L/2$，
+右侧一致不超过
+\[\frac1{100}+18Ldh+4d/L=\frac{19}{100}+\frac4{s^4}<\frac15,\]
+最后在 $s=8$ 成立，随后递减。
+这里的主中心为
+\[
+ \frac{nd^2}{4r\rho}=\frac{s-d}{4rq}.
+\]
+由 $|rq-1|\le d$、$rq\ge1-d$，
+\begin{equation}\label{eq:second-bounded-compensation}
+ \left|\frac{s-d}{4rq}-\frac s4\right|
+ \le\frac{1+d}{4(1-d)}\le\frac9{28}<\frac13.
+\end{equation}
+此有界补偿在估计中予以保留。
+每坐标损失 $v_i=1-L_i$ 满足 $0\le v_i\le V:=4/s^4<1/2$。
+由上述两项误差，$|T_w-s/4|<8/15$，所以 $T_w\le s/2$。
+于是
+\[
+ \sum_i\frac{v_i^2}{1-v_i}\le\frac V{1-V}T_w\le4/s^3.
+\]
+完整乘积的对数在 $-T_w-4/s^3$ 与 $-T_w$ 之间。
+删除坐标 $j$ 后，下界只增加，上界则直接估计为
+$\sum_{i\ne j}\log(1-v_i)\le-T_w+v_j\le-T_w+V$。
+因此额外误差至多 $4/s^4+4/s^3<1/10$（在 $s=8$ 即成立且随后递减）。
+总误差小于 $1/3+1/5+1/10<2$，得对全部好目标、匹配半径和删除指标 $j$ 一致成立
+\begin{equation}\label{eq:second-products}
+ e^{-2}p\le\prod_{i\ne j}L_i(w,\rho)\le e^2p.
+\end{equation}
+同一个估计也适用于完整坐标乘积。
+
+每个来源坐标至少有一个、至多有两个面被捕获，归一化面系数为 $1/2$。
+完整来源壳捕获系数因此介于 $(n/2)e^{-2}p$ 与 $ne^2p$。
+匹配来源对数长度介于 $h$ 与 $4h$，给出未限制到 $D$ 时的行界。
+还须扣去原角点捕获部分。其整个来源壳带质量至多
+\[
+ \frac{nd}{2}\exp(-Ld/32)=\frac{nd}{2}\exp(-s^2/32),
+\]
+因为 $n\ge4$、$x\ge L/2$、$v\ge d/4$ 给
+$(n-1)(1/\rho-1/t)/2\ge3Ld/64\ge Ld/32$。
+除以 $M_0$，此量可用较宽的 $100s\exp(-s^2/32+s/4)$ 上包。
+对 $s\ge16$，指数不超过 $-s^2/64$；Taylor 正项 $e^u\ge u^2/2$ 于是给
+\[
+ \frac{\text{来源角点捕获质量}}{M_0}\le\frac{819200}{s^3}<\frac1{36}
+ <\frac{e^{-2}}4.
+\]
+第一严格号在 $s=S$ 可用整数比较验证，随后为递减幂；最后用 $e^2<9$。
+扣去整个来源角点部分是关于目标的一致损失，因核不超过 $1$。
+所以行下界可取 $e^{-2}M_0/4$，上界为 $4e^2M_0<36M_0$。
+最后乘以 $a_*\ge nd/16$，并用 $e^2<9$、$64\cdot9<1024$，得到能量下界。
+\end{proof}
+
+\subsection{完整列积分的单调上包}\label{subsec:second-column}
+来源统计坏集的总质量在新尺度下不足以直接控制行损失。
+我们改为估计完整列积分，再按能量删除高列。
+固定 $z\in\mathcal P_{\rm raw}$，写 $\rho=tq$，定义
+\begin{equation}\label{eq:Y}
+\begin{gathered}
+ r_-=q+d-h>1,\qquad a_i=\kappa\rho-|z_i|>0,\\
+ \ell_i(r)=\min\left(1,\frac{1+a_i/r}{2}\right),\qquad
+ Y(z)=\frac{4nh}{r_-}\prod_{i=1}^n\ell_i(r_-).
+\end{gathered}
+\end{equation}
+每个匹配目标半径属于 $(r_-,r_-+2h)$；与目标壳区间相交只会缩小该区间。
+
+\begin{lemma}\label{lem:Y}
+$Y$ 为 Borel 函数，并且完整原始列满足
+\[
+ C_{\rm raw}(z):=\int K_{\rm raw}(w,z)\dint\lambda(w)\le Y(z).
+\]
+\end{lemma}
+\begin{proof}
+固定 $z,\rho$，$\ell_i(r)$ 是捕获区间与目标区间 $[-r,r]$ 的归一化交长。
+由于 $a_i>0$，该归一化交长随 $r$ 非增，且至少为 $1/2$。
+因此任意实际目标半径的删一坐标乘积至多为
+$2\prod_i\ell_i(r_-)$。
+完整目标壳至多有 $2n$ 张被捕获面，每面的归一化因子为 $1/2$，
+故壳捕获系数至多 $2n\prod_i\ell_i(r_-)$。
+匹配径向对数长度不超过 $2h/r_-$，乘得 $Y$。
+限制到好目标与 $D$ 只减小列积分。
+证明在每个固定来源半径下进行，不对 $r_-(\rho)$ 求导；
+即使 $r_-$ 不属于目标壳区间，使用较大的径向区间仍给上界。
+\end{proof}
+
+\subsection{固定来源面的二阶矩}\label{subsec:second-moment}
+这一估计保留固定最大面坐标，亦保留二阶矩指数中不能趋零的补偿。
+令
+\[
+ g=r_--q+\zeta\rho=d-h+\zeta\rho.
+\]
+已由 $s\ge S$ 得到 $\zeta t\le h/2$，故 $0<d-h\le g\le d<r_-,\rho$。
+
+本节的完整来源壳测度明确取为
+\[
+ \dint\lambda^0_{\rm source}(z)
+ =2^{-n}\norm z_\infty^{-n}
+   \one_{\{\norm z_\infty/t\in1-I\}}\dint z,
+ \qquad1-I=[1-3d/4,1-d/4].
+\]
+它包含该来源径向带的全部壳面；每张固定最大面在半径 $\rho$ 处的径向测度为
+$\dint\rho/(2\rho)$，其余坐标独立均匀于 $[-\rho,\rho]$。
+
+\begin{lemma}\label{lem:second-moment}
+在完整来源壳测度 $\lambda^0_{\rm source}$ 下，
+\begin{equation}\label{eq:Y-second}
+ \int Y^2\dint\lambda^0_{\rm source}\le144ndM_0^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+固定半径 $\rho$ 及一个最大面 $z_j=\pm\rho$。
+该固定坐标的交长准确为
+\[
+ \ell_*=1-g/(2r_-)\in(1/2,1).
+\]
+其余 $n-1$ 个绝对坐标独立均匀于 $[0,\rho]$。
+对其中一个 $X$，
+\[
+ \ell(X)=1-\frac{(X-(\rho-g))_+}{2r_-},\qquad
+ \mathbb E\ell(X)^2
+ =1-\frac{g^2}{2r_-\rho}+\frac{g^3}{12r_-^2\rho}.
+\]
+最后一式由在 $[0,\rho-g]$ 和 $[\rho-g,\rho]$ 分别积分得到。
+固定面坐标不是另一个独立均匀坐标，所以准确的条件矩为
+\begin{equation}\label{eq:pinned-second}
+ \mathbb E_{\rm face}Y^2
+ =\left(\frac{4nh}{r_-}\right)^2
+      \ell_*^2\left(\mathbb E\ell(X)^2\right)^{n-1}.
+\end{equation}
+
+为估计指数，使用 $r_-q\le1+3d/4$、
+$g\ge d(1-d/100)$ 和 $xd^2=s-d$，得
+\begin{align*}
+ \frac{(n-1)g^2}{2r_-\rho}
+ &\ge\frac{s-d}{2}(1-1/n)(1-d/50)(1-3d/4)\\
+ &\ge\frac s2-\left(\frac d2+\frac{s}{2n}+\frac{77}{200}\right)
+ \ge s/2-1.
+\end{align*}
+最后因为 $d/2+s/(2n)+77/200\le1/16+1/8^5+77/200<1$，
+它已对 $s\ge8$ 成立。
+第二步用了 $\prod(1-v_i)\ge1-\sum v_i$ 及 $sd=1$。
+正的三次项满足
+\[
+ \frac{(n-1)g^3}{12r_-^2\rho}
+ \le\frac{xd^3}{12q}\le\frac16.
+\]
+所以 $\log u\le u-1$ 给
+\[
+ \left(\mathbb E\ell(X)^2\right)^{n-1}
+ \le e^{-s/2+7/6}<9p^2.
+\]
+指数中的 $7/6$ 是保留的有界补偿，未被当作趋零误差。
+在\eqref{eq:pinned-second}中仅向上舍去 $\ell_*^2\le1$，再用 $r_->1$，
+得到每张面上一致的 $\mathbb E_{\rm face}Y^2\le144M_0^2$。
+完整来源壳的质量不超过 $nd$，积分即得\eqref{eq:Y-second}。
+限制到角点未捕获域 $D$ 后，该上界仍成立。
+\end{proof}
+
+\subsection{高列能量截断与有限增量缺额}\label{subsec:second-cut}
+固定准确常数
+\[
+ H=2^{20},\qquad C_2=144,\qquad c_E=2^{-10},
+\]
+并定义
+\[
+ \mathcal P=\mathcal P_{\rm raw}\cap\{Y\le HM_0\},\qquad
+ K=K_{\rm raw}\one_{\{Y(z)\le HM_0\}}.
+\]
+由引理\ref{lem:Y}，保留核的列积分至多 $HM_0$，其行积分不超过原行上界
+$36M_0\le HM_0$。
+删除的能量准确等于被删来源上的原始列积分，故
+\begin{align}\label{eq:energy-truncation}
+ E_{\rm raw}-E_{\rm good}
+ &=\int_{Y>HM_0}C_{\rm raw}(z)\dint\lambda(z)\notag\\
+ &\le\int_{Y>HM_0}Y(z)\dint\lambda(z)
+ \le\frac1{HM_0}\int Y^2\dint\lambda
+ \le\frac{144}{H}ndM_0\le\frac{c_E}{4}ndM_0.
+\end{align}
+最后一式是整数比较 $H\ge4\cdot144\cdot1024$。
+因此
+\begin{equation}\label{eq:energy-truncated}
+ E_{\rm good}\ge(3c_E/4)ndM_0,\qquad
+ \max(R_\lambda,C_\lambda)\le HM_0.
+\end{equation}
+这里控制的是删除能量；不需要被删来源质量为 $o(M_0)$，也没有对未知实际测度的分布作假设。
+
+\begin{proposition}\label{prop:second-finite}
+若 $s\ge S$ 且 $\tau/M_0\le c_E/4$，则对每个 $a\ge8n^4$ 和每个原有限选择历史，
+实际未捕获前序总权重至多
+$\alpha^{-n}J_a(t)-\delta_2$，其中 $\delta_2=2^{-31}nd$。
 \end{proposition}
 \begin{proof}
-$F_n$ 连续延拓至 $t=1$ 后有 $F_n(1)=2^n$，
-而 $B_n(t)\ge(n/2)\log t$ 保证 $F_n(t)\to\infty$ 当 $t\to\infty$。
-先处理前三维。置 $x=1/t\in(0,1)$、$d=1-x$、$L=-\log x$。
-一维有 $B_1=(d+L)/2>d$，故
-$F_1>(\sqrt{2-d}+\sqrt d)^2>2$。
-二维的准确展开给出
+先在环境测度中计算。
+$\lambda(\mathcal A)\le nd$ 是减去资格项时需要的上界，故
 \[
- B_2-d^2=\frac{d(5x+1)}4+(1-x/2)L>0.
+ E_{\rm good}-\tau\lambda(\mathcal A)
+ \ge(c_E/2)ndM_0.
 \]
-因此 $\sqrt{A_2}+\sqrt{B_2}>1+x+d=2$。
-三维则有
-\[
- 16\bigl[B_3-\tfrac92d^2\bigr]=P+QL,
- \quad P=-37+126x-87x^2-2x^3,
- \quad Q=24-24x-6x^2.
-\]
-使用对 $0<x<1$ 成立的基本对数界
-\[
- \frac{2d}{1+x}\le L\le\frac d{x}.
-\]
-左界可由 $[-\log x-2(1-x)/(1+x)]'
-=-(1-x)^2/[x(1+x)^2]\le0$ 及其在 $x=1$ 为零得到；
-右界由 $L=\int_x^1\dint u/u\le d/x$ 得到。
-若 $Q\ge0$，则
-\[
- P+QL\ge\frac{d(2x^3+79x^2+4x+11)}{1+x}>0.
-\]
-若 $Q<0$，则
-\[
- P+QL\ge\frac{d(2x^3+83x^2-61x+24)}x>0,
-\]
-因为二次式 $83x^2-61x+24$ 的判别式为 $-4247$。
-故 $B_3>(9/2)d^2$。另一方面，
-\[
- 2\sqrt2-(1+x)^{3/2}
- =\int_{1+x}^2\tfrac32\sqrt u\,\dint u
- \le\frac3{\sqrt2}d<\sqrt{B_3}.
-\]
-所以 $F_3>8$。结合端点极限便得到前三维的断言。
+注意好集质量下界只用于原始能量下估计，这里使用的是其上界。
 
-对于 $n\ge4$，同一个参数 $t=2$ 已足以严格胜过 $2^n$。
-当 $n=4$ 时，
+现在回到同一个有限选择历史的 $\mu_a\le\lambda_a$。
+两好集均含于 $D$，故\eqref{eq:exact-scaling}给其环境测度倍率
+$c_a=\alpha^{-n}\ge1$。
+目标实际项半径小于 $\alpha+r<3$，来源实际项半径至少为 $\rho>4$，
+所以全部来源均早于同一目标项。
+对 $a\ge8n^4$，$a>2t$、$c>1$，且
 \[
- A_4(2)=81/16,\qquad
- B_4(2)=\frac{1841+72\log2}{768}<\frac{1913}{768}<49/16,
+ \alpha\beta-\kappa-\frac2{a+1}
+ =\zeta-\frac{\beta+2}{a+1}>0,
 \]
-从而 $\sqrt{A_4(2)}+\sqrt{B_4(2)}<9/4+7/4=4$。
-对 $n\ge5$，令 $\delta_n=2^{n/2}-(3/2)^{n/2}$。
-由 $\sqrt3<7/4$ 及 $\log2<1$，
+因为 $\beta<2$，且 $4/(8n^4)<n^{-3}=\zeta$。
+记归一化中心为 $v_i=y_i/(a+1)$。实际增量点至中心的距离给
 \[
- \delta_5^2=1267/32-18\sqrt3>259/32>6>1+5\log2.
+ \norm{v_i-v_j}_\infty<\norm{z-w}_\infty+\frac{r_i+r_j}{a+1}
+ <\left(\kappa+\frac2{a+1}\right)r_i<\alpha\beta r_i,
 \]
-又 $\delta_{n+1}>\sqrt2\,\delta_n$ 且
-$2(1+n\log2)>1+(n+1)\log2$，归纳可得
-$\delta_n^2>1+n\log2>B_n(2)$。
-故所有 $n\ge4$ 均有 $F_n(2)<2^n$。
-连续性和无穷远处发散于是保证下确界在内部取得。
+正是 $y_j\in bQ_i$。
+径向匹配和 $Y$ 截断只减少来源质量，因此同一目标项的一次资格条件给
+$\int K(w,z)\dint\mu_a(z)\le\tau$。
 
-最后，$B_n(1+\varepsilon)=n\varepsilon+O(\varepsilon^2)$ 给出
-\[
- F_n(1+\varepsilon)
- =2^n+2\sqrt{n2^n}\sqrt\varepsilon+O(\varepsilon)>2^n
-\]
-对充分小的 $\varepsilon>0$ 成立。
-因而 $F_n$ 在 $[1,2]$ 的最大值于内部取得，且其值大于 $2^n$；
-这给出一个与全局极小点不同的驻点。
+在 $\lambda_a$ 下能量乘 $c_a^2$，行列度数乘 $c_a$，目标质量乘 $c_a$。
+引理\ref{lem:energy}给
+\begin{align*}
+ \lambda_a(\R^n)-\mu_a(\R^n)
+ &\ge\frac{c_a^2E_{\rm good}-\tau c_a a_*}{c_aHM_0}\\
+ &\ge\frac{E_{\rm good}-\tau a_*}{HM_0}
+ \ge\frac{c_E}{2H}nd=2^{-31}nd.
+\end{align*}
+这对每个原有限实例和所有 $a\ge8n^4$ 成立，未要求选择历史或实际测度收敛。
 \end{proof}
 
-\section{应用}
+\subsection{新参数的标量代价}\label{subsec:second-scalar}
+\begin{proof}[定理\ref{thm:second-moment}的证明]
+在本证明中 $t=n/(L-s)$。
+由引理\ref{lem:integral-uniform}与 $x\in[L/2,L]$，
+\[
+ B_n(t)\ge n(L-\log L)-4n/L>8n
+\]
+在 $L\ge64$ 成立：$L-\log L-4/L$ 在 $64$ 大于 $8$ 且随后递增。
+因此 $\delta_2<n<B_n(t)$，可取
+$\tau=\sqrt{A_n(t)(B_n(t)-\delta_2)}$。
+另一方面，
+\[
+ A_n(t)\le e^x=ne^{-s},\qquad B_n(t)\le nL,\qquad
+ \tau\le n\sqrt L\,e^{-s/2}.
+\]
+故
+\begin{equation}\label{eq:second-tau}
+ \frac\tau{M_0}\le100L^{7/6}e^{-s/4}=100s^{7/2}e^{-s/4}
+ \le\frac{100\cdot4^8\cdot8!}{s^{9/2}}<\frac{2^{38}}{s^4}
+ \le2^{-106}<c_E/4.
+\end{equation}
+这里使用 Taylor 第八个正项 $e^{s/4}\ge(s/4)^8/8!$，
+以及准确整数比较 $100\cdot4^8\cdot8!<2^{38}$ 和 $s\ge2^{36}$。
+命题\ref{prop:second-finite}遂适用。
+加回捕获项 $\tau$ 与自身项 $a^{-n}$，再用同一个有限覆盖不等式，得到
+\[
+ C_n\le\left(1+\frac{(\beta+1/a)^n}{\tau}\right)
+ [\tau+a^{-n}+\alpha^{-n}J_a(t)-\delta_2].
+\]
+固定 $n,t,\tau$ 后，只对已证标量不等式令 $a\to\infty$，得到第一结论。
+一般 $L^1$ 输入及全部正共同半径仍由命题\ref{prop:finite}的紧严格水平集与内正则性论证包括。
 
-\subsection{维数传递}
-\begin{proposition}\label{prop:monotonicity}
-对每个 $n\ge1$，$C_n\le C_{n+1}$。
-\end{proposition}
-\begin{proof}
-取维数 $n+1$ 的任意可用弱型常数 $K$，固定 $g\in L^1(\R^n)$、
-$r_0>0$，并对 $R>r_0$ 定义
-$f_R(x,z)=g(x)\one_{[-R,R]}(z)$。
-当 $|z|\le R-r_0$ 且 $r\le r_0$ 时，乘积积分表明
-维数 $n+1$ 的相应平均恰等于 $g$ 的维数 $n$ 平均。
-记 $M_n^{\le r_0}$ 为只取 $r\le r_0$ 的上确界，则
+最后必须支付新参数的代价，不能把旧参数的 $W_n$ 上包用于这里。
+准确恒等式 $x=L(1-d^2)$ 给
 \[
- \{M_n^{\le r_0}g>\lambda\}\times[-R+r_0,R-r_0]
- \subseteq\{M_{n+1}f_R>\lambda\}.
+ B_n(t)\le1+n\log t
+ \le T_n+2nd^2+1
 \]
-由弱型估计和 $\norm{f_R}_1=2R\norm g_1$，
-\[
- \lambda\,2(R-r_0)|\{M_n^{\le r_0}g>\lambda\}|
- \le 2RK\norm g_1.
-\]
-先令 $R\to\infty$，再令 $r_0\to\infty$；
-严格水平集单调增加，故得到一般 $L^1$ 输入、全部正尺度的维数 $n$ 估计。
-最后对 $K$ 取下确界即得结论。
+其中用 $d^2<1/2$ 和 $-\log(1-d^2)\le2d^2$。
+同时 $A_n(t)+2\sqrt{A_n(t)B_n(t)}\le ne^{-s}+2ns^{3/2}e^{-s/2}$。
+除以 $nd=n/s$ 后，$2nd^2+1+ne^{-s}+2ns^{3/2}e^{-s/2}$ 的比值至多
+\begin{equation}\label{eq:second-remainder}
+ R(s)=\frac2s+\frac2{s^5}+\frac{8!}{s^7}+\frac{2^9\cdot8!}{s^5}.
+\end{equation}
+第二项用 $n\ge s^6/2$，后两项分别用
+$e^s\ge s^8/8!$ 和 $e^{s/2}\ge(s/2)^8/8!$；
+最后一项还将更小的 $2^9\cdot8!/s^{11/2}$ 向上放宽为所写项。
+每一项均为递减幂，而且准确有理比较给 $R(2^{36})<2^{-32}$。
+所以
+\begin{align*}
+ \Fcal(A_n(t),B_n(t)-\delta_2)
+ &\le A_n(t)+B_n(t)-\delta_2+2\sqrt{A_n(t)B_n(t)}\\
+ &\le T_n-2^{-31}nd+R(s)nd<T_n-2^{-32}nd.
+\end{align*}
+这在全部 $s\ge2^{36}$ 成立，完成证明。
 \end{proof}
-因此较高维的可用上界可传给低维，较低维的有效下界可传给高维。
-逐维比较须先考虑这种传递，再判断新参数是否改善已有界。
 
-
-
-\subsection{逐维参数与认证上界}
-表\ref{tab:dimensions}列出明确有理参数及严格上界 $U$，每行均满足
-$C_n\le F_n(t)<U$。
-表中有限小数是准确有理数，而非对近似值取未经控制的有效数字。
-所有参数还可配以同一个有限 $a=2^{256}$ 及明确有理阈值，
-使有限参数估计严格小于同一 $U$，构造见附录。
-所列参数未被证明是全局最优参数。
-二维、三维的内部候选比端点值 $4,8$ 大，不用于替代更强的已有界；
-七维参数沿用式\eqref{eq:seven}。
-\begin{table}[!ht]
-\centering\small
-\caption{明确参数的严格认证。$U$ 是 $F_n(t)$ 的有理上界。}
-\label{tab:dimensions}
-\begin{tabular}{rll}
+\subsection{新门槛的有理基点与全尾}
+上面的显式证明只使用指数级数的正项与递减幂。
+为便于复核，汇集其中较大的有理基点比较：
+\begin{center}
+\begin{tabular}{ll}
 \toprule
-$n$ & $t$ & $U$（严格上界）\\
+所用比较 & 基点或准确判据\\
 \midrule
-2 & $1048577/1048576$ & $4.0055223599$ \\
-3 & $2366495/1048576$ & $10.1606142881$ \\
-4 & $3767413/1048576$ & $13.6947031585$ \\
-5 & $1214935/262144$ & $17.244239655$ \\
-6 & $1462789/262144$ & $20.8636057626$ \\
-7 & $3391749/524288$ & $24.554960525965$ \\
-8 & $3837029/524288$ & $28.3136303196$ \\
-9 & $8532123/1048576$ & $32.134075444$ \\
-10 & $4681759/524288$ & $36.0111579946$ \\
-11 & $2543069/262144$ & $39.9403799723$ \\
-12 & $10961391/1048576$ & $43.917858421$ \\
-13 & $11733181/1048576$ & $47.9402399949$ \\
-14 & $6244753/524288$ & $52.0046124277$ \\
-15 & $13231891/1048576$ & $56.1084279254$ \\
-16 & $3490403/262144$ & $60.249440557$ \\
-17 & $14679749/1048576$ & $64.4256560308$ \\
-18 & $15387231/1048576$ & $68.6352915288$ \\
-19 & $4021215/262144$ & $72.8767434566$ \\
-20 & $16773341/1048576$ & $77.1485613646$ \\
-32 & $24493341/1048576$ & $130.3902029721$ \\
-64 & $10594665/262144$ & $284.3700455693$ \\
+目标坏概率小于 $1/4$ & $20000/(3S^3)<1/4$\\
+行中心误差小于 $1/3$ & $9/28<1/3$\\
+行移动误差小于 $1/5$ & $19/100+4/8^4<1/5$\\
+对数额外误差小于 $1/10$ & $4/8^4+4/8^3<1/10$\\
+矩指数的损失小于 $1$ & $1/16+1/8^5+77/200<1$\\
+来源角点删除量小于 $M_0/36$ & $819200/S^3<1/36$\\
+资格阈值的 Taylor 系数 & $100\cdot4^8\cdot8!<2^{38}$\\
+最终标量余项 & $R(S)<2^{-32}$\\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{center}
+这里 $S=2^{36}$，$R$ 由\eqref{eq:second-remainder}给定。
+这些都是整数与分数运算；补充材料的准确核查程序逐项验证它们。
+目标角点差 $1/(1+3/(4s))-2/s^3$ 随 $s$ 递增，
+中心误差 $(1+1/s)/(4(1-1/s))$ 随 $s$ 递减。
+其余行误差、对数误差、矩补偿上包以及\eqref{eq:second-remainder}全为正常数加递减幂或递减幂之和。
+所有指数尾已由全域 Taylor 不等式化为幂界，故这些基点覆盖全部 $s\ge S$，
+未留下需要由有限参数样本外推的尾部。
 
+\subsection{反对角匹配的典型壳面}
+现在回到显式界定理\ref{thm:energy}。本节固定 $l\ge128$，并重新取式\eqref{eq:large-parameters}的参数。
+令
+\begin{equation}\label{eq:energy-parameters}
+ d=\sqrt{l/L},\quad h=\frac1{100Ld},\quad I=[d/4,3d/4],\quad
+ \zeta=n^{-3},\quad\kappa=\beta-\zeta,\quad k=nhL^{-1/4}.
+\end{equation}
+下面先在明确列出的初等条件下证明几何估计；第\ref{subsec:threshold}节验证这些条件对全部 $l\ge128$ 成立。
+在全壳测度 $2^{-n}\norm z_\infty^{-n}\dint z$ 下，半径 $R>1$ 的每张面有径向测度
+$\dint R/(2R)$，其余 $n-1$ 个坐标为独立的 $[-R,R]$ 均匀坐标。
+最大坐标绝对值并列的集合为零测集。
 
-\subsection{七维的明确常数}
-令 $n=7$，记 $q=1+1/(2t)$、$h=(1+1/t)/2$。
-逐项积分给出
+目标点 $w$ 位于 $r=\norm w_\infty=1+u$、$u\in I$；
+来源点 $z$ 位于 $\rho=\norm z_\infty=tq$、$q=1-v$、$v\in I$。
+匹配条件为
+\begin{equation}\label{eq:matching}
+ |u+v-d|=|r-q-d|<h.
+\end{equation}
+因 $h/d=1/(100l)<1/2$，固定任一参数后，另一个参数的允许长度在 $h$ 与 $2h$ 之间。
+来源径向对数长度于是介于 $h$ 与 $4h$，目标径向对数长度不超过 $2h$。
+
+定义
+\begin{align*}
+ S_w&=\sum_i(|w_i|-(r-d))_+,& m_w&=d+(n-1)d^2/(2r),&K_w&=\#\{i:|w_i|>r-2d\},\\
+ S_z&=\sum_i(|z_i|-(\rho-d))_+,&m_z&=d+(n-1)d^2/(2\rho),&K_z&=\#\{i:|z_i|>\rho-2d\}.
+\end{align*}
+取 Borel 好集
 \begin{align}
- I_7(t)&:=\int_1^t
-       \left(q-\frac1{2\rho}\right)^6\frac{\dint\rho}{\rho}
-       =q^6\log t+\sum_{j=1}^6
-       \binom6j q^{6-j}\left(-\frac12\right)^j
-                  \frac{1-t^{-j}}j,\label{eq:I7}\\
- B_7(t)&=1-h^7+7\log t-\frac72 I_7(t).
- \label{eq:B7}
+ \mathcal A&=D\cap\{u\in I,\ |S_w-m_w|\le t/100,\ K_w\le12nd\},\notag\\
+ \mathcal P&=D\cap\{v\in I,\ |S_z-m_z|\le1/100,\ K_z\le16Ld\},\label{eq:good-sets}\\
+ K(w,z)&=\one_{\mathcal A}(w)\one_{\mathcal P}(z)
+ \one_{\{|r-q-d|<h\}}\one_{\{\norm{z-w}_\infty<\kappa\rho\}}.\label{eq:kernel}
 \end{align}
-这把所需常数化为有理数、一个对数和正平方根。
+我们使用目标的全部 $2n$ 张面。条件均值中的确定项 $d$ 来自固定面坐标。
 
-\begin{proof}[推论\ref{cor:seven}的证明]
-在式\eqref{eq:I7}--\eqref{eq:B7}中取
-$t=t_0=3391749/524288$。
-附录的纯有理计算给出 $\log t_0$ 的严格上界，
-并验证了式\eqref{eq:seven}所需的两个有理不等式。
-结合定理\ref{thm:main}即得结论。
+\begin{lemma}\label{lem:good-mass}
+在第\ref{subsec:threshold}节列出的条件下，$r<2$、$\rho>4$，两好集不交，且
+\[
+ a_*:=\lambda(\mathcal A)\ge nd/16.
+\]
+从完整来源壳环中删除 $\mathcal P$ 的补集，其测度不超过 $k\mathsf{Bad}$，其中
+\begin{equation}\label{eq:bad}
+ \mathsf{Bad}=\frac{2000000}{3}l^{5/2}L^{-1/4}
+       +\frac{400}{121}\sqrt l\,L^{-1/4}+51200L^{-5/4}<1/36.
+\end{equation}
+\end{lemma}
+\begin{proof}
+若 $X$ 均匀于 $[-R,R]$，$0<d<R$，则直接积分给出
+\[
+ \mathbb E(|X|-(R-d))_+=\frac{d^2}{2R},\qquad
+ \mathbb E[(|X|-(R-d))_+^2]=\frac{d^3}{3R}.
+\]
+在每张目标面上，$\operatorname{Var}S_w\le nd^3/(3r)$。
+由 $n/t^2=x^2/n\le2$，Chebyshev 不等式给坏概率
+$\le(20000/3)d^3<1/4$。
+又 $nd>2$ 给 $\mathbb E K_w\le1+2nd\le3nd$，Markov 不等式给另一坏概率 $\le1/4$。
+每面至少一半为好点。目标壳环的完整质量为
+$n\log[(1+3d/4)/(1+d/4)]\ge nd/4$。
+原角点捕获的壳面系数为 $(n/2)\ell_t(r)^{n-1}$。
+下文条件保证 $\ell_t(r)<3/4$，故其总质量至多
+$(nd/4)(3/4)^{n-1}\le nd/16$（$n\ge6$）。
+相减后好集质量至少 $nd/16$。
+
+对来源面，用 $q\ge1/2$ 得
+$\operatorname{Var}S_z\le(2/3)Ld^3$，坏概率至多 $(20000/3)Ld^3$。
+同时 $K_z=1+\operatorname{Bin}(n-1,2d/\rho)$，且 $Ld>1$，从而
+\[
+ \mathbb E K_z\le5Ld,\quad\operatorname{Var}K_z\le4Ld,\quad
+ \mathbb P(K_z>16Ld)\le4/(121Ld).
+\]
+来源壳环完整质量不超过 $nd$，因此统计坏集总质量至多
+$(20000/3)nl^2/L+(4/121)n/L$。
+除以 $k=n/(100L^{3/4}\sqrt l)$，即为\eqref{eq:bad}的前两项。
+
+还需删除原角点捕获部分。因 $v\ge d/4$、$x\ge3L/4$、$n\ge4$，
+\[
+ \frac{n-1}{2}(1/\rho-1/t)
+ =\frac{(1-1/n)xv}{2q}\ge\frac{9Ld}{128}\ge\frac{Ld}{32}.
+\]
+其质量除以 $k$ 至多 $50lL^{1/4}\exp(-Ld/32)$。
+当 $l\ge128$，指数级数给
+$L=e^l\ge l^4/24\ge4096l$ 和 $\sqrt L\ge l^2/8\ge16l$。
+所以 $Ld/32=\sqrt{Ll}/32\ge2l$，上述比值不超过
+$50lL^{-7/4}\le(25/8)L^{-5/4}<51200L^{-5/4}$。
+这证明\eqref{eq:bad}是对全部来源删除量的一致上包。
 \end{proof}
 
-特别地，对任意 $f\in L^1(\R^7)$ 和 $\lambda>0$，
+\subsection{行列交长与捕获核的积分}
+反对角条件使两个方向的坐标乘积具有同一个主指数 $l/4$。
+记 $e_0=r-q-d$、$b_0=e_0+\zeta\rho$，则 $|b_0|\le h+\zeta t<d$。
+固定 $w$ 时，来源捕获盒的归一化坐标交长为
 \[
- |\{M_7f>\lambda\}|
- \le \frac{24.554960525965}{\lambda}\norm f_1.
+ L_i^{\rm row}=1-\frac{(|w_i|-(r-d-b_0))_+}{2\rho}.
 \]
-将上确界限制于任意一个正半径集合，仍满足同一估计。
+固定 $z$ 时，目标捕获盒的归一化坐标交长为
+\[
+ L_i^{\rm col}=1-\frac{(|z_i|-(\rho-d-b_0))_+}{2r}.
+\]
+两式可由两个一维区间的交长直接得到；此处的几何条件保证至少一个面总被捕获、交长为正。
+设 $T_w=\sum_i(1-L_i^{\rm row})$、$T_z=\sum_i(1-L_i^{\rm col})$。
+阈值移动只涉及 $K_w$ 或 $K_z$ 计数的坐标，且
+$|m_w-nd^2/(2r)|,|m_z-nd^2/(2\rho)|\le2d$，故
+\begin{align}
+ \left|T_w-\frac{nd^2}{4r\rho}\right|
+ &\le\frac{t/100+12nd(h+\zeta t)+2d}{2\rho},\label{eq:row-error}\\
+ \left|T_z-\frac{nd^2}{4r\rho}\right|
+ &\le\frac{1/100+16Ld(h+\zeta t)+2d}{2r}.\label{eq:column-error}
+\end{align}
+令 $q_0=1-3d/4$，定义非负误差
+\begin{align}
+ E_m&=\frac{l(3l/L+3d/4)}{4q_0},&
+ E_r&=\frac{13/100+48d/L^4+4d/L}{2q_0},\notag\\
+ E_c&=17/200+d+64d/L^4,&
+ V&=(d+h+8/L^5)/2,\label{eq:errors}\\
+ E&=E_m+E_r+E_c,&
+ \mathsf P&=E+V+\frac{V}{1-V}(l/4+E).\notag
+\end{align}
+\begin{lemma}\label{lem:products}
+若 $V<1$、$\mathsf P<2$，则对匹配的全部好点和任意被删除坐标 $j$，
+\begin{equation}\label{eq:products}
+ e^{-2}L^{-1/4}\le\prod_{i\ne j}L_i^{\rm row}\le e^2L^{-1/4},\qquad
+ e^{-2}L^{-1/4}\le\prod_{i\ne j}L_i^{\rm col}\le e^2L^{-1/4}.
+\end{equation}
+完整乘积也满足相同上下界。
+\end{lemma}
+\begin{proof}
+由 $u,v\in[d/4,3d/4]$、$d\le1/4$，
+$|rq-1|=|u-v-uv|\le d/2+9d^2/16\le3d/4$，且 $rq\ge q_0$。
+因此 $|nd^2/(4r\rho)-l/4|\le E_m$。
+又 $n\ge L^2/2$、$x\ge3L/4$ 给
+\begin{equation}\label{eq:zeta-bound}
+ \zeta t=1/(xn^2)\le16/(3L^5)<8/L^5.
+\end{equation}
+把 $\rho=qt$、$x\le L$、$ndh/t=xdh\le1/100$、$n\zeta\le4/L^4$ 和 $1/t\le2/L$
+代入\eqref{eq:row-error}，得到 $E_r$；
+用 $r\ge1$、$Ldh=1/100$ 代入\eqref{eq:column-error}，得到 $E_c$。
+所以两个方向的损失和均满足 $|T-l/4|\le E$，且每坐标损失 $v_i$ 在 $[0,V]$ 内。
+由
+\[
+ -T-\frac{V}{1-V}T\le\sum_i\log(1-v_i)\le-T
+\]
+可控制完整乘积。删除 $j$ 后，下界只增加，上界则不超过
+$-T+v_j\le-l/4+E+V$。
+两种误差都不超过 $\mathsf P$，取指数即得结论。
+\end{proof}
 
-\subsection{输入扰动的弱型控制}
-\begin{corollary}\label{cor:stability}
-设 $f,g\in L^1(\R^7)$，$\varepsilon>0$。
-记 $U=4910992105193/200000000000$，则
+\begin{proposition}\label{prop:degrees}
+若上述条件及 $\mathsf{Bad}<1/36$ 成立，则核\eqref{eq:kernel}的环境测度行列积分满足
+\begin{equation}\label{eq:degrees}
+ \begin{gathered}
+ r_*:=e^{-2}k/4\le R(w):=\int K(w,z)\dint\lambda(z)\le4e^2k
+ \quad(w\in\mathcal A),\\
+ C(z):=\int K(w,z)\dint\lambda(w)\le2e^2k.
+ \end{gathered}
+\end{equation}
+\end{proposition}
+\begin{proof}
+固定目标 $w$、来源半径 $\rho$，完整来源壳的捕获系数准确为
 \[
- |\{|M_7f-M_7g|>\varepsilon\}|
- \le \frac{U}{\varepsilon}\norm{f-g}_1.
+ \frac12\sum_i\left[1+\one_{\{|w_i|<(\kappa-1)\rho\}}\right]
+                    \prod_{j\ne i}L_j^{\rm row}.
 \]
-两个极大函数均几乎处处有限。
+因为 $\kappa>1$、$\rho>r$，每坐标至少一面、至多两面被捕获。
+由引理\ref{lem:products}，该系数介于 $(n/2)e^{-2}L^{-1/4}$ 与 $ne^2L^{-1/4}$。
+匹配来源的对数长度在 $h$ 与 $4h$ 之间。
+删除全部来源坏集至多损失 $k\mathsf{Bad}<k/36<e^{-2}k/4$（$e^2<9$），
+故有行积分两侧估计。
+
+反向固定 $z$，完整目标壳的系数为
+\[
+ \frac12\sum_i\left[1+\one_{\{|z_i|<\kappa\rho-r\}}\right]
+                    \prod_{j\ne i}L_j^{\rm col}.
+\]
+仍是完整的两侧面计数，其上界为 $ne^2L^{-1/4}$。
+目标匹配的对数长度不超过 $2h$；限制到好集与 $D$ 只减小积分，给出列上界。
+面等号仅发生在有限径向参数上，不影响积分。
+\end{proof}
+
+\subsection{把能量缺额传回有限选择}
+\begin{proposition}\label{prop:finite-energy}
+若\eqref{eq:degrees}成立且 $0<\tau\le r_*/2$，则每个真实有限选择实例、每个
+$a\ge8n^4$ 的未捕获前序总权重均至多
+$\alpha^{-n}J_a(t)-\delta$，其中 $\delta=nd/65536$。
+\end{proposition}
+\begin{proof}
+先核实核中的点对由同一历史的资格条件控制。
+此时 $\kappa>1$，$a>2t$，且
+\begin{equation}\label{eq:guard}
+ \alpha\beta-\kappa-\frac2{a+1}
+ =\zeta-\frac{\beta+2}{a+1}>0.
+\end{equation}
+若实际目标增量点 $w\in\mathcal A$ 属于第 $j$ 项，则未捕获条件给
+$r_j\le\norm{u-w}_\infty/c<\alpha+(1+3d/4)<3$。
+若 $z\in\mathcal P$ 属于第 $i$ 项，则 $r_i\ge\rho>4$，因此半径优先规则强制 $i<j$。
+记归一化中心为 $v_i=y_i/(a+1)$。由实际点至中心的距离与\eqref{eq:guard}，
+\[
+ \norm{v_i-v_j}_\infty
+ <\norm{z-w}_\infty+\frac{r_i+r_j}{a+1}
+ <\left(\kappa+\frac2{a+1}\right)r_i<\alpha\beta r_i.
+\]
+这正是原中心 $y_j\in bQ_i$。
+因核只截取第 $i$ 项的部分实际质量，同一第 $j$ 项的一次资格条件给
+$\int K(w,z)\dint\mu_a(z)\le\tau$，对 $\mu_a$ 几乎处处 $w\in\mathcal A$ 成立。
+
+令 $c_a=\alpha^{-n}\ge1$。由\eqref{eq:exact-scaling}，在两好集上 $\lambda_a=c_a\lambda$。
+环境行列上界可取 $c_a M$，$M=4e^2k$，而环境能量至少 $c_a^2a_*r_*$。
+将引理\ref{lem:energy}应用于 $\lambda_a,\mu_a$ 得
+\[
+ \lambda_a(\R^n)-\mu_a(\R^n)
+ \ge\frac{c_a^2a_*r_*-\tau c_aa_*}{c_aM}
+ \ge\frac{a_*r_*}{2M}
+ \ge\frac{e^{-4}}{512}nd>\frac{nd}{65536}.
+\]
+最后用 $e<3$、$e^4<81<128$。
+这里没有对有限选择历史取极限，缺额对所有 $a\ge8n^4$ 一致。
+\end{proof}
+
+\begin{proof}[定理\ref{thm:energy}在各显式条件下的证明]
+由\eqref{eq:AB-bounds}和 $d<1/4$，$0<\delta<n<B_n(t)$。
+取
+\[\tau=\sqrt{A_n(t)(B_n(t)-\delta)}\le n/L.\]
+条件 $7200\sqrt lL^{-1/4}<1$ 给
+\[
+ \tau/k\le100\sqrt lL^{-1/4}<1/72<e^{-2}/8=r_*/(2k).
+\]
+故命题\ref{prop:finite-energy}适用。引理\ref{lem:load}的捕获项仍由 $\tau$ 控制，自身项由 $a^{-n}$ 控制，得到
+\[
+ W(y)\le\tau+a^{-n}+\alpha^{-n}J_a(t)-\delta\qquad(y\in\R^n).
+\]
+把它代入命题\ref{prop:finite}的同一个有限覆盖与见证积分，得到
+\[
+ C_n\le\left(1+\frac{(\beta+1/a)^n}{\tau}\right)
+ [\tau+a^{-n}+\alpha^{-n}J_a(t)-\delta].
+\]
+固定 $n,t,\tau$，只对已经成立的标量上界取 $a\to\infty$，遂有
+$C_n\le\Fcal(A_n(t),B_n(t)-\delta)$。
+一般 $L^1$ 输入及全部正共同半径已由命题\ref{prop:finite}的紧水平集论证包括。
+
+对 $A,B,\delta>0$、$B>\delta$，准确差值为
+\[
+ \Fcal(A,B)-\Fcal(A,B-\delta)
+ =\delta+2\sqrt A(\sqrt B-\sqrt{B-\delta})>\delta.
+\]
+引理\ref{lem:W}于是给出 $C_n<W_n-\delta$。
+最后若
+\begin{equation}\label{eq:rem}
+ \mathsf{Rem}=131072\left[
+ \frac{3l+1}{\sqrt{Ll}}+\frac{9l^2+1}{L^{3/2}\sqrt l}\right]<1,
+\end{equation}
+则 $W_n-T_n<\delta/2$，完成全部结论。
+\end{proof}
+
+\subsection{显式门槛与全部无限尾}\label{subsec:threshold}
+以下把前面使用的条件全部归结为一个有理基点和解析单调性。
+令 $z=l$，故 $L=e^z$、$n=e^L$，并沿用 $d,h,q_0,E_m,E_r,E_c,V,E,\mathsf P$。
+再记 $\mathsf{Tau}=7200\sqrt zL^{-1/4}$。
+需要的十四项条件为
+\begin{equation}\label{eq:fourteen}
+\begin{gathered}
+ d<1/4,\quad3z/L<1/4,\quad q_0>1/2,\quad h+8/L^5<d,\\
+ q_0L/2>4,\quad\frac1{1+3d/4}-\frac2L>\frac12,\quad
+ \frac{20000}{3}d^3<\frac14,\\
+ Ld>1,\quad L^2d/2>2,\quad V<1,\quad\mathsf P<2,\\
+ \mathsf{Bad}<1/36,\quad\mathsf{Tau}<1,\quad\mathsf{Rem}<1.
+\end{gathered}
+\end{equation}
+其前九项分别保证半径分离、正交长、阈值移动、目标好集概率和来源计数条件。
+第六项给 $\ell_t(r)<3/4$，因为 $r\le1+3d/4$、$1/t\le2/L$。
+后三项控制删除质量、资格阈值和最终余项。
+
+这些条件还蕴含前文使用的附加几何事实。
+由指数级数 $n\ge L^2/2$，当 $L\ge64$ 时
+$x>3L/4>48$、$t\ge L/2\ge32$、$t<n$、$\rho\ge q_0t>4$、$n\ge6$。
+式\eqref{eq:zeta-bound}给出真实阈值移动的上界；
+$xn^2>2$ 保证 $1<\kappa<\beta<2$。
+对 $a\ge8n^4$，$a>2t$ 且\eqref{eq:guard}严格成立。
+故这些条件验证后，全部有限参数连接均有正余量。
+
+\begin{lemma}\label{lem:all-tail}
+式\eqref{eq:fourteen}对每个 $z\ge128$ 均成立。
+\end{lemma}
+\begin{proof}
+先说明如何从一个基点覆盖整个无限区间。
+对 $a,b>0$，$z^ae^{-bz}$ 在 $z>a/b$ 时递减。
+因此 $d,h,zd,zh$ 递减、$q_0$ 递增；$3ze^{-z}$ 递减。
+$q_0L/2$ 和 $1/(1+3d/4)-2/L$ 递增。
+第四项应除以 $d$，其左侧比值
+\[
+ \frac{h+8/L^5}{d}=\frac1{100z}+8z^{-1/2}e^{-9z/2}
+\]
+严格递减。$Ld$ 与 $L^2d/2$ 递增，$d^3$ 递减。
+$E_m$ 的分子为 $3z^2e^{-z}+(3/4)zd$，递减而分母递增；
+$E_r,E_c$ 也递减。$V$ 和 $zV$ 均递减。
+将乘积误差写为
+\[
+ \mathsf P=E+V+\frac{zV}{4(1-V)}+\frac{VE}{1-V},
+\]
+每个非负项均递减。
+$\mathsf{Bad}$ 的三项分别为常数乘
+$z^{5/2}e^{-z/4}$、$\sqrt ze^{-z/4}$、$e^{-5z/4}$，故递减；$\mathsf{Tau}$ 同理。
+$\mathsf{Rem}$ 是常数乘
+$(3\sqrt z+z^{-1/2})e^{-z/2}+(9z^{3/2}+z^{-1/2})e^{-3z/2}$，每项也递减。
+因此只须核验 $z=128$。
+
+下面给出可完全用有理数核查的基点。
+Taylor 正项级数给 $e>8/3$；由 $k!\ge2^{k-1}$（$k\ge2$，部分严格）求和又有 $e<3$。
+$1\le\sqrt{128}<12$。置 $p=3/8$、
+\[
+ D_0=12p^{64},\quad Q_0=1-3D_0/4,\quad H_0=p^{64}/100.
+\]
+于是 $d<D_0$、$q_0>Q_0$、$h<H_0$。
+对\eqref{eq:errors}分别取如下有理上包：
+\begin{align*}
+ \bar E_m&=\frac{128(384p^{128}+3D_0/4)}{4Q_0},&
+ \bar E_r&=\frac{13/100+48D_0p^{512}+4D_0p^{128}}{2Q_0},\\
+ \bar E_c&=17/200+D_0+64D_0p^{512},&
+ \bar V&=(D_0+H_0+8p^{640})/2.
+\end{align*}
+设 $\bar E=\bar E_m+\bar E_r+\bar E_c$、
+$\bar P=\bar E+\bar V+\bar V(32+\bar E)/(1-\bar V)$，并置
+\begin{align*}
+ \overline{\mathsf{Bad}}&=\frac{2000000}{3}\,128^2\cdot12p^{32}
+                +\frac{400}{121}\,12p^{32}+51200p^{160},\\
+ \overline{\mathsf{Tau}}&=7200\cdot12p^{32},\\
+ \overline{\mathsf{Rem}}&=131072[(385)p^{64}+(147457)p^{192}].
+\end{align*}
+它们满足准确有理不等式
+\begin{equation}\label{eq:rational-base}
+ \bar P<1/2,\quad\overline{\mathsf{Bad}}<1/100,\quad
+ \overline{\mathsf{Tau}}<1/100,\quad\overline{\mathsf{Rem}}<1/100.
+\end{equation}
+其余条件由下列正有理量给出对应余量：
+\[
+\begin{gathered}
+ \tfrac14-D_0,\quad\tfrac14-384p^{128},\quad Q_0-\tfrac12,
+ \quad1-\tfrac1{12800}-8p^{576},\quad Q_0/(2p^{128})-4,\\
+ (1+3D_0/4)^{-1}-2p^{128}-\tfrac12,
+ \quad\tfrac14-\tfrac{20000}{3}D_0^3,
+ \quad p^{-64}-1,\quad\tfrac12p^{-192}-2,\quad1-\bar V.
+\end{gathered}
+\]
+所有比较均是整数乘方和正分母的有理比较；补充材料列出独立可执行的准确核查。
+这就完成基点验证，前述单调性将结论延伸到全部 $[128,\infty)$。
+\end{proof}
+引理\ref{lem:all-tail}补足定理\ref{thm:energy}证明的全部条件。
+
+\section{应用}\label{sec:application}
+\subsection{较小起效门槛与可同时使用的常数族}
+反对角能量估计的起效门槛较大。下面给出另一组直接从同一有限覆盖得到的界，
+以便在较小维数范围选择可用的较小上界。
+\begin{theorem}\label{thm:constant-family}
+取实数 $Y\ge8$ 和正有理数 $a_0,b_0,c_0$，满足
+$0<a_0<b_0<Y/2$、$0<c_0<Y/2$、$(b_0+c_0)Y\ge1$。
+令 $g=b_0+c_0$，并假设
+\[
+ f_1=1-4g/Y>0,\quad f_2=1-\frac{2g^2}{1-b_0/Y}>0.
+\]
+定义
+\[
+ \begin{gathered}
+ K_A=\frac{c_0}{4(1+c_0/Y)},\quad C_0=f_1f_2,\quad D_0=C_0-\tfrac12e^{-9a_0Y/32},\\
+ K_P=(b_0-a_0)D_0-1/Y-3/(8Y^3).
+ \end{gathered}
+\]
+若 $0<q<\min(K_A,K_P)$，则当 $L\ge\max(64,Y^2)$ 时
+\begin{equation}\label{eq:constant-family}
+ C_n<\Fcal(A_n(t),B_n(t)-qn/\sqrt L)<W_n-qn/\sqrt L.
+\end{equation}
+特别地，当 $L\ge4096$ 时，$C_n<W_n-n/(20\sqrt L)$。
+\end{theorem}
+\begin{proof}
+记 $y=\sqrt L$、$s=1+c_0/y$、$\eta=1-b_0/y$、$\eta'=1-a_0/y$、$d_0=g/y$。
+由 $3L/4<x<L$ 和 $n\ge L^2/2$，有
+$1/2<\eta<\eta'<1$、$1<s<3/2<t$、$\eta t>L/4\ge16>4$。
+又 $nd_0\ge2y/Y\ge2$。
+取 $A_0\subset D$，满足 $1\le\norm w_\infty\le s$、至少有一个负最大坐标，以及
+\[
+ S(w)=\sum_i(|w_i|-\eta)_+\le4nd_0^2,\qquad
+ K(w)=\#\{i:|w_i|>\eta\}\le8nd_0.
+\]
+固定负面半径 $r\in[1,s]$，准确面条件期望给
+$\mathbb ES\le d_0+nd_0^2/2\le nd_0^2$、
+$\mathbb EK\le1+nd_0\le2nd_0$。
+两个 Markov 坏概率各至多 $1/4$，负面占所有面的一半，故
+\[
+ \lambda(A_0)\ge\frac n4\log s
+ \ge\frac{c_0n}{4y(1+c_0/y)}\ge K_A n/y.
+\]
+负最大面满足 $1+r>\beta r$，所以确在 $D$ 内。
+
+对 $w\in A_0$、$\eta t<\rho<\eta't$，完整捕获盒的交长为
+$\ell_i=1-(|w_i|-\rho/t)_+/(2\rho)$。
+其损失和不超过 $2g^2/(1-b_0/Y)$；因此任意删一坐标乘积至少 $f_2$，
+而可捕获的面数至少 $2n-K(w)\ge2nf_1$。
+完整壳捕获系数至少 $nC_0$。
+原角点捕获的壳系数至多 $(n/2)e^{-9a_0Y/32}$，因为
+\[
+ \frac{n-1}{2}(1/\rho-1/t)
+ \ge\frac{(1-1/n)xa_0}{2y\eta'}\ge9a_0y/32\ge9a_0Y/32.
+\]
+从完整局部捕获扣除全部原角点捕获，仍是 $D$ 内捕获的下估计。
+由于 $K_P>q>0$ 蕴含 $D_0>0$，可以用
+$\log(\eta'/\eta)\ge(b_0-a_0)/y$ 得到 $D$ 内捕获质量至少
+$(b_0-a_0)D_0n/y$。
+
+将捕获系数 $\beta$ 缩为 $\kappa=\beta-n^{-3}$。
+每个归一化交长对该系数的 Lipschitz 常数至多 $1/2$；
+乘积差的求和给存留面总损失至多 $n^2\zeta/2$，因为径向对数长度小于 $1$。
+每坐标丢失第二个面的径向对数区间长度至多 $2t\zeta$，对应额外损失至多 $nt\zeta$。
+故总损失至多 $3/(2n)\le[3/(8Y^3)]n/y$。
+与固定 $D$ 相交只减小这两个捕获集合之差。
+于是令
+\[
+ P_\kappa(w)=\{z\in D:\eta t<\norm z_\infty<\eta't,
+                   \ \norm{z-w}_\infty<\kappa\norm z_\infty\},
+\]
+有 $\lambda(P_\kappa(w))-\tau\ge K_Pn/y$，其中
+$\tau=\sqrt{A_n(t)(B_n(t)-qn/y)}\le n/L\le n/(Yy)$。
+根号为正，因为 $q<K_A<c_0/4<Y/8$，故 $qn/y<n/8<B_n$。
+
+有限 $a\ge8n^4$ 时，式\eqref{eq:guard}及准确倍率\eqref{eq:exact-scaling}仍适用。
+目标实际项半径小于 $\alpha+s<3$，来源实际项半径大于 $\eta t>4$，
+故同一目标项的资格条件给 $\mu_a(P_\kappa(w))\le\tau$。
+若总缺额小于 $qn/y$，则由 $\lambda_a(A_0)>qn/y$，
+至少有一个真实目标项在 $A_0$ 中有正质量。
+取其任一实际点 $w$，有
+\[
+ \mu_a(P_\kappa(w))\ge\lambda_a(P_\kappa(w))-(\lambda_a-\mu_a)(\R^n)>\tau,
+\]
+矛盾。该论证只固定一个实际点，无须选择器。
+因此未捕获权重可减去 $qn/y$，用已证有限覆盖再令 $a\to\infty$，得到非严格的第一不等式。
+为得到所写严格号，取 $q<q_*<\min(K_A,K_P)$，应用刚才结论于 $q_*$，
+再利用 $\Fcal$ 对第二变量严格递增。
+第二严格号由引理\ref{lem:W}和准确差值大于 $qn/y$ 得到。
+
+最后取 $Y=64$、$a_0=1/10$、$b_0=29/100$、$c_0=21/100$。
+直接有理运算给 $K_A=336/6421>1/20$、$C_0=98301/203872$。
+Taylor 正项给
+$e^{9/5}>\sum_{j=0}^6(9/5)^j/j!=7542629/1250000>6$，从而
+\[
+ K_P>\frac{19}{100}\left(\frac{98301}{203872}-\frac1{12}\right)
+       -\frac1{64}-\frac3{8\cdot64^3}
+ =\frac{12055437337}{200414330880}>\frac1{20}.
+\]
+故该实例满足所有严格条件。
+\end{proof}
+
+\begin{corollary}\label{cor:min}
+在各自适用范围内，可以同时使用定理\ref{thm:second-moment}、\ref{thm:energy}、\ref{thm:constant-family}和定理 C，取所得上界的最小值。
+若定理\ref{thm:constant-family}的某个 $q$ 适用，则在两个高维定理的公共范围内，
+能量缺额 $n\sqrt{l/L}/65536$ 严格大于 $qn/\sqrt L$ 当且仅当
+$l>65536^2q^2$。
 \end{corollary}
 \begin{proof}
-对任何共同半径，两个绝对值平均的差不超过 $|f-g|$ 的平均。
-在两极大函数有限的点取上确界，得
-$|M_7f-M_7g|\le M_7(f-g)$。
-它们几乎处处有限由弱型估计对水平参数趋于无穷得到。
-最后应用七维估计即可。
+所有结论针对同一个 $C_n$，所以可取最小值。
+比较缺额只须消去正因子 $n/\sqrt L$，所得条件是 $\sqrt l/65536>q$。
+因此修正项阶数的改善，并不表示新公式在它的全部起效范围内都小于每个较小门槛公式。
 \end{proof}
 
-\subsection{预算损失与后续问题}
-截集积分保留了共同选择历史对捕获项的控制，却把未捕获项放入更大的几何集合。
-角点给出的是这个放宽积分的最大值；本文没有证明真实选择族能同时逼近该角点预算。
-进一步改善需要保留增量来源、半径与位置之间的约束，并重新控制覆盖代价和总重叠。
-仅在当前预算内选择有限 $a$ 已由上述比较排除。
-定理\ref{thm:asymptotic}还表明，对这一固定公式族优化 $t$，
-不能把渐近前导系数降到 $1$ 以下。
-事实上，仅用 $B_n(t)\le1+n\log t$ 并选取证明中的参数，
-已能得到 $(1+o(1))n\log n$ 的算子上界；
-立方体截集项的作用是进一步改善有限维常数。
-这一区分说明参数优化和新的几何预算各能解决什么问题。
-本文未得到更小的七维常数，也未证明各维参数全局极小点的唯一性。
-真实常数 $C_n$ 与公式族 $U_n$ 之间的差距仍需新的几何估计或匹配下界来判断。
-
-\appendix
-\section{七维常数的纯有理证书}
-本附录只验证一个固定参数，不以数值优化的最优性作为前提。
-写
-\[
- B_7(t)=\gamma(t)+\beta(t)\log t,
-\]
-其中由式\eqref{eq:I7}得到
+在两条定理的公共适用范围，写
 \begin{align*}
- \beta(t)&=7-\frac72\left(1+\frac1{2t}\right)^6,\\
- \gamma(t)&=1-\left(\frac{1+1/t}{2}\right)^7
- -\frac72\sum_{j=1}^6
- \binom6j\left(1+\frac1{2t}\right)^{6-j}
-           \left(-\frac12\right)^j\frac{1-t^{-j}}j .
+ t_1&=n/(L-3\log L),&D_1&=\frac{n}{65536}\sqrt{\frac{\log L}{L}},\\
+ t_2&=n/(L-L^{1/3}),&D_2&=2^{-31}nL^{-1/3},\\
+ A_i&=A_n(t_i),&B_i&=B_n(t_i),\qquad
+ V_i=\Fcal(A_i,B_i-D_i)\quad(i=1,2).
 \end{align*}
-在给定的有理数 $t_0$ 上，$\beta(t_0)>0$。
-
-令 $x=(t_0-1)/(t_0+1)=2867461/3916037$。
-对 $N=128$，有
-\[
- s_N=2\sum_{j=0}^{N-1}\frac{x^{2j+1}}{2j+1}
- <\log t_0<
- s_N+\frac{2x^{2N+1}}{(2N+1)(1-x^2)}.
-\]
-这是 $\log t=2\operatorname{arctanh}x$ 的正项展开；
-将余项各分母替换为 $2N+1$ 后求几何级数，即得上界。
-令 $\ell$ 为右端向上舍入到 $10^{-18}$ 网格的有理数，
-再置
-\[
- A=(1+1/t_0)^7,\qquad
- \overline B=\gamma(t_0)+\beta(t_0)\ell,\qquad
- U=\frac{4910992105193}{200000000000}.
-\]
-下面的精确代码验证
-\begin{equation}\label{eq:certificate}
- 0<B_7(t_0)<\overline B,\qquad
- D:=U-A-\overline B>0,\qquad D^2>4A\overline B.
+则 $C_n\le\min\{V_1,V_2\}$，并可继续与定理\ref{thm:constant-family}的完整函数及 $2^n$ 取最小值。
+两个完整函数的准确差为
+\begin{equation}\label{eq:full-comparison}
+\begin{aligned}
+ V_2-V_1={}&(A_2-A_1)+(B_2-B_1)-(D_2-D_1)\\
+ &+2\left[\sqrt{A_2(B_2-D_2)}-\sqrt{A_1(B_1-D_1)}\right].
+\end{aligned}
 \end{equation}
-后两个不等式给出
-$A+\overline B+2\sqrt{A\overline B}<U$，
-由正性与单调性得到所需的
-$(\sqrt A+\sqrt{B_7(t_0)})^2<U$。
+这保留了参数变化所引起的全部项，不能只比较 $D_2$ 与 $D_1$ 就判定其符号。
 
-代码仅使用 Python 标准库中的整数和有理数运算。
-它同时以 $s_N$ 验证 $B_7(t_0)$ 的正下界，
-避免用浮点数承担比较。
-\lstinputlisting{verify_constant.py}
-
-
-\section{逐维证书及有限参数的实现}
-对任意给定有理数 $t>1$，令 $q=1+1/(2t)$、$h=(1+1/t)/2$。
-逐项积分得到
+定理\ref{thm:second-moment}的负修正项比定理\ref{thm:energy}的渐近阶更大，因为
 \[
- I_n(t)=q^{n-1}\log t+
- \sum_{j=1}^{n-1}\binom{n-1}j q^{n-1-j}
-       \left(-\frac12\right)^j\frac{1-t^{-j}}j.
+ \frac{L^{-1/3}}{\sqrt{\log L/L}}=\frac{L^{1/6}}{\sqrt{\log L}}\longrightarrow\infty.
 \]
-空和按零解释。故 $B_n=\gamma_n+\beta_n\log t$，其中
-$\beta_n=n-(n/2)q^{n-1}$，$\gamma_n$ 为明确有理数。
-数值证书先将 $t$ 化为 $2^k s$（$1\le s<2$），
-分别用正项 $\operatorname{arctanh}$ 级数和几何尾项包围 $\log s$ 与 $\log2$。
-计算 $B_n$ 的上下端点时按 $\beta_n$ 的符号选择对数端点，
-再用整数开方包围 $\sqrt{A_nB_n}$。
-补充代码 \texttt{revision\_v3/numeric/verify.py} 只用 Python 标准库，
-逐项重算表\ref{tab:dimensions}对应的完整有理端点并验证严格不等式。
-浮点优化只负责选择参数，没有用于证明全局最优性。
+两条定理的参数分别为 $t_2=n/(L-L^{1/3})$ 与 $t=n/(L-3\log L)$。
+比较它们时应使用各自完整上界及适用范围；定理\ref{thm:second-moment}的显式门槛为 $L\ge2^{108}$。
 
-对有限参数的实现，取 $a=2^{256}$、$u=1/a$。
-若 $\overline B$、$\overline L$ 分别为 $B_n(t)$ 与 $\log t$ 的有理上界，令
+\subsection{当前逐点重叠估计的前导项限制}
+双边能量减少了低半径目标与高半径来源之间的部分重叠。
+下面说明，同一选择算法仍有真实有限历史，其高壳逐点重叠具有 $n\log n$ 的前导项。
+此结论限定逐点估计的改进方式，不涉及 $C_n$ 的下界。
+\begin{proposition}\label{prop:barrier}
+固定整数 $n\ge3$、$t>S\ge2$、$\tau>0$，仍令 $\beta=1+1/t$。
+置
 \[
- \Delta=\bigl[(1+u)^n-1\bigr](1+n\overline L)+u^n,
- \qquad \overline E=\overline B+\Delta,
- \qquad A_{n,a}=(1+1/t+u)^n.
+ \dint\nu(z)=2^{-n}m(z)^{-n}\one_{D\cap\{S<m(z)<t\}}\dint z,
+ \quad M=\nu(\R^n),\quad M_0=n\log(t/S),
+ \quad\Gamma=\frac{(n-2)S}{16t}.
 \]
-由有限参数的准确恒等式及 $I_n\ge0$，有 $E_{n,a}\le\overline E$。
-把 $\sqrt{A_{n,a}\overline E}$ 向上包围到一个有理网格，记所得正有理数为 $\tau$。
-同一验证器直接以整数和分数核验
+对每个 $\varepsilon>0$，存在 $a_0$，使每个实数 $a\ge a_0$ 都有一个原有限输入族，
+算法选择其全部立方体，实际增量两两不交，且所有 $aQ_j$ 均包含 $0$。
+其最后一项半径为 $1$、有正权重，所有前序半径大于 $S$，最后中心未被任何前序 $bQ_j$ 捕获，且
+\begin{equation}\label{eq:barrier}
+ W(0)\ge M-\frac{4M_0^2e^{-\Gamma}}\tau-\varepsilon
+ \ge B_n(t)-1-n\log S-\frac{4M_0^2e^{-\Gamma}}\tau-\varepsilon.
+\end{equation}
+\end{proposition}
+\begin{proof}
+定义完整来源势
+$T(w)=\int\one_{\{\norm{z-w}_\infty<\beta m(z)\}}\dint\nu(z)$。
+先将两个环境测度都扩大到 $S<\norm z_\infty<t$ 的完整壳测度，质量为 $M_0$。
+固定两个半径 $s\le\rho$ 及各自最大面，至少 $n-2$ 个坐标对仍是独立均匀对
+$Z\in[-\rho,\rho]$、$U\in[-s,s]$。
+无论来源为哪个半径，真实捕获均蕴含 $|Z-U|<\beta\rho$。
+两个角三角形的准确面积给
 \[
- a>2t,\qquad
- (1+A_{n,a}/\tau)(\tau+\overline E)<U.
+ \mathbb P(|Z-U|\ge\beta\rho)=\frac{(s-\rho/t)^2}{4s\rho}
+ \ge\frac{s}{16\rho},
 \]
-完整 $a,\tau$ 和全部端点保存在补充表中。
-这里 $a$ 是有限选择证明的膨胀参数；它没有限制原算子的输入或取半径范围。
+因为 $\rho/t\le1\le s/2$。
+故条件捕获概率不超过 $e^{-(n-2)s/(16\rho)}\le e^{-\Gamma}$。
+积分后有 $\int T\dint\nu\le M_0^2e^{-\Gamma}$，遂由 Markov 不等式得
+\[
+ \nu\{T\ge\tau/4\}\le4M_0^2e^{-\Gamma}/\tau.
+\]
+$T$ 连续：在每个最大坐标锥上，捕获边界属于有限个形如
+$z_i-w_i=\pm\beta(\pm z_j)$ 的非零法向超平面，故其 Lebesgue 测度为零；
+支配收敛定理适用。因此
+$G=D\cap\{S<\norm w_\infty<t\}\cap\{T(w)<\tau/4\}$ 是开集。
 
+若 $M-4M_0^2e^{-\Gamma}/\tau-\varepsilon\le0$，仅取半径为 $1$ 的最后立方体便可满足结论。
+以下处理其余情形。选择有限个有间隙的闭轴平行块，其并 $K$ 紧含于 $G$，且
+$\nu(K)\ge\nu(G)-\varepsilon/4$。
+充分细分后，可对每块 $P_l$ 取常半径 $R_l$，使
+$S<R_l<t$ 且 $0<R_l-m(p)\le\eta_0$（$p\in P_l$），其中 $\eta_0$ 任意小。
+$K$ 紧含于严格角点域，所以还可固定 $u_\eta=(1-\eta)\one$，使
+\[
+ \norm{u_\eta-p}_\infty>\beta R_l\qquad(p\in P_l).
+\]
+定义块模型
+\[
+ T_R(w)=\sum_l\int_{P_l}\frac{\one_{\{\norm{p-w}_\infty<\beta R_l\}}}{(2R_l)^n}\dint p.
+\]
+其密度不超过原密度；增加捕获半径只增加边界层。
+在固定锥上，这些边界层属于有限个宽度 $O(\eta_0/(\beta-1))$ 的超平面薄层，
+法向非零、支撑有界，故总质量至多 $C(n,t,S,\beta)\eta_0$，关于 $w$ 一致。
+先取 $\eta_0$ 充分小，便有 $T_R<\tau/2$ 于 $K$，并且
+$\sum_l|P_l|/(2R_l)^n\ge\nu(K)-\varepsilon/4$。
+
+在 $P_l$ 内用边长 $2R_l/a$ 的格点方体铺砌，只保留完全含于块内的格胞，中心记 $p_i$。
+定义原小立方体 $Q_i=Q(ap_i,R_l)$。
+这些开立方体互不相交，实际增量就是自身，故每项权重恰为 $a^{-n}$；
+$\norm{p_i}_\infty<R_l$ 保证 $0\in aQ_i$。
+对任意中心 $w$，若 $\norm{w-p_i}_\infty<\beta R_l$，则相应格胞全部包含于
+$Q(w,\beta R_l+R_l/a)$。
+因而完整离散来源负载不超过
+\[
+ \sum_l\int_{P_l}\frac{\one_{\{\norm{w-p}_\infty<\beta R_l+R_l/a\}}}{(2R_l)^n}\dint p
+ =T_R(w)+O(1/a),
+\]
+误差由固定盒的边界条带控制，关于 $w$ 一致。
+对大 $a$，所有保留中心的完整来源负载小于 $\tau$，从而在每个选择步骤都合格。
+算法遂按非增半径选完它们。
+再加入 $Q_k=Q(au_\eta,1)$。对大 $a$ 它与来源立方体不交，
+$0\in aQ_k$，权重为 $a^{-n}>0$，且半径严格最小。
+所有前序均未捕获该中心，故它也被选取。
+
+保留格胞的总权重随 $a\to\infty$ 趋于 $\sum_l|P_l|/(2R_l)^n$。
+由各次质量损失的选择得到\eqref{eq:barrier}第一式。
+遗漏的单位核心质量至多 $1$、$1<m\le S$ 的壳质量至多 $n\log S$，
+所以 $M\ge B_n(t)-1-n\log S$，给出第二式。
+所有块、半径和正间隙均先在固定 $n,t,S,\tau,\varepsilon$ 下选择，随后才取 $a_0$。
+\end{proof}
+
+\begin{corollary}\label{cor:leading-barrier}
+固定 $C\ge0$，若 $n/L^C\le t\le nL^C$、$\tau\ge1$，则存在上述真实历史满足
+\[
+ W(0)\ge n\log n-O_C(n\log\log n)-o(1)-\varepsilon.
+\]
+因此在这一参数窗口内，同一算法对所有原历史成立的逐点负载上界，不能减去固定正比例的 $n\log n$。
+\end{corollary}
+\begin{proof}
+取 $S=L^{C+3}$。对充分大 $n$，$2<S<t$，$\Gamma\ge cL^3$、$M_0\le2nL$，
+故 $4M_0^2e^{-\Gamma}/\tau=o(1)$，关于该窗口一致。
+引理\ref{lem:integral-uniform}给 $B_n(t)=nL+O_C(n\log L)$，代入命题即得。
+\end{proof}
+这一限制仍允许联合使用覆盖测度与共同见证输入的信息，或改变选择规则与权重。
+高点态负载与弱型比值之间的区别可由下述固定水平例子看清。
+若 $f\ge0$ 的质量为 $M_f$，支撑于 $(-\varepsilon_f,\varepsilon_f)^n$，
+固定 $n,M_f,\lambda>0$ 并置 $R_0=(M_f/\lambda)^{1/n}/2$，则
+\[
+ Q(0,[R_0-\varepsilon_f]_+)\subset\{M_nf>\lambda\}
+ \subset Q(0,R_0+\varepsilon_f)
+\]
+（边界可忽略）。左式取一个严格介于 $\norm x_\infty+\varepsilon_f$ 与 $R_0$ 的见证半径；
+右式由见证半径至少为 $\norm x_\infty-\varepsilon_f$ 得到。
+所以
+\[
+ \left(\frac{[R_0-\varepsilon_f]_+}{R_0}\right)^n
+ \le\frac{\lambda|\{M_nf>\lambda\}|}{M_f}
+ \le\left(\frac{R_0+\varepsilon_f}{R_0}\right)^n\longrightarrow1.
+\]
+命题构造的有限星形族可由这样的共同小支撑输入同时见证：
+取 $M_f>\lambda(2aR_{\max})^n$，再把支撑放入所有有限个 $aQ_j$ 的共同内部邻域即可。
+这里的极限固定水平 $\lambda$；整个弱型范数具有膨胀不变性，不能由此声称它趋于 $1$。
+这说明若要进一步降低前导系数，需要在点态重叠之外保留输入见证与覆盖效率之间的联合约束。
 \begin{thebibliography}{9}
 \bibitem{SS83}
 E. M. Stein and J. O. Str\"omberg,
-\emph{Behavior of maximal functios in $\mathbf R^n$ for large $n$},
+\emph{Behavior of maximal functions in $\mathbf R^n$ for large $n$},
 Arkiv f\"or Matematik \textbf{21} (1983), 259--269.
 \href{https://doi.org/10.1007/BF02384314}{doi:10.1007/BF02384314}.
 
@@ -843,31 +1548,12 @@ J. M. Aldaz,
 arXiv:1811.10478v2, 10 March 2020.
 \url{https://arxiv.org/abs/1811.10478v2}.
 
-\bibitem{Aldaz11}
-J. M. Aldaz,
-\emph{The weak type $(1,1)$ bounds for the maximal function associated to cubes
-grow to infinity with the dimension},
-Annals of Mathematics \textbf{173} (2011), no.~2, 1013--1023.
-\href{https://doi.org/10.4007/annals.2011.173.2.10}{doi:10.4007/annals.2011.173.2.10}.
-
 \bibitem{Aldaz17}
 J. M. Aldaz,
 \emph{The Stein--Str\"omberg covering theorem in metric spaces},
 Journal of Mathematical Analysis and Applications \textbf{449} (2017), no.~2, 1741--1753.
 \href{https://doi.org/10.1016/j.jmaa.2016.11.070}{doi:10.1016/j.jmaa.2016.11.070}.
 定理5.2采用 arXiv:1605.05596v2，7 January 2017。
-
-\bibitem{Melas03}
-A. D. Melas,
-\emph{The best constant for the centered Hardy--Littlewood maximal inequality},
-Annals of Mathematics \textbf{157} (2003), no.~2, 647--688.
-\href{https://doi.org/10.4007/annals.2003.157.647}{doi:10.4007/annals.2003.157.647}.
-
-\bibitem{Tomar26}
-T. S. Tomar,
-\emph{Bounds for the weak type (1,1) constant of the centred maximal operator over squares},
-公开预印本第4版，22 October 2026.
-\href{https://doi.org/10.5281/zenodo.23554628}{doi:10.5281/zenodo.23554628}.
 
 \end{thebibliography}
 \end{document}

@@ -1,0 +1,11 @@
+# 最终稿结构与版本身份
+
+对象为Lebesgue测度、中心轴平行立方体、共同正半径、一般L1与全部正尺度。当前24页稿以R042二阶矩列截断为主定理：log n≥2^108时，Cn<T−2^-32 n/(log n)^(1/3)，首项系数仍为1。完整保留R036和R034供各有效域内取最小值。
+
+结构为引言、预备知识、主要证明、应用。主要证明包含有限选择及真实增量、角点公式、同历史双边能量、新参数二阶矩列截断、显式门槛及一般输入全尺度传递；应用给完整成本的取最小值和受限定的逐点负载障碍。
+
+原13页稿恢复提交a3cd1967f4879b7398535691dcfac6dc7d38a724；原main.tex Git blob a2867a0957281e932d260de6e4cea40319b619f1；旧PDF SHA256 5eb344895934317ca24ba493f16d5fad8d0ecc487bdf97ab4e5f30c849339fd5。历史n7验证材料字节不变，本轮未运行。
+
+17页阶段TeX f672490764917a6087e352581c5c877eb346b44f11789ed22a85596eaf3607d3以及全文初审e52394e0a80eb01338e38a2cddc7c9b25357f141433a2214b8cd25e7f7b6db37仅在作者clone /Users/zhengzhihao/Desktop/T/cube-cover-manuscript/cube-dim-7-bounds/upper/round041/manuscript_notes 保留。后者也能用最终main.tex的临时副本反向应用definition_delta.patch恢复。Git不重复保存中间全文或PDF。
+
+最终main.tex SHA256 94c5e61d3bf86b16736e328ffe3e412d46df957dd2b8f8760939edc8831e8692。独立全文加定义增量终审FINAL ACCEPT，报告位于audit/round041/manuscript。数学审稿、作者编译、主代理整合编译和排版检查分别记账。

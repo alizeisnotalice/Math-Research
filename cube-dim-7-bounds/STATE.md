@@ -1,7 +1,7 @@
 # 当前状态：一般高维覆盖持续攻关
 
-HIGH_DIM_COVER_ACTIVE；LOWER_PAUSED；N7_SPECIFIC_STOPPED。R042已完整独立ACCEPT：对logn≥2^108，Cn<T−2^-32 n/(logn)^(1/3)，T=nlogn−nloglogn。负修正阶提高，首项系数仍1。不同参数fullcost比较已证，始终取各有效域内最小值，见results/general_cover_ledger.json。
+HIGH_DIM_COVER_ACTIVE；LOWER_PAUSED；N7_SPECIFIC_STOPPED。R042完整独审ACCEPT：log n≥2^108时Cn<T−2^-32 n/(logn)^(1/3)，T=nlogn−nloglogn；负修正阶提高，首项系数仍1。比较按完整cost及各有效域取min，见results/general_cover_ledger.json。
 
-R037–040框架障碍/联合支付/newselector已严格区分算子定理和有限/条件接口。R041新24页稿已数学终审，主正整合编译/渲染；R043分数矩模板entropy范围限制待独审，不是Cn障碍。所有生产Terra，Sol推导/独审，Luna事实检查；主保留证明责任。
+R041论文24页已在正式clone整合，最终TeX独立全文及定义增量FINAL ACCEPT，主代理实际XeLaTeX两遍并渲染检查24页成功。正文完整证明R042，历史n7验证器及下界未运行。R043仅moment-template/Y-envelope范围障碍；R044有限联合支付实验及R045逆列加权新机制在各自独立clone推进，不能当新Cn结论。
 
-goal active，不恢复n7专项/下界或任何旧暂停项目。网络同步曾持续失败，独立commits保留待推送，未核远端不得声称已同步。
+Terra负责本机生产，Sol推导/独审，主保留证明责任。每批有限登记、实际资源记账，不用空转填满内存。网络现已fetch成功，待本轮独立提交后正常rebase/push并核远端；未核接收不得声称已同步。goal active，不恢复其他暂停项目。
