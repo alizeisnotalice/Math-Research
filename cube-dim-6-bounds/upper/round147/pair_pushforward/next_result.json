@@ -1,0 +1,378 @@
+{
+  "status": "COMPLETE_TWO_FIXED_EXACT_DENSITY_GENERATIONS",
+  "cases": [
+    {
+      "case_id": "m3_three_directions",
+      "cone_id": 0,
+      "body_pair_zero_based": [
+        9,
+        16
+      ],
+      "all_six_columns": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "1/72",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "1/60",
+          "1/60"
+        ],
+        [
+          "0",
+          "1/30"
+        ]
+      ],
+      "zero_columns_removed": 3,
+      "stages": [
+        {
+          "stage": 2,
+          "active_columns": 2,
+          "open_sector_count": 1,
+          "nonzero_term_count": 1,
+          "density_cells": [
+            {
+              "left_ray": [
+                "1",
+                "0"
+              ],
+              "right_ray": [
+                "1/2",
+                "1/2"
+              ],
+              "terms": [
+                {
+                  "lambda": [
+                    "72",
+                    "-12"
+                  ],
+                  "polynomial": "4320"
+                }
+              ]
+            }
+          ],
+          "joint_Laplace_product": "1/((S/72 + 1)*(S/60 + T/60 + 1))",
+          "exact_Laplace_identity": true,
+          "normalization": 1,
+          "positivity_basis": "positive exponential-ray convolution theorem in PROOF.md; signed terms not separately positive"
+        },
+        {
+          "stage": 3,
+          "active_columns": 3,
+          "open_sector_count": 2,
+          "nonzero_term_count": 4,
+          "density_cells": [
+            {
+              "left_ray": [
+                "1",
+                "0"
+              ],
+              "right_ray": [
+                "1/2",
+                "1/2"
+              ],
+              "terms": [
+                {
+                  "lambda": [
+                    "72",
+                    "-12"
+                  ],
+                  "polynomial": "21600/7"
+                },
+                {
+                  "lambda": [
+                    "72",
+                    "30"
+                  ],
+                  "polynomial": "-21600/7"
+                }
+              ]
+            },
+            {
+              "left_ray": [
+                "1/2",
+                "1/2"
+              ],
+              "right_ray": [
+                "0",
+                "1"
+              ],
+              "terms": [
+                {
+                  "lambda": [
+                    "30",
+                    "30"
+                  ],
+                  "polynomial": "21600/7"
+                },
+                {
+                  "lambda": [
+                    "72",
+                    "30"
+                  ],
+                  "polynomial": "-21600/7"
+                }
+              ]
+            }
+          ],
+          "joint_Laplace_product": "1/((S/72 + 1)*(T/30 + 1)*(S/60 + T/60 + 1))",
+          "exact_Laplace_identity": true,
+          "normalization": 1,
+          "positivity_basis": "positive exponential-ray convolution theorem in PROOF.md; signed terms not separately positive"
+        }
+      ]
+    },
+    {
+      "case_id": "m6_repeated_columns",
+      "cone_id": 0,
+      "body_pair_zero_based": [
+        0,
+        1
+      ],
+      "all_six_columns": [
+        [
+          "1/36",
+          "1/36"
+        ],
+        [
+          "1/24",
+          "1/24"
+        ],
+        [
+          "1/24",
+          "1/24"
+        ],
+        [
+          "1/24",
+          "1/24"
+        ],
+        [
+          "1/20",
+          "1/20"
+        ],
+        [
+          "1/15",
+          "1/30"
+        ]
+      ],
+      "zero_columns_removed": 0,
+      "stages": [
+        {
+          "stage": 2,
+          "active_columns": 2,
+          "open_sector_count": 1,
+          "nonzero_term_count": 1,
+          "density_cells": [
+            {
+              "left_ray": [
+                "2/3",
+                "1/3"
+              ],
+              "right_ray": [
+                "1/2",
+                "1/2"
+              ],
+              "terms": [
+                {
+                  "lambda": [
+                    "-6",
+                    "42"
+                  ],
+                  "polynomial": "1080"
+                }
+              ]
+            }
+          ],
+          "joint_Laplace_product": "1/((S/36 + T/36 + 1)*(S/15 + T/30 + 1))",
+          "exact_Laplace_identity": true,
+          "normalization": 1,
+          "positivity_basis": "positive exponential-ray convolution theorem in PROOF.md; signed terms not separately positive"
+        },
+        {
+          "stage": 3,
+          "active_columns": 3,
+          "open_sector_count": 1,
+          "nonzero_term_count": 2,
+          "density_cells": [
+            {
+              "left_ray": [
+                "2/3",
+                "1/3"
+              ],
+              "right_ray": [
+                "1/2",
+                "1/2"
+              ],
+              "terms": [
+                {
+                  "lambda": [
+                    "-6",
+                    "42"
+                  ],
+                  "polynomial": "-2160"
+                },
+                {
+                  "lambda": [
+                    "6",
+                    "18"
+                  ],
+                  "polynomial": "2160"
+                }
+              ]
+            }
+          ],
+          "joint_Laplace_product": "1/((S/36 + T/36 + 1)*(S/24 + T/24 + 1)*(S/15 + T/30 + 1))",
+          "exact_Laplace_identity": true,
+          "normalization": 1,
+          "positivity_basis": "positive exponential-ray convolution theorem in PROOF.md; signed terms not separately positive"
+        },
+        {
+          "stage": 4,
+          "active_columns": 4,
+          "open_sector_count": 1,
+          "nonzero_term_count": 2,
+          "density_cells": [
+            {
+              "left_ray": [
+                "2/3",
+                "1/3"
+              ],
+              "right_ray": [
+                "1/2",
+                "1/2"
+              ],
+              "terms": [
+                {
+                  "lambda": [
+                    "-6",
+                    "42"
+                  ],
+                  "polynomial": "4320"
+                },
+                {
+                  "lambda": [
+                    "6",
+                    "18"
+                  ],
+                  "polynomial": "-51840*X + 103680*Y - 4320"
+                }
+              ]
+            }
+          ],
+          "joint_Laplace_product": "1/((S/36 + T/36 + 1)*(S/24 + T/24 + 1)**2*(S/15 + T/30 + 1))",
+          "exact_Laplace_identity": true,
+          "normalization": 1,
+          "positivity_basis": "positive exponential-ray convolution theorem in PROOF.md; signed terms not separately positive"
+        },
+        {
+          "stage": 5,
+          "active_columns": 5,
+          "open_sector_count": 1,
+          "nonzero_term_count": 2,
+          "density_cells": [
+            {
+              "left_ray": [
+                "2/3",
+                "1/3"
+              ],
+              "right_ray": [
+                "1/2",
+                "1/2"
+              ],
+              "terms": [
+                {
+                  "lambda": [
+                    "-6",
+                    "42"
+                  ],
+                  "polynomial": "-8640"
+                },
+                {
+                  "lambda": [
+                    "6",
+                    "18"
+                  ],
+                  "polynomial": "622080*X**2 - 2488320*X*Y + 103680*X + 2488320*Y**2 - 207360*Y + 8640"
+                }
+              ]
+            }
+          ],
+          "joint_Laplace_product": "1/((S/36 + T/36 + 1)*(S/24 + T/24 + 1)**3*(S/15 + T/30 + 1))",
+          "exact_Laplace_identity": true,
+          "normalization": 1,
+          "positivity_basis": "positive exponential-ray convolution theorem in PROOF.md; signed terms not separately positive"
+        },
+        {
+          "stage": 6,
+          "active_columns": 6,
+          "open_sector_count": 1,
+          "nonzero_term_count": 3,
+          "density_cells": [
+            {
+              "left_ray": [
+                "2/3",
+                "1/3"
+              ],
+              "right_ray": [
+                "1/2",
+                "1/2"
+              ],
+              "terms": [
+                {
+                  "lambda": [
+                    "-6",
+                    "42"
+                  ],
+                  "polynomial": "10800"
+                },
+                {
+                  "lambda": [
+                    "6",
+                    "18"
+                  ],
+                  "polynomial": "-3110400*X**2 + 12441600*X*Y + 1036800*X - 12441600*Y**2 - 2073600*Y - 302400"
+                },
+                {
+                  "lambda": [
+                    "10",
+                    "10"
+                  ],
+                  "polynomial": "291600"
+                }
+              ]
+            }
+          ],
+          "joint_Laplace_product": "1/((S/36 + T/36 + 1)*(S/24 + T/24 + 1)**3*(S/20 + T/20 + 1)*(S/15 + T/30 + 1))",
+          "exact_Laplace_identity": true,
+          "normalization": 1,
+          "positivity_basis": "positive exponential-ray convolution theorem in PROOF.md; signed terms not separately positive"
+        }
+      ]
+    }
+  ],
+  "actual_counts": {
+    "density_stage_checks": 7,
+    "raw_endpoint_contributions": 16,
+    "new_k_integral_kernel_native_calls": 0,
+    "old_6D_grid_replays": 0
+  },
+  "run_sha256": "696e6bdaf629fdfc6404e76c525149fc101b798a83878b9dae43fcc6ba4c0daf",
+  "case_packet_sha256": "4cb15948d91f799c7cc567b771f0a647047d9f52627dc9d66d6b823400ada7b3",
+  "release_sha256": "cec1e65a86720bb88d5d1f8e5a691c665aebb8bcbde3fe92953a9d2f903bfde0",
+  "new_k_integral_evaluations": 0,
+  "new_moment_upper": false,
+  "new_C6_bound": false,
+  "wall_seconds": 0.5782712080108467,
+  "CPU_seconds": 0.49189600000000006
+}

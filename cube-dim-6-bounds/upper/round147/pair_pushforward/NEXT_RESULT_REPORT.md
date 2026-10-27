@@ -1,0 +1,9 @@
+# C147 m3/m6 actual run addendum
+
+Main completed the uniquely released two-case symbolic batch at PID64481, exit0, terminal wall0.647592916s and CPU0.556607s. The original frozen source/proof/registration files and base manifest are unchanged by this addendum. A separate independent reviewer owns the saved seven-stage audit.
+
+The generated source-bound cases are cone0 pair(9,16),3 active columns and3 directions, and cone0 pair(0,1),6 active columns with repeated columns/directions. All7 stages report exact bivariate rational Laplace identity and whole-expression normalization1, with polynomial degree and fan-sector bounds checked. No k integral, special-function value, old6D grid or native call occurred. The result is a density-law interface, not a new beta2 or C6 bound.
+
+The source counter named `raw_endpoint_contributions` is16. Its implementation increments by1 for one already-combined resonant polynomial difference, and by1 for each nonresonant endpoint substitution. It is therefore a mixed algebraic update count, **not a literal endpoint-substitution count**. The main release separately supplied an external conservative endpoint ceiling<=34; this ceiling is not an assertion that34 endpoints actually occurred. C149 will count exactly2 literal endpoint substitutions for every contributing convolution term, including the eta0 branch, and will retain branch/resonance counts separately.
+
+The exact result is `next_result.json`, bound by `next_exit_receipt.json`. Runtime/receipt identities are supplied by main's `upper/round147/primary_gate/next_terminal_receipt.json`; this report does not repeat the symbolic compilation or its independent audit. The three passed canonical laws (the earlier m2 toy plus these two final cases) may be reused solely through exact column permutation/output-coordinate-swap mappings. They must be excluded from C149's NEW density generation.
