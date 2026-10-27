@@ -53,3 +53,5 @@ python3 -B cube-dim-7-bounds/audit/round001/lower/recheck.py
 第009轮结构证据已归档，严格结论范围见rounds/009.md；没有新的Cn上界。下界保持暂停。
 
 第010轮结构证据已归档，严格结论范围见rounds/010.md；没有新的Cn上界。下界保持暂停。
+
+R011成果与准确证书见rounds/011.md。

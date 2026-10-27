@@ -1,0 +1,21 @@
+# R011 proposed deterministic kernel contract
+
+2026-10-27. Theory/spec only; main release required. Terra owns numerical execution. Fixed source fan: accepted R00946rays and R010135cells/212simplices, their witnesses/weights/checker/manifest hashes. No MC, old optimizer, MATLAB, frequency tail, shape sample or changed generator.
+
+Compile exact xi=Mw,qi=full64psi,212alpha=absdetW/prodqi,positive rational A_sum. Verify sources and no duplicate simplex. Exact common-knot compiler: d_x common denominator,L=lcmqi,B=d_xL,zeta=(L/qi)xi; phase knots integera,real/complexlog(beta-i a),DD6 multiplied byB6. Equality onlyinteger exact. Default real-Arb htilde route is permitted by proof(8)-(10); lock chosen route/code before execution and compare against complex DD on fixed pilot examples. Cache only exact integer multisets/derivatives with fixed epsilon/precision context.
+
+Initial release scope proposed:
+1. Scalar cases in testcases.json at epsilon1/64; allzero/allone exact references, partialconfluence,near-distinct (no rounding to equality). For near-distinct a32-extra-term Taylor check may use expansion DD6f=sum_(m>=0)f^(6+m)(0)/(6+m)! h_m(knots). With delta=max|b|,theta=delta/epsilon andM32, absolute tail<=epsilon^(-6)/6*binom(M+6,5)*theta^(M+1)/[1-theta*(M+7)/(M+2)]. All denominator/sign conditions checked. This is a small scalar diagnostic, not a second Green formula.
+2. Origin at3eps in testcases: H0=840 A_sum/(pi7eps6); validate fullzero-node DD convention and rational peakcheck5040 A_sum<=1/512. No half-orbit×2 at0.
+3. Four complete highsymmetry value cases: e1 andallones,epsilon1/64 and1/256. Halfphases7 and64; stabilizer weights46080 and5040 respectively. Raw complete interval widthtarget1e-12; positivity/epsilon monotonicity/originpeak sanity. No globalg interpretation.
+4. Generic fixedexactdyadicpoint,epsilon1/1024: first256halfphase IDs only, completeexactcounts/cache/zero-node logs and partialsum interval. Partialsum is not H and need notpositive. Planningwidthgate=1e-12*256/322560. Primary R003point is truncated_numeric/results.json, minima[0], lowest_sobol_index2710; source hash in sources.json. Require exact equality to its point_floathex strings, not a decimal transcription.
+
+Precision: start256bits; a width-only pilot failure allows one transparent same-input512-bit promotion. Record bothattempts; neverdoublecount promotedphase in mathematicalsum. At512failurestop, no automatic1024bits/newpoint/epsilon/equalitythreshold. Pilot projectedwidth isnotguarantee forunseenphases.
+
+Afterpilot, stop for mainreview with actual widths/timings/cachemisses and chosenfullprecision. Fullgeneric322560halfphase finitebatch needs separate explicitrelease:5040permutationchunks×64signs;reuse first4acceptedchunks,remaining5036distributed15single-threadprocesses. Eachchunk stores exactphaseintervalcoverage,ball endpoints,eps/precision,nominal212DDrequests perphase,actualunique top/subDD/log/Hermitecounts,zero-knot counts,timings/resources/sourcehash. No needarchive14millionlogballs or68millioninternaltables; fixedsources/chunkcertificates supportreproduction. FullmathematicaltopDDrequestcount68,382,720beforeexactcaching. Allsignedcontributionsretained.
+
+Fullacceptance: all5040uniquechunks/orbitcounts/stabilizers/weights/sourcehashescorrect;sumoutwardchunkballs,apply2c/(2pi)^7exactlyonce;actualrawfullHwidth<=1e-12andpositive. Failurepreservestrueenclosureandstops; no blindclipping orautomaticfullredo. A fullpointH isnotfullfaceg. Record actualCPU/wall/RSS/concurrency; no promiseof15coresaturationfromrequestalone.
+
+No automatic epsilon0G,eventail/momentorpositive1Dquadrature work: seeextensions.mdtheoryonly. All newscope requiresmainrelease. No commit/push bynumericowner unlessmain laterinstructs integration.
+
+Sharp calibration: read the primary thread's already executed exact21-orbit functional receipt and verify its source hash, rather than repeating the catalog enumeration or rerunning its scalar comparison for load. This proves c=32sqrt2 in the global derivative/tube bounds. A later explicit moment release may compute the finite exact J0/J2 coefficients of extensions(E3), with origin equality and sharp angular bounds(E6) as independent normalization checks. Those moment computations and any spatial g-cover are outside the current release.

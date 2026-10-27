@@ -9,3 +9,5 @@ R011四完整symmetryH、scalar/origin及256generichalfphase pilot已完成和�
 R002–006普通提交push及外部refs确认22208695；R007/008本地0678a2a2/75eedb49网络失败待同步，继续正常fetch/rebase/push不强推。后续各轮独立提交，不改封存原件/他项目。最新VCS回执以实际远端确认另记。
 
 15核24GiB共享本机，Sol推导/Terra操作、主MATLAB串行，无clear/path/cwd重置。R012workerCPU899s/wall134s约6.7核，非满15核，不用无效内存填充。有限参数/状态、无总wall上限，整体goalactive未完成。
+
+R011已主核并封存，范围见rounds/011.md；不产生新Cn界。下界暂停。

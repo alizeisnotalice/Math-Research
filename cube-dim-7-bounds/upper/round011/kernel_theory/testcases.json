@@ -1,0 +1,27 @@
+{
+  "model": "n7 body64 unit weights common Cauchy time",
+  "scalar_DD_epsilon": "1/64",
+  "scalar_DD_cases": [
+    {"name":"all_zero","knots":["0","0","0","0","0","0","0"],"reference":"1/(6*epsilon^6)"},
+    {"name":"all_one","knots":["1","1","1","1","1","1","1"],"reference":"1/(6*(epsilon-i)^6) for complex DD"},
+    {"name":"partial_confluence","knots":["-1","-1","0","0","0","1","1"],"reference":"exact Hermite recurrence; optional independent rational partial fractions"},
+    {"name":"near_distinct","knots":["0","1/4294967296","2/4294967296","3/4294967296","4/4294967296","5/4294967296","6/4294967296"],"reference":"distinct exact knots; 32-extra-term complete-homogeneous Taylor reference with explicit remainder"}
+  ],
+  "origin_epsilons":["1/64","1/256","1/1024"],
+  "symmetry_value_cases":[
+    {"x":["1","0","0","0","0","0","0"],"epsilons":["1/64","1/256"],"orbit_size":14,"stabilizer":46080,"half_phase_count":7},
+    {"x":["1","1","1","1","1","1","1"],"epsilons":["1/64","1/256"],"orbit_size":128,"stabilizer":5040,"half_phase_count":64}
+  ],
+  "generic_case": {
+    "source":"upper/round003/truncated_numeric/results.json: minima[0], lowest_sobol_index=2710, epsilon=1/1024; hash in sources.json",
+    "x_floathex":["0x1.0000000000000p+0","0x1.cb8b8cf800000p-1","0x1.ea76a78800000p-1","0x1.d94dfdf800000p-1","0x1.18baa38000000p-5","0x1.7babca4800000p-1","0x1.d943b29000000p-1"],
+    "epsilon":"1/1024",
+    "orbit_size":645120,"stabilizer":1,"half_phase_count":322560,
+    "phase_order":"64*lex_permutation_rank+lex_sign_rank; first sign+,remaining six signs lex(-1,+1)",
+    "pilot_phase_ids":"0..255 inclusive; first4 permutation chunks",
+    "full_run_requires_separate_main_release":true
+  },
+  "absolute_full_H_interval_width_target":"1/1000000000000",
+  "precision_ladder":[256,512],
+  "MC_samples":0
+}
