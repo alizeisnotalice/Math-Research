@@ -1,0 +1,40 @@
+{
+  "batch": "R067 phi target profile",
+  "scope": "finite numerical diagnostic only; no Cn theorem",
+  "code_sha256": "b221843d9e8c0cf0a55d6f892684092eda640f4a2b01cf2eeb9e7b4b4f5f198a",
+  "q0": "2/3+(917/1000-2/3)*(2*i+1)/512, i=0..255",
+  "s": "3/2",
+  "r": "s*q0 fixed when differentiating",
+  "h_over_r": [
+    "1/16777216",
+    "1/281474976710656",
+    "1/1208925819614629174706176",
+    "1/79228162514264337593543950336",
+    "1/340282366920938463463374607431768211456"
+  ],
+  "rho_over_r": [
+    "4",
+    "16",
+    "65536",
+    "18446744073709551616",
+    "340282366920938463463374607431768211456",
+    "115792089237316195423570985008687907853269984665640564039457584007913129639936"
+  ],
+  "epsilon": "factor*h/(s*q0), factor 0,1/4,1/2; fixed during derivative",
+  "R": "s*q-h",
+  "a0": "(1-epsilon)*q",
+  "g": "R-a0",
+  "t": "rho/q0 fixed",
+  "points": "0, \u00b1r, \u00b1a0, \u00b1(a0\u00b12^-j), j=24,64,128,192, \u00b1(r-g), \u00b1(r-g/2)",
+  "states_per_chunk": 2250,
+  "tasks": 256,
+  "max_states": 576000,
+  "workers": 15,
+  "precision": "closed form 160 decimal; independent direct quadrature and finite differences 256 decimal (>512 bits)",
+  "crosscheck": "per chunk two h values at rho/r=2^256 and epsilon factor1/2: four points around kink and boundary, one-sided differences step 2^-240; baseline target mean and second moment at R=r",
+  "baseline_source_mean": "(2R/rho)*(1-a+a*log(a)), a=ellpin",
+  "diagnostic_bound": "abs(rho*d_q Jphi)<=8, pointwise/a.e. with two one-sided values at kink",
+  "independent_tolerance": "rho*Jphi difference <1e-80; derivative difference <1e-25; scaled baseline mean diff <1e-100",
+  "stop": "finite task counts; on first exception or candidate violation preserve parameters, stop affected chunk",
+  "registered_unix": 1793142178.34597
+}

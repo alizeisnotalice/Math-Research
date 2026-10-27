@@ -33,7 +33,8 @@
 | R063 | 宽来源带一成修正的完整显式门槛 | `a4da5e5d5744e31a8536923043e3e00c8a4b8830` | [报告](upper/round063/REPORT.md) | 17 |
 | R064 | 乘法匹配与有界径向校准的完整严格改进 | `8095d6b588136b0d31c34022afb25abb218543a8` | [报告](upper/round064/REPORT.md) | 25 |
 | R065 | 乘法相对核有限诊断与真实错误符号审计 | `87904a9de0961cba253397fe9021fccbc57769df` | [报告](upper/round065/REPORT.md) | 25 |
-| R066 | 典型目标一阶profile与精确价格推论 | 本轮身份见Git log及真实readback | [报告](upper/round066/REPORT.md) | 具体白名单与MANIFEST |
+| R066 | 典型目标一阶剖面与完整弱型上界改进 | `db9245834b75baa7cc36f12127925679fdffdf3d` | [报告](upper/round066/REPORT.md) | 28 |
+| R067 | Jphi新观察量本机有限诊断与独立证据审计 | 本轮身份见Git log及真实readback | [报告](upper/round067/REPORT.md) | 具体白名单与MANIFEST |
 
 以上历史提交均已确认远端包含；本轮只有真实readback成功后才报告已推送，不把自身hash嵌入自身提交。每轮报告有机制/假设、完整成本及范围、准确原件/来源SHA、最小代码、实际receipt与独审，过去R001–040另见rounds和账本。
 
