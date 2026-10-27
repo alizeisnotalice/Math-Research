@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-27",
+  "round": "upper/round003/coupling",
+  "role": "Native Sol theory",
+  "authored_directory": "/Users/zhengzhihao/Desktop/T/Math-Research-cube8-sol-theory/cube-dim-8-bounds/upper/round003/coupling",
+  "claims": [
+    "The requested orthant calibration gives E>=S^2/(2*2^n)-a^(-n)S/2 and S<=2^(n+1)tau+2^n a^(-n).",
+    "The cap excludes the all-positive orthant after reflection, improving its count to d=2^n-1; the last-index argument also gives S<=d*tau+d*a^(-n).",
+    "No coefficient kappa>1/(2d) with the same exact diagonal or a^(-n)S/2 correction can hold uniformly, even for true feasible selector families.",
+    "An explicit family sequence keeps S=d/L^n>0 as a=Lm grows and exactly saturates E=S^2/(2d)-a^(-n)S/2.",
+    "The resulting coarse calibration mechanisms are not competitive with the existing R001 bound."
+  ],
+  "candidate_count": 1,
+  "finite_probe_count": 1,
+  "probe_plan_written_before_execution": true,
+  "actual_run": {
+    "command": "python3 verify_family.py",
+    "exit_code": 0,
+    "exact_arithmetic": "fractions.Fraction",
+    "center_pairs_checked": 32640,
+    "all_checks_passed": true,
+    "stopped_as_registered": true
+  },
+  "additional_exact_arithmetic": "Fraction verified 16641/256 < 256 < 511; no scalar grid or optimization run.",
+  "limitations": [
+    "No new full-operator upper bound",
+    "No C_n lower bound",
+    "No exclusion of high-load-dependent or radius-dependent energy bounds",
+    "No claim that the counterexample fills the R001 cap integral"
+  ],
+  "sources": [
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube8-sol-theory/AGENTS.md",
+      "sha256": "18025c63fdc4225e0c326bc535b810c9a9e54ab683b990dce818758f3ca732d5",
+      "use": "Repository instructions."
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube8-sol-theory/cube-dim-8-bounds/upper/round001/theory/proof.md",
+      "sha256": "6d47b46bc873021b80c9ce92fbb401b70d060626b2dcf5a28132b73e4035b551",
+      "use": "Original selector, finite-a coverage factor, and cap-load formula; unchanged."
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube8-sol-theory/cube-dim-8-bounds/upper/round002/geometry/research.md",
+      "sha256": "57126abaf83eae466375a2b2efb0e6576ad36960a34af0b0c7cde90fdf3a5ef8",
+      "use": "Necessary quadratic selector condition E_J <= tau*S and local projection obstruction; unchanged."
+    },
+    {
+      "path": "/Users/zhengzhihao/.codex/skills/math-paper-writing/SKILL.md",
+      "sha256": "e0b065cb7f372e2b2b3759aa960a64ec4a5c6b01d26e2604a04ba3076771d844",
+      "use": "Claim scope and proof-writing workflow; no theorem source."
+    }
+  ],
+  "files": [
+    {
+      "path": "probe_plan.json",
+      "sha256": "20b74a6a3fc41262226843f9e14509189a1908d44fc198834bd67d8d4aa7d294"
+    },
+    {
+      "path": "research.md",
+      "sha256": "91b767e5d6afb9ac4c57745f6510b959ac7fcdac5d0e1c6298197b8514b4c703"
+    },
+    {
+      "path": "verification.json",
+      "sha256": "f962205c2ef8d9caa5f3d240c431463eebcd660915f9c10283f742586d4904e0"
+    },
+    {
+      "path": "verify_family.py",
+      "sha256": "9a1baa5c641709d382c2eba15a67b1e24d8d945ee6b5b88a570905cfc01393c7"
+    }
+  ],
+  "old_rounds_unchanged": true,
+  "committed": false,
+  "pushed": false,
+  "subagents_spawned": false
+}

@@ -1,0 +1,24 @@
+{
+  "registered_before_execution": true,
+  "date": "2026-10-27",
+  "candidate_count": 1,
+  "candidate": "Uniform cap-family energy lower bound E >= kappa*S^2 - (1/2)*sum(w_j^2) with kappa > 1/[2*(2^n-1)]; the weaker diagonal (1/2)*a^(-n)*S is checked too.",
+  "fixed_probe": {
+    "n": 8,
+    "t": "2",
+    "a": "8",
+    "small_radius": "1",
+    "centers": "Every vector in {-7,+7}^8; all-positive center is selected last as the minimum-radius anchor.",
+    "tau": "1/1073741824",
+    "input_witness": "f=2*1_{(-16,16)^8}, lambda=1; every selected 8-star is inside (-15,15)^8."
+  },
+  "checks": [
+    "All stars contribute at observation point zero.",
+    "All small cubes are disjoint, so weights are exactly 8^(-8).",
+    "No distinct center is captured by any other b-star, where b=12.",
+    "Every selector test is therefore zero and passes.",
+    "All 255 non-anchor cubes are genuinely unpaid and have radius 1<t.",
+    "Energy is zero; calibrated coefficient gives equality, and coefficient 1/(2*254) gives a strictly positive false lower bound."
+  ],
+  "stopping_rule": "Run this one exact rational family. Stop after successful feasibility/refutation or the first failed requirement. Do not change parameters, add candidates, scan a grid, or launch optimization."
+}
