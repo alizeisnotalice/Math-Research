@@ -1,0 +1,15 @@
+# C141：单一boundary anchor的有限纯有理完整盒试验
+
+唯一实际批次完成，状态为 `SOLE_PURE_RATIONAL_BATCH_COMPLETE`、exit0。固定128个C129终态原未决盒中，26盒同时通过g0=1/65000与gstar=1/63500，102盒在两个目标下均未决，g0-only为0。这26盒分别来自C121.r11011110110的16盒、C121.r11011101111的10盒；其余47、47、8盒分别留在这两根及C121.r11011110111。结果只是局部原盒的证书，没有把旧仅g0-paid叶提升为gstar，也未改动C129终态森林或声称任一完整root/global gstar/C6闭合。
+
+试验只用R137在c=(1,1,1,3/8,1/4,1/8)的五份既有真实正带jet，没有新增中心、窗口或native query。每角保留原f-clamp的共同分母f，按各band自己的a计算r=b/f−q/a²，再用固定odd degree集合{1,3,5,7,9,11,13,15}的max(0,Podd(r))作exp(r)的精确有理下包。每band先取其32角下包的min，再对五个不交正带求和。角点规则来自原robust T的log凹性与A057全R6正带Hessian控制，不是来自Podd的凹性；boundary source即使位于目标盒外，原中心到目标点的线段仍由该定理支付。
+
+固定20480个box-band-corner case共享为5970个唯一source-point有理求值，实际Taylor递推89550次，低于已注册307200上限。新native、exp、checker、细分均为0。640个box-band下界中有349个等于0；零是合法非负证书下端，不能称严格正下端，更不说明真实正带为0。128个原盒均在注册范围内完成，没有自动加degree、增加时间窗、换目标或重复R137五semantic。
+
+26个局部通过说明同一boundary anchor的五个既有jet确能跨多盒共享，并在这些盒上兑现正带组合的空间下界；这与“每盒反复取自中心并继续分空间”的策略不同。但102个未决不能直接归为真实robust-family亏损：odd15有限下包可能低估原指数切线，bandwise min后的空间损失也可能仍在。当前结果只计算lower，故point-upper obstruction、真实g反例、实际G上界计数均为0。后续需先用严格有理exp上下包分离“degree15损失”“原固定anchor完整盒公式不足”和“真实域内固定家族点缺口”，再决定是否值得新增少量共享face/boundary sources；lower失败本身不是上述任一反例。
+
+主提供的完整childwall为1.437184708秒、CPU为1.423184秒、exit0；本目录result.json记录的内部wall为1.2468861660163384秒，计时范围不同。本轮独立理论与实施静核由142承担；唯一实际结果的独立saved-data复核随后已正式PASS，见下一段。本文未重跑producer。
+
+独审141正式完成：0新exp/native，5970个点用独立factorial-Horner重核，128盒按sum(min32)复核，149736项断言通过，26个局部通过叶的准确ID及原坐标一致，66个source前后未变；独审exit0、wall2.908702125秒、CPU2.898261秒。正式scientific_seal.json位于upper098的audit/upper141_saved，SHA256为317dd695fceadd36aa6b5e0c3da9d977542e5251e1faaf11e6fba90fa9c61cc9；verified_local_passes.json的SHA256为48f0493698df305f99e8b5958a731ef6a8db014864d18fdeedc13a6e67010470。本报告已只读核对这两份交付的hash；没有据叶数减法或静核PASS推断未支付的全域覆盖。
+
+C129终态仍是325根中290根closed、35根残差及10266未决叶；该20/55终态closed包含6根旧闭与14根本次新增。C141只支付其中128个候选叶里的26盒，不能据此跨过其他残差或先前g0-only覆盖的gstar缺口。下一轮145保持有限准备：优先分析已有C141精确f/r/cache，用有理上下包诊断102未决的原因，并按真正固定家族ordered-point缺口与有效曲率距离提出少量跨盒共享anchor候选；在新gate前不启动新native或新exp，不作递归探索。
