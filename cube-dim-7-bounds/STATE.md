@@ -1,9 +1,7 @@
 # 当前状态：一般高维覆盖持续攻关
 
-HIGH_DIM_COVER_ACTIVE；LOWER_PAUSED；N7_SPECIFIC_STOPPED。R045新严格内部结果及全链/端点独审ACCEPT：存在绝对N，n≥N时Cn≤nlogn−nloglogn−2^-41n。N尚未显式量化；L≥2^240仅完整cost比较域。首项系数仍1。R042在原显式域logn≥2^108以及所有旧界继续各按有效域取min，不能提前用未知新N覆盖任何有限维。
+HIGH_DIM_COVER_ACTIVE；LOWER_PAUSED；N7_SPECIFIC_STOPPED。已接受轮次及准确域见results/general_cover_ledger.json；当前本次整合到R049。R051泛预算族对每个固定合格tuple给原算子上界，R053与R055分别量化raw/simple tuple，不靠搜索最优性。所有结论仍leading nlogn系数1、内部未发表，其他旧界只在自身valid域取minimum。
 
-R044完整支付LP/三坐标/MILP候选严格区分finite certificate和Cn；R046一维4365积分、R047跨半径61440组合已实际本机运行并精简归档。R047实测15worker峰1461.3%CPU≈14.61核，wall61.06s，累计CPU385.03s，长尾使平均非满核。没有为占资源空转或填内存。
+R048当前30页PDF已独立全文ACCEPT及主实际编译渲染，是早期R045核心稿；R054正在整合最新generic及显式实例，未提前冒充已完成。R044/046/047/052数值或有限证书与完整Cn theorem分开，实际本机R047峰15worker合计1461.3%CPU，长尾平均非满核，不虚构持续利用率。
 
-R048当前30页PDF已新全文终审ACCEPT、主实编译两遍并渲染检查30页，新主定理R045已完整写入；旧R042显式链保留。R049尝试量化新机制门槛，未认证。Terra本机生产、Sol推导/独审、Luna事实审阅，主保留证明责任。原资料包与旧暂停项目只读，goal active，七维专项与下界保持停止。
-
-已恢复正常fetch/rebase/push，每轮独立提交；新轮以远端读回确认同步，不强推。未跟踪外部同名2文件未作为研究源或暂存，也未改删。
+Terra本机生产、Sol推导/独审、Luna事实核查，主保留证明责任。每批有限登记和停止，未空转或填充内存。目标active，不恢复n7专项、下界或旧暂停项目。每完成轮独立commit正常fetch/rebase/push并核远端；来源不明的未跟踪同名2文件未用作证据/暂存或改删。

@@ -1,9 +1,9 @@
 {
   "dimension": 7,
-  "updated_utc": "2026-10-27T20:30:56.581732+00:00",
+  "updated_utc": "2026-10-27T21:03:26.008937+00:00",
   "status": "GENERAL_HIGH_DIM_COVER_ACTIVE_N7_SPECIFIC_STOPPED_LOWER_PAUSED",
   "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-  "current_round": 48,
+  "current_round": 49,
   "lower": {
     "status": "complete_strict_primary_and_independent_full_union",
     "exact_construction": "R006: a1=(8^(1/7)+288^(1/7))/2; six tails(1+2^(1/7))/2; full8192 halfcell union times128",
@@ -759,7 +759,9 @@
       "pdf_sha256": "d3316cdbbc3ef42a1f3afe26470c5df3c4ea0b6f4471c329284995723a22d40a",
       "tex_git_blob": "88f3adbfddf0dd9ffeadc7d37052291d195fc981",
       "pdf_git_blob": "2b662bcb85cb2688224c0f853959c394e17b3695"
-    }
+    },
+    "latest_thresholds_pending_manuscript_round": 54,
+    "note": "R048 is historical30page core manuscript; later explicit generic results in R049/R053/R055 are being integrated in R054"
   },
   "round029": {
     "report": "revision_v3/REPORT.md",
@@ -832,8 +834,8 @@
   "active_goal": {
     "status": "active",
     "objective": "持续优化维数一致上界，Sol/Terra/Luna，本机优先；下界暂停",
-    "next_round": 49,
-    "focus": "R049 explicit operator threshold; continued general covering",
+    "next_round": 54,
+    "focus": "R054 latest manuscript, continuing general covering beyond present budget family",
     "n7_specific_work": "STOPPED; historical archive only"
   },
   "upper_pre_R031": {
@@ -894,26 +896,19 @@
     "leading_n_log_n_coefficient": 1
   },
   "general_high_dim_upper": {
-    "round": 45,
+    "round": 49,
     "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-    "scope": "all sufficiently large integer n; absolute N not quantified",
-    "d": "1/16777216",
-    "L": "log n",
-    "sigma": "1/8796093022208",
-    "t": "n/((1−2^-43)log n)",
-    "A": "(1+1/t)^n",
-    "B": "original exact B_n(t)",
-    "removed_budget": "2^-40 n",
-    "operator_cost": "Cn<=F(A,B−2^-40n)",
-    "bound": "Cn<=nlogn−nloglogn−2^-41n",
-    "proof": "upper/round045/soft_inverse_column/PROOF.md",
-    "endpoint_and_comparison": "upper/round045/comparison/PROOF.md",
-    "independent_full_audit": "audit/round045/full_theory/proof_review.md",
-    "independent_endpoint_audit": "audit/round045/comparison/AUDIT.md",
+    "full_proof": "upper/round049/explicit_threshold/THRESHOLD_PROOF.md",
+    "proof_sha256": "b8c385a90cefbe3b234f5269be749ad13984243e01d9109658bb38e27304e33c",
+    "independent_audit": "audit/round049/threshold/review.md",
+    "independent_audit_sha256": "8a68e8c885cf2c13252ade46fd3b9d4917e0caee182e20de69f2e668c16f8a64",
     "leading_coefficient": 1,
-    "explicit_threshold": null,
-    "status": "strict internal theorem; independent ACCEPT, not claimed public/global best",
-    "comparison_scope": "scalar L>=2^240 and own operator valid domains; take all applicable old/new minima"
+    "public_status": "internal independently reviewed theorem; no public priority/global optimality claim",
+    "scope": "natural log(n)>=2^52",
+    "bound": "Cn<nlogn−nloglogn−2^-41 n",
+    "explicit_threshold": "log(n)>=2^52",
+    "full_cost": "F(A_n(t),B_n(t)−2^-40 n), t=n/[(1−2^-43)logn]",
+    "mechanism_source": "upper/round045/soft_inverse_column/PROOF.md"
   },
   "round034": {
     "report": "upper/round034/REPORT.md",
@@ -1120,28 +1115,19 @@
     "comparison_scope": "L>=2^240 dominates complete listed valid fixed-old-t costs; unitcore all-t comparison only eventual; otherwise take applicable minimum"
   },
   "general_high_dim_explicit_upper": {
-    "round": 42,
+    "round": 49,
     "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-    "scope": "all integers with natural log(n)>=2^108",
-    "L": "log n",
-    "s": "L^(1/3)",
-    "t": "n/(L−L^(1/3))",
-    "A": "(1+1/t)^n",
-    "B": "original exact cap budget B_n(t)",
-    "removed_budget": "2^-31 n L^-1/3",
-    "operator_cost": "Cn<=F(A,B−removed_budget)",
-    "bound": "Cn<T−2^-32 n L^-1/3; T=nL−nlogL",
-    "full_proof": "upper/round042/second_moment_cut/PROOF.md",
-    "threshold": "upper/round042/explicit_threshold/THRESHOLD_PROOF.md",
-    "comparison": "upper/round042/comparison/PROOF.md",
-    "independent_audits": [
-      "audit/round042/full_theory/proof_review.md",
-      "audit/round042/threshold/proof_review.md",
-      "audit/round042/comparison/proof_review.md"
-    ],
-    "status": "internal strict proof, independent ACCEPT; not claimed published/global best",
+    "full_proof": "upper/round049/explicit_threshold/THRESHOLD_PROOF.md",
+    "proof_sha256": "b8c385a90cefbe3b234f5269be749ad13984243e01d9109658bb38e27304e33c",
+    "independent_audit": "audit/round049/threshold/review.md",
+    "independent_audit_sha256": "8a68e8c885cf2c13252ade46fd3b9d4917e0caee182e20de69f2e668c16f8a64",
     "leading_coefficient": 1,
-    "comparison_scope": "L>=2^240 dominates complete listed valid fixed-old-t costs; unitcore all-t comparison only eventual; otherwise take applicable minimum"
+    "public_status": "internal independently reviewed theorem; no public priority/global optimality claim",
+    "scope": "natural log(n)>=2^52",
+    "bound": "Cn<nlogn−nloglogn−2^-41 n",
+    "explicit_threshold": "log(n)>=2^52",
+    "full_cost": "F(A_n(t),B_n(t)−2^-40 n), t=n/[(1−2^-43)logn]",
+    "mechanism_source": "upper/round045/soft_inverse_column/PROOF.md"
   },
   "round045": {
     "report": "upper/round045/REPORT.md",
@@ -1175,5 +1161,58 @@
     "report": "upper/round048/REPORT.md",
     "status": "complete30page math ACCEPT and primary actualbuild/layout",
     "new_Cn_bound": false
+  },
+  "round049": {
+    "report": "upper/round049/REPORT.md",
+    "status": "full independent ACCEPT",
+    "new_general_Cn_bound": true,
+    "new_n7_work": false,
+    "new_lower_work": false
+  },
+  "general_high_dim_explicit_upper_pre_R049": {
+    "round": 42,
+    "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+    "scope": "all integers with natural log(n)>=2^108",
+    "L": "log n",
+    "s": "L^(1/3)",
+    "t": "n/(L−L^(1/3))",
+    "A": "(1+1/t)^n",
+    "B": "original exact cap budget B_n(t)",
+    "removed_budget": "2^-31 n L^-1/3",
+    "operator_cost": "Cn<=F(A,B−removed_budget)",
+    "bound": "Cn<T−2^-32 n L^-1/3; T=nL−nlogL",
+    "full_proof": "upper/round042/second_moment_cut/PROOF.md",
+    "threshold": "upper/round042/explicit_threshold/THRESHOLD_PROOF.md",
+    "comparison": "upper/round042/comparison/PROOF.md",
+    "independent_audits": [
+      "audit/round042/full_theory/proof_review.md",
+      "audit/round042/threshold/proof_review.md",
+      "audit/round042/comparison/proof_review.md"
+    ],
+    "status": "internal strict proof, independent ACCEPT; not claimed published/global best",
+    "leading_coefficient": 1,
+    "comparison_scope": "L>=2^240 dominates complete listed valid fixed-old-t costs; unitcore all-t comparison only eventual; otherwise take applicable minimum"
+  },
+  "general_high_dim_upper_pre_R049": {
+    "round": 45,
+    "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+    "scope": "all sufficiently large integer n; absolute N not quantified",
+    "d": "1/16777216",
+    "L": "log n",
+    "sigma": "1/8796093022208",
+    "t": "n/((1−2^-43)log n)",
+    "A": "(1+1/t)^n",
+    "B": "original exact B_n(t)",
+    "removed_budget": "2^-40 n",
+    "operator_cost": "Cn<=F(A,B−2^-40n)",
+    "bound": "Cn<=nlogn−nloglogn−2^-41n",
+    "proof": "upper/round045/soft_inverse_column/PROOF.md",
+    "endpoint_and_comparison": "upper/round045/comparison/PROOF.md",
+    "independent_full_audit": "audit/round045/full_theory/proof_review.md",
+    "independent_endpoint_audit": "audit/round045/comparison/AUDIT.md",
+    "leading_coefficient": 1,
+    "explicit_threshold": null,
+    "status": "strict internal theorem; independent ACCEPT, not claimed public/global best",
+    "comparison_scope": "scalar L>=2^240 and own operator valid domains; take all applicable old/new minima"
   }
 }

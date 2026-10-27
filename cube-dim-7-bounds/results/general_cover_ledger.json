@@ -1,7 +1,7 @@
 {
   "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
   "status": "active research; lower paused and n7-specific stopped",
-  "current_round": 48,
+  "current_round": 49,
   "accepted": [
     {
       "round": 34,
@@ -101,13 +101,28 @@
       "explicit_threshold": null,
       "status": "strict internal theorem; independent ACCEPT, not claimed public/global best",
       "comparison_scope": "scalar L>=2^240 and own operator valid domains; take all applicable old/new minima"
+    },
+    {
+      "round": 49,
+      "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+      "full_proof": "upper/round049/explicit_threshold/THRESHOLD_PROOF.md",
+      "proof_sha256": "b8c385a90cefbe3b234f5269be749ad13984243e01d9109658bb38e27304e33c",
+      "independent_audit": "audit/round049/threshold/review.md",
+      "independent_audit_sha256": "8a68e8c885cf2c13252ade46fd3b9d4917e0caee182e20de69f2e668c16f8a64",
+      "leading_coefficient": 1,
+      "public_status": "internal independently reviewed theorem; no public priority/global optimality claim",
+      "scope": "natural log(n)>=2^52",
+      "bound": "Cn<nlogn−nloglogn−2^-41 n",
+      "explicit_threshold": "log(n)>=2^52",
+      "full_cost": "F(A_n(t),B_n(t)−2^-40 n), t=n/[(1−2^-43)logn]",
+      "mechanism_source": "upper/round045/soft_inverse_column/PROOF.md"
     }
   ],
   "unaccepted": [
-    "leading coefficient below 1",
-    "global optimality of any cover family",
-    "a uniform improved bound for causal-spill/joint-mass models",
-    "an explicit threshold for R045 (R049 pending)"
+    "leading coefficient below1",
+    "global optimality of covering family",
+    "uniform N for all adaptive continuous tuples",
+    "independent proof of exhaustive R052 per-chunk execution"
   ],
   "public_comparison": "only previously checked original sources; internal results not claimed published",
   "source_reports": [
@@ -126,7 +141,8 @@
     "upper/round046/REPORT.md",
     "upper/round047/REPORT.md",
     "upper/round045/REPORT.md",
-    "upper/round048/REPORT.md"
+    "upper/round048/REPORT.md",
+    "upper/round049/REPORT.md"
   ],
   "accepted_scoped_mechanisms": [
     {
