@@ -1,0 +1,79 @@
+{
+  "project": "cube-dim-8-bounds",
+  "round": "audit/round001/upper",
+  "status": "PASS",
+  "frozen_utc": "2026-10-27T12:31:12.764639+00:00",
+  "base_commit": "79f8acb20c418e60c5196a3c830103253e34c900",
+  "claim": "C8 <= F8(3837029/524288) < 56627260639/2000000000 for the full Lebesgue centered common-radius cube maximal operator",
+  "theory_sources": {
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube8-sol-theory/cube-dim-8-bounds/upper/round001/theory/proof.md": "6d47b46bc873021b80c9ce92fbb401b70d060626b2dcf5a28132b73e4035b551",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube8-sol-theory/cube-dim-8-bounds/upper/round001/theory/review_notes.md": "7ffaa531f0b063aa438ef3b96b77e75eb588f3515a68582ad7247844a2db739a",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube8-sol-theory/cube-dim-8-bounds/upper/round001/theory/source_manifest.json": "9aea6770a612ed70f93b6a298cd7cc8ae5df0aa9795ac8f4df8e77dfd2f8a000"
+  },
+  "read_references": {
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube8-main/AGENTS.md": "18025c63fdc4225e0c326bc535b810c9a9e54ab683b990dce818758f3ca732d5",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube8-main/cube-dim-7-bounds/upper/round027/cube_cap_theory/proof.md": "6ecbf72fa9213677dc99e2e2afaa510df240b3d1b08047366a8d0103d010c80f",
+    "/Users/zhengzhihao/Desktop/T/Math-Research-cube8-main/cube-dim-7-bounds/audit/round027/cube_cap/proof.md": "00555fc5ca9dff8cdb3e467ef0bf4230b5eed8b603a744256f9a5fb66224db6a"
+  },
+  "scalar_source_directory": "/Users/zhengzhihao/Desktop/T/Math-Research-cube8-terra-scalar/cube-dim-8-bounds/upper/round001/scalar",
+  "scalar_source_hashes": {
+    "actualreceipt.json": "2edd453ea8271efbeb0b9184192e7944176d6b2bd71829585c583815aed63169",
+    "check-receipt.json": "3b51a623e9efa05e35af16a604cbfa17313eb68d3015a522208101eb3d164d15",
+    "check.py": "9850edeb1dec93804922ee5553506a58aa3af12bcf9c965f867672f3d53ea73c",
+    "manifest.json": "77a7c16e31759939272f11c240abee71dd0c79c8c320b53425e8cf14e99b5975",
+    "registration.md": "1751e444d1054f982e87e0cfbbb05d47734d0c79b9f1d27bddc26b2debe5ff6a",
+    "result.json": "fe7b8f3169f9f3850bd3fe785e3bd140908d49daeee96efba32601d92aaf57bf",
+    "run.py": "9b7761676748fea7fceb1d5a0408c15f7283ffa84f2251bd3501fbab9ced7b76",
+    "trace.json": "b1054d75ed3b491b02f10a8e21bdd8cd449a55ab3371cdfbf6c8750a04757d67"
+  },
+  "deliverables": {
+    "actualreceipt.json": {
+      "sha256": "3e1d32ce316d5c50ccf7fb0118c639c139fcbeeb939ac98569b9b610a0f0a37e",
+      "bytes": 700
+    },
+    "independent_check.py": {
+      "sha256": "ea7db91263cb680699e59678db2cf816194a931f0aae5664d4e25c46312e2809",
+      "bytes": 9130
+    },
+    "proofreview.md": {
+      "sha256": "ca379928319d8885d54c2816979e8e6679ee71ed0dcb99a71a0641bdf09f8171",
+      "bytes": 17225
+    },
+    "result.json": {
+      "sha256": "7a6d4b0371be6ac672b54c8f26045d6addb0c3159fb1236dc86ac7131600eb75",
+      "bytes": 2590
+    },
+    "symbolic_check.py": {
+      "sha256": "e9cc0b4030b201ab3388b6b79434ea6ba0e559e47ee404e65330a7b0967345cc",
+      "bytes": 1783
+    },
+    "symbolic_result.json": {
+      "sha256": "a2000efb4e39453f654e031773d34f19ac75826eb27ab845e715ec81d3820f53",
+      "bytes": 927
+    }
+  },
+  "actual_runs": [
+    {
+      "command": "python3 cube-dim-8-bounds/audit/round001/upper/independent_check.py",
+      "tool_observed_exit_code": 0,
+      "result": "result.json",
+      "receipt": "actualreceipt.json"
+    },
+    {
+      "command": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python cube-dim-8-bounds/audit/round001/upper/symbolic_check.py",
+      "tool_observed_exit_code": 0,
+      "result_and_timing_receipt": "symbolic_result.json"
+    }
+  ],
+  "audit_scope_notes": [
+    "R027 references read; this was not a blind audit",
+    "No author checker or optimizer was executed",
+    "Only assigned audit directory authored",
+    "No global minimizer claim",
+    "No immutable preregistration-time attestation",
+    "No variable-background extension",
+    "No unrelated missing-blob repair",
+    "No commit or push"
+  ],
+  "failed_attempt": "First Fraction check passed math assertions but failed output serialization at Python 4300-digit limit; fixed by outward 50-decimal rational compression, final complete run exit 0"
+}
