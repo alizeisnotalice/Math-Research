@@ -1,0 +1,24 @@
+{
+  "kind": "editorial scope clarification; no mathematical theorem or historical code change",
+  "old_PROOF_sha256": "4d6a22fcfb343cbdb851cea6d017c799e8b04ece5d9b9f0813cec76afba530b1",
+  "new_PROOF_sha256": "8bdd6b862daf9dda2a021ee85fb8ad7a719a2f541d55915a70067e5559356910",
+  "changes": [
+    {
+      "section": "2.2",
+      "old": "它是一个有效的真实level-set finite-cover输入，但其弱比率很小，不给C_n下界。",
+      "new": "它是一个有效的真实level-set finite-cover输入；式(8)只给有限cover（此处也即selected union）比率λ|U_all|/||f_η||1的上包。虽然U_all包含于整个level set，这个有限子集的比率上包不能反向控制整个level set的弱比率。本构造不给C_n下界。"
+    },
+    {
+      "section": "5",
+      "old": "任意一般L1原输入的有限compact-level-set子覆盖，只涉及有限个有界stars。删除f在这些stars并集之外的部分不改变任何witness质量、预算或选择，而只降低||f||1。因此研究有限共同质量一致性可合法归约到有界支撑f；对原f所得支付只会更容易。",
+      "new": "任意一般L1原输入的有限compact-level-set子覆盖，只涉及有限个有界stars。删除f在这些stars并集之外的部分不改变任何witness质量，而只降低||f||1。若h_i已固定，或预算规则仅由每项局部M_i,V_i及固定参数决定并在共同homothety下协变，则这也保持预算与选择；本段的有界支撑归约及对原f支付的传回仅在这个规则范围内使用。任意依赖全输入或全局f信息的budget oracle可能因截断而改变h_i，因此不声称其预算或选择也保持。"
+    }
+  ],
+  "historical_verify_py_sha256": "a0016d33e740bdaa78f6b7bf289802fb1f4ef391159f6f92be9bf6d97dd545ac",
+  "historical_verification_json_sha256": "cc43381dbac8a24599cc9a900900c57697e2629218a658115f739720f3be9734",
+  "historical_run_identity": "verification.json remains byte-for-byte the original run, whose source hash is the old PROOF hash; it was not regenerated for this editorial adaptation",
+  "reran_historical_toy": false,
+  "separate_addendum": "CLARIFICATIONS.md records the tree obstruction separately; it does not silently alter the original section 4.1 interface",
+  "separate_addendum_sha256": "ace4081168847f1bc5ef2ff976be643193ed1c95c8c5a58c5c9e0c05956c0a97",
+  "separate_addendum_status": "new analytic scope addendum; not covered by or substituted into the old toy run"
+}

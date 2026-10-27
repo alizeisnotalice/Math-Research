@@ -1,7 +1,7 @@
 {
   "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
   "status": "active research; lower paused and n7-specific stopped",
-  "current_round": 39,
+  "current_round": 40,
   "accepted": [
     {
       "round": 34,
@@ -48,6 +48,13 @@
       "threshold_proof": "upper/round036/threshold_theory/THRESHOLD_PROOF.md",
       "threshold_proof_sha256": "064e3e6d697220817642250961180fcf2f747dc36446eb693344fb74f719bed1",
       "threshold_independent_audit": "audit/round036/threshold/proof_review.md"
+    },
+    {
+      "round": 40,
+      "bound": "For every fixed 0<gamma<sqrt2, Cn<=T−gamma n sqrt(loglogn/logn) eventually; no explicit threshold",
+      "proof": "upper/round040/energy_refinement/PROOF.md",
+      "explicit_threshold": null,
+      "leading_coefficient": 1
     }
   ],
   "unaccepted": [
@@ -63,7 +70,8 @@
     "upper/round036/REPORT.md",
     "upper/round037/REPORT.md",
     "upper/round038/REPORT.md",
-    "upper/round039/REPORT.md"
+    "upper/round039/REPORT.md",
+    "upper/round040/REPORT.md"
   ],
   "accepted_scoped_mechanisms": [
     {
@@ -84,6 +92,12 @@
       "report": "upper/round039/REPORT.md",
       "Cn_bound_changed": false,
       "qualification": "finite payment/star certificates only, no new Cn bound"
+    },
+    {
+      "round": 40,
+      "report": "upper/round040/REPORT.md",
+      "Cn_bound_changed": true,
+      "qualification": "R040 new bound only fixed gamma<sqrt2 eventually; other interfaces not uniform Cn bounds"
     }
   ]
 }
