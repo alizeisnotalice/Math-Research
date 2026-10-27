@@ -1,0 +1,37 @@
+{
+  "batch": "R065 multiplicative capture kink",
+  "code_sha256": "00c182a664e6dfd379e752e34b2ff7af256891139458611ba5a7a703dc846109",
+  "q0": "2/3 + (909/1000-2/3)*(2*i+1)/256, i=0..127",
+  "s": "3/2",
+  "r": "s*q0 fixed during derivative",
+  "h_over_r": [
+    "1/16777216",
+    "1/281474976710656",
+    "1/79228162514264337593543950336",
+    "1/340282366920938463463374607431768211456"
+  ],
+  "rho_over_r": [
+    "4",
+    "16",
+    "65536",
+    "18446744073709551616",
+    "340282366920938463463374607431768211456",
+    "115792089237316195423570985008687907853269984665640564039457584007913129639936"
+  ],
+  "epsilon": "factor*h/(s*q0), factors 0,1/4,1/2; fixed during derivative",
+  "R": "s*q-h",
+  "a0": "(1-epsilon)*q",
+  "g": "R-a0; derivative 1/2+epsilon",
+  "t": "rho/q0 fixed",
+  "points": "0, \u00b1r, \u00b1a0, \u00b1(a0\u00b12^-j) j=24,64,128,192, \u00b1(r\u2212g), \u00b1(r\u2212g/2)",
+  "states_per_chunk": 1800,
+  "tasks": 128,
+  "max_states": 230400,
+  "workers": 15,
+  "precision": "stable formula 160 decimal digits; direct quadrature/difference at 256 decimal digits (>512 bits)",
+  "direct_checks": "per chunk at h/r=2^-24 and 2^-128, rho/r=2^256, epsilon=half upper bound; w=a0\u22122^-192,a0,a0+2^-192,r, with difference step 2^-240",
+  "baseline": "at qb=(r+h)/s check uniform w mean J=1 via piecewise closed-form quadrature for same 2 parameter combinations per chunk",
+  "stop": "finite all states or first inequality violation or exception in affected chunk; exceptions explicitly retained",
+  "threshold": "abs(rho*dq log J)<=256; direct rho-scaled errors <1e-80 and derivative errors <1e-25",
+  "registered_unix": 1793140891.527929
+}
