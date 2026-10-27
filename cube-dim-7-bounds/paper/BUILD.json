@@ -1,49 +1,52 @@
 {
-  "status": "SUCCESS local XeLaTeX build and eight-page visual review",
-  "pages": 8,
-  "pdf_sha256": "8a57c2dfdef5a9d62a737295c24de243771acf29e3532d23088ab94ad27e1a5f",
-  "main_tex_sha256": "347528c22d19e59471032dda781ad2c8c78596c6deef80618ee209294c9fdb67",
+  "status": "SUCCESS local XeLaTeX; final 13 pages visually reviewed",
+  "pages": 13,
+  "main_tex_sha256": "beec9bbe707950dfa3e84a2db4b6a5a2eaa07ff242935d1f0d2f669431d4d487",
+  "pdf_sha256": "5eb344895934317ca24ba493f16d5fad8d0ecc487bdf97ab4e5f30c849339fd5",
   "verify_code_sha256": "7934699516dd173c72a03c22712b46cf474b7fccb4150e1a28bdd95c4244bfdc",
-  "compiler": "TeX Live 2026, XeTeX 3.141592653-2.6-0.999998, latexmk4.88",
+  "compiler": "local TeX Live 2026 / XeLaTeX / latexmk4.88",
   "compiler_exit_code": 0,
   "command": [
-    "latexmk",
+    "/Library/TeX/texbin/latexmk",
     "-norc",
     "-xelatex",
     "-interaction=nonstopmode",
     "-halt-on-error",
     "-synctex=1",
-    "-outdir=/Users/zhengzhihao/Documents/Codex/2026-10-27/n-n-5-1-1-verify/work/paper-build",
+    "-outdir=/Users/zhengzhihao/Desktop/T/cube-v3-work/build",
     "/Users/zhengzhihao/Desktop/T/Math-Research-cube-dim-7/cube-dim-7-bounds/paper/main.tex"
   ],
-  "local_compile_log_sha256": "337bbc6d0df77d9dfc203306eeddaf5ca94b997cb41a0c3b08449d146147e1a8",
-  "overfull_or_missing_glyph_or_undefined_reference_warnings": false,
-  "builtin_preview_attempt": {
-    "status": "compile-failed timeout",
-    "causes": [
-      "sandbox blocked system libperl",
-      "Tectonic listings.sty network downloads timed out"
-    ],
-    "source_repair_needed": false
-  },
+  "local_compile_log_sha256": "c8b04b64adc2ec36a4aedceec71b35e4f6097e5eeffc98a1bb56b9a5d20f48b0",
+  "overfull_missing_glyph_undefined_reference": false,
+  "underfull_bibliography_hboxes": "2 nonfatal warnings; final rendered lines readable",
   "visual_review": {
-    "renderer": "Ghostscript10.07.0 png16m 110dpi",
-    "all_8_pages_inspected": true,
+    "renderer": "Ghostscript10.07.0 png16m 100dpi",
+    "all_pages_inspected": 13,
     "clipping_overlap_missing_glyphs_detected": false,
     "render_hashes": {
-      "page-01.png": "1ca0e1017244a51a82a12e9fee3044c910b66abf4663a5a4f19b18c3d0d3788d",
-      "page-02.png": "b8df6e02a0ba5ee972e22c84f96ef1ac3aa6cd47b489d96f25709f0d605d130c",
-      "page-03.png": "885222fa0d617377adb0962db97c1adff3c60de5a15df3348be3acb0bb4681b4",
-      "page-04.png": "147a54f6fa1a204798c6d9da33907c23a083f73870a310641e5622310e5833bc",
-      "page-05.png": "214c1701deaf9fe70dd517ce85779acd8f39f83063ad9c42de9469692655090b",
-      "page-06.png": "6dbbf70bb483d4b54492c441e5caf3d8cbb737ed597b2a95b683ec0afa627c48",
-      "page-07.png": "50ec24d1e1650465da88798f0ac1f46782e1fe04f1e7fa92a33c9e9611517df9",
-      "page-08.png": "4b2265c6c45783498795c51a3df3375289c299c97fdbc43643716c586fa223fa"
-    },
-    "poppler_attempt": "bundled renderer missing Adobe-GB1 language maps; used Ghostscript instead"
+      "page-01.png": "cb190a27aeb9413d7f1d35da55fb4d3a310df245ee2587169b2b0ffd48cd2b6e",
+      "page-02.png": "145945f8cd68543d4d0bfc56d63d0f96319fd687d0a219c1a6251f790b14cec6",
+      "page-03.png": "5b2e18aafe5eb60a4e65465a28c9184b4a9b6bfd9f0c982763cedd12568133ef",
+      "page-04.png": "14d365949cb4b34b755b5e4aa0115ee412b63caf19d55cafc2a024eb45af5f58",
+      "page-05.png": "0d7c2f64cfd51f1b7acb97d804840f7dc06c53b19adfd75fba886d59ee56a706",
+      "page-06.png": "406da676485e3e64f93bea6ee9a025ebb43abcd2b57988f1a37ecde2747e558f",
+      "page-07.png": "6f006a7c8dbc8752f6b23e5493138ba22f2b03ee7082b653d70f528b47e932b8",
+      "page-08.png": "7e7717251101080b9727d94ff9e2b1b0323d137228fb0b9f84a74c50ceb82ca4",
+      "page-09.png": "c160611268bade384f68aee6d79fd00fbeb5c5e2e3e952d7cf62acd7791e5f1c",
+      "page-10.png": "655c6c6ca409408547a9df86cdfba5b8047261bb0fd7f43967ea0c67bfd2a8bc",
+      "page-11.png": "3fe092f3479a8286c190b105d5dfb18091664133bfc0b2dc392e0d8de41808a0",
+      "page-12.png": "57556a909ee054cb553f523baf08dacc37df394279580cd8de6c5fffe2ec6930",
+      "page-13.png": "47da5836f9bbcabf184017c0f535cb3d2c64ead5c858fef5ed66f69dd6489efc"
+    }
   },
-  "mathematical_transcription_review": "ACCEPT; source hashes match reviewed files",
-  "editorial_decision": "Preserve original SS title functios, verified by primary-source literature review; optional normalization not adopted",
-  "research_goal_status": "paused",
-  "observed_utc": "2026-10-27T12:52:52.875076+00:00"
+  "mathematical_review": "ACCEPT frozen source; revision_v3/final_audit/review.md",
+  "operational_failures_resolved": [
+    "First draft table input/booktabs noalign fixed by inlining exact same rows.",
+    "Table rational fractions changed to same slash rationals and float placed at top; final review addendum confirms only typography changed."
+  ],
+  "old_builtin_preview": "Not retried; local PDF compilation is authoritative.",
+  "goal_status_observed": "paused",
+  "one_off_revision_authorized": true,
+  "lower_research": "paused; no new work",
+  "date": "2026-10-27"
 }

@@ -715,13 +715,14 @@
   },
   "research_pause": {
     "requested_by_user": true,
-    "after_round": 28,
+    "after_round": 29,
     "lower_remains_paused": true,
     "new_research_authorized": false,
-    "secondary_review": "ACCEPTED",
-    "paper": "completed",
+    "secondary_review": "ACCEPTED expanded proof and final manuscript",
+    "paper": "revised_complete",
     "goal_tool_pause_receipt": "second_review/goal_pause.json",
-    "status": "paused"
+    "status": "paused; no next batch",
+    "one_off_revision_completed": true
   },
   "secondary_review": {
     "status": "ACCEPT",
@@ -734,16 +735,41 @@
     "no_new_research": true
   },
   "paper": {
-    "status": "complete",
-    "title": "中心立方体极大算子的一个显式弱型估计",
+    "status": "revised_complete",
+    "title": "中心立方体极大算子的显式弱型估计及其维数渐近",
     "tex": "paper/main.tex",
     "pdf": "paper/main.pdf",
-    "pages": 8,
+    "pages": 13,
     "verification": "paper/verify_constant.py",
     "certificate": "paper/constant_certificate.json",
     "manifest": "paper/MANIFEST.json",
-    "transcription_review": "paper/manuscript_review.md",
+    "transcription_review": "revision_v3/final_audit/review.md",
     "compile": "success local XeLaTeX",
-    "research_remains_paused": true
+    "research_remains_paused": true,
+    "dimension_verification": "revision_v3/numeric/verify.py",
+    "prior_version_commit": "f51eea163826ee8fb60e67b2a24528d67a766753"
+  },
+  "round029": {
+    "report": "revision_v3/REPORT.md",
+    "one_off_expansion_authorized_by_user": true,
+    "new_C7_bound": false,
+    "new_lower_work": false,
+    "general_dimension_asymptotic": "U_n=n log n-n log log n+O(n log log n/log n); limsup C_n/(n log n)<=1",
+    "endpoint_infima": {
+      "1": "2",
+      "2": "4",
+      "3": "8"
+    },
+    "n_ge_4_global_minimum": "interior existence proved; candidate optimality and uniqueness not proved",
+    "dimension_comparison": "revision_v3/dimension_comparison.json",
+    "certificates": "revision_v3/numeric/table.json",
+    "improved_checked_internal_dimensions": [
+      4,
+      5,
+      6
+    ],
+    "final_review": "revision_v3/final_audit/review.md",
+    "other_projects_written": false,
+    "status": "complete; no further batch started"
   }
 }

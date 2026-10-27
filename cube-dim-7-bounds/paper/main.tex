@@ -30,7 +30,7 @@
   columns=fullflexible,keepspaces=true,showstringspaces=false,
   breaklines=true,frame=single,rulecolor=\color{black!25},
   xleftmargin=0.5em,xrightmargin=0.5em}
-\title{中心立方体极大算子的一个显式弱型估计}
+\title{中心立方体极大算子的显式弱型估计及其维数渐近}
 \author{}
 \date{}
 \begin{document}
@@ -41,9 +41,14 @@
 从有限立方体族的半径选择出发，分别保留选择阈值和缓冲膨胀参数，
 并以坐标壳面的截集面积控制未被选择条件覆盖的增量。
 由此得到一个适用于每个正整数维数的显式弱型 $(1,1)$ 上界公式。
-在七维取一个明确有理参数，结合纯有理数证书，得到
-$C_7<24.554960525965$。
-证明直接适用于一般 $L^1$ 输入及全部正尺度。
+记该公式族的下确界为 $U_n$，进一步证明
+$U_n=n\log n-n\log\log n+O(n\log\log n/\log n)$，
+因而 $\limsup_{n\to\infty}C_n/(n\log n)\le1$。
+一、二、三维的公式族下确界分别为 $2,4,8$，均仅由参数端点趋近；
+从四维起存在内部全局极小点。
+对 $n=2,\ldots,20,32,64$ 给出明确有理参数及准确证书；
+七维结论为 $C_7<24.554960525965$。
+全部算子估计适用于一般 $L^1$ 输入及所有正尺度。
 \end{abstract}
 \noindent\textbf{关键词：}中心极大算子；立方体；弱型 $(1,1)$；覆盖选择；显式常数
 
@@ -67,14 +72,22 @@ $C_7<24.554960525965$。
 
 Stein 与 Strömberg 对一般有界开对称凸体的中心极大算子建立了
 $O(n\log n)$ 的弱型估计\cite[第2节，第260--263页]{SS83}。
-其证明先在有限球族中按半径选择子族，再同时控制覆盖体积和加权重叠。
+Aldaz 的定量覆盖定理进一步给出：对每个固定 $\varepsilon>0$，
+充分大维数的任意范数球中心极大算子有
+$(2+3\varepsilon)n\log n$ 的弱型上界\cite[定理5.2]{Aldaz17}。
+这些结论适用于立方体，但没有利用逐坐标的截集几何。
+Stein--Str\"omberg 的证明先在有限球族中按半径选择子族，再同时控制覆盖体积和加权重叠。
 这一框架适于记录显式常数，但需要保留选择过程中的膨胀损失。
 Aldaz 关于测度的统一几何估计取 Lebesgue 特例，给出
 \begin{equation}\label{eq:generic}
  C_n\le 2^n
  \qquad\text{\cite[推论3.5]{Aldaz20}}.
 \end{equation}
-这里将 $2^7=128$ 作为七维的一个有明确出处的比较值。
+这里的 $2^n$ 是一个通用比较值，并非各固定维数的最好已知界。
+一维的精确常数为 $(11+\sqrt{61})/12$\cite[推论1]{Melas03}；
+二维也有专门估计，例如 Tomar 的公开预印本第4版给出
+$C_2\le3.59123$\cite[定理1.2]{Tomar26}。
+这些低维结果说明通用覆盖公式需要与专门构造分别比较。
 另一方面，立方体情形的最优弱型常数随维数趋于无穷
 \cite{Aldaz11}，因此给定维数下的定量估计有独立意义。
 
@@ -101,6 +114,25 @@ Aldaz 关于测度的统一几何估计取 Lebesgue 特例，给出
  C_n\le \left(\sqrt{A_n(t)}+\sqrt{B_n(t)}\right)^2.
 \end{equation}
 \end{theorem}
+记
+\[
+ F_n(t)=\bigl(\sqrt{A_n(t)}+\sqrt{B_n(t)}\bigr)^2,
+ \qquad U_n=\inf_{t>1}F_n(t).
+\]
+\begin{theorem}\label{thm:asymptotic}
+当 $n\to\infty$ 时，
+\[
+ U_n=n\log n-n\log\log n+
+ O\!\left(\frac{n\log\log n}{\log n}\right).
+\]
+特别地，$\limsup_{n\to\infty}C_n/(n\log n)\le1$。
+\end{theorem}
+这是上界公式族的渐近式。定理\ref{thm:main}给出 $C_n\le U_n$，
+所以此处关于 $U_n$ 的下界不构成 $C_n$ 的下界。
+对于立方体，由此得到的前导系数为 $1$；
+上述 Aldaz 定理在更广的任意范数球范围内给出可趋近 $2$ 的系数。
+本比较只针对这两个明确估计，不主张真实常数的最优渐近系数。
+
 \begin{corollary}\label{cor:seven}
 取 $t_0=3391749/524288$，则
 \begin{equation}\label{eq:seven}
@@ -115,7 +147,7 @@ Aldaz 关于测度的统一几何估计取 Lebesgue 特例，给出
 这一步从重叠估计中扣除可明确计算的截集，最终得到式\eqref{eq:B}。
 数值推论只需在一个给定有理参数上验证有限个准确不等式。
 第2节给出有限选择及可测性准备，第3节证明定理\ref{thm:main}，
-第4节给出七维专门化与稳定性推论；附录给出常数的纯有理验证方法。
+第4节给出逐维认证、七维专门化与稳定性推论；附录说明准确证书的复核方法。
 
 \section{预备知识}
 \subsection{水平集与有限覆盖}
@@ -380,23 +412,295 @@ $A_n+B_n+\tau+A_nB_n/\tau$，取
 $\tau=\sqrt{A_nB_n}$ 即得\eqref{eq:main}。
 \end{proof}
 
+
+\subsection{参数导数}
+
+对 $n\ge2$，Leibniz 法则给出
+\begin{equation}\label{eq:B-derivative}
+ B_n'(t)=\frac n{2t}
+ +\frac n{2t^2}\left(\frac{1+1/t}{2}\right)^{n-1}
+ +\frac{n(n-1)}{4t^2}\int_1^t
+       \ell_t(\rho)^{n-2}\frac{\dint\rho}{\rho}>0.
+\end{equation}
+当 $n=1$ 时，单独有 $B_1'(t)=1/(2t)+1/(2t^2)$。
+由此
+\begin{equation}\label{eq:F-derivative}
+ F_n'(t)=(\sqrt{A_n}+\sqrt{B_n})
+ \left[\frac{B_n'(t)}{\sqrt{B_n(t)}}
+ -\frac n{t^2}(1+1/t)^{n/2-1}\right].
+\end{equation}
+式\eqref{eq:F-derivative}给出内点极小值的必要条件，
+并不证明全局极小点或驻点的唯一性。
+事实上 $B_n(t)=n(t-1)+O((t-1)^2)$，所以 $F_n'(t)\to+\infty$
+当 $t\downarrow1$。
+
+\subsection{上界公式族的维数渐近}
+令 $\ell_t(\rho)=1+1/(2t)-1/(2\rho)$，并记
+\[
+ I_n(t)=\int_1^t\ell_t(\rho)^{n-1}\frac{\dint\rho}{\rho}.
+\]
+\begin{lemma}\label{lem:integral-uniform}
+对所有 $n\ge2$、$t>1$，
+\[
+ 0\le I_n(t)\le
+ \min\left\{\log t,\ \log_+(t/n)+8+\log2,\ \frac{2t}{n-1}\right\},
+ \qquad \log_+s=\max(0,\log s).
+\]
+\end{lemma}
+\begin{proof}
+由 $0<\ell_t\le1$ 得第一个上界。
+在 $1\le\rho\le t/2$ 上，
+$\ell_t(\rho)^{n-1}\le e^{-n/(8\rho)}$。
+其中 $\rho\le n$ 的积分由 $e^{-s}\le1/s$ 控制为不超过
+$\int_0^n(8/n)\,\dint\rho=8$；$\rho\ge n$ 的部分至多为
+$\log_+(t/n)$。余下区间 $[\max(1,t/2),t]$ 的对数长度至多为 $\log2$。
+空区间不贡献积分，故该论证覆盖所有 $t>1$。
+最后，由
+$\ell_t(\rho)^{n-1}\le
+\exp[-(n-1)(1/\rho-1/t)/2]$，作替换 $v=1/\rho-1/t$，得到
+\[
+ I_n(t)\le\int_0^{1-1/t}
+ \frac{e^{-(n-1)v/2}}{v+1/t}\,\dint v
+ \le t\int_0^\infty e^{-(n-1)v/2}\,\dint v
+ =\frac{2t}{n-1}.
+\]
+\end{proof}
+
+\begin{proof}[定理\ref{thm:asymptotic}的证明]
+置 $L=\log n$、$T=nL-n\log L$。
+我们给出对所有 $L\ge32$ 成立的显式估计
+\begin{equation}\label{eq:asymptotic-explicit}
+ T-\frac{4n(\log L+1)}L
+ \le U_n\le T+\frac{n(6\log L+5)}L.
+\end{equation}
+该起始范围仅为简化常数，不作最小化。
+
+先证明对全部 $t>1$ 的下界。
+置 $x=n/t$、$x_0=L+4\log L\le2L$。
+由式\eqref{eq:B-derivative}，$B_n$ 严格增加。
+当 $x\le L/2$ 时，$t\ge2n/L$，利用引理\ref{lem:integral-uniform}得
+\[
+ B_n(t)\ge B_n(2n/L)
+ \ge T+n\log2-4n/L\ge T.
+\]
+当 $L/2\le x\le x_0$ 时，同一引理与 $1-((1+1/t)/2)^n\ge0$ 给出
+\[
+ B_n(t)\ge nL-n\log x-2n/x
+ \ge T-\frac{4n(\log L+1)}L.
+\]
+此处用了 $n/(n-1)\le2$ 及
+$\log(1+4\log L/L)\le4\log L/L$。
+当 $x\ge x_0$ 时，$\log(1+s)\ge s-s^2/2$ 给出
+\[
+ A_n(t)\ge(1+x_0/n)^n
+ \ge e^{x_0-x_0^2/(2n)}\ge nL^4/e\ge nL\ge T.
+\]
+所用 $x_0^2\le4L^2\le2e^L$、$4\log L\le L$ 均在 $L=32$ 成立，
+并由相应两边之比的导数在 $L\ge32$ 保持。
+由于 $F_n\ge A_n$ 且 $F_n\ge B_n$，三区间覆盖全部参数，
+从而得到式\eqref{eq:asymptotic-explicit}左侧。
+
+上界取 $t=n/(L-3\log L)>1$。
+对 $L\ge32$ 有 $L-3\log L\ge L/2$，并由
+$-\log(1-y)\le2y$（$0\le y\le1/2$）得到
+\[
+ A_n(t)\le n/L^3,\qquad
+ B_n(t)\le1+n\log t\le T+6n\log L/L+1,
+ \qquad B_n(t)\le2nL.
+\]
+因此 $2\sqrt{A_nB_n}\le2\sqrt2\,n/L<3n/L$。
+再用 $1\le n/L$ 和 $n/L^3\le n/L$，
+展开 $F_n=A_n+B_n+2\sqrt{A_nB_n}$ 得到右侧。
+取下确界是合法的，因为下界已对所有参数成立，而上界使用一个明确参数。
+最后由 $C_n\le U_n$ 得到上极限结论。
+\end{proof}
+
+\subsection{有限膨胀参数的作用}
+在当前预算估计中，保留有限 $a$ 不会改善固定 $t$ 的上界。
+置 $u=1/a$、$L=\log t$，并令
+\[
+ A_{n,a}=(1+1/t+u)^n,\qquad E_{n,a}=a^{-n}+\alpha^{-n}J_a(t).
+\]
+利用 $\ell_a=\alpha\ell_t$ 可得精确恒等式
+\[
+ E_{n,a}-B_n
+ =u^n+[(1+u)^n-1](1+nL)-\frac n2uI_n(t).
+\]
+由 $I_n(t)\le L$ 及 $(1+u)^n-1\ge nu$，
+\[
+ E_{n,a}-B_n\ge u^n+nu[1+(n-\tfrac12)L]>0.
+\]
+同时 $A_{n,a}>A_n$，故每个有限 $a>2t$ 的 $\tau$ 优化值
+$(\sqrt{A_{n,a}}+\sqrt{E_{n,a}})^2$ 严格大于 $F_n(t)$。
+这只排除了在本预算族中靠有限 $a$ 改善的路线；
+联合下确界仍等于 $U_n$，因为固定 $t$ 时可令 $a\to\infty$。
+
+
+\subsection{参数端点与内部极小值}
+\begin{proposition}\label{prop:endpoints}
+$U_1=2$、$U_2=4$、$U_3=8$，这些下确界均不在 $t>1$ 内取得。
+对每个 $n\ge4$，有 $U_n<2^n$，且存在内部全局极小点。
+此时 $F_n$ 至少有两个不同的驻点；本文不证明全局极小点的唯一性。
+\end{proposition}
+\begin{proof}
+$F_n$ 连续延拓至 $t=1$ 后有 $F_n(1)=2^n$，
+而 $B_n(t)\ge(n/2)\log t$ 保证 $F_n(t)\to\infty$ 当 $t\to\infty$。
+先处理前三维。置 $x=1/t\in(0,1)$、$d=1-x$、$L=-\log x$。
+一维有 $B_1=(d+L)/2>d$，故
+$F_1>(\sqrt{2-d}+\sqrt d)^2>2$。
+二维的准确展开给出
+\[
+ B_2-d^2=\frac{d(5x+1)}4+(1-x/2)L>0.
+\]
+因此 $\sqrt{A_2}+\sqrt{B_2}>1+x+d=2$。
+三维则有
+\[
+ 16\bigl[B_3-\tfrac92d^2\bigr]=P+QL,
+ \quad P=-37+126x-87x^2-2x^3,
+ \quad Q=24-24x-6x^2.
+\]
+使用对 $0<x<1$ 成立的基本对数界
+\[
+ \frac{2d}{1+x}\le L\le\frac d{x}.
+\]
+左界可由 $[-\log x-2(1-x)/(1+x)]'
+=-(1-x)^2/[x(1+x)^2]\le0$ 及其在 $x=1$ 为零得到；
+右界由 $L=\int_x^1\dint u/u\le d/x$ 得到。
+若 $Q\ge0$，则
+\[
+ P+QL\ge\frac{d(2x^3+79x^2+4x+11)}{1+x}>0.
+\]
+若 $Q<0$，则
+\[
+ P+QL\ge\frac{d(2x^3+83x^2-61x+24)}x>0,
+\]
+因为二次式 $83x^2-61x+24$ 的判别式为 $-4247$。
+故 $B_3>(9/2)d^2$。另一方面，
+\[
+ 2\sqrt2-(1+x)^{3/2}
+ =\int_{1+x}^2\tfrac32\sqrt u\,\dint u
+ \le\frac3{\sqrt2}d<\sqrt{B_3}.
+\]
+所以 $F_3>8$。结合端点极限便得到前三维的断言。
+
+对于 $n\ge4$，同一个参数 $t=2$ 已足以严格胜过 $2^n$。
+当 $n=4$ 时，
+\[
+ A_4(2)=81/16,\qquad
+ B_4(2)=\frac{1841+72\log2}{768}<\frac{1913}{768}<49/16,
+\]
+从而 $\sqrt{A_4(2)}+\sqrt{B_4(2)}<9/4+7/4=4$。
+对 $n\ge5$，令 $\delta_n=2^{n/2}-(3/2)^{n/2}$。
+由 $\sqrt3<7/4$ 及 $\log2<1$，
+\[
+ \delta_5^2=1267/32-18\sqrt3>259/32>6>1+5\log2.
+\]
+又 $\delta_{n+1}>\sqrt2\,\delta_n$ 且
+$2(1+n\log2)>1+(n+1)\log2$，归纳可得
+$\delta_n^2>1+n\log2>B_n(2)$。
+故所有 $n\ge4$ 均有 $F_n(2)<2^n$。
+连续性和无穷远处发散于是保证下确界在内部取得。
+
+最后，$B_n(1+\varepsilon)=n\varepsilon+O(\varepsilon^2)$ 给出
+\[
+ F_n(1+\varepsilon)
+ =2^n+2\sqrt{n2^n}\sqrt\varepsilon+O(\varepsilon)>2^n
+\]
+对充分小的 $\varepsilon>0$ 成立。
+因而 $F_n$ 在 $[1,2]$ 的最大值于内部取得，且其值大于 $2^n$；
+这给出一个与全局极小点不同的驻点。
+\end{proof}
+
 \section{应用}
+
+\subsection{维数传递}
+\begin{proposition}\label{prop:monotonicity}
+对每个 $n\ge1$，$C_n\le C_{n+1}$。
+\end{proposition}
+\begin{proof}
+取维数 $n+1$ 的任意可用弱型常数 $K$，固定 $g\in L^1(\R^n)$、
+$r_0>0$，并对 $R>r_0$ 定义
+$f_R(x,z)=g(x)\one_{[-R,R]}(z)$。
+当 $|z|\le R-r_0$ 且 $r\le r_0$ 时，乘积积分表明
+维数 $n+1$ 的相应平均恰等于 $g$ 的维数 $n$ 平均。
+记 $M_n^{\le r_0}$ 为只取 $r\le r_0$ 的上确界，则
+\[
+ \{M_n^{\le r_0}g>\lambda\}\times[-R+r_0,R-r_0]
+ \subseteq\{M_{n+1}f_R>\lambda\}.
+\]
+由弱型估计和 $\norm{f_R}_1=2R\norm g_1$，
+\[
+ \lambda\,2(R-r_0)|\{M_n^{\le r_0}g>\lambda\}|
+ \le 2RK\norm g_1.
+\]
+先令 $R\to\infty$，再令 $r_0\to\infty$；
+严格水平集单调增加，故得到一般 $L^1$ 输入、全部正尺度的维数 $n$ 估计。
+最后对 $K$ 取下确界即得结论。
+\end{proof}
+因此较高维的可用上界可传给低维，较低维的有效下界可传给高维。
+逐维比较须先考虑这种传递，再判断新参数是否改善已有界。
+
+
+
+\subsection{逐维参数与认证上界}
+表\ref{tab:dimensions}列出明确有理参数及严格上界 $U$，每行均满足
+$C_n\le F_n(t)<U$。
+表中有限小数是准确有理数，而非对近似值取未经控制的有效数字。
+所有参数还可配以同一个有限 $a=2^{256}$ 及明确有理阈值，
+使有限参数估计严格小于同一 $U$，构造见附录。
+所列参数未被证明是全局最优参数。
+二维、三维的内部候选比端点值 $4,8$ 大，不用于替代更强的已有界；
+七维参数沿用式\eqref{eq:seven}。
+\begin{table}[!ht]
+\centering\small
+\caption{明确参数的严格认证。$U$ 是 $F_n(t)$ 的有理上界。}
+\label{tab:dimensions}
+\begin{tabular}{rll}
+\toprule
+$n$ & $t$ & $U$（严格上界）\\
+\midrule
+2 & $1048577/1048576$ & $4.0055223599$ \\
+3 & $2366495/1048576$ & $10.1606142881$ \\
+4 & $3767413/1048576$ & $13.6947031585$ \\
+5 & $1214935/262144$ & $17.244239655$ \\
+6 & $1462789/262144$ & $20.8636057626$ \\
+7 & $3391749/524288$ & $24.554960525965$ \\
+8 & $3837029/524288$ & $28.3136303196$ \\
+9 & $8532123/1048576$ & $32.134075444$ \\
+10 & $4681759/524288$ & $36.0111579946$ \\
+11 & $2543069/262144$ & $39.9403799723$ \\
+12 & $10961391/1048576$ & $43.917858421$ \\
+13 & $11733181/1048576$ & $47.9402399949$ \\
+14 & $6244753/524288$ & $52.0046124277$ \\
+15 & $13231891/1048576$ & $56.1084279254$ \\
+16 & $3490403/262144$ & $60.249440557$ \\
+17 & $14679749/1048576$ & $64.4256560308$ \\
+18 & $15387231/1048576$ & $68.6352915288$ \\
+19 & $4021215/262144$ & $72.8767434566$ \\
+20 & $16773341/1048576$ & $77.1485613646$ \\
+32 & $24493341/1048576$ & $130.3902029721$ \\
+64 & $10594665/262144$ & $284.3700455693$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
 \subsection{七维的明确常数}
 令 $n=7$，记 $q=1+1/(2t)$、$h=(1+1/t)/2$。
 逐项积分给出
 \begin{align}
- I_6(t)&:=\int_1^t
+ I_7(t)&:=\int_1^t
        \left(q-\frac1{2\rho}\right)^6\frac{\dint\rho}{\rho}
        =q^6\log t+\sum_{j=1}^6
        \binom6j q^{6-j}\left(-\frac12\right)^j
-                  \frac{1-t^{-j}}j,\label{eq:I6}\\
- B_7(t)&=1-h^7+7\log t-\frac72 I_6(t).
+                  \frac{1-t^{-j}}j,\label{eq:I7}\\
+ B_7(t)&=1-h^7+7\log t-\frac72 I_7(t).
  \label{eq:B7}
 \end{align}
 这把所需常数化为有理数、一个对数和正平方根。
 
 \begin{proof}[推论\ref{cor:seven}的证明]
-在式\eqref{eq:I6}--\eqref{eq:B7}中取
+在式\eqref{eq:I7}--\eqref{eq:B7}中取
 $t=t_0=3391749/524288$。
 附录的纯有理计算给出 $\log t_0$ 的严格上界，
 并验证了式\eqref{eq:seven}所需的两个有理不等式。
@@ -428,9 +732,19 @@ $|M_7f-M_7g|\le M_7(f-g)$。
 最后应用七维估计即可。
 \end{proof}
 
-式\eqref{eq:main}也留下一个明确的标量参数选择问题。
-本文的七维结论只需给定的有理数 $t_0$。
-最优弱型常数 $C_7$ 的确定还需要进一步的估计或匹配下界。
+\subsection{预算损失与后续问题}
+截集积分保留了共同选择历史对捕获项的控制，却把未捕获项放入更大的几何集合。
+角点给出的是这个放宽积分的最大值；本文没有证明真实选择族能同时逼近该角点预算。
+进一步改善需要保留增量来源、半径与位置之间的约束，并重新控制覆盖代价和总重叠。
+仅在当前预算内选择有限 $a$ 已由上述比较排除。
+定理\ref{thm:asymptotic}还表明，对这一固定公式族优化 $t$，
+不能把渐近前导系数降到 $1$ 以下。
+事实上，仅用 $B_n(t)\le1+n\log t$ 并选取证明中的参数，
+已能得到 $(1+o(1))n\log n$ 的算子上界；
+立方体截集项的作用是进一步改善有限维常数。
+这一区分说明参数优化和新的几何预算各能解决什么问题。
+本文未得到更小的七维常数，也未证明各维参数全局极小点的唯一性。
+真实常数 $C_n$ 与公式族 $U_n$ 之间的差距仍需新的几何估计或匹配下界来判断。
 
 \appendix
 \section{七维常数的纯有理证书}
@@ -439,7 +753,7 @@ $|M_7f-M_7g|\le M_7(f-g)$。
 \[
  B_7(t)=\gamma(t)+\beta(t)\log t,
 \]
-其中由式\eqref{eq:I6}得到
+其中由式\eqref{eq:I7}得到
 \begin{align*}
  \beta(t)&=7-\frac72\left(1+\frac1{2t}\right)^6,\\
  \gamma(t)&=1-\left(\frac{1+1/t}{2}\right)^7
@@ -480,6 +794,42 @@ $(\sqrt A+\sqrt{B_7(t_0)})^2<U$。
 避免用浮点数承担比较。
 \lstinputlisting{verify_constant.py}
 
+
+\section{逐维证书及有限参数的实现}
+对任意给定有理数 $t>1$，令 $q=1+1/(2t)$、$h=(1+1/t)/2$。
+逐项积分得到
+\[
+ I_n(t)=q^{n-1}\log t+
+ \sum_{j=1}^{n-1}\binom{n-1}j q^{n-1-j}
+       \left(-\frac12\right)^j\frac{1-t^{-j}}j.
+\]
+空和按零解释。故 $B_n=\gamma_n+\beta_n\log t$，其中
+$\beta_n=n-(n/2)q^{n-1}$，$\gamma_n$ 为明确有理数。
+数值证书先将 $t$ 化为 $2^k s$（$1\le s<2$），
+分别用正项 $\operatorname{arctanh}$ 级数和几何尾项包围 $\log s$ 与 $\log2$。
+计算 $B_n$ 的上下端点时按 $\beta_n$ 的符号选择对数端点，
+再用整数开方包围 $\sqrt{A_nB_n}$。
+补充代码 \texttt{revision\_v3/numeric/verify.py} 只用 Python 标准库，
+逐项重算表\ref{tab:dimensions}对应的完整有理端点并验证严格不等式。
+浮点优化只负责选择参数，没有用于证明全局最优性。
+
+对有限参数的实现，取 $a=2^{256}$、$u=1/a$。
+若 $\overline B$、$\overline L$ 分别为 $B_n(t)$ 与 $\log t$ 的有理上界，令
+\[
+ \Delta=\bigl[(1+u)^n-1\bigr](1+n\overline L)+u^n,
+ \qquad \overline E=\overline B+\Delta,
+ \qquad A_{n,a}=(1+1/t+u)^n.
+\]
+由有限参数的准确恒等式及 $I_n\ge0$，有 $E_{n,a}\le\overline E$。
+把 $\sqrt{A_{n,a}\overline E}$ 向上包围到一个有理网格，记所得正有理数为 $\tau$。
+同一验证器直接以整数和分数核验
+\[
+ a>2t,\qquad
+ (1+A_{n,a}/\tau)(\tau+\overline E)<U.
+\]
+完整 $a,\tau$ 和全部端点保存在补充表中。
+这里 $a$ 是有限选择证明的膨胀参数；它没有限制原算子的输入或取半径范围。
+
 \begin{thebibliography}{9}
 \bibitem{SS83}
 E. M. Stein and J. O. Str\"omberg,
@@ -499,5 +849,25 @@ J. M. Aldaz,
 grow to infinity with the dimension},
 Annals of Mathematics \textbf{173} (2011), no.~2, 1013--1023.
 \href{https://doi.org/10.4007/annals.2011.173.2.10}{doi:10.4007/annals.2011.173.2.10}.
+
+\bibitem{Aldaz17}
+J. M. Aldaz,
+\emph{The Stein--Str\"omberg covering theorem in metric spaces},
+Journal of Mathematical Analysis and Applications \textbf{449} (2017), no.~2, 1741--1753.
+\href{https://doi.org/10.1016/j.jmaa.2016.11.070}{doi:10.1016/j.jmaa.2016.11.070}.
+定理5.2采用 arXiv:1605.05596v2，7 January 2017。
+
+\bibitem{Melas03}
+A. D. Melas,
+\emph{The best constant for the centered Hardy--Littlewood maximal inequality},
+Annals of Mathematics \textbf{157} (2003), no.~2, 647--688.
+\href{https://doi.org/10.4007/annals.2003.157.647}{doi:10.4007/annals.2003.157.647}.
+
+\bibitem{Tomar26}
+T. S. Tomar,
+\emph{Bounds for the weak type (1,1) constant of the centred maximal operator over squares},
+公开预印本第4版，22 October 2026.
+\href{https://doi.org/10.5281/zenodo.23554628}{doi:10.5281/zenodo.23554628}.
+
 \end{thebibliography}
 \end{document}

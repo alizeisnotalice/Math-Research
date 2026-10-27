@@ -1,0 +1,156 @@
+% Self-contained insertion after the proof of Theorem 1. Requires existing A_n,B_n.
+\subsection{一般维数下公式族的渐近}
+记
+\[
+ I_n(t)=\int_1^t\left(1+\frac1{2t}-\frac1{2\rho}\right)^{n-1}
+                 \frac{\dint\rho}{\rho},\qquad
+ F_n(t)=\bigl(\sqrt{A_n(t)}+\sqrt{B_n(t)}\bigr)^2,
+ \qquad U_n=\inf_{t>1}F_n(t).
+\]
+这里 $U_n$ 是本文上界公式族的下确界；不预先把它与最优算子常数 $C_n$ 等同。
+\begin{proposition}\label{prop:family-asymptotic}
+当 $n\to\infty$ 时，
+\[
+ U_n=n\log n-n\log\log n+
+ O\left(\frac{n\log\log n}{\log n}\right).
+\]
+特别地，$\limsup_{n\to\infty}C_n/(n\log n)\le1$。
+\end{proposition}
+\begin{proof}
+先证明对全部 $n\ge2$、$t>1$ 一致成立的估计
+\begin{equation}\label{eq:uniform-In}
+ I_n(t)\le\log_+(t/n)+8+\log2,
+ \qquad \log_+s=\max(0,\log s).
+\end{equation}
+在 $1\le\rho\le t/2$ 上，记
+$\ell_t(\rho)=1+1/(2t)-1/(2\rho)$，则
+\[
+ \ell_t(\rho)^{n-1}\le
+ e^{-(n-1)/(4\rho)}\le e^{-n/(8\rho)}.
+\]
+该区间中 $\rho\le n$ 的部分积分不超过
+$\int_0^n(8/n)\,\dint\rho=8$，其中使用 $e^{-s}\le1/s$；
+$\rho\ge n$ 的部分不超过 $\log_+(t/n)$。
+余下区间 $[\max(1,t/2),t]$ 的对数长度不超过 $\log2$，
+且 $0<\ell_t\le1$，故得到\eqref{eq:uniform-In}。
+空区间在这里不贡献积分，因此该估计也覆盖 $t$ 靠近 $1$ 的情形。
+
+令 $K=(8+\log2)/2$、$c=\log2$、$M=4/c$。
+我们证明对每个 $n\ge16$，
+\begin{equation}\label{eq:explicit-family-asymptotic}
+ \begin{split}
+ n\log n-n\log\log n-(K+\log M)n
+ &\le U_n\\
+ &\le n\log n-n\log\log n+(4+\log2)n.
+ \end{split}
+\end{equation}
+为证上界，取 $t=2n/\log n$。于是 $A_n(t)\le\sqrt n$，
+而
+\[
+ B_n(t)\le1+n\log t
+ =1+n\log n-n\log\log n+n\log2
+ \le1+n\log n.
+\]
+由 $\log n\le\sqrt n$，有
+$\sqrt{A_nB_n}\le\sqrt{n^2+\sqrt n}\le n+1$。
+展开 $F_n=A_n+B_n+2\sqrt{A_nB_n}$ 即得所需上界。
+
+为证下界，由 $1-((1+1/t)/2)^n\ge0$ 和
+\eqref{eq:uniform-In}，
+\[
+ B_n(t)\ge n\log t-\frac n2\log_+(t/n)-Kn.
+\]
+若 $t\ge n$，右端不低于 $n\log n-Kn$。
+若 $1<t\le n$，置 $x=n/t\in[1,n)$。
+凹性给出 $\log(1+s)\ge cs$（$0\le s\le1$），故
+\[
+ F_n(t)\ge A_n(t)+B_n(t)
+ \ge n\log n+e^{cx}-n\log x-Kn.
+\]
+若 $x\le M\log n$，则
+$\log x\le\log\log n+\log M$；若 $x>M\log n$，则
+$e^{cx}>n^4\ge n\log n\ge n\log x$。
+这两种情况均给出\eqref{eq:explicit-family-asymptotic}左侧。
+下面收紧余项。由 $\ell_t(\rho)^{n-1}\le
+\exp[-(n-1)(1/\rho-1/t)/2]$，置 $v=1/\rho-1/t$，得
+\[
+ I_n(t)\le\int_0^{1-1/t}
+ \frac{e^{-(n-1)v/2}}{v+1/t}\,\dint v
+ \le\frac{2t}{n-1}.
+\]
+令 $L=\log n$、$T=nL-n\log L$，并只考虑 $L\ge32$。
+由式\eqref{eq:B-derivative}，$B_n$ 严格增加。
+置 $x=n/t$、$x_0=L+4\log L\le2L$。
+当 $x\le L/2$ 时，
+$B_n(t)\ge B_n(2n/L)\ge T+n\log2-4n/L\ge T$。
+当 $L/2\le x\le x_0$ 时，
+\[
+ B_n(t)\ge nL-n\log x-2n/x
+ \ge T-\frac{4n(\log L+1)}L.
+\]
+当 $x\ge x_0$ 时，由 $x_0^2\le4L^2\le2e^L$ 及
+$\log(1+s)\ge s-s^2/2$，
+\[
+ A_n(t)\ge(1+x_0/n)^n\ge e^{x_0-x_0^2/(2n)}
+ \ge nL^4/e\ge nL\ge T.
+\]
+这就证明 $U_n\ge T-4n(\log L+1)/L$。
+反过来，取 $t=n/(L-3\log L)$。
+因为 $L-3\log L\ge L/2$，有
+\[
+ A_n(t)\le n/L^3,\qquad
+ B_n(t)\le T+6n\log L/L+1,\qquad B_n(t)\le2nL.
+\]
+于是 $F_n(t)\le T+n(6\log L+5)/L$，得到所述强化余项。
+最后由 $C_n\le U_n$ 得到所述上极限不等式。
+注意这里的下界仅针对 $U_n$，不构成 $C_n$ 的下界。
+\end{proof}
+
+一维情形须单独说明：$I_1(t)=\log t$，且
+\[
+ A_1(t)=1+1/t,\qquad B_1(t)=\tfrac12(1-1/t+\log t).
+\]
+因 $\log t>1-1/t$（$t>1$），有 $F_1(t)\ge A_1(t)+B_1(t)>2$；
+而 $t\downarrow1$ 时 $F_1(t)\to2$。
+所以 $U_1=2$，但此下确界不在 $t>1$ 内达到。
+
+\subsection{参数导数与有限膨胀参数的比较}
+对 $n\ge2$，Leibniz 法则给出
+\begin{equation}\label{eq:B-derivative}
+ B_n'(t)=\frac n{2t}
+ +\frac n{2t^2}\left(\frac{1+1/t}{2}\right)^{n-1}
+ +\frac{n(n-1)}{4t^2}\int_1^t
+       \ell_t(\rho)^{n-2}\frac{\dint\rho}{\rho}>0.
+\end{equation}
+当 $n=1$ 时，单独有 $B_1'(t)=1/(2t)+1/(2t^2)$。
+由此
+\begin{equation}\label{eq:F-derivative}
+ F_n'(t)=(\sqrt{A_n}+\sqrt{B_n})
+ \left[\frac{B_n'(t)}{\sqrt{B_n(t)}}
+ -\frac n{t^2}(1+1/t)^{n/2-1}\right].
+\end{equation}
+式\eqref{eq:F-derivative}给出内点极小值的必要条件，
+并不证明全局极小点或驻点的唯一性。
+事实上 $B_n(t)=n(t-1)+O((t-1)^2)$，所以 $F_n'(t)\to+\infty$
+当 $t\downarrow1$。
+对固定 $n$，$B_n(t)\ge1-((1+1/t)/2)^n+(n/2)\log t\to\infty$；
+因而若某点满足 $F_n(t)<2^n$，则下确界必在内点取得。
+
+最后说明，在当前预算估计中保留有限 $a$ 不会改善固定 $t$ 的上界。
+置 $u=1/a$、$L=\log t$，并令
+\[
+ A_{n,a}=(1+1/t+u)^n,\qquad E_{n,a}=a^{-n}+\alpha^{-n}J_a(t).
+\]
+利用 $\ell_a=\alpha\ell_t$ 可得精确恒等式
+\[
+ E_{n,a}-B_n
+ =u^n+[(1+u)^n-1](1+nL)-\frac n2uI_n(t).
+\]
+由 $I_n(t)\le L$ 及 $(1+u)^n-1\ge nu$，
+\[
+ E_{n,a}-B_n\ge u^n+nu[1+(n-\tfrac12)L]>0.
+\]
+同时 $A_{n,a}>A_n$，故每个有限 $a>2t$ 的 $\tau$ 优化值
+$(\sqrt{A_{n,a}}+\sqrt{E_{n,a}})^2$ 严格大于 $F_n(t)$。
+这只排除了在本预算族中靠有限 $a$ 改善的路线；
+联合下确界仍等于 $U_n$，因为固定 $t$ 时可令 $a\to\infty$。
