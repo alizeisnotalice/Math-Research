@@ -1,0 +1,15 @@
+# R010 ordered-cone cells and pulling triangulation
+
+The exact construction produced **135 full-dimensional ordered-cone cells**, triangulated into **212 seven-ray simplices**. Their exact normalized rational volume sum is **1**. The 46 input rays are the previously checked R009 catalog; its 1,947,792 six-row combinations were not rerun.
+
+All 29 internal prefix hyperplanes were applied in the frozen order. At each split, the complete compatible-ray bitsets were formed for both signs, and integer rank 7 determined which children remained full dimensional. All parent/child bitsets, signs, ranks and outcomes are retained in levels.jsonl. The first four levels were the registered pilot and were reused. Final cells use exact integer interior witnesses and all compatible catalog vertices. Their sizes range from 7 to 13 vertices; 105 cells are already simplicial.
+
+For pulling, each encountered face was described by its ray bitset; its facets are the proper rank-(r−1) intersections with the 36 frozen zero sets. The smallest global-index vertex is the anchor, and only facets not containing it are coned recursively. The first four final cells were the registered pulling pilot and were reused. The merged sparse DAG has 629 unique faces, and duplicate face descriptions agree. No top-dimensional seven-ray simplex was repeated across cells.
+
+For each simplex, cells.jsonl retains its seven ray indices, nonzero integer determinant det W, the exact N_i=Σk w_ki, q_i=Σ_v|v·M w_i|, α=|det W|/∏q_i, and normalized volume 7!|det W|/∏N_i. Each cell's integer linear form ℓ_C agrees with q_i on all its rays, and all simplex rays satisfy its weak signs. These primitive conventions keep the determinant and q_i scales consistent. The exact volume sum checks arithmetic and normalization; the separate frozen proof of all 29 splits and pulling recursion supplies the coverage and interior-disjointness argument.
+
+The independent checker reloads the hashed R009 inputs and verifies each stored ray witness, recomputes every recorded split and rank, all encountered 36-zero-set facets, and all 135 pulling triangulations; it then checks every determinant, q_i, α, cell volume and the exact global sum. It uses exact FLINT integer rank/determinant and Python rational arithmetic, without repeating the old six-row enumeration. Coverage depends on the stated complete R009 catalog and the frozen split/pulling proof, not on volume alone.
+
+Wall time was 0.432 s; parent splitting used 0.0265 CPU s and the sum of cell-task CPU was 0.0640 s. The largest individual cell-process RSS high-water mark was 37,814,272 bytes. Fifteen single-thread workers were configured after the four-cell pilot, but the five-second resource sampler caught only the parent during this short run; no sustained concurrency or aggregate peak-memory claim is supported. Sampled system swap use was 5057.81 MiB.
+
+The structural certificate is for the fundamental ordered cone. Signed-permutation images, their phases and the resulting Fourier or Green-kernel sums were not enumerated or evaluated. No H, g, I or C7 bound is claimed. No new Monte Carlo, MATLAB, commit or push was performed.

@@ -51,3 +51,5 @@ python3 -B cube-dim-7-bounds/audit/round001/lower/recheck.py
 第008轮signed mixed-Mellin StageI门槛严格失败，StageII未启动，无新界；audit/round008/mixed_stage1/minchecker.py为stdout-only完整标量重组。下界暂停，上界转向新的精确frequency-fan接口。
 
 第009轮结构证据已归档，严格结论范围见rounds/009.md；没有新的Cn上界。下界保持暂停。
+
+第010轮结构证据已归档，严格结论范围见rounds/010.md；没有新的Cn上界。下界保持暂停。
