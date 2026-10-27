@@ -89,3 +89,5 @@ R027完整严格上界12288494755109/500000000000。见rounds/027.md。
 R028完整严格上界4910992105193/200000000000。用户要求本轮结束后暂停研究，随后二次审核与论文。见rounds/028.md。
 
 研究已按用户要求暂停；fresh二次审核通过，详second_review/REPORT.md。下一阶段仅生成论文。
+
+二次审核及中文8页论文已完成：[论文PDF](paper/main.pdf)、[LaTeX](paper/main.tex)、[二审报告](second_review/REPORT.md)。研究与下界继续暂停。

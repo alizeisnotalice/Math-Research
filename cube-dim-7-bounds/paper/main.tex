@@ -1,0 +1,503 @@
+\documentclass[UTF8,a4paper,11pt,fontset=fandol]{ctexart}
+\usepackage[margin=27mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem,listings,fancyhdr}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\allowdisplaybreaks[2]
+\setlength{\parskip}{0.25em}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{定理}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{lemma}{引理}[section]
+\newtheorem{proposition}[lemma]{命题}
+\newtheorem{known}{定理}
+\renewcommand{\theknown}{\Alph{known}}
+\theoremstyle{remark}
+\newtheorem{remark}[lemma]{注}
+\newcommand{\R}{\mathbb R}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\dint}{\,\mathrm d}
+\DeclareMathOperator{\supp}{supp}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{中心立方体极大算子的显式弱型估计}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\lstset{language=Python,basicstyle=\ttfamily\footnotesize,
+  columns=fullflexible,keepspaces=true,showstringspaces=false,
+  breaklines=true,frame=single,rulecolor=\color{black!25},
+  xleftmargin=0.5em,xrightmargin=0.5em}
+\title{中心立方体极大算子的一个显式弱型估计}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\vspace{-2em}
+\begin{abstract}
+研究 Lebesgue 测度下、对所有正共同半径取上确界的中心轴平行立方体极大算子。
+从有限立方体族的半径选择出发，分别保留选择阈值和缓冲膨胀参数，
+并以坐标壳面的截集面积控制未被选择条件覆盖的增量。
+由此得到一个适用于每个正整数维数的显式弱型 $(1,1)$ 上界公式。
+在七维取一个明确有理参数，结合纯有理数证书，得到
+$C_7<24.554960525965$。
+证明直接适用于一般 $L^1$ 输入及全部正尺度。
+\end{abstract}
+\noindent\textbf{关键词：}中心极大算子；立方体；弱型 $(1,1)$；覆盖选择；显式常数
+
+\section{引言}
+对 $x\in\R^n$ 和 $r>0$，记
+\[
+ Q(x,r)=x+(-r,r)^n.
+\]
+本文始终采用 Lebesgue 测度，并研究
+\begin{equation}\label{eq:maximal}
+ M_n f(x)=\sup_{r>0}\frac{1}{(2r)^n}
+                    \int_{Q(x,r)}|f(y)|\dint y,\qquad f\in L^1(\R^n).
+\end{equation}
+所有坐标使用同一个半径；立方体以 $x$ 为中心且轴平行。
+定义最优弱型常数
+\begin{equation}\label{eq:constant}
+ C_n=\sup_{\substack{f\in L^1(\R^n),\,\norm f_1>0\\ \lambda>0}}
+       \frac{\lambda\,|\{x:M_nf(x)>\lambda\}|}{\norm f_1}.
+\end{equation}
+开、闭立方体的边界均为 Lebesgue 零测集，因此它们在这里给出相同的平均。
+
+Stein 与 Strömberg 对一般有界开对称凸体的中心极大算子建立了
+$O(n\log n)$ 的弱型估计\cite[第2节，第260--263页]{SS83}。
+其证明先在有限球族中按半径选择子族，再同时控制覆盖体积和加权重叠。
+这一框架适于记录显式常数，但需要保留选择过程中的膨胀损失。
+Aldaz 关于测度的统一几何估计取 Lebesgue 特例，给出
+\begin{equation}\label{eq:generic}
+ C_n\le 2^n
+ \qquad\text{\cite[推论3.5]{Aldaz20}}.
+\end{equation}
+这里将 $2^7=128$ 作为七维的一个有明确出处的比较值。
+另一方面，立方体情形的最优弱型常数随维数趋于无穷
+\cite{Aldaz11}，因此给定维数下的定量估计有独立意义。
+
+本文的问题是在上述有限选择框架中保留位置几何，
+而不只按半径区间估计所有贡献项。
+选择条件本身已经控制了一部分重叠；对余下部分，
+轴平行立方体允许逐坐标计算截集面积。
+所需的核心结论是：在适当归一化后，一个径向加权的立方体截集积分
+随平移向量各坐标的绝对值单调增加，其最大值可在比较立方体的角点计算。
+
+对 $t>1$，定义
+\begin{align}
+ A_n(t)&=\left(1+\frac1t\right)^n,\label{eq:A}\\
+ B_n(t)&=1-\left(\frac{1+1/t}{2}\right)^n+n\log t \notag\\
+ &\hspace{1.5em}
+ -\frac n2\int_1^t
+ \left(1+\frac1{2t}-\frac1{2\rho}\right)^{n-1}
+                         \frac{\dint\rho}{\rho}.
+ \label{eq:B}
+\end{align}
+\begin{theorem}\label{thm:main}
+对每个整数 $n\ge1$ 和每个 $t>1$，有 $B_n(t)>0$，且
+\begin{equation}\label{eq:main}
+ C_n\le \left(\sqrt{A_n(t)}+\sqrt{B_n(t)}\right)^2.
+\end{equation}
+\end{theorem}
+\begin{corollary}\label{cor:seven}
+取 $t_0=3391749/524288$，则
+\begin{equation}\label{eq:seven}
+ C_7\le \left(\sqrt{A_7(t_0)}+\sqrt{B_7(t_0)}\right)^2
+       <\frac{4910992105193}{200000000000}
+       =24.554960525965.
+\end{equation}
+\end{corollary}
+
+有限选择的思路来自 Stein--Strömberg。
+本文将选择阈值与缓冲膨胀分开，并对未被选择条件控制的项利用立方体壳面几何。
+这一步从重叠估计中扣除可明确计算的截集，最终得到式\eqref{eq:B}。
+数值推论只需在一个给定有理参数上验证有限个准确不等式。
+第2节给出有限选择及可测性准备，第3节证明定理\ref{thm:main}，
+第4节给出七维专门化与稳定性推论；附录给出常数的纯有理验证方法。
+
+\section{预备知识}
+\subsection{水平集与有限覆盖}
+记 $\norm{x}_\infty=\max_i|x_i|$。
+对一个立方体 $Q=Q(y,r)$，$dQ$ 表示保持中心 $y$ 不动而将半径乘以 $d$。
+
+\begin{lemma}\label{lem:open}
+对 $f\in L^1(\R^n)$，式\eqref{eq:maximal}中的每个固定半径平均均为连续函数。
+因此 $\{M_nf>\lambda\}$ 是开集。若一个常数 $K$ 对该开集的每个紧子集 $F$
+均满足 $\lambda |F|\le K\norm f_1$，则它也满足
+$\lambda|\{M_nf>\lambda\}|\le K\norm f_1$。
+\end{lemma}
+\begin{proof}
+平移 $x$ 后，固定半径平均之差一致地不超过
+$(2r)^{-n}\norm{\tau_h|f|-|f|}_1$，它随 $h\to0$ 趋于零。
+连续函数族的上确界是下半连续函数。
+最后一项由 Lebesgue 内正则性得到，起初无需假设开集测度有限。
+\end{proof}
+
+\subsection{带阈值的有限选择}
+本节说明如何把覆盖问题与一个点态加权重叠估计连接起来。
+固定
+\begin{equation}\label{eq:parameters}
+ t>1,\qquad a>2t,\qquad b=a(1+1/t),\qquad \tau>0.
+\end{equation}
+给定有限个开立方体，递归选取 $Q_j=Q(y_j,r_j)$。
+选择 $Q_j$ 后，令
+\begin{equation}\label{eq:increments}
+ I_j=Q_j\setminus\bigcup_{i<j}Q_i,\qquad
+ v_j=|I_j|,\qquad w_j=\frac{v_j}{(2ar_j)^n}.
+\end{equation}
+在每一步，从所有尚未选择且中心满足
+\begin{equation}\label{eq:eligible}
+ \sum_{i<j}w_i\one_{bQ_i}(y_j)\le\tau
+\end{equation}
+的立方体中选取半径最大的一个；没有这样的立方体时停止。
+每个已经定义的 $I_j,v_j,w_j$ 此后保持不变。
+空和为零，故非空输入族至少能选择一次。
+由于增加非负项只会使条件\eqref{eq:eligible}更难满足，
+所选半径非增。增量 $I_j$ 两两不交，且
+$\sum_j v_j=|\bigcup_j Q_j|$。
+
+\begin{lemma}\label{lem:cover}
+上述选择满足
+\begin{equation}\label{eq:cover}
+ \left|\bigcup_{\text{全部输入}}Q\right|
+ \le \left(1+\frac{(1+1/t+1/a)^n}{\tau}\right)\sum_jv_j.
+\end{equation}
+\end{lemma}
+\begin{proof}
+设 $Q_\eta=Q(y_\eta,r_\eta)$ 未被选择。
+在第一次选取半径严格小于 $r_\eta$ 的立方体之前，
+$Q_\eta$ 已不满足选择条件；否则最大半径规则会先选择它或另一个更大的合格立方体。
+若始终没有选取更小半径，则终止时它不合格。
+因而
+\[
+ \sum_{j:r_j\ge r_\eta}w_j\one_{bQ_j}(y_\eta)>\tau.
+\]
+对于每个 $x\in Q_\eta$，相应指标 $j$ 满足
+$\norm{x-y_j}_\infty<r_\eta+br_j\le(b+1)r_j$。
+因此未选立方体之并上有
+$\sum_jw_j\one_{(b+1)Q_j}(x)>\tau$。
+积分得到该并集测度至多为
+\[
+ \frac1\tau\sum_jw_j|(b+1)Q_j|
+ =\frac1\tau\left(\frac{b+1}{a}\right)^n\sum_jv_j .
+\]
+再加上所选立方体之并的测度，即得\eqref{eq:cover}。
+\end{proof}
+
+\section{主要证明}
+本节先估计选择条件未直接控制的贡献，再把该估计接回原极大算子。
+记
+\[
+ W(x)=\sum_jw_j\one_{aQ_j}(x),\qquad
+ \alpha=\frac{a}{a+1},\qquad c=\frac{b-1}{a+1}>1.
+\]
+\subsection{将其余增量放入一个截集}
+\begin{lemma}\label{lem:load}
+令 $m(z)=\max(1,\norm z_\infty)$，并定义
+\begin{equation}\label{eq:H}
+ H(u;c,t)=2^{-n}
+ \int_{\substack{\norm z_\infty<t\\
+                  \norm{u-z}_\infty\ge c\,m(z)}}
+                  m(z)^{-n}\dint z.
+\end{equation}
+若 $W(x)>0$，则存在 $\norm u_\infty<\alpha$，使
+\begin{equation}\label{eq:load}
+ W(x)\le\tau+a^{-n}+\alpha^{-n}H(u;c,t).
+\end{equation}
+\end{lemma}
+\begin{proof}
+在所有对 $W(x)$ 有正贡献的所选立方体中，
+先取最小半径，再在同半径者中取选择指标最后的 $Q_k$。
+平移并作共同伸缩，将 $x$ 化为零、$r_k$ 化为一。
+权重 $w_j$ 不变。所有其他正贡献项均有 $j<k$。
+
+将这些项中 $y_k\in bQ_j$ 的项称为被捕获项；
+它们是选择 $Q_k$ 时式\eqref{eq:eligible}中的一个非负子和，
+总和不超过 $\tau$。自身项满足 $w_k\le a^{-n}$。
+对未被捕获的正贡献项，
+\[
+ \norm{y_k-y_j}_\infty\ge br_j,\quad
+ \norm{y_j}_\infty<ar_j,\quad
+ \norm{y_k}_\infty<a .
+\]
+若 $r_j\ge t$，则
+$\norm{y_k-y_j}_\infty<a+ar_j\le br_j$，矛盾。
+故这些项均满足 $1\le r_j<t$。
+
+对其增量中的 $y$，置 $z=y/(a+1)$、$u=y_k/(a+1)$。
+由 $y\in Q_j$ 和 $0\in aQ_j$ 得
+$\norm z_\infty<r_j<t$，故 $r_j\ge m(z)$。
+反三角不等式还给出
+\[
+ \norm{u-z}_\infty>
+      \frac{b-1}{a+1}r_j\ge c\,m(z).
+\]
+因此每个实际增量都位于式\eqref{eq:H}的积分域中。
+利用增量两两不交及 $\dint y=(a+1)^n\dint z$，
+其权重和至多为
+\[
+ \frac{(a+1)^n}{2^na^n}
+ \int_{\substack{\norm z_\infty<t\\
+                  \norm{u-z}_\infty\ge c\,m(z)}}
+                  m(z)^{-n}\dint z.
+\]
+加上被捕获项及自身项即得结论。
+\end{proof}
+
+\subsection{截集积分的坐标单调性}
+\begin{lemma}\label{lem:corner}
+当 $c>1$、$t>1$、$0<\alpha<1$ 时，
+$H(u;c,t)$ 随每个 $|u_i|\in[0,\alpha]$ 单调不减。
+特别地
+\[
+ H(u;c,t)\le H(\alpha\one;c,t)
+ \quad\text{对所有 }\norm u_\infty\le\alpha.
+\]
+\end{lemma}
+\begin{proof}
+反射坐标后可设 $0\le u_i\le\alpha$。
+在 $\norm z_\infty<1$ 内，被捕获部分是
+$(-1,1)^n$ 与 $u+(-c,c)^n$ 的交，其第 $i$ 个边长为
+$L_i(1)=\min(2,1+c-u_i)$。
+因此这部分的未捕获体积
+$1-2^{-n}\prod_iL_i(1)$ 逐 $u_i$ 非减。
+
+对 $1\le\rho<t$ 的立方体壳面，记
+\[
+ L_i(\rho)=\min\bigl(2\rho,(1+c)\rho-u_i\bigr),\qquad
+ N_i(\rho)=1+\one_{\{u_i<(c-1)\rho\}}.
+\]
+正面 $z_i=\rho$ 总在第 $i$ 个坐标上被捕获，
+负面 $z_i=-\rho$ 则恰在 $u_i<(c-1)\rho$ 时被捕获。
+故被捕获的总面测度为
+\begin{equation}\label{eq:shell}
+ S(\rho,u)=\sum_{i=1}^n
+                 N_i(\rho)\prod_{\ell\ne i}L_\ell(\rho).
+\end{equation}
+每一项都随每个 $u_i$ 非增。
+此处捕获条件是严格不等号；等号可能对应一个完整的面，
+但对固定 $u,c$ 只出现于有限个 $\rho$。
+
+除去最大坐标绝对值有并列的零测集合，
+壳面可由 $z_i=\pm\rho$ 及其余坐标参数化，
+体积 Jacobian 为一。因此
+\begin{align}\label{eq:H-shell}
+ H(u;c,t)
+ &=1-2^{-n}\prod_iL_i(1)\\
+ &\quad+2^{-n}\int_1^t\rho^{-n}
+       \bigl[2n(2\rho)^{n-1}-S(\rho,u)\bigr]\dint\rho.\notag
+\end{align}
+这是逐面参数化的积分式。
+结合\eqref{eq:shell}的单调性即得结论。
+当 $n=1$ 时，空乘积按一解释，同一证明成立。
+\end{proof}
+
+\subsection{角点积分与有限参数估计}
+\begin{proposition}\label{prop:finite}
+在式\eqref{eq:parameters}的参数范围内，令
+\begin{equation}\label{eq:Ja}
+ J_a(t)=1-\left(\frac{1+c-\alpha}{2}\right)^n+n\log t
+ -\frac n2\int_1^t
+       \left(\frac{1+c-\alpha/\rho}{2}\right)^{n-1}
+                           \frac{\dint\rho}{\rho}.
+\end{equation}
+则
+\begin{equation}\label{eq:finiteC}
+ C_n\le
+ \left(1+\frac{(1+1/t+1/a)^n}{\tau}\right)
+ \bigl[\tau+a^{-n}+\alpha^{-n}J_a(t)\bigr].
+\end{equation}
+\end{proposition}
+\begin{proof}
+由于
+\[
+ c-1=\frac{a/t-2}{a+1}>0,\qquad
+ \frac{\alpha}{c-1}=\frac{at}{a-2t}>t,
+\]
+在比较角点 $u=\alpha\one$，对每个 $1\le\rho\le t$
+恰有一侧面被捕获。
+其余坐标的交长为 $(1+c)\rho-\alpha$。
+记
+\[
+ \ell_a(\rho)=\frac{1+c-\alpha/\rho}{2}
+ =\alpha\left(1+\frac1{2t}-\frac1{2\rho}\right).
+\]
+有 $0<\ell_a(\rho)\le\ell_a(t)=\alpha<1$。
+式\eqref{eq:H-shell}于是给出
+$H(\alpha\one;c,t)=J_a(t)$：
+全部壳面贡献为 $n\,\dint\rho/\rho$，
+$n$ 个被捕获面贡献为
+$\frac n2\ell_a(\rho)^{n-1}\dint\rho/\rho$。
+由引理\ref{lem:load}--\ref{lem:corner}，
+\[
+ W(x)\le\tau+a^{-n}+\alpha^{-n}J_a(t)
+ \qquad(x\in\R^n).
+\]
+
+现在取任意 $f\in L^1(\R^n)$、$\lambda>0$，
+并令 $F$ 是 $\{M_nf>\lambda\}$ 的紧子集。
+每个 $x\in F$ 有一个真实见证半径 $R_x>0$，满足
+$\int_{Q(x,R_x)}|f|>\lambda(2R_x)^n$。
+小立方体 $Q(x,R_x/a)$ 覆盖 $F$，取有限子覆盖并实施第2节的选择。
+每个被选立方体的 $a$ 倍膨胀仍是原算子的见证立方体，故
+\begin{align*}
+ \lambda\sum_jv_j
+ &\le\sum_jw_j\int_{aQ_j}|f(y)|\dint y\\
+ &=\int_{\R^n}|f(y)|W(y)\dint y
+ \le\bigl[\tau+a^{-n}+\alpha^{-n}J_a(t)\bigr]\norm f_1.
+\end{align*}
+结合引理\ref{lem:cover}控制 $|F|$，
+再用引理\ref{lem:open}的内正则性结论，得到\eqref{eq:finiteC}。
+整个论证不对见证半径设上下限，也不要求输入有紧支集。
+\end{proof}
+
+\subsection{取标量常数的极限}
+\begin{proof}[定理\ref{thm:main}的证明]
+固定 $n,t,\tau$，在命题\ref{prop:finite}中令 $a\to\infty$。
+此时 $\alpha\to1$、$c\to1+1/t$。
+式\eqref{eq:Ja}的被积函数在固定紧区间 $[1,t]$ 上一致收敛，
+所以 $J_a(t)\to B_n(t)$。
+不等式\eqref{eq:finiteC}的左边是同一个最优算子常数；
+对已经成立的数值上界取极限，得到
+\[
+ C_n\le
+ \left(1+\frac{A_n(t)}{\tau}\right)\bigl(\tau+B_n(t)\bigr).
+\]
+有限覆盖、选择次序和增量均可随 $a$ 改变。
+
+为核对正性，置 $\ell(\rho)=1+1/(2t)-1/(2\rho)$。
+在 $[1,t]$ 上 $0<\ell(\rho)\le1$，从而
+\[
+ B_n(t)=
+ 1-\left(\frac{1+1/t}{2}\right)^n
+ +n\int_1^t\left[1-\tfrac12\ell(\rho)^{n-1}\right]
+                    \frac{\dint\rho}{\rho}>0.
+\]
+因 $A_n,B_n$ 均正，展开上式常数为
+$A_n+B_n+\tau+A_nB_n/\tau$，取
+$\tau=\sqrt{A_nB_n}$ 即得\eqref{eq:main}。
+\end{proof}
+
+\section{应用}
+\subsection{七维的明确常数}
+令 $n=7$，记 $q=1+1/(2t)$、$h=(1+1/t)/2$。
+逐项积分给出
+\begin{align}
+ I_6(t)&:=\int_1^t
+       \left(q-\frac1{2\rho}\right)^6\frac{\dint\rho}{\rho}
+       =q^6\log t+\sum_{j=1}^6
+       \binom6j q^{6-j}\left(-\frac12\right)^j
+                  \frac{1-t^{-j}}j,\label{eq:I6}\\
+ B_7(t)&=1-h^7+7\log t-\frac72 I_6(t).
+ \label{eq:B7}
+\end{align}
+这把所需常数化为有理数、一个对数和正平方根。
+
+\begin{proof}[推论\ref{cor:seven}的证明]
+在式\eqref{eq:I6}--\eqref{eq:B7}中取
+$t=t_0=3391749/524288$。
+附录的纯有理计算给出 $\log t_0$ 的严格上界，
+并验证了式\eqref{eq:seven}所需的两个有理不等式。
+结合定理\ref{thm:main}即得结论。
+\end{proof}
+
+特别地，对任意 $f\in L^1(\R^7)$ 和 $\lambda>0$，
+\[
+ |\{M_7f>\lambda\}|
+ \le \frac{24.554960525965}{\lambda}\norm f_1.
+\]
+将上确界限制于任意一个正半径集合，仍满足同一估计。
+
+\subsection{输入扰动的弱型控制}
+\begin{corollary}\label{cor:stability}
+设 $f,g\in L^1(\R^7)$，$\varepsilon>0$。
+记 $U=4910992105193/200000000000$，则
+\[
+ |\{|M_7f-M_7g|>\varepsilon\}|
+ \le \frac{U}{\varepsilon}\norm{f-g}_1.
+\]
+两个极大函数均几乎处处有限。
+\end{corollary}
+\begin{proof}
+对任何共同半径，两个绝对值平均的差不超过 $|f-g|$ 的平均。
+在两极大函数有限的点取上确界，得
+$|M_7f-M_7g|\le M_7(f-g)$。
+它们几乎处处有限由弱型估计对水平参数趋于无穷得到。
+最后应用七维估计即可。
+\end{proof}
+
+式\eqref{eq:main}也留下一个明确的标量参数选择问题。
+本文的七维结论只需给定的有理数 $t_0$。
+最优弱型常数 $C_7$ 的确定还需要进一步的估计或匹配下界。
+
+\appendix
+\section{七维常数的纯有理证书}
+本附录只验证一个固定参数，不以数值优化的最优性作为前提。
+写
+\[
+ B_7(t)=\gamma(t)+\beta(t)\log t,
+\]
+其中由式\eqref{eq:I6}得到
+\begin{align*}
+ \beta(t)&=7-\frac72\left(1+\frac1{2t}\right)^6,\\
+ \gamma(t)&=1-\left(\frac{1+1/t}{2}\right)^7
+ -\frac72\sum_{j=1}^6
+ \binom6j\left(1+\frac1{2t}\right)^{6-j}
+           \left(-\frac12\right)^j\frac{1-t^{-j}}j .
+\end{align*}
+在给定的有理数 $t_0$ 上，$\beta(t_0)>0$。
+
+令 $x=(t_0-1)/(t_0+1)=2867461/3916037$。
+对 $N=128$，有
+\[
+ s_N=2\sum_{j=0}^{N-1}\frac{x^{2j+1}}{2j+1}
+ <\log t_0<
+ s_N+\frac{2x^{2N+1}}{(2N+1)(1-x^2)}.
+\]
+这是 $\log t=2\operatorname{arctanh}x$ 的正项展开；
+将余项各分母替换为 $2N+1$ 后求几何级数，即得上界。
+令 $\ell$ 为右端向上舍入到 $10^{-18}$ 网格的有理数，
+再置
+\[
+ A=(1+1/t_0)^7,\qquad
+ \overline B=\gamma(t_0)+\beta(t_0)\ell,\qquad
+ U=\frac{4910992105193}{200000000000}.
+\]
+下面的精确代码验证
+\begin{equation}\label{eq:certificate}
+ 0<B_7(t_0)<\overline B,\qquad
+ D:=U-A-\overline B>0,\qquad D^2>4A\overline B.
+\end{equation}
+后两个不等式给出
+$A+\overline B+2\sqrt{A\overline B}<U$，
+由正性与单调性得到所需的
+$(\sqrt A+\sqrt{B_7(t_0)})^2<U$。
+
+代码仅使用 Python 标准库中的整数和有理数运算。
+它同时以 $s_N$ 验证 $B_7(t_0)$ 的正下界，
+避免用浮点数承担比较。
+\lstinputlisting{verify_constant.py}
+
+\begin{thebibliography}{9}
+\bibitem{SS83}
+E. M. Stein and J. O. Str\"omberg,
+\emph{Behavior of maximal functios in $\mathbf R^n$ for large $n$},
+Arkiv f\"or Matematik \textbf{21} (1983), 259--269.
+\href{https://doi.org/10.1007/BF02384314}{doi:10.1007/BF02384314}.
+
+\bibitem{Aldaz20}
+J. M. Aldaz,
+\emph{Kissing numbers and the centered maximal operator},
+arXiv:1811.10478v2, 10 March 2020.
+\url{https://arxiv.org/abs/1811.10478v2}.
+
+\bibitem{Aldaz11}
+J. M. Aldaz,
+\emph{The weak type $(1,1)$ bounds for the maximal function associated to cubes
+grow to infinity with the dimension},
+Annals of Mathematics \textbf{173} (2011), no.~2, 1013--1023.
+\href{https://doi.org/10.4007/annals.2011.173.2.10}{doi:10.4007/annals.2011.173.2.10}.
+\end{thebibliography}
+\end{document}

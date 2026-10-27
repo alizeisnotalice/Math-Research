@@ -1,7 +1,7 @@
 {
   "dimension": 7,
   "updated_utc": "2026-10-27T12:12:00.402727+00:00",
-  "status": "RESEARCH_PAUSED_SECONDARY_REVIEW_ACCEPTED_PAPER_PENDING",
+  "status": "RESEARCH_PAUSED_SECONDARY_REVIEW_ACCEPTED_PAPER_COMPLETE",
   "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
   "current_round": 28,
   "lower": {
@@ -141,11 +141,11 @@
   "new_lower": false,
   "new_upper": false,
   "objective_complete": false,
-  "next_focus": "paper based only on second-reviewed results",
+  "next_focus": "await user; do not resume research automatically",
   "publication_status": "internal, not claimed publicly published",
   "archival_status": "round010 sealing; normal shared-main synchronization pending",
   "last_archived_commit": "22208695024e443ac5307e242d5a11a29593bd60",
-  "active_batch": "none; research paused; manuscript preparation authorized",
+  "active_batch": "none; research paused; audit and paper delivery complete",
   "lower_history": [
     {
       "round": 1,
@@ -719,7 +719,7 @@
     "lower_remains_paused": true,
     "new_research_authorized": false,
     "secondary_review": "ACCEPTED",
-    "paper": "pending",
+    "paper": "completed",
     "goal_tool_pause_receipt": "second_review/goal_pause.json",
     "status": "paused"
   },
@@ -732,5 +732,18 @@
     "numeric": "second_review/numeric/report.md",
     "literature": "second_review/literature/source-scope.md",
     "no_new_research": true
+  },
+  "paper": {
+    "status": "complete",
+    "title": "中心立方体极大算子的一个显式弱型估计",
+    "tex": "paper/main.tex",
+    "pdf": "paper/main.pdf",
+    "pages": 8,
+    "verification": "paper/verify_constant.py",
+    "certificate": "paper/constant_certificate.json",
+    "manifest": "paper/MANIFEST.json",
+    "transcription_review": "paper/manuscript_review.md",
+    "compile": "success local XeLaTeX",
+    "research_remains_paused": true
   }
 }
