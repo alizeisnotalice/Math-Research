@@ -1,0 +1,68 @@
+{
+  "batch": "R057",
+  "objective": "high-precision derivative/kink finite counterexample diagnostics, not Cn theorem",
+  "code_sha256": "a8425b5e450186b04873ea9db082422cb3b88292e896a5d9e0858cbe066aa3ef",
+  "grid": {
+    "d": [
+      "1/16",
+      "55/672",
+      "17/168",
+      "27/224",
+      "47/336",
+      "107/672",
+      "5/28",
+      "19/96",
+      "73/336",
+      "53/224",
+      "43/168",
+      "185/672",
+      "33/112",
+      "211/672",
+      "1/3"
+    ],
+    "q_rule": "1-3d/4+i*d/30, i=0..15",
+    "rho_over_r": [
+      "4",
+      "16",
+      "256",
+      "65536",
+      "4294967296",
+      "18446744073709551616",
+      "340282366920938463463374607431768211456",
+      "115792089237316195423570985008687907853269984665640564039457584007913129639936"
+    ],
+    "h_over_d": [
+      "1/128",
+      "1/32",
+      "1/8"
+    ],
+    "gamma_over_h": [
+      "0",
+      "1/4",
+      "1/2"
+    ],
+    "kink_perturb_bits": [
+      24,
+      48,
+      96,
+      160
+    ],
+    "w": "0, \u00b1r, \u00b1(r-2d), \u00b1a, \u00b1(a\u00b12^-j); a=q(1-gamma)",
+    "r": "q+d",
+    "t": "rho/q fixed during derivative",
+    "gamma": "zeta*t fixed during derivative"
+  },
+  "precision_decimal_digits": 160,
+  "independent_crosscheck_decimal_digits": 256,
+  "predecessor": "../registration.json and ../summary.json; first run failed precision checks; original retained",
+  "tasks": 240,
+  "workers": 15,
+  "states_per_task": 1656,
+  "max_states": 397440,
+  "independent_checks": "each chunk: rho/r in {4,2^256}, h=d/8, gamma=h/2, w in {a-2^-96,a,a+2^-96,r}; direct piecewise quad and one/two-sided finite differences",
+  "finite_difference_step": "2^-200",
+  "tolerances": "rho*closed-vs-direct < 1e-95; rho*derivative difference <1e-35",
+  "stop": "all finite states or first numerical violation/exception stops affected chunk with exact parameters",
+  "monitor": "0.5 sec then 5 sec",
+  "registered_unix_time": 1793138674.0690749
+}

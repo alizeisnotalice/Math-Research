@@ -1,0 +1,7 @@
+# R057 kink derivative diagnostic
+
+Finite numerical diagnostic, not an interval certificate or an upper bound for C_n. All 240 registered chunks completed: 397,440 target states and 1,920 direct piecewise quadrature / one-sided finite-difference checks. The largest scaled derivative ratio was 0.648972435834899425395322893736 at d=1/3, q=3/4, rho/r=4, h/d=1/8, gamma=0, w=r. Maximum independent scaled derivative discrepancy was 6.28e-61.
+
+The first run in the parent directory failed its independent checks at very large rho because cancellation and differencing exhausted 160 decimal digits. A single-point investigation gave scaled closed-form error 3.57e-92 and derivative error 5.82e-32 at 160 digits, versus 4.85e-152 and 4.15e-63 at 220 digits. The corrected code retains 160 digits for the stable closed form and uses 256 digits for direct quadrature and finite differences. It first completed a 16-chunk pilot, then the remaining 224 chunks; no pilot chunk was repeated. The first run is preserved, with failures never counted as passes.
+
+Pilot and main elapsed times were 2.44 s and 23.31 s; summed worker CPU time 333.69 s. Main run monitor observed 15 workers, peak sampled CPU 1444% and total RSS 2,561,152 KiB. PIDs, samples, code and result hashes are in the monitor, summaries and checksums. Results are not a global proof; finite differencing does not establish bounds between sampled parameters.
