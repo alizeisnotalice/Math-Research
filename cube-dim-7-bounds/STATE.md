@@ -1,7 +1,7 @@
 # 当前状态：一般高维覆盖持续攻关
 
-HIGH_DIM_COVER_ACTIVE；LOWER_PAUSED；N7_SPECIFIC_STOPPED。第040轮已完成：upper/round040/REPORT.md。原finite证书与一般Cn结论按scope区分。R040固定γ精化仅eventual，无128/256门槛。
+HIGH_DIM_COVER_ACTIVE；LOWER_PAUSED；N7_SPECIFIC_STOPPED。R042已完整独立ACCEPT：对logn≥2^108，Cn<T−2^-32 n/(logn)^(1/3)，T=nlogn−nloglogn。负修正阶提高，首项系数仍1。不同参数fullcost比较已证，始终取各有效域内最小值，见results/general_cover_ledger.json。
 
-R042完整二阶矩新阶及显式logn≥2^108已获独立ACCEPT，独立轮次正在整合；R041论文24页新稿已数学终审，主尚待正式编译/渲染。R043具体moment模板限制仍待独审。任何当前最强界以results/general_cover_ledger的有效域为准，取适用旧新界最小值。
+R037–040框架障碍/联合支付/newselector已严格区分算子定理和有限/条件接口。R041新24页稿已数学终审，主正整合编译/渲染；R043分数矩模板entropy范围限制待独审，不是Cn障碍。所有生产Terra，Sol推导/独审，Luna事实检查；主保留证明责任。
 
-所有生产计算Terra，Sol推导/独审，Luna事实审核；主保留证明责任和共享MATLAB串行协调。goal active，不修改其他项目或旧暂停状态。多轮独立commit因网络失败待推送，未确认远端不得称已同步。
+goal active，不恢复n7专项/下界或任何旧暂停项目。网络同步曾持续失败，独立commits保留待推送，未核远端不得声称已同步。

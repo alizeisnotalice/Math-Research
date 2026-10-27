@@ -1,9 +1,9 @@
 {
   "dimension": 7,
-  "updated_utc": "2026-10-27T19:35:24.917786+00:00",
+  "updated_utc": "2026-10-27T19:38:08.896245+00:00",
   "status": "GENERAL_HIGH_DIM_COVER_ACTIVE_N7_SPECIFIC_STOPPED_LOWER_PAUSED",
   "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-  "current_round": 40,
+  "current_round": 42,
   "lower": {
     "status": "complete_strict_primary_and_independent_full_union",
     "exact_construction": "R006: a1=(8^(1/7)+288^(1/7))/2; six tails(1+2^(1/7))/2; full8192 halfcell union times128",
@@ -827,8 +827,8 @@
   "active_goal": {
     "status": "active",
     "objective": "持续优化维数一致上界，Sol/Terra/Luna，本机优先；下界暂停",
-    "next_round": 41,
-    "focus": "general covering: joint mass/new selector and energy truncation",
+    "next_round": 43,
+    "focus": "beyond present moment template: joint mass/new selector; manuscript integration",
     "n7_specific_work": "STOPPED; historical archive only"
   },
   "upper_pre_R031": {
@@ -889,25 +889,28 @@
     "leading_n_log_n_coefficient": 1
   },
   "general_high_dim_upper": {
-    "round": 36,
+    "round": 42,
     "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-    "scope": "all integers n with log(log(n))>=128",
+    "scope": "all integers with natural log(n)>=2^108",
     "L": "log n",
-    "l": "log L",
-    "same_t": "n/(L−3logL)",
-    "delta": "n sqrt(l/L)/65536",
-    "same_t_bound": "Cn<=F(A,B−delta)<W−delta",
-    "negative_remainder": "Cn<nlogn−nloglogn−n sqrt(loglogn/logn)/131072",
-    "proof": "upper/round035/energy_theory/PROOF.md",
-    "proof_sha256": "f7d98eb21b89d83264053fda2c594387387facfdcbdbec7cf83a41e5dd55f0bd",
-    "independent_fullscope_audit": "audit/round035/energy_theory/proof_review.md",
-    "status": "internal strict proof, independent ACCEPT; not claimed published or globally best",
-    "comparison_rule": "minimum of applicable old/new bounds; R035 beats R034 q only when logL>65536²q² and both apply",
+    "s": "L^(1/3)",
+    "t": "n/(L−L^(1/3))",
+    "A": "(1+1/t)^n",
+    "B": "original exact cap budget B_n(t)",
+    "removed_budget": "2^-31 n L^-1/3",
+    "operator_cost": "Cn<=F(A,B−removed_budget)",
+    "bound": "Cn<T−2^-32 n L^-1/3; T=nL−nlogL",
+    "full_proof": "upper/round042/second_moment_cut/PROOF.md",
+    "threshold": "upper/round042/explicit_threshold/THRESHOLD_PROOF.md",
+    "comparison": "upper/round042/comparison/PROOF.md",
+    "independent_audits": [
+      "audit/round042/full_theory/proof_review.md",
+      "audit/round042/threshold/proof_review.md",
+      "audit/round042/comparison/proof_review.md"
+    ],
+    "status": "internal strict proof, independent ACCEPT; not claimed published/global best",
     "leading_coefficient": 1,
-    "explicit_threshold": "log(log(n))>=128",
-    "threshold_proof": "upper/round036/threshold_theory/THRESHOLD_PROOF.md",
-    "threshold_proof_sha256": "064e3e6d697220817642250961180fcf2f747dc36446eb693344fb74f719bed1",
-    "threshold_independent_audit": "audit/round036/threshold/proof_review.md"
+    "comparison_scope": "L>=2^240 dominates complete listed valid fixed-old-t costs; unitcore all-t comparison only eventual; otherwise take applicable minimum"
   },
   "round034": {
     "report": "upper/round034/REPORT.md",
@@ -1013,5 +1016,36 @@
     "status": "complete independently accepted scoped theories and recorded computations",
     "qualification": "R040 new bound only fixed gamma<sqrt2 eventually; other interfaces not uniform Cn bounds",
     "general_bound": "For every fixed 0<gamma<sqrt2, Cn<=T−gamma n sqrt(loglogn/logn) eventually; no explicit threshold"
+  },
+  "round042": {
+    "report": "upper/round042/REPORT.md",
+    "status": "complete operator+explicit_threshold+full_cost_comparison independently ACCEPT",
+    "new_general_Cn_bound": true,
+    "new_n7_work": false,
+    "new_lower_work": false,
+    "explicit_domain": "log(n)>=2^108",
+    "bound": "Cn<T−2^-32 n/(logn)^(1/3)",
+    "leading_n_log_n_coefficient": 1
+  },
+  "general_high_dim_upper_pre_R042": {
+    "round": 36,
+    "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+    "scope": "all integers n with log(log(n))>=128",
+    "L": "log n",
+    "l": "log L",
+    "same_t": "n/(L−3logL)",
+    "delta": "n sqrt(l/L)/65536",
+    "same_t_bound": "Cn<=F(A,B−delta)<W−delta",
+    "negative_remainder": "Cn<nlogn−nloglogn−n sqrt(loglogn/logn)/131072",
+    "proof": "upper/round035/energy_theory/PROOF.md",
+    "proof_sha256": "f7d98eb21b89d83264053fda2c594387387facfdcbdbec7cf83a41e5dd55f0bd",
+    "independent_fullscope_audit": "audit/round035/energy_theory/proof_review.md",
+    "status": "internal strict proof, independent ACCEPT; not claimed published or globally best",
+    "comparison_rule": "minimum of applicable old/new bounds; R035 beats R034 q only when logL>65536²q² and both apply",
+    "leading_coefficient": 1,
+    "explicit_threshold": "log(log(n))>=128",
+    "threshold_proof": "upper/round036/threshold_theory/THRESHOLD_PROOF.md",
+    "threshold_proof_sha256": "064e3e6d697220817642250961180fcf2f747dc36446eb693344fb74f719bed1",
+    "threshold_independent_audit": "audit/round036/threshold/proof_review.md"
   }
 }
