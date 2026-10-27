@@ -39,3 +39,5 @@ python3 -B cube-dim-7-bounds/audit/round001/lower/recheck.py
 第002轮最小核验：`python3 -B cube-dim-7-bounds/audit/round002/lower/recheck.py --reference cube-dim-7-bounds/lower/round001/results.json`（完整新实例union、stdout-only）；`python3 -B cube-dim-7-bounds/src/check_primary_round002.py`（准确比较与S3坐标审计、stdout-only）。模型积分预算改进不等于Cn改进。
 
 第003轮后下界遵用户要求暂停，上界继续。只读入口：`python3 -B cube-dim-7-bounds/src/check_primary_round003.py`。
+
+第004轮完整原G积分预算严格降低为 I<8179950070308/10^18；仍无全域g，Cn上界仍128。只读可携带入口：`python3 -B cube-dim-7-bounds/src/check_primary_round004.py`（python-flint）。
