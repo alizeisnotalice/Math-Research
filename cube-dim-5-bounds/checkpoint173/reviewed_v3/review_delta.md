@@ -1,0 +1,7 @@
+# 173 v3：让故障清理路径实际可达
+
+保留原b218及v2 db85430d700ddefb04c002c899ada1d1aed05547f3777497649ffef793340448全部字节。v3仅在run_stage结果等待循环顶部及异常退出检查后检测stop，立即raise进入finally的既有fault-only有界清理，不再等所有15份summary。实际输出独立为run_v3_001。core/worker/util/fault_cleanup与v2逐字一致；scope、正常无wallcap、三门要求不变。
+
+只新增一个 integrated zero-H synthetic，使用真实v3 run_stage+既有cleanup，不重跑v2三toy：15个fake workers中一个报告fault，一个忽略stop且忽略SIGTERM，其余正常响应stop。master在收到第1份fault summary即进入finally，实际5秒grace、terminate后2秒再kill卡死peer，全部实际join且OS无。15个fake成功prefix保留，master真实退出2。测试7.178019042s，0真实H/jet/donor/band/q/corner；fake metadata不是任何生产资格。synthetic 25秒watchdog仅防回归测试自身失控，不进入正常数值程序。
+
+仍未启动455-source/22295-band/35872-pair真实批；待174与主核新v3和准确三门/CPU调度。166论文/双审候选不受影响。

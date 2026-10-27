@@ -1,0 +1,19 @@
+# 174 第020轮：455来源绑定与173 v3运行门
+
+455个固定donor的来源身份审核完成；173 v3的172数学接口及故障退出控制审核通过。两门只供主后续授权使用，不授权运行，也不证明新的band、q、角点或全局常数。原174理论冻件及173原版、v2均保留，运行门只绑定v3 manifest `cceaa29e847719bc90cbbc1ef7005f8cf2c62c1924772d942003740233b773eb`。
+
+先冻结的455来源计划为 `ebdab5f595484f53fa9b1def6e4a4e0b225473599c616b94ac0926d95f9bd598`，含1076个源锁、2个代码锁；实际主PID61250，15个worker PID61255–61262、61264–61270，全部正常exit0。检查411份092 compact与原080全raw的73端点数组逐字段相同、raw SHA、移除runtime的数学payload SHA、原rank/indices/point及版本fingerprint；实际未选择082来源。另5份095、39份103全evidence绑定原registration、run/kernel、模型/bodytable、jobs、certificate及exact_registered_cache字段。全部455×73=33215个既有区间正且有序，同一H64原g/donor区间非空交叠，原H32下端与原gH64上端一致。49个质量上端只核原端点严格大小关系，没有形成质量差、权、积或q。
+
+原151 full jets的projection SHA、jet ID、raw SHA、模型、epsilon、anchor及5分量结构已回连；原155的Delta、四个物理log-gradient区间和oldq逐字段保持。455个anchor首坐标均为1，四个gamma区间均有序。411个原g源标记H64_inherited052，44个H64_new089；本审核没有重算导数、log或H。原73时间端点及017/DD/Arb区间真值仍是共享的既有资格依赖；094/102/113/121及180既有审核不是本轮新H enclosure。167 transport只确认字节/投影身份，不能替代该真值资格。
+
+455个来源worker完成后，主的旧158 metadata join把事件kind误写成`evaluated`，实际为`evaluated_single_source`，故原master真实exit1；原故障收据和全部成功来源prefix保留。仅新增小join计划 `3cd68d2e580e2a0c8cba1aa3bc50224b77169c2e3b7c87a042384e4ee1f25a56`，实际PID61711、exit0、0.937106042秒，未重跑455检查。它完成168已接纳的1120 receiver、35872 pair及旧71pair guard回连（13来自155，58来自158），不重算任何旧margin或角点。原来源控制器3.633948958秒，外wrapper3.959730750秒；master累计user2.982288/system0.244748秒、peak RSS533118976字节，children累计user1.435246/system0.314887秒。小join累计user0.882972/system0.089742秒、peak RSS89243648字节。所有原1076源锁在完成后保持同SHA。
+
+代码审核确认：每band正质量上包乘正权，完整包含t=1到无穷的尾；正K上包除以`16*max(original_g_lower,donor_lower)`，方向为真实H64的正下端。153负项独立保留`original_g_upper`，不以max下端替代。原Delta/gamma不变，q仅与原合法q、uniform及153 split取min；旧71同源pair仅在q严格下降时重测。同一anchor检查全部16角点，保留base158与全部实际测试的新wholebox margin的max，包括失败pair；firstPASS后才能跳过同receiver余项。完整域min还要消费原111201叶的闭树和52360根，不把1120待改善receiver当完整域。
+
+原173的`mass>=0`改成v2/v3的`mass>0`是严格正带质量的诊断合同。v2虽有故障清理helper，结果等待loop收到fault后仍可能等齐15份summary，卡住的peer使finally不可达，所以不接纳v2运行门。v3仅在loop顶部及检测异常后增加stop即raise，另用新输出namespace；core/worker/util/fault_cleanup与v2逐字同。正常运行无wallcap；仅观察到故障后才保存prefix并按5秒grace、2秒terminate、2秒kill清理，实际join；仍存活时master保存诊断后exit3，避免隐式无限join。故障真实返回2，不自动重启。各成功阶段后重核代码、source、prepared input及逐donor SHA。
+
+只读核验作者唯一新增integrated synthetic（未重跑旧三toy或新toy）：收据 `cbe2996aa5962f13178e30e2cac2a2ac31d09a872302eeea2d072d547d9d6ee7`，master62586收到1份fault summary便进入清理，peer62590忽略stop/SIGTERM，实际kill为−9并join，全部15 worker退出，master exit2，7.178019042秒；15份fake prefix保留。它验证运行控制，fake metadata不是数学资格。
+
+当前v3全9个代码、79个source、21个external锁匹配；原173全部原source锁和prepared external输入保持同字节。CLI要求主授权文件SHA、exact reviewed-manifest SHA及455/35872/15固定范围，并锁三个门文件的SHA与accepted声明；168门另硬绑定main `round020/qualified168.json`。本轮的`qualified172_174.json`明确绑定v3；来源门为`qualified_donor_endpoint_provenance_v2.json`，跨版本仅因实际源输入未变可复用。主授权应逐一填写这两个文件的准确SHA；代码不以gate名称或文件名推定资格。
+
+`future_math.py`仅准备不同代数路径：逆时间正二项式P5/P3权和共用整数分母的16角点。它没有被调用，仍未绑定实际173结果；未来最多455个q、22295个band product、35872pair×16角点、15worker，必须另锁实际新结果并获主授权。此次新增H、log-gradient、band/q、角点及旧成功数学重跑均为0。主保留最终数学资格、CPU调度与正式常数责任。本文不更新正式I、g或C5。

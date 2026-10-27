@@ -4,7 +4,7 @@
 \usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array,longtable}
 \usepackage{graphicx,xcolor,listings,hyperref}
 \hypersetup{colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!60!black,
- pdftitle={五维中心方体极大算子的一个准确弱型上界},
+ pdftitle={五维中心方体极大算子的准确上下界},
  pdfauthor={五维中心方体研究项目}}
 \setlength{\emergencystretch}{2em}
 \newtheorem{theorem}{定理}[section]
@@ -20,25 +20,27 @@
 \DeclareMathOperator{\essinf}{ess\,inf}
 \lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,columns=fullflexible,
  frame=single,keepspaces=true}
-\title{五维中心方体极大算子的一个准确弱型上界\\
-\large 有限正源、正时间曲率与可复核积分证书}
+\title{五维中心方体极大算子的准确上下界\\
+\large 格点见证、有限正源与可复核证书}
 \author{五维中心方体研究项目\\\small 内部研究稿}
 \date{2026年10月27日}
 \begin{document}
 \maketitle
 \begin{abstract}
-研究固定Lebesgue测度下五维中心轴平行方体极大算子的弱$(1,1)$常数。
+研究固定Lebesgue测度下五维中心轴平行方体极大算子的弱$(1,1)$常数$C_5$。
 所有坐标共用一个任意正半径，输入为一般$L^1(\R^5)$函数。
-以十六方向Cauchy半群的Green势为比较核，证明全空间有限正源及同一接收集的全尺度传递。
-通过完整正面覆盖、固定锚点曲率、逆时间正矩与准确凸弦支付，获得
+继承的周期格点构造通过42个见证盒的准确联合体积给出代数下界$C_{\rm cert}$；
+十六方向Cauchy半群的Green势、全空间有限正源、完整正面覆盖与准确积分支付给出上界$U_{175}$。
+经现有证书的独立复核和逐项终审，确认
 \[
- C_5\le U_{\rm cert}\approx28.936078340172045<28.936079.
+ C_{\rm cert}\le C_5\le U_{175}<\frac{14460339}{500000}=28.920678,
+ \qquad C_{\rm cert}>\frac{19943}{10000}=1.9943.
 \]
-展示小数不参与认证。论文给出短有理常数与一个纯整数充分条件；完整证书使用原始有理数。
-五维奇异直线、平面及其交叠通过全空间分布论和完整小时间预算处理。
-两轮审计采用不同的整数及有理运算路径，分别核验完整积分与完整空间覆盖，
-并明确原始$H_\epsilon$和物理导数区间仍是继承的严格数值输入。
-本稿的贡献为上界；既有内部下界及尚未闭合的局部候选单独标识。
+其中$C_{\rm cert}\approx1.9943164615684859$，$U_{175}\approx28.920677505176677$；
+展示小数不参与认证。下界给出有限collar、严格余量和同质量光滑$L^1$传递；
+上界处理五维奇异直线、平面及其交叠，并支付全部小时间和无穷时间尾。
+下界为先前阶段的成果，本次只复核、不提高；本轮上界使用更紧的准确凸弦下包。
+完整原始分数、证书与最小复核入口随文归档，原始势核及物理导数区间的共享依赖明确说明。
 \end{abstract}
 
 \section{对象、比较门槛与主结果}
@@ -60,15 +62,15 @@ $[A_5,32]$。这是一项有范围的文献核查，不是对全球文献的穷�
 该网页列出的平面方体结论不能直接代入五维。
 
 \begin{theorem}\label{thm:main}
-存在本稿所述完整准确证书，使
+令$C_{\rm cert}$为第\ref{sec:lower}节的准确代数数，
+$g_*,H_*,J_*$为附录中的正有理数。则
 \[
- C_5\le U_{\rm cert}<\frac{28936079}{10^6}=28.936079.
+ C_{\rm cert}\le C_5\le U_{175}
+ :=\left(\frac{3125(H_*+J_*)^4}{g_*^5}\right)^{1/4}
+ <\frac{14460339}{500000},\qquad
+ C_{\rm cert}>\frac{19943}{10000}.
 \]
-更准确地，令$g_*$、$H_*$、$J_*$为附录中的正有理数，则
-\[
- U_{\rm cert}=\left(\frac{3125(H_*+J_*)^4}{g_*^5}\right)^{1/4},
-\]
-取唯一正四次根。其准确有理隔离及新旧差值见随文证书。
+四次根取唯一正根；完整准确隔离及新旧差值由随文证书给出。
 \end{theorem}
 
 \begin{table}[ht]
@@ -79,16 +81,103 @@ $[A_5,32]$。这是一项有范围的文献核查，不是对全球文献的穷�
 已核查的公开来源&$A_5$&$32$\\
 原开工内部门槛&继承四维完整证书&$32$\\
 冻结接续门槛&$C_{\rm cert}$&$32$\\
-本稿完整结果&继承$C_{\rm cert}$&$U_{\rm cert}<28.936079$\\
+本稿完整结果&$C_{\rm cert}$（复核继承）&$U_{175}<28.920678$\\
 \bottomrule
 \end{tabular}
 \caption{完整门槛。$C_{\rm cert}\approx1.9943164615684859$为既有内部证书，
-其准确代数定义与审计路径保留在账本中。本轮没有提高接续下界。}
+其准确代数定义在第\ref{sec:lower}节完整列出。本轮没有提高接续下界。}
 \end{table}
 
 本稿不将内部结果称为公开发表成果。下界研究已按用户指令停止。
 接续门槛要求的双侧突破尚未成立，双侧突破后的三轮迭代也未触发。
-根据后续明确要求，本稿交付已经完成双轮审计的当前上界成果。
+研究现已暂停；本稿仅归档完成审计的现有上下界。未完成资格复核的173候选不进入任何定理。
+
+\section{继承的准确下界与有限光滑见证}\label{sec:lower}
+\subsection{格点、共同半径和准确接收盒}
+令$u,v$为正实根，$u^5=2$、$v^5=3$，取
+\[
+ a_1=1+\frac{u^3}{2},\qquad a_2=\cdots=a_5=\frac{1+u}{2}.
+\]
+每个格点$a\odot k=(a_1k_1,\ldots,a_5k_5)$仅放置一个单位质量原子。
+各间距为正，整数索引映射单射；相等的四个间距不使不同格点合并。
+对长度向量$l\in\{1,2,3,4\}^5$，记$n_l=\prod_jl_j$、$r_l=n_l^{1/5}/2$。
+若$l_j=2m+1$取$K_{l_j}=\{-m,\ldots,m\}$；
+若$l_j=2m$取$K_{l_j}=\{1-m,\ldots,m\}$。
+在半胞元$\prod_j[0,a_j/2]$中定义
+\[
+ B_l=\prod_{j=1}^5\left([0,a_j/2]\cap
+           \bigcap_{k\in K_{l_j}}[a_jk-r_l,a_jk+r_l]\right).
+\]
+它保证块中恰有$n_l$个不同原子到接收点的$\ell^\infty$距离不超过\emph{同一个}$r_l$。
+在盒内部可以取稍小的共同半径，使平均严格大于$1$。
+使用冻结证书中的42个非空见证盒；其完整长度清单、原子约束和端点均在
+\path{final_bounds020/lower/witnesses.json}中。
+作为下界，只需这42盒合法，不需要证明其余长度不能提高联合体积。
+
+\subsection{准确联合体积}
+令$V=|\bigcup B_l|$。各轴反射给完整胞元的接收体积$A=32V$，
+每胞元恰有一个单位质量原子，故不能再除以胞元体积。
+独立审计逐次以已接受的互不相交正交盒切去新盒的重叠部分，
+得到1122个两两不交的正交盒，准确求和得
+\[
+ C_{\rm cert}=A=\sum_{i,j=0}^4c_{ij}u^iv^j.
+\]
+系数如下，全部为准确有理数：
+
+\begin{table}[ht]\centering\small
+\begin{tabular}{c|rrrrr}
+\toprule $i\backslash j$&$0$&$1$&$2$&$3$&$4$\\\midrule
+$0$&$\frac{34599}{16}$&$-2788$&$1014$&$286$&$-266$\\
+$1$&$-\frac{2835}{2}$&$-522$&$152$&$-300$&$-382$\\
+$2$&$-\frac{15897}{16}$&$-1011$&$-266$&$536$&$-140$\\
+$3$&$\frac{27529}{32}$&$-631$&$2014$&$468$&$-283$\\
+$4$&$\frac{15859}{16}$&$-3038$&$1878$&$660$&$-327$\\
+\bottomrule\end{tabular}
+\caption{下界代数证书的全部25个系数$c_{ij}$。}\label{tab:lowercoeff}
+\end{table}
+
+端点以25个整数系数除$4$表示，乘积仅按$u^5=2,v^5=3$归约。
+旧保存根区间由本轮整数五次幂重新核实；373次端点比较均由准确恒等式判等或有理根区间严格分离。
+分块宽度乘积之和与原证书全部25系数及完整有理包围区间逐项相同，
+没有使用浮点容差、采样或包围盒体积。严格下端大于$19943/10000$。
+42块共3676次原子出现仅是逐块计数，不能当作输入总质量。
+
+\subsection{明确的严格余量、collar与一般$L^1$传递}
+由$u<6/5$知每个半盒边长小于$1$。
+将各盒每面向内缩$\tau$，缩空者丢弃。
+任一五维盒的体积损失不超过
+$2\tau\sum_j\prod_{k\ne j}w_k\le10\tau$，所以反射后的接收体积满足
+\[
+ A_\tau\ge A-32\cdot42\cdot10\tau=A-13440\tau.
+\]
+具体选$\tau=2^{-32}$、$N=2^{32}$、$\rho=\tau/4$。
+每个缩盒内的接收点到相应原子的距离至多$r_l-\tau$。
+取共同半径$r_l'=r_l-\tau/2>0$，并将每原子换成质量$1$、
+支撑在$\ell^\infty$半径$\rho$内的非负$C_c^\infty$团。
+其全部质量与接收点距离至多$r_l-3\tau/4$，
+相对$r_l'$留有$\tau/4$严格余量；于是平均至少
+$n_l/(2r_l')^5>1$。
+
+取接收胞元索引$[-N,N]^5\cap\mathbb Z^5$，输入格点索引
+$[-N-2,N+2]^5\cap\mathbb Z^5$。
+因$l_j\le4$，所需块及反射的索引偏移均不超过$2$，此collar充分。
+例如固定非负$\eta\in C_c^\infty((-1,1)^5)$、$\int\eta=1$，明确的合法输入为
+\[
+ f(x)=\sum_{k\in[-N-2,N+2]^5\cap\mathbb Z^5}
+       \rho^{-5}\eta\!\left(\frac{x-a\odot k}{\rho}\right).
+\]
+它是有限非负光滑函数，$\norm f_1=(2N+5)^5$，
+接收体积为$(2N+1)^5A_\tau$。因此
+\[
+ C_5\ge A_\tau\left(\frac{2N+1}{2N+5}\right)^5
+ \ge(A-13440\tau)\left(\frac{2N+1}{2N+5}\right)^5
+ >\frac{19943}{10000}.
+\]
+最后严格比较以原准确下端$A_L$作一次有理运算认证，
+并非以显示小数估计余量；见\path{round020/finite_collar_result.json}。
+亦可让$N\to\infty$再令$\tau\downarrow0$，得$C_5\ge A$。
+下界只需这些合法半径给出见证；极大算子的定义仍包含全部正尺度。
+这是原下界的资格复核与有限实现，不是新的下界优化。
 
 \section{辅助半群与一般输入的有限源传递}
 \subsection{归一化和势核}
@@ -207,7 +296,7 @@ $z^2t/[\pi(t^2+z^2)]\le t/\pi$给
 \[
  |x|^2q_t^E(x)\le\frac{16t}{\pi}
  \sum_{P_Ev\ne0}|P_Ev|^{-1}q_t^{E\cap v^\perp}(P_{E\cap v^\perp}x).
- \tag{3.1}
+ \tag{4.1}
 \]
 先用非负测试与Tonelli证明，随后以正时间密度连续性取得处处版本；
 没有调用发散的Cauchy二阶矩。
@@ -226,7 +315,7 @@ Fourier径向积分于是给
 $S=5\sqrt5/4+5\sqrt{5/6}$、
 $C_3=F_5P_4$、$C_1=480F_5SP_3/\pi$。
 非中央十五方向在整个闭$F$上的距离平方至少$1/2$，
-由(3.1)给总贡献$C_1t^{-1}$。
+由(4.1)给总贡献$C_1t^{-1}$。
 中央方向$v_+=(1,1,1,1,1)$按
 $r=|P_{v_+^\perp}x|$分区。$r\le\eta=1/10$时
 $|x|^2\ge5-9\eta+5\eta^2=83/20$；
@@ -242,7 +331,7 @@ $r\ge\eta$时中央贡献至多$C_1t^{-1}/(30\eta^2)$。
  p_t(1,y)\le\bar C t^{-3},\\
  \bar C=\frac{373901498071739108279096204237109367501674084730890663667211310806581045}{2^{256}}.
  \end{gathered}
- \tag{3.2}
+ \tag{4.2}
 \]
 同时固定首坐标的Cauchy边缘和尾坐标符号对称性给
 $\int_Fp_t\le t/\pi$。
@@ -256,20 +345,20 @@ $\int_Fp_t\le t/\pi$。
 无需将四维的线外连续性结论移植到五维。
 
 \subsection{小时间的正部尾比较}
-记$R_\epsilon=G-H_\epsilon\ge0$、$D=\bar C/(2\epsilon^2)$、
+记$R_\epsilon=\int_0^\epsilon p_t\dd t\ge0$、$D=\bar C/(2\epsilon^2)$、
 $A=\epsilon^2/(2\pi)$。对任意$b\ge0$取
-$t_0^2=\bar C/[2(b+D)]$，则(3.2)给
+$t_0^2=\bar C/[2(b+D)]$，则(4.2)给
 \[
- \int_F(R_\epsilon-b)_+\le\frac{AD}{b+D}.                 \tag{3.3}
+ \int_F(R_\epsilon-b)_+\le\frac{AD}{b+D}.                 \tag{4.3}
 \]
 事实上$t_0$至$\epsilon$的点态积分至多$b$，
 而零至$t_0$的面质量至多$t_0^2/(2\pi)$。
 若$H_\epsilon\le M$于整个接收面$F$，则非减凸函数的正部积分公式给
 \[
  \int_FG^{5/4}\le\int_FH_\epsilon^{5/4}+J_M,\qquad
- J_M=5A\int_0^1 z^2[D+(M-D)z^4]^{1/4}\dd z.             \tag{3.4}
+ J_M=5A\int_0^1 z^2[D+(M-D)z^4]^{1/4}\dd z.             \tag{4.4}
 \]
-它来自将$(M+r)^{5/4}-M^{5/4}$代入(3.3)，再令
+它来自将$(M+r)^{5/4}-M^{5/4}$代入(4.3)，再令
 $z=(D/(D+b))^{1/4}$。需要的是非减凸性；任意凸函数不能直接使用此比较。
 本证书取
 \[
@@ -304,7 +393,7 @@ $p_t(c)\dd t/H_\epsilon(c)$使用Jensen，得全空间位移公式
  \log H_\epsilon(c+u)\ge\log H_\epsilon(c)
  +\nabla\log H_\epsilon(c)\cdot u-Q_\epsilon(c)|u|^2,\quad
  Q_\epsilon=\frac{\int_\epsilon^\infty p_t(c)t^{-2}\dd t}{16H_\epsilon(c)}.
- \tag{4.1}
+ \tag{5.1}
 \]
 这不是沿空间路径冻结变化的后验。
 正Gaussian混合给$t^5p_t(c)$非减；
@@ -312,7 +401,7 @@ $p_t(c)\dd t/H_\epsilon(c)$使用Jensen，得全空间位移公式
 \[
  Q_\epsilon\le\min\left\{q_{\rm old},\frac23A_\epsilon,
  A_\epsilon\left(\frac7{10}-\frac8{15}\frac{L}{U}\right)\right\},
- \quad A_\epsilon=\frac1{16\epsilon^2},                 \tag{4.2}
+ \quad A_\epsilon=\frac1{16\epsilon^2},                 \tag{5.2}
 \]
 其中$L\le H_{2\epsilon}(c)$、$H_\epsilon(c)\le U$。
 $q_{\rm old}$只取同锚点、同截时、同物理度量的已认证上包。
@@ -336,7 +425,7 @@ $\epsilon=1/64$或$1/128$时均有$H_{1/128}\ge H_\epsilon$。
 \[
  g_* =2^{-192}\left\lfloor2^{192}g_0P_8(m)\right\rfloor
  \le\essinf_FH_{1/128}.
- \tag{4.3}
+ \tag{5.3}
 \]
 再用$G\ge H_{1/128}$、完整$G$的$-4$齐次性及方体对称性，才得到$G\ge g_*$于$Q$。
 固定截时$H$没有被齐次外推。
@@ -353,7 +442,7 @@ $a_0=-r/2$、$a_k=(w_k-w_{k+1})/2$。
  \mathcal R(r/t)^{-1}\le p_t(c+u)/p_t(c)\le\mathcal R(r/t),\\
  \mathcal R(z)=
  (\sqrt{1+z^2/16}+z/4)^2(\sqrt{1+z^2/256}+z/16)^8.
- \end{gathered} \tag{5.1}
+ \end{gathered} \tag{6.1}
 \]
 并列、零坐标只产生零提升系数；$r=0$时比值为$1$。
 该比较适用于全位移、全部正时间和所有锚点。
@@ -378,10 +467,10 @@ $D_u^2p_t\le(25/24)t^{-2}r^2p_t$。
 $Z=\norm U_\infty$、$h=\max Z$、$\mu=\norm{\E U}_\infty$。
 设$W(s)=\E(Z-s)_+$，
 $J(z)=\int_0^hW(s)\mathcal R(sz)\dd s$。
-Taylor公式、其非负余项上包及(5.1)得到
+Taylor公式、其非负余项上包及(6.1)得到
 \[
  \frac{\E p_t(c+U)}{p_t(c)}
- \le\min\{\mathcal R(h/t),\,1+\mu/t+(25/24)t^{-2}J(1/t)\}. \tag{5.2}
+ \le\min\{\mathcal R(h/t),\,1+\mu/t+(25/24)t^{-2}J(1/t)\}. \tag{6.2}
 \]
 $J$非负、递增且凸，$J(0)=\E Z^2/2$。
 若各偏移坐标为$[a_j,b_j]$，则
@@ -391,7 +480,7 @@ $\Pr(Z\le s)=\prod_j|[a_j,b_j]\cap[-s,s]|/(b_j-a_j)$，
 
 \subsection{共同时间分布的加强}
 在时间带$[a_t,b_t]$中令$a=1/a_t$、$b=1/b_t$，无穷尾取$b=0$。
-由于$t^5p_t(c)$非减，(5.2)的递减时间函数可用概率
+由于$t^5p_t(c)$非减，(6.2)的递减时间函数可用概率
 $4z^3\dd z/(a^4-b^4)$上包。记
 \[
  E_j=\frac4{j+4}\frac{a^{j+4}-b^{j+4}}{a^4-b^4}.
@@ -400,7 +489,7 @@ $4z^3\dd z/(a^4-b^4)$上包。记
 \[
  \E[z^2J(z)]\le\alpha J(a)+\beta J(b),\quad
  \alpha=\frac{E_3-bE_2}{a-b}>0,\quad
- \beta=\frac{aE_2-E_3}{a-b}>0.                         \tag{5.3}
+ \beta=\frac{aE_2-E_3}{a-b}>0.                         \tag{6.3}
 \]
 于是新均值因子为
 $1+\mu E_1+(25/24)(\alpha J_{a,U}+\beta J_{b,U})$。
@@ -422,14 +511,33 @@ $H_L(a)-H_U(b)$与$H_U(a)-H_L(b)$；末端$H_\infty=0$。
 \[
  s\ge U^{1/4}\left(1+\frac L{4U}\right).
 \]
-整数四次幂阈值给有理斜率下端$s_{\rm rat}$，不以舍入端点弦的斜率冒充它。
+旧整数四次幂阈值给已认证斜率下端$s_{164}$。
+本轮再令$D(t)=1+t+t^2+t^3$、$R(t)=1+t^4/D(t)$。
+准确弦的斜率为$U^{1/4}R((L/U)^{1/4})$，并且
+\[
+ R'(t)=\frac{t^3(4+3t+2t^2+t^3)}{D(t)^2}\ge0,\qquad
+ D(t)^2-t^3(4+3t+2t^2+t^3)=1+2t+3t^2.
+\]
+因此$0\le R'\le1$且$1\le R\le5/4$于$[0,1]$。
+设$N=2^{160}$，$L_i,U_i$为原范围的整数编码，$B_0=2^{64}$，取
+\[
+ Y=\left\lfloor\left(\frac{U_iB_0^4}{N}\right)^{1/4}\right\rfloor,
+ \qquad
+ Z=\left\lfloor\left(\frac{L_iB_0^4}{U_i}\right)^{1/4}\right\rfloor.
+\]
+逐项整数四次幂核左端可行、下一格严格不可行。
+以$y=Y/B_0,z=Z/B_0$取
+$s_{\rm rat}=\max\{s_{164},yR(z)\}$，仍为同一准确弦下包。
+其新格点误差至多$(5/4+y)/B_0$；没有用舍入端点弦的斜率替代准确弦。
+$L=0,L=U$的解析端点仍保留；实际更新只消费原strict-active集合。
+
 均值和积分均以$N=2^{160}$为单位；以下$m_{\rm old},m_{\rm new}$是均值上端的整数编码。
 新的唯一总减量为
 \[
  G_{\rm new}=\left\lfloor
  \frac{w(m_{\rm old}-m_{\rm new})s_{\rm rat}}{2^{4\ell}}\right\rfloor.
 \]
-它从原始已认证self扣除一次。
+这里$m_{\rm old}=m_{112}$、$m_{\rm new}=m_{162}$；它从原112已认证self扣除一次。
 不能将两个相对同一基准的floor累加，也不能从已扣减self再扣总量。
 
 有序根的轨道权为$w=4!/\prod m_j!$。
@@ -439,7 +547,7 @@ $\min(\mathrm{self},\sum\mathrm{childEff})$，仅对根求和。
 第二轮逐parent、incoming次数、可达性和16物理子格验证。
 唯一未取新self的节点由其完整孩子支付。
 最终准确根和$H_*$满足$\int_FH_{1/512}^{5/4}\le H_*$；
-配合(3.4)得到$I\le H_*+J_*$。
+配合(4.4)得到$I\le H_*+J_*$。
 
 \section{准确计算、两轮审计与复现}
 原$H_\epsilon$和物理导数球来自已归档的完整有限扇：
@@ -463,50 +571,62 @@ $k_j=D_c\,c\cdot z_j$；每个锥使用其五个$k_j$。
 
 \begin{table}[ht]\centering\small
 \begin{tabular}{p{.20\textwidth}p{.56\textwidth}r}
-\toprule
-实际批次&完整复核范围&秒\\ \midrule
-166/169&97971组合总减量、97972节点、52360根；15个worker&2.55 / 2.60\\
-第二轮178&97971$\times$73带、365因子、完整range/mean/幂/树及139全板&100.31\\
-第二轮180&109446原记录、107530源、3812支撑、111201闭叶全角点&27.98\\
-MATLAB R2026a&新完整常数的8项准确符号检查，私有批进程&96.90\\
-\bottomrule
-\end{tabular}
-\caption{仅列本机实际运行证据。各数学批采用有限输入与可保存检查点，无程序墙钟上限。
-秒数采用各程序自身登记，不代表累计CPU或全部研究耗时。
-进程结束后已退出；没有关闭用户原有资源。}
+\toprule 实际批次&完整复核范围&秒\\\midrule
+继承第二轮178&97971$\times$73带、365因子、完整range/mean/幂/树及139全板&100.31\\
+继承第二轮180&109446原记录、107530源、3812支撑、111201闭叶角点&27.98\\
+175生产/独审&195942新根、97971斜率与总支付、97972节点、52360根&1.91 / 2.38\\
+暂停后上界复审&当前完整常数及全部准确比较，39项整数交叉检查&0.67\\
+暂停后下界复审&42见证、1122不交盒、25系数和原区间完全一致&0.22\\
+MATLAB R2026a&8项新175准确标量检查；总批启动退出67.14秒&0.57\\
+\bottomrule\end{tabular}
+\caption{仅列真实运行。上两行是已冻结的继承复核，本轮没有重跑它们。
+175分片批各用15个worker；秒数为程序登记值，不是累计CPU。
+所有程序正常完成后已退出，未关闭用户原有资源。}
 \end{table}
 
-首轮独立全链审计177及166增补通过后，第二轮178与180分别承担积分和全域空间复核，
-主代理再逐项终审。178采用独立binary解析、CDF多项式、
-512位根资格、Newton四次根和完整树；180采用exp-Taylor认证Delta、
-不同分片及二叉兄弟归并。166、169、178、180的有限分片批各使用15个worker；
-单标量检查与私有MATLAB另行登记。
-没有将包完整性、哈希、操作记录或只准备未运行的checker当作新数学结果。
+原全链首审177及166增补、第二轮178积分与180完整空间覆盖，
+给出本轮所继承的模型、几何、时间尾及数值输入资格。
+175独审采用二分整数根、Horner有理斜率、交叉gcd与二进制长除及递归DFS，
+与生产的两次isqrt、另一多项式表达及逐层树归并不同，
+全部195942根和97971支付逐项匹配。
+历史identity中的一个字段误将selfcheck SHA标为preflight；
+真实preflight及全部输入原已由计划锁定。
+独审分别typed绑定两者并保留原字节，未改冻件或重跑生产；没有以字段名推定来源。
 
-独立性有明确边界：原始$H_\epsilon$与四物理导数球仍是共享的、
-已审查其模型及有向算术实现的输入；本轮没有重新运行第二套原始H引擎。
-多个复核路径亦共享Python整数算术。
-163、165、169的新组件具有原实际独审证据，第二轮审阅其理论、源码与接入，
-没有伪称所有组件在每轮都重新生成。
-完整资料、原始分数及来源SHA见仓库
+研究暂停后，现有上界又以不导入生产数学模块的整数交叉乘法复审，
+核完整$I$、四次幂、保存根区间、全部新旧差及三类32门槛；
+现有下界以新的整数端点及互不相交盒相减法重建，
+不导入原field或union模块，全部25系数和准确区间相同。
+主代理逐项核查两侧分析传递，并实际核明确有限collar的严格正余量。
+MATLAB8项只交叉核候选标量，不冒充原始势球或全部节点的独立证明。
+
+独立性有明确边界：原始$H_\epsilon$和四物理导数区间仍是共享的、
+已审查模型及有向算术实现的输入，没有重新运行第二套原始H引擎。
+多个路径亦共享Python整数算术；不同代码不等于形式化证明或独立硬件。
+SHA证明身份，不能代替球包含真值的数学资格。
+完整原始分数、来源SHA和精简复核入口见仓库
 \url{https://github.com/alizeisnotalice/Math-Research}的
-\path{cube-dim-5-bounds/}，具体入口见附录。
-旧三四维项目及原资料包仅作只读来源。
+\path{cube-dim-5-bounds/}及附录。
+旧三四维项目和原资料包保持只读。
 
 \section{结果范围}
-定理\ref{thm:main}同时保留Lebesgue背景、中心轴平行方体、共同半径、
-一般$L^1$及全部正尺度。它严格改进已核查公开、原内部及接续的上界32。
-完整新旧比较使用准确四次幂与有理根区间；较小模型成本只有在完整
-$g,I$与分析传递均闭合后才转化为算子界。
-局部$g_{115}$候选、后续band曲率与更细斜率准备未进入本定理。
-本稿没有提高冻结接续下界，也没有据此触发原双侧目标的完成声明。
+定理\ref{thm:main}保留Lebesgue背景、中心轴平行方体、共同半径、
+一般$L^1$和全部正尺度。
+继承的$C_{\rm cert}$严格超过已核查公开下界及原开工内部门槛；
+本轮没有提高冻结接续下界$L_{\rm ref}=C_{\rm cert}$。
+上界严格改善已核查公开、原开工内部及接续上界32，亦严格改善上一完整$U_{166}$。
+准确差值使用完整原分数与有理根区间，见\path{round020/final_bounds_gate.json}
+及\path{round020/primary_upper175_acceptance.json}。
+较小模型成本只有在完整$g,I$与分析传递均闭合后才转化为算子界。
+尚未通过独立数值审计的173候选不进入本定理。
+研究现已暂停，原双侧突破及后三轮条件没有成立；本稿不作整体目标已完成的声明。
 
 \appendix
 \section{短整数证书与完整准确定义}
 短证书取
 \[
  N=10^{20},\quad G_0=11231606208775453,\quad
- I_0=4474860503582229,\quad K=28936079.
+ I_0=4472478819809024,\quad K=28920678.
 \]
 从完整准确分数向外取整得到$g_L=G_0/N\le g_*$、
 $I\le I_U=I_0/N$。纯整数严格门为
@@ -514,12 +634,13 @@ $I\le I_U=I_0/N$。纯整数严格门为
  K^4G_0^5-3125I_0^4\,10^{44}>0.
 \]
 故命题\ref{prop:transfer}直接给$C_5<K/10^6$。
-该门由独立整数解析和交叉乘法再次实际核验；没有从小数构数。
+向外取整与纯整数严格差均以原准确分数核验。
+具体记录见\path{round020/paper_constants.json}；没有从小数构数。
 读者可作最小标量复核：
 \begin{lstlisting}[language=Python]
 G = 11231606208775453
-I = 4474860503582229
-K = 28936079
+I = 4472478819809024
+K = 28920678
 assert K**4 * G**5 > 3125 * I**4 * 10**44
 \end{lstlisting}
 此四行仅复核最后的标量门；完整$g,I$资格由正文及数据证书支付。
@@ -529,8 +650,8 @@ assert K**4 * G**5 > 3125 * I**4 * 10**44
  \begin{gathered}
  g_*=\frac{705019348242842195339748239684514494542987839533613919}{2^{192}},
  \\
- H_*=\frac{3994994121862399564161069833676547838746859}
- {91343852333181432387730302044767688728495783936}.
+ H_*=\frac{63885097602456963164362052754671454542181131}
+ {1461501637330902918203684832716283019655932542976}.
  \end{gathered}
 \]
 \[
@@ -540,31 +661,34 @@ assert K**4 * G**5 > 3125 * I**4 * 10**44
  {16879779982267146520848231959882343332105778642507237944706013844469724284863538912850515249620229857207350532657943}.
 $}
 \]
-原接纳证书为\path{round019/primary_upper166_acceptance.json}；
+原接纳证书为\path{round020/primary_upper175_acceptance.json}；
 其新旧四次幂差、根区间、三类32门槛比较以及完整来源SHA全部随文件给出。
 
 \section{复核入口与证据分类}
 \begin{longtable}{p{.35\textwidth}p{.55\textwidth}}
 \toprule 位置&用途及边界\\ \midrule\endhead
 \path{primary/finite_source_transfer.md}&有限源、同一接收集、一般输入和全尺度证明。\\
-\path{full_audit177/}&首轮完整审计；\path{addendum166/}补齐组合积分资格。\\
+\path{final_bounds020/}&暂停后现有上下界的逐项审计、实际代码和结果。\\
+\path{upper_secant175/}&新根对、参数等价及未来显式完整数学复核入口。\\
+\path{audit_secant175/}&175二分根、准确支付及完整树的实际独立审计。\\
 \path{second_audit178/}&第二轮全量积分reader、真实结果及短常数独审加页。\\
 \path{strict_g180/portable/}&第二轮全域空间reader及仓库数据参数视图；
 原始raw操作回连继承本轮实际31006，具体说明见其README。\\
 \path{upper_integral167/packet/}&完整原H端点输入。传输认证与数学认证严格区分。\\
 \path{upper_combined_archive179/}&组合积分数学JSON的去重字节恢复、来源映射与完整hash。\\
 \path{results/bounds_ledger.json}&完整准确账本、公开与内部比较、历史界及当前状态。\\
-\path{round019/final_upper_review.json}&主终审、共享依赖边界及本稿生成条件。\\
+\path{round020/final_bounds_gate.json}&现有上下界主终审、准确比较与生成条件。\\
 \bottomrule
 \end{longtable}
 
 数值候选、局部条件、完整严格证书、准确排除与计算故障在账本中分别记录。
 本稿不把准备期路径或schema失败当作数学反例；
-本轮两项第二轮全量reader均真实完成。
+继承的两项第二轮全量reader均曾真实完成；本次没有重放。
 为防止覆盖冻结证据，复核器使用新的输出目录；原始过程的PID和调用记录
 只证明其历史运行，不替代本次实际结果。
 
 \begin{thebibliography}{9}
+\footnotesize\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
 \bibitem{Aldaz2000}
 J. M. Aldaz. A remark on the centered $n$-dimensional Hardy--Littlewood maximal function.
 \emph{Czechoslovak Mathematical Journal}, 50 (2000), 103--112.
@@ -579,7 +703,7 @@ arXiv:1811.10478v2, 2020.
 \url{https://arxiv.org/abs/1811.10478}.
 \bibitem{Lin2026}
 Y. Lin. Two partial balayage principles for weak-type estimates.
-作者原始方法网页，2026年10月25日至26日核查。
+作者原始方法网页，2026年10月25日至27日核查。
 \url{https://coolrmal.github.io/articles/two-partial-balayage-principles/}.
 \end{thebibliography}
 \end{document}

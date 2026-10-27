@@ -1,0 +1,8 @@
+"""Audit explicit finite L1 witness for existing strict bound19943/10000;no search."""
+from pathlib import Path
+from fractions import Fraction as Q
+import hashlib,json,os,time
+P=Path(__file__).resolve().parents[1];out=P/'round020/finite_collar_result.json';assert not out.exists();reg=P/'round020/finite_collar_registration.json';r=json.loads(reg.read_bytes());f=P/r['certificate'];assert hashlib.sha256(f.read_bytes()).hexdigest()==r['certificate_sha256'];assert hashlib.sha256(Path(__file__).read_bytes()).hexdigest()==r['code_sha256'];start=time.monotonic();c=json.loads(f.read_bytes());assert c['retained_witness_count']==42
+AL=Q(c['ratio_interval'][0]);tau=Q(1,1<<32);N=1<<32;q=Q(19943,10000);erosion=32*42*10*tau;collar=Q(2*N+1,2*N+5)**5;lower=(AL-erosion)*collar;gap=lower-q;assert gap>0
+uU=Q(6,5);assert uU**5>2 and Q(1,2)+uU**3/4<1 and (1+uU)/4<1
+z={'status':'PASS_existing_lower_bound_explicit_finite_smoothing_witness','pid':os.getpid(),'seconds':time.monotonic()-start,'existing_threshold':str(q),'tau':str(tau),'N':N,'erosion_loss_upper':str(erosion),'collar_ratio':str(collar),'finite_receiver_ratio_lower':str(lower),'exact_positive_margin_over_existing_threshold':str(gap),'atom_count_and_L1_mass':str((2*N+5)**5),'bump_support_infinity_radius':str(tau/4),'radius_for_each_block':'r_l-tau/2, same in all five coordinates','strict_distance_margin':str(tau/4),'new_bound_or_parameter_search':False,'root_reisolations_or_union_recomputations':0,'source_sha256':r['certificate_sha256']};out.write_text(json.dumps(z,indent=2)+'\n');print(json.dumps({k:z[k] for k in ['status','pid','seconds','tau','N','atom_count_and_L1_mass']}))

@@ -1,0 +1,25 @@
+--- v2/run173.py
++++ v3/run173.py
+@@ -18,11 +18,13 @@
+    if any(p.exitcode is not None for p in processes):raise RuntimeError('child exited before gate')
+   assert not stop.is_set() and len(infos)==15 and len({r['pid'] for r in infos.values()})==15;atomic(O/f'actual_attempt{attempt:04d}_{phase}_pool_registration.json',{'master_pid':os.getpid(),'workers':[infos[i] for i in range(15)],'phase':phase,'before_new_band_weights_or_corners':True});print(json.dumps({'event':'registered15_before_gate','phase':phase,'master_pid':os.getpid(),'worker_pids':[infos[i]['pid'] for i in range(15)]}),flush=True);start.set()
+   while len(summaries)<15:
++   if stop.is_set():raise RuntimeError('fault_or_stop_before_all_summaries;enter_cleanup_now')
+    try:r=result.get(timeout=.1);assert r['shard_id'] not in summaries;summaries[r['shard_id']]=r
+    except queue.Empty:pass
+    if any(r['status'] not in ('complete','stopped_successful_prefix') for r in summaries.values()):stop.set()
+    for i,p in enumerate(processes):
+     if p.exitcode not in (None,0) and i not in summaries:stop.set();summaries[i]={'status':'process_fault','shard_id':i,'pid':p.pid}
++   if stop.is_set():raise RuntimeError('fault_or_stop_before_all_summaries;enter_cleanup_now')
+    if all(p.exitcode is not None for p in processes) and len(summaries)<15:
+     while True:
+      try:r=result.get_nowait();summaries.setdefault(r['shard_id'],r)
+@@ -108,7 +110,7 @@
+  for key in ('qualified168','qualified172_174','qualified_donor_endpoint_provenance'):
+   gate=auth[key];assert gate['accepted'] is True and sha(gate['path'])==gate['sha256']
+   if key=='qualified168':assert gate['path']==m['known_qualified168']['path'] and gate['sha256']==m['known_qualified168']['sha256']
+- plan=read(W/'finite_plan.json');assert plan['weighted_band_terms']==22295 and plan['sources']==455 and plan['fixed_pairs']==35872 and plan['max_concurrent_workers']==15;O=W/'run_v2_001'
++ plan=read(W/'finite_plan.json');assert plan['weighted_band_terms']==22295 and plan['sources']==455 and plan['fixed_pairs']==35872 and plan['max_concurrent_workers']==15;O=W/'run_v3_001'
+  if O.exists():assert a.resume_reviewed
+  else:assert not a.resume_reviewed;O.mkdir()
+  assert not (O/'complete_domain_candidate.json').exists();attempt=1

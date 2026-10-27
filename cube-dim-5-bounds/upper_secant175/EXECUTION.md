@@ -1,0 +1,23 @@
+# 175 实际候选（独审待接纳）
+
+本批只运行一次：controller60961，master60969 exit0；15worker60970–60984均exit0并join，所有实际进程已退出。consumer耗时1.907987291982863秒，外dispatch耗时2.193425584002398秒。没有fault、重启或新增scope。正常数学批无wallcap；故障专用有界清理未触发。
+
+准确UH175：
+
+`63885097602456963164362052754671454542181131/1461501637330902918203684832716283019655932542976`
+
+准确相对166减量：
+
+`34808347341429862215064584153310877768613/1461501637330902918203684832716283019655932542976`
+
+97971个active self均严格下降；全部97972个eff及52360个原根均严格下降。唯一nonactive的self保持原值，其eff可因子节点改进而下降。每行的新secant均被选中。完整节点逐项差值保存在run001/effective_nodes.json，而非只报根和。
+
+195942个新四次根的391884个准确边界余量、selected slope、相对原112的唯一总gain、除法余数和相对166的严格self差保存在390个checkpoint。worker输入各自单片，未读H缓存；没有新H/R/J、factor/mean、旧端点power或164旧witness计算。15个真实worker都在共同start门后运行，3帧ps记录存在；各进程user CPU约0.177–0.183秒、峰RSS约26.8–29.7MB（darwin ru_maxrss字节），详见execution_receipt.json和原worker result。不补跑作资源展示。
+
+源前后快照SHA相同：`5e96c4fcf476f42b4008831e2e603ed0e04d95e892e694f556b53e61ba6fb623`。原162/164/166及179冻结manifest保持不变。启动前按主要求新增原112 nodes/cert直接strictactive资格回绑与故障清理；先前v1准备快照在外scratch/preparation_v1保留，未启动任何v1实际数学。8个新小整数边界自检只做一次；启动前修订的数学函数AST除资格断言外未变，后续只重做语法/AST静态检查。
+
+外部实际根目录：`/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/upper_secant175`。冻结计划、所有输入/代码/输出SHA和独审入口统一见candidate_binding.json；逐项原结果见dispatch001/output_manifest.json。独立审计应采用不同求根路径并复核所有新根、总gain及完整树；不得通过生产结果标签替代验证。
+
+不重跑本批、不自动resume。若未来确需恢复失败片，必须另行授权并核identity/每chunk SHA；未封算术prefix先单独处置，避免重复消费。当前已成功，无恢复工作。
+
+本结果只为候选，不合成完整I或正式Cn。一般L1、全正共同尺度及完整奇异集/尾域沿既有029和已合格源。下界、三四维和旧冻结件未修改；未提交。
