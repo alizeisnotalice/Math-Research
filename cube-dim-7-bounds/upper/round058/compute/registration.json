@@ -1,0 +1,19 @@
+{
+  "batch": "R058",
+  "identity": "conditional ideal sourceband model; no operator bound",
+  "code_sha256": "57c1c09718d2d21bc55dafd3607994303cee61b3c43e6a5e4c634069f42acd6a",
+  "d": "1/5+(2/15)*i/127",
+  "a": "1/16+(3/8)*j/127",
+  "b": "9/16+(27/64)*k/127",
+  "i_j_k": "0..127 inclusive",
+  "tasks": 128,
+  "tuples_per_task": 16384,
+  "total_tuples": 2097152,
+  "precision_decimal": 80,
+  "workers": 15,
+  "qualifying": "a<b, mu<eta and c_model>0",
+  "objective": "log((qmax+d)/(qmin+d))*qmin/qmax - 2*mu",
+  "stop": "finite all tuples or first exception in affected chunk; persist receipts even on exception",
+  "registration_time_unix": 1793138802.7145889,
+  "output": "per chunk top32, count, source hash and timing; merged top64; no per-tuple storage"
+}

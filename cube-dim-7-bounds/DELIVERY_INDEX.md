@@ -25,3 +25,5 @@ R047实测峰1461.3% CPU≈14.61/15核，墙时61.06s/累计CPU385.03s，故平�
 最新已证：自然log n≥2^27时 Cn≤Phi_s<T−2^-16n；log n≥2^32时 Cn≤Phi_r<Phi_s。首项系数仍1，为内部严格结果。其他已证界继续按各自有效域取min。R056/R057在研究或数值诊断中，未进入本文已证结论。
 
 R057新有限批次及其独立审阅已归档，见[报告](upper/round057/REPORT.md)；本轮不产生Cn界。最终独立commit身份由Git log/同步receipt给出，避免把本提交自身hash写入自身。
+
+R058新有限批次及其独立审阅已归档，见[报告](upper/round058/REPORT.md)；本轮不产生Cn界。最终独立commit身份由Git log/同步receipt给出，避免把本提交自身hash写入自身。
