@@ -1,0 +1,13 @@
+# R023 fixed eight-pair scalar contract
+
+Main has explicitly authorized n7_truncated_numeric_terra to run this finite scalar batch only after locking these files. Theory owner uses independent clone base71570d6469db24e037fa763e32536bbe7852585e, writes only upper/round023/threshold_selection_theory, and executes no mathematical numerical computation/MATLAB/commit/push. No lower-bound work, sampling, phases, full kernels or optimizer.
+
+Fixed n7; a values32,36,40,64; tau values6,7. Evaluate exactly the Cartesian product of eight new pairs in parameters.json, in increasing a then increasing tau order. Do not repeat(a64,tau1), an old baseline, or any other prior parameter. The selection weights remain actual|I_j|/|aB_j|; tau affects only admission and the derived coverage/overlap constants.
+
+For each a compute common A=(1+2/a)^7 and B=(1+1/a)^7(1+7loga); share these four A/Bvalues between its two rows. Use512-bit Arb with exact rational a,tau, one pass, and record eight named outward K=(1+A/tau)(tau+B)enclosures. Verify by overlap with the algebraic expression A+B+tau+AB/tau; comparisons and exact ceil rounding are metadata checks, not extra parameter rows. Record actual transcendental call counts honestly. No extra sqrt-optimal tau row, parameter refinement, derivative root search or precision expansion is authorized.
+
+Round each row's actual outward upper endpoint strictly upward at denominator10^12 (if already on-grid, increment one unit), giving a rational upper bound. The smallest of these eight exact rational uppers certifies a valid final finite-grid C7bound. If rows overlap, retain the ambiguity about the grid minimizer rather than claiming unique/global optimality. Require each row positive and finite. The independent analytic check at a64,tau6 is K<1040858/21375<49 and may be checked against its interval; do not claim that this pure proof arose from the numerical run.
+
+Archive parameters, source/prehash, program/checker, eight exact dyadic endpoints, rational ceilings and finite receipt. A checker may recompute the same eight scalar rows as verification, but no new scientific rows. Report CPU/wall as scalar work with no saturation claim. Any source mismatch/nonfinite/nonpositive/nonseparation stops with honest data and no adaptive expansion.
+
+The original allL1/allpositive-common-radii centered cube theorem is supplied by proof.md, not inferred from eight scalar values. Attribute the mechanism to SS, free-threshold formula to this derivation, and any scalar numeral to the actual executing owner. No exact-best-constant, globalparameter optimum, novelty or lower-bound claim.
