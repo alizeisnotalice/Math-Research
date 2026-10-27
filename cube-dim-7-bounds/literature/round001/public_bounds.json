@@ -1,0 +1,140 @@
+{
+  "schema": "cube7-public-bounds-v1",
+  "checked_at": "2026-10-27T10:29:45.526090+08:00",
+  "model": {
+    "dimension": 7,
+    "measure": "Lebesgue",
+    "averaging_sets": "centered axis-parallel cubes Q(x,r)=prod_i[x_i-r,x_i+r]",
+    "one_common_radius": true,
+    "radii": "all r>0",
+    "input": "all L1(R7)",
+    "weak_type": "alpha*measure{M f>alpha} <= c7*||f||1"
+  },
+  "status": "verified usable thresholds within this finite search; NOT a best-public-bound certification",
+  "search_scope": {
+    "initial_queries_executed": 12,
+    "registered_followup_queries": 1,
+    "exhaustive": false,
+    "full_cited_by_enumeration": false
+  },
+  "lower": {
+    "name": "A7",
+    "relation": "c7 >= A7",
+    "source": "L01",
+    "location": "Proposition1.4 printedp110 (PDFindex8)",
+    "expression": "(3/2)*((1+2^(1/7))/2)^6-(1/2)*(((3/2)*(1+2^(1/7))-2*(3/2)^(1/7))^6-((3-2^(1/7))/2)^6)",
+    "exact_rational_enclosure": [
+      "17752629254820047272220568874152422661392661475303/10000000000000000000000000000000000000000000000000",
+      "177526292548200472722205688741524226613926614753031/100000000000000000000000000000000000000000000000000"
+    ],
+    "decimal_enclosure": [
+      "1.77526292548200472722205688741524226613926614753030",
+      "1.77526292548200472722205688741524226613926614753031"
+    ],
+    "certificate": "a7-certificate.json",
+    "checker": "check_a7.py",
+    "proof_status": "published theorem plus exact arithmetic enclosure; not a new proof of the published theorem"
+  },
+  "upper": {
+    "value": 128,
+    "relation": "c7<=128",
+    "source": "L02",
+    "location": "Corollary3.5 arXiv1811.10478v2, PDFindex10 printedp11",
+    "derivation": "uniform in locally finite Borel measures bound2^7; specialize to Lebesgue",
+    "not_claimed": "sharpness for the fixed Lebesgue measure"
+  },
+  "inherited_lower_comparisons": [
+    {
+      "dimension": 1,
+      "bound": "(11+sqrt(61))/12",
+      "comparison": "<1.568<A7",
+      "source": "Melas result as explicitly recalled by L03/L04"
+    },
+    {
+      "dimension": 2,
+      "bound": "LinPhi",
+      "comparison": "Phi<1.686<A7",
+      "source": "L05 author README statement table",
+      "status": "author formalization statement read; Lean not rebuilt"
+    },
+    {
+      "dimension": 2,
+      "bound": "A2",
+      "comparison": "<A7 by exact rational checker",
+      "enclosure": [
+        "162119148079831528689821985630052117634055577148409/100000000000000000000000000000000000000000000000000",
+        "16211914807983152868982198563005211763405557714841/10000000000000000000000000000000000000000000000000"
+      ],
+      "source": "L01"
+    },
+    {
+      "dimension": 3,
+      "bound": "A3",
+      "comparison": "<A7 by exact rational checker",
+      "enclosure": [
+        "168820202462973485080134039679615707015615175162241/100000000000000000000000000000000000000000000000000",
+        "84410101231486742540067019839807853507807587581121/50000000000000000000000000000000000000000000000000"
+      ],
+      "source": "L01"
+    },
+    {
+      "dimension": 4,
+      "bound": "A4",
+      "comparison": "<A7 by exact rational checker",
+      "enclosure": [
+        "172506716777628725704569214556833657460623808115489/100000000000000000000000000000000000000000000000000",
+        "17250671677762872570456921455683365746062380811549/10000000000000000000000000000000000000000000000000"
+      ],
+      "source": "L01"
+    },
+    {
+      "dimension": 5,
+      "bound": "A5",
+      "comparison": "<A7 by exact rational checker",
+      "enclosure": [
+        "174812463434848004015167190558829442732846884896517/100000000000000000000000000000000000000000000000000",
+        "87406231717424002007583595279414721366423442448259/50000000000000000000000000000000000000000000000000"
+      ],
+      "source": "L01"
+    },
+    {
+      "dimension": 6,
+      "bound": "A6",
+      "comparison": "<A7 by exact rational checker",
+      "enclosure": [
+        "35277149450790189793580942702977992308112294399459/20000000000000000000000000000000000000000000000000",
+        "11024109203371934310494044594680622596285091999831/6250000000000000000000000000000000000000000000000"
+      ],
+      "source": "L01"
+    }
+  ],
+  "excluded_as_direct_bounds": [
+    {
+      "source": "L07",
+      "reason": "Euclidean balls; O(sqrt(n)log n) is not a direct cube result"
+    },
+    {
+      "source": "L06 high-dimensional formula",
+      "reason": "Euclidean balls; planar-square upper only applies at n2"
+    },
+    {
+      "source": "P02",
+      "reason": "other measures and Euclidean balls"
+    }
+  ],
+  "unresolved_public_leads": [
+    {
+      "source": "P01",
+      "reason": "publisher fulltext403; no n7 finite explicit constant evaluated"
+    },
+    {
+      "source": "P03",
+      "reason": "asymptotic result; original full version not fixed/read and explicit n7 not evaluated"
+    }
+  ],
+  "internal_reference_excluded": {
+    "name": "n6R075",
+    "approx": "2.073015624830795685",
+    "reason": "internal, not public; separate research stream"
+  }
+}

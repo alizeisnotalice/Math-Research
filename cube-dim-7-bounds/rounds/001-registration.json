@@ -1,0 +1,32 @@
+{
+  "dimension": 7,
+  "registered_utc": "2026-10-27T02:13:10.041409+00:00",
+  "status": "running",
+  "operator": "Lebesgue centered axis-parallel cube, one common radius, general L1, all positive scales",
+  "source_package_sha256": "5b461b1962934a314be3d8e02ae74c2eafee3ea66f1061d5f30e8f22498876b5",
+  "source_commit": "77be2e97b708bbe58f365b291983a78a32d7ea1d",
+  "source_verify": {
+    "files": 1175,
+    "exit_code": 0,
+    "new_extraction": true
+  },
+  "batch_limits": {
+    "low_rank_pairs": 2016,
+    "low_rank_triples": 41664,
+    "rank4_subsets_max": 635376,
+    "lower_seeds": 2,
+    "lower_length_vectors_per_seed_max": 8192,
+    "lower_union_states_per_seed_max": 1048576
+  },
+  "wall_clock_limit": null,
+  "total_compute_limit": null,
+  "agents_model_ceiling": "gpt-6.1-sol",
+  "matlab_coordination": "main only; no clear/path reset",
+  "stop_conditions": [
+    "finite batch complete",
+    "competitive candidate found -> certification",
+    "state budget reached -> checkpoint, not candidate exclusion",
+    "input hash mismatch -> halt dependent check"
+  ],
+  "new_C7_bound": false
+}

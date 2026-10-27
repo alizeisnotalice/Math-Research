@@ -1,0 +1,55 @@
+{
+  "registered_utc": "2026-10-27T02:14:47.309397+00:00",
+  "dimension": 7,
+  "model": "Lebesgue centered axis-parallel cubes, common radius, all positive scales, general L1",
+  "seeds": [
+    {
+      "u": "positive root u^7=2",
+      "spacing": [
+        "1+u^4/2",
+        "(1+u)/2",
+        "(1+u)/2",
+        "(1+u)/2",
+        "(1+u)/2",
+        "(1+u)/2",
+        "(1+u)/2"
+      ]
+    },
+    {
+      "u": "positive root u^7=2",
+      "spacing": [
+        "1+u^5/2",
+        "(1+u)/2",
+        "(1+u)/2",
+        "(1+u)/2",
+        "(1+u)/2",
+        "(1+u)/2",
+        "(1+u)/2"
+      ]
+    }
+  ],
+  "lengths": {
+    "first": [
+      1,
+      2
+    ],
+    "tails": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "per_seed": 8192
+  },
+  "source_start": "odd -floor(ell/2), even 1-ell/2",
+  "source_mass": "prod(ell), each atom unit mass",
+  "radius": "mass^(1/7)/2",
+  "precision_denominator": "10^35",
+  "union": "full union via first-coordinate sweep then six-tail symmetric-orbit recursive sweep; rational inward/outward boxes; int coordinates common denominator 4D",
+  "deduplicated_state_limit_per_seed": 1048576,
+  "wall_limit": null,
+  "stop": "finish both finite seeds or preserve frontier on state exhaustion; no exclusion claim if exhausted",
+  "compare": "strict inner union lower against complete saved R075 upper; reference not reconstructed from display",
+  "git": "no commit or push",
+  "matlab": false
+}

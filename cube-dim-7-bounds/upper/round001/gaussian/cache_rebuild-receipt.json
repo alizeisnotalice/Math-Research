@@ -1,0 +1,79 @@
+{
+  "status": "completed",
+  "kind": "engineering cache recovery of exact original sample; not independent science",
+  "authorized_exception": "Parent explicitly allowed one deterministic seed replay solely to persist original shape cache, after original-only observable retention was disclosed. No new points or scientific sample count.",
+  "start_utc": "2026-10-27T02:27:19.480953+00:00",
+  "finish_utc": "2026-10-27T02:27:36.853307+00:00",
+  "wall_seconds": 17.372359417000553,
+  "cpu_seconds": 17.093915,
+  "original_rows_checked": 8192,
+  "original_observables_and_shape_diagnostics_bitwise_equal": true,
+  "blocks": [
+    {
+      "block": 0,
+      "rows_checked": 1024,
+      "all_original_observables_and_diagnostics_bitwise_equal": true
+    },
+    {
+      "block": 1,
+      "rows_checked": 1024,
+      "all_original_observables_and_diagnostics_bitwise_equal": true
+    },
+    {
+      "block": 2,
+      "rows_checked": 1024,
+      "all_original_observables_and_diagnostics_bitwise_equal": true
+    },
+    {
+      "block": 3,
+      "rows_checked": 1024,
+      "all_original_observables_and_diagnostics_bitwise_equal": true
+    },
+    {
+      "block": 4,
+      "rows_checked": 1024,
+      "all_original_observables_and_diagnostics_bitwise_equal": true
+    },
+    {
+      "block": 5,
+      "rows_checked": 1024,
+      "all_original_observables_and_diagnostics_bitwise_equal": true
+    },
+    {
+      "block": 6,
+      "rows_checked": 1024,
+      "all_original_observables_and_diagnostics_bitwise_equal": true
+    },
+    {
+      "block": 7,
+      "rows_checked": 1024,
+      "all_original_observables_and_diagnostics_bitwise_equal": true
+    }
+  ],
+  "new_independent_science_samples": 0,
+  "new_points": 0,
+  "cache_file": "/Users/zhengzhihao/Documents/Codex/2026-10-27/n-n-5-1-1-verify/work/cache/gaussian-round001/original-8192-shapes.npz",
+  "cache_file_bytes": 8757232,
+  "cache_sha256": "6dfa48bf8954a7d02270af5bda9c1d33d4fcaf0ba4f5e486589186b7f7c09552",
+  "cache_rebuild_registration_sha256": "caebb7c3952811b48b3c5be32246004b4fa2246009757c144a0593dd824b2a4c",
+  "locked_files_sha256": {
+    "observables.npz": "90372b8efc0d2c0f932f9a4eebeb42d64bb54318b85e600ba09f904a3af4af80",
+    "registration.json": "4c5b636158930bf5b5039f858828f9e44c32015b04ec09acee0a94bbdf2785f9",
+    "probe.py": "f435731686b5b0696780308d0f192a286fcb05de5fed7d09b693e29d1d2c85c5",
+    "results.json": "689369c636b7a39cbb74aaf508fe75fb3f0bad3aa90e6910980c2a8db40fafcb",
+    "receipt.json": "d848fab4a34c3b234ae5017477fafe2b6900ca357e6cd4a41f34dd784620548e",
+    "cache_rebuild.py": "ea838887caff12db06e2b2dccb6f9fe039d961bc6c0da1a6d26e7242846f73bf"
+  },
+  "cache_schema": {
+    "P": "original Dirichlet shape, 8192x64",
+    "A_inverse": "inverse of A=sum vvT/P; 8192x7x7; Sigma=A/(4R), with R already integrated out",
+    "det_A_minus_half": "positive shape determinant weight",
+    "logdet_A": "log determinant before exponentiation",
+    "scaled_A_cholesky": "Cholesky of A/wmax, reusable stable evaluation",
+    "A_scale_wmax": "A scaling factor for stored Cholesky",
+    "radial_D": "2 Gamma(65/2)/Gamma(32), floating value; exact formula in proof",
+    "potential_C": "1/(2 pi^(7/2)), floating value; exact formula in proof"
+  },
+  "future_point_formula": "Ghat(x)=C*D*mean(det_A_minus_half*(x^T A_inverse x)^(-3)); better numerically use stored scaled Cholesky and wmax; all floating point candidate values only",
+  "python_executable": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python"
+}

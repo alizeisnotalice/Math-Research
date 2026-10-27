@@ -1,0 +1,22 @@
+{
+  "recorded_utc": "2026-10-27T02:27:03.996930+00:00",
+  "installation": "MATLAB 26.1.0.3312084 R2026a Update4",
+  "serial_coordinator": "primary",
+  "successful_call": {
+    "code": "disp('CUBE7_SERIAL_PREFLIGHT'); disp(version); disp(feval(@(V) V.'*V,[ones(64,1),2*(dec2bin(0:63,6)-'0')-1])); disp(det(ones(7)-2*diag([0,ones(1,6)])));",
+    "observed": "marker/version; Gram diagonal64 offdiagonal0; determinant displayed64",
+    "scope": "finite numerical cross-check only; exact SymPy proof separate"
+  },
+  "later_symbolic_and_diagnostic_calls": {
+    "status": "tool error before usable output",
+    "error": "类型为 double 的变量不支持使用点进行索引。",
+    "mathematical_success_claimed": false
+  },
+  "workspace_policy": {
+    "clear_called": false,
+    "path_reset": false,
+    "cwd_change": false,
+    "new_figures": false,
+    "shared_state_repair_attempted": false
+  }
+}
