@@ -1,0 +1,58 @@
+{
+  "utc": "2026-10-27T04:21:40.775558+00:00",
+  "launcher": {
+    "tool": "exec_command",
+    "tool_exit_code": 0,
+    "cwd": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-brascamp108",
+    "shell_invocation": "nohup <venv-python> cube-dim-6-bounds/upper/round149/pair_pushforward_pilot/operator_observer.py > .../operator_observer.log 2>&1 < /dev/null &",
+    "shell_stdout": "observer_pid=68371",
+    "shell_stderr": "empty (tool output)",
+    "observer_pid": 68371
+  },
+  "observer": {
+    "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-brascamp108/cube-dim-6-bounds/upper/round149/pair_pushforward_pilot/operator_observer.py",
+    "sha256": "6b6b24da61ea1cae38112d8302658f4809750af163e32b28589a4c7f2dc5468e",
+    "log_path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-brascamp108/cube-dim-6-bounds/upper/round149/pair_pushforward_pilot/operator_observer.log",
+    "log_bytes": 0,
+    "source_sequence": "opens science stdout/stderr, then subprocess.Popen, then writes operator_handle.json; no handle implies child PID unavailable, does not prove absence of prior child"
+  },
+  "runner": {
+    "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-brascamp108/cube-dim-6-bounds/upper/round149/pair_pushforward_pilot/run_prepared.py",
+    "sha256": "50e292d2f04659fcad4965248981e44d6fb1d92d0ce6b0a40a2b540161a0727e",
+    "sequence": "run preflight then write started.json then mkdir case_outputs then pool workers; worker writes intent and started before compile_case; consult source lines 49-61, 71-78",
+    "fsync_note": "write helper lines 13-14 opens exclusive, flushes and fsyncs started.json before worker pool; worker writes and fsyncs intent and started before compile_case."
+  },
+  "ps_scope": "PID 68371 or exact target run_prepared.py path; current snapshot only",
+  "ps_exit": 0,
+  "ps_matches": [],
+  "observed_files": [
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-brascamp108/cube-dim-6-bounds/upper/round149/pair_pushforward_pilot/operator_observer.log",
+      "type": "file",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-brascamp108/cube-dim-6-bounds/upper/round149/pair_pushforward_pilot/operator_observer.py",
+      "type": "file",
+      "bytes": 2081,
+      "sha256": "6b6b24da61ea1cae38112d8302658f4809750af163e32b28589a4c7f2dc5468e"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-brascamp108/cube-dim-6-bounds/upper/round149/pair_pushforward_pilot/parent_release.json",
+      "type": "file",
+      "bytes": 1297,
+      "sha256": "2de7a93029cd1e92531056938bd50c5386bd530c329eb51bcc1bcf40b57de6db"
+    }
+  ],
+  "absent_required": [
+    "operator_handle.json",
+    "operator_science_stdout.txt",
+    "operator_science_stderr.txt",
+    "started.json",
+    "case_outputs",
+    "result.json",
+    "exit_receipt.json"
+  ],
+  "status": "UNKNOWN; no automatic retry; empty log is not proof of zero science"
+}

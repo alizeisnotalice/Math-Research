@@ -1,0 +1,104 @@
+{
+  "status": "CODE_ONLY_FOR_MAIN_APPROVAL_NOT_EXECUTION_AUTHORIZATION",
+  "author_directory": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-localmax-audit/cube-dim-6-bounds/upper/round149/finite_density_pilot",
+  "operator_target_directory": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-brascamp108/cube-dim-6-bounds/upper/round149/pair_pushforward_pilot",
+  "target_rule": "inspect existing target; never overwrite files or prior outputs",
+  "copy_exact_files": [
+    {
+      "path": "prepare.py",
+      "sha256": "fd838e51ad5cebf0ad5148284294bd89b967e6c95962ca8738c0fdf663f35faa",
+      "bytes": 10635
+    },
+    {
+      "path": "run_prepared.py",
+      "sha256": "50e292d2f04659fcad4965248981e44d6fb1d92d0ce6b0a40a2b540161a0727e",
+      "bytes": 13801
+    },
+    {
+      "path": "density_core.py",
+      "sha256": "6e5c41aa2ef449ccf0f3034d1d4dc9217a373bec2383d300304532fa335bfba6",
+      "bytes": 7738
+    },
+    {
+      "path": "PROOF.md",
+      "sha256": "3326dbd6e33724d14debef9d252c90262ce79f97c4708a2bef3cee8353c23281",
+      "bytes": 8457
+    },
+    {
+      "path": "OPERATOR.md",
+      "sha256": "2607639a5a24f2eb806513edc08c8abf6cd3992bc4d67e430ce1a339bbab43a5",
+      "bytes": 2128
+    }
+  ],
+  "phase_A_prepare_only": {
+    "requires_main_authorization": true,
+    "argv": [
+      "/usr/bin/nice",
+      "-n",
+      "10",
+      "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python",
+      "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-brascamp108/cube-dim-6-bounds/upper/round149/pair_pushforward_pilot/prepare.py"
+    ],
+    "environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    },
+    "max_invocations": 1,
+    "science_workers": 0,
+    "density_generations": 0,
+    "k_integral_native_special_function_calls": 0,
+    "allowed_outputs": [
+      "case_packet.json",
+      "source_manifest.json",
+      "registration.json",
+      "prepare_receipt.json"
+    ],
+    "no_automatic_retry": true
+  },
+  "phase_B_science_queued_not_released": {
+    "requires_concrete_main_and_independent_hash_release": true,
+    "queue_priority": "round148 native work first; main decides resources/time",
+    "argv": [
+      "/usr/bin/nice",
+      "-n",
+      "10",
+      "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python",
+      "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-brascamp108/cube-dim-6-bounds/upper/round149/pair_pushforward_pilot/run_prepared.py"
+    ],
+    "environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    },
+    "max_controller_invocations": 1,
+    "worker_limit_from_release": [
+      1,
+      15
+    ],
+    "max_NEW_cases": 100,
+    "excluded_old_keys": 3,
+    "max_stage_checks": 500,
+    "max_literal_endpoint_substitutions": 220000,
+    "time_limit": null,
+    "allowed_outputs": [
+      "started.json",
+      "case_outputs/*/intent.json",
+      "case_outputs/*/started.json",
+      "case_outputs/*/stage_*.json",
+      "case_outputs/*/result.json",
+      "case_outputs/*/receipt.json",
+      "completion_*.json",
+      "result.json",
+      "exit_receipt.json"
+    ],
+    "k_integral_native_special_function_calls": 0,
+    "old_6D_grid_replays": 0,
+    "new_beta2_or_C6_claim_permitted": false
+  },
+  "Sol_actions_completed": "source writing and syntax AST parsing only; no prepare.py, preflight, worker or density execution"
+}
