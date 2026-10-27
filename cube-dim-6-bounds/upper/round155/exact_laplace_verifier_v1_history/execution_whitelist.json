@@ -1,0 +1,79 @@
+{
+  "status": "CODE_ONLY_MAIN_PREPARE_APPROVAL_REQUIRED_NOT_SCIENCE_RELEASE",
+  "author_directory": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-pushforward147-audit/cube-dim-6-bounds/upper/round155/exact_laplace_verifier",
+  "operator_target_directory": "/Users/zhengzhihao/Desktop/T/Math-Research-cube6-sol-brascamp108/cube-dim-6-bounds/upper/round155/exact_laplace_verifier",
+  "copy_exact_files": [
+    {
+      "path": "prepare.py",
+      "sha256": "bd664dbb68e1d1ebb51716244d1704701bcdc46dfd23dfd3705cdffef70b5295",
+      "bytes": 5685
+    },
+    {
+      "path": "verifier_core.py",
+      "sha256": "28b30155027673047d84610d6b46a82f2607c9def4c85ba664930435aea89706",
+      "bytes": 8351
+    },
+    {
+      "path": "run_prepared.py",
+      "sha256": "95ccfe7a87e1f870be25ffe1d2724a1a4a0d13fce2a8e432b9955a77514df12b",
+      "bytes": 4843
+    },
+    {
+      "path": "PROOF.md",
+      "sha256": "960b4824a115149a09df23a4756ccf6d76ba4045c31778b721a1b5305958479d",
+      "bytes": 7227
+    },
+    {
+      "path": "OPERATOR.md",
+      "sha256": "52b661b37bdfa0f709d20e437b7b6d25321be546848fd22a695ef23b95a6ac25",
+      "bytes": 2356
+    }
+  ],
+  "phase_A_prepare_only": {
+    "entry": "prepare.py",
+    "invocations": 1,
+    "density_generations": 0,
+    "FLINT_runtime_calls": 0,
+    "selection": "exactly one completed immutable NEW149 case for each m2..6; greatest completed direction count then first case ID; require>=3 direction counts",
+    "outputs": [
+      "case_packet.json",
+      "source_manifest.json",
+      "registration.json",
+      "prepare_receipt.json"
+    ],
+    "no_retry": true
+  },
+  "phase_B_not_released": {
+    "entry": "run_prepared.py",
+    "requires_concrete_main_and_independent_exact_hash_release": true,
+    "workers": 1,
+    "nice_minimum": 15,
+    "single_thread_environment": [
+      "OMP_NUM_THREADS",
+      "OPENBLAS_NUM_THREADS",
+      "MKL_NUM_THREADS",
+      "VECLIB_MAXIMUM_THREADS",
+      "NUMEXPR_NUM_THREADS"
+    ],
+    "case_limit": 5,
+    "stage_limit": 15,
+    "native_arithmetic_call_limit_total": 3000000,
+    "common_factor_limit": 64,
+    "common_degree_limit": 256,
+    "time_limit": null,
+    "new_density_generations": 0,
+    "k_or_legacy_native_integral_calls": 0,
+    "SymPy_or_primary_baseline_replays": 0,
+    "no_retry": true,
+    "allowed_outputs": [
+      "started.json",
+      "case_*_stage_*.json",
+      "case_*_receipt.json",
+      "result.json",
+      "exit_receipt.json"
+    ]
+  },
+  "no_live149_151_source_or_algorithm_changes": true,
+  "native_terms": "exact FLINT integer algebra is intentionally counted separately; zero legacy integral kernels",
+  "new_beta2_Cn_claim_permitted": false
+}
