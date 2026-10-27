@@ -1,0 +1,5 @@
+# R024 independent pure parameter-family audit registration
+
+2026-10-27. Independent no-hardlinks partial/sparse clone atb135609efca22428ac8f6a9c9485d114a4a03846. Sole writable scope audit/round024/parameter_theory; all sources/earlier rounds read-only. No mathematical numerical/symbolic software, scalar evaluation, endpoint calculation, bisection, samples, phase/DD, MATLAB, commit or push.
+
+Audit the fixed n7 family A=(1+2/a)^7, B=(1+1/a)^7(1+7log a), F=(sqrtA+sqrtB)^2, a>1. Independently derive H' and R, prove the1<a<=7/N<=0/N>0 partitions, strict monotonicity and infinity limits, and the unique global minimum of this family only. Read the frozen source when available, check the one a36 expression, endpoint-sign prerequisite and exactly80dyadic-bisection contract without executing them. Distinguish family-minimum bounds from C7upper/lower or globally best proofs. Hash metadata, write proofreview/sources/receipt/manifest and stop. Parent retains mathematical integration and numerical-certificate responsibility.

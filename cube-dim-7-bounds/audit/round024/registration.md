@@ -1,0 +1,1 @@
+R024 primary: finite two symbolic derivative identities before numerical audit; no optimization or old baseline. SymPy is algebraic verification only, not the domain/global theorem proof. Program and result are preserved. Later independent Fraction certificate will use saved candidate and final two bracket endpoints only; no 80-step scientific replay.
