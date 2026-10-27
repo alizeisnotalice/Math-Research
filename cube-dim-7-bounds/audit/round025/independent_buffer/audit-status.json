@@ -1,0 +1,29 @@
+{
+  "round": "025",
+  "responsibility": "independent_buffer",
+  "verdict": "PASS",
+  "proof_sha256": "40767eabfdb50c66ab3d8752e62160f6947dbc0fcaf8d03d6f2cf2a86ded3a45",
+  "author_proof_read_before_freeze": false,
+  "independence": "self-contained reconstruction from parameters; no other auditor verdict used",
+  "n": "positive integer",
+  "parameters": {
+    "a": ">1 finite before limit",
+    "t": ">1 strict",
+    "tau": ">0"
+  },
+  "finite_bound": "(1+(1+1/t+1/a)^n/tau)*(tau+(1+1/a)^n*(1+n*log(t)))",
+  "limit_bound": "(1+(1+1/t)^n/tau)*(tau+1+n*log(t))",
+  "optimized_tau_bound": "((1+1/t)^(n/2)+sqrt(1+n*log(t)))^2",
+  "optimizer_tau": "sqrt((1+1/t)^n*(1+n*log(t)))",
+  "critical_checks": [
+    "large r_j>=t>1 implies j<k, no self charge",
+    "covering dilation b+1, not b",
+    "small cumulative volumes use disjoint increments of unstarred small balls",
+    "finite sum layer-cake includes radius1 atom",
+    "a-to-infinity limits only constants for same all-L1 all-r operator"
+  ],
+  "numerical_computation_performed": false,
+  "matlab_used": false,
+  "literature_search_performed": false,
+  "commit_push_performed": false
+}

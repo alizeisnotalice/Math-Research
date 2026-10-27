@@ -1,11 +1,9 @@
-# 七维真实状态（R023）
+# 七维真实状态（R025）
 
-UPPER_ACTIVE；LOWER_PAUSED。严格2.136578727666<C7<46.650446233303；完整下界准确分数在R006，完整上界表达式、准确证书和一般输入/全尺度证明在R023。目标未完成，未宣称最优或公开发表。
+UPPER_ACTIVE；LOWER_PAUSED。严格C7>2136578727666/10^12；当前完整算子上界C7<29059800754803/1000000000000。完整准确表达式/新旧比较及源hash在results/bounds_ledger.json与rounds/025.md；目标未完成，不称最优或公开发表。
 
-固定Lebesgue、中心轴平行方体、所有坐标共同半径、一般L1和全部正尺度。直接selection上界不需global Green g。自由eligible阈值τ的完整机制已主审/独审通过；8预登记pairs的winner(36,7)经512bit与主纯Fraction两路实际认证。
+固定Lebesgue、中心共同半径方体、一般L1、全部正尺度。当前直接selection证明无需global Green g。R025 independent-buffer和常数a∞是数值上界取inf，不交换算子/selector极限。R024单峰只此参数族，候选值不包围minimumvalue。Green I<4018421141119/10^18仍有效，旧g失败记录保留，不重跑旧网格/phase。
 
-Green I<4018421141119/10^18有效；旧g目标由R015真实G点反驳，两个粗Gaussian proxy和两节点moment路线分别有R017/R018精确障碍。不要重启失败g网格或复算旧通过phase。R020单一K4模板不是完整G提速。R022初次保存错误与准确复用29续跑记录保留。
+下界57余事件不启动，原三四维项目及暂停不改。主串行MATLAB不clear/path/cwd重置；Sol推导/Terra有限本地计算，严格证书/double校准分开。其他六维重计算不动。每轮独立Git提交，push/外部refs另记真实回执。
 
-下界57余事件不启动，原三四维项目及暂停状态不改。主协调本机MATLAB不clear/path/cwd重置；Sol推导、Terra有限本机数值，严格算术与double区分。其他六维重计算不动。R023每轮独立提交，最新push/外部refs以实际回执为准。
-
-下一工作：另登记R024先用已证固定a下τ最优闭式，研究a参数单峰性；无任何大数值runner在此状态中声称已启动，恢复时先核真实句柄。
+R026有限83新functional与旧F复用真实句柄/终态需先核，不能重复启动；R027 cube-specific cap机制纯理论同步中，不作为已证界采用。

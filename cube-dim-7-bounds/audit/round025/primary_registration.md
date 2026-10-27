@@ -1,0 +1,1 @@
+R025 primary independent Fraction certification: exactly t=5,11/2,6 closed threshold rows plus existing fixed t5 tau20/3 calibration; rational log/atanh tails and integer sqrt, N128. No added t, optimizer, old threshold baseline or lower work. Complete theorem separately proved and independently reviewed.
