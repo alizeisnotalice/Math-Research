@@ -1,7 +1,7 @@
 # 当前状态：一般高维覆盖持续攻关
 
-HIGH_DIM_COVER_ACTIVE；LOWER_PAUSED；N7_SPECIFIC_STOPPED。最新完成R035反对角多壳能量：Cn≤T−n sqrt(loglogn/logn)/131072，对共同充分大n严格成立；显式维数门槛尚未认证，首项系数仍1。完整证明及独立fullscope ACCEPT均已封存。
+HIGH_DIM_COVER_ACTIVE；LOWER_PAUSED；N7_SPECIFIC_STOPPED。R036显式门槛已完整独立ACCEPT：loglogn≥128时Cn<T−n sqrt(loglogn/logn)/131072。R035反对角多壳能量证明保持冻结，首项系数仍1。准确比较与适用范围见results/general_cover_ledger.json，始终取适用旧新界最小值。
 
-准确新旧比较见results/general_cover_ledger.json及upper/round035/COMPARISON引用。新界并非在所有旧适用门槛处都更优，始终取适用界最小值。R036继续显式门槛认证与joint-payment机制；错误包络推导不得混作已认证结果。所有本机生产计算交Terra，Sol推导/审核，主整合负责。实际短批次未持续满CPU，禁止空转假负载。
+R037继续真实选择历史的pointwise包络框架障碍，以及joint-payment压缩的240几何/400pattern有限新批次；未运行部分不计证据。本机生产计算Terra负责，Sol推导/审核，主保留证明责任与MATLAB串行协调。短任务未持续满CPU，不虚报资源。
 
-goal active；不做七维专项、不恢复下界或旧三四维项目。旧13页论文仍有效较弱，尚未吸收R030–035，未称重编。第31轮起网络推送曾失败，保留独立提交，实际同步状态以Git核验为准。
+goal active；不做七维专项、不恢复下界或旧三四维项目。旧13页论文有效较弱，尚未吸收新覆盖结果，未声称重编。R031之后多个独立提交因网络推送失败保留待同步，实际接收以远端核验为准。
