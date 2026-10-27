@@ -1,6 +1,6 @@
 {
-  "effective_utc": "2026-10-27T02:04:18.429901+00:00",
-  "user_instruction": "简单任务的agent使用terra",
+  "effective_utc": "2026-10-27T04:27:21.863371+00:00",
+  "user_instruction": "Sol负责推导，Terra负责操作电脑数值计算；优先本机算力；低资源下界恢复；尽量用满CPU和有效内存工作集，无时间/总资源预算上限",
   "simple_tasks_model": "gpt-6.1-terra",
   "simple_tasks": [
     "inventory",
@@ -10,11 +10,29 @@
   ],
   "core_mathematics_model": "gpt-6.1-sol",
   "core_tasks": [
-    "mathematical proof",
-    "strict certification",
-    "independent mathematical audit"
+    "mathematical derivation",
+    "design numerical algorithms and finite packets",
+    "mathematical/static review",
+    "interpret and certify computer evidence"
   ],
   "astra_forbidden": true,
   "main_owns_proof_integration_and_push": true,
-  "existing_mathematical_agents_continue_without_restarting_computations": true
+  "existing_mathematical_agents_continue_without_restarting_computations": true,
+  "numerical_execution_model": "gpt-6.1-terra",
+  "mathematical_derivation_and_review_model": "gpt-6.1-sol",
+  "numeric_execution_tasks": [
+    "local Python/FLINT/SciPy/SymPy execution",
+    "process scheduling and monitoring",
+    "checkpoint and resource accounting",
+    "run independent saved checkers prepared by separate Sol auditors"
+  ],
+  "operator_owns_own_clone_outputs": true,
+  "sol_does_not_start_new_mathematical_computer_batches": true,
+  "main_owns_proof_integration_release_and_git": true,
+  "matlab_existing_shared_session_rule": "main serial coordination only; no clear/path reset or other-project interference",
+  "lower_priority": "USER_PAUSED; upper only",
+  "execution_time_or_total_resource_ceiling": null,
+  "resource_use": "Use available local CPU and RAM for effective registered worksets/shared caches; maintain stable recoverable programs; no artificial task-wide resource budget",
+  "previous_policy_sha256": "635b9a10fe6e1331cf54d39b0a2d449411f05d49e67f28ecb4c5f98a584e8596",
+  "local_compute_priority": "Terra performs approved upper numerical batches; use effective local concurrency/caches without time or task-wide resource caps"
 }
