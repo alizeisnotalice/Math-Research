@@ -212,6 +212,45 @@
       "full_cost": "Phi_simple=F(A_n(t),B_n(t)−gamma_simple*n), t=n/[(1−19/2^20)logn]",
       "mechanism_source": "upper/round051/flexible_budget/PROOF.md",
       "piecewise_minimum": "L>=2^32: Phi_raw from R053 is strictly smaller; otherwise keep Phi_simple and all other own-domain bounds"
+    },
+    {
+      "round": 56,
+      "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+      "full_proof": "upper/round056/refined_inverse/PROOF.md",
+      "proof_sha256": "6986ed9ec48b46f3136a9a56722d0092db4f2942d52e35c9f4de37eb279f399a",
+      "independent_audit": "audit/round056/refined_inverse/review.md",
+      "independent_audit_sha256": "51379eca8cb5a6a7714e89349e96c8c5cfc6c0933ec312d289e039788c10f83f",
+      "leading_coefficient": 1,
+      "public_status": "internal independently reviewed theorem; no publication/priority/global optimality claim",
+      "scope": "natural log(n)>=2^20",
+      "bound": "Cn<=Phi56<T−n/40; T=nlogn−nloglogn",
+      "explicit_threshold": "log(n)>=2^20",
+      "parameters": {
+        "d": "3/10",
+        "sigma": "7/100",
+        "chi": "7/200",
+        "epsilon0": "1/16777216",
+        "epsJ_N_Ret_S_T_D": "1/1024",
+        "epsA": "1/64",
+        "source_q": [
+          "31/40",
+          "37/40"
+        ],
+        "target_r": [
+          "43/40+2^-20",
+          "49/40−2^-20"
+        ],
+        "P0": "65275/65536",
+        "Ulo": "2671053/2686976",
+        "Uhi": "2686976/2671053",
+        "mass_lower": "259465051078193863093554363/2018111068113594386771608802",
+        "M": "21/8",
+        "gamma": "172531397335235056462877787662549380239/1643616601687301779182642153860479582208",
+        "craw": "4540103740365747796769139175593735286771/152856343956919065463985720309024601145344"
+      },
+      "full_cost": "Phi56=F(A_n(t),B_n(t)−gamma56*n), t=n/[(93/100)logn]",
+      "old_full_cost_comparison": "strictly smaller than R053/055 on their own actual domains; other known old formulas retain own hypotheses; exact lower-envelope report/comparison",
+      "mechanism": "source-face count normalization, exact target column2, per-source-face inverse Chebyshev then mixture; new d<=1/3 proof"
     }
   ],
   "unaccepted": [
@@ -245,7 +284,8 @@
     "upper/round055/REPORT.md",
     "upper/round054/REPORT.md",
     "upper/round057/REPORT.md",
-    "upper/round058/REPORT.md"
+    "upper/round058/REPORT.md",
+    "upper/round056/REPORT.md"
   ],
   "accepted_scoped_mechanisms": [
     {
@@ -322,9 +362,105 @@
       "report": "upper/round058/REPORT.md",
       "new_Cn_bound": false,
       "status": "conditional ideal-model finite search and single exact certificate audited; no newCn"
+    },
+    {
+      "round": 56,
+      "report": "upper/round056/REPORT.md",
+      "status": "finite supporting diagnostics independently facts-audited; theorem independently proved, not inferred from samples",
+      "target_combinations": 61440,
+      "integrals": 30720,
+      "new_Cn_from_diagnostics_alone": false
     }
   ],
   "strongest_asymptotic": {
+    "round": 56,
+    "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+    "full_proof": "upper/round056/refined_inverse/PROOF.md",
+    "proof_sha256": "6986ed9ec48b46f3136a9a56722d0092db4f2942d52e35c9f4de37eb279f399a",
+    "independent_audit": "audit/round056/refined_inverse/review.md",
+    "independent_audit_sha256": "51379eca8cb5a6a7714e89349e96c8c5cfc6c0933ec312d289e039788c10f83f",
+    "leading_coefficient": 1,
+    "public_status": "internal independently reviewed theorem; no publication/priority/global optimality claim",
+    "scope": "natural log(n)>=2^20",
+    "bound": "Cn<=Phi56<T−n/40; T=nlogn−nloglogn",
+    "explicit_threshold": "log(n)>=2^20",
+    "parameters": {
+      "d": "3/10",
+      "sigma": "7/100",
+      "chi": "7/200",
+      "epsilon0": "1/16777216",
+      "epsJ_N_Ret_S_T_D": "1/1024",
+      "epsA": "1/64",
+      "source_q": [
+        "31/40",
+        "37/40"
+      ],
+      "target_r": [
+        "43/40+2^-20",
+        "49/40−2^-20"
+      ],
+      "P0": "65275/65536",
+      "Ulo": "2671053/2686976",
+      "Uhi": "2686976/2671053",
+      "mass_lower": "259465051078193863093554363/2018111068113594386771608802",
+      "M": "21/8",
+      "gamma": "172531397335235056462877787662549380239/1643616601687301779182642153860479582208",
+      "craw": "4540103740365747796769139175593735286771/152856343956919065463985720309024601145344"
+    },
+    "full_cost": "Phi56=F(A_n(t),B_n(t)−gamma56*n), t=n/[(93/100)logn]",
+    "old_full_cost_comparison": "strictly smaller than R053/055 on their own actual domains; other known old formulas retain own hypotheses; exact lower-envelope report/comparison",
+    "mechanism": "source-face count normalization, exact target column2, per-source-face inverse Chebyshev then mixture; new d<=1/3 proof"
+  },
+  "current_paper": {
+    "round": 54,
+    "pages": 20,
+    "source": "paper/main.tex",
+    "pdf": "paper/main.pdf",
+    "main_tex_sha256": "17e3de43f0d841a285dbfcaf8ff12c57f9670270aab9ce95cf7fe5ce359b9554",
+    "pdf_sha256": "ae8377485c5cda970e1b2de8159b7c959f701e7d80d4dd901923aaaaab80606d",
+    "mathematical_review": "audit/round054/manuscript/review.md",
+    "new_Cn_bound": false
+  },
+  "strongest_explicit": {
+    "round": 56,
+    "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+    "full_proof": "upper/round056/refined_inverse/PROOF.md",
+    "proof_sha256": "6986ed9ec48b46f3136a9a56722d0092db4f2942d52e35c9f4de37eb279f399a",
+    "independent_audit": "audit/round056/refined_inverse/review.md",
+    "independent_audit_sha256": "51379eca8cb5a6a7714e89349e96c8c5cfc6c0933ec312d289e039788c10f83f",
+    "leading_coefficient": 1,
+    "public_status": "internal independently reviewed theorem; no publication/priority/global optimality claim",
+    "scope": "natural log(n)>=2^20",
+    "bound": "Cn<=Phi56<T−n/40; T=nlogn−nloglogn",
+    "explicit_threshold": "log(n)>=2^20",
+    "parameters": {
+      "d": "3/10",
+      "sigma": "7/100",
+      "chi": "7/200",
+      "epsilon0": "1/16777216",
+      "epsJ_N_Ret_S_T_D": "1/1024",
+      "epsA": "1/64",
+      "source_q": [
+        "31/40",
+        "37/40"
+      ],
+      "target_r": [
+        "43/40+2^-20",
+        "49/40−2^-20"
+      ],
+      "P0": "65275/65536",
+      "Ulo": "2671053/2686976",
+      "Uhi": "2686976/2671053",
+      "mass_lower": "259465051078193863093554363/2018111068113594386771608802",
+      "M": "21/8",
+      "gamma": "172531397335235056462877787662549380239/1643616601687301779182642153860479582208",
+      "craw": "4540103740365747796769139175593735286771/152856343956919065463985720309024601145344"
+    },
+    "full_cost": "Phi56=F(A_n(t),B_n(t)−gamma56*n), t=n/[(93/100)logn]",
+    "old_full_cost_comparison": "strictly smaller than R053/055 on their own actual domains; other known old formulas retain own hypotheses; exact lower-envelope report/comparison",
+    "mechanism": "source-face count normalization, exact target column2, per-source-face inverse Chebyshev then mixture; new d<=1/3 proof"
+  },
+  "strongest_asymptotic_pre_R056": {
     "round": 51,
     "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
     "full_proof": "upper/round051/flexible_budget/PROOF.md",
@@ -355,17 +491,7 @@
     },
     "instantiated_corollary": "Cn<T−2^-16n eventually, via independently checked fixed raw tuple"
   },
-  "current_paper": {
-    "round": 54,
-    "pages": 20,
-    "source": "paper/main.tex",
-    "pdf": "paper/main.pdf",
-    "main_tex_sha256": "17e3de43f0d841a285dbfcaf8ff12c57f9670270aab9ce95cf7fe5ce359b9554",
-    "pdf_sha256": "ae8377485c5cda970e1b2de8159b7c959f701e7d80d4dd901923aaaaab80606d",
-    "mathematical_review": "audit/round054/manuscript/review.md",
-    "new_Cn_bound": false
-  },
-  "strongest_explicit": {
+  "strongest_explicit_pre_R056": {
     "round": 55,
     "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
     "full_proof": "upper/round055/simple_tuple_threshold/PROOF.md",

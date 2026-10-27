@@ -27,3 +27,5 @@ R047实测峰1461.3% CPU≈14.61/15核，墙时61.06s/累计CPU385.03s，故平�
 R057新有限批次及其独立审阅已归档，见[报告](upper/round057/REPORT.md)；本轮不产生Cn界。最终独立commit身份由Git log/同步receipt给出，避免把本提交自身hash写入自身。
 
 R058新有限批次及其独立审阅已归档，见[报告](upper/round058/REPORT.md)；本轮不产生Cn界。最终独立commit身份由Git log/同步receipt给出，避免把本提交自身hash写入自身。
+
+R056已新增完整严格Cn定理：自然log n≥2^20时Cn<T−n/40，见[最终报告](upper/round056/REPORT.md)及[完整独审](audit/round056/refined_inverse/review.md)。当前20页PDF范围仍至R055；R060稿待新终审后替换。R057提交464637579f8d71b4200a2876a2d6cd9f5d6d1941、R058提交174473ceb8c1f7287ccc422df841085945b1cc1b均已推送readback；R054提交4474b8be0cc47c904b23a5327108e37b5e6aea79。
