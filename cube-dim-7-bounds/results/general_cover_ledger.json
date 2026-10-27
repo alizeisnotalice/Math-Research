@@ -1,0 +1,61 @@
+{
+  "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+  "status": "active research; lower paused and n7-specific stopped",
+  "current_round": 35,
+  "accepted": [
+    {
+      "round": 34,
+      "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+      "L": "log n",
+      "W": "nL−nlogL+(3logL+1)n/L+(9(logL)^2+1)n/L²",
+      "bound": "Cn<W−n/(20sqrt L)",
+      "threshold": "L>=4096",
+      "proof": "upper/round034/constant_theory/PROOF.md",
+      "independent_ACCEPT": true,
+      "public_status": "internal strictly proved, not claimed published or globally best",
+      "leading_coefficient": 1,
+      "stronger_rational_candidates": [
+        {
+          "Y": 64,
+          "q": "27904293101/500000000000",
+          "L_min": 4096
+        },
+        {
+          "Y": 256,
+          "q": "74275164113/1000000000000",
+          "L_min": 65536
+        }
+      ],
+      "negative_remainder": "L>=2^22: Cn<T−n/(40sqrt L); independent threshold audit/round032/general_cover/q005_threshold.md"
+    },
+    {
+      "round": 35,
+      "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+      "scope": "all sufficiently large integer dimensions; one absolute common threshold, not yet explicit",
+      "L": "log n",
+      "l": "log L",
+      "same_t": "n/(L−3logL)",
+      "delta": "n sqrt(l/L)/65536",
+      "same_t_bound": "Cn<=F(A,B−delta)<W−delta",
+      "negative_remainder": "Cn<=nlogn−nloglogn−n sqrt(loglogn/logn)/131072",
+      "proof": "upper/round035/energy_theory/PROOF.md",
+      "proof_sha256": "f7d98eb21b89d83264053fda2c594387387facfdcbdbec7cf83a41e5dd55f0bd",
+      "independent_fullscope_audit": "audit/round035/energy_theory/proof_review.md",
+      "status": "internal strict proof, independent ACCEPT; not claimed published or globally best",
+      "comparison_rule": "minimum of applicable old/new bounds; R035 beats R034 q only when logL>65536²q² and both apply",
+      "leading_coefficient": 1
+    }
+  ],
+  "unaccepted": [
+    "explicit R035 numerical start dimension",
+    "leading coefficient below 1",
+    "global optimality of cover family"
+  ],
+  "public_comparison": "only previously checked original sources; internal results not claimed published",
+  "source_reports": [
+    "upper/round030/REPORT.md",
+    "upper/round033/REPORT.md",
+    "upper/round034/REPORT.md",
+    "upper/round035/REPORT.md"
+  ]
+}
