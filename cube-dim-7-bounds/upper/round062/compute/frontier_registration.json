@@ -1,0 +1,24 @@
+{
+  "batch": "R062 frontier pilot",
+  "scope": "finite layered ideal model only; no C_n theorem",
+  "code_sha256": "6ded8207232f07d0ea5364d5c03d3eb0b2b7ebe99f18326d4e98e844c0106c2a",
+  "d": "9/50+(23/150)*i/31, i=0..31",
+  "qhi": "9/10+(9/100)*k/31, k=0..31",
+  "q_global_min": "1-d",
+  "J": [
+    16,
+    32,
+    64,
+    128
+  ],
+  "tuple_count": 4096,
+  "band_evaluations": 245760,
+  "tasks": 128,
+  "workers": 15,
+  "decimal_digits": 80,
+  "objective": "sum_j log((qhi_j+d)/(qlo_j+d))*qlo_j/qhi_j - 2 max_j mu_j",
+  "mu": "(qlo_j+d)/qlo_j * log(1-d/[2(qlo_j+d)])^2",
+  "eligible": "all mu_j < (1-qhi_j)/(2*qhi_j), qhi>qlo",
+  "stop": "finite all tuples, each task halts on exception with receipt",
+  "registered_unix": 1793139989.190906
+}

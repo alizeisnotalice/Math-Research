@@ -1,0 +1,23 @@
+{
+  "batch": "R062 frontier_v2",
+  "scope": "finite layered ideal model only; not an operator theorem",
+  "code_sha256": "aa9da32b4f6d195bdc44f7e57013c6c5f8737aaf98003b5482119f281abec4ed",
+  "d": "53/200+(3/100)*(2*i+1)/512, i=0..255",
+  "qhi": "479/500+(1/100)*(2*k+1)/512, k=0..255",
+  "q_global_min": "1-d",
+  "J": [
+    256,
+    512
+  ],
+  "old_pilot_fraction_overlap": 0,
+  "tuple_count": 131072,
+  "band_evaluations": 50331648,
+  "tasks": 256,
+  "workers": 15,
+  "decimal_digits": 80,
+  "objective": "sum_j log((qhi_j+d)/(qlo_j+d))*qlo_j/qhi_j - 2 max_j mu_j",
+  "mu": "(qlo_j+d)/qlo_j * log(1-d/[2(qlo_j+d)])^2",
+  "eligible": "all mu_j < (1-qhi_j)/(2*qhi_j)",
+  "stop": "finite tuples; affected chunk stops on first exception with receipt",
+  "registered_unix": 1793140101.3609622
+}

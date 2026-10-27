@@ -35,3 +35,5 @@ R059新增eventual完整严格Cn<T−n/10，无显式N，见[报告](upper/round
 R060当前24页论文已全文数学终审、主实际双编译/全页图审，见[PDF](paper/main.pdf)与[报告](upper/round060/REPORT.md)，范围R056/R059。R059提交0937192e6b5cef98679a144176fe4be1fd23a3dd已远端确认。R060自身最终commit以真实同步receipt/Git log为准。
 
 R063完整新显式域：自然log n≥2^33有Cn<T−n/10，见[门槛报告](upper/round063/REPORT.md)及[独审](audit/round063/wideband_threshold/review.md)。R060当前24页论文提交2f393a17f443f10411fa9ea435fd88fd5350c14a已远端确认，正文冻结至R056/R059，不包含本轮新门槛。
+
+R062分层有限探索/准确条件证书见[报告](upper/round062/REPORT.md)，15workers真实v2峰14.588核、平均13.57核/136秒；不单独宣布Cn。R063提交a4da5e5d5744e31a8536923043e3e00c8a4b8830已远端确认。
