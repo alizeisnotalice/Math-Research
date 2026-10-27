@@ -1,0 +1,5 @@
+# R012 independent full-generic evidence/interface audit registration
+
+2026-10-27. Only audit/round012/kernel_full/ writable in new independent clone. Old sealed files and other workers read-only. No DD/phase/newpoint/scientific kernel re-evaluation, MATLAB, subagents or commit/push.
+
+Before arithmetic execution fixed scope: full source/evidence review of R012 generator and copied frozen R011 kernel; verify exact physical dyadic source2710/epsilon1/1024, lex5040permutation chunks×64halfphases, first4verbatim reused normalized R011 chunks,5036new tasks; same256bit signed/cache semantics; no double normalization or phase omission. Independently Fraction-sum all5040 saved normalized chunk dyadic intervals, convert their exact endpoint sums to768bit final outward rational endpoints, verify stored final enclosure, positivity and width<=1e-12. No scientific phase or scalar DD test. Audit count/CPU/worker provenance without claiming full15core saturation; new H is a single fixed point only, no g/I/Cn. Portable checker stdout-only with source-directory args. Preserve actual failures/repairs/hashes, stop after this batch.
