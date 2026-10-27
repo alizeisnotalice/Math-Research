@@ -43,3 +43,5 @@ python3 -B cube-dim-7-bounds/audit/round001/lower/recheck.py
 第004轮完整原G积分预算严格降低为 I<8179950070308/10^18；仍无全域g，Cn上界仍128。只读可携带入口：`python3 -B cube-dim-7-bounds/src/check_primary_round004.py`（python-flint）。
 
 第005轮完整I<7730422817512/10^18，仍无新Cn上界。下界按用户最新指令恢复低资源，主要资源上界。可携带全账本标量复核：audit/round005/radau/minchecker.py；主准确接口src/check_primary_round005.py，均stdout-only。
+
+第006轮：严格C7>2136578727666/10^12，上界仍128；完整I<7723627498344/10^18但无全域g。完整portable审计audit/round006/radau4/minchecker.py及lower/recheck.py；主准确接口src/check_primary_round006.py。下界低资源，上界优先。
