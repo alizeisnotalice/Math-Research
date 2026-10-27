@@ -1,0 +1,551 @@
+\subsection{有限方向势的奇异分层与卷积比较}
+\label{gr:sec}
+
+本节建立从有限方向 Cauchy 半群到立方体极大算子的比较原理。
+方法取自 Lin 的势核与障碍分解思路\cite{Lin2026}；下面针对八维有限方向模型给出完整证明。
+其要点是先证明 Green 势的正部具有全空间的有限正源，再用一个与半径无关的障碍集同时控制所有卷积尺度。
+有限方向造成的低秩奇异集必须在这一过程中一并处理。
+
+\subsubsection{半群、生成元与奇异集}
+
+设 $v_1,\ldots,v_m\in\R^8\setminus\{0\}$ 张成 $\R^8$，$c_j>0$。
+方向允许平行或重复，以下始终使用给定向量，不将其单位化。
+记
+\[
+ q_a(s)=\frac{a}{\pi(a^2+s^2)},\qquad
+ X_t=\sum_{j=1}^m v_jZ_{j,t},
+ \qquad Z_{j,t}\sim q_{c_jt},
+\]
+其中各系数独立。令 $p_t$ 为 $X_t$ 的密度，并定义
+\begin{equation}\label{gr:objects}
+ \psi(\xi)=\sum_{j=1}^m c_j|v_j\cdot\xi|,
+ \qquad P_tf=p_t*f,\qquad L=-\psi(D),
+ \qquad G(x)=\int_0^\infty p_t(x)\,\dd t.
+\end{equation}
+本节采用 Fourier 变换
+$\widehat f(\xi)=\int_{\R^8}e^{-ix\cdot\xi}f(x)\,\dd x$，
+逆变换的系数为 $(2\pi)^{-8}$。所有积分、卷积及弱型估计均以 Lebesgue 测度为背景。
+
+取任一由给定方向组成的基 $B=(v_{i_1},\ldots,v_{i_8})$，其部分和的密度为
+\begin{equation}\label{gr:basis-density}
+ p_t^B(x)=\frac1{|\det B|}
+ \prod_{k=1}^8\frac{c_{i_k}t}
+ {\pi\bigl((c_{i_k}t)^2+(B^{-1}x)_k^2\bigr)}.
+	ag{\ref{gr:basis-density}}
+\end{equation}
+将其与其余项的概率律卷积，即得真实密度 $p_t$。因此 $p_t>0$，$p_t\in C_0(\R^8)$，$\int p_t=1$，且
+\begin{equation}\label{gr:global-density}
+ \|p_t\|_\infty\le Ct^{-8},\qquad
+ C=\frac1{\pi^8|\det B|\prod_{k=1}^8c_{i_k}}.
+\end{equation}
+各系数的缩放还给出
+\begin{equation}\label{gr:scaling}
+ p_t(x)=t^{-8}p_1(x/t),\qquad G(rx)=r^{-7}G(x)\quad(r>0),
+\end{equation}
+其中第二式允许两边取无穷值。
+概率构造表明 $(P_t)_{t\ge0}$ 是自伴、保正且保持质量的卷积半群；$p_t$ 是近似恒等核。
+缩放及 $p_1\in C_0\cap L^1$ 又保证正时间的联合连续性及 $L^1$ 连续性。
+由方向张成性及单位球的紧性，存在 $0<a\le b<\infty$ 使
+\begin{equation}\label{gr:ellipticity}
+ a|\xi|\le\psi(\xi)\le b|\xi|.
+\end{equation}
+因此 $L$ 的 $L^2$ 算子域为 $H^1$，形式域为 $H^{1/2}$；这里的范数均包含 $L^2$ 项。
+
+对 $\phi\in C_c^\infty(\R^8)$，生成元的实空间表达为
+\begin{equation}\label{gr:generator}
+ L\phi(x)=\frac1{2\pi}\sum_{j=1}^m c_j
+ \int_\R\frac{\phi(x+sv_j)+\phi(x-sv_j)-2\phi(x)}{s^2}\,\dd s.
+\end{equation}
+其 Fourier 符号恰为 $-\psi$；特别地，式中系数为 $c_j$，给定向量的长度保留在位移中。
+二阶差分满足
+\[
+ \|\phi(\cdot+sv_j)+\phi(\cdot-sv_j)-2\phi\|_\infty
+ \le\min\{s^2|v_j|^2\|D^2\phi\|_\infty,4\|\phi\|_\infty\},
+\]
+并有对应的 $L^1$ 估计，故 $L\phi\in L^1\cap L^\infty\cap C_0$。
+一阶齐次性给出，对于 $\chi_R(x)=\chi(x/R)$，
+\begin{equation}\label{gr:cutoff-scaling}
+ L\chi_R(x)=R^{-1}(L\chi)(x/R),\quad
+ \|L\chi_R\|_\infty=R^{-1}\|L\chi\|_\infty,\quad
+ \|L\chi_\varepsilon\|_1=\varepsilon^7\|L\chi\|_1.
+\end{equation}
+Fourier 支配收敛还给出，对 Schwartz 函数 $\phi$，
+\begin{equation}\label{gr:test-generator}
+ \frac{P_t\phi-\phi}{t}\longrightarrow L\phi
+ \quad\hbox{于 }L^\infty\hbox{ 及 }L^2,
+ \qquad \partial_tP_t\phi=P_tL\phi.
+\end{equation}
+这些测试函数上的性质将用于处理全空间分布等式。
+
+\begin{theorem}\label{gr:singular}
+定义
+\[
+ S_3=\bigcup_{\substack{A\subseteq\{v_1,\ldots,v_m\}\\ \rank A\le3}}
+ \spanop(A),
+\]
+其中包括空集张成的 $\{0\}$。则 $S_3$ 为闭的零测集，且
+\[
+ G(x)=+\infty\quad\Longleftrightarrow\quad x\in S_3.
+\]
+$G$ 在 $\R^8\setminus S_3$ 上有限且连续。
+\end{theorem}
+
+\begin{proof}
+$S_3$ 是有限个维数至多为三的闭线性子空间之并，故闭且为零测集。
+先取 $E\Subset\R^8\setminus S_3$，记
+\[
+ d=\operatorname{dist}(E,S_3)>0,\qquad
+ D_V=\sum_{j=1}^m|v_j|,\qquad \delta=\frac d{4D_V},
+ \qquad O=\{x:\operatorname{dist}(x,E)<d/4\}.
+\]
+对系数 $s=(s_j)$，置 $J(s)=\{j:|s_j|>\delta\}$。
+若这些大系数对应的方向秩至多为三，则其和属于 $S_3$，而
+\[
+ \left|\sum_{j\notin J(s)}s_jv_j\right|\le\delta D_V=d/4.
+\]
+此时 $\sum_js_jv_j$ 到 $S_3$ 的距离至多为 $d/4$，不可能落入 $O$。
+所以，一个落入 $O$ 的表示中，全部大系数方向的秩至少为四。
+
+令 $\mathcal I_4$ 为独立四元方向指标集的全体，对每个 $I\in\mathcal I_4$ 选一个包含它的方向基 $B_I$。
+将 $I$ 中四个系数的概率律限制在 $|s|>\delta$，保留其未经归一化的子概率律。
+这些密度满足
+\[
+ q_{c_jt}(s)\ind_{\{|s|>\delta\}}\le\frac{c_jt}{\pi\delta^2}.
+\]
+基中其余四个系数的密度至多为 $(\pi c_jt)^{-1}$。
+由基变换及与其余概率律卷积，受限随机和的密度至多为
+\[
+ C_I=\frac{\prod_{j\in I}c_j}
+ {\pi^8|\det B_I|\delta^8\prod_{j\in B_I\setminus I}c_j}.
+\]
+这里 $t^4t^{-4}=1$；没有因条件化而除以限制事件的概率。
+对任意 Borel 集 $F\subset O$，大系数的秩结论与事件并集给出
+\[
+ \mathbb P(X_t\in F)
+ \le\sum_{I\in\mathcal I_4}
+ \mathbb P\bigl(X_t\in F,\ |Z_{j,t}|>\delta\ (j\in I)\bigr)
+ \le\Bigl(\sum_I C_I\Bigr)|F|.
+\]
+因此 $p_t\le C_E:=\sum_I C_I$ 在 $O$ 上几乎处处成立，真实密度的连续性将其提升为逐点界。
+短时间用此界，长时间用 \eqref{gr:global-density}，便得到在 $E$ 上一致可积的时间控制函数。
+支配收敛证明 $G$ 在 $E$ 上有限连续。
+
+反之，若 $x\in S_3$，可写成
+$x=\sum_{k=1}^ra_kv_{i_k}$，其中 $0\le r\le3$，且所列方向独立。
+将它们补成方向基 $B$，则 $B^{-1}x=(a_1,\ldots,a_r,0,\ldots,0)$。
+其余项之和记作 $Y_t$；由 $Y_t\overset d=tY_1$，可取 $M<\infty$，使
+\[
+ \mathbb P\{\|B^{-1}Y_t\|_\infty\le Mt\}=\theta>0
+\]
+与 $t$ 无关；没有其余项时取 $\theta=1$。
+在这一事件上，$0<t\le1$ 时，\eqref{gr:basis-density} 的前 $r$ 个因子均有形如 $k_xt$ 的正下界，
+因为相应分母由 $c_{i_k}^2+(|a_k|+M)^2$ 控制；后 $8-r$ 个因子均有形如 $k/t$ 的下界。
+对 $Y_t$ 取期望，得到
+\[
+ p_t(x)=\mathbb E[p_t^B(x-Y_t)]\ge k'_xt^{2r-8},\qquad 0<t\le1.
+\]
+由于 $2r-8\le-2$，小时间积分发散，故 $G(x)=\infty$。
+\end{proof}
+
+\subsubsection{全空间可积正部及无原子概率源}
+
+后面的卷积比较需要一个可积核，其生成元是正概率测度与原点质量之差。
+我们先用半群估计获得可积性，再在全空间建立这一等式。
+
+\begin{proposition}\label{gr:source}
+令 $q=8/7$，$A_8=2(2C/7)^{1/7}$。则
+\begin{equation}\label{gr:weak-green}
+ |\{G>\lambda\}|\le A_8\lambda^{-8/7}\qquad(\lambda>0),
+\end{equation}
+且 $G\in L^1_{\mathrm{loc}}(\R^8)$。
+对于每个 $c>0$，$H_c=(G-c)_+\in L^1(\R^8)$，并存在无原子的正概率测度 $\mu_c$，使
+\begin{equation}\label{gr:source-identity}
+ LH_c=\mu_c-\delta_0\qquad\hbox{于 }\R^8\hbox{ 的分布意义下成立}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+写
+\[
+ U_T=\int_0^Tp_t\,\dd t,\qquad W_T=\int_T^\infty p_t\,\dd t.
+\]
+由质量与密度界，$\|U_T\|_1=T$，$\|W_T\|_\infty\le C/(7T^7)$。
+取 $T=(2C/(7\lambda))^{1/7}$，则 $W_T\le\lambda/2$，Chebyshev 不等式给出 \eqref{gr:weak-green}。
+对于有限测度集 $E$，Tonelli 定理给出
+\[
+ \int_EG\le\int_0^\infty\min\{1,C|E|t^{-8}\}\,\dd t<\infty.
+\]
+因此 $G$ 局部可积；层积分又给出
+\begin{equation}\label{gr:positive-integrable}
+ \int_{\R^8}H_c
+ =\int_c^\infty|\{G>s\}|\,\dd s
+ \le7A_8c^{-1/7}<\infty.
+\end{equation}
+这同时控制了奇异集邻域和空间无穷远。
+
+对 $\phi\in C_c^\infty$，由 $L\phi\in L^1\cap L^\infty$，
+\[
+ \int G|L\phi|
+ \le\int_0^\infty
+ \min\{\|L\phi\|_\infty,Ct^{-8}\|L\phi\|_1\}\,\dd t<\infty.
+\]
+因而可以积分半群导数。自伴性及 $P_T\phi(0)\to0$ 给出
+\begin{equation}\label{gr:fundamental}
+ \langle G,L\phi\rangle
+ =\int_0^\infty P_tL\phi(0)\,\dd t=-\phi(0),
+ \qquad LG=-\delta_0.
+\end{equation}
+由 Tonelli 定理及半群律，
+$P_tG=\int_t^\infty p_s\,\dd s$，故在 $G$ 几乎处处有限的点上 $G=P_tG+U_t$。
+Jensen 不等式及正部函数的单调性、$1$-Lipschitz 性质给出
+\[
+ P_tH_c\ge(P_tG-c)_+\ge H_c-U_t.
+\]
+将此式与非负紧光滑测试函数配对，除以 $t$ 后令 $t\downarrow0$。
+利用 \eqref{gr:test-generator}、$H_c\in L^1$ 及 $U_t/t\rightharpoonup\delta_0$，可得
+$LH_c+\delta_0\ge0$。
+正分布定理说明 $\mu_c:=LH_c+\delta_0$ 是全空间的正 Radon 测度。
+该论证同时涵盖所有低秩子空间和水平界面。
+
+选径向单调的 $\chi\in C_c^\infty$，$0\le\chi\le1$，在原点邻域等于一，使 $\chi_R\uparrow1$。
+由 \eqref{gr:cutoff-scaling}，
+\[
+ \int\chi_R\,\dd\mu_c
+ =1+\int H_cL\chi_R\longrightarrow1.
+\]
+正测度的单调收敛定理于是给出 $\mu_c(\R^8)=1$。
+最后令 $h=\min(G,c)$。由已经证明的配对可积性及 $G=H_c+h$，有 $\mu_c=-Lh$。
+对任意 $x_0\in\R^8$，使用平移后的小截断，得到
+\[
+ 0\le\mu_c(\{x_0\})
+ \le\int\chi\bigl((x-x_0)/\varepsilon\bigr)\,\dd\mu_c(x)
+ =-\int h(x)L\bigl[\chi((\cdot-x_0)/\varepsilon)\bigr](x)\,\dd x
+ \le c\varepsilon^7\|L\chi\|_1\longrightarrow0.
+\]
+故 $\mu_c$ 没有原子。
+\end{proof}
+
+\subsubsection{障碍分解与有限源卷积比较}
+
+下面证明的分解只依赖于半群的质量守恒、对称性和前述密度界。
+它产生一个固定集合，随后每个尺度的卷积比较都在该集合的补集上进行。
+
+\begin{lemma}\label{gr:obstacle}
+设 $f\ge0$ 有界且紧支撑，$\kappa>0$。存在
+$u\ge0$，$u\in L^1\cap L^\infty\cap H^1$，及 $\sigma\in L^1$，使
+\begin{equation}\label{gr:obstacle-result}
+ f=\sigma-Lu,\qquad 0\le\sigma\le\kappa,\qquad
+ \sigma=\kappa\ \hbox{几乎处处于 }D:=\{u>0\},\qquad
+ \int\sigma=\int f.
+\end{equation}
+特别地，$\kappa|D|\le\|f\|_1$。
+\end{lemma}
+
+\begin{proof}
+零输入的结论显然，以下令 $F=\|f\|_\infty>0$，$m_f=\|f\|_1>0$。
+对于 $0<t\le1$，置
+\[
+ V_t=t\sum_{j\ge0}P_{jt}f,\qquad
+ u_{t,0}=0,\qquad
+ u_{t,k+1}=\bigl(P_tu_{t,k}+t(f-\kappa)\bigr)_+.
+\]
+由 $\|P_sf\|_\infty\le\min\{F,Cm_fs^{-8}\}$，正时间级数的尾项在上确界范数下收敛，且 $V_t-tf\in C_0$。
+比较递减函数的右 Riemann 和与积分，得
+\[
+ \|V_t\|_\infty
+ \le tF+\frac87(Cm_f)^{1/8}F^{7/8}\le C_f,
+ \qquad C_f:=F+\frac87(Cm_f)^{1/8}F^{7/8}.
+\]
+Tonelli 定理给出 $P_tV_t=V_t-tf$。
+迭代关于 $k$ 单调，且由 $V_t$ 控制，其极限满足
+\[
+ u_t=\bigl(P_tu_t+t(f-\kappa)\bigr)_+,
+ \qquad 0\le u_t\le(V_t-\kappa t)_+.
+\]
+固定 $t$ 时，右侧有本质紧支撑，所以 $u_t\in L^1\cap L^2$。
+这里没有要求 $V_t\in L^1$，也不需要不同 $t$ 的支撑包含在同一紧集中。
+
+令 $L_t=(P_t-I)/t$，$\sigma_t=f+L_tu_t$。
+固定点方程的正分支给出 $\sigma_t=\kappa$ 于 $\{u_t>0\}$；零分支给出
+$0\le\sigma_t\le\kappa$ 于 $\{u_t=0\}$。
+因 $u_t\in L^1$，质量守恒保证 $\int\sigma_t=m_f$。
+将方程与 $u_t$ 配对可得
+\[
+ \langle u_t,-L_tu_t\rangle+\kappa\|u_t\|_1=\int fu_t.
+\]
+自伴收缩性使第一项非负，因而
+\begin{equation}\label{gr:obstacle-bounds}
+ \|u_t\|_1\le\frac{m_fC_f}{\kappa},\quad
+ \|u_t\|_2^2\le\frac{m_fC_f^2}{\kappa},\quad
+ \|\sigma_t\|_2^2\le\kappa m_f,\quad
+ \|L_tu_t\|_2\le\|f\|_2+\sqrt{\kappa m_f}=:C_2.
+\end{equation}
+
+为获得局部强紧性，在本段采用酉 Fourier 归一化
+$\mathcal F_uf=(2\pi)^{-4}\widehat f$，从而 Plancherel 等式不含额外系数。
+记 $\psi_t=(1-e^{-t\psi})/t$。
+若 $t\le1/Q$，则在 $\{\psi\ge Q\}$ 上
+$\psi_t\ge(1-e^{-1})Q$，由 \eqref{gr:obstacle-bounds} 得
+\begin{equation}\label{gr:high-frequency}
+ \int_{\{\psi\ge Q\}}|\mathcal F_uu_t|^2
+ \le\frac{C_2^2}{(1-e^{-1})^2Q^2}.
+\end{equation}
+固定低频投影由 \eqref{gr:ellipticity} 具有一致的 $H^1$ 界。
+对其在有界区域使用 Rellich 紧嵌入，再用 \eqref{gr:high-frequency} 控制高频尾项，并作对角取子列，
+可取 $t_j\downarrow0$ 使
+\[
+ u_{t_j}\to u\quad\hbox{于 }L^2_{\mathrm{loc}}\hbox{ 及几乎处处},
+ \qquad u_{t_j}\rightharpoonup u,\quad
+ \sigma_{t_j}\rightharpoonup\sigma\quad\hbox{于 }L^2.
+\]
+Fatou 引理及一致界保证 $u\ge0$，$u\in L^1\cap L^\infty$。
+测试函数上 $L_t\phi\to L\phi$ 于 $L^2$，故极限满足 $Lu=\sigma-f\in L^2$。
+由自伴 Fourier 乘子 $-\psi$ 的算子域刻画及 \eqref{gr:ellipticity}，得到 $u\in H^1$。
+这里也可先利用 $C_c^\infty$ 在生成元图范数中的稠密性，再使用算子的闭性。
+
+弱极限仍满足 $0\le\sigma\le\kappa$。
+在 $D=\{u>0\}$ 的几乎处处点，$u_{t_j}$ 最终为正，故 $\sigma_{t_j}$ 最终等于 $\kappa$。
+在 $D$ 的有限测度截集上用支配收敛，并与弱极限比较，得 $\sigma=\kappa$ 于 $D$。
+由非负紧截断先得 $\sigma\in L^1$，$\int\sigma\le m_f$。
+再以 $\chi_R$ 测试 $f=\sigma-Lu$；由
+\[
+ |\langle Lu,\chi_R\rangle|
+ =|\langle u,L\chi_R\rangle|
+ \le R^{-1}\|u\|_1\|L\chi\|_\infty\longrightarrow0,
+\]
+令 $R\to\infty$，得到 $\int\sigma=m_f$，从而排除了极限中的质量损失。
+最后由 $\sigma=\kappa$ 于 $D$，有 $\kappa|D|\le m_f$。
+\end{proof}
+
+\begin{theorem}\label{gr:comparison}
+设 $K\ge0$，$K\in L^1(\R^8)$，$M_K=\int K>0$，且对某个 $a>0$ 和正概率测度 $\mu$，有全空间分布等式
+\begin{equation}\label{gr:finite-source}
+ LK=a(\mu-\delta_0).
+\end{equation}
+记 $K_r(x)=r^{-8}K(x/r)$。则对任意 $f\in L^1(\R^8)$、$\lambda>0$，
+\begin{equation}\label{gr:kernel-weak}
+ \lambda\left|\left\{x:\sup_{r>0}K_r*|f|(x)>\lambda\right\}\right|
+ \le M_K\|f\|_1.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+首先为卷积等式给出合法的 Fourier 解释。
+对 Schwartz 测试 $\phi$，令 $\phi_R=\chi_R\phi$。
+有 $\phi_R\to\phi$ 于 Schwartz 拓扑，二阶差分估计给出 $L\phi_R\to L\phi$ 于上确界范数。
+由 $K\in L^1$ 及 $\mu$ 有限，\eqref{gr:finite-source} 因而延伸至 Schwartz 测试。
+Fourier 反演和 Fubini 定理于是给出连续函数恒等式
+\[
+ -\psi(\xi)\widehat K(\xi)=a\bigl(\widehat\mu(\xi)-1\bigr).
+\]
+将此式乘以 $u\in H^1$ 的酉 Fourier 变换，利用 $L^1*L^2\to L^2$ 的 Young 不等式及有限测度卷积的 $L^2$ 界，得到
+\begin{equation}\label{gr:convolution-identity}
+ K*Lu=a(\mu*u-u)\qquad\hbox{于 }L^2.
+\end{equation}
+令 $\mu_r$ 为 $z\mapsto rz$ 对 $\mu$ 的推前测度。一阶齐次性给出精确缩放
+\begin{equation}\label{gr:source-dilation}
+ LK_r=\frac ar(\mu_r-\delta_0),\qquad
+ K_r*Lu=\frac ar(\mu_r*u-u).
+\end{equation}
+
+先设 $f\ge0$ 有界紧支撑，以 $\kappa=\lambda/M_K$ 使用引理~\ref{gr:obstacle}。
+对每个固定 $r>0$，在同一个 $D^c=\{u=0\}$ 上有 $\mu_r*u-u\ge0$ 几乎处处。
+即使 $\mu_r$ 奇异，关于 $\dd x\,\dd\mu_r$ 的 Fubini 定理仍保证卷积对 $u$ 的零集修改不敏感，且保留其非负性。
+由 \eqref{gr:source-dilation}，
+\[
+ K_r*f=K_r*\sigma-K_r*Lu
+ \le K_r*\sigma\le\kappa M_K=\lambda
+ \qquad\hbox{几乎处处于 }D^c.
+\]
+先对正有理数 $r$ 合并例外零集。
+由于 $r\mapsto K_r$ 在 $L^1$ 中连续，且
+\[
+ \|K_r*f-K_s*f\|_\infty
+ \le\|f\|_\infty\|K_r-K_s\|_1\longrightarrow0\quad(s\to r),
+\]
+上述结论延伸至全部正实半径。
+因此严格超水平集模零集包含于同一个 $D$，从而
+\[
+ \lambda\bigl|\{\sup_{r>0}K_r*f>\lambda\}\bigr|
+ \le\lambda|D|\le M_K\|f\|_1.
+\]
+
+一般输入取 $f_j=\min(|f|,j)\ind_{[-j,j]^8}\uparrow|f|$。
+将卷积理解为非负的扩展值积分，由单调收敛及两个上确界的交换，
+\[
+ \sup_{r>0}K_r*f_j\uparrow\sup_{r>0}K_r*|f|,
+ \qquad \sup_r\sup_jK_r*f_j=\sup_j\sup_rK_r*f_j.
+\]
+各有界近似输入的全半径上确界等于有理半径上确界，故可测，其单调极限亦可测。
+对严格超水平集和输入质量应用单调收敛，便得到 \eqref{gr:kernel-weak}。
+\end{proof}
+
+\subsubsection{立方体比较与面上质量公式}
+
+记 $Q=[-1,1]^8$，并令
+\[
+ J=\sum_{F\subset\partial Q}\int_FG(y)^{8/7}\,\dd S(y),
+ \qquad g=\essinf_{x\in Q}G(x),
+\]
+其中和遍历十六个面；面的交界在表面积意义下可忽略。
+在每个开面上，射线坐标 $x=ry$ 的 Jacobian 为 $r^7\,\dd r\,\dd S(y)$。
+不同开面所生成的锥仅在零体积集上相交，所以由 Tonelli 定理及 \eqref{gr:scaling}，
+\begin{equation}\label{gr:mass-formula}
+ |\{G>1\}|=\frac18J,\qquad
+ |\{G>s\}|=\frac18Js^{-8/7},\qquad
+ \int H_c=\frac78Jc^{-1/7}.
+\end{equation}
+命题~\ref{gr:source} 保证第一式左侧有限，故 $J<\infty$；这里没有预先假定面上可积性。
+
+$p_t$ 在 $Q\times[1,2]$ 上严格正且连续，因而
+$\min_{x\in Q}\int_1^2p_t(x)\,\dd t>0$。
+结合局部可积性可知 $0<g<\infty$。
+并且
+\begin{equation}\label{gr:essential-face}
+ g=\essinf_{y\in\partial Q}G(y).
+\end{equation}
+事实上，若边界几乎处处有下界 $b$，则 $r^{-7}\ge1$ 立即给出内部同一下界。
+反之，若边界上有正表面积的点集满足 $G(y)\le a<g$，取一个充分接近一的区间
+$r_0<r<1$，使 $r_0^{-7}a<g$，则这些射线在 $Q$ 内生成正体积且 $G<g$ 的点集，矛盾。
+由定理~\ref{gr:singular}，在当前有限方向情形，任何本质立方体下界还都是逐点下界：
+$S_3$ 上势为无穷，而补集上的连续性排除了低于该下界的点。
+
+\begin{corollary}\label{gr:cube}
+设 $0<g_0\le g$。中心轴平行立方体极大算子
+\[
+ M_Qf(x)=\sup_{r>0}\frac1{(2r)^8}\int_{x+rQ}|f(y)|\,\dd y
+\]
+的弱 $(1,1)$ 常数满足
+\begin{equation}\label{gr:conditional-J}
+ C_8\le\frac{8^{1/7}J}{256g_0^{8/7}}.
+\end{equation}
+若模型在各坐标反射下不变，且其对称群在十六个面上传递，记
+\[
+ I=\int_{[0,1]^7}G(1,y)^{8/7}\,\dd y.
+\]
+则 $J=2048I$；对于任意上界 $I\le I_0$，有条件估计
+\begin{equation}\label{gr:conditional-I}
+ C_8\le\frac{8^{8/7}I_0}{g_0^{8/7}},\qquad
+ C_8^7\le\frac{8^8I_0^7}{g_0^8}.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+对 $0<c<g_0$，置
+\[
+ N=256(g_0-c),\qquad K=H_c/N.
+\]
+命题~\ref{gr:source} 给出 $K\in L^1$ 及
+$LK=N^{-1}(\mu_c-\delta_0)$，且 $K\ge256^{-1}\ind_Q$ 几乎处处。
+核的零集修改不影响其与 Lebesgue 密度的任意平移、缩放卷积，故此本质下界已经给出逐尺度的立方体平均支配。
+由定理~\ref{gr:comparison} 及 \eqref{gr:mass-formula}，
+\[
+ C_8\le\int K
+ =\frac{7J}{8\cdot256}\frac{c^{-1/7}}{g_0-c}.
+\]
+右侧关于 $c$ 的对数导数为 $(8c-g_0)/(7c(g_0-c))$，唯一极小点为 $c=g_0/8$，代入即得 \eqref{gr:conditional-J}。
+在所述对称性下，十六个面的积分相同，每面的 $128$ 个正交象限积分也相同，故 $J=16\cdot128I=2048I$，进而得到 \eqref{gr:conditional-I}。
+\end{proof}
+
+\begin{remark}
+以上比较使用同一半径作用于八个坐标，且固定 Lebesgue 背景。
+任意有限方向组未必具有推论中的反射与面传递对称性，此时应保留总面积分 $J$。
+式 \eqref{gr:conditional-I} 只有在同一真实模型的下界 $g_0\le g$ 与上界 $I\le I_0$ 都成立时才能代入。
+\end{remark}
+
+\subsubsection{固定面上的短时间与长时间估计}
+
+为了在面上估计 $G$，还需要控制时间积分的两端。
+下面的短时间估计覆盖整个平面，并包括奇异子空间的邻域；长时间则分别给出有限面域和全平面的估计。
+
+令
+\[
+ J_1=\{j:(v_j)_1\ne0\},\qquad
+ D_1=\sum_{j\in J_1}|(v_j)_1|,\qquad
+ A=\sum_{j=1}^mc_j|(v_j)_1|.
+\]
+张成性保证 $D_1,A>0$。
+对每个 $j\in J_1$ 取包含 $v_j$ 的方向基 $B_j$，并置
+\begin{equation}\label{gr:face-B}
+ B_* =D_1^2\sum_{j\in J_1}
+ \frac{c_j}{\pi^8|\det B_j|\prod_{i\in B_j\setminus\{j\}}c_i}.
+\end{equation}
+
+\begin{proposition}\label{gr:face-estimates}
+对每个 $t>0$，固定面 $x_1=1$ 上有
+\begin{equation}\label{gr:face-pointwise}
+ \sup_{y\in\R^7}p_t(1,y)\le B_*t^{-6},\qquad
+ \int_{\R^7}p_t(1,y)\,\dd y
+ \le\frac{At}{\pi(1+A^2t^2)}.
+\end{equation}
+记
+$T_\varepsilon(x)=\int_0^\varepsilon p_t(x)\,\dd t$，
+$R_T(x)=\int_T^\infty p_t(x)\,\dd t$。则
+\begin{equation}\label{gr:short-time}
+ \|T_\varepsilon(1,\cdot)\|_{L^{8/7}(\R^7)}
+ \le\frac89B_*^{1/8}(A/\pi)^{7/8}\varepsilon^{9/8}.
+\end{equation}
+对任意有限七维测度的 $E\subset\R^7$，
+\begin{equation}\label{gr:long-compact}
+ 0\le R_T(x)\le\frac C{7T^7},\qquad
+ \|R_T(1,\cdot)\|_{L^{8/7}(E)}
+ \le |E|^{7/8}\frac C{7T^7}.
+\end{equation}
+全平面另有
+\begin{equation}\label{gr:long-plane}
+ \|R_T(1,\cdot)\|_{L^{8/7}(\R^7)}
+ \le\frac87C^{1/8}(\pi A)^{-7/8}T^{-7/8}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+固定 $0<\beta<1$。若所有 $j\in J_1$ 的系数均满足 $|s_j|\le\beta/D_1$，则
+$|\sum_js_j(v_j)_1|\le\beta$。
+所以落入开区域 $|x_1|>\beta$ 的随机和中，至少一个法向非零的系数满足 $|s_j|>\beta/D_1$。
+将该系数限制在这一集合上，其未归一化密度至多为
+$c_jtD_1^2/(\pi\beta^2)$；基 $B_j$ 中其余七项的密度至多为 $(\pi c_it)^{-1}$。
+基变换、与其余概率律卷积及事件并集给出
+\[
+ p_t(x)\le\beta^{-2}B_*t^{-6}
+ \quad\hbox{几乎处处于 }\{|x_1|>\beta\}.
+\]
+先由密度连续性得到此开区域的逐点界，再在 $x_1=1$ 处令 $\beta\uparrow1$，得到第一个估计。
+
+第一坐标的边缘律是尺度 $At$ 的一维 Cauchy 律。
+边缘密度的识别直接给出的只是对几乎处处 $s$ 成立的等式
+\[
+ \int_{\R^7}p_t(s,y)\,\dd y=\frac{At}{\pi((At)^2+s^2)}.
+\]
+固定 $t$，取满足此等式的 $s_k\to1$，利用点态连续性及 Fatou 引理，才得到
+\[
+ \int_{\R^7}p_t(1,y)\,\dd y
+ \le\liminf_{k\to\infty}\int_{\R^7}p_t(s_k,y)\,\dd y
+ =\frac{At}{\pi(1+A^2t^2)}
+ \le\min\left\{\frac A\pi t,\frac1{\pi At}\right\}.
+\]
+因此固定切片上使用的是上述方向的不等式。
+
+对非负函数 $h$，$\|h\|_{8/7}\le\|h\|_\infty^{1/8}\|h\|_1^{7/8}$。
+由 \eqref{gr:face-pointwise} 的短时间部分，
+\[
+ \|p_t(1,\cdot)\|_{8/7}
+ \le B_*^{1/8}(A/\pi)^{7/8}t^{1/8},
+\]
+其中时间幂为 $-6/8+7/8=1/8$。
+先在有限时间与有限空间区域使用 Minkowski 不等式，再取单调极限，得到
+\[
+ \|T_\varepsilon(1,\cdot)\|_{8/7}
+ \le B_*^{1/8}(A/\pi)^{7/8}\int_0^\varepsilon t^{1/8}\,\dd t,
+\]
+即 \eqref{gr:short-time}。
+$S_3\cap\{x_1=1\}$ 为七维零测集，其无穷点值与此有限范数相容。
+若模型另外具有各自由坐标的反射对称性，正象限范数可再乘 $2^{-49/8}$；限制到单位正面仍保留该上界。
+
+积分全空间峰值 \eqref{gr:global-density} 即得 \eqref{gr:long-compact}。
+全平面不能直接积分一个统一正常数；这里结合 $\|p_t(1,\cdot)\|_1\le(\pi At)^{-1}$，另得
+\[
+ \|p_t(1,\cdot)\|_{8/7}
+ \le C^{1/8}(\pi A)^{-7/8}t^{-15/8}.
+\]
+对 $t\in[T,\infty)$ 使用 Minkowski 不等式并积分，便得到 \eqref{gr:long-plane}。
+\end{proof}

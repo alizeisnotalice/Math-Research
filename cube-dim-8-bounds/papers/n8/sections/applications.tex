@@ -1,0 +1,101 @@
+\subsection{水平集估计与强型推论}
+定理\ref{thm:main}的上界对任意输入给出显式分布估计。记
+\[
+ U=\frac{56627260639}{2000000000}.
+\]
+则对 $f\in L^1(\R^8)$、$\lambda>0$，
+\begin{equation}\label{app:distribution}
+ |\{M_8f>\lambda\}|\le \frac{U}{\lambda}\|f\|_1.
+\end{equation}
+下界构造同时说明，若要求式\eqref{app:distribution}对全部 $L^1$ 输入成立，右侧的统一常数不能小于
+\[\frac{2188811179426669}{10^{15}}.\]
+
+\begin{corollary}\label{app:Lp}
+对每个 $1<p<\infty$，有
+\[
+ \|M_8f\|_p\le\frac{p}{p-1}(pU)^{1/p}\|f\|_p,
+ \qquad f\in L^p(\R^8).
+\]
+\end{corollary}
+\begin{proof}
+固定 $0<\eta<1$。把 $|f|$ 分成
+$g=|f|\ind_{\{|f|>\eta\lambda\}}$ 与余项 $h$。此时 $g\in L^1$，$M_8h\le\eta\lambda$，从而
+\[
+ |\{M_8f>\lambda\}|\le
+ \frac{U}{(1-\eta)\lambda}\int_{\{|f|>\eta\lambda\}}|f|.
+\]
+乘以 $p\lambda^{p-1}$ 后积分，由 Tonelli 得
+\[
+ \|M_8f\|_p^p\le
+ \frac{pU}{(p-1)(1-\eta)\eta^{p-1}}\|f\|_p^p.
+\]
+取 $\eta=(p-1)/p$ 并开 $p$ 次根即得结论。这是由显式弱型常数得到的直接推论，不涉及强型常数的最优性。
+\end{proof}
+
+\subsection{十六方向模型的精确点值与长时间估计}
+令
+\[
+ W=\{(1,\varepsilon_2,\varepsilon_3,\varepsilon_4):
+ \varepsilon_j\in\{-1,1\}\},\qquad
+ V=(W\times\{0\}^4)\cup(\{0\}^4\times W),
+\]
+全部方向权取 $1$。对应过程的两个四维分量独立，且使用同一时间。因此
+\[
+ p_t^{(8)}(x,y)=p_t^{(4)}(x)p_t^{(4)}(y),\qquad
+ G_8(x,y)=\int_0^\infty p_t^{(4)}(x)p_t^{(4)}(y)\dd t.
+\]
+该模型具有全部坐标反射对称性，块内置换与交换两块的群在八个坐标上可迁，故第三节的单面质量公式适用。
+
+取 $A=(1,1,1,0)$、$B=(1,1,0,0)$。四维 Fourier 空间可分成 $1152$ 个单纯锥；逐锥积分并合并全和，可写成
+\[
+ p_t^{(4)}(A)=\pi^{-4}P_A(t),\qquad
+ p_t^{(4)}(B)=\pi^{-4}P_B(t),
+\]
+其中两者均为准确有理函数。特别
+\begin{equation}\label{app:PB}
+ P_B(t)=\frac{25344t^4+250t^2+1}
+ {7077888t^8+860160t^6+33984t^4+540t^2+3}.
+\end{equation}
+$P_A$ 的系数及完整锥恒等式见补充材料。对有理函数全和先约分，再对乘积作部分分式分解，利用
+\[
+ \int_0^\infty(t^2+a^2)^{-k}\dd t
+ =\frac{\pi\binom{2k-2}{k-1}}{2\,4^{k-1}a^{2k-1}}
+ \quad(a>0,\ k\in\N)
+\]
+得到下表的准确点值。
+\begin{center}
+\begin{tabular}{cc}
+\toprule
+$x$ & $\pi^7G_8(x)$\\
+\midrule
+$(A,A)$ & $10495703317/2149908480000$\\
+$(A,B)$ & $15547486331/1920360960000$\\
+$(B,B)$ & $143/10584$\\
+\bottomrule
+\end{tabular}
+\end{center}
+这些点的全有理密度在 $t=0$ 有界，乘积在无穷远为 $O(t^{-8})$，故积分恒等式的两端均有限。
+
+有理函数的最高次项给
+\[
+ \lim_{t\to\infty}t^4P_A(t)=\lim_{t\to\infty}t^4P_B(t)
+ =\frac{11}{3072}.
+\]
+由密度缩放及正时间连续性，此极限就是 $\pi^4p_1^{(4)}(0)$。Fourier 反演的非负乘子进一步给
+\[
+ 0<p_t^{(4)}(x)\le p_t^{(4)}(0)
+ =\frac{11}{3072\pi^4}t^{-4}.
+\]
+从而八维模型满足全空间估计
+\begin{equation}\label{app:exact-tail}
+ p_t^{(8)}(x)\le\frac{121}{9437184\pi^8}t^{-8},\qquad
+ \int_T^\infty p_t^{(8)}(x)\dd t
+ \le\frac{121}{66060288\pi^8}T^{-7}.
+\end{equation}
+它相对于只用八方向基所得的峰常数缩紧 $36864/121$ 倍。在固定面 $x_1=1$ 上，另可取第三节的 $A=8$、$B=2/\pi^8$ 于短时估计。这些显式量可用于截时积分的误差控制。
+
+上述点值给任何允许的立方体下界参数一个必要约束
+$g_0\le G_8(A,A)$，并可校验 Green 求值程序。构造新的势核上界还需要整个方体的 $G\ge g_0$ 以及完整面的 $G^{8/7}$ 积分上界；三个点值和式\eqref{app:exact-tail}尚不提供这两项结论。
+
+\subsection{两个后续问题}
+几何上界中的角帽积分忽略了不同立方体中心之间的一部分共同选择约束。单独改进每个增量点的中心可行性不能改变最坏角点的局部积分，因此进一步改善应使用跨立方体关系，并在一般 $L^1$ 水平集上重新完成覆盖估计。方向势方法则把问题转化为连续的 $g_0$ 与面积分认证；八维的奇异集应按低秩子空间处理，第三节的整体短时范数可避免逐个切除其交叠邻域。这两个问题分别涉及几何选择和连续核认证，与有限见证族的最优参数问题不同。

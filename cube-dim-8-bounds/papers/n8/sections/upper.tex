@@ -1,0 +1,355 @@
+\subsection{几何覆盖与上界}\label{up:section}
+
+弱型估计需要同时控制水平集的体积和所选平均方体的重叠。为兼顾这两点，我们按半径递减选择方体，以其新增体积定义权重，再用中心处的加权重叠决定后续选择。中心未被这一条件控制的方体，其新增部分位于一个方体角帽区域；该区域的加权体积可以通过坐标面的分解求出。这里采用的选择与覆盖思路与中心极大算子的经典几何方法有关，参见 \cite{SteinStromberg1983,AldazKissing2020}。下面给出所需选择过程及角帽估计的完整证明。
+
+\subsubsection{参数与上界公式}
+
+本节的底测度均为 $\R^n$ 上的 Lebesgue 测度。记
+\[
+ Q(y,r)=y+(-r,r)^n,\qquad
+ M_nf(x)=\sup_{r>0}\frac{1}{(2r)^n}
+             \int_{Q(x,r)}|f(y)|\dd y,
+\]
+其中各坐标使用同一个半径 $r$，并令
+\[
+ C_n=\sup_{\substack{f\in L^1(\R^n),\ \|f\|_1>0\\\lambda>0}}
+ \frac{\lambda|\{M_nf>\lambda\}|}{\|f\|_1}.
+\]
+对 $t>1$，置
+\begin{equation}\label{up:B}
+\begin{split}
+ q&=1+\frac1t,\qquad
+ g_t(\rho)=1+\frac{1}{2t}-\frac{1}{2\rho},\\
+ B_n(t)&=1-\left(\frac q2\right)^n+n\log t
+       -\frac n2\int_1^t g_t(\rho)^{n-1}\frac{\dd\rho}{\rho}.
+\end{split}
+\end{equation}
+
+\begin{theorem}\label{up:main}
+对每个整数 $n\ge1$ 和每个 $t>1$，均有 $B_n(t)>0$，且
+\begin{equation}\label{up:bound}
+ C_n\le F_n(t):=\left[q^{n/2}+\sqrt{B_n(t)}\right]^2.
+\end{equation}
+特别地，取
+\begin{equation}\label{up:t8}
+ t_0=\frac{3837029}{524288},\qquad
+ U=\frac{56627260639}{2000000000},
+\end{equation}
+则
+\begin{equation}\label{up:eight}
+ C_8\le F_8(t_0)<U=28.3136303195.
+\end{equation}
+\end{theorem}
+
+证明时先保留一个有限的放大参数 $a>2t$。这样，覆盖中的每个权重和每个平均值都有实际对应的方体，待得到完整算子的估计后再令 $a$ 趋于无穷。固定 $\tau>0$，记
+\begin{equation}\label{up:finite-parameters}
+ b=aq,\qquad \alpha=\frac a{a+1},\qquad
+ c=\frac{b-1}{a+1}>1,
+\end{equation}
+以及
+\begin{equation}\label{up:finite-constants}
+\begin{split}
+ I_n(t)&=\int_1^t g_t(\rho)^{n-1}\frac{\dd\rho}{\rho},\\
+ H_n(a,t)&=1-\left(\frac{\alpha q}{2}\right)^n
+           +n\log t-\frac n2\alpha^{n-1}I_n(t),\\
+ R_n(a,t)&=a^{-n}+\alpha^{-n}H_n(a,t),\qquad
+ A_n(a,t)=\left(q+\frac1a\right)^n.
+\end{split}
+\end{equation}
+我们将先证明
+\begin{equation}\label{up:finite-operator}
+ C_n\le\left(1+\frac{A_n(a,t)}{\tau}\right)
+               \bigl(\tau+R_n(a,t)\bigr).
+\end{equation}
+
+\subsubsection{有限方体族的选择与覆盖}
+
+若 $d>0$，以 $dQ$ 表示与 $Q$ 同心、半径扩大 $d$ 倍的方体。
+给定任意有限个开方体，按如下过程选取其中的一部分。已有选取
+$Q_j=Q(y_j,r_j)$ 时，固定其新增部分及权重
+\begin{equation}\label{up:increments}
+ D_j=Q_j\setminus\bigcup_{i<j}Q_i,\qquad
+ v_j=|D_j|,\qquad w_j=\frac{v_j}{(2ar_j)^n}.
+\end{equation}
+在每一步，尚未选取且中心为 $y$ 的方体可选，当且仅当
+\begin{equation}\label{up:eligible}
+ \sum_{j\text{ 已选}}w_j\ind_{bQ_j}(y)\le\tau.
+\end{equation}
+每次从可选方体中选一个半径最大的；没有可选方体时停止。
+每次选取后便移除一个待选方体，故过程在有限步内终止。权重在对应方体选入后保持不变。由于权重非负，一个方体一旦不可选便不会重新变为可选。因此，所选半径非增；新增集合 $D_j$ 两两不交，并满足
+\begin{equation}\label{up:selected-volume}
+ \sum_jv_j=\left|\bigcup_{j\text{ 已选}}Q_j\right|.
+\end{equation}
+这个过程允许权重为零，也允许半径相等。
+
+\begin{lemma}\label{up:cover}
+上述选择满足
+\begin{equation}\label{up:cover-estimate}
+ \left|\bigcup_{Q\text{ 给定}}Q\right|
+ \le\left(1+\frac{A_n(a,t)}{\tau}\right)\sum_jv_j.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+设 $Q_\beta=Q(y_\beta,r_\beta)$ 最终未被选取。我们先说明
+\begin{equation}\label{up:rejection}
+ \sum_{j:r_j\ge r_\beta}w_j\ind_{bQ_j}(y_\beta)>\tau.
+\end{equation}
+若某个已选半径小于 $r_\beta$，考察第一次出现这种半径的时刻。
+紧接该次选择之前，$Q_\beta$ 仍未被选入；若它可选，则按最大半径规则不能选择那个较小的方体。因此那时它已不可选，而此前所选半径均至少为 $r_\beta$，得到式 \eqref{up:rejection}。若从未选过半径小于 $r_\beta$ 的方体，则终止时的不可选条件直接给出同一结论。
+
+对任意 $x\in Q_\beta$，式 \eqref{up:rejection} 中每个非零项都满足
+\[
+ \|x-y_j\|_\infty<r_\beta+br_j\le(b+1)r_j.
+\]
+故函数 $\sum_jw_j\ind_{(b+1)Q_j}$ 在未选方体的并上大于 $\tau$。
+积分并加上已选方体的并，利用式 \eqref{up:selected-volume}，得
+\[
+ \left|\bigcup_{Q\text{ 给定}}Q\right|
+ \le\sum_jv_j+\frac1\tau\sum_jw_j|(b+1)Q_j|
+ =\left[1+\frac{((b+1)/a)^n}{\tau}\right]\sum_jv_j.
+\]
+由于 $(b+1)/a=q+1/a$，即得结论。这里扩大到 $b+1$ 倍包含了未选方体本身的半径。
+\end{proof}
+
+\subsubsection{重叠函数与未被中心条件控制的部分}
+
+考虑所选方体的加权重叠函数
+\begin{equation}\label{up:W}
+ W(x)=\sum_jw_j\ind_{aQ_j}(x).
+\end{equation}
+我们将证明对每个 $x\in\R^n$ 均有
+\begin{equation}\label{up:overlap}
+ W(x)\le\tau+R_n(a,t).
+\end{equation}
+当 $W(x)>0$ 时，从对该值有正贡献的方体中选半径最小的一个；若有并列，取其中最后选入的下标 $k$。将 $x$ 平移到原点，并将所有坐标和半径同除以 $r_k$。Lebesgue 体积与分母同乘 $r_k^{-n}$，因而权重保持不变。于是可以假设 $x=0$、$r_k=1$。
+
+其余有正贡献的项均满足 $r_j\ge1$ 且 $j<k$。事实上，若 $j>k$，半径非增给出 $r_j\le1$；此时只能等号成立，与并列时取最后下标的规则矛盾。方体 $Q_k$ 自身的权重满足
+\begin{equation}\label{up:self}
+ w_k\le\frac{|Q_k|}{|aQ_k|}=a^{-n}.
+\end{equation}
+对于其余正项，若 $y_k\in bQ_j$，它就在选择 $Q_k$ 时的非负和式 \eqref{up:eligible} 中，因此所有这类项的和不超过 $\tau$。
+
+余下的下标满足
+\begin{equation}\label{up:uncontrolled}
+ \|y_k-y_j\|_\infty\ge br_j,\qquad
+ \|y_j\|_\infty<ar_j,\qquad \|y_k\|_\infty<a.
+\end{equation}
+若 $r_j\ge t$，则
+\[
+ \|y_k-y_j\|_\infty<a+ar_j\le a(1+1/t)r_j=br_j,
+\]
+产生矛盾。因此这些下标的半径均在 $[1,t)$ 中，包含可能较早选入且半径等于 $1$ 的方体。
+
+对这样的下标及 $y\in D_j\subset Q_j$，反三角不等式给出
+\[
+ \|y_k-y\|_\infty>(b-1)r_j.
+\]
+作变换
+\[
+ z=\frac y{a+1},\qquad u=\frac{y_k}{a+1},\qquad
+ m(z)=\max(1,\|z\|_\infty).
+\]
+由 $0\in aQ_j$ 和 $1\le r_j<t$ 得
+\[
+ \|u\|_\infty<\alpha,\quad \|z\|_\infty<r_j<t,
+ \quad m(z)\le r_j,\quad \|u-z\|_\infty>cr_j\ge cm(z).
+\]
+因而经变换后的新增集合均包含于
+\begin{equation}\label{up:cap-domain}
+ \Omega(u)=\{z:\|z\|_\infty<t,\ \|u-z\|_\infty\ge cm(z)\}.
+\end{equation}
+记其加权体积为
+\begin{equation}\label{up:Psi}
+ \Psi(u)=2^{-n}\int_{\Omega(u)}m(z)^{-n}\dd z.
+\end{equation}
+变换后的新增集合仍两两不交，而 $r_j^{-n}\le m(z)^{-n}$。利用 Lebesgue 变换的 Jacobian $(a+1)^n$，得到
+\begin{equation}\label{up:cap-comparison}
+ \sum_{j\text{ 满足 }\eqref{up:uncontrolled}}w_j
+ \le\frac{(a+1)^n}{2^na^n}
+          \int_{\Omega(u)}m(z)^{-n}\dd z
+ =\alpha^{-n}\Psi(u).
+\end{equation}
+于是
+\begin{equation}\label{up:W-Psi}
+ W(0)\le\tau+a^{-n}+\alpha^{-n}\Psi(u).
+\end{equation}
+该比较使用的是新增集合的互不相交性；放大方体本身可以重叠。
+
+\subsubsection{角点比较与方体壳层积分}
+
+下面证明 $\Psi(u)$ 在闭方体 $\|u\|_\infty\le\alpha$ 上不超过角点处的值。坐标反射保持 Lebesgue 测度及 $m(z)$ 不变，故只需考虑
+$h_i=|u_i|\in[0,\alpha]$。对 $\rho\ge1$，令
+\[
+ L_i(\rho)=\bigl|[-\rho,\rho]\cap[h_i-c\rho,h_i+c\rho]\bigr|.
+\]
+由于 $c>1$、$h_i\le\alpha<1\le\rho$，有
+\begin{equation}\label{up:Li}
+ L_i(\rho)=\min\{2\rho,(1+c)\rho-h_i\}
+           =2\rho-[h_i-(c-1)\rho]_+,
+\end{equation}
+其中 $[s]_+=\max(s,0)$。它为正，且关于 $h_i$ 非增。
+在 $\|z\|_\infty<1$ 内，$m(z)=1$，而 $\Omega(u)$ 的补集为两个开方体的交，故这一部分对 $\Psi$ 的贡献为
+\begin{equation}\label{up:inner-cap}
+ 1-2^{-n}\prod_{i=1}^nL_i(1).
+\end{equation}
+此量关于每个 $h_i$ 非减。
+
+在壳层 $\|z\|_\infty=\rho>1$ 上，按取得最大绝对值的坐标分解。
+除去最大绝对值并列的零测集，每个点唯一属于一个坐标面；写该坐标为 $\rho$ 或 $-\rho$，其余坐标在 $(-\rho,\rho)$ 内自由变化。这一体积参数化的 Jacobian 绝对值为 $1$，完整壳层的面体积和为 $2n(2\rho)^{n-1}$。
+
+我们称满足 $\|z-u\|_\infty<c\rho$ 的部分为壳层内的交叠部分。在第 $i$ 个正坐标面上，第 $i$ 个坐标始终满足此条件；负坐标面满足此条件当且仅当 $h_i<(c-1)\rho$。因此交叠部分的面体积和为
+\begin{equation}\label{up:face-sum}
+ S(\rho,h)=\sum_{i=1}^n
+ \left(1+\ind_{\{h_i<(c-1)\rho\}}\right)
+ \prod_{\ell\ne i}L_\ell(\rho).
+\end{equation}
+固定某个 $h_j$，每一项对它的依赖都只通过一个非负、非增因子：当 $i=j$ 时是括号内的面数，当 $i\ne j$ 时是 $L_j$。所以 $S$ 关于每个 $h_j$ 非增。
+
+由此得到完整分解
+\begin{equation}\label{up:shell}
+\begin{split}
+ \Psi(u)={}&1-2^{-n}\prod_{i=1}^nL_i(1)\\
+ &+2^{-n}\int_1^t\rho^{-n}
+  \bigl[2n(2\rho)^{n-1}-S(\rho,h)\bigr]\dd\rho.
+\end{split}
+\end{equation}
+坐标面的边界不会改变面体积；等式 $h_i=(c-1)\rho$ 对每个坐标至多对应一个半径，也不会改变积分。该公式在 $n=1$ 时同样成立，约定空乘积为 $1$。
+式 \eqref{up:inner-cap} 与式 \eqref{up:shell} 中的被积部分均关于每个 $h_j$ 非减，因而
+\begin{equation}\label{up:corner}
+ \Psi(u)\le\Psi(\alpha,\ldots,\alpha).
+\end{equation}
+实际中心对应 $\|u\|_\infty<\alpha$，比较角点可以位于闭方体边界。
+
+接着求角点值。由参数关系
+\[
+ c-1=\frac{a/t-2}{a+1}>0,\qquad
+ \frac{\alpha}{c-1}=\frac{at}{a-2t}>t,
+\]
+可知对 $1\le\rho\le t$，角点处每个坐标恰有一个坐标面属于交叠部分。此时
+\[
+ L(\rho)=(1+c)\rho-\alpha,
+ \qquad S(\rho,\alpha\boldsymbol{1})=nL(\rho)^{n-1}.
+\]
+又因 $1+c=\alpha(2+1/t)$，有
+\[
+ \frac{L(\rho)}{2\rho}=\alpha g_t(\rho),\qquad
+ \frac{L(1)}2=\frac{\alpha q}2.
+\]
+特别地，归一化后的交叠壳层贡献为
+\[
+ 2^{-n}\rho^{-n}nL(\rho)^{n-1}\dd\rho
+ =\frac n2\,[\alpha g_t(\rho)]^{n-1}\frac{\dd\rho}{\rho}.
+\]
+这里的系数 $n/2$ 来自每个坐标只有一个交叠面，而完整壳层每个坐标有两个面。代入式 \eqref{up:shell}，即得
+\begin{equation}\label{up:corner-value}
+ \Psi(\alpha,\ldots,\alpha)=H_n(a,t).
+\end{equation}
+由于 $q/2<1$，且 $0<g_t(\rho)\le1$，$H_n(a,t)$ 的内部贡献为正，其外部被积函数满足
+\[
+ \frac n\rho\left[1-\frac12(\alpha g_t(\rho))^{n-1}\right]
+ \ge\frac n{2\rho}>0.
+\]
+结合式 \eqref{up:W-Psi}、\eqref{up:corner} 和 \eqref{up:corner-value}，证明了式 \eqref{up:overlap}。其中自身项 $a^{-n}$ 在所有有限 $a$ 的估计中均被保留。
+
+\subsubsection{一般可积输入与全部正尺度}
+
+现在将有限覆盖用于实际水平集。任取 $f\in L^1(\R^n)$ 和 $\lambda>0$，令
+$E_\lambda=\{M_nf>\lambda\}$。固定 $R>0$ 时，中心平均关于中心连续，因为平移差满足
+\[
+ \left|\frac1{(2R)^n}\int_{Q(x+h,R)}|f|
+       -\frac1{(2R)^n}\int_{Q(x,R)}|f|\right|
+ \le(2R)^{-n}\bigl\||f|(\cdot+h)-|f|\bigr\|_1
+ \longrightarrow0.
+\]
+这里使用了 $L^1$ 平移连续性。所有 $R>0$ 上的上确界因而是下半连续函数，故 $E_\lambda$ 为开集。
+
+取任意紧集 $K\subset E_\lambda$。对每个 $x\in K$，选取实际半径 $R_x>0$，使 $Q(x,R_x)$ 上的平均大于 $\lambda$，并以
+$Q(x,R_x/a)$ 作为待选小方体。它们覆盖 $K$，故有有限子覆盖。对这个有限族使用上述选择，每个选中方体的 $a$ 倍扩大仍是原先平均大于 $\lambda$ 的方体。因此
+\begin{equation}\label{up:input}
+\begin{split}
+ \lambda\sum_jv_j
+ &\le\sum_j\frac{v_j}{|aQ_j|}\int_{aQ_j}|f(y)|\dd y\\
+ &=\int_{\R^n}|f(y)|W(y)\dd y
+ \le\bigl(\tau+R_n(a,t)\bigr)\|f\|_1.
+\end{split}
+\end{equation}
+和式有限且各项非负。将式 \eqref{up:cover-estimate} 用于该子覆盖，再用式 \eqref{up:input}，得到
+\[
+ \lambda|K|\le
+ \left(1+\frac{A_n(a,t)}\tau\right)
+ \bigl(\tau+R_n(a,t)\bigr)\|f\|_1.
+\]
+对 $E_\lambda$ 内的紧集取上确界，由 Lebesgue 测度的内正则性，得到同一式子中的 $|K|$ 可以替换为 $|E_\lambda|$。这一步同时证明水平集体积有限，故无须预先假定它有限。再对输入和水平取上确界，即得式 \eqref{up:finite-operator}。
+
+这个论证对任意实值或复值 $L^1$ 输入成立，所选 $R_x$ 可以是任何正数。有限子覆盖仅用于一次几何估计，最终极大算子仍包含全部正半径。开、闭方体的边界均为 Lebesgue 零测集，因而两种约定给出相同平均。
+
+\subsubsection{标量极限与阈值的选择}
+
+固定 $n\ge1$、$t>1$、$\tau>0$，令有限参数 $a>2t$ 趋于无穷。
+由式 \eqref{up:finite-constants}，因 $I_n(t)$ 与 $a$ 无关，得到
+\[
+ A_n(a,t)\longrightarrow q^n,\qquad
+ R_n(a,t)\longrightarrow B_n(t).
+\]
+每个有限 $a$ 已经给出同一完整算子的估计 \eqref{up:finite-operator}，因此只需对其标量右端取极限，便有
+\begin{equation}\label{up:scalar-limit}
+ C_n\le\left(1+\frac{q^n}\tau\right)\bigl(\tau+B_n(t)\bigr).
+\end{equation}
+这里不要求随 $a$ 选出的子覆盖或权重收敛。
+
+为确定阈值，先将式 \eqref{up:B} 改写为
+\[
+ B_n(t)=1-(q/2)^n+
+ n\int_1^t\left[1-\frac12g_t(\rho)^{n-1}\right]\frac{\dd\rho}{\rho}>0.
+\]
+其首项为正，积分至少为 $(n/2)\log t$。令 $A=q^n$、$B=B_n(t)$，则式 \eqref{up:scalar-limit} 的右端为
+\[
+ A+B+\tau+\frac{AB}\tau.
+\]
+选取合法的正阈值 $\tau=\sqrt{AB}$，便得到 $(\sqrt A+\sqrt B)^2$，证明了式 \eqref{up:bound}。
+
+\subsubsection{八维参数的准确比较}
+
+八维常数的比较只涉及式 \eqref{up:bound} 中的标量函数。令
+$p=1+1/(2t)$。二项式展开并逐项积分给出准确恒等式
+\begin{equation}\label{up:scalar-expansion}
+ I_8(t)=p^7\log t+
+ \sum_{j=1}^7\binom7j p^{7-j}\left(-\frac12\right)^j
+              \frac{1-t^{-j}}j.
+\end{equation}
+因此，当 $t$ 为有理数时，$B_8(t)$ 是一个有理数与
+$(8-4p^7)\log t$ 的和。
+
+在 $t=t_0$ 处，置 $z=(t_0-1)/(t_0+1)$，使用有理上下界
+\begin{equation}\label{up:log-certificate}
+ \ell=2\sum_{k=0}^{399}\frac{z^{2k+1}}{2k+1},\qquad
+ \ell\le\log t_0\le
+ \ell+\frac{2z^{801}}{801(1-z^2)}.
+\end{equation}
+此余项界由正项级数及几何级数直接得到：将余项中每个分母以 $801$ 从下方替换即可。将式 \eqref{up:log-certificate} 代入式 \eqref{up:scalar-expansion}，并按 $8-4p^7$ 的符号取相应端点，可得 $B_8(t_0)$ 的有理包围。其端点向外保留四十位小数时为
+\begin{equation}\label{up:B-enclosure}
+\begin{gathered}
+ b_-<B_8(t_0)<b_+,\\
+ b_-=13.3365553664751128154150225918012012532221,\\
+ b_+=13.3365553664751128154150225918012012532222.
+\end{gathered}
+\end{equation}
+
+严格平方根比较也可完全用有理数完成。将由式 \eqref{up:log-certificate} 得到的包围上端点向外保留四十位小数，记所得有理数为 $B_+$，并记
+$s=(1+1/t_0)^4$、$d=U-s^2-B_+$。准确有理运算给出
+\begin{equation}\label{up:residual}
+ d>0,\qquad
+ d^2-4s^2B_+>
+ 1.900403275813764719335\times10^{-9}>0.
+\end{equation}
+所用端点和整数比较可见附录的准确计算材料。由于 $s>0$、$B_+>0$，式 \eqref{up:residual} 蕴含
+$d>2s\sqrt{B_+}$，故
+\[
+ F_8(t_0)\le(s+\sqrt{B_+})^2<U.
+\]
+这证明了式 \eqref{up:eight}，并完成定理 \ref{up:main} 的证明。
+
+\begin{remark}\label{up:Lebesgue}
+本证明中常 Lebesgue 底测度具体用于方体体积 $(2r)^n$、新增部分的体积权重、共同平移与伸缩下的归一化，以及坐标反射、交叠区域的乘积体积和壳层的体积参数化。一般 $L^1$ 输入的传递还使用了平移连续性、方体边界的零测性与内正则性。输入 $|f|$ 可以任意变化；这些几何体积公式依赖的是底测度的常密度。
+\end{remark}

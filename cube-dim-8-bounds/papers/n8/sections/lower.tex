@@ -1,0 +1,277 @@
+\subsection{格点构造与计算辅助下界}
+\label{lo:section}
+
+本节用一个有限的非负光滑函数证明下界。方法的出发点是
+Aldaz~\cite{Aldaz2000} 的格点构造：在周期格点附近放置相同质量，
+寻找能由同一中心立方体包含若干质量块的中心，再估计这些中心的总体积。
+这里选取八个坐标方向上的两种间距，并把中心集合写成有限个轴平行盒的并。
+盒的交叠通过准确的切片递归处理；最后直接构造有限光滑输入，控制平滑及截断造成的损失。
+
+\begin{proposition}\label{lo:bound}
+八维中心立方体极大算子的弱型常数满足
+\[
+ C_8>\frac{2188811179426669}{10^{15}}.
+\]
+这一严格下界可由一个非负的 $C_c^\infty(\R^8)$ 函数及一个明确的正水平值实现。
+\end{proposition}
+
+\paragraph{格点、源块与共同半径.}
+令
+\begin{equation}\label{lo:spacing}
+ a_1=\frac{1+1944^{1/8}}2,\qquad
+ a_2=\cdots=a_8=a=\frac{1+2^{1/8}}2,
+ \qquad
+ \Lambda=\{(a_1z_1,\ldots,a_8z_8):z\in\Z^8\}.
+\end{equation}
+记 $a\odot z=(a_1z_1,\ldots,a_8z_8)$，并令
+\[
+ Q=\prod_{i=1}^8[-a_i/2,a_i/2],\qquad
+ Q_+=\prod_{i=1}^8[0,a_i/2].
+\]
+各个 $a\odot z+Q$ 构成 $\R^8$ 的基本胞分割，除边界外两两不交。
+考虑长度标签集合
+\[
+ \mathcal E=\{1,2\}\times\{1,2,3,4\}^7,
+ \qquad \#\mathcal E=32768.
+\]
+对 $\ell\in\mathcal E$，定义
+\begin{equation}\label{lo:source-indices}
+ q_i=\begin{cases}
+       -\lfloor\ell_i/2\rfloor,&\ell_i\text{ 为奇数},\\
+       1-\ell_i/2,&\ell_i\text{ 为偶数},
+      \end{cases}
+ \qquad p_i=q_i+\ell_i-1,
+ \qquad
+ J_\ell=\prod_{i=1}^8\{q_i,q_i+1,\ldots,p_i\}.
+\end{equation}
+这些是在正半胞方向使用的最近连续整数指标；总有 $q_i\le0\le p_i$。
+源块 $\{a\odot z:z\in J_\ell\}$ 含有
+$m_\ell=\prod_i\ell_i$ 个格点。取共同半径
+\begin{equation}\label{lo:common-radius}
+ r_\ell=\frac{m_\ell^{1/8}}2,\qquad (2r_\ell)^8=m_\ell.
+\end{equation}
+若 $x\in Q_+$，以 $x$ 为中心、半径为 $r_\ell$ 的立方体包含这个源块，当且仅当
+\[
+ p_i a_i-r_\ell\le x_i\le q_i a_i+r_\ell
+ \quad(1\le i\le8).
+\]
+因而相应的中心盒为
+\begin{equation}\label{lo:true-box}
+ B_\ell=\prod_{i=1}^8
+ \left[\max\{0,p_i a_i-r_\ell\},\,
+       \min\{a_i/2,q_i a_i+r_\ell\}\right].
+\end{equation}
+只保留各边长均为正的盒。这里每个标签使用一个共同半径，
+八个坐标条件同时保证整个源块被包含。
+
+对 $\sigma\in\{-1,1\}^8$，记
+$\sigma B=\{(\sigma_1x_1,\ldots,\sigma_8x_8):x\in B\}$。
+格点及源块可按同一符号反射，故一个基本胞中的中心集合是
+\[
+ E=\bigcup_{\sigma\in\{-1,1\}^8}\ \bigcup_{\ell\in\mathcal E}\sigma B_\ell.
+\]
+不同正交象限的内部不交，因此
+$|E|=2^8|\bigcup_\ell B_\ell|$。
+下面准确估计这个有限并集的体积。
+
+\paragraph{有理内盒和外盒.}
+所有根式只需作有理包围。取 $D=10^{35}$、$S=4D$。
+对每个出现的质量 $m$，令 $t_m$ 是满足
+\begin{equation}\label{lo:root-certificate}
+ t_m^8\le mD^8<(t_m+1)^8
+\end{equation}
+的整数。这两个整数幂不等式就是根式包围的检查判据。
+首轴间距和其余间距的整数端点分别为
+\begin{align*}
+ A_1^-&=2(D+t_{1944}),& A_1^+&=2(D+t_{1944}+1),\\
+ A_i^-&=2(D+t_2),& A_i^+&=2(D+t_2+1)\quad(2\le i\le8).
+\end{align*}
+于是 $A_i^-/S\le a_i\le A_i^+/S$。
+首轴公式中的 $1^{1/8}=1$ 使用准确值，不再给这一项增加包围宽度。
+对标签 $\ell$，令 $R_\ell^-=2t_{m_\ell}$、
+$R_\ell^+=2(t_{m_\ell}+1)$，则
+$R_\ell^-/S\le r_\ell\le R_\ell^+/S$。
+即使质量是完全八次幂，这个半径包围仍然有效。
+
+定义整数端点
+\begin{align}
+ L_{\ell i}^-&=\max\{0,p_iA_i^+-R_\ell^-\},&
+ U_{\ell i}^-&=\min\{A_i^-/2,q_iA_i^++R_\ell^-\},\label{lo:inner-endpoints}\\
+ L_{\ell i}^+&=\max\{0,p_iA_i^--R_\ell^+\},&
+ U_{\ell i}^+&=\min\{A_i^+/2,q_iA_i^-+R_\ell^+\}.
+ \label{lo:outer-endpoints}
+\end{align}
+$A_i^\pm$ 均为偶数，所以以上全为整数。令
+\[
+ B_\ell^\pm=\prod_{i=1}^8[L_{\ell i}^\pm/S,U_{\ell i}^\pm/S],
+ \qquad
+ E^\pm=\bigcup_{\sigma\in\{-1,1\}^8}\ \bigcup_\ell\sigma B_\ell^\pm,
+\]
+仍只保留正边长盒。由 $q_i\le0\le p_i$ 可逐项得到
+\begin{equation}\label{lo:box-sandwich}
+ B_\ell^-\subseteq B_\ell\subseteq B_\ell^+,
+ \qquad |E^-|\le |E|\le |E^+|.
+\end{equation}
+外盒用于同时包围几何体积；实际输入的下界只使用内盒。
+
+\begin{lemma}\label{lo:union-recursion}
+有限个有理轴平行盒的并体积可由有限次有理数加法和乘法准确求出。
+具体地，设 $\mathcal B$ 是 $d$ 维盒族，第一轴所有端点按递增次序排列为
+$t_1<\cdots<t_N$。令 $\mathcal B_j$ 为在开条带
+$(t_j,t_{j+1})\times\R^{d-1}$ 中存在的盒在后 $d-1$ 个坐标上的投影族。
+若 $\mathcal U_d(\mathcal B)=|\bigcup_{B\in\mathcal B}B|$，则
+\begin{equation}\label{lo:sweep-recursion}
+ \mathcal U_d(\mathcal B)=
+ \sum_{j=1}^{N-1}(t_{j+1}-t_j)\mathcal U_{d-1}(\mathcal B_j).
+\end{equation}
+在 $d=1$ 时，$\mathcal U_1$ 由合并有限个区间求出，空族的体积为零。
+\end{lemma}
+
+\begin{proof}
+对 $x_1\in(t_j,t_{j+1})$，并集的截面恰为
+$\bigcup_{B'\in\mathcal B_j}B'$，与 $x_1$ 无关。
+由 Fubini 定理即得 \eqref{lo:sweep-recursion}；端点截面是零测集，不影响体积。
+按维数归纳，递归终止于一维区间并。
+所有端点为有理数，故每一步及最终结果都可用准确有理算术完成。
+\end{proof}
+
+实际计算先在整数坐标中使用上述递归，最后除以 $S^8$ 并乘以 $2^8$。
+每层沿固定坐标次序按端点加入或移去盒。
+若不同盒产生相同的后缀投影，须保留其重数；仅当重数降至零时才将该投影移去。
+完全相同的物理盒可以预先去重，递归中完全相同的剩余盒集合可以缓存。
+这些处理不改变引理中的截面族，因而不改变体积。
+
+\begin{lemma}\label{lo:volume-certificate}
+对 \eqref{lo:spacing}--\eqref{lo:outer-endpoints} 的准确输入，
+有限并集计算给出
+\begin{equation}\label{lo:compact-volume}
+ \begin{gathered}
+ L_0\le |E^-|\le |E|\le |E^+|\le U_0,\\
+ L_0=\frac{21888111794266698273227523980123024}{10^{34}},\\
+ U_0=\frac{21888111794266698273227523980123027}{10^{34}}.
+ \end{gathered}
+\end{equation}
+内盒和外盒各有 $882$ 个正体积标签盒，去除完全相同的盒后各有 $644$ 个。
+内盒的每条边长均大于 $2\cdot10^{-25}$，且小于 $2$。
+\end{lemma}
+
+\begin{proof}[计算辅助验证的判据与结果]
+依次遍历 $\mathcal E$，由 \eqref{lo:source-indices} 计算整数指标与质量，
+用 \eqref{lo:root-certificate} 检查根式包围，再按
+\eqref{lo:inner-endpoints}、\eqref{lo:outer-endpoints} 生成全部盒。
+以八个严格整数比较 $L_{\ell i}^\pm<U_{\ell i}^\pm$ 判定正体积，
+并以八个端点对组成的元组识别完全相同的物理盒。
+对两族盒分别应用引理~\ref{lo:union-recursion}，得到准确分数后作向外有理舍入，
+得到 \eqref{lo:compact-volume}。
+两次递归分别有 $104294$ 和 $106152$ 个不同状态。
+全部 $882$ 个内盒的最小边长为
+\[
+ \frac{269425567040611903127866148065111}
+      {40000000000000000000000000000000000}
+ >2\cdot10^{-25}.
+\]
+边长小于 $2$ 也由整数端点比较得到。
+补充材料提供准确输入、完整体积分数及检查程序；
+其中 \texttt{supplement/paper\_claims.json} 保存本文采用的准确数值。
+\end{proof}
+
+\paragraph{有限光滑输入与严格水平集.}
+为把几何体积用于 $L^1$ 弱型比值，需要同时控制格点质量的平滑和格点族的有限截断。
+取
+\begin{equation}\label{lo:finite-parameters}
+ \varepsilon=10^{-25},\qquad \eta=\varepsilon/2,\qquad
+ \theta=1-10^{-18},\qquad K=10^{19}.
+\end{equation}
+对每个正体积内盒，把每一面的坐标向内移动 $\varepsilon$，记所得盒为
+\[
+ B_{\ell,\varepsilon}^-
+ =\prod_{i=1}^8
+ [L_{\ell i}^-/S+\varepsilon,U_{\ell i}^-/S-\varepsilon],
+ \qquad
+ E_\varepsilon^-=\bigcup_\sigma\ \bigcup_\ell\sigma B_{\ell,\varepsilon}^-.
+\]
+引理~\ref{lo:volume-certificate} 保证这些盒仍有正边长。
+
+\begin{lemma}\label{lo:smoothing-loss}
+有
+\begin{equation}\label{lo:loss}
+ |E_\varepsilon^-|\ge L_0-\Delta,\qquad
+ \Delta=2^8\cdot882\cdot16\varepsilon\cdot2^7
+       =\frac{441}{9536743164062500000}.
+\end{equation}
+若 $\varphi_\eta\ge0$ 是积分为 $1$、支撑于 $[-\eta,\eta]^8$ 的光滑函数，
+则对 $x\in B_{\ell,\varepsilon}^-$，同一个立方体
+$x+[-r_\ell,r_\ell]^8$ 包含全部
+$\varphi_\eta(\,\cdot-a\odot z)$（$z\in J_\ell$）的支撑。
+相应结论在每个反射盒上仍成立。
+\end{lemma}
+
+\begin{proof}
+每个内盒有 $16$ 个面，且各边长小于 $2$。
+向内移动一个面造成的损失包含于体积至多 $\varepsilon2^7$ 的薄片中。
+先对一个盒的各面求和，再对 $882$ 个标签及 $2^8$ 个反射求和，
+由测度的次可加性得到 \eqref{lo:loss}。
+
+对 $x\in B_{\ell,\varepsilon}^-$，
+\eqref{lo:box-sandwich} 及各面的内缩给出
+\[
+ p_i a_i-r_\ell+\varepsilon\le x_i
+ \le q_i a_i+r_\ell-\varepsilon.
+\]
+故每个 $z\in J_\ell$ 满足
+$|x_i-a_i z_i|\le r_\ell-\varepsilon$。
+支撑中各点与相应格点的坐标距离不超过 $\eta<\varepsilon$，
+于是整个支撑包含在同一个中心立方体内。
+反射保持这些坐标距离，结论随之成立。
+\end{proof}
+
+\begin{proof}[命题~\ref{lo:bound} 的证明]
+固定一个偶的非负函数 $\varphi_\eta\in C_c^\infty(\R^8)$，
+使其积分为 $1$、支撑包含于 $[-\eta,\eta]^8$。
+这里的偶性是对每个坐标分别而言。
+令
+\begin{equation}\label{lo:finite-input}
+ F(x)=\sum_{z\in\{-K-2,\ldots,K+2\}^8}
+       \varphi_\eta(x-a\odot z).
+\end{equation}
+这是有限项之和，因而 $F\ge0$、$F\in C_c^\infty(\R^8)$，且
+\begin{equation}\label{lo:input-mass}
+ \|F\|_1=(2K+5)^8.
+\end{equation}
+由 \eqref{lo:source-indices}，所有源指标属于 $[-1,2]^8\cap\Z^8$；
+反射后的指标属于 $[-2,2]^8\cap\Z^8$。
+因此，对每个接收格点 $z^0\in\{-K,\ldots,K\}^8$，
+各反射源块平移 $a\odot z^0$ 后仍全部包含于 \eqref{lo:finite-input} 的源指标范围中。
+每个坐标增加两层格点已足够。
+
+若 $x\in a\odot z^0+E_\varepsilon^-$，选取包含它的一个平移反射盒，
+并使用对应的 $r_\ell$。
+引理~\ref{lo:smoothing-loss} 保证该中心立方体包含 $m_\ell$ 个完整质量块，
+由 \eqref{lo:common-radius} 可得
+\[
+ M_8F(x)\ge
+ \frac{1}{(2r_\ell)^8}
+ \int_{x+[-r_\ell,r_\ell]^8}F(y)\,\dd y
+ \ge\frac{m_\ell}{(2r_\ell)^8}=1>\theta.
+\]
+不同接收格点的集合 $a\odot z^0+E_\varepsilon^-$ 位于不同基本胞内，
+除零测边界外两两不交。因此
+\[
+ |\{x:M_8F(x)>\theta\}|
+ \ge(2K+1)^8|E_\varepsilon^-|
+ \ge(2K+1)^8(L_0-\Delta).
+\]
+将 \eqref{lo:input-mass} 代入弱型比值，得到
+\begin{equation}\label{lo:finite-ratio}
+ C_8\ge
+ \frac{\theta|\{M_8F>\theta\}|}{\|F\|_1}
+ \ge\theta(L_0-\Delta)
+       \left(\frac{2K+1}{2K+5}\right)^8
+ >\frac{2188811179426669}{10^{15}}.
+\end{equation}
+最后一个严格比较把 \eqref{lo:compact-volume}、\eqref{lo:finite-parameters}
+和 \eqref{lo:loss} 中的有理数代入后，通分为整数不等式得到；
+补充材料同时保存该比较的准确分数与检查程序。
+全部见证半径均为正数，水平值严格小于 $1$，输入本身是有限光滑函数，
+故这给出所定义的一般非负 $L^1(\R^8)$ 输入类中的下界。
+\end{proof}

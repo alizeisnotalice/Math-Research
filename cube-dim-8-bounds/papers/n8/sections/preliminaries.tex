@@ -1,0 +1,50 @@
+\subsection{测度、尺度与水平集}
+全文的体积 $|E|$ 和积分均相对于 Lebesgue 测度。开、闭方体给相同的 $L^1$ 平均；在原子构造中使用闭方体，仅用于描述有限见证，最终输入通过同质量平滑得到。对复值输入，算子作用于 $|f|$。
+
+\begin{lemma}\label{pre:continuity}
+若 $f\in L^1(\R^n)$，则每个固定半径的中心方体平均关于中心连续。因此 $\{M_nf>\lambda\}$ 为开集；其测度可由紧子集内逼近。
+\end{lemma}
+\begin{proof}
+平移 $h$ 所引起的平均差不超过
+$(2r)^{-n}\||f|(\cdot+h)-|f|\|_1$，它由 $L^1$ 平移连续性趋于零。任意族连续函数的上确界是下半连续函数，结论成立。
+\end{proof}
+
+下文采用 Tonelli 定理处理非负积分，采用具有明确支配函数的支配收敛处理有符号极限。Fourier 变换约定为
+\[
+ \widehat f(\xi)=\int_{\R^n}e^{-ix\cdot\xi}f(x)\dd x,
+ \qquad f(x)=(2\pi)^{-n}\int_{\R^n}e^{ix\cdot\xi}\widehat f(\xi)\dd\xi.
+\]
+涉及 $L^2$ 能量时可等价采用 unitary 归一化。所用 Fourier 反演和 Plancherel 定理取通常的 $L^1$ 及 $L^2$ 版本\cite{Folland1999}；局部 Rellich 紧性取有界球上 $H^1\hookrightarrow L^2$ 紧嵌入版本\cite{Evans2010}。第三节在每次使用处说明相应支配、域条件和紧性来源。
+
+\subsection{已有比较与维数承接}
+\begin{oldtheorem}[Aldaz，Proposition 1.4]\label{pre:old-lower}
+以式\eqref{eq:Aldaz-bound}定义 $A_n$。对 $n\ge2$，有 $C_n\ge A_n$\cite{Aldaz2000}。
+\end{oldtheorem}
+\begin{oldtheorem}[中心 $\ell_\infty$ 球的覆盖估计]\label{pre:old-upper}
+对每个正整数 $n$，$C_n\le2^n$\cite[Corollary 3.5]{AldazKissing2020}。
+\end{oldtheorem}
+定理 B 所在文献讨论的测度一致锐性涉及对背景测度取上确界，专门化到固定 Lebesgue 测度只给这里的上界。
+
+\begin{lemma}\label{pre:dimension}
+对中心轴平行、共同半径的方体，有 $C_{n+1}\ge C_n$。
+\end{lemma}
+\begin{proof}
+取 $b<C_n$，选择 $f\in L^1(\R^n)$、$\lambda>0$ 及紧集
+$K\subset\{M_nf>\lambda\}$ 使 $\lambda|K|>b\|f\|_1$。
+引理\ref{pre:continuity}及有限子覆盖给出有限个实际见证半径，令它们的最大值为 $R$。
+对 $T>R$，令 $F_T(x,s)=f(x)\ind_{[-T,T]}(s)$。
+当 $x\in K$、$|s|\le T-R$ 时，原见证半径 $r\le R$ 在新增坐标的积分因子恰为 $2r$，故相应 $(n+1)$ 维平均等于原 $n$ 维平均。
+因此
+\[
+ \frac{\lambda|\{M_{n+1}F_T>\lambda\}|}{\|F_T\|_1}
+ \ge\left(1-\frac RT\right)\frac{\lambda|K|}{\|f\|_1}.
+\]
+令 $T\to\infty$，再令 $b\uparrow C_n$ 即得结论。此论证也给出有限维构造的具体承接方式；单调性见\cite{Aldaz2011}。
+\end{proof}
+
+\subsection{准确有限判据}
+下界计算中的所有端点以整数及有理数表示。若 $m\in\N$、$D\in\N$，整数 $q$ 满足
+\begin{equation}\label{pre:root}
+ q^8\le mD^8<(q+1)^8,
+\end{equation}
+则 $q/D\le m^{1/8}<(q+1)/D$。和、差、积均按区间的包含方向传播；最后只用有理数严格比较。对见证盒的并集，先沿一个固定坐标的全部端点切片；每一开片上的截面盒集合不变。片宽乘截面并集体积后求和，再递归到一维区间合并，由 Fubini 定理与维数归纳得到准确体积。重复截面以计数维护，不将重叠盒的体积直接相加。

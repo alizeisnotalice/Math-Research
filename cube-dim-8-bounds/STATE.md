@@ -1,9 +1,11 @@
 # 八维中心方体真实状态
 
-ACTIVE_CONTINUOUS_UNTIL_USER_STOP。正式严格 2188478854531916/10^15 < C8 < 56627260639/2000000000。完整准确端点见results/bounds_ledger.json。
+PAUSED_BY_USER_FOR_PAPER。用户明确要求暂停研究并直接生成论文；研究goal工具状态paused，未恢复。暂停时实际ps筛选未见本项目后台计算。
 
-R001远端核4adabaed、R002远端核ab943d9f、R003正常rebase并推送后实际ls-remote核a230c14f20e15ad6b7c85ac021d337417298251f；未force。R00414新事件全部child exit0，唯一最高rank16独立全标签exit0已主接受。上界仍R001；三个4+4点锚和热峰/尾预算虽完整准确认证，并非g/I或新Cn。
+论文采用暂停前已完成独审的R005 E098：严格2188811179426669/10^15 < C8 < 56627260639/2000000000。完整准确分数和有限L1证书见papers/n8/supplement/paper_claims.json与lower_audit_exactresults.json。主已核原终态observed_exit_code0、源/独审union与finite逐项一致；论文封装后便携复核32768标签/210446状态再次PASS。这是论文包装复核，不是新研究轮次或新参数实验。
 
-R005266新事件14进程全部完成exit0、UNKNOWN0，56严格cell预筛，最高E098独审进行；当前正式下界不提前采纳。R006双参数tail结构正在推导，未实际union。旧终态基线不重跑。
+R005266新事件原计算已全部exit0、UNKNOWN0；最高E098独审已终态。其余保存upper的证据等级未提升，不声称固定tail族或Cn全局最优。R006仅已完成结构推导资料，未启动新union，论文数值主定理不用它。
 
-固定Lebesgue、中心轴平行共同半径、一般L1、全部正尺度。原其他项目和暂停状态不改。共享MATLAB仅主串行，不clear/path/cwd重置。持续到用户明确要求停止，有限批次可续算，无总时限/轮数上限。
+固定Lebesgue、中心轴平行cube、所有坐标共同半径、一般L1与全部正尺度。Green S3分层/概率源/全尺度理论与三个点锚分别成文；没有g/I数值认证或额外Cn上界。
+
+原其他项目暂停状态不改。后续仅在用户明确要求恢复时继续研究。
