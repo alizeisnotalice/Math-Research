@@ -1,0 +1,29 @@
+{
+  "registered_utc": "2026-10-27T02:46:29.447880+00:00",
+  "dimension": 7,
+  "family": {
+    "tail": "a=(1+u)/2,u>0,u^7=2",
+    "first_spacing": "a1 in[3/2,2]",
+    "lengths": "ell1 in{1,2}, each tail in{1,2,3,4}; all8192",
+    "source_mass": "unit atomic lattice, m=prod ell",
+    "radius": "m^(1/7)/2"
+  },
+  "event_types": [
+    "a1=r_i",
+    "a1=2r_i",
+    "a1=r_i+r_j",
+    "domain endpoints3/2,2"
+  ],
+  "event_reason": "first-axis raw endpoints0,a1/2,r_i,a1-r_i; between all order/tie events union is affine in a1 because tails are constant",
+  "first_batch": "enumerate all events from tail-positive orbit radii, deduplicate numerically only for probe; <=512 new a1 points; prioritize events neighboring a1=1+u^5/2 but never reevaluate old u4/u5 seeds",
+  "max_new_a1_points": 512,
+  "max_winning_full_certificates": 2,
+  "global_memo_state_limit": 1048576,
+  "wall_limit": null,
+  "root_denominator": "10^35",
+  "stop": "immediately stop search on first inward full union lower>complete001upper, then complete full source/union/L1 certificate; save frontier if states exhaust; if event census exceeds512 or no completed full cover, label local/incomplete not excluded",
+  "event_zero_width": "inward box may be empty while outward retained; neither fault nor forced equality",
+  "old_seed_evaluations": 0,
+  "math_tools": "local Python integers/Fraction; no MATLAB",
+  "git": "no commit/push"
+}

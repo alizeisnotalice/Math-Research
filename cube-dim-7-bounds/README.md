@@ -2,7 +2,7 @@
 
 固定 Lebesgue 背景、共同半径、一般 L1 输入及全部正尺度。当前准确状态以 `STATE.md` 和 `results/bounds_ledger.json` 为准；轮次报告在 `rounds/`。其他项目与三四维来源保持只读。
 
-第001轮严格得到 `C7 > 2135677/1000000`，上界仍为128。完整下界构造区间是后续比较门槛，不能从展示小数或简单有理数重造。结果为内部研究，未称公开发表或穷尽全球纪录。
+截至第002轮严格得到 `C7 > 2136208981884/1000000000000`，上界仍为128。最新完整下界构造区间是后续比较门槛，不能从展示小数或简单有理数重造。结果为内部研究，未称公开发表或穷尽全球纪录。
 
 ## 最小复核
 
@@ -35,3 +35,5 @@ python3 -B cube-dim-7-bounds/audit/round001/lower/recheck.py
 - `literature/round001/`：原始公开来源、版本/hash、准确A7及检索限制。
 
 保留约793KiB的有限观测表供核查8192样本的摘要和未丢弃记录；约8.8MB的可复用形状矩阵缓存留在仓外。没有归档整个资料包、重复ZIP、旧维度计算缓存或虚拟环境。
+
+第002轮最小核验：`python3 -B cube-dim-7-bounds/audit/round002/lower/recheck.py --reference cube-dim-7-bounds/lower/round001/results.json`（完整新实例union、stdout-only）；`python3 -B cube-dim-7-bounds/src/check_primary_round002.py`（准确比较与S3坐标审计、stdout-only）。模型积分预算改进不等于Cn改进。

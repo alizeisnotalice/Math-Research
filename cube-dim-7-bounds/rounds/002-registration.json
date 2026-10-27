@@ -1,0 +1,34 @@
+{
+  "round": 2,
+  "coordinator_recorded_utc": "2026-10-27T02:50:20.237383+00:00",
+  "producer_registration_policy": "each independent producer freezes a finite sub-batch registration before its mathematical run; this root file is the coordination record",
+  "opening_commit": "0478c861dcbbfbbc8be472f7617ef4aa261f86eb",
+  "opening_lower_certificate": "lower/round001/results.json full_construction_comparison_interval",
+  "opening_C7_upper": "128",
+  "same_operator_as_round001": true,
+  "upper_tasks": [
+    "reuse original8192-shape cache; finite6D candidate g optimization and singular/conditioning diagnostics; no new MonteCarlo draws",
+    "Hadamard tight-frame determinant grouping, fixed analytic Gamma budgets and exact comparison"
+  ],
+  "lower_task": "fixed six tail spacings; first-axis finite event analysis in[3/2,2], no replay of u^4/u^5 baselines",
+  "finite_limits": {
+    "g_full_point_evaluations_max": 32768,
+    "g_optimization_starts_max": 64,
+    "g_workers_max": 15,
+    "first_axis_event_candidates_max": 512,
+    "new_lower_certification_winners_max": 2,
+    "lower_memo_states_max": 1048576,
+    "moment_groups": 8,
+    "group_7_minors": 56
+  },
+  "wall_limit": null,
+  "total_compute_limit": null,
+  "matlab_main_serial_only": true,
+  "model_ceiling": "gpt-6.1-sol",
+  "stop": [
+    "finite evaluation/state budget exhausted -> checkpoint",
+    "competitive exact candidate found -> certify",
+    "source hash mismatch -> halt dependent run",
+    "optimization not a globalg proof; no Cn change without full certification"
+  ]
+}
