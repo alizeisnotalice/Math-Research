@@ -1,9 +1,9 @@
 {
   "dimension": 7,
-  "updated_utc": "2026-10-27T22:44:22.888063+00:00",
+  "updated_utc": "2026-10-27T22:48:10.552714+00:00",
   "status": "GENERAL_HIGH_DIM_COVER_ACTIVE_N7_SPECIFIC_STOPPED_LOWER_PAUSED",
   "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-  "current_round": 60,
+  "current_round": 63,
   "lower": {
     "status": "complete_strict_primary_and_independent_full_union",
     "exact_construction": "R006: a1=(8^(1/7)+288^(1/7))/2; six tails(1+2^(1/7))/2; full8192 halfcell union times128",
@@ -766,7 +766,8 @@
       "tex_git_blob": "5bb7847ea130dc03afa63ffb3ca17aa9a828e919",
       "pdf_git_blob": "4b8f0883a2e2c3cc0fd64c1de983f4bd59b6b412"
     },
-    "later_results": "separate rounds R061/R063 and onward, outside this frozen paper"
+    "later_results": "separate rounds R061/R063 and onward, outside this frozen paper",
+    "latest_bound_not_yet_in_current_frozen_paper": 63
   },
   "round029": {
     "report": "revision_v3/REPORT.md",
@@ -840,7 +841,7 @@
     "status": "active",
     "objective": "持续优化维数一致上界，Sol/Terra/Luna，本机优先；下界暂停",
     "next_round": 61,
-    "focus": "R061 disjoint layers, R063 threshold, R064 multiplicative radial calibration",
+    "focus": "R061 disjoint-layers full review, R064 multiplicative radial calibration full proof",
     "n7_specific_work": "STOPPED; historical archive only"
   },
   "upper_pre_R031": {
@@ -901,17 +902,17 @@
     "leading_n_log_n_coefficient": 1
   },
   "general_high_dim_upper": {
-    "round": 59,
+    "round": 63,
     "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-    "full_proof": "upper/round059/wide_source_band/PROOF.md",
-    "proof_sha256": "fe95f369634bbc753f5e44a32d6a2b74b288748ebd4bfe1f6c3cac43b086bd8f",
-    "independent_audit": "audit/round059/wide_source_band/review.md",
-    "independent_audit_sha256": "c8aff39bf68749d25f9978cef11be82ccb7907ec7e72c5678ac66b06a65a33d4",
+    "full_proof": "upper/round063/wideband_threshold/THRESHOLD_PROOF.md",
+    "proof_sha256": "70fc76d864f233900baadd7f177b7532b654355c3ce3b515a822fe6b65a19133",
+    "independent_audit": "audit/round063/wideband_threshold/review.md",
+    "independent_audit_sha256": "0ed71d0a9fa3cbe6d0e9e4822ec4ab4104e1a48790de8ce78b801128e60440e8",
     "leading_coefficient": 1,
     "public_status": "internal independently reviewed theorem, no published/priority/global-optimal claim",
-    "scope": "fixed rational tuple, sufficiently large integern; unknownN",
+    "scope": "natural log(n)>=2^33, every integern",
     "bound": "Cn<=Phi59<T−n/10, T=nlogn−nloglogn",
-    "explicit_threshold": null,
+    "explicit_threshold": "log(n)>=2^33",
     "parameters": {
       "d": "391/1905",
       "a_band": "283/2032",
@@ -929,8 +930,10 @@
       "target_mass_lower": "159477/1000000"
     },
     "full_cost": "Phi59=F(A_n(t),B_n(t)−(1637/12500)*n), t=n/[(97/100)logn]",
-    "comparison": "Phi59<Phi56 on their actual domains intersection; no threshold inferred from this scalar sorting",
-    "mechanism": "wide source band, activeRbase, addedKw good event, Csrc cap mass, perface inverse variance, exactcolumn2"
+    "comparison": "Phi59<Phi56 throughout actual domains intersection L>=2^33",
+    "mechanism": "wide source band, activeRbase, addedKw good event, Csrc cap mass, perface inverse variance, exactcolumn2",
+    "mechanism_source": "upper/round059/wide_source_band/PROOF.md",
+    "historical_note": "R059 itself remains original unknownN; this new round quantifies all guards and infinite tails"
   },
   "round034": {
     "report": "upper/round034/REPORT.md",
@@ -1137,43 +1140,38 @@
     "comparison_scope": "L>=2^240 dominates complete listed valid fixed-old-t costs; unitcore all-t comparison only eventual; otherwise take applicable minimum"
   },
   "general_high_dim_explicit_upper": {
-    "round": 56,
+    "round": 63,
     "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-    "full_proof": "upper/round056/refined_inverse/PROOF.md",
-    "proof_sha256": "6986ed9ec48b46f3136a9a56722d0092db4f2942d52e35c9f4de37eb279f399a",
-    "independent_audit": "audit/round056/refined_inverse/review.md",
-    "independent_audit_sha256": "51379eca8cb5a6a7714e89349e96c8c5cfc6c0933ec312d289e039788c10f83f",
+    "full_proof": "upper/round063/wideband_threshold/THRESHOLD_PROOF.md",
+    "proof_sha256": "70fc76d864f233900baadd7f177b7532b654355c3ce3b515a822fe6b65a19133",
+    "independent_audit": "audit/round063/wideband_threshold/review.md",
+    "independent_audit_sha256": "0ed71d0a9fa3cbe6d0e9e4822ec4ab4104e1a48790de8ce78b801128e60440e8",
     "leading_coefficient": 1,
-    "public_status": "internal independently reviewed theorem; no publication/priority/global optimality claim",
-    "scope": "natural log(n)>=2^20",
-    "bound": "Cn<=Phi56<T−n/40; T=nlogn−nloglogn",
-    "explicit_threshold": "log(n)>=2^20",
+    "public_status": "internal independently reviewed theorem, no published/priority/global-optimal claim",
+    "scope": "natural log(n)>=2^33, every integern",
+    "bound": "Cn<=Phi59<T−n/10, T=nlogn−nloglogn",
+    "explicit_threshold": "log(n)>=2^33",
     "parameters": {
-      "d": "3/10",
-      "sigma": "7/100",
-      "chi": "7/200",
-      "epsilon0": "1/16777216",
-      "epsJ_N_Ret_S_T_D": "1/1024",
-      "epsA": "1/64",
-      "source_q": [
-        "31/40",
-        "37/40"
-      ],
-      "target_r": [
-        "43/40+2^-20",
-        "49/40−2^-20"
-      ],
-      "P0": "65275/65536",
-      "Ulo": "2671053/2686976",
-      "Uhi": "2686976/2671053",
-      "mass_lower": "259465051078193863093554363/2018111068113594386771608802",
-      "M": "21/8",
-      "gamma": "172531397335235056462877787662549380239/1643616601687301779182642153860479582208",
-      "craw": "4540103740365747796769139175593735286771/152856343956919065463985720309024601145344"
+      "d": "391/1905",
+      "a_band": "283/2032",
+      "b_band": "63/64",
+      "sigma": "3/100",
+      "chi": "147/10000",
+      "gamma": "1637/12500",
+      "craw": "121289/1212500",
+      "slack_to_one_tenth": "39/1212500",
+      "h_coeff": "1/281474976710656",
+      "target_inset": "1/1048576",
+      "epsJ_N_S_T_D": "1/1048576",
+      "epsRet": "1/4096",
+      "epsA": "1/65536",
+      "target_mass_lower": "159477/1000000"
     },
-    "full_cost": "Phi56=F(A_n(t),B_n(t)−gamma56*n), t=n/[(93/100)logn]",
-    "old_full_cost_comparison": "strictly smaller than R053/055 on their own actual domains; other known old formulas retain own hypotheses; exact lower-envelope report/comparison",
-    "mechanism": "source-face count normalization, exact target column2, per-source-face inverse Chebyshev then mixture; new d<=1/3 proof"
+    "full_cost": "Phi59=F(A_n(t),B_n(t)−(1637/12500)*n), t=n/[(97/100)logn]",
+    "comparison": "Phi59<Phi56 throughout actual domains intersection L>=2^33",
+    "mechanism": "wide source band, activeRbase, addedKw good event, Csrc cap mass, perface inverse variance, exactcolumn2",
+    "mechanism_source": "upper/round059/wide_source_band/PROOF.md",
+    "historical_note": "R059 itself remains original unknownN; this new round quantifies all guards and infinite tails"
   },
   "round045": {
     "report": "upper/round045/REPORT.md",
@@ -1547,5 +1545,82 @@
     "report": "upper/round060/REPORT.md",
     "status": "complete24page final math ACCEPT and primary actualbuild/allpagevisual",
     "new_Cn_bound": false
+  },
+  "general_high_dim_explicit_upper_pre_R063": {
+    "round": 56,
+    "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+    "full_proof": "upper/round056/refined_inverse/PROOF.md",
+    "proof_sha256": "6986ed9ec48b46f3136a9a56722d0092db4f2942d52e35c9f4de37eb279f399a",
+    "independent_audit": "audit/round056/refined_inverse/review.md",
+    "independent_audit_sha256": "51379eca8cb5a6a7714e89349e96c8c5cfc6c0933ec312d289e039788c10f83f",
+    "leading_coefficient": 1,
+    "public_status": "internal independently reviewed theorem; no publication/priority/global optimality claim",
+    "scope": "natural log(n)>=2^20",
+    "bound": "Cn<=Phi56<T−n/40; T=nlogn−nloglogn",
+    "explicit_threshold": "log(n)>=2^20",
+    "parameters": {
+      "d": "3/10",
+      "sigma": "7/100",
+      "chi": "7/200",
+      "epsilon0": "1/16777216",
+      "epsJ_N_Ret_S_T_D": "1/1024",
+      "epsA": "1/64",
+      "source_q": [
+        "31/40",
+        "37/40"
+      ],
+      "target_r": [
+        "43/40+2^-20",
+        "49/40−2^-20"
+      ],
+      "P0": "65275/65536",
+      "Ulo": "2671053/2686976",
+      "Uhi": "2686976/2671053",
+      "mass_lower": "259465051078193863093554363/2018111068113594386771608802",
+      "M": "21/8",
+      "gamma": "172531397335235056462877787662549380239/1643616601687301779182642153860479582208",
+      "craw": "4540103740365747796769139175593735286771/152856343956919065463985720309024601145344"
+    },
+    "full_cost": "Phi56=F(A_n(t),B_n(t)−gamma56*n), t=n/[(93/100)logn]",
+    "old_full_cost_comparison": "strictly smaller than R053/055 on their own actual domains; other known old formulas retain own hypotheses; exact lower-envelope report/comparison",
+    "mechanism": "source-face count normalization, exact target column2, per-source-face inverse Chebyshev then mixture; new d<=1/3 proof"
+  },
+  "general_high_dim_upper_pre_R063": {
+    "round": 59,
+    "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+    "full_proof": "upper/round059/wide_source_band/PROOF.md",
+    "proof_sha256": "fe95f369634bbc753f5e44a32d6a2b74b288748ebd4bfe1f6c3cac43b086bd8f",
+    "independent_audit": "audit/round059/wide_source_band/review.md",
+    "independent_audit_sha256": "c8aff39bf68749d25f9978cef11be82ccb7907ec7e72c5678ac66b06a65a33d4",
+    "leading_coefficient": 1,
+    "public_status": "internal independently reviewed theorem, no published/priority/global-optimal claim",
+    "scope": "fixed rational tuple, sufficiently large integern; unknownN",
+    "bound": "Cn<=Phi59<T−n/10, T=nlogn−nloglogn",
+    "explicit_threshold": null,
+    "parameters": {
+      "d": "391/1905",
+      "a_band": "283/2032",
+      "b_band": "63/64",
+      "sigma": "3/100",
+      "chi": "147/10000",
+      "gamma": "1637/12500",
+      "craw": "121289/1212500",
+      "slack_to_one_tenth": "39/1212500",
+      "h_coeff": "1/281474976710656",
+      "target_inset": "1/1048576",
+      "epsJ_N_S_T_D": "1/1048576",
+      "epsRet": "1/4096",
+      "epsA": "1/65536",
+      "target_mass_lower": "159477/1000000"
+    },
+    "full_cost": "Phi59=F(A_n(t),B_n(t)−(1637/12500)*n), t=n/[(97/100)logn]",
+    "comparison": "Phi59<Phi56 on their actual domains intersection; no threshold inferred from this scalar sorting",
+    "mechanism": "wide source band, activeRbase, addedKw good event, Csrc cap mass, perface inverse variance, exactcolumn2"
+  },
+  "round063": {
+    "report": "upper/round063/REPORT.md",
+    "status": "FULL threshold ACCEPT; exact allL33 originaloperator domain",
+    "new_Cn_bound": false,
+    "new_explicit_valid_domain": true
   }
 }

@@ -33,3 +33,5 @@ R056已新增完整严格Cn定理：自然log n≥2^20时Cn<T−n/40，见[最�
 R059新增eventual完整严格Cn<T−n/10，无显式N，见[报告](upper/round059/REPORT.md)与[完整独审](audit/round059/wide_source_band/review.md)。R056提交2a9b922514efbcb00cba9c4c7cfba39e0e1b31ae已远端确认，显式log n≥2^20的n/40仍保留。R059最终commit以Git log/readback receipt为准。
 
 R060当前24页论文已全文数学终审、主实际双编译/全页图审，见[PDF](paper/main.pdf)与[报告](upper/round060/REPORT.md)，范围R056/R059。R059提交0937192e6b5cef98679a144176fe4be1fd23a3dd已远端确认。R060自身最终commit以真实同步receipt/Git log为准。
+
+R063完整新显式域：自然log n≥2^33有Cn<T−n/10，见[门槛报告](upper/round063/REPORT.md)及[独审](audit/round063/wideband_threshold/review.md)。R060当前24页论文提交2f393a17f443f10411fa9ea435fd88fd5350c14a已远端确认，正文冻结至R056/R059，不包含本轮新门槛。

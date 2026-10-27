@@ -1,0 +1,101 @@
+{
+  "status": "PASS_INDEPENDENT_COMPRESSED_R063_THRESHOLD",
+  "python": "3.12.14",
+  "arithmetic": "standard-library Fraction/integer",
+  "threshold": "log(n)>=2^33, integer dimension n; this is new R063 domain, not a retrospective R059 receipt edit",
+  "recipe": "nbar=L^8/2^16; source Taylor10; tau Taylor6; scalar Taylor4; no author imports or log/grid/baseline replay",
+  "checks": {
+    "weaker_exponential_lower_bound": true,
+    "tuple_and_band_domain": true,
+    "x_and_t_base": true,
+    "large_n_and_Kw_threshold": true,
+    "matching_trim_and_global_R": true,
+    "zeta_local_and_gap": true,
+    "source_target_scale_separation": true,
+    "baseline_failure_budget": true,
+    "Kw_fifth_event": true,
+    "both_endpoint_count_events": true,
+    "whole_interval_count_drift": true,
+    "target_cap_face_budget": true,
+    "five_bad_event_union": true,
+    "individual_J_and_separate_product": true,
+    "inverse_face_retention": true,
+    "wide_Csrc_and_eta": true,
+    "finite_n_source_cap_exponent": true,
+    "cap10_power_enclosure": true,
+    "sqrt_base_upper": true,
+    "tau6_power_enclosure": true,
+    "tau_exponent_identity": true,
+    "root_positive_domain": true,
+    "finite_algorithmic_dilation": true,
+    "complete_scalar_slack": true,
+    "scalar4_power_enclosure": true
+  },
+  "comparison_checks": {
+    "accepted_gamma56_below_coarse_upper": true,
+    "positive_B56_buffer_separates_full_costs": true,
+    "actual_domain_intersection": true
+  },
+  "base_values": {
+    "L0": "8589934592",
+    "nbar0": "452312848583266388373324160190187140051835877600158453279131187530910662656",
+    "x0": "208305913856/25",
+    "h0": "1905/945379990938640014620229632",
+    "baseline_mean_bound": "65724924956069761291/4944842256962788120965263376966531038521868505452348005774326227117832929280",
+    "baseline_variance_bound": "59776471/2248653916905272181322863333192131466840632358731612842245488640",
+    "inverse_face_tail": "390625/1830813696",
+    "cap10_bound": "2801933917962132355138071826416990006691776216030120849609375/112742495423263784214880785683839471331261112126688345064649244817997816659968",
+    "tau6_bound": "5689798854291439056396484375/8079629644276279699996586627190226944",
+    "scalar4_bound": "278759381443032578514990123598457532841984000000027/12212446911748192486079752325135052781399568695204278238536542063334587891712",
+    "scalar_slack": "39/1212500",
+    "cap_effective_gap_lower": "28262259491770744102820240159803629485606406496483600774886573230282980412406547/2126043963396995853831161816040352542558623516738773791218362447988495101449994240000",
+    "gamma56_accepted_readonly": "172531397335235056462877787662549380239/1643616601687301779182642153860479582208"
+  },
+  "tail_powers": {
+    "nbar": "L^8",
+    "nbar_over_L": "L^7",
+    "h": "L^-1",
+    "zeta_t_over_h": "L^-16",
+    "baseline_mean": "positive sum L^-6,L^-7",
+    "baseline_variance": "L^-6",
+    "Kw_counts": "L^-8",
+    "count_drift": "positive sum L^-1,L^-8",
+    "individual_J_error": "L^-7",
+    "inverse_face_tail": "L^-1",
+    "source_cap_T10": "L^-9",
+    "tau_T6": "L^-9/2",
+    "scalar_T4": "positive sum L^-8,L^-4,L^-7/2"
+  },
+  "sources": {
+    "R063_source": {
+      "path": "/Users/zhengzhihao/Desktop/T/cube-r030-parameters/cube-dim-7-bounds/upper/round063/wideband_threshold/THRESHOLD_PROOF.md",
+      "sha256": "70fc76d864f233900baadd7f177b7532b654355c3ce3b515a822fe6b65a19133"
+    },
+    "R059_final_source": {
+      "path": "/Users/zhengzhihao/Desktop/T/cube-r040-cover-selector/cube-dim-7-bounds/upper/round059/wide_source_band/PROOF.md",
+      "sha256": "fe95f369634bbc753f5e44a32d6a2b74b288748ebd4bfe1f6c3cac43b086bd8f"
+    },
+    "R059_full_audit": {
+      "path": "/Users/zhengzhihao/Desktop/T/cube-r030-soft/cube-dim-7-bounds/audit/round059/wide_source_band/review.md",
+      "sha256": "c8aff39bf68749d25f9978cef11be82ccb7907ec7e72c5678ac66b06a65a33d4"
+    },
+    "R056_local_lemma": {
+      "path": "/Users/zhengzhihao/Desktop/T/cube-r030-roots-audit/cube-dim-7-bounds/audit/round056/one_coordinate/LEMMA.md",
+      "sha256": "97430af9980c2de5d105bc4ea86667573c5c28e0ff40a92f1c613cd95a243eec"
+    },
+    "R059_historical_certificate": {
+      "path": "/Users/zhengzhihao/Desktop/T/cube-r040-cover-selector/cube-dim-7-bounds/upper/round059/wide_source_band/certificate.json",
+      "sha256": "291fc41ee7fa40294992fe4e77ef011ebfa1f6657d8e0846278a8f3286a41421"
+    },
+    "R056_final_source": {
+      "path": "/Users/zhengzhihao/Desktop/T/cube-r030-geometry/cube-dim-7-bounds/upper/round056/refined_inverse/PROOF.md",
+      "sha256": "6986ed9ec48b46f3136a9a56722d0092db4f2942d52e35c9f4de37eb279f399a"
+    },
+    "R056_historical_values": {
+      "path": "/Users/zhengzhihao/Desktop/T/cube-r030-geometry/cube-dim-7-bounds/upper/round056/refined_inverse/verification.json",
+      "sha256": "58975dd023f3b036aad9feefe33f1d124984bf5bd89bc61c92e7f8e9a11a27ee"
+    }
+  },
+  "own_script_sha256": "a4b9cf170152e18e991b6c02d7cf13af80b6909859f30ddbad81a0d4c44cd1b3",
+  "scope": "Exact base inequalities and recorded all-tail analytic powers. The accompanying review supplies their mathematical implication and actual-history/general-L1 bridge. No author verifier, old log certificate, old gates, production scan, MATLAB or Git operation was executed."
+}
