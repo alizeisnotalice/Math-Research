@@ -1,9 +1,9 @@
 {
   "dimension": 7,
-  "updated_utc": "2026-10-27T16:55:03.411713+00:00",
+  "updated_utc": "2026-10-27T16:56:54.921286+00:00",
   "status": "GENERAL_HIGH_DIM_COVER_ACTIVE_N7_SPECIFIC_STOPPED_LOWER_PAUSED",
   "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-  "current_round": 32,
+  "current_round": 33,
   "lower": {
     "status": "complete_strict_primary_and_independent_full_union",
     "exact_construction": "R006: a1=(8^(1/7)+288^(1/7))/2; six tails(1+2^(1/7))/2; full8192 halfcell union times128",
@@ -881,5 +881,24 @@
       "anisotropic and scale-ratio budget barriers"
     ],
     "new_n7_work": false
+  },
+  "round033": {
+    "report": "upper/round033/REPORT.md",
+    "status": "complete_strict_theory_independent_ACCEPT",
+    "new_n7_work": false,
+    "leading_n_log_n_coefficient": 1
+  },
+  "general_high_dim_upper": {
+    "round": 33,
+    "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+    "L": "log n",
+    "W": "nL−nlogL+(3logL+1)n/L+(9(logL)^2+1)n/L²",
+    "bound": "Cn<W−n/(128sqrt L)",
+    "threshold": "L>=4096",
+    "proof": "upper/round033/typical_shell/PROOF.md",
+    "independent_ACCEPT": true,
+    "public_status": "internal strictly proved, not claimed published or globally best",
+    "leading_coefficient": 1,
+    "negative_remainder": "L>=2^30: Cn<T−n/(256sqrt L)"
   }
 }
