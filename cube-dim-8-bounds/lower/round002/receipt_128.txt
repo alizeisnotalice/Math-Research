@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/Users/zhengzhihao/Desktop/T/Math-Research-cube8-terra-lower/cube-dim-8-bounds/lower/round002/candidate.py", line 17, in <module>
+    print(json.dumps({'m':m,'status':result['status'],'winner':result.get('candidate',{}).get('winner',False),'wall_seconds_total':result['wall_seconds_total']},flush=True))
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.15/3.15.0_1/Frameworks/Python.framework/Versions/3.15/lib/python3.15/json/__init__.py", line 237, in dumps
+    return cls(
+           ~~~^
+        skipkeys=skipkeys, ensure_ascii=ensure_ascii,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        check_circular=check_circular, allow_nan=allow_nan, indent=indent,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        separators=separators, default=default, sort_keys=sort_keys,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **kw).encode(obj)
+        ^^^^^
+TypeError: JSONEncoder.__init__() got an unexpected keyword argument 'flush'

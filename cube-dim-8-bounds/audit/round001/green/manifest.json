@@ -1,0 +1,106 @@
+{
+  "project": "cube-dim-8-bounds",
+  "artifact_round_path": "audit/round001/green",
+  "integration_context": "R002 backup analytic interface received after accepted R001; no support claimed for the currently accepted numerical C8 record",
+  "status": "PASS: analytic interface and finite normalization only",
+  "frozen_utc": "2026-10-27T12:40:08.932110+00:00",
+  "clone_base_head": "79f8acb20c418e60c5196a3c830103253e34c900",
+  "author_directory": "/Users/zhengzhihao/Desktop/T/Math-Research-cube8-sol-green/cube-dim-8-bounds/upper/round001/green",
+  "author_hashes_at_first_finalized_read": {
+    "check.py": "793ff4c83f3dc01282632a5294ecbd5091b4faee4c1013395850a1fb545ac7b8",
+    "checks.json": "6e6391fa8ba626723ade80b82910e6647d70104aad6fdb56802079218eb3da29",
+    "proof.md": "67a6314c9d3a0da74c569e0301791e740cb0c03588aececa76a9b0ce5e991cdf",
+    "sources.json": "9641e6f312c4a1654ba315dda14439fb59acc7fabf8de9faad6670c4ac40979c"
+  },
+  "author_hashes_at_audit_freeze": {
+    "check.py": "793ff4c83f3dc01282632a5294ecbd5091b4faee4c1013395850a1fb545ac7b8",
+    "checks.json": "6e6391fa8ba626723ade80b82910e6647d70104aad6fdb56802079218eb3da29",
+    "proof.md": "67a6314c9d3a0da74c569e0301791e740cb0c03588aececa76a9b0ce5e991cdf",
+    "sources.json": "9641e6f312c4a1654ba315dda14439fb59acc7fabf8de9faad6670c4ac40979c"
+  },
+  "author_files_stable": true,
+  "author_external_source_hash_checks": [
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/cube8-source-package-20261025/cube-finite-dim-bounds/audit/second_review/theory/paper_finite_source.md",
+      "sha256": "5e5cd1cac6cd3172eeff584696661066c61c3b7a666ed287bc1cbd5e93325608",
+      "verified": true,
+      "reading_scope_in_this_audit": "identity checked; author new proof is analytically self-contained"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/cube8-source-package-20261025/cube-finite-dim-bounds/audit/second_review/theory/audit.md",
+      "sha256": "f683a1f7e7e1b01e20063a93e4488102e690c8b73ed1e9865707e83f93b849c6",
+      "verified": true,
+      "reading_scope_in_this_audit": "identity checked; author new proof is analytically self-contained"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/cube8-source-package-20261025/cube-finite-dim-bounds/papers/n3/main.tex",
+      "sha256": "cf87e51a19d212cbdde601968352f5b9a4ea1b2e2d5d10ac908b7072fd80715c",
+      "verified": true,
+      "reading_scope_in_this_audit": "identity checked; author new proof is analytically self-contained"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/cube8-source-package-20261025/cube-finite-dim-bounds/papers/n4/main.tex",
+      "sha256": "1e173ee28eed26945f5f94523c902d4c1496f9218cc3fd488376ee01a76b984b",
+      "verified": true,
+      "reading_scope_in_this_audit": "identity checked; author new proof is analytically self-contained"
+    },
+    {
+      "path": "/Users/zhengzhihao/Desktop/T/cube8-source-package-20261025/AGENTS.md",
+      "sha256": "18025c63fdc4225e0c326bc535b810c9a9e54ab683b990dce818758f3ca732d5",
+      "verified": true,
+      "reading_scope_in_this_audit": "identity checked; author new proof is analytically self-contained"
+    }
+  ],
+  "author_check_receipt_limit": "checks.json describes exact finite results, arithmetic and platform but has no separate command/timing receipt; this is not treated as independent historical execution attestation",
+  "deliverables": {
+    "actualreceipt.json": {
+      "sha256": "e409b6d093c9a6217a581e3e9d1aa7e46fd20209dd32753319be4ff9868868cb",
+      "bytes": 607
+    },
+    "independent_check.py": {
+      "sha256": "14eb7a5f5819251f6a64f4a8fd3084b240e728e3a08d03ddd200f4a0ee9bc975",
+      "bytes": 6007
+    },
+    "proofreview.md": {
+      "sha256": "d38edf9d04cb44687968484a7493ca62a2cf8669bfeb039e1a1275d1857456d3",
+      "bytes": 24206
+    },
+    "result.json": {
+      "sha256": "9b8b9358ca307d5eac6eab7ef6f5a5390f8dd1d128c3bd8cbd38b57854bb1334",
+      "bytes": 1053
+    }
+  },
+  "actual_runs": [
+    {
+      "command": "python3 cube-dim-8-bounds/audit/round001/green/independent_check.py",
+      "observed_exit_code": 0,
+      "result": "result.json",
+      "receipt": "actualreceipt.json",
+      "wall_seconds": 0.0011339159973431379
+    }
+  ],
+  "analytic_claims_audited": [
+    "exact S3 singular classification",
+    "short-time density sup and fixed-slice Fatou",
+    "weak L8/7 and whole-space positive-part integrability",
+    "positive probability source and translated-cutoff atomlessness at every point",
+    "obstacle compactness, complementarity and no escaped mass",
+    "finite-source Fourier comparison with correct 1/r factor",
+    "one receiving set D for every positive radius and arbitrary L1 input",
+    "essential cube/face interface and homogeneous Green mass",
+    "sixteen unnormalized directions, shared-time 4+4 model and cost normalization"
+  ],
+  "independent_addition": "Translate bounded min(G,c) small-cutoff argument to any x0 to prove the source has no atom anywhere, strengthening the author explicit origin-only assertion",
+  "scope_exclusions": [
+    "No numerical g0 or I0 certificate",
+    "No new numerical C8 bound",
+    "No repetition of author 1796-subset enumeration",
+    "No author checker execution",
+    "No Green node evaluation or optimization",
+    "No variable-background or independent-rectangle-scale extension",
+    "No edits to frozen upper audit",
+    "No commit or push"
+  ],
+  "previous_upper_hash_manifest_verified_unchanged": true,
+  "repository_note": "Only available assigned/reference files were read; unrelated historical missing blobs were not repaired or validated"
+}
