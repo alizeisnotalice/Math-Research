@@ -1,9 +1,9 @@
 {
   "dimension": 7,
-  "updated_utc": "2026-10-27T12:12:00.402727+00:00",
-  "status": "RESEARCH_PAUSED_SECONDARY_REVIEW_ACCEPTED_PAPER_COMPLETE",
+  "updated_utc": "2026-10-27T16:50:07.478402+00:00",
+  "status": "GENERAL_HIGH_DIM_COVER_ACTIVE_N7_SPECIFIC_STOPPED_LOWER_PAUSED",
   "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-  "current_round": 28,
+  "current_round": 31,
   "lower": {
     "status": "complete_strict_primary_and_independent_full_union",
     "exact_construction": "R006: a1=(8^(1/7)+288^(1/7))/2; six tails(1+2^(1/7))/2; full8192 halfcell union times128",
@@ -27,37 +27,38 @@
     "family_exhausted": false
   },
   "upper": {
-    "exact": "12277313907857/500000000000",
+    "exact": "24554615330071/1000000000000",
     "relation": "C7 < exact",
     "status": "complete_strict_operator_certificate_shared_history_two_region_cut",
-    "t": "3391749/524288",
-    "sigma": "2081927/6783498",
+    "t": "1293876919011/200000000000",
+    "sigma": "1995478998109/6469384595055",
     "cost_interval": [
-      "61386569539284173239555562623849247689441/2500000000000000000000000000000000000000",
-      "30693284769642086619777781311924623844721/1250000000000000000000000000000000000000"
+      "122773076650352489497461534652558214463453/5000000000000000000000000000000000000000",
+      "24554615330070497899492306930511642892691/1000000000000000000000000000000000000000"
     ],
     "B_interval": [
-      "27249831634275758246366542777717370264817/2500000000000000000000000000000000000000",
-      "108999326537103032985466171110869481059269/10000000000000000000000000000000000000000"
+      "54500204194846527910439054377190612974157/5000000000000000000000000000000000000000",
+      "21800081677938611164175621750876245189663/2000000000000000000000000000000000000000"
     ],
     "P_interval": [
-      "13724046010086939022735242911833586967223/2500000000000000000000000000000000000000",
-      "54896184040347756090940971647334347868893/10000000000000000000000000000000000000000"
+      "2184058397745953423483626932922693276361/400000000000000000000000000000000000000",
+      "27300729971824417793545336661533665954513/5000000000000000000000000000000000000000"
     ],
-    "D": "95197903615747231809805916180364972866250101/429456966920012286352163925308658000079195619328",
+    "D": "4654155270298487682654005083466088351100978783716534197267658134321491269057703120691321/20236225268255625634750172619263657675116862186099829255298095639826843606327848000570000000",
     "proof": "upper/round030/geometry_theory/REPORT.md §3.1.3",
     "independent_proof_review": "audit/round030/uniform/geometry_review.md",
-    "certificate": "audit/round030/numeric/independent_n7.json",
-    "independent_finite_certificate": "audit/round030/numeric/finite_n7.json",
+    "certificate": "audit/round031/numeric/independent_n7.json",
+    "independent_finite_certificate": "audit/round031/numeric/finite_n7.json",
     "finite_a": "2^512",
     "new_bound": true,
     "general_L1_all_positive_common_radii": true,
-    "old_complete_cost_lower": "30693700657455875377040149808878516322113/1250000000000000000000000000000000000000",
+    "old_complete_cost_lower": "61386569539284173239555562623849247689441/2500000000000000000000000000000000000000",
     "original_R028_dyadic_lower": "5144190538429014900785325468431995864056284451508471632730283488472882113411308021474331552062457227354056553257208290636539580569113293838741561192063471/209496998905353079680844140596966345741865090946756146526930647558152562969899171512529285908857866057656747784163844544589904418936665155413025765720064",
     "strict_complete_cost_improvement": true,
     "continuous_parameter_optimality": false,
     "public_status": "internal certified result, not claimed journal-published or globally best",
-    "comparison_rule": "Use complete current cost interval, never reconstruct from displayed U."
+    "comparison_rule": "Use complete current cost interval, never reconstruct from displayed U.",
+    "archive_only_after_user_stop": true
   },
   "public_best_verified": {
     "qualification": "best among sources actually checked in finite directed search; not exhaustive global claim",
@@ -722,7 +723,7 @@
     "requested_by_user": true,
     "after_round": 29,
     "lower_remains_paused": true,
-    "new_research_authorized": false,
+    "new_research_authorized": true,
     "secondary_review": "ACCEPTED expanded proof and final manuscript",
     "paper": "revised_complete",
     "goal_tool_pause_receipt": "second_review/goal_pause.json",
@@ -750,7 +751,7 @@
     "manifest": "paper/MANIFEST.json",
     "transcription_review": "revision_v3/final_audit/review.md",
     "compile": "success local XeLaTeX",
-    "research_remains_paused": true,
+    "research_remains_paused": false,
     "dimension_verification": "revision_v3/numeric/verify.py",
     "prior_version_commit": "f51eea163826ee8fb60e67b2a24528d67a766753",
     "note": "R029 13-page PDF remains valid but weaker; R030 cut not incorporated, no new compile claimed."
@@ -826,8 +827,48 @@
   "active_goal": {
     "status": "active",
     "objective": "持续优化维数一致上界，Sol/Terra/Luna，本机优先；下界暂停",
-    "next_round": 32,
-    "focus": "general high-dimensional covering improvements",
-    "n7_specific_work": "STOPPED by user 2026-10-28; already-completed data archive only"
+    "next_round": 35,
+    "focus": "general high-dimensional covering mechanism; multi-shell deficits and joint cover/load",
+    "n7_specific_work": "STOPPED; historical archive only"
+  },
+  "upper_pre_R031": {
+    "exact": "12277313907857/500000000000",
+    "relation": "C7 < exact",
+    "status": "complete_strict_operator_certificate_shared_history_two_region_cut",
+    "t": "3391749/524288",
+    "sigma": "2081927/6783498",
+    "cost_interval": [
+      "61386569539284173239555562623849247689441/2500000000000000000000000000000000000000",
+      "30693284769642086619777781311924623844721/1250000000000000000000000000000000000000"
+    ],
+    "B_interval": [
+      "27249831634275758246366542777717370264817/2500000000000000000000000000000000000000",
+      "108999326537103032985466171110869481059269/10000000000000000000000000000000000000000"
+    ],
+    "P_interval": [
+      "13724046010086939022735242911833586967223/2500000000000000000000000000000000000000",
+      "54896184040347756090940971647334347868893/10000000000000000000000000000000000000000"
+    ],
+    "D": "95197903615747231809805916180364972866250101/429456966920012286352163925308658000079195619328",
+    "proof": "upper/round030/geometry_theory/REPORT.md §3.1.3",
+    "independent_proof_review": "audit/round030/uniform/geometry_review.md",
+    "certificate": "audit/round030/numeric/independent_n7.json",
+    "independent_finite_certificate": "audit/round030/numeric/finite_n7.json",
+    "finite_a": "2^512",
+    "new_bound": true,
+    "general_L1_all_positive_common_radii": true,
+    "old_complete_cost_lower": "30693700657455875377040149808878516322113/1250000000000000000000000000000000000000",
+    "original_R028_dyadic_lower": "5144190538429014900785325468431995864056284451508471632730283488472882113411308021474331552062457227354056553257208290636539580569113293838741561192063471/209496998905353079680844140596966345741865090946756146526930647558152562969899171512529285908857866057656747784163844544589904418936665155413025765720064",
+    "strict_complete_cost_improvement": true,
+    "continuous_parameter_optimality": false,
+    "public_status": "internal certified result, not claimed journal-published or globally best",
+    "comparison_rule": "Use complete current cost interval, never reconstruct from displayed U."
+  },
+  "round031": {
+    "report": "upper/round031/REPORT.md",
+    "general_sigma_classification": "complete; unique fixed-t feasible boundary or empty domain",
+    "completed_prior_n7_certificate_archived": true,
+    "new_n7_run_after_stop": false,
+    "global_t_optimality": false
   }
 }

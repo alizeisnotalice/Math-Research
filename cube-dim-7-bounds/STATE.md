@@ -1,7 +1,7 @@
-# 当前状态：高维一般覆盖改进持续推进
+# 当前状态：一般高维覆盖持续攻关
 
-HIGH_DIM_COVER_ACTIVE；LOWER_PAUSED；N7_SPECIFIC_STOPPED；goal active。用户2026-10-28最新要求停止七维特异性改进，着重一般高维覆盖。此前完成的R030/031数值只归档，不追加七维搜索/认证。
+HIGH_DIM_COVER_ACTIVE；LOWER_PAUSED；N7_SPECIFIC_STOPPED。用户明确继续迭代覆盖改进，不做七维专项。最新归档第031轮，完整报告upper/round031/REPORT.md。
 
-R030已闭合一般two-region cut及七个固定点；其unitcorecut预算族V>=Uold−2，不能降低leading1。后续R032一般joint cover-flow、各向异性与多区域充电；R033一般典型外壳增长扣减正独立审计。任何候选须完整证明和准确证书后才入账。
+已证结果以results/bounds_ledger.json及本轮完整证明/准确证书为准。已完成的七维结果仅封存，不追加搜索/认证。当前持续路线为变量前序区域、典型外壳、多壳共享缺额、联合覆盖/负载；不把模型成本障碍解释为真实Cn下界。一般L1、Lebesgue、共同半径、全部尺度保持不变。
 
-R030正式账本上界C7<24.554627815714；已完成R031后续点待对应轮次归档。报告upper/round030/REPORT.md。旧论文13页仍有效较弱，未声称重编。下界及其他项目状态不改。
+持续goal active。旧13页论文仍有效较弱，未声称吸收新结果或新编译；其他项目及下界不变。每轮一个提交，主负责统一整合和推送。
