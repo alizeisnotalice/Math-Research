@@ -1,0 +1,1 @@
+Only source-location expressions in the independent auditors were changed to project-relative paths. All exact arithmetic and inequalities are unchanged. Main integration actually reruns both portable scripts; new JSON receipts record those runs and current source hashes. The producer originals remain in their independent clone.

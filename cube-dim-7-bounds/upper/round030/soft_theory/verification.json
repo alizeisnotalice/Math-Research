@@ -1,0 +1,105 @@
+{
+  "status": "passed",
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "mpmath": "1.3.0",
+  "mpmath_dps": 40,
+  "source_checkout": "f65a5bf92911ebed4cf803071bd7693978e5e582",
+  "coverage_checks": [
+    {
+      "n": 1,
+      "power_coverage": true,
+      "exponential_coverage": true
+    },
+    {
+      "n": 2,
+      "power_coverage": true,
+      "exponential_coverage": true
+    },
+    {
+      "n": 3,
+      "power_coverage": true,
+      "exponential_coverage": true
+    },
+    {
+      "n": 4,
+      "power_coverage": true,
+      "exponential_coverage": true
+    },
+    {
+      "n": 5,
+      "power_coverage": true,
+      "exponential_coverage": true
+    },
+    {
+      "n": 6,
+      "power_coverage": true,
+      "exponential_coverage": true
+    },
+    {
+      "n": 7,
+      "power_coverage": true,
+      "exponential_coverage": true
+    },
+    {
+      "n": 8,
+      "power_coverage": true,
+      "exponential_coverage": true
+    }
+  ],
+  "two_point_CS_identity": true,
+  "hard_integral_checks": [
+    {
+      "q": "1.12",
+      "absolute_error": "1.8367099231598242312011508394098e-40",
+      "passed": true
+    },
+    {
+      "q": "1.2",
+      "absolute_error": "0.0",
+      "passed": true
+    }
+  ],
+  "two_point_example": {
+    "q": [
+      "1.12",
+      "1.2"
+    ],
+    "component_F": [
+      "24.759692829729611754684241812308",
+      "24.84637844517327361180665982569"
+    ],
+    "mixed_F": "24.98411515406987191742338392939",
+    "average_component_F": "24.803035637451442683245450818999",
+    "CS_gap": "0.1810795166184292341779331103914"
+  },
+  "continuous_examples": {
+    "n": 7,
+    "h": "0.2",
+    "power_beta": "2.0",
+    "power_A": "2.4860348444444444444444444444444",
+    "power_B": "12.043580210727365208863901403098",
+    "power_F": "25.473245176064930337330223111892",
+    "exponential_A": "8.297472",
+    "exponential_B": "12.04445140682137208414044612833",
+    "exponential_F": "40.335772291261900821877651827332"
+  },
+  "noncommon_corner_counterexample": {
+    "n": 1,
+    "a": 10,
+    "q": "11/10",
+    "alpha_and_c": "10/11",
+    "t": 10,
+    "H_origin": "2.3934941839031365931089005455935",
+    "H_corner": "1.6512925464970228420089957273422",
+    "origin_minus_corner": "0.74220163740611375109990481825127",
+    "exact_positive_lower_bound": "1/11, using log(10)>1"
+  },
+  "interpretation": "Small symbolic and numerical checks corroborate formulas; they do not replace the analytic all-n proof and perform no optimization.",
+  "sha256": {
+    "upper/round030/soft_theory/proof.md": "f663f7b4f368d23d80cab2516efc5fc96436c6c00e68b550e763b0eb422a87c1",
+    "upper/round030/soft_theory/verify.py": "f3b95ba0a2c1552b17898fc366ac2265ef18819f59180e8a6860f6955e71156a",
+    "paper/main.tex": "beec9bbe707950dfa3e84a2db4b6a5a2eaa07ff242935d1f0d2f669431d4d487",
+    "revision_v3/asymptotic/proof.md": "d508cdd3aa82c5204de3626aa24f70199214aa07dc302f3513f246b3eae8fee7"
+  }
+}

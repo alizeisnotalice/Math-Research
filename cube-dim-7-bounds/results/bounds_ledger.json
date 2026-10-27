@@ -27,32 +27,37 @@
     "family_exhausted": false
   },
   "upper": {
-    "exact": "4910992105193/200000000000",
+    "exact": "12277313907857/500000000000",
     "relation": "C7 < exact",
-    "new_bound": true,
-    "status": "complete_strict_operator_upper_with_primary_Fraction_certificate",
-    "expression": "Fcap(3391749/524288); Fcap=[(1+1/t)^(7/2)+sqrt(Bcap(t))]^2",
-    "range": "Lebesgue; centered common-radius cubes; every L1 input and all positive scales",
-    "proof": "upper/round027/cube_cap_theory/proof.md",
-    "proof_status_note": "accepted complete proof, independent review and primary Fraction certificate",
-    "audits": [
-      "audit/round027/cube_cap/proof.md"
+    "status": "complete_strict_operator_certificate_shared_history_two_region_cut",
+    "t": "3391749/524288",
+    "sigma": "2081927/6783498",
+    "cost_interval": [
+      "61386569539284173239555562623849247689441/2500000000000000000000000000000000000000",
+      "30693284769642086619777781311924623844721/1250000000000000000000000000000000000000"
     ],
-    "scalar": "upper/round028/cap_candidate/result.json",
-    "independent_scalar": "audit/round028/primary_result.json",
-    "independent_checker": "audit/round028/primary_check.py",
-    "old_operator_upper": "12288494755109/500000000000",
-    "strict_comparison_with_old_upper": true,
-    "public_explicit_baseline_verified": "128; not claimed exhaustive optimum",
-    "provenance": "internal independent-buffer extension of quantitative Stein-Stromberg selection; scalar limit after complete operator proof, not a published numerical record",
-    "complete_I_rational_upper": "4018421141119/1000000000000000000",
-    "I_proof": "upper/round016/origin_moment_theory/proof.md",
-    "I_budget_is_C7_improvement": false,
-    "only_registered_eight_pairs_compared": false,
-    "continuous_parameter_optimum_claimed": false,
-    "only_three_t_compared": true,
-    "only_five_t_compared": true,
-    "only_one_exact_candidate_certified": true
+    "B_interval": [
+      "27249831634275758246366542777717370264817/2500000000000000000000000000000000000000",
+      "108999326537103032985466171110869481059269/10000000000000000000000000000000000000000"
+    ],
+    "P_interval": [
+      "13724046010086939022735242911833586967223/2500000000000000000000000000000000000000",
+      "54896184040347756090940971647334347868893/10000000000000000000000000000000000000000"
+    ],
+    "D": "95197903615747231809805916180364972866250101/429456966920012286352163925308658000079195619328",
+    "proof": "upper/round030/geometry_theory/REPORT.md §3.1.3",
+    "independent_proof_review": "audit/round030/uniform/geometry_review.md",
+    "certificate": "audit/round030/numeric/independent_n7.json",
+    "independent_finite_certificate": "audit/round030/numeric/finite_n7.json",
+    "finite_a": "2^512",
+    "new_bound": true,
+    "general_L1_all_positive_common_radii": true,
+    "old_complete_cost_lower": "30693700657455875377040149808878516322113/1250000000000000000000000000000000000000",
+    "original_R028_dyadic_lower": "5144190538429014900785325468431995864056284451508471632730283488472882113411308021474331552062457227354056553257208290636539580569113293838741561192063471/209496998905353079680844140596966345741865090946756146526930647558152562969899171512529285908857866057656747784163844544589904418936665155413025765720064",
+    "strict_complete_cost_improvement": true,
+    "continuous_parameter_optimality": false,
+    "public_status": "internal certified result, not claimed journal-published or globally best",
+    "comparison_rule": "Use complete current cost interval, never reconstruct from displayed U."
   },
   "public_best_verified": {
     "qualification": "best among sources actually checked in finite directed search; not exhaustive global claim",
@@ -721,7 +726,7 @@
     "secondary_review": "ACCEPTED expanded proof and final manuscript",
     "paper": "revised_complete",
     "goal_tool_pause_receipt": "second_review/goal_pause.json",
-    "status": "paused; no next batch",
+    "status": "upper pause superseded by current explicit resume; lower remains paused",
     "one_off_revision_completed": true
   },
   "secondary_review": {
@@ -747,7 +752,8 @@
     "compile": "success local XeLaTeX",
     "research_remains_paused": true,
     "dimension_verification": "revision_v3/numeric/verify.py",
-    "prior_version_commit": "f51eea163826ee8fb60e67b2a24528d67a766753"
+    "prior_version_commit": "f51eea163826ee8fb60e67b2a24528d67a766753",
+    "note": "R029 13-page PDF remains valid but weaker; R030 cut not incorporated, no new compile claimed."
   },
   "round029": {
     "report": "revision_v3/REPORT.md",
@@ -772,5 +778,56 @@
     "other_projects_written": false,
     "status": "complete; no further batch started",
     "late_read_only_source_override": "revision_v3/literature/late_source_update.json; n8 accepted lower updated, no new experiments, C7 unchanged"
+  },
+  "upper_pre_R030": {
+    "exact": "4910992105193/200000000000",
+    "relation": "C7 < exact",
+    "new_bound": true,
+    "status": "complete_strict_operator_upper_with_primary_Fraction_certificate",
+    "expression": "Fcap(3391749/524288); Fcap=[(1+1/t)^(7/2)+sqrt(Bcap(t))]^2",
+    "range": "Lebesgue; centered common-radius cubes; every L1 input and all positive scales",
+    "proof": "upper/round027/cube_cap_theory/proof.md",
+    "proof_status_note": "accepted complete proof, independent review and primary Fraction certificate",
+    "audits": [
+      "audit/round027/cube_cap/proof.md"
+    ],
+    "scalar": "upper/round028/cap_candidate/result.json",
+    "independent_scalar": "audit/round028/primary_result.json",
+    "independent_checker": "audit/round028/primary_check.py",
+    "old_operator_upper": "12288494755109/500000000000",
+    "strict_comparison_with_old_upper": true,
+    "public_explicit_baseline_verified": "128; not claimed exhaustive optimum",
+    "provenance": "internal independent-buffer extension of quantitative Stein-Stromberg selection; scalar limit after complete operator proof, not a published numerical record",
+    "complete_I_rational_upper": "4018421141119/1000000000000000000",
+    "I_proof": "upper/round016/origin_moment_theory/proof.md",
+    "I_budget_is_C7_improvement": false,
+    "only_registered_eight_pairs_compared": false,
+    "continuous_parameter_optimum_claimed": false,
+    "only_three_t_compared": true,
+    "only_five_t_compared": true,
+    "only_one_exact_candidate_certified": true
+  },
+  "round030": {
+    "report": "upper/round030/REPORT.md",
+    "new_C7_bound": true,
+    "new_lower_work": false,
+    "general_dimension_theorem": "Cn < W_n-D_n for log n>=18; leading coefficient still1",
+    "conditional_general_sigma": "P-D>sqrt(A(B-D)), B>D, 1/t<sigma<1",
+    "new_family_obstacle": "V_n>=U_n-2; same fine asymptotic; not a Cn lower bound",
+    "seven_dimension_certificates": "upper/round030/accepted_bounds.json",
+    "main_integration": "upper/round030/primary_verification.json",
+    "old_Fcap_unique_min_dimensions": [
+      4,
+      7
+    ],
+    "n64_roots_unresolved": 4041,
+    "status": "complete"
+  },
+  "active_goal": {
+    "status": "active",
+    "objective": "持续优化维数一致上界，Sol/Terra/Luna，本机优先；下界暂停",
+    "next_round": 32,
+    "focus": "general high-dimensional covering improvements",
+    "n7_specific_work": "STOPPED by user 2026-10-28; already-completed data archive only"
   }
 }
