@@ -1,0 +1,106 @@
+{
+  "allowed_encoder_decoder_operations": [
+    "read bytes",
+    "hash",
+    "gzip/tar transport",
+    "copy saved fields",
+    "table lookup bykey",
+    "slice/reorder using recorded key frame",
+    "serialize JSON exactly",
+    "compare originalbyte length/SHA"
+  ],
+  "cache_byte_identity_boundary": "prepared working-cache gzip bytes are excluded;their numeric fields are preserved as portableviews with new explicitSHA;never substitute those newSHA for originalcacheSHA",
+  "derived_input_views": {
+    "eff156": "old156 projection",
+    "eff162_eff164_eff166": "shared169tree_checks",
+    "mean156_self156": "167node_index",
+    "mean162_sl164_self162_self164": "shared169gain",
+    "original112_range_mean_self_weight_level": "167node_index",
+    "original_tree_and_selfL": "167 repository tree"
+  },
+  "extra162_projection_columns": [
+    "key",
+    "total_gain_relative112_units"
+  ],
+  "extra164_projection_columns": [
+    "key",
+    "binary_steps",
+    "e",
+    "j",
+    "k",
+    "quartic_left_residual",
+    "quartic_next_residual",
+    "quartic_scale_exp",
+    "total_gain_relative112_units",
+    "y_denominator",
+    "y_numerator"
+  ],
+  "forbidden_operations": [
+    "floor/root/power/gcd certificate reconstruction",
+    "H/R/J/kernel",
+    "factor/mean/slope/gain recomputation",
+    "DFS/min/sum mathematical aggregation",
+    "changing any oldsource orfreeze"
+  ],
+  "global162_fields": {
+    "key": "frame.key",
+    "new_effU": "t.candidate162_effU",
+    "old156_effU": "old156[frame.key]"
+  },
+  "global164_fields": {
+    "key": "frame.key",
+    "new_effU": "t.candidate164_effU",
+    "old156_effU": "old156[frame.key]"
+  },
+  "global166_fields": "t unchanged perkey in common originalorder frame",
+  "global_order_projection_columns": [
+    "key"
+  ],
+  "old156_projection_columns": [
+    "key",
+    "old156_effU"
+  ],
+  "phase": "plan_only;payload encoding and byte reconstruction not executed",
+  "producer162_fields": {
+    "key": "g.key",
+    "new_mean_i": "g.cached162_mean_i",
+    "new_selfU": "g.candidate162_selfU",
+    "packet_sha256": "b.packet_sha256",
+    "retained156_mean_i": "b.new_mean_i",
+    "retained156_selfU": "b.new_selfU",
+    "source112_mean_i": "g.source112_mean_i",
+    "source112_selfU": "g.source112_selfU",
+    "total_gain_relative112_units": "extra162.total_gain_relative112_units"
+  },
+  "producer164_fields": {
+    "key": "g.key",
+    "new_selfU": "g.candidate164_selfU",
+    "other_original_fields": "extra164 named columns",
+    "retained156_mean_i": "b.new_mean_i",
+    "retained156_selfU": "b.new_selfU",
+    "slope_lower_denominator": "g.cached164_slope_denominator",
+    "slope_lower_numerator": "g.cached164_slope_numerator",
+    "source112_mean_i": "g.source112_mean_i",
+    "source112_selfU": "g.source112_selfU"
+  },
+  "producer166_fields": "exact subset of g with originalproducer166 keyset;all97971 saved rows compared equal during inventory",
+  "sources": {
+    "b": "tracked167 node_index row bykey",
+    "extra162": "new field-copy projection",
+    "extra164": "new field-copy projection",
+    "g": "shared169 original gain row",
+    "old156": "new saved-eff field-copy projection",
+    "t": "shared169 tree_checks.effective_nodes[key]"
+  },
+  "target_JSON_format": {
+    "ensure_ascii": true,
+    "preserve_integer_types": true,
+    "separators": [
+      ",",
+      ":"
+    ],
+    "sort_keys": true,
+    "trailing_newline": true
+  },
+  "worker_order": "shared169 gain stream order;all3producer orders checked equal;split using originalchunk counts and recorded paths"
+}

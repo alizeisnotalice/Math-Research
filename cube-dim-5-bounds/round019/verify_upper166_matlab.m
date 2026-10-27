@@ -1,0 +1,23 @@
+% Exact new U166 crosscheck in a private MATLAB batch; no shared session changes.
+cube19_dir = fileparts(mfilename('fullpath'));
+cube19_a = jsondecode(fileread(fullfile(cube19_dir,'primary_upper166_acceptance.json')));
+cube19_b = jsondecode(fileread(fullfile(cube19_dir,'..','round018','primary_integral156_acceptance.json')));
+cube19_q = @(s) str2sym(char(s));
+cube19_g = cube19_q(cube19_a.qualified_g);
+cube19_I = cube19_q(cube19_a.complete_I_upper);
+cube19_H = cube19_q(cube19_a.new_UH);
+cube19_J = cube19_q(cube19_a.same_complete_J139_upper);
+cube19_P = cube19_q(cube19_a.best_upper.fourth_power);
+cube19_lo = cube19_q(cube19_a.best_upper.interval{1});
+cube19_hi = cube19_q(cube19_a.best_upper.interval{2});
+cube19_simple = cube19_q(cube19_a.simple_rational_upper);
+cube19_ok = [isAlways(cube19_I == cube19_H+cube19_J), ...
+ isAlways(cube19_I < cube19_q(cube19_b.complete_I_upper)), ...
+ isAlways(cube19_P*cube19_g^5 == 3125*cube19_I^4), ...
+ isAlways(cube19_lo^4 <= cube19_P & cube19_P < cube19_hi^4), ...
+ isAlways(cube19_hi <= cube19_simple & cube19_simple < cube19_q(cube19_b.best_upper.interval{1})), ...
+ isAlways(cube19_q(cube19_b.best_upper.fourth_power)-cube19_P == cube19_q(cube19_a.exact_fourth_power_gain_vs156)), ...
+ isAlways(cube19_q(cube19_b.new_UH)-cube19_H == cube19_q(cube19_a.exact_I_gain_vs156)), ...
+ isAlways(cube19_simple < 32 & cube19_g == cube19_q(cube19_b.qualified_g))];
+assert(all(cube19_ok));
+fprintf('CUBE19_CERT=%s\n',jsonencode(double(cube19_ok)));
