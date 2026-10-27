@@ -2,8 +2,8 @@
 
 项目目录：`cube-dim-7-bounds/`；goal active，下界暂停、七维专项停止、旧资料/暂停项目只读。
 
-当前已接受渐近完整成本：[R066](upper/round066/target_profile/PROOF.md)，`Cn<=Phi66<T−23n/100; T=nlogn−nloglogn`；有效域：fixedtargetprofile tuple, sufficiently large integern; unknownN。
-当前显式构造：[R063](upper/round063/wideband_threshold/THRESHOLD_PROOF.md)，`Cn<=Phi59<T−n/10, T=nlogn−nloglogn`；真实门槛：log(n)>=2^33。较早R056在log n≥2^20仍有n/40。全部界只在自身有效域取min，首项系数仍1、内部未发表。
+当前已接受渐近完整成本：[R069](upper/round069/profile_threshold/THRESHOLD_PROOF.md)，`Cn<=Phi66<T−23n/100; T=nlogn−nloglogn`；有效域：natural log(n)>=2^30, every integern。
+当前显式构造：[R069](upper/round069/profile_threshold/THRESHOLD_PROOF.md)，`Cn<=Phi66<T−23n/100; T=nlogn−nloglogn`；真实门槛：log(n)>=2^30。较早R056在log n≥2^20仍有n/40。全部界只在自身有效域取min，首项系数仍1、内部未发表。
 
 当前[PDF](paper/main.pdf)和[TeX](paper/main.tex)为R060的24页冻结稿，全文数学FINAL ACCEPT、主实际双编译及逐页图审；正文证明范围R056/R059。后续新机制/门槛以各轮报告为准，未冒称全部已写入该PDF。旧稿稳定Gitblob恢复、源/PDFhash与作者/主编译证据见paper/BUILD.json、MANIFEST.json。
 
@@ -34,7 +34,8 @@
 | R064 | 乘法匹配与有界径向校准的完整严格改进 | `8095d6b588136b0d31c34022afb25abb218543a8` | [报告](upper/round064/REPORT.md) | 25 |
 | R065 | 乘法相对核有限诊断与真实错误符号审计 | `87904a9de0961cba253397fe9021fccbc57769df` | [报告](upper/round065/REPORT.md) | 25 |
 | R066 | 典型目标一阶剖面与完整弱型上界改进 | `db9245834b75baa7cc36f12127925679fdffdf3d` | [报告](upper/round066/REPORT.md) | 28 |
-| R067 | Jphi新观察量本机有限诊断与独立证据审计 | 本轮身份见Git log及真实readback | [报告](upper/round067/REPORT.md) | 具体白名单与MANIFEST |
+| R067 | 一阶剖面本机有限诊断与独立事实审计 | `392d1e662a898238ccef3187dd5988e59dd33721` | [报告](upper/round067/REPORT.md) | 25 |
+| R069 | 一阶profile完整显式门槛log n≥2^30 | 本轮身份见Git log及真实readback | [报告](upper/round069/REPORT.md) | 具体白名单与MANIFEST |
 
 以上历史提交均已确认远端包含；本轮只有真实readback成功后才报告已推送，不把自身hash嵌入自身提交。每轮报告有机制/假设、完整成本及范围、准确原件/来源SHA、最小代码、实际receipt与独审，过去R001–040另见rounds和账本。
 
