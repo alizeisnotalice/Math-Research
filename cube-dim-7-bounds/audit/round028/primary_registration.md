@@ -1,0 +1,1 @@
+R028 primary: independently certify exactly one selected exact rational t with N128 rational log tail/integer sqrt; validate rawfloat.hex→q/2^20 provenance. Do not repeat bounded optimization, old grid or phase. theorem source R027 immutable.
