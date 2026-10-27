@@ -9,3 +9,5 @@ RESEARCH_PAUSED；LOWER_PAUSED；REVISION_029_COMPLETE；PAPER_REVISED。
 报告revision_v3/REPORT.md；21维标准库证书及有限a/tau在revision_v3/numeric；准确新旧比较dimension_comparison.json；原始文献与只读准确基线在literature；最终独立审稿final_audit ACCEPT。paper/main.tex与13页main.pdf完成本机XeLaTeX及逐页检查。旧8页稿可从f51eea16恢复。
 
 本批次已停止，无新下界、参数搜索或后台runner。后续等待用户要求。
+
+交付来源校订：正常同步中只读吸收3bc1dc12的八维最新已接受下界，源hash见revision_v3/literature/late_source_update.json；本稿13页PDF和七维数值未变，没有新计算批次。
