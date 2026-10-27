@@ -1,0 +1,15 @@
+# R018 determinant-weighted density moments: corner gate fails
+
+The registered two-node lower function has an interval at the cube corner centered near **1.48954571926456e-7**, strictly below the lower endpoint of R016's required floor interval near **2.59312073254e-6**. Thus this particular lower function cannot establish that target uniformly on the face. This is not an upper bound on the true Green potential and does not refute the actual global floor. No global optimization or cover was started.
+
+Two other fixed calibration points were completed as authorized: the R015 exact dyadic point gives L₂≈4.07105686237e-7, and e₁ gives L₂≈4.07289990697e-5. These are values of a lower-bound function, not new evaluations of G. Exact rational moments and 512-bit outward dyadic scalar intervals are in result.json. At the corner and e₁ the true G may be infinite; the density-moment surrogate remains finite.
+
+The method weights the shape law by d=det(A)^(-1/2), normalizes with the time-one density p₀, and uses Fourier moments of exp(−ψ), not moments of exp(−ψ)/ψ. A two-node Gauss rule applied to Q_x⁻³ yields the rigorous lower function L₂=(p₀/b)(W³+2WV³+mV⁴)/H³; all denominators m,V,W,H were checked strictly positive as exact rationals for the three points. The two-node toy law {1,2} also reproduces its exact inverse-third moment 9/16. The 212-simplices/fan proof and the separately hash-locked R018 theory justify the formulas.
+
+Exactly seven rational coefficient outputs were extracted: R0, R1, R_part2, R11, R3, R21 and R111; p₀=R0/π⁷ belongs to R0 rather than an eighth independent coefficient. Together with three fixed gates this is the registered ten-output budget. No 645120-element signed-permutation group was enumerated. Each of 212 tasks used only integer polynomial operations through degree 6 and factorial contractions. Actual pair multiplications totaled 9,307,158, below the theoretical 12,621,420 bound; maximum support was 924 and maximum coefficient size 343 bits. All 212 terminal records and six contracted integers per simplex are retained.
+
+Wall time was 1.130 s; task CPU totaled 5.412 s and parent CPU 0.147 s, roughly 4.92 combined core-equivalents over wall. The five-second resource sampler captured only the parent before the batch finished, so no worker-occupancy or system-wide peak claim is made. Peak individual worker RSS was 38,518,784 bytes; sampled swap usage was 7004.94 MiB. Other processes ran concurrently and were not modified.
+
+The checker reconstructs all seven exact rational constants from the 212 saved contractions, redoes the three fixed rational-moment assemblies and Arb gate comparisons, verifies source hashes and accounting, and evaluates no additional physical point or phase. It does not recompute the 212 polynomials. No new MC, optimizer, global cover, MATLAB, commit or push was used; no global g or C7 result is claimed.
+
+The first checker invocation failed on a missing parenthesis; the corrected checker passes, and the repair is recorded. The completed 212 scientific tasks were not repeated.

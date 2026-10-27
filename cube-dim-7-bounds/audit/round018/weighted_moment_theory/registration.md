@@ -1,0 +1,5 @@
+# R018 independent pure theoretical audit registration
+
+2026-10-27. New independent no-hardlinks partial/sparse clone, HEAD5b24e19fc244cea2589469206bbfcb394f48ea9d. Only audit/round018/weighted_moment_theory writable. Source theory and earlier rounds remain read-only. No numerical or symbolic mathematics software, new sample/cache functional, moment extraction, phase/DD, MATLAB, commit or push.
+
+Fixed review: pointwise time-one density and determinant-weighted probability; density Fourier moments rather than H moments; tilted moments and exact factors; two-node Gaussian quadrature/Hermite global lower with infinite inverse moment allowed; root-free rational inverse-third expression; nondegeneracy for every nonzero direction; B7 coefficients and factorial6!/5!/4! source extraction; common-denominator degree scaling; allcube and point-gate quantifiers and compact outer-domain caveats. Read proof/spec entirely, record any source erratum explicitly with its byte hash, hash dependency sources as metadata only, write proofreview/sources/receipt/manifest and stop. Parent retains overall proof and numerical-integration responsibility.

@@ -67,3 +67,5 @@ R015真实结论见rounds/015.md；最新状态以STATE.md与准确账本为准�
 R016真实结论见rounds/016.md；最新状态以STATE.md与准确账本为准。
 
 R017 proxy证书链屏障及运行失败记录见rounds/017.md。
+
+R018已封存，真实结论见rounds/018.md。
