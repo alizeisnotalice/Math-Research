@@ -1,15 +1,9 @@
-# 七维当前真实状态
+# 七维真实状态（R013）
 
-UPPER_ACTIVE，LOWER_PAUSED。用户最新暂停下界、全力上界；余57个事件不启动。严格C7>2136578727666/10^12，上界128；完整原G积分I<7723627498344/10^18。全部原始分数在R006，后续比较不得从小数重造。g0=1/219000仍未证，条件成本不是新Cn界。固定Lebesgue、中心轴平行cube、共同半径、一般L1、全部正尺度；R001真实S3/小时间/whole-space source/sameD allr/generalL1链保留。原三四维项目与暂停状态未动。
+UPPER_ACTIVE；LOWER_PAUSED。严格C7>2136578727666/10^12；内部与公开已核上界均128。目标未完成。完整I严格预算为965453437293/125000000000000000，这不是Cn上界改进。全域g尚未证明。所有准确分数、旧新比较和证明入口在results/bounds_ledger.json及rounds/013.md。
 
-当前归档轮R010。R00936法向/C36,6=1947792全枚举→46ray，独立cofactor完整数据相同，但原audit封装PASS后误捕SystemExit0退出1；不可称该原命令exit0。修复portable checker只经语法/差异验证，未主张全量重跑。主candidate portable入口实际PASS。R010135full cells/212simplices/629实际访问face-DAG，精确volume1，主全结构checker实际PASS及Sol独审完成；不额外声称跨B7墙严格face-to-face，积分覆盖/内部不交已证。
+固定Lebesgue、中心共同半径方体、一般L1、全部正尺度。R001真实S3及小时间/一般输入桥接继续适用；不能把Hε作G、不能照搬4D线外论证。下界原证书只读、57余事件不启动；原三四维项目暂停状态不改。
 
-R011四完整symmetryH、scalar/origin及256generichalfphase pilot已完成和独审；256partial不是H。R012完整5040chunks/322560halfphase已完成（前4准确复用、5036新），真实H_1/1024(x2710)≈3.778291519696606e-6，独立exact-dyadic全和及768bit外包通过，但仅单点不是globalg。R009–012主正逐轮独立归档，不混用不同轮证书。R013全真顶点核新解析式理论已完成、尚无模板实现或已证加速，等待主审。无lower runner、无新的数值runner；接续必须核真实child状态，不能重复fullgeneric。
+已完成核基础：46ray、135full cells、212simplices；完整正时间H点R012已认证。R013真顶点式纯理论尚无已证加速；R014两种替换机制已排除而目标tensorization仍开放。R015真实G单点非全域g。后续请先核真实计算句柄，不重复枚举或旧phase。
 
-R002–006普通提交push及外部refs确认22208695；R007/008本地0678a2a2/75eedb49网络失败待同步，继续正常fetch/rebase/push不强推。后续各轮独立提交，不改封存原件/他项目。最新VCS回执以实际远端确认另记。
-
-15核24GiB共享本机，Sol推导/Terra操作、主MATLAB串行，无clear/path/cwd重置。R012workerCPU899s/wall134s约6.7核，非满15核，不用无效内存填充。有限参数/状态、无总wall上限，整体goalactive未完成。
-
-R011已主核并封存，范围见rounds/011.md；不产生新Cn界。下界暂停。
-
-R012已主核并封存，范围见rounds/012.md；不产生新Cn界。下界暂停。
+主串行MATLAB、Sol推导/Terra本机计算，有限批次及停止条件；不做无效CPU/内存填充。Git逐轮独立提交，最新远端回执另记；网络失败标待推送并继续数学，不强推。

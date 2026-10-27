@@ -57,3 +57,5 @@ python3 -B cube-dim-7-bounds/audit/round001/lower/recheck.py
 R011成果与准确证书见rounds/011.md。
 
 R012成果与准确证书见rounds/012.md。
+
+R013真实结论见rounds/013.md；最新状态以STATE.md与准确账本为准。
