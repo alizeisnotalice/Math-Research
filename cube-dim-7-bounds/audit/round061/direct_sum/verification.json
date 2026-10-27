@@ -1,0 +1,117 @@
+{
+  "status": "all new exact measure checks passed",
+  "python": "3.15.0",
+  "method": "finite unit-cell/atom kernels; exact Fraction rows, columns and two-measure energies",
+  "cases": [
+    {
+      "name": "disjoint; common items cross both bands",
+      "pairwise_point_supports_disjoint": true,
+      "tau": "1/4",
+      "layers": [
+        {
+          "r": "1",
+          "D": "1",
+          "E_lambda_lambda": "1",
+          "E_mu_mu": "1/4",
+          "identity_rhs": "3/4",
+          "local_deficit": "3/4",
+          "lower": "3/4"
+        },
+        {
+          "r": "1",
+          "D": "1",
+          "E_lambda_lambda": "1",
+          "E_mu_mu": "1/4",
+          "identity_rhs": "3/4",
+          "local_deficit": "3/4",
+          "lower": "3/4"
+        }
+      ],
+      "lower_sum": "3/2",
+      "total_deficit": "3/2"
+    },
+    {
+      "name": "disjoint finite-a scaling c=3/2",
+      "pairwise_point_supports_disjoint": true,
+      "tau": "1/4",
+      "layers": [
+        {
+          "r": "3/2",
+          "D": "3/2",
+          "E_lambda_lambda": "9/4",
+          "E_mu_mu": "3/8",
+          "identity_rhs": "15/8",
+          "local_deficit": "5/4",
+          "lower": "5/4"
+        },
+        {
+          "r": "3/2",
+          "D": "3/2",
+          "E_lambda_lambda": "9/4",
+          "E_mu_mu": "3/8",
+          "identity_rhs": "15/8",
+          "local_deficit": "5/4",
+          "lower": "5/4"
+        }
+      ],
+      "lower_sum": "5/2",
+      "total_deficit": "5/2"
+    },
+    {
+      "name": "source support overlap counterexample",
+      "pairwise_point_supports_disjoint": false,
+      "tau": "1/4",
+      "layers": [
+        {
+          "r": "1",
+          "D": "1",
+          "E_lambda_lambda": "1",
+          "E_mu_mu": "1/4",
+          "identity_rhs": "3/4",
+          "local_deficit": "3/4",
+          "lower": "3/4"
+        },
+        {
+          "r": "1",
+          "D": "1",
+          "E_lambda_lambda": "1",
+          "E_mu_mu": "1/4",
+          "identity_rhs": "3/4",
+          "local_deficit": "3/4",
+          "lower": "3/4"
+        }
+      ],
+      "lower_sum": "3/2",
+      "total_deficit": "3/4"
+    },
+    {
+      "name": "c<1 cannot preserve base coefficient",
+      "pairwise_point_supports_disjoint": true,
+      "tau": "1/4",
+      "layers": [
+        {
+          "r": "1/2",
+          "D": "1/2",
+          "E_lambda_lambda": "1/4",
+          "E_mu_mu": "1/8",
+          "identity_rhs": "1/8",
+          "local_deficit": "1/4",
+          "lower": "1/4"
+        }
+      ],
+      "lower_sum": "1/4",
+      "total_deficit": "1/4"
+    }
+  ],
+  "cross_band_item_partition": "checked exactly for two multi-band item measures",
+  "source": {
+    "path": "/Users/zhengzhihao/Desktop/T/cube-r030-geometry/cube-dim-7-bounds/upper/round056/refined_inverse/PROOF.md",
+    "sha256": "6986ed9ec48b46f3136a9a56722d0092db4f2942d52e35c9f4de37eb279f399a",
+    "read_scope": "Section 8 scaling identification only; not full R056 audit"
+  },
+  "artifact_sha256": {
+    "PROOF.md": "8b8168370146670889ad5568fc3b20c48df5e020fbe64da8ffac29252dbf6f3f",
+    "verify.py": "6b281888bcb65bb517bc2ed11e3a351758946fd54465191a76a8825ca6ab5ad1"
+  },
+  "scope": "abstract measure-lemma checks, not actual cube history realizations or root/tuple/operator certification"
+}

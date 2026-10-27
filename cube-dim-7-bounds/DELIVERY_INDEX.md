@@ -37,3 +37,5 @@ R060当前24页论文已全文数学终审、主实际双编译/全页图审，�
 R063完整新显式域：自然log n≥2^33有Cn<T−n/10，见[门槛报告](upper/round063/REPORT.md)及[独审](audit/round063/wideband_threshold/review.md)。R060当前24页论文提交2f393a17f443f10411fa9ea435fd88fd5350c14a已远端确认，正文冻结至R056/R059，不包含本轮新门槛。
 
 R062分层有限探索/准确条件证书见[报告](upper/round062/REPORT.md)，15workers真实v2峰14.588核、平均13.57核/136秒；不单独宣布Cn。R063提交a4da5e5d5744e31a8536923043e3e00c8a4b8830已远端确认。
+
+R061新完整eventualCn<T−3n/20见[报告](upper/round061/REPORT.md)与[全文审阅](audit/round061/disjoint_layers/review.md)，point-disjoint范围和overlap反例明确。依赖准确record已随R062提交86473c652e19d4b7abdd83f938786f28e71a3e18远端确认。
