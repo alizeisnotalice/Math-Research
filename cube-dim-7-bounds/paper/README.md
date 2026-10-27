@@ -1,28 +1,26 @@
 # 中心立方体极大算子的覆盖估计与一般高维弱型上界
 
-R054中文修订：main.tex及20页main.pdf。最新主定理为自然log n≥2^27时
+R060 中文修订：`main.tex` 与实际 XeLaTeX 编译的 24 页 `main.pdf`。
 
-    C_n ≤ Φ_simple < n log n − n log log n − 2^-16 n。
+本轮包含两个原算子结论，首项系数均为 1：
 
-raw准确组在log n≥2^32也满足相同display，且完整根式严格小于Φ_simple。正文保留两组完整gamma、sigma、t与Φ定义，逐项量化operator门槛，并自足证明完整函数排序。
+- 自然 `log n ≥ 2^20` 时，`C_n ≤ Φ56 < n log n − n log log n − n/40`，准确 γ 与完整 Φ 见定理 2。
+- 存在尚未显式量化的绝对 N，使所有 `n ≥ N` 满足 `C_n ≤ Φw < n log n − n log log n − n/10`，准确扣减为 `1637/12500`，见定理 3。不把前一条的显式门槛用于此条。
 
-主线为R051准确泛budget、exact inverseJ/pinned face/AC连续匹配、有界source权的双方degree、同history actualμ、finite dilation及general L¹/all-positive-common-radius桥。geometry、probability、cap、tau、scalar的全部finite guard与Taylor尾均在正文给出。有限搜索只提示两组输入，最终proof不依赖全遍历最优性。
+正文按引言、预备知识、主要证明、应用组织。主要证明重新写出扩大局部域的一维准确积分与 AC 桥、来源面数校准、目标面计数和交长的耦合、逐完整来源面的逆概率与截断、角点和资格阈值支付、同一实际历史的有限膨胀参数连接、一般 L¹/全部正共同半径及完整标量代价。宽带证明额外说明有效来源的 R0、第五个 Kw 坏事件及 Csrc 来源质量。显式版本列出全部有限 guard 和 Taylor8 尾；宽带版本列出有限个均匀 eventual guard，严格保留未知共同起点。
 
-较旧R042/R036高维长证明移出本轮正文，来源与旧稿可恢复身份保留；R034较小L门槛的完整family与R037 pointwise范围仍在应用章。
+应用章证明新旧完整根式函数的准确排序，保留较小门槛的 R034 常数族和 R037 逐点框架范围障碍。旧 R051 长参数族正文由 R054 已发布源码身份恢复，无需重复保留全文或旧 PDF。没有将内部材料表述为已发表成果或提出优先权/全局最优性主张。参考文献沿用已核原始版本。
 
-仓库根编译（重复至引用稳定）：
+从仓库根目录编译两遍：
 
-    mkdir -p /tmp/cube-cover-manuscript-build
     /Library/TeX/texbin/xelatex -interaction=nonstopmode -halt-on-error -output-directory=/tmp/cube-cover-manuscript-build cube-dim-7-bounds/paper/main.tex
 
-两准确tuple的独立有限常数转写检查（仅Python标准库）：
+新固定参数的准确转写检查（Python 标准库）：
 
-    python3 cube-dim-7-bounds/upper/round054/manuscript_notes/verify_budget_and_threshold.py
+    python3 cube-dim-7-bounds/upper/round060/manuscript_notes/verify_transcription.py
 
-本机实际两组各24项及3项比较全部通过。没有旧baseline/n7/production/参数搜索/MATLAB/Git同步。编译与排版见BUILD.json；新源已完成独立全文数学审核及唯一K定义补全后的增量锁定。
+本机 60 项准确/源码检查 PASS。实际双 pass 编译成功，24 页均已渲染并看图，无公式越界、字体缺失或未定义引用。只有参考文献的两项 underfull hbox。完整正文及唯一换行增量已获独立全文数学审核 FINAL ACCEPT，锁定 TeX SHA256 `a5ffdfac3871d4ecd3d7a8e27ecb484019d62f309ce2d7a6e434754e8e17e445`。审核来源见 `BUILD.json`；作者排版与转写检查不替代独立审核。
 
-R048已发布源SHA256 ecd7fd7487083b7eb6318a0a94f969f9d291b9d4df443cc3374497a7f103b248，主提交5122f5eba011430a857692896772ddffd02fba5d。其private恢复副本不进入新归档，不重复旧大PDF。历史七维verifier、证书及其他轮notes本次未改，不作为新主定理依据。公开引用沿用已核原始版本，无新优先性或最优性声明。
+本轮没有旧 baseline/n7、生产 grid、参数搜索、共享 MATLAB 或 Git 同步操作。历史七维脚本和证书保持原样且未运行，不作为本轮定理依据。R054 旧源 SHA256 `17e3de43f0d841a285dbfcaf8ff12c57f9670270aab9ce95cf7fe5ce359b9554`，已发布主提交 `4474b8be0cc47c904b23a5327108e37b5e6aea79`。private 恢复副本与阶段稿不在归档白名单中；不重复旧 PDF。
 
-a05全文数学独审后，按唯一P3建议显式补齐所用K/P与对应row/col定义。最小差异见R054notes/kernel_definition_delta.patch；原a05全文留private，不双份归档。未改估计/门槛，51项准确检查未重跑；只重新编译与看排版，最终增量锁审已返回full ACCEPT，无待修事项。
-
-主代理正式目录独立编译、全部页渲染/排版证据见BUILD.json；作者实际编译单列upper/round054/author_build.json。数学源17e3保持字节不变。建议venv命令不是新数学运行记录。rebase后以source_copy_manifest的稳定blob恢复旧稿，作者当时的原commit身份在copied来源中保留。
+正式主目录的实际双pass编译与逐页渲染记录见BUILD.json；作者run另锁upper/round060/author_build.json，数学源a5ff相同。本文固定R056/R059证明范围，后续已接受成果与有效域以../STATE.md和准确账本为准。旧20页完整源/PDF用source_copy_manifest中的稳定blob恢复。
