@@ -1,0 +1,40 @@
+{
+  "schema": "cube7-r019-geometric-followup-v1",
+  "date": "2026-10-27",
+  "branch_base": "14f3507f406185667f84146328f1db9da3f9949a",
+  "owned_directory": "cube-dim-7-bounds/upper/round019/geometric_followup",
+  "theory_engine": "native Sol",
+  "numeric_runs": 0,
+  "matlab_runs": 0,
+  "new_literature_searches": 0,
+  "commits_or_pushes": 0,
+  "source_policy": "reuse R014 original-source check for Melas C1, no source claims expanded",
+  "mechanisms": [
+    {
+      "id": 1,
+      "parameters": "a in (0,1], K>0",
+      "rule": "threshold global-mass radius R, transverse averaging over aR<=r<=R, then vertical M1",
+      "status": "rigorously false for every finite parameter pair",
+      "counterexample": "two unequal, widely separated compact L1 cube bumps; positive-volume missed receiver box"
+    },
+    {
+      "id": 2,
+      "parameters": "alpha in [1,2)",
+      "rule": "merge only overlapping scalar source halos of radius alpha*(mass/(2^n lambda))^(1/n)",
+      "status": "rigorously false",
+      "counterexample": "2^n equal corner sources; no initial overlap but a cooperative true bad receiver neighborhood; robust L1 smoothing"
+    },
+    {
+      "id": 3,
+      "parameters": "aspect(2,2,2,2,2,2,C1), summed-mass radius",
+      "rule": "merge intersecting boxes while retaining previously true bad receivers at cost64*C1 per mass",
+      "status": "rigorously false",
+      "counterexample": "two equal vertical sources; true receiver projection length exceeds every possible merged box; robust L1 smoothing"
+    }
+  ],
+  "accepted_C7_upper": 128,
+  "new_C7_upper": false,
+  "target_C7_lt_128": "unproved, not disproved",
+  "mixed_target_C7_le_64C1": "unproved, not disproved",
+  "automatic_followup": false
+}
