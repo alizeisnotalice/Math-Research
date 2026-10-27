@@ -45,3 +45,5 @@ python3 -B cube-dim-7-bounds/audit/round001/lower/recheck.py
 第005轮完整I<7730422817512/10^18，仍无新Cn上界。下界按用户最新指令恢复低资源，主要资源上界。可携带全账本标量复核：audit/round005/radau/minchecker.py；主准确接口src/check_primary_round005.py，均stdout-only。
 
 第006轮：严格C7>2136578727666/10^12，上界仍128；完整I<7723627498344/10^18但无全域g。完整portable审计audit/round006/radau4/minchecker.py及lower/recheck.py；主准确接口src/check_primary_round006.py。下界低资源，上界优先。
+
+第007轮无新界：矩阵slack诊断指向matrix-pair严格积分，compact账本入口upper/round007/matrix_slack/check.py。下界按用户最新明确指令暂停，主力上界。

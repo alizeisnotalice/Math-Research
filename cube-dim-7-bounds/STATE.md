@@ -1,15 +1,13 @@
 # 七维当前真实状态
 
-UPPER_PRIORITY，LOWER_LOW_RESOURCE。用户最新要求下界低资源推进、主要资源突破上界，覆盖先前暂停。原三四维资料包和暂停状态未动，其他项目不改。
+UPPER_ACTIVE，LOWER_PAUSED。用户最新明确暂停下界、全力上界，覆盖此前恢复低资源；不启动余57事件。停在严格C7>2136578727666/10^12，上界128。全部准确原件及比较门槛以R006结果/账本为准，不能由小数重造。原三四维项目及暂停状态未动。
 
-固定Lebesgue、中心轴平行七维cube、共同半径、一般L1、全部正尺度。严格 C7>2136578727666/10^12；上界仍128。完整下界区间/有限L1原分数在lower/round006/results.json及账本；后续比较用完整准确上端，不用小数重造证书。
+当前完整原G积分 I<7723627498344/10^18，仍缺全域g，g0=1/219000仅条件，未给新Cn上界。固定Lebesgue、中心轴平行cube、共同半径、一般L1、全部正尺度；原R001七维S3/小时可积性、whole-space source及sameD allr/generalL1接口保持。
 
-R006下界仅单进程2新事件52/38、首胜停；全部8192标签内外完整union独立审核及主集成入口通过，源约束10706。剩57新事件，53/37登记未执行，无自动下一批、无lower runner。小批峰RSS67.6MB、wall2.01s；独审单进程3.14s，非全系统占用。
+R00715×2^20新Dirichlet矩阵slack诊断全部15任务terminal，Z0=.03174、Z1=.07480、Z2=.08104仅经验均值；矩阵与标量gap约6.9倍，不能从严界扣样本差。1997同输入128decimal回退，2浮点层级异常复核通过，0弃样/重采。精简归档将完整终态及所有回退输入无损gzip，删除重复pretty results与进度日志的仓内副本，原件在独立clone保留；compact checker实际PASS。
 
-R006完整原G积分 I<7723627498344/10^18，四矩Radau节点/权重正、degree4精确、CM T16全域5阶Hermite及严格旧预算比较已独审。4096新面板全部terminal，旧R004/R005完整q按hash复用；主portable768bit复核通过。仍缺全域g：g0=1/219000只条件，cost约127.141<128不是Cn新界。原R001 whole-G源/sameD allr/generalL1及七维S3/小时间接口保留。
+R008 signed mixed-Mellin StageI256面板已在独立clone完成并经独审确认LH<1，正mu门槛失败；StageII未启动，主待归档。没有新I/g/Cn。当前无在飞数值runner、无自动新批；新策略先有限登记与真实句柄检查。
 
-R007 Sol正在独立clone研究矩阵det Minkowski剩余松弛，仅理论；未启动新数值或下一下界批。旧full-G有限cache伪最小化失败不重跑，有限shape结果不是全局g/真期望。
+R002–006各独立提交已推送；2026-10-27实际HTTPS ls-remote确认main=22208695024e443ac5307e242d5a11a29593bd60，包含R004/005，GitHub compare API本次TLS超时不作为确认。R007独立提交推送，网络失败保留并普通同步，禁强推。
 
-R001已推送，R002/003正常rebase后已推送（34e0ff211b2b3d884bb01765f61321d011da5df6 / 73646ed3d9818eb1d87a157aac09b8a709718ad7），远端refs曾确认后者。R004 b605c2e1d47bfe5e977a93348a6759cae7913631、R005 91e4eb62本地已独立提交；网络连接重置/超时，继续普通同步重试，未强推。R006亦独立提交，最终VCS回执以实际推送确认另记，不声称未确认的提交已同步。
-
-本机15核24GiB共享，Sol推导/Terra操作，主MATLAB串行不clear、不重置path/cwd；有限批无总wall限。R006上界wall27.920s/CPU175.326s≈6.28核，其他维度并行，不能宣称满核。无需为占用填无效内存。整体目标仍active、未完成。
+本机15核24GiB共享，Sol推导/Terra数值、主串行MATLAB；无clear/path/cwd重置，有限批无总wall限。R007wall24.220s/CPU153.416s≈6.33核，其他维度共享，不能称满核。整体目标仍active未完成。
