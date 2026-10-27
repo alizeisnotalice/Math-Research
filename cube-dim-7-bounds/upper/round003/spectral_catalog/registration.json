@@ -1,0 +1,34 @@
+{
+  "task": "round003 complete seven-dimensional psi unit-ball spectral vertex orbit catalog",
+  "registered_before_first_mathematical_run": true,
+  "dimension": 7,
+  "body_directions": "V_i=(1,s_1,...,s_6), itertools.product((-1,1),repeat=6), zero-based lexicographic index i",
+  "psi": "sum_{v in V} abs(v dot xi); no time-coordinate change",
+  "finite_domain": "all nonincreasing seven-tuples from {0,1,2,3,4,5,6}",
+  "raw_tuple_bound": 1716,
+  "bound_identity": "binomial(13,7)=1716, including the zero tuple",
+  "primitive_filter": "exclude zero; retain gcd of all coordinates equal to 1",
+  "acceptance": "exact rank of all zero body directions is 6",
+  "work_budget": {
+    "candidate_evaluations_max": 1716,
+    "dot_products_per_primitive_candidate": 64,
+    "rank_backend": "python-flint fmpz_mat.rank, exact integer arithmetic",
+    "certificate_arithmetic": "exact integers and reduced fractions; no floating-point rank",
+    "integer_bit_ceiling": 768,
+    "witness_postprocessing": "accepted cases only: exact SymPy RREF selects six independent zero rows and a nonzero 6-by-6 minor; seven exact cofactors are also checked",
+    "independent_recheck": "stdout-only full finite re-enumeration using Python integer elimination, plus certificate checks",
+    "old_baseline_evaluations": 0,
+    "green_nodes": 0,
+    "wall_time_limit": null
+  },
+  "scope_exclusions": ["physical Green singular set", "physical S3 classification", "minimum certificate", "g bound", "C_n bound", "hyperplane fan enumeration", "optimization"],
+  "provenance": {
+    "clone": "/Users/zhengzhihao/Desktop/T/Math-Research-cube7-spectral-r003",
+    "local_base_commit": "b2139fc1fe70fd55e7d409031256195c7d10e768",
+    "remote_acceptance_claim": "none; local base only",
+    "origin": "git@github.com:alizeisnotalice/Math-Research.git",
+    "python": "/Users/zhengzhihao/Desktop/T/cube-finite-dim-scratch/venv/bin/python",
+    "tooling": "python-flint 0.9.0; SymPy 1.14.0; Python 3.15.0"
+  },
+  "independent_reduction_review": "passed: active-gradient span criterion, determinant divisibility 32, Hadamard bound 216, primitive completeness, canonical symmetry and 1716 count; see completeproof.md"
+}
