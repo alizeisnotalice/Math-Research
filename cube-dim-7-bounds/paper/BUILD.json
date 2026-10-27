@@ -1,60 +1,66 @@
 {
   "date": "2026-10-28",
-  "status": "SUCCESS primary integration; exact accepted TeX unchanged",
-  "pages": 24,
-  "main_tex_sha256": "94c5e61d3bf86b16736e328ffe3e412d46df957dd2b8f8760939edc8831e8692",
-  "pdf_sha256": "d3316cdbbc3ef42a1f3afe26470c5df3c4ea0b6f4471c329284995723a22d40a",
-  "compiler": "local TeX Live 2026 / XeLaTeX",
+  "revision": "R048 bounded inverse-column manuscript",
+  "status": "SUCCESS: independent full-source ACCEPT, primary actual compilation and all30pages rendered/inspected",
+  "pages": 30,
+  "main_tex_sha256": "ecd7fd7487083b7eb6318a0a94f969f9d291b9d4df443cc3374497a7f103b248",
+  "pdf_sha256": "7d7f2ef711ef0b9aa1da6a5ff780b50496400d01ba0f1f59dc7f5d73aafc5f1e",
+  "compiler": "local TeX Live2026 / XeLaTeX",
+  "compiler_exit_code": 0,
+  "actual_passes": 2,
   "command": [
     "/Library/TeX/texbin/xelatex",
     "-interaction=nonstopmode",
     "-halt-on-error",
-    "-output-directory=/Users/zhengzhihao/Desktop/T/cube-v3-work/primary-paper-build",
+    "-output-directory=/Users/zhengzhihao/Desktop/T/cube-v3-work/primary-paper-build48",
     "cube-dim-7-bounds/paper/main.tex"
   ],
-  "actual_passes": 2,
-  "compiler_exit_code": 0,
-  "compile_log_sha256": "a9104f72536fae5f828f9cdbc2bbb92e0f2d15ec025f0415269695453a63f7dd",
+  "compile_log_sha256": "f7136ac8a2dfa695c9fbf8bc25c37264eb78f2af99672f530b71c3ba5cba4e9a",
   "stdout_sha256": {
-    "pass1": "618c5bb2b42e3b0b2bbe1c5363e322776d6191eac1bf39872684c0ed648de067",
-    "pass2": "bd570661e93b9aeb18a1e89931040d5505f630f5e19c379e01cc7d67b4a46afd"
+    "pass1": "531fcc879738ed0357bf77a8bd40b549085e4b619bd5a67d5a2a858ba4df9a4b",
+    "pass2": "2eab598c5036396805b09b8537232783da725c3034ac90c4dd3446bb3501f56e"
   },
   "overfull_hbox": false,
   "undefined_references": false,
   "missing_glyph": false,
   "underfull_bibliography_hboxes": 2,
   "visual_review": {
-    "primary_actual_render": "Ghostscript png16m 90dpi",
-    "pages_inspected_in_contact_sheets": 24,
-    "full_page_inspection": [
+    "renderer": "Ghostscript png16m90dpi",
+    "primary_contact_pages_inspected": 30,
+    "primary_full_pages_inspected": [
       2,
-      11,
-      21
+      10,
+      26
     ],
     "clipping_overlap_detected": false,
-    "render_location_private": "/Users/zhengzhihao/Desktop/T/cube-v3-work/primary-paper-build/render",
+    "private_render_path": "/Users/zhengzhihao/Desktop/T/cube-v3-work/primary-paper-build48/render",
     "contact_sha256": {
-      "contact-1.png": "0c496d780fdcf0cda43da907efb714e9e48da1a67e9903af8ec126d531a6b71d",
-      "contact-2.png": "ed844b73d32d969e9132fb46c8e886cc2853e870c000832cd90d2f96dc04b910",
-      "contact-3.png": "3bd87f8e5d43b21150ade908d80c5e30cd897b708d3b6aa8509a6da506e584a3",
-      "contact-4.png": "297f157fcb0ce0da2aa279a3e6fbe03a5b0bfafa7daf903d8ac86bfdc827223e"
+      "contact-1.png": "0671a53561f451f7053d010f2fc4fce0e3f981b54f7e70013ead9cae5385a6de",
+      "contact-2.png": "7af338fe2eaaade90777d4fe353168845b06f4a4ae8e12e70a8ab5626103389f",
+      "contact-3.png": "e18b87a464836b32e3458604bfd07ae3a376222e61ba478e29f2171468af2083",
+      "contact-4.png": "1857ed2fc56c86978bfa1867ee28080701e686dde61386d00100c155043eaea0",
+      "contact-5.png": "80657e697e93af7f2246817e5e6b7a32d0886c08b697157b48244cad2cdbd901"
     }
   },
-  "mathematical_review": {
-    "status": "FINAL_ACCEPT_ALL_NOTES_RESOLVED",
-    "review_path": "/Users/zhengzhihao/Desktop/T/cube-r030-uniform-audit/cube-dim-7-bounds/audit/round041/manuscript/review.md",
-    "review_sha256": "4ac36f127a0b77b45bf4661a767f65a7e1705ede1094b41e1305051e2c0cfe84",
-    "sourcehash_path": "/Users/zhengzhihao/Desktop/T/cube-r030-uniform-audit/cube-dim-7-bounds/audit/round041/manuscript/sourcehash.json",
-    "sourcehash_sha256": "a7804e20393487e6e9f6352a5662fcbbc74f1fb82003faac29206521cd44c955",
-    "locked_tex_sha256": "94c5e61d3bf86b16736e328ffe3e412d46df957dd2b8f8760939edc8831e8692",
-    "scope": "Full e523 mathematical review plus exact final three-definition delta; author compilation/layout evidence remains separate."
+  "independent_math_review": {
+    "status": "ACCEPT",
+    "path": "audit/round048/manuscript/review.md",
+    "sha256": "1b5e6c662d7ac10201c26f3d4f576a94e8928c2b32a02ff4b5527be84f739edf",
+    "locked_tex": "ecd7fd7487083b7eb6318a0a94f969f9d291b9d4df443cc3374497a7f103b248",
+    "scope": "new soft-chain plus entire diff against accepted94c5; previous proofs unchanged"
   },
-  "author_build": "upper/round041/author_build.json",
-  "author_pdf_sha256": "055680c62e9b48e15c5c6759ed484b95a84615bf4be52acb4cbf6d675a87c4fe",
-  "pdf_hash_difference": "separate actual recompilation; accepted source hash identical",
+  "author_actual_build": "upper/round048/author_build.json",
+  "author_pdf_sha256": "eb32ac300c8b4a3f3f240377d3fc51b936bf860456e006a58c3a8a8f3e670cd0",
+  "theorem_scope": {
+    "new_main": "For each fixed0<d<=2^-24 there is unknownN(d); endpoint givesT-2^-41n eventually.",
+    "retained_explicit": "R042 retainslog(n)>=2^108 independently.",
+    "comparison": "L>=2^240 only scalar full-cost sorting, not new operator activation."
+  },
   "new_mathematical_checks_run_by_primary": false,
-  "old_n7_verifier_rerun": false,
-  "new_lower_work": false,
-  "general_cover_goal": "active",
-  "documentation_adaptation": "README runtime command and private-stage references corrected; chapter_plan consolidated; no TeX change"
+  "author_new_checks": "13 new exact symbolic/rational transcription checks; original receipt retained",
+  "independent_new_checks": "8 new Fraction gates; original audit receipt retained",
+  "old_baseline_or_n7_rerun": false,
+  "production_or_parameter_search": false,
+  "documentation_adaptation": "recommendedruntime path and finalreview status only; mathematical TeX unchanged",
+  "pdf_hash_note": "primary recompilation metadata may differ from author; sourcehash identical"
 }

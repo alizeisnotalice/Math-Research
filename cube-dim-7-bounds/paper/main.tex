@@ -36,14 +36,17 @@
 \begin{document}\maketitle\vspace{-2em}
 \begin{abstract}
 研究 Lebesgue 测度下中心轴平行立方体极大算子的弱型 $(1,1)$ 常数 $C_n$。
-在按半径选择的有限覆盖中，保留同一选择历史的实际增量，并将两个分离径向区间按反对角关系匹配。
-为控制来源的重复使用，构造完整列积分的逐点上包，以其固定面二阶矩截去高列能量。
-记 $L=\log n$。当 $L\ge2^{108}$ 时，证明
+在按半径选择的有限覆盖中，保留同一选择历史的实际增量，
+并对捕获核加入有界的逆列乘积权。
+一维逆行积分在目标基准半径上有准确均值抵消；控制其对数均值、方差及匹配半径的变化，
+可重新估计加权行积分。再在逆行概率下控制截断损失，得到与列积分相容的共同缺额。
+由此证明：存在 $N$，使每个整数 $n\ge N$ 均有
 \[
- C_n<n\log n-n\log\log n-2^{-32}n(\log n)^{-1/3}.
+ C_n\le n\log n-n\log\log n-2^{-41}n.
 \]
-证明保留二阶矩指数中的有界补偿，并完成有限膨胀参数、一般 $L^1$ 输入及全部正共同半径的传递。
-还给出带显式门槛的其他上界，并说明当前逐点重叠估计中前导系数 $1$ 的限制。
+该结论的起效维数未显式量化；另保留 $\log n\ge2^{108}$ 时具有
+$n(\log n)^{-1/3}$ 负修正的完整显式界。
+全部估计适用于一般 $L^1$ 输入及所有正共同半径，前导 $n\log n$ 系数仍为 $1$。
 \end{abstract}
 \noindent\textbf{关键词：}中心极大算子；立方体；弱型 $(1,1)$；覆盖选择；维数估计
 
@@ -82,6 +85,7 @@ $(2+3\varepsilon)n\log n$ 的弱型上界。\cite[定理5.2]{Aldaz17}
 因此需要在同一有限选择历史中比较两组增量，同时控制一个来源可被多少后序位置捕获。
 本文使用两个分离的径向区间，并按反对角带匹配半径；
 其核心是一个双边积分缺额引理：捕获核的行积分给出所需贡献，列积分控制来源的重复使用。
+新的有界来源权使列积分下降后，行积分也必须按同一权重新计算；保留旧行能量再单独减少列上界不足以闭合估计。
 
 对 $t>1$ 定义
 \begin{align}
@@ -98,6 +102,26 @@ $(2+3\varepsilon)n\log n$ 的弱型上界。\cite[定理5.2]{Aldaz17}
 \end{equation}
 \end{theorem}
 这一覆盖公式是后续改进的起点。以下均取自然对数。
+\begin{theorem}\label{thm:soft-family}
+对每个固定实数 $0<d\le2^{-24}$，存在仅依赖于 $d$ 的 $N(d)$，
+使每个整数 $n\ge N(d)$ 均满足下述结论。令
+\[
+ L=\log n,\quad x_d=(1-32d^2)L,\quad t_d=n/x_d,
+ \quad D_d=nd/65536,\quad T_n=nL-n\log L.
+\]
+则 $B_n(t_d)>D_d$，并且
+\begin{equation}\label{eq:soft-main}
+ C_n\le\Fcal(A_n(t_d),B_n(t_d)-D_d)\le T_n-nd/131072.
+\end{equation}
+\end{theorem}
+\begin{corollary}\label{cor:linear}
+存在 $N$，使所有整数 $n\ge N$ 都满足
+$C_n\le n\log n-n\log\log n-2^{-41}n$。
+\end{corollary}
+推论取定理\ref{thm:soft-family}的固定端点 $d=2^{-24}$。
+这里不允许在取 $n\to\infty$ 时再令 $d$ 随 $n$ 改变；$N(d)$ 尚未量化。
+
+另一个按高列能量截断的构造有完整显式起效范围：
 \begin{theorem}\label{thm:second-moment}
 对满足 $L=\log n\ge2^{108}$ 的整数 $n$，令
 \[
@@ -110,7 +134,7 @@ $(2+3\varepsilon)n\log n$ 的弱型上界。\cite[定理5.2]{Aldaz17}
  <T_n-2^{-32}nL^{-1/3}.
 \end{equation}
 \end{theorem}
-定理\ref{thm:second-moment}改变覆盖公式的参数尺度，并以二阶矩控制高列的能量损失。
+定理\ref{thm:second-moment}以二阶矩控制高列的能量损失，并提供一个显式适用域。
 其负修正项阶为 $nL^{-1/3}$，大于 $n\sqrt{\log L/L}$ 的渐近阶。
 前导 $n\log n$ 系数仍为 $1$。
 
@@ -134,10 +158,10 @@ $(2+3\varepsilon)n\log n$ 的弱型上界。\cite[定理5.2]{Aldaz17}
 $C_n<W_n-n/(20\sqrt L)$（$L\ge4096$）。两个估计应在各自范围内取较小值。
 
 有限选择与膨胀的思路来自定理 A。
-本文先用立方体壳面给出角点包络，再利用典型面坐标的准确条件均值，
-在反对角匹配带上得到一致乘积估计。完整列上包随目标半径单调，
-其固定来源面二阶矩允许按能量截去高列。双边能量比较将保留的能量转为同一实际增量测度的缺额；
-严格缩小的捕获半径将连续点对传到有限立方体中心。
+本文先用立方体壳面给出角点包络，再构造有界逆列乘积权。
+其一维逆行积分的基准均值抵消与连续匹配桥，给出典型目标的加权行估计。
+在逆行概率下控制截断损失后，行列积分处于同一尺度，双边能量比较遂给出实际增量缺额。
+另保留二阶矩截断所得到的显式界；严格缩小的捕获半径将两种构造都传到有限立方体中心。
 第2节建立有限选择与能量准备，第3节证明覆盖公式、能量改进及显式门槛；
 第4节给出参数比较和当前逐点估计的适用限制。
 \section{预备知识}
@@ -537,6 +561,343 @@ $E_{\mu\mu}\le\tau\mu(A)\le\tau\lambda_0(A)$，而
 \]
 这里 $E_{\nu\eta}=\iint K\dint\nu\dint\eta$。
 不交性使最后一步只使用一次总缺额。
+\end{proof}
+
+\subsection{有界逆列权与新的行列尺度}\label{subsec:soft-geometry}
+本节至第\ref{subsec:soft-scalar}节证明定理\ref{thm:soft-family}。
+先固定 $0<d\le2^{-24}$；所有充分大条件只依赖这个固定的 $d$。
+局部使用参数
+\begin{equation}\label{eq:soft-parameters}
+\begin{gathered}
+ \varepsilon_0=2^{-20},\quad L=\log n,\quad x=(1-32d^2)L,\quad t=n/x,
+ \quad\beta=1+1/t,\quad\zeta=n^{-3},\\
+ \kappa=\beta-\zeta,\quad h=\varepsilon_0/(Ld),\quad
+ \theta=e^{-12Ld^2},\quad k=nh\theta,\quad I=[d/4,3d/4].
+\end{gathered}
+\end{equation}
+环境角点测度 $\lambda$ 仍由\eqref{eq:lambda}给定，但取本节的 $t,\beta$。
+目标半径为 $r=1+u$，来源半径为 $\rho=tq$、$q=1-v$，其中 $u,v\in I$；
+匹配关系为 $|r-q-d|<h$。
+固定 $d$ 后，$h/d\to0$、$\zeta t/h\to0$、$t\to\infty$。
+因而可统一要求 $h\le d/8$、$\zeta t\le h/2$、$q>1/2$、$r<2$、$\rho>4r$、
+$1<\kappa<\beta<2$。
+每个匹配截面的普通参数长度介于 $h$ 与 $2h$；来源径向对数长度介于 $h$ 与 $4h$。
+
+对每个来源半径定义
+\begin{equation}\label{eq:soft-R}
+ R=q+d-h,\quad \epsilon=\zeta t,\quad
+ \mathfrak a=(1-\epsilon)q=(\kappa-1)\rho,\quad g=R-\mathfrak a=d-h+\epsilon q.
+\end{equation}
+在来源带中 $R>1$、$0<g\le d$，每个匹配目标半径属于 $(R,R+2h)$。
+定义归一化交长、乘积及有界来源权
+\begin{equation}\label{eq:soft-b}
+ \ell_R(z_i)=\min\left(1,\frac{R+\kappa\rho-|z_i|}{2R}\right),\quad
+ G(z)=\prod_i\ell_R(z_i)>0,\quad b(z)=\min(1,\theta/G(z)).
+\end{equation}
+来源权只乘入证明中的捕获核，不改变原选择算法的权重。
+
+固定来源点，归一化目标交长随目标半径非增，且 $\ell_R\ge1/2$。
+完整列积分按全部 $2n$ 张面求和，每面因子为 $1/2$，删一坐标的乘积至多为完整乘积的两倍。
+加上匹配目标对数宽度 $2h/R$，得到
+\begin{equation}\label{eq:soft-column}
+ C_{\rm raw}(z)\le\frac{4nh}{R}G(z),\qquad
+ b(z)C_{\rm raw}(z)\le4nh\theta=4k.
+\end{equation}
+这是每个来源点的列上界。为了得到缺额，下面还须在同一权下重新估计行积分。
+
+\subsection{一维逆行积分的准确公式}\label{subsec:soft-local}
+匹配半径变化时需要连续参数的一致控制。下面的局部引理也定义在略大的半径区间上，
+以处理匹配端点。
+
+\begin{lemma}\label{lem:inverse-local}
+设 $0<d\le1/16$、$0<h\le d/8$、$0\le\epsilon\le d$，固定 $t>0$ 和目标半径 $r\ge1/2$。
+令 $q_0=r-d+h$、$Q=[q_0-2h,q_0]$。
+对 $q\in Q$，定义 $R=q+d-h$、$\rho=tq$、$\mathfrak a=(1-\epsilon)q$、$g=R-\mathfrak a$，
+并假设整个 $Q$ 上 $q,R\ge1/2$、$\rho\ge4R$、$0<g\le d$。
+对 $|w|\le r$ 置
+\begin{equation}\label{eq:inverse-J}
+ J(w;q)=\frac1{2\rho}\int_{-\rho}^{\rho}
+ \frac{\one_{\{|z-w|<\rho+\mathfrak a\}}}{\ell_R(z)}\dint z,
+ \qquad \ell_R(z)=\min\left(1,\frac{R+\rho+\mathfrak a-|z|}{2R}\right).
+\end{equation}
+再令
+\begin{equation}\label{eq:Psi}
+ \Psi(R,s)=-2R\log(1-s/(2R))-s
+ =\int_0^s\frac{u}{2R-u}\dint u\quad(0\le s\le g),
+ \qquad m_\pm=(\pm w-\mathfrak a)_+.
+\end{equation}
+则有准确公式
+\begin{equation}\label{eq:exact-J}
+ J(w;q)=1+\frac{\Psi(R,(g-m_+)_+)+\Psi(R,(g-m_-)_+)-m_+-m_-}{2\rho}.
+\end{equation}
+此外 $J\ge1/2$，$q\mapsto\log J(w;q)$ 在 $Q$ 上绝对连续，且几乎处处满足
+\begin{equation}\label{eq:J-derivative}
+ |\partial_q\log J(w;q)|\le\frac{64}{\rho}
+       [d^2+\one_{\{|w|>r-2d\}}].
+\end{equation}
+\end{lemma}
+\begin{proof}
+$\mathfrak a=R-g>0$，所以捕获区间至多从来源区间的一端删去普通长度
+$m=(|w|-\mathfrak a)_+$。
+该长度不超过 $r-\mathfrak a\le g+2h\le5d/4$，不会穿到另一来源尾。
+交长 $\ell_R$ 在两端长度为 $g$ 的尾区间上线性变化，在中间恒为 $1$。
+$\ell_R^{-1}-1$ 在一个完整尾上的积分为 $\Psi(R,g)$；
+若该端已删去长度 $m$，余下的逆权超出积分为 $\Psi(R,(g-m)_+)$。
+普通保留长度为 $2\rho-m$。两端相加即得\eqref{eq:exact-J}。
+特别地 $J\ge1-m/(2\rho)\ge1/2$，且由两个尾的超出积分得
+$J\le1+d^2/\rho\le2$。
+
+写 $u=s/(2R)\le d$。非负幂级数或直接微分给
+\[
+ 0\le\Psi\le d^2,\qquad
+ \Psi_s=\frac{s}{2R-s}\le2d,\qquad
+ \Psi_R=-2\log(1-u)-\frac{2u}{1-u},\quad |\Psi_R|\le4d^2.
+\]
+由于 $R'=1$、$g'=\epsilon\le d$，有
+$|\partial_q\Psi(R,g)|\le6d^2$。
+若 $|w|\le r-2d$，则 $\mathfrak a\ge r-2h-g>r-2d$，所以整个 $Q$ 上 $m=0$，
+$J=1+\Psi(R,g)/\rho\ge1$。
+由 $q\ge1/2$ 得 $|\partial_q\log J|\le8d^2/\rho$。
+
+一般位置写 $J=1+B/(2\rho)$，其中
+$B=\Psi(R,g)+\Psi(R,(g-m)_+)-m$。
+在 $m>0$ 的分支，$(g-m)_+=(R-|w|)_+$，其导数为 $0$ 或 $1$；
+$m'=-(1-\epsilon)$。因此几乎处处
+\[
+ |B'|\le6d^2+4d^2+2d+1<2.
+\]
+$m=0$ 分支有 $|B'|\le12d^2<2$。
+又 $|B|\le2d^2+5d/4\le11d/8$，$|B|/q\le11d/4<1$。
+结合 $J\ge1/2$，一般位置的对数导数不超过 $3/\rho$，从而得到较宽的\eqref{eq:J-derivative}。
+
+以上函数由有限个光滑分支拼接，各分支单侧导数有共同界，故在闭区间 $Q$ 上局部 Lipschitz 并绝对连续。
+在 $|w|=\mathfrak a(q)$ 的捕获起点可以有导数跳跃，所用导数界是几乎处处的；
+在 $|w|=R$ 处，由 $\Psi_s(R,0)=0$ 两支一阶导数吻合。
+$J$ 的正下界使 $\log J$ 也绝对连续，所以导数界可穿过这些拼接点积分。
+\end{proof}
+
+\begin{lemma}\label{lem:J-baseline}
+在引理\ref{lem:inverse-local}的基准 $q=q_0$ 上有 $R=r$。
+若 $W$ 均匀于 $[-r,r]$，则
+\begin{equation}\label{eq:J-baseline}
+ \begin{gathered}
+ \mathbb EJ(W;q_0)=1,\quad -6g^3/\rho_0^2\le\mathbb E\log J(W;q_0)\le0,\\
+ \operatorname{Var}(\log J(W;q_0))\le12g^3/\rho_0^2.
+ \end{gathered}
+\end{equation}
+其中 $\rho_0=tq_0$。固定面坐标 $W=\pm r$ 则满足
+$-g/\rho_0\le\log J(\pm r;q_0)\le0$。
+\end{lemma}
+\begin{proof}
+对固定 $z$，其在 $[-r,r]$ 中被捕获的目标比例恰为 $\ell_r(z)$。
+Tonelli 定理遂给 $\mathbb EJ=1$，这是基准 $R=r$ 下的抵消。
+由\eqref{eq:exact-J}，中央 $|W|\le r-g$ 时 $|J-1|\le g^2/\rho_0$；
+尾部概率为 $g/r\le2g$，且尾部 $|J-1|\le g/\rho_0$。
+所以
+\[
+ \mathbb E(J-1)^2\le(g^4+2g^3)/\rho_0^2\le3g^3/\rho_0^2.
+\]
+利用 $J\ge1/2$、$|\log J|\le2|J-1|$ 和
+$\log J\ge(J-1)-2(J-1)^2$，再用 Jensen 不等式，得到所列对数均值和方差界。
+固定面坐标的准确式为
+$J(\pm r;q_0)=1+[\Psi(r,g)-g]/(2\rho_0)$，
+其中 $0\le\Psi(r,g)\le g/2$，从而得其确定性对数界。
+\end{proof}
+
+\subsection{典型目标与全部匹配半径的逆乘积}\label{subsec:soft-target}
+回到\eqref{eq:soft-parameters}，固定 $d$ 后，整个扩展区间
+$Q=[r-d-h,r-d+h]$ 也满足引理\ref{lem:inverse-local}的条件。
+这里 $\epsilon=\zeta t$ 对 $q$ 求导时保持不变；
+$q_0=r-d+h$ 可以略超出原来源带，但一维积分及导数在扩展区间仍有定义。
+取目标好集
+\begin{equation}\label{eq:soft-target}
+ \mathcal A=D\cap\left\{u\in I:\
+ \left|\sum_i\log J(w_i;q_0)\right|\le1/8,
+ \quad K_w:=\#\{i:|w_i|>r-2d\}\le4nd\right\}.
+\end{equation}
+这是 Borel 集。
+在每张目标最大面上，$n-1$ 个自由坐标独立均匀于 $[-r,r]$，另一个坐标固定为 $\pm r$。
+令 $b_0=(n-1)d^3/\rho_0^2$，基准对数和 $S_0$ 满足
+\[
+ |\mathbb ES_0|\le6b_0+d/\rho_0,\qquad\operatorname{Var}S_0\le12b_0.
+\]
+其中 $b_0\le4d^3L^2/n\to0$、$d/\rho_0\le2dL/n\to0$，关于目标半径一致。
+例如对 $v>6b_0+d/\rho_0$，
+\[
+ \mathbb P(|S_0|>v)\le\frac{12b_0}{(v-6b_0-d/\rho_0)^2}.
+\]
+故基准条件在每张面上保留 $1-o(1)$ 的比例。
+又 $K_w=1+\operatorname{Bin}(n-1,2d/r)$，
+$\mathbb EK_w\le3nd$、$\operatorname{Var}K_w\le2nd$，所以
+$\mathbb P(K_w>4nd)\le2/(nd)\to0$。
+两个好事件不需要独立。
+完整目标壳质量至少为 $nd/4$；两个统计条件的交集最终至少保留每张面的一半。
+原角点捕获壳系数为 $(n/2)\ell_t(r)^{n-1}$，
+由 $r\le1+3d/4$ 及 $t\to\infty$，$\ell_t(r)<3/4$ 关于半径一致成立。
+其目标壳总质量为 $O(nd(3/4)^{n-1})$，最终小于 $nd/16$。
+因此对固定 $d$、充分大的 $n$，
+\begin{equation}\label{eq:soft-target-mass}
+ a_*:=\lambda(\mathcal A)\ge nd/16.
+\end{equation}
+
+现在固定任意好目标，沿整个扩展 $Q$ 积分\eqref{eq:J-derivative}。
+由 $K_w\le4nd$、$n/\rho\le2L$ 和区间长度 $2h$，
+\begin{equation}\label{eq:soft-uniform-q}
+ \left|\sum_i\log J(w_i;q)-\sum_i\log J(w_i;q_0)\right|
+ \le1280Ldh=5/4096<1/8.
+\end{equation}
+这是绝对连续性所给的全部 $q$ 的确定性估计。
+结合基准条件，得对每个匹配来源半径
+\begin{equation}\label{eq:soft-product}
+ \frac12\le\prod_iJ(w_i;q)\le2.
+\end{equation}
+一维积分本身也满足 $1/2\le J\le2$。
+
+完整来源壳在 $G^{-1}$ 权下的捕获系数准确为
+\begin{equation}\label{eq:inverse-angular}
+ U(w,\rho)=\frac{\prod_jJ(w_j;q)}{2\ell_*}
+                  \sum_i\frac{N_i}{J(w_i;q)},\qquad
+ \ell_*=1-g/(2R),\quad N_i=1+\one_{\{|w_i|<\mathfrak a\}}.
+\end{equation}
+因为来源面固定坐标的分母为 $\ell_*$，自由坐标才分别积分成 $J$，故此式保留了固定面坐标。
+由 $1\le N_i\le2$、$3/4\le\ell_*\le1$ 和\eqref{eq:soft-product}，
+\begin{equation}\label{eq:inverse-angular-bounds}
+ n/8\le U(w,\rho)\le8n.
+\end{equation}
+
+\subsection{逆行概率下的截断损失}\label{subsec:soft-clipping}
+把每张被捕获来源面以密度 $\one_{\rm capture}/G$ 归一化为概率。
+其自由坐标仍独立，各坐标密度正比于 $\one_{\rm capture}/\ell_R$，归一化常数为 $J\ge1/2$；
+固定来源面坐标贡献确定的 $-\log\ell_*\le d$。
+记 $V=-\log G$。在当前 $R>1$ 的来源带中，$\ell_R\ge3/4$，故
+\begin{align*}
+ \mathbb E_{\rm inv}[-\log\ell_R(Z_i)]
+ &\le2\mathbb E_{\rm full}\frac{-\log\ell_R}{\ell_R}
+ \le\frac{32}{9}\mathbb E_{\rm full}(1-\ell_R)\\
+ &=\frac{8g^2}{9R\rho}\le\frac{d^2}{\rho}.
+\end{align*}
+等式使用自由来源绝对坐标均匀于 $[0,\rho]$，其超出量积分为 $g^2/(4R\rho)$。
+所以每张捕获面及其逆行混合概率都满足
+\[
+ \mathbb E_{\rm inv}V\le d+nd^2/\rho\le d+2Ld^2\le3Ld^2,
+\]
+最后只需充分大时 $Ld\ge1$。
+在这个逆行概率下用 Markov 不等式，得到
+\begin{equation}\label{eq:inverse-tail}
+ \mathbb P_{\rm inv}(G<\theta)
+ =\mathbb P_{\rm inv}(V>12Ld^2)\le1/4.
+\end{equation}
+在 $G\ge\theta$ 时，$b=\theta/G$；处处则有 $b\le\theta/G$。
+因此\eqref{eq:inverse-angular-bounds}与\eqref{eq:inverse-tail}给出完整加权壳系数
+\begin{equation}\label{eq:soft-angular}
+ 3n\theta/32\le U_b(w,\rho)\le8n\theta.
+\end{equation}
+这里控制截断损失的概率来自逆行密度；普通来源测度下的尾概率不足以推出该行估计。
+
+在 $\mathcal A$ 与来源带 $D$ 的乘积上，定义最终核为匹配、捕获的指标乘 $b(z)$。
+由径向对数宽度，完整来源下的加权行介于 $3k/32$ 与 $32k$。
+还需删去原角点捕获的来源部分。
+由于 $b\le1$，删除量至多为其未加权总质量。
+由 $n\ge4$、$x\ge L/2$、$v\ge d/4$，
+\[
+ (n-1)(1/\rho-1/t)/2\ge3Ld/64\ge Ld/32,
+\]
+故原角点捕获的来源壳系数至多 $(n/2)e^{-Ld/32}$。
+来源带对数宽度不超过 $d$，总删除量至多 $(nd/2)e^{-Ld/32}$。
+而对每个固定的本域 $d$，
+\[
+ \frac{nd e^{-Ld/32}}{nh\theta}
+ =\frac dh\exp[-L(d/32-12d^2)]\longrightarrow0,
+\]
+因为 $12d<1/64$，从而 $d/32-12d^2>d/64>0$。
+所以最终核的环境度数为
+\begin{equation}\label{eq:soft-degrees}
+ R_\lambda(w)\ge3k/64\quad(w\in\mathcal A),\qquad
+ R_\lambda\le32k,\qquad C_\lambda\le4k.
+\end{equation}
+列界来自\eqref{eq:soft-column}，并不要求来源统计好集。
+行与列都在新的 $k$ 尺度上重算，未保留原未加权能量再只改变列分母。
+
+\subsection{共同实际增量的加权缺额}\label{subsec:soft-history}
+取 $\tau\le3k/128$。由\eqref{eq:soft-target-mass}和\eqref{eq:soft-degrees}，
+引理\ref{lem:energy}的环境缺额下界为
+\begin{equation}\label{eq:soft-deficit}
+ \Delta\ge\frac{a_*(3k/64-\tau)}{32k}
+ \ge\frac{3nd}{65536}.
+\end{equation}
+下面核对其实际资格条件。
+取任意原有限历史和 $a\ge8n^4$，使用同一实际测度 $\mu_a\le\lambda_a$。
+目标及来源支撑都在 $D$ 内，故其环境测度准确乘 $c_a=\alpha^{-n}\ge1$。
+此时 $a>2t$、$c=(a\beta-1)/(a+1)>1$。记末项归一化中心为 $u_*$，$\norm{u_*}_\infty<\alpha$。
+若目标实际点属于第 $j$ 项，则未捕获条件给
+$c r_j\le\norm{u_*-w}_\infty<\alpha+r<3$。
+实际来源项满足 $r_i\ge\rho>4$，所以每个包含的来源项均早于同一目标项。
+对充分大的固定 $n$，$\beta<2$，且
+\[
+ \alpha\beta-\kappa-2/(a+1)=\zeta-(\beta+2)/(a+1)>0.
+\]
+若目标实际点 $w$ 与来源实际点 $z$ 被核捕获，归一化中心满足
+\[
+ \norm{v_i-v_j}_\infty<\norm{z-w}_\infty+(r_i+r_j)/(a+1)
+ <[\kappa+2/(a+1)]r_i<\alpha\beta r_i.
+\]
+这保证 $y_j\in bQ_i$。
+此处 $bQ_i$ 中的 $b=a\beta$ 是原膨胀因子；来源权 $b(z)$ 始终由\eqref{eq:soft-b}给定。
+因 $0\le b(z)\le1$，一个部分实际增量的加权贡献不超过其原已定义的权重，
+所以同一目标项的一次原资格条件仍给加权实际行不超过 $\tau$，没有 $\theta^{-1}$ 因子。
+该结论对 $\mu_a$ 几乎处处目标成立，不对 $\mu_a$ 的分布作假设。
+
+环境能量乘 $c_a^2$，环境度数与目标质量乘 $c_a$。
+因此有限 $a$ 的总缺额至少为
+\[
+ \frac{c_a^2E_{\lambda\lambda}-\tau c_aa_*}{c_a32k}
+ \ge\frac{E_{\lambda\lambda}-\tau a_*}{32k}
+ \ge\frac{3nd}{65536}.
+\]
+保留其中较弱的固定余量 $D_d=nd/65536$，实际未捕获前序总权重遂满足
+\begin{equation}\label{eq:soft-load}
+ U\le\alpha^{-n}J_a(t)-D_d.
+\end{equation}
+此式对每个原有限历史和全部 $a\ge8n^4$ 一致成立。
+
+\subsection{完整标量代价与全尺度算子界}\label{subsec:soft-scalar}
+\begin{proof}[定理\ref{thm:soft-family}的证明]
+原角点积分估计在 $x\in[L/2,L]$ 时给 $B_n(t)>8n$，对固定 $d$ 的充分大 $n$ 成立。
+因为 $D_d<n$，可取 $\tau=\sqrt{A_n(t)(B_n(t)-D_d)}$。
+由
+\[
+ A_n(t)\le e^x=ne^{-32d^2L},\quad B_n(t)\le nL,\quad
+ \tau\le n\sqrt L\,e^{-16d^2L},
+\]
+得到
+\begin{equation}\label{eq:soft-tau}
+ \tau/k\le(\sqrt L/h)e^{-4d^2L}\longrightarrow0
+\end{equation}
+对每个固定 $d>0$ 成立。因此 $\tau\le3k/128$ 也可在同一 $N(d)$ 之后保证。
+把\eqref{eq:soft-load}加回捕获项与自身项，用原有限覆盖及共同见证积分，得
+\[
+ C_n\le\left(1+\frac{(\beta+1/a)^n}{\tau}\right)
+       [\tau+a^{-n}+\alpha^{-n}J_a(t)-D_d].
+\]
+固定 $n,t,\tau$ 后，只在这些已证标量界中令 $a\to\infty$，得到\eqref{eq:soft-main}的第一个不等式。
+原见证仍为 $aQ_j$；权 $b(z)$ 只在选择结束后的能量证明中使用。
+故第2节的紧严格水平集覆盖及内正则性仍适用于一般 $L^1$ 输入和所有正共同半径。
+
+最后支付完整的新参数代价。由 $x=(1-32d^2)L$，
+\[
+ B_n(t)\le1+n\log t\le T_n+64nd^2+1,
+\]
+其中用 $-\log(1-32d^2)\le64d^2$。
+同时 $A_n(t)+2\sqrt{A_n(t)B_n(t)}=o_d(n)$，故
+\[
+ \Fcal(A_n(t),B_n(t)-D_d)
+ \le T_n-D_d+64nd^2+o_d(n).
+\]
+在整个固定参数域，$64d^2\le(d/65536)/4$。
+因此剩余趋零项在某个 $N(d)$ 之后小于 $D_d/(4n)$，可得
+$\Fcal(A_n(t),B_n(t)-D_d)\le T_n-D_d/2$。
+对固定端点 $d=2^{-24}$，$D_d=2^{-40}n$，所以推论\ref{cor:linear}的系数为 $2^{-41}$。
+所有起效条件先在固定 $d$ 下统一选择；此证明未给出具体的算子起效维数。
 \end{proof}
 
 \subsection{新的参数尺度与原始行能量}\label{subsec:second-row}
@@ -1280,6 +1641,68 @@ $\bar P=\bar E+\bar V+\bar V(32+\bar E)/(1-\bar V)$，并置
 引理\ref{lem:all-tail}补足定理\ref{thm:energy}证明的全部条件。
 
 \section{应用}\label{sec:application}
+\subsection{固定参数界与显式界的完整函数比较}\label{subsec:soft-comparison}
+定理\ref{thm:soft-family}给出固定 $d$ 的最终结论；定理\ref{thm:second-moment}则有明确适用域。
+下面比较它们的完整根式，而不是只比较显示的负项。
+对固定 $0<\sigma<1/2$、$0<\Delta<1$，记
+\[
+ t_\sigma=\frac{n}{(1-\sigma)L},\qquad
+ \Phi_{\sigma,\Delta}=\Fcal(A_n(t_\sigma),B_n(t_\sigma)-\Delta n).
+\]
+当 $L\ge64$、$x=(1-\sigma)L\in[L/2,L]$ 时，原角点积分界给
+\[
+ T_n-4n/L\le B_n(t_\sigma)\le nL,\qquad
+ A_n(t_\sigma)\le ne^{-\sigma L},\qquad B_n(t_\sigma)>8n.
+\]
+因此完整根式为实数，并满足
+\begin{align}
+ \Phi_{\sigma,\Delta}&\ge T_n-n(4/L+\Delta),\label{eq:Phi-lower}\\
+ \Phi_{\sigma,\Delta}&\le T_n-\Delta n+2\sigma n+1
+                 +ne^{-\sigma L}+2n\sqrt L\,e^{-\sigma L/2}.\label{eq:Phi-upper}
+\end{align}
+上界中的 $2\sigma n$ 来自 $-\log(1-\sigma)\le2\sigma$，其余项保留了 $A$ 和平方根交叉项。
+
+令 $L_0=2^{240}$。指数级数的二阶正项给
+\begin{equation}\label{eq:scalar-comparison-tail}
+ \frac1n+e^{-\sigma L}+2\sqrt L\,e^{-\sigma L/2}
+ \le E_\sigma(L):=\frac2{L^2}+\frac2{\sigma^2L^2}
+                    +\frac{16}{\sigma^2L^{3/2}}.
+\end{equation}
+右侧在整个正半轴递减。
+端点 $d=2^{-24}$ 对应 $\sigma_*=2^{-43}$、$\Delta_*=2^{-40}$。
+在 $L=L_0$，准确有
+\[
+ E_{\sigma_*}(L_0)=2^{-479}+2^{-393}+2^{-270}
+ <2^{-41}-2^{-42}=\Delta_*/2-2\sigma_*.
+\]
+由\eqref{eq:Phi-upper}得到全部 $L\ge L_0$ 的标量公式结论
+\begin{equation}\label{eq:endpoint-cost}
+ \Phi_*:=\Phi_{\sigma_*,\Delta_*}<T_n-2^{-41}n.
+\end{equation}
+
+定理\ref{thm:second-moment}中的完整公式为
+\[
+ \Phi_{42}=\Fcal(A_n(t_2),B_n(t_2)-2^{-31}nL^{-1/3}),
+ \qquad t_2=\frac n{L-L^{1/3}}.
+\]
+同一个角点积分下界给
+\[
+ \Phi_{42}\ge T_n-n[4/L+2^{-31}L^{-1/3}].
+\]
+方括号内的两项均递减，在 $L_0$ 的值为 $2^{-238}+2^{-111}<2^{-41}$。
+所以对所有 $L\ge L_0$，完整公式严格满足 $\Phi_*<\Phi_{42}$。
+同样，取 $d=2^{-30}$ 所得旧展示实例的实际根式预算为 $2^{-46}n$。
+由\eqref{eq:Phi-lower}，其完整公式至少为 $T_n-n(4/L+2^{-46})$，
+故在 $L\ge L_0$ 也严格大于 $\Phi_*$。
+这些比较逐一使用各自的 $t$ 和实际根式预算，没有以展示系数代替预算。
+
+$L_0$ 是以上标量函数排序的门槛。
+若还要把 $\Phi_*$ 用作 $C_n$ 的上界，必须同时满足定理\ref{thm:soft-family}中端点自身的未知条件
+$n\ge N(2^{-24})$；这里没有证明 $N(2^{-24})\le\exp(L_0)$。
+在各自适用域内仍取所有完整上界的最小值。
+尤其定理\ref{thm:second-moment}的 $L\ge2^{108}$ 适用域保持独立，
+不能因为新的固定参数结论最终更强就将它在较早维数的作用删除。
+
 \subsection{较小起效门槛与可同时使用的常数族}
 反对角能量估计的起效门槛较大。下面给出另一组直接从同一有限覆盖得到的界，
 以便在较小维数范围选择可用的较小上界。
@@ -1381,7 +1804,7 @@ $e^{9/5}>\sum_{j=0}^6(9/5)^j/j!=7542629/1250000>6$，从而
 \end{proof}
 
 \begin{corollary}\label{cor:min}
-在各自适用范围内，可以同时使用定理\ref{thm:second-moment}、\ref{thm:energy}、\ref{thm:constant-family}和定理 C，取所得上界的最小值。
+在各自适用范围内，可以同时使用定理\ref{thm:soft-family}、\ref{thm:second-moment}、\ref{thm:energy}、\ref{thm:constant-family}和定理 C，取所得上界的最小值。
 若定理\ref{thm:constant-family}的某个 $q$ 适用，则在两个高维定理的公共范围内，
 能量缺额 $n\sqrt{l/L}/65536$ 严格大于 $qn/\sqrt L$ 当且仅当
 $l>65536^2q^2$。
