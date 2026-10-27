@@ -348,6 +348,38 @@
       "full_cost": "Phi61=F(A_n(t),B_n(t)−(429/2000)n), t=n/[(47/50)logn]",
       "mechanism": "one deficit measure, fixed finite point-disjoint Aj/Pj, layerwise degrees and chi_j, samehistory/tau, ca>=1",
       "comparison": "Phi61<Phi59 and Phi56 on respective actual domains intersections; old explicit bounds remain in earlier dimensions"
+    },
+    {
+      "round": 64,
+      "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+      "full_proof": "upper/round064/radial_calibration/PROOF.md",
+      "proof_sha256": "17ce38ab5af46c0358046bdcc2aa57a05844c0799e9a97280d959887f59615d6",
+      "independent_audit": "audit/round064/radial_calibration/REVIEW.md",
+      "independent_audit_sha256": "443699173985a45738e535fcf7e0b2407c67f06b5d55832e59f361e1793a55af",
+      "leading_coefficient": 1,
+      "public_status": "internal independently reviewed theorem, no published/priority/global optimum claim",
+      "scope": "fixed multiplicative/radial tuple, sufficiently large integern; unknownN",
+      "explicit_threshold": null,
+      "bound": "Cn<=Phi64<T−n/5; T=nlogn−nloglogn",
+      "parameters": {
+        "s": "3/2",
+        "source_q": [
+          "2/3",
+          "909/1000"
+        ],
+        "sigma": "91/1000",
+        "chi": "1/20",
+        "h_coeff": "1/18446744073709551616",
+        "target_inset": "1/1073741824",
+        "all_eps_and_baseline": "1/1024",
+        "mass_lower": "1239/4000",
+        "gamma": "61/200",
+        "coarse_craw": "37249/181800",
+        "slack_to_one_fifth": "889/181800"
+      },
+      "full_cost": "Phi64=F(A_n(t),B_n(t)−(61/200)n), t=n/[(909/1000)logn]",
+      "mechanism": "multiplicative matching, relativeg/R domain, boundedtarget radial r/rhi cancels column dr/r, boundedsourceinverse, same actualhistory",
+      "comparison": "strict full-cost improvement over R061 and R059 on each actualvalid intersection, explicit thresholds not transferred"
     }
   ],
   "unaccepted": [
@@ -388,7 +420,8 @@
     "upper/round063/REPORT.md",
     "upper/round062/REPORT.md",
     "upper/round061/REPORT.md",
-    "upper/round065/REPORT.md"
+    "upper/round065/REPORT.md",
+    "upper/round064/REPORT.md"
   ],
   "accepted_scoped_mechanisms": [
     {
@@ -495,35 +528,36 @@
     }
   ],
   "strongest_asymptotic": {
-    "round": 61,
+    "round": 64,
     "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-    "full_proof": "upper/round061/disjoint_layers/PROOF.md",
-    "proof_sha256": "0a1e2bc6eb829714f62b9a0cdb5f52f651fa7d49fd54a084e89b2ff3751af716",
-    "independent_audit": "audit/round061/disjoint_layers/review.md",
-    "independent_audit_sha256": "8ae3288b7d34387be32a71424c369bb7a2361db4f24658cdb0d55848bc258a4e",
+    "full_proof": "upper/round064/radial_calibration/PROOF.md",
+    "proof_sha256": "17ce38ab5af46c0358046bdcc2aa57a05844c0799e9a97280d959887f59615d6",
+    "independent_audit": "audit/round064/radial_calibration/REVIEW.md",
+    "independent_audit_sha256": "443699173985a45738e535fcf7e0b2407c67f06b5d55832e59f361e1793a55af",
     "leading_coefficient": 1,
-    "public_status": "internal independently reviewed theorem, no publication/priority/global optimum claim",
-    "scope": "fixed128disjointlayers, sufficiently large integern, unknownN",
+    "public_status": "internal independently reviewed theorem, no published/priority/global optimum claim",
+    "scope": "fixed multiplicative/radial tuple, sufficiently large integern; unknownN",
     "explicit_threshold": null,
-    "bound": "Cn<=Phi61<T−3n/20; T=nlogn−nloglogn",
+    "bound": "Cn<=Phi64<T−n/5; T=nlogn−nloglogn",
     "parameters": {
-      "layers": 128,
-      "d": "7/25",
-      "sigma": "3/50",
-      "source_band": [
-        "18/25",
-        "24/25"
+      "s": "3/2",
+      "source_q": [
+        "2/3",
+        "909/1000"
       ],
+      "sigma": "91/1000",
+      "chi": "1/20",
+      "h_coeff": "1/18446744073709551616",
       "target_inset": "1/1073741824",
-      "gamma": "429/2000",
-      "craw": "14163/94000",
-      "slack_to_three_twentieths": "63/94000",
-      "record": "upper/round062/compute/candidate_certificate.json",
-      "record_sha256": "b889e35ef909bd979937752c67410bf3913eb76cdf7dc6c720556e093d4c0711"
+      "all_eps_and_baseline": "1/1024",
+      "mass_lower": "1239/4000",
+      "gamma": "61/200",
+      "coarse_craw": "37249/181800",
+      "slack_to_one_fifth": "889/181800"
     },
-    "full_cost": "Phi61=F(A_n(t),B_n(t)−(429/2000)n), t=n/[(47/50)logn]",
-    "mechanism": "one deficit measure, fixed finite point-disjoint Aj/Pj, layerwise degrees and chi_j, samehistory/tau, ca>=1",
-    "comparison": "Phi61<Phi59 and Phi56 on respective actual domains intersections; old explicit bounds remain in earlier dimensions"
+    "full_cost": "Phi64=F(A_n(t),B_n(t)−(61/200)n), t=n/[(909/1000)logn]",
+    "mechanism": "multiplicative matching, relativeg/R domain, boundedtarget radial r/rhi cancels column dr/r, boundedsourceinverse, same actualhistory",
+    "comparison": "strict full-cost improvement over R061 and R059 on each actualvalid intersection, explicit thresholds not transferred"
   },
   "current_paper": {
     "round": 60,
@@ -780,5 +814,36 @@
     "mechanism": "wide source band, activeRbase, addedKw good event, Csrc cap mass, perface inverse variance, exactcolumn2",
     "mechanism_source": "upper/round059/wide_source_band/PROOF.md",
     "historical_note": "R059 itself remains original unknownN; this new round quantifies all guards and infinite tails"
+  },
+  "strongest_asymptotic_pre_R064": {
+    "round": 61,
+    "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+    "full_proof": "upper/round061/disjoint_layers/PROOF.md",
+    "proof_sha256": "0a1e2bc6eb829714f62b9a0cdb5f52f651fa7d49fd54a084e89b2ff3751af716",
+    "independent_audit": "audit/round061/disjoint_layers/review.md",
+    "independent_audit_sha256": "8ae3288b7d34387be32a71424c369bb7a2361db4f24658cdb0d55848bc258a4e",
+    "leading_coefficient": 1,
+    "public_status": "internal independently reviewed theorem, no publication/priority/global optimum claim",
+    "scope": "fixed128disjointlayers, sufficiently large integern, unknownN",
+    "explicit_threshold": null,
+    "bound": "Cn<=Phi61<T−3n/20; T=nlogn−nloglogn",
+    "parameters": {
+      "layers": 128,
+      "d": "7/25",
+      "sigma": "3/50",
+      "source_band": [
+        "18/25",
+        "24/25"
+      ],
+      "target_inset": "1/1073741824",
+      "gamma": "429/2000",
+      "craw": "14163/94000",
+      "slack_to_three_twentieths": "63/94000",
+      "record": "upper/round062/compute/candidate_certificate.json",
+      "record_sha256": "b889e35ef909bd979937752c67410bf3913eb76cdf7dc6c720556e093d4c0711"
+    },
+    "full_cost": "Phi61=F(A_n(t),B_n(t)−(429/2000)n), t=n/[(47/50)logn]",
+    "mechanism": "one deficit measure, fixed finite point-disjoint Aj/Pj, layerwise degrees and chi_j, samehistory/tau, ca>=1",
+    "comparison": "Phi61<Phi59 and Phi56 on respective actual domains intersections; old explicit bounds remain in earlier dimensions"
   }
 }

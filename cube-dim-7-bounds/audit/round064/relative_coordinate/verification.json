@@ -1,0 +1,22 @@
+{
+  "status": "PASS new multiplicative chain, kink and exact rate checks",
+  "sympy": "1.14.0",
+  "relative_guards": "s=3/2; active R>=1; q>=2/3; 1<=r<3/2; rho>=4r; 0<h<=1/1000; 0<=epsilon and epsilon*q<=h/s; g>0",
+  "new_symbolic_checks": [
+    "Rprime=3/2 and gprime=1/2+epsilon",
+    "g<=R/3 equivalent to epsilon*q<=2h/3",
+    "ellpin derivative negative",
+    "full F chain with new derivatives",
+    "onset one-sided derivative jump",
+    "C1 at |w|=R"
+  ],
+  "derivative_bound": "strictly <3/rho a.e.; hence 256/rho",
+  "product_log_shift": "<=512 L h=2^-55 for h=2^-64/L",
+  "Q5_log_upper": "34187/187500",
+  "mean_rate_upper": "37400031008/749267578125",
+  "variance_rate_upper": "639297430035248/105365753173828125",
+  "verified_mean_target": "999/20000",
+  "verified_variance_target": "1/150",
+  "verifier_sha256": "440980a84518ae4154619abb818fb19432f2362ff471978afbecf81933aaaa95",
+  "scope": "Local J/Psi/phi and conditional-face estimates only. Baseline target W is uniform [-R,R]; phi fullsource Z is uniform [-rho,rho]. No global Cn, target count, radial column, old/production/MATLAB/n7/Git work."
+}
