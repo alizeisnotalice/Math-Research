@@ -1,7 +1,7 @@
 {
   "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
   "status": "active research; lower paused and n7-specific stopped",
-  "current_round": 49,
+  "current_round": 51,
   "accepted": [
     {
       "round": 34,
@@ -116,6 +116,37 @@
       "explicit_threshold": "log(n)>=2^52",
       "full_cost": "F(A_n(t),B_n(t)−2^-40 n), t=n/[(1−2^-43)logn]",
       "mechanism_source": "upper/round045/soft_inverse_column/PROOF.md"
+    },
+    {
+      "round": 51,
+      "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+      "full_proof": "upper/round051/flexible_budget/PROOF.md",
+      "proof_sha256": "aeddd67b7a2109d402ea76d9f6fb3d93accf44bea80240340bd163759a7c9df6",
+      "independent_audit": "audit/round051/flexible_budget/proof_review.md",
+      "independent_audit_sha256": "66355a1d58d3b6a832e844645b9e61ca9e3c5a2f27bc0958947054aa9144f960",
+      "leading_coefficient": 1,
+      "public_status": "internal independently reviewed theorem; no public priority/global optimality claim",
+      "scope": "each full fixed admissible parameter tuple, sufficiently large n depending on tuple",
+      "bound": "Cn<=F(A_n(t),B_n(t)−gamma n); every fixed 0<c<c_raw implies Cn<T−c n",
+      "explicit_threshold": null,
+      "raw_tuple": {
+        "a_soft": "73/8",
+        "s": "293/16",
+        "d": "1023/1048576",
+        "epsJ_S_T_D": "1/1024",
+        "epsA": "1/64",
+        "P0": "3579/4096",
+        "u_lo": "3579/8200",
+        "u_hi": "8796093022208/7674592741893",
+        "mass": "64449/134315936",
+        "M": "4",
+        "bracket": "11148919/38310400",
+        "Gamma": "718536680631/20582788938137600",
+        "gamma": "735063024285513/21076775872652902400",
+        "sigma": "306632997/17592186044416",
+        "c_raw": "6468305130094850733787980147/370780099533215320770594052505600"
+      },
+      "instantiated_corollary": "Cn<T−2^-16n eventually, via independently checked fixed raw tuple"
     }
   ],
   "unaccepted": [
@@ -142,7 +173,8 @@
     "upper/round047/REPORT.md",
     "upper/round045/REPORT.md",
     "upper/round048/REPORT.md",
-    "upper/round049/REPORT.md"
+    "upper/round049/REPORT.md",
+    "upper/round051/REPORT.md"
   ],
   "accepted_scoped_mechanisms": [
     {
@@ -198,26 +230,35 @@
     }
   ],
   "strongest_asymptotic": {
-    "round": 45,
+    "round": 51,
     "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-    "scope": "all sufficiently large integer n; absolute N not quantified",
-    "d": "1/16777216",
-    "L": "log n",
-    "sigma": "1/8796093022208",
-    "t": "n/((1−2^-43)log n)",
-    "A": "(1+1/t)^n",
-    "B": "original exact B_n(t)",
-    "removed_budget": "2^-40 n",
-    "operator_cost": "Cn<=F(A,B−2^-40n)",
-    "bound": "Cn<=nlogn−nloglogn−2^-41n",
-    "proof": "upper/round045/soft_inverse_column/PROOF.md",
-    "endpoint_and_comparison": "upper/round045/comparison/PROOF.md",
-    "independent_full_audit": "audit/round045/full_theory/proof_review.md",
-    "independent_endpoint_audit": "audit/round045/comparison/AUDIT.md",
+    "full_proof": "upper/round051/flexible_budget/PROOF.md",
+    "proof_sha256": "aeddd67b7a2109d402ea76d9f6fb3d93accf44bea80240340bd163759a7c9df6",
+    "independent_audit": "audit/round051/flexible_budget/proof_review.md",
+    "independent_audit_sha256": "66355a1d58d3b6a832e844645b9e61ca9e3c5a2f27bc0958947054aa9144f960",
     "leading_coefficient": 1,
+    "public_status": "internal independently reviewed theorem; no public priority/global optimality claim",
+    "scope": "each full fixed admissible parameter tuple, sufficiently large n depending on tuple",
+    "bound": "Cn<=F(A_n(t),B_n(t)−gamma n); every fixed 0<c<c_raw implies Cn<T−c n",
     "explicit_threshold": null,
-    "status": "strict internal theorem; independent ACCEPT, not claimed public/global best",
-    "comparison_scope": "scalar L>=2^240 and own operator valid domains; take all applicable old/new minima"
+    "raw_tuple": {
+      "a_soft": "73/8",
+      "s": "293/16",
+      "d": "1023/1048576",
+      "epsJ_S_T_D": "1/1024",
+      "epsA": "1/64",
+      "P0": "3579/4096",
+      "u_lo": "3579/8200",
+      "u_hi": "8796093022208/7674592741893",
+      "mass": "64449/134315936",
+      "M": "4",
+      "bracket": "11148919/38310400",
+      "Gamma": "718536680631/20582788938137600",
+      "gamma": "735063024285513/21076775872652902400",
+      "sigma": "306632997/17592186044416",
+      "c_raw": "6468305130094850733787980147/370780099533215320770594052505600"
+    },
+    "instantiated_corollary": "Cn<T−2^-16n eventually, via independently checked fixed raw tuple"
   },
   "current_paper": {
     "round": 48,
