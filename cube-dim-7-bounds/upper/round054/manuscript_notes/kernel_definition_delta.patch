@@ -1,0 +1,26 @@
+--- main_a05.tex
++++ main.tex
+@@ -757,7 +757,22 @@
+  \ell_R(z_i)=\min\left(1,\frac{R+\kappa\rho-|z_i|}{2R}\right),\quad
+  G(z)=\prod_i\ell_R(z_i),\quad b(z)=\min(1,\theta/G(z)).
+ \]
+-有界来源权 $b(z)$ 只乘入后选择的捕获核。
++有界来源权 $b(z)$ 只乘入后选择的捕获核。明确记
++\[
++ \mathcal P=D\cap\{z:\norm z_\infty/t\in1-I\},\qquad
++ r=\norm w_\infty,\quad\rho=\norm z_\infty,\quad q=\rho/t,
++\]
++并将 $b$ 在完整来源带之外延为零。所用的 Borel 核为
++\[
++ K(w,z)=\one_{\mathcal A}(w)\one_{\mathcal P}(z)
++ \one_{\{|r-q-d|<h\}}\one_{\{\norm{z-w}_\infty<\kappa\rho\}}b(z).
++\]
++这里 $0\le K\le1$、$\mathcal A\cap\mathcal P=\varnothing$。
++以下环境行列积分均指此核：
++\[
++ R_\lambda(w)=\int K(w,z)\dint\lambda(z),\qquad
++ C_\lambda(z)=\int K(w,z)\dint\lambda(w).
++\]
+ 完整逆权壳系数保留固定面坐标，准确为
+ \begin{equation}\label{eq:flex-inverse-shell}
+  U(w,\rho)=\frac{\prod_jJ(w_j;q)}{2\ell_*}

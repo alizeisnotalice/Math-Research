@@ -1,6 +1,6 @@
 {
   "dimension": 7,
-  "updated_utc": "2026-10-27T21:33:25.604355+00:00",
+  "updated_utc": "2026-10-27T22:03:32.430290+00:00",
   "status": "GENERAL_HIGH_DIM_COVER_ACTIVE_N7_SPECIFIC_STOPPED_LOWER_PAUSED",
   "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
   "current_round": 55,
@@ -741,27 +741,32 @@
     "no_new_research": true
   },
   "paper": {
-    "status": "general_highdim_R045_complete_full_math_ACCEPT_primary_compiled_rendered",
+    "status": "general_highdim_R051_R053_R055_final_full_math_ACCEPT_primary_compiled_rendered",
     "title": "中心立方体极大算子的覆盖估计与一般高维弱型上界",
     "tex": "paper/main.tex",
     "pdf": "paper/main.pdf",
-    "pages": 30,
-    "main_tex_sha256": "ecd7fd7487083b7eb6318a0a94f969f9d291b9d4df443cc3374497a7f103b248",
-    "pdf_sha256": "7d7f2ef711ef0b9aa1da6a5ff780b50496400d01ba0f1f59dc7f5d73aafc5f1e",
+    "pages": 20,
+    "main_tex_sha256": "17e3de43f0d841a285dbfcaf8ff12c57f9670270aab9ce95cf7fe5ce359b9554",
+    "pdf_sha256": "ae8377485c5cda970e1b2de8159b7c959f701e7d80d4dd901923aaaaab80606d",
     "manifest": "paper/MANIFEST.json",
-    "transcription_review": "audit/round048/manuscript/review.md",
-    "bound_round": 45,
-    "operator_threshold": "unknownN for R045; separate retained R042 explicit domain",
-    "historical_n7_verifier_rerun": false,
-    "previous24page_recovery": {
-      "commit": "f7ce8805bfd5c2a5140612082c07aa358cfb4b0e",
-      "tex_sha256": "94c5e61d3bf86b16736e328ffe3e412d46df957dd2b8f8760939edc8831e8692",
-      "pdf_sha256": "d3316cdbbc3ef42a1f3afe26470c5df3c4ea0b6f4471c329284995723a22d40a",
-      "tex_git_blob": "88f3adbfddf0dd9ffeadc7d37052291d195fc981",
-      "pdf_git_blob": "2b662bcb85cb2688224c0f853959c394e17b3695"
+    "transcription_review": "audit/round054/manuscript/review.md",
+    "bound_rounds": [
+      51,
+      53,
+      55
+    ],
+    "operator_thresholds": {
+      "simple": "logn>=2^27; Cn<=Phi_s<T-2^-16n",
+      "raw": "logn>=2^32; Cn<=Phi_r<Phi_s"
     },
-    "latest_thresholds_pending_manuscript_round": 54,
-    "note": "R048 is historical30page core manuscript; later explicit generic results in R049/R053/R055 are being integrated in R054"
+    "historical_n7_verifier_rerun": false,
+    "previous30page_recovery": {
+      "commit": "324a616a9cbf2323bfefcc905055f5ddf0350fca",
+      "tex_sha256": "ecd7fd7487083b7eb6318a0a94f969f9d291b9d4df443cc3374497a7f103b248",
+      "pdf_sha256": "7d7f2ef711ef0b9aa1da6a5ff780b50496400d01ba0f1f59dc7f5d73aafc5f1e",
+      "tex_git_blob": "6cbeafa7e431eb19662db534cccebdeaf95f33dc",
+      "pdf_git_blob": "8b11c7a73f1fc2d1247a16ce7d720c5203831274"
+    }
   },
   "round029": {
     "report": "revision_v3/REPORT.md",
@@ -834,8 +839,8 @@
   "active_goal": {
     "status": "active",
     "objective": "持续优化维数一致上界，Sol/Terra/Luna，本机优先；下界暂停",
-    "next_round": 54,
-    "focus": "R054 latest manuscript, continuing general covering beyond present budget family",
+    "next_round": 56,
+    "focus": "refined inverse-row/column covering; R056 unproved outside accepted ledger",
     "n7_specific_work": "STOPPED; historical archive only"
   },
   "upper_pre_R031": {
@@ -1345,5 +1350,33 @@
     },
     "full_cost": "Phi_raw=F(A_n(t),B_n(t)−gamma_raw*n), t=n/[(1−sigma_raw)logn]",
     "mechanism_source": "upper/round051/flexible_budget/PROOF.md"
+  },
+  "paper_pre_R054": {
+    "status": "general_highdim_R045_complete_full_math_ACCEPT_primary_compiled_rendered",
+    "title": "中心立方体极大算子的覆盖估计与一般高维弱型上界",
+    "tex": "paper/main.tex",
+    "pdf": "paper/main.pdf",
+    "pages": 30,
+    "main_tex_sha256": "ecd7fd7487083b7eb6318a0a94f969f9d291b9d4df443cc3374497a7f103b248",
+    "pdf_sha256": "7d7f2ef711ef0b9aa1da6a5ff780b50496400d01ba0f1f59dc7f5d73aafc5f1e",
+    "manifest": "paper/MANIFEST.json",
+    "transcription_review": "audit/round048/manuscript/review.md",
+    "bound_round": 45,
+    "operator_threshold": "unknownN for R045; separate retained R042 explicit domain",
+    "historical_n7_verifier_rerun": false,
+    "previous24page_recovery": {
+      "commit": "f7ce8805bfd5c2a5140612082c07aa358cfb4b0e",
+      "tex_sha256": "94c5e61d3bf86b16736e328ffe3e412d46df957dd2b8f8760939edc8831e8692",
+      "pdf_sha256": "d3316cdbbc3ef42a1f3afe26470c5df3c4ea0b6f4471c329284995723a22d40a",
+      "tex_git_blob": "88f3adbfddf0dd9ffeadc7d37052291d195fc981",
+      "pdf_git_blob": "2b662bcb85cb2688224c0f853959c394e17b3695"
+    },
+    "latest_thresholds_pending_manuscript_round": 54,
+    "note": "R048 is historical30page core manuscript; later explicit generic results in R049/R053/R055 are being integrated in R054"
+  },
+  "round054": {
+    "report": "upper/round054/REPORT.md",
+    "status": "complete20page final full math ACCEPT and primary actualbuild/layout",
+    "new_Cn_bound": false
   }
 }
