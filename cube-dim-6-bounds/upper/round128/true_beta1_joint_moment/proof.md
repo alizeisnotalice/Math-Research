@@ -1,0 +1,9 @@
+# Round 128 supplement: exact true beta1 caps in the same joint count model
+
+This packet preserves the round 125 original determinant moment, 49-feature common-simplex construction, eight h values, Phi table, p intervals, 735471 prefix states, and 16 true tail bounds. See the source-pinned round 125 proof for the Holder bound M^6<=H^5 and whole-CDF coupling argument.
+
+Only beta[j][0] is replaced by the exact upper endpoint of the true E[d N_h] interval from round 126, at the identical h. Round 126 independent 768-bit recheck covers 4096 functionals and 11842 exact checks; its manifest is source-pinned. All beta2..beta6 and beta0 remain exact round 125 values. Positivity and E[d N_h]<=beta1 justify the same weighted expectation argument. Strict improvement against the old caps is checked rationally at startup. No cap is reconstructed from displayed decimals.
+
+The single new SLSQP call begins at the complete saved round 125 rational49 simplex, with 1000 objective/analytic-gradient calls maximum and 500 iterations maximum. It retains one best rationalized 2^-44 candidate; no restart. The 192-bit integer certificate and 8192-state compressed chunks are the same algorithm as 125. It reports exact M^6 comparison against complete Theta and accurate saved125 M^6; round124 comparisons remain available. A strict M-slot pass alone does not prove global g0 or any new C6 upper bound. Current C6<=64.
+
+Status: prepared and unrun; primary release required. No scientific computation or full saved-data enumeration was run during preparation. Syntax, hash, and exact input provenance checks are preparation checks only. Run once through observe_once.py after primary release, using nice+10, one CPU, one BLAS thread, no runtime ceiling. Exclusive markers reject a second launch. On first genuine error stop and retain committed data; no automatic rerun or change of precision, h, or K.
