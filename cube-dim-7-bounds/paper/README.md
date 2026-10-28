@@ -1,31 +1,21 @@
 # 中心立方体极大算子的覆盖估计与一般高维弱型上界
 
-R068 中文修订：`main.tex` 与实际双轮 XeLaTeX 编译的 28 页 `main.pdf`。
+[论文 PDF](main.pdf)及[可编辑 LaTeX 源码](main.tex)，共37页。全文以引言、预备知识、主要证明、应用组织。
 
-本文证明两个显式原算子上界，所有对数均为自然对数：
+对自然 L=log n≥8192，本文证明 Cn≤F(A_n(t),B_n(t)−291n/1000)<nlog n−nloglog n−47n/250，t=256n/(231L)。对 L≥2^30，另一组参数给出更强的完整函数界 Cn<T−23n/100。对象是 Lebesgue 测度下中心轴平行共同半径立方体，允许一般 L1 输入和全部正尺度。
 
-- `log n ≥ 2^20`：`C_n ≤ Φ56 < n log n − n log log n − n/40`。
-- `log n ≥ 2^30`：`C_n ≤ Φp < n log n − n log log n − (23/100)n`，其中 `t=1000n/(917log n)`，`Φp=F(A_n(t),B_n(t)−(317/1000)n)`。
+正文给出两阶目标剖面、逐来源面 Cantelli 保留、同一有限选择历史和完整行列缺额、全部显式门槛与无限尾及完整根式代价。按用户指定的 anti-defensive-writing 技能修订表达；数学适用条件和真实依赖均保留。
 
-首项系数仍为1。第二个显示常数来自同一个完整 Φp 的准确对数价格，并未另换核、gamma或完整代价函数。门槛是充分条件，不声称最小。
+最终源获独立全文数学审阅；作者与主分别实际完成两遍 XeLaTeX 编译和全部37页渲染图审。无 overfull、未定义引用或缺字；有3项可读的 underfull 警告（正文1项、参考文献2项）。两次独立编译的 PDF 元数据可能不同，源码相同，见 BUILD.json。
 
-正文按引言、预备知识、主要证明、应用组织。R056较早显式域的完整证明保留；R059旧宽带长证明替换为新相对间隙J与连续匹配、目标一阶Jphi剖面、负ellpin导数下端点计数、同一目标剖面控制每张来源面均值、概率先逐面后混合、径向行列measure校准、两个有界权支付原资格与同一实际历史。新显式门槛自足给出所有几何/五坏事件/概率/径向条件、Taylor10 cap及tau全尾与Taylor4完整根式余项。一般L¹和所有正共同半径通过原有限覆盖和真实见证连接。
+准确证书、原始材料和最小复核代码见 [补充索引](../upper/round077/manuscript_notes/supplement/README.md)。脚本会写自己的回执；为保留原回执，可在仓库根目录创建临时副本执行：
 
-应用比较完整根式函数和准确正价格，另给不交点支撑缺额相加命题与共用来源的反例；R034低域常数族及R037真实history框架范围完整保留。公开ABC与原创编号分开，参考文献沿用已核版本。正文不使用全局最优性或公开优先权主张。
+```sh
+paper_check_dir=$(mktemp -d)
+mkdir -p "$paper_check_dir/paper" "$paper_check_dir/upper/round077/manuscript_notes"
+cp cube-dim-7-bounds/paper/main.tex "$paper_check_dir/paper/main.tex"
+cp cube-dim-7-bounds/upper/round077/manuscript_notes/verify_transcription.py "$paper_check_dir/upper/round077/manuscript_notes/verify_transcription.py"
+python3 "$paper_check_dir/upper/round077/manuscript_notes/verify_transcription.py"
+```
 
-从仓库根目录编译两遍：
-
-    /Library/TeX/texbin/xelatex -interaction=nonstopmode -halt-on-error -output-directory=/tmp/cube-cover-manuscript-build cube-dim-7-bounds/paper/main.tex
-
-新固定tuple及门槛的独立转写检查（标准库Fraction）：
-
-    python3 cube-dim-7-bounds/upper/round068/manuscript_notes/verify_transcription.py core
-    python3 cube-dim-7-bounds/upper/round068/manuscript_notes/verify_transcription.py threshold
-
-本机本轮core23项、threshold41项分别实际PASS；receipt保留各实际运行阶段的源码与脚本身份。最终源码另作引用/文献/保留块扫描，不重复数学检查。没有重跑旧60/128/producer baseline、参数grid、生产计算、七维脚本或共享MATLAB。
-
-最终双pass编译成功，28页全渲染/看图，无越界、缺字或未定义引用，仅文献两项underfull hbox。独立完整数学审核及两处定义范围补全均获 FINAL ACCEPT，锁定源码 SHA256 `8135adfb51470228ed18371c6c5f1a22caac0b35523b0cd49c50b13cfb9b386b`，报告身份见BUILD.json。作者排版与转写检查不替代全文审。
-
-R060旧源SHA256 `a5ffdfac3871d4ecd3d7a8e27ecb484019d62f309ce2d7a6e434754e8e17e445`，已发布主提交`2f393a17f443f10411fa9ea435fd88fd5350c14a`。旧R060notes和历史七维附件未改；private恢复稿不进入归档白名单，不重复旧PDF。来源、转写责任、实际检查、归档范围见R068 manuscript_notes；主负责最终整合、独立复核与归档提交。
-
-正式主目录再次实际双pass编译及全部28页渲染复核，见BUILD.json；作者运行单独锁定upper/round068/author_build.json。新研究第二剖面候选仍为独立轮次，不进入本冻结数学源。旧24页稿由source_copy_manifest的稳定Git blob恢复。
+较早28页论文可通过已发布 Git commit f26db46db9e320aaffca74807ad25a815caad237 恢复；本稿源身份、审核与实际运行记录见 MANIFEST.json 和 upper/round077/REPORT.md。
