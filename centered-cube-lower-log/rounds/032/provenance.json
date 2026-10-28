@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-29",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "archive_files": {
+    "REPORT.md": "b0dabd319148512ff0b32d0805ce41a23bd8665747174a9f2a13c2658fb280d8",
+    "PROOF.md": "52cecef1cd11815e41080c33e0eb1502827553c7ab9c971453d5cbd91b54bee5",
+    "CONDITIONAL_PROOF.md": "a3a1409c7e4ecb9554ca8edb2c22aed09713cff7226360f29dc0df6f68d5040b",
+    "AUDIT.md": "bf66ed7f721ada5a81b2f4b9a4f2dce361cca1858da19016fbf7322fb9ec3e76",
+    "NUMERICS.md": "cd727ef29fab5ac473c6e036ff264aa71151fe65127934695d67f81fc9118a88",
+    "conditional_probe.py": "5c2dd9e2ab273ae5f6b168d135a7aa1d4e45acd9253336fa717a9d4c7f5037e7",
+    "conditional_checks.json": "f3bc1d75501bf0be6a5ef83602dc2f2f2177f00fcdbb60b644f007f09cb5bb3c",
+    "jitter_probe.py": "eaacff923809c2555184007a3d0f82b9a19e6f2114487916fe3af48f78ea8381",
+    "jitter_checks.json": "09d8d4f8dc3bb97258059dd3b2d4424bdcdb896f3087c9163cfea32517c9b279",
+    "phase_structure_probe.py": "ed84908b9bd8c8fb16a50c2827729dee9680345fcbe963cd9f3d85384da5cb0d",
+    "phase_structure_results.json": "71429fda0c24658372b1b4f6934b7f7bb0c1c48a8c876740aa79269aa8bc5a79",
+    "parameter_gate_checks.py": "3d083dfc4e5174ca76abbfbaab2bbe00abec6d4ca8501aae9d280376567fe5e3",
+    "parameter_gate_results.json": "aef2fe2f03cbddab779f5aecb5a0e5d575c9704ba65b5dc9eb54a1034a578e53",
+    "multinomial_probe.py": "d9efad5873ebd3c5e667351f740bd716d5b2d91106e82ce436399bc3c819b1e1",
+    "large_dimension_results.json": "3a754f69c71a8e1eb71d9baedd4d6a433515c84d679439979dcc3ef63a27a55d",
+    "initial_large_dimension_results.json": "8de2640b7b14d94c63b0a7507fca47e67787632c4bb550ab00425d40ea31e312"
+  },
+  "dependencies": {
+    "../030/PROOF.md": "6b7299c2371e220fd5e32789cc62340f820b7068ddf5508aeed40a7c6e6b077f",
+    "../031/probe.py": "7a5a3d12622ab34de933067042cc04d4189e67af49fec914f8a01d38a9f3036b",
+    "../028/REPORT.md": "18d0720358cdfdb54786b523ba65b9870faab6afcce35848d87a5572419fee9f",
+    "../028/source_interface_baseline.tex": "da34fb168ea7999ef48b453796596e197746014fc73d3e823aeae1c65d333b01"
+  },
+  "source_interpretation": "Only same-period one-equal-mass-atom-per-cell products with the stated envelope and parameter sequence, and their fixed measurable positive probability mixtures. General C_n and the full scale axis are not covered.",
+  "actual_runs": [
+    "conditional_probe.py (45 comparisons, within-bin moment checks, count-IS)",
+    "jitter_probe.py (12 configurations)",
+    "phase_structure_probe.py (continuous-scale n2 harmonic diagnostic)",
+    "parameter_gate_checks.py (integer/Fraction gates)",
+    "multinomial_probe.py (3 fixed configurations + 1 preselected diagnostic; NumPy2.3.5)"
+  ],
+  "actual_postchecks": {
+    "fixed_contribution_bounds": 204,
+    "heldout_Chernoff_reinversions": 51
+  },
+  "historical_snapshot": {
+    "file": "initial_large_dimension_results.json",
+    "purpose": "Necessary evidence for the original v16 mass/branch anomaly, the pre-harmonization normalizer difference, and the initial NUMERICS tables. Not a second claimed asymptotic result.",
+    "environment": "Python3.15.0 NumPy2.5.4 /opt/homebrew/opt/python@3.15/bin/python3.15",
+    "origin_sha256": "8de2640b7b14d94c63b0a7507fca47e67787632c4bb550ab00425d40ea31e312",
+    "bitwise_reproduction_claimed": false
+  },
+  "root_changes_after_agent_run": [
+    "Recorded raw-mean normalizer exponent in the coefficient-integrand bound and re-inverted all heldout Chernoff bounds during the fresh run.",
+    "Recorded maximum contributions in the compact fixed-threshold tables.",
+    "Updated filenames, archive relative references and run-status metadata."
+  ],
+  "limitations": [
+    "Double-precision conditional moments/variance/likelihoods lack interval certification.",
+    "Different NumPy multinomial algorithms consume different random sequences; initial and final environments have different numerical realizations.",
+    "Nine target lengths imply a deterministic weak coefficient cap of 9; these tests cannot establish asymptotic log gains.",
+    "The highest-v tail ESS is too low for trend claims."
+  ],
+  "new_log_lower_bound_proved": false
+}
