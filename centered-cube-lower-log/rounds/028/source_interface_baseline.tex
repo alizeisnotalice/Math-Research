@@ -1,0 +1,874 @@
+% 2026-10-13详细展开稿：沿用原标签，供整体替换原01片段；无preamble。
+\subsection{正谱补偿与平坦方差}
+记 $\mathbb T=\mathbb R/\mathbb Z$，其 Haar 概率测度为 $P$。
+以后的一维积分均在 $\mathbb T$ 上进行。取
+\[
+ s=\frac19,\quad a=\frac{10}{27},\quad\alpha=\frac{729}{29},
+ \quad\gamma=\frac{27}{29},\quad I=[10/9,11/9],
+\]
+\[
+ b_m=4\alpha\left[\left(\frac{\sin(\pi ma)}{\pi m}\right)^4
+ +3\left(\frac{\sin(\pi ms)}{\pi m}\right)^4\right]\quad(m\ge1).
+\]
+\begin{lemma}[正谱恒等式]\label{lem:paperplateau}
+上述系数非负且 $b_m=O(m^{-4})$。在 $I$ 上，
+\[
+ F_\infty(L):=1+\sum_{m\ge1}b_m\sin^2(\pi mL)=\gamma L^2,
+ \qquad \frac{100}{87}\le\gamma L^2\le\frac{121}{87}.
+\]
+令 $F_M$ 为截至 $m=M$ 的有限和，则
+\[
+ 0\le F_\infty-F_M\le T_M:=\frac{48}{29M^3},\qquad
+ \sqrt{2b_m/3}<\frac{20}{9m^2}.
+\]
+\end{lemma}
+\begin{proof}
+\textbf{第一步：计算实线上的三次卷积核。}
+记 $T_b(x)=(b-|x|)_+$，$C_b(x)=\int_{\mathbb R}T_b(y)T_b(x-y)dy$。
+两因子均为偶函数，故只需 $x\ge0$。当 $0\le x\le b$，交集为
+$[x-b,b]$，在 $0,x$ 处分段得到
+\begin{align*}
+ C_b(x)&=\int_{x-b}^0(b+y)(b-x+y)dy
+ +\int_0^x(b-y)(b-x+y)dy\\
+ &\qquad+\int_x^b(b-y)(b+x-y)dy.
+\end{align*}
+第一、三项分别等于
+\[
+ \int_x^b u(u-x)du=\frac{b^3}{3}-\frac{xb^2}{2}+\frac{x^3}{6},
+ \qquad\int_0^{b-x}u(u+x)du
+ =\frac{b^3}{3}-\frac{xb^2}{2}+\frac{x^3}{6}.
+\]
+中间一项等于
+\[
+ \int_0^x[b(b-x)+xy-y^2]dy=b(b-x)x+\frac{x^3}{6}.
+\]
+相加即为 $2b^3/3-bx^2+x^3/2$。
+当 $b\le x\le2b$，交集为 $[x-b,b]$ 且两绝对值均无需再分段。
+令 $c=2b-x$、$u=y-(x-b)$，则
+\[
+ C_b(x)=\int_{x-b}^b(b-y)(b-x+y)dy
+ =\int_0^c(c-u)u\,du=\frac{c^3}{6}.
+\]
+当 $x\ge2b$，两支撑无内部交集，卷积为0。因此
+\[
+ C_b(x)=\begin{cases}
+ 2b^3/3-bx^2+x^3/2,&0\le x\le b,\\
+ (2b-x)^3/6,&b\le x\le2b,\\0,&x\ge2b.
+ \end{cases}
+\]
+
+\textbf{第二步：核对周期化和三次项的抵消。}
+将 $T_b$ 作1周期延拓后，它的圆周自卷积等于
+$\sum_{j\in\mathbb Z}C_b(x+j)$。所用 $a=10/27<1/2$、$s=1/9$，且
+$2a+2s=26/27<1$。当 $x\in[s,2s]$ 时，非零整数平移满足
+$|x+j|\ge1-2s=7/9>2a\ge2s$，故没有绕回项；$x=0$ 时同样如此。
+在该区间 $x<a$，但 $x\ge s$，所以 $C_a$ 用第一分支，$C_s$ 用第二分支：
+\begin{align*}
+ C_a(x)+3C_s(x)
+ &=\frac{2a^3}{3}-ax^2+\frac{x^3}{2}
+   +\frac{(2s-x)^3}{2}\\
+ &=\frac{2a^3}{3}+4s^3-6s^2x+(3s-a)x^2.
+\end{align*}
+因为 $a=3s+3s^2$，最后系数为 $-3s^2$，三次项准确抵消。
+令 $C=C_a+3C_s$，于是
+\[
+ C(0)-C(x)=-2s^3+6s^2x+3s^2x^2.
+\]
+代入 $s=1/9$、$\alpha=729/29$，常数、一次、二次系数分别为
+\[
+ 1-2\alpha s^3=27/29=\gamma,\qquad
+ 6\alpha s^2=54/29=2\gamma,\qquad
+ 3\alpha s^2=27/29=\gamma.
+\]
+因此 $1+\alpha[C(0)-C(x)]=\gamma(1+x)^2$。
+
+\textbf{第三步：从卷积恒等式到非负谱。}
+对非零整数 $m$，直接积分并分部一次得
+\begin{align*}
+ \widehat T_b(m)&=2\int_0^b(b-x)\cos(2\pi mx)dx\\
+ &=\frac{2[1-\cos(2\pi mb)]}{(2\pi m)^2}
+ =\left(\frac{\sin(\pi mb)}{\pi m}\right)^2.
+\end{align*}
+圆周卷积定理给
+$\widehat C(m)=\widehat T_a(m)^2+3\widehat T_s(m)^2$。
+这两个数均非负。又 $\widehat C(m)=O(m^{-4})$，故 Fourier 级数绝对一致收敛，
+可以逐项作差：
+\[
+ C(0)-C(x)=2\sum_{m\ge1}\widehat C(m)[1-\cos(2\pi mx)]
+ =4\sum_{m\ge1}\widehat C(m)\sin^2(\pi mx).
+\]
+由 $b_m=4\alpha\widehat C(m)$、$x=L-1$ 及
+$\sin^2(\pi m(L-1))=\sin^2(\pi mL)$，即得 $F_\infty(L)=\gamma L^2$。
+端点值分别为
+$(27/29)(10/9)^2=100/87$、$(27/29)(11/9)^2=121/87$。
+
+\textbf{第四步：截断与幅度。}
+由 $|\sin|\le1$，
+\[
+ b_m\le\frac{16\alpha}{\pi^4m^4},\qquad
+ \sum_{m>M}m^{-4}\le\int_M^\infty x^{-4}dx=\frac1{3M^3}.
+\]
+因此尾部至多 $16\alpha/(3\pi^4M^3)<48/(29M^3)$，其中使用 $\pi>3$。
+同一界给
+\[
+ \sqrt{2b_m/3}\le\frac{\sqrt{32\alpha/3}}{\pi^2m^2}
+ <\frac{20}{9m^2},
+\]
+因为 $32\alpha/3=7776/29<400$、$\pi^2>9$。
+非负性保证 $F_M\le F_\infty$，遂得全部断言。
+\end{proof}
+
+\subsection{确定标签与非零状态计数}
+\begin{lemma}[有限域标签的存在]\label{lem:papersidon}
+令 $B=2^b$，$b\ge2$，$q=2^d$，在 $\mathbb F_q$ 中固定本原元 $g$。
+置 $N_B=B-1$、$T_B=N_B(N_B+1)/2$、$R_B=N_B(N_B-1)$ 和
+\[
+ H(B)=N_B+T_B(T_B-1)+2R_B^2+4R_B<3B^4.
+\]
+若 $q>H(B)$，存在 $\mathbb F_2$ 独立的 $\beta_0,\ldots,\beta_{b-1}$，
+使其线性张成空间 $W$ 的非零元素构成乘法 Sidon 集。即两个非零元素
+的乘积相等只可能来自相同无序多重集。令 $K=q-1$，则
+\[
+ \mathcal D=\{\log_g(a/c):a,c\in W\setminus\{0\},\ a\ne c\}
+\]
+有 $R_B$ 个元素，$\mathcal D\cup\{0\}$ 在 $\mathbb Z/K\mathbb Z$ 中无邻接，
+且 $\pm1,\pm2\notin\mathcal D$。
+\end{lemma}
+\begin{proof}
+\textbf{第一步：有限域多项式的根数预算。}
+若 $P$ 是总次数为 $r$ 的非零多项式，独立均匀取其各变量于 $\mathbb F_q$，
+则 $\Pr(P=0)\le r/q$。单变量情形来自根数至多次数。
+对变量数归纳，将 $P$ 看成末变量 $X_b$ 的 $j$ 次多项式，首项系数
+$P_j$ 非零、总次数至多 $r-j$。在 $P_j=0$ 的纤维，全部概率不超过
+$(r-j)/q$；在其余纤维，末变量至多有 $j$ 个根，再付 $j/q$。
+两者相加给所述预算；特征2不影响这一根数论证。
+
+\textbf{第二步：线性独立及乘法 Sidon 条件。}
+独立取 $X_0,\ldots,X_{b-1}\in\mathbb F_q$，对每个非零
+$a\in\mathbb F_2^b$ 定义 $L_a(X)=\sum_i a_iX_i$。
+共有 $N_B=B-1$ 个非零一次式，故某个 $L_a=0$ 的概率至多 $N_B/q$。
+这些零事件均不发生，恰保证所选 $X_i$ 对 $\mathbb F_2$ 线性独立。
+
+在 $N_B$ 个非零二进制向量上，无序二元素多重集有
+$T_B=N_B(N_B+1)/2$ 个。不同多重集 $\{a,c\}\ne\{e,f\}$ 的
+多项式 $L_aL_c-L_eL_f$ 不恒为0。确切地，多项式环
+$\mathbb F_q[X_0,\ldots,X_{b-1}]$ 是唯一分解整环，每个非零线性式
+不可约。若两乘积恒等，则一侧的线性因子必与另一侧某因子成比例。
+两个二进制非零线性式成比例时，选某个系数为1的位置可见比例必为1，
+故相应二进制向量相等；消去因子后另一向量也相等。
+这与多重集不同矛盾。重复因子 $L_a^2$ 在特征2下仍是非零多项式，
+故同样包含在论证中。
+不同多重集对有 $\binom{T_B}{2}$ 个，每个二次式付 $2/q$，总费用为
+$T_B(T_B-1)/q$。
+
+在上述两类坏事件的补集，令 $\beta_i=X_i$，则 $W$ 有 $B$ 个元素，
+$W\setminus\{0\}$ 满足乘法 Sidon 条件。
+若两个非平凡有序比率 $a/c=e/f$，则 $af=ce$。
+Sidon 性使 $\{a,f\}=\{c,e\}$。其中 $a=c,f=e$ 与 $a\ne c$ 矛盾，
+故只能 $a=e,c=f$。所以全部 $R_B=N_B(N_B-1)$ 个非平凡有序比率互异。
+
+\textbf{第三步：排除邻接比率及短 lag。}
+对任意两个非平凡有序比率 $L_a/L_c$、$L_f/L_e$，邻接关系对应
+$L_aL_e=gL_cL_f$。多项式 $L_aL_e-gL_cL_f$ 不恒为0：
+第二乘积有某个非零单项式系数，等于1；差式中该位置的系数是
+$-g$ 或 $1-g$，均非零，因为本原元 $g\ne0,1$。
+共 $R_B^2$ 个二次式，费用至多 $2R_B^2/q$。
+故在补集上 $\mathcal D\cap(\mathcal D+1)=\varnothing$。
+
+此外，对每个非平凡有序对 $a,c$ 和 $j\in\{1,-1,2,-2\}$，排除
+$L_a=g^jL_c$。由 $g^j\ne1$，此一次式非零，共 $4R_B$ 个式子，
+费用至多 $4R_B/q$。于是 $\pm1,\pm2\notin\mathcal D$。
+比率1本来已由 $a\ne c$ 排除；再结合 $\pm1\notin\mathcal D$，
+得到 $\mathcal D\cup\{0\}$ 无邻接。
+
+\textbf{第四步：合并存在性门槛。}
+联合坏概率至多 $H(B)/q<1$，因此至少有一组同时合格的选择。
+又 $T_B<B^2/2$、$R_B<B^2$、$N_B<B$，且 $B\ge4$，所以
+\[
+ H(B)<\frac94B^4+4B^2+B
+ \le\left(\frac94+\frac14+\frac1{64}\right)B^4
+ =\frac{161}{64}B^4<3B^4.
+\]
+每个 $q=2^d$ 都有有限域：在 $X^q-X$ 的分裂域中，其根集对加法、乘法
+及非零逆元封闭，导数为 $-1$ 保证有 $q$ 个互异根。
+最后说明本原元的存在。有限乘法群是交换群；把所有元素的阶按各素数
+取最高幂，选实现这些幂的元素并相乘，可得到阶等于群指数 $e$ 的元素。
+群中每个元素都是 $X^e-1$ 的根，故 $q-1\le e$；另一方面元素阶整除
+群阶，故 $e\le q-1$。于是 $e=q-1$，所得元素为本原元。
+\end{proof}
+
+取 $x_j=g^j$，$0\le j<K$，令
+\[
+ y_i(j)=\operatorname{Tr}(\beta_ix_j),\quad
+ y_j=\sum_{i=0}^{b-1}2^iy_i(j),\quad
+ U_j=(y_j+1/2)/B,\quad a_j=(j+U_j)/K.
+\]
+为明确标签的联合计数，先写出对应线性矩阵。
+迹映射是
+\[
+ \operatorname{Tr}(x)=x+x^2+\cdots+x^{2^{d-1}}\in\mathbb F_2.
+\]
+该多项式非零且次数 $q/2<q$，因而不可能在全域恒为0。
+迹只取0或1，故存在迹为1的元素。对任意 $c\ne0$，乘法 $x\mapsto cx$
+遍历全域，所以 $x\mapsto\operatorname{Tr}(cx)$ 也是非零线性泛函。
+因此迹配对将域元素 $c$ 与线性泛函 $\operatorname{Tr}(c\,\cdot)$ 一一对应。
+
+对 lag $k$，把 $\mathbb F_q$ 看作 $d$ 维 $\mathbb F_2$ 向量空间。
+联合标签映射的 $2b$ 行分别对应
+\[
+ \beta_0,\ldots,\beta_{b-1},g^k\beta_0,\ldots,g^k\beta_{b-1}.
+\]
+非退化迹配对保证该矩阵的秩为
+$\dim(W+g^kW)=2b-\dim(W\cap g^kW)$。
+若 $k\notin\mathcal D\cup\{0\}$，交集只有0，矩阵秩为 $2b$；
+每个输出 $(y,z)$ 的纤维有 $2^{d-2b}=q/B^2$ 个状态。
+若 $k=0$，秩为 $b$，且输出必须满足 $y=z$，每个对角纤维有 $q/B$ 个状态。
+若 $k\in\mathcal D$，Sidon 性保证交集仅有一个非零元素：
+两个不同非零交点会给同一个比率 $g^k$ 的两种表示，与有序比率互异矛盾。
+故交集维数为1，联合矩阵秩为 $2b-1$。
+
+用二进制向量 $a,c$ 表示这个匹配，即
+$\beta(a):=\sum_i a_i\beta_i=g^k\sum_i c_i\beta_i=:g^k\beta(c)$。
+匹配是唯一的，且 $a,c\ne0$、$a\ne c$；若 $a=c$，便有
+$(1-g^k)\beta(a)=0$，迫使 $k=0$。
+令标签字符 $\chi_a(y)=(-1)^{\sum_i a_iy_i}$。
+全域均匀状态下，缺陷 lag 的联合输出律准确为
+$B^{-2}[1+\chi_a(y)\chi_c(z)]$。
+这是因为其像为唯一线性关系 $a\cdot y+c\cdot z=0$ 的超平面，
+每个像内点纤维大小为 $q/2^{2b-1}$。
+
+实际序列 $x_j=g^j$ 遍历的是全部非零状态，不含0。
+因此只须从全域输出的全零标签纤维减去一次，而不能改动其余纤维：
+\begin{equation}\label{eq:paperlabelcount}
+ N_k(y,z)=q/B^2-\mathbf1_{\{y=z=0\}}
+ \quad(k\notin\mathcal D\cup\{0\}).
+\end{equation}
+identity 的计数为
+$qB^{-1}\mathbf1_{\{y=z\}}-\mathbf1_{\{y=z=0\}}$；
+缺陷 lag 的计数为
+$qB^{-2}[1+\chi_a(y)\chi_c(z)]-\mathbf1_{\{y=z=0\}}$。
+这些公式均为确定性矩阵秩与纤维计数，不使用随机独立标签假设。
+
+定义分格原函数
+\[
+ \mathcal P((j+r)/K)=\mathbf1_{\{r\ge U_j\}}-r\quad(0\le r<1).
+\]
+它在格端点为0，周期意义下 $\mathcal P'=\sum_j\delta_{a_j}-K$。
+置 $H_L(x)=\mathcal P(x+L/2)-\mathcal P(x-L/2)$，则 $\int H_L=0$、$|H_L|\le2$。
+令 $\beta_\delta=\delta^{-1}\mathbf1_{[-\delta/2,\delta/2]}$ 周期延拓，
+$H_{L,\delta}=H_L*\beta_\delta$，并置
+\[
+ B_L(x)=\sum_{m\le M}\sqrt{2b_m/3}\sin(\pi mL)\cos(2\pi mx),
+ \quad G_\delta(L,J)=\int(H_{L,\delta}+B_L)(H_{J,\delta}+B_J).
+\]
+
+\begin{lemma}[真实交叉与平滑预算]\label{lem:papercross}
+令 $a_B=1-1/B$，$1\le M<K$。对上述确定标签源，全部 $L,J$ 有
+\[
+ \left|\int(H_{L,\delta}B_J+B_LH_{J,\delta})\right|\le C_x,
+\]
+\[
+ C_x=\frac{40}{9}\left[
+ \frac{a_B\sqrt{K+1}}K\sum_{m\le M}m^{-2}
+ +\frac{\pi a_B^2}{2K}\sum_{m\le M}m^{-1}\right].
+\]
+若 $\delta\le1/K$，则全部高高矩的平滑误差至多 $2K\delta/3$。
+\end{lemma}
+\begin{proof}
+\textbf{第一步：Gauss 和的模。}
+记 $\eta_m(g^j)=e^{2\pi imj/K}$、$\chi_c(x)=(-1)^{\operatorname{Tr}(cx)}$。
+因为 $1\le m<K$，$\eta_m$ 是非平凡乘法字符。
+乘以某个使 $\eta_m(t_0)\ne1$ 的元素重排求和，便得
+$\sum_{t\ne0}\eta_m(t)=0$。
+对 $c\ne0$，迹配对非退化，故 $\chi_c$ 是非平凡加法字符；
+平移一个使 $\chi_c(x_0)=-1$ 的元素重排全域求和，得到
+$\sum_x\chi_c(x)=0$，从而 $\sum_{x\ne0}\chi_c(x)=-1$。
+
+设 $G_{c,m}=\sum_{x\ne0}\chi_c(x)\eta_m(x)$。
+将其模平方展开，利用字符的乘法性，作 $x=ty$ 变量替换得
+\begin{align*}
+ |G_{c,m}|^2
+ &=\sum_{x,y\ne0}\chi_c(x-y)\eta_m(x/y)\\
+ &=\sum_{t\ne0}\eta_m(t)\sum_{y\ne0}\chi_c((t-1)y)\\
+ &=K-\sum_{t\ne0,1}\eta_m(t)=K+1=q.
+\end{align*}
+$t=1$ 的内和为 $K$，其余内和均为 $-1$。
+此论证只需要 $m\not\equiv0\pmod K$，不需要 $m$ 与 $K$ 互素。
+
+\textbf{第二步：保留格内相位的真实原子系数。}
+由 $y_i=(1-\chi_{\beta_i}(x_j))/2$ 和 $\sum_i2^i=B-1$，
+\begin{align*}
+ V_j:=U_j-1/2
+ &=\frac1B\left[\sum_i2^i\frac{1-\chi_{\beta_i}(x_j)}2
+ +\frac12-\frac B2\right]\\
+ &=-\sum_i\frac{2^i}{2B}\chi_{\beta_i}(x_j).
+\end{align*}
+绝对系数和为 $(B-1)/(2B)=a_B/2$，故 $|V_j|\le a_B/2$；
+第一步的 Gauss 和又给
+\[
+ \left|\sum_jV_je^{2\pi imj/K}\right|
+ \le\frac{a_B\sqrt q}{2}.
+\]
+令 $t=2\pi m/K$，则真实原子 Fourier 和为
+\[
+ Z_m=\sum_je^{2\pi im(j+U_j)/K}
+ =e^{it/2}\sum_je^{2\pi imj/K}e^{itV_j}.
+\]
+准确保留 $V_j$ 相位，用积分余项
+$e^{iz}=1+iz+R(z)$、$|R(z)|\le z^2/2$。
+常数项因 $\sum_je^{2\pi imj/K}=0$ 消失，于是
+\[
+ |Z_m|\le t\frac{a_B\sqrt q}{2}+K\frac{t^2a_B^2}{8}.
+\]
+除以 $\pi m$ 并代入 $t$，得
+\[
+ |\zeta_m|:=\frac{|\Re Z_m|}{\pi m}
+ \le\frac{a_B\sqrt q}{K}+\frac{\pi m a_B^2}{2K}.
+\]
+这里没有删除格内相位，也没有使用零频或 $m=K$ 的混叠频率。
+
+\textbf{第三步：原函数 Fourier 系数与两向交叉。}
+在分布意义下 $\mathcal P'=\sum_j\delta_{a_j}-K$。
+用周期分部积分，非零频率 $m$ 满足
+\[
+ \Re Z_m=\int\cos(2\pi mx)\,d\mathcal P'(x)
+ =2\pi m\int\mathcal P(x)\sin(2\pi mx)dx.
+\]
+因而 $\int\mathcal P\sin(2\pi mx)=\Re Z_m/(2\pi m)$。
+对平移差 $H_L$，改变积分变量并展开余弦，得到
+\begin{align*}
+ \int H_L(x)\cos(2\pi mx)dx
+ &=\int\mathcal P(y)[\cos(2\pi my-\pi mL)
+ -\cos(2\pi my+\pi mL)]dy\\
+ &=2\sin(\pi mL)\int\mathcal P(y)\sin(2\pi my)dy
+ =\zeta_m\sin(\pi mL).
+\end{align*}
+令 $c_m=\sqrt{2b_m/3}$，则两向交叉准确为
+\[
+ \int(H_LB_J+B_LH_J)
+ =2\sum_{m\le M}c_m\zeta_m\sin(\pi mL)\sin(\pi mJ).
+\]
+箱平滑算子在余弦频率 $m$ 上的乘子为
+\[
+ \int_{-\delta/2}^{\delta/2}\frac{\cos(2\pi my)}\delta dy
+ =\frac{\sin(\pi m\delta)}{\pi m\delta},
+\]
+其模不超过1。因此平滑后的同一交叉式只增加此乘子。
+逐项使用 $2c_m<40/(9m^2)$、$|\sin|\le1$ 及第二步的 $|\zeta_m|$ 界，
+即得 $C_x$，整个估计对所有 $L,J$ 一致。
+
+\textbf{第四步：移动窗口的平方增量。}
+先取 $0\le z\le\delta\le1/K$。由原函数的导数，
+\[
+ H_L(x+z)-H_L(x)=N_+(x)-N_-(x),
+\]
+其中 $N_+$、$N_-$ 分别计数两个端点的长度 $z$ 移动窗口中的原子。
+原函数每个窗口内的常数斜率贡献均为 $-Kz$，在相减中准确抵消。
+每格恰有一个原子；长度不超过 $1/K$ 的窗口至多与两个格的内部相交，
+所以 $N_\pm\in\{0,1,2\}$。这不要求原子之间有额外的最小间距。
+于是
+\[
+ (N_+-N_-)^2\le N_+^2+N_-^2\le2(N_++N_-).
+\]
+对每个固定原子，包含它的窗口中心集合长度为 $z$，故
+$\int N_+=\int N_-=Kz$，从而
+$\|H_L(\cdot+z)-H_L\|_2^2\le4Kz$。
+负 $z$ 由平移不变性得到同一 $4K|z|$ 界。
+
+\textbf{第五步：从对角能量到任意矩阵元。}
+令 $S$ 为宽度 $\delta$ 的箱平滑。它自伴且是 $L^2$ 收缩，故
+$A=I-S^2$ 半正定。$S^2$ 的平移核为
+$\nu_\delta(z)=(\delta-|z|)_+/\delta^2$，且
+\[
+ \int|z|\nu_\delta(z)dz
+ =\frac2{\delta^2}\int_0^\delta z(\delta-z)dz=\frac\delta3.
+\]
+用平移不变性和偶核展开平方得
+\begin{align*}
+ \langle H_L,AH_L\rangle
+ &=\frac12\int\|H_L(\cdot+z)-H_L\|_2^2\nu_\delta(z)dz\\
+ &\le\frac12\int4K|z|\nu_\delta(z)dz=\frac23K\delta.
+\end{align*}
+半正定型的 Cauchy 不等式给
+\[
+ |\langle H_L,AH_J\rangle|
+ \le\langle H_L,AH_L\rangle^{1/2}
+ \langle H_J,AH_J\rangle^{1/2}\le\frac23K\delta.
+\]
+又 $\langle H_L,AH_J\rangle=\langle H_L,H_J\rangle-
+\langle SH_L,SH_J\rangle$，故得到全部高高矩的平滑误差。
+\end{proof}
+
+\subsection{完整核的充分界}
+\begin{lemma}[连续安全尺度上的核]\label{lem:paperkernel}
+令
+\[
+ \mathcal S=\{L\in I:\operatorname{dist}(K(L-1)\bmod K,\mathcal D)>2\},
+ \quad\eta_D=\frac1{3B^2}+\frac2K,\quad\eta_N=\frac2{3B^2}+\frac2K,
+ \quad e=C_x+\frac{2K\delta}{3}.
+\]
+在 $\mathcal S$ 上，
+\[
+ V_{\min}:=100/261-T_M/3-\eta_D-e\le G_\delta(L,L),
+ \quad\left|\frac{G_\delta(L,L)}{\gamma L^2/3}-1\right|
+ \le r_*:=\frac{T_M+3(\eta_D+e)}{100/87}.
+\]
+若 $V_{\min}\ge1/4$，记 $\tau=K|L-J|/2$ 和
+$\kappa=G_\delta(L,J)/\sqrt{G_\delta(L,L)G_\delta(J,J)}$，则
+\[
+ 1-\kappa\ge\frac{174}{121}\tau-8(\eta_N+e)\quad(0<\tau\le1/8),
+\]
+\[
+ 1-\kappa\ge\frac{14703}{61952}-8(\eta_N+e)\quad(1/8\le\tau\le1).
+\]
+沿 $B,K,M\to\infty$、$e\to0$，全部安全尺度最终有
+$\kappa\ge-1/2$，而 $1/8\le\tau\le K/18$ 时 $1-\kappa\ge1/5$。
+\end{lemma}
+\begin{proof}
+\textbf{第一步：量化中点的误差及其原函数。}
+对标签字符 $\chi_a$，定义
+\[
+ q_y(r)=\mathbf1_{\{r\ge(y+1/2)/B\}}-r,
+ \quad f_a(r)=B^{-1}\sum_{y=0}^{B-1}\chi_a(y)q_y(r).
+\]
+零字符给 $f_0=e_B$，其中
+$e_B(r)=B^{-1}\#\{y:(y+1/2)/B\le r\}-r$。
+在第 $j$ 个量化格内写 $r=(j+t)/B$，$0\le t\le1$，则
+\[
+ e_B((j+t)/B)=\begin{cases}-t/B,&0\le t<1/2,\\(1-t)/B,&1/2\le t\le1.
+ \end{cases}
+\]
+特别地 $|e_B|\le1/(2B)$，每格积分为0，而且
+\[
+ \int_0^1e_B(r)^2dr
+ =B\cdot B^{-3}\left[\int_0^{1/2}t^2dt+
+ \int_{1/2}^1(1-t)^2dt\right]=\frac1{12B^2}.
+\]
+置 $E_B(x)=\int_0^xe_B(r)dr$。每格积分为0意味着 $E_B(j/B)=0$，
+而格内准确公式为
+\[
+ E_B((j+t)/B)=\begin{cases}-t^2/(2B^2),&0\le t\le1/2,\\
+ -(1-t)^2/(2B^2),&1/2\le t\le1.
+ \end{cases}
+\]
+因此 $-1/(8B^2)\le E_B\le0$，且
+\[
+ \int_0^1E_B(r)dr=-\frac1{24B^2}.
+\]
+这些界针对整个连续区间，不是离散节点抽样。
+
+\textbf{第二步：全部非零 Walsh 字符的能量。}
+当 $a\ne0$，$\sum_y\chi_a(y)=0$，故 $f_a$ 中的 $-r$ 项消失；
+$f_a(r)$ 正是带符号前缀和除以 $B$。
+令 $\ell$ 为 $a$ 的最低置位，$q_a=2^\ell$。
+把标签顺序分成 $2q_a$ 个标签一块。在每块中，最低置位之前的字符均为0，
+所以前 $q_a$ 个字符具有同一个符号，后 $q_a$ 个为相反符号；
+更高位只决定该块整体的正负号。因此块内前缀的绝对值依次上升到
+$q_a$，再下降到0，块与块之间没有累积残差。
+每个中点阈值相隔 $1/B$，块端两段各为半步但前缀值均为0。
+各值 $j=1,\ldots,q_a-1$ 出现两段、每段长 $1/B$，最高值 $q_a$
+出现一段长 $1/B$。每块平方积分遂为
+\[
+ \frac1{B^3}\left[2\sum_{j=1}^{q_a-1}j^2+q_a^2\right]
+ =\frac1{B^3}\left[\frac{(q_a-1)q_a(2q_a-1)}3+q_a^2\right]
+ =\frac{2q_a^3+q_a}{3B^3}.
+\]
+全区间共有 $B/(2q_a)$ 块，故
+\begin{equation}\label{eq:paperwalshenergy}
+ \|f_a\|_2^2=\frac{q_a^2}{3B^2}+\frac1{6B^2}.
+\end{equation}
+$q_a=B/2$ 只可能由唯一字符 $a=2^{b-1}$ 产生，其能量为
+$1/12+1/(6B^2)$。其他字符均 $q_a\le B/4$，能量至多
+$1/48+1/(6B^2)$。
+因此任意两个不同非零字符 $a,c$ 的任何截段平移内积均满足
+\[
+ |\int_J f_a(r)f_c(r+\theta)dr|
+ \le\|f_a\|_2\|f_c\|_2
+ \le Q_B:=\sqrt{(1/12+1/(6B^2))(1/48+1/(6B^2))}.
+\]
+变量平移若带一次周期换格，同样由相应子区间的 $L^2$ 范数控制。
+至少一个字符不是唯一最高层，故此处得到 $Q_B=1/24+O(B^{-2})$，
+而不是使用两者都取最高能量的较粗界。
+
+\textbf{第三步：真实自相关的 Walsh 逆变换与零状态校正。}
+记 $C(z)=\int\mathcal P(x)\mathcal P(x+z/K)dx$，写 $z=k+\theta$，
+$0\le\theta\le1$。当 $x=(j+r)/K$、$r<1-\theta$ 时，平移后在第
+$j+k$ 格；当 $r\ge1-\theta$ 时，在第 $j+k+1$ 格。
+定义
+\[
+ I^1_{yw}(\theta)=\int_0^{1-\theta}q_y(r)q_w(r+\theta)dr,
+ \quad I^2_{yw}(\theta)=\int_{1-\theta}^1q_y(r)q_w(r+\theta-1)dr.
+\]
+换元 $dx=dr/K$ 后，准确计数式为
+\[
+ C(z)=K^{-1}\sum_{y,w}[N_k(y,w)I^1_{yw}+N_{k+1}(y,w)I^2_{yw}].
+\]
+令 $W^\nu_{ac}=B^{-2}\sum_{y,w}\chi_a(y)\chi_c(w)I^\nu_{yw}$。
+对全域均匀状态，字符平均满足
+\[
+ E[\chi_a(y(x))\chi_c(y(g^kx))]
+ =\begin{cases}1,&\beta(a)=g^k\beta(c),\\0,&\text{否则}.
+ \end{cases}
+\]
+这是对加法字符 $(-1)^{\operatorname{Tr}((\beta(a)+g^k\beta(c))x)}$
+的全域平均。因而 Walsh 逆变换只保留零字符和匹配对。
+令 $\mathcal M_k=\{(a,c):a,c\ne0,\ \beta(a)=g^k\beta(c)\}$，则
+\begin{align*}
+ C(z)&=\frac qK C_\infty(z)-\frac{i(\theta)}K,\\
+ C_\infty(z)&=W^1_{00}+W^2_{00}
+ +\sum_{\mathcal M_k}W^1_{ac}+\sum_{\mathcal M_{k+1}}W^2_{ac},\\
+ i(\theta)&=I^1_{00}+I^2_{00}.
+\end{align*}
+这里下标 $00$ 在 $I$ 中表示真实全零标签，在 $W$ 中表示零字符，含义不同。
+其来源分别是从实际计数减去状态0，以及全域均匀标签律的常数项。
+因为 $q=K+1$，这也可写成
+\[
+ C(z)=C_\infty(z)+[C_\infty(z)-i(\theta)]/K.
+\]
+
+为控制最后的修正，注意每个全域联合标签律均非负，且两边际均匀。
+将两段合并后，对联合状态和空间变量用 Cauchy，得到
+\[
+ |C_\infty(z)|\le B^{-1}\sum_y\int_0^1q_y(r)^2dr.
+\]
+确切地 $B^{-1}\sum_yq_y(r)^2=r(1-r)+(1-2r)e_B(r)$。
+分部积分时 $E_B(0)=E_B(1)=0$，因此
+\[
+ B^{-1}\sum_y\int q_y^2
+ =\frac16+\int_0^1(1-2r)E_B'(r)dr
+ =\frac16+2\int_0^1E_B(r)dr
+ =\frac16-\frac1{12B^2}\le\frac16.
+\]
+此外 $i(\theta)$ 是 $q_0$ 的周期自相关，模至多
+\[
+ \|q_0\|_2^2=\int_0^{u_0}r^2dr+\int_{u_0}^1(1-r)^2dr
+ =u_0^2-u_0+1/3\le1/3,\qquad u_0=1/(2B).
+\]
+故 $|C(z)-C_\infty(z)|\le1/(2K)$。
+
+若 $k,k+1$ 均非identity，无邻接条件使两段中至多一个非零匹配，
+且它的两个字符不同。另一方面
+\[
+ W^1_{00}+W^2_{00}=\int_0^1e_B(r)e_B(r+\theta\bmod1)dr,
+\]
+其模至多 $1/(12B^2)$。第二步的异字符界遂给
+\begin{equation}\label{eq:paperfarC}
+ |C(z)|\le Q_B+\frac1{12B^2}+\frac1{2K}=:\mathcal C_{BK}.
+\end{equation}
+若两段均非缺陷，则没有异字符项，故可使用更小的
+$|C(z)|\le1/(12B^2)+1/(2K)$。
+
+\textbf{第四步：靠近零位移的精确量化误差。}
+取 $0\le\tau\le1$。其第一段 lag 为0，第二段为1；$1\notin\mathcal D$
+保证第二段标签联合律为满秩均匀律。第一段的同标签平均是
+\begin{align*}
+ B^{-1}\sum_yq_y(r)q_y(r+\tau)
+ &=F_B(r)-rF_B(r+\tau)-(r+\tau)F_B(r)+r(r+\tau)\\
+ &=r(1-r-\tau)+(1-r-\tau)e_B(r)-r e_B(r+\tau),
+\end{align*}
+其中 $F_B(r)=r+e_B(r)$，因为 $r\le r+\tau$ 时两指示函数的乘积
+等于较左指示函数。令 $a_0=1-\tau$，两误差项逐项分部积分：
+\[
+ \int_0^{a_0}(a_0-r)e_B(r)dr=\int_0^{a_0}E_B(r)dr,
+\]
+\[
+ -\int_0^{a_0}r e_B(r+\tau)dr
+ =-a_0E_B(1)+\int_0^{a_0}E_B(r+\tau)dr
+ =\int_0^{a_0}E_B(r+\tau)dr.
+\]
+故第一段总量化误差准确为
+$\int_0^{a_0}[E_B(r)+E_B(r+\tau)]dr$，模至多 $a_0/(4B^2)$。
+第二段是 $e_B(r)e_B(r+\tau-1)$ 的积分，区间长 $\tau$，模至多
+$\tau/(4B^2)$。连续均匀标签的第一段积分为
+\[
+ \int_0^{a_0}r(a_0-r)dr=\frac{a_0^3}{6}.
+\]
+加入第三步的真实非零状态校正，即得
+\[
+ |C(\tau)-(1-\tau)^3/6|\le\frac1{4B^2}+\frac1{2K}.
+\]
+
+\textbf{第五步：反射项、对角和完整高高核。}
+自相关 $C$ 是偶函数、$K$ 周期函数。将 $H_LH_J$ 的四项展开，
+两个同向平移给相同的差位移，两反向平移给相同的和位移，因此
+\[
+ HH_{LJ}:=\int H_LH_J
+ =2C(K(L-J)/2)-2C(K(L+J)/2).
+\]
+不妨 $L\le J$，令反射参数
+$z_r=K((L+J)/2-1)\in[K/9,2K/9]$。它到 $K(L-1)$ 的距离为
+$K(J-L)/2=\tau$。安全条件给 $\operatorname{dist}(K(L-1),\mathcal D)>2$，
+所以在 $\tau\le1$ 时 $z_r$ 到缺陷的距离大于1，floor 和 next cell
+都不是缺陷；又 $z_r$ 在上述区间内，两个 cell 都非identity。
+第三步的满秩小界于是控制反射项，得到
+\[
+ |HH_{LJ}-(1-\tau)^3/3|
+ \le2\left(\frac1{4B^2}+\frac1{2K}\right)
+ +2\left(\frac1{12B^2}+\frac1{2K}\right)=\eta_N.
+\]
+对角时，$C_\infty(0)=1/6-1/(12B^2)$ 是第三步已算出的精确值；
+反射仍用同一满秩界，故
+\[
+ |HH_{LL}-1/3|
+ \le\frac1{6B^2}+\frac1{6B^2}+\frac2K=\eta_D.
+\]
+这些界已经包含反射和真实零状态校正。
+
+\textbf{第六步：低谱、完整矩及方差比例。}
+余弦正交性 $\int\cos(2\pi mx)\cos(2\pi\ell x)dx=
+\mathbf1_{m=\ell}/2$ 给
+\[
+ BB_{LJ}=\frac13\sum_{m\le M}b_m\sin(\pi mL)\sin(\pi mJ),
+ \qquad BB_{LL}=\frac{F_M(L)-1}{3}.
+\]
+由 $F_M(L)\le121/87$ 和 Cauchy，$|BB_{LJ}|\le34/261$，故上端为此数。
+下端可以更小：写 $L=1+x$，$x\in[1/9,2/9]$，则
+$\sin(\pi mL)=(-1)^m\sin(\pi mx)$。
+对 $m=1,2,3,4$，对应角区间分别为
+$[\pi/9,2\pi/9]$、$[2\pi/9,4\pi/9]$、$[\pi/3,2\pi/3]$、
+$[4\pi/9,8\pi/9]$，正弦均为正。因此每个前四频的两尺度乘积非负，
+其余频率按尾部付费，得到
+\[
+ BB_{LJ}\ge-\frac13\sum_{m>4}b_m\ge-\frac{T_4}{3}=-\frac1{116}.
+\]
+若 $M<4$，所有保留项本来非负，同一下端仍成立。
+
+完整 Gram 的交叉和平滑误差至多 $e=C_x+2K\delta/3$。
+于是 $|G_\delta(L,L)-F_M(L)/3|\le\eta_D+e$。
+由 $F_M(L)\ge\gamma L^2-T_M$ 得
+\[
+ G_\delta(L,L)\ge100/261-T_M/3-\eta_D-e=V_{\min},
+\]
+\[
+ \left|\frac{G_\delta(L,L)}{\gamma L^2/3}-1\right|
+ \le\frac{T_M+3(\eta_D+e)}{\gamma L^2}
+ \le\frac{T_M+3(\eta_D+e)}{100/87}=r_*.
+\]
+
+\textbf{第七步：归一化相关的八倍误差。}
+当 $\tau\le1$，参考矩阵为
+\[
+ G_0(L,J)=\frac13\left[R(K(L-J)/2)
+ +\sum_{m\le M}b_m\sin(\pi mL)\sin(\pi mJ)\right],
+ \quad R(t)=(1-|t|)_+^3.
+\]
+$R$ 是半正定核，因为
+\[
+ R(t)=\int_0^1 6(1-a)(a-|t|)_+da,
+\]
+且 $(a-|t|)_+=\langle\mathbf1_{[0,a]},\mathbf1_{[t,t+a]}\rangle$。
+以上积分等式可在 $|t|\le1$ 时令 $u=1-|t|$，计算
+$6\int_0^u(u-z)z\,dz=u^3$；$|t|>1$ 时两边均为0。
+加上有限正谱仍半正定，且 $G_0(L,L)=F_M(L)/3\ge1/3$。
+实际矩也是 Gram 矩阵，故其与参考矩阵的凸插值始终半正定，
+并且对角至少 $1/4$。
+
+对二乘二矩阵的归一化函数 $f(c,a,b)=c/\sqrt{ab}$，半正定性给
+$|c|\le\sqrt{ab}$，故沿插值段
+\[
+ |\partial_cf|=1/\sqrt{ab}\le4,\qquad
+ |\partial_af|=|c|/(2a\sqrt{ab})\le1/(2a)\le2,
+ \qquad|\partial_bf|\le2.
+\]
+非对角误差至多 $\eta_N+e$；两个对角误差至多
+$\eta_D+e\le\eta_N+e$。沿插值积分梯度，得
+$|\kappa-\kappa_0|\le(4+2+2)(\eta_N+e)=8(\eta_N+e)$。
+
+\textbf{第八步：短距和中距的相关缺口。}
+令 $a_L=F_M(L)^{-1/2}$，
+$v_L=(\sqrt{b_m}\sin(\pi mL)/\sqrt{F_M(L)})_{m\le M}$。
+则 $a_L^2+\|v_L\|^2=1$，且
+$\kappa_0=a_La_JR(\tau)+v_L\cdot v_J$。
+单位向量 $(a_L,v_L)$ 和 $(a_J,v_J)$ 的 Cauchy 不等式给
+\[
+ 1-\kappa_0=[1-a_La_J-v_L\cdot v_J]+a_La_J(1-R)
+ \ge a_La_J(1-R).
+\]
+又 $F_M(L)\le\gamma L^2$，所以
+$a_La_J\ge1/(\gamma LJ)\ge87/121$。
+$0\le\tau\le1/8$ 时，
+$1-R=\tau(3-3\tau+\tau^2)\ge2\tau$；
+$1/8\le\tau\le1$ 时，$1-R\ge1-(7/8)^3=169/512$。
+乘以 $87/121$ 并减去第七步误差，即为引理的两项缺口。
+此外 $\|v_L\|^2=1-1/F_M(L)\le34/121$，$R\ge0$，故
+$\kappa_0\ge-\|v_L\|\|v_J\|\ge-34/121$，短距、中距的实际相关
+最终不小于 $-1/2$。
+
+\textbf{第九步：远距的充分界和统一余量。}
+当 $1\le\tau\le K/18$，差位移的 floor/next 均非identity；
+反射位移仍位于 $[K/9,2K/9]$，也具有此性质。
+不需要把它们假设为满秩，第三步的异字符通用界已经覆盖全部缺陷：
+\[
+ |HH_{LJ}|\le4\mathcal C_{BK}=1/6+o(1).
+\]
+加上低谱界与完整 $e$ 费用，并用真实方差下端 $V_{\min}$，得到
+\[
+ \kappa\le\frac{4\mathcal C_{BK}+34/261+e}{V_{\min}},
+ \qquad\kappa\ge-\frac{4\mathcal C_{BK}+1/116+e}{V_{\min}}.
+\]
+$B,K,M\to\infty$、$e\to0$ 时，所有误差对尺度一致，右端极限分别为
+\[
+ \frac{1/6+34/261}{100/261}=31/40,
+ \qquad-\frac{1/6+1/116}{100/261}=-183/400.
+\]
+上端到 $4/5$ 的严格余量为 $1/40$，下端到 $-1/2$ 的余量为 $17/400$。
+中距缺口的极限到 $1/5$ 的余量为
+$14703/61952-1/5=11563/309760>0$。
+因此可取同一个充分大门槛，使全安全集 $\kappa\ge-1/2$，
+并且中、远距离缺口均至少 $1/5$。至此全部矩阵元、校正和归一化费用均已支付。
+\end{proof}
+
+\subsection{全部整数维数的实际密度}
+\textbf{第一步：选择周期并验证全整数维数量词。}
+先固定 $0<p<1$ 和有限 $w\ge4$；它们均不随 $n$ 增长。
+置 $c_p=3p/\sqrt{29}$。对每个充分大整数 $n$，在 $K=2^d-1$ 中
+选满足 $c_p^2n/K^2\ge16\log n$ 的最大者，令
+\[
+ v=\frac{c_p^2n}{K^2}=\frac{9p^2n}{29K^2},
+ \qquad u=\sqrt v,\qquad h=v/2-2.
+\]
+此最大值存在：固定一个允许周期，在充分大 $n$ 时满足条件；而条件要求
+$K^2\le c_p^2n/(16\log n)$，候选只有有限个。
+所选周期的下一候选准确为 $2^{d+1}-1=2K+1$，它不满足条件。因此
+\[
+ \frac{c_p^2n}{(2K+1)^2}<16\log n\le\frac{c_p^2n}{K^2},
+ \quad 16\log n\le v<(2+1/K)^2 16\log n.
+\]
+先仅用 $K\ge1$，可得 $v<144\log n$，从而
+\[
+ K=c_p\sqrt n/\sqrt v\ge\frac{c_p\sqrt n}{12\sqrt{\log n}}\to\infty.
+\]
+再次代回，上端可精化为 $v<(4+o(1))16\log n$。
+特别地 $v=\Theta_p(\log n)$，而对每个固定 $r>0$，
+\[
+ \frac K{v^r}=\frac{c_p\sqrt n}{v^{r+1/2}}
+ \ge\frac{c_p\sqrt n}{(144\log n)^{r+1/2}}\to\infty.
+\]
+这些不等式对每个充分大整数 $n$ 成立，并未限定周期切换的某个子序列。
+
+\textbf{第二步：有限谱、标签分辨率和正宽峰。}
+取不小于 $v$ 的最小二幂 $B$，$M=\lceil\sqrt v\rceil$，
+$\delta=1/(wKv)$。则
+\[
+ v\le B<2v,\qquad M=O(\sqrt v),\qquad
+ K+1>3B^4>H(B),\qquad1\le M<K
+\]
+最终同时成立，后两项由 $K/v^4\to\infty$ 推出。
+因此每个大维数都存在引理\ref{lem:papersidon}的合格标签。
+固定域表示、域元素排序和本原元后，可取合格有序基的字典序首项，
+从而得到确定选择；存在性不要求有限随机尝试成功。
+
+第 $j$ 个原子到所在格两端的距离均至少 $1/(2BK)$。
+由于 $B<2v$、$w\ge4$，
+\[
+ \delta=\frac1{wKv}<\frac1{2BK},\qquad
+ \frac\delta2<\frac1{4BK}<\frac1{2BK}.
+\]
+故整个箱峰留在本格内部，不同格的峰不重叠。箱平滑保持每个原子的总质量，
+定义
+\[
+ \mu_{K,\delta}=K^{-1}\sum_{j=0}^{K-1}\beta_\delta(\cdot-a_j),
+ \qquad \int\mu_{K,\delta}=1,
+ \qquad0\le\mu_{K,\delta}\le\frac1{K\delta}=wv.
+\]
+箱宽对每个有限 $n$ 都严格为正，不需要先取原子极限。
+
+\textbf{第三步：背景、低谱与实际密度的上下端。}
+令 $c_m=\sqrt{2b_m/3}$、
+\[
+ D_M(x)=\sum_{m\le M}\pi m c_m\cos(2\pi mx),
+ \qquad\rho(x)=1-p+p\mu_{K,\delta}(x)+\frac pK D_M(x).
+\]
+$D_M$ 的每个频率非零，故 $\int D_M=0$，于是 $\int\rho=1$。
+系数界 $c_m\le\sqrt{32\alpha/3}/(\pi^2m^2)$ 给
+\[
+ \pi m c_m\le\frac{\sqrt{32\alpha/3}}{\pi m}<\frac{20}{3m},
+ \qquad\|D_M\|_\infty\le\frac{20}3H_M,
+ \quad H_M:=\sum_{m\le M}m^{-1}\le1+\log M.
+\]
+因 $H_M=O(\log v)$、$H_M/K\to0$，在固定 $p<1$ 后最终可使
+$20pH_M/(3K)\le(1-p)/2$。由非负峰得到
+\[
+ \rho\ge1-p-\frac{20pH_M}{3K}\ge\frac{1-p}{2}>0,
+\]
+\[
+ \rho\le1-p+pwv+\frac{20pH_M}{3K}=O_{p,w}(\log n).
+\]
+严格正下端依靠固定正背景 $1-p$。这里的高度界是单个一维因子的界，
+并不声称其 $n$ 重乘积高度同阶。
+
+\textbf{第四步：真实中心平均的准确公式。}
+令 $\mathcal P_\delta=\mathcal P*\beta_\delta$。
+由原函数分布导数和卷积可得
+\[
+ \mathcal P_\delta'=\sum_j\beta_\delta(\cdot-a_j)-K
+ =K(\mu_{K,\delta}-1).
+\]
+所以对任意 $x,L$，周期区间积分满足
+\[
+ \int_{x-L/2}^{x+L/2}(\mu_{K,\delta}(y)-1)dy
+ =\frac{\mathcal P_\delta(x+L/2)-\mathcal P_\delta(x-L/2)}K
+ =\frac{H_{L,\delta}(x)}K.
+\]
+另一方面，直接积分余弦给
+\[
+ \frac1L\int_{x-L/2}^{x+L/2}\cos(2\pi my)dy
+ =\frac{\sin(\pi mL)}{\pi mL}\cos(2\pi mx).
+\]
+平均密度中的 $\pi m$ 系数与分母准确相消，得到
+\begin{equation}\label{eq:papersourceaverage}
+ Y_L(x)=\frac1L\int_{x-L/2}^{x+L/2}\rho(y)dy=1+d_L(x),
+ \qquad d_L=\frac p{KL}(H_{L,\delta}+B_L).
+\end{equation}
+平移差的积分为0，所有低频余弦积分也为0，故 $E_Pd_L=0$，$E_PY_L=1$。
+全部尺度用的是同一个确定源 $\rho$。
+
+\textbf{第五步：核预算与倾斜工具的统一资格。}
+对这组参数，Gauss 交叉预算满足
+\[
+ C_x=O(K^{-1/2})+O((\log M)/K)=o(1/v),
+ \qquad e=C_x+\frac2{3wv}.
+\]
+具体地，乘 $v$ 后第一项为 $O(v/\sqrt K)\to0$，第二项为
+$O(v\log M/K)\to0$，均来自已证的 $K/v^r\to\infty$。
+又 $T_M=O(v^{-3/2})$，
+\[
+ v\eta_D=O(v/B^2+v/K)\to0,
+ \qquad v\eta_N=O(v/B^2+v/K)\to0.
+\]
+核引理的方差下端因此最终大于 $1/4$，并且
+\[
+ \limsup_n vr_*
+ \le\frac{3\cdot2/(3w)}{100/87}=\frac{87}{50w}.
+\]
+令 $q_L=nE_Pd_L^2$。由准确平均公式，
+\[
+ q_L=\frac{np^2}{K^2L^2}G_\delta(L,L),\qquad
+ v=\frac{np^2\gamma}{3K^2},\qquad
+ \frac{q_L}{v}=\frac{3G_\delta(L,L)}{\gamma L^2}.
+\]
+所以所有安全尺度上同时有 $|q_L-v|\le vr_*=O_w(1)$。
+
+箱卷积为正概率平滑，故 $|H_{L,\delta}|\le2$。
+由 $c_m<20/(9m^2)$、$\sum_{m\ge1}m^{-2}=\pi^2/6<5/3$，
+\[
+ |B_L|\le\frac{20}9\sum_{m\le M}m^{-2}<\frac{100}{27},
+ \qquad|H_{L,\delta}+B_L|<\frac{154}{27}.
+\]
+使用 $L\ge10/9$，得到统一真实幅度
+\[
+ |d_L|\le\frac pK\frac9{10}\frac{154}{27}
+ =a_n:=\frac{77p}{15K}.
+\]
+若 $\sigma_L^2=E_Pd_L^2$，则
+$\sigma_L=p\sqrt{G_\delta(L,L)}/(KL)$，因而
+\[
+ \frac{|d_L|}{\sigma_L}\le
+ \frac{154/27}{\sqrt{G_\delta(L,L)}}\le\frac{308}{27}<14.
+\]
+最后，$K=c_p\sqrt n/\sqrt v$ 给
+\[
+ a_nv=O_p(v^{3/2}/\sqrt n)\to0,
+ \qquad v^2/n=O_p((\log n)^2/n)\to0.
+\]
+全部门槛只依赖已固定的 $p,w$，对该维数的整个安全尺度集合一致。
