@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-29",
+  "project_goal_complete": false,
+  "scope": "Uniform random equal-cell jitter source lemma and finite-query weak-profile screen; no new logarithmic/polynomial C_n lower bound.",
+  "archive_files": {
+    "REPORT.md": "4c67a9c063c2a4b35e12340df4e815b6f410074b272ba7db2209a9b475a5b822",
+    "audit/AUDIT.md": "3599bb7f05b90d7a75ca25acff1860dab9fd9caf2a25e871e7a727e24fb90e79",
+    "audit/RANDOM_JITTER_AUDIT.md": "c3b138e7b60eaf993523e415b833f50f519dfbd2339659fe248dac1e3c2554fe",
+    "audit/block_exact_probe.py": "2855e8aa53c837bb2b2e0eefb7ed4637021a289fccf9751c55ed08966b9ea3c1",
+    "audit/block_exact_results.json": "c7138103b05b6def3d74abb8f8f3a169c1762375c081bdb07b33b6b235a71633",
+    "audit/polynomial_budget.py": "62392f944d34b3479723f1112b508e57afa7bacf2c4d2f7be02a39af25ff39aa",
+    "audit/polynomial_budget_results.json": "3c53e87f67ae760423a79a95048ae4e041358bb36e385b89a4c40990bd9188be",
+    "audit/profile_saved_checks.json": "4f2e6eb3c847a8ac91c2491b9cb649ccd226fdd26f1b270711e0ab88ac87d0f7",
+    "audit/profile_saved_checks.py": "87aade615a832e36e62a9de1d6a2804d9255756364e09d853a7302104fafb2cc",
+    "block/REPORT.md": "9a2de69d4ae190048f86dc01bcec9833901accccd982fac8a2f4e011fc655926",
+    "block/RESULTS.json": "db01472e9c82c4dcb92545ba67832510a726b9ce159eb81431dcbfc87bcbc719",
+    "block/block_probe.py": "3e6c611f1f05b59c1db5d5aeeb40622ec9c067c2dcda70343db8bb389d443e4b",
+    "block/profile_REPORT.md": "aa0ae1a5040949d81a251f334ada32454099fba2500c1891f8c49fd43628e94e",
+    "block/profile_probe.py": "464c9ac8a5dea51f3830ff1491f652c02b7b18367c938139ab839e8bfb7c52f9",
+    "block/profile_registration.json": "57d1621d882f849d7322df851407e21dee7ab25b4a6d0bb2e655f2a4b9f1c7bc",
+    "block/profile_results.json": "b917680ac5b4b5536b5912dc6aa119bcb4af63b19fedbc01dae5868c6b872284",
+    "block/registration.json": "683e1d9eb18b20af1876ef642d24e83684fae8de0d910d79e704a900e61965e4",
+    "random_jitter/PROOF.md": "464cc085ecf7404cd038905eb30b52013932f471039f402436ae0add54dabb6e",
+    "random_jitter/probe.py": "e9879db402c2d58381a8ee4b75ba05728453326fa10bf504ed3ccfda0aa62307",
+    "random_jitter/results.json": "55aadc392feb4625d552cd9b95432a6d51e214797ae2a55d832eb7121b4c0b0b",
+    "verification.json": "05d083b4bd445176a75b714bf8558255da70b5b4c5e703ce3932c9185786b9f5"
+  },
+  "deduplication": "No large counts/cache/raw matrices. Small control is fully included in block/RESULTS.json.",
+  "registered_bytes": "block/block_probe.py, profile_probe.py, original pilot REPORT and registration/results unchanged; profile_saved_checks.py only changed archived input path.",
+  "numerical_environments": {
+    "block": "Python3.15.0 NumPy2.5.4",
+    "root_jitter": "Python3.12.14 NumPy2.3.5"
+  },
+  "limitations": [
+    "Ordinary floating point is not interval certified.",
+    "Statistical weak-profile bands overlap.",
+    "Whole threshold axis is for fixed finite J, not continuous L.",
+    "Source lemma does not migrate the complete lower-bound probability chain."
+  ],
+  "dependencies": {
+    "../028/source_interface_baseline.tex": "da34fb168ea7999ef48b453796596e197746014fc73d3e823aeae1c65d333b01"
+  },
+  "replay_policy": "Frozen MC results not replaced; independently replayed exact small controls, polynomial budgets, same-environment FFT in temporary directories; saved-data CI audit never resamples.",
+  "registered_source_whitespace": "block/block_probe.py retains its originally registered blank line at EOF; exact registered SHA256 takes precedence over whitespace normalization. No other whitespace warning."
+}

@@ -1,0 +1,86 @@
+{
+  "status": "frozen before small-control and large experiments",
+  "script_SHA256": "3e6c611f1f05b59c1db5d5aeeb40622ec9c067c2dcda70343db8bb389d443e4b",
+  "source_archive33_SHA256": "3a0ba8bbe15112ab68e6841800ac1e2a4b6355d56198ef328bb46e865b292aed",
+  "plan_SHA256": "23bc03399b63a1472e62fd8b7303ed741e15c56d439346ac038d24a34b3e7d59",
+  "configs": [
+    {
+      "K": 255,
+      "v": 8,
+      "n": 6704800,
+      "fine_n": 838100,
+      "seed": 202610290341,
+      "N": 128,
+      "J": 233,
+      "Q": 48960,
+      "M": 3,
+      "B": 4,
+      "G": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "R": 4,
+      "query_first": "10/9",
+      "query_last": "11/9",
+      "memory_major_estimate_bytes": 475150848,
+      "phase_code": "global r/4"
+    },
+    {
+      "K": 255,
+      "v": 16,
+      "n": 13409600,
+      "fine_n": 1676200,
+      "seed": 202610290342,
+      "N": 128,
+      "J": 460,
+      "Q": 97920,
+      "M": 4,
+      "B": 4,
+      "G": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "R": 4,
+      "query_first": "10/9",
+      "query_last": "11/9",
+      "memory_major_estimate_bytes": 909908480,
+      "phase_code": "global r/4"
+    }
+  ],
+  "small_control": {
+    "seed": 202610290340,
+    "n": 8,
+    "point_proposal_samples": 512,
+    "within_bin_samples": 4096,
+    "all_G": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "source_v": 8
+  },
+  "source_mass": "exactly one; positive background and equal-mass one-per-cell box peaks",
+  "real_average_order": "product over coarse blocks of phase-average within-block coordinate products, same L for ALL blocks",
+  "proposal": "0.5 uniform eight-fine-block counts; 0.5 uniform G and COMMON target L, independent phase per coarse block, repeated in its fine blocks",
+  "conditional_variance": "coarse phase products; Minkowski within block; independence across blocks => product(1+r_block)-1",
+  "fixed_log_thresholds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "discovery_log_thresholds": "-2 to 10 inclusive step .25; first half then heldout",
+  "comparison": "lower-minus-upper only for actual tail differences; phase0 product and ordered G pairs",
+  "alpha_per_primary_entry": 5e-05,
+  "cost_gate": "small controls pass; first <60 sec; second predicted from Q*J ratio <60 sec; second major-array estimate <1e9 bytes",
+  "stopping": "one seed per registered point; no seed search, no extra N after seeing results",
+  "floating_caution": "ordinary floating point, not interval certified; no matched sqrt(n), weak norm or log improvement claimed"
+}
