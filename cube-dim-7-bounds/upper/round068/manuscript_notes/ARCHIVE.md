@@ -1,0 +1,11 @@
+# R068 论文修订与精简归档
+
+本轮范围仅：保留R056严格L20/n40；完整写入R066目标一阶profile机制与准确log价格同Phi推论，并以R069全部真实operator门槛量化为L30/n23/100。R061只保留一般point-disjoint directsum数学命题与overlap反例，不复制128tuple过时主证明；不加入后续gamma优化。
+
+旧稿恢复身份：R060 main.tex SHA256 a5ffdfac3871d4ecd3d7a8e27ecb484019d62f309ce2d7a6e434754e8e17e445，主已发布提交2f393a17f443f10411fa9ea435fd88fd5350c14a，路径cube-dim-7-bounds/paper/main.tex；主归档PDF SHA057aedb17fa4ebd1f2e9c1a6baac825eb93ebfed99384c7a2f7f858e83ea0707。private/main_R060.tex是旧源本机便利恢复副本，不归档重复旧PDF；旧R060notes完全未改。旧R059长证明由稳定R060源恢复。本轮只在作者独立clone自己的paper/与本notes/编辑，无Git同步/提交或修改他人文件。
+
+最终归档白名单：paper/main.tex、main.pdf、README.md、BUILD.json、MANIFEST.json；本notes的ARCHIVE.md、chapter_plan.md、sources.json、transcription_checklist.md、verify_transcription.py、core_receipt.json、threshold_receipt.json、preserved_blocks.json、final_source_check.json、directsum_scope_delta.patch、row_domain_delta.patch。private/、/tmp/阶段稿/编译log/页图、旧重复PDF不归档。历史七维脚本与证书未改未运行。
+
+新检查：core23项与threshold41项分别实际PASS，未调用producer helper或旧60/128/局部baseline程序。core receipt保留扩展脚本前真实代码身份；threshold receipt保留其实际阶段源码身份；以后只应用文字/应用章补全、两处原directsum域假设补明与最终静态扫描，不冒称数学程序在最终字节上再次运行。最终源scan独立确认110labels、57refs与citations全定义，并确认原cover/R056与R034/R037/bibliography块逐字保持。
+
+本机双pass XeLaTeX成功，28页全部Ghostscript85dpi渲染并在7张4页接触图上逐页看图；最后两处域补明仅改变第24页，已单页原尺寸复看，其余27页图与已看版本逐字节相同，无缺字/越界/未定义引用；两项参考文献underfull hbox可读。主将再次独立编译看图后整合归档。独立全文数学审已 FINAL ACCEPT，无待修事项，锁源 8135adfb51470228ed18371c6c5f1a22caac0b35523b0cd49c50b13cfb9b386b；报告 /Users/zhengzhihao/Desktop/T/cube-r030-uniform-audit/cube-dim-7-bounds/audit/round068/manuscript/review.md，SHA256 9f40feae5f3c4c3a113e29057d61ff7265cba024167e23f55010295819d4c8ba。两条范围补全的最小patch已分别独立逆改重建4c2b/1b9e源。主仍保留最终数学证明、整合和归档责任。

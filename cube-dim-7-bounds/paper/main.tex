@@ -46,8 +46,8 @@
 \]
 证明包含扩大局部参数域后的准确积分、全部有限门槛与原实际增量的连接，
 适用于一般 $L^1$ 输入和所有正共同半径。
-另以一组固定宽带参数证明，充分大 $n$ 时 $C_n<n\log n-n\log\log n-n/10$，
-该结果的共同起点尚未显式量化；前导 $n\log n$ 系数仍为 $1$。
+另以目标一阶剖面和有界径向权证明，对全部 $\log n\ge2^{30}$，有
+$C_n<n\log n-n\log\log n-(23/100)n$；前导 $n\log n$ 系数仍为 $1$。
 \end{abstract}
 \noindent\textbf{关键词：}中心极大算子；立方体；弱型 $(1,1)$；覆盖选择；维数估计
 
@@ -124,19 +124,20 @@ $(2+3\varepsilon)n\log n$ 的弱型上界。\cite[定理5.2]{Aldaz17}
 第\ref{subsec:finite-guards}节量化全部几何、概率、两个指数尾与完整标量代价。
 前导 $n\log n$ 系数仍为 $1$。
 
-\begin{theorem}\label{thm:wide}
-存在绝对整数 $N$，使每个 $n\ge N$ 都满足下述结论。令
+\begin{theorem}\label{thm:profile}
+对每个满足 $L=\log n\ge2^{30}$ 的整数 $n$，令
 \[
- L=\log n,\quad t=\frac{100n}{97L},\quad
- \Phi_{\rm w}=\Fcal(A_n(t),B_n(t)-(1637/12500)n).
+ t=\frac{1000n}{917L},\qquad
+ \Phi_{\rm p}=\Fcal(A_n(t),B_n(t)-(317/1000)n).
 \]
-则 $B_n(t)>(1637/12500)n$，且
+则 $B_n(t)>(317/1000)n$，且
 \[
- C_n\le\Phi_{\rm w}<T_n-n/10.
+ C_n\le\Phi_{\rm p}<T_n-(23/100)n.
 \]
 \end{theorem}
-本定理未给出 $N$ 的显式数值；其参数与定理\ref{thm:explicit}不同。
-两者在各自适用域内共同使用，前导系数仍为 $1$。
+此构造把目标一阶剖面与径向校准结合，
+显示常数 $23/100$ 由 $\Phi_{\rm p}$ 中的准确对数价格及全部正余项共同给出。
+两条定理在各自适用域内共同使用，前导系数仍为 $1$。
 
 有限选择与膨胀的思路来自定理 A。
 本文先用立方体壳面给出角点包络，再构造有界逆列乘积权。
@@ -979,249 +980,455 @@ $c_{\mathfrak a}^2,c_{\mathfrak a},c_{\mathfrak a}$。
 这里支付了参数价格、$A_n$ 与正平方根交叉项，不由单独的角点扣减推出最终常数。
 
 
-\subsection{扩大来源带后的另一组固定参数}\label{subsec:wide-parameters}
-显式门槛与渐近改进可分别使用。下面改变固定参数，仍使用前面的局部积分引理和同一有限选择。
-这次只证明存在共同起点，不把上一组参数的 $L_0$ 移用于新参数。
-为避免与有限膨胀参数 $\mathfrak a$ 混淆，来源带的两个参数记为 $a_{\rm b},b_{\rm b}$。
-本节至第\ref{subsec:wide-finish}节重新使用局部记号，固定
-\begin{equation}\label{eq:wide-tuple}
+\subsection{乘法匹配、径向权与相对局部域}\label{subsec:relative-parameters}
+前面的显式构造逐来源面估计均值时丢掉捕获指标。
+本节先在完整目标面上保留一个一阶积分剖面，再将同一目标的剖面传给每张来源面。
+同时以一个有界目标径向权配合来源权，直接校准径向行列积分。
+下面重新使用局部记号，固定
+\begin{equation}\label{eq:profile-tuple}
 \begin{gathered}
- d=391/1905,\quad a_{\rm b}=283/2032,\quad b_{\rm b}=63/64,
- \quad\sigma=3/100,\quad\chi=147/10000,\\
- e=2^{-20},\quad\delta=e,\quad h_c=2^{-48},\quad
- \varepsilon_J=\varepsilon_N=\varepsilon_S=\varepsilon_T=\varepsilon_D=e,\\
- \varepsilon_{\rm Ret}=1/4096,\quad\varepsilon_A=1/65536,\\
- v_{\min}=a_{\rm b}d,\quad v_{\max}=b_{\rm b}d,\quad
- q_{\min}=1-v_{\max},\quad q_{\max}=1-v_{\min},\\
- R_0=q_{\min}+d,\quad r_{\rm lo}=R_0+\delta,
- \quad r_{\rm hi}=q_{\max}+d-\delta.
+ s=3/2,\quad q_{\min}=2/3,\quad q_{\max}=917/1000,\quad
+ \delta=2^{-30},\quad r_{\rm lo}=1+\delta,\quad r_{\rm hi}=2751/2000-\delta,\\
+ \sigma=83/1000,\quad\chi=9/200,\quad x=(1-\sigma)L,\quad t=n/x,\\
+ \zeta=n^{-3},\quad\epsilon=\zeta t,\quad\beta=1+1/t,\quad\kappa=\beta-\zeta,\\
+ h=2^{-80}/L,\quad\theta=e^{-\chi x},\quad k=nh\theta/r_{\rm hi},\quad
+ e=2^{-20},\quad\varepsilon_{\rm Ret}=1/4096,\quad\varepsilon_A=1/65536.
 \end{gathered}
 \end{equation}
-仍令 $x=(1-\sigma)L$、$t=n/x$、$\beta=1+1/t$、$\zeta=n^{-3}$、$\kappa=\beta-\zeta$，
-但这次 $h=h_c/(Ld)$、$\theta=e^{-\chi x}$、$k=nh\theta$。
-准确预算为
-\begin{equation}\label{eq:wide-budget}
+逐坐标精度、端点计数、来源角点损失、实际阈值、缺额余量和相对径向宽度误差都使用 $e$。
+令
+\begin{equation}\label{eq:profile-budget}
 \begin{gathered}
- P_0=1-e-1280h_c,\quad
- U_{\rm lo}=P_0(1-e)/(1+e),\quad U_{\rm hi}=(1+e)/[P_0(1-e)],\\
- M=2U_{\rm hi}/q_{\min},\qquad
- b_*=(1-\varepsilon_{\rm Ret})2U_{\rm lo}/q_{\max}-2e,\\
- m_0=159477/1000000,\qquad
- \Gamma_0=m_0b_*/M,\qquad \gamma_0=1637/12500.
+ P_0=1-e-2^{-60},\quad U_{\rm lo}=P_0(1-e)/(1+e),\quad
+ U_{\rm hi}=(1+e)/[P_0(1-e)],\\
+ M=2(1+e)U_{\rm hi},\quad
+ b_*=2(1-\varepsilon_{\rm Ret})(1-e)U_{\rm lo}-2e,\\
+ m_0=637/2000,\quad\Gamma_0=m_0b_*/M,\qquad\gamma_0=317/1000.
 \end{gathered}
 \end{equation}
-直接有理比较给 $0<d<1/4<1/3$、$1/2<q_{\min}<q_{\max}<1$、
-$1<R_0<r_{\rm lo}<r_{\rm hi}<5/4$、$2\delta<q_{\max}-q_{\min}$，以及
-\begin{equation}\label{eq:wide-budget-positive}
- M>2,\quad b_*>0,\quad 0<\gamma_0<(1-e)\Gamma_0<\Gamma_0<1.
+准确有理比较给 $M>2$、$b_*>0$ 和
+$0<\gamma_0<(1-e)\Gamma_0<\Gamma_0<1$。
+质量下界也可由有限有理式给出。对
+$u_A=(r_{\rm hi}-r_{\rm lo})/(r_{\rm hi}+r_{\rm lo})$，正对数级数给
+\begin{equation}\label{eq:profile-mass-certificate}
+ (1-\varepsilon_A)\log(r_{\rm hi}/r_{\rm lo})
+ >(1-\varepsilon_A)2\sum_{j=0}^{3}\frac{u_A^{2j+1}}{2j+1}>m_0.
 \end{equation}
-所需两个对数也可完全用有理数认证。对 $0<u<1$ 定义
+第二个严格不等式为给定有理数间的有限比较。
+
+仍取角点测度 $\lambda$，完整目标壳为 $\mathcal A_0=\{w:r=\norm w_\infty\in[r_{\rm lo},r_{\rm hi}]\}$，
+完整来源带为 $\mathcal P_0=\{z:q=\norm z_\infty/t\in[q_{\min},q_{\max}]\}$，$\mathcal P=D\cap\mathcal P_0$。
+匹配改为 $|r-sq|<h$。在整个完整来源带上定义
 \[
- S_{64}(u)=2\sum_{j=0}^{63}\frac{u^{2j+1}}{2j+1},\qquad
- E_{64}(u)=\frac{2u^{129}}{129(1-u^2)}.
+ \rho=tq,\quad R=sq-h,\quad a_0=(1-\epsilon)q,
+ \quad g=R-a_0=(s-1+\epsilon)q-h,
 \]
-正幂级数及其几何尾给
-$S_{64}(u)<\log[(1+u)/(1-u)]<S_{64}(u)+E_{64}(u)$。
-取 $u_A=(r_{\rm hi}-r_{\rm lo})/(r_{\rm hi}+r_{\rm lo})$、
-$u_Q=d/(4R_0-d)$，准确有理比较为
+\[
+ \ell_R(z_i)=\min\left(1,\frac{R+\kappa\rho-|z_i|}{2R}\right),\quad
+ G(z)=\prod_i\ell_R(z_i),\qquad b(z)=\min(1,\theta/G(z)).
+\]
+下面的有限条件保证完整带上 $R,a_0>0$，所以 $G>0$；只在完整带外将 $b$ 延为零。
+目标权为 $a_{\rm rad}(w)=r/r_{\rm hi}$（$w\in\mathcal A_0$），在壳外为零，故两个权都在 $[0,1]$ 内。
+对每个目标半径，完整匹配区间和基准为
+\[
+ q_-=(r-h)/s,\quad q_+=(r+h)/s,\quad q_b=q_+.
+\]
+当 $h<\delta/2$ 时，此区间包含在来源带内，且 $R(q_b)=r$。
+有效来源指有任何匹配目标的来源；它满足 $R>r_{\rm lo}-2h>1$。
+无匹配来源可能有 $R<1$，其最终列为零，不在下述局部引理中使用。
+
+对全部有效匹配，要求
+\begin{equation}\label{eq:relative-guards}
+ h<\min(\delta/2,1/1000),\quad\epsilon q_{\max}\le2h/3,
+ \quad\rho\ge4r_{\rm hi},\quad\kappa>1,\quad\beta<2.
+\end{equation}
+此时 $R\in[r-2h,r]$、$q\ge2/3$、$1<R\le r<3/2$、$a_0>0$，且准确地
+\[
+ g-R/3=\epsilon q-2h/3\le0,\qquad0<g\le R/3.
+\]
+这是相对间隙条件；$g$ 可超过 $1/3$，不能套用前面的绝对 $d$ 域。
+两侧点集分离，因为目标半径小于 $3/2$、来源半径大于 $4$；两侧也都在半径 $t$ 内。
+
+\subsection{相对域的一维正规化与基准矩}\label{subsec:relative-J}
+在上述域中，对 $|v|\le r$ 定义
+\[
+ J(v;q)=\frac1{2\rho}\int_{-\rho}^{\rho}
+ \frac{\one_{\{|z-v|<\kappa\rho\}}}{\ell_R(z)}\dint z.
+\]
+仍用 $\Psi(R,u)=-2R\log(1-u/(2R))-u$，令
+$m=(|v|-a_0)_+$、$u_0=(g-m)_+$。
+一侧来源端点被删的普通长度为 $m$，另一完整尾的逆权超出积分为 $\Psi(R,g)$，
+被删端的剩余超出积分为 $\Psi(R,u_0)$。因此
+\begin{equation}\label{eq:relative-J-closed}
+ J=1+[\Psi(R,g)+\Psi(R,u_0)-m]/(2\rho).
+\end{equation}
+这里 $m\le g+2h$，公式也包括 $m>g$ 后删入中央区的情况。
+$u\le g\le R/3$ 时，正级数或直接微分给
+\[
+ 0\le\Psi_u\le1/5,\quad|\Psi_R|\le1/15,\quad0\le\Psi\le R/30.
+\]
+现在 $R'=3/2$、$g'=1/2+\epsilon<1$。
+写 $B=\Psi(R,g)+\Psi(R,u_0)-m$，得到几乎处处 $|B'|\le17/10$：
+$m=0$ 时两项相同；$m>0$ 时 $u_0=(R-|v|)_+$ 的导数为 $0$ 或 $3/2$，而 $-m'=1-\epsilon\le1$。
+又
+\[
+ |B|/q\le R/(15q)+R/(3q)+2h/q\le3/5+3h<1,
+ \quad J\ge1-m/(2\rho)>1/2.
+\]
+由 $\rho'=\rho/q$，可得
+\begin{equation}\label{eq:relative-J-derivative}
+ |\partial_q\log J|<3/\rho\le256/\rho,\qquad
+ |J-1|\le\max\{\Psi(R,g),m/2\}/\rho
+ \le(r/6+h)/\rho<1/(3\rho).
+\end{equation}
+连续的有限光滑分支与共同导数界给闭匹配区间上的绝对连续性。
+捕获起点一般有导数跳跃；所用导数按几乎处处理解并可沿整个匹配区间积分。
+此界不要求额外的 $K_w$ 条件。
+
+只在基准 $R=r$，令 $W$ 均匀于 $[-r,r]$。
+固定来源坐标被目标接受的概率为 $\ell_r$，Fubini 定理给 $\mathbb EJ=1$。
+为在相对域中重证矩界，令 $T=(|W|-(r-g))_+$，并写
+\[
+ J-1=[\Psi(r,g)-A(T)/2]/\rho_b,\quad
+ A(T)=T+\Psi(r,g)-\Psi(r,g-T).
+\]
+有 $\Psi(r,g)\le g^2/(3r)$、$0\le A(T)\le4T/3$、$\mathbb ET^2=g^3/(3r)$，所以
+\[
+ \mathbb E(J-1)^2\le11g^3/(27r\rho_b^2)\le3g^3/\rho_b^2.
+\]
+又 $|J-1|\le g/\rho_b\le1/8$，对数初等界与 Jensen 不等式给
+\begin{equation}\label{eq:relative-baseline}
+ -6g^3/\rho_b^2\le\mathbb E\log J\le0,\qquad
+ \operatorname{Var}(\log J)\le12g^3/\rho_b^2.
+\end{equation}
+固定目标面坐标贡献确定项 $\log J(\pm r;q_b)\in[-g/\rho_b,0]$。
+此证明只用 $r\ge1$、$g\le r/2$、$\rho_b\ge4r$，没有要求 $g\le1/3$。
+
+\subsection{一阶剖面的闭式、目标均值与连续匹配}\label{subsec:profile-local}
+定义新的非负剖面
+\[
+ J_\phi(v;q)=\frac1{2\rho}\int_{-\rho}^{\rho}
+ \one_{\{|z-v|<\kappa\rho\}}
+ \frac{-\log\ell_R(z)}{\ell_R(z)}\dint z.
+\]
+置 $Q(R,u)=-\log(1-u/(2R))$、$H(R,u)=R Q(R,u)^2$。
+换元给 $\int_0^u Q(R,v)/[1-v/(2R)]\dint v=H(R,u)$，于是
+\begin{equation}\label{eq:Jphi-closed}
+ J_\phi(v;q)=[H(R,g)+H(R,u_0)]/(2\rho).
+\end{equation}
+当 $m>g$，额外删去的中央区满足 $\log\ell_R=0$，故这里没有 $-m$ 项。
+在 $u\le R/3$ 上，$Q\le\log(6/5)<1/5$，并有
+$H\le R/25$、$H_u\le6/25$、$|H_R|\le3/25$。
+结合 $R'=3/2$、$g'<1$ 和 $u_0'$ 的各分支，两个 $H$ 项的导数绝对值均至多 $27/50$。
+还要微分 $\rho^{-1}$；因 $2R/(25q)<3/25$，得到保守界
+\begin{equation}\label{eq:Jphi-derivative}
+ 0\le J_\phi\le1/\rho,\qquad|\partial_qJ_\phi|\le8/\rho.
+\end{equation}
+连续分支与有界单侧导数同样给绝对连续性，允许跨捕获起点积分。
+
+关键的目标均值只在基准 $R=r$ 使用。
+固定来源坐标 $z$，其被均匀目标 $W$ 捕获的概率正是 $\ell_r(z)$，Fubini 定理消去逆因子，给
+\begin{equation}\label{eq:profile-Fubini}
+ \mathbb E_WJ_\phi(W;q_b)=\mathbb E_Z[-\log\ell_r(Z)]
+ =\frac{2r}{\rho_b}[1-a+a\log a],\qquad a=\ell_*\ge5/6.
+\end{equation}
+这里 $W$ 是完整目标坐标、$Z$ 是完整来源坐标；它不是逆捕获来源律的均值。
+括号对 $a$ 的导数为 $\log a<0$，且 $r/q_b=s-h/q_b\le s$，所以
+\[
+ n\mathbb E_WJ_\phi\le\mu_0x,\qquad
+ \mu_0=\tfrac12-\tfrac52\log(6/5)<221/5000.
+\]
+由于对数的系数为负，这里使用对数下界：六项偶交错和在 $1/5$ 处为
+$2279/12500<\log(6/5)$，并准确给 $\frac12-\frac52(2279/12500)=221/5000$。
+
+\subsection{五个完整目标事件与负固定面导数}\label{subsec:profile-targets}
+在每张完整目标面上，另 $n-1$ 个坐标独立均匀于 $[-r,r]$。
+设
+\[
+ M_n=6(1/2)^3L^2/(q_{\min}^2n)+(1/2)L/(q_{\min}n),\qquad
+ V_n=12(1/2)^3L^2/(q_{\min}^2n).
+\]
+因 $g<1/2$，这分别上包基准对数和的绝对均值和方差。
+取 $\mathcal A$ 为 $\mathcal A_0$ 内满足下列五个条件的点：
 \begin{gather}
- (1-\varepsilon_A)S_{64}(u_A)>m_0,\label{eq:wide-log-mass}\\
- S_{64}(u_Q)+E_{64}(u_Q)<\overline Q:=26979/250000<1/9,\notag\\
- \frac{R_0\overline Q^2}{q_{\min}(1-e)}<293/20000,\qquad
- \frac{2R_0\overline Q^3}{3q_{\min}(1-e)}<1/900.\label{eq:wide-pin-rates}
+ \left|\sum_i\log J(w_i;q_b)\right|\le e,\notag\\
+ |T_N(q_-)-E_-|\le en/4,\qquad |T_N(q_+)-E_+|\le en/4,\notag\\
+ w\in D,\qquad\sum_iJ_\phi(w_i;q_b)\le(221/5000+1/100000)x,
+ \label{eq:profile-target-events}
 \end{gather}
-这里第一式严格下包 $(1-\varepsilon_A)\log(r_{\rm hi}/r_{\rm lo})$，
-第二式严格上包 $-\log[1-d/(2R_0)]$；给定的有限和与有理尾使这些比较不依赖显示小数。
+其中 $N_i=1+\one_{\{|w_i|<a_0(q)\}}$、$T_N=\sum_iN_i$、
+$E_\pm=n+(n-1)a_0(q_\pm)/r$。
+$M_n\le e/2$ 时，第一个坏概率至多 $4V_n/e^2\to0$。
+两个计数坏概率各至多 $4/(e^2n)$。
+目标角点补集每张正面上至多 $(3/4)^{n-1}$、负面上为空，只需 $1/r_{\rm hi}-1/t>1/2$，此条件随后统一验证。
 
-\subsection{有效来源与五个目标坏事件}\label{subsec:wide-events}
-完整来源带仍为 $\mathcal P_0=\{z:\rho/t\in[q_{\min},q_{\max}]\}$，
-$\mathcal P=D\cap\mathcal P_0$，其中 $\rho=\norm z_\infty$。
-在整个完整带上定义 $R=q+d-h$、$a_0=(1-\zeta t)q$、$g=R-a_0$、$G=\prod_i\ell_R(z_i)$、
-$b(z)=\min(1,\theta/G(z))$，并仅在完整带外把 $b$ 设为零。
-目标径向区间为 $[r_{\rm lo},r_{\rm hi}]$，匹配条件为 $|r-q-d|<h$。
-当 $h<\delta/2$ 时，每个目标的完整匹配区间 $[r-d-h,r-d+h]$ 包含在来源带内。
-若某来源有任何匹配目标，称它为有效来源。此时
-\begin{equation}\label{eq:wide-active}
- q\ge q_{\min}+\delta-h,\qquad
- R\ge R_0+\delta-2h\ge R_0>1.
-\end{equation}
-整个完整带上仅保证 $R\ge R_0-h>1$；无匹配目标的来源列为零。
-后面的固定面矩使用较强的 $R\ge R_0$，因而只在有效来源上应用。
-
-所有匹配区间上还有 $R\in[r-2h,r]$、$q>1/2$。
-若 $h<d/8$、$\epsilon=\zeta t<h/2$、$\rho\ge4r_{\rm hi}$，则
-$0<g\le d<R/2$、$a_0>0$，所以引理\ref{lem:inverse-local}的全部条件成立。
-仍取基准 $q_b=r-d+h$，此时 $R=r$，而不是在匹配中心使用基准均值恒等式。
-
-在每张完整目标面上，基准对数和的绝对均值和方差分别不超过
+对最后一个事件，固定目标面坐标贡献至多 $1/\rho_b$ 且方差为零，
+自由坐标和的均值不超过 $\mu_0x$、方差至多 $n/\rho_b^2$。
+当 $1/(nq_{\min})\le1/200000$，固定坐标至多支付 $x/200000$。
+因此阈值到均值至少为 $x/200000$，Chebyshev 给此坏概率至多
 \[
- M_n=6d^3L^2/(q_{\min}^2n)+dL/(q_{\min}n),\qquad
- V_n=12d^3L^2/(q_{\min}^2n).
+ \frac{40000000000}{nq_{\min}^2}\longrightarrow0.
 \]
-当 $M_n\le e/2$ 时，基准事件 $|\sum_i\log J_i(q_b)|\le e$
-的坏概率不超过 $4V_n/e^2$，均匀趋于零。
-这次 $d<1/4$，故必须另加 $K_w\le4nd$。准确地，
-\[
- K_w=1+\operatorname{Bin}(n-1,2d/r),\quad
- \mathbb EK_w\le1+2nd,\quad\operatorname{Var}K_w\le n/4.
-\]
-$nd\ge1$ 时，阈值到均值的间隔至少为 $nd$，故
-$\mathbb P(K_w>4nd)\le1/(4nd^2)$。
-另外，对两个端点要求
-$|T_N(q_\pm)-[n+(n-1)a_0(q_\pm)/r]|\le en/4$，
-其坏概率分别不超过 $4/(e^2n)$。
-原角点补集在每张完整目标面上的比例至多为 $(3/4)^{n-1}$，因为充分大时 $t\ge4$、$r<5/4$。
-
-定义 $\mathcal A$ 为目标壳环与 $D$ 的交，再要求上述基准、$K_w$、两个端点事件。
-基准、$K_w$、两个计数及目标角点补集共五个坏事件，各自均匀趋于零。
-若其五个上包分别不超过 $\varepsilon_A/5$，并集界给
-\begin{equation}\label{eq:wide-target-mass}
+上述五个坏概率若各不超过 $\varepsilon_A/5$，并集界与\eqref{eq:profile-mass-certificate}给
+\begin{equation}\label{eq:profile-good-mass}
  \lambda(\mathcal A)\ge(1-\varepsilon_A)n\log(r_{\rm hi}/r_{\rm lo})>m_0n.
 \end{equation}
-事件间无需独立。所有概率均在完整目标面下计算，不是实际增量的概率分布。
+这些是完整目标面的环境概率；实际增量不被赋予这种分布。
 
-\subsection{同一核的行列积分与宽带截断}\label{subsec:wide-kernel}
-最终仍使用明确的同一核
+现在 $T_N(q)$ 非减，而固定来源面因子的导数变为负号：
 \[
- K(w,z)=\one_{\mathcal A}(w)\one_{\mathcal P}(z)
- \one_{\{|r-q-d|<h\}}\one_{\{\norm{z-w}_\infty<\kappa\rho\}}b(z),
- \quad r=\norm w_\infty,\quad q=\rho/t.
+ \ell_*=(1+a_0/R)/2,\qquad
+ \ell_*'=-(1-\epsilon)h/(2R^2)<0.
 \]
-记 $R_\lambda(w)=\int K(w,z)\dint\lambda(z)$、
-$C_\lambda(z)=\int K(w,z)\dint\lambda(w)$。
-充分大时目标半径小于 $2$、来源半径大于 $4$，所以 $0\le K\le1$ 且两侧支撑不交。
+故 $T_N/(2n\ell_*)$ 非减。
+在 $q_-$，其均值到 $1$ 的短缺为
+\[
+ \frac{2ha_-/(r(r-2h))+a_-/(nr)}{1+a_-/(r-2h)}\le2h+1/n,
+ \quad a_-=(1-\epsilon)q_-.
+\]
+在 $q_+$，均值比至多为 $1$；每端计数波动对比值的影响至多为 $e/4$。
+只要 $2h+1/n\le3e/4$，全匹配区间便有 $1-e\le T_N/(2n\ell_*)\le1+e$。
+这个端点方向来自新的负导数。
 
-由绝对连续导数界和 $K_w\le4nd$，全匹配区间上
+由\eqref{eq:relative-J-derivative}、$n/\rho\le3L/2$ 和区间宽 $2h/s$，
+$|\sum_i\log J_i(q)-\sum_i\log J_i(q_b)|\le512Lh=2^{-71}<2^{-60}$。
+所以 $P_0\le\prod_iJ_i(q)\le1/P_0$。
+另有逐点 $|J_i-1|<1/(3\rho)$；当 $1/(3tq_{\min})\le e$ 时，全部坐标、全部匹配参数上 $J_i\in[1-e,1+e]$。
+由\eqref{eq:Jphi-derivative}同样得到确定性剖面桥
 \[
- \left|\sum_i\log J_i(q)-\sum_i\log J_i(q_b)\right|
- \le1280Ldh=1280h_c.
+ \left|\sum_iJ_\phi(w_i;q)-\sum_iJ_\phi(w_i;q_b)\right|\le16xh.
 \]
-因此 $P_0\le\prod_iJ_i(q)\le1/P_0$。
-引理\ref{lem:inverse-local}又给
-$|J_i-1|\le2d/\rho\le2dL/(q_{\min}n)\to0$，
-所以充分大时处处 $1-e\le J_i\le1+e$，不需要对 $n$ 个坐标作并集界。
-两个端点计数沿用\eqref{eq:calibrated-count}之前的准确恒等式；只需
-$2h+1/n\le3e/4$、$2hd\le3e/4$，即在完整匹配区间得到
-$1-e\le T_N/(2n\ell_*)\le1+e$。
-故完整逆来源面的准确系数仍满足
+取 $16h\le1/100000$，则在同一个好目标上，对每个匹配 $q$ 一致有
+\begin{equation}\label{eq:whole-target-profile}
+ \sum_iJ_\phi(w_i;q)\le(2211/50000)x.
+\end{equation}
+
+\subsection{目标剖面控制每张来源面的均值}\label{subsec:profile-source}
+完整逆捕获来源面系数仍准确为
 \[
  U=\frac{\prod_iJ_i}{2\ell_*}\sum_i\frac{N_i}{J_i},\qquad
  U_{\rm lo}n\le U\le U_{\rm hi}n.
 \]
-
-在每张被捕获完整来源面上，自由逆捕获坐标仍独立，固定面项为 $Q_{\rm pin}=-\log\ell_*$。
-式\eqref{eq:phi-moments}适用。对有效来源，由\eqref{eq:wide-active}，
-$Q_{\rm pin}<\overline Q<1/9$、$R/q\le R_0/q_{\min}$。
-去掉非负被积式中的捕获指标并使用 $J_i\ge1-e$，得到逐面界
-\[
- \mathbb E(V\mid\text{面})\le1/9+(293/20000)x,\qquad
- \operatorname{Var}(V\mid\text{面})\le x/900,
- \quad V=-\log G.
-\]
-当 $x\ge40000/9$，阈值 $\chi x$ 至少超出各面均值 $x/40000$，故
-\[
- \mathbb P(V>\chi x\mid\text{面})\le40000^2/(900x)\to0.
-\]
-充分大时该量不超过固定 $\varepsilon_{\rm Ret}$。
-混合这些面概率后仍保持同一界；不能把面内方差称为混合方差。
-在保留事件 $G\ge\theta$ 上 $b=\theta/G$，处处 $b\le\theta/G$，所以完整加权壳系数在
-$(1-\varepsilon_{\rm Ret})\theta U_{\rm lo}n$ 与 $\theta U_{\rm hi}n$ 之间。
-
-宽来源带的质量需重新支付。定义
-\[
- C_{\rm src}=(q_{\max}-q_{\min})/q_{\min},\qquad
- \eta=v_{\min}/(2q_{\max}).
-\]
-完整带质量 $n\log(q_{\max}/q_{\min})\le C_{\rm src}n$，
-不再使用窄带中的 $nd$ 上界。
-来源角点补集在负最大面为空，在正最大面上的自由坐标比例为
-$[1-(1-q)/(2\rho)]^{n-1}$。于是删除的完整质量至多
-$C_{\rm src}n\exp[-(1-1/n)\eta x]$。
-因 $b\le1$，这也上包每个目标的加权行损失。准确地，
-\begin{gather}
- \eta-\chi=499871/37603070000>1/100000,\notag\\
- \mathrm{Cap}/k\le(C_{\rm src}/h)
- \exp\{-[(1-1/n)\eta-\chi]x\}\longrightarrow0.\label{eq:wide-cap}
-\end{gather}
-取充分大 $n$ 使 $\eta/n\le(\eta-\chi)/2$，则指数系数大于 $1/200000$，
-而 $h^{-1}$ 只按 $L$ 增长。故可支付 $\mathrm{Cap}/k\le e$。
-结合完整匹配宽度 $2h$，得到
-\[
- [(1-\varepsilon_{\rm Ret})2U_{\rm lo}/q_{\max}-e]k
- \le R_\lambda(w)\le Mk.
-\]
-对有效来源，前面的逐点面计数与交长耦合完全保留，给
-$C_\lambda(z)\le2k/R\le2k<Mk$；无匹配来源的列为零。
-因此有效来源的较强 $R_0$ 下界没有被错误地用于无匹配来源。
-
-\subsection{共同起点、实际历史与完整代价}\label{subsec:wide-finish}
-令 $\tau=\sqrt{A_n(t)(B_n(t)-\gamma_0n)}$。
-与显式参数证明相同的原积分估计给 $B_n(t)>8n$、$B_n(t)\le nL$（充分大时），
-所以根号为正。又
-\[
- \sigma/2-\chi(1-\sigma)=741/1000000>0,\qquad
- \tau/k\le(\sqrt L/h)e^{-741L/1000000}\longrightarrow0.
-\]
-因而可支付 $\tau\le ek$，行超额至少为 $b_*k$。
-双边能量引理与\eqref{eq:wide-target-mass}给环境缺额至少 $\Gamma_0n>\gamma_0n$。
-
-为明确量词，以下列出一组足够的共同条件。除固定有理比较外，要求
-\begin{equation}\label{eq:wide-all-guards}
-\begin{gathered}
- L\ge64,\ n\ge75,\ nd\ge1,\ t\ge4,\ tq_{\min}\ge4r_{\rm hi},\\
- h<\min\{\delta/2,d/8,(R_0-1)/2\},\quad 1/(xn^2)<h/2,\\
- M_n\le e/2,\quad 4V_n/e^2\le\varepsilon_A/5,\quad
- 1/(4nd^2)\le\varepsilon_A/5,\quad4/(e^2n)\le\varepsilon_A/5,\\
- (3/4)^{n-1}\le\varepsilon_A/5,\quad
- 2dL/(q_{\min}n)\le e,\quad2h+1/n\le3e/4,\quad2hd\le3e/4,\\
- x\ge40000/9,\quad40000^2/(900x)\le\varepsilon_{\rm Ret},\quad
- \eta/n\le(\eta-\chi)/2,\\
- (C_{\rm src}/h)e^{-x/200000}\le e,\qquad
- (\sqrt L/h)e^{-741L/1000000}\le e.
-\end{gathered}
+固定一个好目标及一张被捕获的完整来源面 $i$。
+其余自由坐标在逆捕获律下独立，密度为 $\one_{\rm capture}/(\ell_RJ_l)$；
+固定来源坐标贡献确定的 $Q_{\rm pin}=-\log\ell_*\le\log(6/5)$。
+这时自由坐标 $-\log\ell_R$ 的均值恰为 $J_\phi(w_l;q)/J_l$，从而
+\begin{equation}\label{eq:profile-source-mean}
+ \mathbb E(V\mid\text{面 }i)=Q_{\rm pin}+\sum_{l\ne i}J_\phi(w_l;q)/J_l
+ \le Q_{\rm pin}+\frac{2211}{50000(1-e)}x
+ <Q_{\rm pin}+(223/5000)x.
 \end{equation}
-这些条件对这一个固定参数组共同成立：$t\to\infty$、$h\to0$、
-$[1/(xn^2)]/h=O(n^{-2})$；基准均值与方差为 $O(L^2/n)$，
-两个计数与 $K_w$ 的坏概率为 $O(n^{-1})$，逐坐标精度为 $O(L/n)$，
-逐来源面的保留坏概率为 $O(L^{-1})$。两个指数尾各为 $L$ 的固定幂乘 $e^{-cL}$，其中 $c>0$。
-全部上包与半径和面无关，有限多个条件因此有一个共同整数起点。
-这里没有算出该起点，尤其不能把 $L\ge2^{20}$ 视为本参数组的适用条件。
+所有剖面非负，所以同一个完整目标剖面控制每个可能固定坐标 $i$。
+均值这一步保留了捕获指标。
 
-对这些 $n$，取任意原膨胀参数 $\mathfrak a\ge8n^4$。
-第\ref{subsec:actual-history}节的连接只使用本节已保证的两侧支撑分离、$b\le1$、$\beta<2$ 与严格位移余量。
-具体地，实际未捕获目标增量点 $w\in\mathcal A$ 所属项有 $r_j<3$，来源增量点 $z\in\mathcal P$ 所属项有 $r_i\ge\rho>4$，
-故 $i<j$ 属于同一原选择历史。严格余量
+仅在二阶矩上使用非负性去掉捕获指标。
+完整来源自由坐标的两尾仍给 $\mathbb E_{\rm full}(\phi^2/\ell_R)=2RQ_{\rm pin}^3/(3\rho)$。
+五项奇交错和给
+$Q_{\rm pin}\le\log(6/5)<Q_5=34187/187500<1/5$。
+因 $R/q\le s$，固定面内独立性与 $J_l\ge1-e$ 给
+\[
+ \operatorname{Var}(V\mid\text{面 }i)
+ \le x\frac{2sQ_5^3}{3(1-e)}<x/150.
+\]
+当 $Q_5/x\le1/5000$，准确间隔
+$\chi-223/5000-1/5000=1/5000$ 给每张面上的 Chebyshev 界
+\[
+ \mathbb P(V>\chi x\mid\text{面 }i)\le5000^2/(150x).
+\]
+要求这个统一上包不超过 $\varepsilon_{\rm Ret}$，再混合这些面概率。
+这不要求各面均值相同，也不把面内方差当作混合方差。
+所有概率都在删除来源角点、乘入来源权之前建立。
+在保留事件 $G\ge\theta$ 上 $b=\theta/G$，处处 $b\le\theta/G$，
+故完整来源的加权壳系数在 $(1-\varepsilon_{\rm Ret})\theta U_{\rm lo}n$ 与 $\theta U_{\rm hi}n$ 之间。
+
+\subsection{径向校准的完整行列与两个支付}\label{subsec:profile-degrees}
+最终使用的同一 Borel 核为
+\begin{gather*}
+ K(w,z)=\one_{\mathcal A}(w)\one_{\mathcal P}(z)
+ \one_{\{|r-sq|<h\}}\one_{\{\norm{z-w}_\infty<\kappa\rho\}}
+ a_{\rm rad}(w)b(z),\\
+ r=\norm w_\infty,\qquad\rho=\norm z_\infty,\qquad q=\rho/t.
+\end{gather*}
+其行列均对 $\lambda$ 积分，记为 $R_\lambda,C_\lambda$。两侧点集不交，$0\le K\le1$。
+固定目标 $r$，来源对数宽度准确为 $\log[(r+h)/(r-h)]$，其中因子 $s$ 消去。
+对 $u=h/r$，正级数给
+\[
+ 1\le\frac{\log[(1+u)/(1-u)]}{2u}\le\frac1{1-u^2}.
+\]
+只要 $[1-(h/r_{\rm lo})^2]^{-1}\le1+e$，乘入 $r/r_{\rm hi}$ 后完整宽度在
+$[(1-e)2h/r_{\rm hi},(1+e)2h/r_{\rm hi}]$ 内。
+故未删来源角点的加权行在
+$[2(1-\varepsilon_{\rm Ret})(1-e)U_{\rm lo}k,Mk]$ 内。
+
+固定有效来源，令目标坐标捕获比例为 $\ell_i(r)$、其被捕获的端点数为 $T_i(r)$。
+与前面相同的逐点耦合给 $T_i/(2\ell_i)\le1$，完整目标壳系数不超过
+$n\prod_i\ell_i(r)\le nG(z)$，最后一步因 $r\ge R$ 时交长比例非增。
+这次目标径向权准确消去 Jacobian：
+$(\dint r/r)a_{\rm rad}=\dint r/r_{\rm hi}$。
+匹配目标的普通宽度至多 $2h$，所以完整列至多 $2nhG/r_{\rm hi}$，乘来源权后
+\[
+ C_\lambda(z)\le2nh\theta/r_{\rm hi}=2k<Mk.
+\]
+无匹配来源列为零。目标好集和角点限制都只减小列积分。
+
+来源完整质量至多 $C_{\rm src}n$，其中
+$C_{\rm src}=(q_{\max}-q_{\min})/q_{\min}=751/2000$。
+令 $\eta=(1-q_{\max})/(2q_{\max})=83/1834$。
+与前面的原角点自由坐标比例相同，来源角点补集质量至多
+$C_{\rm src}n\exp[-(1-1/n)\eta x]$。
+两个权都不超过 $1$，所以每个目标行的删除损失满足
+\[
+ \mathrm{Cap}/k\le(C_{\rm src}r_{\rm hi}/h)
+ e^{-[(1-1/n)\eta-\chi]x}\to0,\qquad\eta-\chi=47/183400>0.
+\]
+这里相对尺度 $k$ 中的 $r_{\rm hi}$ 不可遗漏。
+选择同一个原资格阈值 $\tau=\sqrt{A_n(t)(B_n(t)-\gamma_0n)}$。
+第\ref{subsec:profile-threshold}节将统一验证 $B_n(t)>8n$、$B_n(t)\le nL$，故根号为正，且
+\[
+ \tau/k\le(r_{\rm hi}\sqrt L/h)e^{-47L/200000}\to0,
+ \quad\sigma/2-\chi(1-\sigma)=47/200000>0.
+\]
+分别支付 $\mathrm{Cap}\le ek$、$\tau\le ek$ 后，环境行超额至少为 $b_*k$，两侧度数均至多 $Mk$。
+由\eqref{eq:profile-good-mass}，双边能量缺额至少为 $\Gamma_0n>\gamma_0n$。
+
+\subsection{同一实际历史与共同条件}\label{subsec:relative-finish}
+这些估计还须满足实际行资格。取任意原膨胀参数 $\mathfrak a\ge8n^4$，
+用同一负载支撑点归一化和反射，记 $\alpha=\mathfrak a/(\mathfrak a+1)$。
+将真实未捕获测度和环境测度限制到 $D$，有 $\mu_{\mathfrak a}\le\lambda_{\mathfrak a}=\alpha^{-n}\lambda$；
+完整有限角点缺额至少为这个限制上的缺失质量。
+实际目标增量点属于半径小于 $3$ 的项，实际来源点属于半径至少为 $\rho>4$ 的项，
+所以每个来源都早于同一目标。准确位移余量
 \[
  \alpha\beta-\kappa-2/(\mathfrak a+1)
  =n^{-3}-(\beta+2)/(\mathfrak a+1)>0
 \]
-将增量点捕获传到实际中心；$b\le1$ 使该目标原资格条件支付加权实际行不超过 $\tau$。
-在两侧支撑上 $\lambda_{\mathfrak a}=\alpha^{-n}\lambda$ 准确成立，
-环境能量、度数与目标质量分别乘 $\alpha^{-2n},\alpha^{-n},\alpha^{-n}$，
-所以每个实际历史的缺额仍至少为 $\Gamma_0n>\gamma_0n$。
-原有限覆盖与真实见证积分遂给
+使核中的点捕获成为原资格测试中的中心捕获。
+每个来源只积分其被纳入的真实增量片段，两个权均至多 $1$，
+所以实际加权行至多为 $a_{\rm rad}(w)\tau\le\tau$。
+没有对真实 $\mu_{\mathfrak a}$ 假设完整目标或来源概率律。
+
+记 $c_{\mathfrak a}=\alpha^{-n}\ge1$。
+同一个缺失测度与不交支撑的能量恒等式仍适用；能量、度数、目标质量分别乘
+$c_{\mathfrak a}^2,c_{\mathfrak a},c_{\mathfrak a}$，故有限参数缺额至少为
+\[
+ \frac{c_{\mathfrak a}^2E-\tau c_{\mathfrak a}\lambda(\mathcal A)}{c_{\mathfrak a}Mk}
+ \ge\frac{E-\tau\lambda(\mathcal A)}{Mk}\ge\Gamma_0n>\gamma_0n.
+\]
+原覆盖因子、被捕获预算与末项自身权都保留，得到
 \[
  C_n\le\left(1+\frac{(\beta+1/\mathfrak a)^n}{\tau}\right)
  [\tau+\mathfrak a^{-n}+\alpha^{-n}J_{\mathfrak a}(t)-\gamma_0n].
 \]
-对固定 $n$ 仅在这些一致数值不等式中令 $\mathfrak a\to\infty$，得
-$C_n\le\Fcal(A_n(t),B_n(t)-\gamma_0n)$。
-真实严格水平集的任意正见证半径、每个紧子集的有限覆盖、被选膨胀见证与内正则性都照旧使用，
-故仍适用于一般 $L^1$ 输入及全部正共同半径，不要求历史或选择器收敛。
+对固定 $n,t,\tau$，只在已一致成立的数值界中令 $\mathfrak a\to\infty$，即得 $C_n\le\Phi_{\rm p}$。
+任意严格水平集的正真实见证半径、紧子集的有限覆盖及其膨胀见证保持不变；
+再用内正则性得到一般 $L^1$ 输入与所有正共同半径，既不截断尺度，也不要求选择历史收敛。
 
-最后保留完整标量代价。$B_n(t)\le T_n+\sigma n/(1-\sigma)+1$、$A_n(t)\le ne^{-\sigma L}$，故
+为明确共同起点，除固定有理比较外，下面是一组足够的有限条件：
+\begin{equation}\label{eq:profile-eventual-guards}
+\begin{gathered}
+ L\ge64,\ n\ge75,\ t\ge8,\ tq_{\min}\ge4r_{\rm hi},\\
+ h<\min(\delta/2,1/1000),\quad\epsilon q_{\max}\le2h/3,\quad
+ 1/(3tq_{\min})\le e,\quad2h+1/n\le3e/4,\\
+ M_n\le e/2,\quad4V_n/e^2\le\varepsilon_A/5,\quad
+ 4/(e^2n)\le\varepsilon_A/5,\quad(3/4)^{n-1}\le\varepsilon_A/5,\\
+ 1/(nq_{\min})\le1/200000,\quad
+ 40000000000/(nq_{\min}^2)\le\varepsilon_A/5,\quad16h\le1/100000,\\
+ Q_5/x\le1/5000,\quad5000^2/(150x)\le\varepsilon_{\rm Ret},\quad
+ [1-(h/r_{\rm lo})^2]^{-1}\le1+e,\\
+ \eta/n\le(\eta-\chi)/2,\quad
+ (C_{\rm src}r_{\rm hi}/h)e^{-(\eta-\chi)x/2}\le e,\\
+ (r_{\rm hi}\sqrt L/h)e^{-47L/200000}\le e.
+\end{gathered}
+\end{equation}
+\subsection{全部条件的一个显式起点}\label{subsec:profile-threshold}
+以下量化\eqref{eq:profile-eventual-guards}，使用
 \[
- \frac{\Fcal(A_n(t),B_n(t)-\gamma_0n)-T_n}{n}
- \le-\gamma_0+3/97+e^{-L}+e^{-3L/100}+2\sqrt L e^{-3L/200}.
+ L_1=2^{30},\qquad N(L)=L^8/8!\le n=e^L.
 \]
-准确剩余量为
+还可用 $n\ge L^2/2$。在 $L=L_1$，下列有限有理比较成立：
+\begin{equation}\label{eq:profile-threshold-base}
+\begin{gathered}
+ N\ge400,\quad N/L>16,\quad q_{\min}N/L>4r_{\rm hi},\\
+ h<\min(\delta/2,1/1000),\quad1/(xN^2)<1/2,
+ \quad q_{\max}/(xN^2)<2h/3,\\
+ L/(3q_{\min}N)<e,\quad2h+1/N<3e/4,\quad
+ 1/r_{\rm hi}-L/N>1/2,\\
+ \widehat M<e/2,\quad4\widehat V/e^2<\varepsilon_A/8,
+ \quad4/(e^2N)<\varepsilon_A/8,\\
+ (3/4)^{64}<\varepsilon_A/8,\quad Nq_{\min}\ge200000,
+ \quad90000000000/N<\varepsilon_A/8,\\
+ h<1/1600000,\quad x\ge1000,\quad5000^2/(150x)<\varepsilon_{\rm Ret},\\
+ [1-(h/r_{\rm lo})^2]^{-1}<1+e,\quad
+ \eta/400<(\eta-\chi)/2,
+\end{gathered}
+\end{equation}
+其中
 \[
- \gamma_0-3/97=121289/1212500,\qquad
- \gamma_0-3/97-1/10=39/1212500>0.
+ \widehat M=8!\left[\frac{6(1/2)^3}{q_{\min}^2L^6}
+ +\frac{1/2}{q_{\min}L^7}\right],\qquad
+ \widehat V=\frac{12(1/2)^3\,8!}{q_{\min}^2L^6}
 \]
-再要求最后三个正项之和严格小于 $39/1212500$。
-它们趋于零，因而可加入\eqref{eq:wide-all-guards}的同一有限条件族。
-这证明定理\ref{thm:wide}，同时保留了参数价格与全部正平方根项。
+分别上包 $M_n,V_n$。这些比较的输入全部为已显示的准确有理数。
+$N,N/L,x$ 递增，$h$ 递减，$[1/(xN^2)]/h$ 按 $L^{-16}$ 递减；
+其余非恒定上包为正的负幂之和，故基点比较覆盖整个 $[L_1,\infty)$。
+它们保证完整带的正定义、有效来源的 $R>1$、相对间隙及全部匹配条件。
+$1/r_{\rm hi}-L/N>1/2$ 给逐张正目标面的角点补集比例小于 $3/4$；
+$n\ge65$ 后其坏率小于 $(3/4)^{64}<\varepsilon_A/8$。
+另外四个目标事件的坏率也各小于 $\varepsilon_A/8$，所以并集小于 $5\varepsilon_A/8<\varepsilon_A$。
+这里剖面坏率的 $90000000000/N$ 正是 $200000^2/(Nq_{\min}^2)$，保留了目标固定坐标支付。
+乘积桥 $512Lh=2^{-71}$ 恒定，剖面桥和逐点 $J$、负固定面计数以及径向宽度因此也在全尾成立。
+
+余下两个指数支付使用全域 Taylor 不等式 $e^y\ge y^{10}/10!$。
+因 $C_{\rm src}r_{\rm hi}<1$ 且
+\[
+ \eta-\chi-\eta/400>1/10000,\qquad c_S=917/10000000,
+\]
+来源删除损失由
+\begin{equation}\label{eq:profile-cap-power}
+ S_{10}(L)=\frac{10!C_{\rm src}r_{\rm hi}}{2^{-80}c_S^{10}L^9}
+\end{equation}
+上包。这个式子使用完整角点指数的 $1-1/n$；不是直接丢掉该因子。
+在 $L_1$，$C_{\rm src}r_{\rm hi}L_1/2^{-80}<2^{110}$、$c_SL_1>2^{16}$，故
+$S_{10}(L_1)<10!/2^{50}<e$；以后按 $L^{-9}$ 递减。
+这也支付了\eqref{eq:profile-eventual-guards}中较强指数系数 $(\eta-\chi)/2$ 所对应的上包，因为 $(\eta-\chi)/2>1/10000$。
+
+对同一个全局 $\tau$，令 $\nu=47/200000$，Taylor 十阶给
+\begin{equation}\label{eq:profile-tau-power}
+ \tau/k\le T_{10}(L)=\frac{10!r_{\rm hi}}{2^{-80}\nu^{10}L^{17/2}}.
+\end{equation}
+$\sqrt{L_1}=2^{15}$，且
+$r_{\rm hi}L_1^{3/2}/2^{-80}<2^{126}$、$\nu L_1>2^{17}$，
+故 $T_{10}(L_1)<10!/2^{44}<e$；以后按 $L^{-17/2}$ 递减。
+原 $B_n$ 的下包为 $T_n-4n/L$，因为 $x\in[L/2,L]$ 且引理\ref{lem:integral-uniform}适用。
+$L\ge64$ 时 $\log L<L/4$，故 $B_n(t)-\gamma_0n>nL/2>0$；
+上包 $B_n(t)\le nL$ 也成立，因为 $x>4$。
+因此平方根、环境行列、来源删除和原资格阈值没有残留充分大条件。
+
+\subsection{完整代价与精确对数价格}\label{subsec:profile-exact-scalar}
+最后保留准确价格 $p=-\log(1-\sigma)=\log(1000/917)$。
+原完整函数满足
+\begin{equation}\label{eq:exact-profile-price}
+ \frac{\Phi_{\rm p}-T_n}{n}
+ \le-\gamma_0+p+e^{-L}+e^{-\sigma L}+2\sqrt L e^{-\sigma L/2}.
+\end{equation}
+取 $u=83/917$，有限几何恒等式积分给
+$\log(1+u)<S_7(u)=\sum_{j=1}^7(-1)^{j+1}u^j/j<4333/50000$，
+后一个不等式为准确有理比较。于是
+\[
+ \gamma_0-4333/50000-23/100=17/50000>0.
+\]
+对全部 $L\ge L_1$，用 $n\ge L^2/2$ 与全域 Taylor 四阶得到余项上包
+\[
+ R_4(L)=2/L^2+4!/(\sigma L)^4+2\sqrt L\,4!/(\sigma L/2)^4.
+\]
+三项分别按 $L^{-2},L^{-4},L^{-7/2}$ 递减。在 $L_1$，
+$\sigma L_1>2^{26}$、$\sigma L_1/2>2^{25}$、$\sqrt{L_1}=2^{15}$，故
+\[
+ R_4(L_1)<2^{-59}+4!/2^{104}+2^{16}4!/2^{100}<17/50000.
+\]
+所以同一个完整函数在全部 $L\ge2^{30}$ 严格满足 $\Phi_{\rm p}<T_n-(23/100)n$，完成定理\ref{thm:profile}的证明。
+更一般地，每个固定 $c<\gamma_0+\log(917/1000)$ 都给充分大时 $\Phi_{\rm p}<T_n-cn$；不声称端点。
+这里改进的是同一个完整 $\Phi_{\rm p}$ 的显示推论；精确对数价格未改变核、缺额或参数。
 
 \section{应用}\label{sec:application}
 \subsection{完整代价函数的比较}
@@ -1260,17 +1467,72 @@ $C_n\le\Fcal(A_n(t),B_n(t)-\gamma_0n)$。
  \Phi<T_n-n/40<\Phi_j.
 \end{equation}
 因此在表列的每个范围内，都有 $C_n\le\Phi<\Phi_j$；结论来自完整 $\Fcal$ 函数的严格排序。
-再比较宽带函数与 $\Phi$。保留角点积分的上界，并使用 $-\log(1-7/100)\ge7/100$，得到
+再比较新剖面函数与 $\Phi$。保留角点积分的上界，并使用 $-\log(1-7/100)\ge7/100$，得到
 \[
  \Phi\ge B_n(t)-\gamma n>T_n-n(\gamma-7/100+4/L),
  \qquad t=100n/(93L).
 \]
-准确分数满足 $\gamma-7/100+4/2^{20}<1/10$，而此括号随 $L$ 递减。
-因此在两个结论共同适用的充分大范围，严格有
+准确分数满足 $\gamma-7/100+4/2^{20}<23/100$，而此括号随 $L$ 递减。
+因此在 $L\ge2^{30}$ 的共同适用范围，严格有
 \[
- \Phi_{\rm w}<T_n-n/10<\Phi.
+ \Phi_{\rm p}<T_n-(23/100)n<\Phi.
 \]
-这不为宽带结论提供新起点。下面保留起效更早的常数族；在多个结论同时适用时，取各准确上界的最小值。
+这个排序比较的是完整根式；新结论的起点由第\ref{subsec:profile-threshold}节的全部条件给出。
+
+下面保留起效更早的常数族；在多个结论同时适用时，取各准确上界的最小值。
+
+还可比较仅用径向校准的一组完整函数，令
+\[
+ t_{\rm r}=1000n/(909L),\qquad
+ \Phi_{\rm r}=\Fcal(A_n(t_{\rm r}),B_n(t_{\rm r})-(61/200)n).
+\]
+其正参数价格满足 $-\log(909/1000)\ge91/1000$，因此原积分上包给
+\[
+ \Phi_{\rm r}\ge B_n(t_{\rm r})-(61/200)n
+ \ge T_n-n(61/200-91/1000+4/L).
+\]
+括号在 $L=2^{20}$ 已严格小于 $23/100$，随后递减，故在新显式域内
+$\Phi_{\rm p}<T_n-(23/100)n<\Phi_{\rm r}$。
+这是准确完整函数的排序。该径向构造本身的算子结论只有充分大维数的适用范围；
+若同时使用它，应取其原适用域与新域的交，函数比较不为它赋予新的显式门槛。
+
+\subsection{不交点支撑上的缺额相加}\label{subsec:directsum}
+双边能量法还允许同时使用有限个壳带，但相加的对象是同一个缺失测度在不交点集上的质量。
+下面给出这一范围及一个必要限制。
+\begin{proposition}\label{prop:directsum}
+设 $\mu\le\lambda$ 为同一对正测度，并设有限组
+$A_j,P_j$ 的全部 $2J$ 个点集两两不交（允许 $\lambda$ 零集上的交）。
+$\lambda(A_j),\lambda(P_j)$ 均有限；在这些点集的有限测度并上记 $\nu=\lambda-\mu$。核 $0\le K_j\le1$ 支撑在 $A_j\times P_j$ 上，
+其 $\lambda$ 行列积分均至多 $D_j>0$，行积分在 $A_j$ 上 $\lambda$ 几乎处处还至少为 $r_j\ge0$。
+若其 $\mu$ 行积分在 $\mu$ 几乎处处的 $A_j$ 上至多为同一个 $\tau\ge0$，则
+\[
+ \nu\Bigl(\bigcup_j(A_j\cup P_j)\Bigr)
+ \ge\sum_j\frac{\lambda(A_j)(r_j-\tau)_+}{D_j}.
+\]
+\end{proposition}
+\begin{proof}
+每层使用同一个 $\nu$，准确展开给
+\[
+ E_{\lambda\lambda,j}-E_{\mu\mu,j}
+ =E_{\nu,\lambda,j}+E_{\mu,\nu,j}
+ \le D_j[\nu(A_j)+\nu(P_j)].
+\]
+左边至少为 $\lambda(A_j)(r_j-\tau)$；缺失测度非负，可逐层改取正部。
+除以各自的 $D_j$ 后，由全部点支撑不交即可相加。
+\end{proof}
+原实际增量可以跨多个壳带，因为各层只积分其在相应点集上的片段；
+这些片段的质量和不超过同一个增量的总质量。各层仍须单独证明同一实际历史的行资格。
+若有限膨胀下 $\lambda_{\mathfrak a}=c\lambda$ 在这些支撑上成立，
+$c\ge1$，则逐层准确下界为 $\lambda(A_j)(cr_j-\tau)_+/D_j$，
+不小于原下界，故也可以相加。
+
+仅在乘积空间中支撑不交还不够。取三个不交单位区间 $A_1,A_2,P$，
+令 $\lambda$ 为其上的 Lebesgue 测度，$\mu$ 在两个目标上密度为 $1$、在 $P$ 上密度为 $1/4$，
+$K_j=\one_{A_j\times P}$。
+每层都有 $D_j=r_j=1$、实际行 $\tau=1/4$，但共同缺额只有 $\nu(P)=3/4$，
+两层未经修正的下界之和为 $3/2$。
+因此即使 $A_1\times P$ 与 $A_2\times P$ 不交，共用来源点支撑也会重复支付同一缺额。
+这是测度引理的范围反例，不是原极大算子的下界构造。
 
 \subsection{较小起效门槛与可同时使用的常数族}
 反对角能量估计的起效门槛较大。下面给出另一组直接从同一有限覆盖得到的界，
