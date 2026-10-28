@@ -7,3 +7,5 @@ HIGH_DIM_COVER_ACTIVE；LOWER_PAUSED；N7_SPECIFIC_STOPPED。新R071 FULL ACCEPT
 当前paper R06828页已完整数学FINAL ACCEPT、主两遍编译/全28页渲染图审、已提交远端确认；正文冻结R056/R066/R069，尚不含新R071，完整新proof单独交付。R070 J2/逐face中心化variance LOCAL ACCEPT，288万状态和1048万数值筛选不单独计Cn；width对sumH2的Cantelli不能替代V=sumphi，MATLAB jupyter.Idler接口失败单列。R072BE条件与R073新tuple、R074 idealCP均须各自独立审，不能冒称全部已过或已入论文。旧稿稳定Gitblob可恢复。
 
 Terra本机真实有限批、Sol推导独审、Luna来源facts，主保留证明责任；CPU采样峰/平均和真实RSS分开，不空转或虚填内存。共享MATLAB不clear/pathreset；旧资料与原暂停项目只读，下界/七维专项不恢复。goal active，每轮独立精简commit和正常fetch/rebase/push/readback，其他项目不改；未知来源未跟踪同名2文件不改删/不暂存/不作证据。
+
+R072条件4096/BE参数算术已结束归档，6条cap失败保留，安全conditional c19/200；缺原始BE及完整新算子独审，不计新Cn、不进论文。
