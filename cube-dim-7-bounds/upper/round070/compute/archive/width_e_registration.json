@@ -1,0 +1,24 @@
+{
+  "batch": "R070 exp(L) finite-width variance and Cantelli diagnostic",
+  "source_sha256": "1715e5c48d9c7138a2a4fd1d205b9fc47f78808072fdd8ecbfbb804eb5d0badb",
+  "scope": "new finite-width conditional model; numerical 32/64 high-precision Gaussian quadrature; no Cn theorem",
+  "q0": "9/10+(1/50)*(2*i+1)/512, i=0..255",
+  "s": "3/2",
+  "L": [
+    4096,
+    8192
+  ],
+  "h": "1/(Hden*L), Hden 256 or 512",
+  "qsource": "q0+theta*h/s, theta=-1/2,0,1/2,1",
+  "r": "s*q0",
+  "epsilon": "h/(2*s*q0)",
+  "rho": "exp(L)*qsource/((9/10)*L)",
+  "target_w": "uniform [-r,r], integrating kink-split H2 and square",
+  "observables": "mean and variance of H2; normalized source conditional variance from H4/J-(H2/J)^2; Cantelli at relative gaps 1%,5%,25%",
+  "states": 4096,
+  "tasks": 256,
+  "workers": 14,
+  "precision": "90 decimal digits; carry rho*(J-1)=B/2 and keep 1/J correction separately; final sum may round subprecision correction; centered variance quadrature",
+  "stop": "finite tasks; any exception saved in chunk; no theoretical certificate",
+  "registered_unix": 1793145992.028286
+}

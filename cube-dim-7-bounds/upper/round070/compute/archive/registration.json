@@ -1,0 +1,45 @@
+{
+  "batch": "R070 second target profile H2",
+  "scope": "finite numerical diagnostic, no Cn theorem",
+  "source_sha256": "6ea66793ec6d56c04645f0ce755634de0eff933884bc5563392ddf3f79c87061",
+  "s": [
+    "6/5",
+    "7/5",
+    "3/2",
+    "9/5",
+    "2"
+  ],
+  "q": "1/s+(97/100\u22121/s)*(2*i+1)/512, i=0..255",
+  "r": "s*q fixed during derivative",
+  "h_over_r": [
+    "1/16777216",
+    "1/281474976710656",
+    "1/1208925819614629174706176",
+    "1/79228162514264337593543950336",
+    "1/340282366920938463463374607431768211456"
+  ],
+  "rho_over_r": [
+    "4",
+    "16",
+    "65536",
+    "18446744073709551616",
+    "340282366920938463463374607431768211456",
+    "115792089237316195423570985008687907853269984665640564039457584007913129639936"
+  ],
+  "epsilon": "factor*h/(s*q), factor 0,1/4,1/2",
+  "R": "s*q-h",
+  "a0": "(1-epsilon)*q",
+  "g": "R-a0",
+  "w": "0, \u00b1r, \u00b1a0, \u00b1(a0\u00b12^-j), j=24,64,128,192, \u00b1(r-g), \u00b1(r-g/2)",
+  "states_per_chunk": 11250,
+  "tasks": 256,
+  "pilot_indices": "0..13",
+  "production_indices": "14..255",
+  "total_states": 2880000,
+  "workers": 14,
+  "precision": "closed 160 decimal, cross-check 256 decimal (>512 bits)",
+  "crosscheck": "each chunk one of five s values rotating, h/r=2^-80, rho/r=2^256, eps factor 1/2; direct source integral and one-sided derivatives at kink and perturbations 2^-192; baseline mean and second moment/variance",
+  "threshold": "quadrature scaled error <1e-80; derivative scaled error <1e-25; baseline mean error <1e-100",
+  "stop": "pilot failure blocks production; in production exception or numerical disagreement stops affected chunk and records exact point; finite counts otherwise",
+  "registered_unix": 1793145795.039928
+}

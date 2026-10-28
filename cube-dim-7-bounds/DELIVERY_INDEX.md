@@ -35,8 +35,9 @@
 | R065 | 乘法相对核有限诊断与真实错误符号审计 | `87904a9de0961cba253397fe9021fccbc57769df` | [报告](upper/round065/REPORT.md) | 25 |
 | R066 | 典型目标一阶剖面与完整弱型上界改进 | `db9245834b75baa7cc36f12127925679fdffdf3d` | [报告](upper/round066/REPORT.md) | 28 |
 | R067 | 一阶剖面本机有限诊断与独立事实审计 | `392d1e662a898238ccef3187dd5988e59dd33721` | [报告](upper/round067/REPORT.md) | 25 |
+| R068 | 相对目标剖面与完整显式门槛28页论文 | `f26db46db9e320aaffca74807ad25a815caad237` | [报告](upper/round068/REPORT.md) | 28 |
 | R069 | 一阶剖面完整原算子门槛与准确价格认证 | `d6eb242901dbf986d413394606f14afa251336cb` | [报告](upper/round069/REPORT.md) | 16 |
-| R068 | 相对目标剖面与完整显式门槛28页论文 | 本轮身份见Git log及真实readback | [报告](upper/round068/REPORT.md) | 具体白名单与MANIFEST |
+| R070 | 第二目标剖面局部认证与实际并行候选批 | 本轮身份见Git log及真实readback | [报告](upper/round070/REPORT.md) | 具体白名单与MANIFEST |
 
 以上历史提交均已确认远端包含；本轮只有真实readback成功后才报告已推送，不把自身hash嵌入自身提交。每轮报告有机制/假设、完整成本及范围、准确原件/来源SHA、最小代码、实际receipt与独审，过去R001–040另见rounds和账本。
 

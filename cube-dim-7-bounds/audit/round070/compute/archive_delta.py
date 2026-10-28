@@ -1,0 +1,18 @@
+from pathlib import Path
+from fractions import Fraction as F
+import hashlib,json,time,os,resource
+st=time.monotonic();cpu=time.process_time();p=Path('/Users/zhengzhihao/Desktop/T/cube-r030-compute/cube-dim-7-bounds/upper/round070/compute');here=Path(__file__).resolve().parent;sha=lambda b:hashlib.sha256(b).hexdigest()
+new={'archive':'a8db7f061e24c71a00d888df533dab9c39c16fea7d96abeda6103c7030abeb7d','frontier4_archive':'06f4b4f45cb34b2c6de71baba858a65fe5bfac364afa972e35fb45065abda4f6'};old={'archive':'1e544d057901728e9c8dea9ce79a64851b5f40ca42b4527fcda7b2d086742669','frontier4_archive':'dfc0263063b69042819b49538a326e674adccb877b6edf84d84ad8439a96ea19'};add={'archive':['R070_REPORT.md'],'frontier4_archive':['R070_REPORT.md','frontier4_per_L.json']};delta={}
+for name in new:
+ q=p/name;mb=(q/'archive_manifest.json').read_bytes();assert sha(mb)==new[name];m=json.loads(mb)
+ for f,h in m['sha256'].items():assert sha((q/f).read_bytes())==h
+ for f in add[name]:assert f in m['sha256']
+ baseline={'scope':m['scope'],'sha256':{k:v for k,v in m['sha256'].items() if k not in add[name]}};oldbytes=(json.dumps(baseline,indent=2)+'\n').encode();assert sha(oldbytes)==old[name]
+ delta[name]={'new_manifest':new[name],'reconstructed_old_manifest':sha(oldbytes),'unchanged_old_members':len(baseline['sha256']),'added':{f:m['sha256'][f] for f in add[name]}}
+assert (p/'archive/R070_REPORT.md').read_bytes()==(p/'frontier4_archive/R070_REPORT.md').read_bytes();report=(p/'archive/R070_REPORT.md').read_text();assert 'ΣH2' in report and 'V=Σφ' in report and 'do not support the covering argument' in report
+fa=p/'frontier4_archive';per=json.loads((fa/'frontier4_per_L.json').read_bytes());recheck=json.loads((fa/'frontier4_recheck.json').read_bytes());assert per['source_recheck_sha256']==sha((fa/'frontier4_recheck.json').read_bytes()) and per['model_registration_sha256']==sha((fa/'frontier4_registration.json').read_bytes());rows=per['per_L'];assert len(rows)==20 and {x['parameters']['il'] for x in rows}==set(range(20));assert all(x in recheck['rows'] for x in rows)
+for row in rows:
+ z=row['parameters'];il,iq,isg,ic=z['il'],z['iq'],z['isigma'],z['ichi'];assert F(z['L'])==F(4096)+F(4096*(2*il+1),40);assert F(z['qmax'])==F(22,25)+F(2*iq+1,20*128);assert F(z['sigma'])==F(7,100)+F(3*(2*isg+1),50*128);assert F(z['chi'])==F(1,25)+F(2*ic+1,100*64);assert z['hden'] in (256,384,512,768)
+best=recheck['rows'][0]['parameters'];assert F(best['L'])==F(40448,5) and F(best['L'])<8192 and F(best['qmax'])!=F(91,100) and F(best['sigma'])!=F(9,100) and F(best['chi'])!=F(45,1000) and best['hden']!=256
+out={'scope':'archive delta bytes, selected per-L identity and report wording; no old numerical replay','archives':delta,'producer_report_sha256':sha(report.encode()),'report_explicit_H2_vs_V_block':True,'report_explicit_R071_top_mismatch':('R071' in report),'top_parameter_mismatch_R071_independently_checked':best,'per_L_count':len(rows),'per_L_rows_match_prior_recheck':True,'prior_archive_receipts_sha256':{n:sha((here/n).read_bytes()) for n in ['archive_check.json','frontier_archive_check.json']},'whitelist':['archive/ARCHIVE.md','archive/archive_manifest.json','archive/R070_REPORT.md','frontier4_archive/ARCHIVE.md','frontier4_archive/archive_manifest.json','frontier4_archive/R070_REPORT.md','frontier4_archive/frontier4_per_L.json'],'script_sha256':sha(Path(__file__).read_bytes()),'pid':os.getpid(),'cpu_seconds':time.process_time()-cpu,'wall_seconds':time.monotonic()-st,'peak_rss_bytes':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss}
+(here/'archive_delta.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps(out,indent=2))

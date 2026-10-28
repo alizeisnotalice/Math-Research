@@ -1,0 +1,27 @@
+{
+  "batch": "R070 conditional exp-prefix full-cost frontier",
+  "scope": "conditional scalar proposal, remaining finite guards and operator theory unverified",
+  "source_sha256": "106709d86c283c79227289ea5bb844dcd215fa9bc49d4755f5173945dd24e8f9",
+  "L": "4096+4096*(2*i+1)/40,i=0..19",
+  "qmax": "22/25+(1/20)*(2*j+1)/128,j=0..63",
+  "sigma": "7/100+(3/50)*(2*k+1)/128,k=0..63",
+  "chi": "1/25+(1/100)*(2*m+1)/64,m=0..31",
+  "hden": [
+    256,
+    384,
+    512,
+    768
+  ],
+  "tuple_count": 10485760,
+  "tasks": 1280,
+  "workers": 15,
+  "x": "(1-sigma)*L",
+  "rho_dimension": "n=exp(L), L natural log",
+  "cost": "(1-eD)*mL*(2*p*(1-eRad)*Ulo-eS-eT)/(2*(1+eRad)*Uhi)+ln(1-sigma) - (exp(-L)+exp(-sigma L)+2 sqrt(L) exp(-sigma L/2))",
+  "retain": "gap^2/(.00531*x+gap^2), gap=chi*x-.183-2211*x/(50000*(1-eJ))",
+  "cap": "ln(qmax/qmin)*rhi/h * exp(-((1-exp(-L))*eta-chi)*x)",
+  "tau": "rhi*sqrt(L)/h*exp(-(sigma/2-chi*(1-sigma))*L)",
+  "screening": "double float, rejected margins not rigorous; high precision and positive S64 prefix recheck top candidates required",
+  "stop": "finite counts; each chunk records its counts and top32; on exception affected chunk stops",
+  "registered_unix": 1793146147.400954
+}
