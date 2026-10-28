@@ -1,0 +1,1 @@
+主已全文阅读R084 threshold/review.md及已接受R083完整证明和独审。原条件接受的前提R083全链审核已由audit/round083/full/full_review.md解决，源身份完全相同。局部域rho>=16由更强rho>4rhi>16支付；全部eventual数值条件及N12/T8整尾被覆盖。真实n位移代数、窄gap、weightedcap、tau、root与finitehistory条件均闭合。接受log n≥2^50的完整定理；不改R083原eventual身份，不声称最小阈值。
