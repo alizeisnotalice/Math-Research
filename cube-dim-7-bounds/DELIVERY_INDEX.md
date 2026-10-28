@@ -4,7 +4,7 @@
 
 当前已接受渐近完整成本：[R069](upper/round069/profile_threshold/THRESHOLD_PROOF.md)，`Cn<=Phi66<T−23n/100; T=nlogn−nloglogn`；有效域：natural log(n)>=2^30, every integern。
 当前显式构造：[R069](upper/round069/profile_threshold/THRESHOLD_PROOF.md)，`Cn<=Phi66<T−23n/100; T=nlogn−nloglogn`；真实门槛：log(n)>=2^30。较早R056在log n≥2^20仍有n/40。全部界只在自身有效域取min，首项系数仍1、内部未发表。
-较低门槛完整改进：[R071](upper/round071/second_profile_cantelli/PROOF.md)，`Cn<=Phi71<T−7n/200; T=nlogn−nloglogn`；真实域：natural log n>=8192。较大域强界仍保留，逐个真域取最小。
+较低门槛完整改进：[R073](upper/round073/cantelli_frontier/PROOF.md)，`Cn<=Phi73<T−47n/250; T=nlogn−nloglogn`；真实域：natural log n>=8192。较大域强界仍保留，逐个真域取最小。
 
 
 当前[PDF](paper/main.pdf)和[TeX](paper/main.tex)为R068的28页冻结稿，全文数学FINAL ACCEPT、主实际双编译及逐页图审；正文证明范围R056/R066/R069。后续新机制/门槛以各轮报告为准，未冒称全部已写入该PDF。旧稿稳定Gitblob恢复、源/PDFhash与作者/主编译证据见paper/BUILD.json、MANIFEST.json。
@@ -41,7 +41,8 @@
 | R069 | 一阶剖面完整原算子门槛与准确价格认证 | `d6eb242901dbf986d413394606f14afa251336cb` | [报告](upper/round069/REPORT.md) | 16 |
 | R070 | 第二目标剖面局部认证与实际并行候选批 | `2cf37ac38893062ddb80e5ca46062ae8f1ea655b` | [报告](upper/round070/REPORT.md) | 61 |
 | R071 | 第二剖面Cantelli完整上界与8192显式门槛 | `c8d43c25450f68796ac2c99f0b7898cc7c30de4a` | [报告](upper/round071/REPORT.md) | 21 |
-| R072 | 4096条件BE参数与失败支付表 | 本轮身份见Git log及真实readback | [报告](upper/round072/REPORT.md) | 具体白名单与MANIFEST |
+| R072 | 4096条件BE参数与失败支付表 | `830eff126250f5d4b2a4bff17bf3d826d108feab` | [报告](upper/round072/REPORT.md) | 20 |
+| R073 | 准确Cantelli新参数完整上界47n/250 | 本轮身份见Git log及真实readback | [报告](upper/round073/REPORT.md) | 具体白名单与MANIFEST |
 
 以上历史提交均已确认远端包含；本轮只有真实readback成功后才报告已推送，不把自身hash嵌入自身提交。每轮报告有机制/假设、完整成本及范围、准确原件/来源SHA、最小代码、实际receipt与独审，过去R001–040另见rounds和账本。
 

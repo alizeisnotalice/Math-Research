@@ -1,7 +1,7 @@
 {
   "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
   "status": "active research; lower paused and n7-specific stopped",
-  "current_round": 72,
+  "current_round": 73,
   "accepted": [
     {
       "round": 34,
@@ -502,6 +502,48 @@
         "primary_new_comparison": 5
       },
       "paper_inclusion": "outside current R068 frozen28page source"
+    },
+    {
+      "round": 73,
+      "status": "FULL_ACCEPT",
+      "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+      "full_proof": "upper/round073/cantelli_frontier/PROOF.md",
+      "proof_sha256": "50d48b85f02a14f50614f0eea5cedbd7ccd68e9b2f7e1564fe8b41fcd2af9c4b",
+      "independent_audit": "audit/round073/cantelli_frontier/review.md",
+      "independent_audit_sha256": "1483fd8cc280b7247b07a217f235c67db93da10a42b5326608c68e6cf80635a0",
+      "leading_coefficient": 1,
+      "public_status": "internal independently reviewed theorem; no priority/global optimum claim",
+      "scope": "all integer n with natural log n>=8192",
+      "explicit_threshold": "natural log n>=8192",
+      "bound": "Cn<=Phi73<T−47n/250; T=nlogn−nloglogn",
+      "full_cost": "F(A_n(t),B_n(t)−(291/1000)n), t=n/[(231/256)logn]",
+      "parameters": {
+        "s": "3/2",
+        "qmin": "2/3",
+        "qmax": "11569/12800",
+        "sigma": "25/256",
+        "chi": "63/1280",
+        "h_coeff": "1/768",
+        "target_inset": "1/524288",
+        "Ret": "9717/10000",
+        "mass_lower": "3043/10000",
+        "gamma": "291/1000",
+        "Gamma": "144702845987014679329143893172843/497119778798930380288415498240000",
+        "cap_rate": "13627383/3790929920",
+        "tau_rate": "1447/327680",
+        "finite_cap_factor": "1025/1024",
+        "price_upper": "257/2500",
+        "scalar_slack": "1/5000"
+      },
+      "mechanism": "new exactsecondprofile Cantelli tuple with retained97.17%, exact log sourceband, distinctcap/tau rates, broadh and original finitehistory",
+      "comparison": "Phi73<Phi71 on entireL8192; Phi69<Phi73 on ownL30 domain; fullF comparisons retain positiveoldBprice",
+      "finite_gate_counts": {
+        "author": 53,
+        "independent_preflight": 7,
+        "independent_remaining": 6,
+        "primary_new_comparison": 5
+      },
+      "paper_inclusion": "outside frozenR06828page source"
     }
   ],
   "unaccepted": [
@@ -550,7 +592,8 @@
     "upper/round068/REPORT.md",
     "upper/round070/REPORT.md",
     "upper/round071/REPORT.md",
-    "upper/round072/REPORT.md"
+    "upper/round072/REPORT.md",
+    "upper/round073/REPORT.md"
   ],
   "accepted_scoped_mechanisms": [
     {
@@ -1128,40 +1171,46 @@
     }
   ],
   "low_threshold_improved_cost": {
-    "round": 71,
-    "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+    "round": 73,
     "status": "FULL_ACCEPT",
-    "full_proof": "upper/round071/second_profile_cantelli/PROOF.md",
-    "proof_sha256": "0e36488654bfa1413c19335a3eb9cf7b900e16b25cf9b73b2b8f36efc7381a10",
-    "independent_audit": "audit/round071/second_profile_cantelli/review.md",
-    "independent_audit_sha256": "9b4f43e7bb10be39c50b9c7a06046ac49bd1465b19e1106bcca88ed750ab029e",
+    "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+    "full_proof": "upper/round073/cantelli_frontier/PROOF.md",
+    "proof_sha256": "50d48b85f02a14f50614f0eea5cedbd7ccd68e9b2f7e1564fe8b41fcd2af9c4b",
+    "independent_audit": "audit/round073/cantelli_frontier/review.md",
+    "independent_audit_sha256": "1483fd8cc280b7247b07a217f235c67db93da10a42b5326608c68e6cf80635a0",
     "leading_coefficient": 1,
-    "public_status": "internal independently reviewed theorem; no public priority/global optimum claim",
+    "public_status": "internal independently reviewed theorem; no priority/global optimum claim",
     "scope": "all integer n with natural log n>=8192",
     "explicit_threshold": "natural log n>=8192",
-    "bound": "Cn<=Phi71<T−7n/200; T=nlogn−nloglogn",
-    "full_cost": "F(A_n(t),B_n(t)−(13/100)n), t=n/[(91/100)logn]",
+    "bound": "Cn<=Phi73<T−47n/250; T=nlogn−nloglogn",
+    "full_cost": "F(A_n(t),B_n(t)−(291/1000)n), t=n/[(231/256)logn]",
     "parameters": {
       "s": "3/2",
       "qmin": "2/3",
-      "qmax": "91/100",
-      "sigma": "9/100",
-      "chi": "9/200",
-      "h_coeff": "1/256",
+      "qmax": "11569/12800",
+      "sigma": "25/256",
+      "chi": "63/1280",
+      "h_coeff": "1/768",
       "target_inset": "1/524288",
-      "gamma": "13/100",
-      "Ret": "11/25",
-      "mass_lower": "311/1000",
-      "Gamma": "275712635238757706671213047153/2112759059895454116225765867520"
+      "Ret": "9717/10000",
+      "mass_lower": "3043/10000",
+      "gamma": "291/1000",
+      "Gamma": "144702845987014679329143893172843/497119778798930380288415498240000",
+      "cap_rate": "13627383/3790929920",
+      "tau_rate": "1447/327680",
+      "finite_cap_factor": "1025/1024",
+      "price_upper": "257/2500",
+      "scalar_slack": "1/5000"
     },
-    "mechanism": "secondtarget profile gives each fullsourceface variance upper; Cantelli perface beforemix; broad h explicitlypaid; samehistory radialdoubleweight",
-    "comparison": "Phi71<Phi56 at L>=2^20 through full-cost oldB positiveprice; R069 strongerdisplay retainsownL30domain",
+    "mechanism": "new exactsecondprofile Cantelli tuple with retained97.17%, exact log sourceband, distinctcap/tau rates, broadh and original finitehistory",
+    "comparison": "Phi73<Phi71 on entireL8192; Phi69<Phi73 on ownL30 domain; fullF comparisons retain positiveoldBprice",
     "finite_gate_counts": {
-      "author": 43,
-      "independent": 24,
+      "author": 53,
+      "independent_preflight": 7,
+      "independent_remaining": 6,
       "primary_new_comparison": 5
     },
-    "paper_inclusion": "outside current R068 frozen28page source"
+    "paper_inclusion": "outside frozenR06828page source"
   },
   "explicit_frontier": [
     {
@@ -1199,6 +1248,48 @@
         "primary_new_comparison": 5
       },
       "paper_inclusion": "outside current R068 frozen28page source"
+    },
+    {
+      "round": 73,
+      "status": "FULL_ACCEPT",
+      "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+      "full_proof": "upper/round073/cantelli_frontier/PROOF.md",
+      "proof_sha256": "50d48b85f02a14f50614f0eea5cedbd7ccd68e9b2f7e1564fe8b41fcd2af9c4b",
+      "independent_audit": "audit/round073/cantelli_frontier/review.md",
+      "independent_audit_sha256": "1483fd8cc280b7247b07a217f235c67db93da10a42b5326608c68e6cf80635a0",
+      "leading_coefficient": 1,
+      "public_status": "internal independently reviewed theorem; no priority/global optimum claim",
+      "scope": "all integer n with natural log n>=8192",
+      "explicit_threshold": "natural log n>=8192",
+      "bound": "Cn<=Phi73<T−47n/250; T=nlogn−nloglogn",
+      "full_cost": "F(A_n(t),B_n(t)−(291/1000)n), t=n/[(231/256)logn]",
+      "parameters": {
+        "s": "3/2",
+        "qmin": "2/3",
+        "qmax": "11569/12800",
+        "sigma": "25/256",
+        "chi": "63/1280",
+        "h_coeff": "1/768",
+        "target_inset": "1/524288",
+        "Ret": "9717/10000",
+        "mass_lower": "3043/10000",
+        "gamma": "291/1000",
+        "Gamma": "144702845987014679329143893172843/497119778798930380288415498240000",
+        "cap_rate": "13627383/3790929920",
+        "tau_rate": "1447/327680",
+        "finite_cap_factor": "1025/1024",
+        "price_upper": "257/2500",
+        "scalar_slack": "1/5000"
+      },
+      "mechanism": "new exactsecondprofile Cantelli tuple with retained97.17%, exact log sourceband, distinctcap/tau rates, broadh and original finitehistory",
+      "comparison": "Phi73<Phi71 on entireL8192; Phi69<Phi73 on ownL30 domain; fullF comparisons retain positiveoldBprice",
+      "finite_gate_counts": {
+        "author": 53,
+        "independent_preflight": 7,
+        "independent_remaining": 6,
+        "primary_new_comparison": 5
+      },
+      "paper_inclusion": "outside frozenR06828page source"
     }
   ],
   "conditional_candidates": [
@@ -1210,5 +1301,41 @@
       "conditional_c": "19/200",
       "naturalL0": 4096
     }
-  ]
+  ],
+  "low_threshold_improved_cost_pre_R073": {
+    "round": 71,
+    "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+    "status": "FULL_ACCEPT",
+    "full_proof": "upper/round071/second_profile_cantelli/PROOF.md",
+    "proof_sha256": "0e36488654bfa1413c19335a3eb9cf7b900e16b25cf9b73b2b8f36efc7381a10",
+    "independent_audit": "audit/round071/second_profile_cantelli/review.md",
+    "independent_audit_sha256": "9b4f43e7bb10be39c50b9c7a06046ac49bd1465b19e1106bcca88ed750ab029e",
+    "leading_coefficient": 1,
+    "public_status": "internal independently reviewed theorem; no public priority/global optimum claim",
+    "scope": "all integer n with natural log n>=8192",
+    "explicit_threshold": "natural log n>=8192",
+    "bound": "Cn<=Phi71<T−7n/200; T=nlogn−nloglogn",
+    "full_cost": "F(A_n(t),B_n(t)−(13/100)n), t=n/[(91/100)logn]",
+    "parameters": {
+      "s": "3/2",
+      "qmin": "2/3",
+      "qmax": "91/100",
+      "sigma": "9/100",
+      "chi": "9/200",
+      "h_coeff": "1/256",
+      "target_inset": "1/524288",
+      "gamma": "13/100",
+      "Ret": "11/25",
+      "mass_lower": "311/1000",
+      "Gamma": "275712635238757706671213047153/2112759059895454116225765867520"
+    },
+    "mechanism": "secondtarget profile gives each fullsourceface variance upper; Cantelli perface beforemix; broad h explicitlypaid; samehistory radialdoubleweight",
+    "comparison": "Phi71<Phi56 at L>=2^20 through full-cost oldB positiveprice; R069 strongerdisplay retainsownL30domain",
+    "finite_gate_counts": {
+      "author": 43,
+      "independent": 24,
+      "primary_new_comparison": 5
+    },
+    "paper_inclusion": "outside current R068 frozen28page source"
+  }
 }

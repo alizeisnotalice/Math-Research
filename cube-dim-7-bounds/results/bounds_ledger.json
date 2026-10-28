@@ -1,9 +1,9 @@
 {
   "dimension": 7,
-  "updated_utc": "2026-10-28T00:23:59.239509+00:00",
+  "updated_utc": "2026-10-28T00:35:00.446612+00:00",
   "status": "GENERAL_HIGH_DIM_COVER_ACTIVE_N7_SPECIFIC_STOPPED_LOWER_PAUSED",
   "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-  "current_round": 72,
+  "current_round": 73,
   "lower": {
     "status": "complete_strict_primary_and_independent_full_union",
     "exact_construction": "R006: a1=(8^(1/7)+288^(1/7))/2; six tails(1+2^(1/7))/2; full8192 halfcell union times128",
@@ -770,7 +770,8 @@
     },
     "later_results": "R070/R071/R072 unaccepted candidates excluded",
     "latest_bound_not_yet_in_current_frozen_paper": [
-      71
+      71,
+      73
     ]
   },
   "round029": {
@@ -844,8 +845,8 @@
   "active_goal": {
     "status": "active",
     "objective": "持续优化维数一致上界，Sol/Terra/Luna，本机优先；下界暂停",
-    "next_round": 73,
-    "focus": "R073 stronger Cantelli fulltuple; R072 BE conditional; R074 CP model diagnostics and scope audit",
+    "next_round": 74,
+    "focus": "R074 idealCP audited scope; R075 empiricaltarget truegeometry transfer; R076 BE fullchain and source",
     "n7_specific_work": "STOPPED; historical archive only"
   },
   "upper_pre_R031": {
@@ -1915,6 +1916,63 @@
     "bound": "Cn<=Phi71<T−7n/200; T=nlogn−nloglogn"
   },
   "general_low_threshold_upper": {
+    "round": 73,
+    "status": "FULL_ACCEPT",
+    "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+    "full_proof": "upper/round073/cantelli_frontier/PROOF.md",
+    "proof_sha256": "50d48b85f02a14f50614f0eea5cedbd7ccd68e9b2f7e1564fe8b41fcd2af9c4b",
+    "independent_audit": "audit/round073/cantelli_frontier/review.md",
+    "independent_audit_sha256": "1483fd8cc280b7247b07a217f235c67db93da10a42b5326608c68e6cf80635a0",
+    "leading_coefficient": 1,
+    "public_status": "internal independently reviewed theorem; no priority/global optimum claim",
+    "scope": "all integer n with natural log n>=8192",
+    "explicit_threshold": "natural log n>=8192",
+    "bound": "Cn<=Phi73<T−47n/250; T=nlogn−nloglogn",
+    "full_cost": "F(A_n(t),B_n(t)−(291/1000)n), t=n/[(231/256)logn]",
+    "parameters": {
+      "s": "3/2",
+      "qmin": "2/3",
+      "qmax": "11569/12800",
+      "sigma": "25/256",
+      "chi": "63/1280",
+      "h_coeff": "1/768",
+      "target_inset": "1/524288",
+      "Ret": "9717/10000",
+      "mass_lower": "3043/10000",
+      "gamma": "291/1000",
+      "Gamma": "144702845987014679329143893172843/497119778798930380288415498240000",
+      "cap_rate": "13627383/3790929920",
+      "tau_rate": "1447/327680",
+      "finite_cap_factor": "1025/1024",
+      "price_upper": "257/2500",
+      "scalar_slack": "1/5000"
+    },
+    "mechanism": "new exactsecondprofile Cantelli tuple with retained97.17%, exact log sourceband, distinctcap/tau rates, broadh and original finitehistory",
+    "comparison": "Phi73<Phi71 on entireL8192; Phi69<Phi73 on ownL30 domain; fullF comparisons retain positiveoldBprice",
+    "finite_gate_counts": {
+      "author": 53,
+      "independent_preflight": 7,
+      "independent_remaining": 6,
+      "primary_new_comparison": 5
+    },
+    "paper_inclusion": "outside frozenR06828page source"
+  },
+  "round072": {
+    "report": "upper/round072/REPORT.md",
+    "status": "CONDITIONAL_ARITHMETIC_ONLY; BE/fulloperator missing",
+    "new_Cn_bound": false,
+    "conditional_gamma": "39/200",
+    "conditional_c": "19/200",
+    "L0": 4096,
+    "failure_rows": "6 of12 cap payments fail; retained"
+  },
+  "round073": {
+    "report": "upper/round073/REPORT.md",
+    "status": "FULL originaloperator ACCEPT naturalL8192 exactnewtuple",
+    "new_Cn_bound": true,
+    "bound": "Cn<=Phi73<T−47n/250; T=nlogn−nloglogn"
+  },
+  "general_low_threshold_upper_pre_R073": {
     "round": 71,
     "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
     "status": "FULL_ACCEPT",
@@ -1949,14 +2007,5 @@
       "primary_new_comparison": 5
     },
     "paper_inclusion": "outside current R068 frozen28page source"
-  },
-  "round072": {
-    "report": "upper/round072/REPORT.md",
-    "status": "CONDITIONAL_ARITHMETIC_ONLY; BE/fulloperator missing",
-    "new_Cn_bound": false,
-    "conditional_gamma": "39/200",
-    "conditional_c": "19/200",
-    "L0": 4096,
-    "failure_rows": "6 of12 cap payments fail; retained"
   }
 }
