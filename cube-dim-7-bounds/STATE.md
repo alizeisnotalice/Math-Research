@@ -1,3 +1,15 @@
+# R078 FULL ACCEPT：逐面 Bernstein 留存改善
+
+一般维数覆盖研究进行中。L=log n≥8192 时，Cn≤Phi78<T−393n/2000，gamma=599/2000，t=n/[(231/256)L]。同参数完整Phi73−Phi78>17n/2000；R069自身更大域保留旧更强界。独立推导、准确算术及主完整输入/全尺度审核已归档 upper/round078。下界暂停、七维专项停止、论文不改。R079有限候选探索已分派，尚无R079结果。
+
+## 历史状态
+
+# R078 一般维数覆盖优化已恢复
+
+用户明确恢复覆盖构造迭代；下界保持暂停，七维专项停止，论文不改。R078固定R073参数，审核逐sourceface有界独立增量Bernstein留存替换；尚无已接受新界。登记及源hash见 upper/round078/REGISTRATION.json。
+
+## 恢复前状态（历史记录）
+
 # 当前状态：一般高维覆盖持续攻关
 
 HIGH_DIM_COVER_PAUSED；LOWER_PAUSED；N7_SPECIFIC_STOPPED。按用户2026-10-28要求暂停迭代，当前仅整理已审核结果的论文。新R073 FULL ACCEPT：所有整数n且自然log n≥8192，Cn≤Phi73<T−47n/250，Phi73=F(A_n(t),B_n(t)−291n/1000)，t=n/[(231/256)logn]。从原准确候选取新tuple后全53guards/不同两率/精确logband/finitecapfactor1025/1024/逐faceCantelli全尾重证，原一般L1全尺度history/ca²ca闭合。完整Phi73在全新域严格优于R071Phi71；R069在自己的L30域仍有更强完整Phi，按真域取min。源/独审hash和主准确fullcost比较见R073REPORT/账本。
