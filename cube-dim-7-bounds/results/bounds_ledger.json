@@ -1,9 +1,9 @@
 {
   "dimension": 7,
-  "updated_utc": "2026-10-28T00:19:23.027360+00:00",
+  "updated_utc": "2026-10-28T00:21:26.691189+00:00",
   "status": "GENERAL_HIGH_DIM_COVER_ACTIVE_N7_SPECIFIC_STOPPED_LOWER_PAUSED",
   "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
-  "current_round": 70,
+  "current_round": 71,
   "lower": {
     "status": "complete_strict_primary_and_independent_full_union",
     "exact_construction": "R006: a1=(8^(1/7)+288^(1/7))/2; six tails(1+2^(1/7))/2; full8192 halfcell union times128",
@@ -768,7 +768,10 @@
       "pdf_git_blob": "94375285abc56f85cb3b613e7d968e04b6770593",
       "published_R060_commit": "2f393a17f443f10411fa9ea435fd88fd5350c14a"
     },
-    "later_results": "R070/R071/R072 unaccepted candidates excluded"
+    "later_results": "R070/R071/R072 unaccepted candidates excluded",
+    "latest_bound_not_yet_in_current_frozen_paper": [
+      71
+    ]
   },
   "round029": {
     "report": "revision_v3/REPORT.md",
@@ -841,8 +844,8 @@
   "active_goal": {
     "status": "active",
     "objective": "持续优化维数一致上界，Sol/Terra/Luna，本机优先；下界暂停",
-    "next_round": 70,
-    "focus": "second-target-profile diagnostics and lower explicit thresholds with per-face Cantelli; BE remains conditional on original literature and full proof",
+    "next_round": 72,
+    "focus": "R073 stronger Cantelli fulltuple; R072 BE conditional; R074 CP model diagnostics and scope audit",
     "n7_specific_work": "STOPPED; historical archive only"
   },
   "upper_pre_R031": {
@@ -1904,5 +1907,47 @@
     "local_review": "audit/round070/second_profile/REVIEW.md",
     "width_to_source_retention": "BLOCKED; different random variable",
     "MATLAB": "FAILED interface, no mathematical evidence"
+  },
+  "round071": {
+    "report": "upper/round071/REPORT.md",
+    "status": "FULL originaloperator explicitthreshold ACCEPT naturalL8192",
+    "new_Cn_bound": true,
+    "bound": "Cn<=Phi71<T−7n/200; T=nlogn−nloglogn"
+  },
+  "general_low_threshold_upper": {
+    "round": 71,
+    "operator": "Lebesgue; centered axis-parallel cube; one common radius; general L1; all positive scales",
+    "status": "FULL_ACCEPT",
+    "full_proof": "upper/round071/second_profile_cantelli/PROOF.md",
+    "proof_sha256": "0e36488654bfa1413c19335a3eb9cf7b900e16b25cf9b73b2b8f36efc7381a10",
+    "independent_audit": "audit/round071/second_profile_cantelli/review.md",
+    "independent_audit_sha256": "9b4f43e7bb10be39c50b9c7a06046ac49bd1465b19e1106bcca88ed750ab029e",
+    "leading_coefficient": 1,
+    "public_status": "internal independently reviewed theorem; no public priority/global optimum claim",
+    "scope": "all integer n with natural log n>=8192",
+    "explicit_threshold": "natural log n>=8192",
+    "bound": "Cn<=Phi71<T−7n/200; T=nlogn−nloglogn",
+    "full_cost": "F(A_n(t),B_n(t)−(13/100)n), t=n/[(91/100)logn]",
+    "parameters": {
+      "s": "3/2",
+      "qmin": "2/3",
+      "qmax": "91/100",
+      "sigma": "9/100",
+      "chi": "9/200",
+      "h_coeff": "1/256",
+      "target_inset": "1/524288",
+      "gamma": "13/100",
+      "Ret": "11/25",
+      "mass_lower": "311/1000",
+      "Gamma": "275712635238757706671213047153/2112759059895454116225765867520"
+    },
+    "mechanism": "secondtarget profile gives each fullsourceface variance upper; Cantelli perface beforemix; broad h explicitlypaid; samehistory radialdoubleweight",
+    "comparison": "Phi71<Phi56 at L>=2^20 through full-cost oldB positiveprice; R069 strongerdisplay retainsownL30domain",
+    "finite_gate_counts": {
+      "author": 43,
+      "independent": 24,
+      "primary_new_comparison": 5
+    },
+    "paper_inclusion": "outside current R068 frozen28page source"
   }
 }

@@ -1,11 +1,9 @@
 # 当前状态：一般高维覆盖持续攻关
 
-HIGH_DIM_COVER_ACTIVE；LOWER_PAUSED；N7_SPECIFIC_STOPPED。R069最新显式FULL ACCEPT：对所有整数n且自然log n≥2^30，Cn≤Phi66<T−23n/100，Phi66=F(A_n(t),B_n(t)−317n/1000)、t=n/[(917/1000)logn]。其R066完整target Jphi first-profile机制和同Phi精确对数价格已分别全文审，原R066当时unknownN的receipt不追改。源/独审hash、每个真实valid域及完整F比较见账本与R069REPORT。
+HIGH_DIM_COVER_ACTIVE；LOWER_PAUSED；N7_SPECIFIC_STOPPED。新R071 FULL ACCEPT：对所有整数n且自然log n≥8192，Cn≤Phi71<T−7n/200；Phi71=F(A_n(t),B_n(t)−13n/100)，t=n/[(91/100)logn]。新第二目标剖面J2控制每sourcefacevariance，逐face Cantelli后mix；宽h/product/count/trim重新付，finitea同历史/ca²ca、一般L1全正尺度及全尾门槛完整闭合。完整源/独审/准确价格及新旧完整F比较见R071REPORT和账本。
 
-较早R056在log n≥2^20保Cn<T−n/40；所有旧界仅在自己真valid域取min，后来的门槛不搬给不同tuple。首项nlogn系数仍1、内部未发表，不称全局最优/公开纪录。下界和七维专项未恢复。
+较大域强界R069保留：自然log n≥2^30时Cn≤Phi66<T−23n/100；同Phi精确价格推论与原R066未知N receipts不追改。R056 logn≥2^20/n40及其余旧界保自身真域取min；R071在交域完整Phi严格优于Phi56，不以模型/展示系数代成本比较。首项仍1、内部未发表，不称最小门槛或公开纪录。
 
-当前主paper为R06828页，已完整数学FINAL ACCEPT、主实际两遍编译/全28页渲染图审，自足覆盖R056L20/n40与R066/R069L30/23n100。TeX8135adfb…386b锁定；旧R06024页稿用稳定Gitblob恢复。后续R070第二目标剖面数值、R071/R072门槛候选仍独立待审，不进入本冻结稿或已接受Cn账本。计算scope/失败/后补probe按真实身份记录。
+当前paper R06828页已完整数学FINAL ACCEPT、主两遍编译/全28页渲染图审、已提交远端确认；正文冻结R056/R066/R069，尚不含新R071，完整新proof单独交付。R070 J2/逐face中心化variance LOCAL ACCEPT，288万状态和1048万数值筛选不单独计Cn；width对sumH2的Cantelli不能替代V=sumphi，MATLAB jupyter.Idler接口失败单列。R072BE条件与R073新tuple、R074 idealCP均须各自独立审，不能冒称全部已过或已入论文。旧稿稳定Gitblob可恢复。
 
-Terra本机生产、Sol推导与独审、Luna facts审、主保留责任；批次有限登记/停止，CPU峰与平均/真实RSS分开。共享MATLAB主串行且不重置workspace/path。goal active，原资料只读、lower/n7及旧暂停项目保持；逐轮独立commit及fetch/rebase/push/readback。未知来源未跟踪同名2文件保持原样，不暂存/改删/作证据。
-
-R070新二阶target剖面及逐sourceface中心化variance为LOCAL ACCEPT；本机288万状态/1048万条件筛选不单独计Cn，width对sumH2的Cantelli不能替代V=sumphi。MATLAB jupyter.Idler接口失败单列。R071已独审的新完整门槛另轮归档，不倒改R070范围。
+Terra本机真实有限批、Sol推导独审、Luna来源facts，主保留证明责任；CPU采样峰/平均和真实RSS分开，不空转或虚填内存。共享MATLAB不clear/pathreset；旧资料与原暂停项目只读，下界/七维专项不恢复。goal active，每轮独立精简commit和正常fetch/rebase/push/readback，其他项目不改；未知来源未跟踪同名2文件不改删/不暂存/不作证据。
