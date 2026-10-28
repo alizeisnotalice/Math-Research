@@ -1,0 +1,92 @@
+{
+  "status": "registered before finite parallel batch",
+  "utc": "2026-10-28T16:05:13.886021+00:00",
+  "scope": "floating diagnostics for new non-square-root tau, not Cn; geometry and mechanism need independent proof and exact verification",
+  "objective": "minimize log2 L among c >= 9/10 candidates while paying generic R085 target, face, weighted-cap and modified tau and full scalar remainder envelopes",
+  "workers": 15,
+  "intervals": [
+    {
+      "worker": 0,
+      "s_lo": "60/15",
+      "s_hi": "61/15"
+    },
+    {
+      "worker": 1,
+      "s_lo": "61/15",
+      "s_hi": "62/15"
+    },
+    {
+      "worker": 2,
+      "s_lo": "62/15",
+      "s_hi": "63/15"
+    },
+    {
+      "worker": 3,
+      "s_lo": "63/15",
+      "s_hi": "64/15"
+    },
+    {
+      "worker": 4,
+      "s_lo": "64/15",
+      "s_hi": "65/15"
+    },
+    {
+      "worker": 5,
+      "s_lo": "65/15",
+      "s_hi": "66/15"
+    },
+    {
+      "worker": 6,
+      "s_lo": "66/15",
+      "s_hi": "67/15"
+    },
+    {
+      "worker": 7,
+      "s_lo": "67/15",
+      "s_hi": "68/15"
+    },
+    {
+      "worker": 8,
+      "s_lo": "68/15",
+      "s_hi": "69/15"
+    },
+    {
+      "worker": 9,
+      "s_lo": "69/15",
+      "s_hi": "70/15"
+    },
+    {
+      "worker": 10,
+      "s_lo": "70/15",
+      "s_hi": "71/15"
+    },
+    {
+      "worker": 11,
+      "s_lo": "71/15",
+      "s_hi": "72/15"
+    },
+    {
+      "worker": 12,
+      "s_lo": "72/15",
+      "s_hi": "73/15"
+    },
+    {
+      "worker": 13,
+      "s_lo": "73/15",
+      "s_hi": "74/15"
+    },
+    {
+      "worker": 14,
+      "s_lo": "74/15",
+      "s_hi": "75/15"
+    }
+  ],
+  "each_worker": "scipy differential_evolution; six continuous variables; popsize=7; maxiter=30; polish=false; hard bound <= 1302 evaluations per worker",
+  "variables": "s, log10 chi-mu gap, log10 sigma gap above chi/(1+chi), log10(1-qmax), fractional delta interval, gamma allocation fraction; variables round to 8 decimals for candidate display and must be recertified",
+  "fixed_secondary": "trim=1e-7; e=min(1e-5,(m*Ret-gamma)/(30m),(chi-mu)/20); m halfway gamma to log(rhi/rlo); Ret=1-min(.001,(m-gamma)/(4m)); m_face halfway [mu+2d_mu]/(1-e) to chi; safety ratio 1/2 for weighted-cap exponent",
+  "tau": "tau=n exp(-delta L); tau/k <= rhi L^2 exp(-(delta-chi(1-sigma))L); complete scalar/n <= price-gamma+1/n+exp(-delta L)+exp(-sigma L)+L exp(-(sigma-delta)L)",
+  "precision": "binary floating point log-domain optimization; no candidate certificate",
+  "resource": "15 worker processes, BLAS 1 thread each, sample aggregate worker RSS and CPU every 0.4s; do not allocate memory artificially",
+  "stop": "15 workers, finite exact bounded evaluations, one batch; stop once completed",
+  "seed": "20261029 + worker id"
+}
