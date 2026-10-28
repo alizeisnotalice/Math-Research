@@ -1,0 +1,17 @@
+{
+  "status": "registered before calculation",
+  "created_utc": "2026-10-28T15:15:00.565149+00:00",
+  "model": "mu=(s-1)+(s+1)*log((s+1)/(2*s)), c=log(s/(1+2*mu)), s>1",
+  "analytic_derivative": "d c/ds=[1+2 log((s+1)/(2s))]/[s(1+2mu)]",
+  "points": [
+    "4",
+    "9/2",
+    "5",
+    "11/2",
+    "6"
+  ],
+  "arithmetic": "Python Decimal high precision for stationary point; Fraction positive atanh-series log enclosures for five points and derivative signs",
+  "budget": "<=200 scalar evaluation calls, <=60 seconds; one batch; stop",
+  "scope": "diagnostic only, ignores geometry, typicality, finite gates, and operator proof; never a Cn claim",
+  "formula_audit": "deduce limiting sigma from sigma/2>chi(1-sigma), chi>mu and mass log s; evaluate signs and check stationary equation"
+}
