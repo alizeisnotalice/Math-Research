@@ -1,0 +1,41 @@
+{
+  "registered_hash_checks": [
+    "increment/probe.py",
+    "increment/diagonal_probe.py",
+    "joint/probe.py",
+    "joint/PLAN.md",
+    "joint/calibration.json"
+  ],
+  "replays": [
+    {
+      "script": "increment/rational_audit_probe.py",
+      "same_JSON": true,
+      "joint_MC_resampled": false
+    },
+    {
+      "script": "increment/probe.py",
+      "same_JSON": true,
+      "joint_MC_resampled": false
+    },
+    {
+      "script": "increment/diagonal_probe.py",
+      "same_JSON": true,
+      "joint_MC_resampled": false
+    }
+  ],
+  "joint_saved_CI_checks": {
+    "scope": "Saved-summary arithmetic audit only; no MC; FP inputs not interval certified.",
+    "hash_checks": {
+      "probe.py": true,
+      "PLAN.md": true,
+      "calibration.json": true,
+      "registration.json": true
+    },
+    "CI_family_count": 11112,
+    "alpha_sum": 0.05,
+    "max_CI_recalculation_absolute_difference": 0.0,
+    "confirmed_joint_weak_gain": false
+  },
+  "root_python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "no_new_joint_MC": true
+}

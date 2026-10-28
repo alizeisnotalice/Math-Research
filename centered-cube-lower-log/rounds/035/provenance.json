@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-29",
+  "project_goal_complete": false,
+  "archive_files": {
+    "REPORT.md": "c5e3c13c3ae586893f4ef87c023fe534f3d115f50632f3cc650f7f4b0afc5cd0",
+    "increment/AUDIT.md": "3b6c19003d69c5d507c344a5252d4bb5b7bc767f5bbdfeb53e8311fd4fd32e60",
+    "increment/PROOF.md": "9760739d176e2c0bdb9ee12b7c564b00be65e41f46dcd07fc7b53b50efebc02a",
+    "increment/diagonal_probe.py": "0242d126a3dec109790e4403d3618c35ee1ea02daf8486d04bd484930d27aeb2",
+    "increment/diagonal_registration.json": "b55e2499064f669c8273a1ebbe983013269abb7e6ec2816ee44c9b80c93f3be8",
+    "increment/diagonal_results.json": "3a4bcb439001f984de822698e0fe513432e5ba3903a498efadec40d868f2c085",
+    "increment/probe.py": "396c82491d962a8527da67b757dfb0359638d64ad4617602d2f324e964de0cc4",
+    "increment/rational_audit_probe.py": "20593bc9145ce1c7fcf79011d5f91ad288df34247e52beb4912cd07b42ec6a4d",
+    "increment/rational_audit_results.json": "314992daf3986d2ac041ce42028d5549392fa5b2a8c995ac6e410d80c9255bad",
+    "increment/registration.json": "7e96c1dcfd5a88ec01af5c21f2525191e4cf1a814125541753b125b3ffdc2bb7",
+    "increment/results.json": "c92c2286ab570ac3f4215f7d533bac8ccf5c43d50caab59c99b83bc52f1108d8",
+    "joint/AUDIT.md": "d04315f670375dddce7af223e0c03e79bb5fe9befdab9d18ce2ad243b2a1c94b",
+    "joint/PLAN.md": "43ad40a4baf35c566dbfb92a843b6bd5226a4407e97e09c3e484ba478999ad5f",
+    "joint/REPORT.md": "8ba6b2e7ff98f12dd90a5f9d5206d18fd4fd22eeb2addf577d09d27f92eb12e9",
+    "joint/RESULTS.json": "0c68752cc2b40be2ab34eb4d99388c081da97b013a150871f1d380fe2b2a2947",
+    "joint/audit_saved_checks.json": "d2f41f240d2ba5d53d4f37f6c52e7a54d10508f66f5784fecfcd2ef4686839c2",
+    "joint/audit_saved_checks.py": "e8b5e71af2048ea85c52e86ba19efd9733d18f3932bc6a6f2b380ea93d5f6ea8",
+    "joint/calibration.json": "8062d25fc95a5cca4a7d0817c029f0ab4a64ba7633dd1240d4d2f4c8b5466584",
+    "joint/probe.py": "303f285bc335d27a287ac3e062e6484dd825b487a9334c5280448a3db41ffb55",
+    "joint/registration.json": "05a30ace397eee6560c0c13eb94d2f0b76338e31a5c4eed5e19bd7100767227f",
+    "verification.json": "3d0aa624ef7db30dd54d90ee0a68ec30ecba12e45e8d1b3d25c43350999f4065"
+  },
+  "evidence": "Analytic local-increment theorem and exact rational controls; finite ordinary-float probes and six frozen finite-query weak-profile MC screens. No new C_n/log/polynomial lower bound.",
+  "numerical_environment": {
+    "increment_and_diagonal": "Python3.12.14 NumPy2.3.5",
+    "joint_MC": "Python3.15.0 NumPy2.5.4"
+  },
+  "deduplication": "No __pycache__, query samples, atom arrays, distance arrays, or counts; first_small_control.json omitted because calibration/RESULTS retain controls.",
+  "replay_policy": "Registered primary results never replaced; root replays isolated increment/diagonal diagnostics and exact controls. Joint default audit only reads saved summaries; no new MC.",
+  "limitations": [
+    "Ordinary floating point not interval certified.",
+    "Finite-query upper bands do not bound continuous-L maximal.",
+    "Two-table pointwise gain did not yield a weak-profile improvement.",
+    "Local increment does not pay absolute diagonal/cross errors."
+  ],
+  "prior_round_format_fix": "Round034 root REPORT inline math delimiters and corresponding provenance hash corrected, no frozen evidence changed.",
+  "dependencies": {
+    "../034/random_jitter/PROOF.md": "464cc085ecf7404cd038905eb30b52013932f471039f402436ae0add54dabb6e"
+  },
+  "archive_policy": "Keep compact per-threshold moments in RESULTS.json to independently recompute all11112 CI; no duplicate SUMMARY.json. Archived joint REPORT last paragraph adapted to this necessary-evidence choice and truncation convention clarified."
+}
