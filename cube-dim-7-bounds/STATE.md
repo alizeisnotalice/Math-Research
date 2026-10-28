@@ -1,3 +1,18 @@
+# PAUSED — 2026-10-29 用户要求本轮结束后停止研究并生成论文
+
+研究迭代、上下界搜索及计算均已停止；仅进行已完成结果的论文整理与编辑复核。
+论文采用已接受结果截至 R091（提交 2ec562bf0670e248f090ce8e36285aae2587ae5e），保留 R090 一般固定配比渐近定理与 R089/R091 显式界。
+R092 为已审核局部诊断，无新算子界；R093–R097 均未接受，不纳入论文。
+所有四个研究代理均确认无本任务运行中计算。恢复研究须用户明确指示。
+
+暂停时未完成材料保存在仓库外：
+- R093 作者：`/Users/zhengzhihao/Desktop/T/cube-r078-theory-bernstein-sparse-20261028/cube-dim-7-bounds/upper/round093/bernstein_width/STATUS.md`
+- R093 独审：`/Users/zhengzhihao/Desktop/T/audit/round093/full/PENDING.md`
+- R096：`/Users/zhengzhihao/Desktop/T/r079-threshold-independent-Lu7f9PJg/audit/round096/sharp_variance/STATUS.md`
+- R097：`/tmp/r079-compute-https-20261028/cube-dim-7-bounds/upper/round097/sharp_variance_model/`
+
+## 暂停前状态
+
 # R091 FULL ACCEPT：显式1.1覆盖上界
 
 所有自然log n≥2^33，Cn≤H91<T−1.1n。R089的.9/2^27及旧低域界保留；R090系数1.181387…的limsup结论仍有效且未量化。R092单侧局部引理与条件诊断已主审，无新算子界。R093 Bernstein/新带宽证明与R094/R095较低门槛模型尚未接受。论文不改，下界暂停，七维专项停止。
