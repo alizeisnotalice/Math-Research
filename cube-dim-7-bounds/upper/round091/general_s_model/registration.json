@@ -1,0 +1,107 @@
+{
+  "status": "registered before finite parallel numerical model batch",
+  "utc": "2026-10-28T16:12:47.561359+00:00",
+  "objective": "c>=1.1 with smallest modeled log2 L, new tau complete scalar cost, not a Cn theorem",
+  "workers": 15,
+  "intervals": [
+    {
+      "worker": 0,
+      "s_lo": "75/15",
+      "s_hi": "134/15"
+    },
+    {
+      "worker": 1,
+      "s_lo": "134/15",
+      "s_hi": "193/15"
+    },
+    {
+      "worker": 2,
+      "s_lo": "193/15",
+      "s_hi": "252/15"
+    },
+    {
+      "worker": 3,
+      "s_lo": "252/15",
+      "s_hi": "311/15"
+    },
+    {
+      "worker": 4,
+      "s_lo": "311/15",
+      "s_hi": "370/15"
+    },
+    {
+      "worker": 5,
+      "s_lo": "370/15",
+      "s_hi": "429/15"
+    },
+    {
+      "worker": 6,
+      "s_lo": "429/15",
+      "s_hi": "488/15"
+    },
+    {
+      "worker": 7,
+      "s_lo": "488/15",
+      "s_hi": "547/15"
+    },
+    {
+      "worker": 8,
+      "s_lo": "547/15",
+      "s_hi": "606/15"
+    },
+    {
+      "worker": 9,
+      "s_lo": "606/15",
+      "s_hi": "665/15"
+    },
+    {
+      "worker": 10,
+      "s_lo": "665/15",
+      "s_hi": "724/15"
+    },
+    {
+      "worker": 11,
+      "s_lo": "724/15",
+      "s_hi": "783/15"
+    },
+    {
+      "worker": 12,
+      "s_lo": "783/15",
+      "s_hi": "842/15"
+    },
+    {
+      "worker": 13,
+      "s_lo": "842/15",
+      "s_hi": "901/15"
+    },
+    {
+      "worker": 14,
+      "s_lo": "901/15",
+      "s_hi": "960/15"
+    }
+  ],
+  "worker_budget": "scipy differential_evolution, 6 variables, popsize=7, maxiter=40, polish=false, maximum 1722 evaluations per worker, at most 2000",
+  "variables": "s, powers of 10 for chi-mu, sigma-chi/(1+chi), 1-qmax; fractional delta and gamma positions",
+  "model_constants": {
+    "ell_lower": "1/2",
+    "Q_upper": "log2<1",
+    "J_dev": "2s/rho",
+    "logJ_derivative": "(4s^2+6s+1)/rho",
+    "J1": "s/rho",
+    "J1_derivative": "5s/rho",
+    "J2": "s/rho",
+    "baseline_mean": "4s^2*n/rho^2+4s/rho",
+    "baseline_variance": "16s^2*n/rho^2",
+    "source_variance": "2s^2*x",
+    "source_pin": "1",
+    "target_radius": "<s+1",
+    "source_radius": ">4(s+1)",
+    "e_restriction": "e<1/[2(s+1)]",
+    "target_cap_fraction": "1-1/(4rhi)"
+  },
+  "mass": "trim=1e-7, m midpoint between gamma and log(rhi/rlo), Ret=1-min(.001,(m-gamma)/(4m)), e=min(1e-5,(m Ret-gamma)/(30m),(chi-mu)/20,1/(4(s+1))); m_face halfway between (mu+2d)/(1-e) and chi, d=(chi-mu)/4",
+  "tau": "tau=n exp(-delta L); tau/k <= rhi L^2 exp(-(delta-chi(1-sigma))L); full scalar remainder/n <=1/n+exp(-delta L)+exp(-sigma L)+L exp(-(sigma-delta)L)",
+  "measurement": "15 real processes, ps samples worker aggregate percent and summed RSS; each worker process_time end minus start, one BLAS thread",
+  "stop": "one batch of 15 workers, no replay to fill CPU or memory; no exact certificate until R090 constants frozen",
+  "scope": "conditional exploratory float model, no theorem or all-domain guarantee"
+}
