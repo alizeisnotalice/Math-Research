@@ -1,0 +1,1 @@
+R080 FULL_ACCEPT_INTERNAL。新加权帽补完整定理c5473/20000、L4096；详情见REPORT.md。R081一般s模型与证明仍研究中。
