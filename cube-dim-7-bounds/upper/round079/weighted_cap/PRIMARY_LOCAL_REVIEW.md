@@ -1,0 +1,1 @@
+主代理逐段阅读并接受局部引理：全matching count给nu*n，源pin遗漏至多一项；负pin帽补为空，正pin余坐标由真实inverse product law独立；完整底条capture且逆权>=1，利用bsoft<=theta/G，匹配dq/q积分后theta消去，得capLoss/k<=Mdegree exp[-(nu-1/n)eta*x/(1+eJ)]。此为局部结论，不是新算子定理；新tuple需全tail、tau、质量、能量和全尺度桥另审。

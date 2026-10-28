@@ -1,0 +1,52 @@
+{
+  "status": "R079 fixed candidate registered before exact guard",
+  "original_model_parameters": {
+    "L": "40448/5",
+    "qmax": "11569/12800",
+    "sigma": "25/256",
+    "chi": "63/1280",
+    "hden": 768,
+    "il": 19,
+    "iq": 30,
+    "isigma": 29,
+    "ichi": 29
+  },
+  "chosen_parameters": {
+    "L0": "4096",
+    "s": "3/2",
+    "qmin": "2/3",
+    "qmax": "89/100",
+    "sigma": "11/100",
+    "chi": "51/1000",
+    "hden": 1536,
+    "delta": "1/524288",
+    "eB": "1/524288",
+    "eN": "1/524288",
+    "eT": "1/524288",
+    "eJ": "1/1048576",
+    "eRad": "1/1048576",
+    "eS": "1/1048576",
+    "eD": "1/1048576",
+    "epsA": "1/65536"
+  },
+  "planned_gamma": "291/1000",
+  "planned_final_c": "3/16",
+  "retention": "derive per-face Cantelli from J1/J2 target profiles and true within-face variance, fixed at the new base and extended monotonically",
+  "finite_guard_plan": [
+    "all active geometry",
+    "baseline/count/individual J",
+    "target J1 and J2 typicality",
+    "all q profile transport",
+    "per-face mean/variance and Cantelli",
+    "both cap restrictions",
+    "complete S64 cap/tau tails",
+    "exact log scalar price and complete F remainder",
+    "finite-a same history and all L1/all positive radii"
+  ],
+  "resources": "one Python process; no search, helper import, MATLAB or Git",
+  "source": "/Users/zhengzhihao/Desktop/T/cube-r030-compute/cube-dim-7-bounds/upper/round070/compute/frontier4_archive/frontier4_recheck.json",
+  "source_sha256": "e408db55fdb66aa8c88b747f676a35d4022c15e9ca402a3e0aedbab408a20d50",
+  "scope": "conditional fixed candidate, all gates newly evaluated; no Cn theorem",
+  "created_utc": "2026-10-28T15:03:38.740556+00:00",
+  "batch_result_sha256": "acbe8a9c2f0b8e001bfce012d8017ccedd2e3ba525c648bbe6243a7e1e649575"
+}
