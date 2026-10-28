@@ -1,0 +1,21 @@
+--- original/probe.py:weak_scan
++++ stable_log_ESS/probe.py:weak_scan
+@@ -1,9 +1,12 @@
+ def weak_scan(log_values,log_d,ess_min):
+     order=np.argsort(log_values)[::-1]
+-    v=log_values[order];w=np.exp(-log_d[order])
+-    sums=np.cumsum(w);squares=np.cumsum(w*w)
+-    ess=sums*sums/squares
+-    score=v+np.log(sums/len(w))
+-    ix=int(np.argmax(np.where(ess>=ess_min,score,-np.inf)))
++    v=log_values[order];log_w=-log_d[order]
++    log_sum=np.logaddexp.accumulate(log_w)
++    log_square_sum=np.logaddexp.accumulate(2*log_w)
++    log_ess=2*log_sum-log_square_sum
++    score=v+log_sum-math.log(len(v))
++    selected=log_ess>=math.log(ess_min)-1e-13
++    ix=int(np.argmax(np.where(selected,score,-np.inf)))
+     return {"coefficient":float(np.exp(score[ix])),
+-            "log_threshold":float(v[ix]),"ESS":float(ess[ix]),"min_ESS":ess_min}
++            "log_threshold":float(v[ix]),
++            "ESS":float(np.exp(log_ess[ix])),"min_ESS":ess_min}
