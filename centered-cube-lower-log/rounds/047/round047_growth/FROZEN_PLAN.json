@@ -1,0 +1,55 @@
+{
+  "scope": "Gaussian proxy only; all values frozen before the main experiment",
+  "pilot": {
+    "seed": 470001,
+    "v": 64,
+    "R": 256,
+    "c": 0.5,
+    "N": 20000,
+    "seconds": 0.1010032920021331,
+    "W_at_h30": 0.04128739904136616,
+    "SE": 0.0009275813829731391,
+    "proposal_event_rate": 0.4983,
+    "proposal": "one uniform-anchor tilt; cost pilot only, not pooled with main experiment"
+  },
+  "v": [
+    8,
+    16,
+    32,
+    64
+  ],
+  "R": [
+    1,
+    2,
+    4,
+    16,
+    64,
+    256
+  ],
+  "c": [
+    0,
+    0.25,
+    0.5,
+    0.9
+  ],
+  "samples_per_seed": 24000,
+  "base_seeds": [
+    47030001,
+    47040001
+  ],
+  "proposal_weights": [
+    0.3,
+    0.7
+  ],
+  "proposal_tilts": "0, sqrt(v)",
+  "h_grid": "union of step .5 from -6 to v/2+4, extra {-1,-.5,-.25,-.1,0,.1,.25}, and (v/2-2-logR)+{-4,-3.5,...,4}",
+  "independent_test": "first seed selects h; second seed evaluates this fixed h; combined full profile also retained",
+  "same_threshold_baseline": "h=v/2-2",
+  "fixed_comparison": "analytic single-lognormal global optimum from Mills-ratio root, not sampled grid maximum",
+  "cost_selection": "20k R256 pilot took .101 sec; full 96 configurations two 24k seeds predicted below30sec; no outcome-adaptive grid selection",
+  "version": 2,
+  "revision_reason": "After v1 completed in6.643s, root supplied exact size-biased mixture: uniform-anchor shift sqrt(v) has q/P=S. Replace approximate two-tilt mixture by q=.3P+.7SP for uniform deterministic sample cap10/7.",
+  "previous_frozen_plan_sha256": "6936405b7ac9184fada5b330b413d28fceb9c12d32f67e51808efebc78ae526e",
+  "deterministic_target_cap": "1/.7=10/7 for every h",
+  "same_grid": true
+}
