@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "payload_hash_count": 40,
+  "reference_hash_count": 4,
+  "exact_mirror_frozen_mass_checks": [
+    {
+      "n": 32,
+      "exact_mass": "1",
+      "prior_numerators": [
+        529,
+        0,
+        0,
+        4294966767
+      ],
+      "denominator": 4294967296
+    },
+    {
+      "n": 64,
+      "exact_mass": "1",
+      "prior_numerators": [
+        720720,
+        18446744073708193374,
+        637457,
+        65
+      ],
+      "denominator": 18446744073709551616
+    },
+    {
+      "n": 128,
+      "exact_mass": "1",
+      "prior_numerators": [
+        134635263959980887924629401,
+        14528741704116198382544033,
+        3612234376146483582348504,
+        340282366920785687223334363861878689518
+      ],
+      "denominator": 340282366920938463463374607431768211456
+    }
+  ],
+  "runs": [
+    {
+      "script": "round044_symmetry/probe.py",
+      "matched": true
+    },
+    {
+      "script": "round044_symmetry/joint_probe.py",
+      "matched": true
+    },
+    {
+      "script": "round044_symmetry/joint_k4_probe.py",
+      "matched": true
+    },
+    {
+      "script": "round044_symmetry/scale_budget_probe.py",
+      "matched": true
+    },
+    {
+      "script": "round044_symmetry_audit/checks.py",
+      "matched": true
+    },
+    {
+      "script": "round044_symmetry_audit/JOINT_CHECK.py",
+      "matched": true
+    },
+    {
+      "script": "round044_milp/verify_saved.py",
+      "matched": true
+    },
+    {
+      "script": "round044_milp/greedy_control.py",
+      "matched": true
+    },
+    {
+      "script": "round044_symmetry/witness_probe.py",
+      "matched": true
+    }
+  ],
+  "exact_mirror_kernel_checks": 340,
+  "exact_joint_channel_integrals": 12,
+  "MILP_solver_reexecuted": false,
+  "all_MILP_frozen_test_reexecuted": true,
+  "greedy_control_reexecuted": true,
+  "mirror_model_training_reexecuted": false,
+  "all_mirror_frozen_test_reexecuted": true,
+  "new_independent_samples": 0,
+  "full_high_dimensional_FP_or_continuum_certificate": false,
+  "Cn_log_gain_proved": false,
+  "python": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "seconds": 27.652907848358154
+}

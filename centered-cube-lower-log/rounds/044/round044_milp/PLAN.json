@@ -1,0 +1,78 @@
+{
+  "config": {
+    "K": 2,
+    "R": 4,
+    "dimensions": [
+      32,
+      64,
+      128
+    ],
+    "epsilon": 0.08,
+    "delta": 0.04,
+    "phases": [
+      [
+        0.15,
+        0.35
+      ],
+      [
+        0.35,
+        0.85
+      ],
+      [
+        0.65,
+        0.15
+      ],
+      [
+        0.85,
+        0.65
+      ]
+    ],
+    "lengths": [
+      0.25,
+      0.4,
+      0.6,
+      0.8,
+      1.0,
+      1.04,
+      1.08,
+      1.15,
+      1.25,
+      1.4,
+      1.6,
+      1.8,
+      2.0,
+      2.1,
+      2.3,
+      2.5,
+      2.7,
+      2.9
+    ],
+    "thresholds": [
+      1.5,
+      2.0,
+      3.0
+    ],
+    "train_N": 128,
+    "test_N": 8192,
+    "batch": 256,
+    "train_seed": 202610294410,
+    "test_seed": 202610294411,
+    "temperatures": [
+      0.2,
+      0.07
+    ],
+    "sweeps": 3,
+    "guard": 1e-09,
+    "alpha_total": 0.05,
+    "n": 32,
+    "milp_margin": 1e-07,
+    "time_limit": 30.0
+  },
+  "script_SHA256": "df4485258d80318fa8436bc3de95295d31a45c09f1f187243773c8932f1e31aa",
+  "source_path": "/Users/zhengzhihao/Desktop/T/output/hl_cube_log_iteration_20261029/round043_binary/probe.py",
+  "source_SHA256": "be5b14fb3fa059664c8da53d4cd0a4060f1bd3d482faeb1e0a1299621d85cc63",
+  "cost_SHA256": "9f65a05e41451868ac304de28b17de64776f69192f3e2a31136ecf5e12ddaa71",
+  "objective": "Maximize train query witnesses over shared onehot count selector. Select frozen lambda and rounded selector by recomputed guarded train weak, not solver claimed objective.",
+  "test_scope": "Ideal iid uniform floating point exploration; no outward intervals or query-cell certificate.",
+  "formal_train_after_cost": true
+}
