@@ -1,0 +1,61 @@
+{
+  "old_plan_SHA256": "9c7b0226aa24377410653aca89473f58fbae3aaf61ab08443cf1d75c3deeccff",
+  "input_SHA256": {
+    "R4_RESULTS.json": "a36aa3a9be1ea36a633174163076a7fb7497476205281a1b22a295dbf0a279d1",
+    "R4_paired.npz": "a85a9cf002b9d5be606c97f0e0882db41b164f76da184db24e23129311c5fe95",
+    "R8_RESULTS.json": "0dac9fe6c3ca44bcff85e50d43725349005b3f5e632841c62a8832e0bfc4248d",
+    "R8_paired.npz": "fe6048519a771e19032338df6db657bd783eded6a48e62cf0131cca06d698cca",
+    "R16_RESULTS.json": "bab208c0e845c5a0d8613c162857e99b607ea6a70abda966687059f9d7fcc2b5",
+    "R16_paired.npz": "13227cae79a5b9b1c6b73159ba725a271f3bd20b655fdae16acc805bcc51c216",
+    "R32_RESULTS.json": "61d5c0f178fd8c56be5d58bb50564fb13bdc072cfe2e705231fd1cfb6cd3dab9",
+    "R32_paired.npz": "828f7265398fca856c73bce10108d42167c70498142386d691bae7f25a9384c7"
+  },
+  "script_SHA256": "c715a3b5ea19cafc280cebb162483babf9266e9221d54ba51ea5ca08959fb106",
+  "models": [
+    "fixed0",
+    "joint",
+    "prior"
+  ],
+  "R": [
+    4,
+    8,
+    16,
+    32
+  ],
+  "thresholds": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0,
+    5.5,
+    6.0,
+    6.5,
+    7.0,
+    7.5,
+    8.0,
+    8.5,
+    9.0,
+    9.5,
+    10.0
+  ],
+  "map": "recover B=x*exp(logD-h), preserve zero, sharpen conditional B by3B/(1+2B), multiply back by exp(h-logD)",
+  "variance_factor": "1/3 fixed analytically from uniform-bin Lipschitz proof; no c optimization",
+  "CI_family_reserved": 1008,
+  "functions_used_now": 756,
+  "alpha_each": 4.96031746031746e-05,
+  "alpha_total_budget": 0.05,
+  "reserved_upper_functions": 252,
+  "upper_status": "unchanged round40 upper; a new upper needs separate proof and old-sample per-scale reconstruction",
+  "posthoc_disclosure": "Round40 summaries and a descriptive hypothetical-c1/3 preview had been seen; not a blind or independent confirmation.",
+  "sample_policy": "No new samples, no seed changes, no source/kernel reconstruction",
+  "FP_qualification": "Ordinary FP and original mean/BE premises, no outward certification",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "numpy": "2.3.5"
+}

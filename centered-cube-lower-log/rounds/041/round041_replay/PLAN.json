@@ -1,0 +1,60 @@
+{
+  "old_plan_SHA256": "9c7b0226aa24377410653aca89473f58fbae3aaf61ab08443cf1d75c3deeccff",
+  "postprocessing_plan_SHA256": "eb601fa340fda0bb73207ec1a156b294e616bb9627ae840d690fed7b60d395b3",
+  "base_driver_SHA256": "9ec993e2e25e4415eb5341f90b9dec604efc0cc63deca547c254ecbae94e52b4",
+  "observer_SHA256": "eb26cc4bf24a46324761d25dd6461ee5acf059c3f4eda717e334d6f66871b3b2",
+  "upper_math_SHA256": "6e95faa0e93ebd356c1be5148d319a8492be095b737a79af5b698cc54b5ee24b",
+  "MCD_proof_SHA256": "96b410a41b2b4d26b19d3e140961faaf1d43eb86f7e99c30e046571e60ec8b8d",
+  "variance_factor": "1/3",
+  "source_r0": "1/1000000",
+  "C_log_bound": 4.05,
+  "new_upper": "per-scale min of old Markov/Cantelli, variance/3 Cantelli, component-union McDiarmid; then same233-scale union",
+  "targets": {
+    "R": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "models": [
+      "fixed0",
+      "joint",
+      "prior"
+    ],
+    "h": [
+      0.0,
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0,
+      4.5,
+      5.0,
+      5.5,
+      6.0,
+      6.5,
+      7.0,
+      7.5,
+      8.0,
+      8.5,
+      9.0,
+      9.5,
+      10.0
+    ]
+  },
+  "budget": "1008 reserved one-sided functions across old/sharp lower and old/new upper; source-only old caps retained",
+  "observer": "Only feature max-r checks and bounds side outputs; no writes/mutations to stats or returned old bounds; no added RNG calls",
+  "acceptance": "Exact count, sampled-anchor and source-statistic stream hashes, plus old contribution replay checks",
+  "posthoc_disclosure": "Same previously observed round40 sample; diagnostic reconstruction, no independent confirmation",
+  "FP_qualification": "Original mean/BE/FP qualifications persist; this is not a finite C_n certificate",
+  "micro_checks": {
+    "zero_variance_gap": true,
+    "strict_threshold_boundary": true,
+    "upper_chain": true
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "numpy": "2.3.5"
+}
