@@ -45,7 +45,7 @@ Tauberian 常数。证明其在超临界区精确等于线性常数的参数复�
 \(C_n(1-t)=1+2^nt+o(t)\)。当 \(n\ge2\) 时，
 \(t^{1+1/n}\) 尺度归一化余项的下、上极限位于
 \([-n2^{n+1},0]\)。进一步证明多线性一阶渐近关于重数一致，
-并给出二阶尺度与条件性高阶系数的传递。上述区间尚不能确定真实二阶系数。
+并给出二阶尺度与条件性高阶系数的传递。另证明任意孔形、尺度和有限周期排列下，捕获本孔且避邻的构造仍受原下包络限制。上述结果尚不能确定真实二阶系数。
 \end{abstract}
 
 \section{引言}
@@ -555,6 +555,92 @@ Besicovitch 交叠常数联系起来，并以局部离散化把一般测度约�
 下界趋于 \(-n2^{n+1}\)，上界为
 \(2^nt^{1-1/n}/(1-t)\to0\)，即得 \eqref{eq:bracket}。
 \end{proof}
+
+% Round 002 mechanism results for integration into the main paper.
+% These are restricted-model statements, not upper bounds for the unrestricted C_n.
+\subsection{避邻孔构造的体积限制}
+\label{model:nocross}
+
+本节只处理有明确几何约束的周期孔模型。设 $\Lambda\subset\mathbb R^n$
+为满秩晶格，$P$ 为基本胞，$|P|=V$。给定有限个有界可测孔
+$A_1,\ldots,A_N$，其所有晶格平移两两几乎不交。令
+$m_i=|A_i|>0$、$M=\sum_i m_i<V$，并记
+\[
+ D=\bigcup_{\substack{1\le i\le N\\\lambda\in\Lambda}}(A_i+\lambda),\qquad E=\mathbb R^n\setminus D.
+\]
+孔可以跨越基本胞边界。给定已填部分 $B_i\subset A_i$，记 $b_i=|B_i|$；
+允许 $B_i=\varnothing$。假设对几乎每个 $x\in B_i$ 存在 $r_x>0$，使
+\begin{equation}\label{eq:nocross-witness}
+ |Q(x,r_x)\cap(D\setminus A_i)|=0,\qquad
+ |Q(x,r_x)\cap A_i|\ge\theta m_i,\qquad
+ |Q(x,r_x)\cap D|<t(2r_x)^n,
+\end{equation}
+其中 $0<\theta\le1$；对平移孔作相同约定。取
+$v=(t/\theta)^{1/n}<1/2$，并令
+\[
+ L_n(s)=\left[1-\left(\frac{2s^{1/n}}{1+2s^{1/n}}\right)^n\right]^{-1}.
+\]
+
+\begin{proposition}[避邻整孔机制的上限]
+在上述假设下，
+\begin{equation}\label{eq:nocross-bound}
+ 1+\frac{\sum_i b_i}{V-M}\le L_n(t/\theta).
+\end{equation}
+该结论只约束满足 \eqref{eq:nocross-witness} 的受限模型，不能作为无约束
+线性 Tauberian 常数 $C_n(1-t)$ 的上界。
+\end{proposition}
+\begin{proof}
+只保留各孔及 $B_i$ 中的 Lebesgue 密度点，并去掉没有见证的零测集。
+由捕获质量和最后一个不等式，若 $b_i>0$，则每个 $x\in B_i$ 的见证半径
+满足
+\[
+ r_x>R_i:=\frac{m_i^{1/n}}{2v}.
+\]
+若 $y$ 是另一孔的密度点且 $y\in Q(x,r_x)^\circ$，则 $y$ 的密度性质
+迫使 $Q(x,r_x)\cap(D\setminus A_i)$ 有正测度，矛盾。因此
+$\|x-y\|_\infty\ge r_x>R_i$。交换两点角色可得，对不同周期孔中的
+已填密度点 $x\in B_i+\lambda$、$y\in B_j+\mu$，
+\begin{equation}\label{eq:nocross-separation}
+ \|x-y\|_\infty>\max(R_i,R_j).
+\end{equation}
+
+对 $b_i>0$ 置 $S_i=B_i+(-R_i/2,R_i/2)^n$。由
+\eqref{eq:nocross-separation}，任意两个不同周期副本 $S_i+\lambda$、
+$S_j+\mu$ 不交：若有交点，相应两已填点的距离严格小于
+$(R_i+R_j)/2\le\max(R_i,R_j)$。
+未填孔 $A_j+\lambda$ 也几乎不交于这些 $S_i+\mu$；否则其密度点会落在
+某个 $S_i+\mu$ 中，与距离至少 $R_i$ 矛盾。对任意有界可测集 $S$，周期计数恒等式
+\[
+ \int_P\sum_{\lambda\in\Lambda}\ind_{S+\lambda}(z)\,dz=|S|
+\]
+成立，故不论孔或膨胀集是否跨胞，均有
+\begin{equation}\label{eq:nocross-volume}
+ \sum_{b_i>0}|S_i|+\sum_{b_i=0}m_i\le V.
+\end{equation}
+
+对 $b_i>0$，Brunn--Minkowski 不等式给出
+$|S_i|^{1/n}\ge b_i^{1/n}+R_i$。令 $p_i=b_i/m_i\in(0,1]$、
+$c=(2v)^{-1}>1$，于是
+\[
+ |S_i|\ge m_i(p_i^{1/n}+c)^n=:m_i a(p_i).
+\]
+令 $z=p^{1/n}$。函数 $F(z)=z^n/((z+c)^n-1)$ 在 $(0,1]$ 递增，因为
+\[
+ F'(z)=\frac{nz^{n-1}[c(z+c)^{n-1}-1]}{[(z+c)^n-1]^2}>0.
+\]
+故 $p/(a(p)-1)=F(z)\le\kappa$，其中
+\[
+ \kappa=F(1)=\frac1{(1+c)^n-1}=L_n(t/\theta)-1.
+\]
+由 \eqref{eq:nocross-volume}，
+\[
+ \sum_i b_i\le\kappa\sum_{b_i>0}m_i(a(p_i)-1)
+ \le\kappa(V-M),
+\]
+即得 \eqref{eq:nocross-bound}。空的 $B_i$ 在 \eqref{eq:nocross-volume}
+中直接计入 $m_i$，没有对空集使用 Brunn--Minkowski 下界。
+\end{proof}
+
 
 \section{应用}
 

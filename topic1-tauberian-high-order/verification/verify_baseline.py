@@ -2,7 +2,7 @@
 """Exact formal-series verification; all coefficients are fractions, x=t^(1/n)."""
 from fractions import Fraction as F
 from math import comb
-import json, pathlib, time
+import json, time
 
 def mul(a,b,N):
  c=[F(0)]*(N+1)
@@ -56,6 +56,5 @@ def main():
    c=composite(n,m,N)
    assert c[2*n] == d[2*n]+F(2**n*(m-1),2*m)
  out={'variable':'x=t^(1/n), or x=epsilon^(1/n) for composition','n_values':[1,2,3,10],'m_values':[1,2,3,10],'series':results,'seconds':time.time()-start,'exact':True}
- pathlib.Path(__file__).with_name('baseline_results.json').write_text(json.dumps(out,indent=2)+'\n')
  print(json.dumps(out,indent=2))
 if __name__=='__main__': main()
