@@ -1,0 +1,48 @@
+{
+  "seed": 202610290381,
+  "candidate_N": [
+    128,
+    64
+  ],
+  "batch": 16,
+  "N_choice": "pure matrix cost:128 if predicted<=120sec else64 if<=180sec else abort",
+  "peak_RSS_limit_bytes": 2000000000,
+  "log_thresholds": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0,
+    5.5,
+    6.0,
+    6.5,
+    7.0,
+    7.5,
+    8.0,
+    8.5,
+    9.0,
+    9.5,
+    10.0
+  ],
+  "models": [
+    "fixed0",
+    "fixed1",
+    "fixed2",
+    "fixed3",
+    "joint2",
+    "joint4",
+    "prior2",
+    "prior4"
+  ],
+  "mean_method": "true positive-polynomial conditional mean, PB BE enclosures; parameter error corners",
+  "floating_qualification": "analytic midpoint error plus empirical FP guard only; no interval numerical certificate",
+  "script_SHA256": "8532a17feb46c9802624f51e703fed44e466ebf74850994ca0a9b8561e2f719b",
+  "source_SHA256": "85c592ac80d54b376a43038af7395cfc757482b4851b996ffe4d72be2a2fa12d",
+  "builder_SHA256": "22fc83d8f5fc02cc7bbc05a662493d2b561cb2c5b73f73874707efce9300985f"
+}
