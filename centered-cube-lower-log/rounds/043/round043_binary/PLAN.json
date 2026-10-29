@@ -1,0 +1,83 @@
+{
+  "config": {
+    "K": 2,
+    "R": 4,
+    "dimensions": [
+      32,
+      64,
+      128
+    ],
+    "epsilon": 0.08,
+    "delta": 0.04,
+    "phases": [
+      [
+        0.15,
+        0.35
+      ],
+      [
+        0.35,
+        0.85
+      ],
+      [
+        0.65,
+        0.15
+      ],
+      [
+        0.85,
+        0.65
+      ]
+    ],
+    "lengths": [
+      0.25,
+      0.4,
+      0.6,
+      0.8,
+      1.0,
+      1.04,
+      1.08,
+      1.15,
+      1.25,
+      1.4,
+      1.6,
+      1.8,
+      2.0,
+      2.1,
+      2.3,
+      2.5,
+      2.7,
+      2.9
+    ],
+    "thresholds": [
+      1.05,
+      1.25,
+      1.5,
+      2.0,
+      3.0,
+      5.0,
+      8.0
+    ],
+    "train_N": 512,
+    "test_N": 8192,
+    "batch": 256,
+    "train_seed": 202610294310,
+    "test_seed": 202610294311,
+    "temperatures": [
+      0.2,
+      0.07
+    ],
+    "sweeps": 3,
+    "guard": 1e-09,
+    "alpha_total": 0.05
+  },
+  "script_SHA256": "be5b14fb3fa059664c8da53d4cd0a4060f1bd3d482faeb1e0a1299621d85cc63",
+  "scope": "Uniform pilot; all lambda > 1. CP intervals only ideal iid point-query Bernoulli; no interval FP or cell certificate. No Cn growth claim.",
+  "names": [
+    "gated",
+    "actual_prior",
+    "fixed0",
+    "fixed1",
+    "fixed2",
+    "fixed3"
+  ],
+  "selection": "largest guarded training weak among frozen threshold list; deterministic smooth coordinate search"
+}

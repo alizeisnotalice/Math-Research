@@ -1,0 +1,406 @@
+{
+  "config": {
+    "K": 2,
+    "R": 2,
+    "dimensions": [
+      32,
+      64,
+      128
+    ],
+    "epsilon": 0.08,
+    "delta": 0.04,
+    "phases": [
+      [
+        0.15,
+        0.35
+      ],
+      [
+        0.35,
+        0.85
+      ]
+    ],
+    "lengths": [
+      0.25,
+      0.4,
+      0.6,
+      0.8,
+      1.0,
+      1.04,
+      1.08,
+      1.15,
+      1.25,
+      1.4,
+      1.6,
+      1.8,
+      2.0,
+      2.1,
+      2.3,
+      2.5,
+      2.7,
+      2.9
+    ],
+    "thresholds": [
+      1.05,
+      1.25,
+      1.5,
+      2.0,
+      3.0,
+      5.0,
+      8.0
+    ],
+    "train_N": 512,
+    "test_N": 8192,
+    "batch": 256,
+    "train_seed": 202610294320,
+    "test_seed": 202610294321,
+    "temperatures": [
+      0.2,
+      0.07
+    ],
+    "sweeps": 3,
+    "guard": 1e-09,
+    "alpha_total": 0.05
+  },
+  "results": [
+    {
+      "n": 32,
+      "lambda_": 1.25,
+      "rows": [
+        {
+          "model": "balanced_gate",
+          "k_guard": 7234,
+          "k_raw": 7234,
+          "near_guard": 0,
+          "weak": 1.10382080078125,
+          "ideal_iid_CP_weak_CI": [
+            1.0893851083303674,
+            1.1174412889329868
+          ],
+          "largest_observed": 2160.794319243202
+        },
+        {
+          "model": "prior_half",
+          "k_guard": 7143,
+          "k_raw": 7143,
+          "near_guard": 0,
+          "weak": 1.089935302734375,
+          "ideal_iid_CP_weak_CI": [
+            1.0749564757781236,
+            1.1041227917119898
+          ],
+          "largest_observed": 2028.772098116884
+        },
+        {
+          "model": "fixed0",
+          "k_guard": 7888,
+          "k_raw": 7888,
+          "near_guard": 0,
+          "weak": 1.20361328125,
+          "ideal_iid_CP_weak_CI": [
+            1.1948289947620752,
+            1.2114074035458076
+          ],
+          "largest_observed": 753.292365694834
+        },
+        {
+          "model": "fixed1",
+          "k_guard": 7421,
+          "k_raw": 7421,
+          "near_guard": 0,
+          "weak": 1.132354736328125,
+          "ideal_iid_CP_weak_CI": [
+            1.119168187676442,
+            1.144676855364252
+          ],
+          "largest_observed": 4056.1267593727994
+        }
+      ],
+      "prior_exact": [
+        "1/2",
+        "1/2"
+      ],
+      "gate_minus_prior": 0.013885498046875,
+      "gate_minus_bestfixed": -0.09979248046875,
+      "near_examples": [],
+      "DP_partition_error": 2.127266048946177e-15,
+      "all_thresholds_diagnostic": {
+        "thresholds": [
+          1.05,
+          1.25,
+          1.5,
+          2.0,
+          3.0,
+          5.0,
+          8.0
+        ],
+        "counts": [
+          [
+            8118,
+            7234,
+            5644,
+            3338,
+            1563,
+            627,
+            300
+          ],
+          [
+            8103,
+            7143,
+            5465,
+            3260,
+            1560,
+            636,
+            319
+          ],
+          [
+            8178,
+            7888,
+            6877,
+            4693,
+            2338,
+            903,
+            425
+          ],
+          [
+            8083,
+            7421,
+            6107,
+            3988,
+            2034,
+            878,
+            406
+          ]
+        ]
+      },
+      "seconds": 0.8027410507202148
+    },
+    {
+      "n": 64,
+      "lambda_": 1.5,
+      "rows": [
+        {
+          "model": "balanced_gate",
+          "k_guard": 6027,
+          "k_raw": 6027,
+          "near_guard": 0,
+          "weak": 1.10357666015625,
+          "ideal_iid_CP_weak_CI": [
+            1.0802158425707056,
+            1.1263367274810525
+          ],
+          "largest_observed": 822.6313247759443
+        },
+        {
+          "model": "prior_half",
+          "k_guard": 5902,
+          "k_raw": 5902,
+          "near_guard": 0,
+          "weak": 1.0806884765625,
+          "ideal_iid_CP_weak_CI": [
+            1.0569397768163291,
+            1.1038753684721152
+          ],
+          "largest_observed": 448.1742085739213
+        },
+        {
+          "model": "fixed0",
+          "k_guard": 7105,
+          "k_raw": 7105,
+          "near_guard": 0,
+          "weak": 1.30096435546875,
+          "ideal_iid_CP_weak_CI": [
+            1.2827306214095064,
+            1.3182604277997882
+          ],
+          "largest_observed": 896.3484171478418
+        },
+        {
+          "model": "fixed1",
+          "k_guard": 6247,
+          "k_raw": 6247,
+          "near_guard": 0,
+          "weak": 1.14385986328125,
+          "ideal_iid_CP_weak_CI": [
+            1.1212689082533238,
+            1.165781490705907
+          ],
+          "largest_observed": 618.5499683029972
+        }
+      ],
+      "prior_exact": [
+        "1/2",
+        "1/2"
+      ],
+      "gate_minus_prior": 0.02288818359375,
+      "gate_minus_bestfixed": -0.1973876953125,
+      "near_examples": [],
+      "DP_partition_error": 3.677856980963505e-15,
+      "all_thresholds_diagnostic": {
+        "thresholds": [
+          1.05,
+          1.25,
+          1.5,
+          2.0,
+          3.0,
+          5.0,
+          8.0
+        ],
+        "counts": [
+          [
+            8015,
+            7261,
+            6027,
+            3968,
+            2057,
+            899,
+            445
+          ],
+          [
+            7996,
+            7209,
+            5902,
+            3902,
+            2018,
+            898,
+            449
+          ],
+          [
+            8134,
+            7847,
+            7105,
+            5241,
+            2875,
+            1254,
+            588
+          ],
+          [
+            7922,
+            7289,
+            6247,
+            4422,
+            2508,
+            1221,
+            598
+          ]
+        ]
+      },
+      "seconds": 1.991973876953125
+    },
+    {
+      "n": 128,
+      "lambda_": 1.5,
+      "rows": [
+        {
+          "model": "balanced_gate",
+          "k_guard": 6069,
+          "k_raw": 6069,
+          "near_guard": 0,
+          "weak": 1.11126708984375,
+          "ideal_iid_CP_weak_CI": [
+            1.08804443932098,
+            1.1338759021457765
+          ],
+          "largest_observed": 1792.8447501877747
+        },
+        {
+          "model": "prior_half",
+          "k_guard": 5964,
+          "k_raw": 5964,
+          "near_guard": 0,
+          "weak": 1.092041015625,
+          "ideal_iid_CP_weak_CI": [
+            1.0684804057565893,
+            1.1150205039762477
+          ],
+          "largest_observed": 1950.2202042611716
+        },
+        {
+          "model": "fixed0",
+          "k_guard": 6958,
+          "k_raw": 6958,
+          "near_guard": 0,
+          "weak": 1.2740478515625,
+          "ideal_iid_CP_weak_CI": [
+            1.2548765094430556,
+            1.292327665711141
+          ],
+          "largest_observed": 1413.404416012617
+        },
+        {
+          "model": "fixed1",
+          "k_guard": 5933,
+          "k_raw": 5933,
+          "near_guard": 0,
+          "weak": 1.08636474609375,
+          "ideal_iid_CP_weak_CI": [
+            1.0627090472701857,
+            1.10944898065737
+          ],
+          "largest_observed": 3899.7218831701216
+        }
+      ],
+      "prior_exact": [
+        "1/2",
+        "1/2"
+      ],
+      "gate_minus_prior": 0.01922607421875,
+      "gate_minus_bestfixed": -0.16278076171875,
+      "near_examples": [],
+      "DP_partition_error": 6.5595926839246336e-15,
+      "all_thresholds_diagnostic": {
+        "thresholds": [
+          1.05,
+          1.25,
+          1.5,
+          2.0,
+          3.0,
+          5.0,
+          8.0
+        ],
+        "counts": [
+          [
+            7719,
+            7037,
+            6069,
+            4407,
+            2503,
+            1183,
+            633
+          ],
+          [
+            7688,
+            6985,
+            5964,
+            4348,
+            2492,
+            1171,
+            610
+          ],
+          [
+            7981,
+            7602,
+            6958,
+            5495,
+            3468,
+            1667,
+            824
+          ],
+          [
+            7463,
+            6781,
+            5933,
+            4506,
+            2830,
+            1463,
+            761
+          ]
+        ]
+      },
+      "seconds": 6.038372039794922
+    }
+  ],
+  "seconds": 8.834090232849121,
+  "full_interval_certified": false,
+  "Cn_gain_proved": false,
+  "CP_scope": "Ideal iid finite floating-classifier Bernoulli probability; alpha=.05/60 directions for 3 n times 10 models including primary, but primary published bounds use their original .05/36. No continuum claim."
+}

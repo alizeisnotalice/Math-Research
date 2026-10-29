@@ -1,0 +1,68 @@
+{
+  "config": {
+    "K": 2,
+    "R": 2,
+    "dimensions": [
+      32,
+      64,
+      128
+    ],
+    "epsilon": 0.08,
+    "delta": 0.04,
+    "phases": [
+      [
+        0.15,
+        0.35
+      ],
+      [
+        0.35,
+        0.85
+      ]
+    ],
+    "lengths": [
+      0.25,
+      0.4,
+      0.6,
+      0.8,
+      1.0,
+      1.04,
+      1.08,
+      1.15,
+      1.25,
+      1.4,
+      1.6,
+      1.8,
+      2.0,
+      2.1,
+      2.3,
+      2.5,
+      2.7,
+      2.9
+    ],
+    "thresholds": [
+      1.05,
+      1.25,
+      1.5,
+      2.0,
+      3.0,
+      5.0,
+      8.0
+    ],
+    "train_N": 512,
+    "test_N": 8192,
+    "batch": 256,
+    "train_seed": 202610294320,
+    "test_seed": 202610294321,
+    "temperatures": [
+      0.2,
+      0.07
+    ],
+    "sweeps": 3,
+    "guard": 1e-09,
+    "alpha_total": 0.05
+  },
+  "script_SHA256": "32e45b6f0c67635e77cdfbb8ce7df17a40203ac8029597632b96d2cadc4b60f7",
+  "parent_probe_SHA256": "be5b14fb3fa059664c8da53d4cd0a4060f1bd3d482faeb1e0a1299621d85cc63",
+  "constraint": "For k<n/2 choose b(k), at n-k choose 1-b(k); at midpoint soft weights=(1/2,1/2). Binomial symmetry gives prior=(1/2,1/2) exactly.",
+  "scope": "Added after primary collapse observed. New independent train/test seeds; no test-guided retuning. No interval/cell certificate."
+}

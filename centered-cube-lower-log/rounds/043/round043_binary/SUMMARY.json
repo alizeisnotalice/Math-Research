@@ -1,0 +1,596 @@
+{
+  "config": {
+    "K": 2,
+    "R": 4,
+    "dimensions": [
+      32,
+      64,
+      128
+    ],
+    "epsilon": 0.08,
+    "delta": 0.04,
+    "phases": [
+      [
+        0.15,
+        0.35
+      ],
+      [
+        0.35,
+        0.85
+      ],
+      [
+        0.65,
+        0.15
+      ],
+      [
+        0.85,
+        0.65
+      ]
+    ],
+    "lengths": [
+      0.25,
+      0.4,
+      0.6,
+      0.8,
+      1.0,
+      1.04,
+      1.08,
+      1.15,
+      1.25,
+      1.4,
+      1.6,
+      1.8,
+      2.0,
+      2.1,
+      2.3,
+      2.5,
+      2.7,
+      2.9
+    ],
+    "thresholds": [
+      1.05,
+      1.25,
+      1.5,
+      2.0,
+      3.0,
+      5.0,
+      8.0
+    ],
+    "train_N": 512,
+    "test_N": 8192,
+    "batch": 256,
+    "train_seed": 202610294310,
+    "test_seed": 202610294311,
+    "temperatures": [
+      0.2,
+      0.07
+    ],
+    "sweeps": 3,
+    "guard": 1e-09,
+    "alpha_total": 0.05
+  },
+  "results": [
+    {
+      "n": 32,
+      "lambda_": 1.5,
+      "rows": [
+        {
+          "model": "gated",
+          "k_guard": 6881,
+          "k_raw": 6881,
+          "near_guard": 0,
+          "weak": 1.25994873046875,
+          "ideal_iid_CP_weak_CI": [
+            1.241289830380667,
+            1.2778181893788059
+          ],
+          "largest_observed": 406127.58959546743,
+          "mean_max": 53.87662357264664
+        },
+        {
+          "model": "actual_prior",
+          "k_guard": 6881,
+          "k_raw": 6881,
+          "near_guard": 0,
+          "weak": 1.25994873046875,
+          "ideal_iid_CP_weak_CI": [
+            1.241289830380667,
+            1.2778181893788059
+          ],
+          "largest_observed": 406127.5895954678,
+          "mean_max": 53.876623572646686
+        },
+        {
+          "model": "fixed0",
+          "k_guard": 6765,
+          "k_raw": 6765,
+          "near_guard": 0,
+          "weak": 1.23870849609375,
+          "ideal_iid_CP_weak_CI": [
+            1.2194400137796195,
+            1.2572205927512128
+          ],
+          "largest_observed": 753.2923656948332,
+          "mean_max": 4.163839302440131
+        },
+        {
+          "model": "fixed1",
+          "k_guard": 6079,
+          "k_raw": 6079,
+          "near_guard": 0,
+          "weak": 1.11309814453125,
+          "ideal_iid_CP_weak_CI": [
+            1.0910427740311293,
+            1.134592039653815
+          ],
+          "largest_observed": 491.5817134318827,
+          "mean_max": 3.3611146724090046
+        },
+        {
+          "model": "fixed2",
+          "k_guard": 6164,
+          "k_raw": 6164,
+          "near_guard": 0,
+          "weak": 1.128662109375,
+          "ideal_iid_CP_weak_CI": [
+            1.1068871729649503,
+            1.1498514565660456
+          ],
+          "largest_observed": 4212.862220164222,
+          "mean_max": 4.0998327347491355
+        },
+        {
+          "model": "fixed3",
+          "k_guard": 6881,
+          "k_raw": 6881,
+          "near_guard": 0,
+          "weak": 1.25994873046875,
+          "ideal_iid_CP_weak_CI": [
+            1.241289830380667,
+            1.2778181893788059
+          ],
+          "largest_observed": 406127.5895954678,
+          "mean_max": 53.876623572646686
+        }
+      ],
+      "guard": 1e-09,
+      "exact_binomial_prior_numerators": [
+        0,
+        0,
+        0,
+        4294967296
+      ],
+      "prior_mass": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "best_fixed": 1.25994873046875,
+      "gate_minus_bestfixed": 0.0,
+      "gate_minus_prior": 0.0,
+      "all_thresholds_diagnostic": {
+        "thresholds": [
+          1.05,
+          1.25,
+          1.5,
+          2.0,
+          3.0,
+          5.0,
+          8.0
+        ],
+        "successes": [
+          [
+            8181,
+            7873,
+            6881,
+            4671,
+            2296,
+            922,
+            426
+          ],
+          [
+            8181,
+            7873,
+            6881,
+            4671,
+            2296,
+            922,
+            426
+          ],
+          [
+            8182,
+            7848,
+            6765,
+            4523,
+            2255,
+            886,
+            400
+          ],
+          [
+            8084,
+            7393,
+            6079,
+            3964,
+            2055,
+            881,
+            386
+          ],
+          [
+            8091,
+            7443,
+            6164,
+            4021,
+            2095,
+            890,
+            373
+          ],
+          [
+            8181,
+            7873,
+            6881,
+            4671,
+            2296,
+            922,
+            426
+          ]
+        ],
+        "scope": "postfreeze diagnostic; no selection claim or simultaneous CI"
+      },
+      "DP_partition_error": 2.6019042857889784e-15,
+      "near_examples": [],
+      "seconds": 1.62253999710083,
+      "frozen_SHA256": "40a73a320fab574e92d8ce558300b8388f964574a3866c0d33dcd3d15b566156"
+    },
+    {
+      "n": 64,
+      "lambda_": 1.5,
+      "rows": [
+        {
+          "model": "gated",
+          "k_guard": 7068,
+          "k_raw": 7068,
+          "near_guard": 0,
+          "weak": 1.294189453125,
+          "ideal_iid_CP_weak_CI": [
+            1.2766220188762953,
+            1.3109140580883463
+          ],
+          "largest_observed": 797.9943445120389,
+          "mean_max": 4.3329434157233955
+        },
+        {
+          "model": "actual_prior",
+          "k_guard": 7068,
+          "k_raw": 7068,
+          "near_guard": 0,
+          "weak": 1.294189453125,
+          "ideal_iid_CP_weak_CI": [
+            1.2766220188762953,
+            1.3109140580883463
+          ],
+          "largest_observed": 797.9943445119853,
+          "mean_max": 4.332943415723321
+        },
+        {
+          "model": "fixed0",
+          "k_guard": 7068,
+          "k_raw": 7068,
+          "near_guard": 0,
+          "weak": 1.294189453125,
+          "ideal_iid_CP_weak_CI": [
+            1.2766220188762953,
+            1.3109140580883463
+          ],
+          "largest_observed": 797.9943445120402,
+          "mean_max": 4.3329434157235776
+        },
+        {
+          "model": "fixed1",
+          "k_guard": 6167,
+          "k_raw": 6167,
+          "near_guard": 0,
+          "weak": 1.12921142578125,
+          "ideal_iid_CP_weak_CI": [
+            1.107446685974967,
+            1.150389725150453
+          ],
+          "largest_observed": 6831.629034115773,
+          "mean_max": 4.537343625428829
+        },
+        {
+          "model": "fixed2",
+          "k_guard": 6232,
+          "k_raw": 6232,
+          "near_guard": 0,
+          "weak": 1.14111328125,
+          "ideal_iid_CP_weak_CI": [
+            1.1195746004343854,
+            1.162047076041991
+          ],
+          "largest_observed": 386.44898429826895,
+          "mean_max": 3.661153305011283
+        },
+        {
+          "model": "fixed3",
+          "k_guard": 7089,
+          "k_raw": 7089,
+          "near_guard": 0,
+          "weak": 1.29803466796875,
+          "ideal_iid_CP_weak_CI": [
+            1.2805991354190223,
+            1.3146213662116102
+          ],
+          "largest_observed": 5431.3113824937345,
+          "mean_max": 4.946662785757956
+        }
+      ],
+      "guard": 1e-09,
+      "exact_binomial_prior_numerators": [
+        18446744073708280799,
+        64,
+        0,
+        1270753
+      ],
+      "prior_mass": [
+        0.9999999999999312,
+        3.469446951953614e-18,
+        0.0,
+        6.888765816462361e-14
+      ],
+      "best_fixed": 1.29803466796875,
+      "gate_minus_bestfixed": -0.00384521484375,
+      "gate_minus_prior": 0.0,
+      "all_thresholds_diagnostic": {
+        "thresholds": [
+          1.05,
+          1.25,
+          1.5,
+          2.0,
+          3.0,
+          5.0,
+          8.0
+        ],
+        "successes": [
+          [
+            8151,
+            7845,
+            7068,
+            5297,
+            2978,
+            1303,
+            603
+          ],
+          [
+            8151,
+            7845,
+            7068,
+            5297,
+            2978,
+            1303,
+            603
+          ],
+          [
+            8151,
+            7845,
+            7068,
+            5297,
+            2978,
+            1303,
+            603
+          ],
+          [
+            7916,
+            7212,
+            6167,
+            4464,
+            2549,
+            1173,
+            544
+          ],
+          [
+            7954,
+            7265,
+            6232,
+            4465,
+            2527,
+            1139,
+            578
+          ],
+          [
+            8146,
+            7845,
+            7089,
+            5283,
+            2979,
+            1312,
+            604
+          ]
+        ],
+        "scope": "postfreeze diagnostic; no selection claim or simultaneous CI"
+      },
+      "DP_partition_error": 4.740034770237257e-15,
+      "near_examples": [],
+      "seconds": 4.055081367492676,
+      "frozen_SHA256": "054ca1ba864b3632a296c1626cf2d7f2b2a930fffaeb5a1a90cb3e2670946db7"
+    },
+    {
+      "n": 128,
+      "lambda_": 3.0,
+      "rows": [
+        {
+          "model": "gated",
+          "k_guard": 3634,
+          "k_raw": 3634,
+          "near_guard": 0,
+          "weak": 1.330810546875,
+          "ideal_iid_CP_weak_CI": [
+            1.2815149902227365,
+            1.3803675470731602
+          ],
+          "largest_observed": 1384.09366979989,
+          "mean_max": 5.348148633476753
+        },
+        {
+          "model": "actual_prior",
+          "k_guard": 3634,
+          "k_raw": 3634,
+          "near_guard": 0,
+          "weak": 1.330810546875,
+          "ideal_iid_CP_weak_CI": [
+            1.2815149902227365,
+            1.3803675470731602
+          ],
+          "largest_observed": 1384.093669799506,
+          "mean_max": 5.348148633476341
+        },
+        {
+          "model": "fixed0",
+          "k_guard": 3634,
+          "k_raw": 3634,
+          "near_guard": 0,
+          "weak": 1.330810546875,
+          "ideal_iid_CP_weak_CI": [
+            1.2815149902227365,
+            1.3803675470731602
+          ],
+          "largest_observed": 1384.0936697998907,
+          "mean_max": 5.3481486334776775
+        },
+        {
+          "model": "fixed1",
+          "k_guard": 2822,
+          "k_raw": 2822,
+          "near_guard": 0,
+          "weak": 1.033447265625,
+          "ideal_iid_CP_weak_CI": [
+            0.9865228577682225,
+            1.0810927922905318
+          ],
+          "largest_observed": 1070.626827213786,
+          "mean_max": 5.126252934053058
+        },
+        {
+          "model": "fixed2",
+          "k_guard": 2811,
+          "k_raw": 2811,
+          "near_guard": 0,
+          "weak": 1.0294189453125,
+          "ideal_iid_CP_weak_CI": [
+            0.982541404630884,
+            1.07702383473381
+          ],
+          "largest_observed": 887.0896993967428,
+          "mean_max": 4.657352821019504
+        },
+        {
+          "model": "fixed3",
+          "k_guard": 3516,
+          "k_raw": 3516,
+          "near_guard": 0,
+          "weak": 1.28759765625,
+          "ideal_iid_CP_weak_CI": [
+            1.2385185470225841,
+            1.3370049909437287
+          ],
+          "largest_observed": 1833.9303987816909,
+          "mean_max": 5.4813358887435735
+        }
+      ],
+      "guard": 1e-09,
+      "exact_binomial_prior_numerators": [
+        340282366920843900148111897514987581790,
+        641218297144691236236329,
+        19779637573542878315064209,
+        74142459392022347229329128
+      ],
+      "prior_mass": [
+        0.999999999999722,
+        1.8843712148436782e-15,
+        5.812713057252977e-14,
+        2.1788510542848282e-13
+      ],
+      "best_fixed": 1.330810546875,
+      "gate_minus_bestfixed": 0.0,
+      "gate_minus_prior": 0.0,
+      "all_thresholds_diagnostic": {
+        "thresholds": [
+          1.05,
+          1.25,
+          1.5,
+          2.0,
+          3.0,
+          5.0,
+          8.0
+        ],
+        "successes": [
+          [
+            8012,
+            7652,
+            7020,
+            5683,
+            3634,
+            1768,
+            901
+          ],
+          [
+            8012,
+            7652,
+            7020,
+            5683,
+            3634,
+            1768,
+            901
+          ],
+          [
+            8012,
+            7652,
+            7020,
+            5683,
+            3634,
+            1768,
+            901
+          ],
+          [
+            7535,
+            6893,
+            6008,
+            4516,
+            2822,
+            1495,
+            815
+          ],
+          [
+            7454,
+            6815,
+            5997,
+            4568,
+            2811,
+            1470,
+            793
+          ],
+          [
+            8037,
+            7685,
+            7067,
+            5592,
+            3516,
+            1754,
+            858
+          ]
+        ],
+        "scope": "postfreeze diagnostic; no selection claim or simultaneous CI"
+      },
+      "DP_partition_error": 9.065390326298989e-15,
+      "near_examples": [],
+      "seconds": 12.367654800415039,
+      "frozen_SHA256": "3022edbc1f04da6504f6fe9e706ec301efe50681c26a51d100e67de2158f9fb3"
+    }
+  ],
+  "seconds": 18.04647970199585,
+  "full_interval_certified": false,
+  "Cn_gain_proved": false,
+  "source_mass": 1.0,
+  "plan_SHA256": "5574d2d234f1bacba6bb46462e95c3b2090a9b4dc12d905f49886de2dc352f2e",
+  "meaning": "Exploration only. CP covers ideal iid guarded float-classifier probability; FP integration and continuum query-cell uncertainty unverified."
+}
