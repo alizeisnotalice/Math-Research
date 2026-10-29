@@ -1,0 +1,204 @@
+% !TeX program = xelatex
+\documentclass[UTF8,a4paper,11pt,fontset=none]{ctexart}
+\setCJKmainfont[BoldFont={FandolSong-Bold.otf},ItalicFont={FandolKai-Regular.otf}]{FandolSong-Regular.otf}
+\setCJKsansfont[BoldFont={FandolHei-Bold.otf}]{FandolHei-Regular.otf}
+\setCJKmonofont{FandolFang-Regular.otf}
+\usepackage[margin=23mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,longtable,array,xurl,hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue!50!black}
+\setlength{\parskip}{.3em}\setlength{\emergencystretch}{3em}
+\title{中心立方体极大算子平方根下界\\独立数值复核报告}
+\author{2026年10月13日本轮复核}\date{}
+\begin{document}\maketitle
+\begin{abstract}
+本报告复核主常数、正谱平台、真实物理原子差计数、箱能量、有限真实密度的完整二矩，以及Brownian局部模型的连续与网格最大值。全部本轮计算保存在本报告所在目录；历史输入只读。得到
+\(C_*=0.0292959535703970\ldots>1/35\)。Brownian细网格仍严格欠估计连续最大值；两个历史\(B=8\)标签环境在本轮原密度诊断中保留了非零高低交叉，且不满足增长族的全部门槛。报告不把浮点一致、Monte Carlo标准误或有限参数计算用作高维概率下端，不给出显式起始维数。
+\end{abstract}
+
+\section{复核范围与证据等级}
+主稿的结论是
+\[
+\liminf_{n\to\infty}\frac{C_n}{\sqrt n}\ge
+\frac{87}{220\sqrt{58\pi}}>\frac1{35}.
+\]
+本报告只检查其中关键可算等式。取参数严格按第79版来源：
+\[
+I=[10/9,11/9],\quad s=1/9,\quad a=10/27,\quad
+\alpha=729/29,\quad\gamma=27/29,
+\quad v=\frac{9p^2n}{29K^2}.
+\]
+正文使用固定\(0<p<1\)的正背景；\(p\uparrow1\)发生在已成立的数值下界上。未混用早期\(s=1/16\)平台或猜测参数。
+
+\begin{itemize}
+\item \textbf{确定性精确算术}：Python整数与\texttt{Fraction}的有理等式、整数计数；溢出上界在原始结果中记录。它们验证指定有限对象，不能替代全部维数的证明。
+\item \textbf{确定性机器计算}：NumPy双精度求积、401点扫描和mpmath 80位积分。报告给出残差或两阶差；这些不是带向外舍入的区间证书。
+\item \textbf{Monte Carlo}：独立世界的样本均值与MCSE。所列\(\pm\)为一个样本标准误，不是置信下界，更不是原密度概率认证。
+\end{itemize}
+本轮预登记在\nolinkurl{registration.md}，远区弱界追加在\nolinkurl{weak_far_registration.md}，均在相应首次计算前保存。最终主运行13.30秒，追加整数复核少于1秒；没有运行后调参或择优删样本。
+
+\section{主常数与谱平台}
+用\(\pi<22/7\)，主常数严格大于\(1/35\)等价于所需平方比较，其有理剩余为
+\[
+87^2 35^2-220^2\,58\,\frac{22}{7}
+=\frac{3145775}{7}>0.
+\]
+mpmath复算给
+\[
+C_*=0.029295953570397005925986\ldots,\quad
+C_*-1/35=0.000724524998968434497415\ldots .
+\]
+精确端点与积分为
+\[
+\gamma I^2=[100/87,121/87],\quad
+\lambda(L)=\frac{58}{9L^2}\in[522/121,261/50],\quad
+\kappa=\lambda/2\in[261/121,261/100],
+\]
+\[
+\int_{10/9}^{11/9}\kappa(L)\,dL=\frac{29}{110},\qquad
+\frac{3}{2\sqrt{29}\sqrt{2\pi}}\frac{29}{110}
+=\frac{87}{220\sqrt{58\pi}}.
+\]
+原始70位小数与有理值见\nolinkurl{exact_results.json}。
+
+正谱
+\[
+b_m=4\alpha\left[\left(\frac{\sin(\pi ma)}{\pi m}\right)^4
++3\left(\frac{\sin(\pi ms)}{\pi m}\right)^4\right],\quad
+F_M(L)=1+\sum_{m\le M}b_m\sin^2(\pi mL)
+\]
+在401个等距点上的最大\(\gamma L^2-F_M(L)\)如下。所有受测残差非负，且低于解析尾界\(48/(29M^3)\)。此有限扫描不证明全连续平台等式。
+\begin{center}\begin{tabular}{rrr}\toprule
+\(M\)&最大残差&解析尾界\\\midrule
+16 & 6.17e-05 & 0.000404\\
+32 & 9.75e-06 & 5.05e-05\\
+128 & 1.91e-07 & 7.89e-07\\
+512 & 2.87e-09 & 1.23e-08\\
+\bottomrule\end{tabular}\end{center}
+\nolinkurl{plateau.csv}保留最小残差、系数和幅度和；极小\(b_m\)可能来自应为零的三角函数在双精度下的残余。
+
+\section{远区弱界与箱能量的精确复核}
+为减少正文对三个头部profile表的依赖，另核对较粗Cauchy界所需的Walsh能量。
+\(\chi_a(y)=(-1)^{\operatorname{bitdot}(a,y)}\)，
+\(f_a(r)=B^{-1}\sum_y\chi_a(y)\mathbf1_{r\ge(y+1/2)/B}\)，\(a\ne0\)。
+最低置位权重\(q_a=a\mathbin{\&}(-a)\)。按全部中点断点上的阶梯函数积分，逐个字符核验
+\[
+\|f_a\|_2^2=\frac{q_a^2}{3B^2}+\frac1{6B^2}.
+\]
+所测\(B=4,8,16,32,64,128,256\)共501个非零字符的有理残差均为0；每个\(B\)的最高层只有字符\(a=B/2\)，其余能量最大恰为\(1/48+1/(6B^2)\)。逐字符结果见\nolinkurl{walsh_energy.csv}。
+由正文解析界给出的极限常数，精确复算为
+\[
+\frac{1/6+34/261}{100/261}=\frac{31}{40},\qquad
+-\frac{1/6+1/116}{100/261}=-\frac{183}{400},
+\]
+\[
+\frac45-\frac{31}{40}=\frac1{40},\qquad
+-\frac{183}{400}+\frac12=\frac{17}{400},\qquad
+\frac{14703}{61952}-\frac15=\frac{11563}{309760}>0,
+\]
+\[
+\frac12-\frac{16}{25}=-\frac7{50}.
+\]
+这支持正文在充分大维数下取远区相关上端\(4/5\)、全域下端\(-1/2\)，以及费用\(Kv e^{-v/25}\)的幂指数。有限能量复核没有验证随\(n\)增长的全部误差，也没有计算这一``充分大''的维数门槛。
+
+箱平滑\(b_{[0,t]}=\mathbf1_{[0,t]}*\chi_\varepsilon\)的平方积分在所有真实断点之间为二次多项式；本轮以有理Simpson积分（对二次项准确）核验12个\((\varepsilon,t)\)组合：
+\[
+\|b_{[0,t]}\|_2^2=
+\begin{cases}t^2/\varepsilon-t^3/(3\varepsilon^2),&t\le\varepsilon,\\
+t-\varepsilon/3,&t\ge\varepsilon.
+\end{cases}
+\]
+12项有理残差均为0，详见\nolinkurl{box_energy.csv}。
+
+\section{实际标签、真实密度与有限门槛}
+只读使用历史\nolinkurl{source_d10.npz}、\nolinkurl{source_d12.npz}的实际\(B=8\)标签和缺陷。没有调用历史优化系数；本轮从上式重算\(M=32\)谱，取\(p=1/4,w=64,v=1024\)，对应整数维数由\(v=9p^2n/(29K^2)\)反解。两配置均符合最大\(K=2^d-1\)处方，但\(B=8\)不满足增长族\(B\ge v\)及\(B\ge256\)。它们是实际密度实现的有限诊断，不是第79版渐近源族的有限维证书。
+
+物理位置使用整数\(z_j=Bj+y_j\)，以全部有序原子差模\(BK\)作直方图。\(K=1023\)时总计\(K^2=1046529\)对；7511项符合条件的generic/near-zero原子差均与公式准确相同：
+\[
+N(Bk+b_0)=\frac{K+1}{B}-\mathbf1_{b_0=0},\qquad
+N(0)=K,\qquad N(\ell)=\frac{(K+1)|\ell|}{B^2}\ (0<|\ell|<B).
+\]
+generic项仅在\(k,k+1\)都非identity且不在缺陷集时检查。\(b_0=0\)的零状态修正没有丢弃；整数最大值远小于int64上端。逐项结果见\nolinkurl{physical_counts.csv}。
+
+实际源为
+\[
+\rho=1-p+p\mu_{K,\delta}+\frac pK\sum_{m\le M}\pi m\sqrt{2b_m/3}\cos(2\pi mx),\quad
+\delta=(wKv)^{-1}.
+\]
+周期质量为1（箱质量与低频零均值）；正性由补偿三角下界而非采样最小值保证。三个节点为\(t=0,1/16,1/4\)，\(L_t=L_0+2t/(Kv)\)。\(d=10\)安全基点\(L_0=76385/65472\)，\(d=12\)为\(7/6\)；该选择仅按预定距离门，不按矩结果挑选。
+
+在箱峰平移后的全部实际断点分段，以5阶与9阶Gauss--Legendre分别积分。\(d_L=p(H_{L,\delta}+B_L)/(KL)\)保留\(HH+HB+BH+BB\)，结果如下。
+\begin{center}\small\begin{tabular}{rrrrr}\toprule
+\(K\)&\(n\)&密度正下端&\(\max|n(HB+BH)|\)&两阶\(nG\)最大差\\\midrule
+1023 & 55249289216 & 0.74715253 & 28.97215816 & 5.45e-11\\
+4095 & 885285273600 & 0.74928866 & 10.78940830 & 7.71e-11\\
+\bottomrule\end{tabular}\end{center}
+三节点方差\(q_L=n\int d_L^2\)依次为
+\[
+K=1023:\ (1044.660261,1044.688037,1044.770933),
+\]
+\[
+K=4095:\ (1000.613787,1000.649208,1000.759660).
+\]
+这也显示不能先设\(q_L=v\)，更不能删去实际高低交叉。分解与完整Gram的数值差至多\(1.68\times10^{-11}\)；两阶真实倾斜总均值最大差分别\(1.70\times10^{-8}\)、\(2.22\times10^{-7}\)。全部矩、特征值、平均均值残差及节点距离在\nolinkurl{true_source_results.json}、两个\nolinkurl{true_source_d*.npz}内。
+
+共同成功的解析/数值门包括密度三角下端正、全部节点安全、\(K\ge B^2-1\)、\(M\ge32\)、峰留在格内、\(v\ge16\log n\)及下一周期不满足该处方。共同\textbf{失败}的门为\(B\ge v\)、\(B\ge256\)、\(e\le1/1000\)；计算的\(e\)分别为0.217573313、0.103414627。没有隐去失败或从有限配置推断统一方差窗。
+
+\section{Brownian准确公式与网格欠估计}
+真实局部核的极限模型为\(X(t)=\sqrt2B(t)-t\)，而不是实际源本身。对\(M_T=\sup_{0\le t\le T}X(t)\)，来源给出
+\[
+P(M_T>x)=\Phi\!\left(-\frac{x+T}{\sqrt{2T}}\right)
++e^{-x}\Phi\!\left(\frac{T-x}{\sqrt{2T}}\right),\quad x\ge0,
+\]
+\[
+F(T)=Ee^{M_T}=(T+2)\Phi(\sqrt{T/2})+\sqrt{2T}\phi(\sqrt{T/2}).
+\]
+本轮独立积分\(1+\int_0^\infty e^xP(M_T>x)dx\)，80位精度下\(T=2,8,32,128\)的最大内部差为\(4.22\times10^{-81}\)。\(F(T)/T\)依次为1.92466021666、1.24855781832、1.06249980686、1.015625（末值仍有小于\(3\times10^{-19}\)的偏差）。此高精度吻合是计算一致性，不是严格误差区间。
+
+MC使用网格节点指数倾斜的均匀混合。随机锚点前后的增量漂移为\(+1,-1\)，方差为\(2A\)；混合密度
+\(D_Q=(N+1)^{-1}\sum_j e^{X(jA)}\)。每段端点\(l,r\)下，准确Brownian桥最大值可采为
+\[
+\frac{l+r+\sqrt{(l-r)^2-4A\log U}}2,\quad U\sim\operatorname{Unif}(0,1).
+\]
+记录\(e^{M_g}/D_Q\)与\(e^{M_c}/D_Q\)，不能把线性插值最大值称为连续值。两者使用共同世界，并逐世界满足后者不小于前者。
+
+6配置各16384世界，共98304独立世界；PCG64种子依表行顺序为2026101301至2026101306，batch=64。表中都是每单位\(T\)的均值；SE为一个MCSE。
+\begin{center}\scriptsize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{rrrrrrr}\toprule
+\(T\)&\(A\)&网格均值&网格SE&连续均值&连续SE&准确\(F(T)/T\)\\\midrule
+8 & 0.0625 & 1.01692107 & 0.00342441 & 1.24474283 & 0.00412598 & 1.24855782\\
+8 & 0.00390625 & 1.18042464 & 0.00403265 & 1.24203488 & 0.00423484 & 1.24855782\\
+32 & 0.0625 & 0.86206337 & 0.00286789 & 1.05697069 & 0.00348062 & 1.06249981\\
+32 & 0.00390625 & 1.00101053 & 0.00331783 & 1.05384332 & 0.00349575 & 1.06249981\\
+128 & 0.0625 & 0.83143429 & 0.00269453 & 1.01907279 & 0.00328470 & 1.01562500\\
+128 & 0.00390625 & 0.96552651 & 0.00312315 & 1.01685512 & 0.00329249 & 1.01562500\\
+\bottomrule\end{tabular}\end{center}
+所有逐世界共同差严格为正，最细\(T=128,A=1/256\)的每单位\(T\)欠估计为\(0.05132861\pm0.00027843\)。细化网格后模型仍存在约5\%的费用，不能直接取连续准确值当有限网格值。连续估计对公式的标准化偏差范围为\([-2.4763,1.0497]\)，其中\(T=32,A=1/256\)偏低2.476个MCSE，完整保留，不以``全部落在两SE内''掩盖。最大重要抽样值739.9134；原始权重保存在6个\nolinkurl{brownian_case*.npz}。
+
+另将正文\(N=T^3,A=T^{-2}\)解析网格模量界直接代入。\(\kappa_+=261/100\)端点结果如下；它是解析上界的浮点代入，没有模拟上亿节点。
+\begin{center}\begin{tabular}{rrrr}\toprule
+\(T\)&\(N\)&\(\delta_T\)&每单位\(T\)损失上界\\\midrule
+2 & 8 & 5.38013255 & 244.12508366\\
+8 & 512 & 2.32966573 & 2.67331169\\
+32 & 32768 & 0.75189638 & 1.41275805\\
+128 & 2097152 & 0.22241395 & 0.52359431\\
+1024 & 1073741824 & 0.03322944 & 0.08536753\\
+\bottomrule\end{tabular}\end{center}
+小\(T\)时上界很松，甚至无正下端；它的用途是先固定有限网格、再沿参数次序取极限。MC用的两种\(A\)并非正文全部\(T^{-2}\)网格。
+
+\section{历史数据、本轮重算与复现}
+历史第79版\nolinkurl{local_probe.m}使用MATLAB，每配置32768世界，12配置；其\(T=128,A=1/256\)网格每单位\(T\)约0.96674。本轮NumPy新种子新世界得到0.96552651，不能计为历史样本重跑或将两批不同估计无声明合并。历史OU稀有事件、后续第80至122阶段和其他优化扫描未重跑。
+
+本轮主程序\nolinkurl{recompute.py}、追加\nolinkurl{weak_far.py}及报告生成器\nolinkurl{make_report.py}均可读。运行环境为Python 3.12.14、NumPy 2.3.5、mpmath 1.3.0、macOS arm64。指定bundled Python起初没有scipy/mpmath，首次import失败日志保存在\nolinkurl{initial_import_failure.log}；去掉不使用的SciPy，仅将mpmath安装到本目录\nolinkurl{vendor}。第二次在结果序列化遇到NumPy布尔值，日志保存在\nolinkurl{initial_json_failure.log}；统一转换为Python标量后完整重跑。最终完整日志为\nolinkurl{run.log}。这些失败均在MC首次开始前，98304世界只计最终完成运行。
+
+在当前目录使用同一Python运行三步即可再生结果：
+\begin{verbatim}
+python3 recompute.py
+python3 weak_far.py
+python3 make_report.py
+\end{verbatim}
+其中python3须指向含NumPy的解释器（本机完整路径见\nolinkurl{manifest.json}）；mpmath随\nolinkurl{vendor}目录提供，实际标签输入随\nolinkurl{inputs}目录提供。程序优先读取相对输入；若本机历史目录存在，再记录来源文件哈希，缺失时不影响数值复现。\nolinkurl{inputs/SOURCE_MAP.json}保存原始来源路径和SHA256。脚本始终只写当前目录；重复运行会更新本轮结果，先复制本目录可保留冻结结果。\nolinkurl{manifest.json}记录运行版本、来源SHA256、原始输出SHA256；追加源及报告清单在\nolinkurl{delivery_manifest.json}。另运行\nolinkurl{average_identity.py}可再生实际平均的独立积分对比。
+
+追加对比直接逐峰积分实际箱峰与中心区间的交集，另以计数原函数差计算同一平均；两配置各三长度、32个固定中心共192个数值对，最大差\(1.83\times10^{-16}\)。初次以全局端点差计算极窄箱宽时，双精度消减造成最大差\(7.25\times10^{-9}\)，完整保存于\nolinkurl{average_identity_initial_float_results.json}；改用每个箱的局部坐标，完整箱贡献准确为1，得到上述稳定结果。此处没有宣称严格区间误差界。为了检查相对输入复现，主程序使用相同种子重新运行一次；它再生相同世界，未将重复运行增加到独立样本计数中。
+
+本轮\textbf{未核验}：接受稿及基础概率定理的证明、任意大合格有限域的存在性证明、全部连续安全集的统一误差、增长节点与箱宽的同步误差、真实\(n\)维稀有并事件概率、完整有限质量截断的高维实现，以及任何显式\(n_0\)。主定理仍由正文解析证明及明确接受的输入承担；本报告使可算内容和有限诊断可供人工独立复查。
+\end{document}

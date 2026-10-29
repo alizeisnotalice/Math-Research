@@ -1,0 +1,133 @@
+{
+  "config": {
+    "dimensions": [
+      32,
+      128,
+      512
+    ],
+    "epsilon": 0.02,
+    "uniform_proposal": 0.2,
+    "train_N": 2048,
+    "test_N": 32768,
+    "batch": 256,
+    "train_seed": 202610294510,
+    "test_seed": 202610294511,
+    "log_thresholds": [
+      0.0,
+      0.5,
+      1.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      12.0,
+      16.0,
+      24.0,
+      32.0
+    ],
+    "bank": [
+      {
+        "m": 1,
+        "phase": 0.07,
+        "width_factor": 1.0
+      },
+      {
+        "m": 1,
+        "phase": 0.37,
+        "width_factor": 0.25
+      },
+      {
+        "m": 2,
+        "phase": 0.11,
+        "width_factor": 1.0
+      },
+      {
+        "m": 2,
+        "phase": 0.29,
+        "width_factor": 0.25
+      }
+    ],
+    "mixture_candidates": [
+      [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      [
+        0.5,
+        0.5,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.5,
+        0.5
+      ],
+      [
+        0.5,
+        0.0,
+        0.5,
+        0.0
+      ],
+      [
+        0.0,
+        0.5,
+        0.0,
+        0.5
+      ]
+    ],
+    "guard_log": 1e-08,
+    "alpha": 0.05
+  },
+  "lengths_by_dimension": {
+    "32": [
+      0.4,
+      0.5,
+      0.6,
+      0.8,
+      0.8232233047033631,
+      1.0,
+      1.176776695296637,
+      1.3535533905932737,
+      1.4,
+      1.8,
+      2.2,
+      2.6
+    ],
+    "128": [
+      0.4,
+      0.5,
+      0.6,
+      0.8,
+      0.9116116523516815,
+      1.0,
+      1.0883883476483185,
+      1.176776695296637,
+      1.4,
+      1.8,
+      2.2,
+      2.6
+    ],
+    "512": [
+      0.4,
+      0.5,
+      0.6,
+      0.8,
+      0.9558058261758408,
+      1.0,
+      1.0441941738241591,
+      1.0883883476483185,
+      1.4,
+      1.8,
+      2.2,
+      2.6
+    ]
+  },
+  "script_SHA256": "8d578bf8fae68631dc87b6b2ddff50dfef6630a75d3fa832cc25034eb9bd64b1",
+  "cost_SHA256": "9e6f147f553e28c3f6e154549e3ee690ad2bc574d2392d707733f60de12711a5",
+  "qualification": "Exploratory banks; not accepted sqrt(n) constructions. Full-vector mixture q covers every evaluated bank/scale, all source densities integrate 1.",
+  "selection": "Train finite 5 mixtures and 11 log thresholds; freeze pair maximizing training IS weak. Independent test chosen mixture plus 4 fixed tables, all thresholds with charged family."
+}
