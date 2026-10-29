@@ -1,0 +1,196 @@
+{
+  "schema": "round046.exact_gf_source.v1",
+  "d": 47,
+  "b": 11,
+  "B": 2048,
+  "q": 140737488355328,
+  "K": 140737488355327,
+  "modulus": 140737488355361,
+  "modulus_hex": "0x800000000021",
+  "generator": 2,
+  "basis": [
+    59221995653198,
+    40391396148136,
+    70415897993966,
+    47896663074570,
+    36187734212384,
+    63633410497989,
+    68422629284178,
+    96519962502792,
+    74724788819831,
+    82543660961892,
+    99629891280413
+  ],
+  "seed": 138077546822,
+  "max_attempts": 32,
+  "successful_attempt": 0,
+  "attempts_used": 1,
+  "parameters": {
+    "p": "99/100",
+    "w": 64,
+    "n": "100000000000000000000000000000000",
+    "M": 40
+  },
+  "field_certificate": {
+    "d": 47,
+    "modulus": 140737488355361,
+    "modulus_hex": "0x800000000021",
+    "representation": "bit i is coefficient of X^i; modulus includes leading X^d",
+    "degree_factorization": [
+      [
+        47,
+        1
+      ]
+    ],
+    "degree_primality": [
+      {
+        "integer": 47,
+        "is_prime": true,
+        "trial_bound": 6,
+        "first_divisor": null
+      }
+    ],
+    "rabin_frobenius_at_d": 2,
+    "rabin_gcd_tests": [
+      {
+        "prime_divisor_of_d": 47,
+        "frobenius_index": 1,
+        "gcd": 1
+      }
+    ],
+    "irreducible": true,
+    "K": 140737488355327,
+    "K_factorization": [
+      [
+        2351,
+        1
+      ],
+      [
+        4513,
+        1
+      ],
+      [
+        13264529,
+        1
+      ]
+    ],
+    "K_prime_certificates": [
+      {
+        "integer": 2351,
+        "is_prime": true,
+        "trial_bound": 48,
+        "first_divisor": null
+      },
+      {
+        "integer": 4513,
+        "is_prime": true,
+        "trial_bound": 67,
+        "first_divisor": null
+      },
+      {
+        "integer": 13264529,
+        "is_prime": true,
+        "trial_bound": 3642,
+        "first_divisor": null
+      }
+    ],
+    "generator": 2,
+    "generator_power_K": 1,
+    "generator_quotient_powers": [
+      {
+        "prime_factor": 2351,
+        "exponent": 59862819377,
+        "residue": 84952663629390
+      },
+      {
+        "prime_factor": 4513,
+        "exponent": 31184907679,
+        "residue": 25949121769642
+      },
+      {
+        "prime_factor": 13264529,
+        "exponent": 10610063,
+        "residue": 62910132520135
+      }
+    ],
+    "generator_is_primitive": true
+  },
+  "validation": {
+    "attempt": 0,
+    "basis": [
+      59221995653198,
+      40391396148136,
+      70415897993966,
+      47896663074570,
+      36187734212384,
+      63633410497989,
+      68422629284178,
+      96519962502792,
+      74724788819831,
+      82543660961892,
+      99629891280413
+    ],
+    "rank": 11,
+    "product_count": 2096128,
+    "product_duplicate_adjacent_count": 0,
+    "product_first_collision": 0,
+    "product_sorted_fnv1a64": "1bacc13811c4223d",
+    "ratio_count": 4188162,
+    "ratio_duplicate_adjacent_count": 0,
+    "ratio_first_collision": 0,
+    "ratio_sorted_fnv1a64": "55afff6aa900679c",
+    "S_intersect_gS_count": 0,
+    "adjacency_first_value": 0,
+    "short_forbidden_hits": 0,
+    "passed": true,
+    "seconds": 1.007435
+  },
+  "explicit_basis_recheck": {
+    "attempt": 0,
+    "basis": [
+      59221995653198,
+      40391396148136,
+      70415897993966,
+      47896663074570,
+      36187734212384,
+      63633410497989,
+      68422629284178,
+      96519962502792,
+      74724788819831,
+      82543660961892,
+      99629891280413
+    ],
+    "rank": 11,
+    "product_count": 2096128,
+    "product_duplicate_adjacent_count": 0,
+    "product_first_collision": 0,
+    "product_sorted_fnv1a64": "1bacc13811c4223d",
+    "ratio_count": 4188162,
+    "ratio_duplicate_adjacent_count": 0,
+    "ratio_first_collision": 0,
+    "ratio_sorted_fnv1a64": "55afff6aa900679c",
+    "S_intersect_gS_count": 0,
+    "adjacency_first_value": 0,
+    "short_forbidden_hits": 0,
+    "passed": true,
+    "seconds": 0.988016
+  },
+  "independent_Python_span_size": 2048,
+  "independent_Python_selected_arithmetic_checks": 64,
+  "construction_formula": {
+    "x_j": "g^j for 0<=j<K",
+    "y_i(j)": "Tr(beta_i*x_j)",
+    "y_j": "sum_i 2^i*y_i(j)",
+    "U_j": "(y_j+1/2)/B",
+    "a_j": "(j+U_j)/K"
+  },
+  "search_and_recheck_seconds": 2.3560127499949886,
+  "claim_scope": "Exact GF source hypotheses only. This does not certify a new log factor for C_n.",
+  "source_sha256": {
+    "gf_check.c": "1eaa7be971e56a954772832ba548200bbce354302eabbc95a73a5f4115f060c8",
+    "gf_spot.c": "24b289fe857d5ac631f12d103c243fd3c07e1a5f9e4144cffcbea711a4927805",
+    "certify.py": "421d1e66af4b9f4efb6422f3cac62b58af55dd6a38f4f239398452bbcaeb55d2",
+    "search.py": "d895ddc16ee853d24cdf07ae2e128922bb6d4ecebf078e03e28fc3a2fb436dc7",
+    "FROZEN_PLAN.json": "9833ee88e5eba0905b29e1ea8fb87ce5a531d7ed381a25c70dc7ec1dd1349f1b"
+  }
+}
