@@ -1,0 +1,47 @@
+{
+  "scope": "Exact and deterministic numeric replays only; no tail MC or large cache",
+  "payload_hash_count": 31,
+  "python": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "numpy": "2.5.4",
+  "full": true,
+  "runs": [
+    {
+      "script": "round039_posterior/probe.py",
+      "replay_matches": true
+    },
+    {
+      "script": "round039_channel/trace_checks.py",
+      "replay_matches": true
+    },
+    {
+      "script": "round039_channel/multitable_checks.py",
+      "replay_matches": true
+    },
+    {
+      "script": "round039_channel/gap_checks.py",
+      "replay_matches": true
+    },
+    {
+      "script": "round039_coupled/posterior_audit.py",
+      "replay_matches": true
+    },
+    {
+      "script": "round039_coupled/probe.py",
+      "replay_matches": true
+    },
+    {
+      "script": "round039_channel/probe.py",
+      "replay_matches": true
+    },
+    {
+      "script": "round039_channel/gaussian_order_probe.py",
+      "replay_matches": true
+    }
+  ],
+  "scipy": "1.18.1",
+  "Gaussian_upper_checks": 96,
+  "Gaussian_applicable_finite_lower_checks": 324,
+  "full_FP_certificate": false,
+  "Cn_log_gain_proved": false,
+  "seconds": 7.8350231647491455
+}
