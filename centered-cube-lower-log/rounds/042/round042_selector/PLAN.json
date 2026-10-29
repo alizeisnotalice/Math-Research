@@ -1,0 +1,40 @@
+{
+  "config": {
+    "n": 8,
+    "K": 4,
+    "R": 4,
+    "epsilon": 0.08,
+    "delta": 0.05,
+    "lengths": [
+      0.3,
+      0.45,
+      0.6,
+      0.8,
+      1.2,
+      1.5,
+      1.8
+    ],
+    "train_N": 2048,
+    "test_N": 16384,
+    "train_seed": 202610290420,
+    "test_seed": 202610290421,
+    "thresholds": [
+      0.7,
+      1.0,
+      1.5,
+      2.0,
+      3.0,
+      5.0,
+      8.0
+    ],
+    "optimizer_passes": 6,
+    "temperatures": [
+      0.25,
+      0.12,
+      0.06
+    ],
+    "test_batch": 256
+  },
+  "script_SHA256": "bfdd34b90398dbe99d2c27993e6c58c4fe413820154263bae0d92c2f3fc804a5",
+  "scope": "Finite n histogram selector; freeze before train/test. 2 test models+4 fixed tables at selected training lambda, 12 directions, alpha=.05/12. No rates."
+}

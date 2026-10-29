@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "payload_hash_count": 40,
+  "mass_checks": [
+    {
+      "n": 8,
+      "types": 165,
+      "exact_mass": "1",
+      "exact_pi": [
+        "65255/65536",
+        "35/8192",
+        "0",
+        "1/65536"
+      ],
+      "orbits": null
+    },
+    {
+      "n": 7,
+      "types": 120,
+      "exact_mass": "1",
+      "exact_pi": [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      "orbits": 30
+    },
+    {
+      "n": 15,
+      "types": 816,
+      "exact_mass": "1",
+      "exact_pi": [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      "orbits": 204
+    }
+  ],
+  "runs": [
+    {
+      "script": "round042_channel/probe.py",
+      "recomputed": true,
+      "compared": true
+    },
+    {
+      "script": "round042_audit/audit.py",
+      "recomputed": true,
+      "compared": true
+    },
+    {
+      "script": "round042_audit/INTERVAL_CHECK.py",
+      "recomputed": true,
+      "compared": true
+    },
+    {
+      "script": "round042_selector/exact_ci.py",
+      "recomputed": true,
+      "compared": true
+    },
+    {
+      "script": "round042_audit/CELL_CI_CHECK.py",
+      "recomputed": true,
+      "compared": true
+    }
+  ],
+  "model_training_reexecuted": false,
+  "full_query_cell_replay_reexecuted": false,
+  "exact_integer_CI_comparisons": 36,
+  "local_fraction_kernel_checks": 8400,
+  "cell_corner_kernel_checks": 10080,
+  "new_independent_samples": 0,
+  "PRNG_iid_proved": false,
+  "Cn_log_gain_proved": false,
+  "scope": "Hash, exact normalization, deterministic channel re-integration, representative rational interval checks and exact CI certificates; full MC replay only if explicitly requested.",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "seconds": 12.124197721481323
+}

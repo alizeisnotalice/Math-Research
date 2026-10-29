@@ -1,0 +1,124 @@
+{
+  "config": {
+    "n": 8,
+    "K": 4,
+    "R": 4,
+    "epsilon": 0.08,
+    "delta": 0.05,
+    "lengths": [
+      0.3,
+      0.45,
+      0.6,
+      0.8,
+      1.2,
+      1.5,
+      1.8
+    ],
+    "train_N": 2048,
+    "test_N": 16384,
+    "train_seed": 202610290420,
+    "test_seed": 202610290421,
+    "thresholds": [
+      0.7,
+      1.0,
+      1.5,
+      2.0,
+      3.0,
+      5.0,
+      8.0
+    ],
+    "optimizer_passes": 6,
+    "temperatures": [
+      0.25,
+      0.12,
+      0.06
+    ],
+    "test_batch": 256
+  },
+  "plan_SHA256": "3a409114c6e9348a980e05f3256a7218e9503598d975dfb1407aa10ab5488bba",
+  "selector_SHA256": "cc9406f4a3b9372b25fbc280b5a1e91441cbd29f0be453042407c13576b5304d",
+  "rows": [
+    {
+      "model": "gated",
+      "successes": 16094,
+      "N": 16384,
+      "lambda_": 1.0,
+      "weak_estimate": 0.9822998046875,
+      "weak_CI": [
+        0.9786713909400705,
+        0.9854982493772781
+      ],
+      "mean_finite_max": 2.2293583379532653
+    },
+    {
+      "model": "prior",
+      "successes": 15832,
+      "N": 16384,
+      "lambda_": 1.0,
+      "weak_estimate": 0.96630859375,
+      "weak_CI": [
+        0.9614321557751928,
+        0.9707692360145185
+      ],
+      "mean_finite_max": 2.229148899778092
+    },
+    {
+      "model": "fixed0",
+      "successes": 15839,
+      "N": 16384,
+      "lambda_": 1.0,
+      "weak_estimate": 0.96673583984375,
+      "weak_CI": [
+        0.96188784944035,
+        0.9711676547497534
+      ],
+      "mean_finite_max": 2.234237373618532
+    },
+    {
+      "model": "fixed1",
+      "successes": 16277,
+      "N": 16384,
+      "lambda_": 1.0,
+      "weak_estimate": 0.99346923828125,
+      "weak_CI": [
+        0.9911605301089725,
+        0.9953383352613009
+      ],
+      "mean_finite_max": 1.6759160551174963
+    },
+    {
+      "model": "fixed2",
+      "successes": 16287,
+      "N": 16384,
+      "lambda_": 1.0,
+      "weak_estimate": 0.99407958984375,
+      "weak_CI": [
+        0.9918694478326555,
+        0.9958496284557865
+      ],
+      "mean_finite_max": 1.6639304830407877
+    },
+    {
+      "model": "fixed3",
+      "successes": 15860,
+      "N": 16384,
+      "lambda_": 1.0,
+      "weak_estimate": 0.968017578125,
+      "weak_CI": [
+        0.9632561720350196,
+        0.9723616695586558
+      ],
+      "mean_finite_max": 2.2604011945914166
+    }
+  ],
+  "gated_minus_prior": 0.0159912109375,
+  "simultaneous_gated_lower_minus_prior_upper": 0.007902154925552018,
+  "confidence_scope": "12 Chernoff-KL directions conditional on independent frozen training, finite shared radii, floating kernels not interval certified",
+  "periodic_mass": 1.0,
+  "L1_cutoff_transfer": "See independent proof, large integer boxes, finite L boundary discarded",
+  "Cn_log_gain_proved": false,
+  "full_FP_certificate": false,
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "seconds": 6.602799892425537
+}
