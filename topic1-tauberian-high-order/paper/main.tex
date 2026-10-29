@@ -1,0 +1,659 @@
+\documentclass[UTF8,11pt,fontset=none]{ctexart}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setCJKmainfont[ItalicFont=Songti SC,SlantedFont=Songti SC]{Songti SC}
+\setCJKsansfont{Songti SC}
+\setCJKmonofont{Songti SC}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\allowdisplaybreaks
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{known}{定理}
+\renewcommand{\theknown}{\Alph{known}}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{注}
+\newcommand{\R}{\mathbb R}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\Hc}{\mathcal H_n}
+\newcommand{\Hm}{\mathcal H_n^{(m)}}
+\newcommand{\Mc}{M_{c,n}}
+\newcommand{\Mm}{M_{c,n}^{(m)}}
+\newcommand{\Cn}{C_n}
+\newcommand{\Cm}{C_n^{(m)}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{共享中心方体多线性 Tauberian 常数的\texorpdfstring{\\}{ }精确约化与端点估计}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+研究共享同一中心轴平行立方体、以输入集公共交集归一化的多线性
+Tauberian 常数。证明其在超临界区精确等于线性常数的参数复合，
+在临界及次临界区发散；定义中只要求公共交集具有有限正测度。
+对线性常数，结合所有局部有限 Borel 测度上的最优统一弱型常数
+\(2^n\)、测度放大和周期孔构造，得到显式上下界以及
+\(C_n(1-t)=1+2^nt+o(t)\)。当 \(n\ge2\) 时，
+\(t^{1+1/n}\) 尺度归一化余项的下、上极限位于
+\([-n2^{n+1},0]\)。进一步证明多线性一阶渐近关于重数一致，
+并给出二阶尺度与条件性高阶系数的传递。上述区间尚不能确定真实二阶系数。
+\end{abstract}
+
+\section{引言}
+
+几何极大算子的 Tauberian 常数衡量一个集合在高平均值条件下产生的水平集增量。
+本文只考虑中心轴平行立方体
+\[
+ Q(x,r)=x+[-r,r]^n,\qquad |Q(x,r)|=(2r)^n,\qquad r>0,
+\]
+其中 \(|\cdot|\) 表示 Lebesgue 测度，\(m,n\) 为正整数，水平参数属于 \((0,1)\)。
+线性和共享方体的多线性极大算子分别为
+\[
+ \Mc f(x)=\sup_{r>0}\frac1{|Q(x,r)|}\int_{Q(x,r)}|f(y)|\dd y,
+\]
+\[
+ \Mm(f_1,\ldots,f_m)(x)
+ =\sup_{r>0}\prod_{i=1}^m
+ \frac1{|Q(x,r)|}\int_{Q(x,r)}|f_i(y)|\dd y.
+\]
+多线性定义中各因子使用同一个半径。对可测集记严格水平集
+\[
+ \Hc(\alpha;E)=\{\Mc\ind_E>\alpha\},\qquad
+ \Hm(\lambda;E_1,\ldots,E_m)
+ =\{\Mm(\ind_{E_1},\ldots,\ind_{E_m})>\lambda\}.
+\]
+定义
+\begin{equation}\label{eq:constants}
+ \Cn(\alpha)=\sup_{0<|E|<\infty}\frac{|\Hc(\alpha;E)|}{|E|},
+ \qquad
+ \Cm(\lambda)=
+ \sup_{\substack{E_1,\ldots,E_m\text{ 可测}\\
+                  0<|F|<\infty,\ F=\cap_iE_i}}
+ \frac{|\Hm(\lambda;E_1,\ldots,E_m)|}{|F|}.
+\end{equation}
+单个 \(E_i\) 可以有无限测度；该输入类是临界结论的一部分。
+
+Solyanik 估计研究水平参数趋于 \(1\) 时 Tauberian 常数趋于 \(1\) 的速度。
+对同一中心方体对象，已有结果给出
+\(\Cn(\alpha)-1\asymp_n\alpha^{-1}-1\)，即确定了线性阶量级；
+见 Hagelstein--Parissis 对 Solyanik 定理的陈述
+\cite[Theorem 1]{HagelsteinParissis2014}。
+本文上界所需的测度论工具是对测度一致的中心极大算子弱型估计。
+Aldaz \cite[Theorems 1.2 and 2.10]{Aldaz2020} 将其最优常数与
+Besicovitch 交叠常数联系起来，并以局部离散化把一般测度约化为有限 Dirac 测度。
+这个结论控制任意测度上的弱型常数；它与固定 Lebesgue 测度的最优弱型常数是不同的量。
+
+本文首先要确定：公共交集归一化后，多线性常数能否由线性常数精确表示，
+以及这种表示能够传递多少端点信息。逐点的缺陷估计只能给出一个方向。
+反向构造必须使有限个见证方体中的补集同时等分，并在移动中心时保留严格余量。
+令
+\[
+ s_m(\lambda)=m(1-\lambda^{1/m}),\qquad
+ \Phi_m(\lambda)=1-s_m(\lambda),\qquad
+ \lambda_m^*=\left(1-\frac1m\right)^m\ (m\ge2),
+\]
+并置 \(\lambda_1^*=0\)。主要结论如下。
+
+\begin{theorem}[精确约化与临界发散]\label{thm:reduction}
+对 \(m,n\ge1\)，若 \(\lambda_m^*<\lambda<1\)，则
+\begin{equation}\label{eq:reduction}
+ \Cm(\lambda)=\Cn\bigl(\Phi_m(\lambda)\bigr).
+\end{equation}
+若 \(m\ge2\) 且 \(0<\lambda\le\lambda_m^*\)，则
+\(\Cm(\lambda)=\infty\)。
+\end{theorem}
+
+\begin{theorem}[线性端点及二阶尺度]\label{thm:endpoint}
+令
+\[
+ U_n(t)=1+\frac{2^nt}{1-t},\qquad
+ L_n(t)=\left[1-\left(\frac{2t^{1/n}}{1+2t^{1/n}}\right)^n\right]^{-1}.
+\]
+当 \(0<t<2^{-n}\) 时，
+\begin{equation}\label{eq:envelopes}
+ L_n(t)\le\Cn(1-t)\le U_n(t),
+\end{equation}
+且右侧上界对全部 \(0<t<1\) 成立。因此对每个固定 \(n\ge1\)，
+\begin{equation}\label{eq:firstorder}
+ \Cn(1-t)=1+2^nt+o(t)\qquad(t\downarrow0).
+\end{equation}
+当 \(n\ge2\) 时，记
+\[
+ p_n=1+\frac1n,\qquad
+ R_n(t)=\frac{\Cn(1-t)-1-2^nt}{t^{p_n}},
+\]
+则
+\begin{equation}\label{eq:bracket}
+ -n2^{n+1}\le\liminf_{t\downarrow0}R_n(t)
+ \le\limsup_{t\downarrow0}R_n(t)\le0.
+\end{equation}
+\end{theorem}
+
+证明的两条构造承担不同任务。有限 Boolean 分割实现多线性精确约化；
+一般测度的弱型估计经测度放大给出 \(U_n\)，周期孔给出 \(L_n\)。
+上下界的一阶项相同，而在 \(t^{1+1/n}\) 尺度仍有间距。
+因此精确约化能够传递已有高阶信息，却不会自行产生线性常数的高阶展开。
+第 2 节准备分割、参数及交叠工具；第 3 节证明上述两个定理；
+第 4 节给出多线性一阶渐近和高阶传递。
+
+\section{预备知识}
+
+\subsection{严格水平余量与同时等分}
+
+对固定半径，立方体平移满足
+\begin{equation}\label{eq:translation}
+ \frac{|Q(x,r)\mathbin\triangle Q(z,r)|}{|Q(x,r)|}
+ \le\frac{n\norm{x-z}_\infty}{r}
+ \qquad\bigl(\norm{x-z}_\infty<2r\bigr).
+\end{equation}
+事实上，两方体交集包含边长 \(2r-\norm{x-z}_\infty\) 的立方体，
+再用中值定理即可。因各输入的示性函数有界，固定半径的平均值关于中心连续，
+故本文的 Lebesgue 严格水平集都是开集。
+
+\begin{lemma}[乘积的总缺陷]\label{lem:defect}
+若 \(0\le a_i\le1\) 且 \(\prod_{i=1}^ma_i>\lambda\)，则
+\[
+ \sum_{i=1}^m(1-a_i)<s_m(\lambda).
+\]
+并且 \(s_m(\lambda)<1\) 等价于 \(\lambda>\lambda_m^*\)。
+\end{lemma}
+\begin{proof}
+由算术--几何平均不等式，
+\(m^{-1}\sum_i a_i\ge(\prod_i a_i)^{1/m}>\lambda^{1/m}\)。
+移项得到第一式；第二式直接解不等式即得。
+\end{proof}
+
+\begin{lemma}[有限族上的同时等分]\label{lem:partition}
+设 \(A\subset\R^n\) 可测、\(|A|<\infty\)，\(Q_1,\ldots,Q_N\) 是有限个方体。
+对每个整数 \(m\ge1\)，存在可测分割 \(A=\dot\bigcup_{i=1}^mA_i\)，使
+\[
+ |A_i\cap Q_j|=\frac{|A\cap Q_j|}{m}
+ \qquad(1\le i\le m,\ 1\le j\le N).
+\]
+\end{lemma}
+\begin{proof}
+由各 \(Q_j\) 的归属关系把 \(A\) 分成至多 \(2^N\) 个 Boolean 原子。
+每个正测度原子 \(P\) 都可等分为 \(m\) 个可测部分：
+函数 \(G_P(t)=|P\cap\{x_1\le t\}|\) 连续，且在两端趋于 \(0,|P|\)，
+故依次选择 \(G_P(t)=k|P|/m\) 的切点即可。零测度原子任意分配。
+令 \(A_i\) 为所有原子的第 \(i\) 部分之并。
+每个 \(Q_j\cap A\) 都是若干完整原子的并，逐项相加即得结论。
+\end{proof}
+
+\subsection{Besicovitch 交叠与测度极大算子}
+
+在度量空间 \((X,d)\) 中，有限闭球族 \(\mathcal B=\{B(x_j,r_j)\}\)
+称为 Besicovitch 族，如果不同球的中心互不落入对方的球，即
+\[
+ d(x_i,x_j)>\max\{r_i,r_j\}\qquad(i\ne j).
+\]
+其交叠常数定义为
+\[
+ L(X,d)=\sup_{\mathcal B}\sup_{z\in X}
+              \sum_{B\in\mathcal B}\ind_B(z).
+\]
+对 \(\R^n\) 上局部有限 Borel 测度 \(\mu\)，定义
+\begin{equation}\label{eq:measuremax}
+ M_\mu f(x)=\sup_{\substack{r>0\\0<\mu(Q(x,r))<\infty}}
+       \frac{\int_{Q(x,r)}|f|\dd\mu}{\mu(Q(x,r))}.
+\end{equation}
+局部有限性保证各有界方体的测度有限；空上确界取 \(0\)。
+\(M_{\mu,(0,T)}\) 表示只对 \(0<r<T\) 取上确界。
+
+\begin{known}[Aldaz]\label{known:aldaz}
+在度量空间中，Besicovitch 交叠常数等于中心极大算子对所有
+\(\tau\)-可加局部有限 Borel 测度的弱 \((1,1)\) 常数的上确界。
+一般测度上若存在某个常数的严格违反，则有限支撑测度上也存在严格违反。
+在可分度量空间，Borel 测度的 \(\tau\)-可加性自动成立。
+\end{known}
+
+这是 \cite[Theorems 1.2 and 2.10]{Aldaz2020} 的所用形式。
+交叠常数只控制 Besicovitch 族本身的交叠。
+第 3 节将在方体情形沿有限 Dirac 贪心和局部原子化路线证明所需弱型估计，
+从而保留测度放大步骤中的全部假设和严格余量。
+
+\subsection{缺陷参数的端点控制}
+
+\begin{lemma}\label{lem:parameter}
+记 \(\sigma_m(\eps)=s_m(1-\eps)\)。对 \(m\ge1\)、\(0<\eps<1\)，
+\begin{equation}\label{eq:uniformparameter}
+ \eps\le\sigma_m(\eps)\le-\log(1-\eps),\qquad
+ 0\le\sigma_m(\eps)-\eps\le\frac{\eps^2}{2(1-\eps)}.
+\end{equation}
+对每个固定 \(m\)，还有
+\begin{equation}\label{eq:quadraticparameter}
+ \sigma_m(\eps)=\eps+a_m\eps^2+O_m(\eps^3),\qquad
+ a_m=\frac{m-1}{2m}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+由 \(x^{1/m}\) 的凹性，\((1-\eps)^{1/m}\le1-\eps/m\)，故第一下界成立。
+令 \(q=-\log(1-\eps)\)，由 \(1-e^{-q/m}\le q/m\) 得上界。
+又
+\[
+ -\log(1-\eps)-\eps
+ =\sum_{k\ge2}\frac{\eps^k}{k}
+ \le\frac{\eps^2}{2(1-\eps)}.
+\]
+最后对 \((1-\eps)^{1/m}\) 在零点作二阶 Taylor 展开即得
+\eqref{eq:quadraticparameter}；\(m=1\) 时等式精确成立。
+\end{proof}
+
+\section{主要证明}
+
+\subsection{精确约化和临界分岔}
+
+\begin{proof}[定理 \ref{thm:reduction} 的证明]
+先设 \(\lambda>\lambda_m^*\)，并置 \(s=s_m(\lambda)\in(0,1)\)。
+若 \(x\in\Hm(\lambda;E_1,\ldots,E_m)\)，存在共享见证方体 \(Q=Q(x,r)\)，
+使 \(a_i=|E_i\cap Q|/|Q|\) 的乘积大于 \(\lambda\)。
+引理 \ref{lem:defect} 给出
+\[
+ \frac{|Q\setminus F|}{|Q|}
+ \le\sum_i\frac{|Q\setminus E_i|}{|Q|}<s,
+ \qquad F=\bigcap_iE_i.
+\]
+故
+\begin{equation}\label{eq:haloinclusion}
+ \Hm(\lambda;E_1,\ldots,E_m)\subset\Hc(1-s;F),
+\end{equation}
+从而 \(\Cm(\lambda)\le\Cn(1-s)\)。
+
+反向不等式在 \(m=1\) 时显然成立。设 \(m\ge2\)，固定
+\(0<|F|<\infty\) 及非空紧集 \(K\subset\Hc(1-s;F)\)。
+对每个 \(x\in K\) 选取见证方体 \(Q(x,r_x)\)，记其缺陷比例为 \(d_x<s\)。
+由 \eqref{eq:translation}，存在开邻域 \(U_x\ni x\)，使对所有 \(z\in U_x\)，
+\[
+ \frac{|Q(z,r_x)\mathbin\triangle Q(x,r_x)|}{|Q(x,r_x)|}
+ <\frac{s-d_x}{2m}.
+\]
+取有限子覆盖 \(K\subset\bigcup_{j=1}^NU_j\)，并记相应方体、缺陷为 \(Q_j,d_j\)。
+令 \(D=\bigcup_jQ_j\)，在 \(D\setminus F\) 上使用引理 \ref{lem:partition}，
+得到分割 \(D\setminus F=\dot\bigcup_iA_i^D\)，满足
+\(|A_i^D\cap Q_j|=d_j|Q_j|/m\)。将其扩充为 \(F^c\) 的分割：
+\[
+ A_1=A_1^D\cup(F^c\setminus D),\qquad
+ A_i=A_i^D\ (i\ge2),\qquad E_i=\R^n\setminus A_i.
+\]
+于是 \(\bigcap_iE_i=F\)。若 \(z\in K\cap U_j\)，置 \(\widetilde Q=Q(z,r_j)\)，则
+\[
+ \frac{|A_i\cap\widetilde Q|}{|\widetilde Q|}
+ \le\frac{|A_i\cap Q_j|+|\widetilde Q\setminus Q_j|}{|Q_j|}
+ <\frac{d_j}{m}+\frac{s-d_j}{2m}<\frac{s}{m}.
+\]
+各因子的平均值因此严格大于 \(1-s/m\)，乘积严格大于
+\((1-s/m)^m=\lambda\)。因此
+\[
+ K\subset\Hm(\lambda;E_1,\ldots,E_m).
+\]
+对开集 \(\Hc(1-s;F)\) 用 Lebesgue 内正则性取紧集，再对 \(F\) 取上确界，
+得到 \(\Cn(1-s)\le\Cm(\lambda)\)，证明了 \eqref{eq:reduction}。
+
+再设 \(m\ge2\)、\(\lambda\le\lambda_m^*\)。取周期条带分割
+\[
+ A_i^0=\{x\in\R^n:\{x_1\}\in[(i-1)/m,i/m)\},\qquad 1\le i\le m,
+\]
+以及任意有界可测集 \(F\)，其中 \(0<|F|<\infty\)。
+令 \(A_i=A_i^0\setminus F\)、\(E_i=\R^n\setminus A_i\)，则公共交集恰为 \(F\)。
+对任意 \(x\)，选择足够大的整数 \(N\)，使 \(F\subset Q(x,N/2)\)。
+整数长度区间上每个条带恰占比例 \(1/m\)，故
+\[
+ \frac{|E_i\cap Q(x,N/2)|}{|Q(x,N/2)|}
+ =1-\frac1m+\frac{|A_i^0\cap F|}{|Q(x,N/2)|}.
+\]
+所有因子不小于 \(1-1/m>0\)，并因 \(\sum_i|A_i^0\cap F|=|F|>0\)
+至少一个严格较大。因此乘积严格大于 \(\lambda_m^*\ge\lambda\)。
+整个 \(\R^n\) 都属于多线性水平集，所求常数为无穷。
+\end{proof}
+
+\subsection{一般测度的统一弱型估计}
+
+本节只对有限个中心实施贪心选择。一般水平集通过局部原子化传递，
+所需的交叠界始终仅用于真正的 Besicovitch 族。
+
+\begin{lemma}\label{lem:bip}
+对于中心轴平行方体，\(L(\R^n,\norm{\cdot}_\infty)=2^n\)。
+\end{lemma}
+\begin{proof}
+固定一个共同交点并平移为原点，只考虑包含该点的球。
+每个中心 \(x_i\) 满足 \(\norm{x_i}_\infty\le r_i\)。
+按坐标符号分为 \(2^n\) 组，零坐标固定归入非负侧。
+同组若有 \(x_i,x_j\)，设 \(r_i\ge r_j\)，则每个坐标均有
+\(|x_{i,k}-x_{j,k}|\le\max\{|x_{i,k}|,|x_{j,k}|\}\le r_i\)。
+这意味着 \(x_j\in Q(x_i,r_i)\)，与 Besicovitch 条件矛盾。
+故任一点交叠不超过 \(2^n\)。反之，\(\{Q(v,1):v\in\{-1,1\}^n\}\)
+共有 \(2^n\) 个球，均包含原点，且不同中心的距离为 \(2>1\)。
+\end{proof}
+
+\begin{lemma}[有限 Dirac 测度的弱型估计]\label{lem:dirac}
+若 \(\mu=\sum_{i=1}^Nc_i\delta_{x_i}\)，其中 \(c_i>0\)，则
+\begin{equation}\label{eq:diracweak}
+ \mu\{M_\mu f>\tau\}\le\frac{2^n}{\tau}\norm{f}_{L^1(\mu)}
+ \qquad(\tau>0).
+\end{equation}
+\end{lemma}
+\begin{proof}
+对满足 \(M_\mu f(x_i)>\tau\) 的各支撑点选取一个严格见证方体。
+将有限族按半径非增排序，依次保留中心尚未被此前保留方体覆盖的方体。
+所得族覆盖所有这些中心。若 \(Q_i\) 先于 \(Q_j\) 保留，则
+\(r_i\ge r_j\) 且 \(x_j\notin Q_i\)，于是
+\(\norm{x_i-x_j}_\infty>r_i\ge r_j\)，故 \(x_i\notin Q_j\)。
+所以保留族是 Besicovitch 族。由引理 \ref{lem:bip}，
+\[
+ \tau\mu\{M_\mu f>\tau\}
+ \le\tau\sum_j\mu(Q_j)
+ <\sum_j\int_{Q_j}|f|\dd\mu
+ \le2^n\norm{f}_{L^1(\mu)}.
+\]
+若水平集不含支撑点，则待证式平凡成立。
+\end{proof}
+
+为推广此估计，先记录严格见证在一般测度下的稳定性。
+若 \(f\ge0\)、\(r<T\) 且
+\(\int_{Q(x,r)}f\dd\mu>\tau\mu(Q(x,r))>0\)，
+选取 \(\eta>0\) 使内球平均值大于 \((1+\eta)\tau\)。
+闭球的测度从上连续，故可取 \(\delta>0\)，使 \(r+\delta<T\) 且
+\[
+ \mu(Q(x,r+\delta))<(1+\eta)\mu(Q(x,r)).
+\]
+当 \(\norm{z-x}_\infty<\delta/2\) 时，
+\begin{equation}\label{eq:sandwich}
+ Q(x,r)\subset Q(z,r+\delta/2)\subset Q(x,r+\delta).
+\end{equation}
+由此中间方体的平均值大于 \(\tau\)。特别地，
+\(\{M_{\mu,(0,T)}f>\tau\}\) 为开集，所有后续水平集均可测。
+
+\begin{proposition}[从有限原子到局部有限测度]\label{prop:transfer}
+设 \(A\ge0\)。若常数 \(A\) 对所有有限支撑正测度满足中心弱 \((1,1)\)
+不等式，则它对 \(\R^n\) 上所有局部有限 Borel 测度也满足同一不等式。
+\end{proposition}
+\begin{proof}
+反设某个 \(\mu\)、非负 \(h\in L^1(\mu)\) 和 \(\tau>0\) 严格违反该估计。
+选 \(A_0>A\)，使
+\(\tau\mu\{M_\mu h>\tau\}>A_0\norm h_1\)。
+利用 \(R,T\uparrow\infty\) 时集合从下增加，可取有限 \(R,T>0\)，使
+\[
+ \tau\mu\bigl(Q^\circ(0,R)\cap\{M_{\mu,(0,T)}h>\tau\}\bigr)
+ >A_0\norm h_1.
+\]
+在这些中心和半径下，只用到 \(D=Q(0,R+T)\) 内的函数值。
+将 \(h\) 在 \(D\) 外置零不会改变左侧，且不会增大右侧。
+令 \(h_N=h\wedge N\)。由单调收敛和严格水平条件，
+相应局部水平集增加到原局部水平集。
+故可取 \(N\)，使
+\[
+ \Gamma:=\tau\mu\bigl(Q^\circ(0,R)\cap
+           \{M_{\mu,(0,T)}h_N>\tau\}\bigr)-A_0\norm{h_N}_1>0.
+\]
+对足够小的 \(b>0\)，向上量化
+\[
+ f=b\left\lceil\frac{h_N}{b}\right\rceil\ind_{\{h_N>0\}}
+\]
+是支撑于 \(D\) 的非负简单函数，并满足
+\(0\le\norm f_1-\norm{h_N}_1\le b\mu(D)<\Gamma/A_0\)。
+因为 \(f\ge h_N\)，开集
+\[
+ \Omega=Q^\circ(0,R)\cap\{M_{\mu,(0,T)}f>\tau\}
+\]
+满足 \(\tau\mu(\Omega)>A_0\norm f_1\)。
+
+局部有限 Borel 测度在 \(\R^n\) 上具有内正则性。
+取紧集 \(K\subset\Omega\)，使 \(\tau\mu(K)>A\norm f_1\)，
+再选 \(\eta>0\)，使
+\begin{equation}\label{eq:strictmargin}
+ \frac{\tau\mu(K)}{1+\eta}>A\norm f_1.
+\end{equation}
+每个 \(x\in K\) 有严格见证半径 \(r_x<T\)。
+利用闭球测度从上连续，取 \(\delta_x>0\)，使
+\(r_x+\delta_x<T\) 且
+\begin{equation}\label{eq:outermass}
+ \mu(Q(x,r_x+\delta_x))<(1+\eta)\mu(Q(x,r_x)).
+\end{equation}
+置 \(s_x=\delta_x/2\) 及
+\(V_x=\{z:\norm{z-x}_\infty<s_x\}\cap\Omega\)。
+取覆盖 \(K\) 的有限子族 \(V_{x_1},\ldots,V_{x_J}\)，记其并为 \(U\)。
+所有内外见证方体均包含在 \(D\) 内。
+
+在 \(D\) 上，由简单函数 \(f\) 的各水平集、\(U\)，以及这有限个内、外方体
+生成有限 Boolean 代数。设其正测度原子为 \(P_1,\ldots,P_q\)，各取一点
+\(z_\ell\in P_\ell\)，令
+\[
+ \nu=\sum_{\ell=1}^q\mu(P_\ell)\delta_{z_\ell}.
+\]
+该代数中每个集合的 \(\mu\)、\(\nu\) 测度相同；
+\(f\) 在原子上为常数，故其全积分以及各内方体上的积分也相同。
+特别地，\(\nu(U)=\mu(U)\ge\mu(K)\) 且 \(\norm f_{L^1(\nu)}=\norm f_{L^1(\mu)}\)。
+
+对任意 \(z\in U\cap\operatorname{supp}\nu\)，选 \(j\) 使 \(z\in V_{x_j}\)。
+由 \eqref{eq:sandwich} 的几何包含关系，\(r_j+s_j<T\)，且
+\begin{align*}
+ \frac{\int_{Q(z,r_j+s_j)}f\dd\nu}{\nu(Q(z,r_j+s_j))}
+ &\ge\frac{\int_{Q(x_j,r_j)}f\dd\nu}{\nu(Q(x_j,r_j+\delta_j))}\\
+ &=\frac{\int_{Q(x_j,r_j)}f\dd\mu}{\mu(Q(x_j,r_j+\delta_j))}
+ >\frac{\tau}{1+\eta}.
+\end{align*}
+分母为正，因为中间方体包含正测度内方体。
+于是 \(U\cap\operatorname{supp}\nu\subset
+\{M_\nu f>\tau/(1+\eta)\}\)。结合 \eqref{eq:strictmargin}，
+\[
+ \frac{\tau}{1+\eta}\nu\{M_\nu f>\tau/(1+\eta)\}
+ \ge\frac{\tau}{1+\eta}\mu(K)>A\norm f_{L^1(\nu)},
+\]
+与有限支撑测度上的假设矛盾。
+\end{proof}
+
+\begin{proposition}[最优统一弱型常数]\label{prop:weak}
+对任意局部有限 Borel 测度 \(\mu\)、\(f\in L^1(\mu)\) 和 \(\tau>0\)，
+\begin{equation}\label{eq:uniformweak}
+ \mu\{M_\mu f>\tau\}\le\frac{2^n}{\tau}\norm f_{L^1(\mu)}.
+\end{equation}
+在 \(\mu\) 和 \(f\) 上共同取上确界时，常数 \(2^n\) 不能减小。
+\end{proposition}
+\begin{proof}
+上界由引理 \ref{lem:dirac} 及命题 \ref{prop:transfer} 得到。
+为证最优性，令 \(V=\{-1,1\}^n\)，并对 \(c>0\) 置
+\[
+ \mu_c=c\delta_0+\sum_{v\in V}\delta_v,\qquad
+ f_c=c^{-1}\ind_{\{0\}}.
+\]
+其 \(L^1(\mu_c)\) 范数为 \(1\)。每个 \(Q(v,1)\) 在支撑上恰含 \(0,v\)，
+所以 \(M_{\mu_c}f_c(v)\ge(1+c)^{-1}\)；在原点，充分小的方体给出
+\(M_{\mu_c}f_c(0)\ge c^{-1}\)。
+若 \(0<\tau<(1+c)^{-1}\)，水平集包含整个支撑，故任一统一弱型常数至少为
+\(\tau(2^n+c)\)。先令 \(\tau\uparrow(1+c)^{-1}\)，再令 \(c\downarrow0\)，
+得到下界 \(2^n\)。
+\end{proof}
+
+\subsection{测度放大与周期孔}
+
+\begin{proposition}[测度放大上界]\label{prop:upper}
+对 \(0<\alpha<1\)，有
+\[
+ \Cn(\alpha)\le1+2^n\frac{1-\alpha}{\alpha}.
+\]
+\end{proposition}
+\begin{proof}
+固定 \(0<|E|<\infty\) 及紧集 \(K\subset\Hc(\alpha;E)\)，置
+\(\beta=(1-\alpha)/\alpha\)。对 \(c>0\) 定义有限 Borel 测度
+\[
+ \dd\nu_c=\ind_E\dd x+c\ind_{K\setminus E}\dd x,
+ \qquad f=\ind_E.
+\]
+对每个 \(x\in K\setminus E\)，原水平集的见证方体 \(Q=Q(x,r)\) 满足
+\(|Q\setminus E|<\beta|E\cap Q|\)，因而
+\[
+ \frac{\int_Qf\dd\nu_c}{\nu_c(Q)}
+ =\frac{|E\cap Q|}{|E\cap Q|+c|(K\setminus E)\cap Q|}
+ >\frac1{1+c\beta}.
+\]
+用 \eqref{eq:uniformweak} 得
+\(c|K\setminus E|\le2^n(1+c\beta)|E|\)。
+除以 \(c\) 后令 \(c\to\infty\)，便有
+\(|K|\le|E|+|K\setminus E|\le(1+2^n\beta)|E|\)。
+对严格水平集取紧集内逼近，再对 \(E\) 取上确界即可。
+\end{proof}
+
+\begin{proposition}[周期孔下界]\label{prop:lower}
+令 \(\rho_\alpha=\min\{(1-\alpha)^{1/n},1/2\}\)。对 \(0<\alpha<1\)，有
+\[
+ \Cn(\alpha)\ge
+ \left[1-\left(\frac{2\rho_\alpha}{1+2\rho_\alpha}\right)^n\right]^{-1}.
+\]
+\end{proposition}
+\begin{proof}
+固定 \(0<\rho<\rho_\alpha\)、整数 \(N\ge2\)，置
+\[
+ \delta=\frac{\rho}{N(1+2\rho)},\qquad
+ r=\frac1{N(1+2\rho)},\qquad
+ P_k=\frac{k}{N}+[-\delta,\delta]^n
+ \quad(k\in\{1,\ldots,N-1\}^n),
+\]
+并定义 \(E_{N,\rho}=[0,1]^n\setminus\bigcup_kP_k\)。
+若 \(x\in P_k\)，则 \(2\delta<r\)，故 \(P_k\subset Q(x,r)\)。
+又 \(r+2\delta=1/N\)，所以 \(Q(x,r)\) 与其他孔至多在边界接触；
+\(r+\delta<1/N\) 保证 \(Q(x,r)\subset[0,1]^n\)。
+因此
+\[
+ \frac{|E_{N,\rho}\cap Q(x,r)|}{|Q(x,r)|}=1-\rho^n>\alpha.
+\]
+而 \(E_{N,\rho}\) 除有限个方体边界外都是内点，也属于严格水平集。
+故该水平集包含 \([0,1]^n\) 的几乎所有点，且
+\[
+ \Cn(\alpha)\ge\frac1{|E_{N,\rho}|}
+ =\left[1-\left(1-\frac1N\right)^n
+             \left(\frac{2\rho}{1+2\rho}\right)^n\right]^{-1}.
+\]
+先令 \(N\to\infty\)，再令 \(\rho\uparrow\rho_\alpha\)，得到结论。
+\end{proof}
+
+\begin{proof}[定理 \ref{thm:endpoint} 的证明]
+两个显式包络分别由命题 \ref{prop:upper}、\ref{prop:lower} 得到。
+令 \(u=t^{1/n}\)，则
+\begin{equation}\label{eq:holefraction}
+ h_n(t):=1-L_n(t)^{-1}=2^nt(1+2u)^{-n}.
+\end{equation}
+因此 \(h_n(t)=2^nt+o(t)\)，而
+\(L_n(t)=1+h_n(t)+O_n(h_n(t)^2)=1+2^nt+o(t)\)。
+另一方面 \(U_n(t)=1+2^nt+O_n(t^2)\)，夹逼得到 \eqref{eq:firstorder}。
+
+当 \(n\ge2\) 时，\((1+2u)^{-n}=1-2nu+O_n(u^2)\)。
+由 \eqref{eq:holefraction} 进一步得到
+\begin{equation}\label{eq:lowerexpansion}
+ L_n(t)=1+2^nt-n2^{n+1}t^{1+1/n}
+                +O_n(t^{1+2/n}+t^2).
+\end{equation}
+将 \eqref{eq:envelopes} 减去 \(1+2^nt\) 并除以 \(t^{1+1/n}\)，
+下界趋于 \(-n2^{n+1}\)，上界为
+\(2^nt^{1-1/n}/(1-t)\to0\)，即得 \eqref{eq:bracket}。
+\end{proof}
+
+\section{应用}
+
+\subsection{关于多线性重数一致的一阶渐近}
+
+精确约化把多线性端点问题变成参数替换。
+关键是 \eqref{eq:uniformparameter} 的误差不依赖 \(m\)。
+
+\begin{corollary}\label{cor:uniform}
+对每个固定 \(n\ge1\)，有
+\[
+ \lim_{\eps\downarrow0}\sup_{m\ge1}
+ \frac{|\Cm(1-\eps)-1-2^n\eps|}{\eps}=0.
+\]
+\end{corollary}
+\begin{proof}
+因 \((1-1/m)^m<e^{-1}\)，当 \(0<\eps<1-e^{-1}\) 时，
+定理 \ref{thm:reduction} 对全部 \(m\) 适用。
+记 \(r_n(t)=\Cn(1-t)-1-2^nt\) 和
+\[
+ \omega_n(d)=\sup_{0<t\le d}\frac{|r_n(t)|}{t}.
+\]
+由 \eqref{eq:firstorder}，\(\omega_n(d)\to0\) 当 \(d\downarrow0\)。
+置 \(s=\sigma_m(\eps)\)、\(q=-\log(1-\eps)\)，则
+\[
+ |\Cm(1-\eps)-1-2^n\eps|
+ \le\omega_n(q)q+\frac{2^{n-1}\eps^2}{1-\eps}.
+\]
+除以 \(\eps\)，右侧趋于零且与 \(m\) 无关。
+\end{proof}
+
+\subsection{二阶尺度和条件性高阶系数的传递}
+
+\begin{corollary}\label{cor:second}
+设 \(n\ge2\)，对固定 \(m\ge1\) 定义
+\[
+ R_{n,m}(\eps)=
+ \frac{\Cm(1-\eps)-1-2^n\eps}{\eps^{p_n}}.
+\]
+则
+\[
+ \liminf_{\eps\downarrow0}R_{n,m}(\eps)
+ =\liminf_{t\downarrow0}R_n(t),\qquad
+ \limsup_{\eps\downarrow0}R_{n,m}(\eps)
+ =\limsup_{t\downarrow0}R_n(t).
+\]
+特别地，\eqref{eq:bracket} 中的同一区间适用于每个 \(m\)。
+线性二阶尺度极限存在，当且仅当任一固定重数的相应极限存在；存在时数值相同。
+\end{corollary}
+\begin{proof}
+精确约化给出恒等式
+\begin{equation}\label{eq:normalizedtransfer}
+ R_{n,m}(\eps)=
+ \left(\frac{\sigma_m(\eps)}{\eps}\right)^{p_n}
+ R_n\bigl(\sigma_m(\eps)\bigr)
+ +2^n\frac{\sigma_m(\eps)-\eps}{\eps^{p_n}}.
+\end{equation}
+由 \eqref{eq:envelopes} 和 \eqref{eq:lowerexpansion}，\(R_n(t)\) 在零点附近有界。
+引理 \ref{lem:parameter} 表明第一因子趋于 \(1\)，末项趋于 \(0\)，因为 \(p_n<2\)。
+对固定 \(m\)，函数 \(\sigma_m\) 在零点右邻域连续严格增加，值域包含零点的右邻域。
+故参数替换保持下、上极限，得到结论。
+\end{proof}
+
+\begin{proposition}[高阶展开的条件性传递]\label{prop:conditional}
+固定 \(m,n\)，令 \(a_m=(m-1)/(2m)\)。
+若对某 \(1<p<2\) 和常数 \(A,B\)，线性常数满足
+\[
+ \Cn(1-t)=1+At+Bt^p+o(t^p),
+\]
+则
+\[
+ \Cm(1-\eps)=1+A\eps+B\eps^p+o_m(\eps^p).
+\]
+若 \(1<p<2\) 且线性常数进一步满足
+\[
+ \Cn(1-t)=1+At+Bt^p+Dt^2+o(t^2),
+\]
+则多线性展开为
+\[
+ \Cm(1-\eps)=1+A\eps+B\eps^p+(D+A a_m)\eps^2+o_m(\eps^2).
+\]
+其中 \(B=0\) 包含纯二次 Taylor 展开的情形。
+\end{proposition}
+\begin{proof}
+在相应假设的展开中代入 \(t=\sigma_m(\eps)\)，并使用
+\eqref{eq:quadraticparameter}。这里
+\(\sigma_m(\eps)^p=\eps^p+O_m(\eps^{p+1})\)，
+\(\sigma_m(\eps)^2=\eps^2+O_m(\eps^3)\)，且
+\(o(\sigma_m(\eps)^q)=o_m(\eps^q)\)。
+由于 \(p+1>2\)，只在线性项中出现二次参数修正。
+\end{proof}
+
+上述条件性命题说明，低于二次的分数幂系数若存在，就不依赖多线性重数；
+重数的直接参数修正首次出现在二次项。
+但周期孔的展开 \eqref{eq:lowerexpansion} 只描述 \(L_n\)。
+目前的上界在 \(t^{1+1/n}\) 尺度给出 \(0\)，下界给出 \(-n2^{n+1}\)，
+尚不能证明 \(R_n(t)\) 的极限存在，也不能把其中任一端点认定为真实系数。
+要缩小这个间距，需要改进全局上界、改进下界构造，或证明近极值集合的几何结构。
+
+\bibliographystyle{plain}
+\bibliography{sources}
+\end{document}
