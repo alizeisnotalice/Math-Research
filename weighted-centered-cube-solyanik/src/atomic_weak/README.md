@@ -38,3 +38,9 @@ wolframscript -file single_atom_guards.wl
 15个不同τ的临界点数值搜索使用15实际进程；几何积分独立核25行。Fraction以平方/八次幂的严格有理比较证明固定下界，single_fraction_certificate.json为最小证书。Wolfram四守卫已实际通过；其中曲率守卫覆盖0<τ<1，一般唯一性依赖正文凹性证明。MATLAB执行single/matlab_single_atom_independent.m，独立15行；实际环境和误差见run_summary.json。
 
 本目录weak_atomic_sanity.wl/.m仅复核旧双原子基准与零点小区间成本发散。旧值可比性与新下界不共享未经证明的最优性假设。较弱变质量双原子中间路线未进入正文或Git代码，删改理由在本轮报告。
+
+## 第26轮更正与加强
+
+正文现在严格证明所有0<τ<1时不等质量双原子超过整个单原子测试族，必要全域推导、固定τ=1/10的Fraction证书与三软件复核在two_atom/。small_tau/记录12进程、192540次Decimal目标评估的跨指数尺度探路；未找到τR>1的序列，不是全域上界。
+
+跨尺度检验实际发现旧公共block_halo的prefix相减会丢失微尺度质量。当前核改为每块math.fsum直接求和；block_sum_regression.py独立检查。historical快照与32个旧候选不改写；旧轮双精度搜索只保留其既有限定的证据范围。当前源码哈希改变，旧签名缓存须隔离，不复用为新结果。双精度端点舍入仍存在，极端跨尺度应使用small_tau的90位Decimal或更高精度及独立核验。

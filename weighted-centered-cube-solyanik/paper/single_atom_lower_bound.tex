@@ -90,3 +90,98 @@ $1+$ 处先增，故全单原子极大点确在 $r_\tau>1$。
  C^{(2),\mathrm{out}}_{c,w}(\lambda)
  =\tfrac12W_{1/8}>\frac{27}{8}. \tag{TA.5}
 \]
+
+\subsection{不等质量双原子对单原子族的统一改进}
+
+\begin{theorem}[统一的双原子改进]
+\label{thm:uniform-two-atom-improvement}
+对每个 $0<\tau<1$，有
+\[
+ W_\tau>\sup_{r>0}J_\tau(r). \tag{TB.1}
+\]
+这是对单原子测试族的严格改进；不确定 $W_\tau$ 的精确值，也不推出
+\(\tau W_\tau\) 在 \(\tau\downarrow0\) 的上极限或极限。
+
+特别地，取 \(\tau=1/10\) 和
+\(\sigma=\frac14\delta_{-1}+\frac{15}{8}\delta_1\)，有严格可核查的下界
+\[
+ \frac1{10}W_{1/10}>\frac{18511}{21250}>\frac{87}{100}. \tag{TB.2}
+\]
+\end{theorem}
+
+\begin{proof}
+沿用定理 \ref{thm:single-atom-small-tau} 证明中的 $N(r)$、$F(r)$ 与唯一极大半径 $r_\tau$。直接化简给
+\[
+ F(4/3)=3^{-\tau}
+ \left[4\tau-1+(4\tau-7)7^{\tau-1}\right]. \tag{TB.3}
+\]
+若 $\tau\le1/4$，方括号显然为负。若 $1/4<\tau<1$，令
+\[
+ H(\tau)=\log\frac{7-4\tau}{4\tau-1}+(\tau-1)\log7.
+\]
+有 $H(1)=0$，而
+\[
+ H'(\tau)=\log7-\frac{24}{(7-4\tau)(4\tau-1)}
+ \le\log7-\frac83<0.
+\]
+最后一个严格不等式可由 \(e^{3/4}>1+3/4+(3/4)^2/2+(3/4)^3/6>2\) 得
+\(\log7<\log8<9/4<8/3\)。所以 $H(\tau)>0$，(TB.3) 仍为负。由
+$F$ 的严格递减性，
+\[
+ 1<r_\tau<\frac43. \tag{TB.4}
+\]
+
+令 $\delta=r_\tau-1\in(0,1/3)$，并取不等质量双原子输入
+\[
+ \sigma_\delta=4\delta\,\delta_{-1}+2(1-\delta)\,\delta_1.
+\]
+其成本为 $2(1+\delta)$，正好等于参数为 $r_\tau=1+\delta$ 的单原子成本。
+严格原子光晕由互不相交的三段组成：
+\[
+ (-1-2\delta,-1+2\delta),\qquad(-\delta,\delta),\qquad
+ (\delta,2-\delta).
+\]
+单独捕获两原子分别给第一、第三段，同时捕获两原子等价于
+$1+|x|<1+\delta$，给中央段；接点 $\delta$ 处最佳平均等于一。
+为迁回函数输入，用质量保持的窄常数块分别代替 $\pm1$ 的原子。
+每个严格原子见证都可略增半径而保持平均大于一，因而当块足够窄时捕获整块；
+加权输入成本趋于 $2(1+\delta)$。Fatou 引理遂给
+
+\[
+ W_\tau\ge R_{\tau,\delta}:=
+ \frac{(1+2\delta)^\tau-(1-2\delta)^\tau+\delta^\tau+(2-\delta)^\tau}
+ {2\tau(1+\delta)}. \tag{TB.5}
+\]
+与同成本单原子作差，得到
+\[
+ R_{\tau,\delta}-J_\tau(1+\delta)
+ =\frac{\displaystyle\int_{1-2\delta}^{1+2\delta}x^{\tau-1}\,dx
+ -\displaystyle\int_{2-\delta}^{2+\delta}x^{\tau-1}\,dx}
+ {2(1+\delta)}>0. \tag{TB.6}
+\]
+因为 $1+2\delta<2-\delta$，第一个区间的子区间
+\([1,1+2\delta]\) 与第二个区间等长且完全位于其左侧，并且第一个区间还有
+正长度余量；权 $x^{\tau-1}$ 在正半轴严格递减。
+由 (TB.4)--(TB.6)，
+\(W_\tau\ge R_{\tau,\delta}>J_\tau(r_\tau)=\sup_rJ_\tau(r)\)，即得 (TB.1)。
+
+最后对 (TB.2)，取 $\delta=1/16$。严格光晕为
+\[
+ \left(-\frac98,-\frac78\right),\quad
+ \left(-\frac1{16},\frac1{16}\right),\quad
+ \left(\frac1{16},\frac{31}{16}\right).
+\]
+下列整数十次幂比较
+\[
+ \left(\frac{5059}{5000}\right)^{10}<\frac98,\quad
+ \left(\frac{2467}{2500}\right)^{10}>\frac78,\quad
+ \left(\frac{3789}{5000}\right)^{10}<\frac1{16},\quad
+ \left(\frac{10683}{10000}\right)^{10}<\frac{31}{16}
+\]
+代入 (TB.5) 给出
+\[
+ \frac1{10}R_{1/10,1/16}>\frac8{17}\cdot\frac{18511}{10000}
+ =\frac{18511}{21250}>\frac{87}{100},
+\]
+从而完成证明。
+\end{proof}

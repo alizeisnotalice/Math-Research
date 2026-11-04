@@ -50,13 +50,12 @@ def block_halo(atoms):
     """Strict {M_c sigma>1} modulo endpoints, from all contiguous blocks."""
     atoms = sorted(atoms)
     x = [point for point, mass in atoms]
-    prefix = [0.0]
-    for point, mass in atoms:
-        prefix.append(prefix[-1] + mass)
     intervals = []
     for left in range(len(atoms)):
         for right in range(left, len(atoms)):
-            mass = prefix[right + 1] - prefix[left]
+            # Do not subtract global prefix sums: a micro-scale block can be
+            # lost after being added to an unrelated macroscopic mass.
+            mass = math.fsum(mass for _, mass in atoms[left:right + 1])
             a = x[right] - mass / 2
             b = x[left] + mass / 2
             if a < b:
