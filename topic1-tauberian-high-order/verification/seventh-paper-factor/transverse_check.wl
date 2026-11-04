@@ -1,0 +1,10 @@
+Print["VERSION ",$Version," PID ",$ProcessID];
+Clear[n,v,ri,rj,pp];
+ass=Element[n,Integers]&&n>=2&&v>0&&ri>0&&rj>0&&pp>0;
+aa=v^n;sp=(v ri)^(n-2);tp=(v rj)^(n-2);
+ee=pp v^3 rj;hh=pp^2 v^4 rj/n;
+expr=(1+v)^(n-1)(v/aa)sp/(n aa ri^(n-1))*(5/3)tp ee^2 hh;
+exact=(1+v)^(n-1)*5pp^4/(3n^2)*v^7*rj^(n+1)/ri;
+Print["full transverse prefactor residual=",InputForm[FullSimplify[expr-exact,ass]]];
+Print["two-end coefficient residual=",InputForm[FullSimplify[(2*5pp^4/(3n^2)/.pp->n/3)-(10/9)n^2/27,Element[n,Integers]&&n>=2]]];
+Print["complete"];

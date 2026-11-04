@@ -39,16 +39,16 @@
 研究 Lebesgue 测度下中心轴平行立方体极大算子的 Tauberian 常数。
 令 \(a=2^nt\)、\(v=2t^{1/n}\)、\(L_n(t)=[1-a/(1+v)^n]^{-1}\)，
 \(K_n=\binom{n}{2}n^2/27\)。对每个固定整数 \(n\ge2\)，证明
-\(C_n(1-t)=L_n(t)+K_nav^6+o_n(av^6)\)，
-确定直至 \(t^{1+6/n}\) 的全部系数，其中三维 \(t^{8/3}\) 项为零。
-二维进一步有 \(C_2(1-t)=L_2(t)+(4/27)av^6-(176/243)av^7+o(av^7)\)。
+\(C_n(1-t)=L_n(t)+K_nav^6-(n+26/9)K_nav^7+o_n(av^7)\)，
+确定直至 \(t^{1+7/n}\) 的全部系数，其中三维 \(t^{8/3}\) 项为零。
 上界覆盖全部有限正测度可测输入及全部半径，下界由孔形重配的真实有限输入实现。
 先以所有源点的实际见证、强投影分布和面容量得到临界加权紧性，
 再从原半盒图提取完整局部铺砌，并以横截面接触计数控制无标签角对。
 在有效端盒内把同一见证捕获的不交目标质量相加，给出系数准确的全源角成本；
 六层结算保留源缺量并抵消前层重复量，完成匹配上界。
-二维近等号还迫使实际缺源接近双角臂；同一见证的轴帽与对角目标联合计量，
-保留目标缺角反馈，再以准确角权和七层结算匹配下一阶。
+近等号还迫使实际缺源在全体固定维数中接近角臂；同一见证的轴帽与对角目标联合计量，
+以自适应接触容量保留目标缺角反馈，高支撑交量由二轴整管外缺量支付。
+七层结算及预删角臂的有限构造匹配下一阶。
 对于共享同一中心方体、以公共交集归一化的多线性模型，
 证明精确线性约化、临界发散以及关于全部多线性重数一致的高阶渐近。
 \end{abstract}
@@ -110,7 +110,9 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 控制角接触数，不要求全局晶格标签。
 最后回到同一源点的原指定见证，将它捕获的各个真实目标质量相加，
 在有效端盒内积分缺源层，得到准确的角部代价。任意大交长由小份额盈余支付，
-六层望远镜使早层粗误差降阶，同时保留末层完整系数。
+六层望远镜先确定首个角部系数。为继续计算下一项，实际根传输和自适应探针
+给出全部正角的软容量；全源轮廓与管外缺量支付保留准确的目标缺角反馈。
+七层结算与有限构造最终匹配所需系数。
 
 \begin{theorem}[真实高阶渐近]\label{thm:endpoint}
 令
@@ -125,19 +127,26 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 其中右侧上界对 \(0<t<1\) 成立。记 \(K_n=\binom{n}{2}n^2/27\)。
 对每个固定整数 \(n\ge2\)，进一步有
 \begin{equation}\label{eq:sharp}
- \Cn(1-t)=L_n(t)+2^{n+6}K_nt^{1+6/n}+o_n(t^{1+6/n}),\qquad t\downarrow0.
+ \begin{aligned}
+ \Cn(1-t)=L_n(t)&+2^{n+6}K_nt^{1+6/n}\\
+ &-2^{n+7}\left(n+\frac{26}{9}\right)K_nt^{1+7/n}
+ +o_n(t^{1+7/n}),\qquad t\downarrow0.
+ \end{aligned}
 \end{equation}
 令
 \[
- b_{n,j}=2^{n+j}\left[
- \sum_{k=1}^{1+\lfloor j/n\rfloor}
- (-1)^{j-(k-1)n}\binom{n+j-1}{j-(k-1)n}
- +\mathbf1_{\{j=6\}}K_n\right],\qquad 0\le j\le6.
+ \begin{aligned}
+ b_{n,j}=2^{n+j}\Bigg[&\sum_{k=1}^{1+\lfloor j/n\rfloor}
+ (-1)^{j-(k-1)n}\binom{n+j-1}{j-(k-1)n}\\
+ &+\mathbf1_{\{j=6\}}K_n
+ -\mathbf1_{\{j=7\}}\left(n+\frac{26}{9}\right)K_n\Bigg],
+ \qquad 0\le j\le7.
+ \end{aligned}
 \]
 则全部维数的真实展开统一写为
 \begin{equation}\label{eq:coefficients}
- \Cn(1-t)=1+\sum_{j=0}^{6}b_{n,j}t^{1+j/n}
-              +o_n(t^{1+6/n}).
+ \Cn(1-t)=1+\sum_{j=0}^{7}b_{n,j}t^{1+j/n}
+              +o_n(t^{1+7/n}).
 \end{equation}
 通式包含低维的幂次碰撞；三维 \(b_{3,5}=0\)，故 \(t^{8/3}\) 项消失。
 特别地，
@@ -185,7 +194,7 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 结合 \eqref{eq:sharp}，得到关于多线性重数一致的高阶展开。
 以下常数均允许依赖固定维数；不主张维数一致性。
 第 2 节准备同时等分、有限见证选择和参数控制；
-第 3 节证明精确约化、一般维数的锐上界与匹配有限构造，并处理二维下一阶；
+第 3 节证明精确约化、一般维数的锐上界与匹配有限构造；
 第 4 节传递至全部多线性重数。
 
 \section{预备知识}
@@ -424,25 +433,30 @@ Taylor 定理给出 \eqref{eq:quarticparameter} 的统一余项，绝对值至�
 
 \input{sections/sharp}
 
-\input{sections/skew}
-
-\input{sections/planar}
+\input{sections/seventh}
 
 \begin{proof}[定理~\ref{thm:endpoint} 高阶部分的证明]
-由 \ref{sharp-upper} 的全部输入上界和命题~\ref{prop:nonexact} 的匹配下界，
-\[
- (\Cn(1-t)-L_n(t))/(av^6)\longrightarrow K_n.
-\]
-这就是 \eqref{eq:sharp}。
+由定理~\ref{seventh:theorem} 的全部输入上界和实际有限下界，
+\eqref{eq:sharp} 成立；二维取 \(K_2=4/27\)，得到 \eqref{eq:sharp-planar}。
 为取得全部幂次的系数，展开绝对收敛级数
 \[
  L_n(t)-1=\sum_{k\ge1}v^{kn}(1+v)^{-kn}.
 \]
 \(v^{n+j}\) 的系数只来自 \(k\le1+\lfloor j/n\rfloor\)，其二项式次数为
-\(j-(k-1)n\)，上标为 \(n+j-1\)。截至 \(j=6\) 后的余项是
-\(O_n(v^{n+7})\)。把 \eqref{eq:sharp} 的修正加入 \(j=6\) 项即得
-\eqref{eq:coefficients}。\(j=1\) 的系数为 \(-n2^{n+1}\)，所以最初归一化极限也成立。
-二维 \eqref{eq:sharp-planar} 由定理~\ref{planar:seventh} 的匹配上、下界得到。
+\(j-(k-1)n\)，上标为 \(n+j-1\)。截至 \(j=7\) 后的余项是
+\(O_n(v^{n+8})\)。把 \eqref{eq:sharp} 的修正分别加入 \(j=6,7\) 项，即得
+\eqref{eq:coefficients}。\(j=1\) 的系数为 \(-n2^{n+1}\)，故最初归一化极限成立。
+
+新第七系数在全部 \(n\ge2\) 非零。对 \(n\ge8\)，仅有 \(k=1\)，从而
+\[
+ 2^{-(n+7)}b_{n,7}=-\binom{n+6}{7}-\left(n+\frac{26}{9}\right)K_n<0.
+\]
+余下 \(n=2,3,4,5,6,7\) 的同一归一化系数依次为
+\[
+ -\frac{31280}{243},\quad \frac{676}{9},\quad-\frac{21424}{81},\quad
+ -\frac{84575}{243},\quad-\frac{8836}{9},\quad-\frac{169442}{81}.
+\]
+这些数由上述有限二项式和的有理运算直接得到；三维为正，其余维数为负。
 \end{proof}
 
 \section{重数一致的多线性渐近}
@@ -456,21 +470,21 @@ Taylor 定理给出 \eqref{eq:quarticparameter} 的统一余项，绝对值至�
 \]
 对每个固定 \(n\ge2\)，当 \(\eps\downarrow0\) 时，关于全部整数 \(m\ge1\) 一致有
 \begin{equation}\label{eq:uniform-coefficients}
- \Cm(1-\eps)=1+\sum_{j=0}^{6}b_{n,j}
- [\eps A_m(\eps)]^{1+j/n}+o_n(\eps^{1+6/n}).
+ \Cm(1-\eps)=1+\sum_{j=0}^{7}b_{n,j}
+ [\eps A_m(\eps)]^{1+j/n}+o_n(\eps^{1+7/n}).
 \end{equation}
 三维 \(\eps^{8/3}\) 的系数仍为 \(160(1-1/m)\)：该项在线性情形消失，
 在 \(m>1\) 时由参数替换产生。
 \end{corollary}
 \begin{proof}
 对 \(0<\eps\le1/2\)，精确约化同时适用于全部 \(m\)。记 \(s=\sigma_m(\eps)\)，
-\(p_*=1+6/n\le4\)。单线性展开的余项 \(r_n(t)=o_n(t^{p_*})\) 满足：
+\(p_*=1+7/n\le9/2\)。单线性展开的余项 \(r_n(t)=o_n(t^{p_*})\) 满足：
 给定 \(\delta>0\)，存在与 \(m\) 无关的 \(t_0>0\)，使
 \(|r_n(t)|\le\delta t^{p_*}\) 对全部 \(0<t<t_0\) 成立。
 当 \(\eps<t_0/2\) 时，\(\eps\le s\le2\eps\)，故全部重数的余项
 均不超过 \(\delta2^{p_*}\eps^{p_*}\)，给出一致的 little-o。
 引理~\ref{lem:parameter} 还给 \(s=\eps A_m(\eps)+O(\eps^5)\)。
-对 \(1\le p\le4\)，两底数均在 \([\eps,C\eps]\) 内，均值定理给
+对 \(1\le p\le9/2\)，两底数均在 \([\eps,C\eps]\) 内，均值定理给
 \[
  s^p-[\eps A_m(\eps)]^p=O_p(\eps^{p+4}).
 \]
@@ -480,44 +494,20 @@ Taylor 定理给出 \eqref{eq:quarticparameter} 的统一余项，绝对值至�
 \end{proof}
 
 \begin{corollary}[自然参数下的一致极限]\label{cor:nonexact-multi}
-对每个固定 \(n\ge2\)，有
+对每个固定 \(n\ge2\)，记 \(s=\sigma_m(\eps)\)、\(a_s=2^ns\)、
+\(v_s=2s^{1/n}\)，有
 \[
  \lim_{\eps\downarrow0}\sup_{m\ge1}
- \left|\frac{\Cm(1-\eps)-L_n(\sigma_m(\eps))}
- {2^{n+6}\eps^{1+6/n}}-K_n\right|=0.
+ \left|\frac{\Cm(1-\eps)-L_n(s)-K_na_sv_s^6}{a_sv_s^7}
+       +\left(n+\frac{26}{9}\right)K_n\right|=0.
 \]
 \end{corollary}
 \begin{proof}
-由定理~\ref{thm:endpoint}，标量标准化余项记为 \(\eta_n(t)\to0\)。
-精确约化使绝对值中的标准化差等于
-\[
- [K_n+\eta_n(\sigma_m(\eps))]
- (\sigma_m(\eps)/\eps)^{1+6/n}-K_n.
-\]
-积分式 \(\sigma_m(\eps)=\int_0^\eps(1-z)^{1/m-1}\dd z\) 给
-\(1\le\sigma_m(\eps)/\eps\le(1-\eps)^{-1}\)，统一趋于一。
-又 \(\sigma_m\in[\eps,2\eps]\)，单一标量余项的模量
-\(\sup_{0<t\le2\eps}|\eta_n(t)|\to0\)，因此可对全部 \(m\) 取上确界。
-\end{proof}
-
-\begin{corollary}[二维下一阶的重数一致传递]\label{cor:uniform-planar}
-记 \(s=\sigma_m(\eps)\)、\(a_s=4s\)、\(v_s=2\sqrt s\)。
-当 \(\eps\downarrow0\) 时，关于全部整数 \(m\ge1\) 一致有
-\[
- C_2^{(m)}(1-\eps)=L_2(s)+\frac4{27}a_sv_s^6
-              -\frac{176}{243}a_sv_s^7+o(\eps^{9/2}).
-\]
-\end{corollary}
-\begin{proof}
-二维 \eqref{eq:sharp-planar} 的余项记为 \(r_2(t)=o(t^{9/2})\)。
-精确约化给出同一标量余项 \(r_2(\sigma_m(\eps))\)。
-由 \(\eps\le s\le2\eps\)，
-\[
- \sup_{m\ge1}\frac{|r_2(\sigma_m(\eps))|}{\eps^{9/2}}
- \le 2^{9/2}\sup_{0<t\le2\eps}\frac{|r_2(t)|}{t^{9/2}}
- \longrightarrow0.
-\]
-因此真实下一阶及其余项对全部重数一致传递。
+将定理~\ref{thm:endpoint} 的七阶标量余项写成 \(r_n(t)=o_n(t^{1+7/n})\)。
+精确约化给出同一个 \(r_n(s)\)。记其标准化模量为
+\(\omega_n(\delta)=\sup_{0<t\le\delta}|r_n(t)|/t^{1+7/n}\to0\)。
+由于 \(\eps\le s\le2\eps\) 及 \(a_sv_s^7=2^{n+7}s^{1+7/n}\)，
+所需上确界不超过 \(2^{-(n+7)}\omega_n(2\eps)\)，故趋于零。
 \end{proof}
 
 \bibliographystyle{plain}
