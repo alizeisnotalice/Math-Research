@@ -20,10 +20,15 @@ C_n(1-t)=1+2^nt+o(t),\qquad
 只使用无约束权密度比信息的指定测度放大方案，优化后仍只能得到 U_n。
 薄立方孔的全部半径公式亦已证明，相关条件和证明见 `proofs/002-*.md`。
 
+第3轮进一步得到任意输入的同半径部分 halo 负修正、具有缓变见证选择的全尺度类上界，
+以及周期立方孔附近任意小体积增删微扰的匹配二阶限制。
+这些均保留明确的适用条件；完整证明在 `paper/sections/`，结果与验证记录在 `rounds/003.md`。
+
 - `paper/main.tex`、`paper/sources.bib`：精简论文及准确来源。
 - `paper/tauberian.pdf`：已编译并检查的论文 PDF。
 - `rounds/001.md`：基线审查、修复、删除和验证记录。
 - `rounds/002.md`：机制筛除、独立复核与下一轮问题。
+- `rounds/003.md`：尺度界、周期微扰与精确反例。
 - `proofs/`：正文以外的必要证明及周期截断误差说明。
 - `verification/`：必要的精确代数与本机符号验证程序。
 - `sources.md`：直接相关文献的对象、版本与读取范围。
@@ -40,6 +45,14 @@ latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 
 ```sh
 python3 -B verification/verify_baseline.py
+```
+
+主要符号核验使用 Mathematica/Wolfram Language，例如：
+
+```sh
+wolframscript -file verification/wolfram/gram.wl
+wolframscript -file verification/wolfram/energy.wl
+wolframscript -file verification/wolfram/endpoint.wl
 ```
 
 `verification/verify_baseline.m` 在本机 MATLAB R2026a Symbolic Math Toolbox 中实际运行过，

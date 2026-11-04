@@ -1,0 +1,11 @@
+# Mathematica 精确核验
+
+实际运行环境：Wolfram 15.0.0，macOS ARM。三个脚本各从独立内核运行，不依赖 Notebook 状态。
+
+- `gram.wl`：带完整实参数假设的 Resolve/Reduce。
+- `energy.wl`：0<ε<1 上的精确分段积分；缓存正部符号，检测区间内部根。
+- `endpoint.wl`：n=2,…,8 的形式系数提取与代回比较。
+- `*-result.txt`：实际成功运行的关键输出。
+
+运行方式：`wolframscript -file verification/wolfram/gram.wl`，其余文件同理。
+符号结果支持各自的代数步骤；一般几何证明、极限存在性及余项控制仍须按论文的证明链核对。
