@@ -105,3 +105,7 @@ run('verification/fixed_cube_matlab.m')
 第17轮确定任意维、任意分数阶的全体最优坐标宽度：α≥2^(−β/n)时有精确二尺度公式，低于此阈值宽度无界。每固定(n,β)在高阈值具有显式端点公式与全阶展开；二维半阶W=α⁻¹−α并有任意阶精确余项。见 `rounds/017.md`。体积常数的下一系数仍未确定。
 
 第17轮当前PDF67页。复现 `verification/sharp_width_scan.py`、`verification/sharp_width.wl`、`verification/sharp_width_matlab.m`。
+
+第18轮将精确两点差体转为真实全体体积上界U(α)=1−α²+(2α²−1)log[(2α²−1)/α²]，并延至临界α=1/√2。二维半阶体积三阶剩余量的liminf/limsup被夹在[2,10/3]，高矩次阶剩余夹在[0,8]；尚未证明系数存在或匹配。两点几何方法自身已最优，更紧上界需要多见证约束。见 `rounds/018.md`。
+
+第18轮当前PDF69页。复现 `verification/pair_body.py`（`--check-only`重验有理证书）、`verification/pair_body.wl`、`verification/pair_body_matlab.m`。

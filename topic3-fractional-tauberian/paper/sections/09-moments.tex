@@ -218,3 +218,24 @@ $L_{n,\beta}pB(p,n+1)+O_{n,J}(pB(p,n+2))$，
 定理~\ref{gl:main}闭合中心全体首项后，限制型泛函也具有匹配的全体首项。
 下一系数仍不能仅由固定输入 $Q_0$ 的高矩展开推出，因为取上确界的输入可以随 $p$ 改变。
 \end{remark}
+
+\begin{corollary}[二维半阶的全体高矩次阶夹逼]\label{mom:pair-bracket}
+当 $n=2$、$\beta=1$ 时，
+\[
+ 0\le\liminf_{p\to\infty}p^3[\mathfrak F_{1,\mathcal Q_c}(p)-4p^{-2}]
+ \le\limsup_{p\to\infty}p^3[\mathfrak F_{1,\mathcal Q_c}(p)-4p^{-2}]\le8.
+\]
+\end{corollary}
+\begin{proof}
+定理~\ref{pb:volume}对每个输入给出统一近端层析上界。由
+$\mathcal U(1-t)=2t^2+(10/3)t^3+O(t^4)$ 及低水平弱型支配，
+\[
+ \mathfrak F_{1,\mathcal Q_c}(p)
+ \le2pB(p,3)+\tfrac{10}{3}pB(p,4)+O(p^{-4})
+ =4p^{-2}+8p^{-3}+O(p^{-4}).
+\]
+下界使用固定 $Q_0$ 的面积展开 $2t^2+2t^3+O(t^4)$，
+而非把矩形上确界放进积分；它给出
+$\mathfrak F_{1,\mathcal Q_c}(p)\ge2pB(p,3)+2pB(p,4)+O(p^{-4})
+=4p^{-2}+O(p^{-4})$。两个不等式合并即得结论。
+\end{proof}

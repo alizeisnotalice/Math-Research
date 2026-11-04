@@ -1,0 +1,150 @@
+\section{二维半阶的两点几何与全体体积上界}\label{pb:section}
+
+精确坐标宽度只给出方体外包络。为了改善体积上界，还要同时保留两个坐标差的约束。
+本节固定 $n=2$、$\beta=1$，得到精确的两点可行差体，再用凸几何把它转为对所有输入
+一致的面积上界。这一步不要求原光晕凸，也不把不同点的尺度强制为相同。
+
+\begin{theorem}[严格两点可行差体]\label{pb:body}
+令 $1/\sqrt2<\alpha<1$，$c=2\alpha^2-1$，并定义
+\[
+ K_\alpha=\{d\in\mathbb R^2:|d_j|<\alpha\ (j=1,2),\
+ (\alpha-|d_1|)(\alpha-|d_2|)>c\}.
+\]
+这是有界、开、中心对称的凸集。对任意质量一可测输入 $E$，记
+$H=H_{1,\mathcal Q_c}(\alpha,E)$，则 $H-H\subset K_\alpha$。
+反之，任意 $d\in K_\alpha$ 都能由某个质量一输入的两个严格光晕点实现为差向量。
+反向的输入可以依赖该点对，未要求一个输入同时实现整个差体。
+\end{theorem}
+\begin{proof}
+记 $W=\alpha^{-1}-\alpha<\alpha$。对 $x,y\in H$，由推论~\ref{wid:half}，
+$u=|x_1-y_1|$、$v=|x_2-y_2|$ 都严格小于 $W$。
+设两个见证边长为 $\ell,s\in(\alpha,\alpha^{-1})$，置 $z=(\ell+s)/2$。
+各方向交长至多为 $z-u$、$z-v$，所以两捕获量的严格阈值满足
+\[
+ 2\alpha z<1+(z-u)(z-v).
+\]
+这里用平均尺度只作两点交叠的上压缩，不改变原输入或多点尺度选择。
+置 $S=u+v$，上述条件写成
+\[
+ G(z):=z^2-(S+2\alpha)z+1+uv>0.
+\]
+$G$ 为凸二次式，因此 $G(\alpha)$、$G(\alpha^{-1})$ 至少一个为正。
+直接计算
+\[
+ G(\alpha)=\alpha(W-S)+uv,\quad
+ G(\alpha^{-1})=(W-S)/\alpha+uv,\quad
+ G(\alpha)-G(\alpha^{-1})=W(S-W).
+\]
+若 $S<W$，第一式已经为正；若 $S\ge W$，最后一式说明
+$G(\alpha)\ge G(\alpha^{-1})$。故总有 $G(\alpha)>0$，这恰是 $y-x\in K_\alpha$。
+
+反向若 $d\in K_\alpha$，则 $G(\alpha)>0$。取相同的两边长 $z>\alpha$
+充分接近 $\alpha$，仍有 $G(z)>0$，并保证 $z<\alpha^{-1}$。
+沿该差向量放置两方体，其交叠恰为 $(z-u)(z-v)$；
+两个个体阈值 $\alpha z$ 和总阈值都满足命题~\ref{cap:pair}。
+所以存在质量一输入同时严格见证这两个中心。
+
+最后，$K_\alpha$ 是定义域 $|d_j|<\alpha$ 内凸函数
+\[
+ -\log(\alpha-|d_1|)-\log(\alpha-|d_2|)
+\]
+的严格下水平集。每个一维项由凸递增函数与绝对值复合而成，因而凸。
+开性、对称性和有界性直接由定义得到。
+\end{proof}
+
+\begin{lemma}[严格水平常数的右连续性]\label{pb:right-continuity}
+固定模型参数。若 $\alpha_m\downarrow\alpha$、$\alpha_m>\alpha$，则
+$C_{\beta,\mathcal B}(\alpha)=\sup_m C_{\beta,\mathcal B}(\alpha_m)$。
+\end{lemma}
+\begin{proof}
+对每个输入，严格光晕满足
+$H(\alpha,E)=\bigcup_mH(\alpha_m,E)$，由测度的下连续性，
+其归一化测度等于相应上确界。再对输入取上确界，两个上确界可以交换顺序，得到结论。
+\end{proof}
+
+\begin{theorem}[全体体积的显式上界与三阶夹逼]\label{pb:volume}
+对 $1/\sqrt2\le\alpha<1$，有
+\begin{equation}\label{pb:finite-bound}
+ R(\alpha)\le C_{1,\mathcal Q_c}(\alpha)\le\mathcal U(\alpha),
+ \qquad R(\alpha)=\tfrac12(\alpha^{-1}-\alpha)^2,
+\end{equation}
+其中当 $\alpha>1/\sqrt2$ 时
+\[
+ \mathcal U(\alpha)=1-\alpha^2+(2\alpha^2-1)
+ \log\frac{2\alpha^2-1}{\alpha^2},
+\]
+并以连续延拓定义 $\mathcal U(1/\sqrt2)=1/2$。
+于是
+\begin{equation}\label{pb:cubic-bracket}
+ 2\le\liminf_{t\downarrow0}\frac{C_{1,\mathcal Q_c}(1-t)-2t^2}{t^3}
+ \le\limsup_{t\downarrow0}\frac{C_{1,\mathcal Q_c}(1-t)-2t^2}{t^3}
+ \le\frac{10}{3}.
+\end{equation}
+这里不主张三阶极限存在，也不主张上界的三阶常数最优。
+\end{theorem}
+\begin{proof}
+先设 $\alpha>1/\sqrt2$，归一化 $|E|=1$。空光晕无需处理。
+否则 $H$ 是有界开集：开性来自固定尺度交叠的平移连续性，有界性来自精确宽度定理。
+令 $A=\operatorname{conv}H$，它仍是有界开凸集。由
+\[
+ A-A=\operatorname{conv}(H-H)\subset K_\alpha
+\]
+和凸集 Brunn--Minkowski 不等式~\ref{gl:bm}，有
+\[
+ 4|H|\le4|A|\le|A-A|\le|K_\alpha|.
+\]
+因此原光晕不必凸；凸化仅用于差集和体积比较。
+
+正象限中 $K_\alpha$ 的边界为
+$v=\alpha-c/(\alpha-u)$，$0\le u\le W$。
+逐项积分，得到
+\[
+ \frac{|K_\alpha|}{4}
+ =\int_0^W\left(\alpha-\frac{c}{\alpha-u}\right)du
+ =1-\alpha^2+c\log\frac{c}{\alpha^2}=\mathcal U(\alpha).
+\]
+对所有输入取上确界即得上界；下界是推论~\ref{rect:orders}。
+在临界阈值，应用引理~\ref{pb:right-continuity}并让较大阈值趋近，
+两侧连续表达式给出同样的夹逼。
+
+令 $t=1-\alpha$，展开上述上包络及矩形下界：
+\[
+ \mathcal U(1-t)=2t^2+\tfrac{10}{3}t^3+\tfrac{43}{6}t^4+O(t^5),
+ \qquad R(1-t)=2t^2+2t^3+\tfrac52t^4+O(t^5).
+\]
+两式相减归一化，得到式~\eqref{pb:cubic-bracket}。
+\end{proof}
+
+\begin{proposition}[两点几何方法的精确边界]\label{pb:pair-only}
+在所有满足 $S-S\subset K_\alpha$ 的有界开集 $S$ 中，最大面积恰为
+$|K_\alpha|/4=\mathcal U(\alpha)$，由 $S=K_\alpha/2$ 达到。
+因此若只保留两点可行差向量约束，不能再降低上述体积上包络。
+\end{proposition}
+\begin{proof}
+上界由同一凸化和 Brunn--Minkowski 论证得到。
+因 $K_\alpha$ 凸且中心对称，$(K_\alpha/2)-(K_\alpha/2)=K_\alpha$，
+故所述集合达到面积上界。定理~\ref{pb:body}只保证它的每一对点分别可行，
+不保证存在一个共同输入使整个 $K_\alpha/2$ 成为光晕；后者需要多见证约束。
+\end{proof}
+
+\begin{proposition}[上包络的任意阶正级数与显式余项]\label{pb:all-orders}
+置 $x=1-\alpha^2\in(0,1/2)$。则
+\[
+ \mathcal U(\alpha)=\sum_{j=2}^{\infty}b_jx^j,
+ \qquad b_j=\frac{2^j-j-1}{j(j-1)}>0.
+\]
+对任意整数 $N\ge2$，截断余项满足
+\[
+ b_{N+1}x^{N+1}\le
+ \mathcal U(\alpha)-\sum_{j=2}^Nb_jx^j
+ \le\frac{(2x)^{N+1}}{N(N+1)(1-2x)}.
+\]
+固定阶截断的首个误差系数为 $b_{N+1}>0$，故该上包络的误差阶sharp。
+这不是全体体积常数的高阶展开。
+\end{proposition}
+\begin{proof}
+把上包络写成 $x+(1-2x)\log[(1-2x)/(1-x)]$，
+在 $|x|<1/2$ 展开对数并合并系数，即得正级数。
+下界保留首个正尾项；上界使用
+$b_j\le2^j/[j(j-1)]\le2^j/[N(N+1)]$ 后求几何级数。
+\end{proof}
