@@ -1,0 +1,12 @@
+ClearAll[x,y,z,b];
+Print["Mathematica: ",$Version];
+Print["Subset only: 1/2<=b<=1, 1/6<=x,y<=1, |z|<=1/12; nu=1/100; c=nu²/1000."];
+dd=((x+z)(y+z)(x+y+2z)+(x-z)(y-z)(x+y-2z))/2;
+G=b/27-b*x*y+dd; dev=(1-b)+(x-1/3)^2+(y-1/3)^2+z^2;
+base=(G-dev/100)/.z->0;
+Print["positive branch violation: ",Reduce[1/6<=x<=1&&1/6<=y<=1&&-1/12<=z<=1/12&&(x+z<=0||x-z<=0||y+z<=0||y-z<=0),{x,y,z},Reals]];
+Print["coercivity b=1/2 violation: ",Reduce[1/6<=x<=1&&1/6<=y<=1&&(base/.b->1/2)<0,{x,y},Reals]];
+Print["coercivity b=1 violation: ",Reduce[1/6<=x<=1&&1/6<=y<=1&&(base/.b->1)<0,{x,y},Reals]];
+Print["z coefficient excess: ",Factor[Coefficient[G-dev/100,z,2]]];
+Print["D bound: dd<=2197/864 from x±z,y±z<=13/12; hence b+D<4."];
+Print["outside window implies dev>=1/10000; thus G>=1/1000000 > (1/10000000)(b+D)."];
