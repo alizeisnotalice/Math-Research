@@ -1,0 +1,179 @@
+
+\subsection{紧参数集上的任意阶统一表示}
+
+四接触尺度还给出不预先选分支的有限阈值积分。保留最大值而只截断解析边界，
+便能对任意随阈值变化的分数阶参数统一控制误差。
+
+\begin{lemma}[方体外部中心的精确顶层]\label{fix:outside-localization}
+对 $Q_0=[-1/2,1/2]^n$、$0<\beta<n$，有
+\[
+ \sup_{x\notin\operatorname{int}Q_0}M_{\beta,\mathcal Q_c}\mathbf1_{Q_0}(x)
+ =\max\{1/2,2^{\beta-n}\}.
+\]
+因此阈值大于右端时，全部光晕中心都在 $Q_0$ 内部。
+\end{lemma}
+\begin{proof}
+外部中心至少有一个坐标的绝对值不小于 $1/2$。
+该坐标与 $Q_0$ 的交长至多 $\min(1,\ell/2)$，其余交长至多 $\min(1,\ell)$。
+候选平均于是至多
+$\ell^{\beta-n}\min(1,\ell/2)\min(1,\ell)^{n-1}$。
+分别在 $\ell\le1$、$1\le\ell\le2$、$\ell\ge2$ 上取最大值，得到所述上界。
+在 $x=(1/2,0,\ldots,0)$ 分别取 $\ell=1,2$，两项都能达到。
+\end{proof}
+
+\begin{theorem}[任意阶边界截断]\label{fix:all-order-envelope}
+设 $J\Subset(0,2)$ 是非空紧区间，
+$\eta=\min_{\beta\in J}\min(\beta,2-\beta)$、$K=1/\eta$。
+对 $i=A,B,C,D$ 定义
+\begin{align*}
+ R_A(\beta,t,u)&=\frac{1-(1-t)^{1/\beta}}2,&
+ R_D(\beta,t,u)&=\frac{(1-t)^{-1/(2-\beta)}-1}2,\\
+ R_B(\beta,t,u)&=1-tu-(1-t)(1-2tu)^{1-\beta},&
+ R_C(\beta,t,u)&=1+tu-(1-t)(1+2tu)^{2-\beta}.
+\end{align*}
+令
+\[
+ h_J=\max\{1/2,2^{\max J-2}\},\qquad
+ t_J=\min\left\{1-h_J,\ 1-2^{-1/(K+1)},\ \frac1{4K}\right\}>0.
+\]
+则 $\beta\in J$、$0<t<t_J$ 时
+\begin{equation}\label{fix:exact-envelope}
+ V_\beta(1-t)=8t^2\int_0^K
+ \max\{R_A/t-u,R_B/t-u,R_C/t-u,R_D/t-u,0\}\,du.
+\end{equation}
+对整数 $N\ge1$，令 $P_{i,N}=\sum_{j=1}^Na_{ij}(\beta,u)t^{j-1}$，其中
+\begin{align*}
+ a_{Aj}&=\frac{(-1)^{j+1}}2\binom{1/\beta}{j},&
+ a_{Dj}&=\frac{(-1)^j}2\binom{-1/(2-\beta)}{j},\\
+ a_{Bj}&=-\binom{1-\beta}{j}(-2u)^j
+       +\binom{1-\beta}{j-1}(-2u)^{j-1}-u\delta_{j1},\\
+ a_{Cj}&=-\binom{2-\beta}{j}(2u)^j
+       +\binom{2-\beta}{j-1}(2u)^{j-1}+u\delta_{j1}.
+\end{align*}
+则统一截断式
+\begin{equation}\label{fix:truncated-envelope}
+ V_\beta(1-t)=8t^2\int_0^K
+ \max\{P_{A,N}-u,P_{B,N}-u,P_{C,N}-u,P_{D,N}-u,0\}\,du
+ +\mathcal E_N
+\end{equation}
+满足 $|\mathcal E_N|\le8K E_Nt^{N+2}$。
+这里可显式取
+\[
+ B=\max\{2,1/\eta\},\quad
+ D_k=(2K)^k(B)_k\,2^{B+k},\qquad
+ E_N=\frac{D_{N+1}+(N+1)D_N}{(N+1)!},
+\]
+其中 $(B)_k=B(B+1)\cdots(B+k-1)$。
+特别地，该结论允许 $\beta=\beta(t)$ 是取值于 $J$ 的任意函数。
+\end{theorem}
+\begin{proof}
+由引理~\ref{fix:outside-localization}及 $1-t>h_J$，全部中心都在内部，
+故有限接触尺度公式适用。在有序象限中，每个候选关于 $r$ 严格递减，
+其严格水平集的径向上界分别为 $R_A,R_B,R_C,R_D$（此时 $s=tu$）。
+这些边界均在 $r<1/2$ 内：若达到 $r=1/2$，会与上述外部上界矛盾。
+又 $R_B-s$ 与 $(1-2s)^\beta-(1-t)$ 同号，
+$R_C-s$ 与 $1-(1-t)(1+2s)^{2-\beta}$ 同号，
+所以并集的对角端点恰为 $\max(R_A,R_D)$。
+对 $0<q\le K$，中值定理分别控制 $(1-t)^q$ 和 $(1-t)^{-q}$，得到
+\[
+ \max(R_A,R_D)/t\le \frac K2(1-t)^{-K-1}<K.
+\]
+因此积分上限可取 $K$，式~\eqref{fix:exact-envelope}成立。
+
+对各 $R_i$ 在 $t=0$ 展开。二项式公式直接给出所列 $a_{ij}$。
+在 $0\le u\le K$、$0\le t\le t_J$ 上，所有幂函数的底数属于 $[1/2,3/2]$，
+幂指数绝对值至多 $B$。
+其 $k$ 阶下降阶乘的绝对值至多 $(B)_k$，而幂函数的剩余因子至多 $2^{B+k}$。
+对 $R_B,R_C$ 的乘积 $(1-t)(1\pm2tu)^p$ 求 $N+1$ 阶导数，
+只有两项，绝对值之和至多 $D_{N+1}+(N+1)D_N$；
+$R_A,R_D$ 的导数也被这一界控制。
+Taylor 定理遂给出
+\[
+ |R_i-tP_{i,N}|\le E_Nt^{N+1}.
+\]
+有限个输入的最大值关于上确界范数是 $1$-Lipschitz 的，故被积函数误差
+至多 $E_Nt^N$。乘以 $8t^2$ 并积分，即得所需显式界。
+\end{proof}
+
+\begin{remark}
+式~\eqref{fix:truncated-envelope}是统一的任意阶近似表示，保留了候选之间的最大值。
+它不声称每条参数路径都有普通幂级数。给定 $N$ 后，被积函数是有限个关于 $u$ 的
+多项式及零的最大值；其分界可由多项式方程确定，再逐段精确积分。
+若用浮点求根实施，仍需另外控制根的覆盖与数值误差，才能把计算输出升级为证书。
+\end{remark}
+
+\subsection{两侧临界点的显式三阶过渡}
+
+\begin{corollary}[两侧窗口]\label{fix:side-windows}
+对每个有限 $\Lambda>0$，在 $|\lambda|\le\Lambda$ 上一致地有
+\[
+ V_{1/2+\lambda t}(1-t)=4t^2+F_-(\lambda)t^3+O_\Lambda(t^4),\qquad
+ V_{3/2+\lambda t}(1-t)=4t^2+F_+(\lambda)t^3+O_\Lambda(t^4).
+\]
+定义
+\[
+ G(q)=\begin{cases}
+ 0,&q\le0,\\
+ 2q^2-\dfrac23q^3,&0\le q\le1,\\
+ 2q-\dfrac23,&q\ge1.
+ \end{cases}
+\]
+则
+\begin{equation}\label{fix:side-coefficients}
+ F_-(\lambda)=-4-16\lambda+G(1+4\lambda),\qquad
+ F_+(\lambda)=12+16\lambda+G(-3-4\lambda).
+\end{equation}
+低侧混合区为 $-1/4<\lambda<0$，高侧混合区为 $-1<\lambda<-3/4$。
+\end{corollary}
+\begin{proof}
+低侧窗口一致地有 $C\le B$、$D\le C$，仅需比较 $A,B$。
+在 $s=tu$ 下，其径向边界为
+\begin{align*}
+ R_A&=t+(-1/2-2\lambda)t^2+O_\Lambda(t^3),\\
+ R_B&=t+[-(1+2\lambda)u+u^2/2]t^2+O_\Lambda(t^3).
+\end{align*}
+共同首项使积分主区间为 $0\le u\le1$；真实对角端点相差 $O_\Lambda(t)$，
+其对面积的影响为 $O_\Lambda(t^4)$。
+两条二阶边界之差为 $(1-u)(1+4\lambda-u)/2$，故三阶面积系数为
+\[
+ -4-16\lambda+4\int_0^1(1-u)(1+4\lambda-u)_+\,du.
+\]
+高侧窗口中 $A\le B\le C$，只比较 $C,D$，而
+\begin{align*}
+ R_D&=t+(3/2+2\lambda)t^2+O_\Lambda(t^3),\\
+ R_C&=t+[(1+2\lambda)u+u^2/2]t^2+O_\Lambda(t^3).
+\end{align*}
+其二阶差为 $(1-u)(-3-4\lambda-u)/2$，得高侧公式。
+最后对任意实数 $q$，直接积分
+$4\int_0^1(1-u)(q-u)_+\,du=G(q)$ 即得分段表达式。
+\end{proof}
+
+\begin{corollary}[截断误差阶的不可提高性]\label{fix:truncation-sharp}
+记式~\eqref{fix:truncated-envelope}中不含余项的积分为 $\mathcal A_N(\beta,t)$。
+沿用上述 $J,K$，固定 $\beta\in J\cap(3/2,2)$，置 $q=1/(2-\beta)$。对每个整数 $N\ge1$，
+\[
+ V_\beta(1-t)-\mathcal A_N(\beta,t)
+ =\frac{2q(q)_{N+1}}{(N+1)!}t^{N+2}+O_{\beta,N}(t^{N+3}).
+\]
+因此在一般紧参数类别中，$N$ 阶边界截断的 $t^{N+2}$ 误差阶不能提高。
+\end{corollary}
+\begin{proof}
+此时高水平区域的实际主导分支为 $D$，所以 $V_\beta(1-t)=4R_D^2$。
+令 $d_N=tP_{D,N}$。正系数二项式展开给出
+\[
+ R_D-d_N=\frac{(q)_{N+1}}{2(N+1)!}t^{N+1}+O_{\beta,N}(t^{N+2}).
+\]
+只保留 $D$ 的截断积分等于 $4d_N^2$。我们说明其他候选增加的面积
+仅为 $O_{\beta,N}(t^{2N+2})$。
+$A,B$ 的一阶径向边界在 $D$ 的正部区间内严格低于 $D$，故充分小 $t$ 时不贡献。
+$C,D$ 的径向边界只在对角端点 $u_D=R_D/t$ 接触；
+在其固定邻域内，$(R_D-R_C)/t$ 关于 $u$ 的导数为
+$-(1-2(2-\beta))+O_\beta(t)$，其绝对值有正下界。
+而 $R_C/t-u$ 的导数为 $-2(2-\beta)+O_\beta(t)$，也有严格负余量。
+每个截断输入与实际输入相差 $O_{\beta,N}(t^N)$，因此 $C$ 能超出
+$D$ 的截断正部的地方，只在 $|u-u_D|=O_{\beta,N}(t^N)$ 的区间内，
+且其增加的高度也是 $O_{\beta,N}(t^N)$。
+乘回面积因子 $8t^2$，得到上述额外面积界。
+因 $2N+2\ge N+3$，并用 $R_D=(q/2)t+O_\beta(t^2)$，
+展开 $4(R_D^2-d_N^2)$ 即得所述正系数。
+\end{proof}

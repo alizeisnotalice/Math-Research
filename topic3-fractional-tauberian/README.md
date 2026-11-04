@@ -1,6 +1,6 @@
 # 课题3：分数次极大算子的尺度不变光晕
 
-作者：唐浩天。基线：2026-08-25 原稿，53 页；修订日期：2026-11-04。
+作者：唐浩天。基线：2026-08-25 原稿，53 页；修订日期：2026-11-05。
 
 当前版本包含原稿全部实质章节的可编辑重写、72 个有编号命题/定义/注/问题的原页映射，以及完整证明。旧修订稿只作为线索重新核查。固定输入极限与全体集合上确界始终分开。
 
@@ -52,8 +52,12 @@ run('verification/polytope_tangent.m')
 run('verification/fixed_cube_matlab.m')
 ```
 
-前两类符号脚本核对系数、精确顶点和积分；MATLAB独立求根、LP和边界积分。结果摘要保存在 `results/`。最新PDF为42页，各轮具体成果见 `rounds/001.md` 至 `rounds/006.md`。
+前两类符号脚本核对系数、精确顶点和积分；MATLAB独立求根、LP和边界积分。结果摘要保存在 `results/`。各轮具体成果见 `rounds/001.md` 至 `rounds/007.md`。
 
 第5轮确定中心对称、β=n/2的固定模型首项与椭球极值。复现命令为 `wolframscript -file verification/half_order.wl`；MATLAB运行 `verification/half_order_matlab.m`。优化范围是资料固定E=K且基与K共同变化；固定基对全体E的上确界仍为后续问题。
 
 第6轮完成二维中间临界点的两层一致过渡：β=1+λt 的四阶复合公式及 β=1−t/2+μt² 的分段四阶系数，余项分别一致为 O_Λ(t⁵)、O_M(t⁵)。运行 `wolframscript -file verification/critical_square.wl`，MATLAB运行 `verification/critical_square_matlab.m`，随后 `python3 verification/critical_square.py --workers 8` 可复现符号、独立边界积分与跨工具比较。
+
+第7轮在二维固定方体上建立任意阶统一边界截断，给出显式适用阈值和误差常数，允许β(t)取紧区间内任意路径；完成β=1/2、3/2附近的显式三阶过渡。任意维方体外部中心的精确顶层为max(1/2,2^(β−n))。复现：`wolframscript -file verification/uniform_square.wl`；MATLAB运行 `verification/uniform_square_matlab.m`；`python3 verification/uniform_square.py`。138组N=1至6积分近似、80组侧窗口及60组MATLAB交叉检验已实际运行。
+
+当前PDF为46页。第7轮还证明：固定β∈(3/2,2)时，N阶截断的首个误差系数严格为正，t^(N+2)阶一般不可提高。
