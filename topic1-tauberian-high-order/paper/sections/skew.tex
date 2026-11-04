@@ -1,333 +1,299 @@
-\subsection{近单位斜晶格与包络偏差}
+\subsection{全对称斜晶格与多方向增益}
 
 \begin{proof}[命题~\ref{prop:nonexact} 的证明]
-固定 \(n\ge2\) 和 \(\kappa>0\)。记
+固定 \(n\ge2,\ \kappa>0\)，设
 \[
-t=u^n,\qquad
-\delta=\frac{u}{1+2u},\qquad r_0=\frac1{1+2u}=1-2\delta,
-\qquad a=(2u)^n,\quad v=2u,\quad e=\kappa u^4.
+t=u^n,\quad \delta=\frac{u}{1+2u},\quad r_0=\frac1{1+2u}=1-2\delta,
+\quad a=(2u)^n,\quad v=2u,\quad e=\kappa u^4.
 \]
-令
+令 \(J\) 为全 \(1\) 矩阵，
 \[
-T_e=\begin{pmatrix}1&e\\ e&1\end{pmatrix}\oplus I_{n-2},
-\quad \Lambda_e=T_e\mathbb Z^n,\quad d=\det T_e=1-e^2,
-\quad \mu=(2\delta)^n=a r_0^n.
+T=(1-e)I+eJ,\qquad
+\Lambda=T\mathbb Z^n,\qquad
+d=\det T=(1-e)^{n-1}(1+(n-1)e),\qquad
+\mu=(2\delta)^n=a r_0^n.
 \]
-缺陷集和输入为
+所有孔仍为轴平行立方体：
 \[
-D=\bigcup_{\lambda\in\Lambda_e}
-  (\lambda+[-\delta,\delta]^n),\qquad E_\infty=\mathbb R^n\setminus D.
+D=\bigcup_{\lambda\in\Lambda}(\lambda+[-\delta,\delta]^n),
+\qquad E_\infty=\mathbb R^n\setminus D.
 \]
+这是全对称斜晶格，不是单位立方体铺砌。
 
-以下对充分小的 \(u>0\) 工作。可以明确要求
+取 \(M=3^n\)。以下显式条件足够：
 \begin{equation}\label{eq:skew-1-1}
-u\le\frac14,\qquad \kappa u^3<\frac13,\qquad
-\kappa^2u^5<\frac{4n}{9}.
+u\le\frac14,\qquad
+(n-1)\kappa u^3<\frac13,\qquad
+M\kappa^2u^5<\frac{4n}{9}.
 \end{equation}
-这些条件给出 \(e<\delta/2\le1/12\)、\(r_0\ge2/3>2\delta\)，以及
-\(2\delta<1-e\)。所以全部孔内部互不交，且
-\(d-\mu\ge143/144-1/9>0\)。
+它们给出
+\begin{equation}\label{eq:skew-1-2}
+e<\delta/2,\qquad
+(n-1)e<1/12,\qquad r_0\ge2/3>2\delta,\qquad
+d-\mu>11/12-1/9=29/36.
+\end{equation}
+因此孔内部互不交，所有后续分母为正。
 
 定义
-\begin{equation}\label{eq:skew-1-2}
-K=\frac{a}{(2\delta)^{n-2}}=4u^2r_0^{2-n},
-\qquad F(h)=K[(r_0+h)^n-r_0^n],
-\qquad h_*=(r_0^n+e^2/K)^{1/n}-r_0.
-\end{equation}
-再定义非负面积
-\begin{equation}\label{eq:skew-1-3}
+\[
+K=\frac{a}{(2\delta)^{n-2}}=4u^2r_0^{2-n},\qquad
+F(h)=K[(r_0+h)^n-r_0^n].
+\]
+记 \(h_*,h_M\) 为
+\[
+F(h_*)=e^2,\qquad F(h_M)=Me^2,
+\]
+即
+\[
+h_c=(r_0^n+ce^2/K)^{1/n}-r_0,\qquad c\in\{1,M\}.
+\]
+再设
+\[
 A=2\int_0^{h_*}\left[e-\frac{F(h)}e\right]dh
+\]
+和单个无序坐标对的价格
+\begin{equation}\label{eq:skew-1-3}
+B_{\rm pair}=2A(2\delta)^{n-2}.
 \end{equation}
-和
+总失败量上界为
 \begin{equation}\label{eq:skew-1-4}
-\begin{aligned}
-B_{\rm main}&=2A(2\delta)^{n-2},\\
-B_{\rm extra}&=
-\begin{cases}
+B_n=\binom n2 B_{\rm pair}
++\begin{cases}
 0,&n=2,\\
-4(n-2)h_*(e+h_*)^2(2\delta)^{n-3},&n\ge3,
-\end{cases}\\
-B&=B_{\rm main}+B_{\rm extra}.
-\end{aligned}
+8\binom n3(e+h_M)^3(2\delta)^{n-3},&n\ge3.
+\end{cases}
 \end{equation}
 
 先证明以下可实现的定量下界： 在 \eqref{eq:skew-1-1} 下，
 \begin{equation}\label{eq:skew-1-5}
- C_n(1-t)\ge\frac{d-B}{d-\mu}.
+ C_n(1-t)\ge\frac{d-B_n}{d-\mu}.
 \end{equation}
-下文用同一规则选半径并作有限测度截断实现右端。特别地，
+固定 \(n,\kappa\) 后，
 \begin{equation}\label{eq:skew-1-6}
-\liminf_{t\downarrow0}
-\frac{C_n(1-t)-L_n(t)}{a v^8}
-\ge \frac{\kappa^2-\kappa^3/(8n)}{256}.
+\liminf_{t\downarrow0}\frac{C_n(1-t)-L_n(t)}{av^8}
+\ge\binom n2\,
+\frac{\kappa^2-\kappa^3/(8n)}{256}.
 \end{equation}
-这里 \(L_n(t)=(1-\mu)^{-1}\)。
+\paragraph{穷尽可能进入见证的所有晶格孔}
 
-\paragraph{对每个孔内点使用同一个规则选半径}
+对中心孔内 \(x\)，设
+\[
+h_{i,\sigma}=\delta-\sigma x_i,\quad
+s=\min_{i,\sigma}h_{i,\sigma}=\delta-\|x\|_\infty,\quad
+r=r_0+s,\quad \sigma\in\{+1,-1\}.
+\]
+于是 \(r\ge r_0>2\delta\)、\(r+\delta=1-\|x\|_\infty\)。
 
-平移到以 \(0\) 为中心的孔，令 \(x\in[-\delta,\delta]^n\)。定义
+\paragraph{大整数指数全部排除}
+
+\(\|T-I\|_{\infty\to\infty}=(n-1)e<1/12\)，所以
+\[
+\|Tk\|_\infty\ge[1-(n-1)e]\|k\|_\infty.
+\]
+当 \(\|k\|_\infty\ge2\) 时，
+\[
+\|Tk-x\|_\infty
+\ge2[1-(n-1)e]-\|x\|_\infty
+>1-\|x\|_\infty=r+\delta.
+\]
+因此对应孔与见证不相交。孔内部互不交也由同一分离下界及 \(2\delta<1-(n-1)e\) 得到。
+
+\paragraph{小整数指数中只有平衡指数可以进入}
+
+现在 \(k\in\{-1,0,1\}^n\)，令 \(S=\sum_i k_i\)。如果 \(S>0\)，存在
+\(k_i=+1\)，该坐标给
+\[
+(Tk)_i=(1-e)+eS=1+e(S-1)\ge1.
+\]
+如果 \(S<0\)，存在 \(k_i=-1\)，并有
+\[
+-(Tk)_i=1+e(|S|-1)\ge1.
+\]
+故任意 \(S\ne0\) 的指数都在某坐标至多边界接触，不增加正体积。
+
+若 \(S=0\)，则 \(Tk=(1-e)k\)。非零坐标数
+\(q=q(k)\) 必为偶数，且正、负坐标各 \(q/2\) 个。定义
 \begin{equation}\label{eq:skew-2-1}
-h_{j,+}=\delta-x_j,\qquad h_{j,-}=\delta+x_j,\qquad
-s=\min_{j,\pm}h_{j,\pm}=\delta-\|x\|_\infty,
-\qquad r(x)=r_0+s.
+L_{i,\sigma}=(e+s-h_{i,\sigma})_+.
 \end{equation}
-于是
+每个 \(L_{i,\sigma}\le e<2\delta\)。对应孔在非零坐标的精确交长为
+\(L_{i,k_i}\)，零坐标上则完整包含宽 \(2\delta\)。所以总交量精确为
+\[
+|D\cap Q(x,r)|=\mu+(2\delta)^{n-2}R(x),
+\]
 \begin{equation}\label{eq:skew-2-2}
-r_0\le r(x)\le r_0+\delta=1-\delta,\qquad
-r(x)+\delta=1-\|x\|_\infty.
+R(x)=
+\sum_{\substack{k\in\{-1,0,1\}^n\setminus\{0\}\\ \sum k_i=0}}
+(2\delta)^{2-q(k)}
+\prod_{i:k_i\ne0}L_{i,k_i}.
 \end{equation}
-因为 \(r_0>2\delta\)，见证总完整包含自孔。我们只使用这一半径，不优化其他半径。
-
-\paragraph{穷尽所有可能进入的晶格孔}
-
-对任意 \(k\in\mathbb Z^n\)，
-\[
-\|T_ek\|_\infty\ge(1-e)\|k\|_\infty.
-\]
-若 \(\|k\|_\infty\ge2\)，则
-\[
-\|T_ek-x\|_\infty
-\ge2(1-e)-\|x\|_\infty
->1-\|x\|_\infty=r(x)+\delta.
-\]
-因此该孔与见证无交。这里只需 \(e<1/2\)，已由 \eqref{eq:skew-1-1} 保证。
-
-现在只需检查 \(k_j\in\{-1,0,1\}\)。若某个 \(j\ge3\) 满足
-\(k_j\ne0\)，该坐标给出
-\[
-|k_j-x_j|\ge1-|x_j|\ge1-\|x\|_\infty=r+\delta,
-\]
-故也无正体积交。这一理由不受前两坐标斜切影响。
-
-剩下前两坐标的九种指数。四个轴邻孔
-\(\pm b_1=\pm(1,e)\)、\(\pm b_2=\pm(e,1)\)
-分别在含 \(\pm1\) 的坐标至多边界接触。两个长对角
-\(\pm(b_1+b_2)=\pm(1+e,1+e)\) 严格在外。唯一可能增加质量的是
-\[
-c_+=b_1-b_2=(1-e,-1+e),\qquad c_-=-c_+.
-\]
-
-\paragraph{两个短对角的精确质量}
-
-记
+这没有丢掉 \(q\ge4\) 的高阶平衡邻孔。实际严格见证条件等价于
 \begin{equation}\label{eq:skew-2-3}
-P_+=(e+s-h_{1,+})_+(e+s-h_{2,-})_+,\qquad
-P_-=(e+s-h_{1,-})_+(e+s-h_{2,+})_+.
+R(x)<F(s).
 \end{equation}
-每个因子都不大于 \(e\)，因为所有 \(h_{j,\pm}\ge s\)。
-这些是对应前两坐标的精确交长：例如短对角 \(c_+\) 的第一交长为
+
+\paragraph{先约束整个坏集，排除同坐标的相反符号}
+
+由于 \(e<2\delta\)，\eqref{eq:skew-2-2} 中每一项至多
 \[
-(r+\delta-(1-e-x_1))_+=(e+s-h_{1,+})_+.
+e^2\left(\frac e{2\delta}\right)^{q(k)-2}\le e^2.
 \]
-其值在 \([0,e]\subset[0,2\delta)\)，所以不存在遗漏的“整条交长截断”；其他 \(n-2\) 个坐标均完整包含孔宽 \(2\delta\)。
-
-由孔互不交和前面的完整枚举，精确得到
-\begin{equation}\label{eq:skew-2-4}
-|D\cap Q(x,r(x))|
-=\mu+(2\delta)^{n-2}(P_++P_-).
-\end{equation}
-又 \(\mu=a r_0^n\)，故实际严格见证条件
-\(|D\cap Q(x,r)|<t(2r)^n\) 等价于
-\begin{equation}\label{eq:skew-2-5}
- P_++P_-<F(s).
-\end{equation}
-除以的体积是实际中心立方体体积，不是环面上的多重覆盖体积。
-
-\paragraph{两个短角同时进入时，一定是好点}
-
-若 \(P_+>0\) 且 \(P_->0\)，则
-\(h_{1,+},h_{1,-}<e+s\)，所以
+项数小于 \(3^n=M\)，从而 \(R(x)\le Me^2\)。在孔内部 \(s>0\)，若见证失败，则
 \begin{equation}\label{eq:skew-3-1}
-2\delta=h_{1,+}+h_{1,-}<2(e+s),\qquad s>\delta-e.
+0<F(s)\le R(x)\le Me^2,\qquad s\le h_M.
 \end{equation}
-而 \eqref{eq:skew-1-1} 保证下面的严格守卫：
+
+守卫 \eqref{eq:skew-1-1} 还给
 \begin{equation}\label{eq:skew-3-2}
- F(\delta-e)>2e^2.
+ F(\delta-e)>2Me^2,\qquad h_M<\delta-e.
 \end{equation}
-证明：\(F'(h)\ge nKr_0^{n-1}=4nu^2r_0\)，且
-\(e<\delta/2\)，所以
+事实上 \(F'(h)\ge4nu^2r_0\)，而 \(e<\delta/2\)，所以
 \[
-F(\delta-e)\ge4nu^2r_0(\delta-e)
->2nu^2r_0\delta=2nu^3r_0^2>2e^2.
+F(\delta-e)>2nu^2r_0\delta
+=2nu^3r_0^2
+\ge\frac{8n}{9}u^3>2Me^2.
 \]
-最后一步由 \(\kappa^2u^5<4n/9\le nr_0^2\)。
+最后一步是 \(M\kappa^2u^5<4n/9\)。
 
-每个 \(P_\pm\le e^2\)。所以 \eqref{eq:skew-3-1}、\eqref{eq:skew-3-2} 给出
-\[
-F(s)>2e^2\ge P_++P_-,
-\]
-即两个短角同时进入的点总有严格真实见证。没有把两个角分别估计后错误累加成坏集。
-
-除去孔边界 \(s=0\) 的零测集，若所选见证失败，则 \(F(s)>0\)，因此恰有一个正的 \(P_\pm\)，并有
+在坏集上，如果 \(L_{i,\sigma}>0\)，则
 \begin{equation}\label{eq:skew-3-3}
-F(s)\le e^2,\qquad s\le h_*.
+h_{i,\sigma}<e+s\le e+h_M<\delta.
 \end{equation}
-由 \eqref{eq:skew-3-2} 和 \(F(h_*)=e^2\)，还有
-\begin{equation}\label{eq:skew-3-4}
-h_*<\delta-e,\qquad e+h_*<\delta.
-\end{equation}
-这些严格范围将用于下一节，不是假定的角局部化。
+同一坐标的两侧缺口之和为 \(2\delta\)，故 \emph{在坏集上每坐标至多一个符号的 \(L\) 为正}。这直接排除了“同一个无序坐标对的两个相反短角同时正，却只涉及两个坐标”的遗漏。该断言仅在坏集局部化之后使用，没有把它当作所有点的几何事实。
 
-\paragraph{坏点体积的联合覆盖}
+\paragraph{活跃短角的穷尽二分}
 
-先考察只有 \(P_+\) 为正的坏点，令
+把有向短角 \((i,j)\)、\(i\ne j\)，称为活跃，当且仅当
 \[
-\alpha=h_{1,+}=\delta-x_1,\qquad
-\beta=h_{2,-}=\delta+x_2.
+L_{i,+}>0,\qquad L_{j,-}>0.
 \]
-由正性及 \eqref{eq:skew-3-3}：
+它对应 \(q=2\) 平衡指数 \(k=e_i-e_j\)。
+
+任何正的 \(q\ge4\) 平衡项都有至少两个正坐标和至少两个负坐标。其所有相关交长均正，因此任取一个正坐标和一个负坐标都会产生一个活跃 \(q=2\) 短角；至少有四条不同活跃短角。于是：
+
+\begin{itemize}
+\item 坏点至少有一个活跃短角，否则 \eqref{eq:skew-2-2} 的所有项都为零，与 \eqref{eq:skew-3-1} 矛盾。
+\item 若恰有一个活跃短角，所有 \(q\ge4\) 项都为零，总额外归一化质量只有该角的 \(L_{i,+}L_{j,-}\)。
+\item 若至少有两个不同活跃短角，则它们至少涉及三个不同坐标。若只涉及同两个坐标，两角只能方向相反，违背 \eqref{eq:skew-3-3} 的单坐标符号互斥。
+\end{itemize}
+
+这三点同时证明了高阶平衡邻孔没有脱离短角计数的独立坏机制。
+
+\paragraph{唯一活跃短角：单角面积价格}
+
+固定唯一活跃角 \((i,j)\)，令
+\(\alpha=h_{i,+}\)、\(\beta=h_{j,-}\)。由于坏点仅含该贡献，
+\[
+F(s)\le L_{i,+}L_{j,-}\le e^2,\qquad
+s\le h_*,\qquad \alpha,\beta<e+h_*<\delta.
+\]
+若最小面来自这两个坐标，在 \(\alpha\le\beta,s=\alpha\) 分支，
+\[
+L_{i,+}L_{j,-}=e(e+\alpha-\beta),\qquad
+\alpha\le\beta\le\alpha+e-F(\alpha)/e.
+\]
+交换两坐标，得到同一有向角的二维面积上界
+\(A=2\int_0^{h_*}[e-F(h)/e]dh\)。其他坐标最多乘
+\((2\delta)^{n-2}\)。
+
+最小面不可能来自其他坐标。否则对某 \(k\notin\{i,j\}\) 和符号
+\(\sigma\) 有 \(h_{k,\sigma}=s\)，从而 \(L_{k,\sigma}=e>0\)。
+若 \(\sigma=+\)，则 \((k,j)\) 也是活跃短角；若 \(\sigma=-\)，
+则 \((i,k)\) 也是活跃短角。两种情形都与唯一性矛盾。
+因此单角坏点只需前面两个关键面的面积价格，不再加入额外维度面层项。
+每个无序坐标对有两个方向，合计为 \(B_{\rm pair}=2A(2\delta)^{n-2}\)。
+对 \(\binom n2\) 个无序对求和，得到 \eqref{eq:skew-1-4} 的第一项。
+
+\paragraph{多个活跃短角：至少三个面层}
+
+由前述二分，多个活跃角的坏点必有三个不同坐标
+\(i_1,i_2,i_3\)，各有一个指定符号 \(\sigma_\ell\)，满足
+\[
+0\le h_{i_\ell,\sigma_\ell}<e+h_M.
+\]
+固定三坐标和符号，该面层交集体积至多
+\((e+h_M)^3(2\delta)^{n-3}\)。
+遍历 \(\binom n3\) 个坐标三元组及 \(2^3\) 个符号模式，得到
 \begin{equation}\label{eq:skew-4-1}
-\alpha,\beta<e+s\le e+h_*<\delta.
+|\{\text{多个活跃角的坏点}\}|
+\le8\binom n3(e+h_M)^3(2\delta)^{n-3}.
 \end{equation}
-因此相反两面 \(h_{1,-},h_{2,+}\) 均大于 \(\delta\)，不会成为最小面。
+这是允许重叠的联合上界，无需选择唯一三元组或证明各层互不交。
+当 \(n=2\) 时多个活跃角坏点不存在，\eqref{eq:skew-4-1} 项不出现。
 
-\paragraph{最小面来自第 1 或第 2 维}
+结合两类及孔边界的零测集，所选半径失败的总体积至多 \(B_n\)。
 
-在 \(\alpha\le\beta\)、\(s=\alpha\) 的情形，精确有
+\paragraph{有限测度输入、严格水平及定量结论}
+
+若 \(B_n\ge \mu\)，\eqref{eq:skew-1-5} 右端不超过 \(1\)，由 \(C_n\ge1\) 直接成立。以下设 \(B_n<\mu\)。
+
+令
 \[
-P_+=e(e+\alpha-\beta).
+\Omega_N=T([-N,N]^n),\qquad E_N=E_\infty\cap\Omega_N,\qquad N\in\mathbb N,\quad N\ge4.
 \]
-失败条件 \(P_+\ge F(\alpha)\) 给出
-\[
-0\le\alpha\le h_*,
-\qquad
-\alpha\le\beta
-\le\alpha+e-\frac{F(\alpha)}e.
-\]
-该二维区域面积至多
-\(\int_0^{h_*}[e-F(h)/e]dh\)。
-交换 \(\alpha,\beta\) 得另一个同样区域；两者的交只在对角线上，不影响面积。因此同一短角的二维坏区面积至多 \(A\)，正是 \eqref{eq:skew-1-3}。
-
-在其他 \(n-2\) 个坐标丢弃“其面缺口必须至少为 \(s\)”的限制，仅使上界变大，得到该角坏量至多 \(A(2\delta)^{n-2}\)。另一个短角同理，合计 \(B_{\rm main}\)。
-
-\paragraph{最小面来自其他维度}
-
-若 \(n\ge3\)，最小面来自某 \(j\ge3\) 的某一侧，则该面缺口
-\(s\le h_*\)，相应坐标位于厚度 \(h_*\) 的面层。由 \eqref{eq:skew-4-1}，前两坐标位于边长 \(e+h_*\) 的角矩形；其余 \(n-3\) 个坐标不作限制。因此每个“指定短角、指定额外面”的坏量至多
-\[
-h_*(e+h_*)^2(2\delta)^{n-3}.
-\]
-有两个短角及 \(2(n-2)\) 个额外面，联合上界正是 \(B_{\rm extra}\)。这个联合估计允许重复计数，不会漏掉多个面同时取最小值的点。
-
-每个点总有一个最小面。上述两类加上孔边界的零测集覆盖全部坏点，所以
-\begin{equation}\label{eq:skew-4-2}
-|\{x\in[-\delta,\delta]^n:
-\text{所选半径不是严格见证}\}|\le B.
-\end{equation}
-这只控制我们选定半径的失败量；实际 halo 还可能捕获其中的点，只会改进下界。
-
-\paragraph{周期计数和实际有限测度实现}
-
-周期晶格基本胞可取 \(T_e([0,1)^n)\)，体积为 \(d\)。每胞缺陷体积恰为 \(\mu\)：即使一个孔跨胞边界，周期平移积分仍精确为单孔体积。由 \eqref{eq:skew-4-2}，每胞至少有 \(\mu-B\) 的缺陷点具有前述严格见证。因此对应周期比值的下界是
+这保留所有被边界切开的周期孔。变换后
+\(\mathbf1_{E_\infty}(Ty)\) 在每个坐标以 \(1\) 为周期，每个基本胞的缺陷体积为 \(\mu\)，所以
 \begin{equation}\label{eq:skew-5-1}
-1+\frac{\mu-B}{d-\mu}=\frac{d-B}{d-\mu}.
+|E_N|=(2N)^n(d-\mu)
 \end{equation}
-以下直接构造有限输入，而不把无限测度输入代入 \(C_n\)。
+精确成立。它不是“只挖去内部索引孔”的另一输入。
 
-若 \(B\ge \mu\)，\eqref{eq:skew-1-5} 右端不超过 \(1\)，直接由任意有限输入几乎处处属于自身 halo 得到结论。因此以下可以假设 \(B<\mu\)；这在后续固定 \(n,\kappa\) 的充分小 \(u\) 渐近中自动成立。
-
-令 \(N\) 为整数，
+由 \(\|T-I\|_{\infty\to\infty}<1/12\)，Neumann 级数给
 \[
-\Omega_N=T_e([-N,N]^n),\qquad E_N=E_\infty\cap\Omega_N.
+\|T^{-1}\|_{\infty\to\infty}
+\le[1-(n-1)e]^{-1}<2.
 \]
-这是一个有界平行多面体中的有限输入，且周期积分精确给
+对 \(\|k\|_\infty\le N-3\) 的孔，任意孔点 \(x=Tk+y\) 的所选见证均位于 \(\Omega_N\)，因为
+\[
+\|T^{-1}z-k\|_\infty
+\le\|T^{-1}\|_{\infty\to\infty}(\delta+r(x))<2
+\]
+对见证内每个 \(z\) 成立。所有好点原来的严格平均不等式完整保留。
+内部孔至少有 \((2N-5)^n\) 个；密度定理又给 \(E_N\) 几乎处处位于自身严格 halo。故
 \begin{equation}\label{eq:skew-5-2}
-|E_N|=(2N)^n(d-\mu)>0.
-\end{equation}
-具体地，\(\mathbf1_{E_\infty}(T_ey)\) 对每个 \(y_j\) 都以 \(1\) 为周期，且
-\[
-\int_{[0,1)^n}\mathbf1_{E_\infty}(T_ey)\,dy=1-\frac{\mu}{d}.
-\]
-在 \([-N,N]^n\) 的 \((2N)^n\) 个整周期上积分，再乘 Jacobian \(d\)，便是 \eqref{eq:skew-5-2}。这里 \(E_N\) 保留了所有被外盒截开的边界孔；并没有将输入替换为“只挖去内部索引孔”的另一集合。
-注意外盒使用物理空间中明确的 \(T_e\)-像；这里不将物理轴盒
-\([-N,N]^n\) 与相同的整数索引盒混同，后者会产生 \(eN\) 量级的偏移。
-
-由 \(e<1/12\)，
-\[
-\|T_e^{-1}\|_{\infty\to\infty}=\frac1{1-e}<2.
-\]
-当 \(\|k\|_\infty\le N-3\)，该孔中任意 \(x=T_ek+y\)、\(\|y\|_\infty\le\delta\) 及其所选见证内的任意点 \(z\) 满足
-\[
-\|T_e^{-1}z-k\|_\infty
-\le\|T_e^{-1}\|_{\infty\to\infty}
-(\delta+r(x))
-<2.
-\]
-所以整个见证位于 \(\Omega_N\)，在有限输入 \(E_N\) 中保持完全相同的平均及严格不等式。
-
-这些内部孔至少有 \((2N-5)^n\) 个。Lebesgue 密度定理给 \(E_N\) 几乎处处位于自身严格 halo 内，且好孔点与 \(E_N\) 不交。因此，
-\begin{equation}\label{eq:skew-5-3}
-\begin{aligned}
 \frac{|\Hc(1-t;E_N)|}{|E_N|}
-&\ge1+\frac{(2N-5)^n(\mu-B)}{(2N)^n(d-\mu)}\\
-&\ge\frac{d-B}{d-\mu}-O_n(\mu/N).
-\end{aligned}
+\ge1+\frac{(2N-5)^n(\mu-B_n)}{(2N)^n(d-\mu)}
+\ge\frac{d-B_n}{d-\mu}-O_n(\mu/N).
 \end{equation}
-这里 \(d-\mu\) 有统一正下界。令 \(N\to\infty\) 即得 \eqref{eq:skew-1-5}。若要保留指定的 \(av^8\) 尺度，明确选
-\begin{equation}\label{eq:skew-5-4}
-N(u)=\lceil u^{-9}\rceil,
-\qquad O_n(\mu/N)=O_n(a u^9)=o(av^8).
-\end{equation}
-这是一个实际有限正测度输入序列，不要求无限周期形式比值等于全 halo 比值。
+令 \(N\to\infty\) 得 \eqref{eq:skew-1-5}；选择 \(N=\lceil u^{-9}\rceil\) 则
+\(O_n(\mu/N)=o(av^8)\)。
 
-\paragraph{严格水平和可测性}
+好点集由严格不等式 \eqref{eq:skew-2-3} 定义，可测且使用有限真实半径。等号点可全部计为坏点；孔边界 \(s=0\) 为零测集。上述证明从未将非严格平均升级为严格见证，也不需要所有好点具有统一平均裕量。
 
-选半径 \(r(x)=r_0+\delta-\|x\|_\infty\) 是连续规则；\eqref{eq:skew-2-4} 是连续/分片多项式交量公式。因此所选好点集由严格不等式 \eqref{eq:skew-2-5} 定义，是可测集。所有这些好点均真正属于严格水平集
-\(\{M_{c,n}1_{E_\infty}>1-t\}\)，不是非严格水平集。
+\paragraph{一般维数渐近}
 
-坏集上界包括等号点，因此不必把任何等号点宣称为好点。孔边界 \(s=0\) 是零测集；最小面的平局面也是有限个超平面。面积积分中 \(P_\pm=F(s)\) 的边界，对固定最小面变量的另一角变量斜率为 \(-e\ne0\)，同样为零测集。无论是否利用这些零测事实，\eqref{eq:skew-4-2} 的上界均保守有效。
-
-有限截断仅保留已严格成立的原见证，没有用极限把一个等号阈值升级为严格阈值，也不需要一个对所有好点统一为正的平均裕量。
-
-\paragraph{一般维数渐近和优化}
-
-记
+固定 \(n,\kappa\)，由根方程得到：
 \[
-L=F'(0)=nKr_0^{n-1}=4nu^2r_0.
+h_*\sim\frac{e^2}{4nu^2r_0},\qquad
+h_M\sim\frac{Me^2}{4nu^2r_0}=O_{n,\kappa}(u^6),\qquad
+A\sim\frac{e^3}{4nu^2r_0}.
 \]
-因为
+因此
 \[
-\frac{h_*}{r_0}
-=\left(1+\frac{e^2}{4u^2r_0^2}\right)^{1/n}-1,
+\frac{B_{\rm pair}}{av^8}
+\longrightarrow\frac{\kappa^3}{2048n}.
 \]
-固定 \(n,\kappa\) 时有
-\begin{equation}\label{eq:skew-7-1}
-h_*\sim\frac{e^2}{4nu^2r_0}=\Theta(u^6),
-\qquad h_*/e=O(u^2).
+新增联合项满足
+\begin{equation}\label{eq:skew-6-1}
+8\binom n3(e+h_M)^3(2\delta)^{n-3}
+=O_{n,\kappa}(u^{n+9})=o(av^8).
 \end{equation}
-将 \eqref{eq:skew-1-3} 换元 \(h=h_*\tau\)。由 \(h_*\to0\)，
-\[
-\frac{F(h_*\tau)}{F(h_*)}\longrightarrow\tau
-\]
-在 \(0\le\tau\le1\) 上一致，且 \(F(h_*)=e^2\)。所以
-\begin{equation}\label{eq:skew-7-2}
-A=2e h_*\int_0^1
-\left[1-\frac{F(h_*\tau)}{e^2}\right]d\tau
-\sim e h_*\sim\frac{e^3}{4nu^2r_0}.
-\end{equation}
-于是
-\begin{equation}\label{eq:skew-7-3}
-\begin{aligned}
-\frac{B_{\rm main}}{av^8}
-&\longrightarrow\frac{\kappa^3}{2048n},\\
-B_{\rm extra}&=O_{n,\kappa}(u^{n+11})
-=o(av^8),\\
-\frac{\mu e^2}{av^8}&\longrightarrow\frac{\kappa^2}{256}.
-\end{aligned}
-\end{equation}
-特别是额外维度面层比目标尺度多出三个 \(u\) 幂，不能改变主要常数。
+它比目标尺度多一个 \(u\) 幂，足以消失；不将它误写成精确坏量。
 
-精确相减而不是分别截断两个比值：
-\begin{equation}\label{eq:skew-7-4}
-\frac{d-B}{d-\mu}-\frac1{1-\mu}
-=\frac{\mu e^2-B(1-\mu)}{(d-\mu)(1-\mu)}.
-\end{equation}
-分母趋于 \(1\)。结合 \eqref{eq:skew-5-3}、\eqref{eq:skew-5-4}、\eqref{eq:skew-7-3} 得 \eqref{eq:skew-1-6}。最后
+由特征值公式，
 \[
-f_n(\kappa)=\frac{\kappa^2-\kappa^3/(8n)}{256},
-\qquad
-f_n'(\kappa)=\frac{\kappa(16n-3\kappa)}{2048n}.
+1-d=\binom n2e^2+O_n(e^3).
 \]
-它在 \(0<\kappa<8n\) 为正，最大值在
-\(\kappa=16n/3\)，等于 \(n^2/27\)，得到命题~\ref{prop:nonexact}。
+精确相减给
+\[
+\frac{d-B_n}{d-\mu}-L_n(t)
+=\frac{\mu(1-d)-B_n(1-\mu)}{(d-\mu)(1-\mu)}.
+\]
+分母趋于 \(1\)，且
+\[
+\frac{\mu(1-d)}{av^8}\longrightarrow
+\binom n2\frac{\kappa^2}{256}.
+\]
+结合 \eqref{eq:skew-5-2}、\eqref{eq:skew-6-1} 得 \eqref{eq:skew-1-6}。对 \(\kappa>0\) 优化右端多项式，最大值在 \(\kappa=16n/3\) 取得，
+等于 \(\binom n2 n^2/27\)，得到命题~\ref{prop:nonexact}。
 \end{proof}

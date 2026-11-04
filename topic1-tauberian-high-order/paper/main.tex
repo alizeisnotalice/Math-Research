@@ -141,13 +141,13 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 \end{theorem}
 
 周期下包络的更高展开仍可能遗漏其他构造的贡献。
-将前两个坐标的单位晶格作对称斜切，只产生两个短对角孔的角部泄漏；
-逐点选择半径并控制失败角层，可以在有限测度输入中得到以下正差。
+将所有坐标作同强度的近单位斜切，以平衡整数指标分类进入见证的邻孔；
+区分单一活跃短角与至少三面交界的坏点，可在有限测度输入中累积多方向正差。
 \begin{proposition}[周期包络的严格偏差]\label{prop:nonexact}
 对每个固定整数 \(n\ge2\)，有
 \begin{equation}\label{eq:nonexact}
  \liminf_{t\downarrow0}
- \frac{\Cn(1-t)-L_n(t)}{2^{n+8}t^{1+8/n}}\ge\frac{n^2}{27}>0.
+ \frac{\Cn(1-t)-L_n(t)}{2^{n+8}t^{1+8/n}}\ge\binom{n}{2}\frac{n^2}{27}>0.
 \end{equation}
 特别地，充分小的 \(t>0\) 满足 \(\Cn(1-t)>L_n(t)\)。
 该下界没有确定差值的首个非零阶或系数。
@@ -463,13 +463,13 @@ Besicovitch 方体族的交叠重数不超过 \(2^n\)。
 \[
  \liminf_{\eps\downarrow0}\ \inf_{m\ge1}
  \frac{\Cm(1-\eps)-L_n(\sigma_m(\eps))}
- {2^{n+8}\eps^{1+8/n}}\ge\frac{n^2}{27}.
+ {2^{n+8}\eps^{1+8/n}}\ge\binom{n}{2}\frac{n^2}{27}.
 \]
 \end{corollary}
 \begin{proof}
-给定 \(0<\eta<n^2/27\)，命题~\ref{prop:nonexact} 使充分小的所有 \(t\) 都满足
+给定 \(0<\eta<\binom{n}{2}n^2/27\)，命题~\ref{prop:nonexact} 使充分小的所有 \(t\) 都满足
 \[
- \Cn(1-t)-L_n(t)\ge(n^2/27-\eta)2^{n+8}t^{1+8/n}.
+ \Cn(1-t)-L_n(t)\ge(\binom{n}{2}n^2/27-\eta)2^{n+8}t^{1+8/n}.
 \]
 引理~\ref{lem:parameter} 给 \(\eps\le\sigma_m(\eps)\le2\eps\)，对全部
 \(m\ge1\) 一致。以 \(t=\sigma_m(\eps)\) 代入，再用精确约化，便得到
