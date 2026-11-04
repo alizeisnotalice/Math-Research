@@ -81,3 +81,7 @@ run('verification/fixed_cube_matlab.m')
 第11轮补充二维半阶任意有限不交矩形并的精确接触尺度公式（rect:union-scales），用于非凸输入反例搜索。四角挖补的计算及尚未闭合的三阶传递见 `rounds/011.md`；有限搜索不能证明全体上界。
 
 第11轮当前PDF为56页，目录统一字号调整以保持单页。
+
+第12轮用尺度投影损失控制闭合真实挖角三阶展开：面积比=2t²+B(k)t³+O_K(t⁴)，k∈[0,K]一致，允许参数随阈值变化。分段显式B≤2，等号恰为k=0,1；不据此宣称全体三阶上界或四阶sharp。见 `rounds/012.md`。
+
+第12轮当前PDF58页。复现：`wolframscript -file verification/corner_transfer.wl`、`wolframscript -file verification/corner_table.wl`；MATLAB运行 `verification/corner_transfer_matlab.m`；`python3 verification/corner_transfer.py`。
