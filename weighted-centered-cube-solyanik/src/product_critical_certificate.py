@@ -2,7 +2,7 @@
 
 This program checks rational instances of the two identities used in the
 proof.  It is a reproducible arithmetic check, not a substitute for the
-measure-theoretic proof in product_critical_extension.tex.
+measure-theoretic proof in paper/general_critical.tex (historical special proof: proofs/README.md).
 """
 
 from fractions import Fraction

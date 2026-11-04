@@ -12,3 +12,13 @@
 
 删除当前版本中的重复专章不会删除相应结论：它们均由更强的一般定理涵盖。
 历史本地第17轮交付及第18轮清理前备份也保留原有可编辑源文件。
+
+## 第21轮清理的临界旧专章
+
+正文第11轮的一般无原子永久见证证明已覆盖有限质量、一维及乘积权三个特例。以下旧专章长期未被主入口引用，现从当前paper目录移出，结论与原件仍保留：
+
+- [第8轮有限总质量证明](https://github.com/alizeisnotalice/Math-Research/blob/b375524/weighted-centered-cube-solyanik/paper/finite_mass_critical.tex)
+- [第9轮一维无限质量证明](https://github.com/alizeisnotalice/Math-Research/blob/13d9fe4/weighted-centered-cube-solyanik/paper/critical_infinite_extension.tex)
+- [第10轮乘积权证明](https://github.com/alizeisnotalice/Math-Research/blob/d0053e5/weighted-centered-cube-solyanik/paper/product_critical_extension.tex)
+
+本机第21轮交付包的support/historical_proofs/round008-010/保留可编辑副本；当前一般证明为paper/general_critical.tex。相关历史计算脚本保持算法，仅更新证明定位注释。

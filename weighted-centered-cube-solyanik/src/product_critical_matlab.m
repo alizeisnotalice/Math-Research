@@ -1,4 +1,4 @@
-% Numerical illustration only; theorem is proved in product_critical_extension.tex.
+% Numerical illustration only; theorem is proved in paper/general_critical.tex (historical special proof: proofs/README.md).
 % w(x)=exp(x_1)*prod_{j>=2}(1+x_j^2)^(-1).
 % T_1=exp(x_1)-1. F: T_1 in [0,1/m), other coordinates in [-1,1].
 numChecksTopic2 = 0;

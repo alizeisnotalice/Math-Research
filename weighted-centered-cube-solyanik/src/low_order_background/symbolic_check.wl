@@ -1,0 +1,15 @@
+Print["Wolfram version: ",$Version];
+checks={FullSimplify[(69+2Sqrt[2])/12-2(1+Sqrt[2])==(45-22Sqrt[2])/12],FullSimplify[45-22Sqrt[2]>0],45^2-2*22^2==1057};
+Print["counterexample exact comparisons: ",checks];If[!And@@checks,Exit[1]];
+y0=1/256;t0=y0^2;margin=1-t0-130y0(1+t0);
+Print["uniform t<=2^-16 domination margin: ",margin];If[!TrueQ[margin>0],Exit[1]];
+family=(3y+66+2Sqrt[2])/(y+2);
+familyCheck=FullSimplify[family-(69+2Sqrt[2])/3==(60+2Sqrt[2])(1-y)/(3(y+2)),Assumptions->0<y<=1];
+Print["scaled compact bump monotonic comparison: ",familyCheck];If[!TrueQ[familyCheck],Exit[1]];
+window=FullSimplify[(n+2q-Sqrt[n^2+4q^2])/2<n/2,Assumptions->n>0&&q>0];
+Print["second-order window implies 2tau/n<1: ",window];If[!TrueQ[window],Exit[1]];
+Print["numeric weak gap: ",N[(45-22Sqrt[2])/12,40]];
+Print["exact alpha=.25 mixture ratio lower: ",N[(69+2Sqrt[2])/3,40]];
+contrastThreshold=Reduce[(B+5+2Sqrt[2])/12>2(1+Sqrt[2]),B,Reals];
+Print["chosen witness beats known pure upper iff: ",contrastThreshold];
+Print["integer contrast guards: ",{31^2<2*22^2,32^2>2*22^2}];

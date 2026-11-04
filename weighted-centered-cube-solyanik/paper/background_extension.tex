@@ -1,0 +1,111 @@
+\subsection{背景扰动与近端点的精确保持}\label{subsec:background-stability}
+常数背景可推广为变化背景，但其全阈值作用与近端点作用须分别处理。
+以下条件只要求背景在主奇点的缩放下消失，因而也允许较弱的同位置奇性。
+
+\begin{theorem}[低阶背景的精确排除]\label{thm:background-stability}
+令 $v=\sum_{j=1}^Jc_jh_j(\cdot-z_j)$ 满足定理
+\ref{thm:separated-mixture} 的分离齐次分量假设，并令
+$\vartheta_*=\min_j\tau_j/n$。设 $b>0$ a.e.、$b\in L^1_{\rm loc}$，且对每个 $j$，
+\[\varepsilon^{n-\tau_j}b(z_j+\varepsilon\,\cdot)\longrightarrow0
+\quad\hbox{于 }L^1_{\rm loc}\qquad(\varepsilon\downarrow0).\tag{BG.1}\]
+若还满足
+\[C^{\rm out}_{K,b}(1-t)-1=o(t^{\vartheta_*}),\tag{BG.2}\]
+则存在 $t_0>0$，使所有 $0<t<t_0$ 都有精确等式
+\[C^{\rm out}_{K,b+v}(1-t)=\max_jC^{\rm out}_{K,h_j}(1-t).
+\tag{BG.3}\]
+特别地，(MX.7)--(MX.8) 的端点结论原样保留；继承二阶项不另要求背景增量为
+$o(t^{2\vartheta_*})$。
+\end{theorem}
+\begin{proof}
+取任意固定 $0<\alpha<1$。逐测度加和与 (BG.1) 下的局部缩放分别给
+\[\max_jC^{\rm out}_{K,h_j}(\alpha)
+\le C^{\rm out}_{K,b+v}(\alpha)
+\le\max\{C^{\rm out}_{K,b}(\alpha),\max_jC^{\rm out}_{K,h_j}(\alpha)\}.
+\tag{BG.4}\]
+上界作用于同一个 Lebesgue 严格光晕；输入的总成本有限保证每个正分量的成本有限。
+反向在 $z_j$ 缩放后，其他分离齐次项仍为局部有界余项，而背景由 (BG.1) 消失。
+有界测试集及紧光晕的积分收敛遂给分量下界；再按定理
+\ref{thm:separated-mixture} 的截断与内正则逼近恢复全部输入。
+
+由齐次首项与有限最大值，(BG.4) 中的分量最大值减一渐近于
+$S_*t^{\vartheta_*}$，其中 $S_*>0$。因此 (BG.2) 保证背景项在充分小的 $t$ 时
+严格小于该最大值，(BG.4) 的上下界即重合。所有既有端点展开由这一邻域内的精确等式继承。
+\end{proof}
+
+若 $0<a\le b\le B<\infty$ a.e.，则 (BG.1) 自动成立；且由 (G.2)，
+\[C^{\rm out}_{K,b}(1-t)-1
+\le\frac Ba B_K\frac{t}{1-t}=O(t).\tag{BG.5}\]
+事实上 $H=\{M_K\1_E>1-t\}$ 包含 $E$ 模零，故
+$\int_Hb\le\int_Eb+B|H\setminus E|$，再用
+$|H\setminus E|\le B_Kt|E|/(1-t)$ 和 $\int_Eb\ge a|E|$ 即得结论。
+因为 $\vartheta_*<1$，这样的任意正有界背景都满足 (BG.2)。
+
+\begin{corollary}[允许奇点重合的有限混合权]\label{cor:grouped-singularities}
+令 $N\ge1$，$w=b_0+\sum_{j=1}^N c_jh_j(\cdot-z_j)$，其中 $c_j>0$、每个 $h_j$ 满足 (H.1)，
+背景 $b_0\equiv0$，或满足 $0<a\le b_0\le B<\infty$；这里 $z_j$ 允许重合。
+记 $\tau_* =\min_j\tau_j$。对所有含最小次数分量的位置 $z$，定义组权
+\[G_z(x)=\sum_{\substack{j:z_j=z\\\tau_j=\tau_*}}c_jh_j(x).
+\tag{BG.6}\]
+则对所有充分小的 $t>0$，
+\[C^{\rm out}_{K,w}(1-t)=\max_zC^{\rm out}_{K,G_z}(1-t),\qquad
+ C^{\rm out}_{K,w}(1-t)-1\sim\bigl(\max_z S(G_z)\bigr)t^{\tau_*/n}.
+\tag{BG.7}\]
+若达到最大 $S(G_z)$ 的各组均满足定理 \ref{thm:hom-second} 的二阶条件及范围，
+则第二项为 $\bigl(\max_z S(G_z)\bigr)^2t^{2\tau_*/n}$。
+\end{corollary}
+\begin{proof}
+各 $G_z$ 是正可比齐次权，次数为 $\tau_*-n$，其中心互异。
+把次数严格大于 $\tau_*$ 的所有项与 $b_0$ 一起视作背景 $b$。
+若二者均为空，直接应用定理 \ref{thm:separated-mixture}。否则 $b>0$ a.e.；测度加和、(BG.5) 和各齐次首项给
+$C^{\rm out}_{K,b}(1-t)-1=o(t^{\tau_*/n})$。
+在某主点处，同位置的较弱项缩放为
+$\varepsilon^{\tau_j-\tau_*}c_jh_j$，其局部 $L^1$ 范数趋于零；异位置项及 $b_0$
+也满足 (BG.1)。应用定理 \ref{thm:background-stability} 即得 (BG.7)，再用齐次展开。
+组内同次数项必须先相加再计算 $S$，不能以原分量的最大 $S$ 替代；
+(MX.9)--(MX.10) 正好说明这一点。
+\end{proof}
+
+\subsection{端点保持并不确定临界留数}\label{subsec:background-critical}
+若背景弱型范数有限，同样的加和与缩放只能保证
+\[\max_jW^{\rm out}_{K,h_j}\le W^{\rm out}_{K,b+v}
+\le\max\{W^{\rm out}_{K,b},\max_jW^{\rm out}_{K,h_j}\}.\tag{BG.8}\]
+正有界背景有 $W^{\rm out}_{K,b}\le(B/a)W_{K,dx}<\infty$。
+此时双测度临界极点公式仍适用，但弱型范数一般不能简化为奇点分量的最大值。
+
+一维取 $v(x)=|x|^{-1/2}$、$b(x)=1+64\1_{(1,2)}(x)$，令 $w=b+v$。
+对 $E=(0,1)$、$\alpha=1/4$，严格中心光晕为 $(-1,2)$，故
+\[C^{\rm out}_{c,w}(1/4)\ge\frac{69+2\sqrt2}{3},\qquad
+ W^{\rm out}_{c,w}\ge\frac{69+2\sqrt2}{12}
+ >2(1+\sqrt2)\ge W^{\rm out}_{c,v}.\tag{BG.9}\]
+最后的不等式用 (OW.8)，严格差为 $(45-22\sqrt2)/12>0$，
+因为 $45^2-2\cdot22^2=1057>0$。同时
+$C^{\rm out}_{c,v}(1/4)\le8(1+\sqrt2)<(69+2\sqrt2)/3$，
+所以不能把 (BG.3) 延伸到全部阈值。
+
+这一例的端点保持区间还可明确给出。对 $0<t\le2^{-16}$，(H.9) 中取
+$S=1$、$D_0=2$，因 $6t/(1+2t)<1$，其构造合法且
+\[C^{\rm out}_{c,v}(1-t)-1
+\ge\frac{\sqrt t}{\sqrt{1+2t}-\sqrt t}
+\ge\frac{\sqrt t}{1+t}
+>\frac{130t}{1-t}\ge C^{\rm out}_{c,b}(1-t)-1.\tag{BG.10}\]
+严格比较由 $\sqrt t\le1/256$ 及
+\[1-2^{-16}-\frac{130}{256}(1+2^{-16})
+=\frac{4128575}{8388608}>0\]
+保证。因此在这整个区间内，$C^{\rm out}_{c,w}(1-t)=C^{\rm out}_{c,v}(1-t)$。
+而 $m=2$、等指数时，$w$ 的临界留数至少为
+$(69+2\sqrt2)/24>1+\sqrt2$，$v$ 的留数至多为 $1+\sqrt2$。
+
+同样现象也可由任意小的紧支撑积分扰动产生。令
+\[u=1+|x|^{-1/2},\qquad
+w_\varepsilon=u+64\varepsilon^{-1/2}\1_{(\varepsilon,2\varepsilon)},
+\quad0<\varepsilon\le1.\tag{BG.11}\]
+有 $\int|w_\varepsilon-u|=64\sqrt\varepsilon\to0$。
+对每个固定 $\varepsilon$，(BG.3) 给充分近端点时
+$C^{\rm out}_{c,w_\varepsilon}=C^{\rm out}_{c,v}=C^{\rm out}_{c,u}$；
+但以 $E=(0,\varepsilon)$、$\alpha=1/4$ 测试，
+\[\frac{w_\varepsilon((-\varepsilon,2\varepsilon))}{w_\varepsilon((0,\varepsilon))}
+=\frac{3\sqrt\varepsilon+66+2\sqrt2}{\sqrt\varepsilon+2}
+\ge\frac{69+2\sqrt2}{3}.\tag{BG.12}\]
+最后一步令 $y=\sqrt\varepsilon\le1$，两侧之差为 $(60+2\sqrt2)(1-y)/(3(y+2))\ge0$。
+又由 (MX.2)，$W^{\rm out}_{c,u}=W^{\rm out}_{c,v}$，故 $W^{\rm out}_{c,w_\varepsilon}$ 与固定阈值 $1/4$ 的常数均不能收敛到 $u$ 的对应值。
+这里各背景的上界随 $\varepsilon\downarrow0$ 增大，端点保持邻域也不作一致性断言。

@@ -1,0 +1,80 @@
+% Input after the homogeneous hypotheses (H.1) and coefficient formula (H.2).
+\subsection{同次角向权的合并}\label{subsec:angular-grouping}
+
+设 $K$ 是 $\mathbb R^n$ 的范数单位球，$\rho=\|\cdot\|_K$、$V=|K|$，而 $\sigma_K$ 是其角向概率测度：
+\[
+ \sigma_K(A)=\frac{|\{r\theta:0\le r\le1,\ \theta\in A\}|}{V}
+ \qquad(A\subset\partial K\ \hbox{Borel}).\tag{AG.1}
+\]
+对 Borel 集 $A$ 及 $0<s<t$，锥环带的体积为 $V(t^n-s^n)\sigma_K(A)$；
+先对环带指示函数、再由单调类定理，
+对每个非负 Borel 函数 $F$ 有
+\[
+ \int_{\mathbb R^n}F(x)\,dx
+ =nV\int_{\partial K}\int_0^\infty F(r\theta)r^{n-1}\,dr\,d\sigma_K(\theta).
+ \tag{AG.2}
+\]
+该公式也包括 $n=1$；此时 $\sigma_K$ 在两个端点各有质量 $1/2$。
+
+\begin{proposition}[同次合并不增加角向首项]\label{prop:angular-grouping}
+令 $0<\tau<n$，$p=n/(n-\tau)$。设 $\ell\ge1$，各 $h_i$ 都满足 \textup{(H.1)}，且
+\[
+ h_i(r\theta)=r^{\tau-n}a_i(\theta)\quad(i=1,\ldots,\ell),\tag{AG.3}
+\]
+所有分量具有相同的 $\tau$；由 (H.1)，$a_i\in L^p(\sigma_K)$。
+记 $h=\sum_i h_i$，并令 $S(\cdot)$ 为 \textup{(H.2)} 的齐次首项系数，则
+\[
+ S(h)=\frac{\|\sum_i a_i\|_{L^p(\sigma_K)}}
+ {\int\sum_i a_i\,d\sigma_K},\qquad
+ \kappa(h)S(h)\le\sum_i\kappa(h_i)S(h_i),\tag{AG.4}
+\]
+从而
+\[
+ S(h)\le\max_iS(h_i).\tag{AG.5}
+\]
+在 $\ell\ge2$ 时，\textup{(AG.5)} 取等号当且仅当所有 $h_i$ 两两成正比例（几乎处处）。
+故同次数的正权合并后，首项系数不超过原分量系数的最大值；非比例时严格小于该最大值。
+\end{proposition}
+\begin{proof}
+令 $\vartheta=\tau/n$。由 \textup{(AG.2)}，对任意一个 $h_i$（下标略去）有
+\[
+ \kappa(h)=\int_Kh\,dx=\frac{nV}{\tau}\int a\,d\sigma_K,
+ \qquad
+ D(h):=|\{h>1\}|=V\int a^p\,d\sigma_K.\tag{AG.6}
+\]
+第二式来自沿每条射线的区间 $0<r<a(\theta)^{1/(n-\tau)}$。
+代入 \textup{(H.2)} 的
+$S(h)=(n/\tau)D(h)^{1-\vartheta}V^\vartheta/\kappa(h)$，即得
+\[
+ S(h)=\frac{\|a\|_p}{\int a\,d\sigma_K},\qquad
+ \kappa(h)S(h)=\frac{nV}{\tau}\|a\|_p.\tag{AG.7}
+\]
+对 $a=\sum_i a_i$ 用 $L^p(\sigma_K)$ 的 Minkowski 不等式即得
+\textup{(AG.4)}。
+
+再除以 $\sum_i\kappa(h_i)>0$ 得 \textup{(AG.5)}。
+若 \textup{(AG.5)} 取等号，则这两次不等式都取等号；故每个 $S(h_i)$ 都等于其最大值，
+且 $L^p$ 的严格凸性（$p>1$）给出所有非零 $a_i$ 两两成正比例。若各角向函数成正比例，其归一化 $L^p$ 范数相同，故等号成立。
+\end{proof}
+
+\paragraph{方体上的严格合并。}
+取 $K=[-1,1]^n$、$\tau=n/2$，故 $p=2$。若
+\(a_\pm(\theta)=1\pm\delta\theta_1\) 且 $0<\delta<1$，则
+\[
+ \int\theta_1\,d\sigma_K=0,\qquad
+ \int\theta_1^2\,d\sigma_K=\frac{n+2}{3n},
+\]
+从而
+\[
+ S(h_+)=S(h_-)=\sqrt{1+\delta^2\frac{n+2}{3n}}>1,
+ \qquad S(h_++h_-)=S\bigl(2\rho^{\tau-n}\bigr)=1.\tag{AG.8}
+\]
+更一般地，对正数 $c_+,c_-$，$c_+a_++c_-a_-$ 的有效角向扰动为
+\[
+ \delta_{\rm eff}=\delta\frac{c_+-c_-}{c_++c_-},
+ \qquad
+ S(c_+h_++c_-h_-)=
+ \sqrt{1+\delta_{\rm eff}^2\frac{n+2}{3n}}.\tag{AG.9}
+\]
+这里第二个矩可由 \textup{(AG.2)} 与
+\(\int_Kx_1^2dx=V/3\) 直接得到。
