@@ -22,3 +22,9 @@
 第20轮补核：检索“Solyanik sum weights centered homogeneous”“Tauberian constants continuity weight”等词，实际读取 [Hagelstein–Parissis作者稿：A Note on Local Hölder Continuity of Weighted Tauberian Functions](https://bpb-us-w2.wpmucdn.com/sites.baylor.edu/dist/f/83/files/2018/05/HagelsteinParissis-SodoskyProceedingsRevised-uenvdl.pdf) 摘要、引言及Theorem3的模型与主张。该文对固定Muckenhoupt权研究阈值α的局部Hölder连续性，所用Hardy–Littlewood算子非中心；与本轮中心算子在权的积分扰动下不连续不是同一命题。本文未借其定理推出混合权精确式；有限和的测度加和上界、奇点缩放下界与合并反例均完整自证。检索不构成新颖性或穷尽保证，参考文献主表仅列真正进入证明的来源。
 
 第21轮补核：检索“Solyanik perturbation weights centered”“Tauberian weights stability maximal”等，未从噪声结果据此新增文献主张；再次直接读取Aldaz v2 Theorem1.2及Hagelstein–Parissis v2的两种权模型定义。背景估计(BG.5)只用本稿已证的中心Lebesgue高水平光晕界，不调用非中心加权结论。新背景保持与紧支撑扰动反例均自证；同次数角向合并使用普通Lp三角不等式及其严格凸性等号条件，不当作新基础定理。检索未命中不证明原创性，也不声称覆盖全部最新论文。
+
+第22轮补核：
+
+- 实际读取Ball–Carlen–Lieb1994的[出版社摘要及题录](https://link.springer.com/article/10.1007/BF01231769)，确认其Lp部分本已属于经典均匀凸性；另读Matoušek2009[作者讲义](https://web.math.princeton.edu/~naor/homepage%20files/bcl.pdf)中p−1均匀凸性公式、Taylor检验及微分证明。不声称已访问付费原文全部证明。本稿自证所需概率标量特例，将其接到角向系数S，不把基本Lp不等式说成新发现。
+- 读取Nguyen作者提供的[2015全文](https://vanhoangnguyen.wordpress.com/wp-content/uploads/2013/11/improved-lp-mixed-volume-inequality-for-convex-bodies.pdf)Theorem1.3及其Jensen亏损背景；其一般稳定性与本文小亏损渐近、角向归一化须区分。出版社网页403，题录用作者稿DOI及Crossref官方API实际核对：JMAA431(2),1045–1053,2015，DOI10.1016/j.jmaa.2015.06.023。
+- 最新相关检索也读到[arXiv:2609.16202](https://arxiv.org/abs/2609.16202)的摘要，讨论非交换Lp切线不等式。仅查摘要，不把非交换结果移用于本稿，不据此宣称已穷尽最新文献。

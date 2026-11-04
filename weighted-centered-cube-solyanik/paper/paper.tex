@@ -8,7 +8,7 @@
 \title{中心方体的两种加权 Solyanik 模型\\共同中心多线性精确传递与端点结论}
 \author{基于《课题2（8.26最新扩充版）》的核验修订}\date{2026 年 11 月 5 日}
 \begin{document}\maketitle
-\begin{abstract}本文区分内禀权平均与外层加权光晕，证明共同中心多线性传递、内禀端点和外层集中模量界，并得到不等指数近端点的显式公式。对任意非零局部有限无原子 Radon 测度，通过保持旧见证的逐层比例分割，进一步确定内禀多集合模型的精确有限性阈值。等价双测度的小阈值指标逼近将内禀与外层的临界上侧首项统一归约为相应线性弱型范数，并给出外层的显式构造下界。对于可比齐次权，进一步求出任意范数球外层端点的精确首项常数及两类二阶适用范围；该常数还刻画权与平均几何是否匹配。分离齐次奇点的有限正和满足全阈值最大值公式；低阶背景可在近端点精确排除，重合奇点则按最小次数分组。显式反例说明端点保持与临界留数稳定是不同的问题。\end{abstract}
+\begin{abstract}本文区分中心方体极大算子的内禀权平均与外层加权模型，并将共同见证方法推广到范数球。共享中心和半径的缺陷优化给出多集合、不等指数的精确传递；无原子分割确定临界发散，双测度指标逼近将临界留数归约为完整线性弱型范数。内禀方体模型得到逐权一阶系数和全权族精确公式。对正可比齐次权，证明外层尖锐首项及两类二阶范围；角向表示刻画几何匹配，并给出径向匹配稳定性的尖锐小亏损系数。有限齐次奇点和低阶背景的近端点行为由分组精确归约，反例表明端点保持不保证临界留数稳定或权扰动连续。\end{abstract}
 
 \section{引言}
 中心极大算子的近单位水平集刻画了平均几乎等于一时的外溢质量。加权情形存在两个不同问题：权可以同时进入平均与测量，也可以只进入测量。Hagelstein--Parissis 的加权研究说明这种区分对于端点估计十分重要\cite{HagelsteinParissis2016}；Aldaz 的测度一致弱型理论则提供中心方体的几何工具\cite{Aldaz2020}。
@@ -123,6 +123,7 @@ C^{(m),\rm out}_{c,n,w}(\lambda)=C^{\rm out}_{c,w}(\Phi_m(\lambda)).
 \input{outer_critical_applications.tex}
 \input{mixture_extension.tex}
 \input{angular_grouping.tex}
+\input{angular_stability.tex}
 \input{background_extension.tex}
 \section{其他推论与开放问题}
 若一个中心几何族对于所有局部有限测度的弱型常数统一不超过 $B$，上面的测度扰动证明还给出 $C_\mu(a)\le1+B(1-a)/a$。该推导仅依赖测度一致的弱型性质。
@@ -134,4 +135,6 @@ C^{(m),\rm out}_{c,n,w}(\lambda)=C^{\rm out}_{c,w}(\Phi_m(\lambda)).
 \bibitem{Aldaz2020} J. M. Aldaz, \emph{Kissing numbers and the centered maximal operator}, arXiv:1811.10478v2, 2020.
 \bibitem{HagelsteinParissis2016} P. A. Hagelstein and I. Parissis, \emph{Weighted Solyanik estimates for the Hardy--Littlewood maximal operator and embedding of $A_\infty$ into $A_p$}, J. Geom. Anal. 26 (2016), 924--946.
 \bibitem{Melas2003} A. D. Melas, \emph{The best constant for centered Hardy--Littlewood maximal inequality}, Ann. of Math. 157 (2003), no. 2, 647--688. DOI: \href{https://doi.org/10.4007/annals.2003.157.647}{10.4007/annals.2003.157.647}.
+\bibitem{BallCarlenLieb1994} K. Ball, E. A. Carlen and E. H. Lieb, \emph{Sharp uniform convexity and smoothness inequalities for trace norms}, Invent. Math. 115 (1994), 463--482. DOI: \href{https://doi.org/10.1007/BF01231769}{10.1007/BF01231769}.
+\bibitem{Nguyen2015} V. H. Nguyen, \emph{Improved $L_p$-mixed volume inequality for convex bodies}, J. Math. Anal. Appl. 431 (2015), no. 2, 1045--1053. DOI: \href{https://doi.org/10.1016/j.jmaa.2015.06.023}{10.1016/j.jmaa.2015.06.023}.
 \end{thebibliography}\end{document}

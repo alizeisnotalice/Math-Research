@@ -1,0 +1,103 @@
+% Input after (H.1), (H.2), and the cone-probability notation of the preceding subsection.
+\subsection{角向首项的定量稳定性}\label{subsec:angular-stability}
+
+下面将经典的 $L^p$ 一致凸性和 Jensen 亏损稳定结构
+\cite{BallCarlenLieb1994,Nguyen2015}用于角向端点系数，并给出本文所需形式的证明。
+
+设 $0<\tau<n$、$p=n/(n-\tau)>1$，并令 $\mathbb E$ 表示锥概率测度
+$\sigma_K$ 下的积分。对满足 \textup{(H.1)} 的同次权
+\(h(r\theta)=r^{\tau-n}a(\theta)\)，置
+\[
+ \bar a=\mathbb Ea,\qquad f=a/\bar a=1+g,\qquad S=S(h)=\|f\|_p.
+ \tag{ST.1}
+\]
+对每个固定权，$f$ 正且有界；以下估计不要求这些界在权族上一致。
+
+\begin{proposition}[首项亏损控制角向偏离]\label{prop:angular-stability}
+在 \textup{(ST.1)} 下，$\mathbb Ef=1$、$S\ge1$，且
+\[
+ \begin{array}{ll}
+ \displaystyle\|g\|_p^2\le\frac{S^2-1}{p-1},&1<p\le2,\\[7pt]
+ \displaystyle\|g\|_p^p\le S^p-1,\qquad
+ \|g\|_2^2\le\frac{S^p-1}{p-1},&p\ge2.
+ \end{array}\tag{ST.2}
+\]
+若 $h_{\rm rad}(x)=\bar a\rho(x)^{\tau-n}$，则 $\kappa(h_{\rm rad})=\kappa(h)$，并有
+\[
+ d(h):=\frac{\int_K|h-h_{\rm rad}|}{\int_Kh}=\mathbb E|g|
+ \le\begin{cases}
+ \sqrt{(S^2-1)/(p-1)},&1<p\le2,\\[2pt]
+ \sqrt{(S^p-1)/(p-1)},&p\ge2.
+ \end{cases}\tag{ST.3}
+\]
+固定 $K,n,\tau$，并令上确界遍历满足 \textup{(H.1)} 的同次权，则更精确地，
+\[
+ \lim_{\eta\downarrow0}\ \sup_{1<S(h)\le1+\eta}
+ \frac{d(h)}{\sqrt{S(h)-1}}=\sqrt{\frac2{p-1}}.\tag{ST.4}
+\]
+\end{proposition}
+\begin{proof}
+先设 $1<p\le2$。对 $0\le t<1$ 令 $u_t=1+tg>0$、
+$A=\mathbb Eu_t^p$、$B=\mathbb E(u_t^{p-1}g)$、
+$C=\mathbb E(u_t^{p-2}g^2)$，以及 $F(t)=A^{2/p}$。直接微分给出
+\[
+ F''(t)=2(2-p)A^{2/p-2}B^2+2(p-1)A^{2/p-1}C.
+\]
+而 H\"older 不等式给 $\mathbb E|g|^p\le C^{p/2}A^{(2-p)/2}$，所以
+$F''(t)\ge2(p-1)\|g\|_p^2$。又 $F(0)=1$、$F'(0)=2\mathbb Eg=0$。
+先积分至 $r<1$，再由 $L^p$ 连续性令 $r\uparrow1$，得到 \textup{(ST.2)} 的第一式。
+
+若 $p\ge2$，每个 $x\ge0$ 满足
+\[
+ x^p-1-p(x-1)\ge|x-1|^p,\qquad
+ x^p-1-p(x-1)\ge(p-1)(x-1)^2.\tag{ST.5}
+\]
+第一式在 $x=1+v$ 时由 $(1+v)^{p-1}\ge1+v^{p-1}$ 的导数形式得到；
+在 $x=1-v$ 时由 $v^{p-1}+(1-v)^{p-1}\le1$ 得到。对于第二式，Taylor
+积分余项为
+\[
+ p(p-1)(x-1)^2\int_0^1(1-s)[1+s(x-1)]^{p-2}\,ds
+ \ge(p-1)(x-1)^2,
+\]
+其中末步使用 $1+s(x-1)\ge1-s$ 和
+\(\int_0^1(1-s)^{p-1}\,ds=1/p\)。在 \textup{(ST.5)} 中取 $x=f$ 并取期望，
+再用 $\mathbb Eg=0$，即得其余 \textup{(ST.2)}。锥坐标分解给出
+$d(h)=\mathbb E|g|$；分别用 H\"older 和 Cauchy--Schwarz 即得 \textup{(ST.3)}。
+
+最后证明 \textup{(ST.4)}。令 $D=S^p-1=\mathbb E\phi_p(f)$，其中
+\(\phi_p(x)=x^p-1-p(x-1)\)。固定 $0<\delta<1$，并置
+\[
+ m_{p,\delta}=\min\{(1-\delta)^{p-2},(1+\delta)^{p-2}\},\qquad
+ c_{p,\delta}=\inf_{\substack{x\ge0\\|x-1|\ge\delta}}
+ \frac{\phi_p(x)}{|x-1|}>0.
+\]
+这里唯一零点 $x=1$ 已被排除；商在紧的尾部截断上连续且严格为正，而当
+$x\to\infty$ 时趋于无穷，故该下确界确为正。
+同一 Taylor 余项在 $|x-1|\le\delta$ 时给
+\(\phi_p(x)\ge p(p-1)m_{p,\delta}(x-1)^2/2\)。将期望按该集合及其补集分开，
+得到全局显式估计
+\[
+ d(h)\le\sqrt{\frac{2D}{p(p-1)m_{p,\delta}}}+\frac D{c_{p,\delta}}.\tag{ST.6}
+\]
+\textup{(ST.6)} 的常数只依赖 $p,\delta$，故可对所述权族取上确界。先令
+$S\downarrow1$（此时 $D/(S-1)\to p$），再令 $\delta\downarrow0$，给出
+\textup{(ST.4)} 的上界。为取下界，按中心对称的锥测度取等质量两半，并在两半上令
+$f=1+\varepsilon,1-\varepsilon$。则 $d=\varepsilon$ 且
+\(S-1=(p-1)\varepsilon^2/2+o(\varepsilon^2)\)。一维取两个端点，
+高维取任一过原点超平面的两侧，故下界对每个维数和范数球均成立。
+\end{proof}
+
+\begin{remark}[常数的尖锐性范围]\label{rem:angular-stability-sharp}
+上述等质量两值剖面还给出 $S^2-1=(p-1)\varepsilon^2+o(\varepsilon^2)$，
+故 $1<p\le2$ 的第一常数尖锐。若 $p>2$，后两常数已在二维方体的无原子角向
+测度上不能减小：在概率
+\(\varepsilon=M^{-(p+1)}\) 的集合取 $f_M=M$、其余处取
+\((1-\varepsilon M)/(1-\varepsilon)\)，则
+\(\mathbb E|f_M-1|^p/(\mathbb Ef_M^p-1)\to1\)；在概率 $q$ 的集合取
+$f_q=q$、其余处取 $1+q$，则
+\(\mathbb E(f_q-1)^2=q(1-q)\) 且
+\((\mathbb Ef_q^p-1)/\mathbb E(f_q-1)^2\to p-1\)。因此不对固定一维的
+两原子角向测度声称这后两项尖锐；$p=2$ 时相应不等式本身为恒等式。尖峰族还有
+$S^p-1\sim M^{-1}$ 而 $\operatorname*{ess\,sup}f_M=M\to\infty$；每个剖面正且有界，
+但该族的界不一致，故这些结论不推出 $L^\infty$ 意义的稳定性。
+\end{remark}
