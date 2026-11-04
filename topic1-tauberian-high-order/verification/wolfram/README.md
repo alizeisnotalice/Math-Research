@@ -9,3 +9,7 @@
 
 运行方式：`wolframscript -file verification/wolfram/gram.wl`，其余文件同理。
 符号结果支持各自的代数步骤；一般几何证明、极限存在性及余项控制仍须按论文的证明链核对。
+
+## 第4轮：真实二阶证明的标量核验
+
+`sharp-check.wl` 为独立审查者的精确检查，主代理在本机 Wolfram 15.0.0 ARM 重跑；16项均 True，Failures=0。输出见 `sharp-check-result.txt`。脚本无运行时限，显式列出每个代数断言的假设。它支持正文解析证明中的常数和符号核对，不替代输入全域、可测选择和极限传递的证明。大变量联合CAD的内存未决运行未计作定理证据，见 `rounds/004.md`。

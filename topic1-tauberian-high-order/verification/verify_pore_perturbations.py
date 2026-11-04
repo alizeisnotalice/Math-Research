@@ -97,7 +97,7 @@ def main():
     print(f"small-radius baseline density: {small_density_checks} exact samples PASS")
     print(f"intermediate-radius perturbed mass bounds: {intermediate_checks} exact samples PASS")
     print(f"all-large-radius lower-bound samples: {large_checks} exact samples PASS")
-    print("The general continuum and all-radius proofs are in paper/sections/perturbations.tex.")
+    print("The general continuum and all-radius proofs are in 历史提交 2316b612 的 paper/sections/perturbations.tex.")
 
 
 if __name__ == "__main__":

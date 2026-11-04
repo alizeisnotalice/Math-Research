@@ -1,37 +1,37 @@
-# 共享中心方体 Tauberian 常数的高阶端点研究
+# 中心方体 Tauberian 常数的高阶端点研究
 
-研究对象为 Lebesgue 测度下的中心轴平行立方体极大算子。线性常数为
+研究对象是 Lebesgue 测度下的中心轴平行立方体极大算子，使用严格水平集。
+线性输入为任意有限正测度可测集；共享方体的多线性常数以公共交集归一化，单个输入集允许无限测度。
+
+## 当前严格结论
+
+对每个固定整数 n≥2，真实常数满足
 \[
-C_n(\alpha)=\sup_{0<|E|<\infty}\frac{|\{M_{c,n}\mathbf1_E>\alpha\}|}{|E|}.
+C_n(1-t)=1+2^nt-n2^{n+1}t^{1+1/n}
+ +O_n\!\left(\frac{t^{1+1/n}}{\log(1/t)}\right).
 \]
-多线性算子共享同一个半径，分母取公共交集的有限正测度；单个输入集允许无限测度。
+因此原目标归一化余项的极限存在，等于 −n2^(n+1)。下界与全部输入、全部半径的上界匹配；完整解析证明见 `paper/main.tex` 及 `paper/sections/global.tex`。
 
-## 当前结论
-
-已审查基线：精确多线性约化、临界发散、一般测度统一弱型常数、显式包络，以及
+多线性超临界区精确约化为
 \[
-C_n(1-t)=1+2^nt+o(t),\qquad
--n2^{n+1}\le\liminf R_n\le\limsup R_n\le0,
-\quad R_n(t)=\frac{C_n(1-t)-1-2^nt}{t^{1+1/n}}\quad(n\ge2).
+C_n^{(m)}(\lambda)=C_n(1-m(1-\lambda^{1/m})).
 \]
-真实高阶系数和极限存在性尚未证明。下包络的展开不是该常数的真实展开。
+阈值为 (1−1/m)^m；m≥2 时在阈值及以下发散。二阶渐近及上述余项可关于全部 m≥1 一致传递。没有维数一致性的主张。
 
-第2轮严格排除了两类改进路线：任意有限周期中的避邻整孔机制仍不超过 L_n；
-只使用无约束权密度比信息的指定测度放大方案，优化后仍只能得到 U_n。
-薄立方孔的全部半径公式亦已证明，相关条件和证明见 `proofs/002-*.md`。
+比 t^(1+1/n) 更细的首个非零修正项尚未确定。周期包络的更高展开不是实际常数的高阶展开。
 
-第3轮进一步得到任意输入的同半径部分 halo 负修正、具有缓变见证选择的全尺度类上界，
-以及周期立方孔附近任意小体积增删微扰的匹配二阶限制。
-这些均保留明确的适用条件；完整证明在 `paper/sections/`，结果与验证记录在 `rounds/003.md`。
+## 材料
 
-- `paper/main.tex`、`paper/sources.bib`：精简论文及准确来源。
-- `paper/tauberian.pdf`：已编译并检查的论文 PDF。
-- `rounds/001.md`：基线审查、修复、删除和验证记录。
-- `rounds/002.md`：机制筛除、独立复核与下一轮问题。
-- `rounds/003.md`：尺度界、周期微扰与精确反例。
-- `proofs/`：正文以外的必要证明及周期截断误差说明。
-- `verification/`：必要的精确代数与本机符号验证程序。
-- `sources.md`：直接相关文献的对象、版本与读取范围。
+- `paper/tauberian.pdf`：实际编译、检查的可交付论文。
+- `paper/main.tex`、`paper/sections/global.tex`、`paper/sources.bib`：完整可编辑项目。
+- `rounds/004.md`：匹配二阶上下界、证明依赖、复核、实际计算与剩余问题。
+- `reviews/004-*.md`：几何、计费、独立敌意审查及最终转写复核。
+- `rounds/001.md`—`003.md`：基线修复、被排除路线和历史研究记录；当时文件可在相应 Git 提交恢复。
+- `proofs/`：仍有筛除错误路线作用的反例和有限周期截断说明。
+- `verification/`：最小精确代数与本机符号复现程序。
+- `sources.md`：文献对象、版本、读取范围和题录核验。
+
+第4轮从当前正文移除了已被一般二阶定理覆盖的避邻孔、同半径、缓变半径和局部小微扰结论，以及不再需要的一般测度转移长证。原始稿件和历史版本可恢复。
 
 ## 复现
 
@@ -40,26 +40,11 @@ cd paper
 latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 ```
 
-需要 TeX Live、XeLaTeX、BibTeX，以及 Songti SC 和 Times New Roman 字体。
-精确代数核验只用 Python 标准库：
+需要 XeLaTeX、BibTeX、Songti SC、Times New Roman。主要符号工具为 Mathematica/Wolfram Language：
 
 ```sh
-python3 -B verification/verify_baseline.py
+wolframscript -file verification/wolfram/sharp-check.wl
 ```
 
-主要符号核验使用 Mathematica/Wolfram Language，例如：
-
-```sh
-wolframscript -file verification/wolfram/gram.wl
-wolframscript -file verification/wolfram/energy.wl
-wolframscript -file verification/wolfram/endpoint.wl
-```
-
-`verification/verify_baseline.m` 在本机 MATLAB R2026a Symbolic Math Toolbox 中实际运行过，
-用于与 Python 有理数结果交叉核对。程序核对的范围不能替代论文中的一般维数证明。
-
-## 研究及归档原则
-
-围绕真实高阶上下界推进；模型、单向界和严格渐近分别表述。
-每轮保留一个独立提交，仅保存最终报告和复核所必需的支撑材料。
-原始稿件保留在本机，未被覆盖；此目录只维护精简研究版本。
+该脚本在 Wolfram 15.0.0 ARM 实际运行，16项标量/几何余量检查全部通过；计算范围与证明的关系见第4轮报告。一般维数、测度论和所有输入的结论依据正文证明。
+Python 有理数与本机 MATLAB R2026a 的基线交叉检查保留在 `verification/`。
