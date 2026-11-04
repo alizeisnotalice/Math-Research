@@ -109,3 +109,7 @@ run('verification/fixed_cube_matlab.m')
 第18轮将精确两点差体转为真实全体体积上界U(α)=1−α²+(2α²−1)log[(2α²−1)/α²]，并延至临界α=1/√2。二维半阶体积三阶剩余量的liminf/limsup被夹在[2,10/3]，高矩次阶剩余夹在[0,8]；尚未证明系数存在或匹配。两点几何方法自身已最优，更紧上界需要多见证约束。见 `rounds/018.md`。
 
 第18轮当前PDF69页。复现 `verification/pair_body.py`（`--check-only`重验有理证书）、`verification/pair_body.wl`、`verification/pair_body_matlab.m`。
+
+第19轮证明二维半阶每个固定α∈(1/√2,1)的真实全体常数严格低于两点包络U。四点各自独立选尺度仍有共同质量障碍；凸体等号紧性排除近等号序列。未定量化间隙，三阶区间[2,10/3]保持不变。见 `rounds/019.md`。复现 `verification/four_point.py`、`verification/four_point.wl`、`verification/four_point_matlab.m`；多尺度数值探索另见 `verification/multi_scale_search.py`。
+
+第19轮当前PDF为71页；本轮精简归档包括严格证明、独立复审、296份有理检查及15组探索摘要。

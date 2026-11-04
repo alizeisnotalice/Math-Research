@@ -20,3 +20,5 @@
 第10轮定向检索：`"fractional maximal" "Tauberian" centered rectangles`、`"fractional maximal" "Solyanik" sharp constant`。返回主要为零阶光晕、遍历版本与分数极大算子正则性，未据此取得与本轮归一化矩形精确式相同的可核验原始定理；无新增题录，也不据搜索缺失宣称首创。第9轮已核验文献继续适用。
 
 第17轮定向原始文献检索：arxiv.org内 `"fractional maximal" halo diameter centered cubes`、`"fractional maximal" "Tauberian" sharp`。命中 [Weigt, arXiv:2010.05561](https://arxiv.org/abs/2010.05561)等分数极大算子Sobolev正则性摘要；实际仅阅读检索返回摘要，未取得与本尺度不变全体坐标宽度相同的原始定理。无新增引用或首创声明；这一有限检索不证明不存在相关文献。
+
+第19轮实际补读Gardner2002出版版第3节（出版页359，PDF第6页）的凸体Brunn–Minkowski等号条件：满维凸体取等号当且仅当互为平移与正伸缩；另核对PDF第9–10页一般可测集及退化情况，正文只使用满维凸体版本。来源：[出版版PDF](https://dornsife.usc.edu/sergey-lototsky/wp-content/uploads/sites/211/2023/06/Brunn-Minkowski-AMSBulletin-2002.pdf)。未新增题录或首创声明。

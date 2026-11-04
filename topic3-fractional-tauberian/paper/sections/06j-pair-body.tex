@@ -148,3 +148,138 @@ $|K_\alpha|/4=\mathcal U(\alpha)$，由 $S=K_\alpha/2$ 达到。
 下界保留首个正尾项；上界使用
 $b_j\le2^j/[j(j-1)]\le2^j/[N(N+1)]$ 后求几何级数。
 \end{proof}
+
+\subsection{四点共同见证与上包络的严格间隙}
+
+两点几何的最优包络并非真实全体常数。下面先保留各点独立尺度，
+构造共同质量障碍，再借紧性把局部障碍转成全体上确界的严格间隙。
+
+\begin{lemma}[四角质量障碍]\label{pb:four-certificate}
+固定 $1/\sqrt2<\alpha<1$，记 $U=\alpha^{-1}$。设 $0<2r<\alpha$、
+$\alpha<q<(\alpha+U)/2$，置
+\[
+ G_r(z)=(z-2r)^2-2\alpha z+1,\qquad M=2q-\alpha.
+\]
+若
+\begin{equation}\label{pb:four-tests}
+ G_r(q)<0,\quad G_r(U)<0,\quad
+ (\alpha+2r)^2-4M(M-\alpha)>1,
+\end{equation}
+则四中心 $(\pm r,\pm r)$ 不可能同时属于一个质量一输入的严格光晕。
+各中心的见证尺度可以独立选择。该不可实现性在四中心的充分小独立扰动下仍成立。
+\end{lemma}
+\begin{proof}
+反设四点均有见证，边长记为 $\ell_i\in(\alpha,U)$。
+对任一对角点对，令两尺度的平均为 $z$。两方体各坐标交长至多为
+$z-2r>0$，由两见证的捕获量和质量预算，必须有 $G_r(z)>0$。
+但凸性及式~\eqref{pb:four-tests}使 $G_r$ 在 $[q,U]$ 上严格为负，故 $z<q$。
+另一尺度大于 $\alpha$，从而每个 $\ell_i<M$；两个对角点对覆盖了全部四尺度。
+
+令 $P_i$ 为同中心、边长 $\alpha$ 的小方体，$Q_i$ 为原见证，则
+\[
+ |P_i\setminus E|\le |Q_i\setminus E|
+ <\ell_i(\ell_i-\alpha)<M(M-\alpha).
+\]
+四个 $P_i$ 的并为边长 $\alpha+2r$ 的正方形，因为 $2r<\alpha$。
+即使缺失部分重叠，求和仍给合法上界，故
+\[
+ |E|\ge\left|E\cap\bigcup_iP_i\right|
+ >(\alpha+2r)^2-4M(M-\alpha)>1,
+\]
+矛盾。扰动中心后，对角差 $(u,v)$ 对应的二次式为
+$(z-u)(z-v)-2\alpha z+1$，在固定 $q,U$ 处仍保持负值；
+小方体并的面积也连续。因此全部严格条件在充分小的四个邻域内一致保持。
+\end{proof}
+
+\begin{proposition}[每个高阈值都有严格四点障碍]\label{pb:four-existence}
+对每个 $\alpha\in(1/\sqrt2,1)$，$K_\alpha/2$ 内存在四点及各自的开邻域，
+使从四邻域各取一点时，每对点分别严格可行，但四点没有共同的质量一输入。
+\end{proposition}
+\begin{proof}
+置 $r_*=(\alpha-\sqrt{2\alpha^2-1})/2>0$，先取 $r=r_*$。
+此时 $G_r(\alpha)=0$，$G_r'(\alpha)=-4r_*<0$。
+记 $W=U-\alpha$，由 $G_r(\alpha)=0$ 得
+$4r_*-W=4r_*^2/\alpha>0$，因此
+\[
+ G_r(U)=-W(4r_*-W)<0.
+\]
+另一方面
+$\alpha+2r_*=2\alpha-\sqrt{2\alpha^2-1}>1$；
+最后一步可平方验证，因为 $2\alpha-1>0$ 且
+$(2\alpha-1)^2-(2\alpha^2-1)=2(1-\alpha)^2>0$。
+故可先取 $q>\alpha$ 充分接近 $\alpha$，使式~\eqref{pb:four-tests}在 $r_*$ 成立，
+再取 $r<r_*$ 充分接近 $r_*$ 保留全部严格条件。
+此时 $G_r(\alpha)>0$，四点 $(\pm r,\pm r)$ 都在 $K_\alpha/2$ 内；
+最不利的对角差也属于 $K_\alpha$，其余点对更宽松。
+由定理~\ref{pb:body}，各点对分别严格可行。
+缩小引理~\ref{pb:four-certificate}给出的邻域，既保留共同不可行性，
+又保留各点及各点对的严格内部条件，即得结论。
+\end{proof}
+
+\begin{example}[有理且抗扰动的证书]\label{pb:four-rational}
+取 $\alpha=9/10$、$r=9/160$、$q=901/1000$、$M=451/500$。
+四项精确裕量为
+\[
+ G_r(\alpha)=\frac1{6400},\quad G_r(q)=-\frac{271}{4000000},\quad
+ G_r(U)=-\frac{1439}{518400},
+\]
+\[
+ (\alpha+2r)^2-4M(M-\alpha)-1=\frac{71761}{4000000}.
+\]
+各点独立作 $\ell^\infty$ 距离至多 $\varepsilon=10^{-5}$ 的扰动时，
+对角二次式在 $z\in\{\alpha,q,U\}$ 处的变化绝对值至多
+$4\varepsilon(z-2r)+4\varepsilon^2$；四小方体并的面积损失至多
+$16\alpha\varepsilon$。扣除此损失后，四个正裕量依次为
+\[
+ \frac{155937}{1250000000},\quad\frac{22631}{625000000},\quad
+ \frac{8656571}{3164062500},\quad\frac{14237}{800000}.
+\]
+因此这是一份覆盖整个四邻域的有理证书，并非有限尺度网格的负最优值。
+面积损失界来自边长 $\alpha$ 的方体平移后对称差面积至多
+$4\alpha\varepsilon$，再对四个方体求和。
+\end{example}
+
+\begin{theorem}[真实全体常数严格低于两点包络]\label{pb:strict-gap}
+对每个固定 $\alpha\in(1/\sqrt2,1)$，存在 $\delta_\alpha>0$，使
+\[
+ R(\alpha)\le C_{1,\mathcal Q_c}(\alpha)
+ \le\mathcal U(\alpha)-\delta_\alpha<\mathcal U(\alpha).
+\]
+这里未给出 $\delta_\alpha$ 的定量下界，也未据此改变式~\eqref{pb:cubic-bracket}
+的三阶系数区间。
+\end{theorem}
+\begin{proof}
+反设 $C_{1,\mathcal Q_c}(\alpha)=\mathcal U(\alpha)$，取质量一输入 $E_j$，
+使其光晕 $H_j$ 的面积趋于 $\mathcal U(\alpha)>0$。
+平移一个光晕点到原点，由宽度界，各 $H_j$ 都在固定有界方体内。
+记 $A_j=\overline{\operatorname{conv}H_j}$，则
+\[
+ A_j-A_j\subset\overline K_\alpha,\qquad
+ |H_j|\le|A_j|\le |K_\alpha|/4=\mathcal U(\alpha).
+\]
+于是 $|A_j|\to\mathcal U(\alpha)$，且 $|A_j\setminus H_j|\to0$。
+
+这些非空紧凸集有 Hausdorff 收敛子列 $A_j\to A$：
+其支撑函数在单位圆上一致有界且等度连续，应用 Arzel\`a--Ascoli 定理即可。
+面积也收敛。具体地，$A_j\subset A+\varepsilon B$ 给面积上半连续性；
+故 $|A|\ge\mathcal U(\alpha)>0$，$A$ 有内球 $b+\rho B$。
+当支撑函数误差小于 $\varepsilon<\rho$ 时，
+$b+(1-\varepsilon/\rho)(A-b)\subset A_j$，给面积下半连续性。
+这也说明 $A$ 的任意紧内部区域最终都包含在 $A_j$ 内。
+
+极限满足 $A-A\subset\overline K_\alpha$ 且 $|A|=\mathcal U(\alpha)$，
+所以 Brunn--Minkowski 链中处处取等号：
+\[
+ 4|A|=|A-A|=|K_\alpha|.
+\]
+满维凸体的等号条件是两个加数互为平移与正伸缩\citep[第3节]{Gardner2002}。
+应用于 $A,-A$，两者面积相同，故 $A$ 中心对称。
+又两个满维紧凸体的包含及等体积强制相等，因此
+$A-A=\overline K_\alpha$，从而 $A$ 是 $\overline K_\alpha/2$ 的平移。
+
+把命题~\ref{pb:four-existence}的四个邻域同样平移，并各选一个正面积小闭球，
+使它们都严格位于 $A$ 内部。最终这四球都包含于 $A_j$。
+因 $|A_j\setminus H_j|\to0$，$H_j$ 最终必须同时与四球相交。
+这给出同一输入 $E_j$ 的四个光晕点，违反四邻域共同不可行性，矛盾。
+因此全体上确界本身严格小于包络，而不仅是没有单个输入达到包络。
+\end{proof}
