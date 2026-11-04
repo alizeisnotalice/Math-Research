@@ -1,0 +1,143 @@
+% Input after the angular cone formula (AG.2).
+\subsection{小齐次次数的完整弱型渐近}\label{subsec:small-homogeneity-weak}
+
+沿用 (AG.1)--(AG.2) 的范数球 $K$、$\rho=\|\cdot\|_K$、$V=|K|$ 与角向概率 $\sigma_K$。
+固定可测角向函数 $a$，并将它零次齐次延拓到 $\mathbb R^n\setminus\{0\}$。设
+\[
+0<a_*:=\operatorname*{ess\,inf}_{\sigma_K}a
+\le a\le a^*:=\operatorname*{ess\,sup}_{\sigma_K}a<\infty,
+\qquad E_a:=\int a\,d\sigma_K=\frac1V\int_Ka(x)\,dx.
+\]
+对 $0<\tau<n$，置 $d\mu_\tau=h_\tau dx$，其中
+$h_\tau(x)=\rho(x)^{\tau-n}a(x)$。令 $M_K$ 是 Lebesgue 平均的中心 $K$-球极大算子，且
+\[
+\mathcal W_\tau:=W^{\rm out}_{K,h_\tau}=\sup_{\substack{f\ge0,\ f\in L^1_{\rm loc}\\0<\int f h_\tau<\infty}}
+\frac{\mu_\tau(\{M_Kf>1\})}{\int f h_\tau}.
+\]
+记 $B_K$ 为 (G.1) 中的测度一致中心弱型上界；一般可取 $3^n$，方体可取 $2^n$。
+
+\begin{theorem}[三尺度上下界]\label{thm:small-homogeneity-weak}
+任取 $0<\eta<1$，有
+\begin{align}
+\mathcal W_\tau\le{}&B_K\frac{a^*}{a_*}3^{n-\tau}
++\frac{n2^nE_a}{a_*(n-\tau)}(1+\eta^{-1})^{n-\tau}
++\frac{nE_a}{a_*\tau}\eta^\tau(1+\eta)^{n-\tau}. \tag{SW.1}\label{eq:sw-upper}
+\end{align}
+并且
+\begin{equation}
+\mathcal W_\tau\ge\frac{nE_a}{a_*\tau}\,
+\frac{\tau^\tau(n-\tau)^{n-\tau}}{n^n}. \tag{SW.2}\label{eq:sw-lower}
+\end{equation}
+故
+\[\boxed{\displaystyle\lim_{\tau\downarrow0}\tau \mathcal W_\tau=\frac{nE_a}{a_*}.}\tag{SW.3}\label{eq:sw-limit}\]
+\end{theorem}
+
+\begin{proof}
+固定满足条件的 $f$，写 $A=\int f h_\tau$ 与 $H=\{M_Kf>1\}$。输入自动局部 Lebesgue 可积，因为 $h_\tau$ 在每个有界集有正的本质下界。
+对 $x\ne0$，将严格见证 $x+rK$（即 $\int_{x+rK}f>Vr^n$）按
+\[
+r<\rho(x)/2,\qquad \rho(x)/2<r<\rho(x)/\eta,\qquad r>\rho(x)/\eta \tag{SW.4}
+\]
+分类，令 $H_j$ 为存在第 $j$ 类见证的点集，允许重叠。阈值处的见证可微扰半径而保持严格平均；
+各类因而覆盖 $H$ 除原点外的部分。固定半径平均连续，故以有理半径刻画可见各类可测；原点为零测集。
+
+若 $x\in H_0$，则 $\rho(y)\in(\rho(x)/2,3\rho(x)/2)$ 对 $y\in x+rK$ 成立，故
+\[
+\frac{\int_{x+rK}f\,d\mu_\tau}{\mu_\tau(x+rK)}
+>\frac{a_*}{a^*}3^{\tau-n}.
+\]
+把 测度一致弱型不等式应用于 $\mu_\tau$，得到
+\[\mu_\tau(H_0)\le B_K\frac{a^*}{a_*}3^{n-\tau}A.\tag{SW.5}\label{eq:sw-local}\]
+
+令 $C=1+\eta^{-1}$。若 $x\in H_1$，则 $x+rK\subset C\rho(x)K$ 且
+$\int_{x+rK}f>V\rho(x)^n/2^n$，所以
+\[
+T(x):=\frac{2^n}{V\rho(x)^n}\int_{C\rho(x)K}f(y)\,dy>1.
+\]
+Markov、Tonelli 与极坐标公式给出（$y=0$ 为 Lebesgue 零集）
+\begin{align*}
+\mu_\tau(H_1)
+&\le\int T\,d\mu_\tau\\
+&=\int f(y)\frac{2^n}{V}
+ \int_{\rho(x)\ge\rho(y)/C}\rho(x)^{\tau-2n}a(x)\,dx\,dy\\
+&=\frac{n2^nE_aC^{n-\tau}}{n-\tau}
+ \int f(y)\rho(y)^{\tau-n}\,dy\\
+&\le\frac{n2^nE_aC^{n-\tau}}{a_*(n-\tau)}A. \tag{SW.6}\label{eq:sw-middle}
+\end{align*}
+这里内层积分的径向形式为
+$nVE_a\int_{\rho(y)/C}^\infty s^{\tau-n-1}ds$。
+
+若 $x\in H_2$，则 $x+rK\subset(r+\rho(x))K$ 且 $\rho(x)<\eta r$。因 $\tau-n<0$，
+\[
+A\ge a_*(r+\rho(x))^{\tau-n}\int_{x+rK}f
+>a_*Vr^\tau(1+\eta)^{\tau-n},
+\]
+于是 $\rho(x)^\tau<\eta^\tau(1+\eta)^{n-\tau}A/(a_*V)$。而
+$\mu_\tau(sK)=nVE_as^\tau/\tau$，从而
+\[\mu_\tau(H_2)\le\frac{nE_a}{a_*\tau}\eta^\tau(1+\eta)^{n-\tau}A.\tag{SW.7}\label{eq:sw-central}\]
+合并 \eqref{eq:sw-local}--\eqref{eq:sw-central} 即得 \eqref{eq:sw-upper}。
+
+为证下界，固定 $\epsilon>0$。低角集合 $\{a<a_*+\epsilon\}$ 在任意固定环带有正测度，
+故其中可取 $h_\tau$ 的非零 Lebesgue 点 $z$，满足 $a(z)\le a_*+\epsilon$。令 $s=\rho(z)$ 且 $r>1$。
+原子 $Vr^ns^n\delta_z$ 的严格光晕包含 $(r-1)s\operatorname{int}K$：对其内每个 $x$，
+$\rho(z-x)<rs$，故存在半径小于 $rs$ 而仍含 $z$ 的中心见证球。用 $z$ 附近小 $K$-球上的
+常数质量输入逼近该原子；Lebesgue 点性质令成本趋于 $Vr^ns^\tau a(z)$，且每个紧包含于上述
+开球的集合最终仍在严格光晕中。穷尽该开球，得到
+\[
+\mathcal W_\tau\ge\frac{nE_a}{\tau(a_*+\epsilon)}\frac{(r-1)^\tau}{r^n}.
+\]
+令 $\epsilon\downarrow0$，并取 $r=n/(n-\tau)$，即得 \eqref{eq:sw-lower}。
+
+固定 $\eta$，把 \eqref{eq:sw-upper} 乘以 $\tau$ 后令 $\tau\downarrow0$，有
+\[\limsup_{\tau\downarrow0}\tau \mathcal W_\tau\le\frac{nE_a}{a_*}(1+\eta)^n.\]
+再令 $\eta\downarrow0$，并和 \eqref{eq:sw-lower} 合并，即得 \eqref{eq:sw-limit}。
+\end{proof}
+
+\begin{corollary}[一维幂权]\label{cor:small-homogeneity-one-dimensional}
+当 $n=1$、$\rho(x)=|x|$、$a\equiv1$ 时，
+\[
+W_\tau\le6+\frac{2(1+\eta^{-1})^{1-\tau}}{1-\tau}
++\frac{\eta^\tau(1+\eta)^{1-\tau}}{\tau},
+\qquad\lim_{\tau\downarrow0}\tau W_\tau=1.
+\]
+\end{corollary}
+
+
+\begin{corollary}[有界角向对比下的一致收敛]\label{cor:small-homogeneity-uniform}
+固定 $n\ge1$ 与 $R\ge1$。对所有范数单位球 $K$ 及 $a^*/a_*\le R$ 的角向函数，令
+$L=nE_a/a_*$。当 $0<\tau<\min\{1,n/2\}$，有
+\[
+1-\tau\bigl[1+\log(n/\tau)\bigr]
+\le \frac{\tau\mathcal W_\tau}{L}
+\le1+C_{n,R}\tau^{1/(n+1)},\qquad
+C_{n,R}=\frac{9^nR+2^{2n+1}}n+2^n-1. \tag{SW.8}
+\]
+因此相对收敛也对这些范数与角向函数一致；不要求角向轮廓连续。
+此处上界余项只作可用估计，不断言其阶最优。
+\end{corollary}
+\begin{proof}
+记 $L_0=\tau^\tau(n-\tau)^{n-\tau}/n^n$。由
+$-\log(1-z)\le z/(1-z)$，得
+\[
+1-L_0\le-\log L_0\le\tau\bigl[1+\log(n/\tau)\bigr].
+\]
+将 (SW.1) 除以 $L/\tau$，取 $\eta=\tau^{1/(n+1)}$。
+局部项至多 $9^nR\tau/n$；中尺度项至多
+$2^{2n+1}\tau\eta^{-n}/n=2^{2n+1}\eta/n$；
+最后一项不超过 $(1+\eta)^n\le1+(2^n-1)\eta$。用 $\tau\le\eta$ 合并即得。
+\end{proof}
+
+系数 $L\ge n$，等号恰在 $a$ 几乎处处为常数时成立。故与平均球匹配的径向幂权
+也恰好最小化这一领先系数。另一方面，对固定 $a$，(AG.7) 给出的近单位水平系数
+$S_\tau=\|a\|_{n/(n-\tau)}/E_a\to1$，由有界性与控制收敛直接得到；
+小齐次次数的临界行为仍通过 $E_a/a_*$ 保留角向信息。
+
+对固定的正乘积指数向量，(OW.2) 进一步给出有确定极限顺序的结论
+\[
+\lim_{\tau\downarrow0}\tau
+\left[\lim_{\lambda\downarrow\lambda_c}(\lambda-\lambda_c)
+C^{\boldsymbol b,\rm out}_{K,h_\tau}(\lambda)\right]
+=\rho_c\lambda_c\frac{nE_a}{a_*}. \tag{SW.9}
+\]
+这里先对每个固定权取临界上侧极限，再令 $\tau\downarrow0$。
+特别地，一维径向权、等指数双线性模型的临界留数渐近为 $1/(2\tau)$。

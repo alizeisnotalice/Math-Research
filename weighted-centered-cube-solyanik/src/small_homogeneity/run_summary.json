@@ -1,0 +1,123 @@
+{
+  "scope": "Full operator asymptotics are proved analytically in SW.1–SW.9; numerical shell integrals diagnose an explicit lower-bound input only.",
+  "python": {
+    "precision": 120,
+    "unique_inputs": 36,
+    "n": [
+      1,
+      2,
+      3
+    ],
+    "angular_negative_side": [
+      1,
+      2,
+      5
+    ],
+    "tau": [
+      ".1",
+      ".01",
+      ".0001",
+      ".000001"
+    ],
+    "actual_fresh_workers": 15,
+    "fresh_worker_pids": [
+      89289,
+      89290,
+      89291,
+      89292,
+      89293,
+      89294,
+      89295,
+      89296,
+      89297,
+      89298,
+      89299,
+      89300,
+      89301,
+      89302,
+      89303
+    ],
+    "replay_reused": 36,
+    "valid": 36,
+    "failures": 0,
+    "source_sha256": "8a6cb684d524caf6ec0334be74c1b251e68075d20fe8fbbc385a00c6162e49b1",
+    "samples": [
+      {
+        "n": 1,
+        "b": 1,
+        "tau": "1e-6",
+        "tauR": "0.999992438873959400517997226989382538654651278490215274330768600441112759590955545683828351113575129873109280491331981978",
+        "target": "1"
+      },
+      {
+        "n": 1,
+        "b": 5,
+        "tau": "1e-6",
+        "tauR": "2.99996280807334172558657028507488779605748077027535851327532362981300280060494202650198535664737186658577481284295069367",
+        "target": "3"
+      },
+      {
+        "n": 2,
+        "b": 5,
+        "tau": "1e-6",
+        "tauR": "5.99992167304144594966050913448092985547791633753968868712696472332350102270809687542573696217038125374674954896524059749",
+        "target": "6"
+      },
+      {
+        "n": 3,
+        "b": 5,
+        "tau": "1e-6",
+        "tauR": "8.99987457216826286720876787262064739636386364051139550584916994109941165313198044547429692513820824218519730974309368883",
+        "target": "9"
+      }
+    ]
+  },
+  "matlab": {
+    "version": "26.1.0.3312084 (R2026a) Update 4",
+    "independent_log_variable_integrals": 36,
+    "max_tauR_absolute_difference": 3.552713678800501e-15,
+    "all_positive": true
+  },
+  "wolfram": {
+    "version": "15.0.0",
+    "analytic_three_scale_guards": 5,
+    "cube_limits": 9,
+    "numerical_rows": 36,
+    "passed": true
+  },
+  "exact_stationary_counterexample": {
+    "tau": "11/50",
+    "deltas": [
+      "17/100",
+      "18/100",
+      "8/25",
+      "33/100"
+    ],
+    "G_signs": [
+      "+",
+      "-",
+      "-",
+      "+"
+    ],
+    "consequence": "At least two distinct critical points of the two-atom family; no global uniqueness, no claim of exactly two."
+  },
+  "failed_attempts": [
+    {
+      "reason": "Initial Python part2 variable typo: 36 failures before results; corrected source then fresh 36 passed."
+    },
+    {
+      "reason": "Initial direct MATLAB endpoint quadrature warned at the integrable singularity; discarded and changed to log-variable quadrature."
+    },
+    {
+      "reason": "Independent review draft confused radial dr power with dx density. Corrected original-space kernel rho^(tau-2n); final main proof and guards use the correct exponent."
+    }
+  ],
+  "not_run": [
+    "Prepared global_atomic_explorer.py was not executed after the analytic full upper bound closed."
+  ],
+  "strict_proof_limitations": [
+    "No exact W_tau at a fixed positive tau.",
+    "No sharp remainder order claimed.",
+    "Pole application is an iterated limit, not a joint limit."
+  ]
+}

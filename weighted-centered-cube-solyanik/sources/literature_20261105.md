@@ -41,3 +41,8 @@
 第25轮补核：实际访问[Dror作者主页](https://cs.stanford.edu/people/rondror/abstracts/dror_ganguli_96.htm)及[作者PDF](https://cs.stanford.edu/people/rondror/papers/dror_JFAA_96.pdf)，以本机Ghostscript渲染14页、14任务Tesseract OCR，并视觉核对纸面p476的Lemma3.3与(3.8)。本稿Jτ的标量求值及唯一半径已经是该文的critical power multiplier，p=1/(1−τ)；这里采用标准单原子弱型测试接到当前Wτ，不称该标量求值为新发现。本文只改善本稿此前通用双原子界在小τ的数值，不声称超越全部文献最佳界，更不把幂型测试当完整强Lp或完整W范数。
 
 题录存在版本年份差异：作者PDF首页与作者自引为1996；[Springer DOI记录](https://link.springer.com/article/10.1007/s00041-001-4039-y)及本次Crossref官方API都给1995年10月，卷2期5页473–486。本稿Bibliography/BibTeX按DOI元数据标1995，BibTeX note保留作者稿1996说明；键名1996仅为内部标识。此前Melas的[出版社原页](https://annals.math.princeton.edu/2003/157-2/p08)也再次核对，不能把旧数值猜想3/2当现行精确弱型常数。
+
+
+第27轮核对：再次直接读取[Aldaz v2](https://arxiv.org/html/1811.10478v2)的Theorem1.2及其范数应用：测度一致中心弱型界由Besicovitch相交常数控制；可分空间的测度条件满足。当前三尺度上界仅在局部类调用此工具，中尺度用自足Tonelli积分，大尺度用齐次质量，不将BIP当覆盖选择定理。
+
+检索“weighted weak maximal power weights sharp asymptotic”等，并读取[Hou–Wu论文出版社PDF首页](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/20D686BCC3E11B167A717EE542DACE91/S0008439518000358a.pdf/on_the_limiting_weaktype_behaviors_for_maximal_operators_associated_with_power_weighted_measure.pdf)的摘要与定义。该文对象为幂权同时进入平均的内禀算子、非负幂次及固定输入的阈值趋零行为；当前SW定理为Lebesgue平均、接近局部可积边界的测量权，以及完整算子范数关于齐次次数的渐近。只核实了首页模型，未声明阅读全文或借用其主证明。搜索未确认当前一般角向公式的精确既有出处，不以未命中宣称首次；本轮正文给自含证明并沿用Aldaz等已核实工具，不新增不必要引用。
