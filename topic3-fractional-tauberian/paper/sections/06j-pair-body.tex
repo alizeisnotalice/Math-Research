@@ -436,3 +436,214 @@ $0<2r+2\varepsilon<\alpha$、$\alpha<q<(\alpha+\alpha^{-1})/2$。
 $C_{1,\mathcal Q_c}(9/10)\le\mathcal U(9/10)-1/(3\cdot10^{10})$。
 平方根稳定性的指数在一般凸体类中是最优的；这与六阶光晕亏损是否最优是不同问题。
 六阶修正尚不改变式~\eqref{pb:cubic-bracket}的三阶区间。
+
+\subsection{四法向平移与抛物邻域的亏损下界}
+
+六阶估计使用各向同性小球，遗漏了两点包络在对角方向的局部曲率。
+本节将邻域改为法向厚 $t^3$、切向宽 $t^{3/2}$ 的矩形，
+并用四个法向上的平移归零来控制凸包的奇部。两项改动共同改善间隙阶。
+
+\begin{lemma}[四方体并的切向损失]\label{pb:tangent-union}
+四中心分别为
+\[
+ (r+s_1,r-s_1),\quad(-r+s_2,r+s_2),\quad
+ (-r-s_3,-r+s_3),\quad(r-s_4,-r-s_4),\qquad |s_i|\le\eta<r.
+\]
+若 $\alpha\ge2r+4\eta$，则以它们为中心、边长 $\alpha$ 的四方体之并面积至少为
+$(\alpha+2r)^2-4\eta^2$。
+若各中心再沿其对应的对角方向独立平移 $(\pm n_i,\pm n_i)$、$|n_i|\le\nu$，
+则并面积至少为 $(\alpha+2r)^2-4\eta^2-16\alpha\nu$。切向损失中的系数 $4$ 不能减小。
+\end{lemma}
+\begin{proof}
+记中心坐标跨度为 $X,Y$，$D=\max(X,Y)$。
+四个对角投影给出 $w=X+Y-4r\ge0$，而 $|X-2r|,|Y-2r|\le2\eta$。
+因 $X,Y<\alpha$，四方体有公共交集。所有方体共同覆盖的横、竖中央带
+分别与另一坐标的区间并作积，覆盖外包矩形的中央十字区域；
+因此遗漏只能位于余下的四个 $X\times Y$ 角区。
+在每个角区选取相应方位的中心，其方体遗漏的面积不超过
+$D$ 乘以该中心距外角的两坐标亏量之和。
+四角的坐标亏量总和恰为 $2(X+Y)-8r=2w$，因此
+\begin{align*}
+ \left|\bigcup_iP_i\right|
+ &\ge(\alpha+X)(\alpha+Y)-2Dw\\
+ &\ge(\alpha+2r)^2+(\alpha-2r-4\eta)w-4\eta^2
+ \ge(\alpha+2r)^2-4\eta^2.
+\end{align*}
+法向平移后，每方体与原方体的对称差面积至多 $4\alpha\nu$，
+再求和即得第二个结论。最后取 $(s_1,s_2,s_3,s_4)=(-\eta,\eta,-\eta,\eta)$，
+四中心成为长、短半轴为 $r\pm\eta$ 的矩形四角；方体并面积恰为
+$(\alpha+2r-2\eta)(\alpha+2r+2\eta)=(\alpha+2r)^2-4\eta^2$，故系数最优。
+\end{proof}
+
+\begin{lemma}[四法向归零的奇部控制]\label{pb:four-normal}
+设 $A$ 为平面满维紧凸体，$S=(A-A)/2$、$\Delta=|S|-|A|$。
+存在平移 $b$，使 $h_{A-b}=h_S+o$，且对
+$\theta_j=\pi/4+j\pi/2$（$j=0,1,2,3$），有
+\[
+ o(\theta_j)=0,\qquad\|o\|_\infty\le\sqrt\Delta,\qquad
+ |o(\theta_j+s)|\le2\sqrt{\Delta|s|}\quad(|s|\le\pi).
+\]
+\end{lemma}
+\begin{proof}
+先按引理~\ref{pb:fourier-stability}消去第一谐波，记奇部为 $o_0$。
+其 Fourier 能量给
+$\int|o_0'|^2\le9\Delta/4$、$\|o_0\|_\infty\le\sqrt{\Delta/(2\pi)}$。
+再作平移，使两个正交法向 $\theta_0,\theta_1$ 的奇部值为零；
+平移向量长度平方至多 $\Delta/\pi$。
+奇性自动使另两个值也为零。不同 Fourier 模正交，故
+\[
+ \int_0^{2\pi}|o'|^2\le\frac{13}4\Delta<4\Delta,\qquad
+ \|o\|_\infty\le\frac{1+\sqrt2}{\sqrt{2\pi}}\sqrt\Delta<\sqrt\Delta.
+\]
+从归零点积分 $o'$ 并用 Cauchy--Schwarz，即得局部估计。
+\end{proof}
+
+\begin{lemma}[对角小帽及三段支撑间隙]\label{pb:local-caps}
+令 $0<t\le1/100$、$\alpha=1-t$、$c=2\alpha^2-1$、
+$T=\overline K_\alpha/2$、$r_*=(\alpha-\sqrt c)/2$。
+取对角中点 $x_*=r_*(1,1)$，$\theta_*=\pi/4$，并令
+$Q(s)=h_T(\theta_*+s)-x_*\cdot u_{\theta_*+s}$。
+则
+\[
+ Q(s)\ge
+ \begin{cases}
+ s^2/8,&|s|\le t/8,\\
+ t|\sin s|/64,&t/8\le|s|\le\pi/2,\\
+ t/2,&\pi/2\le|s|\le\pi.
+ \end{cases}
+\]
+若 $S=-S\subset T$，$g=|T|-|S|\le2^{-22}t^3$，则对
+$|\theta-\theta_*|\le t/8$，有
+\[
+ 0\le h_T(\theta)-h_S(\theta)\le16g^{2/3}.
+\]
+其他三个对角方向有相同结论。局部缺深指数 $2/3$ 在这类对称嵌套凸体中不可提高。
+\end{lemma}
+\begin{proof}
+正象限边界为
+$y=\alpha/2-c/[2(\alpha-2x)]$。在对角法向附近，支撑函数及曲率半径为
+\[
+ h_T(\theta)=\frac\alpha2(\cos\theta+\sin\theta)
+ -\sqrt{c\sin\theta\cos\theta},\qquad
+ \rho_T(\theta)=\frac{\sqrt c}{4(\sin\theta\cos\theta)^{3/2}}.
+\]
+该分支的法向半宽为
+$\arctan[(1-\alpha^2)/(3\alpha^2-1)]\ge t/2$。
+直接用 $\alpha\ge.99$ 及 $|\theta-\theta_*|\le t/4$，得到
+$1/2\le\rho_T\le1$。
+因此 $Q(0)=Q'(0)=0$、$Q''+Q\ge1/2$ 给出第一段。
+在 $(0,\pi)$ 上，$Q/\sin s$ 单调不减，因为
+$(Q'\sin s-Q\cos s)'=\rho_T\sin s\ge0$，
+非光滑法向处也只有非负跳跃。由第一段端点即得第二段。
+当 $|s|\ge\pi/2$，$x_*\cdot u_{\theta_*+s}\le0$，
+而 $T$ 含半径 $W/(2\sqrt2)\ge t/2$ 的内球，得到第三段。
+对称性处理负 $s$。
+
+为量化小帽，固定 $|\theta-\theta_*|\le t/8$，以其支撑点为原点，
+切线为 $v$ 轴、外法向为 $w$ 轴。上述曲率界使前沿可写为
+$w=\psi(v)\ge-4v^2$，$|v|\le t/64$，且此范围内向内到 $w=-t/2$ 的线段都在 $T$ 中。
+这里前沿存在性可由 $dv/d\theta=\rho_T\cos(\theta-\theta_0)$ 得到；
+在剩余法向窗口 $t/8$ 内，其切向跨度大于 $t/64$。
+又 $t/2\le r_*\le.51t$，支撑点距 $x_*$ 至多 $t/8$；
+点 $(v,-t/2)$ 的两原坐标为正，坐标和小于 $t$，因而在 $T$ 所含的轴向菱形内。
+凸性补齐相应线段。这验证了小帽并未越过相邻象限。
+
+若缺深 $d=h_T(\theta)-h_S(\theta)$ 满足 $d\le t^2/4096$，
+取 $|v|\le\sqrt d/4$、$-d<w<-d/2$，便在 $T\setminus S$ 中得到
+面积至少 $d^{3/2}/8$ 的小帽。
+若 $d\ge t^2/4096$，同一构造已强迫 $g\ge2^{-21}t^3$，与假设矛盾。
+故总有 $d\le(8g)^{2/3}\le16g^{2/3}$。
+在正对角方向，深 $d$ 的单帽面积有精确式
+\[
+ J(d)=\int_0^{\sqrt{2\sqrt{2c}d+2d^2}}
+ (\sqrt c+\sqrt2d-\sqrt{c+v^2})\,dv
+ \sim\frac{2^{9/4}}3c^{1/4}d^{3/2}.
+\]
+由坐标 $u=x+y,v=x-y$ 及 Jacobian $1/2$ 即得积分式；令 $v=\sqrt d\,z$ 得渐近式。
+截去两个相反小帽得到对称凸体 $S$，此时 $g=2J(d)$，从而 $2/3$ 指数不能提高。
+\end{proof}
+
+\begin{theorem}[真实全体常数的 $9/2$ 阶亏损]\label{pb:parabolic-gap}
+在二维半阶中心方体模型中，对所有 $0<t\le1/100$，有
+\[
+ R(1-t)\le C_{1,\mathcal Q_c}(1-t)
+ \le\mathcal U(1-t)-2^{-24}t^{9/2}.
+\]
+因此可以将此亏损与定理~\ref{pb:sixth-gap}中的 $t^6/768$ 取较大者。
+$9/2$ 阶仍未证明为最优阶。
+\end{theorem}
+\begin{proof}
+置
+\[
+ r=\frac t2+\frac{t^2}2+\frac{31t^3}{32},\quad
+ q=\alpha+\frac{3t^2}{16},\quad\nu=\frac{t^3}{1024},\quad
+ \eta=\frac{t^{3/2}}{128},\quad M=2q-\alpha.
+\]
+围绕四中心 $(\pm r,\pm r)$，允许法向坐标参数 $|n_i|\le\nu$、
+切向参数 $|s_i|\le\eta$，即使用引理~\ref{pb:tangent-union}中的四个平行四边形邻域。
+每个邻域面积为 $8\nu\eta=2^{-14}t^{9/2}$。
+
+对一对相反邻域中的点，坐标差可写为
+$(2r+N+V,2r+N-V)$，$|N|\le2\nu$。
+交叠二次式至多
+$G_r(z)+4\nu(z-2r)+4\nu^2$：切向项 $-V^2$ 只降低该式。
+记 $V_\nu(z)=4\nu(z-2r)+4\nu^2$。
+以下四量依次为 $t^3P_1,t^3P_2,t^3P_3/\alpha^2,t^2P_4$：
+\[
+ G_r(\alpha)-V_\nu(\alpha)-4\eta^2,\quad
+ -G_r(q)-V_\nu(q),\quad-G_r(\alpha^{-1})-V_\nu(\alpha^{-1}),
+\]
+\[
+ (\alpha+2r)^2-4M(M-\alpha)-1-16\alpha\nu-4\eta^2.
+\]
+展开并将负单项式按 $t=1/100$ 下估，可得精确下界
+\[
+ P_1\ge\frac{495}{4096},\quad
+ P_2\ge\frac{42402326719}{262144000000},\quad
+ P_3\ge\frac{4754429704607919}{2621440000000000},\quad P_4\ge\frac12.
+\]
+同时 $\alpha\ge2r+4\eta$、$\alpha<q<(\alpha+\alpha^{-1})/2$。
+第一量保证整个四邻域在 $T$ 内；第二、三量迫使任意共同见证的四尺度都小于 $M$。
+引理~\ref{pb:tangent-union}及第四量继而给出质量大于一的矛盾。
+因此不存在共同输入的严格光晕同时命中四邻域；这里覆盖了全部连续独立尺度。
+
+反设某输入的光晕 $H$ 满足 $\delta=\mathcal U(\alpha)-|H|<2^{-24}t^{9/2}$。
+置 $A=\overline{\operatorname{conv}H}$、$S=(A-A)/2$、
+$g=|T|-|S|$、$\Delta=|S|-|A|$，则
+$g+\Delta\le\delta$、$|A\setminus H|\le\delta$。
+用引理~\ref{pb:four-normal}平移 $A$。
+下面证明四邻域均包含于平移后的 $A$。
+
+以东北邻域为例，任意点写成
+$z=x_*-D u_{\theta_*}+\sigma u_{\theta_*}'$。
+由所选参数直接有
+\[
+ t^3/32\le D\le t^3,\qquad |\sigma|\le\sqrt2\eta,\qquad\sigma^2\le t^3/8192.
+\]
+当 $|s|\le t/8$，引理~\ref{pb:local-caps}及配方给出
+\[
+ h_T(\theta_*+s)-z\cdot u_{\theta_*+s}
+ \ge s^2/8+t^3/64-|\sigma s|
+ \ge s^2/16+t^3/100.
+\]
+又 $g\le2^{-22}t^3$，故两引理给出
+\begin{align*}
+ h_A(\theta_*+s)-z\cdot u_{\theta_*+s}
+ &\ge s^2/16+t^3/100-16g^{2/3}-2\sqrt{\Delta|s|}\\
+ &\ge t^3/100-19\delta^{2/3}>0.
+\end{align*}
+第二步使用
+$\sup_{s\ge0}(2\sqrt{\Delta s}-s^2/16)=3\Delta^{2/3}$。
+
+当 $t/8\le|s|\le\pi/2$，三段估计与 $D\ge0$ 给
+$h_T-z\cdot u\ge t|\sin s|/128\ge t^2/2048$；
+当 $\pi/2\le|s|\le\pi$，则给出 $h_T-z\cdot u\ge t/4$。
+在这些法向上，使用引理~\ref{pb:cap-distance}及全局奇部界，损失至多
+$\sqrt g+\sqrt\Delta\le2\sqrt\delta<t^2/2048$。
+因此所有法向均有 $h_A\ge z\cdot u$，即 $z\in A$。
+同样处理其余三个邻域。
+
+每个邻域面积 $2^{-14}t^{9/2}$ 都大于孔洞面积 $|A\setminus H|\le\delta$，
+故 $H$ 必须同时命中四邻域，违反共同不可行性。
+对所有输入取上确界，即得结论。
+\end{proof}

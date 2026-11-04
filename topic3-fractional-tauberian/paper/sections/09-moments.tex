@@ -273,3 +273,23 @@ $[99/100,1]$ 上再减去定理~\ref{pb:sixth-gap}给出的 $(1-\alpha)^6/768$�
 舍去的 $[0,99/100]$ 积分介于 $0$ 与 $(99/100)^p/768$ 之间，
 故余项和极限成立。
 \end{proof}
+
+
+\begin{corollary}[抛物邻域对高矩包络的改进]\label{mom:parabolic-envelope}
+仍记 $\mathcal B(p)$ 如推论~\ref{mom:sixth-envelope}。则对 $p>2$，
+\[
+ \mathfrak F_{1,\mathcal Q_c}(p)\le\mathcal B(p)-\mathcal D_*(p),\qquad
+ \mathcal D_*(p)=2^{-24}p\int_{99/100}^1\alpha^{p-1}(1-\alpha)^{9/2}\,d\alpha,
+\]
+且
+\[
+ \lim_{p\to\infty}p^{9/2}\mathcal D_*(p)
+ =2^{-24}\Gamma(11/2)=\frac{945\sqrt\pi}{2^{29}}.
+\]
+\end{corollary}
+\begin{proof}
+逐输入使用定理~\ref{pb:parabolic-gap}并重复前一推论的层析论证。
+完整积分等于 $2^{-24}pB(p,11/2)$，截去的低端至多为 $2^{-24}(99/100)^p$。
+由 Beta 积分的 Gamma 比值渐近即得极限。
+这仍是统一上包络的减项，而非真实泛函的高阶系数。
+\end{proof}

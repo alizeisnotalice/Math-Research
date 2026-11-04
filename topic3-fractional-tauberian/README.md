@@ -117,3 +117,7 @@ run('verification/fixed_cube_matlab.m')
 第20轮给出真正全体常数的显式统一间隙：0<t≤.01时，C(1−t)≤U(1−t)−t⁶/768。平面支撑函数平方根稳定性的指数sharp，但光晕六阶亏损未证最优；三阶区间仍为[2,10/3]。高矩层析包络同时获得(15/16)p⁻⁶主量的减项。见 `rounds/020.md`，复现 `verification/quantitative_gap.py`、`verification/quantitative_gap.wl`、`verification/quantitative_gap_matlab.m`。
 
 第20轮当前PDF为73页，当前论文及本轮最小证书均通过编译、结构与视觉检查。
+
+第21轮得到更强的全体亏损下界：0<t≤.01时，C(1−t)≤U(1−t)−2⁻²⁴t^(9/2)，可以与上一轮t⁶/768取较大者。四法向归零结合深t³、宽t^(3/2)的抛物邻域，孔洞面积传递闭合；真正间隙的最优阶仍未确定。见 `rounds/021.md`；复现 `verification/parabolic_gap.py`、`verification/parabolic_gap.wl`、`verification/parabolic_gap_matlab.m`。
+
+第21轮当前PDF为77页，证明独立复审、编译、结构与逐页版面检查均已完成。
