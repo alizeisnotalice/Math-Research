@@ -1,0 +1,487 @@
+{
+  "profiles": [
+    {
+      "python": "3.12.13",
+      "method": "exact Fraction monotone interval bounds",
+      "eta": "1/16384",
+      "t_max": "1/256",
+      "kappa": "1/4722366482869645213696",
+      "root_polynomials": [
+        {
+          "name": "lower",
+          "c": "9/10",
+          "coefficients": [
+            "19/100",
+            "1791/500",
+            "8019/10000"
+          ],
+          "interval": [
+            "19/100",
+            "133696339/655360000"
+          ]
+        },
+        {
+          "name": "upper",
+          "c": "2",
+          "coefficients": [
+            "-201/100",
+            "199/25",
+            "99/25"
+          ],
+          "interval": [
+            "-201/100",
+            "-3242141/1638400"
+          ]
+        }
+      ],
+      "inequalities": [
+        {
+          "name": "prior_curvature_range",
+          "positive_margin": "39/6400",
+          "reason": "prior cap and curvature lemmas require t<=.01"
+        },
+        {
+          "name": "chart_sampling_range",
+          "positive_margin": "7767/819200",
+          "reason": "s0 +/- h stay in the chart interval"
+        },
+        {
+          "name": "pair_coordinate_sign",
+          "positive_margin": "18427/20480",
+          "reason": "coordinate signs of opposite pair are stable"
+        },
+        {
+          "name": "root_monotonicity",
+          "positive_margin": "6251/6400",
+          "reason": "F_r <= -2+2tau+16ab*tau < -1"
+        },
+        {
+          "name": "normal_length_squared",
+          "positive_margin": "31241/32768",
+          "reason": "each unnormalized normal coordinate >=1-3tau"
+        },
+        {
+          "name": "tangent_coordinate_sum",
+          "positive_margin": "63/640",
+          "reason": "N>=1 gives |v1+v2|/t <=2d(1+2tau)"
+        },
+        {
+          "name": "pair_sum_perturbation",
+          "positive_margin": "2/5",
+          "reason": "sqrt2<3/2, two points"
+        },
+        {
+          "name": "pair_product_perturbation",
+          "positive_margin": "1983/1024",
+          "reason": "coordinate perturbations <=4eta*t"
+        },
+        {
+          "name": "endpoint_order",
+          "positive_margin": "47873/1044480",
+          "reason": "S-W >= (9/5-1/alpha-4eta)t^2 >3t^2/4"
+        },
+        {
+          "name": "pair_budget",
+          "positive_margin": "2",
+          "reason": "G(alpha)<=14eta*t^2 <=16eta*t^2"
+        },
+        {
+          "name": "edge_uncertainty",
+          "positive_margin": "2",
+          "reason": "point coordinate 2eta*t plus individual half-scale error16eta*t"
+        },
+        {
+          "name": "mixed_low_side",
+          "positive_margin": "27/51200",
+          "reason": "short side <=1-.09t"
+        },
+        {
+          "name": "mixed_low_mass",
+          "positive_margin": "294887/3276800",
+          "reason": "lost mass budget <=32eta*t^2"
+        },
+        {
+          "name": "mixed_high_union",
+          "positive_margin": "937839/13107200",
+          "reason": "cross-rectangle union >=1+.1t"
+        },
+        {
+          "name": "mixed_high_mass",
+          "positive_margin": "65531/655360",
+          "reason": "missing mass <=32eta*t^2"
+        },
+        {
+          "name": "corner_width",
+          "positive_margin": "999/10240",
+          "reason": "two bad corners width >=t"
+        },
+        {
+          "name": "corner_height",
+          "positive_margin": "991/10240",
+          "reason": "height >=.8t"
+        },
+        {
+          "name": "corner_contradiction",
+          "positive_margin": "4091/2560",
+          "reason": "corner area >=1.6t^2 > pair budgets"
+        },
+        {
+          "name": "normal_window",
+          "positive_margin": "9127/1083700",
+          "reason": "arctan(x)<=x gives offset <=.11t"
+        },
+        {
+          "name": "chart_window",
+          "positive_margin": "1/200",
+          "reason": "homogeneous chart |s|<=.01 stays in |theta-theta_k|<t/8"
+        },
+        {
+          "name": "chart_curvature_lower",
+          "positive_margin": "351843719599829809233919999/281474976710656000000000000",
+          "reason": "rho>=1/2 and denominator <=3/2 gives f_T second derivative >=1/3"
+        },
+        {
+          "name": "local_cap_condition",
+          "positive_margin": "1125899906842623/4722366482869645213696",
+          "reason": "delta<=kappa*t^3 implies prior local cap hypothesis"
+        },
+        {
+          "name": "support_chart_error",
+          "positive_margin": "255/8796093022208",
+          "reason": "kappa=2^-m implies kappa^(2/3)<=2^-floor(2m/3); exact rational majorant"
+        },
+        {
+          "name": "positive_subgradient",
+          "positive_margin": "17/384",
+          "reason": "h=s0/16, E<=s0^2/4096"
+        },
+        {
+          "name": "bounded_subgradient",
+          "positive_margin": "123/128",
+          "reason": "upper derivative <=2s0"
+        },
+        {
+          "name": "positive_chart_value",
+          "positive_margin": "2045/12288",
+          "reason": "f_A>=s0^2/6-E>0"
+        },
+        {
+          "name": "exposed_normal",
+          "positive_margin": "1/4194304",
+          "reason": "|f_A-s*p|<=3s0^2<eta/64"
+        },
+        {
+          "name": "origin_interior",
+          "positive_margin": "137438953471/549755813888",
+          "reason": "h_A/t>=1/2-2sqrt(kappa*t)>1/4"
+        },
+        {
+          "name": "triangle_height",
+          "positive_margin": "134217725/805306368",
+          "reason": "core to chord normal separation >=t/3"
+        },
+        {
+          "name": "triangle_core_weight",
+          "positive_margin": "23/64",
+          "reason": "weight <=3eta*t"
+        },
+        {
+          "name": "triangle_width",
+          "positive_margin": "3883005/34359738368",
+          "reason": "all target depths have left/right endpoints outside +/-eta*t/8"
+        },
+        {
+          "name": "inner_box_geometry",
+          "positive_margin": "25769738215/562949953421312",
+          "reason": "F(p+z)/t^2 >=2Nu/t^2-2|z|^2/t^2"
+        },
+        {
+          "name": "inner_box_positive_coordinates",
+          "positive_margin": "36859/81920",
+          "reason": "p coordinates >=b*t, displacement <=eta*t"
+        },
+        {
+          "name": "inner_box_branch",
+          "positive_margin": "10399387/20971520",
+          "reason": "coordinates stay below alpha/2"
+        },
+        {
+          "name": "hole_area_budget",
+          "positive_margin": "1099511627775/4722366482869645213696",
+          "reason": "one missed P has area eta^2*t^3/16 >delta"
+        }
+      ],
+      "count": 35,
+      "seconds": 0.00022337500558933243,
+      "scope": "all scalar sufficient conditions on 0<t<=t_max; analytic geometry and mass implications are proved separately"
+    },
+    {
+      "python": "3.12.13",
+      "method": "exact Fraction monotone interval bounds",
+      "eta": "1/4096",
+      "t_max": "1/16384",
+      "kappa": "1/295147905179352825856",
+      "root_polynomials": [
+        {
+          "name": "lower",
+          "c": "9/10",
+          "coefficients": [
+            "19/100",
+            "1791/500",
+            "8019/10000"
+          ],
+          "interval": [
+            "19/100",
+            "510614249299/2684354560000"
+          ]
+        },
+        {
+          "name": "upper",
+          "c": "2",
+          "coefficients": [
+            "-201/100",
+            "199/25",
+            "99/25"
+          ],
+          "interval": [
+            "-201/100",
+            "-13485621149/6710886400"
+          ]
+        }
+      ],
+      "inequalities": [
+        {
+          "name": "prior_curvature_range",
+          "positive_margin": "4071/409600",
+          "reason": "prior cap and curvature lemmas require t<=.01"
+        },
+        {
+          "name": "chart_sampling_range",
+          "positive_margin": "3671/409600",
+          "reason": "s0 +/- h stay in the chart interval"
+        },
+        {
+          "name": "pair_coordinate_sign",
+          "positive_margin": "4603/5120",
+          "reason": "coordinate signs of opposite pair are stable"
+        },
+        {
+          "name": "root_monotonicity",
+          "positive_margin": "409451/409600",
+          "reason": "F_r <= -2+2tau+16ab*tau < -1"
+        },
+        {
+          "name": "normal_length_squared",
+          "positive_margin": "134119433/134217728",
+          "reason": "each unnormalized normal coordinate >=1-3tau"
+        },
+        {
+          "name": "tangent_coordinate_sum",
+          "positive_margin": "819/8192",
+          "reason": "N>=1 gives |v1+v2|/t <=2d(1+2tau)"
+        },
+        {
+          "name": "pair_sum_perturbation",
+          "positive_margin": "2/5",
+          "reason": "sqrt2<3/2, two points"
+        },
+        {
+          "name": "pair_product_perturbation",
+          "positive_margin": "2043/1024",
+          "reason": "coordinate perturbations <=4eta*t"
+        },
+        {
+          "name": "endpoint_order",
+          "positive_margin": "4107013/83880960",
+          "reason": "S-W >= (9/5-1/alpha-4eta)t^2 >3t^2/4"
+        },
+        {
+          "name": "pair_budget",
+          "positive_margin": "2",
+          "reason": "G(alpha)<=14eta*t^2 <=16eta*t^2"
+        },
+        {
+          "name": "edge_uncertainty",
+          "positive_margin": "2",
+          "reason": "point coordinate 2eta*t plus individual half-scale error16eta*t"
+        },
+        {
+          "name": "mixed_low_side",
+          "positive_margin": "51/409600",
+          "reason": "short side <=1-.09t"
+        },
+        {
+          "name": "mixed_low_mass",
+          "positive_margin": "4718567/52428800",
+          "reason": "lost mass budget <=32eta*t^2"
+        },
+        {
+          "name": "mixed_high_union",
+          "positive_margin": "537545937/6710886400",
+          "reason": "cross-rectangle union >=1+.1t"
+        },
+        {
+          "name": "mixed_high_mass",
+          "positive_margin": "1048571/10485760",
+          "reason": "missing mass <=32eta*t^2"
+        },
+        {
+          "name": "corner_width",
+          "positive_margin": "231/2560",
+          "reason": "two bad corners width >=t"
+        },
+        {
+          "name": "corner_height",
+          "positive_margin": "7391/81920",
+          "reason": "height >=.8t"
+        },
+        {
+          "name": "corner_contradiction",
+          "positive_margin": "1019/640",
+          "reason": "corner area >=1.6t^2 > pair budgets"
+        },
+        {
+          "name": "normal_window",
+          "positive_margin": "44624551/4473378100",
+          "reason": "arctan(x)<=x gives offset <=.11t"
+        },
+        {
+          "name": "chart_window",
+          "positive_margin": "1/200",
+          "reason": "homogeneous chart |s|<=.01 stays in |theta-theta_k|<t/8"
+        },
+        {
+          "name": "chart_curvature_lower",
+          "positive_margin": "24178516392270966215912133566136319999/19342813113834066795298816000000000000",
+          "reason": "rho>=1/2 and denominator <=3/2 gives f_T second derivative >=1/3"
+        },
+        {
+          "name": "local_cap_condition",
+          "positive_margin": "70368744177663/295147905179352825856",
+          "reason": "delta<=kappa*t^3 implies prior local cap hypothesis"
+        },
+        {
+          "name": "support_chart_error",
+          "positive_margin": "127/1099511627776",
+          "reason": "kappa=2^-m implies kappa^(2/3)<=2^-floor(2m/3); exact rational majorant"
+        },
+        {
+          "name": "positive_subgradient",
+          "positive_margin": "17/384",
+          "reason": "h=s0/16, E<=s0^2/4096"
+        },
+        {
+          "name": "bounded_subgradient",
+          "positive_margin": "123/128",
+          "reason": "upper derivative <=2s0"
+        },
+        {
+          "name": "positive_chart_value",
+          "positive_margin": "2045/12288",
+          "reason": "f_A>=s0^2/6-E>0"
+        },
+        {
+          "name": "exposed_normal",
+          "positive_margin": "1/1048576",
+          "reason": "|f_A-s*p|<=3s0^2<eta/64"
+        },
+        {
+          "name": "origin_interior",
+          "positive_margin": "274877906943/1099511627776",
+          "reason": "h_A/t>=1/2-2sqrt(kappa*t)>1/4"
+        },
+        {
+          "name": "triangle_height",
+          "positive_margin": "2147483645/12884901888",
+          "reason": "core to chord normal separation >=t/3"
+        },
+        {
+          "name": "triangle_core_weight",
+          "positive_margin": "23/64",
+          "reason": "weight <=3eta*t"
+        },
+        {
+          "name": "triangle_width",
+          "positive_margin": "58695677/274877906944",
+          "reason": "all target depths have left/right endpoints outside +/-eta*t/8"
+        },
+        {
+          "name": "inner_box_geometry",
+          "positive_margin": "26388010631143/144115188075855872",
+          "reason": "F(p+z)/t^2 >=2Nu/t^2-2|z|^2/t^2"
+        },
+        {
+          "name": "inner_box_positive_coordinates",
+          "positive_margin": "9211/20480",
+          "reason": "p coordinates >=b*t, displacement <=eta*t"
+        },
+        {
+          "name": "inner_box_branch",
+          "positive_margin": "1342005197/2684354560",
+          "reason": "coordinates stay below alpha/2"
+        },
+        {
+          "name": "hole_area_budget",
+          "positive_margin": "1099511627775/295147905179352825856",
+          "reason": "one missed P has area eta^2*t^3/16 >delta"
+        }
+      ],
+      "count": 35,
+      "seconds": 0.0001093339960789308,
+      "scope": "all scalar sufficient conditions on 0<t<=t_max; analytic geometry and mass implications are proved separately"
+    }
+  ],
+  "mpmath": "1.3.0",
+  "moment_precision": 80,
+  "moment_regressions": [
+    {
+      "p": 3,
+      "de": "3.674715255465083053067428626176941020936387419795015174e-32",
+      "normalized": "9.921731189755724243282057290677740756528246033446540969e-31",
+      "limit": "2.03287907341032081376397400163114070892333984375e-20",
+      "independent_beta_error": "2.589580808e-102"
+    },
+    {
+      "p": 10,
+      "de": "1.19837740831576970304984353788400907813490545833468607e-31",
+      "normalized": "1.19837740831576970304984353788400907813490545833468607e-28",
+      "limit": "2.03287907341032081376397400163114070892333984375e-20",
+      "independent_beta_error": "4.908639562e-102"
+    },
+    {
+      "p": 100,
+      "de": "9.060084859757025583732411447146543700824800887382995667e-31",
+      "normalized": "9.060084859757025583732411447146543700824800887382995667e-25",
+      "limit": "2.03287907341032081376397400163114070892333984375e-20",
+      "independent_beta_error": "1.024739811e-101"
+    },
+    {
+      "p": 1000,
+      "de": "6.955210252262693902202782253458402138365451568448023207e-31",
+      "normalized": "6.955210252262693902202782253458402138365451568448023207e-22",
+      "limit": "2.03287907341032081376397400163114070892333984375e-20",
+      "independent_beta_error": "6.010192903e-102"
+    },
+    {
+      "p": 10000,
+      "de": "1.337767713035822396099626115491172662457530484065742808e-33",
+      "normalized": "1.337767713035822396099626115491172662457530484065742808e-21",
+      "limit": "2.03287907341032081376397400163114070892333984375e-20",
+      "independent_beta_error": "9.711504849e-102"
+    },
+    {
+      "p": 100000,
+      "de": "1.761804398435874421422221931517815680649473155067364287e-35",
+      "normalized": "1.761804398435874421422221931517815680649473155067364287e-20",
+      "limit": "2.03287907341032081376397400163114070892333984375e-20",
+      "independent_beta_error": "1.382151209e-104"
+    },
+    {
+      "p": 1000000,
+      "de": "2.032866876186702145715609142054668084977325212394128882e-38",
+      "normalized": "2.032866876186702145715609142054668084977325212394128882e-20",
+      "limit": "2.03287907341032081376397400163114070892333984375e-20",
+      "independent_beta_error": "0.0"
+    }
+  ]
+}

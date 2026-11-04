@@ -332,3 +332,23 @@ $[99/100,1]$ 上再减去定理~\ref{pb:sixth-gap}给出的 $(1-\alpha)^6/768$�
 结合推论~\ref{mom:pair-bracket}证明中的展开及固定 $Q_0$ 下界，即得次项夹逼。
 这改善了真实泛函的统一上界，尚未给出其精确三阶系数。
 \end{proof}
+
+\begin{corollary}[显式的三阶高矩减项]\label{mom:explicit-cubic}
+令 $k_1=2^{-72}$、$k_2=2^{-68}$、$a_1=1-2^{-8}$、$a_2=1-2^{-14}$，并定义
+\[
+ D_{\rm e}(p)=k_1p\int_{a_1}^1\alpha^{p-1}(1-\alpha)^3\,d\alpha
+ +(k_2-k_1)p\int_{a_2}^1\alpha^{p-1}(1-\alpha)^3\,d\alpha.
+\]
+则 $p>2$ 时 $\mathfrak F_{1,\mathcal Q_c}(p)\le\mathcal B(p)-D_{\rm e}(p)$，且
+\[
+ 0\le\frac{6k_2}{(p+1)(p+2)(p+3)}-D_{\rm e}(p)
+ \le k_1a_1^p+(k_2-k_1)a_2^p.
+\]
+因此 $\lim p^3D_{\rm e}(p)=6\cdot2^{-68}$，推论~\ref{mom:cubic-envelope}的次项上界可显式取为
+$8-6\cdot2^{-68}$。
+\end{corollary}
+\begin{proof}
+定理~\ref{ec:cubic}的两个近端区间嵌套，较小区间上的减项为 $k_2$ 而非二者相加。
+逐输入层析即得所列和式。完整积分的系数之和为 $k_2$，
+各自截去的低端至多为相应系数乘 $a_i^p$，给出显式尾界和极限。
+\end{proof}

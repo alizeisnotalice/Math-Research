@@ -1,0 +1,162 @@
+\section{三阶亏损的显式常数与适用窗口}\label{ec:section}
+上一节的紧性论证确定了亏损阶。本节把两处紧性步骤分别量化为端点距离和有限差商，
+得到可以直接使用的常数与阈值。它们是保守的统一常数，尚非最优三阶系数。
+
+\begin{lemma}[显式的独立八盒证书]\label{ec:boxes}
+固定 $a=11/20$、$b=9/20$，采用引理~\ref{ic:boxes}的边界点、真实单位法向及切向。
+下表任一组 $\eta,\tau$ 都使该八盒障碍在整个 $0<t\le\tau$ 上成立：
+\[
+ \begin{array}{c|cc}
+ &\eta&\tau\\\hline
+ \mathrm I&2^{-14}&2^{-8}\\
+ \mathrm {II}&2^{-12}&2^{-14}
+ \end{array}
+\]
+即任何质量一可测输入的严格光晕都不能同时命中
+$p_i+u n_i+v v_i$、$|u|\le\eta t^2$、$|v|\le\eta t$ 的全部八盒，
+八个见证尺度可以任意独立。
+\end{lemma}
+\begin{proof}
+记 $d=a-b=1/10$、$W=\alpha^{-1}-\alpha$。
+两点半径方程 $F_0(r)=1-\alpha^2-2\alpha r+4abr^2=0$ 给
+\begin{equation}\label{ec:root-bounds}
+ t+\tfrac9{10}t^2\le r_0\le t+2t^2,\qquad
+ W/2=t+\frac{t^2}{2\alpha}.
+\end{equation}
+事实上
+\[
+ \frac{F_0(t+qt^2)}{t^2}
+ =\frac{199-200q+398qt+99q^2t^2}{100}
+\]
+在 $q=9/10$ 时为正、$q=2$ 时为负，且 $F_0$ 在相应区间严格递减。
+正象限边界的未归一化法向为
+$(\alpha-2br_0,\alpha-2ar_0)$，其模 $N>1$；
+故单位切向的坐标和绝对值至多 $2dr_0/N\le3t/10$。
+单点坐标扰动至多 $2\eta t$，有符号坐标和扰动至多 $2\eta t^2$。
+对一个反点对，令扰动后差的正坐标为 $u,v$、$S=u+v$，则
+\[
+ |S-2r_0|\le4\eta t^2,\qquad |uv-4abr_0^2|\le10\eta t^2.
+\]
+第二式来自 $|\delta u|,|\delta v|\le4\eta t$，余量常数由
+$8(1+2\tau)+16\eta<10$ 保证。
+由~\eqref{ec:root-bounds}和表中参数，
+\[
+ S-W\ge\tfrac34t^2,\qquad 0<G(\alpha)\le16\eta t^2.
+\]
+其中 $G$ 为引理~\ref{ic:pair}的二次式，正性由严格共同见证给出。
+若 $x=z-\alpha\in(0,W)$，精确恒等式为
+\[
+ G(z)=G(\alpha)-x(S-x),\qquad
+ x(W-x)\ge t\min(x,W-x).
+\]
+所以 $G(z)>0$ 强迫平均尺度距某一端点不超过 $16\eta t$；
+两个独立尺度因而都距同一端点不超过 $32\eta t$。
+称靠近 $\alpha$、$\alpha^{-1}$ 的反点对分别为低、高相位。
+每个方体边界相对相应理想端点方体的坐标误差小于 $20\eta t$。
+
+若低相位混合两种方向，其两并的外包矩形交集边长至多
+\[
+ \alpha+2br_0+40\eta t
+ \le1-(d-4b\tau-40\eta)t\le1-\tfrac9{100}t.
+\]
+交面积至多 $1-9t/100$，与两对总落外预算 $32\eta t^2<9t/100$ 矛盾。
+若高相位混合两方向，其两交至少包含交叉矩形，短、长边分别不小于
+$1-dt-e$、$1+dt-e$，其中 $e=3t^2+40\eta t$。
+其并面积至少
+\[
+ (1-e-dt)(1-e+3dt)
+ \ge1+\bigl[2d-2(3\tau+40\eta)-2d\tau(3\tau+40\eta)-3d^2\tau\bigr]t
+ \ge1+\tfrac1{10}t.
+\]
+这也超过 $1+32\eta t^2$ 的总可用面积。
+两个表行均满足所用有理不等式。
+因此只剩一方向全低、另一方向全高的相位。
+高交在低并外的两个角矩形，其两边至少为
+\[
+ dr_0+W/2-40\eta t\ge t,\qquad
+ W/2-dr_0-40\eta t\ge\tfrac45t.
+\]
+总角面积至少 $8t^2/5$，却须小于两对交并预算之和 $32\eta t^2$，最后矛盾。
+这些界覆盖全部连续尺度与盒内全部点，并未用网格否定严格可行性。
+\end{proof}
+
+\begin{theorem}[全体三阶亏损的两组显式常数]\label{ec:cubic}
+二维半阶中心正方形模型具有下列统一界：
+\[
+ \begin{array}{ll}
+ C_{1,\mathcal Q_c}(1-t)\le\mathcal U(1-t)-2^{-72}t^3,
+   &0<t\le2^{-8},\\[2mm]
+ C_{1,\mathcal Q_c}(1-t)\le\mathcal U(1-t)-2^{-68}t^3,
+   &0<t\le2^{-14}.
+ \end{array}
+\]
+因而定理~\ref{ic:cubic-gap}中的三阶上极限可显式收紧为 $10/3-2^{-68}$。
+\end{theorem}
+\begin{proof}
+对表中第 I、II 行分别取 $\kappa=2^{-72},2^{-68}$。
+若某输入的光晕满足 $\delta=\mathcal U-|H|\le\kappa t^3$，
+仍置 $A=\overline{\operatorname{conv}H}$、$S=(A-A)/2$。
+分解 $\delta=g+\Delta+q$ 后三项均不超过 $\delta$。
+按四对角法向归零平移，局部支撑误差满足
+\[
+ |h_A-h_T|\le(16\kappa^{2/3}+\sqrt{\kappa/2})t^2
+ \quad (|\theta-\theta_j|\le t/8).
+\]
+局部帽假设由 $\kappa<2^{-22}$ 保证；全局还有
+$h_A\ge t/2-2\sqrt\kappa\,t^{3/2}>t/4$，故 $0\in A$。
+
+每个 $p_i$ 的法向偏角绝对值至多
+\[
+ \arctan\frac{dr_0}{\alpha-r_0}
+ \le\frac{d(1+2\tau)}{1-2\tau-2\tau^2}\,t<\frac{11}{100}t.
+\]
+因此齐次支撑图
+$f_{A,t}(s)=[h_A(n+stv)-p\cdot(n+stv)]/t^2$
+在 $|s|\le1/100$ 上可用，并满足 $|f_{A,t}-f_{T,t}|\le E$，其中
+\[
+ E=32\kappa^{2/3}+2\sqrt\kappa.
+\]
+该图为凸函数；$f_{T,t}(0)=f_{T,t}'(0)=0$，且
+\[
+ f_{T,t}''(s)=\frac{\rho_T(\theta_s)}{(1+s^2t^2)^{3/2}}
+ \in[1/3,1].
+\]
+此式由一次齐次性求导得到，角域仍在已证曲率窗口内。
+
+置 $s_0=\sqrt\eta/16$、$h=s_0/16$。两组参数分别满足
+\[
+ \begin{array}{c|cc}
+ &E\text{ 的上界}&s_0^2/4096\\\hline
+ \mathrm I&2^{-43}+2^{-35}&2^{-34}\\
+ \mathrm {II}&2^{-40}+2^{-33}&2^{-32}
+ \end{array}
+\]
+故 $E<s_0^2/4096$。左右差商给 $s=s_0$ 处的任一次梯度 $p_A$ 满足
+\[
+ \left(\tfrac13-\tfrac1{32}-\tfrac1{128}\right)s_0
+ \le p_A\le\left(1+\tfrac1{32}+\tfrac1{128}\right)s_0,
+\]
+从而 $s_0/4\le p_A\le2s_0$；在 $-s_0$ 处符号相反。
+所取两个支撑点 $q_\pm$ 因而具有切向坐标至少为 $\pm s_0t/4$，并且
+\[
+ |(q_\pm-p)\cdot n|\le3s_0^2t^2<\eta t^2/64.
+\]
+这里使用 $f_A(\pm s_0)>0$、$f_A(\pm s_0)<s_0^2$ 以及
+$(q-p)\cdot n/t^2=f_A(s)-s p_A$，不要求支撑面唯一。
+
+以 $0$ 为第三个顶点。相对 $p$，它的法向深度至少 $t/2$、切向坐标绝对值至多 $2t$。
+在深度 $[3\eta/8,5\eta/8]t^2$ 的每条截线上，沿两条边的组合权重不超过 $3\eta t$。
+故三角形的两端切向坐标至少达到
+\[
+ \pm\bigl[(1-3\eta\tau)s_0/4-6\eta\tau\bigr]t,
+ \qquad (1-3\eta\tau)s_0/4-6\eta\tau>\eta/8.
+\]
+于是它包含引理~\ref{ic:transfer}中几何形式相同的整个内盒 $P_i$。
+这里直接给出了表中参数的定量传递条件，允许比该引理原先保守选择更大的 $\eta$。
+内盒在 $T$ 内由
+$F(p-un+\xi v)\ge2Nu-2(u^2+\xi^2)>0$ 验证，坐标也仍在原边界分支内。
+
+所以所有 $P_i$ 都在 $A$ 内。引理~\ref{ec:boxes}迫使至少一个内盒不与 $H$ 相交，
+给 $q\ge|P_i|=\eta^2t^3/16>\kappa t^3$，与 $q\le\delta$ 矛盾。
+对每个输入均有 $\delta>\kappa t^3$，再取上确界得到所列非严格统一界。
+\end{proof}

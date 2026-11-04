@@ -136,4 +136,8 @@ run('verification/fixed_cube_matlab.m')
 
 第25轮完成对真实全体常数的改进：独立八尺度交并障碍与各向异性内盒传递给出U−C=Θ(t³)，将三阶上极限严格压到10/3以下（存在κ>0，未数值化）。高矩次项上界亦由8严格收紧到8−6κ。精确系数和极限存在性仍待研究。见 `rounds/025.md`；复现 `verification/independent_cubic.wl`、`verification/independent_cubic.py`、`verification/independent_cubic_matlab.m`。
 
-第25轮当前PDF为90页，任意尺度障碍、全体三阶传递及高矩推论均完成独立终审，精确证书、编译与逐页版面验收通过。
+第25轮PDF为90页，任意尺度障碍、全体三阶传递及高矩推论均完成独立终审，精确证书、编译与逐页版面验收通过。
+
+第26轮将真实全体三阶亏损量化：t≤2^-8可取κ=2^-72，t≤2^-14可取κ=2^-68。两处紧性均替换为显式不等式，70项有理账本覆盖完整参数窗口；给出嵌套窗口的高矩减项及显式指数尾界。它们是可复核的保守常数，未宣称最优。见 `rounds/026.md`，复现 `verification/explicit_cubic.py`、`verification/explicit_cubic.wl`、`verification/explicit_cubic_matlab.m`。
+
+第26轮当前PDF为94页，两组显式参数、有限差商传递和高矩尾界均经独立终审；标准库70项证书、编译、引用与逐页版面验收通过。

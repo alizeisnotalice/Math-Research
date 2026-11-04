@@ -1,0 +1,14 @@
+ClearAll["Global`*"];
+a=11/20;b=9/20;d=a-b;al=1-t;
+F[r_]:=1-al^2-2al r+4a b r^2;
+rootPoly=Factor[F[t+q t^2]/t^2];
+g[z_]:=1+(z-u)(z-v)-2alpha z;
+endpoint=Expand[g[z]-g[alpha]+(z-alpha)(u+v-z+alpha)];
+x0=(alpha-Sqrt[c ny/nx])/2;y0=(alpha-Sqrt[c nx/ny])/2;
+wx=nx-s t ny;wy=ny+s t nx;
+ht=alpha(wx+wy)/2-Sqrt[c wx wy];
+curv=FullSimplify[D[ht,{s,2}]/t^2-Sqrt[c](nx^2+ny^2)^2/(4(wx wy)^(3/2)),Assumptions->nx>0&&ny>0&&c>0&&t>0&&wx>0&&wy>0];
+union=Expand[(1-e-d t)(1-e+3d t)-(1+2d t-2e-2d t e+e^2-3d^2t^2)];
+profiles=Map[Function[spec,Module[{eta=2^-spec[[1]],tau=2^-spec[[2]],k=2^-spec[[3]],er,rootOK},er=32k^(2/3)+2Sqrt[k];rootOK=Resolve[ForAll[t,0<=t<=tau,(rootPoly/.q->9/10)>0&&(rootPoly/.q->2)<0],Reals];<|"eta"->ToString[eta,InputForm],"t_max"->ToString[tau,InputForm],"kappa"->ToString[k,InputForm],"root_enclosure_quantified"->rootOK,"chart_error_exact"->TrueQ[RootReduce[er<eta/2^20]],"chart_error_numeric"->ToString[N[er,40],InputForm],"chart_budget_numeric"->ToString[N[eta/2^20,40],InputForm]|>]],{{14,8,72},{12,14,68}}];
+out=<|"kernel"->$Version,"root_polynomial"->ToString[rootPoly,InputForm],"pair_endpoint_identity"->endpoint,"homogeneous_curvature_identity"->curv,"cross_rectangle_union_identity"->union,"profiles"->profiles|>;
+Print[out];Export[FileNameJoin[{DirectoryName[$InputFileName],"..","results","explicit_cubic_wolfram.json"}],out,"RawJSON"];
