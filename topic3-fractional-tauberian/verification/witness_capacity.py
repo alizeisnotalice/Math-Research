@@ -12,15 +12,15 @@ def atoms(boxes):
    if mask:caps[mask]=caps.get(mask,F(0))+(b-a)*(d-c)
  return caps
 
-def solve(caps,thresholds):
+def solve(caps,thresholds,denominator_limit=10**6,solver_options=None):
  n=len(thresholds);ss=list(caps);c=np.array([float(caps[s]) for s in ss]);A=np.array([[int(s>>i&1) for s in ss] for i in range(n)],float);b=np.array(list(map(float,thresholds)))
- obj=np.r_[np.zeros(len(ss)),-1];pr=linprog(obj,A_ub=np.vstack([np.r_[np.ones(len(ss)),0],np.c_[-A,np.ones(n)]]),b_ub=np.r_[1,-b],bounds=[(0,z) for z in c]+[(None,None)],method='highs');assert pr.success
+ obj=np.r_[np.zeros(len(ss)),-1];pr=linprog(obj,A_ub=np.vstack([np.r_[np.ones(len(ss)),0],np.c_[-A,np.ones(n)]]),b_ub=np.r_[1,-b],bounds=[(0,z) for z in c]+[(None,None)],method='highs',options=solver_options);assert pr.success
  # dual variables lambda(n), z, h(atom count)
  ob=np.r_[-b,1,c];DU=np.c_[A.T,-np.ones(len(ss)),-np.eye(len(ss))];eq=np.r_[np.ones(n),0,np.zeros(len(ss))][None,:]
- du=linprog(ob,A_ub=DU,b_ub=np.zeros(len(ss)),A_eq=eq,b_eq=[1],bounds=(0,None),method='highs');assert du.success
- lam=[F(float(z)).limit_denominator(10**6) for z in du.x[:n]];tot=sum(lam);lam=[x/tot for x in lam];z=max(F(0),F(float(du.x[n])).limit_denominator(10**6))
+ du=linprog(ob,A_ub=DU,b_ub=np.zeros(len(ss)),A_eq=eq,b_eq=[1],bounds=(0,None),method='highs',options=solver_options);assert du.success
+ lam=[F(float(z)).limit_denominator(denominator_limit) for z in du.x[:n]];tot=sum(lam);lam=[x/tot for x in lam];z=max(F(0),F(float(du.x[n])).limit_denominator(denominator_limit))
  dual=z+sum(caps[s]*max(F(0),sum(lam[i] for i in range(n) if s>>i&1)-z) for s in ss)-sum(x*y for x,y in zip(lam,thresholds))
- m=[min(caps[s],max(F(0),F(float(x)).limit_denominator(10**6))) for s,x in zip(ss,pr.x[:-1])];scale=max(F(1),sum(m));m=[x/scale for x in m]
+ m=[min(caps[s],max(F(0),F(float(x)).limit_denominator(denominator_limit))) for s,x in zip(ss,pr.x[:-1])];scale=max(F(1),sum(m));m=[x/scale for x in m]
  slack=min(sum(v for s,v in zip(ss,m) if s>>i&1)-thresholds[i] for i in range(n))
  return {'eta_float':float(pr.x[-1]),'dual_float':float(du.fun),'duality_gap':abs(float(pr.x[-1])-float(du.fun)),'dual_certificate':str(dual),'primal_strict_slack':str(slack),'status':'exact-infeasible' if dual<=0 else ('exact-feasible' if slack>0 else 'unresolved'),'primal_masses':{str(s):str(v) for s,v in zip(ss,m) if v},'lambda':[str(x) for x in lam],'z':str(z)}
 if __name__=='__main__':

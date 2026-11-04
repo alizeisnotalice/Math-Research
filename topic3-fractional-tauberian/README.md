@@ -93,3 +93,7 @@ run('verification/fixed_cube_matlab.m')
 第14轮建立任意维、有限可测见证族的精确容量LP充要判据与对偶证书；两个见证的显式判据、一般几何中两两可行但共同不可行的反例均已证明。105组固定8方体族的有理证书全部重验通过；未将有限证书当作连续光晕的三阶上界。见 `rounds/014.md`。
 
 第14轮当前PDF61页。容量证书复现：`python3 verification/witness_capacity.py` 后运行 `python3 verification/check_capacity.py`；Wolfram运行 `verification/witness_capacity.wl`，MATLAB运行 `verification/witness_capacity_matlab.m`。
+
+第15轮证明统一有限余量可传递到任意有界不可数见证族，并建立全体常数与[0,1]密度松弛优化的精确等值；胞元示性函数构造有全方体统一误差界。405组不同方向尺度探索后归档5份实际输入重建与256个有理积分检查。见 `rounds/015.md`；全体三阶上界仍待证明。
+
+第15轮当前PDF63页。复现 `verification/varying_scales.py` 后运行 `verification/reconstruct_capacity.py`；网格构造见 `verification/mesh_purification.py`、同名Mathematica与MATLAB脚本。

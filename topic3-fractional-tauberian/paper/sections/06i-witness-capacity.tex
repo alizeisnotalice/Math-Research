@@ -111,3 +111,101 @@ $\rho_i=\eta_i/(n\ell_i^{n-1})$，则
 故 $B_i+h$ 仍严格见证点 $x_i+h$，得到包含。对有理坐标、尺度和正余量，
 这些邻域方体的并集体积也可由有理网格精确计算。
 \end{proof}
+
+\subsection{统一逼近与连续见证族}\label{pur:section}
+
+\begin{lemma}[保留胞元质量的示性函数逼近]\label{pur:mesh}
+设有界轴平行方体 $\Omega$ 被边长为 $h$ 的网格胞元分割，
+$0\le f\le1$ 且 $\int_\Omega f\le1$。存在 $E_0\subset\Omega$，使每个胞元 $P$ 满足
+$|E_0\cap P|=\int_Pf$，且对任意 $Q\subset\Omega$、边长 $\ell\le L$ 的轴平行方体，
+\begin{equation}\label{pur:error}
+ \left|\int_Q(\mathbf1_{E_0}-f)\right|
+ \le(\ell+2h)^n-(\ell-2h)_+^n
+ \le4nh(L+2h)^{n-1}.
+\end{equation}
+还可在 $\Omega$ 外补足质量，得到 $|E|=1$ 而不改变这些方体上的积分。
+\end{lemma}
+\begin{proof}
+在每个胞元中取沿第一坐标的条带，使其体积恰为该胞元的 $f$ 质量。
+完全位于 $Q$ 内的胞元没有积分误差；误差只来自与 $Q$ 边界相交的胞元。
+这些胞元除零测边界外，位于外扩 $h$ 方体与内缩 $h$ 方体之差中。
+由于 $|\mathbf1_{E_0}-f|\le1$，第一道界成立。
+若 $\ell\ge2h$，对 $s^n$ 用均值定理，区间长度为 $4h$；
+若 $\ell<2h$，则 $\ell+2h<4h$，同样得到第二道界。
+最后 $\Omega^c$ 有无限测度，可以补足质量。
+\end{proof}
+
+\begin{theorem}[统一有限余量到任意见证族]\label{pur:continuum}
+设 $\{Q_i:i\in I\}$ 为一个不必可数的轴平行方体族，全部位于同一个有界方体
+$\Omega$ 内，阈值 $b_i>0$。假设存在 $\varepsilon>0$，使每个非空有限子族
+的容量规划最优值都满足 $\eta_*\ge\varepsilon$。
+则存在质量一可测集 $E$，对全部 $i\in I$ 同时满足
+\[
+ |E\cap Q_i|>b_i+\varepsilon/2.
+\]
+反过来，若某个质量一输入的捕获余量对全族有统一正下界，
+则所有有限子族的容量最优值也有该正下界。
+\end{theorem}
+\begin{proof}
+在 $L^\infty(\Omega)$ 的弱星拓扑中，集合
+\[
+ \mathcal P=\{f:0\le f\le1,\ \int_\Omega f\le1\}
+\]
+是紧的：它是单位球中弱星闭的集合，而 $\Omega$ 有限测度。
+每个条件 $\int_{Q_i}f\ge b_i+\varepsilon$ 也是弱星闭的，
+因为 $\mathbf1_{Q_i}\in L^1(\Omega)$。
+由定理~\ref{cap:main}，任意有限组条件在 $\mathcal P$ 中有共同解。
+紧性和有限交性质给出一个对全族都满足条件的 $f$。
+
+族内边长有共同上界 $L$。选网格足够细，使式~\eqref{pur:error}的右侧严格小于
+$\varepsilon/2$。引理~\ref{pur:mesh}构造的单一质量一集合 $E$ 便同时保留全部
+严格捕获条件。这里误差对整个族一致，故处理的是全部平移见证而非有限只中心方体。
+反向直接对每个有限子族取其原子质量变量。
+\end{proof}
+
+\begin{example}[有限严格可行不能替代统一余量]\label{pur:margin-obstruction}
+取两个互不交的单位方体 $Q_1,Q_2$。对每个整数 $j\ge3$，要求
+$|E\cap Q_1|>1/2-1/j$，同时要求 $|E\cap Q_2|>1/2$，其中 $|E|=1$。
+每个有限子族都严格可行：若最大的 $j$ 为 $M$，可取两个捕获量为
+$1/2-1/(2M)$ 和 $1/2+1/(2M)$，共同余量为 $1/(2M)$。
+但全部条件会迫使 $|E\cap Q_1|\ge1/2$、$|E\cap Q_2|>1/2$，与质量预算矛盾。
+这里阈值随指标变化；本例说明上一条一般阈值定理中的统一余量不能直接删去，
+不把它当作固定分数阈值模型的反例。
+\end{example}
+
+\begin{corollary}[全体常数的松弛密度表述]\label{pur:relaxation}
+对 $0<\beta<n$、$0<\alpha<1$，有精确等式
+\begin{equation}\label{pur:sup-equality}
+ C_{\beta,\mathcal Q_c}(\alpha)
+ =\sup_{\substack{f\in L^1(\mathbb R^n),\ 0\le f\le1\\\int f=1}}
+ \bigl|\{x:M_{\beta,\mathcal Q_c}f(x)>\alpha\}\bigr|.
+\end{equation}
+因此把输入暂时松弛为 $[0,1]$ 值密度，不改变全体优化的值。
+\end{corollary}
+\begin{proof}
+尺度不变性允许在左侧只取质量一集合；示性函数属于右侧的密度类，故一侧不等式显然。
+反向固定右侧一个 $f$，并在其严格光晕中取任意紧集 $K$。
+对每个 $x\in K$ 选一个严格方体见证，固定其边长 $\ell_x$。
+方体指示函数的 $L^1$ 平移连续性及 $\|f\|_\infty\le1$ 表明：
+存在 $x$ 的有界开邻域 $U_x$ 和 $\varepsilon_x>0$，使所有 $y\in U_x$ 都满足
+\[
+ \int_{y+[-\ell_x/2,\ell_x/2]^n}f
+ \ge\alpha\ell_x^{n-\beta}+\varepsilon_x.
+\]
+取有限个 $U_{x_j}$ 覆盖 $K$，并令 $\varepsilon=\min_j\varepsilon_{x_j}>0$。
+需要保留的见证族是
+\[
+ \mathscr Q=\{y+[-\ell_{x_j}/2,\ell_{x_j}/2]^n:
+ y\in K\cap U_{x_j},\ 1\le j\le m\},
+\]
+而不仅是 $m$ 个中心见证。该全族位于某个有界 $\Omega$ 中，且原始 $f$ 对它有统一余量。
+对每个有限子族，$f$ 在原子上的质量就是容量规划的可行变量。
+应用定理~\ref{pur:continuum}，或直接对 $f|_\Omega$ 使用引理~\ref{pur:mesh}，
+得到单一质量一集合 $E$，使 $K\subset H_{\beta,\mathcal Q_c}(\alpha,E)$。
+所以 $|K|\le C_{\beta,\mathcal Q_c}(\alpha)$。
+
+每个固定尺度的平均是连续函数，因此严格光晕是开集。
+由 Lebesgue 测度内正则性，对其中的紧集取上确界便得到反向不等式。
+$f$ 的支撑不必有界，因为只在上述 $\Omega$ 中逼近，再在外部补足质量。
+该等式只涉及优化值；并不声称同一个 $f$ 的极大函数能与某个示性函数逐点相等。
+\end{proof}
