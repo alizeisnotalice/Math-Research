@@ -1,0 +1,299 @@
+\section{有限轴向见证的刚性与八点构型}\label{wr:section}
+
+有限见证必须保留独立尺度。下面先从四轴容量导出任意输入的近矩形结构，
+再计算一类八点的矩形阈值，最后用角区构造说明近矩形误差为何不能直接舍去。
+本节始终取 $n=2$、$\beta=1$、中心轴平行正方形基。
+
+\begin{lemma}[四轴的精确层容量]\label{wr:layers}
+设四中心为 $(\pm t,0),(0,\pm t)$，横轴两个见证边长均为
+$X=1+\lambda_x t$，纵轴两个边长均为 $Y=1+\lambda_y t$，
+$|\lambda_x|,|\lambda_y|\le1$、$0<t<1/10$。
+令 $N$ 为四个正方形示性函数之和，$V_j=|\{N\ge j\}|$，则
+\[
+ V_2=XY,\quad V_3=X^2+Y^2-XY-4t^2,\quad V_4=(X-2t)(Y-2t).
+\]
+且对任意 $|E|=1$，记 $I=\int_E N$，有
+\begin{align*}
+ I&\le3+V_4,\\
+ I&\le1+V_2+V_3+V_4.
+\end{align*}
+两个上界与严格阈值和 $2(1-t)(X+Y)$ 的精确差依次为
+\[
+ -(\lambda_x+\lambda_y)t+(\lambda_x\lambda_y+4)t^2,
+ \qquad
+ (\lambda_x+\lambda_y)t+
+ (\lambda_x^2+\lambda_y^2+\lambda_x\lambda_y)t^2.
+\]
+\end{lemma}
+\begin{proof}
+因 $|X-Y|\le2t$，四个相邻轴点对的交集之并恰为
+$R=[-Y/2,Y/2]\times[-X/2,X/2]$；两个相反点对的交集也包含于 $R$。
+故 $\{N\ge2\}=R$。
+包含横轴点对的两个三重交集之并是边长 $(X-2t),X$ 的竖矩形；
+包含纵轴点对的对应并是边长 $Y,(Y-2t)$ 的横矩形。
+二者交集正是四重交集，边长为 $(X-2t),(Y-2t)$，从而得到三个面积公式。
+
+逐点有 $N\le3+\mathbf1_{\{N=4\}}$ 及
+$N\le1+\sum_{j=2}^4\mathbf1_{\{N\ge j\}}$。
+在 $E$ 上积分，利用 $|E|=1$ 即得两条预算；展开后得到最后两式。
+\end{proof}
+
+\begin{theorem}[四轴见证迫使二阶近矩形]\label{wr:rigidity}
+固定 $M>0$。存在 $C_M,t_M>0$，使以下结论成立。
+设 $0<t<t_M$、$\alpha=1-t$、$|E|=1$，并且
+\[
+ (\pm A_x,0),(0,\pm A_y)\in H_{1,\mathcal Q_c}(\alpha,E),\qquad
+ |A_x-t|+|A_y-t|\le Mt^2.
+\]
+各点任取严格见证边长 $\ell_{\pm x},\ell_{\pm y}$。
+则存在 $\rho_t\in[-1,1]$，使
+\[
+ |E\mathbin\triangle R_{\rho_t,t}|\le C_Mt^2,\qquad
+ R_{\rho,t}=[-e^{\rho t}/2,e^{\rho t}/2]\times[-e^{-\rho t}/2,e^{-\rho t}/2],
+\]
+并且
+\[
+ \ell_{\pm x}=1-\rho_t t+O_M(t^2),\qquad
+ \ell_{\pm y}=1+\rho_t t+O_M(t^2).
+\]
+输入允许无界；常数统一于所有满足假设的输入和见证选择。
+\end{theorem}
+\begin{proof}
+每个边长都在 $(\alpha,\alpha^{-1})$ 内。
+对横轴相反两点，记 $z=(\ell_{+x}+\ell_{-x})/2$、
+$u=2A_x$、$d=|\ell_{+x}-\ell_{-x}|$。
+因 $d/2\le t+O(t^2)<u$，其精确交叠面积为 $(z-u)(z-d/2)$。
+严格两点预算给出
+\[
+ (z-u)d/2<1+(z-u)z-2\alpha z=O_M(t^2).
+\]
+这里 $z-u\ge1/2$，最后的统一估计由
+$1+(z-u)z-2\alpha z=(z-1)^2-(u-2t)z$ 得到。
+故 $\ell_{+x}-\ell_{-x}=O_M(t^2)$；纵轴同理。
+
+把各对尺度替换为平均值，再将 $(\ell-1)/t$ 裁剪到 $[-1,1]$，
+并把中心 $A_x,A_y$ 替换为 $t$，每个正方形的对称差面积仅为 $O_M(t^2)$。
+因此得到引理~\ref{wr:layers}的四个标准正方形，使每个捕获量仍至少为
+$(1-t)\ell-O_M(t^2)$。
+记 $L=\lambda_x+\lambda_y$。
+两条精确预算分别给 $L\le C_Mt$ 和 $L\ge-C_Mt$，故 $L=O_M(t)$。
+
+还要把预算传回输入。令 $D_3=3+V_4-I$、
+$D_1=1+V_2+V_3+V_4-I$；上述估计使 $0\le D_1,D_3\le C_Mt^2$。
+精确分解为
+\[
+ D_3=\int_E(3-N+\mathbf1_{\{N=4\}})+|\{N=4\}\setminus E|,
+\]
+\[
+ D_1=|E\cap\{N=0\}|+\int_{E^c}(N-1)_+.
+\]
+于是 $|E\setminus R|\le D_3/2$、$|R\setminus E|\le D_1$，其中
+$R=\{N\ge2\}=[-Y/2,Y/2]\times[-X/2,X/2]$。
+故 $|E\triangle R|=O_M(t^2)$。
+又 $XY=1+O_M(t^2)$，将 $R$ 等比例归一化到面积一仅改变 $O_M(t^2)$ 测度。
+其短、长边的一阶系数互为相反数；写为 $e^{\pm\rho_t t}$，
+再将 $\rho_t$ 裁剪至 $[-1,1]$，仍只改变 $O_M(t^2)$。
+由 $Y=1+\lambda_y t$、$X=1+\lambda_x t$ 得到所述尺度展开。
+\end{proof}
+
+\begin{corollary}[对角尺度的必要窗口]\label{wr:diagonal-window}
+在前一定理假设下，若某个 $(\pm B,\pm B)$ 也是严格光晕点，
+$|B-t/2|\le Mt^2$，其任一见证边长写为 $\ell=1+\lambda t$，则
+\[
+ -1+|\rho_t|-C_Mt\le\lambda\le1-|\rho_t|+C_Mt.
+\]
+四个对角见证可有不同尺度。
+\end{corollary}
+\begin{proof}
+将 $E$ 换成 $R_{\rho_t,t}$ 的捕获误差至多 $C_Mt^2$。
+一维交长公式对所有 $\rho_t,\lambda$ 一致给出
+\[
+ \frac{|R_{\rho_t,t}\cap Q_\ell(B,B)|}{\ell}
+ =1-t\left[\max\{1/2,|\lambda-\rho_t|/2\}
+ +\max\{1/2,|\lambda+\rho_t|/2\}\right]+O_M(t^2).
+\]
+严格阈值使方括号至多为 $1+C_Mt$。
+两项各至少 $1/2$，故 $|\lambda\pm\rho_t|\le1+C_Mt$，等价于结论。
+\end{proof}
+
+\begin{proposition}[近矩形误差阶不可提高]\label{wr:sharpness}
+定理~\ref{wr:rigidity}中的 $O_M(t^2)$ 一般不能改为 $o(t^2)$，
+即使再要求四个 $(\pm t/2,\pm t/2)$ 同时属于光晕。
+\end{proposition}
+\begin{proof}
+取 $A_x=A_y=t-t^2$、$Q_0=[-1/2,1/2]^2$，从其中心移走矩形
+$D_t=[-t/2,t/2]\times[-t/4,t/4]$，再把该矩形平移到 $(10,10)$ 附近，得到 $E_t$。
+输入仍有面积一。四个轴点用边长一见证，捕获量精确为
+$1-(t-t^2)-t^2/2=1-t+t^2/2>\alpha$。
+四个对角点用边长 $1+t$ 见证，捕获 $1-t^2/2>\alpha(1+t)=1-t^2$。
+所有 $R_{\rho,t}$（$|\rho|\le1$）都不包含远置的 $t^2/2$ 质量，
+且与 $E_t$ 同为面积一，故 $|E_t\triangle R_{\rho,t}|\ge t^2$。
+\end{proof}
+
+\subsection{轴点与对角点的矩形精确阈值}
+
+\begin{theorem}[八点矩形模型的完整分支]\label{wr:eight-rectangle}
+令 $1/\sqrt2\le\alpha<1$、$c=2\alpha^2-1$，并置
+\[
+ A_0=(\alpha^{-1}-\alpha)/2,\quad B_0=(\alpha-\sqrt c)/2,
+\]
+\[
+ \mathscr A_h=\{(\pm hA_0,0),(0,\pm hA_0),(\pm hB_0,\pm hB_0)\},\quad0\le h\le1.
+\]
+记 $\alpha_c\in(3/4,4/5)$ 为 $4\alpha_c^3-\alpha_c-1=0$ 的唯一根，
+$w_*=2\alpha^2/(\alpha+\sqrt c)$、$\widehat w=\min(1,w_*)$。
+存在面积一轴平行矩形，使 $\mathscr A_h$ 全部属于其严格光晕，当且仅当
+\[
+ h<h_*(\alpha),\qquad
+ h_*(\alpha)=\frac{(\widehat w+\widehat w^{-1})/2-\alpha}{A_0}
+ \wedge\frac{1+\widehat w^2-2\alpha\widehat w}{4\alpha B_0}.
+\]
+允许输入任意平移和交换两坐标也不改变结论。
+若 $h=1-\sigma(1-\alpha)$，则临界收缩量为
+\[
+ \Sigma_{\rm rect}(\alpha)=
+ \begin{cases}
+ \dfrac{\alpha^2-\sqrt c}{\alpha(1-\alpha^2)},&1/\sqrt2\le\alpha\le\alpha_c,\\[2mm]
+ \dfrac{(w_*-\alpha)(1-\alpha w_*)}{w_*(1-\alpha^2)(1-\alpha)},&\alpha_c\le\alpha<1,
+ \end{cases}
+\]
+严格实现条件是 $\sigma>\Sigma_{\rm rect}(\alpha)$；临界本身不可取。
+\end{theorem}
+\begin{proof}
+归一化矩形为 $R_w$，边长 $w^{-1},w$，$\alpha<w\le1$。
+当 $w\le\alpha$ 时光晕为空。
+因为八点的每个轨道包含全部坐标反射，且矩形交叠关于中心的每个绝对坐标单调不增，
+任何平移矩形若能同时见证八点，其同形中心矩形也能见证。
+故可固定矩形中心在原点。
+
+由定理~\ref{rect:exact}证明中的接触尺度分析，
+轴向及正对角方向的精确阈值半径分别为
+\[
+ a_A(w)=\frac{w+w^{-1}}2-\alpha=\frac{N(w)}{2w},\qquad
+ b_D(w)=\frac{N(w)}{4\alpha},\quad N(w)=1+w^2-2\alpha w.
+\]
+第一式的两个轴方向分别使用尺度 $w$ 与 $w^{-1}$。
+对角阈值在尺度 $w+2b_D$ 处达到，因为
+\[
+ b_D-\frac{w^{-1}-w}{4}=\frac{(w-\alpha)(1+w^2)}{4\alpha w}>0.
+\]
+在另一个内接触 $w^{-1}-2b_D$ 处，平均为
+$\alpha-a_A(w)(w-\alpha)/\alpha<\alpha$；
+双部分交叠面板上的凸商及其他面板的单调性排除了更大值。
+这也直接验证临界 $\alpha=1/\sqrt2$：$w>\alpha$ 仍保证 $w^{-1}/2<\alpha$，
+无需交换输入极限和严格水平集。
+
+因此闭半径预算为 $\min(a_A/A_0,b_D/B_0)$，严格见证须严格小于该预算。
+$a_A$ 随 $w$ 递减，$b_D$ 随 $w$ 递增，且 $b_D/a_A=w/(2\alpha)$。
+唯一交点为 $w_*=2\alpha B_0/A_0=2\alpha^2/(\alpha+\sqrt c)>\alpha$。
+若交点超过一，最大值位于 $w=1$；否则位于交点。
+条件 $w_*\le1$ 等价于 $4\alpha^3-\alpha-1\ge0$，得到两分支。
+将 $\Sigma=(1-h_*)/(1-\alpha)$ 化简即得公式。
+\end{proof}
+
+\begin{proposition}[阈值的任意阶展开及显式余项]\label{wr:eight-series}
+高水平分支在 $t=1-\alpha=0$ 附近解析，且
+\[
+ \Sigma_{\rm rect}(1-t)=\frac38+\frac58t+\frac{29}{32}t^2+
+ \frac{17}{16}t^3+\frac{51}{128}t^4-\frac{471}{128}t^5+O(t^6).
+\]
+令 $w(t)=\sum_{j\ge0}w_jt^j$、$w_0=1$，则其系数由
+\[
+ (2t-t^2)w^2-4(1-t)^3w+4(1-t)^4=0
+\]
+唯一递推得到。具体地，对 $n\ge1$、$W_{n-1}=\sum_{j<n}w_jt^j$，
+\[
+ w_n=\frac14[t^n]\left\{(2t-t^2)W_{n-1}^2
+ -4[(1-t)^3-1]W_{n-1}+4(1-t)^4\right\}.
+\]
+把 $w$ 代回前一定理得到任意阶系数 $s_j$。
+对任意 $N\ge0$、$0\le t<1/8$，有显式尾界
+\[
+ \left|\Sigma_{\rm rect}(1-t)-\sum_{j=0}^Ns_jt^j\right|
+ \le\frac{4(8t)^{N+1}}{1-8t}.
+\]
+例如常数截断和线性截断的误差阶分别恰为 $t$ 和 $t^2$。
+\end{proposition}
+\begin{proof}
+隐式方程对 $w$ 的导数在 $(t,w)=(0,1)$ 为 $-4$，故存在唯一解析分支。
+配系数得到递推式和所列展开。
+为给出可复核余项，令 $a=1-t$，在复圆 $|t|=1/8$ 上有
+$|2a^2-2|\le17/32$，因此主平方根满足
+$|a+\sqrt{2a^2-1}|>3/2$，且 $|w|>1/2$。
+再置 $u=a(1+a)/(a+\sqrt{2a^2-1})^2$，则 $|u|\le17/16$，
+\[
+ \Sigma=\frac{u(1+a-au)}{w(1+a)},\qquad |\Sigma|<4.
+\]
+该表达式也消去了 $t=0$ 的可去奇点。
+Cauchy 系数界给 $|s_j|\le4\,8^j$，求几何尾和即得结论。
+首两个遗漏系数 $5/8$、$29/32$ 非零，故所述误差阶不能提高。
+\end{proof}
+
+\subsection{角区质量不能从八点见证中舍去}
+
+\begin{theorem}[非矩形输入改善另一八点族]\label{wr:l-counterexample}
+令
+\[
+ q=\frac{4-\sqrt7}{6},\quad p=2q-q^2,\quad
+ \gamma=2q-2q^2=\frac{1+2\sqrt7}{18}<\frac38.
+\]
+固定 $\gamma<\sigma<3/8$、$\alpha=1-t$，并置
+\[
+ r_0=\frac{1-\alpha^2}{\alpha+\sqrt{\alpha^2-\tfrac34(1-\alpha^2)}},\qquad
+ r=r_0(1-\sigma t),\qquad
+ \mathscr X_r=\{(\pm3r/4,\pm r/4),(\pm r/4,\pm3r/4)\}.
+\]
+当 $t>0$ 充分小时，存在面积一的有界轴平行多边形输入 $E_t$，
+使 $\mathscr X_r$ 全部属于其严格光晕；但不存在任何面积一轴平行矩形输入实现同一八点族。
+$t$ 的阈值在 $\sigma$ 的任意紧子区间上一致。
+\end{theorem}
+\begin{proof}
+定义
+\[
+ \ell=\sqrt{1+(1/4+4p)r^2}-r,
+ \qquad R=[-(\ell+3r/2)/2,(\ell+3r/2)/2]
+ \times[-(\ell+r/2)/2,(\ell+r/2)/2].
+\]
+在 $R$ 每个角用朝内坐标 $(u,v)$ 移去 L 形区域
+\[
+ 0\le u\le3r/2,\quad0\le v\le r/2,\quad
+ (u\le qr\ \text{或}\ v\le qr).
+\]
+每孔面积为 $pr^2$，四孔在小 $t$ 下互不相交，且
+\[
+ |E_t|=(\ell+3r/2)(\ell+r/2)-4pr^2=1.
+\]
+对 $(\pm3r/4,\pm r/4)$ 取尺度 $\ell$。
+每个见证正方形只遇到对应角的孔，捕获量为 $\ell^2-pr^2$。
+对另外四点取尺度 $\ell_2=\ell+2(1-q)r$。
+其与 $R$ 的交叠为边长 $\ell+(3/2-q)r$、$\ell+(1/2-q)r$ 的矩形。
+四孔被捕获的总面积系数为
+\[
+ p+(3q/2-q^2)+(q/2-q^2)=4q-3q^2=3/4.
+\]
+因此两组见证的严格捕获余量分别是
+\[
+ \Delta_1=\ell(\ell-\alpha)-pr^2,\qquad
+ \Delta_2=(\ell-\alpha)\ell_2-pr^2.
+\]
+由 $r_0=t+7t^2/8+O(t^3)$，直接展开得
+$\Delta_1=(\sigma-\gamma)t^2+O_\sigma(t^3)>0$。
+这还强制 $\ell>\alpha$，从而 $\Delta_2>\Delta_1>0$。
+故同一输入严格见证八点，且所有边长自动落在合法窗口。
+
+最后排除矩形。平移不能改善完整反射轨道的共同可行性，故仍只需考察中心矩形 $R_w$、
+$\alpha<w\le1$。令 $A=(w+w^{-1})/2-\alpha$。
+由定理~\ref{rect:exact}中的象限边界，点 $(3r/4,r/4)$ 满足 $y-x\le(w^{-1}-w)/2$，
+故属于光晕必须有
+\[
+ r<\frac{1+w^2-2\alpha w}{w+\alpha}=:r_1(w).
+\]
+而
+\[
+ r_1(w)-A_0=
+ \frac{(w-\alpha)(2\alpha w-\alpha^2-1)}{2\alpha(w+\alpha)}<0.
+\]
+坐标交换不改变八点族。
+另一方面 $r-A_0=(3/8-\sigma)t^2+O_\sigma(t^3)>0$，故任何这样的矩形都不可能实现八点。
+此反例只比较有限点的共同见证，不给出全体光晕体积的三阶下界。
+\end{proof}

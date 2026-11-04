@@ -124,4 +124,8 @@ run('verification/fixed_cube_matlab.m')
 
 第22轮证明更强的四阶全体亏损：存在绝对κ,t0>0，使C(1−t)≤U(1−t)−κt⁴（0<t<t0）。常数/阈值未数值化；连续四邻域几何松弛的亏损阶恰为四阶，而真实C的最优亏损阶和三阶系数仍待研究。见 `rounds/022.md`；复现 `verification/arc_aggregation.py`、`verification/arc_aggregation.wl`、`verification/arc_aggregation_matlab.m`。
 
-第22轮当前PDF为80页，局部证书与聚合/松弛证明已独立终审；编译、结构及逐页版面检查完成。
+第22轮PDF为80页，局部证书与聚合/松弛证明已独立终审；编译、结构及逐页版面检查完成。
+
+第23轮证明四轴见证下任意输入的二阶近矩形刚性（误差阶sharp），给出轴/对角八点矩形模型的两分支精确阈值及任意阶显式余项。对另一smooth八点族，L形角孔输入的临界主项γ=(1+2√7)/18<3/8，严格超过该族全部矩形输入的能力；这不是全体光晕体积的改善。见 `rounds/023.md`，复现 `verification/eight_witness.wl`、`verification/eight_witness.py`（`--check-only`重验有理证书）和 `verification/eight_witness_matlab.m`。
+
+第23轮当前PDF为84页，证明独立终审、精确证书重验、编译及逐页版面检查均已完成。
