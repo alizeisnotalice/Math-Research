@@ -1,0 +1,23 @@
+ClearAll[n,u,c,w];
+Print["Wolfram ",$Version];
+Print["Fixed n>=2, u->0+, parameters R41 (6),(7), actual numerator, conditional construction."];
+g=1/(1+2u);B=n(n-1)/2;k=8n g^2/3+320n g^3 u/81;
+lam0=B k^3/(8n^2 g);lam1=-5B k^4/(96n^3 g^2);lam2=13B k^5/(512n^4 g^3)+B(n-2)k^4/(32n^2 g^2);
+lam=lam0+lam1 u+lam2 u^2+c u^3;
+rho=g-2lam u^6;d=(1-k u^3)^(n-1)(1+(n-1)k u^3);
+budget=(g+lam u^5)^n-rho^n;
+Print["budget minus n lambda u^5 g^(n-2) through u^9: ",FullSimplify[Normal[Series[budget-n lam u^5 g^(n-2),{u,0,9}]]]];
+num=(rho^n-d g^n)/u^6;
+numSeries=FullSimplify[Normal[Series[num,{u,0,2}]]];
+Print["num series coefficients: ",Factor /@ CoefficientList[numSeries,u]];
+K=B n^2/27;
+J1=K ((n+4)(n+5)/2-10(n+5)/9-13/18-n(n-2)/3+400/243);
+J2=(n-1)n^3(2609+1971n+81n^2)/26244;
+Print["J closed forms difference: ",Factor[J1-J2]];
+Print["n>=3 J check (u²/256): ",FullSimplify[Coefficient[numSeries,u,2]/256==J2]];
+(* At n=2 only, (d-a rho^n)(1-a g^n) inverse = 1+8u²+... *)
+a2=(2u)^2;ratio2=num/.n->2;den2=((d-a2 rho^2)(1-a2 g^2))/.n->2;
+Print["n2 denominator inverse series: ",Series[1/den2,{u,0,2}]];
+Print["n2 exact numerator/divisor J: ",FullSimplify[Coefficient[Normal[Series[ratio2/den2,{u,0,2}]],u,2]/256]];
+Print["n2 expected: ",FullSimplify[Coefficient[Normal[Series[ratio2/den2,{u,0,2}]],u,2]/256==15694/6561]];
+Print["complete"];
