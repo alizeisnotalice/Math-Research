@@ -385,3 +385,39 @@
 \]
 从而完成证明。
 \end{proof}
+
+\begin{theorem}[固定方体的加权切向首项]\label{wgt:theorem-fixed-cube-tangent}
+令 \(Q_0=[-1/2,1/2]^n\)，\(c=\min\{\beta,n-\beta\}\)。设前文构造的中心切向体为
+\[
+ S_{n,c}=\{v\in\mathbb R^n:N_c(v)<1\},
+\]
+写 \(v=(v_y,v_z)\in\mathbb R^k\times\mathbb R^{n-k}\)。则对任意 \(1\leq k\leq n\)、\(0<a<k\)，
+\begin{equation}
+ \lim_{t\downarrow0}
+ \frac{w_{k,a}\bigl(H_{\beta,\mathcal Q_c}(1-t,Q_0)\bigr)}{t^{n-a}}
+ =\int_{S_{n,c}}|v_y|^{-a}\,dv.
+\label{wgt:fixed-cube-tangent}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+以 \(H_t=H_{\beta,\mathcal Q_c}(1-t,Q_0)\) 记光晕。权的齐次性给出
+\[
+ t^{a-n}w_{k,a}(H_t)=\int_{t^{-1}H_t}|v_y|^{-a}\,dv.
+\]
+定理~\ref{tan:unit-cube-limit}及其证明给出测度收敛与统一紧支撑。在此固定紧方体上，\(|v_y|^{-a}\) 可积。由 \(t^{-1}H_t\to S_{n,c}\) 的测度收敛、
+指标函数有界性以及可积函数积分的绝对连续性，右端收敛到
+\(\int_{S_{n,c}}|v_y|^{-a}\,dv\)。
+\end{proof}
+
+例如在 $n=2$、$\beta=1$、$k=1$ 时，$S_{2,1}=\{|v_1|+|v_2|<1\}$，所以
+\[
+ \lim_{t\downarrow0}t^{a-2}w_{1,a}(H_{1,\mathcal Q_c}(1-t,Q_0))
+ =4\int_0^1 y^{-a}(1-y)\,dy=\frac4{(1-a)(2-a)}.
+\]
+在 $a=1/2$ 时该常数为 $16/3$。
+
+\begin{remark}\label{wgt:remark-scope}
+定理 \ref{wgt:theorem-fixed-cube-tangent} 只计算固定模型 \(Q_0\) 的首项。它既不提供任意
+可测集上的一致反向覆盖，也不意味着 \eqref{wgt:radial} 中的全局上确界具有同一首项常数。
+\end{remark}

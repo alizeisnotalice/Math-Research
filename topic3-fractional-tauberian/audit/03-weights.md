@@ -15,10 +15,12 @@
 |引理10.7, (55), p.26|径向核 \(|x|^{-a}\) 的集合积分上界，\(0<a<d\)。|层饼、Tonelli 和精确分段积分复核无误；常数为 \(d(d-a)^{-1}\omega_d^{a/d}\)。|proved|`wgt:lemma-singular-integral`; `wgt:singular-integral`|
 |命题10.8, (56), pp.27--28|一坐标权 \(|x_1|^{\gamma-1}\) 对 \(\mathcal Q,\mathcal R\) 的精确阶，\(0<\gamma<1\)。|一维集中估计经远离/邻近奇点分解成立；层截与 Jensen 将其提升至任意矩形。平移薄条 \(E_h,F_h\) 给出两个基的匹配下界；已补 \(E_h\subset H\)，故 \(E_h\cup F_h\subset H\) 才能导出 \(C^w-1\) 的下界。|proved|`wgt:proposition-one-coordinate`; `wgt:one-coordinate`; `wgt:one-dimensional-concentration`|
 |命题10.9, (57)--(59), pp.28--30|横向径向权 \(|y|^{-a}\) 对中心方体的 \((1-\alpha)^{n-a}\) 阶，\(0<a<k\)。|严格保留两类输入：(i) 方体集中 \((57)\) 只用于证明 \(w(B_0\setminus E)=o(w(B_0))\)；(ii) 同心缩放 \((59)\) 才产生 \(n-a\)。因此没有把一般集中指数 \(1-a/k\) 代入通用 \(n\delta\) 上界并误称为 \(n-a\)。固定 \(Q_0\) 的内部方体给出匹配下界。|proved|`wgt:proposition-radial`; `wgt:radial-concentration`; `wgt:radial-dilation`; `wgt:radial`|
+|新增，基于原稿第6节的固定 \(Q_0\) 切向收敛|加权固定模型首项。|在既有 Lebesgue 测度切向收敛、统一紧支撑和 \(a<k\) 下，权的局部可积性将收敛提升为加权积分收敛，首项为 \(\int_{S_{n,c}}|v_y|^{-a}\,dv\)。该命题不涉及全体集合上确界。|proved conditional on earlier fixed-model tangent theorem|`wgt:theorem-fixed-cube-tangent`; `wgt:fixed-cube-tangent`|
 
 ## 实质边界
 
 - 正向权估计需要的是外层权的集中模量；若将平均改成 \(w\)-平均，原证据链不适用。
 - 反向估计和 \(A_\infty\) 刻画都依赖 \(w>0\) 几乎处处；允许权在正 Lebesgue 测度集上为零时，补集测试无法保证 \(w(E)>0\)。
 - 中心通用式给出的 \((1-\alpha)^{n\delta}\) 仅为上界。\(w_{k,a}\) 的 \((1-\alpha)^{n-a}\) 由专门的同心缩放估计取得。
+- 固定 \(Q_0\) 的新加权切向常数不能升级为 \(C^{w_{k,a}}_{\beta,\mathcal Q_c}\) 的 sharp 首项；仍缺任意 \(E\) 的统一匹配上界。
 - 带 `wgt:` 的所有公式现由主文的章节自动编号；不再使用手工 `(W1)` 等标签，避免与全篇编号体系冲突。

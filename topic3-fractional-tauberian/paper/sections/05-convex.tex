@@ -1,4 +1,4 @@
-\section{固定凸体与卷积体}
+\section{固定凸体、卷积体与联合切向极限}
 \label{cvx:section}
 
 \subsection{中心对称凸体的端点阶}
@@ -211,3 +211,246 @@ $|K|/h_{\Pi K}(u)$。有限网逼近将其提升为一致收敛，得到
 由式~\eqref{cvx:embedding}，光晕测度至少为 $|C^K_\alpha|$。除以
 $|K|(1-\alpha)^n$ 后使用引理~\ref{cvx:covariogram-limit}。
 \end{proof}
+
+\subsection{任意凸体的联合尺度--平移一阶功能}
+
+下面给出固定凸体的完整一阶模型。它把上节的固定尺度卷积体下界扩展为对
+所有一阶尺度扰动与平移的联合优化；结论只涉及测试集合 $E=K$，不涉及全体可测集的
+Tauberian 上确界。
+
+设 $\nu_K(y)$ 是 $\partial K$ 上几乎处处存在的外单位法向量，并定义
+\begin{equation}
+ D_K(v,a)=\int_{\partial K}
+ \bigl[-\langle v+ay,\nu_K(y)\rangle\bigr]_+\,d\mathcal H^{n-1}(y),
+ \qquad v\in\mathbb R^n,\ a\in\mathbb R,
+ \label{cvx:boundary-defect}
+\end{equation}
+以及
+\begin{equation}
+ \Phi_{\beta,K}(v,a)=(n-\beta)a+\frac{D_K(v,a)}{|K|},
+ \qquad
+ N_{\beta,K}(v)=\inf_{a\in\mathbb R}\Phi_{\beta,K}(v,a),
+ \qquad S_{\beta,K}=\{v:N_{\beta,K}(v)<1\}.
+ \label{cvx:tangent-functional}
+\end{equation}
+
+\begin{lemma}[位似仿射流的一阶交叠公式]
+\label{cvx:first-variation}
+对任意紧集 $L\subset\mathbb R^n\times\mathbb R$，当 $t\downarrow0$ 时，
+\begin{equation}
+ |K\cap(tv+(1+ta)K)|=|K|-tD_K(v,a)+o_L(t)
+ \quad\text{一致地对 }(v,a)\in L.
+ \label{cvx:first-variation-formula}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+记 $T_tK=tv+(1+ta)K$。因 $0\in\operatorname{int}K$，对紧参数集 $L$ 中的
+$(v,a)$ 以及充分小的 $t$，$T_tK$ 仍含原点于内部。令 $\rho$ 与 $\rho_t$ 分别为
+$K$ 与 $T_tK$ 的径向函数。于是精确地有
+\begin{equation}
+ |K\setminus T_tK|=
+ \frac1n\int_{S^{n-1}}\bigl[\rho(u)^n-\rho_t(u)^n\bigr]_+\,d\sigma(u).
+ \label{cvx:radial-defect}
+\end{equation}
+
+设 $p_K$ 是 $K$ 的 Minkowski 泛函。$p_K$ 在避开原点的紧环带上 Lipschitz；并且对
+几乎每个 $u\in S^{n-1}$，点 $y=\rho(u)u\in\partial K$ 有唯一外法向 $\nu_K(y)$。
+边界方程
+\[
+ p_K\!\left(\frac{\rho_t(u)u-tv}{1+ta}\right)=1
+\]
+可在这些方向求导。利用
+$\nabla p_K(y)=\nu_K(y)/\langle y,\nu_K(y)\rangle$，得到
+\begin{equation}
+ \left.\frac d{dt}\rho_t(u)\right|_{t=0}
+ =a\rho(u)+\frac{\langle v,\nu_K(y)\rangle}
+ {\langle u,\nu_K(y)\rangle}.
+ \label{cvx:radial-derivative}
+\end{equation}
+取 $r_*B_2^n\subset K\subset R_*B_2^n$ 后，凸性给出
+$\langle u,\nu_K(y)\rangle\ge r_*/R_*>0$。因此
+$|\rho_t(u)-\rho(u)|\le C_Lt$，式~\eqref{cvx:radial-defect} 可用支配收敛定理逐点
+微分。再用径向面积公式
+\[
+ d\mathcal H^{n-1}(y)=
+ \frac{\rho(u)^{n-1}}{\langle u,\nu_K(y)\rangle}\,d\sigma(u)
+\]
+与式~\eqref{cvx:radial-derivative}，便得到
+\[
+ \lim_{t\downarrow0}\frac{|K\setminus T_tK|}{t}
+ =\int_{\partial K}[-\langle v+ay,\nu_K(y)\rangle]_+\,d\mathcal H^{n-1}(y)=D_K(v,a).
+\]
+
+最后说明紧参数集上的一致性。对两个参数对 $(v,a),(v',a')\in L$，平移部分的
+对称差至多为常数乘 $t|v-v'|$，而同心位似部分的对称差恰由体积差控制，至多为常数乘
+$t|a-a'|$。所以
+\[
+ t^{-1}\bigl||K\setminus T_tK|-|K\setminus T'_tK|\bigr|
+ \le C_L\bigl(|v-v'|+|a-a'|\bigr).
+\]
+极限 $D_K$ 也连续。对 $L$ 取有限网，再由刚才的逐点极限，即将收敛提升为一致收敛，
+从而证明式~\eqref{cvx:first-variation-formula}。
+\end{proof}
+
+\begin{theorem}[固定凸体的完整切向极限]
+\label{cvx:full-tangent-limit}
+设 $K\subset\mathbb R^n$ 是有界满维凸体且 $0\in\operatorname{int}K$。则
+$S_{\beta,K}$ 是有界开凸体（不必中心对称），且
+\begin{equation}
+ \lim_{t\downarrow0}t^{-n}\bigl|H^K_{\beta,\mathrm c}(1-t,K)\bigr|
+ =|S_{\beta,K}|.
+ \label{cvx:full-tangent-formula}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+先将 $x=tv$、$s=1+ta$ 代入式~\eqref{cvx:homothetic-representation}。引理
+\ref{cvx:first-variation} 与
+$(1+ta)^{\beta-n}=1-(n-\beta)at+o(t)$ 给出
+\begin{equation}
+ \frac{(1+ta)^{\beta-n}|K\cap(tv+(1+ta)K)|}{|K|}
+ =1-t\Phi_{\beta,K}(v,a)+o(t),
+ \label{cvx:joint-expansion}
+\end{equation}
+其中余项在紧参数集上一致。故 $N_{\beta,K}(v)<1$ 时，某个固定 $a$ 给出严格见证。
+
+为证反向包含，取 $x_r\in H^K_{\beta,\mathrm c}(1-t_r,K)$ 与严格见证
+$x_r+s_rK$，其中 $t_r\downarrow0$。记 $A_r=|K\cap(x_r+s_rK)|$。见证不等式与
+$A_r\le\min\{|K|,s_r^n|K|\}$ 给出
+\[
+ (1-t_r)^{1/\beta}<s_r<(1-t_r)^{-1/(n-\beta)},
+ \qquad A_r=|K|+O(t_r).
+\]
+因而 $|K\triangle(x_r+s_rK)|=O(t_r)$；再应用引理~\ref{cvx:near-homothetic}，得到
+\begin{equation}
+ |s_r-1|+|x_r|_2=O(t_r).
+ \label{cvx:compactness}
+\end{equation}
+于是，沿子列可设 $x_r/t_r\to v$、$(s_r-1)/t_r\to a$。将
+式~\eqref{cvx:joint-expansion} 代入严格见证不等式并取极限，得到
+$\Phi_{\beta,K}(v,a)\le1$，从而 $N_{\beta,K}(v)\le1$。
+
+函数 $D_K$ 是 $(v,a)$ 的凸、正齐次函数；利用
+$\int_{\partial K}\nu_K\,d\mathcal H^{n-1}=0$ 与
+$\int_{\partial K}\langle y,\nu_K(y)\rangle\,d\mathcal H^{n-1}=n|K|$ 可见
+$N_{\beta,K}$ 正齐次。事实上，$a\ge0$ 时
+$\Phi_{\beta,K}(v,a)\ge(n-\beta)a$；若其中等号可为零，则 $a=0$ 且
+$D_K(v,0)=h_{\Pi K}(v)=0$，这迫使 $v=0$。$a<0$ 时，令
+$w=\langle v+ay,\nu_K(y)\rangle$，则
+$D_K(v,a)=\int w_-$ 且 $\int w=na|K|$，从而
+$\Phi_{\beta,K}(v,a)\ge-\beta a>0$。这两个下界还说明：对每个固定 $v$，
+定义 $N_{\beta,K}(v)$ 的极小值在有限 $a$ 处取得。对任意紧的 $v$ 集，取 $a=0$ 给出共同上界，故所有极小点落在同一个有界 $a$ 区间；$\Phi$ 的一致连续性遂推出 $N_{\beta,K}$ 连续。对两个极小点使用 $\Phi$ 的联合凸性还给出 $N_{\beta,K}$ 的凸性。再由正齐次性及单位球面的紧性，
+存在 $\kappa_{\beta,K}>0$ 使 $N_{\beta,K}(v)\ge\kappa_{\beta,K}|v|_2$。
+因此 $S_{\beta,K}$ 是有界开凸体，边界零测。
+式~\eqref{cvx:compactness} 给出统一有界支集，前两段给出其示性函数在
+$\partial S_{\beta,K}$ 外的逐点收敛。支配收敛定理遂给出
+式~\eqref{cvx:full-tangent-formula}。
+\end{proof}
+
+\begin{remark}[方体特例与全体常数的界限]
+\label{cvx:cube-specialization}
+对 $K=Q_0$，逐个面计算式~\eqref{cvx:boundary-defect}，得到
+\[
+ D_{Q_0}(v,a)=\sum_{j=1}^{n}
+ \left[(-v_j-a/2)_++(v_j-a/2)_+\right].
+\]
+把 $a\ge0$ 与 $a\le0$ 分开后，式~\eqref{cvx:tangent-functional} 恰化为
+引理~\ref{tan:parameter-elimination} 的两条分支，故
+$N_{\beta,Q_0}=N_c$。这与定理~\ref{tan:unit-cube-limit} 一致。定理
+\ref{cvx:full-tangent-limit} 仍仅处理固定测试体 $E=K$；它不能推出
+$C_{\beta,\mathcal B^K_{\mathrm c}}$ 的 sharp 首项，也不预设 $Q_0$ 或任何椭球是
+全体集合问题的极值体。
+\end{remark}
+
+\subsection{反射对偶与多面体的有限线性规划}
+
+\begin{proposition}[互补分数阶的反射对偶]\label{cvx:reflection-duality}
+对任意本节的固定凸体及 $0<\beta<n$，
+\[
+ N_{n-\beta,K}(-v)=N_{\beta,K}(v),\qquad
+ S_{n-\beta,K}=-S_{\beta,K}.
+\]
+特别地，两种互补分数阶的固定模型首项体积相同；在 $\beta=n/2$，
+切向体是中心对称的，即使资料体 $K$ 不对称。
+\end{proposition}
+\begin{proof}
+利用 $z_+-(-z)_+=z$ 以及散度恒等式，得到
+\[
+ D_K(-v,-a)=D_K(v,a)+
+ \int_{\partial K}\langle v+ay,\nu_K(y)\rangle\,d\mathcal H^{n-1}(y)
+ =D_K(v,a)+na|K|.
+\]
+故 $\Phi_{n-\beta,K}(-v,-a)=\Phi_{\beta,K}(v,a)$。
+对实参数 $a$ 取下确界，再取严格单位子水平集，即得结论。
+\end{proof}
+
+\begin{theorem}[多面体切向体的极体表示]\label{cvx:polytope-duality}
+设 $K$ 是满维凸多面体，$0\in\operatorname{int}K$，第 $i$ 个面的面积、
+外单位法向和支持数分别为 $A_i,\nu_i,h_i>0$，并记 $V=|K|$。
+定义有限维凸体
+\begin{equation}\label{cvx:dual-polytope}
+ P_{\beta,K}=
+ \left\{-\frac1V\sum_iA_iq_i\nu_i:
+ 0\le q_i\le1,\quad\sum_i A_ih_iq_i=(n-\beta)V\right\}.
+\end{equation}
+则
+\[
+ N_{\beta,K}(v)=h_{P_{\beta,K}}(v),\qquad
+ S_{\beta,K}=\operatorname{int}(P_{\beta,K}^\circ).
+\]
+\end{theorem}
+\begin{proof}
+由于 $\langle y,\nu_i\rangle=h_i$ 在每个面上恒定，
+\[
+ D_K(v,a)=\sum_i A_i(-\langle v,\nu_i\rangle-ah_i)_+.
+\]
+因此 $N_{\beta,K}(v)$ 是如下原始线性规划的最优值：
+\[
+ \min_{a\in\mathbb R,\,u_i\ge0}
+ \left\{(n-\beta)a+\frac1V\sum_iA_iu_i:
+ u_i+h_i a\ge-\langle v,\nu_i\rangle\right\}.
+\]
+其对偶约束为 $0\le q_i\le1$ 及
+$\sum_i A_ih_iq_i=(n-\beta)V$，目标为
+$\langle v,-V^{-1}\sum_i A_iq_i\nu_i\rangle$。
+原始问题可行且由前述强制性有有限最优值；对偶可行性也可由常数
+$q_i=(n-\beta)/n$ 直接检验，因为 $\sum_iA_ih_i=nV$。
+有限维线性规划强对偶给出支持函数恒等式。又 $N_{\beta,K}$ 连续且在非零方向
+严格为正，所以 $0$ 是 $P_{\beta,K}$ 的内点，极体表示随即成立。
+\end{proof}
+
+\begin{example}[正方形、非对称三角形与圆盘]\label{cvx:explicit-shapes}
+对正方形 $Q_0$，上式恢复定理~\ref{tan:unit-cube-limit} 的切向多面体。
+取非对称三角形
+\[
+ T=\operatorname{conv}\{(-1,-1),(2,-1),(-1,2)\},\qquad |T|=\frac92.
+\]
+将三个面的数据代入式~\eqref{cvx:dual-polytope}，在 $\beta=1$ 得到
+\[
+ S_{1,T}=\operatorname{int}\operatorname{conv}
+ \{(-2,1),(-1,-1),(1,-2),(2,-1),(1,1),(-1,2)\}.
+\]
+相邻顶点的行列式求和给出 $|S_{1,T}|=9$。同样的有限顶点计算给出
+\begin{center}
+\begin{tabular}{ccccc}
+\toprule
+资料体 & $|K|$ & $\beta$ & $|S_{\beta,K}|$ & $|S_{\beta,K}|/|K|$\\
+\midrule
+$Q_0$ & $1$ & $1/2,\ 1,\ 3/2$ & $4,\ 2,\ 4$ & $4,\ 2,\ 4$\\
+$T$ & $9/2$ & $1/2,\ 1,\ 3/2$ & $18,\ 9,\ 18$ & $4,\ 2,\ 4$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+对单位圆盘 $B_2^2$ 及 $\beta=1$，旋转不变性使 $D(v,a)$ 只依赖于 $|v|$ 与 $a$。
+当 $v\ne0$ 时，凸函数 $\Phi(v,a)$ 在 $a=0$ 的导数是
+$1-\pi^{-1}|\{\theta:\cos\theta<0\}|=0$，故 $a=0$ 为最小点。
+又 $D(v,0)=|v|\int_{\pi/2}^{3\pi/2}(-\cos\theta)\,d\theta=2|v|$，从而
+\[
+ N_{1,B_2^2}(v)=\frac2\pi|v|,\qquad
+ \frac{|S_{1,B_2^2}|}{|B_2^2|}=\frac{\pi^2}{4}.
+\]
+这些例子给出不同资料体的固定模型系数。其有限代数顶点、积分和线性规划实现
+可由补充脚本复算。
+\end{example}
