@@ -75,3 +75,5 @@ run('verification/fixed_cube_matlab.m')
 第9轮的 gl:main 证明中心方体全体常数 C(1−t)=L t^n+O_J(t^(n+1))，L=2^n/[floor(2c)!(2c)^(n−floor(2c))]、c=min(β,n−β)。共同核质量修改、任意可测面层容量上界和Brunn–Minkowski凸纤维平均共同提供匹配上界，允许输入随t变化。正次首项区还给出全体余项的sharp阶；中心限制型高矩首项等于n!L。复现 `wolframscript -file verification/global_leading.wl`，MATLAB执行 `verification/global_leading_matlab.m`，再运行 `python3 verification/global_leading.py`。数值核对不替代一般证明。
 
 第9轮当前PDF为54页；正文、逐项审计、独立复审及最小复现材料同步归档，详见 `rounds/009.md`。
+
+第10轮在n=2、β=1证明矩形输入类的精确高水平上确界R(α)=(α⁻¹−α)²/2，严格超过固定正方形测试值；精确差为(1−α)⁴/(2α²)。给出任意阶精确余项，但尚未证明全体C=R或全体下一系数。复现 `wolframscript -file verification/rectangle.wl`、MATLAB执行 `verification/rectangle_matlab.m`、`python3 verification/rectangle.py`；当前PDF55页，见 `rounds/010.md`。
