@@ -1,0 +1,83 @@
+% Input after extension.tex; requires amsmath and amsthm.
+\subsection{不等指数的近端点分段}\label{subsec:weighted-endpoint}
+
+设 $a_*=\min_i a_i$，令 $k=\#\{i:a_i=a_*\}$。若并非所有
+指数都等于 $a_*$，记
+\[
+ a_+=\min\{a_i:a_i>a_*\},\qquad
+ \widehat s_*=k\left(1-\frac{a_*}{a_+}\right),\qquad
+ s_0=\min\{1,\widehat s_*\}.
+\]
+若所有指数相等，则约定 $s_0=1$。以下断言在 $0\le s<s_0$ 的范围内成立；
+仅当 $\widehat s_*<1$ 时，允许在 $s=\widehat s_*$ 取等号。情形
+$\widehat s_*=1$ 只按左极限使用，因而不把临界传递端点纳入下述结论。
+
+\begin{theorem}[第一水位区间]\label{thm:first-water-level}
+在上述范围内，水位优化函数满足
+\[
+ P_{\boldsymbol a}(s)=\left(1-\frac{s}{k}\right)^{ka_*}.
+ \tag{E.1}
+\]
+令 $\lambda_0=(1-s_0/k)^{ka_*}$（若 $s_0=1$ 且 $k=1$，取左极限
+\(\lambda_0=0\)）。在 $s_0<1$ 时对 $\lambda_0\le\lambda<1$，在
+$s_0=1$ 时对 $\lambda_0<\lambda<1$，其反函数为
+\[
+ s_{\boldsymbol a}(\lambda)
+ =k\left(1-\lambda^{1/(ka_*)}\right).
+ \tag{E.2}
+\]
+若 $d\mu=w\,dx$，则当 $\lambda$ 同时满足上述第一水位阈值条件以及
+$P_{\boldsymbol a}(1)<\lambda<1$ 时，定理 \ref{thm:weighted-transfer} 给出
+\[
+ C^{\boldsymbol a}_{c,\mu}(\lambda)
+ =C^{\rm int}_{c,\mu}\!\left(1-
+ k(1-\lambda^{1/(ka_*)})\right).
+ \tag{E.3}
+\]
+对于每个固定的非零非负 $w\in L^1_{\rm loc}$，当
+$\lambda=1-\varepsilon\uparrow1$ 时，
+\[
+ C^{\boldsymbol a}_{c,w}(1-\varepsilon)
+=1+\frac{2^n}{a_*}\varepsilon+o_{\boldsymbol a,w}(\varepsilon).
+ \tag{E.4}
+\]
+并且当 $\lambda$ 满足同一双重条件时，
+\[
+ \sup_w C^{\boldsymbol a}_{c,w}(\lambda)
+ =1+2^n\frac{k(1-\lambda^{1/(ka_*)})}
+ {1-k(1-\lambda^{1/(ka_*)})}.
+ \tag{E.5}
+\]
+\end{theorem}
+
+\begin{proof}
+先设存在较大指数。在 $s$ 的第一水位区间，令
+\[ \rho=\frac{ka_*}{k-s}. \]
+由 $s<s_0\le\widehat s_*$，有 $\rho<a_+$。水位引理 \ref{lem:water-filling}
+因此表明只有指数为 $a_*$ 的 $k$ 个坐标活跃，且每个活跃缺陷为
+$s/k$，其余缺陷为零。若所有指数均为 $a_*$，水位引理直接给出全部
+$k=m$ 个坐标活跃及同一缺陷分配。这证明 \textup{(E.1)}。当
+$\widehat s_*<1$ 且 $s=\widehat s_*$ 时，新坐标刚好以零缺陷加入，故
+公式在该非临界端点仍成立。
+\textup{(E.2)} 直接由
+\textup{(E.1)} 反解；\textup{(E.3)} 是定理
+\ref{thm:weighted-transfer} 的代入。
+
+取 $\lambda=1-\varepsilon$。二项式展开给出
+\[
+ k\left(1-(1-\varepsilon)^{1/(ka_*)}\right)
+ =\frac{\varepsilon}{a_*}+O_{\boldsymbol a}(\varepsilon^2).
+\]
+再使用固定权线性端点式
+$C^{\rm int}_{c,w}(1-t)=1+2^nt+o_w(t)$，即得
+\textup{(E.4)}。最后，将内禀全权族公式
+$\sup_wC^{\rm int}_{c,w}(1-t)=1+2^nt/(1-t)$ 代入
+\textup{(E.2)}，得到 \textup{(E.5)}。
+\end{proof}
+
+\begin{remark}
+当 $\widehat s_*<1$ 且 $s>\widehat s_*$ 时，至少一个较大指数的坐标进入水位，故
+\textup{(E.1)}--\textup{(E.2)} 不再适用；必须使用完整的分段水位
+公式。这里的结论不涉及内禀模型在临界以下的发散，也不把数值验证
+当作传递定理的证明。
+\end{remark}
