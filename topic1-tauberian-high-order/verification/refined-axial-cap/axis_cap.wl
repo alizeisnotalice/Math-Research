@@ -1,0 +1,12 @@
+ClearAll[l,b,m,bb,zz,s,vv,aa,rr,nn,dd,L];
+Print["Wolfram ",$Version];
+Print["Domain: n integer>=2, R,a>0, 0<=l<=L, b,m>=0, B>n a(R+L)^(n-1); z=b+m/B."];
+Print["positive-part identity violation: ",Reduce[bb>0&&m>=0&&Max[bb Max[l-b,0]-m,0]!=bb Max[l-b-m/bb,0],{l,b,m,bb},Reals]];
+Print["piecewise affine majorant violation: ",Reduce[bb>0&&0<=l<=L&&zz>=0&&0<=s<=L&&s<=bb&&s l-bb Max[l-zz,0]>s zz,{bb,l,L,zz,s},Reals]];
+Print["power derivative: ",D[aa((rr+l)^nn-rr^nn),l]];
+Print["power second derivative: ",D[aa((rr+l)^nn-rr^nn),{l,2}]];
+Print["n=2 low-branch exact factor: ",Factor[aa((rr+s)^2-(rr+l)^2)-2aa rr(s-l)]];
+Print["n=3 low-branch exact factor: ",Factor[aa((rr+s)^3-(rr+l)^3)-3aa rr^2(s-l)]];
+Print["n=2 normalized cap violation R=a=L=1: ",Reduce[bb>4&&0<=l<=1&&zz>=0&&(2l+l^2)-bb Max[l-zz,0]>(2zz+zz^2),{bb,l,zz},Reals]];
+Print["n=3 normalized cap violation R=a=L=1: ",Reduce[bb>12&&0<=l<=1&&zz>=0&&(3l+3l^2+l^3)-bb Max[l-zz,0]>(3zz+3zz^2+zz^3),{bb,l,zz},Reals]];
+Print["normalization powers with a=v^n: ",FullSimplify[vv^2/(vv^nn)*(vv^nn/vv),vv>0]];
