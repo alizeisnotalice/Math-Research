@@ -2,7 +2,7 @@
 \usepackage{amsmath,amssymb,amsthm,geometry,hyperref,fontspec,xeCJK}
 \setmainfont{Times New Roman}\setCJKmainfont{Songti SC}\setCJKsansfont{Heiti SC}
 \geometry{a4paper,left=25mm,right=25mm,top=23mm,bottom=24mm}
-\theoremstyle{definition}\newtheorem{theorem}{定理}[section]\newtheorem{lemma}[theorem]{引理}\newtheorem{corollary}[theorem]{推论}
+\theoremstyle{definition}\newtheorem{theorem}{定理}[section]\newtheorem{lemma}[theorem]{引理}\newtheorem{corollary}[theorem]{推论}\newtheorem{proposition}[theorem]{命题}
 \theoremstyle{remark}\newtheorem{remark}[theorem]{说明}
 \newcommand{\R}{\mathbb R}\newcommand{\1}{\mathbf 1}
 \title{中心方体的两种加权 Solyanik 模型\\共同中心多线性精确传递与端点结论}
@@ -113,6 +113,8 @@ C^{(m),\rm out}_{c,n,w}(\lambda)=C^{\rm out}_{c,w}(\Phi_m(\lambda)).
 
 \input{extension.tex}
 \input{endpoint_extension.tex}
+\section{内禀临界的可解情形}
+\input{finite_mass_critical.tex}
 \section{应用与开放问题}
 由等指数传递和逐权一阶项，固定 $m$ 与 $w$ 时
 \[
@@ -122,7 +124,7 @@ C^{(m),\rm out}_{c,n,w}(\lambda)=C^{\rm out}_{c,w}(\Phi_m(\lambda)).
 若一个中心几何族对于所有局部有限测度的弱型常数统一不超过 $B$，上面的测度扰动证明还给出 $C_\mu(a)\le1+B(1-a)/a$。此推广只使用弱型性质，不要求把 Besicovitch 交叠性质当作覆盖选择定理。
 
 
-外层幂权的匹配尖锐首项、固定权二阶极限、临界以下内禀多线性发散，以及 restricted strong type 的完整尖锐范数仍是开放问题；势论或 PDE 应用还须独立验证共同中心方体见证接口。
+外层幂权的匹配尖锐首项、固定权二阶极限、一般无限总质量权的临界以下内禀多线性发散，以及 restricted strong type 的完整尖锐范数仍是开放问题；势论或 PDE 应用还须独立验证共同中心方体见证接口。
 \begin{thebibliography}{9}
 \bibitem{Aldaz2020} J. M. Aldaz, \emph{Kissing numbers and the centered maximal operator}, arXiv:1811.10478v2, 2020.
 \bibitem{HagelsteinParissis2016} P. A. Hagelstein and I. Parissis, \emph{Weighted Solyanik estimates for the Hardy--Littlewood maximal operator and embedding of $A_\infty$ into $A_p$}, J. Geom. Anal. 26 (2016), 924--946.
