@@ -1,0 +1,151 @@
+% Input after the main definitions of Q(x,r), M_{c,mu}^{a}, and C_{c,mu}^{a}.
+% Requires amsmath, amssymb, amsthm.
+\subsection{一般无原子 Radon 测度的内禀临界发散}\label{subsec:general-critical-round11}
+
+令
+\[
+ P_{\boldsymbol a}(1)=
+ \max_{\substack{d_i\geq0\\\sum_{i=1}^m d_i=1}}
+ \prod_{i=1}^m(1-d_i)^{a_i},\qquad a_i>0. \tag{GC.1}
+\]
+
+\begin{lemma}[有限无原子集的精确比例分割]\label{lem:atomless-split-round11}
+若 $A\subset\mathbb R^n$ Borel、$0<\mu(A)<\infty$，限制测度 $\mu|_A$ 无原子，且
+$c_1,\ldots,c_m\ge0$、$\sum_i c_i=1$，则 $A$ 可分成互不相交的
+Borel 集 $A_1,\ldots,A_m$，满足 $\mu(A_i)=c_i\mu(A)$。
+\end{lemma}
+
+\begin{proof}
+取一个分离点的可数开基 $(U_\ell)_{\ell\ge1}$，并令
+\[
+ h(x)=\sum_{\ell\ge1}\frac{2\mathbf1_{U_\ell}(x)}{3^\ell}.
+\]
+这是 Borel 单射：两个点的首个不同基成员的项严格大于尾和。
+$h_*(\mu|_A)$ 无原子，因为每个纤维至多一个点，故其分布函数连续。
+介值性切出任意指定质量的 Borel 初段 $A\cap\{h\le t\}$；
+在余集上递归切出前 $m-1$ 块即得结论。
+\end{proof}
+
+\begin{theorem}[一般无原子测度的临界及次临界发散]\label{thm:general-critical-round11}
+令 $m\ge2$、$a_1,\ldots,a_m>0$，并令 $\mu$ 是 $\mathbb R^n$ 上非零、
+局部有限、无原子的 Radon 测度。则对每个
+\[
+ 0<\lambda\le P_{\boldsymbol a}(1)
+\]
+都有
+\[
+ C_{c,\mu}^{\boldsymbol a}(\lambda)=\infty. \tag{GC.2}
+\]
+因此，对任意非零 $0\le w\in L^1_{\rm loc}(\mathbb R^n)$ 的
+$d\mu=w\,dx$，以及特别地当 $a_1=\cdots=a_m=1$ 时，
+\[
+ C_{c,\mu}^{(1,\ldots,1)}(\lambda)=\infty
+ \qquad\left(0<\lambda\le\left(1-\frac1m\right)^m\right). \tag{GC.3}
+\]
+\end{theorem}
+
+\begin{proof}
+取 (GC.1) 的最大点 $\boldsymbol d=(d_1,\ldots,d_m)$。比较
+$d_i=1/m$ 可知最大值为正，故 $d_i<1$；取 $j$ 使 $d_j>0$。
+取有界 Borel 集 $B$，使
+$0<\mu(B)<\infty$；任给 $0<f<\mu(B)$，取 $F\subset B$ 满足
+$\mu(F)=f$。以下对这个 $F$ 构造集合；在有限总质量情形最后才令
+$f\downarrow0$。
+
+令 $d_*:=\min\{d_i:d_i>0\}>0$，并置
+\[
+ b_i=\begin{cases}(1-d_j)f,&i=j,\\-d_if,&i\ne j.\end{cases} \tag{GC.4}
+\]
+递归构造嵌套有界 Borel 集
+\(D_0\subset D_1\subset\cdots\uparrow\mathbb R^n\) 和其上的
+可测分割，使旧区域的颜色永不改变、$d_i=0$ 时第 $i$ 色始终为空，且
+\[
+ \mu(A_i\cap D_k)=d_i\mu(D_k)+b_i. \tag{GC.5}
+\]
+初始取 $D_0=F$，将 $F$ 全部涂为第 $j$ 色；(GC.5) 正好成立。
+
+设第 $k-1$ 步已完成，令 $K_k=[-k,k]^n$，并固定
+$0<\varepsilon<fd_*/4$。对每个 $x\in K_k$，先取
+\(R_x>1+\sup_{z\in D_{k-1}}\|z-x\|_\infty\)，且
+\(\mu(\partial Q(x,R_x))=0\)。这是可能的：固定中心的不同半径方体
+边界两两不交，局部有限性故只有至多可数个半径有正边界质量。
+在这个半径，若 $y\to x$，则
+\[
+ \mu\bigl(Q(y,R_x)\mathbin\triangle Q(x,R_x)\bigr)\longrightarrow0; \tag{GC.6}
+\]
+事实上，指示函数在边界外点态收敛，并被一个固定有界方体上的
+$\mu$-可积函数支配。故可取开邻域
+\(U_x\subset B_\infty(x,1/2)\)，使 $y\in U_x$ 时
+该对称差小于 $\varepsilon$，且 $Q(y,R_x)$ 仍包含 $D_{k-1}$。
+紧性给出有限子覆盖 $U_{k,1},\ldots,U_{k,N_k}$；记其中心、半径为
+$x_{k,\ell},R_{k,\ell}$，并令
+$Q_{k,\ell}=Q(x_{k,\ell},R_{k,\ell})$。取闭方体 $D_k$，使其包含
+$D_{k-1}$、$[-k,k]^n$，以及全部局部见证方体
+\[
+ \bigcup_{\ell=1}^{N_k}\ \bigcup_{y\in U_{k,\ell}}Q(y,R_{k,\ell}). \tag{GC.7}
+\]
+在 $D_k\setminus D_{k-1}$ 上取由有限个集合
+$Q_{k,\ell}\setminus D_{k-1}$ 生成的 Boolean 原子。每个正质量原子
+在限制测度下仍非原子，故由引理可精确分为质量比例
+$d_1,\ldots,d_m$ 的可测部分；零质量原子任意分配，$d_i=0$ 的部分
+一律取空。旧区域的颜色保持不变。
+
+这也按比例分割了不属于任何参考方体的新原子，所以 (GC.5) 由归纳
+保持。且每个 $Q_{k,\ell}$ 包含 $D_{k-1}$ 并包含在 $D_k$，故
+\[
+ \mu(A_i\cap Q_{k,\ell})=d_i\mu(Q_{k,\ell})+b_i. \tag{GC.8}
+\]
+以后颜色只添加在 $D_k$ 外，故这些等式永久有效。因
+$D_k\uparrow\mathbb R^n$，最终得到全空间的可测分割
+\(\mathbb R^n=A_1\mathbin{\dot\cup}\cdots\mathbin{\dot\cup}A_m\)，
+其中 $F\subset A_j$。令 $E_i=A_i^c\cup F$，则 $\bigcap_iE_i=F$。
+
+任取 $x\in\mathbb R^n$，选 $k$ 使 $x\in K_k$，并取
+$x\in U_{k,\ell}$。写 $Q=Q(x,R_{k,\ell})$、$Q'=Q_{k,\ell}$。
+它们含 $F$，故分母正且有限。由 (GC.4)、(GC.8)，
+\[
+ \mu(E_i\cap Q')-(1-d_i)\mu(Q')=d_if. \tag{GC.9}
+\]
+若 $d_i>0$，(GC.6) 及
+$|\mu(Q)-\mu(Q')|\le\mu(Q\triangle Q')$ 给出
+\[
+ \mu(E_i\cap Q)-(1-d_i)\mu(Q)
+ \ge d_if-(2-d_i)\varepsilon>d_if-2\varepsilon>0. \tag{GC.10}
+\]
+若 $d_i=0$，则 $A_i=\varnothing$ 且该因子恰为 $1=1-d_i$。于是
+\[
+ \prod_{i=1}^m
+ \left(\frac{\mu(E_i\cap Q)}{\mu(Q)}\right)^{a_i}
+ >\prod_{i=1}^m(1-d_i)^{a_i}=P_{\boldsymbol a}(1)\ge\lambda. \tag{GC.11}
+\]
+故光晕为 $\mathbb R^n$。若 $\mu(\mathbb R^n)=\infty$，固定上述
+$F$ 即给无穷比值；若总质量有限，光晕比为
+$\mu(\mathbb R^n)/f$，令 $f\downarrow0$ 即得 (GC.2)。等指数的
+最大点由 AM--GM 给出 $d_i=1/m$，遂得 (GC.3)。
+\end{proof}
+
+\begin{corollary}[精确有限性阈值]\label{cor:critical-threshold-round11}
+结合前述共同中心传递和统一弱型上界，对每个非零、局部有限的无原子 Radon 测度
+$\mu$ 及 $0<\lambda<1$，有
+\[
+ C_{c,\mu}^{\boldsymbol a}(\lambda)<\infty
+ \quad\Longleftrightarrow\quad \lambda>P_{\boldsymbol a}(1).
+\]
+\end{corollary}
+\begin{proof}
+本定理排除了 $\lambda\le P_{\boldsymbol a}(1)$ 的有限性；反向蕴含
+正是前述共同中心传递与统一弱型上界。
+\end{proof}
+
+\begin{remark}[原子性反例]
+无原子假设不能从普适结论中删去。若 $\mu=\delta_0$，每个允许的
+公共交集 $F=\cap_iE_i$ 都有 $\mu(F)=1$，且对 $0<\lambda<1$，
+相应光晕的 $\mu$-质量也是 $1$。因此
+\(C_{c,\delta_0}^{\boldsymbol a}(\lambda)=1\)，并不发散。
+\end{remark}
+
+\begin{remark}[假设的作用]
+无原子性只用于有限 Boolean 原子的精确比例分割；局部有限性用于选取
+边界零质量的足够大方体和上述支配收敛。含原子的测度不能任意按比例
+分割，因而本证明不覆盖该情形。
+\end{remark}
