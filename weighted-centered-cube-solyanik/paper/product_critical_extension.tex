@@ -1,0 +1,115 @@
+\subsection{任意维乘积权的临界闭合}
+设 $m\ge2$、$a_i>0$，并令 $w(x)=\prod_{\nu=1}^n w_\nu(x_\nu)$，其中每个因子非零、非负且局部可积。记 $d\mu_\nu=w_\nu\,dt$、$\mu=\otimes_\nu\mu_\nu$。算子及公共交集常数沿用前述定义，平均只取正有限质量的中心方体。
+\begin{lemma}[累计质量坐标的整数周期恒等式]\label{lem:periodic}
+设 $\mu_1(\R)=\infty$，并置
+\[
+ T(t)=\begin{cases}\mu_1((0,t]),&t\geq0,\\-\mu_1((t,0]),&t<0.\end{cases}
+ \qquad J=T(\R).
+\]
+则 $T$ 连续、非减，$J$ 是无界区间，并且对任意 Borel 集
+$B\subset J$ 有
+\[
+ \mu_1(T^{-1}(B))=|B|. \tag{P.2}
+\]
+给定 $d_1,\ldots,d_m\geq0$、$\sum_i d_i=1$，令 $S_i$ 是
+$T^{-1}$ 下周期 $1$ 的半开分割之第 $i$ 块的逆像；即在每个
+$[k,k+1)$ 中该块的长度为 $d_i$。若 $I=[u,v]$ 且
+$T(v)-T(u)=N\in\mathbb N$，则
+\[
+ \mu_1(S_i\cap I)=d_iN=d_i\mu_1(I). \tag{P.3}
+\]
+\end{lemma}
+
+\begin{proof}
+局部绝对连续性给出 $T(v)-T(u)=\mu_1((u,v])$。先对半开区间
+验证 (P.2)，再由单调类定理推广到 Borel 集；$T$ 的平坦区间的
+逆像具有 $\mu_1$-质量零，故不影响此等式。由 $\mu_1(\R)=\infty$
+知 $J$ 无界。周期分割在每一个完整长度 $1$ 的区间中给第 $i$
+块长度 $d_i$；把 (P.2) 应用于 $[T(u),T(v)]\cap J$ 即得 (P.3)。
+端点至多是零质量集合。
+\end{proof}
+
+\begin{theorem}[有无限因子的乘积权临界定理]\label{thm:product-critical}
+设 $m\ge2$。若至少一个因子满足 $\mu_\nu(\R)=\infty$，则
+\[
+ C_{c,\mu}^{(1,\ldots,1)}(\lambda)=\infty
+ \qquad\left(0<\lambda\leq\left(1-\frac1m\right)^m\right). \tag{P.4}
+\]
+更一般地，令
+\[
+ P_{\boldsymbol a}(1)=
+ \max_{\substack{d_i\ge0\\\sum_i d_i=1}}
+ \prod_{i=1}^m(1-d_i)^{a_i} \quad(a_i>0).
+ \tag{P.5}
+\]
+则对 $0<\lambda\le P_{\boldsymbol a}(1)$ 有
+\[
+ C_{c,\mu}^{\boldsymbol a}(\lambda)=\infty. \tag{P.6}
+\]
+\end{theorem}
+
+\begin{proof}
+交换坐标后可设 $\mu_1(\R)=\infty$。取 (P.5) 的最大点
+$\boldsymbol d=(d_1,\ldots,d_m)$。最大值为正（例如比较
+$d_i=1/m$），故 $d_i<1$ 对所有 $i$ 成立；并选取一个 $j$ 使
+$d_j>0$。引理的半开周期分割给出精确的集合分割
+$\R=S_1\mathbin{\dot\cup}\cdots\mathbin{\dot\cup}S_m$，其中第 $i$ 块比例为
+$d_i$。定义
+\[
+ A_i=S_i\times\R^{n-1}.
+\]
+每个 $w_\nu$ 非零，故 $\mu_\nu(\R)>0$。$J$ 无界又说明
+$\mu_1(S_j)=\infty$；从而 $A_j$ 含一个有界 Borel 集 $F$，满足
+\[
+ 0<f:=\mu(F)<\infty. \tag{P.7}
+\]
+令 $E_i=A_i^c\cup F$。由于 $F\subset A_j$，有
+$\cap_iE_i=F$。
+
+固定 $x\in\R^n$。函数
+\[
+ g_x(r)=\mu_1([x_1-r,x_1+r])
+=T(x_1+r)-T(x_1-r)
+\]
+连续、非减且趋于无穷。先选 $r_0$，使 $Q(x,r_0)$ 包含 $F$ 且其余
+每个坐标区间已有正质量；再取整数 $N>g_x(r_0)$，由介值性选到
+$r\ge r_0$ 使 $g_x(r)=N$。于是 $Q(x,r)$ 包含 $F$ 且其每个坐标
+区间都有正的 $\mu_\nu$-质量。后一个条件可行，因为每个
+$\mu_\nu(\R)>0$。局部可积性给出这些质量有限。由 (P.3) 和
+乘积结构，精确地有
+\[
+ \frac{\mu(A_i\cap Q(x,r))}{\mu(Q(x,r))}=d_i. \tag{P.8}
+\]
+于是
+\[
+ \frac{\mu(E_i\cap Q(x,r))}{\mu(Q(x,r))}
+ =\begin{cases}
+ 1-d_i,&i\ne j,\\
+ 1-d_j+f/\mu(Q(x,r)),&i=j.
+ \end{cases}
+\]
+所有右边的底数均正，故
+\[
+ \prod_{i=1}^m\left(\frac{\mu(E_i\cap Q(x,r))}{\mu(Q(x,r))}\right)^{a_i}
+ >\prod_{i=1}^m(1-d_i)^{a_i}=P_{\boldsymbol a}(1)\ge\lambda. \tag{P.9}
+\]
+这对每一个 $x$ 成立，故相应光晕为全空间。又
+$\mu(\R^n)=\prod_\nu\mu_\nu(\R)=\infty$，以 (P.7) 归一化即得
+(P.6)。等指数时，AM--GM 给 (P.5) 的唯一最大点
+$d_i=1/m$，并给出 (P.4)。
+\end{proof}
+
+\begin{remark}[适用范围]
+本证明只使用一维累计质量坐标、周期的完整整数块和乘积测度分解；
+它并不处理一般非乘积的无穷质量权。若所有因子总质量均有限，则
+本证明中 ``全空间光晕有无穷质量'' 的最后一步失效；该情形应改由
+有限非原子测度的全局等分构造单独处理。
+\end{remark}
+
+
+\begin{corollary}[全部乘积权]
+对于任意维非零乘积权及任意正指数，在 $0<\lambda\le P_{\boldsymbol a}(1)$ 时，内禀共同中心多集合常数均为无穷。
+\end{corollary}
+\begin{proof}
+若至少一个因子质量无穷，用本节定理；若所有因子总质量有限，则乘积测度总质量有限，使用命题 \ref{prop:finite-mass-critical}。特别地，取 $n=1$ 得任意一维权的不等指数版本。
+\end{proof}

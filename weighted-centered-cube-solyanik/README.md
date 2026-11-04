@@ -10,3 +10,5 @@
 本地第一至第五轮在GitHub逐轮推送要求之前完成，没有逐轮Git记录。第六轮建立可复现Git基线，此后按轮提交。
 
 复现：在src目录运行 `python3 exact_certificate.py`、`python3 star_geometry_check.py`、`python3 water_filling.py`；Mathematica运行 `wolframscript -file symbolic_check.wl`；MATLAB运行 `matlab_check.m`。在paper目录用XeLaTeX编译paper.tex两遍，需要宋体与Times New Roman。PDF及56页OCR、渲染和完整本地历史包保留于本机，不重复上传可再生产物。
+
+第7–10轮已新增显式端点分段、有限质量临界发散、一维无限质量构造和任意维乘积权临界闭合。当前状态以STATE.md最后一节和paper正文为准。
