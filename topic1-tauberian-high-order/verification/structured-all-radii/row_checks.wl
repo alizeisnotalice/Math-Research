@@ -1,0 +1,12 @@
+ClearAll["Global`*"];
+Print["Version ", $Version];
+check[label_, truth_] := If[TrueQ[truth], Print[label, " = True"], Print["FAILED ", label, " = ", truth]; Exit[1]];
+check["far-radius row count", Reduce[m>=1 && 2 m (2m+1)/(m+1)^2<3/2, m, Reals] === False];
+topWeight = (1-Abs[pl])/2+(1-Abs[pr])/2+Max[pl,0]+Max[-pr,0];
+bottomWeight = (1-Abs[pl])/2+(1-Abs[pr])/2+Max[-pl,0]+Max[pr,0];
+check["two incidence weights", FullSimplify[topWeight == 1+(pl-pr)/2 && bottomWeight == 1+(pr-pl)/2, Assumptions -> Element[{pl,pr},Reals]]];
+check["gap identity both signs", FullSimplify[(1-Abs[p])g+Abs[p](g-Sign[p]q) == g-p q, Assumptions -> Element[{p,q,g},Reals]]];
+check["area diagonal", Expand[Det[{{gx+p,q+gy},{p-gx,gy-q}}]/2-(gx gy-p q)] == 0];
+check["intermediate strip saturation", Reduce[0<p<=7 e && e>0 && 56 Min[p,e]/8<p,{p,e},Reals] === False];
+check["exact signed cancellation", Expand[lam(full+mixed+micro)-lam(full+mixed+corner)-lam(micro-corner)] == 0];
+Print["OK"];
