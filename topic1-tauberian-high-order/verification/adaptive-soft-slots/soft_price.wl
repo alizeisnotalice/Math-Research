@@ -1,0 +1,11 @@
+ClearAll[x,y,v,theta];
+Print["Mathematica: ",$Version];
+f=Max[27x y(1-x-y),0]; omega=Min[1,(27/4)Min[x,y]];
+Print["domain x,y>=0; core f=Max[27xy(1-x-y),0], omega=Min[1,27 Min[x,y]/4]"];
+Print["f>omega violation x<=y: ",Reduce[0<=x<=y && f>omega,{x,y},Reals]];
+Print["f>1 violation: ",Reduce[x>=0&&y>=0&&f>1,{x,y},Reals]];
+Print["f>27 min(x,y)/4 violation x<=y: ",Reduce[0<=x<=y&&f>27x/4,{x,y},Reals]];
+Print["quarter inequality violation: ",Reduce[x>=0&&y>=0&&x y(1-x-y)>x/4,{x,y},Reals]];
+Print["quarter completing square: ",Factor[1/4-y(1-x-y)]];
+int=FullSimplify[Integrate[v^3/theta,{theta,v^3,1},Assumptions->0<v<1],0<v<1];
+Print["integral: ",int];Print["integral identity: ",FullSimplify[int==3v^3 Log[1/v],0<v<1]];
