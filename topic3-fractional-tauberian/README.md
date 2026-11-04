@@ -141,3 +141,9 @@ run('verification/fixed_cube_matlab.m')
 第26轮将真实全体三阶亏损量化：t≤2^-8可取κ=2^-72，t≤2^-14可取κ=2^-68。两处紧性均替换为显式不等式，70项有理账本覆盖完整参数窗口；给出嵌套窗口的高矩减项及显式指数尾界。它们是可复核的保守常数，未宣称最优。见 `rounds/026.md`，复现 `verification/explicit_cubic.py`、`verification/explicit_cubic.wl`、`verification/explicit_cubic_matlab.m`。
 
 第26轮当前PDF为94页，两组显式参数、有限差商传递和高矩尾界均经独立终审；标准库70项证书、编译、引用与逐页版面验收通过。
+
+第27轮推广至四个任意、互不相同的有界可测角孔，允许孔形随阈值变化：真实光晕统一为2t²+B t³+O_K(t⁴)，B≤2，固定K整个角孔类的最优三阶系数恰为2。相同孔的等号仅为空孔或单位方形孔，并有L1定性稳定性。非单调输入用径向内外夹逼；不同孔靠四象限耦合，不使用反射平均。未据此闭合一般输入的三阶常数。见`rounds/027.md`。
+
+复现`verification/general_corners.py`（标准库精确积分）、`verification/general_corners.wl`和`verification/general_corners_matlab.m`；可选`verification/general_corners_search.py`保存六进程106,080次探索配置。缓存Gauss节点后同配置用时约2.29秒，避免让模型重复算术。
+
+第27轮当前PDF为96页；全页缩略图、新增42至44页及最终参考文献页已视觉检查。XeLaTeX/BibTeX编译通过，无溢出、缺字或未解析引用；306标签、296交叉引用、24条题录及原稿72/72项映射一致。参考文献统一紧凑间距，避免末条单独占页。

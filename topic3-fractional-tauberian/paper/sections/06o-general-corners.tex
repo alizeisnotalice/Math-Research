@@ -1,0 +1,187 @@
+\section{一般有界角孔的三阶刚性}\label{gc:section}
+
+方形角孔的分段计算还留下一个问题：改变孔的形状，能否改善三阶项？
+下面允许任意可测角孔，且孔形可随阈值变化。关键是把损失写成非负积分，
+并用径向内外夹逼代替输入的单调性。
+
+\begin{theorem}[任意有界角孔的一致展开]\label{gc:expansion}
+固定 $K<\infty$。令 $D\subset[0,K]^2$ 可测，从 $Q_0=[-1/2,1/2]^2$
+四角各挖去按坐标反射的 $tD$，得到 $E_{D,t}$；$D$ 的坐标表示离相应角点的向内距离。
+记 $M=|D|$，并定义
+\[
+ T_1(s)=|D\cap\{\xi>s\}|,\quad T_2(q)=|D\cap\{\zeta>q\}|,\quad
+ T_{12}(s,q)=|D\cap\{\xi>s,\zeta>q\}|.
+\]
+置 $m(x)=\min(x,1-x)$、$s=x-u$、$q=1-x-u$，以及
+\begin{align}
+ \Phi_D(x,u)&=u^2+u+x(1-x)+M-T_1(s)-T_2(q)-T_{12}(s,q),\label{gc:phi}\\
+ G_D(x)&=\max_{|u|\le m(x)}\Phi_D(x,u),\qquad
+ B(D)=4\int_0^1G_D(x)\,dx.\label{gc:B}
+\end{align}
+则对所有这些 $D$，当 $t\downarrow0$ 时一致有
+\begin{equation}\label{gc:actual}
+ \frac{|H_{1,\mathcal Q_c}(1-t,E_{D,t})|}{|E_{D,t}|}
+ =2t^2+B(D)t^3+O_K(t^4),\qquad B(D)\le2.
+\end{equation}
+特别地允许 $D=D_t$ 任意变化，但此时三阶项应写成 $B(D_t)t^3$，
+不预设 $B(D_t)$ 收敛。这里不要求 $D$ 凸、连通、下角单调或具有规则边界。
+\end{theorem}
+
+\begin{proof}
+取 $tK<1/2$，四孔不相交，故 $|E_{D,t}|=1-4Mt^2$。
+$Q_0$ 在原点给出归一化平均 $\sqrt{1-4Mt^2}>1-t$。
+共同框架引理~\ref{gl:frame}因此把全部高水平见证的中心和边长分别限制为
+$O_K(t)$ 与 $1+O_K(t)$；相同论证适用于 $1-Ct$ 的固定阈值窗口。
+
+写第一象限中心为 $tv=tr(x,1-x)$，边长为 $1+2ut$。
+令 $b_j=\max(0,-2u,v_j-u)$。未挖孔的交面积为
+$(1-tb_1)(1-tb_2)$。角孔的捕获面积记为 $t^2J_D(v,u)$；
+它是 $D$ 与至多四个坐标矩形相交的面积之和。
+条带估计给出只依赖 $K$ 的统一 Lipschitz 模，因为
+\[
+ |T_1(s)-T_1(s')|\le K|s-s'|,\quad
+ |T_{12}(s,q)-T_{12}(s',q')|\le K(|s-s'|+|q-q'|).
+\]
+同一估计适用于全部局部捕获矩形，无需边界正则性。
+于是紧参数框架上最大化的归一化平均具有一致展开
+\[
+ 1-tD_0(v,u)+t^2F_D(v,u)+O_K(t^3),\quad
+ D_0=2u+b_1+b_2,\quad F_D=2uD_0+b_1b_2-J_D+2M.
+\]
+平坦区为 $I_{r,x}=[-rm,rm]$，且
+$D_0\ge r+\operatorname{dist}(u,I_{r,x})$，在区间内等号成立。
+将 $u$ 投影到此区间，二阶项增加至多 $L_Kt^2$ 乘投影距离，
+不足抵消一阶损失。因此对整个尺度上确界，可一致写为
+\begin{equation}\label{gc:radial-score}
+ V_{D,t}(r,x)=1-tr+t^2\max_{u\in I_{r,x}}F_D(r(x,1-x),u)+O_K(t^3).
+\end{equation}
+这里仅需保留至少达到 $1-Ct$ 的尺度，故共同框架已排除远尺度。
+
+在平坦区，靠中心方向的角孔被全部捕获，其余三孔分别贡献
+$T_1(rx-u)$、$T_2(r(1-x)-u)$、$T_{12}(rx-u,r(1-x)-u)$。
+因而 $r=1$ 时 $F_D=\Phi_D$。
+先由式~\eqref{gc:radial-score}的统一有界性得：$r<1-C_Kt$ 全在光晕内，
+$r>1+C_Kt$ 全在其外。在剩余环带，Lipschitz 界及平坦区端点随 $r$ 的
+Lipschitz 变化给出 $\max F_D=G_D(x)+O_K(|r-1|)$。取足够大 $A_K$，遂有
+\[
+ \{0\le r<1+tG_D(x)-A_Kt^2\}\subset H\text{ 的径向截面}
+ \subset\{0\le r<1+tG_D(x)+A_Kt^2\}.
+\]
+这是内外夹逼，不声称中间的截面连通。严格阈值由代回平均后分别严格高于和
+严格低于 $1-t$ 保证。按雅可比 $t^2r$ 积分并相加四象限，得到
+\[
+ |H|=2t^2+4t^3\int_0^1G_D(x)\,dx+O_K(t^4).
+\]
+再除以 $1-4Mt^2$ 只影响四阶。余下的上界由下一命题给出。
+\end{proof}
+
+\begin{proposition}[非负损失、等号和稳定性]\label{gc:rigidity}
+式~\eqref{gc:phi}--\eqref{gc:B}也可将角孔示性函数替换为任意
+$0\le f\le1$、支撑于固定 $[0,K]^2$ 的密度，尾量及 $M$ 均改为对应积分。
+此时 $G_f(x)\le2m(x)$，且
+\[
+ B(f)=2\quad\Longleftrightarrow\quad
+ f=0\ \text{或}\ f=\mathbf1_{[0,1]^2}\quad\text{几乎处处}.
+\]
+若 $K<1$，第二个候选不在允许类中，应删去。
+此外，对每个 $\varepsilon>0$，存在 $\delta(K,\varepsilon)>0$，使
+$B(f)>2-\delta$ 蕴含 $f$ 到上述允许极值密度之一的 $L^1$ 距离小于 $\varepsilon$。
+\end{proposition}
+
+\begin{proof}
+将 $f$ 在支撑外延为零。把平面按 $s,q$ 分成四块可得
+\[
+ M-T_1(s)-T_2(q)-T_{12}(s,q)
+ =\int_{[0,s]\times[0,q]}f-2\int_{[s,\infty)\times[q,\infty)}f.
+\]
+因 $|u|\le m$，$s,q\in[0,1]$。直接整理得精确恒等式
+\begin{equation}\label{gc:defect}
+ 2m-\Phi_f(x,u)=2(m^2-u^2)
+ +\int_{[0,s]\times[0,q]}(1-f)
+ +2\int_{[s,\infty)\times[q,\infty)}f\ge0.
+\end{equation}
+积分即 $B\le4\int_0^1 2m\,dx=2$。
+
+若 $B=2$，由 $G_f$ 连续，所有内点 $x$ 均为点态等号，并有最大化尺度。
+式~\eqref{gc:defect}迫使 $u=\pm m$。
+若 $M>0$，在 $x=1/2$ 不能选正端点，其损失为 $2M$；负端点迫使
+$f=1$ 于单位方形，且 $f=0$ 于 $[1,\infty)^2$。
+单位方形的质量随后在每个 $0<x<1$ 排除正端点。
+在左半区取负端点再令 $x\downarrow0$，得 $f=0$ 于
+$(0,\infty)\times[1,\infty)$；右半区令 $x\uparrow1$，得另一个外条带也无质量。
+故 $f$ 恰为单位方形密度。两个候选反代均取等号。
+
+最后，允许的密度类在 $L^\infty([0,K]^2)$ 中弱星紧。
+弱星收敛使各矩形尾积分逐点收敛，而上述统一 Lipschitz 模使其一致收敛，
+从而 $G_f$ 一致收敛，$B(f)$ 连续。
+若稳定性不成立，可取远离两个候选且 $B\to2$ 的序列；弱星极限必为上述候选。
+因密度介于零与一之间，弱星收敛到示性函数即蕴含 $L^1$ 收敛：
+分别在该集合及其补集积分即可。这给出矛盾。
+\end{proof}
+
+\begin{theorem}[四个独立角孔的耦合上界]\label{gc:four}
+允许四角分别使用任意可测孔 $D_c\subset[0,K]^2$，$c=0,1,2,3$。
+用二进制位分别标记横、纵符号，以 $c\oplus1$、$c\oplus2$、$c\oplus3$
+表示横邻、纵邻和对角角点；每个孔的坐标均为沿两坐标轴向内的距离。
+记 $M_c=|D_c|$、$M_{\rm tot}=\sum_cM_c$，下标 $c$ 的尾量取自 $D_c$。
+定义
+\begin{align*}
+ g_c(x,u)&=u^2+u+x(1-x)+\frac{M_{\rm tot}}2-M_c\\
+ &\quad-T_{1,c\oplus1}(x-u)-T_{2,c\oplus2}(1-x-u)
+ -T_{12,c\oplus3}(x-u,1-x-u),\\
+ G_c(x)&=\max_{|u|\le m(x)}g_c(x,u),\qquad
+ B(D_0,D_1,D_2,D_3)=\sum_c\int_0^1G_c(x)\,dx.
+\end{align*}
+所得真实集合 $E_t$ 满足一致展开
+\[
+ \frac{|H_{1,\mathcal Q_c}(1-t,E_t)|}{|E_t|}
+ =2t^2+B(D_0,D_1,D_2,D_3)t^3+O_K(t^4),\qquad B\le2.
+\]
+四孔均可随 $t$ 任意变化，只需共用固定支撑界 $K$。
+耦合泛函上界也对四个独立孔密度 $0\le f_c\le1$ 成立。
+因此，对固定 $K$ 的整个四角孔类取上确界，得到
+$2t^2+2t^3+O_K(t^4)$；下界由空孔即未挖角正方形给出。
+\end{theorem}
+
+\begin{proof}
+此时质量为 $1-M_{\rm tot}t^2$，故归一化的二阶补偿为 $M_{\rm tot}/2$。
+在象限 $c$ 的平坦尺度区，捕获孔面积除以 $t^2$ 正是
+$M_c+T_{1,c\oplus1}+T_{2,c\oplus2}+T_{12,c\oplus3}$。
+定理~\ref{gc:expansion}的条带界、尺度投影和径向夹逼逐象限适用，
+其常数仅依赖 $K$。每象限面积为
+$t^2/2+t^3\int_0^1G_c(x)\,dx+O_K(t^4)$，相加即得展开。
+这一步不要求输入具有任何反射对称性。
+
+为证上界，固定 $x$，让四个尺度 $u_c\in[-m,m]$ 各自独立，
+置 $s_c=x-u_c$、$q_c=1-x-u_c$，并将 $g_c$ 中三项尾量及质量补偿记为 $K_c$。
+对孔下标 $j$ 重组得
+\[
+ \sum_cK_c=\sum_j\{M_j-T_{1,j}(s_{j\oplus1})-T_{2,j}(q_{j\oplus2})
+ -T_{12,j}(s_{j\oplus3},q_{j\oplus3})\}
+ \le\sum_cs_cq_{c\oplus3}.
+\]
+最后一步使用对任意密度孔的积分界
+\[
+ M_j-T_{1,j}(A)-T_{2,j}(B)\le\int_{[0,A]\times[0,B]}f_j\le AB,
+\]
+并丢弃非正的最后一项。
+若 $x\le1/2$，恒等式
+$2x-[u_c^2+u_c+x(1-x)]=s_c(2-q_c)$ 给出
+\[
+ \sum_cg_c\le8x-\sum_cs_c(2-q_c-q_{c\oplus3})\le8x,
+\]
+因为 $0\le s_c,q_c\le1$。
+若 $x\ge1/2$，交换 $s,q$ 并重编号，同样得到
+$\sum_cg_c\le8(1-x)$。
+这对所有独立尺度同时成立，故 $\sum_cG_c(x)\le8m(x)$。
+积分得 $B\le2$，空孔达到等号。
+\end{proof}
+
+\begin{remark}\label{gc:scope}
+本节给出固定有界角孔类的真实三阶上界；相同孔还具有完整等号分类和定性稳定性，
+但未给出稳定性的显式速率或四个不同孔的完整等号分类。
+若允许 $K=K(t)\to\infty$，统一余项不再由本证明保证。
+边界薄层和一般输入也未被此定理覆盖；不能仅以反射平均约化，
+因为尺度上确界对孔密度为凸函数，平均可能使泛函减小。
+因此真实全体常数的三阶区间仍为 $[2,10/3-2^{-68}]$，极限存在性仍待证明。
+\end{remark}
