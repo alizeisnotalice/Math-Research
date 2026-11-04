@@ -1,0 +1,18 @@
+ClearAll[w,b,z,tau];
+Print["Mathematica ",$Version];
+Print["Domain w>0, b>=0, z in [-w/2,w/2]; ell=Min[w,Max[0,z-w/2+b]]."];
+f1=FullSimplify[Integrate[z-w/2+b,{z,w/2-b,w/2}],Assumptions->w>0&&0<=b<=w];
+f2=FullSimplify[Integrate[z-w/2+b,{z,-w/2,3w/2-b}]+Integrate[w,{z,3w/2-b,w/2}],Assumptions->w>0&&w<=b<=2w];
+f3=Integrate[w,{z,-w/2,w/2}];
+Print["exact branch integrals: ",{f1,f2,f3}];
+Print["expected formulas: ",FullSimplify[{f1-b^2/2,f2-(w^2-(2w-b)^2/2),f3-w^2}]];
+Print["endpoint discontinuities: ",FullSimplify[{(f1-f2)/.b->w,(f2-f3)/.b->2w}]];
+Print["derivatives: ",{D[f1,b],D[f2,b],D[f3,b]}];
+Print["negative derivative counterexamples: ",{Reduce[w>0&&0<=b<=w&&D[f1,b]<0,{w,b},Reals],Reduce[w>0&&w<=b<=2w&&D[f2,b]<0,{w,b},Reals]}];
+Print["bound counterexamples 0<=tau<=1, tau w<=b<=w: ",Reduce[w>0&&0<=tau<=1&&tau w<=b<=w&&f1<tau w b/2,{w,b,tau},Reals]];
+Print["guard 0<=b<=w and branch lower endpoint: ",Reduce[w>0&&0<=b<=w&&(w/2-b< -w/2||w/2-b>w/2),{w,b},Reals]];
+Print["guard w<=b<=2w and clipping point: ",Reduce[w>0&&w<=b<=2w&&(3w/2-b< -w/2||3w/2-b>w/2),{w,b},Reals]];
+Print["complete"];
+ClearAll[hh,bb,ee,dd,alpha,wt,dep,del];
+Print["positive-part violation: ",Reduce[hh>=0&&bb>=0&&ee>=0&&dd>=0&&Max[0,hh+bb-ee-dd]-Max[0,hh-ee]<bb-ee-dd,{hh,bb,ee,dd},Reals]];
+Print["normalized resolved mixed target length violation: ",Reduce[alpha>0&&wt>=alpha&&0<=dep<=1/4&&0<=del<=1/4&&Min[wt,Max[0,1-dep-del]]<Min[1/2,alpha],{alpha,wt,dep,del},Reals]];
