@@ -74,3 +74,5 @@ latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 各包README和`rounds/`保留具体输入、实际输出、范围与复现命令。历史必要构造证书保留在对应包，不为CPU占用重复旧批次；更细构造的一侧展开与真实常数的匹配渐近分开记录。
 
 第24轮：`rounds/024.md` 给二维完全有理有限输入族的实际比值展开 $L_2+(4/27)av^6-(8/9)av^7+O(av^8)$。这是更细一侧下界；真实七阶系数尚未确定。完整证明、独审及最小有理/符号证书置于正文外，38页PDF未变。
+
+第25轮：一般固定n的安全外包族已给实际比值 $L_n+K_n av^6-(n+4)K_n av^7+O_n(av^8)$，见rounds/025.md及完整独审。只是更细下界；下一步须计目标孔缺角的实际反馈。计算包用4个Wolfram子核及Fraction周期预算，PDF保持。

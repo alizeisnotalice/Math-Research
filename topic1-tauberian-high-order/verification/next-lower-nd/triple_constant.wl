@@ -1,0 +1,10 @@
+Print["VERSION ",$Version," PID ",$ProcessID];
+hlead=3^n kbar^2 u^4/(4n);e=kbar u^3;a=(2u)^n;
+expr=8n Binomial[n-1,2] hlead e^2(2u)^(n-3)/(a u^7);
+Z=3^n Binomial[n-1,2] kbar^4/4;
+ass=Element[n,Integers]&&n>=3&&u>0&&kbar>0;
+Print["normalization=",InputForm[FullSimplify[expr,ass]]];
+Print["general identity=",InputForm[FullSimplify[expr==Z,ass]]];
+Print["slack identity=",InputForm[FullSimplify[n(1+Z/n)-Z==n,ass]]];
+Print["n2 Z=",InputForm[FullSimplify[Z/.n->2,kbar>0]]];
+Print["n2 triple=",InputForm[FullSimplify[expr/.n->2,u>0&&kbar>0]]];
