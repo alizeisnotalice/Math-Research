@@ -78,3 +78,5 @@ latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 第25轮：一般固定n的安全外包族已给实际比值 $L_n+K_n av^6-(n+4)K_n av^7+O_n(av^8)$，见rounds/025.md及完整独审。只是更细下界；下一步须计目标孔缺角的实际反馈。计算包用4个Wolfram子核及Fraction周期预算，PDF保持。
 
 第26轮：利用目标实际预删角臂救回源层，把一般维一侧下一系数提高到 $-(n+26/9)K_n$，实际族余项为 $O_n(av^8)$。见rounds/026.md、冻结证明与独审。真实七阶上界仍待闭合；忽略目标缺量的路线已被此构造排除。最小计算包为6文件，PDF未变。
+
+第27轮：二维实际质量根的两临界接触权已推进到 $(|E|+M)/(1+v)^2+O(v^{9/2}S)$，无须LT收敛速率；见rounds/027.md。一般维数仍缺实际角面片Slot容量；二维新计数本身不识别七阶系数。独审及3文件Mathematica核置于正文外。
