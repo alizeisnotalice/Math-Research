@@ -133,4 +133,132 @@ $s>0$ & 无穷 & $0<\tau<n$
 \end{tabular}
 \end{center}
 特别是角向密度趋零并不妨碍有限的近单位首项。对 $-1<s<0$，这里仅处理原点主导的严格区间；
-$\tau=n(1+s)$ 及其外的近单位渐近不由本命题断言。
+临界次数 $\tau=n(1+s)$ 由下节处理，更大次数仍另行研究。
+
+\subsection{负角幂临界点的对数渐近}\label{subsec:critical-angular}
+当上节负角幂的次数达到 $\tau=n(1-\gamma)$ 时，所需角向矩恰好发散。
+此时完整弱型仍有限，但近单位首项出现对数。以下固定 $n\ge2$、$0<\gamma<1$，记
+\[
+\begin{gathered}
+ \beta=1-\gamma,\qquad \tau=n\beta,\qquad
+ w(x)=\bigl(\rho(x)^{n-1}|x_1|\bigr)^{-\gamma},\\
+ c_n=\frac{n-1}{n},\qquad b_{n,\gamma}=\frac{(n-1)\beta}{n-\gamma},
+ \qquad J_{n,\gamma}=b_{n,\gamma}c_n^{-\beta}.
+\end{gathered}\tag{AC.1}
+\]
+这里 $K=[-1,1]^n$、$\rho=\|\cdot\|_\infty$；零测超平面上仍可任意赋值。
+令 $\kappa=\mu_w(K)=2^n(n-\gamma)/(n\beta^2)$。
+
+\begin{lemma}[临界权的局部精确包络]\label{lem:critical-local}
+对 $0<u<1$，令 $L>0$ 是
+\[
+ u=e^{-L}(1+c_nL) \tag{AC.2}
+\]
+的唯一解，并定义 $F(u)=e^{-\beta L}(1+b_{n,\gamma}L)$。
+则对每个 $R>0$，
+\[
+ \sup_{\substack{A\subset RK\\|A|\le u|RK|}}\mu_w(A)
+ =\kappa R^\tau F(u),\qquad
+ F(u)=J_{n,\gamma}u^\beta[\log(1/u)]^\gamma
+ \left[1+O_{n,\gamma}\!\left(\frac{\log\log(1/u)}{\log(1/u)}\right)\right]. \tag{AC.3}
+\]
+此外全部平移方体的集合浓度满足
+\[
+ \Omega_w(u)=O_{n,\gamma}\bigl(u^\beta[1+\log(1/u)]^\gamma\bigr)
+ \qquad(u\downarrow0). \tag{AC.4}
+\]
+\end{lemma}
+\begin{proof}
+先取 $R=1$。以 $a=e^{-L}$，最优集为
+$A_a=\{x\in K:|x_1|\rho(x)^{n-1}<a\}$。
+内方体 $\rho<a^{1/n}$ 的体积与质量分别为 $2^na$、$\kappa a^\beta$。
+在其外部，令 $s=\|(x_2,\ldots,x_n)\|_\infty$，则
+$a^{1/n}<s<1$ 且 $|x_1|<a/s^{n-1}$；切片积分给出
+\[
+ |A_a|=2^na(1+c_nL),\qquad
+ \mu_w(A_a)=\kappa a^\beta(1+b_{n,\gamma}L). \tag{AC.5}
+\]
+$A_a$ 是 $w$ 在 $K$ 内的严格超水平集，其边界为零测集，故等体积交换给出精确最大值。
+(AC.2) 的右端严格递减且从 $1$ 降到 $0$，因而解唯一。
+记 $l=\log(1/u)$，则 $L=l+\log(1+c_nL)$。由 $l\le L\le nl$，得到 $L=l+O(\log l)$。
+将 $e^{-L}=u/(1+c_nL)$ 代入 $F$ 即得渐近式。
+一般 $R$ 由齐次性给出。
+
+为证 (AC.4)，取 $Q=x+rK$。若 $r<\rho(x)/2$，径向因子的振幅比至多
+$3^{(n-1)\gamma}$；一维 $|x_1|^{-\gamma}$ 的集合浓度为 $O_\gamma(u^\beta)$，
+由前一引理的区间重排和切片论证，$\mu_w(A)/\mu_w(Q)=O_{n,\gamma}(u^\beta)$。
+若 $r\ge\rho(x)/2$，缩放后 $Q/r\subset3K$ 且
+$\mu_w(Q/r)\ge2^n3^{-n\gamma}$。
+将 $A/r$ 的体积上界 $2^nu$ 代入 $3K$ 内的精确包络，其质量至多
+$\kappa3^\tau F(u/3^n)$。由 (AC.3) 即得 (AC.4)。
+\end{proof}
+
+\begin{theorem}[临界角向幂权的尖锐对数首项]\label{thm:critical-angular}
+对 (AC.1) 的权，
+\[
+ C^{\rm out}_{K,w}(1-t)-1
+ \sim J_{n,\gamma}t^{1-\gamma}[\log(1/t)]^\gamma\qquad(t\downarrow0). \tag{AC.6}
+\]
+\end{theorem}
+\begin{proof}
+沿用定理 \ref{thm:hom-leading} 的短、长见证分解，令
+$l=\log(1/t)$、$C=l^{1/(2n)}$。角向 $v=(\rho/|x_1|)^\gamma$ 满足
+$\Omega_v(t)=O(t^\beta)$，重复 (H.6) 证明中的环带求和，给出短类质量比
+\[
+ O(C^{n-\tau}t^\beta)=O(t^\beta l^{\gamma/2})=o(t^\beta l^\gamma). \tag{AC.7}
+\]
+这一步不使用发散的角向 $L^{1/\gamma}$ 矩。
+
+长见证球 $Q=x+rK$ 的缺失体积小于 $t|Q|$，由 (AC.4) 得
+\[
+ \mu_w(E)\ge\mu_w(Q)(1-\Omega_w(t))
+ \ge\kappa r^\tau A_C(1-\Omega_w(t)),\qquad
+ A_C\ge(1-C^{-1})^\tau. \tag{AC.8}
+\]
+因此实际长半径上确界 $R$ 有限。相同的共同核心论证给
+$T_0\subset(R/C)K\setminus E$、$|T_0|\le t2^nR^n$。
+用 (AC.3) 而非全空间重排，并令见证半径趋于 $R$，得到
+\[
+ \frac{\mu_w(T_0)}{\mu_w(E)}
+ \le\frac{C^{-\tau}F(tC^n)}{A_C(1-\Omega_w(t))}
+ =J_{n,\gamma}t^\beta l^\gamma(1+o(1)). \tag{AC.9}
+\]
+这里 $tC^n\to0$、$n\log C=o(l)$，且 $\tau=n\beta$ 使 $C$ 的幂相消。
+以上估计对全部允许输入统一。
+
+下界取 $\delta=1/l$，在 $\delta K$ 内选最优超水平孔 $A_t$，使
+$|A_t|=2^nt(1-2\delta)^n$，并令 $E=K\setminus A_t$。
+当 $t$ 小时，孔中每点 $x$ 的半径 $1-\rho(x)$ 中心方体包含整个孔且位于 $K$，
+缺失比例至多 $t[(1-2\delta)/(1-\delta)]^n<t$。
+再用 $E$ 的密度点，有 $K\subset\{M_K\1_E>1-t\}$ 模零。令
+\[
+ q_t=\frac{\mu_w(A_t)}\kappa
+ =\delta^\tau F\!\left(\frac{t(1-2\delta)^n}{\delta^n}\right),
+\]
+则 (AC.3) 给 $q_t\sim J_{n,\gamma}t^\beta l^\gamma\to0$，
+而 $C^{\rm out}_{K,w}(1-t)-1\ge q_t/(1-q_t)$，给出匹配下界。
+\end{proof}
+由精确共同中心传递，固定不等正指数 $\boldsymbol a$、$a_*=\min_i a_i$ 时还有
+\[
+ C^{\boldsymbol a,\rm out}_{K,w}(1-\varepsilon)-1
+ \sim J_{n,\gamma}a_*^{-\beta}\varepsilon^\beta
+ [\log(1/\varepsilon)]^\gamma. \tag{AC.10}
+\]
+例如 $n=2$、$\gamma=1/2$ 时，$J_{2,1/2}=\sqrt2/3$。
+$n=1$ 没有角向奇性，不能沿用该对数公式；此时已有纯幂权首项为 $t^{1-\gamma}$。
+本定理不涉及 $\tau>n(1-\gamma)$ 的近单位主项。
+
+\begin{corollary}[一个非尖锐的相对余项]
+令 $l=\log(1/t)$、$r_\gamma=\gamma/(1+n\gamma)$。则
+\[
+ C^{\rm out}_{K,w}(1-t)-1
+ =J_{n,\gamma}t^\beta l^\gamma\bigl[1+O_{n,\gamma}(l^{-r_\gamma})\bigr]. \tag{AC.11}
+\]
+\end{corollary}
+\begin{proof}
+在上界中改取 $C=l^{r_\gamma}$。长类的相对误差为
+$O(C^{-1})+O(\log l/l)+O(\Omega_w(t))$；短类相对主项为
+$O(C^{n\gamma}/l^\gamma)$。因为 $r_\gamma(1+n\gamma)=\gamma$，两项均为
+$O(l^{-r_\gamma})$。下界所用 $\delta=1/l$ 给出相对误差 $O(\log l/l)$，
+且 $q_t$ 比任意负次对数幂衰减更快。夹逼即得；不声称该余项最优或给出了精确第二项。
+\end{proof}

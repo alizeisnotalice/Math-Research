@@ -53,3 +53,12 @@
 
 ## 第29轮核对
 再次读取[Hagelstein–Parissis arXiv:1405.6631v2](https://arxiv.org/html/1405.6631v2)摘要、§1定义及§1.1中心讨论。其主要常数以包含点的非中心方体定义；本文集合浓度向中心Tauberian超额的桥梁使用自含测度扰动，未借用非中心结论的指数或精确系数。新增广义齐次首项是本文完整上下界推导，不声称已完成穷尽文献的新颖性认定。
+
+
+## 第30轮：近期文献范围更新
+2026-11-05实际检索并读取两篇原始预印本的版本页、摘要、定义和主定理段：
+
+- [Mayukh Mukherjee, A sharp covering theorem and Solyanik estimates for Euclidean balls, arXiv:2609.07880v1（2026-09-07）](https://arxiv.org/html/2609.07880v1)：其Theorem B陈述无权非中心欧氏球的2/(n+1)匹配阶，Theorem A为球的膨胀覆盖/重叠界。这里只记录预印本陈述，未独立验证其完整证明；本文不使用这些结论。
+- [Kesen Huang, Sharp Solyanik estimates for discrete and ergodic Hardy–Littlewood maximal operators, arXiv:2610.41156v1（2026-10-30）](https://arxiv.org/html/2610.41156v1)：Theorem1.1及Corollary1.3陈述离散/遍历非中心球的1/n阶，并区分自由作用与一般作用。不是本文连续中心加权模型，也不是共享见证多集合传递。
+
+因此不继续沿用旧文献中“非中心欧氏球指数未知”的历史表述作为当前研究状态；同时不把这些新预印本的陈述当成本文已核验的外部工具。此次搜索并非穷尽，本文临界加权对数首项的新颖性不作首次声明。

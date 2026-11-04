@@ -1,0 +1,24 @@
+{
+  "scope": "scalar local-envelope, long-class core, and strict-hole mass diagnostics only; not a proof of the all-input theorem",
+  "formula_version": "strict lower u_minus=u*(1-2*delta)^n/delta^n; geometry requires C>2, delta<1/3, u<1",
+  "parameters": {
+    "n": [2, 3],
+    "gamma": ["1/4", "1/2", "3/4", "9/10"],
+    "k": [8, 16, 32, 64, 128, 256, 512, 1024, 4096],
+    "python_decimal_precision": 120,
+    "wolfram_working_precision": 240
+  },
+  "python_fresh": {"tasks": 72, "failures": 0, "actual_workers": 15, "geometry_valid_rows": 48, "max_inverse_residual": "3e-117", "source_sha256": "e0e7bd79e53ab5adaf0c02e8d554982587e803890e0887d0e6d89fb9c253a7b7"},
+  "python_replay": {"tasks": 72, "failures": 0, "reused_rows": 72},
+  "wolfram": {"rows": 72, "geometry_valid_rows": 48, "numeric_residual_guard": "<1e-120", "exact_slice_coefficient_guard": "passed", "source_sha256": "bae17aa4dcaace7dd1b522271cbc5304dbb6d9e3e677d38822a4b2a5f8384d76"},
+  "matlab": {"rows": 72, "geometry_valid_rows": 48, "max_inverse_residual": "4.55e-13", "static_analysis_issues": 0, "source_sha256": "885059ccc81d42c5f00dcc78ade75130eceeb20d40753a28949cd1e02fc0f8d3"},
+  "representative_k4096": {
+    "n2_gamma1_2": {"kappa": "0.4714045207910317", "local": "0.4723385335262744", "upper": "0.4720089022501129", "strict_lower": "0.4706869355988212"},
+    "n3_gamma9_10": {"kappa": "0.09917902323737244", "local": "0.09977776981241584", "upper": "0.09965280876596071", "strict_lower": "0.09900687444343775"}
+  },
+  "repair_history": [
+    "An early MATLAB direct-u calculation underflowed for k>=1024; final MATLAB code is entirely log-domain.",
+    "An early Wolfram symbolic residual calculation emitted extra-precision warnings; final code evaluates a finite-precision ProductLog branch and guards numerical TrueQ residuals.",
+    "The initial lower diagnostic used (1-delta)^n.  The final strict geometric witness uses (1-2*delta)^n; the former is retained only as an explicitly labelled asymptotic comparison in Python output."
+  ]
+}
