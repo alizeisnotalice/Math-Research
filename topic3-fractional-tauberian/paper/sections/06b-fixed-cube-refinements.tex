@@ -147,3 +147,108 @@ $\alpha^{-1/c}-1$ 的同心正方形。对 $B$ 分支，区域为
 这些固定参数公式给出全体 Tauberian 常数的显式测试下界；全体集合的匹配上界仍是
 另一个形状优化问题。
 \end{remark}
+
+\subsection{中间临界点的两层一致过渡}
+
+固定参数展开不能直接代入随阈值移动的 $\beta$：在 $\beta=1$ 附近，
+$B$、$C$ 的一阶损失相同，二阶损失决定实际边界。
+下面的公式同时保留这两个候选，因此也覆盖其再次退化的情形。
+
+\begin{theorem}[中间临界点的一致四阶公式]\label{fix:critical-uniform}
+记 $t=1-\alpha$、$\beta=1+\lambda t$，并令
+\[
+ m_\lambda=\max\{-\lambda,1+\lambda\},\qquad
+ I(\lambda,t)=\int_0^{1/2}u
+ \left|1+2\lambda-2\lambda t(1-u)\right|\,du.
+\]
+对任意有限 $\Lambda>0$，当 $|\lambda|\le\Lambda$、$t\downarrow0$ 时，
+\begin{equation}\label{fix:composite-fourth}
+ V_{1+\lambda t}(1-t)
+ =2t^2+t^3[1+8I(\lambda,t)]
+       +2m_\lambda^2t^4+O_\Lambda(t^5).
+\end{equation}
+特别地，一致地有
+\begin{equation}\label{fix:outer-critical}
+ V_{1+\lambda t}(1-t)
+ =2t^2+\max\{-2\lambda,2+2\lambda\}t^3+O_\Lambda(t^4).
+\end{equation}
+更细地，若 $\beta=1-t/2+\mu t^2$，则对任意有限 $M>0$，在 $|\mu|\le M$ 上一致地有
+\begin{equation}\label{fix:inner-critical}
+ V_{1-t/2+\mu t^2}(1-t)=2t^2+t^3+Q(\mu)t^4+O_M(t^5),
+\end{equation}
+其中令 $a=1+2\mu$，则
+\begin{equation}\label{fix:inner-coefficient}
+ Q(\mu)=\frac12+8\int_0^{1/2}u|a-u|\,du
+ =\begin{cases}
+ -\dfrac16-2\mu,&\mu\le-1/2,\\[3pt]
+ \dfrac56-a+\dfrac83a^3,&-1/2\le\mu\le-1/4,\\[3pt]
+ \dfrac76+2\mu,&\mu\ge-1/4.
+ \end{cases}
+\end{equation}
+\end{theorem}
+\begin{proof}
+先说明局部化对这里的参数一致成立。限制 $\beta\in[3/4,5/4]$。
+双密度误差趋于零时，任一见证方体的体积趋于 $1$，与 $Q_0$ 的相对对称差趋于零，
+一致迫使其中心趋于原点。亦可从方体交长公式直接得到这一事实。
+在原点的固定小邻域，四个候选的一阶损失为
+$2\beta r$、$r+(2\beta-1)s$、$r+(3-2\beta)s$、$2(2-\beta)r$；
+它们都至少为 $r$，二阶余项一致为 $O(r^2)$。
+所以光晕中 $r=O(t)$，常数与上述紧区间内的 $\beta$ 无关。
+引理~\ref{fix:active-branches} 的比较给出 $A\le B$；且 $2-\beta\ge3/4$
+时其中 $\log(D/C)$ 的导数负余量可一致选取，故 $D\le C$。
+因此这里的最大值恰为 $\max(B,C)$。
+
+有序象限中两个候选的水平边界减去 $s$ 分别为
+\[
+ w_B(s)=1-2s-(1-t)(1-2s)^{-\lambda t},\qquad
+ w_C(s)=1-(1-t)(1+2s)^{1-\lambda t}.
+\]
+取充分大的固定 $K$，则光晕面积恰为
+\[
+ 8\int_0^{Kt}\max\{w_B(s),w_C(s),0\}\,ds.
+\]
+代入 $s=tu$。对有界 $u,\lambda$ 作带一致余项的 Taylor 展开，得
+\begin{align*}
+ w_B(tu)&=t(1-2u)-2\lambda u t^2
+                  +2\lambda(u-u^2)t^3+O_\Lambda(t^4),\\
+ w_C(tu)&=t(1-2u)+2(1+\lambda)u t^2
+                  -2\lambda(u-u^2)t^3+O_\Lambda(t^4).
+\end{align*}
+最大值关于各输入是 Lipschitz 的，因此在 $0\le u\le1/2$ 上，
+\[
+ \max\{w_B(tu),w_C(tu)\}
+ =t(1-2u)+t^2u
+  +t^2u|1+2\lambda-2\lambda t(1-u)|+O_\Lambda(t^4).
+\]
+该区间内最大值为非负：距 $1/2$ 固定距离处由首项保证，
+其附近由 $m_\lambda\ge1/2$ 及二阶项保证。
+在 $u=1/2$ 附近，每个 $w_i(tu)/t$ 关于 $u$ 的导数均为
+$-2+O_\Lambda(t)$，所以两者的正部并集止于
+\[
+ u_* =\frac12+\frac{m_\lambda}2t+O_\Lambda(t^2).
+\]
+在此长度 $O_\Lambda(t)$ 的末端区间，
+\[
+ \frac1t\max\{w_B(tu),w_C(tu)\}
+ =-2(u-1/2)+m_\lambda t+O_\Lambda(t^2).
+\]
+故 $u>1/2$ 的额外面积为
+$8t^2[m_\lambda^2t^2/4+O_\Lambda(t^3)]$。
+积分主体区间即得式~\eqref{fix:composite-fourth}。
+又 $I(\lambda,t)=|1+2\lambda|/8+O_\Lambda(t)$，得式~\eqref{fix:outer-critical}。
+
+最后置 $\lambda=-1/2+\mu t$。此时
+\[
+ I(\lambda,t)=t\int_0^{1/2}u|1+2\mu-u|\,du+O(t^2),\qquad
+ 2m_\lambda^2=\frac12+O(t),
+\]
+误差对有界 $\mu$ 一致。代入即得式~\eqref{fix:inner-critical}；
+在 $u=a$ 处分割绝对值积分，得到式~\eqref{fix:inner-coefficient}。
+\end{proof}
+
+\begin{remark}
+式~\eqref{fix:inner-critical} 的分段中间区对应两种接触尺度在同一有序象限内
+同时贡献面积；因此不能用某一个固定参数解析分支替代整个光晕。
+上述余项描述有界缩放参数，不涵盖 $|\lambda|\to\infty$ 的全部匹配区间；
+$\beta=1/2,3/2$ 附近及全体输入的统一最优常数仍需另行研究。
+\end{remark}

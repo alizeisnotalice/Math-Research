@@ -52,6 +52,8 @@ run('verification/polytope_tangent.m')
 run('verification/fixed_cube_matlab.m')
 ```
 
-前两类符号脚本核对系数、精确顶点和积分；MATLAB独立求根、LP和边界积分。结果摘要保存在 `results/`。最新PDF为41页，各轮具体成果见 `rounds/001.md` 至 `rounds/005.md`。
+前两类符号脚本核对系数、精确顶点和积分；MATLAB独立求根、LP和边界积分。结果摘要保存在 `results/`。最新PDF为42页，各轮具体成果见 `rounds/001.md` 至 `rounds/006.md`。
 
 第5轮确定中心对称、β=n/2的固定模型首项与椭球极值。复现命令为 `wolframscript -file verification/half_order.wl`；MATLAB运行 `verification/half_order_matlab.m`。优化范围是资料固定E=K且基与K共同变化；固定基对全体E的上确界仍为后续问题。
+
+第6轮完成二维中间临界点的两层一致过渡：β=1+λt 的四阶复合公式及 β=1−t/2+μt² 的分段四阶系数，余项分别一致为 O_Λ(t⁵)、O_M(t⁵)。运行 `wolframscript -file verification/critical_square.wl`，MATLAB运行 `verification/critical_square_matlab.m`，随后 `python3 verification/critical_square.py --workers 8` 可复现符号、独立边界积分与跨工具比较。
