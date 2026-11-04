@@ -1,0 +1,10 @@
+ClearAll[v,g,h,q,d,lad,lbc,gbd,gac,s0,s1,s2,s3,t0,t1,t2];
+Print["Wolfram ",$Version];
+Print["Good-window: 0<v<1, g>=0, 0<=h<=min(v,v^3+g), integer q>=1."];
+Print["g<=v³ implies h<=2v³ violation: ",Reduce[0<v<1&&0<=g<=v^3&&0<=h<=Min[v,v^3+g]&&h>2v^3,{v,g,h},Reals]];
+Print["g>=v³ implies h<=2g violation: ",Reduce[0<v<1&&g>=v^3&&0<=h<=Min[v,v^3+g]&&h>2g,{v,g,h},Reals]];
+Print["Then by monotonicity h^q<=2^q v^(3q) in first branch, h^q<=2g v^(q-1) in second."];
+Print["AD normal |d| bound violation: ",Reduce[lad>=0&&lbc>=0&&gbd>=0&&gac>=0&&d==-lad-gbd&&Abs[d]>lad+lbc+gbd+gac,{d,lad,lbc,gbd,gac},Reals]];
+Print["BC normal |d| bound violation: ",Reduce[lad>=0&&lbc>=0&&gbd>=0&&gac>=0&&d==lbc+gac&&Abs[d]>lad+lbc+gbd+gac,{d,lad,lbc,gbd,gac},Reals]];
+Print["path telescope residual: ",Expand[(s3-s0)-((s1-s0)+(s2-s1)+(s3-s2))]];
+Print["path triangle violation: ",Reduce[t0>=0&&t1>=0&&t2>=0&&Abs[s1-s0]<=t0&&Abs[s2-s1]<=t1&&Abs[s3-s2]<=t2&&Abs[s3-s0]>t0+t1+t2,{s0,s1,s2,s3,t0,t1,t2},Reals]];
