@@ -95,3 +95,5 @@ latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 第30轮（与第29轮高维命题并行编号）：完整七层精确结算及独审已将二维局部价格接成真实C₂七阶匹配渐近，见rounds/030.md。小源删除为严格小量，第六层领先权保留，精确V+M分母给−176/243；3文件Mathematica核实际通过。本轮未改PDF。
 
 第31轮：一般n≥3已证明六阶饱和下固定两窄轴窗口的三临界交量o_T(v⁷S)，见rounds/031.md。通过同一实际见证强迫已付角层之外的额外缺量，不依赖二维孔形轮廓。窗口外尾部和高维Slot仍未闭合；3文件Mathematica核及独审已归档。
+
+第29轮（并行命题后完成独审）：已证实际void预算O((v^{n+1}+v⁵)S)及固定窗口actual-root传输O_R(v⁶S)，见rounds/029.md。Fubini probe和resolved四胞碰撞有准确收费，probe数须统一有界；helper可测分配/Slot单射仍未证明。独审和3文件线性核已归档。
