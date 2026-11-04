@@ -11,3 +11,5 @@
 第18轮新增二维半阶全体体积上包络pb:volume，将三阶归一化剩余量的liminf/limsup夹在[2,10/3]。精确两点差体的体积方法已达其自身上限；这不等于全体C的三阶系数已确定。
 
 第19轮的pb:four-certificate与pb:four-existence证明真正中心方体几何中六点对分别可行而四点共同不可行，允许独立尺度。pb:strict-gap进一步排除全体上确界等于两点包络，得到每固定α的严格正间隙；没有定量间隙或新的三阶区间。
+
+第20轮pb:fourier-stability以平面支撑函数奇偶分解证明平方根稳定性，其指数在一般凸体类中sharp；pb:cap-distance及pb:quant-transfer把四球共同障碍转成亏损ε²/3。pb:sixth-gap在全部0<t≤.01得到U−C≥t6/768，未证明该间隙阶最优。mom:sixth-envelope只改进统一高矩层析包络，非真实泛函的六阶展开。

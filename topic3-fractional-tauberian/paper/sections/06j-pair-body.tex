@@ -283,3 +283,156 @@ $A-A=\overline K_\alpha$，从而 $A$ 是 $\overline K_\alpha/2$ 的平移。
 这给出同一输入 $E_j$ 的四个光晕点，违反四邻域共同不可行性，矛盾。
 因此全体上确界本身严格小于包络，而不仅是没有单个输入达到包络。
 \end{proof}
+
+\subsection{平面稳定性与显式六阶间隙}
+
+定性紧性可以用平面支撑函数的奇偶分解定量化。
+这个工具同时控制凸包的非中心对称部分及其中心对称化与两点包络之间的差距。
+
+\begin{lemma}[中心对称化的平方根稳定性]\label{pb:fourier-stability}
+设 $A\subset\mathbb R^2$ 是满维紧凸体，$S=(A-A)/2$，
+$\Delta=|S|-|A|\ge0$。存在平移向量 $b$，使
+\[
+ d_H(A-b,S)\le\sqrt{\frac{\Delta}{2\pi}}.
+\]
+这里 $d_H$ 是欧氏 Hausdorff 距离。一般凸体类中，$\Delta^{1/2}$ 的指数不可提高。
+\end{lemma}
+\begin{proof}
+写 $u_\theta=(\cos\theta,\sin\theta)$，令 $h(\theta)$ 为 $A$ 的支撑函数。
+它是 Lipschitz 函数，面积公式为
+\begin{equation}\label{pb:support-area}
+ |A|=\frac12\int_0^{2\pi}\bigl(h^2-(h')^2\bigr)\,d\theta.
+\end{equation}
+对光滑严格凸体，边界参数为 $h u_\theta+h'u_\theta'$，
+用行列式计算面积并分部积分即得此式。
+一般情形对支撑函数作圆周光滑卷积并加趋于零的常数，得到光滑严格凸体逼近；
+卷积在 $H^1$ 中收敛，面积由 Hausdorff 收敛连续，故公式仍成立。
+
+分解 $h=e+o$，其中 $e(\theta+\pi)=e(\theta)$、
+$o(\theta+\pi)=-o(\theta)$，且 $e$ 正是 $S$ 的支撑函数。
+取 $b$ 消去 $o$ 的一阶 Fourier 谐波，平移后写成
+\[
+ o(\theta)=\sum_{\substack{k\ge3\\ k\ \mathrm{odd}}}
+ \bigl(a_k\cos k\theta+b_k\sin k\theta\bigr).
+\]
+奇偶交项积分为零，Parseval 恒等式给出
+\[
+ \Delta=\frac\pi2\sum_{\substack{k\ge3\\ k\ \mathrm{odd}}}
+ (k^2-1)(a_k^2+b_k^2).
+\]
+由 Cauchy--Schwarz 及
+$\sum_{m\ge1}[(2m+1)^2-1]^{-1}=1/4$，有
+\[
+ |o(\theta)|^2\le\frac{2\Delta}{\pi}
+ \sum_{m\ge1}\frac1{(2m+1)^2-1}=\frac{\Delta}{2\pi}.
+\]
+该加权系数估计也保证级数一致收敛，故点态估计合法。
+支撑函数的一致距离等于凸体的 Hausdorff 距离，即得结论。
+
+为检验指数，取 $h_\eta(\theta)=1+\eta\cos3\theta$，$0<\eta<1/8$。
+因 $h_\eta+h_\eta''=1-8\eta\cos3\theta>0$，这给出光滑严格凸体 $A_\eta$。
+其中心对称化是单位圆盘，$\Delta=4\pi\eta^2$。
+任意平移只能改变一阶谐波，正交性给
+$\|h_{A_\eta-b}-1\|_\infty\ge\eta/\sqrt2$。
+因此不能把指数 $1/2$ 换为任何更大的指数并保持统一常数。
+\end{proof}
+
+\begin{lemma}[对称嵌套凸体的缺面积与距离]\label{pb:cap-distance}
+若原点对称紧凸体满足 $\rho B\subset T\subset RB$、$S\subset T$，
+其中 $S=-S$，则
+\[
+ d_H(S,T)^2\le\frac R{2\rho}\bigl(|T|-|S|\bigr).
+\]
+特别地，$T=\overline K_\alpha/2$ 时可取 $R/(2\rho)=1$。
+\end{lemma}
+\begin{proof}
+固定单位向量 $u$，记 $h=h_T(u)$、$d=h_T(u)-h_S(u)\in[0,h]$。
+取支撑点 $y\in T$，$y\cdot u=h$。以 $y$ 和
+$\pm\rho u^\perp$ 为顶点的三角形在 $T$ 内。
+被半平面 $x\cdot u>h-d$ 截下的小三角形面积为 $\rho d^2/h$，
+且在 $T\setminus S$ 中。原点对称性给出相反方向的第二个小三角形，二者内部不交。
+因此 $|T|-|S|\ge2\rho d^2/h\ge2\rho d^2/R$；对 $u$ 取上确界即得结论。
+
+对于 $T=\overline K_\alpha/2$，令 $W=\alpha^{-1}-\alpha$。
+它包含顶点为 $\pm We_1/2,\pm We_2/2$ 的菱形，并包含于
+$[-W/2,W/2]^2$，故可取 $\rho=W/(2\sqrt2)$、$R=W/\sqrt2$。
+\end{proof}
+
+\begin{proposition}[四邻域障碍的定量传递]\label{pb:quant-transfer}
+固定 $\alpha\in(1/\sqrt2,1)$。若 $T=\overline K_\alpha/2$ 内有四个
+半径 $\varepsilon$ 的欧氏闭球，且没有质量一输入的严格光晕能够同时命中这四球，
+则
+\[
+ C_{1,\mathcal Q_c}(\alpha)\le\mathcal U(\alpha)-\frac{\varepsilon^2}{3}.
+\]
+\end{proposition}
+\begin{proof}
+对非空光晕 $H$，置 $A=\overline{\operatorname{conv}H}$、$S=(A-A)/2\subset T$，
+并记
+\[
+ \delta=|T|-|H|,\quad g=|T|-|S|,\quad\Delta=|S|-|A|.
+\]
+三者非负，且 $g+\Delta\le\delta$，$|A\setminus H|\le\delta$。
+由前两引理及 Cauchy--Schwarz，某个平移 $b$ 满足
+\[
+ d_H(A-b,T)\le\sqrt g+\sqrt{\Delta/(2\pi)}
+ \le\sqrt{\left(1+\frac1{2\pi}\right)\delta}.
+\]
+若 $\delta<\varepsilon^2/3$，利用 $1+1/(2\pi)<4/3$ 得
+$d_H(A-b,T)<2\varepsilon/3$。
+每个给定球包含于 $T$，所以支撑函数比较表明，同中心半径
+$\varepsilon/3$ 的球包含于 $A-b$。
+而 $|A\setminus H|\le\delta<\varepsilon^2/3<\pi\varepsilon^2/9$，
+故 $H-b$ 必须同时命中四个小球，因而也命中四个给定球。
+平移后仍是质量一输入的严格光晕，这与假设矛盾。
+空光晕自动满足结论，因为 $|T|\ge\pi\varepsilon^2$。
+因此每个输入都有 $\delta\ge\varepsilon^2/3$，取上确界得到命题。
+\end{proof}
+
+\begin{theorem}[全体常数的显式六阶亏损]\label{pb:sixth-gap}
+对 $0<t\le1/100$，二维半阶中心方体的真实全体常数满足
+\[
+ R(1-t)\le C_{1,\mathcal Q_c}(1-t)
+ \le\mathcal U(1-t)-\frac{t^6}{768}.
+\]
+这是两点包络与真实常数之间的统一显式亏损下界；尚未确定亏损的最优阶。
+\end{theorem}
+\begin{proof}
+在引理~\ref{pb:four-certificate}中取
+\[
+ \alpha=1-t,\quad r=\frac t2+\frac{t^2}2+\frac{15t^3}{16}+\frac{9t^4}4,
+ \quad q=\alpha+\frac{t^2}4,\quad\varepsilon=\frac{t^3}{16},\quad M=2q-\alpha.
+\]
+令 $V(z)=4\varepsilon(z-2r)+4\varepsilon^2$。
+四个控制量
+\[
+ G_r(\alpha)-V(\alpha),\quad-G_r(q)-V(q),\quad
+ -G_r(\alpha^{-1})-V(\alpha^{-1}),\quad
+ (\alpha+2r)^2-4M(M-\alpha)-1-16\alpha\varepsilon
+\]
+依次等于 $t^5P_1(t),t^4P_2(t),t^3P_3(t)/\alpha^2,t^3P_4(t)$，其中
+\begin{align*}
+ P_1(t)&=(704+415t+576t^2+648t^3)/32,\\
+ P_2(t)&=(23-330t-157t^2-252t^3-324t^4)/16,\\
+ P_3(t)&=(24+64t-232t^2+135t^3-66t^4-13t^5+396t^6-324t^7)/16,\\
+ P_4(t)&=(304+640t+240t^2+801t^3+1080t^4+1296t^5)/64.
+\end{align*}
+在 $0\le t\le1/100$ 上，保留常数项，将每个负单项式按区间右端点下估，
+即可得到
+\[
+ P_1\ge22,\quad P_2\ge\frac{492101119}{400000000},\quad
+ P_3\ge\frac{599419983467419}{400000000000000},\quad P_4\ge\frac{19}4.
+\]
+因此四项在 $t>0$ 时严格为正；同时
+$0<2r+2\varepsilon<\alpha$、$\alpha<q<(\alpha+\alpha^{-1})/2$。
+四个中心 $(\pm r,\pm r)$ 的各 $\ell^\infty$ 闭邻域（半径 $\varepsilon$）
+都在 $K_\alpha/2$ 内：对于邻域内任意点 $x$，其负点落在对角邻域，
+第一控制量保证差向量 $2x\in K_\alpha$。其余三个控制量及例~\ref{pb:four-rational}的扰动估计保证四邻域共同不可行。
+其中的欧氏 $\varepsilon$ 闭球便满足命题~\ref{pb:quant-transfer}，
+故亏损至少为 $\varepsilon^2/3=t^6/768$。
+\end{proof}
+
+例如例~\ref{pb:four-rational}在 $\alpha=9/10$ 时也直接给出
+$C_{1,\mathcal Q_c}(9/10)\le\mathcal U(9/10)-1/(3\cdot10^{10})$。
+平方根稳定性的指数在一般凸体类中是最优的；这与六阶光晕亏损是否最优是不同问题。
+六阶修正尚不改变式~\eqref{pb:cubic-bracket}的三阶区间。

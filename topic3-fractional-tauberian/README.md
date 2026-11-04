@@ -113,3 +113,7 @@ run('verification/fixed_cube_matlab.m')
 第19轮证明二维半阶每个固定α∈(1/√2,1)的真实全体常数严格低于两点包络U。四点各自独立选尺度仍有共同质量障碍；凸体等号紧性排除近等号序列。未定量化间隙，三阶区间[2,10/3]保持不变。见 `rounds/019.md`。复现 `verification/four_point.py`、`verification/four_point.wl`、`verification/four_point_matlab.m`；多尺度数值探索另见 `verification/multi_scale_search.py`。
 
 第19轮当前PDF为71页；本轮精简归档包括严格证明、独立复审、296份有理检查及15组探索摘要。
+
+第20轮给出真正全体常数的显式统一间隙：0<t≤.01时，C(1−t)≤U(1−t)−t⁶/768。平面支撑函数平方根稳定性的指数sharp，但光晕六阶亏损未证最优；三阶区间仍为[2,10/3]。高矩层析包络同时获得(15/16)p⁻⁶主量的减项。见 `rounds/020.md`，复现 `verification/quantitative_gap.py`、`verification/quantitative_gap.wl`、`verification/quantitative_gap_matlab.m`。
+
+第20轮当前PDF为73页，当前论文及本轮最小证书均通过编译、结构与视觉检查。

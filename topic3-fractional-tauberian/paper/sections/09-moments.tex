@@ -239,3 +239,37 @@ $\mathcal U(1-t)=2t^2+(10/3)t^3+O(t^4)$ 及低水平弱型支配，
 $\mathfrak F_{1,\mathcal Q_c}(p)\ge2pB(p,3)+2pB(p,4)+O(p^{-4})
 =4p^{-2}+O(p^{-4})$。两个不等式合并即得结论。
 \end{proof}
+
+
+\begin{corollary}[高矩层析包络的显式改进]\label{mom:sixth-envelope}
+固定 $n=2$、$\beta=1$，令 $a_0=1/\sqrt2$。对 $p>2$ 定义
+\[
+ \mathcal B(p)=\frac{4p}{p-2}a_0^{p-2}
+ +p\int_{a_0}^1\alpha^{p-1}\mathcal U(\alpha)\,d\alpha.
+\]
+则
+\[
+ \mathfrak F_{1,\mathcal Q_c}(p)\le\mathcal B(p)-\mathcal D(p),\qquad
+ \mathcal D(p)=\frac p{768}\int_{99/100}^1\alpha^{p-1}(1-\alpha)^6\,d\alpha>0,
+\]
+且
+\[
+ \mathcal D(p)=\frac{15}{16}\prod_{j=1}^6(p+j)^{-1}
+ +O\bigl((99/100)^p\bigr),\qquad
+ \lim_{p\to\infty}p^6\mathcal D(p)=\frac{15}{16}.
+\]
+这里改进的是统一层析上包络，没有确定真实泛函的六阶系数。
+\end{corollary}
+\begin{proof}
+由中心弱型估计~\eqref{mom:weak}，每个质量一输入的光晕面积至多
+$4\alpha^{-2}$；在 $[a_0,1]$ 上改用定理~\ref{pb:volume}，并在
+$[99/100,1]$ 上再减去定理~\ref{pb:sixth-gap}给出的 $(1-\alpha)^6/768$。
+逐输入层析后对输入取上确界，即得所列不等式。
+完整 Beta 积分为
+\[
+ \frac p{768}\int_0^1\alpha^{p-1}(1-\alpha)^6\,d\alpha
+ =\frac{15}{16}\prod_{j=1}^6(p+j)^{-1},
+\]
+舍去的 $[0,99/100]$ 积分介于 $0$ 与 $(99/100)^p/768$ 之间，
+故余项和极限成立。
+\end{proof}
