@@ -10,3 +10,5 @@
 - Huang，Sharp Solyanik Estimates for Discrete and Ergodic Hardy–Littlewood Maximal Operators，arXiv:2610.41156v1，2026-10-30。实际访问摘要，研究离散和遍历非中心模型；没有据其摘要推导本项目sharp系数。https://arxiv.org/abs/2610.41156
 
 比较结论：当前主稿的证明依赖保持为已审读的中心弱型定理和文内自证的分割、局部化。最新预印本仅列为相关进展，不当作本项目成果的来源或原创性保证。后续若研究一般几何，需阅读全文再决定是否迁移。
+
+- Melas，Annals of Mathematics 157(2003), no.2,647–688，DOI10.4007/annals.2003.157.647。2026-11-05实际核对出版社摘要及题录；其一维Lebesgue中心弱型最佳常数为12W²−22W+5=0的大根。第12轮通过文内自证的小阈值极限把该已知常数接入共同中心多线性临界留数；没有宣称重证Melas。https://annals.math.princeton.edu/2003/157-2/p08
