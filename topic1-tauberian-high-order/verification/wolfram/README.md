@@ -33,3 +33,7 @@ conditional-third.wl、finite-boxes.wl、tail-moments.wl、tail-gap.wl、third-s
 当前`paper/sections/global.tex`已改用第8轮证明；第6轮空间缓冲原稿在Git提交bec584f及其历史审查中恢复。
 
 `next-scale-ledger.wl`实际5项True，给出两分支抽象标量信息的精确minimax三次损失；不声称这些标量自动由真实输入实现。
+
+## 第9轮：实际增量角部与三深度
+
+`augmented-corners.wl`实际15子内核逐一核对q=2,…,16的正系数证书；一般实q≥2的残差指数比较和截断标量界也返回True，最终Failures=0。`multidepth.wl`对k=1,…,6实际18项检查True。`fourth-transfer.wl`实际15子内核检查n=3,…,17的四项系数及重数一致传递，全部通过。计算不证明几何可实现性、全部输入或高阶上界，这些由当前正文与独立审查承担。
