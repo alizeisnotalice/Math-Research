@@ -1,11 +1,11 @@
 # 项目2：加权中心方体 Solyanik 估计
 
-当前归档为第18轮。研究内禀权平均、外层加权光晕及共享中心/半径的多集合公共交集归一化。
+当前归档为第19轮。研究内禀权平均、外层加权光晕及共享中心/半径的多集合公共交集归一化。
 
-- `paper/paper.tex`：当前中文主稿入口。包含原有内禀端点、水位传递、一般无原子测度临界与留数，以及第18轮可比齐次权的外层精确首项和两档二阶范围。
+- `paper/paper.tex`：当前中文主稿入口。包含原有内禀端点、水位传递、一般无原子测度临界与留数，第18轮可比齐次权的外层精确首项和两档二阶范围，以及第19轮等价双测度的弱型极限、临界传递和外层显式界。
 - `paper/homogeneous_extension.tex`、`homogeneous_applications.tex`：统一外层证明、几何匹配准则和可计算算例，取代此前重复的三段专章。
 - `proofs/`：一页独立量化平移证书、编译入口及旧专章的历史提交索引。旧轮报告中的路径以当时提交为准。
-- `src/`、`experiments/`：必要的Python、Wolfram、MATLAB程序与最小记录；第18轮复现说明在`src/homogeneous/README.md`。有限实验不替代一般证明。
+- `src/`、`experiments/`：必要的Python、Wolfram、MATLAB程序与最小记录；第18轮复现说明在`src/homogeneous/README.md`，第19轮在`src/outer_critical/README.md`。有限实验不替代一般证明。
 - `rounds/`：逐轮报告与独立审阅；`STATE.md`标记当前有效结论。
 - `sources/`：原项目输入、版本与文献核对范围。
 

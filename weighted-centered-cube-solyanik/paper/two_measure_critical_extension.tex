@@ -1,0 +1,59 @@
+\subsection{双测度的精确传递与临界线}\label{subsec:two-measure-critical}
+沿用第 \ref{sec:two-measure-weak} 节的 $K,\nu,\mu$。
+\begin{theorem}[等价双测度的共同中心传递与临界线]\label{thm:two-measure-transfer}
+令 $m\ge2$、$a_i>0$。按第 \ref{sec:weighted-exponents} 节定义共同范数球乘积
+\(\mathcal M_{K,\nu}^{\boldsymbol a}\)，以 $\nu$ 作平均，并定义
+\[C^{\boldsymbol a}_{K;\nu,\mu}(\lambda)=
+\sup_{\substack{E_1,\ldots,E_m\ \mathrm{measurable}\\
+F=\cap_iE_i,\ 0<\nu(F),\mu(F)<\infty}}
+\frac{\mu\{\mathcal M_{K,\nu}^{\boldsymbol a}(\1_{E_1},\ldots,\1_{E_m})>\lambda\}}{\mu(F)}.\]
+各输入本身不要求有限质量，仍使用同一中心、同一半径及严格水平集。
+若 $P_{\boldsymbol a}(1)<\lambda<1$，则
+\[
+ C^{\boldsymbol a}_{K;\nu,\mu}(\lambda)
+ =C_{K;\nu,\mu}(1-s_{\boldsymbol a}(\lambda)).\tag{TM.7}
+\]
+对 $0<\lambda\le P_{\boldsymbol a}(1)$，
+\[
+ C^{\boldsymbol a}_{K;\nu,\mu}(\lambda)=\infty.\tag{TM.8}
+\]
+\end{theorem}
+\begin{proof}
+正向缺陷估计完全在一个 $\nu$-球内进行：若乘积平均超过 $\lambda$，则
+总缺陷小于 $s_{\boldsymbol a}(\lambda)$，从而公共交集的 $\nu$-平均超过
+$1-s_{\boldsymbol a}(\lambda)$。反向方向对紧的线性严格光晕取有限参考球，
+先略增半径以避开正 $\nu$-边界质量；$\nu$-对称差的中心稳定性给出有限正余量。
+取有界 $D$ 包住有限参考球和全部扰动球，在 $D\setminus F$ 的有限
+Boolean 原子上按水位比例 $d_i^*(s)/s$ 以 $\nu$ 精确分割。
+再将 $D^c\cap F^c$ 及残余零测集合补入各部，使 $A_i$ 组成 $F^c$ 的不交分割，
+令 $E_i=A_i^c$。于是公共交集恰为 $F$；严格余量的估计与定理
+\ref{thm:weighted-transfer} 相同。最后以 $\mu$ 的内正则性穷尽线性
+光晕，得到 (TM.7)。这里公共集只要求 $0<\nu(F),\mu(F)<\infty$；等价性
+保证该条件在构造中保持。
+
+在端点，取有界的双正有限集 $F$，并以一般无原子永久见证分割在每一层
+Boolean 原子上按 (GC.1) 的最大比例给 $F^c$ 着色；平均测度取 $\nu$。
+在定理 \ref{thm:general-critical-round11} 的递归中，改取
+$r_x>1+\sup_{z\in D_{k-1}}\rho(z-x)$，再选边界零质量的范数球及
+$U_x\subset x+\frac12K$。三角不等式保证这些扰动球包含旧区域，
+有限覆盖保证下一层仍有界；$\nu$-对称差稳定性和无原子比例分割保持原有绝对余量。
+因此原递归的全部步骤适用于这些范数球。
+每个中心都有一个永久的严格共同见证，因此多线性光晕为全空间。若
+$\mu(\mathbb R^n)=\infty$，固定 $F$ 即得无穷比值；若总质量有限，则由
+$\mu$ 的无原子性取 $\mu(F)\downarrow0$，每次重作构造，即得 (TM.8)。
+\end{proof}
+
+\begin{corollary}[双测度临界极点]\label{cor:two-measure-pole}
+令 $\lambda_c=P_{\boldsymbol a}(1)$，$\rho_c$ 由 (CP.1) 确定。在超临界侧，以扩展实数意义有
+\[
+ \lim_{\lambda\downarrow\lambda_c}(\lambda-\lambda_c)
+ C^{\boldsymbol a}_{K;\nu,\mu}(\lambda)
+ =\rho_c\lambda_c W_{K;\nu,\mu}.
+\]
+若 $W_{K;\nu,\mu}<\infty$，由 $C_{K;\nu,\mu}(\alpha)\le W_{K;\nu,\mu}/\alpha$ 和 (TM.8)，得到 $0<\lambda<1$ 中有限性的精确阈值 $\lambda>\lambda_c$。
+\end{corollary}
+\begin{proof}
+将 (TM.2) 代入 (TM.7)，再用 (CP.6) 中
+$1-s_{\boldsymbol a}(\lambda)\sim
+(\lambda-\lambda_c)/(\rho_c\lambda_c)$。
+\end{proof}

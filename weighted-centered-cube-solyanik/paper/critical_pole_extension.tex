@@ -44,54 +44,7 @@
 \end{lemma}
 
 \begin{proof}
-由 \textup{(CP.3)} 的定义，取 $f=\mathbf1_E$ 立即得到
-\[
- \beta C^{\rm int}_{c,\mu}(\beta)\le W_\mu.
- \tag{CP.5}
-\]
-为得反向不等式，先固定非负、非零、有界、紧支的 Borel 函数 $f\in L^1(\mu)$、$\ell>0$，
-以及紧集 $K\subset\{M_{c,\mu}f>\ell\}$。现在先固定 $0<\eta<\min\{\|f\|_\infty^{-1},\ell^{-1}\}$。对每个 $x\in K$，取一个严格见证方体；把半径略增，可仍保留
-严格性并使其边界为零质量，记所得参考方体为 $Q_x=Q(x,r_x)$ 及
-\[
- g_x=\int_{Q_x}f\,d\mu-\ell\mu(Q_x)>0.
-\]
-由于 $\mu(\partial Q_x)=0$，可在此固定的 $\eta$ 下选取中心邻域
-$U_x(\eta)\subset B_\infty(x,1)$，使 $y\in U_x(\eta)$ 时
-\[
- \mu\bigl(Q(y,r_x)\mathbin\triangle Q_x\bigr)
- <\frac{\eta g_x}{2(1+\eta\ell)}.
- \tag{CP.6}
-\]
-这时才由紧性选取有限个 $U_{x_j}(\eta)$ 覆盖 $K$，并写
-$Q_j=Q_{x_j}$、$r_j=r_{x_j}$、$g_j=g_{x_j}$。取有界方体 $D$，包含
-$\operatorname{supp} f$、所有 $Q_j$ 及全部 $Q(y,r_j)$
-（$y\in U_{x_j}(\eta)$）。把 $D$ 按这个依赖于 $\eta$ 的有限族 $Q_j$
-的成员关系划分为 Boolean 原子 $B$；这些对象全在 $E_\eta$ 之前固定。
-由引理 \ref{lem:atomless-split-round11} 的无原子分割性质选取 $E_\eta\cap B\subset B$，使
-\[
- \mu(E_\eta\cap B)=\eta\int_Bf\,d\mu.
- \tag{CP.7}
-\]
-令 $E_\eta$ 为各原子所选部分之并，且在 $D^c$ 取空。这是可行的，因为 $\eta\|f\|_\infty\le1$。由 \textup{(CP.7)}，
-\(\mu(E_\eta)=\eta\|f\|_1\)，且每个参考方体上
-\(\mu(E_\eta\cap Q_j)=\eta\int_{Q_j}f\,d\mu\)。于是，对
-$y\in U_{x_j}(\eta)$，由 \textup{(CP.6)} 得
-\[
- \mu(E_\eta\cap Q(y,r_j))-\eta\ell\mu(Q(y,r_j))
- \ge\eta g_j-(1+\eta\ell)\mu(Q(y,r_j)\mathbin\triangle Q_j)
- >\frac{\eta g_j}{2}>0.
- \tag{CP.8}
-\]
-故 $K\subset\{M_{c,\mu}\mathbf1_{E_\eta}>\eta\ell\}$，从而
-\[
- (\eta\ell)C^{\rm int}_{c,\mu}(\eta\ell)
- \ge\frac{\ell\mu(K)}{\|f\|_1}.
- \tag{CP.9}
-\]
-该构造对每一个充分小的 $\eta$ 成立，不只是一个子列。对有界紧支函数、
-严格水平集和紧子集取上确界，右端恰为 $W_\mu$：一般非负 $L^1$ 函数可由
-\(\min(f,N)\mathbf1_{[-N,N]^n}\uparrow f\) 单调截断，单调收敛与对半径取上确界可交换，因而 $M f_N\uparrow M f$；严格水平集随之单调穷尽。又严格光晕是开集：略增至零边界的严格见证在中心微扰下仍严格。故可用 Radon 内正则性恢复整个光晕。故 \textup{(CP.9)} 给出下极限，结合
-\textup{(CP.5)} 即证 \textup{(CP.4)}。
+在定理 \ref{thm:two-measure-weak} 中取 $K=[-1,1]^n$、$\nu=\mu$，即得结论。
 \end{proof}
 
 
@@ -102,7 +55,7 @@ $\beta_0>0$，使得对 $0\le\beta<\beta_0$，
 \[
  P_{\boldsymbol a}(1-\beta)
  =\lambda_c\left(1+\frac{\beta}{q-1}\right)^A.
- \tag{CP.10}
+ \tag{CP.5}
 \]
 特别地，即使 $\rho_c$ 等于某个指数（活动集在 $s=1$ 切换），仍有左导数
 \[
@@ -110,7 +63,7 @@ $\beta_0>0$，使得对 $0\le\beta<\beta_0$，
  \qquad
  \beta(\lambda)\sim\frac{\lambda-\lambda_c}{\rho_c\lambda_c}
  \quad(\lambda\downarrow\lambda_c).
- \tag{CP.11}
+ \tag{CP.6}
 \]
 
 设 $\mu$ 为非零、无原子、局部有限的 Radon 测度。对 $\lambda_c<\lambda<1$，由定理
@@ -118,7 +71,7 @@ $\beta_0>0$，使得对 $0\le\beta<\beta_0$，
 \[
  \lim_{\lambda\downarrow\lambda_c}(\lambda-\lambda_c)
  C^{\boldsymbol a}_{c,\mu}(\lambda)=\rho_c\lambda_cW_\mu.
- \tag{CP.12}
+ \tag{CP.7}
 \]
 特别地，$C^{\boldsymbol a}_{c,\mu}(\lambda)
 \asymp_{\mu,\boldsymbol a}(\lambda-\lambda_c)^{-1}$。
@@ -130,7 +83,7 @@ $\beta_0>0$，使得对 $0\le\beta<\beta_0$，
  (\lambda-\lambda_c)
  \sup_w C^{\boldsymbol a}_{c,w}(\lambda)
  =2^n\rho_c\lambda_c.
- \tag{CP.13}
+ \tag{CP.8}
 \]
 在原等指数特例 $a_1=\cdots=a_m=1$，右端为
 $2^n(1-1/m)^{m-1}$。
@@ -140,7 +93,7 @@ $2^n(1-1/m)^{m-1}$。
 由 \textup{(CP.1)}，在 $I_c$ 上求和得
 \[
  1=q-\frac A{\rho_c},\qquad \rho_c=\frac A{q-1}.
- \tag{CP.14}
+ \tag{CP.9}
 \]
 由于每个正缺陷严格小于 $1$ 而总和为 $1$，有 $q\ge2$。当 $\beta>0$
 充分小时，$A/(q-1+\beta)<\rho_c$，但仍严格大于每个
@@ -149,12 +102,12 @@ $s=1-\beta$，恰有 $I_c$ 中坐标活跃，水位为
 \[
  \rho(1-\beta)=\frac A{q-1+\beta}.
 \]
-代回目标函数即得 \textup{(CP.10)}。这也说明当某些 $a_i=\rho_c$ 时，
-这些坐标从左侧保持零缺陷，因而没有遗漏切换项。对 \textup{(CP.10)} 求导
-（注意 $s=1-\beta$）便得 \textup{(CP.11)} 的第一式；再由一阶泰勒展开
+代回目标函数即得 \textup{(CP.5)}。这也说明当某些 $a_i=\rho_c$ 时，
+这些坐标从左侧保持零缺陷，因而没有遗漏切换项。对 \textup{(CP.5)} 求导
+（注意 $s=1-\beta$）便得 \textup{(CP.6)} 的第一式；再由一阶泰勒展开
 得到第二式。
 
-式 \textup{(CP.12)} 由 \textup{(CP.11)}、引理 \ref{lem:small-level-weak-norm} 以及精确传递立得。
+式 \textup{(CP.7)} 由 \textup{(CP.6)}、引理 \ref{lem:small-level-weak-norm} 以及精确传递立得。
 
 最后，已有全权族恒等式写为
 \[
@@ -162,12 +115,12 @@ $s=1-\beta$，恰有 $I_c$ 中坐标活跃，水位为
  =1+2^n\frac{s_{\boldsymbol a}(\lambda)}{1-s_{\boldsymbol a}(\lambda)}
  =1+2^n\frac{1-\beta(\lambda)}{\beta(\lambda)}.
 \]
-将它与 \textup{(CP.11)} 相乘并取极限，得到 \textup{(CP.13)}。
+将它与 \textup{(CP.6)} 相乘并取极限，得到 \textup{(CP.8)}。
 \end{proof}
 
 \begin{remark}[一维 Lebesgue 情形]
 当 $n=1$、$d\mu=dx$ 时，Melas 计算出中心 Hardy--Littlewood 极大算子的
-弱型范数为 $W_{dx}=(11+\sqrt{61})/12$。因此此时 \textup{(CP.12)} 给出
+弱型范数为 $W_{dx}=(11+\sqrt{61})/12$。因此此时 \textup{(CP.7)} 给出
 固定 Lebesgue 测度的显式临界首项系数 $\rho_c\lambda_c(11+\sqrt{61})/12$
 \cite{Melas2003}。例如 $m=2$、等指数时，固定 Lebesgue 测度的临界首项系数为 $(11+\sqrt{61})/24$，而对全部权取上确界的临界首项系数为 $1$。这两个量具有不同的量词。
 \end{remark}

@@ -1,0 +1,82 @@
+% Input after the general critical construction; requires amsmath, amssymb, amsthm.
+\subsection{等价双测度的小阈值弱型极限}\label{sec:two-measure-weak}
+
+令 $K$ 是范数单位球，$\nu$ 是非零、局部有限、无原子的 Radon 测度，
+$d\mu=h\,d\nu$，其中 $0<h<\infty$ $\nu$-a.e.，且 $\mu$ 也是局部有限 Radon 测度。取 $h$ 的 Borel 代表。
+写 $\mathcal B(x,r)=x+rK$。令 $M_{K,\nu}$ 只在 $0<\nu(x+rK)<\infty$ 的球上取 $\nu$-平均，并定义
+\[
+ \begin{aligned}
+ C_{K;\nu,\mu}(\alpha)&=
+ \sup_{\substack{E\ \mathrm{measurable}\\0<\nu(E),\mu(E)<\infty}}
+ \frac{\mu\{M_{K,\nu}\mathbf1_E>\alpha\}}{\mu(E)},\\
+ W_{K;\nu,\mu}&=\|M_{K,\nu}\|_{L^1(\mu)\to L^{1,\infty}(\mu)}.
+ \end{aligned}\tag{TM.1}
+\]
+一般 $L^1(\mu)$ 输入的 $\nu$-积分取扩展非负积分，允许为 $+\infty$。
+两测度等价保证函数的几乎处处代表一致。弱型范数可在非负函数中取上确界。
+
+\begin{theorem}[等价双测度弱型极限]\label{thm:two-measure-weak}
+\[
+ \lim_{\alpha\downarrow0}\alpha C_{K;\nu,\mu}(\alpha)=W_{K;\nu,\mu}.\tag{TM.2}
+\]
+\end{theorem}
+\begin{proof}
+上界是将弱型不等式直接施于 $\mathbf1_E$。
+
+反向固定有界紧支撑 Borel 函数 $f\ge0$，使 $0<\int f\,d\mu<\infty$，并固定 $\delta>0$、$\ell>0$ 和
+紧集 $L\subset\{M_{K,\nu}f>\ell\}$。对每个 $x\in L$ 先选严格见证，并略增半径避开至多可数个正 $\nu$-边界质量半径，保持严格性。记所得边界零质量的参考球为 $Q_x=\mathcal B(x,r_x)$，其余量为
+\[
+ g_x=\int_{Q_x}f\,d\nu-\ell\nu(Q_x)>0.
+\]
+于是固定半径下有
+\[
+ \nu(\mathcal B(y,r_x)\triangle Q_x)\longrightarrow0\qquad(y\to x).
+\]
+给定足够小的 $\eta>0$，满足
+\(0<\eta<\min\{\|f\|_\infty^{-1},\ell^{-1}\}\)，
+先逐点取有界中心邻域 $U_x(\eta)\subset x+K$，再取有限子覆盖，
+使每个对应扰动球 $Q_y$ 都满足
+\[
+ \nu(Q_y\triangle Q_j)<\frac{\eta g_j}{2(1+\eta\ell)}.\tag{TM.3}
+\]
+取有界 Borel 集 $D$ 包含 $\operatorname{supp}f$、参考球及全部扰动球。
+
+在 $D$ 内用有限参考球的 Boolean 原子 $B$ 和可数层
+\[
+ B_k=B\cap\{(1+\delta)^k\le h<(1+\delta)^{k+1}\},\qquad k\in\mathbb Z,
+\]
+作细分。由引理 \ref{lem:atomless-split-round11}，可在每个正 $\nu$-质量的 $B_k$ 中选取 Borel 部分
+$E_\eta\cap B_k$，满足
+\[
+ \nu(E_\eta\cap B_k)=\eta\int_{B_k}f\,d\nu.\tag{TM.4}
+\]
+右端至多为 $\nu(B_k)$；零质量层可略去，并令 $E_\eta$ 在 $D^c$ 为空。
+对每个参考球，
+\[
+ \nu(E_\eta\cap Q_j)=\eta\int_{Q_j}f\,d\nu,\qquad
+ 0<\mu(E_\eta)\le(1+\delta)\eta\int f\,d\mu<\infty.\tag{TM.5}
+\]
+第二式逐层比较 $h$ 得到；且 $\nu(E_\eta)=\eta\int f\,d\nu>0$，故 $h>0$ a.e. 保证分母正。两测度下该集都具有正有限质量。
+
+以 $\Delta=Q_y\triangle Q_j$，(TM.3)--(TM.5) 给
+\[
+ \nu(E_\eta\cap Q_y)-\eta\ell\nu(Q_y)
+ \ge\eta g_j-(1+\eta\ell)\nu(\Delta)>\eta g_j/2.
+\]
+故 $L\subset\{M_{K,\nu}\mathbf1_{E_\eta}>\eta\ell\}$，且对所有充分小的
+\(\alpha=\eta\ell\)，
+\[
+ \alpha C_{K;\nu,\mu}(\alpha)
+ \ge\frac{\ell\mu(L)}{(1+\delta)\int f\,d\mu}.\tag{TM.6}
+\]
+先对 $\alpha\downarrow0$ 取下极限，再令 $\delta\downarrow0$，由 $\mu$ 的内正则性令 $L$ 穷尽严格光晕。边界零参考球的稳定性也表明有界紧支撑输入的严格光晕为开集。
+对于一般 $f\ge0\in L^1(\mu)$，$f_N=\min(f,N)\mathbf1_{NK}$ 单调趋于
+$f$，且 $M_{K,\nu}f_N\uparrow M_{K,\nu}f$。所以 (TM.6) 对完整弱型范数
+取上确界即给下极限（包括 $W_{K;\nu,\mu}=\infty$），并完成证明。
+\end{proof}
+
+\begin{remark}[无原子性不可删]\label{rem:two-measure-atom}
+若 $\nu=\mu=\delta_0$，则 $C_{K;\nu,\mu}(\alpha)=1$ 对
+$0<\alpha<1$，故左端极限为 $0$；但 $W_{K;\nu,\mu}=1$。因此无原子性
+不是技术性假设。
+\end{remark}

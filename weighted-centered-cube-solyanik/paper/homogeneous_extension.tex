@@ -10,8 +10,8 @@
 以下渐近均固定 $K,w,\tau$，不要求对参数一致。原点的取值无关紧要；两侧比较还保证 $w\in L^1_{\rm loc}$ 且非零。下文使用该代表的超水平集。
 令
 \[
- \kappa=\int_Kw,\quad D=|\{w>1\}|,\quad\beta=\tau/n,
- \quad S=\frac{n}{\tau}\frac{D^{1-\beta}V^\beta}{\kappa}.\tag{H.2}
+ \kappa=\int_Kw,\quad D=|\{w>1\}|,\quad\vartheta=\tau/n,
+ \quad S=\frac{n}{\tau}\frac{D^{1-\vartheta}V^\vartheta}{\kappa}.\tag{H.2}
 \]
 记 $\mu_w=w\,dx$。以 $x+rK$ 作中心平均球的 Lebesgue 极大算子记作 $M_K$，
 并定义
@@ -51,7 +51,7 @@ $u_i+\frac12\operatorname{int}K$ 两两不交且包含于 $\frac32K$。
 在 \textup{(H.1)} 下，对 $\lambda>0$，
 \[
  |\{w>\lambda\}|=D\lambda^{-n/(n-\tau)},\qquad
- \int_Aw\le\kappa S\left(\frac{|A|}{V}\right)^\beta.\tag{H.3}
+ \int_Aw\le\kappa S\left(\frac{|A|}{V}\right)^\vartheta.\tag{H.3}
 \]
 此外 $S\ge1$，且等号成立当且仅当 $w=c\rho^{\tau-n}$ a.e.，其中 $c>0$。存在一个有界超水平集 $A_0=\{w>\lambda_0\}$，满足
 \[
@@ -61,17 +61,17 @@ $u_i+\frac12\operatorname{int}K$ 两两不交且包含于 $\frac32K$。
 \begin{proof}
 由逐点齐次性，$\{w>\lambda\}=\lambda^{-1/(n-\tau)}\{w>1\}$，
 给出第一式。令 $v=|A|\in(0,\infty)$，层析估计
-\[\int_Aw\le\int_0^\infty\min\{v,D\lambda^{-1/(1-\beta)}\}\,d\lambda
-=\frac1\beta D^{1-\beta}v^\beta\]
+\[\int_Aw\le\int_0^\infty\min\{v,D\lambda^{-1/(1-\vartheta)}\}\,d\lambda
+=\frac1\vartheta D^{1-\vartheta}v^\vartheta\]
 即为 (H.3)；零体积及无限体积情形直接处理。将 $A=K$ 代入即 $S\ge1$。取
-$\lambda_0=(D/V)^{1-\beta}$。第一式给 $|A_0|=V$；对 $A_0$ 作层析积分
+$\lambda_0=(D/V)^{1-\vartheta}$。第一式给 $|A_0|=V$；对 $A_0$ 作层析积分
 或直接缩放，得到第二式 (H.4)。由两侧比较，$A_0$ 有界。齐次性沿每条射线严格单调，故 $\{w=\lambda_0\}$ 为 Lebesgue 零集。等体积交换中的等号因此要求 $K=A_0$ 模零；由极坐标和齐次性，这等价于 $w=\lambda_0\rho^{\tau-n}$ a.e.，逆向也直接成立。
 \end{proof}
 
 \begin{theorem}[一般齐次权的尖锐首项]\label{thm:hom-leading}
 对以 Lebesgue 平均、$w\,dx$ 测量的外层常数，有
 \[
- C^{\rm out}_{K,w}(1-t)-1\sim S t^\beta\qquad(t\downarrow0).\tag{H.5}
+ C^{\rm out}_{K,w}(1-t)-1\sim S t^\vartheta\qquad(t\downarrow0).\tag{H.5}
 \]
 \end{theorem}
 \begin{proof}
@@ -99,7 +99,7 @@ $D_k=2(1+C)2^kK$，且
 以 $u=x/r$、(H.3) 及 $|Q\setminus E|<tVr^n$ 得
 \[
  \mu_w(E)\ge\mu_w(E\cap Q)
- \ge\kappa r^\tau(A_C-S t^\beta).\tag{H.7}
+ \ge\kappa r^\tau(A_C-S t^\vartheta).\tag{H.7}
 \]
 若 $T_0=\varnothing$，其估计取零；否则当括号为正，令 $R$ 为中心在 $T_0$ 的所有实际长见证半径的上确界，便有 $R<\infty$。
 取 $(x_j,r_j)$ 使 $r_j\to R$。充分大 $j$ 时
@@ -108,10 +108,10 @@ $(R/C)K$。而 $T_0\subset(R/C)K\setminus E$，从见证缺失体积得
 $|T_0|\le tVR^n$。再用 (H.3)、(H.7) 并令 $j\to\infty$，
 \[
  \frac{\mu_w(T_0)}{\mu_w(E)}\le
- \frac{S t^\beta}{A_C-S t^\beta}.\tag{H.8}
+ \frac{S t^\vartheta}{A_C-S t^\vartheta}.\tag{H.8}
 \]
-令 $C=t^{-c}$、$0<c<1/n$，则 (H.6) 是 $o(t^\beta)$，(H.8)
-是 $St^\beta(1+o(1))$。由 $\mu_w(H)\le\mu_w(E)+\mu_w(S_0)+\mu_w(T_0)$，得到一致于全部输入的上界。
+令 $C=t^{-c}$、$0<c<1/n$，则 (H.6) 是 $o(t^\vartheta)$，(H.8)
+是 $St^\vartheta(1+o(1))$。由 $\mu_w(H)\le\mu_w(E)+\mu_w(S_0)+\mu_w(T_0)$，得到一致于全部输入的上界。
 
 为给下界，取足够大的 $D_0$ 使 $A_0\subset\{\rho<D_0\}$，令
 \[
@@ -122,8 +122,8 @@ $|T_0|\le tVR^n$。再用 (H.3)、(H.7) 并令 $j\to\infty$，
 $RK\subset H$ 模零（$E$ 的 Lebesgue 密度点也属于 $H$，因为范数球与欧氏球可比），所以由 (H.4)
 \[
  C^{\rm out}_{K,w}(1-t)-1\ge
- \frac{S t^\beta}{(1+D_0t^{1/n})^\tau-St^\beta}
- =St^\beta+o(t^\beta).\tag{H.9}
+ \frac{S t^\vartheta}{(1+D_0t^{1/n})^\tau-St^\vartheta}
+ =St^\vartheta+o(t^\vartheta).\tag{H.9}
 \]
 结合上界即得结论。
 \end{proof}
@@ -157,22 +157,22 @@ $F(u)-F(0)=O_{K,w}(\delta^2)$，给第二个结论。
 \]
 都有
 \[
- C^{\rm out}_{K,w}(1-t)-1=St^\beta+S^2t^{2\beta}+o(t^{2\beta}).\tag{H.11}
+ C^{\rm out}_{K,w}(1-t)-1=St^\vartheta+S^2t^{2\vartheta}+o(t^{2\vartheta}).\tag{H.11}
 \]
 \end{theorem}
 \begin{proof}
 由引理 $A_C\ge1-O(C^{-q})$，且定义中包含 $u=0$，故 $A_C\le1$。取
 \[
- \frac\beta q<c<\frac{n-2\tau}{n(n-\tau)}. \tag{H.12}
+ \frac\vartheta q<c<\frac{n-2\tau}{n(n-\tau)}. \tag{H.12}
 \]
 此区间非空等价于 $\tau<(n+2q-\sqrt{n^2+4q^2})/2$。于是 (H.6) 是
-$o(t^{2\beta})$，(H.8) 是 $St^\beta+S^2t^{2\beta}+o(t^{2\beta})$。
+$o(t^{2\vartheta})$，(H.8) 是 $St^\vartheta+S^2t^{2\vartheta}+o(t^{2\vartheta})$。
 在 $\tau<1$ 时，(H.9) 的显式下界满足
 \[
- \frac{St^\beta}{(1+D_0t^{1/n})^\tau-St^\beta}
- =St^\beta+S^2t^{2\beta}+o(t^{2\beta}),
+ \frac{St^\vartheta}{(1+D_0t^{1/n})^\tau-St^\vartheta}
+ =St^\vartheta+S^2t^{2\vartheta}+o(t^{2\vartheta}),
 \]
-因为 $t^{\beta+1/n}=o(t^{2\beta})$。故夹逼得 (H.11)。
+因为 $t^{\vartheta+1/n}=o(t^{2\vartheta})$。故夹逼得 (H.11)。
 \end{proof}
 
 \begin{corollary}[不等指数共同中心外层回传]\label{cor:hom-multilinear}
@@ -183,12 +183,12 @@ $o(t^{2\beta})$，(H.8) 是 $St^\beta+S^2t^{2\beta}+o(t^{2\beta})$。
 若 $w$ 进一步满足 (H.1)，令 $a_*=\min_i a_i$，则
 \[
  C^{\boldsymbol a,\rm out}_{K,w}(1-\varepsilon)-1
- \sim S a_*^{-\beta}\varepsilon^\beta.
+ \sim S a_*^{-\vartheta}\varepsilon^\vartheta.
 \]
 在定理 \ref{thm:hom-second} 的范围内，前两项为
 \[
- S a_*^{-\beta}\varepsilon^\beta+
- S^2a_*^{-2\beta}\varepsilon^{2\beta}+o(\varepsilon^{2\beta}).
+ S a_*^{-\vartheta}\varepsilon^\vartheta+
+ S^2a_*^{-2\vartheta}\varepsilon^{2\vartheta}+o(\varepsilon^{2\vartheta}).
 \]
 \end{corollary}
 \begin{proof}
@@ -199,5 +199,5 @@ $o(t^{2\beta})$，(H.8) 是 $St^\beta+S^2t^{2\beta}+o(t^{2\beta})$。
 $D_1^c\cap F^c$ 补成不交各部 $A_i$，令 $E_i=\mathbb R^n\setminus A_i$。
 公共交集即为 $F$；以加权内正则性穷尽光晕，得到范数球的同一精确传递。
 最后代入 $s_{\boldsymbol a}(1-\varepsilon)=\varepsilon/a_*+O(\varepsilon^2)$；
-$\beta<1$ 保证代入误差为 $o(\varepsilon^{2\beta})$。
+$\vartheta<1$ 保证代入误差为 $o(\varepsilon^{2\vartheta})$。
 \end{proof}
