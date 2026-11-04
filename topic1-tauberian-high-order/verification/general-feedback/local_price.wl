@@ -1,0 +1,13 @@
+ClearAll[x,y,z,b,t,s,m,cap,k,v,cc,n,ri,rj];
+Print["Wolfram: ",$Version];
+Print["Scaling t=1-sigma, X=n x/t, Y=n y/t; 0<t<=1, 0<=b<=1, x,y>=0."];
+price=b/27-b*x*y+x*y*(x+y);
+Print["scaled lower price negative set: ",Reduce[0<=b<=1&&x>=0&&y>=0&&price<0,{b,x,y},Reals]];
+Print["nontrivial equality classification: ",Reduce[0<=b<=1&&x>=0&&y>=0&&price==0&&(b>0||x y(x+y)>0),{b,x,y},Reals]];
+Print["scaled price b>0 equal only saturates b=1,x=y=1/3: ",Reduce[0<b<=1&&x>=0&&y>=0&&price==0&&(b!=1||x!=1/3||y!=1/3),{b,x,y},Reals]];
+Print["clipping |z|<=1/3, symmetric positive part excess: ",FullSimplify[(((1/3+z)^2(2/3+2z)+(1/3-z)^2(2/3-2z))/2)-2/27, -1/3<=z<=1/3]];
+Print["low m price violation: ",Reduce[k>0&&cap>0&&0<=m<=k/(4cap)&&cc>=4cap/k&&0<=v<=1&&((1+v)^2<=2)&&cap*m>k Min[1,cc m]/(1+v)^2,{k,cap,m,cc,v},Reals]];
+Print["large max lower bound violation: ",Reduce[n>0&&x>=0&&y>=0&&Max[x,y]>4n&&0<=b<=2&&x y(x+y)/(2n)<b x y,{n,x,y,b},Reals]];
+Print["scale ratio q=rj/ri>=1; beta=q^(n-2)>=1 for n>=3; remaining algebra violation: ",Reduce[q>=1&&beta>=1&&q beta<1,{q,beta},Reals]];
+Print["power monotonicity supporting derivative: ",FullSimplify[D[Exp[a Log[q]],a],Assumptions->q>=1&&a>=1]];
+Print["zero endpoint b=x=0,y=1 gives lower price ",price/.{b->0,x->0,y->1}];
