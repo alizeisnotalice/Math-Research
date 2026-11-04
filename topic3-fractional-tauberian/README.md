@@ -85,3 +85,7 @@ run('verification/fixed_cube_matlab.m')
 第12轮用尺度投影损失控制闭合真实挖角三阶展开：面积比=2t²+B(k)t³+O_K(t⁴)，k∈[0,K]一致，允许参数随阈值变化。分段显式B≤2，等号恰为k=0,1；不据此宣称全体三阶上界或四阶sharp。见 `rounds/012.md`。
 
 第12轮当前PDF58页。复现：`wolframscript -file verification/corner_transfer.wl`、`wolframscript -file verification/corner_table.wl`；MATLAB运行 `verification/corner_transfer_matlab.m`；`python3 verification/corner_transfer.py`。
+
+第13轮证明k=1挖角构型的真实四阶系数为−2/3；与正方形及矩形测试上确界的差分别为(8/3)t⁴+o(t⁴)、(19/6)t⁴+o(t⁴)，因此这两个比较的四阶损失sharp。见 `rounds/013.md`，未据此确定全体四阶系数。
+
+第13轮当前PDF59页。复现 `wolframscript -file verification/k1_fourth.wl`，MATLAB运行 `verification/k1_fourth_matlab.m`，Python运行 `verification/k1_fourth.py`。
