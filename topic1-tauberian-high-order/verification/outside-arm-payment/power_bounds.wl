@@ -1,0 +1,11 @@
+ClearAll[p1,p2,p3,r,t,q,v,c,x,h,cc];
+Print["Wolfram ",$Version];
+Print["Domain 0<t<1, v=t^8, 0<p1<=p2<=p3, r^3=p1 p2 p3."];
+Print["ordered product failure: ",Reduce[0<p1<=p2<=p3 && r>0 && r^3==p1 p2 p3 && p2 p3<r^2,{p1,p2,p3,r},Reals]];
+Print["root power bound failure: ",Reduce[0<t<1 && r>0 && r^3>t^57 && r<=t^19,{t,r},Reals]];
+Print["truncated multiplier bound failure: ",Reduce[0<t<1 && z>t^38 && Min[1,z/t^24]/t^16<t^-2,{t,z},Reals]];
+Print["H branch identity: ",FullSimplify[(p2 p3 Min[p1,p1 p2 p3/v^3]/v^2)/(p1 p2 p3)-Min[1,p2 p3/v^3]/v^2,Assumptions->p1>0&&p2>0&&p3>0&&v>0]];
+Print["A<=max(1,C²) v² H violation reduced to z=p2p3/v²: ",Reduce[0<v<1&&cc>0&&0<z<=cc^2&&Max[1,cc^2] Min[1,z/v]-z<0,{v,cc,z},Reals]];
+Print["q excess factor: ",Factor[q+6q/(2q-1)-52/7]];
+Print["q>=4 exponent violation: ",Reduce[q>=4&&q+6q/(2q-1)<52/7,q,Reals]];
+Print["example v=t^3, p_i=t^7: A=",t^21,", H=",t^12,", R=",1/t,", 1/v=",1/t^3];
