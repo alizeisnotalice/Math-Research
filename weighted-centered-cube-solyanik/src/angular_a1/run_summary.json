@@ -1,0 +1,98 @@
+{
+  "scope": "Numerical checks of explicit unbounded-angular input only. Operator classification and logarithmic all-input bounds are analytic.",
+  "python": {
+    "precision": 120,
+    "unique_inputs": 32,
+    "dimensions": [
+      2,
+      3
+    ],
+    "gamma": [
+      ".25",
+      ".5",
+      ".75",
+      ".9"
+    ],
+    "tau": [
+      ".1",
+      ".01",
+      ".0001",
+      ".000001"
+    ],
+    "fresh_actual_workers": 15,
+    "fresh_worker_pids": [
+      96296,
+      96297,
+      96298,
+      96299,
+      96300,
+      96301,
+      96302,
+      96303,
+      96304,
+      96305,
+      96306,
+      96307,
+      96308,
+      96309,
+      96310
+    ],
+    "replay_reused": 32,
+    "failures": 0,
+    "source_sha256": "101785a5c3f7c1fcedcbcb5227db883a13979c6e87b520e19a60192c3981ea3d",
+    "max_angular_formula_difference": "1E-119",
+    "samples": [
+      {
+        "n": 2,
+        "gamma": ".25",
+        "tau": "1e-6",
+        "tau_atom_R": "2.33331368757011618733415730864312646534624290176477782246128835516896645621114214489721473683510822325632156189930850290",
+        "target_tauW": "2.33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333"
+      },
+      {
+        "n": 2,
+        "gamma": ".9",
+        "tau": "1e-6",
+        "tau_atom_R": "10.9999397055845874472115177349811968725945700161861573045471706973296800766853865568172165919472096622208128265835093538",
+        "target_tauW": "11"
+      },
+      {
+        "n": 3,
+        "gamma": ".5",
+        "tau": "1e-6",
+        "tau_atom_R": "4.99995464503847459338803154567171679172639518008572974729496248018529900594234831531303154373035058260118453308337878824",
+        "target_tauW": "5"
+      },
+      {
+        "n": 3,
+        "gamma": ".9",
+        "tau": "1e-6",
+        "tau_atom_R": "20.9998670064931246315044997804957762063685395847349401495378608368701275821310255296356086054773993594402326442698810607",
+        "target_tauW": "21"
+      }
+    ]
+  },
+  "matlab": {
+    "version": "26.1.0.3312084 (R2026a) Update 4",
+    "independent_rows": 32,
+    "max_tau_atom_R_absolute_difference": 1.7763568394002505e-14
+  },
+  "wolfram": {
+    "version": "15.0.0",
+    "unbounded_cube_angular_guards": 8,
+    "positive_rows": 32,
+    "log_branch_checked": true,
+    "angular_and_shell_symbolic_guards": 7,
+    "exact_finite_sum_controls": 30
+  },
+  "corrections": [
+    {
+      "reason": "Initial auxiliary local A1 bound used the symmetric-interval factor 1/(1-gamma) for arbitrary crossing intervals. Corrected to 2/(1-gamma) and 3^abs(n-tau-gamma), changed source hash, recomputed fresh32/replay32 and MATLAB. Halo and angular-integral values did not change."
+    }
+  ],
+  "limits": [
+    "No sharp second coefficient for the true weak norm is claimed.",
+    "Near-unit results requiring H.1 are not automatically extended to unbounded profiles.",
+    "e-1 is an upper coefficient obtained by this geometric-shell majorant."
+  ]
+}

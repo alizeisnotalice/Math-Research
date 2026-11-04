@@ -46,3 +46,6 @@
 第27轮核对：再次直接读取[Aldaz v2](https://arxiv.org/html/1811.10478v2)的Theorem1.2及其范数应用：测度一致中心弱型界由Besicovitch相交常数控制；可分空间的测度条件满足。当前三尺度上界仅在局部类调用此工具，中尺度用自足Tonelli积分，大尺度用齐次质量，不将BIP当覆盖选择定理。
 
 检索“weighted weak maximal power weights sharp asymptotic”等，并读取[Hou–Wu论文出版社PDF首页](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/20D686BCC3E11B167A717EE542DACE91/S0008439518000358a.pdf/on_the_limiting_weaktype_behaviors_for_maximal_operators_associated_with_power_weighted_measure.pdf)的摘要与定义。该文对象为幂权同时进入平均的内禀算子、非负幂次及固定输入的阈值趋零行为；当前SW定理为Lebesgue平均、接近局部可积边界的测量权，以及完整算子范数关于齐次次数的渐近。只核实了首页模型，未声明阅读全文或借用其主证明。搜索未确认当前一般角向公式的精确既有出处，不以未命中宣称首次；本轮正文给自含证明并沿用Aldaz等已核实工具，不新增不必要引用。
+
+
+第28轮：A1弱型必要性采用经典Muckenhoupt框架，本文完整重证中心球的低密度子集测试及齐次转移，不借未读文献证明常数。新增Muckenhoupt1972背景题录：作者、题名、卷165、年份及DOI10.1090/S0002-9947-1972-0293384-6由Crossref官方API核对；其page字段仅207-207，不能当作终页。规范页码207–226也见[EMS出版社2025研究论文原参考表](https://ems.press/content/serial-article-files/50076)条目28。AMS新旧公开PDF地址均返回403，未宣称已读该原全文。直接检索角向齐次A1、weighted weak centered等，未据检索未命中声称本轮公式首次；实际数学结论由自含证明支撑。

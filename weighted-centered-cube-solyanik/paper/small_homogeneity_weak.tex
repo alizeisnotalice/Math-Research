@@ -2,12 +2,17 @@
 \subsection{小齐次次数的完整弱型渐近}\label{subsec:small-homogeneity-weak}
 
 沿用 (AG.1)--(AG.2) 的范数球 $K$、$\rho=\|\cdot\|_K$、$V=|K|$ 与角向概率 $\sigma_K$。
-固定可测角向函数 $a$，并将它零次齐次延拓到 $\mathbb R^n\setminus\{0\}$。设
+固定可测角向函数 $0<a<\infty$（$\sigma_K$-a.e.），将它零次齐次延拓，并假设
 \[
-0<a_*:=\operatorname*{ess\,inf}_{\sigma_K}a
-\le a\le a^*:=\operatorname*{ess\,sup}_{\sigma_K}a<\infty,
-\qquad E_a:=\int a\,d\sigma_K=\frac1V\int_Ka(x)\,dx.
+0<E_a:=\int a\,d\sigma_K=\frac1V\int_Ka(x)\,dx<\infty,
+\qquad a_*:=\operatorname*{ess\,inf}_{\sigma_K}a.
 \]
+对任意正局部可积权 $v$，记经典 $A_1$ 特征量\cite{Muckenhoupt1972}为
+\[
+[v]_{A_1(K)}:=\sup_{Q=x+rK}
+\frac{|Q|^{-1}\int_Qv}{\operatorname*{ess\,inf}_Qv}. \tag{SA.1}
+\]
+分母为零时该比取 $\infty$。本节允许角向轮廓无界；此前依赖 (H.1) 的近单位水平定理仍按其原假设使用。
 对 $0<\tau<n$，置 $d\mu_\tau=h_\tau dx$，其中
 $h_\tau(x)=\rho(x)^{\tau-n}a(x)$。令 $M_K$ 是 Lebesgue 平均的中心 $K$-球极大算子，且
 \[
@@ -16,11 +21,54 @@ $h_\tau(x)=\rho(x)^{\tau-n}a(x)$。令 $M_K$ 是 Lebesgue 平均的中心 $K$-�
 \]
 记 $B_K$ 为 (G.1) 中的测度一致中心弱型上界；一般可取 $3^n$，方体可取 $2^n$。
 
+
+\begin{proposition}[齐次权的有限性判别]\label{prop:angular-a1-classification}
+以下条件等价：$\mathcal W_{\tau_0}<\infty$ 对某个 $0<\tau_0<n$ 成立；
+$a\in A_1(K)$；以及对每个 $0<\tau<n$ 均有 $\mathcal W_\tau<\infty$。
+它们也等价于 $h_\tau\in A_1(K)$ 对某个允许的 $\tau$ 成立。条件成立时 $a_*>0$。
+\end{proposition}
+\begin{proof}
+这是经典 $A_1$ 子集检验在当前齐次族中的应用，下面给出所需版本。
+若 $\mathcal W_\tau<\infty$，取正测度子集 $E\subset Q=x+rK$。
+对所有 $z\in Q$ 有 $Q\subset z+2rK$，故
+$M_K\mathbf1_E(z)\ge |E|/(2^n|Q|)$。以略小的严格阈值应用弱型界，再从下逼近，得到
+\[
+|Q|^{-1}\int_Qh_\tau\le2^n\mathcal W_\tau |E|^{-1}\int_Eh_\tau.
+\]
+令 $E$ 逼近 $Q$ 中密度的本质下确界，即得
+$[h_\tau]_{A_1(K)}\le2^n\mathcal W_\tau$。
+反之，逐球比较给出
+\[M_Kf\le[h_\tau]_{A_1(K)}M_{K,\mu_\tau}f.\]
+结合 (G.1)，得到有限弱型界。
+
+又 $\operatorname*{ess\,inf}_Kh_\tau=a_*$：下界由 $\rho^{\tau-n}\ge1$，上界由靠近
+$\partial K$ 的低角正测度锥环带得到。故当 $[h_\tau]_{A_1(K)}<\infty$ 时，
+$a_*>0$ 且 $nE_a/(\tau a_*)\le[h_\tau]_{A_1(K)}$。
+若 $r<\rho(x)/2$，写 $a=\rho^{n-\tau}h_\tau$，可得
+$a_Q/\operatorname*{ess\,inf}_Qa\le3^{n-\tau}[h_\tau]_{A_1(K)}$。
+若 $r\ge\rho(x)/2$，则 $Q\subset3rK$，该比至多 $3^nE_a/a_*$。
+于是 $a\in A_1(K)$。
+
+反过来，令 $A_a=[a]_{A_1(K)}<\infty$。取 $Q=K$ 得 $E_a/a_*\le A_a$。
+对上述小球，$h_\tau$ 的平均与下确界之比至多 $3^{n-\tau}A_a$；对大球，该比至多
+\[
+\frac{nE_a}{\tau a_*}\left(\frac{\rho(x)+r}{r}\right)^n
+\le\frac{nE_a}{\tau a_*}3^n.
+\]
+所以 $[h_\tau]_{A_1(K)}\le3^n(n/\tau)A_a$ 对每个允许的 $\tau$ 都有限。
+\end{proof}
+
+以下假设 $A_a=[a]_{A_1(K)}<\infty$。固定 $q>1$、$0<\eta<1$，记
+\[
+N=N_q(\eta):=\left\lceil\frac{\log(2/\eta)}{\log q}\right\rceil,
+\qquad s_j=q^j/2\quad(0\le j<N),\qquad
+\Xi_{n,\tau}(q,\eta):=\sum_{j=0}^{N-1}\frac{(1+qs_j)^{n-\tau}}{s_j^n}.
+\]
 \begin{theorem}[三尺度上下界]\label{thm:small-homogeneity-weak}
-任取 $0<\eta<1$，有
+在上述记号下，有
 \begin{align}
-\mathcal W_\tau\le{}&B_K\frac{a^*}{a_*}3^{n-\tau}
-+\frac{n2^nE_a}{a_*(n-\tau)}(1+\eta^{-1})^{n-\tau}
+\mathcal W_\tau\le{}&B_K A_a3^{n-\tau}
++\frac{nE_a}{a_*(n-\tau)}\Xi_{n,\tau}(q,\eta)
 +\frac{nE_a}{a_*\tau}\eta^\tau(1+\eta)^{n-\tau}. \tag{SW.1}\label{eq:sw-upper}
 \end{align}
 并且
@@ -41,31 +89,29 @@ r<\rho(x)/2,\qquad \rho(x)/2<r<\rho(x)/\eta,\qquad r>\rho(x)/\eta \tag{SW.4}
 分类，令 $H_j$ 为存在第 $j$ 类见证的点集，允许重叠。阈值处的见证可微扰半径而保持严格平均；
 各类因而覆盖 $H$ 除原点外的部分。固定半径平均连续，故以有理半径刻画可见各类可测；原点为零测集。
 
-若 $x\in H_0$，则 $\rho(y)\in(\rho(x)/2,3\rho(x)/2)$ 对 $y\in x+rK$ 成立，故
+若 $x\in H_0$，径向因子在 $Q=x+rK$ 上的比至多 $3^{n-\tau}$，而
+$a_Q\le A_a\operatorname*{ess\,inf}_Qa$。故
 \[
-\frac{\int_{x+rK}f\,d\mu_\tau}{\mu_\tau(x+rK)}
->\frac{a_*}{a^*}3^{\tau-n}.
+\frac{\int_Qf\,d\mu_\tau}{\mu_\tau(Q)}>A_a^{-1}3^{\tau-n},
+\qquad
+\mu_\tau(H_0)\le B_K A_a3^{n-\tau}A. \tag{SW.5}\label{eq:sw-local}
 \]
-把 测度一致弱型不等式应用于 $\mu_\tau$，得到
-\[\mu_\tau(H_0)\le B_K\frac{a^*}{a_*}3^{n-\tau}A.\tag{SW.5}\label{eq:sw-local}\]
 
-令 $C=1+\eta^{-1}$。若 $x\in H_1$，则 $x+rK\subset C\rho(x)K$ 且
-$\int_{x+rK}f>V\rho(x)^n/2^n$，所以
+将中尺度见证进一步按 $s_j\rho(x)\le r<qs_j\rho(x)$ 分层。
+因 $q^N/2\ge\eta^{-1}$，这些层覆盖所需半径比；边界仍按严格平均的连续性微扰处理。
+第 $j$ 层上 $x+rK\subset(1+qs_j)\rho(x)K$ 且 $\int_{x+rK}f>Vs_j^n\rho(x)^n$，所以
 \[
-T(x):=\frac{2^n}{V\rho(x)^n}\int_{C\rho(x)K}f(y)\,dy>1.
+T_j(x):=\frac1{Vs_j^n\rho(x)^n}\int_{(1+qs_j)\rho(x)K}f(y)\,dy>1.
 \]
-Markov、Tonelli 与极坐标公式给出（$y=0$ 为 Lebesgue 零集）
+Markov、Tonelli 与 (AG.2) 给出
 \begin{align*}
 \mu_\tau(H_1)
-&\le\int T\,d\mu_\tau\\
-&=\int f(y)\frac{2^n}{V}
- \int_{\rho(x)\ge\rho(y)/C}\rho(x)^{\tau-2n}a(x)\,dx\,dy\\
-&=\frac{n2^nE_aC^{n-\tau}}{n-\tau}
- \int f(y)\rho(y)^{\tau-n}\,dy\\
-&\le\frac{n2^nE_aC^{n-\tau}}{a_*(n-\tau)}A. \tag{SW.6}\label{eq:sw-middle}
+&\le\sum_{j=0}^{N-1}\int T_j\,d\mu_\tau\\
+&=\sum_{j=0}^{N-1}\int f(y)\frac1{Vs_j^n}
+\int_{\rho(x)\ge\rho(y)/(1+qs_j)}\rho(x)^{\tau-2n}a(x)\,dx\,dy\\
+&\le\frac{nE_a}{a_*(n-\tau)}\Xi_{n,\tau}(q,\eta)A. \tag{SW.6}\label{eq:sw-middle}
 \end{align*}
-这里内层积分的径向形式为
-$nVE_a\int_{\rho(y)/C}^\infty s^{\tau-n-1}ds$。
+内层积分的径向幂为 $s^{\tau-n-1}ds$。逐层计算保留见证半径比，避免把所有中尺度见证放入同一个大球。
 
 若 $x\in H_2$，则 $x+rK\subset(r+\rho(x))K$ 且 $\rho(x)<\eta r$。因 $\tau-n<0$，
 \[
@@ -96,43 +142,57 @@ $\rho(z-x)<rs$，故存在半径小于 $rs$ 而仍含 $z$ 的中心见证球。�
 \begin{corollary}[一维幂权]\label{cor:small-homogeneity-one-dimensional}
 当 $n=1$、$\rho(x)=|x|$、$a\equiv1$ 时，
 \[
-W_\tau\le6+\frac{2(1+\eta^{-1})^{1-\tau}}{1-\tau}
+W_\tau\le6+\frac{4N_2(\eta)}{1-\tau}
 +\frac{\eta^\tau(1+\eta)^{1-\tau}}{\tau},
 \qquad\lim_{\tau\downarrow0}\tau W_\tau=1.
 \]
 \end{corollary}
 
 
-\begin{corollary}[有界角向对比下的一致收敛]\label{cor:small-homogeneity-uniform}
-固定 $n\ge1$ 与 $R\ge1$。对所有范数单位球 $K$ 及 $a^*/a_*\le R$ 的角向函数，令
-$L=nE_a/a_*$。当 $0<\tau<\min\{1,n/2\}$，有
+\begin{corollary}[一致对数余项]\label{cor:small-homogeneity-uniform}
+固定 $n\ge1$、$R\ge1$，并令 $L=nE_a/a_*$。对全部范数球 $K$ 及
+$[a]_{A_1(K)}\le R$ 的零次齐次轮廓，$0<\tau<\min\{1,n/2\}$ 时有
 \[
-1-\tau\bigl[1+\log(n/\tau)\bigr]
-\le \frac{\tau\mathcal W_\tau}{L}
-\le1+C_{n,R}\tau^{1/(n+1)},\qquad
-C_{n,R}=\frac{9^nR+2^{2n+1}}n+2^n-1. \tag{SW.8}
+1-\tau[1+\log(n/\tau)]\le\frac{\tau\mathcal W_\tau}{L}
+\le1+\tau\left[\frac{9^nR}{n}+2^n-1+
+\frac{4^nN_2(\tau)}{n-\tau}\right]. \tag{SW.8}
 \]
-因此相对收敛也对这些范数与角向函数一致；不要求角向轮廓连续。
-此处上界余项只作可用估计，不断言其阶最优。
+特别地，相对误差为 $O_{n,R}(\tau\log(1/\tau))$。进一步一致有
+\[
+1-\tau\log(1/\tau)-O_n(\tau)
+\le\frac{\tau\mathcal W_\tau}{L}
+\le1+(e-1)\tau\log(1/\tau)+O_{n,R}(\tau). \tag{SW.8a}
+\]
+这些是双侧界，不给出真实第二项或其精确系数。
 \end{corollary}
 \begin{proof}
-记 $L_0=\tau^\tau(n-\tau)^{n-\tau}/n^n$。由
-$-\log(1-z)\le z/(1-z)$，得
+下界因子 $L_0=\tau^\tau(n-\tau)^{n-\tau}/n^n$ 满足
+$1-L_0\le-\log L_0\le\tau[1+\log(n/\tau)]$，并有
+$L_0=1-\tau\log(1/\tau)+O_n(\tau)$。
+取 $q=2$、$\eta=\tau$。因 $s_j\ge1/2$，
+$(1+2s_j)^{n-\tau}/s_j^n\le4^n$。将 (SW.1) 除以 $L/\tau$，
+局部项至多 $9^nR\tau/n$，最后一项不超过
+$(1+\tau)^n\le1+(2^n-1)\tau$，遂得 (SW.8)。
+
+为改进对数项常数，固定 $q>1$、$\eta=\tau$。由 $s_j^{-\tau}\le2^\tau$ 及二项式公式，
 \[
-1-L_0\le-\log L_0\le\tau\bigl[1+\log(n/\tau)\bigr].
+\Xi_{n,\tau}(q,\tau)\le
+2^\tau\sum_{j=0}^{N-1}(q+s_j^{-1})^n
+\le2^\tau(q^nN+C_{n,q}),
 \]
-将 (SW.1) 除以 $L/\tau$，取 $\eta=\tau^{1/(n+1)}$。
-局部项至多 $9^nR\tau/n$；中尺度项至多
-$2^{2n+1}\tau\eta^{-n}/n=2^{2n+1}\eta/n$；
-最后一项不超过 $(1+\eta)^n\le1+(2^n-1)\eta$。用 $\tau\le\eta$ 合并即得。
+其中 $C_{n,q}=\sum_{k=1}^n\binom nk q^{n-k}2^k/(1-q^{-k})$，与 $N,K,a$ 无关。
+又 $N=\log(1/\tau)/\log q+O_q(1)$，而
+$\tau^\tau(1+\tau)^{n-\tau}=1-\tau\log(1/\tau)+O_n(\tau)$。
+代入 (SW.1) 得上界的对数项系数 $q^n/(n\log q)-1$。
+取 $q=e^{1/n}$ 即为 $e-1$。局部项仍为 $O_{n,R}(\tau)$，证明了一致性。
 \end{proof}
 
 系数 $L\ge n$，等号恰在 $a$ 几乎处处为常数时成立。故与平均球匹配的径向幂权
-也恰好最小化这一领先系数。另一方面，对固定 $a$，(AG.7) 给出的近单位水平系数
-$S_\tau=\|a\|_{n/(n-\tau)}/E_a\to1$，由有界性与控制收敛直接得到；
+也恰好最小化这一领先系数。另一方面，若进一步 $a$ 有界，则对固定 $a$，(AG.7) 给出的近单位水平系数
+$S_\tau=\|a\|_{n/(n-\tau)}/E_a\to1$，由控制收敛直接得到；
 小齐次次数的临界行为仍通过 $E_a/a_*$ 保留角向信息。
 
-对固定的正乘积指数向量，(OW.2) 进一步给出有确定极限顺序的结论
+对固定的正乘积指数向量 $\boldsymbol b$，(OW.2) 进一步给出有确定极限顺序的结论
 \[
 \lim_{\tau\downarrow0}\tau
 \left[\lim_{\lambda\downarrow\lambda_c}(\lambda-\lambda_c)
@@ -141,3 +201,50 @@ C^{\boldsymbol b,\rm out}_{K,h_\tau}(\lambda)\right]
 \]
 这里先对每个固定权取临界上侧极限，再令 $\tau\downarrow0$。
 特别地，一维径向权、等指数双线性模型的临界留数渐近为 $1/(2\tau)$。
+
+\begin{proposition}[立方体上的显式无界 \texorpdfstring{$A_1$}{A1} 剖面]\label{prop:unbounded-angular-cube}
+取 $\rho(x)=\|x\|_\infty$，$K=[-1,1]^n$，并令 $0<\gamma<1$，
+\[
+ a_\gamma(x)=\left(\frac{\|x\|_\infty}{|x_1|}\right)^\gamma\quad(x_1\ne0).
+\]
+超平面 $x_1=0$ 上任意定义。则 $a_\gamma\in A_1(K)$、$a_*=1$，并且
+\[
+ E_{a_\gamma}=\frac{n-\gamma}{n(1-\gamma)},\qquad
+ [a_\gamma]_{A_1(K)}\le
+ \max\left\{\frac{2\,3^\gamma}{1-\gamma},
+ \frac{3^n(n-\gamma)}{n(1-\gamma)}\right\}.\tag{SA.2}\label{eq:angular-cube-a1}
+\]
+故 $\lim_{\tau\downarrow0}\tau \mathcal W_\tau=(n-\gamma)/(1-\gamma)$。当 $n\ge2$ 时该剖面真正无界。
+\end{proposition}
+
+\begin{proof}
+$a_\gamma\ge1$，且 $|x_1|=\|x\|_\infty$ 的集合有正测度，故 $a_*=1$。对 $n\ge2$，令
+$t=|x_1|$、$m=\max_{2\le j\le n}|x_j|$，在单位立方体上先对 $m$ 积分，得
+\[
+ E_{a_\gamma}=\int_0^1\left[t^{n-1}+\frac{n-1}{n-1+\gamma}
+ (t^{-\gamma}-t^{n-1})\right]dt=\frac{n-\gamma}{n(1-\gamma)}.
+\]
+($n=1$ 时 $a_\gamma\equiv1$。) 对局部立方体 $Q=x+rK$，$r<\|x\|_\infty/2$，一维
+$w(t)=|t|^{-\gamma}$ 满足
+\[
+ \frac{|I|^{-1}\int_Iw}{\mathop{\rm ess\,inf}_Iw}\le\frac2{1-\gamma}.
+\]
+将其用于第一坐标投影，再用 $\|y\|_\infty^\gamma$ 在 $Q$ 上的比至多 $3^\gamma$，得到
+$2\,3^\gamma/(1-\gamma)$。同号区间的比为
+$(1-q^{1-\gamma})/((1-\gamma)(1-q))$，跨零区间的比为
+$(1+q^{1-\gamma})/((1-\gamma)(1+q))$，故上述界成立。若
+$r\ge\|x\|_\infty/2$，则 $Q\subset3rK$；齐次性和 $a_\gamma\ge1$ 给出该比至多
+$3^nE_{a_\gamma}$。这证明 \eqref{eq:angular-cube-a1}，定理给出极限。
+\end{proof}
+
+\begin{remark}[为何不能只假设 $E_a<\infty$ 与 $a_*>0$]\label{rem:angular-spike-failure}
+在二维立方体中令
+\[
+ a=1+\sum_{k\ge1}2^k\mathbf1_{\{x_2>0,\ x_1/x_2\in I_k\}},
+ \qquad I_k=(2^{-k},2^{-k}+2^{-3k-4}).
+\]
+则 $a_*=1$ 而 $E_a=1+\sum_{k\ge1}2^k|I_k|/8=385/384$。但在
+$z_k=(2^{-k},1)$ 的充分小对称立方体上，第 $k$ 个峰在穿过中心的直线一侧占一半，其他峰可避开，
+故其 $A_1$ 比至少 $1+2^{k-1}$。于是 $a\notin A_1(K)$，定理说明每个 $\mathcal W_\tau$ 都无穷。
+因此有限角向均值和正下界仍不足以保证完整弱型有限性。
+\end{remark}
