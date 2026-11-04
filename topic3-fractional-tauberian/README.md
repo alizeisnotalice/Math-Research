@@ -97,3 +97,7 @@ run('verification/fixed_cube_matlab.m')
 第15轮证明统一有限余量可传递到任意有界不可数见证族，并建立全体常数与[0,1]密度松弛优化的精确等值；胞元示性函数构造有全方体统一误差界。405组不同方向尺度探索后归档5份实际输入重建与256个有理积分检查。见 `rounds/015.md`；全体三阶上界仍待证明。
 
 第15轮当前PDF63页。复现 `verification/varying_scales.py` 后运行 `verification/reconstruct_capacity.py`；网格构造见 `verification/mesh_purification.py`、同名Mathematica与MATLAB脚本。
+
+第16轮精确求出四轴见证强制共用尺度的最优捕获与临界半径：a(1−t)=t+2t⁴−8t⁶+…，并给出全阶解析反演。矩形允许方向依赖尺度时四轴半径在t²阶更大，故共同尺度不是全体优化的合法约化。见 `rounds/016.md`；不把四轴半径当光晕面积。
+
+第16轮当前PDF65页。复现 `verification/common_scale.py`、`verification/common_scale.wl`、`verification/common_scale_matlab.m`。
