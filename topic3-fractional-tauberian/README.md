@@ -77,3 +77,7 @@ run('verification/fixed_cube_matlab.m')
 第9轮当前PDF为54页；正文、逐项审计、独立复审及最小复现材料同步归档，详见 `rounds/009.md`。
 
 第10轮在n=2、β=1证明矩形输入类的精确高水平上确界R(α)=(α⁻¹−α)²/2，严格超过固定正方形测试值；精确差为(1−α)⁴/(2α²)。给出任意阶精确余项，但尚未证明全体C=R或全体下一系数。复现 `wolframscript -file verification/rectangle.wl`、MATLAB执行 `verification/rectangle_matlab.m`、`python3 verification/rectangle.py`；当前PDF55页，见 `rounds/010.md`。
+
+第11轮补充二维半阶任意有限不交矩形并的精确接触尺度公式（rect:union-scales），用于非凸输入反例搜索。四角挖补的计算及尚未闭合的三阶传递见 `rounds/011.md`；有限搜索不能证明全体上界。
+
+第11轮当前PDF为56页，目录统一字号调整以保持单页。
