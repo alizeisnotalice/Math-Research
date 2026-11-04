@@ -37,17 +37,17 @@
 \maketitle
 \begin{abstract}
 研究 Lebesgue 测度下中心轴平行立方体极大算子的 Tauberian 常数。
-令 \(a=2^nt\)、\(v=2t^{1/n}\)、\(L_n(t)=[1-a/(1+v)^n]^{-1}\)。
-对每个固定整数 \(n\ge2\)，证明
-\(C_n(1-t)=L_n(t)+O_n(av^6)\)，确定直至 \(t^{1+5/n}\) 的全部系数，
-其中三维 \(t^{8/3}\) 的系数为零。
-上界适用于全部有限正测度可测输入及全部半径，下界由严格见证的有限周期孔构造实现。
-证明以全部源点的面对约束控制角部交叠，并将有效端点之间未被其他盒覆盖的面缝计入正回收；
-小半径源通过局部 dyadic 分割与入向面约束回收，五层深覆盖和直接以输入及水平集质量结算的账本完成全局闭合。
-对于共享同一中心方体、以公共交集归一化的多线性常数，
-证明精确线性参数约化及临界发散，并得到关于所有多线性重数一致的相应高阶渐近。
-另以近单位斜晶格构造证明 \(C_n(1-t)-L_n(t)\) 在 \(t^{1+6/n}\) 尺度具有严格正的下界，
-从而排除周期包络在充分小参数下的精确性。
+令 \(a=2^nt\)、\(v=2t^{1/n}\)、\(L_n(t)=[1-a/(1+v)^n]^{-1}\)，
+\(K_n=\binom{n}{2}n^2/27\)。对每个固定整数 \(n\ge2\)，证明
+\(C_n(1-t)=L_n(t)+K_nav^6+o_n(av^6)\)，
+确定直至 \(t^{1+6/n}\) 的全部系数，其中三维 \(t^{8/3}\) 项为零。
+上界覆盖全部有限正测度可测输入及全部半径，下界由孔形重配的真实有限输入实现。
+先以所有源点的实际见证、强投影分布和面容量得到临界加权紧性，
+再从原半盒图提取完整局部铺砌，并以横截面接触计数控制无标签角对。
+在有效端盒内把同一见证捕获的不交目标质量相加，给出系数准确的全源角成本；
+六层结算保留源缺量并抵消前层重复量，完成匹配上界。
+对于共享同一中心方体、以公共交集归一化的多线性模型，
+证明精确线性约化、临界发散以及关于全部多线性重数一致的高阶渐近。
 \end{abstract}
 \section{引言}
 
@@ -97,17 +97,17 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 \cite{Huang2026Discrete,Huang2026Flows} 分别讨论离散和遍历球极大算子、单侧遍历流。
 这些结果的几何或动力系统假设与本文不同，不能直接给出中心方体的高阶系数。
 
-本文先以有限半径见证的贪心选择证明显式线性上界，
-以有限截断的周期孔构造得到匹配下界。进一步研究扣除一阶项以后的非零修正项。
-关键困难在于代表方体中心处的高平均值不能替代所有水平集点自身的见证，
-而少量异常方体也可能影响所需的高阶精度。
-本文保留每个点的实际见证，以投影分布的有效端点和面容量控制规则方体的扩大盒，
-在每个方向保留所有源点的实际半径限制，以源内禁区和目标角条质量约束交叠。
-小半径源在有效盒内由 dyadic 格子计数回收，盒外质量则由入向面容量控制；
-直接以输入质量与水平集质量结算，再用五层深覆盖消除源缺失。
-有效端点的面缝提供不重复支付的正体积。
-对异常区域，扩大空隙观测窗在完整见证图上给出有限层加权体积增长；
-据此选取成本较小的边界，回收内部空隙及剩余私有容量，闭合一般输入的上界。
+本文先用有限半径见证的贪心选择证明显式线性上界，
+以有限截断的周期孔给出匹配的一阶基线。高阶困难是：代表中心处的平均值
+不能替代全部水平集点的实际见证，少量异常方体也可能影响所需精度。
+我们先保留全部源点的面对容量，以局部 dyadic 计数回收小半径源，
+用有效端点的面缝和内部空隙回收取得一般输入的粗余项与临界正预算。
+原半盒的完整相交图随后给出加权多数根的全尺度窗口清单，
+其极限是允许错列和 T 接缝的单位方体铺砌。横截面分片与积分可见性计费
+控制角接触数，不要求全局晶格标签。
+最后回到同一源点的原指定见证，将它捕获的各个真实目标质量相加，
+在有效端盒内积分缺源层，得到准确的角部代价。任意大交长由小份额盈余支付，
+六层望远镜使早层粗误差降阶，同时保留末层完整系数。
 
 \begin{theorem}[真实高阶渐近]\label{thm:endpoint}
 令
@@ -119,19 +119,22 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 \begin{equation}\label{eq:envelopes}
  L_n(t)\le\Cn(1-t)\le U_n(t),
 \end{equation}
-其中右侧上界对 \(0<t<1\) 成立。对每个固定整数 \(n\ge2\)，进一步有
+其中右侧上界对 \(0<t<1\) 成立。记 \(K_n=\binom{n}{2}n^2/27\)。
+对每个固定整数 \(n\ge2\)，进一步有
 \begin{equation}\label{eq:sharp}
- \Cn(1-t)=L_n(t)+O_n(t^{1+6/n}),\qquad t\downarrow0.
+ \Cn(1-t)=L_n(t)+2^{n+6}K_nt^{1+6/n}+o_n(t^{1+6/n}),\qquad t\downarrow0.
 \end{equation}
 令
 \[
- b_{n,j}=2^{n+j}\sum_{k=1}^{1+\lfloor j/n\rfloor}
- (-1)^{j-(k-1)n}\binom{n+j-1}{j-(k-1)n},\qquad 0\le j\le5.
+ b_{n,j}=2^{n+j}\left[
+ \sum_{k=1}^{1+\lfloor j/n\rfloor}
+ (-1)^{j-(k-1)n}\binom{n+j-1}{j-(k-1)n}
+ +\mathbf1_{\{j=6\}}K_n\right],\qquad 0\le j\le6.
 \]
 则全部维数的真实展开统一写为
 \begin{equation}\label{eq:coefficients}
- \Cn(1-t)=1+\sum_{j=0}^{5}b_{n,j}t^{1+j/n}
-              +O_n(t^{1+6/n}).
+ \Cn(1-t)=1+\sum_{j=0}^{6}b_{n,j}t^{1+j/n}
+              +o_n(t^{1+6/n}).
 \end{equation}
 通式包含低维的幂次碰撞；三维 \(b_{3,5}=0\)，故 \(t^{8/3}\) 项消失。
 特别地，
@@ -139,24 +142,18 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
  \lim_{t\downarrow0}
  \frac{\Cn(1-t)-1-2^nt}{t^{1+1/n}}=-n2^{n+1}.
 \]
-上述余项的常数及起效阈值只依赖固定维数。
+余项按固定维数理解；不主张维数一致性。
 \end{theorem}
 
-周期下包络的更高展开仍可能遗漏其他构造的贡献。
-对一般单位对角近单位矩阵，先按真实角部损失重配实际孔形与质量。
-显式预算给出可实现的局部变分泛函；对其中所有坐标对联合优化，得到以下正差。
-\begin{proposition}[周期包络的严格偏差]\label{prop:nonexact}
+周期包络遗漏了首个角部贡献。对全正对称近单位晶格重配孔形，
+用真实有限输入实现以下匹配下界。
+\begin{proposition}[匹配下界的有限构造]\label{prop:nonexact}
 对每个固定整数 \(n\ge2\)，有
 \begin{equation}\label{eq:nonexact}
  \liminf_{t\downarrow0}
  \frac{\Cn(1-t)-L_n(t)}{2^{n+6}t^{1+6/n}}\ge\binom{n}{2}\frac{n^2}{27}>0.
 \end{equation}
-特别地，充分小的 \(t>0\) 满足 \(\Cn(1-t)>L_n(t)\)。
-结合 \eqref{eq:sharp}，对每个固定 \(n\ge2\)，
-\[
- \Cn(1-t)-L_n(t)\asymp_n t^{1+6/n}.
-\]
-这确定了该差值的幂阶，尚未确定归一化极限或精确系数。
+所用输入可以取为有界的有限测度集；所保留的内层孔点具有严格中心见证。
 \end{proposition}
 
 公共交集归一化的多线性对象还具有精确的参数约化。
@@ -181,8 +178,8 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 结合 \eqref{eq:sharp}，得到关于多线性重数一致的高阶展开。
 以下常数均允许依赖固定维数；不主张维数一致性。
 第 2 节准备同时等分、有限见证选择和参数控制；
-第 3 节证明精确约化、周期与斜晶格下界及一般输入的高阶上界；
-第 4 节给出多线性应用。
+第 3 节证明精确约化、一般输入的锐上界和匹配有限构造；
+第 4 节传递至全部多线性重数。
 
 \section{预备知识}
 \subsection{严格水平余量与同时等分}
@@ -290,27 +287,28 @@ Besicovitch 方体族的交叠重数不超过 \(2^n\)。
  0\le\sigma_m(\eps)-\eps\le\frac{\eps^2}{2(1-\eps)}.
 \end{equation}
 关于全部 \(m\ge1\) 一致还有
-\begin{equation}\label{eq:cubicparameter}
- \sigma_m(\eps)=\eps+a_m\eps^2+b_m\eps^3+O(\eps^4),\qquad
- a_m=\frac{m-1}{2m},\quad b_m=\frac{(m-1)(2m-1)}{6m^2}.
+\begin{equation}\label{eq:quarticparameter}
+ \begin{aligned}
+ \sigma_m(\eps)&=\eps+a_m\eps^2+b_m\eps^3+c_m\eps^4+O(\eps^5),\\
+ a_m&=\frac{m-1}{2m},\quad b_m=\frac{(m-1)(2m-1)}{6m^2},\quad
+ c_m=\frac{(m-1)(2m-1)(3m-1)}{24m^3}.
+ \end{aligned}
 \end{equation}
 \end{lemma}
 \begin{proof}
 由 \(x^{1/m}\) 的凹性，\((1-\eps)^{1/m}\le1-\eps/m\)，故第一下界成立。
-令 \(q=-\log(1-\eps)\)，由 \(1-e^{-q/m}\le q/m\) 得上界。
-又
+令 \(q=-\log(1-\eps)\)，由 \(1-e^{-q/m}\le q/m\) 得上界。又
 \[
- -\log(1-\eps)-\eps
- =\sum_{k\ge2}\frac{\eps^k}{k}
+ -\log(1-\eps)-\eps=\sum_{k\ge2}\frac{\eps^k}{k}
  \le\frac{\eps^2}{2(1-\eps)}.
 \]
-直接求导得到
+直接求导有
 \[
- \sigma_m^{(4)}(z)=(1-1/m)(2-1/m)(3-1/m)(1-z)^{1/m-4}.
+ \sigma_m^{(5)}(z)=(1-1/m)(2-1/m)(3-1/m)(4-1/m)(1-z)^{1/m-5}.
 \]
-当 \(m\ge1\)、\(0\le z\le\eps<1/2\) 时，其绝对值不超过
-\(6(1-\eps)^{-4}\le96\)。Taylor 定理给出统一的四次余项，
-证明 \eqref{eq:cubicparameter}；\(m=1\) 时等式精确成立。
+对 \(m\ge1\)、\(0\le z\le\eps\le1/2\)，其绝对值不超过 \(24\cdot32=768\)。
+Taylor 定理给出 \eqref{eq:quarticparameter} 的统一余项，绝对值至多
+\((32/5)\eps^5\)；\(m=1\) 时高阶项及余项均为零。
 \end{proof}
 
 \section{主要证明}
@@ -415,77 +413,82 @@ Besicovitch 方体族的交叠重数不超过 \(2^n\)。
 先令 \(N\to\infty\)，再令 \(\rho\uparrow\rho_\alpha\)，得到结论。
 \end{proof}
 
-置 \(a=v^n=2^nt\)、\(v=2t^{1/n}\)。在小 \(v\) 时，
-\[
- L_n(t)-1=\sum_{k\ge1}v^{kn}(1+v)^{-kn}.
-\]
-其中 \(v^{n+j}\) 的系数只来自 \(1\le k\le1+\lfloor j/n\rfloor\)。
-展开每项并用 \(kn+[j-(k-1)n]-1=n+j-1\)，
-得到 \eqref{eq:coefficients} 的通式。所有未保留幂次至少为 \(n+6\)；
-解析函数的 Taylor 余项为 \(O_n(v^{n+6})\)。
-这只是下包络的代数展开；真实常数的匹配上界由下文证明。
-有限输入可达到更小的误差：取 \(u=t^{1/n}\)、
-\(\rho=u(1-u^7)\)、\(N=\lceil u^{-7}\rceil\)。严格见证余量为
-\(t-\rho^n=u^n[1-(1-u^7)^n]>0\)；孔径扰动及截断因子
-\((1-1/N)^n\) 造成的总误差为 \(O_n(tu^7)=o_n(av^6)\)。
-结合 \eqref{eq:external}，得到 \eqref{eq:envelopes} 及一阶渐近。
-下面证明与周期孔匹配的全部输入高阶上界。
-
 \input{sections/global}
+
+\input{sections/sharp}
 
 \input{sections/skew}
 
-\section{应用}
+\begin{proof}[定理~\ref{thm:endpoint} 高阶部分的证明]
+由 \ref{sharp-upper} 的全部输入上界和命题~\ref{prop:nonexact} 的匹配下界，
+\[
+ (\Cn(1-t)-L_n(t))/(av^6)\longrightarrow K_n.
+\]
+这就是 \eqref{eq:sharp}。
+为取得全部幂次的系数，展开绝对收敛级数
+\[
+ L_n(t)-1=\sum_{k\ge1}v^{kn}(1+v)^{-kn}.
+\]
+\(v^{n+j}\) 的系数只来自 \(k\le1+\lfloor j/n\rfloor\)，其二项式次数为
+\(j-(k-1)n\)，上标为 \(n+j-1\)。截至 \(j=6\) 后的余项是
+\(O_n(v^{n+7})\)。把 \eqref{eq:sharp} 的修正加入 \(j=6\) 项即得
+\eqref{eq:coefficients}。\(j=1\) 的系数为 \(-n2^{n+1}\)，所以最初归一化极限也成立。
+\end{proof}
+
+\section{重数一致的多线性渐近}
 
 \begin{corollary}[重数一致的高阶渐近]\label{cor:uniform}
 令
 \[
  A_m(\eps)=1+\frac{m-1}{2m}\eps
-             +\frac{(m-1)(2m-1)}{6m^2}\eps^2.
+ +\frac{(m-1)(2m-1)}{6m^2}\eps^2
+ +\frac{(m-1)(2m-1)(3m-1)}{24m^3}\eps^3.
 \]
 对每个固定 \(n\ge2\)，当 \(\eps\downarrow0\) 时，关于全部整数 \(m\ge1\) 一致有
 \begin{equation}\label{eq:uniform-coefficients}
- \Cm(1-\eps)=1+\sum_{j=0}^{5}b_{n,j}
- [\eps A_m(\eps)]^{1+j/n}+O_n(\eps^{1+6/n}).
+ \Cm(1-\eps)=1+\sum_{j=0}^{6}b_{n,j}
+ [\eps A_m(\eps)]^{1+j/n}+o_n(\eps^{1+6/n}).
 \end{equation}
-例如，三维 \(\eps^{8/3}\) 的系数为 \(160(1-1/m)\)：
-该项在线性情形消失，但在 \(m>1\) 时由参数替换产生。
+三维 \(\eps^{8/3}\) 的系数仍为 \(160(1-1/m)\)：该项在线性情形消失，
+在 \(m>1\) 时由参数替换产生。
 \end{corollary}
 \begin{proof}
-因为 \((1-1/m)^m<e^{-1}\)，充分小的 \(\eps\) 使精确约化对全部 \(m\) 适用。
-记 \(s=\sigma_m(\eps)\)。引理 \ref{lem:parameter} 给出
-\(s=\eps A_m(\eps)+O(\eps^4)\)，且 \(\eps\le s\le2\eps\)，均与 \(m\) 无关。
-对固定 \(p\ge1\)，由均值定理，
+对 \(0<\eps\le1/2\)，精确约化同时适用于全部 \(m\)。记 \(s=\sigma_m(\eps)\)，
+\(p_*=1+6/n\le4\)。单线性展开的余项 \(r_n(t)=o_n(t^{p_*})\) 满足：
+给定 \(\delta>0\)，存在与 \(m\) 无关的 \(t_0>0\)，使
+\(|r_n(t)|\le\delta t^{p_*}\) 对全部 \(0<t<t_0\) 成立。
+当 \(\eps<t_0/2\) 时，\(\eps\le s\le2\eps\)，故全部重数的余项
+均不超过 \(\delta2^{p_*}\eps^{p_*}\)，给出一致的 little-o。
+引理~\ref{lem:parameter} 还给 \(s=\eps A_m(\eps)+O(\eps^5)\)。
+对 \(1\le p\le4\)，两底数均在 \([\eps,C\eps]\) 内，均值定理给
 \[
- s^p-[\eps A_m(\eps)]^p=O_p(\eps^{p+3}).
+ s^p-[\eps A_m(\eps)]^p=O_p(\eps^{p+4}).
 \]
-由于 \(1+6/n\le4\)，这些替换误差全在 \(O_n(\eps^{1+6/n})\) 内。
-将定理 \ref{thm:endpoint} 代入 \eqref{eq:reduction}，得到所述统一展开。
-三维的示例来自 \(192s^{5/3}\) 的参数修正
-\(320a_m\eps^{8/3}=160(1-1/m)\eps^{8/3}\)，而 \(b_{3,5}=0\)。
-以上常数与起效区间均与 \(m\) 无关。
+有限求和误差 \(O_n(\eps^5)\) 是 \(o_n(\eps^{p_*})\)。
+最后由精确约化代入定理~\ref{thm:endpoint}。三维示例来自
+\(192s^{5/3}\) 的修正 \(320a_m\eps^{8/3}\)，而 \(b_{3,5}=0\)。
 \end{proof}
 
-\begin{corollary}[自然参数下的重数一致正差]\label{cor:nonexact-multi}
-令 \(\sigma_m(\eps)=m[1-(1-\eps)^{1/m}]\)。对每个固定 \(n\ge2\)，有
+\begin{corollary}[自然参数下的一致极限]\label{cor:nonexact-multi}
+对每个固定 \(n\ge2\)，有
 \[
- \liminf_{\eps\downarrow0}\ \inf_{m\ge1}
- \frac{\Cm(1-\eps)-L_n(\sigma_m(\eps))}
- {2^{n+6}\eps^{1+6/n}}\ge\binom{n}{2}\frac{n^2}{27}.
+ \lim_{\eps\downarrow0}\sup_{m\ge1}
+ \left|\frac{\Cm(1-\eps)-L_n(\sigma_m(\eps))}
+ {2^{n+6}\eps^{1+6/n}}-K_n\right|=0.
 \]
 \end{corollary}
 \begin{proof}
-给定 \(0<\eta<\binom{n}{2}n^2/27\)，命题~\ref{prop:nonexact} 使充分小的所有 \(t\) 都满足
+由定理~\ref{thm:endpoint}，标量标准化余项记为 \(\eta_n(t)\to0\)。
+精确约化使绝对值中的标准化差等于
 \[
- \Cn(1-t)-L_n(t)\ge(\binom{n}{2}n^2/27-\eta)2^{n+6}t^{1+6/n}.
+ [K_n+\eta_n(\sigma_m(\eps))]
+ (\sigma_m(\eps)/\eps)^{1+6/n}-K_n.
 \]
-引理~\ref{lem:parameter} 给 \(\eps\le\sigma_m(\eps)\le2\eps\)，对全部
-\(m\ge1\) 一致。以 \(t=\sigma_m(\eps)\) 代入，再用精确约化，便得到
-关于所有 \(m\) 的同一下界；最后令 \(\eta\downarrow0\)。
+积分式 \(\sigma_m(\eps)=\int_0^\eps(1-z)^{1/m-1}\dd z\) 给
+\(1\le\sigma_m(\eps)/\eps\le(1-\eps)^{-1}\)，统一趋于一。
+又 \(\sigma_m\in[\eps,2\eps]\)，单一标量余项的模量
+\(\sup_{0<t\le2\eps}|\eta_n(t)|\to0\)，因此可对全部 \(m\) 取上确界。
 \end{proof}
-
-对每个固定 \(n\ge2\)，首差的幂阶已确定为 \(av^6\)，但该尺度的精确系数仍未知。
-进一步确定真实高阶渐近，需要在所有输入的角部缺损与孔形重配构造之间取得匹配系数。
 
 \bibliographystyle{plain}
 \bibliography{sources}

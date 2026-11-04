@@ -1,0 +1,777 @@
+\subsection{临界族的六层先验}
+\label{sharp-critical-section}
+
+粗余项估计把需要保留的角部交量限制在 \(v^6S\) 尺度。
+为确定其系数，下面保留整个源盒的体积盈余，对同向的全部目标先相加再积分，
+并用原半盒的局部铺砌极限计算余维二接触数。
+最后多取一层源、目标，使前层的粗误差和初始端点均降为 \(o(v^6S)\)。
+
+沿用前节的 \(H=2^n\)、\(a=v^n\)、\(A_v=(1+v)^n\)，并记
+\[
+ K_n=\binom n2\frac{n^2}{27}.
+\]
+只须考虑任意满足下式的输入序列：
+\begin{equation}\label{sharp-critical-branch}
+ v\downarrow0,\qquad V=|E|>0,\qquad
+ K\subset\Hc(1-t;E)\setminus E\ \text{紧},\qquad
+ \frac{M}{V}\ge\frac{a}{A_v-a}-Bav^6,
+ \quad M=|K|,
+\end{equation}
+其中 \(B<\infty\) 固定。
+以下小量均沿任意这样的序列成立；其收敛模量允许依赖序列。
+带下标 \(\sigma\) 的小量先固定 \(0<\sigma<1/4\)，再令 \(v\to0\)。
+所有 \(O\) 常数只依赖所注明的固定参数，不依赖输入、指标数或半径尺度。
+
+仍用引理~\ref{lem:finitegreedy} 的原严格见证 \(r(x)\) 和同一有限选族。
+标记集 \(I\)、外边界 \(\partial I\)、\(K'\)、\(M'\)、\(M_I\)
+均按前节定义；写
+\[
+ P_I=P(I),\quad P_\partial=P(\partial I),\quad S_I=S(I).
+\]
+将引理~\ref{lem:global-exterior-union} 的有限递归执行到六层。
+同层未删除源、有效源、目标记为
+\(T_{i,h},F_{i,h},G_{i,h}\)，质量分别为
+\(m_{i,h}^0,\mu_{i,h},g_{i,h}\)，并设
+\[
+ \delta_{i,h}^{\rm mass}=m_{i,h}^0-\mu_{i,h},\quad
+ \Delta_h^{\rm mass}=\sum_i\delta_{i,h}^{\rm mass},\quad
+ \mathcal D_h=\sum_i g_{i,h}-M',\quad
+ \mathfrak d_h^0=M'-\sum_i m_{i,h}^0.
+\]
+所有这些和只取外部指标。恒有
+\begin{equation}\label{sharp-mass-identity}
+ \sum_i(g_{i,h}-\mu_{i,h})
+ =\mathcal D_h+\mathfrak d_h^0+\Delta_h^{\rm mass}.
+\end{equation}
+各层使用同一个 \(I,K'\) 和原指定见证。
+外部为空时全部源量取零，不定义空源的 CDF。
+
+在第六层暂略去层下标。记 \(W_i^0,W_i',W_i\) 为原始端盒、
+有效端盒和中点端盒，\(\Delta_i^{\rm end}\) 为有效端总移距，
+\[
+ \varepsilon_i=\frac{|W_i|}{\mu_i}-1,\qquad
+ b_i=|W_i|^{1/n},\qquad
+ \mathfrak q_i=\sum_{l=1}^n
+       \left(\log\frac{w_{il}}{b_i}\right)^2,
+\]
+其中 \(w_{il}\) 是 \(W_i\) 的第 \(l\) 边长。
+对每个深处指标，仍取引理~\ref{lem:global-face-neighbor} 的各向面邻居，
+并写
+\[
+ \alpha_i=\max_{l,\pm}\frac{g_{i\to p(l,\pm)}}{r_i}.
+\]
+
+还需要全部固定切向裕量的近面。
+固定 \(0<\tau<1/100\)，称有向对 \((i,p,l,+)\) 为稳健近面，
+若 \(i\) 深处、\(p\) 外部，
+\[
+ \frac78r_i\le r_p\le\frac98r_i,\qquad
+ 0\le b_{ip}:=x_{p,l}-x_{i,l}-\frac{r_i+r_p}{2}\le\frac18r_i,
+\]
+且每个切向半盒投影交长至少为 \(\tau r_i\)。
+负面反射定义；其两向 CDF 余量及 \(\Gamma_{ip}\)
+按 \eqref{eq:global-directed-face-gaps}--\eqref{eq:global-midpoint-face-gap} 定义。
+令 \(\mathscr E_\tau\) 为这些有向对，
+\(\mathcal F_\tau=\sum_{\mathscr E_\tau}\Gamma_{ip}r_i^{n-1}\)。
+
+\begin{lemma}[六层临界先验]\label{sharp-critical}
+在 \eqref{sharp-critical-branch} 下，可按前节同一图选层方法重新选择一个 \(I\)，使
+\begin{equation}\label{sharp-graph-absorption}
+ C_*P_\partial\le\frac{c_{\rm rec}}4P_I,\qquad
+ 2nvS_I\le\frac{c_{\rm rec}}4P_I,
+ \quad c_{\rm rec}=\frac1{2H},\quad C_*=2C_2(n)+4.
+\end{equation}
+同一第六层满足
+\begin{equation}\label{sharp-positive-prior}
+ P_I+\frac{\mathcal D_6}{a}
+ +v\sum_i(\varepsilon_i+\mathfrak q_i)r_i^n
+ +\mathcal F_6+c_{n,\tau}\mathcal F_{\tau,6}
+ \le C_{n,B}v^6S,
+\end{equation}
+其中 \(c_{n,\tau}>0\)，对每个预先固定的 \(\tau\) 分别成立。
+此外
+\begin{equation}\label{sharp-mass-prior}
+ \frac{\mathcal D_5}{a}+\frac{\mathfrak d_6^0}{a}
+       +S_I+S(\partial I)=O_{n,B}(v^5S),\qquad
+ \frac{\Delta_6^{\rm mass}}a=O_{n,B}(v^6S).
+\end{equation}
+若 \(\theta_i=(g_i-\mu_i)/(ar_i^n)\)，则
+\begin{equation}\label{sharp-width-tightness}
+ \sum_i\theta_i r_i^n=O(v^5S),\qquad
+ \frac1S\sum_i r_i^n
+ \max_l\left|\frac{w_{il}-vR_i}{v^3r_i}\right|^2=O(v).
+\end{equation}
+同一宽度结论适用于 \(W_i^0,W_i'\)。
+对稳健近面还有
+\begin{equation}\label{sharp-face-tightness}
+ \sum_{i\in\mathcal T}\alpha_i r_i^n
+       +\sum_i\Delta_i^{\rm end}r_i^{n-1}=O(v^6S),\qquad
+ \frac1S\sum_{(i,p)\in\mathscr E_\tau}
+ \frac{|R_i-R_p|}{v^4r_i}r_i^n=O_{n,B,\tau}(v^2).
+\end{equation}
+\end{lemma}
+\begin{proof}
+先说明六层使用同一源、目标族。沿引理~\ref{lem:global-exterior-union}
+的递归，在已固定 \(L_{h-1}\) 后取
+\(H_h>L_{h-1}+D+1\)，令
+\[
+ G_{i,h}=K'\cap Q(x_i,(1-H_hv)r_i),\qquad
+ T_{i,h}=
+ \begin{cases}
+ P_i,&i\in\partial I,\\
+ N_{i,h-1},&i\notin I\cup\partial I,
+ \end{cases}
+ \quad
+ N_{i,h}=K'\cap Q(x_i,L_hvr_i).
+\]
+第一层仍取 \(T_{i,1}=P_i\) 及原第一层的小半径阈值。
+在 \(h\ge2\) 删除原指定半径小于 \(2L_{h-1}vr_i\) 的点后，
+\eqref{eq:global-private-radius}、引理~\ref{lem:global-linear-radius}
+及收缩族的唯一覆盖点定位，分别给出完整大见证、源与其他同层目标不交，
+以及下一常数 \(L_h\)。
+这些证明只用此前已固定的常数，故可再执行一次至 \(h=6\)。
+统一为 \(A_6\) 后才选强 CDF 斜率，最后取小 \(v\)。
+同一六层于是有
+\begin{equation}\label{sharp-depth-relations}
+ \mathcal D_h\ge f_h\ge0,\qquad
+ \mathfrak d_1^0\le A_0vM',\qquad
+ \mathfrak d_h^0\le f_{h-1}+aP_\partial\quad(2\le h\le6),
+ \quad f_h=M'-\sum_i|N_{i,h}|.
+\end{equation}
+边界改回私有源的差正由 \(aP_\partial\) 控制，小源删除量不在
+\(\mathfrak d_h^0\) 中。
+
+中点盒还有两种可保留的正量。
+由 \eqref{eq:global-midpoint-surplus}，
+\begin{equation}\label{sharp-end-displacement}
+ \Delta_i^{\rm end}\le C_{n,A_6}\varepsilon_i vr_i.
+\end{equation}
+令 \(s_l=\log(w_{il}/b_i)\)，则 \(\sum_l s_l=0\)，且各 \(s_l\)
+一致有界。对 \(\kappa_i=b_i/R_i\asymp v\)，函数
+\(\sum_l\log(1+\kappa_i e^{s_l})\) 的对角 Hessian 为
+\(\kappa_i e^{s_l}/(1+\kappa_i e^{s_l})^2\ge c_{n,A_6}v\)。
+沿线段积分 Taylor 公式，一阶项为零，故
+\begin{equation}\label{sharp-shape-surplus}
+ |X_i|\ge A_vg_i/a-C_{n,A_6}(v/a)(g_i-\mu_i)
+       +c_{n,A_6}v(\varepsilon_i+\mathfrak q_i)r_i^n.
+\end{equation}
+
+稳健近面的数目由原半盒不交性一致有界。
+在切向交内取边长 \(\tau r_i/2\)、离双方切向边界至少
+\(\tau r_i/4\) 的面块。原半盒法向缝上的条位于
+\(A_i^0\setminus\bigcup B_j\)：若另一个半盒穿条，分离性先使其半径
+可比于 \(r_i\)，切向不能实现分离，故它必须在两给定半盒之间沿法向分离；
+边长有固定下界的半盒不能塞入宽至多 \(r_i/8\) 的缝。
+因此 \(b_{ip}\le C_{n,\tau}e_i^0r_i=O_{n,D,\tau}(vr_i)\)，
+且原分离给 \(|r_i-r_p|<2b_{ip}\)。
+固定 \(\tau\) 后，所有源位移均小于该切向裕量。
+引理~\ref{lem:global-all-source-face} 的尾斜率证明由此对这些近面成立，
+两向余量非负，并满足
+\begin{equation}\label{sharp-root-jump}
+ |R_i-R_p|\le2\Gamma_{ip}
+             +\Delta_i^{\rm end}+\Delta_p^{\rm end}.
+\end{equation}
+事实上，两向余量之差是
+\(R_p-R_i+(\ell'_{p,l}-\ell^0_{p,l})-(h^0_{i,l}-h'_{i,l})\)。
+在中点面对端之间作同一面块上的条，
+引理~\ref{lem:global-free-face-strips} 的排他证明仍适用：
+任何穿条的第三盒先由分离得到半径 \(r_i(1+O_{n,A_6,D,\tau}(v))\)，
+随后被切向裕量和法向次序排除。
+这些条在源 \(Q_i\) 内、避开标记区域，体积为
+\(c_{n,\tau}\Gamma_{ip}r_i^{n-1}\)，重数有纯维数上界。
+新旧条并集的体积至少为两种并集体积之和的一半；
+给原条保留固定份额，便可另保留
+\(c_{n,\tau}\mathcal F_\tau\)，原小源及环境缺陷的独立回收仍成立。
+
+将这些正量保留在
+\eqref{eq:global-retained-budgets}--\eqref{eq:global-common-layer-ledger}
+中。重复量留一部分，另一部分用 \(\mathcal D_h\ge f_h\)；
+令 \(C_{\rm b}=2C_2(n)+2\) 及
+\[
+ Z_0=a[V+M-A_vM/a-c_{\rm rec}P_I+C_{\rm b}P_\partial+2nvS_I].
+\]
+存在固定 \(c_0,b_0>0\)，使同一左侧 \(Z_0\) 满足
+\begin{equation}\label{sharp-coarse-retained-recursion}
+ Z_0\ge c_0f_h-b_0vf_{h-1}
+       +a\mathcal J_h+\mathcal D_h/4
+       -C_na(v^6S+vP_\partial),\qquad
+ f_0=A_0vM',
+\end{equation}
+其中 \(\mathcal J_h\) 含固定正比例的
+\(v\sum(\varepsilon_{i,h}+\mathfrak q_{i,h})r_i^n\)、
+\(\mathcal F_h,c_{n,\tau}\mathcal F_{\tau,h}\)。
+以 \((b_0v/c_0)^{6-h}\) 加权，中间五个 \(f_h\) 精确消去；
+初端为 \(O(v^7M')\)，并保留末层 \(\mathcal J_6,\mathcal D_6/a\)
+及前层 \(v\mathcal D_5/a\) 的固定正比例。
+图选层仅依赖 \(P,S\)，仍按
+\eqref{eq:global-constant-order}--\eqref{eq:global-weighted-boundary}
+选取满足 \eqref{sharp-graph-absorption} 的同一 \(I\)。
+临界假设给精确上界
+\[
+ \Xi:=V+M-A_vM/a
+ =V-(A_v-a)M/a
+ \le B(A_v-a)v^6V=O_{n,B}(v^6S).
+\]
+将其代入保留正量的不等式，得到
+\eqref{sharp-positive-prior} 及 \(\mathcal D_5/a=O(v^5S)\)。
+初始异常条件及固定层增长给
+\(S_I\le C_nS(J_0)\le C_nP_I/(Dv)\)；
+\eqref{eq:global-boundary-deficit-floor} 给
+\(S(\partial I)\le C_nP_\partial/v\)，
+故两者都是 \(O(v^5S)\)。
+\eqref{sharp-depth-relations} 给 \(\mathfrak d_6^0/a=O(v^5S)\)。
+引理~\ref{lem:global-small-source-recovery} 给
+\(\Delta_6^{\rm mass}/a=O(v^6S)\)，再用
+\eqref{sharp-mass-identity} 得 \(\sum\theta_i r_i^n=O(v^5S)\)。
+
+最后，盒宽上下界、\eqref{sharp-shape-surplus} 和
+\[
+ \bigl||W_i|^{1/n}-vR_i\bigr|
+ \le C_{n,A_6}vr_i(\varepsilon_i+\theta_i)
+\]
+给出 \eqref{sharp-width-tightness}：
+各向异性平方由 \(\mathfrak q_i\) 控制，
+\(\varepsilon_i,\theta_i\) 一致有界，缩放再乘 \(v^{-4}\) 后为 \(O(v)\)。
+原始、有效端盒与中点盒的边差由
+\eqref{sharp-end-displacement} 控制。
+由 \eqref{eq:global-midpoint-face-gap}，
+\(\sum_{\mathcal T}\alpha_i r_i^n\le2\mathcal F_6\)。
+对稳健近面用有界度求和
+\eqref{sharp-root-jump}，再用
+\eqref{sharp-positive-prior}、\eqref{sharp-end-displacement}，
+即得 \eqref{sharp-face-tightness}。
+\end{proof}
+
+\subsection{原输入的局部铺砌与接触计数}
+
+\begin{lemma}[全部尺度的局部匹配]\label{sharp-input-tiling}
+在引理~\ref{sharp-critical} 的同一族上，存在
+\(Z_v\supset I\cup\partial I\)，使
+\[
+ S(Z_v)=O_{n,B}(v^{9/2}S).
+\]
+对每个固定 \(R<\infty\)，在 \(Z_v^c\) 中所有根 \(i\) 的
+\(Q(x_i,Rr_i)\) 内，全部原半盒按 \(r_i\) 归一化后一致趋近某个覆盖全空间的
+轴平行单位立方体铺砌。
+匹配包括碰该窗口的全部指标，容许内外趋零的边缘层；
+所有相关尺度趋于根尺度，并最终全为外部深处指标。
+极限中具有固定切向正交长的面对，在前极限的 CDF 盒上有精确面对顺序。
+\end{lemma}
+\begin{proof}
+令 \(N^k\) 为完整见证图的闭图邻域。对任意 \(U\supset I\)，每个
+\(j\in N^1(U)\setminus U\) 规则，选一个邻接 \(i\in U\)。
+引理~\ref{lem:global-full-graph} 给 \(r_j\le3r_i\)，故
+\(B_j\subset Q(x_i,11r_i/2)\)。给每个新指标只分配一次，原半盒不交性给
+\[
+ S(N^1(U))\le C_\circ S(U),\qquad C_\circ=1+11^n.
+\]
+取
+\[
+ \ell(v)=\left\lfloor\frac{\log(1/v)}{2\log C_\circ}\right\rfloor,
+ \qquad Z_v=N^{\ell(v)+2}(I).
+\]
+由 \(S(I)=O(v^5S)\) 得所需坏根权界。
+好根的任意固定图层最终均规则且外部深处。
+
+归一化任意好根序列，使根半径为一、中心为零。
+固定图层内，规则相邻半径比有统一上下界，中心在固定有界盒中；
+半盒不交性遂给指标数的统一上界。
+逐层取子列，得到嵌套的有限根图极限。
+极限保留
+\(\|x_i-x_j\|_\infty\ge\max(r_i,r_j)\)。
+凡原半盒碰 \(A_i^0\)，其原 \(Q\) 与 \(Q_i\) 有严格邻接余量，
+且半径在 \((r_i/2,3r_i/2)\)，故均在下一图层有限清单中。
+因 \(e_i^0\le Dv\to0\)，这些极限闭半盒完全覆盖 \(A_i^0\)；
+若漏一内点便漏正体积邻域，再取闭包涵盖边界。
+
+将有限覆盖截到连通的 \(A_i^0\)，其相交图连通。
+相交的两个极限半盒满足
+\[
+ \max(r_j,r_p)\le\|x_j-x_p\|_\infty\le(r_j+r_p)/2,
+\]
+所以半径相等。含自身半盒的覆盖组件因此全为单位半盒。
+该组件每加一图层就覆盖上一并集的 \(1/4\) 邻域，故第 \(m\) 层覆盖
+\(Q(0,1/2+m/4)\)。可用规则图层数趋于无穷，得到全空间单位铺砌。
+
+还须排除不在固定已见图球中的盒。
+固定 \(R\ge1\)（较小窗口可包含于此类窗口）。
+若额外半盒碰 \(Q(0,R)\)，令其半径为 \(r\)、中心距为 \(c\)。
+原分离与相交给
+\(c>\max(1,r)\)、\(c\le R+r/2\)，从而 \(r<2R,c<2R\)。
+取子列使其中心趋于 \(x_*\)，半径可趋零。
+上面的有限单位组件已覆盖 \(Q(0,2R+1)\)，有某单位中心 \(y\)
+满足 \(\|x_*-y\|_\infty\le1/2\)。
+但它与额外盒的原分离在极限给距离至少一，矛盾。
+这同时排除了微小盒及从窗口外伸入的大盒。
+
+若固定窗口的匹配不一致，取一列违例好根；上述紧性和完整清单给出
+一个全空间单位铺砌，与违例矛盾。边缘触点以趋零内外扩张处理，
+中心分离保证匹配在内窗口为一一对应。
+所有匹配指标位于某固定图球，离 \(I\) 的图距离趋于无穷。
+极限面对有固定切向裕量时，前极限成为引理~\ref{sharp-critical}
+中的稳健近面，其两向余量非负，给出精确 CDF 面对顺序。
+\end{proof}
+
+\begin{lemma}[角交量的均匀可积性]\label{sharp-angle-integrability}
+对任意外部指标集 \(Z\)，置 \(\mu=S(Z)/S\le1\)。
+同一第六层中至少一端在 \(Z\) 的全部相交对满足
+\begin{equation}\label{sharp-bad-interactions}
+ \sum_{e\leftrightarrow Z}|X_i\cap X_j|
+ \le C_{n,B}v^6S(\mu^{1/3}+v).
+\end{equation}
+全部至少三临界轴的交量为 \(o(v^6S)\)；
+涉及外边界的全部交量为 \(O(v^7S+v^9S)\)。
+特别地，涉及引理~\ref{sharp-input-tiling} 中 \(Z_v\) 的交量为 \(O(v^7S)\)。
+\end{lemma}
+\begin{proof}
+单临界对无正体积交。对两个深处端点且有 \(q\ge2\) 个临界轴的边，
+取 \(R_i\ge R_j\) 的源端为所有者，令 \(\zeta_q=q/(2q-1)\)。
+\eqref{eq:global-all-source-corner-bound} 给
+\[
+ |X_i\cap X_j|\le C_{n,A_6}\!
+ \left[v^q(\varepsilon_i+\varepsilon_j)r_i^n
+ +v^q\Gamma_{ip}r_i^{n-1}
+ +v^{q+\zeta_q}\varepsilon_i^{\zeta_q}r_i^n\right].
+\]
+相交度有界、尺度可比，故所涉所有者按边重复的总权至多
+\(C_nS(Z)\)，即使所有者在 \(Z\) 外也可向其坏端点计费。
+盈余总权为 \(O(v^5S)\)，所选面缝总和由 \(\mathcal F_6\) 控制。
+线性项合计 \(O(v^7S+v^8S)\)，加权 H\"older 给
+\[
+ v^{q+\zeta_q}\sum_e\varepsilon_{i(e)}^{\zeta_q}r_{i(e)}^n
+ \le C_{n,B}v^{q+6\zeta_q}\mu^{1-\zeta_q}S.
+\]
+而
+\[
+ q+6\zeta_q-6=\frac{(2q-3)(q-2)}{2q-1}\ge0,\qquad
+ 1-\zeta_q\ge\frac13.
+\]
+对 \(q=2,\ldots,n\) 求和得 \eqref{sharp-bad-interactions}。
+若 \(q\ge3\)，第一指数差至少为 \(3/5\)，故总和为
+\(O(v^{33/5}S)=o(v^6S)\)。
+边界对使用 \eqref{eq:global-corner-overlap}，其总和为
+\(O(v^2\sum\varepsilon_i r_i^n+v^4S(\partial I))
+=O(v^7S+v^9S)\)。
+\end{proof}
+
+对恰有两个临界轴的正体积相交对 \(e=\{i,j\}\)，
+令 \(T_e\) 为其他轴的投影交、\(b_e=|T_e|\)，并取 \(r_e=r_i\)；
+换成另一端只有 \(1+O(v)\) 因子。记
+\[
+ \mathcal C_6=\sum_{e:q(e)=2}b_er_e^2 .
+\]
+\begin{lemma}[余维二接触计数]\label{sharp-incidence}
+对全部临界输入序列及上述同一第六层，有
+\begin{equation}\label{sharp-incidence-bound}
+ \limsup_{v\to0}\frac{\mathcal C_6}{S}\le\binom n2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+先在单位立方铺砌中固定两个轴，在其余轴作几乎处处横截面。
+得到单位正方形铺砌，每个四胞接缝有四个方形角；
+每胞对此轴对只有四个角，所以四胞片的积分计数每单位体积至多一。
+对轴对求和，窗口 \(Q(0,R)\) 中的计数至多
+\(\binom n2(2R+C_n)^n\)；边界由与窗口相遇的单位胞数控制。
+T 接缝不计为四胞，横截面允许分片。
+四胞片的相邻面对端有序时，两条对角不能同时正交：
+若按两行两列记为 \(A,B,C,D\)，
+\[
+ A_q^+\le B_q^-,\quad C_q^+\le D_q^-,
+ \qquad A_r^+\le C_r^-,\quad B_r^+\le D_r^-.
+\]
+若 \(A,D\) 在两轴都交，则 \(C_q^+<B_q^-\) 且
+\(B_r^+<C_r^-\)，使另一对角两轴都分离。
+
+固定 \(R\)，在好根的扩大窗口中应用引理~\ref{sharp-input-tiling}。
+固定窗口内候选数由 packing 有界。沿收敛子列，将其余轴按极限投影端点
+分成有限矩形片，先略去端点的 \(\eta\) 邻域，最后令 \(\eta\to0\)。
+正权重极限角对在每片上必须来自相反象限；覆盖性使另两象限亦由胞填满，
+故为四胞片。稳健近面给前极限的精确面对顺序，排除两对角同活跃。
+端点片及退化切向交长无极限权重。
+若角片进入根窗口，原中心分离先给其端点半径 \(O_R(r_k)\)；
+\(X_i\) 比 \(B_i\) 仅扩张 \(O(vr_i)\)，故这些原半盒均进入固定扩大窗口的
+全部匹配清单。由此局部上界为
+\[
+ \nu(Q(x_k,Rr_k))
+ \le\left[\binom n2(2R+C_n)^n+o_R(1)\right]r_k^n,
+\]
+其中 \(\nu\) 在下文定义。紧性反证使该界对全部好根一致。
+
+局部到全局采用积分可见性。对每个角对，在两个临界交区间的中点及
+其他轴 \(T_e\) 上放置面片 \(\Sigma_e\)，定义
+\[
+ \nu_e=r_e^2\mathcal H^{n-2}\!\restriction_{\Sigma_e},\qquad
+ \nu=\sum_e\nu_e,\qquad \nu(\R^n)=\mathcal C_6;
+\]
+\(n=2\) 用点质量。取足够大的固定 \(L=2R+C_n\)，只保留两端在
+\(G_L:=Z_v^c\) 的角对，得 \(\nu^{\rm end}\)。
+相交度有界、尺度可比给
+\[
+ \nu(\R^n)-\nu^{\rm end}(\R^n)\le C_nS(Z_v)=o_R(S).
+\]
+对保留角片上的 \(y\)，先数全部尺度可比的候选根：
+\[
+ N_R(e,y)=\sum_k
+ \ind_{\{y\in Q(x_k,Rr_k),\ 1/2\le r_k/r_e\le2\}}
+ \ge(2R-C_n)^n.
+\]
+候选根都在某个好端点的 \(Lr_e\) 扩大窗口内，
+全部窗口匹配使其尺度为 \((1+o_R(1))r_e\)；
+固定厚度的内窗口单位胞计数给此下界。
+这里尚未删除坏根。
+坏根的积分可见性损失为
+\[
+ \mathcal L_R=
+ \sum_{k\in Z_v}\sum_{\substack{e\ \text{保留}\\1/2\le r_k/r_e\le2}}
+       \nu_e(Q(x_k,Rr_k)).
+\]
+每个被计坏根所见的端点在 \(O_R(r_k)\) 窗口中且尺度可比，
+半盒不交性和有界相交度给只有 \(O_{n,R}(1)\) 个角对，
+每个质量至多 \(C_nr_k^n\)。所以
+\(\mathcal L_R\le C_{n,R}S(Z_v)=o_R(S)\)。
+Tonelli 定理于是给
+\[
+ \sum_{k\in G_L}\nu(Q(x_k,Rr_k))
+ \ge(2R-C_n)^n\mathcal C_6-o_R(S).
+\]
+结合局部上界并对好根求和，先令 \(v\to0\)，再令 \(R\to\infty\)，得到
+\[
+ \limsup\frac{\mathcal C_6}{S}
+ \le\binom n2\lim_{R\to\infty}
+       \frac{(2R+C_n)^n}{(2R-C_n)^n}=\binom n2.
+\]
+这个扣除只涉及角接触或交量；所有胞的基线体积始终保留。
+\end{proof}
+
+\subsection{完整源盈余的锐角价格}
+
+末层令
+\[
+ J_i=(R_i+|W_i|^{1/n})^n-(R_i+\mu_i^{1/n})^n\ge0.
+\]
+这是由实际源盒定义的完整盈余。
+\begin{lemma}[有效端缺量的系数一]\label{sharp-fresh-cdf}
+有
+\begin{equation}\label{sharp-effective-missing}
+ |W_i|-\mu_i\ge |(x_i+W_i')\setminus F_i|,\qquad
+ J_i\ge c_{n,A_6}(v/a)|(x_i+W_i')\setminus F_i|.
+\end{equation}
+在 \(\varepsilon_i=o(1)\)、宽度比一致趋一的子族上，第二式的系数可取
+\((1-o(1))v/a\)。
+\end{lemma}
+\begin{proof}
+强 CDF 尾界 \eqref{eq:global-cdf-tails} 给
+\(|F_i\setminus(x_i+W_i')|\le\lambda_i\Delta_i^{\rm end}\)。
+在 \eqref{eq:global-midpoint-surplus} 的同一斜率选择下，
+\(|W_i|-|W_i'|\ge\lambda_i\Delta_i^{\rm end}\)。所以
+\[
+ |W_i|-\mu_i
+ =|(x_i+W_i')\setminus F_i|+|W_i|-|W_i'|
+       -|F_i\setminus(x_i+W_i')|
+ \ge |(x_i+W_i')\setminus F_i|.
+\]
+函数 \(\Phi(m)=(R_i+m^{1/n})^n\) 的导数为
+\[
+ \Phi'(m)=(R_i+m^{1/n})^{n-1}m^{1/n-1}.
+\]
+在完整求导区间上它不小于 \(c_{n,A_6}v/a\)。
+若 \(\varepsilon_i=o(1)\)，则
+\(m/(ar_i^n)=1+o(1)\)、\(R_i/r_i=1+O(v)\)，
+故导数为 \((1+o(1))v/a\)，得到结论。
+\end{proof}
+
+\begin{lemma}[同层全部交长的锐价格]\label{sharp-source-price}
+对每个固定 \(0<\sigma<1/4\)，同一第六层有
+\begin{equation}\label{sharp-price-contact}
+ \sum_{i<j}|X_i\cap X_j|-\sum_iJ_i
+ \le\frac{n^2}{27(1-\sigma)^2}v^6\mathcal C_6
+       +o_\sigma(v^6S).
+\end{equation}
+因而
+\begin{equation}\label{sharp-price}
+ \sum_{i<j}|X_i\cap X_j|-\sum_iJ_i
+ \le[K_{n,\sigma}+o_\sigma(1)]v^6S,\qquad
+ K_{n,\sigma}=\frac{K_n}{(1-\sigma)^2}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+先处理恰有两临界轴、\(\max L_l\le Tv^3r_e\) 的深处角对，
+其中 \(T\) 固定。由 \eqref{sharp-width-tightness}、
+\eqref{sharp-end-displacement}，可选慢趋零阈值，使除总权 \(o(S)\) 外，
+\(\varepsilon_i=o(1)\)，原始和有效盒宽除以 \(vr_i\) 一致趋一。
+有非良好端点的这些有界交长边，其交量及下文名义成本均为
+\(O_T(v^6)o(S)\)。只在此误差精度中略去这些边，所有胞的 \(J_i\) 仍保留。
+
+固定良好源 \(i\)，按两临界轴和面符号分组，取同组全部良好目标 \(j\)。
+反射坐标使源在目标左侧。记
+\[
+ \begin{gathered}
+ H_e=\max(L_1,L_2),\qquad
+ c_{ij}=\max\{-H_e,\min(H_e,(R_i-R_j)/2)\},\\
+ P_{ij}=(L_1+c_{ij})_+,\qquad Q_{ij}=(L_2+c_{ij})_+.
+ \end{gathered}
+\]
+反向截断恰为 \(-c_{ij}\)。
+从有效面对端取第一轴深度 \(s\)、第二轴深度 \(s+y\)，
+\(0\le y\le C_Tv^3r_i\)、\(0\le s\le C_T'v^4r_i\)；
+其他坐标距有效盒两端均大于 \(H_Tv^3r_i\)，其中 \(H_T\) 先取得足够大。
+若这个点属于 \(F_i\)，其同一个原指定见证因 \(r(x)>R_i\)
+至少捕获目标原始盒的两厚度
+\[
+ (P_{ij}-s-\Delta_i^{\rm end})_+,\qquad
+ (Q_{ij}-y-s-\Delta_i^{\rm end})_+.
+\]
+原始面对端距不大于中点面对端距
+\((R_i+R_j)/2-L_l\)，故上述穿透下界成立；
+截断根差只减小保证量。其他轴上整个目标宽度进入，
+因为非临界方向的原始源点距离小于 \(\min(R_i,R_j)\)。
+对小 \(v\)，两厚度远小于目标宽度，无需截宽。
+扣除 \eqref{eq:global-corner-missing} 的目标实际缺量，给目标质量下界
+\[
+ (1-o(1))(vr_i)^{n-2}P_{ij}(Q_{ij}-y)_+
+ -C_T(vr_i)^{n-2}v^3r_i(s+\Delta_i^{\rm end})
+ -C_{n,A_6}\varepsilon_j ar_i^n.
+\]
+
+同组所有 \(F_j\) 两两不交，并均与完整自身目标 \(G_i\) 不交。
+所以这些目标质量在同一个见证中可以先全部相加。
+再用 \eqref{eq:global-all-source-radius}，其实际剩余容量至多为
+\[
+ na r_i^{n-1}(1+O(v))
+       (s+\Delta_i^{\rm end}+\alpha_i r_i).
+\]
+置 \(P'_j=P_{ij}/r_i,Q'_j=Q_{ij}/r_i,y'=y/r_i\)。
+任何实际源点必须满足
+\[
+ \frac{s}{r_i}\ge
+ (1-o(1))\frac{\sum_jP'_j(Q'_j-y')_+}{nv^2}-E_i,\quad
+ E_i=C_T\left(v^5+\alpha_i+\frac{\Delta_i^{\rm end}}{r_i}
+                              +\sum_j\varepsilon_j\right).
+\]
+故其右侧正部以下的整层均缺少 \(F_i\)。
+目标数有界、\(P'_j,Q'_j=O_T(v^3)\)，
+所以先固定的 \(C_T'\) 足以容纳整层。
+对第二排序交换两轴；两排序只有零测交。
+以引理~\ref{sharp-fresh-cdf} 的系数一乘上缺层体积，积分 \(y'\) 后，
+该源、该有向角给
+\begin{equation}\label{sharp-additive-source-cost}
+ (1-o(1))\frac{r_i^{n-3}}{2nv^3}
+ \sum_jP_{ij}Q_{ij}(P_{ij}+Q_{ij})
+ -O_T(r_i^nv^2E_i).
+\end{equation}
+第一排序的积分为 \(\sum_jP'_j(Q'_j)^2/2\)，另一排序给对称项。
+减去高度 \(E_i\) 造成的损失至多 \(C_Tv^3E_i\)；
+其他轴宽度为 \((vr_i)^{n-2}(1+o(1))\)，即得上述误差。
+由 \eqref{sharp-positive-prior}、
+\eqref{sharp-face-tightness} 及有界度，误差总计 \(O_T(v^7S)\)。
+同组只积分由目标质量总和决定的一层，并未重复计缺失源点。
+不同轴对因其他轴的 \(H_Tv^3r_i\) 剪裁互不交，
+同一轴对不同符号靠近相反端点，亦互不交。
+该剪裁的相对宽度损失为 \(O_T(v^2)\)，不削去目标体积。
+因此 \eqref{sharp-additive-source-cost} 可对所有组相加。
+
+令
+\[
+ f(z)=(L_1+z)_+(L_2+z)_+
+       [(L_1+z)_++(L_2+z)_+].
+\]
+它在 \(z\le-\min(L_1,L_2)\) 为零，其余区间二阶导为
+\(6[(L_1+z)+(L_2+z)]\ge0\)，拼接处右导数非负，故为凸函数。
+于是 \(f(c_{ij})+f(-c_{ij})\ge2f(0)\)。
+两端尺度比为 \(1+O(v)\)，相加得到全部小边的成本下界
+\[
+ \sum_iJ_i\ge
+ (1-o(1))\sum_{\text{小边}}
+ \frac{b_eL_1L_2(L_1+L_2)}{nv^3r_e}
+ -o_T(v^6S).
+\]
+这里先得到的是整张切向权 \(r_e^{n-2}\)；
+\(b_e\le(1+C_{n,A_6}v)r_e^{n-2}\) 给出以上较弱而所需的接触权形式。
+
+再处理大交长，不用良好端点假设。取 \(R_i\ge R_j\) 的端为源，
+\[
+ p=\max L_l/r_i,\quad q=\min L_l/r_i,\quad
+ H_0=\min(q,pq/v^2),\quad
+ \delta_i^{\rm end}=\Delta_i^{\rm end}/r_i.
+\]
+有 \(p>(1-O(v))Tv^3,\ 0<q\le p\le C_{n,A_6}v\)。
+若 \(\varepsilon_j\ge c_0pq/v^2\)，把该边交量控制为
+\(C v^2\varepsilon_jr_i^n\)；若
+\(\alpha_i+\delta_i^{\rm end}\ge c_1H_0\)，控制为
+\(Cv(\alpha_i+\delta_i^{\rm end})r_i^n\)，因为 \(pq\le CvH_0\)。
+这些例外合计 \(O(v^7S)\)。
+
+其余边，在源有效盒内取长轴深度
+\([c_2p,2c_2p]r_i\)，短轴深度
+\([c_3H_0,2c_3H_0]r_i\)，其他轴全宽。
+先固定小 \(c_2\)，使长轴条在盒内并保留至少 \(cp r_i\) 的目标穿透；
+由 \(R_i\ge R_j\)，原始穿透至少为交长。
+再取 \(c_1,c_3\) 小，短轴保留至少 \(cq r_i\)；
+有效端误差至多 \(\delta_i^{\rm end}r_i\)。
+将厚度截在目标宽度内仍有这些固定比例下界，因为宽度在
+\([cvr_i,Cvr_i]\)，而 \(p,q\le Cv\)。
+最后取 \(c_0\) 小，扣除目标实际缺量后，同一源见证中的额外质量至少为
+\(c'a r_i^npq/v^2\)。
+短轴主面对容量却至多为
+\(Ca r_i^n(2c_3+c_1)H_0\)，可取小到严格少于前者。
+因此整条均缺少 \(F_i\)。
+引理~\ref{sharp-fresh-cdf} 的一般固定系数给
+\[
+ J_i\ge c r_i^n\frac{pH_0}{v}
+ =c r_i^npq\min(1/v,p/v^3).
+\]
+每源至多作为纯维数个大边的源，把 \(\sigma J_i\)
+按该次数等分，即使条相互重叠也不重复使用盈余。
+先令 \(T\) 足够大，再令 \(v\) 足够小使 \(1/v>T\)，可得
+\[
+ \sum_{\text{大边}}b_eL_1L_2
+ \le\sigma\sum_iJ_i+O(v^7S).
+\]
+余下 \((1-\sigma)\sum_iJ_i\) 用于上述小边的完整成本。
+
+至少三临界轴及边界边由引理~\ref{sharp-angle-integrability}
+给 \(o(v^6S)\)。于是每个小边剩余至多
+\[
+ b_eL_1L_2\left[1-\frac{(1-\sigma)(L_1+L_2)}{nv^3r_e}\right]
+ \le\frac{n^2}{27(1-\sigma)^2}v^6b_er_e^2.
+\]
+最后一步用 \(L_1+L_2\ge2\sqrt{L_1L_2}\) 后作一变量极大。
+得到 \eqref{sharp-price-contact}，
+再由引理~\ref{sharp-incidence} 得 \eqref{sharp-price}。
+次序是先固定 \(\sigma\)，再固定 \(T\) 和辅助阈值，随后令 \(v\to0\)。
+\end{proof}
+
+\subsection{六层精确消去与锐余项上界}
+
+\begin{proposition}[锐余项上界]\label{sharp-upper}
+对每个固定 \(n\ge2\)，有
+\[
+ \limsup_{t\downarrow0}
+ \frac{\Cn(1-t)-L_n(t)}{av^6}\le K_n.
+\]
+\end{proposition}
+\begin{proof}
+仍在任意临界序列 \eqref{sharp-critical-branch} 上工作。
+末层取 \(U_6=\bigcup_{i\notin I}X_i\)，不加入用于粗先验的面条。
+引理~\ref{lem:global-common-defect} 对此较小附着并集给
+\[
+ |U_6\setminus E|\le M'+\mathcal D_6+\sum_i u_{i,6},\qquad
+ \sum_i u_{i,6}\le C_{n,A_6}a(\mathcal F_6+P_\partial)
+ =O(av^6S)=o(v^6S).
+\]
+Bonferroni 和引理~\ref{sharp-source-price} 使用完整的实际 \(J_i\)，故
+\[
+ |U_6|\ge\sum_i(R_i+\mu_i^{1/n})^n
+                  -[K_{n,\sigma}+o_\sigma(1)]v^6S.
+\]
+标量基线只需固定粗常数：
+\[
+ (R_i+\mu_i^{1/n})^n
+ \ge A_vg_i/a-C_{n,A_6}(v/a)(g_i-\mu_i).
+\]
+代入精确恒等式 \eqref{sharp-mass-identity}，再扣除物理重复量和环境项。
+重复量净系数 \((A_v-Cv-a)/a\ge1/(2a)\)，
+小源成本 \((Cv/a)\Delta_6^{\rm mass}=O(v^7S)\)。
+于是
+\begin{equation}\label{sharp-final-exterior}
+ |U_6|-\mathcal D_6-\sum_i u_{i,6}
+ \ge A_vM'/a+\mathcal D_6/(2a)
+       -b(v/a)\mathfrak d_6^0
+       -[K_{n,\sigma}+o_\sigma(1)]v^6S .
+\end{equation}
+其中 \(b>0\) 可增大以统一早五层常数。
+源缺量项仍保留，因为 \(\mathfrak d_6^0/a=O(v^5S)\)
+恰可能产生六阶贡献。
+
+早五层用引理~\ref{lem:global-augmented-capacity} 的增广并集，
+末层用 \(U_6\)。对每层加入标记半盒及
+\(Z_I=(\bigcup_{i\in I}A_i^\beta)\setminus\bigcup_jB_j\)。
+\eqref{eq:global-recovered-union}--\eqref{eq:global-exact-ambient-upper}
+仍给同一实际并集的上下界；末层少了面条只缩小深处占用。
+内部回收使用精确恒等式
+\[
+ (1-a)S_I+M_I-A_vM_I/a
+ =(1-a)(S_I-M_I/a)-(A_v-1)M_I/a.
+\]
+\eqref{eq:global-interior-capacity}--\eqref{eq:global-cross-boundary-mass}
+及 \(M_I/a\le S_I\)，与标记空隙量共同给至少
+\(c_{\rm rec}P_I\) 的正项，内部体积价格至多 \(2nvS_I\)。
+令 \(C_{\rm b}=2C_2(n)+2\)，在之后取小 \(v\) 吸收
+\(C_{n,A_6}vP_\partial\)，全部六层都有
+\begin{equation}\label{sharp-common-ledger}
+ \begin{aligned}
+ V+M\ge{}&A_vM/a+c_{\rm rec}P_I-C_{\rm b}P_\partial-2nvS_I\\
+ &+c_D\mathcal D_h/a-b(v/a)\mathfrak d_h^0-E_h,\qquad c_D=1/2,\\
+ E_h={}&C_0v^6S\quad(h\le5),\qquad
+ E_6=[K_{n,\sigma}+o_\sigma(1)]v^6S .
+ \end{aligned}
+\end{equation}
+这里每层左侧都是同一个 \(V+M\)，输入体积只计一次。
+可取非负误差上包。纯维数 \(c_{\rm rec},C_{\rm b}\) 在深度常数之前固定。
+外部为空时源量为零，由内部恒等式单独给同一方向。
+
+置
+\[
+ Z=a[V+M-A_vM/a-c_{\rm rec}P_I+C_{\rm b}P_\partial+2nvS_I],
+ \quad \varpi=bv/c_D,\quad f_0=A_0vM'.
+\]
+由 \eqref{sharp-depth-relations}、\eqref{sharp-common-ledger}，
+\[
+ Z\ge c_Df_h-bvf_{h-1}-aE_h-abvP_\partial,\qquad1\le h\le6.
+\]
+取权 \(\varpi^{6-h}\)，权和
+\(W=1+\varpi+\cdots+\varpi^5=1+O(v)\)。
+精确抵消式为
+\begin{equation}\label{sharp-six-telescope}
+ \sum_{h=1}^6\varpi^{6-h}(c_Df_h-bvf_{h-1})
+ =c_Df_6-bv\varpi^5f_0.
+\end{equation}
+末层负的 \(bvf_5\) 与第五层正项完全抵消。
+丢弃 \(f_6\ge0\)，初端为
+\[
+ \frac{bv\varpi^5f_0}{aW}
+ =\frac{A_0b^6}{c_D^5W}v^7\frac{M'}a=O(v^7S).
+\]
+早五层总权 \(W-1=O(v)\)，其粗误差只有 \(O(v^7S)\)；
+末层价格除以 \(W=1+O(v)\)，不改变领先系数。
+新增 \(bvP_\partial\) 放入 \(C_*-C_{\rm b}=2\) 的预留，
+再用同一 \(I\) 的 \eqref{sharp-graph-absorption}，得到
+\begin{equation}\label{sharp-final-volume}
+ V+M\ge A_vM/a-[K_{n,\sigma}+o_\sigma(1)]v^6S.
+\end{equation}
+
+原半盒不交且位于原严格见证中，精确有
+\[
+ S\le V+\sum_i|Q_i\setminus E|\le V+aS,\qquad
+ S/V\le(1-a)^{-1}.
+\]
+在 \eqref{sharp-final-volume} 中直接移去实际 \(M\)，所以
+\begin{equation}\label{sharp-final-denominator}
+ \frac{1+M/V-L_n(t)}{av^6}
+ \le\frac{K_{n,\sigma}+o_\sigma(1)}
+              {(A_v-a)(1-a)}.
+\end{equation}
+先 \(v\to0\)，再 \(\sigma\downarrow0\)，给任意临界序列的上极限至多 \(K_n\)。
+全过程没有以 \(aS\) 替代 \(M\)。
+
+最后处理上确界。若所述上界失败，取 \(\epsilon>0\)、\(v_j\downarrow0\)，
+先按上确界定义选有限输入，使比值损失小于 \(\epsilon av^6\)，
+再取紧集使
+\[
+ |(\Hc(1-t;E)\setminus E)\setminus K|<\epsilon Vav^6.
+\]
+外部 halo 可测且有限，密度定理给输入几乎处处属于
+自身 halo。得到
+\[
+ 1+M_j/V_j\ge L_n(t_j)+(K_n+\epsilon)av^6 .
+\]
+这些序列满足 \eqref{sharp-critical-branch}，可取 \(B=0\)，
+与 \eqref{sharp-final-denominator} 矛盾，证明全输入上界。
+
+常数次序为：先固定纯维数内部回收、边界价格及完整图常数，再选
+\(K_0,\eta_{\rm w},D\)，随后完成六层有限递归、统一 \(A_6\) 并选正的强
+CDF 斜率。图选层据此固定同一 \(I\)。锐价格再固定 \(\sigma\)，
+选择 \(T\) 和辅助阈值，最后令 \(v\) 小；局部窗口先固定后取极限。
+上述小量均沿任意 \eqref{sharp-critical-branch} 的输入序列成立，
+所以此顺序与最后的上确界反证相容。
+\end{proof}
