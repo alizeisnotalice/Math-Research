@@ -1,0 +1,13 @@
+Print["VERSION ",$Version," PID ",$ProcessID];
+Clear[e,h,z,xi,upsilon,P,Q,L1,L2,v,rr,b];
+armsBound=2 Integrate[(2e-z) h (1-z/e),{z,0,e},Assumptions->e>0&&h>0];
+Print["two-arm weighted bound=",InputForm[FullSimplify[armsBound==5e^2h/3,e>0&&h>0]]];
+kernel=Q-upsilon+P-xi;
+Print["Tonelli kernel identity=",InputForm[Expand[kernel-(P+Q-xi-upsilon)]]];
+f[b_]:=b^2-(1+v)b^3/(v^3 rr);
+bstar=2v^3 rr/(3(1+v));
+Print["scalar optimum derivative=",InputForm[FullSimplify[D[f[b],b]/.b->bstar,v>0&&rr>0]]];
+Print["scalar optimum value=",InputForm[FullSimplify[f[bstar]-(4/27)v^6 rr^2/(1+v)^2,v>0&&rr>0]]];
+Print["scalar upper-bound violation=",InputForm[Reduce[v>0&&rr>0&&b>=0&&f[b]>(4/27)v^6 rr^2/(1+v)^2,{v,rr,b},Reals]]];
+Print["refund coefficient=",InputForm[FullSimplify[(5/6)(2/3)^4==(10/9)(4/27)]]];
+Print["near-zero limit=",InputForm[Limit[f[b],b->0,Direction->"FromAbove"]]];
