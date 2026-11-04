@@ -1,0 +1,46 @@
+% Supplemental proof fragment; use the same theorem environments as paper.tex.
+\section*{平移质量的量化证书}
+以下两个附件保留第十六、十七轮中不再作为主稿推导所需的独立几何系数。
+先令 $K$ 为任意范数单位球、$\rho=\|\cdot\|_K$、
+$d\mu=\rho^{\tau-n}dx$、$\kappa=n|K|/\tau$，其中 $0<\tau<n$。
+\begin{lemma}\label{cert:norm-shift}
+若 $C\ge2$，则
+\[0\le1-\inf_{\rho(u)\le C^{-1}}\frac{\mu(u+K)}\kappa
+\le\tau(n-\tau)2^{n+2-\tau}C^{-2}.\tag{TC.1}\]
+\end{lemma}
+\begin{proof}
+令 $\delta=C^{-1}$。层析表示为
+$\mu(A)=(n-\tau)\int_0^\infty|A\cap sK|s^{\tau-n-1}\,ds$。
+中心与平移球的交叠体积差非负，仅在 $s\in[1-\delta,1+\delta]$ 内非零。
+壳内两交集都包含 $(1-\delta)K$，故差至多 $n|K|\delta$。
+利用 $s^{\tau-n-1}\le2^{n+1-\tau}$ 及壳宽 $2\delta$，再除以
+$\kappa$ 即得界。该量化界与范数球形状无关，但不声称常数最优。
+\end{proof}
+下面专取 $Q(x,r)=x+[-r,r]^n$、$d\mu=\|x\|_\infty^{\tau-n}dx$，
+$\kappa=n2^n/\tau$，并令
+\[A_C=\inf_{\|u\|_\infty\le C^{-1}}\mu(Q(u,1))/\kappa.\]
+\begin{lemma}[平移损失]\label{cert:cube-shift}
+当 $C\to\infty$ 时，
+\[A_C=1-\frac{\tau(n-\tau)}2C^{-2}+O_{n,\tau}(C^{-3}).\tag{TC.2}\]
+\end{lemma}
+\begin{proof}
+层析恒等式给出
+\[\mu(A)=(n-\tau)\int_0^\infty |A\cap Q(0,s)|s^{\tau-n-1}\,ds.\tag{TC.3}\]
+令 $\delta=C^{-1}$。每个坐标的区间交叠长度随平移的绝对值单调不增，
+故 $A_C$ 在 $u=(\delta,\ldots,\delta)$ 取得。相应交叠方体的边长为
+\[L_\delta(s)=\begin{cases}
+2s,&0\le s\le1-\delta,\\
+s+1-\delta,&1-\delta\le s\le1+\delta,\\
+2,&s\ge1+\delta.
+\end{cases}\]
+中心与平移方体的交叠体积差只在上述薄壳内非零。令 $s=1+\delta v$，
+在 $-1\le v\le1$ 上一致地有
+\[(2\min\{1,s\})^n-L_\delta(s)^n
+=n2^{n-1}\delta(1-|v|)+O_n(\delta^2).\]
+因壳远离零，$s^{\tau-n-1}=1+O_{n,\tau}(\delta)$，而
+$\int_{-1}^1(1-|v|)\,dv=1$。代入 (TC.3) 得
+\[\mu(Q(0,1))-\mu(Q(u,1))
+=(n-\tau)n2^{n-1}\delta^2+O_{n,\tau}(\delta^3).
+\]
+除以 $\kappa=n2^n/\tau$ 即得 (TC.2)。这里未在权的内部奇点处求导。
+\end{proof}

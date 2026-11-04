@@ -14,3 +14,5 @@
 - Melas，Annals of Mathematics 157(2003), no.2,647–688，DOI10.4007/annals.2003.157.647。2026-11-05实际核对出版社摘要及题录；其一维Lebesgue中心弱型最佳常数为12W²−22W+5=0的大根。第12轮通过文内自证的小阈值极限把该已知常数接入共同中心多线性临界留数；没有宣称重证Melas。https://annals.math.princeton.edu/2003/157-2/p08
 
 第17轮补核（2026-11-05）：重新直接读取 [Aldaz v2](https://arxiv.org/html/1811.10478v2) Definition1.1与Theorem1.2，确认相交常数等于对全部τ-additive局部有限Borel测度的统一中心weak(1,1)范数；可分范数空间内Radon测度适用。另读§3 Theorem3.2用于比对范数归一化中心论证。本文采用自证的3^n packing上界，不声称该值sharp，也不把相交常数当覆盖选择常数。
+
+第18轮补核：以“Solyanik homogeneous weights”“Solyanik power weights centered”“weighted Solyanik sharp centered homogeneous”等词检索。核对到的主要比较来源仍包括 [Hagelstein–Parissis原稿](https://arxiv.org/abs/1405.6631) 及[作者提供的全文](https://bpb-us-w2.wpmucdn.com/sites.baylor.edu/dist/f/83/files/2019/08/HagelsteinParissisJGEA2014.pdf)：其一般外层结果针对非中心算子和A∞条件，不直接给本文固定中心齐次权的精确常数。搜索未检得直接同模型结论不证明新颖性；正文继续不作首次声明。本轮lp球体积与方体面上积分公式均附自足推导，未用检索摘要代替证明。

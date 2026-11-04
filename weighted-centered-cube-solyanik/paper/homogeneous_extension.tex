@@ -1,0 +1,203 @@
+% Self-contained outer homogeneous-weight section; uses the main theorem environments.
+\section{一般齐次角向权的外层端点}\label{sec:homogeneous-endpoint}
+
+令 $K$ 为范数单位球，$\rho=\|\cdot\|_K$，$V=|K|$。以下假定 $w$ 是
+定义在 $\mathbb R^n\setminus\{0\}$ 的 Borel 代表，存在常数 $0<a\le b<\infty$，对所有 $r>0$ 及 $x\ne0$ 逐点满足
+\[
+ w(rx)=r^{\tau-n}w(x),\qquad
+ 0<a\rho(x)^{\tau-n}\le w(x)\le b\rho(x)^{\tau-n},\qquad0<\tau<n.\tag{H.1}
+\]
+以下渐近均固定 $K,w,\tau$，不要求对参数一致。原点的取值无关紧要；两侧比较还保证 $w\in L^1_{\rm loc}$ 且非零。下文使用该代表的超水平集。
+令
+\[
+ \kappa=\int_Kw,\quad D=|\{w>1\}|,\quad\beta=\tau/n,
+ \quad S=\frac{n}{\tau}\frac{D^{1-\beta}V^\beta}{\kappa}.\tag{H.2}
+\]
+记 $\mu_w=w\,dx$。以 $x+rK$ 作中心平均球的 Lebesgue 极大算子记作 $M_K$，
+并定义
+\[C^{\rm out}_{K,w}(\alpha)=
+\sup_{\substack{0<|E|<\infty\\0<\mu_w(E)<\infty}}
+\frac{\mu_w\{M_K\1_E>\alpha\}}{\mu_w(E)}.\]
+为便于使用一般范数球，先验证所需的几何工具。
+\begin{lemma}\label{lem:norm-weak}
+以 $x+rK$ 替换预备知识中的方体得到 $M_{K,\nu}$。该算子对每个非零局部有限 Radon 测度 $\nu$ 满足下式，
+其中可取 $B=3^n$：
+\[\nu\{M_{K,\nu}f>\alpha\}\le\frac B\alpha\int|f|\,d\nu,
+\qquad f\in L^1(\nu),\quad\alpha>0.\tag{G.1}\]
+平均中零质量球仍予忽略。
+\end{lemma}
+\begin{proof}
+先估计 Besicovitch 相交常数。对有限个共同相交且每个闭球不含其他球中心的
+球族，将公共点平移至零。单球情形显然；其余情形各中心 $x_i\ne0$。
+令 $a_i=\rho(x_i)\le r_i$、$u_i=x_i/a_i$。若 $a_i\ge a_j$ 且
+$\rho(u_i-u_j)\le1$，则
+\[\rho(x_i-x_j)\le(a_i-a_j)\rho(u_i)+a_j\rho(u_i-u_j)\le a_i\le r_i,\]
+与球族条件矛盾。因此 $\rho(u_i-u_j)>1$；集合
+$u_i+\frac12\operatorname{int}K$ 两两不交且包含于 $\frac32K$。
+体积比较给球数至多 $3^n$，对任意球族也可通过有限子族得到相同交叠界。
+由 Aldaz 的统一弱型定理 \cite[Theorem 1.2]{Aldaz2020}，该相交常数控制全部
+局部有限测度的中心弱型常数，故得 (G.1)。有限维范数空间可分，所引定理的
+测度条件在此满足。所用联系为相交常数与统一弱型范数的等价关系。
+\end{proof}
+由此对 $|F|<\infty$，还有
+\[|\{M_K\1_F>1-t\}\setminus F|\le B_K\frac t{1-t}|F|,
+\qquad B_K=3^n.\tag{G.2}\]
+证明是对光晕外部紧集 $J$ 采用 $d\nu_c=\1_Fdx+c\1_Jdx$。
+严格见证给 $M_{K,\nu_c}\1_F>[1+ct/(1-t)]^{-1}$ 于 $J$；
+应用 (G.1)，令 $c\to\infty$，再由内正则性得 (G.2)。
+
+
+\begin{lemma}[分布与重排常数]\label{lem:hom-distribution}
+在 \textup{(H.1)} 下，对 $\lambda>0$，
+\[
+ |\{w>\lambda\}|=D\lambda^{-n/(n-\tau)},\qquad
+ \int_Aw\le\kappa S\left(\frac{|A|}{V}\right)^\beta.\tag{H.3}
+\]
+此外 $S\ge1$，且等号成立当且仅当 $w=c\rho^{\tau-n}$ a.e.，其中 $c>0$。存在一个有界超水平集 $A_0=\{w>\lambda_0\}$，满足
+\[
+ |A_0|=V,\qquad \int_{A_0}w=\kappa S.\tag{H.4}
+\]
+\end{lemma}
+\begin{proof}
+由逐点齐次性，$\{w>\lambda\}=\lambda^{-1/(n-\tau)}\{w>1\}$，
+给出第一式。令 $v=|A|\in(0,\infty)$，层析估计
+\[\int_Aw\le\int_0^\infty\min\{v,D\lambda^{-1/(1-\beta)}\}\,d\lambda
+=\frac1\beta D^{1-\beta}v^\beta\]
+即为 (H.3)；零体积及无限体积情形直接处理。将 $A=K$ 代入即 $S\ge1$。取
+$\lambda_0=(D/V)^{1-\beta}$。第一式给 $|A_0|=V$；对 $A_0$ 作层析积分
+或直接缩放，得到第二式 (H.4)。由两侧比较，$A_0$ 有界。齐次性沿每条射线严格单调，故 $\{w=\lambda_0\}$ 为 Lebesgue 零集。等体积交换中的等号因此要求 $K=A_0$ 模零；由极坐标和齐次性，这等价于 $w=\lambda_0\rho^{\tau-n}$ a.e.，逆向也直接成立。
+\end{proof}
+
+\begin{theorem}[一般齐次权的尖锐首项]\label{thm:hom-leading}
+对以 Lebesgue 平均、$w\,dx$ 测量的外层常数，有
+\[
+ C^{\rm out}_{K,w}(1-t)-1\sim S t^\beta\qquad(t\downarrow0).\tag{H.5}
+\]
+\end{theorem}
+\begin{proof}
+写 $H=\{M_K\mathbf1_E>1-t\}$，并固定 $C>2$。严格平均的中心及半径连续性保证以下见证类可用有理半径表出，因而可测。把 $H\setminus E$ 分为
+存在严格见证 $r<C\rho(x)$ 的短类 $S_0$ 和其余长类 $T_0$。等号见证可
+微缩半径仍保持严格，故长类的每个实际严格见证均有 $r>C\rho(x)$。
+在环带 $2^k\le\rho(x)<2^{k+1}$，短见证位于
+$D_k=2(1+C)2^kK$，且
+\[
+ S_0\cap\{2^k\le\rho<2^{k+1}\}
+ \subset\{M_K\mathbf1_{E\cap D_k}>1-t\}\setminus(E\cap D_k).
+\]
+无权高水平界 (G.2)、(H.1) 和 Tonelli 给
+\[
+ \frac{\mu_w(S_0)}{\mu_w(E)}
+ \le\frac{B_K(b/a)[2(1+C)]^{n-\tau}}
+ {1-2^{\tau-n}}\frac{t}{1-t}.\tag{H.6}
+\]
+
+设
+\[
+ A_C=\inf_{\rho(u)\le C^{-1}}\frac{\int_{u+K}w}{\kappa}.
+\]
+局部 $L^1$ 平移连续性给 $A_C\to1$。若 $Q=x+rK$ 是实际长见证，则
+以 $u=x/r$、(H.3) 及 $|Q\setminus E|<tVr^n$ 得
+\[
+ \mu_w(E)\ge\mu_w(E\cap Q)
+ \ge\kappa r^\tau(A_C-S t^\beta).\tag{H.7}
+\]
+若 $T_0=\varnothing$，其估计取零；否则当括号为正，令 $R$ 为中心在 $T_0$ 的所有实际长见证半径的上确界，便有 $R<\infty$。
+取 $(x_j,r_j)$ 使 $r_j\to R$。充分大 $j$ 时
+$r_j-\rho(x_j)>r_j(1-C^{-1})>R/C$，所以 $x_j+r_jK$ 包含
+$(R/C)K$。而 $T_0\subset(R/C)K\setminus E$，从见证缺失体积得
+$|T_0|\le tVR^n$。再用 (H.3)、(H.7) 并令 $j\to\infty$，
+\[
+ \frac{\mu_w(T_0)}{\mu_w(E)}\le
+ \frac{S t^\beta}{A_C-S t^\beta}.\tag{H.8}
+\]
+令 $C=t^{-c}$、$0<c<1/n$，则 (H.6) 是 $o(t^\beta)$，(H.8)
+是 $St^\beta(1+o(1))$。由 $\mu_w(H)\le\mu_w(E)+\mu_w(S_0)+\mu_w(T_0)$，得到一致于全部输入的上界。
+
+为给下界，取足够大的 $D_0$ 使 $A_0\subset\{\rho<D_0\}$，令
+\[
+ E=RK\setminus hA_0,\qquad h/R=\frac{t^{1/n}}{1+D_0t^{1/n}}.
+\]
+当 $t$ 小，$3D_0h<R$。若 $\rho(x)<D_0h$，半径 $r=R-\rho(x)$ 的
+范数球含 $hA_0$ 且包含于 $RK$，其缺失比例严格小于 $t$。因此
+$RK\subset H$ 模零（$E$ 的 Lebesgue 密度点也属于 $H$，因为范数球与欧氏球可比），所以由 (H.4)
+\[
+ C^{\rm out}_{K,w}(1-t)-1\ge
+ \frac{S t^\beta}{(1+D_0t^{1/n})^\tau-St^\beta}
+ =St^\beta+o(t^\beta).\tag{H.9}
+\]
+结合上界即得结论。
+\end{proof}
+
+\begin{lemma}[两种平移模量]\label{lem:hom-translation}
+总有 $A_C\ge1-O(C^{-1})$。若 $w$ 偶且在
+$\mathbb R^n\setminus\{0\}$ 局部 Lipschitz，则 $A_C\ge1-O(C^{-2})$。
+\end{lemma}
+\begin{proof}
+若 $\rho(u)=\delta\le1/2$，则
+$(K+u)\mathbin\triangle K\subset(1+\delta)K\setminus(1-\delta)K$。
+由 (H.1)，该壳上的 $w$ 一致有界，而其体积为 $O_{K,w}(\delta)$，故
+$|\mu_w(K+u)-\kappa|=O(\delta)$。这给第一个结论。
+
+令 $F(u)=\mu_w(u+K)$、$P=(u+K)\setminus K$、$L=K\setminus(u+K)$。
+中心对称性下 $x\mapsto u-x$ 保体积地把 $P$ 映到 $L$，偶性遂给
+\[
+ F(u)-F(0)=\int_P\bigl[w(x)-w(x-u)\bigr]dx. \tag{H.10}
+\]
+为证明第二个结论，注意 $P\subset(1+\delta)K\setminus K$，故
+$x,x-u$ 都位于 $\{1/2\le\rho\le3/2\}$。取略大的紧环带作有限局部 Lipschitz 覆盖，其统一常数
+控制积分核为 $O_{K,w}(\delta)$，而
+$|P|\le V[(1+\delta)^n-1]=O_{K,w}(\delta)$。因此
+$F(u)-F(0)=O_{K,w}(\delta^2)$，给第二个结论。
+\end{proof}
+
+\begin{theorem}[二阶项的两个可证范围]\label{thm:hom-second}
+令 $q=1$；若另有偶 Lipschitz 假设，可令 $q=2$。当
+\[
+ 0<\tau<\min\left\{1,\frac{n+2q-\sqrt{n^2+4q^2}}2\right\},
+\]
+都有
+\[
+ C^{\rm out}_{K,w}(1-t)-1=St^\beta+S^2t^{2\beta}+o(t^{2\beta}).\tag{H.11}
+\]
+\end{theorem}
+\begin{proof}
+由引理 $A_C\ge1-O(C^{-q})$，且定义中包含 $u=0$，故 $A_C\le1$。取
+\[
+ \frac\beta q<c<\frac{n-2\tau}{n(n-\tau)}. \tag{H.12}
+\]
+此区间非空等价于 $\tau<(n+2q-\sqrt{n^2+4q^2})/2$。于是 (H.6) 是
+$o(t^{2\beta})$，(H.8) 是 $St^\beta+S^2t^{2\beta}+o(t^{2\beta})$。
+在 $\tau<1$ 时，(H.9) 的显式下界满足
+\[
+ \frac{St^\beta}{(1+D_0t^{1/n})^\tau-St^\beta}
+ =St^\beta+S^2t^{2\beta}+o(t^{2\beta}),
+\]
+因为 $t^{\beta+1/n}=o(t^{2\beta})$。故夹逼得 (H.11)。
+\end{proof}
+
+\begin{corollary}[不等指数共同中心外层回传]\label{cor:hom-multilinear}
+先允许任意非零非负 $w\in L^1_{\rm loc}$。按共同中心和公共交集归一化定义范数球多集合常数。
+对 $P_{\boldsymbol a}(1)<\lambda<1$，有
+\[C^{\boldsymbol a,\rm out}_{K,w}(\lambda)
+=C^{\rm out}_{K,w}(1-s_{\boldsymbol a}(\lambda)).\tag{H.13}\]
+若 $w$ 进一步满足 (H.1)，令 $a_*=\min_i a_i$，则
+\[
+ C^{\boldsymbol a,\rm out}_{K,w}(1-\varepsilon)-1
+ \sim S a_*^{-\beta}\varepsilon^\beta.
+\]
+在定理 \ref{thm:hom-second} 的范围内，前两项为
+\[
+ S a_*^{-\beta}\varepsilon^\beta+
+ S^2a_*^{-2\beta}\varepsilon^{2\beta}+o(\varepsilon^{2\beta}).
+\]
+\end{corollary}
+\begin{proof}
+正向缺陷估计与球形状无关。反向沿用定理 \ref{thm:weighted-transfer}：
+范数球边界为 Lebesgue 零集，球指标函数随中心平移在 $L^1$ 中连续，
+故有限参考球具有稳定严格余量。取有界 $D_1$ 包住这些球及其小扰动球，
+在 $D_1\setminus F$ 的有限 Boolean 原子上按所需比例分割，再对
+$D_1^c\cap F^c$ 补成不交各部 $A_i$，令 $E_i=\mathbb R^n\setminus A_i$。
+公共交集即为 $F$；以加权内正则性穷尽光晕，得到范数球的同一精确传递。
+最后代入 $s_{\boldsymbol a}(1-\varepsilon)=\varepsilon/a_*+O(\varepsilon^2)$；
+$\beta<1$ 保证代入误差为 $o(\varepsilon^{2\beta})$。
+\end{proof}

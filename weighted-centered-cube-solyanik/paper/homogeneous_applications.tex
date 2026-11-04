@@ -1,0 +1,56 @@
+\section{几何匹配与可计算算例}\label{sec:hom-applications}
+\subsection{匹配范数与不等指数}
+当 $w=c\rho^{\tau-n}$ 时，常数 $S=1$。此权在原点外局部 Lipschitz，
+故定理 \ref{thm:hom-second} 的 $q=2$ 情形给出任意范数球的二阶公式，
+范围为
+\[0<\tau<T_n=\min\left\{1,\frac{n+4-\sqrt{n^2+16}}2\right\}.\]
+其中 $T_1=(5-\sqrt{17})/2$、$T_2=3-\sqrt5$，而 $n\ge3$ 时 $T_n=1$。
+这统一了方体与其他范数球的匹配径向情形。各不等正指数的影响则完全由
+推论 \ref{cor:hom-multilinear} 中 $a_*^{-\beta}$ 与 $a_*^{-2\beta}$ 给出。
+
+\subsection{方体平均与 \texorpdfstring{$\ell^p$}{lp} 径向权}
+现在固定平均球为 $K=[-1,1]^n$，权取
+$w(x)=\|x\|_p^{\tau-n}$，$1\le p<\infty$。令
+\[V_p=\frac{2^n\Gamma(1+1/p)^n}{\Gamma(1+n/p)},\qquad
+I_{n,p,\tau}=\int_{[0,1]^{n-1}}
+\left(1+\sum_{j=1}^{n-1}y_j^p\right)^{(\tau-n)/p}\,dy.\tag{A.1}\]
+零维积分约定为一。则定理 \ref{thm:hom-leading} 中的常数为
+\[S_{n,p,\tau}
+=\frac{(V_p/2^n)^{1-\tau/n}}{I_{n,p,\tau}}.\tag{A.2}\]
+事实上，对 $e^{-\|x\|_p^p}$ 作 Fubini 积分与径向积分，分别得到
+$[2\Gamma(1+1/p)]^n$ 与 $V_p\Gamma(1+n/p)$，从而得出体积公式。
+再把方体分成以各面为底、原点为顶的 $2n$ 个锥体，用
+$x=r(1,y)$ 及齐次性积分，得到
+\[\kappa=\int_{[-1,1]^n}w
+=\frac{n2^n}{\tau}I_{n,p,\tau}.\tag{A.3}\]
+代入 (H.2) 即得 (A.2)。$p=\infty$ 时单列 $S=1$；有限 $p$ 且
+$n\ge2$ 时，$\ell^p$ 球与方体不可能模零相同，故由引理
+\ref{lem:hom-distribution} 的等号刻画，严格有 $S_{n,p,\tau}>1$。
+任意范数的幂权在原点外局部 Lipschitz，因此这里即使 $p=1$，也可使用
+$q=2$ 的二阶范围。
+
+例如
+\[S_{2,2,1}=\frac{\sqrt\pi}{2\operatorname{arsinh}1},\qquad
+S_{2,1,1}=\frac1{\sqrt2\log2}.\tag{A.4}\]
+若只需数值计算，(A.1) 把原点奇异积分化为低一维、无奇点的面上积分。
+下表小数来自本机独立复算，仅作为常数公式的数值展示。
+\begin{center}
+\begin{tabular}{cccc}
+$n$&$p$&$\tau$&$S_{n,p,\tau}$（近似）\\\hline
+2&2&$1/2$&1.0040853481\\
+2&2&1&1.0055065621\\
+2&1&1&1.0201394466\\
+3&2&$3/4$&1.0133076558
+\end{tabular}
+\end{center}
+其中 $\tau=1/2$ 的二维例与 $\tau=3/4$ 的三维例属于所证二阶范围；
+其余两例只在表中展示首项常数。
+
+\subsection{一维非对称权}
+取 $0<\tau<1$，在正负半轴分别令
+$w(x)=c_+x^{\tau-1}$ 与 $w(x)=c_-|x|^{\tau-1}$，其中 $c_+,c_->0$。
+记 $r=1/(1-\tau)$，直接由 (H.2) 得
+\[S=\frac{2^\tau(c_+^r+c_-^r)^{1/r}}{c_++c_-}.\tag{A.5}\]
+仅当 $c_+=c_-$ 时 $S=1$。例如 $\tau=1/2$、$(c_+,c_-)=(1,2)$ 时，
+首项常数为 $\sqrt{10}/3$。非对称权使用一般 $q=1$ 的二阶适用范围，
+不能直接援用偶权的更大范围。
