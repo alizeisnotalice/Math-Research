@@ -18,3 +18,5 @@
 第18轮补核：以“Solyanik homogeneous weights”“Solyanik power weights centered”“weighted Solyanik sharp centered homogeneous”等词检索。核对到的主要比较来源仍包括 [Hagelstein–Parissis原稿](https://arxiv.org/abs/1405.6631) 及[作者提供的全文](https://bpb-us-w2.wpmucdn.com/sites.baylor.edu/dist/f/83/files/2019/08/HagelsteinParissisJGEA2014.pdf)：其一般外层结果针对非中心算子和A∞条件，不直接给本文固定中心齐次权的精确常数。搜索未检得直接同模型结论不证明新颖性；正文继续不作首次声明。本轮lp球体积与方体面上积分公式均附自足推导，未用检索摘要代替证明。
 
 第19轮补核：重新访问 Aldaz v2 Definition1.1、Theorem1.2（中心算子、全部局部有限测度）及 [Melas 出版社原始页面](https://annals.math.princeton.edu/2003/157-2/p08)（一维 Lebesgue 中心弱型常数）；并重读加权 Solyanik 原稿的两个权模型定义，未把非中心结果用于中心精确系数。小阈值双测度极限由本文完整稀释证明给出；幂权比较上界自证，不以有限搜索或未命中检索证明原创性。一般关键词检索结果噪声较多，未据此新增文献主张。
+
+第20轮补核：检索“Solyanik sum weights centered homogeneous”“Tauberian constants continuity weight”等词，实际读取 [Hagelstein–Parissis作者稿：A Note on Local Hölder Continuity of Weighted Tauberian Functions](https://bpb-us-w2.wpmucdn.com/sites.baylor.edu/dist/f/83/files/2018/05/HagelsteinParissis-SodoskyProceedingsRevised-uenvdl.pdf) 摘要、引言及Theorem3的模型与主张。该文对固定Muckenhoupt权研究阈值α的局部Hölder连续性，所用Hardy–Littlewood算子非中心；与本轮中心算子在权的积分扰动下不连续不是同一命题。本文未借其定理推出混合权精确式；有限和的测度加和上界、奇点缩放下界与合并反例均完整自证。检索不构成新颖性或穷尽保证，参考文献主表仅列真正进入证明的来源。

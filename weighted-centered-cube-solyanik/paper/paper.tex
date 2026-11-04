@@ -8,7 +8,7 @@
 \title{中心方体的两种加权 Solyanik 模型\\共同中心多线性精确传递与端点结论}
 \author{基于《课题2（8.26最新扩充版）》的核验修订}\date{2026 年 11 月 5 日}
 \begin{document}\maketitle
-\begin{abstract}本文区分内禀权平均与外层加权光晕，证明共同中心多线性传递、内禀端点和外层集中模量界，并得到不等指数近端点的显式公式。对任意非零局部有限无原子 Radon 测度，通过保持旧见证的逐层比例分割，进一步确定内禀多集合模型的精确有限性阈值。等价双测度的小阈值指标逼近将内禀与外层的临界上侧首项统一归约为相应线性弱型范数，并给出外层的显式构造下界。对于可比齐次权，进一步求出任意范数球外层端点的精确首项常数及两类二阶适用范围；该常数还刻画权与平均几何是否匹配。\end{abstract}
+\begin{abstract}本文区分内禀权平均与外层加权光晕，证明共同中心多线性传递、内禀端点和外层集中模量界，并得到不等指数近端点的显式公式。对任意非零局部有限无原子 Radon 测度，通过保持旧见证的逐层比例分割，进一步确定内禀多集合模型的精确有限性阈值。等价双测度的小阈值指标逼近将内禀与外层的临界上侧首项统一归约为相应线性弱型范数，并给出外层的显式构造下界。对于可比齐次权，进一步求出任意范数球外层端点的精确首项常数及两类二阶适用范围；该常数还刻画权与平均几何是否匹配。分离齐次奇点的有限正和满足全阈值最大值公式，由此得到非齐次权的精确端点及奇点合并时的不连续性。\end{abstract}
 
 \section{引言}
 中心极大算子的近单位水平集刻画了平均几乎等于一时的外溢质量。加权情形存在两个不同问题：权可以同时进入平均与测量，也可以只进入测量。Hagelstein--Parissis 的加权研究说明这种区分对于端点估计十分重要\cite{HagelsteinParissis2016}；Aldaz 的测度一致弱型理论则提供中心方体的几何工具\cite{Aldaz2020}。
@@ -121,12 +121,8 @@ C^{(m),\rm out}_{c,n,w}(\lambda)=C^{\rm out}_{c,w}(\Phi_m(\lambda)).
 \input{homogeneous_extension.tex}
 \input{homogeneous_applications.tex}
 \input{outer_critical_applications.tex}
+\input{mixture_extension.tex}
 \section{其他推论与开放问题}
-由等指数传递和逐权一阶项，固定 $m$ 与 $w$ 时
-\[
- C^{(m),\rm int}_{c,n,w}(1-\epsilon)=1+2^n\epsilon+o_{m,w}(\epsilon).
-\]
-这是因为 $s_m(1-\epsilon)=\epsilon+O_m(\epsilon^2)$。此外，若外层集中模量满足 $\Omega_w(t)\le A_0t^\sigma$，代入 $t=s_m(\lambda)$ 即得到多集合外层估计；不等指数时改代 $s_{\boldsymbol a}(\lambda)$。
 若一个中心几何族对于所有局部有限测度的弱型常数统一不超过 $B$，上面的测度扰动证明还给出 $C_\mu(a)\le1+B(1-a)/a$。该推导仅依赖测度一致的弱型性质。
 
 

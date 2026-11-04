@@ -1,0 +1,101 @@
+\subsection{多个分离奇点的精确最大值公式}\label{subsec:separated-mixture}
+前面的齐次权结果也能确定一类非齐次权的全部外层常数。
+关键是分离奇点附近的缩放保留一个齐次分量，而其余分量成为低阶误差。
+
+\begin{theorem}[分离齐次奇点的最大值公式]\label{thm:separated-mixture}
+固定范数球 $K$ 及整数 $J\ge1$。令 $z_1,\ldots,z_J$ 两两不同，$c_j>0$、$c_0\ge0$。
+每个 $h_j$ 满足 (H.1)，其次数为 $\tau_j-n$，其中 $0<\tau_j<n$；
+各分量允许不同的次数与角向形状。定义
+\[w(x)=c_0+\sum_{j=1}^J c_jh_j(x-z_j).\tag{MX.1}\]
+对每个 $0<\alpha<1$，有精确恒等式
+\[C^{\rm out}_{K,w}(\alpha)=\max_{1\le j\le J}C^{\rm out}_{K,h_j}(\alpha),
+\qquad W^{\rm out}_{K,w}=\max_{1\le j\le J}W^{\rm out}_{K,h_j}.\tag{MX.2}\]
+故其数值不依赖正系数、奇点间距或常数背景。
+同一结论适用于第 \ref{thm:two-measure-transfer} 定理的外层多指数常数：
+在超临界侧将 (MX.2) 的自变量换成 $1-s_{\boldsymbol a}(\lambda)$；临界及以下各项均为无穷。
+\end{theorem}
+\begin{proof}
+先说明所有线性常数都可仅用有界集合计算。对任意合格 $E$ 取
+$E_R=E\cap RK\uparrow E$，则 $M_K\1_{E_R}\uparrow M_K\1_E$。
+在严格水平集上取并，分子单调收敛，分母也趋于原分母。
+因此有界测试已经恢复完整上确界。弱型范数同样可用有界紧支撑函数，
+由 $f_R=\min(f,R)\1_{RK}\uparrow f$ 恢复一般输入。
+
+任意正局部可积权 $v$ 的正有限 Lebesgue 点附近，固定有界集合及紧光晕后缩放，
+其加权比值趋于 Lebesgue 比值；误差由固定有界区域内的密度 $L^1$ 误差控制。
+于是 $C^{\rm out}_{K,v}(\alpha)\ge C_{K,dx}(\alpha)$；弱型版本就是 (OW.4)。
+
+记 $H=\{M_K\1_E>\alpha\}$。测量 $w\,dx$ 是正测度之和，
+对每个分量应用其定义不等式，再求和，得到
+\[\int_Hw\le\Big(\max_j C^{\rm out}_{K,h_j}(\alpha)\Big)\int_Ew.
+\tag{MX.3}\]
+这里平移不改变分量常数，常数背景由刚证明的 Lebesgue 比较控制。
+同样，对一般非负输入和任意水平作加和，得到弱型范数的上界。
+
+反向固定 $j$。当 $\varepsilon\downarrow0$，在每个固定有界区域上，
+\[v_{j,\varepsilon}(x):=\varepsilon^{n-\tau_j}w(z_j+\varepsilon x)
+=c_jh_j(x)+O(\varepsilon^{n-\tau_j})\quad\hbox{a.e.},\tag{MX.4}\]
+其中余项一致有界。事实上其他奇点距 $z_j$ 为正；在固定区域的缩放像上，
+(H.1) 将其他分量逐个控制为有界函数，常数背景也如此。
+因此 (MX.4) 在局部 $L^1$ 中成立。
+
+取有界正质量 $E$ 以及紧集 $L\subset\{M_K\1_E>\alpha\}$。
+令 $E_\varepsilon=z_j+\varepsilon E$。平均球的平移伸缩不变性给出
+$z_j+\varepsilon L\subset\{M_K\1_{E_\varepsilon}>\alpha\}$。
+由 (MX.4)，
+\[C^{\rm out}_{K,w}(\alpha)\ge
+\frac{\int_L v_{j,\varepsilon}}{\int_Ev_{j,\varepsilon}}
+\longrightarrow\frac{\int_Lh_j}{\int_Eh_j}.\tag{MX.5}\]
+先用内正则性穷尽严格光晕，再对有界 $E$ 取上确界，即得所需下界。
+有界紧支撑 $f$ 的成本及紧严格光晕也由 (MX.4) 收敛，故同一论证给
+$W^{\rm out}_{K,w}\ge W^{\rm out}_{K,h_j}$。所有分量的弱型范数由
+命题 \ref{prop:outer-finite-weak} 有限；其多指数结论由精确传递和临界发散得到。
+\end{proof}
+
+令 $S_j$ 为 (H.2) 的分量常数，并设
+\[\tau_* =\min_j\tau_j,\qquad
+ S_* =\max_{\tau_j=\tau_*}S_j,\qquad
+ I_* =\{j:\tau_j=\tau_*,\ S_j=S_*\}.\tag{MX.6}\]
+\begin{corollary}[混合权的精确端点与临界极点]\label{cor:mixture-endpoint}
+有
+\[C^{\rm out}_{K,w}(1-t)-1\sim S_*t^{\tau_*/n}.\tag{MX.7}\]
+若每个 $j\in I_*$ 都满足定理 \ref{thm:hom-second} 的二阶范围及正则性条件，
+则进一步有
+\[C^{\rm out}_{K,w}(1-t)-1
+=S_*t^{\tau_*/n}+S_*^2t^{2\tau_*/n}+o(t^{2\tau_*/n}).\tag{MX.8}\]
+多指数临界留数为
+$\rho_c\lambda_c\max_jW^{\rm out}_{K,h_j}$，此处最大值遍历全部分量。
+\end{corollary}
+\begin{proof}
+(MX.2) 是有限最大值。$\tau_j>\tau_*$ 的分量之增量与 $t^{\tau_*/n}$ 之比趋于零；
+次数相同而 $S_j<S_*$ 的分量也在充分小的 $t$ 时被排除。
+因此最终只需在有限集合 $I_*$ 上取最大值，首项相同且适用时第二项也相同，
+余项的有限最大值仍为小量。这证明 (MX.7)--(MX.8)。留数由 (OW.2) 和 (MX.2) 得到。
+\end{proof}
+
+\subsection{奇点合并与权扰动的不连续性}\label{subsec:collision}
+分离假设具有实质作用。取一维 $K=[-1,1]$，令
+\[h_1(x)=\begin{cases}x^{-1/2},&x>0,\\2|x|^{-1/2},&x<0,\end{cases}
+\qquad h_2(x)=h_1(-x),\qquad
+w_\delta(x)=h_1(x-\delta)+h_2(x+\delta).\tag{MX.9}\]
+原点值任取正有限值，不影响积分。由 (H.2) 直接计算，每个分量的 $D=5$、$\kappa=6$，故都有
+$S=\sqrt{10}/3>1$。当 $\delta>0$，(MX.2) 及反射不变性给
+$C^{\rm out}_{c,w_\delta}(\alpha)=C^{\rm out}_{c,h_1}(\alpha)$；
+当 $\delta=0$，权为 $3|x|^{-1/2}$，端点系数为 $1$。因此
+\[\lim_{t\downarrow0}\frac{C^{\rm out}_{c,w_\delta}(1-t)-1}{\sqrt t}
+=\begin{cases}\sqrt{10}/3,&\delta>0,\\1,&\delta=0.\end{cases}\tag{MX.10}\]
+这也反驳了在重合奇点处直接套用最大值公式。
+
+实际上 $w_\delta\to w_0$ 在局部 $L^1$ 中成立，且有更强的全空间差值估计。
+写 $g_+(x)=\1_{(0,\infty)}(x)x^{-1/2}$、$g_-(x)=g_+(-x)$。
+对于一般 $0<\tau<1$，将 $x_+^{\tau-1}$ 在正半轴的平移积分分成
+$(0,\delta)$ 和 $(\delta,R)$，再令 $R\to\infty$，得到其平移差的 $L^1$ 范数为
+$2\delta^\tau/\tau$。对 (MX.9) 的四个平移分量使用三角不等式，其正系数之和为六，故
+\[\int_{\mathbb R}|w_\delta-w_0|\,dx\le24\sqrt\delta\longrightarrow0.
+\tag{MX.11}\]
+权本身不属于全空间 $L^1$；这里收敛的是差值积分。
+由于两端点首项严格不同，存在 $\alpha_0<1$，使每个固定
+$\alpha\in(\alpha_0,1)$ 都满足
+$C^{\rm out}_{c,h_1}(\alpha)>C^{\rm out}_{c,w_0}(\alpha)$。
+因而即使差值在全空间的 $L^1$ 范数趋于零，这些固定阈值的外层常数也不连续。
+其原因是定义中的上确界允许测试集在每个未合并奇点附近任意缩小。
