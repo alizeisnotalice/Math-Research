@@ -39,16 +39,16 @@
 研究 Lebesgue 测度下中心轴平行立方体极大算子的 Tauberian 常数。
 令 \(a=2^nt\)、\(v=2t^{1/n}\)、\(L_n(t)=[1-a/(1+v)^n]^{-1}\)，
 \(K_n=\binom{n}{2}n^2/27\)。对每个固定整数 \(n\ge2\)，证明
-\(C_n(1-t)=L_n(t)+K_nav^6-(n+26/9)K_nav^7+o_n(av^7)\)，
-确定直至 \(t^{1+7/n}\) 的全部系数，其中三维 \(t^{8/3}\) 项为零。
+\(C_n(1-t)=L_n(t)+K_nav^6-(n+26/9)K_nav^7+\Theta_n(av^8)\)，
+确定直至 \(t^{1+7/n}\) 的全部系数及其后正余量的八阶量级；不识别八阶精确系数。
 上界覆盖全部有限正测度可测输入及全部半径，下界由孔形重配的真实有限输入实现。
 先以所有源点的实际见证、强投影分布和面容量得到临界加权紧性，
 再从原半盒图提取完整局部铺砌，并以横截面接触计数控制无标签角对。
 在有效端盒内把同一见证捕获的不交目标质量相加，给出系数准确的全源角成本；
 六层结算保留源缺量并抵消前层重复量，完成匹配上界。
-近等号还迫使实际缺源在全体固定维数中接近角臂；同一见证的轴帽与对角目标联合计量，
-以自适应接触容量保留目标缺角反馈，高支撑交量由二轴整管外缺量支付。
-七层结算及预删角臂的有限构造匹配下一阶。
+保留实际目标缺角引起的退款，以领先亏损和真实剩余缺量控制轮廓误差。
+正常角槽的实际空缺控制坏方体，有限面对路径与管外缺源共同支付全部高支撑交量。
+八层结算给出全输入八阶上包；两次目标反馈的有限构造给出正下包。
 对于共享同一中心方体、以公共交集归一化的多线性模型，
 证明精确线性约化、临界发散以及关于全部多线性重数一致的高阶渐近。
 \end{abstract}
@@ -112,9 +112,9 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 在有效端盒内积分缺源层，得到准确的角部代价。任意大交长由小份额盈余支付，
 六层望远镜先确定首个角部系数。为继续计算下一项，实际根传输和自适应探针
 给出全部正角的软容量；全源轮廓与管外缺量支付保留准确的目标缺角反馈。
-七层结算与有限构造最终匹配所需系数。
+保留正常角槽空缺的正预算后，八层结算与有限构造确定七阶系数和下一余量的八阶尺度。
 
-\begin{theorem}[真实高阶渐近]\label{thm:endpoint}
+\begin{theorem}[真实高阶渐近与正八阶量级]\label{thm:endpoint}
 令
 \[
  U_n(t)=1+\frac{2^nt}{1-t},\qquad
@@ -130,7 +130,7 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
  \begin{aligned}
  \Cn(1-t)=L_n(t)&+2^{n+6}K_nt^{1+6/n}\\
  &-2^{n+7}\left(n+\frac{26}{9}\right)K_nt^{1+7/n}
- +o_n(t^{1+7/n}),\qquad t\downarrow0.
+ +\Theta_n(t^{1+8/n}),\qquad t\downarrow0.
  \end{aligned}
 \end{equation}
 令
@@ -146,7 +146,7 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 则全部维数的真实展开统一写为
 \begin{equation}\label{eq:coefficients}
  \Cn(1-t)=1+\sum_{j=0}^{7}b_{n,j}t^{1+j/n}
-              +o_n(t^{1+7/n}).
+              +O_n(t^{1+8/n}).
 \end{equation}
 通式包含低维的幂次碰撞；三维 \(b_{3,5}=0\)，故 \(t^{8/3}\) 项消失。
 特别地，
@@ -154,23 +154,31 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
  \lim_{t\downarrow0}
  \frac{\Cn(1-t)-1-2^nt}{t^{1+1/n}}=-n2^{n+1}.
 \]
-余项按固定维数理解；不主张维数一致性。
+置 \(a=2^nt=v^n\)、\(v=2t^{1/n}\)，并记
+\[
+ \begin{aligned}
+ P_{7,n}(t)&=L_n(t)+K_nav^6-\left(n+\frac{26}{9}\right)K_nav^7,\\
+ J_n&=\frac{(n-1)n^3(2609+1971n+81n^2)}{26244}
+     +\frac8{27}\ind_{\{n=2\}}.
+ \end{aligned}
+\]
+正余量还满足
+\begin{equation}\label{eq:eighth-remainder}
+ \begin{aligned}
+ 0<J_n&\le\liminf_{t\downarrow0}\frac{\Cn(1-t)-P_{7,n}(t)}{av^8},\\
+ &\limsup_{t\downarrow0}\frac{\Cn(1-t)-P_{7,n}(t)}{av^8}<\infty.
+ \end{aligned}
+\end{equation}
+\(\Theta_n\) 表示正的双侧量级；没有断言该归一化余量存在极限。
+常数按固定维数理解，不主张维数一致性。
 在二维，令 \(a=4t\)、\(v=2\sqrt t\)，还有
 \begin{equation}\label{eq:sharp-planar}
- C_2(1-t)=L_2(t)+\frac4{27}av^6-\frac{176}{243}av^7+o(av^7).
+ C_2(1-t)=L_2(t)+\frac4{27}av^6-\frac{176}{243}av^7+\Theta(av^8).
 \end{equation}
 \end{theorem}
 
-周期包络遗漏了首个角部贡献。对全正对称近单位晶格重配孔形，
-用真实有限输入实现以下匹配下界。
-\begin{proposition}[匹配下界的有限构造]\label{prop:nonexact}
-对每个固定整数 \(n\ge2\)，有
-\begin{equation}\label{eq:nonexact}
- \liminf_{t\downarrow0}
- \frac{\Cn(1-t)-L_n(t)}{2^{n+6}t^{1+6/n}}\ge\binom{n}{2}\frac{n^2}{27}>0.
-\end{equation}
-所用输入可以取为有界的有限测度集；所保留的内层孔点具有严格中心见证。
-\end{proposition}
+正下界由每个充分小参数的真实有界输入实现。二维构造的八阶系数为
+\(J_2=15694/6561\)，它提供下极限界；本文没有证明它是全局最优系数。
 
 公共交集归一化的多线性对象还具有精确的参数约化。
 令
@@ -433,18 +441,18 @@ Taylor 定理给出 \eqref{eq:quarticparameter} 的统一余项，绝对值至�
 
 \input{sections/sharp}
 
-\input{sections/seventh}
+\input{sections/eighth}
 
 \begin{proof}[定理~\ref{thm:endpoint} 高阶部分的证明]
-由定理~\ref{seventh:theorem} 的全部输入上界和实际有限下界，
-\eqref{eq:sharp} 成立；二维取 \(K_2=4/27\)，得到 \eqref{eq:sharp-planar}。
+由定理~\ref{eighth:theorem} 的全部输入上界和实际有限下界，
+\eqref{eq:sharp} 及 \eqref{eq:eighth-remainder} 成立；二维取 \(K_2=4/27\)，得到 \eqref{eq:sharp-planar}。
 为取得全部幂次的系数，展开绝对收敛级数
 \[
  L_n(t)-1=\sum_{k\ge1}v^{kn}(1+v)^{-kn}.
 \]
 \(v^{n+j}\) 的系数只来自 \(k\le1+\lfloor j/n\rfloor\)，其二项式次数为
 \(j-(k-1)n\)，上标为 \(n+j-1\)。截至 \(j=7\) 后的余项是
-\(O_n(v^{n+8})\)。把 \eqref{eq:sharp} 的修正分别加入 \(j=6,7\) 项，即得
+\(O_n(v^{n+8})\)。把 \eqref{eq:sharp} 的修正分别加入 \(j=6,7\) 项；其余量与基线截断误差均为八阶，即得
 \eqref{eq:coefficients}。\(j=1\) 的系数为 \(-n2^{n+1}\)，故最初归一化极限成立。
 
 新第七系数在全部 \(n\ge2\) 非零。对 \(n\ge8\)，仅有 \(k=1\)，从而
@@ -471,43 +479,51 @@ Taylor 定理给出 \eqref{eq:quarticparameter} 的统一余项，绝对值至�
 对每个固定 \(n\ge2\)，当 \(\eps\downarrow0\) 时，关于全部整数 \(m\ge1\) 一致有
 \begin{equation}\label{eq:uniform-coefficients}
  \Cm(1-\eps)=1+\sum_{j=0}^{7}b_{n,j}
- [\eps A_m(\eps)]^{1+j/n}+o_n(\eps^{1+7/n}).
+ [\eps A_m(\eps)]^{1+j/n}+O_n(\eps^{1+8/n}).
 \end{equation}
 三维 \(\eps^{8/3}\) 的系数仍为 \(160(1-1/m)\)：该项在线性情形消失，
 在 \(m>1\) 时由参数替换产生。
 \end{corollary}
 \begin{proof}
 对 \(0<\eps\le1/2\)，精确约化同时适用于全部 \(m\)。记 \(s=\sigma_m(\eps)\)，
-\(p_*=1+7/n\le9/2\)。单线性展开的余项 \(r_n(t)=o_n(t^{p_*})\) 满足：
-给定 \(\delta>0\)，存在与 \(m\) 无关的 \(t_0>0\)，使
-\(|r_n(t)|\le\delta t^{p_*}\) 对全部 \(0<t<t_0\) 成立。
-当 \(\eps<t_0/2\) 时，\(\eps\le s\le2\eps\)，故全部重数的余项
-均不超过 \(\delta2^{p_*}\eps^{p_*}\)，给出一致的 little-o。
-引理~\ref{lem:parameter} 还给 \(s=\eps A_m(\eps)+O(\eps^5)\)。
-对 \(1\le p\le9/2\)，两底数均在 \([\eps,C\eps]\) 内，均值定理给
+\(p_8=1+8/n\le5\)。单线性展开的余项满足
+\(|r_n(t)|\le C_nt^{p_8}\) 对全部充分小 \(t>0\) 成立。
+由 \(\eps\le s\le2\eps\)，全部重数余项统一不超过
+\(C_n2^{p_8}\eps^{p_8}\)。
+引理~\ref{lem:parameter} 给 \(s=\eps A_m(\eps)+O(\eps^5)\)。
+对八个固定指数 \(p=1+j/n\in[1,9/2]\)，均值定理给
 \[
  s^p-[\eps A_m(\eps)]^p=O_p(\eps^{p+4}).
 \]
-有限求和误差 \(O_n(\eps^5)\) 是 \(o_n(\eps^{p_*})\)。
-最后由精确约化代入定理~\ref{thm:endpoint}。三维示例来自
-\(192s^{5/3}\) 的修正 \(320a_m\eps^{8/3}\)，而 \(b_{3,5}=0\)。
+有限求和误差 \(O_n(\eps^5)\) 是 \(O_n(\eps^{p_8})\)，包括二维的相等阶情形。
+故四阶参数截断足以保持这里的八阶上包，但不据此识别八阶精确系数。
+三维示例来自 \(192s^{5/3}\) 的修正 \(320a_m\eps^{8/3}\)，而 \(b_{3,5}=0\)。
 \end{proof}
 
-\begin{corollary}[自然参数下的一致极限]\label{cor:nonexact-multi}
+\begin{corollary}[自然参数下的重数一致正八阶量级]\label{cor:eighth-multi}
 对每个固定 \(n\ge2\)，记 \(s=\sigma_m(\eps)\)、\(a_s=2^ns\)、
-\(v_s=2s^{1/n}\)，有
+\(v_s=2s^{1/n}\)。关于全部整数 \(m\ge1\) 一致有
 \[
- \lim_{\eps\downarrow0}\sup_{m\ge1}
- \left|\frac{\Cm(1-\eps)-L_n(s)-K_na_sv_s^6}{a_sv_s^7}
-       +\left(n+\frac{26}{9}\right)K_n\right|=0.
+ \Cm(1-\eps)=P_{7,n}(s)+\Theta_n(a_sv_s^8),
 \]
+并且
+\[
+ \liminf_{\eps\downarrow0}\inf_{m\ge1}
+ \frac{\Cm(1-\eps)-P_{7,n}(s)}{a_sv_s^8}\ge J_n>0.
+\]
+这里 \(\Theta_n\) 的两个正的常数及起效区间均不依赖 \(m\)。
 \end{corollary}
 \begin{proof}
-将定理~\ref{thm:endpoint} 的七阶标量余项写成 \(r_n(t)=o_n(t^{1+7/n})\)。
-精确约化给出同一个 \(r_n(s)\)。记其标准化模量为
-\(\omega_n(\delta)=\sup_{0<t\le\delta}|r_n(t)|/t^{1+7/n}\to0\)。
-由于 \(\eps\le s\le2\eps\) 及 \(a_sv_s^7=2^{n+7}s^{1+7/n}\)，
-所需上确界不超过 \(2^{-(n+7)}\omega_n(2\eps)\)，故趋于零。
+由 \eqref{eq:eighth-remainder}，存在固定 \(c_n,C_n'>0\)，使
+\[
+ c_n\le\frac{\Cn(1-t)-P_{7,n}(t)}{2^{n+8}t^{1+8/n}}\le C_n'
+\]
+对全部充分小 \(t>0\) 成立。精确约化以 \(t=s\) 代入；
+\(\eps\le s\le2\eps\) 使整个区间同时适用于全部重数，得到一致双侧界。
+再对任意 \(\delta>0\)，标量下极限给同一归一化比值在小参数区间均
+不小于 \(J_n-\delta\)。当 \(\eps\) 小到 \(2\eps\) 位于该区间，
+可同时对全部 \(m\) 取下确界，最后令 \(\delta\downarrow0\)。
+这没有从逐 \(m\) 的极限交换出上、下确界，也没有预设八阶极限存在。
 \end{proof}
 
 \bibliographystyle{plain}
