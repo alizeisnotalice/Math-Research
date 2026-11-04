@@ -62,42 +62,14 @@ $3h<R$），其缺失比例严格小于 $t$。因此孔模零在严格光晕内�
 这完成证明。
 \end{proof}
 
-\begin{theorem}[一维二阶项]\label{thm:op-power-one-second}
-若 $0<\tau<(5-\sqrt{17})/2$，则
-\[C^{\rm out}_{c,w_{\tau,1}}(1-t)-1=t^\tau+t^{2\tau}+o(t^{2\tau}).\tag{OP.8}\]
-\end{theorem}
-\begin{proof}
-一维短类项为
-\[\frac{2t[2(1+C)]^{1-\tau}}{(1-t)(1-2^{\tau-1})}.\]
-精确的一维长类估计为
-\[\frac{\mu_{\tau,1}(T)}{\mu_{\tau,1}(E)}
-\le\frac{2t^\tau}{A_C-2t^\tau},\qquad
-A_C=(1+C^{-1})^\tau+(1-C^{-1})^\tau.\tag{OP.9}\]
-事实上，对 $|x|/r<C^{-1}$，偶函数 $(1+v)^\tau+(1-v)^\tau$ 在 $v\ge0$ 上递减，故 $\mu_\tau(Q(x,r))\ge r^\tau A_C/\tau$，缺集质量至多
-$2(rt)^\tau/\tau$；用实际半径上确界得到 $|T|\le2tR$，再重排即得。
-取 $C=t^{-a}$。为使短类为 $o(t^{2\tau})$ 且 $C^{-2}$ 误差可忽略，取
-\[\tau/2<a<(1-2\tau)/(1-\tau).\tag{OP.10}\]
-此区间非空等价于 $\tau<(5-\sqrt{17})/2$，且
-\[A_C=2-\tau(1-\tau)C^{-2}+O_\tau(C^{-4}),\]
-所以 (OP.9) 为 $t^\tau+t^{2\tau}+o(t^{2\tau})$。
-下界取 $E=[-1-t,-t]\cup[t,1+t]$。若 $0\le x<t$，取
-$r=1+t-x$，则平均为 $(1-x)/(1+t-x)>1-t$；故孔模零在严格光晕内，并且
-\[C^{\rm out}_{c,w_{\tau,1}}(1-t)-1\ge
-\frac{t^\tau}{(1+t)^\tau-t^\tau}=t^\tau+t^{2\tau}+o(t^{2\tau}).\]
-夹逼即得结论。
-\end{proof}
-
 \begin{corollary}[共同中心多集合外层模型]\label{cor:op-power-multi}
 设 $a_*=\min_i a_i$。由精确外层传递
 \[C^{\boldsymbol a,\rm out}_{c,w_{\tau,n}}(\lambda)=C^{\rm out}_{c,w_{\tau,n}}(1-s_{\boldsymbol a}(\lambda)),\]
 有
 \[C^{\boldsymbol a,\rm out}_{c,w_{\tau,n}}(1-\varepsilon)-1\sim
 a_*^{-\tau/n}\varepsilon^{\tau/n}.\]
-一维且 $\tau<(5-\sqrt{17})/2$ 时，左端还等于
-\[a_*^{-\tau}\varepsilon^\tau+a_*^{-2\tau}\varepsilon^{2\tau}
-+o(\varepsilon^{2\tau}).\]
 \end{corollary}
 \begin{proof}
 水位方程在首段给 $s_{\boldsymbol a}(1-\varepsilon)=\varepsilon/a_*+O(\varepsilon^2)$。
-代入前两定理；因 $\tau<1$，$O(\varepsilon^{\tau+1})=o(\varepsilon^{2\tau})$。
+代入定理 \ref{thm:op-power-n-leading} 即得。
 \end{proof}

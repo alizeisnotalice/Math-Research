@@ -1,0 +1,10 @@
+2026-11-05 actual local execution, parent independent reproduction.
+Python3.15/SciPy1.18.1 and MATLAB R2026a Update4: 12 finite shell-integral checks;
+n,tau=(2,.5),(2,1.25),(3,.75),(4,.5), delta=2^(-6),2^(-8),2^(-10).
+n=2,tau=.5,delta=2^(-10): normalized quadratic quotient -0.3748781158356, target -3/8.
+Wolfram15.0.0: exact quadratic coefficient checks True for (2,1/2),(3,3/4),(4,1/2).
+Exact series: 1-3 delta^2/8+delta^3/8+O(delta^4);
+1-27 delta^2/32+9 delta^3/16+O(delta^4);
+1-7 delta^2/8+7 delta^3/8+O(delta^4).
+Wolfram Reduce returns 0<b<(n+4-sqrt(n^2+16))/(2n) for cutoff compatibility.
+MATLAB Code Analyzer: no issues. Scalar checks do not prove arbitrary-input estimates.
