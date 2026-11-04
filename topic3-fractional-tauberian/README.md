@@ -121,3 +121,7 @@ run('verification/fixed_cube_matlab.m')
 第21轮得到更强的全体亏损下界：0<t≤.01时，C(1−t)≤U(1−t)−2⁻²⁴t^(9/2)，可以与上一轮t⁶/768取较大者。四法向归零结合深t³、宽t^(3/2)的抛物邻域，孔洞面积传递闭合；真正间隙的最优阶仍未确定。见 `rounds/021.md`；复现 `verification/parabolic_gap.py`、`verification/parabolic_gap.wl`、`verification/parabolic_gap_matlab.m`。
 
 第21轮当前PDF为77页，证明独立复审、编译、结构与逐页版面检查均已完成。
+
+第22轮证明更强的四阶全体亏损：存在绝对κ,t0>0，使C(1−t)≤U(1−t)−κt⁴（0<t<t0）。常数/阈值未数值化；连续四邻域几何松弛的亏损阶恰为四阶，而真实C的最优亏损阶和三阶系数仍待研究。见 `rounds/022.md`；复现 `verification/arc_aggregation.py`、`verification/arc_aggregation.wl`、`verification/arc_aggregation_matlab.m`。
+
+第22轮当前PDF为80页，局部证书与聚合/松弛证明已独立终审；编译、结构及逐页版面检查完成。

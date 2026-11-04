@@ -647,3 +647,225 @@ $\sqrt g+\sqrt\Delta\le2\sqrt\delta<t^2/2048$。
 故 $H$ 必须同时命中四邻域，违反共同不可行性。
 对所有输入取上确界，即得结论。
 \end{proof}
+
+\subsection{侧弧聚合与四阶亏损}
+
+一个四邻域障碍只控制一块 $t^{9/2}$ 量级的面积。
+在一段长度为 $t$ 的侧弧上布置并筛选这些障碍，可以利用同一个输入的总孔洞预算，
+把亏损提高到四阶。这里的常数和起效阈值是绝对常数，但不再给出具体数值。
+
+\begin{lemma}[沿侧弧一致的四邻域证书]\label{pb:arc-circuits}
+记 $d_0=1/64$、$h_0=k_0=1/4096$，$\alpha=1-t$、$c=2\alpha^2-1$。
+对 $|\zeta|\le1/8$，置
+\[
+ \theta=\pi/4+\zeta t,\qquad
+ p_\theta=\left(\frac{\alpha-\sqrt{c\tan\theta}}2,
+                   \frac{\alpha-\sqrt{c\cot\theta}}2\right),
+\]
+\[
+ P_\theta=\{p_\theta-d_0t^3u_\theta+n u_\theta+v u_\theta':
+ |n|\le h_0t^3,\ |v|\le k_0t^{3/2}\}.
+\]
+存在绝对 $t_0>0$，使所有 $0<t<t_0$ 及上述参数下，
+$P_\theta$ 的四个坐标反射邻域都包含于 $T=\overline K_\alpha/2$，
+且没有一个质量一输入的严格光晕能同时命中这四邻域。
+这四邻域的任意共同平移仍不能被同一光晕同时命中。每个邻域面积恰为 $4h_0k_0t^{9/2}$。
+\end{lemma}
+\begin{proof}
+写 $p_\theta=(r_b,s_b)$、
+$(r,s)=p_\theta-d_0t^3u_\theta$，并取 $q=\alpha+et^2$、$e=1/8$、$M=2q-\alpha$。
+先不加邻域扰动，令
+$G(z)=(z-2r)(z-2s)-2\alpha z+1$。
+在紧参数区间 $|\zeta|\le1/8$ 上，一致展开给出
+\begin{align*}
+ G(\alpha)/t^3&\longrightarrow2\sqrt2d_0,\\
+ -G(q)/t^3&\longrightarrow2e-2\sqrt2d_0,\\
+ -G(\alpha^{-1})/t^3&\longrightarrow2(1-\zeta^2-\sqrt2d_0),\\
+ [(\alpha+2r)(\alpha+2s)-4M(M-\alpha)-1]/t^2
+ &\longrightarrow2(1-4e-\zeta^2).
+\end{align*}
+这些极限均一致为正；其中边界恒等式为
+$(\alpha+2r_b)(\alpha+2s_b)=1+8r_bs_b$。
+
+对相反邻域的两个点，用 $N,V\in[-2,2]$ 表示归一化扰动和，
+其坐标差为
+\[
+ (2r,2s)+h_0Nt^3u_\theta+k_0Vt^{3/2}u_\theta'.
+\]
+相应的三个端点多项式除以 $t^3$ 后，极限依次为
+\begin{align*}
+ &2\sqrt2d_0-\sqrt2h_0N-k_0^2V^2/2,\\
+ &2e-2\sqrt2d_0+\sqrt2h_0N+k_0^2V^2/2,\\
+ &2(1-\zeta^2-\sqrt2d_0)+\sqrt2h_0N+k_0^2V^2/2.
+\end{align*}
+第一式是 $G(\alpha)$，后两式是 $-G(q)$ 和 $-G(\alpha^{-1})$。
+它们在整个紧参数盒上严格为正。
+真正切向在 $\alpha$ 处消去一阶项；在 $\alpha^{-1}$ 处的额外一阶项含有
+$(\alpha^{-1}-\alpha)(\cos\theta-\sin\theta)=O(t^2)$，
+故不会产生大于 $t^3$ 的扰动。
+以 $\sqrt t$ 为变量，全部表达式在紧参数盒附近光滑，故余项一致趋于零。
+第一式保证邻域包含于 $T$；另两式通过凸二次式的同一论证，迫使所有独立见证尺度小于 $M$。
+
+还需核对四小方体的并面积。引理~\ref{pb:tangent-union}的角区证明对矩形四角给出
+\[
+ |\cup_iQ_\alpha(x_i)|\ge
+ (\alpha+2r)(\alpha+2s)-4|r-s|\eta-4\eta^2
+\]
+于四十五度切向幅度 $\eta$ 的情形，只要
+$\alpha\ge3\max(r,s)-\min(r,s)+4\eta$。
+这是由 $X+Y=2(r+s)+w$ 及
+$XY\ge4rs+(r+s)w-4|r-s|\eta-4\eta^2$ 得到的。
+真正切向相对四十五度切向相差 $O(t)$，再加法向扰动，
+只增加 $O(t\eta+t^3)$ 的对称差损失。
+这里 $|r-s|=O(t)$、$\eta=O(t^{3/2})$，故总损失 $O(t^{5/2})=o(t^2)$。
+上述第四个一致正极限因而仍使强制质量大于一，完成全部连续尺度的共同不可行性证明。
+\end{proof}
+
+\begin{lemma}[支撑缺口的局部最大函数控制]\label{pb:arc-maximal}
+设 $S=-S\subset T$，$g=|T|-|S|$、$D=h_T-h_S$。
+在四个区间 $J_j=\{|\phi-\theta_j|<t/8\}$（$\theta_j=\pi/4+j\pi/2$）上，
+令 $F_D=D\mathbf1_{\cup J_j}$。则
+\[
+ \int F_D\le Cg.
+\]
+当 $g\le\kappa t^4$、$t$ 充分小时，对任意固定 $a>0$，
+$|\phi-\theta_j|\le t/32$、$|s|\le t/64$ 有
+\[
+ D(\phi+s)\le a s^2+C_a\mathcal M F_D(\phi),
+\]
+其中 $\mathcal M$ 为圆周上一维中心 Hardy--Littlewood 最大算子。
+常数不依赖 $t,S$；$\kappa$ 取有界范围即可。
+\end{lemma}
+\begin{proof}
+记曲率测度为 $\mu_T=h_T''+h_T$、$\mu_S=h_S''+h_S$。
+由面积公式的极化及分部积分，
+\[
+ g=\frac12\int D\,(d\mu_T+d\mu_S).
+\]
+在这些侧弧上 $d\mu_T=\rho_Td\phi$、$\rho_T\ge1/2$，故第一式成立。
+又在弧内分布意义下
+$D''=\rho_T-\mu_S-D\le1$，即 $D$ 半凹。
+引理~\ref{pb:local-caps}给 $\|D\|_\infty\le Cg^{2/3}=o(t^2)$ 于所用的内部弧上。
+非负性和半凹性遂蕴含 $|p|\le\sqrt{2D(\phi)}$，其中 $p$ 是任一上梯度：
+将上二次支撑式 $D(\phi+s)\le D(\phi)+ps+s^2/2$ 沿 $-p$ 方向代入，
+否则右端会在仍处于弧内的一点变负。
+若 $|p|$ 超出可用弧长，先在弧端代入也产生矛盾，因为 $D=o(t^2)$。
+因此 $\sqrt D$ 在内部弧上是 $1/\sqrt2$-Lipschitz 的。
+
+令 $b=D(\phi+s)$。若 $b\le as^2$ 则已足够；否则
+$|s|\le\sqrt{b/a}$，而上述 Lipschitz 性使长度 $c\sqrt b$ 的邻域内 $D\ge b/2$。
+一个以 $\phi$ 为中心、长度 $C_a\sqrt b$ 的区间同时包含该邻域，
+故 $\mathcal M F_D(\phi)\ge c_a b$。
+所有这些区间都在 $J_j$ 内，因为 $\sqrt b=o(t)$ 且取点与端点间有固定比例的弧长余量。
+得到所述估计。分布半凹情形可用内部卷积逼近，或在几乎处处导数意义下积分处理。
+\end{proof}
+
+\begin{theorem}[全体常数的四阶亏损]\label{pb:quartic-gap}
+存在绝对常数 $\kappa,t_0>0$，使 $0<t<t_0$ 时
+\[
+ R(1-t)\le C_{1,\mathcal Q_c}(1-t)
+ \le\mathcal U(1-t)-\kappa t^4.
+\]
+这里 $\kappa,t_0$ 未数值化；这仍不确定真实亏损的最优阶或三阶系数。
+\end{theorem}
+\begin{proof}
+反设某质量一输入的光晕 $H$ 有
+$\delta=|T|-|H|<\kappa t^4$。
+置 $A=\overline{\operatorname{conv}H}$、$S=(A-A)/2$、
+$g=|T|-|S|$、$\Delta=|S|-|A|$，则
+$g+\Delta\le\delta$、$|A\setminus H|\le\delta$。
+先按引理~\ref{pb:fourier-stability}作固定的 Steiner 平移，写 $h_A=h_S+f$，
+使 $f$ 没有第一谐波。令 $F_E=|f'|^2+|f|^2$，则 $\int F_E\le C\Delta$。
+
+取参数区间 $I_t=[\pi/4-t/32,\pi/4+t/32]$。
+对 $\theta\in I_t$，要求四个反射法向 $\pm\theta,\pi\pm\theta$ 均满足
+\[
+ \mathcal M F_D\le\lambda t^3,\qquad\mathcal M F_E\le\lambda t^3.
+\]
+一维最大算子的弱 $(1,1)$ 界及前一引理表明坏参数总长度至多
+$C\delta/(\lambda t^3)\le C\kappa t/\lambda$。
+该弱型界可直接由区间选择证明：选取两两不交见证区间，其三倍覆盖坏集，
+再对各区间的积分下界求和。
+按下述局部吸收条件先固定 $a,\lambda$，再令 $\kappa$ 足够小，得到好参数集 $G_t$ 满足
+$|G_t|\ge c t$。
+
+对每个好参数 $\theta$，取平移 $b_\theta$，使
+$f(\theta)-b_\theta\cdot u_\theta=f(\pi-\theta)-b_\theta\cdot u_{\pi-\theta}=0$。
+这两个法向一致横截，故 $|b_\theta|\le C\sqrt\Delta$，其余两个值由奇性自动归零。
+最大函数控制和 Cauchy--Schwarz 给出，对四个基准法向 $\phi$ 和 $|s|\le t/64$，
+\[
+ |f(\phi+s)-b_\theta\cdot u_{\phi+s}|
+ \le C(\sqrt\lambda\,t^{3/2}+\sqrt\Delta)|s|.
+\]
+同时前一引理给 $D(\phi+s)\le as^2+C_a\lambda t^3$。
+取固定小 $a$，利用 $\Delta\le\kappa t^4$ 并令 $\kappa\le\lambda$，
+奇部的线性项可配方吸收入 $as^2+C\lambda t^3$。
+
+侧弧证书中的每个点 $z$ 沿真实法向内移 $d_0t^3+O(h_0t^3)$、
+切向移动 $O(k_0t^{3/2})$。
+由 $1/2\le\rho_T\le1$，与定理~\ref{pb:parabolic-gap}相同的配方在本参数窗内一致给出
+\[
+ h_T(\phi+s)-z\cdot u_{\phi+s}\ge c_1s^2+c_2t^3\quad(|s|\le t/64),
+\]
+其中可固定取 $c_1=1/16,c_2=d_0/4$，再缩小 $t_0$；
+这是由局部支撑间隙 $s^2/8$、法向深度至少 $(d_0-h_0)t^3$ 和
+$4k_0^2<(d_0-h_0)/2-d_0/4$ 得到的。
+因此先取 $a<c_1/4$，再取 $\lambda$ 足够小，所有这些法向均有 $h_{A-b_\theta}\ge z\cdot u$。
+在较远法向，侧弧三段估计仍一致提供至少 $ct^2$ 的余量：
+将 $Q_\theta(s)=h_T(\theta+s)-p_\theta\cdot u_{\theta+s}$ 代入
+$Q_\theta/\sin s$ 的单调性论证，得到中段的 $ct|\sin s|$；
+远段则用内球和 $|p_\theta\cdot u_\theta'|<t/8$ 得到 $ct$。
+切向扰动仅为 $O(t^{3/2}|\sin s|)$，可以吸收。
+$D\le\sqrt g$ 及全局奇部界使总损失至多 $C\sqrt\delta\le C\sqrt\kappa t^2$，
+取 $\kappa$ 小即可吸收。
+于是好参数的全部四邻域满足 $P_{\theta,j}+b_\theta\subset A$。
+
+必须控制这些随参数改变的平移。由 $f\in H^1$ 和法向矩阵的光滑性，
+\[
+ |b_\theta-b_\psi|\le C\sqrt\Delta
+ \bigl(|\theta-\psi|^{1/2}+|\theta-\psi|\bigr),
+\]
+故 $\operatorname{osc}_{I_t}b_\theta\le C\sqrt{t\Delta}=O(\sqrt\kappa t^{5/2})$。
+另一方面 $p_\theta'=\rho_T(\theta)u_\theta'$，
+在固定切向上的投影导数一致大于正数。
+从正测度集 $G_t$ 贪心选择间隔至少 $L t^{3/2}$ 的参数，得到
+$N\ge c t^{-1/2}$ 个参数；这里 $L$ 是固定充分大常数。
+同一象限的各物理邻域 $P_{\theta,j}+b_\theta$ 因而互不相交：
+中心切向间距至少 $cL t^{3/2}$，邻域宽度仅为 $O(k_0t^{3/2})$，
+平移振幅又为 $o(t^{3/2})$。
+不同象限的邻域相距 $\asymp t$，也不相交。
+此处使用的是从好集选择分离参数，未把好集的测度误当作某个预定网格上的好点数。
+
+每个参数的四邻域不能同时被 $H$ 命中，故至少一个整邻域属于 $A\setminus H$。
+所有已选邻域互不相交，所以
+\[
+ |A\setminus H|\ge N\,4h_0k_0t^{9/2}\ge c_3t^4,
+\]
+与 $|A\setminus H|\le\delta<\kappa t^4$ 矛盾。
+常数选择顺序为先 $a$、再 $\lambda$、再足够小的 $\kappa$，最后缩小 $t_0$，
+不存在依赖循环。对输入取上确界即得定理。
+\end{proof}
+
+\begin{proposition}[连续四邻域松弛的四阶边界]\label{pb:quartic-relaxation}
+令 $\mathfrak G(t)$ 为所有有界开集 $B$ 的面积上确界，其中
+$B-B\subset K_{1-t}$，且对每个 $\theta\in I_t$ 及任意共同平移，
+$B$ 不能同时命中引理~\ref{pb:arc-circuits}中的四邻域。
+则
+\[
+ \kappa t^4\le\mathcal U(1-t)-\mathfrak G(t)\le4t^4+O(t^5).
+\]
+因此该几何松弛的亏损阶恰为四阶；这不是实际光晕的反例或最优阶结论。
+\end{proposition}
+\begin{proof}
+上一证明只用了差体包含、平移后的四邻域禁配及凸包孔洞预算，故同样给出松弛上界。
+反向取 $B=(1-t^2)\operatorname{int}T$。
+其差集包含于 $K_{1-t}$。相反邻域沿 $u_\theta$ 要求的最小投影跨度为
+$2h_T(\theta)-2(d_0+h_0)t^3$，而 $B$ 的宽度为 $2(1-t^2)h_T(\theta)$。
+因 $h_T(\theta)/t$ 有统一正下界，后者严格更小，故任意共同平移下
+连相反的两邻域也不能同时命中。
+于是 $B$ 是合法松弛资料，且
+\[
+ |T|-|B|=(2t^2-t^4)\mathcal U(1-t)=4t^4+O(t^5).
+\]
+该松弛仍保留包络的三阶系数 $10/3$；要降低真实三阶上界，需要更强的共同见证信息。
+\end{proof}

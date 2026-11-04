@@ -293,3 +293,20 @@ $[99/100,1]$ 上再减去定理~\ref{pb:sixth-gap}给出的 $(1-\alpha)^6/768$�
 由 Beta 积分的 Gamma 比值渐近即得极限。
 这仍是统一上包络的减项，而非真实泛函的高阶系数。
 \end{proof}
+
+
+\begin{corollary}[高矩包络的四阶减项]\label{mom:quartic-envelope}
+存在绝对 $\kappa,t_0>0$，使对 $p>2$，
+\[
+ \mathfrak F_{1,\mathcal Q_c}(p)\le\mathcal B(p)-\mathcal D_4(p),\qquad
+ \mathcal D_4(p)=\kappa p\int_{1-t_0}^1\alpha^{p-1}(1-\alpha)^4\,d\alpha,
+\]
+且 $\lim_{p\to\infty}p^4\mathcal D_4(p)=24\kappa>0$。
+这里可将 $t_0$ 缩小到 $t_0<1-1/\sqrt2$。
+\end{corollary}
+\begin{proof}
+逐输入使用定理~\ref{pb:quartic-gap}，然后层析并对输入取上确界。
+完整 Beta 积分为 $24\kappa\prod_{j=1}^4(p+j)^{-1}$，
+截去部分至多为 $\kappa(1-t_0)^p$。
+仍未据此确定真实泛函的四阶系数。
+\end{proof}

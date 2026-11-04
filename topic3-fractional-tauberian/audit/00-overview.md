@@ -15,3 +15,5 @@
 第20轮pb:fourier-stability以平面支撑函数奇偶分解证明平方根稳定性，其指数在一般凸体类中sharp；pb:cap-distance及pb:quant-transfer把四球共同障碍转成亏损ε²/3。pb:sixth-gap在全部0<t≤.01得到U−C≥t6/768，未证明该间隙阶最优。mom:sixth-envelope只改进统一高矩层析包络，非真实泛函的六阶展开。
 
 第21轮pb:parabolic-gap把全体亏损下界提高为2⁻²⁴t^(9/2)，有效域0<t≤.01；四法向归零和各向异性patch完成凸包到原光晕传递，未将局部cap或有限搜索当一般证明。pb:tangent-union的切向平方损失系数4及pb:local-caps的2/3缺深指数各有等号/渐近例证明不可改进，但不据此声称全体9/2阶sharp。mom:parabolic-envelope仍只改进高矩统一包络。
+
+第22轮pb:quartic-gap得到真实全体亏损U−C≥κt4（绝对κ,t0存在但未数值化），由一般侧弧四邻域证书、缺口半凹性/最大函数、随参数平移及分离孔洞计数闭合。pb:quartic-relaxation证明该连续四邻域几何松弛自身的亏损阶恰t4，未构造真实halo或收窄三阶区间；mom:quartic-envelope只传递统一上包络的p⁻⁴减项。
