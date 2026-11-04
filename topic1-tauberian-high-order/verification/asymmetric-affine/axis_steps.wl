@@ -1,0 +1,11 @@
+ClearAll[u,d1,d2,n];
+Print["Wolfram: ",$Version];
+Print["axis model d_i=1+u^4 delta_i, sum delta_i=0; fixed n=2,3, exact product and candidate rho=g-u^7 sum(delta_i²)/(4n)."];
+g=1/(1+2u);
+Do[ds=If[n==2,{d1,-d1},{d1,d2,-d1-d2}]; ss=Total[ds^2];rho=g-u^7 ss/(4n); steps=1+u^4 ds;
+ eq=Times@@(steps-rho)-(2u rho)^n;
+ gain=rho^n-g^n Times@@steps+u^7 g^n ss/4;
+ Print["n=",n,", defining product residual through u^(n+9): ",FullSimplify[Normal[Series[eq,{u,0,n+9}]]]];
+ Print["n=",n,", gain residual through u^9: ",FullSimplify[Normal[Series[gain,{u,0,9}]]]];
+,{n,{2,3}}];
+Print["This checks an implicit-root ansatz; deriving a uniform remainder requires a nonzero root derivative and error control."];

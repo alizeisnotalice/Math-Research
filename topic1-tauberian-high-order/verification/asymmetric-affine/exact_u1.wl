@@ -1,0 +1,17 @@
+ClearAll[p,q,f,r,lam,pp,qq];
+Print["Wolfram: ",$Version];
+Print["Domain p,q>0, f>p+q, h=pq/f; exact two-arm U0 and linear U1 model."];
+arm=p/(f-p);bt=q/(f-q);h=p q/f;
+mlo=p r-r^2/(2bt);mhi=(mlo/.r->h)+arm(q(r-h)-(r^2-h^2)/2);
+Print["branch matching: ",FullSimplify[(mlo-mhi)/.r->h,f>p+q&&p>0&&q>0]];
+Hlo=(p r-mlo)/f;Hhi=(p r-mhi)/f;
+one=Integrate[(p+r)Hlo-Hlo^2,{r,0,h},Assumptions->f>p+q&&p>0&&q>0]+Integrate[(p+r)Hhi-Hhi^2,{r,h,q},Assumptions->f>p+q&&p>0&&q>0];
+two=one/.{p->qq,q->p}/.qq->q; total=FullSimplify[one+two,f>p+q&&p>0&&q>0];
+Print["exact U1 rational expression: ",Factor[total]];
+ser=FullSimplify[Normal[Series[total/.{p->lam pp,q->lam qq},{lam,0,5}]],f>0&&pp>0&&qq>0];
+Q4=pp qq(pp^2+3pp qq+qq^2)/3;
+Q5=17(pp^3 qq^2+pp^2 qq^3)/12+5(pp^4 qq+pp qq^4)/24;
+Print["lambda4 coefficient residual: ",FullSimplify[Coefficient[ser,lam,4]-Q4/f]];
+Print["lambda5 coefficient residual: ",FullSimplify[Coefficient[ser,lam,5]+Q5/f^2]];
+Print["lambda0..3 coefficients: ",Table[Coefficient[ser,lam,j],{j,0,3}]];
+Print["exchange symmetry residual: ",FullSimplify[total-(total/.{p->qq,q->p}/.qq->q),f>p+q&&p>0&&q>0]];
