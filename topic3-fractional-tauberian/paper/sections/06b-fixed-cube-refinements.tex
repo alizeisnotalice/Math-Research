@@ -1,0 +1,149 @@
+\section{固定方体的有限尺度公式与二维精细渐近}
+\label{fix:section}
+
+切向定理给出首项之后，一个自然问题是能否继续控制有限阈值及更高阶项。
+对于方体资料，交长的分段线性结构使尺度优化可以精确有限化。
+
+\begin{theorem}[内部中心的有限接触尺度公式]\label{fix:finite-scales}
+设 $Q_0=[-1/2,1/2]^n$、$0<\beta<n$，且 $x\in\operatorname{int}Q_0$。
+记 $d_j=|x_j|$，并定义
+\[
+ F_x(\ell)=\ell^{\beta-n}\prod_{j=1}^n
+ \min\left\{1,\ell,\frac{1+\ell}{2}-d_j\right\},\qquad \ell>0.
+\]
+则
+\begin{equation}\label{fix:contact-formula}
+ M_{\beta,\mathcal Q_c}\mathbf1_{Q_0}(x)
+ =\max_{1\le j\le n,\,\varepsilon\in\{-1,1\}}
+ F_x(1+2\varepsilon d_j).
+\end{equation}
+\end{theorem}
+\begin{proof}
+单坐标的交长正是上式的最小值；因 $d_j<1/2$，它对每个 $\ell>0$ 均为正。
+其表达式只在 $\ell=1\pm2d_j$ 处改变。在相邻接触尺度之间，每一交长因子
+为 $1$、$\ell$ 或 $(\ell+a_j)/2$，其中 $a_j=1-2d_j>0$。
+令 $z=\log\ell$。前两种因子对 $\log F_x(e^z)$ 的贡献为常数或线性项；第三种满足
+\[
+ \frac{d^2}{dz^2}\log(e^z+a_j)
+ =\frac{a_je^z}{(e^z+a_j)^2}>0.
+\]
+因此 $\log F_x(e^z)$ 在各段凸，段内最大值由端点控制。
+又 $F_x(\ell)\to0$ 当 $\ell\downarrow0$ 或 $\ell\to\infty$，所以全局最大值
+在所列有限接触尺度中取得。
+\end{proof}
+
+\begin{lemma}[二维局部主导尺度]\label{fix:active-branches}
+固定 $0<\beta<2$。存在 $\delta_\beta>0$，使对
+$0\le s\le r<\delta_\beta$，四个接触尺度的值
+\[
+ A=(1-2r)^\beta,\quad
+ B=(1-2s)^{\beta-1}(1-s-r),\quad
+ C=(1+2s)^{\beta-2}(1+s-r),\quad
+ D=(1+2r)^{\beta-2}
+\]
+的最大值依次为
+\[
+ \begin{cases}
+ A,&0<\beta<1/2,\\
+ B,&1/2\le\beta<1,\\
+ C,&1\le\beta<3/2,\\
+ D,&3/2\le\beta<2.
+ \end{cases}
+\]
+\end{lemma}
+\begin{proof}
+令 $h=r-s$、$y=1-2s$。有
+\[
+ \log(B/A)=\log(1-h/y)-\beta\log(1-2h/y).
+\]
+若 $\beta\ge1/2$，由 $1-z\ge\sqrt{1-2z}$ 得 $B\ge A$。
+若 $\beta<1/2$，右端作为 $z=h/y$ 的函数在零点的导数为
+$2\beta-1<0$，故在一个依赖 $\beta$ 的邻域上 $A\ge B$。
+
+写 $c=2-\beta$，则
+\[
+ \log(D/C)=-c\log\left(1+\frac{2h}{1+2s}\right)-\log(1-h).
+\]
+当 $c\le1/2$ 时，
+$(1+2h/(1+2s))^{-c}\ge(1+2h)^{-1/2}\ge1-h$，所以 $D\ge C$。
+当 $c>1/2$ 时，上式关于 $h$ 的导数在 $(h,s)=(0,0)$ 为 $1-2c<0$。
+由连续性，缩小邻域后该导数一致为负；从 $h=0$ 积分得到 $C\ge D$。
+
+最后，$\log(C/B)$ 对 $\beta$ 单调递增。在 $\beta=1$，
+\[
+ C-B=\frac{2s(r+s)}{1+2s}\ge0,
+\]
+故 $\beta\ge1$ 时 $C\ge B$。当 $\beta<1$ 时，$\log(C/B)$ 关于 $s$ 的导数
+在 $(r,s)=(0,0)$ 为 $4(\beta-1)<0$，因而在足够小邻域中一致为负。
+固定 $r$ 从 $s=0$ 积分，得到 $B\ge C$。
+合并这些比较，并统一取所需邻域的交集，即得四种情形。导数的严格余量依赖于固定的
+$\beta$，因此此处未断言邻域可跨越临界参数一致选取。
+\end{proof}
+
+\begin{theorem}[单位正方形的高水平精确面积]\label{fix:square-exact}
+令 $Q_0=[-1/2,1/2]^2$，并记
+$V_\beta(\alpha)=|H_{\beta,\mathcal Q_c}(\alpha,Q_0)|$。
+对每个固定 $0<\beta<2$，存在 $\alpha_0(\beta)<1$，使
+$\alpha_0(\beta)<\alpha<1$ 时
+\begin{equation}\label{fix:square-area}
+ V_\beta(\alpha)=
+ \begin{cases}
+ (1-\alpha^{1/\beta})^2,&0<\beta<1/2,\\[2pt]
+ \displaystyle 2-\frac{4\alpha}{2-\beta}
+       +\frac{2\beta}{2-\beta}\alpha^{2/\beta},&1/2\le\beta<1,\\[5pt]
+ \displaystyle 4\left(\frac{c}{c+1}\alpha^{-1/c}-1
+                    +\frac{\alpha}{c+1}\right),&1\le\beta<3/2,\quad c=2-\beta,\\[5pt]
+ (\alpha^{-1/c}-1)^2,&3/2\le\beta<2,\quad c=2-\beta.
+ \end{cases}
+\end{equation}
+\end{theorem}
+\begin{proof}
+由定理~\ref{tan:unit-cube-limit} 证明中的统一局部化，高水平光晕的全部中心均位于
+以原点为中心、半径 $O_\beta(1-\alpha)$ 的邻域。因此可以应用
+引理~\ref{fix:active-branches}，并在有序第一象限 $0\le s\le r$ 中积分后乘以 $8$。
+
+当主导值为 $A$ 或 $D$ 时，光晕分别为边长 $1-\alpha^{1/\beta}$ 或
+$\alpha^{-1/c}-1$ 的同心正方形。对 $B$ 分支，区域为
+\[
+ 0\le s<\frac{1-\alpha^{1/\beta}}2,\qquad
+ s\le r<1-s-\alpha(1-2s)^{1-\beta}.
+\]
+其面积是
+\[
+ 8\int_0^{(1-\alpha^{1/\beta})/2}
+ [1-2s-\alpha(1-2s)^{1-\beta}]\,ds
+ =2-\frac{4\alpha}{2-\beta}+\frac{2\beta}{2-\beta}\alpha^{2/\beta}.
+\]
+对 $C$ 分支，区域为
+\[
+ 0\le s<\frac{\alpha^{-1/c}-1}2,\qquad
+ s\le r<1+s-\alpha(1+2s)^c.
+\]
+积分得到第三式。边界均为零测集，与严格水平集约定一致。
+\end{proof}
+
+\begin{corollary}[三阶面积渐近]\label{fix:cubic-area}
+令 $t=1-\alpha$，则对固定 $\beta$，
+\[
+ V_\beta(1-t)=L_\beta t^2+T_\beta t^3+O_\beta(t^4),
+\]
+其中
+\[
+ (L_\beta,T_\beta)=
+ \begin{cases}
+ (\beta^{-2},-(1-\beta)\beta^{-3}),&0<\beta<1/2,\\[2pt]
+ (2/\beta,-4(1-\beta)/(3\beta^2)),&1/2\le\beta<1,\\[2pt]
+ (2/c,2(1+2c)/(3c^2)),&1\le\beta<3/2,\quad c=2-\beta,\\[2pt]
+ (c^{-2},(1+c)c^{-3}),&3/2\le\beta<2,\quad c=2-\beta.
+ \end{cases}
+\]
+\end{corollary}
+\begin{proof}
+对式~\eqref{fix:square-area} 的四个解析表达式作 Taylor 展开。
+\end{proof}
+
+\begin{remark}
+在 $\beta=1/2,1,3/2$，一阶尺度优化出现退化，三阶系数由实际接触尺度比较决定。
+这些固定参数公式给出全体 Tauberian 常数的显式测试下界；全体集合的匹配上界仍是
+另一个形状优化问题。
+\end{remark}

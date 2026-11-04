@@ -50,13 +50,11 @@ t^{-n}|H^K_{\beta,\mathrm c}(1-t,K)|\longrightarrow
 $E=K$；切向体一般不必中心对称。不涉及全体可测集的 Tauberian 上确界，因此不声称任意凸体、
 椭球或方体是全局极值体。
 
-## 实际符号与数值核验
+## 保存的本机复现入口
 
-- Wolfram 15.0.0 实际运行了方体边界缺陷的正负尺度分支化简，确认其分面表达与
-  原稿外扩/内缩交长公式一致。
-- Python 对 $n=2,3,5$ 的每个 5000 个随机 $(v,\beta)$ 样本，在一维尺度参数网格上比较
-  边界泛函的最小值与 $N_c(v)$；全部通过。这只是对方体特例和实现的数值交叉检查，
-  不能替代上述证明。
+- `verification/baseline.py` 实际检查双密度凸性、矩形首项及171个切向体积参数案例。
+- `verification/polytope_tangent.wl` 以Wolfram15精确算术枚举正方形和三角形的对偶顶点，检查支持函数和反射恒等式，并计算圆盘方向积分。
+- `verification/polytope_tangent.m` 以MATLAB R2026a的linprog、convhull及数值积分独立复核同一组几何例子；完整结果摘要保存在results/。
 
 ## 保留的边界
 
