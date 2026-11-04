@@ -28,3 +28,6 @@
 - 实际读取Ball–Carlen–Lieb1994的[出版社摘要及题录](https://link.springer.com/article/10.1007/BF01231769)，确认其Lp部分本已属于经典均匀凸性；另读Matoušek2009[作者讲义](https://web.math.princeton.edu/~naor/homepage%20files/bcl.pdf)中p−1均匀凸性公式、Taylor检验及微分证明。不声称已访问付费原文全部证明。本稿自证所需概率标量特例，将其接到角向系数S，不把基本Lp不等式说成新发现。
 - 读取Nguyen作者提供的[2015全文](https://vanhoangnguyen.wordpress.com/wp-content/uploads/2013/11/improved-lp-mixed-volume-inequality-for-convex-bodies.pdf)Theorem1.3及其Jensen亏损背景；其一般稳定性与本文小亏损渐近、角向归一化须区分。出版社网页403，题录用作者稿DOI及Crossref官方API实际核对：JMAA431(2),1045–1053,2015，DOI10.1016/j.jmaa.2015.06.023。
 - 最新相关检索也读到[arXiv:2609.16202](https://arxiv.org/abs/2609.16202)的摘要，讨论非交换Lp切线不等式。仅查摘要，不把非交换结果移用于本稿，不据此宣称已穷尽最新文献。
+
+
+第23轮补核：实际读取[Gilardoni2006出版社摘要与题录](https://www.em-consulte.com/it/article/71050/article/on-the-minimum-divergence-for-given-total-variatio)，确认给定variation的最小f散度属于既有通用问题；原稿全文访问受限，未宣称已核查其中每条公式。检索同时发现并完整读取[2010勘误一页原文](https://comptes-rendus.academie-sciences.fr/mathematique/item/10.1016/j.crma.2010.02.006.pdf)，其修正原内点表达在大variation下应改用边界的情形。2006题录及2010卷期由Crossref官方API实际核对；勘误页码299直接见出版社PDF。本文三次幂常数以自足Jensen二点化、含边界的全参数优化证明，不套用被修正的通用内点式。L1距离采用d=E|f−1|，若他处TV定义为d/2则系数相应差4。未确认文献是否逐字列出本轮系数，不作新普适Pinsker定理声明。2010 IEEE同作者论文只检索题录，不作为本轮证明依据或新增正文引用。
