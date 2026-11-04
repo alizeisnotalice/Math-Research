@@ -4,9 +4,9 @@
 \[
  H=2^n,\qquad a=Ht=v^n,\qquad v=2t^{1/n},\qquad A_v=(1+v)^n.
 \]
-为同时记录二维的小半径删除和更高维的角部余项，记
+为同时记录小半径删除和全部源点的角部余项，记
 \begin{equation}\label{eq:global-omega}
- \omega_n(v)=v^4+v^{n+1}.
+ \omega_n(v)=v^6+v^{n+1},\qquad p_n=\min\{6,n+1\}.
 \end{equation}
 所有距离均取 \(\ell_\infty\) 距离，所有隐含常数均允许依赖固定维数。
 取有限正测度输入 \(E\) 和紧集
@@ -166,7 +166,7 @@ Tonelli 定理给
 不交条件是：每个源簇与其他指标的深目标不交。下面将这一版本完整证明，
 以便随后在标记区域的边界上改变源簇。
 
-\begin{lemma}[面容量结算]\label{lem:global-face-capacity}
+\begin{lemma}[强面容量与单源角部工具]\label{lem:global-face-capacity}
 固定 \(A\ge1\)。对有限指标集 \(\mathcal L\)，设可测目标
 \(G_i\subset K_0\cap Q_i\) 覆盖有限测度集 \(K_0\subset E^c\)，
 其中 \(M_0=|K_0|>0\)。
@@ -181,15 +181,17 @@ Tonelli 定理给
  \label{eq:global-source-witness}
 \end{gather}
 且这些 \(Q(x,r(x))\) 是关于原输入 \(E\) 的严格见证。
-当 \(v\) 充分小时，可构造长方体 \(X_i\subset Q_i\)，使其并集 \(U\) 满足
-\begin{equation}\label{eq:global-capacity-settlement}
- a|U|-A_vM_0\ge\tfrac12\mathcal D-C_{n,A}v\mathfrak d
-                     -C_{n,A}v^4M_0,
- \qquad
- \mathcal D=\sum_{i\in\mathcal L}g_i-M_0,\quad
- \mathfrak d=M_0-\sum_{i\in\mathcal L}\mu_i.
+先固定 \(A\) 及下文所需的有限个深度常数，再选只依赖这些常数和维数的
+\(\lambda_0>0\)。当 \(v\) 充分小时，可用斜率
+\begin{equation}\label{eq:global-strong-cdf-slope}
+ \lambda_i=\lambda_0(vr_i)^{n-1}
 \end{equation}
-两者均非负。若某指标的源簇还满足 \(F_i\subset P_i\)，则同一构造有
+构造体积不小于整个源质量的中点投影盒 \(W_i\) 及长方体
+\(X_i=x_i+W_i+[-R_i/2,R_i/2]^n\subset Q_i\)。
+它们满足下面证明中的 \eqref{eq:global-corner-missing}、
+\eqref{eq:global-capacity-volume} 和单源角部界
+\eqref{eq:global-corner-q-overlap}。若某指标的源簇还满足 \(F_i\subset P_i\)，
+则同一构造有
 \begin{equation}\label{eq:global-boundary-protrusion}
  |X_i\setminus B_i|\le C_2(n)e_i^\beta r_i^n,
  \qquad C_2(n)=2n4^n3^{n-1},
@@ -203,8 +205,7 @@ Tonelli 定理给
 先逐坐标调整源簇端点。写 \(F_i-x_i\) 在第 \(l\) 坐标的原始投影端点为
 \(\ell_{il}^0,h_{il}^0\)，并令
 \[
- F_{il}(s)=|\{x\in F_i:x_l-x_{i,l}\le s\}|,\qquad
- \lambda_i=n4^n a r_i^{n-1}.
+ F_{il}(s)=|\{x\in F_i:x_l-x_{i,l}\le s\}|.
 \]
 该分布函数连续，且在原始两端分别为零和 \(\mu_i\)。取
 \(\ell_{il}'\) 为 \(F_{il}(s)-\lambda_i s\) 在原始闭区间上的极小点。
@@ -216,8 +217,10 @@ Tonelli 定理给
 \end{equation}
 右端 \(h_{il}'\) 以反射后的分布函数作同样构造。当
 \(\ell_{il}'+d>h_{il}^0\)，第二式在所有所需的
-\(d=O_{n,A}(vr_i)\) 范围内仍成立：左端已等于 \(\mu_i\)，而
-\(\lambda_i d=O_{n,A}(v)\mu_i\)。
+\(0\le d\le Kvr_i\) 范围内仍成立。这里先固定一个足够大的
+\(K=K(n,A)\)，支配实际半径增量及所需端外深度，再要求
+\(\lambda_0K\le1/4\)。此时左端已等于
+\(\mu_i\ge(vr_i)^n/2\)，而 \(\lambda_i d\le(vr_i)^n/4\)。
 
 记所有方向的端点移动总量为
 \[
@@ -225,9 +228,12 @@ Tonelli 定理给
             =O_{n,A}(vr_i).
 \]
 从源簇中概念性地去掉各方向原端到有效端的尾部，质量损失至多为
-\(\lambda_i\Delta_i=O_{n,A}(v)\mu_i\)。因此有效投影盒
-\(W_i'=\prod_l[\ell_{il}',h_{il}']\) 容纳至少 \(\mu_i/2\) 的质量。
-各边至多为 \(2Avr_i\)，故每一边至少为 \(c_{n,A}vr_i\)。
+\(\lambda_i\Delta_i\)。具体地，\(\Delta_i\le4nAvr_i\)，故只要
+\(\lambda_0\le1/(32nA)\)，就有
+\(\lambda_i\Delta_i\le\mu_i/4\)。因此有效投影盒
+\(W_i'=\prod_l[\ell_{il}',h_{il}']\) 容纳至少 \(3\mu_i/4\) 的质量。
+各边至多为 \(2Avr_i\)，故每一边至少为 \(c_wvr_i\)，其中可取
+\(c_w=1/[4(2A)^{n-1}]\)。
 特别是每个左有效端严格小于右有效端。原始投影盒
 \(W_i^0=\prod_l[\ell_{il}^0,h_{il}^0]\) 也有相同的边长下界。
 
@@ -240,10 +246,11 @@ Tonelli 定理给
 \(W_i\) 比 \(W_i'\) 增加的总边长为 \(\Delta_i/2\)。展开体积乘积，得到
 \begin{equation}\label{eq:global-midpoint-surplus}
  |W_i|-\mu_i
- \ge[\tfrac12(c_{n,A}vr_i)^{n-1}-\lambda_i]\Delta_i
+ \ge[\tfrac12c_w^{n-1}-\lambda_0](vr_i)^{n-1}\Delta_i
  \ge c'_{n,A}(vr_i)^{n-1}\Delta_i\ge0.
 \end{equation}
-这里用了 \(a=v^n\) 并将 \(v\) 取得足够小。设
+这里另要求 \(\lambda_0\le c_w^{n-1}/4\)，所以正系数严格保留。
+这些固定上界同时选择一个正的 \(\lambda_0\)，随后才令 \(v\) 足够小。设
 \(\varepsilon_i=|W_i|/\mu_i-1\ge0\)，则 \(\varepsilon_i\le C_{n,A}\)。
 又因原盒比中点盒的体积增加量至多为
 \(C_{n,A}(vr_i)^{n-1}\Delta_i\)，由
@@ -404,18 +411,9 @@ Tonelli 定理给
  |X_i|\ge A_vg_i/a-C_{n,A}\frac va(g_i-\mu_i)
                    +c_{n,A}v\varepsilon_i r_i^n.
 \end{equation}
-由有界邻居数及相邻尺度可比，全部交损至多为
-\(C_{n,A}v^2\sum_i\varepsilon_i r_i^n+C_{n,A}v^4\sum_i r_i^n\)。
-第一项在小 \(v\) 时由 \eqref{eq:global-capacity-volume} 的正盈余吸收。
-二项 Bonferroni 下界于是给
-\[
- a|U|\ge A_v\sum_i g_i-C_{n,A}v\sum_i(g_i-\mu_i)
-                        -C_{n,A}av^4\sum_i r_i^n.
-\]
-源簇两两不交，目标覆盖 \(K_0\)，所以 \(\mathfrak d,\mathcal D\ge0\)，
-且 \(\sum_i(g_i-\mu_i)=\mathcal D+\mathfrak d\)。另外
-\(a\sum_i r_i^n\le(1-Av)^{-1}M_0\)。保留至少 \(\mathcal D/2\) 的正项，
-即得 \eqref{eq:global-capacity-settlement}。
+单源角部界只用源／目标条件、原始边长可比及
+\eqref{eq:global-corner-missing}，所以在这里的强斜率下同样成立。
+后面将用它处理外边界对；其余角部还会使用全部源点及未使用的面缝。
 
 若 \(F_i\subset P_i\) 且 \(e_i^0<\epsilon\)，局部定位使其全部原始投影端落在
 \([-ce_i^\beta r_i,ce_i^\beta r_i]\) 内。中点端仍在原端范围内，且
@@ -426,6 +424,94 @@ Tonelli 定理给
  \le2nc3^{n-1}e_i^\beta r_i^n.
 \]
 这就是 \eqref{eq:global-boundary-protrusion}，其系数仅依赖 \(n\)。
+\end{proof}
+
+\subsection{真正面邻居与全部源点的半径约束}
+
+\begin{lemma}[每个轴向的面邻居]\label{lem:global-face-neighbor}
+存在纯维数阈值 \(\epsilon_n>0\)，使 \(e_i^0<\epsilon_n\) 时，每个轴向及符号
+都有另一个原半盒 \(B_p\)。反射、归一化为 \(x_i=0,r_i=1\)，且该方向为
+正 \(q\) 轴后，它满足
+\begin{equation}\label{eq:global-face-half-gap}
+ x_{p,q}=(1+r_p)/2+b_{ip},\qquad
+ 0<b_{ip}\le8^{n-1}e_i^0,\qquad |r_p-1|\le2b_{ip}.
+\end{equation}
+切向投影的交集含一个边长 \(1/8\) 的面块 \(T_{ip}\)，它到双方切向边界
+的距离至少为 \(1/16\)。此外 \(Q_i\cap Q_p\ne\varnothing\)。
+\end{lemma}
+\begin{proof}
+在引理~\ref{lem:global-small-gap} 中取 \(y=(5/8)e_q\)。同一个增厚覆盖盒
+满足 \(\operatorname{dist}_\infty(y,B_p)\le h\) 及
+\(|r_p-1|<1/256\)；后一个双向界由该引理证明中的连通路径半径差求和得到。
+因 \(y\) 距 \(B_i\) 为 \(1/8>h\)，有 \(p\ne i\)。切向中心坐标满足
+\(|x_{p,l}|\le r_p/2+h\)，不能实现中心分离，法向中心又不可能为负，故
+\[
+ x_{p,q}>\max(1,r_p),\qquad
+ 1/2<x_{p,q}-r_p/2\le5/8+h.
+\]
+每个切向投影的交长至少为 \(1/2-h\)，可选上述面块与固定裕量。
+记 \(b=x_{p,q}-r_p/2-1/2\)，考虑面块上法向位于
+\((1/2,1/2+b)\) 的开窄缝。它包含于 \(A_i^0\)。若某个另外的 \(B_k\)
+包含其中一点 \(z\)，则 \(1/2<r_k<3/2\)，并在每个切向坐标有
+\[
+ |x_{k,l}|\le1/2-1/16+r_k/2<\max(1,r_k).
+\]
+法向负号也不能实现中心分离，所以 \(x_{k,q}>\max(1,r_k)\)，其半盒左端
+大于 \(1/2\)。由于 \(z\) 在 \(B_p\) 各切向投影内部，\(B_k,B_p\) 的切向
+投影都有正交长。半盒不交迫使 \(B_k\) 的右法向端不超过 \(B_p\) 左端
+\(1/2+b\le5/8+h\)，但前者大于 \(1/2+r_k>1\)，矛盾。
+
+整条窄缝因此属于 \(A_i^0\setminus B\)，体积为 \(b8^{1-n}\)，故
+\(b\le8^{n-1}e_i^0\)。中心分离另给
+\(b>|r_p-1|/2\)，证明 \eqref{eq:global-face-half-gap}。
+法向中心约为一，切向中心至多约为 \(1/2\)，且 \(r_p\) 约为一，
+所以两个原 \(Q\) 相交。恢复尺度即可。
+\end{proof}
+
+若 \(e_i^0\le Dv\)，则面邻居满足 \(r_p/r_i=1+O_{n,D}(v)\)，
+法向中心差为 \(r_i+O_{n,D}(vr_i)\)，切向中心差至多为
+\((1/2+1/128)r_i\)。因此对满足
+\eqref{eq:global-source-target}--\eqref{eq:global-source-witness} 的这两个指标，
+该面方向真正单临界，切向还有固定的 \(r_i\) 量级裕量，不要求两个
+\(X\) 预先相交。应用时先将 \(A\) 固定得足够大，以包含规则常数 \(D\)
+及全部有限深度的定位常数，再选择强斜率 \(\lambda_0\)。
+
+\begin{lemma}[全部源点的面对容量]\label{lem:global-all-source-face}
+对上述同一层的面邻居源、目标，在正 \(q\) 方向记
+\begin{gather}
+ g_{i\to p}=x_{p,q}+\ell'_{p,q}-(x_{i,q}+h^0_{i,q})-R_i,
+ \quad
+ g_{p\to i}=x_{p,q}+\ell^0_{p,q}-(x_{i,q}+h'_{i,q})-R_p,
+ \label{eq:global-directed-face-gaps}\\
+ \Gamma_{ip}=\tfrac12(g_{i\to p}+g_{p\to i}).
+ \label{eq:global-midpoint-face-gap}
+\end{gather}
+两个有向余量均非负；\(\Gamma_{ip}\) 恰为 \(X_i,X_p\) 的中点面对端之间的
+间距。对每个 \(x\in F_i\)，有
+\begin{equation}\label{eq:global-all-source-radius}
+ (1-C_{n,A}v)[r(x)-R_i]
+ \le g_{i\to p}+x_{i,q}+h^0_{i,q}-x_q.
+\end{equation}
+特别是 \(g_{i\to p}\le2\Gamma_{ip}\)。负方向用坐标反射定义。
+\end{lemma}
+\begin{proof}
+令 \(\sigma=r(x)-R_i>0\)、\(\delta_q=x_{i,q}+h^0_{i,q}-x_q\ge0\)，
+源点到目标有效左端的距离为 \(d=R_i+g_{i\to p}+\delta_q\)。
+若 \(r(x)\le d\)，所需上界直接成立。否则，目标源簇在有效端右侧深度
+\(r(x)-d\) 的尾质量至少为 \(\lambda_p[r(x)-d]\)，并全部进入同一个源见证。
+切向使用面邻居的固定裕量；法向使用全部源点的同序。
+尾部深度是 \(O_{n,A}(vr_i)\)，在选定的端外 CDF 延伸范围内。
+它与 \(G_i\) 不交，而实际剩余容量至多为
+\(C_{n,A}ar_i^{n-1}\sigma\)。又
+\(\lambda_p\ge c_{n,A}(vr_i)^{n-1}\)，两者斜率比为 \(C_{n,A}v\)，所以
+\[
+ \sigma-g_{i\to p}-\delta_q\le C_{n,A}v\sigma.
+\]
+这证明 \eqref{eq:global-all-source-radius}。
+若 \(g_{i\to p}<0\)，取源坐标趋近原始右端，使 \(\delta_q\) 足够小，
+上式左侧严格为正而右侧所需界为负，矛盾。反向同理。
+两个有向端距取平均正是中点面对端距，故
+\eqref{eq:global-midpoint-face-gap} 非负，并控制每个有向余量。
 \end{proof}
 
 \subsection{扩大窗口与完整见证图的有限层增长}
@@ -539,13 +625,182 @@ Tonelli 定理给
 \end{equation}
 若 \(I^c\) 为空，取下面外部并集及 \(M'\) 为零，不定义空源的 CDF。
 
+记外部深处指标为 \(\mathcal T=I^c\setminus\partial I\)。下面固定任一种
+满足引理~\ref{lem:global-face-capacity} 条件的外部源、目标选择，目标覆盖 \(K'\)。
+参数 \(A\) 统一支配固定的 \(D\) 和全部所需定位常数；先选定它及有限深度，
+再选强斜率 \(\lambda_0\)，最后令 \(v\) 足够小。
+对每个 \(i\in\mathcal T\) 及每个轴向、符号，取
+引理~\ref{lem:global-face-neighbor} 给出的面邻居 \(p\)。它必在外部，因为
+\(Q_i\) 不与任何标记方体相交。
+
+\begin{lemma}[未使用的 CDF 面缝]\label{lem:global-free-face-strips}
+在原共享面块 \(T_{ip}\) 上，于 \(X_i,X_p\) 的两个面对端之间作开条
+\(Z_{ip}\)。则
+\begin{gather}
+ Z_{ip}\subset A_i^0\subset Q_i,\qquad
+ |Z_{ip}|=8^{1-n}\Gamma_{ip}r_i^{n-1},\qquad
+ Z_{ip}\cap\bigcup_{j\notin I}X_j=\varnothing,
+ \label{eq:global-free-face-strip}\\
+ \left|\bigcup_{i\in\mathcal T,q,\pm}Z_{ip}\right|
+ \ge c_n'\mathcal F,\qquad
+ \mathcal F=\sum_{i\in\mathcal T,q,\pm}\Gamma_{ip}r_i^{n-1},
+ \label{eq:global-free-face-volume}
+\end{gather}
+其中 \(c_n'>0\) 纯粹依赖维数。所有这些条也不碰任何标记 \(Q_j\)。
+\end{lemma}
+\begin{proof}
+归一化 \(x_i=0,r_i=1\)，面方向为正 \(q\) 轴。
+CDF 端点相对原半盒端的移动为 \(O_{n,A}(v)\)，而
+\eqref{eq:global-face-half-gap} 给原面缝及半径差 \(O_{n,D}(v)\)。故对
+\(z\in Z_{ip}\)，
+\[
+ z_q=1/2+O_{n,A,D}(v),\qquad |z_l|\le1/2-1/16\quad(l\ne q).
+\]
+它不属于 \(X_i,X_p\)，因为法向严格位于两面对端之间。若 \(z\in X_k\)，
+其中 \(k\ne i,p\) 为外部指标，由
+\(X_k\subset Q(x_k,(1/2+Av)r_k)\) 及中心分离，
+\[
+ \max(1,r_k)<1/2+C_{n,A,D}v+(1/2+Av)r_k.
+\]
+分别按 \(r_k\le1\) 和 \(r_k\ge1\) 整理，得到 \(r_k=1+O_{n,A,D}(v)\)。
+切向中心距至多为 \(1-1/16+O_{n,A,D}(v)\)，不足以实现分离；负法向也
+不可能。因此 \(x_{k,q}>\max(1,r_k)\)，原 \(B_k\) 左法向端大于 \(1/2\)。
+
+由 CDF 端点相对原半盒的移动界，原 \(B_k\) 的每个切向投影距 \(z_l\)
+至多为 \(O_{n,A}(v)\)。面块到 \(B_p\) 切向边界的固定裕量使
+\(B_k,B_p\) 在所有切向有正交长，故法向必须分离。若 \(B_k\) 在
+\(B_p\) 左侧，其右端不超过 \(1/2+O(v)\)，但它从大于 \(1/2\) 的左端
+开始、边长约为一，矛盾。若 \(B_k\) 在 \(B_p\) 右侧，其左端至少为
+\(3/2+O(v)\)，而 \(X_k\) 只能从该端移动 \(O(v)\)，不可能包含法向约为
+\(1/2\) 的 \(z\)。这排除了所有外部 \(X_k\)。
+
+条的法向约为 \(1/2\)，切向在原半盒内，故 \(Z_{ip}\subset A_i^0\)。
+每个源指标最多有 \(2n\) 条，\(A_i^0\) 的重数至多为 \(H\)，所以全体条的
+重数至多为 \(2nH\)。体积公式即给
+\eqref{eq:global-free-face-volume}，例如可取
+\(c_n'=1/(2nH8^{n-1})\)。最后 \(i\in\mathcal T\) 的整个 \(Q_i\) 都不碰
+标记方体，故其条也不碰标记区域。
+\end{proof}
+
+\begin{lemma}[全部源点的角部补偿]\label{lem:global-augmented-capacity}
+对上述一层外部源、目标，定义增广并集
+\[
+ U^+=\bigcup_{i\notin I}X_i\ \cup\!
+      \bigcup_{i\in\mathcal T,q,\pm}Z_{ip}.
+\]
+它包含于 \(\bigcup_{i\notin I}Q_i\)，并满足
+\begin{equation}\label{eq:global-capacity-settlement}
+ \begin{aligned}
+ a|U^+|-A_vM'&\ge\tfrac12\mathcal D-C_{n,A}v\mathfrak d\\
+             &\quad-C_{n,A}v^6M'-C_{n,A}av^3P(\partial I),\\
+ \mathcal D&=\sum_{i\notin I}g_i-M',\qquad
+ \mathfrak d=M'-\sum_{i\notin I}\mu_i.
+ \end{aligned}
+\end{equation}
+\end{lemma}
+\begin{proof}
+先考虑两个都在外部深处的正体积相交对。设有 \(q\ge2\) 个临界轴，其交长
+为 \(L_l\)。可取 \(R_i\ge R_j\)，并按各轴分别反射，使源 \(i\) 在目标
+\(j\) 左侧。记
+\[
+ \ell_l=L_l/(vr_i),\qquad B_{ij}=\prod_{l=1}^q\ell_l,
+ \qquad \zeta_q=\frac q{2q-1}.
+\]
+原始面对端距至多为 \(R_i-L_l\)。取固定小 \(\theta>0\)，使
+\(\theta L_l\) 小于源原始该边长的一半。对原始源盒中满足所有临界深度
+\(0\le\delta_l\le\theta L_l\) 的任意源点，其同一个实际见证至少包含目标
+原始角条各厚
+\begin{equation}\label{eq:global-forbidden-target-clip}
+ t_l=\min\{(1-\theta)L_l,w_{j,l}^0\}
+ \ge\gamma_{n,A}L_l
+\end{equation}
+的部分，其他方向完整保留。最后一个统一下界来自
+\(L_l\le C_{n,A}vr_i\) 及 \(w_{j,l}^0\ge c_{n,A}vr_i\)，可取
+\(\gamma_{n,A}=\min\{1-\theta,c_{n,A}/C_{n,A}\}>0\)。
+在临界轴，面对距离加源深度和目标截断深度不超过 \(R_i\le r(x)\)；
+非临界轴使用整个原始投影盒的切向余量。因此这是同一个源点的同一个见证
+所捕获的整块目标角条，没有假设交长小于目标原始宽度。
+
+由 \eqref{eq:global-corner-missing}，该角条中的目标源质量至少为
+\(\mu_j(c_{n,A}B_{ij}-C_{n,A}\varepsilon_j)\)。若
+\(B_{ij}\le C_{n,A}\varepsilon_j\)，所需收费已由目标盒盈余控制。否则每个
+属于 \(F_i\) 的上述源点都被实际剩余容量迫使满足
+\begin{equation}\label{eq:global-forbidden-radius-lower}
+ \sigma_i(x):=r(x)-R_i\ge c_{n,A}B_{ij}r_i.
+\end{equation}
+这里用容量上界 \(C_{n,A}ar_i^{n-1}\sigma_i(x)\) 及
+\(\mu_j\asymp ar_i^n\)。
+
+选 \(\ell_a=\min_l\ell_l\)，并取源 \(i\) 沿这个面对方向的真正面邻居
+\(p\)。先固定足够小的 \(c_{n,A}'>0\)。若
+\(g_{i\to p}>c_{n,A}'B_{ij}r_i\)，则
+\(B_{ij}\le C_{n,A}\Gamma_{ip}/r_i\)。否则取足够小的固定
+\(c_{n,A}''>0\)，由 \eqref{eq:global-all-source-radius}，整个原始源矩形
+\begin{equation}\label{eq:global-forbidden-source-box}
+ 0\le\delta_a\le\min\{\theta L_a,c_{n,A}''B_{ij}r_i\},\qquad
+ 0\le\delta_l\le\theta L_l\quad(l\ne a\text{ 为临界轴})
+\end{equation}
+中都不能有 \(F_i\) 点，非临界坐标完整保留。确实，面余量和该点的面深度
+所给的 \(\sigma_i(x)\) 上界会严格小于
+\eqref{eq:global-forbidden-radius-lower}。这是对矩形内每个潜在源点的排除。
+矩形体积至少为
+\[
+ c_{n,A}\mu_i B_{ij}\min\{1,B_{ij}/(v\ell_a)\}
+ \ge c_{n,A}\mu_i B_{ij}\min\{1,B_{ij}^{(q-1)/q}/v\},
+\]
+其中用了 \(\ell_a\le B_{ij}^{1/q}\)。再用
+\eqref{eq:global-corner-missing}，分别按最小值是否取一反解，得到包括前面
+各分支的
+\begin{equation}\label{eq:global-all-source-corner-bound}
+ B_{ij}\le C_{n,A}\left[\varepsilon_i+\varepsilon_j+
+           \Gamma_{ip}/r_i+(v\varepsilon_i)^{\zeta_q}\right].
+\end{equation}
+
+交体积至多为 \(C_{n,A}v^qB_{ij}r_i^n\)。有界相交邻居数使每个面缝只被
+计费有限次。\eqref{eq:global-all-source-corner-bound} 的线性盈余项给
+\(Cv^q(\varepsilon_i+\varepsilon_j)r_i^n\)，在小 \(v\) 时由
+\eqref{eq:global-capacity-volume} 的正项吸收；面缝项给
+\(Cv^q\Gamma_{ip}r_i^{n-1}\)，由
+\eqref{eq:global-free-face-volume} 的正回收吸收。非线性项逐项用
+\[
+ Cv^{q+\zeta_q}\varepsilon^{\zeta_q}
+ \le bv\varepsilon+C_{n,A,b}v^{q/(1-\zeta_q)},\qquad
+ \frac q{1-\zeta_q}-6=\frac{(q-2)(2q-3)}{q-1}\ge0.
+\]
+将固定 \(b>0\) 取为单格正盈余系数除以足够大的邻居次数，全部方向同时
+吸收；最坏剩余为 \(q=2\) 的 \(C_{n,A}v^6r_i^n\)。
+
+涉及外边界 \(\partial I\) 的对只用单源界
+\eqref{eq:global-corner-overlap}。其盈余部分仍吸收，余量总计为
+\(C_{n,A}v^4S(\partial I)\)。原规则私有簇满足
+\[
+ \tfrac12v^nr_i^n\le m_i\le(2ce_i^0r_i)^n,
+\]
+所以 \(d_i\ge e_i^0\ge c_n''v\)，其中 \(c_n''>0\) 仅依赖维数，故
+\begin{equation}\label{eq:global-boundary-angle-price}
+ v^4S(\partial I)\le C_nv^3P(\partial I).
+\end{equation}
+单临界对由双向面容量没有正体积交叠。
+
+对 \(\bigcup X_i\) 用二项 Bonferroni 下界，再加入与它不交的面条并集。
+按 \eqref{eq:global-free-face-volume}，后者提供上述面缝正回收；
+单格盈余按上述方式吸收后，还剩
+\[
+ a|U^+|\ge A_v\sum_i g_i-C_{n,A}v\sum_i(g_i-\mu_i)
+                  -C_{n,A}av^6S(I^c)-C_{n,A}av^3P(\partial I).
+\]
+因 \(aS(I^c)\asymp M'\)、\(\sum(g_i-\mu_i)=\mathcal D+\mathfrak d\)，且
+源两两不交、目标覆盖 \(K'\)，有 \(\mathcal D,\mathfrak d\ge0\)。小 \(v\)
+时保留至少 \(\mathcal D/2\)，即得所需结算。外部为空时所有量取零。
+\end{proof}
+
 \begin{lemma}[外部多深度与纯维数边界价格]\label{lem:global-exterior-union}
-固定 \(n,D,\eta\)。小 \(v\) 时可从三个深度的源、目标选择中构造一个
-\(U_g=\bigcup_{j\notin I}X_j\)，其中 \(X_j\subset Q_j\)，使
+固定 \(n,D,\eta\)。小 \(v\) 时可从五个深度的源、目标选择中构造一个
+增广并集 \(U_g\subset\bigcup_{j\notin I}Q_j\)，使
 \begin{equation}\label{eq:global-exterior-union}
  |U_g|\ge A_vM'/a-C_{n,D}\omega_n(v)S-C_{n,D}vP(\partial I).
 \end{equation}
-每个边界指标在三个选择中都满足
+每个边界指标在五个选择中都满足
 \( |X_j\setminus B_j|\le C_2(n)e_j^\beta r_j^n\)，其中 \(C_2(n)\)
 是引理~\ref{lem:global-face-capacity} 中与 \(D,\eta\) 无关的常数。
 \end{lemma}
@@ -590,9 +845,9 @@ Tonelli 定理给
  \mathcal D_1:=\sum_{i\notin I}|G_{i,1}|-M'\ge f_1.
 \end{equation}
 
-\emph{第二、第三深度。}
+\emph{其余四个深度。}
 递归地，在已有 \(L_{h-1}\) 后取
-\(H_h>L_{h-1}+D+1\)，其中 \(h=2,3\)，并定义
+\(H_h>L_{h-1}+D+1\)，其中 \(h=2,3,4,5\)，并定义
 \[
  G_{i,h}=K'\cap Q(x_i,(1-H_hv)r_i).
 \]
@@ -627,25 +882,27 @@ Tonelli 定理给
  N_{i,h}=K'\cap Q(x_i,L_hvr_i),\qquad
  f_h=M'-\sum_{i\notin I}|N_{i,h}|.
 \]
-全部三个深度的常数先固定，再统一令 \(v\) 足够小，便使每层中心邻域
+全部五个深度的常数先固定，再统一令 \(v\) 足够小，便使每层中心邻域
 两两不交，且源在自身深目标内。所有目标覆盖 \(K'\)，唯一覆盖点均在
 相应中心邻域内，故
 \begin{equation}\label{eq:global-multidepth-duplicates}
  f_h\ge0,\qquad
  \mathcal D_h:=\sum_{i\notin I}|G_{i,h}|-M'\ge f_h
- \quad(h=1,2,3).
+ \quad(h=1,2,3,4,5).
 \end{equation}
-有限三次递归没有循环依赖或增长层数的阈值。
+有限五次递归没有循环依赖或增长层数的阈值。
 
 记各层最终源为 \(F_{i,h}\)，质量为 \(\mu_{i,h}\)，并令
 \(\mathfrak d_h=M'-\sum_{i\notin I}\mu_{i,h}\)。各源簇两两不交，
 每个源与其他指标的同层目标不交，所有源的质量及定位符合
 引理~\ref{lem:global-face-capacity} 的同一个常数 \(A=A(n,D)\)。
+先完成五深度的有限常数递归并统一这个 \(A\)，再选择同一个强斜率
+\(\lambda_0\)，最后统一取小 \(v\)，不会改变任何源点的原指定半径。
 由 \eqref{eq:global-exterior-mass} 及局部删除量，
 \begin{equation}\label{eq:global-two-source-losses}
  0\le\mathfrak d_1\le A_0vM',\qquad
  0\le\mathfrak d_h\le f_{h-1}+C_{n,D}v^nM'+aP(\partial I)
- \quad(h=2,3).
+ \quad(h=2,3,4,5).
 \end{equation}
 其中 \(A_0\) 固定；边界附加量由
 \[
@@ -654,33 +911,33 @@ Tonelli 定理给
 得到。这里的源质量只删除了小半径点，CDF 中点盒不再删固定分位质量。
 
 \emph{同一左侧的加权消元。}
-面容量引理在每个深度给一个实际并集
-\(U_h\subset\bigcup_{i\notin I}Q_i\)。取
+引理~\ref{lem:global-augmented-capacity} 在每个深度给一个增广实际并集
+\(U_h^+\subset\bigcup_{i\notin I}Q_i\)。取
 \[
- Z=\max_{1\le h\le3}\{a|U_h|-A_vM'\},\qquad f_0=A_0vM'.
+ Z=\max_{1\le h\le5}\{a|U_h^+|-A_vM'\},\qquad f_0=A_0vM'.
 \]
 由 \eqref{eq:global-capacity-settlement}、
 \eqref{eq:global-multidepth-duplicates} 和
-\eqref{eq:global-two-source-losses}，存在固定 \(c_0>0,b_0<\infty\)，使三个
+\eqref{eq:global-two-source-losses}，存在固定 \(c_0>0,b_0<\infty\)，使五个
 深度共用不等式
 \begin{equation}\label{eq:global-multidepth-recursion}
  Z\ge c_0 f_h-b_0vf_{h-1}-R,\qquad
- R=C_{n,D}\{(v^4+v^{n+1})M'+avP(\partial I)\}.
+ R=C_{n,D}\{(v^6+v^{n+1})M'+avP(\partial I)\}.
 \end{equation}
 第一层中将源缺失用 \(f_0\) 控制，其余的 \(v^{n+1}\) 项统一放在 \(R\) 内。
 不同深度不必使用同一个并集；有限最大值提供相同左侧。
-令 \(\tau=b_0v/c_0\)，依次乘权重 \(\tau^2,\tau,1\) 相加，得到
+令 \(\tau=b_0v/c_0\)，依次乘权重 \(\tau^4,\tau^3,\tau^2,\tau,1\) 相加，得到
 \begin{equation}\label{eq:global-multidepth-telescope}
- (1+\tau+\tau^2)Z
- \ge c_0f_3-b_0v\tau^2f_0-(1+\tau+\tau^2)R.
+ (1+\tau+\tau^2+\tau^3+\tau^4)Z
+ \ge c_0f_5-b_0v\tau^4f_0-(1+\tau+\tau^2+\tau^3+\tau^4)R.
 \end{equation}
-中间的 \(f_1,f_2\) 项精确消去。因 \(f_3\ge0\)、\(f_0=A_0vM'\)，
-右侧端点误差为 \(O_{n,D}(v^4M')\)。选择达到最大值的那一个实际并集，
+中间的 \(f_1,\ldots,f_4\) 项精确消去。因 \(f_5\ge0\)、\(f_0=A_0vM'\)，
+右侧端点误差为 \(O_{n,D}(v^6M')\)。选择达到最大值的那一个实际并集，
 除以 \(a\)，再用 \(M'/a\le S\)，便得
 \eqref{eq:global-exterior-union}。
 
-全部三个深度在边界都只以原私有簇中的点作源。CDF 有效端及中点端仍在
-源原始投影范围内，因此三个选择同时满足
+全部五个深度在边界都只以原私有簇中的点作源。CDF 有效端及中点端仍在
+源原始投影范围内，因此五个选择同时满足
 \eqref{eq:global-boundary-protrusion}，其系数为同一个纯维数 \(C_2(n)\)。
 \end{proof}
 
@@ -701,6 +958,8 @@ Tonelli 定理给
 \begin{proof}
 固定 \(D\) 后再要求 \(C_{n,D}v\le1\)，则
 \eqref{eq:global-exterior-union} 的边界扣量至多为 \(P(\partial I)\)。
+增广面条都放在外部深处的 \(Q_j\) 中，不与任何标记方体相交，
+所以下面与内部集合的交叠只来自原 CDF 盒。
 把内部半盒 \(\bigcup_{i\in I}B_i\) 加到外部并集 \(U_g\) 上。交集只能来自
 边界的 \(X_j\setminus B_j\)：若 \(B_i\cap X_j\ne\varnothing\)，则
 \(Q_i\cap Q_j\ne\varnothing\)，且原半盒两两不交。因此新增体积至少为
@@ -761,8 +1020,10 @@ Tonelli 定理给
 \[
  D\ge\max\{1,16nC_1(n)(K_0+1)^n/c_n\}.
 \]
-最后才令 \(v\) 小于全部依赖 \(n,D,\eta\) 的阈值，包括扩大窗口覆盖、
-三个深度的目标、源和 CDF、实际增量角部容量，以及外部边界价格的
+在固定 \(D\) 后完成五深度源、目标和定位常数，统一 \(A\)，再取正的
+强 CDF 斜率常数 \(\lambda_0\)。最后才令 \(v\) 小于全部依赖
+\(n,D,\eta,A,\lambda_0\) 的阈值，包括扩大窗口覆盖、全部源点的面对容量、
+面缝排他与角部禁区，以及外部边界价格的
 \(C_{n,D}v\le1\)。
 因此这些阈值和最终余项常数都只依赖固定维数。
 
@@ -823,13 +1084,8 @@ Tonelli 定理给
  0\le\Cn(1-t)-\left[1-\frac{a}{(1+v)^n}\right]^{-1}\le C_na\omega_n(v),
  \qquad a=2^nt,\quad v=2t^{1/n}.
 \]
-当 \(n=2\) 时，\(\omega_n(v)=O(v^3)\)；当 \(n\ge3\) 时，
-\(\omega_n(v)=O(v^4)\)。因此
+由 \(\omega_n(v)=O_n(v^{p_n})\)，最后得到
 \[
- \Cn(1-t)=L_n(t)+
- \begin{cases}
- O(t^{5/2}),&n=2,\\
- O_n(t^{1+4/n}),&n\ge3.
- \end{cases}
+ \Cn(1-t)=L_n(t)+O_n(t^{1+p_n/n}),\qquad p_n=\min\{6,n+1\}.
 \]
 \end{proof}
