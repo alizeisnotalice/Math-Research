@@ -1,0 +1,205 @@
+\section{独立八尺度障碍与全体三阶亏损}\label{ic:section}
+共同尺度的解析解不能直接作为任意尺度的上界。本节不作尺度对称化，而从每个反点对的
+交并误差出发，得到独立尺度的八点障碍，再把它传递到真实光晕的面积。
+最终闭合的是两点包络与全体常数之间的亏损阶，三阶系数本身仍未确定。
+
+\begin{lemma}[两点交并的误差预算]\label{ic:pair}
+设 $|E|=1$，两个严格见证正方形为 $Q_1,Q_2$，边长为 $\ell_1,\ell_2$，
+中心坐标差的绝对值为 $u,v$，置 $z=(\ell_1+\ell_2)/2$、$I=Q_1\cap Q_2$、$V=Q_1\cup Q_2$。
+在 $u,v<z$ 时，有
+\[
+ |I\setminus E|+|E\setminus V|
+ <1+|I|-2\alpha z
+ \le G(z):=1+(z-u)(z-v)-2\alpha z.
+\]
+若 $u+v\ge W:=\alpha^{-1}-\alpha$，则
+\[
+ 0<G(z)\le G(\alpha)=1-\alpha^2-\alpha(u+v)+uv.
+\]
+\end{lemma}
+\begin{proof}
+精确恒等式
+$|E\cap Q_1|+|E\cap Q_2|=1+|I|-|I\setminus E|-|E\setminus V|$
+与严格阈值给出第一式。每个坐标交长至多为平均边长减去中心差，故得到 $G$。
+合法尺度给 $\alpha<z<\alpha^{-1}$，而 $G$ 为凸二次式。
+又 $G(\alpha)-G(\alpha^{-1})=W(u+v-W)\ge0$，最大端点为 $\alpha$。
+这里并未要求两个见证边长相同。
+\end{proof}
+
+\begin{theorem}[任意独立八尺度的二阶径向障碍]\label{ic:radial}
+固定 $0<b<1/2$、$a=1-b$，仍记 $X_r=\{(\pm ar,\pm br),(\pm br,\pm ar)\}$，
+$r_0$ 如定理~\ref{cs:sharp}。存在 $c_b,t_b>0$，使 $0<t<t_b$ 时，
+任何面积一可测输入的严格光晕都不能包含半径
+$r\ge r_0(1-c_bt)$ 的全部八点，即使八个见证尺度完全独立。
+若 $R_8(t,b)$ 是这些八点在全体输入上的可行半径上确界，则
+\[
+ r_0-R_8(t,b)\asymp_b t^2.
+\]
+\end{theorem}
+\begin{proof}
+半径 $r\ge r_0$ 已由两点差体排除。若所述常数不存在，可取
+$t_j\downarrow0$、$0<\sigma_j\downarrow0$，以及严格可行的八点
+$r_j=r_0(1-\sigma_jt_j)$。以下略去下标并沿子列取极限。
+对每个反点对，$u=2ar$、$v=2br$。由两点边界恒等式及展开，
+\[
+ G(\alpha)=O_b(\sigma t^2)=o(t^2),\qquad
+ u+v-W=4ab\,t^2+o(t^2)>0.
+\]
+引理~\ref{ic:pair}因而给每个反点对
+\begin{equation}\label{ic:concentration}
+ |I\setminus E|+|E\setminus V|=o(t^2).
+\end{equation}
+写各尺度 $\ell_i=1+\lambda_i t$，合法性给
+$-1<\lambda_i<1+O(t)$。对反点对的平均系数 $\mu$，
+\[
+ G(1+\mu t)=(\mu^2-1+2\sigma)t^2+O_b(t^3)>0.
+\]
+因此 $\mu\to+1$ 或 $-1$，且该反点对的两个 $\lambda_i$ 必须趋于同一端点。
+取子列使四个反点对的正负相位固定。
+
+把方向分为 $A=(a,\pm b)$ 与 $B=(b,\pm a)$。
+负相位的两个方体之并，其外包矩形边长为
+$1+(a-b)t+o(t),1-(a-b)t+o(t)$，正负号在另一方向交换。
+若负相位同时出现于 $A,B$，两外包矩形交集面积至多
+$1-2(a-b)t+o(t)$，却由~\eqref{ic:concentration}几乎包含面积一的 $E$，矛盾。
+正相位的反点交集则为边长 $1\pm(a-b)t+o(t)$ 的矩形；
+若两方向均有正相位，两个交集的并面积为
+$1+2(a-b)t+o(t)$，却须几乎包含于 $E$，同样矛盾。
+故只剩 $A$ 全负、$B$ 全正，或交换的相位。
+
+以前者为例，取任一负 $A$ 对的并 $V_A$ 与任一正 $B$ 对的交 $I_B$。
+$I_B\setminus V_A$ 至少包含两个角矩形，每个边长为
+$(2a+o(1))t$ 与 $(2b+o(1))t$。于是
+\[
+ |I_B\setminus V_A|\ge(8ab+o(1))t^2.
+\]
+另一方面，它不超过 $|I_B\setminus E|+|E\setminus V_A|=o(t^2)$，矛盾。
+另一相位由坐标交换处理。这排除了反例序列，故存在固定的 $c_b,t_b$。
+共同尺度构造给
+$r_0-R_8\le r_0-R_b=\tfrac12(1-4b^2)t^2+O_b(t^3)$，
+结合刚证的下界即得匹配阶。这里没有分类固定正 $\sigma$ 的全部尺度模式。
+\end{proof}
+
+\begin{lemma}[边界八盒的鲁棒障碍]\label{ic:boxes}
+固定 $b\in(0,1/2)$，令 $p_i\in X_{r_0}\subset\partial T$，
+$T=\overline K_\alpha/2$。在每点取单位外法向 $n_i$ 和切向 $v_i$。
+存在 $\eta,t_0>0$，使 $0<t<t_0$ 时，没有同一质量一输入的严格光晕能同时命中八盒
+\[
+ B_i(t)=\{p_i+u n_i+v v_i:|u|\le\eta t^2,\ |v|\le\eta t\}.
+\]
+\end{lemma}
+\begin{proof}
+若否，可取 $\eta_j\to0$、$t_j\to0$ 及每盒一个严格光晕点。
+在正象限，边界方程为
+$(\alpha-2x)(\alpha-2y)=2\alpha^2-1$，其切向量两坐标和为 $O_b(t)$。
+因此反点差的坐标符号稳定，并有
+\[
+ u+v=2r_0+O_b(\eta_jt_j^2),\qquad
+ uv=4ab r_0^2+O_b(\eta_jt_j^2).
+\]
+相应 $G(\alpha)=o(t_j^2)$，且 $u+v-W=4ab t_j^2+o(t_j^2)>0$。
+此前的交并预算、端点相位和角矩形矛盾均保持不变。
+若不存在某组固定 $\eta,t_0$，便可按 $\eta_j,t_j<1/j$ 选出上述序列，
+故序列矛盾正好给出统一的八盒障碍。
+\end{proof}
+
+\begin{lemma}[小缺面积下侧弧内盒的传递]\label{ic:transfer}
+固定 $b=9/20$，将引理~\ref{ic:boxes}的 $\eta$ 缩小到 $0<\eta\le10^{-6}$。
+在对应边界点定义
+\[
+ P_i(t)=\{p_i-u n_i+v v_i:
+ 3\eta t^2/8\le u\le5\eta t^2/8,\ |v|\le\eta t/8\}.
+\]
+它们在小 $t$ 时包含于 $T$，每个面积为 $\eta^2t^3/16$。
+若 $A_j$ 是满维紧凸体、$S_j=(A_j-A_j)/2\subset T_j$，且
+\[
+ |T_j|-|S_j|=o(t_j^3),\qquad |S_j|-|A_j|=o(t_j^3),
+\]
+则可平移 $A_j$，使所有 $P_i(t_j)$ 最终均包含于 $A_j$。
+\end{lemma}
+\begin{proof}
+记 $g=|T|-|S|$、$\Delta=|S|-|A|$。
+由引理~\ref{pb:four-normal}作平移，$h_A=h_S+o$，且奇部在四个对角法向归零。
+引理~\ref{pb:local-caps}及局部奇部估计给
+\begin{equation}\label{ic:local-support}
+ h_A(\theta)-h_T(\theta)=o(t^2)
+ \quad\text{一致于 }|\theta-\theta_k|\le t/8.
+\end{equation}
+这里 $g=o(t^3)$ 使 $g^{2/3}=o(t^2)$，且
+$\sqrt{\Delta t}=o(t^2)$。
+又由引理~\ref{pb:cap-distance}，
+$h_A\ge h_T-\sqrt g-\sqrt\Delta\ge t/2-o(t)$，故 $0\in\operatorname{int}A$。
+
+对任一 $p=p_i$，其法向角为
+$\theta_k\pm t/10+O(t^2)$，严格位于上述窗口内部。
+以 $n=n_i,v=v_i$ 为基，使用支撑函数的一次齐次延拓，置
+\[
+ f_{A,t}(s)=\frac{h_A(n+st v)-p\cdot(n+st v)}{t^2}.
+\]
+这是 $s$ 的凸函数。由~\eqref{ic:local-support}及
+$\rho_T\to\rho_*:=1/\sqrt2$，在 $|s|\le1/100$ 上一致有
+\[
+ f_{A,t}(s)=f_{T,t}(s)+o(1)\longrightarrow\rho_*s^2/2.
+\]
+凸函数一致收敛到光滑凸函数，因而紧内区间上所有次梯度也收敛到极限导数；
+这可直接由左右差商夹逼证明。
+在固定 $s=\pm s_0$ 处选任意支撑点 $q_\pm\in A$。
+支撑恒等式和次梯度关系于是给
+\[
+ \frac{(q_\pm-p)\cdot v}{t}\to\pm\rho_*s_0,
+ \qquad
+ \frac{(q_\pm-p)\cdot n}{t^2}\to-\rho_*s_0^2/2.
+\]
+取 $s_0=\sqrt\eta/16$。两点的弦切向半宽为
+$(\rho_*s_0+o(1))t$，法向深度小于 $\eta t^2/4$。
+而 $P_i$ 的切向半宽只有 $\eta t/8$，深度在
+$[3\eta/8,5\eta/8]t^2$。
+第三个顶点 $0$ 的法向深度为 $(1/\sqrt2+o(1))t$、切向坐标为 $O(t)$；
+在所需 $t^2$ 深度处，与它作凸组合的权重仅为 $O_\eta(t)$，切向位移为 $O_\eta(t^2)$。
+因此三角形 $\operatorname{conv}\{0,q_-,q_+\}$ 最终包含整个 $P_i$，从而 $P_i\subset A$。
+有限个点可以同时处理。
+
+最后验证内盒本身在 $T$ 内。在正象限令
+$F(x,y)=1-\alpha^2-2\alpha(x+y)+4xy$。
+$F(p)=0$，$\nabla F(p)=-2Nn$，其中 $N\to\sqrt2$。
+对 $z=-un+\xi v_i$，
+$F(p+z)=2Nu+4z_1z_2\ge2Nu-2(u^2+\xi^2)>0$
+于上述盒内，且坐标仍在正象限边界分支内；其他盒由反射处理。
+面积公式由两边长 $\eta t^2/4$、$\eta t/4$ 得到。
+\end{proof}
+
+\begin{theorem}[两点包络的三阶亏损及其匹配阶]\label{ic:cubic-gap}
+存在绝对常数 $\kappa,t_0>0$，使二维半阶中心正方形模型满足
+\[
+ C_{1,\mathcal Q_c}(1-t)\le\mathcal U(1-t)-\kappa t^3
+ \qquad(0<t<t_0).
+\]
+结合矩形下界，得到
+\[
+ \mathcal U(1-t)-C_{1,\mathcal Q_c}(1-t)\asymp t^3.
+\]
+特别地，可将 $\kappa$ 缩小到 $0<\kappa<1$，使
+\[
+ 2\le\liminf_{t\downarrow0}\frac{C_{1,\mathcal Q_c}(1-t)-2t^2}{t^3}
+ \le\limsup_{t\downarrow0}\frac{C_{1,\mathcal Q_c}(1-t)-2t^2}{t^3}
+ \le\frac{10}{3}-\kappa<\frac{10}{3}.
+\]
+常数与起效阈值未数值化；仍未证明中间极限存在。
+\end{theorem}
+\begin{proof}
+若不存在统一的正 $\kappa,t_0$，按 $\kappa,t_0<1/j$ 对角选取
+$t_j\downarrow0$。由上确界定义，可再选质量一输入，使其严格光晕 $H_j$ 满足
+$\delta_j=\mathcal U(1-t_j)-|H_j|=o(t_j^3)$；无需假设上确界达到。
+置 $A_j=\overline{\operatorname{conv}H_j}$、$S_j=(A_j-A_j)/2\subset T_j$。
+缺面积精确分解为
+\[
+ \delta_j=(|T_j|-|S_j|)+(|S_j|-|A_j|)+(|A_j|-|H_j|),
+\]
+三项均非负，故均为 $o(t_j^3)$。
+引理~\ref{ic:transfer}给平移后 $P_i(t_j)\subset A_j$。
+因 $|A_j\setminus H_j|=o(t_j^3)$，而每个盒面积为固定正系数乘 $t_j^3$，
+$H_j$ 必须命中全部八盒。这与引理~\ref{ic:boxes}矛盾。
+平移同时作用于输入和光晕，不改变质量或算子。
+序列矛盾证明了统一的正 $\kappa,t_0$。
+另一方面 $C\ge R$ 且 $\mathcal U-R=(4/3)t^3+O(t^4)$，给出匹配的上侧阶及所列夹逼。
+\end{proof}

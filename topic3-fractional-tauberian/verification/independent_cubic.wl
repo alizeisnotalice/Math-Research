@@ -1,0 +1,18 @@
+ClearAll["Global`*"];
+a=1-b;al=1-t;w=1/al-al;
+r0=(1-al^2)/(al+Sqrt[al^2-4a b(1-al^2)]);r=r0(1-sigma t);
+g[z_]:=1+(z-2a r)(z-2b r)-2al z;
+ass=0<b<1/2&&0<t<1/100;
+lowcross=(al+2b r0)^2;
+highunion=2(1/al-2a r0)(1/al-2b r0)-(1/al-2a r0)^2;
+bad=2((w/2)^2-(a-b)^2 r0^2);
+out=<|"kernel"->$Version,"pair_boundary_identity"->FullSimplify[(g[al]/.sigma->0),Assumptions->ass],"endpoint_difference_identity"->FullSimplify[g[1/al]-g[al]+w(2r-w)],"mean_pair_leading"->ToString[FullSimplify[Limit[g[1+lambda t]/t^2,t->0]],InputForm],"pair_alpha_leading"->ToString[FullSimplify[Limit[g[al]/t^2,t->0]],InputForm],"low_union_intersection_first_order"->ToString[FullSimplify[Limit[(lowcross-1)/t,t->0]],InputForm],"high_intersection_union_first_order"->ToString[FullSimplify[Limit[(highunion-1)/t,t->0]],InputForm],"corner_bad_area_second_order"->ToString[FullSimplify[Limit[bad/t^2,t->0]],InputForm]|>;
+bb=9/20;nn={al-2b r0,al-2a r0};nn=nn/Sqrt[nn.nn];vv={-nn[[2]],nn[[1]]};
+out["normal_angle_offset"]=ToString[FullSimplify[Limit[(ArcTan[nn[[1]],nn[[2]]]-Pi/4)/t,t->0]],InputForm];
+out["tangent_coordinate_sum_leading"]=ToString[FullSimplify[Limit[Total[vv]/t,t->0]],InputForm];
+rho=Sqrt[2al^2-1]/(4(Sin[Pi/4]Cos[Pi/4])^(3/2));out["curvature_limit"]=ToString[Limit[rho,t->0],InputForm];
+Print[out];Export[FileNameJoin[{DirectoryName[$InputFileName],"..","results","independent_cubic_wolfram.json"}],out,"RawJSON"];
+uenv=1-al^2+(2al^2-1)Log[(2al^2-1)/al^2];rect=(1/al-al)^2/2;
+out["envelope_minus_rectangle"]=ToString[Normal@Series[uenv-rect,{t,0,4}],InputForm];
+out["moment_beta_identity"]=ToString[FullSimplify[p Beta[p,4]-6/((p+1)(p+2)(p+3)),Assumptions->p>0],InputForm];
+Export[FileNameJoin[{DirectoryName[$InputFileName],"..","results","independent_cubic_wolfram.json"}],out,"RawJSON"];Print["cubic and moment checks added"];

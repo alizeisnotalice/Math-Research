@@ -132,4 +132,8 @@ run('verification/fixed_cube_matlab.m')
 
 第24轮求得一般方向八点的共同尺度全体输入精确局部边界：显式十字形实现，半径/预算可任意阶递推；完整矩形基线与角孔的端点分支经独立复审。非矩形对每个固定非退化方向均有严格增益，但其阶随方向变化；全体体积三阶区间未改变。见 `rounds/024.md`；复现 `verification/direction_common_scale.wl`、`verification/direction_common_scale.py`、`verification/direction_common_scale_matlab.m`。
 
-第24轮当前PDF为88页，精确证书、独立终审、编译和逐页版面检查均已通过。
+第24轮PDF为88页，精确证书、独立终审、编译和逐页版面检查均已通过。
+
+第25轮完成对真实全体常数的改进：独立八尺度交并障碍与各向异性内盒传递给出U−C=Θ(t³)，将三阶上极限严格压到10/3以下（存在κ>0，未数值化）。高矩次项上界亦由8严格收紧到8−6κ。精确系数和极限存在性仍待研究。见 `rounds/025.md`；复现 `verification/independent_cubic.wl`、`verification/independent_cubic.py`、`verification/independent_cubic_matlab.m`。
+
+第25轮当前PDF为90页，任意尺度障碍、全体三阶传递及高矩推论均完成独立终审，精确证书、编译与逐页版面验收通过。

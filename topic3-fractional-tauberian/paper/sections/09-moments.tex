@@ -310,3 +310,25 @@ $[99/100,1]$ 上再减去定理~\ref{pb:sixth-gap}给出的 $(1-\alpha)^6/768$�
 截去部分至多为 $\kappa(1-t_0)^p$。
 仍未据此确定真实泛函的四阶系数。
 \end{proof}
+
+\begin{corollary}[三阶亏损对高矩次项的严格改善]\label{mom:cubic-envelope}
+取定理~\ref{ic:cubic-gap}中的 $\kappa,t_0$，并缩小 $t_0$ 使 $1-t_0>1/\sqrt2$。
+则对 $p>2$，
+\[
+ \mathfrak F_{1,\mathcal Q_c}(p)\le\mathcal B(p)-\mathcal D_3(p),\qquad
+ \mathcal D_3(p)=\kappa p\int_{1-t_0}^1\alpha^{p-1}(1-\alpha)^3\,d\alpha,
+\]
+且 $p^3\mathcal D_3(p)\to6\kappa>0$。特别地
+\[
+ 0\le\liminf_{p\to\infty}p^3[\mathfrak F_{1,\mathcal Q_c}(p)-4p^{-2}]
+ \le\limsup_{p\to\infty}p^3[\mathfrak F_{1,\mathcal Q_c}(p)-4p^{-2}]
+ \le8-6\kappa<8.
+\]
+\end{corollary}
+\begin{proof}
+逐输入应用三阶亏损，再按层析公式积分并取上确界。
+完整 Beta 积分为 $6\kappa\prod_{j=1}^3(p+j)^{-1}$，
+截去的低端至多为 $\kappa(1-t_0)^p$。
+结合推论~\ref{mom:pair-bracket}证明中的展开及固定 $Q_0$ 下界，即得次项夹逼。
+这改善了真实泛函的统一上界，尚未给出其精确三阶系数。
+\end{proof}
