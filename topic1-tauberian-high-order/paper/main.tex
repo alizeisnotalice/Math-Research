@@ -37,11 +37,12 @@
 \begin{abstract}
 研究 Lebesgue 测度下中心轴平行立方体极大算子的 Tauberian 常数。
 令 \(a=2^nt\)、\(v=2t^{1/n}\)、\(L_n(t)=[1-a/(1+v)^n]^{-1}\)。
-对每个固定整数 \(n\ge2\)，置 \(p_n=\min\{6,n+1\}\)，证明
-\(C_n(1-t)=L_n(t)+O_n(av^{p_n})\)，从而确定 \(p_n\) 个非恒定项。
+对每个固定整数 \(n\ge2\)，证明
+\(C_n(1-t)=L_n(t)+O_n(av^6)\)，确定直至 \(t^{1+5/n}\) 的全部系数，
+其中三维 \(t^{8/3}\) 的系数为零。
 上界适用于全部有限正测度可测输入及全部半径，下界由严格见证的有限周期孔构造实现。
 证明以全部源点的面对约束控制角部交叠，并将有效端点之间未被其他盒覆盖的面缝计入正回收；
-再以五层深覆盖消除源质量损失，结合完整见证图上的加权边界及异常容量回收闭合全局估计。
+小半径源通过局部 dyadic 分割与入向面约束回收，五层深覆盖和直接以输入及水平集质量结算的账本完成全局闭合。
 对于共享同一中心方体、以公共交集归一化的多线性常数，
 证明精确线性参数约化及临界发散，并得到关于所有多线性重数一致的相应高阶渐近。
 另以近单位斜晶格构造证明 \(C_n(1-t)-L_n(t)\) 在 \(t^{1+6/n}\) 尺度具有严格正的下界，
@@ -100,8 +101,10 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 关键困难在于代表方体中心处的高平均值不能替代所有水平集点自身的见证，
 而少量异常方体也可能影响所需的高阶精度。
 本文保留每个点的实际见证，以投影分布的有效端点和面容量控制规则方体的扩大盒，
-在每个方向保留所有源点的实际半径限制，以源内禁区和目标角条质量约束交叠，
-再以五层深覆盖的望远镜结算消除源质量损失。有效端点的面缝另提供不重复支付的正体积。
+在每个方向保留所有源点的实际半径限制，以源内禁区和目标角条质量约束交叠。
+小半径源在有效盒内由 dyadic 格子计数回收，盒外质量则由入向面容量控制；
+直接以输入质量与水平集质量结算，再用五层深覆盖消除源缺失。
+有效端点的面缝提供不重复支付的正体积。
 对异常区域，扩大空隙观测窗在完整见证图上给出有限层加权体积增长；
 据此选取成本较小的边界，回收内部空隙及剩余私有容量，闭合一般输入的上界。
 
@@ -115,24 +118,21 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 \begin{equation}\label{eq:envelopes}
  L_n(t)\le\Cn(1-t)\le U_n(t),
 \end{equation}
-其中右侧上界对 \(0<t<1\) 成立。对每个固定整数 \(n\ge2\)，令
-\(p_n=\min\{6,n+1\}\)。进一步有
+其中右侧上界对 \(0<t<1\) 成立。对每个固定整数 \(n\ge2\)，进一步有
 \begin{equation}\label{eq:sharp}
- \Cn(1-t)=L_n(t)+O_n(t^{1+p_n/n}),\qquad t\downarrow0.
+ \Cn(1-t)=L_n(t)+O_n(t^{1+6/n}),\qquad t\downarrow0.
 \end{equation}
 令
 \[
- b_{n,j}=2^{n+j}\left[(-1)^j\binom{n+j-1}{j}
-                    +\ind_{\{j=n\}}\right],\qquad 0\le j<p_n.
+ b_{n,j}=2^{n+j}\sum_{k=1}^{1+\lfloor j/n\rfloor}
+ (-1)^{j-(k-1)n}\binom{n+j-1}{j-(k-1)n},\qquad 0\le j\le5.
 \]
 则全部维数的真实展开统一写为
 \begin{equation}\label{eq:coefficients}
- \Cn(1-t)=1+\sum_{j=0}^{p_n-1}b_{n,j}t^{1+j/n}
-              +O_n(t^{1+p_n/n}).
+ \Cn(1-t)=1+\sum_{j=0}^{5}b_{n,j}t^{1+j/n}
+              +O_n(t^{1+6/n}).
 \end{equation}
-其中 \(n=2,3\) 分别有三个、四个非恒定项。
-四维有五项且 \(t^2\) 系数为 \(9216\)；五维有六项且 \(t^2\) 系数为 \(-128000\)。
-\(n\ge6\) 时六个非恒定项的系数均来自 \(a(1+v)^{-n}\)。
+通式包含低维的幂次碰撞；三维 \(b_{3,5}=0\)，故 \(t^{8/3}\) 项消失。
 特别地，
 \[
  \lim_{t\downarrow0}
@@ -151,11 +151,11 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
  \frac{\Cn(1-t)-L_n(t)}{2^{n+6}t^{1+6/n}}\ge\frac{n^2}{27}>0.
 \end{equation}
 特别地，充分小的 \(t>0\) 满足 \(\Cn(1-t)>L_n(t)\)。
-结合 \eqref{eq:sharp}，当 \(n\ge5\) 时，
+结合 \eqref{eq:sharp}，对每个固定 \(n\ge2\)，
 \[
  \Cn(1-t)-L_n(t)\asymp_n t^{1+6/n}.
 \]
-这确定了该差值的幂阶，尚未确定归一化极限或精确系数；二维至四维的幂阶仍待研究。
+这确定了该差值的幂阶，尚未确定归一化极限或精确系数。
 \end{proposition}
 
 公共交集归一化的多线性对象还具有精确的参数约化。
@@ -289,9 +289,9 @@ Besicovitch 方体族的交叠重数不超过 \(2^n\)。
  0\le\sigma_m(\eps)-\eps\le\frac{\eps^2}{2(1-\eps)}.
 \end{equation}
 关于全部 \(m\ge1\) 一致还有
-\begin{equation}\label{eq:quadraticparameter}
- \sigma_m(\eps)=\eps+a_m\eps^2+O(\eps^3),\qquad
- a_m=\frac{m-1}{2m}.
+\begin{equation}\label{eq:cubicparameter}
+ \sigma_m(\eps)=\eps+a_m\eps^2+b_m\eps^3+O(\eps^4),\qquad
+ a_m=\frac{m-1}{2m},\quad b_m=\frac{(m-1)(2m-1)}{6m^2}.
 \end{equation}
 \end{lemma}
 \begin{proof}
@@ -305,11 +305,11 @@ Besicovitch 方体族的交叠重数不超过 \(2^n\)。
 \]
 直接求导得到
 \[
- \sigma_m'''(z)=(1-1/m)(2-1/m)(1-z)^{1/m-3}.
+ \sigma_m^{(4)}(z)=(1-1/m)(2-1/m)(3-1/m)(1-z)^{1/m-4}.
 \]
 当 \(m\ge1\)、\(0\le z\le\eps<1/2\) 时，其绝对值不超过
-\(2(1-\eps)^{-3}\)。Taylor 定理因此给出与 \(m\) 无关的三次余项，
-证明 \eqref{eq:quadraticparameter}；\(m=1\) 时等式精确成立。
+\(6(1-\eps)^{-4}\le96\)。Taylor 定理给出统一的四次余项，
+证明 \eqref{eq:cubicparameter}；\(m=1\) 时等式精确成立。
 \end{proof}
 
 \section{主要证明}
@@ -414,14 +414,14 @@ Besicovitch 方体族的交叠重数不超过 \(2^n\)。
 先令 \(N\to\infty\)，再令 \(\rho\uparrow\rho_\alpha\)，得到结论。
 \end{proof}
 
-置 \(a=2^nt=v^n\)、\(v=2t^{1/n}\)，并令 \(h=a(1+v)^{-n}\)。由
+置 \(a=v^n=2^nt\)、\(v=2t^{1/n}\)。在小 \(v\) 时，
 \[
- L_n(t)=1+h+h^2+O_n(h^3),\qquad
- h^2=a^2+O_n(a^2v),
+ L_n(t)-1=\sum_{k\ge1}v^{kn}(1+v)^{-kn}.
 \]
-得到 \eqref{eq:coefficients} 中的系数。确切地，\(p_n\le n+1\) 及
-\(p_n\le2n\) 保证 \(a^2v\) 与 \(h^3\) 都在 \(O_n(av^{p_n})\) 内；
-只有 \(2\le n\le5\) 时 \(a^2\) 的首项位于所显示精度内，对应 \(j=n\) 的附加项。
+其中 \(v^{n+j}\) 的系数只来自 \(1\le k\le1+\lfloor j/n\rfloor\)。
+展开每项并用 \(kn+[j-(k-1)n]-1=n+j-1\)，
+得到 \eqref{eq:coefficients} 的通式。所有未保留幂次至少为 \(n+6\)；
+解析函数的 Taylor 余项为 \(O_n(v^{n+6})\)。
 这只是下包络的代数展开；真实常数的匹配上界由下文证明。
 有限输入可达到更小的误差：取 \(u=t^{1/n}\)、
 \(\rho=u(1-u^7)\)、\(N=\lceil u^{-7}\rceil\)。严格见证余量为
@@ -437,28 +437,32 @@ Besicovitch 方体族的交叠重数不超过 \(2^n\)。
 \section{应用}
 
 \begin{corollary}[重数一致的高阶渐近]\label{cor:uniform}
+令
+\[
+ A_m(\eps)=1+\frac{m-1}{2m}\eps
+             +\frac{(m-1)(2m-1)}{6m^2}\eps^2.
+\]
 对每个固定 \(n\ge2\)，当 \(\eps\downarrow0\) 时，关于全部整数 \(m\ge1\) 一致有
 \begin{equation}\label{eq:uniform-coefficients}
- \Cm(1-\eps)=1+\sum_{j=0}^{p_n-1}b_{n,j}\eps^{1+j/n}
- +\ind_{\{2\le n\le5\}}2^{n-1}(1-1/m)\eps^2
- +O_n(\eps^{1+p_n/n}).
+ \Cm(1-\eps)=1+\sum_{j=0}^{5}b_{n,j}
+ [\eps A_m(\eps)]^{1+j/n}+O_n(\eps^{1+6/n}).
 \end{equation}
-二维至五维的二次系数分别为
-\[
- 66-2/m,\qquad -572-4/m,\qquad 9224-8/m,\qquad -127984-16/m.
-\]
+例如，三维 \(\eps^{8/3}\) 的系数为 \(160(1-1/m)\)：
+该项在线性情形消失，但在 \(m>1\) 时由参数替换产生。
 \end{corollary}
 \begin{proof}
 因为 \((1-1/m)^m<e^{-1}\)，充分小的 \(\eps\) 使精确约化对全部 \(m\) 适用。
 记 \(s=\sigma_m(\eps)\)。引理 \ref{lem:parameter} 给出
-\(s=\eps+a_m\eps^2+O(\eps^3)\)，其中 \(a_m=(m-1)/(2m)\)，余项常数与 \(m\) 无关。
-对每个固定 \(p>1\)，有 \(s^p=\eps^p+O_p(\eps^{p+1})\)，且 \(s/\eps\) 一致有界。
-将定理 \ref{thm:endpoint} 代入 \eqref{eq:reduction}。
-若 \(2\le n\le5\)，线性项增加 \(2^na_m\eps^2\)；
-首个分数幂项的参数误差为 \(O_n(\eps^{2+1/n})\)，恰在或小于所述余项。
-若 \(n\ge6\)，\(2\ge1+6/n\)，故线性项参数修正已在余项内；
-所有分数幂参数误差亦被吸收。线性项的 \(O(\eps^3)\) 余量在全部维数同样被吸收。
-以上常数与起效区间均与 \(m\) 无关，得到 \eqref{eq:uniform-coefficients}。
+\(s=\eps A_m(\eps)+O(\eps^4)\)，且 \(\eps\le s\le2\eps\)，均与 \(m\) 无关。
+对固定 \(p\ge1\)，由均值定理，
+\[
+ s^p-[\eps A_m(\eps)]^p=O_p(\eps^{p+3}).
+\]
+由于 \(1+6/n\le4\)，这些替换误差全在 \(O_n(\eps^{1+6/n})\) 内。
+将定理 \ref{thm:endpoint} 代入 \eqref{eq:reduction}，得到所述统一展开。
+三维的示例来自 \(192s^{5/3}\) 的参数修正
+\(320a_m\eps^{8/3}=160(1-1/m)\eps^{8/3}\)，而 \(b_{3,5}=0\)。
+以上常数与起效区间均与 \(m\) 无关。
 \end{proof}
 
 \begin{corollary}[自然参数下的重数一致正差]\label{cor:nonexact-multi}
@@ -479,8 +483,7 @@ Besicovitch 方体族的交叠重数不超过 \(2^n\)。
 关于所有 \(m\) 的同一下界；最后令 \(\eta\downarrow0\)。
 \end{proof}
 
-当 \(n\ge5\) 时，首差的幂阶已确定为 \(av^6\)，但该尺度的精确系数仍未知。
-二维至四维还需改进小半径删除及质量结算，缩小上下界的幂次差距。
+对每个固定 \(n\ge2\)，首差的幂阶已确定为 \(av^6\)，但该尺度的精确系数仍未知。
 进一步确定真实高阶渐近，需要在所有输入的角部缺损与孔形重配构造之间取得匹配系数。
 
 \bibliographystyle{plain}

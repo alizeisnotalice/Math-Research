@@ -4,9 +4,9 @@
 \[
  H=2^n,\qquad a=Ht=v^n,\qquad v=2t^{1/n},\qquad A_v=(1+v)^n.
 \]
-为同时记录小半径删除和全部源点的角部余项，记
+下面的小半径回收与精确环境记账将给出统一余项，记
 \begin{equation}\label{eq:global-omega}
- \omega_n(v)=v^6+v^{n+1},\qquad p_n=\min\{6,n+1\}.
+ \omega_n(v)=v^6.
 \end{equation}
 所有距离均取 \(\ell_\infty\) 距离，所有隐含常数均允许依赖固定维数。
 取有限正测度输入 \(E\) 和紧集
@@ -609,7 +609,47 @@ Tonelli 定理给
 \eqref{eq:global-layer-volume}。这只涉及有限的 \(K_0+1\) 层。
 \end{proof}
 
-\subsection{外部多深度与边界改源}
+\subsection{小半径所用的局部格子计数}
+
+\begin{lemma}[局部 dyadic 计数]\label{lem:global-dyadic-small}
+设轴平行盒 \(\mathcal R\) 的各边长介于 \(cL\) 与 \(CL\)，其中
+\(0<c\le C\)、\(L>0\)。固定 \(A>0\)，设可测集
+\(T\subset\mathcal R\setminus E\)、\(\mathcal S\subset T\)，且每个
+\(x\in\mathcal S\) 都有一个原严格见证 \(Q(x,r)\)，满足 \(r\le AL\)。
+当 \(a=2^nt\) 充分小时，
+\begin{equation}\label{eq:global-dyadic-small}
+ |\mathcal S|\le C_{n,c,C,A}a|\mathcal R\setminus T|.
+\end{equation}
+\end{lemma}
+\begin{proof}
+将 \(\mathcal R\) 的各边同时二分，得到一个固定、可数的 dyadic 盒网格。
+设原盒的最大边长为 \(\ell_{\max}\)。若 \(r\le\ell_{\max}\)，取最小
+\(k\ge0\) 使 \(2^{-k}\ell_{\max}\le r\)，并选第 \(k\) 层含 \(x\) 的格子
+\(P\)。它的各边至多为 \(r\)，故
+\(P\subset\mathcal R\cap Q(x,r)\)；各边又至少为 \(cr/(2C)\)。
+若 \(r>\ell_{\max}\)，直接取 \(P=\mathcal R\)，由 \(r\le AL\) 有
+\(|P|\ge(c/A)^nr^n\)。因此两种情形均有
+\[
+ P\subset\mathcal R\cap Q(x,r),\qquad |P|\ge\beta r^n,
+ \quad\beta=\min\{(c/(2C))^n,(c/A)^n\}>0.
+\]
+所有格子边界的并为零测集，可以统一排除。令 \(D=\mathcal R\setminus T\)，
+由严格见证及 \(T\subset E^c\)，上述格子满足
+\[
+ |P\setminus D|=|P\cap T|\le|Q(x,r)\setminus E|
+ <ar^n\le(a/\beta)|P|.
+\]
+取 \(\eta=a/\beta<1/2\)。所有 \(D\) 占比严格大于 \(1-\eta\) 的格子中，
+按包含关系取最大者。每格到根盒只有有限个祖格，故最大格子覆盖全部高密度格；
+它们两两不交至边界。记其并为 \(H\)，则
+\[
+ |H\setminus D|\le\eta|H|\le\frac{\eta}{1-\eta}|D|.
+\]
+而 \(\mathcal S\subset H\setminus D\) 至零测集，得到所需估计。
+\(|D|=0\) 时同样给出 \(|\mathcal S|=0\)。全部常数与源点、半径及输入无关。
+\end{proof}
+
+\subsection{未删除源、小半径与环境额外缺陷}
 
 令 \(I\supset J_0\) 为任一标记集，记
 \[
@@ -627,6 +667,22 @@ Tonelli 定理给
 
 记外部深处指标为 \(\mathcal T=I^c\setminus\partial I\)。下面固定任一种
 满足引理~\ref{lem:global-face-capacity} 条件的外部源、目标选择，目标覆盖 \(K'\)。
+除有效源 \(F_i\) 外，记录删除前的源 \(T_i\)，满足
+\begin{equation}\label{eq:global-pre-source}
+ T_i\subset G_i\subset K'\cap Q_i,\qquad
+ T_i\cap G_j=\varnothing\ (i\ne j),\qquad
+ T_i\subset Q(x_i,Avr_i).
+\end{equation}
+每个 \(T_i\) 点仍使用原指定严格见证 \(r(x)\)。给定固定
+\(0<\tau_i\le A\)，记
+\begin{equation}\label{eq:global-small-source-definition}
+ \mathcal S_i=\{x\in T_i:r(x)<\tau_i vr_i\},\quad
+ F_i=T_i\setminus\mathcal S_i,\quad
+ m_i^0=|T_i|,\quad\delta_i=|\mathcal S_i|,\quad\mu_i=m_i^0-\delta_i.
+\end{equation}
+未删除源两两不交，且 \(m_i^0\ge(1-Av)ar_i^n\)；有效源满足前面的完整
+大见证条件。第一深度取 \(T_i=P_i\)，其余深度在边界取 \(P_i\)，
+在深处取相应中心邻域，具体构造在后面给出。
 参数 \(A\) 统一支配固定的 \(D\) 和全部所需定位常数；先选定它及有限深度，
 再选强斜率 \(\lambda_0\)，最后令 \(v\) 足够小。
 对每个 \(i\in\mathcal T\) 及每个轴向、符号，取
@@ -682,21 +738,141 @@ CDF 端点相对原半盒端的移动为 \(O_{n,A}(v)\)，而
 标记方体，故其条也不碰标记区域。
 \end{proof}
 
-\begin{lemma}[全部源点的角部补偿]\label{lem:global-augmented-capacity}
-对上述一层外部源、目标，定义增广并集
+\begin{lemma}[小半径源质量的回收]\label{lem:global-small-source-recovery}
+对外部深处指标，
+\begin{equation}\label{eq:global-small-source-recovery}
+ \frac va\delta_i\le C_{n,A}\left[
+ v^2\varepsilon_i r_i^n+
+ v\sum_{q,\pm}\Gamma_{ip}r_i^{n-1}\right].
+\end{equation}
+边界指标则满足
+\begin{equation}\label{eq:global-small-source-boundary}
+ \frac va\sum_{i\in\partial I}\delta_i
+ \le C_{n,A}v^nP(\partial I)\le C_{n,A}vP(\partial I).
+\end{equation}
+\end{lemma}
+\begin{proof}
+固定 \(i\in\mathcal T\)。每个负面方向的入向邻居记为 \(p\)，令
+\(\gamma_{il}^-=g_{p\to i}\)；正面方向同样令
+\(\gamma_{il}^+=g_{p\to i}\)，按反射后的方向解释。构造扩展盒
 \[
- U^+=\bigcup_{i\notin I}X_i\ \cup\!
-      \bigcup_{i\in\mathcal T,q,\pm}Z_{ip}.
+ \mathcal R_i=x_i+\prod_l
+ [\min\{\ell_{il}^0,\ell'_{il}-\gamma_{il}^-\},
+  \max\{h_{il}^0,h'_{il}+\gamma_{il}^+\}].
 \]
-它包含于 \(\bigcup_{i\notin I}Q_i\)，并满足
+它包含有效源原始投影盒，每条边仍可比于 \(vr_i\)；各侧扩张至多为相应
+\(\gamma\)，且 \(\gamma_{il}^\pm\le2\Gamma_{ip}\)。
+
+先估计盒外部分。以左面为例，在入向邻居 \(p\) 的有效源中取坐标趋近
+原始面对端的点，距端深度为 \(d\downarrow0\)。
+由 \eqref{eq:global-all-source-radius}，该点的实际半径增量至多为
+\(2(\gamma_{il}^-+d)\)。其见证至少伸到目标截面
+\[
+ x_{i,l}+\ell'_{il}-\gamma_{il}^--d,
+\]
+因为实际半径大于 \(R_p\)。全部 \(T_i\) 点在法向与该源同序，切向有面邻居
+的固定裕量，且 \(T_i\cap G_p=\varnothing\)。所以该截面外侧的全部小源
+质量都可与 \(G_p\) 相加，真实剩余容量至多为
+\(C_n ar_i^{n-1}(\gamma_{il}^-+d)\)。令 \(d\downarrow0\)，半空间质量的
+连续性给
+\begin{equation}\label{eq:global-incoming-small-tail}
+ |\mathcal S_i\cap\{x_l-x_{i,l}\le
+              \ell'_{il}-\gamma_{il}^-\}|
+ \le C_n ar_i^{n-1}\gamma_{il}^-.
+\end{equation}
+这里用的是同一个原指定源见证；不要求端点取到或严格余量统一为正。
+右面反射同理。每个盒外小源点至少违反一个上述截面，故其总量至多为
+\(C_n ar_i^{n-1}\sum_{l,\pm}\gamma_{il}^\pm\)。
+
+再令 \(D_i=\mathcal R_i\setminus T_i\)。对
+\(x\in\mathcal S_i\cap\mathcal R_i\)，其原指定半径满足
+\(r(x)<\tau_i vr_i\le Avr_i\)。在引理~\ref{lem:global-dyadic-small} 中取
+\(L=vr_i\)、\(T=T_i\cap\mathcal R_i\) 及
+\(\mathcal S=\mathcal S_i\cap\mathcal R_i\)，固定全部盒长常数后令 \(v\) 足够小，得到
+\[
+ |\mathcal S_i\cap\mathcal R_i|\le C_{n,A}a|D_i|
+                                      \le C_{n,A}v|D_i|,
+\]
+其中最后一步用 \(a=v^n\le v\)。零测 \(D_i\) 亦由同一估计处理。
+又 \(T_i\supset F_i\)，由
+\eqref{eq:global-corner-missing} 及盒的扩张体积，
+\[
+ |D_i|\le C_{n,A}\varepsilon_i\mu_i+
+          C_{n,A}(vr_i)^{n-1}\sum_{l,\pm}\gamma_{il}^\pm.
+\]
+与盒外估计合并，再用 \(\mu_i\asymp ar_i^n\)、\(a=v^n\) 和
+\(\gamma\le2\Gamma\)，即得 \eqref{eq:global-small-source-recovery}。
+
+边界只用粗局部估计：每个小源见证包含于
+\(Q(x_i,3Avr_i)\)。
+
+同一见证对局部输入
+\(E\cap Q(x_i,3Avr_i)\) 仍成立。该输入为零测时小源为空；否则原外部水平集
+估计给 \(\delta_i\le C_{n,A}av^nr_i^n\)。
+原私有定位和规则性给
+\begin{equation}\label{eq:global-boundary-deficit-floor}
+ \tfrac12v^nr_i^n\le m_i\le(2ce_i^0r_i)^n,\qquad
+ d_i\ge e_i^0\ge c_n''v,
+\end{equation}
+其中 \(c_n''>0\) 纯粹依赖维数。求和得到
+\eqref{eq:global-small-source-boundary}。
+\end{proof}
+
+\begin{lemma}[共同可见的环境额外缺陷]\label{lem:global-common-defect}
+定义按源指标附着的集合
+\[
+ Y_i=X_i\cup\bigcup_{q,\pm}Z_{ip}\quad(i\in\mathcal T),
+ \qquad Y_i=X_i\quad(i\in\partial I),\qquad U^+=\bigcup_iY_i,
+\]
+并令 \(u_i=|(Y_i\setminus E)\setminus G_i|\)。则
+\begin{gather}
+ Y_i\subset Q(x,R_i)\quad\hbox{对每个 }x\in F_i,\qquad
+ \sum_{i\in\mathcal T}u_i\le C_{n,A}a\mathcal F,\qquad
+ \sum_{i\in\partial I}u_i\le C_{n,A}aP(\partial I),
+ \label{eq:global-common-defect}\\
+ |U^+\setminus E|\le M'+\mathcal D+\sum_i u_i,
+ \qquad\mathcal D=\sum_i g_i-M'.
+ \label{eq:global-actual-ambient}
+\end{gather}
+\end{lemma}
+\begin{proof}
+对每个有效源 \(x\)，其到 \(X_i\) 任一点的距离至多为
+\(R_i/2+2Avr_i<R_i\)。附着面条全部在
+\(Q(x_i,(1/2+C_{n,A}v)r_i)\) 内，而
+\(R_i\ge(1-Av)r_i\)，故统一小 \(v\) 时它们也在每个 \(Q(x,R_i)\) 内。
+所以每个原实际见证都同时包含 \(G_i\) 和
+\((Y_i\setminus E)\setminus G_i\)，二者不交，于是
+\[
+ u_i<a[r(x)^n-R_i^n]\le C_n ar_i^{n-1}[r(x)-R_i].
+\]
+在深处沿任一面方向取有效源坐标趋近原始面对端。由
+\eqref{eq:global-all-source-radius}，实际增量上界趋于至多
+\(2g_{i\to p}\)，故固定的 \(u_i\) 满足
+\(u_i\le C_n ar_i^{n-1}g_{i\to p}\le C_n ar_i^{n-1}\Gamma_{ip}\)。
+逼近序列由有效源点组成，端点不必取到，极限仅把严格预算变成非严格上界。
+边界任一有效源给 \(u_i\le C_{n,A}av r_i^n\)，再用
+\(d_i\ge c_n''v\) 求和。最后按各 \(Y_i\) 的补集部分相加，
+\[
+ |U^+\setminus E|\le\sum_i(|G_i\cap Y_i|+u_i)
+ \le\sum_i g_i+\sum_i u_i,
+\]
+得到 \eqref{eq:global-actual-ambient}；这里允许目标或附着集合重复计数。
+\end{proof}
+
+\begin{lemma}[角部补偿与校正后的单层体积]\label{lem:global-augmented-capacity}
+对上述一层外部源、目标，增广并集 \(U^+\) 包含于
+\(\bigcup_{i\notin I}Q_i\)，且满足
 \begin{equation}\label{eq:global-capacity-settlement}
  \begin{aligned}
- a|U^+|-A_vM'&\ge\tfrac12\mathcal D-C_{n,A}v\mathfrak d\\
-             &\quad-C_{n,A}v^6M'-C_{n,A}av^3P(\partial I),\\
+ |U^+|-\mathcal D-\sum_i u_i
+ &\ge A_vM'/a+\mathcal D/(2a)
+       -C_{n,A}(v/a)\mathfrak d^0\\
+ &\quad-C_{n,A}v^6S-C_{n,A}vP(\partial I),\\
  \mathcal D&=\sum_{i\notin I}g_i-M',\qquad
- \mathfrak d=M'-\sum_{i\notin I}\mu_i.
+ \mathfrak d^0=M'-\sum_{i\notin I}m_i^0.
  \end{aligned}
 \end{equation}
+两个缺失量都非负，且 \(\mathfrak d^0\) 不包括已删除的小源。
 \end{lemma}
 \begin{proof}
 先考虑两个都在外部深处的正体积相交对。设有 \(q\ge2\) 个临界轴，其交长
@@ -772,37 +948,62 @@ CDF 端点相对原半盒端的移动为 \(O_{n,A}(v)\)，而
 
 涉及外边界 \(\partial I\) 的对只用单源界
 \eqref{eq:global-corner-overlap}。其盈余部分仍吸收，余量总计为
-\(C_{n,A}v^4S(\partial I)\)。原规则私有簇满足
-\[
- \tfrac12v^nr_i^n\le m_i\le(2ce_i^0r_i)^n,
-\]
-所以 \(d_i\ge e_i^0\ge c_n''v\)，其中 \(c_n''>0\) 仅依赖维数，故
+\(C_{n,A}v^4S(\partial I)\)。由
+\eqref{eq:global-boundary-deficit-floor}，
 \begin{equation}\label{eq:global-boundary-angle-price}
  v^4S(\partial I)\le C_nv^3P(\partial I).
 \end{equation}
 单临界对由双向面容量没有正体积交叠。
 
-对 \(\bigcup X_i\) 用二项 Bonferroni 下界，再加入与它不交的面条并集。
-按 \eqref{eq:global-free-face-volume}，后者提供上述面缝正回收；
-单格盈余按上述方式吸收后，还剩
+在上述吸收中，先将单格盈余与面缝正回收各预留四份。线性交损相对其预算
+分别有因子 \(v\) 或 \(v^2\)，Young 中的固定 \(b\) 也可任意取小，所以
+角部仅需其中一份，代价是改变六阶余项常数。对 \(\bigcup X_i\) 用二项
+Bonferroni 下界，再加入与其不交的面条并集，仍可保留固定正比例预算：
+\begin{equation}\label{eq:global-retained-budgets}
+ \begin{aligned}
+ |U^+|\ge{}&A_v\sum_i g_i/a
+ -C_{n,A}(v/a)\sum_i(g_i-\mu_i)\\
+ &+c_{n,A}v\mathcal E+c_n'\mathcal F
+ -C_{n,A}v^6S-C_{n,A}v^3P(\partial I),\\
+ \mathcal E={}&\sum_{i\notin I}\varepsilon_i r_i^n.
+ \end{aligned}
+\end{equation}
+这里的两个正系数取预留后较小的固定版本。
+写 \(\Delta=\sum_i\delta_i\)，有
+\(\sum_i(g_i-\mu_i)=\mathcal D+\mathfrak d^0+\Delta\)。
+引理~\ref{lem:global-small-source-recovery} 将深处的删除成本控制为
+\(C_{n,A}(v^2\mathcal E+v\mathcal F)\)，边界成本为
+\(C_{n,A}vP(\partial I)\)。它们用各自另一份预算吸收。
+再从左侧扣除 \(\sum_i u_i\)：引理~\ref{lem:global-common-defect}
+的深处成本为 \(C_{n,A}a\mathcal F\)，边界成本为
+\(C_{n,A}aP(\partial I)\)，其中 \(a=v^n\le v\)；这一项使用另行预留的预算。
+所有吸收先固定系数，再统一令 \(v\) 小，故同一正量没有重复支付。
+
+最后扣除物理重复量 \(\mathcal D\)。其净系数为
 \[
- a|U^+|\ge A_v\sum_i g_i-C_{n,A}v\sum_i(g_i-\mu_i)
-                  -C_{n,A}av^6S(I^c)-C_{n,A}av^3P(\partial I).
+ \frac{A_v-C_{n,A}v-a}{a}\mathcal D\ge\frac{\mathcal D}{2a}.
 \]
-因 \(aS(I^c)\asymp M'\)、\(\sum(g_i-\mu_i)=\mathcal D+\mathfrak d\)，且
-源两两不交、目标覆盖 \(K'\)，有 \(\mathcal D,\mathfrak d\ge0\)。小 \(v\)
-时保留至少 \(\mathcal D/2\)，即得所需结算。外部为空时所有量取零。
+未删除源两两不交，目标覆盖 \(K'\)，所以
+\(\mathfrak d^0,\mathcal D\ge0\)。丢弃其余非负预算即得
+\eqref{eq:global-capacity-settlement}；外部为空时所有源量取零。
 \end{proof}
 
-\begin{lemma}[外部多深度与纯维数边界价格]\label{lem:global-exterior-union}
-固定 \(n,D,\eta\)。小 \(v\) 时可从五个深度的源、目标选择中构造一个
-增广并集 \(U_g\subset\bigcup_{j\notin I}Q_j\)，使
+\begin{lemma}[五深度的未删除源与重复覆盖]\label{lem:global-exterior-union}
+固定 \(n,D,\eta\)。小 \(v\) 时可构造五层目标 \(G_{i,h}\)、未删除源
+\(T_{i,h}\) 和有效源 \(F_{i,h}\)，均满足前面的源、目标及小半径条件。
+目标覆盖 \(K'\)，未删除源与所有其他指标的同层目标不交，且
 \begin{equation}\label{eq:global-exterior-union}
- |U_g|\ge A_vM'/a-C_{n,D}\omega_n(v)S-C_{n,D}vP(\partial I).
+ T_{i,1}=P_i,\qquad
+ T_{i,h}=
+ \begin{cases}
+ P_i,&i\in\partial I,\\
+ N_{i,h-1},&i\in\mathcal T
+ \end{cases}
+ \quad(h=2,3,4,5).
 \end{equation}
-每个边界指标在五个选择中都满足
-\( |X_j\setminus B_j|\le C_2(n)e_j^\beta r_j^n\)，其中 \(C_2(n)\)
-是引理~\ref{lem:global-face-capacity} 中与 \(D,\eta\) 无关的常数。
+它们满足 \eqref{eq:global-multidepth-duplicates} 和
+\eqref{eq:global-two-source-losses}。全部五层边界 CDF 盒仍满足
+\(|X_{i,h}\setminus B_i|\le C_2(n)e_i^\beta r_i^n\)，系数纯粹依赖维数。
 \end{lemma}
 \begin{proof}
 以下设外部非空；由 \eqref{eq:global-exterior-mass}，\(M'>0\)。
@@ -821,7 +1022,7 @@ CDF 端点相对原半盒端的移动为 \(O_{n,A}(v)\)，而
 不在任何标记收缩盒中，于是距该唯一中心为 \(O_{n,D,H_*}(vr_i)\)。
 
 \emph{第一深度。}
-取 \(C_0>cD+1\)。原私有簇在 \(Q(x_i,C_0vr_i)\) 内，删除指定半径小于
+取 \(C_0>cD+1\)。未删除源取 \(T_{i,1}=P_i\)，它在 \(Q(x_i,C_0vr_i)\) 内。删除指定半径小于
 \(2C_0vr_i\) 的点，记所得源为 \(F_{i,1}\)。删除质量至多为
 \(C_{n,D}v^n ar_i^n\)，来自局部输入
 \(E\cap Q(x_i,3C_0vr_i)\) 的外部水平集估计；零测局部输入对应空小半径集。
@@ -851,7 +1052,7 @@ CDF 端点相对原半盒端的移动为 \(O_{n,A}(v)\)，而
 \[
  G_{i,h}=K'\cap Q(x_i,(1-H_hv)r_i).
 \]
-暂以 \(N_{i,h-1}\) 为源，删除指定半径小于 \(2L_{h-1}vr_i\) 的点。
+暂以 \(T_{i,h}=N_{i,h-1}\) 为未删除源，删除指定半径小于 \(2L_{h-1}vr_i\) 的点。
 每格删除质量至多为 \(C_{n,D}v^n ar_i^n\)，来自局部输入
 \(E\cap Q(x_i,3L_{h-1}vr_i)\) 的外部水平集估计，仍包括零测输入的空集情形。
 保留点的见证包含整个 \(N_{i,h-1}\supset P_i\)，所以半径大于
@@ -868,10 +1069,10 @@ CDF 端点相对原半盒端的移动为 \(O_{n,A}(v)\)，而
  \norm{x-x_j}_\infty>
  \max(r_i,r_j)-L_{h-1}vr_i\ge(1-L_{h-1}v)r_j,
 \]
-故该源与所有其他同层目标不交。
+故整个未删除源 \(N_{i,h-1}\) 与所有其他同层目标不交。
 
 在 \(i\in\partial I\) 时，该层仍以同一阈值 \(2L_{h-1}vr_i\) 删除小半径点，
-但源改为原私有簇 \(P_i\)，目标不变。由于 \(P_i\subset N_{i,h-1}\)，其
+但未删除源改为 \(T_{i,h}=P_i\)，目标不变。由于 \(P_i\subset N_{i,h-1}\)，其
 保留见证仍包含整个 \(N_{i,h-1}\) 及自身目标，半径还有更强的上界
 \(r(x)\le r_i\)。边界原私有源与所有其他目标不交，非边界源由上式控制，
 所以边界--非边界两个方向均满足面容量引理的量词。
@@ -883,7 +1084,7 @@ CDF 端点相对原半盒端的移动为 \(O_{n,A}(v)\)，而
  f_h=M'-\sum_{i\notin I}|N_{i,h}|.
 \]
 全部五个深度的常数先固定，再统一令 \(v\) 足够小，便使每层中心邻域
-两两不交，且源在自身深目标内。所有目标覆盖 \(K'\)，唯一覆盖点均在
+两两不交，且整个未删除源也在自身深目标内。所有目标覆盖 \(K'\)，唯一覆盖点均在
 相应中心邻域内，故
 \begin{equation}\label{eq:global-multidepth-duplicates}
  f_h\ge0,\qquad
@@ -892,95 +1093,70 @@ CDF 端点相对原半盒端的移动为 \(O_{n,A}(v)\)，而
 \end{equation}
 有限五次递归没有循环依赖或增长层数的阈值。
 
-记各层最终源为 \(F_{i,h}\)，质量为 \(\mu_{i,h}\)，并令
-\(\mathfrak d_h=M'-\sum_{i\notin I}\mu_{i,h}\)。各源簇两两不交，
-每个源与其他指标的同层目标不交，所有源的质量及定位符合
-引理~\ref{lem:global-face-capacity} 的同一个常数 \(A=A(n,D)\)。
-先完成五深度的有限常数递归并统一这个 \(A\)，再选择同一个强斜率
-\(\lambda_0\)，最后统一取小 \(v\)，不会改变任何源点的原指定半径。
-由 \eqref{eq:global-exterior-mass} 及局部删除量，
+记 \(m_{i,h}^0=|T_{i,h}|\)、\(\mu_{i,h}=|F_{i,h}|\)，以及
+\(\mathfrak d_h^0=M'-\sum_{i\notin I}m_{i,h}^0\)。
+未删除源与所有其他目标不交且包含于自身目标，故它们两两不交，
+\(\mathfrak d_h^0\ge0\)。有效源的粗删除界只用于保证
+\(\mu_{i,h}\ge(1-C_{n,D}v)ar_i^n\)，不计入最终缺失量。
+先完成五层有限常数递归并统一 \(A=A(n,D)\)，再选择同一个强斜率
+\(\lambda_0\)，最后统一取小 \(v\)，不改变原指定见证。
+由原私有质量下界及未删除源的定义，
 \begin{equation}\label{eq:global-two-source-losses}
- 0\le\mathfrak d_1\le A_0vM',\qquad
- 0\le\mathfrak d_h\le f_{h-1}+C_{n,D}v^nM'+aP(\partial I)
+ 0\le\mathfrak d_1^0\le A_0vM',\qquad
+ 0\le\mathfrak d_h^0\le f_{h-1}+aP(\partial I)
  \quad(h=2,3,4,5).
 \end{equation}
-其中 \(A_0\) 固定；边界附加量由
+其中 \(A_0\) 固定；边界改源的附加量为
 \[
- |N_{i,h-1}|-|P_i|\le|K\cap Q_i|-m_i\le as_ir_i^n
+ |N_{i,h-1}|-|P_i|\le |K\cap Q_i|-m_i\le as_ir_i^n.
 \]
-得到。这里的源质量只删除了小半径点，CDF 中点盒不再删固定分位质量。
-
-\emph{同一左侧的加权消元。}
-引理~\ref{lem:global-augmented-capacity} 在每个深度给一个增广实际并集
-\(U_h^+\subset\bigcup_{i\notin I}Q_i\)。取
-\[
- Z=\max_{1\le h\le5}\{a|U_h^+|-A_vM'\},\qquad f_0=A_0vM'.
-\]
-由 \eqref{eq:global-capacity-settlement}、
-\eqref{eq:global-multidepth-duplicates} 和
-\eqref{eq:global-two-source-losses}，存在固定 \(c_0>0,b_0<\infty\)，使五个
-深度共用不等式
-\begin{equation}\label{eq:global-multidepth-recursion}
- Z\ge c_0 f_h-b_0vf_{h-1}-R,\qquad
- R=C_{n,D}\{(v^6+v^{n+1})M'+avP(\partial I)\}.
-\end{equation}
-第一层中将源缺失用 \(f_0\) 控制，其余的 \(v^{n+1}\) 项统一放在 \(R\) 内。
-不同深度不必使用同一个并集；有限最大值提供相同左侧。
-令 \(\tau=b_0v/c_0\)，依次乘权重 \(\tau^4,\tau^3,\tau^2,\tau,1\) 相加，得到
-\begin{equation}\label{eq:global-multidepth-telescope}
- (1+\tau+\tau^2+\tau^3+\tau^4)Z
- \ge c_0f_5-b_0v\tau^4f_0-(1+\tau+\tau^2+\tau^3+\tau^4)R.
-\end{equation}
-中间的 \(f_1,\ldots,f_4\) 项精确消去。因 \(f_5\ge0\)、\(f_0=A_0vM'\)，
-右侧端点误差为 \(O_{n,D}(v^6M')\)。选择达到最大值的那一个实际并集，
-除以 \(a\)，再用 \(M'/a\le S\)，便得
-\eqref{eq:global-exterior-union}。
-
-全部五个深度在边界都只以原私有簇中的点作源。CDF 有效端及中点端仍在
-源原始投影范围内，因此五个选择同时满足
-\eqref{eq:global-boundary-protrusion}，其系数为同一个纯维数 \(C_2(n)\)。
+小半径删除质量已由引理~\ref{lem:global-small-source-recovery} 单独回收，
+所以这里没有全域的 \(v^nM'\) 误差。
+全部五层边界有效源都在原私有簇内，CDF 端点仍在源原始投影范围内，
+故纯维数突出价格 \eqref{eq:global-boundary-protrusion} 同时成立。
 \end{proof}
 
-\subsection{标记内部的空隙与容量回收}
+\subsection{精确环境记账与内部容量回收}
 
-\begin{lemma}[内部回收与边界价格]\label{lem:global-interior-recovery}
+\begin{lemma}[以 \(\lvert E\rvert+M\) 为左侧的回收]\label{lem:global-interior-recovery}
 令
 \[
- c_n=2^{-n},\qquad C_*=2C_2(n)+2.
+ c_n=\frac1{2H},\qquad C_{*,0}=2C_2(n)+2,\qquad C_*=C_{*,0}+2.
 \]
-对任意 \(I\supset J_0\)，固定 \(n,D,\eta\) 后将 \(v\) 取得足够小，有
+对任意 \(I\supset J_0\)，固定全部参数后取足够小 \(v\)，有
 \begin{equation}\label{eq:global-recovery-interface}
- |E|+aS\ge A_vM/a+c_nP(I)-C_*P(\partial I)
-                  -2nvS(I)-C_{n,D,\eta}\omega_n(v)S.
+ |E|+M\ge A_vM/a+c_nP(I)-C_*P(\partial I)
+                  -2nvS(I)-C_{n,D,\eta}v^6S.
 \end{equation}
-这里 \(c_n,C_*\) 和内部体积价格 \(2n\) 在选取 \(D,\eta\) 之前就已固定。
+这里的正回收、两种边界价格及内部体积价格均在 \(D\)、有限深度和
+\(\lambda_0\) 之前固定为纯维数常数。
 \end{lemma}
 \begin{proof}
-固定 \(D\) 后再要求 \(C_{n,D}v\le1\)，则
-\eqref{eq:global-exterior-union} 的边界扣量至多为 \(P(\partial I)\)。
-增广面条都放在外部深处的 \(Q_j\) 中，不与任何标记方体相交，
-所以下面与内部集合的交叠只来自原 CDF 盒。
-把内部半盒 \(\bigcup_{i\in I}B_i\) 加到外部并集 \(U_g\) 上。交集只能来自
-边界的 \(X_j\setminus B_j\)：若 \(B_i\cap X_j\ne\varnothing\)，则
-\(Q_i\cap Q_j\ne\varnothing\)，且原半盒两两不交。因此新增体积至少为
-\(S(I)-C_2(n)P(\partial I)\)。
-
-还可加入标记空隙
+先固定一个深度 \(h\)，写其增广并集为 \(U_h^+\)，重复目标量为
+\(\mathcal D_h\)，局部额外缺陷为 \(u_{i,h}\)。
+将内部半盒和标记空隙
 \[
- Z=\left(\bigcup_{i\in I}A_i^\beta\right)\setminus B,
- \qquad |Z|\ge H^{-1}\sum_{i\in I}e_i^\beta r_i^n.
+ Z_I=\left(\bigcup_{i\in I}A_i^\beta\right)\setminus B,\qquad
+ |Z_I|\ge H^{-1}\sum_{i\in I}e_i^\beta r_i^n
 \]
-后一个不等式来自 \(A_i^\beta\) 的重数至多为 \(H\)。\(Z\) 与内部半盒不交，
-其与外部并集的相交也只能来自边界的突出部分 \(X_j\setminus B_j\)。
-全部所加集合都在 \(\bigcup_iQ_i\) 内，故
+加入，记 \(W_h=U_h^+\cup\bigcup_{i\in I}B_i\cup Z_I\)。
+外部深处的增广面条与全部标记 \(Q\) 不交。其余内部交叠只能来自边界
+\(X_{j,h}\setminus B_j\)，因为原半盒不交，且所有 \(X_{j,h}\subset Q_j\)。
+两次使用纯维数突出价格得到
 \begin{equation}\label{eq:global-recovered-union}
- |E|+aS\ge |U_g|+S(I)+H^{-1}\sum_{i\in I}e_i^\beta r_i^n
+ |W_h|\ge |U_h^+|+S(I)+H^{-1}\sum_{i\in I}e_i^\beta r_i^n
                          -2C_2(n)P(\partial I).
 \end{equation}
+另一方面，\eqref{eq:global-actual-ambient} 以及标记原方体的缺陷预算给出
+同一个真实并集的上界
+\begin{equation}\label{eq:global-exact-ambient-upper}
+ |W_h|\le |E|+M'+\mathcal D_h+\sum_i u_{i,h}+aS(I).
+\end{equation}
+这里的 \(E\) 只计一次；补集部分允许重复计数。
 
 令
 \(T_\times=K\cap(\bigcup_{i\in I}Q_i)\cap(\bigcup_{j\notin I}Q_j)\)。
-在内部被覆盖的 \(M_I\) 质量上，原私有点计一次；非私有且不在交界的点
+在内部覆盖的 \(M_I\) 质量上，原私有点计一次；非私有且不在交界的点
 内部重数至少为二；交界点至少计一次。因此
 \[
  aS(I)\ge\sum_{i\in I}|K\cap Q_i|
@@ -995,14 +1171,54 @@ CDF 端点相对原半盒端的移动为 \(O_{n,A}(v)\)，而
  |T_\times|\le\sum_{j\in\partial I}(|K\cap Q_j|-m_j)
  \le a\sum_{j\in\partial I}s_jr_j^n\le aP(\partial I).
 \end{equation}
-又 \(M_I/a\le S(I)\)，而小 \(v\) 时 \(A_v-1\le2nv\)。把
-\eqref{eq:global-exterior-union}、\eqref{eq:global-interior-capacity} 和
-\eqref{eq:global-cross-boundary-mass} 代入
-\eqref{eq:global-recovered-union}，得到正回收系数
-\(\min\{1/2,H^{-1}\}=c_n\)，边界总价格至多为
-\(2C_2(n)+1+1/2\le C_*\)，内部额外价格至多为 \(2nvS(I)\)。
-这就是 \eqref{eq:global-recovery-interface}。外部为空时直接取
-\(U_g=M'=0\)，同样的内部计数成立，无须除以零或构造空源。
+还有 \(M_I/a\le S(I)\)。
+
+把校正后的单层界 \eqref{eq:global-capacity-settlement} 代入
+\eqref{eq:global-recovered-union}--\eqref{eq:global-exact-ambient-upper}，
+并用 \(M=M'+M_I\)。内部余量恰为
+\begin{equation}\label{eq:global-exact-interior-identity}
+ (1-a)S(I)+M_I-A_vM_I/a
+ =(1-a)(S(I)-M_I/a)-(A_v-1)M_I/a.
+\end{equation}
+这是精确恒等式，没有把 \(aS\) 近似为 \(M\)。
+在 \(a<1/2\)、\(A_v-1\le2nv\) 时，
+\eqref{eq:global-interior-capacity}--\eqref{eq:global-cross-boundary-mass}
+以及 \(H^{-1}\sum_I e_i^\beta r_i^n\) 共同提供至少 \(c_nP(I)\) 的正回收，
+内部额外价格至多为 \(2nvS(I)\)。
+先固定所有参数，再令单层边界的 \(C_{n,A}v\) 系数不超过一，
+其与 \(2C_2(n)\) 及共享质量的 \(1/2\) 价格都包含于 \(C_{*,0}\)。于是每层有
+\begin{equation}\label{eq:global-common-layer-ledger}
+ \begin{aligned}
+ |E|+M\ge{}&A_vM/a+c_nP(I)-C_{*,0}P(\partial I)-2nvS(I)\\
+ &+\mathcal D_h/(2a)-C_{n,A}(v/a)\mathfrak d_h^0-C_{n,A}v^6S.
+ \end{aligned}
+\end{equation}
+
+现在所有深度共用同一个左侧。定义
+\[
+ Z=a\big[|E|+M-A_vM/a-c_nP(I)
+              +C_{*,0}P(\partial I)+2nvS(I)\big],\qquad f_0=A_0vM'.
+\]
+由 \eqref{eq:global-multidepth-duplicates}、
+\eqref{eq:global-two-source-losses} 及
+\eqref{eq:global-common-layer-ledger}，存在固定 \(c_0>0,b_0<\infty\)，使
+\begin{equation}\label{eq:global-multidepth-recursion}
+ Z\ge c_0f_h-b_0vf_{h-1}-R,\qquad
+ R=C_{n,D}a\{v^6S+vP(\partial I)\},\qquad 1\le h\le5.
+\end{equation}
+这里没有删除质量的全域误差；它已在同一个单层并集上回收。
+
+令 \(\tau=b_0v/c_0\)，依次乘 \(\tau^4,\tau^3,\tau^2,\tau,1\) 并相加，得到
+\begin{equation}\label{eq:global-multidepth-telescope}
+ (1+\tau+\tau^2+\tau^3+\tau^4)Z
+ \ge c_0f_5-b_0v\tau^4f_0-(1+\tau+\tau^2+\tau^3+\tau^4)R.
+\end{equation}
+中间 \(f_1,\ldots,f_4\) 项精确消去；\(f_5\ge0\)，端点亏损为
+\(O_{n,D}(v^6M')\le O_{n,D}(av^6S)\)。除以权重和及 \(a\)，得到
+\eqref{eq:global-recovery-interface}，其中新增边界价格为
+\(C_{n,D}vP(\partial I)\)。再统一取小 \(v\) 使其系数不超过一，
+放入 \(C_*-C_{*,0}=2\) 的独立预留部分。
+外部为空时全部源量取零，同样由内部计数成立，不需定义空 CDF。
 \end{proof}
 
 \subsection{加权选层、常数顺序与全部输入}
@@ -1050,20 +1266,18 @@ CDF 端点相对原半盒端的移动为 \(O_{n,A}(v)\)，而
 \eqref{eq:global-recovery-interface} 中至少保留 \(c_nP(I)/2\) 的正回收，
 将其丢弃便得到对两个异常分支统一成立的
 \begin{equation}\label{eq:global-final-volume}
- |E|+aS\ge A_vM/a-C_n\omega_n(v)S.
+ |E|+M\ge A_vM/a-C_nv^6S.
 \end{equation}
 
 在近首项分支中，\(M/a\le S\le|E|/(1-a)\) 及
-\(M>a[1-(n+1)v]|E|\) 给
-\(aS=M+O_n(vM)\)。因此
+\(M>a[1-(n+1)v]|E|\) 给 \(S\asymp_n M/a\)。从左侧直接移去实际的 \(M\)，得到
 \[
- |E|\ge\frac Ma[A_v-a-C_n(\omega_n(v)+av)]
-       \ge\frac Ma[A_v-a-C_n'\omega_n(v)],
+ |E|\ge\frac Ma[A_v-a-C_nv^6].
 \]
-因为 \(av=v^{n+1}\le\omega_n(v)\)。括号在小 \(v\) 时为正且远离零，取倒数得到
+括号在小 \(v\) 时为正且远离零，取倒数得到
 \begin{equation}\label{eq:global-compact-upper}
  1+\frac M{|E|}\le
- \left[1-\frac{a}{(1+v)^n}\right]^{-1}+C_na\omega_n(v).
+ \left[1-\frac{a}{(1+v)^n}\right]^{-1}+C_nav^6.
 \end{equation}
 若不在近首项分支，则
 \(M/|E|\le a-(n+1)av\)，而
@@ -1077,15 +1291,15 @@ CDF 端点相对原半盒端的移动为 \(O_{n,A}(v)\)，而
 \(|E\setminus\Hc(1-t;E)|=0\)。因此先对紧集 \(K\) 内逼近，再对全部
 有限正测度 \(E\) 取上确界，得到
 \[
- \Cn(1-t)\le\left[1-\frac{a}{(1+v)^n}\right]^{-1}+C_na\omega_n(v).
+ \Cn(1-t)\le\left[1-\frac{a}{(1+v)^n}\right]^{-1}+C_nav^6.
 \]
 命题~\ref{prop:lower} 的有限截断周期孔给相反方向的无误差下界。最终
 \[
- 0\le\Cn(1-t)-\left[1-\frac{a}{(1+v)^n}\right]^{-1}\le C_na\omega_n(v),
+ 0\le\Cn(1-t)-\left[1-\frac{a}{(1+v)^n}\right]^{-1}\le C_nav^6,
  \qquad a=2^nt,\quad v=2t^{1/n}.
 \]
-由 \(\omega_n(v)=O_n(v^{p_n})\)，最后得到
+最后得到全部固定维数统一的
 \[
- \Cn(1-t)=L_n(t)+O_n(t^{1+p_n/n}),\qquad p_n=\min\{6,n+1\}.
+ \Cn(1-t)=L_n(t)+O_n(t^{1+6/n}),\qquad n\ge2.
 \]
 \end{proof}
