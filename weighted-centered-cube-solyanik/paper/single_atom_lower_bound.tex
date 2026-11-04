@@ -1,0 +1,92 @@
+% Input after the outer weak-type applications defining W_\tau and B_\tau.
+\subsection{小 \texorpdfstring{$\tau$}{tau} 的单原子下界}
+
+继续记 $w_\tau(x)=|x|^{\tau-1}$，$0<\tau<1$，$W_\tau$ 为其外层弱型常数。
+下面把经典幂函数系数 $M_cw_\tau(1)$ 用作单原子测试下界。
+其标量最大化与唯一半径已见 Dror--Ganguli--Strichartz
+\cite[Lemma~3.3, (3.8)]{DrorGanguliStrichartz1996}；这里给出当前加权弱型模型的实现和有理证书。
+仍记前述双原子界 $B_\tau=3(5/3)^\tau/(4\tau)$。
+
+\begin{theorem}[单原子测试与显式下界]
+\label{thm:single-atom-small-tau}
+对每个 $r>0$，有
+\[
+ W_\tau\ge J_\tau(r):=
+ \begin{cases}
+ \displaystyle\frac{(1+r)^\tau-(1-r)^\tau}{2\tau r},&0<r\le1,\\[6pt]
+ \displaystyle\frac{(r-1)^\tau+(r+1)^\tau}{2\tau r},&r\ge1.
+ \end{cases} \tag{TA.1}
+\]
+因而 $W_\tau\ge\max\{B_\tau,\sup_{r>0}J_\tau(r)\}$。当
+$0<\tau<1$，$J_\tau$ 在单原子族上有唯一极大点 $r_\tau>1$，它由
+\[
+ \tau r\bigl[(r-1)^{\tau-1}+(r+1)^{\tau-1}\bigr]
+ =(r-1)^\tau+(r+1)^\tau \tag{TA.2}
+\]
+唯一确定；这是单原子参数族的结论，不是 $W_\tau$ 的全局最优化结论。
+特别地，
+\[
+ W_{1/8}\ge J_{1/8}(17/16)>\frac{27}{4}>B_{1/8},\qquad
+ \liminf_{\tau\downarrow0}\tau W_\tau\ge1. \tag{TA.3}
+\]
+\end{theorem}
+
+\begin{proof}
+对任意位于 $a\ne0$ 的单原子 $m\delta_a$，反射和伸缩归一化为原子位置 $1$，参数为 $r=m/(2|a|)$。先把输入取为 $\sigma_r=2r\delta_1$，阈值取 $1$。严格原子光晕恰为
+\[
+ H_r=(1-r,1+r). \tag{TA.4}
+\]
+若区间含原子，其半径至少为 $|x-1|$；反之当 $|x-1|<r$ 可取半径严格介于
+$|x-1|$ 与 $r$ 之间。端点处最佳平均恰等于 $1$，故被严格水平集排除。
+将 (TA.4) 对 $|x|^{\tau-1}$ 积分并除以输入成本 $2r$，即得 (TA.1)。
+
+原子输入严格转回允许的函数类：令
+\[
+ f_\varepsilon=\frac r\varepsilon\mathbf1_{(1-\varepsilon,1+\varepsilon)}.
+\]
+则 $\|f_\varepsilon\|_{L^1(\mu_\tau)}\to2r$。若 $x\in H_r$，选
+$|x-1|<\rho<r$，再令 $\varepsilon<\rho-|x-1|$；则 $Q(x,\rho)$ 含整个小区间输入，
+且其平均为 $r/\rho>1$。故 Fatou 引理给出 $W_\tau\ge J_\tau(r)$。
+
+对 $r>1$，令 $N(r)=(r-1)^\tau+(r+1)^\tau$、$F(r)=rN'(r)-N(r)$。有
+\[
+ F'(r)=rN''(r)=\tau(\tau-1)r\bigl[(r-1)^{\tau-2}+(r+1)^{\tau-2}\bigr]<0.
+\]
+又 $F(r)\to+\infty$ 当 $r\downarrow1$，而
+\(F(r)\sim2(\tau-1)r^\tau\to-\infty\) 当 $r\to\infty$。因
+$J_\tau'(r)=F(r)/(2\tau r^2)$，(TA.2) 有唯一根且给出 $(1,\infty)$ 上的唯一极大点。
+对 $0<r<1$，令 $L(r)=(1+r)^\tau-(1-r)^\tau$。此时
+\[
+ L''(r)=\tau(\tau-1)\bigl[(1+r)^{\tau-2}-(1-r)^{\tau-2}\bigr]>0.
+\]
+所以 $rL'(r)-L(r)$ 从零严格增加，$L(r)/r$ 严格增加到 $r=1$；而右支在
+$1+$ 处先增，故全单原子极大点确在 $r_\tau>1$。
+
+为证 (TA.3)，
+\[
+ J_{1/8}(17/16)=\frac{64}{17}\left(16^{-1/8}+(33/16)^{1/8}\right).
+\]
+整数算术验证
+\[
+ (707/1000)^2<1/2,\qquad (547/500)^8<33/16,\qquad (13/12)^8>5/3.
+\]
+从而
+\[
+ J_{1/8}(17/16)>\frac{64}{17}
+ \left(\frac{707}{1000}+\frac{547}{500}\right)
+ =\frac{14408}{2125}>\frac{27}{4}>\frac{13}{2}
+ >6(5/3)^{1/8}=B_{1/8}.
+\]
+最后取 $r=1+\tau$，有
+\[
+ \tau J_\tau(1+\tau)=\frac{\tau^\tau+(2+\tau)^\tau}{2(1+\tau)}\longrightarrow1,
+\]
+故 $W_\tau\ge J_\tau(1+\tau)$ 给出所述 liminf。
+\end{proof}
+
+由 (OW.2) 的等指数双线性特例，对 $w(x)=|x|^{-7/8}$ 还得到
+\[
+ \lim_{\lambda\downarrow1/4}(\lambda-1/4)
+ C^{(2),\mathrm{out}}_{c,w}(\lambda)
+ =\tfrac12W_{1/8}>\frac{27}{8}. \tag{TA.5}
+\]

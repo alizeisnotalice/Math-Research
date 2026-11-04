@@ -36,3 +36,8 @@
 第24轮补核：以“cubic f-divergence total variation”“Tsallis order 3 sharp total variation”等检索，实际从[NUMDAM原始扫描版](https://www.numdam.org/item/10.1016/j.crma.2006.10.027.pdf)读取Gilardoni2006的定义、§2 Proposition2.1及其后二点目标的凸性计算。与上一轮访问受限的记录并不冲突；此次已获得该原文。其V采用完整L1规范，与本稿d一致。结合前轮完整读取的2010勘误，本轮直接最小化含零值边界的三次目标；利用严格凸性简化旧长分区证明。
 
 最新检索实际访问[Beretta–Cesari–Colomboni2026摘要及HTML引言](https://arxiv.org/html/2602.05744v1)，其主对象为负Tsallis熵生成的Bregman/β散度，不能按名字与本稿基准测度加权的密度比三次Csiszár散度混同，未引用其常数替代本稿证明。未阅读全文证明，未据搜索未命中断言包络公式首次出现。正文保留既有f散度框架定位，新增的是当前端点模型所用完整自含计算及反演接口。
+
+
+第25轮补核：实际访问[Dror作者主页](https://cs.stanford.edu/people/rondror/abstracts/dror_ganguli_96.htm)及[作者PDF](https://cs.stanford.edu/people/rondror/papers/dror_JFAA_96.pdf)，以本机Ghostscript渲染14页、14任务Tesseract OCR，并视觉核对纸面p476的Lemma3.3与(3.8)。本稿Jτ的标量求值及唯一半径已经是该文的critical power multiplier，p=1/(1−τ)；这里采用标准单原子弱型测试接到当前Wτ，不称该标量求值为新发现。本文只改善本稿此前通用双原子界在小τ的数值，不声称超越全部文献最佳界，更不把幂型测试当完整强Lp或完整W范数。
+
+题录存在版本年份差异：作者PDF首页与作者自引为1996；[Springer DOI记录](https://link.springer.com/article/10.1007/s00041-001-4039-y)及本次Crossref官方API都给1995年10月，卷2期5页473–486。本稿Bibliography/BibTeX按DOI元数据标1995，BibTeX note保留作者稿1996说明；键名1996仅为内部标识。此前Melas的[出版社原页](https://annals.math.princeton.edu/2003/157-2/p08)也再次核对，不能把旧数值猜想3/2当现行精确弱型常数。

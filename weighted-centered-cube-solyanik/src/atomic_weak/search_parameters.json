@@ -1,0 +1,38 @@
+{
+  "historical_source_status": "unsigned_pre_signature; source snapshots and original run logs are preserved under history/pre_signature_20261105/",
+  "runtime": {
+    "python": "3.15.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "blas_thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "historical_runs": [
+    {
+      "family": "symmetric_geometric_chain",
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 multiscale_search.py --workers 4 --maxiter 900 --popsize 12 --seeds 2 --ks 6 10 14",
+      "atoms": "2K = 12, 20, 28",
+      "box": "d in [0.04,1]; each log2 mass in [-22,5]"
+    },
+    {
+      "family": "asymmetric_geometric_comb",
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 asymmetric_multiscale_search.py --workers 4 --maxiter 1000 --popsize 12 --seeds 2 --ks 8 12 16",
+      "atoms": "K+1 = 9, 13, 17",
+      "box": "d in [0.04,1]; each log2 mass in [-24,5]; one atom fixed at -1"
+    },
+    {
+      "family": "free_position_atoms_v2",
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 free_many_atom_search.py --workers 4 --maxiter 1200 --popsize 14 --seeds 2 --ns 12 16",
+      "atoms": "N = 12, 16",
+      "box": "N-1 positions in [-1,1], one position fixed at +1; each log2 mass in [-26,5]; min|x| < 1e-12 rejected"
+    }
+  ],
+  "termination": "Every historical DE record stopped at maxiter (tol=0, atol=0, polish=False), not a convergence certificate.",
+  "old_search_reference": "/Users/zhengzhihao/Desktop/T/Math-Research-topic2-solyanik/weighted-centered-cube-solyanik/src/outer_critical/search/README.md",
+  "archive_reproduction_note": "Historical commands use 4 workers as actually recorded; current scripts default to 15, bounded by job count. Run families sequentially. Signed caches are fresh, not migrated from unsigned historical records."
+}
