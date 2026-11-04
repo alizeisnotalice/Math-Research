@@ -6,6 +6,7 @@
 \setCJKsansfont{Songti SC}
 \setCJKmonofont{Songti SC}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
 \allowdisplaybreaks
@@ -142,13 +143,13 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 \end{theorem}
 
 周期下包络的更高展开仍可能遗漏其他构造的贡献。
-将前两个坐标的近单位晶格作对称斜切，先删去外包孔中潜在失败的角部，
-再以略增外包半宽来选定实际孔质量。它把角部代价转化为较低的质量重配成本，给出以下正差。
+对一般单位对角近单位矩阵，先按真实角部损失重配实际孔形与质量。
+显式预算给出可实现的局部变分泛函；对其中所有坐标对联合优化，得到以下正差。
 \begin{proposition}[周期包络的严格偏差]\label{prop:nonexact}
 对每个固定整数 \(n\ge2\)，有
 \begin{equation}\label{eq:nonexact}
  \liminf_{t\downarrow0}
- \frac{\Cn(1-t)-L_n(t)}{2^{n+6}t^{1+6/n}}\ge\frac{n^2}{27}>0.
+ \frac{\Cn(1-t)-L_n(t)}{2^{n+6}t^{1+6/n}}\ge\binom{n}{2}\frac{n^2}{27}>0.
 \end{equation}
 特别地，充分小的 \(t>0\) 满足 \(\Cn(1-t)>L_n(t)\)。
 结合 \eqref{eq:sharp}，对每个固定 \(n\ge2\)，
@@ -470,13 +471,13 @@ Besicovitch 方体族的交叠重数不超过 \(2^n\)。
 \[
  \liminf_{\eps\downarrow0}\ \inf_{m\ge1}
  \frac{\Cm(1-\eps)-L_n(\sigma_m(\eps))}
- {2^{n+6}\eps^{1+6/n}}\ge\frac{n^2}{27}.
+ {2^{n+6}\eps^{1+6/n}}\ge\binom{n}{2}\frac{n^2}{27}.
 \]
 \end{corollary}
 \begin{proof}
-给定 \(0<\eta<n^2/27\)，命题~\ref{prop:nonexact} 使充分小的所有 \(t\) 都满足
+给定 \(0<\eta<\binom{n}{2}n^2/27\)，命题~\ref{prop:nonexact} 使充分小的所有 \(t\) 都满足
 \[
- \Cn(1-t)-L_n(t)\ge(n^2/27-\eta)2^{n+6}t^{1+6/n}.
+ \Cn(1-t)-L_n(t)\ge(\binom{n}{2}n^2/27-\eta)2^{n+6}t^{1+6/n}.
 \]
 引理~\ref{lem:parameter} 给 \(\eps\le\sigma_m(\eps)\le2\eps\)，对全部
 \(m\ge1\) 一致。以 \(t=\sigma_m(\eps)\) 代入，再用精确约化，便得到

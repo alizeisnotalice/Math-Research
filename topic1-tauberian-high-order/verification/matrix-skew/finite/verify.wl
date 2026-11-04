@@ -1,0 +1,20 @@
+SetDirectory[DirectoryName[$InputFileName]];Print["VERSION ",$Version," MASTER ",$ProcessID];
+Clear[decExact];decExact[s_String]:=Module[{p=StringSplit[s,RegularExpression["[eE]"]],b,x=0,sgn=1,dp},b=First[p];If[Length[p]>1,x=ToExpression[p[[2]]]];If[StringStartsQ[b,"-"],sgn=-1;b=StringDrop[b,1]];dp=If[StringContainsQ[b,"."],StringLength[Last[StringSplit[b,"."]]],0];sgn FromDigits[StringReplace[b,"."->""]]10^(x-dp)];
+Clear[calc];calc[rec_]:=Module[{nn=rec["n"],u=ToExpression[rec["u"]],kap,ll,ww,rho,e,a,det,M,mout,m0,K,mult,h0,hs,ht,h,hH,A,B,D,idx1,idxH,root1,rootH,lo,hi,budgetOK,NN,neighbor,upper,margin,fd,exactOK,AOK,BOK,inv,Tmat,invnorm},
+ kap=8nn/3;ll=(11/10)Binomial[nn,2]kap^3/(8nn^2);ww=u/(1+2u)+ll u^6;rho=1-2ww;e=kap u^3;a=(2u)^nn;det=(1-e)^(nn-1)(1+(nn-1)e);M=a rho^nn;mout=(2ww)^nn;m0=(2u/(1+2u))^nn;K=a/(2ww)^(nn-2);mult=3^nn;h0=e^2/(K nn rho^(nn-1));
+ h=hs/.FindRoot[K Sum[Binomial[nn,j]rho^(nn-j)hs^j,{j,1,nn}]==e^2,{hs,N[h0,210]},WorkingPrecision->210,AccuracyGoal->180,PrecisionGoal->180];
+ hH=ht/.FindRoot[K Sum[Binomial[nn,j]rho^(nn-j)ht^j,{j,1,nn}]==mult e^2,{ht,N[mult h0,210]},WorkingPrecision->210,AccuracyGoal->180,PrecisionGoal->180];
+ A=2h NIntegrate[e-(K/e)Sum[Binomial[nn,j]rho^(nn-j)(h zz)^j,{j,1,nn}],{zz,0,1},WorkingPrecision->170,AccuracyGoal->130,PrecisionGoal->130];
+ B=Binomial[nn,2]2A(2ww)^(nn-2)+If[nn>=3,8Binomial[nn,3](e+hH)^3(2ww)^(nn-3),0];D=mout-M;
+ idx1=FromDigits[StringDrop[rec["roots"]["hstar"]["lower_hex"],2],16];idxH=FromDigits[StringDrop[rec["roots"]["hH"]["lower_hex"],2],16];
+ root1=TrueQ[(ww-e)idx1/2^400<=h<=(ww-e)(idx1+1)/2^400];rootH=TrueQ[(ww-e)idxH/2^400<=hH<=(ww-e)(idxH+1)/2^400];
+ AOK=TrueQ[decExact[rec["A_bounds"][[1]]]<=A<=decExact[rec["A_bounds"][[2]]]];BOK=TrueQ[decExact[rec["B_bounds"][[1]]]<=B<=decExact[rec["B_bounds"][[2]]]];
+ lo=decExact[rec["D_minus_B"][[1]]];hi=decExact[rec["D_minus_B"][[2]]];budgetOK=TrueQ[lo<=D-B<=hi];
+ NN=Ceiling[u^(-7)];neighbor=Sum[Binomial[nn,j]Binomial[j,j/2]e^j(2ww)^(nn-j),{j,2,nn,2}];upper=(M+neighbor)/(2(rho+ww))^nn;margin=u^nn-upper;fd=((2NN-5)/(2NN))^nn M/(det-M)-m0/(1-m0);
+ Tmat=(1-e)IdentityMatrix[nn]+e ConstantArray[1,{nn,nn}];inv=(IdentityMatrix[nn]-(e/(1+(nn-1)e))ConstantArray[1,{nn,nn}])/(1-e);invnorm=Max[Total[Abs[#]]& /@ inv];
+ exactOK=And[Tmat.inv==IdentityMatrix[nn],invnorm==ToExpression[rec["center"]["inverse_operator_norm"]],invnorm(rho+ww)<NN,NN==ToExpression[rec["N"]],M==ToExpression[rec["exact_parameters"]["M"]],2M>mout,neighbor==ToExpression[rec["center"]["neighbor_outer_bound"]],margin>0,margin==ToExpression[rec["center"]["strict_margin"]],fd>0,fd==ToExpression[rec["finite_halo_minus_Ln"]["exact_fraction"]]];
+ {nn,root1,rootH,AOK,BOK,budgetOK,exactOK,$ProcessID}];
+raw=Import["results/certificates.json","RawJSON"];records=Map[Last[#["attempts"]]&,raw["cases"]];Print["INPUT ",Length[records]];
+LaunchKernels[15];pids=ParallelEvaluate[$ProcessID];DistributeDefinitions[calc,decExact];results=ParallelMap[calc,records,Method->"FinestGrained"];
+summary={"kernelCount"->Length[pids],"pids"->pids,"caseCount"->Length[results],"root1Pass"->Count[results[[All,2]],True],"rootHPass"->Count[results[[All,3]],True],"areaPass"->Count[results[[All,4]],True],"badBoundPass"->Count[results[[All,5]],True],"budgetPass"->Count[results[[All,6]],True],"exactPass"->Count[results[[All,7]],True],"results"->results,"numericNotIntervalProof"->True};
+Export["results/wolfram-crosscheck.txt",ToString[InputForm[summary]],"Text"];Print["SUMMARY ",InputForm[summary]];CloseKernels[];

@@ -1,272 +1,251 @@
-\subsection{孔形重配与更早尺度的正差}
+\subsection{一般矩阵孔形重配与端点下界}
+
+
+固定 \(n\ge2\) 及任意实矩阵 \(B=(b_{ij})\)，只要求 \(b_{ii}=0\)。不要求对称、符号相同或相邻边权相等。记 \[
+t=u^n,\quad a=(2u)^n,\quad v=2u,\quad
+g=\frac1{1+2u},\quad \delta_*=ug,\quad m_*=ag^n,
+\] \[
+T_u=I+u^3B,\qquad d_u=\det T_u,
+\] 以及 \begin{equation}\label{eq:matrix-1-1}
+S_2(B)=\sum_{i<j}b_{ij}b_{ji},
+\qquad
+S_3(B)=\sum_{\substack{i<j\\b_{ij}b_{ji}>0}}
+|b_{ij}b_{ji}|(|b_{ij}|+|b_{ji}|).
+\end{equation}
+
+实际孔允许自由选择在外包立方体中的可测形状。另允许实际质量根相对见证基准偏移：固定 \(\zeta\in\mathbb R\)，取有界标量 \(\Lambda(u)\)，令 \begin{equation}\label{eq:matrix-1-2}
+w=\delta_*+\Lambda(u)u^6,\qquad
+\rho=1-2w,\qquad
+M=a(\rho+\zeta u^6)^n.
+\end{equation} 对实际孔点始终使用半径 \begin{equation}\label{eq:matrix-1-3}
+r(x)=\rho+w-\|x\|_\infty.
+\end{equation} 后文精确定义哪些孔形可由外包上界验证该见证。
+
+\begin{proposition}[共同见证安全类的可实现变分值]\label{prop:matrix-variational} 对任意固定 \(B,\zeta\)，存在真实有限输入序列，使 \[
+\boxed{\quad
+\lim_{t\downarrow0}
+\frac{\text{该构造的 halo 比值}-L_n(t)}{av^6}
+=\mathcal V_n(B,\zeta),
+\quad}
+\] \begin{equation}\label{eq:matrix-1-4}
+\boxed{\quad
+\mathcal V_n(B,\zeta)=
+\frac1{64}\left[
+S_2(B)-\frac{S_3(B)}{8n}-n|\zeta|
+\right].
+\quad}
+\end{equation} 具体可取 \begin{equation}\label{eq:matrix-1-5}
+\Lambda(u)=\frac{S_3(B)}{16n^2}+\max(\zeta,0)+\sqrt u.
+\end{equation}
+
+此外，在下文的共同见证安全选择类内，任意有界 \(\Lambda(u)\) 的可行孔形族，其归一化比值上极限都不超过 \eqref{eq:matrix-1-4}。因此 \eqref{eq:matrix-1-4} 是这个明确局部构造类的精确变分值，既有可实现下界，也有类内必要预算。
+
+矩阵与质量根联合优化结果为 \begin{equation}\label{eq:matrix-1-6}
+\boxed{\quad
+\sup_{B:\,b_{ii}=0,\ \zeta\in\mathbb R}
+\mathcal V_n(B,\zeta)
+=\binom n2\frac{n^2}{27}.
+\quad}
+\end{equation} 等号要求 \(\zeta=0\)，且每一无序对满足 \begin{equation}\label{eq:matrix-1-7}
+b_{ij}=b_{ji}=\pm\frac{8n}{3}.
+\end{equation} 各对的共同符号可独立选择；全正的对称矩阵是其中一种。类内非对称边权、反号互边及质量根偏移不能提高该值。
+
+此处的类内上极限仅针对固定的零对角矩阵方向 $B$、$u^3B$ 扰动、外包半宽 $w=\delta_*+O(u^6)$、质量根偏移 $\zeta u^6$，并要求 $A_u\subset\mathcal G_\zeta$；不构成 $C_n$ 的全输入上界。
+\end{proposition}
+
+\begin{proof}[命题~\ref{prop:matrix-variational} 的证明]
+\leavevmode
+\paragraph{一般矩阵的完整局部几何}
+
+令 \[
+E_B=\max_i\sum_{j\ne i}|b_{ij}|,\qquad \epsilon_B=E_Bu^3.
+\] 先设 \(E_B>0\)。固定 \(B\) 且 \(w/u\to1\) 时，充分小 \(u\) 自动满足 \begin{equation}\label{eq:matrix-2-1}
+\epsilon_B<1/2,\quad 2w<1-\epsilon_B,\quad
+\rho>2w+\epsilon_B,\quad d_u>M>0.
+\end{equation} 所以外包孔 \(T_uk+[-w,w]^n\) 内部互不交，且所选见证完整包含自身外包立方体。
+
+对 \(x\in C_w=[-w,w]^n\)，写 \[
+h_{i,\sigma}=w-\sigma x_i,\qquad
+s=w-\|x\|_\infty,\qquad r=\rho+s.
+\] 有 \(r+w=1-\|x\|_\infty\)。
+
+若 \(\|k\|_\infty\ge2\)，由 \[
+\|T_uk\|_\infty\ge(1-\epsilon_B)\|k\|_\infty
+\] 得到 \(\|T_uk-x\|_\infty>r+w\)，故所有大整数指数排除。 仅需考虑 \(k\in\{-1,0,1\}^n\)。 单非零坐标指数在其主坐标中心值恰为 \(\pm1\)，至多边界接触。
+
+对非零坐标数 \(q(k)\ge2\) 的指数，定义 \[
+c_i(k)=-k_i\sum_{j\ne i}b_{ij}k_j,\qquad i\in\operatorname{supp}k.
+\] 则 \[
+k_i(T_uk)_i=1-u^3c_i(k),\qquad |c_i(k)|\le E_B.
+\] 如果 \(c_i(k)\le0\)，该坐标不产生正交长。否则其精确交长是 \begin{equation}\label{eq:matrix-2-2}
+\ell_i(k)=\bigl(u^3c_i(k)+s-h_{i,k_i}\bigr)_+\le\epsilon_B.
+\end{equation} 对 \(k_i=0\) 的坐标，中心偏移至多 \(\epsilon_B\)，由 \(\rho>2w+\epsilon_B\) 保证整个孔宽 \(2w\) 包含于见证。因此额外外包交量归一化为 \begin{equation}\label{eq:matrix-2-3}
+R_B(x)=
+\sum_{\substack{k\in\{-1,0,1\}^n\\q(k)\ge2}}
+(2w)^{2-q(k)}\prod_{i\in\operatorname{supp}k}\ell_i(k).
+\end{equation} 这包括所有有三个及以上非零坐标的指数。
+
+\paragraph{有符号互边与两坐标角}
+
+当 \(k=\sigma_i e_i+\sigma_j e_j\) 时，其中 \(e_i,e_j\) 为标准基向量， \[
+c_i=-\sigma_i\sigma_jb_{ij},\qquad
+c_j=-\sigma_i\sigma_jb_{ji}.
+\] 两者均正，当且仅当 \(b_{ij}b_{ji}>0\) 且 \(\sigma_i\sigma_j=-\operatorname{sgn}b_{ij}\)。 因此正乘积互边恰有两个相反的短角，收缩量分别为 \begin{equation}\label{eq:matrix-2-4}
+p_{ij}=|b_{ij}|u^3,\qquad q_{ij}=|b_{ji}|u^3.
+\end{equation} 互边反号或乘积为零时，没有两坐标正交量。它们仍可能参与高阶指数，但这些将在三面层内统一处理。
+
+\paragraph{安全选择类与质量可行性的精确含义}
+
+设 \(K=a/(2w)^{n-2}\)，定义 \[
+F_\zeta(s)=K[(\rho+s)^n-(\rho+\zeta u^6)^n],
+\] \begin{equation}\label{eq:matrix-3-1}
+\mathcal G_\zeta=
+\{x\in C_w:s>0,\ R_B(x)<F_\zeta(s)\}.
+\end{equation} 本稿的安全选择类就是所有 \begin{equation}\label{eq:matrix-3-2}
+A_u\subset\mathcal G_\zeta,\qquad |A_u|=M,
+\end{equation} 并按晶格 \(T_u\mathbb Z^n\) 周期复制的实际孔，记
+\begin{equation}\label{eq:matrix-3-5}
+D_{A_u}=\bigcup_{k\in\mathbb Z^n}(T_uk+A_u),\qquad E_{A_u}=\mathbb R^n\setminus D_{A_u}.
+\end{equation}
+
+这个定义先于实际孔，不依赖未知的 \(A_u\)。对任意满足 \eqref{eq:matrix-3-2} 的选择，所选半径完整包含本胞实际质量 \(M\)，邻胞实际孔又都包含于外包孔。因此 \begin{equation}\label{eq:matrix-3-3}
+|D_{A_u}\cap Q(x,r(x))|
+\le M+(2w)^{n-2}R_B(x)
+<a(\rho+s)^n=t(2r(x))^n.
+\end{equation} 每个实际孔点均有严格见证；输入点由密度定理进入 halo，故周期 halo 几乎处处为全空间。
+
+记潜在坏量 \[
+b_\zeta=|C_w\setminus\mathcal G_\zeta|,
+\qquad
+D_{\rm avail}=(2w)^n-M.
+\] 由于 Lebesgue 测度无原子，安全选择 \eqref{eq:matrix-3-2} 存在当且仅当 \begin{equation}\label{eq:matrix-3-4}
+\boxed{\quad D_{\rm avail}\ge b_\zeta.\quad}
+\end{equation} 充分性可由 \(\mathcal G_\zeta\) 的 \(x_1\) 坐标分位数选择恰好质量 \(M\) 的 Borel 子集。由此获得的是实际孔形，不是假设的删除量。
+
+\paragraph{潜在坏量的精确首项}
+
+关键估计为 \begin{equation}\label{eq:matrix-4-1}
+\boxed{\quad
+\frac{b_\zeta}{a}=
+\left[\frac{S_3(B)}{16n}+n\max(\zeta,0)\right]u^5
++O_{n,B,\zeta,\sup|\Lambda|}(u^6).
+\quad}
+\end{equation} 本节给出上下两侧控制；因此它不只是一个足够删除的保守上界。
+
+\paragraph{所有高支撑与多角交叠位于三面层}
+
+先取 \(\zeta=0\)，令 \(F_0(h_H)=H\epsilon_B^2\)，其中 \(H=3^n\)。式 \eqref{eq:matrix-2-3} 的每项至多 \[
+\epsilon_B^2(\epsilon_B/(2w))^{q(k)-2}\le\epsilon_B^2,
+\] 所以 \(R_B\le H\epsilon_B^2\)。在 \(\zeta=0\) 时，已局部化的孔内坏点满足 \(s\le h_H=O_{n,B}(u^4)\)。以下本小节中的深度、面缺口及三面层包含关系均只在已局部化的 \(\zeta=0\) 坏点上使用。充分小 \(u\) 时， \[
+F_0(w-\epsilon_B)>H\epsilon_B^2,\qquad
+\ell_H:=\epsilon_B+h_H<w.
+\] 在上述 \(\zeta=0\) 的已局部化坏点上，任何进入的邻孔所用符号面缺口都小于 \(\ell_H\)。 同一坐标不可能同时有两个符号面缺口小于 \(\ell_H\)。
+
+令 \(\mathcal T\) 为至少三个不同坐标分别有某个符号面缺口小于 \(\ell_H\) 的集合。则 \begin{equation}\label{eq:matrix-4-2}
+|\mathcal T|
+\le8\binom n3\ell_H^3(2w)^{n-3}
+=O_{n,B}(a u^6)
+\end{equation} （\(n=2\) 时为空）。
+
+在上述 \(\zeta=0\) 的已局部化坏点上，每个 \(q(k)\ge3\) 的进入邻孔都强制至少三个这样的面缺口，因此全部位于 \(\mathcal T\)。两条不同两坐标短角也必涉及至少三个坐标，除非是同对坐标的相反方向；后者已由单坐标符号互斥排除。所以所有多角交叠同样在 \(\mathcal T\)。
+
+在 \(\mathcal T\) 外的坏点，恰有一条正乘积互边的一个短角进入；其最小面也必来自这两个坐标，否则最小面与该角再组成三个近面。这证明所有非主型几何只给 \eqref{eq:matrix-4-2} 的误差。
+
+\paragraph{不等收缩的精确二维积分}
+
+固定正乘积对 \(i<j\)，简记 \(p=p_{ij},q=q_{ij}>0\)。 令 \(F_0(h)=pq\)。对其一个有向角，两个相关缺口为 \(\alpha,\beta\)。在 \(\alpha\le\beta,s=\alpha\) 分支， \[
+P=p(q+\alpha-\beta),\qquad
+\alpha\le\beta\le\alpha+q-F_0(\alpha)/p.
+\] 在相反排序，宽度为 \(p-F_0(\beta)/q\)。一个有向角的完整二维面积为 \begin{equation}\label{eq:matrix-4-3}
+\mathscr A_{ij}
+=\int_0^h[q-F_0(z)/p]\,dz
++\int_0^h[p-F_0(z)/q]\,dz.
+\end{equation} 这里 \(h\sim pq/(nK\rho^{n-1})=\Theta(u^4)\)。 直接换元或精确原函数给 \begin{equation}\label{eq:matrix-4-4}
+\mathscr A_{ij}
+=\frac{pq(p+q)}{2nK\rho^{n-1}}[1+O_{n,B}(u^4)].
+\end{equation} 乘上其他坐标全宽和两个方向后， \begin{equation}\label{eq:matrix-4-5}
+\frac{2(2w)^{n-2}\mathscr A_{ij}}a
+=\frac{|b_{ij}b_{ji}|(|b_{ij}|+|b_{ji}|)}{16n}
+u^5[1+O_{n,B}(u)].
+\end{equation}
+
+为核对下界方向：把 \eqref{eq:matrix-4-3} 的平面区域与其他坐标全区间作直积，记为角模型区域。它们在 \(\mathcal T\) 外互不重叠，且与真正坏点集合在 \(\mathcal T\) 外完全相同。最小面落在其他坐标的点、不同角模型区域的重叠、高支撑邻孔都在 \(\mathcal T\) 内。故真正坏量与所有角模型区域体积之和的差为 \(O_{n,B}(|\mathcal T|)\)。结合 \eqref{eq:matrix-4-2}、\eqref{eq:matrix-4-5}，得到 \begin{equation}\label{eq:matrix-4-6}
+b_0/a=\frac{S_3(B)}{16n}u^5+O_{n,B}(u^6).
+\end{equation} 这也涵盖 \(S_3=0\) 的情形：此时坏量全部在三面层中。
+
+\paragraph{实际质量根偏移}
+
+令 \(\tau=\zeta u^6\)。若 \(\zeta>0\)，所有 \(s\le\tau\) 都有 \(F_\zeta(s)\le0\)，因而是潜在坏点。完整边界面层体积为 \begin{equation}\label{eq:matrix-4-7}
+(2w)^n-[2(w-\tau)]^n
+=n\zeta\,a u^5+O_{n,B,\zeta}(a u^6).
+\end{equation} \(\zeta\le0\) 时没有这个面层。
+
+其余角面积主项不变。因为 \[
+F_0(s)-F_\zeta(s)=
+K[(\rho+\tau)^n-\rho^n]=O_{n,B,\zeta}(u^8),
+\] 因 $F_0'\ge c u^2$，坏点深度至多 $h_H+C u^6$；将三面层宽改为 $\epsilon_B+h_H+C u^6$，仍有 $|\mathcal T|=O(a u^6)$。 每个正乘积对的临界根移动 \(O(u^6)\)，积分宽度移动 \(O(u^5)\)，而角深度为 \(O(u^4)\)、角宽度为 \(O(u^3)\)。 故每个二维角面积只改变 \(O(u^9)\)，乘上其他宽度后为 \(O(a u^7)\)。正质量面层与角模型区域的重叠也是这个量级。 所有三面层误差仍为 \(O(a u^6)\)。由此 \eqref{eq:matrix-4-6}、\eqref{eq:matrix-4-7} 给出 \eqref{eq:matrix-4-1}。
+
+若 \(E_B=0\)，则 \(R_B=0\)，潜在坏点恰为上述正质量面层及零测边界，\eqref{eq:matrix-4-1} 直接成立。
+
+\paragraph{可行预算、类内必要性和实际实现}
+
+对有界 \(\Lambda,\zeta\)，有 \begin{equation}\label{eq:matrix-5-1}
+\frac{D_{\rm avail}}a
+=(g+\Lambda u^5)^n-[g+(\zeta-2\Lambda)u^6]^n
+=n\Lambda u^5+O_{n,\sup|\Lambda|,\zeta}(u^6).
+\end{equation} 由 \eqref{eq:matrix-3-4}、\eqref{eq:matrix-4-1}，存在依赖于固定参数界的常数 \(C\)，使任何可行族都满足 \begin{equation}\label{eq:matrix-5-2}
+\Lambda(u)\ge
+\frac{S_3(B)}{16n^2}+\max(\zeta,0)-Cu.
+\end{equation} 这是本构造类内的必要约束。
+
+选择 \eqref{eq:matrix-1-5}，则 \[
+D_{\rm avail}-b_\zeta
+=na\,u^{11/2}[1+O_{n,B,\zeta}(\sqrt u)]>0
+\] 对充分小 \(u\) 成立。因此可用坐标分位数在 \(\mathcal G_\zeta\) 中选择实际孔 \(A_u\)，其质量恰为 \(M\)，随后每个实际孔点由 \eqref{eq:matrix-3-3} 严格捕获。删除只改善邻孔上界；集合定义不存在循环。
+
+周期比值精确为 \(d_u/(d_u-M)\)。使用 \(\Omega_N=T_u([-N,N]^n)\)、\(E_N=E_{A_u}\cap\Omega_N\)，保留所有边界切孔，精确有 \[
+|E_N|=(2N)^n(d_u-M).
+\] 充分小 \(u\) 时 \(\|T_u^{-1}\|_{\infty\to\infty}<2\)， \(w+r(x)\le1\)。所以索引 \(\|k\|_\infty\le N-3\) 的全部实际孔及其所选见证留在 \(\Omega_N\)。对整数 \(N\ge4\)， \begin{equation}\label{eq:matrix-5-3}
+\frac{|\Hc(1-t;E_N)|}{|E_N|}
+\ge\frac{d_u}{d_u-M}-O_n(M/N).
+\end{equation} 取 \(N=\lceil u^{-7}\rceil\)，误差为 \(o(av^6)\)。 这里每个保留见证原本严格成立，不以等号极限冒充严格水平。
+
+还有相反方向的精确上界：\(\Omega_N\) 是凸体，任何盒外点可用过该点的分离超平面将整个 \(\Omega_N\) 放在一侧；以该点为中心的立方体至多一半体积落在这一侧。因此 \(1-t>1/2\) 时有限 halo 位于 \(\Omega_N\)，给 \[
+\frac{|\Hc(1-t;E_N)|}{|E_N|}
+\le\frac{|\Omega_N|}{|E_N|}
+=\frac{d_u}{d_u-M}.
+\] 与 \eqref{eq:matrix-5-3} 配合，说明所构造实际有限输入在 \(av^6\) 精度下确实有相同极限，而不只是一个较弱的下界。
+
+\paragraph{一般矩阵与标量质量的变分值}
+
+由于 \(\operatorname{tr}B=0\)， \begin{equation}\label{eq:matrix-6-1}
+d_u=1-S_2(B)u^6+O_{n,B}(u^9).
+\end{equation} 实际周期比值与基线精确相减： \[
+\frac{d_u}{d_u-M}-L_n(t)
+=\frac{M-d_um_*}{(d_u-M)(1-m_*)}.
+\] 分母趋于 \(1\)，且对有界 \(\Lambda\) \begin{equation}\label{eq:matrix-6-2}
+\frac{M-d_um_*}{a}
+=[S_2(B)+n\zeta-2n\Lambda(u)]u^6+O(u^7).
+\end{equation} 选择 \eqref{eq:matrix-1-5} 就得到 \eqref{eq:matrix-1-4}。反过来，任意可行安全选择由 \eqref{eq:matrix-5-2}、\eqref{eq:matrix-6-2} 给归一化比值上极限至多 \[
+\frac{S_2-S_3/(8n)+n\zeta-2n\max(\zeta,0)}{64}
+=\mathcal V_n(B,\zeta).
+\] 所以本局部构造类的必要预算和可实现值匹配。有限输入使用 \eqref{eq:matrix-5-3} 的准确截断。
+
+\paragraph{泛函的精确极大：非对称边权不能增强}
+
+质量根偏移贡献为 \(-n|\zeta|/64\)，故其唯一最优值是 \(\zeta=0\)。
+
+对每个正乘积互边，设 \(p=|b_{ij}|,q=|b_{ji}|>0\)。其泛函贡献是 \[
+\frac{pq}{64}\left(1-\frac{p+q}{8n}\right).
+\] 设 \(p=rz,q=r/z\)，\(r,z>0\)。固定 \(z\) 后最优 \[
+r=\frac{16n}{3(z+z^{-1})},
+\] 其最大贡献为 \[
+\frac{4n^2}{27(z+z^{-1})^2}\le\frac{n^2}{27},
+\] 且等号仅在 \(z=1,\ p=q=8n/3\)。 这也直接由 \(p+q\ge2\sqrt{pq}\) 得到。
+
+反号互边贡献仅为 \(b_{ij}b_{ji}/64<0\)，没有正乘积删角项；乘积为零则贡献为零。所有无序对在首项泛函中独立相加，故联合极大正是 \eqref{eq:matrix-1-6}，等号条件为 \eqref{eq:matrix-1-7}。 高支撑交叠可依赖全部边权及符号，但其体积误差在重配后只影响 \(o(av^6)\)，不能用来改变此首项可行泛函。
+\end{proof}
 
 \begin{proof}[命题~\ref{prop:nonexact} 的证明]
-记
-\[
-t=u^n,\qquad a=(2u)^n,\qquad v=2u,\qquad
-\delta_*=\frac{u}{1+2u},\quad r_*=\frac1{1+2u},\quad
-m_*=(2\delta_*)^n=a r_*^n.
-\]
-固定 \(n\ge2,\kappa>0\)，取
-\[
-e=\kappa u^3,\qquad
-T_e=\begin{pmatrix}1&e\\e&1\end{pmatrix}\oplus I_{n-2},
-\qquad d=\det T_e=1-e^2.
-\]
-记 \(b_j\) 为 \(T_e\) 的第 \(j\) 列。
-
-\paragraph{外包立方体的几何预算引理}
-
-本节的外半宽 \(w\) 独立于 \(u\)；不假设 \(w=u(1-2w)\)。设
-\begin{equation}\label{eq:reshape-2-1}
-C_w=[-w,w]^n,\qquad \rho=1-2w,\qquad
-M=a\rho^n,\qquad m_{\rm out}=(2w)^n.
-\end{equation}
-\(m_{\rm out}\) 是外包体积，\(M\) 是拟保留的实际孔质量，两者分别使用。
-
-取守卫
-\begin{equation}\label{eq:reshape-2-2}
-0<w<1/4,\quad 0<e<w/2,\quad 2w<1-e,\quad d>M>0.
-\end{equation}
-定义
-\begin{equation}\label{eq:reshape-2-3}
-K=\frac{a}{(2w)^{n-2}},\qquad
-F(h)=K[(\rho+h)^n-\rho^n],\qquad
-F(h_*)=e^2,
-\end{equation}
-并要求
-\begin{equation}\label{eq:reshape-2-4}
-F(w-e)>2e^2.
-\end{equation}
-因此 \(h_*<w-e\)。
-
-对 \(x\in C_w\)，写
-\[
-h_{i,\pm}=w\mp x_i,\qquad
-s=w-\|x\|_\infty,\qquad r(x)=\rho+s.
-\]
-有 \(r\ge\rho>2w\) 及 \(r+w=1-\|x\|_\infty\)。令
-\begin{equation}\label{eq:reshape-2-5}
-P_+=(e+s-h_{1,+})_+(e+s-h_{2,-})_+,\qquad
-P_-=(e+s-h_{1,-})_+(e+s-h_{2,+})_+.
-\end{equation}
-定义一个先于实际孔、完全由外包参数决定的集合：
-\begin{equation}\label{eq:reshape-2-6}
-\mathcal G=
-\{x\in C_w:s>0,\ P_+(x)+P_-(x)<F(s)\}.
-\end{equation}
-
-\paragraph{此集合不依赖尚未选择的实际孔}
-
-若 \(A\subset C_w\) 是任意可测集且 \(|A|=M\)，周期缺陷为
-\(D_A=\bigcup_{k\in\mathbb Z^n}(T_ek+A)\)。对 \(x\in A\)，半径 \(r(x)\) 完整包含本胞实际孔 \(A\)，质量恰为 \(M\)。
-
-对其他孔使用外包体积上界。只依赖
-\(\rho=1-2w\) 的几何枚举给出：
-
-\begin{itemize}
-\item \(\|k\|_\infty\ge2\) 时，由
-\end{itemize}
-  \(\|T_ek\|_\infty\ge(1-e)\|k\|_\infty\) 及
-  \(r+w=1-\|x\|_\infty\) 排除；
-\begin{itemize}
-\item 任何第三及以后坐标非零的指数，由该整数坐标排除；
-\item 四个轴邻孔至多边界接触，两个长对角在外；
-\item 仅短对角 \(\pm(b_1-b_2)\) 可能进入，外包交量精确为
-\end{itemize}
-  \((2w)^{n-2}P_\pm\)。各关键交长不大于 \(e<2w\)。
-
-所以不论实际孔如何选，
-\begin{equation}\label{eq:reshape-2-7}
-|D_A\cap Q(x,r(x))|
-\le M+(2w)^{n-2}(P_++P_-).
-\end{equation}
-若还满足 \(A\subset\mathcal G\)，则
-\begin{equation}\label{eq:reshape-2-8}
-|D_A\cap Q(x,r(x))|
-<a\rho^n+a[(\rho+s)^n-\rho^n]
-=t(2r(x))^n.
-\end{equation}
-这是每个实际孔点的真实严格见证。自身质量用实际 \(M\)，邻孔仅用外包上界，没有以外包自身质量替代 \(M\)，也没有从尚未构造的 \(A\) 反向定义 \(\mathcal G\)。
-
-\paragraph{潜在坏点的外包体积上界}
-
-令
-\[
-A_{\rm area}=2\int_0^{h_*}\left[e-\frac{F(h)}e\right]dh
-\]
-并定义
-\begin{equation}\label{eq:reshape-2-9}
-B(w,u,e)=2A_{\rm area}(2w)^{n-2}
-+\begin{cases}
-0,&n=2,\\
-4(n-2)h_*(e+h_*)^2(2w)^{n-3},&n\ge3.
-\end{cases}
-\end{equation}
-则
-\begin{equation}\label{eq:reshape-2-10}
-|C_w\setminus\mathcal G|\le B(w,u,e).
-\end{equation}
-
-为明确新外半宽下的推理：若两个 \(P_\pm\) 同时为正，则
-\(s>w-e\)，由 \eqref{eq:reshape-2-4} 有 \(F(s)>2e^2\ge P_++P_-\)，故仍是好点。
-在孔内部的坏点因而只有一个正短角，且 \(F(s)\le e^2\)，所以
-\(s\le h_*\)。以正短角为例，令
-\(\alpha=h_{1,+},\beta=h_{2,-}\)，它们均小于 \(e+h_*<w\)。
-若最小面来自第 1 或第 2 坐标，在
-\(\alpha\le\beta,s=\alpha\) 分支有
-\[
-P_+=e(e+\alpha-\beta),\qquad
-\alpha\le\beta\le\alpha+e-F(\alpha)/e.
-\]
-两个排序的总面积为至多 \(A_{\rm area}\)。两个短角乘上其他坐标全宽，给 \eqref{eq:reshape-2-9} 第一项。
-若最小面来自其他坐标，则该面厚度至多 \(h_*\)，角的两坐标各在长 \(e+h_*\) 的区间内；两个短角与 \(2(n-2)\) 个其他面取联合上界，给第二项。边界 \(s=0\) 为零测集。以上没有使用 \(m_{\rm out}=a\rho^n\)。
-
-\paragraph{删除与质量选择：严格自洽的实际集合}
-
-定义可用删除预算
-\[
-D_{\rm avail}=m_{\rm out}-M=(2w)^n-a(1-2w)^n.
-\]
-若满足
-\begin{equation}\label{eq:reshape-3-1}
- D_{\rm avail}\ge B(w,u,e),
-\end{equation}
-则由 \eqref{eq:reshape-2-10}
-\[
-|\mathcal G|\ge m_{\rm out}-B\ge M.
-\]
-由于 Lebesgue 测度无原子，可以在 \(\mathcal G\) 中选择恰有质量 \(M\) 的 Borel 子集 \(A\)。
-一种明确选择是取坐标分位数：函数
-\[
-c\longmapsto|\mathcal G\cap\{x_1<c\}|
-\]
-连续，取到从 \(0\) 至 \(|\mathcal G|\) 的全部中间值，选择等于 \(M\) 的阈值即可。这里 \(\mathcal G\) 由连续/分片多项式严格不等式定义，因而 Borel；所有坐标超平面零测，保证分位函数连续。
-
-这个选择等价于：删去全部潜在坏点，再按需要补删一部分好点，直至质量恰为 \(M\)。删除只减少邻胞缺陷；\eqref{eq:reshape-2-7} 对任意这样的选择均成立。因此 \eqref{eq:reshape-2-8} 随后验证每个 \(x\in A\)，没有固定点假设或集合定义循环。
-
-由 \(2w<1-e\) 以及 \(\|T_ek\|_\infty\ge(1-e)\|k\|_\infty\)，
-不同晶格指标的外包孔互不相交，故实际孔的平移也互不相交。
-令 \(E_A=\mathbb R^n\setminus D_A\)。每个实际孔点均有上述严格见证，而 \(E_A\) 几乎处处由密度定理进入自身 halo。因此整个实际周期 halo 几乎处处为全空间。每胞体积为 \(d\)，每胞实际缺陷量是 \(M\)，得到辅助周期比值
-\begin{equation}\label{eq:reshape-3-2}
-\mathcal P_t(D_A)=\frac d{d-M}.
-\end{equation}
-
-\paragraph{选择新的外半宽，使所有守卫和预算成立}
-
-令
-\begin{equation}\label{eq:reshape-4-1}
-\Lambda_0=\frac{\kappa^3}{8n^2},\qquad
-\Lambda(u)=\Lambda_0(1+\sqrt u),\qquad
-w=\delta_*+\Lambda(u)u^6,\qquad \rho=1-2w.
-\end{equation}
-以下均为固定 \(n,\kappa\)、\(u\downarrow0\)。
-有 \(w/u\to1\)、\(\rho\to1\)、\(e/w=O(u^2)\)，所以 \eqref{eq:reshape-2-2} 在充分小 \(u\) 成立。
-并且
-\[
-F'(0)=nK\rho^{n-1}=4nu^2(1+O_{n,\kappa}(u)).
-\]
-故
-\[
-F(w-e)\sim4nu^3,\qquad e^2=\kappa^2u^6,
-\]
-所以新外半宽下的双角守卫 \eqref{eq:reshape-2-4} 也成立。
-
-记 \(g=r_*=(1+2u)^{-1}\)。则精确有
-\[
-w/u=g+\Lambda(u)u^5,\qquad
-\rho=g-2\Lambda(u)u^6.
-\]
-在有界的 \(\Lambda\) 范围内作二项式展开：
-\begin{equation}\label{eq:reshape-4-2}
-\begin{aligned}
-\frac{D_{\rm avail}}a
-&=(g+\Lambda u^5)^n-(g-2\Lambda u^6)^n\\
-&=n\Lambda g^{n-2}u^5+O_{n,\kappa}(u^{10})\\
-&=\frac{\kappa^3}{8n}u^5
-  [1+\sqrt u+O_{n,\kappa}(u)].
-\end{aligned}
-\end{equation}
-中间式用 \(g(1+2u)=1\)。这保持了外半宽与实际质量的区别。
-
-另一方面，由 \(F(h_*)=e^2\) 及 \(h_*=o(1)\)，
-\begin{equation}\label{eq:reshape-4-3}
-h_*=\frac{e^2}{nK\rho^{n-1}}[1+O_{n,\kappa}(h_*)]
-=\frac{\kappa^2}{4n}u^4[1+O_{n,\kappa}(u)].
-\end{equation}
-令 \(h=h_*\tau\) 并利用 \(F(h_*\tau)/e^2=\tau+O(h_*)\) 一致成立，得
-\[
-A_{\rm area}
-=\frac{e^3}{nK\rho^{n-1}}[1+O_{n,\kappa}(h_*)].
-\]
-因此第一项归一化为
-\[
-\frac{2A_{\rm area}(2w)^{n-2}}a
-=\frac{\kappa^3}{8n}u^5
- \frac{(w/u)^{2n-4}}{\rho^{n-1}}
- [1+O_{n,\kappa}(u^4)]
-=\frac{\kappa^3}{8n}u^5[1+O_{n,\kappa}(u)].
-\]
-额外面项除以 \(a\) 为 \(O_{n,\kappa}(u^7)\)。合计
-\begin{equation}\label{eq:reshape-4-4}
-\frac Ba=\frac{\kappa^3}{8n}u^5[1+O_{n,\kappa}(u)].
-\end{equation}
-将 \eqref{eq:reshape-4-2}、\eqref{eq:reshape-4-4} 相减：
-\begin{equation}\label{eq:reshape-4-5}
-D_{\rm avail}-B
-=\frac{\kappa^3}{8n}a\,u^{11/2}
-\bigl[1+O_{n,\kappa}(\sqrt u)\bigr]>0
-\end{equation}
-对所有充分小 \(u\) 成立。故 \eqref{eq:reshape-3-1} 可满足，实际孔 \(A\) 确实存在。
-
-也可用任意固定 \(\Lambda>\Lambda_0\)，取
-\(w=\delta_*+\Lambda u^6\)，则
-\((D_{\rm avail}-B)/(au^5)\to n\Lambda-\kappa^3/(8n)>0\)。
-这适合有限参数的精确预算证书；\(\sqrt u\) 选择使单一显式参数族达到临界常数。
-
-\paragraph{真正有限测度输入，保留 \(av^6\) 尺度}
-
-采用 \eqref{eq:reshape-4-1} 并选出 \(A\) 后，令
-\[
-\Omega_N=T_e([-N,N]^n),\qquad
-E_N=E_A\cap\Omega_N,\qquad N\in\mathbb N,\quad N\ge4.
-\]
-变换后的输入指标以整数为周期，因此保留全部边界切孔时精确有
-\begin{equation}\label{eq:reshape-5-1}
-|E_N|=(2N)^n(d-M).
-\end{equation}
-对索引 \(\|k\|_\infty\le N-3\) 的孔，每个实际点和整个所选见证都在 \(\Omega_N\)：因为 \(\|T_e^{-1}\|_{\infty\to\infty}<2\)，且外半宽加所选半径满足 \(w+r(x)\le1\)。严格见证 \eqref{eq:reshape-2-8} 因而在有限输入中原样保留。
-
-内部孔至少有 \((2N-5)^n\) 个，每个质量为实际 \(M\)，并全部捕获。密度定理再计入 \(E_N\) 自身，得到
-\begin{equation}\label{eq:reshape-5-2}
-\frac{|\Hc(1-t;E_N)|}{|E_N|}
-\ge1+\frac{(2N-5)^nM}{(2N)^n(d-M)}
-=\frac d{d-M}-O_n(M/N).
-\end{equation}
-取 \(N=\lceil u^{-7}\rceil\)，则
-\[
-O_n(M/N)=O_n(a u^7)=o(av^6).
-\]
-这给出一列实际有限正测度输入，几何见证一致有界，所有严格号原样保留。不将无限周期形式比值直接充作有限输入。
-
-\paragraph{与 \(L_n\) 精确相减和优化}
-
-由 \(M=a\rho^n\)、\(m_*=a g^n\)、\(d=1-\kappa^2u^6\)，
-\begin{equation}\label{eq:reshape-6-1}
-\frac d{d-M}-\frac1{1-m_*}
-=\frac{M-dm_*}{(d-M)(1-m_*)}.
-\end{equation}
-分母趋于 \(1\)。由 \eqref{eq:reshape-4-1}，
-\[
-\frac{M-dm_*}{a}
-=[\kappa^2-2n\Lambda(u)]u^6+O_{n,\kappa}(u^7).
-\]
-\(\Lambda(u)\to\kappa^3/(8n^2)\)，所以
-\begin{equation}\label{eq:reshape-6-2}
-\lim_{u\downarrow0}
-\frac{\frac d{d-M}-L_n(t)}{av^6}
-=\frac{\kappa^2-\kappa^3/(4n)}{64}.
-\end{equation}
-结合 \eqref{eq:reshape-5-2}，所构造的有限输入给出相同的低限下界。右端在 \(0<\kappa<4n\) 为正，其最大值在
-\(\kappa=8n/3\)，等于 \(n^2/27\)，得到命题~\ref{prop:nonexact} 的低限断言。结合定理~\ref{thm:endpoint}，当 \(n\ge2\) 时上下界同为 \(av^6\) 的量级，得到所述比较。
+由命题~\ref{prop:matrix-variational}，对每个固定无对角矩阵 $B$ 和 $\zeta$，存在真实有限输入序列达到系数 $\mathcal V_n(B,\zeta)$。因此 $C_n(1-t)$ 的归一化差值下极限至少为 $\sup_{B,\zeta}\mathcal V_n(B,\zeta)$。命题~\ref{prop:matrix-variational} 的证明已逐对优化该泛函，并由 $\zeta=0$ 及\eqref{eq:matrix-1-7} 达到。
 \end{proof}
