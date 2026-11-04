@@ -1,0 +1,8 @@
+MATLAB R2026a Update 4, Code Analyzer: no issues.
+18432 finite envelope/transfer checks PASS.
+n=1,2,3; beta=tau/n=1/4,1/2,3/4; m=2,3,4,8; epsilon=2^-k,k=1..512.
+Only invoke upper bound when C>2 and A>t^beta.
+At k=512 all 36 normalized bound pairs are within 1e-5 of 1.
+Finite checks verify formula implementation, not arbitrary-set theorem or all-parameter validity.
+Full CSV remains local; rerun dimension_grid.m to regenerate.
+Of 18432 grid points, 18288 satisfy the explicit upper-bound domain; the other 144 are marked Inf and are not upper-bound checks.

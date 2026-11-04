@@ -1,6 +1,6 @@
 \documentclass[UTF8,11pt,fontset=none]{ctexart}
 \usepackage{amsmath,amssymb,amsthm,geometry,hyperref,fontspec,xeCJK}
-\setmainfont{Times New Roman}\setCJKmainfont{Songti SC}\setCJKsansfont{Heiti SC}
+\setmainfont{Times New Roman}\setCJKmainfont[ItalicFont={Songti SC},SlantedFont={Songti SC}]{Songti SC}\setCJKsansfont{Heiti SC}
 \geometry{a4paper,left=25mm,right=25mm,top=23mm,bottom=24mm}
 \theoremstyle{definition}\newtheorem{theorem}{定理}[section]\newtheorem{lemma}[theorem]{引理}\newtheorem{corollary}[theorem]{推论}\newtheorem{proposition}[theorem]{命题}
 \theoremstyle{remark}\newtheorem{remark}[theorem]{说明}
@@ -8,11 +8,11 @@
 \title{中心方体的两种加权 Solyanik 模型\\共同中心多线性精确传递与端点结论}
 \author{基于《课题2（8.26最新扩充版）》的核验修订}\date{2026 年 11 月 5 日}
 \begin{document}\maketitle
-\begin{abstract}本文区分内禀权平均与外层加权光晕，证明共同中心多线性传递、内禀端点和外层集中模量界，并得到不等指数近端点的显式公式。对任意非零局部有限无原子 Radon 测度，通过保持旧见证的逐层比例分割，进一步确定内禀多集合模型的精确有限性阈值。小阈值指标函数极限还把固定测度的临界上侧首项归约为线性弱型范数，并给出一维无权的显式系数。\end{abstract}
+\begin{abstract}本文区分内禀权平均与外层加权光晕，证明共同中心多线性传递、内禀端点和外层集中模量界，并得到不等指数近端点的显式公式。对任意非零局部有限无原子 Radon 测度，通过保持旧见证的逐层比例分割，进一步确定内禀多集合模型的精确有限性阈值。小阈值指标函数极限还把固定测度的临界上侧首项归约为线性弱型范数，并给出一维无权的显式系数。对于与方体几何匹配的径向幂权，进一步证明外层端点的匹配尖锐首项，并在一维的明确参数范围内确定第二项。\end{abstract}
 
 \section{引言}
 中心极大算子的近单位水平集刻画了平均几乎等于一时的外溢质量。加权情形存在两个不同问题：权可以同时进入平均与测量，也可以只进入测量。Hagelstein--Parissis 的加权研究说明这种区分对于端点估计十分重要\cite{HagelsteinParissis2016}；Aldaz 的测度一致弱型理论则提供中心方体的几何工具\cite{Aldaz2020}。
-本文围绕共同中心、共同尺度下的多集合输入展开。核心是把各输入的总缺陷与公共交集联系起来，并通过有限稳定见证和同时分割证明反向传递。随后给出逐权一阶项、全权族精确公式和外层集中模量界。进一步用水位优化把等指数传递推广到不等正指数。本文不以局部模型的系数替代完整算子常数，也不声称这些推论具有未经文献比较的首创性。
+本文围绕共同中心、共同尺度下的多集合输入展开。核心是把各输入的总缺陷与公共交集联系起来，并通过有限稳定见证和同时分割证明反向传递。随后给出逐权一阶项、全权族精确公式和外层集中模量界。进一步用水位优化把等指数传递推广到不等正指数。外层幂权的精确端点则通过短尺度局部化与长尺度共同核心的分解获得。本文不以局部模型的系数替代完整算子常数，也不声称这些推论具有未经文献比较的首创性。
 \section{预备知识与主结果}
 令 $Q(x,r)=x+[-r,r]^n$，$d\mu=w\,dx$，其中 $0\le w\in L^1_{\rm loc}(\R^n)$ 且 $w\ne0$。定义
 \[
@@ -116,6 +116,7 @@ C^{(m),\rm out}_{c,n,w}(\lambda)=C^{\rm out}_{c,w}(\Phi_m(\lambda)).
 \section{内禀临界的精确阈值}
 \input{general_critical.tex}
 \input{critical_pole_extension.tex}
+\input{power_endpoint.tex}
 \section{应用与开放问题}
 由等指数传递和逐权一阶项，固定 $m$ 与 $w$ 时
 \[
@@ -125,7 +126,7 @@ C^{(m),\rm out}_{c,n,w}(\lambda)=C^{\rm out}_{c,w}(\Phi_m(\lambda)).
 若一个中心几何族对于所有局部有限测度的弱型常数统一不超过 $B$，上面的测度扰动证明还给出 $C_\mu(a)\le1+B(1-a)/a$。此推广只使用弱型性质，不要求把 Besicovitch 交叠性质当作覆盖选择定理。
 
 
-外层幂权的匹配尖锐首项、固定权二阶极限、含原子测度的更细分类，以及 restricted strong type 的完整尖锐范数仍是开放问题；势论或 PDE 应用还须独立验证共同中心方体见证接口。
+一般外层权的匹配尖锐首项、内禀固定权二阶极限、含原子测度的更细分类，以及 restricted strong type 的完整尖锐范数仍是开放问题；势论或 PDE 应用还须独立验证共同中心方体见证接口。
 \enlargethispage{2\baselineskip}
 \begin{thebibliography}{9}
 \bibitem{Aldaz2020} J. M. Aldaz, \emph{Kissing numbers and the centered maximal operator}, arXiv:1811.10478v2, 2020.
