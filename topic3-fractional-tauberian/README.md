@@ -128,4 +128,8 @@ run('verification/fixed_cube_matlab.m')
 
 第23轮证明四轴见证下任意输入的二阶近矩形刚性（误差阶sharp），给出轴/对角八点矩形模型的两分支精确阈值及任意阶显式余项。对另一smooth八点族，L形角孔输入的临界主项γ=(1+2√7)/18<3/8，严格超过该族全部矩形输入的能力；这不是全体光晕体积的改善。见 `rounds/023.md`，复现 `verification/eight_witness.wl`、`verification/eight_witness.py`（`--check-only`重验有理证书）和 `verification/eight_witness_matlab.m`。
 
-第23轮当前PDF为84页，证明独立终审、精确证书重验、编译及逐页版面检查均已完成。
+第23轮PDF为84页，证明独立终审、精确证书重验、编译及逐页版面检查均已完成。
+
+第24轮求得一般方向八点的共同尺度全体输入精确局部边界：显式十字形实现，半径/预算可任意阶递推；完整矩形基线与角孔的端点分支经独立复审。非矩形对每个固定非退化方向均有严格增益，但其阶随方向变化；全体体积三阶区间未改变。见 `rounds/024.md`；复现 `verification/direction_common_scale.wl`、`verification/direction_common_scale.py`、`verification/direction_common_scale_matlab.m`。
+
+第24轮当前PDF为88页，精确证书、独立终审、编译和逐页版面检查均已通过。

@@ -24,3 +24,5 @@
 第19轮实际补读Gardner2002出版版第3节（出版页359，PDF第6页）的凸体Brunn–Minkowski等号条件：满维凸体取等号当且仅当互为平移与正伸缩；另核对PDF第9–10页一般可测集及退化情况，正文只使用满维凸体版本。来源：[出版版PDF](https://dornsife.usc.edu/sergey-lototsky/wp-content/uploads/sites/211/2023/06/Brunn-Minkowski-AMSBulletin-2002.pdf)。未新增题录或首创声明。
 
 第23轮补充定向检索：`site:arxiv.org fractional maximal operator centered cubes sharp constants indicator extremizers stability`、`site:arxiv.org fractional maximal Tauberian halo sharp asymptotic cubes`。返回主要为Sobolev正则性、零阶弱型常数、权范数和非相关稳定性；本轮实际只阅读检索摘要，未找到可直接代入的同模型原始定理，故无新增题录，不据此声称不存在文献或本结果首创。相关公开记录如[Weigt, arXiv:2010.05561](https://arxiv.org/abs/2010.05561)已有前轮阅读范围；本轮没有把检索摘要升级为定理证据。
+
+第24轮检索 `site:arxiv.org centered fractional maximal operator halo Tauberian constants sharp asymptotic` 及 `site:arxiv.org fractional maximal characteristic functions extremizers cubes stability`。读取返回摘要：2610.41156为零阶非中心离散/遍历模型（已列题录），2609.24030为离散Lp维数无关估计，1410.3402为加权强极大，0905.3839为加权分数次范数；未据这些摘要迁移本轮有限共同尺度容量公式。无新增直接使用的文献，也不据搜索缺失主张首创。

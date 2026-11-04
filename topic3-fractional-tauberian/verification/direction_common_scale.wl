@@ -1,0 +1,23 @@
+ClearAll["Global`*"];
+a=1-b; p=2 q-q^2;
+al=1-t;r0=(1-al^2)/(al+Sqrt[al^2-4 a b (1-al^2)]);r=r0(1-sigma t);
+ellL=Sqrt[1+(1-4 a b+4p)r^2]-r;ellH=ellL+2(1-q)r;
+lo=ellL(ellL-al)-p r^2;hi=(ellL-al)ellH+(4 a b-6q+4q^2)r^2;
+ell4=-2b r+Sqrt[1+16 a b r^2];ell5=2b r+Sqrt[1+4(a-b)^2 r^2];
+d4=4(1+ell4^2-2(al+r)ell4+4a b r^2);
+gc=(1-4b^2)/2;qstar=(2-Sqrt[4-12a b])/3;gl=2qstar-2qstar^2;
+lead[x_]:=FullSimplify[Limit[x/t^2,t->0],Assumptions->0<b<1/2];
+out=<|"kernel"->$Version,"r0_series"->ToString[Normal@Series[r0,{t,0,3}],InputForm],"low_leading"->ToString[lead[lo],InputForm],"high_leading"->ToString[lead[hi],InputForm],"common_leading"->ToString[lead[d4],InputForm],"L_mass_identity"->FullSimplify[(ellL+2a r)(ellL+2b r)-4p r^2-1],"crossing_candidates"->ToString[Reduce[0<b<1/2&&gc==gl,b,Reals],InputForm],"gamma_gap"->ToString[FullSimplify[2 a b-gl-qstar^2/2],InputForm],"q_inside"->ToString[Reduce[0<b<1/2&&!(0<qstar<2b),b,Reals],InputForm]|>;
+Print[out];
+Clear[rr];
+ff[e_,rr_]:=1+e^2-2(al+rr)e+4a b rr^2;
+branches=Table[Module[{rr=t,e,coef,cs},Do[e=If[j==4,-2b rr+Sqrt[1+16a b rr^2],2b rr+Sqrt[1+4(a-b)^2 rr^2]];coef=FullSimplify[SeriesCoefficient[ff[e,rr],{t,0,n}]/2];rr=rr+coef*t^n,{n,2,5}];cs=FullSimplify[Normal@Series[(1-rr/r0)/t,{t,0,3}]];<|"branch"->j,"radius"->ToString[rr,InputForm],"sigma"->ToString[cs,InputForm]|>],{j,{4,5}}];
+Print[branches];
+Clear[zz,rr];dd=1-2b;kk=a(1-2b);
+pol=(1+2kk rr^2)^2-4b rr(1+2kk rr^2)(zz+dd rr)-(1+4(dd^2-b^2) rr^2)(zz+dd rr)^2;
+ct=Table[Module[{pp=pol/.b->bb,rrr=t,co,ss},Do[co=Coefficient[Expand[pp/.{zz->1-t,rr->rrr}],t,n]/2;rrr=rrr+co*t^n,{n,2,14}];ss=Normal@Series[(1-rrr/(r0/.b->bb))/t,{t,0,10}];<|"b"->ToString[bb,InputForm],"radius_coefficients"->Table[ToString[Coefficient[rrr,t,n],InputForm],{n,1,14}],"sigma_coefficients"->Table[ToString[Coefficient[ss,t,n],InputForm],{n,0,10}]|>],{bb,{1/4,3/8}}];
+Print["fixed-direction coefficient tables written"];
+dir=<|"kernel"->$Version,"corner_endpoint_switch"->ToString[Reduce[0<b<1/2&&gl==4b(1-2b),b,Reals],InputForm],"rectangle_convex_numerator"->ToString[FullSimplify[D[(1+w^2-2 al w)/(2(1-2b)w+4al b),{w,2}]*(2(1-2b)w+4al b)^3],InputForm],"rectangle_switch"->ToString[FullSimplify[Solve[(1-al^2)/(2al)==(1-al)/(1-2b(1-al)),b]],InputForm],"cross_mass_identity"->FullSimplify[(Sqrt[1+4dd^2 rr^2]-2dd rr)^2+4dd rr(Sqrt[1+4dd^2 rr^2]-2dd rr)-1]|>;
+Print[dir];
+
+Export[FileNameJoin[{DirectoryName[$InputFileName],"..","results","direction_common_scale_wolfram.json"}],Join[out,<|"branches"->branches,"coefficient_tables"->ct,"directions"->dir|>],"RawJSON"];
