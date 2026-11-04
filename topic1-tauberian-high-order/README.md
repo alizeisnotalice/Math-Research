@@ -97,3 +97,5 @@ latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 第31轮：一般n≥3已证明六阶饱和下固定两窄轴窗口的三临界交量o_T(v⁷S)，见rounds/031.md。通过同一实际见证强迫已付角层之外的额外缺量，不依赖二维孔形轮廓。窗口外尾部和高维Slot仍未闭合；3文件Mathematica核及独审已归档。
 
 第29轮（并行命题后完成独审）：已证实际void预算O((v^{n+1}+v⁵)S)及固定窗口actual-root传输O_R(v⁶S)，见rounds/029.md。Fubini probe和resolved四胞碰撞有准确收费，probe数须统一有界；helper可测分配/Slot单射仍未证明。独审和3文件线性核已归档。
+
+第32轮：真实三维双向O(u)错列构造的全半径筛除证书表明，显式8b²su⁷自然盒交量伴随固定六阶损失，不能给七阶近极端反例；见rounds/032.md。仅该构造类，不替代一般CDF三临界界；独立Sol终审和5文件符号/有理最小包已归档，重复预审留仓库外。
