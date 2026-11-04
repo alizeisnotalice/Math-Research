@@ -1,4 +1,4 @@
-\section{一维精确常数}\label{sec:one-dimensional}
+\section{一维精确常数、全阶展开与临界转变}\label{sec:one-dimensional}
 
 本节固定 $n=1$、$0<\beta<1$，并记
 \[
@@ -116,5 +116,131 @@ $\max\{1-B,L-1\}$，上界达到。
 \begin{remark}[一阶相变]\label{one:first-order-phase}
 定理~\ref{one:centered} 表明，当 $\beta<1/2$ 时，内含机制控制一阶项；
 当 $\beta>1/2$ 时，完整捕获机制控制一阶项。在 $\beta=1/2$，两者一阶项相同，
-但外部机制在二阶已经严格较大。
+但外部机制在二阶已经严格较大。该现象将在命题~\ref{one:critical-window}中作一致化描述。
 \end{remark}
+
+\begin{proposition}[全阶 Taylor 展开与统一余项]\label{one:all-orders}
+令 $K=[\beta_-,\beta_+]\Subset(0,1)$，$0<t\le t_0<1$，并令
+$a=1/\beta$、$q=1/(1-\beta)$。对任意整数 $N\ge1$，一致地对
+$\beta\in K$ 有
+\[
+ A_\beta(t)=\sum_{j=1}^{N}(-1)^{j+1}\binom{a}{j}t^j+R^A_{N+1}(t,\beta),
+ \qquad
+ D_\beta(t)=\sum_{j=1}^{N}\frac{(q)_j}{j!}t^j+R^D_{N+1}(t,\beta),
+\]
+其中 $(q)_j=q(q+1)\cdots(q+j-1)$，且
+\[
+ |R^A_{N+1}|\le\frac{M^A_{K,N,t_0}}{(N+1)!}t^{N+1},
+ \qquad
+ |R^D_{N+1}|\le\frac{M^D_{K,N,t_0}}{(N+1)!}t^{N+1},
+\]
+这里可取
+\[
+ M^A_{K,N,t_0}:=
+ \max_{\substack{a\in[1/\beta_+,1/\beta_-]\\0\le s\le t_0}}
+ \left|a(a-1)\cdots(a-N)(1-s)^{a-N-1}\right|,
+\]
+\[
+ M^D_{K,N,t_0}:=
+ \left(\frac1{1-\beta_+}\right)_{N+1}
+ (1-t_0)^{-1/(1-\beta_+)-N-1}.
+\]
+若进一步有 $t_0<1-2^{-\beta_-}$，则闭式的适用条件对所有
+$\beta\in K$ 同时成立，定理~\ref{one:uncentered} 给出
+\[
+ C_{\beta,\mathcal Q}(1-t)
+ =1+2\sum_{j=1}^{N}\frac{(q)_j}{j!}t^j+O_{K,N,t_0}(t^{N+1}).
+\]
+在同一附加条件下，定理~\ref{one:centered} 表明中心 Tauberian 常数是上述两个
+收敛级数的逐点最大值。没有这一阈值条件时，本命题只断言两个端点候选
+$A_\beta,D_\beta$ 的解析展开，并不声称它们给出 Tauberian 常数。
+\end{proposition}
+
+\begin{proof}
+两个级数分别是 $1-(1-t)^a$ 与 $(1-t)^{-q}-1$ 的二项式级数。
+对 $[0,t_0]$ 应用带 Lagrange 余项的 Taylor 定理，便得到显示的界；
+$M^A_{K,N,t_0}$ 是连续函数在紧集上的最大值，因而有限。
+\end{proof}
+
+\begin{proposition}[中心分支的有限阈值转换曲线]\label{one:transition}
+对每个 $0<t<1/2$，存在唯一
+\[
+ \beta_*(t)\in(0,1)
+\]
+使 $A_{\beta_*(t)}(t)=D_{\beta_*(t)}(t)$。并且
+\[
+ \beta<\beta_*(t)\Longrightarrow A_\beta(t)>D_\beta(t),
+ \qquad
+ \beta>\beta_*(t)\Longrightarrow A_\beta(t)<D_\beta(t).
+\]
+当 $t\downarrow0$ 时，
+\[
+ \beta_*(t)=\frac12-\frac t2-\frac{t^2}{4}-\frac{t^3}{3}
+ -\frac{3t^4}{8}+O(t^5).
+\]
+\end{proposition}
+
+
+
+\begin{proof}
+置 $\ell=-\log(1-t)>0$。等式 $A_\beta(t)=D_\beta(t)$ 等价于
+\[
+ F_\ell(\beta):=e^{-\ell/\beta}+e^{\ell/(1-\beta)}-2=0.
+\]
+函数 $F_\ell$ 严格递增，因为
+\[
+ F_\ell'(\beta)=\frac{\ell}{\beta^2}e^{-\ell/\beta}
+ +\frac{\ell}{(1-\beta)^2}e^{\ell/(1-\beta)}>0.
+\]
+并且 $F_\ell(0+)=e^\ell-2<0$（此处用 $t<1/2$），而
+$F_\ell(1-)=+\infty$。唯一性及分支方向随即成立，因为
+$A_\beta-D_\beta=-F_\ell(\beta)$。
+
+为计算展开，写 $\beta=1/2+\ell y$，并将
+$F_\ell(1/2+\ell y)/\ell^2$ 在 $\ell=0$ 连续延拓。其在
+$(\ell,y)=(0,-1/2)$ 的值为零，关于 $y$ 的导数为 $8$。隐函数定理给出解析根，
+而直接比较系数得到
+\[
+ \beta_*(\ell)=\frac12-\frac\ell2-\frac{\ell^3}{6}+O(\ell^5).
+\]
+代入 $\ell=t+t^2/2+t^3/3+t^4/4+O(t^5)$ 即得所述公式。
+\end{proof}
+
+\begin{remark}[比较曲线与光晕分支]\label{one:transition-scope}
+命题~\ref{one:transition} 是两个解析端点候选的全局比较，定义域为 $0<t<1/2$。
+只有再满足 $t<1-2^{-\beta}$ 时，定理~\ref{one:centered} 才允许把较大的候选
+识别为中心 Tauberian 常数。因此该命题本身不把有限阈值比较曲线误作所有
+$(t,\beta)$ 的 Tauberian 分支分类。
+\end{remark}
+
+\begin{proposition}[临界窗口的统一展开]\label{one:critical-window}
+设 $\Lambda>0$ 固定，并令 $\beta=1/2+\lambda t$，其中 $|\lambda|\le\Lambda$。
+则当 $t\downarrow0$ 时，一致地有
+\[
+ \begin{aligned}
+ A_{1/2+\lambda t}(t)
+ &=2t+(-4\lambda-1)t^2+(8\lambda^2+6\lambda)t^3\\
+ &\quad+\left(-16\lambda^3-20\lambda^2-\frac{4\lambda}{3}\right)t^4
+ +O_\Lambda(t^5),\\
+ D_{1/2+\lambda t}(t)
+ &=2t+(4\lambda+3)t^2+(8\lambda^2+10\lambda+4)t^3\\
+ &\quad+\left(16\lambda^3+28\lambda^2+\frac{52\lambda}{3}+5\right)t^4
+ +O_\Lambda(t^5).
+ \end{aligned}
+\]
+存在 $t_\Lambda>0$，使得当 $0<t<t_\Lambda$、$|\lambda|\le\Lambda$ 时同时有
+$1/2+\lambda t\in(0,1)$ 和 $t<1-2^{-(1/2+\lambda t)}$。在此范围内，因此
+\[
+ C_{1/2+\lambda t,\mathcal Q_c}(1-t)
+ =\max\{A_{1/2+\lambda t}(t),D_{1/2+\lambda t}(t)\},
+\]
+其中右侧两个多项式近似的误差均为 $O_\Lambda(t^5)$。特别地，主导分支的第一转换
+发生在 $\lambda=-1/2$；精确转换位置由命题~\ref{one:transition}给出。
+\end{proposition}
+
+\begin{proof}
+将 $\beta=1/2+\lambda t$ 代入两个二项式表达式并在 $t=0$ 作 Taylor 展开。
+对有界的 $\lambda$ 区间，函数在 $(t,\lambda)=(0,[-\Lambda,\Lambda])$ 的邻域解析，
+故余项关于 $\lambda$ 一致。命题~\ref{one:transition}的展开说明
+$\lambda_*(t)=(\beta_*(t)-1/2)/t=-1/2-t/4-t^2/3+O(t^3)$。
+\end{proof}

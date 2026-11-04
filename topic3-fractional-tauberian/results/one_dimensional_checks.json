@@ -1,0 +1,24 @@
+{
+  "kind": "symbolic-and-numerical-cross-check",
+  "actual_runs": [
+    {
+      "command": [
+        "verification/one_dimensional.py"
+      ],
+      "exit_code": 0,
+      "stdout": "transition-root checks\nt,beta_star,abs(error to fourth-order t series),abs(mp-scipy)\n1e-2,0.494974662857728203799676,5.8938463e-11,3.0522479e-16\n1e-3,0.499499749666291085241593,5.8142507e-16,1.4806996e-14\n1e-4,0.49994999749966662916086,5.8064238e-21,8.4347715e-18\n1e-5,0.499994999974999666662917,5.8056424e-26,3.018559e-15\ncritical beta=1/2 checks\n1e-2 0.020304050607080910111 6.0708091e-10\n1e-3 0.002003004005006007008 6.007008e-15\n1e-4 0.00020003000400050006001 6.0007001e-20\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wolframscript",
+        "-file",
+        "verification/one_dimensional.wl"
+      ],
+      "exit_code": 0,
+      "stdout": "inner Taylor: SeriesData[t, 0, {beta^(-1), (-1 + beta)/(2*beta^2), (1 - 3*beta + 2*beta^2)/(6*beta^3), (-1 + 6*beta - 11*beta^2 + 6*beta^3)/(24*beta^4)}, 1, 5, 1]\nouter Taylor: SeriesData[t, 0, {(1 - beta)^(-1), (2 - beta)/(2*(-1 + beta)^2), -1/6*((-2 + beta)*(-3 + 2*beta))/(-1 + beta)^3, -1/24*((-2 + beta)*(-3 + 2*beta)*(-4 + 3*beta))/(-1 + beta)^4}, 1, 5, 1]\ntransition coefficients in ell: {p1 -> -1/2, p2 -> 0, p3 -> -1/6, p4 -> 0}\ntransition coefficients in t: SeriesData[t, 0, {1/2, -1/2, -1/4, -1/3, -3/8}, 0, 5, 1]\ncritical inner: SeriesData[t, 0, {2, -1 - 4*lambda, 2*lambda*(3 + 4*lambda), (-4*lambda*(1 + 15*lambda + 12*lambda^2))/3, (lambda*(-1 + 32*lambda + 168*lambda^2 + 96*lambda^3))/3}, 1, 6, 1]\ncritical outer: SeriesData[t, 0, {2, 3 + 4*lambda, 2*(2 + 5*lambda + 4*lambda^2), (15 + 52*lambda + 84*lambda^2 + 48*lambda^3)/3, (18 + 77*lambda + 176*lambda^2 + 216*lambda^3 + 96*lambda^4)/3}, 1, 6, 1]\ncritical difference outer-inner: (t^2*(12 + 24*lambda + 12*t + 12*lambda*t + 15*t^2 + 56*lambda*t^2 + 144*lambda^2*t^2 + 96*lambda^3*t^2 + 18*t^3 + 78*lambda*t^3 + 144*lambda^2*t^3 + 48*lambda^3*t^3))/3\n",
+      "stderr": ""
+    }
+  ],
+  "proof": "See the manuscript for quantified domains and general proof."
+}
