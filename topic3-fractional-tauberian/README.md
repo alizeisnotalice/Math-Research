@@ -10,10 +10,16 @@
 
 固定方体的有限接触尺度公式及二维四分支高水平精确面积、三阶系数已完成。
 
+## 当前研究顺序
+
+按用户2026-11-05提供的 [Pro研究指令](source/Pro_Project_3.md) 继续；原文件及SHA-256已归档。
+先核验和优化无权单线性的定义、归一化、光晕及全体Tauberian常数，再推进高维、一般输入与高阶匹配；随后处理带权，最后核验多线性sharp信息的传递。
+当前新增研究聚焦前两项，明确区分固定模型的定理、全体输入下界和未闭合的上界。
+
 ## 文件
 
 - `paper/main.tex`、`paper/main.pdf`：统一中文正文与当前 PDF；章节按引言、预备知识、主要证明、应用组织。
-- `paper/references.bib`、`references/verification.md`：19 条核验题录及实际阅读范围。
+- `paper/references.bib`、`references/verification.md`：23 条核验题录及实际阅读范围。
 - `audit/`：逐项原编号、原页、假设、证据、状态和新标签；`source/` 保存原 PDF 与 SHA-256。
 - `verification/`、`results/`：必要验证代码与实际运行摘要。
 - `rounds/`：每轮结果、未解决问题和复现信息。代码与数值结果的作用以各报告为准。
@@ -52,7 +58,7 @@ run('verification/polytope_tangent.m')
 run('verification/fixed_cube_matlab.m')
 ```
 
-前两类符号脚本核对系数、精确顶点和积分；MATLAB独立求根、LP和边界积分。结果摘要保存在 `results/`。各轮具体成果见 `rounds/001.md` 至 `rounds/007.md`。
+前两类符号脚本核对系数、精确顶点和积分；MATLAB独立求根、LP和边界积分。结果摘要保存在 `results/`。各轮具体成果见 `rounds/001.md` 至 `rounds/008.md`。
 
 第5轮确定中心对称、β=n/2的固定模型首项与椭球极值。复现命令为 `wolframscript -file verification/half_order.wl`；MATLAB运行 `verification/half_order_matlab.m`。优化范围是资料固定E=K且基与K共同变化；固定基对全体E的上确界仍为后续问题。
 
@@ -60,4 +66,8 @@ run('verification/fixed_cube_matlab.m')
 
 第7轮在二维固定方体上建立任意阶统一边界截断，给出显式适用阈值和误差常数，允许β(t)取紧区间内任意路径；完成β=1/2、3/2附近的显式三阶过渡。任意维方体外部中心的精确顶层为max(1/2,2^(β−n))。复现：`wolframscript -file verification/uniform_square.wl`；MATLAB运行 `verification/uniform_square_matlab.m`；`python3 verification/uniform_square.py`。138组N=1至6积分近似、80组侧窗口及60组MATLAB交叉检验已实际运行。
 
-当前PDF为46页。第7轮还证明：固定β∈(3/2,2)时，N阶截断的首个误差系数严格为正，t^(N+2)阶一般不可提高。
+第7轮PDF为46页。第7轮还证明：固定β∈(3/2,2)时，N阶截断的首个误差系数严格为正，t^(N+2)阶一般不可提高。
+
+第8轮把固定方体推进到任意维数：2n个唯一径向接触根、带显式Bell递推余项的任意阶统一表示、全部临界参数的显式次首项T。首项后的t^(n+1)阶在每个固定β处都不可提高；任意N阶径向截断的t^(n+N)误差阶在外扩区也严格sharp。运行 `wolframscript -file verification/higher_dimensional.wl`，MATLAB运行 `verification/higher_dimensional_matlab.m`，再运行 `python3 verification/higher_dimensional.py`。最新文献核验见 `references/search-log-20261105.md`。
+
+当前PDF为49页；本轮完成情况与全体输入障碍见 `rounds/008.md`。

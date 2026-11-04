@@ -1,0 +1,264 @@
+
+\subsection{任意维数的径向解析表示}
+
+有限接触尺度并不限于二维。先沿有序方向消去径向水平方程，
+再保留有限个径向边界的最大值，可以把任意阶统一近似推广到所有维数。
+
+记
+\[
+ \Delta_{n-1}=\{(z_2,\ldots,z_n):1\ge z_2\ge\cdots\ge z_n\ge0\},
+ \qquad z_1=1.
+\]
+当 $n=1$ 时，$\Delta_0$ 为一个点，积分按质量 $1$ 解释。
+对 $1\le i\le n$ 定义两个接触值
+\begin{align*}
+ F_i^-(r;\beta,z)&=(1-2rz_i)^{\beta-i+1}
+                  \prod_{j<i}[1-r(z_i+z_j)],\\
+ F_i^+(r;\beta,z)&=(1+2rz_i)^{\beta-n}
+                  \prod_{j<i}[1-r(z_j-z_i)].
+\end{align*}
+它们分别对应中心 $rz$、边长 $1-2rz_i$ 和 $1+2rz_i$。
+
+\begin{theorem}[任意维径向根与全阶统一截断]\label{hd:all-orders}
+固定 $n\ge1$ 与非空紧区间 $J\Subset(0,n)$。置
+\[
+ \eta=\min_{\beta\in J}\min(\beta,n-\beta),\quad
+ \kappa=\min(1,\eta),\quad h_J=\max(1/2,2^{\max J-n}),\quad
+ t_0=\min(1-h_J,\kappa/8).
+\]
+对 $\beta\in J$、$z\in\Delta_{n-1}$、$0<t<t_0$，方程
+$F_i^\pm(r;\beta,z)=1-t$ 在 $0<r<1/2$ 内有唯一解 $R_i^\pm(t;\beta,z)$，且
+\begin{equation}\label{hd:exact-volume}
+ V_{n,\beta}(1-t):=|H_{\beta,\mathcal Q_c}(1-t,Q_0)|
+ =\frac{2^nn!}{n}\int_{\Delta_{n-1}}
+       \left[\max_{i,\pm}R_i^\pm(t;\beta,z)\right]^n dz.
+\end{equation}
+这些根在 $t=0$ 附近一致解析。令 $L_i^\pm(r)=1-F_i^\pm(r)$，其反函数系数为
+\[
+ b_{i,j}^\pm(\beta,z)=\frac1j[r^{j-1}]
+               \left(\frac r{L_i^\pm(r)}\right)^j,
+ \qquad P_{i,N}^\pm(t)=\sum_{j=1}^Nb_{i,j}^\pm t^{j-1}.
+\]
+则对每个 $N\ge1$，在足够小且显式可选的 $t_{J,N}>0$ 上一致地有
+\begin{equation}\label{hd:uniform-truncation}
+ V_{n,\beta}(1-t)=\frac{2^nn!}{n}t^n
+ \int_{\Delta_{n-1}}[\max\{P_{i,N}^\pm(t),0:i=1,\ldots,n\}]^n dz
+ +O_{n,J,N}(t^{n+N}).
+\end{equation}
+该结论允许 $\beta=\beta(t)\in J$ 沿任意路径变化。
+\end{theorem}
+\begin{proof}
+先检查沿射线的单调性，避免只用局部反函数选出部分根。
+对 $i\ge2$，记 $f_r(a)=a/(1-ra)$。因 $f_r'(a)\ge1$，
+\[
+ \sum_{j<i}f_r(z_i+z_j)\ge(i-1)f_r(2z_i)+1-z_i.
+\]
+从而在 $0\le r<1/2$ 上
+\[
+ -\partial_r\log F_i^-\ge
+ \frac{2\beta z_i}{1-2rz_i}+1-z_i\ge\min(1,2\beta)\ge\kappa.
+\]
+同样，$-\partial_r\log F_i^+\ge(n-\beta)z_i+1-z_i\ge\kappa$。
+$i=1$ 时两式直接由单个幂函数得到。
+在 $r=1/2$，中心位于方体边界，故引理~\ref{fix:outside-localization}给出
+每个接触值的极限至多 $h_J$。结合 $F_i^\pm(0)=1$，严格单调性给出根的存在与唯一性，且
+\[
+ 0<R_i^\pm(t)\le-\log(1-t)/\kappa\le2t/\kappa\le1/4.
+\]
+当接触尺度趋于零且有坐标重合时，上述端点值按连续极限解释。
+
+高水平光晕全部位于内部；有限接触尺度公式与沿射线的单调性因此说明其径向边界
+恰为所列根的最大值。变换 $x_1=r$、$x_j=rz_j$ 的 Jacobian 为 $r^{n-1}$；
+在有序正象限积分，再乘以 $2^nn!$，即得式~\eqref{hd:exact-volume}。
+
+原点处的正导数为
+\[
+ a_i^-:=L_i^{-\prime}(0)=\sum_{j<i}z_j+(2\beta-i+1)z_i,\qquad
+ a_i^+:=L_i^{+\prime}(0)=\sum_{j<i}z_j+[2(n-\beta)-i+1]z_i.
+\]
+它们在紧参数集上有统一正下界。解析反函数定理的有限覆盖以及幂函数在一个
+固定复邻域内的解析性，给出所有根的共同解析邻域；Lagrange 反演给出所列系数。
+下面的导数界还直接提供每个有限阶的显式实余项。
+\end{proof}
+
+\begin{proposition}[径向反演的显式误差界]\label{hd:explicit-remainder}
+沿用定理~\ref{hd:all-orders}的符号。对 $m\ge1$，令
+\[
+ M_m=\sum_{h=0}^{\min(m,n-1)}\binom mh
+ 2^{n+2(m-h)}(n)_{m-h}\,
+ h!\binom{n-1}{h}2^h(3/2)^{n-1-h},\qquad d=\kappa/2.
+\]
+定义 $A_1=d^{-1}$，并递推
+\[
+ A_m=d^{-1}\sum_{k=2}^mM_k
+ B_{m,k}(A_1,\ldots,A_{m-k+1})\quad(m\ge2),\qquad
+ C_N=\frac{A_{N+1}}{(N+1)!}.
+\]
+这里 $B_{m,k}$ 是指数型部分 Bell 多项式：
+$B_{m,k}(x)=m![s^m](\sum_{j\ge1}x_js^j/j!)^k/k!$。
+可取 $t_{J,N}=\min\{t_0,C_N^{-1/N}\}$。
+式~\eqref{hd:uniform-truncation}的误差绝对值至多
+\[
+ 2^nn(2/\kappa+1)^{n-1}C_N t^{n+N}.
+\]
+\end{proposition}
+\begin{proof}
+当 $0\le r\le1/4$，所有线性因子在 $[1/2,3/2]$ 内，幂指数绝对值至多 $n$。
+幂因子的 $k$ 阶导数至多 $2^{n+2k}(n)_k$；至多 $n-1$ 个线性因子的
+乘积，其 $h$ 阶导数至多 $h!\binom{n-1}{h}2^h(3/2)^{n-1-h}$。
+Leibniz 公式给出 $|(L_i^\pm)^{(m)}|\le M_m$。
+在反函数的像上又有 $(L_i^\pm)'=F_i^\pm(-\partial_r\log F_i^\pm)
+\ge(1-t)\kappa\ge d$。对 $L_i^\pm(R_i^\pm(t))=t$ 使用
+Fa\`a di Bruno 公式归纳，即得 $|\partial_t^mR_i^\pm|\le A_m$。
+Taylor 余项于是满足 $|R_i^\pm-tP_{i,N}^\pm|\le C_Nt^{N+1}$。
+实际缩放根至多 $2/\kappa$，截断后取正部的最大值至多 $2/\kappa+1$。
+最大值的 Lipschitz 性与 $n$ 次幂的中值定理，再用
+$|\Delta_{n-1}|=1/(n-1)!$，得到所述误差界。
+\end{proof}
+
+\subsection{任意维固定方体的显式第二项}
+
+\begin{lemma}[角向分支切换的积分余项]\label{hd:switching-lemma}
+设 $D$ 是有界闭多面体，体积按其仿射包的维数计算，$a_1,\ldots,a_q$ 是其上正的仿射函数，
+且 $a_*:=\min_i a_i$ 在 $D$ 上等于其中一个固定仿射函数。
+令 $I_0=\{i:a_i\equiv a_*\}$。若可测函数
+$w_i(t,z)=a_i(z)^{-1}+t h_i(z)+O(t^2)$ 在 $D$ 上一致成立，且 $h_i$ 有界可测，则
+\[
+ \left\|\max_iw_i(t,\cdot)-a_*^{-1}
+             -t\max_{i\in I_0}h_i\right\|_{L^1(D)}=O(t^2).
+\]
+\end{lemma}
+\begin{proof}
+对 $i\notin I_0$，非负仿射函数 $a_i-a_*$ 不恒为零。
+其小于 $Ct$ 的区域体积为 $O(t)$：若梯度非零，沿梯度方向切片即可；
+若它是正常数，则充分小 $t$ 时该区域为空。
+在这些区域的有限并以外，选充分大的固定 $C$，一阶根的差就使非最优指标
+不能成为最大值，误差一致为 $O(t^2)$。
+在这体积 $O(t)$ 的并内，非最优指标相对最优并列分支的额外贡献至多 $O(t)$。
+两部分积分即得结论；零维情形按有限点质量同样成立。
+\end{proof}
+
+\begin{theorem}[次首项系数及其临界取值]\label{hd:second-coefficient}
+固定 $n\ge1$、$0<\beta<n$，记 $c=\min(\beta,n-\beta)$、$\sigma=2c$，并按实际分支定义
+\[
+ k=\begin{cases}\lfloor2\beta\rfloor,&\beta<n/2,\\
+ \lceil2(n-\beta)\rceil-1,&\beta\ge n/2,
+ \end{cases}\qquad m=n-k,\qquad L=\frac{2^n}{k!\,\sigma^{n-k}}.
+\]
+则 $0\le k\le n-1$，并且
+\begin{equation}\label{hd:second-expansion}
+ V_{n,\beta}(1-t)=Lt^n+Tt^{n+1}+O_{n,\beta}(t^{n+2}),
+\end{equation}
+其中
+\begin{equation}\label{hd:second-formula}
+ \frac TL=\begin{cases}
+ \displaystyle\frac n2-\frac{k+m(n+k+1)/\sigma}{n+1},&\beta<n/2,\\[6pt]
+ \displaystyle\frac n2+\frac{m(m+1)/\sigma-k}{n+1},&\beta\ge n/2.
+ \end{cases}
+\end{equation}
+特别地，$T<0$ 当 $0<\beta<\min(1,n/2)$，而其余参数均有 $T>0$。
+所以减去首项后的 $t^{n+1}$ 阶在每个固定参数处均不可提高为小 $o$。
+\end{theorem}
+\begin{proof}
+在有序方向上，一阶代价 $\min_{i,\pm}a_i^\pm$ 正是 $N_c(z)$。
+直接相减有
+\[
+ a_{i+1}^\pm-a_i^\pm=(\sigma_\pm-i)(z_{i+1}-z_i),\qquad
+ \sigma_-=2\beta,\quad\sigma_+=2(n-\beta),
+\]
+且 $a_i^+-a_i^-=2(n-2\beta)z_i$。这些恒等式完全确定一阶最优指标及全维并列。
+若 $\beta<n/2$ 且 $2\beta$ 不是整数，唯一最优接触指标在几乎处处为内缩的 $i=k+1$；
+若 $\beta>n/2$ 且 $2(n-\beta)$ 不是整数，则为外扩的 $i=k+1$。
+坐标重合只发生在零测集上。
+
+临界值须由二阶项选择。设最优尺度的半扰动为 $w$，活跃大坐标数为整数 $s$，
+$w\in[v_{s+1},v_s]$、$\sigma=s$。
+相应对数接触值的二次系数分别为
+\[
+ B_-(w)=-\frac12\sum_{j\le s}v_j^2-w\sum_{j\le s}v_j+\frac s2w^2,
+ \qquad
+ B_+(w)=-\frac12\sum_{j\le s}v_j^2+w\sum_{j\le s}v_j+\frac s2w^2.
+\]
+前者不增、后者严格增，因此内缩选 $w=v_{s+1}$、外扩选 $w=v_s$，
+恰对应定理中不同的整数取法。在 $\beta=n/2$，两侧最优接触均为 $i=n$；
+外扩与内缩的二次系数之差为 $2v_n\sum_jv_j\ge0$，故采用外扩。
+
+下面计算次首项。对选出的指标，置 $w=v_{k+1}$、$y_j=v_j-w$（$j\le k$）、
+$Y=\sum_{j\le k}y_j$。其对数接触值写为 $-ar+br^2+O(r^3)$ 时，
+$a=N_c(v)$，而对应的齐次二次式为
+\[
+ b_-(v)=-\frac12\sum_{j\le k}y_j^2-2wY-\sigma w^2,
+ \qquad
+ b_+(v)=-\frac12\sum_{j\le k}y_j^2+\sigma w^2.
+\]
+沿方向 $z$ 的水平根因而展开为
+$r=t/a+t^2[1/(2a)+b/a^3]+O(t^3)$。
+对缩放根应用引理~\ref{hd:switching-lemma}：最小一阶代价在有序方向上为一个
+固定正仿射函数；恒等并列恰为刚才处理的临界接触指标，其二次系数有已确定的最大值。
+所有根的二阶展开余项一致，且缩放根有统一界，取 $n$ 次幂保持该 $L^1$ 误差阶。
+因此径向体积公式产生 $O(t^{n+2})$ 的余项。
+
+令 $S=S_{n,c}$，在其有序锥内取均匀体积分布。由 $Y+\sigma w<1$，
+$\sigma w$ 服从参数 $(m,k+1)$ 的 Beta 分布，且给定 $w$ 时 $y$ 为
+有序 $k$ 维单纯形上的均匀分布。对称矩不受排序影响，故
+\[
+ \mathbb E\sum y_j^2=\frac{2k}{(n+1)(n+2)},\quad
+ \mathbb E(wY)=\frac{km}{\sigma(n+1)(n+2)},\quad
+ \mathbb E w^2=\frac{m(m+1)}{\sigma^2(n+1)(n+2)}.
+\]
+径向积分与二次齐次性给出 $T/L=n/2+(n+2)\mathbb E b$。
+代入这三个矩即得式~\eqref{hd:second-formula}；同一变量变换还给出所列 $L$。
+当 $\sigma$ 为整数时相邻的 $k$ 取法产生相同 $L$，与切向体积一致。
+
+最后核查符号。外扩式严格大于 $n/2-(n-1)/(n+1)>0$。
+内缩在 $0<\sigma<1$ 时等于 $n/2-n/\sigma<0$，在 $1\le\sigma<2$ 时亦严格负，
+且左极限在 $\sigma=2$ 为零。若该点属于内缩范围，则实际整数取法使
+$T/L=1/(n+1)>0$。随后每个整数区间内该比值随 $\sigma$ 严格递增，
+每次跨整数还向上跳 $1/(n+1)$，故其余内缩参数均为正。
+\end{proof}
+
+\begin{remark}[固定资料与一般输入的边界]
+上述任意阶表示保留了有限最大值，并未断言每条移动参数路径都有普通幂级数。
+次首项定理只针对 $E=Q_0$；对全体集合的常数，它仅给出
+$C_{\beta,\mathcal Q_c}(1-t)\ge Lt^n+Tt^{n+1}-C_{n,\beta}t^{n+2}$
+这一测试下界，尚未建立匹配上界。
+\end{remark}
+
+\begin{corollary}[任意维截断阶的sharp性]\label{hd:sharp-truncation}
+固定 $n-1/2<\beta<n$，并在定理~\ref{hd:all-orders}中选含此参数的 $J$。
+记式~\eqref{hd:uniform-truncation}不含误差的积分为 $\mathcal A_{n,N}(\beta,t)$，
+置 $q=1/(n-\beta)>2$。对每个 $N\ge1$，
+\[
+ V_{n,\beta}(1-t)-\mathcal A_{n,N}(\beta,t)
+ =\frac{nq^{n-1}(q)_{N+1}}{(N+1)!}t^{n+N}
+       +O_{n,\beta,N}(t^{n+N+1}).
+\]
+因此任意维统一截断的 $t^{n+N}$ 误差阶一般不可提高。
+\end{corollary}
+\begin{proof}
+写 $c=n-\beta<1/2$。外扩的 $i=1$ 一阶代价为 $2c<1$，
+所有内缩代价至少为 $1$，故后者在充分小 $t$ 时不能胜出。
+对外扩的 $i\ge2$，有
+\[
+ a_i^+-2c\ge(1-2c)(1-z_i).
+\]
+在面 $z_i=1$ 上，先前各坐标也都为 $1$，因此 $F_i^+\equiv F_1^+$，
+所有径向反函数及其 Taylor 系数均相同。
+它们关于角变量的导数在固定解析邻域上一致有界；
+由到该面的距离至多 $\sqrt i(1-z_i)$，实际根之差可明确写为
+\[
+ R_1^+-R_i^+=\left(\frac1{2c}-\frac1{a_i^+}\right)t
+                 +O_{n,\beta}(t^2(1-z_i)),
+\]
+每个固定阶截断也满足同样的带因子余项界。
+首阶项至少为 $c_{n,\beta}t(1-z_i)$。
+所以实际根和每个 $N$ 阶截断根的最大值都由 $i=1$ 外扩给出。
+
+其实际根为 $R=[(1-t)^{-q}-1]/2$。令 $d_N$ 为它的 $N$ 阶 Taylor 多项式，
+则 $V=(2R)^n$、$\mathcal A_{n,N}=(2d_N)^n$，且
+\[
+ R=\frac q2t+O(t^2),\qquad
+ R-d_N=\frac{(q)_{N+1}}{2(N+1)!}t^{N+1}+O(t^{N+2}).
+\]
+展开两者的 $n$ 次幂之差，得到所述严格正首项。
+\end{proof}
