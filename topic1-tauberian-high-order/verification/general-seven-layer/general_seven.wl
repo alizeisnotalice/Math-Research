@@ -1,0 +1,20 @@
+ClearAll[v,n,k,b,c,tau,f,aa,bb,cc,d,w];
+Print["Wolfram ",$Version];
+Print["Domain fixed integer n>=2, 0<v<1, c>0; K symbolic. Formal asymptotic checks assume fixed constants."];
+tau=b v/c; W=Sum[tau^(7-h),{h,1,7}];
+Print["telescoping residual: ",FullSimplify[Sum[tau^(7-h)(c f[h]-b v f[h-1]),{h,1,7}]-(c f[7]-b v tau^6 f[0])]];
+Print["endpoint with f0=A0 v M /a: ",Factor[(b v tau^6) (A0 v M)/aa]];
+Print["first 5 weights: ",Normal[Series[Sum[tau^(7-h),{h,1,5}],{v,0,2}]]];
+Q=k v^6((1+v)^(-4)+(10/9)v (1+v)^(-2));
+Tmodel=1+d v;
+weighted=(Q Tmodel+tau k v^6+cc v^6 Sum[tau^(7-h),{h,1,5}])/W;
+Print["weighted minus QT through v^7: ",FullSimplify[Normal[Series[weighted-Q Tmodel,{v,0,7}]],c!=0]];
+Print["weighted coefficient after /v^6: ",FullSimplify[Normal[Series[weighted/v^6,{v,0,1}]],c!=0]];
+Print["exact ratio factorization residual: ",Factor[(bb/(bb-aa(1+Q))-bb/(bb-aa)) - aa Q bb/((bb-aa(1+Q))(bb-aa))]];
+(* aa=v² w, where 0<w<=1 includes aa=v^n for each fixed n>=2; n symbolic. *)
+A=(1+v)^n; avar=v^2 w;
+expr=Q/v^6 A/((A-avar(1+Q))(A-avar));
+Print["coefficient with aa=v² w: ",FullSimplify[Normal[Series[expr,{v,0,1}]]]];
+Print["expected K, -(n+26/9)K: ",FullSimplify[CoefficientList[Normal[Series[expr,{v,0,1}]],v]=={k,-(n+26/9)k}]];
+Print["aa=v^n means w=v^(n-2) lies in (0,1] for 0<v<1 and n>=2, by monotonicity of powers."];
+Print["complete"];
