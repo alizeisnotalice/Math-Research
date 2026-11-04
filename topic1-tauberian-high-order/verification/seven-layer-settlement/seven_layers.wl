@@ -1,0 +1,31 @@
+ClearAll[v,b,cD,k,cc,tau,f,eps];
+Print["Mathematica: ",$Version];
+Print["Assumptions: v>0, b>0, cD>0; tau=b v/cD; k=4/27; finite identities; remainders conditional."];
+tau=b v/cD;
+weighted=Sum[tau^(7-h)(cD f[h]-b v f[h-1]),{h,1,7}];
+Print["telescoping residual: ",FullSimplify[weighted-(cD f[7]-b v tau^6 f[0])]];
+W=Sum[tau^(7-h),{h,1,7}];
+Print["W: ",W];
+Print["first five weight O(v²), endpoint coefficient O(v⁷): ",{Series[Sum[tau^(7-h),{h,1,5}],{v,0,2}], Series[b v tau^6,{v,0,7}]}];
+e7=k v^6/(1+v)^4+(10/9) k v^7;
+e6=k v^6;
+raw=(e7+tau e6+cc v^6 Sum[tau^(7-h),{h,1,5}])/W;
+Print["weighted / v⁶ series: ",FullSimplify[Normal[Series[raw/v^6,{v,0,1}]],Assumptions->cD!=0]];
+a=v^2; av=(1+v)^2;
+normalized=raw/(v^6 (av-a));
+Print["normalized general k: ",FullSimplify[Normal[Series[normalized,{v,0,1}]],Assumptions->cD!=0]];
+coeff=FullSimplify[CoefficientList[Normal[Series[normalized /. k->4/27,{v,0,1}]],v],Assumptions->cD!=0];
+Print["normalized coefficients: ",coeff];
+Print["expected coefficients: ",coeff=={4/27,-176/243}];
+Print["W and denominator at zero: ",{W/.v->0,(av-a)/.v->0}];
+Print["complete"];
+(* Exact T=V+M version. E7/T=Q; E6/T=k v^6+o(v^6). *)
+q7=k v^6/(1+v)^4+(10/9) k v^7/(1+v)^2;
+qweighted=(q7+tau k v^6+cc v^6 Sum[tau^(7-h),{h,1,5}])/W;
+Print["T-version weighted minus q7 through v^7: ",FullSimplify[Normal[Series[qweighted-q7,{v,0,7}]],Assumptions->cD!=0]];
+Print["T-version normalized endpoint order: ",Series[(b v tau^6) v^3/a,{v,0,8}]];
+(* T(1+Q)>=Av M/a gives 1+M/V <= Av/(Av-a(1+Q)). *)
+exactgain=av/(av-a (1+qweighted))-av/(av-a);
+exactcoeff=FullSimplify[CoefficientList[Normal[Series[(exactgain/(a v^6)) /. k->4/27,{v,0,1}]],v],Assumptions->cD!=0];
+Print["exact T ratio coefficients: ",exactcoeff];
+Print["exact T ratio expected: ",exactcoeff=={4/27,-176/243}];
