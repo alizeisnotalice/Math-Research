@@ -1,37 +1,43 @@
 # 中心方体 Tauberian 常数的高阶端点研究
 
-研究对象是 Lebesgue 测度下的中心轴平行立方体极大算子，使用严格水平集。
+研究 Lebesgue 测度下的中心轴平行立方体极大算子，使用严格水平集。
 线性输入为任意有限正测度可测集；共享方体的多线性常数以公共交集归一化，单个输入集允许无限测度。
 
 ## 当前严格结论
 
-对每个固定整数 n≥2，真实常数满足
+对每个固定整数 n≥2，置a=2^nt、v=2t^(1/n)，真实常数满足
+\[
+C_n(1-t)=L_n(t)+O_n(av^3),\qquad
+L_n(t)=\left[1-\frac{a}{(1+v)^n}\right]^{-1}.
+\]
+因此
+\[
+C_2(1-t)=1+4t-16t^{3/2}+64t^2+O(t^{5/2}),
+\]
+且n≥3时
 \[
 C_n(1-t)=1+2^nt-n2^{n+1}t^{1+1/n}
- +O_n\!\left(t^{1+1/n+1/[n(n+2)]}\right).
++2^{n+1}n(n+1)t^{1+2/n}+O_n(t^{1+3/n}).
 \]
-因此原目标归一化余项的极限存在，等于 −n2^(n+1)。下界与全部输入、全部半径的上界匹配；完整解析证明见 `paper/main.tex` 及 `paper/sections/global.tex`。
+匹配上下界覆盖全部允许输入和全部半径；常数及起效阈值依赖固定n，没有维数一致主张。
+尚未确定(C_n−L_n)/(av³)的极限或下一项系数。
 
 多线性超临界区精确约化为
 \[
 C_n^{(m)}(\lambda)=C_n(1-m(1-\lambda^{1/m})).
 \]
-阈值为 (1−1/m)^m；m≥2 时在阈值及以下发散。二阶渐近及上述幂次余项可关于全部 m≥1 一致传递。没有维数一致性的主张。
+阈值为(1−1/m)^m；m≥2时在阈值及以下发散。
+将t换成ε=1−λ后，上述三项渐近及余项对全部m≥1一致传递；二维ε²系数须改为66−2/m，n≥3的已识别系数不变。
 
-比 t^(1+1/n) 更细的首个非零修正项尚未确定。周期包络的更高展开不是实际常数的高阶展开。
+## 材料与历史
 
-## 材料
+- `paper/tauberian.pdf`：实际编译、检查的论文；`main.tex`、`sections/global.tex`和`sources.bib`为可编辑项目。
+- `rounds/008.md`、`reviews/008-*.md`：第三项闭合、基线复查、独立审查、正式转写及本机证据。
+- `literature/2026-11-05.md`、`sources.md`：最新针对性文献检索及模型比较，不宣称穷尽或新颖性。
+- `proofs/`：保留仍能排除错误路线的反例及受限构造排除；`verification/`为必要精确证书及探索复现材料。
+- 第4轮首次闭合真实二阶；第6轮取得幂余项；第7轮证明固定异常尾桥的实际反例。第8轮回收异常区域的空隙与容量、选择加权边界，绕开尾桥并闭合第三项。
 
-- `paper/tauberian.pdf`：实际编译、检查的可交付论文。
-- `paper/main.tex`、`paper/sections/global.tex`、`paper/sources.bib`：完整可编辑项目。
-- `rounds/006.md`：真实幂次余项、空间缓冲证明、复核与实际计算；`rounds/004.md`记录首次闭合二阶的历史过程。
-- `reviews/006-*.md`：空间几何、独立敌意审查及最终转写复核。
-- `rounds/001.md`—`003.md`：基线修复、被排除路线和历史研究记录；当时文件可在相应 Git 提交恢复。
-- `proofs/`：仍有筛除错误路线作用的反例和有限周期截断说明。
-- `verification/`：最小精确代数与本机符号复现程序。
-- `sources.md`：文献对象、版本、读取范围和题录核验。
-
-第4轮从当前正文移除了已被一般二阶定理覆盖的避邻孔、同半径、缓变半径和局部小微扰结论，以及不再需要的一般测度转移长证。原始稿件和历史版本可恢复。
+正文按当前最强证明组织。已被覆盖的空间缓冲主证明、同半径及局部小扰动等重复结论不再占用正文，可在各历史提交恢复。第7轮反例仍然有效：有界第三尺度亏损并不强迫任意固定阈值的异常尾o(vS)。
 
 ## 复现
 
@@ -40,17 +46,12 @@ cd paper
 latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 ```
 
-需要 XeLaTeX、BibTeX、Songti SC、Times New Roman。主要符号工具为 Mathematica/Wolfram Language：
+需要XeLaTeX、BibTeX、Songti SC和Times New Roman。主要符号工具为本机Mathematica/Wolfram15 ARM：
 
 ```sh
-wolframscript -file verification/wolfram/spatial-buffer.wl
+wolframscript -file verification/wolfram/global-third.wl
+wolframscript -file verification/wolfram/multilinear-third.wl
+python3 verification/constant_hierarchy.py
 ```
 
-该脚本在 Wolfram 15.0.0 ARM 实际运行，14项空间缓冲标量/几何余量检查全部通过；计算范围与证明的关系见第6轮报告。一般维数、测度论和所有输入的结论依据正文证明。
-Python 有理数与本机 MATLAB R2026a 的基线交叉检查保留在 `verification/`。
-
-第5轮已严格定位统一阈值的一阶矩信息障碍，并排除任意单位立方铺砌中心等孔的体积密度高阶改进路线，见 `rounds/005.md`；本轮未改变真实常数的下一阶系数或余项。更细上界将转向空间邻边计费。
-
-第6轮用空间图上的平滑插值与局部亏损计费，将真实二阶式的对数余项提升为上述幂次余项。下一项的系数尚未证明；固定几何15次独立重采样只是探索证据。
-
-第7轮证明了固定异常尾桥的实际有限输入反例，并整理条件第三尺度及全部有限盒的等孔排除，见 rounds/007.md。一般第三系数仍未确定，正文保持第6轮结论。用户要求第7轮同步完成后暂停；待审全局第三项草稿保留本机。
+Wolfram脚本检查明确假设下的标量不等式和统一参数传递；Python以15进程精确检查n=2,…,16的常数层级。一般维数几何、源目标合法性、全部输入和极限传递由论文解析证明承担，不能用有限计算替代。

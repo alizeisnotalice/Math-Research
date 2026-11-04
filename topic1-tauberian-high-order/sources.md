@@ -54,3 +54,8 @@ J. M. Aldaz, “Kissing Numbers and the Centered Maximal Operator,” *Journal o
 - 读取了 Hagelstein–Parissis 1310.3771v2 的 arXiv HTML/PDF 中引言及 Theorem 1；以 Springer 正式书章页核验书目信息及其对 Solyanik 1993 的引用。
 - 读取了 Hagelstein–Parissis 1409.3811v2 的 arXiv HTML，核对摘要、Theorem 1 和 Corollary 4 的对象；以 Elsevier 正式期刊记录核验卷期页和 DOI。
 - Solyanik 原文由 MathNet 与 Springer 元数据页核验题录；原文全文未能通过 MathNet 下载读取。本文关于其中心方体定理的数学范围依赖 Hagelstein–Parissis 对原定理的明确陈述。
+
+
+## 2026-11-05 更新
+
+本轮重新打开基础来源，并核对2026年9—10月的3篇相关预印本。完整检索式、版本、读取范围、排除理由和主来源链接见 [本轮检索记录](literature/2026-11-05.md)。它们涉及非中心球、离散／遍历算子或单侧流，均不能直接替代本项目中心轴平行方体的证明。只对其摘要、定义及所读主定理陈述作模型比较，未独立审查全部证明；不能据此宣称新颖性。

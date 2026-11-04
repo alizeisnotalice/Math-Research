@@ -25,3 +25,11 @@
 ## 第7轮
 
 conditional-third.wl、finite-boxes.wl、tail-moments.wl、tail-gap.wl、third-scale.wl均从归档路径重跑，输出与原成功运行逐字一致。satellite-budget.wl在15子内核上实际15项check=True。全捕获形式系数须另有几何证明。conditional-third输出的False指整数违反集为空。tail-gap列出较强的辅助参数域，完整替代被中断CAD的同域数学断言，没有声称原CAD成功。
+
+## 第8轮：异常回收与多线性第三项
+
+`global-third.wl`由必要独立审查者实际执行；所有违反集为空，固定常数及分母恒等式符合解析证明。`multilinear-third.wl`在主代理本机执行，最终Failures=0，核对一致三阶Taylor余量及二维系数66−2/m。第一次简化留下未决布尔式后改用等价的一元Reduce，未决运行不计通过。各自成功输出保存为`*-result.txt`。`../constant_hierarchy.py`以15进程和精确有理数检查n=2,…,16，输出`../constant_hierarchy.json`，不是全部维数或全部几何的有限枚举证明。
+
+当前`paper/sections/global.tex`已改用第8轮证明；第6轮空间缓冲原稿在Git提交bec584f及其历史审查中恢复。
+
+`next-scale-ledger.wl`实际5项True，给出两分支抽象标量信息的精确minimax三次损失；不声称这些标量自动由真实输入实现。

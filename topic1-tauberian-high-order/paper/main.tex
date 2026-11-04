@@ -29,20 +29,21 @@
 \newcommand{\Cm}{C_n^{(m)}}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 
-\title{中心方体 Tauberian 常数的二阶渐近\texorpdfstring{\\}{ }与共享方体多线性精确约化}
+\title{中心方体 Tauberian 常数的三项渐近\texorpdfstring{\\}{ }与共享方体多线性精确约化}
 \author{}
 \date{}
 \begin{document}
 \maketitle
 \begin{abstract}
 研究 Lebesgue 测度下中心轴平行立方体极大算子的 Tauberian 常数。
-对每个固定整数 \(n\ge2\)，证明
-\(C_n(1-t)=1+2^nt-n2^{n+1}t^{1+1/n}
-+O_n(t^{1+1/n+1/[n(n+2)]})\)。
-上界适用于全部有限正测度可测输入及全部半径，下界由有限截断的周期孔构造实现。
-上界证明保留每个水平集点自身的严格见证，并利用私有簇的分位尾质量
-排除扩大盒的单方向相交，再利用有限邻接图上的平滑插值控制例外簇交界。对于共享同一中心方体、以公共交集归一化的多线性常数，
-证明超临界区的精确线性参数约化和临界区的发散，进而得到关于多线性重数一致的二阶渐近。
+对每个固定整数 \(n\ge2\)，令 \(a=2^nt\)、\(v=2t^{1/n}\)，证明
+\(C_n(1-t)=[1-a/(1+v)^n]^{-1}+O_n(av^3)\)。
+由此确定扣除一阶项后的两个非零分数幂项；二维时还须合并分母展开产生的二次项。
+上界适用于全部有限正测度可测输入及全部半径，下界由严格见证的有限周期孔构造实现。
+证明以面容量和双深度覆盖控制规则区域，再在完整见证相交图上选择加权边界，
+用异常区域的空隙与未使用容量支付交界损失。
+对于共享同一中心方体、以公共交集归一化的多线性常数，
+证明超临界区的精确线性参数约化和临界区的发散，进而得到关于多线性重数一致的三项渐近。
 \end{abstract}
 \section{引言}
 
@@ -87,14 +88,21 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 将其与 Besicovitch 交叠联系起来，并给出方体情形的常数 \(2^n\)。
 该常数具有不同的测度量词，不能直接认作 Lebesgue Tauberian 渐近系数。
 
-本文先以有限半径见证的贪心选择证明显式线性上界，
-以有限截断的周期孔构造得到匹配下界。进一步的问题是：
-扣除一阶项以后，\(t^{1+1/n}\) 尺度上的极限是否存在？
-关键困难在于代表方体中心处的高平均值不能替代所有水平集点自身的见证。
-本文保留每个点的实际见证，通过私有簇定位、深覆盖分配和分位尾质量，
-排除相邻扩大盒在单个薄方向上的正体积相交。进一步在有限空间邻接图上平滑缩回例外簇邻域内的扩大盒，按局部真实亏损计费，得到一般输入的幂次余项。
+截至 2026 年 11 月的相关预印本中，Mukherjee \cite{Mukherjee2026Covering}
+讨论非中心欧氏球的锐覆盖与 Solyanik 指数；Huang
+\cite{Huang2026Discrete,Huang2026Flows} 分别讨论离散和遍历球极大算子、单侧遍历流。
+这些结果的几何或动力系统假设与本文不同，不能直接给出中心方体的高阶系数。
 
-\begin{theorem}[真实二阶渐近]\label{thm:endpoint}
+本文先以有限半径见证的贪心选择证明显式线性上界，
+以有限截断的周期孔构造得到匹配下界。进一步研究扣除一阶项以后的非零修正项。
+关键困难在于代表方体中心处的高平均值不能替代所有水平集点自身的见证，
+而少量异常方体也可能影响所需的高阶精度。
+本文保留每个点的实际见证，以投影分布的有效端点和面容量控制规则方体的扩大盒，
+再用两种深覆盖将重复质量与源质量损失消元。
+对异常区域，扩大空隙观测窗在完整见证图上给出有限层加权体积增长；
+据此选取成本较小的边界，回收内部空隙及剩余私有容量，闭合一般输入的上界。
+
+\begin{theorem}[真实三项渐近]\label{thm:endpoint}
 令
 \[
  U_n(t)=1+\frac{2^nt}{1-t},\qquad
@@ -104,22 +112,22 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 \begin{equation}\label{eq:envelopes}
  L_n(t)\le\Cn(1-t)\le U_n(t),
 \end{equation}
-其中右侧上界对 \(0<t<1\) 成立。因此
-\(\Cn(1-t)=1+2^nt+o_n(t)\)。
-对每个固定整数 \(n\ge2\)，置
-\[
- \beta_n=1+\frac1n+\frac1{n(n+2)}.
-\]
-进一步有
+其中右侧上界对 \(0<t<1\) 成立。对每个固定整数 \(n\ge2\)，进一步有
 \begin{equation}\label{eq:sharp}
- \Cn(1-t)=1+2^nt-n2^{n+1}t^{1+1/n}
- +O_n(t^{\beta_n}),\qquad t\downarrow0.
+ \Cn(1-t)=L_n(t)+O_n(t^{1+3/n}),\qquad t\downarrow0.
 \end{equation}
+具体地，
+\begin{align}
+ \Cn(1-t)&=1+4t-16t^{3/2}+64t^2+O(t^{5/2}), &&n=2,\label{eq:thirdtwo}\\
+ \Cn(1-t)&=1+2^nt-n2^{n+1}t^{1+1/n}
+  +2^{n+1}n(n+1)t^{1+2/n}+O_n(t^{1+3/n}), &&n\ge3.\label{eq:thirdgeneral}
+\end{align}
 特别地，
 \[
  \lim_{t\downarrow0}
  \frac{\Cn(1-t)-1-2^nt}{t^{1+1/n}}=-n2^{n+1}.
 \]
+上述余项的常数及起效阈值只依赖固定维数。
 \end{theorem}
 
 公共交集归一化的多线性对象还具有精确的参数约化。
@@ -141,7 +149,7 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 
 精确约化的反向构造在有限个见证方体中同时等分补集，
 并在移动中心后保留严格余量。
-结合 \eqref{eq:sharp}，得到关于多线性重数一致的真实二阶展开。
+结合 \eqref{eq:sharp}，得到关于多线性重数一致的真实三项展开。
 以下常数均允许依赖固定维数；不主张维数一致性。
 第 2 节准备同时等分、有限见证选择和参数控制；
 第 3 节证明精确约化、周期下界及一般输入的高阶上界；
@@ -252,9 +260,9 @@ Besicovitch 方体族的交叠重数不超过 \(2^n\)。
  \eps\le\sigma_m(\eps)\le-\log(1-\eps),\qquad
  0\le\sigma_m(\eps)-\eps\le\frac{\eps^2}{2(1-\eps)}.
 \end{equation}
-对每个固定 \(m\)，还有
+关于全部 \(m\ge1\) 一致还有
 \begin{equation}\label{eq:quadraticparameter}
- \sigma_m(\eps)=\eps+a_m\eps^2+O_m(\eps^3),\qquad
+ \sigma_m(\eps)=\eps+a_m\eps^2+O(\eps^3),\qquad
  a_m=\frac{m-1}{2m}.
 \end{equation}
 \end{lemma}
@@ -267,8 +275,13 @@ Besicovitch 方体族的交叠重数不超过 \(2^n\)。
  =\sum_{k\ge2}\frac{\eps^k}{k}
  \le\frac{\eps^2}{2(1-\eps)}.
 \]
-最后对 \((1-\eps)^{1/m}\) 在零点作二阶 Taylor 展开即得
-\eqref{eq:quadraticparameter}；\(m=1\) 时等式精确成立。
+直接求导得到
+\[
+ \sigma_m'''(z)=(1-1/m)(2-1/m)(1-z)^{1/m-3}.
+\]
+当 \(m\ge1\)、\(0\le z\le\eps<1/2\) 时，其绝对值不超过
+\(2(1-\eps)^{-3}\)。Taylor 定理因此给出与 \(m\) 无关的三次余项，
+证明 \eqref{eq:quadraticparameter}；\(m=1\) 时等式精确成立。
 \end{proof}
 
 \section{主要证明}
@@ -373,48 +386,47 @@ Besicovitch 方体族的交叠重数不超过 \(2^n\)。
 先令 \(N\to\infty\)，再令 \(\rho\uparrow\rho_\alpha\)，得到结论。
 \end{proof}
 
-置 \(u=t^{1/n}\)。周期孔下界满足
-\begin{equation}\label{eq:lowerexpansion}
- L_n(t)=1+2^nt-n2^{n+1}t^{1+1/n}
-       +O_n(t^{1+2/n}+t^2)\qquad(n\ge2).
-\end{equation}
-这是由 \(1-L_n(t)^{-1}=2^nt(1+2u)^{-n}\) 的二阶 Taylor 余量与
-\((1-h)^{-1}=1+h+O(h^2)\) 得到的。
-有限输入也可直接达到这里的余项精度：取
-\(\rho=u(1-u^2)\)、\(N=\lceil u^{-3}\rceil\)。见证余量为
-\(t-\rho^n=u^n[1-(1-u^2)^n]>0\)，截断因子
-\((1-1/N)^n\) 与孔径扰动使下界比 \(L_n(t)\) 至多损失
-\(O_n(tu^2)\)。因此边界和严格水平的近似误差均小于本轮二阶尺度。
-
+置 \(a=2^nt\)、\(v=2t^{1/n}\)。恒等式
+\(1-L_n(t)^{-1}=a(1+v)^{-n}\) 给出定理中下包络的展开。
+\(n=2\) 时必须保留分母贡献 \(a^2=16t^2\)；\(n\ge3\) 时
+\(a^2=O_n(av^3)\)，因此得到 \eqref{eq:thirdtwo} 和 \eqref{eq:thirdgeneral} 的相应下界。
+有限输入也可达到所需精度：取 \(u=t^{1/n}\)、
+\(\rho=u(1-u^4)\)、\(N=\lceil u^{-4}\rceil\)。严格见证余量为
+\(t-\rho^n=u^n[1-(1-u^4)^n]>0\)；孔径扰动及截断因子
+\((1-1/N)^n\) 造成的总误差为 \(O_n(tu^4)=o_n(av^3)\)。
 结合 \eqref{eq:external}，同时证明 \eqref{eq:envelopes} 与一阶渐近。
-下一步证明与 \eqref{eq:lowerexpansion} 匹配的一般上界。
+下面证明与此构造匹配至第三项的一般上界。
 
 \input{sections/global}
 
 \section{应用}
 
-\begin{corollary}[重数一致的真实二阶渐近]\label{cor:uniform}
-对每个固定 \(n\ge2\)，当 \(\eps\downarrow0\) 时，
-\[
- \Cm(1-\eps)=1+2^n\eps-n2^{n+1}\eps^{1+1/n}
- +O_n(\eps^{\beta_n})
-\]
-关于所有整数 \(m\ge1\) 一致成立。
+\begin{corollary}[重数一致的真实三项渐近]\label{cor:uniform}
+对每个固定 \(n\ge2\)，当 \(\eps\downarrow0\) 时，关于所有整数 \(m\ge1\) 一致有
+\begin{align*}
+ \Cm(1-\eps)&=1+4\eps-16\eps^{3/2}
+    +(66-2/m)\eps^2+O(\eps^{5/2}), &&n=2,\\
+ \Cm(1-\eps)&=1+2^n\eps-n2^{n+1}\eps^{1+1/n}
+  +2^{n+1}n(n+1)\eps^{1+2/n}+O_n(\eps^{1+3/n}), &&n\ge3.
+\end{align*}
 \end{corollary}
 \begin{proof}
 因为 \((1-1/m)^m<e^{-1}\)，充分小的 \(\eps\) 使精确约化对全部 \(m\) 适用。
-记 \(p=1+1/n<2\)、\(s=\sigma_m(\eps)\)。引理 \ref{lem:parameter} 给出
-\(s=\eps+O(\eps^2)\)，其常数与 \(m\) 无关。因此
-\(s^p=\eps^p+O_n(\eps^{p+1})\)，且
-\(s^{\beta_n}=O_n(\eps^{\beta_n})\) 一致成立。
-将 \eqref{eq:sharp} 代入 \eqref{eq:reduction}。因为 \(\beta_n<2\)，
-\(\eps^2=O_n(\eps^{\beta_n})\)，故结论成立。
+记 \(s=\sigma_m(\eps)\)。引理 \ref{lem:parameter} 给出
+\(s=\eps+a_m\eps^2+O(\eps^3)\)，其常数与 \(m\) 无关。
+对任意固定 \(p>1\)，有
+\(s^p=\eps^p+O_p(\eps^{p+1})\)，且 \(s/\eps\) 一致有界。
+将 \eqref{eq:thirdtwo} 和 \eqref{eq:thirdgeneral} 代入 \eqref{eq:reduction}。
+当 \(n=2\) 时，线性项增加 \(4a_m\eps^2\)，所以二次系数为
+\(64+4a_m=66-2/m\)；其他替换误差均为 \(O(\eps^{5/2})\)。
+当 \(n\ge3\) 时，\(2\ge1+3/n\)，故线性项的参数修正已在余项内；
+又 \(2+1/n\ge1+3/n\)，两个分数幂项的参数误差也被余项吸收。
+以上估计均与 \(m\) 无关，证明结论。
 \end{proof}
 
-这一结论将所有允许输入的多线性高阶问题严格还原为线性问题。
-由于 \(\beta_n<1+2/n\)，所得余项尚不能识别下一项的幂次或系数；周期下包络更高项的展开
-只描述该构造。进一步的高阶渐近需要继续缩小空间缓冲中的体积损失，
-并检验跨孔及多尺度构造在更细尺度上能否提高下界。
+在 \(av^3\) 尺度，本证明仅给出有界余项，尚未确定归一化差
+\((\Cn(1-t)-L_n(t))/(av^3)\) 的极限。继续识别下一项，需要进一步控制
+面容量结算中的三次余项及异常区域回收的同阶损失，并检验新的构造能否超过周期下包络。
 
 \bibliographystyle{plain}
 \bibliography{sources}
