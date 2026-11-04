@@ -48,3 +48,5 @@ wolframscript -file verification/wolfram/sharp-check.wl
 
 该脚本在 Wolfram 15.0.0 ARM 实际运行，16项标量/几何余量检查全部通过；计算范围与证明的关系见第4轮报告。一般维数、测度论和所有输入的结论依据正文证明。
 Python 有理数与本机 MATLAB R2026a 的基线交叉检查保留在 `verification/`。
+
+第5轮已严格定位统一阈值的一阶矩信息障碍，并排除任意单位立方铺砌中心等孔的体积密度高阶改进路线，见 `rounds/005.md`；本轮未改变真实常数的下一阶系数或余项。更细上界将转向空间邻边计费。
