@@ -44,6 +44,8 @@
 再以有限多层深覆盖消除源质量损失；完整见证图上的加权边界与异常区域的空隙和容量回收完成全局闭合。
 对于共享同一中心方体、以公共交集归一化的多线性常数，
 证明精确线性参数约化及临界发散，并得到关于所有多线性重数一致的相应高阶渐近。
+另以近单位斜晶格构造证明 \(C_n(1-t)-L_n(t)\) 在 \(t^{1+8/n}\) 尺度具有严格正的下界，
+从而排除周期包络在充分小参数下的精确性。
 \end{abstract}
 \section{引言}
 
@@ -138,6 +140,19 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 上述余项的常数及起效阈值只依赖固定维数。
 \end{theorem}
 
+周期下包络的更高展开仍可能遗漏其他构造的贡献。
+将前两个坐标的单位晶格作对称斜切，只产生两个短对角孔的角部泄漏；
+逐点选择半径并控制失败角层，可以在有限测度输入中得到以下正差。
+\begin{proposition}[周期包络的严格偏差]\label{prop:nonexact}
+对每个固定整数 \(n\ge2\)，有
+\begin{equation}\label{eq:nonexact}
+ \liminf_{t\downarrow0}
+ \frac{\Cn(1-t)-L_n(t)}{2^{n+8}t^{1+8/n}}\ge\frac{n^2}{27}>0.
+\end{equation}
+特别地，充分小的 \(t>0\) 满足 \(\Cn(1-t)>L_n(t)\)。
+该下界没有确定差值的首个非零阶或系数。
+\end{proposition}
+
 公共交集归一化的多线性对象还具有精确的参数约化。
 令
 \[
@@ -160,7 +175,7 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 结合 \eqref{eq:sharp}，得到关于多线性重数一致的高阶展开。
 以下常数均允许依赖固定维数；不主张维数一致性。
 第 2 节准备同时等分、有限见证选择和参数控制；
-第 3 节证明精确约化、周期下界及一般输入的高阶上界；
+第 3 节证明精确约化、周期与斜晶格下界及一般输入的高阶上界；
 第 4 节给出多线性应用。
 
 \section{预备知识}
@@ -409,7 +424,8 @@ Besicovitch 方体族的交叠重数不超过 \(2^n\)。
 
 \input{sections/global}
 
-\clearpage
+\input{sections/skew}
+
 \section{应用}
 
 \begin{corollary}[重数一致的高阶渐近]\label{cor:uniform}
@@ -442,10 +458,29 @@ Besicovitch 方体族的交叠重数不超过 \(2^n\)。
 以上常数与起效区间均与 \(m\) 无关。
 \end{proof}
 
+\begin{corollary}[自然参数下的重数一致正差]\label{cor:nonexact-multi}
+令 \(\sigma_m(\eps)=m[1-(1-\eps)^{1/m}]\)。对每个固定 \(n\ge2\)，有
+\[
+ \liminf_{\eps\downarrow0}\ \inf_{m\ge1}
+ \frac{\Cm(1-\eps)-L_n(\sigma_m(\eps))}
+ {2^{n+8}\eps^{1+8/n}}\ge\frac{n^2}{27}.
+\]
+\end{corollary}
+\begin{proof}
+给定 \(0<\eta<n^2/27\)，命题~\ref{prop:nonexact} 使充分小的所有 \(t\) 都满足
+\[
+ \Cn(1-t)-L_n(t)\ge(n^2/27-\eta)2^{n+8}t^{1+8/n}.
+\]
+引理~\ref{lem:parameter} 给 \(\eps\le\sigma_m(\eps)\le2\eps\)，对全部
+\(m\ge1\) 一致。以 \(t=\sigma_m(\eps)\) 代入，再用精确约化，便得到
+关于所有 \(m\) 的同一下界；最后令 \(\eta\downarrow0\)。
+\end{proof}
+
 当 \(n\ge3\) 时，本证明仅在 \(av^4\) 尺度给出有界余项，
 尚未确定 \((\Cn(1-t)-L_n(t))/(av^4)\) 的极限或系数。
 二维仍须进一步处理小半径源的删除及 \(aS\) 与 \(M\) 的差，才能识别 \(av^3\) 尺度。
-下一步需将剩余容量、重复深覆盖与更细构造联系起来。
+斜晶格下界说明周期包络还遗漏 \(av^8\) 尺度的正贡献；
+它与当前上界之间仍有幂次差距。下一步需将剩余容量、重复深覆盖和全源点约束联系起来。
 
 \bibliographystyle{plain}
 \bibliography{sources}
