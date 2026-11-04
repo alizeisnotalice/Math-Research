@@ -1,0 +1,517 @@
+{
+  "formula": "a=v^n; v=2^-(b+5); b=ceil((4^n+4)(D+1))+1; J=b+5; N=2^(4J); theta=1; g=v(1-bv-v^3)/(2(1+v)); h=(2g)^n; Rb=2g/v; Rup=1-(b-2D)v; gap=1-2g-(Rup+1)/2",
+  "rho_bound": "for 0<=x,y<=1/2, |x/(1-x)-y/(1-y)|=|x-y|/((1-x)(1-y))<=4|x-y|",
+  "cases": [
+    {
+      "n": 2,
+      "D": "1/4",
+      "b": 26,
+      "J": 31,
+      "theta": "1",
+      "N_is_2_power": 124,
+      "v_denominator_bitlength": 32,
+      "N_bitlength": 125,
+      "h_size_bits": {
+        "numerator": 186,
+        "denominator": 249
+      },
+      "gap_size_bits": {
+        "numerator": 97,
+        "denominator": 125
+      },
+      "checks": {
+        "weight_sum_identity": true,
+        "weighted_index_identity": true,
+        "baseline_weight_positive": true,
+        "parameters_positive": true,
+        "neighbor_capacity": true,
+        "witness_radius_exceeds_hole_width": true,
+        "r_upper_by_nth_power": true,
+        "gap_lower_bound": true,
+        "gap_lower_strictly_positive": true,
+        "column_e_bound_strict": true,
+        "column_conservative_gap_strict": true,
+        "protection_layer": true,
+        "rho_divided_difference_at_most_four": true
+      },
+      "all_strict_checks": true
+    },
+    {
+      "n": 2,
+      "D": "1/2",
+      "b": 31,
+      "J": 36,
+      "theta": "1",
+      "N_is_2_power": 144,
+      "v_denominator_bitlength": 37,
+      "N_bitlength": 145,
+      "h_size_bits": {
+        "numerator": 216,
+        "denominator": 289
+      },
+      "gap_size_bits": {
+        "numerator": 112,
+        "denominator": 145
+      },
+      "checks": {
+        "weight_sum_identity": true,
+        "weighted_index_identity": true,
+        "baseline_weight_positive": true,
+        "parameters_positive": true,
+        "neighbor_capacity": true,
+        "witness_radius_exceeds_hole_width": true,
+        "r_upper_by_nth_power": true,
+        "gap_lower_bound": true,
+        "gap_lower_strictly_positive": true,
+        "column_e_bound_strict": true,
+        "column_conservative_gap_strict": true,
+        "protection_layer": true,
+        "rho_divided_difference_at_most_four": true
+      },
+      "all_strict_checks": true
+    },
+    {
+      "n": 2,
+      "D": "1",
+      "b": 41,
+      "J": 46,
+      "theta": "1",
+      "N_is_2_power": 184,
+      "v_denominator_bitlength": 47,
+      "N_bitlength": 185,
+      "h_size_bits": {
+        "numerator": 276,
+        "denominator": 369
+      },
+      "gap_size_bits": {
+        "numerator": 143,
+        "denominator": 185
+      },
+      "checks": {
+        "weight_sum_identity": true,
+        "weighted_index_identity": true,
+        "baseline_weight_positive": true,
+        "parameters_positive": true,
+        "neighbor_capacity": true,
+        "witness_radius_exceeds_hole_width": true,
+        "r_upper_by_nth_power": true,
+        "gap_lower_bound": true,
+        "gap_lower_strictly_positive": true,
+        "column_e_bound_strict": true,
+        "column_conservative_gap_strict": true,
+        "protection_layer": true,
+        "rho_divided_difference_at_most_four": true
+      },
+      "all_strict_checks": true
+    },
+    {
+      "n": 2,
+      "D": "2",
+      "b": 61,
+      "J": 66,
+      "theta": "1",
+      "N_is_2_power": 264,
+      "v_denominator_bitlength": 67,
+      "N_bitlength": 265,
+      "h_size_bits": {
+        "numerator": 396,
+        "denominator": 529
+      },
+      "gap_size_bits": {
+        "numerator": 203,
+        "denominator": 265
+      },
+      "checks": {
+        "weight_sum_identity": true,
+        "weighted_index_identity": true,
+        "baseline_weight_positive": true,
+        "parameters_positive": true,
+        "neighbor_capacity": true,
+        "witness_radius_exceeds_hole_width": true,
+        "r_upper_by_nth_power": true,
+        "gap_lower_bound": true,
+        "gap_lower_strictly_positive": true,
+        "column_e_bound_strict": true,
+        "column_conservative_gap_strict": true,
+        "protection_layer": true,
+        "rho_divided_difference_at_most_four": true
+      },
+      "all_strict_checks": true
+    },
+    {
+      "n": 2,
+      "D": "4",
+      "b": 101,
+      "J": 106,
+      "theta": "1",
+      "N_is_2_power": 424,
+      "v_denominator_bitlength": 107,
+      "N_bitlength": 425,
+      "h_size_bits": {
+        "numerator": 636,
+        "denominator": 849
+      },
+      "gap_size_bits": {
+        "numerator": 324,
+        "denominator": 425
+      },
+      "checks": {
+        "weight_sum_identity": true,
+        "weighted_index_identity": true,
+        "baseline_weight_positive": true,
+        "parameters_positive": true,
+        "neighbor_capacity": true,
+        "witness_radius_exceeds_hole_width": true,
+        "r_upper_by_nth_power": true,
+        "gap_lower_bound": true,
+        "gap_lower_strictly_positive": true,
+        "column_e_bound_strict": true,
+        "column_conservative_gap_strict": true,
+        "protection_layer": true,
+        "rho_divided_difference_at_most_four": true
+      },
+      "all_strict_checks": true
+    },
+    {
+      "n": 3,
+      "D": "1/4",
+      "b": 86,
+      "J": 91,
+      "theta": "1",
+      "N_is_2_power": 364,
+      "v_denominator_bitlength": 92,
+      "N_bitlength": 365,
+      "h_size_bits": {
+        "numerator": 819,
+        "denominator": 1093
+      },
+      "gap_size_bits": {
+        "numerator": 279,
+        "denominator": 365
+      },
+      "checks": {
+        "weight_sum_identity": true,
+        "weighted_index_identity": true,
+        "baseline_weight_positive": true,
+        "parameters_positive": true,
+        "neighbor_capacity": true,
+        "witness_radius_exceeds_hole_width": true,
+        "r_upper_by_nth_power": true,
+        "gap_lower_bound": true,
+        "gap_lower_strictly_positive": true,
+        "column_e_bound_strict": true,
+        "column_conservative_gap_strict": true,
+        "protection_layer": true,
+        "rho_divided_difference_at_most_four": true
+      },
+      "all_strict_checks": true
+    },
+    {
+      "n": 3,
+      "D": "1/2",
+      "b": 103,
+      "J": 108,
+      "theta": "1",
+      "N_is_2_power": 432,
+      "v_denominator_bitlength": 109,
+      "N_bitlength": 433,
+      "h_size_bits": {
+        "numerator": 972,
+        "denominator": 1297
+      },
+      "gap_size_bits": {
+        "numerator": 330,
+        "denominator": 433
+      },
+      "checks": {
+        "weight_sum_identity": true,
+        "weighted_index_identity": true,
+        "baseline_weight_positive": true,
+        "parameters_positive": true,
+        "neighbor_capacity": true,
+        "witness_radius_exceeds_hole_width": true,
+        "r_upper_by_nth_power": true,
+        "gap_lower_bound": true,
+        "gap_lower_strictly_positive": true,
+        "column_e_bound_strict": true,
+        "column_conservative_gap_strict": true,
+        "protection_layer": true,
+        "rho_divided_difference_at_most_four": true
+      },
+      "all_strict_checks": true
+    },
+    {
+      "n": 3,
+      "D": "1",
+      "b": 137,
+      "J": 142,
+      "theta": "1",
+      "N_is_2_power": 568,
+      "v_denominator_bitlength": 143,
+      "N_bitlength": 569,
+      "h_size_bits": {
+        "numerator": 1278,
+        "denominator": 1705
+      },
+      "gap_size_bits": {
+        "numerator": 433,
+        "denominator": 569
+      },
+      "checks": {
+        "weight_sum_identity": true,
+        "weighted_index_identity": true,
+        "baseline_weight_positive": true,
+        "parameters_positive": true,
+        "neighbor_capacity": true,
+        "witness_radius_exceeds_hole_width": true,
+        "r_upper_by_nth_power": true,
+        "gap_lower_bound": true,
+        "gap_lower_strictly_positive": true,
+        "column_e_bound_strict": true,
+        "column_conservative_gap_strict": true,
+        "protection_layer": true,
+        "rho_divided_difference_at_most_four": true
+      },
+      "all_strict_checks": true
+    },
+    {
+      "n": 3,
+      "D": "2",
+      "b": 205,
+      "J": 210,
+      "theta": "1",
+      "N_is_2_power": 840,
+      "v_denominator_bitlength": 211,
+      "N_bitlength": 841,
+      "h_size_bits": {
+        "numerator": 1890,
+        "denominator": 2521
+      },
+      "gap_size_bits": {
+        "numerator": 637,
+        "denominator": 841
+      },
+      "checks": {
+        "weight_sum_identity": true,
+        "weighted_index_identity": true,
+        "baseline_weight_positive": true,
+        "parameters_positive": true,
+        "neighbor_capacity": true,
+        "witness_radius_exceeds_hole_width": true,
+        "r_upper_by_nth_power": true,
+        "gap_lower_bound": true,
+        "gap_lower_strictly_positive": true,
+        "column_e_bound_strict": true,
+        "column_conservative_gap_strict": true,
+        "protection_layer": true,
+        "rho_divided_difference_at_most_four": true
+      },
+      "all_strict_checks": true
+    },
+    {
+      "n": 3,
+      "D": "4",
+      "b": 341,
+      "J": 346,
+      "theta": "1",
+      "N_is_2_power": 1384,
+      "v_denominator_bitlength": 347,
+      "N_bitlength": 1385,
+      "h_size_bits": {
+        "numerator": 3114,
+        "denominator": 4153
+      },
+      "gap_size_bits": {
+        "numerator": 1046,
+        "denominator": 1385
+      },
+      "checks": {
+        "weight_sum_identity": true,
+        "weighted_index_identity": true,
+        "baseline_weight_positive": true,
+        "parameters_positive": true,
+        "neighbor_capacity": true,
+        "witness_radius_exceeds_hole_width": true,
+        "r_upper_by_nth_power": true,
+        "gap_lower_bound": true,
+        "gap_lower_strictly_positive": true,
+        "column_e_bound_strict": true,
+        "column_conservative_gap_strict": true,
+        "protection_layer": true,
+        "rho_divided_difference_at_most_four": true
+      },
+      "all_strict_checks": true
+    },
+    {
+      "n": 4,
+      "D": "1/4",
+      "b": 326,
+      "J": 331,
+      "theta": "1",
+      "N_is_2_power": 1324,
+      "v_denominator_bitlength": 332,
+      "N_bitlength": 1325,
+      "h_size_bits": {
+        "numerator": 3972,
+        "denominator": 5297
+      },
+      "gap_size_bits": {
+        "numerator": 1001,
+        "denominator": 1325
+      },
+      "checks": {
+        "weight_sum_identity": true,
+        "weighted_index_identity": true,
+        "baseline_weight_positive": true,
+        "parameters_positive": true,
+        "neighbor_capacity": true,
+        "witness_radius_exceeds_hole_width": true,
+        "r_upper_by_nth_power": true,
+        "gap_lower_bound": true,
+        "gap_lower_strictly_positive": true,
+        "column_e_bound_strict": true,
+        "column_conservative_gap_strict": true,
+        "protection_layer": true,
+        "rho_divided_difference_at_most_four": true
+      },
+      "all_strict_checks": true
+    },
+    {
+      "n": 4,
+      "D": "1/2",
+      "b": 391,
+      "J": 396,
+      "theta": "1",
+      "N_is_2_power": 1584,
+      "v_denominator_bitlength": 397,
+      "N_bitlength": 1585,
+      "h_size_bits": {
+        "numerator": 4752,
+        "denominator": 6337
+      },
+      "gap_size_bits": {
+        "numerator": 1196,
+        "denominator": 1585
+      },
+      "checks": {
+        "weight_sum_identity": true,
+        "weighted_index_identity": true,
+        "baseline_weight_positive": true,
+        "parameters_positive": true,
+        "neighbor_capacity": true,
+        "witness_radius_exceeds_hole_width": true,
+        "r_upper_by_nth_power": true,
+        "gap_lower_bound": true,
+        "gap_lower_strictly_positive": true,
+        "column_e_bound_strict": true,
+        "column_conservative_gap_strict": true,
+        "protection_layer": true,
+        "rho_divided_difference_at_most_four": true
+      },
+      "all_strict_checks": true
+    },
+    {
+      "n": 4,
+      "D": "1",
+      "b": 521,
+      "J": 526,
+      "theta": "1",
+      "N_is_2_power": 2104,
+      "v_denominator_bitlength": 527,
+      "N_bitlength": 2105,
+      "h_size_bits": {
+        "numerator": 6312,
+        "denominator": 8417
+      },
+      "gap_size_bits": {
+        "numerator": 1587,
+        "denominator": 2105
+      },
+      "checks": {
+        "weight_sum_identity": true,
+        "weighted_index_identity": true,
+        "baseline_weight_positive": true,
+        "parameters_positive": true,
+        "neighbor_capacity": true,
+        "witness_radius_exceeds_hole_width": true,
+        "r_upper_by_nth_power": true,
+        "gap_lower_bound": true,
+        "gap_lower_strictly_positive": true,
+        "column_e_bound_strict": true,
+        "column_conservative_gap_strict": true,
+        "protection_layer": true,
+        "rho_divided_difference_at_most_four": true
+      },
+      "all_strict_checks": true
+    },
+    {
+      "n": 4,
+      "D": "2",
+      "b": 781,
+      "J": 786,
+      "theta": "1",
+      "N_is_2_power": 3144,
+      "v_denominator_bitlength": 787,
+      "N_bitlength": 3145,
+      "h_size_bits": {
+        "numerator": 9432,
+        "denominator": 12577
+      },
+      "gap_size_bits": {
+        "numerator": 2367,
+        "denominator": 3145
+      },
+      "checks": {
+        "weight_sum_identity": true,
+        "weighted_index_identity": true,
+        "baseline_weight_positive": true,
+        "parameters_positive": true,
+        "neighbor_capacity": true,
+        "witness_radius_exceeds_hole_width": true,
+        "r_upper_by_nth_power": true,
+        "gap_lower_bound": true,
+        "gap_lower_strictly_positive": true,
+        "column_e_bound_strict": true,
+        "column_conservative_gap_strict": true,
+        "protection_layer": true,
+        "rho_divided_difference_at_most_four": true
+      },
+      "all_strict_checks": true
+    },
+    {
+      "n": 4,
+      "D": "4",
+      "b": 1301,
+      "J": 1306,
+      "theta": "1",
+      "N_is_2_power": 5224,
+      "v_denominator_bitlength": 1307,
+      "N_bitlength": 5225,
+      "h_size_bits": {
+        "numerator": 15672,
+        "denominator": 20897
+      },
+      "gap_size_bits": {
+        "numerator": 3928,
+        "denominator": 5225
+      },
+      "checks": {
+        "weight_sum_identity": true,
+        "weighted_index_identity": true,
+        "baseline_weight_positive": true,
+        "parameters_positive": true,
+        "neighbor_capacity": true,
+        "witness_radius_exceeds_hole_width": true,
+        "r_upper_by_nth_power": true,
+        "gap_lower_bound": true,
+        "gap_lower_strictly_positive": true,
+        "column_e_bound_strict": true,
+        "column_conservative_gap_strict": true,
+        "protection_layer": true,
+        "rho_divided_difference_at_most_four": true
+      },
+      "all_strict_checks": true
+    }
+  ],
+  "all_pass": true
+}

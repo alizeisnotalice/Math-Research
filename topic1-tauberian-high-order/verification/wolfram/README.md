@@ -21,3 +21,7 @@
 ## 第6轮：空间缓冲
 
 `spatial-buffer.wl` 的14项精确断言在 Wolfram15 ARM 实际全部通过，主代理重跑输出一致。它检查有限路径、端点插值、局部预算及指数均衡。实际集合几何及全输入证明为 `paper/sections/global.tex`，另有两份独立审查与最终转写复核。
+
+## 第7轮
+
+conditional-third.wl、finite-boxes.wl、tail-moments.wl、tail-gap.wl、third-scale.wl均从归档路径重跑，输出与原成功运行逐字一致。satellite-budget.wl在15子内核上实际15项check=True。全捕获形式系数须另有几何证明。conditional-third输出的False指整数违反集为空。tail-gap列出较强的辅助参数域，完整替代被中断CAD的同域数学断言，没有声称原CAD成功。
