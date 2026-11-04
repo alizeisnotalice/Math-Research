@@ -8,7 +8,7 @@
 对每个固定整数 n≥2，真实常数满足
 \[
 C_n(1-t)=1+2^nt-n2^{n+1}t^{1+1/n}
- +O_n\!\left(\frac{t^{1+1/n}}{\log(1/t)}\right).
+ +O_n\!\left(t^{1+1/n+1/[n(n+2)]}\right).
 \]
 因此原目标归一化余项的极限存在，等于 −n2^(n+1)。下界与全部输入、全部半径的上界匹配；完整解析证明见 `paper/main.tex` 及 `paper/sections/global.tex`。
 
@@ -16,7 +16,7 @@ C_n(1-t)=1+2^nt-n2^{n+1}t^{1+1/n}
 \[
 C_n^{(m)}(\lambda)=C_n(1-m(1-\lambda^{1/m})).
 \]
-阈值为 (1−1/m)^m；m≥2 时在阈值及以下发散。二阶渐近及上述余项可关于全部 m≥1 一致传递。没有维数一致性的主张。
+阈值为 (1−1/m)^m；m≥2 时在阈值及以下发散。二阶渐近及上述幂次余项可关于全部 m≥1 一致传递。没有维数一致性的主张。
 
 比 t^(1+1/n) 更细的首个非零修正项尚未确定。周期包络的更高展开不是实际常数的高阶展开。
 
@@ -24,8 +24,8 @@ C_n^{(m)}(\lambda)=C_n(1-m(1-\lambda^{1/m})).
 
 - `paper/tauberian.pdf`：实际编译、检查的可交付论文。
 - `paper/main.tex`、`paper/sections/global.tex`、`paper/sources.bib`：完整可编辑项目。
-- `rounds/004.md`：匹配二阶上下界、证明依赖、复核、实际计算与剩余问题。
-- `reviews/004-*.md`：几何、计费、独立敌意审查及最终转写复核。
+- `rounds/006.md`：真实幂次余项、空间缓冲证明、复核与实际计算；`rounds/004.md`记录首次闭合二阶的历史过程。
+- `reviews/006-*.md`：空间几何、独立敌意审查及最终转写复核。
 - `rounds/001.md`—`003.md`：基线修复、被排除路线和历史研究记录；当时文件可在相应 Git 提交恢复。
 - `proofs/`：仍有筛除错误路线作用的反例和有限周期截断说明。
 - `verification/`：最小精确代数与本机符号复现程序。
@@ -43,10 +43,12 @@ latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 需要 XeLaTeX、BibTeX、Songti SC、Times New Roman。主要符号工具为 Mathematica/Wolfram Language：
 
 ```sh
-wolframscript -file verification/wolfram/sharp-check.wl
+wolframscript -file verification/wolfram/spatial-buffer.wl
 ```
 
-该脚本在 Wolfram 15.0.0 ARM 实际运行，16项标量/几何余量检查全部通过；计算范围与证明的关系见第4轮报告。一般维数、测度论和所有输入的结论依据正文证明。
+该脚本在 Wolfram 15.0.0 ARM 实际运行，14项空间缓冲标量/几何余量检查全部通过；计算范围与证明的关系见第6轮报告。一般维数、测度论和所有输入的结论依据正文证明。
 Python 有理数与本机 MATLAB R2026a 的基线交叉检查保留在 `verification/`。
 
 第5轮已严格定位统一阈值的一阶矩信息障碍，并排除任意单位立方铺砌中心等孔的体积密度高阶改进路线，见 `rounds/005.md`；本轮未改变真实常数的下一阶系数或余项。更细上界将转向空间邻边计费。
+
+第6轮用空间图上的平滑插值与局部亏损计费，将真实二阶式的对数余项提升为上述幂次余项。下一项的系数尚未证明；固定几何15次独立重采样只是探索证据。

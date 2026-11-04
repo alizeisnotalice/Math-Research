@@ -239,321 +239,451 @@
 上界 \(r(x)\le r_i\) 正是 \eqref{eq:global-private-radius}。
 \end{proof}
 
-\subsection{尾分布截断与分位矩形}
+\subsection{局部亏损与完整分位长方体}
 
-只有接近首项上界的输入需要继续分析。下面的截断同时控制局部空隙
-和私有质量亏损，使不规则部分的交叠成本小于二阶尺度。
+若半盒附近的空隙和私有质量亏损都小，则可将完整大见证转化为长方体的
+体积增量。为控制规则与例外指标的交界，后面将按空间距离逐渐减小这个
+增量。整个过程中保留各个指标的实际亏损，而不以统一阈值代替其积分。
 
-\begin{lemma}[规则指标的尾分布截断]\label{lem:global-tail-cutoff}
-固定 \(C_0>0\)，并假设
+以下只考虑
 \begin{equation}\label{eq:global-near-saturation}
- M\ge a(1-C_0v)|E|.
+ M>a[1-(n+1)v]|E|.
 \end{equation}
-当 \(t\) 充分小时，定义
-\[
- z_i=\frac{e_i+1-m_i/(ar_i^n)}v\ge0.
-\]
-存在只依赖 \(n,C_0\) 的常数 \(C\)，使
-\begin{equation}\label{eq:global-z-mean}
- \sum_i z_ir_i^n\le CS.
+其余情形在最后结算时直接处理。定义
+\begin{equation}\label{eq:global-local-deficit}
+ d_i=e_i+1-\frac{m_i}{ar_i^n}\ge0.
 \end{equation}
-对每个 \(T>2\)，可以选取 \(L\in[T,T^2]\)，令
-\[
- \mathcal I=\{i:z_i\le L\},\qquad
- S_b=\sum_{i\notin\mathcal I}r_i^n,\qquad \delta=Lv,
-\]
-使每个 \(i\in\mathcal I\) 满足 \eqref{eq:global-regular-conditions}，且
-\begin{equation}\label{eq:global-tail-bounds}
- \delta S_b\le\frac{CvS}{\log T},\qquad
- S_b\le\frac{CS}{T\log T}.
-\end{equation}
-\end{lemma}
-\begin{proof}
-由 \eqref{eq:global-basic-volumes}、\eqref{eq:global-near-saturation}
-及 \(t=o(v)\)，有
-\[
- \frac S{|E|}=1+O_{n,C_0}(v),\qquad
- V-S=O_{n,C_0}(vS),\qquad aS-M=O_{n,C_0}(avS).
-\]
-再由 \eqref{eq:global-basic-private}，
-\[
- \begin{aligned}
- v\sum_i z_ir_i^n
- &=\sum_ie_ir_i^n+S-\frac1a\sum_im_i\\
- &\le H(V-S)+2(S-M/a)=O_{n,C_0}(vS).
- \end{aligned}
-\]
-这证明 \eqref{eq:global-z-mean}。
-令 \(F(l)=S^{-1}\sum_{z_i>l}r_i^n\)。有限族的层蛋糕公式给出
-\(\int_0^\infty F(l)\,\mathrm dl\le C\)。因此存在
-\(L\in[T,T^2]\)，使 \(LF(L)\le C/\log T\)；否则在该区间对
-\(\mathrm dl/l\) 积分将得到 \(\int_0^\infty F(l)\,\mathrm dl>C\)。
-由于 \(S_b=SF(L)\)、\(\delta=Lv\)，即得
-\eqref{eq:global-tail-bounds}。对 \(z_i\le L\)，定义中的两项均非负，
-故分别有 \(e_i\le Lv=\delta\) 及
-\(1-m_i/(ar_i^n)\le\delta\)，这就是所需规则条件。
-\end{proof}
-
-\begin{lemma}[分位矩形的体积与交叠]\label{lem:global-quantile-rectangles}
-设 \(\mathcal I\) 为满足 \eqref{eq:global-regular-conditions} 的指标集，
-\(S_b=\sum_{i\notin\mathcal I}r_i^n\)。当
-\begin{equation}\label{eq:global-parameter-range}
- 0<t<1/2,\qquad
- 0<\delta<\min\{\epsilon,1/[64(c+1)]\},\qquad
- 0<b<\frac1{8n},\qquad \frac\delta b<2^{-n-1},
-\end{equation}
-可以对每个指标构造闭长方体 \(X_i\subset D\)，使
+由引理~\ref{lem:global-bookkeeping}、\eqref{eq:global-near-saturation}
+和 \(t=o(v)\)，有
 \begin{gather}
- |X_i|\ge\frac{g_i}a+
- [n-C_n(b+\delta+\delta^n)]v r_i^n\qquad(i\in\mathcal I),
- \label{eq:global-rectangle-volume}\\
- |X_i|=r_i^n\ge g_i/a\qquad(i\notin\mathcal I),
- \label{eq:global-exceptional-volume}\\
- \sum_{i<j}|X_i\cap X_j|\le C_n(\delta^2S+\delta S_b).
- \label{eq:global-rectangle-overlaps}
+ \frac S{|E|}=1+O_n(v),\qquad
+ V-S=O_n(vS),\qquad S-M/a=O_n(vS),
+ \label{eq:global-near-volumes}\\
+ \sum_i d_ir_i^n
+ =\sum_i e_ir_i^n+S-\frac1a\sum_i m_i
+ \le H(V-S)+2(S-M/a)\le C_nvS.
+ \label{eq:global-deficit-integral}
 \end{gather}
-这里及以后 \(C_n\) 只依赖于固定维数。
-\end{lemma}
-\begin{proof}
-对 \(i\in\mathcal I\)，从 \(P_i\) 删除引理~\ref{lem:global-large-witness}
-中的 \(W_i\)，再保留满足下列条件的点：对每个坐标 \(k\)，
-\[
- |\{z\in P_i:z_k\le x_k\}|\ge bm_i,\qquad
- |\{z\in P_i:z_k\ge x_k\}|\ge bm_i.
-\]
-这里两侧分位质量始终相对于原 \(P_i\) 计算。记所得集合为 \(P_i^*\)，
-其测度为 \(m_i^*\)。坐标超平面是 Lebesgue 零测集，故各边缘分布连续，
-每个方向删除的质量至多 \(bm_i\)。因此
-\begin{equation}\label{eq:global-trimmed-mass}
- \begin{aligned}
- m_i^*&\ge(1-2nb)m_i-\frac{a(6c\delta)^n}{1-t}r_i^n\\
- &\ge[1-C_n(b+\delta+\delta^n)]ar_i^n>0.
- \end{aligned}
-\end{equation}
-末尾的正性由 \eqref{eq:global-parameter-range} 保证。
 
-定义相对中心的投影端点
+取参数 \(v\le\delta\)，并在以下引理中要求 \(\delta\) 小于一个仅依赖
+\(n\) 的正常数。记
+\begin{equation}\label{eq:global-regular-set}
+ \mathcal I=\{i:d_i\le\delta\},\qquad
+ \mathcal J=\{i:d_i>\delta\},\qquad
+ S_b=\sum_{i\in\mathcal J}r_i^n.
+\end{equation}
+分别称它们为规则与例外指标。由 \eqref{eq:global-deficit-integral}，
+\begin{equation}\label{eq:global-exception-volume}
+ S_b\le C_n vS/\delta.
+\end{equation}
+每个规则指标满足
 \[
- \ell_{ik}=\inf_{x\in P_i^*}(x_k-x_{i,k}),\qquad
- h_{ik}=\sup_{x\in P_i^*}(x_k-x_{i,k}).
+ e_i\le d_i,\qquad m_i\ge(1-d_i)ar_i^n.
 \]
-它们均在 \([-c\delta r_i,c\delta r_i]\) 中。分位条件及边缘分布连续性给出
-\begin{equation}\label{eq:global-endpoint-tails}
- \begin{split}
- |\{z\in P_i:z_k-x_{i,k}\le\ell_{ik}\}|&\ge bm_i,\\
- |\{z\in P_i:z_k-x_{i,k}\ge h_{ik}\}|&\ge bm_i.
- \end{split}
-\end{equation}
-例如，取 \(P_i^*\) 中第 \(k\) 坐标趋于 \(\ell_{ik}\) 的序列，再对连续的
-左侧分布函数取极限即可；端点不必由集合中的点达到。
-
-对规则指标置
-\begin{equation}\label{eq:global-rectangle-definition}
- X_i=\prod_{k=1}^n
- [x_{i,k}+\ell_{ik}-R_i/2,\ x_{i,k}+h_{ik}+R_i/2],
- \qquad R_i=(g_i/a)^{1/n},
-\end{equation}
-对其余指标置 \(X_i=B_i\)。引理~\ref{lem:global-large-witness} 给出
-\((1-\delta)r_i\le R_i\le r_i\)。故全部指标均满足
-\begin{equation}\label{eq:global-rectangle-envelope}
- X_i\subset Q(x_i,(1/2+c\delta)r_i)\subset A_i\subset D.
-\end{equation}
-令 \(w_{ik}=h_{ik}-\ell_{ik}\)。端点盒包含 \(P_i^*\)，所以
-\(\prod_kw_{ik}\ge m_i^*\)。展开体积乘积并用算术--几何平均不等式，得到
+应用引理~\ref{lem:global-large-witness} 时可在该指标处使用局部参数
+\(d_i\)。具体地，删去
 \[
- \begin{aligned}
- |X_i|&=\prod_k(R_i+w_{ik})
- \ge R_i^n+R_i^{n-1}\sum_kw_{ik}\\
- &\ge\frac{g_i}a+nR_i^{n-1}(m_i^*)^{1/n}.
- \end{aligned}
+ U_i=\{x\in P_i:r(x)<2cd_ir_i\},
 \]
-结合 \eqref{eq:global-trimmed-mass} 及 \(R_i\ge(1-\delta)r_i\)，便得到
-\eqref{eq:global-rectangle-volume}。例外指标的体积结论直接来自定义。
+则
+\begin{equation}\label{eq:global-local-small-mass}
+ |U_i|\le\frac{a(6cd_i)^n}{1-t}r_i^n,
+ \qquad
+ (1-d_i)r_i\le R_i:=(g_i/a)^{1/n}<r(x)\le r_i
+ \quad(x\in P_i\setminus U_i).
+\end{equation}
+每个这里保留的见证都包含整个 \(G_i\)。上述估计只使用局部输入
+\(E\cap Q(x_i,3cd_ir_i)\) 的外部水平集；若该输入的测度为零，
+则相应小半径点集为空。规则指标不可能有 \(d_i=0\)：否则
+\(e_i=0\)、\(m_i=ar_i^n>0\)，而
+\eqref{eq:global-private-localization} 会使 \(P_i\subset\{x_i\}\)，矛盾。
+因此局部参数的取法也包括了所有规则指标。
 
-下面估计交叠。若 \(X_i\cap X_j\ne\varnothing\)，令 \(s=r_i+r_j\)。
-由中心分离及 \eqref{eq:global-rectangle-envelope}，
-\begin{equation}\label{eq:global-intersecting-radii}
- \max(r_i,r_j)<\norm{x_i-x_j}_\infty\le(1/2+c\delta)s,
- \qquad |r_i-r_j|\le2c\delta s.
+\begin{lemma}[完整分位长方体]\label{lem:global-full-rectangles}
+令 \(b=2^{n+2}\delta\)。对每个规则指标，从 \(P_i\setminus U_i\) 中再删去
+按原始 \(P_i\) 各坐标两侧的 \(bm_i\) 分位尾部，得到可测集 \(P_i^*\)。
+当 \(\delta\) 充分小时，\(m_i^*=|P_i^*|>0\)，并有
+\begin{equation}\label{eq:global-quantile-mass}
+ m_i^*\ge(1-C_n\delta)ar_i^n.
 \end{equation}
-参数范围保证 \(1/2<r_i/r_j<2\)。固定 \(i\)，其每个相交邻居的半盒
-\(B_j\) 边长至少为 \(r_i/2\)，且
-\[
- \norm{x_j-x_i}_\infty+r_j/2
- \le(1/2+c\delta)(r_i+r_j)+r_j/2<3r_i.
-\]
-这些半盒两两不交并包含于 \(Q(x_i,3r_i)\)，所以每个指标至多有 \(12^n\)
-个相交邻居。
-
-先设 \(i,j\in\mathcal I\)。称坐标 \(k\) 为临界坐标，如果
-\begin{equation}\label{eq:global-critical-coordinate}
- |x_{i,k}-x_{j,k}|\ge[1/2-(3c+3)\delta]s.
-\end{equation}
-中心分离保证至少有一个临界坐标。任一临界坐标的相交投影长度至多
-\[
- (1/2+c\delta)s-[1/2-(3c+3)\delta]s=(4c+3)\delta s.
-\]
-若至少有两个临界坐标，取其中两个使用这一估计，其余投影长度使用
-\(X_i\) 的边长至多 \(2r_i\)，便有
-\begin{equation}\label{eq:global-two-critical}
- |X_i\cap X_j|\le C_n\delta^2r_i^n.
-\end{equation}
-
-设恰有一个临界坐标 \(q\)，交换指标使 \(x_{j,q}>x_{i,q}\)。
-对每个非临界坐标 \(k\)，以及任意 \(x\in P_i,z\in P_j\)，私有点定位给出
-\begin{equation}\label{eq:global-tangential-margin}
- |x_k-z_k|<[1/2-(2c+3)\delta]s<\min(R_i,R_j).
-\end{equation}
-为核查第二个不等式，由 \eqref{eq:global-intersecting-radii} 有
-\[
- \begin{aligned}
- \min(R_i,R_j)&\ge(1-\delta)\min(r_i,r_j)
- \ge(1-\delta)(1/2-c\delta)s\\
- &\ge[1/2-(c+1)\delta]s
- >[1/2-(2c+3)\delta]s.
- \end{aligned}
-\]
-在法向 \(q\)，同样的位移界及临界条件保证所有这样的点均满足
-\begin{equation}\label{eq:global-normal-order}
- z_q-x_q\ge[1/2-(4c+3)\delta]s>0.
-\end{equation}
-
 置
 \[
- d=x_{j,q}-x_{i,q}+\ell_{jq}-h_{iq}.
+ \ell_{il}=\inf_{x\in P_i^*}(x_l-x_{i,l}),\qquad
+ h_{il}=\sup_{x\in P_i^*}(x_l-x_{i,l}),\qquad
+ w_{il}=h_{il}-\ell_{il},
 \]
-我们先证 \(d\ge R_i\)。若 \(d<R_i\)，令 \(\rho=(R_i-d)/2>0\)，
-由上确界定义选取 \(x\in P_i^*\)，使
-\(x_q-x_{i,q}>h_{iq}-\rho\)。对原 \(P_j\) 的尾集合
+并定义
+\begin{equation}\label{eq:global-full-rectangle}
+ X_i=\prod_{l=1}^n
+ [x_{i,l}+\ell_{il}-R_i/2,\ x_{i,l}+h_{il}+R_i/2].
+\end{equation}
+则
+\begin{gather}
+ |\ell_{il}|,|h_{il}|\le ce_ir_i,\qquad
+ \prod_{l=1}^n w_{il}\ge m_i^*,
+ \label{eq:global-projection-widths}\\
+ \left|\{x\in P_i:x_l-x_{i,l}\le\ell_{il}\}\right|\ge bm_i,
+ \qquad
+ \left|\{x\in P_i:x_l-x_{i,l}\ge h_{il}\}\right|\ge bm_i.
+ \label{eq:global-endpoint-tails}
+\end{gather}
+取 \(C_1=c+1\)。\(X_i\) 的每个坐标端点与原半盒 \(B_i\) 的对应端点
+之差的绝对值均不超过 \(C_1d_ir_i\)。对例外指标约定 \(X_i=B_i\)。
+\end{lemma}
+\begin{proof}
+保留那些对每个坐标 \(l\) 均满足
+\[
+ \left|\{z\in P_i:z_l\le x_l\}\right|\ge bm_i,\qquad
+ \left|\{z\in P_i:z_l\ge x_l\}\right|\ge bm_i
+\]
+的点。Lebesgue 测度在每个坐标超平面上为零，故两侧分布函数连续，
+每个方向删去的质量至多为 \(bm_i\)。结合
+\eqref{eq:global-local-small-mass}，有
+\[
+ \begin{aligned}
+ m_i^*&\ge(1-2nb)m_i-\frac{a(6cd_i)^n}{1-t}r_i^n\\
+ &\ge\left[1-d_i-2nb-\frac{(6cd_i)^n}{1-t}\right]ar_i^n
+ \ge(1-C_n\delta)ar_i^n.
+ \end{aligned}
+\]
+当 \(\delta\) 足够小时右端为正。私有点定位给出投影端点的界，
+而 \(P_i^*-x_i\) 包含于其投影长方体，给出宽度乘积的下界。
+由端点的上、下确界选取趋近序列，再用分布函数的连续性，得到
+\eqref{eq:global-endpoint-tails}，不要求端点由某个点取到。
+
+又因 \((1-d_i)r_i\le R_i\le r_i\)，左右端点相对原半盒的移动量分别不超过
+\[
+ |\ell_{il}|+(r_i-R_i)/2\quad\hbox{和}\quad
+ |h_{il}|+(r_i-R_i)/2,
+\]
+均至多为 \((c+1/2)d_ir_i\le C_1d_ir_i\)。
+\end{proof}
+
+\subsection{有限空间图与仿射缓冲}
+
+定义有限无向图 \(\mathcal G\)，其顶点为全部选中指标；当两个闭方体
+\[
+ Q\bigl(x_i,(1/2+C_1\delta)r_i\bigr),\qquad
+ Q\bigl(x_j,(1/2+C_1\delta)r_j\bigr)
+\]
+相交时连边。该图记录以后所有可能的长方体相交。
+
+\begin{lemma}[空间图的尺度与体积]\label{lem:global-buffer-graph}
+存在维数常数 \(C_2=8C_1\) 及 \(D_n<\infty\)，使每条边满足
+\begin{equation}\label{eq:global-graph-radius}
+ \frac{\max(r_i,r_j)}{\min(r_i,r_j)}
+ \le\frac{1+2C_1\delta}{1-2C_1\delta}
+ \le\exp(C_2\delta),
+\end{equation}
+且每个顶点的度至多为 \(D_n\)。置 \(c_0=1/(4C_2)\)。
+若整数 \(k\ge1\) 满足 \(k\delta\le c_0\)，则
+\begin{equation}\label{eq:global-buffer-volume}
+ S_{\rm buf}:=
+ \sum_{\operatorname{dist}_{\mathcal G}(i,\mathcal J)<k}r_i^n
+ \le C_nk^nS_b\le C_n k^n vS/\delta.
+\end{equation}
+到空集或到其他连通分支的图距离取为无穷。
+\end{lemma}
+\begin{proof}
+相邻指标由 \eqref{eq:global-witnesses} 满足
+\[
+ \max(r_i,r_j)<\norm{x_i-x_j}_\infty
+ \le(1/2+C_1\delta)(r_i+r_j).
+\]
+整理即得 \eqref{eq:global-graph-radius} 的第一个不等式；第二个不等式
+在 \(\delta\) 小于维数阈值时成立。特别地，相邻半径比在 \([1/2,2]\) 内。
+固定 \(i\)，所有相邻原半盒均在 \(Q(x_i,3r_i)\) 内，每个体积至少为
+\((r_i/2)^n\)，又彼此不交。因此其个数有维数上界，例如可取 \(D_n=12^n\)。
+
+若 \(i\) 到根 \(j\) 的图距离不超过 \(k\)，沿一条最短路径使用
+\eqref{eq:global-graph-radius}，路径上所有半径均在
+\([r_j/2,2r_j]\) 内，因为 \(C_2k\delta\le1/4\)。
+每一步的中心距离至多为 \(3r_j\)，故
+\(B_i\subset Q(x_j,4kr_j)\)。相应半盒不交，因而对每个根 \(j\) 有
+\[
+ \sum_{\operatorname{dist}_{\mathcal G}(i,j)<k}r_i^n
+ \le(8k)^nr_j^n.
+\]
+对所有例外根求和，允许不同根的图球重复计数，再用
+\eqref{eq:global-exception-volume}，得到 \eqref{eq:global-buffer-volume}。
+\end{proof}
+
+固定满足上述条件的 \(k\)，定义
+\begin{equation}\label{eq:global-buffer-theta}
+ \theta_i=\min\left\{1,
+       \frac{\operatorname{dist}_{\mathcal G}(i,\mathcal J)}k\right\}.
+\end{equation}
+若相应距离为无穷，则令 \(\theta_i=1\)。在每条边上都有
+\begin{equation}\label{eq:global-theta-gradient}
+ |\theta_i-\theta_j|\le1/k.
+\end{equation}
+这包括规则与例外相邻的情形，此时例外指标的参数为零，故规则指标的
+参数至多为 \(1/k\)。
+
+在长方体的每个坐标端点上作仿射插值，定义
+\begin{equation}\label{eq:global-affine-rectangle}
+ Y_i(\theta)=(1-\theta)B_i+\theta X_i\quad(0\le\theta\le1),
+ \qquad Y_i=Y_i(\theta_i).
+\end{equation}
+对例外指标恒有 \(Y_i=B_i\)。每个 \(Y_i(\theta)\) 均包含于
+\(Q(x_i,(1/2+C_1\delta)r_i)\)，当 \(\delta\) 足够小时进而包含于
+\(A_i\subset D\)。
+
+\begin{lemma}[仿射盒的体积增量]\label{lem:global-affine-volume}
+对每个规则指标和每个 \(\theta\in[0,1]\)，
+\begin{equation}\label{eq:global-affine-volume}
+ |Y_i(\theta)|\ge g_i/a+
+       \theta(n-C_n\delta)v r_i^n.
+\end{equation}
+因此
+\begin{equation}\label{eq:global-affine-sum}
+ \sum_i|Y_i|\ge M/a+nvS
+       -C_n\left(v\delta+\frac{v^2k^n}{\delta}\right)S.
+\end{equation}
+\end{lemma}
+\begin{proof}
+第 \(l\) 条边的长度恰为
+\[
+ (1-\theta)r_i+\theta(R_i+w_{il})
+ =R_i+\theta w_{il}+(1-\theta)(r_i-R_i)
+ \ge R_i+\theta w_{il}.
+\]
+因此不是先对总体积作线性插值，而是在各条边上保留下界。将乘积的
+常数项及一次项保留，再用算术--几何平均，得到
+\[
+ \begin{aligned}
+ |Y_i(\theta)|
+ &\ge R_i^n+\theta R_i^{n-1}\sum_{l=1}^n w_{il}\\
+ &\ge g_i/a+\theta nR_i^{n-1}(m_i^*)^{1/n}
+ \ge g_i/a+\theta(n-C_n\delta)v r_i^n.
+ \end{aligned}
+\]
+最后一步用了 \(R_i\ge(1-d_i)r_i\)、\(d_i\le\delta\) 和
+\eqref{eq:global-quantile-mass}。
+例外盒仍有 \(|Y_i|=r_i^n\ge g_i/a\)。所有参数不足一的指标都在
+\eqref{eq:global-buffer-volume} 的集合内，因而
+\[
+ \sum_{i\in\mathcal I}\theta_i r_i^n\ge S-S_{\rm buf}.
+\]
+对体积下界求和，使用 \(\sum_i g_i=M\) 及
+\eqref{eq:global-buffer-volume}，即得 \eqref{eq:global-affine-sum}。
+\end{proof}
+
+\subsection{成对局部位移与单临界方向的分离}
+
+下面将盒子的相交量分为一个临界方向与至少两个临界方向。前一种情形
+由完整见证给出相同参数下的定向分离，实际相交仅由相邻参数之差产生；
+后一种情形则保留两个局部位移因子。
+
+考虑实际有交点的规则对 \(Y_i,Y_j\)，记
+\[
+ s=r_i+r_j,\qquad \rho=d_i+d_j\le2\delta.
+\]
+若 \(\rho=0\)，端点移动界会给 \(Y_i=B_i\)、\(Y_j=B_j\)，与相交矛盾，
+故以下只需考虑 \(\rho>0\)。由端点移动界及中心分离，
+\begin{equation}\label{eq:global-local-pair-radius}
+ \max(r_i,r_j)<\norm{x_i-x_j}_\infty
+ \le(1/2+C_1\rho)s,\qquad
+ |r_i-r_j|\le2C_1\rho s.
+\end{equation}
+取 \(C_3=4(C_1+c+1)\)。若坐标 \(l\) 满足
+\begin{equation}\label{eq:global-local-critical}
+ |x_{i,l}-x_{j,l}|\ge(1/2-C_3\rho)s,
+\end{equation}
+则称其为临界坐标。至少一个坐标临界，因为最大中心距离大于 \(s/2\)。
+对非临界坐标以及任意 \(x\in P_i,z\in P_j\)，有
+\begin{equation}\label{eq:global-local-tangential}
+ |x_l-z_l|<[1/2-(C_3-c)\rho]s<\min(R_i,R_j).
+\end{equation}
+事实上，两簇位移的总量至多为
+\(c(e_ir_i+e_jr_j)\le c\rho s\)，而
+\eqref{eq:global-local-small-mass}、\eqref{eq:global-local-pair-radius} 给出
+\[
+ \min(R_i,R_j)\ge[1/2-(C_1+1)\rho]s.
+\]
+由 \(C_3-c>C_1+1\) 得到严格的切向余量。
+
+\begin{lemma}[相同参数下的单临界分离]\label{lem:global-common-theta}
+在上述局部条件下，若恰有一个临界坐标 \(q\)，则存在同一个坐标方向次序，
+使原半盒 \(B_i,B_j\) 及完整长方体 \(X_i,X_j\) 均在 \(q\) 轴上按此顺序
+分离。因此对每个相同的 \(\theta\in[0,1]\)，
+\begin{equation}\label{eq:global-common-theta-disjoint}
+ |Y_i(\theta)\cap Y_j(\theta)|=0.
+\end{equation}
+完整盒的分离结论不要求 \(X_i,X_j\) 预先相交。
+\end{lemma}
+\begin{proof}
+反射使 \(x_{j,q}>x_{i,q}\)，并置 \(\Delta x=x_{j,q}-x_{i,q}\)。
+其余坐标的中心距离均小于 \(s/2\)，故最大中心距离只能在 \(q\) 轴上，
+且 \(\Delta x>\max(r_i,r_j)\ge s/2\)。于是原半盒的对向端点满足
+\begin{equation}\label{eq:global-halfbox-normal-order}
+ x_{i,q}+r_i/2<x_{j,q}-r_j/2.
+\end{equation}
+私有点定位和 \eqref{eq:global-local-critical} 又保证，对任意
+\(x\in P_i,z\in P_j\)，
+\[
+ z_q-x_q\ge[1/2-(C_3+c)\rho]s>0
+\]
+当 \(\delta\) 充分小时成立。
+
+记完整簇端点之间的距离为
+\[
+ D_{ij}=\Delta x+\ell_{jq}-h_{iq}.
+\]
+若 \(D_{ij}<R_i\)，由上确界定义可取 \(x\in P_i^*\)，使其 \(q\) 坐标
+足够接近 \(x_{i,q}+h_{iq}\)。对尾集合
 \[
  T_j^-=\{z\in P_j:z_q-x_{j,q}\le\ell_{jq}\},
 \]
-任意 \(z\in T_j^-\) 均由 \eqref{eq:global-normal-order} 满足
-\(0<z_q-x_q<d+\rho<R_i\)，其余坐标由
-\eqref{eq:global-tangential-margin} 控制。因此整个
-\(T_j^-\subset Q(x,R_i)\)。
-因为 \(x\in P_i^*\subset P_i\setminus W_i\)，引理~\ref{lem:global-large-witness}
-保证其指定见证 \(Q(x,r(x))\) 同时包含 \(T_j^-\) 与 \(G_i\)，且
-\(R_i<r(x)\le r_i\)。又
-\[
- T_j^-\subset P_j\subset K\setminus Q_i,\qquad G_i\subset K\cap Q_i,
-\]
-两部分不交并均在 \(E^c\)。由 \eqref{eq:global-endpoint-tails} 及严格见证条件，
-\begin{equation}\label{eq:global-capacity-contradiction}
- g_i+bm_j\le|Q(x,r(x))\setminus E|<a r(x)^n\le ar_i^n.
+这使每个 \(z\in T_j^-\) 满足 \(0<z_q-x_q<R_i\)。其余坐标由
+\eqref{eq:global-local-tangential} 控制，故整段
+\(T_j^-\subset Q(x,R_i)\)。该源点的指定见证同时包含 \(G_i\)，且
+\(R_i<r(x)\le r_i\)。又 \(T_j^-\subset P_j\subset K\setminus Q_i\)，
+故它与 \(G_i\subset Q_i\) 不交。严格见证和
+\eqref{eq:global-endpoint-tails} 因而给出
+\begin{equation}\label{eq:global-local-capacity}
+ g_i+bm_j\le|Q(x,r(x))\setminus E|<ar_i^n.
 \end{equation}
-然而
+但
 \[
- ar_i^n-g_i\le\delta ar_i^n,\qquad
- bm_j\ge b(1-\delta)ar_j^n
- \ge b(1-\delta)2^{-n}ar_i^n>\delta ar_i^n,
+ ar_i^n-g_i\le d_i ar_i^n\le\delta ar_i^n,
+ \qquad
+ bm_j\ge b(1-\delta)2^{-n}ar_i^n
+ =4\delta(1-\delta)ar_i^n>\delta ar_i^n,
 \]
-其中最后一步用了 \(\delta<1/2\) 和 \(\delta/b<2^{-n-1}\)。
-这与 \eqref{eq:global-capacity-contradiction} 矛盾。
+与 \eqref{eq:global-local-capacity} 矛盾。因此 \(D_{ij}\ge R_i\)。
 
-再从 \(P_j^*\) 选取法向坐标趋于 \(\ell_{jq}\) 的点，并使用原 \(P_i\) 中
-\(z_q-x_{i,q}\ge h_{iq}\) 的右尾；该尾质量至少为 \(bm_i\)，与 \(G_j\)
-不交。若 \(d<R_j\)，同一切向余量使整段右尾进入该点的指定见证，
-将得到 \(g_j+bm_i<ar_j^n\)，与对称的预算不等式矛盾。
-故也有 \(d\ge R_j\)。因此
-\[
- d\ge\max(R_i,R_j)\ge(R_i+R_j)/2.
-\]
-两个 \(X\) 在 \(q\) 轴上的投影至多端点接触，故
-\begin{equation}\label{eq:global-one-critical}
- |X_i\cap X_j|=0
- \qquad\text{当恰有一个临界坐标时}.
+反向从 \(P_j^*\) 选取坐标趋于 \(x_{j,q}+\ell_{jq}\) 的源点，
+并使用 \(P_i\) 中坐标不小于 \(x_{i,q}+h_{iq}\) 的右尾。
+若 \(D_{ij}<R_j\)，同一法向次序和切向余量会使该右尾完整进入源点的
+指定见证；它与 \(G_j\) 不交，且质量至少为 \(bm_i\)。于是得到
+\(g_j+bm_i<ar_j^n\)，与对称的预算不等式矛盾。因此也有
+\(D_{ij}\ge R_j\)。这两次论证都没有假设完整盒有交点。
+所以
+\begin{equation}\label{eq:global-fullbox-normal-order}
+ x_{i,q}+h_{iq}+R_i/2\le
+ x_{j,q}+\ell_{jq}-R_j/2,
 \end{equation}
-
-若 \(i\in\mathcal I,j\notin\mathcal I\)，则 \(X_j=B_j\)。中心分离提供某坐标
-的中心差大于 \(\max(r_i,r_j)\ge s/2\)。该坐标的交长至多
-\(c\delta r_i\le2c\delta r_j\)，其余投影交长至多 \(r_j\)，所以
-\begin{equation}\label{eq:global-mixed-overlap}
- |X_i\cap X_j|\le2c\delta r_j^n.
-\end{equation}
-两指标均例外时，\(X_i=B_i,X_j=B_j\) 不相交。
-最后利用每个指标至多 \(12^n\) 个相交邻居，将
-\eqref{eq:global-two-critical} 对规则指标求和，将
-\eqref{eq:global-mixed-overlap} 对例外指标求和，并使用
-\eqref{eq:global-one-critical}，得到
-\eqref{eq:global-rectangle-overlaps}。
+因为 \(D_{ij}\ge\max(R_i,R_j)\ge(R_i+R_j)/2\)。
+在仿射插值中，\(q\) 轴的对向端点间距是
+\eqref{eq:global-halfbox-normal-order} 和
+\eqref{eq:global-fullbox-normal-order} 两个非负间距的同参数凸组合，
+故始终非负，得到 \eqref{eq:global-common-theta-disjoint}。
 \end{proof}
 
-\subsection{体积结算与对数余项}
+\begin{lemma}[仿射盒的总交叠]\label{lem:global-affine-overlap}
+对上面构造的有限族，有
+\begin{equation}\label{eq:global-affine-overlap}
+ \sum_{i<j}|Y_i\cap Y_j|
+ \le C_n\left(\delta v+\frac vk\right)S.
+\end{equation}
+\end{lemma}
+\begin{proof}
+先考虑只有一个临界坐标的规则相交对。在同参数 \(\theta_i\) 下，
+引理~\ref{lem:global-common-theta} 使 \(Y_i(\theta_i)\) 与
+\(Y_j(\theta_i)\) 在该轴分离。将后者的参数改为 \(\theta_j\) 时，
+每个坐标端点移动至多
+\[
+ C_1|\theta_i-\theta_j|d_jr_j\le C_1d_jr_j/k.
+\]
+因此该轴的实际交长至多为此数，其余交长由可比尺度控制，得到
+\[
+ |Y_i\cap Y_j|\le C_n d_jr_j^n/k.
+\]
+每个实际相交对都是图的一条边；由有界图度及
+\eqref{eq:global-deficit-integral}，所有这类对的总交量至多为
+\(C_nvS/k\)。
+
+若 \(i\) 规则而 \(j\) 例外，实际相交也使两者在图上相邻，故
+\(\theta_i\le1/k\) 而 \(Y_j=B_j\)。原半盒至少有一个分离投影。
+规则盒相对 \(B_i\) 的端点移动至多为
+\(C_1\theta_i d_ir_i\le C_1d_ir_i/k\)，所以该方向的交长至多为此数。
+其余方向用相邻半径的可比性控制，交体积至多为
+\(C_nd_ir_i^n/k\)。再次用图度和实际亏损积分，总量也不超过
+\(C_nvS/k\)。两方均例外时 \(Y_i=B_i,Y_j=B_j\) 不相交。
+
+最后考虑至少有两个临界坐标的规则相交对。对每个临界坐标，由端点
+移动界及 \eqref{eq:global-local-critical}，交长至多为
+\((C_1+C_3)\rho s\)。其余方向长为 \(O_n(r_i)\)，故
+\[
+ |Y_i\cap Y_j|\le C_n(d_i+d_j)^2r_i^n.
+\]
+利用 \(d_i+d_j\le2\delta\)、相邻半径可比及有界图度，得到
+\begin{equation}\label{eq:global-local-two-critical-sum}
+ \begin{aligned}
+ \sum_{\substack{i<j,\ Y_i\cap Y_j\ne\varnothing\\i,j\in\mathcal I}}
+ (d_i+d_j)^2r_i^n
+ &\le C_n\delta\sum_i d_ir_i^n\\
+ &\le C_n\delta vS.
+ \end{aligned}
+\end{equation}
+这里先对每对保留真实的 \(d_i+d_j\)，最后才求和；若提前把它替换为
+\(2\delta\)，会丢失所需的积分因子 \(v\)。合并上述各类即得结论。
+\end{proof}
+
+\subsection{参数均衡与全部输入的幂余项}
 
 \begin{proof}[定理~\ref{thm:endpoint} 高阶部分的证明]
-仍取任意 \(0<|E|<\infty\) 和紧集
+取任意有限正测度输入 \(E\) 及紧集
 \(K\subset\Hc(1-t;E)\setminus E\)。若
 \[
  M/a\le[1-(n+1)v]|E|,
 \]
-则所需的上界直接成立。以下只考虑相反情形，于是
-引理~\ref{lem:global-tail-cutoff} 可以取 \(C_0=n+1\)，其中的常数只依赖 \(n\)。
-令
-\[
- T=v^{-1/8},\qquad b=\sqrt v,
-\]
-并依该引理选取 \(L\in[T,T^2]\)，再置 \(\delta=Lv\)。当 \(t\) 充分小时，
-\[
- v^{-1/8}\le L\le v^{-1/4},\qquad
- \delta\le v^{3/4},\qquad \frac\delta b\le v^{1/4},
- \qquad \frac{\delta^2}v\le\sqrt v.
-\]
-因此所有指标同时满足引理~\ref{lem:global-quantile-rectangles} 所需的参数范围。
-由 \eqref{eq:global-tail-bounds}，
-\begin{equation}\label{eq:global-log-tail}
- \delta S_b\le\frac{C_nvS}{\log(1/v)},\qquad
- \frac{S_b}S\le\frac{C_nv^{1/8}}{\log(1/v)}.
-\end{equation}
-此外 \(b+\delta+\delta^n=O_n(\sqrt v)\)，所以矩形体积及交叠估计给出
-\[
- \sum_i|X_i|\ge\frac Ma+[n-O_n(\sqrt v)]v(S-S_b),
-\]
-\[
- \sum_{i<j}|X_i\cap X_j|
- \le O_n(v^{3/2}S)+\frac{C_nvS}{\log(1/v)}.
-\]
-所有矩形均在 \(D\) 内。对这一有限族使用二项容斥下界，再结合
-\eqref{eq:global-log-tail}，得到
+则已有比所需上界更强的估计。否则
+\eqref{eq:global-near-saturation} 成立，可以使用上述全部构造与仅依赖
+\(n\) 的常数。所有 \(Y_i\subset D\)，有限并集的二项容斥下界、
+\eqref{eq:global-affine-sum} 及
+引理~\ref{lem:global-affine-overlap} 给出
 \begin{equation}\label{eq:global-final-volume}
- V\ge\left|\bigcup_iX_i\right|
- \ge\sum_i|X_i|-\sum_{i<j}|X_i\cap X_j|
- \ge\frac Ma+nvS-\frac{C_nvS}{\log(1/v)}.
+ \begin{aligned}
+ V&\ge\left|\bigcup_iY_i\right|
+ \ge\sum_i|Y_i|-\sum_{i<j}|Y_i\cap Y_j|\\
+ &\ge M/a+nvS
+ -C_n\left(v\delta+\frac{v^2k^n}{\delta}+\frac vk\right)S.
+ \end{aligned}
 \end{equation}
-这里将 \(v^{3/2}S\) 及 \(vS_b\) 并入最后一项，所需阈值只依赖固定维数。
-
-由近饱和条件及 \eqref{eq:global-basic-volumes}，
+取
+\begin{equation}\label{eq:global-balanced-parameters}
+ \kappa=\frac1{n+2},\qquad
+ \delta=v^\kappa,\qquad
+ k=\left\lfloor\frac{c_0}{2\delta}\right\rfloor.
+\end{equation}
+当 \(t\) 足够小时，\(v\le\delta\)、所有局部小量条件都成立，且
+\(k\ge1\)、\(k\asymp_n\delta^{-1}\)、\(k\delta\le c_0\)。三个误差分别满足
 \[
- \frac S{|E|}=1+O_n(v),\qquad \frac V{|E|}\le1+O_n(t).
+ v\delta=v^{1+\kappa},\qquad
+ \frac{v^2k^n}{\delta}=O_n\bigl(v^2\delta^{-n-1}\bigr)
+ =O_n(v^{1+\kappa}),\qquad
+ v/k=O_n(v^{1+\kappa}),
 \]
-将它们代入 \eqref{eq:global-final-volume}，并乘以 \(a\)，得到
+其中 \(2-(n+1)\kappa=1+\kappa\)。于是
+\[
+ V\ge M/a+nvS-C_nv^{1+\kappa}S.
+\]
+再代入 \eqref{eq:global-near-volumes}、
+\(V/|E|\le1+O_n(t)\) 以及 \(t=O_n(v^2)\)，得到
 \begin{equation}\label{eq:global-compact-upper}
- \frac M{|E|}\le a-nav+
- O_n\!\left(\frac{av}{\log(1/v)}+at\right).
+ \frac M{|E|}\le a-nav+O_n(av^{1+\kappa}).
 \end{equation}
-这一估计也包含先前排除的情形，而且常数不依赖 \(E,K\) 或所选有限见证族。
-以紧集内逼近 \(\Hc(1-t;E)\setminus E\)，再对有限正测度的 \(E\) 取上确界。
-Lebesgue 密度定理给出 \(E\subset\Hc(1-t;E)\) 至多差零测集，故
-\[
- \Cn(1-t)\le1+a-nav+
- O_n\!\left(\frac{av}{\log(1/v)}+at\right).
-\]
+该式也包括最初排除的分支，且常数不依赖 \(E,K\) 或所选有限见证族。
 
-另一方面，周期孔下界给出
+严格水平集 \(\Hc(1-t;E)\) 开，差集
+\(\Hc(1-t;E)\setminus E\) 可测且有限测度，故可用紧集内逼近。
+Lebesgue 密度定理给 \(|E\setminus\Hc(1-t;E)|=0\)，因此对所有紧集
+\(K\) 及有限正测度 \(E\) 取上确界，\eqref{eq:global-compact-upper} 推出
+\[
+ \Cn(1-t)\le1+a-nav+O_n(av^{1+\kappa}).
+\]
+另一方面，有限截断的周期孔下界给出
 \[
  \Cn(1-t)\ge\left[1-a(1+v)^{-n}\right]^{-1}
  =1+a-nav+O_n(av^2+a^2).
 \]
-当 \(n\ge2\) 时，\(a=v^n\)、\(t=(v/2)^n\)，所以
-\(a^2=O_n(av^2)\)、\(at=O_n(av^2)\)。上下界合并得到
-\[
- \Cn(1-t)=1+a-nav+
- O_n\!\left(\frac{av}{\log(1/v)}\right).
-\]
-最后代入 \(a=2^nt\)、\(v=2t^{1/n}\)，得到
+因 \(a=v^n\)、\(n\ge2\)，有 \(a^2=O_n(av^2)\)，而
+\(av^2=O_n(av^{1+\kappa})\)。上下界合并，最后代入
+\(a=2^nt\)、\(v=2t^{1/n}\)，得到
 \[
  \Cn(1-t)=1+2^nt-n2^{n+1}t^{1+1/n}
- +O_n\!\left(\frac{t^{1+1/n}}{\log(1/t)}\right).
+ +O_n\!\left(t^{1+1/n+1/[n(n+2)]}\right).
 \]
-这同时给出二阶系数及所述对数余项。
 \end{proof}

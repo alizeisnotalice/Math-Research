@@ -38,10 +38,10 @@
 研究 Lebesgue 测度下中心轴平行立方体极大算子的 Tauberian 常数。
 对每个固定整数 \(n\ge2\)，证明
 \(C_n(1-t)=1+2^nt-n2^{n+1}t^{1+1/n}
-+O_n(t^{1+1/n}/\log(1/t))\)。
++O_n(t^{1+1/n+1/[n(n+2)]})\)。
 上界适用于全部有限正测度可测输入及全部半径，下界由有限截断的周期孔构造实现。
 上界证明保留每个水平集点自身的严格见证，并利用私有簇的分位尾质量
-排除扩大盒的单方向相交。对于共享同一中心方体、以公共交集归一化的多线性常数，
+排除扩大盒的单方向相交，再利用有限邻接图上的平滑插值控制例外簇交界。对于共享同一中心方体、以公共交集归一化的多线性常数，
 证明超临界区的精确线性参数约化和临界区的发散，进而得到关于多线性重数一致的二阶渐近。
 \end{abstract}
 \section{引言}
@@ -92,7 +92,7 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 扣除一阶项以后，\(t^{1+1/n}\) 尺度上的极限是否存在？
 关键困难在于代表方体中心处的高平均值不能替代所有水平集点自身的见证。
 本文保留每个点的实际见证，通过私有簇定位、深覆盖分配和分位尾质量，
-排除相邻扩大盒在单个薄方向上的正体积相交，从而闭合一般输入的高阶上界。
+排除相邻扩大盒在单个薄方向上的正体积相交。进一步在有限空间邻接图上平滑缩回例外簇邻域内的扩大盒，按局部真实亏损计费，得到一般输入的幂次余项。
 
 \begin{theorem}[真实二阶渐近]\label{thm:endpoint}
 令
@@ -106,10 +106,14 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 \end{equation}
 其中右侧上界对 \(0<t<1\) 成立。因此
 \(\Cn(1-t)=1+2^nt+o_n(t)\)。
-对每个固定整数 \(n\ge2\)，进一步有
+对每个固定整数 \(n\ge2\)，置
+\[
+ \beta_n=1+\frac1n+\frac1{n(n+2)}.
+\]
+进一步有
 \begin{equation}\label{eq:sharp}
  \Cn(1-t)=1+2^nt-n2^{n+1}t^{1+1/n}
- +O_n\!\left(\frac{t^{1+1/n}}{\log(1/t)}\right),\qquad t\downarrow0.
+ +O_n(t^{\beta_n}),\qquad t\downarrow0.
 \end{equation}
 特别地，
 \[
@@ -393,7 +397,7 @@ Besicovitch 方体族的交叠重数不超过 \(2^n\)。
 对每个固定 \(n\ge2\)，当 \(\eps\downarrow0\) 时，
 \[
  \Cm(1-\eps)=1+2^n\eps-n2^{n+1}\eps^{1+1/n}
- +O_n\!\left(\frac{\eps^{1+1/n}}{\log(1/\eps)}\right)
+ +O_n(\eps^{\beta_n})
 \]
 关于所有整数 \(m\ge1\) 一致成立。
 \end{corollary}
@@ -402,14 +406,14 @@ Besicovitch 方体族的交叠重数不超过 \(2^n\)。
 记 \(p=1+1/n<2\)、\(s=\sigma_m(\eps)\)。引理 \ref{lem:parameter} 给出
 \(s=\eps+O(\eps^2)\)，其常数与 \(m\) 无关。因此
 \(s^p=\eps^p+O_n(\eps^{p+1})\)，且
-\(s^p/\log(1/s)=O_n(\eps^p/\log(1/\eps))\) 一致成立。
-将 \eqref{eq:sharp} 代入 \eqref{eq:reduction}，并用
-\(\eps^2=o_n(\eps^p/\log(1/\eps))\) 即得结论。
+\(s^{\beta_n}=O_n(\eps^{\beta_n})\) 一致成立。
+将 \eqref{eq:sharp} 代入 \eqref{eq:reduction}。因为 \(\beta_n<2\)，
+\(\eps^2=O_n(\eps^{\beta_n})\)，故结论成立。
 \end{proof}
 
 这一结论将所有允许输入的多线性高阶问题严格还原为线性问题。
-上面的对数余量尚不能识别更高项的幂次或系数；周期下包络更高项的展开
-只描述该构造。进一步的高阶渐近需要把第 3 节的例外簇交叠损失继续缩小，
+由于 \(\beta_n<1+2/n\)，所得余项尚不能识别下一项的幂次或系数；周期下包络更高项的展开
+只描述该构造。进一步的高阶渐近需要继续缩小空间缓冲中的体积损失，
 并检验跨孔及多尺度构造在更细尺度上能否提高下界。
 
 \bibliographystyle{plain}
