@@ -1,0 +1,113 @@
+\section{全体输入优化的有限见证容量判据}\label{cap:section}
+
+前面的测试族尚不能给出全体输入的三阶上界。为检验更一般的候选几何，
+本节把有限组见证的共同可行性化成精确容量问题。输入仍可为任意可测集；
+这个有限化不要求输入是矩形并，也不假设两两条件足以保证共同可行。
+
+\begin{theorem}[有限见证的严格充要判据]\label{cap:main}
+设 $B_1,\ldots,B_N\subset\mathbb R^n$ 为正有限 Lebesgue 测度的可测集，
+$b_1,\ldots,b_N>0$。对每个非空 $S\subset\{1,\ldots,N\}$，记
+\[
+ A_S=\Bigl(\bigcap_{i\in S}B_i\Bigr)\setminus\bigcup_{j\notin S}B_j,
+ \qquad c_S=|A_S|.
+\]
+令 $\eta_*$ 为下列有限线性规划的最优值：
+\begin{align*}
+ \text{最大化 }&\eta,\\
+ \text{约束 }&0\le m_S\le c_S,\quad \sum_Sm_S\le1,\quad
+ \sum_{S\ni i}m_S\ge b_i+\eta\quad(1\le i\le N).
+\end{align*}
+则存在 $|E|=1$ 的可测集 $E$ 使 $|E\cap B_i|>b_i$ 对全部 $i$ 成立，
+当且仅当 $\eta_*>0$。并且精确对偶公式为
+\begin{equation}\label{cap:dual}
+ \eta_*=
+ \min_{\substack{\lambda_i\ge0,\ \sum_i\lambda_i=1\\z\ge0}}
+ \left[z+\sum_{S\ne\varnothing}c_S
+ \Bigl(\sum_{i\in S}\lambda_i-z\Bigr)_+
+ -\sum_i\lambda_i b_i\right].
+\end{equation}
+因此任一对偶可行 $(\lambda,z)$ 若使括号内表达式非正，便给出严格见证不可行的证书。
+\end{theorem}
+\begin{proof}
+若存在 $E$，取 $m_S=|E\cap A_S|$，并取有限多个严格余量的最小值，便得到正的可行
+$\eta$。反过来，Lebesgue 测度非原子，每个有限测度的 $A_S$ 可切出任意给定的
+$m_S\in[0,c_S]$。例如用第一坐标半空间截取，其截取测度连续地从零变到 $c_S$。
+把各部分合并，再从 $\mathbb R^n\setminus\bigcup_iB_i$ 中补足到质量 $1$。
+该补集有无限测度，因为有限并的测度有限；补入不会改变任何捕获量。
+这就实现所有容量变量，正 $\eta$ 保证全部严格见证。
+
+质量变量位于非空紧多面体内，最优 $\eta$ 存在且有限。
+对每个捕获约束使用乘子 $\lambda_i\ge0$，预算约束使用乘子 $z\ge0$。
+无约束实变量 $\eta$ 的系数消失要求 $\sum_i\lambda_i=1$；
+在 $0\le m_S\le c_S$ 上最大化剩余项，得到
+$c_S(\sum_{i\in S}\lambda_i-z)_+$。有限线性规划强对偶于是给出
+式~\eqref{cap:dual}。也可以保留原子上界的乘子再消去，得到同一公式。
+注意原子权重 $\sum_{i\in S}\lambda_i\le1$，所以可把 $z$ 限于 $[0,1]$，
+对偶最小值确实达到。
+\end{proof}
+
+在分数次模型中，先归一化 $|E|=1$，再取
+$b_i=\alpha |B_i|^{1-\beta/n}$。若每个 $B_i$ 是相应光晕点的见证，
+则它们必须共同通过上述判据。对中心方体，$|B_i|=\ell_i^n$，故阈值为
+$b_i=\alpha\ell_i^{n-\beta}$。这里有限见证的中心和尺度均被固定；
+要控制整个光晕，仍须处理连续变化的中心、尺度和几何覆盖，不能由有限样本直接推出上界。
+
+\begin{proposition}[两个见证的完整判据]\label{cap:pair}
+当 $N=2$ 时，上述共同严格可行性等价于
+\[
+ b_i<\min(1,|B_i|)\quad(i=1,2),\qquad
+ b_1+b_2<1+|B_1\cap B_2|.
+\]
+\end{proposition}
+\begin{proof}
+必要性来自单个捕获量界及
+$|E\cap B_1|+|E\cap B_2|\le1+|B_1\cap B_2|$。
+反之，把 $b_i$ 同时增加一个足够小的 $\varepsilon>0$，使所列严格不等式仍成立，
+记新值为 $d_i$、交叠容量为 $I$。
+先在交叠中放质量 $m=\min(I,\max(d_1,d_2))$，再在各自独占区放
+$(d_i-m)_+$。这些量不超过相应容量，且总预算为
+$\max(d_1,d_2,d_1+d_2-I)<1$。从外部补足质量，便实现超过原阈值的捕获量。
+\end{proof}
+
+\begin{example}[一般可测几何中两两可行仍不够]\label{cap:triple}
+取六个互不交的有界区间作为原子，其中 $A_{12},A_{13},A_{23}$ 的长度各为 $3/10$，
+$A_1,A_2,A_3$ 的长度各为 $1/10$。定义 $B_i$ 为带有指标 $i$ 的原子之并。
+则 $|B_i|=7/10$、$|B_i\cap B_j|=3/10$，三重交叠为空。
+取 $b_i=16/25$，命题~\ref{cap:pair}的全部两两条件严格成立。
+但在式~\eqref{cap:dual}中取 $\lambda_i=z=1/3$，得到
+\[
+ \eta_*\le \frac13+\frac9{10}\Bigl(\frac23-\frac13\Bigr)-\frac{16}{25}
+ =-\frac1{150}<0.
+\]
+故不存在一个共同的质量一输入实现这三个严格见证。
+这说明一般可测几何不能只保留两两约束；本例的 $B_i$ 是区间并，
+并未声称在中心方体族中也已构造出同样的三见证反例。
+\end{example}
+
+轴平行方体的有限原子容量可由各边界坐标构成的网格精确求和。
+若坐标和阈值为有理数，数值线性规划只负责寻找候选；
+随后可用有理数重新验证全部容量、预算、严格余量或对偶目标，
+从而得到不依赖浮点求解状态的有限证书。
+
+\begin{proposition}[有限可行证书到连续光晕的下界]\label{cap:neighbourhood}
+设 $B_i=x_i+[-\ell_i/2,\ell_i/2]^n$，
+$b_i=\alpha\ell_i^{n-\beta}$，并由容量变量实现质量一输入 $E$。
+若其精确捕获余量为 $\eta_i=|E\cap B_i|-b_i>0$，置
+$\rho_i=\eta_i/(n\ell_i^{n-1})$，则
+\[
+ \bigcup_i\bigl(x_i+(-\rho_i,\rho_i)^n\bigr)
+ \subset H_{\beta,\mathcal Q_c}(\alpha,E).
+\]
+从而该并集的体积是全体常数 $C_{\beta,\mathcal Q_c}(\alpha)$ 的严格可复核下界。
+\end{proposition}
+\begin{proof}
+因为 $0<\eta_i<\ell_i^n$，有 $\rho_i<\ell_i$。
+若 $\|h\|_\infty<\rho_i$，平移同尺度方体损失的捕获至多为
+\[
+ |B_i\setminus(B_i+h)|
+ =\ell_i^n-\prod_{j=1}^n(\ell_i-|h_j|)
+ \le n\ell_i^{n-1}\|h\|_\infty<\eta_i.
+\]
+故 $B_i+h$ 仍严格见证点 $x_i+h$，得到包含。对有理坐标、尺度和正余量，
+这些邻域方体的并集体积也可由有理网格精确计算。
+\end{proof}

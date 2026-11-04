@@ -89,3 +89,7 @@ run('verification/fixed_cube_matlab.m')
 第13轮证明k=1挖角构型的真实四阶系数为−2/3；与正方形及矩形测试上确界的差分别为(8/3)t⁴+o(t⁴)、(19/6)t⁴+o(t⁴)，因此这两个比较的四阶损失sharp。见 `rounds/013.md`，未据此确定全体四阶系数。
 
 第13轮当前PDF59页。复现 `wolframscript -file verification/k1_fourth.wl`，MATLAB运行 `verification/k1_fourth_matlab.m`，Python运行 `verification/k1_fourth.py`。
+
+第14轮建立任意维、有限可测见证族的精确容量LP充要判据与对偶证书；两个见证的显式判据、一般几何中两两可行但共同不可行的反例均已证明。105组固定8方体族的有理证书全部重验通过；未将有限证书当作连续光晕的三阶上界。见 `rounds/014.md`。
+
+第14轮当前PDF61页。容量证书复现：`python3 verification/witness_capacity.py` 后运行 `python3 verification/check_capacity.py`；Wolfram运行 `verification/witness_capacity.wl`，MATLAB运行 `verification/witness_capacity_matlab.m`。
