@@ -1,0 +1,211 @@
+\section{预备知识与尺度归一化}
+\label{sec:preliminaries}
+
+本节固定 $n\geq1$ 与 $0<\beta<n$，并记
+\[
+ \theta:=\frac\beta n\in(0,1).
+\]
+设 $\mathcal Q$ 为所有轴平行方体构成的基，$\mathcal R$ 为所有轴平行矩形构成的基，$\mathcal Q_c$ 为以取值点为中心的轴平行方体构成的基。对其中任一基 $\mathcal B$，令 $\mathcal B(x)$ 表示可在 $x$ 使用的集合，并定义
+\begin{equation}
+ M_{\beta,\mathcal B}f(x):=
+ \sup_{B\in\mathcal B(x)}|B|^{\theta-1}\int_B|f(y)|\,dy.
+ \label{fnd:def-max}
+\end{equation}
+以下所有集合都取 Lebesgue 可测；$|\cdot|$ 表示 Lebesgue 测度。
+
+\begin{lemma}[严格水平集的可测性]
+\label{fnd:measurability}
+若 $f\in L^1_{\mathrm{loc}}(\mathbb R^n)$ 与 $\lambda>0$，则对
+$\mathcal B\in\{\mathcal Q,\mathcal R,\mathcal Q_c\}$，集合
+\[
+ \{x:M_{\beta,\mathcal B}f(x)>\lambda\}
+\]
+是开集。
+\end{lemma}
+
+\begin{proof}
+先取 $\mathcal B=\mathcal Q_c$。对每个 $\ell>0$，令
+$Q_\ell=[-\ell/2,\ell/2]^n$ 及
+\[
+ F_\ell(x):=\int_{x+Q_\ell}|f(y)|\,dy.
+\]
+函数 $F_\ell$ 连续：若 $x_j\to x$，则所有 $x_j+Q_\ell$ 与 $x+Q_\ell$ 落在同一有界方体内；在此方体上以 $|f|$ 支配，且平移后的方体指示函数在边界之外逐点收敛，故可由支配收敛定理得到结论。因此
+\[
+ \{M_{\beta,\mathcal Q_c}f>\lambda\}
+ =\bigcup_{\ell>0}\{x:\ell^{\beta-n}F_\ell(x)>\lambda\}
+\]
+为开集。
+
+再令 $\mathcal B=\mathcal Q$ 或 $\mathcal R$，并设 $x$ 有一个严格见证矩形
+$B=\prod_{j=1}^n[a_j,b_j]$。对 $t\geq0$ 记
+\[
+ B_t:=\prod_{j=1}^n[a_j-t,b_j+t],\qquad
+ \Phi(t):=|B_t|^{\theta-1}\int_{B_t}|f|.
+\]
+当 $t\downarrow0$ 时，$\Phi(t)\to\Phi(0)>\lambda$。于是某个 $t>0$ 满足 $\Phi(t)>\lambda$；并且 $x\in\operatorname{int}B_t$。因此 $x$ 的一个邻域中的每一点均可把同一个 $B_t$ 作为严格见证，所求水平集开。
+\end{proof}
+
+\begin{lemma}[示性函数的自然顶层]
+\label{fnd:top-level}
+若 $0<|E|<\infty$，则对任意 $x\in\mathbb R^n$ 及
+$\mathcal B\in\{\mathcal Q,\mathcal R,\mathcal Q_c\}$，
+\[
+ M_{\beta,\mathcal B}\mathbf1_E(x)\leq |E|^\theta.
+\]
+\end{lemma}
+
+\begin{proof}
+对任一见证 $B$ 写 $s=|E\cap B|$。由于 $s\leq |B|$ 及 $s\leq |E|$，
+\[
+ s=s^{1-\theta}s^\theta
+ \leq |B|^{1-\theta}|E|^\theta.
+\]
+乘以 $|B|^{\theta-1}$ 后取上确界即可。
+\end{proof}
+
+\begin{definition}[尺度不变光晕与 Tauberian 常数]
+\label{fnd:def-halo}
+对 $0<\alpha<1$，令
+\[
+ H_{\beta,\mathcal B}(\alpha,E):=
+ \{x:M_{\beta,\mathcal B}\mathbf1_E(x)>\alpha|E|^\theta\},
+ \qquad
+ C_{\beta,\mathcal B}(\alpha):=
+ \sup_{0<|E|<\infty}\frac{|H_{\beta,\mathcal B}(\alpha,E)|}{|E|}.
+\]
+\end{definition}
+
+\begin{remark}
+\label{fnd:center-density}
+分数阶情形中，$x$ 是 $E$ 的 Lebesgue 密度点并不推出 $x\in H_{\beta,\mathcal Q_c}(\alpha,E)$：半径趋于零的中心方体平均量级为 $|Q|^\theta$，其极限为零。因此中心常数的端点行为不应和零阶极大算子混同。
+\end{remark}
+
+\begin{proposition}[伸缩律与唯一归一化]
+\label{fnd:scaling}
+对 $r>0$，有
+\[
+ M_{\beta,\mathcal B}\mathbf1_{rE}(rx)
+ =r^\beta M_{\beta,\mathcal B}\mathbf1_E(x),
+ \qquad
+ H_{\beta,\mathcal B}(\alpha,rE)=rH_{\beta,\mathcal B}(\alpha,E).
+\]
+此外，若保持分母为 $|E|$，把阈值写成 $\alpha|E|^\sigma$，并要求变换
+$(E,x)\mapsto(rE,rx)$ 对任意 $r>0$ 保持同一个参数 $\alpha$，则必且只可取
+$\sigma=\beta/n$。
+\end{proposition}
+
+\begin{proof}
+每个 $rx$ 处的见证均唯一写成 $rB$。作变量代换 $y=rz$，则
+\[
+ |rB|^{\theta-1}\int_{rB}\mathbf1_{rE}(y)\,dy
+ =r^{n(\theta-1)+n}|B|^{\theta-1}\int_B\mathbf1_E(z)\,dz
+ =r^\beta |B|^{\theta-1}|E\cap B|.
+\]
+这给出第一式；又 $|rE|^\theta=r^\beta|E|^\theta$，从而给出光晕恒等式。一般幂型阈值在伸缩下乘以 $r^{n\sigma}$，故与算子的齐次度相同当且仅当 $n\sigma=\beta$。
+\end{proof}
+
+\begin{proposition}[固定阈值的退化]
+\label{fnd:raw-divergence}
+对任意 $\lambda>0$ 以及
+$\mathcal B\in\{\mathcal Q,\mathcal R,\mathcal Q_c\}$，
+\[
+ \sup_{0<|E|<\infty}
+ \frac{|\{M_{\beta,\mathcal B}\mathbf1_E>\lambda\}|}{|E|}=\infty.
+\]
+\end{proposition}
+
+\begin{proof}
+令 $E_0=[-1/2,1/2]^n$。若 $\|x\|_\infty\leq R$，则以 $x$ 为中心、边长 $2R+1$ 的方体包含 $E_0$，所以对三种基均有
+\[
+ M_{\beta,\mathcal B}\mathbf1_{E_0}(x)\geq(2R+1)^{-(n-\beta)}.
+\]
+因此当 $u>0$ 充分小时，存在仅依赖于 $n,\beta$ 的 $c>0$ 使
+\[
+ |\{M_{\beta,\mathcal B}\mathbf1_{E_0}>u\}|
+ \geq c u^{-n/(n-\beta)}.
+\]
+在伸缩式中取 $E=rE_0$，并令 $r\to\infty$，即得相应商至少为常数倍的
+$\lambda^{-n/(n-\beta)}r^{\beta n/(n-\beta)}$，从而发散。
+\end{proof}
+
+\begin{theorem}[双密度刚性与最佳代数误差]
+\label{fnd:double-density}
+设 $0<|E|<\infty$，且 $B$ 为严格见证，即
+\[
+ |B|^{\theta-1}|E\cap B|>\alpha|E|^\theta.
+\]
+写
+\[
+ s:=|E\cap B|,\qquad a:=\frac{s}{|B|},\qquad b:=\frac{s}{|E|}.
+\]
+则
+\[
+ a^{1-\theta}b^\theta>\alpha,\qquad
+ a>\alpha^{1/(1-\theta)},\qquad b>\alpha^{1/\theta},
+\]
+并且
+\[
+ \alpha^{1/\theta}|E|<|B|<\alpha^{-1/(1-\theta)}|E|.
+\]
+令
+\[
+ \rho_\theta(\alpha):=
+ \max\left\{1-\alpha^{1/\theta},\,
+ \alpha^{-1/(1-\theta)}-1\right\}.
+\]
+则
+\[
+ |B\triangle E|<\rho_\theta(\alpha)|E|.
+\]
+而且在只使用严格见证不等式及 $s\leq |B|,|E|$ 的意义下，该常数最优。
+\end{theorem}
+
+\begin{proof}
+将严格见证不等式除以 $|B|^{1-\theta}|E|^\theta$，可得
+\[
+ a^{1-\theta}b^\theta>\alpha.
+\]
+因 $a,b\leq1$，分别去掉不超过 $1$ 的另一个因子即可得到两个密度下界。与 $s\leq|B|$、$s\leq|E|$ 结合，得到尺度窗。
+
+为证明对称差估计，利用齐次性令 $|E|=1$，记 $r=|B|$。此时
+$s>\alpha r^{1-\theta}$，且 $s\leq\min\{1,r\}$，故
+\[
+ \alpha^{1/\theta}<r<\alpha^{-1/(1-\theta)}.
+\]
+又
+\[
+ |B\triangle E|=1+r-2s
+ <f(r):=1+r-2\alpha r^{1-\theta}.
+\]
+而 $f''(r)=2\alpha\theta(1-\theta)r^{-1-\theta}>0$。凸函数在闭区间的最大值由端点控制，故
+\[
+ |B\triangle E|<
+ \max\{f(\alpha^{1/\theta}),f(\alpha^{-1/(1-\theta)})\}
+ =\rho_\theta(\alpha).
+\]
+最后，令 $|E|=1$。取 $B\subset E$ 且 $|B|\downarrow\alpha^{1/\theta}$，或取 $E\subset B$ 且 $|B|\uparrow\alpha^{-1/(1-\theta)}$，均可保持严格见证并分别逼近上述两个端点误差。这说明统一常数不能减小。
+\end{proof}
+
+\begin{corollary}[端点展开]
+\label{fnd:rho-expansion}
+当 $t\downarrow0$ 时，
+\[
+ \rho_\theta(1-t)=
+ \max\left\{\frac1\theta,\frac1{1-\theta}\right\}t+O_\theta(t^2).
+\]
+\end{corollary}
+
+\begin{proof}
+分别对 $(1-t)^{1/\theta}$ 与 $(1-t)^{-1/(1-\theta)}$ 作 Taylor 展开。
+\end{proof}
+
+\begin{remark}
+\label{fnd:outer-weight}
+后文若使用外层权常数，约定
+\[
+ C^w_{\beta,\mathcal B}(\alpha):=
+ \sup_{0<|E|<\infty,\,0<w(E)<\infty}
+ \frac{w(H_{\beta,\mathcal B}(\alpha,E))}{w(E)}.
+\]
+这里算子、阈值和集合尺度始终由 Lebesgue 测度决定；它不同于以内禀测度 $w(x)\,dx$ 定义的极大算子，也不同于一般的两权范数不等式。
+\end{remark}

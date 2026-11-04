@@ -1,0 +1,120 @@
+\section{一维精确常数}\label{sec:one-dimensional}
+
+本节固定 $n=1$、$0<\beta<1$，并记
+\[
+ q:=\frac{1}{1-\beta},\qquad
+ A_\beta(t):=1-(1-t)^{1/\beta},\qquad
+ D_\beta(t):=(1-t)^{-1/(1-\beta)}-1.
+\]
+这里 $t=1-\alpha$。为避免混淆，$A_\beta$ 对应完全包含于资料集的中心见证，
+$D_\beta$ 对应完整捕获资料集的中心见证；它们并不是两个可同时相加的光晕部分。
+
+\begin{lemma}[两两相交区间族]\label{one:pairwise}
+设 $\mathscr J$ 是非空区间族，且任意 $I,J\in\mathscr J$ 相交。则
+$U:=\bigcup_{I\in\mathscr J}I$ 是区间。若还存在 $L<\infty$ 使
+\[
+ |I\cup J|\le L\qquad(I,J\in\mathscr J),
+\]
+则 $|U|\le L$。
+\end{lemma}
+
+\begin{proof}
+两两相交的区间并是区间。取 $I_0\in\mathscr J$。由
+$|I\cup I_0|\le L$ 可知所有端点有界。令 $a:=\inf U$、$b:=\sup U$。
+给定 $\varepsilon>0$，可取 $I_-,I_+\in\mathscr J$ 满足
+\[
+ \inf I_-<a+\varepsilon,\qquad \sup I_+>b-\varepsilon.
+\]
+二者相交，故 $I_-\cup I_+$ 为区间，从而
+$b-a\le |I_-\cup I_+|+2\varepsilon\le L+2\varepsilon$。令
+$\varepsilon\downarrow0$ 即得结论。
+\end{proof}
+
+\begin{theorem}[一维非中心精确常数]\label{one:uncentered}
+若 $2^{-\beta}<\alpha<1$，则
+\[
+ C_{\beta,\mathcal Q}(\alpha)
+ =C_{\beta,\mathcal R}(\alpha)
+ =2\alpha^{-1/(1-\beta)}-1.
+\]
+\end{theorem}
+
+\begin{proof}
+在一维，$\mathcal Q=\mathcal R$ 是全体有界区间。由尺度不变性，只须处理
+$|E|=1$。令 $I$ 为严格见证区间，并写 $s_I:=|E\cap I|$。见证不等式给出
+\[
+ |I|<\left(\frac{s_I}{\alpha}\right)^q,
+ \qquad s_I>\alpha^{1/\beta}>\frac12,
+ \qquad \alpha^{1/\beta}<s_I\le1.
+\]
+后两个不等式分别由 $s_I\le |I|$、$s_I\le |E|$ 与严格见证条件得到。
+因此两个严格见证区间 $I,J$ 满足
+\[
+ |E\cap I\cap J|\ge s_I+s_J-|E|=s_I+s_J-1>0.
+\]
+令 $g(s):=(s/\alpha)^q-s$。在 $[\alpha^{1/\beta},1]$ 上，
+\[
+ g'(s)=q\alpha^{-q}s^{q-1}-1\ge q-1>0,
+\]
+故 $g(s)\le g(1)=\alpha^{-q}-1$。又因 $I\cap J$ 的测度至少
+$s_I+s_J-1$，有
+\[
+ |I\cup J|
+ <\left(\frac{s_I}{\alpha}\right)^q+
+   \left(\frac{s_J}{\alpha}\right)^q-(s_I+s_J-1)
+ =1+g(s_I)+g(s_J)
+ \le2\alpha^{-q}-1.
+\]
+引理~\ref{one:pairwise} 遂给出光晕的上界。
+
+反向取 $E=[0,1]$。若 $x\in(1-\alpha^{-q},\alpha^{-q})$，则 $E$ 和 $x$
+包含于长度严格小于 $\alpha^{-q}$ 的区间。该区间完整捕获 $E$，故严格见证
+$x\in H_{\beta,\mathcal Q}(\alpha,E)$。该开区间的长度是
+$2\alpha^{-q}-1$，给出相反方向的不等式。
+\end{proof}
+
+\begin{theorem}[一维中心精确常数]\label{one:centered}
+若 $2^{-\beta}<\alpha<1$，则
+\[
+ C_{\beta,\mathcal Q_c}(\alpha)
+ =\max\left\{1-\alpha^{1/\beta},\
+ \alpha^{-1/(1-\beta)}-1\right\}.
+\]
+\end{theorem}
+
+\begin{proof}
+仍令 $|E|=1$。若中心严格见证区间 $I$ 的中心、长度和捕获量分别为
+$c_I,\ell_I,s_I$，则 $s_I\in(B,1]$，其中
+\[
+ B:=\alpha^{1/\beta}>\frac12,\qquad L:=\alpha^{-q}.
+\]
+上个证明已经说明任意两个严格见证区间相交。对于这样的 $I,J$，有
+\[
+ |c_I-c_J|
+ \le\frac{\ell_I+\ell_J}{2}-|I\cap J|
+ <1+h(s_I)+h(s_J),
+ \qquad h(s):=\frac12\left(\frac{s}{\alpha}\right)^q-s.
+\]
+函数 $h$ 在 $[B,1]$ 上凸，故其最大值在端点取得；而
+\[
+ h(B)=-\frac{B}{2},\qquad h(1)=\frac L2-1.
+\]
+于是任意两个光晕点的距离严格小于
+\[
+ 1+2\max\left\{-\frac B2,\frac L2-1\right\}
+ =\max\{1-B,L-1\}.
+\]
+实线上集合的测度不超过其直径，故得到上界。
+
+再次取 $E=[0,1]$。若 $x\in(B/2,1-B/2)$，可选择以 $x$ 为中心、完全包含于
+$E$ 且长度严格大于 $B$ 的区间，给出长度 $1-B$ 的内部光晕。若
+$|x-1/2|<(L-1)/2$，可选择以 $x$ 为中心、完整包含 $E$ 且长度严格小于 $L$ 的区间，
+给出长度 $L-1$ 的外部光晕。这两个区间集同心，故其并的长度是
+$\max\{1-B,L-1\}$，上界达到。
+\end{proof}
+
+\begin{remark}[一阶相变]\label{one:first-order-phase}
+定理~\ref{one:centered} 表明，当 $\beta<1/2$ 时，内含机制控制一阶项；
+当 $\beta>1/2$ 时，完整捕获机制控制一阶项。在 $\beta=1/2$，两者一阶项相同，
+但外部机制在二阶已经严格较大。
+\end{remark}

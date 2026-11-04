@@ -1,0 +1,153 @@
+\section{势函数比较与直接应用}\label{app:section}
+
+本节给出前述几何估计的直接应用。所有结论的方向都是“势函数或解控制分数次极大函数”；因此它们产生超水平集下界和资料集中限制，并不产生新的正则性上界。
+
+\subsection{Riesz 势的方体比较}
+
+对 $0<\beta<n$ 和 $f\ge0$，取未归一化 Riesz 势
+\[
+ I_\beta f(x)=\int_{\mathbb R^n}|x-y|^{\beta-n}f(y)\,dy.
+\]
+
+\begin{theorem}[Riesz 势比较及最佳常数]\label{app:riesz}
+对每个 $f\ge0$，
+\[
+ I_\beta f(x)\ge n^{-(n-\beta)/2}M_{\beta,\mathcal Q}f(x),
+\]
+以及
+\[
+ I_\beta f(x)\ge\left(\frac{2}{\sqrt n}\right)^{n-\beta}
+ M_{\beta,\mathcal Q_c}f(x).
+\]
+两个常数在“对所有非负 $f$、每一点成立”的意义下最佳。
+\end{theorem}
+\begin{proof}
+若边长为 $\ell$ 的方体 $Q$ 包含 $x$，则 $|x-y|\le\sqrt n\ell$ 对 $y\in Q$ 成立。因 $\beta-n<0$，
+\[
+ \int_Q|x-y|^{\beta-n}f(y)\,dy
+ \ge n^{-(n-\beta)/2}\ell^{\beta-n}\int_Qf.
+\]
+对允许的 $Q$ 取上确界即得第一个不等式。中心方体满足 $|x-y|\le\sqrt n\ell/2$，从而得到第二个不等式。
+
+取 $x=0$，$y_0=(1,\ldots,1)$，以及
+\[
+ f_\varepsilon=\varepsilon^{-n}\mathbf1_{y_0+[-\varepsilon,0]^n}.
+\]
+支配收敛给出 $I_\beta f_\varepsilon(0)\to n^{-(n-\beta)/2}$。任何同时含 $0$ 且与该支集相交的非中心方体边长至少 $1-\varepsilon$，故 $M_{\beta,\mathcal Q}f_\varepsilon(0)\to1$。中心方体的最小边长趋于 $2$，故 $M_{\beta,\mathcal Q_c}f_\varepsilon(0)\to2^{\beta-n}$。这两个比值分别迫使所给常数不能增大。
+\end{proof}
+
+\begin{remark}\label{app:factor}
+中心与非中心 Riesz 常数之比为 $2^{n-\beta}$。它与定理~\ref{mom:centered-weak} 中弱型常数右端的同一数值因子来自不同证明：前者来自核在中心方体上的直径，后者来自有限选择的重叠数。
+\end{remark}
+
+\subsection{Wolff 势的方体比较}
+
+设 $1<p<n$，$\mu$ 为非负 Radon 测度，定义
+\[
+ W_{1,p}^{\mu}(x)=\int_0^\infty
+ \left(\frac{\mu(B(x,r))}{r^{n-p}}\right)^{1/(p-1)}\frac{dr}{r}.
+\]
+
+\begin{theorem}[Wolff 势比较及最佳常数]\label{app:wolff}
+令 $\gamma=(n-p)/(p-1)$。对每个 $x$，
+\[
+ W_{1,p}^{\mu}(x)\ge
+ \frac{p-1}{n-p}\,n^{-\gamma/2}
+ \bigl(M_{p,\mathcal Q}\mu(x)\bigr)^{1/(p-1)},
+\]
+并且
+\[
+ W_{1,p}^{\mu}(x)\ge
+ 2^\gamma\frac{p-1}{n-p}\,n^{-\gamma/2}
+ \bigl(M_{p,\mathcal Q_c}\mu(x)\bigr)^{1/(p-1)},
+\]
+其中
+\[
+ M_{p,\mathcal B}\mu(x)=
+ \sup_{Q\in\mathcal B(x)}|Q|^{p/n-1}\mu(Q).
+\]
+两个常数均最佳。
+\end{theorem}
+\begin{proof}
+若 $Q\ni x$ 的边长为 $\ell$，令 $R=\sqrt n\ell$。在 Wolff 势中保留 $[R,\infty)$ 的积分，得到
+\[
+ W_{1,p}^{\mu}(x)\ge
+ \mu(Q)^{1/(p-1)}\int_R^\infty r^{-\gamma}\frac{dr}{r}
+ =\frac1\gamma n^{-\gamma/2}
+ \bigl(\ell^{p-n}\mu(Q)\bigr)^{1/(p-1)}.
+\]
+取上确界即得第一个结论；中心情形中以 $R=\sqrt n\ell/2$ 代替即可。
+
+若 $\mu=\delta_y$，则 $W_{1,p}^{\delta_y}(x)=\gamma^{-1}|x-y|^{-\gamma}$。选择 $x-y$ 的所有坐标绝对值相等时，$|x-y|=\sqrt n\|x-y\|_\infty$，而非中心和中心最小见证方体的边长分别为 $\|x-y\|_\infty$ 和 $2\|x-y\|_\infty$。直接代入表明两个常数均不能提高。
+\end{proof}
+
+\subsection{两个直接后果}
+
+\begin{corollary}[分数 Laplace 资料的非退化区域]\label{app:fractional-laplace}
+设 $0<\beta<\min\{2,n\}$，$E$ 是有界可测集，并令
+\[
+ u(x)=c_{n,\beta}\,I_\beta\mathbf1_E(x),\qquad
+ c_{n,\beta}=\frac{\Gamma((n-\beta)/2)}{2^\beta\pi^{n/2}\Gamma(\beta/2)}.
+\]
+采用 Fourier 约定 $\widehat f(\xi)=\int_{\mathbb R^n}e^{-ix\cdot\xi}f(x)\,dx$，并以
+\[
+ \widehat{(-\Delta)^{\beta/2}f}(\xi)=|\xi|^\beta\widehat f(\xi)
+\]
+定义分数 Laplace 算子。此约定下，上述常数满足
+$(-\Delta)^{\beta/2}u=\mathbf1_E$ 于缓增分布意义；该归一化及等价定义见 Kwa\'snicki \cite{Kwasnicki2017}。若 $E$ 是轴平行方体，则每个 $0<\alpha<1$ 满足
+\[
+ \bigl|\{u>c_{n,\beta}n^{-(n-\beta)/2}\alpha |E|^{\beta/n}\}\bigr|
+ \ge (2\alpha^{-1/(n-\beta)}-1)^n|E|,
+\]
+并且
+\[
+ \bigl|\{u>c_{n,\beta}(2/\sqrt n)^{n-\beta}\alpha |E|^{\beta/n}\}\bigr|
+ \ge \max\!\left\{(1-\alpha^{1/\beta})^n,
+ (\alpha^{-1/(n-\beta)}-1)^n\right\}|E|.
+\]
+\end{corollary}
+\begin{proof}
+定理~\ref{app:riesz} 把相应方体光晕包含在 $u$ 的超水平集内。再使用非中心和中心方体的实际测试方体包含，即得两个不等式。
+\end{proof}
+
+\begin{corollary}[点态有界性排除资料集中]\label{app:concentration}
+若 $f\ge0$ 且 $c_{n,\beta}I_\beta f(x)\le U<\infty$，则每个含 $x$ 的轴平行方体 $Q$ 满足
+\[
+ \int_Q f\le \frac{U}{c_{n,\beta}n^{-(n-\beta)/2}}\ell(Q)^{n-\beta}.
+\]
+对以 $x$ 为中心的方体，$n^{-(n-\beta)/2}$ 可改为较大的 $(2/\sqrt n)^{n-\beta}$。
+\end{corollary}
+\begin{proof}
+由定理~\ref{app:riesz} 控制 $M_{\beta,\mathcal Q}f(x)$，再取单个方体作为该上确界的候选即可。
+\end{proof}
+
+\begin{corollary}[拟线性资料的集中必要条件]\label{app:plaplace}
+设 $1<p<n$。假设非负 $p$-超调和函数 $u$ 已按 $\inf_{\mathbb R^n}u=0$ 归一化，Riesz 测度为 $\mu$，且在所考虑点满足可用的下势估计
+\[
+ u(x)\ge c_0W_{1,p}^{\mu}(x).
+\]
+若 $u(x)\le U$，则每个 $Q\ni x$ 有
+\[
+ \mu(Q)\le
+ \left(\frac{U}{c_0\gamma^{-1}n^{-\gamma/2}}\right)^{p-1}
+ \ell(Q)^{n-p}.
+\]
+中心方体中相应常数可提高 $2^\gamma$ 倍。
+\end{corollary}
+\begin{proof}
+由定理~\ref{app:wolff} 解出 $M_{p,\mathcal Q}\mu(x)$，再取 $Q$ 为上确界的一个候选。这里的结论以所述下势估计和 Wolff 势在该点有限为前提；它并不对任意有限测度自动成立。
+\end{proof}
+
+\begin{remark}[应用边界]\label{app:boundary}
+上述推论只给出了“解大于势下界”导出的必要条件和超水平集下界。Schauder、Calder\'on--Zygmund、梯度高可积性或 good--$\lambda$ 正则性仍需要反向分布控制、局部比较或容量估计；它们不能由这里的单向比较推出。有关分数极大分布函数和正则性接口的已有方法见 Nguyen--Tran \cite{NguyenTran2021}。
+\end{remark}
+
+\subsection{尚未闭合的界面问题}
+
+本稿的高维中心切向常数目前只提供固定方体的极限和全体 Tauberian 常数的下界。因此，以下问题保留为开放：
+\begin{enumerate}
+\item 建立高维中心方体光晕的一致首项上界，并刻画近极值集合；
+\item 建立一般凸体、一般多输入几何平均模型的匹配常数；
+\item 在 $\beta\downarrow0$ 与 $\alpha\uparrow1$ 的耦合尺度中证明统一渐近；
+\item 构造带有限示性分解余项的反向 good--$\lambda$ 接口，从而检验是否能导出新的 PDE 正则性结论。
+\end{enumerate}

@@ -1,0 +1,214 @@
+\section{弱型控制、固定模型高矩与限制型范数}\label{mom:section}
+
+本节的作用是把光晕的顶层行为转化为归一化示性函数的高矩行为。这里的弱型估计只针对 Lebesgue 测度；它不是关于任意底测度的一致结论。记
+\[
+ q_\beta:=\frac{n}{n-\beta}.
+\]
+对一个几何基 $\mathcal B$ 和 $p>q_\beta$，定义限制型泛函
+\begin{equation}
+ \mathfrak F_{\beta,\mathcal B}(p):=
+ \sup_{0<|E|<\infty}\frac1{|E|}
+ \int_{\mathbb R^n}\left(\frac{M_{\beta,\mathcal B}\mathbf 1_E(x)}{|E|^{\beta/n}}\right)^p\,dx .
+ \label{mom:functional}
+\end{equation}
+若 $r_p^{-1}=p^{-1}+\beta/n$，则 $1<r_p<n/\beta$，且 $\mathfrak F_{\beta,\mathcal B}(p)^{1/p}$ 正是此 Sobolev 线上限制于示性函数的 $L^{r_p}\to L^p$ 最优常数。
+
+\begin{lemma}[有限中心方体的选择]\label{mom:selection}
+设 $Q_j=x_j+[-r_j,r_j]^n$（$1\le j\le N$）为有限个中心方体。存在子族 $\{Q_{j_\nu}\}_{\nu=1}^M$，满足：
+\begin{enumerate}
+\item 对每个 $j$，存在 $\nu$ 使 $r_{j_\nu}\ge r_j$ 且 $x_j\in Q_{j_\nu}$；
+\item $\sum_{\nu=1}^M\mathbf 1_{Q_{j_\nu}}\le2^n$ 几乎处处。
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+按半边长递减排列。依次扫描方体；其中心不属于此前已选方体时才保留它。被舍弃的方体即满足第一项。
+
+取一个不在所有坐标超平面 $\{y_k=(x_j)_k\}$ 上的点 $y$。对于包含 $y$ 的已选方体，按 $x_j-y$ 的坐标符号分为 $2^n$ 个正交象限。若同一象限内 $Q_i,Q_j$ 均包含 $y$ 且 $r_i\ge r_j$，则逐坐标有
+\[
+ |(x_i)_k-(x_j)_k|\le r_i,
+\]
+所以 $x_j\in Q_i$。在扫描中 $Q_j$ 本应被舍弃，矛盾。因此每个象限至多对应一个已选方体。除去零测的坐标超平面并得第二项。
+\end{proof}
+
+\begin{lemma}[紧集上的有限稳定见证]\label{mom:stable-witness}
+设 $f\in L^1(\mathbb R^n)$，$\lambda>0$，且
+\[
+ \Omega_\lambda=\{x:M_{\beta,\mathcal Q_c}f(x)>\lambda\}.
+\]
+对每个紧集 $K\subset\Omega_\lambda$ 和 $0<\varepsilon<1$，存在有限个 $x_j\in K$、$r_j>0$ 及开集 $U_j\ni x_j$，使 $K\subset\bigcup_jU_j$，$U_j\subset x_j+(-\varepsilon r_j,\varepsilon r_j)^n$，且对每个 $z\in U_j$，方体 $z+[-r_j,r_j]^n$ 都严格见证 $M_{\beta,\mathcal Q_c}f(z)>\lambda$。
+\end{lemma}
+\begin{proof}
+对每个 $x\in K$ 选择一个严格见证半边长 $r_x$。固定半边长的卷积平均关于中心连续，故该严格不等式在 $x$ 的某个开邻域内仍成立。再与 $x+(-\varepsilon r_x,\varepsilon r_x)^n$ 相交，最后对 $K$ 取有限子覆盖。
+\end{proof}
+
+\begin{theorem}[中心方体的分数弱型估计]\label{mom:centered-weak}
+对 $f\in L^1(\mathbb R^n)$ 和 $\lambda>0$，
+\begin{equation}
+ \lambda\,|\{M_{\beta,\mathcal Q_c}f>\lambda\}|^{1/q_\beta}
+ \le 2^{n/q_\beta}\|f\|_1=2^{n-\beta}\|f\|_1.
+ \label{mom:weak}
+\end{equation}
+因此
+\begin{equation}
+ C_{\beta,\mathcal Q_c}(\alpha)\le 2^n\alpha^{-q_\beta}\qquad(0<\alpha<1).
+ \label{mom:centered-tauberian-bound}
+\end{equation}
+\end{theorem}
+\begin{proof}
+令 $K$ 为严格水平集的紧子集，并应用引理~\ref{mom:stable-witness}。对所得有限见证族使用引理~\ref{mom:selection}。若 $z\in K$，则某个稳定见证的中心落在某个已选方体中，且其半边长不超过已选方体的半边长；所以
+\[
+ K\subset\bigcup_{\nu=1}^M\bigl(x_{j_\nu}+[-(1+\varepsilon)r_{j_\nu},(1+\varepsilon)r_{j_\nu}]^n\bigr).
+\]
+记 $a_\nu=\int_{Q_{j_\nu}}|f|$。严格见证给出
+\[
+ \lambda |Q_{j_\nu}|^{1/q_\beta}<a_\nu.
+\]
+于是由 $q_\beta>1$、Minkowski 不等式和引理~\ref{mom:selection}，
+\[
+ \begin{split}
+ \lambda |K|^{1/q_\beta}
+ &\le(1+\varepsilon)^{n/q_\beta}
+ \Bigl(\sum_\nu a_\nu^{q_\beta}\Bigr)^{1/q_\beta}\\
+ &\le(1+\varepsilon)^{n/q_\beta}
+ \int |f(y)|\Bigl(\sum_\nu\mathbf1_{Q_{j_\nu}}(y)\Bigr)^{1/q_\beta}\,dy\\
+ &\le(1+\varepsilon)^{n/q_\beta}2^{n/q_\beta}\|f\|_1.
+ \end{split}
+\]
+令 $\varepsilon\downarrow0$，再用开集的 Lebesgue 内正则性，得到 \eqref{mom:weak}。令 $f=\mathbf1_E$、$\lambda=\alpha|E|^{\beta/n}$，并利用 $q_\beta\beta/n=q_\beta-1$，即得 \eqref{mom:centered-tauberian-bound}。
+\end{proof}
+
+\begin{remark}\label{mom:weak-scope}
+常数 $2^{n-\beta}$ 来自有限中心方体的 $2^n$ 重叠界。定理没有断言该常数是 Lebesgue Tauberian 常数或任意测度弱型常数的最佳值。
+\end{remark}
+
+\begin{proposition}[全域低阈值支配]\label{mom:low-level}
+存在仅依赖 $n$ 的常数 $K_n$，使
+\[
+ C_{\beta,\mathcal Q}(\alpha)\le3^n\alpha^{-q_\beta},\qquad
+ C_{\beta,\mathcal Q_c}(\alpha)\le2^n\alpha^{-q_\beta},
+\]
+并且
+\[
+ C_{\beta,\mathcal R}(\alpha)
+ \le K_n^2\alpha^{-2/(1-\beta/n)}.
+\]
+\end{proposition}
+\begin{proof}
+中心情形已经由定理~\ref{mom:centered-weak} 给出。以下证明非中心方体估计，以便记录低阈值支配实际使用的选择步骤。令
+\[
+ \Omega=H_{\beta,\mathcal Q}(\alpha,E),\qquad
+ \lambda=\alpha|E|^{\beta/n}.
+\]
+严格见证在小的外扩下仍严格，故对每个紧集 $K\subset\Omega$ 可取有限个严格见证方体 $Q_1,\ldots,Q_N$，使 $K\subset\bigcup_j\operatorname{int}Q_j$。按边长递减贪心地保留与此前已选方体不相交的方体，记所得子族为 $Q_{j_1},\ldots,Q_{j_M}$。每个被舍弃的 $Q_j$ 与某个不小于它的已选方体相交，故逐坐标比较区间得到 $Q_j\subset3Q_{j_\nu}$。于是
+\[
+ |K|\le3^n\sum_{\nu=1}^M|Q_{j_\nu}|.
+\]
+令 $s_\nu=|E\cap Q_{j_\nu}|$。严格见证和 $q_\beta=(1-\beta/n)^{-1}$ 给出
+\[
+ |Q_{j_\nu}|<\lambda^{-q_\beta}s_\nu^{q_\beta}.
+\]
+所选方体两两不交，故 $\sum_\nu s_\nu\le|E|$；又 $q_\beta>1$，从而
+\[
+ \lambda^{-q_\beta}\sum_\nu s_\nu^{q_\beta}
+ \le\lambda^{-q_\beta}|E|^{q_\beta}
+ =\alpha^{-q_\beta}|E|.
+\]
+对紧 $K$ 取上确界即得第一个不等式。
+
+对矩形，若 $s=|E\cap R|$，则
+\[
+ |R|^{\beta/n-1}s/|E|^{\beta/n}
+ \le(s/|R|)^{1-\beta/n}.
+\]
+故相应光晕包含于经典强极大函数的水平集 $\{M_{0,\mathcal R}\mathbf1_E>\alpha^{1/(1-\beta/n)}\}$。经典强极大函数在 $L^2$ 上有仅依赖 $n$ 的范数界；这可由一维 Hardy--Littlewood 极大函数逐坐标迭代得到，亦见 de Guzm\'an \cite{deGuzman1975}。再用 Chebyshev 不等式即得结论。
+\end{proof}
+
+\begin{theorem}[固定方体的高矩首项]\label{mom:fixed-cube-moment}
+设 $Q_0=[-1/2,1/2]^n$。由定理~\ref{tan:unit-cube-limit}，
+\[
+ |H_{\beta,\mathcal Q_c}(1-t,Q_0)|=|S_{n,c}|t^n+o(t^n)\quad(t\downarrow0),
+\]
+其中 $c=\min\{\beta,n-\beta\}$，$k=\lfloor2c\rfloor$，并且
+\begin{equation}
+ \lim_{p\to\infty}p^n\int_{\mathbb R^n}
+ \bigl(M_{\beta,\mathcal Q_c}\mathbf1_{Q_0}\bigr)^p\,dx
+ =n!|S_{n,c}|=
+ \frac{n!\,2^n}{k!(2c)^{n-k}}.
+ \label{mom:fixed-cube-asymptotic}
+\end{equation}
+\end{theorem}
+\begin{proof}
+层析公式和 $|Q_0|=1$ 给出
+\[
+ \int(M_{\beta,\mathcal Q_c}\mathbf1_{Q_0})^p
+ =p\int_0^1\alpha^{p-1}|H_{\beta,\mathcal Q_c}(\alpha,Q_0)|\,d\alpha.
+\]
+在充分靠近 $1$ 的区间，中心端点上界给出 $|H_{\beta,\mathcal Q_c}(\alpha,Q_0)|\le A(1-\alpha)^n$；远离 $1$ 的部分由命题~\ref{mom:low-level} 指数衰减。故可在近端使用支配收敛，再用
+\[
+ p\int_0^1\alpha^{p-1}(1-\alpha)^n\,d\alpha=pB(p,n+1)\sim n!p^{-n}.
+\]
+这证明结论。
+\end{proof}
+
+\begin{theorem}[限制型高矩渐近]\label{mom:restricted-growth}
+当 $p\to\infty$ 时，
+\[
+ \mathfrak F_{\beta,\mathcal Q}(p)=1+O_{n,\beta}(p^{-1}),\qquad
+ \mathfrak F_{\beta,\mathcal R}(p)=1+O_{n,\beta}(p^{-1}),
+\]
+且
+\[
+ \mathfrak F_{\beta,\mathcal Q_c}(p)=O_{n,\beta}(p^{-n}),
+ \qquad
+ \liminf_{p\to\infty}p^n\mathfrak F_{\beta,\mathcal Q_c}(p)
+ \ge \frac{n!\,2^n}{k!(2c)^{n-k}}.
+\]
+此外，非中心方体和强矩形满足
+\[
+ \liminf_{p\to\infty}p\bigl(\mathfrak F_{\beta,\mathcal Q}(p)-1\bigr)
+ \ge\frac{2n}{n-\beta},
+ \qquad
+ \liminf_{p\to\infty}p\bigl(\mathfrak F_{\beta,\mathcal R}(p)-1\bigr)
+ \ge\frac{2n^2}{n-\beta}.
+\]
+在 $n=1$，由一维精确公式，两个相应极限分别为
+\[
+ \lim_{p\to\infty}p\bigl(\mathfrak F_{\beta,\mathcal Q}(p)-1\bigr)=\frac{2}{1-\beta},
+ \qquad
+ \lim_{p\to\infty}p\mathfrak F_{\beta,\mathcal Q_c}(p)
+ =\max\!\left\{\frac1\beta,\frac1{1-\beta}\right\}.
+\]
+\end{theorem}
+\begin{proof}
+对任意 $E$，自然顶层和层析公式给出
+\[
+ \frac1{|E|}\int\left(\frac{M_{\beta,\mathcal B}\mathbf1_E}{|E|^{\beta/n}}\right)^p
+ =p\int_0^1\alpha^{p-1}
+ \frac{|H_{\beta,\mathcal B}(\alpha,E)|}{|E|}\,d\alpha.
+\]
+对上确界使用端点光晕上界，并由命题~\ref{mom:low-level} 支配远离 $1$ 的区间。Beta 积分
+\[
+ p\int_0^1\alpha^{p-1}(1-\alpha)^j\,d\alpha\sim j!p^{-j}
+\]
+给出前三个上界。固定 $E=Q_0$ 并应用定理~\ref{mom:fixed-cube-moment}，得到中心结论的下界。为得到两个非中心下界，固定 $E=[0,1]^n$。实际测试方体包含给出
+\[
+ C_{\beta,\mathcal Q}(1-t)\ge
+ \bigl(2(1-t)^{-1/(n-\beta)}-1\bigr)^n
+ =1+\frac{2n}{n-\beta}t+O(t^2),
+\]
+以及
+\[
+ C_{\beta,\mathcal R}(1-t)\ge
+ 1+2n\bigl((1-t)^{-n/(n-\beta)}-1\bigr)
+ =1+\frac{2n^2}{n-\beta}t+O(t^2).
+\]
+把这两个固定测试集下界代入层析公式，并使用
+\[
+ p\int_0^1\alpha^{p-1}(1-\alpha)\,d\alpha=\frac1{p+1},
+\]
+即得所列两个 \(\liminf\)。一维结论由一维精确常数在固定近端区间内达到，再作同一 Beta 积分得到。
+\end{proof}
+
+\begin{remark}\label{mom:global-gap}
+定理~\ref{mom:fixed-cube-moment} 是固定输入 $Q_0$ 的精确结果；限制型泛函的中心结论目前只给出上界和 \(\liminf\)。要得到匹配的全体极限，仍须证明高维中心 Tauberian 常数的统一首项上界。
+\end{remark}

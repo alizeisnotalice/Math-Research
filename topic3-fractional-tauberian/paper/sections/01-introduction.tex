@@ -1,0 +1,70 @@
+\section{引言}\label{sec:introduction}
+
+几何极大算子的光晕描述一个集合在高平均阈值下的扩张。微分基的经典理论
+\cite{deGuzman1975}与 Solyanik 的工作\cite{Solyanik1993}说明，阈值接近顶层时的
+Tauberian 常数包含微分和覆盖几何的信息。设 $0<\beta<n$，$\mathcal B$ 是轴平行
+非中心方体基 $\mathcal Q$、强矩形基 $\mathcal R$ 或中心方体基 $\mathcal Q_c$。
+本文的对象是
+\[
+ M_{\beta,\mathcal B}f(x)=\sup_{B\in\mathcal B(x)}
+ |B|^{\beta/n-1}\int_B|f|,
+ \qquad
+ C_{\beta,\mathcal B}(\alpha)=\sup_{0<|E|<\infty}
+ \frac{|\{M_{\beta,\mathcal B}\mathbf1_E>\alpha|E|^{\beta/n}\}|}{|E|}.
+\]
+所有平均和阈值均以 Lebesgue 测度定义。方体的各边平行于坐标轴；中心基只有一个
+共同边长，强矩形允许各边独立变化。
+
+经典零阶光晕的 Solyanik 估计、局部 H\"older 正则性和外层权刻画分别见
+\cite{HagelsteinParissis2014,HagelsteinParissis2015,HagelsteinParissis2016,HagelsteinParissis2018}。
+分数次算子在欧氏伸缩下带有 $\beta$ 次齐次度，因此集合大小必须进入阈值。
+固定的原始阈值会使全体集合的 Tauberian 商发散；保留分母 $|E|$ 时，幂型阈值的
+伸缩不变性唯一决定指数 $\beta/n$。确定这一归一化之后，关键问题变为：顶层见证
+能偏离资料集多少，见证中心又能在多大区域内变化？
+
+已有相邻问题需要按对象区分。Aldaz\cite{Aldaz2021}研究任意测度下中心极大算子的
+均匀弱型与交叠几何；本文实际使用的弱型界则在 Lebesgue 测度上直接证明。
+分数次两权范数\cite{BanuelosOsekowski2025}、限制反向弱型\cite{Lerner2026}与
+势算子的端点不可改进性\cite{MihulaPickSchikorra2026}提供相关背景，其归一化和
+优化对象各有不同。卷积体的局部几何\cite{Haddad2025}及仿射等周理论
+\cite{LutwakYangZhang2000}与固定凸体测试有关；从固定体的极限到对所有可测集的
+统一最优首项，还需要形状稳定性和匹配上界。
+
+本文的基本引理是双密度分解。记 $\theta=\beta/n$。若 $B$ 严格见证光晕中的一点，
+并置 $s=|E\cap B|$、$a=s/|B|$、$b=s/|E|$，则
+\[
+ a^{1-\theta}b^\theta>\alpha,
+ \qquad
+ \frac{|B\triangle E|}{|E|}
+ <\rho_\theta(\alpha):=
+ \max\{1-\alpha^{1/\theta},\alpha^{-1/(1-\theta)}-1\}.
+\]
+这个误差是仅依赖见证不等式时的最佳值。它把分析问题转成近重合几何：任何两个
+高水平见证必须接近同一集合，从而彼此接近。非中心基允许见证内的全部点作为
+光晕点，中心基只允许见证的中心；由此得到不同的端点幂指数
+\[
+ C_{\beta,\mathcal Q}(\alpha)-1\asymp1-\alpha,
+ \quad C_{\beta,\mathcal R}(\alpha)-1\asymp1-\alpha,
+ \quad C_{\beta,\mathcal Q_c}(\alpha)\asymp(1-\alpha)^n.
+\]
+
+对固定单位方体 $Q_0$，进一步让边长和中心同时作一阶变化，可以消去尺度参数，
+得到由有序坐标和定义的切向多面体 $S_{n,c}$。定理~\ref{tan:unit-cube-limit}证明
+\[
+ |H_{\beta,\mathcal Q_c}(1-t,Q_0)|
+ =\frac{2^n}{k!(2c)^{n-k}}t^n+o(t^n).
+\]
+该固定输入极限产生全体中心常数的下界。在一维，区间相交和直径估计则给出真正的
+全体常数闭式。外层权的集中模量由同一见证聚拢机制控制，反向以挖去小集合的
+测试恢复集中条件。多线性部分利用非负单因子不超过顶层这一性质，得到精确对角
+恒等式与一般输入夹逼，无须另建一套覆盖理论。
+
+这些结论还给出归一化示性资料的高矩渐近。势论应用保留单向比较所能直接推出的
+超水平集和集中限制；有关势估计、测度资料方程与分布函数方法的背景见
+\cite{KilpelainenMaly1994,KuusiMingione2014,PhucVerbitsky2022,NguyenTran2021}，
+Riesz 势弱型常数的相关研究见\cite{HuangTang2023}。
+
+全文先统一定义并证明代数刚性，再建立近重合几何、方体切向极限和固定凸体推广。
+随后处理一维常数、外层权和多线性模型，最后把端点光晕用于高矩、双参数过渡与
+势函数比较。高维全体中心首项及近极值分类作为具体问题列于应用章末；它们与
+经典 Halo 猜想的研究背景\cite{Hagelstein2025}保持相应的对象区分。

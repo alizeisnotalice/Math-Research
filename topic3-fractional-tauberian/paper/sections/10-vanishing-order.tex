@@ -1,0 +1,59 @@
+\section{分数阶消失时的双参数过渡}
+\label{sec:vanishing-order}
+
+本节讨论 $\beta\downarrow0$ 与 $\alpha\uparrow1$ 的相互作用。结论只提供已证明的
+上控制和固定方体下剖面；它们不能替代全体集合上的统一双参数渐近。
+
+设 $0<\beta<n$，$\theta=\beta/n$，且 $0<|E|<\infty$。对一个严格见证 $B$，令
+\[
+ s:=|E\cap B|,\qquad d:=\frac{s}{|B|},\qquad q:=\frac{s}{|E|}.
+\]
+则 $0<d,q\leq1$，且归一化见证值有恒等式
+\[
+ \frac{|B|^{\theta-1}s}{|E|^\theta}=d^{1-\theta}q^\theta.
+\]
+
+\begin{proposition}[经典光晕的统一上控制]\label{van:classical-control}
+对任意三种基 $\mathcal B\in\{\mathcal Q,\mathcal R,\mathcal Q_c\}$，
+\[
+ H_{\beta,\mathcal B}(\alpha,E)
+ \subseteq
+ \left\{x:M_{0,\mathcal B}\mathbf1_E(x)>\alpha^{1/(1-\theta)}\right\}.
+\]
+\end{proposition}
+
+\begin{proof}
+若 $B$ 是左端任一点的严格见证，则
+$d^{1-\theta}q^\theta>\alpha$。因 $q\leq1$，有 $d^{1-\theta}>\alpha$，从而
+$d>\alpha^{1/(1-\theta)}$。同一 $B$ 因而见证右端严格水平集。
+\end{proof}
+
+\begin{proposition}[中心方体的过渡下剖面]\label{van:centered-slice}
+对 $Q_0=[-1/2,1/2]^n$，
+\[
+ C_{\beta,\mathcal Q_c}(\alpha)
+ \geq\bigl(1-\alpha^{1/\beta}\bigr)^n.
+\]
+特别地，固定 $\tau>0$ 并取 $\alpha_\beta=e^{-\beta\tau}$，则
+\[
+ \liminf_{\beta\downarrow0}
+ C_{\beta,\mathcal Q_c}(\alpha_\beta)
+ \geq(1-e^{-\tau})^n.
+\]
+\end{proposition}
+
+\begin{proof}
+在 $Q_0$ 内取以 $x$ 为中心、边长严格大于 $\alpha^{1/\beta}$ 的方体。
+只要 $\|x\|_\infty<(1-\alpha^{1/\beta})/2$，这样的方体存在且完全包含在 $Q_0$ 内，
+其分数次平均严格大于 $\alpha$。故相应中心光晕包含边长
+$1-\alpha^{1/\beta}$ 的方体。令 $\alpha=\alpha_\beta$ 即得第二式。
+\end{proof}
+
+\begin{remark}[已知边界与开放问题]\label{van:open-problem}
+命题~\ref{van:classical-control} 对任意输入给出经典上控制，命题~\ref{van:centered-slice}
+只给出固定 $Q_0$ 的下剖面。它们显示自然过渡尺度为 $(1-\alpha)/\beta$：在
+$\alpha=e^{-\beta\tau}$ 下，固定 $\tau$ 保留非零中心光晕体积。因此，不能从固定
+$\beta$ 的 $\alpha\uparrow1$ 渐近推出关于 $\beta\downarrow0$ 的一致结论，也不能交换
+这两个极限。仍待解决的是：在 $\tau$ 有界或 $\tau\to\infty$ 的区域，对每一种几何基
+建立匹配的全体集合上下界与统一余项。
+\end{remark}

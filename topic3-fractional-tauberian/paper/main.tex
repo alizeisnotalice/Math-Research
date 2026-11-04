@@ -1,0 +1,52 @@
+\documentclass[UTF8,11pt,fontset=none]{ctexart}
+\usepackage[a4paper,margin=25mm,headheight=15pt]{geometry}
+\usepackage{fontspec}
+\setCJKmainfont[ItalicFont={Songti SC}]{Songti SC}
+\setCJKsansfont{Heiti SC}
+\setCJKmonofont{PingFang SC}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{booktabs,longtable,array,enumitem,microtype}
+\usepackage{xcolor}
+\usepackage[unicode,colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small 分数次极大算子的尺度不变光晕}\fancyhead[R]{\small 唐浩天}\fancyfoot[C]{\thepage}
+\theoremstyle{definition}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{conjecture}[theorem]{猜想}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{remark}[theorem]{注}
+\newtheorem{example}[theorem]{例}
+\newtheorem{question}[theorem]{问题}
+\renewcommand{\proofname}{证明}
+\numberwithin{equation}{section}
+\setlist{nosep}
+\allowdisplaybreaks[2]
+\setlength{\emergencystretch}{2em}
+\title{分数次极大算子的尺度不变光晕理论\\\large 双密度刚性、切向几何、带权刻画与多线性传递}
+\author{唐浩天}
+\date{2026年11月4日修订}
+\begin{document}
+\maketitle
+\input{sections/00-abstract}
+\clearpage
+\tableofcontents
+\clearpage
+\input{sections/01-introduction}
+\input{sections/02-preliminaries}
+\input{sections/03-geometry}
+\input{sections/04-tangent}
+\input{sections/05-convex}
+\input{sections/06-one-dimensional}
+\input{sections/07-weights}
+\input{sections/08-multilinear}
+\input{sections/09-moments}
+\input{sections/10-vanishing-order}
+\input{sections/11-applications}
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+\end{document}

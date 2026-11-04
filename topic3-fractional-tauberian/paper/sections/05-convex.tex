@@ -1,0 +1,213 @@
+\section{固定凸体与卷积体}
+\label{cvx:section}
+
+\subsection{中心对称凸体的端点阶}
+
+设 $K\subset\mathbb R^n$ 是有界中心对称凸体，且 $0\in\operatorname{int}K$。定义
+\[
+ \mathcal B^K_{\mathrm u}(x)=\{z+rK:r>0,\ x\in z+rK\},
+ \qquad
+ \mathcal B^K_{\mathrm c}(x)=\{x+rK:r>0\}.
+\]
+相应的分数次算子与光晕沿用正文的尺度不变阈值
+$\alpha|E|^{\beta/n}$。以下近重合引理是把方体几何替换为固定凸体几何所需的唯一
+定量输入。
+
+\begin{lemma}[近重合位似凸体]
+\label{cvx:near-homothetic}
+设 $K\subset\mathbb R^n$ 是有界满维凸体，且 $0\in\operatorname{int}K$。存在只依赖于
+$K$ 的常数 $\varepsilon_K,C_K>0$，使得若
+\[
+ B=x+rK,\qquad B_0=x_0+r_0K,\qquad
+ |B\triangle B_0|\le\varepsilon|B_0|,\qquad 0<\varepsilon<\varepsilon_K,
+\]
+则
+\begin{equation}
+ \left|\frac r{r_0}-1\right|\le C_K\varepsilon,
+ \qquad
+ |x-x_0|_2\le C_K\varepsilon r_0.
+ \label{cvx:near-homothetic-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+记 $V=|K|$。由体积差不超过对称差，
+\[
+ |r^n-r_0^n|V\le\varepsilon r_0^nV.
+\]
+取 $\varepsilon_K\le1/2$。函数 $s\mapsto s^{1/n}$ 在包含
+$[(1-\varepsilon_K),(1+\varepsilon_K)]$ 的紧区间上 Lipschitz，故第一个结论成立。
+再由三角不等式，
+\begin{equation}
+ |(x+r_0K)\triangle(x_0+r_0K)|
+ \le |B\triangle B_0|+|(x+rK)\triangle(x+r_0K)|
+ \le2\varepsilon r_0^nV.
+ \label{cvx:translation-reduction}
+\end{equation}
+
+为控制平移，取 $0<r_*<R_*$ 使
+$r_*B_2^n\subset K\subset R_*B_2^n$。对每个单位向量 $e$，沿
+$\mathbb Re$ 作切片。若 $y\in(r_*/2)B_2^{n-1}\subset e^\perp$，
+则 $K$ 在 $y+\mathbb Re$ 上的截段长度至少 $\sqrt3r_*$。所以当
+$0<s<\sqrt3r_*$ 时，Fubini 定理给出
+\begin{equation}
+ |(K+se)\triangle K|\ge2s\,\omega_{n-1}(r_*/2)^{n-1}.
+ \label{cvx:translation-lower}
+\end{equation}
+另一方面，在环带 $\{h:\sqrt3r_*/2\le|h|_2\le2R_*\}$ 上，连续函数
+$h\mapsto|(K+h)\triangle K|$ 有严格正的最小值；而 $|h|_2>2R_*$ 时两个体不交。
+故当右端足够小时，式~\eqref{cvx:translation-reduction} 迫使
+$h=(x-x_0)/r_0$ 落入式~\eqref{cvx:translation-lower} 的适用范围，进而
+$|h|_2\le C\varepsilon$，这就得到第二个结论。该证明未使用 $K=-K$。
+\end{proof}
+
+\begin{theorem}[固定中心对称凸体的端点阶]
+\label{cvx:endpoint-order}
+对每个固定的 $K$ 与 $0<\beta<n$，当 $\alpha\uparrow1$ 时，
+\begin{equation}
+ C_{\beta,\mathcal B^K_{\mathrm u}}(\alpha)-1\asymp_{K,\beta}1-\alpha,
+ \qquad
+ C_{\beta,\mathcal B^K_{\mathrm c}}(\alpha)
+ \asymp_{K,\beta}(1-\alpha)^n.
+ \label{cvx:endpoint-order-formula}
+\end{equation}
+更具体地，令
+\[
+ B_\alpha=\alpha^{1/\beta},\qquad
+ L_\alpha=\alpha^{-1/(n-\beta)},\qquad\theta=\beta/n,
+\]
+则
+\begin{equation}
+ C_{\beta,\mathcal B^K_{\mathrm u}}(\alpha)\ge(2L_\alpha-1)^n,
+ \qquad
+ C_{\beta,\mathcal B^K_{\mathrm c}}(\alpha)
+ \ge\max\{(1-B_\alpha)^n,(L_\alpha-1)^n\}.
+ \label{cvx:endpoint-lower}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+只证上界，因为下界由 $E=K$ 直接给出。固定一个严格见证
+$B_0=x_0+r_0K$。双密度估计给出：当 $\alpha$ 接近 $1$ 时，任何严格见证
+$B_x=z_x+r_xK$ 满足
+\[
+ |B_x\triangle B_0|\le C_{\beta}(1-\alpha)|B_0|.
+\]
+对引理~\ref{cvx:near-homothetic} 应用此式，可得
+\[
+ |r_x/r_0-1|+\|z_x-x_0\|_K/r_0\le C_{K,\beta}(1-\alpha).
+\]
+非中心情形中 $x\in B_x$，故光晕被一个半径为
+$(1+C_{K,\beta}(1-\alpha))r_0$ 的固定位似体包含；再用见证的尺度窗比较
+$|B_0|$ 与 $|E|$，得到线性上界。中心情形中 $x=z_x$，故光晕包含在
+$x_0+C_{K,\beta}(1-\alpha)r_0K$ 内，从而得到 $n$ 次上界。
+
+为证式~\eqref{cvx:endpoint-lower}，取 $E=K$。若 $1<r<L_\alpha$ 且
+$z\in(r-1)K$，则 $K\subset z+rK$；这些见证的并包含 $(2r-1)K$。
+令 $r\uparrow L_\alpha$ 得到非中心下界。中心情形中，若 $B_\alpha<r<1$ 且
+$x\in(1-r)K$，则 $x+rK\subset K$；若 $1<r<L_\alpha$ 且
+$x\in(r-1)K$，则 $K\subset x+rK$。令参数趋近端点，即得所示两个下界。
+\end{proof}
+
+\subsection{卷积体与投影体的固定尺度下界}
+
+以下部分不要求 $K$ 中心对称。选择参考点使 $0\in\operatorname{int}K$，定义锚定的
+同似基
+\[
+ M^K_{\beta,\mathrm c}f(x)=\sup_{s>0}|sK|^{\beta/n-1}
+ \int_{x+sK}|f(y)|\,dy,
+\]
+并记相应光晕为 $H^K_{\beta,\mathrm c}(\alpha,E)$。协方差函数与卷积体为
+\[
+ g_K(x)=|K\cap(K+x)|,
+ \qquad C^K_\alpha=\{x:g_K(x)>\alpha|K|\}.
+\]
+
+\begin{proposition}[卷积体嵌入与精确同似表示]
+\label{cvx:convolution-embedding}
+对 $0<\alpha<1$，有
+\begin{equation}
+ C^K_\alpha\subset H^K_{\beta,\mathrm c}(\alpha,K),
+ \label{cvx:embedding}
+\end{equation}
+并且
+\begin{equation}
+ H^K_{\beta,\mathrm c}(\alpha,K)
+ =\bigcup_{s>0}\left\{x:|K\cap(x+sK)|>\alpha s^{n-\beta}|K|\right\}.
+ \label{cvx:homothetic-representation}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+将 $E=K$ 代入定义，并除以正数 $|K|^{\beta/n-1}$，即得
+\[
+ |K\cap(x+sK)|>\alpha s^{n-\beta}|K|.
+\]
+对 $s$ 取并便得到式~\eqref{cvx:homothetic-representation}；取 $s=1$ 即得
+式~\eqref{cvx:embedding}。
+\end{proof}
+
+令 $\Pi K$ 为投影体，其支持函数规范化为
+\[
+ h_{\Pi K}(v)=|v|_2\,\bigl|P_{v^\perp}K\bigr|_{n-1}\quad(v\ne0),
+ \qquad h_{\Pi K}(0)=0,
+\]
+并写 $\Pi^*K=(\Pi K)^\circ$。
+
+\begin{lemma}[卷积体的近端极限]
+\label{cvx:covariogram-limit}
+当 $\alpha\uparrow1$ 时，
+\begin{equation}
+ (1-\alpha)^{-1}C^K_\alpha\longrightarrow |K|\Pi^*K
+ \quad\text{在 Hausdorff 距离下},
+ \label{cvx:hausdorff-limit}
+\end{equation}
+因而
+\begin{equation}
+ \lim_{\alpha\uparrow1}\frac{|C^K_\alpha|}{(1-\alpha)^n}
+ =|K|^n|\Pi^*K|.
+ \label{cvx:covariogram-volume}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+固定单位向量 $u$，并沿平行于 $u$ 的直线切片。若 $\ell_u(y)$ 是
+$K$ 在 $y+\mathbb Ru$ 上的截段长度，则
+\[
+ g_K(tu)=\int_{P_{u^\perp}K}(\ell_u(y)-t)_+\,dy.
+\]
+所以由支配收敛定理，
+\begin{equation}
+ \frac{|K|-g_K(tu)}t\longrightarrow |P_{u^\perp}K|_{n-1}=h_{\Pi K}(u).
+ \label{cvx:directional-derivative}
+\end{equation}
+齐次性给出 $g_K(tv)=|K|-t h_{\Pi K}(v)+o(t)$。
+
+为把逐方向结论提升到 Hausdorff 收敛，取 $r_*>0$ 使某个平移的 $r_*B_2^n$ 包含于
+$K$。前述切片公式在单位球面上一致给出常数 $0<m\le M<\infty$，使小 $t>0$ 时
+\[
+ mt\le |K|-g_K(tu)\le Mt\qquad(u\in S^{n-1}).
+\]
+故 $(1-\alpha)^{-1}C^K_\alpha$ 被两个固定欧氏球夹住。又由
+$g_K^{1/n}$ 的凹性，$C^K_\alpha$ 的闭包为凸体；其径向函数因而在球面上一致
+Lipschitz。式~\eqref{cvx:directional-derivative} 给出径向函数逐点收敛到
+$|K|/h_{\Pi K}(u)$。有限网逼近将其提升为一致收敛，得到
+式~\eqref{cvx:hausdorff-limit}。凸体体积对 Hausdorff 收敛连续，故
+式~\eqref{cvx:covariogram-volume} 成立。
+\end{proof}
+
+\begin{corollary}[投影体给出的中心光晕下界]
+\label{cvx:projection-liminf}
+有
+\begin{equation}
+ \liminf_{\alpha\uparrow1}
+ \frac{|H^K_{\beta,\mathrm c}(\alpha,K)|}{|K|(1-\alpha)^n}
+ \ge |K|^{n-1}|\Pi^*K|.
+ \label{cvx:projection-liminf-formula}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+由式~\eqref{cvx:embedding}，光晕测度至少为 $|C^K_\alpha|$。除以
+$|K|(1-\alpha)^n$ 后使用引理~\ref{cvx:covariogram-limit}。
+\end{proof}

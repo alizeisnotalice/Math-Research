@@ -1,0 +1,178 @@
+\section{中心方体光晕的精确切向多面体}
+\label{tan:section}
+
+本节固定 $0<\beta<n$，并令
+\[
+ Q_0=[-1/2,1/2]^n,\qquad c=\min\{\beta,n-\beta\},
+ \qquad \sigma=2c,\qquad 0<\sigma\le n.
+\]
+对中心轴平行方体基 $\mathcal Q_c$，记
+\[
+ H_{\beta,\mathcal Q_c}(\alpha,E)
+ =\left\{x:\sup_{\ell>0}\ell^{\beta-n}
+   |E\cap (x+[-\ell/2,\ell/2]^n)|>\alpha |E|^{\beta/n}\right\}.
+\]
+这里的严格不等式与下文所有边界论证一致。
+
+令 $k=\lfloor\sigma\rfloor$；若 $\sigma=n$，仍取 $k=n$。给定
+$v\in\mathbb R^n$，将 $|v_1|,\ldots,|v_n|$ 按递减顺序记为
+$v_1^*\ge\cdots\ge v_n^*$，并定义
+\begin{equation}
+ N_c(v)=
+ \begin{cases}
+ \displaystyle\sum_{j=1}^{k}v_j^*+(\sigma-k)v_{k+1}^*,&k<n,\\[4pt]
+ \displaystyle\sum_{j=1}^{n}v_j^*,&k=n.
+ \end{cases}
+ \label{tan:normal-form}
+\end{equation}
+当 $k=0$ 时，空和为零，所以 $N_c(v)=\sigma v_1^*$。令
+\begin{equation}
+ S_{n,c}=\{v\in\mathbb R^n:N_c(v)<1\}.
+ \label{tan:polytope}
+\end{equation}
+
+\begin{lemma}[缩放参数的精确消去]
+\label{tan:parameter-elimination}
+对每个 $v\in\mathbb R^n$，有
+\begin{equation}
+ N_c(v)=\inf_{u\ge0}\left\{cu+
+ \sum_{j=1}^{n}\bigl(|v_j|-u/2\bigr)_+\right\}.
+ \label{tan:infimum}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+令 $z=u/2$。右端变为
+\[
+ G(z)=\sigma z+\sum_{j=1}^{n}(v_j^*-z)_+\qquad(z\ge0).
+\]
+在不含任何 $v_j^*$ 的开区间内，若恰有 $r$ 个坐标大于 $z$，则
+$G'(z)=\sigma-r$。若 $k<\sigma<k+1$，最小值在
+$z=v_{k+1}^*$ 取得；若 $\sigma=k<n$，最小区间为
+$[v_{k+1}^*,v_k^*]$。代入即得第一种情形。若 $\sigma=n$，
+$G$ 在 $[0,v_n^*]$ 上恒等于 $\sum_jv_j^*$。这也给出第二种情形。
+\end{proof}
+
+\begin{theorem}[单位方体的精确切向极限]
+\label{tan:unit-cube-limit}
+当 $t\downarrow0$ 时，
+\begin{equation}
+ t^{-n}\bigl|H_{\beta,\mathcal Q_c}(1-t,Q_0)\bigr|
+ \longrightarrow |S_{n,c}|
+ =\frac{2^n}{k!\,(2c)^{n-k}}.
+ \label{tan:cube-limit}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+先固定 $v\in\mathbb R^n$ 与 $u\ge0$。对外扩方体
+\[
+ Q_t^+=tv+[-(1+tu)/2,(1+tu)/2]^n
+\]
+逐坐标计算交长，并在 $u$、$\|v\|_\infty$ 有界时作一致展开，得到
+\begin{equation}
+ \log\!\left((1+tu)^{\beta-n}|Q_0\cap Q_t^+|\right)
+ =-t\left((n-\beta)u+
+ \sum_{j=1}^{n}(|v_j|-u/2)_+\right)+O(t^2).
+ \label{tan:outer-expansion}
+\end{equation}
+对内缩方体
+\[
+ Q_t^-=tv+[-(1-tu)/2,(1-tu)/2]^n
+\]
+同样有
+\begin{equation}
+ \log\!\left((1-tu)^{\beta-n}|Q_0\cap Q_t^-|\right)
+ =-t\left(\beta u+
+ \sum_{j=1}^{n}(|v_j|-u/2)_+\right)+O(t^2).
+ \label{tan:inner-expansion}
+\end{equation}
+两式的余项在任意固定紧参数集上一致。由于
+$\log(1-t)=-t+O(t^2)$，若右端括号中的量严格小于 $1$，相应方体便是
+$tv\in H_{\beta,\mathcal Q_c}(1-t,Q_0)$ 的严格见证。由
+引理~\ref{tan:parameter-elimination}，这说明对每个 $v\in S_{n,c}$，
+充分小的 $t$ 都满足
+\begin{equation}
+ tv\in H_{\beta,\mathcal Q_c}(1-t,Q_0).
+ \label{tan:inner-inclusion}
+\end{equation}
+
+反过来，设 $t_r\downarrow0$，$x_r\in
+H_{\beta,\mathcal Q_c}(1-t_r,Q_0)$，并以边长 $\ell_r$ 的中心方体为严格见证。
+记 $s_r=|Q_0\cap Q_r|$。见证不等式以及 $s_r\le\min\{1,\ell_r^n\}$ 先给出
+\[
+ (1-t_r)^{1/\beta}<\ell_r<(1-t_r)^{-1/(n-\beta)},
+ \qquad s_r=1+O(t_r).
+\]
+故 $|Q_r\triangle Q_0|=O(t_r)$。对两个轴平行方体逐坐标比较交长可知
+$\ell_r=1+O(t_r)$ 与 $|x_r|=O(t_r)$。特别地，存在只依赖于 $n,\beta$ 的
+$R$，使
+\begin{equation}
+ t^{-1}H_{\beta,\mathcal Q_c}(1-t,Q_0)\subset[-R,R]^n
+ \quad\text{当 $t$ 充分小时}.
+ \label{tan:uniform-support}
+\end{equation}
+
+若 $v_r=x_r/t_r\to v$，再取子列可设
+$a_r=(\ell_r-1)/t_r\to a$ 且 $a_r$ 同号。若 $a_r\ge0$，
+把式~\eqref{tan:outer-expansion}用于 $u=a_r$；若 $a_r\le0$，把
+式~\eqref{tan:inner-expansion}用于 $u=-a_r$。由严格见证不等式取极限，分别得到
+\[
+ (n-\beta)a+\sum_j(|v_j|-a/2)_+\le1
+ \quad(a\ge0),
+\]
+或
+\[
+ \beta(-a)+\sum_j(|v_j|-(-a)/2)_+\le1
+ \quad(a\le0).
+\]
+由引理~\ref{tan:parameter-elimination}，两种情形都蕴含 $N_c(v)\le1$。
+因此，若 $N_c(v)>1$，则 $v\notin t^{-1}H_{\beta,\mathcal Q_c}(1-t,Q_0)$
+对充分小的 $t$ 成立。结合式~\eqref{tan:inner-inclusion}，缩放光晕的示性函数在
+$\partial S_{n,c}$ 外逐点收敛到 $\mathbf1_{S_{n,c}}$。集合 $S_{n,c}$ 是有界多面体的内部，
+其边界为零测集；再用式~\eqref{tan:uniform-support}与支配收敛定理，得到
+\[
+ t^{-n}|H_{\beta,\mathcal Q_c}(1-t,Q_0)|\to |S_{n,c}|.
+\]
+
+最后计算体积。先在 $v_1\ge\cdots\ge v_n\ge0$ 的锥内积分。若 $k<n$，置
+$z=v_{k+1}$、$y_j=v_j-z$（$1\le j\le k$）。尾部变量的体积为
+$z^{n-k-1}/(n-k-1)!$，而有序单纯形
+$y_1\ge\cdots\ge y_k\ge0$、$\sum_jy_j<A$ 的体积为 $A^k/(k!)^2$。
+于是该锥内的体积为
+\[
+ \frac1{(n-k-1)!(k!)^2}
+ \int_0^{1/\sigma}z^{n-k-1}(1-\sigma z)^k\,dz
+ =\frac1{k!\,n!\,\sigma^{n-k}}.
+\]
+乘以 $2^n n!$ 即得所示结果。$k=n$ 时 $S_{n,c}$ 是 $\ell^1$ 单位球，体积
+$2^n/n!$，与同一公式一致。
+\end{proof}
+
+\begin{corollary}[全体中心方体常数的严格下界]
+\label{tan:global-liminf}
+若
+\[
+ C_{\beta,\mathcal Q_c}(\alpha)=
+ \sup_{0<|E|<\infty}\frac{|H_{\beta,\mathcal Q_c}(\alpha,E)|}{|E|},
+\]
+则
+\begin{equation}
+ \liminf_{\alpha\uparrow1}
+ \frac{C_{\beta,\mathcal Q_c}(\alpha)}{(1-\alpha)^n}
+ \ge\frac{2^n}{k!\,[2\min\{\beta,n-\beta\}]^{n-k}}.
+ \label{tan:global-liminf-formula}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+在常数的上确界中取 $E=Q_0$，并应用定理~\ref{tan:unit-cube-limit}。
+\end{proof}
+
+\begin{remark}[首项的准确状态]
+\label{tan:status}
+推论~\ref{tan:global-liminf}只是由一个固定测试集合给出的下界。它既不证明极限存在，
+也不证明该下界等于全体可测集的最优首项。尤其当 $c>1/2$ 时，右端严格大于旧候选
+$c^{-n}$，因而该旧候选不可能是正确首项。尚待解决的问题是：全体集合的最优一阶
+形状变分是否恰由 $Q_0$ 实现。
+\end{remark}

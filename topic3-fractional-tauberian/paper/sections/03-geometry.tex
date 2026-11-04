@@ -1,0 +1,153 @@
+\section{近重合几何与端点阶}
+\label{sec:geometry}
+
+\begin{lemma}[近重合矩形]
+\label{geo:rectangles}
+设轴平行矩形 $R=\prod_{j=1}^nI_j$ 与 $R_0=\prod_{j=1}^nI_j^0$ 满足
+\[
+ |R\triangle R_0|\leq\varepsilon|R_0|,\qquad0<\varepsilon<1.
+\]
+对区间 $I$，用 $I[h]$ 表示把两端各延长 $h|I|$ 所得区间；令
+\[
+ A_n(\varepsilon):=\frac{1+\varepsilon}{(1-\varepsilon)^{n-1}},
+ \qquad h_n(\varepsilon):=A_n(\varepsilon)-(1-\varepsilon).
+\]
+则 $R\subset R_0[h_n(\varepsilon)]$。特别地，对 $0<\varepsilon\leq1/2$，存在只依赖于 $n$ 的 $c_n$ 使 $h_n(\varepsilon)\leq c_n\varepsilon$。
+\end{lemma}
+
+\begin{proof}
+写 $L_j=|I_j^0|$、$\ell_j=|I_j|$、$o_j=|I_j\cap I_j^0|$。由假设，
+\[
+ (1-\varepsilon)|R_0|\leq|R|\leq(1+\varepsilon)|R_0|,
+ \qquad \prod_{j=1}^no_j=|R\cap R_0|\geq(1-\varepsilon)|R_0|.
+\]
+逐坐标地 $o_j\geq(1-\varepsilon)L_j$；再由 $\ell_i\geq o_i$ 得
+\[
+ \ell_j\leq\frac{(1+\varepsilon)\prod_iL_i}
+ {\prod_{i\ne j}(1-\varepsilon)L_i}=A_n(\varepsilon)L_j.
+\]
+故 $I_j$ 在 $I_j^0$ 两端之外的长度均不超过
+$\ell_j-o_j\leq h_n(\varepsilon)L_j$。逐坐标相乘即得所求包含。最后的线性界由 $h_n$ 在 $[0,1/2]$ 上的有界导数给出。
+\end{proof}
+
+\begin{lemma}[近重合中心方体]
+\label{geo:centered-cubes}
+设 $Q,Q_0$ 是边长分别为 $\ell,\ell_0$、中心分别为 $x,x_0$ 的轴平行方体，且
+\[
+ |Q\triangle Q_0|\leq\varepsilon|Q_0|,\qquad0<\varepsilon<\frac12.
+\]
+则
+\[
+ \|x-x_0\|_\infty\leq\frac32\varepsilon\ell_0.
+\]
+\end{lemma}
+
+\begin{proof}
+体积差控制给出 $(1-\varepsilon)\ell_0^n\leq\ell^n\leq(1+\varepsilon)\ell_0^n$。利用 Bernoulli 不等式的较弱版本可得
+$(1-\varepsilon)\ell_0\leq\ell\leq(1+\varepsilon)\ell_0$。并且每个坐标投影的交长至少为 $(1-\varepsilon)\ell_0$，否则整个交集体积小于 $(1-\varepsilon)\ell_0^n$。
+
+固定一个坐标。若两个投影区间相互包含，中心距离至多 $|\ell-\ell_0|/2\leq\varepsilon\ell_0/2$。否则其交长为 $(\ell+\ell_0)/2-|x_j-x_{0,j}|$，从而
+\[
+ |x_j-x_{0,j}|\leq\frac{\ell+\ell_0}{2}-(1-\varepsilon)\ell_0
+ \leq\frac32\varepsilon\ell_0.
+\]
+对所有坐标取最大值即可。
+\end{proof}
+
+\begin{theorem}[三类基的显式端点界]
+\label{geo:explicit-bounds}
+令
+\[
+ L_\alpha:=\alpha^{-1/(n-\beta)},\qquad
+ A_\alpha:=\alpha^{-n/(n-\beta)},\qquad
+ B_\alpha:=\alpha^{1/\beta},
+\]
+并令 $\rho=\rho_\theta(\alpha)$、
+$\varepsilon_\alpha:=2\rho\alpha^{-1/\theta}$。当
+$\varepsilon_\alpha<1/2$ 时，
+\begin{equation}
+ C_{\beta,\mathcal Q}(\alpha),C_{\beta,\mathcal R}(\alpha)
+ \leq (1+2h_n(\varepsilon_\alpha))^n
+ \alpha^{-1/(1-\theta)},
+ \label{geo:noncentered-upper}
+\end{equation}
+及
+\begin{equation}
+ C_{\beta,\mathcal Q_c}(\alpha)
+ \leq(3\varepsilon_\alpha)^n\alpha^{-1/(1-\theta)}.
+ \label{geo:centered-upper}
+\end{equation}
+对每个 $0<\alpha<1$，还有
+\[
+ C_{\beta,\mathcal Q}(\alpha)\geq(2L_\alpha-1)^n,
+ \quad C_{\beta,\mathcal R}(\alpha)\geq1+2n(A_\alpha-1),
+\]
+以及
+\[
+ C_{\beta,\mathcal Q_c}(\alpha)
+ \geq\max\{(1-B_\alpha)^n,(L_\alpha-1)^n\}.
+\]
+\end{theorem}
+
+\begin{proof}
+固定 $E$，记 $H=H_{\beta,\mathcal B}(\alpha,E)$。若 $H$ 非空，为每个 $x\in H$ 选择严格见证 $B_x$，再固定一个 $B_0$。由定理~\ref{fnd:double-density}，
+\[
+ |B_x\triangle B_0|<2\rho|E|
+ <\varepsilon_\alpha|B_0|,
+\]
+其中最后一步用了 $|B_0|>\alpha^{1/\theta}|E|$。当
+$\mathcal B=\mathcal Q$ 或 $\mathcal R$ 时，引理~\ref{geo:rectangles} 给出
+$H\subset B_0[h_n(\varepsilon_\alpha)]$，于是
+\[
+ \frac{|H|}{|E|}
+ \leq(1+2h_n(\varepsilon_\alpha))^n\frac{|B_0|}{|E|}
+ \leq(1+2h_n(\varepsilon_\alpha))^n\alpha^{-1/(1-\theta)}.
+\]
+当 $\mathcal B=\mathcal Q_c$ 时，$x$ 是 $B_x$ 的中心。由引理~\ref{geo:centered-cubes}，所有这些中心落在以 $B_0$ 中心为中心、边长 $3\varepsilon_\alpha\ell(B_0)$ 的方体中，给出第二个上界。
+
+下界均取方体测试集。对 $\mathcal Q$，令 $E=[0,1]^n$。若 $x\in(1-L_\alpha,L_\alpha)^n$，则存在一个包含 $E$ 与 $x$、边长严格小于 $L_\alpha$ 的方体，故该点属于光晕。对 $\mathcal R$，同样取 $E=[0,1]^n$；沿任一坐标轴在两侧附加宽度 $A_\alpha-1$ 的开薄层，用包含 $E$ 和该点的矩形作严格见证。这些薄层模零不交，给出第二个下界。
+
+最后令 $E=[-1/2,1/2]^n$。以 $x$ 为中心、完全包含在 $E$ 内的方体给出边长 $1-B_\alpha$ 的中心方体；以 $x$ 为中心、完全捕获 $E$ 的最小方体给出边长 $L_\alpha-1$ 的中心方体。两个严格包含关系分别给出两个候选集；它们同心，故其并的体积是所列最大值。
+\end{proof}
+
+\begin{corollary}[端点幂指数与可验证的首项下界]
+\label{geo:endpoint-orders}
+当 $\alpha\uparrow1$ 时，
+\[
+ C_{\beta,\mathcal Q}(\alpha)-1\asymp_{n,\beta}1-\alpha,
+ \qquad C_{\beta,\mathcal R}(\alpha)-1\asymp_{n,\beta}1-\alpha,
+\]
+以及
+\[
+ C_{\beta,\mathcal Q_c}(\alpha)\asymp_{n,\beta}(1-\alpha)^n.
+\]
+更精确地，
+\[
+ \liminf_{\alpha\uparrow1}
+ \frac{C_{\beta,\mathcal Q}(\alpha)-1}{1-\alpha}\geq\frac{2n}{n-\beta},
+ \quad
+ \liminf_{\alpha\uparrow1}
+ \frac{C_{\beta,\mathcal R}(\alpha)-1}{1-\alpha}\geq\frac{2n^2}{n-\beta},
+\]
+并且
+\[
+ \liminf_{\alpha\uparrow1}
+ \frac{C_{\beta,\mathcal Q_c}(\alpha)}{(1-\alpha)^n}
+ \geq\max\{\beta^{-n},(n-\beta)^{-n}\}.
+\]
+\end{corollary}
+
+\begin{proof}
+写 $t=1-\alpha$。有
+\[
+ L_\alpha-1=\frac{t}{n-\beta}+O_{n,\beta}(t^2),\quad
+ A_\alpha-1=\frac{n}{n-\beta}t+O_{n,\beta}(t^2),\quad
+ 1-B_\alpha=\frac{t}{\beta}+O_\beta(t^2).
+\]
+代入定理~\ref{geo:explicit-bounds} 的下界给出首项下界。上界来自推论~\ref{fnd:rho-expansion}、$h_n(u)=O_n(u)$ 以及定理~\ref{geo:explicit-bounds}。
+\end{proof}
+
+\begin{remark}
+\label{geo:scope}
+本节的 ``sharp'' 仅指幂指数不能改善。中心高维的全体集合首项常数不由上述端点测试或近重合估计决定；后文的固定方体切向极限只能先给出相应的全体常数下界。
+\end{remark}

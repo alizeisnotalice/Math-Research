@@ -1,0 +1,387 @@
+\section{外层权、集中模量与匹配奇性模型}\label{sec:weights}
+
+本节的权始终只作用于光晕集合的外层测度；极大算子及其阈值仍使用 Lebesgue 测度。设
+\(0<\beta<n\)、\(\theta=\beta/n\)，并令 \(w\geq0\) 为局部可积且不恒为零的函数，
+\[
+ w(A):=\int_Aw(x)\,dx.
+\]
+对任一基 \(\mathcal B\)，记
+\[
+ C^w_{\beta,\mathcal B}(\alpha)
+ :=\sup_{\substack{0<|E|<\infty\\0<w(E)<\infty}}
+ \frac{w\bigl(H_{\beta,\mathcal B}(\alpha,E)\bigr)}{w(E)}.
+\]
+这里 \(H_{\beta,\mathcal B}(\alpha,E)\) 是前文定义的、以
+\(\alpha|E|^\theta\) 为阈值的 Lebesgue 光晕。特别地，本节的结论不涉及把
+\(w\,dx\) 放入平均式的内禀加权极大算子。
+
+\begin{definition}\label{wgt:definition-concentration}
+对 \(\mathcal D\in\{\mathcal Q,\mathcal R\}\) 及 \(0<u<1\)，定义外层集中模量
+\[
+ \Omega_{\mathcal D,w}(u)
+ :=\sup_{\substack{D\in\mathcal D,\ w(D)>0\\ F\subset D,\ |F|\leq u|D|}}
+ \frac{w(F)}{w(D)}.
+\]
+\end{definition}
+
+为固定术语，对 \(1<p<\infty\) 定义
+\[
+ [w]_{A_p(\mathcal Q)}
+ :=\sup_{Q\in\mathcal Q}
+ \left(\frac1{|Q|}\int_Qw\right)
+ \left(\frac1{|Q|}\int_Qw^{-1/(p-1)}\right)^{p-1},
+\]
+并令 \(A_\infty=\bigcup_{p>1}A_p(\mathcal Q)\)。将上式中的方体 \(Q\) 全部替换为轴平行矩形
+\(R\in\mathcal R\)，所得的类记为 \(A_p^\ast\)，并令
+\(A_\infty^\ast=\bigcup_{p>1}A_p^\ast\)。我们使用下列标准集中刻画：
+\[
+ w\in A_\infty\Longleftrightarrow\Omega_{\mathcal Q,w}(u)\longrightarrow0,
+ \qquad
+ w\in A_\infty^\ast\Longleftrightarrow\Omega_{\mathcal R,w}(u)\longrightarrow0,
+ \quad(u\downarrow0),
+\]
+并且这些等价条件等同于相应基上存在 \(A<\infty\)、\(\delta>0\) 的幂型集中界。
+这些标准事实及其加权 Solyanik 背景可参见
+\cite{HagelsteinParissis2016,HagelsteinParissis2018}。
+
+以下使用前文已证的见证聚拢结论。若 \(\rho_\theta(\alpha)\) 为双密度误差，且
+\(\alpha\) 充分接近 \(1\)，则每个非空光晕可任选一个严格见证 \(B_0\) 作为锚点：
+非中心方体或强矩形的全体见证均落入 \(B_0\) 的一个相对边界层中；中心方体的全体光晕
+则落入与 \(B_0\) 同心、边长比为 \(O_{n,\beta}(1-\alpha)\) 的方体中。该结论同时给出
+\begin{equation}
+ \frac{|B_0\setminus E|}{|B_0|}\leq C_{n,\beta}\rho_\theta(\alpha),
+ \qquad \rho_\theta(\alpha)\asymp_\theta1-\alpha.
+\label{wgt:anchor-estimates}
+\end{equation}
+
+\begin{theorem}[集中模量控制]\label{wgt:theorem-forward}
+存在仅依赖 \(n,\beta\) 的常数 \(a_{n,\beta}>0\)，使得当 \(\alpha\) 充分接近 \(1\) 时，
+\begin{equation}
+ C^w_{\beta,\mathcal Q}(\alpha)-1
+ \leq4\Omega_{\mathcal Q,w}\bigl(a_{n,\beta}\rho_\theta(\alpha)\bigr),
+\label{wgt:Q-forward}
+\end{equation}
+\begin{equation}
+ C^w_{\beta,\mathcal R}(\alpha)-1
+ \leq4\Omega_{\mathcal R,w}\bigl(a_{n,\beta}\rho_\theta(\alpha)\bigr),
+\label{wgt:R-forward}
+\end{equation}
+并且
+\begin{equation}
+ C^w_{\beta,\mathcal Q_c}(\alpha)
+ \leq
+ \frac{\Omega_{\mathcal Q,w}\bigl(a_{n,\beta}\rho_\theta(\alpha)^n\bigr)}
+ {1-\Omega_{\mathcal Q,w}\bigl(a_{n,\beta}\rho_\theta(\alpha)\bigr)}.
+\label{wgt:Qc-forward}
+\end{equation}
+前两式在右端集中模量不超过 \(1/2\) 时成立；第三式要求其分母为正。
+\end{theorem}
+
+\begin{proof}
+固定 \(E\)，并设 \(H=H_{\beta,\mathcal D}(\alpha,E)\) 非空。先取
+\(\mathcal D\in\{\mathcal Q,\mathcal R\}\)，选定严格见证 \(B_0\)。由见证聚拢结论，存在
+\(B_0^\ast\in\mathcal D\) 使 \(H\subset B_0^\ast\)，且在增大只依赖 \(n,\beta\) 的常数后，
+\begin{equation}
+ \frac{|B_0^\ast\setminus B_0|}{|B_0^\ast|}
+ \leq a_{n,\beta}\rho_\theta(\alpha),\qquad
+ \frac{|B_0^\ast\setminus E|}{|B_0^\ast|}
+ \leq a_{n,\beta}\rho_\theta(\alpha),
+\label{wgt:outer-errors}
+\end{equation}
+并由 \eqref{wgt:anchor-estimates} 有
+\begin{equation}
+ \frac{|B_0\setminus E|}{|B_0|}
+ \leq a_{n,\beta}\rho_\theta(\alpha).
+\label{wgt:inner-error}
+\end{equation}
+令 \(\omega=\Omega_{\mathcal D,w}(a_{n,\beta}\rho_\theta(\alpha))\)。若
+\(w(B_0^\ast)=0\)，则 \(w(H)=0\)。否则由第一式 \eqref{wgt:outer-errors}，
+\[
+ w(B_0)\geq(1-\omega)w(B_0^\ast).
+\]
+当 \(\omega<1\) 时可知 \(w(B_0)>0\)，故由 \eqref{wgt:inner-error}，
+\[
+ w(E)\geq w(E\cap B_0)\geq(1-\omega)w(B_0)
+ \geq(1-\omega)^2w(B_0^\ast).
+\]
+再由第二式 \eqref{wgt:outer-errors}，
+\[
+ w(H)\leq w(E)+w(B_0^\ast\setminus E)
+ \leq\left(1+\frac{\omega}{(1-\omega)^2}\right)w(E).
+\]
+当 \(\omega\leq1/2\) 时，增量至多为 \(4\omega\)，证明
+\eqref{wgt:Q-forward}--\eqref{wgt:R-forward}。
+
+对中心方体，重新令 \(H=H_{\beta,\mathcal Q_c}(\alpha,E)\)，并选取其严格见证 \(B_0\)。见证聚拢结论给出 \(H\subset K\subset B_0\)，其中 \(K\) 与 \(B_0\) 同心，且
+\[
+ \frac{|K|}{|B_0|}\leq a_{n,\beta}\rho_\theta(\alpha)^n.
+\]
+若 \(w(B_0)=0\)，结论显然。否则由 \eqref{wgt:inner-error}，
+\[
+ w(E)\geq\bigl(1-\Omega_{\mathcal Q,w}(a_{n,\beta}\rho_\theta(\alpha))\bigr)w(B_0),
+\]
+而 \(w(H)\leq w(K)\) 给出 \eqref{wgt:Qc-forward}。
+\end{proof}
+
+\begin{theorem}[反向集中估计]\label{wgt:theorem-reverse}
+设 \(w>0\) 几乎处处，且 \(\mathcal D\in\{\mathcal Q,\mathcal R\}\)。则每个 \(0<u<1\) 满足
+\begin{equation}
+ \Omega_{\mathcal D,w}(u)
+ \leq1-\frac1{C^w_{\beta,\mathcal D}(1-u)}
+ \leq C^w_{\beta,\mathcal D}(1-u)-1.
+\label{wgt:reverse}
+\end{equation}
+若带权常数为 \(+\infty\)，约定右侧第一式中的倒数为 \(0\)。
+\end{theorem}
+
+\begin{proof}
+取 \(D\in\mathcal D\)、\(F\subset D\) 且 \(|F|\leq u|D|\)，并令 \(E=D\setminus F\)、
+\(\delta=|F|/|D|\)。由于 \(w>0\) 几乎处处，\(0<w(E)<\infty\)。对每个 \(x\in D\)，同一个
+\(D\) 是合法的非中心见证，且
+\[
+ |D|^{\theta-1}|E|
+ =(1-\delta)^{1-\theta}|E|^\theta>(1-u)|E|^\theta.
+\]
+严格性来自 \(0<1-\theta<1\)：若 \(\delta>0\)，第一处比较严格；若 \(\delta=0\)，则
+\(u>0\) 使第二处比较严格。因此 \(D\subset H_{\beta,\mathcal D}(1-u,E)\)，从而
+\[
+ w(D)\leq C^w_{\beta,\mathcal D}(1-u)w(E).
+\]
+整理并对 \(D,F\) 取上确界即得第一式；第二式由 \(1-C^{-1}\leq C-1\) 得到。
+\end{proof}
+
+\begin{corollary}[权类刻画与指数保持]\label{wgt:corollary-Ainfty}
+设 \(w>0\) 几乎处处。则
+\[
+ \lim_{\alpha\uparrow1}C^w_{\beta,\mathcal Q}(\alpha)=1
+ \quad\Longleftrightarrow\quad w\in A_\infty,
+\]
+\[
+ \lim_{\alpha\uparrow1}C^w_{\beta,\mathcal R}(\alpha)=1
+ \quad\Longleftrightarrow\quad w\in A_\infty^\ast.
+\]
+此外，令
+\[
+ \Gamma_{\mathrm{conc}}(w,\mathcal D)
+ :=\sup\{\gamma>0:\Omega_{\mathcal D,w}(u)=O(u^\gamma)\ (u\downarrow0)\},
+\]
+\[
+ \Gamma_{\mathrm{halo}}(w,\mathcal D)
+ :=\sup\{\gamma>0:C^w_{\beta,\mathcal D}(\alpha)-1
+ =O((1-\alpha)^\gamma)\ (\alpha\uparrow1)\}.
+\]
+则对 \(\mathcal D\in\{\mathcal Q,\mathcal R\}\)，在扩展非负实数意义下，
+\begin{equation}
+ \Gamma_{\mathrm{halo}}(w,\mathcal D)=\Gamma_{\mathrm{conc}}(w,\mathcal D).
+\label{wgt:exponent-preservation}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+通常的 \(A_\infty\) 条件和强 \(A_\infty^\ast\) 条件分别等价于相应集中模量在 \(0\) 处趋于零。充分性由定理 \ref{wgt:theorem-forward}，必要性由定理 \ref{wgt:theorem-reverse}。
+同样，\eqref{wgt:reverse} 给出 \(\Gamma_{\mathrm{conc}}\geq\Gamma_{\mathrm{halo}}\)，而
+\eqref{wgt:Q-forward}--\eqref{wgt:R-forward} 与 \(\rho_\theta(\alpha)\asymp_\theta1-\alpha\)
+给出反向不等式。
+\end{proof}
+
+\begin{corollary}[定量集中条件]\label{wgt:corollary-power-conc}
+设 \(A\geq1\)、\(0<\delta\leq1\)。若对所有可测的 \(F\subset Q\in\mathcal Q\) 且 \(w(Q)>0\) 有
+\begin{equation}
+ \frac{w(F)}{w(Q)}\leq A\left(\frac{|F|}{|Q|}\right)^\delta,
+\label{wgt:power-concentration-cube}
+\end{equation}
+则 \(\alpha\) 充分接近 \(1\) 时
+\[
+ C^w_{\beta,\mathcal Q}(\alpha)-1\lesssim_{n,\beta,A,\delta}(1-\alpha)^\delta
+\]
+以及
+\[
+ C^w_{\beta,\mathcal Q_c}(\alpha)
+ \lesssim_{n,\beta,A,\delta}(1-\alpha)^{n\delta}.
+\]
+若同一估计的 \(Q\) 全部替换为 \(R\)，并对所有可测的 \(F\subset R\in\mathcal R\) 且 \(w(R)>0\) 成立，则
+\[
+ C^w_{\beta,\mathcal R}(\alpha)-1\lesssim_{n,\beta,A,\delta}(1-\alpha)^\delta.
+\]
+矩形条件蕴含方体条件，因而在该更强假设下三个结论同时成立。
+\end{corollary}
+
+\begin{proof}
+将相应的幂型集中界代入定理 \ref{wgt:theorem-forward} 即可。最后一个中心结论只是通用上界；其指数在特定齐次权下未必最佳。
+\end{proof}
+
+\begin{proposition}[Lebesgue 点局部化]\label{wgt:proposition-localization}
+若 \(x_0\) 是 \(w\) 的正有限 Lebesgue 点，\(E,F\) 为有界可测集、\(0<|E|<\infty\)，且
+\(F\subset H_{\beta,\mathcal B}(\alpha,E)\)，则对每个 \(r>0\)，
+\begin{equation}
+ x_0+rF\subset H_{\beta,\mathcal B}(\alpha,x_0+rE),
+\qquad
+ \frac{w(x_0+rF)}{w(x_0+rE)}\longrightarrow\frac{|F|}{|E|}\quad(r\downarrow0).
+\label{wgt:localization}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+第一式由平移和伸缩不变性直接得到。取 \(R>0\) 使 \(E\cup F\subset Q(0,R)\)。对
+\(A\in\{E,F\}\)，
+\[
+ \left|r^{-n}w(x_0+rA)-w(x_0)|A|\right|
+ \leq r^{-n}\int_{Q(x_0,rR)}|w(y)-w(x_0)|\,dy\longrightarrow0.
+\]
+右端是固定常数乘以 Lebesgue 点平均振荡，故极限成立。由于 \(w(x_0)|E|>0\)，分母最终为正，遂可取比值。
+\end{proof}
+
+\begin{lemma}[径向奇性积分]\label{wgt:lemma-singular-integral}
+设 \(d\geq1\)、\(0<a<d\)，并记 \(\omega_d=|B(0,1)|\)。对任意可测 \(A\subset\mathbb R^d\) 且 \(|A|<\infty\)，
+\begin{equation}
+ \int_A|x|^{-a}\,dx
+ \leq\frac d{d-a}\omega_d^{a/d}|A|^{1-a/d}.
+\label{wgt:singular-integral}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+令 \(m=|A|\)。层饼公式与 Tonelli 定理给出
+\[
+ \int_A|x|^{-a}\,dx
+ \leq\int_0^\infty\min\{m,\omega_dt^{-d/a}\}\,dt.
+\]
+在 \(t_0=(\omega_d/m)^{a/d}\) 处分段积分，右侧恰为
+\(d(d-a)^{-1}\omega_d^{a/d}m^{1-a/d}\)。
+\end{proof}
+
+\begin{proposition}[一坐标奇性权的非中心阶]\label{wgt:proposition-one-coordinate}
+设 \(0<\gamma<1\)，\(w_\gamma(x)=|x_1|^{\gamma-1}\)。则
+\begin{equation}
+ C^{w_\gamma}_{\beta,\mathcal Q}(\alpha)-1\asymp_{n,\beta,\gamma}(1-\alpha)^\gamma,
+ \qquad
+ C^{w_\gamma}_{\beta,\mathcal R}(\alpha)-1\asymp_{n,\beta,\gamma}(1-\alpha)^\gamma.
+\label{wgt:one-coordinate}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+记 \(v_\gamma(t)=|t|^{\gamma-1}\)。对任意区间 \(I\) 及 \(A\subset I\)，有
+\begin{equation}
+ \frac{v_\gamma(A)}{v_\gamma(I)}\leq C_\gamma
+ \left(\frac{|A|}{|I|}\right)^\gamma.
+\label{wgt:one-dimensional-concentration}
+\end{equation}
+事实上，若 \(d=\operatorname{dist}(0,I)\geq |I|\)，则 \(v_\gamma\) 在 \(I\) 上的上下界之比不超过
+\(2^{1-\gamma}\)。其余情形中，若 \(I\) 跨过原点，则
+\(v_\gamma(I)\geq|I|^\gamma/\gamma\)；若 \(I=(d,d+|I|)\) 且 \(0\leq d<|I|\)，
+\((1+s)^\gamma-s^\gamma\) 在 \([0,1]\) 上递减，从而
+\(v_\gamma(I)\geq(2^\gamma-1)|I|^\gamma/\gamma\)。再以引理
+\ref{wgt:lemma-singular-integral} 的 \(d=1,a=1-\gamma\) 情形控制分子，即得
+\eqref{wgt:one-dimensional-concentration}。
+
+对任意轴平行矩形 \(R=I\times J\) 和 \(F\subset R\)，以层截函数
+\(g(t)=|\{z\in J:(t,z)\in F\}|/|J|\) 表示 \(F\)。由层饼公式、
+\eqref{wgt:one-dimensional-concentration} 以及 Jensen 不等式，
+\begin{align*}
+ \frac{w_\gamma(F)}{w_\gamma(R)}
+ &=\int_0^1\frac{v_\gamma(\{g>s\})}{v_\gamma(I)}\,ds\\
+ &\leq C_\gamma\int_0^1\left(\frac{|\{g>s\}|}{|I|}\right)^\gamma ds\\
+ &\leq C_\gamma\left(\int_0^1\frac{|\{g>s\}|}{|I|}\,ds\right)^\gamma
+ =C_\gamma\left(\frac{|F|}{|R|}\right)^\gamma.
+\end{align*}
+于是上界由推论 \ref{wgt:corollary-power-conc} 得到。
+
+为得下界，令
+\[
+ E_h=(h,1+h)\times(0,1)^{n-1},\qquad
+ F_h=(0,h)\times(0,1)^{n-1}.
+\]
+令 \(L_\alpha=\alpha^{-1/(n-\beta)}\)、
+\(A_\alpha=\alpha^{-n/(n-\beta)}\)。若 \(h<L_\alpha-1\)，方体
+\((0,1+h)^n\) 见证 \(F_h\subset H_{\beta,\mathcal Q}(\alpha,E_h)\)；若
+\(h<A_\alpha-1\)，同一长方体见证
+\(F_h\subset H_{\beta,\mathcal R}(\alpha,E_h)\)。另一方面，对每个 \(x\in E_h\)，集合
+\(E_h\) 自身是两个非中心基的严格见证，因为其边长和体积均为 \(1\)，且
+\(|E_h|^{\theta-1}|E_h|=1>\alpha\)。故在相应的两种条件下均有
+\(E_h\cup F_h\subset H_{\beta,\mathcal B}(\alpha,E_h)\)。又
+\[
+ \frac{w_\gamma(E_h\cup F_h)}{w_\gamma(E_h)}-1
+ =\frac{h^\gamma}{(1+h)^\gamma-h^\gamma}\asymp_\gamma h^\gamma
+ \qquad(0<h\leq1/2).
+\]
+分别取 \(h=(L_\alpha-1)/2\) 及 \(h=(A_\alpha-1)/2\)，并用
+\(L_\alpha-1\asymp A_\alpha-1\asymp1-\alpha\)，完成证明。
+\end{proof}
+
+\begin{proposition}[横向径向奇性权的中心阶]\label{wgt:proposition-radial}
+写 \(x=(y,z)\in\mathbb R^k\times\mathbb R^{n-k}\)，其中 \(1\leq k\leq n\)，并设
+\(0<a<k\)、\(w_{k,a}(y,z)=|y|^{-a}\)。则
+\begin{equation}
+ C^{w_{k,a}}_{\beta,\mathcal Q_c}(\alpha)
+ \asymp_{n,\beta,k,a}(1-\alpha)^{n-a}.
+\label{wgt:radial}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+设 \(Q=I\times J\) 是 \(\mathbb R^n\) 中边长为 \(\ell\) 的轴平行方体，\(F\subset Q\)。将
+引理 \ref{wgt:lemma-singular-integral} 应用于 \(\mathbb R^k\) 中的截面。若
+\(\operatorname{dist}(0,I)\geq2\sqrt k\ell\)，则 \(|y|^{-a}\) 在 \(I\) 上的上、下界之比由
+\(k,a\) 控制，故
+\[
+ \frac{\int_A|y|^{-a}\,dy}{\int_I|y|^{-a}\,dy}
+ \leq C_{k,a}\frac{|A|}{|I|}
+ \leq C_{k,a}\left(\frac{|A|}{|I|}\right)^{1-a/k}
+ \qquad(A\subset I).
+\]
+若 \(\operatorname{dist}(0,I)<2\sqrt k\ell\)，则 \(I\subset B(0,C_k\ell)\)，从而
+\(|y|^{-a}\geq C_{k,a}\ell^{-a}\) 在 \(I\) 上成立，故
+\[
+ \int_I|y|^{-a}\,dy\geq c_{k,a}\ell^{k-a}.
+\]
+另一方面，引理 \ref{wgt:lemma-singular-integral} 给出
+\[
+ \int_A|y|^{-a}\,dy\leq C_{k,a}|A|^{1-a/k}.
+\]
+故两种情形均有同一集中不等式。对 \(F\) 的 \(z\)-截面作层饼，并对凹函数
+\(r\mapsto r^{1-a/k}\) 使用 Jensen 不等式，遂得
+\begin{equation}
+ \frac{w_{k,a}(F)}{w_{k,a}(Q)}
+ \leq C_{n,k,a}\left(\frac{|F|}{|Q|}\right)^{1-a/k}.
+\label{wgt:radial-concentration}
+\end{equation}
+再设 \(sQ\) 与 \(Q\) 同心且边长为 \(s\ell\)。在远离奇点的情形，权在 \(Q\) 与
+\(sQ\) 上均可比，故
+\[
+ \frac{w_{k,a}(sQ)}{w_{k,a}(Q)}\leq C_{k,a}s^n\leq C_{k,a}s^{n-a}.
+\]
+在近奇点情形，前述分母下界和引理 \ref{wgt:lemma-singular-integral} 分别给出
+\[
+ \int_I|y|^{-a}\,dy\geq c_{k,a}\ell^{k-a},\qquad
+ \int_{I_s}|y|^{-a}\,dy\leq C_{k,a}(s\ell)^{k-a},
+\]
+其中 \(I_s\) 是 \(sQ\) 的 \(y\)-投影。再乘 \(z\)-方向的比例 \(s^{n-k}\)，得到
+\begin{equation}
+ \frac{w_{k,a}(sQ)}{w_{k,a}(Q)}\leq C_{n,k,a}s^{n-a},\qquad0<s<1.
+\label{wgt:radial-dilation}
+\end{equation}
+这里 \eqref{wgt:radial-dilation} 是关键的额外输入。它不能由一般集中指数
+\(1-a/k\) 代入推论 \ref{wgt:corollary-power-conc} 得到。
+
+固定 \(E\)，令中心光晕非空，并取严格见证 \(B_0\)。由 \eqref{wgt:anchor-estimates} 和
+\eqref{wgt:radial-concentration}，
+\[
+ \frac{w_{k,a}(B_0\setminus E)}{w_{k,a}(B_0)}
+ \leq C_{n,k,a}\bigl(\rho_\theta(\alpha)\alpha^{-1/\theta}\bigr)^{1-a/k}=o(1).
+\]
+故 \(\alpha\) 充分接近 \(1\) 时，\(w_{k,a}(E)\geq w_{k,a}(B_0)/2\)。另一方面，
+见证聚拢结论将整个光晕包含于 \(B_0\) 的同心缩放 \(s_\alpha B_0\)，其中
+\(s_\alpha\leq C_{n,\beta}(1-\alpha)\)。于是由 \eqref{wgt:radial-dilation}，
+\[
+ \frac{w_{k,a}(H_{\beta,\mathcal Q_c}(\alpha,E))}{w_{k,a}(E)}
+ \leq C_{n,\beta,k,a}(1-\alpha)^{n-a}.
+\]
+取 \(E=Q_0=[-1/2,1/2]^n\)。令 \(d_\alpha=1-\alpha^{1/\beta}\)。前文的内部见证构造给出
+\(d_\alpha Q_0\subset H_{\beta,\mathcal Q_c}(\alpha,Q_0)\)（忽略零测边界）。由齐次性，
+\[
+ \frac{w_{k,a}(H_{\beta,\mathcal Q_c}(\alpha,Q_0))}{w_{k,a}(Q_0)}
+ \geq d_\alpha^{n-a}\asymp_{\beta,k,a}(1-\alpha)^{n-a},
+\]
+从而完成证明。
+\end{proof}

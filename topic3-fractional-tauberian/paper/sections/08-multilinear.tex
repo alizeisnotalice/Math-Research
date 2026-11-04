@@ -1,0 +1,371 @@
+\section{多线性分数次光晕：对角约化与一般输入夹逼}
+\label{sec:multilinear}
+
+本节固定整数 $m\geq 1$ 和 $0<\beta<mn$，并写
+\[
+ \gamma:=\frac{\beta}{m}\in(0,n),\qquad
+ q_{\beta,m}:=\frac{n}{mn-\beta}.
+\]
+令 $\mathcal B$ 为 $\mathcal Q,\mathcal R,\mathcal Q_c$ 中的任一基。所有积分和测度均指
+Lebesgue 积分和 Lebesgue 测度；外层加权版本将在本节末尾单独说明。这里最重要的
+归一化事实是：对角阈值是 $\alpha^m|E|^{\beta/n}$，而一般输入的自然尺度是各输入
+测度的几何平均。二者不能互换。
+
+\begin{definition}[多线性分数次极大算子]\label{ml:operator}
+对局部可积函数 $f_1,\ldots,f_m$，定义
+\[
+ M_{\beta,m,\mathcal B}(f_1,\ldots,f_m)(x)
+ :=\sup_{B\in\mathcal B(x)} |B|^{\beta/n-m}
+      \prod_{i=1}^m\int_B |f_i(y)|\,dy .
+\]
+\end{definition}
+
+\begin{lemma}[共同伸缩与自然顶层]\label{ml:scaling-top}
+若 $r>0$，则对可测集 $E_1,\ldots,E_m$ 有
+\[
+ M_{\beta,m,\mathcal B}(\mathbf1_{rE_1},\ldots,\mathbf1_{rE_m})(rx)
+ =r^\beta M_{\beta,m,\mathcal B}(\mathbf1_{E_1},\ldots,\mathbf1_{E_m})(x).
+\]
+若 $0<|E_i|<\infty$，则对每个 $x$，
+\[
+ M_{\beta,m,\mathcal B}(\mathbf1_{E_1},\ldots,\mathbf1_{E_m})(x)
+ \leq \prod_{i=1}^m |E_i|^{\beta/(mn)}.
+\]
+\end{lemma}
+
+\begin{proof}
+把 $rx$ 的见证写成 $rB$。每个积分给出因子 $r^n$，而
+$|rB|^{\beta/n-m}=r^{\beta-nm}|B|^{\beta/n-m}$，故得到第一个等式；反向缩放给出等号。
+另一方面，对每个 $i$，线性自然顶层估计（参数为 $\gamma$）给出
+\[
+ |B|^{\gamma/n-1}|E_i\cap B|\leq |E_i|^{\gamma/n}.
+\]
+相乘后再取上确界即得第二个结论。
+\end{proof}
+
+\subsection{对角资料}
+
+\begin{definition}[对角光晕]\label{ml:diagonal-halo}
+对 $0<\alpha<1$ 及 $0<|E|<\infty$，令
+\[
+ H^{\Delta}_{\beta,m,\mathcal B}(\alpha,E)
+ :=\left\{x:
+ M_{\beta,m,\mathcal B}(\mathbf1_E,\ldots,\mathbf1_E)(x)
+ >\alpha^m|E|^{\beta/n}\right\},
+\]
+并令
+\[
+ C^{\Delta}_{\beta,m,\mathcal B}(\alpha)
+ :=\sup_{0<|E|<\infty}
+ \frac{|H^{\Delta}_{\beta,m,\mathcal B}(\alpha,E)|}{|E|}.
+\]
+\end{definition}
+
+\begin{theorem}[精确对角约化]\label{ml:diagonal-reduction}
+对每个 $f\in L^1_{\mathrm{loc}}(\mathbb R^n)$，
+\[
+ M_{\beta,m,\mathcal B}(f,\ldots,f)
+ =\bigl(M_{\gamma,\mathcal B}f\bigr)^m.
+\]
+因而对所有 $0<\alpha<1$ 及 $0<|E|<\infty$，
+\[
+ H^{\Delta}_{\beta,m,\mathcal B}(\alpha,E)
+ =H_{\gamma,\mathcal B}(\alpha,E),
+ \qquad
+ C^{\Delta}_{\beta,m,\mathcal B}(\alpha)
+ =C_{\gamma,\mathcal B}(\alpha).
+\]
+\end{theorem}
+
+\begin{proof}
+因为非负数的 $m$ 次幂保持上确界，
+\[
+ \begin{split}
+ M_{\beta,m,\mathcal B}(f,\ldots,f)(x)
+ &=\sup_{B\in\mathcal B(x)}
+ \left(|B|^{\beta/(mn)-1}\int_B|f|\right)^m\\
+ &=\bigl(M_{\gamma,\mathcal B}f(x)\bigr)^m.
+ \end{split}
+\]
+又 $\alpha^m|E|^{\beta/n}=(\alpha|E|^{\gamma/n})^m$，且 $s\mapsto s^m$
+严格递增，故两个严格水平集相同。最后对 $E$ 取上确界即可。
+\end{proof}
+
+\begin{corollary}[对角模型的端点结论]\label{ml:diagonal-endpoint}
+当 $\alpha\uparrow1$ 时，
+\[
+ C^{\Delta}_{\beta,m,\mathcal Q}(\alpha)-1\asymp 1-\alpha,
+ \quad
+ C^{\Delta}_{\beta,m,\mathcal R}(\alpha)-1\asymp 1-\alpha,
+ \quad
+ C^{\Delta}_{\beta,m,\mathcal Q_c}(\alpha)\asymp(1-\alpha)^n,
+\]
+其中隐含常数只依赖于 $n,\beta,m$。在 $n=1$ 且
+$2^{-\beta/m}<\alpha<1$ 时，
+\[
+ C^{\Delta}_{\beta,m,\mathcal Q}(\alpha)
+ =C^{\Delta}_{\beta,m,\mathcal R}(\alpha)
+ =2\alpha^{-m/(m-\beta)}-1,
+\]
+以及
+\[
+ C^{\Delta}_{\beta,m,\mathcal Q_c}(\alpha)
+ =\max\left\{1-\alpha^{m/\beta},\
+                 \alpha^{-m/(m-\beta)}-1\right\}.
+\]
+\end{corollary}
+
+\begin{proof}
+这是定理~\ref{ml:diagonal-reduction} 对参数 $\gamma=\beta/m$ 的直接应用。
+一维公式同样由线性一维闭式代入 $\gamma$ 得到。
+\end{proof}
+
+若 $Q_0=[-1/2,1/2]^n$，令
+\[
+ c_{\beta,m}:=\min\{\beta/m,n-\beta/m\},\qquad
+ k_{\beta,m}:=\lfloor2c_{\beta,m}\rfloor,
+\]
+其中 $2c_{\beta,m}=n$ 时约定 $k_{\beta,m}=n$。固定 $Q_0$ 的线性切向极限遂给出
+\[
+ \lim_{\alpha\uparrow1}
+ \frac{|H^{\Delta}_{\beta,m,\mathcal Q_c}(\alpha,Q_0)|}{(1-\alpha)^n}
+ =\frac{2^n}{k_{\beta,m}!(2c_{\beta,m})^{n-k_{\beta,m}}}.
+\]
+这是固定资料的极限；它只给出全体对角常数的下极限下界，不能推出全体集合的
+尖锐首项等式。
+
+\subsection{一般输入及其自然的几何平均尺度}
+
+\begin{definition}[几何平均归一化]\label{ml:geometric-mean}
+对 $0<|E_i|<\infty$，令
+\[
+ G(E_1,\ldots,E_m):=\prod_{i=1}^m|E_i|^{1/m},
+\]
+并设
+\[
+ \begin{split}
+ H^{\mathrm{gm}}_{\beta,m,\mathcal B}(\alpha;E_1,\ldots,E_m)
+ :=\biggl\{x:\;&M_{\beta,m,\mathcal B}(\mathbf1_{E_1},\ldots,\mathbf1_{E_m})(x)\\
+ &>\alpha^m\prod_{i=1}^m|E_i|^{\beta/(mn)}\biggr\},
+ \end{split}
+\]
+\[
+ C^{\mathrm{gm}}_{\beta,m,\mathcal B}(\alpha)
+ :=\sup_{0<|E_i|<\infty}
+ \frac{|H^{\mathrm{gm}}_{\beta,m,\mathcal B}(\alpha;E_1,\ldots,E_m)|}
+ {G(E_1,\ldots,E_m)}.
+\]
+\end{definition}
+
+\begin{lemma}[尺度不变性]\label{ml:gm-scaling}
+对 $r>0$，
+\begin{align*}
+ H^{\mathrm{gm}}_{\beta,m,\mathcal B}(\alpha;rE_1,\ldots,rE_m)
+ &=rH^{\mathrm{gm}}_{\beta,m,\mathcal B}(\alpha;E_1,\ldots,E_m),\\
+ G(rE_1,\ldots,rE_m)&=r^nG(E_1,\ldots,E_m).
+\end{align*}
+\end{lemma}
+
+\begin{proof}
+引理~\ref{ml:scaling-top} 表明算子与阈值同乘 $r^\beta$；第二式是测度伸缩公式。
+\end{proof}
+
+\begin{theorem}[一般输入的精确夹逼]\label{ml:general-sandwich}
+对所有 $0<\alpha<1$，
+\[
+ C_{\gamma,\mathcal B}(\alpha)
+ \leq C^{\mathrm{gm}}_{\beta,m,\mathcal B}(\alpha)
+ \leq C_{\gamma,\mathcal B}(\alpha^m).
+\]
+更精确地，任意 $E_1,\ldots,E_m$ 满足
+\[
+ H^{\mathrm{gm}}_{\beta,m,\mathcal B}(\alpha;E_1,\ldots,E_m)
+ \subseteq\bigcap_{i=1}^m H_{\gamma,\mathcal B}(\alpha^m,E_i).
+\]
+\end{theorem}
+
+\begin{proof}
+固定 $B\in\mathcal B(x)$，并令
+\[
+ u_i(B):=\frac{|B|^{\gamma/n-1}|E_i\cap B|}{|E_i|^{\gamma/n}}.
+\]
+由引理~\ref{ml:scaling-top}，$0\leq u_i(B)\leq1$。多线性严格见证条件恰为
+$\prod_i u_i(B)>\alpha^m$。若某个 $u_i(B)\leq\alpha^m$，则该乘积不超过
+$\alpha^m$，矛盾。因此每个 $u_i(B)>\alpha^m$，而同一个 $B$ 同时见证右端所有
+线性光晕，证明集合包含。
+
+由此
+\[
+ |H^{\mathrm{gm}}_{\beta,m,\mathcal B}|
+ \leq\min_i|H_{\gamma,\mathcal B}(\alpha^m,E_i)|
+ \leq C_{\gamma,\mathcal B}(\alpha^m)\min_i|E_i|
+ \leq C_{\gamma,\mathcal B}(\alpha^m)G(E_1,\ldots,E_m).
+\]
+取上确界得到上界。令 $E_1=\cdots=E_m=E$，定理~\ref{ml:diagonal-reduction}
+给出下界。
+\end{proof}
+
+\begin{corollary}[一般输入的端点指数]\label{ml:general-endpoint}
+当 $\alpha\uparrow1$ 时，
+\[
+ C^{\mathrm{gm}}_{\beta,m,\mathcal Q}(\alpha)-1\asymp1-\alpha,
+ \qquad
+ C^{\mathrm{gm}}_{\beta,m,\mathcal R}(\alpha)-1\asymp1-\alpha,
+\]
+\[
+ C^{\mathrm{gm}}_{\beta,m,\mathcal Q_c}(\alpha)
+ \asymp(1-\alpha)^n.
+\]
+\end{corollary}
+
+\begin{proof}
+由定理~\ref{ml:general-sandwich}，并注意
+$1-\alpha^m=(1-\alpha)(1+\cdots+\alpha^{m-1})\asymp_m1-\alpha$。
+\end{proof}
+
+\subsection{外层权与高矩的对角传递}
+
+\begin{definition}[外层加权多线性常数]\label{ml:weighted-definition}
+令 $w\geq0$ 局部可积且不恒为零。若 $0<w(E)<\infty$，定义
+\[
+ C^{w,\Delta}_{\beta,m,\mathcal B}(\alpha)
+ :=\sup_{\substack{0<|E|<\infty\\0<w(E)<\infty}}
+ \frac{w(H^{\Delta}_{\beta,m,\mathcal B}(\alpha,E))}{w(E)}.
+\]
+对一般输入，令
+\[
+ C^{w,\mathrm{gm}}_{\beta,m,\mathcal B}(\alpha)
+ :=\sup_{\substack{0<|E_i|<\infty\\0<w(E_i)<\infty}}
+ \frac{w(H^{\mathrm{gm}}_{\beta,m,\mathcal B}(\alpha;E_1,\ldots,E_m))}
+ {\prod_{i=1}^m w(E_i)^{1/m}}.
+\]
+这些定义只在光晕仍由 Lebesgue 分数次平均定义的\emph{外层权}意义下使用。
+\end{definition}
+
+\begin{theorem}[外层权的对角约化与夹逼]\label{ml:weighted-sandwich}
+对 $0<\alpha<1$，
+\[
+ C^{w,\Delta}_{\beta,m,\mathcal B}(\alpha)=C^w_{\gamma,\mathcal B}(\alpha),
+ \qquad
+ C^w_{\gamma,\mathcal B}(\alpha)
+ \leq C^{w,\mathrm{gm}}_{\beta,m,\mathcal B}(\alpha)
+ \leq C^w_{\gamma,\mathcal B}(\alpha^m).
+\]
+\end{theorem}
+
+\begin{proof}
+第一个恒等式来自定理~\ref{ml:diagonal-reduction}。对第二个式子，定理~\ref{ml:general-sandwich}
+的集合包含和单调性给出
+\[
+ w(H^{\mathrm{gm}})\leq\min_iw(H_{\gamma,\mathcal B}(\alpha^m,E_i))
+ \leq C^w_{\gamma,\mathcal B}(\alpha^m)\min_iw(E_i)
+ \leq C^w_{\gamma,\mathcal B}(\alpha^m)\prod_iw(E_i)^{1/m}.
+\]
+对角输入给出反向不等式。
+\end{proof}
+
+\begin{corollary}[外层权的端点刻画与指数]\label{ml:weighted-endpoint}
+设 $w>0$ 几乎处处，并设线性外层权结论已经在相同的 Lebesgue 平均模型下成立。
+则
+\[
+ \lim_{\alpha\uparrow1}C^{w,\Delta}_{\beta,m,\mathcal Q}(\alpha)=1
+ \quad\Longleftrightarrow\quad w\in A_\infty,
+\]
+\[
+ \lim_{\alpha\uparrow1}C^{w,\Delta}_{\beta,m,\mathcal R}(\alpha)=1
+ \quad\Longleftrightarrow\quad w\in A_\infty^*.
+\]
+将 $C^{w,\Delta}$ 换成 $C^{w,\mathrm{gm}}$ 后这两个等价仍成立。若对
+$\mathcal D\in\{\mathcal Q,\mathcal R\}$ 定义
+\[
+ \Gamma^{w,\mathrm{gm}}_{\mathcal D}:=
+ \sup\{\delta>0:C^{w,\mathrm{gm}}_{\beta,m,\mathcal D}(\alpha)-1
+ =O((1-\alpha)^\delta)\},
+\]
+则 $\Gamma^{w,\mathrm{gm}}_{\mathcal D}$ 等于对应线性外层权模型的集中指数；
+对角模型亦然。
+\end{corollary}
+
+\begin{proof}
+定理~\ref{ml:weighted-sandwich} 把对角模型完全化为参数 $\gamma$ 的线性模型，并把
+一般输入夹在其参数 $\alpha$ 和 $\alpha^m$ 的两个值之间。由于
+$1-\alpha^m\asymp_m1-\alpha$，线性外层权刻画和指数结论同时传递。
+\end{proof}
+
+这里的结论不涉及以 $w(x)dx$ 取平均的内禀加权极大算子。
+
+为便于陈述高矩结论，令
+\[
+ \mathfrak F^{\Delta}_{\beta,m,\mathcal B}(p)
+ :=\sup_{0<|E|<\infty}\frac1{|E|}
+ \int_{\mathbb R^n}
+ \left(\frac{M_{\beta,m,\mathcal B}(\mathbf1_E,\ldots,\mathbf1_E)(x)}
+ {|E|^{\beta/n}}\right)^p dx .
+\]
+\begin{proposition}[对角高矩恒等式]\label{ml:diagonal-moments}
+当 $p>q_{\beta,m}$ 时，
+\[
+ \mathfrak F^{\Delta}_{\beta,m,\mathcal B}(p)
+ =\mathfrak F_{\gamma,\mathcal B}(mp),
+\]
+其中右端是参数 $\gamma$ 的线性归一化高矩。由定理~\ref{mom:fixed-cube-moment}
+（以参数 $\gamma$ 应用）无条件得到
+\[
+ \lim_{p\to\infty}p^n\int_{\mathbb R^n}
+ M_{\beta,m,\mathcal Q_c}(\mathbf1_{Q_0},\ldots,\mathbf1_{Q_0})(x)^p\,dx
+ =\frac{n!}{m^n}\,
+ \frac{2^n}{k_{\beta,m}!(2c_{\beta,m})^{n-k_{\beta,m}}}.
+\]
+\end{proposition}
+
+\begin{proof}
+由定理~\ref{ml:diagonal-reduction} 和
+$|E|^{\beta/n}=(|E|^{\gamma/n})^m$，被积函数逐点等于线性归一化函数的 $mp$ 次幂。
+积分后取上确界即得第一式。第二式对 $q=mp$ 应用固定 $Q_0$ 的线性高矩首项，并用
+$q^n=m^np^n$。
+\end{proof}
+
+\subsection{公共交集归一化的退化}
+
+\begin{proposition}[正分数阶下公共交集分母必然发散]\label{ml:intersection-divergence}
+设 $m\geq2$、$\beta>0$，并令 $\mathcal B\in\{\mathcal Q,\mathcal R,\mathcal Q_c\}$。
+对任意 $\Lambda>0$，定义
+\[
+ \mathcal C^{\cap}_{\beta,m,\mathcal B}(\Lambda)
+ :=\sup_{\substack{0<|\cap_iE_i|<\infty\\0<|E_i|<\infty}}
+ \frac{\bigl|\{M_{\beta,m,\mathcal B}(\mathbf1_{E_1},\ldots,\mathbf1_{E_m})
+ >\Lambda|\cap_iE_i|^{\beta/n}\}\bigr|}{|\cap_iE_i|}.
+\]
+则 $\mathcal C^{\cap}_{\beta,m,\mathcal B}(\Lambda)=\infty$。
+\end{proposition}
+
+\begin{proof}
+以第一坐标的小数部分把 $\mathbb R^n$ 周期地分成 $m$ 个集合
+\[
+ A_i^0:=\{x:\{x_1\}\in[(i-1)/m,i/m)\},\qquad 1\leq i\leq m.
+\]
+若轴平行方体 $Q$ 的边长为整数，则 $|A_i^0\cap Q|=|Q|/m$；此结论对平移的
+方体也成立。令 $F=[-1/2,1/2]^n$，并对正整数 $N$ 令
+\[
+ D_N=[-2N,2N]^n,\qquad E_i^{(N)}:=D_N\setminus(A_i^0\setminus F).
+\]
+则每个 $E_i^{(N)}$ 有限测度且 $\bigcap_iE_i^{(N)}=F$。
+
+对 $x\in[-N/2,N/2]^n$，取以 $x$ 为中心、边长 $2N$ 的方体 $Q_x$。它包含于 $D_N$ 并
+包含 $F$，故它是三种基的合法见证，且
+\[
+ |E_i^{(N)}\cap Q_x|\geq(1-1/m)|Q_x|.
+\]
+于是
+\[
+ M_{\beta,m,\mathcal B}(\mathbf1_{E_1^{(N)}},\ldots,\mathbf1_{E_m^{(N)}})(x)
+ \geq (1-1/m)^m(2N)^\beta.
+\]
+右端随 $N$ 发散。因此对充分大的 $N$，整个 $[-N/2,N/2]^n$ 都落入定义中的水平集；
+该水平集商至少为 $N^n$，结论成立。
+\end{proof}
+
+\begin{remark}\label{ml:zero-order-boundary}
+上面证明使用的是 $(2N)^\beta$。在 $\beta=0$ 时，这个增长因子消失，故该构造本身
+并不说明零阶公共交集模型是否发散；这正是正分数阶与零阶之间的结构分界。
+\end{remark}
