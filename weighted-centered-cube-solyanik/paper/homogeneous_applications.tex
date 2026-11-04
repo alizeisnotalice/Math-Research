@@ -54,3 +54,83 @@ $w(x)=c_+x^{\tau-1}$ 与 $w(x)=c_-|x|^{\tau-1}$，其中 $c_+,c_->0$。
 仅当 $c_+=c_-$ 时 $S=1$。例如 $\tau=1/2$、$(c_+,c_-)=(1,2)$ 时，
 首项常数为 $\sqrt{10}/3$。非对称权使用一般 $q=1$ 的二阶适用范围，
 不能直接援用偶权的更大范围。
+
+\subsection{无界或趋零的角向幂权}\label{subsec:signed-angular-powers}
+令 $n\ge2$、$K=[-1,1]^n$、$\rho=\|\cdot\|_\infty$。对 $s>-1$，取
+\[
+a_s(x)=\left(\frac{|x_1|}{\rho(x)}\right)^s,
+\qquad w_{s,\tau}=\rho^{\tau-n}a_s\quad(x_1\ne0).
+\]
+零测超平面上可任意定义。$s<0$ 时角向剖面无界，$s>0$ 时其本质下确界为零。
+
+\begin{lemma}[角向幂权的集中界]\label{lem:angular-power-concentration}
+对所有 $0<u<1$，有
+\[
+\Omega_{a_s}(u)\le C_su^{\beta_s},\qquad
+\beta_s=\min\{1,1+s\},\qquad
+C_s=\begin{cases}
+12^{-s}/(1+s),&-1<s<0,\\
+1,&s=0,\\
+\max\{2(s+1)3^s,\,2\cdot6^s\},&s>0.
+\end{cases}\tag{A.6}
+\]
+这里 $\Omega$ 是 (H.5a) 的集合浓度，不是光晕超额。
+\end{lemma}
+\begin{proof}
+先令 $s=-\gamma\in(-1,0)$。对区间 $I$ 长 $\ell$，若
+$\operatorname{dist}(I,0)>\ell$，$|x_1|^{-\gamma}$ 的振幅比至多 $2^\gamma$。
+否则 $I\subset[-2\ell,2\ell]$，分母积分至少 $2^{-\gamma}\ell^{1-\gamma}$；
+长度 $m$ 的子集积分由重排至多为 $2^\gamma m^{1-\gamma}/(1-\gamma)$。
+因此区间浓度至多 $4^\gamma u^{1-\gamma}/(1-\gamma)$。
+在立方体中沿 $x_1$ 切片，再以截面占比与浴缸原理使用同一维界，常数不变。
+
+取 $Q=x+[-r,r]^n$。若 $r<\rho(x)/2$，乘上 $\rho^\gamma$ 的振幅比至多 $3^\gamma$。
+若 $r\ge\rho(x)/2$，则 $\rho(y)\le3r$、$\int_Qa_{-\gamma}\ge|Q|$；
+对 $A\subset Q$、$m=|A|$，切片重排给
+\[
+\int_A|y_1|^{-\gamma}dy\le
+\frac{2^\gamma}{1-\gamma}(2r)^{(n-1)\gamma}m^{1-\gamma}.
+\]
+乘 $(3r)^\gamma$ 并除以 $|Q|$，即得更强的 $3^\gamma u^{1-\gamma}/(1-\gamma)$。
+两类合并给出第一支。
+
+当 $s>0$，任意区间上 $|x_1|^s$ 的上确界与平均之比不超过 $2(s+1)$。
+在 $r<\rho(x)/2$ 的立方体中再乘 $\rho^{-s}$ 的振幅比 $3^s$，得到第一常数。
+在 $r\ge\rho(x)/2$ 时，$a_s\le1$；至少半个立方体满足 $|y_1|\ge r/2$，
+且 $\rho(y)\le3r$，故平均至少 $6^{-s}/2$。这给第二常数。
+上确界与平均之比控制任意子集的相对质量，因而得到线性集中界。$s=0$ 直接成立。
+\end{proof}
+
+\begin{proposition}[角向幂权的精确首项]\label{prop:signed-angular-leading}
+令 $p_\tau=n/(n-\tau)$、$M_n(z)=(n+z)/(n(1+z))$。若
+\[
+0<\tau<n\min\{1,1+s\},
+\]
+则
+\[
+C^{\rm out}_{K,w_{s,\tau}}(1-t)-1\sim
+\frac{M_n(sp_\tau)^{1/p_\tau}}{M_n(s)}\,t^{\tau/n}.
+\tag{A.7}
+\]
+\end{proposition}
+\begin{proof}
+方体的两个 $x_1$ 面贡献锥概率 $1/n$，其余面的 $x_1$ 均匀分布于 $[-1,1]$，故
+\[
+\int a_s\,d\sigma_K=\frac1n+\frac{n-1}{n(1+s)}=M_n(s).
+\]
+将 $s$ 换成 $sp_\tau$ 得到相应矩；条件正好保证 $sp_\tau>-1$。
+引理 \ref{lem:angular-power-concentration} 与定理 \ref{thm:hom-leading} 给出结论。
+\end{proof}
+
+例如 $n=2,s=1,\tau=1$ 时首项系数为 $4\sqrt6/9$。
+命题 \ref{prop:angular-a1-classification} 与显式角向 $A_1$ 例给出如下区别：
+\begin{center}
+\begin{tabular}{c|c|c}
+角向参数 & 完整弱型（$0<\tau<n$） & (A.7) 的首项区间\\\hline
+$-1<s<0$ & 有限 & $0<\tau<n(1+s)$\\
+$s=0$ & 有限 & $0<\tau<n$\\
+$s>0$ & 无穷 & $0<\tau<n$
+\end{tabular}
+\end{center}
+特别是角向密度趋零并不妨碍有限的近单位首项。对 $-1<s<0$，这里仅处理原点主导的严格区间；
+$\tau=n(1+s)$ 及其外的近单位渐近不由本命题断言。

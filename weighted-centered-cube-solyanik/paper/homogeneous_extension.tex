@@ -1,7 +1,22 @@
 % Self-contained outer homogeneous-weight section; uses the main theorem environments.
 \section{一般齐次角向权的外层端点}\label{sec:homogeneous-endpoint}
 
-令 $K$ 为范数单位球，$\rho=\|\cdot\|_K$，$V=|K|$。以下假定 $w$ 是
+设 $K$ 是 $\mathbb R^n$ 的范数单位球，$\rho=\|\cdot\|_K$、$V=|K|$，而 $\sigma_K$ 是其角向概率测度：
+\[
+ \sigma_K(A)=\frac{|\{r\theta:0\le r\le1,\ \theta\in A\}|}{V}
+ \qquad(A\subset\partial K\ \hbox{Borel}).\tag{AG.1}
+\]
+对 Borel 集 $A$ 及 $0<s<t$，锥环带的体积为 $V(t^n-s^n)\sigma_K(A)$；
+先对环带指示函数、再由单调类定理，
+对每个非负 Borel 函数 $F$ 有
+\[
+ \int_{\mathbb R^n}F(x)\,dx
+ =nV\int_{\partial K}\int_0^\infty F(r\theta)r^{n-1}\,dr\,d\sigma_K(\theta).
+ \tag{AG.2}
+\]
+该公式也包括 $n=1$；此时 $\sigma_K$ 在两个端点各有质量 $1/2$。
+
+本节以如下两侧可比情形为基本条件；定理 \ref{thm:hom-leading} 另给出可替代它的角向集中条件。设 $w$ 是
 定义在 $\mathbb R^n\setminus\{0\}$ 的 Borel 代表，存在常数 $0<a\le b<\infty$，对所有 $r>0$ 及 $x\ne0$ 逐点满足
 \[
  w(rx)=r^{\tau-n}w(x),\qquad
@@ -68,64 +83,96 @@ $\lambda_0=(D/V)^{1-\vartheta}$。第一式给 $|A_0|=V$；对 $A_0$ 作层析�
 或直接缩放，得到第二式 (H.4)。由两侧比较，$A_0$ 有界。齐次性沿每条射线严格单调，故 $\{w=\lambda_0\}$ 为 Lebesgue 零集。等体积交换中的等号因此要求 $K=A_0$ 模零；由极坐标和齐次性，这等价于 $w=\lambda_0\rho^{\tau-n}$ a.e.，逆向也直接成立。
 \end{proof}
 
-\begin{theorem}[一般齐次权的尖锐首项]\label{thm:hom-leading}
-对以 Lebesgue 平均、$w\,dx$ 测量的外层常数，有
+\begin{theorem}[角向集中下的尖锐首项]\label{thm:hom-leading}
+在 (H.1) 下，
 \[
- C^{\rm out}_{K,w}(1-t)-1\sim S t^\vartheta\qquad(t\downarrow0).\tag{H.5}
+C^{\rm out}_{K,w}(1-t)-1\sim S t^\vartheta\qquad(t\downarrow0).\tag{H.5}
 \]
+更一般地，(H.1) 可以替换为 $w=\rho^{\tau-n}v$，其中 $v$ 零次齐次，
+$0<v<\infty$ a.e.、$E_v=\int v\,d\sigma_K\in(0,\infty)$，且其集合浓度模量满足
+\[
+\Omega_v(s):=\sup_{\substack{A\subset Q=x+rK\\ |A|\le s|Q|}}
+\frac{\int_Av}{\int_Qv}\le C_v s^\beta,
+\qquad \vartheta<\beta\le1\quad(s\downarrow0). \tag{H.5a}
+\]
+不要求 $v$ 有界或具有正的本质下界。此时 $p=n/(n-\tau)$ 的角向矩自动有限，且
+\[
+S=\frac{\|v\|_{L^p(\sigma_K)}}{E_v}\ge1, \tag{H.5b}
+\]
+等号恰在 $v$ 为常数 a.e. 时成立。(H.1) 对应有界正 $v$，可取 $\beta=1$。
 \end{theorem}
+
 \begin{proof}
-写 $H=\{M_K\mathbf1_E>1-t\}$，并固定 $C>2$。严格平均的中心及半径连续性保证以下见证类可用有理半径表出，因而可测。把 $H\setminus E$ 分为
-存在严格见证 $r<C\rho(x)$ 的短类 $S_0$ 和其余长类 $T_0$。等号见证可
-微缩半径仍保持严格，故长类的每个实际严格见证均有 $r>C\rho(x)$。
-在环带 $2^k\le\rho(x)<2^{k+1}$，短见证位于
-$D_k=2(1+C)2^kK$，且
+证明一般情形。增大 $C_v$ 后可将 (H.5a) 扩展到 $0<s<1$。
+对 $F_\lambda=K\cap\{v>\lambda\}$，令 $s=|F_\lambda|/V$。
+当 $s>0$，直接代入集合浓度定义可得
+$\lambda s\le C_v E_v s^\beta$。若 $\beta<1$，尾概率至多为
+$(C_vE_v/\lambda)^{1/(1-\beta)}$；因 $p<1/(1-\beta)$，层析给 $v\in L^p(\sigma_K)$。
+若 $\beta=1$，则 $v\le C_vE_v$ a.e.；零尾概率无需除法。
+由 (AG.2)，
 \[
- S_0\cap\{2^k\le\rho<2^{k+1}\}
- \subset\{M_K\mathbf1_{E\cap D_k}>1-t\}\setminus(E\cap D_k).
+\kappa=\frac{nV}{\tau}E_v,\qquad D=V\int v^p\,d\sigma_K<\infty.
 \]
-无权高水平界 (G.2)、(H.1) 和 Tonelli 给
-\[
- \frac{\mu_w(S_0)}{\mu_w(E)}
- \le\frac{B_K(b/a)[2(1+C)]^{n-\tau}}
- {1-2^{\tau-n}}\frac{t}{1-t}.\tag{H.6}
-\]
+齐次缩放与层析使 (H.3) 在此仍成立，取体积 $V$ 的超水平集 $A_0$ 仍有
+$\int_{A_0}w=\kappa S$，但它可能无界。(H.5b) 由代入 (H.2) 得到，等号结论为严格 Jensen 不等式。
 
-设
+这里必须区分集合浓度和光晕超额。由定理 \ref{outer} 的测度扰动证明与 (G.1)，
 \[
- A_C=\inf_{\rho(u)\le C^{-1}}\frac{\int_{u+K}w}{\kappa}.
+\Delta_v(t):=C^{\rm out}_{K,v}(1-t)-1
+\le\frac{B_K\Omega_v(t)}{1-\Omega_v(t)}=O(t^\beta).
 \]
-局部 $L^1$ 平移连续性给 $A_C\to1$。若 $Q=x+rK$ 是实际长见证，则
-以 $u=x/r$、(H.3) 及 $|Q\setminus E|<tVr^n$ 得
+写 $H=\{M_K\mathbf1_E>1-t\}$，取 $C>2$。在 $H\setminus E$ 中，
+存在严格见证 $r<C\rho(x)$ 的点组成短类 $S_0$，其余为 $T_0$；等号半径可微扰，
+因而 $T_0$ 的实际严格见证均有 $r>C\rho(x)$。各类可用有理半径表出。
+在 $2^k\le\rho(x)<2^{k+1}$ 上，短见证位于 $D_k=2(1+C)2^kK$，故
 \[
- \mu_w(E)\ge\mu_w(E\cap Q)
- \ge\kappa r^\tau(A_C-S t^\vartheta).\tag{H.7}
+S_0\cap\{2^k\le\rho<2^{k+1}\}
+\subset\{M_K\mathbf1_{E\cap D_k}>1-t\}\setminus(E\cap D_k).
 \]
-若 $T_0=\varnothing$，其估计取零；否则当括号为正，令 $R$ 为中心在 $T_0$ 的所有实际长见证半径的上确界，便有 $R<\infty$。
-取 $(x_j,r_j)$ 使 $r_j\to R$。充分大 $j$ 时
-$r_j-\rho(x_j)>r_j(1-C^{-1})>R/C$，所以 $x_j+r_jK$ 包含
-$(R/C)K$。而 $T_0\subset(R/C)K\setminus E$，从见证缺失体积得
-$|T_0|\le tVR^n$。再用 (H.3)、(H.7) 并令 $j\to\infty$，
+若 $\int_{E\cap D_k}v=0$，则该输入也 Lebesgue 零；否则使用 $\Delta_v$ 的界。
+乘环带上的径向因子并用 Tonelli，得
 \[
- \frac{\mu_w(T_0)}{\mu_w(E)}\le
- \frac{S t^\vartheta}{A_C-S t^\vartheta}.\tag{H.8}
+\frac{\mu_w(S_0)}{\mu_w(E)}
+\le\frac{[2(1+C)]^{n-\tau}}{1-2^{\tau-n}}\Delta_v(t)
+=O_{K,v,\tau}(C^{n-\tau}t^\beta). \tag{H.6}
 \]
-令 $C=t^{-c}$、$0<c<1/n$，则 (H.6) 是 $o(t^\vartheta)$，(H.8)
-是 $St^\vartheta(1+o(1))$。由 $\mu_w(H)\le\mu_w(E)+\mu_w(S_0)+\mu_w(T_0)$，得到一致于全部输入的上界。
+事实上，对固定 $y\ne0$，所有 $y\in D_k$ 对应的几何级数
+$\sum 2^{k(\tau-n)}$ 至多为
+$[2(1+C)]^{n-\tau}\rho(y)^{\tau-n}/(1-2^{\tau-n})$。
 
-为给下界，取足够大的 $D_0$ 使 $A_0\subset\{\rho<D_0\}$，令
+仍令 $A_C=\inf_{\rho(u)\le C^{-1}}\mu_w(u+K)/\kappa$。
+由 $(1-C^{-1})K\subset u+K$ 及齐次性，
+$(1-C^{-1})^\tau\le A_C\le1$。对实际长见证，(H.3) 给出
 \[
- E=RK\setminus hA_0,\qquad h/R=\frac{t^{1/n}}{1+D_0t^{1/n}}.
+\mu_w(E)\ge\kappa r^\tau(A_C-S t^\vartheta). \tag{H.7}
 \]
-当 $t$ 小，$3D_0h<R$。若 $\rho(x)<D_0h$，半径 $r=R-\rho(x)$ 的
-范数球含 $hA_0$ 且包含于 $RK$，其缺失比例严格小于 $t$。因此
-$RK\subset H$ 模零（$E$ 的 Lebesgue 密度点也属于 $H$，因为范数球与欧氏球可比），所以由 (H.4)
+若 $T_0$ 非空，令 $R$ 为这些实际长见证半径的上确界；括号为正时 $R<\infty$。
+取 $r_j\to R$，充分大 $j$ 的见证球含 $(R/C)K$，且
+$T_0\subset(R/C)K\setminus E$，故 $|T_0|\le tVR^n$。
+用 (H.3) 与 (H.7)，得到
 \[
- C^{\rm out}_{K,w}(1-t)-1\ge
- \frac{S t^\vartheta}{(1+D_0t^{1/n})^\tau-St^\vartheta}
- =St^\vartheta+o(t^\vartheta).\tag{H.9}
+\frac{\mu_w(T_0)}{\mu_w(E)}\le
+\frac{S t^\vartheta}{A_C-S t^\vartheta}. \tag{H.8}
 \]
-结合上界即得结论。
+取 $C=t^{-c}$、$0<c<(\beta-\vartheta)/(n-\tau)$，(H.6) 为 $o(t^\vartheta)$，
+(H.8) 为 $S t^\vartheta(1+o(1))$。这对所有允许输入统一，给出上界。
+
+为给下界，先取最优超水平集 $A_0$，令 $B_L=A_0\cap LK$，并将其膨胀为
+$A_L=(V/|B_L|)^{1/n}B_L$。当 $L$ 足够大，$|A_L|=V$ 且
+$\int_{A_L}w=\kappa S_L\to\kappa S$；另取有限 $D_L$ 使 $A_L\subset D_L\operatorname{int}K$。
+固定 $L$，构造
+\[
+E=TK\setminus hA_L,\qquad h/T=\frac{t^{1/n}}{1+D_Lt^{1/n}}.
+\]
+当 $t$ 小时 $3D_Lh<T$。孔中每个点用半径 $T-\rho(x)$ 的中心球见证，
+其缺失比例严格小于 $t$；$E$ 的密度点以小球见证。因此 $TK\subset H$ 模零，且
+\[
+C^{\rm out}_{K,w}(1-t)-1\ge
+\frac{S_Lt^\vartheta}{(1+D_Lt^{1/n})^\tau-S_Lt^\vartheta}. \tag{H.9}
+\]
+先固定 $L$ 令 $t\downarrow0$，再令 $L\to\infty$，得到匹配下界。
+在 (H.1) 情形 $A_0$ 本身有界，可直接取 $A_L=A_0$，即 $S_L=S$、$D_L=D_0$，
+所以 (H.9) 同时保留原有显式下界。这里只在一般情形取迭代极限，不断言截断和 $t$ 的联合收敛率。
 \end{proof}
 
 \begin{lemma}[两种平移模量]\label{lem:hom-translation}
@@ -133,10 +180,10 @@ $RK\subset H$ 模零（$E$ 的 Lebesgue 密度点也属于 $H$，因为范数球
 $\mathbb R^n\setminus\{0\}$ 局部 Lipschitz，则 $A_C\ge1-O(C^{-2})$。
 \end{lemma}
 \begin{proof}
-若 $\rho(u)=\delta\le1/2$，则
-$(K+u)\mathbin\triangle K\subset(1+\delta)K\setminus(1-\delta)K$。
-由 (H.1)，该壳上的 $w$ 一致有界，而其体积为 $O_{K,w}(\delta)$，故
-$|\mu_w(K+u)-\kappa|=O(\delta)$。这给第一个结论。
+若 $\rho(u)=\delta\le1/2$，则 $(1-\delta)K\subset u+K\subset(1+\delta)K$。
+齐次性直接给
+$(1-\delta)^\tau\kappa\le\mu_w(u+K)\le(1+\delta)^\tau\kappa$，
+因而有第一种估计；这一步只需局部可积性，不要求角向上界。
 
 令 $F(u)=\mu_w(u+K)$、$P=(u+K)\setminus K$、$L=K\setminus(u+K)$。
 中心对称性下 $x\mapsto u-x$ 保体积地把 $P$ 映到 $L$，偶性遂给
@@ -151,7 +198,7 @@ $F(u)-F(0)=O_{K,w}(\delta^2)$，给第二个结论。
 \end{proof}
 
 \begin{theorem}[二阶项的两个可证范围]\label{thm:hom-second}
-令 $q=1$；若另有偶 Lipschitz 假设，可令 $q=2$。当
+仍假设 (H.1)。令 $q=1$；若另有偶 Lipschitz 假设，可令 $q=2$。当
 \[
  0<\tau<\min\left\{1,\frac{n+2q-\sqrt{n^2+4q^2}}2\right\},
 \]
@@ -180,12 +227,12 @@ $o(t^{2\vartheta})$，(H.8) 是 $St^\vartheta+S^2t^{2\vartheta}+o(t^{2\vartheta}
 对 $P_{\boldsymbol a}(1)<\lambda<1$，有
 \[C^{\boldsymbol a,\rm out}_{K,w}(\lambda)
 =C^{\rm out}_{K,w}(1-s_{\boldsymbol a}(\lambda)).\tag{H.13}\]
-若 $w$ 进一步满足 (H.1)，令 $a_*=\min_i a_i$，则
+若 $w$ 满足定理 \ref{thm:hom-leading} 的任一组假设，令 $a_*=\min_i a_i$，则
 \[
  C^{\boldsymbol a,\rm out}_{K,w}(1-\varepsilon)-1
  \sim S a_*^{-\vartheta}\varepsilon^\vartheta.
 \]
-在定理 \ref{thm:hom-second} 的范围内，前两项为
+若另有 (H.1) 且处于定理 \ref{thm:hom-second} 的范围内，前两项为
 \[
  S a_*^{-\vartheta}\varepsilon^\vartheta+
  S^2a_*^{-2\vartheta}\varepsilon^{2\vartheta}+o(\varepsilon^{2\vartheta}).
