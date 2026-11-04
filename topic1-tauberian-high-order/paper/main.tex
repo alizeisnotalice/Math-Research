@@ -41,11 +41,14 @@
 \(K_n=\binom{n}{2}n^2/27\)。对每个固定整数 \(n\ge2\)，证明
 \(C_n(1-t)=L_n(t)+K_nav^6+o_n(av^6)\)，
 确定直至 \(t^{1+6/n}\) 的全部系数，其中三维 \(t^{8/3}\) 项为零。
+二维进一步有 \(C_2(1-t)=L_2(t)+(4/27)av^6-(176/243)av^7+o(av^7)\)。
 上界覆盖全部有限正测度可测输入及全部半径，下界由孔形重配的真实有限输入实现。
 先以所有源点的实际见证、强投影分布和面容量得到临界加权紧性，
 再从原半盒图提取完整局部铺砌，并以横截面接触计数控制无标签角对。
 在有效端盒内把同一见证捕获的不交目标质量相加，给出系数准确的全源角成本；
 六层结算保留源缺量并抵消前层重复量，完成匹配上界。
+二维近等号还迫使实际缺源接近双角臂；同一见证的轴帽与对角目标联合计量，
+保留目标缺角反馈，再以准确角权和七层结算匹配下一阶。
 对于共享同一中心方体、以公共交集归一化的多线性模型，
 证明精确线性约化、临界发散以及关于全部多线性重数一致的高阶渐近。
 \end{abstract}
@@ -143,6 +146,10 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
  \frac{\Cn(1-t)-1-2^nt}{t^{1+1/n}}=-n2^{n+1}.
 \]
 余项按固定维数理解；不主张维数一致性。
+在二维，令 \(a=4t\)、\(v=2\sqrt t\)，还有
+\begin{equation}\label{eq:sharp-planar}
+ C_2(1-t)=L_2(t)+\frac4{27}av^6-\frac{176}{243}av^7+o(av^7).
+\end{equation}
 \end{theorem}
 
 周期包络遗漏了首个角部贡献。对全正对称近单位晶格重配孔形，
@@ -178,7 +185,7 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 结合 \eqref{eq:sharp}，得到关于多线性重数一致的高阶展开。
 以下常数均允许依赖固定维数；不主张维数一致性。
 第 2 节准备同时等分、有限见证选择和参数控制；
-第 3 节证明精确约化、一般输入的锐上界和匹配有限构造；
+第 3 节证明精确约化、一般维数的锐上界与匹配有限构造，并处理二维下一阶；
 第 4 节传递至全部多线性重数。
 
 \section{预备知识}
@@ -419,6 +426,8 @@ Taylor 定理给出 \eqref{eq:quarticparameter} 的统一余项，绝对值至�
 
 \input{sections/skew}
 
+\input{sections/planar}
+
 \begin{proof}[定理~\ref{thm:endpoint} 高阶部分的证明]
 由 \ref{sharp-upper} 的全部输入上界和命题~\ref{prop:nonexact} 的匹配下界，
 \[
@@ -433,6 +442,7 @@ Taylor 定理给出 \eqref{eq:quarticparameter} 的统一余项，绝对值至�
 \(j-(k-1)n\)，上标为 \(n+j-1\)。截至 \(j=6\) 后的余项是
 \(O_n(v^{n+7})\)。把 \eqref{eq:sharp} 的修正加入 \(j=6\) 项即得
 \eqref{eq:coefficients}。\(j=1\) 的系数为 \(-n2^{n+1}\)，所以最初归一化极限也成立。
+二维 \eqref{eq:sharp-planar} 由定理~\ref{planar:seventh} 的匹配上、下界得到。
 \end{proof}
 
 \section{重数一致的多线性渐近}
@@ -488,6 +498,26 @@ Taylor 定理给出 \eqref{eq:quarticparameter} 的统一余项，绝对值至�
 \(1\le\sigma_m(\eps)/\eps\le(1-\eps)^{-1}\)，统一趋于一。
 又 \(\sigma_m\in[\eps,2\eps]\)，单一标量余项的模量
 \(\sup_{0<t\le2\eps}|\eta_n(t)|\to0\)，因此可对全部 \(m\) 取上确界。
+\end{proof}
+
+\begin{corollary}[二维下一阶的重数一致传递]\label{cor:uniform-planar}
+记 \(s=\sigma_m(\eps)\)、\(a_s=4s\)、\(v_s=2\sqrt s\)。
+当 \(\eps\downarrow0\) 时，关于全部整数 \(m\ge1\) 一致有
+\[
+ C_2^{(m)}(1-\eps)=L_2(s)+\frac4{27}a_sv_s^6
+              -\frac{176}{243}a_sv_s^7+o(\eps^{9/2}).
+\]
+\end{corollary}
+\begin{proof}
+二维 \eqref{eq:sharp-planar} 的余项记为 \(r_2(t)=o(t^{9/2})\)。
+精确约化给出同一标量余项 \(r_2(\sigma_m(\eps))\)。
+由 \(\eps\le s\le2\eps\)，
+\[
+ \sup_{m\ge1}\frac{|r_2(\sigma_m(\eps))|}{\eps^{9/2}}
+ \le 2^{9/2}\sup_{0<t\le2\eps}\frac{|r_2(t)|}{t^{9/2}}
+ \longrightarrow0.
+\]
+因此真实下一阶及其余项对全部重数一致传递。
 \end{proof}
 
 \bibliographystyle{plain}
