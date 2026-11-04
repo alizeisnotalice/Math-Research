@@ -1,0 +1,14 @@
+ClearAll[v,b,c,k,dev,e6,e7,C0,C8,A0,m,aa,ff,h];
+Print["Wolfram ",$Version];
+Print["Conditional eight layers, fixed n>=2, tau=bv/c, c>0; E7 error e7 v7, E6 error e6 v6; e6,e7->0."];
+tau=b v/c; om=Sum[tau^(8-h),{h,1,8}];
+Print["telescope residual: ",FullSimplify[Sum[tau^(8-h)(c ff[h]-b v ff[h-1]),{h,1,8}]-(c ff[8]-b v tau^7 ff[0])]];
+Print["endpoint for f0=A0 v m divided by aa: ",Factor[b v tau^7 A0 v m/aa]];
+Q=k v^6((1+v)^(-4)+(10/9)v(1+v)^(-2)); T=1+dev v;
+E8=Q T+C8 v^8;E7=Q T+e7 v^7;E6=(k+e6)v^6;
+num=E8+tau E7+tau^2 E6+C0 v^6 Sum[tau^(8-h),{h,1,5}]-om Q T;
+Print["un-normalized residual through v7: ",FullSimplify[Normal[Series[num,{v,0,7}]],c!=0]];
+Print["un-normalized residual v8 coefficient: ",FullSimplify[Coefficient[Normal[Series[num,{v,0,8}]],v,8],c!=0]];
+Print["normalized residual v8 coefficient: ",FullSimplify[Coefficient[Normal[Series[num/om,{v,0,8}]],v,8],c!=0]];
+Print["sixth minus Q T through v7: ",Normal[Series[E6-Q T,{v,0,7}]]];
+Print["complete"];
