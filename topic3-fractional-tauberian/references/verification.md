@@ -69,3 +69,9 @@
 | `Solyanik2026` | [2609.27687v2](https://arxiv.org/abs/2609.27687v2)，v1为2026-09-23，v2为2026-10-10 | abstract及HTML §3/5的平均与球交体积公式片段 | 中心欧氏球、零阶，主问题为算子非单射性，另有球示性函数闭式和不完全Beta交体积公式。不是方体分数次Tauberian最优常数。|
 
 搜索引擎对最后一条仍出现v1摘要，本文引用和记录已以官方v2为准。DOI未作为正式发表凭证，也未新增未经注册核验的DOI。检索式、来源与排除规则见search-log-20261105.md。定向检索未定位到与本稿全部归一化条件相同的公开sharp结果，这不证明其不存在或本文具有优先权。
+
+## 第9轮：Brunn--Minkowski的实际使用版本
+
+`Gardner2002`：作者主页明确将gorizia12.pdf标为2002年综述的早期版本；实际读取作者PDF第1页的式(1)，凸体形式及凸体条件（2001-10-25稿）。随后实际读取[出版版副本](https://dornsife.usc.edu/sergey-lototsky/wp-content/uploads/sites/211/2023/06/Brunn-Minkowski-AMSBulletin-2002.pdf)首页355页的式(2)，核对其凸体条件与出版页码。本稿只使用有界开凸集的版本，可取闭包并以零测边界转到这一凸体形式，再有限次归纳。没有使用该稿的非凸推广或等号分类来证明本文的稳定性。
+
+作者来源：[研究页](https://faculty.gardner.wwu.edu/research.html)、[早期全文](https://faculty.gardner.wwu.edu/gorizia12.pdf)。AMS文章直链本次返回403；Crossref官方API实际核对DOI、题名、作者、卷39/期3、2002年，但其页码字段为355–406。出版版原文首页及AMS出版物参考书目列355–405，BibTeX采用出版原文首页页码，保留这一元数据差异。DOI身份已核验。当前共24条文献。

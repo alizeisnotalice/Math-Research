@@ -1,4 +1,4 @@
-\section{弱型控制、固定模型高矩与限制型范数}\label{mom:section}
+\section{弱型控制、全体高矩首项与限制型范数}\label{mom:section}
 
 本节的作用是把光晕的顶层行为转化为归一化示性函数的高矩行为。这里的弱型估计只针对 Lebesgue 测度；它不是关于任意底测度的一致结论。记
 \[
@@ -151,18 +151,17 @@
 \end{proof}
 
 \begin{theorem}[限制型高矩渐近]\label{mom:restricted-growth}
-当 $p\to\infty$ 时，
+记 $L_{n,\beta}$ 如定理~\ref{gl:main}。当 $p\to\infty$ 时，
 \[
  \mathfrak F_{\beta,\mathcal Q}(p)=1+O_{n,\beta}(p^{-1}),\qquad
  \mathfrak F_{\beta,\mathcal R}(p)=1+O_{n,\beta}(p^{-1}),
 \]
 且
 \[
- \mathfrak F_{\beta,\mathcal Q_c}(p)=O_{n,\beta}(p^{-n}),
- \qquad
- \liminf_{p\to\infty}p^n\mathfrak F_{\beta,\mathcal Q_c}(p)
- \ge \frac{n!\,2^n}{k!(2c)^{n-k}}.
+ \mathfrak F_{\beta,\mathcal Q_c}(p)
+ =n!L_{n,\beta}p^{-n}+O_{n,\beta}(p^{-n-1}).
 \]
+中心公式的误差还在任意 $\beta\in J\Subset(0,n)$ 上一致（$p$ 充分大取决于 $n,J$）。
 此外，非中心方体和强矩形满足
 \[
  \liminf_{p\to\infty}p\bigl(\mathfrak F_{\beta,\mathcal Q}(p)-1\bigr)
@@ -190,7 +189,13 @@
 \[
  p\int_0^1\alpha^{p-1}(1-\alpha)^j\,d\alpha\sim j!p^{-j}
 \]
-给出前三个上界。固定 $E=Q_0$ 并应用定理~\ref{mom:fixed-cube-moment}，得到中心结论的下界。为得到两个非中心下界，固定 $E=[0,1]^n$。实际测试方体包含给出
+给出非中心的两个上界。中心情形使用定理~\ref{gl:main}：对每个输入，
+近端层析积分至多
+$L_{n,\beta}pB(p,n+1)+O_{n,J}(pB(p,n+2))$，
+远端由弱型界一致指数衰减。下界取固定 $Q_0$ 并用其 $N=1$ 一致截断，得到同样的表达式。
+由于 $pB(p,n+1)=n!\prod_{j=1}^n(p+j)^{-1}$、$pB(p,n+2)=O_n(p^{-n-1})$，
+中心结论及紧参数一致性成立。这里仅将上确界放在积分外作上界，没有交换二者为等式。
+为得到两个非中心下界，固定 $E=[0,1]^n$。实际测试方体包含给出
 \[
  C_{\beta,\mathcal Q}(1-t)\ge
  \bigl(2(1-t)^{-1/(n-\beta)}-1\bigr)^n
@@ -210,5 +215,6 @@
 \end{proof}
 
 \begin{remark}\label{mom:global-gap}
-定理~\ref{mom:fixed-cube-moment} 是固定输入 $Q_0$ 的精确结果；限制型泛函的中心结论目前只给出上界和 \(\liminf\)。要得到匹配的全体极限，仍须证明高维中心 Tauberian 常数的统一首项上界。
+定理~\ref{gl:main}闭合中心全体首项后，限制型泛函也具有匹配的全体首项。
+下一系数仍不能仅由固定输入 $Q_0$ 的高矩展开推出，因为取上确界的输入可以随 $p$ 改变。
 \end{remark}
