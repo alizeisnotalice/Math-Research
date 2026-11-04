@@ -1,0 +1,12 @@
+ClearAll[x,y,z,b];
+Print["Wolfram: ",$Version];
+Print["Domain 1/2<=b<=1, 1/6<=x,y<=1, |z|<=1/12; c=1/1000."];
+G=b/27-b*x*y+((x+z)(y+z)(x+y+2z)+(x-z)(y-z)(x+y-2z))/2;
+G0=Expand[G/.z->0];
+Print["positive-part domain lower bound: ",Reduce[1/6<=x<=1&&1/6<=y<=1&&-1/12<=z<=1/12&&(x+z<=0||x-z<=0||y+z<=0||y-z<=0),{x,y,z},Reals]];
+Print["z decomposition: ",Factor[G-G0]];
+Print["z coefficient violation: ",Reduce[1/6<=x<=1&&1/6<=y<=1&&3(x+y)<1/1000,{x,y},Reals]];
+base=G0-((1-b)+(x-1/3)^2+(y-1/3)^2)/1000;
+Print["base affine in b: ",Exponent[base,b]];
+Print["b=1/2 violating set: ",Reduce[1/6<=x<=1&&1/6<=y<=1&&(base/.b->1/2)<0,{x,y},Reals]];
+Print["b=1 violating set: ",Reduce[1/6<=x<=1&&1/6<=y<=1&&(base/.b->1)<0,{x,y},Reals]];
