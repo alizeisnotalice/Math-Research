@@ -97,5 +97,6 @@ latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 | 32 | 双向错列真实构造的反例筛除；不代一般CDF交量界 |
 | 33 | 正式源码独审、全部m一致传递与48页PDF交付 |
 | 34 | 全部高临界交量由二轴整管外缺量净支付；不声称全部gross小量 |
+| 35 | 固定τ非退化角的可测helper和跨锚点实际角面单射；不含raw退化角 |
 
 失败或被覆盖的长表、重复预审、临时构造与渲染产物留在仓库外。只归档有效完整证明、必要独审和最小实际计算证据。
