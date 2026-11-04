@@ -68,3 +68,7 @@ $E=K$；切向体一般不必中心对称。不涉及全体可测集的 Tauberia
 ## 固定模型的几何对偶与可计算例子
 
 新增 `cvx:reflection-duality` 由散度恒等式给出 N_{n-β,K}(-v)=N_{β,K}(v)。新增 `cvx:polytope-duality` 给出S为加权切片立方体线性像的极体，原始/对偶LP均可行且最优值有限。正方形、非对称三角形的精确顶点与面积以及圆盘积分实际由Wolfram15和MATLAB R2026a交叉核验。证明与数据分别见正文和proofs/polytope-duality.md。
+
+## 第5轮：中心对称半阶的仿射极值
+
+新增half:projection-identity、half:ellipsoid-extremum，证明中心对称K、β=n/2下N=hΠK/|K|。既有Petty投影不等式以定理A单独编号，所用规范与等号条件已回到原作者PDF核验。原9.4的这一固定模型子类得到椭球极值，任意β及固定基全体输入的极值问题保留。脚本half_order.wl与half_order_matlab.m实际核对绝对值配对恒等式、7个维数的Γ常数、4000个方体方向及非对称反例的代价。

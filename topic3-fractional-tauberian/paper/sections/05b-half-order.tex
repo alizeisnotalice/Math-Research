@@ -1,0 +1,74 @@
+\subsection{半阶对称模型与椭球极值}
+
+完整切向功能在互补分数阶的中点进一步简化。下面的结果把尺度优化精确地接回
+经典投影体，并在这一子类中确定资料体的仿射极值。
+
+\begin{theorem}[半阶中心对称固定模型]\label{half:projection-identity}
+设 $n\ge2$、$K=-K$ 为满维凸体，并取 $\beta=n/2$。则
+\[
+ N_{n/2,K}(v)=\frac{h_{\Pi K}(v)}{|K|},\qquad
+ S_{n/2,K}=\operatorname{int}(|K|\Pi^*K).
+\]
+因而固定资料的归一化首项为
+\begin{equation}\label{half:coefficient}
+ \mathcal L_{n/2}(K):=
+ \lim_{t\downarrow0}\frac{|H^K_{n/2,\mathrm c}(1-t,K)|}{|K|t^n}
+ =|K|^{n-1}|\Pi^*K|.
+\end{equation}
+\end{theorem}
+\begin{proof}
+记 $h(y)=\langle y,\nu_K(y)\rangle$。由 $z_-=(|z|-z)/2$ 和散度定理，
+\[
+ \Phi_{n/2,K}(v,a)
+ =\frac1{2|K|}\int_{\partial K}
+ |\langle v,\nu_K(y)\rangle+a h(y)|\,d\mathcal H^{n-1}(y).
+\]
+中心对称性给出 $\nu_K(-y)=-\nu_K(y)$、$h(-y)=h(y)$。
+配对 $y,-y$ 后，使用
+\[
+ |b+a h|+|-b+a h|=2\max\{|b|,|a h|\}\ge2|b|,
+\]
+可知 $a=0$ 达到全部实尺度参数的最小值。再由投影面积公式，
+\[
+ N_{n/2,K}(v)=\frac1{2|K|}\int_{\partial K}
+ |\langle v,\nu_K\rangle|\,d\mathcal H^{n-1}
+ =\frac{h_{\Pi K}(v)}{|K|}.
+\]
+严格单位子水平集给出切向体，定理~\ref{cvx:full-tangent-limit} 再给出体积极限。
+\end{proof}
+
+\begin{classical}[Petty 投影不等式]\label{half:petty}
+设 $K\subset\mathbb R^n$ 是满维凸体，$n\ge2$。在本文
+$h_{\Pi K}(u)=|P_{u^\perp}K|_{n-1}$（$|u|=1$）的规范下，
+\begin{equation}\label{half:petty-bound}
+ |K|^{n-1}|\Pi^*K|
+ \le\left(\frac{\omega_n}{\omega_{n-1}}\right)^n,
+ \qquad \omega_d=\frac{\pi^{d/2}}{\Gamma(1+d/2)}.
+\end{equation}
+等号成立当且仅当 $K$ 是椭球。
+\end{classical}
+
+这是经典 Petty 投影不等式，采用文献\cite[第1节]{LutwakYangZhang2000}所述版本。
+该文把投影体规范化为 $\Pi B_2^n=B_2^n$；本文使用经典规范
+$\Pi B_2^n=\omega_{n-1}B_2^n$，所以其右端 $\omega_n^n$ 在本文规范下须除以
+$\omega_{n-1}^n$。
+
+\begin{corollary}[对称半阶固定模型的最优资料体]\label{half:ellipsoid-extremum}
+对 $K=-K$ 的固定模型，
+\[
+ \mathcal L_{n/2}(K)\le
+ \left(\frac{\omega_n}{\omega_{n-1}}\right)^n,
+\]
+且等号恰由原点中心的椭球达到。
+\end{corollary}
+\begin{proof}
+将式~\eqref{half:coefficient} 代入定理~\ref{half:petty}；再使用其等号条件。
+\end{proof}
+
+\begin{remark}[对称条件与优化对象]\label{half:scope}
+中心对称条件在消去尺度时不可直接删除。例如对上文三角形 $T$，$v=(1,1)$ 和
+$\beta=1$，尺度 $a=0$ 的代价为 $4/3$，而 $a=1$ 的代价为 $1$；由其对偶多边形
+可知 $N_{1,T}(1,1)=1$。这里的椭球极值是在 $K=-K$、$\beta=n/2$、资料固定为
+$E=K$ 且基随 $K$ 变化的类别中成立。对一个固定基在全部可测 $E$ 上取 Tauberian
+上确界，仍需要独立的统一上界。
+\end{remark}

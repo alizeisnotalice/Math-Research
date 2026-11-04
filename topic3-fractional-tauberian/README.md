@@ -52,4 +52,6 @@ run('verification/polytope_tangent.m')
 run('verification/fixed_cube_matlab.m')
 ```
 
-前两类符号脚本核对系数、精确顶点和积分；MATLAB独立求根、LP和边界积分。结果摘要保存在 `results/`。最新PDF为41页，各轮具体成果见 `rounds/001.md` 至 `rounds/004.md`。
+前两类符号脚本核对系数、精确顶点和积分；MATLAB独立求根、LP和边界积分。结果摘要保存在 `results/`。最新PDF为41页，各轮具体成果见 `rounds/001.md` 至 `rounds/005.md`。
+
+第5轮确定中心对称、β=n/2的固定模型首项与椭球极值。复现命令为 `wolframscript -file verification/half_order.wl`；MATLAB运行 `verification/half_order_matlab.m`。优化范围是资料固定E=K且基与K共同变化；固定基对全体E的上确界仍为后续问题。
