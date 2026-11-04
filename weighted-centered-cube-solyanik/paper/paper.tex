@@ -1,0 +1,128 @@
+\documentclass[UTF8,11pt,fontset=none]{ctexart}
+\usepackage{amsmath,amssymb,amsthm,geometry,hyperref,fontspec,xeCJK}
+\setmainfont{Times New Roman}\setCJKmainfont{Songti SC}\setCJKsansfont{Heiti SC}
+\geometry{a4paper,left=25mm,right=25mm,top=23mm,bottom=24mm}
+\theoremstyle{definition}\newtheorem{theorem}{定理}[section]\newtheorem{lemma}[theorem]{引理}\newtheorem{corollary}[theorem]{推论}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{说明}
+\newcommand{\R}{\mathbb R}\newcommand{\1}{\mathbf 1}
+\title{中心方体的两种加权 Solyanik 模型\\共同中心多线性精确传递与端点结论}
+\author{基于《课题2（8.26最新扩充版）》的核验修订}\date{2026 年 11 月 5 日}
+\begin{document}\maketitle
+\begin{abstract}本文区分内禀权平均与外层加权光晕，证明共同中心多线性传递、内禀端点和外层集中模量界。\end{abstract}
+
+\section{引言}
+中心极大算子的近单位水平集刻画了平均几乎等于一时的外溢质量。加权情形存在两个不同问题：权可以同时进入平均与测量，也可以只进入测量。Hagelstein--Parissis 的加权研究说明这种区分对于端点估计十分重要\cite{HagelsteinParissis2016}；Aldaz 的测度一致弱型理论则提供中心方体的几何工具\cite{Aldaz2020}。
+本文围绕共同中心、共同尺度下的多集合输入展开。核心是把各输入的总缺陷与公共交集联系起来，并通过有限稳定见证和同时分割证明反向传递。随后给出逐权一阶项、全权族精确公式和外层集中模量界。进一步用水位优化把等指数传递推广到不等正指数。本文不以局部模型的系数替代完整算子常数，也不声称这些推论具有未经文献比较的首创性。
+\section{预备知识与主结果}
+令 $Q(x,r)=x+[-r,r]^n$，$d\mu=w\,dx$，其中 $0\le w\in L^1_{\rm loc}(\R^n)$ 且 $w\ne0$。定义
+\[
+ M_{c,w}f=\sup_{r:\mu(Q)>0}\mu(Q)^{-1}\int_Q|f|d\mu,\quad
+ M_cf=\sup_{r>0}|Q|^{-1}\int_Q|f|dx,
+\]
+\[
+ C_{c,w}^{\rm int}(a)=\sup_{0<\mu(E)<\infty}\frac{\mu\{M_{c,w}\1_E>a\}}{\mu(E)},\quad
+ C_{c,w}^{\rm out}(a)=\sup_{\substack{0<|E|<\infty\\0<\mu(E)<\infty}}\frac{\mu\{M_c\1_E>a\}}{\mu(E)}.
+\]
+内禀上确界忽略零质量方体；外层定义保留 $|E|$ 的条件。
+
+令整数 $m\ge2$、$F=\cap_{i=1}^mE_i$，并定义
+\[
+ \mathcal M^{(m)}_{c,w}(\1_{E_1},\ldots,\1_{E_m})=
+ \sup_r\prod_{i=1}^m\frac{\mu(E_i\cap Q)}{\mu(Q)}.
+\]
+对所有可测 $E_1,\ldots,E_m$ 且 $0<\mu(F)<\infty$，以 $\mu(F)$ 为分母对光晕测量之比取上确界得到 $C^{(m),\rm int}_{c,n,w}$；将乘积中的 $\mu$ 换成 Lebesgue 测度、而光晕和分母仍用 $\mu$，得到 $C^{(m),\rm out}_{c,n,w}$；外层另要求 $0<|F|<\infty$。各 $E_i$ 本身不要求有限测度，所有算子水平均取严格不等式。写
+\[
+ s_m(\lambda)=m(1-\lambda^{1/m}),\quad\Phi_m(\lambda)=1-s_m(\lambda),\quad
+ \lambda_m^*=(1-1/m)^m.
+\]
+\begin{theorem}\label{transfer}若 $\lambda_m^*<\lambda<1$，则
+\[
+C^{(m),\rm int}_{c,n,w}(\lambda)=C^{\rm int}_{c,w}(\Phi_m(\lambda)),\qquad
+C^{(m),\rm out}_{c,n,w}(\lambda)=C^{\rm out}_{c,w}(\Phi_m(\lambda)).
+\]
+\end{theorem}
+\begin{theorem}\label{endpoint}对每个非零 $w\in L^1_{\rm loc}$，
+\[C^{\rm int}_{c,w}(1-t)=1+2^nt+o_w(t)\quad(t\downarrow0).\]
+并且对 $0<a<1$，\[\sup_wC^{\rm int}_{c,w}(a)=1+2^n\frac{1-a}{a}.\]
+\end{theorem}
+\begin{theorem}\label{outer}令
+\[\Omega_w(t)=\sup_{\substack{A\subset Q,\ |A|\le t|Q|\\Q\ \mathrm{centered},\ \mu(Q)>0}}\frac{\mu(A)}{\mu(Q)}.\]
+若 $\Omega_w(t)<1$，则\[C^{\rm out}_{c,w}(1-t)\le1+2^n\frac{\Omega_w(t)}{1-\Omega_w(t)}.\]
+\end{theorem}
+\section{共同中心传递的证明}
+中心方体的 Besicovitch intersection constant 是 $2^n$，并给出任意局部有限 Radon 测度的测度一致中心弱型 $(1,1)$ 界 \cite[Theorem 1.2 and Corollary 3.5]{Aldaz2020}。
+\begin{lemma}\label{deficit}若 $0\le a_i\le1$、$\prod_ia_i>\lambda$，则
+\[\sum_i(1-a_i)<s_m(\lambda).\]
+该常数最优，且 $\Phi_m(\lambda)>0$ 当且仅当 $\lambda>\lambda_m^*$。
+\end{lemma}
+\begin{proof}AM--GM 给出 $m^{-1}\sum_ia_i\ge(\prod_ia_i)^{1/m}>\lambda^{1/m}$。移项即得；取全部 $a_i$ 相等即知最优性。\end{proof}
+\begin{lemma}\label{split}设 $\nu$ 为 Lebesgue 测度或 $w\,dx$，$F\subset D$、$\nu(D)<\infty$，且 $Q_1,\ldots,Q_N\subset D$。则 $D\setminus F$ 可分成不交的 $A_1,\ldots,A_m$，使
+\[\nu(A_i\cap Q_j)=m^{-1}\nu((D\setminus F)\cap Q_j).\]
+\end{lemma}
+\begin{proof}由有限方体族生成 Boolean 原子。在每个正质量原子上沿第一坐标按连续分布函数等分；逐原子求和。\end{proof}
+\begin{proof}[定理 \ref{transfer} 的证明]
+若同一方体上的输入比例为 $a_i$，引理 \ref{deficit} 和 $Q\setminus F\subset\cup_i(Q\setminus E_i)$ 给出
+\[\nu(F\cap Q)/\nu(Q)>1-s_m(\lambda)=\Phi_m(\lambda),\]
+其中内禀取 $\nu=\mu$、外层取 $\nu=dx$，故得到上界。
+
+反向构造是第 \ref{sec:weighted-exponents} 节定理 \ref{thm:weighted-transfer} 在 $a_i=1$ 时的情形。该处详细处理有限参考见证的中心扰动、Boolean 原子的同时等分，以及 $D$ 外的分割延拓；特别是构造始终满足 $\cap_iE_i=F$。该证明不使用本定理，因而没有循环依赖。\end{proof}
+\begin{corollary}在 $\lambda_m^*<\lambda<1$，
+\[\sup_wC^{(m),\rm int}_{c,n,w}(\lambda)=1+2^n\frac{s_m(\lambda)}{1-s_m(\lambda)}.\]
+\end{corollary}
+\section{内禀端点与外层集中模量}
+对紧 $K\subset\{M_{c,w}\1_E>a\}\setminus E$，令 $B=(1-a)/a$ 和 $d\nu_c=\1_Ed\mu+c\1_Kd\mu$。每个严格 $\mu$-见证给出 $M_{c,\nu_c}\1_E>1/(1+cB)$ 于 $K$。弱型界遂给
+\[\mu(K)\le2^n(B+c^{-1})\mu(E).\]
+令 $c\to\infty$ 并用内正则性，得到
+\[C^{\rm int}_{c,w}(a)\le1+2^n(1-a)/a.\tag{1}\]
+\subsection{周期穿孔与固定权下界}
+固定 $N\ge2$ 与 $0<\theta<1/2$，令
+\[
+ h=\frac{\theta}{N(1+2\theta)},\qquad r=\frac1{N(1+2\theta)},\qquad D=[0,1]^n.
+\]
+在每个 $k/N$，$k\in\{1,\ldots,N-1\}^n$，挖去半边长为 $h$ 的开孔 $P_k$，记剩余集为 $E_{N,\theta}$。任意孔点 $z$ 的方体 $Q(z,r)$ 位于 $D$，包含整个本孔，且只可能在边界接触其他孔，因为 $r\ge2h$、$r+2h=1/N$。故该见证的缺失比例为 $(h/r)^n=\theta^n$。孔外点除有限超平面边界外都是剩余集的内点。因此当 $\theta^n<t$ 时，$D$ 模零包含于 $\{M_c\1_{E_{N,\theta}}>1-t\}$，且
+\[
+ |E_{N,\theta}|=1-(N-1)^n(2h)^n.
+\]
+对内禀固定权，取正有限 Lebesgue 点 $x_0$。对所有可测 $A\subset D$，有统一估计
+\[
+ \left|\rho^{-n}\mu(x_0+\rho A)-w(x_0)|A|\right|
+ \le\int_D|w(x_0+\rho y)-w(x_0)|\,dy=:\varepsilon_\rho\longrightarrow0.
+\]
+固定 $N,\theta$ 后，全部孔点的见证体积都等于 $q=(2r)^n>0$。其缩放后的内禀平均至少为
+\[
+ \frac{w(x_0)(1-\theta^n)q-\varepsilon_\rho}
+ {w(x_0)q+\varepsilon_\rho}>1-t
+\]
+当 $\rho$ 充分小时成立；孔外剩余集的内部平均为一，边界对 $\mu\ll dx$ 为零集。因此先令 $\rho\downarrow0$、再令 $N\to\infty$、最后令 $\theta\uparrow t^{1/n}$，得到对 $0<t<2^{-n}$ 的下包络
+\[
+ C^{\rm int}_{c,w}(1-t)\ge L_n(t):=
+ \left[1-\left(\frac{2t^{1/n}}{1+2t^{1/n}}\right)^n\right]^{-1}.
+\]
+由于 $L_n(t)=1+2^nt+O_n(t^{1+1/n})$，与 (1) 合并即得定理 \ref{endpoint} 的第一式。这里每个 $t$ 允许重新选择缩放参数，不要求权的收敛速度一致。特别地，$n\ge2$ 时仍有可靠的二阶夹逼
+\[
+ -n2^{n+1}\le\liminf_{t\downarrow0}\frac{C^{\rm int}_{c,w}(1-t)-1-2^nt}{t^{1+1/n}}
+ \le\limsup_{t\downarrow0}\frac{C^{\rm int}_{c,w}(1-t)-1-2^nt}{t^{1+1/n}}\le0.
+\]
+这不等于二阶极限存在。
+\subsection{全权族的匹配下界}
+为证 (1) 对权族的下界，取 $B_0=[-\delta,\delta]^n$、$E=B_0$、$B_v=v+B_0$，其中 $v\in\{-1,1\}^n$、$\delta<1/4$。令权在中心块质量为 $1$，每个卫星块质量为 $q=(1-\eta)(1-a)/a$，其他地方为零。每个卫星点的中心方体 $Q(x,1+2\delta)$ 恰捕获中心与该卫星，平均 $1/(1+q)>a$，故光晕商至少 $1+2^nq$。令 $\eta\downarrow0$ 即得定理 \ref{endpoint} 的第二式。
+
+对外层模型，取 $K\Subset\{M_c\1_E>1-t\}\setminus E$，记 $\Omega=\Omega_w(t)$，仍令 $d\nu_c=\1_Ed\mu+c\1_Kd\mu$。Lebesgue 严格见证给出
+\[\mu(E\cap Q)\ge(1-\Omega)\mu(Q),\qquad\mu(K\cap Q)\le\Omega\mu(Q).\]
+故 $M_{c,\nu_c}\1_E\ge[1+c\Omega/(1-\Omega)]^{-1}$ 于 $K$。对任意略小的阈值应用弱型界再取极限。弱型界、$c\to\infty$ 和内正则性给出定理 \ref{outer}。若 $\Omega_w(t)\le A_0t^\sigma\le1/2$，右端减一至多为 $2^{n+1}A_0t^\sigma$。
+
+\input{extension.tex}
+\section{应用与开放问题}
+由等指数传递和逐权一阶项，固定 $m$ 与 $w$ 时
+\[
+ C^{(m),\rm int}_{c,n,w}(1-\epsilon)=1+2^n\epsilon+o_{m,w}(\epsilon).
+\]
+这是因为 $s_m(1-\epsilon)=\epsilon+O_m(\epsilon^2)$。此外，若外层集中模量满足 $\Omega_w(t)\le A_0t^\sigma$，代入 $t=s_m(\lambda)$ 即得到多集合外层估计；不等指数时改代 $s_{\boldsymbol a}(\lambda)$。
+若一个中心几何族对于所有局部有限测度的弱型常数统一不超过 $B$，上面的测度扰动证明还给出 $C_\mu(a)\le1+B(1-a)/a$。此推广只使用弱型性质，不要求把 Besicovitch 交叠性质当作覆盖选择定理。
+
+
+外层幂权的匹配尖锐首项、固定权二阶极限、临界以下内禀多线性发散，以及 restricted strong type 的完整尖锐范数仍是开放问题；势论或 PDE 应用还须独立验证共同中心方体见证接口。
+\begin{thebibliography}{9}
+\bibitem{Aldaz2020} J. M. Aldaz, \emph{Kissing numbers and the centered maximal operator}, arXiv:1811.10478v2, 2020.
+\bibitem{HagelsteinParissis2016} P. A. Hagelstein and I. Parissis, \emph{Weighted Solyanik estimates for the Hardy--Littlewood maximal operator and embedding of $A_\infty$ into $A_p$}, J. Geom. Anal. 26 (2016), 924--946.
+\end{thebibliography}\end{document}

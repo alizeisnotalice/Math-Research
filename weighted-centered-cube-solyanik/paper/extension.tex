@@ -1,0 +1,118 @@
+% 可由 \input{extension.tex} 纳入主稿；要求 amsmath, amssymb, amsthm。
+\section{不等指数的共同中心传递}\label{sec:weighted-exponents}
+
+本节把等指数乘积的缺陷坐标推广到任意正指数。该推广仍要求各因子在同一个中心方体上取平均；分别取上确界的多线性模型不适用本节结论。
+
+令 $m\ge2$、$a_1,\ldots,a_m>0$，并在 $0\le s\le1$ 定义
+\[
+ P_{\boldsymbol a}(s)=
+ \max\left\{\prod_{i=1}^m(1-d_i)^{a_i}:
+ 0\le d_i<1,\ \sum_{i=1}^m d_i=s\right\}.
+ \tag{W.1}
+\]
+函数 $P_{\boldsymbol a}$ 连续、严格递减，且 $P_{\boldsymbol a}(0)=1$。因此当
+\[
+ P_{\boldsymbol a}(1)<\lambda<1
+ \tag{W.2}
+\]
+时，存在唯一的 $s_{\boldsymbol a}(\lambda)\in(0,1)$ 满足
+\[
+ P_{\boldsymbol a}(s_{\boldsymbol a}(\lambda))=\lambda.
+ \tag{W.3}
+\]
+
+\begin{lemma}[水位分配]\label{lem:water-filling}
+若 $0<s<1$，存在唯一的 $\rho>0$ 使
+\[
+ \sum_{i=1}^m\left(1-\frac{a_i}{\rho}\right)_+=s.
+ \tag{W.4}
+\]
+式 \textup{(W.1)} 的唯一最大点为
+\[
+ d_i^*(s)=\left(1-\frac{a_i}{\rho}\right)_+.
+ \tag{W.5}
+\]
+\end{lemma}
+
+\begin{proof}
+在单纯形的相对内部，目标的对数为严格凹函数
+\(\sum_i a_i\log(1-d_i)\)。KKT 条件给出：活跃坐标满足
+\(a_i/(1-d_i)=\rho\)，非活跃坐标满足 $a_i\ge\rho$。于是得到
+\textup{(W.4)}--\textup{(W.5)}。左边作为 $\rho$ 的函数连续递增，从 $0$ 取到大于 $1$ 的值，因而 $\rho$ 唯一。严格递减性和连续性也随之得到：增加总缺陷后，把一个正缺陷坐标减小即可严格增大乘积。
+\end{proof}
+
+设 $\mu$ 是非原子、局部有限的 Radon 测度，零质量方体一律略去，
+\[
+ \mathcal M_{c,\mu}^{\boldsymbol a}(f_1,\ldots,f_m)(x)
+ =\sup_{r>0}\prod_{i=1}^m
+ \left(\frac{1}{\mu(Q(x,r))}\int_{Q(x,r)}|f_i|\,d\mu\right)^{a_i}.
+\]
+定义共同中心常数
+\[
+ C_{c,\mu}^{\boldsymbol a}(\lambda)=
+ \sup_{\substack{E_1,\ldots,E_m\ \mathrm{measurable}\\
+ F=\cap_iE_i,\ 0<\mu(F)<\infty}}
+ \frac{\mu\{\mathcal M_{c,\mu}^{\boldsymbol a}
+ (\mathbf1_{E_1},\ldots,\mathbf1_{E_m})>\lambda\}}{\mu(F)}.
+\]
+
+\begin{theorem}[不等指数共同中心精确传递]\label{thm:weighted-transfer}
+在 \textup{(W.2)} 的区间内，
+\[
+ C_{c,\mu}^{\boldsymbol a}(\lambda)=
+ C_{c,\mu}^{\mathrm{int}}\bigl(1-s_{\boldsymbol a}(\lambda)\bigr).
+ \tag{W.6}
+\]
+若 $d\mu=w\,dx$，上式适用于任意非零非负局部可积权。对外层模型，把左侧平均改为 Lebesgue 平均、光晕测量改为 $w\,dx$，并要求 $0<|F|<\infty$，仍有同一等式。
+\end{theorem}
+
+\begin{proof}
+写 $s=s_{\boldsymbol a}(\lambda)$。若在共同见证方体 $Q$ 上
+\[
+ p_i=\frac{\mu(E_i\cap Q)}{\mu(Q)},\qquad d_i=1-p_i,
+\]
+且 $\prod_i p_i^{a_i}>\lambda$，若总缺陷至少为 $s$，可逐坐标减小缺陷到总和恰为 $s$；乘积只能增大，且至多为 $P_{\boldsymbol a}(s)=\lambda$，矛盾。因此定义 \textup{(W.1)} 给出
+\(\sum_i d_i<s\)。又 $Q\setminus F\subset\bigcup_i(Q\setminus E_i)$，故
+\[
+ \frac{\mu(F\cap Q)}{\mu(Q)}
+ \ge1-\sum_i d_i>1-s.
+\]
+这给出 \textup{(W.6)} 的“$\le$”方向。
+
+反之，令 $K$ 为严格线性光晕
+\(\{M_{c,\mu}\mathbf1_F>1-s\}$ 的紧子集。我们使用如下有限稳定事实：可选有限个参考方体以及正余量，使 $K$ 被相应的小中心邻域覆盖；每个邻域中的中心方体仍有 $F$-缺陷严格小于 $s$；并且参考方体及这些小中心扰动的对称差的 $\mu$-质量小到小于预先指定的余量。先把严格见证半径略微增大，避开至多可数个具有正质量边界的半径，使每个参考方体边界的 $\mu$-质量为零。严格性在充分小的增大下保持。此时这一事实由严格不等式、局部有限性、从上连续性和
+\(\mu(Q(x,r)\mathbin\triangle Q(y,r))\to0\) 得到。
+
+取包含全部微扰方体的有界盒 $D$。把有限参考方体所生成的 Boolean 原子上的 $D\setminus F$ 按下列比例切分：
+\[
+ \frac{d_1^*(s)}s,\ldots,\frac{d_m^*(s)}s.
+\]
+非原子性保证每个原子可作这种有限分割；在 $D$ 外把 $F^c$ 任意补入这些部分，得到 $F^c=A_1\mathbin{\dot\cup}\cdots\mathbin{\dot\cup}A_m$，并置 $E_i=\mathbb R^n\setminus A_i$。对未扰动的参考方体，
+\[
+ \frac{\mu(Q\setminus E_i)}{\mu(Q)}=
+ \frac{d_i^*(s)}s\frac{\mu(Q\setminus F)}{\mu(Q)}<d_i^*(s)\quad(d_i^*(s)>0).
+ \tag{W.7}
+\]
+有限稳定性中的余量使 \textup{(W.7)} 在所覆盖的全部中心扰动方体中仍严格成立。这里把 $D$ 取为包含所有微扰方体的一个有界盒；在该盒内按参考方体的 Boolean 原子分割。若 $d_i^*(s)=0$，令 $A_i\cap D=\varnothing$，故该坐标没有误差。于是每个相关方体满足
+\[
+ \prod_i\left(\frac{\mu(E_i\cap Q)}{\mu(Q)}\right)^{a_i}
+ >\prod_i(1-d_i^*(s))^{a_i}=\lambda.
+\]
+因此 $K$ 包含于所构造的多线性光晕。由 Radon 内正则性令 $K$ 穷尽线性光晕，得到反向不等式。
+
+外层版本完全相同：对 Lebesgue 测度作有限 Boolean 原子切分，再以 $w\,dx$ 的 Radon 内正则性穷尽光晕。
+\end{proof}
+
+\begin{corollary}[等指数特例]
+当 $a_1=\cdots=a_m=1$ 时，
+\[
+ P_{\boldsymbol a}(s)=(1-s/m)^m,\qquad
+ s_{\boldsymbol a}(\lambda)=m(1-\lambda^{1/m}),
+\]
+从而恢复等指数的共同中心缺陷传递。
+\end{corollary}
+
+\begin{remark}[外层临界发散]
+若 $m\ge2$，则对每个非零局部可积权 $w$ 和
+\(0<\lambda\le P_{\boldsymbol a}(1)\)，外层常数为无穷。证明取沿第一坐标的周期分割，其各部分的比例为 $d_i^*(1)$；把一个有正 $w$-质量的有限集 $F$ 放进某个正比例部分，并令 $E_i=(\mathbb R^n\setminus A_i)\cup F$。每个充分大的整数边长中心方体给出严格大于 $P_{\boldsymbol a}(1)$ 的共同见证，故光晕为全空间。有限总质量情形再令 $w(F)\downarrow0$。该论证改变内禀平均分母，不能推出内禀模型的临界发散。
+\end{remark}
