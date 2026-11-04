@@ -147,3 +147,9 @@ run('verification/fixed_cube_matlab.m')
 复现`verification/general_corners.py`（标准库精确积分）、`verification/general_corners.wl`和`verification/general_corners_matlab.m`；可选`verification/general_corners_search.py`保存六进程106,080次探索配置。缓存Gauss节点后同配置用时约2.29秒，避免让模型重复算术。
 
 第27轮当前PDF为96页；全页缩略图、新增42至44页及最终参考文献页已视觉检查。XeLaTeX/BibTeX编译通过，无溢出、缺字或未解析引用；306标签、296交叉引用、24条题录及原稿72/72项映射一致。参考文献统一紧凑间距，避免末条单独占页。
+
+第28轮去除角孔支撑限制：对任意可测E（允许外加质量及无界输入），只要|EΔQ0|≤At²，真实光晕统一满足≤2t²+2t³+O_A(t⁴)。该类sup的四阶剩余为Θ_A(t⁴)，阶数sharp，最优系数未定。四见证三交/四交容量绕过孔尾正则性；720项Bernstein有理证书覆盖全部连续尺度。改善三阶系数的输入必须逃离任意O(t²)近正方形类。整边At²薄层相对正方形的首个增益为(A²/4)t⁶。见`rounds/028.md`。
+
+复现`verification/near_square.py`（纯标准库）、`verification/near_square.wl`及`verification/near_square_matlab.m`；有限尺度探路为`verification/near_square_probes.py`。未据此宣称全体三阶常数已闭合，下一问题为一阶偏心矩形附近的扰动与临界参数。
+
+第28轮当前PDF99页；全部页面缩略图、新增44至47页放大检查完成。编译无溢出、缺字或未解析引用；317标签、304交叉引用、24条题录及原稿72/72项映射一致。两份独立终审通过，精确证书与数值探索分开归档。

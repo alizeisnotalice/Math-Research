@@ -1,0 +1,209 @@
+\section{二阶近方体输入的统一三阶上界}\label{ns:section}
+
+长薄孔的尾积分不具有固定的 Lipschitz 常数，上一节的余项不能直接用于逃逸支撑。
+本节改用覆盖数容量：四个见证的三重交集与四重交集精确记录全部共同质量，
+从而允许任意位置的缺失质量、外加质量及无界输入。
+
+\begin{theorem}[二阶近正方形类]\label{ns:main}
+固定 $A\ge0$，令 $Q_0=[-1/2,1/2]^2$。存在 $C_A,t_A>0$，使任意可测输入
+$E$ 在 $0<t<t_A$、$|E\triangle Q_0|\le At^2$ 时满足
+\begin{equation}\label{ns:upper}
+ \frac{|H_{1,\mathcal Q_c}(1-t,E)|}{|E|}
+ \le2t^2+2t^3+C_At^4.
+\end{equation}
+不要求 $E\subset Q_0$、有界或具有边界正则性；$E$ 可随 $t$ 任意变化。
+因此在该类上取上确界 $\mathfrak C_A(t)$，有
+\[
+ \mathfrak C_A(t)=2t^2+2t^3+O_A(t^4),\qquad
+ \mathfrak C_A(t)-2t^2-2t^3=\Theta_A(t^4).
+\]
+最后的阶数在此类上是 sharp；它不确定最优四阶系数。
+\end{theorem}
+
+先给出所需的纯几何预算。以下四个下标仍用二进制编码横、纵符号，
+$\sigma_{1,c}=(-1)^{c\bmod2}$、$\sigma_{2,c}=(-1)^{\lfloor c/2\rfloor}$。
+
+\begin{lemma}[四见证的精确覆盖容量]\label{ns:capacity}
+设 $|F|=1$，四个正方形为 $P_c$，覆盖数 $N=\sum_c\mathbf1_{P_c}$。则
+\begin{equation}\label{ns:capacity-exact}
+ \sum_c|F\cap P_c|\le\Psi(P_0,P_1,P_2,P_3)
+ :=2+\sum_{|S|=3}\Big|\bigcap_{c\in S}P_c\Big|
+       -2\Big|\bigcap_cP_c\Big|.
+\end{equation}
+
+写 $a_1=x,a_2=1-x$，令 $P_c$ 的中心为
+$t r_c(\sigma_{1,c}x,\sigma_{2,c}(1-x))$，边长为 $1+2tu_c$。
+在有界参数区间且 $t$ 充分小时，定义
+\[
+ W_j(S)=\min_{c\in S}(\sigma_{j,c}a_jr_c+u_c)
+       -\max_{c\in S}(\sigma_{j,c}a_jr_c-u_c).
+\]
+则有精确式
+\begin{align}
+ \Psi&=4+t\mathcal L+t^2\mathcal R,\label{ns:psi}\\
+ \mathcal L&=\sum_{|S|=3}[W_1(S)+W_2(S)]
+                -2[W_1(\{0,1,2,3\})+W_2(\{0,1,2,3\})],\nonumber\\
+ \mathcal R&=\sum_{|S|=3}W_1(S)W_2(S)
+                -2W_1(\{0,1,2,3\})W_2(\{0,1,2,3\}),\nonumber
+\end{align}
+且对所有这些参数
+\begin{equation}\label{ns:first-budget}
+ \mathcal L\le2\sum_cu_c-\sum_cr_c.
+\end{equation}
+$\mathcal R$ 在有界参数区间上一致 Lipschitz，常数可统一于 $0\le x\le1$。
+\end{lemma}
+
+\begin{proof}
+逐点有 $N\le2+(N-2)_+$，而
+$(N-2)_+=\sum_{|S|=3}\mathbf1_{\cap_{c\in S}P_c}-2\mathbf1_{\cap_cP_c}$。
+在 $F$ 上积分第一式，并在全平面积分非负的第二项，得到容量界。
+每个交集的两边长为 $1+tW_j(S)>0$，乘开即得式~\eqref{ns:psi}。
+
+四个数的三元子集最小值之和减两倍全体最小值，等于两个最小数之和；最大值有对应恒等式。
+所以 $\mathcal L$ 的第 $j$ 个坐标贡献，等于四个右端位移中两个最小者之和，
+减去四个左端位移中两个最大者之和。前者不超过取 $\sigma_{j,c}=-1$ 的两个数之和，
+后者不小于取 $\sigma_{j,c}=1$ 的两个数之和。
+其差至多 $\sum_cu_c-a_j\sum_cr_c$；两坐标相加得式~\eqref{ns:first-budget}。
+最后，有限个仿射函数的最小值和最大值均为 Lipschitz；乘积在有界框架内仍为 Lipschitz。
+\end{proof}
+
+\begin{lemma}[平坦参数的二阶预算]\label{ns:flat}
+令 $r_c=1$、$m=\min(x,1-x)$。若四个独立尺度满足 $|u_c|\le m$，则
+\begin{equation}\label{ns:flat-budget}
+ \mathcal R(1,u;x)+2\sum_cu_c\le8m.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+此式也可由定理~\ref{gc:four}的点态四孔预算推出：在平坦区，参考正方形外的覆盖数不超过二，
+内部覆盖数小于二的区域只在 $O(t)$ 角盒内。
+取这四个区域作孔，使孔预算 $\int(2-N)_+$ 达到最大，便得到相同的二阶表达式。
+下面给出独立的有限有理证书，明确覆盖全部尺度次序。
+
+记 $y=1-x$。在平坦区，四重交集的系数为
+\[
+ W_1=-2x+\min(u_1,u_3)+\min(u_0,u_2),\quad
+ W_2=-2y+\min(u_2,u_3)+\min(u_0,u_1).
+\]
+省去角 $c$ 的三重交集系数则为
+\[
+ W_1^{(c)}=-2x+u_{c\oplus2}+\min(u_{c\oplus1},u_{c\oplus3}),\quad
+ W_2^{(c)}=-2y+u_{c\oplus1}+\min(u_{c\oplus2},u_{c\oplus3}).
+\]
+由此 $\mathcal R=\sum_cW_1^{(c)}W_2^{(c)}-2W_1W_2$。
+只需证 $0\le x\le1/2$；另一半交换坐标及下标 $1,2$。
+对 $x>0$ 写 $u_c=xv_c$、$-1\le v_c\le1$。
+固定 $v_c$ 的一种次序后，所有最小值都是固定的线性函数，故
+\[
+ q(x,v)=\frac{8x-2x\sum_cv_c-\mathcal R(1,xv;x)}x
+\]
+关于 $x$ 仿射、关于 $v$ 为至多二次多项式。
+只需验证 $x=0$ 的连续延拓与 $x=1/2$。
+每个有序区域为五顶点单形：沿该次序依次取 $k$ 个 $-1$ 和 $4-k$ 个 $1$，$k=0,\ldots,4$。
+若顶点为 $v^{(i)}$，其二次 Bernstein 系数为
+\[
+ b_{ii}=q(v^{(i)}),\qquad
+ b_{ij}=2q((v^{(i)}+v^{(j)})/2)-[q(v^{(i)})+q(v^{(j)})]/2.
+\]
+精确有理代入全部 $24\times2\times15=720$ 个系数，所得值及重数为
+\[
+ \begin{array}{c|rrrrrr}
+ b&0&2&4&5&6&8\\\hline
+ \text{重数}&408&72&128&32&56&24
+ \end{array}
+\]
+相应多项式等于 $\sum_i b_{ii}\lambda_i^2+2\sum_{i<j}b_{ij}\lambda_i\lambda_j$，
+其中 $\lambda_i\ge0$、$\sum_i\lambda_i=1$，故非负。
+所有闭次序单形覆盖整个尺度立方体；$x=0$ 由连续性得到结论。
+这是一份有限精确证书，生成公式及全表见 \texttt{verification/near\_square.py}，
+并非用采样替代连续参数。
+\end{proof}
+
+\begin{proof}[定理~\ref{ns:main}的证明]
+先设 $|F|=1$、$|F\triangle Q_0|\le Bt^2$。
+任意严格见证的边长满足 $1-t<\ell<(1-t)^{-1}$，因为捕获面积至多为 $\min(1,\ell^2)$。
+又 $|Q_0\cap Q|\ge(1-t)\ell-Bt^2\ge1-2t-Bt^2$。
+交长至多为一，故两个交长各自都至少为这个数；由
+$\text{交长}\le(1+\ell)/2-|z_j|$，得 $|z_j|\le4t$，
+只需 $t$ 对 $B$ 充分小。于是写中心为 $tv$、边长为 $1+2ut$ 后，所有参数在统一有界框架内。
+
+在象限 $c$ 写 $v=r(\sigma_{1,c}x,\sigma_{2,c}(1-x))$。
+对参考正方形，令 $b_j=\max(0,-2u,|v_j|-u)$，则精确交面积为
+$(1-tb_1)(1-tb_2)$，且其平均一致满足
+\[
+ \frac{|Q_0\cap Q|}{1+2tu}=1-tD+O(t^2),\qquad
+ D=2u+b_1+b_2=r+\sum_{j=1}^2(|u|-|v_j|)_+.
+\]
+替换为 $F$ 只改变平均 $O_B(t^2)$，故高水平性给 $D\le1+C_Bt$。
+反之，对 $r<1-C_Bt$，直接使用边长一的见证，其平均至少为
+$1-tr-Bt^2>1-t$。因而每条射线的光晕上确半径 $R_c(x)$ 满足
+$R_c(x)=1+O_B(t)$。对趋于该上确的光晕点，进一步有
+\[
+ r_c=1+O_B(t),\qquad
+ \operatorname{dist}(u_c,[-m,m])=O_B(t).
+\]
+后一式先由 $D-r$ 得到距 $[-r_cm,r_cm]$ 的界，再用 $r_c=1+O_B(t)$。
+这里没有要求射线截面连通。
+
+对四个方向各取这样的严格见证。容量界及式~\eqref{ns:first-budget}给出
+\[
+ 0<\sum_c|F\cap P_c|-(1-t)\sum_c\ell_c
+ \le t\Bigl(4-\sum_cr_c\Bigr)
+      +t^2\Bigl(\mathcal R(r,u;x)+2\sum_cu_c\Bigr).
+\]
+把二阶项投影到 $r_c=1$、$u_c\in[-m,m]$，
+$\mathcal R$ 的统一 Lipschitz 界及引理~\ref{ns:flat}使括号至多为 $8m+O_B(t)$。
+令各光晕点分别趋近其径向上确，得到
+\[
+ \sum_cR_c(x)\le4+8m(x)t+O_B(t^2).
+\]
+固定尺度平均随中心连续，故严格光晕为开集，径向上确是可测函数。
+光晕包含于该星形外包，且 $R_c=1+O_B(t)$，所以
+\[
+ |H(1-t,F)|\le\frac{t^2}{2}\int_0^1\sum_cR_c(x)^2\,dx
+ \le2t^2+8t^3\int_0^1m(x)\,dx+O_B(t^4)
+ =2t^2+2t^3+O_B(t^4).
+\]
+
+最后回到任意质量 $M=|E|$。置 $F=M^{-1/2}E$，经中间正方形 $M^{-1/2}Q_0$ 有
+\[
+ |F\triangle Q_0|\le\frac{|E\triangle Q_0|+|1-M|}{M}
+ \le4At^2
+\]
+对充分小的 $t$ 成立，故应用以上结论时取 $B=4A$。
+伸缩不变性给出所需比值上界。
+而 $Q_0$ 属于该类，且其精确比值为 $2t^2/(1-t)$，故
+\[
+ \mathfrak C_A(t)-2t^2-2t^3\ge\frac{2t^4}{1-t}.
+\]
+这与上界一起证明所述 sharp 余项阶。
+\end{proof}
+
+\begin{corollary}[改善三阶项的必要逃逸]\label{ns:escape}
+设 $|E_t|=1$，且某个 $\varepsilon>0$ 使所有充分小的 $t$ 都满足
+$|H(1-t,E_t)|\ge2t^2+(2+\varepsilon)t^3$。
+则
+\[
+ t^{-2}\inf_{z\in\mathbb R^2}|E_t\triangle(z+Q_0)|\longrightarrow\infty.
+\]
+\end{corollary}
+\begin{proof}
+若某子列中该商有界，选取近乎实现下确的平移正方形，应用定理~\ref{ns:main}，
+便与固定的三阶增益矛盾。输入的平移不改变光晕比值。
+\end{proof}
+
+\begin{example}[整边薄层的六阶效应]\label{ns:strip}
+从 $Q_0$ 顶边挖去宽 $At^2$ 的整条带，其中 $A\ge0$ 固定。
+剩余输入是矩形，归一化后短边参数为 $w=\sqrt{1-At^2}$。
+由定理~\ref{rect:exact}，其光晕比值为
+\[
+ 2t^2+2t^3+2t^4+2t^5+(2+A^2/4)t^6+O_A(t^7).
+\]
+因此与正方形的差为 $(A^2/4)t^6+O_A(t^7)$；$A>0$ 时比较阶六是 sharp。
+确切地，若 $s=(w+w^{-1})/2$，差等于
+$2(s-1)[t^2/(1-t)-(s-1)]$。这是矩形闭式的严格推论，不是全体六阶系数。
+\end{example}
+
+本节把固定角盒推广为任意二阶小的测度扰动，但没有证明一般近极值输入必有这种逼近速度。
+一阶偏心矩形 $R_{\rho,t}$ 与正方形的对称差为 $O(t)$，仍需另作分析；
+全体三阶常数的既有区间与极限存在性问题保持不变。
