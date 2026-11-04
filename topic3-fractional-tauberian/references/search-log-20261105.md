@@ -18,3 +18,5 @@
 重要边界：零阶β=0不同于本文固定β>0；非中心球、离散球、保测流与中心方体不等同；固定资料的显式算子公式也不能自动给出对全体E的sharp常数。未找到同模型结果不是不存在性证明。
 
 第10轮定向检索：`"fractional maximal" "Tauberian" centered rectangles`、`"fractional maximal" "Solyanik" sharp constant`。返回主要为零阶光晕、遍历版本与分数极大算子正则性，未据此取得与本轮归一化矩形精确式相同的可核验原始定理；无新增题录，也不据搜索缺失宣称首创。第9轮已核验文献继续适用。
+
+第17轮定向原始文献检索：arxiv.org内 `"fractional maximal" halo diameter centered cubes`、`"fractional maximal" "Tauberian" sharp`。命中 [Weigt, arXiv:2010.05561](https://arxiv.org/abs/2010.05561)等分数极大算子Sobolev正则性摘要；实际仅阅读检索返回摘要，未取得与本尺度不变全体坐标宽度相同的原始定理。无新增引用或首创声明；这一有限检索不证明不存在相关文献。

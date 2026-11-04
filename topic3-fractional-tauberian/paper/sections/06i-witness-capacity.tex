@@ -338,3 +338,155 @@ $s-\alpha$，当短边 $w\downarrow\alpha$ 时逼近 $A_\alpha$。
 再由 $H$ 严格递减得到 $A>a_\alpha$。展开即得半径差。
 这些比较只涉及四个指定中心的共同见证能力，不把四轴半径直接换成整个光晕面积。
 \end{proof}
+
+\subsection{允许不同尺度的全体最优坐标宽度}\label{wid:section}
+
+上一小节的共同尺度障碍促使我们保留每个中心各自的尺度。
+以下求出全体输入的精确宽度，而不以固定模型的宽度代替全体上界。
+对 $0<|E|<\infty$，记
+\[
+ w_j(H)=\sup_{x,y\in H}|x_j-y_j|,\qquad
+ \mathcal W_{n,\beta}(\alpha)
+ =\sup_E\frac{w_j(H_{\beta,\mathcal Q_c}(\alpha,E))}{|E|^{1/n}}.
+\]
+空集宽度取零；坐标置换对称性保证该上确界与 $j$ 无关。
+全体 $\ell^\infty$ 直径的最优常数也等于 $\mathcal W$。
+
+\begin{theorem}[全体宽度的精确二尺度公式]\label{wid:variational}
+令 $p=n-\beta$、$L=\alpha^{1/\beta}$、$U=\alpha^{-1/p}$。
+当 $\alpha\ge2^{-\beta/n}$ 时，有
+\begin{equation}\label{wid:two-scale}
+ \mathcal W_{n,\beta}(\alpha)
+ =\max_{L\le s\le\ell\le U}
+ \left\{\frac{\ell+s}{2}
+ +s^{1-n}[1-\alpha(\ell^p+s^p)]\right\}.
+\end{equation}
+两个尺度可以不同。对任意质量一输入及其光晕中的任意两点，其坐标差严格小于右侧常数；
+宽度本身及全体上确界则只作非严格比较。
+\end{theorem}
+\begin{proof}
+归一化 $|E|=1$。任意严格见证的边长均位于 $(L,U)$。
+对两个中心的见证，排序边长为 $s\le\ell$，记指定坐标差为 $D$。
+阈值捕获量之和严格大于
+$2\alpha L^p=2\alpha^{n/\beta}\ge1$，所以两方体必须有正交叠。
+若 $D\ge(\ell+s)/2$，交叠为零，矛盾。
+若 $D>(\ell-s)/2$，交叠体积至多为
+$s^{n-1}[(\ell+s)/2-D]$。
+两个严格阈值之和小于 $1$ 加交叠体积，于是
+\[
+ D<F(\ell,s):=(\ell+s)/2+s^{1-n}[1-\alpha(\ell^p+s^p)].
+\]
+若 $D\le(\ell-s)/2$，注意
+\[
+ \alpha\ell^p<1,\quad \alpha s^p<s^n
+ \quad\Longrightarrow\quad
+ F(\ell,s)-(\ell-s)/2
+ =s-s^{1-n}[\alpha(\ell^p+s^p)-1]>0.
+\]
+故同一严格上界仍成立。对所有输入和点对取上确界，得到式~\eqref{wid:two-scale}的上界。
+
+反向固定内部尺度 $L<s\le\ell<U$，选任意正 $D<F(\ell,s)$，
+沿指定坐标分离两中心，其他坐标相同。
+包含情形的交叠为 $s^n$，部分重叠情形的交叠恰为上述乘积。
+个体阈值满足 $\alpha\ell_i^p<\min(1,\ell_i^n)$，
+而 $D<F$ 正是两捕获量之和的严格容量条件。
+命题~\ref{cap:pair}便给出一个质量一实际可测输入，同时严格见证这两个点。
+最后把闭三角形的边界尺度从内部逼近，并令 $D$ 逼近最大值。
+右侧至少为 $F(1,1)=2(1-\alpha)>0$，所以该逼近提供完整的反向下界。
+\end{proof}
+
+\begin{example}[宽度有限性的精确阈值]\label{wid:infinite}
+若 $0<\alpha<2^{-\beta/n}$，取两个相距任意远、各自体积为 $1/2$ 的正方体，
+令 $E$ 为它们的并。输入总质量为一，两个中心的局部方体平均均至少为
+$2^{-\beta/n}>\alpha$，所以全体最优坐标宽度为无穷大。
+结合定理~\ref{wid:variational}，宽度有限的阈值恰为 $\alpha\ge2^{-\beta/n}$，
+临界阈值处仍有限。光晕体积常数的有限性与此不同，不能从宽度无界推断体积无界。
+\end{example}
+
+\begin{theorem}[任意固定维数和分数阶的显式高阈值宽度]\label{wid:endpoints}
+对每个固定 $n\ge1$、$0<\beta<n$，存在依赖 $(n,\beta)$ 的 $\alpha_0<1$，
+使 $\alpha_0<\alpha<1$ 时
+\begin{equation}\label{wid:closed}
+ \mathcal W_{n,\beta}(\alpha)=\max\left\{
+ \alpha^{-(n-1)/\beta}-\alpha^{1/\beta},\quad
+ \alpha^{-1/(n-\beta)}-\alpha^{(n-1)/(n-\beta)}\right\}.
+\end{equation}
+特别地
+$\mathcal W_{n,\beta}(1-t)\sim n\,t/\min(\beta,n-\beta)$，首项常数sharp。
+这里的起效阈值是逐参数结论，不主张维数一致或分数阶端点一致。
+\end{theorem}
+\begin{proof}
+只需优化式~\eqref{wid:two-scale}。当 $\alpha\uparrow1$ 时，其尺度三角形一致收缩到
+$(\ell,s)=(1,1)$。若 $p>1/2$，有
+\[
+ \partial_\ell F=\tfrac12-\alpha p\ell^{p-1}s^{1-n}
+ \le\tfrac12-p\alpha^{n/p}<0
+\]
+对充分高的阈值成立。最后一个下界在 $p\ge1$ 时由 $\ell\ge s$ 得到，
+在 $p<1$ 时由 $\ell,s\le U$ 得到。故可把 $\ell$ 降至 $s$。
+若 $p\le1/2$ 且 $\beta>1/2$，则 $\partial_sF$ 在收缩三角形上的极限为
+$\beta-1/2>0$，故可把 $s$ 增至 $\ell$。
+剩余的唯一情况是 $n=1$、$p=\beta=1/2$。
+此时
+$F=1+\ell/2-\alpha\sqrt\ell+s/2-\alpha\sqrt s$，
+是两个凸函数之和，三角形上最大值在顶点；混合顶点值是两个对角顶点值的平均，
+仍不超过它们。
+
+因此只需检查相同尺度的函数
+\[
+ h(\ell)=\ell+\ell^{1-n}-2\alpha\ell^{1-\beta},\qquad L\le\ell\le U.
+\]
+在 $(\alpha,\ell)=(1,1)$ 处，$h'=2\beta-n$。
+若此值非零，充分高阈值下 $h$ 单调；若 $\beta=n/2$，该点的 $h''=n^2/2>0$，
+故充分高阈值下 $h$ 凸。两种情形的最大值都在 $L,U$。
+直接代入给出式~\eqref{wid:closed}。
+
+下界也有显式的真实输入族。对 $L<w<1$，取指定坐标边长为 $w^{1-n}$、
+其余坐标边长为 $w$ 的质量一长方体。
+边长 $w$ 的见证完全位于输入内，平均为 $w^\beta>\alpha$，
+沿指定轴提供宽度 $w^{1-n}-w$；令 $w\downarrow L$ 得第一端点值。
+对 $1<w<U$，取指定坐标边长为 $w^{1-n}$、其余边长为 $w$ 的质量一长方体。
+边长 $w$ 的见证可以完整包含输入，平均为 $w^{-p}>\alpha$，
+提供宽度 $w-w^{1-n}$；令 $w\uparrow U$ 得第二端点值。
+两端点的一阶系数分别是 $n/\beta$、$n/p$，从而得到所述sharp常数。
+\end{proof}
+
+固定 $\beta<n/2$ 时，足够高的阈值选中第一分支；$\beta>n/2$ 时选中第二分支。
+在 $\beta=n/2$ 上，令 $z=-(2/n)\log\alpha>0$，两分支之差为
+$2\cosh((n-1)z)-2\cosh z$。
+所以 $n\ge3$ 时选第一分支，$n=2$ 时两者相同，$n=1$ 时选第二分支。
+各分支均给出任意阶收敛展开：若记为 $(1-t)^{-u}-(1-t)^{-v}$，则第 $k$ 阶系数为
+$[(u)_k-(v)_k]/k!$，其中 $(q)_k=q(q+1)\cdots(q+k-1)$；
+固定参数和截断阶下余项为 $O(t^{N+1})$。
+
+\begin{corollary}[二维半阶的全体精确宽度及任意阶余项]\label{wid:half}
+当 $n=2$、$\beta=1$、$1/\sqrt2<\alpha<1$ 时，
+\[
+ \mathcal W_{2,1}(\alpha)=\alpha^{-1}-\alpha.
+\]
+对任意整数 $N\ge1$，有精确式
+\[
+ \mathcal W_{2,1}(1-t)
+ =2t+\sum_{k=2}^{N}t^k+\frac{t^{N+1}}{1-t}.
+\]
+每一阶截断的误差阶都不可提高。
+此外，四个轴向点 $(\pm a,0),(0,\pm a)$ 可以由同一质量一输入、允许各点各自选尺度，
+同时严格见证，当且仅当 $a<(\alpha^{-1}-\alpha)/2$。
+\end{corollary}
+\begin{proof}
+在整个所列阈值范围内，$\partial_\ell F=1/2-\alpha/s<0$，因为 $s\le\alpha^{-1}$。
+故最优两尺度可取相同，随后
+$h(\ell)=\ell+\ell^{-1}-2\alpha$ 凸，两个端点都等于 $\alpha^{-1}-\alpha$。
+几何级数尾和给出精确余项，正的下一系数保证sharp阶。
+
+四轴同时严格可行的必要性来自两个相反点的严格坐标差界。
+充分性由定理~\ref{rect:exact}的矩形输入给出：其四轴截距同时逼近
+$(\alpha^{-1}-\alpha)/2$，因此任意较小的半径都可严格实现。
+临界半径处的两个相反点之差等于最优宽度，不能严格实现。
+\end{proof}
+
+这些宽度结论是对全体可测输入、允许不同尺度的匹配定理。
+但由宽度作外包方体得到的体积界通常较粗；例如二维半阶仅给
+$C_{1,\mathcal Q_c}(\alpha)\le(\alpha^{-1}-\alpha)^2$，
+其首项系数为 $4$，弱于已经证明的精确体积首项 $2$。
+所以精确宽度及四轴临界半径仍不能代替全体光晕体积的下一系数。

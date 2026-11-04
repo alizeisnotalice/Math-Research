@@ -101,3 +101,7 @@ run('verification/fixed_cube_matlab.m')
 第16轮精确求出四轴见证强制共用尺度的最优捕获与临界半径：a(1−t)=t+2t⁴−8t⁶+…，并给出全阶解析反演。矩形允许方向依赖尺度时四轴半径在t²阶更大，故共同尺度不是全体优化的合法约化。见 `rounds/016.md`；不把四轴半径当光晕面积。
 
 第16轮当前PDF65页。复现 `verification/common_scale.py`、`verification/common_scale.wl`、`verification/common_scale_matlab.m`。
+
+第17轮确定任意维、任意分数阶的全体最优坐标宽度：α≥2^(−β/n)时有精确二尺度公式，低于此阈值宽度无界。每固定(n,β)在高阈值具有显式端点公式与全阶展开；二维半阶W=α⁻¹−α并有任意阶精确余项。见 `rounds/017.md`。体积常数的下一系数仍未确定。
+
+第17轮当前PDF67页。复现 `verification/sharp_width_scan.py`、`verification/sharp_width.wl`、`verification/sharp_width_matlab.m`。
