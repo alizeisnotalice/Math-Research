@@ -44,7 +44,7 @@
 再以五层深覆盖消除源质量损失，结合完整见证图上的加权边界及异常容量回收闭合全局估计。
 对于共享同一中心方体、以公共交集归一化的多线性常数，
 证明精确线性参数约化及临界发散，并得到关于所有多线性重数一致的相应高阶渐近。
-另以近单位斜晶格构造证明 \(C_n(1-t)-L_n(t)\) 在 \(t^{1+8/n}\) 尺度具有严格正的下界，
+另以近单位斜晶格构造证明 \(C_n(1-t)-L_n(t)\) 在 \(t^{1+6/n}\) 尺度具有严格正的下界，
 从而排除周期包络在充分小参数下的精确性。
 \end{abstract}
 \section{引言}
@@ -142,16 +142,20 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 \end{theorem}
 
 周期下包络的更高展开仍可能遗漏其他构造的贡献。
-将所有坐标作同强度的近单位斜切，以平衡整数指标分类进入见证的邻孔；
-区分单一活跃短角与至少三面交界的坏点，可在有限测度输入中累积多方向正差。
+将前两个坐标的近单位晶格作对称斜切，先删去外包孔中潜在失败的角部，
+再以略增外包半宽来选定实际孔质量。它把角部代价转化为较低的质量重配成本，给出以下正差。
 \begin{proposition}[周期包络的严格偏差]\label{prop:nonexact}
 对每个固定整数 \(n\ge2\)，有
 \begin{equation}\label{eq:nonexact}
  \liminf_{t\downarrow0}
- \frac{\Cn(1-t)-L_n(t)}{2^{n+8}t^{1+8/n}}\ge\binom{n}{2}\frac{n^2}{27}>0.
+ \frac{\Cn(1-t)-L_n(t)}{2^{n+6}t^{1+6/n}}\ge\frac{n^2}{27}>0.
 \end{equation}
 特别地，充分小的 \(t>0\) 满足 \(\Cn(1-t)>L_n(t)\)。
-该下界没有确定差值的首个非零阶或系数。
+结合 \eqref{eq:sharp}，当 \(n\ge5\) 时，
+\[
+ \Cn(1-t)-L_n(t)\asymp_n t^{1+6/n}.
+\]
+这确定了该差值的幂阶，尚未确定归一化极限或精确系数；二维至四维的幂阶仍待研究。
 \end{proposition}
 
 公共交集归一化的多线性对象还具有精确的参数约化。
@@ -462,24 +466,22 @@ Besicovitch 方体族的交叠重数不超过 \(2^n\)。
 \[
  \liminf_{\eps\downarrow0}\ \inf_{m\ge1}
  \frac{\Cm(1-\eps)-L_n(\sigma_m(\eps))}
- {2^{n+8}\eps^{1+8/n}}\ge\binom{n}{2}\frac{n^2}{27}.
+ {2^{n+6}\eps^{1+6/n}}\ge\frac{n^2}{27}.
 \]
 \end{corollary}
 \begin{proof}
-给定 \(0<\eta<\binom{n}{2}n^2/27\)，命题~\ref{prop:nonexact} 使充分小的所有 \(t\) 都满足
+给定 \(0<\eta<n^2/27\)，命题~\ref{prop:nonexact} 使充分小的所有 \(t\) 都满足
 \[
- \Cn(1-t)-L_n(t)\ge(\binom{n}{2}n^2/27-\eta)2^{n+8}t^{1+8/n}.
+ \Cn(1-t)-L_n(t)\ge(n^2/27-\eta)2^{n+6}t^{1+6/n}.
 \]
 引理~\ref{lem:parameter} 给 \(\eps\le\sigma_m(\eps)\le2\eps\)，对全部
 \(m\ge1\) 一致。以 \(t=\sigma_m(\eps)\) 代入，再用精确约化，便得到
 关于所有 \(m\) 的同一下界；最后令 \(\eta\downarrow0\)。
 \end{proof}
 
-当前证明在 \(av^{p_n}\) 尺度给出有界余项，尚未确定
-\((\Cn(1-t)-L_n(t))/(av^{p_n})\) 的极限或系数。
-斜晶格下界说明周期包络遗漏了 \(av^8\) 尺度的正贡献。
-二维至四维仍有较大的幂次差距；五维以上需进一步控制 \(av^6\) 尺度的角部缺损，
-并寻找与其匹配的构造。
+当 \(n\ge5\) 时，首差的幂阶已确定为 \(av^6\)，但该尺度的精确系数仍未知。
+二维至四维还需改进小半径删除及质量结算，缩小上下界的幂次差距。
+进一步确定真实高阶渐近，需要在所有输入的角部缺损与孔形重配构造之间取得匹配系数。
 
 \bibliographystyle{plain}
 \bibliography{sources}
