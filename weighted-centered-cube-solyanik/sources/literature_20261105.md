@@ -31,3 +31,8 @@
 
 
 第23轮补核：实际读取[Gilardoni2006出版社摘要与题录](https://www.em-consulte.com/it/article/71050/article/on-the-minimum-divergence-for-given-total-variatio)，确认给定variation的最小f散度属于既有通用问题；原稿全文访问受限，未宣称已核查其中每条公式。检索同时发现并完整读取[2010勘误一页原文](https://comptes-rendus.academie-sciences.fr/mathematique/item/10.1016/j.crma.2010.02.006.pdf)，其修正原内点表达在大variation下应改用边界的情形。2006题录及2010卷期由Crossref官方API实际核对；勘误页码299直接见出版社PDF。本文三次幂常数以自足Jensen二点化、含边界的全参数优化证明，不套用被修正的通用内点式。L1距离采用d=E|f−1|，若他处TV定义为d/2则系数相应差4。未确认文献是否逐字列出本轮系数，不作新普适Pinsker定理声明。2010 IEEE同作者论文只检索题录，不作为本轮证明依据或新增正文引用。
+
+
+第24轮补核：以“cubic f-divergence total variation”“Tsallis order 3 sharp total variation”等检索，实际从[NUMDAM原始扫描版](https://www.numdam.org/item/10.1016/j.crma.2006.10.027.pdf)读取Gilardoni2006的定义、§2 Proposition2.1及其后二点目标的凸性计算。与上一轮访问受限的记录并不冲突；此次已获得该原文。其V采用完整L1规范，与本稿d一致。结合前轮完整读取的2010勘误，本轮直接最小化含零值边界的三次目标；利用严格凸性简化旧长分区证明。
+
+最新检索实际访问[Beretta–Cesari–Colomboni2026摘要及HTML引言](https://arxiv.org/html/2602.05744v1)，其主对象为负Tsallis熵生成的Bregman/β散度，不能按名字与本稿基准测度加权的密度比三次Csiszár散度混同，未引用其常数替代本稿证明。未阅读全文证明，未据搜索未命中断言包络公式首次出现。正文保留既有f散度框架定位，新增的是当前端点模型所用完整自含计算及反演接口。

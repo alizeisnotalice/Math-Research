@@ -22,3 +22,8 @@
 - [第10轮乘积权证明](https://github.com/alizeisnotalice/Math-Research/blob/d0053e5/weighted-centered-cube-solyanik/paper/product_critical_extension.tex)
 
 本机第21轮交付包的support/historical_proofs/round008-010/保留可编辑副本；当前一般证明为paper/general_critical.tex。相关历史计算脚本保持算法，仅更新证明定位注释。
+
+
+## 第24轮统一角向稳定证明
+
+原第23轮paper/global_l1_cubic.tex的三次二次常数现作为更强全p包络的推论保留，统一源文件为paper/angular_envelope.tex；共同Jensen步骤只证明一次。旧源可从[第23轮提交](https://github.com/alizeisnotalice/Math-Research/blob/e3576e03106fed235e5503dd7641c97e273a983f/weighted-centered-cube-solyanik/paper/global_l1_cubic.tex)读取，且本机第23轮独立交付LaTeX中保留原件。文件重命名和证明合并未删有效结论，旧轮报告按当时路径及公式编号理解。

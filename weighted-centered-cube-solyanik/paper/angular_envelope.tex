@@ -1,0 +1,199 @@
+% Input after (ST.1)--(ST.4) and the cone-probability notation.
+% Round 24 replacement for the former global_l1_cubic.tex; do not input both.
+\subsection{精确全局相对 \texorpdfstring{$L^1$}{L1} 包络及三次特例}
+\label{subsec:global-l1-cubic}
+
+给定变差的 $f$-散度下包络属于已有的一般框架
+\cite{Gilardoni2006MinimumF,Gilardoni2010Corrigendum}；本节给出本问题所需的
+显式严格凸一元化。
+
+\begin{theorem}[给定偏差的 \texorpdfstring{$p$}{p} 次矩精确包络]
+\label{thm:fixed-l1-lp-envelope}
+令 $p>1$，$(\Omega,\mathcal A,\mathbb P)$ 为任意概率空间，且
+$f\ge0$、$\mathbb Ef=1$。置
+\[
+ d=\mathbb E|f-1|,\qquad D_p=\mathbb Ef^p-1,\qquad \delta=d/2.
+\]
+当 $0<d<2$ 且 $q\in[\delta,1)$ 时，令
+\[
+ G_{p,d}(q)=q\left(1-\frac\delta q\right)^p+
+ (1-q)\left(1+\frac\delta{1-q}\right)^p-1. \tag{CE.1}
+\]
+定义 $\mathcal H_p(0)=0$。若 $0<d<2/p$，令 $q_{p,d}\in(\delta,1)$ 是
+$G_{p,d}'(q)=0$ 的唯一根，并置
+\[
+ \mathcal H_p(d)=G_{p,d}(q_{p,d}). \tag{CE.2}
+\]
+若 $2/p\le d<2$，置
+\[
+ \mathcal H_p(d)=\left(1-\frac d2\right)^{1-p}-1. \tag{CE.3}
+\]
+则 $D_p\ge\mathcal H_p(d)$；当 $D_p=+\infty$ 时按扩展实数理解。
+
+在无原子概率空间中，允许零值时此界对每个固定 $d\in(0,2)$ 均可取等。若要求
+$f>0$ a.e.，内点支 $0<d<2/p$ 仍可取等；边界支 $2/p\le d<2$ 中右端是固定
+$d$ 的下确界。特别地，对 $n\ge2$ 的锥概率，正有界的 \textup{(H.1)} 角向剖面给出
+这个严格正的固定 $d$ 尖锐逼近。
+\end{theorem}
+
+\begin{proof}
+若 $d=0$，则 $f=1$ a.e.。以下设 $0<d<2$ 且 $D_p<\infty$。令
+$A=\{f<1\}$、$q=\mathbb P(A)$。由
+\(\delta=\mathbb E(1-f)_+=d/2\) 可知 $0<\delta\le q<1$。在
+$A,A^c$ 上对凸函数 $x^p$ 应用 Jensen 不等式，条件均值分别为
+$1-\delta/q$ 与 $1+\delta/(1-q)$，故
+\[
+ D_p\ge G_{p,d}(q). \tag{CE.4}
+\]
+Jensen 取等恰在 $f$ 于 $A,A^c$ 上分别为这两个常数时发生。
+
+在开区间 $(\delta,1)$ 上直接微分得到
+\[
+ G_{p,d}''(q)=p(p-1)\delta^2\left[
+ \frac{(1-\delta/q)^{p-2}}{q^3}+
+ \frac{(1+\delta/(1-q))^{p-2}}{(1-q)^3}\right]>0. \tag{CE.5}
+\]
+当 $1<p<2$ 时左端在 $q=\delta$ 可发散，但 (CE.5) 在开区间仍给出严格凸性。
+其右导数和右端极限为
+\[
+ G_{p,d}'(\delta+)=\frac{p\delta-1}{(1-\delta)^p},\qquad
+ \lim_{q\uparrow1}G_{p,d}'(q)=+\infty. \tag{CE.6}
+\]
+因此若 $d\ge2/p$，严格凸性使 $q=\delta$ 成为唯一极小点；代入得到 (CE.3)。
+若 $d<2/p$，导数从负值严格升至正无穷，故有唯一内点极小点 $q_{p,d}$，得到
+(CE.2)。
+
+在无原子空间，按该极小点选取 $\mathbb P(A)=q$ 并令 $f$ 取上述两个条件均值，
+即可取等。内点时 $q_{p,d}>\delta$，两个值均为正。边界支中，对每个
+$q>\delta$ 仍取同样两值函数；它逐个严格为正，且\emph{精确}满足
+$\mathbb Ef=1$、$\mathbb E|f-1|=d$，并在 $q\downarrow\delta$ 时使
+$D_p=G_{p,d}(q)\downarrow\mathcal H_p(d)$。当 $n\ge2$，锥概率是归一 Lebesgue
+测度经射线投影的推前，单条射线的原像为零测集，故其无原子；上述两值剖面正且有界，
+因而给出所述 \textup{(H.1)} 权。
+\end{proof}
+
+\begin{corollary}[单调包络与反演]
+\label{cor:fixed-l1-lp-inverse}
+函数 $\mathcal H_p:[0,2)\to[0,+\infty)$ 连续严格递增，且
+$\mathcal H_p(d)\to+\infty$ 当 $d\uparrow2$。若
+$S=(\mathbb Ef^p)^{1/p}<\infty$，则
+\[
+ d\le\mathcal H_p^{-1}(S^p-1). \tag{CE.7}
+\]
+特别地，若
+\[
+ S^p-1\ge\left(\frac p{p-1}\right)^{p-1}-1,
+\]
+则
+\[
+ d\le2-2S^{-p/(p-1)}. \tag{CE.8}
+\]
+\end{corollary}
+
+\begin{proof}
+在内点支，严格凸性和驻点关系允许对包络微分：若
+$a=1-\delta/q_{p,d}$、$b=1+\delta/(1-q_{p,d})$，则
+\[
+ \mathcal H_p'(d)=\partial_dG_{p,d}(q_{p,d})
+ =\frac p2\bigl(b^{p-1}-a^{p-1}\bigr)>0. \tag{CE.9}
+\]
+外支 (CE.3) 的导数是
+$(p-1)(1-d/2)^{-p}/2>0$。当 $0<d<1$ 且 $d\downarrow0$ 时，
+\[
+ 0\le\mathcal H_p(d)\le G_{p,d}(1/2)
+ =\frac{(1-d)^p+(1+d)^p}{2}-1\longrightarrow0. \tag{CE.9a}
+\]
+当 $d\uparrow2/p$，极小点 $q_{p,d}$ 只能在紧的子区间内取值（因为
+$G_{p,d}(q)\to\infty$ 在该参数邻域内对 $q\uparrow1$ 一致成立）；任一聚点由
+$G_{p,d}'(q_{p,d})=0$ 和 (CE.6) 必为 $1/p$。故两支在 $d=2/p$ 相接，其值为
+$(p/(p-1))^{p-1}-1$。这证明单调性及 (CE.7)。由 (CE.3) 解出 $d$ 即得 (CE.8)。
+
+在 \textup{(ST.1)} 中取 $p=n/(n-\tau)$，则 $D_p=S(h)^p-1$、$d=d(h)$，从而
+\[
+ d(h)\le\mathcal H_p^{-1}\bigl(S(h)^p-1\bigr). \tag{CE.9b}
+\]
+\end{proof}
+
+\begin{remark}[一维锥概率]
+一维锥概率只有两个各质量 $1/2$ 的端点。均值一迫使两值为
+$1+d,1-d$（交换端点无影响），故可行范围为 $0\le d\le1$，且
+\[
+ D_p=\frac{(1+d)^p+(1-d)^p}{2}-1. \tag{CE.10}
+\]
+严格正性在 $d<1$ 时保留；$d=1$ 需要一个零值端点。因而一般无原子包络不应被
+误称为固定一维的精确包络。
+\end{remark}
+
+\begin{corollary}[三次包络的代数形式]
+\label{cor:fixed-l1-cubic-envelope}
+当 $p=3$ 时，内点支为 $0<d<2/3$，且 $q_d\in(1/3,1/2)$ 是唯一满足
+\[
+ 6q^3-3(3+d)q^2+3(1+d)q-d=0 \tag{CE.11}
+\]
+的根。事实上严格凸的 $G_{3,d}$ 满足
+\[
+ G_{3,d}'(1/3)=\frac{81d^2(3d-2)}{32}<0,
+ \qquad G_{3,d}'(1/2)=4d^3>0, \tag{CE.11a}
+\]
+故该根确实位于所述区间。于是
+\begin{align}
+ \mathcal H_3(d)&=\frac{d^2}{4}
+ \frac{3q_d(1-q_d)+\frac d2(2q_d-1)}{q_d^2(1-q_d)^2}
+ &&(0<d<2/3),\notag\\
+ \mathcal H_3(d)&=\frac{d(4-d)}{(2-d)^2}
+ &&(2/3\le d<2). \tag{CE.12}
+\end{align}
+内点参数亦可写为
+\begin{align}
+ d&=\frac{3q(1-q)(1-2q)}{1-3q+3q^2},\notag\\
+ \mathcal H_3(d)&=
+ \frac{27q(1-q)(1-2q)^2(1-2q+2q^2)}{8(1-3q+3q^2)^3}. \tag{CE.13}
+\end{align}
+在 $q\in(1/3,1/2)$ 上，第一式的导数为
+\[
+ \frac{6(-1+6u^2+3u^4)}{(1+3u^2)^2}<0,\qquad q=(1-u)/2,\quad0<u<1/3. \tag{CE.14}
+\]
+故 (CE.13) 也给出内点支的唯一代数反演。
+\end{corollary}
+
+\begin{proof}
+将 $p=3$ 代入 (CE.1) 并令导数为零即得 (CE.11)；代入极小值给出 (CE.12)--(CE.13)。
+式 (CE.14) 直接微分得到，且其分子在 $0<u<1/3$ 上严格为负。
+\end{proof}
+
+\begin{corollary}[三次矩的全局二次常数]
+\label{prop:global-l1-cubic}
+对任意概率空间和 $f\ge0$、$\mathbb Ef=1$，
+\[
+ D_3\ge C_3d^2,\qquad C_3=\frac{11+5\sqrt5}{8}. \tag{CE.15}
+\]
+除 $f=1$ 外，等号成立当且仅当存在概率为
+$q_*=(3-\sqrt5)/2$ 的集合 $A$，使得$f=0$ 于 $A$，且
+$f=(1-q_*)^{-1}$ 于 $A^c$。在 \textup{(ST.1)} 中取 $p=3$
+（即 $\tau=2n/3$）后，
+\[
+ d(h)\le\sqrt{\frac{S(h)^3-1}{C_3}}. \tag{CE.16}
+\]
+它把 \textup{(ST.3)} 在 $p=3$ 的分母 $2$ 改进为 $C_3$；但 $S\downarrow1$ 时
+\textup{(ST.4)} 的局部系数 $1$ 仍更精确。该全局结论不扩大任何二阶展开的参数窗口。
+\end{corollary}
+
+\begin{proof}
+若 $d=0$，结论显然；以下设 $d>0$，才可除以 $d^2$。
+由 (CE.4) 在 $p=3$ 的形式，除以 $d^2$ 后，若 $q\ge1/2$，右端不小于 $3$；
+若 $q<1/2$，右端随 $\delta=d/2$ 递减，故由 $\delta\le q$ 可下界为
+\[
+ \frac{2-q}{4q(1-q)^2}.
+\]
+其导数为 $-(q^2-3q+1)/[2q^2(1-q)^3]$，故在 $(0,1/2)$ 的唯一极小点是 $q_*=(3-\sqrt5)/2$，函数值为 $C_3$。
+Jensen 等号及 $\delta=q=q_*$ 给出等号描述。$n\ge2$ 的无原子尖锐性由定理
+\ref{thm:fixed-l1-lp-envelope} 的两值构造给出；一维的精确式是 (CE.10) 在 $p=3$ 的情形，
+即 $D_3=3d^2$。
+\end{proof}
+
+\begin{remark}
+对一般概率空间，包络不等式的有效性不需要无原子性；无原子性只用于尖锐性。非负且均值一的
+非恒定函数自动满足 $0<d<2$：事实上
+\(d=2\mathbb E(1-f)_+=2[1-\mathbb E\min\{f,1\}]<2\)。所以 $d=2$ 仅是尖峰极限，与
+$\mathcal H_p(d)\to\infty$ 一致。
+\end{remark}
