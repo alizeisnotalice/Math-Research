@@ -72,3 +72,5 @@ latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 当前必要符号包为`verification/sharp-source-cost/`、`sharp-settlement/`、`sharp-transfer/`；分别核验全源角积分/clip、大角分支、六层望远镜与准确分母、系数及σ余项。系数批次实际使用15个不同Wolfram子核，有限边界例用有理数复核；一般维数、全部输入和全m一致性由解析证明承担。
 
 各包README和`rounds/`保留具体输入、实际输出、范围与复现命令。历史必要构造证书保留在对应包，不为CPU占用重复旧批次；更细构造的一侧展开与真实常数的匹配渐近分开记录。
+
+第24轮：`rounds/024.md` 给二维完全有理有限输入族的实际比值展开 $L_2+(4/27)av^6-(8/9)av^7+O(av^8)$。这是更细一侧下界；真实七阶系数尚未确定。完整证明、独审及最小有理/符号证书置于正文外，38页PDF未变。
