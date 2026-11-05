@@ -4,7 +4,7 @@
 \(\Phi_n(t)=t(1+\log^+t)^{n-1}\)、自然对数及阈值 1。
 本项目研究最优比值 \(C_n=\sup_f |\{M_Sf>1\}|/\int\Phi_n(f)\)。
 
-## 当前状态（2026-11-06，第 11 轮）
+## 当前状态（2026-11-06，第 12 轮）
 
 - 已复核：指数率 \(C_n^{1/n}\to B\)，以及 \(\limsup C_n/B^n\le\sqrt B\) 的证明路线；B 满足 \(\log B=1+B^{-1}\)。详细推导见 rounds/r001/report.md。
 - 已实现：等参数单层见证的 Gamma–二项混合、数值优化和 Wolfram 高精度交叉复算。
@@ -19,8 +19,9 @@
 - **第9轮重排障碍**：允许非单调标量轮廓、任意接收层及逐点选择比例后，锚定族的模块弱常数 W_n 仍精确等于 Q_n。此结论不覆盖非锚定真实矩形。
 - 第10轮：闭合一维非负缺口及端点四项账本；证明仅振幅上界不能强迫纯Lp稳定性损失，必须保留Markov和模数效率。另给真实强矩形/坐标复合、真实区间/锚定区间的精确严格反例。
 - 第11轮：一般输入严格归约到可预测反馈的一维上界模型 mathcalR_n，满足 Q_n≤C_n≤mathcalR_n。Bellman基准已计算至256步，反馈严格优于任意固定两步比例。
-- 主攻：反馈低尾的统一指数倾斜/似然比鞅下界，评估这个一般上界模型。
-- 一般输入的负 \(\sqrt{n\log n}\) 次项仍未证明。
+- **第12轮一般定理**：log C_n = n mu − sigma sqrt(n log n) + O(sqrt n)。证明一般首个缺口系数为sigma，并推出 C_n/B^n→0。完整一般上界见 rounds/r012/report.md。
+- 主攻：截停累计均值损失、核验条件鞅中偏差，争取匹配一般第三项。
+- 一般首个次指数项现已闭合；一般第三项及乘法渐近等价仍待研究。
 
 ## 复现
 
@@ -59,3 +60,5 @@ Wolfram 15：`wolframscript -file code/crosscheck.wl`。
 第10轮：缺口恒等式、缩放障碍与算子反例见 rounds/r010/report.md；Wolfram `code/deficit_checks.wl`。
 
 第11轮：一般反馈上界归约见 rounds/r011/report.md；MATLAB `sm_bellman(h,256,outputPath)`，Wolfram `code/bellman_checks.wl`。
+
+第12轮：一般首个次指数项与似然比鞅证明见 rounds/r012/report.md；MATLAB `result=sm_tilt_checks;`，Wolfram `code/tilt_checks.wl`。
