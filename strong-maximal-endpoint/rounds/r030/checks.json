@@ -1,0 +1,269 @@
+{
+  "status": "deterministic floating quadrature diagnostics, not continuous certificates",
+  "kernel_gradient": {
+    "matlab": "26.1.0.3312084 (R2026a) Update 4",
+    "status": "floating finite differences, no interval certificate",
+    "cases": 45,
+    "block_sizes": [
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "finite_difference_steps": [
+      0.001,
+      0.0001,
+      1e-05
+    ],
+    "max_absolute_errors_by_step": [
+      7.049523262532553e-08,
+      7.05281029758642e-10,
+      3.251848269825164e-11
+    ],
+    "max_relative_errors_by_step": [
+      1.1533073862523305e-05,
+      1.1128144801078964e-07,
+      1.6910234720192168e-08
+    ],
+    "restriction": "off knots; b=2 first parameter derivative has jumps at moving knots"
+  },
+  "fixed_seed_validation": [
+    {
+      "requested_N": 128,
+      "nodes": 128,
+      "min_average": 0.998090661028606,
+      "unsplit_min_average": 0.9918573596964447,
+      "min_roots": 0,
+      "max_roots": 3,
+      "seconds": 4.5716439583333335,
+      "root_scan_points": 2049
+    },
+    {
+      "requested_N": 256,
+      "nodes": 256,
+      "min_average": 0.998090661026112,
+      "unsplit_min_average": 1.0006102883048078,
+      "min_roots": 0,
+      "max_roots": 3,
+      "seconds": 10.435678833333334,
+      "root_scan_points": 2049
+    },
+    {
+      "requested_N": 512,
+      "nodes": 512,
+      "min_average": 0.9980906610257065,
+      "unsplit_min_average": 0.9976966767165608,
+      "min_roots": 0,
+      "max_roots": 3,
+      "seconds": 16.416630208333334,
+      "root_scan_points": 2049
+    },
+    {
+      "requested_N": 256,
+      "nodes": 256,
+      "min_average": 0.9980906610250061,
+      "unsplit_min_average": 1.0006102883048078,
+      "min_roots": 0,
+      "max_roots": 3,
+      "seconds": 11.429095458333334,
+      "root_scan_points": 4097
+    },
+    {
+      "requested_N": 256,
+      "nodes": 256,
+      "inner_quadrature_order": 32,
+      "scaled_cost": 0.0607865157741302,
+      "actual_logJ": -68.4833145678895,
+      "min_average": 0.9980906610330478,
+      "unsplit_scaled_cost": 0.06279598899183658,
+      "unsplit_actual_logJ": -68.45079135035637,
+      "unsplit_min_average": 1.0006102883048078,
+      "min_roots": 0,
+      "max_roots": 3,
+      "seconds": 7.989277,
+      "root_scan_points": 2049
+    },
+    {
+      "requested_N": 256,
+      "nodes": 256,
+      "inner_quadrature_order": 64,
+      "scaled_cost": 0.06078651577413017,
+      "actual_logJ": -68.4833145678895,
+      "min_average": 0.9980906610330477,
+      "unsplit_scaled_cost": 0.06279598899183658,
+      "unsplit_actual_logJ": -68.45079135035637,
+      "unsplit_min_average": 1.0006102883048078,
+      "min_roots": 0,
+      "max_roots": 3,
+      "seconds": 8.570038458333334,
+      "root_scan_points": 2049
+    }
+  ],
+  "alternating_probes": [
+    {
+      "matlab": "26.1.0.3312084 (R2026a) Update 4",
+      "status": "finite positive quadrature / receiver-point alternating probe only; discrete profile retention is not a continuum monotonicity certificate",
+      "n": 64,
+      "nodes_per_axis": 256,
+      "receivers": 33,
+      "outer_sweeps": 2,
+      "height_cap": 2,
+      "target_average": 1.00001,
+      "baseline_c": 1.13434837109461,
+      "tau_ref": 65.68292727325189,
+      "quadrature_mass_max_error": 1.5987211554602254e-14,
+      "final_min_average": 1.0000121291230153,
+      "final_logJ": -68.54613434158207,
+      "curve_union_volume_diagnostic": 13.44297691673808,
+      "curve_union_log_score_diagnostic": 71.1445911489314,
+      "scalar_baseline_log_score": 71.71499208794934,
+      "curve_minus_scalar_diagnostic": -0.5704009390179436,
+      "history": [
+        {
+          "iteration": 0,
+          "accepted_receiver_steps": 0,
+          "max_receiver_average_gain": 0,
+          "old_min_average": null,
+          "new_min_average": 1.0004058168024457,
+          "old_logJ": -68.45896862835023,
+          "new_logJ": -68.45896862835023,
+          "accepted_inner": true,
+          "dual_exitflag": 2,
+          "outer_grad_norm_inf": 0,
+          "ratio_min": 1.13434837109461,
+          "ratio_max": 1.13434837109461
+        },
+        {
+          "iteration": 1,
+          "accepted_receiver_steps": 33,
+          "max_receiver_average_gain": 0.0006246262592397578,
+          "old_min_average": 1.0004058168024457,
+          "new_min_average": 1.000443591632029,
+          "old_logJ": -68.45896862835023,
+          "new_logJ": -68.46543190138597,
+          "accepted_inner": true,
+          "dual_exitflag": 2,
+          "outer_grad_norm_inf": 0.037516384488973264,
+          "ratio_min": 1.3311450215771987,
+          "ratio_max": 1.3607795490689205
+        },
+        {
+          "iteration": 2,
+          "accepted_receiver_steps": 33,
+          "max_receiver_average_gain": 0.003259151567677643,
+          "old_min_average": 1.000443591632029,
+          "new_min_average": 1.0000121291230153,
+          "old_logJ": -68.46543190138597,
+          "new_logJ": -68.54613434158207,
+          "accepted_inner": true,
+          "dual_exitflag": 0,
+          "outer_grad_norm_inf": 0.03719781044891005,
+          "ratio_min": 1.231358541647749,
+          "ratio_max": 1.255314929673726
+        }
+      ],
+      "seconds": 11.490559041666666
+    },
+    {
+      "matlab": "26.1.0.3312084 (R2026a) Update 4",
+      "status": "finite positive quadrature / receiver-point alternating probe only; discrete profile retention is not a continuum monotonicity certificate",
+      "n": 64,
+      "nodes_per_axis": 256,
+      "receivers": 65,
+      "outer_sweeps": 1,
+      "height_cap": 2,
+      "target_average": 1.00001,
+      "baseline_c": 1.13434837109461,
+      "tau_ref": 65.68292727325189,
+      "quadrature_mass_max_error": 1.887379141862766e-14,
+      "final_min_average": 1.0004605043826864,
+      "final_logJ": -68.46533013760934,
+      "curve_union_volume_diagnostic": 16.68483833487309,
+      "curve_union_log_score_diagnostic": 71.2798305605163,
+      "scalar_baseline_log_score": 71.71499208794934,
+      "curve_minus_scalar_diagnostic": -0.4351615274330385,
+      "history": [
+        {
+          "iteration": 0,
+          "accepted_receiver_steps": 0,
+          "max_receiver_average_gain": 0,
+          "old_min_average": null,
+          "new_min_average": 1.0001109976429599,
+          "old_logJ": -68.46066223395815,
+          "new_logJ": -68.46066223395815,
+          "accepted_inner": true,
+          "dual_exitflag": 0,
+          "outer_grad_norm_inf": 0,
+          "ratio_min": 1.13434837109461,
+          "ratio_max": 1.13434837109461
+        },
+        {
+          "iteration": 1,
+          "accepted_receiver_steps": 65,
+          "max_receiver_average_gain": 0.0006239536129761802,
+          "old_min_average": 1.0001109976429599,
+          "new_min_average": 1.0004605043826864,
+          "old_logJ": -68.46066223395815,
+          "new_logJ": -68.46533013760934,
+          "accepted_inner": true,
+          "dual_exitflag": 0,
+          "outer_grad_norm_inf": 0.03750623609507613,
+          "ratio_min": 1.3308305564444174,
+          "ratio_max": 1.3610524752483812
+        }
+      ],
+      "seconds": 9.746342708333334
+    },
+    {
+      "matlab": "26.1.0.3312084 (R2026a) Update 4",
+      "status": "finite positive quadrature / receiver-point alternating probe only; positive source weights formally define a monotone profile, but its continuum averages and modular cost are not interval-certified",
+      "n": 64,
+      "nodes_per_axis": 512,
+      "receivers": 33,
+      "outer_sweeps": 1,
+      "height_cap": 2,
+      "target_average": 1.00001,
+      "baseline_c": 1.13434837109461,
+      "tau_ref": 65.68292727325189,
+      "quadrature_mass_max_error": 1.5987211554602254e-14,
+      "final_min_average": 1.0000653096011847,
+      "final_logJ": -68.4830618966511,
+      "curve_union_volume_diagnostic": 13.44297691673808,
+      "curve_union_log_score_diagnostic": 71.08151870400042,
+      "scalar_baseline_log_score": 71.71499208794934,
+      "curve_minus_scalar_diagnostic": -0.6334733839489246,
+      "history": [
+        {
+          "iteration": 0,
+          "accepted_receiver_steps": 0,
+          "max_receiver_average_gain": 0,
+          "old_min_average": null,
+          "new_min_average": 1.0000696189146343,
+          "old_logJ": -68.47557479165404,
+          "new_logJ": -68.47557479165404,
+          "accepted_inner": true,
+          "dual_exitflag": 2,
+          "outer_grad_norm_inf": 0,
+          "ratio_min": 1.13434837109461,
+          "ratio_max": 1.13434837109461
+        },
+        {
+          "iteration": 1,
+          "accepted_receiver_steps": 33,
+          "max_receiver_average_gain": 0.0006007561044170107,
+          "old_min_average": 1.0000696189146343,
+          "new_min_average": 1.0000653096011847,
+          "old_logJ": -68.47557479165404,
+          "new_logJ": -68.4830618966511,
+          "accepted_inner": true,
+          "dual_exitflag": 0,
+          "outer_grad_norm_inf": 0.03744228107301415,
+          "ratio_min": 1.330664520833978,
+          "ratio_max": 1.3611962702506526
+        }
+      ],
+      "seconds": 20.08267875
+    }
+  ]
+}
