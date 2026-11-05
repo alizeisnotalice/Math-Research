@@ -1,0 +1,15 @@
+Print["PID=",$ProcessID," VERSION=",$Version];
+r[t_]:=Sqrt[1+t/4];
+a[t_]:=9+2t-5r[t];
+Print["mixed bbox example A'(0+) = ",Limit[(a[t]-4)/t,t->0,Direction->"FromAbove"]];
+Print["mixed bbox ratio derivative = ",Limit[(a[t]/(4+t)-1)/t,t->0,Direction->"FromAbove"]];
+Print["degenerate positive-mass line derivative = ",Limit[4r[t](r[t]-1)/t,t->0,Direction->"FromAbove"]];
+Print["new atom separated on stated interval = ",FullSimplify[3/2-Sqrt[t]/2>r[t],Assumptions->0<t<=1/4]];
+Print["positive gain lower bound = ",FullSimplify[a[t]-(4+t)>=3t/8,Assumptions->0<t<=1/4]];
+Print["radius derivative = ",FullSimplify[D[Sqrt[(m+t w)/(4 lambda)],t]/.t->0,Assumptions->m>0&&w>=0&&lambda>0]];
+Print["zero-mass point square area = ",FullSimplify[4(Sqrt[t w/(4 lambda)])^2,Assumptions->t>0&&w>=0&&lambda>0]];
+z=Import[FileNameJoin[{DirectoryName[$InputFileName],"..","..","computation","round003-mechanism","decomposition.json"}],"RawJSON"];
+aa=ToExpression/@(z["areas"]/@{"A0","A1","A12","Afull"});
+m0=65931670400277227073796193886781311/12500000000000000000000000000000000;m1=m0+1/1000;
+Print["exact ratio chain = ",aa[[2]]/m1<aa[[1]]/m0<aa[[4]]/m1];
+Print["ordered net increments = ",N[{aa[[2]]-aa[[1]],aa[[3]]-aa[[2]],aa[[4]]-aa[[3]]},22]];

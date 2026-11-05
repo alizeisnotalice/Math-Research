@@ -1,0 +1,10 @@
+Print["PID=",$ProcessID," VERSION=",$Version];
+base=If[Length[$ScriptCommandLine]>1,Last[$ScriptCommandLine],FileNameJoin[{DirectoryName[$InputFileName],"generated"}]];
+z=Import[FileNameJoin[{base,"summary.json"}],"RawJSON"];
+{a0,a1,a12,af}=ToExpression /@ (z["areas"] /@ {"A0","A1","A12","Afull"});
+m0=65931670400277227073796193886781311/12500000000000000000000000000000000;m1=m0+1/1000;
+Print["ratio(old positive bbox only) < baseline: ",a1/m1<a0/m0];
+Print["activation zero: ",a12==a1];
+Print["new coordinate contribution positive: ",af>a12];
+Print["full > baseline: ",af/m1>a0/m0];
+Print["old bbox standalone gain/mass: ",N[1000(a1-a0),20]];
