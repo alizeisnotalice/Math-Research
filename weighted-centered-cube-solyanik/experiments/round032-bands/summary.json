@@ -1,0 +1,66 @@
+{
+  "schema": "round032-band-archive-v1",
+  "scope": "Finite thin-hole band lower-bound model for w(x,y)=|x|^{-gamma}, 0<gamma<1; not a full outer-halo upper bound.",
+  "conclusion": "The gamma=1/20 analytic two-band input has certified J>1. The two historical gamma=1/2 DE searches remain restricted-model negative evidence only; they cannot support a claim for all gamma.",
+  "rational_fraction_verifier": {
+    "status": "PASS",
+    "independent_of_optimizer": true,
+    "two_long_separated_bands_J_squared": "6272/6561",
+    "three_touching_long_bands_J_squared": "1197900/1216609",
+    "gamma_1_20_two_bands_J_to_20": "3814697265625/1099511627776 = 5^18/2^40",
+    "gamma_1_20_two_bands_J_to_20_gt_2": true,
+    "half_power_cases_strictly_less_than_one": true
+  },
+  "positive_analytic_case": {
+    "gamma": "1/20",
+    "beta": "19/20",
+    "radius": "1",
+    "band_length_x": "3/38",
+    "bands": ["[0,3/38]", "[41/38,22/19]"],
+    "height": "25",
+    "strict_margin_eta": "1/76",
+    "every_hole_point_actual_centered_cube": "radius 1; missing fraction is at most (75/76)t < t",
+    "leading_coefficient": "J=25^(19/20)/20",
+    "proven_relation": "J^20=5^18/2^40>2, hence J>1",
+    "provenance": "direct analytic construction, not an output of the historical DE searches"
+  },
+  "fixed_geometry_inner_replay": {
+    "status": "PASS",
+    "two_band_J_float": 0.9777278949739826,
+    "three_band_J_float": 0.9922812156095012,
+    "note": "These are floating inner-optimizer diagnostics; strict feasibility is certified separately by Fraction."
+  },
+  "historical_full_DE_searches": {
+    "two_band": {
+      "evaluations": 564,
+      "reported_status": "Optimization terminated successfully.",
+      "reported_J": 0.9876542716049289,
+      "search_source_sha256": "c8dd14daf9f77f658fc8cac67f1fbd6b58f5da37835968ae3b57b2749052ee16"
+    },
+    "three_band": {
+      "evaluations": 1668,
+      "reported_status": "Optimization terminated successfully.",
+      "reported_J": 0.9972800951949294,
+      "archive_time_search_plus_model_sha256": "1268155cc25d94b45ad8baa1b555fa37f32997f130ff1621637e7939c646a376",
+      "note": "The historical three-band output did not embed a source hash; the displayed hash is the archived source pair, not a retroactive proof of the old run."
+    }
+  },
+  "archived_file_sha256": {
+    "band_model.py": "e639c555f43f5fec8dce10dc592e5c80edba7a44e4b09a8d72afb924e1c9d042",
+    "band_search.py": "0572625346557b867376c97d8ca48d62f98f88db1e05394d13a374e4d19d80fb",
+    "band_search_three.py": "9ca516c647ac089a94380d0bae311099447cc7ab9c00aac42bc487b274290a8d",
+    "band_fraction_verifier.py": "a6ce2ffc0a1aacafd727196cc5aa34cc9d3e3e5e2473622299319e562b87b1b8",
+    "band_rational_inputs.json": "97b43553ba242d381da1c0789982b5937156513a6dc58a3a53ffdf06f8f4d3f5"
+  },
+  "tooling": {
+    "primary": "Python 3.15 with Fraction/Decimal; SciPy inner SLSQP for floating replay",
+    "secondary_exact_check": "Wolfram Language 15.0 exact rational calculation"
+  },
+  "general_cartesian_formula_algebra_audit": {
+    "assumed_family_formula": "(1-eta)^beta [2^beta ell^gamma/(1+ell+1/k)]^(n-1)",
+    "k_to_infinity_optimizer": "ell=gamma/(1-gamma)",
+    "optimized_base": "Lambda_gamma=2^beta beta^beta gamma^gamma",
+    "gamma_1_5_exact_check": "Lambda_gamma^5=4096/3125>1",
+    "scope": "This independently checks the displayed algebra and one exact value; it does not replace the separate geometric proof of the family formula."
+  }
+}

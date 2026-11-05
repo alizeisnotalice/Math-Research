@@ -1,0 +1,34 @@
+{
+  "schema": "flat-band-rational-v1",
+  "gamma": "1/2",
+  "cases": [
+    {
+      "name": "two_long_separated_bands",
+      "eta": "1/50",
+      "bands": [["-10", "-2"], ["2", "10"]],
+      "radii": ["1/20", "1/20"],
+      "heights": ["49/1000", "49/1000"],
+      "expect_simple_J_to_q": "lt_one",
+      "origin": "rationalized from the two-band floating search; height strictly reduced"
+    },
+    {
+      "name": "three_touching_long_bands",
+      "eta": "1/100",
+      "bands": [["-11", "-3"], ["-3", "3"], ["3", "11"]],
+      "radii": ["3/100", "3/100", "3/100"],
+      "heights": ["297/10000", "297/10000", "297/10000"],
+      "expect_simple_J_to_q": "lt_one",
+      "origin": "rationalized from the three-band floating search; height strictly reduced"
+    },
+    {
+      "name": "two_bands_gamma_1_20_positive",
+      "gamma": "1/20",
+      "eta": "1/76",
+      "bands": [["0", "3/38"], ["41/38", "22/19"]],
+      "radii": ["1", "1"],
+      "heights": ["25", "25"],
+      "expect_simple_J_to_q": "gt_one",
+      "origin": "analytic small-gamma counterexample; not produced by the gamma=1/2 DE searches"
+    }
+  ]
+}

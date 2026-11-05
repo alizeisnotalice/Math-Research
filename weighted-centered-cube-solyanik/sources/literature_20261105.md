@@ -66,3 +66,7 @@
 
 ## 第31轮：矩形模型及权幂检索
 实际检索Solyanik/power weights/singular weight并读取[Hagelstein–Parissis, Weighted Solyanik estimates for the strong maximal function, arXiv:1410.3402v1](https://arxiv.org/html/1410.3402v1)的摘要及§1定义。原始版本页仅列v1；尝试v2返回404，未把不存在的版本列为已读。该文用包含点的任意轴平行矩形，研究strong权类及权特征控制的指数，与本文中心cube具体角幂的精确系数问题不同；不挪用其锐性含义。题录页同时核对发表信息Publ. Mat.62(2018),133–159，DOI10.5565/PUBLMAT6211807。全文证明未作独立复核，也未作为本轮工具引用。搜索不是穷尽，不凭未命中宣布首次。第30轮已核对的2026年9月/10月相关预印本继续按各自模型记录。
+
+
+## 第32轮：单向模型的范围核对
+实际检索centered/one-dimensional/power weights，并读取[Hagelstein–Parissis–Saari, Sharp inequalities for one-sided Muckenhoupt weights，作者主页PDF](https://web.mat.upc.edu/olli.saari/papers/HaPaSa.pdf)摘要、§1定义及Theorem1.1/Corollary1.2段。其M+为[x,x+h]端点单向平均，涉及one-sided权特征的量化指数；不是本文平移区间内部集合浓度，也不是双侧中心光晕。未将其sharp表述用作本轮精确系数依据，未独立核验全文证明。搜索引擎抓取日期未当成论文发表日期；新发现仅作范围核对，不声称本文变分式新颖性。此前2026年9月/10月相关预印本继续按各自模型记录。

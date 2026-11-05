@@ -1,0 +1,10 @@
+{
+  "scope": "scalar translated flat-weight concentration diagnostics only; numerical sign brackets are not interval certificates",
+  "parameters": {"beta": [".1",".25",".5",".75",".9"], "u": ["2^-k","1-2^-k"], "k": [4,8,16,32,64,128,256], "roots": 70},
+  "python": {"small_u_precision": 120, "near_one_precision": "120+ceil(k log10(2))+20, hence 142--218", "fresh_workers": [19972,19973,19974,19975,19976,19977,19978,19979,19980,19981,19982,19983,19984,19985,19986], "failures": 0, "replay_rows": 70, "numerical_strict_sign_brackets": 70, "Kmid_numerical_zero_events": 36, "rounding_stagnation_events": 34, "unresolved_small_u_expansions": 0, "source_sha256": "7af6e94ea7a274eeb8ee205e90c25521cca1b50593d3ef6fa20a5826b3ea7472"},
+  "wolfram": {"kernel_version": "15.0.0 for Mac OS X ARM (May 15, 2026)", "guards": ["Kprime formula", "half root", "half Omega", "u=1/8", "30 derivative-negative numerical diagnostics", "grid J algebra", "optimal ell", "Lambda 1/5", "finite J power"], "source_sha256": "62c594ec921fee6b97ccfc6a98cc0c207342ee78f9f8eb9acb64445052457090"},
+  "fraction": {"u": "1/8", "a": "1/26", "omega": "5/12", "K": "0", "common_sqrt_numerators": [2,3,10], "source_sha256": "59d4ed2250a5cdad62be78ffd5efb1fd4d9d1e37c54bfd39aa7aa0e1cf50344e"},
+  "grid_lower": {"Lambda_1_5_to_5": "4096/3125", "finite_h": "25", "finite_T": "60/19", "finite_J_to_20": "5^18/2^40", "fraction_source_sha256": "d3afda2f551bd7c9c3018df237fb85c24252ba2ca61ab9d3f1cf484720a035d4"},
+  "matlab": {"static_analysis_issues": 0, "strict_double_brackets": 32, "near_one_rounded_to_one_skips": 15, "indeterminate_small_u": 23, "grid_constant_defect_cases": 6, "grid_k10000_max_relative_defect": "0.00019", "source_sha256": "4bb945e5ab44c2abc838ad5882dc091cdc9d8f0c057f08c71d13b7ab1e06371d"},
+  "repair": "The initial half-power absolute 1e-25 check was too loose for tiny u. Final code checks b=a/u and relative Omega tolerance; midpoint K=0 is recorded without being promoted to a certificate. An initial archival Fraction script had tautological assertions; it was replaced by actual common-sqrt coefficient calculations for Omega and K."
+}

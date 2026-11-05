@@ -387,3 +387,157 @@ $n\beta<\tau<n$ & $t^\beta$ & 匹配阶 (AS.4)
 \end{center}
 固定不等正指数的共同中心模型在超临界区间同样有 $\asymp\varepsilon^\beta$；
 (AS.5) 的下界系数乘 $a_*^{-\beta}$。固定 $\tau$ 的真实领先系数及其极限存在性仍开放。
+
+\subsection{平坦权的精确集中函数}\label{subsec:flat-concentration}
+在 $w=\rho^q|x_1|^{-\gamma}$ 中取 $q=0$，得到 $w_\gamma(x)=|x_1|^{-\gamma}$；
+当 $n\ge2$ 时，它对应 (AS.1) 的超临界次数 $\tau=n-\gamma$。
+以下取 $K=[-1,1]^n$、$n\ge1$。仍设 $0<\gamma<1$、$\beta=1-\gamma$，记
+\[
+ \Omega_\gamma(u)=\sup_{\substack{A\subset Q,\ |A|\le u|Q|\\Q\text{ 为轴平行方体}}}
+ \frac{\int_Aw_\gamma}{\int_Qw_\gamma},\qquad 0<u<1.\tag{FC.1}
+\]
+它衡量方体内的小体积集，与中心光晕的优化问题不同。
+
+\begin{theorem}[全阈值精确集中函数]\label{thm:flat-concentration}
+令 $M_u(a)=a^\beta+(u-a)^\beta$、$D(a)=a^\beta+(1-a)^\beta$。
+对每个 $0<u<1$，存在唯一 $a_*(u)\in(0,u/2)$，使
+\[
+ K_u(a_*):=M'_u(a_*)D(a_*)-M_u(a_*)D'(a_*)=0.
+\]
+则
+\[
+ \Omega_\gamma(u)=\frac{M_u(a_*(u))}{D(a_*(u))},\qquad
+ 0<\Omega_\gamma(u)<1.\tag{FC.2}
+\]
+该值在某个平移方体及其子集上取得，且不依赖维数。固定 $\gamma$ 时，
+\[
+ \Omega_\gamma(u)=2^\gamma u^\beta-2^{1-2\beta}u^{2\beta}+o(u^{2\beta})
+ \qquad(u\downarrow0).\tag{FC.3}
+\]
+当 $\gamma=1/2$ 时，
+\[
+ \begin{aligned}
+ a_*(u)&=\frac{u}{2(1+\sqrt{2u}+u)},\\
+ \Omega_{1/2}(u)&=\frac{u+\sqrt{2u}}{1+\sqrt{2u}},\qquad
+ \frac{\Omega_{1/2}(u)}{1-\Omega_{1/2}(u)}=\frac{u+\sqrt{2u}}{1-u}.
+ \end{aligned}\tag{FC.4}
+\]
+\end{theorem}
+\begin{proof}
+写 $Q=I\times J$，以 $b(s)\in[0,1]$ 表示子集的切片占比。
+对 $\int_Ib(s)|s|^{-\gamma}ds$ 用等体积重排，化为 $I$ 内最靠近原点的长度
+$u|I|$ 子集；取该子集与整个 $J$ 的积即可达到，故问题精确归约为一维。
+由伸缩令 $|I|=1$。不跨零时反射为 $I=[r,r+1]$、$r\ge0$，最优比满足
+\[
+ \int_0^u(r+s)^{-\gamma}ds
+ =u^\beta\int_0^1(r/u+y)^{-\gamma}dy
+ \le u^\beta\int_0^1(r+y)^{-\gamma}dy.
+\]
+因此不超过 $u^\beta$。
+
+跨零时反射为 $I=[-a,1-a]$、$0\le a\le1/2$。若 $a\ge u/2$，最优子集为
+$[-u/2,u/2]$，质量比为 $2^\gamma u^\beta/D(a)$；$D$ 在 $[0,1/2]$ 递增，
+所以这一段在 $a=u/2$ 最大。若 $0\le a\le u/2$，最优子集为 $[-a,u-a]$，
+质量比为 $M_u(a)/D(a)$。在开区间内，
+\[
+ \begin{aligned}
+ K'_u(a)=\beta(\beta-1)\bigl[&a^{\beta-2}(D-M_u)
+       +D(u-a)^{\beta-2}\\
+       &-M_u(1-a)^{\beta-2}\bigr]<0.
+ \end{aligned}
+\]
+括号严格为正，因为 $D>M_u>0$、$u-a<1-a$ 且 $\beta-2<0$。
+又 $K_u(0+)=+\infty$，而 $K_u(u/2)=-M_u(u/2)D'(u/2)<0$。
+唯一内根因而给出严格最大值，且胜过端点值 $u^\beta$ 和跨零的另一段。
+这证明 (FC.2) 及取等构造；$M_u<D$ 同时保证分母余量为正。
+
+为得 (FC.3)，写 $a_*=ub_u$、$m(b)=b^\beta+(1-b)^\beta$。
+$D(ub)\to1$ 在 $0\le b\le1/2$ 上一致，故唯一极大点的比较给 $b_u\to1/2$。
+在这一邻域，驻点方程为 $m'(b_u)D(ub_u)=m(b_u)\partial_bD(ub_u)$，
+右端为 $O(u^\beta)$。由 $m''(1/2)<0$ 得 $b_u=1/2+O(u^\beta)$，于是
+\[
+ M_u(a_*)=u^\beta[2^{1-\beta}+O(u^{2\beta})],\qquad
+ D(a_*)=1+2^{-\beta}u^\beta+o(u^\beta).
+\]
+展开比值即得 (FC.3)。当 $\beta=1/2$，置
+$r=\sqrt{(u-a)/a}$、$s=\sqrt{(1-a)/a}$。驻点方程化为
+$(r-1)(s-1)=2$，再由 $u=(1+r^2)/(1+s^2)$ 得 $r=1+\sqrt{2u}$，
+代回即得 (FC.4)。
+\end{proof}
+
+例如 $u=1/8$ 时，$a_*=1/26$、$\Omega_{1/2}=5/12$。
+取 $I=[-4/104,100/104]$、$B=[-4/104,9/104]$，权质量之比精确为
+$(2+3)/(2+10)=5/12$，而 $|B|/|I|=1/8$。
+由定理 \ref{outer}，所有 $0<t<1$ 均有
+\[
+ C^{\rm out}_{K,w_\gamma}(1-t)-1\le
+ \frac{2^n\Omega_\gamma(t)}{1-\Omega_\gamma(t)},\qquad
+ C^{\rm out}_{K,w_{1/2}}(1-t)-1\le2^n\frac{t+\sqrt{2t}}{1-t}.\tag{FC.5}
+\]
+这是可计算的全阈值上界，未声称是最优光晕界。尤其当 $n=1$ 时，
+定理 \ref{thm:hom-leading} 取 $\tau=\beta$、角向因子恒一，已给出
+$C^{\rm out}_{K,w_\gamma}(1-t)-1\sim t^\beta$，与集中函数的领先系数 $2^\gamma$ 不同。
+取等的集中子集靠近原点，而相应区间中心通常远离它；该区间不能同时作每个孔点的中心见证。
+因此 (FC.3) 的二项均不能逆向移给光晕；$n\ge2$ 的切向耦合还会产生额外放大。
+
+\begin{proposition}[切向网格的光晕下界]\label{prop:flat-grid-lower}
+设 $n\ge2$、$0<\gamma<1$、$\beta=1-\gamma$，令
+$\Lambda_\gamma=2^\beta\beta^\beta\gamma^\gamma$。
+对 $w_\gamma=|x_1|^{-\gamma}$，有
+\[
+ \begin{aligned}
+ \max\{1,\Lambda_\gamma^{n-1}\}
+ &\le\liminf_{t\downarrow0}\frac{C^{\rm out}_{K,w_\gamma}(1-t)-1}{t^\beta}\\
+ &\le\limsup_{t\downarrow0}\frac{C^{\rm out}_{K,w_\gamma}(1-t)-1}{t^\beta}
+ \le2^{n+\gamma}.
+ \end{aligned}\tag{FC.6}
+\]
+\end{proposition}
+\begin{proof}
+上界由 (FC.3)、(FC.5) 直接得到；下界 $1$ 已由命题
+\ref{prop:supercritical-order} 的远移薄板证明。
+固定整数 $k\ge1$、$\ell>0$ 和 $0<\eta<1$，令
+\[
+ \begin{gathered}
+ B_j=[j(1+\ell),j(1+\ell)+\ell]\quad(0\le j<k),\qquad
+ P=\left(\bigcup_{j=0}^{k-1}B_j\right)^{n-1},\\
+ h=(1-\eta)(2/\ell)^{n-1},\qquad T=k(1+\ell)+1,\\
+ D_t=[-1-th,1+th]\times[-1,k(1+\ell)]^{n-1},\qquad
+ Z_t=(-th,th)\times P,\qquad E_t=D_t\setminus Z_t.
+ \end{gathered}
+\]
+对每个孔点 $z\in Z_t$，半径 $1$ 的中心方体都在 $D_t$ 内。
+由于每坐标的带间距为 $1$，其窗口至多碰到本带的正长度部分；
+因此孔在该方体内的体积至多 $2th\ell^{n-1}$，缺失比例至多
+$(1-\eta)t<t$。此论证对所有 $\ell>0$ 有效。
+密度点再给 $D_t\subset\{M_K\1_{E_t}>1-t\}$ 模零。
+
+直接积分得到
+\[
+ \mu_w(Z_t)=\frac2\beta(th)^\beta(k\ell)^{n-1},\qquad
+ \mu_w(D_t)=\frac2\beta(1+th)^\beta T^{n-1}.
+\]
+记 $J=(k\ell/T)^{n-1}h^\beta$，则所有 $0<t<1$ 都有
+\[
+ C^{\rm out}_{K,w_\gamma}(1-t)-1
+ \ge\frac{Jt^\beta}{(1+th)^\beta-Jt^\beta},\qquad
+ J=(1-\eta)^\beta
+ \left[\frac{2^\beta\ell^\gamma}{1+\ell+1/k}\right]^{n-1}.\tag{FC.7}
+\]
+分母为正，因为孔的质量比例小于 $(k\ell/T)^{n-1}<1$。
+先固定 $k,\ell,\eta$ 令 $t\downarrow0$，再令 $\eta\downarrow0$、$k\to\infty$。
+函数 $\ell^\gamma/(1+\ell)$ 的唯一最大点是 $\ell=\gamma/\beta$，
+代入即得 $\Lambda_\gamma^{n-1}$。各步只对常数下界取上确界，不交换参数与端点的联合极限。
+\end{proof}
+
+例如 $\gamma=1/5$ 时 $\Lambda_\gamma^5=4096/3125>1$，故所有 $n\ge2$ 都有严格超过 $1$ 的下界。
+还有一个只需两带的有限构造：取 $n=2$、$\gamma=1/20$、$k=2$、$\ell=3/38$、
+$\eta=1/76$，则 $h=25$、见证缺失比例至多 $75t/76$，且
+\[
+ J=\frac{25^{19/20}}{20},\qquad
+ J^{20}=\frac{5^{18}}{2^{40}}=
+ \frac{3814697265625}{1099511627776}>2.\tag{FC.8}
+\]
+因此该参数的光晕领先下界甚至超过集中函数的领先系数 $2^{1/20}$。
+这些不等式未确定真实领先系数或极限存在性；$\gamma=1/2$ 的有限带阴性搜索也不构成完整上界。
+固定不等正指数的共同中心模型经精确传递，(FC.6) 的上下界系数同时乘以 $a_*^{-\beta}$。
