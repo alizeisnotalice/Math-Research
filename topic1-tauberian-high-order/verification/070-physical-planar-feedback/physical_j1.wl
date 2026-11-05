@@ -1,0 +1,16 @@
+ClearAll[u,tau];
+Print["Wolfram ",$Version,"; PID ",$ProcessID];
+Print["Path: kap=1, rho=1/(1+2u), del=u(1+2u)/8, aa=4u². Series uses Psi(z)=del z-aa del³ z²+O(u9) for bounded z."];
+del=u(1+2u)/8;aa=4u^2;
+psis[z_]:=del z-aa del^3 z^2;
+b=psis[1];A0=b^2/(2del)+2aa b^3/3;
+ql=b tau;ml=ql+(1/2-1/(2del))ql^2-aa ql^3/3;
+qh=1-b tau/del-aa b^2 tau^2+b tau;
+mh=2A0-(b tau)^2/(2del)-(2aa/3)(b tau)^3+(b tau)^2/2;
+low=Normal[Series[psis[ql-ml] b,{u,0,6}]];
+high=Normal[Series[psis[qh-mh]((1/del-1)b+2aa b^2 tau),{u,0,6}]];
+res=FullSimplify[Integrate[low+high,{tau,0,1}]];
+Print["A1 series through u6: ",res];
+expected=u/16+43u^2/384-79u^3/1536-37u^4/768+u^5/192-55u^6/6144;
+Print["expected residual: ",Expand[res-expected]];
+Print["coefficients: ",Table[Coefficient[res,u,j],{j,1,6}]];
