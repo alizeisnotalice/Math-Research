@@ -1,0 +1,46 @@
+--- original/jet.py
++++ portable/jet.py
+@@ -2,10 +2,10 @@
+ Coordinates: L-units; zeta=t*L*Dr/8; output derivative wrt t is
+ (area coefficient in zeta)*Dr/(8L). Fixed list only, not full ideal halo.
+ """
+-import json,math,time,os,hashlib
++import json,math,time,os,hashlib,argparse
+ from fractions import Fraction as F
+ from pathlib import Path
+-D=Path(__file__).resolve().parent;P=D.parents[1];Z=json.loads((P/'computation/round003-mechanism/decomposition.json').read_text());cfg=json.loads((P/'round002/verification/candidate002.json').read_text());L=int(Z['L']);Dr=int(Z['Dr']);dx=int(Z['Dx']);dm=int(Z['Dm']);px=F(cfg['Px']);py=F(cfg['Py']);pxi=int(px*dx);pyi=int(py*dx);pts=[tuple(map(F,p)) for p in cfg['pts']];sx=L//dx;sr=L//Dr
++S=Path(__file__).resolve().parent;P=S.parents[1];parser=argparse.ArgumentParser();parser.add_argument('--records-dir',type=Path,default=P/'round003/mechanism/generated');parser.add_argument('--output-dir',type=Path,default=S/'generated');args=parser.parse_args();D=args.output_dir.resolve();D.mkdir(parents=True,exist_ok=True);Z=json.loads((args.records_dir.resolve()/'decomposition.json').read_text());cfg=json.loads((P/'round002/verification/candidate002.json').read_text());L=int(Z['L']);Dr=int(Z['Dr']);dx=int(Z['Dx']);dm=int(Z['Dm']);px=F(cfg['Px']);py=F(cfg['Py']);pxi=int(px*dx);pyi=int(py*dx);pts=[tuple(map(F,p)) for p in cfg['pts']];sx=L//dx;sr=L//Dr
+ 
+ def j(c,s=0):return (int(c),F(s))
+ def subtract(a,b):return a[0]-b[0],a[1]-b[1]
+@@ -54,6 +54,6 @@
+   x0=max(j(xb*sx-r,-vel),j(0));x1=min(j(xa*sx+r,vel),j(int(px*L)));y0=max(j(yb*sx-r,-vel),j(0));y1=min(j(ya*sx+r,vel),j(int(py*L)))
+   if x0<x1 and y0<y1:
+    rects.append((x0,x1,y0,y1));stats['active']+=1;stats['signed_owner_boxes']+=bool(w)
+- print('pid',os.getpid(),'stats',stats,'start union',time.time()-start,flush=True);a0,a1=union(rects);area=a0/(L*L);dA=a1*Dr/(8*L);expected=json.loads((P/'computation/round004-weight-direction/candidate_05.check2.json').read_text());ratio=F(int(expected['ratio_num']),int(expected['ratio_den']));mcell=sum(p[2] for p in pts)-F(1,5000);assert area==ratio*mcell
++ print('pid',os.getpid(),'stats',stats,'start union',time.time()-start,flush=True);a0,a1=union(rects);area=a0/(L*L);dA=a1*Dr/(8*L);expected=json.loads((P/'round004/weights/candidate_05.check2.json').read_text());ratio=F(int(expected['ratio_num']),int(expected['ratio_den']));mcell=sum(p[2] for p in pts)-F(1,5000);assert area==ratio*mcell
+  out=dict(pid=os.getpid(),stats=stats,area0=str(area),base_area_matches_R004a=True,score_dA_dt=str(dA),positive=dA>0,score_decimal=float(dA),ratio_derivative=str(dA/mcell),ratio_derivative_decimal=float(dA/mcell),elapsed=time.time()-start,minimum_strict_mass_gap=str(min(gaps)),positive_radicand_until=str(min(roots)),scope='signed 34->27 derivative of strict calibrated finite subfamily, not ideal full halo; reconstructed from R3 positive records')
+  (D/'jet.json').write_text(json.dumps(out,indent=2));print(json.dumps(out,indent=2),flush=True)
+--- original/check_calibrated.py
++++ portable/check_calibrated.py
+@@ -3,8 +3,8 @@
+ from fractions import Fraction as F
+ from pathlib import Path
+ D=Path(__file__).resolve().parent;P=D.parents[1];sys.path.insert(0,str(D));import jet
+-s=importlib.util.spec_from_file_location('independent',P/'computation/lower-baseline/exactinputs/lb_check2.py');ind=importlib.util.module_from_spec(s);s.loader.exec_module(ind)
+-z=json.loads((D/'jet.json').read_text());t=F(1,10**9);D2=2**80;grid=math.lcm(jet.dx,D2);a=grid//jet.dx;b=grid//D2;rect=[];start=time.time()
++s=importlib.util.spec_from_file_location('independent',P/'checks/lower/lower_check.py');ind=importlib.util.module_from_spec(s);s.loader.exec_module(ind)
++z=json.loads((jet.D/'jet.json').read_text());t=F(1,10**9);D2=2**80;grid=math.lcm(jet.dx,D2);a=grid//jet.dx;b=grid//D2;rect=[];start=time.time()
+ for row in jet.Z['records']:
+  box=tuple(map(int,row[:4]));xa,xb,ya,yb=box;M=F(int(row[5]),jet.dm)-F(jet.copies(box,51),5000);k=math.isqrt(M.numerator*jet.Dr**2//(4*M.denominator))-1;w=jet.copies(box,27)-jet.copies(box,34);v=F(k,jet.Dr)**2+t*w/4;assert v>0;rho=math.isqrt(v.numerator*D2**2//v.denominator)*b
+  x0=max(xb*a-rho,0);x1=min(xa*a+rho,int(jet.px*grid));y0=max(yb*a-rho,0);y1=min(ya*a+rho,int(jet.py*grid))
+--- original/scalar.wl
++++ portable/scalar.wl
+@@ -1,5 +1,6 @@
+ Print["PID ",$ProcessID," version ",$Version];
+-z=Import[FileNameJoin[{DirectoryName[$InputFileName],"jet.json"}],"RawJSON"];
++base=If[Length[$ScriptCommandLine]>1,Last[$ScriptCommandLine],FileNameJoin[{DirectoryName[$InputFileName],"generated"}]];
++z=Import[FileNameJoin[{base,"jet.json"}],"RawJSON"];
+ d=ToExpression[z["score_dA_dt"]];gap=ToExpression[z["minimum_strict_mass_gap"]];until=ToExpression[z["positive_radicand_until"]];
+ Print["score positive ",d>0];Print["uniform strict gap positive ",gap>0];Print["t=1e-9 radicands positive ",1/10^9<until];
+ Print["calibration preserves strict gap: ",FullSimplify[(M+t w)-4(r^2+t w/4)==M-4r^2]];

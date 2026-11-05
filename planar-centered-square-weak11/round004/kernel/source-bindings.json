@@ -1,0 +1,148 @@
+{
+  "version": "round004-kernel-portable-v1",
+  "source_freeze": {
+    "source_path": "computation/round004-kernel-direction/freeze.json",
+    "sha256": "ea1ff01d53e5d2ab3edd9078e802ef05939c7e9c88a057ef51ad9853ab01f36a",
+    "scope": "Only the nine copied entries below are included here. Omitted source freeze files are not reverified by the portable verifier."
+  },
+  "unchanged_copies": [
+    {
+      "source_path": "computation/round004-kernel-direction/candidate-origin-eps1over200.json",
+      "source_sha256": "88af41536e1117d953bbc4594ee99f1319b79b75d98d740c5d3c82caaf1f306f",
+      "package_path": "candidate.json",
+      "published_path": "round004/kernel/candidate.json",
+      "transformation": "none; identical bytes"
+    },
+    {
+      "source_path": "computation/round004-kernel-direction/unit-origin-spline.json",
+      "source_sha256": "54016612a3d1b98c60758d5bdf6853f2cf1905443a802c11e17a552cc7ee0e1d",
+      "package_path": "unit-origin-spline.json",
+      "published_path": "round004/kernel/unit-origin-spline.json",
+      "transformation": "none; identical bytes"
+    },
+    {
+      "source_path": "computation/round004-kernel-direction/full-c1234-report.json",
+      "source_sha256": "236e32ace5a5883bac6075fd6d18dbbe914f09ad3fe20e010902cabd4dc13929",
+      "package_path": "records/full-c1234-report.json",
+      "published_path": "round004/kernel/records/full-c1234-report.json",
+      "transformation": "none; identical bytes"
+    },
+    {
+      "source_path": "computation/round004-kernel-direction/full-c1234.stdout.log",
+      "source_sha256": "877e384259db9465adf64e7b078f4069b9fd3a0513cd5d18723362232a329b5d",
+      "package_path": "records/full-c1234.stdout.log",
+      "published_path": "round004/kernel/records/full-c1234.stdout.log",
+      "transformation": "none; identical bytes"
+    },
+    {
+      "source_path": "computation/round004-kernel-direction/full-execution.json",
+      "source_sha256": "b08f72432b17d7cff84a2fbe1a66a8a7d4906cc9e3d60462d8817feff80b641c",
+      "package_path": "records/full-execution.json",
+      "published_path": "round004/kernel/records/full-execution.json",
+      "transformation": "none; identical bytes"
+    },
+    {
+      "source_path": "computation/round004-kernel-direction/runtime-metadata-clarification.json",
+      "source_sha256": "5888351129d39a8c6502d9e57656e025da59c2bdfa0530c3665b004618a8a6e7",
+      "package_path": "records/runtime-metadata-clarification.json",
+      "published_path": "round004/kernel/records/runtime-metadata-clarification.json",
+      "transformation": "none; identical bytes"
+    },
+    {
+      "source_path": "computation/round004-kernel-direction/direction_mass.wl",
+      "source_sha256": "a74cc7caa8f372d5dda81f39d34d10f08003c7cbb63eb9d624f0b0d21cd82e35",
+      "package_path": "symbolic/direction_mass.wl",
+      "published_path": "round004/kernel/symbolic/direction_mass.wl",
+      "transformation": "none; identical bytes"
+    },
+    {
+      "source_path": "computation/round004-kernel-direction/direction_mass.log",
+      "source_sha256": "57b42d98e97c65ebe7bb0a4738e527e2036d2831608197d7c2e2df0bf4a6863f",
+      "package_path": "symbolic/direction_mass.log",
+      "published_path": "round004/kernel/symbolic/direction_mass.log",
+      "transformation": "none; identical bytes"
+    },
+    {
+      "source_path": "computation/round004-kernel-direction/point-control.json",
+      "source_sha256": "d230de7f90393d5a53ef63b3ed525853eaeffe0f02f5a9bc230a403ba8b7008f",
+      "package_path": "records/point-control.json",
+      "published_path": "round004/kernel/records/point-control.json",
+      "transformation": "none; identical bytes"
+    }
+  ],
+  "adapted_verifier": {
+    "source_path": "computation/round004-kernel-direction/verify_result.py",
+    "source_sha256": "e4c91430dde998ce486dc168e0d2440ade51cbb3cf0e3a69f3c650a641f3f6aa",
+    "package_path": "verify_result.py",
+    "published_path": "round004/kernel/verify_result.py",
+    "published_sha256": "df87ec8c6cb4c8a6da22e7b62316851e6be82951464c617c889081cbf31cc8c3",
+    "adaptation_scope": [
+      "Resolve inputs from published project root via round004/kernel/verify_result.py; reuse kernel-rescaling shared inputs.",
+      "Keep all exact candidate, historical C4 coverage/provenance, fresh C1/C2/direct-mass/negative-point checks.",
+      "Add static/subset hash checks, exact spline-piece integral, stdout cross-check and fresh leaf/cell counts.",
+      "Historical paths and library binaries remain metadata; only shared source content hashes must match.",
+      "Print by default; optional --out writes a new receipt and protects frozen package inputs/receipts."
+    ]
+  },
+  "reused_project_inputs": [
+    {
+      "original_source_path": "scratch/kernel-public-package/vendor/hl_check.py",
+      "published_project_path": "kernel-rescaling/vendor/hl_check.py",
+      "sha256": "0a5ee85e9b6c250494aaf88abce55bb28a4ba5fc46075c531eeefaa0cc2888f8"
+    },
+    {
+      "original_source_path": "scratch/kernel-public-package/vendor/hl_core.py",
+      "published_project_path": "kernel-rescaling/vendor/hl_core.py",
+      "sha256": "c3d864b1368ad8150fd3366bf77f687a9a3cdd49b924a20d576aa678aed42ebf"
+    },
+    {
+      "original_source_path": "scratch/kernel-public-package/vendor/LICENSE",
+      "published_project_path": "kernel-rescaling/vendor/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "original_source_path": "scratch/kernel-public-package/certificates/scaled.json",
+      "published_project_path": "kernel-rescaling/certificates/scaled.json",
+      "sha256": "d570ac3ffc1357e129183eda9579fde8a1bf3775e914efe6ef2d6be336348c99"
+    },
+    {
+      "original_source_path": "scratch/kernel-public-package/provenance/UPSTREAM.json",
+      "published_project_path": "kernel-rescaling/provenance/UPSTREAM.json",
+      "sha256": "fef451891b01dc038899004af973fe340655975372a1675d9d514be49ec6aca7"
+    }
+  ],
+  "separately_staged_documents": [
+    {
+      "original_path": "scratch/round004-kernel-direction/result.md",
+      "sha256": "f6180f44d4dee187f90da2c0e208cb85da0470a18062fadeedd284586023efd2",
+      "scope": "Unchanged original document; containing project supplies its published-path mapping. Not copied or rewritten in this kernel package."
+    },
+    {
+      "original_path": "scratch/round004-kernel-review/review.md",
+      "sha256": "fca0336b102e0908e5198031ad204f5ae3ad5d5783fae127cab661bdba5e3131",
+      "scope": "Unchanged original document; containing project supplies its published-path mapping. Not copied or rewritten in this kernel package."
+    }
+  ],
+  "omitted_research_material": [
+    "1294-point exploration and its program; finite screening is not used as global proof.",
+    "CPU/process samples, monitor wrappers, raw runtime metadata; normalized summary and source clarification are retained as metadata only.",
+    "Intermediate C123 reports/logs and original verification output; fresh portable default checks replace the cheap run.",
+    "Old C4 report and all old kernel reports: the new complete C4 report is independent of them.",
+    "Source freeze full listing: this subset mapping binds source SHA values without claiming full-freeze revalidation on a new host."
+  ],
+  "mathematical_result": {
+    "claim": "3590865312933/1000000000000",
+    "epsilon": "1/200",
+    "direction_halfmass_decrease": "1/409600",
+    "full_c4_cells": 1368,
+    "full_c4_leaves": 443757,
+    "full_c4_precision_bits": 128,
+    "fresh_default_precision_bits": 192,
+    "no_C4_rerun_by_default": true,
+    "not_claimed": [
+      "optimal kernel or direction",
+      "sharp C2",
+      "new Lean build"
+    ]
+  }
+}

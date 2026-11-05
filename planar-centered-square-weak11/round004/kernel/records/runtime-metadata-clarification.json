@@ -1,0 +1,12 @@
+{
+  "scope": "Post-run metadata clarification only; no candidate/checker/core/numerical result changed.",
+  "executed_wrapper": "run_full.executed.py",
+  "executed_wrapper_sha256": "931bb719bbc0025c2bc1b09858726b46302c4e6efd3b8349ac3d6fc3b36739a1",
+  "wrapper_final_sha256": "fa93744ab95e2ecac51c7b813e8b5944326b5d7a31d0d4e4f153424a4719642e",
+  "raw_record_sha256": "19389e09a5669967216559b58a4db5f1937c72b93871a57c0863475550123bcb",
+  "normalized_record_sha256": "b08f72432b17d7cff84a2fbe1a66a8a7d4906cc9e3d60462d8817feff80b641c",
+  "field_rename": "observed_worker_pids_with_positive_cpu -> observed_direct_child_pids_with_positive_cpu",
+  "reason": "The 11 observed direct children include multiprocessing administrative children; the pool has 10 configured workers.",
+  "reversibility": true,
+  "reconstructed_historical_copies": "The executed wrapper and raw metadata record are recovered by reversing the single documented metadata rename before this freeze; their digests were not captured at process launch. The actual unchanged checker/core provenance and numerical output are recorded by the full checker itself."
+}

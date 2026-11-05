@@ -1,0 +1,30 @@
+--- original/check_signed_jet.py
++++ portable/independent_verify.py
+@@ -3,11 +3,11 @@
+ """
+ from pathlib import Path
+ from fractions import Fraction as F
+-import json,math,time,os,hashlib
++import json,math,time,os,hashlib,argparse
+ import numpy as np
+-D=Path(__file__).resolve().parent;P=D.parents[1];start=time.time()
+-z=json.loads((P/'computation/round003-mechanism/decomposition.json').read_text())
+-c=json.loads((P/'computation/round004-weight-direction/candidate_05.json').read_text())
++S=Path(__file__).resolve().parent;P=S.parents[1];parser=argparse.ArgumentParser();parser.add_argument('--records-dir',type=Path,default=P/'round003/mechanism/generated');parser.add_argument('--output-dir',type=Path,default=S/'generated');args=parser.parse_args();D=args.output_dir.resolve();D.mkdir(parents=True,exist_ok=True);start=time.time()
++z=json.loads((args.records_dir.resolve()/'decomposition.json').read_text())
++c=json.loads((P/'round004/weights/candidate_05.json').read_text())
+ dx,dm,L,dr=(int(z[k]) for k in ('Dx','Dm','L','Dr'));sx=L//dx;sr=L//dr
+ px,py=(F(c[k]) for k in ('Px','Py'));pxi,pyi=int(px*dx),int(py*dx)
+ pts=[tuple(map(F,p)) for p in c['pts']];pts=[(int(x*dx),int(y*dx),int(m*dm)) for x,y,m in pts]
+@@ -41,8 +41,8 @@
+   w0=X[s+i+1][0]-X[s+i][0];w1=X[s+i+1][1]-X[s+i][1]
+   area0+=w0*h0;area1+=w0*h1+w1*h0
+ area=F(area0,L*L);score=area1*dr/(8*L)
+-expected=json.loads((P/'computation/round004-jet/jet.json').read_text())
++expected=json.loads((S/'jet.json').read_text())
+ assert area==F(expected['area0']) and score==F(expected['score_dA_dt']) and score>0
+ assert min(gaps)==F(expected['minimum_strict_mass_gap']) and min(bounds)==F(expected['positive_radicand_until'])
+-out={'pid':os.getpid(),'seconds':time.time()-start,'independent_method':'infinite periodic mass counts + coordinate compression 2D coverage, no source segment tree','records':len(R),'x_jet_lines':len(X),'y_jet_lines':len(Y),'constant_coordinate_clip_ties':clip_ties,'area0':str(area),'score':str(score),'score_decimal':float(score),'minimum_strict_gap':str(min(gaps)),'positive_radicand_until':str(min(bounds)),'source_jet_exact_match':True,'source_jet_sha256':hashlib.sha256((P/'computation/round004-jet/jet.py').read_bytes()).hexdigest(),'no_finite_area_batch_rerun':True}
+-(D/'signed_jet_checks.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps(out,indent=2))
++out={'pid':os.getpid(),'seconds':time.time()-start,'independent_method':'infinite periodic mass counts + coordinate compression 2D coverage, no source segment tree','records':len(R),'x_jet_lines':len(X),'y_jet_lines':len(Y),'constant_coordinate_clip_ties':clip_ties,'area0':str(area),'score':str(score),'score_decimal':float(score),'minimum_strict_gap':str(min(gaps)),'positive_radicand_until':str(min(bounds)),'source_jet_exact_match':True,'source_jet_sha256':hashlib.sha256((S/'jet.py').read_bytes()).hexdigest(),'no_finite_area_batch_rerun':True}
++(D/'independent_verify.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps(out,indent=2))
