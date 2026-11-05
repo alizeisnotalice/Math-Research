@@ -133,7 +133,7 @@ $s>0$ & 无穷 & $0<\tau<n$
 \end{tabular}
 \end{center}
 特别是角向密度趋零并不妨碍有限的近单位首项。对 $-1<s<0$，这里仅处理原点主导的严格区间；
-临界次数 $\tau=n(1+s)$ 由下节处理，更大次数仍另行研究。
+临界次数 $\tau=n(1+s)$ 由下节处理，超临界的匹配阶与下界见第 \ref{subsec:supercritical-angular} 节。
 
 \subsection{负角幂临界点的对数渐近}\label{subsec:critical-angular}
 当上节负角幂的次数达到 $\tau=n(1-\gamma)$ 时，所需角向矩恰好发散。
@@ -246,7 +246,7 @@ $|A_t|=2^nt(1-2\delta)^n$，并令 $E=K\setminus A_t$。
 \]
 例如 $n=2$、$\gamma=1/2$ 时，$J_{2,1/2}=\sqrt2/3$。
 $n=1$ 没有角向奇性，不能沿用该对数公式；此时已有纯幂权首项为 $t^{1-\gamma}$。
-本定理不涉及 $\tau>n(1-\gamma)$ 的近单位主项。
+超临界次数的匹配阶与系数障碍在下节讨论。
 
 \begin{corollary}[一个非尖锐的相对余项]
 令 $l=\log(1/t)$、$r_\gamma=\gamma/(1+n\gamma)$。则
@@ -262,3 +262,128 @@ $O(C^{n\gamma}/l^\gamma)$。因为 $r_\gamma(1+n\gamma)=\gamma$，两项均为
 $O(l^{-r_\gamma})$。下界所用 $\delta=1/l$ 给出相对误差 $O(\log l/l)$，
 且 $q_t$ 比任意负次对数幂衰减更快。夹逼即得；不声称该余项最优或给出了精确第二项。
 \end{proof}
+
+\subsection{超临界角幂的匹配阶与中间尺度}\label{subsec:supercritical-angular}
+仍取 $n\ge2$、$0<\gamma<1$、$\beta=1-\gamma$，但令
+\[
+\begin{gathered}
+ n\beta<\tau<n,\qquad d=\tau-n\beta>0,\qquad P=d/\gamma,\\
+ q=\tau-n+\gamma,\qquad w=\rho^q|x_1|^{-\gamma}.
+\end{gathered}\tag{AS.1}
+\]
+$q$ 可正可负。这里的主阶不再带对数；精确光晕系数仍需进一步确定。
+
+\begin{lemma}[超临界局部包络]\label{lem:supercritical-local}
+令 $\kappa=\mu_w(K)=2^n(n-\gamma)/(\beta\tau)$，并定义
+\[
+ F(u)=\kappa^{-1}\sup_{\substack{A\subset K\\|A|\le2^nu}}\mu_w(A).
+\]
+对 $0<a<1$，以 $u=|A_a|/2^n$ 参数化，其中
+$A_a=\{|x_1|<a\rho^{q/\gamma}\}\cap K$，则
+\[
+\begin{aligned}
+ u&=a^{n\gamma/(n-\tau)}+\frac{n-1}{P}a(1-a^{d/(n-\tau)}),\\
+ F(u)&=a^{\tau\gamma/(n-\tau)}+
+ \frac{\tau(n-1)}{P(n-\gamma)}a^\beta(1-a^{d/(n-\tau)}).
+\end{aligned}\tag{AS.2}
+\]
+因此
+\[
+ F(u)\sim A_{n,\gamma,\tau}u^\beta,\qquad
+ A_{n,\gamma,\tau}=\frac{\tau}{n-\gamma}
+ \left(\frac{(n-1)\gamma}{d}\right)^\gamma.\tag{AS.3}
+\]
+全部平移方体的集合浓度满足 $\Omega_w(u)=O_{n,\gamma,\tau}(u^\beta)$。
+\end{lemma}
+\begin{proof}
+$\kappa=(n2^n/\tau)M_n(-\gamma)$ 由锥积分给出。$A_a$ 是 $w$ 在 $K$ 内的严格超水平集。重复临界局部包络的切片，分界半径为
+$s_0=a^{\gamma/(n-\tau)}$；外壳的体积和质量积分分别为
+\[
+ 2^n(n-1)a\int_{s_0}^1s^{P-1}\,ds,\qquad
+ \frac{2^n(n-1)}\beta a^\beta\int_{s_0}^1s^{P-1}\,ds.
+\]
+内方体分别贡献 $2^ns_0^n$ 和 $\kappa s_0^\tau$，得到 (AS.2)。
+超水平集的等体积交换给出精确包络。因 $P>0$，内方体项均为高阶；
+消去 $a$ 得 (AS.3)。
+
+对 $Q=x+rK$，若 $r<\rho(x)/2$，径向因子的振幅比至多 $3^{|q|}$，
+由一维幂权的集中界得所需 $O(u^\beta)$。
+若 $r\ge\rho(x)/2$，则 $Q/r\subset3K$，且
+$w\ge\rho^{\tau-n}\ge3^{\tau-n}$ 于 $3K$。
+分母至少为 $2^n3^{\tau-n}$，分子以 $3K$ 内体积 $2^nu$ 的局部包络控制，
+再用 (AS.3) 得结论。所有常数均只依赖固定参数。
+\end{proof}
+
+\begin{proposition}[匹配阶及显式光晕下界]\label{prop:supercritical-order}
+对 (AS.1) 的权，有
+\[
+ C^{\rm out}_{K,w}(1-t)-1\asymp_{n,\gamma,\tau}t^\beta. \tag{AS.4}
+\]
+更精确地，
+\[
+ \liminf_{t\downarrow0}\frac{C^{\rm out}_{K,w}(1-t)-1}{t^\beta}
+ \ge\max\left\{1,\ \sup_{0<\delta<1/3}
+ A_{n,\gamma,\tau}\delta^d(1-\delta)^{n\beta}\right\}. \tag{AS.5}
+\]
+不在此断言左侧极限存在，亦不将局部系数 $A_{n,\gamma,\tau}$ 当作光晕系数。
+\end{proposition}
+\begin{proof}
+集中界与定理 \ref{outer} 先给统一上界 $O(t^\beta)$。
+固定 $0<\delta<1/3$、$0<\eta<1$，在 $\delta K$ 内取最优孔 $H_t$，使
+$|H_t|=2^n(1-\eta)t(1-\delta)^n$，并令 $E=K\setminus H_t$。
+孔中点的中心半径 $1-\rho(x)$ 包含全孔且位于 $K$；缺失比至多 $(1-\eta)t<t$。
+由局部包络与齐次性，孔的质量比为
+\[
+ z_t=\frac{\mu_w(H_t)}\kappa
+ =\delta^\tau F\!\left(\frac{(1-\eta)t(1-\delta)^n}{\delta^n}\right)
+ \sim A_{n,\gamma,\tau}(1-\eta)^\beta\delta^d(1-\delta)^{n\beta}t^\beta.
+\]
+光晕超额至少为 $z_t/(1-z_t)$。先 $t\downarrow0$、再 $\eta\downarrow0$，
+最后对固定 $\delta$ 取上确界，得到第二个下界，也给 (AS.4) 的正下界。
+
+为证常数 $1$ 的下界，固定 $L>1$、$h=t/(1+t)$，令
+\[
+ E_R=([-1,1]\setminus[-h,h])\times(Re+[-L,L]^{n-1}),
+\]
+其中 $e$ 是切向空间的一个坐标单位向量。光晕额外包含
+$[-h,h]\times(Re+[-L+1,L-1]^{n-1})$ 模零：
+每个孔点用半径 $1-|x_1|$ 的中心方体，方体在大矩形内，缺失比严格小于 $t$ 模边界。
+在该固定形状上 $R^{-q}\rho^q\to1$ 一致，故令 $R\to\infty$，得到
+\[
+ C^{\rm out}_{K,w}(1-t)-1\ge
+ \left(\frac{L-1}{L}\right)^{n-1}\frac{h^\beta}{1-h^\beta}.
+\]
+再令 $t\downarrow0$、$L\to\infty$，得到 (AS.5) 的第一个下界。
+\end{proof}
+
+当 $d/\tau<1/3$ 时，上述测试下界在 $\delta=d/\tau$ 达到最大值
+\[
+ B_{n,\gamma,\tau}=A_{n,\gamma,\tau}
+ \left(\frac d\tau\right)^d\left(\frac{n\beta}\tau\right)^{n\beta}. \tag{AS.6}
+\]
+这是该显式下界族的优化，尚非全部输入的最优常数。例如 $n=2$、$\gamma=1/2$、$\tau=11/10$ 时，
+\[
+ B=\frac{2\sqrt5}{3\,11^{1/10}}>1,
+ \qquad B^{10}=\frac{3200000}{649539}>1. \tag{AS.7}
+\]
+故远处的一维机制不能统一决定超临界系数。事实上固定 $n,\gamma$，当
+$d=\tau-n\beta\downarrow0$ 时，这个测试下界满足
+\[
+ B_{n,\gamma,\tau}\sim
+ \frac{n\beta}{n-\gamma}[(n-1)\gamma]^\gamma d^{-\gamma}. \tag{AS.8}
+\]
+这里 $(d/\tau)^d\to1$、$(n\beta/\tau)^{n\beta}\to1$，即得 (AS.8)。
+固定中间尺度的贡献不能由令长类截断 $C\to\infty$ 排除；
+$C^{-\tau}F(tC^n)$ 的 $C^{-d}$ 因子只压低 $r/\rho(x)$ 极大的那一类。
+
+综上，负角幂的近单位行为有三个已证明区间：
+\begin{center}
+\begin{tabular}{c|c|c}
+次数 & 光晕超额 & 已确定的精度\\\hline
+$0<\tau<n\beta$ & $S_\tau t^{\tau/n}$ & 精确首项 (A.7)\\
+$\tau=n\beta$ & $J_{n,\gamma}t^\beta[\log(1/t)]^\gamma$ & 精确首项 (AC.6)\\
+$n\beta<\tau<n$ & $t^\beta$ & 匹配阶 (AS.4)
+\end{tabular}
+\end{center}
+固定不等正指数的共同中心模型在超临界区间同样有 $\asymp\varepsilon^\beta$；
+(AS.5) 的下界系数乘 $a_*^{-\beta}$。固定 $\tau$ 的真实领先系数及其极限存在性仍开放。

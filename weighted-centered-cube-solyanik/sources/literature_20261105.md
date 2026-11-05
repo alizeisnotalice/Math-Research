@@ -62,3 +62,7 @@
 - [Kesen Huang, Sharp Solyanik estimates for discrete and ergodic Hardy–Littlewood maximal operators, arXiv:2610.41156v1（2026-10-30）](https://arxiv.org/html/2610.41156v1)：Theorem1.1及Corollary1.3陈述离散/遍历非中心球的1/n阶，并区分自由作用与一般作用。不是本文连续中心加权模型，也不是共享见证多集合传递。
 
 因此不继续沿用旧文献中“非中心欧氏球指数未知”的历史表述作为当前研究状态；同时不把这些新预印本的陈述当成本文已核验的外部工具。此次搜索并非穷尽，本文临界加权对数首项的新颖性不作首次声明。
+
+
+## 第31轮：矩形模型及权幂检索
+实际检索Solyanik/power weights/singular weight并读取[Hagelstein–Parissis, Weighted Solyanik estimates for the strong maximal function, arXiv:1410.3402v1](https://arxiv.org/html/1410.3402v1)的摘要及§1定义。原始版本页仅列v1；尝试v2返回404，未把不存在的版本列为已读。该文用包含点的任意轴平行矩形，研究strong权类及权特征控制的指数，与本文中心cube具体角幂的精确系数问题不同；不挪用其锐性含义。题录页同时核对发表信息Publ. Mat.62(2018),133–159，DOI10.5565/PUBLMAT6211807。全文证明未作独立复核，也未作为本轮工具引用。搜索不是穷尽，不凭未命中宣布首次。第30轮已核对的2026年9月/10月相关预印本继续按各自模型记录。
