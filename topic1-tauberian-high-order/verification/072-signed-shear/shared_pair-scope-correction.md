@@ -1,0 +1,5 @@
+# R072 shared-pair scope correction
+
+`shared_pair.wl/log` evaluates only the two-dimensional two-arm part of an isolated outgoing pair's target U0, namely the charts whose globally shallowest coordinate lies in the outgoing pair. Its label "U0 area" refers to that plane model, not the full three-dimensional isolated U0. The omitted charts where the globally shallowest source coordinate lies outside the outgoing pair can contribute at the same order to the cross refund. Therefore the displayed single-f weighted integral is **not** the full 3D cross-refund coefficient and cannot establish the complete joint feedback cost.
+
+The sign-reflection check concerns the stated compatible sign patterns; it does not prove the geometry or neglect of off-pair charts. The original Mathematica log is retained unaltered as a historical execution record. This correction is based on the independent geometry audit's finding; the full 3D comparison must use its complete isolated target set and reflection proof.

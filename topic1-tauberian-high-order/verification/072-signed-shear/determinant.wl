@@ -1,0 +1,11 @@
+ClearAll[n,e,u,kap];
+Print["Wolfram ",$Version,"; PID ",$ProcessID];
+Print["d+=(1-e)^(n-1)(1+(n-1)e); d-=(1+e)^(n-1)(1-(n-1)e)."];
+dp=(1-e)^(n-1)(1+(n-1)e);dm=(1+e)^(n-1)(1-(n-1)e);
+Print["dminus-dplus through e3: ",Factor[Coefficient[Normal[Series[dm-dp,{e,0,3}]],e,3]]];
+Print["expected -4 Binomial[n,3] residual: ",FullSimplify[Coefficient[Normal[Series[dm-dp,{e,0,3}]],e,3]+4Binomial[n,3],Element[n,Integers]&&n>=2]];
+Do[g=1/(1+2u);a=(2u)^nn;m=a g^nn;ep=kap u^3;
+ plus=(dp/.{n->nn,e->ep});minus=(dm/.{n->nn,e->ep});
+ gain=FullSimplify[Limit[(minus/(minus-m)-plus/(plus-m))/(a(2u)^9),u->0,Direction->"FromAbove"]];
+ Print["n=",nn," fixed-hole normalized difference: ",gain,"; kap=8n/3 value: ",FullSimplify[gain/.kap->8nn/3]],{nn,{2,3,4}}];
+Print["This scalar fixed-hole determinant effect alone is not a true halo gain."];

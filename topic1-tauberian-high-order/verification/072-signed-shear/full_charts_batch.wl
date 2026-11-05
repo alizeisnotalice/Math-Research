@@ -1,0 +1,16 @@
+Get[FileNameJoin[{DirectoryName[$InputFileName],"full_charts_common.wl"}]];
+Print["Wolfram ",$Version,"; master PID ",$ProcessID];
+Print["Domain e>0, w>4e, f>8e; one compatible orientation, linear fs, full three global-min charts."];
+worker[{chart_,j_}]:=Module[{t0=AbsoluteTime[],cpu=TimeUsed[],val},val=Factor[chartIntegrand[chart,j]];<|"chart"->chart,"term"->j,"value"->val,"kernel_id"->$KernelID,"pid"->$ProcessID,"wall_seconds"->N[AbsoluteTime[]-t0],"cpu_seconds"->N[TimeUsed[]-cpu],"memory_wl_peak_bytes"->MaxMemoryUsed[]|>];
+jobs=Flatten[Table[{chart,j},{chart,{1,2,3}},{j,1,3}],1];
+LaunchKernels[Length[jobs]];Print["actual launched: ",Length[Kernels[]]];
+DistributeDefinitions[term,chartIntegrand,worker,e,w,f,s,y,z,x];
+rows=ParallelMap[worker,jobs,Method->"CoarsestGrained"];
+Print["actual IDs: ",Sort@DeleteDuplicates@Lookup[rows,"kernel_id"]];Print["actual PIDs: ",Sort@DeleteDuplicates@Lookup[rows,"pid"]];
+Print["total child CPU: ",Total@Lookup[rows,"cpu_seconds"],"; max WL memory: ",Max@Lookup[rows,"memory_wl_peak_bytes"]];
+Do[Print["chart ",ch," exact: ",Factor[Total@Lookup[Select[rows,#["chart"]==ch&],"value"]]],{ch,{1,2,3}}];
+total=Factor[Total@Lookup[rows,"value"]];Print["full compatible single-f integral: ",total];
+Print["delta=e/f leading: ",Series[total/.f->e/d,{d,0,2}]];
+Export[FileNameJoin[{DirectoryName[$InputFileName],"full_charts_metadata.json"}],Map[Join[KeyDrop[#,"value"],<|"value"->ToString[#["value"],InputForm]|>]&,rows],"RawJSON"];
+Put[<|"rows"->rows,"total"->total|>,FileNameJoin[{DirectoryName[$InputFileName],"full_charts_results.wl"}]];
+CloseKernels[];Print["complete"];

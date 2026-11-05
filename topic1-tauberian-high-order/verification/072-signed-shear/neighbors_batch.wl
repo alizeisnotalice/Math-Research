@@ -1,0 +1,14 @@
+Get[FileNameJoin[{DirectoryName[$InputFileName],"neighbors_common.wl"}]];
+Print["Wolfram ",$Version,"; master PID ",$ProcessID];
+Print["For each n and sign, all nonzero {-1,0,1}^n split by support; 0<e<1/[4(n-1)]."];
+jobs=Flatten[Table[{n,sign,j},{n,{2,3,4}},{sign,{-1,1}},{j,1,n}],2];
+LaunchKernels[15];Print["jobs ",Length[jobs]," launched kernels ",Length[Kernels[]]];
+DistributeDefinitions[onegroup,e];
+rows=ParallelMap[onegroup@@#&,jobs,Method->"FinestGrained"];
+Print["actual kernel IDs: ",Sort@DeleteDuplicates@Lookup[rows,"kernel_id"]];
+Print["actual PIDs: ",Sort@DeleteDuplicates@Lookup[rows,"pid"]];
+Print["number checked: ",Total@Lookup[rows,"count"],"; mismatches: ",Total@Lookup[rows,"mismatches"]];
+Print["CPU seconds sum: ",Total@Lookup[rows,"cpu_seconds"],"; peak kernel WL memory bytes: ",Max@Lookup[rows,"max_memory_bytes"]];
+Print["support counts {n,sign,j,present}: ",({#["n"],#["sign"],#["support"],#["predicted_count"]}& /@rows)];
+Export[FileNameJoin[{DirectoryName[$InputFileName],"neighbors_batch.json"}],rows,"RawJSON"];
+CloseKernels[];Print["complete"];

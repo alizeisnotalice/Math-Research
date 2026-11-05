@@ -156,6 +156,7 @@ latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 | 69 | 仅常容量截帽模型的全阶有限递归和黄金比空间log阶；不代替物理B或Cn |
 | 70 | 二维完整物理容量canonical宏观族的任意有限阶递归/有限恢复；相对曲率增益16/729·av¹⁰，非Cn绝对系数 |
 | 71 | 真实全输入P8+O(av⁹)；固定whole-normal管/一次Z/移动最大点稳定性，仍未识别九阶系数 |
+| 72 | 真实正负剪切比较：负号每固定n≥3新增4·binom(n,3)n³/27·av⁹；保留全图cross/clip，非C_n绝对系数 |
 | 73 | 二维真实有限宏微族绝对九阶下界−23295344/2657205，含全部host保护与o9误差；非C₂九阶系数 |
 | 74 | 三维edge管全点局部容量常数一；同N9 inside领先2与O10余项，非总九阶系数 |
 
