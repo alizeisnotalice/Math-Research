@@ -1,0 +1,14 @@
+ClearAll[alpha,beta,d];
+Print["Wolfram ",$Version,"; PID ",$ProcessID];
+Print["Domain alpha>0, beta>alpha; a finite error-exponent ledger, not an asymptotic proof."];
+base={8+alpha,8+beta-alpha,9-alpha-3beta,10-5alpha,11-2alpha,17/2-3alpha,9-beta,9-alpha};
+improved=ReplacePart[base,6->19/2-3alpha];
+Print["proposed exponents alpha=1/8 beta=1/4: ",base/.{alpha->1/8,beta->1/4}];
+Print["proposed minimum: ",Min@@(base/.{alpha->1/8,beta->1/4})];
+Print["parameter guards alpha>0,beta>alpha,1-alpha>0,1-2alpha>0: ",{1/8>0,1/4>1/8,1-1/8>0,1-2/8>0}];
+Print["base no delta>1/8: ",Reduce[alpha>0&&beta>alpha&&And@@Thread[base>=8+d]&&d>1/8,{alpha,beta,d},Reals]];
+Print["base optimizer: ",Maximize[{d,alpha>=0&&beta>=alpha&&And@@Thread[base>=8+d]},{alpha,beta,d},Reals]];
+Print["improved optimizer: ",Maximize[{d,alpha>=0&&beta>=alpha&&And@@Thread[improved>=8+d]},{alpha,beta,d},Reals]];
+Print["improved no delta>1/8: ",Reduce[alpha>0&&beta>alpha&&And@@Thread[improved>=8+d]&&d>1/8,{alpha,beta,d},Reals]];
+Print["improved exponents at 1/8,1/4: ",improved/.{alpha->1/8,beta->1/4}];
+Print["complete"];

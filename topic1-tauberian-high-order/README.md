@@ -64,6 +64,8 @@ m≥2时在阈值(1−1/m)^m及以下发散。令ε=1−λ、σ_m=m[1−(1−ε)
 
 第63轮已从原稿和当前实际源码重新展开基础、六阶、七/八阶及宏微下界，并在同一次N8原对象上核合依赖，未发现必要数学补丁。[主定理/证据清单](evidence/README.md)、[逐节点依赖](evidence/063-dependencies.md)、[阶数/机制/未控制误差](evidence/order-mechanism.md)给出具体推导位置。旧AI审核措辞没有作为证明前提；原稿也没有被虚构为使用了BIP强覆盖跳步。完整记录见`rounds/063.md`。
 
+第62轮已将同N8的完整补集量化为保留正常误差E_N的O(v^(65/8)S)局部价格；增长测试窗的参数域和全部常数依赖均显式证明，第63轮实际供货已逐项核合。它没有单独给Cn新余项率或新N9供货，详`rounds/062.md`。
+
 ## 正文与证明材料
 
 - `paper/tauberian.pdf`：第58轮实际XeLaTeX编译、15-worker全67页渲染和独审验收的精确八阶论文；可编辑项目为`main.tex`、`sections/global.tex`、`sections/sharp.tex`、`sections/eighth.tex`及`sources.bib`。
@@ -129,6 +131,7 @@ latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 | 59 | 同N8独立AMGM形状差与前层重复量给三盒宽RMS v^(7/2)，正常宽误差O(v^(19/2)) |
 | 60 | 实际第三反馈给一般维正九阶比较，微孔新增av^(n+6)量；非真实Cn绝对九阶系数 |
 | 61 | 显式Young常数和固定实际矩形给全部高支撑gross O(v^(43/5)S)，非整体余项率 |
+| 62 | 同N8增长测试窗的完整补集O(v^(65/8)S)，保留正常误差；实际G/C/B/L/Q已核合 |
 | 63 | 原稿/当前源码的基础、六阶与八阶独立重建；51节点依赖、版本/机制证据清单 |
 | 66 | 任意有限阶条件传递、全m同一余项与显式碰撞递推；基线收敛递归，不证明真实全阶几何 |
 
