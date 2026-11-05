@@ -1,0 +1,12 @@
+ClearAll[q,kappa];
+Print["Wolfram ",$Version,"; PID ",$ProcessID];
+beta[q_]:=q(2q-1)/(q-1);
+Print["q3 balance solve: ",Solve[8+kappa==19/2-3kappa/2,kappa]];
+Print["balanced exponents: ",{8+3/5,19/2-(3/2)(3/5)}];
+expr=beta[q]+2-(3/5)q/(q-1);
+Print["q>=4 vs 43/5 factor: ",Factor[expr-43/5]];
+Print["q>=4 below 43/5 violation: ",Reduce[q>=4&&expr<43/5,q,Reals]];
+Print["q>=4 below 158/15 violation: ",Reduce[q>=4&&expr<158/15,q,Reals]];
+Print["q=4 value and derivative: ",{expr/.q->4,Factor[D[expr,q]]}];
+Print["eta exponent margin: ",2-3/5];
+Print["q3 scalar Young certificate already in R44: q=3 beta=15/2 and lambda power -3/2."];
