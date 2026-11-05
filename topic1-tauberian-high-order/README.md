@@ -119,6 +119,7 @@ latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 | 50 | 同一八阶竞争族上全部q≥3实际gross为o(v⁸S)；双方向的三近面反馈仍须保留 |
 | 51 | 实际薄轴帽只扣normal外raw，全局最浅面禁层误差O(av⁹S)，保留三近面 |
 | 52 | 实际反单调帽算子全族L1常数O(v)，第一次退款/第二次源成本替换误差O(v⁹S) |
+| 53 | 实际normal Y2的双向不同帽与三近面八阶积分、显式模型上价；非单独Cn系数 |
 | 54 | 真实二维宏/微两尺度有限孔把八阶下界系数提高至17638/6561；未宣最优 |
 | 55 | n≥3整源共同补集结算移除旧core八阶常数，保留normal模型价及槽负价 |
 
