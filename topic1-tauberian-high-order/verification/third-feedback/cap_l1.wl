@@ -1,0 +1,10 @@
+ClearAll[g,h,d,c,q,t];
+Print["Wolfram ",$Version,"; PID ",$ProcessID];
+Print["Domain 0<=g<=h<=d, c>=0; separate c<d/c>=d."];
+res=h-g-(Min[h,c]-Min[g,c]);
+Print["residual sign violation: ",Reduce[0<=g<=h<=d&&c>=0&&res<0,{g,h,d,c},Reals]];
+Print["active-strip upper violation: ",Reduce[0<=g<=h<=d&&0<=c<d&&res>h-g,{g,h,d,c},Reals]];
+Print["outside-strip zero violation: ",Reduce[0<=g<=h<=d&&c>=d&&res!=0,{g,h,d,c},Reals]];
+Print["triangular strip length min(d,1-t) <= d violation: ",Reduce[0<=d<=1&&0<=t<=1&&(Min[d,1-t]<0||Min[d,1-t]>d),{d,t},Reals]];
+Print["second strip q in [0,d] length: ",Integrate[1,{q,0,d},Assumptions->0<=d<=1]];
+Print["Fubini total coefficient: ",1+1];

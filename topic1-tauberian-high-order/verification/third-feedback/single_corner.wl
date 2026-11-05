@@ -1,0 +1,15 @@
+ClearAll[n,u,g,kap,theta];
+Print["Wolfram: ",$Version,"; PID: ",$ProcessID];
+Print["Domain integer n>=2, u>0,g>0,kap>0, 0<=theta<=1; scalar consequences conditional on external geometric free-volume lower bound."];
+clow=2^(-19-12(n-2));w=u g;e=kap u^3;f=4n u^2 g;a=(2u)^n;delta=e/f;
+free=clow(2w)^(n-2)e^2 delta^4;
+expected=clow kap^6 g^(n-6)/(1024n^4);
+Print["freevol/(a u8) residual: ",FullSimplify[free/(a u^8)-expected,Assumptions->Element[n,Integers]&&n>=2&&u>0&&g>0&&kap>0]];
+L=theta clow kap^6/(1024n^5 g^4);
+Print["lambda budget fraction residual: ",FullSimplify[n L g^(n-2)-theta expected,Assumptions->n>=2&&g>0]];
+gain=2n g^(n-1)L/2^9;
+target=theta clow kap^6 g^(n-5)/(262144n^4);
+Print["gain formula residual: ",FullSimplify[gain-target,Assumptions->n>=2&&g>0]];
+Print["optimal kap limiting residual: ",FullSimplify[(gain/.{kap->8n/3,g->1})-theta clow n^2/729,Assumptions->Element[n,Integers]&&n>=2]];
+Print["theta=1/2 limiting epsilon: ",FullSimplify[(gain/.{kap->8n/3,g->1,theta->1/2})]];
+Print["complete"];
