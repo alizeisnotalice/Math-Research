@@ -175,3 +175,13 @@ U_n(\alpha_n)=1+\frac{16n}{\log n}(1+o(1)).
 这只是对原文显式上界的数值代入，不是对真实 \(C_S\) 或 bounded-core 问题的下界/反例。
 
 **原始位置。** [Hagelstein--Parissis arXiv:1310.3771](https://arxiv.org/abs/1310.3771)，第 2 节 Lemma 1、Lemma 2、Theorem 2 及其紧随的证明。为避免网页数学渲染遗漏公式，本轮直接下载并读取作者上传的 arXiv 源码 `HagelsteinParissis2013Revised.tex.tex`；上述三个公式分别是原文的 (2)、Lemma 2 和 Theorem 2。
+
+
+## 第13轮：条件Bernstein鞅的相对中偏差
+
+直接核验Fan, Grama, Liu, *Cramér large deviation expansions for martingales under Bernstein’s condition*，arXiv:1210.2198v3（2014-09-14，26页），期刊SPA123(2013),3919–3942，DOI10.1016/j.spa.2013.06.010。
+[原文第2节](https://arxiv.org/html/1210.2198v3) Theorems2.1—2.2、式(14)及第5—6节证明(54)—(56)已读取。
+A1要求每个k≥3的条件有符号幂矩绝对值由(k!/2)epsilon^(k−2)乘条件方差控制；条件绝对矩的同界是更强的充分条件。A2要求单位归一化鞅的可预测二次变差偏差≤delta²几乎处处，而非仅无条件方差正确。
+定理给正态尾比率的双边控制，对数误差至多常数乘x³epsilon+x²delta²+(1+x)(epsilon|log epsilon|+delta)。固定绝对alpha0的范围x≤alpha0/epsilon、delta≤alpha0内合法。
+第13轮严格建立epsilon=32/(sigma sqrt n)、delta²=O(n^-1/4(log n)^1/4)，故x≤2sqrt(log n)内相对误差O(n^-1/8(log n)^5/8)。须把delta取为A2右端的平方根。原文未数值化绝对常数，不能生成有限维进入渐近区间的证书。
+版本题录另见[arXiv版本记录](https://arxiv.org/abs/1210.2198)。查阅日期2026-11-06；不以该概率论来源主张本项目端点渐近的公开优先权。

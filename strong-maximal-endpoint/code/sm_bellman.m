@@ -9,7 +9,7 @@ B=fzero(@(b)log(b)-1-1/b,[3 4]); mu=log(B); sigma=sqrt(mu);
 q=0:step:ceil(maxN*mu+12*sqrt(maxN));
 failure=tanh(q/2); % Exact one-step optimum: r=exp(-q).
 decay=exp(-step); a=-expm1(-step); b=1-a/step;
-rows=cell(0,1); snapshots=[2 4 8 16 32 64 128 256 512];
+rows=cell(0,1); snapshots=[2 4 8 16 32 64 128 256 512 1024 2048];
 for n=2:maxN
     forcing=b*failure(2:end)+(a-b)*failure(1:end-1);
     conv=[0 filter(1,[1 -decay],forcing)];
