@@ -4,7 +4,7 @@
 \(\Phi_n(t)=t(1+\log^+t)^{n-1}\)、自然对数及阈值 1。
 本项目研究最优比值 \(C_n=\sup_f |\{M_Sf>1\}|/\int\Phi_n(f)\)。
 
-## 当前状态（2026-11-06，第 19 轮）
+## 当前状态（2026-11-06，第 20 轮）
 
 - 已复核：指数率 \(C_n^{1/n}\to B\)，以及 \(\limsup C_n/B^n\le\sqrt B\) 的证明路线；B 满足 \(\log B=1+B^{-1}\)。详细推导见 rounds/r001/report.md。
 - 已实现：等参数单层见证的 Gamma–二项混合、数值优化和 Wolfram 高精度交叉复算。
@@ -27,7 +27,8 @@
 - **第17轮实际下界族改善**：在固定斜率1/n的指数软轮廓中，指定比例偏移使真实见证评分的对数提升(mu−1)log n/8+o(log n)；已结算严格接收与I_n分母。此为家族内改善，未缩小一般C_n上界。见 rounds/r017/report.md。
 - **第18轮绝对下界项**：固定mu指数斜坡的软根已精确到o(1)，从而得到该实际下界族自身的乘法渐近等价；结合第17轮偏移，一般log C_n≥nmu−d_n−(mu+3)log n/24+o(log n)。这仍不是一般C_n的乘法等价。见 rounds/r018/report.md。
 - **第19轮窄平台改善**：宽w=log n/2+loglog n的高度1平台使实际分母因子趋于1，只将软根降低1/2+o(1)；一般log C_n≥nmu−d_n+(9−mu)log n/24+o(log n)，对数级系数转为正。见 rounds/r019/report.md。
-- 主攻：有限时域Gaussian离散屏障，争取一般上侧对数幂余项。
+- **第20轮一般上界**：有限时域Gaussian离散屏障给log C_n≤nmu−d_n+O((log n)²)。一般上下界对数差距现为O((log n)²)，真正log n系数及一般乘法等价仍未闭合。完整证明见 rounds/r020/report.md。
+- 主攻：以状态相关曲率补偿锐化一般上界，并比较完整平台软段的实际下界。
 - 一般前三项现已闭合；乘法渐近等价、后续锐余项和极值结构仍待研究。
 
 ## 复现
@@ -83,3 +84,5 @@ Wolfram 15：`wolframscript -file code/crosscheck.wl`。
 第18轮：固定比例斜坡的乘法渐近及一般显式下界见 rounds/r018/report.md；MATLAB `sm_edgeworth_ramp_checks`，Wolfram `code/edgeworth_ramp_checks.wl`。
 
 第19轮：窄平台实际下界见 rounds/r019/report.md；MATLAB `sm_plateau_checks`，Wolfram `code/plateau_checks.wl`。
+
+第20轮：一般上界的对数平方余项见 rounds/r020/report.md；MATLAB `sm_gaussian_barrier_checks`，Wolfram `code/gaussian_barrier_checks.wl`。
