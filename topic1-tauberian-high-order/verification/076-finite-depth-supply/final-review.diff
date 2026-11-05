@@ -1,0 +1,32 @@
+--- frozen70b378
++++ finite_depth_supply_final.md
+@@ -169,7 +169,7 @@
+  L_h>\max\{L_{h-1}+1,C(n,D,H_h)\},\quad
+  N_{i,h}=K'\cap Q(x_i,L_hvr_i).
+ \]
+-最终小 v 时中心邻域两两不交，所有未删除源也在自身深目标内。中心邻域之外每点至少双重覆盖，故 \(mathcal D_h\ge f_h\)。边界改源的额外缺量
++最终小 v 时中心邻域两两不交，所有未删除源也在自身深目标内。中心邻域之外每点至少双重覆盖，故 \(\mathcal D_h\ge f_h\)。边界改源的额外缺量
+ \[
+  |N_{i,h-1}|-|P_i|\le |K\cap Q_i|-|P_i|\le as_ir_i^n
+ \]
+@@ -223,6 +223,20 @@
+ 全局最浅轴 q 不在 pair 的三近面图保留。
+ 
+ 以下数值取 \(\ell\ge8\)。固定正常算子反单调，Tonelli 的 L1 范数≤\(C_Nv\)，pair 外部分≤\(C_Nv^3\)。本层正预算与 (13) 给 \(\rho_h=\|D_h^0-B_{\mathcal N_h}(D_h^0)\|_1=O_N(av^7S)\)，两次迭代的原误差分别为 \(O_N(av^7S)\)、\(O_N(av^8S)\)。每次迭代固定几何；不将正常模型价冒充减全 J 的价。
++
++**共同侵蚀必须在整个正名义 base 上计费。** 对本层任意先固定的 bounded joint packet \(A\supset\mathcal N_h\)，记 \(\Gamma_i(A;\sigma,q)=\{y:h^0_A(y)>0\}\)，并在 normal/full 层使用同一个非负 \(e_i(T)\)。原实际两分支必要性给
++\[
++ e_i(T)=C_N[T^4v^8R_i+\Delta_i+
++          \max_p(g_{i\to p}+\eta_p/\beta_p)],\qquad
++ \sum_iR_i^{n-1}e_i(T)\le C_N(1+T^4)v^8S,
++\]
++其中 \(\eta_p=|D_p^0\setminus Y^{old}_{p,h}|\)、\(\beta_p\asymp(vR_p)^{n-1}\)。当最浅轴属于目标 pair 时，正名义 base 的测度至多 \(C_NTv^{n+1}R_i^{n-1}\)；不在 pair 时至多 \(C_NT^2v^{n+3}R_i^{n-1}\)。有限度与 chart 数固定，故先固定 \(T\ge1\)、最终 \(Tv^2\le c_0\) 时有真正的积分预算
++\[
++ \boxed{\sum_{i,\sigma,q}\int_{\Gamma_i(A;\sigma,q)} e_i(T)\,dy
++                 \le C_NT^5av^9S.}
++ \tag{13a}
++\]
++它由上述 base 测度乘 \(\sum R_i^{n-1}e_i\) 直接得到，先于任何真实 fibre 上截断。由于 \(\Gamma_i(\mathcal N_h)\subset\Gamma_i(A)\)，normal 与 full 的侵蚀损失**各自**不超过(13a)，即使 full 层已饱和而其 clipped loss 为零。不得由 full clipped loss 上界推 normal loss；这里只使用正名义 base 上的共同积分。因此 §6(23) 所需的 normal 侵蚀物理量 \(O_{N,T}(av^9S)\) 已有独立来源。该数值使用本层O8 raw，适用 \(h\ge8\)，不对早层作同阶声明。
+ 
+ ### L：全尺度清单、根传输及实际槽
+ 
