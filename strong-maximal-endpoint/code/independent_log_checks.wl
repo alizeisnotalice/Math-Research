@@ -1,0 +1,13 @@
+Clear[c,l,m,a,n,x];mean[c_]:=1+c/(1+Exp[c]);variance[c_]:=1+c^2 Exp[c]/(1+Exp[c])^2;
+H[c_,l_]:=m-mean[c]+l(variance[c]-m)/2;rules=Table[Exp[j m]->(m-1)^(-j),{j,-6,6}];
+first=FullSimplify[(Coefficient[Normal@Series[D[H[c,l],c]/.c->m+a l,{l,0,1}],l,1])/.rules,Assumptions->m>1];
+aRule=First@Solve[first==0,a];quadratic=FullSimplify[Coefficient[Normal@Series[H[m+a l,l],{l,0,2}],l,2]/.aRule/.rules,Assumptions->m>1];
+gammaIdentity=FullSimplify[D[x^n/Gamma[n+1],x]-x^(n-1)/Gamma[n],Assumptions->{n>0,x>0}];
+mu=1+ProductLog[Exp[-1]];sigma=Sqrt[mu];
+base=NIntegrate[GammaRegularized[2,0,-1-gg]Exp[-(gg-mu)^2/(2mu)]/Sqrt[2Pi mu],{gg,-Infinity,-1},WorkingPrecision->80,AccuracyGoal->50,PrecisionGoal->50];
+baseIdentity=FullSimplify[Tanh[qq/2]-(1-Exp[-qq](1+qq))-Exp[-qq](1+qq-2/(1+Exp[-qq])),Assumptions->Element[qq,Reals]];
+baseDerivative=FullSimplify[1-2uu/(1+uu)^2-1/2-(uu-1)^2/(2(1+uu)^2)];
+result=<|"wolfram_version"->$Version,"optimal_shift_linear_coefficient"->ToString[a/.aRule,InputForm],"minimum_cost_quadratic_coefficient"->ToString[quadratic,InputForm],"Gamma_weighted_low_identity_residual"->ToString[gammaIdentity,InputForm],"Gamma_base_identity_residual"->ToString[baseIdentity,InputForm],"Gamma_base_derivative_square_residual"->ToString[baseDerivative,InputForm],"Gamma_base_Gaussian_splice_at_minus_one"->ToString[N[base,40],InputForm],"splice_precision"->80|>;
+root=DirectoryName[DirectoryName[$InputFileName]];
+Export[FileNameJoin[{root,"rounds","r022","symbolic_checks.json"}],result,"RawJSON"];
+Print[ExportString[result,"RawJSON"]];
