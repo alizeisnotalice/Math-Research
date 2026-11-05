@@ -1,0 +1,2728 @@
+{
+  "schema": "r063-semantic-dependencies-v2",
+  "source_snapshot": {
+    "repo_head": "205596954c5a3265532b8dfbda0354e20561dd68",
+    "repository_sources_sha256": {
+      "paper/main.tex": "c04e39835f9c5b2bb3ae5081aea92a64807a8223a419bd14cb28bc5651275b4d",
+      "paper/sections/global.tex": "7b6154f74b56e4cb8ea133c99d4c240ceec526004930c510bc29ebcb25b5f10a",
+      "paper/sections/sharp.tex": "8eae7fa41e8bc1f9883d51330b01183001295ca0b623da12205c807c6bbe7c39",
+      "paper/sections/eighth.tex": "175b314a9f076c39583a8926921cdd8f99921b3579f8c2c9860df4221006f151"
+    },
+    "foundation_record": {
+      "record": "reviews/063-foundation-reconstruction.md",
+      "sha256": "702a70cdd735883d5adbe3d22da5acbe950e665c3023457a76416dcc5dd4f572"
+    },
+    "sixth_rebuild_record": {
+      "record": "reviews/063-sixth-reconstruction.md",
+      "sha256": "3a5d38fe5a00392af687c09ad59fcf072c552cbe418504af12fc38dc93e3cb2c"
+    },
+    "syntax_inventory_sha256": {
+      "theorem_nodes.json": "3d4ffafd03a54831e1207ea54d6f8258322b8e3f1457f4d75289f371770a3330",
+      "syntax_edges.json": "3ebce110277bd178eafb5e86ac251fa5b9cc35c0905b3976c8c3b3280aba76aa",
+      "paper_source_hashes.json": "d65171051eded5806ab95141029c2e449580af57516df4e3a60080609d9dfdc2"
+    },
+    "eighth_reconstruction_record": {
+      "record": "reviews/063-eighth-reconstruction.md",
+      "sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "lines": 638,
+      "bytes": 37060
+    },
+    "eighth_dependency_graph": {
+      "record": "scratch/r063-eighth-rebuild/dependency_graph.mmd",
+      "sha256": "f338e661a21efba3701577496063405cb1ccfb6ecfb044bb711ed65d2a48362f"
+    }
+  },
+  "method_note": "Final semantic field index for the frozen R063 paper snapshot. Fields are transcribed/mapped from the foundation, sixth, and eighth reconstruction records; this inventory agent does not independently adjudicate mathematics. TeX refs/citations remain syntax-only and are never promoted to logical edges. The eighth proof is tied to the current fixed N8 construction; it does not assert N9 or arbitrary order.",
+  "counts": {
+    "nodes": 51,
+    "explicitly_mapped": 51,
+    "partial": 0,
+    "pending": 0
+  },
+  "nodes": [
+    {
+      "id": "paper/main.tex:127:theorem",
+      "type": "theorem",
+      "title": "真实八阶渐近",
+      "labels": [
+        "thm:endpoint",
+        "eq:envelopes",
+        "eq:sharp",
+        "eq:coefficients",
+        "eq:eighth-remainder",
+        "eq:sharp-planar"
+      ],
+      "source": {
+        "path": "paper/main.tex",
+        "start_line": 127,
+        "end_line": 185
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eq:envelopes"
+          ],
+          "audit_location": "reviews/063-foundation-reconstruction.md §1 M4 and §5 C1; source paper/main.tex:127-136",
+          "scope": "envelope lower/upper and baseline context"
+        },
+        {
+          "labels": [
+            "eq:sharp",
+            "eq:eighth-remainder",
+            "eq:sharp-planar"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §§4-9 and node table §4; source paper/main.tex:137-185; linked theorem paper/sections/eighth.tex:9-25",
+          "scope": "fixed-n exact eighth upper and finite macro/micro lower, actual denominator, planar value"
+        },
+        {
+          "labels": [
+            "eq:coefficients"
+          ],
+          "audit_location": "foundation proof_record.md §5 C2-C3 + eighth reconstruction §9; source paper/main.tex:151-164",
+          "scope": "baseline coefficient expansion combined with actual correction through order eight, including low-dimensional collisions"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Linear center-cube Tauberian constant for Lebesgue measurable inputs; for expansion fixed integer n>=2 and t↓0, actual all-radius supremum. Envelope statement also covers n>=1 and stated t range.",
+        "conclusion": "L_n(t)<=C_n(1-t)<=U_n(t); exact fixed-n expansion through av^8 with coefficient Jhat_n; equivalent coefficient formula b_{n,j}, second-scale limit, and planar specialization.",
+        "domain_and_parameters": "a=2^n t=v^n, v=2t^(1/n), A_v=(1+v)^n; fixed n as t↓0. Main envelope lower domain 0<t<2^-n and upper domain 0<t<1.",
+        "quantifier_order": "For each fixed n, establish all-input upper via E0-E13, matching finite lower via L0-L4, then let t down to zero; apply C3 to the scalar theorem only after it is established.",
+        "error_term_and_uniformity": "o_n(av^8)=o_n(t^(1+8/n)) for fixed n; lower construction has O_n(av^9). No uniform-in-n assertion.",
+        "actual_object_or_model": "Actual C_n over finite positive-measure Lebesgue inputs and every positive radius; each small t has a bounded finite lower input. Baseline L_n and coefficients are analytic/scalar bookkeeping, not the geometric object.",
+        "logical_dependencies": "Foundation M4/M6 and C1/C2; sixth S9-S11 supplies the leading six-order price/ledger; eighth E0-E13 supplies the true upper; L0-L4 supplies the matching finite lower; C3 then transfers the scalar result to multiplicity statements.",
+        "proof_status": "Mapped to the three frozen reconstruction records; this inventory records their stated proof coverage and does not issue a new mathematical verdict.",
+        "assigned_reviewer": "root / mathematical reviewers to use the linked records for any semantic correction.",
+        "reconstruction_record_location": "reviews/063-foundation-reconstruction.md §1 M4 and §5 C1; source paper/main.tex:127-136; reviews/063-eighth-reconstruction.md §§4-9 and node table §4; source paper/main.tex:137-185; linked theorem paper/sections/eighth.tex:9-25; foundation proof_record.md §5 C2-C3 + eighth reconstruction §9; source paper/main.tex:151-164"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending: old inventory had only envelope subclaim mapped",
+      "reconstruction_nodes": [
+        "M4",
+        "M6",
+        "C1",
+        "C2",
+        "C3",
+        "S9",
+        "S10",
+        "S11",
+        "E0",
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6",
+        "E7",
+        "E8",
+        "E9",
+        "E10",
+        "E11",
+        "E12",
+        "E13",
+        "L0",
+        "L1",
+        "L2",
+        "L3",
+        "L4"
+      ],
+      "audit_locations": [
+        "reviews/063-foundation-reconstruction.md §1 M4/M6, §5 C1-C3",
+        "reviews/063-sixth-reconstruction.md §1 S9-S11 and §13-14",
+        "reviews/063-eighth-reconstruction.md §4 node table E0-E13/L0-L4; §§5-10",
+        "paper/main.tex:127-185; paper/sections/eighth.tex:9-25"
+      ]
+    },
+    {
+      "id": "paper/main.tex:198:theorem",
+      "type": "theorem",
+      "title": "精确约化与临界发散",
+      "labels": [
+        "thm:reduction",
+        "eq:reduction"
+      ],
+      "source": {
+        "path": "paper/main.tex",
+        "start_line": 198,
+        "end_line": 205
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "M5"
+          ],
+          "audit": "foundation §1 M5; source paper/main.tex:198-205"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "m,n>=1 and supercritical lambda; for m>=2 subcritical/critical 0<lambda<=lambda*_m",
+        "conclusion": "exact multilinear-to-linear reduction above threshold; infinite constant through threshold",
+        "domain_and_parameters": "m,n>=1 and supercritical lambda; for m>=2 subcritical/critical 0<lambda<=lambda*_m; exact declaration: paper/main.tex:198",
+        "quantifier_order": "Fix m,n and lambda. For the reverse inclusion, fix finite positive-measure F and a compact K in its linear halo; choose a finite subcover, partition that finite family, then take inner regularity/supremum.",
+        "error_term_and_uniformity": "exact identity / infinity claim",
+        "actual_object_or_model": "Finite positive-measure set F, compact K, finite selected cube family, finite simultaneous partition; the outside complement is assigned to one partition class.",
+        "logical_dependencies": "Foundation M5 explicitly uses M1 fixed-radius continuity and M2 finite simultaneous partition; no infinite-family partition is used.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §1 M5; source paper/main.tex:198-205"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "M5"
+      ],
+      "audit_locations": [
+        "foundation §1 M5; source paper/main.tex:198-205"
+      ]
+    },
+    {
+      "id": "paper/main.tex:228:lemma",
+      "type": "lemma",
+      "title": "乘积的总缺陷",
+      "labels": [
+        "lem:defect"
+      ],
+      "source": {
+        "path": "paper/main.tex",
+        "start_line": 228,
+        "end_line": 234
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "M2"
+          ],
+          "audit": "foundation proof_record §1 M2; source paper/main.tex:228-234"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "finite m, 0<=a_i<=1, product>lambda",
+        "conclusion": "sum(1-a_i)<s_m(lambda); s_m<1 iff lambda>lambda*_m",
+        "domain_and_parameters": "finite m, 0<=a_i<=1, product>lambda; exact declaration: paper/main.tex:228",
+        "quantifier_order": "For each finite integer m and fixed lambda, then take a vector (a_i) satisfying the displayed product condition; no limiting parameter.",
+        "error_term_and_uniformity": "finite scalar inequality; no asymptotic error",
+        "actual_object_or_model": "Finite scalar vector (a_1,...,a_m) in [0,1]^m; not a measurable-set construction.",
+        "logical_dependencies": "Leaf scalar inequality by AM-GM; no earlier theorem-node dependency is stated.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation proof_record §1 M2; source paper/main.tex:228-234"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "M2"
+      ],
+      "audit_locations": [
+        "foundation proof_record §1 M2; source paper/main.tex:228-234"
+      ]
+    },
+    {
+      "id": "paper/main.tex:241:lemma",
+      "type": "lemma",
+      "title": "有限族上的同时等分",
+      "labels": [
+        "lem:partition"
+      ],
+      "source": {
+        "path": "paper/main.tex",
+        "start_line": 241,
+        "end_line": 248
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "M2"
+          ],
+          "audit": "foundation proof_record §1 M2; source paper/main.tex:241-248"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "finite measure measurable A and finite cube family; any integer m>=1",
+        "conclusion": "measurable simultaneous m-way partition with equal mass in every cube",
+        "domain_and_parameters": "finite measure measurable A and finite cube family; any integer m>=1; exact declaration: paper/main.tex:241",
+        "quantifier_order": "Fix finite-measure measurable A, the finite cube list Q_1,...,Q_N, and integer m; construct the partition for that finite list.",
+        "error_term_and_uniformity": "exact equality; finite family",
+        "actual_object_or_model": "Finite measure set A and a finite family of cubes, split into m measurable parts with exact equal intersections.",
+        "logical_dependencies": "Uses atomization and continuity of coordinate slices stated in M2; no prior labeled theorem node is cited.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation proof_record §1 M2; source paper/main.tex:241-248"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "M2"
+      ],
+      "audit_locations": [
+        "foundation proof_record §1 M2; source paper/main.tex:241-248"
+      ]
+    },
+    {
+      "id": "paper/main.tex:263:lemma",
+      "type": "lemma",
+      "title": null,
+      "labels": [
+        "lem:bip"
+      ],
+      "source": {
+        "path": "paper/main.tex",
+        "start_line": 263,
+        "end_line": 265
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "M4",
+            "B0"
+          ],
+          "audit": "foundation §1 M4; sixth rebuild §2 B0; source paper/main.tex:263-265"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "finite Besicovitch family of axis-parallel cubes in fixed dimension",
+        "conclusion": "overlap multiplicity <=2^n",
+        "domain_and_parameters": "finite Besicovitch family of axis-parallel cubes in fixed dimension; exact declaration: paper/main.tex:263",
+        "quantifier_order": "For each fixed dimension n and finite Besicovitch cube family, count at each common point.",
+        "error_term_and_uniformity": "exact dimension bound",
+        "actual_object_or_model": "Finite family of axis-parallel cubes with the stated Besicovitch separation.",
+        "logical_dependencies": "Leaf geometric sign-class count; sixth rebuild packages it in B0.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §1 M4; sixth rebuild §2 B0; source paper/main.tex:263-265"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "M4",
+        "B0"
+      ],
+      "audit_locations": [
+        "foundation §1 M4; sixth rebuild §2 B0; source paper/main.tex:263-265"
+      ]
+    },
+    {
+      "id": "paper/main.tex:273:lemma",
+      "type": "lemma",
+      "title": "有限见证选择",
+      "labels": [
+        "lem:finitegreedy"
+      ],
+      "source": {
+        "path": "paper/main.tex",
+        "start_line": 273,
+        "end_line": 283
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "M3",
+            "B0"
+          ],
+          "audit": "foundation §1 M3; sixth rebuild §2 B0; source paper/main.tex:273-283"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "0<|E|<infty, 0<t<1, compact K in strict external halo; selected finite positive radii",
+        "conclusion": "finite Borel witness selection and finite cover; private point retains selected-radius domination",
+        "domain_and_parameters": "0<|E|<infty, 0<t<1, compact K in strict external halo; selected finite positive radii; exact declaration: paper/main.tex:273",
+        "quantifier_order": "Fix 0<|E|<infinity, 0<t<1 and compact K in the strict external halo. First obtain a finite open cover/list of positive radii; then choose the largest available radius per point and run descending-layer greedy selection until cover.",
+        "error_term_and_uniformity": "finite-list result, all positive radii",
+        "actual_object_or_model": "Strict witnesses for each point of compact K, a finite positive-radius list and its finite Borel-selected subcover; the input E may have infinite individual component measures in the multilinear setup.",
+        "logical_dependencies": "M3 depends on M1 continuity; sixth B0 uses this selection plus BIP and the external upper-bound ledger.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §1 M3; sixth rebuild §2 B0; source paper/main.tex:273-283"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "M3",
+        "B0"
+      ],
+      "audit_locations": [
+        "foundation §1 M3; sixth rebuild §2 B0; source paper/main.tex:273-283"
+      ]
+    },
+    {
+      "id": "paper/main.tex:295:proposition",
+      "type": "proposition",
+      "title": "外部水平集上界",
+      "labels": [
+        "prop:upper",
+        "eq:external"
+      ],
+      "source": {
+        "path": "paper/main.tex",
+        "start_line": 295,
+        "end_line": 301
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "M4",
+            "B0"
+          ],
+          "audit": "foundation §1 M4; sixth rebuild §2 B0; source paper/main.tex:295-301"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "finite positive-measure E; strict halo; fixed dimension n",
+        "conclusion": "external halo upper bound C_n(1-t)<=1+2^n t/(1-t)",
+        "domain_and_parameters": "finite positive-measure E; strict halo; fixed dimension n; exact declaration: paper/main.tex:295",
+        "quantifier_order": "Fix finite positive-measure E and t; first prove a uniform estimate for every compact K in the external halo, then use inner regularity and density points.",
+        "error_term_and_uniformity": "no asymptotic remainder; exact inequality",
+        "actual_object_or_model": "Actual strict external halo of a finite-measure input and a compact subset K covered by finite original witnesses.",
+        "logical_dependencies": "M4 uses finite witness selection and the BIP overlap bound.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §1 M4; sixth rebuild §2 B0; source paper/main.tex:295-301"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "M4",
+        "B0"
+      ],
+      "audit_locations": [
+        "foundation §1 M4; sixth rebuild §2 B0; source paper/main.tex:295-301"
+      ]
+    },
+    {
+      "id": "paper/main.tex:314:lemma",
+      "type": "lemma",
+      "title": null,
+      "labels": [
+        "lem:parameter",
+        "eq:uniformparameter",
+        "eq:quinticparameter"
+      ],
+      "source": {
+        "path": "paper/main.tex",
+        "start_line": 314,
+        "end_line": 329
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "C3"
+          ],
+          "audit": "foundation §5 C3; source paper/main.tex:314-329"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "m>=1, small epsilon (record uses epsilon<=1/2 for uniform Taylor estimate)",
+        "conclusion": "parameter-defect bounds and uniform Taylor remainder used in multiplicity transfer",
+        "domain_and_parameters": "m>=1, small epsilon (record uses epsilon<=1/2 for uniform Taylor estimate); exact declaration: paper/main.tex:314",
+        "quantifier_order": "For fixed n and each integer m>=1, take epsilon down to zero with epsilon<=1/2. Prove the Taylor remainder uniformly in m, then substitute the common scalar expansion using its shared omega_n modulus.",
+        "error_term_and_uniformity": "sixth Taylor remainder <=(32/3)epsilon^6; transfer error O(epsilon^6) plus conditional little-o modulus",
+        "actual_object_or_model": "Scalar parameter sigma_m(epsilon), Taylor polynomial and the single real remainder function r_n(t); no geometric input is constructed here.",
+        "logical_dependencies": "C3 is a parameter-transfer lemma; it depends on the actual scalar expansion supplied by thm:endpoint, not on old badges.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §5 C3; source paper/main.tex:314-329"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "C3"
+      ],
+      "audit_locations": [
+        "foundation §5 C3; source paper/main.tex:314-329"
+      ]
+    },
+    {
+      "id": "paper/main.tex:415:proposition",
+      "type": "proposition",
+      "title": "周期孔下界",
+      "labels": [
+        "prop:lower"
+      ],
+      "source": {
+        "path": "paper/main.tex",
+        "start_line": 415,
+        "end_line": 421
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "M6",
+            "G0"
+          ],
+          "audit": "foundation §1 M6; sixth rebuild §13 G0; source paper/main.tex:415-421"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "each sufficiently small t; finite periodic construction, then N->infty and hole parameter to threshold",
+        "conclusion": "C_n(1-t)>=L_n(t)",
+        "domain_and_parameters": "each sufficiently small t; finite periodic construction, then N->infty and hole parameter to threshold; exact declaration: paper/main.tex:415",
+        "quantifier_order": "For each sufficiently small real t, first choose rho below the stated threshold and integer N; form the finite periodic hole input. Then let N tend to infinity and rho increase to the threshold in the ratio bound.",
+        "error_term_and_uniformity": "exact finite witness then limiting lower bound; not sharp sixth-order construction",
+        "actual_object_or_model": "A finite periodic array of holes in a bounded cube, with a specified strict witness at every hole point and the finite input complement.",
+        "logical_dependencies": "M6/G0 is a separate lower construction; not derived from the six-order upper.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §1 M6; sixth rebuild §13 G0; source paper/main.tex:415-421"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "M6",
+        "G0"
+      ],
+      "audit_locations": [
+        "foundation §1 M6; sixth rebuild §13 G0; source paper/main.tex:415-421"
+      ]
+    },
+    {
+      "id": "paper/main.tex:480:corollary",
+      "type": "corollary",
+      "title": "重数一致的八阶渐近",
+      "labels": [
+        "cor:uniform",
+        "eq:uniform-coefficients"
+      ],
+      "source": {
+        "path": "paper/main.tex",
+        "start_line": 480,
+        "end_line": 495
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "C3"
+          ],
+          "audit": "foundation §5 C3; source paper/main.tex:480-495"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "all multiplicities m under the same scalar true expansion input",
+        "conclusion": "uniform-in-m coefficient/error transfer",
+        "domain_and_parameters": "all multiplicities m under the same scalar true expansion input; exact declaration: paper/main.tex:480",
+        "quantifier_order": "Fix n; let epsilon decrease to zero while taking the supremum over all integers m>=1, using the same scalar remainder modulus.",
+        "error_term_and_uniformity": "uniform remainder controlled by omega_n(delta); depends on eighth scalar input",
+        "actual_object_or_model": "The actual multilinear constants C_m after exact reduction, with the scalar one-linear expansion and sigma_m parameter.",
+        "logical_dependencies": "C3 parameter transfer + thm:endpoint scalar expansion; the common modulus gives uniformity in m.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §5 C3; source paper/main.tex:480-495"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "partial: C3 transfer was conditional on scalar eighth expansion",
+      "reconstruction_nodes": [
+        "C3"
+      ],
+      "audit_locations": [
+        "foundation §5 C3; source paper/main.tex:480-495"
+      ]
+    },
+    {
+      "id": "paper/main.tex:509:corollary",
+      "type": "corollary",
+      "title": "自然参数下的重数一致八阶极限",
+      "labels": [
+        "cor:eighth-multi"
+      ],
+      "source": {
+        "path": "paper/main.tex",
+        "start_line": 509,
+        "end_line": 516
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "C3"
+          ],
+          "audit": "foundation §5 C3; source paper/main.tex:509-516"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "natural multiplicity parameter, conditional on same scalar true eighth-order remainder",
+        "conclusion": "multiplicity-uniform eighth-scale limit transfer",
+        "domain_and_parameters": "natural multiplicity parameter, conditional on same scalar true eighth-order remainder; exact declaration: paper/main.tex:509",
+        "quantifier_order": "Fix n; let epsilon decrease to zero and take supremum over integer m>=1 in the natural parameter s=sigma_m(epsilon).",
+        "error_term_and_uniformity": "error via shared omega_n modulus; eighth-order premise not supplied by foundation rebuild",
+        "actual_object_or_model": "Actual C_m(1-epsilon), the scalar P_7,n(s), and normalized remainder with a_s,v_s.",
+        "logical_dependencies": "C3 transfer + thm:endpoint scalar eighth expansion; does not infer uniformity from separate fixed-m limits.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §5 C3; source paper/main.tex:509-516"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "partial: C3 transfer was conditional on scalar eighth expansion",
+      "reconstruction_nodes": [
+        "C3"
+      ],
+      "audit_locations": [
+        "foundation §5 C3; source paper/main.tex:509-516"
+      ]
+    },
+    {
+      "id": "paper/sections/global.tex:52:lemma",
+      "type": "lemma",
+      "title": "小空隙的局部定位",
+      "labels": [
+        "lem:global-small-gap",
+        "eq:global-private-localization"
+      ],
+      "source": {
+        "path": "paper/sections/global.tex",
+        "start_line": 52,
+        "end_line": 65
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "G1"
+          ],
+          "audit": "foundation §2 G1; source paper/sections/global.tex:52-65"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "fixed n, normalized finite half-box configuration in source proof",
+        "conclusion": "small-gap localization, bounded radius comparability and private-point localization",
+        "domain_and_parameters": "fixed n, normalized finite half-box configuration in source proof; exact declaration: paper/sections/global.tex:52",
+        "quantifier_order": "Fix dimension n and normalize the distinguished source half-box radius to one; choose the displayed h and epsilon constants, then apply the finite-cover argument to the normalized configuration.",
+        "error_term_and_uniformity": "constants depend only on fixed n",
+        "actual_object_or_model": "Finite normalized configuration of separated half-boxes and their actual empty-space region inside the fixed test box.",
+        "logical_dependencies": "Leaf local-geometry result in the reconstruction; no incoming labeled dependency is stated.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §2 G1; source paper/sections/global.tex:52-65"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "G1"
+      ],
+      "audit_locations": [
+        "foundation §2 G1; source paper/sections/global.tex:52-65"
+      ]
+    },
+    {
+      "id": "paper/sections/global.tex:123:lemma",
+      "type": "lemma",
+      "title": "相邻大尺度的线性控制",
+      "labels": [
+        "lem:global-linear-radius",
+        "eq:global-linear-radius"
+      ],
+      "source": {
+        "path": "paper/sections/global.tex",
+        "start_line": 123,
+        "end_line": 130
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "G2"
+          ],
+          "audit": "foundation §2 G2; source paper/sections/global.tex:123-130"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "fixed n; adjacent large-scale rules with stated intersection/strict-separation conditions",
+        "conclusion": "linear radius-difference estimate",
+        "domain_and_parameters": "fixed n; adjacent large-scale rules with stated intersection/strict-separation conditions; exact declaration: paper/sections/global.tex:123",
+        "quantifier_order": "Fix n and an adjacent large-scale pair satisfying the intersection/separation hypotheses; apply the segment argument to that pair.",
+        "error_term_and_uniformity": "O_n(e_j^0 r_j); fixed dimension",
+        "actual_object_or_model": "Two actual rule boxes and the segment between their sampled points, with the gap measured by the actual empty-set length.",
+        "logical_dependencies": "Foundation G2 explicitly invokes the small-gap localization G1.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §2 G2; source paper/sections/global.tex:123-130"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "G2"
+      ],
+      "audit_locations": [
+        "foundation §2 G2; source paper/sections/global.tex:123-130"
+      ]
+    },
+    {
+      "id": "paper/sections/global.tex:169:lemma",
+      "type": "lemma",
+      "title": "强面容量与单源角部工具",
+      "labels": [
+        "lem:global-face-capacity",
+        "eq:global-source-target",
+        "eq:global-source-witness",
+        "eq:global-strong-cdf-slope",
+        "eq:global-boundary-protrusion"
+      ],
+      "source": {
+        "path": "paper/sections/global.tex",
+        "start_line": 169,
+        "end_line": 203
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "G3",
+            "B1"
+          ],
+          "audit": "foundation §2 G3; sixth rebuild §3 B1; source paper/sections/global.tex:169-203"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "same-layer F_i subset G_i, source witnesses contain full target G_i, disjoint target/source conditions; fixed n,A",
+        "conclusion": "strong CDF slope, midpoint surplus, source-target and boundary-protrusion bounds",
+        "domain_and_parameters": "same-layer F_i subset G_i, source witnesses contain full target G_i, disjoint target/source conditions; fixed n,A; exact declaration: paper/sections/global.tex:169",
+        "quantifier_order": "Fix n,A and finite source/target data; choose the required endpoint-depth window, then lambda_0>0, then v small. Internal face/corner claims use the same original point and radius after CDF is fixed.",
+        "error_term_and_uniformity": "choose n,A/depth then CDF slope then small v; fixed positive constants",
+        "actual_object_or_model": "Same-layer actual F_i subset G_i with each source point retaining its original witness containing complete G_i; actual CDF slices and actual midpoint boxes.",
+        "logical_dependencies": "Source/target and center-separation hypotheses; foundation G3 uses continuous CDF slices and AM-GM. Its boundary-protrusion branch also uses G1 (lem:global-small-gap). The same lemma internal G4 uses G3; this is an internal subclaim dependency, not a self-cycle.",
+        "proof_status": "Incoming semantic edges completed by root from the already-read foundation G1-G9/node table and the actual source; evidence index only, not an extra expert verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §2 G3; sixth rebuild §3 B1; source paper/sections/global.tex:169-203"
+      },
+      "syntax_refs_only": [
+        {
+          "kind": "statement",
+          "file": "paper/sections/global.tex",
+          "line": 191,
+          "owner_start_line": 169,
+          "owner_labels": [
+            "lem:global-face-capacity",
+            "eq:global-source-target",
+            "eq:global-source-witness",
+            "eq:global-strong-cdf-slope"
+          ],
+          "target": "eq:global-corner-missing",
+          "command": "eqref",
+          "resolution": "resolved",
+          "target_locations": [
+            {
+              "label": "eq:global-corner-missing",
+              "file": "paper/sections/global.tex",
+              "line": 258,
+              "owner_env": null,
+              "owner_start_line": null
+            }
+          ]
+        },
+        {
+          "kind": "statement",
+          "file": "paper/sections/global.tex",
+          "line": 192,
+          "owner_start_line": 169,
+          "owner_labels": [
+            "lem:global-face-capacity",
+            "eq:global-source-target",
+            "eq:global-source-witness",
+            "eq:global-strong-cdf-slope"
+          ],
+          "target": "eq:global-capacity-volume",
+          "command": "eqref",
+          "resolution": "resolved",
+          "target_locations": [
+            {
+              "label": "eq:global-capacity-volume",
+              "file": "paper/sections/global.tex",
+              "line": 410,
+              "owner_env": null,
+              "owner_start_line": null
+            }
+          ]
+        },
+        {
+          "kind": "statement",
+          "file": "paper/sections/global.tex",
+          "line": 193,
+          "owner_start_line": 169,
+          "owner_labels": [
+            "lem:global-face-capacity",
+            "eq:global-source-target",
+            "eq:global-source-witness",
+            "eq:global-strong-cdf-slope"
+          ],
+          "target": "eq:global-corner-q-overlap",
+          "command": "eqref",
+          "resolution": "resolved",
+          "target_locations": [
+            {
+              "label": "eq:global-corner-q-overlap",
+              "file": "paper/sections/global.tex",
+              "line": 388,
+              "owner_env": null,
+              "owner_start_line": null
+            }
+          ]
+        },
+        {
+          "kind": "statement",
+          "file": "paper/sections/global.tex",
+          "line": 201,
+          "owner_start_line": 169,
+          "owner_labels": [
+            "lem:global-face-capacity",
+            "eq:global-source-target",
+            "eq:global-source-witness",
+            "eq:global-strong-cdf-slope",
+            "eq:global-boundary-protrusion"
+          ],
+          "target": "lem:global-small-gap",
+          "command": "ref",
+          "resolution": "resolved",
+          "target_locations": [
+            {
+              "label": "lem:global-small-gap",
+              "file": "paper/sections/global.tex",
+              "line": 52,
+              "owner_env": "lemma",
+              "owner_start_line": 52
+            }
+          ]
+        }
+      ],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "G3",
+        "B1"
+      ],
+      "audit_locations": [
+        "foundation §2 G3; sixth rebuild §3 B1; source paper/sections/global.tex:169-203"
+      ],
+      "root_completed_fields": [
+        "logical_dependencies",
+        "quantifier_order"
+      ]
+    },
+    {
+      "id": "paper/sections/global.tex:431:lemma",
+      "type": "lemma",
+      "title": "每个轴向的面邻居",
+      "labels": [
+        "lem:global-face-neighbor",
+        "eq:global-face-half-gap"
+      ],
+      "source": {
+        "path": "paper/sections/global.tex",
+        "start_line": 431,
+        "end_line": 441
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "G4",
+            "B1"
+          ],
+          "audit": "foundation §2 G4; sixth rebuild §3 B1; source paper/sections/global.tex:431-441"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "fixed n, each axis and actual source/face-neighbor setup",
+        "conclusion": "true face-neighbor identification and half-gap bound",
+        "domain_and_parameters": "fixed n, each axis and actual source/face-neighbor setup; exact declaration: paper/sections/global.tex:431",
+        "quantifier_order": "Fix n,A and the axis, use the fixed axial test point/face column; all geometric margins precede the small-v limit.",
+        "error_term_and_uniformity": "finite-dimensional constants",
+        "actual_object_or_model": "Actual face-neighbor half-box and the positive-volume face block; not an abstract adjacency graph.",
+        "logical_dependencies": "Foundation G5: G1 small-gap localization and original separated half-boxes provide the actual axial neighbor; the G3 CDF box bounds supply the actual endpoint setup.",
+        "proof_status": "Incoming semantic edges completed by root from the already-read foundation G1-G9/node table and the actual source; evidence index only, not an extra expert verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §2 G4; sixth rebuild §3 B1; source paper/sections/global.tex:431-441"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "G4",
+        "B1"
+      ],
+      "audit_locations": [
+        "foundation §2 G4; sixth rebuild §3 B1; source paper/sections/global.tex:431-441"
+      ],
+      "root_completed_fields": [
+        "logical_dependencies",
+        "quantifier_order"
+      ]
+    },
+    {
+      "id": "paper/sections/global.tex:479:lemma",
+      "type": "lemma",
+      "title": "全部源点的面对容量",
+      "labels": [
+        "lem:global-all-source-face",
+        "eq:global-directed-face-gaps",
+        "eq:global-midpoint-face-gap",
+        "eq:global-all-source-radius"
+      ],
+      "source": {
+        "path": "paper/sections/global.tex",
+        "start_line": 479,
+        "end_line": 496
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "G5",
+            "B1"
+          ],
+          "audit": "foundation §2 G5; sixth rebuild §3 B1; source paper/sections/global.tex:479-496"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "every actual source point, same original witness, actual face neighbor",
+        "conclusion": "directed face gaps, midpoint gap and all-source radius bound",
+        "domain_and_parameters": "every actual source point, same original witness, actual face neighbor; exact declaration: paper/sections/global.tex:479",
+        "quantifier_order": "Fix the actual neighbor and CDF; compare every source point using its own retained original radius; take an endpoint-approaching sequence only after that inequality.",
+        "error_term_and_uniformity": "endpoint limits; no substitution of representative radius",
+        "actual_object_or_model": "All actual source points, their individual original radii, actual neighboring source tails and directed face gaps.",
+        "logical_dependencies": "Foundation G5: lem:global-face-neighbor plus the G3 CDF tails and original source/target exclusivity.",
+        "proof_status": "Incoming semantic edges completed by root from the already-read foundation G1-G9/node table and the actual source; evidence index only, not an extra expert verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §2 G5; sixth rebuild §3 B1; source paper/sections/global.tex:479-496"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "G5",
+        "B1"
+      ],
+      "audit_locations": [
+        "foundation §2 G5; sixth rebuild §3 B1; source paper/sections/global.tex:479-496"
+      ],
+      "root_completed_fields": [
+        "logical_dependencies",
+        "quantifier_order"
+      ]
+    },
+    {
+      "id": "paper/sections/global.tex:550:lemma",
+      "type": "lemma",
+      "title": "完整见证图的有限层增长",
+      "labels": [
+        "lem:global-full-graph",
+        "eq:global-expanded-cover",
+        "eq:global-full-graph-radii",
+        "eq:global-layer-volume"
+      ],
+      "source": {
+        "path": "paper/sections/global.tex",
+        "start_line": 550,
+        "end_line": 569
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "G6",
+            "B2"
+          ],
+          "audit": "foundation §3 G6; sixth rebuild §3-4 B2; source paper/sections/global.tex:550-569"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "full Q-intersection graph; anomalies may have unbounded degree and incomparable scales; fixed K0 layers",
+        "conclusion": "polynomial layer growth and weighted boundary control",
+        "domain_and_parameters": "full Q-intersection graph; anomalies may have unbounded degree and incomparable scales; fixed K0 layers; exact declaration: paper/sections/global.tex:550",
+        "quantifier_order": "Fix n and K0, then eta with 20 eta(K0+1)<=1/4; choose the local thickening h below eta/N; finally take v small and count at most K0 layers.",
+        "error_term_and_uniformity": "only fixed K0 layers, constants dimension-only",
+        "actual_object_or_model": "Full graph of actual Q_i intersections, including exceptional vertices of unbounded degree and incomparable scales; use disjoint original half-boxes for volume counting.",
+        "logical_dependencies": "Foundation G6: G1 localization, M3 strong separation and M4 disjoint half-box volume counting. No bounded-degree assumption on the full graph.",
+        "proof_status": "Incoming semantic edges completed by root from the already-read foundation G1-G9/node table and the actual source; evidence index only, not an extra expert verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §3 G6; sixth rebuild §3-4 B2; source paper/sections/global.tex:550-569"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "G6",
+        "B2"
+      ],
+      "audit_locations": [
+        "foundation §3 G6; sixth rebuild §3-4 B2; source paper/sections/global.tex:550-569"
+      ],
+      "root_completed_fields": [
+        "logical_dependencies",
+        "quantifier_order"
+      ]
+    },
+    {
+      "id": "paper/sections/global.tex:614:lemma",
+      "type": "lemma",
+      "title": "局部 dyadic 计数",
+      "labels": [
+        "lem:global-dyadic-small",
+        "eq:global-dyadic-small"
+      ],
+      "source": {
+        "path": "paper/sections/global.tex",
+        "start_line": 614,
+        "end_line": 623
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "G7",
+            "B3"
+          ],
+          "audit": "foundation §3 G7; sixth rebuild §3-4 B3; source paper/sections/global.tex:614-623"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "local dyadic box and small-source density hypothesis",
+        "conclusion": "small source recovered by maximal high-density dyadic cells",
+        "domain_and_parameters": "local dyadic box and small-source density hypothesis; exact declaration: paper/sections/global.tex:614",
+        "quantifier_order": "Fix the local dyadic grid and beta from the stated box containment; require a/beta<1, then select maximal high-density cells among the finite ancestor chains.",
+        "error_term_and_uniformity": "Ca times local complement; fixed geometry",
+        "actual_object_or_model": "Actual local box R, T subset E-complement, D=R\\T and disjoint maximal dyadic cells.",
+        "logical_dependencies": "Leaf recovery tool in the record; no preceding labeled theorem node is stated.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §3 G7; sixth rebuild §3-4 B3; source paper/sections/global.tex:614-623"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "G7",
+        "B3"
+      ],
+      "audit_locations": [
+        "foundation §3 G7; sixth rebuild §3-4 B3; source paper/sections/global.tex:614-623"
+      ]
+    },
+    {
+      "id": "paper/sections/global.tex:692:lemma",
+      "type": "lemma",
+      "title": "未使用的 CDF 面缝",
+      "labels": [
+        "lem:global-free-face-strips",
+        "eq:global-free-face-strip",
+        "eq:global-free-face-volume"
+      ],
+      "source": {
+        "path": "paper/sections/global.tex",
+        "start_line": 692,
+        "end_line": 706
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "G8",
+            "B3"
+          ],
+          "audit": "foundation §3 G8; sixth rebuild §3-4 B3; source paper/sections/global.tex:692-706"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "same actual source and face-neighbor; unused face strip",
+        "conclusion": "face-strip exclusion and positive face-volume recovery",
+        "domain_and_parameters": "same actual source and face-neighbor; unused face strip; exact declaration: paper/sections/global.tex:692",
+        "quantifier_order": "Fix the actual directed gaps and transverse face margins before placing the strips. Their union is charged once with bounded multiplicity; marked-boundary assumptions are retained.",
+        "error_term_and_uniformity": "fixed dimension constants",
+        "actual_object_or_model": "Actual unused CDF face strips inside the source cube, excluded from all exterior X boxes and marked boxes.",
+        "logical_dependencies": "Foundation G8 uses G3 CDF boxes and G5 actual face-neighbor/all-source gaps (the two face lemmas); strong center separation excludes a third box.",
+        "proof_status": "Incoming semantic edges completed by root from the already-read foundation G1-G9/node table and the actual source; evidence index only, not an extra expert verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §3 G8; sixth rebuild §3-4 B3; source paper/sections/global.tex:692-706"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "G8",
+        "B3"
+      ],
+      "audit_locations": [
+        "foundation §3 G8; sixth rebuild §3-4 B3; source paper/sections/global.tex:692-706"
+      ],
+      "root_completed_fields": [
+        "logical_dependencies",
+        "quantifier_order"
+      ]
+    },
+    {
+      "id": "paper/sections/global.tex:741:lemma",
+      "type": "lemma",
+      "title": "小半径源质量的回收",
+      "labels": [
+        "lem:global-small-source-recovery",
+        "eq:global-small-source-recovery",
+        "eq:global-small-source-boundary"
+      ],
+      "source": {
+        "path": "paper/sections/global.tex",
+        "start_line": 741,
+        "end_line": 753
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "G8",
+            "B3"
+          ],
+          "audit": "foundation §3 G8; sixth rebuild §3-4 B3; source paper/sections/global.tex:741-753"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "small-radius sources split inside/outside local box; same actual neighbor witnesses",
+        "conclusion": "small-source mass recovered by local dyadic and inbound-tail arguments",
+        "domain_and_parameters": "small-radius sources split inside/outside local box; same actual neighbor witnesses; exact declaration: paper/sections/global.tex:741",
+        "quantifier_order": "Fix the local box and original finite-radius function; split inside/outside. Use dyadic recovery inside, the same inbound neighbor witness outside, and the boundary branch separately.",
+        "error_term_and_uniformity": "deep estimate and boundary O(v)P_boundary",
+        "actual_object_or_model": "Actual small-radius source set, local box complement and inbound target tail, with the original witnesses retained.",
+        "logical_dependencies": "Foundation G8: G3 raw/endpoint bound, G5 inbound original neighbor witness, G7 (lem:global-dyadic-small); main prop:upper supplies the boundary local-input bound.",
+        "proof_status": "Incoming semantic edges completed by root from the already-read foundation G1-G9/node table and the actual source; evidence index only, not an extra expert verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §3 G8; sixth rebuild §3-4 B3; source paper/sections/global.tex:741-753"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "G8",
+        "B3"
+      ],
+      "audit_locations": [
+        "foundation §3 G8; sixth rebuild §3-4 B3; source paper/sections/global.tex:741-753"
+      ],
+      "root_completed_fields": [
+        "logical_dependencies",
+        "quantifier_order"
+      ]
+    },
+    {
+      "id": "paper/sections/global.tex:821:lemma",
+      "type": "lemma",
+      "title": "共同可见的环境额外缺陷",
+      "labels": [
+        "lem:global-common-defect",
+        "eq:global-common-defect",
+        "eq:global-actual-ambient"
+      ],
+      "source": {
+        "path": "paper/sections/global.tex",
+        "start_line": 821,
+        "end_line": 837
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "G8",
+            "B3"
+          ],
+          "audit": "foundation §3 G8; sixth rebuild §3-4 B3; source paper/sections/global.tex:821-837"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "actual attached X and face strips, each source-point original witness",
+        "conclusion": "common ambient/environment defect settled once in same witness",
+        "domain_and_parameters": "actual attached X and face strips, each source-point original witness; exact declaration: paper/sections/global.tex:821",
+        "quantifier_order": "Fix the actual attachments; for every source point add the entire environmental defect in that same original witness, then approach the source endpoint and sum.",
+        "error_term_and_uniformity": "sum u_i<=Ca(F+P_boundary)",
+        "actual_object_or_model": "Actual environment portion outside G_i but inside the same witnessed cube; one shared defect accounting, not repeated estimates.",
+        "logical_dependencies": "Foundation G8: the X_i/face-strip attachment from G3/G5 and lem:global-free-face-strips, followed by the all-source radius bound and actual target exclusivity.",
+        "proof_status": "Incoming semantic edges completed by root from the already-read foundation G1-G9/node table and the actual source; evidence index only, not an extra expert verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §3 G8; sixth rebuild §3-4 B3; source paper/sections/global.tex:821-837"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "G8",
+        "B3"
+      ],
+      "audit_locations": [
+        "foundation §3 G8; sixth rebuild §3-4 B3; source paper/sections/global.tex:821-837"
+      ],
+      "root_completed_fields": [
+        "logical_dependencies",
+        "quantifier_order"
+      ]
+    },
+    {
+      "id": "paper/sections/global.tex:862:lemma",
+      "type": "lemma",
+      "title": "角部补偿与校正后的单层体积",
+      "labels": [
+        "lem:global-augmented-capacity",
+        "eq:global-capacity-settlement"
+      ],
+      "source": {
+        "path": "paper/sections/global.tex",
+        "start_line": 862,
+        "end_line": 876
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "G9"
+          ],
+          "audit": "foundation §3 G9; source paper/sections/global.tex:862-876"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Actual finite source/target configuration with all critical-axis counts q>=2, same original witnesses and full forbidden-source rectangles; no balanced-support restriction.",
+        "conclusion": "angle forbidden region and corrected single-layer volume ledger",
+        "domain_and_parameters": "Actual finite source/target configuration with all critical-axis counts q>=2, same original witnesses and full forbidden-source rectangles; no balanced-support restriction.; exact declaration: paper/sections/global.tex:862",
+        "quantifier_order": "For all critical support counts q=2,...,n (no parity/balance restriction), first split the fixed positive surplus/face budgets and choose Young shares, then take v small. The output is the coarse six-order bound, not a higher coefficient.",
+        "error_term_and_uniformity": "sixth-order coarse price only; no higher coefficient",
+        "actual_object_or_model": "Actual source angle regions and the corrected single-layer volume ledger.",
+        "logical_dependencies": "Foundation G9: G3/G4 CDF and all-q corner bound; G5 all-source face capacity; G8 free-face strips, small-source recovery and common defect. Use one Bonferroni/ambient ledger with fixed positive shares.",
+        "proof_status": "Incoming semantic edges completed by root from the already-read foundation G1-G9/node table and the actual source; evidence index only, not an extra expert verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §3 G9; source paper/sections/global.tex:862-876"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "G9"
+      ],
+      "audit_locations": [
+        "foundation §3 G9; source paper/sections/global.tex:862-876"
+      ],
+      "root_completed_fields": [
+        "logical_dependencies",
+        "quantifier_order"
+      ]
+    },
+    {
+      "id": "paper/sections/global.tex:991:lemma",
+      "type": "lemma",
+      "title": "五深度的未删除源与重复覆盖",
+      "labels": [
+        "lem:global-exterior-union",
+        "eq:global-exterior-union"
+      ],
+      "source": {
+        "path": "paper/sections/global.tex",
+        "start_line": 991,
+        "end_line": 1007
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "G10"
+          ],
+          "audit": "foundation §4 G10; source paper/sections/global.tex:991-1007"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "same I, K-prime, original radii; pre-fixed finite layer count",
+        "conclusion": "five-layer actual-source recursion and depth/defect inequalities",
+        "domain_and_parameters": "same I, K-prime, original radii; pre-fixed finite layer count; exact declaration: paper/sections/global.tex:991",
+        "quantifier_order": "Fix the finite recursion depth first. Recursively choose H_h>L_{h-1}+D+1 and then L_h, preserving the same I,K-prime and original radii at every layer.",
+        "error_term_and_uniformity": "fixed finite layers; d_h^0 kept separate from deletion mass",
+        "actual_object_or_model": "Actual nested source/target sets T,F,G and N_{i,h}, with deletion mass distinct from d_h^0 and the same original witness.",
+        "logical_dependencies": "This is the finite-recursion contract used by G1/E0; the source record does not specify its incoming label-level graph edge.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §4 G10; source paper/sections/global.tex:991-1007"
+      },
+      "syntax_refs_only": [
+        {
+          "kind": "statement",
+          "file": "paper/sections/global.tex",
+          "line": 1004,
+          "owner_start_line": 991,
+          "owner_labels": [
+            "lem:global-exterior-union",
+            "eq:global-exterior-union"
+          ],
+          "target": "eq:global-multidepth-duplicates",
+          "command": "eqref",
+          "resolution": "resolved",
+          "target_locations": [
+            {
+              "label": "eq:global-multidepth-duplicates",
+              "file": "paper/sections/global.tex",
+              "line": 1089,
+              "owner_env": null,
+              "owner_start_line": null
+            }
+          ]
+        },
+        {
+          "kind": "statement",
+          "file": "paper/sections/global.tex",
+          "line": 1005,
+          "owner_start_line": 991,
+          "owner_labels": [
+            "lem:global-exterior-union",
+            "eq:global-exterior-union"
+          ],
+          "target": "eq:global-two-source-losses",
+          "command": "eqref",
+          "resolution": "resolved",
+          "target_locations": [
+            {
+              "label": "eq:global-two-source-losses",
+              "file": "paper/sections/global.tex",
+              "line": 1104,
+              "owner_env": null,
+              "owner_start_line": null
+            }
+          ]
+        }
+      ],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "G10"
+      ],
+      "audit_locations": [
+        "foundation §4 G10; source paper/sections/global.tex:991-1007"
+      ]
+    },
+    {
+      "id": "paper/sections/global.tex:1121:lemma",
+      "type": "lemma",
+      "title": "以 \\(\\lvert E\\rvert+M\\) 为左侧的回收",
+      "labels": [
+        "lem:global-interior-recovery",
+        "eq:global-recovery-interface"
+      ],
+      "source": {
+        "path": "paper/sections/global.tex",
+        "start_line": 1121,
+        "end_line": 1133
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "G11"
+          ],
+          "audit": "foundation §4 G11; source paper/sections/global.tex:1121-1133"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "shared actual interior and boundary source accounting",
+        "conclusion": "recovery interface with common V+M left side",
+        "domain_and_parameters": "shared actual interior and boundary source accounting; exact declaration: paper/sections/global.tex:1121",
+        "quantifier_order": "Fix the same I and actual shared interior/boundary source accounting after the finite recursion; retain the common V+M left side.",
+        "error_term_and_uniformity": "fixed positive reserve plus boundary price",
+        "actual_object_or_model": "Actual internal source cells, boundary cells, source masses and common ledger, not a model density.",
+        "logical_dependencies": "Used as part of G1/E0; the exact incoming lemma edge is not separately graphed in the foundation record.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §4 G11; source paper/sections/global.tex:1121-1133"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "G11"
+      ],
+      "audit_locations": [
+        "foundation §4 G11; source paper/sections/global.tex:1121-1133"
+      ]
+    },
+    {
+      "id": "paper/sections/global.tex:1226:proposition",
+      "type": "proposition",
+      "title": "六阶粗余项",
+      "labels": [
+        "prop:global-coarse"
+      ],
+      "source": {
+        "path": "paper/sections/global.tex",
+        "start_line": 1226,
+        "end_line": 1229
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "G12"
+          ],
+          "audit": "foundation §4 G12; source paper/sections/global.tex:1226-1229"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "fixed n and all finite-measure inputs/all radii in stated asymptotic regime",
+        "conclusion": "coarse sixth-order upper remainder",
+        "domain_and_parameters": "fixed n and all finite-measure inputs/all radii in stated asymptotic regime; exact declaration: paper/sections/global.tex:1226",
+        "quantifier_order": "Fix n, first choose pure-dimensional internal/boundary prices, then K_0, eta_w, D, finite source depth and CDF slope; take v small last.",
+        "error_term_and_uniformity": "O_n(av^6); not the sharp coefficient",
+        "actual_object_or_model": "Actual finite source family, full Q graph and the actual halo/input ledger over all positive radii.",
+        "logical_dependencies": "Foundation G12 states the ordering and combines G1-G11 into the coarse sixth-order bound.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "foundation §4 G12; source paper/sections/global.tex:1226-1229"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "G12"
+      ],
+      "audit_locations": [
+        "foundation §4 G12; source paper/sections/global.tex:1226-1229"
+      ]
+    },
+    {
+      "id": "paper/sections/sharp.tex:77:lemma",
+      "type": "lemma",
+      "title": "六层临界先验",
+      "labels": [
+        "sharp-critical",
+        "sharp-graph-absorption",
+        "sharp-positive-prior",
+        "sharp-mass-prior",
+        "sharp-width-tightness",
+        "sharp-face-tightness"
+      ],
+      "source": {
+        "path": "paper/sections/sharp.tex",
+        "start_line": 77,
+        "end_line": 112
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "S1",
+            "S2"
+          ],
+          "audit": "sixth rebuild §4 S1-S2; source paper/sections/sharp.tex:77-112"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "critical-six arbitrary input sequence under fixed B; same I,K-prime and original r(x); six layers fixed in advance",
+        "conclusion": "depth relations, retained terminal shape/repetition/robust-face positive quantities",
+        "domain_and_parameters": "critical-six arbitrary input sequence under fixed B; same I,K-prime and original r(x); six layers fixed in advance; exact declaration: paper/sections/sharp.tex:77",
+        "quantifier_order": "Fix n and a finite B for an arbitrary competitive input sequence; fix I, then the six layer count/depth constants before v tends to zero.",
+        "error_term_and_uniformity": "D6/a=O(v^6 S), D5/a=O(v^5 S), width RMS bound",
+        "actual_object_or_model": "Actual same-I critical sequence, original radii, layer deficits, deletions, endpoint shifts, robust faces and private half-boxes.",
+        "logical_dependencies": "Sixth rebuild explicitly gives B0/B1/B2/B3 -> S1 -> S2; S2 then feeds S3 and S4.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "sixth rebuild §4 S1-S2; source paper/sections/sharp.tex:77-112"
+      },
+      "syntax_refs_only": [
+        {
+          "kind": "statement",
+          "file": "paper/sections/sharp.tex",
+          "line": 78,
+          "owner_start_line": 77,
+          "owner_labels": [
+            "sharp-critical"
+          ],
+          "target": "sharp-critical-branch",
+          "command": "eqref",
+          "resolution": "resolved",
+          "target_locations": [
+            {
+              "label": "sharp-critical-branch",
+              "file": "paper/sections/sharp.tex",
+              "line": 14,
+              "owner_env": null,
+              "owner_start_line": null
+            }
+          ]
+        }
+      ],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "S1",
+        "S2"
+      ],
+      "audit_locations": [
+        "sixth rebuild §4 S1-S2; source paper/sections/sharp.tex:77-112"
+      ]
+    },
+    {
+      "id": "paper/sections/sharp.tex:247:lemma",
+      "type": "lemma",
+      "title": "全部尺度的局部匹配",
+      "labels": [
+        "sharp-input-tiling"
+      ],
+      "source": {
+        "path": "paper/sections/sharp.tex",
+        "start_line": 247,
+        "end_line": 259
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "S3"
+          ],
+          "audit": "sixth rebuild §5 S3; source paper/sections/sharp.tex:247-259"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "same bad-root set Z_v and complete half-box witness list; fixed physical window",
+        "conclusion": "all scales locally match a unit-cube tiling, allowing staggered/T seams and changing local model",
+        "domain_and_parameters": "same bad-root set Z_v and complete half-box witness list; fixed physical window; exact declaration: paper/sections/sharp.tex:247",
+        "quantifier_order": "Fix a physical window R; take v to zero along any competitive sequence, then use local finite-window subsequences. No rate for delta_R(v) is claimed.",
+        "error_term_and_uniformity": "S(Z_v)=O(v^(9/2)S); delta_R(v)->0 without rate",
+        "actual_object_or_model": "Complete actual half-box witness list around each good root, including extra very small or large candidate boxes.",
+        "logical_dependencies": "S3 depends on S2 critical-root control; it feeds S5 incidence.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "sixth rebuild §5 S3; source paper/sections/sharp.tex:247-259"
+      },
+      "syntax_refs_only": [
+        {
+          "kind": "statement",
+          "file": "paper/sections/sharp.tex",
+          "line": 248,
+          "owner_start_line": 247,
+          "owner_labels": [
+            "sharp-input-tiling"
+          ],
+          "target": "sharp-critical",
+          "command": "ref",
+          "resolution": "resolved",
+          "target_locations": [
+            {
+              "label": "sharp-critical",
+              "file": "paper/sections/sharp.tex",
+              "line": 77,
+              "owner_env": "lemma",
+              "owner_start_line": 77
+            }
+          ]
+        }
+      ],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "S3"
+      ],
+      "audit_locations": [
+        "sixth rebuild §5 S3; source paper/sections/sharp.tex:247-259"
+      ]
+    },
+    {
+      "id": "paper/sections/sharp.tex:315:lemma",
+      "type": "lemma",
+      "title": "角交量的均匀可积性",
+      "labels": [
+        "sharp-angle-integrability",
+        "sharp-bad-interactions"
+      ],
+      "source": {
+        "path": "paper/sections/sharp.tex",
+        "start_line": 315,
+        "end_line": 325
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "S4"
+          ],
+          "audit": "sixth rebuild §6 S4; source paper/sections/sharp.tex:315-325"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "arbitrary weighted bad-index set; preserve all baseline mass",
+        "conclusion": "associated interaction cost is uniformly integrable",
+        "domain_and_parameters": "arbitrary weighted bad-index set; preserve all baseline mass; exact declaration: paper/sections/sharp.tex:315",
+        "quantifier_order": "Fix an arbitrary weighted bad-index set and the competitive sequence; apply the weighted bound without deleting baseline mass.",
+        "error_term_and_uniformity": "Cv^6 S(mu^(1/3)+v); q>=3 O(v^(33/5)S)",
+        "actual_object_or_model": "Actual external pair interactions and owner weights on the bad-index set.",
+        "logical_dependencies": "S4 depends on S2 and combines with S5/S7/S8 for S9.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "sixth rebuild §6 S4; source paper/sections/sharp.tex:315-325"
+      },
+      "syntax_refs_only": [
+        {
+          "kind": "statement",
+          "file": "paper/sections/sharp.tex",
+          "line": 324,
+          "owner_start_line": 315,
+          "owner_labels": [
+            "sharp-angle-integrability",
+            "sharp-bad-interactions"
+          ],
+          "target": "sharp-input-tiling",
+          "command": "ref",
+          "resolution": "resolved",
+          "target_locations": [
+            {
+              "label": "sharp-input-tiling",
+              "file": "paper/sections/sharp.tex",
+              "line": 247,
+              "owner_env": "lemma",
+              "owner_start_line": 247
+            }
+          ]
+        }
+      ],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "S4"
+      ],
+      "audit_locations": [
+        "sixth rebuild §6 S4; source paper/sections/sharp.tex:315-325"
+      ]
+    },
+    {
+      "id": "paper/sections/sharp.tex:363:lemma",
+      "type": "lemma",
+      "title": "余维二接触计数",
+      "labels": [
+        "sharp-incidence",
+        "sharp-incidence-bound"
+      ],
+      "source": {
+        "path": "paper/sections/sharp.tex",
+        "start_line": 363,
+        "end_line": 368
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "S5"
+          ],
+          "audit": "sixth rebuild §7 S5; source paper/sections/sharp.tex:363-368"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "local tiling plus exact actual face order; staggered layouts and T-seams allowed",
+        "conclusion": "codimension-two contact count bounded by binomial(n,2)",
+        "domain_and_parameters": "local tiling plus exact actual face order; staggered layouts and T-seams allowed; exact declaration: paper/sections/sharp.tex:363",
+        "quantifier_order": "For fixed window R, take v to zero first and then R to infinity; partition transverse slices into finite endpoint pieces.",
+        "error_term_and_uniformity": "limsup contact/S<=binomial(n,2), take v then window R",
+        "actual_object_or_model": "Actual contact pairs in the local limit of a potentially staggered unit-cube tiling, including T seams.",
+        "logical_dependencies": "S5 depends on S3 exact local tiling and exact face order.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "sixth rebuild §7 S5; source paper/sections/sharp.tex:363-368"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "S5"
+      ],
+      "audit_locations": [
+        "sixth rebuild §7 S5; source paper/sections/sharp.tex:363-368"
+      ]
+    },
+    {
+      "id": "paper/sections/sharp.tex:453:lemma",
+      "type": "lemma",
+      "title": "有效端缺量的系数一",
+      "labels": [
+        "sharp-fresh-cdf",
+        "sharp-effective-missing"
+      ],
+      "source": {
+        "path": "paper/sections/sharp.tex",
+        "start_line": 453,
+        "end_line": 461
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "S6"
+          ],
+          "audit": "sixth rebuild §8 S6; source paper/sections/sharp.tex:453-461"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "complete actual J_i and arbitrary effective-box missing layer",
+        "conclusion": "fresh CDF missing-layer estimate with coefficient one",
+        "domain_and_parameters": "complete actual J_i and arbitrary effective-box missing layer; exact declaration: paper/sections/sharp.tex:453",
+        "quantifier_order": "For a fixed actual layer, take normal epsilon_i=o(1) on the normal subfamily; the arbitrary measurable Y is selected within the actual effective box.",
+        "error_term_and_uniformity": "normal-subfamily derivative (1-o(1))v/a",
+        "actual_object_or_model": "Actual F_i, G_i, effective CDF boxes, missing layer Y and remaining raw/endpoint-shift mass.",
+        "logical_dependencies": "Sixth graph states B1+S2 -> S6; S6 supplies same-source price nodes S7/S8.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "sixth rebuild §8 S6; source paper/sections/sharp.tex:453-461"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "S6"
+      ],
+      "audit_locations": [
+        "sixth rebuild §8 S6; source paper/sections/sharp.tex:453-461"
+      ]
+    },
+    {
+      "id": "paper/sections/sharp.tex:483:lemma",
+      "type": "lemma",
+      "title": "同层全部交长的锐价格",
+      "labels": [
+        "sharp-source-price",
+        "sharp-price-contact",
+        "sharp-price"
+      ],
+      "source": {
+        "path": "paper/sections/sharp.tex",
+        "start_line": 483,
+        "end_line": 496
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "S7",
+            "S8",
+            "S9"
+          ],
+          "audit": "sixth rebuild §§8-10 S7-S9; source paper/sections/sharp.tex:483-496"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "fixed T for small-edge summation; all endpoints for large edges; all external pairs",
+        "conclusion": "same-source all-target two-order price; large-edge source charge; six-order leading price",
+        "domain_and_parameters": "fixed T for small-edge summation; all endpoints for large edges; all external pairs; exact declaration: paper/sections/sharp.tex:483",
+        "quantifier_order": "For each fixed T, sum all small-edge targets for a common source and both orders; then choose sigma, choose T, and take v small for large edges.",
+        "error_term_and_uniformity": "small-edge error O_T(v^7S)+o_T(v^6S); large edges spend one sigma J; H<=[K_n/(1-sigma)^2+o_sigma(1)]v^6S",
+        "actual_object_or_model": "Actual source witnesses and actual pair intersections, including all endpoints, abnormal edges, and both two-axis orders.",
+        "logical_dependencies": "Sixth graph states S6 -> S7/S8 and S4+S5+S7+S8 -> S9.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "sixth rebuild §§8-10 S7-S9; source paper/sections/sharp.tex:483-496"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "reconstruction_nodes": [
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "audit_locations": [
+        "sixth rebuild §§8-10 S7-S9; source paper/sections/sharp.tex:483-496"
+      ]
+    },
+    {
+      "id": "paper/sections/sharp.tex:646:proposition",
+      "type": "proposition",
+      "title": "锐余项上界",
+      "labels": [
+        "sharp-upper"
+      ],
+      "source": {
+        "path": "paper/sections/sharp.tex",
+        "start_line": 646,
+        "end_line": 652
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "label_group": [
+            "S9",
+            "S10",
+            "S11"
+          ],
+          "audit": "sixth rebuild §§10-12 S9-S11; source paper/sections/sharp.tex:646-652"
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "all finite-measure inputs and all radii; six-layer ledger",
+        "conclusion": "sharp sixth-order limsup upper bound from complete ledger",
+        "domain_and_parameters": "all finite-measure inputs and all radii; six-layer ledger; exact declaration: paper/sections/sharp.tex:646",
+        "quantifier_order": "Fix n and an arbitrary finite-measure input sequence/all radii; first choose sigma, then the required finite windows, then let v tend to zero and finally sigma decrease.",
+        "error_term_and_uniformity": "K_n upper price; this is not eighth order",
+        "actual_object_or_model": "Actual whole halo/input ratio with the actual M and S denominator and the six-layer shared ledger.",
+        "logical_dependencies": "Sixth graph S4+S5+S7+S8 -> S9 -> S10 -> S11; this is only the sixth-order upper node.",
+        "proof_status": "Mapped from the cited reconstruction record for this node scope; not a new mathematical verdict.",
+        "assigned_reviewer": "root to reconcile with semantic dependency/evidence table",
+        "reconstruction_record_location": "sixth rebuild §§10-12 S9-S11; source paper/sections/sharp.tex:646-652"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "partial: earlier mapping used only the six-layer chapter table",
+      "reconstruction_nodes": [
+        "S9",
+        "S10",
+        "S11"
+      ],
+      "audit_locations": [
+        "sixth rebuild §§10-12 S9-S11; source paper/sections/sharp.tex:646-652"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:9:theorem",
+      "type": "theorem",
+      "title": "八阶精确展开",
+      "labels": [
+        "eighth:theorem",
+        "eighth:exact-expansion"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 9,
+        "end_line": 25
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:theorem",
+            "eighth:exact-expansion"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §§2.1, 9-10; node table §4; dependency_graph.mmd (node table §4 lines 160-181); source paper/sections/eighth.tex:9-25",
+          "scope": "C_n(1-t)=P_7,n(t)+Jhat_n a v^8+o_n(av^8), with Jhat_n explicit and planar Jhat_2=17638/6561."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Fixed integer n>=2; actual center-cube Tauberian constant; t↓0.",
+        "conclusion": "C_n(1-t)=P_7,n(t)+Jhat_n a v^8+o_n(av^8), with Jhat_n explicit and planar Jhat_2=17638/6561.",
+        "domain_and_parameters": "a=v^n=2^n t; v=2t^(1/n); n fixed.",
+        "quantifier_order": "For each fixed n, prove the upper for every actual input via arbitrary-input limsup, and a matching bounded finite input for each sufficiently small real t; combine.",
+        "error_term_and_uniformity": "Upper limsup <= Jhat_n; lower finite family has O_n(av^9), hence fixed-n o_n(av^8) expansion. No N9 or arbitrary-order claim.",
+        "actual_object_or_model": "Actual supremum over finite positive Lebesgue inputs/all radii; lower uses finite macro holes plus planar micro protection where applicable.",
+        "logical_dependencies": "E12 upper depends E10,E11,E4,G1,G4; E13 depends E12,G0; matching lower L4 depends L2,L3; top theorem also uses foundation baseline C2/C3 for coefficient/multiplicity forms.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §§2.1, 9-10; node table §4; dependency_graph.mmd (node table §4 lines 160-181); source paper/sections/eighth.tex:9-25"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:theorem",
+        "eighth:exact-expansion"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §§2.1, 9-10; node table §4; dependency_graph.mmd (node table §4 lines 160-181); source paper/sections/eighth.tex:9-25"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:43:lemma",
+      "type": "lemma",
+      "title": "同一八层族的三个前缀",
+      "labels": [
+        "eighth:priors",
+        "eighth:positive-prior",
+        "eighth:mass-prior"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 43,
+        "end_line": 57
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:priors",
+            "eighth:positive-prior",
+            "eighth:mass-prior"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §2.1 steps 1-3; §4 table; foundation §4 G10-G12; sixth §§4,11,14 (node table §4 lines 160-181); source paper/sections/eighth.tex:43-57",
+          "scope": "Each prefix has positive mass/shape/face budgets; prior quantities and deletion/mass errors controlled."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "One fixed I, original finite witness radii, actual N8 source/target family; m=6,7,8 prefixes.",
+        "conclusion": "Each prefix has positive mass/shape/face budgets; prior quantities and deletion/mass errors controlled.",
+        "domain_and_parameters": "Fixed n, finite N8 construction, small v after all depth constants and one CDF slope fixed.",
+        "quantifier_order": "Choose I; fix all eight depths and unified A8; then choose one CDF slope; finally take v small.",
+        "error_term_and_uniformity": "D_m/a plus associated positive terms O(v^6S); previous repetition and d0 terms O(av^5S); deletion mass O(av^6S).",
+        "actual_object_or_model": "Same actual eight-layer family and same original radii, not renamed earlier sixth layer.",
+        "logical_dependencies": "G1/G3; foundation actual-source recursion and sixth retained critical priors.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §2.1 steps 1-3; §4 table; foundation §4 G10-G12; sixth §§4,11,14 (node table §4 lines 160-181); source paper/sections/eighth.tex:43-57"
+      },
+      "syntax_refs_only": [
+        {
+          "kind": "statement",
+          "file": "paper/sections/eighth.tex",
+          "line": 45,
+          "owner_start_line": 43,
+          "owner_labels": [
+            "eighth:priors"
+          ],
+          "target": "sharp-graph-absorption",
+          "command": "eqref",
+          "resolution": "resolved",
+          "target_locations": [
+            {
+              "label": "sharp-graph-absorption",
+              "file": "paper/sections/sharp.tex",
+              "line": 79,
+              "owner_env": "lemma",
+              "owner_start_line": 77
+            }
+          ]
+        }
+      ],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:priors",
+        "eighth:positive-prior",
+        "eighth:mass-prior"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §2.1 steps 1-3; §4 table; foundation §4 G10-G12; sixth §§4,11,14 (node table §4 lines 160-181); source paper/sections/eighth.tex:43-57"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:133:lemma",
+      "type": "lemma",
+      "title": "实际空隙及窗口根差",
+      "labels": [
+        "eighth:window",
+        "eighth:void",
+        "eighth:root-transfer"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 133,
+        "end_line": 146
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:window",
+            "eighth:void",
+            "eighth:root-transfer"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §4.1 and §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:133-146",
+          "scope": "Void estimate and total X overlap O(v^6S); complete fixed-window root radius-transport sum O_R(v^6S)."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Actual sets Q_i and X_i; fixed physical window R and good-root set G_v.",
+        "conclusion": "Void estimate and total X overlap O(v^6S); complete fixed-window root radius-transport sum O_R(v^6S).",
+        "domain_and_parameters": "Fixed n,R; then v→0 along any competitive input sequence.",
+        "quantifier_order": "First use prior/stability construction and fixed R; only then v small.",
+        "error_term_and_uniformity": "volume Q minus U=O((v^(n+1)+v^5)S); sum overlap=O(v^6S); transport=O_R(v^6S).",
+        "actual_object_or_model": "Actual enlarged boxes and complete witness list, not only selected local tiling.",
+        "logical_dependencies": "E0 plus G2/G3 contracts; this supplies E1 actual slot/root data.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §4.1 and §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:133-146"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:window",
+        "eighth:void",
+        "eighth:root-transfer"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §4.1 and §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:133-146"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:188:lemma",
+      "type": "lemma",
+      "title": "自适应软权容量",
+      "labels": [
+        "eighth:soft-capacity",
+        "eighth:soft-weight"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 188,
+        "end_line": 193
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:soft-capacity",
+            "eighth:soft-weight"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §4.1 (node table §4 lines 160-181); source paper/sections/eighth.tex:188-193",
+          "scope": "W_C <= B_n/(1+v)^2 * Vcal + O_C(v^3 S)."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Any fixed C>=1 in adaptive soft-slot construction.",
+        "conclusion": "W_C <= B_n/(1+v)^2 * Vcal + O_C(v^3 S).",
+        "domain_and_parameters": "Fixed n,C; small v after defining adaptive weights.",
+        "quantifier_order": "Fix C first; then v small.",
+        "error_term_and_uniformity": "O_C(v^3S); actual normal deficit D_N is nonnegative.",
+        "actual_object_or_model": "Adaptive soft weights and actual slot capacity, not a fixed lattice assumption.",
+        "logical_dependencies": "E1 slot identities and G2/G3; used in E2/E3.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §4.1 (node table §4 lines 160-181); source paper/sections/eighth.tex:188-193"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:soft-capacity",
+        "eighth:soft-weight"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §4.1 (node table §4 lines 160-181); source paper/sections/eighth.tex:188-193"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:333:lemma",
+      "type": "lemma",
+      "title": "槽覆盖识别高支撑目标",
+      "labels": [
+        "eighth:good-slots",
+        "eighth:bad-root",
+        "eighth:good-high"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 333,
+        "end_line": 342
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:good-slots",
+            "eighth:bad-root",
+            "eighth:good-high"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §4.2 and §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:333-342",
+          "scope": "Construct bad owner-root set B with small weight; good-owner high-support overlap has O(v^8S)."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "n>=3; same actual family; classify high-support edges by maximum-mass owner.",
+        "conclusion": "Construct bad owner-root set B with small weight; good-owner high-support overlap has O(v^8S).",
+        "domain_and_parameters": "Fixed n>=3, small v.",
+        "quantifier_order": "Stability and adaptive slots fixed before owner classification.",
+        "error_term_and_uniformity": "S(B)<=C(D_N+v^(9/2)S); good-owner q>=3 sum |X_i∩X_j|=O(v^8S).",
+        "actual_object_or_model": "Actual overlap of source enlarged boxes and owner roots.",
+        "logical_dependencies": "E1+G2+G3; contributes to E6 and E10.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §4.2 and §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:333-342"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:good-slots",
+        "eighth:bad-root",
+        "eighth:good-high"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §4.2 and §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:333-342"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:417:lemma",
+      "type": "lemma",
+      "title": "一般支撑数的实际净价格",
+      "labels": [
+        "eighth:high-net",
+        "eighth:high-payment"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 417,
+        "end_line": 423
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:high-net",
+            "eighth:high-payment"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §4.2 and §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:417-423",
+          "scope": "High-support net payment is bounded by eta Z(K)+eta v^6 D_N plus finite eighth-order remainder."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Each fixed eta,K>0, all high-support actual edges.",
+        "conclusion": "High-support net payment is bounded by eta Z(K)+eta v^6 D_N plus finite eighth-order remainder.",
+        "domain_and_parameters": "Fix eta,K; then small v.",
+        "quantifier_order": "eta,K chosen before v; these parameters are independent of the input count.",
+        "error_term_and_uniformity": "C_(eta,K) v^8 S.",
+        "actual_object_or_model": "Actual q(e)>=3 edge intersections, with gross and source payment distinguished.",
+        "logical_dependencies": "E1/E2 and G2/G3; pays E6. Does not say gross is itself o(v^8S) until E5 stability is used.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §4.2 and §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:417-423"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:high-net",
+        "eighth:high-payment"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §4.2 and §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:417-423"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:642:lemma",
+      "type": "lemma",
+      "title": "全部二轴联合价格",
+      "labels": [
+        "eighth:joint-price",
+        "eighth:joint"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 642,
+        "end_line": 654
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:joint-price",
+            "eighth:joint"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §4.2 node table; detailed derivation §§5,7 (node table §4 lines 160-181); source paper/sections/eighth.tex:642-654",
+          "scope": "Joint q=2 H2 plus positive normal-window and v^6 D_N payments <= [A6(v)+Gamma v^7] C + chi F + C v^8 S."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Fixed positive c_R,c_D; arbitrary preassigned chi>0; common normal set, clean allocation and packet.",
+        "conclusion": "Joint q=2 H2 plus positive normal-window and v^6 D_N payments <= [A6(v)+Gamma v^7] C + chi F + C v^8 S.",
+        "domain_and_parameters": "Fixed n and packet/normal set from same N8 family.",
+        "quantifier_order": "Fix chi and parameters; choose windows/T,m in stated order; then v small.",
+        "error_term_and_uniformity": "C v^8S with chi F reserved; not a free independent payment for each pair.",
+        "actual_object_or_model": "All actual two-axis external pairs with one complete J subtraction.",
+        "logical_dependencies": "E1+E3 stability/coercivity and G2; feeds E4/E5 and later E10.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §4.2 node table; detailed derivation §§5,7 (node table §4 lines 160-181); source paper/sections/eighth.tex:642-654"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:joint-price",
+        "eighth:joint"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §4.2 node table; detailed derivation §§5,7 (node table §4 lines 160-181); source paper/sections/eighth.tex:642-654"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:784:proposition",
+      "type": "proposition",
+      "title": "八阶粗上包",
+      "labels": [
+        "eighth:bootstrap-upper"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 784,
+        "end_line": 786
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:bootstrap-upper"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §5; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:784-786",
+          "scope": "C_n(1-t)<=P_7,n(t)+O_n(av^8)."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Fixed n>=2; competitive input sequence and same N8 family.",
+        "conclusion": "C_n(1-t)<=P_7,n(t)+O_n(av^8).",
+        "domain_and_parameters": "Fixed n and t↓0.",
+        "quantifier_order": "Use E0-E3 and G4; center N8 ledger before small-v limit.",
+        "error_term_and_uniformity": "O_n(av^8) coarse upper, not the sharp coefficient.",
+        "actual_object_or_model": "Actual all-radius halo ratio via real M/V.",
+        "logical_dependencies": "E0-E3/G4; provides stable competitive budget E5.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §5; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:784-786"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:bootstrap-upper"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §5; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:784-786"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:926:lemma",
+      "type": "lemma",
+      "title": "八阶稳定预算",
+      "labels": [
+        "eighth:exact-stability",
+        "eighth:exact-stable-budget"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 926,
+        "end_line": 944
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:exact-stability",
+            "eighth:exact-stable-budget"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §5; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:926-944",
+          "scope": "Nonnegative normal/coercivity/bad/raw/erosion/face and graph reserves are all O(v^8S); includes sum_N d_e^2 R_e^n and D_N O(v^2S)."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Same N8 family after bootstrap; fixed C_* independent of later large-angle window or tail share.",
+        "conclusion": "Nonnegative normal/coercivity/bad/raw/erosion/face and graph reserves are all O(v^8S); includes sum_N d_e^2 R_e^n and D_N O(v^2S).",
+        "domain_and_parameters": "Fixed n; all actual objects in eighth layer.",
+        "quantifier_order": "First bootstrap/old fixed normal construction; only after fixing C_* choose new auxiliary windows and tail parameters.",
+        "error_term_and_uniformity": "Aggregate reserve <= C_*v^8S; C_* must not grow with later T/m.",
+        "actual_object_or_model": "Actual normal-layer roots, stable budgets, raw target mass, actual D_N.",
+        "logical_dependencies": "E4 with E2,E3 from same ledger; used by E6-E11.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §5; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:926-944"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:exact-stability",
+        "eighth:exact-stable-budget"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §5; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:926-944"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:989:lemma",
+      "type": "lemma",
+      "title": "全部高支撑交量的小量",
+      "labels": [
+        "eighth:exact-high-gross"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 989,
+        "end_line": 995
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:exact-high-gross"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §4.2 tail of derivation; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:989-995",
+          "scope": "All q>=3 gross overlap is o(v^8S), without subtracting source surplus."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Same stable family; n>=3 high-support edges, with n=2 empty sum.",
+        "conclusion": "All q>=3 gross overlap is o(v^8S), without subtracting source surplus.",
+        "domain_and_parameters": "Fixed n and arbitrary critical sequence.",
+        "quantifier_order": "Keep old C_* fixed; take v→0 first; then tail share eta↓0.",
+        "error_term_and_uniformity": "o(v^8S), not a finite-dimensional fit.",
+        "actual_object_or_model": "Actual gross intersections of high-support X boxes.",
+        "logical_dependencies": "E2+E5; used in E10. Does not equate earlier O(v^8S) good-owner estimate to global net price.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §4.2 tail of derivation; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:989-995"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:exact-high-gross"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §4.2 tail of derivation; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:989-995"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:1046:lemma",
+      "type": "lemma",
+      "title": "只扣 raw 的轴帽",
+      "labels": [
+        "eighth:exact-axial",
+        "eighth:exact-height-nec"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 1046,
+        "end_line": 1062
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:exact-axial",
+            "eighth:exact-height-nec"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §6; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1046-1062",
+          "scope": "Necessary source height is at least sum of all packet actual cap masses /(na R_i^(n-1)) minus C_T e_i; total e_i contribution O(v^8S)."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Any original radius in the same family; same original witness contains all target packet caps; actual face neighbors and errors as defined in statement.",
+        "conclusion": "Necessary source height is at least sum of all packet actual cap masses /(na R_i^(n-1)) minus C_T e_i; total e_i contribution O(v^8S).",
+        "domain_and_parameters": "Fixed T and N8 actual source/target charts.",
+        "quantifier_order": "Fix packet/window; in each source witness sum all targets before capacity comparison.",
+        "error_term_and_uniformity": "sum R_i^(n-1)e_i <= C[v^8S+R_N+E+F]=O(v^8S).",
+        "actual_object_or_model": "Effective source chart, original target boxes, same actual witness; global shallowest axis may be outside target pair.",
+        "logical_dependencies": "G2+E5; enables whole-chart operator E8.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §6; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1046-1062"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:exact-axial",
+        "eighth:exact-height-nec"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §6; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1046-1062"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:1146:lemma",
+      "type": "lemma",
+      "title": "整源小算子与两次反馈",
+      "labels": [
+        "eighth:exact-iteration",
+        "eighth:exact-second-cost"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 1146,
+        "end_line": 1163
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:exact-iteration",
+            "eighth:exact-second-cost"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §6; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1146-1163",
+          "scope": "Antitone operator is C_T v-Lipschitz in physical L1; Y0,Y1,Y2 iterations yield actual guarantee layer and Y2 source-cost replacement."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Any test set family for fixed packet P; effective sources and original targets/clip/root fixed.",
+        "conclusion": "Antitone operator is C_T v-Lipschitz in physical L1; Y0,Y1,Y2 iterations yield actual guarantee layer and Y2 source-cost replacement.",
+        "domain_and_parameters": "Fixed T and n.",
+        "quantifier_order": "Define B from the same chart and packet, then iterate exactly twice after Y0.",
+        "error_term_and_uniformity": "Y2/actual replacement and refund price errors O_T(v^9S).",
+        "actual_object_or_model": "Actual effective source sets and source-cost layers; D is not asserted equal to Y2.",
+        "logical_dependencies": "E7+B3; older layer anchor and one strong CDF; yields E9.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §6; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1146-1163"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:exact-iteration",
+        "eighth:exact-second-cost"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §6; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1146-1163"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:1221:lemma",
+      "type": "lemma",
+      "title": "实际源成本及正常模型价",
+      "labels": [
+        "eighth:exact-normal-price",
+        "eighth:exact-normal-integral",
+        "eighth:exact-model-price"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 1221,
+        "end_line": 1242
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:exact-normal-price",
+            "eighth:exact-normal-integral",
+            "eighth:exact-model-price"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §7; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1221-1242",
+          "scope": "Normal source integral has v6,v7,v8 moment terms; scalar normal model price q_N bounds P_N."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Normal packet and competitive parameters; both cap orientations, whole chart and global shallowest-axis three-face cases.",
+        "conclusion": "Normal source integral has v6,v7,v8 moment terms; scalar normal model price q_N bounds P_N.",
+        "domain_and_parameters": "Fixed n, packet/normal window; variables p,q,z in stated normal range.",
+        "quantifier_order": "Use E5/E8, expand only at actual penalized maximum; sum all normal roots.",
+        "error_term_and_uniformity": "o(v^8S) uniformly along arbitrary critical sequence; includes all three-face terms.",
+        "actual_object_or_model": "Actual source cost and normal model price separated; RMS controls aggregate errors, not pointwise O(v).",
+        "logical_dependencies": "E5+E8; feeds complement E10.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §7; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1221-1242"
+      },
+      "syntax_refs_only": [
+        {
+          "kind": "statement",
+          "file": "paper/sections/eighth.tex",
+          "line": 1222,
+          "owner_start_line": 1221,
+          "owner_labels": [
+            "eighth:exact-normal-price"
+          ],
+          "target": "eighth:exact-competitive",
+          "command": "eqref",
+          "resolution": "resolved",
+          "target_locations": [
+            {
+              "label": "eighth:exact-competitive",
+              "file": "paper/sections/eighth.tex",
+              "line": 919,
+              "owner_env": null,
+              "owner_start_line": null
+            }
+          ]
+        }
+      ],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:exact-normal-price",
+        "eighth:exact-normal-integral",
+        "eighth:exact-model-price"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §7; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1221-1242"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:1395:lemma",
+      "type": "lemma",
+      "title": "任意固定精度的补集结算",
+      "labels": [
+        "eighth:exact-complement",
+        "eighth:exact-complement-price"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 1395,
+        "end_line": 1408
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:exact-complement",
+            "eighth:exact-complement-price"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §7; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1395-1408",
+          "scope": "One full H and one J bound plus positive payments for D_N, full bad nominal cost, raw and erosion."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Any fixed delta>0; packet includes normal and complementary q2 edges m<=p,q<=T, fixed n.",
+        "conclusion": "One full H and one J bound plus positive payments for D_N, full bad nominal cost, raw and erosion.",
+        "domain_and_parameters": "T finite large, then m finite small, then v→0.",
+        "quantifier_order": "Choose delta; fix old C_*; then T, m, soft constant and v in the stated order.",
+        "error_term_and_uniformity": "delta v^8S+o_delta(v^8S), with tail C/T+Tm and new bad-cost limsup bounded by old fixed C_*.",
+        "actual_object_or_model": "Full complement actual pairs; H subtracts exactly one complete J.",
+        "logical_dependencies": "E6+E8+E9+E1; uses same erosion and actual raw.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §7; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1395-1408"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:exact-complement",
+        "eighth:exact-complement-price"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §7; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1395-1408"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:1553:lemma",
+      "type": "lemma",
+      "title": "角窗中的精确局部费用",
+      "labels": [
+        "eighth:exact-small-box"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 1553,
+        "end_line": 1568
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:exact-small-box"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §8; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1553-1568",
+          "scope": "|S| <= a/(1-a) z + C_(c,C,A) a d."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Rectangular R with side lengths [cL,CL]; T subset R\\E; Z subset R in four epsilon L corners; b,epsilon→0 and sqrt(b)/epsilon→0; each S point has finite positive original witness radius <=AL.",
+        "conclusion": "|S| <= a/(1-a) z + C_(c,C,A) a d.",
+        "domain_and_parameters": "Two-dimensional rectangle; finite positive values, no minimum-radius or witness-count dependence.",
+        "quantifier_order": "All sufficiently small b,epsilon satisfying the stated relation; full pointwise cover by descending radii.",
+        "error_term_and_uniformity": "Exact main coefficient a/(1-a); remainder C a d.",
+        "actual_object_or_model": "Actual measurable S covered by original strict witnesses, not finite probes.",
+        "logical_dependencies": "G0+G2+E5; used by E11 inside payment.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §8; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1553-1568"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:exact-small-box"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §8; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1553-1568"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:1608:lemma",
+      "type": "lemma",
+      "title": "实际删除量及基线导数",
+      "labels": [
+        "eighth:exact-small-source",
+        "eighth:exact-inside"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 1608,
+        "end_line": 1617
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:exact-small-source",
+            "eighth:exact-inside"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §8; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1608-1617",
+          "scope": "Inside deletion cost has coefficient 2K2+O(v); other classes are later order."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Same two-dimensional N8 layer, with actual small-source deletion, boundary/environment/deep box classes.",
+        "conclusion": "Inside deletion cost has coefficient 2K2+O(v); other classes are later order.",
+        "domain_and_parameters": "n=2 only for inside mechanism.",
+        "quantifier_order": "Use same stable layer; keep deletion coefficient separate from d0 telescope.",
+        "error_term_and_uniformity": "(1+O(v)) v/a sum delta_in <= (2K2+O(v))v^8S; boundary/environment O(v^10S), deep outside O(v^9S).",
+        "actual_object_or_model": "Actual deleted source mass and actual baseline derivative.",
+        "logical_dependencies": "G0+G2+E5; exact small-box lemma supplies the coefficient-one cost.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §8; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1608-1617"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:exact-small-source",
+        "eighth:exact-inside"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §8; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1608-1617"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:1689:proposition",
+      "type": "proposition",
+      "title": "八阶精确上界",
+      "labels": [
+        "eighth:upper"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 1689,
+        "end_line": 1695
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:upper"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §9; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1689-1695",
+          "scope": "limsup_t (C_n(1-t)-P7,n(t))/(a v^8) <= Jhat_n."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Fixed n>=2, all finite-measure inputs and all positive radii.",
+        "conclusion": "limsup_t (C_n(1-t)-P7,n(t))/(a v^8) <= Jhat_n.",
+        "domain_and_parameters": "Fixed n as t↓0.",
+        "quantifier_order": "Assemble E10/E11/G1/G4 on same N8 family and actual M; center all weighted layers before moving denominator.",
+        "error_term_and_uniformity": "Sharp limsup coefficient; lower-order terms in E12 are explicitly handled on the same N8, no N9.",
+        "actual_object_or_model": "Actual M/V, not aS/V substitution or infinite-periodic ratio.",
+        "logical_dependencies": "E10+E11+E4+G1+G4; all fixed N8.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §9; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1689-1695"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:upper"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §9; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1689-1695"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:1811:proposition",
+      "type": "proposition",
+      "title": "宏观孔的有限输入构造",
+      "labels": [
+        "eighth:macro-lower",
+        "eighth:finite-lower"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 1811,
+        "end_line": 1817
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:macro-lower",
+            "eighth:finite-lower"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §10; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1811-1817",
+          "scope": "Finite macro-hole input achieves P7,n(t)+J_n a v^8+O_n(a v^9)."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Each sufficiently small real t>0; actual affine periodic hole family with safety parameter chosen after uniform geometry estimates.",
+        "conclusion": "Finite macro-hole input achieves P7,n(t)+J_n a v^8+O_n(a v^9).",
+        "domain_and_parameters": "Fixed n; all sufficiently small real parameters.",
+        "quantifier_order": "Fix kappa/compact parameter range and uniform errors; choose safety c_n; then small t; choose N=ceil(u^-10) for finite box.",
+        "error_term_and_uniformity": "O_n(av^9) after actual finite-box error O(a/N).",
+        "actual_object_or_model": "Finite bounded input with exact actual mass M and all-radius half-space exclusion.",
+        "logical_dependencies": "L0->L1->L2; lower construction does not use upper stability.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §10; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1811-1817"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:macro-lower",
+        "eighth:finite-lower"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §10; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:1811-1817"
+      ]
+    },
+    {
+      "id": "paper/sections/eighth.tex:2035:proposition",
+      "type": "proposition",
+      "title": "精确八阶的有限下界",
+      "labels": [
+        "eighth:lower"
+      ],
+      "source": {
+        "path": "paper/sections/eighth.tex",
+        "start_line": 2035,
+        "end_line": 2041
+      },
+      "mapping_status": "explicitly_mapped",
+      "reconstruction_coverage": [
+        {
+          "labels": [
+            "eighth:lower"
+          ],
+          "audit_location": "reviews/063-eighth-reconstruction.md §10; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:2035-2041",
+          "scope": "Finite input ratio equals P7,n(t)+Jhat_n a v^8+O_n(av^9)."
+        }
+      ],
+      "semantic_fields": {
+        "hypotheses": "Each sufficiently small real t>0; all n>=2, with two-dimensional microholes only when n=2.",
+        "conclusion": "Finite input ratio equals P7,n(t)+Jhat_n a v^8+O_n(av^9).",
+        "domain_and_parameters": "Fixed n; n=2 adds actual micro protection; n>=3 lower coefficient is macro J_n.",
+        "quantifier_order": "Macro geometry/finite lower, then for n=2 install micro holes and one explicit protection, then convex finite box for each small t.",
+        "error_term_and_uniformity": "O_n(av^9), all-radius finite lower for each sufficiently small real t.",
+        "actual_object_or_model": "Actual bounded finite input; exact total mass M, macros and microholes have simultaneous strict original witnesses.",
+        "logical_dependencies": "L0->L1->L2 and L1->L3->L4; theorem lower matches E12 upper.",
+        "proof_status": "Mapped to the supplied current eighth reconstruction in the stated fixed-n/N8 scope; no claim is made here beyond that record.",
+        "assigned_reviewer": "root / mathematical reviewers; this is an evidence index, not a new review.",
+        "reconstruction_record_location": "reviews/063-eighth-reconstruction.md §10; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:2035-2041"
+      },
+      "syntax_refs_only": [],
+      "syntax_citations_only": [],
+      "previous_draft_status": "pending under prior inventory cutoff before eighth reconstruction existed",
+      "reconstruction_nodes": [
+        "eighth:lower"
+      ],
+      "reconstruction_record_sha256": "16401f6d8b9688d94ae115b2d5df1974dc36accbc404e102675e479de1e11a33",
+      "audit_locations": [
+        "reviews/063-eighth-reconstruction.md §10; §4 table (node table §4 lines 160-181); source paper/sections/eighth.tex:2035-2041"
+      ]
+    }
+  ],
+  "explicit_dependency_note": "The sixth-rebuild graph is copied from rebuild.md §1: B0→B1/B2/B3→S1→S2→S3/S4→S5; B1+S2→S6→S7/S8; S4+S5+S7+S8→S9→S10→S11. G0 is a separate lower-construction branch. For foundation nodes, only narrative dependencies stated in proof_record.md are entered; other directed edges remain explicitly unfilled. These are audit-provided dependencies, not parsed TeX refs.",
+  "remaining_partial_resolution": [],
+  "semantic_incompleteness_note": "Partial denotes a field-level indexing gap, not an unresolved theorem verdict. Each partial node carries missing_fields listing the exact field root must fill.",
+  "root_curation": {
+    "input_sha256": "7c9872ea6e280ce05432099ee05fce4568ac4ec4c9e6391d7eb415230c4069e0",
+    "completed_incoming_edges": [
+      "lem:global-face-capacity",
+      "lem:global-face-neighbor",
+      "lem:global-all-source-face",
+      "lem:global-full-graph",
+      "lem:global-free-face-strips",
+      "lem:global-small-source-recovery",
+      "lem:global-common-defect",
+      "lem:global-augmented-capacity"
+    ],
+    "correction": "General upper critical supports q>=2 have no balanced/even restriction; that restriction belongs to the lower sheared-lattice neighbor classification only.",
+    "basis": "Root read all three complete reconstruction derivations, original comparison and corresponding dependency tables; no syntax edge was automatically promoted."
+  }
+}
