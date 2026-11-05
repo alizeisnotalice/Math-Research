@@ -1,0 +1,11 @@
+ClearAll[d,rows,vals];
+Print["Wolfram ",$Version,"; PID ",$ProcessID];
+data=Import[FileNameJoin[{DirectoryName[$InputFileName],"formal-R8-j7.json"}],"RawJSON"];
+rows=data["rows"];vals[r_,key_]:=ToExpression/@r[key];
+Print["domain plane model, formal modulo delta^9; imported exact Fraction output, not an independent geometric derivation."];
+I1=Normal[Series[((d-1)d(-100+95d-60d^2+26d^3+4d^4))/60,{d,0,8}]];
+I2=Normal[Series[-d(-50400+98280d-199584d^2+228816d^3-216972d^4+195792d^5-137916d^6+73413d^7-21099d^8-3367d^9+2617d^10+186d^11-26d^12+20d^13)/30240,{d,0,8}]];
+Print["I1 coefficient residuals: ",vals[rows[[2]],"moment_I_coefficients"]-CoefficientList[I1,d,9]];
+Print["I2 coefficient residuals: ",vals[rows[[3]],"moment_I_coefficients"]-CoefficientList[I2,d,9]];
+Print["area shift all layers: ",And@@Table[vals[rows[[j+1]],"area_coefficients"]==Join[{0,1},-Take[Rest[vals[rows[[j]],"moment_I_coefficients"]],7]],{j,1,7}]];
+Print["j7 area coefficients: ",vals[rows[[8]],"area_coefficients"]];

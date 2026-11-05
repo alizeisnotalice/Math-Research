@@ -1,0 +1,11 @@
+ClearAll[r,h,pp,aa,qlo,qhi,mlo,mhi,delta,u];
+Print["Wolfram ",$Version,"; PID ",$ProcessID];
+Print["Domain 0<delta<1, 0<=dh/dr<=delta; r increases from 0 to1, h(0)=P(0)=0, P(1)=A."];
+qlo=h;qhi=1-r+h;
+mlo=qlo^2/2+qlo(1-r)+pp;mhi=2aa-pp+h^2/2;
+Print["meeting residual at r=1 P=A: ",Expand[(mlo-mhi)/.{r->1,pp->aa}]];
+Print["low endpoint q,M: ",{qlo,mlo}/.{r->0,h->0,pp->0}];
+Print["high endpoint q,M: ",{qhi,mhi}/.{r->0,h->0,pp->0}];
+Print["direction violation low nonnegative: ",Reduce[0<delta<1&&0<=u<=delta&&u<0,{delta,u},Reals]];
+Print["direction violation high strictly negative: ",Reduce[0<delta<1&&0<=u<=delta&&u-1>=0,{delta,u},Reals]];
+Print["complete"];

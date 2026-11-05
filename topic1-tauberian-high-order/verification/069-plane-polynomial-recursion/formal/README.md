@@ -1,0 +1,7 @@
+# R069 formal delta-truncated plane curves
+
+`curve_formal.py` represents every curve component as an exact Fraction polynomial in local t and delta, discarding only delta degree >R after each addition/multiplication. All 2^j pieces remain, including formal flat pieces; their primitive prefix constants are preserved. Runs save input order, layer, all area/moment coefficients, piece/term counts, worker PIDs and actual per-job CPU/maxRSS measurements. Commands used include `python3 curve_formal.py --order 6 --depth 3`, `--order 8 --depth 3`, and `--order 8 --depth 7 --workers 15`.
+
+`verify_formal.py/json` compares R6 and R8, exact R067 I1/I2 through order8, the Tonelli area shift, the observed two-step valuations and c3. `check_wl.wl/log` independently reads the exported exact rational coefficient arrays and checks them in Mathematica against R067 and the Tonelli shift; it is not an independent implementation of the curve recursion. The R8 j7 input requested 15 workers but the OS assigned work to 13 distinct worker PIDs because the tasks were short; the actual timings and memory are recorded in `formal-R8-j7.json`.
+
+The listed degree-eight canonical area coefficients use the separately supplied L1 fixed-point error O(delta^(j+2)); they are conditional until that analytic estimate is independently validated. They apply only to this 2D plane min-cap fixed point, not to the nonlinear physical macro problem or an all-order Cn claim. No formal flat-piece pruning is used.
