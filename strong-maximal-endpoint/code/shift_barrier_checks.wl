@@ -1,0 +1,16 @@
+Clear[x,t,m,k,t0];h=k(x^2/(m t)+2Log[t/t0]);y=x-h;fy=Exp[-y^2/(2m t)]/Sqrt[2Pi m t];w=Erfc[-y/Sqrt[2m t]]/2;
+exact=-k/t-k*x^2/(m*t^2)+2*k*x*h/(m*t^2)+2*k^2*x^2*(x-h)/(m^2*t^3);
+res=FullSimplify[(D[w,t]-m D[w,{x,2}]/2)/fy-exact,Assumptions->{m>0,t>0,t0>0,Element[{x,k},Reals]}];
+poly[v_]:=4+v^2+4v-10v^4+8v^5+v^6-12v^7/7;
+matching={poly'[0]-4,poly''[0]-2,poly'''[0],poly'[1],poly''[1],poly'''[1]};
+mu=1+ProductLog[Exp[-1]];sig=Sqrt[mu];ell=10;c0=10^10;kk=100;aa=10Sqrt[ell];tt0=c0 ell;tt=tt0+1;pp=1/(1+Exp[mu]);
+cap[zz_?NumericQ]:=Which[Abs[zz]<=2aa,zz^2,Abs[zz]>=3aa,44aa^2/7,True,aa^2 poly[Abs[zz]/aa-2]];
+height[xx_?NumericQ,ss_?NumericQ]:=kk(cap[xx/(sig Sqrt[ss])]+2Log[ss/tt0]);
+bar[xx_?NumericQ,ss_?NumericQ]:=Erfc[-(xx-height[xx,ss])/(sig Sqrt[2ss])]/2;
+rows=Table[Module[{xx=N[sig Sqrt[tt]zz,90],current,density,quad},current=bar[xx,tt];density=Exp[-(xx-height[xx,tt])^2/(2mu tt)]/Sqrt[2Pi mu tt];
+quad=NIntegrate[Exp[-yy]((1-pp)(bar[xx+mu-yy,tt-1]-current)+pp(bar[xx-yy,tt-1]-current))/density,{yy,0,Infinity},WorkingPrecision->80,AccuracyGoal->40,PrecisionGoal->40];
+<|"log_horizon"->ell,"z"->ToString[N[zz,20],InputForm],"fixed_mu_normalized_step_margin"->ToString[N[quad,30],InputForm]|>],{zz,{-Sqrt[ell],0,Sqrt[ell]}}];
+result=<|"wolfram_version"->$Version,"exact_nonlinear_PDE_residual"->ToString[res,InputForm],"cap_endpoint_values"->{4,44/7},"cap_C3_matching_residuals"->matching,"quadrature_working_precision"->80,"rows"->rows|>;
+root=DirectoryName[DirectoryName[$InputFileName]];
+Export[FileNameJoin[{root,"rounds","r021","symbolic_checks.json"}],result,"RawJSON"];
+Print[ExportString[result,"RawJSON"]];
