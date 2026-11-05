@@ -1,0 +1,175 @@
+\section{近偏心矩形的显式三阶包络}\label{nr:section}
+
+近正方形并未覆盖全部一阶矩形构型。对四轴刚性中出现的
+$R_{\rho,t}=[-e^{\rho t}/2,e^{\rho t}/2]\times[-e^{-\rho t}/2,e^{-\rho t}/2]$，
+一阶尺度平坦区会发生平移。下面精确优化相应的四见证容量，给出参数一致的真实输入上界。
+
+\begin{theorem}[有间隙的近矩形上界]\label{nr:main}
+固定 $A\ge0$。存在 $K_A,C_A,t_A>0$，使 $0<t<t_A$、
+$p=|\rho|\le1-K_At$、$|E\triangle R_{\rho,t}|\le At^2$ 时，
+\begin{equation}\label{nr:upper}
+ \frac{|H_{1,\mathcal Q_c}(1-t,E)|}{|E|}
+ \le2t^2+[2+2p(1-p)]t^3+C_At^4
+ \le2t^2+\frac52t^3+C_At^4.
+\end{equation}
+输入可测且可无界，允许外加质量和随 $t$ 变化的任意扰动。
+常数不依赖满足该间隙条件的 $\rho$；尤其在每个 $|\rho|\le1-\varepsilon$ 上一致。
+系数 $2+2p(1-p)$ 是下述纯四见证容量包络的最优值，
+不声称它是此输入类或全体输入的最优三阶系数。
+\end{theorem}
+
+\begin{lemma}[共同尺度区间上的精确容量极值]\label{nr:interval}
+令 $x+y=1$、$x,y\ge0$，并沿用式~\eqref{ns:psi}的 $\mathcal R$，取 $r_c=1$。
+若四个独立尺度均属于共同区间 $[L,U]$，且 $U-L\le2\min(x,y)$，则
+\begin{equation}\label{nr:max}
+ \max_{u_c\in[L,U]}\left\{\mathcal R(1,u;x)+2\sum_cu_c\right\}
+ =8xy+8\max(L^2,U^2).
+\end{equation}
+最大值由全部尺度同取绝对值最大的端点达到。
+\end{lemma}
+
+\begin{proof}
+令 $\mu=(L+U)/2$、$h=(U-L)/2$，写 $u_c=\mu+hv_c$、$-1\le v_c\le1$。
+区间宽度不超过 $2x,2y$，保证交集右边界的最小值和左边界的最大值仍按相反坐标符号分组；
+故引理~\ref{ns:flat}证明中的四个 $W_j$ 公式继续成立，不要求区间以零为中心。
+置
+\[
+ \mathcal T(v)=4\left[\mathcal R(1,v/2;1/2)+\sum_cv_c-2\right].
+\]
+直接展开最小值给出恒等式
+\begin{equation}\label{nr:shift}
+ \mathcal R(1,\mu+hv;x)+2\sum_c(\mu+hv_c)
+ =8xy+h^2\mathcal T(v)+4\mu h\sum_cv_c+8\mu^2.
+\end{equation}
+其一次 $h$ 项在 $\mu=0$ 时恰好抵消。
+在 $x=1/2$ 对尺度 $v_c/2$ 使用式~\eqref{ns:flat-budget}，得 $\mathcal T(v)\le8$。
+因此右端至多为 $8xy+8h^2+16|\mu|h+8\mu^2$，即式~\eqref{nr:max}的右端。
+若所有 $v_c$ 同为 $1$ 或同为 $-1$，则 $\mathcal T=8$；选与 $\mu$ 同号的一端即可取等号。
+这也包括 $h=0$。
+
+该四变量不等式另有更小的独立有理证书：对全部 $24$ 个有序单形，
+$8-\mathcal T$ 的 $15$ 个二次 Bernstein 系数共 $360$ 项，
+其值及重数为 $0:48$、$4:72$、$8:128$、$10:32$、$12:56$、$16:24$。
+单形覆盖与非负基展开同引理~\ref{ns:flat}，无采样遗漏。
+\end{proof}
+
+对偏心参数，平坦区为
+\begin{equation}\label{nr:window}
+ I_\rho(x)=[L_\rho(x),U_\rho(x)]
+ =[\max(\rho/2-x,-\rho/2-y),\ \min(\rho/2+x,-\rho/2+y)].
+\end{equation}
+它在 $|\rho|\le1$ 时非空，宽度不超过 $2\min(x,y)$。
+记式~\eqref{nr:max}在此区间的值为 $\mathcal E_p(x)$。
+通过交换坐标可只取 $\rho=p\ge0$；令 $a=(1-p)/2$，在 $0\le x\le1/2$ 有
+\[
+ \max(|L_p(x)|,|U_p(x)|)=
+ \begin{cases}p/2+x,&0\le x\le a,\\1-p/2-x,&a\le x\le1/2.\end{cases}
+\]
+另一半关于 $x=1/2$ 对称。因此
+\begin{equation}\label{nr:integral}
+ \int_0^1\mathcal E_p(x)\,dx=2+2p(1-p)\le\frac52.
+\end{equation}
+这里先最大化的只是同一方向四尺度的几何容量；不同方向的最大化尺度未必能由同一输入实现。
+
+\begin{proof}[定理~\ref{nr:main}的证明]
+先设 $|F|=1$、$|F\triangle R_{\rho,t}|\le Bt^2$。
+严格见证仍满足 $1-t<\ell<(1-t)^{-1}$。
+与参考矩形比较捕获量，再用其两边长为 $1+O(t)$，
+与定理~\ref{ns:main}相同的交长论证给出中心 $tv$ 和尺度 $1+2ut$ 的统一有界框架。
+
+令 $c_1=\rho/2,c_2=-\rho/2$、$v_j\ge0$ 表示中心坐标绝对值。
+一维交长的线性项为
+$\min(2c_j,2u,c_j+u-v_j)$，所以参考平均一致满足
+\[
+ \frac{|R_{\rho,t}\cap Q|}{1+2tu}=1-tD_\rho+O(t^2),\qquad
+ D_\rho=\sum_{j=1}^2\max(v_j,|u-c_j|)
+       =r+\sum_{j=1}^2(|u-c_j|-v_j)_+.
+\]
+两个区间 $[c_j-v_j,c_j+v_j]$ 的距离说明
+$\min_u D_\rho=\max(r,p)$。这些展开常数统一于 $p\le1$ 的有界框架。
+替换为 $F$ 的误差为 $O_B(t^2)$。
+取足够大的 $C_B^0$、再取 $K_B>2C_B^0$，若 $1-p\ge K_Bt$，则
+所有 $r<1-C_B^0t$ 都有严格高于 $1-t$ 的见证；
+而任意高水平点满足 $r\le1+C_B^0t$。
+故每个象限的径向上确仍为 $R_c(x)=1+O_B(t)$。
+趋近这些上确的见证满足 $D_\rho-r=O_B(t)$，且 $r\ge p$。
+它们距区间
+$[c_1-rx,c_1+rx]\cap[c_2-ry,c_2+ry]$ 为 $O_B(t)$，
+再由端点的 Lipschitz 性得到距式~\eqref{nr:window}的界 $O_B(t)$。
+
+使用精确容量式~\eqref{ns:capacity-exact}及一阶预算~\eqref{ns:first-budget}，
+只将二阶纯几何项投影到 $r_c=1$、$u_c\in I_\rho(x)$。
+引理~\ref{nr:interval}于是给出
+\[
+ \sum_cR_c(x)\le4+t\mathcal E_p(x)+O_B(t^2).
+\]
+严格见证取上确序列、星形外包和可测性均与定理~\ref{ns:main}相同。
+径向积分及式~\eqref{nr:integral}得到
+\[
+ |H(1-t,F)|\le2t^2+[2+2p(1-p)]t^3+O_B(t^4).
+\]
+最后令 $M=|E|$、$F=M^{-1/2}E$，经中间矩形 $M^{-1/2}R_{\rho,t}$，
+有 $|F\triangle R_{\rho,t}|\le4At^2$。
+取 $B=4A$ 并相应重命名间隙常数，伸缩不变性即给出结论。
+\end{proof}
+
+\begin{corollary}[两端路径上的匹配三阶项]\label{nr:endpoints}
+令 $\mathfrak C_{A,\rho}(t)$ 为定理~\ref{nr:main}的近矩形类上确界。
+若 $\rho=\rho_t$ 满足该间隙条件，且 $p_t=|\rho_t|\to0$ 或 $p_t\to1$，则
+\[
+ \mathfrak C_{A,\rho_t}(t)=2t^2+2t^3+o(t^3).
+\]
+若进一步 $p_t(1-p_t)\le Mt$，则
+$\mathfrak C_{A,\rho_t}(t)-2t^2-2t^3=\Theta_{A,M}(t^4)$。
+\end{corollary}
+\begin{proof}
+上界由定理直接得到。参考矩形自身属于该类，且定理~\ref{rect:exact}一致给出
+\begin{equation}\label{nr:reference}
+ |H(1-t,R_{\rho,t})|
+ =2t^2+2t^3+(2+\rho^2-\rho^4/2)t^4+(2+\rho^2)t^5+O(t^6),
+ \qquad |\rho|\le1.
+\end{equation}
+其四阶系数至少为二，故得到两处结论及四阶剩余的正下界。
+\end{proof}
+
+\begin{example}[两个对称方向不能独立使用空矩形预算]\label{nr:obstacle}
+固定 $\rho=1/2$，从参考矩形四角各挖去
+$tD$，其中 $D=[0,3/2]\times[0,1/4]$ 以向内坐标表示。
+令 $s=x-u+\rho/2$、$q=1-x-u-\rho/2$。平坦区中的二阶平均为
+\[
+ \Phi(x,u)=u^2+u+x(1-x)+\rho(x-1/2)+\rho^2/4
+ +3/8-\tfrac14(3/2-s)_+-\tfrac32(1/4-q)_+-(3/2-s)_+(1/4-q)_+.
+\]
+有限尺度接触穷尽给出
+\[
+ G(x)=\max_{u\in I_{1/2}(x)}\Phi(x,u)=
+ \begin{cases}3x+1/8,&0\le x\le1/8,\\1/2,&1/8\le x\le7/8,\\25/8-3x,&7/8\le x\le1.\end{cases}
+\]
+具体只需检测区间两端及 $u=x-5/4,1/2-x$ 中的可行点：折点之间目标为凸或仿射函数，
+这些候选关于 $x$ 再分段均为仿射函数，精确比较即可得到该表。
+于是 $G(1/10)=G(9/10)=17/40$，空孔的对应值却为 $17/40,9/40$。
+四象限的两方向平均预算由 $13/10$ 增为 $17/10$，排除了直接逐点配对空矩形预算的路线。
+
+这个输入并未改善总体积。事实上其真实光晕比值为
+$2t^2+(29/16)t^3+O(t^4)$。
+为核对传递，平坦区内两个参考交长分别为
+$1+t(u-x+\rho/2)+\rho^2t^2/4+O(t^3)$ 和
+$1+t(u-1+x-\rho/2)+\rho^2t^2/4+O(t^3)$。
+四孔质量为 $3t^2/2$，其有界尾函数对阈值移动为 Lipschitz，
+展开便得到上述 $\Phi$。
+固定 $\rho=1/2$ 时，一阶缺陷和尺度投影、径向内外夹逼均同定理~\ref{gc:expansion}，
+故真实三阶系数为 $4\int_0^1G=29/16<2$。
+\end{example}
+
+\begin{remark}[一阶端点与实际严格阈值]\label{nr:critical}
+本定理没有覆盖 $1-|\rho|<K_At$ 的全部薄层。
+$|\rho|=1$ 是一阶参数的端点，而参考矩形的实际严格临界值为
+\[
+ \rho_{\rm crit}(t)=\frac{-\log(1-t)}t
+ =1+\frac t2+\frac{t^2}3+\frac{t^3}4+O(t^4).
+\]
+在 $|\rho|=\rho_{\rm crit}(t)$ 时参考矩形光晕为空，不能从非临界闭式跨过严格阈值。
+相反，$|\rho|=1$ 的参考矩形仍有非空光晕；由式~\eqref{rect:deficit}及 $s=\cosh t$，其与矩形测试上确界的差为
+$R(1-t)-|H(1-t,R_{1,t})|=\tfrac12t^6+O(t^7)$，该比较的六阶为 sharp。
+这不解决同一临界层中任意二阶测度扰动的统一行为。
+\end{remark}

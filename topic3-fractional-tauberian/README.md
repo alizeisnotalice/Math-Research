@@ -153,3 +153,9 @@ run('verification/fixed_cube_matlab.m')
 复现`verification/near_square.py`（纯标准库）、`verification/near_square.wl`及`verification/near_square_matlab.m`；有限尺度探路为`verification/near_square_probes.py`。未据此宣称全体三阶常数已闭合，下一问题为一阶偏心矩形附近的扰动与临界参数。
 
 第28轮当前PDF99页；全部页面缩略图、新增44至47页放大检查完成。编译无溢出、缺字或未解析引用；317标签、304交叉引用、24条题录及原稿72/72项映射一致。两份独立终审通过，精确证书与数值探索分开归档。
+
+第29轮处理一阶偏心矩形附近任意二阶测度扰动：在1−|rho|≥K_A t时，真实比值≤2t²+[2+2|rho|(1−|rho|)]t³+O_A(t⁴)，三阶上界最高5/2。该系数是纯四见证容量的sharp包络，真实最佳值未定。两端合法路径匹配三阶2；若|rho|(1−|rho|)=O(t)，四阶余项阶数sharp。精确孔例B=29/16同时反驳简单对称方向配对；实际严格临界及rho1六阶亏损已核验。见`rounds/029.md`。
+
+复现`verification/near_rectangle.py`（标准库，复用near_square.py）、`verification/near_rectangle.wl`和`verification/near_rectangle_matlab.m`；有符号孔/外加质量探索为`verification/near_rectangle_search.py`。全临界扰动层与全体三阶常数仍未闭合。
+
+第29轮当前PDF102页，全部页面缩略图及新增48至50页放大检查完成，最终交叉引用变动页再次复核。编译无溢出、缺字或未解析引用；329标签、322交叉引用、24条题录及原稿72/72项映射一致。两份独立终审通过。
