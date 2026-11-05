@@ -1,0 +1,21 @@
+Clear[c,s,m,x];
+K[c_,s_]:=-Log[1-s]+Log[1+Exp[-c]Exp[c s]]-Log[1+Exp[-c]];
+expRules=Table[Exp[j m]->(m-1)^(-j),{j,-6,6}];
+cumulants=Table[FullSimplify[(D[K[c,s],{s,j}]/.{s->0,c->m})/.expRules,Assumptions->m>1],{j,1,3}];
+phi[x_]:=Exp[-x^2/2]/Sqrt[2Pi];
+hermiteResidual=FullSimplify[D[(1-x^2)phi[x],x]-(x^3-3x)phi[x]];
+mu=1+ProductLog[Exp[-1]];sigma=Sqrt[mu];aa=(3-mu)/6;bb=(5mu-6)/6;
+root=DirectoryName[DirectoryName[$InputFileName]];old=Import[FileNameJoin[{root,"rounds","r017","checks.json"}],"RawJSON"];
+rows=Table[Module[{initial,sols,z,constant,ratio,logI},
+ initial=SelectFirst[old["rows"],#["n"]==nn&]["fixed_mu_q"];
+ sols=Table[Module[{cc=N[mu,wp],pp,weights,fun},pp=1/(1+Exp[cc]);weights=Table[Binomial[nn,k]pp^k(1-pp)^(nn-k)Exp[cc k/nn],{k,0,nn}];
+ fun[qq_?NumericQ]:=-qq/nn-nn Log[(nn-1)/nn]+Log[Sum[weights[[k+1]]GammaRegularized[nn,(nn-1)/nn Max[qq-cc k,0]],{k,0,nn}]];
+ q/.FindRoot[fun[q]==0,{q,SetPrecision[initial,wp]},WorkingPrecision->wp,AccuracyGoal->Floor[wp/2],PrecisionGoal->Floor[wp/2]]],{wp,{60,100}}];
+ z=zz/.FindRoot[Log[Erfc[zz/Sqrt[2]]/2]-Log[sigma]-Log[zz]+Log[nn]/2==0,{zz,N[Sqrt[Log[nn]],100]},WorkingPrecision->100,AccuracyGoal->60,PrecisionGoal->60];
+ constant=sols[[2]]-nn mu+sigma Sqrt[nn]z-aa z^2;
+ logI=N[Log[nn]+nn-1+LogGamma[nn]+Log[GammaRegularized[nn,nn-1]]-nn Log[nn-1],100];
+ ratio=Exp[constant-bb-logI+Log[Pi nn/2]/2];
+ <|"n"->nn,"fixed_mu_soft_root_80"->ToString[N[sols[[2]],80],InputForm],"root_precision_doubling_stable_25_digits"->TrueQ[Abs[sols[[1]]-sols[[2]]]<10^-25],"soft_constant_residual"->ToString[N[constant,30],InputForm],"family_score_ratio"->ToString[N[ratio,30],InputForm]|>],{nn,{256,1024}}];
+result=<|"wolfram_version"->$Version,"cumulants_at_mu"->(ToString[#,InputForm]&/@cumulants),"Edgeworth_CDF_derivative_residual"->ToString[hermiteResidual,InputForm],"soft_constant_target"->ToString[N[bb,30],InputForm],"rows"->rows|>;
+Export[FileNameJoin[{root,"rounds","r018","symbolic_checks.json"}],result,"RawJSON"];
+Print[ExportString[result,"RawJSON"]];
