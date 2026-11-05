@@ -1,0 +1,13 @@
+ClearAll[av, aa, qq, err, xx, ss, delta, vv, inside, om];
+Print["Wolfram: ", $Version, "; PID: ", $ProcessID];
+Print["R057 adversarial exact perturbation transport; no geometric claims encoded."];
+den = av-aa(1+qq);
+xmax = aa(1+qq+err)/den;
+Print["Actual M error transport residual: ", Factor[1+xmax-av/den-aa err/den]];
+oldSlack = (1+qq)(1+xx)+err-av xx/aa;
+newSlack = av/den+aa err/den-(1+xx);
+Print["Inequality slacks after positive cross multiplication, residual: ", Factor[den newSlack-aa oldSlack]];
+Print["Uniform delta coefficient >4 violation: ", Reduce[0<aa<=1/2 && den>=1/2 && 1/((1-aa)den)>4, {av,aa,qq}, Reals]];
+Print["Nonlinear ratio correction exact residual: ", Factor[aa av qq/((av-aa)(av-aa-aa qq))-aa av qq/(av-aa)^2-aa^2 av qq^2/((av-aa)^2(av-aa-aa qq))]];
+Print["Inside center contributes kappa at leading order: ", Limit[(inside vv^8/(1-aa)-inside vv^8)/vv^8 /. aa->vv^2, vv->0, Direction->"FromAbove"]];
+Print["Discarding slot prices requires whole q_N positivity; no componentwise multiplication checked here."];

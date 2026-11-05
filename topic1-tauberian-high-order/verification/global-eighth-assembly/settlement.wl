@@ -1,0 +1,36 @@
+ClearAll[v,n,w,q,eps,h,cc,e6,e7,e8,b,c,alpha,rr,m];
+Print["Wolfram: ",$Version,"; PID: ",$ProcessID];
+Print["Conditional algebra only; fixed n>=2, a=v^n, A=(1+v)^n."];
+K=n^2 n(n-1)/(2*27);c8=-13/18-n(n-2)/3+400/243;
+Q=K v^6((1+v)^(-4)+(10/9)v(1+v)^(-5)+c8 v^2/(1+v)^2);
+A=(1+v)^n;aa=v^2 w;
+normalized=A Q/(v^6 (A-aa)(A-aa-aa Q));
+co=FullSimplify[CoefficientList[Normal[Series[normalized,{v,0,2}]],v]];
+Print["exact ratio factorization residual: ",Factor[A/(A-aa-aa Q)-A/(A-aa)-aa A Q/((A-aa)(A-aa-aa Q))]];
+Print["general coefficient list, a=v²w: ",Factor /@ co];
+Jn=(n-1)n^3(2609+1971n+81n^2)/26244;
+Print["generic n>=3 coefficients expected residuals: ",FullSimplify[({co[[1]],co[[2]],co[[3]]}/.w->0)-{K,-(n+26/9)K,Jn}]];
+Print["n=2 normal coefficients: ",FullSimplify[co/.{n->2,w->1}]];
+Print["n=2 normal J: ",FullSimplify[co[[3]]/.{n->2,w->1}]];
+Qinside=Q+(8/27)v^8;
+normalinside=A Qinside/(v^6 (A-aa)(A-aa-aa Qinside));
+Print["n=2 inside J: ",FullSimplify[Coefficient[Normal[Series[normalinside/.{n->2,w->1},{v,0,2}]],v,2]]];
+Print["degree check layer8,7,6,1..5,endpoint: ",{8,1+8,2+6,3+6,8+1}];
+(* q=1/m in (0,1], analytic continuation at q=0 *)
+sigma=(1-(1-eps)^q)/q;
+Print["sigma eps5 coeff: ",Factor[SeriesCoefficient[sigma,{eps,0,5}]]];
+Print["sigma fifth coeff residual: ",FullSimplify[SeriesCoefficient[sigma,{eps,0,5}]-Product[j-q,{j,1,4}]/120]];
+Print["sixth derivative normalized product <=120 violation: ",Reduce[0<=q<=1&&Product[j-q,{j,1,5}]>120,q,Reals]];
+Print["uniform sixth Taylor remainder coefficient upper bound: ",120*2^6/6!];
+Print["n2 j8 baseline and modified coefficient: ",Module[{base,jn2},base=Sum[(-1)^(8-(j-1)2)Binomial[9,8-(j-1)2],{j,1,1+Floor[8/2]}];jn2=17638/6561;{base,2^10(base+jn2)}]];
+(* derivative identity after m=(v R)^n t^n, use positive t as nth root u^(1/n). *)
+Print["fresh derivative normalized residual: ",FullSimplify[v^(n-1)((rr+v rr t)/(v rr t))^(n-1) -(v+1/t)^(n-1),Assumptions->v>0&&rr>0&&t>0&&Element[n,Integers]&&n>=2]];
+ClearAll[ff,tau,omega,ct,delta,S,T,C0,e6,e7,e8,h];
+tau=b v/c;omega=Sum[tau^(8-h),{h,1,8}];
+Print["eight layer exact telescope residual: ",FullSimplify[Sum[tau^(8-h)(c ff[h]-b v ff[h-1]),{h,1,8}]-(c ff[8]-b v tau^7 ff[0]),c!=0]];
+E8=Q T+(delta+e8)v^8 S;E7=Q T+e7 v^8 S;E6=Q T+e6 v^6 S;
+early=Sum[tau^(8-h),{h,1,5}];
+residual=E8+tau E7+tau^2 E6+C0 v^6 S early-omega Q T;
+expected=(delta+e8)v^8 S+tau e7 v^8 S+tau^2 e6 v^6 S+early(C0 v^6 S-Q T);
+Print["subtract omega Q T exact residual: ",FullSimplify[residual-expected,c!=0]];
+Print["coefficient orders of error multipliers: ",{8,9,8,9}];
