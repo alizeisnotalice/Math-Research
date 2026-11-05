@@ -5,8 +5,11 @@ if nargin<4, margin=1e-9; end
 t=thresholds(:)';
 assert(n>=2 && all(diff(t)>0) && all(t>=0));
 anchor=t(1);
-alpha=arrayfun(@(q) sm_tail(n,r,q),t);
+[alpha,~,failure]=arrayfun(@(q) sm_tail(n,r,q),t);
 p=alpha-[alpha(2:end) 0];
+% Lower-tail differences avoid cancellation when both upper tails round to 1.
+useLower=find(failure(2:end)<0.5);
+p(useLower)=failure(useLower+1)-failure(useLower);
 w=exp(anchor-t)-[exp(anchor-t(2:end)) 0];
 assert(all(p>0) && all(w>0),'Grid probabilities underflowed');
 logRatio=log(p)-log(w);
