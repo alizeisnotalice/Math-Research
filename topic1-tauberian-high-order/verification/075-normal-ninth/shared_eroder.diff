@@ -1,0 +1,31 @@
+--- third_feedback_effective_functional.md
++++ third_feedback_effective_functional.v2.md
+@@ -94,7 +94,18 @@
+ B^-_{\mathscr P}(D)\subset B_{\mathscr P}(D)\cap D',\quad
+ |B_{\mathscr P}(D)\setminus B^-_{\mathscr P}(D)|_1\le C_Tav^9S. \tag{8}
+ \]
+-这里是物理误差，乘源导数后为十阶；不删除整个三近面。只取固定 T，不用 fixed-window 未知阈值代入增长参数。
++这里实际供应的是更强的侵蚀积分预算。令共同非负侵蚀为 \(e_{\mathscr P,i}(y)\)，保证层的高度是在同一个 source clip 内再扣该侵蚀。原必要性构造给
++\[
++\mathscr E_{\mathscr P}:=
++\sum_{i,q,\sigma}\int_{\{h^0_{\mathscr P,i}>0\}}e_{\mathscr P,i}(y)\,dy
++\le C_Tav^9S.                                             \tag{8a}
++\]
++它由正帽 base 测度及 \(\sum R_i^{n-1}e_i(T)=O_T(v^8S)\) 相乘得到，不是由联合层已经裁剪后的实际损失反推。对正常高度使用同一个侵蚀，记保证子层 \(B^-_{N,\mathscr P}(D)\)。正常正高度的 base 包含于 \(\{h^0_{\mathscr P}>0\}\)，每条 fiber 的高度损失至多该侵蚀，所以
++\[
++|B_N(D)\setminus B^-_{N,\mathscr P}(D)|_1
++\le\mathscr E_{\mathscr P}\le C_Tav^9S.                    \tag{8b}
++\]
++即使 full 层先被顶端 clip 饱和，这个子层估计仍成立；不能仅以 full 实际 loss 的大小推出它。上述均为物理误差，乘源导数后为十阶；不删除整个三近面。只取固定 T，不用 fixed-window 未知阈值代入增长参数。
+ 
+ ## 3. 新整源 raw，而非旧正常核心 raw
+ 
+@@ -119,7 +130,7 @@
+ \]
+ 这是正常 mandatory 主量，不能误说成 \(O(av^8S)\)。
+ 
+-对其他任意固定上窗 packet \(\mathscr P\supset N\)，取它的共同侵蚀。即使额外帽任意薄，也有 \(B^-_{N,\mathscr P}\subset B^-_{\mathscr P}\)，正常未侵蚀模型仍是同一 \(B_N(D)\)。由 (8)、(10)，
++对其他任意固定上窗 packet \(\mathscr P\supset N\)，取它的共同侵蚀。即使额外帽任意薄，也有 \(B^-_{N,\mathscr P}\subset B^-_{\mathscr P}\)，正常未侵蚀模型仍是同一 \(B_N(D)\)。由 (8b)、(10) 及 \(B^-_{N,\mathscr P}\subset B^-_{\mathscr P}\)，
+ \[
+ \mathcal R_{\mathscr P}^-\le(v/a)|D\setminus B_N(D)|_1+C_Tv^{10}S=O_T(v^9S).
+ \]

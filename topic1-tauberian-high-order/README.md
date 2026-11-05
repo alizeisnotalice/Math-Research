@@ -159,6 +159,7 @@ latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 | 72 | 真实正负剪切比较：负号每固定n≥3新增4·binom(n,3)n³/27·av⁹；保留全图cross/clip，非C_n绝对系数 |
 | 73 | 二维真实有限宏微族绝对九阶下界−23295344/2657205，含全部host保护与o9误差；非C₂九阶系数 |
 | 74 | 三维edge管全点局部容量常数一；同N9 inside领先2与O10余项，非总九阶系数 |
+| 75 | 同一N9竞争族的normal第三反馈；正名义base共同侵蚀预算与局部O(v¹⁰S)替换误差，非Cn九阶系数 |
 
 失败或被覆盖的长表、重复预审、临时构造与渲染产物留在仓库外。只归档有效完整证明、必要独审和最小实际计算证据。
 
