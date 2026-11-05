@@ -1,0 +1,38 @@
+--- end_face_ninth_reserve.md
++++ end_face_ninth_reserve.v2.md
+@@ -127,12 +127,14 @@
+ 
+ 先于 T、m，固定窗外 coercivity 余量、CDF 的 \(c_R,c_E\)、
+ 槽严格折扣系数和 normal 强凹罚。各系数可先缩小固定倍数，以留足有限份额。
+-对实际 normal 第三模型，
++对实际 normal 第三模型，令 \(W_N=\sum_{e\in N}b_eR_e^2\) 为实际 normal 权，
++其中 \(b_e\) 是该边实际横投影量；它不是完整槽容量 \(\mathcal C\)。
+ \[
+  \mathsf P_N^{[9]}=I_N-\lambda_v|Y_{3,N}|
+-       \le q_N\mathcal C_N-c\mathcal L_N+Cv^9S.           \tag{8}
+-\]
+-这里仅用已有实际积分的 O9 上包，不展开所有稀有边的三阶 Taylor。
++       \le q_NW_N-c\mathcal L_N+Cv^9S.                  \tag{8}
++\]
++这里只在此后作一次 soft 槽转换以保留 \(D_N\)，未先用完整 \(\mathcal C\) 替换 \(W_N\)。
++仅用已有实际积分的 O9 上包，不展开所有稀有边的三阶 Taylor。
+ \(Y_2\setminus Y_3\) 的源成本可为九阶，已包含在 \(Cv^9S\)，未当作 o9 删除。
+ 
+ 使用 (7) 重开 bounded 非正常强制性和一次 soft 槽转换。
+@@ -210,7 +212,7 @@
+ 这同时排除了全部外部 k，不只 normal 邻居。
+ 普通条取固定面块时同证。因此
+ \[
+- Z^0\cup Z^\tau\ \cap\bigcup_{i\notin I}X_i=\varnothing. \tag{12}
++ (Z^0\cup Z^\tau)\cap\bigcup_{i\notin I}X_i=\varnothing. \tag{12}
+ \]
+ 所有条附着于深处源的 \(Q_i\)，而深处 \(Q_i\) 避开每个标记 \(Q_j\)，
+ 故它们还避开内部半盒及标记空隙。
+@@ -397,6 +399,7 @@
+ \[
+  I_e\le C[v^{3q}r_i^n+v^{q-1}\mathcal E_i r_i^{n-1}],\qquad q\ge3.
+ \]
++在预定有限稳健面列表包含路径所用的 \(\tau_*=1/128\) 时，
+ 新增 (2) 只改善其 gap／端移第二项；第一项 \(v^{3q}\) 没有改善。
+ q3 的 \(v^9S\) 真实项仍在，可与 signed triangle 机制同阶。
+ 本稿绝不宣称全部 high support 为 o9，也未给完整九阶价格或其极大值。
