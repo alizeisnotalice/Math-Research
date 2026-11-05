@@ -1,6 +1,6 @@
 # R051 refined axial-cap scalar kernel
 
-This archive preserves the four successful computation files from `r051-computation` byte for byte. The frozen source is `scratch/r051-refined-axial-cap/refined_axial_cap.md` (SHA-256 `37bbb0ec63fac1dce33fb9883e14499488baef490341df32a6fdfb0da427c979`). The independent Sol R003 audit is still in progress; this README records computation scope only.
+This archive preserves the four successful computation files from `r051-computation` byte for byte. The frozen source is `scratch/r051-refined-axial-cap/refined_axial_cap.md` (SHA-256 `37bbb0ec63fac1dce33fb9883e14499488baef490341df32a6fdfb0da427c979`). The completed independent Sol R003 audit is archived in `reviews/051-refined-axial-cap.md`; this README records computation scope only.
 
 ## Wolfram check
 

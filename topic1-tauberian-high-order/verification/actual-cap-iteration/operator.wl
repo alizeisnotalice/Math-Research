@@ -1,0 +1,10 @@
+ClearAll[h,a,b,v,cc,aa,rr,ee,area];
+Print["Mathematica ",$Version];
+clip[x_]:=Min[h,Max[0,x]];
+Print["Lipschitz violation: ",Reduce[h>=0&&Abs[clip[a]-clip[b]]>Abs[a-b],{h,a,b},Reals]];
+Print["monotone violation: ",Reduce[h>=0&&a<=b&&clip[a]>clip[b],{h,a,b},Reals]];
+lambda=cc v;mass=aa area v^5;rho=rr area v^7+ee area v^9;
+e0=rho+lambda mass;e1=rho+lambda e0;mandatory=lambda e1;
+Print["(v/area) mandatory: ",Expand[v mandatory/area]];
+Print["(v²/area) e1: ",Expand[v^2 e1/area]];
+Print["lambda² mass: ",Expand[lambda^2 mass]];
