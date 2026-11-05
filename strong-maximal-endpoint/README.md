@@ -4,7 +4,7 @@
 \(\Phi_n(t)=t(1+\log^+t)^{n-1}\)、自然对数及阈值 1。
 本项目研究最优比值 \(C_n=\sup_f |\{M_Sf>1\}|/\int\Phi_n(f)\)。
 
-## 当前状态（2026-11-06，第 16 轮）
+## 当前状态（2026-11-06，第 17 轮）
 
 - 已复核：指数率 \(C_n^{1/n}\to B\)，以及 \(\limsup C_n/B^n\le\sqrt B\) 的证明路线；B 满足 \(\log B=1+B^{-1}\)。详细推导见 rounds/r001/report.md。
 - 已实现：等参数单层见证的 Gamma–二项混合、数值优化和 Wolfram 高精度交叉复算。
@@ -24,7 +24,8 @@
 - **第14轮隐式根定理**：令barPhi(z_n)=sigma z_n/sqrt n、d_n=sigma sqrt n z_n，则nmu−d_n−O(log n)≤log C_n≤nmu−d_n+O(n^(3/8)(log n)^(1/8))；因而确定任意固定阶逆对数展开。见 rounds/r014/report.md。
 - **第15轮精确指数控制**：负Laplace目标的可预测最优值为exp(−n lambda c_lambda)，由唯一固定动作达到，并有逐步非负损失恒等式。此障碍仅限指数目标，不覆盖尾概率或端点；见 rounds/r015/report.md。
 - **第16轮真实分位数定理**：固定c=mu−(sigma/2)sqrt(log n/n)相对c=mu的临界下分位数改善为(mu−1)log n/8+o(log n)。证明使用精确CDF参数导数与自包含Fourier密度估计；仅限该测试族，不是C_n的新对数级项。见 rounds/r016/report.md。
-- 主攻：将密度导数法用于软轮廓的实际接收平均并结算模数。
+- **第17轮实际下界族改善**：在固定斜率1/n的指数软轮廓中，指定比例偏移使真实见证评分的对数提升(mu−1)log n/8+o(log n)；已结算严格接收与I_n分母。此为家族内改善，未缩小一般C_n上界。见 rounds/r017/report.md。
+- 主攻：计算指数软轮廓的绝对log n项，并检验同尺度反馈损失。
 - 一般前三项现已闭合；乘法渐近等价、后续锐余项和极值结构仍待研究。
 
 ## 复现
@@ -74,3 +75,5 @@ Wolfram 15：`wolframscript -file code/crosscheck.wl`。
 第15轮：精确指数控制和局部动作偏移见 rounds/r015/report.md；MATLAB `sm_laplace_checks`，Wolfram `code/laplace_checks.wl`。
 
 第16轮：真实下分位数的对数级改善见 rounds/r016/report.md；MATLAB `sm_quantile_derivative_checks`，Wolfram `code/quantile_derivative_checks.wl`。
+
+第17轮：实际指数软轮廓下界的对数级改善见 rounds/r017/report.md；MATLAB `sm_soft_shift_checks`，Wolfram `code/soft_shift_checks.wl`。
