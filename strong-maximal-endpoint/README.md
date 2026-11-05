@@ -4,9 +4,9 @@
 \(\Phi_n(t)=t(1+\log^+t)^{n-1}\)、自然对数及阈值 1。
 本项目研究最优比值 \(C_n=\sup_f |\{M_Sf>1\}|/\int\Phi_n(f)\)。
 
-## 当前状态（2026-11-06，第 10 轮）
+## 当前状态（2026-11-06，第 11 轮）
 
-- 已复核：指数率 \(C_n^{1/n}\to B\)，以及 \(\limsup C_n/B^n\le\sqrt B\) 的证明路线；B 满足 \(\log B=1+B^{-1}\)。详细推导见第 10 轮。
+- 已复核：指数率 \(C_n^{1/n}\to B\)，以及 \(\limsup C_n/B^n\le\sqrt B\) 的证明路线；B 满足 \(\log B=1+B^{-1}\)。详细推导见 rounds/r001/report.md。
 - 已实现：等参数单层见证的 Gamma–二项混合、数值优化和 Wolfram 高精度交叉复算。
 - 待补证明：附件所称整个双曲示性函数族 H_n 的全局三项展开，特别是全空间 halo 与有限 L 的统一比较。
 - 已完成：有限多层轮廓的严格极限归约与固定网格凸振幅优化；n=4…256 的候选均优于同维等参数单层数值对照。
@@ -18,7 +18,8 @@
 - **第8轮完整机制展开**：log Q_n = n mu − sigma sqrt(n log n) + sigma[loglog n+log(sigma sqrt(2pi))]sqrt(n/log n) + o(sqrt(n/log n))，并作为一般 C_n 的严格下界。
 - **第9轮重排障碍**：允许非单调标量轮廓、任意接收层及逐点选择比例后，锚定族的模块弱常数 W_n 仍精确等于 Q_n。此结论不覆盖非锚定真实矩形。
 - 第10轮：闭合一维非负缺口及端点四项账本；证明仅振幅上界不能强迫纯Lp稳定性损失，必须保留Markov和模数效率。另给真实强矩形/坐标复合、真实区间/锚定区间的精确严格反例。
-- 主攻：端点效率不退化输入的四项预算下界，以及非锚定/跨分量矩形证书。
+- 第11轮：一般输入严格归约到可预测反馈的一维上界模型 mathcalR_n，满足 Q_n≤C_n≤mathcalR_n。Bellman基准已计算至256步，反馈严格优于任意固定两步比例。
+- 主攻：反馈低尾的统一指数倾斜/似然比鞅下界，评估这个一般上界模型。
 - 一般输入的负 \(\sqrt{n\log n}\) 次项仍未证明。
 
 ## 复现
@@ -30,7 +31,7 @@ sm_checks;
 rows=sm_baseline;
 ```
 Wolfram 15：`wolframscript -file code/crosscheck.wl`。
-固定种子不适用于本轮：所有算法均为确定性。
+基准卷积、优化和Bellman递推均为确定性；第7、9轮几何诊断使用明确记录的固定种子。
 结果摘要保存在 `rounds/r001/`；数值精度检查不等于区间认证。
 
 ## 研究约定
@@ -56,3 +57,5 @@ Wolfram 15：`wolframscript -file code/crosscheck.wl`。
 第9轮：非单调轮廓重排见 rounds/r009/report.md；MATLAB `result=sm_rearrangement_checks;`。
 
 第10轮：缺口恒等式、缩放障碍与算子反例见 rounds/r010/report.md；Wolfram `code/deficit_checks.wl`。
+
+第11轮：一般反馈上界归约见 rounds/r011/report.md；MATLAB `sm_bellman(h,256,outputPath)`，Wolfram `code/bellman_checks.wl`。
