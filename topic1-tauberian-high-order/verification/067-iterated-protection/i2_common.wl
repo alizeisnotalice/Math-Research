@@ -1,0 +1,11 @@
+ClearAll[delta,t,s,hlo,hhi,cumlo,cumhi,totalh,branches];
+hlo[t_]:=(1-delta)t^2/2;
+hhi[t_]:=delta(t-delta(1-2delta+2t-t^2)/(2(1-delta)));
+cumlo[t_]:=Integrate[hlo[s],{s,0,t}];
+cumhi[t_]:=Integrate[hlo[s],{s,0,delta}]+Integrate[hhi[s],{s,delta,t}];
+totalh=FullSimplify[cumhi[1]];
+branches={
+ <|"id"->"inverse_low","lo"->0,"hi"->delta,"height"->hlo[t],"Q"->hlo[t],"M"->(hlo[t]^2/2+hlo[t](1-t)+cumlo[t]),"jac"->D[hlo[t],t]|>,
+ <|"id"->"inverse_high","lo"->delta,"hi"->1,"height"->hhi[t],"Q"->hhi[t],"M"->(hhi[t]^2/2+hhi[t](1-t)+cumhi[t]),"jac"->D[hhi[t],t]|>,
+ <|"id"->"cross_high","lo"->delta,"hi"->1,"height"->hhi[t],"Q"->(1-t+hhi[t]),"M"->(2totalh-cumhi[t]+hhi[t]^2/2),"jac"->(1-D[hhi[t],t])|>,
+ <|"id"->"cross_low","lo"->0,"hi"->delta,"height"->hlo[t],"Q"->(1-t+hlo[t]),"M"->(2totalh-cumlo[t]+hlo[t]^2/2),"jac"->(1-D[hlo[t],t])|>};

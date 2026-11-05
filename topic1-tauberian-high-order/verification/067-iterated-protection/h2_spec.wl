@@ -1,0 +1,12 @@
+ClearAll[delta,q,t];
+Print["Wolfram ",$Version,"; PID ",$ProcessID];
+Print["Domain 0<delta<1/10. h1(q)=H1(1-q)."];
+mlo=q-(1-delta)q^2/(2delta);
+mhi=delta(1-2delta+2q-q^2)/(2(1-delta));
+hlo=FullSimplify[delta(q-mlo)];hhi=FullSimplify[delta(q-mhi)];
+Print["h1 derivative low bounds violation: ",Reduce[0<delta<1/10&&0<=q<=delta&&(D[hlo,q]<0||D[hlo,q]>delta),{delta,q},Reals]];
+Print["h1 derivative high bounds violation: ",Reduce[0<delta<1/10&&delta<=q<=1&&(D[hhi,q]<0||D[hhi,q]>delta),{delta,q},Reals]];
+hmax=Factor[hhi/.q->1];knot=Factor[hlo/.q->delta];
+Print["hmax=H1(0): ",hmax];Print["H1(1-delta) knot: ",knot];
+Print["knot ordering violation: ",Reduce[0<delta<1/10&&!(0<knot<hmax<1-delta+knot<1),delta,Reals]];
+Print["I2 exact one-dimensional specification saved in README; roots of quadratics selected uniquely by derivative bounds; no numerical evaluation or no-log claim."];

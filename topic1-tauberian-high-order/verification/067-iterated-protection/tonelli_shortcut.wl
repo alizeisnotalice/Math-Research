@@ -1,0 +1,12 @@
+ClearAll[d,h,q,delta];
+Print["Wolfram ",$Version,"; PID ",$ProcessID];
+Print["Domain 0<=d<=1, 0<=h<=1-d; h=H(d)."];
+one=Integrate[q-d,{q,d,d+h}]+Integrate[h,{q,d+h,1}];
+two=Integrate[q,{q,0,h}]+Integrate[h,{q,h,1}];
+Print["pointwise Tonelli residual: ",Expand[one+two-((2-d)h-h^2)]];
+Print["domain h<=1 follows: ",Reduce[0<=d<=1&&0<=h<=1-d&&h>1,{d,h},Reals]];
+I1=((delta-1)delta(-100+95delta-60delta^2+26delta^3+4delta^4))/60;
+area2=Expand[delta-delta I1];
+Print["area(U2)=2 integral H2 = delta-delta I1: ",Factor[area2]];
+Print["area U2 Taylor through delta5: ",Series[area2,{delta,0,5}]];
+Print["I2 in R060 convention means 2 integral M(H2), not area U2; it still depends on pointwise M(H1)."];

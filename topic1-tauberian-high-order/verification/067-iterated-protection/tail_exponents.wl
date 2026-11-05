@@ -1,0 +1,12 @@
+ClearAll[r,s,beta,aa,delta];
+Print["Wolfram ",$Version,"; PID ",$ProcessID];
+Print["Assume beta>1, aa>0, r>0; h(s)~aa s^beta and invertible near 0."];
+inner=Integrate[r-aa s^beta,{s,0,(r/aa)^(1/beta)},Assumptions->beta>1&&aa>0&&r>0];
+Print["inverse-tail integration residual: ",FullSimplify[inner-beta/(beta+1) aa^(-1/beta) r^(1+1/beta),Assumptions->beta>1&&aa>0&&r>0]];
+Print["r² correction is higher order for beta>1; violation: ",Reduce[beta>1&&1+1/beta>=2,beta,Reals]];
+bs={2};ex={0};
+Do[AppendTo[bs,1+1/Last[bs]];AppendTo[ex,1-Last[ex]/bs[[-2]]],{5}];
+Print["j1..6 beta: ",bs];Print["j1..6 delta coefficient exponents: ",ex];
+Print["Fibonacci residuals: ",Table[bs[[j]]-Fibonacci[j+2]/Fibonacci[j+1],{j,1,6}]];
+Print["h1 exact near zero: (1-delta)r²/2, valid 0<=r<=delta; beta1=2."];
+Print["scope: fractional powers in spatial r; no claim about delta-integrated or Cn expansions."];

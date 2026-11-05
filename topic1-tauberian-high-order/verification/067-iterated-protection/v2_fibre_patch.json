@@ -1,0 +1,11 @@
+{
+  "old_source": "external retained original, SHA below",
+  "old_sha256": "2557c4e2e2d967b5409c1ec9369eff4a438a3bed04c7c6895965694517141255",
+  "new_source": "proofs/067-iterated-protection.md",
+  "new_sha256": "7e148e1fb837e3c09f595bfcbc5d4d5ec2c27f4d8f8d5486dff1ae29d91ff429",
+  "scope": "One paragraph only: explicit global-min fibre interval for finite physical boxes. No other mathematics or prior source changed.",
+  "old": "K/H 为有限盒时，沿竖纤维取有限区间的并／差；其长度由有限 max、min 和正部给出，仍连续 Lipschitz，常数可由盒清单直接计算。输入图高度的数值误差经这些区间操作至多线性放大；各深度为有限值，所以可以预先把内部精度分配到所需总误差。",
+  "new": "K/H 为有限物理轴盒时，这里始终使用上述 global-min 纤维\n\\(x_h=\\sigma_h(w-s-y_h)\\)，不是只沿一个物理坐标移动的纤维。\n对盒 \\(\\prod_h[a_h,b_h]\\)，置\n\\(\\ell_h^\\sigma=\\min(\\sigma_ha_h,\\sigma_hb_h)\\)、\n\\(u_h^\\sigma=\\max(\\sigma_ha_h,\\sigma_hb_h)\\)，则其在该纤维中的区间为\n\\[\n \\left[\\max\\{0,\\max_h(w-y_h-u_h^\\sigma)\\},\\\n       \\min\\{H(y),\\min_h(w-y_h-\\ell_h^\\sigma)\\}\\right].\n\\]\n上下端均为有限仿射函数的 max/min；再与图 \\(s\\le h(y)\\) 和帽区间相交，区间长度取正部。有限个这种区间的并／差长度对全部端点连续 Lipschitz，所以由盒清单可显式计算积分函数的 Lipschitz 常数。若另用普通轴向纤维会有投影边界跳跃，须另作分片；本算法不使用该坐标。输入图高度的数值误差经这些区间操作至多线性放大；各深度为有限值，所以可以预先把内部精度分配到所需总误差。",
+  "inverse_exact": true,
+  "inverse_sha256": "2557c4e2e2d967b5409c1ec9369eff4a438a3bed04c7c6895965694517141255"
+}
