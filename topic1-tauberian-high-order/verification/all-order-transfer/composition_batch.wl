@@ -1,0 +1,15 @@
+Get[FileNameJoin[{DirectoryName[$InputFileName],"common.wl"}]];
+Print["Wolfram ",$Version," master PID ",$ProcessID];
+cases=Flatten[Table[{n,r,q},{n,{2,3,4}},{r,{0,1,2,5,8,12}},{q,{0,1/2,1}}],2];
+Print["case count: ",Length[cases]," requested kernels: 15"];
+LaunchKernels[15];Print["launched kernels: ",Length[Kernels[]]];
+DistributeDefinitions[coefc,ap,aq,onecase,w,z];
+rows=ParallelMap[onecase@@#&,cases,Method->"FinestGrained"];
+Print["actual IDs: ",Sort@DeleteDuplicates@Lookup[rows,"kernel_id"]];
+Print["actual PIDs: ",Sort@DeleteDuplicates@Lookup[rows,"pid"]];
+Print["basis assertions: ",Total@Lookup[rows,"basis_assertions"]];
+Print["all cases passed: ",And@@Lookup[rows,"pass"]];
+Print["mismatch total: ",Total@Lookup[rows,"mismatches"]];
+Export[FileNameJoin[{DirectoryName[$InputFileName],"composition_batch.json"}],rows,"RawJSON"];
+Put[rows,FileNameJoin[{DirectoryName[$InputFileName],"composition_batch_results.wl"}]];
+CloseKernels[];Print["complete"];

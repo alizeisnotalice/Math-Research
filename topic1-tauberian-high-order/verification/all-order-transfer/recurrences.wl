@@ -1,0 +1,14 @@
+Get[FileNameJoin[{DirectoryName[$InputFileName],"common.wl"}]];
+Print["Wolfram ",$Version," PID ",$ProcessID];
+Print["Domain symbolic p real, 0<q<=1; q=0 understood by analytic continuation."];
+cs=Table[coefc[q,k],{k,0,8}];
+Print["c recurrence residuals: ",Table[FullSimplify[cs[[k+1]]-(k-q)cs[[k]]/(k+1)],{k,1,8}]];
+S=1+Sum[cs[[i+1]] z^i,{i,1,8}];
+Do[direct=SeriesCoefficient[S^p,{z,0,k}];rec=ap[p,k,q];Print["k=",k," residual: ",Factor[Together[direct-rec]]],{k,0,8}];
+Print["sigma direct coeff residuals: ",Table[FullSimplify[SeriesCoefficient[(1-(1-z)^q)/(q z),{z,0,k}]-cs[[k+1]]],{k,0,8}]];
+Print["sigma q=0/log residuals: ",Table[FullSimplify[SeriesCoefficient[-Log[1-z]/z,{z,0,k}]-(cs[[k+1]]/.q->0)],{k,0,8}]];
+Print["sigma q=1 coefficients: ",cs/.q->1];
+Print["derivative N1..6 residuals: ",Table[FullSimplify[D[(1-(1-z)^q)/q,{z,nn+1}]-(-1)^nn Product[q-j,{j,1,nn}](1-z)^(q-nn-1),Assumptions->0<q<=1&&0<=z<=1/2],{nn,1,6}]];
+Print["derivative product bound violations: ",Table[Reduce[0<=q<=1&&Product[j-q,{j,1,nn}]>nn!,q,Reals],{nn,1,6}]];
+Print["uniform remainder constants: ",Table[2^(nn+1)/(nn+1),{nn,1,6}]];
+Print["complete"];
