@@ -111,3 +111,67 @@ C_{\mathcal B}(\alpha)=\sup_{0<|E|<\infty}
 历史来源 Berry 1941 的 DOI 10.1090/S0002-9947-1941-0003498-3 可追溯；AMS原PDF读取受阻，未声称读过其原证明。
 本轮可直接核验的证明来源使用上述作者预印本，而非受阻原文的二手摘录。
 实际检索：非同分布 Berry–Esseen 三阶绝对矩；定向查找 Vershynin 题名与 arXiv v1。
+
+
+## 第8轮：Hagelstein--Parissis Theorem 2 的显式维数依赖（2026-11-06）
+
+这里仅考察该文的坐标复合算子 \(M_1\cdots M_n\)，并用 \(M_S\leq M_1\cdots M_n\) 把所得示性函数上界转给强矩形算子。原文 Lemma 1 的一维常数是完全显式的：对 \(0\leq\gamma<\alpha<1\)，
+\[
+ |\{M_{\rm HL}(\mathbf1_E+\gamma\mathbf1_{E^c})>\alpha\}|
+ \leq \left(1+4\frac{1-\alpha}{\alpha-\gamma}\right)|E|.
+\]
+令 \(\alpha_j=1-(1-\alpha_1)^j\)。其 Lemma 2 逐步迭代而不丢弃常数，得到
+\[
+ |\{M_1\cdots M_n\mathbf1_E>\alpha_n\}|
+ \leq\left(1+4\frac{1-\alpha_1}{\alpha_1}\right)^n|E|.
+\]
+故 Theorem 2 对**每个** \(0<\alpha<1\)（没有 \(n\)-一致的小邻域阈值假设）给出
+\[
+ C_{1\cdots n}(\alpha)\le U_n(\alpha)^n,\qquad
+ U_n(\alpha)=1+4\frac{(1-\alpha)^{1/n}}{1-(1-\alpha)^{1/n}}.
+\]
+同样有 \(C_S(\alpha)\le C_{1\cdots n}(\alpha)\)。原文在这之后只写
+\(C_{1\cdots n}(\alpha)-1\sim_n(\alpha^{-1}-1)^{1/n}\)；符号 \(\sim_n\) 明言隐常数可以依赖于 \(n\)，原文未给出可跨维使用的阈值或常数。
+
+将 bounded-core reduction 的阈值写为
+\[
+q_n=\alpha_n^{-1}-1=
+\left(\frac{e^{A\sqrt{\log n/n}}}{1-2/\sqrt n}-1\right)^{1/2},
+\qquad \delta_n=1-\alpha_n=\frac{q_n}{1+q_n}.
+\]
+则显式定理实际给出的 \(n\) 次方根是
+\[
+U_n(\alpha_n)=1+\frac{4}{e^{L_n/n}-1},\qquad L_n=-\log\delta_n.
+\]
+对固定 \(A>0\)，
+\[
+q_n\sim\sqrt A\,(\log n/n)^{1/4},\quad
+L_n=\tfrac14\log n-\tfrac14\log\log n-\tfrac12\log A+o(1),
+\]
+进而
+\[
+U_n(\alpha_n)=1+\frac{16n}{\log n}(1+o(1)).
+\]
+这个根趋于无穷，远大于 \(B=3.591121476\ldots\)，所以 Theorem 2 的显式上界在该阈值完全不能提供 \(B^n\) 级控制。
+
+更直接地，若只要求该显式根小于 \(B\)，必要且充分的代数条件是
+\[
+(1-\alpha)^{1/n}<\frac{B-1}{B+3}=0.3931230043\ldots,
+\quad\text{即}\quad
+1-\alpha<\left(\frac{B-1}{B+3}\right)^n.
+\]
+这要求阈值余量指数小于 \(e^{-0.9336327280\ldots n}\)；当前 \(\delta_n\asymp(\log n/n)^{1/4}\) 相差指数级。故不能以文中固定 \(n\) 的 \(\sim_n\) 断言替代这一显式计算。
+
+**本机数值核对。** MATLAB R2026a 以 \(A=3\) 直接代入上述精确公式：
+
+| \(n\) | \(\alpha_n\) | \(U_n(\alpha_n)\)（即该界的 \(n\) 次方根） |
+|---:|---:|---:|
+| 16 | 0.290370384712 | 185.589477818 |
+| 64 | 0.422742294889 | 464.909351057 |
+| 256 | 0.531459562798 | 1349.68770965 |
+| 1024 | 0.623291718450 | 4194.50003364 |
+| 4096 | 0.701143511562 | 13564.2520734 |
+
+这只是对原文显式上界的数值代入，不是对真实 \(C_S\) 或 bounded-core 问题的下界/反例。
+
+**原始位置。** [Hagelstein--Parissis arXiv:1310.3771](https://arxiv.org/abs/1310.3771)，第 2 节 Lemma 1、Lemma 2、Theorem 2 及其紧随的证明。为避免网页数学渲染遗漏公式，本轮直接下载并读取作者上传的 arXiv 源码 `HagelsteinParissis2013Revised.tex.tex`；上述三个公式分别是原文的 (2)、Lemma 2 和 Theorem 2。

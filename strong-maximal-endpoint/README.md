@@ -4,9 +4,9 @@
 \(\Phi_n(t)=t(1+\log^+t)^{n-1}\)、自然对数及阈值 1。
 本项目研究最优比值 \(C_n=\sup_f |\{M_Sf>1\}|/\int\Phi_n(f)\)。
 
-## 当前状态（2026-11-06，第 7 轮）
+## 当前状态（2026-11-06，第 8 轮）
 
-- 已复核：指数率 \(C_n^{1/n}\to B\)，以及 \(\limsup C_n/B^n\le\sqrt B\) 的证明路线；B 满足 \(\log B=1+B^{-1}\)。详细推导见第 7 轮。
+- 已复核：指数率 \(C_n^{1/n}\to B\)，以及 \(\limsup C_n/B^n\le\sqrt B\) 的证明路线；B 满足 \(\log B=1+B^{-1}\)。详细推导见第 8 轮。
 - 已实现：等参数单层见证的 Gamma–二项混合、数值优化和 Wolfram 高精度交叉复算。
 - 待补证明：附件所称整个双曲示性函数族 H_n 的全局三项展开，特别是全空间 halo 与有限 L 的统一比较。
 - 已完成：有限多层轮廓的严格极限归约与固定网格凸振幅优化；n=4…256 的候选均优于同维等参数单层数值对照。
@@ -15,7 +15,8 @@
 - **第5轮机制障碍**：任意非减轮廓、任意坐标比例向量的单一双曲接收见证，其最优 Q_n 满足 (n mu−log Q_n)/sqrt(n log n)→sigma。这是受限机制定理，不能用作 C_n 的一般上界。
 - 第6轮：非负加权深层单调轮廓逐项被 Q_n 支配；分块张量示性函数的产品见证逐项被普通单层示性见证支配。均有明确固定维数深层极限限制。
 - **第7轮几何障碍**：共同轴向多中心/对角缩放双曲并集满足 V(Kt)≤K V(t)。统一振幅下，仅合并各分量原有双曲见证不能超过单分量深层基准；不控制新增跨分量矩形。
-- 主攻：不等振幅、相关输入及跨分量新矩形；一般上界仍针对有界核心。
+- **第8轮完整机制展开**：log Q_n = n mu − sigma sqrt(n log n) + sigma[loglog n+log(sigma sqrt(2pi))]sqrt(n/log n) + o(sqrt(n/log n))，并作为一般 C_n 的严格下界。
+- 主攻：非单调标量轮廓的重排边界、不等振幅及跨分量新矩形；一般上界仍针对有界核心。
 - 一般输入的负 \(\sqrt{n\log n}\) 次项仍未证明。
 
 ## 复现
@@ -47,3 +48,5 @@ Wolfram 15：`wolframscript -file code/crosscheck.wl`。
 第6轮：加权与分块精确支配见 rounds/r006/report.md；复现 `rows=sm_weighted;`、`code/weighted_checks.wl`。
 
 第7轮：精确多中心膨胀障碍见 rounds/r007/report.md；MATLAB `result=sm_union_checks;`。
+
+第8轮：完整证明与一般上界的显式维数障碍见 rounds/r008/report.md；MATLAB `rows=sm_large_soft;`，Wolfram `code/large_soft_check.wl`。
