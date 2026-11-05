@@ -1,0 +1,16 @@
+ClearAll[v,b,c,h,ff,Nn,tt,S0,A0,MM,aa,omega,den,A,qq,ee];
+Print["Wolfram: ",$Version,"; PID: ",$ProcessID];
+Print["Conditional scalar identities: integer N>=1, c>0, tau=bv/c; fixed n>=2."];
+tt=b v/c;
+Print["general N reindex residual (S0 denotes the common shifted interior sum): ",Expand[(c (ff[Nn]+S0)-b v (ff[0] tt^(Nn-1)+S0/tt))-(c ff[Nn]-b v tt^(Nn-1)ff[0])]/.tt->b v/c//FullSimplify];
+Print["N9 explicit sum residual: ",FullSimplify[Sum[tt^(9-h)(c ff[h]-b v ff[h-1]),{h,1,9}]-(c ff[9]-b v tt^8 ff[0]),c!=0]];
+omega=Sum[tt^(9-h),{h,1,9}];
+Print["N9 endpoint /(a omega): ",Factor[b v tt^8 A0 v MM/(aa omega)]];
+Print["orders {m9,m8,m7,m6,early,endpoint}: ",{65/8,8+1,8+2,6+3,6+4,10}];
+Print["exact ratio perturbation residual: ",Factor[(A/(den-aa ee)-A/den)-A aa ee/(den(den-aa ee))]];
+Print["positive-denominator reciprocal bound violation: ",Reduce[aa>=0&&A>=0&&D1>=dmin>0&&D2>=dmin&&B>=0&&A aa/(D1 D2)>A aa/dmin^2,{aa,A,D1,D2,dmin,B},Reals]];
+Print["parameter p(n)=1+65/(8n): max bound violation: ",Reduce[n>=2&&(1+65/(8n)>81/16||1+65/(8n)>=6),n,Reals]];
+Print["p(2), 6-p(2): ",{1+65/16,6-(1+65/16)}];
+Print["complete"];
+Print["endpoint target residual: ",FullSimplify[b v tt^8 A0 v MM/(aa omega)-A0 b^9 v^10 MM/(aa c^8 omega),c!=0&&aa!=0]];
+Print["little-o note: v³ o(v6)=o(v9); endpoint O(v10) if MM/aa=O(S) and omega bounded below."];
