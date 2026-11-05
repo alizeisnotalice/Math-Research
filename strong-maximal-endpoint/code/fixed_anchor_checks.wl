@@ -1,0 +1,14 @@
+Clear[rr,qq,vv,aa,bb,cc,mm,k,x,ff,pp];
+kernelIntegral=Integrate[vv^qq,{vv,0,1},Assumptions->qq>-1]/(1+rr)+Integrate[vv^qq,{vv,0,rr},Assumptions->{qq>-1,0<rr<1}]/(1+rr);
+kernelResidual=FullSimplify[kernelIntegral-(1+rr^(qq+1))/((1+rr)(qq+1)),Assumptions->{qq>-1,0<rr<1}];
+high=Min[aa,rr*bb]+Min[bb,rr*aa];support=Max[aa,rr*bb]+Max[bb,rr*aa];
+geometry=Resolve[ForAll[{aa,bb,rr},Implies[aa>=0&&bb>=0&&0<=rr<=1,high<=rr*(aa+bb)&&support>=aa+bb&&support+high==(1+rr)*(aa+bb)]],Reals];
+mean[c_]:=1+c/(1+Exp[c]);variance[c_]:=1+c^2 Exp[c]/(1+Exp[c])^2;
+meanResidual=FullSimplify[(mean[mm]-mm)/.Exp[mm]->1/(mm-1),Assumptions->mm>1];
+varianceResidual=FullSimplify[(variance[mm]-mm)/.Exp[mm]->1/(mm-1),Assumptions->mm>1];
+aLead=-pp*x*ff/(2*k);bLead=pp*ff;
+gainCoefficient=FullSimplify[(aLead^2/(2*bLead))/(x^2*ff/k^2)];
+guardCoefficient=FullSimplify[(aLead^2/(3*bLead))/(x^2*ff/k^2)];
+mu=1+ProductLog[Exp[-1]];p=1/(1+Exp[mu]);
+result=<|"wolfram"->$Version,"kernel_moment_residual"->ToString[kernelResidual,InputForm],"two_ray_weight_geometry"->geometry,"mean_variance_residuals"->ToString[{meanResidual,varianceResidual},InputForm],"actual_gain_leading_coefficient"->ToString[gainCoefficient,InputForm],"r027_guard_leading_coefficient"->ToString[guardCoefficient,InputForm],"p_over_8_80digits"->ToString[N[p/8,80],InputForm],"p_over_8_40digits"->ToString[N[p/8,40],InputForm]|>;
+base=DirectoryName[DirectoryName[$InputFileName]];Export[FileNameJoin[{base,"rounds","r028","symbolic_checks.json"}],result,"RawJSON"];Print[result];

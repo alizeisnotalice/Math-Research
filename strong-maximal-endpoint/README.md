@@ -4,7 +4,7 @@
 \(\Phi_n(t)=t(1+\log^+t)^{n-1}\)、自然对数及阈值 1。
 本项目研究最优比值 \(C_n=\sup_f |\{M_Sf>1\}|/\int\Phi_n(f)\)。
 
-## 当前状态（2026-11-06，第 23 轮）
+## 当前状态（2026-11-06，第 28 轮）
 
 - 已复核：指数率 \(C_n^{1/n}\to B\)，以及 \(\limsup C_n/B^n\le\sqrt B\) 的证明路线；B 满足 \(\log B=1+B^{-1}\)。详细推导见 rounds/r001/report.md。
 - 已实现：等参数单层见证的 Gamma–二项混合、数值优化和 Wolfram 高精度交叉复算。
@@ -31,7 +31,12 @@
 - **第21轮一般对数级上界**：精确非线性Gaussian移位、C³截断与热半群积分给log C_n≤nmu−d_n+O(log n)。结合第19轮下界，一般上下界对数差距现为O(log n)，最优系数及乘法等价仍待研究。见 rounds/r021/report.md。
 - **第22轮Q_n精确对数项**：任意确定性独立比例向量和任意单调轮廓的log Q_n=nmu−d_n+(9−mu)log n/24+o(log n)；机制上界匹配第19轮下界。此结论未扩展至一般C_n或反馈模型。见 rounds/r022/report.md。
 - **第23轮实际相关输入反例**：一个缺角两层输入严格优于相同振幅上限下的全部常幅矩形；振幅上限1.01时认证比值≥1.020472，而常幅矩形≤1.019754。固定二维近单位收益至少gamma epsilon+O(epsilon²)，gamma=(6log(4/3)−1)/8>0；不改变一般C_n渐近结论。见 rounds/r023/report.md。
-- 主攻：检验缺角机制的维数一致估计及三个振幅尺度，并继续一般上界的锐化。
+- 第24轮：高度1+1/n的满立方体近常值输入类最优比值趋于I_0(2sqrt2)，并证明三个小振幅尺度上的满立方体支撑障碍。见 rounds/r024/report.md。
+- 第25轮：宏观角分块的完整锚定weak-halo仍被Q_n控制；辅助反馈热方程的精确线性响应含g log t，但未据此声称离散反馈渐近。见 rounds/r025/report.md。
+- 第26轮：固定块数、次指数高度及任意确定比例的单锥接收评分≤C_m sqrt(n/∏b_j) Q_n；平衡块损失(m−1)log n/2。见 rounds/r026/report.md。
+- 第27轮：共同参数的增量卷积密度在四阶起对数凹，三阶有精确反例；完成曲线接收体积及尾截断，给出精确反馈核参数导数和局部telescope。见 rounds/r027/report.md。
+- **第28轮全输入固定比例障碍**：双射线全局重排使任意非负输入的固定比例反射锚定族端点精确等于对应标量Q（含有限高度）；K组固定锚点/比例的逐点最大至多KQ_n。另严格量化中等下尾带的真实一步贪婪收益p x² f/(8k²)，累计占据量仍待证明。见 rounds/r028/report.md。
+- 主攻：接收点依赖的真实比例或锚点；建立受控路径占据量估计，检验累计反馈对数收益。
 - 一般前三项现已闭合；乘法渐近等价、后续锐余项和极值结构仍待研究。
 
 ## 复现
@@ -103,3 +108,5 @@ Wolfram 15：`wolframscript -file code/crosscheck.wl`。
 第26轮：微观块凸预算与单锥接收的对数损失见 rounds/r026/report.md；MATLAB `sm_microblock_dual_checks`，Wolfram `code/microblock_checks.wl`。
 
 第27轮：共同参数卷积的对数凹证书、曲线接收边界及精确反馈核见 rounds/r027/report.md；Python `code/cert_block_logconcavity.py --verify`，MATLAB `sm_microblock_halo`，Wolfram `code/block_logconcavity_checks.wl`。
+
+第28轮：固定比例反射锚定族的全输入精确端点与带内反馈收益见 rounds/r028/report.md；MATLAB `sm_greedy_band_checks`，Wolfram `code/fixed_anchor_checks.wl`。
