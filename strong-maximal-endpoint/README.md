@@ -4,16 +4,17 @@
 \(\Phi_n(t)=t(1+\log^+t)^{n-1}\)、自然对数及阈值 1。
 本项目研究最优比值 \(C_n=\sup_f |\{M_Sf>1\}|/\int\Phi_n(f)\)。
 
-## 当前状态（2026-11-06，第 5 轮）
+## 当前状态（2026-11-06，第 6 轮）
 
-- 已复核：指数率 \(C_n^{1/n}\to B\)，以及 \(\limsup C_n/B^n\le\sqrt B\) 的证明路线；B 满足 \(\log B=1+B^{-1}\)。详细推导见第 5 轮。
+- 已复核：指数率 \(C_n^{1/n}\to B\)，以及 \(\limsup C_n/B^n\le\sqrt B\) 的证明路线；B 满足 \(\log B=1+B^{-1}\)。详细推导见第 6 轮。
 - 已实现：等参数单层见证的 Gamma–二项混合、数值优化和 Wolfram 高精度交叉复算。
 - 待补证明：附件所称整个双曲示性函数族 H_n 的全局三项展开，特别是全空间 halo 与有限 L 的统一比较。
 - 已完成：有限多层轮廓的严格极限归约与固定网格凸振幅优化；n=4…256 的候选均优于同维等参数单层数值对照。
 - **第3轮严格下界**：n≥1024 时，log C_n ≥ n mu − sigma sqrt(n(log n−2loglog n)) − log(2n)。新增正的 sigma loglog n sqrt(n/log n) 项；首个负项系数仍为 sigma。完整证明见 rounds/r003/report.md。
 - 第4轮：n=4…256 的七个多层候选已通过定向算术认证；完整端点和输入hash见 rounds/r004/certificates.json。
 - **第5轮机制障碍**：任意非减轮廓、任意坐标比例向量的单一双曲接收见证，其最优 Q_n 满足 (n mu−log Q_n)/sqrt(n log n)→sigma。这是受限机制定理，不能用作 C_n 的一般上界。
-- 主攻：加权/分块机制、改变接收几何及一般有界核心的维数常数。
+- 第6轮：非负加权深层单调轮廓逐项被 Q_n 支配；分块张量示性函数的产品见证逐项被普通单层示性见证支配。均有明确固定维数深层极限限制。
+- 主攻：相关层、多中心与新增交叉矩形，以及一般有界核心的维数常数。
 - 一般输入的负 \(\sqrt{n\log n}\) 次项仍未证明。
 
 ## 复现
@@ -41,3 +42,5 @@ Wolfram 15：`wolframscript -file code/crosscheck.wl`。
 第4轮复现：`python3 code/certify_staircase.py`；MATLAB `rows=sm_dense;`。
 
 第5轮：完整首系数障碍及有界核心归约见 rounds/r005/report.md；单盒数值核对 `rows=sm_box;`。
+
+第6轮：加权与分块精确支配见 rounds/r006/report.md；复现 `rows=sm_weighted;`、`code/weighted_checks.wl`。
