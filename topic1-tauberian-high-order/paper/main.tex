@@ -42,7 +42,7 @@
 \[
  \begin{aligned}
  C_n(1-t)=L_n(t)&+K_nav^6-(n+26/9)K_nav^7\\
- &+\widehat J_nav^8+o_n(av^8),
+ &+\widehat J_nav^8+O_n(av^9),
  \end{aligned}
 \]
 \[
@@ -54,7 +54,7 @@
 再由竞争输入的定量稳定性提取正常角的实际二次反馈。
 整源共同高度使正常模型与其补集共用一次缺源成本，
 局部定向覆盖给出二维内部小尺度源的准确费用。
-同一八层结算和实际质量分母确定八阶系数；
+固定正常整管、正份额吸收与九层消项给出九阶余项；
 二维两尺度微孔构造补足匹配下界，其中 \(\widehat J_2=17638/6561\)。
 对于共享同一中心方体、以公共交集归一化的多线性模型，
 证明精确线性约化、临界发散以及关于全部多线性重数一致的八阶渐近。
@@ -117,14 +117,14 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 控制角接触数，不要求全局晶格标签。
 最后回到同一源点的原指定见证，将它捕获的各个真实目标质量相加，
 在有效端盒内积分缺源层，得到准确的角部代价。任意大交长由小份额盈余支付，
-六层望远镜先确定首个角部系数。为继续计算下一项，实际根传输和自适应探针
+六阶同源局部价确定首个角部系数。为继续计算下一项，实际根传输和自适应探针
 给出全部正角的软容量；全源轮廓与管外缺量支付保留准确的目标缺角反馈。
 粗八阶上包进一步给出竞争输入的定量稳定性。正常角的实际双帽积分保留三近面反馈，
 整源共同高度支付正常窗以外的全部目标，并只使用一次缺源成本。
 二维小尺度源由覆盖全部可测源点的定向贪心给出准确费用。
-八层中心化后保留实际质量分母，结合两尺度微孔下界，确定真实八阶系数。
+保留实际质量分母并结合两尺度微孔下界，确定八阶系数；再由完整源宽的形状收益、固定正常整管与九层消项，将其后余项控制到九阶。
 
-\begin{theorem}[真实八阶渐近]\label{thm:endpoint}
+\begin{theorem}[真实八阶展开及幂余项]\label{thm:endpoint}
 令
 \[
  U_n(t)=1+\frac{2^nt}{1-t},\qquad
@@ -145,7 +145,7 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
  \begin{aligned}
  \Cn(1-t)=L_n(t)&+2^{n+6}K_nt^{1+6/n}
  -2^{n+7}\left(n+\frac{26}{9}\right)K_nt^{1+7/n}\\
- &+2^{n+8}\widehat J_nt^{1+8/n}+o_n(t^{1+8/n}),\qquad t\downarrow0.
+ &+2^{n+8}\widehat J_nt^{1+8/n}+O_n(t^{1+9/n}),\qquad t\downarrow0.
  \end{aligned}
 \end{equation}
 令
@@ -161,7 +161,7 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 则全部维数的展开统一写为
 \begin{equation}\label{eq:coefficients}
  \Cn(1-t)=1+\sum_{j=0}^{8}b_{n,j}t^{1+j/n}
-              +o_n(t^{1+8/n}).
+              +O_n(t^{1+9/n}).
 \end{equation}
 通式包含低维的幂次碰撞；三维 \(b_{3,5}=0\)。特别地，
 \[
@@ -174,12 +174,12 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 \]
 等价地，
 \begin{equation}\label{eq:eighth-remainder}
- \lim_{t\downarrow0}\frac{\Cn(1-t)-P_{7,n}(t)}{av^8}=\widehat J_n.
+ \frac{\Cn(1-t)-P_{7,n}(t)}{av^8}=\widehat J_n+O_n(v).
 \end{equation}
 常数和小量按固定维数理解。在二维，
 \begin{equation}\label{eq:sharp-planar}
  C_2(1-t)=L_2(t)+\frac4{27}av^6-\frac{176}{243}av^7
-             +\frac{17638}{6561}av^8+o(av^8),
+             +\frac{17638}{6561}av^8+O(av^9),
  \quad a=4t,\ v=2\sqrt t.
 \end{equation}
 \end{theorem}
@@ -210,7 +210,7 @@ Hagelstein--Parissis \cite[Theorem 1]{HagelsteinParissis2014}
 以下常数均允许依赖固定维数；不主张维数一致性。
 第 2 节准备同时等分、有限见证选择和参数控制；
 第 3 节证明精确约化、一般维数的锐上界与匹配有限构造；
-第 4 节传递至全部多线性重数。
+第 4 节给出共享方体模型下关于全部重数一致的推论。
 
 \section{预备知识}
 \subsection{严格水平余量与同时等分}
@@ -309,39 +309,7 @@ Besicovitch 方体族的交叠重数不超过 \(2^n\)。
 内正则性给出第一式。Lebesgue 密度定理给出
 \(|E\setminus\Hc(1-t;E)|=0\)，从而得到第二式。
 \end{proof}
-\subsection{缺陷参数的端点控制}
-
-\begin{lemma}\label{lem:parameter}
-记 \(\sigma_m(\eps)=s_m(1-\eps)\)。对 \(m\ge1\)、\(0<\eps<1\)，
-\begin{equation}\label{eq:uniformparameter}
- \eps\le\sigma_m(\eps)\le-\log(1-\eps),\qquad
- 0\le\sigma_m(\eps)-\eps\le\frac{\eps^2}{2(1-\eps)}.
-\end{equation}
-关于全部 \(m\ge1\) 一致还有
-\begin{equation}\label{eq:quinticparameter}
- \begin{aligned}
- \sigma_m(\eps)&=\eps+a_m\eps^2+b_m\eps^3+c_m\eps^4+d_m\eps^5+O(\eps^6),\\
- a_m&=\frac{m-1}{2m},\quad b_m=\frac{(m-1)(2m-1)}{6m^2},\quad
- c_m=\frac{(m-1)(2m-1)(3m-1)}{24m^3},\\
- d_m&=\frac{(m-1)(2m-1)(3m-1)(4m-1)}{120m^4}.
- \end{aligned}
-\end{equation}
-\end{lemma}
-\begin{proof}
-由 \(x^{1/m}\) 的凹性，\((1-\eps)^{1/m}\le1-\eps/m\)，故第一下界成立。
-令 \(q=-\log(1-\eps)\)，由 \(1-e^{-q/m}\le q/m\) 得上界。又
-\[
- -\log(1-\eps)-\eps=\sum_{k\ge2}\frac{\eps^k}{k}
- \le\frac{\eps^2}{2(1-\eps)}.
-\]
-直接求导有
-\[
- \sigma_m^{(6)}(z)=\prod_{r=1}^{5}(r-1/m)(1-z)^{1/m-6}.
-\]
-对 \(m\ge1\)、\(0\le z\le\eps\le1/2\)，其绝对值不超过 \(120\cdot64=7680\)。
-Taylor 定理给出 \eqref{eq:quinticparameter} 的统一余项，绝对值至多
-\((32/3)\eps^6\)；\(m=1\) 时高阶项及余项均为零。
-\end{proof}
+\input{sections/transfer}
 
 \section{主要证明}
 
@@ -451,77 +419,81 @@ Taylor 定理给出 \eqref{eq:quinticparameter} 的统一余项，绝对值至�
 
 \input{sections/eighth}
 
-\begin{proof}[定理~\ref{thm:endpoint} 高阶部分的证明]
-由定理~\ref{eighth:theorem} 的全部输入上界和实际有限下界，
-\eqref{eq:sharp} 及 \eqref{eq:eighth-remainder} 成立；二维取 \(K_2=4/27\)，得到 \eqref{eq:sharp-planar}。
-为取得全部幂次的系数，展开绝对收敛级数
-\[
- L_n(t)-1=\sum_{k\ge1}v^{kn}(1+v)^{-kn}.
-\]
-\(v^{n+j}\) 的系数只来自 \(k\le1+\lfloor j/n\rfloor\)，其二项式次数为
-\(j-(k-1)n\)，上标为 \(n+j-1\)。截至 \(j=8\) 后的余项是
-\(O_n(v^{n+9})\)。把 \eqref{eq:sharp} 的修正分别加入 \(j=6,7,8\) 项；基线截断误差小于八阶，得到
-\eqref{eq:coefficients}。\(j=1\) 的系数为 \(-n2^{n+1}\)，故最初归一化极限成立。
+\input{sections/quantitative}
 
-新第七系数在全部 \(n\ge2\) 非零。对 \(n\ge8\)，仅有 \(k=1\)，从而
-\[
- 2^{-(n+7)}b_{n,7}=-\binom{n+6}{7}-\left(n+\frac{26}{9}\right)K_n<0.
-\]
-余下 \(n=2,3,4,5,6,7\) 的同一归一化系数依次为
-\[
- -\frac{31280}{243},\quad \frac{676}{9},\quad-\frac{21424}{81},\quad
- -\frac{84575}{243},\quad-\frac{8836}{9},\quad-\frac{169442}{81}.
-\]
-这些数由上述有限二项式和的有理运算直接得到；三维为正，其余维数为负。
+\begin{proof}[定理~\ref{thm:endpoint} 高阶部分的证明]
+由定理~\ref{quant:power} 的全部输入上界和实际有限下界，
+\eqref{eq:sharp} 及 \eqref{eq:eighth-remainder} 成立；二维取 \(K_2=4/27\)，得到 \eqref{eq:sharp-planar}。
+引理~\ref{lem:baseline-recursion} 给出 \(L_n\) 在
+\(v^{n+j}\) 上的全部系数。补入 \(j=6,7,8\) 的真实修正，并用
+\(v^{n+j}=2^{n+j}t^{1+j/n}\)，得到 \eqref{eq:coefficients}；
+解析基线的截断为九阶，恰属所述余项。
+\(j=1\) 的系数为 \(-n2^{n+1}\)，故最初归一化极限成立。
+
 \end{proof}
 
-\section{重数一致的多线性渐近}
+\section{应用：重数一致的高阶渐近}
 
-\begin{corollary}[重数一致的八阶渐近]\label{cor:uniform}
+单线性几何给出固定八阶的实际展开。
+定理~\ref{thm:finite-transfer} 同时说明：未来若给出某个新的固定有限阶，
+其多线性系数可由有限递推取得。这里先记录已得到的八阶及误差率。
+
+\begin{corollary}[八阶的统一参数形式]\label{cor:uniform}
 令
-\[
+\begin{equation}\label{eq:quinticparameter}
  \begin{aligned}
- A_m(\eps)=1&+\frac{m-1}{2m}\eps
+ A_{5,m}(\eps)=1&+\frac{m-1}{2m}\eps
  +\frac{(m-1)(2m-1)}{6m^2}\eps^2\\
  &+\frac{(m-1)(2m-1)(3m-1)}{24m^3}\eps^3
- +\frac{(m-1)(2m-1)(3m-1)(4m-1)}{120m^4}\eps^4.
+ +\frac{(m-1)(2m-1)(3m-1)(4m-1)}{120m^4}\eps^4 .
  \end{aligned}
-\]
-对每个固定 \(n\ge2\)，当 \(\eps\downarrow0\) 时，关于全部整数 \(m\ge1\) 一致有
-\begin{equation}\label{eq:uniform-coefficients}
- \Cm(1-\eps)=1+\sum_{j=0}^{8}b_{n,j}
- [\eps A_m(\eps)]^{1+j/n}+o_n(\eps^{1+8/n}).
 \end{equation}
+对每个固定 \(n\ge2\)，关于全部整数 \(m\ge1\) 一致有
+\begin{equation}\label{eq:uniform-coefficients}
+ C_n^{(m)}(1-\eps)=1+\sum_{j=0}^8b_{n,j}
+       [\eps A_{5,m}(\eps)]^{1+j/n}
+       +O_n(\eps^{1+9/n}).
+\end{equation}
+若按普通 \(\eps\) 幂排列，其第 J 项系数由
+\eqref{eq:finite-transfer} 取 \(r=8\) 给出，包含全部整数／分数幂碰撞。
 \end{corollary}
 \begin{proof}
-对 \(0<\eps\le1/2\)，精确约化同时适用于全部 \(m\)。记 \(s=\sigma_m(\eps)\)，
-\(p_8=1+8/n\le5\)。由 \(\eps\le s\le2\eps\)，同一个标量余项
-\(r_n(t)=o(t^{p_8})\) 在 \(0<t\le2\eps\) 上的归一化上确界模量趋零，故
-\(\sup_{m\ge1}|r_n(s)|/\eps^{p_8}\to0\)。
-引理~\ref{lem:parameter} 给出 \(s=\eps A_m(\eps)+O(\eps^6)\)，且
-\(\eps\le\eps A_m(\eps)\le s\)。对九个固定指数 \(p=1+j/n\in[1,5]\)，均值定理给
+精确约化以 \(s=\sigma_{1/m}(\eps)\) 代入单线性强余项。
+引理~\ref{lem:parameter} 取 \(N=5\)，给
 \[
- s^p-[\eps A_m(\eps)]^p=O_p(\eps^{p+5}).
+ 0\le s-\eps A_{5,m}(\eps)\le(32/3)\eps^6,\qquad
+ \eps\le\eps A_{5,m}(\eps)\le s\le2\eps.
 \]
-有限求和误差 \(O_n(\eps^6)=o_n(\eps^{p_8})\)，包括二维的 \(p_8=5\)。
+九个固定幂的均值定理误差总和为 \(O_n(\eps^6)\)。
+而 \(1+9/n\le11/2<6\)，故保持
+\eqref{eq:uniform-coefficients} 的率。
+逐幂系数按 J=j+nk 合并；首个未保留下标至少为9，
+其统一解析误差为 \(O_n(\eps^{1+9/n})\)。
 \end{proof}
 
-\begin{corollary}[自然参数下的重数一致八阶极限]\label{cor:eighth-multi}
-对每个固定 \(n\ge2\)，记 \(s=\sigma_m(\eps)\)、\(a_s=2^ns\)、
-\(v_s=2s^{1/n}\)。则
+\begin{corollary}[自然参数下的统一误差率]\label{cor:eighth-multi}
+对固定 \(n\ge2\)，记 \(s=\sigma_{1/m}(\eps)\)、
+\(a_s=2^ns\)、\(v_s=2s^{1/n}\)。则
 \[
- \lim_{\eps\downarrow0}\sup_{m\ge1}
- \left|\frac{\Cm(1-\eps)-P_{7,n}(s)}{a_sv_s^8}-\widehat J_n\right|=0.
+ |C_n^{(m)}(1-\eps)-P_{8,n}(s)|\le C_n a_s v_s^9
+\]
+关于全部 \(m\ge1\) 一致，且
+\[
+ \sup_{m\ge1}\left|
+ \frac{C_n^{(m)}(1-\eps)-P_{7,n}(s)}{a_sv_s^8}
+                  -\widehat J_n\right|
+ \le C_n'\eps^{1/n}.
 \]
 \end{corollary}
 \begin{proof}
-由 \eqref{eq:eighth-remainder}，同一个标量函数
-\[
- \frac{\Cn(1-t)-P_{7,n}(t)}{2^{n+8}t^{1+8/n}}-\widehat J_n
-\]
-在 \(0<t\le2\eps\) 上的绝对值上确界趋零。
-精确约化与 \(\eps\le s\le2\eps\) 直接给出结论。
+由精确约化，对同一个标量余项使用定理~\ref{quant:power}。
+共同区间 \(s\in[\eps,2\eps]\) 使常数和阈值不依重数，
+再除以 \(a_sv_s^8\) 即得第二式。
 \end{proof}
+
+一般有限阶传递只使用给定的标量系数。
+它不反向给出真实单线性常数在任意更高阶的展开或解析性；
+新的几何项仍须由同一输入类的上、下界确定。
 
 \bibliographystyle{plain}
 \bibliography{sources}

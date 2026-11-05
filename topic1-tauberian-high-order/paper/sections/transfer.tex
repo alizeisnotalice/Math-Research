@@ -1,0 +1,163 @@
+\subsection{统一参数与有限阶系数传递}
+
+精确约化 \eqref{eq:reduction} 将多线性问题化为一个标量参数代换。
+下面给出共同参数区间及有限递推，使这一代换的余项对所有重数一致。
+本小节的展开阶数 \(r\) 始终固定，与多线性重数 \(m\) 无关。
+
+对辅助参数 \(q\in[0,1]\) 定义
+\[
+ \sigma_q(z)=
+ \begin{cases}[1-(1-z)^q]/q,&q>0,\\-\log(1-z),&q=0,\end{cases}
+ \qquad A_q(z)=\sigma_q(z)/z,\quad A_q(0)=1.
+\]
+实际重数对应 \(q=1/m\)；\(q=0\) 只用于统一估计。
+\begin{lemma}[共同参数区间与截断]\label{lem:parameter}
+对 \(q\in[0,1]\)、\(0<\eps\le1/2\)，有
+\begin{equation}\label{eq:uniformparameter}
+ \eps\le\sigma_q(\eps)\le-\log(1-\eps)\le2\eps,\qquad
+ \sigma_q(\eps)\le\log2<1.
+\end{equation}
+写
+\[
+ A_q(z)=\sum_{k\ge0}c_k(q)z^k,\qquad
+ c_0(q)=1,\qquad
+ c_k(q)=\frac{k-q}{k+1}c_{k-1}(q).
+\]
+对固定整数 \(N\ge1\)，令
+\[
+ S_{N,q}(\eps)=\eps\sum_{k=0}^{N-1}c_k(q)\eps^k.
+\]
+则
+\begin{equation}\label{eq:parameter-truncation}
+ 0\le\sigma_q(\eps)-S_{N,q}(\eps)
+ \le\frac{2^{N+1}}{N+1}\eps^{N+1},\qquad
+ \eps\le S_{N,q}(\eps)\le\sigma_q(\eps).
+\end{equation}
+\end{lemma}
+\begin{proof}
+积分式
+\[
+ \sigma_q(z)=\int_0^z(1-u)^{q-1}\dd u,\qquad
+ A_q(z)=\int_0^1(1-uz)^{q-1}\dd u
+\]
+给共同区间及
+\[
+ c_k(q)=\frac{\prod_{\ell=1}^k(\ell-q)}{(k+1)!},
+ \qquad0\le c_k(q)\le\frac1{k+1}.
+\]
+第 \(N+1\) 阶导数为
+\[
+ \sigma_q^{(N+1)}(z)
+ =\prod_{\ell=1}^N(\ell-q)(1-z)^{q-N-1}.
+\]
+在 \(0\le z\le1/2\) 上介于零与 \(N!2^{N+1}\) 之间，
+Taylor 定理即给 \eqref{eq:parameter-truncation}。
+\end{proof}
+
+对固定实数 \(p\)，记
+\[
+ a_{p,k}(q)=[z^k]A_q(z)^p,\qquad a_{p,0}(q)=1.
+\]
+\begin{lemma}[参数幂的有限递推]\label{lem:composition}
+对 \(k\ge1\)，有
+\begin{equation}\label{eq:composition-recursion}
+ k a_{p,k}(q)=
+ \sum_{i=1}^k((p+1)i-k)c_i(q)a_{p,k-i}(q).
+\end{equation}
+对固定 \(p,K\)，关于全部 \(q\in[0,1]\) 一致有
+\[
+ A_q(\eps)^p=\sum_{k=0}^K a_{p,k}(q)\eps^k
+                      +O_{p,K}(\eps^{K+1}).
+\]
+\end{lemma}
+\begin{proof}
+由 \(A_q(A_q^p)'=pA_q'A_q^p\) 比较 \(z^{k-1}\) 系数，得递推。
+在固定 \(|z|\le\rho<1/2\) 内，
+\[
+ |A_q(z)-1|\le\rho/(1-\rho)<1.
+\]
+因此 \(A_q\) 有归一化解析对数，\(A_q^p\) 在更小共同闭圆盘上一致有界。
+Cauchy 估计给所述余项；递推每步只用更小下标。
+\end{proof}
+
+\begin{theorem}[固定有限阶的条件性传递]\label{thm:finite-transfer}
+固定 \(n\ge2\) 及整数 \(r\ge0\)。若真实单线性常数满足
+\[
+ C_n(1-t)=1+\sum_{j=0}^r b_{n,j}t^{1+j/n}
+                         +o_{n,r}(t^{1+r/n}),
+\]
+则关于全部整数 \(m\ge1\) 一致有
+\[
+ C_n^{(m)}(1-\eps)
+ =1+\sum_{J=0}^r B_{n,J}(m)\eps^{1+J/n}
+                         +o_{n,r}(\eps^{1+r/n}),
+\]
+其中
+\begin{equation}\label{eq:finite-transfer}
+ B_{n,J}(m)=
+ \sum_{k=0}^{\lfloor J/n\rfloor}
+ b_{n,J-nk}\,
+ a_{\,1+(J-nk)/n,k}(1/m).
+\end{equation}
+取 \(N=\lfloor r/n\rfloor+1\)，还可一致地写成
+\[
+ C_n^{(m)}(1-\eps)
+ =1+\sum_{j=0}^r b_{n,j}S_{N,1/m}(\eps)^{1+j/n}
+                         +o_{n,r}(\eps^{1+r/n}).
+\]
+该定理以所列单线性有限阶展开为前提。
+\end{theorem}
+\begin{proof}
+精确约化给 \(s=\sigma_{1/m}(\eps)\) 及
+\(C_n^{(m)}(1-\eps)=C_n(1-s)\)。
+若标量余项为 \(R(t)\)，则
+\[
+ \omega(u)=\sup_{0<t\le u}|R(t)|/t^{1+r/n}\longrightarrow0.
+\]
+由共同区间，
+\[
+ \sup_m|R(\sigma_{1/m}(\eps))|
+ \le2^{1+r/n}\omega(2\eps)\eps^{1+r/n}.
+\]
+第 \(j\) 项为
+\(b_{n,j}\eps^{1+j/n}A_{1/m}(\eps)^{1+j/n}\)。
+参数幂的第 \(k\) 项恰落在 \(J=j+nk\)，给出全部碰撞
+\eqref{eq:finite-transfer}。截在
+\(k=\lfloor(r-j)/n\rfloor\) 后的首个指数严格大于 \(1+r/n\)，
+有限求和和引理~\ref{lem:composition} 给共同 little-o。
+
+用 \(S_{N,q}\) 替换 \(\sigma_q\) 时，两者都在 \([\eps,2\eps]\)。
+均值定理使第 \(p\) 次幂之差为 \(O_{p,N}(\eps^{p+N})\)，
+有限项的总差至多为 \(O_{n,r}(\eps^{N+1})\)。
+因 \(N+1=\lfloor r/n\rfloor+2>1+r/n\)，所需余项保持。
+常数和阈值依固定 \(n,r\) 及所给有限系数，不依 \(m\)。
+\end{proof}
+
+\begin{lemma}[周期基线的系数]\label{lem:baseline-recursion}
+本引理将 \(L_n=[1-v^n/(1+v)^n]^{-1}\) 视为复变量 v 的函数。在 \(|v|<1/2\) 内，
+\[
+ L_n(v)=1+\sum_{j\ge0}\ell_{n,j}v^{n+j},\qquad
+ \ell_{n,0}=1,\qquad
+ \ell_{n,j}=-\sum_{k=1}^{\min(j,n-1)}
+                    \binom nk\ell_{n,j-k}.
+\]
+并有有限和
+\[
+ \ell_{n,j}=
+ \sum_{k=1}^{1+\lfloor j/n\rfloor}
+ (-1)^{j-(k-1)n}\binom{n+j-1}{j-(k-1)n}.
+\]
+\end{lemma}
+\begin{proof}
+由 \(L_n=1+v^n/D_n(v)\)，
+\(D_n(v)=(1+v)^n-v^n=\sum_{k=0}^{n-1}\binom nkv^k\)，
+比较 \(D_n\sum_j\ell_{n,j}v^j=1\) 的系数得递推。
+当 \(\rho=|v|<1/2\) 时，几何／二项式双级数的绝对值总和至多
+\[
+ \sum_{k\ge1}\rho^{nk}
+ \sum_{h\ge0}\binom{nk+h-1}{h}\rho^h
+ =\sum_{k\ge1}\left(\frac{\rho}{1-\rho}\right)^{nk}<\infty.
+\]
+按次数合并须 \(h=j-(k-1)n\ge0\)，即得有限和。
+此递推只计算明确定义的 \(L_n\)；真实修正系数仍由主证明的上下界确定。
+\end{proof}
