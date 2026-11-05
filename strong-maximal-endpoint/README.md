@@ -97,3 +97,5 @@ Wolfram 15：`wolframscript -file code/crosscheck.wl`。
 第23轮：实际缺角输入与近单位振幅见 rounds/r023/report.md；Python `code/cert_capped_corner.py`，MATLAB `sm_capped_corner_checks`，Wolfram `code/capped_corner_checks.wl`。
 
 第24轮：近常值满立方体类的精确极限与三尺度支撑障碍见 rounds/r024/report.md；MATLAB `sm_nearflat_ceiling_checks`，Wolfram `code/nearflat_ceiling_checks.wl`。
+
+第25轮：宏观角分块的锚定障碍与反馈辅助热方程见 rounds/r025/report.md；MATLAB `sm_feedback_probe`，Wolfram `code/angular_feedback_checks.wl`。
