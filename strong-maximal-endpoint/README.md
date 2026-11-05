@@ -4,7 +4,7 @@
 \(\Phi_n(t)=t(1+\log^+t)^{n-1}\)、自然对数及阈值 1。
 本项目研究最优比值 \(C_n=\sup_f |\{M_Sf>1\}|/\int\Phi_n(f)\)。
 
-## 当前状态（2026-11-06，第 22 轮）
+## 当前状态（2026-11-06，第 23 轮）
 
 - 已复核：指数率 \(C_n^{1/n}\to B\)，以及 \(\limsup C_n/B^n\le\sqrt B\) 的证明路线；B 满足 \(\log B=1+B^{-1}\)。详细推导见 rounds/r001/report.md。
 - 已实现：等参数单层见证的 Gamma–二项混合、数值优化和 Wolfram 高精度交叉复算。
@@ -30,7 +30,8 @@
 - **第20轮一般上界**：有限时域Gaussian离散屏障给log C_n≤nmu−d_n+O((log n)²)。一般上下界对数差距现为O((log n)²)，真正log n系数及一般乘法等价仍未闭合。完整证明见 rounds/r020/report.md。
 - **第21轮一般对数级上界**：精确非线性Gaussian移位、C³截断与热半群积分给log C_n≤nmu−d_n+O(log n)。结合第19轮下界，一般上下界对数差距现为O(log n)，最优系数及乘法等价仍待研究。见 rounds/r021/report.md。
 - **第22轮Q_n精确对数项**：任意确定性独立比例向量和任意单调轮廓的log Q_n=nmu−d_n+(9−mu)log n/24+o(log n)；机制上界匹配第19轮下界。此结论未扩展至一般C_n或反馈模型。见 rounds/r022/report.md。
-- 主攻：检验相关输入能否超出独立比例机制，并研究一般上界初始化的锐化。
+- **第23轮实际相关输入反例**：一个缺角两层输入严格优于相同振幅上限下的全部常幅矩形；振幅上限1.01时认证比值≥1.020472，而常幅矩形≤1.019754。固定二维近单位收益至少gamma epsilon+O(epsilon²)，gamma=(6log(4/3)−1)/8>0；不改变一般C_n渐近结论。见 rounds/r023/report.md。
+- 主攻：检验缺角机制的维数一致估计及三个振幅尺度，并继续一般上界的锐化。
 - 一般前三项现已闭合；乘法渐近等价、后续锐余项和极值结构仍待研究。
 
 ## 复现
@@ -92,3 +93,5 @@ Wolfram 15：`wolframscript -file code/crosscheck.wl`。
 第21轮：一般对数级上界见 rounds/r021/report.md；MATLAB `sm_shift_barrier_checks`，Wolfram `code/shift_barrier_checks.wl`。
 
 第22轮：独立比例机制的精确对数项及初始化障碍见 rounds/r022/report.md；MATLAB `sm_independent_log_checks`，Wolfram `code/independent_log_checks.wl`。
+
+第23轮：实际缺角输入与近单位振幅见 rounds/r023/report.md；Python `code/cert_capped_corner.py`，MATLAB `sm_capped_corner_checks`，Wolfram `code/capped_corner_checks.wl`。
