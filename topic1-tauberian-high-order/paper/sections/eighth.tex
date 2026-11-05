@@ -1,32 +1,27 @@
-\subsection{七阶系数与八阶余量的阶}
+\subsection{八阶精确系数}
 \label{eighth:section}
 
-要把七阶展开的余量定量化，不能先将缺源形状替换为一个无速率极限。
-下面在同一次 CDF 结算中保留完整标量亏损和原始缺源余量，
-用正常角槽的实际空缺支付高支撑交量，再以八层消去前层源缺量。
-匹配的有限构造给出严格正的八阶贡献；我们不识别其最优系数或极限。
+八阶价格同时取决于目标缺形的第二次反馈、三近面源层和实际删除质量。
+我们先保留一个定量粗上包，由竞争输入提取正预算稳定性；
+随后在整个有效源盒内计算联合高度，最后用同一八层账本消去源缺量。
+二维的微孔还产生独立的小半径项，须在真实基线导数下单独支付。
 
-\begin{theorem}[七阶展开及八阶余量]\label{eighth:theorem}
-固定整数 \(n\ge2\)，令 \(a=v^n=2^nt\)、\(v=2t^{1/n}\)、
-\(K_n=\binom n2n^2/27\)，并记
+\begin{theorem}[八阶精确展开]\label{eighth:theorem}
+固定整数 \(n\ge2\)，令 \(a=v^n=2^nt\)、\(v=2t^{1/n}\)，并记
 \[
- P_{7,n}(t)=L_n(t)+K_nav^6-\left(n+\frac{26}{9}\right)K_nav^7.
+ K_n=\binom n2\frac{n^2}{27},\qquad
+ P_{7,n}(t)=L_n(t)+K_nav^6-\left(n+\frac{26}{9}\right)K_nav^7,
 \]
-则
-\begin{equation}\label{eighth:theta}
- C_n(1-t)=P_{7,n}(t)+\Theta_n(av^8).
-\end{equation}
-更准确地，存在有限常数 \(A_n\)，使
-\begin{equation}\label{eighth:bounds}
- 0<J_n\le\liminf_{t\downarrow0}\frac{C_n(1-t)-P_{7,n}(t)}{av^8}
- \le\limsup_{t\downarrow0}\frac{C_n(1-t)-P_{7,n}(t)}{av^8}\le A_n,
-\end{equation}
-其中
 \[
  J_n=\frac{(n-1)n^3(2609+1971n+81n^2)}{26244}
-       +\frac8{27}\mathbf1_{\{n=2\}}.
+       +\frac8{27}\mathbf1_{\{n=2\}},\qquad
+ \widehat J_n=J_n+\frac8{27}\mathbf1_{\{n=2\}}.
 \]
-余量按固定维数理解，不主张八阶归一化余量有极限。
+则
+\begin{equation}\label{eighth:exact-expansion}
+ C_n(1-t)=P_{7,n}(t)+\widehat J_nav^8+o_n(av^8).
+\end{equation}
+特别 \(\widehat J_2=17638/6561\)。所有余项按固定维数理解。
 \end{theorem}
 
 \subsubsection{同一八层族与定量粗先验}
@@ -784,9 +779,9 @@ probe 空隙费为 \(O((v^{n+1}+v^5)S)\)，坏端点费为 \(O(v^{9/2}S)\)。
 共同层与最后大管的顺序固定，最后才取小 \(v\)，没有两管阈值循环。
 \end{proof}
 
-\subsubsection{一次免费面恢复与八层精确结算}
+\subsubsection{一次恢复与八层粗余项}
 
-\begin{proposition}[八阶余量上界]\label{eighth:upper}
+\begin{proposition}[八阶粗上包]\label{eighth:bootstrap-upper}
 对每个固定 \(n\ge2\)，有 \(C_n(1-t)\le P_{7,n}(t)+O_n(av^8)\)。
 \end{proposition}
 \begin{proof}
@@ -918,15 +913,907 @@ probe 空隙费为 \(O((v^{n+1}+v^5)S)\)，坏端点费为 \(O(v^{9/2}S)\)。
 所有原正半径及尺度跨度均保留，不将固定输入的 little-o 与上确界交换。
 \end{proof}
 
-\subsubsection{两次角反馈与有限八阶下界}
+\subsubsection{竞争输入的正预算稳定性}
 
-\begin{proposition}[有限输入的正八阶贡献]\label{eighth:lower}
+以下进一步限制于任意固定 \(B<\infty\) 的序列
+\begin{equation}\label{eighth:exact-competitive}
+ 1+M/V\ge P_{7,n}(t)-Bav^8,\qquad v\downarrow0.
+\end{equation}
+同一 \(I\)、八层、原指定见证和统一 CDF 均保持不变。
+正常窗、清洁槽分配和前面共同层的固定阈值也先固定。
+随后出现的辅助有限窗只用于测试新的目标 packet。
+
+\begin{lemma}[八阶稳定预算]\label{eighth:exact-stability}
+在第八层，可固定常数 \(C_*\)，使
+\begin{equation}\label{eighth:exact-stable-budget}
+ \mathfrak G_N+B_{\mathcal B_2}+R_{\rm all}+R_N+\mathfrak E
+ +\mathcal F+\mathcal F_{1/128}+v^6D_{\mathcal N}
+ +P_I+P_\partial\le C_*v^8S.
+\end{equation}
+其中正常层和 \(\mathcal F_{1/128}\) 均取本层的原实际对象；
+\(\mathcal F_{1/128}\) 包含固定窗口中全部具有该切向裕量的稳健面对。
+具体沿用 \(\mathscr E_\tau\) 的稳健近面定义，
+\(\mathcal F_\tau=\sum_{(i,p)\in\mathscr E_\tau}\Gamma_{ip}r_i^{n-1}\)；
+固定窗口及有界重复次数均在八层统一常数之前取定。
+特别
+\[
+ \sum_{\mathcal N}d_e^2R_e^n=O(v^2S),\qquad
+ D_{\mathcal N}=O(v^2S).
+\]
+常数不依以后选取的大角窗或尾份额。
+\end{lemma}
+\begin{proof}
+重开引理~\ref{eighth:joint-price} 的同一次证明。
+\eqref{eighth:quantitative-refund} 的平方根误差用 Young 只花
+\(\mathfrak G_N\) 的一个固定小份额。\eqref{eighth:global-coercivity}
+的 \(b+D\) 另分固定份额，分别保留完整 \(B_{\mathcal B_2}\)、
+非正常角权折扣和退款吸收。长条的 \(C_L/T\) 先取小，
+其余 \(C_{T,m}v\) 最后取小；由
+\eqref{eighth:nested-residual}，这仍保留固定正系数的
+\(R_{\rm all}+\mathfrak E+v^6D_{\mathcal N}\)。
+故对固定正 \(c_j\)，原联合证明给
+\[
+ H_2+c_1\mathfrak G_N+c_2B_{\mathcal B_2}
+ +c_3R_{\rm all}+c_4\mathfrak E+c_5v^6D_{\mathcal N}
+ \le[A_6+\Gamma v^7]\mathcal C+Cv\mathcal F+Cv^8S.
+\]
+先固定 \(\eta_0<\min(c_3,c_5)/16\)，再用
+引理~\ref{eighth:high-net}，高支撑只占其固定小部分。
+因 \(Z(K_{\rm all})\le R_{\rm all}\)，全部正量仍有固定份额。
+
+普通面条和固定稳健面条各有实际正体积下界。
+二者即使重叠，其并集至少为两个下界的各一半之和；
+有限多个候选组也可用固定正权平均。条均避开 \(\bigcup X_i\)
+及标记部分，位于原源的 \(Q(x,R_i)\) 内，环境仍由原固定面邻居控制。
+于是同一次恢复可保留正的 \(\mathcal F+\mathcal F_{1/128}\)。
+全部 \(Cv\mathcal F,Cv^n\mathcal F,Ca\mathcal F\) 支出合并，
+最后小 \(v\) 时只占其固定小份，不能逐项重用整份面收入。
+
+将这些正量保留在第八层的 \eqref{eighth:ledger}，以原八层权平均，
+末层权 \(1/\Omega_8=1+O(v)\)，不损失固定正系数。
+每层公共的内部收入按 \eqref{sharp-graph-absorption} 支付边界和
+\(2nvS_I\) 后仍留固定正的 \(P_I\)；内部精确式的 \(1-a\) 不变。
+故以 \(\mathcal L\) 记所列源／面正量，有
+\[
+ (1+Q)\mathcal V-A_vM/a
+ \ge c_PP_I+c_L\mathcal L-Cv^8S-o(v^8S).
+\]
+\eqref{eighth:exact-competitive}、真实比值恒等式及
+\eqref{eighth:leading-mass} 给公共左侧 \(O_B(v^8S)\)。
+所以 \(\mathcal L+P_I=O(v^8S)\)，原图再给 \(P_\partial=O(v^8S)\)。
+最后用 \eqref{eighth:nested-residual} 得 \(R_N\) 的界，
+用 \eqref{eighth:quadratic} 得参数平方界。
+本证明只使用已证粗上包，没有使用下面的新八阶价格。
+\end{proof}
+
+\begin{lemma}[全部高支撑交量的小量]\label{eighth:exact-high-gross}
+对上述同一族，
+\[
+ \sum_{q(e)\ge3}I_e=o(v^8S).
+\]
+二维为空和；结论不再扣除任何源盈余。
+\end{lemma}
+\begin{proof}
+先用实际质量和旧正常层的逐源体积上界得到
+\[
+ \varepsilon_iR_i^n\le Cv^5R_i^n+
+       C|\mathscr D_i\setminus Y_{i,N}|/a.
+\]
+对任一实际指标集 \(A\)，有限相交度和根比给
+\[
+ \sum_{\operatorname{Adj}(A)}\varepsilon_iR_i^n
+ \le Cv^5S(A)+(C/v)R_N.
+\]
+引理~\ref{eighth:good-slots} 的真实缺槽坏根集 \(\mathcal B\)
+满足 \(S(\mathcal B)=O(v^2S)\)；边界权为 \(O(v^5S)\)。
+两者的邻端 epsilon 权均为 \(O(v^7S)\)。
+
+好所有者的固定面对路径有切向裕量 \(1/16\)，故属于
+预先取定的 \(1/128\) 稳健候选。其路径长度误差均值现在为
+\(O(\mathcal F_{1/128}+\mathfrak E)=O(v^8S)\)。
+\eqref{eighth:good-high} 因而给总交量 \(O(v^9S)\)。
+坏所有者重开引理~\ref{eighth:high-net} 的实际矩形证明：
+目标质量例外、面对／端移例外现在分别为
+\(O(v^{q+7}S)\)，最早十阶。
+其余矩形在 \(p_2>T_Kv^3\) 时避开整个原固定两轴管，
+实际成本仍为 \(cr_i^nHP/v^{q-1}\)，所有支撑数共同重数有界。
+所以任给固定 \(\eta>0\)，长窗总量至多
+\[
+ \eta Z(K_{\rm all})+
+ C_\eta\sum_{q=3}^n v^{q(2q-1)/(q-1)}S(\mathcal B)
+ \le\eta Z(K_{\rm all})+O_\eta(v^{19/2}S).
+\]
+短窗 \(p_2\le T_Kv^3\) 的逐根 gross 为
+\(O_K(v^{q+4}r_i^n)\)，只乘坏根权后为 \(O_K(v^9S)\)。
+边界原单源界给
+\[
+ O(v^{q+7}S)+O(v^{q+q/(q-1)+5}S)=o(v^8S).
+\]
+这里真实截宽、完整自身目标和同一原半径均由原矩形证明保留，
+没有以旧 \(O(v^8S)\) 总式改名小量。
+固定稳定构造先给 \(Z(K_{\rm all})\le C_*v^8S\)，
+其常数只依此前固定的 \(\eta_0\)，与新 \(\eta\) 无关。
+先 \(v\to0\)，再 \(\eta\downarrow0\)，即得结论。
+\end{proof}
+
+\subsubsection{薄轴帽、整源坐标与两次实际反馈}
+
+以后固定任意有限 \(T\)，选取两端深处、两交长不超过
+\(Tv^3R_e\) 的目标 packet \(\mathscr P\supset\mathcal N\)。
+所有帽、根、盒和目标清单固定；测试缺集的变化不重定义几何。
+记 \(\eta_h=|\mathscr D_h\setminus Y_{h,N}|\)。
+
+\begin{lemma}[只扣 raw 的轴帽]\label{eighth:exact-axial}
+在深处源 \(i\) 的有效浅面深度 \(s\) 上，同一个原指定见证使
+所有 packet 帽的实际质量先相加后满足
+\begin{equation}\label{eighth:exact-height-nec}
+ s\ge\frac{\sum_{j\in\mathscr P}|F_j\cap\Pi_{ij}(y)|}
+                  {naR_i^{n-1}}-C_Te_i,
+ \qquad
+ e_i=v^8R_i+\Delta_i+
+          \max_{h\ \text{面邻}}(g_{i\to h}+\eta_h/\beta_h),
+\end{equation}
+其中 \(\beta_h\asymp(vR_h)^{n-1}\)，且
+\[
+ \sum_iR_i^{n-1}e_i
+ \le C[v^8S+R_N+\mathfrak E+\mathcal F]=O(v^8S).
+\]
+该式也适用于全局最浅轴不在某个目标轴对的点。
+\end{lemma}
+\begin{proof}
+真正面邻居 \(h\) 的原始整横截面帽 \(C_h(d)\) 中，
+旧正常层占比至多
+\[
+ \theta_N(v)=\frac{2(n-1)K_N}{c_w}v^2+
+        \frac{4\binom{n-1}{2}K_N^2}{c_w^2}v^4.
+\]
+轴对含帽轴时，另一短轴在原整宽中只占 \(O(v^2)\)；
+不含时两条短轴各给此因子。有效面位移只移动短区间，
+不增加其长度。故此比例对任意小 \(d\) 一致，令
+\(\beta_h=(1-\theta_N)\prod_{\ell\ne q}w^0_{h\ell}\)，有
+\[
+ |F_h\cap C_h(d)|\ge
+ [\beta_h\min(d,w^0_{hq})-\eta_h]_+.
+\]
+完整横截面的捕获由真正面邻居的固定切向裕量保证，
+对所有源点及原半径均成立。若保证深度达到全宽，整个 \(F_h\)
+与 \(G_i\) 同时进入见证，其质量为 \(caR_i^n\)，超过
+\(O(avR_i^n)\) 剩余容量；所以实际见证不在饱和分支。
+
+写 \(\ell=r(x)-R_i\)、\(b=s+g_{i\to h}+\Delta_i\)。
+原始／有效面对端精确距离为
+\(R_i+s+g_{i\to h}+\delta_i^+-\delta_h^-\)；
+目标端移只改善捕获。轴帽保证深度至少 \((\ell-b)_+\)。
+容量 \(C_i(\ell)=a[(R_i+\ell)^n-R_i^n]\) 在整个原半径区间的
+导数严格小于 \(\beta_h\)。因此容量减轴帽在转折
+\(z=b+\eta_h/\beta_h\) 前增后减，最多为 \(C_i(z)\)；
+\(z\) 超过原半径区间时仍由容量单调性成立。
+正常缺层只降低轴帽斜率，平移只扣 \(\eta_h\)。
+原宽和 \(\eta_h\le|B_h^0|\) 还给 \(z=O_T(vR_i)\)，
+故比较 \(C_i(z)\) 与 \(C_i(s)\) 时容量导数仍为 \(O(aR_i^{n-1})\)。
+
+角帽从中点锚移到源有效端至多损 \(\Delta_i\)，移到目标原端只改善。
+若 \(\ell\le s\)，总帽边带损失至多
+\(D_{i,T}(s-\ell+\Delta_i)\)，其中
+\(D_{i,T}\le C_Tv^{n+1}R_i^{n-1}<naR_i^{n-1}\)；
+容量斜率比较给总实际帽质量至多 \(C_i(s)+D_{i,T}\Delta_i\)。
+若 \(\ell\ge s\)，先将全部角目标、真正浅面邻居和自身 \(G_i\)
+在同一见证中相加，再用上述转折点，给
+\[
+ \sum_j|F_j\cap\Pi_{ij}(y)|
+ \le C_i(s)+CaR_i^{n-1}(g_{i\to h}+\Delta_i+\eta_h/\beta_h)
+                    +D_{i,T}\Delta_i.
+\]
+各 \(F_j\) 排他，面邻居不同于二轴目标。
+高度窗 \(s=O_T(v^4R_i)\) 中
+\(C_i(s)/(naR_i^{n-1})=s+O_T(v^8R_i)\)，得到必要式。
+有限面逆度给
+\(\sum R_i^{n-1}\max_h\eta_h/\beta_h\le Cv^{1-n}\sum\eta_h=CR_N\)，
+其余项由稳定预算控制。
+\end{proof}
+
+在有效盒 \(B_i'=x_i+W_i'\) 中，先选各轴最近面符号 \(\sigma\)，
+再选全局最浅轴 \(q\)，平局按固定顺序。令
+\[
+ x_h=f_{ih}^{\sigma_h}-\sigma_h(s+y_h),\quad y_q=0,\qquad
+ \Omega_{i,q,\sigma}=\prod_{h\ne q}[0,w'_{ih}/2],\quad
+ H_i(y)=\min_h(w'_{ih}/2-y_h).
+\]
+这些 Jacobian 为一的 chart 覆盖整个有效盒至零测分界，
+并保留所有三近面。仅取临界朝向与 \(\sigma\) 匹配的目标；
+反向面的深度至少半个源宽，不产生本高度窗的正标称帽。
+\(\Pi_{ij}(y)\) 在原始目标盒的两临界宽为
+\[
+ \min(w^0_{jl},(P_{ij,l}-y_l)_+),\qquad
+ \min(w^0_{jm},(P_{ij,m}-y_m)_+),
+\]
+其余取原始整宽，其中 \(P_{ij,h}=(L_h+c_{ij})_+\)。
+真实全宽截断在定义中保留；固定 \(T\) 后小 \(v\) 时自动不活跃。
+令
+\[
+ h_i^0(y)=\frac{\sum_j|\Pi_{ij}(y)|}{naR_i^{n-1}},\qquad
+ \mathcal K_i(E;y)=
+       \frac{\sum_j|E_j\cap\Pi_{ij}(y)|}{naR_i^{n-1}},
+\]
+\begin{equation}\label{eighth:exact-operator}
+ \mathscr B_{\mathscr P}(E)_i=
+ \bigcup_{q,\sigma}
+ \{x(s,y):0\le s<\min(H_i(y),[h_i^0(y)-\mathcal K_i(E;y)]_+)\}.
+\end{equation}
+输入 \(E_j\) 始终在原始目标盒，输出是其中的有效源子集。
+Tonelli 保证可测性；测试 \(E\) 不改变根、锚、clip 或目标清单。
+
+\begin{lemma}[整源小算子与两次反馈]\label{eighth:exact-iteration}
+对任意测试集合族，
+\[
+ E\subset F\Longrightarrow\mathscr B_{\mathscr P}(F)
+       \subset\mathscr B_{\mathscr P}(E),\qquad
+ \|\mathscr B_{\mathscr P}(E)-\mathscr B_{\mathscr P}(F)\|_1
+       \le C_Tv\|E-F\|_1.
+\]
+取 \(Y_0=\mathscr B_{\mathscr P}(0)\)、\(Y_1=\mathscr B_{\mathscr P}(Y_0)\)、
+\(Y_2=\mathscr B_{\mathscr P}(Y_1)\)。存在真实保证层
+\(B^-\subset\mathscr B_{\mathscr P}(\mathscr D)\cap D'\)，使
+\begin{equation}\label{eighth:exact-second-cost}
+ \sum_iJ_i\ge(1+v)^{n-1}\frac va\sum_i|Y_{2,i}|
+ +c\frac va\sum_i|\mathscr D_i\setminus B_i^-|
+ +c\mathfrak E-O_T(v^9S).
+\end{equation}
+退款的实际缺集可换成 \(Y_1\)，价格误差 \(O_T(v^9S)\)。
+\end{lemma}
+\begin{proof}
+正部及 \(u\mapsto\min(H,u)\) 为 1-Lipschitz。
+打开 Tonelli 固定一个目标物理点：若 \(q\) 在其轴对内，
+可覆盖它的源 base 测度至多 \(C_T(v^3R_i)(vR_i)^{n-2}\)；
+否则为 \(C_T(v^3R_i)^2(vR_i)^{n-3}\)。
+各除以本源的 \(naR_i^{n-1}\)，分别为 \(C_Tv,C_Tv^3\)。
+有限逆度给全族物理 \(L^1\) 小常数，二维后一类为空。
+名义高度积分给 \(|Y_0|_1\le C_Tav^5S\)。
+
+旧正常实际层 \(Y_{i,N}\) 的浅轴深为 \(O(v^4R_i)\)，伴随轴为
+\(O(v^3R_i)\)，其他轴在旧核心内。它在新 chart 中仍是同一排序、
+同一原始目标帽；新高度包含旧全部非负实际质量且未扣旧侵蚀。
+因此 \(Y_{i,N}\subset\mathscr B_{\mathscr P}(\mathscr D)_i\) 精确成立。
+\eqref{eighth:exact-height-nec} 的侵蚀 \(C_Te_i\) 只在正帽 base 有损失，
+该 base 测度至多 \(C_Tv^{n+1}R_i^{n-1}\)，故物理总损失
+\(e=O_T(av^9S)\)。减此侵蚀得 \(B^-\subset D'\)，并有
+\[
+ \rho:=\|\mathscr D-\mathscr B_{\mathscr P}(\mathscr D)\|_1
+ \le (a/v)R_N+e=O_T(av^7S).
+\]
+未使用源取空算子及空旧正常层，原 raw 仍在该全族界内。
+
+记 \(\lambda=C_Tv\)、\(M_0=|\mathscr D|_1=O(av^5S)\)。
+反单调性给 \(Y_1\subset Y_2\subset Y_0\)，且
+\[
+ \|\mathscr D-Y_0\|_1\le\rho+\lambda M_0=O_T(av^6S),\quad
+ \|\mathscr D-Y_1\|_1\le\rho+\lambda(\rho+\lambda M_0)=O_T(av^7S).
+\]
+故 \(\|\mathscr B_{\mathscr P}(\mathscr D)-Y_2\|_1=O_T(av^8S)\)。
+乘源导数 \(Cv/a\) 给成本误差 \(O_T(v^9S)\)；
+退款核为 \(C_Tv^2/a\)，故换成 \(Y_1\) 也只损此阶。
+这里不能将全部 \(\mathscr D\) 换成 \(Y_2\) 后丢掉 raw 余量。
+对 \(B^-\) 使用 \eqref{eighth:cdf-reserve} 一次：
+侵蚀成本为 \(O_T(v^{10}S)\)，导数 epsilon 损失至多
+\(C_Tv^6\sum\varepsilon_iR_i^n=O_T(v^{11}S)\)。
+层成本、raw 和端移由同一份完整 \(J\) 同时分配，得到所述式。
+\end{proof}
+
+\subsubsection{正常 packet 的实际八阶积分}
+
+本小节取 \(\mathscr P=\mathcal N\)，给相应迭代加下标 \(N\)。
+记 \(s_v=(1+v)^{n-1}\)、\(\lambda_v=s_vv/a\)，并定义未扣任何
+实际盈余的模型价格
+\[
+ \mathsf P_N=\sum_{e\in\mathcal N}I_e-\lambda_v\sum_i|Y_{2,N,i}|.
+\]
+这与只取正常交量后再减全体 \(J_i\) 不同。
+令
+\[
+ Q_4(p,q)=\frac{pq(p^2+3pq+q^2)}3,\qquad
+ Q_5(p,q)=\frac{pq(p+q)(5p^2+29pq+5q^2)}{24},
+\]
+\[
+ F(p,q,z)=\tfrac12\{(p+z)(q+z)(p+q+2z)
+                         +(p-z)(q-z)(p+q-2z)\}.
+\]
+
+\begin{lemma}[实际源成本及正常模型价]\label{eighth:exact-normal-price}
+沿 \eqref{eighth:exact-competitive}，
+\begin{equation}\label{eighth:exact-normal-integral}
+ \begin{aligned}
+ \lambda_v\sum_i|Y_{2,N,i}|
+ =\sum_{e\in\mathcal N}s_vR_e^n\biggl[
+ &\frac{v^6}{n}F(p,q,z)-\frac{2v^7}{n^2}Q_4(p,q)\\
+ &+\frac{2v^8}{n^3}Q_5(p,q)
+       +\frac{n-2}{n}v^8p^2q^2\biggr]+o(v^8S).
+ \end{aligned}
+\end{equation}
+并有
+\begin{equation}\label{eighth:exact-model-price}
+ \mathsf P_N\le q_N(v)W_N+o(v^8S),\qquad
+ q_N(v)=\frac{k v^6}{(1+v)^2}
+       +\frac{\Gamma v^7}{(1+v)^3}+k c_{8,n}v^8,
+\end{equation}
+\[
+ c_{8,n}=-\frac{13}{18}-\frac{n(n-2)}3+\frac{400}{243}.
+\]
+所有三近面源项都已包含；二维相应项为空。
+\end{lemma}
+\begin{proof}
+先保留真实源、目标整横宽。对全局最浅轴在目标轴对内的两个排序，
+名义成本为
+\[
+ \frac{\lambda_v S_i^\perp T_j^\perp}{2naR_i^{n-1}}
+          P_{ij}Q_{ij}(P_{ij}+Q_{ij}),\qquad
+ S_i^\perp=\prod_{\ell\perp}w'_{i\ell},\quad
+ T_j^\perp=\prod_{\ell\perp}w^0_{j\ell}.
+\]
+最浅轴 \(q_0\) 不在该轴对内时，两个临界底变量独立，单向名义成本为
+\[
+ \frac{\lambda_vT_j^\perp}{naR_i^{n-1}}
+ \sum_{q_0\perp}2\prod_{h\notin\{l,m,q_0\}}w'_{ih}\,
+                         \frac{P_{ij}^2Q_{ij}^2}{4}.
+\]
+系数二来自该最浅轴的两个最近面。标称宽和正常根比下，
+两有向端的后式正是
+\[
+ (n-2)s_vv^8R_e^np^2q^2/n\text{。}
+\]
+它的退款核为 \(O(v^3)\)，乘
+\(|Y_1|_1=O(av^5S)\) 及源导数后仅为 \(O(v^9S)\)，
+故名义三近面成本必须保留，三近面退款可以入余项。
+
+整个源纤维上截断不能直接删去。某名义目标非零时，其临界底变量
+为 \(O(v^3R_i)\)；总高度为 \(O(v^4R_i)\)，所以顶端截断只可能来自
+非临界自由底变量靠近源中分面的宽 \(O(v^4R_i)\) 边带。
+该名义项独立于该变量，相对积分损失为 \(O(v^3)\)。
+乘六阶名义成本后为 \(O(v^9S)\)，多个目标相加也有同一高度上界。
+无截断时高度对目标质量线性，且任意测试缺集都是原盒子集，
+所以近零帽也没有负高度或相对展开问题。
+
+固定一条正常帽。在目标的中央横截面上，同角正常目标唯一；
+其他轴对需要额外坐标近面，同轴反符号角则有完整源宽间隔。
+非中央横向区域中，距某面 \(O(v^4R_j)\) 的比例为 \(O(v^3)\)；
+其余近面带的比例为 \(O(v^2)\)，而 \(Y_1\subset Y_0\) 再强迫
+帽内某法向深度为 \(O(v^4R_j)\)，相对帽宽多 \(O(v)\)。
+故非中央 \(Y_1\) 帽质量为 \(O(av^7R_j^n)\)，退款仅为 \(O(v^9R_j^n)\)。
+中央 \(Y_1\) 所见 \(Y_0\) 的其他角也只有上述质量；
+经一次高度分母及中央底面积作用，改变 \(Y_1\) 帽质量为
+\(O(av^8R_j^n)\)，再次反馈为十阶。因此八阶退款可用同一边的
+两个真实不同帽计算，不能将两个方向先设为相同。
+
+这里的宽度替换按 \(L^1\) 而非逐源小误差进行。
+平面分母 \(naR_i^{n-1}/T_j^\perp\) 除以 \(v^2R_e\)
+在固定正紧区间；子图的 1-Lipschitz 性给宽度变化的物理误差
+\(Cav^5(\xi_i+\xi_j)R_e^n\)。
+名义成本和退款的总宽度误差分别为
+\(Cv^6\sum\xi_iR_i^n=O(v^{17/2}S)\) 和更小量。
+正常根比的系数替换为 \(O(v^9S)\)，但帽中的实际根差仍保留。
+目标有效锚移回原始锚另付端移：每张图高度随底变量单调不增，
+子图周长至多 \(C(vR_i)^{n-1}\)，有限线性 chart 变换只改常数。
+故平移物理误差至多 \(C\sum(vR_i)^{n-1}\Delta_i\)，
+退款为 \(Cv\mathfrak E=O(v^9S)\)。
+
+现给双帽所需的一致截面计算。取尺度 \(e\)，\(P/e,Q/e\)
+在固定正紧区间，\(|c|\le\nu e\)、\(e/f\ll1\)，
+令 \(P_\pm=P\pm c,Q_\pm=Q\pm c\)。
+方向 \(t\) 的首轮平面层 \(U_0^t\) 在排序 \(X\le Y\) 中满足
+\(X\le P_t(Q_t-D)_+/f,\ D=Y-X\)，另一排序交换两轴。
+下一层 \(U_1^t\) 的高度扣除相反方向 \(U_0^s\)
+在 \([0,P_t]\times[0,(Q_t-D)_+]\) 中的实际帽质量再除 \(f\)。
+这些集合保留真实排序和正部。记
+\[
+ M_{1,\pm}(c)=
+ \int_{U_1^\mp\cap([0,P_\pm]\times[0,Q_\pm])}
+           (P_\pm+Q_\pm-X-Y)\dd X\dd Y .
+\]
+则
+\begin{equation}\label{eighth:exact-cross-cap}
+ M_{1,+}(c)+M_{1,-}(c)
+ =\frac{2Q_4(P,Q)}f-\frac{2Q_5(P,Q)}{f^2}
+ +O\!\left(\frac{e^2c^2}{f}+\frac{e^4|c|}{f^2}
+                         +\frac{e^6}{f^3}\right).
+\end{equation}
+为核一致性，首轮面积和自矩精确为
+\[
+ |U_0(P,Q)|=\frac{PQ(P+Q)}{2f},\qquad
+ M_0=\frac{Q_4(P,Q)}f-\frac{P^2Q^2(P+Q)}{3f^2}.
+\]
+暂去外帽裁剪，双向和在 \(c\mapsto-c\) 下不变，是二阶导数
+有界于 \(Ce^2/f\) 的光滑多项式。较小外帽只切长臂远端；
+距端距离 \(d\) 的截厚至多 \(C(e/f)d\)，带核 \(O(e)\)
+积分 \(0\le d\le2|c|\) 给 \(Ce^2c^2/f\)。
+这包括 \(c\) 远大于、可比于或小于薄高 \(e^2/f\) 的全部情形。
+
+再算首轮到下一轮的矩减少量。令
+\(m=m_{0,s}(P_t,r)=|U_0^s\cap([0,P_t]\times[0,r])|\)，
+\(S_{\rm cap}=P_s+Q_s\)。在目标第一排序置 \(r=Q_t-D\)，
+高度由 \(P_tr/f\) 减为 \((P_tr-m)/f\)；故减少量恰为
+\[
+ \frac1f\int_0^{Q_t}(S_{\rm cap}-Q_t+r)m\dd r
+ -\frac1{f^2}\int_0^{Q_t}(2P_trm-m^2)\dd r.
+\]
+因 \(m\le Ce^3/f\)，第二积分为 \(O(e^6/f^3)\)。
+两个固定排序的高度参数导数为 \(O(e/f)\)，末段又有三角尾界，
+因此
+\[
+ |U_0(P_s,Q_s)\triangle U_0(P,Q)|\le Ce^2|c|/f.
+\]
+帽宽改变的竖条也在此界内，对任意小 \(r\) 均成立。
+代入上式的长度、核和 \(1/f\)，只花 \(Ce^4|c|/f^2\)。
+外帽对减少集的裁剪因该集包含于 \(U_0\)，仍由同一长臂尾界控制。
+
+在 \(c=0\) 时，用 Tonelli 计算减少量，核为
+\[
+ W_Q(Y)=P(Q-Y)+(Q^2-Y^2)/2
+\]
+及交换两轴的 \(W_P\)。两个排序在线性薄高积分中置薄变量为零，
+误差 \(O(e^6/f^3)\)，主多项式为
+\(PQ(P+Q)(5P^2+21PQ+5Q^2)/24\)。
+加上 \(M_0\) 已有的 \(P^2Q^2(P+Q)/3\)，中间系数为 \(29\)，
+即得 \(Q_5\) 和 \eqref{eighth:exact-cross-cap}。
+实际尺度 \(P=v^3R_ep,Q=v^3R_eq,c=v^3R_ez,f=nv^2R_e\)
+使其完整退款误差为
+\[
+ C[v^7z^2+v^8|z|+v^9]R_e^n.
+\]
+稳定性平方界和 Cauchy 给其全族和 \(O(v^9S)\)，
+未把 RMS 偷换为逐边 \(z=O(v)\)。
+合并名义两排序、三近面项和双帽退款，证明
+\eqref{eighth:exact-normal-integral}。
+
+最后作点态紧窗最大化。除以 \(n^2(1+v)^{n-4}v^6R_e^n\)，
+单边净泛函是
+\[
+ \frac b{27}-G(b,x,y,\zeta)
+ +\frac{2v}{1+v}Q_4(x,y)-\frac{2v^2}{(1+v)^2}Q_5(x,y)
+ -\frac{n(n-2)v^2}{1+v}x^2y^2.
+\]
+横权 \(1-b\) 及根差平方有固定正罚，扰动不含这两个变量，
+所以先在 \(b=1,\zeta=0\) 求最大并保留其部分罚。
+固定二次强制性与扰动的 \(Cv\)-Lipschitz 界迫使最大点距基点为 \(O(v)\)。
+只对这些最大点写 \(x=1/3+vh_1,y=1/3+vh_2\)，实际场不作逐点 Taylor。
+由 \(Q_4(1/3,1/3)=5/243\)、其两偏导 \(10/81\)，二阶优化为
+\[
+ \begin{aligned}
+ &-\frac{h_1^2+h_1h_2+h_2^2}{3}+\frac{20}{81}(h_1+h_2)\\
+ &\quad=\frac{400}{6561}-\frac{(h_1-20/81)^2+(h_1-20/81)(h_2-20/81)
+                         +(h_2-20/81)^2}{3}.
+ \end{aligned}
+\]
+\(Q_5(1/3,1/3)=13/972\) 和三近面项分别给
+\(-13/18\)、\(-n(n-2)/3\) 的相对系数，位移增益为 \(400/243\)。
+将结果转成实际 \(W_N\) 时，首退款与横权差为 \(O(v)(1-b)\)，
+由保留的领先罚吸收；\(\widehat b\) 截为 \(b\) 的总差更晚。
+因而得到 \eqref{eighth:exact-model-price}。
+首退款的因子是 \((1+v)^{-3}\)，八阶不能将其换成一。
+\end{proof}
+
+\subsubsection{整源共同高度中的全部补集}
+
+\begin{lemma}[任意固定精度的补集结算]\label{eighth:exact-complement}
+给定固定 \(\delta>0\)，可先取有限大 \(T>T_0\)，再取有限小 \(m>0\)。
+令 \(\mathcal B_{T,m}\) 为正常窗外、两端深处且 \(m\le p,q\le T\)
+的二轴边。在同一个 packet
+\(\mathscr P=\mathcal N\cup\mathcal B_{T,m}\) 上，有固定正系数使
+\begin{equation}\label{eighth:exact-complement-price}
+ H+c_Dv^6D_{\mathcal N}+c_B\mathsf M_{T,m}
+       +c_R\mathcal R_A^-+c_E\mathfrak E
+ \le q_N(v)\mathcal C+\delta v^8S+o_\delta(v^8S).
+\end{equation}
+这里 \(H\) 含全部外部交对并只减一次完整 \(J\)，
+\(\mathsf M_{T,m}\) 是完整非正常名义成本，\(\mathcal R_A^-\) 是
+真实联合保证层之外的 raw 成本。此式对每个固定 \(n\ge2\) 成立。
+\end{lemma}
+\begin{proof}
+正常集合、旧 \(Y_N\)、原稳定常数 \(C_*\) 和正常清洁分配先固定。
+用整源 chart 写实际非负高度 \(h_A=h_N+h_B\)，名义坏高度为 \(h_B^0\)。
+定义
+\[
+ \mathsf M=\lambda_v\sum_{\rm charts}\int h_B^0(y)\dd y,\qquad
+ B_A=\mathscr B_{\mathscr P}(\mathscr D),\quad
+ B_N=\mathscr B_{\mathcal N}(\mathscr D).
+\]
+在两个高度中使用全 packet 的同一个侵蚀 \(\epsilon_i(y)\)，得
+\(B_N^-\subset B_A^-\subset D'\)。同一正部和上截断给精确常数一：
+\[
+ \mathcal R_N^-:=\frac va|\mathscr D\setminus B_N^-|_1
+ \le\mathcal R_A^-+(1+v)^{-(n-1)}\mathsf M
+ \le\mathcal R_A^-+\mathsf M.
+\]
+旧层精确包含于 \(B_N\)，所以
+\[
+ \mathcal R_A^-\le\mathcal R_N^-\le R_N+O_T(v^{10}S).
+\]
+不要求两类层在物理上分开。
+
+真实非正常增量 \(\Delta_A=\lambda_v|B_A\setminus B_N|_1\) 满足
+\[
+ \Delta_A=\mathsf M-\mathfrak F_B-\mathfrak L_B,\quad
+ \mathfrak F_B=\lambda_v\sum\int\mathcal K_B(\mathscr D;y)\dd y.
+\]
+纤维增量的上截断损失满足
+\[
+ 0\le\mathfrak L_B\le
+ \lambda_v\sum\int h_B^0\mathbf1_{\{H_i<h_N+h_B\}}
+ \le C_Tv^3\mathsf M.
+\]
+最后一步仍逐名义目标证明：临界变量在 \(O_T(v^3R_i)\) 窗内，
+最浅轴半宽及临界轴剩余半宽均为 \(cvR_i\) 的固定倍数；
+截断只能由一个非临界自由底变量进入中分面的 \(C_Tv^4R_i\)
+边带造成。该项独立于该变量，故相对损失为 \(C_Tv^3\)。
+这没有裁掉源的三近面主体。
+
+原必要性及 \(Y_N\subset B_N\) 给
+\[
+ \Delta_A\le(1+v)^{n-1}R_N+O_T(v^{10}S).
+\]
+坏退款核为 \(C_Tv^2/a\)。目标缺集按旧正常层和余量分解，
+余量退款至多 \(C_TvR_N\)；旧正常层逐源为 \(O(av^5R_j^n)\)。
+固定 \(p,q\ge m\) 时，两有向端完整成本由正部凸性至少为
+\(c_mv^6R_e^n\)，即使根差截幅亦成立。因此
+\[
+ \mathfrak F_B\le C_{T,m}v\mathsf M+C_TvR_N,
+\]
+\[
+ [1-C_{T,m}v-C_Tv^3]\mathsf M
+ \le[(1+v)^{n-1}+C_Tv]R_N+O_T(v^{10}S).
+\]
+对每个固定 \(T,m\)，先取小 \(v\)，得
+\begin{equation}\label{eighth:exact-new-window}
+ \mathsf M=O_{T,m}(v^8S),\quad
+ \mathfrak F_B+\mathfrak L_B=o_{T,m}(v^8S),\quad
+ \limsup\frac{\mathsf M}{v^8S}\le C_*.
+\end{equation}
+上极限常数不随后选固定窗增长；误差常数和阈值可以增长。
+
+由引理~\ref{eighth:exact-iteration} 的正常第二反馈，
+\[
+ \lambda_v|B_A|_1
+ =\lambda_v|Y_{2,N}|_1+\mathsf M+o_{T,m}(v^8S).
+\]
+对 \(B_A^-\) 用完整强 CDF 一次，故
+\[
+ \sum_iJ_i\ge\lambda_v|Y_{2,N}|_1+\mathsf M
+              +c_R\mathcal R_A^-+c_E\mathfrak E-o_{T,m}(v^8S).
+\]
+这是高度可加性和同一次实际体积余量的结果，
+没有先给正常价格扣全 \(J\) 再追加另一条补集源成本。
+
+最浅轴在坏目标 pair 内的两个排序积分为
+\(\lambda_vS_i^\perp T_j^\perp P_lP_m(P_l+P_m)/(2naR_i^{n-1})\)；
+在 pair 外的名义项非负，且与前者之比至多
+\[
+ C\frac{P_lP_m}{(P_l+P_m)w'_{iq}}\le C_Tv^2.
+\]
+源横宽为完整有效横宽，故旧核心的 \(O_T(v^8S)\) 误差不再出现。
+整宽平均误差 \(O_T(v^{17/2}S)\)，相交根比误差为 \(Cv\mathsf M=o(v^8S)\)。
+\eqref{eighth:global-coercivity} 因此保留固定
+\(\gamma_\nu,c_B>0\)，在新 \(T,m\) 之前取定，并给
+\[
+ \sum_{\mathcal B_{T,m}}I_e-\mathsf M+c_B\mathsf M
+ \le(1-\gamma_\nu)A_6W_B+o_{T,m}(v^8S).
+\]
+
+尚余近零、长角、边界和高支撑。固定
+\(C_{\rm soft}\ge\max(1/m,1,12/n)\)，
+\(\omega=\min(1,C_{\rm soft}\min(p,q))\)。
+有界近零角满足 \(pq\le Tm\omega\)。
+自适应 clean 阈值只依真实交长，不依后选软权常数，
+故正常占用和 \(D_{\mathcal N}\) 保持原样，且
+\[
+ W_{\mathcal D},W_B\le\mathcal C-W_N+O_{C_{\rm soft}}(v^3S)
+ =D_{\mathcal N}+O_{C_{\rm soft}}(v^3S).
+\]
+近零 gross 的归一化上极限至多 \(TmC_*\)。
+长角只用固定旧正常小管及 \eqref{eighth:long-cap-fraction}：
+实际目标 raw 例外给 \(CvR_N\)，面对／端移例外给
+\(Cv(\mathcal F+\mathfrak E)\)，其余实际长短条避开旧正常层，
+固定重数给
+\[
+ \sum_{\mathcal L_T}I_e\le(C_L/T)R_N+
+                 Cv(R_N+\mathcal F+\mathfrak E).
+\]
+\(C_L\) 与新 \(T,m\) 无关；不要求长条避开新整源大管，
+也不从本次 \(J\) 再购买这些已稳定的几何数值界。
+边界 epsilon 分解如引理~\ref{eighth:exact-high-gross}，
+其二轴 gross 为 \(O(v^9S)\)。高支撑为 \(o(v^8S)\)。
+
+二维须单列实际桥：唯一轴对是 \(\{1,2\}\)，最浅轴必在 pair 内，
+没有非临界自由底变量，所以 \(\mathfrak L_B=0\)，pair 外名义项为空。
+全部原始横积为一，两个不等根有向排序、真实 clip 和上面小算子仍在。
+其容量由实际四角／四胞及根桥给
+\(\mathcal C=\sum_iR_i^2,\ W_N=\mathcal C-D_{\mathcal N}+O(v^3S)\)，
+不跨维引用高维 helper。原长短条至少长轴深度超过正常小管，
+同一二维原见证的轴帽矛盾、截宽和固定重数证明给同一 \(C_L/T\) 尾；
+高支撑为空，边界二轴仍为九阶。因此以上补集结算也在二维原位成立。
+
+给 \(\delta\) 后先取 \(T\) 使 \(C_LC_*/T\) 足够小，
+再取 \(m\) 使 \(TmC_*\) 足够小，随后固定 \(C_{\rm soft}\)，最后 \(v\to0\)。
+合并得到
+\[
+ H+\text{所列正量}\le
+ \mathsf P_N+(1-\gamma_\nu)A_6W_B+\delta v^8S+o_\delta(v^8S).
+\]
+用 \eqref{eighth:exact-model-price} 和槽恒等式，右侧至多
+\[
+ q_N\mathcal C-
+ [q_N-(1-\gamma_\nu)A_6]D_{\mathcal N}
+ +\delta v^8S+o_\delta(v^8S).
+\]
+括号至少为固定 \(c_Dv^6\)，即得结论。
+槽欠量只保留一次，没有另加正常模型单独转换所得的第二份槽收入。
+\end{proof}
+
+\subsubsection{二维小半径源的常数一回收}
+
+二维尚有同阶的盒内小源费用。以下局部引理处理原见证跨盒边界的情形。
+
+\begin{lemma}[角窗中的精确局部费用]\label{eighth:exact-small-box}
+设矩形 \(\mathcal R\) 各边介于 \(cL,CL\)，
+\(T\subset\mathcal R\setminus E\)、\(Z\subset\mathcal R\) 可测。
+\(Z\) 位于四角边长 \(\epsilon L\) 的块内，且
+\[
+ D=\mathcal R\setminus T,\quad z=|Z\setminus T|,\quad
+ d=|D\setminus Z|,\qquad |Z|,d\le bL^2.
+\]
+若 \(b,\epsilon\to0\)、\(\sqrt b/\epsilon\to0\)，
+任意可测的 \(\mathcal S\subset T\) 的原严格见证半径取有限正值并满足
+\(r(x)\le AL\) 时，
+\[
+ |\mathcal S|\le\frac a{1-a}z+C_{c,C,A}ad.
+\]
+价格常数不依最小原半径或有限列表长度。
+\end{lemma}
+\begin{proof}
+从整个 \(\mathcal S\) 而非有限 probe 中按半径值降序选尚未被此前闭
+\(Q\) 覆盖的中心。新中心与旧中心距大于两个半径最大值。
+有界性和本次正最小半径的 packing 保证有限终止，因此原 \(Q\)
+覆盖全部 \(\mathcal S\)。选中数可依最小半径，价格不使用这个数界。
+正式引理~\ref{lem:finitegreedy} 已使全局原函数为有限正值 Borel 函数；
+限制到这里的可测集合不改变半径，所以没有对一般可测函数假设正下界。
+
+严格见证给 \(|Q(x,r)\cap T|<ar^2\)。
+若 \(r\ge\ell_{\min}\)，盒内交面积至少 \(\ell_{\min}^2\)，
+而 \(|D|\le2bL^2\)、\(r\le AL\)，小参数时矛盾。
+所以 \(r<\ell_{\min}\)，每轴盒内交长至少 \(r\)，从而
+\[
+ (1-a)r^2<|D|\le2bL^2,\qquad r=o(\epsilon L).
+\]
+这是每一点的原半径结论，未要求原 \(Q\) 全在盒内。
+
+将四角窗扩大到边长 \(2\epsilon L\)，并为 \(V\)。
+每角分别作上述全点选择，对每个选中中心取向盒内的
+\(P=x+\sigma[0,r]^2\)。它在盒内且仍落于该角 \(3\epsilon L\) 块。
+同符号两 \(P\) 不交：实现强中心分离的某轴中心距大于两个半径，
+故该轴的同向区间不交。不同角的 \(3\epsilon L\) 块也分离。
+所以近角的所有 \(P\) 物理不交，且
+\(|P\cap D|\ge(1-a)r^2\)。用原 \(Q\) 的全点覆盖得
+\[
+ |\mathcal S\cap V|\le\sum|Q\cap T|<a\sum r^2
+ \le\frac a{1-a}|D|=\frac a{1-a}(z+d).
+\]
+远角源点到 \(Z\) 至少 \(\epsilon L\)，其原 \(Q\) 与 \(Z\) 不交。
+按两个坐标位于盒中点哪侧分四组，每组取朝中心的固定符号。
+半个盒宽足以容纳 \(r\)，故对应 \(P\subset\mathcal R\setminus Z\)；
+每组全点选择后 \(P\) 仍不交，四组仅向 residual 收费：
+\[
+ |\mathcal S\setminus V|\le4a\,d/(1-a).
+\]
+合并给 \(az/(1-a)+5ad/(1-a)\)。正常 \(z\) 没有四倍重数。
+有限选择不要求局部集合紧，所有集合均可测。
+\end{proof}
+
+\begin{lemma}[实际删除量及基线导数]\label{eighth:exact-small-source}
+在同一二维第八层，
+\begin{equation}\label{eighth:exact-inside}
+ (1+O(v))\frac va\sum_{\rm deep}\delta_{i,\rm in}
+ \le(2K_2+O(v))v^8S,\qquad K_2=4/27.
+\end{equation}
+边界、环境及深处盒外费用分别为 \(O(v^{10}S),O(v^{10}S),O(v^9S)\)。
+实际基线中的删除系数可单独保留为 \(1+O(v)\)，
+原重复量正预算及源缺量望远镜不变。
+\end{lemma}
+\begin{proof}
+取原入向面邻构成的扩展盒 \(\mathcal R_i\)，仍各边可比于 \(vr_i\)，
+并记
+\[
+ q_i=|\mathscr D_i\setminus Y_{i,N}|+|\mathcal R_i\setminus(x_i+W_i^0)|.
+\]
+入向扩张体积及稳定预算给
+\(\sum q_i\le(a/v)R_N+Cv\mathcal F=O(av^7S)\)。
+坏盒 \(q_i>av^5r_i^2\) 的原权为 \(O(v^2S)\)。
+对它们只用原 dyadic 引理和 \(F_i\subset T_i\)，其 inside 总量为
+\[
+ Ca\sum_{\rm bad}(|Y_{i,N}\setminus T_i|+q_i)=O(a^2v^7S).
+\]
+该项乘 \(v/a\) 后为十阶，不污染领先系数。
+
+好盒上 \(|\mathscr D_i|\le Cav^5r_i^2\)，
+\(\varepsilon_i\mu_i\le|\mathscr D_i|\) 给 \(\varepsilon_i\le Cv^5\)。
+中点正盈余给端移 \(\Delta_i\le C\varepsilon_i vr_i\le Cv^6r_i\)；
+扩张面积除以原盒另一轴宽给每侧扩张长度也为 \(O(v^6r_i)\)。
+所以旧正常层确在扩展盒的四个 \(C_Nv^3r_i\) 角窗内。
+取上引理的 \(L=vr_i,b=Cv^5,\epsilon=C_Nv^2\)，
+\(\sqrt b/\epsilon=O(v^{1/2})\to0\)，并有
+\(|(\mathcal R_i\setminus T_i)\setminus Y_{i,N}|\le q_i\)。
+原小半径仍小于 \(Avr_i\)，引理还逐点推出其为 \(O(v^{7/2}r_i)\)。
+故
+\[
+ \sum_{\rm deep}\delta_{i,\rm in}
+ \le\frac a{1-a}\sum_i|Y_{i,N}\setminus T_i|+Ca^2v^7S.
+\]
+
+正常层体积的领先常数只需名义两端积分：
+二维有向两排序面积为 \(PQ(P+Q)/(4aR_i)\)。
+在 \(p=q=2/[3(1+v)],z=0\)，无向两端除 \(av^5R_e^2\)
+为 \(8/[27(1+v)^3]\)。稳定性给加权参数平方差 \(O(v^2S)\)，
+Cauchy 给一阶差 \(O(vS)\)；紧窗积分 Lipschitz，因而
+\[
+ \sum_i|Y_{i,N}|\le2K_2av^5\sum_{\mathcal N}R_e^2+O(av^6S)
+ \le(2K_2+O(v))av^5S.
+\]
+最后用二维实际四槽 \(\mathcal C=\sum R_i^2\le S\)。
+乘 \(v/a\) 即得 \eqref{eighth:exact-inside} 的体积部分；
+未借正常八阶积分。
+
+稳定性保留的 \(P_I+P_\partial=O(v^8S)\) 给精确边界小源式
+\((v/a)\sum_{\partial I}\delta_i\le CaP_\partial=O(v^{10}S)\)；
+环境 \(Ca(\mathcal F+P_\partial)\) 同阶，盒外为 \(Cv\mathcal F=O(v^9S)\)。
+
+最后必须核基线系数。令 \(m_i^0=|T_i|\)、\(\delta_i=m_i^0-\mu_i\)、
+\(f_i(m)=(R_i+\sqrt m)^2\)，实际质量给
+\((1-Av)g_i\le\mu_i\le m_i^0\le g_i=aR_i^2\)。
+在整个真实区间，
+\[
+ \frac{f_i'(m)}{v/a}=v+\frac{vR_i}{\sqrt m}
+ \le v+(1-Av)^{-1/2}\le1+(1+2A)v.
+\]
+故一次真实积分可拆为
+\[
+ f_i(\mu_i)\ge A_vg_i/a
+ -(1+O(v))(v/a)(g_i-m_i^0)
+ -(1+O(v))(v/a)\delta_i.
+\]
+\(\sum(g_i-m_i^0)=\mathcal D_h+\mathfrak d_h^0\) 仍精确；
+环境扣一次 \(\mathcal D_h\) 后其正系数至少 \(1/(2a)\)。
+只对 \(\mathfrak d_h^0\) 使用原固定 \(b\) 及
+\eqref{eighth:depth}，删除量单列不被 \(b\) 放大。
+\(|X_i|\ge f_i(\mu_i)+J_i\) 与 Bonferroni 仍给
+\(\sum f_i(\mu_i)-H_h\)，所以 \(J\) 和删除质量各只计一次。
+\end{proof}
+
+\subsubsection{八层中心化与真实分母}
+
+\begin{proposition}[八阶精确上界]\label{eighth:upper}
+对每个固定 \(n\ge2\)，
+\[
+ \limsup_{t\downarrow0}
+       \frac{C_n(1-t)-P_{7,n}(t)}{av^8}\le\widehat J_n .
+\]
+\end{proposition}
+\begin{proof}
+先沿任意 \eqref{eighth:exact-competitive} 序列工作。
+第八层取引理~\ref{eighth:exact-complement} 的同一个正常模型，
+不再加入正常价格单独结算的第二份 \(D_{\mathcal N}\)。
+完整槽乘积和质量恒等式给
+\[
+ \mathcal C=B_n(1+v)^{n-2}\sum_iR_i^n+O(v^{7/2}S),\qquad
+ \sum_iR_i^n=(M'+\mathcal D_8)/a
+                 \le\mathcal V/A_v+O(v^6S).
+\]
+乘 \(q_N=O(v^6)\) 后误差晚于八阶，因此令
+\[
+ Q_{8,N}(v)=K_n\left[
+ \frac{v^6}{(1+v)^4}+\frac{10v^7}{9(1+v)^5}
+                         +\frac{c_{8,n}v^8}{(1+v)^2}\right].
+\]
+首退款的分母五次幂不能改成二次幂。
+
+对一般维数，写 \(m/g_i=u\in[1-A_8v,1]\)，
+\[
+ \frac{d(R_i+m^{1/n})^n/dm}{v/a}
+                   =(v+u^{-1/n})^{n-1}=1+O_{n,A_8}(v).
+\]
+将 \(g_i-\mu_i=(g_i-m_i^0)+\delta_i\) 的两段真实积分分开，
+原基线仍有重复量净正系数至少 \(1/(2a)\)。
+只对未删除源缺量 \(\mathfrak d_h^0\) 采用固定 \(b\)，
+删除量保留 \(1+O(v)\) 系数。
+当 \(n\ge3\)，原 dyadic 内盒、扩张及环境绝对项
+\(v^{n+6}S=o(v^8S)\)，盒外 \(Cv\mathcal F=O(v^9S)\)。
+当 \(n=2\)，用引理~\ref{eighth:exact-small-source}。
+令
+\[
+ \kappa_n=\frac8{27}\mathbf1_{\{n=2\}},\qquad
+ Q_8(v)=Q_{8,N}(v)+\kappa_nv^8 .
+\]
+\(S\le\mathcal V/(1-a)\) 把唯一 inside 费用换成
+\(\kappa_nv^8\mathcal V+o(v^8S)\)。这是独立的删除成本，
+不是下面真实分母产生的二维项。
+于是恢复后的第八层可选并集误差上包
+\[
+ E_8=Q_8(v)\mathcal V+\delta v^8S+o_\delta(v^8S).
+\]
+若实际误差更小，只选此上包；没有将实际容量不等式写成等式。
+
+第七前缀在本次八层族重放粗价格，使用本层实际对象而非第八层重命名，
+可取 \(E_7=Q(v)\mathcal V+O(v^8S)\)。
+这里 \(Q-Q_8=O(v^8)\)，故 \(E_7-Q_8\mathcal V=O(v^8S)\)。
+第六前缀仍取领先上包 \(E_6=(K_n+o(1))v^6S\)，其中心化差为
+\(o(v^6S)\)；前五层只取 \(Cv^6S\)。
+所有这些前缀与原见证、\(I\) 和统一 CDF 在开始即固定。
+
+回到公共账本 \eqref{eighth:ledger}，仍用
+\(\tau=bv/c_D'\)、\(\Omega_8=\sum_{j=0}^7\tau^j\)。
+\eqref{eighth:telescope} 精确消去中间源缺量，初端除 \(a\Omega_8\)
+为 \(O(v^9S)\)。必须对整个权平均减同一个中心价：
+\[
+ \bar E-Q_8\mathcal V=
+ \frac{[E_8-Q_8\mathcal V]+\tau[E_7-Q_8\mathcal V]
+ +\tau^2[E_6-Q_8\mathcal V]
+ +\sum_{h=1}^5\tau^{8-h}[E_h-Q_8\mathcal V]}{\Omega_8}.
+\]
+四类贡献依次为
+\(\delta v^8S+o_\delta(v^8S),O(v^9S),o(v^8S),O(v^9S)\)。
+图条件吸收固定边界和内部体积价，剩余正回收和 \(f_8\) 可丢，得到
+\begin{equation}\label{eighth:exact-common-ledger}
+ \mathcal V\ge A_vM/a-Q_8(v)\mathcal V
+                   -\delta v^8S-o_\delta(v^8S).
+\end{equation}
+外部族为空时所有源模型和交量取零，不定义空 CDF；
+内部共享质量及突出回收直接给同方向。
+
+令 \(x=M/V\)，利用 \(S/V\le(1-a)^{-1}\)，直接移实际 \(M\) 得
+\[
+ 1+x\le\frac{A_v}{A_v-a(1+Q_8)}
+                +C_n\delta av^8+o_\delta(av^8).
+\]
+分母小参数时统一远离零，与 \(L_n\) 的精确差是
+\[
+ \frac{aA_vQ_8}{(A_v-a)(A_v-a-aQ_8)}.
+\]
+\(Q_8=O(v^6)\)，再除 \(a\) 后将末分母换成 \(A_v-a\)
+只损 \(O(aQ_8^2)=o(v^8)\)。所以只须展开
+\[
+ Q_8\frac{A_v}{(A_v-a)^2},\qquad
+ Q_{8,N}=K_n[v^6-\tfrac{26}{9}v^7+(40/9+c_{8,n})v^8]+O(v^9).
+\]
+真实分母满足
+\[
+ \frac{A_v}{(A_v-a)^2}
+ =1-nv+\left[\frac{n(n+1)}2+2\mathbf1_{\{n=2\}}\right]v^2+o(v^2).
+\]
+一般整数维数的余项可令 \(a=v^2w,\ 0\le w\le1\)：
+分母在共同邻域远离零，三阶 Taylor 余项对 \(w\) 一致；
+随后 \(n\ge3\) 代 \(w=v^{n-2}\to0\)，二维代 \(w=1\)。
+故八阶系数为
+\[
+ K_n\left[\frac{40}{9}+c_{8,n}+\frac{26n}{9}
+                  +\frac{n(n+1)}2+2\mathbf1_{\{n=2\}}\right]+\kappa_n
+ =\widehat J_n.
+\]
+其中二维分母已贡献 \(2K_2=8/27\)，inside 另贡献
+\(\kappa_2=8/27\)，两者来源不同。
+
+最后处理全部输入上确界。若上极限失败，取固定 \(\eta>0\) 及
+\(v_j\downarrow0\)，按上确界取实际输入，使归一化余量超过
+\(\widehat J_n+\eta\)，再以 \(o(Vav^8)\) 精度取外部严格 halo 紧集。
+密度定理保证输入几乎处处在自身 halo，外部 halo 有限可测，内正则性适用。
+该序列满足 \eqref{eighth:exact-competitive}，例如可取固定 \(B=1\)。
+先固定这条序列和原稳定构造，再取固定 \(\delta\) 使
+\(C_n\delta<\eta/4\)，依次取有限 \(T,m\)，最后 \(v\to0\)，即矛盾。
+逐序列小量模量可以不同，未将未证统一速率移出上确界。
+\end{proof}
+
+\subsubsection{对称斜格孔与两次角反馈}
+
+\begin{proposition}[宏观孔的有限输入构造]\label{eighth:macro-lower}
 对每个充分小的 \(t>0\)，存在有界有限正测度输入 \(E_t\)，使
 \begin{equation}\label{eighth:finite-lower}
  \frac{|\mathcal H_n(1-t;E_t)|}{|E_t|}
  =P_{7,n}(t)+J_nav^8+O_n(av^9).
 \end{equation}
-此处 \(J_n\) 是该具体族的系数，不是最优八阶系数的识别。
 \end{proposition}
 \begin{proof}
 置 \(u=t^{1/n}\)、\(g=(1+2u)^{-1}\)，取
@@ -1143,10 +2030,154 @@ Lipschitz 误差为 \(O(\delta^2)\)，主项为
 遂得对每个充分小实数 \(t\) 的 \eqref{eighth:finite-lower}。
 \end{proof}
 
+\subsubsection{二维两尺度孔与匹配下界}
+
+\begin{proposition}[精确八阶的有限下界]\label{eighth:lower}
+对每个充分小的 \(t>0\)，存在有界正有限测度输入 \(E_t\)，使
+\[
+ \frac{|\mathcal H_n(1-t;E_t)|}{|E_t|}
+       =P_{7,n}(t)+\widehat J_nav^8+O_n(av^9).
+\]
+\end{proposition}
+\begin{proof}
+\(n\ge3\) 已由命题~\ref{eighth:macro-lower} 给出。下面固定二维，
+沿用其 \(u,g,\kappa,e,T,d,C_w,\rho,M,F\) 和真实坏集算子
+\(\mathcal B\)，始终 \(M=a\rho^2\)，不因加入微孔而重算根。
+记
+\[
+ \Lambda_0=\frac{\kappa^3}{32g},\qquad
+ \Lambda_1=-\frac{5\kappa^4}{768g^2},\qquad
+ \Lambda_2=\frac{13\kappa^5}{8192g^3},
+\]
+并在宏孔参数中改取
+\begin{equation}\label{eighth:exact-micro-budget}
+ \Lambda=\Lambda_0+\Lambda_1u+\Lambda_2u^2-a\Lambda_0+cu^3.
+\end{equation}
+\(\kappa\) 仍取 \eqref{eighth:lower-shear} 的二维值。
+前面的全部实际集合估计对有界 \(\Lambda\) 一致，
+因此此改动后可重新明确构造 \(U_0,U_1,U_2\)。
+
+二维只有 \(k=(1,-1),(-1,1)\) 的外孔可产生正交量，
+浅带中四个最浅轴 chart 的目标帽为
+\([0,e]\times[0,(e-y)_+]\) 或交换两轴，独立于 \(s\)。
+坏层高度是连续函数
+\(\min(F^{-1}(R(y)),w-y)\)；
+帽与任意固定 Borel 集的交量连续，故 \(U_2\) 闭且边界零测。
+其体积等于内部体积，并有前面已证的统一展开
+\[
+ |U_2|/a=2\Lambda_0u^5+2\Lambda_1u^6+2\Lambda_2u^7+O(u^8).
+\]
+该首项正，允许在真实内部放入微孔，而非在形式极限轮廓中放孔。
+
+固定当前小 \(u\)，取 \(t'=t(1-u)<t\)、\(v'=2\sqrt{t'}\)、\(a'=4t'\)。
+对 dyadic 间距 \(h\)，只保留
+\(q\in h\mathbb Z^2\) 中满足 \(Q(q,h)\subset\operatorname{int}U_2\) 的点，
+并取微孔半宽和并集
+\[
+ w_\mu=\frac{hv'}{2(1+v')},\qquad
+ H_\mu=\bigcup_q(q+[-w_\mu,w_\mu]^2).
+\]
+这里 host \(Q(q,h)\) 可以重叠；体积计数使用不交基本胞
+\(q+[-h/2,h/2)^2\)。当 \(h\to0\)，有效基本胞总体积趋于 \(|U_2|\)：
+距内部补集大于 \(3h/2\) 的点都被有效胞覆盖，内部边带趋零。
+故可取第一个满足 \(h\le u^{20}\) 且有效胞体积至少
+\((1-u)|U_2|\) 的 dyadic 间距，选择有限终止。
+微孔不交，并有
+\begin{equation}\label{eighth:exact-micro-mass}
+ |H_\mu|=a|U_2|[1+O(u)].
+\end{equation}
+
+每个微孔的所有点 \(z\) 保留短半径
+\[
+ r_\mu(z)=h-w_\mu-\|z-q\|_\infty.
+\]
+小 \(u\) 时 \(r_\mu\ge h-2w_\mu\ge2w_\mu>0\)，故含自身全微孔。
+其他微格孔在某轴的距离至少 \(r_\mu\)，至多边界相碰；
+且 \(\|z-q\|_\infty+r_\mu=h-w_\mu<h\)，所以整个见证在 host 内。
+其缺陷率至多
+\[
+ \left(\frac{w_\mu}{h-2w_\mu}\right)^2=t'<t.
+\]
+这是原阈值的逐点严格见证，含微孔边界点。
+
+必须保护宏观见证所见的微孔质量。固定已经构造的
+\(H_\mu\subset U_2\)，定义
+\[
+ \begin{aligned}
+ \mathcal B_\mu(V)=\{s=0\}&\cup\biggl\{x\in C_w:\\
+ &\sum_{k\ne0}|(Tk+(C_w\setminus V))\cap Q(x,\rho+s)|\\
+ &\quad+\sum_{k\ne0}|(Tk+H_\mu)\cap Q(x,\rho+s)|\ge F(s)\biggr\}.
+ \end{aligned}
+\]
+下面以 \(R_{H_\mu}(x)\) 记此第二个其他周期微孔质量和，\(R_U\) 沿用宏观定义。
+置 \(U=U_2\cup\mathcal B_\mu(U_2)\)。
+因 \((C_w\setminus U_2)\cup H_\mu\subset C_w\) 且两部分不交，
+\(\mathcal B_\mu(U_2)\subset U_0\)；
+反单调性给 \(\mathcal B_\mu(U)\subset\mathcal B_\mu(U_2)\subset U\)。
+这是一遍显式集合运算，没有未知孔形固定点。
+
+在上述四个 chart 中，新旧目标帽质量差为
+\(|H_\mu\cap\Pi(y)|\)，只有 \(0\le y\le e\) 可能非零。
+\(F'\ge f=2a\rho\)，逆函数和真实纤维上截断为 \(1/f\)-Lipschitz。
+利用 \(\mathcal B(U_2)\subset U_2\)，得
+\[
+ |U|\le|U_2|+\frac1f\sum_{\text{四图}}\int_0^e
+                         |H_\mu\cap\Pi(y)|\dd y
+ \le|U_2|+\frac{4e}{f}|H_\mu|
+ \le|U_2|+Cu|H_\mu|.
+\]
+无需假设每个宏观帽中的微孔恰有均匀密度。
+深源的完整外包交量仍不足 \(F(s)\)，故四图外没有漏掉新的坏点。
+
+记可删总量 \(D=(2w)^2-M\)，其精确式为
+\[
+ D/a=2\Lambda u^5+\Lambda^2u^{10}(1-4u^2).
+\]
+由 \eqref{eighth:exact-micro-budget}、
+\eqref{eighth:exact-micro-mass}，
+\[
+ [D+|H_\mu|-|U|]/a\ge2cu^8-Cu^8.
+\]
+先在固定参数紧区间取统一 \(C\)，再选大固定 \(c\)，最后小 \(u\)
+使 \(cu^3\le1\)，所以选参没有循环且余量严格正。
+\(M-|H_\mu|>0\)，可在开集 \(C_w\setminus U\) 内先取质量更大的紧集，
+再用第一坐标连续分位切出恰为 \(M-|H_\mu|\) 的紧宏孔 \(A_\mu\)。
+总孔 \(P_\mu=A_\mu\cup H_\mu\) 的实际质量精确为 \(M\)。
+
+宏孔 \(x\in A_\mu\) 的原长半径 \(\rho+s\) 含整个本胞 \(P_\mu\)，
+其他周期孔由 \((C_w\setminus U)\cup H_\mu\) 上包。
+因 \(x\notin\mathcal B_\mu(U)\)，同一见证严格满足
+\[
+ M+R_U(x)+R_{H_\mu}(x)<M+F(s)=a(\rho+s)^2.
+\]
+微孔 host 在 \(\operatorname{int}U_2\subset U\)，没有宏孔；
+不同宏胞的外包孔分离，所以短见证在最终输入中仍严格有效。
+
+相对原宏观参数，此改动给
+\[
+ \Delta\rho=2a\Lambda_0u^6+O(u^9),\qquad
+ \Delta M=4a^2g\Lambda_0u^6+O(av^9).
+\]
+于是 \(\Delta M/(av^8)=g\Lambda_0/16+O(u)\to8/27\)；
+比值 \(d/(d-M)\) 对 \(M\) 的导数为 \(1+O(a)\)，
+故宏观八阶系数恰增加 \(8/27\)。
+这里总质量保持为新指定 \(M\)，不是在原宏孔上直接再加微孔。
+
+最后仍取整数 \(N=\lceil u^{-10}\rceil\)、凸外盒
+\(\Omega_N=T([-N,N]^2)\)，并保留全部边界切孔。
+周期积分精确给输入质量 \((2N)^2(d-M)>0\)。
+宏、微见证均小于一，\(\|T^{-1}\|<2\)，所有内层孔点的指定见证保留；
+边界孔总质量 \(O(aN)\)。凸盒外任意中心任意半径方体至多半体积在
+分离半空间内，小 \(t\) 下不能进入严格 halo；输入密度点也进入 halo。
+所以全部真实半径的比值为 \(d/(d-M)+O(a/N)\)，而非仅给指定半径的子族。
+有限化误差晚于 \(av^9\)，得到二维系数
+\(J_2+8/27=17638/6561\)。
+\end{proof}
+
 \begin{proof}[定理~\ref{eighth:theorem} 的证明]
-命题~\ref{eighth:upper} 给八阶有限上包；
-命题~\ref{eighth:lower} 对每个充分小参数给实际有限输入，
-故下极限至少为 \(J_n>0\)。二者即给
-\eqref{eighth:bounds} 和 \eqref{eighth:theta}，不涉及八阶极限的存在性。
+命题~\ref{eighth:upper} 给全输入上极限；
+命题~\ref{eighth:lower} 对每个充分小实参数给实际有限输入，
+故下极限至少为 \(\widehat J_n\)。二者即得
+\eqref{eighth:exact-expansion}。
 \end{proof}
 

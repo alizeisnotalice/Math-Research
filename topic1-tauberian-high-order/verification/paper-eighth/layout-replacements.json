@@ -1,90 +1,73 @@
 {
-  "base_sha256": "f19499528e7fe5d322cf2a2d0333d7743c2fd6ffa3ac059eaa5798adc34b98cd",
-  "final_sha256": "447b7b443a3e64d17a10069df6921b2b8398937ff6273704c106def5a4ba4229",
+  "scope": "Reversible formula wrapping, CJK font wrapper, two terminology edits, and measurable-set clarification approved by the mathematical reviews. No coefficient or proof changes.",
+  "files": {
+    "main.tex": {
+      "base_sha256": "413a02da01cccd08f33e25709b5ac579f19d092dbfd4aa965804e675c22f68ed",
+      "final_sha256": "c04e39835f9c5b2bb3ae5081aea92a64807a8223a419bd14cb28bc5651275b4d",
+      "inverse_exact": true
+    },
+    "sections/eighth.tex": {
+      "base_sha256": "56e4c2c04839f508aa6b546d41f69c168571181a243540b1cfe62a22e5eb5ae9",
+      "final_sha256": "175b314a9f076c39583a8926921cdd8f99921b3579f8c2c9860df4221006f151",
+      "inverse_exact": true
+    }
+  },
   "replacements": [
     {
-      "id": "W040",
-      "original_warning": "line 40",
-      "kind": "aligned",
-      "old": "\\begin{equation}\\label{eighth:critical}\n v\\downarrow0,\\quad V=|E|>0,\\quad\n K\\subset\\mathcal H_n(1-t;E)\\setminus E\\ \\text{紧},\\quad M=|K|,\n \\qquad 1+M/V\\ge L_n(t)+K_nav^6-B_0av^7,\n\\end{equation}",
-      "new": "\\begin{equation}\\label{eighth:critical}\n \\begin{aligned}\n &v\\downarrow0,\\quad V=|E|>0,\\quad\\\\\n &K\\subset\\mathcal H_n(1-t;E)\\setminus E\\ \\text{紧},\\quad M=|K|,\\\\\n &\\qquad 1+M/V\\ge L_n(t)+K_nav^6-B_0av^7,\n \\end{aligned}\n\\end{equation}"
+      "file": "main.tex",
+      "id": "M047",
+      "kind": "formula wrapping",
+      "old": "\\[\n C_n(1-t)=L_n(t)+K_nav^6-(n+26/9)K_nav^7+\\widehat J_nav^8+o_n(av^8),\n \\qquad\n \\widehat J_n=\\frac{(n-1)n^3(2609+1971n+81n^2)}{26244}\n                  +\\frac{16}{27}\\ind_{\\{n=2\\}}.\n\\]",
+      "new": "\\[\n \\begin{aligned}\n C_n(1-t)=L_n(t)&+K_nav^6-(n+26/9)K_nav^7\\\\\n &+\\widehat J_nav^8+o_n(av^8),\n \\end{aligned}\n\\]\n\\[\n \\widehat J_n=\\frac{(n-1)n^3(2609+1971n+81n^2)}{26244}\n                  +\\frac{16}{27}\\ind_{\\{n=2\\}}.\n\\]"
     },
     {
-      "id": "W123",
-      "original_warning": "paragraph 123--128",
-      "kind": "inline to display; existing punctuation in text font",
-      "old": "只需上述粗界 \\(\\sum\\varepsilon_iR_i^n=O(v^5S)\\)、\n\\(\\sum_{\\rm deep}(\\alpha_i+\\Delta_i/R_i)R_i^n=O(v^6S)\\)，\n不预先假定七阶饱和或定性缺源轮廓。",
-      "new": "只需上述粗界\n\\[\n \\begin{aligned}\n &\\sum\\varepsilon_iR_i^n=O(v^5S)\\text{、}\\\\\n &\\sum_{\\rm deep}(\\alpha_i+\\Delta_i/R_i)R_i^n=O(v^6S)\\text{，}\n \\end{aligned}\n\\]\n不预先假定七阶饱和或定性缺源轮廓。"
+      "file": "sections/eighth.tex",
+      "id": "E1054",
+      "kind": "CJK text font",
+      "old": "\\max_{h\\ {\\rm 面邻}}",
+      "new": "\\max_{h\\ \\text{面邻}}"
     },
     {
-      "id": "W274",
-      "original_warning": "line 274",
-      "kind": "aligned",
-      "old": "\\[\n \\sum_iR_i^2\\prod_{l\\ne q,r}(R_i+w_{il})\n =(1+v)^{n-2}\\sum_iR_i^n+O(v^{7/2}S),\\qquad\n \\sum_iR_i^n=(M'+\\mathcal D)/a\\le\\mathcal V/A_v+O(v^6S).\n\\]",
-      "new": "\\[\n \\begin{aligned}\n \\sum_iR_i^2\\prod_{l\\ne q,r}(R_i+w_{il})\n &=(1+v)^{n-2}\\sum_iR_i^n+O(v^{7/2}S),\\qquad\\\\\n \\sum_iR_i^n&=(M'+\\mathcal D)/a\\le\\mathcal V/A_v+O(v^6S).\n \\end{aligned}\n\\]"
+      "file": "sections/eighth.tex",
+      "id": "E1257",
+      "kind": "inline to display",
+      "old": "两有向端的后式正是\n\\((n-2)s_vv^8R_e^np^2q^2/n\\)。\n它的退款核为",
+      "new": "两有向端的后式正是\n\\[\n (n-2)s_vv^8R_e^np^2q^2/n\\text{。}\n\\]\n它的退款核为"
     },
     {
-      "id": "W298",
-      "original_warning": "line 298",
-      "kind": "aligned",
-      "old": "\\[\n z=\\frac{\\operatorname{clip}((R_i-R_j)/2;-\\max L_l,\\max L_l)}{v^3R_e},\n \\quad x=\\frac{1+v}{n}p,\\quad y=\\frac{1+v}{n}q,\\quad\n \\zeta=\\frac{1+v}{n}z,\\quad\n \\widehat b=\\frac{b_e}{(1+v)^{n-2}R_e^{n-2}},\\quad b=\\min(1,\\widehat b).\n\\]",
-      "new": "\\[\n \\begin{aligned}\n z&=\\frac{\\operatorname{clip}((R_i-R_j)/2;-\\max L_l,\\max L_l)}{v^3R_e},\\\\\n &\\quad x=\\frac{1+v}{n}p,\\quad y=\\frac{1+v}{n}q,\\quad\n \\zeta=\\frac{1+v}{n}z,\\quad\\\\\n &\\widehat b=\\frac{b_e}{(1+v)^{n-2}R_e^{n-2}},\\quad b=\\min(1,\\widehat b).\n \\end{aligned}\n\\]"
+      "file": "sections/eighth.tex",
+      "id": "E1381",
+      "kind": "formula wrapping",
+      "old": "\\[\n -\\frac{h_1^2+h_1h_2+h_2^2}{3}+\\frac{20}{81}(h_1+h_2)\n =\\frac{400}{6561}\n -\\frac{(h_1-20/81)^2+(h_1-20/81)(h_2-20/81)\n                         +(h_2-20/81)^2}{3}.\n\\]",
+      "new": "\\[\n \\begin{aligned}\n &-\\frac{h_1^2+h_1h_2+h_2^2}{3}+\\frac{20}{81}(h_1+h_2)\\\\\n &\\quad=\\frac{400}{6561}-\\frac{(h_1-20/81)^2+(h_1-20/81)(h_2-20/81)\n                         +(h_2-20/81)^2}{3}.\n \\end{aligned}\n\\]"
     },
     {
-      "id": "W408",
-      "original_warning": "line 408",
-      "kind": "aligned",
-      "old": "\\[\n \\mathcal C_i(K)=\\{x\\in x_i+W_i':\n \\text{至少两个轴到有效盒某面的距离}\\le Kv^3r_i\\},\\quad\n Z(K)=\\frac va\\sum_i|[(x_i+W_i')\\setminus F_i]\\setminus\\mathcal C_i(K)|.\n\\]",
-      "new": "\\[\n \\begin{aligned}\n \\mathcal C_i(K)&=\\{x\\in x_i+W_i':\n \\text{至少两个轴到有效盒某面的距离}\\le Kv^3r_i\\},\\quad\\\\\n Z(K)&=\\frac va\\sum_i|[(x_i+W_i')\\setminus F_i]\\setminus\\mathcal C_i(K)|.\n \\end{aligned}\n\\]"
+      "file": "sections/eighth.tex",
+      "id": "E2107",
+      "kind": "formula wrapping",
+      "old": "\\[\n \\mathcal B_\\mu(V)=\\{s=0\\}\\cup\n \\left\\{x\\in C_w:\n \\sum_{k\\ne0}|(Tk+(C_w\\setminus V))\\cap Q(x,\\rho+s)|\n +\\sum_{k\\ne0}|(Tk+H_\\mu)\\cap Q(x,\\rho+s)|\\ge F(s)\\right\\}.\n\\]",
+      "new": "\\[\n \\begin{aligned}\n \\mathcal B_\\mu(V)=\\{s=0\\}&\\cup\\biggl\\{x\\in C_w:\\\\\n &\\sum_{k\\ne0}|(Tk+(C_w\\setminus V))\\cap Q(x,\\rho+s)|\\\\\n &\\quad+\\sum_{k\\ne0}|(Tk+H_\\mu)\\cap Q(x,\\rho+s)|\\ge F(s)\\biggr\\}.\n \\end{aligned}\n\\]"
     },
     {
-      "id": "W530",
-      "original_warning": "line 530",
-      "kind": "aligned",
-      "old": "\\begin{equation}\\label{eighth:shared-height}\n s\\ge\\sum_j A_{ij}(y)-CR_iE_i(T),\\qquad\n A_{ij}(y)=\n \\frac{T_j^\\perp P_{ij}(Q_{ij}-y)_+-|\\mathscr D_j\\cap\\mathcal P_j(y)|}\n      {naR_i^{n-1}}\\ge0,\n \\quad \\sum_iE_i(T)R_i^n=O_T(v^6S).\n\\end{equation}",
-      "new": "\\begin{equation}\\label{eighth:shared-height}\n \\begin{aligned}\n &s\\ge\\sum_j A_{ij}(y)-CR_iE_i(T),\\qquad\\\\\n &A_{ij}(y)=\n \\frac{T_j^\\perp P_{ij}(Q_{ij}-y)_+-|\\mathscr D_j\\cap\\mathcal P_j(y)|}\n      {naR_i^{n-1}}\\ge0,\\\\\n &\\quad \\sum_iE_i(T)R_i^n=O_T(v^6S).\n \\end{aligned}\n\\end{equation}"
+      "file": "sections/eighth.tex",
+      "id": "TERM1",
+      "kind": "terminology",
+      "old": "须在真实鲜导数下单独支付。",
+      "new": "须在真实基线导数下单独支付。"
     },
     {
-      "id": "W638",
-      "original_warning": "line 638",
-      "kind": "aligned",
-      "old": "\\begin{equation}\\label{eighth:joint}\n H_2+c_RZ(K_{\\rm all})+c_Dv^6D_{\\mathcal N}\n \\le[A_6(v)+\\Gamma v^7]\\mathcal C+\\chi\\mathcal F+Cv^8S,\n \\quad H_2=\\sum_{q(e)=2}I_e-\\sum_iJ_i,\\quad A_6(v)=\\frac{k}{(1+v)^2}v^6 .\n\\end{equation}",
-      "new": "\\begin{equation}\\label{eighth:joint}\n \\begin{aligned}\n &H_2+c_RZ(K_{\\rm all})+c_Dv^6D_{\\mathcal N}\\\\\n &\\le[A_6(v)+\\Gamma v^7]\\mathcal C+\\chi\\mathcal F+Cv^8S,\\\\\n &\\quad H_2=\\sum_{q(e)=2}I_e-\\sum_iJ_i,\\quad\\\\\n &A_6(v)=\\frac{k}{(1+v)^2}v^6 .\n \\end{aligned}\n\\end{equation}"
+      "file": "sections/eighth.tex",
+      "id": "TERM2",
+      "kind": "terminology",
+      "old": "[实际删除量及鲜导数]",
+      "new": "[实际删除量及基线导数]"
     },
     {
-      "id": "F704",
-      "original_warning": "line 704 missing Chinese glyphs",
-      "kind": "text font only",
-      "old": "\\sum_{\\rm 邻边界}",
-      "new": "\\sum_{\\text{邻边界}}"
-    },
-    {
-      "id": "W816",
-      "original_warning": "paragraph 816--828",
-      "kind": "inline to display; existing punctuation in text font",
-      "old": "\\((v/a)\\sum_{\\partial I}\\delta_i^{\\rm mass}\n\\le CavS(\\partial I)=O(v^{n+6}S)\\)。",
-      "new": "\\[\n (v/a)\\sum_{\\partial I}\\delta_i^{\\rm mass}\n \\le CavS(\\partial I)=O(v^{n+6}S)\\text{。}\n\\]"
-    },
-    {
-      "id": "W925",
-      "original_warning": "line 925",
-      "kind": "aligned",
-      "old": "\\[\n s=w-\\|x\\|_\\infty,\\quad r=\\rho+s,\\quad\n F(s)=\\frac{a}{(2w)^{n-2}}[(\\rho+s)^n-\\rho^n],\\quad\n f=F'(0),\\quad h=e^2/f,\\quad \\delta=h/e.\n\\]",
-      "new": "\\[\n \\begin{aligned}\n &s=w-\\|x\\|_\\infty,\\quad r=\\rho+s,\\quad\\\\\n &F(s)=\\frac{a}{(2w)^{n-2}}[(\\rho+s)^n-\\rho^n],\\quad\\\\\n &f=F'(0),\\quad h=e^2/f,\\quad \\delta=h/e.\n \\end{aligned}\n\\]"
-    },
-    {
-      "id": "W942",
-      "original_warning": "line 942",
-      "kind": "aligned",
-      "old": "\\[\n R_U(x)=\\frac1{(2w)^{n-2}}\\sum_{k\\ne0}\n       |(Tk+(C_w\\setminus U))\\cap Q(x,\\rho+s)|,\\quad\n \\mathcal B(U)=\\{x\\in C_w:s=0\\text{ 或 }R_U(x)\\ge F(s)\\}.\n\\]",
-      "new": "\\[\n \\begin{aligned}\n R_U(x)&=\\frac1{(2w)^{n-2}}\\sum_{k\\ne0}\n       |(Tk+(C_w\\setminus U))\\cap Q(x,\\rho+s)|,\\quad\\\\\n \\mathcal B(U)&=\\{x\\in C_w:s=0\\text{ 或 }R_U(x)\\ge F(s)\\}.\n \\end{aligned}\n\\]"
-    },
-    {
-      "id": "W1052",
-      "original_warning": "line 1052",
-      "kind": "aligned",
-      "old": "\\[\n P=\\frac{B_n\\kappa^3}{8n}u^5g^{n-3}[1+O_n(u^5)],\\quad\n \\delta=\\frac{\\kappa}{4ng}u[1+O_n(u^5)],\\quad\n T_3=\\frac{B_n(n-2)\\kappa^4}{32n}u^7g^{n-4}[1+O_n(u^5)].\n\\]",
-      "new": "\\[\n \\begin{aligned}\n P&=\\frac{B_n\\kappa^3}{8n}u^5g^{n-3}[1+O_n(u^5)],\\quad\\\\\n \\delta&=\\frac{\\kappa}{4ng}u[1+O_n(u^5)],\\quad\\\\\n T_3&=\\frac{B_n(n-2)\\kappa^4}{32n}u^7g^{n-4}[1+O_n(u^5)].\n \\end{aligned}\n\\]"
+      "file": "sections/eighth.tex",
+      "id": "MEAS",
+      "kind": "measurability clarification approved in mathematical reviews",
+      "old": "任意 \\(\\mathcal S\\subset T\\) 的原严格见证半径",
+      "new": "任意可测的 \\(\\mathcal S\\subset T\\) 的原严格见证半径"
     }
   ]
 }
