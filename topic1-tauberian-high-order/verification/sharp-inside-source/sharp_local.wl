@@ -1,0 +1,12 @@
+ClearAll[x1,x2,r1,r2,v,p,q,z,m,rr,xx,alpha];
+Print["Wolfram: ",$Version];
+Print["oriented intervals r1,r2>0, center separation > Max[r1,r2]"];
+Print["positive overlap violation: ",Reduce[r1>0&&r2>0&&Abs[x1-x2]>Max[r1,r2]&&Min[x1+r1,x2+r2]>Max[x1,x2],{x1,x2,r1,r2},Reals]];
+psi=(p+z)(q+z)(p+q+2z)/4;
+Print["two-end nominal coefficient: ",FullSimplify[2psi/.{p->2/(3(1+v)),q->2/(3(1+v)),z->0},v>0]];
+Print["two-end coefficient difference: ",FullSimplify[(2psi/.{p->2/(3(1+v)),q->2/(3(1+v)),z->0})-8/(27(1+v)^3),v>0]];
+F=(rr+Sqrt[m])^2;
+Print["fresh derivative residual: ",FullSimplify[v D[F,m]-(v+v rr/Sqrt[m]),m>0&&rr>0&&v>0]];
+Print["inverse square root violation: ",Reduce[0<=xx<=1/2&&1/Sqrt[1-xx]>1+2xx,xx,Reals]];
+Print["fresh monotonicity violation: ",Reduce[v>0&&rr>0&&0<=xx<=1/2&&m>=(1-xx)v^2 rr^2&&v rr/Sqrt[m]>1/Sqrt[1-xx],{v,rr,xx,m},Reals]];
+Print["exponent residual: ",Expand[(v/v^2)*(v^2*(v^2*v^7))-v^10]];
