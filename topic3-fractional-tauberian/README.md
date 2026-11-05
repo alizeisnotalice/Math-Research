@@ -159,3 +159,9 @@ run('verification/fixed_cube_matlab.m')
 复现`verification/near_rectangle.py`（标准库，复用near_square.py）、`verification/near_rectangle.wl`和`verification/near_rectangle_matlab.m`；有符号孔/外加质量探索为`verification/near_rectangle_search.py`。全临界扰动层与全体三阶常数仍未闭合。
 
 第29轮当前PDF102页，全部页面缩略图及新增48至50页放大检查完成，最终交叉引用变动页再次复核。编译无溢出、缺字或未解析引用；329标签、322交叉引用、24条题录及原稿72/72项映射一致。两份独立终审通过。
+
+第30轮去掉所有偏心间隙：任意rho下的二阶近矩形输入统一满足≤2t²+[2+2q(1−q)]t³+O_A(t⁴)，q=min(|rho|,1)，临界层的三阶上界为2。还建立任意维数/分数阶/可测参考集的精确两端点归约，并求出二维矩形任意L1预算的峰值三分支、实际达到构造及严格光晕精确非空边界P_A(t)。边界具有任意阶显式一致余项，族上的阶数sharp。非空边界附近的最优体积剖面仍待研究。见`rounds/030.md`。
+
+复现`verification/critical_rectangle.wl`、`verification/critical_rectangle.py`和`verification/critical_rectangle_matlab.m`；Python的`--exact-only`只需标准库。峰值与体积结论分开陈述，全体输入的最优三阶常数未因此闭合。
+
+第30轮当前PDF106页；全页缩略图及新增50至54页放大检查完成。编译无溢出、缺字或未解析引用；342标签、329交叉引用、24条题录与原稿72/72项映射一致。两份独立终审及显式余项补充审查均通过。

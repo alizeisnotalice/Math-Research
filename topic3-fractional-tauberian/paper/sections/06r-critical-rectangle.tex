@@ -1,0 +1,247 @@
+\section{临界薄层的全参数上界与精确非空相位}\label{cr:section}
+
+上一节的内含半径在临界层中可能消失，但上界只需要外包。
+若某个方向缺失足够多，其面积亏损已可抵消其余方向的增量；
+否则四个方向仍可共同使用容量。这一二分去除参数间隙。
+随后直接优化全部测度扰动的峰值，确定严格光晕的非空边界。
+
+\begin{theorem}[任意偏心参数的统一上界]\label{cr:upper}
+固定 $A\ge0$。存在 $C_A,t_A>0$，使任意 $\rho\in\mathbb R$、
+$0<t<t_A$ 及可测输入 $|E\triangle R_{\rho,t}|\le At^2$ 都满足
+\begin{equation}\label{cr:clipped}
+ \frac{|H_{1,\mathcal Q_c}(1-t,E)|}{|E|}
+ \le2t^2+[2+2q(1-q)]t^3+C_At^4,
+ \qquad q=\min(|\rho|,1).
+\end{equation}
+因此上一节的 $5/2$ 三阶上界不再需要间隙条件。
+对每个固定 $L<\infty$，在 $\big||\rho|-1\big|\le Lt$ 上进一步一致有
+\[
+ \frac{|H(1-t,E)|}{|E|}\le2t^2+2t^3+O_{A,L}(t^4).
+\]
+本定理不要求光晕沿射线连通，也不要求它包含一个统一的内邻域。
+\end{theorem}
+
+\begin{proof}
+先按定理~\ref{nr:main}归一化为 $|F|=1$、$|F\triangle R_{\rho,t}|\le Bt^2$，
+其中可取 $B=4A$。交换坐标后设 $p=\rho\ge0$。
+若光晕非空，任取一个严格见证，其边长 $\ell>1-t$。
+参考矩形的全局平均最大值为 $e^{-pt}$，所以
+\[
+ e^{-pt}>1-t-\frac{Bt^2}{\ell}\ge1-t-2Bt^2.
+\]
+故必有 $p\le1+C_Bt$；空光晕直接满足结论。
+这使参考边长、见证中心和尺度都进入上一节的统一有界框架。
+一阶缺陷 $D_p\ge r$ 给出所有射线的外半径
+$0\le R_c(x)\le1+C_Bt$，其中空射线规定 $R_c=0$。
+这些上确半径均可测。
+
+固定 $x$，取 $L_B=4C_B+1$。若某个 $R_c<1-L_Bt$，则
+\[
+ \sum_cR_c^2\le(1-L_Bt)^2+3(1+C_Bt)^2
+ \le4+(L_B^2+3C_B^2)t^2.
+\]
+因此这种缺失方向自动满足所需面积上界。
+否则所有 $R_c=1+O_B(t)>0$，可对四象限分别取趋近上确的严格见证。
+由 $D_p-r=O_B(t)$ 的两个非负项，逐一得到
+\[
+ |u_c-p/2|\le r_cx+O_B(t),\qquad
+ |u_c+p/2|\le r_c(1-x)+O_B(t).
+\]
+令 $q=\min(p,1)$，则 $|p-q|=O_B(t)$。
+直接将这两式与 $r_c=1$、参数 $q$ 比较，得到
+$\operatorname{dist}(u_c,I_q(x))=O_B(t)$。
+$I_q(x)$ 非空；这里不需要 $I_p(r_c,x)$ 本身非空，更不需要 $r_c\ge p$。
+
+在精确容量中只投影二阶几何项，式~\eqref{nr:max}遂给
+$\sum_cR_c\le4+t\mathcal E_q(x)+O_B(t^2)$，进而
+\[
+ \sum_cR_c^2\le4+2t\mathcal E_q(x)+O_B(t^2).
+\]
+因 $\mathcal E_q\ge0$，同一式也包含前面的缺失方向情形。
+星形外包积分与式~\eqref{nr:integral}给出定理。
+若 $|p-1|\le Lt$，则 $q(1-q)=O_L(t)$，得到临界层的三阶系数上界二。
+最后用伸缩不变性回到原输入。
+\end{proof}
+
+\begin{proposition}[任意维数与分数阶的两端点归约]\label{cr:general}
+令 $|R|=1$，$0<\gamma=\beta/n<1$，$0\le\delta<1$。
+对任意固定的正有限测度测试集 $Q$，记 $s=|Q|$、$a=|R\cap Q|$，
+并置 $b_-=\max(0,\delta-1+a)$、$b_+=\min(\delta,s-a)$。
+在全部 $|E\triangle R|\le\delta$ 的输入上，
+$|E\cap Q|/(s^{1-\gamma}|E|^\gamma)$ 的精确最大值为
+\begin{equation}\label{cr:general-value}
+ \mathcal V_\gamma(a,s;\delta)=
+ \begin{cases}
+ 1,&\delta\ge1+s-2a,\\
+ \displaystyle s^{\gamma-1}\max_{b\in\{b_-,b_+\}}
+ \frac{a+b}{(1-\delta+2b)^\gamma},&\delta<1+s-2a,
+ \end{cases}
+\end{equation}
+它随 $a$ 连续且不减。
+若 $a_R(\ell)=\sup_z|R\cap(z+[-\ell/2,\ell/2]^n)|$，则
+\begin{equation}\label{cr:general-peak}
+ \sup_{|E\triangle R|\le\delta}
+ \frac{\|M_{\beta,\mathcal Q_c}\mathbf1_E\|_\infty}{|E|^\gamma}
+ =\sup_{\ell>0}\mathcal V_\gamma(a_R(\ell),\ell^n;\delta).
+\end{equation}
+这里参考集可以是任意可测集，不要求矩形、凸或有界。
+\end{proposition}
+
+\begin{proof}
+捕获量至多为 $\min(|E|,s)$，故归一化值至多为一；当 $\delta\ge|R\triangle Q|$，取 $E=Q$ 即达到。
+否则恢复 $R\cap Q$ 内的孔、删去 $R\cup Q$ 外的添加量均不减平均，且减少距离。
+只需从 $R\setminus Q$ 删 $h$、向 $Q\setminus R$ 添 $b$。
+$(a+b)/(1-h+b)^\gamma$ 分别随 $h,b$ 不减；总容量 $1+s-2a>\delta$，故可用满预算 $h+b=\delta$。
+Lebesgue 测度无原子，每个允许的 $h,b$ 都可实现。
+对 $f_\gamma(b)=(a+b)/(1-\delta+2b)^\gamma$，有
+\[
+ f_\gamma'(b)=\frac{1-\delta-2\gamma a+2(1-\gamma)b}
+ {(1-\delta+2b)^{\gamma+1}}.
+\]
+导数只能由负变正，最大值在 $b_-,b_+$，得到精确式。
+这两个端点的各段分别正比于
+$a/(1-\delta)^\gamma$、$(2a+\delta-1)^{1-\gamma}$、
+$(a+\delta)/(1+\delta)^\gamma$、$s/(1-\delta+2s-2a)^\gamma$，
+都随 $a$ 不减，拼接处连续，达到第一分支时值为一。
+最后先对 $(E,Q)$ 取联合上确界，再以 $a_R(\ell)$ 的近似平移及连续性取极限，得到式~\eqref{cr:general-peak}。
+这里只交换两个上确界，没有交换上确界与积分。
+\end{proof}
+
+\begin{theorem}[矩形测度邻域的精确峰值]\label{cr:peak}
+令 $R_w=[-1/(2w),1/(2w)]\times[-w/2,w/2]$，$0<w<1$，$\delta\ge0$。
+在全部正有限测度输入中，有
+\begin{equation}\label{cr:peak-formula}
+ \sup_{|E\triangle R_w|\le\delta}
+ \frac{\|M_{1,\mathcal Q_c}\mathbf1_E\|_\infty}{\sqrt{|E|}}
+ =\mathcal G(w,\delta):=
+ \begin{cases}
+ \displaystyle\frac{w+\sqrt{w^2+4\delta}}{2\sqrt{1+\delta}},&0\le\delta\le1-w,\\[1ex]
+ \displaystyle\sqrt{\frac{1-\delta}{2(1-\delta)-w^2}},&1-w\le\delta\le1-w^2,\\[1ex]
+ 1,&\delta\ge1-w^2.
+ \end{cases}
+\end{equation}
+各分支均有显式有限矩形并输入达到。$w=1$ 时所有 $\delta$ 的峰值均为一。
+\end{theorem}
+
+\begin{proof}
+任意输入和边长 $\ell$ 的见证正方形 $Q$ 都满足
+$|E\cap Q|/(\ell\sqrt{|E|})\le1$。
+若 $\delta\ge1-w^2$，直接取 $R_w$ 内边长 $w$ 的正方形即达到一。
+以下只需 $\delta<1-w^2<1$。
+
+固定 $Q$，记 $a=|R_w\cap Q|\le\min(\ell^2,w\ell,1)$。
+按 $\ell\le w$、$w\le\ell\le1/w$、$\ell\ge1/w$ 分段即得
+$1+\ell^2-2a\ge1-w^2>\delta$。因此应用命题~\ref{cr:general}取 $\gamma=1/2$，只需比较添加量
+$b_-=\max(0,\delta-1+a)$、$b_+=\min(\delta,\ell^2-a)$ 两端。
+去掉共同因子 $1/\ell$ 后，这两个端点的分段表达式为
+\[
+ \begin{array}{c|cc}
+ &\text{第一段}&\text{第二段}\\\hline
+ b_-&a/\sqrt{1-\delta}&\sqrt{2a+\delta-1}\\
+ b_+&(a+\delta)/\sqrt{1+\delta}&\ell^2/\sqrt{1-\delta+2\ell^2-2a}
+ \end{array}
+\]
+每个表达式及其拼接都随 $a$ 递增。因此可取最大交量
+$a=\min(\ell^2,w\ell,1)$，由同心见证达到。
+
+记 $W=1/w$、$\ell_0=(w+\sqrt{w^2+4\delta})/2$、$\ell_1=(1-\delta)/w$。
+在 $w\le\ell\le W$ 上，$a=w\ell$。
+端点平均的平方只出现下列四种函数：
+\[
+ \frac{w^2}{1-\delta},\quad
+ \frac{(w+\delta/\ell)^2}{1+\delta},\quad
+ \frac{\ell^2}{1-\delta+2\ell^2-2w\ell},\quad
+ \frac{2w\ell+\delta-1}{\ell^2}.
+\]
+第二种随 $\ell$ 递减；后两种导数的符号均为 $1-\delta-w\ell$。
+$\ell<w$ 的最优值不超过 $w/\sqrt{1-\delta}$，
+$\ell>W$ 的最优值不超过在 $W$ 处的值。
+若 $\delta\le1-w$，则
+$w\le\ell_0\le1\le\ell_1\le W$：填满 $Q$ 的第三种函数在 $[w,\ell_0]$ 递增，
+此后纯添加分支递减，其余端点不超过这些值，最大值在 $\ell_0$。
+若 $1-w\le\delta<1-w^2$，则
+$w\le\ell_1\le1\le\ell_0\le W$：第三种函数在 $\ell_1$ 达到最大，
+其他可变端点在该点之后均不增。还需比较常数分支；精确差为
+\[
+ \frac{1-\delta}{2(1-\delta)-w^2}-\frac{w^2}{1-\delta}
+ =\frac{(1-\delta-w^2)^2}{(1-\delta)[2(1-\delta)-w^2]}\ge0.
+\]
+这给出两支上界。
+
+最后构造达到者。第一支取 $E=R_w\cup Q_{\ell_0}$，其中正方形同心；
+新增面积 $\ell_0(\ell_0-w)=\delta$，质量为 $1+\delta$，见证平均正好为第一支。
+第二支取 $\ell=\ell_1$、$b=\ell^2-w\ell$、$h=\delta-b$，
+从 $R_w$ 的左右外端各截去宽 $h/(2w)$ 的条带，再并上同心 $Q_\ell$。
+这些条带位于 $Q_\ell$ 外，且 $0\le h,b$；总距离为 $\delta$。
+其质量 $1-h+b$、捕获面积 $\ell^2$ 正好达到第二支。
+分界处两表达式相同，证明完成。
+\end{proof}
+
+\begin{corollary}[严格光晕的精确非空边界]\label{cr:phase}
+固定 $A\ge0$，令 $\delta=At^2$、$\alpha=1-t$，并定义
+\begin{equation}\label{cr:phase-exact}
+ w_*(t,A)=\alpha\sqrt{1+\delta}-\frac{\delta}{\alpha\sqrt{1+\delta}},\qquad
+ P_A(t)=-\frac{\log w_*(t,A)}t.
+\end{equation}
+例如 $0<t\le[8(A+1)]^{-1}$ 时，在全部满足 $|E\triangle R_{\rho,t}|\le At^2$ 的输入中，
+存在非空严格光晕，当且仅当 $|\rho|<P_A(t)$。
+在 $|\rho|\ge P_A(t)$ 时，该类的全部严格光晕均为空。
+边界具有展开
+\begin{align}\label{cr:phase-series}
+ P_A(t)={}&1+\frac{1+A}{2}t+\left(\frac13+2A\right)t^2
+ +\left(\frac14+3A-\frac{A^2}{4}\right)t^3\\
+ &+\left(\frac15+4A\right)t^4
+ +\frac{1+30A+12A^2+A^3}{6}t^5+O_A(t^6).\nonumber
+\end{align}
+闭式在 $t=0$ 有解析延拓。更明确地，固定 $A_0\ge0$、$R_0=[8(A_0+1)]^{-1}$，
+若 $P_A(t)=\sum_{j\ge0}c_j(A)t^j$，则任意 $N\ge0$ 均有
+\begin{equation}\label{cr:remainder}
+ \left|P_A(t)-\sum_{j=0}^Nc_j(A)t^j\right|
+ \le\frac{2(t/R_0)^{N+1}}{1-t/R_0},
+ \qquad 0\le A\le A_0,\quad0\le t<R_0.
+\end{equation}
+该紧参数族上的截断误差阶 $t^{N+1}$ 不可降低。
+\end{corollary}
+
+\begin{proof}
+在所给窗口中 $\delta\le t/8$、$\alpha\ge7/8$。令 $Y=\alpha\sqrt{1+\delta}$，
+则 $0<Y<1$、$Y^2>\delta$，并且
+$(1-\delta)-w_*=(1-Y)(1+\delta/Y)>0$。
+故 $0<w_*<1-\delta$，且 $\alpha<1-\delta$。
+令 $w=e^{-|\rho|t}$。$w=1$ 时参考正方形显然给出非空光晕。
+以下 $w<1$；若 $w>1-\delta$，参考矩形本身已满足 $w>\alpha$。
+否则适用峰值公式第一支，且
+\[
+ \mathcal G(w,\delta)>\alpha
+ \quad\Longleftrightarrow\quad w>w_*.
+\]
+该等价式由 $\ell_0^2-w\ell_0-\delta=0$ 代入
+$\ell_0=\alpha\sqrt{1+\delta}$ 得到；根在正半轴单调。
+峰值上界排除边界及其外的全部输入，达到构造则在边界内给出严格见证。
+平均随中心连续，故非空严格光晕还有正面积。
+展开闭式即得级数。为给出显式余项，在复圆 $|t|=R_0$ 上令 $z=At^2$，
+则 $|z|\le R_0/8\le1/64$。主平方根满足
+$|\sqrt{1+z}-1|\le|z|$、$|\sqrt{1+z}|\ge7/8$，且 $|1-t|\ge7/8$，故
+\[
+ |w_*-1|\le R_0+3A_0R_0^2\le11R_0/8\le11/64.
+\]
+主对数因此在该像盘解析，且可去延拓后的 $|P_A|\le88/53<2$。
+Cauchy 系数界 $|c_j(A)|\le2R_0^{-j}$ 求尾和即得式~\eqref{cr:remainder}。
+$A=0$ 时 $c_j(0)=1/(j+1)$，首个遗漏系数为 $1/(N+2)>0$，故统一误差阶不可降低。
+\end{proof}
+
+\begin{remark}[非空与体积匹配之间的窄区]\label{cr:transition}
+只截短参考矩形长边、删去面积 $\delta$ 的矩形修复，其严格临界参数为
+\[
+ P_A^{\rm cut}(t)=\frac{-\log(1-t)-\frac12\log(1-At^2)}t.
+\]
+对 $A>0$，$P_A-P_A^{\rm cut}=2At^2+O_A(t^3)$，该比较阶二为 sharp。
+固定 $L<\infty$。在 $|\rho|<P_A^{\rm cut}(t)$ 且 $\big||\rho|-1\big|\le Lt$ 时，
+这个实际矩形输入与定理~\ref{cr:upper}夹出
+$\mathfrak C_{A,\rho}(t)=2t^2+2t^3+\Theta_{A,L}(t^4)$。
+具体地，修复后归一化短边为 $w/\sqrt{1-\delta}$，有效偏心参数
+$p+\log(1-\delta)/(2t)=1+O_{A,L}(t)$；矩形精确公式的四阶系数趋于 $5/2$，给出正下界。
+但在 $P_A^{\rm cut}\le|\rho|<P_A$ 的更窄区间，
+非空虽已精确确定，最优体积的完整过渡剖面仍需研究。
+本节也未消除中间固定偏心参数下三阶区间 $[2,2+2p(1-p)]$ 的间隙。
+\end{remark}
