@@ -185,3 +185,8 @@ A1要求每个k≥3的条件有符号幂矩绝对值由(k!/2)epsilon^(k−2)乘�
 定理给正态尾比率的双边控制，对数误差至多常数乘x³epsilon+x²delta²+(1+x)(epsilon|log epsilon|+delta)。固定绝对alpha0的范围x≤alpha0/epsilon、delta≤alpha0内合法。
 第13轮严格建立epsilon=32/(sigma sqrt n)、delta²=O(n^-1/4(log n)^1/4)，故x≤2sqrt(log n)内相对误差O(n^-1/8(log n)^5/8)。须把delta取为A2右端的平方根。原文未数值化绝对常数，不能生成有限维进入渐近区间的证书。
 版本题录另见[arXiv版本记录](https://arxiv.org/abs/1210.2198)。查阅日期2026-11-06；不以该概率论来源主张本项目端点渐近的公开优先权。
+
+
+## 第27轮：对数凹的边缘积分与卷积封闭性
+
+András Prékopa, *On logarithmic concave measures and functions*, Acta Scientiarum Mathematicarum 34 (1973), 335–343。已直接读取[作者机构保存的原文](https://rutcor.rutgers.edu/Prekopa/pdf/SCIENT2.pdf)第4节Theorems6–7（印刷页342–343）：非负对数凹函数的凸域边缘积分仍对数凹，两个对数凹函数的卷积仍对数凹。第27轮仅使用这两个一般封闭性；特定Gamma–Bernoulli核的四阶起点由本轮有理多项式证书另证。查阅日期2026-11-06，不据此主张特定密度结论的公开优先权。

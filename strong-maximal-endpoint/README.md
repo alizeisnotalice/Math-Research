@@ -101,3 +101,5 @@ Wolfram 15：`wolframscript -file code/crosscheck.wl`。
 第25轮：宏观角分块的锚定障碍与反馈辅助热方程见 rounds/r025/report.md；MATLAB `sm_feedback_probe`，Wolfram `code/angular_feedback_checks.wl`。
 
 第26轮：微观块凸预算与单锥接收的对数损失见 rounds/r026/report.md；MATLAB `sm_microblock_dual_checks`，Wolfram `code/microblock_checks.wl`。
+
+第27轮：共同参数卷积的对数凹证书、曲线接收边界及精确反馈核见 rounds/r027/report.md；Python `code/cert_block_logconcavity.py --verify`，MATLAB `sm_microblock_halo`，Wolfram `code/block_logconcavity_checks.wl`。
