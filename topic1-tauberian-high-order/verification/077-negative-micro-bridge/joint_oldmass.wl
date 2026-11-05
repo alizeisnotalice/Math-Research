@@ -1,0 +1,10 @@
+ClearAll[dm,dp,mnew,mold,u,lam,cc];
+Print["Wolfram ",$Version," PID ",$ProcessID];
+rat[dd_,mm_]:=dd/(dd-mm);
+Print["det@Mold + mass@dminus exact residual: ",Together[rat[dm,mnew]-rat[dp,mold]-mold(dp-dm)/((dm-mold)(dp-mold))-dm(mnew-mold)/((dm-mnew)(dm-mold))]];
+g=1/(1+2u);a=(2u)^3;k=8;L0=3k^3/(8*9*g);
+mo=a(g-2lam u^6)^3;mn=a(g-2(lam-a L0+cc a u)u^6)^3;
+e=k u^3;pd=(1-e)^2(1+2e);md=(1+e)^2(1-2e);scale=a(2u)^9;
+Print["det@Mold normalized limit: ",Limit[(rat[md,mo]-rat[pd,mo])/scale,u->0,Direction->"FromAbove"]];
+Print["mass@dminus normalized limit: ",Limit[(rat[md,mn]-rat[md,mo])/scale,u->0,Direction->"FromAbove"]];
+Print["scope: scalar only, assumes geometric budget and construction independently."];

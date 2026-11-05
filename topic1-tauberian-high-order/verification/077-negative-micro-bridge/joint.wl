@@ -1,0 +1,23 @@
+ClearAll[n,u,k,lam,cc,dp,dm,mold,mnew];
+Print["Wolfram ",$Version," PID ",$ProcessID];
+Print["Scope fixed integer n>=2, kappa bounded; scalar budget and ratio identities conditional on actual geometric construction."];
+g=1/(1+2u);Bn=n(n-1)/2;a=(2u)^n;L0=Bn k^3/(8n^2 g);
+budget=(g+lam u^5)^n-(g-2lam u^6)^n;
+Print["budget derivative residual through u9: ",FullSimplify[Normal[Series[D[budget,lam]-n u^5 g^(n-2),{u,0,9}]]]];
+Print["delta budget leading identity residual: ",FullSimplify[n g^(n-2)u^5(-a L0+cc a u)-(-n a L0 u^5 g^(n-2)+n cc a u^6 g^(n-2))]];
+Print["micro normalized general limit: ",FullSimplify[Limit[(2n g^(n-1)L0/2^6)/.k->8n/3,u->0,Direction->"FromAbove"],n>=2]];
+Print["micro vs 2Kn residual: ",FullSimplify[Limit[(2n g^(n-1)L0/2^6)/.k->8n/3,u->0,Direction->"FromAbove"]-2Bn n^2/27,n>=2]];
+rat[dd_,mm_]:=dd/(dd-mm);
+Print["joint det-then-mass exact identity residual: ",Together[rat[dm,mnew]-rat[dp,mold]-(rat[dm,mnew]-rat[dp,mnew])-(rat[dp,mnew]-rat[dp,mold])]];
+Print["exact det component: ",Factor[rat[dm,mnew]-rat[dp,mnew]]];
+Print["exact mass component: ",Factor[rat[dp,mnew]-rat[dp,mold]]];
+(* n=3 test; arbitrary bounded baseline lam and safety coefficient cc. *)
+nn=3;g3=1/(1+2u);a3=(2u)^3;k3=8;
+L03=(nn(nn-1)/2)k3^3/(8nn^2 g3);
+oldrho=g3-2lam u^6;newrho=g3-2(lam-a3 L03+cc a3 u)u^6;
+mo=a3 oldrho^3;mn=a3 newrho^3;ep=k3 u^3;
+pd=(1-ep)^2(1+2ep);md=(1+ep)^2(1-2ep);
+detPart=rat[md,mn]-rat[pd,mn];massPart=rat[pd,mn]-rat[pd,mo];scale=a3(2u)^9;
+Print["n3 det part normalized limit: ",Limit[detPart/scale,u->0,Direction->"FromAbove"]];
+Print["n3 mass part normalized limit: ",Limit[massPart/scale,u->0,Direction->"FromAbove"]];
+Print["n3 joint normalized limit: ",Limit[(detPart+massPart)/scale,u->0,Direction->"FromAbove"]];
