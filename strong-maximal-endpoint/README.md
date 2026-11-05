@@ -4,7 +4,7 @@
 \(\Phi_n(t)=t(1+\log^+t)^{n-1}\)、自然对数及阈值 1。
 本项目研究最优比值 \(C_n=\sup_f |\{M_Sf>1\}|/\int\Phi_n(f)\)。
 
-## 当前状态（2026-11-06，第 13 轮）
+## 当前状态（2026-11-06，第 14 轮）
 
 - 已复核：指数率 \(C_n^{1/n}\to B\)，以及 \(\limsup C_n/B^n\le\sqrt B\) 的证明路线；B 满足 \(\log B=1+B^{-1}\)。详细推导见 rounds/r001/report.md。
 - 已实现：等参数单层见证的 Gamma–二项混合、数值优化和 Wolfram 高精度交叉复算。
@@ -21,7 +21,8 @@
 - 第11轮：一般输入严格归约到可预测反馈的一维上界模型 mathcalR_n，满足 Q_n≤C_n≤mathcalR_n。Bellman基准已计算至256步，反馈严格优于任意固定两步比例。
 - **第12轮一般定理**：log C_n = n mu − sigma sqrt(n log n) + O(sqrt n)。证明一般首个缺口系数为sigma，并推出 C_n/B^n→0。完整一般上界见 rounds/r012/report.md。
 - **第13轮一般三项定理**：第8轮公式现对一般C_n及反馈上界mathcalR_n成立；证明截停累计均值损失，再逐项核验FGL条件鞅相对中偏差。详见 rounds/r013/report.md。
-- 主攻：以隐式正态尾方程刻画缺口，改善三项展开后的余项。
+- **第14轮隐式根定理**：令barPhi(z_n)=sigma z_n/sqrt n、d_n=sigma sqrt n z_n，则nmu−d_n−O(log n)≤log C_n≤nmu−d_n+O(n^(3/8)(log n)^(1/8))；因而确定任意固定阶逆对数展开。见 rounds/r014/report.md。
+- 主攻：分析固定比例优化和可预测反馈在更小尺度的差别。
 - 一般前三项现已闭合；乘法渐近等价、后续锐余项和极值结构仍待研究。
 
 ## 复现
@@ -65,3 +66,5 @@ Wolfram 15：`wolframscript -file code/crosscheck.wl`。
 第12轮：一般首个次指数项与似然比鞅证明见 rounds/r012/report.md；MATLAB `result=sm_tilt_checks;`，Wolfram `code/tilt_checks.wl`。
 
 第13轮：一般完整三项展开见 rounds/r013/report.md；MATLAB `sm_controlled_gaussian_checks`，Wolfram `code/stopping_checks.wl`。
+
+第14轮：隐式正态根和任意固定阶逆对数展开见 rounds/r014/report.md；MATLAB `sm_root_checks`，Wolfram `code/root_checks.wl`。
