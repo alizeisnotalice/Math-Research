@@ -1,0 +1,20 @@
+Print["Version: ", $Version, "; ProcessID: ", $ProcessID];
+moment = Integrate[(2 - z) del (1 - z) - del^2 (1 - z)^2, {z, 0, 1}];
+Print["FirstLinearHostCapMoment: ", Factor[moment]];
+Print["MomentResidual: ", Expand[moment - (5 del/6 - del^2/3)]];
+beta = 4 u^2 (1 - u^2)/(1 + 2 u Sqrt[1 - u^2])^2;
+Print["MicroDensitySeriesOverA: ", Series[beta/(4 u^2), {u, 0, 3}]];
+Print["DensityRelativeToAover1plusv2: ",
+  Series[beta/(4 u^2/(1 + 2 u)^2), {u, 0, 3}]];
+e0 = kap u^3;
+a0 = 4 u^2;
+del0 = kap u/(8 rh);
+hostArea = 2 e0^2 del0 - (10/3) e0^2 del0^2;
+firstProtection = (10/3) bet e0^2 del0^2;
+netBudget = bet hostArea - firstProtection;
+Print["NetMicroBudgetFactor: ", Factor[netBudget]];
+rootShift = Factor[-netBudget/(2 a0 u^5)];
+expected = -bet kap^3/(32 rh) + 5 bet kap^4 u/(384 rh^2);
+Print["RootShiftResidual: ", Factor[rootShift - expected]];
+Print["FirstProtectionPhysicalPower: ", Factor[firstProtection /. bet -> a0]];
+Print["Scope: exact finite scalar identities, not the all-rectangle or strict witness geometry."];
