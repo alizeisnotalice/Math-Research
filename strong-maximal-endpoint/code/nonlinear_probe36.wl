@@ -19,7 +19,7 @@ fast36[nn_Integer,tt_Integer,rr_?NumericQ]:=fast36[nn,tt,rr]=Module[{ks,lb,ww,lg
  uu=p36/8(ff(rr-tt mu36)^2/tt+(N[HarmonicNumber[tt]]-1)fc/tt);
  up=p36/8((fp(rr-tt mu36)^2+2ff(rr-tt mu36))/tt+(N[HarmonicNumber[tt]]-1)fcp/tt);
  (* rho_N differs from N by O(N e^-N); exact 50-digit rho retained here. *)
- z=N[rr-(nn+ProductLog[-nn Exp[-nn]])];
+ z=If[rr<=nn-1,-1.,N[rr-(nn+ProductLog[-nn Exp[-nn]])]];
  bc=Quiet[If[z<=0,0.,Exp[-rr+tt Log[z]-LogGamma[tt+1]]+(rr/nn-1)GammaRegularized[tt,0.,z]-tt/nn GammaRegularized[tt+1,0.,z]],General::munfl];
  bp=Quiet[If[z<=0,0.,GammaRegularized[tt,0.,z]/nn-Exp[-rr+tt Log[z]-LogGamma[tt+1]]],General::munfl];
  {rs+qq+call/nn,uu,-rs-qq/nn,1-rr/nn+tt mu36/nn+bc,-1./nn+bp,ff,up,fp}];
@@ -41,6 +41,7 @@ case36[nn_,tt_,alpha_,beta_,hh_,kind_]:=Module[{grid,st,pr,q,qp,iv,pv,der,active
  <|"N"->nn,"t"->tt,"kind"->kind,"alpha"->alpha,"beta"->beta,"h"->hh,"maximum_residual"->res[[idx]],"at_r"->grid[[idx]],"residual_over_density"->If[st[[idx,6]]>0,res[[idx]]/st[[idx,6]],Null],
  "core_maximum_residual"->Max[res[[core]]],"grid_positive_increment"->viol,"max_active_inner_derivative"->Max[der[[active]]],
  "interpretation"->"left-screen clip only; PWL state interpolation; not certified"|>];
+If[!TrueQ[$nonlinear36LibraryMode],
 rows36=Switch[mode36,
  "summable",Flatten[Table[case36[256,tt,1.1,bet,.025,"exponential_summable"],{tt,{16,64,128}},{bet,{.01,.05}}]],
  "refine",{case36[256,128,1.1,.01,.0125,"exponential_summable"]},
@@ -48,3 +49,4 @@ rows36=Switch[mode36,
  _,Flatten[Table[case36[256,tt,1.1,.1,hh,kind],{tt,{16,64,128}},{hh,{.05,.025}},{kind,{"linear","exponential"}}]]];
 Export[out36,<|"wolfram"->$Version,"status"->"stable-machine diagnostic, 50-digit spot checks; tiny probabilities may underflow to zero; no interval certificate","validation"->validation36,"rows"->rows36|>,"RawJSON"];
 Print[<|"output"->out36,"cases"->Length[rows36],"maximum_spot_difference"->Max[validation36[[All,"maximum_absolute_difference"]]]|>];
+];
