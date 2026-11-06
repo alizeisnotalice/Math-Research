@@ -1,0 +1,25 @@
+(* r059: frozen-source natural-angle fixed/common-action comparison. Floating only. *)
+dir59=DirectoryName[$InputFileName];argv59=$ScriptCommandLine;out59=If[Length[argv59]>=2,argv59[[2]],"/tmp/arc59.json"];
+repo59=DirectoryName[dir59];
+Block[{$ScriptCommandLine={},$compute58LibraryMode=True},Get[FileNameJoin[{repo59,"code","compute58.wl"}]]];
+seedArc59=Import[FileNameJoin[{repo59,"rounds","r057","frozen57.json"}],"RawJSON"];
+record59[nn_]:=SelectFirst[Join[seedArc59["validation_512x64"],seedArc59["coarse_256x32"]],#["n"]==nn&];
+cache59[nn_,no_,ord_]:=Module[{rec=record59[nn],cc,hi,ctx,ls,tau,js,dat,la,bd,rr,xx,ww,ii},
+ cc=rec["c_stationary"];hi=Last[rec["finite_window"]];ctx=context52[nn,cc,cc,no,ord,hi];ls=rec["source_log_scale"];tau=rec["source_tau"];js=ctx["j1"];
+ If[Abs[ctx["tau"]-tau]>1.*^-8,Print["tau mismatch"];Exit[2]];
+ dat=Table[xx=ctx["x"][[ii]];ww=ctx["w"][[ii]];la=ls-tau+js[xx][[5]];bd[lev_]:=Module[{l=0.,r=hi,md},If[la+js[hi][[5]]<Log[lev],Return[hi]];Do[md=(l+r)/2.;If[la+js[md][[5]]<Log[lev],l=md,r=md],{48}];(l+r)/2.];<|"t"->xx,"w"->ww,"la"->la,"bounds"->(bd/@{1.,N[nn],ctx["aCap"]})|>,{ii,Length[ctx["x"]]}];
+ <|"n"->nn,"b"->nn/2,"c"->cc,"hi"->hi,"ls"->ls,"tau"->tau,"js"->js,"ir"->ctx["inner_rule"],"cap"->ctx["cap"],"dat"->dat,"no"->no,"ord"->ord,"reference"->rec|>];
+(* G, Ga, Gaa, Gd, Gad: density c-jets and analytic location derivatives. *)
+evalArc59[mo_,dd_,vv_,da_]:=Module[{nn=mo["n"],bb=mo["b"],ca=mo["c"]+da,hi=mo["hi"],js=mo["js"],ir=mo["ir"],jr,st,ans=ConstantArray[0.,5],z1,p1,f1,l1,st1,row,rt,seg,l,r,hh,ij,pl,pr,fl,fr,id,iad,base,xs,ws,t2,z2,p2,f2,ss,dscore,sec,la},
+ If[ca<=0.,Print["nonpositive action"];Exit[3]];jr=jetBuild52[bb,ca];st=sTBuild58[bb,ca];
+ Do[z1=row["t"]-dd-vv;p1=jr[z1];f1=expSafe52[p1[[5]]-z1];l1=p1[[4]]-1.;st1=st[z1];rt=row["bounds"];la=row["la"];
+ Do[{l,r,hh}=seg;If[r>l,ij=cdfJets52[bb,ca,l-dd+vv,r-dd+vv];pl=jr[l-dd+vv];pr=jr[r-dd+vv];fl=expSafe52[pl[[5]]-(l-dd+vv)];fr=expSafe52[pr[[5]]-(r-dd+vv)];id=fl-fr;iad=fl pl[[2]]-fr pr[[2]];base=row["w"]hh f1;
+ ans+=base{ij[[1]],p1[[2]]ij[[1]]+ij[[2]],p1[[3]]ij[[1]]+2p1[[2]]ij[[2]]+ij[[3]],-l1 ij[[1]]+id,-(l1 p1[[2]]+st1)ij[[1]]-l1 ij[[2]]+p1[[2]]id+iad}],{seg,{{rt[[1]],rt[[2]],1.},{rt[[3]],hi,mo["cap"]}}}];
+ l=rt[[2]];r=rt[[3]];If[r>l,xs=(l+r)/2+(r-l)ir[[1]]/2;ws=(r-l)ir[[2]]/2;Do[t2=xs[[jj]];z2=t2-dd+vv;p2=jr[z2];f2=expSafe52[p2[[5]]-z2];hh=profile52[expSafe52[la+js[t2][[5]]],nn,mo["cap"]];base=row["w"]ws[[jj]]hh f1 f2;ss=p1[[2]]+p2[[2]];sec=p1[[3]]+p2[[3]]+2p1[[2]]p2[[2]];dscore=2-p1[[4]]-p2[[4]];ans+=base{1.,ss,sec,dscore,dscore ss-st1-st[z2]},{jj,Length[xs]}]],{row,mo["dat"]}];
+ AssociationThread[{"G","Ga","Gaa","Gd","Gad"},ans]];
+fixArc59[mo_,vv_,dinit_]:=Module[{d=N[dinit],r,hist={}},Do[r=evalArc59[mo,d,vv,0.];AppendTo[hist,<|"d"->d,"G_minus_1"->r["G"]-1|>];If[Abs[r["G"]-1]<5.*^-14,Break[]];d-=Clip[(r["G"]-1)/r["Gd"],{-.5,.5}],{9}];r=evalArc59[mo,d,vv,0.];<|"d"->d,"result"->r,"converged"->TrueQ[Abs[r["G"]-1]<1.*^-11],"trace"->hist|>];
+optArc59[mo_,vv_,dinit_]:=Module[{d=N[dinit],da=0.,r,hist={},step},Do[r=evalArc59[mo,d,vv,da];AppendTo[hist,<|"d"->d,"da"->da,"G_minus_1"->r["G"]-1,"Ga"->r["Ga"]|>];If[Abs[r["G"]-1]<5.*^-14&&Abs[r["Ga"]]<1.*^-12,Break[]];step=-LinearSolve[{{r["Gd"],r["Ga"]},{r["Gad"],r["Gaa"]}},{r["G"]-1,r["Ga"]}];If[!VectorQ[step,NumericQ],Print["invalid Newton step"];Exit[4]];d+=Clip[step[[1]],{-.5,.5}];da+=Clip[step[[2]],{-.03,.03}],{9}];r=evalArc59[mo,d,vv,da];<|"d"->d,"da"->da,"result"->r,"converged"->TrueQ[Abs[r["G"]-1]<1.*^-11&&Abs[r["Ga"]]<1.*^-9],"trace"->hist|>];
+rows59={};start59=AbsoluteTime[];saveArc59[state_]:=Export[out59,<|"status"->state,"wolfram"->$Version,"seconds"->N[AbsoluteTime[]-start59],"rows"->rows59,"scope"->"Fixed source/finite square machine quadrature. Equality averages only; no certified halo or endpoint lower bound. No random experiment."|>,"RawJSON"];
+runArc59[nn_,no_,ord_,fracs_]:=Module[{mo,base,ref,errs,vv,d2,fx,op,tt},mo=cache59[nn,no,ord];base=evalArc59[mo,0.,0.,0.];ref=mo["reference"];errs=<|"mean"->Abs[base["G"]-1],"Ga"->Abs[base["Ga"]],"Gaa_Tplus"->Abs[base["Gaa"]-ref["Faa0_vs_primal_Tplus","primal_Tplus"]],"Gd_Ward"->Abs[base["Gd"]-ref["Gd_vs_Ward_2_over_lambdaOverP","Ward_value"]]|>;If[!TrueQ[AllTrue[Values[errs],NumericQ[#]&&#<1.*^-8&]],Print[errs];Exit[5]];d2=Last[ref["radially_corrected"]]["d2_from_Gvv"];
+ Do[vv=frac Sqrt[N[nn]];tt=AbsoluteTime[];fx=fixArc59[mo,vv,d2 vv^2];op=optArc59[mo,vv,fx["d"]];AppendTo[rows59,<|"N"->nn,"outer_nodes"->no,"soft_order"->ord,"v_over_sqrtN"->frac,"v"->vv,"source_c"->mo["c"],"source_log_scale"->mo["ls"],"source_tau"->mo["tau"],"source_finite_window"->{0.,mo["hi"]},"base_checks"->errs,"fixed_action"->fx,"optimized_action"->op,"radial_improvement_fixed_minus_opt"->fx["d"]-op["d"],"endpoint_weight_ratio"->Exp[2(fx["d"]-op["d"])],"seconds"->N[AbsoluteTime[]-tt]|>];saveArc59["partial"];Print[KeyTake[Last[rows59],{"N","outer_nodes","v_over_sqrtN","radial_improvement_fixed_minus_opt","seconds"}]];If[!fx["converged"]||!op["converged"],Exit[6]],{frac,fracs}]];
+saveArc59["initialized"];runArc59[128,256,32,{1.}];runArc59[256,256,32,{.5,1.}];runArc59[256,512,64,{1.}];saveArc59["complete"];
