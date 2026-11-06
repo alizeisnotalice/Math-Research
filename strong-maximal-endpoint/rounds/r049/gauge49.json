@@ -1,0 +1,22 @@
+{
+	"wolfram":"15.0.0 for Mac OS X ARM (64-bit) (May 15, 2026)",
+	"exact_checks":{
+		"weighted_Jacobian":true,
+		"sourceAmp_with_tau_shift":true,
+		"negative_u_receiver_average":true,
+		"positive_u_receiver_average":true,
+		"halo_volume_formula":true
+	},
+	"gauge":"H_a(t)=H(t-a), receiver labels u_j+a, tau'=tau+a1+a2; full-domain J and V both multiply exp(-a1-a2)",
+	"clipping_counterexample":{
+		"model":"m=1, T~Exp(1), Phi_1(H)=H, H=2 1_[0,l]",
+		"original_l":2,
+		"translation_a":-1,
+		"clipped_l":1,
+		"original_actual_V_over_J":0.8434823572503343481819193765345760835440,
+		"clipped_actual_V_over_J":0.4180232931306735756149979948909884414531,
+		"difference_exact":"E\/(-1 + E^2)",
+		"difference_positive":true
+	},
+	"scope":"full weighted-domain translation gauge; clipping is a new shape, not an invariant coordinate change; no C_N improvement"
+}
