@@ -20,7 +20,10 @@ rateRow[eps_,cc_] := Module[{e=N[cc eps,wp39+20], al=1+eps,y,th,is,j,jp,hh,del},
  <|"eps"->N[eps,18],"c"->cc,"eta"->N[e,18],"thetaStar"->N[th,18],"Jprime"->N[jp,18],"delta"->N[del,24],"H"->N[hh,24],
  "deltaOverEps4"->N[del/eps^4,18],"HOverEps4"->N[hh/eps^4,18]|>
 ];
+If[!TrueQ[$rate39LibraryMode],
 A3=mu (mu-1)/8; K4=mu (mu-1)(3+5mu)/384; crit=A3/K4;
 rows=Flatten[Table[rateRow[ep,cc],{ep,{1/100,1/200,1/500,1/1000}},{cc,{5,6,7}}],1];
 Export[out39,<|"wolfram"->$Version,"working_precision"->wp39,"A3"->N[A3,30],"K4"->N[K4,30],"criticalC"->N[crit,30],"rows"->rows|>,"RawJSON"];
 Print[<|"output"->out39,"working_precision"->wp39,"cases"->Length[rows]|>];
+
+];
