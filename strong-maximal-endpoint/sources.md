@@ -205,3 +205,8 @@ András Prékopa, *On logarithmic concave measures and functions*, Acta Scientia
 ## 第56轮内部来源
 
 共同驻点曲率组合r050/r053/r054，角向IFT推论与跨高度反例在rounds/r056/自含证明。数值重放明确使用r052/primal52.json旧种子与code/primal52.wl，非全新驻点搜索；未新增公开归属。
+
+
+## 第57轮内部来源
+
+全共同窗口曲率接续r026/r050/r053/r054/r056，新的Ward响应归一化和集中桥在rounds/r057/common_window57.md自含给出。冻结源积分复用code/primal52.wl和r052种子，但不重优化随接收参数变化的源。固定阶纤维障碍及有限动作偏差界自含证明；无新增公开优先权主张。
