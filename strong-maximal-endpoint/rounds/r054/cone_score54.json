@@ -1,0 +1,46 @@
+{
+  "scope": "Fixed r052 kappa=-0.08 65-receiver finite Pareto-cone score only; no assertion about a full halo, arbitrary receiver subsets, or C_N.",
+  "formula": "V=sum_i (exp(-x_i)-exp(-x_{i+1})) exp(-b_i), b_i=min_{j:x_j<=x_i} y_j, exp(-x_{m+1})=0.",
+  "arithmetic": "Imports only the frozen core interval primitives; exp and log endpoints are outwardly enclosed.",
+  "anchor_count": 65,
+  "distinct_x_count": 65,
+  "ordered_anchor_decimal_sha256": "62991323a35a2e56c61ebc3e670cd5fbb6a080610a444af04ed260f754159cbd",
+  "cone_volume_interval": [
+    "17.3162397952482031986842475186818696906396407065561880718529347521923696079925953106117087",
+    "17.3162397952482031986842475186818696906396407065561880718529347521923696079925953106117130"
+  ],
+  "cone_volume_upper": "17.3162397952482031986842475186818696906396407065561880718529347521923696079925953106117130",
+  "D1_lower": "0.0551647563805416712476194837891016143171282088410593889229509027188992503482270807998388018",
+  "tau_exact_decimal": "65.68292727325189",
+  "score_upper": "71.4320030519008984021498728220331218985271992312872065540724419851339496073718634077432033",
+  "target_check_score_upper_lt_143_over_2": true,
+  "linear_pareto_chain": {
+    "scope": "Geometric linear interpolation of the old 65 anchors. The certified witness is exactly this interpolated chain cone, with all old 65 target-one constraints retained. Additional halo volume is not bounded.",
+    "strict_x_increasing_and_y_decreasing": true,
+    "segment_count": 64,
+    "z_range_exact_decimal": [
+      "-0.0864020752727590",
+      "0.0864020752727590"
+    ],
+    "volume_formula": "sum_segments dx*exp(-x0-y0)*F(dx+dy)+exp(-xlast-ylast), F(z)=(1-exp(-z))/z, F(0)=1.",
+    "volume_interval": [
+      "21.9276177716117822387060492721956642698526306379295403308967416744335070327342282793885687",
+      "21.9276177716117822387060492721956642698526306379295403308967416744335070327342282793885916"
+    ],
+    "score_upper": "71.6681052020114122122248411656321424198417538368233986472272008940177404560085488911287349",
+    "target_check_score_upper_lt_71_79": true
+  },
+  "startup_sha256": {
+    "core": "17ef3f7fbd83211f7a411a6700ba751a94a1d5a85bb1c3b7dff9333d968bc3de",
+    "fair": "dddd6f58162d81104537e82cc5529ee943da9110f4d8fdf18a4a3eaaaed6262e",
+    "seed": "f0dcacfac0dff44169739bf59bf493d39073fefdec3e7c3650599609f6942d04",
+    "d1": "9e0fa97b4140948c62239a1605d96b49b4eef5246a02beeb487ff92898b1fe13"
+  },
+  "final_sha256": {
+    "core": "17ef3f7fbd83211f7a411a6700ba751a94a1d5a85bb1c3b7dff9333d968bc3de",
+    "fair": "dddd6f58162d81104537e82cc5529ee943da9110f4d8fdf18a4a3eaaaed6262e",
+    "seed": "f0dcacfac0dff44169739bf59bf493d39073fefdec3e7c3650599609f6942d04",
+    "d1": "9e0fa97b4140948c62239a1605d96b49b4eef5246a02beeb487ff92898b1fe13"
+  },
+  "core_source_sha256_expected": "17ef3f7fbd83211f7a411a6700ba751a94a1d5a85bb1c3b7dff9333d968bc3de"
+}

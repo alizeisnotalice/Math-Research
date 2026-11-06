@@ -190,3 +190,8 @@ A1要求每个k≥3的条件有符号幂矩绝对值由(k!/2)epsilon^(k−2)乘�
 ## 第27轮：对数凹的边缘积分与卷积封闭性
 
 András Prékopa, *On logarithmic concave measures and functions*, Acta Scientiarum Mathematicarum 34 (1973), 335–343。已直接读取[作者机构保存的原文](https://rutcor.rutgers.edu/Prekopa/pdf/SCIENT2.pdf)第4节Theorems6–7（印刷页342–343）：非负对数凹函数的凸域边缘积分仍对数凹，两个对数凹函数的卷积仍对数凹。第27轮仅使用这两个一般封闭性；特定Gamma–Bernoulli核的四阶起点由本轮有理多项式证书另证。查阅日期2026-11-06，不据此主张特定密度结论的公开优先权。
+
+
+## 第54轮计算与内部来源
+
+有限输入的几何转移接续r002/r009/r028；完整KKT、Ward与响应接续r050/r052/r053。本轮证明和证书见rounds/r054/，不新增公开优先权归属。定向算术使用 [Python Decimal官方文档](https://docs.python.org/3/library/decimal.html) 的exp/ln正确舍入和next_minus/next_plus契约，整数幂采用重复区间乘法。Wolfram 15的120/240位重放仅作数值独立交叉验证。
