@@ -1,0 +1,19 @@
+(* Fixed-input mean sensitivity for near-extremal plateau profiles.
+   Local Wolfram exact-law Fourier diagnostics, not interval certificates. *)
+$quadrant46LibraryMode=True;
+Get[FileNameJoin[{DirectoryName[$InputFileName],"quadrant46.wl"}]];
+$quadrant46LibraryMode=False;
+mg47[c_,e_]:=-Log[1-e]+Log[(1+Exp[(e-1)c])/(1+Exp[-c])];
+logF47[n_,c_,q_,wp_,step_:1/16,cut_:32]:=logTailQ46[n,c,q,False,wp,step,cut]["log_probability"];
+mean47[n_,c_,q_,w_,wp_,step_:1/16,cut_:32]:=Module[{e=1/n,rho=1-1/n,lu,lf,lft,lfw},lu=n mg47[c,e]-(q+w)/n;lf=logF47[n,c,q,wp,step,cut];lfw=logF47[n,c,q+w,wp,step,cut];lft=logF47[n,c rho,rho(q+w),wp,step,cut];
+ <|"mean_minus_one"->Exp[lu]-1-Exp[lu+lft]+Exp[lfw]-Exp[lf],"logF"->lf|>];
+logK47[n_,w_,wp_]:=Module[{x,ii,sq=N[Sqrt[n],wp],M=40,tail},ii=sq NIntegrate[Exp[(n-1)(Log[1+x/sq]-x/sq)],{x,0,M},WorkingPrecision->wp,AccuracyGoal->40,PrecisionGoal->40,Method->{"GlobalAdaptive","SymbolicProcessing"->0}];tail=sq Exp[(n-1)(Log[1+M/sq]-M/sq)]/((n-1)M/(n+sq M));
+ <|"logK"->Log[1+Exp[-w](ii-1)],"I_tail_upper"->tail|>];
+run47[n_,factor_:1,step_:1/16,cut_:32]:=Module[{wp=factor Max[120,2IntegerLength[n,10]+100],mu,p,ll,rho,z,d,qbase,w,tstar,cstar,xsol,q,ref,kk,rows,tt,c,dm,pred,eps,lower,upper,start=AbsoluteTime[]},
+ mu=N[1+ProductLog[1/E],wp+60];p=(mu-1)/mu;ll=N[Log[n],wp+20];rho=Sqrt[ll/n];z=zz/.FindRoot[Erfc[zz/Sqrt[2]]/2==Sqrt[mu/n]zz,{zz,Sqrt[ll]},WorkingPrecision->wp+20,AccuracyGoal->wp-30,PrecisionGoal->wp-30];d=Sqrt[mu n]z;qbase=n mu-d;w=ll/2+Log[ll];tstar=-Sqrt[mu]/2;cstar=mu+tstar rho;
+ fun[x_?NumericQ]:=n/ll^2 mean47[n,cstar,qbase+x ll,w,wp,step,cut]["mean_minus_one"];
+ xsol=x/.FindRoot[fun[x]==0,{x,N[(9-mu)/24,wp],N[(9-mu)/24-1/10,wp]},Method->"Secant",WorkingPrecision->wp,AccuracyGoal->40,PrecisionGoal->40,MaxIterations->30];q=qbase+xsol ll;ref=mean47[n,cstar,q,w,wp,step,cut];If[!TrueQ[Abs[ref["mean_minus_one"]n/ll^2]<10^-30],Return[<|"N_exact"->ToString[n,InputForm],"root_valid"->False,"status"->"root residual failed; no sensitivity or repair result accepted","normalized_residual"->ToString[ref["mean_minus_one"]n/ll^2,InputForm]|>]];kk=logK47[n,w,wp];
+ rows=Table[c=mu+tt rho;dm=mean47[n,c,q,w,wp,step,cut]["mean_minus_one"];pred=-p(tt-tstar)^2/2;eps=-Log[1+dm];lower=eps+(n-1)Log[1+eps]+Log[1-Exp[-w]]-kk["logK"];upper=n eps;
+ <|"t_over_sqrtmu"->N[tt/Sqrt[mu],20],"fixed_input_mean_deficit_normalized"->N[-dm n/ll^2,25],"predicted_deficit"->N[-pred,25],"mean_minus_one"->ToString[dm,InputForm],"repair_log_amplitude"->ToString[eps,InputForm],"log_modular_repair_lower_bound_over_L2"->If[dm<0,N[lower/ll^2,25],Null],"log_modular_repair_upper_bound_over_L2"->If[dm<0,N[upper/ll^2,25],Null],"repair_needed"->TrueQ[dm<0]|>,{tt,{-Sqrt[mu],0,Sqrt[mu]/2}}];
+ <|"N_exact"->ToString[n,InputForm],"working_precision"->wp,"fourier_step"->step,"fourier_cutoff"->cut,"q_root_offset_over_logN"->N[xsol,25],"q_internal"->ToString[q,InputForm],"root_valid"->TrueQ[Abs[ref["mean_minus_one"]n/ll^2]<10^-30],"reference_c"->ToString[cstar,InputForm],"root_mean_residual"->ToString[ref["mean_minus_one"],InputForm],"root_normalized_residual"->ToString[ref["mean_minus_one"]n/ll^2,InputForm],"log_actual_budget_plus_q"->N[kk["logK"],25],"I_quadrature_tail_bound"->ToString[kk["I_tail_upper"],InputForm],"rows"->rows,"seconds"->N[AbsoluteTime[]-start]|>];
+If[!TrueQ[$plateau47LibraryMode],out47=If[Length[$ScriptCommandLine]>=2,$ScriptCommandLine[[2]],"/tmp/plateau47.json"];rr47={};Do[r=run47[n];AppendTo[rr47,r];Print[If[TrueQ[r["root_valid"]],<|"N"->n,"seconds"->r["seconds"],"deficits"->r["rows"][[All,"fixed_input_mean_deficit_normalized"]]|>,KeyTake[r,{"N_exact","status","root_valid"}]]];Export[out47,<|"wolfram"->$Version,"status"->"fixed actual plateau input; exact-law floating Fourier and root computations","rows"->rr47|>,"RawJSON"],{n,{256,4096,65536,2^24,2^48,2^96,2^192,2^256,2^512,2^1024}}]];
