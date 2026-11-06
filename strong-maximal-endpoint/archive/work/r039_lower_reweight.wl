@@ -1,0 +1,10 @@
+(* r039: normalized source-weight quadratic reweight atop r038 mixed source. *)
+root39=DirectoryName[$InputFileName];args39=$ScriptCommandLine;seed39=If[Length[args39]>=2,args39[[2]],FileNameJoin[{DirectoryName[root39],"Math-Research-strong-maximal","strong-maximal-endpoint","rounds","r030","receiver_seed.json"}]];out39=If[Length[args39]>=3,args39[[3]],FileNameJoin[{root39,"r039_lower_reweight.json"}]];
+(* r038 defines the tested mixed-source run[h,scale,no,order] kernel.  It first
+   performs its own immutable seed scan, then this script changes only w0. *)
+Get[FileNameJoin[{root39,"r038_lower_scan.wl"}]];
+wOrig=w0;totOrig=Total[wOrig];weightEta[eta_]:=Module[{z=wOrig Exp[eta (vv/16.)^2]},z totOrig/Total[z]];
+hs39={.075,.15,.3};etas39={-.2,0.,.2};rows39=Flatten[Table[w0=weightEta[eta];Join[<|"eta"->eta,"weight_total_residual"->(Total[w0]-totOrig)|>,run[h,1.025]],{h,hs39},{eta,etas39}],1];
+order39=Ordering[rows39[[All,"accepted_cone_log_score"]],-2];top39=rows39[[order39]];
+refined39=Flatten[Table[w0=weightEta[row["eta"]];Table[Join[<|"eta"->row["eta"],"h"->row["h"],"scale_refinement"->sc|>,run[row["h"],sc,128,32]],{sc,{1.020,1.030}}],{row,top39}],1];
+w0=wOrig;res39=<|"status"->"r039 normalized source-weight quadratic reweight scan; floating direct quadrature","weight_formula"->"w_j exp(eta(v_j/16)^2) * sum(w)/sum(w exp(eta(v/16)^2))","h_values"->hs39,"eta_values"->etas39,"initial_N64_soft32"->rows39,"top_two_by_score"->top39,"refined_N128_soft32"->refined39,"scalar_reference_log_score"->71.71499208794934,"selection"->"accepted-cone actual Phi64 score"|>;Export[out39,res39,"RawJSON"];Print[<|"top"->top39,"refined"->refined39|>];

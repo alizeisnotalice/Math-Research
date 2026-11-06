@@ -1,0 +1,15 @@
+mu=1+ProductLog[Exp[-1]];c0=N[mu,70];p0=1/(1+Exp[c0]);
+parts[a_Integer,b_Integer,r_?NumericQ,nn_Integer]:=Module[{ks=Range[0,b],bw,x,u,q,call,rr},If[r<=0,Return[{0,1,a+b c0 p0-r}]];bw=N[Binomial[b,#]&/@ks,70]Exp[-c0 ks]/(1+Exp[-c0])^b;x=r-c0 ks;u=Clip[x,{0,Infinity}];q=Total[bw GammaRegularized[a,u]];call=Total[bw(a GammaRegularized[a+1,u]-x GammaRegularized[a,u])];rr=Exp[-r]Total[N[Binomial[b,#]&/@ks,70]u^a]/((1+Exp[-c0])^b Gamma[a+1]);{rr,q,call}];
+v[a_Integer,b_Integer,r_?NumericQ,nn_Integer]:=If[a==0&&b==0,If[r>0,Exp[-r],1-r/nn],With[{z=parts[a,b,r,nn]},z[[1]]+z[[2]]+z[[3]]/nn]];
+vp[a_Integer,b_Integer,r_?NumericQ,nn_Integer]:=If[a==0&&b==0,If[r>0,-Exp[-r],-1/nn],With[{z=parts[a,b,r,nn]},-z[[1]]-z[[2]]/nn]];
+density[t_Integer,r_?NumericQ]:=If[r<=0,0,Exp[-r]Total[N[Binomial[t,#]&/@Range[0,t],70]Clip[r-c0 Range[0,t],{0,Infinity}]^(t-1)]/((1+Exp[-c0])^t Gamma[t])];
+fprime[t_Integer,r_?NumericQ]:=Module[{x=Clip[r-c0 Range[0,t],{0,Infinity}],bw=N[Binomial[t,#]&/@Range[0,t],70]},density[t,r](-1+(t-1)Total[bw x^(t-2)]/Total[bw x^(t-1)])];
+case[nn_,tt_,rr_]:=Module[{aa,cc=c0,lc=0,hc=rr+c0,d,diff,sl,proposal,base,b1,b2,b3,exactgain,taylor,src,pr,ff,fp,z,iter=0,kk},aa=v[tt,tt-1,rr,nn];base=v[tt,tt,rr,nn];Do[iter=k;diff=aa+Exp[-cc]v[tt,tt-1,rr-cc,nn]-(1+Exp[-cc])v[tt-1,tt-1,rr-cc,nn];If[diff>0,lc=cc,hc=cc];sl=(1+Exp[-cc])vp[tt-1,tt-1,rr-cc,nn];If[Abs[diff]<10^-35 Max[Abs[sl],10^-30],Break[]];proposal=cc-diff/sl;If[proposal<=lc||proposal>=hc,proposal=(lc+hc)/2];If[Abs[proposal-cc]<10^-40,Break[]];cc=proposal,{k,1,30}];
+kk=(aa+Exp[-cc]v[tt,tt-1,rr-cc,nn])/(1+Exp[-cc]);exactgain=kk-base;
+b1=p0(base-v[tt-1,tt-1,rr-c0,nn]);b2=p0(2p0-1)(base-v[tt-1,tt-1,rr-c0,nn])+p0 vp[tt-1,tt-1,rr-c0,nn];taylor=-b1^2/(2b2);
+pr=parts[tt,tt,rr,nn];ff=density[tt,rr];fp=fprime[tt,rr];b3=ff-pr[[1]]-(1-1/nn)fp;src=mu^2 p0/8 (pr[[1]]-(1-1/nn)ff)^2/(pr[[1]]+pr[[2]]/nn);
+<|"N"->nn,"future_t"->tt,"r"->N[rr,20],"R_over_f"->N[pr[[1]]/ff,20],"v2_over_f"->N[(pr[[1]]-(1-1/nn)ff)/ff,20],"v3_over_f"->N[b3/ff,20],"best_c"->N[cc,20],"root_iterations"->iter,"root_residual"->ToString[N[aa+Exp[-cc]v[tt,tt-1,rr-cc,nn]-(1+Exp[-cc])v[tt-1,tt-1,rr-cc,nn],30],InputForm],"actual_max_gain"->N[exactgain,20],"exact_parameter_Taylor_gain"->N[taylor,20],"actual_over_Taylor"->N[exactgain/taylor,20],"spatial_source_candidate"->N[src,20]|>];
+crit=Table[With[{z=zv/.FindRoot[Erfc[zv/Sqrt[2]]/2-Sqrt[mu]zv/Sqrt[nn]==0,{zv,1},WorkingPrecision->70]},case[nn,nn,nn mu-Sqrt[nn mu]z]],{nn,{16,64,256}}];
+moderate=Table[case[256,32,32mu+zz Sqrt[32mu]],{zz,{-4,0,4}}];
+result=<|"wolfram"->$Version,"status"->"70-digit explicit Gamma-binomial expectation, one-step global root; no interval certificate","critical_rows"->crit,"moderate_rows"->moderate|>;
+Export["/Users/zhengzhihao/Desktop/T/work/r033_payoff_checks.json",result,"RawJSON"];Print[result];

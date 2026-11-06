@@ -1,0 +1,19 @@
+(* Corrected positive rate; finite PWL diagnostics only. *)
+repo40="/Users/zhengzhihao/Desktop/T/Math-Research-strong-maximal/strong-maximal-endpoint";
+$nonlinear36LibraryMode=True;Get[FileNameJoin[{repo40,"code","nonlinear_probe36.wl"}]];$nonlinear36LibraryMode=False;
+args40=$ScriptCommandLine;mode40=If[Length[args40]>=3,args40[[3]],"standard"];mesh40=If[MemberQ[{"refine","meshcheck"},mode40],1/500,1/250];wp40=If[MemberQ[{"refine","meshcheck"},mode40],80,50];mm40=N[1+ProductLog[1/E],wp40+20];pp40=1/(1+Exp[mm40]);k440=mm40(mm40-1)(3+5mm40)/384;
+lm40[cc_,ee_]:=Log[(1+Exp[(ee-1)cc])/((1-ee)(1+Exp[-cc]))];
+y40[ee_]:=1/(1-ee)+mm40 Exp[(ee-1)mm40]/(1+Exp[(ee-1)mm40]);
+rate40[ep_]:=Module[{ee=N[ep,wp40+20],yy,cc,th,rr,im,ist,dd},yy=y40[ee];
+ rr=FindRoot[{(Exp[(1-th)cc]-(1-th)Exp[cc]+th)/th==0,1/(1-th)+cc/(1+Exp[(1-th)cc])==yy},{th,ee},{cc,mm40+mm40 ee/2},WorkingPrecision->wp40,AccuracyGoal->30,PrecisionGoal->30];
+ th=th/.rr;cc=cc/.rr;im=ee yy-lm40[mm40,ee];ist=th yy-lm40[cc,th];dd=pp40/8(yy-mm40)^2 ee(1-ee);N[{yy,ee,th,ist,(im-ist-dd)/ee^4},MachinePrecision]];
+curve40=Prepend[rate40/@Range[mesh40,4/5,mesh40],N[{mm40,0,0,0,k440},MachinePrecision]];
+eta40=Interpolation[curve40[[All,{1,2}]],InterpolationOrder->3];theta40=Interpolation[curve40[[All,{1,3}]],InterpolationOrder->3];istar40=Interpolation[curve40[[All,{1,4}]],InterpolationOrder->3];g40=Interpolation[curve40[[All,{1,5}]],InterpolationOrder->3];
+bound40[nn_]:=bound40[nn]=Module[{ee=N[1/nn,wp40+20],cc},cc=c0/.FindRoot[(Exp[(1-ee)c0]-(1-ee)Exp[c0]+ee)/ee==0,{c0,mm40+mm40 ee/2},WorkingPrecision->wp40,AccuracyGoal->30,PrecisionGoal->30];N[lm40[cc,ee],MachinePrecision]];
+logplus40[nn_,tt_,r_]:=If[r/tt<=mu36||theta40[r/tt]<1./nn,-r/nn+tt bound40[nn],-tt istar40[r/tt]];
+value40[nn_,tt_,rr_,alpha_,beta_,kind_]:=Module[{st=fast36[nn,tt,rr],eta=0.,ff=0.,logv},If[rr/tt>mu36,eta=eta40[rr/tt];If[kind==="corrected",ff=eta^4 g40[rr/tt]]];logv=Log[st[[1]]]+(alpha st[[2]]+beta weight36[tt]st[[6]])/st[[1]]+tt ff;Exp[Min[Log[st[[4]]],logplus40[nn,tt,rr],logv]]];
+case40[nn_,tt_,alpha_,beta_,hh_,kind_]:=Module[{grid,iv,pv,mono,ans,res,idx,core,pos},grid=N[Range[0,Ceiling[(tt mu36+5Sqrt[tt mu36])/hh]]hh];iv=value40[nn,tt,#,alpha,beta,kind]&/@grid;pv=value40[nn,tt-1,#,alpha,beta,kind]&/@grid;mono=Max[0.,Max[Differences[iv]],Max[Differences[pv]]];If[mono>10^-12,Return[<|"N"->nn,"t"->tt,"alpha"->alpha,"beta"->beta,"h"->hh,"kind"->kind,"monotonicity_violation"->mono,"status"->"nonmonotone; kernel skipped"|>]];ans=compiledStage[Developer`ToPackedArray[pv],nn,tt,hh,mu36];res=Take[ans,Length[iv]]-iv;idx=First@Ordering[res,-1];core=Flatten@Position[(#<=2Sqrt[tt Log[tt]]&)/@Abs[grid-tt mu36],True];pos=Flatten@Position[(#>=tt mu36&)/@grid,True];<|"N"->nn,"t"->tt,"alpha"->alpha,"beta"->beta,"h"->hh,"kind"->kind,"monotonicity_violation"->mono,"maximum_residual"->res[[idx]],"at_r"->grid[[idx]],"core_maximum_residual"->Max[res[[core]]],"positive_side_maximum_residual"->Max[res[[pos]]],"status"->"machine PWL; cubic rate table; not certified"|>];
+rows40=If[MemberQ[{"refine","meshcheck"},mode40],Flatten[Table[case40[256,128,1.01,bb,If[mode40==="refine",.0125,.025],kind],{bb,{0.,.01}},{kind,{"original","corrected"}}]],Flatten[Table[case40[256,tt,1.01,bb,hh,kind],{tt,{16,64,128}},{bb,{0.,.01}},{hh,{.05,.025}},{kind,{"original","corrected"}}]]];
+valid40=Table[Module[{rr=rate40[et],yy,actual},yy=First[rr];actual=N[et]^4 Last[rr];<|"eta"->N[et],"F_absolute_interpolation_error"->Abs[eta40[yy]^4 g40[yy]-actual],"Istar_absolute_interpolation_error"->Abs[istar40[yy]-rr[[4]]]|>],{et,{73/10000,317/10000,891/10000,1733/10000}}];
+args40=$ScriptCommandLine;out40=If[Length[args40]>=2,args40[[2]],"/tmp/corrected_probe40.json"];
+Export[out40,<|"wolfram"->$Version,"rate_table_precision"->wp40,"eta_mesh"->N[mesh40],"rate_table_validation"->valid40,"rows"->rows40|>,"RawJSON"];Print[<|"cases"->Length[rows40],"output"->out40|>];

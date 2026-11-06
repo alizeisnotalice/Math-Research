@@ -1,0 +1,402 @@
+{
+  "model": "finite 4x4 unit input cells; real axis-parallel grid-edge rectangles; binary amplitude one-hot, rectangle, and receiving-cell variables",
+  "amplitudes": [
+    0,
+    1,
+    1.5,
+    2,
+    4,
+    8,
+    16
+  ],
+  "orlicz_costs": [
+    0,
+    1,
+    2.1081976621622465,
+    3.3862943611198908,
+    9.5451774444795632,
+    24.635532333438686,
+    60.3614195558365
+  ],
+  "delta": 0.001,
+  "out_edges": [
+    -16,
+    -4,
+    -1,
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    8,
+    20
+  ],
+  "rectangle_count_after_prune": 1422,
+  "solver_history": [
+    {
+      "iteration": 1,
+      "lambda_in": 0,
+      "exitflag": 1,
+      "fval": -720,
+      "message": "找到最优解。\n\nIntlinprog 在根节点处停止，因为目标值在最优值的间隙容差范围内，options.AbsoluteGapTolerance = 1e-06。intcon 变量是容差范围内的整数，options.ConstraintTolerance = 1e-06。",
+      "relativegap": 0,
+      "numnodes": 0,
+      "constrviolation": 0,
+      "halo_area": 720,
+      "cost": 965.782712893384,
+      "ratio": 0.74550930596278253,
+      "dinkelbach_residual": 720,
+      "recheck_ok": true
+    },
+    {
+      "iteration": 2,
+      "lambda_in": 0.74550930596278253,
+      "exitflag": 2,
+      "fval": -283.96032318670711,
+      "message": "求解器过早停止。找到整数可行点。\n\nIntlinprog 已停止，因为它超出了时间限制，options.MaxTime = 5。intcon 变量是容差范围内的整数，options.ConstraintTolerance = 1e-06。",
+      "relativegap": 1.4385389882312996,
+      "numnodes": 1408,
+      "constrviolation": 0,
+      "halo_area": 720,
+      "cost": 584.88830833596728,
+      "ratio": 1.2310042613921133,
+      "dinkelbach_residual": 283.96032318670706,
+      "recheck_ok": true
+    },
+    {
+      "iteration": 3,
+      "lambda_in": 1.2310042613921133,
+      "exitflag": 2,
+      "fval": -48.436693774975758,
+      "message": "求解器过早停止。找到整数可行点。\n\nIntlinprog 已停止，因为它超出了时间限制，options.MaxTime = 5。intcon 变量是容差范围内的整数，options.ConstraintTolerance = 1e-06。",
+      "relativegap": 13.065088003018337,
+      "numnodes": 1296,
+      "constrviolation": 0,
+      "halo_area": 336,
+      "cost": 233.60057738535022,
+      "ratio": 1.4383526092306291,
+      "dinkelbach_residual": 48.436693774975765,
+      "recheck_ok": true
+    },
+    {
+      "iteration": 4,
+      "lambda_in": 1.4383526092306291,
+      "exitflag": 2,
+      "fval": -0.29703281280829674,
+      "message": "求解器过早停止。找到整数可行点。\n\nIntlinprog 已停止，因为它超出了时间限制，options.MaxTime = 5。intcon 变量是容差范围内的整数，options.ConstraintTolerance = 1e-06。",
+      "relativegap": 2271.445224446044,
+      "numnodes": 154,
+      "constrviolation": 3.5491645142862148E-16,
+      "halo_area": 288,
+      "cost": 200.02255729287634,
+      "ratio": 1.4398376058071571,
+      "dinkelbach_residual": 0.29703281280831106,
+      "recheck_ok": true
+    },
+    {
+      "iteration": 5,
+      "lambda_in": 1.4398376058071571,
+      "exitflag": 2,
+      "fval": -17.957149656793842,
+      "message": "求解器过早停止。找到整数可行点。\n\nIntlinprog 已停止，因为它超出了时间限制，options.MaxTime = 5。intcon 变量是容差范围内的整数，options.ConstraintTolerance = 1e-06。",
+      "relativegap": 36.586384313488232,
+      "numnodes": 453,
+      "constrviolation": 1.7763568394002505E-15,
+      "halo_area": 384,
+      "cost": 254.22509376535314,
+      "ratio": 1.5104724490904411,
+      "dinkelbach_residual": 17.957149656793888,
+      "recheck_ok": true
+    },
+    {
+      "iteration": 6,
+      "lambda_in": 1.5104724490904411,
+      "exitflag": 2,
+      "fval": 6.2670387695403154,
+      "message": "求解器过早停止。找到整数可行点。\n\nIntlinprog 已停止，因为它超出了时间限制，options.MaxTime = 5。intcon 变量是容差范围内的整数，options.ConstraintTolerance = 1e-06。",
+      "relativegap": 107.5976794701976,
+      "numnodes": 391,
+      "constrviolation": 0,
+      "halo_area": 38,
+      "cost": 29.306750213283618,
+      "ratio": 1.2966296066076979,
+      "dinkelbach_residual": -6.2670387695403136,
+      "recheck_ok": true
+    }
+  ],
+  "best_candidate": {
+    "amplitude_grid": [
+      [
+        1,
+        1,
+        16,
+        16
+      ],
+      [
+        1.5,
+        2,
+        16,
+        8
+      ],
+      [
+        1.5,
+        2,
+        2,
+        1
+      ],
+      [
+        1.5,
+        8,
+        2,
+        1
+      ]
+    ],
+    "amplitude_level_index": [
+      [
+        2,
+        2,
+        7,
+        7
+      ],
+      [
+        3,
+        4,
+        7,
+        6
+      ],
+      [
+        3,
+        4,
+        4,
+        2
+      ],
+      [
+        3,
+        6,
+        4,
+        2
+      ]
+    ],
+    "selected_rectangles": [
+      [
+        -16,
+        4,
+        0,
+        4
+      ],
+      [
+        -16,
+        4,
+        2,
+        5
+      ],
+      [
+        -4,
+        2,
+        1,
+        8
+      ],
+      [
+        -4,
+        4,
+        -4,
+        4
+      ],
+      [
+        -1,
+        2,
+        -16,
+        4
+      ],
+      [
+        -1,
+        2,
+        2,
+        20
+      ],
+      [
+        0,
+        4,
+        -16,
+        4
+      ],
+      [
+        0,
+        4,
+        0,
+        20
+      ],
+      [
+        0,
+        8,
+        -4,
+        4
+      ],
+      [
+        0,
+        8,
+        0,
+        8
+      ],
+      [
+        0,
+        20,
+        0,
+        4
+      ],
+      [
+        0,
+        20,
+        2,
+        5
+      ]
+    ],
+    "selected_rectangle_mass": [
+      80.5,
+      62,
+      59,
+      80.5,
+      61.5,
+      56,
+      80.5,
+      80.5,
+      80.5,
+      80.5,
+      80.5,
+      62
+    ],
+    "selected_rectangle_area": [
+      80,
+      60,
+      42,
+      64,
+      60,
+      54,
+      80,
+      80,
+      64,
+      64,
+      80,
+      60
+    ],
+    "strict_margin_numerator_1000mass_minus_1001area": [
+      420,
+      1940,
+      16958,
+      16436,
+      1440,
+      1946,
+      420,
+      420,
+      16436,
+      16436,
+      420,
+      1940
+    ],
+    "halo_area": 384,
+    "cost": 254.22509376535314,
+    "ratio": 1.5104724490904411,
+    "covered_receiving_cells": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      93,
+      94,
+      95,
+      96,
+      97
+    ],
+    "recheck_ok": true
+  },
+  "axisblock_constant_baseline": {
+    "xblock": [
+      2,
+      3,
+      2,
+      3
+    ],
+    "amplitude": 4,
+    "halo_area": 56,
+    "cost": 38.180709777918253,
+    "ratio": 1.4667092446874181,
+    "rectangle_count": 125
+  },
+  "interpretation": "finite-grid family probe only; a time-limit incumbent is not recorded as an optimizer"
+}

@@ -1,0 +1,10 @@
+# r037 completed; goal remains active
+2026-11-06. Dedicated clone /Users/zhengzhihao/Desktop/T/Math-Research-strong-maximal.
+Remote verified ancestor: 9fc171bf8d7460de59d0181f26c1414d491c3493. Worktree clean.
+Report strong-maximal-endpoint/rounds/r037/report.md is authoritative; independent baseline_audit PASS and upper_audit late splice + L1 counterexample.
+Strict: W=min(global Ominus,Oplus,matched nonlinear I) satisfies T Wprev<=W at ALL r for t>=ceil N^gamma. Enlarge Lambda so Lambda b²−delta>=b², A tail K>2/gamma−1, tail/floor ratio N^[2−gamma(K+1)]/logN ->0.
+Strict initial area: integral(trueU_T−v_T^a−Tdelta/N)+ <= ClogT+CT|a−mu|+CT/N. Correct |a−mu|~sqrt(logN/N). For gamma<1/2 extras o1. Uses r021 global CDF+mgf cutoff; Ross arxiv1109.1880 Thm3.2 finite FOURTH moments W1 CLT; martingale Bernstein call area O(T), same-mean call area variance/2.
+Strict obstacle: arbitrary bounded natural-tube-supported error mass M=logT at y0=Tma cannot transport with f_N scale. Constant future c_N with mean=(q−y0)/(N−T) (offset fourth-root(logN/N)) makes error central, >=c M/sqrtN vs f_N M~MlogN/N. Need policy-sensitive base-payoff loss/Doob-killed compensator; no sharp general C result.
+Numerics: Mathematica15 30 logistic/exponential probes; exact identities+50digit mean roots; actual5 mixed source+receiver n64/b32/128nodes/soft32. 33template quadratic score71.24294779/reverse71.13579289, below scalar71.71499209. No new certified lower. All archive scripts rerun; initial exact branch outputs identical, tiny tail underflows documented. New round10files~40KB; no cleanup needed. No MATLAB started. All task CLI Wolfram runs exited.
+Next round two actions: (1) compensated transfer lemma retaining mean loss, NOT arbitrary L1 smoothing or reference bridge; (2) growing template coupling source+receiver+union geometry with actual Phi64; only competitive candidate certify.
+Do not mark goal complete: general sharp log coefficient remains unknown. Need continue rounds per user until stopped.

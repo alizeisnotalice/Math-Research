@@ -1,0 +1,10 @@
+Clear[a,h];rr=Exp[-a];ss=Exp[-a-h];
+dPlus=Log[(1+rr)/(1+ss)]-Log[2](rr-ss)/(1+ss);
+sm=Exp[-a+h];dMinus=Log[(1+rr)/(1+sm)]+2Log[2](sm-rr)/(1+sm);
+p=rr/(1+rr);
+slopes=FullSimplify[{Limit[dPlus/h,h->0],Limit[dMinus/h,h->0]}/p,Assumptions->a>0];
+tvPlus=(rr-ss)(2/(1+rr)-1/(1+ss));tvSlope=FullSimplify[Limit[tvPlus/h,h->0]/p,Assumptions->a>0];
+mu=1+ProductLog[Exp[-1]];
+rows=Table[<|"delta"->ToString[hh,InputForm],"D_plus_over_pdelta"->ToString[N[(dPlus/(p h))/.{a->mu,h->hh},50],InputForm],"D_minus_over_pdelta"->ToString[N[(dMinus/(p h))/.{a->mu,h->hh},50],InputForm]|>,{hh,{1/1000,1/10^6,1/10^9,1/10^12}}];
+result=<|"wolfram"->$Version,"precision"->"exact symbolic inputs; N[...,50]","KL_slopes_divided_by_p"->ToString[slopes,InputForm],"TV_slope_divided_by_p"->tvSlope,"rows"->rows|>;
+Export["/Users/zhengzhihao/Desktop/T/work/r030_entropy_symbolic.json",result,"RawJSON"];Print[result];

@@ -1,0 +1,10 @@
+Clear[x,c,theta,r];
+M[c_,theta_]:=(1+Exp[-(1-theta)c])/((1-theta)(1+Exp[-c]));
+stationaryResidual=FullSimplify[D[Log[M[c,theta]],c]-(1/(1+Exp[c])-(1-theta)/(1+Exp[(1-theta)c])),Assumptions->{c>0,0<theta<1}];
+hazardResiduals=Table[With[{pp=Sum[x^j/Factorial[j],{j,0,b-1}]},Expand[(b-1)pp-x D[pp,x]-Sum[(b-1-j)x^j/Factorial[j],{j,0,b-1}]]],{b,1,8}];
+chernoffHalf=FullSimplify[4Exp[-3]<1/2];mu=1+ProductLog[Exp[-1]];
+penaltyRoots=Table[With[{rr=nn+ProductLog[-nn Exp[-nn]]},<|"N"->nn,"positive_penalty_root"->ToString[N[rr,50],InputForm],"N_minus_root"->ToString[N[-ProductLog[-nn Exp[-nn]],50],InputForm]|>],{nn,{2,16,64,128}}];
+frontRoots=Table[With[{a=1+2/nn},With[{qq=-a-ProductLog[-1,-Exp[-a]]},<|"N"->nn,"first_stage_front"->ToString[N[qq,50],InputForm],"equation_residual"->With[{qn=N[qq,110]},ToString[N[Exp[qn]-qn-1-2/nn,50],InputForm]]|>]],{nn,{16,32,64,128}}];
+mgfRows=Table[Module[{cc},cc=cv/.FindRoot[Exp[(1-th)cv]-(1-th)Exp[cv]+th==0,{cv,N[mu,70]},WorkingPrecision->60,AccuracyGoal->40,PrecisionGoal->40];<|"theta"->ToString[th,InputForm],"global_max_c"->ToString[N[cc,40],InputForm],"Mstar"->ToString[N[M[cc,th],40],InputForm]|>],{th,{1/20,1/10,1/4,1/2}}];
+result=<|"wolfram"->$Version,"stationarity_residual"->ToString[stationaryResidual,InputForm],"Gamma_hazard_polynomial_residuals"->hazardResiduals,"four_e_minus3_less_half"->chernoffHalf,"penalty_roots"->penaltyRoots,"first_front_roots"->frontRoots,"positive_mgf_maxima"->mgfRows|>;
+Export["/Users/zhengzhihao/Desktop/T/work/r033_structure_checks.json",result,"RawJSON"];Print[result];

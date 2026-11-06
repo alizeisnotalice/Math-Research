@@ -1,0 +1,83 @@
+{
+	"wolfram":"15.0.0 for Mac OS X ARM (64-bit) (May 15, 2026)",
+	"symbolic_checks":{
+		"affine_regret":"(m0 - mc)\/nn",
+		"convex_gap_identity":"0",
+		"mean_at_mu":"m0",
+		"mean_second_at_mu":"-1 + m0^(-1)",
+		"variance_at_mu":"m0",
+		"variance_first_at_mu":"-1 + m0",
+		"mean_loss_scaled_limit":"0",
+		"centered_variance_scaled_limit":"0"
+	},
+	"root_precision":[
+		60,
+		100
+	],
+	"gamma":0.75,
+	"rows":[
+		{
+			"N":65536,
+			"T":4096,
+			"a":1.273345017188099,
+			"mean_loss":2.860934897813385e-6,
+			"Gaussian_W1_upper":4.396548143104534e-2,
+			"old_stepwise_scale":2.096957674690313e1,
+			"precision_doubling_difference":"0``55.98079179191622"
+		},
+		{
+			"N":16777216,
+			"T":262144,
+			"a":1.278032091205744,
+			"mean_loss":2.037091058892841e-8,
+			"Gaussian_W1_upper":2.709747470875794e-2,
+			"old_stepwise_scale":1.133645805204564e2,
+			"precision_doubling_difference":"0``54.173814852802955"
+		},
+		{
+			"N":4294967296,
+			"T":16777216,
+			"a":1.278431564798676,
+			"mean_loss":1.184418782758813e-10,
+			"Gaussian_W1_upper":1.525875338610918e-2,
+			"old_stepwise_scale":5.532783983904689e2,
+			"precision_doubling_difference":"0``52.36756702204131"
+		},
+		{
+			"N":1099511627776,
+			"T":1073741824,
+			"a":1.278462155825451,
+			"mean_loss":6.204875866322092e-13,
+			"Gaussian_W1_upper":8.350938123194818e-3,
+			"old_stepwise_scale":2.562952609036502e3,
+			"precision_doubling_difference":"0``50.56138185213467"
+		}
+	],
+	"scope":"Gaussian comparison term only; unscaled iid CLT adds a uniform O(1) term",
+	"right_tail_checks":[
+		{
+			"T":1,
+			"call_polynomial_degree":0,
+			"payoff_degree":1,
+			"payoff_leading_coefficient_check":true
+		},
+		{
+			"T":2,
+			"call_polynomial_degree":1,
+			"payoff_degree":2,
+			"payoff_leading_coefficient_check":true
+		},
+		{
+			"T":4,
+			"call_polynomial_degree":3,
+			"payoff_degree":4,
+			"payoff_leading_coefficient_check":true
+		},
+		{
+			"T":8,
+			"call_polynomial_degree":7,
+			"payoff_degree":8,
+			"payoff_leading_coefficient_check":true
+		}
+	]
+}

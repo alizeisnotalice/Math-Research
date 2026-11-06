@@ -3,5 +3,6 @@
 数学研究项目统一仓库。每个项目使用仓库根目录下独立的文件夹；当前项目：
 
 - `centered-cube-upper-bound/`：中心立方体极大算子上界研究资料。
+- [strong-maximal-endpoint/](strong-maximal-endpoint/CONTENTS.md)：强极大算子端点常数研究，第1—40轮成果、原始附件及全部已归档工作材料。
 
 其他项目可在根目录下建立各自的文件夹，并遵守仓库根目录的 `AGENTS.md` 提交约定。

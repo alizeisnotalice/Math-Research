@@ -1,0 +1,13 @@
+Clear[t,x,m,g,t0,bb,aa];
+f=Exp[-x^2/(2m t)]/Sqrt[2Pi m t];
+z2=x^2/(m t);
+h=g*((1-t0/t)*(z2-1)+Log[t/t0]);
+u=-h*f;
+res=FullSimplify[D[u,t]-m/2 D[u,{x,2}]+g*z2/t*f,Assumptions->{m>0,t>t0>0,Element[x,Reals]}];
+initial=FullSimplify[u/.t->t0,Assumptions->{m>0,t0>0,Element[x,Reals]}];
+hsimple=bb*z2+aa*Log[t/t0];
+firstResidual=FullSimplify[(D[-hsimple*f,t]-m/2 D[-hsimple*f,{x,2}])/f,Assumptions->{m>0,t>0,t0>0,Element[x,Reals]}];
+mu=1+ProductLog[Exp[-1]];
+nums=Table[With[{zz=z/.FindRoot[Erfc[z/Sqrt[2]]/2==Sqrt[mu]*z/Sqrt[n],{z,Sqrt[Log[n]]},WorkingPrecision->70]}, {n,N[zz,30],N[(mu-1)/8*((1-1/n)*(zz^2-1)+Log[n]),30]}],{n,{64,256,1024,2048}}];
+r=<|"version"->$Version,"linear_heat_residual"->ToString[res,InputForm],"initial_residual"->ToString[initial,InputForm],"simple_shift_heat_residual_over_f"->ToString[firstResidual,InputForm],"precision"->70,"linear_model_predictions"->Map[ToString[#,InputForm]&,nums,{2}]|>;
+Export["/Users/zhengzhihao/Desktop/T/work/feedback25_symbolic.json",r,"RawJSON"];Print[r];
