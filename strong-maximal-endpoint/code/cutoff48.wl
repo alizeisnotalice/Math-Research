@@ -1,0 +1,9 @@
+$plateau47LibraryMode=True;Get[FileNameJoin[{DirectoryName[$InputFileName],"plateau47.wl"}]];$plateau47LibraryMode=False;
+logCDFTailBound48[b_,c_,t_,wp_,cut_]:=Module[{sol,d,rho,eta,aa,x,logM,logg},sol=solveD46[b,N[c,wp],N[t,wp],wp];d=sol["d"];rho=d/c;eta=1-rho;aa=Abs[eta]/rho;x=N[cut/Sqrt[b],wp];logM=Log[c/d]+Log[1+Exp[-d]]-Log[1+Exp[-c]];logg=-Log[Pi]-((b-2)/2)Log[1+x^2]+Log[ArcTan[1/x]];b logM-eta t+logg-Log[aa]];
+logMeanTailBound48[n_,c_,q_,w_,wp_,cut_]:=Module[{rho=1-1/n,lu,logs,mx},lu=n mg47[c,1/n]-(q+w)/n;logs={logCDFTailBound48[n,c,q,wp,cut],logCDFTailBound48[n,c,q+w,wp,cut],lu+logCDFTailBound48[n,c rho,rho(q+w),wp,cut]};mx=Max[logs];(mx+Log[Total[Exp[logs-mx]]]+Log[n]-2Log[Log[n]])/Log[10]];
+n48=2^4096;cut48=2Ceiling[Sqrt[2(Log[n48]+200Log[10])]/2];
+r48=run47[n48,1,1/16,cut48];
+
+If[!TrueQ[r48["root_valid"]],Print[r48];Exit[1]];rr=r48;nn=n48;wp=rr["working_precision"];cc=ToExpression[rr["reference_c"]];qq=ToExpression[rr["q_internal"]];ww=N[Log[nn]/2+Log[Log[nn]],wp];
+rowsC48=Table[Module[{val,ct=pair[[1]],ss=pair[[2]],start=AbsoluteTime[]},val=mean47[nn,cc,qq,ww,wp,ss,ct]["mean_minus_one"]nn/Log[nn]^2;<|"cutoff"->ct,"step"->ss,"normalized_fixed_input_mean_residual"->ToString[val,InputForm],"less_than_1e-30"->TrueQ[Abs[val]<10^-30],"log10_normalized_CF_integral_tail_upper_bound"->N[logMeanTailBound48[nn,cc,qq,ww,wp,ct],25],"seconds"->N[AbsoluteTime[]-start]|>],{pair,{{32,1/16},{82,1/16},{96,1/32}}}];
+outC48=If[Length[$ScriptCommandLine]>=2,$ScriptCommandLine[[2]],"/tmp/cutoff48.json"];Export[outC48,<|"wolfram"->$Version,"working_precision"->wp,"N_power_of_two"->4096,"adaptive_cutoff"->cut48,"recovered_case"->r48,"rows"->rowsC48,"scope"->"same fixed recovered input, same precision; cutoff/mesh refinement isolates the fixed-cutoff numerical failure"|>,"RawJSON"];Print[rowsC48];
