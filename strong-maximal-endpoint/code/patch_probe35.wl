@@ -38,8 +38,10 @@ make[nn_,tt_,alpha_,beta_,hh_]:=Module[{grid,st,prev,cur,iv,pv,ans,active,viol,r
  "core_max_residual"->Max[res[[core]]],"active_points"->Length[active],
  "max_active_inner_derivative"->Max[st[[active,3]]+alpha st[[active,7]]+beta N[HarmonicNumber[tt,2]]st[[active,8]]],
  "note"->"T uses PWL future interpolation and r033 global root; only reliable as diagnostic when monotonicity check passes."|>];
+If[!TrueQ[$patch35LibraryMode],
 cases35=If[mode35==="quick",{{256,16,1.1,.1,.025}},{{256,64,1.1,0.,.05},{256,16,1.1,.1,.025},{256,16,1.1,1.,.025},{256,64,1.1,.1,.025},{256,64,1.1,1.,.025}}];
 If[mode35==="mesh",cases35=Flatten[Table[{256,tt,1.1,bb,hh},{tt,{16,64}},{bb,{.1,1.}},{hh,{.05,.025}}],2]];
 rows=make@@@cases35;
 Export[out35,<|"wolfram"->$Version,"status"->"50-digit finite mixtures, machine PWL Bellman kernel; unverified state interpolation; numerical diagnostics only","rows"->rows|>,"RawJSON"];
 Print[rows];
+];

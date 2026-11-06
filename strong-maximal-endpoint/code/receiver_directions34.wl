@@ -39,7 +39,7 @@ global[offset_]:=Module[{r=evaluateReceiverC[ConstantArray[cg+offset,ng],srcScal
 globalControls=global /@ {.005,.01,.0125,.025};globalRefine=global[.0075];
 winner=Join[globalControls,{globalRefine}][[First@Ordering[Join[globalControls,{globalRefine}][[All,"result","min_average"]],-1]]];
 ans=<|"status"->"r034 direct fixed-source receiver audit; floating numerical evidence only","seed_file"->"rounds/r030/receiver_seed.json",
- "source_scale"->srcScale,"r033_global_receiver_c"->cg,"group"->24,"mapping"->"u[j]:(c1,c2), u[j+32]:(c2,c1)",
+ "input_dimension"->n,"block_size"->b,"source_scale"->srcScale,"r033_global_receiver_c"->cg,"group"->24,"mapping"->"u[j]:(c1,c2), u[j+32]:(c2,c1)",
  "baseline_N128_soft32"->base,"coordinate_probes_N128_soft32"->probes,"central_group24_gradients"->grads,"best_local_coordinate"->best,"local_256_validation"->localValidation,
  "uniform_global_controls_N128_soft32"->globalControls,"one_global_refinement_N128_soft32"->globalRefine,"best_uniform_global"->winner,
  "interpretation"->"The minimum can switch groups and is nonsmooth. Uniform global c is a necessary comparator; no FOSD or receiver-specific gain is claimed."|>;
