@@ -1,0 +1,12 @@
+(* Batched all-action payoff bridge diagnostics; no interval certificate. *)
+hereBridge41=DirectoryName[$InputFileName];argsBridge41=$ScriptCommandLine;
+outBridge41=If[Length[argsBridge41]>=2,argsBridge41[[2]],"/tmp/payoff_bridge_probe41.json"];
+$mills41LibraryMode=True;Get[FileNameJoin[{hereBridge41,"mills_derivative_probe41.wl"}]];$mills41LibraryMode=False;
+logPsiBridge41[v_?NumericQ,tt_,ee_,aa_]:=tt(Log[(1-ee)/(1-ee-I v/Sqrt[tt])]+Log[(1+Exp[(ee-1)aa+I aa v/Sqrt[tt]])/(1+Exp[(ee-1)aa])]-I y41[aa,ee]v/Sqrt[tt]);
+gBridge41[s_,c_,a_]:=((1+Exp[(s-1)c])/(1+Exp[-c]))/((1+Exp[(s-1)a])/(1+Exp[-a]));
+denBridge41[tt_,ee_,aa_,nt_]:=denBridge41[tt,ee,aa,nt]=NIntegrate[Re[Exp[logPsiBridge41[v,tt,ee,aa]]hn41[ee+I v/Sqrt[tt],nt]],{v,0,24},WorkingPrecision->50,AccuracyGoal->32,PrecisionGoal->28,MaxRecursion->18,Method->{"GlobalAdaptive","SymbolicProcessing"->0}];
+calcBridge41[t0_,e0_,a0_,nt_,cc0_]:=Module[{tt=N[t0,70],ee=N[e0,70],aa=N[a0,70],cc=N[cc0,70],rat,num},rat=gBridge41[ee,cc,aa];num=NIntegrate[Re[Exp[logPsiBridge41[v,tt,ee,aa]]hn41[ee+I v/Sqrt[tt],nt](gBridge41[ee+I v/Sqrt[tt],cc,aa]-rat)],{v,0,24},WorkingPrecision->50,AccuracyGoal->32,PrecisionGoal->28,MaxRecursion->18,Method->{"GlobalAdaptive","SymbolicProcessing"->0}];{rat,num/denBridge41[tt,ee,aa,nt]}];
+jsonNumBridge41[x_]:=N[Chop[x,10^-40],MachinePrecision];
+rowsBridge41=Flatten[Table[Module[{ee=N[A Sqrt[Log[tt]/tt],70],nt,aa,controls},nt=If[mode41==="matched",tt,Infinity];aa=If[mode41==="matched",matchedA41[tt],mu41];controls=Join[Table[{"window",kk,aa+kk ee},{kk,{-4,-2,-1,0,1,2,4}}],{{"far",0,0},{"far",4,4},{"far",8,8}}];Table[Module[{vv=calcBridge41[tt,ee,aa,nt,co[[3]]]},<|"t"->tt,"A"->A,"horizon_N"->If[nt===Infinity,"infinity",nt],"a"->jsonNumBridge41[aa],"eta"->jsonNumBridge41[ee],"class"->co[[1]],"action_label"->co[[2]],"c"->jsonNumBridge41[co[[3]]],"MGF_ratio"->jsonNumBridge41[vv[[1]]],"payoff_ratio"->jsonNumBridge41[Total[vv]],"relative_error_scaled_t_over_eta"->jsonNumBridge41[(vv[[2]]/vv[[1]])tt/ee],"relative_error_scaled_t_eta"->jsonNumBridge41[(vv[[2]]/vv[[1]])tt ee]|>],{co,controls}]],{tt,{256,1024,4096}},{A,{1,2}}],2];
+Export[outBridge41,<|"wolfram"->$Version,"mode"->mode41,"precision"->50,"integration_accuracy_goal"->32,"integration_precision_goal"->28,"Fourier_cutoff"->24,"rows"->rowsBridge41,"status"->"high-precision action-grid Fourier integrals; no interval certificate"|>,"RawJSON"];
+Print[<|"output"->outBridge41,"cases"->Length[rowsBridge41]|>];
