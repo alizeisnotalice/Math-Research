@@ -79,6 +79,7 @@ evaluateReceiverC[cc_List, srcScale_?NumericQ, nOuter_Integer, inner_Integer] :=
   "min_average" -> Min[av/coeff], "seconds" -> AbsoluteTime[] - start|>];
 
 
+If[!TrueQ[$r032LibraryMode],
 (* Changes in c are accepted only after recomputing averages; no FOSD in c. *)
 localC=ConstantArray[c,ng];localC[[{23,24,25}]]+=.05;
 allC=ConstantArray[c+.05,ng];trialScale=1.0471293307430003;
@@ -88,3 +89,5 @@ local32=evaluateReceiverC[localC,trialScale,256,32];
 local64=evaluateReceiverC[localC,trialScale,256,64];
 result=<|"wolfram"->$Version,"status"->"floating continuous split-branch diagnostics; no interval certificate; no parameterwise stochastic order","source_c"->c,"base_source_scale"->baseScale,"trial_source_scale"->trialScale,"changed_groups"->{23,24,25},"receiver_c_increment"->.05,"finite_domain"->{lo,hi},"local_at_base"->localAtBase,"all_at_base"->allAtBase,"local_candidate_soft32"->local32,"local_candidate_soft64"->local64|>;
 Export[outPath,result,"RawJSON"];Print[<|"local_base_min"->localAtBase["min_average"],"all_base_min"->allAtBase["min_average"],"candidate_scaled_cost"->local64["scaled_cost"],"candidate_min"->local64["min_average"]|>];
+
+];
