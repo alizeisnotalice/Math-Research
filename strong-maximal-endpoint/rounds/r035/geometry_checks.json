@@ -1,0 +1,155 @@
+{
+  "status": "exact finite-grid actual-rectangle union search; finite family only, not C2 or high-dimensional certificate",
+  "tau": "1001/1000",
+  "input_grid": "[0,4]^2 divided into 4x4 unit cells",
+  "receiver_edges": [
+    -4,
+    -1,
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    8
+  ],
+  "candidate_rectangles": 1296,
+  "search": "all 4-cell supports and amplitudes 2,4,8,16",
+  "best_disconnected_ratio": {
+    "support": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "components": [
+      [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    ],
+    "component_count": 2,
+    "amplitude": 4,
+    "input_cells": 4,
+    "actual_rectangle_union_area": 48,
+    "component_template_union_area": 38,
+    "cross_template_union_increment": 10,
+    "orlicz_cost": 38.18070977791825,
+    "grid_ratio": 1.2571793525892156
+  },
+  "largest_cross_union_increment": {
+    "support": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "components": [
+      [
+        [
+          1,
+          2
+        ]
+      ],
+      [
+        [
+          3,
+          2
+        ]
+      ],
+      [
+        [
+          2,
+          3
+        ]
+      ],
+      [
+        [
+          4,
+          3
+        ]
+      ]
+    ],
+    "component_count": 4,
+    "amplitude": 16,
+    "input_cells": 4,
+    "actual_rectangle_union_area": 144,
+    "component_template_union_area": 102,
+    "cross_template_union_increment": 42,
+    "orlicz_cost": 241.445678223346,
+    "grid_ratio": 0.596407444770226
+  },
+  "uniform_4x4_templates": [
+    {
+      "amplitude": 2,
+      "input_cells": 16,
+      "actual_rectangle_union_area": 36,
+      "orlicz_cost": 54.18070977791825,
+      "grid_ratio": 0.6644431227933464
+    },
+    {
+      "amplitude": 4,
+      "input_cells": 16,
+      "actual_rectangle_union_area": 108,
+      "orlicz_cost": 152.722839111673,
+      "grid_ratio": 0.7071633858314338
+    },
+    {
+      "amplitude": 8,
+      "input_cells": 16,
+      "actual_rectangle_union_area": 144,
+      "orlicz_cost": 394.168517335019,
+      "grid_ratio": 0.3653259803030105
+    },
+    {
+      "amplitude": 16,
+      "input_cells": 16,
+      "actual_rectangle_union_area": 144,
+      "orlicz_cost": 965.782712893384,
+      "grid_ratio": 0.1491018611925565
+    }
+  ],
+  "mechanism_note": "The recorded component_template_union_area and cross_template_union_increment are deprecated finite-template diagnostics only: they are not full true component halos and do not prove set difference from those halos. See r035_geometry_certificate.json for the independent exact continuous cross-component certificate.",
+  "mode": "full",
+  "support_count": 1820
+}
