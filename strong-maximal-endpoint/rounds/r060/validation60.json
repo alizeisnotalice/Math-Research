@@ -1,0 +1,98 @@
+{
+  "date": "2026-11-07",
+  "status": "complete",
+  "matlab_started": false,
+  "archive_entries_sha256_verified": 357,
+  "exact_small_cell_rows": 9,
+  "independent_exact_mesh_rows": 3,
+  "precision_doubling_rows": 5,
+  "precisions": [
+    70,
+    140
+  ],
+  "native_cross": {
+    "status": "fixed-source independent floating cross-check passed",
+    "wolfram": "15.0.0 for Mac OS X ARM (64-bit) (May 15, 2026)",
+    "seconds": 1.499839,
+    "result": {
+      "source_scale": 1.0,
+      "receiver_c": [
+        1.2360667450799148,
+        1.2360667450799148,
+        1.2360667450799148,
+        1.2360667450799148,
+        1.2360667450799148,
+        1.2360667450799148,
+        1.2360667450799148,
+        1.2360667450799148,
+        1.2360667450799148,
+        1.2360667450799148,
+        1.2360667450799148,
+        1.2360667450799148,
+        1.2360667450799148,
+        1.2360667450799148,
+        1.2360667450799148,
+        1.2360667450799148,
+        1.2360667450799148
+      ],
+      "outer_nodes": 128,
+      "soft_inner_order": 32,
+      "scaled_cost": 0.11813493810035573,
+      "actual_logJ": -68.5749028991693,
+      "averages_by_group": [
+        1.0000195235943403,
+        1.0000186459934137,
+        1.0000163642556632,
+        1.0000135510195112,
+        1.0000111839368164,
+        1.000009999998419,
+        1.0000105343783654,
+        1.0000136611317758,
+        1.0000214205342073,
+        1.0000375875131566,
+        1.0000672633907841,
+        1.0001148679187464,
+        1.0001802831665385,
+        1.0002534586802734,
+        1.0003083518543459,
+        1.0002974539931335,
+        1.0001481998083295
+      ],
+      "min_average": 1.000009999998419,
+      "seconds": 1.499735
+    },
+    "checks": {
+      "logJ_difference": -9.991651950258529e-11,
+      "all_average_max_difference": 1.5121504048920542e-10
+    },
+    "scope": "Branch-split finite-window floating quadrature, not interval certification"
+  },
+  "scipy_fixed_source_replay": [
+    {
+      "outer_nodes": 512,
+      "soft_order": 16,
+      "logJ": -68.57490289906939,
+      "min_average": 1.0000100000000012,
+      "mirror_average_max_abs_difference": 2.6645352591003757e-15,
+      "score_logV_minus_logJ": 71.16524783050123
+    },
+    {
+      "outer_nodes": 512,
+      "soft_order": 64,
+      "logJ": -68.57490289906939,
+      "min_average": 1.000010000000001,
+      "mirror_average_max_abs_difference": 3.3306690738754696e-15,
+      "score_logV_minus_logJ": 71.16524783050123
+    }
+  ],
+  "projected_KKT_residual": 0.0002763993393033459,
+  "full_gradient_norm": 0.0005967034519387404,
+  "scope": "Exact construction proof is separate. All receiver optimization and cross-check values are floating finite-window evidence, not a new certified endpoint bound. Failed unsplit contact-atom diagnostic excluded.",
+  "sha256": {
+    "code/weighted_check60.wl": "9af5f246aad84149874a0b770be4b4572037f159bfd4f27cbe3fe571c6f59bf7",
+    "code/mesh60.wl": "12804058b5ef09d47b4317e329d17d6de4e9dd38e9adf59a87e7f0ec162e1976",
+    "code/compute60.py": "d21a5eed9a0db0fc9241620feedc7e80b6dc817f2e8c3692d460042908c9a3a0",
+    "code/compute60_cross.wl": "bf74a290ff7ba8c1fc2ba89cbc67ab67634be3bfb7b7da279b7c8360ae243e8e",
+    "rounds/r060/compute60.json": "47c26ca9b25f425b477287d194e0762410a693a3323dba193b8bae52000b825d"
+  }
+}
