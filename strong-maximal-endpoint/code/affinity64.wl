@@ -1,0 +1,19 @@
+ClearAll[density64,case64];
+density64[b_Integer,sh_List,pr_List,x_,wp_Integer,step0_:1/8]:=Module[{bb=N[b,wp],sb,mean,lam,theta,rho,wt,mu,logM,om,logcf,g,cut,tail,sol},
+sb=Sqrt[bb];mean[aa_?NumericQ]:=1/(1-aa)+Total[pr Exp[aa sh] sh]/Total[pr Exp[aa sh]];
+sol=FindRoot[sb(mean[la/sb]-x/bb)==0,{la,-Sqrt[Log[bb]]},WorkingPrecision->wp,AccuracyGoal->wp-35,PrecisionGoal->wp-35];lam=la/.sol;theta=lam/sb;rho=1-theta;wt=pr Exp[theta sh];wt=wt/Total[wt];
+logM=-Log[1-theta]+Log[Total[pr Exp[theta sh]]];cut=If[precisionMultiplier64==1,If[b<=256,40,32],48];om=N[Range[-Round[cut/step0],Round[cut/step0]]step0,wp];
+logcf=Table[bb(-Log[1-I t/(rho sb)]+Log[Total[wt Exp[I sh t/sb]]])-I t x/sb,{t,om}];g=N[step0,wp]Total[Re[Exp[logcf]]]/(2Pi sb);
+tail=Log[rho/Pi]-((bb-2)/2)Log[1+(cut/(rho sb))^2]+Log[ArcTan[rho sb/cut]];
+<|"logdensity"->bb logM-theta x+Log[g],"tilt"->theta,"saddle_residual"->Abs[sb(mean[theta]-x/bb)],"log_fourier_tail_over_tilted_density"->tail-Log[g],"nodes"->Length[om]|>];
+case64[{b_Integer,mode_Integer}]:=Module[{wp,gp,mu,L,z,def,s,rho,h,c,d,pc,pd,aff,tt,fc,fd,fh,ww,logcond,start},
+start=AbsoluteTime[];wp=precisionMultiplier64 Max[100,Ceiling[Log[10,b]]+100];gp=wp+40;mu=N[1+ProductLog[1/E],gp];L=Log[N[b,gp]];rho=Sqrt[L/b];h=Switch[mode,0,rho,1,Min[rho,64L/b],2,Min[rho,320L/b]];c=mu-h/2;d=mu+h/2;
+z=zz/.FindRoot[Erfc[zz/Sqrt[2]]/2==Sqrt[mu/b]zz,{zz,Sqrt[L]},WorkingPrecision->gp,AccuracyGoal->gp-30,PrecisionGoal->gp-30];def=Sqrt[mu b]z;s=b mu-def;
+pc=Exp[-c]/(1+Exp[-c]);pd=Exp[-d]/(1+Exp[-d]);tt=1+(Sqrt[2]-1)Exp[-c]+(2-Sqrt[2])Exp[-d];aff=tt/Sqrt[(1+Exp[-c])(1+Exp[-d])];
+fc=density64[b,{0,c},{1-pc,pc},s,wp,1/(8precisionMultiplier64)];fd=density64[b,{0,d},{1-pd,pd},s,wp,1/(8precisionMultiplier64)];ww={1,(Sqrt[2]-1)Exp[-c],(2-Sqrt[2])Exp[-d]}/tt;fh=density64[b,{0,c,d},ww,s,wp,1/(8precisionMultiplier64)];logcond=b Log[aff]+fh["logdensity"]-(fc["logdensity"]+fd["logdensity"])/2;
+<|"b"->ToString[b],"mode"->mode,"precision"->wp,"h"->ToString[N[h,35],InputForm],"log_affinity_conditional"->ToString[N[logcond,35],InputForm],"log_unconditional_product_affinity"->ToString[N[b Log[aff],35],InputForm],"log_density_ratio_factor"->ToString[N[fh["logdensity"]-(fc["logdensity"]+fd["logdensity"])/2,35],InputForm],"log_f_c"->ToString[N[fc["logdensity"],35],InputForm],"log_f_d"->ToString[N[fd["logdensity"],35],InputForm],"max_saddle_residual"->ToString[N[Max[fc["saddle_residual"],fd["saddle_residual"],fh["saddle_residual"]],20],InputForm],"worst_log_Fourier_tail_ratio"->ToString[N[Max[fc["log_fourier_tail_over_tilted_density"],fd["log_fourier_tail_over_tilted_density"],fh["log_fourier_tail_over_tilted_density"]],20],InputForm],"seconds"->N[AbsoluteTime[]-start]|>];
+outdir=If[Length[$ScriptCommandLine]>=2,$ScriptCommandLine[[2]],FileNameJoin[{$TemporaryDirectory,"strong-maximal-r064"}]];
+If[!DirectoryQ[outdir],CreateDirectory[outdir,CreateIntermediateDirectories->True]];
+precisionMultiplier64=If[Length[$ScriptCommandLine]>=3 && $ScriptCommandLine[[3]]=="base",1,2];LaunchKernels[12];ParallelEvaluate[$HistoryLength=0];DistributeDefinitions[density64,case64,outdir,precisionMultiplier64];tasks=Flatten[Table[{b,mode},{b,{256,4096,65536,1048576,2^32,2^64,2^128,2^256}},{mode,0,2}],1];start=AbsoluteTime[];
+rows=ParallelMap[Function[t,Module[{r=case64[t]},Export[FileNameJoin[{outdir,"aff_"<>ToString[precisionMultiplier64]<>"_"<>ToString[t[[1]]]<>"_"<>ToString[t[[2]]]<>".json"}],r,"RawJSON"];r]],tasks,Method->"FinestGrained"];
+Export[FileNameJoin[{outdir,"affinity64_"<>ToString[precisionMultiplier64]<>".json"}],<|"status"->"complete","version"->$Version,"workers"->$KernelCount,"seconds"->N[AbsoluteTime[]-start],"rows"->rows,"fourier_step"->1/(8precisionMultiplier64),"fourier_cutoff"->If[precisionMultiplier64==1,"32 or40",48],"scope"->"High precision tilted Fourier densities; Fourier tail bound excludes quadrature/roundoff"|>,"RawJSON"];CloseKernels[];Print["Completed affinity64"];

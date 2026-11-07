@@ -19,3 +19,5 @@
 - 第62轮：[固定终端曲率、条件共享损失与归约障碍](rounds/r062/report.md)，[本机核验摘要](rounds/r062/validation62.json)。
 
 - 第63轮：[任意有界终端与曲率常数项](rounds/r063/report.md)，[本机核验摘要](rounds/r063/validation63.json)。
+
+- 第64轮：[实际角向预算与包络损失](rounds/r064/report.md)，[本机核验摘要](rounds/r064/validation64.json)。
