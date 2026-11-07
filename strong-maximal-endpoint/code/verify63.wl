@@ -1,0 +1,15 @@
+ClearAll[w,e,V,u,xi,x,E1,E2,F,vf,c,a,p];
+F[w_,e_]:=w^2 e^3+Sin[e];vf[g_]:=(1-e)D[g,e];
+R=V+w-u;
+explicit=D[F[w,e],{w,2}]+2/R vf[D[F[w,e],w]]+(vf[vf[F[w,e]]]-vf[F[w,e]])/R^2;
+wc=u+E1+E2+x;ec=(V xi+E1+x)/(V+E1+E2+x);
+transport=FullSimplify[D[F[wc,ec],{x,2}]-(explicit/.{w->wc,e->ec})];
+p[c_]:=1/(1+Exp[c]);tail=Exp[-a]+(1-Exp[-a])p[c];
+positive=FullSimplify[D[tail,{c,2}]-(1-Exp[-a])p[c](1-p[c])(1-2p[c])];
+ycheck=FullSimplify[D[Log[1+Log[1+y]]-y/(1+y),y]-(y-Log[1+y])/((1+y)^2(1+Log[1+y]))];
+gaussian=FullSimplify[Integrate[Exp[-aa t] Exp[-t^2/2]/Sqrt[2Pi],{t,0,Infinity},Assumptions->aa>0]-Exp[aa^2/2]Erfc[aa/Sqrt[2]]/2,Assumptions->aa>0];
+hh=1+uu/nn; gg=Log[hh]+(nn-1)Log[1+Log[hh]]-uu;
+rampDerivative=FullSimplify[D[gg,{uu,2}]+1/(nn^2 hh^2)+(nn-1)(2+Log[hh])/(nn^2 hh^2(1+Log[hh])^2),Assumptions->{nn>1,uu>=0}];
+checks={transport==0,positive==0,ycheck==0,gaussian==0,rampDerivative==0};
+out=<|"version"->$Version,"transport_second_derivative_identity"->checks[[1]],"full_raw_tail_curvature_identity"->checks[[2]],"Orlicz_inverse_inequality_derivative"->checks[[3]],"Gaussian_tilted_Laplace_identity"->checks[[4]],"capped_ramp_log_integrand_second_derivative"->checks[[5]],"scope"->"Exact symbolic identities; positive curvature example is not critical-efficient"|>;
+Export[If[Length[$ScriptCommandLine]>=2,$ScriptCommandLine[[2]],FileNameJoin[{$TemporaryDirectory,"verify63.json"}]],out,"RawJSON"];Print[out];If[!And@@checks,Exit[1]];
