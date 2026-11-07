@@ -225,3 +225,8 @@ András Prékopa, *On logarithmic concave measures and functions*, Acta Scientia
 ## 第60轮内部来源
 
 加权外宽度网格接续r059并自含核算全部外矩形及实际Phi_N成本；立方体halo估计接续r024并给直接正交域体积证明。源优化使用r030凸对偶，常数取r057种子，实际Python分段核与旧Wolfram r032核独立核对；对称Fenchel缺口仅作受限接口，无新增公开优先权主张。
+
+
+## 第61轮内部来源
+
+一般终端稳定性组合r032的全策略密度/MGF与r046一次Fenchel加权尾，并在rounds/r061/block61.md完整给出无cap反馈L1证明。局部MD/CDF输入在local_md61.md从倾斜特征函数重新自含证明，不以r016的证明提纲作为完成依据。固定抛物线乘子来自r060，但本轮独立定向算术验证预算；张量结果仅为较弱阶梯核心的指定截面定标，未涉及完整产品halo。Decimal exp/ln的正确舍入依据沿用r054已核实的官方接口契约，无新增公开优先权归属。
