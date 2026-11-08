@@ -39,3 +39,5 @@
 - 第72轮：[宽窗口闭合有界输入的成本筛选模块](rounds/r072/report.md)，[本机核验摘要](rounds/r072/validation72.json)。
 
 - 第73轮：[一般输入到有界输入的指数精度归约](rounds/r073/report.md)，[本机核验摘要](rounds/r073/validation73.json)。
+
+- 第74轮：[局部低成本不能推出同点参考转移](rounds/r074/report.md)，[本机核验摘要](rounds/r074/validation74.json)。
