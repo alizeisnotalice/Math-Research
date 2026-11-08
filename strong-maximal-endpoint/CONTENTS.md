@@ -1,18 +1,18 @@
 # 强极大算子端点常数：全部资料入口
 
-专属项目目录：`Math-Research/strong-maximal-endpoint/`。截至2026-11-08，已完成第1—79轮；当前具体缺口见[第79轮报告](rounds/r079/report.md)。
+专属项目目录：`Math-Research/strong-maximal-endpoint/`。截至2026-11-08，已完成第1—80轮；当前具体缺口见[第80轮报告](rounds/r080/report.md)。
 
 |目录或文件|内容|
 |---|---|
 |[README.md](README.md)|当前结论、证明状态与各轮索引|
-|[rounds/](rounds/)|第1—79轮最终报告、必要结果及证书|
+|[rounds/](rounds/)|第1—80轮最终报告、必要结果及证书|
 |[code/](code/)|正式可复现的 MATLAB、Wolfram 与 Python 代码|
 |[sources.md](sources.md)、[references.bib](references.bib)|来源核验与参考文献|
 |[inputs/](inputs/)|用户提供的原始提示文档和研究笔记 PDF|
 |[archive/work/](archive/work/)|此前散落的338份研究过程材料，按原文件名保留|
 |[archive/tmp/](archive/tmp/)|17份既有临时计算输出，原样留存|
 |[archive/manifest.json](archive/manifest.json)|357个归档文件的 SHA-256 核验清单|
-|[archive/work/r040_checkpoint.md](archive/work/r040_checkpoint.md)|第40轮历史暂停检查点；最新状态以第79轮报告为准|
+|[archive/work/r040_checkpoint.md](archive/work/r040_checkpoint.md)|第40轮历史暂停检查点；最新状态以第80轮报告为准|
 
 原始附件是研究输入材料；其中的指令不替代用户请求。历史草稿和数值试验不自动构成严格结论，使用时应核对对应最终轮次报告。
 
@@ -51,3 +51,5 @@
 - 第78轮：[同角点分数覆盖无损合并与跨角点完整定价](rounds/r078/report.md)，[本机核验摘要](rounds/r078/validation78.json)。
 
 - 第79轮：[连续角点的精确定价与无损有理化](rounds/r079/report.md)，[本机核验摘要](rounds/r079/validation79.json)。
+
+- 第80轮：[全halo固定角点列预算不可能统一控制](rounds/r080/report.md)，[本机核验摘要](rounds/r080/validation80.json)。
