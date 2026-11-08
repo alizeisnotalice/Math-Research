@@ -1,0 +1,1631 @@
+{
+  "date": "2026-11-08",
+  "status": "round_complete_general_upper_open",
+  "strict_results": [
+    "Physical local-cost Lp norm is p/(p-1), with full labels",
+    "Each atom column has weak-L1 quasi-norm exactly one; no superposition conclusion",
+    "Optimized one-shot Lp-Chebyshev coefficient C(H)=e*q where q-log(q)=H+1, so C(H)~eH",
+    "Conditional screening/capture criterion only needs weak exponent gamma<=2*kappa at leading-log precision"
+  ],
+  "Python": {
+    "version": "3.12.14",
+    "SciPy": "1.18.1",
+    "workers": 12,
+    "search_cases": 24,
+    "grid_dimensions": [
+      2,
+      3
+    ],
+    "families": [
+      "finite c=mu, even inputs",
+      "one-sided c=infinity"
+    ],
+    "model": "Log-cell source, receiver-corner collocation; positive source mass variables and binary selected receiver cells",
+    "per_case_time_limit_seconds": 8,
+    "node_limit": 2000,
+    "relative_MIP_gap_target": 0.01,
+    "solver_status_counts": {
+      "1": 19,
+      "0": 5
+    },
+    "max_collocation_ratio": 0.9966540782579031,
+    "max_solver_gap": 1.462899234438956,
+    "max_negative_threshold_residual": 3.9038106081079604e-10,
+    "compute_seconds": 16.897180709005625,
+    "seed": "No randomized sampling. Solver default seed was not explicitly set; time-limited incumbents may vary with scheduling.",
+    "diagnostics": "HiGHS emitted transformNewIntegerFeasibleSolution diagnostic lines; final candidates pass separate primal-residual gates.",
+    "scope": "No candidate above one found; this is not a continuum lower/upper certificate and not an exact finite-grid optimality result."
+  },
+  "Wolfram": {
+    "version": "15.0.0 for Mac OS X ARM (64-bit) (May 15, 2026)",
+    "workers": 12,
+    "cell_evaluations": 96,
+    "cell_precision": [
+      50,
+      100
+    ],
+    "screen_evaluations": 56,
+    "screen_precision": [
+      60,
+      120
+    ],
+    "setup_guard_digits": 30,
+    "screen_root_residual_gate": "10^(-floor(WP/2)); also mu equation and Gaussian quantile root",
+    "screen_N": [
+      "256",
+      "1024",
+      "4096",
+      "16384",
+      "65536",
+      "262144",
+      "1048576"
+    ],
+    "cell_quadrature_goals": "floor(WP/3), split at integer Irwin-Hall and likelihood knots",
+    "compute_seconds": 0.435484,
+    "symbolic_checks": {
+      "mixture_mass": true,
+      "covariance_gap": true,
+      "power_boundary": true,
+      "power_derivative_bound": true,
+      "power_strict_slope": true
+    },
+    "formal_native_message_tags": [],
+    "canonical_threshold_scope": "Screen uses exp(-q0)*N^(-alpha+epsilon) as asymptotic model threshold, not an exact numerical Q_N."
+  },
+  "verification": {
+    "pass": true,
+    "grid_incumbents": 24,
+    "grid_primal_checks_pass": true,
+    "cell_precision_pairs": [
+      {
+        "N": 2,
+        "d": 2,
+        "M": 0,
+        "mode": "finite",
+        "difference": "0``34.93454269962486",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 0,
+        "mode": "one_sided",
+        "difference": "0``34.93454269962486",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 1,
+        "mode": "finite",
+        "difference": "2.1065106942543236151682`0.038126621212951226*^-36",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 1,
+        "mode": "one_sided",
+        "difference": "0``35.69031812287731",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 4,
+        "mode": "finite",
+        "difference": "0``37.32163541534551",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 4,
+        "mode": "one_sided",
+        "difference": "0``36.95336702628691",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 8,
+        "mode": "finite",
+        "difference": "0``38.816162677090766",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 8,
+        "mode": "one_sided",
+        "difference": "0``38.325320552542756",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 16,
+        "mode": "finite",
+        "difference": "0``41.37278655187082",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 16,
+        "mode": "one_sided",
+        "difference": "0``40.82551805134234",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 24,
+        "mode": "finite",
+        "difference": "0``43.780599226783856",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 24,
+        "mode": "one_sided",
+        "difference": "0``43.21493277796374",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 0,
+        "mode": "finite",
+        "difference": "0``35.14823427860446",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 0,
+        "mode": "one_sided",
+        "difference": "0``35.14823427860446",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 1,
+        "mode": "finite",
+        "difference": "0``35.73717159237957",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 1,
+        "mode": "one_sided",
+        "difference": "0``35.73717159237957",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 4,
+        "mode": "finite",
+        "difference": "0``36.70522357169191",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 4,
+        "mode": "one_sided",
+        "difference": "0``36.57604927266604",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 8,
+        "mode": "finite",
+        "difference": "0``37.7333393602241",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 8,
+        "mode": "one_sided",
+        "difference": "0``37.39068382910117",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 16,
+        "mode": "finite",
+        "difference": "0``39.26416902744077",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 16,
+        "mode": "one_sided",
+        "difference": "0``38.77921295674302",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 24,
+        "mode": "finite",
+        "difference": "0``40.58384957722734",
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 24,
+        "mode": "one_sided",
+        "difference": "0``40.05773504552566",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 0,
+        "mode": "finite",
+        "difference": "0``34.881187937427484",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 0,
+        "mode": "one_sided",
+        "difference": "0``34.88096649492092",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 1,
+        "mode": "finite",
+        "difference": "0``35.96391229256187",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 1,
+        "mode": "one_sided",
+        "difference": "0``35.93873216717424",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 4,
+        "mode": "finite",
+        "difference": "0``37.90174417539304",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 4,
+        "mode": "one_sided",
+        "difference": "0``37.54106190816661",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 8,
+        "mode": "finite",
+        "difference": "0``39.73950254014734",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 8,
+        "mode": "one_sided",
+        "difference": "0``39.144674817253325",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 16,
+        "mode": "finite",
+        "difference": "0``42.649494979684924",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 16,
+        "mode": "one_sided",
+        "difference": "0``41.90554027441687",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 24,
+        "mode": "finite",
+        "difference": "0``45.252636632294355",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 24,
+        "mode": "one_sided",
+        "difference": "0``44.456518373419186",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 0,
+        "mode": "finite",
+        "difference": "0``35.07635670348491",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 0,
+        "mode": "one_sided",
+        "difference": "0``35.07635670348491",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 1,
+        "mode": "finite",
+        "difference": "0``35.94034517776457",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 1,
+        "mode": "one_sided",
+        "difference": "0``35.94034517776457",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 4,
+        "mode": "finite",
+        "difference": "0``37.18116807641997",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 4,
+        "mode": "one_sided",
+        "difference": "0``37.10803442807818",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 8,
+        "mode": "finite",
+        "difference": "0``38.46133786982575",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 8,
+        "mode": "one_sided",
+        "difference": "0``38.15090065623091",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 16,
+        "mode": "finite",
+        "difference": "0``40.371547769756305",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 16,
+        "mode": "one_sided",
+        "difference": "0``39.797942155105815",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 24,
+        "mode": "finite",
+        "difference": "0``41.91976597934072",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 24,
+        "mode": "one_sided",
+        "difference": "0``41.23722004791372",
+        "pass": true
+      }
+    ],
+    "screen_precision_pairs": [
+      {
+        "N": "256",
+        "A": 2,
+        "epsilon": "1/2",
+        "difference": "0``34.02506511035408",
+        "pass": true
+      },
+      {
+        "N": "256",
+        "A": 2,
+        "epsilon": "11/10",
+        "difference": "0``34.02833562988683",
+        "pass": true
+      },
+      {
+        "N": "256",
+        "A": 4,
+        "epsilon": "1/2",
+        "difference": "0``33.94630519145667",
+        "pass": true
+      },
+      {
+        "N": "256",
+        "A": 4,
+        "epsilon": "11/10",
+        "difference": "0``33.94903053360776",
+        "pass": true
+      },
+      {
+        "N": "1024",
+        "A": 2,
+        "epsilon": "1/2",
+        "difference": "0``34.02010483955992",
+        "pass": true
+      },
+      {
+        "N": "1024",
+        "A": 2,
+        "epsilon": "11/10",
+        "difference": "0``34.02111092571911",
+        "pass": true
+      },
+      {
+        "N": "1024",
+        "A": 4,
+        "epsilon": "1/2",
+        "difference": "0``33.94248607618659",
+        "pass": true
+      },
+      {
+        "N": "1024",
+        "A": 4,
+        "epsilon": "11/10",
+        "difference": "0``33.94332726669503",
+        "pass": true
+      },
+      {
+        "N": "4096",
+        "A": 2,
+        "epsilon": "1/2",
+        "difference": "0``34.015583267958014",
+        "pass": true
+      },
+      {
+        "N": "4096",
+        "A": 2,
+        "epsilon": "11/10",
+        "difference": "0``34.01588159937944",
+        "pass": true
+      },
+      {
+        "N": "4096",
+        "A": 4,
+        "epsilon": "1/2",
+        "difference": "0``33.93878080177043",
+        "pass": true
+      },
+      {
+        "N": "4096",
+        "A": 4,
+        "epsilon": "11/10",
+        "difference": "0``33.93903075724527",
+        "pass": true
+      },
+      {
+        "N": "16384",
+        "A": 2,
+        "epsilon": "1/2",
+        "difference": "0``34.01249994834076",
+        "pass": true
+      },
+      {
+        "N": "16384",
+        "A": 2,
+        "epsilon": "11/10",
+        "difference": "0``34.01258631608195",
+        "pass": true
+      },
+      {
+        "N": "16384",
+        "A": 4,
+        "epsilon": "1/2",
+        "difference": "0``33.9362154521311",
+        "pass": true
+      },
+      {
+        "N": "16384",
+        "A": 4,
+        "epsilon": "11/10",
+        "difference": "0``33.936287905355634",
+        "pass": true
+      },
+      {
+        "N": "65536",
+        "A": 2,
+        "epsilon": "1/2",
+        "difference": "0``34.01061514126864",
+        "pass": true
+      },
+      {
+        "N": "65536",
+        "A": 2,
+        "epsilon": "11/10",
+        "difference": "0``34.010639708525645",
+        "pass": true
+      },
+      {
+        "N": "65536",
+        "A": 4,
+        "epsilon": "1/2",
+        "difference": "0``33.934638605590784",
+        "pass": true
+      },
+      {
+        "N": "65536",
+        "A": 4,
+        "epsilon": "11/10",
+        "difference": "0``33.93465922981252",
+        "pass": true
+      },
+      {
+        "N": "262144",
+        "A": 2,
+        "epsilon": "1/2",
+        "difference": "0``34.009524104355904",
+        "pass": true
+      },
+      {
+        "N": "262144",
+        "A": 2,
+        "epsilon": "11/10",
+        "difference": "0``34.00953099637631",
+        "pass": true
+      },
+      {
+        "N": "262144",
+        "A": 4,
+        "epsilon": "1/2",
+        "difference": "0``33.93372370768656",
+        "pass": true
+      },
+      {
+        "N": "262144",
+        "A": 4,
+        "epsilon": "11/10",
+        "difference": "0``33.93372949591228",
+        "pass": true
+      },
+      {
+        "N": "1048576",
+        "A": 2,
+        "epsilon": "1/2",
+        "difference": "0``34.00891213360439",
+        "pass": true
+      },
+      {
+        "N": "1048576",
+        "A": 2,
+        "epsilon": "11/10",
+        "difference": "0``34.00891404534472",
+        "pass": true
+      },
+      {
+        "N": "1048576",
+        "A": 4,
+        "epsilon": "1/2",
+        "difference": "0``33.93320999244815",
+        "pass": true
+      },
+      {
+        "N": "1048576",
+        "A": 4,
+        "epsilon": "11/10",
+        "difference": "0``33.933211598378",
+        "pass": true
+      }
+    ],
+    "cross_software_cell_checks": [
+      {
+        "N": 2,
+        "d": 2,
+        "M": 0,
+        "mode": "finite",
+        "relative_difference": 1.1102230246251565e-16,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 0,
+        "mode": "one_sided",
+        "relative_difference": 1.1102230246251565e-16,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 1,
+        "mode": "finite",
+        "relative_difference": 1.1102230246251565e-16,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 1,
+        "mode": "one_sided",
+        "relative_difference": 1.1102230246251565e-16,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 4,
+        "mode": "finite",
+        "relative_difference": 1.1102230246251565e-16,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 4,
+        "mode": "one_sided",
+        "relative_difference": 3.3306690738754696e-16,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 8,
+        "mode": "finite",
+        "relative_difference": 5.551115123125783e-16,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 8,
+        "mode": "one_sided",
+        "relative_difference": 5.551115123125783e-16,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 16,
+        "mode": "finite",
+        "relative_difference": 8.881784197001252e-16,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 16,
+        "mode": "one_sided",
+        "relative_difference": 7.771561172376096e-16,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 24,
+        "mode": "finite",
+        "relative_difference": 1.4432899320127035e-15,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 2,
+        "M": 24,
+        "mode": "one_sided",
+        "relative_difference": 1.3322676295501878e-15,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 0,
+        "mode": "finite",
+        "relative_difference": 0.0,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 0,
+        "mode": "one_sided",
+        "relative_difference": 0.0,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 1,
+        "mode": "finite",
+        "relative_difference": 1.1102230246251565e-16,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 1,
+        "mode": "one_sided",
+        "relative_difference": 1.1102230246251565e-16,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 4,
+        "mode": "finite",
+        "relative_difference": 1.1102230246251565e-16,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 4,
+        "mode": "one_sided",
+        "relative_difference": 0.0,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 8,
+        "mode": "finite",
+        "relative_difference": 2.220446049250313e-16,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 8,
+        "mode": "one_sided",
+        "relative_difference": 3.3306690738754696e-16,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 16,
+        "mode": "finite",
+        "relative_difference": 3.3306690738754696e-16,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 16,
+        "mode": "one_sided",
+        "relative_difference": 3.3306690738754696e-16,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 24,
+        "mode": "finite",
+        "relative_difference": 8.881784197001252e-16,
+        "pass": true
+      },
+      {
+        "N": 2,
+        "d": 4,
+        "M": 24,
+        "mode": "one_sided",
+        "relative_difference": 6.661338147750939e-16,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 0,
+        "mode": "finite",
+        "relative_difference": 0.0,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 0,
+        "mode": "one_sided",
+        "relative_difference": 2.220446049250313e-16,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 1,
+        "mode": "finite",
+        "relative_difference": 1.1102230246251565e-16,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 1,
+        "mode": "one_sided",
+        "relative_difference": 0.0,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 4,
+        "mode": "finite",
+        "relative_difference": 2.220446049250313e-16,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 4,
+        "mode": "one_sided",
+        "relative_difference": 1.1102230246251565e-16,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 8,
+        "mode": "finite",
+        "relative_difference": 3.3306690738754696e-16,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 8,
+        "mode": "one_sided",
+        "relative_difference": 3.3306690738754696e-16,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 16,
+        "mode": "finite",
+        "relative_difference": 8.881784197001252e-16,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 16,
+        "mode": "one_sided",
+        "relative_difference": 7.771561172376096e-16,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 24,
+        "mode": "finite",
+        "relative_difference": 1.4432899320127035e-15,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 2,
+        "M": 24,
+        "mode": "one_sided",
+        "relative_difference": 1.5543122344752192e-15,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 0,
+        "mode": "finite",
+        "relative_difference": 2.220446049250313e-16,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 0,
+        "mode": "one_sided",
+        "relative_difference": 2.220446049250313e-16,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 1,
+        "mode": "finite",
+        "relative_difference": 0.0,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 1,
+        "mode": "one_sided",
+        "relative_difference": 0.0,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 4,
+        "mode": "finite",
+        "relative_difference": 2.220446049250313e-16,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 4,
+        "mode": "one_sided",
+        "relative_difference": 0.0,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 8,
+        "mode": "finite",
+        "relative_difference": 1.1102230246251565e-16,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 8,
+        "mode": "one_sided",
+        "relative_difference": 1.1102230246251565e-16,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 16,
+        "mode": "finite",
+        "relative_difference": 2.220446049250313e-16,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 16,
+        "mode": "one_sided",
+        "relative_difference": 3.3306690738754696e-16,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 24,
+        "mode": "finite",
+        "relative_difference": 5.551115123125783e-16,
+        "pass": true
+      },
+      {
+        "N": 3,
+        "d": 4,
+        "M": 24,
+        "mode": "one_sided",
+        "relative_difference": 7.771561172376096e-16,
+        "pass": true
+      }
+    ],
+    "grid_scope": "Limited collocation MILP, not a continuum weak-type certificate"
+  },
+  "grid_summary": [
+    {
+      "spec": {
+        "N": 2,
+        "source_side": 10,
+        "receiver_outer": 5,
+        "step": 0.639232271380537,
+        "mode": "finite",
+        "budget": 0.03,
+        "d": 2
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.056569792002847,
+      "source_cells": 100,
+      "receiver_cells": 225,
+      "collocation_ratio": 0.9652987932431846,
+      "threshold_residual": -1.1102230246251565e-16,
+      "mass_budget": 1.0000000000000058,
+      "selected_cells": 59,
+      "solver_gap": 0.05521905621012631
+    },
+    {
+      "spec": {
+        "N": 2,
+        "source_side": 10,
+        "receiver_outer": 5,
+        "step": 0.639232271380537,
+        "mode": "finite",
+        "budget": 0.3,
+        "d": 2
+      },
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "seconds": 5.325569625005301,
+      "source_cells": 100,
+      "receiver_cells": 225,
+      "collocation_ratio": 0.9909487992661086,
+      "threshold_residual": -1.340039190722564e-13,
+      "mass_budget": 0.9999999999999998,
+      "selected_cells": 88,
+      "solver_gap": 0.00990154223030246
+    },
+    {
+      "spec": {
+        "N": 2,
+        "source_side": 10,
+        "receiver_outer": 5,
+        "step": 0.639232271380537,
+        "mode": "finite",
+        "budget": 1,
+        "d": 2
+      },
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "seconds": 2.917337166996731,
+      "source_cells": 100,
+      "receiver_cells": 225,
+      "collocation_ratio": 0.9966540782579031,
+      "threshold_residual": -8.881784197001252e-15,
+      "mass_budget": 0.9999999999999993,
+      "selected_cells": 100,
+      "solver_gap": 0.009838725143478236
+    },
+    {
+      "spec": {
+        "N": 2,
+        "source_side": 10,
+        "receiver_outer": 5,
+        "step": 0.639232271380537,
+        "mode": "one_sided",
+        "budget": 0.03,
+        "d": 2
+      },
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "seconds": 5.242922958997951,
+      "source_cells": 100,
+      "receiver_cells": 225,
+      "collocation_ratio": 0.9752721123951104,
+      "threshold_residual": -2.220446049250313e-16,
+      "mass_budget": 0.9999999999999997,
+      "selected_cells": 59,
+      "solver_gap": 0.009960334386590398
+    },
+    {
+      "spec": {
+        "N": 2,
+        "source_side": 10,
+        "receiver_outer": 5,
+        "step": 0.639232271380537,
+        "mode": "one_sided",
+        "budget": 0.3,
+        "d": 2
+      },
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "seconds": 3.0590767499961657,
+      "source_cells": 100,
+      "receiver_cells": 225,
+      "collocation_ratio": 0.9909487992661083,
+      "threshold_residual": -2.098321516541546e-14,
+      "mass_budget": 1.0000000000000002,
+      "selected_cells": 88,
+      "solver_gap": 0.00975620159774845
+    },
+    {
+      "spec": {
+        "N": 2,
+        "source_side": 10,
+        "receiver_outer": 5,
+        "step": 0.639232271380537,
+        "mode": "one_sided",
+        "budget": 1,
+        "d": 2
+      },
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "seconds": 2.61410016699665,
+      "source_cells": 100,
+      "receiver_cells": 225,
+      "collocation_ratio": 0.9966540782579022,
+      "threshold_residual": -1.6764367671839864e-14,
+      "mass_budget": 1.0000000000000002,
+      "selected_cells": 100,
+      "solver_gap": 0.00806519030223225
+    },
+    {
+      "spec": {
+        "N": 2,
+        "source_side": 16,
+        "receiver_outer": 8,
+        "step": 0.3196161356902685,
+        "mode": "finite",
+        "budget": 0.03,
+        "d": 4
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.14718150000408,
+      "source_cells": 256,
+      "receiver_cells": 576,
+      "collocation_ratio": 0.9067332030444842,
+      "threshold_residual": -2.220446049250313e-16,
+      "mass_budget": 1.0,
+      "selected_cells": 128,
+      "solver_gap": 0.5437164540603293
+    },
+    {
+      "spec": {
+        "N": 2,
+        "source_side": 16,
+        "receiver_outer": 8,
+        "step": 0.3196161356902685,
+        "mode": "finite",
+        "budget": 0.3,
+        "d": 4
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.140971875000105,
+      "source_cells": 256,
+      "receiver_cells": 576,
+      "collocation_ratio": 0.9574934811339088,
+      "threshold_residual": -2.220446049250313e-16,
+      "mass_budget": 1.0000000000000013,
+      "selected_cells": 230,
+      "solver_gap": 0.5212067965891082
+    },
+    {
+      "spec": {
+        "N": 2,
+        "source_side": 16,
+        "receiver_outer": 8,
+        "step": 0.3196161356902685,
+        "mode": "finite",
+        "budget": 1,
+        "d": 4
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.114424457999121,
+      "source_cells": 256,
+      "receiver_cells": 576,
+      "collocation_ratio": 0.9400486981175262,
+      "threshold_residual": -3.9038106081079604e-10,
+      "mass_budget": 0.9999999999990878,
+      "selected_cells": 305,
+      "solver_gap": 0.5668886568876406
+    },
+    {
+      "spec": {
+        "N": 2,
+        "source_side": 16,
+        "receiver_outer": 8,
+        "step": 0.3196161356902685,
+        "mode": "one_sided",
+        "budget": 0.03,
+        "d": 4
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.091357540994068,
+      "source_cells": 256,
+      "receiver_cells": 576,
+      "collocation_ratio": 0.9036131003803259,
+      "threshold_residual": -2.6645352591003757e-15,
+      "mass_budget": 1.0,
+      "selected_cells": 127,
+      "solver_gap": 0.509006819366568
+    },
+    {
+      "spec": {
+        "N": 2,
+        "source_side": 16,
+        "receiver_outer": 8,
+        "step": 0.3196161356902685,
+        "mode": "one_sided",
+        "budget": 0.3,
+        "d": 4
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.12950245799584,
+      "source_cells": 256,
+      "receiver_cells": 576,
+      "collocation_ratio": 0.9574934811339102,
+      "threshold_residual": -1.2212453270876722e-15,
+      "mass_budget": 0.9999999999999998,
+      "selected_cells": 230,
+      "solver_gap": 0.5602530183296309
+    },
+    {
+      "spec": {
+        "N": 2,
+        "source_side": 16,
+        "receiver_outer": 8,
+        "step": 0.3196161356902685,
+        "mode": "one_sided",
+        "budget": 1,
+        "d": 4
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.114914124998904,
+      "source_cells": 256,
+      "receiver_cells": 576,
+      "collocation_ratio": 0.9211911749950874,
+      "threshold_residual": -4.118183571932832e-11,
+      "mass_budget": 1.0000000000000797,
+      "selected_cells": 308,
+      "solver_gap": 0.540594727624656
+    },
+    {
+      "spec": {
+        "N": 3,
+        "source_side": 5,
+        "receiver_outer": 3,
+        "step": 0.639232271380537,
+        "mode": "finite",
+        "budget": 0.03,
+        "d": 2
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.082710208000208,
+      "source_cells": 125,
+      "receiver_cells": 512,
+      "collocation_ratio": 0.8656066844554787,
+      "threshold_residual": -1.7430501486614958e-14,
+      "mass_budget": 0.9999999999999957,
+      "selected_cells": 35,
+      "solver_gap": 0.1354467359664508
+    },
+    {
+      "spec": {
+        "N": 3,
+        "source_side": 5,
+        "receiver_outer": 3,
+        "step": 0.639232271380537,
+        "mode": "finite",
+        "budget": 0.3,
+        "d": 2
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.063453458002186,
+      "source_cells": 125,
+      "receiver_cells": 512,
+      "collocation_ratio": 0.9249763739130138,
+      "threshold_residual": -6.661338147750939e-16,
+      "mass_budget": 0.9999999999999997,
+      "selected_cells": 103,
+      "solver_gap": 0.15695125599838056
+    },
+    {
+      "spec": {
+        "N": 3,
+        "source_side": 5,
+        "receiver_outer": 3,
+        "step": 0.639232271380537,
+        "mode": "finite",
+        "budget": 1,
+        "d": 2
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.069517000003543,
+      "source_cells": 125,
+      "receiver_cells": 512,
+      "collocation_ratio": 0.9078320994633946,
+      "threshold_residual": -1.0202949596305189e-13,
+      "mass_budget": 0.9999999999999997,
+      "selected_cells": 135,
+      "solver_gap": 0.049047245188289984
+    },
+    {
+      "spec": {
+        "N": 3,
+        "source_side": 5,
+        "receiver_outer": 3,
+        "step": 0.639232271380537,
+        "mode": "one_sided",
+        "budget": 0.03,
+        "d": 2
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.065124707994983,
+      "source_cells": 125,
+      "receiver_cells": 512,
+      "collocation_ratio": 0.8720240350101361,
+      "threshold_residual": -7.771561172376096e-16,
+      "mass_budget": 0.9999999999999998,
+      "selected_cells": 37,
+      "solver_gap": 0.11594405750913038
+    },
+    {
+      "spec": {
+        "N": 3,
+        "source_side": 5,
+        "receiver_outer": 3,
+        "step": 0.639232271380537,
+        "mode": "one_sided",
+        "budget": 0.3,
+        "d": 2
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.0930032499964,
+      "source_cells": 125,
+      "receiver_cells": 512,
+      "collocation_ratio": 0.9306122741877282,
+      "threshold_residual": -2.220446049250313e-16,
+      "mass_budget": 1.0,
+      "selected_cells": 100,
+      "solver_gap": 0.11498327816953784
+    },
+    {
+      "spec": {
+        "N": 3,
+        "source_side": 5,
+        "receiver_outer": 3,
+        "step": 0.639232271380537,
+        "mode": "one_sided",
+        "budget": 1,
+        "d": 2
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.0657466249977,
+      "source_cells": 125,
+      "receiver_cells": 512,
+      "collocation_ratio": 0.9083612416752326,
+      "threshold_residual": -1.1102230246251565e-16,
+      "mass_budget": 0.9998392217224397,
+      "selected_cells": 133,
+      "solver_gap": 0.051736330135049406
+    },
+    {
+      "spec": {
+        "N": 3,
+        "source_side": 7,
+        "receiver_outer": 3,
+        "step": 0.3196161356902685,
+        "mode": "finite",
+        "budget": 0.03,
+        "d": 4
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.117588999994041,
+      "source_cells": 343,
+      "receiver_cells": 1000,
+      "collocation_ratio": 0.6872281259614633,
+      "threshold_residual": -1.6431300764452317e-14,
+      "mass_budget": 0.9999999999999999,
+      "selected_cells": 68,
+      "solver_gap": 0.506045764525598
+    },
+    {
+      "spec": {
+        "N": 3,
+        "source_side": 7,
+        "receiver_outer": 3,
+        "step": 0.3196161356902685,
+        "mode": "finite",
+        "budget": 0.3,
+        "d": 4
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.125925624997762,
+      "source_cells": 343,
+      "receiver_cells": 1000,
+      "collocation_ratio": 0.8116904888128685,
+      "threshold_residual": -6.661338147750939e-16,
+      "mass_budget": 0.9999999999999998,
+      "selected_cells": 252,
+      "solver_gap": 1.462899234438956
+    },
+    {
+      "spec": {
+        "N": 3,
+        "source_side": 7,
+        "receiver_outer": 3,
+        "step": 0.3196161356902685,
+        "mode": "finite",
+        "budget": 1,
+        "d": 4
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.13708300000144,
+      "source_cells": 343,
+      "receiver_cells": 1000,
+      "collocation_ratio": 0.7761391741847262,
+      "threshold_residual": -8.812950369474493e-13,
+      "mass_budget": 0.9999999999999984,
+      "selected_cells": 391,
+      "solver_gap": 1.0693383373445156
+    },
+    {
+      "spec": {
+        "N": 3,
+        "source_side": 7,
+        "receiver_outer": 3,
+        "step": 0.3196161356902685,
+        "mode": "one_sided",
+        "budget": 0.03,
+        "d": 4
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.12704725000367,
+      "source_cells": 343,
+      "receiver_cells": 1000,
+      "collocation_ratio": 0.6916294354005127,
+      "threshold_residual": -3.4416913763379853e-15,
+      "mass_budget": 1.0000000000000053,
+      "selected_cells": 61,
+      "solver_gap": 0.43719084410579623
+    },
+    {
+      "spec": {
+        "N": 3,
+        "source_side": 7,
+        "receiver_outer": 3,
+        "step": 0.3196161356902685,
+        "mode": "one_sided",
+        "budget": 0.3,
+        "d": 4
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.161387457999808,
+      "source_cells": 343,
+      "receiver_cells": 1000,
+      "collocation_ratio": 0.8080649440742853,
+      "threshold_residual": -3.3306690738754696e-16,
+      "mass_budget": 0.9999999999999996,
+      "selected_cells": 254,
+      "solver_gap": 0.7681571681156204
+    },
+    {
+      "spec": {
+        "N": 3,
+        "source_side": 7,
+        "receiver_outer": 3,
+        "step": 0.3196161356902685,
+        "mode": "one_sided",
+        "budget": 1,
+        "d": 4
+      },
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 8.15038325000205,
+      "source_cells": 343,
+      "receiver_cells": 1000,
+      "collocation_ratio": 0.7818000043747103,
+      "threshold_residual": -3.6637359812630166e-15,
+      "mass_budget": 1.000000000000001,
+      "selected_cells": 388,
+      "solver_gap": 1.1126841243418182
+    }
+  ],
+  "screen_examples": [
+    {
+      "mu_root_residual": "0``149.7866226245936",
+      "normal_root_residual": "0``139.23894213659798",
+      "N": "256",
+      "A": 2,
+      "epsilon": "1/2",
+      "precision": 120,
+      "canonical_threshold": "exp(-q0)*N^(-alpha+epsilon); asymptotic reference, not an exact Q_N value",
+      "H_over_N": "1.7085203485143211405121106733382565979107444725502785602753`35.",
+      "optimized_factor_over_N": "4.7195967563849697734305752717437556189535681056682168615387`35.",
+      "chosen_factor_over_N": "4.7200500696166263116733235603637070399752564889707415947295`35.",
+      "optimal_root_residual": "0``127.3511736315305",
+      "numeric": true
+    },
+    {
+      "mu_root_residual": "0``149.7866226245936",
+      "normal_root_residual": "0``139.1094370360875",
+      "N": "4096",
+      "A": 2,
+      "epsilon": "1/2",
+      "precision": 120,
+      "canonical_threshold": "exp(-q0)*N^(-alpha+epsilon); asymptotic reference, not an exact Q_N value",
+      "H_over_N": "1.7721515273519459200522342616326663238898197375181325202257`35.",
+      "optimized_factor_over_N": "4.8237716011103054016818805546762160227407732261559659165768`35.",
+      "chosen_factor_over_N": "4.8237752164887084187970104343792224204099546584088848486572`35.",
+      "optimal_root_residual": "0``126.13848805246444",
+      "numeric": true
+    },
+    {
+      "mu_root_residual": "0``149.7866226245936",
+      "normal_root_residual": "0``138.92770287794932",
+      "N": "1048576",
+      "A": 2,
+      "epsilon": "1/2",
+      "precision": 120,
+      "canonical_threshold": "exp(-q0)*N^(-alpha+epsilon); asymptotic reference, not an exact Q_N value",
+      "H_over_N": "1.8020209570001444192894048693970305430469211441536202098414`35.",
+      "optimized_factor_over_N": "4.8984408786326223017640104404098466373571382906654042852321`35.",
+      "chosen_factor_over_N": "4.8984408787758917062572617864550310027096636281103892362928`35.",
+      "optimal_root_residual": "0``123.72363646805444",
+      "numeric": true
+    }
+  ],
+  "runtime": {
+    "Python": {
+      "exit_code": 0,
+      "wall_seconds": 17.29061995899974,
+      "peak_CPU_percent": 1192.1,
+      "peak_RSS_KiB": 3741296,
+      "sample_interval_seconds": 0.2
+    },
+    "Wolfram": {
+      "exit_code": 0,
+      "wall_seconds": 3.200566791005258,
+      "peak_CPU_percent": 886.4,
+      "peak_RSS_KiB": 2395376,
+      "sample_interval_seconds": 0.2
+    },
+    "cleanup": "All owned native batches exited; no persistent MATLAB or Wolfram batch engine retained."
+  },
+  "numerical_limitations": [
+    "No directed rounding or total interval error certificate",
+    "19 MILPs stopped at a time limit and the other 5 met a 1-percent solver-gap target",
+    "Collocation samples receiver values; selected cell volumes are not certified continuum halos",
+    "Lp and atom facts do not prove weak(1,1) for arbitrary source superpositions",
+    "Variable actions, moving anchors and uncapped-source transfer remain unclosed"
+  ],
+  "code_SHA256": {
+    "grid70.py": "81c719861a76ff3d1839bf973037b2c9fcdcf51b42c0310c2f0e30260643720c",
+    "kernel70.wl": "27023a2242617e70686eb6b85953fe0e9268c997e15b59c0583ecfa37b31065d",
+    "check70.wl": "50730dc80818f83cec27ec17a327f075d99f742f1c779201cb83b6aa067d030e"
+  },
+  "inputs_SHA256": "509b2dc0838bb2587394023b97ca00a4fd43de30b7bb9892686df383e8d47197"
+}
