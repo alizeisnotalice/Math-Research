@@ -53,3 +53,5 @@
 - 第79轮：[连续角点的精确定价与无损有理化](rounds/r079/report.md)，[本机核验摘要](rounds/r079/validation79.json)。
 
 - 第80轮：[全halo固定角点列预算不可能统一控制](rounds/r080/report.md)，[本机核验摘要](rounds/r080/validation80.json)。
+
+- 第81轮：[平坦阈值归约与曲边界软预算](rounds/r081/report.md)，[本机核验摘要](rounds/r081/validation81.json)。
