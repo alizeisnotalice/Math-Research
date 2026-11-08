@@ -1,0 +1,8 @@
+aa77=Rest[$ScriptCommandLine];outgap77=aa77[[1]];If[!DirectoryQ[outgap77],CreateDirectory[outgap77,CreateIntermediateDirectories->True]];
+ClearAll[gapjob77];gapjob77[j_]:=Module[{n=j[[1]],k=j[[2]],wp=j[[3]],L,dd,s,loss,pen},L=N[Log[n],wp];dd=Switch[k,"inverseN",N[1/n,wp],"inverse_sqrt_NlogN",1/Sqrt[n L],"sqrt_logN_over_N",Sqrt[L/n],"constant_half",N[1/2,wp]];s=1+dd;pen=N[Log[201/200],wp];loss=(n-1)Log[1+Log[s]];<|"N"->n,"scale"->k,"precision"->wp,"log_integer_optimum"->ToString[N[Log[s]+loss,40],InputForm],"log_fractional_feasible_cost"->ToString[N[Log[s]+pen,40],InputForm],"log_integrality_gap_lower"->ToString[N[loss-pen,40],InputForm],"log_perspective_optimum"->ToString[N[Log[s]+loss,40],InputForm]|>];
+phi2h77=TrueQ[FullSimplify[Det[D[g(1+Log[g/z]),{{g,z},2}]]==0,Assumptions->g>z>0]];
+phiN77=TrueQ[FullSimplify[D[t(1+Log[t])^(nn-1),{t,2}]==(nn-1)(nn-1+Log[t])(1+Log[t])^(nn-3)/t,Assumptions->t>1&&nn>=2]];
+series77=Normal[Series[Log[1+Log[1+dd]],{dd,0,3}]];
+jobs77=Flatten[Table[{n,k,wp},{n,{2,4,8,16,32,64,128,256,1024,4096,16384,65536,262144,1048576}},{k,{"inverseN","inverse_sqrt_NlogN","sqrt_logN_over_N","constant_half"}},{wp,{60,120}}],2];
+LaunchKernels[12];ParallelEvaluate[$HistoryLength=0];DistributeDefinitions[gapjob77];tt77=AbsoluteTime[];rr77=ParallelMap[gapjob77,jobs77];CloseKernels[];
+Export[FileNameJoin[{outgap77,"gap77.json"}],<|"version"->$Version,"workers"->12,"seconds"->N[AbsoluteTime[]-tt77],"symbolic_phi_second_derivative"->phiN77,"symbolic_perspective_Hessian_zero_determinant"->phi2h77,"small_delta_series"->ToString[series77,InputForm],"rows"->rr77|>,"RawJSON"];If[!phiN77||!phi2h77,Exit[3]];Print["PASS ",Length[rr77]," precision evaluations and convexity identities"];
