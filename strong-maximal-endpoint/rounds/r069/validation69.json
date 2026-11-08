@@ -1,0 +1,433 @@
+{
+  "date": "2026-11-08",
+  "status": "round_complete_general_upper_open",
+  "scope": "Fixed-reference scalar forbidden-band optimum and local-cost-qualified capture. General C_N sharp upper remains open. No directed numeric certificate or new C_N coefficient.",
+  "Python": {
+    "version": "3.12.14",
+    "SciPy": "1.18.1",
+    "workers": 12,
+    "cases": 104,
+    "base_cases": 88,
+    "refined_cases": 16,
+    "N": [
+      64,
+      128,
+      256,
+      512,
+      1024,
+      2048,
+      4096,
+      16384,
+      65536,
+      262144,
+      1048576
+    ],
+    "actions": [
+      "mu",
+      "mu-sqrt(mu)/2*sqrt(logN/N)"
+    ],
+    "cap": 2,
+    "hole_K": [
+      null,
+      0.5,
+      1,
+      2
+    ],
+    "compute_seconds": 6.123846959002549,
+    "prior_tail_bound": "2 exp(-220), no renormalization",
+    "Gamma_logpdf": "centered Stirling through N^-9, next-term bound 691/(360360 N^11)",
+    "max_mean_residual": 2.3270885218806825e-11,
+    "max_inverse_derivative_residual": 8.731149137020111e-11,
+    "max_normal_root_residual": 6.938893903907228e-17,
+    "max_ideal_relative_dual_truncation_bound": 1.4253554717413148e-90,
+    "prior_error_scope": "Ideal primal-dual truncation bound only; does not include numerical root, quadrature or rounding error.",
+    "seed": "none; deterministic"
+  },
+  "Wolfram": {
+    "version": "15.0.0 for Mac OS X ARM (64-bit) (May 15, 2026)",
+    "workers": 12,
+    "cases": 24,
+    "working_precision": [
+      50,
+      100
+    ],
+    "setup_guard_digits": 40,
+    "quadrature_goals": "floor(WP/3), i.e. 16/33",
+    "N": [
+      64,
+      128,
+      256
+    ],
+    "hole_K": [
+      null,
+      1
+    ],
+    "cap": 2,
+    "posterior_truncation": "none: full finite sums",
+    "candidate_parameter_scope": "Original binary-double cutoff is rationalized exactly; independent evaluation does not upgrade it to a high-precision optimizer.",
+    "max_Python_log_score_difference": 2.8297760873279277e-14,
+    "max_independent_mean_residual": 2.330925988445406e-11,
+    "candidate_file_SHA256": "e12bb1e840f734dd28f7b17435f2b20a39b473474f0e23f964d0d783547d6f7a",
+    "compute_seconds": 1.021355,
+    "formal_native_message_tags": []
+  },
+  "verification": {
+    "pass": true,
+    "Wolfram_precision_pairs": [
+      {
+        "N": 64,
+        "K": null,
+        "action": "mu",
+        "difference": "0``32.84285842223177",
+        "pass": true
+      },
+      {
+        "N": 64,
+        "K": null,
+        "action": "shifted",
+        "difference": "0``32.84335990024174",
+        "pass": true
+      },
+      {
+        "N": 64,
+        "K": 1,
+        "action": "mu",
+        "difference": "0``32.88206056072893",
+        "pass": true
+      },
+      {
+        "N": 64,
+        "K": 1,
+        "action": "shifted",
+        "difference": "0``32.883855316986384",
+        "pass": true
+      },
+      {
+        "N": 128,
+        "K": null,
+        "action": "mu",
+        "difference": "7.7864933045026194569387569953`3.420002405628474*^-30",
+        "pass": true
+      },
+      {
+        "N": 128,
+        "K": null,
+        "action": "shifted",
+        "difference": "5.5841336283557358807333739928`3.2758258830330624*^-30",
+        "pass": true
+      },
+      {
+        "N": 128,
+        "K": 1,
+        "action": "mu",
+        "difference": "0``32.553232921015926",
+        "pass": true
+      },
+      {
+        "N": 128,
+        "K": 1,
+        "action": "shifted",
+        "difference": "8.8047738321512035491682312`0.49868747056365736*^-33",
+        "pass": true
+      },
+      {
+        "N": 256,
+        "K": null,
+        "action": "mu",
+        "difference": "0``32.21749992021778",
+        "pass": true
+      },
+      {
+        "N": 256,
+        "K": null,
+        "action": "shifted",
+        "difference": "0``32.21758366726581",
+        "pass": true
+      },
+      {
+        "N": 256,
+        "K": 1,
+        "action": "mu",
+        "difference": "0``32.232006466457",
+        "pass": true
+      },
+      {
+        "N": 256,
+        "K": 1,
+        "action": "shifted",
+        "difference": "0``32.23228524623734",
+        "pass": true
+      }
+    ],
+    "Python_tolerance_pairs": [
+      {
+        "N": 64,
+        "K": null,
+        "action": "mu",
+        "difference": 5.258016244624741e-12,
+        "pass": true
+      },
+      {
+        "N": 64,
+        "K": 1,
+        "action": "mu",
+        "difference": 8.183604904843378e-10,
+        "pass": true
+      },
+      {
+        "N": 256,
+        "K": null,
+        "action": "mu",
+        "difference": 0.0,
+        "pass": true
+      },
+      {
+        "N": 256,
+        "K": 1,
+        "action": "mu",
+        "difference": 5.684341886080802e-14,
+        "pass": true
+      },
+      {
+        "N": 4096,
+        "K": null,
+        "action": "mu",
+        "difference": 0.0,
+        "pass": true
+      },
+      {
+        "N": 4096,
+        "K": 1,
+        "action": "mu",
+        "difference": 0.0,
+        "pass": true
+      },
+      {
+        "N": 1048576,
+        "K": null,
+        "action": "mu",
+        "difference": 0.0,
+        "pass": true
+      },
+      {
+        "N": 1048576,
+        "K": 1,
+        "action": "mu",
+        "difference": 1.6298145055770874e-09,
+        "pass": true
+      },
+      {
+        "N": 64,
+        "K": null,
+        "action": "shifted",
+        "difference": 6.579625733138528e-12,
+        "pass": true
+      },
+      {
+        "N": 64,
+        "K": 1,
+        "action": "shifted",
+        "difference": 1.1510792319313623e-12,
+        "pass": true
+      },
+      {
+        "N": 256,
+        "K": null,
+        "action": "shifted",
+        "difference": 0.0,
+        "pass": true
+      },
+      {
+        "N": 256,
+        "K": 1,
+        "action": "shifted",
+        "difference": 0.0,
+        "pass": true
+      },
+      {
+        "N": 4096,
+        "K": null,
+        "action": "shifted",
+        "difference": 0.0,
+        "pass": true
+      },
+      {
+        "N": 4096,
+        "K": 1,
+        "action": "shifted",
+        "difference": 0.0,
+        "pass": true
+      },
+      {
+        "N": 1048576,
+        "K": null,
+        "action": "shifted",
+        "difference": 0.0,
+        "pass": true
+      },
+      {
+        "N": 1048576,
+        "K": 1,
+        "action": "shifted",
+        "difference": 1.6298145055770874e-09,
+        "pass": true
+      }
+    ],
+    "scope": "Numerical validation only: 12 working-precision pairs retain 12 decimal places; 16 quadrature/root refinements agree within 2e-6 in log score"
+  },
+  "comparison_summary": [
+    {
+      "N": 64,
+      "action": "mu",
+      "cutoff_slack_over_logN": -0.02562664639135636,
+      "log_score_slack_over_logN": -0.135522602977636,
+      "cost_over_exp_minus_cutoff": 1.5793990629342969,
+      "K1_window_cost_share": 0.625635527414979,
+      "forbidden_cost_exponents": {
+        "0.5": 0.6056731300818854,
+        "1": 1.4900700366383823,
+        "2": 4.185559666763974
+      }
+    },
+    {
+      "N": 256,
+      "action": "mu",
+      "cutoff_slack_over_logN": -0.004332539663321934,
+      "log_score_slack_over_logN": -0.06802985464529356,
+      "cost_over_exp_minus_cutoff": 1.42363422326857,
+      "K1_window_cost_share": 0.6999996019972032,
+      "forbidden_cost_exponents": {
+        "0.5": 0.748247800726705,
+        "1": 1.7951521681342932,
+        "2": 5.326254364252934
+      }
+    },
+    {
+      "N": 4096,
+      "action": "mu",
+      "cutoff_slack_over_logN": 0.055577489383258835,
+      "log_score_slack_over_logN": 0.029151923900192844,
+      "cost_over_exp_minus_cutoff": 1.2458296263156998,
+      "K1_window_cost_share": 0.8023668398062804,
+      "forbidden_cost_exponents": {
+        "0.5": 0.8445010256536524,
+        "1": 1.8628670028115024,
+        "2": 4.737601737019802
+      }
+    },
+    {
+      "N": 65536,
+      "action": "mu",
+      "cutoff_slack_over_logN": 0.10071944664258407,
+      "log_score_slack_over_logN": 0.08708183215851856,
+      "cost_over_exp_minus_cutoff": 1.1632827723858439,
+      "K1_window_cost_share": 0.859596133622121,
+      "forbidden_cost_exponents": {
+        "0.5": 0.8776706756255589,
+        "1": 1.8279467177857653,
+        "2": 3.9711426912763965
+      }
+    },
+    {
+      "N": 1048576,
+      "action": "mu",
+      "cutoff_slack_over_logN": 0.13136912735165304,
+      "log_score_slack_over_logN": 0.1232073425244519,
+      "cost_over_exp_minus_cutoff": 1.1197958173332176,
+      "K1_window_cost_share": 0.8930146833289698,
+      "forbidden_cost_exponents": {
+        "0.5": 0.8994681192697646,
+        "1": 1.826767372247572,
+        "2": 3.7591962893184028
+      }
+    },
+    {
+      "N": 64,
+      "action": "shifted",
+      "cutoff_slack_over_logN": -0.04656859148743203,
+      "log_score_slack_over_logN": -0.155445465506414,
+      "cost_over_exp_minus_cutoff": 1.5727193474934198,
+      "K1_window_cost_share": 0.6296504498573207,
+      "forbidden_cost_exponents": {
+        "0.5": 0.6298724241910326,
+        "1": 1.5351986011209602,
+        "2": 4.354850377008825
+      }
+    },
+    {
+      "N": 256,
+      "action": "shifted",
+      "cutoff_slack_over_logN": -0.015117411333019658,
+      "log_score_slack_over_logN": -0.0785663931745407,
+      "cost_over_exp_minus_cutoff": 1.4216751550475002,
+      "K1_window_cost_share": 0.701209899749732,
+      "forbidden_cost_exponents": {
+        "0.5": 0.7576527013294082,
+        "1": 1.8185301490489145,
+        "2": 5.4340934711468645
+      }
+    },
+    {
+      "N": 4096,
+      "action": "shifted",
+      "cutoff_slack_over_logN": 0.05593256759312471,
+      "log_score_slack_over_logN": 0.02952858901874712,
+      "cost_over_exp_minus_cutoff": 1.2456059516343676,
+      "K1_window_cost_share": 0.8025100011616975,
+      "forbidden_cost_exponents": {
+        "0.5": 0.8447985398569862,
+        "1": 1.8642964653194745,
+        "2": 4.748052714852268
+      }
+    },
+    {
+      "N": 65536,
+      "action": "shifted",
+      "cutoff_slack_over_logN": 0.10745282567338525,
+      "log_score_slack_over_logN": 0.09381770353640936,
+      "cost_over_exp_minus_cutoff": 1.1632506185204075,
+      "K1_window_cost_share": 0.8596167862414689,
+      "forbidden_cost_exponents": {
+        "0.5": 0.8768682257083819,
+        "1": 1.8269318050190912,
+        "2": 3.969112868447335
+      }
+    },
+    {
+      "N": 1048576,
+      "action": "shifted",
+      "cutoff_slack_over_logN": 0.14236491401519333,
+      "log_score_slack_over_logN": 0.13420346477249873,
+      "cost_over_exp_minus_cutoff": 1.119790607903834,
+      "K1_window_cost_share": 0.8930179712268856,
+      "forbidden_cost_exponents": {
+        "0.5": 0.8988772613512314,
+        "1": 1.826106572343969,
+        "2": 3.7578270798260407
+      }
+    }
+  ],
+  "runtime": {
+    "Python": {
+      "exit_code": 0,
+      "wall_seconds": 6.426236207997135,
+      "peak_CPU_percent": 1179.0,
+      "peak_RSS_KiB": 1268848,
+      "sample_interval_seconds": 0.2
+    },
+    "Wolfram": {
+      "exit_code": 0,
+      "wall_seconds": 3.7233600420004223,
+      "peak_CPU_percent": 805.6,
+      "peak_RSS_KiB": 2396224,
+      "sample_interval_seconds": 0.2
+    },
+    "cleanup": "All owned batches exited. No persistent MATLAB or Wolfram batch engine retained."
+  },
+  "code_SHA256": {
+    "capture69.py": "d0c8fc82d51ecc0c8ca25495041fac1aaa819974bc57babec46cdaee27c2e82c",
+    "verify69.wl": "91f247b1f97e21960da9a350cc3ec2c827f99c908bfc920bc72177c2d43beddc",
+    "check69.wl": "930fa632f9e3416cb9d2fdb236c24b0e084b2e7e67cdcd4929ce5e4eb1c78849"
+  },
+  "inputs_SHA256": "ae33ab62ea0bd5d6c309cf2fca7f76d8aad44e65b0e127cc6280ddc8a2047abf"
+}
