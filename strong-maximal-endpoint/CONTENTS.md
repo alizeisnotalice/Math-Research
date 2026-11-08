@@ -55,3 +55,5 @@
 - 第80轮：[全halo固定角点列预算不可能统一控制](rounds/r080/report.md)，[本机核验摘要](rounds/r080/validation80.json)。
 
 - 第81轮：[平坦阈值归约与曲边界软预算](rounds/r081/report.md)，[本机核验摘要](rounds/r081/validation81.json)。
+
+- 第82轮：[固定角点优化上界与软预算必要门槛](rounds/r082/report.md)，[本机核验摘要](rounds/r082/validation82.json)。
