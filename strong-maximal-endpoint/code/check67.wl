@@ -1,0 +1,12 @@
+args=Rest[$ScriptCommandLine];If[Length[args]<3,Print["Need labelled.json flux.json output.json"];Exit[2]];
+If[!AllTrue[args[[{1,2}]],FileExistsQ],Print["Missing input result file"];Exit[2]];
+f=Import[args[[1]],"RawJSON"];g=Import[args[[2]],"RawJSON"];
+key67[r_]:=r["case_id"];fg=GroupBy[f["rows"],key67];gg=GroupBy[g["rows"],key67];keys=Intersection[Keys[fg],Keys[gg]];
+rows=Table[fr=Last[SortBy[fg[k],#["refined"]&]];gr=Last[SortBy[gg[k],#["precision"]&]];
+<|"key"->k,"CF_absolute_difference"->ToString[N[Abs[ToExpression[fr["CF"]]-ToExpression[gr["CF"]]],30],InputForm],"action_absolute_difference"->ToString[N[Abs[ToExpression[fr["derivative"]]-ToExpression[gr["derivative"]]],30],InputForm],"radial_absolute_difference"->ToString[N[Abs[ToExpression[fr["radial_derivative"]]-ToExpression[gr["radial_derivative"]]],30],InputForm]|>,{k,keys}];
+mx=Association[Table[k->Max[ToExpression[#[k]]&/@rows],{k,{"CF_absolute_difference","action_absolute_difference","radial_absolute_difference"}}]];
+fluxc=Max[ToExpression[#["flux_absolute_residual"]]&/@g["rows"]];fluxs=Max[ToExpression[#["radial_flux_residual"]]&/@g["rows"]];
+ref=Select[f["rows"],#["refined"]==1&];refdiff=Table[base=First[Select[fg[key67[r]],#["refined"]==0&]];Max[Abs[ToExpression[r[#]]-ToExpression[base[#]]]&/@{"CF","derivative","radial_derivative"}],{r,ref}];
+zero=Select[f["rows"],#["mode"]==5&&#["shift_over_rho"]==-2&];zeromax=Max[Abs[ToExpression[#["CF"]]]&/@zero];
+out=<|"shared_cases"->Length[rows],"rows"->rows,"maxima"->Map[ToString[#,InputForm]&,mx],"action_flux_max_residual"->ToString[fluxc,InputForm],"radial_flux_max_residual"->ToString[fluxs,InputForm],"refined_Fourier_cases"->Length[ref],"max_refinement_difference"->ToString[Max[refdiff],InputForm],"forbidden_allminus_support_cases"->Length[zero],"max_forbidden_CF_residual"->ToString[zeromax,InputForm],"scope"->"Numerical formula agreement; no directed interval total-error certificate"|>;
+Export[args[[3]],out,"RawJSON"];If[Length[rows]!=34||Max[Values[mx]]>10^-25||fluxc>10^-40||fluxs>10^-40||Max[refdiff]>10^-25||zeromax>10^-25,Print["Verification failed"];Exit[3]];Print["Compared ",Length[rows]," three-way signed conditional cases"];
