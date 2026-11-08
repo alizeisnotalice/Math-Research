@@ -41,3 +41,5 @@
 - 第73轮：[一般输入到有界输入的指数精度归约](rounds/r073/report.md)，[本机核验摘要](rounds/r073/validation73.json)。
 
 - 第74轮：[局部低成本不能推出同点参考转移](rounds/r074/report.md)，[本机核验摘要](rounds/r074/validation74.json)。
+
+- 第75轮：[重锚点的真实损失与固定角点的全局结算](rounds/r075/report.md)，[本机核验摘要](rounds/r075/validation75.json)。
