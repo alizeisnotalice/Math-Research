@@ -37,3 +37,5 @@
 - 第71轮：[临界列极限、远尾范围与连续小格下界](rounds/r071/report.md)，[本机核验摘要](rounds/r071/validation71.json)。
 
 - 第72轮：[宽窗口闭合有界输入的成本筛选模块](rounds/r072/report.md)，[本机核验摘要](rounds/r072/validation72.json)。
+
+- 第73轮：[一般输入到有界输入的指数精度归约](rounds/r073/report.md)，[本机核验摘要](rounds/r073/validation73.json)。
