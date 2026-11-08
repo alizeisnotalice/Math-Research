@@ -35,3 +35,5 @@
 - 第70轮：[局部成本筛选的精确指数门槛](rounds/r070/report.md)，[本机核验摘要](rounds/r070/validation70.json)。
 
 - 第71轮：[临界列极限、远尾范围与连续小格下界](rounds/r071/report.md)，[本机核验摘要](rounds/r071/validation71.json)。
+
+- 第72轮：[宽窗口闭合有界输入的成本筛选模块](rounds/r072/report.md)，[本机核验摘要](rounds/r072/validation72.json)。
