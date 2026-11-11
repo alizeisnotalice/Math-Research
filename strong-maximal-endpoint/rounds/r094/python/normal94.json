@@ -1,0 +1,145 @@
+{
+  "pass_batch": true,
+  "cases": 30848,
+  "samples_per_case": 2000000,
+  "actual_workers": 12,
+  "pids": [
+    14144,
+    14145,
+    14146,
+    14147,
+    14148,
+    14149,
+    14150,
+    14151,
+    14152,
+    14153,
+    14154,
+    14155
+  ],
+  "seconds": 1050.1774046669998,
+  "family_failure_bound_union": 0.00030848000000000003,
+  "scope": "normalized two-weight/two-action independent quantile search vs bounded scalar iid reference; no physical-halo certificate or asymptotic proof inferred",
+  "raw_rows_sha256": "5ca9a34d339ed1bfa7e6bfd70c2a9b32246960521fc46c31f3d7a2880db6321c",
+  "references": {
+    "8": {
+      "N": 8,
+      "c_ref": 1.1419741514672528,
+      "q_ref_deterministic": 8.043189974390458,
+      "CDF_probability": 0.25873936789299884,
+      "solver_success": true,
+      "scope": "bounded scalar-search iid reference, not a certified global optimum"
+    },
+    "16": {
+      "N": 16,
+      "c_ref": 1.1661432075714018,
+      "q_ref_deterministic": 16.885119137060055,
+      "CDF_probability": 0.21911962444533983,
+      "solver_success": true,
+      "scope": "bounded scalar-search iid reference, not a certified global optimum"
+    },
+    "32": {
+      "N": 32,
+      "c_ref": 1.1865352493701729,
+      "q_ref_deterministic": 35.098462938862575,
+      "CDF_probability": 0.1816840896922906,
+      "solver_success": true,
+      "scope": "bounded scalar-search iid reference, not a certified global optimum"
+    },
+    "64": {
+      "N": 64,
+      "c_ref": 1.204129275033025,
+      "q_ref_deterministic": 72.44371379863495,
+      "CDF_probability": 0.14781616382967425,
+      "solver_success": true,
+      "scope": "bounded scalar-search iid reference, not a certified global optimum"
+    },
+    "128": {
+      "N": 128,
+      "c_ref": 1.2191542631307928,
+      "q_ref_deterministic": 148.67930502002528,
+      "CDF_probability": 0.11828789179669298,
+      "solver_success": true,
+      "scope": "bounded scalar-search iid reference, not a certified global optimum"
+    },
+    "256": {
+      "N": 256,
+      "c_ref": 1.2317393189140708,
+      "q_ref_deterministic": 303.68001773822965,
+      "CDF_probability": 0.09332238047475946,
+      "solver_success": true,
+      "scope": "bounded scalar-search iid reference, not a certified global optimum"
+    }
+  },
+  "cases_by_N": {
+    "8": 3968,
+    "16": 5376,
+    "32": 5376,
+    "64": 5376,
+    "128": 5376,
+    "256": 5376
+  },
+  "negative_observed_gain_count": 30848,
+  "positive_DKW_lower_bound_count": 0,
+  "minimum_gain_record": {
+    "N": 256,
+    "m": 1,
+    "t": 0.99,
+    "lambda1": 253.44,
+    "lambda2": 0.010039215686274519,
+    "c1": 6.0,
+    "c2": 6.0,
+    "replicate": 1,
+    "seed": 12029372637943628657,
+    "pid": 14150,
+    "samples": 2000000,
+    "candidate_quantile": 27.52444239075419,
+    "reference_quantile": 303.7022469783622,
+    "gain_vs_reference": -276.177804587608,
+    "DKW_gain_interval": [
+      -277.0278807524945,
+      -275.3377955399493
+    ],
+    "per_job_failure_bound": 1e-08,
+    "reference": {
+      "N": 256,
+      "c_ref": 1.2317393189140708,
+      "q_ref_deterministic": 303.68001773822965,
+      "CDF_probability": 0.09332238047475946,
+      "solver_success": true,
+      "scope": "bounded scalar-search iid reference, not a certified global optimum"
+    }
+  },
+  "maximum_gain_record": {
+    "N": 8,
+    "m": 2,
+    "t": 0.25,
+    "lambda1": 1.0,
+    "lambda2": 1.0,
+    "c1": 1.2784645427611616,
+    "c2": 1.2784645427611616,
+    "replicate": 1,
+    "seed": 12662430784663061273,
+    "pid": 14155,
+    "samples": 2000000,
+    "candidate_quantile": 8.025354026546724,
+    "reference_quantile": 8.040495041359684,
+    "gain_vs_reference": -0.015141014812959597,
+    "DKW_gain_interval": [
+      -0.05381929877790803,
+      0.02381798659733292
+    ],
+    "per_job_failure_bound": 1e-08,
+    "reference": {
+      "N": 8,
+      "c_ref": 1.1419741514672528,
+      "q_ref_deterministic": 8.043189974390458,
+      "CDF_probability": 0.25873936789299884,
+      "solver_success": true,
+      "scope": "bounded scalar-search iid reference, not a certified global optimum"
+    }
+  },
+  "total_paired_vectors": 61696000000,
+  "unique_seeds": 30848,
+  "method": "PCG64; SHA256(repr(spec))[:8]; Gamma/common-thinned-Binomial CRN; empirical quantile with two-CDF DKW and 2/S interpolation allowance; no certified optimizer or physical halo assertion"
+}
