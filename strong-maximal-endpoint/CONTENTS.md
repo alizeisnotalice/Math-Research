@@ -1,11 +1,11 @@
 # 强极大算子端点常数：全部资料入口
 
-专属项目目录：`Math-Research/strong-maximal-endpoint/`。截至2026-11-11，已完成第1—92轮；研究继续，当前具体缺口见[第92轮报告](rounds/r092/report.md)。
+专属项目目录：`Math-Research/strong-maximal-endpoint/`。截至2026-11-11，已完成第1—93轮；研究继续，当前具体缺口见[第93轮报告](rounds/r093/report.md)。
 
 |目录或文件|内容|
 |---|---|
 |[README.md](README.md)|当前结论、证明状态与各轮索引|
-|[rounds/](rounds/)|第1—92轮最终报告、必要结果及证书|
+|[rounds/](rounds/)|第1—93轮最终报告、必要结果及证书|
 |[code/](code/)|正式可复现的 MATLAB、Wolfram 与 Python 代码|
 |[sources.md](sources.md)、[references.bib](references.bib)|来源核验与参考文献|
 |[inputs/](inputs/)|用户提供的原始提示文档和研究笔记 PDF|
@@ -77,3 +77,5 @@
 - 第91轮：[共同矩形混合障碍与近帽顶层的真实复用负载](rounds/r091/report.md)，[本机核验摘要](rounds/r091/validation91.json)。
 
 - 第92轮：[一般上界的单指标归约与匹配高层负载](rounds/r092/report.md)，[本机核验摘要](rounds/r092/validation92.json)。
+
+- 第93轮：[加权双曲十字的完整物理极值与共同侧边熵障碍](rounds/r093/report.md)，[本机核验摘要](rounds/r093/validation93.json)。

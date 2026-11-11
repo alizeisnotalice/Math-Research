@@ -230,3 +230,7 @@ András Prékopa, *On logarithmic concave measures and functions*, Acta Scientia
 ## 第61轮内部来源
 
 一般终端稳定性组合r032的全策略密度/MGF与r046一次Fenchel加权尾，并在rounds/r061/block61.md完整给出无cap反馈L1证明。局部MD/CDF输入在local_md61.md从倾斜特征函数重新自含证明，不以r016的证明提纲作为完成依据。固定抛物线乘子来自r060，但本轮独立定向算术验证预算；张量结果仅为较弱阶梯核心的指定截面定标，未涉及完整产品halo。Decimal exp/ln的正确舍入依据沿用r054已核实的官方接口契约，无新增公开优先权归属。
+
+## 第93轮补充：真实指标halo与维数依赖
+
+核对Solyanik原始论文、Hagelstein–Parissis正式期刊/章节和作者稿，明确固定维数近一幂率不能省去维数常数。显式迭代算子界在本门槛仍为粗上界。完整原文页码、查询、版本差异与元数据更正在 [本轮证据](rounds/r093/literature/evidence.md)，BibTeX在 [本轮条目](rounds/r093/literature/references.bib)。既有HagelsteinParissis2013引用键保留并关联核实的2014正式章节，不把同一研究算成两篇。
