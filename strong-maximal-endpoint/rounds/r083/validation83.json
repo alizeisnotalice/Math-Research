@@ -1,0 +1,74 @@
+{
+  "pass_all": true,
+  "symbolic_gates": {
+    "s_height_derivative": true,
+    "s_derivative_decreasing": true,
+    "cost_unimodal_log_derivative": true,
+    "KKT_middle_height_second_order": true,
+    "J_mean_derivative_identity": true
+  },
+  "completed_parameter_cases": 30,
+  "base_mean_roots_at_two_precisions": 60,
+  "relaxed_threshold_roots_at_two_precisions": 30,
+  "verified_dimension_max": 1048576,
+  "caps": [
+    2,
+    3
+  ],
+  "directed_root_brackets": 16,
+  "directed_endpoints": 32,
+  "complete_directed_replay": true,
+  "directed_precision": 70,
+  "directed_final_cells": 1824,
+  "directed_max_cells": 256,
+  "Wolfram_working_precision": [
+    60,
+    120
+  ],
+  "Wolfram_endpoint_precision": 90,
+  "max_precision_difference": "5.3348866947596600296396720933286767171830072662425048338686506727953279439341069920546118325E-44",
+  "max_float64_cross_difference": "6.288998261184787004788374134758307180716988052603661689457099814520684906027975881751734725407608823022762E-10",
+  "max_mean_tail_upper": "2.36806283708453937407839532054068027417105971221267112617325125912E-359",
+  "max_scaled_cost_tail_upper": "1.94658201933049483232517184920240466190984724779734201786024751433E-359",
+  "max_numeric_mean_residual": "2.05735793468618657286328616528441E-44",
+  "acceptance_tolerances": {
+    "precision": "1e-35",
+    "float64_cross": "1e-8",
+    "mean_and_scaled_cost_tail": "1e-300"
+  },
+  "certified_log_corner64_cap3_upper": "54.57",
+  "finite_soft_budget_log_lower": "27527/1600",
+  "finite_soft_budget_lower_integer": 29632283,
+  "positive_exp_Taylor_terms": 81,
+  "Python_directed_processes": 12,
+  "Python_directed_seconds": 0.7974898329994176,
+  "Wolfram_workers": 12,
+  "Wolfram_cached_completed_parameter_cases": 30,
+  "Wolfram_final_certificate_phase_seconds": 0.261552,
+  "Wolfram_kernels_closed": true,
+  "excluded_extension_dimensions": [
+    1073741824,
+    1099511627776,
+    1152921504606846976
+  ],
+  "excluded_extension_status": "Each exceeded a 300-second per-case limit; integer-shape Gamma errors observed; none is counted as verified.",
+  "scope": "Actual fixed physical-corner norm via existing r028 r=0 reduction. Constant-order asymptotic and radial-method loss3/2; not a new general strong-maximal upper bound. User requested pause after this round.",
+  "source_sha256": {
+    "exact83.py": "d4137b6f55371f4ac25abfe04efaec3cc8daca1113b7c24640326ffb308c4f28",
+    "certify83.py": "c961046abf21d14b9a9046d1b8fbf5406e7cca8b0a43a291fb396e664c6b707c",
+    "verify83.wl": "92f6786dd4fab663f97605d2954e80cf65849e403abc79a34a2b4a9458b75fcb",
+    "check83.py": "fdbdbe0628de1391be11771e9955cf267136d855e75c5222dc187579517e9a2e",
+    "certify82.py": "8a63887a1c7d1058fbc9d1c43655f69a1b5e4e99db408d3e1d9051ef18635180"
+  },
+  "input_sha256": {
+    "python/exact83.json": "16e8990fa026875845bab64862b48949d2538cf1fda6cdda22d6d6468300f166",
+    "python/certificates83.json": "41d2183ca7134aecb4e4ed7a258acfebc8c509934d75cb27f0cc897eec8182bc",
+    "wolfram/verification83.json": "7d11a93a626f879e9bf675815124f5767bbaaae3a5e2a8b22d83d1d14843d11b"
+  },
+  "prior_dependency_sha256": {
+    "rounds/r028/report.md": "7b2dd8052585ec2253863f666505fc72f172b5fa0de79606553b4122d0d55313",
+    "rounds/r082/asymptotic82.md": "dfd3228ab33c42a7c4530cdd7400aad1ba2b8c44f03aed9d0d1a5028d1ec4595",
+    "rounds/r082/wolfram/verification82.json": "35526a1210aff8b06a3c3128cc2e998e0a723b91559aad105d59baa46074e485",
+    "rounds/r054/scalar_proof54.md": "34bfc039a24f5984e757f6a34749f4c27f5c03682696ba2ae3239d73e5fe1f85"
+  }
+}

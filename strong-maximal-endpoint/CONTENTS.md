@@ -57,3 +57,5 @@
 - 第81轮：[平坦阈值归约与曲边界软预算](rounds/r081/report.md)，[本机核验摘要](rounds/r081/validation81.json)。
 
 - 第82轮：[固定角点优化上界与软预算必要门槛](rounds/r082/report.md)，[本机核验摘要](rounds/r082/validation82.json)。
+
+- 第83轮：[真实角点最优费用与径向方法损失](rounds/r083/report.md)，[本机核验摘要](rounds/r083/validation83.json)。

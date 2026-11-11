@@ -1,5 +1,7 @@
 # Radial Fenchel kernel charge at one fixed physical corner
 
+> 第83轮归属补充：第28轮r=0边界已经给出物理固定角点的精确Gamma标量归约。第82轮的q仅是指定径向Fenchel/Markov方法内最优的有效上界；真实算子最优费用满足log K=q−3/2+o(1)。见 [第83轮精确求解](../r083/exact83.md)及[常数阶比较](../r083/asymptotic83.md)。
+
 ## Verdict
 
 The proposed charge is correct.  For \(N\geq2\), a fixed cap \(A>1\), and
