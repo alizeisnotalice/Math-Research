@@ -83,3 +83,5 @@
 - 第94轮：[完整无条件对数凸源的锐上界与Steiner反例](rounds/r094/report.md)，[本机核验摘要](rounds/r094/validation94.json)。
 
 - 第95轮：[近最优源的全halo对称化损失与周期密度等价](rounds/r095/report.md)，[本机核验摘要](rounds/r095/validation95.json)。
+
+- 第96轮：[宏观覆盖的未来接收信息费用与真实矩形对偶](rounds/r096/report.md)，[本机核验摘要](rounds/r096/validation96.json)。

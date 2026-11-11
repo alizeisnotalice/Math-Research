@@ -1,0 +1,7427 @@
+{
+  "schema": "periodic-torus-grid-milp-candidate-v1",
+  "pass_all_candidates": true,
+  "configured_workers": 12,
+  "actual_worker_pids": [
+    18716,
+    18717,
+    18718,
+    18719,
+    18720,
+    18721,
+    18722,
+    18723,
+    18724,
+    18725,
+    18726,
+    18727
+  ],
+  "actual_workers": 12,
+  "solver_threads_per_worker": 1,
+  "case_count": 12,
+  "pilot_mode": false,
+  "source_rounding_denominator": 16777216,
+  "threshold_epsilon_generation_only": "1/1000000",
+  "all_candidates_certified_at_p_not_p_plus_epsilon": true,
+  "scipy_version": "1.18.1",
+  "cases": [
+    {
+      "dimension": 2,
+      "cells_per_axis": 6,
+      "grid": "dyadic6",
+      "p": "4/5",
+      "theta": "1/2",
+      "epsilon_generation_fraction": "1/1000000",
+      "rectangle_count": 1296,
+      "source_cell_count": 36,
+      "receiver_cell_count": 36,
+      "variable_count": 1368,
+      "constraint_count": 1333,
+      "constraint_nnz": 33120,
+      "sparse_model_bytes": 458304,
+      "axis_breaks": [
+        "0",
+        "1/16",
+        "1/8",
+        "1/4",
+        "1/2",
+        "3/4",
+        "1"
+      ],
+      "solver": "scipy.optimize.milp / HiGHS",
+      "scipy_version": "1.18.1",
+      "solver_options": {
+        "presolve": true,
+        "time_limit": 120,
+        "mip_rel_gap": 0.0,
+        "threads": 1
+      },
+      "solver_threads_option_forwarded": true,
+      "time_limit_seconds": 120,
+      "status": 1,
+      "success": false,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "has_incumbent": true,
+      "objective_numeric": 0.290625890625,
+      "mip_gap_numeric": 0.9869928800698384,
+      "dual_bound_numeric_only": 0.0037802058141693895,
+      "node_count": 10443,
+      "solver_seconds": 120.0421447080007,
+      "candidate": {
+        "certificate_pass": true,
+        "source_rounding_denominator": 16777216,
+        "source_cell_coordinates_lexicographic": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "source_cell_fraction_numerators": [
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          6711021,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          3355469,
+          1677798,
+          16777216,
+          16777216,
+          16777216,
+          3355511,
+          0,
+          0,
+          0,
+          16777216,
+          1677798,
+          0,
+          0,
+          0,
+          6711021,
+          16777216,
+          1677756,
+          0,
+          0,
+          0
+        ],
+        "source_realization": "In each cell occupy a half-open slab in coordinate 1 of relative length numerator/2^24; this realizes its exact cell-average density.",
+        "source_density_fraction": "9751787/33554432",
+        "source_density_numerator": 9751787,
+        "source_density_denominator": 33554432,
+        "solver_receiver_volume_numeric": 0.5,
+        "solver_positive_w_count": 7,
+        "solver_binary_integrality_max_error": 0.0,
+        "failed_solver_selected_rectangle_ids": [],
+        "certified_selected_rectangles": [
+          {
+            "id": 47,
+            "axis_origin_length_cells": [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                6
+              ]
+            ],
+            "mean_fraction": "107374317/134217728",
+            "mean_minus_p_fraction": "673/671088640",
+            "receiver_cell_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              0,
+              7,
+              8,
+              9,
+              10,
+              11,
+              6
+            ]
+          },
+          {
+            "id": 81,
+            "axis_origin_length_cells": [
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                4
+              ]
+            ],
+            "mean_fraction": "147639687/184549376",
+            "mean_minus_p_fraction": "931/922746880",
+            "receiver_cell_ids": [
+              1,
+              2,
+              3,
+              4,
+              7,
+              8,
+              9,
+              10,
+              13,
+              14,
+              15,
+              16
+            ]
+          },
+          {
+            "id": 111,
+            "axis_origin_length_cells": [
+              [
+                0,
+                4
+              ],
+              [
+                0,
+                4
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              0,
+              1,
+              2,
+              3,
+              6,
+              7,
+              8,
+              9,
+              12,
+              13,
+              14,
+              15,
+              18,
+              19,
+              20,
+              21
+            ]
+          },
+          {
+            "id": 151,
+            "axis_origin_length_cells": [
+              [
+                0,
+                5
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "mean_fraction": "30199027/37748736",
+            "mean_minus_p_fraction": "191/188743680",
+            "receiver_cell_ids": [
+              1,
+              2,
+              7,
+              8,
+              13,
+              14,
+              19,
+              20,
+              25,
+              26
+            ]
+          },
+          {
+            "id": 286,
+            "axis_origin_length_cells": [
+              [
+                1,
+                2
+              ],
+              [
+                5,
+                5
+              ]
+            ],
+            "mean_fraction": "30199027/37748736",
+            "mean_minus_p_fraction": "191/188743680",
+            "receiver_cell_ids": [
+              11,
+              6,
+              7,
+              8,
+              9,
+              17,
+              12,
+              13,
+              14,
+              15
+            ]
+          },
+          {
+            "id": 613,
+            "axis_origin_length_cells": [
+              [
+                2,
+                6
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            "mean_fraction": "107374317/134217728",
+            "mean_minus_p_fraction": "673/671088640",
+            "receiver_cell_ids": [
+              12,
+              13,
+              18,
+              19,
+              24,
+              25,
+              30,
+              31,
+              0,
+              1,
+              6,
+              7
+            ]
+          },
+          {
+            "id": 1226,
+            "axis_origin_length_cells": [
+              [
+                5,
+                5
+              ],
+              [
+                0,
+                3
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              30,
+              31,
+              32,
+              0,
+              1,
+              2,
+              6,
+              7,
+              8,
+              12,
+              13,
+              14,
+              18,
+              19,
+              20
+            ]
+          }
+        ],
+        "receiver_cell_ids_exact_union": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          24,
+          25,
+          26,
+          30,
+          31,
+          32
+        ],
+        "theta_required_fraction": "1/2",
+        "theta_actual_fraction": "1/2",
+        "theta_actual_numerator": 1,
+        "theta_actual_denominator": 2,
+        "theta_actual_over_density_fraction": "16777216/9751787",
+        "theta_actual_over_density_numerator": 16777216,
+        "theta_actual_over_density_denominator": 9751787,
+        "all_final_rectangles_strictly_above_p": true
+      }
+    },
+    {
+      "dimension": 2,
+      "cells_per_axis": 6,
+      "grid": "dyadic6",
+      "p": "4/5",
+      "theta": "3/4",
+      "epsilon_generation_fraction": "1/1000000",
+      "rectangle_count": 1296,
+      "source_cell_count": 36,
+      "receiver_cell_count": 36,
+      "variable_count": 1368,
+      "constraint_count": 1333,
+      "constraint_nnz": 33120,
+      "sparse_model_bytes": 458304,
+      "axis_breaks": [
+        "0",
+        "1/16",
+        "1/8",
+        "1/4",
+        "1/2",
+        "3/4",
+        "1"
+      ],
+      "solver": "scipy.optimize.milp / HiGHS",
+      "scipy_version": "1.18.1",
+      "solver_options": {
+        "presolve": true,
+        "time_limit": 120,
+        "mip_rel_gap": 0.0,
+        "threads": 1
+      },
+      "solver_threads_option_forwarded": true,
+      "time_limit_seconds": 120,
+      "status": 1,
+      "success": false,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "has_incumbent": true,
+      "objective_numeric": 0.4406260781249999,
+      "mip_gap_numeric": 0.9937219912452991,
+      "dual_bound_numeric_only": 0.0027662543760182292,
+      "node_count": 9008,
+      "solver_seconds": 120.02736125000047,
+      "candidate": {
+        "certificate_pass": true,
+        "source_rounding_denominator": 16777216,
+        "source_cell_coordinates_lexicographic": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "source_cell_fraction_numerators": [
+          16777216,
+          16777216,
+          0,
+          0,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          0,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          10066531,
+          7549836,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          0,
+          0,
+          16777216,
+          0,
+          16777216,
+          0,
+          0,
+          0,
+          838962
+        ],
+        "source_realization": "In each cell occupy a half-open slab in coordinate 1 of relative length numerator/2^24; this realizes its exact cell-average density.",
+        "source_density_fraction": "236559327/536870912",
+        "source_density_numerator": 236559327,
+        "source_density_denominator": 536870912,
+        "solver_receiver_volume_numeric": 0.75,
+        "solver_positive_w_count": 5,
+        "solver_binary_integrality_max_error": 0.0,
+        "failed_solver_selected_rectangle_ids": [],
+        "certified_selected_rectangles": [
+          {
+            "id": 136,
+            "axis_origin_length_cells": [
+              [
+                0,
+                4
+              ],
+              [
+                4,
+                5
+              ]
+            ],
+            "mean_fraction": "161061475/201326592",
+            "mean_minus_p_fraction": "1007/1006632960",
+            "receiver_cell_ids": [
+              4,
+              5,
+              0,
+              1,
+              2,
+              10,
+              11,
+              6,
+              7,
+              8,
+              16,
+              17,
+              12,
+              13,
+              14,
+              22,
+              23,
+              18,
+              19,
+              20
+            ]
+          },
+          {
+            "id": 177,
+            "axis_origin_length_cells": [
+              [
+                0,
+                5
+              ],
+              [
+                5,
+                4
+              ]
+            ],
+            "mean_fraction": "161061475/201326592",
+            "mean_minus_p_fraction": "1007/1006632960",
+            "receiver_cell_ids": [
+              5,
+              0,
+              1,
+              2,
+              11,
+              6,
+              7,
+              8,
+              17,
+              12,
+              13,
+              14,
+              23,
+              18,
+              19,
+              20,
+              29,
+              24,
+              25,
+              26
+            ]
+          },
+          {
+            "id": 428,
+            "axis_origin_length_cells": [
+              [
+                1,
+                6
+              ],
+              [
+                5,
+                3
+              ]
+            ],
+            "mean_fraction": "40265369/50331648",
+            "mean_minus_p_fraction": "253/251658240",
+            "receiver_cell_ids": [
+              11,
+              6,
+              7,
+              17,
+              12,
+              13,
+              23,
+              18,
+              19,
+              29,
+              24,
+              25,
+              35,
+              30,
+              31,
+              5,
+              0,
+              1
+            ]
+          },
+          {
+            "id": 490,
+            "axis_origin_length_cells": [
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                5
+              ]
+            ],
+            "mean_fraction": "5872033/7340032",
+            "mean_minus_p_fraction": "37/36700160",
+            "receiver_cell_ids": [
+              15,
+              16,
+              17,
+              12,
+              13,
+              21,
+              22,
+              23,
+              18,
+              19
+            ]
+          },
+          {
+            "id": 530,
+            "axis_origin_length_cells": [
+              [
+                2,
+                3
+              ],
+              [
+                4,
+                3
+              ]
+            ],
+            "mean_fraction": "37/45",
+            "mean_minus_p_fraction": "1/45",
+            "receiver_cell_ids": [
+              16,
+              17,
+              12,
+              22,
+              23,
+              18,
+              28,
+              29,
+              24
+            ]
+          }
+        ],
+        "receiver_cell_ids_exact_union": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          28,
+          29,
+          30,
+          31,
+          35
+        ],
+        "theta_required_fraction": "3/4",
+        "theta_actual_fraction": "3/4",
+        "theta_actual_numerator": 3,
+        "theta_actual_denominator": 4,
+        "theta_actual_over_density_fraction": "134217728/78853109",
+        "theta_actual_over_density_numerator": 134217728,
+        "theta_actual_over_density_denominator": 78853109,
+        "all_final_rectangles_strictly_above_p": true
+      }
+    },
+    {
+      "dimension": 2,
+      "cells_per_axis": 6,
+      "grid": "dyadic6",
+      "p": "9/10",
+      "theta": "1/2",
+      "epsilon_generation_fraction": "1/1000000",
+      "rectangle_count": 1296,
+      "source_cell_count": 36,
+      "receiver_cell_count": 36,
+      "variable_count": 1368,
+      "constraint_count": 1333,
+      "constraint_nnz": 33120,
+      "sparse_model_bytes": 458304,
+      "axis_breaks": [
+        "0",
+        "1/16",
+        "1/8",
+        "1/4",
+        "1/2",
+        "3/4",
+        "1"
+      ],
+      "solver": "scipy.optimize.milp / HiGHS",
+      "scipy_version": "1.18.1",
+      "solver_options": {
+        "presolve": true,
+        "time_limit": 120,
+        "mip_rel_gap": 0.0,
+        "threads": 1
+      },
+      "solver_threads_option_forwarded": true,
+      "time_limit_seconds": 120,
+      "status": 1,
+      "success": false,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "has_incumbent": true,
+      "objective_numeric": 0.39609432031270114,
+      "mip_gap_numeric": 0.9918740073351177,
+      "dual_bound_numeric_only": 0.003218659541462535,
+      "node_count": 13316,
+      "solver_seconds": 120.02729537499908,
+      "candidate": {
+        "certificate_pass": true,
+        "source_rounding_denominator": 16777216,
+        "source_cell_coordinates_lexicographic": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "source_cell_fraction_numerators": [
+          0,
+          16777216,
+          13422478,
+          0,
+          0,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          0,
+          0,
+          10067068,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          1,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          0,
+          5871506,
+          16777216,
+          16777216,
+          6501274,
+          0,
+          0
+        ],
+        "source_realization": "In each cell occupy a half-open slab in coordinate 1 of relative length numerator/2^24; this realizes its exact cell-average density.",
+        "source_density_fraction": "425303041/1073741824",
+        "source_density_numerator": 425303041,
+        "source_density_denominator": 1073741824,
+        "solver_receiver_volume_numeric": 0.49999999999999717,
+        "solver_positive_w_count": 4,
+        "solver_binary_integrality_max_error": 0.0,
+        "failed_solver_selected_rectangle_ids": [],
+        "certified_selected_rectangles": [
+          {
+            "id": 152,
+            "axis_origin_length_cells": [
+              [
+                0,
+                5
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "mean_fraction": "317089735/352321536",
+            "mean_minus_p_fraction": "1763/1761607680",
+            "receiver_cell_ids": [
+              1,
+              2,
+              3,
+              7,
+              8,
+              9,
+              13,
+              14,
+              15,
+              19,
+              20,
+              21,
+              25,
+              26,
+              27
+            ]
+          },
+          {
+            "id": 327,
+            "axis_origin_length_cells": [
+              [
+                1,
+                4
+              ],
+              [
+                0,
+                4
+              ]
+            ],
+            "mean_fraction": "166094623/184549376",
+            "mean_minus_p_fraction": "923/922746880",
+            "receiver_cell_ids": [
+              6,
+              7,
+              8,
+              9,
+              12,
+              13,
+              14,
+              15,
+              18,
+              19,
+              20,
+              21,
+              24,
+              25,
+              26,
+              27
+            ]
+          },
+          {
+            "id": 548,
+            "axis_origin_length_cells": [
+              [
+                2,
+                4
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "mean_fraction": "46242253/51380224",
+            "mean_minus_p_fraction": "257/256901120",
+            "receiver_cell_ids": [
+              13,
+              14,
+              15,
+              19,
+              20,
+              21,
+              25,
+              26,
+              27,
+              31,
+              32,
+              33
+            ]
+          },
+          {
+            "id": 1010,
+            "axis_origin_length_cells": [
+              [
+                4,
+                5
+              ],
+              [
+                0,
+                3
+              ]
+            ],
+            "mean_fraction": "60398045/67108864",
+            "mean_minus_p_fraction": "337/335544320",
+            "receiver_cell_ids": [
+              24,
+              25,
+              26,
+              30,
+              31,
+              32,
+              0,
+              1,
+              2,
+              6,
+              7,
+              8,
+              12,
+              13,
+              14
+            ]
+          }
+        ],
+        "receiver_cell_ids_exact_union": [
+          0,
+          1,
+          2,
+          3,
+          6,
+          7,
+          8,
+          9,
+          12,
+          13,
+          14,
+          15,
+          18,
+          19,
+          20,
+          21,
+          24,
+          25,
+          26,
+          27,
+          30,
+          31,
+          32,
+          33
+        ],
+        "theta_required_fraction": "1/2",
+        "theta_actual_fraction": "1/2",
+        "theta_actual_numerator": 1,
+        "theta_actual_denominator": 2,
+        "theta_actual_over_density_fraction": "536870912/425303041",
+        "theta_actual_over_density_numerator": 536870912,
+        "theta_actual_over_density_denominator": 425303041,
+        "all_final_rectangles_strictly_above_p": true
+      }
+    },
+    {
+      "dimension": 2,
+      "cells_per_axis": 6,
+      "grid": "dyadic6",
+      "p": "9/10",
+      "theta": "3/4",
+      "epsilon_generation_fraction": "1/1000000",
+      "rectangle_count": 1296,
+      "source_cell_count": 36,
+      "receiver_cell_count": 36,
+      "variable_count": 1368,
+      "constraint_count": 1333,
+      "constraint_nnz": 33120,
+      "sparse_model_bytes": 458304,
+      "axis_breaks": [
+        "0",
+        "1/16",
+        "1/8",
+        "1/4",
+        "1/2",
+        "3/4",
+        "1"
+      ],
+      "solver": "scipy.optimize.milp / HiGHS",
+      "scipy_version": "1.18.1",
+      "solver_options": {
+        "presolve": true,
+        "time_limit": 120,
+        "mip_rel_gap": 0.0,
+        "threads": 1
+      },
+      "solver_threads_option_forwarded": true,
+      "time_limit_seconds": 120,
+      "status": 1,
+      "success": false,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "has_incumbent": true,
+      "objective_numeric": 0.58632941015625,
+      "mip_gap_numeric": 0.9949324328821655,
+      "dual_bound_numeric_only": 0.0029712636391271653,
+      "node_count": 10980,
+      "solver_seconds": 120.03638975000104,
+      "candidate": {
+        "certificate_pass": true,
+        "source_rounding_denominator": 16777216,
+        "source_cell_coordinates_lexicographic": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "source_cell_fraction_numerators": [
+          16777216,
+          16777216,
+          16777216,
+          0,
+          16777216,
+          16777216,
+          6712498,
+          0,
+          0,
+          0,
+          0,
+          16777216,
+          16777216,
+          0,
+          0,
+          0,
+          3774899,
+          16777216,
+          16777216,
+          6711323,
+          0,
+          0,
+          4509000,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          16777216,
+          16777216
+        ],
+        "source_realization": "In each cell occupy a half-open slab in coordinate 1 of relative length numerator/2^24; this realizes its exact cell-average density.",
+        "source_density_fraction": "1259132827/2147483648",
+        "source_density_numerator": 1259132827,
+        "source_density_denominator": 2147483648,
+        "solver_receiver_volume_numeric": 0.75,
+        "solver_positive_w_count": 5,
+        "solver_binary_integrality_max_error": 0.0,
+        "failed_solver_selected_rectangle_ids": [],
+        "certified_selected_rectangles": [
+          {
+            "id": 782,
+            "axis_origin_length_cells": [
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                3
+              ]
+            ],
+            "mean_fraction": "13801897/15335424",
+            "mean_minus_p_fraction": "77/76677120",
+            "receiver_cell_ids": [
+              22,
+              23,
+              18,
+              28,
+              29,
+              24,
+              34,
+              35,
+              30,
+              4,
+              5,
+              0
+            ]
+          },
+          {
+            "id": 789,
+            "axis_origin_length_cells": [
+              [
+                3,
+                4
+              ],
+              [
+                5,
+                4
+              ]
+            ],
+            "mean_fraction": "392587291/436207616",
+            "mean_minus_p_fraction": "2183/2181038080",
+            "receiver_cell_ids": [
+              23,
+              18,
+              19,
+              20,
+              29,
+              24,
+              25,
+              26,
+              35,
+              30,
+              31,
+              32,
+              5,
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "id": 1034,
+            "axis_origin_length_cells": [
+              [
+                4,
+                5
+              ],
+              [
+                4,
+                3
+              ]
+            ],
+            "mean_fraction": "815373605/905969664",
+            "mean_minus_p_fraction": "4537/4529848320",
+            "receiver_cell_ids": [
+              28,
+              29,
+              24,
+              34,
+              35,
+              30,
+              4,
+              5,
+              0,
+              10,
+              11,
+              6,
+              16,
+              17,
+              12
+            ]
+          },
+          {
+            "id": 1041,
+            "axis_origin_length_cells": [
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                4
+              ]
+            ],
+            "mean_fraction": "241592179/268435456",
+            "mean_minus_p_fraction": "1343/1342177280",
+            "receiver_cell_ids": [
+              29,
+              24,
+              25,
+              26,
+              35,
+              30,
+              31,
+              32,
+              5,
+              0,
+              1,
+              2,
+              11,
+              6,
+              7,
+              8,
+              17,
+              12,
+              13,
+              14
+            ]
+          },
+          {
+            "id": 1076,
+            "axis_origin_length_cells": [
+              [
+                4,
+                6
+              ],
+              [
+                5,
+                3
+              ]
+            ],
+            "mean_fraction": "754976399/805306368",
+            "mean_minus_p_fraction": "151003339/4026531840",
+            "receiver_cell_ids": [
+              29,
+              24,
+              25,
+              35,
+              30,
+              31,
+              5,
+              0,
+              1,
+              11,
+              6,
+              7,
+              17,
+              12,
+              13,
+              23,
+              18,
+              19
+            ]
+          }
+        ],
+        "receiver_cell_ids_exact_union": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11,
+          12,
+          13,
+          14,
+          16,
+          17,
+          18,
+          19,
+          20,
+          22,
+          23,
+          24,
+          25,
+          26,
+          28,
+          29,
+          30,
+          31,
+          32,
+          34,
+          35
+        ],
+        "theta_required_fraction": "3/4",
+        "theta_actual_fraction": "3/4",
+        "theta_actual_numerator": 3,
+        "theta_actual_denominator": 4,
+        "theta_actual_over_density_fraction": "1610612736/1259132827",
+        "theta_actual_over_density_numerator": 1610612736,
+        "theta_actual_over_density_denominator": 1259132827,
+        "all_final_rectangles_strictly_above_p": true
+      }
+    },
+    {
+      "dimension": 2,
+      "cells_per_axis": 6,
+      "grid": "dyadic6",
+      "p": "19/20",
+      "theta": "1/2",
+      "epsilon_generation_fraction": "1/1000000",
+      "rectangle_count": 1296,
+      "source_cell_count": 36,
+      "receiver_cell_count": 36,
+      "variable_count": 1368,
+      "constraint_count": 1333,
+      "constraint_nnz": 33120,
+      "sparse_model_bytes": 458304,
+      "axis_breaks": [
+        "0",
+        "1/16",
+        "1/8",
+        "1/4",
+        "1/2",
+        "3/4",
+        "1"
+      ],
+      "solver": "scipy.optimize.milp / HiGHS",
+      "scipy_version": "1.18.1",
+      "solver_options": {
+        "presolve": true,
+        "time_limit": 120,
+        "mip_rel_gap": 0.0,
+        "threads": 1
+      },
+      "solver_threads_option_forwarded": true,
+      "time_limit_seconds": 120,
+      "status": 1,
+      "success": false,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "has_incumbent": true,
+      "objective_numeric": 0.44160241796875,
+      "mip_gap_numeric": 0.9928807426151767,
+      "dual_bound_numeric_only": 0.003143881275279876,
+      "node_count": 17529,
+      "solver_seconds": 120.02982608300044,
+      "candidate": {
+        "certificate_pass": true,
+        "source_rounding_denominator": 16777216,
+        "source_cell_coordinates_lexicographic": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "source_cell_fraction_numerators": [
+          0,
+          16777216,
+          16777216,
+          0,
+          0,
+          0,
+          0,
+          15939044,
+          16777216,
+          2936290,
+          0,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          0,
+          15309239,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          0,
+          0,
+          11534777,
+          16777216,
+          16777216,
+          0,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          0
+        ],
+        "source_realization": "In each cell occupy a half-open slab in coordinate 1 of relative length numerator/2^24; this realizes its exact cell-average density.",
+        "source_density_fraction": "474166987/1073741824",
+        "source_density_numerator": 474166987,
+        "source_density_denominator": 1073741824,
+        "solver_receiver_volume_numeric": 0.5,
+        "solver_positive_w_count": 4,
+        "solver_binary_integrality_max_error": 0.0,
+        "failed_solver_selected_rectangle_ids": [],
+        "certified_selected_rectangles": [
+          {
+            "id": 337,
+            "axis_origin_length_cells": [
+              [
+                1,
+                4
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "mean_fraction": "3984593/4194304",
+            "mean_minus_p_fraction": "21/20971520",
+            "receiver_cell_ids": [
+              8,
+              9,
+              14,
+              15,
+              20,
+              21,
+              26,
+              27
+            ]
+          },
+          {
+            "id": 543,
+            "axis_origin_length_cells": [
+              [
+                2,
+                4
+              ],
+              [
+                0,
+                4
+              ]
+            ],
+            "mean_fraction": "3984593/4194304",
+            "mean_minus_p_fraction": "21/20971520",
+            "receiver_cell_ids": [
+              12,
+              13,
+              14,
+              15,
+              18,
+              19,
+              20,
+              21,
+              24,
+              25,
+              26,
+              27,
+              30,
+              31,
+              32,
+              33
+            ]
+          },
+          {
+            "id": 584,
+            "axis_origin_length_cells": [
+              [
+                2,
+                5
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "mean_fraction": "3984593/4194304",
+            "mean_minus_p_fraction": "21/20971520",
+            "receiver_cell_ids": [
+              13,
+              14,
+              15,
+              19,
+              20,
+              21,
+              25,
+              26,
+              27,
+              31,
+              32,
+              33,
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 1226,
+            "axis_origin_length_cells": [
+              [
+                5,
+                5
+              ],
+              [
+                0,
+                3
+              ]
+            ],
+            "mean_fraction": "3984593/4194304",
+            "mean_minus_p_fraction": "21/20971520",
+            "receiver_cell_ids": [
+              30,
+              31,
+              32,
+              0,
+              1,
+              2,
+              6,
+              7,
+              8,
+              12,
+              13,
+              14,
+              18,
+              19,
+              20
+            ]
+          }
+        ],
+        "receiver_cell_ids_exact_union": [
+          0,
+          1,
+          2,
+          3,
+          6,
+          7,
+          8,
+          9,
+          12,
+          13,
+          14,
+          15,
+          18,
+          19,
+          20,
+          21,
+          24,
+          25,
+          26,
+          27,
+          30,
+          31,
+          32,
+          33
+        ],
+        "theta_required_fraction": "1/2",
+        "theta_actual_fraction": "1/2",
+        "theta_actual_numerator": 1,
+        "theta_actual_denominator": 2,
+        "theta_actual_over_density_fraction": "536870912/474166987",
+        "theta_actual_over_density_numerator": 536870912,
+        "theta_actual_over_density_denominator": 474166987,
+        "all_final_rectangles_strictly_above_p": true
+      }
+    },
+    {
+      "dimension": 2,
+      "cells_per_axis": 6,
+      "grid": "dyadic6",
+      "p": "19/20",
+      "theta": "3/4",
+      "epsilon_generation_fraction": "1/1000000",
+      "rectangle_count": 1296,
+      "source_cell_count": 36,
+      "receiver_cell_count": 36,
+      "variable_count": 1368,
+      "constraint_count": 1333,
+      "constraint_nnz": 33120,
+      "sparse_model_bytes": 458304,
+      "axis_breaks": [
+        "0",
+        "1/16",
+        "1/8",
+        "1/4",
+        "1/2",
+        "3/4",
+        "1"
+      ],
+      "solver": "scipy.optimize.milp / HiGHS",
+      "scipy_version": "1.18.1",
+      "solver_options": {
+        "presolve": true,
+        "time_limit": 120,
+        "mip_rel_gap": 0.0,
+        "threads": 1
+      },
+      "solver_threads_option_forwarded": true,
+      "time_limit_seconds": 120,
+      "status": 1,
+      "success": false,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "has_incumbent": true,
+      "objective_numeric": 0.6625014375,
+      "mip_gap_numeric": 0.99610897431624,
+      "dual_bound_numeric_only": 0.0025778101088403727,
+      "node_count": 8843,
+      "solver_seconds": 120.02545716699933,
+      "candidate": {
+        "certificate_pass": true,
+        "source_rounding_denominator": 16777216,
+        "source_cell_coordinates_lexicographic": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "source_cell_fraction_numerators": [
+          16777216,
+          0,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          0,
+          6711088,
+          16777216,
+          16777216,
+          336,
+          0,
+          0,
+          0,
+          10066464,
+          16777216,
+          16777216,
+          0,
+          0,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          3355712,
+          16777216,
+          16777216,
+          16777216,
+          16777216
+        ],
+        "source_realization": "In each cell occupy a half-open slab in coordinate 1 of relative length numerator/2^24; this realizes its exact cell-average density.",
+        "source_density_fraction": "44459719/67108864",
+        "source_density_numerator": 44459719,
+        "source_density_denominator": 67108864,
+        "solver_receiver_volume_numeric": 0.75,
+        "solver_positive_w_count": 5,
+        "solver_binary_integrality_max_error": 0.0,
+        "failed_solver_selected_rectangle_ids": [],
+        "certified_selected_rectangles": [
+          {
+            "id": 853,
+            "axis_origin_length_cells": [
+              [
+                3,
+                6
+              ],
+              [
+                4,
+                2
+              ]
+            ],
+            "mean_fraction": "3984593/4194304",
+            "mean_minus_p_fraction": "21/20971520",
+            "receiver_cell_ids": [
+              22,
+              23,
+              28,
+              29,
+              34,
+              35,
+              4,
+              5,
+              10,
+              11,
+              16,
+              17
+            ]
+          },
+          {
+            "id": 859,
+            "axis_origin_length_cells": [
+              [
+                3,
+                6
+              ],
+              [
+                5,
+                2
+              ]
+            ],
+            "mean_fraction": "3984593/4194304",
+            "mean_minus_p_fraction": "21/20971520",
+            "receiver_cell_ids": [
+              23,
+              18,
+              29,
+              24,
+              35,
+              30,
+              5,
+              0,
+              11,
+              6,
+              17,
+              12
+            ]
+          },
+          {
+            "id": 1091,
+            "axis_origin_length_cells": [
+              [
+                5,
+                1
+              ],
+              [
+                1,
+                6
+              ]
+            ],
+            "mean_fraction": "3984593/4194304",
+            "mean_minus_p_fraction": "21/20971520",
+            "receiver_cell_ids": [
+              31,
+              32,
+              33,
+              34,
+              35,
+              30
+            ]
+          },
+          {
+            "id": 1167,
+            "axis_origin_length_cells": [
+              [
+                5,
+                3
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "mean_fraction": "20/21",
+            "mean_minus_p_fraction": "1/420",
+            "receiver_cell_ids": [
+              32,
+              33,
+              34,
+              35,
+              2,
+              3,
+              4,
+              5,
+              8,
+              9,
+              10,
+              11
+            ]
+          },
+          {
+            "id": 1208,
+            "axis_origin_length_cells": [
+              [
+                5,
+                4
+              ],
+              [
+                3,
+                3
+              ]
+            ],
+            "mean_fraction": "3984593/4194304",
+            "mean_minus_p_fraction": "21/20971520",
+            "receiver_cell_ids": [
+              33,
+              34,
+              35,
+              3,
+              4,
+              5,
+              9,
+              10,
+              11,
+              15,
+              16,
+              17
+            ]
+          }
+        ],
+        "receiver_cell_ids_exact_union": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12,
+          15,
+          16,
+          17,
+          18,
+          22,
+          23,
+          24,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "theta_required_fraction": "3/4",
+        "theta_actual_fraction": "3/4",
+        "theta_actual_numerator": 3,
+        "theta_actual_denominator": 4,
+        "theta_actual_over_density_fraction": "50331648/44459719",
+        "theta_actual_over_density_numerator": 50331648,
+        "theta_actual_over_density_denominator": 44459719,
+        "all_final_rectangles_strictly_above_p": true
+      }
+    },
+    {
+      "dimension": 2,
+      "cells_per_axis": 8,
+      "grid": "uniform",
+      "p": "4/5",
+      "theta": "1/2",
+      "epsilon_generation_fraction": "1/1000000",
+      "rectangle_count": 4096,
+      "source_cell_count": 64,
+      "receiver_cell_count": 64,
+      "variable_count": 4224,
+      "constraint_count": 4161,
+      "constraint_nnz": 170112,
+      "sparse_model_bytes": 2230168,
+      "axis_breaks": [
+        "0",
+        "1/8",
+        "1/4",
+        "3/8",
+        "1/2",
+        "5/8",
+        "3/4",
+        "7/8",
+        "1"
+      ],
+      "solver": "scipy.optimize.milp / HiGHS",
+      "scipy_version": "1.18.1",
+      "solver_options": {
+        "presolve": true,
+        "time_limit": 120,
+        "mip_rel_gap": 0.0,
+        "threads": 1
+      },
+      "solver_threads_option_forwarded": true,
+      "time_limit_seconds": 120,
+      "status": 1,
+      "success": false,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "has_incumbent": true,
+      "objective_numeric": 0.268750765625,
+      "mip_gap_numeric": 0.9980338454841731,
+      "dual_bound_numeric_only": 0.0005284055314655277,
+      "node_count": 835,
+      "solver_seconds": 120.11669133299984,
+      "candidate": {
+        "certificate_pass": true,
+        "source_rounding_denominator": 16777216,
+        "source_cell_coordinates_lexicographic": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            7,
+            5
+          ],
+          [
+            7,
+            6
+          ],
+          [
+            7,
+            7
+          ]
+        ],
+        "source_cell_fraction_numerators": [
+          13422042,
+          16777216,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          10066448,
+          0,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          0,
+          0,
+          6711021,
+          16777216,
+          0,
+          10066531,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13421706,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16777216,
+          168,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "source_realization": "In each cell occupy a half-open slab in coordinate 1 of relative length numerator/2^24; this realizes its exact cell-average density.",
+        "source_density_fraction": "72142235/268435456",
+        "source_density_numerator": 72142235,
+        "source_density_denominator": 268435456,
+        "solver_receiver_volume_numeric": 0.5,
+        "solver_positive_w_count": 10,
+        "solver_binary_integrality_max_error": 0.0,
+        "failed_solver_selected_rectangle_ids": [],
+        "certified_selected_rectangles": [
+          {
+            "id": 250,
+            "axis_origin_length_cells": [
+              [
+                0,
+                4
+              ],
+              [
+                7,
+                3
+              ]
+            ],
+            "mean_fraction": "27402831/33554432",
+            "mean_minus_p_fraction": "2796427/167772160",
+            "receiver_cell_ids": [
+              7,
+              0,
+              1,
+              15,
+              8,
+              9,
+              23,
+              16,
+              17,
+              31,
+              24,
+              25
+            ]
+          },
+          {
+            "id": 579,
+            "axis_origin_length_cells": [
+              [
+                1,
+                2
+              ],
+              [
+                0,
+                4
+              ]
+            ],
+            "mean_fraction": "7/8",
+            "mean_minus_p_fraction": "3/40",
+            "receiver_cell_ids": [
+              8,
+              9,
+              10,
+              11,
+              16,
+              17,
+              18,
+              19
+            ]
+          },
+          {
+            "id": 643,
+            "axis_origin_length_cells": [
+              [
+                1,
+                3
+              ],
+              [
+                0,
+                4
+              ]
+            ],
+            "mean_fraction": "5/6",
+            "mean_minus_p_fraction": "1/30",
+            "receiver_cell_ids": [
+              8,
+              9,
+              10,
+              11,
+              16,
+              17,
+              18,
+              19,
+              24,
+              25,
+              26,
+              27
+            ]
+          },
+          {
+            "id": 706,
+            "axis_origin_length_cells": [
+              [
+                1,
+                4
+              ],
+              [
+                0,
+                3
+              ]
+            ],
+            "mean_fraction": "161061475/201326592",
+            "mean_minus_p_fraction": "1007/1006632960",
+            "receiver_cell_ids": [
+              8,
+              9,
+              10,
+              16,
+              17,
+              18,
+              24,
+              25,
+              26,
+              32,
+              33,
+              34
+            ]
+          },
+          {
+            "id": 1086,
+            "axis_origin_length_cells": [
+              [
+                2,
+                1
+              ],
+              [
+                7,
+                7
+              ]
+            ],
+            "mean_fraction": "5872033/7340032",
+            "mean_minus_p_fraction": "37/36700160",
+            "receiver_cell_ids": [
+              23,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21
+            ]
+          },
+          {
+            "id": 1139,
+            "axis_origin_length_cells": [
+              [
+                2,
+                2
+              ],
+              [
+                6,
+                4
+              ]
+            ],
+            "mean_fraction": "107374317/134217728",
+            "mean_minus_p_fraction": "673/671088640",
+            "receiver_cell_ids": [
+              22,
+              23,
+              16,
+              17,
+              30,
+              31,
+              24,
+              25
+            ]
+          },
+          {
+            "id": 1992,
+            "axis_origin_length_cells": [
+              [
+                3,
+                8
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "mean_fraction": "107374317/134217728",
+            "mean_minus_p_fraction": "673/671088640",
+            "receiver_cell_ids": [
+              25,
+              33,
+              41,
+              49,
+              57,
+              1,
+              9,
+              17
+            ]
+          },
+          {
+            "id": 3336,
+            "axis_origin_length_cells": [
+              [
+                6,
+                5
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "mean_fraction": "8053057/8388608",
+            "mean_minus_p_fraction": "6710853/41943040",
+            "receiver_cell_ids": [
+              49,
+              57,
+              1,
+              9,
+              17
+            ]
+          },
+          {
+            "id": 3393,
+            "axis_origin_length_cells": [
+              [
+                6,
+                6
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            "mean_fraction": "40265369/50331648",
+            "mean_minus_p_fraction": "253/251658240",
+            "receiver_cell_ids": [
+              48,
+              49,
+              56,
+              57,
+              0,
+              1,
+              8,
+              9,
+              16,
+              17,
+              24,
+              25
+            ]
+          },
+          {
+            "id": 3849,
+            "axis_origin_length_cells": [
+              [
+                7,
+                5
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "mean_fraction": "16777237/20971520",
+            "mean_minus_p_fraction": "21/20971520",
+            "receiver_cell_ids": [
+              57,
+              58,
+              1,
+              2,
+              9,
+              10,
+              17,
+              18,
+              25,
+              26
+            ]
+          }
+        ],
+        "receiver_cell_ids_exact_union": [
+          0,
+          1,
+          2,
+          7,
+          8,
+          9,
+          10,
+          11,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          30,
+          31,
+          32,
+          33,
+          34,
+          41,
+          48,
+          49,
+          56,
+          57,
+          58
+        ],
+        "theta_required_fraction": "1/2",
+        "theta_actual_fraction": "1/2",
+        "theta_actual_numerator": 1,
+        "theta_actual_denominator": 2,
+        "theta_actual_over_density_fraction": "134217728/72142235",
+        "theta_actual_over_density_numerator": 134217728,
+        "theta_actual_over_density_denominator": 72142235,
+        "all_final_rectangles_strictly_above_p": true
+      }
+    },
+    {
+      "dimension": 2,
+      "cells_per_axis": 8,
+      "grid": "uniform",
+      "p": "9/10",
+      "theta": "1/2",
+      "epsilon_generation_fraction": "1/1000000",
+      "rectangle_count": 4096,
+      "source_cell_count": 64,
+      "receiver_cell_count": 64,
+      "variable_count": 4224,
+      "constraint_count": 4161,
+      "constraint_nnz": 170112,
+      "sparse_model_bytes": 2230168,
+      "axis_breaks": [
+        "0",
+        "1/8",
+        "1/4",
+        "3/8",
+        "1/2",
+        "5/8",
+        "3/4",
+        "7/8",
+        "1"
+      ],
+      "solver": "scipy.optimize.milp / HiGHS",
+      "scipy_version": "1.18.1",
+      "solver_options": {
+        "presolve": true,
+        "time_limit": 120,
+        "mip_rel_gap": 0.0,
+        "threads": 1
+      },
+      "solver_threads_option_forwarded": true,
+      "time_limit_seconds": 120,
+      "status": 1,
+      "success": false,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "has_incumbent": true,
+      "objective_numeric": 0.36562634375,
+      "mip_gap_numeric": 0.9968279224872106,
+      "dual_bound_numeric_only": 0.0011597951030927862,
+      "node_count": 807,
+      "solver_seconds": 120.10881695900025,
+      "candidate": {
+        "certificate_pass": true,
+        "source_rounding_denominator": 16777216,
+        "source_cell_coordinates_lexicographic": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            7,
+            5
+          ],
+          [
+            7,
+            6
+          ],
+          [
+            7,
+            7
+          ]
+        ],
+        "source_cell_fraction_numerators": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16777216,
+          16777216,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13421975,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13421975,
+          0,
+          0,
+          0,
+          13421975,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          10066565,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          13421975,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          13421975,
+          0,
+          0,
+          0,
+          13421975,
+          0,
+          16777216,
+          16777216
+        ],
+        "source_realization": "In each cell occupy a half-open slab in coordinate 1 of relative length numerator/2^24; this realizes its exact cell-average density.",
+        "source_density_fraction": "392588303/1073741824",
+        "source_density_numerator": 392588303,
+        "source_density_denominator": 1073741824,
+        "solver_receiver_volume_numeric": 0.5,
+        "solver_positive_w_count": 7,
+        "solver_binary_integrality_max_error": 0.0,
+        "failed_solver_selected_rectangle_ids": [],
+        "certified_selected_rectangles": [
+          {
+            "id": 2211,
+            "axis_origin_length_cells": [
+              [
+                4,
+                3
+              ],
+              [
+                4,
+                4
+              ]
+            ],
+            "mean_fraction": "60398045/67108864",
+            "mean_minus_p_fraction": "337/335544320",
+            "receiver_cell_ids": [
+              36,
+              37,
+              38,
+              39,
+              44,
+              45,
+              46,
+              47,
+              52,
+              53,
+              54,
+              55
+            ]
+          },
+          {
+            "id": 2227,
+            "axis_origin_length_cells": [
+              [
+                4,
+                3
+              ],
+              [
+                6,
+                4
+              ]
+            ],
+            "mean_fraction": "60398045/67108864",
+            "mean_minus_p_fraction": "337/335544320",
+            "receiver_cell_ids": [
+              38,
+              39,
+              32,
+              33,
+              46,
+              47,
+              40,
+              41,
+              54,
+              55,
+              48,
+              49
+            ]
+          },
+          {
+            "id": 2417,
+            "axis_origin_length_cells": [
+              [
+                4,
+                6
+              ],
+              [
+                6,
+                2
+              ]
+            ],
+            "mean_fraction": "60398045/67108864",
+            "mean_minus_p_fraction": "337/335544320",
+            "receiver_cell_ids": [
+              38,
+              39,
+              46,
+              47,
+              54,
+              55,
+              62,
+              63,
+              6,
+              7,
+              14,
+              15
+            ]
+          },
+          {
+            "id": 2654,
+            "axis_origin_length_cells": [
+              [
+                5,
+                2
+              ],
+              [
+                3,
+                7
+              ]
+            ],
+            "mean_fraction": "211393157/234881024",
+            "mean_minus_p_fraction": "1177/1174405120",
+            "receiver_cell_ids": [
+              43,
+              44,
+              45,
+              46,
+              47,
+              40,
+              41,
+              51,
+              52,
+              53,
+              54,
+              55,
+              48,
+              49
+            ]
+          },
+          {
+            "id": 2669,
+            "axis_origin_length_cells": [
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                6
+              ]
+            ],
+            "mean_fraction": "60398045/67108864",
+            "mean_minus_p_fraction": "337/335544320",
+            "receiver_cell_ids": [
+              45,
+              46,
+              47,
+              40,
+              41,
+              42,
+              53,
+              54,
+              55,
+              48,
+              49,
+              50
+            ]
+          },
+          {
+            "id": 2723,
+            "axis_origin_length_cells": [
+              [
+                5,
+                3
+              ],
+              [
+                4,
+                4
+              ]
+            ],
+            "mean_fraction": "60398045/67108864",
+            "mean_minus_p_fraction": "337/335544320",
+            "receiver_cell_ids": [
+              44,
+              45,
+              46,
+              47,
+              52,
+              53,
+              54,
+              55,
+              60,
+              61,
+              62,
+              63
+            ]
+          },
+          {
+            "id": 2802,
+            "axis_origin_length_cells": [
+              [
+                5,
+                4
+              ],
+              [
+                6,
+                3
+              ]
+            ],
+            "mean_fraction": "60398045/67108864",
+            "mean_minus_p_fraction": "337/335544320",
+            "receiver_cell_ids": [
+              46,
+              47,
+              40,
+              54,
+              55,
+              48,
+              62,
+              63,
+              56,
+              6,
+              7,
+              0
+            ]
+          }
+        ],
+        "receiver_cell_ids_exact_union": [
+          0,
+          6,
+          7,
+          14,
+          15,
+          32,
+          33,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          60,
+          61,
+          62,
+          63
+        ],
+        "theta_required_fraction": "1/2",
+        "theta_actual_fraction": "1/2",
+        "theta_actual_numerator": 1,
+        "theta_actual_denominator": 2,
+        "theta_actual_over_density_fraction": "536870912/392588303",
+        "theta_actual_over_density_numerator": 536870912,
+        "theta_actual_over_density_denominator": 392588303,
+        "all_final_rectangles_strictly_above_p": true
+      }
+    },
+    {
+      "dimension": 3,
+      "cells_per_axis": 3,
+      "grid": "uniform",
+      "p": "4/5",
+      "theta": "1/2",
+      "epsilon_generation_fraction": "1/1000000",
+      "rectangle_count": 729,
+      "source_cell_count": 27,
+      "receiver_cell_count": 27,
+      "variable_count": 783,
+      "constraint_count": 757,
+      "constraint_nnz": 12447,
+      "sparse_model_bytes": 184083,
+      "axis_breaks": [
+        "0",
+        "1/3",
+        "2/3",
+        "1"
+      ],
+      "solver": "scipy.optimize.milp / HiGHS",
+      "scipy_version": "1.18.1",
+      "solver_options": {
+        "presolve": true,
+        "time_limit": 120,
+        "mip_rel_gap": 0.0,
+        "threads": 1
+      },
+      "solver_threads_option_forwarded": true,
+      "time_limit_seconds": 120,
+      "status": 1,
+      "success": false,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "has_incumbent": true,
+      "objective_numeric": 0.30370459259259236,
+      "mip_gap_numeric": 0.7028022230639527,
+      "dual_bound_numeric_only": 0.09026032976378638,
+      "node_count": 49492,
+      "solver_seconds": 120.01579908299937,
+      "candidate": {
+        "certificate_pass": true,
+        "source_rounding_denominator": 16777216,
+        "source_cell_coordinates_lexicographic": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            2
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            2,
+            2
+          ],
+          [
+            2,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ],
+          [
+            2,
+            0,
+            2
+          ],
+          [
+            2,
+            1,
+            0
+          ],
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            2
+          ],
+          [
+            2,
+            2,
+            0
+          ],
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        "source_cell_fraction_numerators": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          3355511,
+          16777216,
+          13421874,
+          0,
+          16777216,
+          3355511,
+          3355511,
+          0,
+          0,
+          0,
+          13421874,
+          0,
+          0
+        ],
+        "source_realization": "In each cell occupy a half-open slab in coordinate 1 of relative length numerator/2^24; this realizes its exact cell-average density.",
+        "source_density_fraction": "15285953/50331648",
+        "source_density_numerator": 15285953,
+        "source_density_denominator": 50331648,
+        "solver_receiver_volume_numeric": 0.5,
+        "solver_positive_w_count": 7,
+        "solver_binary_integrality_max_error": 8.881784197001252e-16,
+        "failed_solver_selected_rectangle_ids": [],
+        "certified_selected_rectangles": [
+          {
+            "id": 259,
+            "axis_origin_length_cells": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              11,
+              9,
+              14,
+              12
+            ]
+          },
+          {
+            "id": 262,
+            "axis_origin_length_cells": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            "mean_fraction": "40265369/50331648",
+            "mean_minus_p_fraction": "253/251658240",
+            "receiver_cell_ids": [
+              9,
+              10,
+              12,
+              13,
+              15,
+              16
+            ]
+          },
+          {
+            "id": 307,
+            "axis_origin_length_cells": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            "mean_fraction": "31876761/33554432",
+            "mean_minus_p_fraction": "25166077/167772160",
+            "receiver_cell_ids": [
+              15,
+              16,
+              9,
+              10
+            ]
+          },
+          {
+            "id": 311,
+            "axis_origin_length_cells": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "mean_fraction": "40265369/50331648",
+            "mean_minus_p_fraction": "253/251658240",
+            "receiver_cell_ids": [
+              16,
+              17,
+              15,
+              10,
+              11,
+              9
+            ]
+          },
+          {
+            "id": 325,
+            "axis_origin_length_cells": [
+              [
+                1,
+                2
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              9,
+              10,
+              18,
+              19
+            ]
+          },
+          {
+            "id": 331,
+            "axis_origin_length_cells": [
+              [
+                1,
+                2
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              11,
+              9,
+              20,
+              18
+            ]
+          },
+          {
+            "id": 342,
+            "axis_origin_length_cells": [
+              [
+                1,
+                2
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "mean_fraction": "40265369/50331648",
+            "mean_minus_p_fraction": "253/251658240",
+            "receiver_cell_ids": [
+              9,
+              12,
+              15,
+              18,
+              21,
+              24
+            ]
+          }
+        ],
+        "receiver_cell_ids_exact_union": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          24
+        ],
+        "theta_required_fraction": "1/2",
+        "theta_actual_fraction": "14/27",
+        "theta_actual_numerator": 14,
+        "theta_actual_denominator": 27,
+        "theta_actual_over_density_fraction": "234881024/137573577",
+        "theta_actual_over_density_numerator": 234881024,
+        "theta_actual_over_density_denominator": 137573577,
+        "all_final_rectangles_strictly_above_p": true
+      }
+    },
+    {
+      "dimension": 3,
+      "cells_per_axis": 4,
+      "grid": "uniform",
+      "p": "9/10",
+      "theta": "3/4",
+      "epsilon_generation_fraction": "1/1000000",
+      "rectangle_count": 4096,
+      "source_cell_count": 64,
+      "receiver_cell_count": 64,
+      "variable_count": 4224,
+      "constraint_count": 4161,
+      "constraint_nnz": 132224,
+      "sparse_model_bytes": 1775512,
+      "axis_breaks": [
+        "0",
+        "1/4",
+        "1/2",
+        "3/4",
+        "1"
+      ],
+      "solver": "scipy.optimize.milp / HiGHS",
+      "scipy_version": "1.18.1",
+      "solver_options": {
+        "presolve": true,
+        "time_limit": 120,
+        "mip_rel_gap": 0.0,
+        "threads": 1
+      },
+      "solver_threads_option_forwarded": true,
+      "time_limit_seconds": 120,
+      "status": 1,
+      "success": false,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "has_incumbent": true,
+      "objective_numeric": 0.52812721875,
+      "mip_gap_numeric": 0.9985068895333518,
+      "dual_bound_numeric_only": 0.000788552278037378,
+      "node_count": 706,
+      "solver_seconds": 120.14911591700002,
+      "candidate": {
+        "certificate_pass": true,
+        "source_rounding_denominator": 16777216,
+        "source_cell_coordinates_lexicographic": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            2
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            3,
+            1
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            3,
+            3
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            1,
+            0,
+            3
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            2,
+            2
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            1,
+            3,
+            1
+          ],
+          [
+            1,
+            3,
+            2
+          ],
+          [
+            1,
+            3,
+            3
+          ],
+          [
+            2,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ],
+          [
+            2,
+            0,
+            2
+          ],
+          [
+            2,
+            0,
+            3
+          ],
+          [
+            2,
+            1,
+            0
+          ],
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            2
+          ],
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            2,
+            2,
+            0
+          ],
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          [
+            2,
+            3,
+            0
+          ],
+          [
+            2,
+            3,
+            1
+          ],
+          [
+            2,
+            3,
+            2
+          ],
+          [
+            2,
+            3,
+            3
+          ],
+          [
+            3,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            1
+          ],
+          [
+            3,
+            0,
+            2
+          ],
+          [
+            3,
+            0,
+            3
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            3,
+            1,
+            2
+          ],
+          [
+            3,
+            1,
+            3
+          ],
+          [
+            3,
+            2,
+            0
+          ],
+          [
+            3,
+            2,
+            1
+          ],
+          [
+            3,
+            2,
+            2
+          ],
+          [
+            3,
+            2,
+            3
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            3,
+            3,
+            1
+          ],
+          [
+            3,
+            3,
+            2
+          ],
+          [
+            3,
+            3,
+            3
+          ]
+        ],
+        "source_cell_fraction_numerators": [
+          0,
+          16777216,
+          13421975,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          0,
+          6711155,
+          16777216,
+          0,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          13421975,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          3355746,
+          0,
+          0,
+          13421975,
+          0,
+          0,
+          16777216,
+          16777216,
+          10066733,
+          0,
+          16777216,
+          16777216,
+          0,
+          0,
+          3355746,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          16777216,
+          16777216,
+          0,
+          13421975,
+          3355746,
+          0,
+          0,
+          0
+        ],
+        "source_realization": "In each cell occupy a half-open slab in coordinate 1 of relative length numerator/2^24; this realizes its exact cell-average density.",
+        "source_density_fraction": "283536145/536870912",
+        "source_density_numerator": 283536145,
+        "source_density_denominator": 536870912,
+        "solver_receiver_volume_numeric": 0.75,
+        "solver_positive_w_count": 9,
+        "solver_binary_integrality_max_error": 0.0,
+        "failed_solver_selected_rectangle_ids": [],
+        "certified_selected_rectangles": [
+          {
+            "id": 293,
+            "axis_origin_length_cells": [
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "mean_fraction": "60398045/67108864",
+            "mean_minus_p_fraction": "337/335544320",
+            "receiver_cell_ids": [
+              1,
+              2,
+              5,
+              6,
+              9,
+              10,
+              17,
+              18,
+              21,
+              22,
+              25,
+              26
+            ]
+          },
+          {
+            "id": 305,
+            "axis_origin_length_cells": [
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                4
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            "mean_fraction": "241592179/268435456",
+            "mean_minus_p_fraction": "1343/1342177280",
+            "receiver_cell_ids": [
+              0,
+              1,
+              4,
+              5,
+              8,
+              9,
+              12,
+              13,
+              16,
+              17,
+              20,
+              21,
+              24,
+              25,
+              28,
+              29
+            ]
+          },
+          {
+            "id": 350,
+            "axis_origin_length_cells": [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                3,
+                3
+              ]
+            ],
+            "mean_fraction": "60398045/67108864",
+            "mean_minus_p_fraction": "337/335544320",
+            "receiver_cell_ids": [
+              7,
+              4,
+              5,
+              11,
+              8,
+              9,
+              23,
+              20,
+              21,
+              27,
+              24,
+              25
+            ]
+          },
+          {
+            "id": 354,
+            "axis_origin_length_cells": [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                0,
+                3
+              ]
+            ],
+            "mean_fraction": "135895601/150994944",
+            "mean_minus_p_fraction": "757/754974720",
+            "receiver_cell_ids": [
+              4,
+              5,
+              6,
+              8,
+              9,
+              10,
+              12,
+              13,
+              14,
+              20,
+              21,
+              22,
+              24,
+              25,
+              26,
+              28,
+              29,
+              30
+            ]
+          },
+          {
+            "id": 609,
+            "axis_origin_length_cells": [
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            "mean_fraction": "135895601/150994944",
+            "mean_minus_p_fraction": "757/754974720",
+            "receiver_cell_ids": [
+              4,
+              5,
+              8,
+              9,
+              12,
+              13,
+              20,
+              21,
+              24,
+              25,
+              28,
+              29,
+              36,
+              37,
+              40,
+              41,
+              44,
+              45
+            ]
+          },
+          {
+            "id": 804,
+            "axis_origin_length_cells": [
+              [
+                0,
+                4
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "mean_fraction": "60398045/67108864",
+            "mean_minus_p_fraction": "337/335544320",
+            "receiver_cell_ids": [
+              1,
+              5,
+              9,
+              17,
+              21,
+              25,
+              33,
+              37,
+              41,
+              49,
+              53,
+              57
+            ]
+          },
+          {
+            "id": 1934,
+            "axis_origin_length_cells": [
+              [
+                1,
+                4
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                3,
+                3
+              ]
+            ],
+            "mean_fraction": "60398045/67108864",
+            "mean_minus_p_fraction": "337/335544320",
+            "receiver_cell_ids": [
+              27,
+              24,
+              25,
+              43,
+              40,
+              41,
+              59,
+              56,
+              57,
+              11,
+              8,
+              9
+            ]
+          },
+          {
+            "id": 2898,
+            "axis_origin_length_cells": [
+              [
+                2,
+                4
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                0,
+                3
+              ]
+            ],
+            "mean_fraction": "362388269/402653184",
+            "mean_minus_p_fraction": "2017/2013265920",
+            "receiver_cell_ids": [
+              36,
+              37,
+              38,
+              40,
+              41,
+              42,
+              52,
+              53,
+              54,
+              56,
+              57,
+              58,
+              4,
+              5,
+              6,
+              8,
+              9,
+              10,
+              20,
+              21,
+              22,
+              24,
+              25,
+              26
+            ]
+          },
+          {
+            "id": 3681,
+            "axis_origin_length_cells": [
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            "mean_fraction": "135895601/150994944",
+            "mean_minus_p_fraction": "757/754974720",
+            "receiver_cell_ids": [
+              52,
+              53,
+              56,
+              57,
+              60,
+              61,
+              4,
+              5,
+              8,
+              9,
+              12,
+              13,
+              20,
+              21,
+              24,
+              25,
+              28,
+              29
+            ]
+          }
+        ],
+        "receiver_cell_ids_exact_union": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          16,
+          17,
+          18,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          33,
+          36,
+          37,
+          38,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          49,
+          52,
+          53,
+          54,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61
+        ],
+        "theta_required_fraction": "3/4",
+        "theta_actual_fraction": "3/4",
+        "theta_actual_numerator": 3,
+        "theta_actual_denominator": 4,
+        "theta_actual_over_density_fraction": "402653184/283536145",
+        "theta_actual_over_density_numerator": 402653184,
+        "theta_actual_over_density_denominator": 283536145,
+        "all_final_rectangles_strictly_above_p": true
+      }
+    },
+    {
+      "dimension": 4,
+      "cells_per_axis": 3,
+      "grid": "uniform",
+      "p": "4/5",
+      "theta": "1/2",
+      "epsilon_generation_fraction": "1/1000000",
+      "rectangle_count": 6561,
+      "source_cell_count": 81,
+      "receiver_cell_count": 81,
+      "variable_count": 6723,
+      "constraint_count": 6643,
+      "constraint_nnz": 216675,
+      "sparse_model_bytes": 2901039,
+      "axis_breaks": [
+        "0",
+        "1/3",
+        "2/3",
+        "1"
+      ],
+      "solver": "scipy.optimize.milp / HiGHS",
+      "scipy_version": "1.18.1",
+      "solver_options": {
+        "presolve": true,
+        "time_limit": 120,
+        "mip_rel_gap": 0.0,
+        "threads": 1
+      },
+      "solver_threads_option_forwarded": true,
+      "time_limit_seconds": 120,
+      "status": 1,
+      "success": false,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "has_incumbent": true,
+      "objective_numeric": 0.28888997530864197,
+      "mip_gap_numeric": 0.998931626612973,
+      "dual_bound_numeric_only": 0.0003086423613986474,
+      "node_count": 2,
+      "solver_seconds": 120.19228287499936,
+      "candidate": {
+        "certificate_pass": true,
+        "source_rounding_denominator": 16777216,
+        "source_cell_coordinates_lexicographic": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            0,
+            2,
+            2
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            1
+          ],
+          [
+            0,
+            1,
+            2,
+            2
+          ],
+          [
+            0,
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0,
+            2
+          ],
+          [
+            0,
+            2,
+            1,
+            0
+          ],
+          [
+            0,
+            2,
+            1,
+            1
+          ],
+          [
+            0,
+            2,
+            1,
+            2
+          ],
+          [
+            0,
+            2,
+            2,
+            0
+          ],
+          [
+            0,
+            2,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            2,
+            2
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            2
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            2
+          ],
+          [
+            1,
+            0,
+            2,
+            0
+          ],
+          [
+            1,
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            2,
+            2
+          ],
+          [
+            1,
+            2,
+            0,
+            0
+          ],
+          [
+            1,
+            2,
+            0,
+            1
+          ],
+          [
+            1,
+            2,
+            0,
+            2
+          ],
+          [
+            1,
+            2,
+            1,
+            0
+          ],
+          [
+            1,
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            2,
+            1,
+            2
+          ],
+          [
+            1,
+            2,
+            2,
+            0
+          ],
+          [
+            1,
+            2,
+            2,
+            1
+          ],
+          [
+            1,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            1
+          ],
+          [
+            2,
+            0,
+            0,
+            2
+          ],
+          [
+            2,
+            0,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1,
+            1
+          ],
+          [
+            2,
+            0,
+            1,
+            2
+          ],
+          [
+            2,
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            0,
+            2,
+            1
+          ],
+          [
+            2,
+            0,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            1,
+            0,
+            1
+          ],
+          [
+            2,
+            1,
+            0,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            2
+          ],
+          [
+            2,
+            1,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            2,
+            1
+          ],
+          [
+            2,
+            1,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            2,
+            2,
+            0,
+            1
+          ],
+          [
+            2,
+            2,
+            0,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            0
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            1,
+            2
+          ],
+          [
+            2,
+            2,
+            2,
+            0
+          ],
+          [
+            2,
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            2,
+            2,
+            2
+          ]
+        ],
+        "source_cell_fraction_numerators": [
+          16777216,
+          16777216,
+          16777216,
+          3355511,
+          3355511,
+          16777216,
+          3355511,
+          3355511,
+          16777216,
+          3355511,
+          3355511,
+          16777216,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13421874,
+          3355511,
+          0,
+          16777216,
+          0,
+          0,
+          3355511,
+          0,
+          13421874,
+          3355511,
+          3355511,
+          16777216,
+          16777216,
+          0,
+          3355511,
+          0,
+          0,
+          0,
+          13421874,
+          0,
+          16777216,
+          3355511,
+          0,
+          0,
+          0,
+          0,
+          13421874,
+          0,
+          0,
+          16777216,
+          3355511,
+          0,
+          16777216,
+          16777216,
+          0,
+          16777216,
+          0,
+          0,
+          0,
+          16777216,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3355511,
+          0,
+          3355511,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16777216,
+          3355511,
+          0,
+          0,
+          0,
+          0,
+          16777216,
+          0
+        ],
+        "source_realization": "In each cell occupy a half-open slab in coordinate 1 of relative length numerator/2^24; this realizes its exact cell-average density.",
+        "source_density_fraction": "49073543/169869312",
+        "source_density_numerator": 49073543,
+        "source_density_denominator": 169869312,
+        "solver_receiver_volume_numeric": 0.5061728395061729,
+        "solver_positive_w_count": 20,
+        "solver_binary_integrality_max_error": 0.0,
+        "failed_solver_selected_rectangle_ids": [],
+        "certified_selected_rectangles": [
+          {
+            "id": 13,
+            "axis_origin_length_cells": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              1,
+              2,
+              4,
+              5
+            ]
+          },
+          {
+            "id": 16,
+            "axis_origin_length_cells": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              2,
+              0,
+              5,
+              3
+            ]
+          },
+          {
+            "id": 67,
+            "axis_origin_length_cells": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              7,
+              8,
+              1,
+              2
+            ]
+          },
+          {
+            "id": 70,
+            "axis_origin_length_cells": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              8,
+              6,
+              2,
+              0
+            ]
+          },
+          {
+            "id": 85,
+            "axis_origin_length_cells": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              1,
+              2,
+              10,
+              11
+            ]
+          },
+          {
+            "id": 88,
+            "axis_origin_length_cells": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              2,
+              0,
+              11,
+              9
+            ]
+          },
+          {
+            "id": 159,
+            "axis_origin_length_cells": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "mean_fraction": "40265369/50331648",
+            "mean_minus_p_fraction": "253/251658240",
+            "receiver_cell_ids": [
+              8,
+              2,
+              5,
+              17,
+              11,
+              14
+            ]
+          },
+          {
+            "id": 574,
+            "axis_origin_length_cells": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              20,
+              18,
+              2,
+              0
+            ]
+          },
+          {
+            "id": 582,
+            "axis_origin_length_cells": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              20,
+              23,
+              2,
+              5
+            ]
+          },
+          {
+            "id": 636,
+            "axis_origin_length_cells": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              26,
+              20,
+              8,
+              2
+            ]
+          },
+          {
+            "id": 736,
+            "axis_origin_length_cells": [
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              2,
+              0,
+              29,
+              27
+            ]
+          },
+          {
+            "id": 753,
+            "axis_origin_length_cells": [
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "mean_fraction": "40265369/50331648",
+            "mean_minus_p_fraction": "253/251658240",
+            "receiver_cell_ids": [
+              2,
+              5,
+              8,
+              29,
+              32,
+              35
+            ]
+          },
+          {
+            "id": 816,
+            "axis_origin_length_cells": [
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              2,
+              11,
+              29,
+              38
+            ]
+          },
+          {
+            "id": 2010,
+            "axis_origin_length_cells": [
+              [
+                0,
+                3
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "mean_fraction": "40265369/50331648",
+            "mean_minus_p_fraction": "253/251658240",
+            "receiver_cell_ids": [
+              25,
+              19,
+              52,
+              46,
+              79,
+              73
+            ]
+          },
+          {
+            "id": 2415,
+            "axis_origin_length_cells": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "mean_fraction": "40265369/50331648",
+            "mean_minus_p_fraction": "253/251658240",
+            "receiver_cell_ids": [
+              34,
+              28,
+              43,
+              37,
+              52,
+              46
+            ]
+          },
+          {
+            "id": 2686,
+            "axis_origin_length_cells": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              46,
+              47,
+              49,
+              50
+            ]
+          },
+          {
+            "id": 2766,
+            "axis_origin_length_cells": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              46,
+              49,
+              28,
+              31
+            ]
+          },
+          {
+            "id": 3243,
+            "axis_origin_length_cells": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              37,
+              46,
+              64,
+              73
+            ]
+          },
+          {
+            "id": 5172,
+            "axis_origin_length_cells": [
+              [
+                2,
+                2
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              62,
+              56,
+              8,
+              2
+            ]
+          },
+          {
+            "id": 5676,
+            "axis_origin_length_cells": [
+              [
+                2,
+                2
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "mean_fraction": "53687159/67108864",
+            "mean_minus_p_fraction": "339/335544320",
+            "receiver_cell_ids": [
+              74,
+              56,
+              20,
+              2
+            ]
+          }
+        ],
+        "receiver_cell_ids_exact_union": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          14,
+          17,
+          18,
+          19,
+          20,
+          23,
+          25,
+          26,
+          27,
+          28,
+          29,
+          31,
+          32,
+          34,
+          35,
+          37,
+          38,
+          43,
+          46,
+          47,
+          49,
+          50,
+          52,
+          56,
+          62,
+          64,
+          73,
+          74,
+          79
+        ],
+        "theta_required_fraction": "1/2",
+        "theta_actual_fraction": "41/81",
+        "theta_actual_numerator": 41,
+        "theta_actual_denominator": 81,
+        "theta_actual_over_density_fraction": "85983232/49073543",
+        "theta_actual_over_density_numerator": 85983232,
+        "theta_actual_over_density_denominator": 49073543,
+        "all_final_rectangles_strictly_above_p": true
+      }
+    },
+    {
+      "dimension": 4,
+      "cells_per_axis": 3,
+      "grid": "uniform",
+      "p": "9/10",
+      "theta": "1/2",
+      "epsilon_generation_fraction": "1/1000000",
+      "rectangle_count": 6561,
+      "source_cell_count": 81,
+      "receiver_cell_count": 81,
+      "variable_count": 6723,
+      "constraint_count": 6643,
+      "constraint_nnz": 216675,
+      "sparse_model_bytes": 2901039,
+      "axis_breaks": [
+        "0",
+        "1/3",
+        "2/3",
+        "1"
+      ],
+      "solver": "scipy.optimize.milp / HiGHS",
+      "scipy_version": "1.18.1",
+      "solver_options": {
+        "presolve": true,
+        "time_limit": 120,
+        "mip_rel_gap": 0.0,
+        "threads": 1
+      },
+      "solver_threads_option_forwarded": true,
+      "time_limit_seconds": 120,
+      "status": 1,
+      "success": false,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "has_incumbent": true,
+      "objective_numeric": 0.39753195061728397,
+      "mip_gap_numeric": 0.9989249897988812,
+      "dual_bound_numeric_only": 0.0004273509021842365,
+      "node_count": 102,
+      "solver_seconds": 120.36615029200038,
+      "candidate": {
+        "certificate_pass": true,
+        "source_rounding_denominator": 16777216,
+        "source_cell_coordinates_lexicographic": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            0,
+            2,
+            2
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            1
+          ],
+          [
+            0,
+            1,
+            2,
+            2
+          ],
+          [
+            0,
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0,
+            2
+          ],
+          [
+            0,
+            2,
+            1,
+            0
+          ],
+          [
+            0,
+            2,
+            1,
+            1
+          ],
+          [
+            0,
+            2,
+            1,
+            2
+          ],
+          [
+            0,
+            2,
+            2,
+            0
+          ],
+          [
+            0,
+            2,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            2,
+            2
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            2
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            2
+          ],
+          [
+            1,
+            0,
+            2,
+            0
+          ],
+          [
+            1,
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            2,
+            2
+          ],
+          [
+            1,
+            2,
+            0,
+            0
+          ],
+          [
+            1,
+            2,
+            0,
+            1
+          ],
+          [
+            1,
+            2,
+            0,
+            2
+          ],
+          [
+            1,
+            2,
+            1,
+            0
+          ],
+          [
+            1,
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            2,
+            1,
+            2
+          ],
+          [
+            1,
+            2,
+            2,
+            0
+          ],
+          [
+            1,
+            2,
+            2,
+            1
+          ],
+          [
+            1,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            1
+          ],
+          [
+            2,
+            0,
+            0,
+            2
+          ],
+          [
+            2,
+            0,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            1,
+            1
+          ],
+          [
+            2,
+            0,
+            1,
+            2
+          ],
+          [
+            2,
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            0,
+            2,
+            1
+          ],
+          [
+            2,
+            0,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            1,
+            0,
+            1
+          ],
+          [
+            2,
+            1,
+            0,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            2
+          ],
+          [
+            2,
+            1,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            2,
+            1
+          ],
+          [
+            2,
+            1,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            2,
+            2,
+            0,
+            1
+          ],
+          [
+            2,
+            2,
+            0,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            0
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            1,
+            2
+          ],
+          [
+            2,
+            2,
+            2,
+            0
+          ],
+          [
+            2,
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            2,
+            2,
+            2
+          ]
+        ],
+        "source_cell_fraction_numerators": [
+          0,
+          0,
+          0,
+          0,
+          16777216,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16777216,
+          0,
+          0,
+          6711155,
+          16777216,
+          0,
+          16777216,
+          0,
+          1677873,
+          16777216,
+          16777216,
+          0,
+          16777216,
+          16777216,
+          0,
+          13421975,
+          0,
+          0,
+          16777216,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1677873,
+          0,
+          0,
+          0,
+          0,
+          13421975,
+          16777216,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          0,
+          1677873,
+          0,
+          0,
+          16777216,
+          16777216,
+          0,
+          16777216,
+          16777216,
+          0,
+          0,
+          13421975,
+          0,
+          0,
+          0,
+          0,
+          16777216,
+          16777216,
+          0,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          16777216,
+          1677873,
+          16777216,
+          16777216
+        ],
+        "source_realization": "In each cell occupy a half-open slab in coordinate 1 of relative length numerator/2^24; this realizes its exact cell-average density.",
+        "source_density_fraction": "135056959/339738624",
+        "source_density_numerator": 135056959,
+        "source_density_denominator": 339738624,
+        "solver_receiver_volume_numeric": 0.5,
+        "solver_positive_w_count": 8,
+        "solver_binary_integrality_max_error": 0.0,
+        "failed_solver_selected_rectangle_ids": [],
+        "certified_selected_rectangles": [
+          {
+            "id": 3419,
+            "axis_origin_length_cells": [
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "mean_fraction": "60398045/67108864",
+            "mean_minus_p_fraction": "337/335544320",
+            "receiver_cell_ids": [
+              47,
+              45,
+              46,
+              50,
+              48,
+              49,
+              74,
+              72,
+              73,
+              77,
+              75,
+              76
+            ]
+          },
+          {
+            "id": 3837,
+            "axis_origin_length_cells": [
+              [
+                1,
+                3
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "mean_fraction": "135895601/150994944",
+            "mean_minus_p_fraction": "757/754974720",
+            "receiver_cell_ids": [
+              31,
+              40,
+              49,
+              58,
+              67,
+              76,
+              4,
+              13,
+              22
+            ]
+          },
+          {
+            "id": 4163,
+            "axis_origin_length_cells": [
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "mean_fraction": "135895601/150994944",
+            "mean_minus_p_fraction": "757/754974720",
+            "receiver_cell_ids": [
+              49,
+              50,
+              48,
+              76,
+              77,
+              75,
+              22,
+              23,
+              21
+            ]
+          },
+          {
+            "id": 4179,
+            "axis_origin_length_cells": [
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "mean_fraction": "135895601/150994944",
+            "mean_minus_p_fraction": "757/754974720",
+            "receiver_cell_ids": [
+              49,
+              52,
+              46,
+              76,
+              79,
+              73,
+              22,
+              25,
+              19
+            ]
+          },
+          {
+            "id": 4880,
+            "axis_origin_length_cells": [
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                0,
+                3
+              ]
+            ],
+            "mean_fraction": "135895601/150994944",
+            "mean_minus_p_fraction": "757/754974720",
+            "receiver_cell_ids": [
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80
+            ]
+          },
+          {
+            "id": 4963,
+            "axis_origin_length_cells": [
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "mean_fraction": "60398045/67108864",
+            "mean_minus_p_fraction": "337/335544320",
+            "receiver_cell_ids": [
+              73,
+              74,
+              76,
+              77,
+              79,
+              80,
+              55,
+              56,
+              58,
+              59,
+              61,
+              62
+            ]
+          },
+          {
+            "id": 5467,
+            "axis_origin_length_cells": [
+              [
+                2,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "mean_fraction": "241592179/268435456",
+            "mean_minus_p_fraction": "1343/1342177280",
+            "receiver_cell_ids": [
+              67,
+              68,
+              70,
+              71,
+              76,
+              77,
+              79,
+              80,
+              13,
+              14,
+              16,
+              17,
+              22,
+              23,
+              25,
+              26
+            ]
+          },
+          {
+            "id": 6411,
+            "axis_origin_length_cells": [
+              [
+                2,
+                3
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "mean_fraction": "60398045/67108864",
+            "mean_minus_p_fraction": "337/335544320",
+            "receiver_cell_ids": [
+              73,
+              76,
+              55,
+              58,
+              19,
+              22,
+              1,
+              4,
+              46,
+              49,
+              28,
+              31
+            ]
+          }
+        ],
+        "receiver_cell_ids_exact_union": [
+          1,
+          4,
+          13,
+          14,
+          16,
+          17,
+          19,
+          21,
+          22,
+          23,
+          25,
+          26,
+          28,
+          31,
+          40,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          52,
+          55,
+          56,
+          58,
+          59,
+          61,
+          62,
+          67,
+          68,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80
+        ],
+        "theta_required_fraction": "1/2",
+        "theta_actual_fraction": "41/81",
+        "theta_actual_numerator": 41,
+        "theta_actual_denominator": 81,
+        "theta_actual_over_density_fraction": "171966464/135056959",
+        "theta_actual_over_density_numerator": 171966464,
+        "theta_actual_over_density_denominator": 135056959,
+        "all_final_rectangles_strictly_above_p": true
+      }
+    }
+  ],
+  "seconds": 120.69546595799875,
+  "scope": "Finite torus-grid candidate search for the core95 periodic source-density proxy. Each certified theta_actual/d is a lower bound witnessed by the listed periodic indicator candidate. It is not a lower certificate for continuous d_N or a general H_N bound; finite-box transference would require a separate boundary-tolerance argument.",
+  "solver_dual_bound_is_numerical_only": true,
+  "general_H_N_bound_claimed": false,
+  "continuous_d_N_lower_bound_claimed": false
+}
