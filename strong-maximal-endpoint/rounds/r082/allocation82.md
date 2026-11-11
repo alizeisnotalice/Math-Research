@@ -141,3 +141,7 @@ It does not cause the true optimum \(\mathcal W\) to change or become
 larger.  It strengthens the lower requirement because (4) is stronger.
 Nothing above proves a source-sharing/packing theorem, the finiteness of
 \(\mathcal W\), or a new general strong-maximal upper bound.
+
+## 第84轮后续更正（2026-11-11）
+
+本轮提出但未证明的充分目标(11)现已被 [第84轮严格反例](../r084/obstruction84.md) 否定：保持同一预算定义，已有 cap2 输入给 $\log\mathcal W_{N,N^{-2}}(2)\ge3N\log N/2-O(N)$。本文件的必要下界(9)和有限维证书仍有效；(11)不再列为可攻关目标。
