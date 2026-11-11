@@ -1,0 +1,77 @@
+{
+	"pass":true,
+	"configured_workers":1,
+	"actual_kernel_ids":[],
+	"main_kernel_computation":true,
+	"kernels_closed":true,
+	"overlap":{
+		"patterns_enumerated":64,
+		"pattern_rows_sha256":"e05672d5e2b4731d813892e1f5f2913b0890266449ada6089ad2c8e5ebe83c6b",
+		"raw_mass_expectation":"6\/31",
+		"surviving_mass_expectation":"148230000\/887503681",
+		"lost_mass_expectation":"23544906\/887503681",
+		"expected_ordered_pair_bound":"30\/961",
+		"exact_loss_le_pair_bound":true,
+		"pointwise_loss_le_l_times_l_minus_1":true
+	},
+	"constants":{
+		"c":"1\/1024",
+		"eta":"1\/128",
+		"delta":"1\/1024",
+		"lambda_upper":"5\/4194304",
+		"minimum_expected_success_fraction":"20455\/32768",
+		"packing_simultaneous_success_probability_lower":"485691\/1048576",
+		"guard_simultaneous_success_probability_lower":"45\/64",
+		"long_edge_deleted_fraction_lower":"3\/256",
+		"strictly_exceeds_eta":true,
+		"derived_with_exact_fraction_arithmetic":true
+	},
+	"generalization":{
+		"case_count":256,
+		"canonical_case_rows_sha256":"b4d4c423c9c432ae4753bad22a0c4d568f82e9cf6485208d0217cd7bce6ab8df",
+		"loss_le_pair_bound_all_cases":true,
+		"minimum_surviving_mass":{
+			"m":1,
+			"k":1,
+			"p":"1\/127",
+			"raw":"1\/127",
+			"surviving":"1\/127",
+			"loss":"0",
+			"pair_bound":"0"
+		},
+		"maximum_surviving_mass":{
+			"m":4,
+			"k":8,
+			"p":"1\/31",
+			"raw":"32\/31",
+			"surviving":"222318405952306985540484000000000000000000000000\/529144398052420314716929933900838757437386767361",
+			"loss":"323895166230836565135056576929898072193431501792\/529144398052420314716929933900838757437386767361",
+			"pair_bound":"32\/31"
+		},
+		"minimum_pair_bound_minus_loss":{
+			"value":"0",
+			"m":1,
+			"k":1,
+			"p":"1\/31"
+		},
+		"maximum_loss_over_pair_bound":{
+			"value":"1",
+			"m":2,
+			"k":1,
+			"p":"1\/31"
+		}
+	},
+	"log_contract":{
+		"statement":"theta\/H_N(p) <= d_N(p,theta) <= -log(1-theta)\/H_N(p)",
+		"domain":"0 < theta < 1; H_N(p) > 0",
+		"exact_ordering_facts":{
+			"gap_at_zero":true,
+			"gap_derivative_identity":true,
+			"gap_derivative_positive_on_domain":true,
+			"positive_H_preserves_order":true
+		},
+		"numeric_log_evaluation_used":false,
+		"scope":"checks only the exact logarithmic boundary ordering; the d_N theorem is supplied by core95 (6)"
+	},
+	"scope":"Independent exact checks of finite Bernoulli point models, rational margins, and a symbolic logarithmic order contract; not a physical onset or high-dimensional source construction."
+}

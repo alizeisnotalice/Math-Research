@@ -1,0 +1,91 @@
+{
+  "schema": "r095-finite-exact-checks-v1",
+  "pass_all": true,
+  "configured_workers": 2,
+  "actual_workers": 1,
+  "worker_pids": [
+    21998
+  ],
+  "overlap": {
+    "model": "3 colors, 2 independent Bernoulli(p) copies per color at one point",
+    "p": "1/31",
+    "patterns_enumerated": 64,
+    "pattern_rows_sha256": "e05672d5e2b4731d813892e1f5f2913b0890266449ada6089ad2c8e5ebe83c6b",
+    "raw_mass_expectation": "6/31",
+    "surviving_mass_expectation": "148230000/887503681",
+    "lost_mass_expectation": "23544906/887503681",
+    "expected_ordered_pair_bound": "30/961",
+    "exact_loss_le_pair_bound": true,
+    "pointwise_loss_le_l_times_l_minus_1": true
+  },
+  "constants": {
+    "c": "1/1024",
+    "eta": "1/128",
+    "delta": "1/1024",
+    "lambda_upper": "5/4194304",
+    "minimum_expected_success_fraction": "20455/32768",
+    "packing_simultaneous_success_probability_lower": "485691/1048576",
+    "guard_simultaneous_success_probability_lower": "45/64",
+    "long_edge_deleted_fraction_lower": "3/256",
+    "strictly_exceeds_eta": true,
+    "derived_with_exact_fraction_arithmetic": true
+  },
+  "generalization": {
+    "model": "independent point coverage by m colors, k copies per color",
+    "m_values": [
+      1,
+      16
+    ],
+    "k_values": [
+      1,
+      8
+    ],
+    "p_values": [
+      "1/31",
+      "1/127"
+    ],
+    "case_count": 256,
+    "canonical_case_rows_sha256": "b4d4c423c9c432ae4753bad22a0c4d568f82e9cf6485208d0217cd7bce6ab8df",
+    "raw_mass_formula": "m*k*p",
+    "surviving_mass_formula": "m*(1-(1-p)^k)*(1-p)^(k*(m-1))",
+    "loss_upper_formula": "m*k*(m*k-1)*p^2",
+    "loss_le_pair_bound_all_cases": true,
+    "minimum_surviving_mass": {
+      "value": "1/127",
+      "m": 1,
+      "k": 1,
+      "p": "1/127"
+    },
+    "maximum_surviving_mass": {
+      "value": "222318405952306985540484000000000000000000000000/529144398052420314716929933900838757437386767361",
+      "m": 4,
+      "k": 8,
+      "p": "1/31"
+    },
+    "minimum_pair_bound_minus_loss": {
+      "value": "0",
+      "m": 1,
+      "k": 1,
+      "p": "1/31"
+    },
+    "maximum_loss_over_pair_bound": {
+      "value": "1",
+      "m": 2,
+      "k": 1,
+      "p": "1/31"
+    }
+  },
+  "log_contract": {
+    "statement": "theta/H_N(p) <= d_N(p,theta) <= -log(1-theta)/H_N(p)",
+    "domain": "0 < theta < 1; H_N(p) > 0",
+    "exact_ordering_basis": "-log(1-theta)-theta >= 0, divided by positive H_N(p)",
+    "proof": "g(theta)=-log(1-theta)-theta has g(0)=0 and g'(theta)=theta/(1-theta)>0 on (0,1)",
+    "numeric_log_evaluation_used": false,
+    "theorem_contract_only_not_a_finite_source_computation": true
+  },
+  "seconds": 0.05349216600006912,
+  "scope": "Exact finite checks for the stated single-point independent overlap models, the audit95 rational constants, and the 256-case algebraic loss bound. These are not high-dimensional physical source constructions or onset estimates.",
+  "high_dimensional_source_construction_claimed": false,
+  "finite_dimension_onset_claimed": false,
+  "general_H_N_coefficient_claimed": false
+}

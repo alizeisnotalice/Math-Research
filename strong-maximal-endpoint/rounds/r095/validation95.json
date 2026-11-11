@@ -1,0 +1,116 @@
+{
+  "pass_all": true,
+  "goal_status": "active",
+  "general_upper_closed": false,
+  "prior_dependency_sha256": {
+    "rounds/r021/report.md": "068f040deee7146e44d88c02f6f92e6652802b6964705a4f5ea9b9c77528595d",
+    "rounds/r091/core91.md": "d86d9b77625e023157aad718cccdaa2545a349f69cfcdbacbe661cd232d31a81",
+    "rounds/r092/core92.md": "db9c893f9c14be96c87f8ef11873b8620204bb6cb2850550aed07ddd3b326711",
+    "rounds/r093/core93.md": "7219a3d883e746df4f644a639fdccfcf8035ea32008ac115352356ac9efdee04",
+    "rounds/r094/core94.md": "6cfa947f40af496224781d777df0d0d21d5182c480fc4826416d925e81b1b8a6",
+    "rounds/r094/audit94.md": "d78ff62c1156b9a0dfd61fe40fb0953445343a12c241478e8c117533802a233c"
+  },
+  "scope": "Exact finite point-model checks and the symbolic logarithmic boundary contract only; no high-dimensional physical source construction, no general H_N coefficient, and no finite-dimensional onset.",
+  "overlap_pattern_count": 64,
+  "generalization_case_count": 256,
+  "Python_configured_workers": 2,
+  "Python_stored_workers": 1,
+  "Python_replay_workers": 1,
+  "Wolfram_configured_workers": 1,
+  "Wolfram_kernel_ids": [],
+  "Wolfram_kernels_closed": true,
+  "Python_resources": {
+    "exit_code": 0,
+    "stop_reason": null,
+    "reserve_GiB": 1.0,
+    "owned_RSS_budget_GiB": 6.36,
+    "peak_owned_RSS_MiB": 12.859375,
+    "min_system_available_MiB": 7536.64,
+    "samples": 1,
+    "seconds": 1.040098665998812,
+    "scope": "macOS memory_pressure available-percentage estimate; monitor plus per-kernel MemoryConstrained, not a hard OS reservation."
+  },
+  "Wolfram_resources": {
+    "exit_code": 0,
+    "stop_reason": null,
+    "reserve_GiB": 1.0,
+    "owned_RSS_budget_GiB": 6.5,
+    "peak_owned_RSS_MiB": 175.46875,
+    "min_system_available_MiB": 7536.64,
+    "samples": 2,
+    "seconds": 2.084203542000978,
+    "scope": "macOS memory_pressure available-percentage estimate; monitor plus per-kernel MemoryConstrained, not a hard OS reservation."
+  },
+  "resources_are_sampled_estimates_not_OS_reservations": true,
+  "overlap_pattern_rows_sha256": "e05672d5e2b4731d813892e1f5f2913b0890266449ada6089ad2c8e5ebe83c6b",
+  "generalization_case_rows_sha256": "b4d4c423c9c432ae4753bad22a0c4d568f82e9cf6485208d0217cd7bce6ab8df",
+  "constants": {
+    "c": "1/1024",
+    "eta": "1/128",
+    "delta": "1/1024",
+    "lambda_upper": "5/4194304",
+    "minimum_expected_success_fraction": "20455/32768",
+    "packing_simultaneous_success_probability_lower": "485691/1048576",
+    "guard_simultaneous_success_probability_lower": "45/64",
+    "long_edge_deleted_fraction_lower": "3/256",
+    "strictly_exceeds_eta": true,
+    "derived_with_exact_fraction_arithmetic": true
+  },
+  "generalization_extrema": {
+    "minimum_surviving_mass": {
+      "value": "1/127",
+      "m": 1,
+      "k": 1,
+      "p": "1/127"
+    },
+    "maximum_surviving_mass": {
+      "value": "222318405952306985540484000000000000000000000000/529144398052420314716929933900838757437386767361",
+      "m": 4,
+      "k": 8,
+      "p": "1/31"
+    },
+    "minimum_pair_bound_minus_loss": {
+      "value": "0",
+      "m": 1,
+      "k": 1,
+      "p": "1/31"
+    },
+    "maximum_loss_over_pair_bound": {
+      "value": "1",
+      "m": 2,
+      "k": 1,
+      "p": "1/31"
+    }
+  },
+  "log_contract_exact_not_numerically_evaluated": {
+    "statement": "theta/H_N(p) <= d_N(p,theta) <= -log(1-theta)/H_N(p)",
+    "domain": "0 < theta < 1; H_N(p) > 0",
+    "exact_ordering_basis": "-log(1-theta)-theta >= 0, divided by positive H_N(p)",
+    "proof": "g(theta)=-log(1-theta)-theta has g(0)=0 and g'(theta)=theta/(1-theta)>0 on (0,1)",
+    "numeric_log_evaluation_used": false,
+    "theorem_contract_only_not_a_finite_source_computation": true
+  },
+  "source_sha256": {
+    "experiment95.py": "24e10aaf76d531cd100fa7b012078aa0c0c6969a89b36ef27de7553ebb1fe888",
+    "verify95.wl": "ac5f933e8d5941b2c0cbb8df9f9ab58ecb3ebf29760f87a46a37faac6ef0e99e",
+    "check95.py": "6edd325ad032c905069e35e1dddb98fb5c9334948fa14337acb0e2585ad32977"
+  },
+  "document_sha256": {
+    "core95.md": "5b9bb2f5b8bde15cbd72c72213e9922be6f60f877b1b146bb7a19782787abe76",
+    "audit95.md": "7cb8abd91180940f7d341842b37a0b20ef9db35a4764a68566804d683654ebea",
+    "report.md": "905e16ad2e13c368774701b9edfe93dd460f30f0fcfd6d9243725f749a21394c",
+    "certification95.md": "27cab0177a30f996c540fa1ebbc89515f28c8c0166b103e51e8a208baa72f9a7",
+    "sources95.md": "0c37892e02110c9ee4a619c6a0046863e9941f320ef479d33ced74c007b0911b"
+  },
+  "input_sha256": {
+    "python/certificates95.json": "3c911ff54ec76cdc540d92b1854ffb3181bec3fbb54982ba0345cefe256740c5",
+    "python/resources95.json": "a8e790c6c85de392089bf27c4c7972d346b13d2b277d59d688d67beaffb59a45",
+    "wolfram/verification95.json": "8702dc3ac4bb31187c826c308cd3998fdf57fa40edfec543f03b3c3d7433a7ba",
+    "wolfram/resources95.json": "884a62a0ee9cb9f20b142cac6f25fb2a591b9409a435d54f72e4345bba0b1a85"
+  },
+  "portable_invocation": "python check95.py <r095-directory> <validation.json> --project-root <repository-root>",
+  "portable_source_resolution": "r095 directory, work/r095, rounds/r095, code, public-code, public_code",
+  "high_dimensional_source_construction_claimed": false,
+  "finite_dimension_onset_claimed": false,
+  "general_H_N_coefficient_claimed": false
+}

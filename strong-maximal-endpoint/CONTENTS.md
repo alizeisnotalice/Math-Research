@@ -81,3 +81,5 @@
 - 第93轮：[加权双曲十字的完整物理极值与共同侧边熵障碍](rounds/r093/report.md)，[本机核验摘要](rounds/r093/validation93.json)。
 
 - 第94轮：[完整无条件对数凸源的锐上界与Steiner反例](rounds/r094/report.md)，[本机核验摘要](rounds/r094/validation94.json)。
+
+- 第95轮：[近最优源的全halo对称化损失与周期密度等价](rounds/r095/report.md)，[本机核验摘要](rounds/r095/validation95.json)。
