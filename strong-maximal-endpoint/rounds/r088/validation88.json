@@ -1,0 +1,191 @@
+{
+  "pass_all": true,
+  "scope": "Only affine patch and outward center volume; no global input allocation theorem or new C_N bound.",
+  "dimensions": {
+    "dyadic_N": [
+      1024,
+      2048,
+      4096,
+      8192,
+      16384,
+      32768,
+      65536,
+      131072,
+      262144,
+      524288,
+      1048576,
+      2097152
+    ],
+    "center_N": [
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "center_delta_cases": 24,
+    "physical_center_volumes": 72
+  },
+  "counts": {
+    "dyadic_dimensions": 12,
+    "center_parameter_cases": 24,
+    "physical_center_volumes": 72,
+    "all_symbolic_gates": 12,
+    "dyadic_finite_grid_values_checked": 48,
+    "dyadic_tail_values_checked": 48,
+    "directed_lower_values_checked": 48,
+    "directed_upper_values_checked": 48
+  },
+  "Python_configured_workers": 12,
+  "Python_actual_dyadic_processes": 12,
+  "Python_actual_center_processes": 12,
+  "Python_replay_dyadic_processes": 12,
+  "Python_replay_center_processes": 12,
+  "Wolfram_configured_workers": 12,
+  "Wolfram_actual_kernel_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "Wolfram_kernels_closed": true,
+  "Wolfram_symbolic_gates": {
+    "affine_average_identity": true,
+    "center_error_identity": true,
+    "center_derivative_identity": true,
+    "endpoint_derivative_bound": true,
+    "uniform_inverse_center_bound": true,
+    "grid_loss_bound": true,
+    "outward_center_Jacobian": true,
+    "positive_volume_series_derivative": true,
+    "positive_volume_tail_ratio": true,
+    "saturation_grid_constant": true,
+    "soft_grid_constants": true,
+    "tiny_exponential_gate": true
+  },
+  "working_precision": [
+    80,
+    160
+  ],
+  "dyadic_peak_j_consistency": [
+    {
+      "N": 1024,
+      "peak_j": 27,
+      "all_four_agree": true
+    },
+    {
+      "N": 2048,
+      "peak_j": 30,
+      "all_four_agree": true
+    },
+    {
+      "N": 4096,
+      "peak_j": 33,
+      "all_four_agree": true
+    },
+    {
+      "N": 8192,
+      "peak_j": 36,
+      "all_four_agree": true
+    },
+    {
+      "N": 16384,
+      "peak_j": 39,
+      "all_four_agree": true
+    },
+    {
+      "N": 32768,
+      "peak_j": 42,
+      "all_four_agree": true
+    },
+    {
+      "N": 65536,
+      "peak_j": 45,
+      "all_four_agree": true
+    },
+    {
+      "N": 131072,
+      "peak_j": 48,
+      "all_four_agree": true
+    },
+    {
+      "N": 262144,
+      "peak_j": 51,
+      "all_four_agree": true
+    },
+    {
+      "N": 524288,
+      "peak_j": 54,
+      "all_four_agree": true
+    },
+    {
+      "N": 1048576,
+      "peak_j": 57,
+      "all_four_agree": true
+    },
+    {
+      "N": 2097152,
+      "peak_j": 60,
+      "all_four_agree": true
+    }
+  ],
+  "max_dyadic_precision_difference": "0E-77",
+  "max_dyadic_cross_software_difference": "4.730460811697628821414095E-53",
+  "max_center_precision_difference": "0E-64",
+  "max_center_cross_software_difference": "4.326134047288523E-62",
+  "max_directed_log_interval_width": "1.06954753E-22",
+  "center_relative_series_tail_upper_max": "1E-100",
+  "center_tail_certified_cases": 24,
+  "tail_log_gap_minimum": "4294958249.04038256863658083111502119553457901864370645261879869990905405826835491822891221007216615925415495638556847813921387806640849277507753929595309733556292760871675234279619",
+  "cutoff": {
+    "python_small_exp_cutoff": -300,
+    "python_small_exp_upper": "1e-100",
+    "wolfram_numeric_log_cutoff": -400,
+    "wolfram_numeric_relative_omission_upper": "170 exp(-400)"
+  },
+  "resource_monitor": {
+    "exit_code": 0,
+    "stop_reason": null,
+    "reserve_GiB": 1.0,
+    "owned_RSS_budget_GiB": 6.5,
+    "peak_owned_RSS_MiB": 2341.34375,
+    "min_system_available_MiB": 11468.8,
+    "samples": 4,
+    "seconds": 4.087734291999936,
+    "scope": "macOS memory_pressure available-percentage estimate; monitor plus per-kernel MemoryConstrained, not a hard OS reservation."
+  },
+  "resource_available_memory_is_estimate": true,
+  "source_sha256": {
+    "experiment88.py": "b16439885bc55fc70d7de42d45d09149633614d86302cdc1d445a1aa307174f8",
+    "verify88.wl": "399dde336b138c787727d4dbabad3debbf83f81350a6f58de0c8dad325054583",
+    "math_guard.py": "4de84c08b5f0ef621ec8e4dd15c8fe0ab18ceefe60ed01b254e34527890ce4db",
+    "check88.py": "c26276ce0eee928c2cfedcec7024c0aad8cab92617228e681d828fa58b9d8e14",
+    "verify84.py": "cbab7fcd519eb43f0caa81103fd3b9a620eecce8ca6de806e184b4dbd9dadbb5",
+    "sliver79.py": "0ba16ca8a3fd434e547954e6f448134b64915728aab1daaa012c9d7dd55d4124"
+  },
+  "input_sha256": {
+    "python/certificates88.json": "cea847a128f9f40f7ea4b1668e625ff9930edab44e7753e3c886ec23e1e65ef8",
+    "wolfram/verification88.json": "d1a1a58b2eee64bb7cdfa20a4dec0d1f733f41d309d2801fc33fe6e317d80ea6",
+    "wolfram/resources88.json": "fc7565eec08db9d4b7144ef88f6aeb40794d6d4002850324b8f84afead7abd65"
+  },
+  "prior_dependency_sha256": {
+    "rounds/r028/report.md": "7b2dd8052585ec2253863f666505fc72f172b5fa0de79606553b4122d0d55313",
+    "rounds/r075/report.md": "b09fe9cf44fafbe1f1a348fd0cb4e9f8310d30ce0d86728f7f747d3652d96ea4",
+    "rounds/r081/smoothing81.md": "a6f5ce63b242dba79fa8e69c2e538c09d757888e5e2ad3b0a848067aaf93846f",
+    "rounds/r084/obstruction84.md": "304c6fc00c1238e6f1da2053e910e8442d843b44dfe44b91090d031730245f49",
+    "rounds/r087/corner87.md": "f9c768666474594b00d735eb52931a850587e3436b014a373cc34c68d6ac8571"
+  },
+  "goal_status": "active",
+  "pause_request_revoked": true
+}

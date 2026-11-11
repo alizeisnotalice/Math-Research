@@ -1,11 +1,11 @@
 # 强极大算子端点常数：全部资料入口
 
-专属项目目录：`Math-Research/strong-maximal-endpoint/`。截至2026-11-11，已完成第1—87轮；研究继续，当前具体缺口见[第87轮报告](rounds/r087/report.md)。
+专属项目目录：`Math-Research/strong-maximal-endpoint/`。截至2026-11-11，已完成第1—88轮；研究继续，当前具体缺口见[第88轮报告](rounds/r088/report.md)。
 
 |目录或文件|内容|
 |---|---|
 |[README.md](README.md)|当前结论、证明状态与各轮索引|
-|[rounds/](rounds/)|第1—87轮最终报告、必要结果及证书|
+|[rounds/](rounds/)|第1—88轮最终报告、必要结果及证书|
 |[code/](code/)|正式可复现的 MATLAB、Wolfram 与 Python 代码|
 |[sources.md](sources.md)、[references.bib](references.bib)|来源核验与参考文献|
 |[inputs/](inputs/)|用户提供的原始提示文档和研究笔记 PDF|
@@ -67,3 +67,5 @@
 - 第86轮：[任意替代矩形的方向源熵成本](rounds/r086/report.md)，[本机核验摘要](rounds/r086/validation86.json)。
 
 - 第87轮：[近最优主体上的固定角点列效率衰减](rounds/r087/report.md)，[本机核验摘要](rounds/r087/validation87.json)。
+
+- 第88轮：[反射中心列的匹配预算与物理残差接口](rounds/r088/report.md)，[本机核验摘要](rounds/r088/validation88.json)。
