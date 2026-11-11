@@ -105,3 +105,5 @@
 - 第105轮 [前缀条件方差与截面二次曲率抵消](rounds/r105/report.md)。
 
 - 第106轮 [所有次线性自由前缀的锐截面上界](rounds/r106/report.md)。
+
+- 第107轮 [后缀维数远大于 N/log N 时的锐截面上界](rounds/r107/report.md)。
