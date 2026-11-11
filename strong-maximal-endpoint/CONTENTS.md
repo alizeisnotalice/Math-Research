@@ -87,3 +87,5 @@
 - 第96轮：[宏观覆盖的未来接收信息费用与真实矩形对偶](rounds/r096/report.md)，[本机核验摘要](rounds/r096/validation96.json)。
 
 - 第97轮 [宏观周期覆盖的有限目录双侧密度界](rounds/r097/report.md)。
+
+- 第98轮 [近基准源强迫每种成功选盒使用无界未来信息](rounds/r098/report.md)。
