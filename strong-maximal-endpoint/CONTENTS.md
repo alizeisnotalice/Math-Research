@@ -107,3 +107,5 @@
 - 第106轮 [所有次线性自由前缀的锐截面上界](rounds/r106/report.md)。
 
 - 第107轮 [后缀维数远大于 N/log N 时的锐截面上界](rounds/r107/report.md)。
+
+- 第108轮 [有限反馈前缀的严格增益与离散误差](rounds/r108/report.md)。
