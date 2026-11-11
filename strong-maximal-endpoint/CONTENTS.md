@@ -85,3 +85,5 @@
 - 第95轮：[近最优源的全halo对称化损失与周期密度等价](rounds/r095/report.md)，[本机核验摘要](rounds/r095/validation95.json)。
 
 - 第96轮：[宏观覆盖的未来接收信息费用与真实矩形对偶](rounds/r096/report.md)，[本机核验摘要](rounds/r096/validation96.json)。
+
+- 第97轮 [宏观周期覆盖的有限目录双侧密度界](rounds/r097/report.md)。
