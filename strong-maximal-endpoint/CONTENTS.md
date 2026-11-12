@@ -411,3 +411,5 @@
 - 第262轮 [容错方向清单界](rounds/r262/report.md)。
 
 - 第263轮 [近似形状与容错方向的联合清单](rounds/r263/report.md)。
+
+- 第264轮 [位置模板的交叠与后验有效秩](rounds/r264/report.md)。
