@@ -1,0 +1,1 @@
+as=0<e<=1/10^9;tests={FullSimplify[1/(27(1-2(2e)^(1/3))^3)<1/20,as],FullSimplify[(4/5)^2 e^(2/3)/150>e,as],(4/5)^3/6>1/20,FullSimplify[Integrate[2(d-z)^2,{z,0,d}]==2d^3/3,d>0],1/10*1/10*(1-4/5)==1/500};Print[tests];If[!And@@tests,Exit[1]];
