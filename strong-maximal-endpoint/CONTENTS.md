@@ -435,3 +435,5 @@
 - 第274轮 [变动辅助菜单与嵌套纤维](rounds/r274/report.md)。
 
 - 第275轮 [实际双覆盖费用与主率缺额](rounds/r275/report.md)。
+
+- 第276轮 [高矩的启动损失与 Hölder 缺口](rounds/r276/report.md)。
