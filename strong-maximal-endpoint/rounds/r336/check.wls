@@ -1,0 +1,1 @@
+Clear[u,t,b,h];checks={FullSimplify[Log[Exp[u]u^2 Exp[-u/t]]==(1-1/t)u+2Log[u],Assumptions->u>0&&t>1],FullSimplify[Integrate[Exp[h],{h,-Infinity,b},Assumptions->Element[b,Reals]]==Exp[b],Assumptions->Element[b,Reals]]};Print[checks];If[!And@@checks,Exit[1]];
