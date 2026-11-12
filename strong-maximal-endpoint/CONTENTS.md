@@ -439,3 +439,5 @@
 - 第276轮 [高矩的启动损失与 Hölder 缺口](rounds/r276/report.md)。
 
 - 第277轮 [单次 Markov 的物理转移障碍](rounds/r277/report.md)。
+
+- 第278轮 [截顶正矩与中央阈值](rounds/r278/report.md)。
