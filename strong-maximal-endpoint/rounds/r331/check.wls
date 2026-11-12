@@ -1,0 +1,1 @@
+Clear[r,a,x,y];m=FullSimplify[(Integrate[-Log[y],{y,0,x},Assumptions->x>0]+Integrate[-Log[y],{y,0,r x},Assumptions->r>0&&x>0])/((1+r)x),Assumptions->r>0&&x>0];checks={FullSimplify[m==1-Log[x]-r Log[r]/(1+r),Assumptions->r>0&&x>0],FullSimplify[2 Integrate[Log[a/y],{y,0,a},Assumptions->a>0]==2a,Assumptions->a>0]};Print[checks];If[!And@@checks,Exit[1]];
