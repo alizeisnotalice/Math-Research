@@ -1,0 +1,1 @@
+Clear[a,l,q,x];c[l_]:=(1-Exp[-l])/a-l;checks={FullSimplify[(c[-Log[a]])==1/a-1+Log[a],Assumptions->0<a<1],Series[1/(1-x)-1+Log[1-x],{x,0,2}]//Normal//(#==x^2/2&),FullSimplify[Integrate[q a^(q-1)(1-a),{a,0,1},Assumptions->q>0]==1/(1+q),Assumptions->q>0]};Print[checks];If[!And@@checks,Exit[1]];
