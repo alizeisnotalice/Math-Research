@@ -1,0 +1,1 @@
+Clear[s,k];cost=s k+Log[(s+1)/(s-1)];checks={FullSimplify[(D[cost,s]/.s->Sqrt[1+2/k])==0,Assumptions->k>0],FullSimplify[D[cost,{s,2}]>0,Assumptions->s>1]};root=k/.FindRoot[(cost/.s->Sqrt[1+2/k])==1+ProductLog[1/E],{k,1/5},WorkingPrecision->50];Print[{checks,N[root,18]}];If[!And@@checks,Exit[1]];
