@@ -1,0 +1,1 @@
+Clear[u,w];mom[j_]:=Integrate[u^j Exp[-u],{u,0,w},Assumptions->w>0]/(1-Exp[-w]);m=mom[1];v=mom[2]-m^2;checks={Limit[m/w,w->0]==1/2,Limit[v/w^2,w->0]==1/12,FullSimplify[(1/2)/Sqrt[1/12]==Sqrt[3]]};Print[checks];If[!And@@checks,Exit[1]];
