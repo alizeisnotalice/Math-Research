@@ -407,3 +407,5 @@
 - 第260轮 [逐见证的端点深度分布上界](rounds/r260/report.md)。
 
 - 第261轮 [接收方向与端点深度的联合费用](rounds/r261/report.md)。
+
+- 第262轮 [容错方向清单界](rounds/r262/report.md)。
