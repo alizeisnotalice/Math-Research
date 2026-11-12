@@ -1,0 +1,1 @@
+Clear[h,m,a,b];checks={Resolve[ForAll[{h,m,a},Implies[0<h<=m&&0<=a<=1&&h<=h/2+m a,a>=h/(2m)]],Reals],Resolve[ForAll[{b,a},Implies[0<b<=1&&0<=a<=1&&b<=b/2+a,a>=b/2]],Reals]};Print[checks];If[!And@@checks,Exit[1]];
