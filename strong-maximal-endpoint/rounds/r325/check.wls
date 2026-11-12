@@ -1,0 +1,1 @@
+a=3/25;eta=1/10;mu=1+ProductLog[1/E];checks={Log[2]+a+eta<mu,1052/1000<mu,FullSimplify[Integrate[(2/(1+x))^q,{x,1,Infinity},Assumptions->q>1]==2/(q-1),Assumptions->q>1]};Print[checks];If[!And@@checks,Exit[1]];
