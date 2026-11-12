@@ -1,0 +1,1 @@
+Clear[s,t,n,k,b,a,C0,mu];checks={FullSimplify[1+2 Integrate[(1+t)^(-s),{t,0,Infinity},Assumptions->s>1]==1+2/(s-1),Assumptions->s>1],Resolve[ForAll[{n,k,b,a,C0,mu},Implies[n>0&&0<k<=n&&b>=2&&mu>0&&0<=C0<=b mu/4&&0<a<=mu/(4b),mu(n-k)+C0 n/(b n/k)+(b n/k)a k^2/n<=mu n-mu k/2]],Reals]};Print[checks];If[!And@@checks,Exit[1]];
