@@ -1,0 +1,1 @@
+Clear[r,c,t];m=1-r Log[r]/(1+r);checks={FullSimplify[(D[m,{r,2}]/.Log[r]->-1-r)==-1/(r(1+r)),Assumptions->r>0],FullSimplify[Limit[Exp[t/2] Exp[-(t-3Log[t]+c)/2]/(Sqrt[t-3Log[t]+c] t),t->Infinity]==Exp[-c/2],Assumptions->Element[c,Reals]]};Print[checks];If[!And@@checks,Exit[1]];
