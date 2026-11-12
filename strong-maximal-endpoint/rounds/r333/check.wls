@@ -1,0 +1,1 @@
+Clear[v,s,u,w,z];checks={FullSimplify[(D[(v-1)v^(-s),v]/.v->s/(s-1))==0,Assumptions->s>1],FullSimplify[Limit[Exp[(1-u)z]+(1/u-1) Exp[w-u z]-(1/u) Exp[(1-u)w],u->0]==Exp[z]+Exp[w](w-1-z),Assumptions->Element[{z,w},Reals]]};Print[checks];If[!And@@checks,Exit[1]];
