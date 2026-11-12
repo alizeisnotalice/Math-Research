@@ -123,3 +123,5 @@
 - 第118轮 [共同前缀相容关系与体积](rounds/r118/report.md)。
 
 - 第119轮 [保持完整 halo 体积的尺度复制](rounds/r119/report.md)。
+
+- 第120轮 [方向交叠与新增体积差](rounds/r120/report.md)。
