@@ -1,0 +1,1 @@
+Clear[t,u,h];checks={FullSimplify[Integrate[2Exp[(1-u)t],{t,0,Infinity},Assumptions->u>1]==2/(u-1),Assumptions->u>1],FullSimplify[Integrate[2Exp[t],{t,0,h}]==2(Exp[h]-1),Assumptions->h>0]};Print[checks];If[!And@@checks,Exit[1]];
