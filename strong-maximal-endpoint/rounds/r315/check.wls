@@ -1,0 +1,1 @@
+Clear[t,n,s,b];checks={FullSimplify[2/(1+t)<=1/Sqrt[t],Assumptions->t>=1]};Do[AppendTo[checks,Sum[(n^4-n)^i/i!,{i,0,n-b-1}]/Sum[(n^4)^i/i!,{i,0,n-1}]<=2(n/n^4)^b],{n,{2,4,8,16}},{b,0,n-1}];Print[{Length[checks],And@@checks}];If[!And@@checks,Exit[1]];
