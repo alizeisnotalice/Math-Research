@@ -441,3 +441,5 @@
 - 第277轮 [单次 Markov 的物理转移障碍](rounds/r277/report.md)。
 
 - 第278轮 [截顶正矩与中央阈值](rounds/r278/report.md)。
+
+- 第279轮 [单轴截顶传播锐价与移动门槛](rounds/r279/report.md)。
