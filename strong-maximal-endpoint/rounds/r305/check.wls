@@ -1,0 +1,1 @@
+Clear[a,b,h,u];checks={Resolve[ForAll[{a,b,h},Implies[0<=b<h<=1&&0<=a<=1,a<=b+(h-b) Piecewise[{{1,a>b}},0]+Max[0,a-h]]],Reals],Limit[u Log[1+1/u],u->0,Direction->"FromAbove"]==0};Print[checks];If[!And@@checks,Exit[1]];
