@@ -1,0 +1,1 @@
+Clear[r,A,t];m=1-r Log[r]/(1+r);v=1+r Log[r]^2/(1+r)^2;checks={FullSimplify[(D[v,r]/.Log[r]->-1-r)==-1,Assumptions->r>0],FullSimplify[(D[m,{r,2}]/.Log[r]->-1-r)==-1/(r(1+r)),Assumptions->r>0],FullSimplify[(Sqrt[t]-A t^2/.t->(4A)^(-2/3))==3/4 (4A)^(-1/3),Assumptions->A>0]};Print[checks];If[!And@@checks,Exit[1]];
