@@ -1,0 +1,1 @@
+Clear[u,i,k,n,a,c];checks={FullSimplify[Sum[(1-u)^i,{i,0,Infinity}]==1/u,Assumptions->0<u<1],Resolve[ForAll[{k,n,a,c},Implies[n>=k>0&&0<a<c/2,-c k/2+a k^2/(2n)<=-c k/4]],Reals]};Print[checks];If[!And@@checks,Exit[1]];
