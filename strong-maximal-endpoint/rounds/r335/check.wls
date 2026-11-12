@@ -1,0 +1,1 @@
+Clear[t,u,j];checks={FullSimplify[Integrate[u^2 Exp[-u/t],{u,0,Infinity},Assumptions->t>0]==2t^3,Assumptions->t>0],FullSimplify[Integrate[u^2 Exp[-3u/(4t)],{u,0,Infinity},Assumptions->t>0]==128 t^3/27,Assumptions->t>0]};Print[checks];If[!And@@checks,Exit[1]];
