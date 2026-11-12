@@ -1,0 +1,1 @@
+Clear[x,s,h];checks={FullSimplify[D[x-Log[1+x],{x,2}]==1/(1+x)^2,Assumptions->x> -1],Resolve[ForAll[{s,h,x},Implies[s>0&&h>0&&x>=0&&s Min[x^2,x]<=h,s x<=Sqrt[s h]+h]],Reals]};Print[checks];If[!And@@checks,Exit[1]];
