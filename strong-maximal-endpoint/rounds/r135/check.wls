@@ -1,0 +1,1 @@
+tests={FullSimplify[M k+l/(2k)-Sqrt[2M l]==M(k-Sqrt[l/(2M)])^2/k,M>0&&l>0&&k>0],Limit[Log[100l]+(Log[3]-l/2)/Sqrt[l],l->Infinity]==-Infinity,Limit[Exp[Log[2l^2]/Sqrt[l]],l->Infinity]==1};Print[tests];If[!And@@tests,Exit[1]];
