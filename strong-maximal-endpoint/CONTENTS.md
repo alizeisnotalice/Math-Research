@@ -437,3 +437,5 @@
 - 第275轮 [实际双覆盖费用与主率缺额](rounds/r275/report.md)。
 
 - 第276轮 [高矩的启动损失与 Hölder 缺口](rounds/r276/report.md)。
+
+- 第277轮 [单次 Markov 的物理转移障碍](rounds/r277/report.md)。
