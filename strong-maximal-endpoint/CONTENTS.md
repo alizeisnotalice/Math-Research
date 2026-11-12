@@ -403,3 +403,5 @@
 - 第258轮 [端点小格加权与平移扰动](rounds/r258/report.md)。
 
 - 第259轮 [错位端格的接收质量费用](rounds/r259/report.md)。
+
+- 第260轮 [逐见证的端点深度分布上界](rounds/r260/report.md)。
