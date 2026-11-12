@@ -121,3 +121,5 @@
 - 第117轮 [真实前缀重选与双大权重中位数定理](rounds/r117/report.md)。
 
 - 第118轮 [共同前缀相容关系与体积](rounds/r118/report.md)。
+
+- 第119轮 [保持完整 halo 体积的尺度复制](rounds/r119/report.md)。
