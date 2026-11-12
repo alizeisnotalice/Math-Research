@@ -217,3 +217,5 @@
 - 第165轮 [高重数列的分位收费](rounds/r165/report.md)。
 
 - 第166轮 [高重数列按行剖面合并计费](rounds/r166/report.md)。
+
+- 第167轮 [见证内列密度的部分量化误差](rounds/r167/report.md)。
