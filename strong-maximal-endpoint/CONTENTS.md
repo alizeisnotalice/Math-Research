@@ -147,3 +147,5 @@
 - 第130轮 [临界外层的换盒半径差](rounds/r130/report.md)。
 
 - 第131轮 [两岛乘积族的全空间匹配上界](rounds/r131/report.md)。
+
+- 第132轮 [斜带与二维普适匹配上界](rounds/r132/report.md)。
