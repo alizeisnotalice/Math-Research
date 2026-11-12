@@ -1,0 +1,1 @@
+Clear[a];mu=1+ProductLog[1/E];root=-ProductLog[-Exp[-1-mu]];checks={Abs[With[{x=N[root,75]},x-1-Log[x]-N[mu,75]]]<10^-50,0<N[root,40]<1,1-Log[2]<mu};Print[{checks,N[root,24]}];If[!And@@checks,Exit[1]];
