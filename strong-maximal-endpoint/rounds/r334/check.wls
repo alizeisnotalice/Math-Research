@@ -1,0 +1,1 @@
+Clear[d,v,s,r];checks={Resolve[ForAll[d,Implies[0<=d<=1,(1+d/4)(1-d/16)>=1+d/8]],Reals],FullSimplify[D[r^(s-1)+(s-1)v^s/r-s v^(s-1),v]==s(s-1)v^(s-2)(v-r)/r,Assumptions->s>2&&v>0&&r>0]};Print[checks];If[!And@@checks,Exit[1]];
