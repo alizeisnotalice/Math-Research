@@ -529,3 +529,5 @@
 - 第321轮 [大偏差区的非单调轮廓上界](rounds/r321/report.md)。
 
 - 第322轮 [极浅双曲次水平集与角点单纯形](rounds/r322/report.md)。
+
+- 第323轮 [命题 A 的同盒浅深混合估计](rounds/r323/report.md)。
