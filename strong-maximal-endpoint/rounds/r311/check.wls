@@ -1,0 +1,1 @@
+Clear[n,k,h,a];checks={Resolve[ForAll[{n,k,h,a},Implies[n>0&&a>=0&&0<=k<=n/(8(1+2a))&&0<=h<=2a k,n-k-h>=7n/8]],Reals],Resolve[ForAll[a,Implies[a>=0,1/(8(1+2a))>=1/(16(1+a))]],Reals]};Print[checks];If[!And@@checks,Exit[1]];
