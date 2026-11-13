@@ -1105,3 +1105,5 @@
 - 第609轮 [补入对偶权的内外密度分离](rounds/r609/report.md)。
 
 - 第610轮 [加权坐标端点交叉下界](rounds/r610/report.md)。
+
+- 第611轮 [独占外片与最优交叉量](rounds/r611/report.md)。
