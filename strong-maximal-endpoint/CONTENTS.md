@@ -859,3 +859,5 @@
 - 第486轮 [双目标联合交换](rounds/r486/report.md)。
 
 - 第487轮 [中央双覆盖的共同权重预算](rounds/r487/report.md)。
+
+- 第488轮 [双标签接收扰动](rounds/r488/report.md)。
