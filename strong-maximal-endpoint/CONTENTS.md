@@ -727,3 +727,5 @@
 - 第420轮 [细门槛分带的对数费用](rounds/r420/report.md)。
 
 - 第421轮 [细带保留接收份额](rounds/r421/report.md)。
+
+- 第422轮 [细带子概率的直接取整](rounds/r422/report.md)。
