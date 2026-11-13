@@ -647,3 +647,5 @@
 - 第380轮 [跨格命中份额与接收体积](rounds/r380/report.md)。
 
 - 第381轮 [粗矩形的分数覆盖](rounds/r381/report.md)。
+
+- 第382轮 [连续覆盖费用的有理夹逼](rounds/r382/report.md)。
