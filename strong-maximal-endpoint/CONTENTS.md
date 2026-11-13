@@ -869,3 +869,5 @@
 - 第491轮 [按接收份额限制最坏混合](rounds/r491/report.md)。
 
 - 第492轮 [高核密度共同源](rounds/r492/report.md)。
+
+- 第493轮 [失败混合核心的方向分离](rounds/r493/report.md)。
