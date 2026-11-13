@@ -819,3 +819,5 @@
 - 第466轮 [实际投影并的纤维体积](rounds/r466/report.md)。
 
 - 第467轮 [按接收点切片降维](rounds/r467/report.md)。
+
+- 第468轮 [最小切片源体积](rounds/r468/report.md)。
