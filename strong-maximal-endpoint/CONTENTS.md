@@ -595,3 +595,5 @@
 - 第354轮 [整盒接收平均的命中偏差](rounds/r354/report.md)。
 
 - 第355轮 [中央基线的收缩与命中协方差](rounds/r355/report.md)。
+
+- 第356轮 [成功侧比的总平方偏差](rounds/r356/report.md)。
