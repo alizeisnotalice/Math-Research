@@ -637,3 +637,5 @@
 - 第375轮 [首点后验的局部预测费用](rounds/r375/report.md)。
 
 - 第376轮 [预测信息的平方根损失](rounds/r376/report.md)。
+
+- 第377轮 [指标乘积的中央传递](rounds/r377/report.md)。
