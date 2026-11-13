@@ -745,3 +745,5 @@
 - 第429轮 [按接收分区修补捕获源](rounds/r429/report.md)。
 
 - 第430轮 [共享修补与局部源重合](rounds/r430/report.md)。
+
+- 第431轮 [细带共同源门槛位移](rounds/r431/report.md)。
