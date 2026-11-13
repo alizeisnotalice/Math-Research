@@ -619,3 +619,5 @@
 - 第366轮 [局部双向分离反链](rounds/r366/report.md)。
 
 - 第367轮 [源交叠稠密子族](rounds/r367/report.md)。
+
+- 第368轮 [稠密子族的接收份额](rounds/r368/report.md)。
