@@ -833,3 +833,5 @@
 - 第473轮 [多水平积分递推](rounds/r473/report.md)。
 
 - 第474轮 [区间交叠的双截断](rounds/r474/report.md)。
+
+- 第475轮 [曲率抵消与中央点余量](rounds/r475/report.md)。
