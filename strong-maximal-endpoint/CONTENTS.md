@@ -753,3 +753,5 @@
 - 第433轮 [二层负载的泊松取整损失](rounds/r433/report.md)。
 
 - 第434轮 [真实星形盒的二层损失](rounds/r434/report.md)。
+
+- 第435轮 [精确费用修正的临界强度](rounds/r435/report.md)。
