@@ -717,3 +717,5 @@
 - 第415轮 [均匀源上的高重数](rounds/r415/report.md)。
 
 - 第416轮 [稀疏多色抽样的实际费用](rounds/r416/report.md)。
+
+- 第417轮 [一维提升消去严格余量](rounds/r417/report.md)。
