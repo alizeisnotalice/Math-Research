@@ -805,3 +805,5 @@
 - 第459轮 [单根双门槛的低维嵌入](rounds/r459/report.md)。
 
 - 第460轮 [多根共同命中的加权矩](rounds/r460/report.md)。
+
+- 第461轮 [共同内核与外部接收份额](rounds/r461/report.md)。
