@@ -779,3 +779,5 @@
 - 第446轮 [父盒局部反链的源积分](rounds/r446/report.md)。
 
 - 第447轮 [典型源点的叶盒宽度](rounds/r447/report.md)。
+
+- 第448轮 [父盒重配的精确缺额](rounds/r448/report.md)。
