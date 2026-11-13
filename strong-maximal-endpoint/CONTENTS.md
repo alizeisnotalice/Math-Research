@@ -965,3 +965,5 @@
 - 第539轮 [固定真门槛差集的锐二次面积阶](rounds/r539/report.md)。
 
 - 第540轮 [基底窄带与远尾分解](rounds/r540/report.md)。
+
+- 第541轮 [中央基底的同源窄带集中](rounds/r541/report.md)。
