@@ -1007,3 +1007,5 @@
 - 第560轮 [乘积截面居中的累积损失](rounds/r560/report.md)。
 
 - 第561轮 [任意二维块的匹配上界](rounds/r561/report.md)。
+
+- 第562轮 [分数坐标覆盖的投影费用](rounds/r562/report.md)。
