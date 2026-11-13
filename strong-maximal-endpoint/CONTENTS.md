@@ -999,3 +999,5 @@
 - 第556轮 [真实矩形的多步弱矩放大率](rounds/r556/report.md)。
 
 - 第557轮 [中央门槛下的单峰乘积费用](rounds/r557/report.md)。
+
+- 第558轮 [指标乘积的锐区间比较](rounds/r558/report.md)。
