@@ -925,3 +925,5 @@
 - 第519轮 [二维切片的可变门槛积分界](rounds/r519/report.md)。
 
 - 第520轮 [内区间选择损失](rounds/r520/report.md)。
+
+- 第521轮 [双切片不相容的耦合下界](rounds/r521/report.md)。
