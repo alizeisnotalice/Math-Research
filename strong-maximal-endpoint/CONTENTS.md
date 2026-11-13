@@ -713,3 +713,5 @@
 - 第413轮 [两色证书的精确超图割](rounds/r413/report.md)。
 
 - 第414轮 [限重选盒的接收损失](rounds/r414/report.md)。
+
+- 第415轮 [均匀源上的高重数](rounds/r415/report.md)。
