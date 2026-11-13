@@ -681,3 +681,5 @@
 - 第397轮 [双行取整与交体积匹配](rounds/r397/report.md)。
 
 - 第398轮 [遮蔽改变最优配对](rounds/r398/report.md)。
+
+- 第399轮 [最优源内外的取整损失](rounds/r399/report.md)。
