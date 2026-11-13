@@ -1053,3 +1053,5 @@
 - 第583轮 [同一行方向盒的实际并集](rounds/r583/report.md)。
 
 - 第584轮 [方向盒低阶投影的指数失真](rounds/r584/report.md)。
+
+- 第585轮 [两位置方向盒的锐 VC 维界](rounds/r585/report.md)。
