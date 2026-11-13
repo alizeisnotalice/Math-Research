@@ -659,3 +659,5 @@
 - 第386轮 [真实行密度与直接覆盖](rounds/r386/report.md)。
 
 - 第387轮 [公共核心的最小源质量](rounds/r387/report.md)。
+
+- 第388轮 [树形单元的最小源质量](rounds/r388/report.md)。
