@@ -921,3 +921,5 @@
 - 第517轮 [二维插入的接收筛选](rounds/r517/report.md)。
 
 - 第518轮 [平移矩形的真实源筛选](rounds/r518/report.md)。
+
+- 第519轮 [二维切片的可变门槛积分界](rounds/r519/report.md)。
