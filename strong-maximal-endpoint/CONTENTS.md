@@ -1119,3 +1119,5 @@
 - 第616轮 [接收密度割公式与多项式偏置](rounds/r616/report.md)。
 
 - 第617轮 [受限接收权的最小修正](rounds/r617/report.md)。
+
+- 第618轮 [接收权的嵌套密度层](rounds/r618/report.md)。
