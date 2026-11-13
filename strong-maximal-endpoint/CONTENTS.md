@@ -941,3 +941,5 @@
 - 第527轮 [按切片差振幅分组](rounds/r527/report.md)。
 
 - 第528轮 [共同有序切片的抽样率](rounds/r528/report.md)。
+
+- 第529轮 [局部逆序面积与切片抽样](rounds/r529/report.md)。
