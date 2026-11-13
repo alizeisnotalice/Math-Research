@@ -797,3 +797,5 @@
 - 第455轮 [切块后的单叶平均](rounds/r455/report.md)。
 
 - 第456轮 [补分余源后的跨叶命中](rounds/r456/report.md)。
+
+- 第457轮 [同根损失的最优配额分配](rounds/r457/report.md)。
