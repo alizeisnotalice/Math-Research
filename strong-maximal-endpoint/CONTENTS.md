@@ -903,3 +903,5 @@
 - 第508轮 [自适应合并的体积代价](rounds/r508/report.md)。
 
 - 第509轮 [候选盒的分数包围费用](rounds/r509/report.md)。
+
+- 第510轮 [包围费用与源分配的指数差距](rounds/r510/report.md)。
