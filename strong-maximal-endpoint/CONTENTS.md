@@ -977,3 +977,5 @@
 - 第545轮 [反向双条带的双曲面积](rounds/r545/report.md)。
 
 - 第546轮 [双条带近一面积的首项系数](rounds/r546/report.md)。
+
+- 第547轮 [二进反序孔阵的平方根面积](rounds/r547/report.md)。
