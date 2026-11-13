@@ -883,3 +883,5 @@
 - 第498轮 [分离子族的提升费用](rounds/r498/report.md)。
 
 - 第499轮 [跨批补入的重数约束](rounds/r499/report.md)。
+
+- 第500轮 [跨批加权混合的逼近](rounds/r500/report.md)。
