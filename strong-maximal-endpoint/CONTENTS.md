@@ -973,3 +973,5 @@
 - 第543轮 [预定中央门槛的同源尾项](rounds/r543/report.md)。
 
 - 第544轮 [不等宽条带的半对数面积代价](rounds/r544/report.md)。
+
+- 第545轮 [反向双条带的双曲面积](rounds/r545/report.md)。
