@@ -725,3 +725,5 @@
 - 第419轮 [原维数见证密度校准](rounds/r419/report.md)。
 
 - 第420轮 [细门槛分带的对数费用](rounds/r420/report.md)。
+
+- 第421轮 [细带保留接收份额](rounds/r421/report.md)。
