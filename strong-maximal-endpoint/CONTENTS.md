@@ -871,3 +871,5 @@
 - 第492轮 [高核密度共同源](rounds/r492/report.md)。
 
 - 第493轮 [失败混合核心的方向分离](rounds/r493/report.md)。
+
+- 第494轮 [多层嵌套分离见证](rounds/r494/report.md)。
