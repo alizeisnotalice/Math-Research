@@ -627,3 +627,5 @@
 - 第370轮 [双向远邻与直接覆盖](rounds/r370/report.md)。
 
 - 第371轮 [同一点上的指数多个双向远见证](rounds/r371/report.md)。
+
+- 第372轮 [第二命中点的标签信息](rounds/r372/report.md)。
