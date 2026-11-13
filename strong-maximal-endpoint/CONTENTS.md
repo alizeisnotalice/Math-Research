@@ -739,3 +739,5 @@
 - 第426轮 [捕获集逐盒门槛传递](rounds/r426/report.md)。
 
 - 第427轮 [等值层同步可行判据](rounds/r427/report.md)。
+
+- 第428轮 [跨层改权的最优步长](rounds/r428/report.md)。
