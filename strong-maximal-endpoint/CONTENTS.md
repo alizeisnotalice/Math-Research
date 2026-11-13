@@ -657,3 +657,5 @@
 - 第385轮 [可变门槛的精确对偶下界](rounds/r385/report.md)。
 
 - 第386轮 [真实行密度与直接覆盖](rounds/r386/report.md)。
+
+- 第387轮 [公共核心的最小源质量](rounds/r387/report.md)。
