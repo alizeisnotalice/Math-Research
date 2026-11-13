@@ -957,3 +957,5 @@
 - 第535轮 [端点证书的源扰动稳定性](rounds/r535/report.md)。
 
 - 第536轮 [二维缺额的门槛带传播](rounds/r536/report.md)。
+
+- 第537轮 [交替细条带的中央步长](rounds/r537/report.md)。
