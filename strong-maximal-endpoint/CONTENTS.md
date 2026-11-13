@@ -743,3 +743,5 @@
 - 第428轮 [跨层改权的最优步长](rounds/r428/report.md)。
 
 - 第429轮 [按接收分区修补捕获源](rounds/r429/report.md)。
+
+- 第430轮 [共享修补与局部源重合](rounds/r430/report.md)。
