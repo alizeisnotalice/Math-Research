@@ -837,3 +837,5 @@
 - 第475轮 [曲率抵消与中央点余量](rounds/r475/report.md)。
 
 - 第476轮 [优化截断后的变号门槛](rounds/r476/report.md)。
+
+- 第477轮 [修正包络的高斯均值障碍](rounds/r477/report.md)。
