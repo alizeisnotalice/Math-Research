@@ -893,3 +893,5 @@
 - 第503轮 [共同矩形核的独占外片界](rounds/r503/report.md)。
 
 - 第504轮 [共同核统一提升的精确预算](rounds/r504/report.md)。
+
+- 第505轮 [局部矩形核的表示复杂度](rounds/r505/report.md)。
