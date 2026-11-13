@@ -597,3 +597,5 @@
 - 第355轮 [中央基线的收缩与命中协方差](rounds/r355/report.md)。
 
 - 第356轮 [成功侧比的总平方偏差](rounds/r356/report.md)。
+
+- 第357轮 [中央基线的全部成功原盒](rounds/r357/report.md)。
