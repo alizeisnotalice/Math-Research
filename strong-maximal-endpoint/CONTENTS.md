@@ -947,3 +947,5 @@
 - 第530轮 [逆序费用的最优排列](rounds/r530/report.md)。
 
 - 第531轮 [方向与同侧长度损失](rounds/r531/report.md)。
+
+- 第532轮 [单侧切片端点离散度](rounds/r532/report.md)。
