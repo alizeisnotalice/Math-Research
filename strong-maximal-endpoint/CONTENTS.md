@@ -695,3 +695,5 @@
 - 第404轮 [大碰撞目录的精确子集间隙](rounds/r404/report.md)。
 
 - 第405轮 [部分冲突边局部排除](rounds/r405/report.md)。
+
+- 第406轮 [禁止边的单端计费](rounds/r406/report.md)。
