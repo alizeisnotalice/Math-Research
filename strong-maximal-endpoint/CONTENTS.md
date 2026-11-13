@@ -1127,3 +1127,5 @@
 - 第620轮 [证书合并尺度与尾积分](rounds/r620/report.md)。
 
 - 第621轮 [按接收负责份额缩放证书](rounds/r621/report.md)。
+
+- 第622轮 [净证书的接收缺额对偶](rounds/r622/report.md)。
