@@ -1003,3 +1003,5 @@
 - 第558轮 [指标乘积的锐区间比较](rounds/r558/report.md)。
 
 - 第559轮 [真实斜带的居中反例](rounds/r559/report.md)。
+
+- 第560轮 [乘积截面居中的累积损失](rounds/r560/report.md)。
