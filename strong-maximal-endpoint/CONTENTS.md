@@ -693,3 +693,5 @@
 - 第403轮 [连通目录的不可消去碰撞](rounds/r403/report.md)。
 
 - 第404轮 [大碰撞目录的精确子集间隙](rounds/r404/report.md)。
+
+- 第405轮 [部分冲突边局部排除](rounds/r405/report.md)。
