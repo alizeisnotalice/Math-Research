@@ -1095,3 +1095,5 @@
 - 第604轮 [细分无关的饱和行归约](rounds/r604/report.md)。
 
 - 第605轮 [门槛斜率与对偶超载](rounds/r605/report.md)。
+
+- 第606轮 [单折点超载的真实矩形例子](rounds/r606/report.md)。
