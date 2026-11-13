@@ -643,3 +643,5 @@
 - 第378轮 [变动截面的投影密度预算](rounds/r378/report.md)。
 
 - 第379轮 [模网格中央接收体积](rounds/r379/report.md)。
+
+- 第380轮 [跨格命中份额与接收体积](rounds/r380/report.md)。
