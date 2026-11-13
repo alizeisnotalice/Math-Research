@@ -705,3 +705,5 @@
 - 第409轮 [共享源点的质量分摊](rounds/r409/report.md)。
 
 - 第410轮 [逐行交叠与删点证书](rounds/r410/report.md)。
+
+- 第411轮 [源外独立子族的精确证书](rounds/r411/report.md)。
