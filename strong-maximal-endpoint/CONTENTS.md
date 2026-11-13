@@ -881,3 +881,5 @@
 - 第497轮 [一阶命中下的后验分离](rounds/r497/report.md)。
 
 - 第498轮 [分离子族的提升费用](rounds/r498/report.md)。
+
+- 第499轮 [跨批补入的重数约束](rounds/r499/report.md)。
