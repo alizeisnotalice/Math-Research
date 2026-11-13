@@ -1039,3 +1039,5 @@
 - 第576轮 [非均匀选片的精确障碍](rounds/r576/report.md)。
 
 - 第577轮 [按源上相交分量局部化](rounds/r577/report.md)。
+
+- 第578轮 [切分共享源的最小门槛损失](rounds/r578/report.md)。
