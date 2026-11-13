@@ -853,3 +853,5 @@
 - 第483轮 [双行与第三行的源质量交换](rounds/r483/report.md)。
 
 - 第484轮 [共享公共区的多行交换](rounds/r484/report.md)。
+
+- 第485轮 [多重覆盖源的分数交换](rounds/r485/report.md)。
