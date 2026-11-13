@@ -899,3 +899,5 @@
 - 第506轮 [单盒精确指数与源块数](rounds/r506/report.md)。
 
 - 第507轮 [典型接收点的逐见证分散](rounds/r507/report.md)。
+
+- 第508轮 [自适应合并的体积代价](rounds/r508/report.md)。
