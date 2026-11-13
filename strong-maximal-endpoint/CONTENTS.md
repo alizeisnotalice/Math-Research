@@ -649,3 +649,5 @@
 - 第381轮 [粗矩形的分数覆盖](rounds/r381/report.md)。
 
 - 第382轮 [连续覆盖费用的有理夹逼](rounds/r382/report.md)。
+
+- 第383轮 [按见证边长离散覆盖](rounds/r383/report.md)。
