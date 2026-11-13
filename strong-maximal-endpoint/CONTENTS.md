@@ -917,3 +917,5 @@
 - 第515轮 [任意平移的宽度层费用](rounds/r515/report.md)。
 
 - 第516轮 [二维 Carleson 插入障碍](rounds/r516/report.md)。
+
+- 第517轮 [二维插入的接收筛选](rounds/r517/report.md)。
