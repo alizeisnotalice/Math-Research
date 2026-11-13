@@ -671,3 +671,5 @@
 - 第392轮 [门槛移动取整不等式](rounds/r392/report.md)。
 
 - 第393轮 [唯一最优权的弥散负载](rounds/r393/report.md)。
+
+- 第394轮 [保持边际的分组取整](rounds/r394/report.md)。
