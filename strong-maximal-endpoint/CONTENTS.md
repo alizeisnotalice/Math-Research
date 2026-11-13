@@ -661,3 +661,5 @@
 - 第387轮 [公共核心的最小源质量](rounds/r387/report.md)。
 
 - 第388轮 [树形单元的最小源质量](rounds/r388/report.md)。
+
+- 第389轮 [交叉单元的分数对偶间隙](rounds/r389/report.md)。
