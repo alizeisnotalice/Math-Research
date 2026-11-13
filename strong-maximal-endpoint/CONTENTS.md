@@ -1057,3 +1057,5 @@
 - 第585轮 [两位置方向盒的锐 VC 维界](rounds/r585/report.md)。
 
 - 第586轮 [任意端点位置的锐维数界](rounds/r586/report.md)。
+
+- 第587轮 [满伪维方向组的端点总位移](rounds/r587/report.md)。
