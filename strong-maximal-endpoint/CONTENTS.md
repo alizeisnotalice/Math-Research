@@ -839,3 +839,5 @@
 - 第476轮 [优化截断后的变号门槛](rounds/r476/report.md)。
 
 - 第477轮 [修正包络的高斯均值障碍](rounds/r477/report.md)。
+
+- 第478轮 [双截断的精确缺额](rounds/r478/report.md)。
