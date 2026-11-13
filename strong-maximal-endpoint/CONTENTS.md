@@ -851,3 +851,5 @@
 - 第482轮 [孤立双行的最优门槛代价](rounds/r482/report.md)。
 
 - 第483轮 [双行与第三行的源质量交换](rounds/r483/report.md)。
+
+- 第484轮 [共享公共区的多行交换](rounds/r484/report.md)。
