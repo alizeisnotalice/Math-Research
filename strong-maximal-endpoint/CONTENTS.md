@@ -939,3 +939,5 @@
 - 第526轮 [重选区间的双端截断费用](rounds/r526/report.md)。
 
 - 第527轮 [按切片差振幅分组](rounds/r527/report.md)。
+
+- 第528轮 [共同有序切片的抽样率](rounds/r528/report.md)。
