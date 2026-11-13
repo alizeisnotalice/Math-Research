@@ -601,3 +601,5 @@
 - 第357轮 [中央基线的全部成功原盒](rounds/r357/report.md)。
 
 - 第358轮 [相同真坐标边际的中央目录](rounds/r358/report.md)。
+
+- 第359轮 [共同见证标签的后验熵](rounds/r359/report.md)。
