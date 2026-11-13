@@ -873,3 +873,5 @@
 - 第493轮 [失败混合核心的方向分离](rounds/r493/report.md)。
 
 - 第494轮 [多层嵌套分离见证](rounds/r494/report.md)。
+
+- 第495轮 [行数停止条件与跨层交积](rounds/r495/report.md)。
