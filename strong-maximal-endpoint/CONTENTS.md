@@ -1107,3 +1107,5 @@
 - 第610轮 [加权坐标端点交叉下界](rounds/r610/report.md)。
 
 - 第611轮 [独占外片与最优交叉量](rounds/r611/report.md)。
+
+- 第612轮 [外片乘积的全门槛最优质量](rounds/r612/report.md)。
