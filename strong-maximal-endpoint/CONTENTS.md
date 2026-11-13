@@ -821,3 +821,5 @@
 - 第467轮 [按接收点切片降维](rounds/r467/report.md)。
 
 - 第468轮 [最小切片源体积](rounds/r468/report.md)。
+
+- 第469轮 [区间平均后的罚项增量](rounds/r469/report.md)。
