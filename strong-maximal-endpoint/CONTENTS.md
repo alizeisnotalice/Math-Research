@@ -843,3 +843,5 @@
 - 第478轮 [双截断的精确缺额](rounds/r478/report.md)。
 
 - 第479轮 [阶梯的中央积分缺额](rounds/r479/report.md)。
+
+- 第480轮 [近饱和的门槛质量分布](rounds/r480/report.md)。
