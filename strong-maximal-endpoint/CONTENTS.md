@@ -751,3 +751,5 @@
 - 第432轮 [双侧积分改善捕获体积](rounds/r432/report.md)。
 
 - 第433轮 [二层负载的泊松取整损失](rounds/r433/report.md)。
+
+- 第434轮 [真实星形盒的二层损失](rounds/r434/report.md)。
