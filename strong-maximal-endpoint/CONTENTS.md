@@ -731,3 +731,5 @@
 - 第422轮 [细带子概率的直接取整](rounds/r422/report.md)。
 
 - 第423轮 [细带碰撞的泊松积分](rounds/r423/report.md)。
+
+- 第424轮 [最优泊松强度的截断矩](rounds/r424/report.md)。
