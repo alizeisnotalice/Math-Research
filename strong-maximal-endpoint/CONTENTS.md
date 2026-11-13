@@ -629,3 +629,5 @@
 - 第371轮 [同一点上的指数多个双向远见证](rounds/r371/report.md)。
 
 - 第372轮 [第二命中点的标签信息](rounds/r372/report.md)。
+
+- 第373轮 [包围盒的接收预测集合](rounds/r373/report.md)。
