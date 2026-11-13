@@ -863,3 +863,5 @@
 - 第488轮 [双标签接收扰动](rounds/r488/report.md)。
 
 - 第489轮 [有限扰动的增长界](rounds/r489/report.md)。
+
+- 第490轮 [共同增量门槛的源预算](rounds/r490/report.md)。
