@@ -825,3 +825,5 @@
 - 第469轮 [区间平均后的罚项增量](rounds/r469/report.md)。
 
 - 第470轮 [双区间直积的切片费用](rounds/r470/report.md)。
+
+- 第471轮 [异门槛切片递推](rounds/r471/report.md)。
