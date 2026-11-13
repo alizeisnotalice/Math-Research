@@ -867,3 +867,5 @@
 - 第490轮 [共同增量门槛的源预算](rounds/r490/report.md)。
 
 - 第491轮 [按接收份额限制最坏混合](rounds/r491/report.md)。
+
+- 第492轮 [高核密度共同源](rounds/r492/report.md)。
