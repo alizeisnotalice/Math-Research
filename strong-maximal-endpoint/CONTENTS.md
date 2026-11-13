@@ -967,3 +967,5 @@
 - 第540轮 [基底窄带与远尾分解](rounds/r540/report.md)。
 
 - 第541轮 [中央基底的同源窄带集中](rounds/r541/report.md)。
+
+- 第542轮 [加权单步富集与门槛对齐](rounds/r542/report.md)。
