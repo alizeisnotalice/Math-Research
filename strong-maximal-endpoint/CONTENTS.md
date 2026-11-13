@@ -861,3 +861,5 @@
 - 第487轮 [中央双覆盖的共同权重预算](rounds/r487/report.md)。
 
 - 第488轮 [双标签接收扰动](rounds/r488/report.md)。
+
+- 第489轮 [有限扰动的增长界](rounds/r489/report.md)。
