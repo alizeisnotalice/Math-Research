@@ -1299,3 +1299,7 @@
 - 第706轮：[完整独立标量机制的绝对常数项](rounds/r706/report.md)，[本机核验摘要](rounds/r706/audit.json)。
 
 - 第707轮：[绝对1/log n展开与高维小尾更正](rounds/r707/report.md)，[完整证明](rounds/r707/proof.md)，[验证摘要](rounds/r707/audit.json)。
+
+- 第708轮：[有限物理输入证书与固定符号扰动的负曲率](rounds/r708/report.md)，[完整证明](rounds/r708/proof.md)，[验证摘要](rounds/r708/audit.json)。
+
+- 二阶精确常数与暂停：[一般C_n的√(n log n)系数及证明来源](rounds/r708/second_constant.md)，[常数区间证书](rounds/r708/constant_certificate.json)。
