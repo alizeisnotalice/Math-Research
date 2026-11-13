@@ -1011,3 +1011,5 @@
 - 第562轮 [分数坐标覆盖的投影费用](rounds/r562/report.md)。
 
 - 第563轮 [模加源的真实矩形定位](rounds/r563/report.md)。
+
+- 第564轮 [多轴长纤维的共同源集中](rounds/r564/report.md)。
