@@ -1,0 +1,12 @@
+{
+  "reviewer": "native gpt-6-astra subagent /root/astra_scalar_gap703",
+  "result": "matching scalar-model proof accepted after explicit soft-monotonicity, gradient-factor and nonsoft estimates",
+  "matlab_crosscheck": {
+    "command": "am703mu=fzero(@(m)m-1-exp(-m),[1 2]); am703D=(am703mu-1-log(am703mu))/2; am703G=@(x,v) exp(-x.^2/(2*v))/sqrt(2*pi*v); disp([am703mu am703D integral(@(x) am703G(x,1)-am703G(x,am703mu)-am703G(x,am703mu).*(log(am703mu)/2-(1-1/am703mu)*x.^2/2),-20,20)]);",
+    "reported_display": "1.2785    0.0164    0.0164",
+    "display_precision": "MATLAB default display only",
+    "owned_kernel_pid": 36783,
+    "owned_parent_pid": 36708,
+    "exit_check": "reviewer reports guarded exit, then ps found neither PID"
+  }
+}
