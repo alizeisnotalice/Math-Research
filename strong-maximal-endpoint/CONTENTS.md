@@ -901,3 +901,5 @@
 - 第507轮 [典型接收点的逐见证分散](rounds/r507/report.md)。
 
 - 第508轮 [自适应合并的体积代价](rounds/r508/report.md)。
+
+- 第509轮 [候选盒的分数包围费用](rounds/r509/report.md)。
