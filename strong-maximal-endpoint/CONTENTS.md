@@ -959,3 +959,5 @@
 - 第536轮 [二维缺额的门槛带传播](rounds/r536/report.md)。
 
 - 第537轮 [交替细条带的中央步长](rounds/r537/report.md)。
+
+- 第538轮 [近一复合差集的面积上界](rounds/r538/report.md)。
