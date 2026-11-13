@@ -879,3 +879,5 @@
 - 第496轮 [加权非分离对的费用](rounds/r496/report.md)。
 
 - 第497轮 [一阶命中下的后验分离](rounds/r497/report.md)。
+
+- 第498轮 [分离子族的提升费用](rounds/r498/report.md)。
