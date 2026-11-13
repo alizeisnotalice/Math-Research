@@ -1035,3 +1035,5 @@
 - 第574轮 [指数多个代表的联合命中](rounds/r574/report.md)。
 
 - 第575轮 [独立删片的中央门槛费用](rounds/r575/report.md)。
+
+- 第576轮 [非均匀选片的精确障碍](rounds/r576/report.md)。
