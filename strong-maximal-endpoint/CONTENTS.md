@@ -603,3 +603,5 @@
 - 第358轮 [相同真坐标边际的中央目录](rounds/r358/report.md)。
 
 - 第359轮 [共同见证标签的后验熵](rounds/r359/report.md)。
+
+- 第360轮 [不可删见证的后验熵](rounds/r360/report.md)。
