@@ -889,3 +889,5 @@
 - 第501轮 [已填与未填命中的尺度分离](rounds/r501/report.md)。
 
 - 第502轮 [未填容量分散的矩形例](rounds/r502/report.md)。
+
+- 第503轮 [共同矩形核的独占外片界](rounds/r503/report.md)。
