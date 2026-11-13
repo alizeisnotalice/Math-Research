@@ -757,3 +757,5 @@
 - 第435轮 [精确费用修正的临界强度](rounds/r435/report.md)。
 
 - 第436轮 [精确期望的非单峰例](rounds/r436/report.md)。
+
+- 第437轮 [分组强度优化与上界证书](rounds/r437/report.md)。
