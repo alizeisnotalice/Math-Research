@@ -1295,3 +1295,5 @@
 - 第704轮 [临界矩形比例优化后的统一细阶系数](rounds/r704/report.md)。
 
 - 第705轮 [全部独立确定比例标量机制的匹配细阶差](rounds/r705/report.md)。
+
+- 第706轮：[完整独立标量机制的绝对常数项](rounds/r706/report.md)，[本机核验摘要](rounds/r706/audit.json)。
