@@ -735,3 +735,5 @@
 - 第424轮 [最优泊松强度的截断矩](rounds/r424/report.md)。
 
 - 第425轮 [射线对偶与最小捕获体积](rounds/r425/report.md)。
+
+- 第426轮 [捕获集逐盒门槛传递](rounds/r426/report.md)。
