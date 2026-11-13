@@ -759,3 +759,5 @@
 - 第436轮 [精确期望的非单峰例](rounds/r436/report.md)。
 
 - 第437轮 [分组强度优化与上界证书](rounds/r437/report.md)。
+
+- 第438轮 [严格坐标最优点的遮蔽损失](rounds/r438/report.md)。
