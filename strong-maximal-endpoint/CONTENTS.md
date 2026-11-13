@@ -631,3 +631,5 @@
 - 第372轮 [第二命中点的标签信息](rounds/r372/report.md)。
 
 - 第373轮 [包围盒的接收预测集合](rounds/r373/report.md)。
+
+- 第374轮 [独立源参照与复制抵消](rounds/r374/report.md)。
