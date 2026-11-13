@@ -1033,3 +1033,5 @@
 - 第573轮 [按新增源质量筛选代表](rounds/r573/report.md)。
 
 - 第574轮 [指数多个代表的联合命中](rounds/r574/report.md)。
+
+- 第575轮 [独立删片的中央门槛费用](rounds/r575/report.md)。
