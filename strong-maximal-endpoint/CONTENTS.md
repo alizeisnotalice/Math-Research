@@ -769,3 +769,5 @@
 - 第441轮 [近似铺砌的证书费用](rounds/r441/report.md)。
 
 - 第442轮 [层级拼合费用的抵消](rounds/r442/report.md)。
+
+- 第443轮 [父盒权的源内重数预算](rounds/r443/report.md)。
