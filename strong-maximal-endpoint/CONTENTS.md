@@ -755,3 +755,5 @@
 - 第434轮 [真实星形盒的二层损失](rounds/r434/report.md)。
 
 - 第435轮 [精确费用修正的临界强度](rounds/r435/report.md)。
+
+- 第436轮 [精确期望的非单峰例](rounds/r436/report.md)。
