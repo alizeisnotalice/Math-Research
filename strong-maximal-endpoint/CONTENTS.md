@@ -1279,3 +1279,5 @@
 - 第696轮 [非线性收益的相对熵候选系数](rounds/r696/report.md)。
 
 - 第697轮 [软段预算的截断Gamma表示与方差极限](rounds/r697/report.md)。
+
+- 第698轮 [条件源对预算分布的精确熵极限](rounds/r698/report.md)。
