@@ -1093,3 +1093,5 @@
 - 第603轮 [同门槛有限下降与平坦负载](rounds/r603/report.md)。
 
 - 第604轮 [细分无关的饱和行归约](rounds/r604/report.md)。
+
+- 第605轮 [门槛斜率与对偶超载](rounds/r605/report.md)。
