@@ -865,3 +865,5 @@
 - 第489轮 [有限扰动的增长界](rounds/r489/report.md)。
 
 - 第490轮 [共同增量门槛的源预算](rounds/r490/report.md)。
+
+- 第491轮 [按接收份额限制最坏混合](rounds/r491/report.md)。
