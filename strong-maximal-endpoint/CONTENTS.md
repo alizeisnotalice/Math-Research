@@ -611,3 +611,5 @@
 - 第362轮 [大量命中盒的接收并集](rounds/r362/report.md)。
 
 - 第363轮 [按源点结算见证边长](rounds/r363/report.md)。
+
+- 第364轮 [后验见证的尺度分离](rounds/r364/report.md)。
