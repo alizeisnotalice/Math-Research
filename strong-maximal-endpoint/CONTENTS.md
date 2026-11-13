@@ -669,3 +669,5 @@
 - 第391轮 [非对称薄片的二阶证书](rounds/r391/report.md)。
 
 - 第392轮 [门槛移动取整不等式](rounds/r392/report.md)。
+
+- 第393轮 [唯一最优权的弥散负载](rounds/r393/report.md)。
