@@ -1281,3 +1281,5 @@
 - 第697轮 [软段预算的截断Gamma表示与方差极限](rounds/r697/report.md)。
 
 - 第698轮 [条件源对预算分布的精确熵极限](rounds/r698/report.md)。
+
+- 第699轮 [保预算紧支撑扰动的精确一阶系数](rounds/r699/report.md)。
