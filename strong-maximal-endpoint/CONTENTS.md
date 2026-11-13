@@ -613,3 +613,5 @@
 - 第363轮 [按源点结算见证边长](rounds/r363/report.md)。
 
 - 第364轮 [后验见证的尺度分离](rounds/r364/report.md)。
+
+- 第365轮 [消去整体缩放后的形状覆盖](rounds/r365/report.md)。
