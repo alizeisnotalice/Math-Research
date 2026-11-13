@@ -823,3 +823,5 @@
 - 第468轮 [最小切片源体积](rounds/r468/report.md)。
 
 - 第469轮 [区间平均后的罚项增量](rounds/r469/report.md)。
+
+- 第470轮 [双区间直积的切片费用](rounds/r470/report.md)。
