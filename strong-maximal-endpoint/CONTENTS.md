@@ -635,3 +635,5 @@
 - 第374轮 [独立源参照与复制抵消](rounds/r374/report.md)。
 
 - 第375轮 [首点后验的局部预测费用](rounds/r375/report.md)。
+
+- 第376轮 [预测信息的平方根损失](rounds/r376/report.md)。
