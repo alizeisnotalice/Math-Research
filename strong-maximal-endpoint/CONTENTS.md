@@ -689,3 +689,5 @@
 - 第401轮 [中央规模的大斜率反例](rounds/r401/report.md)。
 
 - 第402轮 [无自交的逐块取整估计](rounds/r402/report.md)。
+
+- 第403轮 [连通目录的不可消去碰撞](rounds/r403/report.md)。
