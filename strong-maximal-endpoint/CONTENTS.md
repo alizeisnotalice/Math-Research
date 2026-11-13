@@ -919,3 +919,5 @@
 - 第516轮 [二维 Carleson 插入障碍](rounds/r516/report.md)。
 
 - 第517轮 [二维插入的接收筛选](rounds/r517/report.md)。
+
+- 第518轮 [平移矩形的真实源筛选](rounds/r518/report.md)。
