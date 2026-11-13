@@ -667,3 +667,5 @@
 - 第390轮 [坐标半盒的最优分数证书](rounds/r390/report.md)。
 
 - 第391轮 [非对称薄片的二阶证书](rounds/r391/report.md)。
+
+- 第392轮 [门槛移动取整不等式](rounds/r392/report.md)。
