@@ -763,3 +763,5 @@
 - 第438轮 [严格坐标最优点的遮蔽损失](rounds/r438/report.md)。
 
 - 第439轮 [局部取整的线性间隙](rounds/r439/report.md)。
+
+- 第440轮 [任意交换宽度的局部间隙](rounds/r440/report.md)。
