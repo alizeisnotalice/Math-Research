@@ -909,3 +909,5 @@
 - 第511轮 [真实命中上的包围对偶缩放](rounds/r511/report.md)。
 
 - 第512轮 [包围费用的张量律](rounds/r512/report.md)。
+
+- 第513轮 [最优对偶面的张量损失](rounds/r513/report.md)。
