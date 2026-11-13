@@ -591,3 +591,5 @@
 - 第352轮 [一般有限目录的角盒换元与必要重数](rounds/r352/report.md)。
 
 - 第353轮 [原盒收缩带截断](rounds/r353/report.md)。
+
+- 第354轮 [整盒接收平均的命中偏差](rounds/r354/report.md)。
