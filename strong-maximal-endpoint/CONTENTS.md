@@ -1055,3 +1055,5 @@
 - 第584轮 [方向盒低阶投影的指数失真](rounds/r584/report.md)。
 
 - 第585轮 [两位置方向盒的锐 VC 维界](rounds/r585/report.md)。
+
+- 第586轮 [任意端点位置的锐维数界](rounds/r586/report.md)。
