@@ -711,3 +711,5 @@
 - 第412轮 [弱冲突染色费用](rounds/r412/report.md)。
 
 - 第413轮 [两色证书的精确超图割](rounds/r413/report.md)。
+
+- 第414轮 [限重选盒的接收损失](rounds/r414/report.md)。
