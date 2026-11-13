@@ -841,3 +841,5 @@
 - 第477轮 [修正包络的高斯均值障碍](rounds/r477/report.md)。
 
 - 第478轮 [双截断的精确缺额](rounds/r478/report.md)。
+
+- 第479轮 [阶梯的中央积分缺额](rounds/r479/report.md)。
