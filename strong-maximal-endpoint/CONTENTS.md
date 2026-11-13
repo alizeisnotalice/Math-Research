@@ -1097,3 +1097,5 @@
 - 第605轮 [门槛斜率与对偶超载](rounds/r605/report.md)。
 
 - 第606轮 [单折点超载的真实矩形例子](rounds/r606/report.md)。
+
+- 第607轮 [门槛窗内的外片补入质量](rounds/r607/report.md)。
