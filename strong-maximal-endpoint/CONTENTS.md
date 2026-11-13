@@ -1183,3 +1183,5 @@
 - 第648轮 [分割树的重叠比与剪枝](rounds/r648/report.md)。
 
 - 第649轮 [部分坐标公共交盒的降维界](rounds/r649/report.md)。
+
+- 第650轮 [公共投影核的精确费用](rounds/r650/report.md)。
