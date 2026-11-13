@@ -787,3 +787,5 @@
 - 第450轮 [多候选父盒的分数覆盖](rounds/r450/report.md)。
 
 - 第451轮 [归并体积的严格改进](rounds/r451/report.md)。
+
+- 第452轮 [体积排序与归并指数](rounds/r452/report.md)。
