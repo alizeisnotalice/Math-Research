@@ -633,3 +633,5 @@
 - 第373轮 [包围盒的接收预测集合](rounds/r373/report.md)。
 
 - 第374轮 [独立源参照与复制抵消](rounds/r374/report.md)。
+
+- 第375轮 [首点后验的局部预测费用](rounds/r375/report.md)。
