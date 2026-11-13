@@ -709,3 +709,5 @@
 - 第411轮 [源外独立子族的精确证书](rounds/r411/report.md)。
 
 - 第412轮 [弱冲突染色费用](rounds/r412/report.md)。
+
+- 第413轮 [两色证书的精确超图割](rounds/r413/report.md)。
