@@ -729,3 +729,5 @@
 - 第421轮 [细带保留接收份额](rounds/r421/report.md)。
 
 - 第422轮 [细带子概率的直接取整](rounds/r422/report.md)。
+
+- 第423轮 [细带碰撞的泊松积分](rounds/r423/report.md)。
