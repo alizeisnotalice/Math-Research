@@ -945,3 +945,5 @@
 - 第529轮 [局部逆序面积与切片抽样](rounds/r529/report.md)。
 
 - 第530轮 [逆序费用的最优排列](rounds/r530/report.md)。
+
+- 第531轮 [方向与同侧长度损失](rounds/r531/report.md)。
