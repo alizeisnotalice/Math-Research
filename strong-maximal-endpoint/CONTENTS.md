@@ -719,3 +719,5 @@
 - 第416轮 [稀疏多色抽样的实际费用](rounds/r416/report.md)。
 
 - 第417轮 [一维提升消去严格余量](rounds/r417/report.md)。
+
+- 第418轮 [多面外伸的重复体积](rounds/r418/report.md)。
