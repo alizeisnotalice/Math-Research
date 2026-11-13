@@ -953,3 +953,5 @@
 - 第533轮 [多段前缀的端点覆盖判据](rounds/r533/report.md)。
 
 - 第534轮 [二维共同端点证书](rounds/r534/report.md)。
+
+- 第535轮 [端点证书的源扰动稳定性](rounds/r535/report.md)。
