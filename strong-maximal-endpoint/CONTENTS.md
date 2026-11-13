@@ -1009,3 +1009,5 @@
 - 第561轮 [任意二维块的匹配上界](rounds/r561/report.md)。
 
 - 第562轮 [分数坐标覆盖的投影费用](rounds/r562/report.md)。
+
+- 第563轮 [模加源的真实矩形定位](rounds/r563/report.md)。
