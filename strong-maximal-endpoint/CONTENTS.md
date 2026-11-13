@@ -621,3 +621,5 @@
 - 第367轮 [源交叠稠密子族](rounds/r367/report.md)。
 
 - 第368轮 [稠密子族的接收份额](rounds/r368/report.md)。
+
+- 第369轮 [直接见证上的远尺度加权删选](rounds/r369/report.md)。
