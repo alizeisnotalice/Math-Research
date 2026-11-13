@@ -897,3 +897,5 @@
 - 第505轮 [局部矩形核的表示复杂度](rounds/r505/report.md)。
 
 - 第506轮 [单盒精确指数与源块数](rounds/r506/report.md)。
+
+- 第507轮 [典型接收点的逐见证分散](rounds/r507/report.md)。
