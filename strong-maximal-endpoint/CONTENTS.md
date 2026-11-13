@@ -943,3 +943,5 @@
 - 第528轮 [共同有序切片的抽样率](rounds/r528/report.md)。
 
 - 第529轮 [局部逆序面积与切片抽样](rounds/r529/report.md)。
+
+- 第530轮 [逆序费用的最优排列](rounds/r530/report.md)。
