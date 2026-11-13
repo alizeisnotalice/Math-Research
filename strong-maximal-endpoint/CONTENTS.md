@@ -929,3 +929,5 @@
 - 第521轮 [双切片不相容的耦合下界](rounds/r521/report.md)。
 
 - 第522轮 [固定阶切片检验的障碍](rounds/r522/report.md)。
+
+- 第523轮 [切片检验的一致误差障碍](rounds/r523/report.md)。
