@@ -761,3 +761,5 @@
 - 第437轮 [分组强度优化与上界证书](rounds/r437/report.md)。
 
 - 第438轮 [严格坐标最优点的遮蔽损失](rounds/r438/report.md)。
+
+- 第439轮 [局部取整的线性间隙](rounds/r439/report.md)。
