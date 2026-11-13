@@ -857,3 +857,5 @@
 - 第485轮 [多重覆盖源的分数交换](rounds/r485/report.md)。
 
 - 第486轮 [双目标联合交换](rounds/r486/report.md)。
+
+- 第487轮 [中央双覆盖的共同权重预算](rounds/r487/report.md)。
