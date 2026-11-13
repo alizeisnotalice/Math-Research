@@ -687,3 +687,5 @@
 - 第400轮 [门槛斜率与同门槛证书](rounds/r400/report.md)。
 
 - 第401轮 [中央规模的大斜率反例](rounds/r401/report.md)。
+
+- 第402轮 [无自交的逐块取整估计](rounds/r402/report.md)。
