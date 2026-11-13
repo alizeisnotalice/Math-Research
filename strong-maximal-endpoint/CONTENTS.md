@@ -935,3 +935,5 @@
 - 第524轮 [切片阶数的双对数尺度律](rounds/r524/report.md)。
 
 - 第525轮 [全局见证尺度窗口的障碍](rounds/r525/report.md)。
+
+- 第526轮 [重选区间的双端截断费用](rounds/r526/report.md)。
