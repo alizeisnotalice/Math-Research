@@ -737,3 +737,5 @@
 - 第425轮 [射线对偶与最小捕获体积](rounds/r425/report.md)。
 
 - 第426轮 [捕获集逐盒门槛传递](rounds/r426/report.md)。
+
+- 第427轮 [等值层同步可行判据](rounds/r427/report.md)。
