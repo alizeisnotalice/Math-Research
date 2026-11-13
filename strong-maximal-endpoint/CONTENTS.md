@@ -1193,3 +1193,5 @@
 - 第653轮 [实际命中投影的逐点费用](rounds/r653/report.md)。
 
 - 第654轮 [交盒倍率的稀疏尾证书](rounds/r654/report.md)。
+
+- 第655轮 [投影包含链的匹配费用](rounds/r655/report.md)。
