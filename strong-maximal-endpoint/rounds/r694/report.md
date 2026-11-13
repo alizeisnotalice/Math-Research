@@ -5,19 +5,17 @@
 ## 解析包络
 
 设n≥2，c=μ，p=1/(1+exp(c))，S=Gamma(n,1)+c Bin(n,p)。记f为完整密度，λ=exp(−t₀)/f(t₀)。对t>0，
-$$ e^t f(t)le [2(1-p)]^n t^{n-1}/Gamma(n). $$
+$$ e^t f(t)\le [2(1-p)]^n t^{n-1}/\Gamma(n). $$
 这是把混合密度中的每个(t−c j)_+替换为t，剩余权重之和等于E exp(c Bin(n,p))=[2(1-p)]^n。软段令h=exp(y)，则
-$$ Phi_n'(h)=(n+y)(1+y)^{n-2}ge y^{n-1}. $$
+$$ \Phi_n'(h)=(n+y)(1+y)^{n-2}\ge y^{n-1}. $$
 因此整条轮廓（含零段、平台）受h(t)≤exp(Dt)支配，其中
-$$ D=left[lambda[2(1-p)]^n/Gamma(n)
-ight]^{1/(n-1)}. $$
+$$ D=[\lambda[2(1-p)]^n/\Gamma(n)]^{1/(n-1)}. $$
 为计算上界，只需任取一个正的混合密度单项ℓ≤f(t₀)，以ℓ替代f(t₀)得到更大D。
 
 若0<D<θ<1，且T≥t₁，则遗漏的平均贡献满足
-$$ int_T^infty(h-1)fle E[e^{DS}1_{S>T}]
- le exp{Lambda(θ)-(θ-D)T}, $$
+$$ \int_T^\infty(h-1)f\le \mathbb E[e^{DS}1_{S>T}]\le \exp\{\Lambda(\theta)-(\theta-D)T\}. $$
 其中
-$$ Lambda(θ)=-nlog(1-θ)+nlog(1-p+p e^{cθ}). $$
+$$ \Lambda(\theta)=-n\log(1-\theta)+n\log(1-p+p e^{c\theta}). $$
 第693轮归一化预算的尾项至多上述上界除以ℓ，因为h(1+y)/(n+y)≤h。这些不等式也证明所计算轮廓的尾部平均和预算可积。条件D<1由下述区间核验给出。
 
 ## 区间计算
