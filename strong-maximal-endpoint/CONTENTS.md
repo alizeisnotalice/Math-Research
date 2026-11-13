@@ -1123,3 +1123,5 @@
 - 第618轮 [接收权的嵌套密度层](rounds/r618/report.md)。
 
 - 第619轮 [合并源质量证书的截断重叠](rounds/r619/report.md)。
+
+- 第620轮 [证书合并尺度与尾积分](rounds/r620/report.md)。
