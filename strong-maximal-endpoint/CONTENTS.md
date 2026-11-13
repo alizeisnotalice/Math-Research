@@ -1013,3 +1013,5 @@
 - 第563轮 [模加源的真实矩形定位](rounds/r563/report.md)。
 
 - 第564轮 [多轴长纤维的共同源集中](rounds/r564/report.md)。
+
+- 第565轮 [少长边见证的随机选轴](rounds/r565/report.md)。
