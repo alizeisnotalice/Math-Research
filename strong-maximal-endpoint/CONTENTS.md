@@ -749,3 +749,5 @@
 - 第431轮 [细带共同源门槛位移](rounds/r431/report.md)。
 
 - 第432轮 [双侧积分改善捕获体积](rounds/r432/report.md)。
+
+- 第433轮 [二层负载的泊松取整损失](rounds/r433/report.md)。
