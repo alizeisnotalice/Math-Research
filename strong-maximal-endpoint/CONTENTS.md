@@ -1187,3 +1187,5 @@
 - 第650轮 [公共投影核的精确费用](rounds/r650/report.md)。
 
 - 第651轮 [源点条件下的公共投影核](rounds/r651/report.md)。
+
+- 第652轮 [由投影几何控制源端负矩](rounds/r652/report.md)。
