@@ -911,3 +911,5 @@
 - 第512轮 [包围费用的张量律](rounds/r512/report.md)。
 
 - 第513轮 [最优对偶面的张量损失](rounds/r513/report.md)。
+
+- 第514轮 [平面共同角点多尺度障碍](rounds/r514/report.md)。
