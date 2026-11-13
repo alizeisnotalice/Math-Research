@@ -703,3 +703,5 @@
 - 第408轮 [多层势与单族测试间隙](rounds/r408/report.md)。
 
 - 第409轮 [共享源点的质量分摊](rounds/r409/report.md)。
+
+- 第410轮 [逐行交叠与删点证书](rounds/r410/report.md)。
