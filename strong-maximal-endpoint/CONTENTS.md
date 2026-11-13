@@ -831,3 +831,5 @@
 - 第472轮 [异门槛水平集与接收恢复](rounds/r472/report.md)。
 
 - 第473轮 [多水平积分递推](rounds/r473/report.md)。
+
+- 第474轮 [区间交叠的双截断](rounds/r474/report.md)。
