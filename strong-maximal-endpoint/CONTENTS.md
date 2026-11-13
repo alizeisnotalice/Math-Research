@@ -927,3 +927,5 @@
 - 第520轮 [内区间选择损失](rounds/r520/report.md)。
 
 - 第521轮 [双切片不相容的耦合下界](rounds/r521/report.md)。
+
+- 第522轮 [固定阶切片检验的障碍](rounds/r522/report.md)。
