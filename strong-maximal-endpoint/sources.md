@@ -234,3 +234,8 @@ András Prékopa, *On logarithmic concave measures and functions*, Acta Scientia
 ## 第93轮补充：真实指标halo与维数依赖
 
 核对Solyanik原始论文、Hagelstein–Parissis正式期刊/章节和作者稿，明确固定维数近一幂率不能省去维数常数。显式迭代算子界在本门槛仍为粗上界。完整原文页码、查询、版本差异与元数据更正在 [本轮证据](rounds/r093/literature/evidence.md)，BibTeX在 [本轮条目](rounds/r093/literature/references.bib)。既有HagelsteinParissis2013引用键保留并关联核实的2014正式章节，不把同一研究算成两篇。
+
+
+## 第707轮补充（2026-11-14）
+
+- NIST Digital Library of Mathematical Functions, [§5.11(i)–(ii), Stirling展开与正实参数余项界](https://dlmf.nist.gov/5.11#ii)。已核对正实参数下余项同首遗漏项符号、且绝对值不超过首遗漏项。用于第707轮12个Gamma概率的区间证书；该条目不支持本项目新渐近定理的优先权主张。

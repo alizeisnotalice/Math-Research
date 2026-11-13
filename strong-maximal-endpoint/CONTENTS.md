@@ -1297,3 +1297,5 @@
 - 第705轮 [全部独立确定比例标量机制的匹配细阶差](rounds/r705/report.md)。
 
 - 第706轮：[完整独立标量机制的绝对常数项](rounds/r706/report.md)，[本机核验摘要](rounds/r706/audit.json)。
+
+- 第707轮：[绝对1/log n展开与高维小尾更正](rounds/r707/report.md)，[完整证明](rounds/r707/proof.md)，[验证摘要](rounds/r707/audit.json)。
