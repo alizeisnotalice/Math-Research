@@ -701,3 +701,5 @@
 - 第407轮 [碰撞预算的截断对偶](rounds/r407/report.md)。
 
 - 第408轮 [多层势与单族测试间隙](rounds/r408/report.md)。
+
+- 第409轮 [共享源点的质量分摊](rounds/r409/report.md)。
