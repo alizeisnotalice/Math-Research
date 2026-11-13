@@ -1037,3 +1037,5 @@
 - 第575轮 [独立删片的中央门槛费用](rounds/r575/report.md)。
 
 - 第576轮 [非均匀选片的精确障碍](rounds/r576/report.md)。
+
+- 第577轮 [按源上相交分量局部化](rounds/r577/report.md)。
