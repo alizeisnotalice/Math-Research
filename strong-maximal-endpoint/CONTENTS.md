@@ -1191,3 +1191,5 @@
 - 第652轮 [由投影几何控制源端负矩](rounds/r652/report.md)。
 
 - 第653轮 [实际命中投影的逐点费用](rounds/r653/report.md)。
+
+- 第654轮 [交盒倍率的稀疏尾证书](rounds/r654/report.md)。
