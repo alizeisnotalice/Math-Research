@@ -605,3 +605,5 @@
 - 第359轮 [共同见证标签的后验熵](rounds/r359/report.md)。
 
 - 第360轮 [不可删见证的后验熵](rounds/r360/report.md)。
+
+- 第361轮 [公共源质量的指数界](rounds/r361/report.md)。
