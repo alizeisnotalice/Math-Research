@@ -747,3 +747,5 @@
 - 第430轮 [共享修补与局部源重合](rounds/r430/report.md)。
 
 - 第431轮 [细带共同源门槛位移](rounds/r431/report.md)。
+
+- 第432轮 [双侧积分改善捕获体积](rounds/r432/report.md)。
