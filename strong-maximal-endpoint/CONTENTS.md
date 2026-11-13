@@ -951,3 +951,5 @@
 - 第532轮 [单侧切片端点离散度](rounds/r532/report.md)。
 
 - 第533轮 [多段前缀的端点覆盖判据](rounds/r533/report.md)。
+
+- 第534轮 [二维共同端点证书](rounds/r534/report.md)。
