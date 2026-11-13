@@ -847,3 +847,5 @@
 - 第480轮 [近饱和的门槛质量分布](rounds/r480/report.md)。
 
 - 第481轮 [两行同时命中的必要条件](rounds/r481/report.md)。
+
+- 第482轮 [孤立双行的最优门槛代价](rounds/r482/report.md)。
