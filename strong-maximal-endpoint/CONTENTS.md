@@ -849,3 +849,5 @@
 - 第481轮 [两行同时命中的必要条件](rounds/r481/report.md)。
 
 - 第482轮 [孤立双行的最优门槛代价](rounds/r482/report.md)。
+
+- 第483轮 [双行与第三行的源质量交换](rounds/r483/report.md)。
