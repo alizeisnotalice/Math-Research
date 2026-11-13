@@ -907,3 +907,5 @@
 - 第510轮 [包围费用与源分配的指数差距](rounds/r510/report.md)。
 
 - 第511轮 [真实命中上的包围对偶缩放](rounds/r511/report.md)。
+
+- 第512轮 [包围费用的张量律](rounds/r512/report.md)。
