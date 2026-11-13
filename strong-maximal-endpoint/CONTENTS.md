@@ -923,3 +923,5 @@
 - 第518轮 [平移矩形的真实源筛选](rounds/r518/report.md)。
 
 - 第519轮 [二维切片的可变门槛积分界](rounds/r519/report.md)。
+
+- 第520轮 [内区间选择损失](rounds/r520/report.md)。
