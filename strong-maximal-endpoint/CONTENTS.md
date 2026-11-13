@@ -891,3 +891,5 @@
 - 第502轮 [未填容量分散的矩形例](rounds/r502/report.md)。
 
 - 第503轮 [共同矩形核的独占外片界](rounds/r503/report.md)。
+
+- 第504轮 [共同核统一提升的精确预算](rounds/r504/report.md)。
