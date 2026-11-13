@@ -1015,3 +1015,5 @@
 - 第564轮 [多轴长纤维的共同源集中](rounds/r564/report.md)。
 
 - 第565轮 [少长边见证的随机选轴](rounds/r565/report.md)。
+
+- 第566轮 [短轴共同截面密度的费用](rounds/r566/report.md)。
