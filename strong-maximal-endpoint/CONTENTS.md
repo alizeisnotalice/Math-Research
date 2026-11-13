@@ -875,3 +875,5 @@
 - 第494轮 [多层嵌套分离见证](rounds/r494/report.md)。
 
 - 第495轮 [行数停止条件与跨层交积](rounds/r495/report.md)。
+
+- 第496轮 [加权非分离对的费用](rounds/r496/report.md)。
