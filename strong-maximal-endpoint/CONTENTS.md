@@ -615,3 +615,5 @@
 - 第364轮 [后验见证的尺度分离](rounds/r364/report.md)。
 
 - 第365轮 [消去整体缩放后的形状覆盖](rounds/r365/report.md)。
+
+- 第366轮 [局部双向分离反链](rounds/r366/report.md)。
