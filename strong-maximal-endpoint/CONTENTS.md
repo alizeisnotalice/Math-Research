@@ -845,3 +845,5 @@
 - 第479轮 [阶梯的中央积分缺额](rounds/r479/report.md)。
 
 - 第480轮 [近饱和的门槛质量分布](rounds/r480/report.md)。
+
+- 第481轮 [两行同时命中的必要条件](rounds/r481/report.md)。
