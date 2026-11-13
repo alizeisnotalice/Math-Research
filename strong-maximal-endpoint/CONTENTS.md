@@ -707,3 +707,5 @@
 - 第410轮 [逐行交叠与删点证书](rounds/r410/report.md)。
 
 - 第411轮 [源外独立子族的精确证书](rounds/r411/report.md)。
+
+- 第412轮 [弱冲突染色费用](rounds/r412/report.md)。
