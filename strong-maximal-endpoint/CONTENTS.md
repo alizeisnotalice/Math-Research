@@ -969,3 +969,5 @@
 - 第541轮 [中央基底的同源窄带集中](rounds/r541/report.md)。
 
 - 第542轮 [加权单步富集与门槛对齐](rounds/r542/report.md)。
+
+- 第543轮 [预定中央门槛的同源尾项](rounds/r543/report.md)。
