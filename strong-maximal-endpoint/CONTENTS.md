@@ -609,3 +609,5 @@
 - 第361轮 [公共源质量的指数界](rounds/r361/report.md)。
 
 - 第362轮 [大量命中盒的接收并集](rounds/r362/report.md)。
+
+- 第363轮 [按源点结算见证边长](rounds/r363/report.md)。
