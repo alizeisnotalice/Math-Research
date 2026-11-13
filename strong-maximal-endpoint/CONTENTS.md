@@ -963,3 +963,5 @@
 - 第538轮 [近一复合差集的面积上界](rounds/r538/report.md)。
 
 - 第539轮 [固定真门槛差集的锐二次面积阶](rounds/r539/report.md)。
+
+- 第540轮 [基底窄带与远尾分解](rounds/r540/report.md)。
