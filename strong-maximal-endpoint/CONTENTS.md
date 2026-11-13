@@ -803,3 +803,5 @@
 - 第458轮 [低候选重数的单根提取](rounds/r458/report.md)。
 
 - 第459轮 [单根双门槛的低维嵌入](rounds/r459/report.md)。
+
+- 第460轮 [多根共同命中的加权矩](rounds/r460/report.md)。
