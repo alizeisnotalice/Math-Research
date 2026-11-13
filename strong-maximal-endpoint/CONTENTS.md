@@ -639,3 +639,5 @@
 - 第376轮 [预测信息的平方根损失](rounds/r376/report.md)。
 
 - 第377轮 [指标乘积的中央传递](rounds/r377/report.md)。
+
+- 第378轮 [变动截面的投影密度预算](rounds/r378/report.md)。
