@@ -1031,3 +1031,5 @@
 - 第572轮 [代表矩形的相交密度分组](rounds/r572/report.md)。
 
 - 第573轮 [按新增源质量筛选代表](rounds/r573/report.md)。
+
+- 第574轮 [指数多个代表的联合命中](rounds/r574/report.md)。
