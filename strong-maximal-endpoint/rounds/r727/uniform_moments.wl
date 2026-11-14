@@ -1,0 +1,10 @@
+q=1/(1+Exp[c]);
+raw[k_]:=Sum[Binomial[k,j] Factorial[k-j] c^j Piecewise[{{1,j==0}},q],{j,0,k}];
+mm=1+c q;
+v=FullSimplify[raw[2]-mm^2];
+four=FullSimplify[raw[4]-4mm raw[3]+6mm^2 raw[2]-3mm^4];
+Print["variance_identity_residual=",FullSimplify[v-(1+c^2 q(1-q))]];
+Print["fourth_identity_residual=",FullSimplify[four-(9+6c^2 q(1-q)+c^4 q(1-q)(1-3q(1-q)))]];
+Print["explicit_fourth_bound=",N[9+6(2/E)^2+(4/E)^4,40]];
+Print["growth_exponent_identity=",FullSimplify[((n Log[n])^(2/3) a)^ (3/2)/n,Assumptions->n>1&&a>0]];
+Quit[];

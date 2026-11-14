@@ -1337,3 +1337,5 @@
 - 第724轮：[零能量相对曲率](rounds/r724/report.md)，[复球与微能量公式证明](rounds/r724/small_energy.md)，[双软件验证](rounds/r724/audit.json)。
 
 - 第725轮：[精确非线性几何相位不等式](rounds/r725/report.md)，[实际截断与相位证明](rounds/r725/geometric_phase.md)，[审查与来源](rounds/r725/audit.json)。
+
+- 第727轮：[增长支撑非线性障碍](rounds/r727/report.md)，[真实指标中位数证明](rounds/r727/fixed_support_nonlinear.md)，[审查与核验](rounds/r727/audit.json)。
