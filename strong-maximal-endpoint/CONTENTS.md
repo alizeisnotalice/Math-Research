@@ -1355,3 +1355,5 @@
 - 第733轮：[中央约束与相关张量容量](rounds/r733/report.md)，[严格引理与未闭合点](rounds/r733/central_capacity.md)，[完整cube halo正公式](rounds/r733/cube_computation.md)，[双软件核验](rounds/r733/cube_crosscheck.json)。
 
 - 第734轮：[截断高秩源的完整halo障碍](rounds/r734/report.md)，[任意移动中心统一证明](rounds/r734/clipped_min.md)，[本机精确消元核验](rounds/r734/logic_checks_output.txt)。
+
+- 第735轮：[空间倾斜增益与凸包障碍](rounds/r735/report.md)，[严格增益证明](rounds/r735/space_tilt.md)，[双样本接口](rounds/r735/capacity_stability.md)，[独立凸包回放](rounds/r735/replay_hull.json)，[独立增益回放](rounds/r735/replay_gain.json)。
