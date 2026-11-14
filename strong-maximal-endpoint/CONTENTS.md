@@ -1315,3 +1315,5 @@
 - 第713轮：[反馈均值障碍与无界单环](rounds/r713/report.md)，[迟开启反馈证明](rounds/r713/near_optimal.md)，[单环证明](rounds/r713/single_cycle.md)，[验证摘要](rounds/r713/audit.json)。
 
 - 第714轮：[删选最优与负责权不相容](rounds/r714/report.md)，[精确区间族证明](rounds/r714/mixture_selection.md)，[验证摘要](rounds/r714/audit.json)。
+
+- 第715轮：[线性选权损失与联合费用](rounds/r715/report.md)，[容量与联合账本证明](rounds/r715/joint_cost.md)，[验证摘要](rounds/r715/audit.json)。
