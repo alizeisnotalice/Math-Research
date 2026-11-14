@@ -1361,3 +1361,5 @@
 - 第736轮：[整个LF面容量认证](rounds/r736/report.md)，[线性充要表示与凸容量证明](rounds/r736/LF_face.md)，[独立完整回放](rounds/r736/replay_lf.json)，[Mathematica精确面覆盖](rounds/r736/verify_face_wolfram.json)。
 
 - 第737轮：[实际信息谱的条件性结算](rounds/r737/report.md)，[非渐近逆检验界与成长块限制](rounds/r737/spectral_criterion.md)，[Python独立精度复算](rounds/r737/check_spectral.json)，[Mathematica十二核核对](rounds/r737/check_formula_wolfram.json)。
+
+- 第738轮：[连续软计数源与网格率障碍](rounds/r738/report.md)，[完整矩形压缩公式](rounds/r738/count_profile.md)，[指定见证族精确率证明](rounds/r738/grid_rate_proof.md)，[整数体积摘要](rounds/r738/exact_grid.json)，[有理率区间](rounds/r738/certify_rate.json)。
