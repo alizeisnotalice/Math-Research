@@ -1339,3 +1339,5 @@
 - 第725轮：[精确非线性几何相位不等式](rounds/r725/report.md)，[实际截断与相位证明](rounds/r725/geometric_phase.md)，[审查与来源](rounds/r725/audit.json)。
 
 - 第727轮：[增长支撑非线性障碍](rounds/r727/report.md)，[真实指标中位数证明](rounds/r727/fixed_support_nonlinear.md)，[审查与核验](rounds/r727/audit.json)。
+
+- 第726轮：[有限振幅数值探索](rounds/r726/report.md)，[主批](rounds/r726/nonlinear_search.json)，[负侧扩展](rounds/r726/negative_search.json)，[大样本稳定性](rounds/r726/stability.json)，[独立WL复算](rounds/r726/proxy_crosscheck.json)。本轮不主张理论闭合。
