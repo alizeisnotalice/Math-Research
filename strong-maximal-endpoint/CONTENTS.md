@@ -1359,3 +1359,5 @@
 - 第735轮：[空间倾斜增益与凸包障碍](rounds/r735/report.md)，[严格增益证明](rounds/r735/space_tilt.md)，[双样本接口](rounds/r735/capacity_stability.md)，[独立凸包回放](rounds/r735/replay_hull.json)，[独立增益回放](rounds/r735/replay_gain.json)。
 
 - 第736轮：[整个LF面容量认证](rounds/r736/report.md)，[线性充要表示与凸容量证明](rounds/r736/LF_face.md)，[独立完整回放](rounds/r736/replay_lf.json)，[Mathematica精确面覆盖](rounds/r736/verify_face_wolfram.json)。
+
+- 第737轮：[实际信息谱的条件性结算](rounds/r737/report.md)，[非渐近逆检验界与成长块限制](rounds/r737/spectral_criterion.md)，[Python独立精度复算](rounds/r737/check_spectral.json)，[Mathematica十二核核对](rounds/r737/check_formula_wolfram.json)。
