@@ -1,0 +1,185 @@
+{
+  "round": 733,
+  "date": "2026-11-14",
+  "status": "proved posterior entropy and correlated tensorization; exact general coefficient unknown",
+  "review": "Independent Astra passed main formulas/cube bound; corrected LF-specific price notation and nonperiodic-vs-Haar scope",
+  "general_lemmas": [
+    "w<=overlap<=rowcount",
+    "posterior hit label entropy>=V+logq",
+    "exact correlated-input chain with conditional mutual information penalty",
+    "capacity additive for fixed product responsible reference weights"
+  ],
+  "not_claimed": "LF weights or half-mass prices need not tensorize; central tradeoff not proved",
+  "cube_candidate": "untruncated min encoding becomesactualcube; complete stronghalo logO(sqrt n)",
+  "python_cases": 24,
+  "python_workers": 12,
+  "python_dimensions": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256,
+    1024,
+    4096,
+    65536
+  ],
+  "wolfram_cases": 16,
+  "wolfram_kernels": 12,
+  "target_digits": [
+    40,
+    70
+  ],
+  "guard_digits": 20,
+  "cube_crosscheck": {
+    "status": "complete",
+    "scope": "Cube only, floating/saved-decimal comparison not interval certification",
+    "matched_rows": 16,
+    "max_same_target_difference": {
+      "40": "3.8040093161845381937e-39",
+      "70": "2.831312751466134630492401567e-69"
+    },
+    "rows": [
+      {
+        "n": 1,
+        "digits": 40,
+        "saved_decimal_log_difference": "4.905578227494517347e-40"
+      },
+      {
+        "n": 1,
+        "digits": 70,
+        "saved_decimal_log_difference": "2.93218608966873615754813732e-70"
+      },
+      {
+        "n": 2,
+        "digits": 40,
+        "saved_decimal_log_difference": "4.546676725607239429e-40"
+      },
+      {
+        "n": 2,
+        "digits": 70,
+        "saved_decimal_log_difference": "3.57919825325398023786482712e-70"
+      },
+      {
+        "n": 4,
+        "digits": 40,
+        "saved_decimal_log_difference": "3.307269656054077632e-40"
+      },
+      {
+        "n": 4,
+        "digits": 70,
+        "saved_decimal_log_difference": "9.7173578867228409021718863e-71"
+      },
+      {
+        "n": 8,
+        "digits": 40,
+        "saved_decimal_log_difference": "6.35205039237870914e-41"
+      },
+      {
+        "n": 8,
+        "digits": 70,
+        "saved_decimal_log_difference": "4.27647075447311585134845839e-70"
+      },
+      {
+        "n": 16,
+        "digits": 40,
+        "saved_decimal_log_difference": "3.837087869069993492e-40"
+      },
+      {
+        "n": 16,
+        "digits": 70,
+        "saved_decimal_log_difference": "2.01073241535281516541403835e-70"
+      },
+      {
+        "n": 32,
+        "digits": 40,
+        "saved_decimal_log_difference": "3.8040093161845381937e-39"
+      },
+      {
+        "n": 32,
+        "digits": 70,
+        "saved_decimal_log_difference": "3.14133453371634918984057523e-70"
+      },
+      {
+        "n": 64,
+        "digits": 40,
+        "saved_decimal_log_difference": "1.9686576491310973885e-39"
+      },
+      {
+        "n": 64,
+        "digits": 70,
+        "saved_decimal_log_difference": "2.99621303543510231578684518e-70"
+      },
+      {
+        "n": 128,
+        "digits": 40,
+        "saved_decimal_log_difference": "1.4754651903161065318e-39"
+      },
+      {
+        "n": 128,
+        "digits": 70,
+        "saved_decimal_log_difference": "2.831312751466134630492401567e-69"
+      }
+    ],
+    "python_precision_doubling": [
+      {
+        "n": 1,
+        "saved_decimal_log_difference": "4.90557822749451734694333637494e-40"
+      },
+      {
+        "n": 2,
+        "saved_decimal_log_difference": "4.54667672560723942967810486901e-40"
+      },
+      {
+        "n": 4,
+        "saved_decimal_log_difference": "3.30726965605407763157367996431e-40"
+      },
+      {
+        "n": 8,
+        "saved_decimal_log_difference": "6.3520503923787091352276343994e-41"
+      },
+      {
+        "n": 16,
+        "saved_decimal_log_difference": "3.8370878690699934917634371052e-40"
+      },
+      {
+        "n": 32,
+        "saved_decimal_log_difference": "3.80400931618453819373079957135e-39"
+      },
+      {
+        "n": 64,
+        "saved_decimal_log_difference": "1.96865764913109738843039200863e-39"
+      },
+      {
+        "n": 128,
+        "saved_decimal_log_difference": "1.47546519031610653190134949094e-39"
+      },
+      {
+        "n": 256,
+        "saved_decimal_log_difference": "6.5825198576314936148621720501e-40"
+      },
+      {
+        "n": 1024,
+        "saved_decimal_log_difference": "4.50180721591303458053438723746e-39"
+      },
+      {
+        "n": 4096,
+        "saved_decimal_log_difference": "2.5604073663545604519718193841e-38"
+      },
+      {
+        "n": 65536,
+        "saved_decimal_log_difference": "6.0829066813243020294883489965e-39"
+      }
+    ],
+    "maximum_float_tail_relative": "6.04794466684327975007454753551e-184",
+    "maximum_scipy_log_difference": 3.552713678800501e-15
+  },
+  "process_status": "owned localPython/Wolfram exited; no ownedMATLAB",
+  "next": [
+    "r734 truncatedmin physical geometry including critical b(T)",
+    "r735 general nearcritical capacity stability"
+  ]
+}

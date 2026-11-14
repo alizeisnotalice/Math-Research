@@ -1351,3 +1351,5 @@
 - 第731轮：[一般几何容量接口](rounds/r731/report.md)，[精确变分与全标签障碍](rounds/r731/general_interface.md)，[审查及本机核验](rounds/r731/audit.json)。
 
 - 第732轮：[一般容量的27份认证](rounds/r732/report.md)，[有理对数与源价格证书说明](rounds/r732/certificates.md)，[结果](rounds/r732/capacity.json)，[独立无优化器回放](rounds/r732/replay_exact.py)。
+
+- 第733轮：[中央约束与相关张量容量](rounds/r733/report.md)，[严格引理与未闭合点](rounds/r733/central_capacity.md)，[完整cube halo正公式](rounds/r733/cube_computation.md)，[双软件核验](rounds/r733/cube_crosscheck.json)。
