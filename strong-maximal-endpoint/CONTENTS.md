@@ -1317,3 +1317,5 @@
 - 第714轮：[删选最优与负责权不相容](rounds/r714/report.md)，[精确区间族证明](rounds/r714/mixture_selection.md)，[验证摘要](rounds/r714/audit.json)。
 
 - 第715轮：[线性选权损失与联合费用](rounds/r715/report.md)，[容量与联合账本证明](rounds/r715/joint_cost.md)，[验证摘要](rounds/r715/audit.json)。
+
+- 第716轮：[一般目录源端下包络对偶](rounds/r716/report.md)，[完整证明](rounds/r716/lower_envelope.md)，[验证摘要](rounds/r716/audit.json)。
