@@ -1313,3 +1313,5 @@
 - 第712轮：[线性反馈环与增长强连通块](rounds/r712/report.md)，[线性锚点证明](rounds/r712/linear_anchors.md)，[增长块补充](rounds/r712/growing_blocks.md)，[计算与纠错摘要](rounds/r712/audit.json)。
 
 - 第713轮：[反馈均值障碍与无界单环](rounds/r713/report.md)，[迟开启反馈证明](rounds/r713/near_optimal.md)，[单环证明](rounds/r713/single_cycle.md)，[验证摘要](rounds/r713/audit.json)。
+
+- 第714轮：[删选最优与负责权不相容](rounds/r714/report.md)，[精确区间族证明](rounds/r714/mixture_selection.md)，[验证摘要](rounds/r714/audit.json)。
