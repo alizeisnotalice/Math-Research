@@ -1325,3 +1325,5 @@
 - 第718轮：[一般近中央选权费用o(log n)](rounds/r718/report.md)，[物理高侧与稳定门槛证明](rounds/r718/physical_pruning.md)，[验证摘要](rounds/r718/audit.json)。
 
 - 第719轮：[鞍点标签与检验熵差](rounds/r719/report.md)，[完整证明](rounds/r719/testing_entropy.md)，[验证摘要](rounds/r719/audit.json)。
+
+- 第720轮：[KL最大接收归属与改派费用](rounds/r720/report.md)，[全局判据证明](rounds/r720/receiver_kl.md)，[验证摘要](rounds/r720/audit.json)。
