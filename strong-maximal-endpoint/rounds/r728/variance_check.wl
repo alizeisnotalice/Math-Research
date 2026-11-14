@@ -1,0 +1,11 @@
+Clear[c,z,u];
+op[f_]:=D[f,c]+z D[f,z];
+mm=1+c/(1+z);vv=1+c^2 z/(1+z)^2;
+sub={z->1/(u-1),c->u};
+Print["stationary_mean_residual=",FullSimplify[op[mm]/.sub]];
+Print["mean_second_identity_residual=",FullSimplify[(op[op[mm]]/.sub)+(u-1)/u]];
+Print["variance_derivative_identity_residual=",FullSimplify[(op[vv]/.sub)-(u-1)]];
+Print["ratio_at_mu=",FullSimplify[(2op[vv]^2/(-op[op[mm]]))/.sub]];
+Print["ratio_positive_infinity=",Limit[((vv-u)^2/(u-mm))/.z->Exp[c],c->Infinity,Assumptions->u>1]];
+Print["ratio_negative_infinity=",Limit[((vv-u)^2/(u-mm))/.z->Exp[c],c->-Infinity,Assumptions->u>1]];
+Quit[];

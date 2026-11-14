@@ -1341,3 +1341,5 @@
 - 第727轮：[增长支撑非线性障碍](rounds/r727/report.md)，[真实指标中位数证明](rounds/r727/fixed_support_nonlinear.md)，[审查与核验](rounds/r727/audit.json)。
 
 - 第726轮：[有限振幅数值探索](rounds/r726/report.md)，[主批](rounds/r726/nonlinear_search.json)，[负侧扩展](rounds/r726/negative_search.json)，[大样本稳定性](rounds/r726/stability.json)，[独立WL复算](rounds/r726/proxy_crosscheck.json)。本轮不主张理论闭合。
+
+- 第728轮：[全支撑切向非线性障碍](rounds/r728/report.md)，[条件TV与中位数完整证明](rounds/r728/conditional_phase.md)，[本机CDF诊断](rounds/r728/conditional_phase_check.json)，[审查记录](rounds/r728/audit.json)。
