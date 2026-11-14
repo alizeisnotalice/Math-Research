@@ -1,0 +1,11 @@
+clip=Min[aa,Max[-aa,ell-mm-bb]];
+original=ell>tt+clip;
+union=ell>tt+aa||(ell>tt-aa&&mm>tt-bb);
+Print["source_equivalence_counterexample=",TimeConstrained[Reduce[aa>=0&&Xor[original,union],{ell,mm,bb,aa,tt},Reals],30,"timeout"]];
+fb=(mm>tt-bb&&ell>tt-aa-sh)||(mm<=tt-bb&&ell>tt+aa-sh);
+eshift=ell+sh>tt+aa||(ell+sh>tt-aa&&mm+sh>tt-bb);
+Print["dilation_counterexample=",Reduce[aa>=0&&sh>=0&&fb&&!eshift,{ell,mm,bb,aa,tt,sh},Reals]];
+Print["positive_action_tail_counterexample=",Reduce[z>=1&&u>=1&&z>u&&z/((1+z)u)+1/(1+z)>2/u,{z,u},Reals]];
+Print["small_action_tail_counterexample=",Reduce[z>=1&&u>=1&&z<=u&&2z/((1+z)u)>2/u,{z,u},Reals]];
+Print["Dirichlet_min_density_identity_residual=",FullSimplify[D[1-(1-nn xx)^(nn-1),xx]-nn(nn-1)(1-nn xx)^(nn-2),Assumptions->nn>=2&&0<xx<1/nn]];
+Quit[];
