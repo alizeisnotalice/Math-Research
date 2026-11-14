@@ -1323,3 +1323,5 @@
 - 第717轮：[严格删选最优的共点反例](rounds/r717/report.md)，[全部子族及精确价格证明](rounds/r717/pruning_ratio.md)，[验证摘要](rounds/r717/audit.json)。
 
 - 第718轮：[一般近中央选权费用o(log n)](rounds/r718/report.md)，[物理高侧与稳定门槛证明](rounds/r718/physical_pruning.md)，[验证摘要](rounds/r718/audit.json)。
+
+- 第719轮：[鞍点标签与检验熵差](rounds/r719/report.md)，[完整证明](rounds/r719/testing_entropy.md)，[验证摘要](rounds/r719/audit.json)。
