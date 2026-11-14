@@ -16,12 +16,12 @@
 \[
 (p-1)c_p^p-pc_p^{p-1}-1=0
 \]
-的唯一正根（论文第 1 页，方程 (1)、主定理）。论文随后在第 3 页定义轴平行、各边独立的非中心强极大算子 \(N_n\)，证明 \(N_n\le M_1^{(1)}\circ\cdots\circ M_1^{(n)}\)，并以张量化近极值函数证明反向不等式。因此推论为
+的唯一正根（论文第 1 页，方程 (1)、主定理）。论文随后在打印第 4 页（PDF 零起始页号 3）定义轴平行、各边独立的非中心强极大算子 \(N_n\)，证明 \(N_n\le M_1^{(1)}\circ\cdots\circ M_1^{(n)}\)，并以张量化近极值函数证明反向不等式。因此推论为
 \[
 \|N_n\|_{L^p(\mathbb R^n)\to L^p(\mathbb R^n)}=c_p^n.
 \]
 
-**证明位置。** [作者公开 PDF](https://stephenmontgomerysmith.github.io/preprints/uncentered.pdf)，第 1 页主定理和第 3 页 "Corollary"；在线文本的方程 (1)、主定理与第 3 页推论分别可直接定位于该 PDF 的第 1、3 页。论文的张量下界说明这里确为强矩形算子，不只是坐标复合的上界。
+**证明位置。** [作者公开 PDF](https://stephenmontgomerysmith.github.io/preprints/uncentered.pdf)，第 1 页主定理和打印第 4 页（PDF 零起始页号 3） "Corollary"；在线文本的方程 (1)、主定理与打印第 4 页（PDF 零起始页号 3）推论分别可直接定位于该 PDF 的打印第 1、4 页。论文的张量下界说明这里确为强矩形算子，不只是坐标复合的上界。
 
 **本项目的合法用途。** 令 \(b_p=p\log c_p\) 后，题设中的方程
 \[
