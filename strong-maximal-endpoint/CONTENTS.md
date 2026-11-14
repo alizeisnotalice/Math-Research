@@ -1343,3 +1343,5 @@
 - 第726轮：[有限振幅数值探索](rounds/r726/report.md)，[主批](rounds/r726/nonlinear_search.json)，[负侧扩展](rounds/r726/negative_search.json)，[大样本稳定性](rounds/r726/stability.json)，[独立WL复算](rounds/r726/proxy_crosscheck.json)。本轮不主张理论闭合。
 
 - 第728轮：[全支撑切向非线性障碍](rounds/r728/report.md)，[条件TV与中位数完整证明](rounds/r728/conditional_phase.md)，[本机CDF诊断](rounds/r728/conditional_phase_check.json)，[审查记录](rounds/r728/audit.json)。
+
+- 第729轮：[非切向轮廓与全部角点盒](rounds/r729/report.md)，[精确变换及动作包络证明](rounds/r729/noncentered_reduction.md)，[独立审查](rounds/r729/audit.json)。
