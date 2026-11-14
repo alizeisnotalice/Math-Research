@@ -1345,3 +1345,5 @@
 - 第728轮：[全支撑切向非线性障碍](rounds/r728/report.md)，[条件TV与中位数完整证明](rounds/r728/conditional_phase.md)，[本机CDF诊断](rounds/r728/conditional_phase_check.json)，[审查记录](rounds/r728/audit.json)。
 
 - 第729轮：[非切向轮廓与全部角点盒](rounds/r729/report.md)，[精确变换及动作包络证明](rounds/r729/noncentered_reduction.md)，[独立审查](rounds/r729/audit.json)。
+
+- 第730轮：[高秩条件TV反例](rounds/r730/report.md)，[严格证明与一般压缩缺口](rounds/r730/vector_phase_scope.md)，[本机双软件数值](rounds/r730/crosscheck.json)。
