@@ -1319,3 +1319,5 @@
 - 第715轮：[线性选权损失与联合费用](rounds/r715/report.md)，[容量与联合账本证明](rounds/r715/joint_cost.md)，[验证摘要](rounds/r715/audit.json)。
 
 - 第716轮：[一般目录源端下包络对偶](rounds/r716/report.md)，[完整证明](rounds/r716/lower_envelope.md)，[验证摘要](rounds/r716/audit.json)。
+
+- 第717轮：[严格删选最优的共点反例](rounds/r717/report.md)，[全部子族及精确价格证明](rounds/r717/pruning_ratio.md)，[验证摘要](rounds/r717/audit.json)。
