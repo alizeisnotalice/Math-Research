@@ -1357,3 +1357,5 @@
 - 第734轮：[截断高秩源的完整halo障碍](rounds/r734/report.md)，[任意移动中心统一证明](rounds/r734/clipped_min.md)，[本机精确消元核验](rounds/r734/logic_checks_output.txt)。
 
 - 第735轮：[空间倾斜增益与凸包障碍](rounds/r735/report.md)，[严格增益证明](rounds/r735/space_tilt.md)，[双样本接口](rounds/r735/capacity_stability.md)，[独立凸包回放](rounds/r735/replay_hull.json)，[独立增益回放](rounds/r735/replay_gain.json)。
+
+- 第736轮：[整个LF面容量认证](rounds/r736/report.md)，[线性充要表示与凸容量证明](rounds/r736/LF_face.md)，[独立完整回放](rounds/r736/replay_lf.json)，[Mathematica精确面覆盖](rounds/r736/verify_face_wolfram.json)。
