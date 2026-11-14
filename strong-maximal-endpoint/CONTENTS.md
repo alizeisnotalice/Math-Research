@@ -1309,3 +1309,5 @@
 - 第710轮：[真实目录LP、锐混合熵与对数检验损失](rounds/r710/report.md)，[目录LP](rounds/r710/median_LP.md)，[混合熵](rounds/r710/mixture_entropy.md)，[共核缺口](rounds/r710/core_entropy_gap.md)，[验证摘要](rounds/r710/audit.json)。
 
 - 第711轮：[完整积目录的相关源维数损失](rounds/r711/report.md)，[完整证明](rounds/r711/product_catalogue.md)，[验证摘要](rounds/r711/audit.json)。
+
+- 第712轮：[线性反馈环与增长强连通块](rounds/r712/report.md)，[线性锚点证明](rounds/r712/linear_anchors.md)，[增长块补充](rounds/r712/growing_blocks.md)，[计算与纠错摘要](rounds/r712/audit.json)。
