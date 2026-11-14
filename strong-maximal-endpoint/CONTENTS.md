@@ -1331,3 +1331,5 @@
 - 第721轮：[真实角向Fourier源扰动](rounds/r721/report.md)，[二阶证明](rounds/r721/angular_modes.md)，[验证摘要](rounds/r721/audit.json)。
 
 - 第722轮：[全轴响应与弥散频率](rounds/r722/report.md)，[严格推导](rounds/r722/all_axis.md)，[双软件验收](rounds/r722/audit.json)。
+
+- 第723轮：[有界能量全频率判别](rounds/r723/report.md)，[统一证明](rounds/r723/frequency_profile.md)，[验证摘要](rounds/r723/audit.json)。
