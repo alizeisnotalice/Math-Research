@@ -1,0 +1,5740 @@
+{
+  "status": "complete",
+  "model": "P=prod(V_i)+(-1)^(n-1)*theta*prod(1-V_i), V_i iid Unif[-r,1], r=mu-1",
+  "mu_equation": "mu=1+exp(-mu)",
+  "mu_numerical": 1.278464542761074,
+  "r_numerical": 0.2784645427610739,
+  "Y_definition": "Y=-log(abs(P))",
+  "stable_log_formula": "S=-sum(log|V_i|), B=sum(log(1-V_i)), T=log|theta|+B+S; log|P|=-S+log|1+sgn*exp(T)|",
+  "stable_branches": {
+    "plus": "logaddexp(0,T)",
+    "minus": "max(0,T)+log(-expm1(-abs(T)))"
+  },
+  "theta_log_scale": "-(mu+log(mu)-1)*n + beta*sqrt(n)",
+  "n_values": [
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256,
+    512
+  ],
+  "beta_values": [
+    -4,
+    -2,
+    0,
+    2,
+    4
+  ],
+  "theta_signs": [
+    -1,
+    1
+  ],
+  "sobol_levels": [
+    {
+      "power": 15,
+      "samples": 32768,
+      "seed_base": 71315001
+    },
+    {
+      "power": 17,
+      "samples": 131072,
+      "seed_base": 71317003
+    }
+  ],
+  "scramble": "SciPy Sobol scramble=True; one deterministic seed per case and precision level",
+  "replicate_limit": "Two independent scrambles are compared for numerical stability only; no confidence interval or rigorous error certification is claimed.",
+  "chunk_size": 4096,
+  "workers": 12,
+  "blas_threads_per_worker": 1,
+  "case_count": 80,
+  "sampling_run_count": 160,
+  "badfinite_total": 0,
+  "wall_seconds": 3.368269205093384,
+  "precision_comparisons": [
+    {
+      "n": 4,
+      "beta": -4,
+      "theta_sign": -1,
+      "seed_2pow15": 71319001,
+      "seed_2pow17": 71321003,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.003310383783913018,
+      "high_minus_low_mean_Y": -0.00037895372882701395,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0008544921875,
+        "2": 0.0001678466796875,
+        "4": 7.62939453125e-05
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 4,
+      "beta": -4,
+      "theta_sign": 1,
+      "seed_2pow15": 71319015,
+      "seed_2pow17": 71321017,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.0025661722459133784,
+      "high_minus_low_mean_Y": -0.0004407727186830357,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0007171630859375,
+        "2": -0.0001220703125,
+        "4": -0.00018310546875
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 4,
+      "beta": -2,
+      "theta_sign": -1,
+      "seed_2pow15": 71319063,
+      "seed_2pow17": 71321065,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.0011783168111829667,
+      "high_minus_low_mean_Y": 7.038788242930138e-05,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.0006866455078125,
+        "2": 0.0001068115234375,
+        "4": -9.1552734375e-05
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 4,
+      "beta": -2,
+      "theta_sign": 1,
+      "seed_2pow15": 71319077,
+      "seed_2pow17": 71321079,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.008929575354210684,
+      "high_minus_low_mean_Y": -0.001055061829338122,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.0010223388671875,
+        "2": -1.52587890625e-05,
+        "4": -0.0001373291015625
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 4,
+      "beta": 0,
+      "theta_sign": -1,
+      "seed_2pow15": 71319125,
+      "seed_2pow17": 71321127,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.003051523103371423,
+      "high_minus_low_mean_Y": -0.00045819817741055147,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0017852783203125,
+        "2": -0.0006256103515625,
+        "4": 0.0008544921875
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 4,
+      "beta": 0,
+      "theta_sign": 1,
+      "seed_2pow15": 71319139,
+      "seed_2pow17": 71321141,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.004034420663812099,
+      "high_minus_low_mean_Y": -0.0013272355305682382,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0011138916015625,
+        "2": 0.0011749267578125,
+        "4": -0.0006256103515625
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 4,
+      "beta": 2,
+      "theta_sign": -1,
+      "seed_2pow15": 71319187,
+      "seed_2pow17": 71321189,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.004788617321658251,
+      "high_minus_low_mean_Y": -0.004209607186704267,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0032501220703125,
+        "2": -0.001861572265625,
+        "4": -0.00042724609375
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 4,
+      "beta": 2,
+      "theta_sign": 1,
+      "seed_2pow15": 71319201,
+      "seed_2pow17": 71321203,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.0050583316642534015,
+      "high_minus_low_mean_Y": -0.0002145793573481436,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.0003814697265625,
+        "2": 1.52587890625e-05,
+        "4": -0.000213623046875
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 4,
+      "beta": 4,
+      "theta_sign": -1,
+      "seed_2pow15": 71319249,
+      "seed_2pow17": 71321251,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.0030129977738218017,
+      "high_minus_low_mean_Y": 2.006811772270467e-05,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.0002593994140625,
+        "2": -0.0002288818359375,
+        "4": -4.57763671875e-05
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 4,
+      "beta": 4,
+      "theta_sign": 1,
+      "seed_2pow15": 71319263,
+      "seed_2pow17": 71321265,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.0006165999158032065,
+      "high_minus_low_mean_Y": -0.0012629408276509935,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.00164794921875,
+        "2": -0.000457763671875,
+        "4": 3.0517578125e-05
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 8,
+      "beta": -4,
+      "theta_sign": -1,
+      "seed_2pow15": 71323001,
+      "seed_2pow17": 71325003,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.007249976210289333,
+      "high_minus_low_mean_Y": -0.00022534416461716944,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.001143696881191621,
+        "2": -0.00015105430506304413,
+        "4": -0.00010789593218788873
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 8,
+      "beta": -4,
+      "theta_sign": 1,
+      "seed_2pow15": 71323015,
+      "seed_2pow17": 71325017,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.008570987383032858,
+      "high_minus_low_mean_Y": 0.0024186414705784642,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.000820009084627954,
+        "2": -0.00023737105081335494,
+        "4": 2.1579186437577702e-05
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 8,
+      "beta": -2,
+      "theta_sign": -1,
+      "seed_2pow15": 71323063,
+      "seed_2pow17": 71325065,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.0024117323169541294,
+      "high_minus_low_mean_Y": -0.001525196635931536,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.000410004542313977,
+        "2": -0.001100538508316467,
+        "4": 0.00015105430506304413
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 8,
+      "beta": -2,
+      "theta_sign": 1,
+      "seed_2pow15": 71323077,
+      "seed_2pow17": 71325079,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.002384641632620088,
+      "high_minus_low_mean_Y": -0.00014944362285795876,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.0008631674575031098,
+        "2": 0.0004315837287515549,
+        "4": 0.0005394796609394436
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 8,
+      "beta": 0,
+      "theta_sign": -1,
+      "seed_2pow15": 71323125,
+      "seed_2pow17": 71325127,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.008690761960828297,
+      "high_minus_low_mean_Y": -0.0028804969672293623,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0009710633896909959,
+        "2": -0.0010573801354413076,
+        "4": -0.0010573801354413098
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 8,
+      "beta": 0,
+      "theta_sign": 1,
+      "seed_2pow15": 71323139,
+      "seed_2pow17": 71325141,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.009063299558809135,
+      "high_minus_low_mean_Y": -0.005474450977388301,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.00028052942368850253,
+        "2": -0.0012084344405043565,
+        "4": 0.00019421267793819953
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 8,
+      "beta": 2,
+      "theta_sign": -1,
+      "seed_2pow15": 71323187,
+      "seed_2pow17": 71325189,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.003913351772807161,
+      "high_minus_low_mean_Y": 0.005525338693175286,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.0019852851522571546,
+        "2": 0.0007984298981903795,
+        "4": 0.000690533966002488
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 8,
+      "beta": 2,
+      "theta_sign": 1,
+      "seed_2pow15": 71323201,
+      "seed_2pow17": 71325203,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.01634746903700801,
+      "high_minus_low_mean_Y": 0.0004724039857144646,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.000927905016815847,
+        "2": 0.0008631674575031115,
+        "4": -0.0008415882710655323
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 8,
+      "beta": 4,
+      "theta_sign": -1,
+      "seed_2pow15": 71323249,
+      "seed_2pow17": 71325251,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.007846347493492445,
+      "high_minus_low_mean_Y": 0.0005572821124808502,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.00034526698300124496,
+        "2": 0.0003668461694388216,
+        "4": -0.000345266983001244
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 8,
+      "beta": 4,
+      "theta_sign": 1,
+      "seed_2pow15": 71323263,
+      "seed_2pow17": 71325265,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.02356011574954664,
+      "high_minus_low_mean_Y": 0.0004280955589071045,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.00019421267793819953,
+        "2": 0.0005179004745018661,
+        "4": 0.0002373710508133552
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 16,
+      "beta": -4,
+      "theta_sign": -1,
+      "seed_2pow15": 71331001,
+      "seed_2pow17": 71333003,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.0008743353355455952,
+      "high_minus_low_mean_Y": -0.001489892043487373,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.00189208984375,
+        "2": 0.000732421875,
+        "4": -0.00018310546875
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 16,
+      "beta": -4,
+      "theta_sign": 1,
+      "seed_2pow15": 71331015,
+      "seed_2pow17": 71333017,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.013517410595788704,
+      "high_minus_low_mean_Y": 0.0020968148866309377,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.00042724609375,
+        "2": 0.001495361328125,
+        "4": 0.00030517578125
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 16,
+      "beta": -2,
+      "theta_sign": -1,
+      "seed_2pow15": 71331063,
+      "seed_2pow17": 71333065,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.020516479397208798,
+      "high_minus_low_mean_Y": 0.003549952255156086,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.00042724609375,
+        "2": -0.001190185546875,
+        "4": 0.000274658203125
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 16,
+      "beta": -2,
+      "theta_sign": 1,
+      "seed_2pow15": 71331077,
+      "seed_2pow17": 71333079,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.0041977238744301815,
+      "high_minus_low_mean_Y": 0.005994904946764024,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.002593994140625,
+        "2": -0.0015869140625,
+        "4": -0.00067138671875
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 16,
+      "beta": 0,
+      "theta_sign": -1,
+      "seed_2pow15": 71331125,
+      "seed_2pow17": 71333127,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.002379273170294738,
+      "high_minus_low_mean_Y": 0.002054133845938111,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.003021240234375,
+        "2": -0.000518798828125,
+        "4": -0.000518798828125
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 16,
+      "beta": 0,
+      "theta_sign": 1,
+      "seed_2pow15": 71331139,
+      "seed_2pow17": 71333141,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.0001619604289899712,
+      "high_minus_low_mean_Y": 0.004644320158586623,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.0023193359375,
+        "2": 0.000457763671875,
+        "4": 0.0008544921875
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 16,
+      "beta": 2,
+      "theta_sign": -1,
+      "seed_2pow15": 71331187,
+      "seed_2pow17": 71333189,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.013161631730245205,
+      "high_minus_low_mean_Y": -0.003500248026053754,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.001251220703125,
+        "2": -0.002044677734375,
+        "4": 0.00018310546875
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 16,
+      "beta": 2,
+      "theta_sign": 1,
+      "seed_2pow15": 71331201,
+      "seed_2pow17": 71333203,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.008587187977532551,
+      "high_minus_low_mean_Y": -0.004461342961571191,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0028076171875,
+        "2": -0.0003662109375,
+        "4": 0.000640869140625
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 16,
+      "beta": 4,
+      "theta_sign": -1,
+      "seed_2pow15": 71331249,
+      "seed_2pow17": 71333251,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.009583280829629004,
+      "high_minus_low_mean_Y": -0.0041415878612802715,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.00115966796875,
+        "2": -0.000213623046875,
+        "4": 3.0517578125e-05
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 16,
+      "beta": 4,
+      "theta_sign": 1,
+      "seed_2pow15": 71331263,
+      "seed_2pow17": 71333265,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.0016420364721358993,
+      "high_minus_low_mean_Y": -0.0007276180335091809,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.000640869140625,
+        "2": -0.00018310546875,
+        "4": -0.0003662109375
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 32,
+      "beta": -4,
+      "theta_sign": -1,
+      "seed_2pow15": 71347001,
+      "seed_2pow17": 71349003,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.022063207119025208,
+      "high_minus_low_mean_Y": 0.0034568616202363955,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.00038842535587639906,
+        "2": 0.001165276067629198,
+        "4": 0.0
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 32,
+      "beta": -4,
+      "theta_sign": 1,
+      "seed_2pow15": 71347015,
+      "seed_2pow17": 71349017,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.020437708310318214,
+      "high_minus_low_mean_Y": -0.00029883604395308794,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.0017694932878813754,
+        "2": 0.0007336923388776432,
+        "4": -0.0002157918643757775
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 32,
+      "beta": -2,
+      "theta_sign": -1,
+      "seed_2pow15": 71347063,
+      "seed_2pow17": 71349065,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.00039875189916216414,
+      "high_minus_low_mean_Y": 0.006028078589437769,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.0026326607453844852,
+        "2": 4.315837287515584e-05,
+        "4": -0.00017263349150062205
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 32,
+      "beta": -2,
+      "theta_sign": 1,
+      "seed_2pow15": 71347077,
+      "seed_2pow17": 71349079,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.01412097117750477,
+      "high_minus_low_mean_Y": 0.0021223123597451377,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0007336923388776423,
+        "2": 0.0025031856267590195,
+        "4": -4.3158372875155403e-05
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 32,
+      "beta": 0,
+      "theta_sign": -1,
+      "seed_2pow15": 71347125,
+      "seed_2pow17": 71349127,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.00148143821186153,
+      "high_minus_low_mean_Y": 0.008928949428991473,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.0017263349150062196,
+        "2": 0.0007768507117527981,
+        "4": -0.00133790955912982
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 32,
+      "beta": 0,
+      "theta_sign": 1,
+      "seed_2pow15": 71347139,
+      "seed_2pow17": 71349141,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.0170321929662407,
+      "high_minus_low_mean_Y": -0.00363811571547501,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.0028484526097602575,
+        "2": 0.0016831765421310638,
+        "4": 0.0009063258303782652
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 32,
+      "beta": 2,
+      "theta_sign": -1,
+      "seed_2pow15": 71347187,
+      "seed_2pow17": 71349189,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.04606861466085377,
+      "high_minus_low_mean_Y": 0.0019026413209530801,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0028484526097602644,
+        "2": -0.0013379095591298205,
+        "4": -0.0007336923388776432
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 32,
+      "beta": 2,
+      "theta_sign": 1,
+      "seed_2pow15": 71347201,
+      "seed_2pow17": 71349203,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.005596388890090509,
+      "high_minus_low_mean_Y": -0.004780211004138835,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.005955855456771457,
+        "2": -0.003021086101260886,
+        "4": -0.0007768507117527988
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 32,
+      "beta": 4,
+      "theta_sign": -1,
+      "seed_2pow15": 71347249,
+      "seed_2pow17": 71349251,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.005601429694507942,
+      "high_minus_low_mean_Y": 0.001665209370475651,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0017263349150062196,
+        "2": -0.0005610588473770211,
+        "4": -0.00047474210162671036
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 32,
+      "beta": 4,
+      "theta_sign": 1,
+      "seed_2pow15": 71347263,
+      "seed_2pow17": 71349265,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.03509868611006084,
+      "high_minus_low_mean_Y": -0.0031678273194302164,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.0015968597963807538,
+        "2": 0.0007336923388776432,
+        "4": 0.00012947511862546648
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 64,
+      "beta": -4,
+      "theta_sign": -1,
+      "seed_2pow15": 71379001,
+      "seed_2pow17": 71381003,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.027417339495045212,
+      "high_minus_low_mean_Y": -0.012356306056261701,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.00360107421875,
+        "2": -0.00115966796875,
+        "4": -0.0003662109375
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 64,
+      "beta": -4,
+      "theta_sign": 1,
+      "seed_2pow15": 71379015,
+      "seed_2pow17": 71381017,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.05028966569747695,
+      "high_minus_low_mean_Y": 0.0004438817979206533,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.00018310546875,
+        "2": -0.000244140625,
+        "4": -0.0001220703125
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 64,
+      "beta": -2,
+      "theta_sign": -1,
+      "seed_2pow15": 71379063,
+      "seed_2pow17": 71381065,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.0051270497153694805,
+      "high_minus_low_mean_Y": -0.006904629714057364,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.00274658203125,
+        "2": -0.0006103515625,
+        "4": 6.103515625e-05
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 64,
+      "beta": -2,
+      "theta_sign": 1,
+      "seed_2pow15": 71379077,
+      "seed_2pow17": 71381079,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.036193838935602685,
+      "high_minus_low_mean_Y": -0.005471163494433995,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0006103515625,
+        "2": 0.0018310546875,
+        "4": 0.0008544921875
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 64,
+      "beta": 0,
+      "theta_sign": -1,
+      "seed_2pow15": 71379125,
+      "seed_2pow17": 71381127,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.02127702735626258,
+      "high_minus_low_mean_Y": 0.008756617728863603,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0030517578125,
+        "2": -0.00518798828125,
+        "4": -0.00146484375
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 64,
+      "beta": 0,
+      "theta_sign": 1,
+      "seed_2pow15": 71379139,
+      "seed_2pow17": 71381141,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.04426433995674017,
+      "high_minus_low_mean_Y": 0.0028331239306425005,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 6.103515625e-05,
+        "2": -0.0020751953125,
+        "4": 0.0003662109375
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 64,
+      "beta": 2,
+      "theta_sign": -1,
+      "seed_2pow15": 71379187,
+      "seed_2pow17": 71381189,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.003601629960826358,
+      "high_minus_low_mean_Y": -0.004228484604880123,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0030517578125,
+        "2": -0.0008544921875,
+        "4": 6.103515625e-05
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 64,
+      "beta": 2,
+      "theta_sign": 1,
+      "seed_2pow15": 71379201,
+      "seed_2pow17": 71381203,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.01671433052203497,
+      "high_minus_low_mean_Y": 0.004956101331330842,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.00396728515625,
+        "2": 0.00189208984375,
+        "4": -0.0006103515625
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 64,
+      "beta": 4,
+      "theta_sign": -1,
+      "seed_2pow15": 71379249,
+      "seed_2pow17": 71381251,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.03979477323225922,
+      "high_minus_low_mean_Y": 0.0019268915735466408,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.00238037109375,
+        "2": 0.001220703125,
+        "4": 0.0
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 64,
+      "beta": 4,
+      "theta_sign": 1,
+      "seed_2pow15": 71379263,
+      "seed_2pow17": 71381265,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.039778617705934494,
+      "high_minus_low_mean_Y": -0.006106292016426096,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.00469970703125,
+        "2": -0.001220703125,
+        "4": 0.0001220703125
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 128,
+      "beta": -4,
+      "theta_sign": -1,
+      "seed_2pow15": 71443001,
+      "seed_2pow17": 71445003,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.015452492193730905,
+      "high_minus_low_mean_Y": -0.0013141218562395807,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.001640018169255908,
+        "2": -8.631674575031081e-05,
+        "4": 0.0
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 128,
+      "beta": -4,
+      "theta_sign": 1,
+      "seed_2pow15": 71443015,
+      "seed_2pow17": 71445017,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.007949879605774868,
+      "high_minus_low_mean_Y": -0.0038807744022619772,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.0006905339660024882,
+        "2": -0.00017263349150062205,
+        "4": -0.00017263349150062194
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 128,
+      "beta": -2,
+      "theta_sign": -1,
+      "seed_2pow15": 71443063,
+      "seed_2pow17": 71445065,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.08678114221316946,
+      "high_minus_low_mean_Y": -0.025140437368207813,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.0012947511862546612,
+        "2": 0.0018126516607565278,
+        "4": -0.0004315837287515549
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 128,
+      "beta": -2,
+      "theta_sign": 1,
+      "seed_2pow15": 71443077,
+      "seed_2pow17": 71445079,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.08086389400864391,
+      "high_minus_low_mean_Y": -0.006178845091540097,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.0027621358640099528,
+        "2": -0.0011221176947540414,
+        "4": -0.0006905339660024878
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 128,
+      "beta": 0,
+      "theta_sign": -1,
+      "seed_2pow15": 71443125,
+      "seed_2pow17": 71445127,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.05593870880059626,
+      "high_minus_low_mean_Y": 0.03061050234276763,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.004574787524766477,
+        "2": 0.0074232401345267415,
+        "4": 0.0028484526097602627
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 128,
+      "beta": 0,
+      "theta_sign": 1,
+      "seed_2pow15": 71443139,
+      "seed_2pow17": 71445141,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.03332510848463244,
+      "high_minus_low_mean_Y": 0.000902989986400371,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0023305521352583874,
+        "2": -0.00017263349150061988,
+        "4": 0.0010358009490037319
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 128,
+      "beta": 2,
+      "theta_sign": -1,
+      "seed_2pow15": 71443187,
+      "seed_2pow17": 71445189,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.01591840886464979,
+      "high_minus_low_mean_Y": 0.005409904185938785,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.002157918643757771,
+        "2": 0.0011221176947540448,
+        "4": -0.0004315837287515551
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 128,
+      "beta": 2,
+      "theta_sign": 1,
+      "seed_2pow15": 71443201,
+      "seed_2pow17": 71445203,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.041176185717091585,
+      "high_minus_low_mean_Y": -0.0064068949076272474,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.006301122439772704,
+        "2": 0.004315837287515551,
+        "4": 0.0014673846777552868
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 128,
+      "beta": 4,
+      "theta_sign": -1,
+      "seed_2pow15": 71443249,
+      "seed_2pow17": 71445251,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.0463173582348162,
+      "high_minus_low_mean_Y": -0.0035033770793688745,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.004143203796014927,
+        "2": 0.001381067932004976,
+        "4": -0.0005179004745018659
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 128,
+      "beta": 4,
+      "theta_sign": 1,
+      "seed_2pow15": 71443263,
+      "seed_2pow17": 71445265,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.018126095708907997,
+      "high_minus_low_mean_Y": 0.004151715059037997,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.001122117694754043,
+        "2": -0.0002589502372509333,
+        "4": -0.0005179004745018659
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 256,
+      "beta": -4,
+      "theta_sign": -1,
+      "seed_2pow15": 71571001,
+      "seed_2pow17": 71573003,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.008525428628956888,
+      "high_minus_low_mean_Y": -0.013111503683035153,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0008544921875,
+        "2": -0.001708984375,
+        "4": -0.00048828125
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 256,
+      "beta": -4,
+      "theta_sign": 1,
+      "seed_2pow15": 71571015,
+      "seed_2pow17": 71573017,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.08557783830815424,
+      "high_minus_low_mean_Y": -0.011679552179771235,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.0048828125,
+        "2": 0.0020751953125,
+        "4": 0.0006103515625
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 256,
+      "beta": -2,
+      "theta_sign": -1,
+      "seed_2pow15": 71571063,
+      "seed_2pow17": 71573065,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.002515011889897778,
+      "high_minus_low_mean_Y": -0.01716799290329618,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0008544921875,
+        "2": -0.0018310546875,
+        "4": 0.001708984375
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 256,
+      "beta": -2,
+      "theta_sign": 1,
+      "seed_2pow15": 71571077,
+      "seed_2pow17": 71573079,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.14532235034027963,
+      "high_minus_low_mean_Y": 0.0010672106928382163,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.004150390625,
+        "2": -0.0025634765625,
+        "4": 0.0001220703125
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 256,
+      "beta": 0,
+      "theta_sign": -1,
+      "seed_2pow15": 71571125,
+      "seed_2pow17": 71573127,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.018004425827143677,
+      "high_minus_low_mean_Y": -0.026355274955960795,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0179443359375,
+        "2": -0.0042724609375,
+        "4": -0.0008544921875
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 256,
+      "beta": 0,
+      "theta_sign": 1,
+      "seed_2pow15": 71571139,
+      "seed_2pow17": 71573141,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.1075373882074473,
+      "high_minus_low_mean_Y": -0.034287243401252,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0042724609375,
+        "2": -0.00146484375,
+        "4": -0.0006103515625
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 256,
+      "beta": 2,
+      "theta_sign": -1,
+      "seed_2pow15": 71571187,
+      "seed_2pow17": 71573189,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.01609375044125727,
+      "high_minus_low_mean_Y": 0.013676254474034977,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.0003662109375,
+        "2": -0.00244140625,
+        "4": -0.0010986328125
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 256,
+      "beta": 2,
+      "theta_sign": 1,
+      "seed_2pow15": 71571201,
+      "seed_2pow17": 71573203,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.08144199617083814,
+      "high_minus_low_mean_Y": -0.007658700570459587,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0025634765625,
+        "2": 0.0013427734375,
+        "4": -0.000244140625
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 256,
+      "beta": 4,
+      "theta_sign": -1,
+      "seed_2pow15": 71571249,
+      "seed_2pow17": 71573251,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.2062397936269349,
+      "high_minus_low_mean_Y": 0.015082528679215557,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.00146484375,
+        "2": -0.000244140625,
+        "4": 0.000244140625
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 256,
+      "beta": 4,
+      "theta_sign": 1,
+      "seed_2pow15": 71571263,
+      "seed_2pow17": 71573265,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.15297051757323743,
+      "high_minus_low_mean_Y": 0.001274832550393512,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.00341796875,
+        "2": -0.000244140625,
+        "4": 0.000244140625
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 512,
+      "beta": -4,
+      "theta_sign": -1,
+      "seed_2pow15": 71827001,
+      "seed_2pow17": 71829003,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.09355734633606971,
+      "high_minus_low_mean_Y": -0.0020074001815828524,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.002071601898007463,
+        "2": -0.0008631674575031102,
+        "4": 0.0
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 512,
+      "beta": -4,
+      "theta_sign": 1,
+      "seed_2pow15": 71827015,
+      "seed_2pow17": 71829017,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.14749766378463391,
+      "high_minus_low_mean_Y": 0.009958035469253446,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.002244235389508086,
+        "2": 0.00017263349150062205,
+        "4": -0.00017263349150062194
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 512,
+      "beta": -2,
+      "theta_sign": -1,
+      "seed_2pow15": 71827063,
+      "seed_2pow17": 71829065,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.01092423389434316,
+      "high_minus_low_mean_Y": 0.005187744719933107,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.006042172202521769,
+        "2": 0.003970570304514306,
+        "4": 0.0006905339660024879
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 512,
+      "beta": -2,
+      "theta_sign": 1,
+      "seed_2pow15": 71827077,
+      "seed_2pow17": 71829079,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.14338736798140417,
+      "high_minus_low_mean_Y": 0.013710036024235706,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.004833737762017419,
+        "2": -0.004143203796014929,
+        "4": -0.0031074028470111956
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 512,
+      "beta": 0,
+      "theta_sign": -1,
+      "seed_2pow15": 71827125,
+      "seed_2pow17": 71829127,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.05639274695261065,
+      "high_minus_low_mean_Y": 0.08839358119860208,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.008631674575031098,
+        "2": -0.0008631674575031098,
+        "4": -0.0003452669830012441
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 512,
+      "beta": 0,
+      "theta_sign": 1,
+      "seed_2pow15": 71827139,
+      "seed_2pow17": 71829141,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.056517157214443614,
+      "high_minus_low_mean_Y": 0.012721263970774999,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.001898968406506843,
+        "2": 0.0027621358640099493,
+        "4": 0.0
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 512,
+      "beta": 2,
+      "theta_sign": -1,
+      "seed_2pow15": 71827187,
+      "seed_2pow17": 71829189,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.05197947673491399,
+      "high_minus_low_mean_Y": -0.009918553215243264,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.0020716018980074663,
+        "2": -0.001898968406506843,
+        "4": -0.0010358009490037319
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 512,
+      "beta": 2,
+      "theta_sign": 1,
+      "seed_2pow15": 71827201,
+      "seed_2pow17": 71829203,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.12660394664942487,
+      "high_minus_low_mean_Y": -0.00776575162797144,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.007077973151525502,
+        "2": 0.0010358009490037332,
+        "4": 0.0003452669830012439
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 512,
+      "beta": 4,
+      "theta_sign": -1,
+      "seed_2pow15": 71827249,
+      "seed_2pow17": 71829251,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": -0.14815283557004477,
+      "high_minus_low_mean_Y": -0.029444677389733442,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": -0.00535163823651928,
+        "2": -0.00172633491500622,
+        "4": 0.00017263349150062197
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    },
+    {
+      "n": 512,
+      "beta": 4,
+      "theta_sign": 1,
+      "seed_2pow15": 71827263,
+      "seed_2pow17": 71829265,
+      "high_minus_low_median_Y_plus_Z_minus_mu_n": 0.010524948774786935,
+      "high_minus_low_mean_Y": 0.024846961039429516,
+      "high_minus_low_tail_times_sqrt_n": {
+        "1": 0.0017263349150062196,
+        "2": 0.0025895023725093294,
+        "4": 0.0006905339660024879
+      },
+      "badfinite_2pow15": 0,
+      "badfinite_2pow17": 0,
+      "difference_note": "two independently scrambled deterministic-seed estimates; difference is diagnostic, not an error bar"
+    }
+  ],
+  "runs": [
+    {
+      "n": 4,
+      "beta": -4,
+      "theta_sign": -1,
+      "log_abs_theta": -10.09649729863012,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71319001,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.71568945607505,
+      "mean_Y": 5.097591039941944,
+      "mean_Y_minus_mu_n": -0.01626713110235123,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.009521484375,
+        "2": 0.0030517578125,
+        "4": 0.0003662109375
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0047607421875,
+        "2": 0.00152587890625,
+        "4": 0.00018310546875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": -4,
+      "theta_sign": -1,
+      "log_abs_theta": -10.09649729863012,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71321003,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.712379072291137,
+      "mean_Y": 5.097212086213117,
+      "mean_Y_minus_mu_n": -0.016646084831178243,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0086669921875,
+        "2": 0.0032196044921875,
+        "4": 0.0004425048828125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00433349609375,
+        "2": 0.00160980224609375,
+        "4": 0.00022125244140625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": -4,
+      "theta_sign": 1,
+      "log_abs_theta": -10.09649729863012,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71319015,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.7172868988632572,
+      "mean_Y": 5.097426889753633,
+      "mean_Y_minus_mu_n": -0.016431281290662625,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.00970458984375,
+        "2": 0.00311279296875,
+        "4": 0.00048828125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.004852294921875,
+        "2": 0.001556396484375,
+        "4": 0.000244140625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": -4,
+      "theta_sign": 1,
+      "log_abs_theta": -10.09649729863012,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71321017,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.7198530711091706,
+      "mean_Y": 5.09698611703495,
+      "mean_Y_minus_mu_n": -0.01687205400934566,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0089874267578125,
+        "2": 0.00299072265625,
+        "4": 0.00030517578125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00449371337890625,
+        "2": 0.001495361328125,
+        "4": 0.000152587890625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": -2,
+      "theta_sign": -1,
+      "log_abs_theta": -6.096497298630118,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71319063,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6979905047675956,
+      "mean_Y": 4.874236943159156,
+      "mean_Y_minus_mu_n": -0.23962122788513973,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04730224609375,
+        "2": 0.01641845703125,
+        "4": 0.00177001953125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.023651123046875,
+        "2": 0.008209228515625,
+        "4": 0.000885009765625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": -2,
+      "theta_sign": -1,
+      "log_abs_theta": -6.096497298630118,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71321065,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6991688215787786,
+      "mean_Y": 4.874307331041585,
+      "mean_Y_minus_mu_n": -0.23955084000271043,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0479888916015625,
+        "2": 0.0165252685546875,
+        "4": 0.001678466796875
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.02399444580078125,
+        "2": 0.00826263427734375,
+        "4": 0.0008392333984375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": -2,
+      "theta_sign": 1,
+      "log_abs_theta": -6.096497298630118,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71319077,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6890537255985478,
+      "mean_Y": 4.876820103638314,
+      "mean_Y_minus_mu_n": -0.23703806740598132,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0482177734375,
+        "2": 0.01641845703125,
+        "4": 0.00201416015625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.02410888671875,
+        "2": 0.008209228515625,
+        "4": 0.001007080078125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": -2,
+      "theta_sign": 1,
+      "log_abs_theta": -6.096497298630118,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71321079,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6979833009527585,
+      "mean_Y": 4.875765041808976,
+      "mean_Y_minus_mu_n": -0.23809312923531945,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0492401123046875,
+        "2": 0.0164031982421875,
+        "4": 0.0018768310546875
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.02462005615234375,
+        "2": 0.00820159912109375,
+        "4": 0.00093841552734375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": 0,
+      "theta_sign": -1,
+      "log_abs_theta": -2.0964972986301182,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71319125,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -0.6768594514624304,
+      "mean_Y": 3.6643219327300534,
+      "mean_Y_minus_mu_n": -1.4495362383142423,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.08447265625,
+        "2": 0.02972412109375,
+        "4": 0.00360107421875
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.042236328125,
+        "2": 0.014862060546875,
+        "4": 0.001800537109375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": 0,
+      "theta_sign": -1,
+      "log_abs_theta": -2.0964972986301182,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71321127,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -0.673807928359059,
+      "mean_Y": 3.663863734552643,
+      "mean_Y_minus_mu_n": -1.4499944364916528,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0826873779296875,
+        "2": 0.0290985107421875,
+        "4": 0.00445556640625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.04134368896484375,
+        "2": 0.01454925537109375,
+        "4": 0.002227783203125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": 0,
+      "theta_sign": 1,
+      "log_abs_theta": -2.0964972986301182,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71319139,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -0.6867454460837674,
+      "mean_Y": 3.6617888650575807,
+      "mean_Y_minus_mu_n": -1.452069305986715,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0799560546875,
+        "2": 0.0269775390625,
+        "4": 0.00421142578125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.03997802734375,
+        "2": 0.01348876953125,
+        "4": 0.002105712890625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": 0,
+      "theta_sign": 1,
+      "log_abs_theta": -2.0964972986301182,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71321141,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -0.6827110254199553,
+      "mean_Y": 3.6604616295270125,
+      "mean_Y_minus_mu_n": -1.4533965415172831,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0788421630859375,
+        "2": 0.0281524658203125,
+        "4": 0.0035858154296875
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.03942108154296875,
+        "2": 0.01407623291015625,
+        "4": 0.00179290771484375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": 2,
+      "theta_sign": -1,
+      "log_abs_theta": 1.9035027013698818,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71319187,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -3.427892044491869,
+      "mean_Y": 0.8106787573790176,
+      "mean_Y_minus_mu_n": -4.303179413665278,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.03338623046875,
+        "2": 0.01318359375,
+        "4": 0.0018310546875
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.016693115234375,
+        "2": 0.006591796875,
+        "4": 0.00091552734375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": 2,
+      "theta_sign": -1,
+      "log_abs_theta": 1.9035027013698818,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71321189,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -3.432680661813527,
+      "mean_Y": 0.8064691501923134,
+      "mean_Y_minus_mu_n": -4.307389020851982,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0301361083984375,
+        "2": 0.011322021484375,
+        "4": 0.00140380859375
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.01506805419921875,
+        "2": 0.0056610107421875,
+        "4": 0.000701904296875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": 2,
+      "theta_sign": 1,
+      "log_abs_theta": 1.9035027013698818,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71319201,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -3.377790294612227,
+      "mean_Y": 0.8833318582375174,
+      "mean_Y_minus_mu_n": -4.230526312806778,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0565185546875,
+        "2": 0.0201416015625,
+        "4": 0.0028076171875
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.02825927734375,
+        "2": 0.01007080078125,
+        "4": 0.00140380859375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": 2,
+      "theta_sign": 1,
+      "log_abs_theta": 1.9035027013698818,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71321203,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -3.3828486262764805,
+      "mean_Y": 0.8831172788801692,
+      "mean_Y_minus_mu_n": -4.2307408921641265,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0569000244140625,
+        "2": 0.0201568603515625,
+        "4": 0.002593994140625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.02845001220703125,
+        "2": 0.01007843017578125,
+        "4": 0.0012969970703125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": 4,
+      "theta_sign": -1,
+      "log_abs_theta": 5.903502701369882,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71319249,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -7.325930504713275,
+      "mean_Y": -2.932684170724519,
+      "mean_Y_minus_mu_n": -8.046542341768815,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0028076171875,
+        "2": 0.0013427734375,
+        "4": 0.00018310546875
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00140380859375,
+        "2": 0.00067138671875,
+        "4": 9.1552734375e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": 4,
+      "theta_sign": -1,
+      "log_abs_theta": 5.903502701369882,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71321251,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -7.328943502487097,
+      "mean_Y": -2.9326641026067963,
+      "mean_Y_minus_mu_n": -8.046522273651092,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0030670166015625,
+        "2": 0.0011138916015625,
+        "4": 0.0001373291015625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00153350830078125,
+        "2": 0.00055694580078125,
+        "4": 6.866455078125e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": 4,
+      "theta_sign": 1,
+      "log_abs_theta": 5.903502701369882,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71319263,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -7.328745676730981,
+      "mean_Y": -2.8903374897308,
+      "mean_Y_minus_mu_n": -8.004195660775096,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0162353515625,
+        "2": 0.0054931640625,
+        "4": 0.0006103515625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00811767578125,
+        "2": 0.00274658203125,
+        "4": 0.00030517578125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 4,
+      "beta": 4,
+      "theta_sign": 1,
+      "log_abs_theta": 5.903502701369882,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71321265,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -7.328129076815178,
+      "mean_Y": -2.891600430558451,
+      "mean_Y_minus_mu_n": -8.005458601602747,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.01458740234375,
+        "2": 0.005035400390625,
+        "4": 0.000640869140625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.007293701171875,
+        "2": 0.0025177001953125,
+        "4": 0.0003204345703125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": -4,
+      "theta_sign": -1,
+      "log_abs_theta": -15.506703096244998,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71323001,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.7225585919425264,
+      "mean_Y": 10.197461329693216,
+      "mean_Y_minus_mu_n": -0.030255012395375758,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.010012742507036074,
+        "2": 0.0028484526097602623,
+        "4": 0.0004315837287515549
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0035400390625,
+        "2": 0.001007080078125,
+        "4": 0.000152587890625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": -4,
+      "theta_sign": -1,
+      "log_abs_theta": -15.506703096244998,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71325003,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.715308615732237,
+      "mean_Y": 10.197235985528598,
+      "mean_Y_minus_mu_n": -0.030480356559992927,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.008869045625844453,
+        "2": 0.002697398304697218,
+        "4": 0.0003236877965636662
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00313568115234375,
+        "2": 0.00095367431640625,
+        "4": 0.00011444091796875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": -4,
+      "theta_sign": 1,
+      "log_abs_theta": -15.506703096244998,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71323015,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.7054486986231581,
+      "mean_Y": 10.197299622973597,
+      "mean_Y_minus_mu_n": -0.030416719114993995,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.009408525286783898,
+        "2": 0.003970570304514305,
+        "4": 0.0005179004745018659
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.003326416015625,
+        "2": 0.00140380859375,
+        "4": 0.00018310546875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": -4,
+      "theta_sign": 1,
+      "log_abs_theta": -15.506703096244998,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71325017,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.7140196860061909,
+      "mean_Y": 10.199718264444176,
+      "mean_Y_minus_mu_n": -0.02799807764441553,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.010228534371411852,
+        "2": 0.00373319925370095,
+        "4": 0.0005394796609394436
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0036163330078125,
+        "2": 0.00131988525390625,
+        "4": 0.00019073486328125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": -2,
+      "theta_sign": -1,
+      "log_abs_theta": -9.849848846752618,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71323063,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6700039732922356,
+      "mean_Y": 9.84780978100489,
+      "mean_Y_minus_mu_n": -0.37990656108370047,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04799211063717291,
+        "2": 0.017349665895812508,
+        "4": 0.0022442353895080857
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0169677734375,
+        "2": 0.006134033203125,
+        "4": 0.00079345703125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": -2,
+      "theta_sign": -1,
+      "log_abs_theta": -9.849848846752618,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71325065,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6724157056091897,
+      "mean_Y": 9.84628458436896,
+      "mean_Y_minus_mu_n": -0.381431757719632,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04758210609485893,
+        "2": 0.01624912738749604,
+        "4": 0.00239528969457113
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.01682281494140625,
+        "2": 0.00574493408203125,
+        "4": 0.00084686279296875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": -2,
+      "theta_sign": 1,
+      "log_abs_theta": -9.849848846752618,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71323077,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6778657346705117,
+      "mean_Y": 9.848697728667203,
+      "mean_Y_minus_mu_n": -0.37901861342138865,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.048164744128673526,
+        "2": 0.016227548201058466,
+        "4": 0.0018989684065068417
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.01702880859375,
+        "2": 0.0057373046875,
+        "4": 0.00067138671875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": -2,
+      "theta_sign": 1,
+      "log_abs_theta": -9.849848846752618,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71325079,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6754810930378916,
+      "mean_Y": 9.848548285044345,
+      "mean_Y_minus_mu_n": -0.3791680570442466,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.049027911586176635,
+        "2": 0.01665913192981002,
+        "4": 0.0024384480674462853
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.017333984375,
+        "2": 0.005889892578125,
+        "4": 0.00086212158203125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": 0,
+      "theta_sign": -1,
+      "log_abs_theta": -4.1929945972602365,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71323125,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -1.2302380074090173,
+      "mean_Y": 8.112120019765523,
+      "mean_Y_minus_mu_n": -2.115596322323068,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0801019400562886,
+        "2": 0.029779277283857288,
+        "4": 0.004661104270516793
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0283203125,
+        "2": 0.010528564453125,
+        "4": 0.00164794921875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": 0,
+      "theta_sign": -1,
+      "log_abs_theta": -4.1929945972602365,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71325127,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -1.2389287693698456,
+      "mean_Y": 8.109239522798294,
+      "mean_Y_minus_mu_n": -2.118476819290297,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0791308766665976,
+        "2": 0.02872189714841598,
+        "4": 0.0036037241350754833
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.02797698974609375,
+        "2": 0.01015472412109375,
+        "4": 0.00127410888671875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": 0,
+      "theta_sign": 1,
+      "log_abs_theta": -4.1929945972602365,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71323139,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -1.225568351597465,
+      "mean_Y": 8.114471911290234,
+      "mean_Y_minus_mu_n": -2.113244430798357,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.07915245585303517,
+        "2": 0.02960664379235667,
+        "4": 0.0035389865757627505
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.027984619140625,
+        "2": 0.010467529296875,
+        "4": 0.001251220703125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": 0,
+      "theta_sign": 1,
+      "log_abs_theta": -4.1929945972602365,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71325141,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -1.234631651156274,
+      "mean_Y": 8.108997460312846,
+      "mean_Y_minus_mu_n": -2.118718881775745,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.07887192642934666,
+        "2": 0.028398209351852312,
+        "4": 0.00373319925370095
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.02788543701171875,
+        "2": 0.010040283203125,
+        "4": 0.00131988525390625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": 2,
+      "theta_sign": -1,
+      "log_abs_theta": 1.463859652232144,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71323187,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -5.1132662994686395,
+      "mean_Y": 4.158904493834401,
+      "mean_Y_minus_mu_n": -6.068811848254191,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0432446896209058,
+        "2": 0.01588228121805722,
+        "4": 0.0018126516607565306
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.015289306640625,
+        "2": 0.005615234375,
+        "4": 0.000640869140625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": 2,
+      "theta_sign": -1,
+      "log_abs_theta": 1.463859652232144,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71325189,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -5.117179651241447,
+      "mean_Y": 4.164429832527576,
+      "mean_Y_minus_mu_n": -6.063286509561015,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.045229974773162956,
+        "2": 0.0166807111162476,
+        "4": 0.0025031856267590186
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0159912109375,
+        "2": 0.00589752197265625,
+        "4": 0.000885009765625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": 2,
+      "theta_sign": 1,
+      "log_abs_theta": 1.463859652232144,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71323201,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -5.1312834638405285,
+      "mean_Y": 4.163084015610659,
+      "mean_Y_minus_mu_n": -6.064632326477932,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04488470779016171,
+        "2": 0.015278063997805043,
+        "4": 0.0026758191182596406
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.015869140625,
+        "2": 0.005401611328125,
+        "4": 0.000946044921875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": 2,
+      "theta_sign": 1,
+      "log_abs_theta": 1.463859652232144,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71325203,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -5.1149359948035205,
+      "mean_Y": 4.1635564195963735,
+      "mean_Y_minus_mu_n": -6.064159922492218,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04581261280697756,
+        "2": 0.016141231455308155,
+        "4": 0.0018342308471941083
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.01619720458984375,
+        "2": 0.005706787109375,
+        "4": 0.00064849853515625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": 4,
+      "theta_sign": -1,
+      "log_abs_theta": 7.120713901724525,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71323249,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -10.658164798121069,
+      "mean_Y": -1.1282738669180807,
+      "mean_Y_minus_mu_n": -11.355990209006672,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.00794114060902861,
+        "2": 0.0027621358640099515,
+        "4": 0.0007768507117527989
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0028076171875,
+        "2": 0.0009765625,
+        "4": 0.000274658203125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": 4,
+      "theta_sign": -1,
+      "log_abs_theta": 7.120713901724525,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71325251,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -10.650318450627577,
+      "mean_Y": -1.1277165848055999,
+      "mean_Y_minus_mu_n": -11.355432926894192,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.008286407592029855,
+        "2": 0.003128982033448773,
+        "4": 0.0004315837287515549
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0029296875,
+        "2": 0.00110626220703125,
+        "4": 0.000152587890625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": 4,
+      "theta_sign": 1,
+      "log_abs_theta": 7.120713901724525,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71323263,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -10.666678570479391,
+      "mean_Y": -1.1227768173114816,
+      "mean_Y_minus_mu_n": -11.350493159400074,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.011048543456039806,
+        "2": 0.0035389865757627505,
+        "4": 0.00034526698300124393
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00390625,
+        "2": 0.001251220703125,
+        "4": 0.0001220703125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 8,
+      "beta": 4,
+      "theta_sign": 1,
+      "log_abs_theta": 7.120713901724525,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71325265,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -10.643118454729844,
+      "mean_Y": -1.1223487217525745,
+      "mean_Y_minus_mu_n": -11.350065063841166,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.010854330778101606,
+        "2": 0.004056887050264617,
+        "4": 0.0005826380338145991
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00383758544921875,
+        "2": 0.001434326171875,
+        "4": 0.00020599365234375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": -4,
+      "theta_sign": -1,
+      "log_abs_theta": -24.385989194520473,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71331001,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.7190578333359596,
+      "mean_Y": 20.410122988029002,
+      "mean_Y_minus_mu_n": -0.04530969614818048,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.00830078125,
+        "2": 0.0023193359375,
+        "4": 0.0003662109375
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0020751953125,
+        "2": 0.000579833984375,
+        "4": 9.1552734375e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": -4,
+      "theta_sign": -1,
+      "log_abs_theta": -24.385989194520473,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71333003,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.718183498000414,
+      "mean_Y": 20.408633095985515,
+      "mean_Y_minus_mu_n": -0.04679958819166785,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.01019287109375,
+        "2": 0.0030517578125,
+        "4": 0.00018310546875
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0025482177734375,
+        "2": 0.000762939453125,
+        "4": 4.57763671875e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": -4,
+      "theta_sign": 1,
+      "log_abs_theta": -24.385989194520473,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71331015,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.70636080238571,
+      "mean_Y": 20.40823221482143,
+      "mean_Y_minus_mu_n": -0.04720046935575084,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.009033203125,
+        "2": 0.001953125,
+        "4": 0.000244140625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00225830078125,
+        "2": 0.00048828125,
+        "4": 6.103515625e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": -4,
+      "theta_sign": 1,
+      "log_abs_theta": -24.385989194520473,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71333017,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6928433917899213,
+      "mean_Y": 20.410329029708063,
+      "mean_Y_minus_mu_n": -0.0451036544691199,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.00946044921875,
+        "2": 0.003448486328125,
+        "4": 0.00054931640625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0023651123046875,
+        "2": 0.00086212158203125,
+        "4": 0.0001373291015625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": -2,
+      "theta_sign": -1,
+      "log_abs_theta": -16.385989194520473,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71331063,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6204529596651724,
+      "mean_Y": 19.88210068867655,
+      "mean_Y_minus_mu_n": -0.5733319955006309,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0478515625,
+        "2": 0.01806640625,
+        "4": 0.0018310546875
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.011962890625,
+        "2": 0.0045166015625,
+        "4": 0.000457763671875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": -2,
+      "theta_sign": -1,
+      "log_abs_theta": -16.385989194520473,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71333065,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6409694390623812,
+      "mean_Y": 19.885650640931708,
+      "mean_Y_minus_mu_n": -0.5697820432454748,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04742431640625,
+        "2": 0.016876220703125,
+        "4": 0.002105712890625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0118560791015625,
+        "2": 0.00421905517578125,
+        "4": 0.00052642822265625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": -2,
+      "theta_sign": 1,
+      "log_abs_theta": -16.385989194520473,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71331077,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6234697640237741,
+      "mean_Y": 19.880991940428917,
+      "mean_Y_minus_mu_n": -0.5744407437482657,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.046142578125,
+        "2": 0.0184326171875,
+        "4": 0.002685546875
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.01153564453125,
+        "2": 0.004608154296875,
+        "4": 0.00067138671875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": -2,
+      "theta_sign": 1,
+      "log_abs_theta": -16.385989194520473,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71333079,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6276674878982043,
+      "mean_Y": 19.88698684537568,
+      "mean_Y_minus_mu_n": -0.5684458388015017,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.048736572265625,
+        "2": 0.016845703125,
+        "4": 0.00201416015625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.01218414306640625,
+        "2": 0.00421142578125,
+        "4": 0.0005035400390625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": 0,
+      "theta_sign": -1,
+      "log_abs_theta": -8.385989194520473,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71331125,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -2.0445615431484505,
+      "mean_Y": 17.41058670546119,
+      "mean_Y_minus_mu_n": -3.044845978715994,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0772705078125,
+        "2": 0.027099609375,
+        "4": 0.004150390625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.019317626953125,
+        "2": 0.00677490234375,
+        "4": 0.00103759765625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": 0,
+      "theta_sign": -1,
+      "log_abs_theta": -8.385989194520473,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71333127,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -2.0421822699781558,
+      "mean_Y": 17.412640839307127,
+      "mean_Y_minus_mu_n": -3.042791844870056,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.080291748046875,
+        "2": 0.026580810546875,
+        "4": 0.003631591796875
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.02007293701171875,
+        "2": 0.00664520263671875,
+        "4": 0.00090789794921875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": 0,
+      "theta_sign": 1,
+      "log_abs_theta": -8.385989194520473,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71331139,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -2.041713880949125,
+      "mean_Y": 17.409713177324914,
+      "mean_Y_minus_mu_n": -3.0457195068522687,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.07666015625,
+        "2": 0.02685546875,
+        "4": 0.0030517578125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0191650390625,
+        "2": 0.0067138671875,
+        "4": 0.000762939453125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": 0,
+      "theta_sign": 1,
+      "log_abs_theta": -8.385989194520473,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71333141,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -2.041875841378115,
+      "mean_Y": 17.4143574974835,
+      "mean_Y_minus_mu_n": -3.041075186693682,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0789794921875,
+        "2": 0.027313232421875,
+        "4": 0.00390625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.019744873046875,
+        "2": 0.00682830810546875,
+        "4": 0.0009765625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": 2,
+      "theta_sign": -1,
+      "log_abs_theta": -0.385989194520473,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71331187,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -7.556310644172534,
+      "mean_Y": 11.865535319276766,
+      "mean_Y_minus_mu_n": -8.589897364900416,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0489501953125,
+        "2": 0.0189208984375,
+        "4": 0.0023193359375
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.012237548828125,
+        "2": 0.004730224609375,
+        "4": 0.000579833984375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": 2,
+      "theta_sign": -1,
+      "log_abs_theta": -0.385989194520473,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71333189,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -7.543149012442289,
+      "mean_Y": 11.862035071250713,
+      "mean_Y_minus_mu_n": -8.59339761292647,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.047698974609375,
+        "2": 0.016876220703125,
+        "4": 0.00250244140625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.01192474365234375,
+        "2": 0.00421905517578125,
+        "4": 0.0006256103515625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": 2,
+      "theta_sign": 1,
+      "log_abs_theta": -0.385989194520473,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71331201,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -7.531380813307308,
+      "mean_Y": 11.863989166557968,
+      "mean_Y_minus_mu_n": -8.591443517619215,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.046630859375,
+        "2": 0.015869140625,
+        "4": 0.001953125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.01165771484375,
+        "2": 0.00396728515625,
+        "4": 0.00048828125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": 2,
+      "theta_sign": 1,
+      "log_abs_theta": -0.385989194520473,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71333203,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -7.539968001284841,
+      "mean_Y": 11.859527823596396,
+      "mean_Y_minus_mu_n": -8.595904860580786,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0438232421875,
+        "2": 0.0155029296875,
+        "4": 0.002593994140625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.010955810546875,
+        "2": 0.003875732421875,
+        "4": 0.00064849853515625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": 4,
+      "theta_sign": -1,
+      "log_abs_theta": 7.614010805479527,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71331249,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -15.330486647050966,
+      "mean_Y": 4.401855464863912,
+      "mean_Y_minus_mu_n": -16.05357721931327,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.010498046875,
+        "2": 0.0037841796875,
+        "4": 0.00048828125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00262451171875,
+        "2": 0.000946044921875,
+        "4": 0.0001220703125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": 4,
+      "theta_sign": -1,
+      "log_abs_theta": 7.614010805479527,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71333251,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -15.320903366221337,
+      "mean_Y": 4.397713877002632,
+      "mean_Y_minus_mu_n": -16.057718807174552,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.00933837890625,
+        "2": 0.003570556640625,
+        "4": 0.000518798828125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0023345947265625,
+        "2": 0.00089263916015625,
+        "4": 0.00012969970703125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": 4,
+      "theta_sign": 1,
+      "log_abs_theta": 7.614010805479527,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71331263,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -15.335055538762708,
+      "mean_Y": 4.398867178813213,
+      "mean_Y_minus_mu_n": -16.05656550536397,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.009765625,
+        "2": 0.0035400390625,
+        "4": 0.0006103515625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00244140625,
+        "2": 0.000885009765625,
+        "4": 0.000152587890625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 16,
+      "beta": 4,
+      "theta_sign": 1,
+      "log_abs_theta": 7.614010805479527,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71333265,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -15.336697575234844,
+      "mean_Y": 4.398139560779704,
+      "mean_Y_minus_mu_n": -16.05729312339748,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.009124755859375,
+        "2": 0.00335693359375,
+        "4": 0.000244140625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00228118896484375,
+        "2": 0.0008392333984375,
+        "4": 6.103515625e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": -4,
+      "theta_sign": -1,
+      "log_abs_theta": -39.39939538701047,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71347001,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6826293731212232,
+      "mean_Y": 40.83536905480257,
+      "mean_Y_minus_mu_n": -0.07549631355179542,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.00966747552403483,
+        "2": 0.0022442353895080857,
+        "4": 0.00034526698300124393
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.001708984375,
+        "2": 0.000396728515625,
+        "4": 6.103515625e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": -4,
+      "theta_sign": -1,
+      "log_abs_theta": -39.39939538701047,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71349003,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.7046925802402484,
+      "mean_Y": 40.838825916422806,
+      "mean_Y_minus_mu_n": -0.07203945193155903,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.00927905016815843,
+        "2": 0.003409511457137284,
+        "4": 0.00034526698300124393
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00164031982421875,
+        "2": 0.00060272216796875,
+        "4": 6.103515625e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": -4,
+      "theta_sign": 1,
+      "log_abs_theta": -39.39939538701047,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71347015,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6877911314930074,
+      "mean_Y": 40.84087574628147,
+      "mean_Y_minus_mu_n": -0.06998962207289594,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.00794114060902861,
+        "2": 0.0027621358640099515,
+        "4": 0.0005179004745018659
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00140380859375,
+        "2": 0.00048828125,
+        "4": 9.1552734375e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": -4,
+      "theta_sign": 1,
+      "log_abs_theta": -39.39939538701047,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71349017,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.7082288398033256,
+      "mean_Y": 40.840576910237516,
+      "mean_Y_minus_mu_n": -0.07028845811684903,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.009710633896909985,
+        "2": 0.0034958282028875946,
+        "4": 0.0003021086101260884
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00171661376953125,
+        "2": 0.00061798095703125,
+        "4": 5.340576171875e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": -2,
+      "theta_sign": -1,
+      "log_abs_theta": -28.085686888025705,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71347063,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.5397070290311206,
+      "mean_Y": 40.0791026942058,
+      "mean_Y_minus_mu_n": -0.831762674148564,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.046093142230666066,
+        "2": 0.016054914709557843,
+        "4": 0.0022442353895080857
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.008148193359375,
+        "2": 0.002838134765625,
+        "4": 0.000396728515625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": -2,
+      "theta_sign": -1,
+      "log_abs_theta": -28.085686888025705,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71349065,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.5393082771319584,
+      "mean_Y": 40.08513077279524,
+      "mean_Y_minus_mu_n": -0.8257345955591262,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04872580297605055,
+        "2": 0.016098073082433,
+        "4": 0.0020716018980074637
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00861358642578125,
+        "2": 0.00284576416015625,
+        "4": 0.0003662109375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": -2,
+      "theta_sign": 1,
+      "log_abs_theta": -28.085686888025705,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71347077,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.5227291914694376,
+      "mean_Y": 40.08107376092367,
+      "mean_Y_minus_mu_n": -0.8297916074306926,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04764684365417166,
+        "2": 0.015019113760554112,
+        "4": 0.0020716018980074637
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0084228515625,
+        "2": 0.002655029296875,
+        "4": 0.0003662109375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": -2,
+      "theta_sign": 1,
+      "log_abs_theta": -28.085686888025705,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71349079,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.5368501626469424,
+      "mean_Y": 40.08319607328342,
+      "mean_Y_minus_mu_n": -0.8276692950709474,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04691315131529402,
+        "2": 0.01752229938731313,
+        "4": 0.0020284435251323083
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00829315185546875,
+        "2": 0.0030975341796875,
+        "4": 0.00035858154296875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": 0,
+      "theta_sign": -1,
+      "log_abs_theta": -16.771978389040946,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71347125,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -3.1969301422178447,
+      "mean_Y": 36.564689938443394,
+      "mean_Y_minus_mu_n": -4.346175429910971,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.07647663673477553,
+        "2": 0.025895023725093294,
+        "4": 0.005179004745018659
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.013519287109375,
+        "2": 0.00457763671875,
+        "4": 0.00091552734375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": 0,
+      "theta_sign": -1,
+      "log_abs_theta": -16.771978389040946,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71349127,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -3.195448704005983,
+      "mean_Y": 36.573618887872385,
+      "mean_Y_minus_mu_n": -4.33724648048198,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.07820297164978175,
+        "2": 0.026671874436846092,
+        "4": 0.0038410951858888387
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.013824462890625,
+        "2": 0.0047149658203125,
+        "4": 0.00067901611328125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": 0,
+      "theta_sign": 1,
+      "log_abs_theta": -16.771978389040946,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71347139,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -3.1833974021184304,
+      "mean_Y": 36.577115934347404,
+      "mean_Y_minus_mu_n": -4.333749434006961,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.07664927022627616,
+        "2": 0.026067657216593917,
+        "4": 0.0027621358640099515
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0135498046875,
+        "2": 0.004608154296875,
+        "4": 0.00048828125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": 0,
+      "theta_sign": 1,
+      "log_abs_theta": -16.771978389040946,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71349141,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -3.200429595084671,
+      "mean_Y": 36.57347781863193,
+      "mean_Y_minus_mu_n": -4.337387549722436,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.07949772283603641,
+        "2": 0.02775083375872498,
+        "4": 0.0036684616943882167
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0140533447265625,
+        "2": 0.00490570068359375,
+        "4": 0.00064849853515625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": 2,
+      "theta_sign": -1,
+      "log_abs_theta": -5.458269890056185,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71347187,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -11.017387869649866,
+      "mean_Y": 28.743853648465702,
+      "mean_Y_minus_mu_n": -12.167011719888663,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04885527809467602,
+        "2": 0.017090715658561576,
+        "4": 0.0027621358640099515
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.008636474609375,
+        "2": 0.003021240234375,
+        "4": 0.00048828125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": 2,
+      "theta_sign": -1,
+      "log_abs_theta": -5.458269890056185,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71349189,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -10.971319254989012,
+      "mean_Y": 28.745756289786655,
+      "mean_Y_minus_mu_n": -12.16510907856771,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.046006825484915755,
+        "2": 0.015752806099431756,
+        "4": 0.0020284435251323083
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0081329345703125,
+        "2": 0.00278472900390625,
+        "4": 0.00035858154296875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": 2,
+      "theta_sign": 1,
+      "log_abs_theta": -5.458269890056185,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71347201,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -10.986975802560323,
+      "mean_Y": 28.7481930382988,
+      "mean_Y_minus_mu_n": -12.162672330055564,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.047819477145672286,
+        "2": 0.017953883116064686,
+        "4": 0.0025895023725093294
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.008453369140625,
+        "2": 0.003173828125,
+        "4": 0.000457763671875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": 2,
+      "theta_sign": 1,
+      "log_abs_theta": -5.458269890056185,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71349203,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -10.981379413670233,
+      "mean_Y": 28.743412827294662,
+      "mean_Y_minus_mu_n": -12.167452541059703,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04186362168890083,
+        "2": 0.0149327970148038,
+        "4": 0.0018126516607565306
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0074005126953125,
+        "2": 0.0026397705078125,
+        "4": 0.0003204345703125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": 4,
+      "theta_sign": -1,
+      "log_abs_theta": 5.855438608928576,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71347249,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -21.95639297930591,
+      "mean_Y": 18.201411497397384,
+      "mean_Y_minus_mu_n": -22.70945387095698,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.01053064298153794,
+        "2": 0.003970570304514305,
+        "4": 0.0008631674575031098
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.001861572265625,
+        "2": 0.000701904296875,
+        "4": 0.000152587890625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": 4,
+      "theta_sign": -1,
+      "log_abs_theta": 5.855438608928576,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71349251,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -21.961994409000418,
+      "mean_Y": 18.20307670676786,
+      "mean_Y_minus_mu_n": -22.707788661586505,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.00880430806653172,
+        "2": 0.003409511457137284,
+        "4": 0.00038842535587639944
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.001556396484375,
+        "2": 0.00060272216796875,
+        "4": 6.866455078125e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": 4,
+      "theta_sign": 1,
+      "log_abs_theta": 5.855438608928576,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71347263,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -21.951992919055797,
+      "mean_Y": 18.204318611347908,
+      "mean_Y_minus_mu_n": -22.706546757006457,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.007595873626027367,
+        "2": 0.0027621358640099515,
+        "4": 0.00034526698300124393
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0013427734375,
+        "2": 0.00048828125,
+        "4": 6.103515625e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 32,
+      "beta": 4,
+      "theta_sign": 1,
+      "log_abs_theta": 5.855438608928576,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71349265,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -21.98709160516586,
+      "mean_Y": 18.201150784028478,
+      "mean_Y_minus_mu_n": -22.709714584325887,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.00919273342240812,
+        "2": 0.0034958282028875946,
+        "4": 0.0004747421016267104
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00162506103515625,
+        "2": 0.00061798095703125,
+        "4": 8.392333984375e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": -4,
+      "theta_sign": -1,
+      "log_abs_theta": -65.54395677808189,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71379001,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6996886815231989,
+      "mean_Y": 81.72572034744076,
+      "mean_Y_minus_mu_n": -0.096010389267974,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.01220703125,
+        "2": 0.00390625,
+        "4": 0.000732421875
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00152587890625,
+        "2": 0.00048828125,
+        "4": 9.1552734375e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": -4,
+      "theta_sign": -1,
+      "log_abs_theta": -65.54395677808189,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71381003,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.7271060210182441,
+      "mean_Y": 81.7133640413845,
+      "mean_Y_minus_mu_n": -0.1083666953242357,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.00860595703125,
+        "2": 0.00274658203125,
+        "4": 0.0003662109375
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00107574462890625,
+        "2": 0.00034332275390625,
+        "4": 4.57763671875e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": -4,
+      "theta_sign": 1,
+      "log_abs_theta": -65.54395677808189,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71379015,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.7456869396556272,
+      "mean_Y": 81.71904707314017,
+      "mean_Y_minus_mu_n": -0.10268366356855552,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.009033203125,
+        "2": 0.003173828125,
+        "4": 0.00048828125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.001129150390625,
+        "2": 0.000396728515625,
+        "4": 6.103515625e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": -4,
+      "theta_sign": 1,
+      "log_abs_theta": -65.54395677808189,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71381017,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6953972739581502,
+      "mean_Y": 81.7194909549381,
+      "mean_Y_minus_mu_n": -0.10223978177063486,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.00921630859375,
+        "2": 0.0029296875,
+        "4": 0.0003662109375
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00115203857421875,
+        "2": 0.0003662109375,
+        "4": 4.57763671875e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": -2,
+      "theta_sign": -1,
+      "log_abs_theta": -49.54395677808189,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71379063,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.4095063698603951,
+      "mean_Y": 80.64435457470549,
+      "mean_Y_minus_mu_n": -1.1773761620032417,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.048828125,
+        "2": 0.016357421875,
+        "4": 0.002197265625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.006103515625,
+        "2": 0.002044677734375,
+        "4": 0.000274658203125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": -2,
+      "theta_sign": -1,
+      "log_abs_theta": -49.54395677808189,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71381065,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.40437932014502564,
+      "mean_Y": 80.63744994499143,
+      "mean_Y_minus_mu_n": -1.184280791717299,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04608154296875,
+        "2": 0.0157470703125,
+        "4": 0.00225830078125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00576019287109375,
+        "2": 0.0019683837890625,
+        "4": 0.00028228759765625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": -2,
+      "theta_sign": 1,
+      "log_abs_theta": -49.54395677808189,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71379077,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.4576173414278628,
+      "mean_Y": 80.64014125677474,
+      "mean_Y_minus_mu_n": -1.18158947993399,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.050048828125,
+        "2": 0.015869140625,
+        "4": 0.001220703125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.006256103515625,
+        "2": 0.001983642578125,
+        "4": 0.000152587890625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": -2,
+      "theta_sign": 1,
+      "log_abs_theta": -49.54395677808189,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71381079,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.4214235024922601,
+      "mean_Y": 80.6346700932803,
+      "mean_Y_minus_mu_n": -1.187060643428424,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0494384765625,
+        "2": 0.0177001953125,
+        "4": 0.0020751953125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0061798095703125,
+        "2": 0.0022125244140625,
+        "4": 0.0002593994140625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": 0,
+      "theta_sign": -1,
+      "log_abs_theta": -33.54395677808189,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71379125,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -4.8585832633331165,
+      "mean_Y": 75.66053891739891,
+      "mean_Y_minus_mu_n": -6.1611918193098205,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.08203125,
+        "2": 0.031982421875,
+        "4": 0.0048828125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.01025390625,
+        "2": 0.003997802734375,
+        "4": 0.0006103515625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": 0,
+      "theta_sign": -1,
+      "log_abs_theta": -33.54395677808189,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71381127,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -4.837306235976854,
+      "mean_Y": 75.66929553512777,
+      "mean_Y_minus_mu_n": -6.152435201580957,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0789794921875,
+        "2": 0.02679443359375,
+        "4": 0.00341796875
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0098724365234375,
+        "2": 0.00334930419921875,
+        "4": 0.00042724609375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": 0,
+      "theta_sign": 1,
+      "log_abs_theta": -33.54395677808189,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71379139,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -4.876443403632408,
+      "mean_Y": 75.65586919396792,
+      "mean_Y_minus_mu_n": -6.165861542740814,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0791015625,
+        "2": 0.03076171875,
+        "4": 0.004638671875
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0098876953125,
+        "2": 0.00384521484375,
+        "4": 0.000579833984375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": 0,
+      "theta_sign": 1,
+      "log_abs_theta": -33.54395677808189,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71381141,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -4.832179063675667,
+      "mean_Y": 75.65870231789856,
+      "mean_Y_minus_mu_n": -6.163028418810171,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.07916259765625,
+        "2": 0.0286865234375,
+        "4": 0.0050048828125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00989532470703125,
+        "2": 0.0035858154296875,
+        "4": 0.0006256103515625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": 2,
+      "theta_sign": -1,
+      "log_abs_theta": -17.543956778081892,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71379187,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -15.863073829461456,
+      "mean_Y": 64.61401702680996,
+      "mean_Y_minus_mu_n": -17.20771370989877,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.047607421875,
+        "2": 0.01708984375,
+        "4": 0.001953125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.005950927734375,
+        "2": 0.00213623046875,
+        "4": 0.000244140625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": 2,
+      "theta_sign": -1,
+      "log_abs_theta": -17.543956778081892,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71381189,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -15.866675459422282,
+      "mean_Y": 64.60978854220508,
+      "mean_Y_minus_mu_n": -17.21194219450365,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0445556640625,
+        "2": 0.0162353515625,
+        "4": 0.00201416015625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0055694580078125,
+        "2": 0.0020294189453125,
+        "4": 0.00025177001953125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": 2,
+      "theta_sign": 1,
+      "log_abs_theta": -17.543956778081892,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71379201,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -15.842320843860477,
+      "mean_Y": 64.59642049506382,
+      "mean_Y_minus_mu_n": -17.225310241644905,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04150390625,
+        "2": 0.012939453125,
+        "4": 0.0029296875
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00518798828125,
+        "2": 0.001617431640625,
+        "4": 0.0003662109375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": 2,
+      "theta_sign": 1,
+      "log_abs_theta": -17.543956778081892,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71381203,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -15.859035174382512,
+      "mean_Y": 64.60137659639516,
+      "mean_Y_minus_mu_n": -17.220354140313574,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04547119140625,
+        "2": 0.01483154296875,
+        "4": 0.0023193359375
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00568389892578125,
+        "2": 0.00185394287109375,
+        "4": 0.0002899169921875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": 4,
+      "theta_sign": -1,
+      "log_abs_theta": -1.543956778081892,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71379249,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -31.35803986865386,
+      "mean_Y": 49.70463405926421,
+      "mean_Y_minus_mu_n": -32.11709667744452,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0087890625,
+        "2": 0.002685546875,
+        "4": 0.00048828125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0010986328125,
+        "2": 0.000335693359375,
+        "4": 6.103515625e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": 4,
+      "theta_sign": -1,
+      "log_abs_theta": -1.543956778081892,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71381251,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -31.318245095421602,
+      "mean_Y": 49.706560950837755,
+      "mean_Y_minus_mu_n": -32.115169785870975,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.01116943359375,
+        "2": 0.00390625,
+        "4": 0.00048828125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00139617919921875,
+        "2": 0.00048828125,
+        "4": 6.103515625e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": 4,
+      "theta_sign": 1,
+      "log_abs_theta": -1.543956778081892,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71379263,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -31.369311631091364,
+      "mean_Y": 49.71021976663475,
+      "mean_Y_minus_mu_n": -32.11151097007398,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.014404296875,
+        "2": 0.00439453125,
+        "4": 0.000244140625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.001800537109375,
+        "2": 0.00054931640625,
+        "4": 3.0517578125e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 64,
+      "beta": 4,
+      "theta_sign": 1,
+      "log_abs_theta": -1.543956778081892,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71381265,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -31.32953301338543,
+      "mean_Y": 49.704113474618325,
+      "mean_Y_minus_mu_n": -32.117617262090405,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.00970458984375,
+        "2": 0.003173828125,
+        "4": 0.0003662109375
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00121307373046875,
+        "2": 0.000396728515625,
+        "4": 4.57763671875e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": -4,
+      "theta_sign": -1,
+      "log_abs_theta": -112.34274755210282,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71443001,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6910549648879964,
+      "mean_Y": 163.49446779554108,
+      "mean_Y_minus_mu_n": -0.1489936778763763,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.010358009490037318,
+        "2": 0.003452669830012439,
+        "4": 0.00034526698300124393
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00091552734375,
+        "2": 0.00030517578125,
+        "4": 3.0517578125e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": -4,
+      "theta_sign": -1,
+      "log_abs_theta": -112.34274755210282,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71445003,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.7065074570817274,
+      "mean_Y": 163.49315367368484,
+      "mean_Y_minus_mu_n": -0.15030779973261588,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.00871799132078141,
+        "2": 0.0033663530842621284,
+        "4": 0.00034526698300124393
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00077056884765625,
+        "2": 0.00029754638671875,
+        "4": 3.0517578125e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": -4,
+      "theta_sign": 1,
+      "log_abs_theta": -112.34274755210282,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71443015,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6959779787868285,
+      "mean_Y": 163.49576686231705,
+      "mean_Y_minus_mu_n": -0.14769461110040538,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.008631674575031098,
+        "2": 0.0027621358640099515,
+        "4": 0.0006905339660024879
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.000762939453125,
+        "2": 0.000244140625,
+        "4": 6.103515625e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": -4,
+      "theta_sign": 1,
+      "log_abs_theta": -112.34274755210282,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71445017,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.7039278583926034,
+      "mean_Y": 163.4918860879148,
+      "mean_Y_minus_mu_n": -0.15157538550266736,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.009322208541033586,
+        "2": 0.0025895023725093294,
+        "4": 0.0005179004745018659
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.000823974609375,
+        "2": 0.0002288818359375,
+        "4": 4.57763671875e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": -2,
+      "theta_sign": -1,
+      "log_abs_theta": -89.7153305541333,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71443063,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.2773179289850418,
+      "mean_Y": 161.96787977417884,
+      "mean_Y_minus_mu_n": -1.67558169923862,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04971844555217913,
+        "2": 0.017953883116064686,
+        "4": 0.003452669830012439
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00439453125,
+        "2": 0.0015869140625,
+        "4": 0.00030517578125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": -2,
+      "theta_sign": -1,
+      "log_abs_theta": -89.7153305541333,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71445065,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.19053678677187236,
+      "mean_Y": 161.94273933681063,
+      "mean_Y_minus_mu_n": -1.700722136606828,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.05101319673843379,
+        "2": 0.019766534776821214,
+        "4": 0.0030210861012608843
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00450897216796875,
+        "2": 0.00174713134765625,
+        "4": 0.00026702880859375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": -2,
+      "theta_sign": 1,
+      "log_abs_theta": -89.7153305541333,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71443077,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.24499000181322117,
+      "mean_Y": 161.94002489258412,
+      "mean_Y_minus_mu_n": -1.7034365808333405,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04350363985815674,
+        "2": 0.01760861613306344,
+        "4": 0.0024168688810087074
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00384521484375,
+        "2": 0.001556396484375,
+        "4": 0.000213623046875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": -2,
+      "theta_sign": 1,
+      "log_abs_theta": -89.7153305541333,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71445079,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.16412610780457726,
+      "mean_Y": 161.93384604749258,
+      "mean_Y_minus_mu_n": -1.7096154259248806,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04626577572216669,
+        "2": 0.016486498438309398,
+        "4": 0.0017263349150062196
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00408935546875,
+        "2": 0.00145721435546875,
+        "4": 0.000152587890625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": 0,
+      "theta_sign": -1,
+      "log_abs_theta": -67.08791355616378,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71443125,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -7.195292311427977,
+      "mean_Y": 154.89369832865896,
+      "mean_Y_minus_mu_n": -8.749763144758504,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.07457766832826869,
+        "2": 0.023132887861083345,
+        "4": 0.0020716018980074637
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.006591796875,
+        "2": 0.002044677734375,
+        "4": 0.00018310546875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": 0,
+      "theta_sign": -1,
+      "log_abs_theta": -67.08791355616378,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71445127,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -7.139353602627381,
+      "mean_Y": 154.92430883100172,
+      "mean_Y_minus_mu_n": -8.719152642415736,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.07915245585303517,
+        "2": 0.030556127995610086,
+        "4": 0.004920054507767726
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00699615478515625,
+        "2": 0.0027008056640625,
+        "4": 0.00043487548828125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": 0,
+      "theta_sign": 1,
+      "log_abs_theta": -67.08791355616378,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71443139,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -7.2175916081674245,
+      "mean_Y": 154.9111931659765,
+      "mean_Y_minus_mu_n": -8.732268307440961,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.08424514385230351,
+        "2": 0.027621358640099514,
+        "4": 0.0031074028470111956
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0074462890625,
+        "2": 0.00244140625,
+        "4": 0.000274658203125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": 0,
+      "theta_sign": 1,
+      "log_abs_theta": -67.08791355616378,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71445141,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -7.184266499682792,
+      "mean_Y": 154.9120961559629,
+      "mean_Y_minus_mu_n": -8.73136531745456,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.08191459171704513,
+        "2": 0.027448725148598894,
+        "4": 0.004143203796014927
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00724029541015625,
+        "2": 0.0024261474609375,
+        "4": 0.0003662109375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": 2,
+      "theta_sign": -1,
+      "log_abs_theta": -44.460496558194265,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71443187,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -22.75381336537356,
+      "mean_Y": 139.29157258374303,
+      "mean_Y_minus_mu_n": -24.351888889674427,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04350363985815674,
+        "2": 0.015537014235055976,
+        "4": 0.0020716018980074637
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00384521484375,
+        "2": 0.001373291015625,
+        "4": 0.00018310546875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": 2,
+      "theta_sign": -1,
+      "log_abs_theta": -44.460496558194265,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71445189,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -22.73789495650891,
+      "mean_Y": 139.29698248792897,
+      "mean_Y_minus_mu_n": -24.34647898548849,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04566155850191451,
+        "2": 0.01665913192981002,
+        "4": 0.0016400181692559086
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00403594970703125,
+        "2": 0.00147247314453125,
+        "4": 0.00014495849609375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": 2,
+      "theta_sign": 1,
+      "log_abs_theta": -44.460496558194265,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71443201,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -22.70541901747299,
+      "mean_Y": 139.30062768591335,
+      "mean_Y_minus_mu_n": -24.342833787504105,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04350363985815674,
+        "2": 0.011393810439041049,
+        "4": 0.00034526698300124393
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00384521484375,
+        "2": 0.001007080078125,
+        "4": 3.0517578125e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": 2,
+      "theta_sign": 1,
+      "log_abs_theta": -44.460496558194265,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71445203,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -22.746595203190083,
+      "mean_Y": 139.29422079100573,
+      "mean_Y_minus_mu_n": -24.349240682411732,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04980476229792944,
+        "2": 0.0157096477265566,
+        "4": 0.0018126516607565306
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00440216064453125,
+        "2": 0.0013885498046875,
+        "4": 0.00016021728515625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": 4,
+      "theta_sign": -1,
+      "log_abs_theta": -21.83307956022474,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71443249,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -44.579130008716646,
+      "mean_Y": 118.23321040892377,
+      "mean_Y_minus_mu_n": -45.41025106449369,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.006905339660024878,
+        "2": 0.0024168688810087074,
+        "4": 0.0010358009490037319
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0006103515625,
+        "2": 0.000213623046875,
+        "4": 9.1552734375e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": 4,
+      "theta_sign": -1,
+      "log_abs_theta": -21.83307956022474,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71445251,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -44.62544736695146,
+      "mean_Y": 118.2297070318444,
+      "mean_Y_minus_mu_n": -45.41375444157306,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.011048543456039806,
+        "2": 0.0037979368130136833,
+        "4": 0.0005179004745018659
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0009765625,
+        "2": 0.000335693359375,
+        "4": 4.57763671875e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": 4,
+      "theta_sign": 1,
+      "log_abs_theta": -21.83307956022474,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71443263,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -44.61394264213473,
+      "mean_Y": 118.22806323297567,
+      "mean_Y_minus_mu_n": -45.41539824044179,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.010012742507036074,
+        "2": 0.0031074028470111956,
+        "4": 0.0006905339660024879
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.000885009765625,
+        "2": 0.000274658203125,
+        "4": 6.103515625e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 128,
+      "beta": 4,
+      "theta_sign": 1,
+      "log_abs_theta": -21.83307956022474,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71445265,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -44.59581654642582,
+      "mean_Y": 118.23221494803471,
+      "mean_Y_minus_mu_n": -45.41124652538275,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.008890624812282031,
+        "2": 0.0028484526097602623,
+        "4": 0.00017263349150062197
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00078582763671875,
+        "2": 0.00025177001953125,
+        "4": 1.52587890625e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": -4,
+      "theta_sign": -1,
+      "log_abs_theta": -198.17582711232757,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71571001,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6707845203419538,
+      "mean_Y": 327.081998011217,
+      "mean_Y_minus_mu_n": -0.20492493561789615,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.01123046875,
+        "2": 0.0048828125,
+        "4": 0.0009765625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.000701904296875,
+        "2": 0.00030517578125,
+        "4": 6.103515625e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": -4,
+      "theta_sign": -1,
+      "log_abs_theta": -198.17582711232757,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71573003,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6793099489709107,
+      "mean_Y": 327.068886507534,
+      "mean_Y_minus_mu_n": -0.2180364393009313,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0103759765625,
+        "2": 0.003173828125,
+        "4": 0.00048828125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00064849853515625,
+        "2": 0.0001983642578125,
+        "4": 3.0517578125e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": -4,
+      "theta_sign": 1,
+      "log_abs_theta": -198.17582711232757,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71571015,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.7339312240517302,
+      "mean_Y": 327.08341807116005,
+      "mean_Y_minus_mu_n": -0.20350487567486653,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.005859375,
+        "2": 0.001953125,
+        "4": 0.0
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0003662109375,
+        "2": 0.0001220703125,
+        "4": 0.0
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": -4,
+      "theta_sign": 1,
+      "log_abs_theta": -198.17582711232757,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71573017,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6483533857435759,
+      "mean_Y": 327.0717385189803,
+      "mean_Y_minus_mu_n": -0.21518442785463776,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0107421875,
+        "2": 0.0040283203125,
+        "4": 0.0006103515625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00067138671875,
+        "2": 0.00025177001953125,
+        "4": 3.814697265625e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": -2,
+      "theta_sign": -1,
+      "log_abs_theta": -166.17582711232757,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71571063,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -0.039212989177826785,
+      "mean_Y": 324.8981004487184,
+      "mean_Y_minus_mu_n": -2.3888224981164967,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04931640625,
+        "2": 0.0185546875,
+        "4": 0.0009765625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.003082275390625,
+        "2": 0.00115966796875,
+        "4": 6.103515625e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": -2,
+      "theta_sign": -1,
+      "log_abs_theta": -166.17582711232757,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71573065,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -0.03669797728792901,
+      "mean_Y": 324.8809324558151,
+      "mean_Y_minus_mu_n": -2.405990491019793,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0484619140625,
+        "2": 0.0167236328125,
+        "4": 0.002685546875
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00302886962890625,
+        "2": 0.00104522705078125,
+        "4": 0.0001678466796875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": -2,
+      "theta_sign": 1,
+      "log_abs_theta": -166.17582711232757,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71571077,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -0.13230750102331967,
+      "mean_Y": 324.8910898743046,
+      "mean_Y_minus_mu_n": -2.3958330725303085,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.05078125,
+        "2": 0.01953125,
+        "4": 0.001953125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.003173828125,
+        "2": 0.001220703125,
+        "4": 0.0001220703125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": -2,
+      "theta_sign": 1,
+      "log_abs_theta": -166.17582711232757,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71573079,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.013014849316959953,
+      "mean_Y": 324.89215708499745,
+      "mean_Y_minus_mu_n": -2.3947658618374703,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.046630859375,
+        "2": 0.0169677734375,
+        "4": 0.0020751953125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0029144287109375,
+        "2": 0.00106048583984375,
+        "4": 0.00012969970703125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": 0,
+      "theta_sign": -1,
+      "log_abs_theta": -134.17582711232757,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71571125,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -10.421057572156542,
+      "mean_Y": 314.9618533742597,
+      "mean_Y_minus_mu_n": -12.325069572575217,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.09765625,
+        "2": 0.03369140625,
+        "4": 0.00537109375
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.006103515625,
+        "2": 0.002105712890625,
+        "4": 0.000335693359375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": 0,
+      "theta_sign": -1,
+      "log_abs_theta": -134.17582711232757,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71573127,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -10.439061997983686,
+      "mean_Y": 314.93549809930374,
+      "mean_Y_minus_mu_n": -12.351424847531177,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0797119140625,
+        "2": 0.0294189453125,
+        "4": 0.0045166015625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00498199462890625,
+        "2": 0.00183868408203125,
+        "4": 0.00028228759765625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": 0,
+      "theta_sign": 1,
+      "log_abs_theta": -134.17582711232757,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71571139,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -10.359257097935597,
+      "mean_Y": 314.9661231214813,
+      "mean_Y_minus_mu_n": -12.320799825353618,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.083984375,
+        "2": 0.02734375,
+        "4": 0.00390625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0052490234375,
+        "2": 0.001708984375,
+        "4": 0.000244140625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": 0,
+      "theta_sign": 1,
+      "log_abs_theta": -134.17582711232757,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71573141,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -10.466794486143044,
+      "mean_Y": 314.93183587808005,
+      "mean_Y_minus_mu_n": -12.35508706875487,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0797119140625,
+        "2": 0.02587890625,
+        "4": 0.0032958984375
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00498199462890625,
+        "2": 0.001617431640625,
+        "4": 0.00020599365234375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": 2,
+      "theta_sign": -1,
+      "log_abs_theta": -102.17582711232757,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71571187,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -32.48946016219486,
+      "mean_Y": 292.84465164414587,
+      "mean_Y_minus_mu_n": -34.44227130268905,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.048828125,
+        "2": 0.01953125,
+        "4": 0.00341796875
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0030517578125,
+        "2": 0.001220703125,
+        "4": 0.000213623046875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": 2,
+      "theta_sign": -1,
+      "log_abs_theta": -102.17582711232757,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71573189,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -32.4733664117536,
+      "mean_Y": 292.8583278986199,
+      "mean_Y_minus_mu_n": -34.428595048215016,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0491943359375,
+        "2": 0.01708984375,
+        "4": 0.0023193359375
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00307464599609375,
+        "2": 0.001068115234375,
+        "4": 0.00014495849609375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": 2,
+      "theta_sign": 1,
+      "log_abs_theta": -102.17582711232757,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71571201,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -32.423479230127214,
+      "mean_Y": 292.85517912974717,
+      "mean_Y_minus_mu_n": -34.43174381708775,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0498046875,
+        "2": 0.0166015625,
+        "4": 0.00244140625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00311279296875,
+        "2": 0.00103759765625,
+        "4": 0.000152587890625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": 2,
+      "theta_sign": 1,
+      "log_abs_theta": -102.17582711232757,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71573203,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -32.50492122629805,
+      "mean_Y": 292.8475204291767,
+      "mean_Y_minus_mu_n": -34.43940251765821,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0472412109375,
+        "2": 0.0179443359375,
+        "4": 0.002197265625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00295257568359375,
+        "2": 0.00112152099609375,
+        "4": 0.0001373291015625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": 4,
+      "theta_sign": -1,
+      "log_abs_theta": -70.17582711232757,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71571249,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -63.496009308716054,
+      "mean_Y": 263.05021086672895,
+      "mean_Y_minus_mu_n": -64.23671208010597,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0068359375,
+        "2": 0.001953125,
+        "4": 0.0
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00042724609375,
+        "2": 0.0001220703125,
+        "4": 0.0
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": 4,
+      "theta_sign": -1,
+      "log_abs_theta": -70.17582711232757,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71573251,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -63.28976951508912,
+      "mean_Y": 263.06529339540816,
+      "mean_Y_minus_mu_n": -64.22162955142676,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.00830078125,
+        "2": 0.001708984375,
+        "4": 0.000244140625
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.000518798828125,
+        "2": 0.0001068115234375,
+        "4": 1.52587890625e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": 4,
+      "theta_sign": 1,
+      "log_abs_theta": -70.17582711232757,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71571263,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -63.44532280433799,
+      "mean_Y": 263.0591337106495,
+      "mean_Y_minus_mu_n": -64.2277892361854,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.005859375,
+        "2": 0.0029296875,
+        "4": 0.00048828125
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0003662109375,
+        "2": 0.00018310546875,
+        "4": 3.0517578125e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 256,
+      "beta": 4,
+      "theta_sign": 1,
+      "log_abs_theta": -70.17582711232757,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71573265,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -63.29235228676475,
+      "mean_Y": 263.0604085431999,
+      "mean_Y_minus_mu_n": -64.22651440363501,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.00927734375,
+        "2": 0.002685546875,
+        "4": 0.000732421875
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.000579833984375,
+        "2": 0.0001678466796875,
+        "4": 4.57763671875e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": -4,
+      "theta_sign": -1,
+      "log_abs_theta": -358.8613222165332,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71827001,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.8428082007853845,
+      "mean_Y": 654.2760449989136,
+      "mean_Y_minus_mu_n": -0.29780089475627847,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.010358009490037318,
+        "2": 0.004143203796014927,
+        "4": 0.0006905339660024879
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.000457763671875,
+        "2": 0.00018310546875,
+        "4": 3.0517578125e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": -4,
+      "theta_sign": -1,
+      "log_abs_theta": -358.8613222165332,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71829003,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.7492508544493148,
+      "mean_Y": 654.274037598732,
+      "mean_Y_minus_mu_n": -0.2998082949378613,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.008286407592029855,
+        "2": 0.003280036338511817,
+        "4": 0.0006905339660024879
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0003662109375,
+        "2": 0.00014495849609375,
+        "4": 3.0517578125e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": -4,
+      "theta_sign": 1,
+      "log_abs_theta": -358.8613222165332,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71827015,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.6806962975622355,
+      "mean_Y": 654.2697550872624,
+      "mean_Y_minus_mu_n": -0.30409080640743014,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.011048543456039806,
+        "2": 0.003452669830012439,
+        "4": 0.0006905339660024879
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00048828125,
+        "2": 0.000152587890625,
+        "4": 3.0517578125e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": -4,
+      "theta_sign": 1,
+      "log_abs_theta": -358.8613222165332,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71829017,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": 0.8281939613468694,
+      "mean_Y": 654.2797131227317,
+      "mean_Y_minus_mu_n": -0.2941327709381767,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.00880430806653172,
+        "2": 0.0036253033215130613,
+        "4": 0.0005179004745018659
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00038909912109375,
+        "2": 0.00016021728515625,
+        "4": 2.288818359375e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": -2,
+      "theta_sign": -1,
+      "log_abs_theta": -313.6064882205942,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71827063,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -0.42367206005053504,
+      "mean_Y": 651.1507608906787,
+      "mean_Y_minus_mu_n": -3.4230850029911153,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04488470779016171,
+        "2": 0.013810679320049757,
+        "4": 0.0
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.001983642578125,
+        "2": 0.0006103515625,
+        "4": 0.0
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": -2,
+      "theta_sign": -1,
+      "log_abs_theta": -313.6064882205942,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71829065,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -0.4345962939448782,
+      "mean_Y": 651.1559486353987,
+      "mean_Y_minus_mu_n": -3.417897258271182,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.05092687999268348,
+        "2": 0.017781249624564063,
+        "4": 0.0006905339660024879
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00225067138671875,
+        "2": 0.00078582763671875,
+        "4": 3.0517578125e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": -2,
+      "theta_sign": 1,
+      "log_abs_theta": -313.6064882205942,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71827077,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -0.3182163723894291,
+      "mean_Y": 651.1348392663627,
+      "mean_Y_minus_mu_n": -3.4390066273070943,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.046956309688169176,
+        "2": 0.02002548501407215,
+        "4": 0.005524271728019903
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0020751953125,
+        "2": 0.000885009765625,
+        "4": 0.000244140625
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": -2,
+      "theta_sign": 1,
+      "log_abs_theta": -313.6064882205942,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71829079,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -0.4616037403708333,
+      "mean_Y": 651.148549302387,
+      "mean_Y_minus_mu_n": -3.4252965912828586,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04212257192615176,
+        "2": 0.01588228121805722,
+        "4": 0.0024168688810087074
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.001861572265625,
+        "2": 0.000701904296875,
+        "4": 0.0001068115234375
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": 0,
+      "theta_sign": -1,
+      "log_abs_theta": -268.35165422465514,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71827125,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -15.16564583514969,
+      "mean_Y": 637.0254447817987,
+      "mean_Y_minus_mu_n": -17.548401111871158,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.08424514385230351,
+        "2": 0.02900242657210449,
+        "4": 0.004143203796014927
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00372314453125,
+        "2": 0.00128173828125,
+        "4": 0.00018310546875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": 0,
+      "theta_sign": -1,
+      "log_abs_theta": -268.35165422465514,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71829127,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -15.109253088197079,
+      "mean_Y": 637.1138383629973,
+      "mean_Y_minus_mu_n": -17.460007530672556,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.07561346927727242,
+        "2": 0.02813925911460138,
+        "4": 0.0037979368130136833
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0033416748046875,
+        "2": 0.00124359130859375,
+        "4": 0.0001678466796875
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": 0,
+      "theta_sign": 1,
+      "log_abs_theta": -268.35165422465514,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71827139,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -15.149859810118755,
+      "mean_Y": 637.0885635076237,
+      "mean_Y_minus_mu_n": -17.48528238604615,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.0801019400562886,
+        "2": 0.026930824674097027,
+        "4": 0.006905339660024878
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0035400390625,
+        "2": 0.001190185546875,
+        "4": 0.00030517578125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": 0,
+      "theta_sign": 1,
+      "log_abs_theta": -268.35165422465514,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71829141,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -15.093342652904312,
+      "mean_Y": 637.1012847715945,
+      "mean_Y_minus_mu_n": -17.472561122075376,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.08200090846279544,
+        "2": 0.029692960538106977,
+        "4": 0.006905339660024878
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00362396240234375,
+        "2": 0.001312255859375,
+        "4": 0.00030517578125
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": 2,
+      "theta_sign": -1,
+      "log_abs_theta": -223.0968202287161,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71827187,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -46.33575433991825,
+      "mean_Y": 605.8871080900445,
+      "mean_Y_minus_mu_n": -48.686737803625306,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04626577572216669,
+        "2": 0.01657281518405971,
+        "4": 0.0020716018980074637
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.002044677734375,
+        "2": 0.000732421875,
+        "4": 9.1552734375e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": 2,
+      "theta_sign": -1,
+      "log_abs_theta": -223.0968202287161,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71829189,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -46.28377486318334,
+      "mean_Y": 605.8771895368293,
+      "mean_Y_minus_mu_n": -48.69665635684055,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04419417382415922,
+        "2": 0.014673846777552867,
+        "4": 0.0010358009490037319
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.001953125,
+        "2": 0.00064849853515625,
+        "4": 4.57763671875e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": 2,
+      "theta_sign": 1,
+      "log_abs_theta": -223.0968202287161,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71827201,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -46.16553330443617,
+      "mean_Y": 605.8989204311763,
+      "mean_Y_minus_mu_n": -48.67492546249355,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04143203796014927,
+        "2": 0.015191747252054733,
+        "4": 0.0013810679320049757
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0018310546875,
+        "2": 0.00067138671875,
+        "4": 6.103515625e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": 2,
+      "theta_sign": 1,
+      "log_abs_theta": -223.0968202287161,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71829203,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -46.29213725108559,
+      "mean_Y": 605.8911546795483,
+      "mean_Y_minus_mu_n": -48.68269121412152,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.04851001111167477,
+        "2": 0.016227548201058466,
+        "4": 0.0017263349150062196
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00214385986328125,
+        "2": 0.0007171630859375,
+        "4": 7.62939453125e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": 4,
+      "theta_sign": -1,
+      "log_abs_theta": -177.84198623277706,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71827249,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -89.68791968867254,
+      "mean_Y": 563.7683169590078,
+      "mean_Y_minus_mu_n": -90.805528934662,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.013810679320049757,
+        "2": 0.004143203796014927,
+        "4": 0.0
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0006103515625,
+        "2": 0.00018310546875,
+        "4": 0.0
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": 4,
+      "theta_sign": -1,
+      "log_abs_theta": -177.84198623277706,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71829251,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -89.83607252424258,
+      "mean_Y": 563.7388722816181,
+      "mean_Y_minus_mu_n": -90.83497361205173,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.008459041083530476,
+        "2": 0.0024168688810087074,
+        "4": 0.00017263349150062197
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.00037384033203125,
+        "2": 0.0001068115234375,
+        "4": 7.62939453125e-06
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": 4,
+      "theta_sign": 1,
+      "log_abs_theta": -177.84198623277706,
+      "sobol_power": 15,
+      "samples": 32768,
+      "seed": 71827263,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -89.85287170671018,
+      "mean_Y": 563.7218302863132,
+      "mean_Y_minus_mu_n": -90.85201560735663,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.008976941558032343,
+        "2": 0.0020716018980074637,
+        "4": 0.0
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.000396728515625,
+        "2": 9.1552734375e-05,
+        "4": 0.0
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    },
+    {
+      "n": 512,
+      "beta": 4,
+      "theta_sign": 1,
+      "log_abs_theta": -177.84198623277706,
+      "sobol_power": 17,
+      "samples": 131072,
+      "seed": 71829265,
+      "chunk_size": 4096,
+      "median_Y_plus_Z_minus_mu_n": -89.84234675793539,
+      "mean_Y": 563.7466772473526,
+      "mean_Y_minus_mu_n": -90.8271686463172,
+      "positive_correction_tail_times_sqrt_n": {
+        "1": 0.010703276473038563,
+        "2": 0.004661104270516793,
+        "4": 0.0006905339660024879
+      },
+      "positive_correction_tail_probability": {
+        "1": 0.0004730224609375,
+        "2": 0.00020599365234375,
+        "4": 3.0517578125e-05
+      },
+      "badfinite_count": 0,
+      "badfinite_rate": 0.0,
+      "numerical_status": "ok",
+      "interpretation": "numerical estimate only; scrambled Sobol replicates are not confidence or certification bounds"
+    }
+  ]
+}

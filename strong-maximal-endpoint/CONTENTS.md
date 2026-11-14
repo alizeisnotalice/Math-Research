@@ -1311,3 +1311,5 @@
 - 第711轮：[完整积目录的相关源维数损失](rounds/r711/report.md)，[完整证明](rounds/r711/product_catalogue.md)，[验证摘要](rounds/r711/audit.json)。
 
 - 第712轮：[线性反馈环与增长强连通块](rounds/r712/report.md)，[线性锚点证明](rounds/r712/linear_anchors.md)，[增长块补充](rounds/r712/growing_blocks.md)，[计算与纠错摘要](rounds/r712/audit.json)。
+
+- 第713轮：[反馈均值障碍与无界单环](rounds/r713/report.md)，[迟开启反馈证明](rounds/r713/near_optimal.md)，[单环证明](rounds/r713/single_cycle.md)，[验证摘要](rounds/r713/audit.json)。
