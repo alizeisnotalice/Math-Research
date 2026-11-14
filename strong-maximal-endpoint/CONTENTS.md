@@ -1327,3 +1327,5 @@
 - 第719轮：[鞍点标签与检验熵差](rounds/r719/report.md)，[完整证明](rounds/r719/testing_entropy.md)，[验证摘要](rounds/r719/audit.json)。
 
 - 第720轮：[KL最大接收归属与改派费用](rounds/r720/report.md)，[全局判据证明](rounds/r720/receiver_kl.md)，[验证摘要](rounds/r720/audit.json)。
+
+- 第721轮：[真实角向Fourier源扰动](rounds/r721/report.md)，[二阶证明](rounds/r721/angular_modes.md)，[验证摘要](rounds/r721/audit.json)。
