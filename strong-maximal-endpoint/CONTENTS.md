@@ -1363,3 +1363,5 @@
 - 第737轮：[实际信息谱的条件性结算](rounds/r737/report.md)，[非渐近逆检验界与成长块限制](rounds/r737/spectral_criterion.md)，[Python独立精度复算](rounds/r737/check_spectral.json)，[Mathematica十二核核对](rounds/r737/check_formula_wolfram.json)。
 
 - 第738轮：[连续软计数源与网格率障碍](rounds/r738/report.md)，[完整矩形压缩公式](rounds/r738/count_profile.md)，[指定见证族精确率证明](rounds/r738/grid_rate_proof.md)，[整数体积摘要](rounds/r738/exact_grid.json)，[有理率区间](rounds/r738/certify_rate.json)。
+
+- 第739轮：[真实矩约束排除](rounds/r739/report.md)，[Lp信息矩约束](rounds/r739/lp_spectrum.md)，[秩预算与抽象范围](rounds/r739/rank_budget.md)，[拼接及核心限制](rounds/r739/geometry_constraints.md)，[有理率差证书](rounds/r739/certify_lp.json)。
