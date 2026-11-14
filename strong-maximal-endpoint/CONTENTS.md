@@ -1307,3 +1307,5 @@
 - 第709轮：[一般log n系数的单中位数归约](rounds/r709/report.md)，[真实中位数壁证明](rounds/r709/central_median.md)，[轮廓预算障碍](rounds/r709/profile_envelope.md)，[验证摘要](rounds/r709/audit.json)。
 
 - 第710轮：[真实目录LP、锐混合熵与对数检验损失](rounds/r710/report.md)，[目录LP](rounds/r710/median_LP.md)，[混合熵](rounds/r710/mixture_entropy.md)，[共核缺口](rounds/r710/core_entropy_gap.md)，[验证摘要](rounds/r710/audit.json)。
+
+- 第711轮：[完整积目录的相关源维数损失](rounds/r711/report.md)，[完整证明](rounds/r711/product_catalogue.md)，[验证摘要](rounds/r711/audit.json)。
