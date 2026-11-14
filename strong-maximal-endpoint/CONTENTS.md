@@ -1329,3 +1329,5 @@
 - 第720轮：[KL最大接收归属与改派费用](rounds/r720/report.md)，[全局判据证明](rounds/r720/receiver_kl.md)，[验证摘要](rounds/r720/audit.json)。
 
 - 第721轮：[真实角向Fourier源扰动](rounds/r721/report.md)，[二阶证明](rounds/r721/angular_modes.md)，[验证摘要](rounds/r721/audit.json)。
+
+- 第722轮：[全轴响应与弥散频率](rounds/r722/report.md)，[严格推导](rounds/r722/all_axis.md)，[双软件验收](rounds/r722/audit.json)。

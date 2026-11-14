@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-14",
+  "round": 722,
+  "status": "active",
+  "general_Cn_coefficient": "undetermined",
+  "review": "Astra passed full Hessian operator estimate, fixed support with all axes, diffuse frequency limit; added direct density-error derivation rather than differentiating CDF remainder",
+  "strict_results": [
+    "H=p_*I+O(1/n) in operator norm",
+    "All-axis fixed-support negative limit",
+    "All-axis diffuse bounded-energy limit -(1-exp(-mu*tau^2))/4; tau0 only zero limit"
+  ],
+  "python_workers": 12,
+  "python_cases": 144,
+  "python_precision_digits": [
+    40,
+    70
+  ],
+  "mathematica_kernels": 12,
+  "mathematica_cases": 24,
+  "mathematica_precision_digits": [
+    50,
+    80
+  ],
+  "all_numerical_all_axis_curvatures_negative": true,
+  "all_corrected_H_eigenvalues_positive": true,
+  "max_cross_software_absolute_difference": "1.05540560972394261388880411699100925e-61",
+  "max_Python_precision_difference": "7.308647130126498246158282447977914e-35",
+  "max_Wolfram_precision_difference": "3.685455372365599584792447550226508910793e-51",
+  "execution_correction": "Post-run audit found an output-only Hessian field error in the initial execution: H eigenvalues had been formed with D_over_f in place of h. The Schur and curvature formulas were unaffected. Corrected script uses H_transverse=h-offb and H_longitudinal=h+(n-1)*offb; stored h/offb were used to recompute all 144 existing JSON H fields at their original dps without rerunning hypergeometric calculations.",
+  "scope": "Numerical diagnostics not interval certificates. Theorems do not cover all finite-n frequencies, unbounded energy, or relative sign at vanishing energy.",
+  "process_status": "All Python and Wolfram computation sessions exited; kernels explicitly closed",
+  "matlab": "not started",
+  "sources": [
+    "../r721/angular_modes.md"
+  ]
+}
