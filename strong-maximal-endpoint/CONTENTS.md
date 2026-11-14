@@ -1349,3 +1349,5 @@
 - 第730轮：[高秩条件TV反例](rounds/r730/report.md)，[严格证明与一般压缩缺口](rounds/r730/vector_phase_scope.md)，[本机双软件数值](rounds/r730/crosscheck.json)。
 
 - 第731轮：[一般几何容量接口](rounds/r731/report.md)，[精确变分与全标签障碍](rounds/r731/general_interface.md)，[审查及本机核验](rounds/r731/audit.json)。
+
+- 第732轮：[一般容量的27份认证](rounds/r732/report.md)，[有理对数与源价格证书说明](rounds/r732/certificates.md)，[结果](rounds/r732/capacity.json)，[独立无优化器回放](rounds/r732/replay_exact.py)。
