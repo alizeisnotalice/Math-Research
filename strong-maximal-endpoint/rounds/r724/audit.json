@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-14",
+  "round": 724,
+  "status": "active",
+  "general_Cn_coefficient": "undetermined",
+  "theorem": "Dimension-uniform micro-energy expansion, kappa=O(n^-2), a_n->mu, closes vanishing-energy relative curvature for the designated angular family",
+  "review": "Astra passed complex strip/ball, Banach Cauchy, holomorphic parity, exact gradient, conditional moments and uniform integrability",
+  "python_workers": 12,
+  "python_cases": 18,
+  "mathematica_kernels": 12,
+  "mathematica_cases": 18,
+  "precision_digits": [
+    50,
+    80
+  ],
+  "dimensions": [
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256,
+    512,
+    1024
+  ],
+  "all_numerical_slopes_negative": true,
+  "crosscheck": {
+    "c": {
+      "max_abs_wolfram_minus_python": "4.575582235588871155822253194659100000000000000000000000000000000005957e-46",
+      "n": 64,
+      "precision_dps": 50
+    },
+    "r": {
+      "max_abs_wolfram_minus_python": "1.865746071625206450491878133409810000000000000000000000000000000003879e-44",
+      "n": 64,
+      "precision_dps": 50
+    },
+    "a_n": {
+      "max_abs_wolfram_minus_python": "7.762120615870000000000000000000000000000000000000000000000000000128215e-47",
+      "n": 64,
+      "precision_dps": 50
+    },
+    "kappa_n": {
+      "max_abs_wolfram_minus_python": "1.493115020408057169778515193229999999999999999999999999999999999999997e-48",
+      "n": 64,
+      "precision_dps": 50
+    },
+    "micro_energy_slope": {
+      "max_abs_wolfram_minus_python": "1.979108744480000000000000000000000000000000000000000000000000000002837e-47",
+      "n": 64,
+      "precision_dps": 50
+    }
+  },
+  "parallel_stage_timings": {
+    "parallel_baseline_wall_seconds": 15.113539915997535,
+    "parallel_baseline_max_worker_seconds": 14.939898917000392,
+    "parallel_moment_wall_seconds": 1.436073499993654,
+    "total_wall_seconds": 16.570498249988304
+  },
+  "archive": "private work/strong-maximal-drafts/r724/micro_serial_baseline.json",
+  "execution_note": "Moved baseline solves into12-worker pool as requested; reran parallel implementation and all stored fields matched serial-baseline archive. Fixed precision-exponent parsing in crosscheck before final results.",
+  "scope": "Curvature only. Does not control unbounded energy, dimension-uniform nonlinear amplitude expansion, or general C_n coefficient. Finite data do not certify starting dimension.",
+  "process_status": "All computation sessions exited; kernels explicitly closed; no MATLAB",
+  "sources": [
+    "../r721/angular_modes.md",
+    "../r722/all_axis.md",
+    "../r723/frequency_profile.md"
+  ]
+}

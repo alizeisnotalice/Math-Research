@@ -1333,3 +1333,5 @@
 - 第722轮：[全轴响应与弥散频率](rounds/r722/report.md)，[严格推导](rounds/r722/all_axis.md)，[双软件验收](rounds/r722/audit.json)。
 
 - 第723轮：[有界能量全频率判别](rounds/r723/report.md)，[统一证明](rounds/r723/frequency_profile.md)，[验证摘要](rounds/r723/audit.json)。
+
+- 第724轮：[零能量相对曲率](rounds/r724/report.md)，[复球与微能量公式证明](rounds/r724/small_energy.md)，[双软件验证](rounds/r724/audit.json)。
