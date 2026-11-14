@@ -1303,3 +1303,5 @@
 - 第708轮：[有限物理输入证书与固定符号扰动的负曲率](rounds/r708/report.md)，[完整证明](rounds/r708/proof.md)，[验证摘要](rounds/r708/audit.json)。
 
 - 二阶精确常数与暂停：[一般C_n的√(n log n)系数及证明来源](rounds/r708/second_constant.md)，[常数区间证书](rounds/r708/constant_certificate.json)。
+
+- 第709轮：[一般log n系数的单中位数归约](rounds/r709/report.md)，[真实中位数壁证明](rounds/r709/central_median.md)，[轮廓预算障碍](rounds/r709/profile_envelope.md)，[验证摘要](rounds/r709/audit.json)。

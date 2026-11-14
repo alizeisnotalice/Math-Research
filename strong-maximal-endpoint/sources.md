@@ -239,3 +239,8 @@ András Prékopa, *On logarithmic concave measures and functions*, Acta Scientia
 ## 第707轮补充（2026-11-14）
 
 - NIST Digital Library of Mathematical Functions, [§5.11(i)–(ii), Stirling展开与正实参数余项界](https://dlmf.nist.gov/5.11#ii)。已核对正实参数下余项同首遗漏项符号、且绝对值不超过首遗漏项。用于第707轮12个Gamma概率的区间证书；该条目不支持本项目新渐近定理的优先权主张。
+
+
+## 第709轮有限检索（2026-11-14）
+
+Fava, *Weak type inequalities for product operators*, Studia Mathematica 42 (1972),271–288，[官方DOI记录](https://doi.org/10.4064/sm-42-3-271-288)。本轮只核验题录；出版方全文端点403，未引用其具体常数来支持一般中位数估计。实际查询及固定门槛/固定维区分见[检索日志](rounds/r709/literature/search-log.md)。新单中位数归约与预算包络障碍为项目内部自包含推导，未提出公开优先权主张。
