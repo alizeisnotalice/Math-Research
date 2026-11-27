@@ -1,5 +1,12 @@
 # Math-Research
 
+## 进行中的研究
+
+| 仓库 | 研究方向 |
+| --- | --- |
+| [Math-Research](https://github.com/alizeisnotalice/Math-Research) | 极大算子与调和分析。主线是[中心立方体的一般弱型上界](centered-cube-upper-bound/README.md)；也收录强极大算子、欧氏球极大算子等研究档案。一般上界的进一步改进仍开放。 |
+| [Math-Research-2](https://github.com/alizeisnotalice/Math-Research-2) | 多专题研究。包括二维中心正方形精确常数、连续 Cantelli 猜想、二叉 Derrida–Retaux 临界问题、欧拉常数无理性等。各题的结果与未解部分见[课题总览](https://github.com/alizeisnotalice/Math-Research-2/blob/main/PROJECTS.md)。 |
+
 ## 公开成果索引
 
 这里集中列出四个成果仓库。点仓库名即可查看论文、数据和复现说明。
